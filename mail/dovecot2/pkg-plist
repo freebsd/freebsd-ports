@@ -207,8 +207,8 @@ include/dovecot/mail-transaction-log-private.h
 include/dovecot/mail-transaction-log-view-private.h
 include/dovecot/mail-transaction-log.h
 include/dovecot/mail-types.h
-include/dovecot/mail-user.h
 include/dovecot/mail-user-hash.h
+include/dovecot/mail-user.h
 include/dovecot/mailbox-guid-cache.h
 include/dovecot/mailbox-list-delete.h
 include/dovecot/mailbox-list-fs.h
@@ -302,6 +302,10 @@ include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
 include/dovecot/process-title.h
+include/dovecot/quota-fs.h
+include/dovecot/quota-plugin.h
+include/dovecot/quota-private.h
+include/dovecot/quota.h
 include/dovecot/quoted-printable.h
 include/dovecot/randgen.h
 include/dovecot/raw-storage.h
@@ -415,15 +419,15 @@ lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_listescape_plugin.a
 lib/dovecot/lib20_listescape_plugin.la
 lib/dovecot/lib20_listescape_plugin.so
-lib/dovecot/lib20_replication_plugin.a
-lib/dovecot/lib20_replication_plugin.la
-lib/dovecot/lib20_replication_plugin.so
-lib/dovecot/lib20_mailbox_alias_plugin.a
-lib/dovecot/lib20_mailbox_alias_plugin.la
-lib/dovecot/lib20_mailbox_alias_plugin.so
 lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.la
 lib/dovecot/lib20_mail_log_plugin.so
+lib/dovecot/lib20_mailbox_alias_plugin.a
+lib/dovecot/lib20_mailbox_alias_plugin.la
+lib/dovecot/lib20_mailbox_alias_plugin.so
+lib/dovecot/lib20_replication_plugin.a
+lib/dovecot/lib20_replication_plugin.la
+lib/dovecot/lib20_replication_plugin.so
 lib/dovecot/lib20_virtual_plugin.a
 lib/dovecot/lib20_virtual_plugin.la
 lib/dovecot/lib20_virtual_plugin.so
@@ -495,6 +499,7 @@ libexec/dovecot/log
 libexec/dovecot/maildirlock
 libexec/dovecot/pop3
 libexec/dovecot/pop3-login
+libexec/dovecot/quota-status
 libexec/dovecot/rawlog
 libexec/dovecot/replicator
 libexec/dovecot/script
@@ -505,7 +510,6 @@ libexec/dovecot/stats
 libexec/dovecot/xml2text
 sbin/dovecot
 share/aclocal/dovecot.m4
-@dirrmtry libdata/ldconfig/dovecot2
 @dirrm libexec/dovecot
 @dirrm lib/dovecot/doveadm
 @dirrmtry lib/dovecot/auth
