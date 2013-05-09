@@ -5,6 +5,11 @@
 TEX_MAINTAINER=	hrs@FreeBSD.org
 
 #
+# For ports which depend on TeX:
+# USE_TEX=	yes
+# Note that teTeX or TeXLive is used based on $TEX_DEFAULT, and full version
+# of the packages will be installed as the dependency. 
+#
 # For full teTeX dependency:
 # USE_TEX=	tetex
 #
@@ -48,6 +53,10 @@ TEX_DEFAULT?=	tetex
 
 # normalize
 TEX_DEFAULT:=	${TEX_DEFAULT:L}
+
+.if defined(USE_TEX) && !empty(USE_TEX:M[Yy][Ee][Ss])
+USE_TEX:=	${TEX_DEFAULT}
+.endif
 
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
