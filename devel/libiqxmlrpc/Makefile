@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libiqxmlrpc
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.12.4
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,8 +14,6 @@ BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	BSD
-
-BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
