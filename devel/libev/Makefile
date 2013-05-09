@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libev
-PORTVERSION=	4.11
+PORTVERSION=	4.15
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \
