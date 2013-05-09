@@ -2,7 +2,6 @@
 bin/a2ping
 bin/afm2afm
 bin/afm2pl
-bin/afm2tfm
 bin/allcm
 bin/allec
 bin/allneeded
@@ -62,7 +61,6 @@ bin/dvilj4l
 bin/dvilj6
 bin/dvipng
 bin/dvipos
-bin/dvips
 bin/dvired
 bin/dviselect
 bin/dvisvgm

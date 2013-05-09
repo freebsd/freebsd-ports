@@ -1,100 +1,71 @@
 # $FreeBSD$
 
-PORTNAME=	dvipsk-tetex
-PORTVERSION=	5.95a
-PORTREVISION=	7
+PORTNAME=	dvipsk
+PORTVERSION=	5.992
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
-MASTER_SITE_SUBDIR=	obsolete/systems/unix/teTeX/3.0/distrib
-DISTNAME=	${TETEX_SRC}
-DIST_SUBDIR=	teTeX
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+PKGNAMEPREFIX=	tex-
+DISTNAME=	texlive-${DISTVERSION_TEXMF}-source
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME_TEXMF}${EXTRACT_SUFX}
+DIST_SUBDIR=	TeX
+EXTRACT_ONLY=	texlive-${DISTVERSION_TEXMF}-source${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert a TeX DVI file to PostScript
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.5:${PORTSDIR}/devel/t1lib
+LICENSE=	GPLv2
 
-USE_TEX=	tetex
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
-		TEXMFDISTDIR=${TEXMFDISTDIR} \
-		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
-		MKTEXLSR=${MKTEXLSR}
+LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
 
-PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}
-BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
-INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
-
+USE_XZ=		yes
+USE_GMAKE=	yes
+USE_TEX=	kpathsea web2c texmf texhash
+TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFDIR}
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+EXTRACT_FILES= \
+	m4 \
+	build-aux \
+	texk/am \
+	texk/dvipsk \
+	texk/kpathsea
+EXTRACT_AFTER_ARGS_TEXMF= \
+	| ${TAR} -xf - -C ${PREFIX}/share \
+	--strip-components 1 --no-same-permission --no-same-owner \
+	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
+DISTVERSION_TEXMF=	20120701
+DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXMF}-texmf
+EXTRACT_FILES_TEXMF= \
+	texmf-dist/fonts/map/dvips/ \
+	texmf-dist/fonts/enc/dvips/ \
+	texmf-dist/dvips/ \
+	texmf-dist/tex/generic/dvips/ \
+	texmf/fonts/map/dvips/ \
+	texmf/fonts/enc/dvips/ \
+	texmf/doc/dvips/ \
+	texmf/dvips/
+WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-multiplatform \
-		--without-texinfo \
-		--without-texi2html \
-		--without-dialog \
-		--with-system-ncurses --with-system-zlib \
-		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
-		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
-		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
-		--with-pnglib-include=${LIBPNG_PREFIX}/include \
-		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
-		--with-t1lib-include=${LIBT1_PREFIX}/include \
-		--without-xdvik --without-oxdvik
-CONFLICTS=	*-teTeX-[0-9]* \
-		ja-ptex-*-[0-9]* \
-		dvips-[0-9]* \
-		*-dvips-[0-9]* \
-		*-dvipsk-[0-9]* \
-		texlive-[0-9]* tex-web2c-[0-9]* \
-		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
-		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
+CONFIGURE_ARGS= --with-paper \
+		--with-system-kpathsea \
+		--with-kpathsea-includes=${LOCALBASE}/include \
+		--with-kpathsea-libdir=${LOCALBASE}/lib \
+		--with-system-libpng \
+		--with-system-zlib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		dvips.1 afm2tfm.1
-MLINKS=		dvips.1 odvips.1
-INFO=		dvips
+NO_MANCOMPRESS=	yes
+MAN1=	afm2tfm.1 dvips.1
+INFO=	dvips
 
-.if defined(WITH_LETTERSIZE)
-FLAVOR+=	letter
-PAPERSIZE=	letter
-.else
-PAPERSIZE=	a4
-.endif
-
-TETEX_SRC=	tetex-src-3.0
-MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
-TEXMFDIR=	share/texmf
-TEXMFLOCALDIR=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
-TEXMFDISTDIR=	share/texmf-dist
-TEXMFDIST_LSR=	${TEXMFDISTDIR}/ls-R
-TEXMFCONFIGDIR=	share/texmf-config
-TEXMFCONFIG_LSR=${TEXMFCONFIGDIR}/ls-R
-TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
-DVIPSDIR=	${LOCALBASE}/${TEXMFDIR}/dvips/config
-DVIPSCONFDIR=	${LOCALBASE}/${TEXMFCONFIGDIR}/dvips/config
-LIBPNG_PREFIX?=	${LOCALBASE}
-LIBWWW_PREFIX?=	${LOCALBASE}
-LIBT1_PREFIX?=	${LOCALBASE}
-LIBGD_PREFIX?=	${LOCALBASE}
-
-PKGINSTALL=	${WRKDIR}/pkg-install.sh
-PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
-PKGINSTALL_SUB=	PAPERSIZE=${PAPERSIZE} \
-		MKTEXLSR=${MKTEXLSR} \
-		DVIPSDIR=${DVIPSDIR} \
-		DVIPSCONFDIR=${DVIPSCONFDIR} \
-		TEXCONFIGBIN=${TEXCONFIGBIN} \
-		LOCALBASE=${LOCALBASE}
-
-# dvipsk is not compatible with -funroll-loops on 5.x
-CFLAGS:=	${CFLAGS:N-funroll-loops}
-
-pre-build:
-	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${CHMOD} 0755 ${PKGINSTALL}
-
-post-install:
-	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
+pre-su-install:
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
+		${EXTRACT_AFTER_ARGS_TEXMF}
+	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx \
+		${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap
+	${TOUCH} ${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx/.keep_me \
+		${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap/.keep_me
 
 .include <bsd.port.mk>
