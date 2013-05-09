@@ -1,13 +1,8 @@
-# New ports collection makefile for:	pidgin-skype
-# Date created:				2010-12-19
-# Whom:					mandree@FreeBSD.org
-#
+# Created by: mandree@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin-skype
-PORTVERSION=	0.0.0.628
-PORTREVISION=	1
+PORTVERSION=	0.0.0.659
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mandree
 DISTFILES=	pidgin-skype-svn-r${PORTVERSION:E}.tar.xz
@@ -46,9 +41,33 @@ mycflags=	-shared -fPIC -DPIC ${PTHREAD_CFLAGS} \
 		-DPURPLE_PLUGINS
 mylibs=		${PTHREAD_LIBS}
 
+USES=		pkgconfig
+
+# DBUS: No DBUS here, does not work with Skype 2.1 beta
+# NLS: While the build works and enables translations,
+# the upstream translations and .pot file are woefully out of date.
+#OPTIONS_DEFINE=	NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+mycflags+=	-DENABLE_NLS
+mylibs+=	-L${LOCALBASE}/lib -lintl
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+
+post-patch:
+	${REINPLACE_CMD} 's/#undef ENABLE_NLS//' ${WRKSRC}/libskype.c
+.else
+PLIST_SUB+=	NLS="@comment"
+.endif
+
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${mycflags} \
+	cd ${WRKSRC} && ${CC} ${CPPFLAGS} ${CFLAGS} ${mycflags} \
 			-o libskype.so libskype.c ${mylibs}
+.if ${PORT_OPTIONS:MNLS}
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} -C ${BUILD_WRKSRC} locales
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/purple-2
@@ -61,5 +80,11 @@ do-install:
 	    ${WRKSRC}/icons/${i}/skype.png \
 	    ${PREFIX}/share/pixmaps/pidgin/protocols/${i}/
 .endfor
+.if ${PORT_OPTIONS:MNLS}
+.for i in cs de en_AU es fr hu it ja mk nb pl pt pt_BR ru
+	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES/
+	${INSTALL_DATA} ${WRKSRC}/po/${i}.mo ${PREFIX}/share/locale/${i}/LC_MESSAGES/skype4pidgin.mo
+.endfor
+.endif
 
 .include <bsd.port.mk>
