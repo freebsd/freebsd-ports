@@ -5,11 +5,11 @@ PORTNAME=	mc
 PORTVERSION=	4.8.1.7
 PORTREVISION=	0
 CATEGORIES=	misc shells
-MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/file/managers/mc
-
-PATCH_SITES=	${MASTER_SITES}
+#MASTER_SITES=	http://www.midnight-commander.org/downloads/
+#MASTER_SITE_SUBDIR=	utils/file/managers/mc
+MASTER_SITES=	${MASTER_SITE_LOCAL}\
+		http://people.freebsd.org/~fjoe/
+MASTER_SITE_SUBDIR=	fjoe
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
@@ -17,8 +17,6 @@ COMMENT=	Midnight Commander, a free Norton Commander Clone
 LICENSE=	GPLv3
 
 CONFLICTS=	mc-light-4*
-
-BROKEN=	does not fetch
 
 USES=		pkgconfig
 USE_GMAKE=	yes
