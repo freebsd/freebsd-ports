@@ -1,16 +1,14 @@
 bin/aop
-share/aop/aop-level-01.txt
-share/aop/aop-level-02.txt
-share/aop/aop-level-03.txt
-share/aop/aop-level-04.txt
-share/aop/aop-level-05.txt
-share/aop/aop-level-06.txt
-share/aop/aop-level-07.txt
-share/aop/aop-level-08.txt
-share/aop/aop-level-09.txt
-share/aop/aop-level-10.txt
-share/aop/aop-level-11.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/aop
+%%DATADIR%%/aop-level-01.txt
+%%DATADIR%%/aop-level-02.txt
+%%DATADIR%%/aop-level-03.txt
+%%DATADIR%%/aop-level-04.txt
+%%DATADIR%%/aop-level-05.txt
+%%DATADIR%%/aop-level-06.txt
+%%DATADIR%%/aop-level-07.txt
+%%DATADIR%%/aop-level-08.txt
+%%DATADIR%%/aop-level-09.txt
+%%DATADIR%%/aop-level-10.txt
+%%DATADIR%%/aop-level-11.txt
+share/pixmaps/aop.png
+@dirrm %%DATADIR%%
