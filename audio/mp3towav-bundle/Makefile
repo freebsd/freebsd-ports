@@ -12,6 +12,8 @@ COMMENT=	MP3ToWav plugin for Burn.app
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
