@@ -32,7 +32,7 @@ FLEETS_FILE=	gh_fleets_020906.zip
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLEETS}
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 DISTFILES+=	${FLEETS_FILE}
 PLIST_SUB+=	FLEETS=""
 .else
