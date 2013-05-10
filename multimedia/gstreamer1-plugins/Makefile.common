@@ -382,6 +382,11 @@ gst_vorbis_LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis
 
 # vpx
 gst_vpx_LIB_DEPENDS=	vpx:${PORTSDIR}/multimedia/libvpx
+gst_vpx_PLIST_FILES=	${GST_LIB_DIR}/libgstvpx.la \
+			${GST_LIB_DIR}/libgstvpx.so \
+			share/gstreamer-${VERSION}/presets/GstVP8Enc.prs
+gst_vpx_PLIST_DIRSTRY=	share/gstreamer-${VERSION}/presets \
+			share/gstreamer-${VERSION}
 
 # X ximage and xvimage sinks aka output
 .if ${DIST} == base
