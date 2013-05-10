@@ -3441,6 +3441,7 @@
     SUBDIR += py-coil
     SUBDIR += py-collective.monkeypatcher
     SUBDIR += py-collective.z3cform.datetimewidget
+    SUBDIR += py-colorama
     SUBDIR += py-configobj
     SUBDIR += py-construct
     SUBDIR += py-coverage

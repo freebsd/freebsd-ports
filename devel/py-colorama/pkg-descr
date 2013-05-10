@@ -1,0 +1,10 @@
+Makes ANSI escape character sequences, for producing colored terminal text and
+cursor positioning, work under MS Windows.
+
+ANSI escape character sequences have long been used to produce colored terminal
+text and cursor positioning on Unix and Macs. Colorama makes this work on
+Windows, too. It also provides some shortcuts to help generate ANSI sequences,
+and works fine in conjunction with any other ANSI sequence generation library,
+such as Termcolor.
+
+WWW: http://pypi.python.org/pypi/colorama
