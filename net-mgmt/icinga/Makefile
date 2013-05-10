@@ -1,12 +1,8 @@
-# New ports collection makefile for:	icinga
-# Date created:				2012/02/10
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	icinga
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -113,9 +109,10 @@ CONFIGURE_ARGS+=	--enable-idoutils \
 			--with-dbi-inc=${LOCALBASE}/include
 INSTALL_TARGET+=	install-idoutils
 USE_RC_SUBR+=		ido2db
-PLIST_SUB+=	IDOUTILS=""
+PLIST_SUB+=		IDOUTILS=""
 .else
-PLIST_SUB+=	IDOUTILS="@comment "
+PLIST_SUB+=		IDOUTILS="@comment "
+CONFIGURE_ARGS+=	--disable-idoutils
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}

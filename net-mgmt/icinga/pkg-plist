@@ -38,6 +38,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idoutils.cfg-sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/idoutils.cfg-sample.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.7_to_1.8.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/updates/ido2db.cfg_added_1.8_to_1.9.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/mysql.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-0.8.3.sql
@@ -53,6 +54,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.6.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.9.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/icinga_defines.sql
@@ -69,6 +71,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.6.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.8.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.9.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_numbers.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_objects.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_recreate_icinga13_functions.sql
@@ -82,6 +85,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.6.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.8.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.9.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comment_history.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comments.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/contact_notification_methods.sql
@@ -242,8 +246,6 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/de/recurring_downtimes.html
 %%ICINGAWWWDIR%%/docs/de/redundancy.html
 %%ICINGAWWWDIR%%/docs/de/reporting.html
-%%ICINGAWWWDIR%%/docs/de/reporting_1.6.html
-%%ICINGAWWWDIR%%/docs/de/reporting_1.8.html
 %%ICINGAWWWDIR%%/docs/de/security.html
 %%ICINGAWWWDIR%%/docs/de/servicechecks.html
 %%ICINGAWWWDIR%%/docs/de/stalking.html
@@ -363,8 +365,6 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/en/recurring_downtimes.html
 %%ICINGAWWWDIR%%/docs/en/redundancy.html
 %%ICINGAWWWDIR%%/docs/en/reporting.html
-%%ICINGAWWWDIR%%/docs/en/reporting_1.6.html
-%%ICINGAWWWDIR%%/docs/en/reporting_1.8.html
 %%ICINGAWWWDIR%%/docs/en/security.html
 %%ICINGAWWWDIR%%/docs/en/servicechecks.html
 %%ICINGAWWWDIR%%/docs/en/stalking.html
@@ -380,6 +380,55 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/en/volatileservices.html
 %%ICINGAWWWDIR%%/docs/en/whatsnew.html
 %%ICINGAWWWDIR%%/docs/images/Architecture_1.5_800px.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_BusinessProcess-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_BusinessProcess.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Commands-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Commands.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_CronkBuilder-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_CronkBuilder.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Cronk_Configuration-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Cronk_Configuration.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Cronk_HostFiltered-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Downtimes-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Downtimes.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_HostStatus_Events-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_HostStatus_Events.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Host_filtered-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Host_filtered.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_LogViewer-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_LogViewer.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_OpenProblems-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_OpenProblems.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Portal2-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Portal2.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Reporting-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Reporting.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Search-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_Search.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_StatusMap-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_StatusMap.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_TacticalOverview-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_TacticalOverview.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_UserAdmin-150x150.png
+%%ICINGAWWWDIR%%/docs/images/IcingaWeb_UserAdmin.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_CGIConfig-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_CGIConfig.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_Commands-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_Commands.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_DatePicker-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_DatePicker.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_Downtimes-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_Downtimes.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_HostGroup-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_HostGroup.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_PaginationLogs-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_PaginationLogs.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_ServiceStatus-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_ServiceStatus.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_TacticalOverview-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_TacticalOverview.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_Trending-150x150.png
+%%ICINGAWWWDIR%%/docs/images/Icinga_Classic_Trending.png
 %%ICINGAWWWDIR%%/docs/images/MyServiceStatus.png
 %%ICINGAWWWDIR%%/docs/images/activechecks.png
 %%ICINGAWWWDIR%%/docs/images/cachedcheckgraphs.png
@@ -454,6 +503,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/images/icinga-reporting_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups1_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups1_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_groups2_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_logs1.png
@@ -461,6 +511,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_tasks.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_users1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_users1_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-admin_users1_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_users2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-admin_users2_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_hst.png
@@ -471,16 +522,19 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_svc_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_svc_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-commands_svc_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks-settings_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.7.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks1_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.7.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks2a_1.7.png
@@ -489,12 +543,20 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks3_1.5.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks3_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-cronks3_1.7.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks3_1.9.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-cronks4_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter1_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter1_1.6.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-filter1_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter2_1.3.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-filter2_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-filter3.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-filter3_1.9.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-filter4_1.9.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-filter5_1.9.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-filter6_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-host-obj.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-host-obj1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-host_1.5.png
@@ -520,6 +582,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.6.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.7.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.8.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-overview_1.9.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-search1.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-search1_1.3.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-search1_1.6.png
@@ -542,6 +605,8 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/images/icinga-web-topmenu1_1.7.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-topmenu2.png
 %%ICINGAWWWDIR%%/docs/images/icinga-web-topmenu2_1.3.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-topmenuadmin1_1.9.png
+%%ICINGAWWWDIR%%/docs/images/icinga-web-user-prefs-logout.png
 %%ICINGAWWWDIR%%/docs/images/idoutils.png
 %%ICINGAWWWDIR%%/docs/images/important.gif
 %%ICINGAWWWDIR%%/docs/images/important.png
@@ -711,32 +776,32 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/images/zoom1.gif
 %%ICINGAWWWDIR%%/images/zoom2.gif
 %%ICINGAWWWDIR%%/index.html
-%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.core.min.js
-%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.datepicker.min.js
-%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.mouse.min.js
-%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.slider.min.js
-%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.timepicker-addon.min.js
-%%ICINGAWWWDIR%%/jquery-ui/jquery.ui.widget.min.js
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_flat_75_ffffff_40x100.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_55_fbf9ee_1x400.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_65_ffffff_1x400.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_75_dadada_1x400.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_75_e6e6e6_1x400.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_glass_95_fef1ec_1x400.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_222222_256x240.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_2e83ff_256x240.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_454545_256x240.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_888888_256x240.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/images/ui-icons_cd0a0a_256x240.png
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.all.css
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.base.css
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.core.css
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.datepicker.css
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.slider.css
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.theme.css
-%%ICINGAWWWDIR%%/jquery-ui/theme/jquery.ui.timepicker-addon.css
+%%ICINGAWWWDIR%%/jquery-ui-addon/jquery.ui.timepicker-addon.css
+%%ICINGAWWWDIR%%/jquery-ui-addon/jquery.ui.timepicker-addon.min.js
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_glass_65_ffffff_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_glass_75_dadada_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-icons_222222_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-icons_2e83ff_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-icons_454545_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-icons_888888_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-icons_cd0a0a_256x240.png
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/jquery.ui.all.css
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/jquery.ui.base.css
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/jquery.ui.core.css
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/jquery.ui.datepicker.css
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/jquery.ui.slider.css
+%%ICINGAWWWDIR%%/jquery-ui/themes/base/jquery.ui.theme.css
+%%ICINGAWWWDIR%%/jquery-ui/ui/jquery.ui.core.js
+%%ICINGAWWWDIR%%/jquery-ui/ui/jquery.ui.datepicker.js
+%%ICINGAWWWDIR%%/jquery-ui/ui/jquery.ui.mouse.js
+%%ICINGAWWWDIR%%/jquery-ui/ui/jquery.ui.slider.js
+%%ICINGAWWWDIR%%/jquery-ui/ui/jquery.ui.widget.js
 %%ICINGAWWWDIR%%/js/checkbox_functions.js
 %%ICINGAWWWDIR%%/js/jquery-1.8.0.min.js
 %%ICINGAWWWDIR%%/js/jquery.dd.js
@@ -773,8 +838,11 @@ libexec/icinga/eventhandlers/submit_check_result
 @dirrm %%ICINGAWWWDIR%%/media
 @dirrm %%ICINGAWWWDIR%%/log
 @dirrm %%ICINGAWWWDIR%%/js
-@dirrm %%ICINGAWWWDIR%%/jquery-ui/theme/images
-@dirrm %%ICINGAWWWDIR%%/jquery-ui/theme
+@dirrm %%ICINGAWWWDIR%%/jquery-ui/ui
+@dirrm %%ICINGAWWWDIR%%/jquery-ui/themes/base/images
+@dirrm %%ICINGAWWWDIR%%/jquery-ui/themes/base
+@dirrm %%ICINGAWWWDIR%%/jquery-ui/themes
+@dirrm %%ICINGAWWWDIR%%/jquery-ui-addon
 @dirrm %%ICINGAWWWDIR%%/jquery-ui
 @dirrm %%ICINGAWWWDIR%%/images/logos
 @dirrm %%ICINGAWWWDIR%%/images

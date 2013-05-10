@@ -1,6 +1,6 @@
---- base/Makefile.in.orig	2012-05-15 13:00:56.000000000 +0000
-+++ base/Makefile.in	2012-05-16 19:18:25.684923160 +0000
-@@ -207,8 +207,8 @@
+--- base/Makefile.in.orig	2013-05-10 10:15:47.000000000 +0200
++++ base/Makefile.in	2013-05-10 10:16:17.000000000 +0200
+@@ -207,8 +207,8 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:
@@ -8,6 +8,6 @@
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)
- 	$(INSTALL) -m 774 $(INSTALL_OPTS) @icinga_name@ $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 774 $(INSTALL_OPTS) @icingastats_name@ $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) @icinga_name@ $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) @icingastats_name@ $(DESTDIR)$(BINDIR)
  

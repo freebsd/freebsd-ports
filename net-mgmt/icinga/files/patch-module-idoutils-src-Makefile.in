@@ -1,6 +1,6 @@
---- module/idoutils/src/Makefile.in.orig	2012-05-20 22:27:17.000000000 +0200
-+++ module/idoutils/src/Makefile.in	2012-05-20 22:27:40.000000000 +0200
-@@ -112,8 +112,8 @@
+--- module/idoutils/src/Makefile.in.orig	2013-05-10 10:17:03.000000000 +0200
++++ module/idoutils/src/Makefile.in	2013-05-10 10:17:26.000000000 +0200
+@@ -112,8 +112,8 @@ install:
  	@echo "Going to uninstall old idomod.o in $(DESTDIR)$(BINDIR)/idomod.o ..."
  	rm -f $(DESTDIR)$(BINDIR)/idomod.o
  	@echo "Resuming with install..."
@@ -8,6 +8,6 @@
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)
- 	$(INSTALL) -m 774 $(INSTALL_OPTS) ido2db $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 774 $(INSTALL_OPTS) log2ido $(DESTDIR)$(BINDIR)
- 	$(INSTALL) -m 774 $(INSTALL_OPTS) idomod.so $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) ido2db $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) log2ido $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) idomod.so $(DESTDIR)$(LIBDIR)
