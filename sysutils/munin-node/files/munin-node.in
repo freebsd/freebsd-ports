@@ -24,7 +24,7 @@ load_rc_config $name
 : ${munin_node_config="%%PREFIX%%/etc/munin/munin-node.conf"}
 
 command="%%PREFIX%%/sbin/munin-node"
-command_interpreter="/usr/bin/perl"
+command_interpreter="%%PREFIX%%/bin/perl"
 start_precmd=find_pidfile
 status_precmd=find_pidfile
 stop_precmd=find_pidfile
