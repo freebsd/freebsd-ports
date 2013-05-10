@@ -46,7 +46,7 @@ command_args="-p /var/run/cassandra.pid >/dev/null"
 stop_precmd="${name}_prestop"
 sig_stop="KILL"
 
-procname="%%LOCALBASE%%/openjdk6/bin/java"
+procname="%%LOCALBASE%%/openjdk7/bin/java"
 pidfile=/var/run/cassandra.pid
 
 export MAX_HEAP_SIZE="$cassandra_memory"
