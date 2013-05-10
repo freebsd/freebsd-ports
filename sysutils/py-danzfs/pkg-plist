@@ -4,6 +4,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_based_snapshots/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_based_snapshots/snapshot_cleanup.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_based_snapshots/take_snapshots.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-complex.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-local-simple.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-local-simple-datasets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-multiple-destination.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-multiple-pools.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-ssh-both.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-ssh-destination.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/rd-ssh-source.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicationd/replicationd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_get.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_everything.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_filesystems.py
@@ -13,4 +23,5 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_list.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_status.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/date_based_snapshots
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/replicationd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
