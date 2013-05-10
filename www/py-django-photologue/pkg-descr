@@ -4,4 +4,4 @@ solution. Effects, include reflections and transparent watermarks. Photologue
 embraces the Django admin and smoothly integrates with photo thumbnails and
 effect previews.
 
-WWW:    http://code.google.com/p/django-photologue/
+WWW: https://github.com/jdriscoll/django-photologue

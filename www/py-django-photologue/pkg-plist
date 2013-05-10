@@ -1,58 +1,199 @@
-%%PYTHON_SITELIBDIR%%/photologue/__init__.py
-%%PYTHON_SITELIBDIR%%/photologue/__init__.pyc
-%%PYTHON_SITELIBDIR%%/photologue/__init__.pyo
-%%PYTHON_SITELIBDIR%%/photologue/admin.py
-%%PYTHON_SITELIBDIR%%/photologue/admin.pyc
-%%PYTHON_SITELIBDIR%%/photologue/admin.pyo
-%%PYTHON_SITELIBDIR%%/photologue/management/__init__.py
-%%PYTHON_SITELIBDIR%%/photologue/management/__init__.pyc
-%%PYTHON_SITELIBDIR%%/photologue/management/__init__.pyo
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/__init__.py
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/__init__.pyc
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/__init__.pyo
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcache.py
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcache.pyc
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcache.pyo
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcreatesize.py
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcreatesize.pyc
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plcreatesize.pyo
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plflush.py
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plflush.pyc
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plflush.pyo
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plinit.py
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plinit.pyc
-%%PYTHON_SITELIBDIR%%/photologue/management/commands/plinit.pyo
-%%PYTHON_SITELIBDIR%%/photologue/models.py
-%%PYTHON_SITELIBDIR%%/photologue/models.pyc
-%%PYTHON_SITELIBDIR%%/photologue/models.pyo
-%%PYTHON_SITELIBDIR%%/photologue/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/photologue/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/photologue/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/photologue/templatetags/photologue_tags.py
-%%PYTHON_SITELIBDIR%%/photologue/templatetags/photologue_tags.pyc
-%%PYTHON_SITELIBDIR%%/photologue/templatetags/photologue_tags.pyo
-%%PYTHON_SITELIBDIR%%/photologue/tests.py
-%%PYTHON_SITELIBDIR%%/photologue/tests.pyc
-%%PYTHON_SITELIBDIR%%/photologue/tests.pyo
-%%PYTHON_SITELIBDIR%%/photologue/urls.py
-%%PYTHON_SITELIBDIR%%/photologue/urls.pyc
-%%PYTHON_SITELIBDIR%%/photologue/urls.pyo
-%%PYTHON_SITELIBDIR%%/photologue/utils/EXIF.py
-%%PYTHON_SITELIBDIR%%/photologue/utils/EXIF.pyc
-%%PYTHON_SITELIBDIR%%/photologue/utils/EXIF.pyo
-%%PYTHON_SITELIBDIR%%/photologue/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/photologue/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/photologue/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/photologue/utils/reflection.py
-%%PYTHON_SITELIBDIR%%/photologue/utils/reflection.pyc
-%%PYTHON_SITELIBDIR%%/photologue/utils/reflection.pyo
-%%PYTHON_SITELIBDIR%%/photologue/utils/watermark.py
-%%PYTHON_SITELIBDIR%%/photologue/utils/watermark.pyc
-%%PYTHON_SITELIBDIR%%/photologue/utils/watermark.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/photologue/management/commands
-@dirrm %%PYTHON_SITELIBDIR%%/photologue/management
-@dirrm %%PYTHON_SITELIBDIR%%/photologue/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/photologue/utils
-@dirrm %%PYTHON_SITELIBDIR%%/photologue
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/sitemaps.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/sitemaps.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/sitemaps.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/da/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/da/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en_US/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en_US/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/es_ES/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/es_ES/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/fr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/hu/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/hu/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/it/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/it/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/nl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/nl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/no/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/no/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt_BR/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt_BR/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/ru/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/ru/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/tr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/tr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plcache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plcache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plcache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plcreatesize.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plcreatesize.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plcreatesize.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plflush.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plflush.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plflush.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plinit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plinit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plinit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0001_initial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0001_initial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0001_initial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0002_auto__chg_field_gallery_title__chg_field_galleryupload_title__chg_fiel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0002_auto__chg_field_gallery_title__chg_field_galleryupload_title__chg_fiel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0002_auto__chg_field_gallery_title__chg_field_galleryupload_title__chg_fiel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0003_auto__chg_field_photosize_name.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0003_auto__chg_field_photosize_name.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0003_auto__chg_field_photosize_name.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/sample.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/test_&quoting.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/test_landscape.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/test_portrait.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/test_square.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/gallery_archive.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/gallery_archive_day.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/gallery_archive_month.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/gallery_archive_year.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/gallery_detail.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/gallery_list.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/photo_archive.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/photo_archive_day.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/photo_archive_month.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/photo_archive_year.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/photo_detail.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/photo_list.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/root.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/tags/next_in_gallery.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/tags/prev_in_gallery.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags/photologue_tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags/photologue_tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags/photologue_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/effect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/effect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/effect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/gallery.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/gallery.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/gallery.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/helpers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/mock_settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/mock_settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/mock_settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/photo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/photo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/photo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/resize.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/resize.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/resize.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/sitemap.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/sitemap.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/sitemap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/sitemap_urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/sitemap_urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/sitemap_urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/views_gallery.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/views_gallery.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/views_gallery.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/views_photo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/views_photo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/views_photo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/EXIF.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/EXIF.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/EXIF.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/reflection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/reflection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/reflection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/watermark.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/watermark.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils/watermark.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue/tags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates/photologue
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/no
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/es_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/es_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en_US/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en_US
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
