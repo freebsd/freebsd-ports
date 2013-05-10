@@ -1,4 +1,9 @@
+# New ports collection makefile for:    logstash
+# Date created:         10 May 2013
+# Whom:			Daniel Solsona <daniel@ish.com.au> et al.
+#
 # $FreeBSD$
+#
 
 PORTNAME=	logstash
 PORTVERSION=	1.1.1
