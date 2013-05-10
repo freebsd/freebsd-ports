@@ -1,4 +1,23 @@
 DanZFS provides a Python API for checking the status of ZFS without the use of
-libzfs.
+libzfs by calling the system binaries and parsing the output.
+
+Currently you can: -
+
+1. List the ZFS properties (name, property, value, source)
+2. List filesystems, snapshots, and volumes (name, used, available, refer, and
+mountpoint)
+3. Query the pool IO statistics (name, capacity, operations, and bandwidth)
+4. List the pools (name, size, allocated, free, capacity, deduplication, health,
+and alternativeroot)
+5. Query the pool status (name, state, status, action, scan, config-type,
+config-disks, and errors)
+6. Replication "daemon" allowing near realtime local and remote replication
+using snapshots.
+
+The data from the API calls will be returned as a Python dictionary.
+
+Example code is provided and will be installed into the
+${PREFIX}/share/examples/danzfs directory.
+
 
 WWW:	http://code.google.com/p/danzfs/
