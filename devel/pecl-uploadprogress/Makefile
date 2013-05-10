@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-uploadprogress
-# Date created:			2006/12/06
-# Whom:				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	uploadprogress
 PORTVERSION=	1.0.2
@@ -19,7 +15,6 @@ COMMENT=	Provides track progress of a file upload
 USE_PHP=	yes
 USE_PHPEXT=	yes
 IGNORE_WITH_PHP=4
-DEFAULT_PHP_VER=53
 
 CONFIGURE_ARGS=	--enable-uploadprogress
 
