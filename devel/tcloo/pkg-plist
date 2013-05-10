@@ -4,3 +4,4 @@ lib/TclOO%%PORTVERSION%%/tclooConfig.sh
 lib/TclOO%%PORTVERSION%%/libTclOOstub.a
 include/tclOO.h
 include/tclOODecls.h
+@dirrm lib/TclOO%%PORTVERSION%%
