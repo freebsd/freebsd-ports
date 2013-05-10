@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/inspircd
 USE_RC_SUBR=	inspircd
 MAKE_JOBS_SAFE=	yes
-SHEBANG_FILES=	configure inspircd modulemanager make/run-cc.pl
+SHEBANG_FILES=	configure modulemanager make/run-cc.pl
 
 USERS=	${INCPIRCD_USR}
 GROUPS=	${INSPIRCD_GRP}
