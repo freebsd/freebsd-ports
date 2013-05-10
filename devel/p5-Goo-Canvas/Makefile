@@ -26,6 +26,8 @@ RUN_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN=		fails to build
+
 MAN1=		perltetris.pl.1 perlmine.pl.1
 MAN3=		Goo::Canvas::Item.3 \
 		Goo::Canvas.3 \
