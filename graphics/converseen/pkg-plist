@@ -1,18 +1,18 @@
 bin/converseen
 share/applications/converseen.desktop
-share/converseen/converseen_cs_CZ.qm
-share/converseen/converseen_de_DE.qm
-share/converseen/converseen_es_CL.qm
-share/converseen/converseen_fr_FR.qm
-share/converseen/converseen_hu_HU.qm
-share/converseen/converseen_it_IT.qm
-share/converseen/converseen_pl_PL.qm
-share/converseen/converseen_pt_BR.qm
-share/converseen/converseen_ru_RU.qm
-share/converseen/converseen_tr_TR.qm
+%%DATADIR%%/converseen_cs_CZ.qm
+%%DATADIR%%/converseen_de_DE.qm
+%%DATADIR%%/converseen_es_CL.qm
+%%DATADIR%%/converseen_fr_FR.qm
+%%DATADIR%%/converseen_hu_HU.qm
+%%DATADIR%%/converseen_it_IT.qm
+%%DATADIR%%/converseen_pt_BR.qm
+%%DATADIR%%/converseen_ru_RU.qm
+%%DATADIR%%/converseen_tr_TR.qm
 share/kde4/services/ServiceMenus/converseen_import.desktop
 share/pixmaps/converseen.png
 @dirrmtry share/kde4/services/ServiceMenus
 @dirrmtry share/kde4/services
 @dirrmtry share/kde4
-@dirrm share/converseen
+@dirrmtry share/applications
+@dirrm %%DATADIR%%
