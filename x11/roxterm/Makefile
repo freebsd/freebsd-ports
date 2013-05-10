@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	roxterm
-PORTVERSION=	2.6.5
+PORTVERSION=	2.7.1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -19,9 +19,9 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
+USES=		gettext pkgconfig
 USE_GNOME=	libglade2 vte
 USE_PYTHON_BUILD=	yes
-USES=		pkgconfig gettext
 USE_AUTOTOOLS=	libtool:env
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
@@ -29,15 +29,15 @@ MAKE_JOBS_SAFE=	yes
 MAN1=	roxterm.1 \
 	roxterm-config.1
 
-MAITCHFLAGS=	CC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${_make_jobs}
+MAITCHFLAGS=	CC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.options.mk>
-
-_make_jobs=	${MAKE_JOBS_NUMBER}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}|' ${WRKSRC}/maitch.py
+	@${REINPLACE_CMD} -e \
+		's|= "-T"|= ""|' ${WRKSRC}/mscript.py
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} MAITCHFLAGS="${MAITCHFLAGS}" \
@@ -63,6 +63,12 @@ do-install:
 	(cd ${WRKSRC}/build/usr/local/share/icons/hicolor/scalable/apps \
 		&& ${INSTALL_DATA} * \
 		${PREFIX}/share/icons/hicolor/scalable/apps)
+.for i in es fr pt_BR ru uk
+	@${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
+	(cd ${WRKSRC}/build/usr/local/share/locale/${i}/LC_MESSAGES/roxterm.mo \
+		&& ${INSTALL_DATA} ${i}.mo \
+		${PREFIX}/share/locale/${i}/LC_MESSAGES/roxterm.mo)
+.endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/build/usr/local/share/doc/roxterm \
