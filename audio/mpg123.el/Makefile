@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpg123.el
-# Date created:		99/10/6
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpg123.el
 PORTVERSION=	1.52
@@ -25,6 +21,8 @@ ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 myFETCH_CMD=	${FETCH_CMD} -AR
+
+BROKEN=		fails to fetch
 
 do-fetch:
 	${myFETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES}/mpg123el.cgi?${PORTVERSION}
