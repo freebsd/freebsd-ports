@@ -1,9 +1,5 @@
-# New ports collection makefile for: NetAMS
-# Date created:        24 December 2003
-# Whom: 	       jura@netams.com
-#
+# Created by: Yuriy N. Shkandybin <jura@netams.com>
 # $FreeBSD$
-#
 
 PORTNAME=	netams
 PORTVERSION=	3.4.5
@@ -21,10 +17,14 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	netams
 MANCOMPRESSED=	no
 
-OPTIONS=	DEBUG		"Build with debug symbols"			off \
-		MYSQL		"Build with MySQL storage support" 		on  \
-		POSTGRESQL	"Build with PostgreSQL storage support"		off \
-		CGI 		"Install admin/user CGI scripts"		off
+OPTIONS_DEFINE=	DEBUG CGI
+OPTIONS_DEFAULT=	MYSQL
+OPTIONS_MULTI=	DATABASE
+OPTIONS_MULTI_DATABASE=	MYSQL POSTGRESQL
+DEBUG_DESC=	Build with debug symbols
+MYSQL_DESC=	Build with MySQL storage support
+POSTGRESQL_DESC=	Build with PostgreSQL storage support
+CGI_DESC=	Install admin/user CGI scripts
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		PREFIX="${PREFIX}" \
@@ -46,18 +46,14 @@ MAN8=		netams.8 flowprobe.8 netamsctl.8
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
-IGNORE=requires at least one database backend selected. Run 'make config'
-.endif
-
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPOSTGRESQL}
 USE_PGSQL=		yes
 PLIST_SUB+=		POSTGRESQL=""
 .else
 PLIST_SUB+=		POSTGRESQL="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 BROKEN_WITH_MYSQL=	323
 PLIST_SUB+=		MYSQL=""
@@ -65,15 +61,15 @@ PLIST_SUB+=		MYSQL=""
 PLIST_SUB+=		MYSQL="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL) && defined(WITH_CGI)
+.if ${PORT_OPTIONS:MPOSTGRESQL} && ${PORT_OPTIONS:MCGI}
 RUN_DEPENDS+=		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_MYSQL) && defined(WITH_CGI)
+.if ${PORT_OPTIONS:MMYSQL} && ${PORT_OPTIONS:MCGI}
 RUN_DEPENDS+=		p5-DBD-mysql50>=0:${PORTSDIR}/databases/p5-DBD-mysql50
 .endif
 
-.if defined(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
 		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil \
@@ -88,15 +84,15 @@ PLIST_SUB+=	CGI="@comment "
 .endif
 
 pre-patch:
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 	@${REINPLACE_CMD} -e 's|.*sh configure.sh|& -nodebug|' \
 		${WRKSRC}/Makefile
 .endif
-.if !defined(WITH_POSTGRESQL)
+.if ! ${PORT_OPTIONS:MPOSTGRESQL}
 	@${REINPLACE_CMD} -e 's|locate_file "libpq\.so".*|v1="" \&\& v2=""|' \
 		${WRKSRC}/configure.sh
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MWITH_MYSQL}
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!/usr/local/bin/perl|' ${WRKSRC}/addon/mysql_rotate.pl
 .else
 	@${REINPLACE_CMD} -e 's|locate_file "libmysqlclient\.so".*|v1="" \&\& v2=""|' \
@@ -121,11 +117,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/addon/ru-networks.txt ${DATADIR}/ru-networks.txt.sample
 	${INSTALL_DATA} ${WRKSRC}/addon/ua-networks.txt ${DATADIR}/ua-networks.txt.sample
 	${INSTALL_DATA} ${WRKSRC}/addon/.netamsctl.rc ${DATADIR}/.netamsctl.rc
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	${INSTALL_DATA} ${WRKSRC}/addon/mysql_rotate.pl ${DATADIR}/mysql_rotate.pl
 	${INSTALL_DATA} ${WRKSRC}/addon/cardtool_schema.sql ${DATADIR}/tools/cardtool_schema.sql
 .endif
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPOSTGRESQL}
 	${INSTALL_DATA} ${WRKSRC}/addon/cardtool_schema-Pg.sql ${DATADIR}/tools/cardtool_schema-Pg.sql
 	${INSTALL_DATA} ${WRKSRC}/addon/postgresql_schema.sql ${DATADIR}/tools/postgresql_schema.sql
 .endif
@@ -138,7 +134,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/addon/oracle/netams_tg.sql ${DATADIR}/tools/oracle/netams_tg.sql
 	${INSTALL_DATA} ${WRKSRC}/addon/oracle/netams_ts.sql ${DATADIR}/tools/oracle/netams_ts.sql
 	${INSTALL_DATA} ${WRKSRC}/addon/netams-apache-freebsd.conf ${DATADIR}/netams-apache-freebsd.conf
-.if defined(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 	${MKDIR} ${WWWDIR} ${WWWDIR}/cgi-bin ${WWWDIR}/cgi-bin/admin ${WWWDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/addon/index.html ${WWWDIR}/index.html
 	${INSTALL_DATA} ${WRKSRC}/addon/netams.js ${WWWDIR}/netams.js

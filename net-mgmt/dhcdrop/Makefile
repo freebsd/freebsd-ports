@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dhcdrop
-# Date created:         Aug 9 2009
-# Whom:                 Nick F
-#
+# Created by: Nick F <ffault@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dhcdrop
 PORTVERSION=	0.5
@@ -21,12 +17,18 @@ MANLANG=	"" ru
 
 PLIST_FILES=	sbin/dhcdrop
 
-OPTIONS=	STATIC "Build a static version of dhcdrop" off
+OPTIONS_DEFINE=	STATIC
+STATIC_DESC=	Build a static version of dhcdrop
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=--enable-static-build
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's,inline void rand_ether_addr,static void rand_ether_addr,' \
+			${WRKSRC}/src/dhcdrop.[c,h]
 
 .include <bsd.port.mk>

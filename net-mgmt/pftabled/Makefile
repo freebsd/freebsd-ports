@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pftabled
-# Date created:		2006-11-21
-# Whom:			Bartlomiej Rutkowski <r@robakdesign.com>
-#
+# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pftabled
 PORTVERSION=	1.09
@@ -21,19 +17,21 @@ PLIST_FILES=	bin/pftabled-client sbin/pftabled
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	PERLC   "A Sample Perl Client" on \
-		PYTHONC "A Sample Python Client" on
+OPTIONS_DEFINE=	PERLC PYTHONC
+OPTIONS_DEFAULT=	PERLC PYTHONC
+PERLC_DESC=	A Sample Perl Client
+PYTHONC_DESC=	A Sample Python Client
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PERLC)
+.if ${PORT_OPTIONS:MPERLC}
 . if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
 . endif
 PLIST_FILES+=	bin/pftabled-client.pl
 .endif
 
-.if !defined(WITHOUT_PYTHONC)
+.if ${PORT_OPTIONS:MPYTHONC}
 PLIST_FILES+=	bin/pftabled-client.py
 .endif
 
@@ -41,10 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|cat1/pftabled.0|man1/pftabled.0|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(WITHOUT_PERLC)
+.if ${PORT_OPTIONS:MPERLC}
 	${INSTALL_SCRIPT} ${WRKSRC}/pftabled-client.pl ${PREFIX}/bin/
 .endif
-.if !defined(WITHOUT_PYTHONC)
+.if ${PORT_OPTIONS:MPYTHONC}
 	${INSTALL_SCRIPT} ${WRKSRC}/pftabled-client.py ${PREFIX}/bin/
 .endif
 
