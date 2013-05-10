@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-PORTVERSION=	4.48
+PORTVERSION=	4.49
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -53,17 +53,17 @@ post-patch:
 	@${REINPLACE_CMD} -e "s;\/usr\/include\/mysql;${LOCALBASE}\/include\/mysql;g" \
 	${WRKSRC}/configure
 
-.if ${PORT_OPTIONS:MDOCS}
 DOCS1=	cnfsat.pdf glpk.pdf glpk_faq.txt gmpl.pdf graphs.pdf miplib2.txt \
 	miplib3.txt netlib.txt
 DOCS2=	dfeas.pdf gomory.pdf keller.pdf scaling.pdf updating.pdf
 PORTDOCS=	${DOCS1} ${DOCS2}
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/src/glplpx.h ${PREFIX}/include
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; \
 	${INSTALL_DATA} ${DOCS1} ${DOCS2:S|^|notes/|} ${DOCSDIR}
-
 .endif
 
 check regression-test test: build
