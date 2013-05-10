@@ -2,39 +2,77 @@
 # $FreeBSD$
 
 PORTNAME=	ipe
-DISTVERSION=	7.1.2
-PORTREVISION=	1
+PORTVERSION=	7.1.4
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}7/${PORTNAME}/7.1.0
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+MASTER_SITES=	SF/${PORTNAME}${PORTVERSION:R:R}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extensible drawing editor
+COMMENT=	Extensible vector graphics editor with Latex text support
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+LICENSE=	GPLv3 # (or later)
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
+		lua-5.2:${PORTSDIR}/lang/lua52
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+
+OPTIONS_DEFINE=	DOCS
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USES=		pkgconfig
-USE_LDCONFIG=	yes
-USE_LUA=	5.1
+USE_QT4=	gui moc_build qmake_build rcc_build uic_build
+USE_TEX=	tetex-base
 USE_GMAKE=	yes
-USE_QT4=	gui qt3support qmake_build moc_build uic_build rcc_build
-USE_TEX=	tetex
-MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 ipescript.1
+MAKE_ENV=	DLL_CFLAGS="-fPIC" \
+		ICONV_CFLAGS="-I${LOCALBASE}/include" \
+		ICONV_LIBS="-L${LOCALBASE}/lib -liconv" \
+		INSTALL_DIR="${MKDIR}" \
+		INSTALL_FILES="${INSTALL_DATA}" \
+		INSTALL_SCRIPTS="${INSTALL_SCRIPT}" \
+		INSTALL_PROGRAMS="${INSTALL_PROGRAM}" \
+		IPE_USE_ICONV="-DIPE_USE_ICONV" \
+		IPEDOCDIR="${DOCSDIR}" \
+		IPEMANDIR="${MANPREFIX}/man/man1" \
+		IPEPREFIX="${PREFIX}" \
+		LUA_CFLAGS="-I${LOCALBASE}/include/lua52" \
+		LUA_LIBS="-L${LOCALBASE}/lib -llua-5.2" \
+		MOC="${MOC}"
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 \
+		ipescript.1
+PORTDOCS=	*
+
+DESKTOP_ENTRIES="Ipe" "" "${DATADIR}/${PORTVERSION}/ipe.png" \
+		"${PORTNAME}" "" true
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MDOCS}
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-ipe__Makefile
-.endif
-
-PLIST_SUB+=	VERSION="${DISTVERSION}"
+post-patch:
+	@cd ${WRKSRC}/../fontmaps && ${SED} -e \
+		's|/usr/share|${LOCALBASE}/share| ; \
+		 s|type1/gsfonts|ghostscirpt/fonts|' \
+		< gsfonts-fontmap.xml > fontmap.xml
+	@${REINPLACE_CMD} -e \
+		's|^INSTALL_|#INSTALL_| ; \
+		 /-O2/s|^|#|' ${WRKSRC}/common.mak
+	@${REINPLACE_CMD} -e \
+		's|\([[:blank:]]\)=|\1?=|' ${WRKSRC}/config.mak
+	@${REINPLACE_CMD} -e \
+		'/$$(INSTALL_ROOT)$$(IPEDOCDIR)/s|^|#|' ${WRKSRC}/ipe/Makefile
+	@${REINPLACE_CMD} -e \
+		'/%s/s|gnome-open|xdg-open|' ${WRKSRC}/ipe/lua/prefs.lua
 
 post-install:
-	cd ${WRKSRC}/../fontmaps && ${MKDIR} ${DATADIR}/${DISTVERSION} && \
-	${SED} s,/usr/share/fonts/type1/gsfonts,${PREFIX}/share/ghostscript/fonts, \
-	< gsfonts-fontmap.xml > ${DATADIR}/${DISTVERSION}/fontmap.xml
+	(cd ${WRKSRC}/../fontmaps && ${INSTALL_DATA} fontmap.xml \
+		${DATADIR}/${PORTVERSION})
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/../build/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
