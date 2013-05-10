@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	django-photologue
-PORTVERSION=	2.2
+PORTVERSION=	2.5
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
@@ -16,24 +16,17 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
-OPTIONS_DEFINE=		TAGGING DOCS
+OPTIONSFILE= ${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONS_DEFINE=		TAGGING
 OPTIONS_DEFAULT=	TAGGING
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTAGGING}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/tagging/models.py:${PORTSDIR}/www/py-django-tagging
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
