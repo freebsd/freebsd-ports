@@ -2,6 +2,7 @@
 
 PORTNAME=	kpathsea
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -12,7 +13,6 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
 USE_XZ=		yes
-USE_TEX=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
