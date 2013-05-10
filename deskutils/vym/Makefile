@@ -18,6 +18,8 @@ QMAKE_ARGS=	PREFIX=${PREFIX} \
 		DOCDIR=${DOCSDIR}
 QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
+BROKEN=		fails to package
+
 MAKE_JOBS_SAFE=	yes
 STRIP_FILES=	bin/vym
 
