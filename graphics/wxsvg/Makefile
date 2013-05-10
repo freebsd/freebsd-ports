@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.15
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -32,5 +32,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
 LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
 LIBAV_LIBS=	$$(pkg-config --libs ${LIBAV_PC})
+
+post-extract:
+.for i in configure install-sh
+	@${CHMOD} ${BINMODE} ${WRKSRC}/${i}
+.endfor
 
 .include <bsd.port.mk>
