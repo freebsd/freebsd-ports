@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-i
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USES=		bison gettext pathfix pkgconfig
+# workaround a crash in clang 3.3 crash llvm bug # 15840
+USE_GCC=	any
 USE_XZ=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAVE=	yes
