@@ -53,7 +53,7 @@ USES=		pkgconfig
 .if ${PORT_OPTIONS:MNLS}
 mycflags+=	-DENABLE_NLS
 mylibs+=	-L${LOCALBASE}/lib -lintl
-USE_GETTEXT=	yes
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 
 post-patch:
