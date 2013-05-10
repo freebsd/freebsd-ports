@@ -1,9 +1,5 @@
-# New ports collection makefile for: net-p2p/eiskaltdc
-# Date created:		28 Aug 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	eiskaltdcpp-gtk
 PORTVERSION=	2.2.4
@@ -35,9 +31,11 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	MINIUPNP	"UPnP support"	on \
-		LIBGNOME2	"Sound notification support"	off \
-		LIBNOTIFY	"Popup notification support"	on
+OPTIONS_DEFINE=	MINIUPNP LIBGNOME2 LIBNOTIFY
+OPTIONS_DEFAULT=	MINIUPNP LIBNOTIFY
+MINIUPNP_DESC=	UPnP support
+LIBGNOME2_DESC=	Sound notification support
+LIBNOTIFY_DESC=	Popup notification support
 
 USE_GNOME=	pango gtk20 glib20
 
@@ -51,29 +49,25 @@ CMAKE_ARGS+=	-DINSTALL_DATA:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MINIUPNP)
+.if ${PORT_OPTIONS:MMINIUPNP}
 LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
 .endif
 
-.if defined(WITH_LIBGNOME2)
+.if ${PORT_OPTIONS:MLIBGNOME2}
 USE_GNOME+=	libgnome
 CMAKE_ARGS+=	-DUSE_LIBGNOME2:BOOL=ON
 .else
 CMAKE_ARGS+=	-DUSE_LIBGNOME2:BOOL=OFF
 .endif
 
-.if defined(WITH_LIBNOTIFY)
+.if ${PORT_OPTIONS:MLIBNOTIFY}
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 CMAKE_ARGS+=	-DUSE_LIBNOTIFY:BOOL=ON
 .else
 CMAKE_ARGS+=	-DUSE_LIBNOTIFY:BOOL=OFF
-.endif
-
-.if ${OSVERSION} < 700024
-USE_OPENSSL_PORT=yes
 .endif
 
 post-build:

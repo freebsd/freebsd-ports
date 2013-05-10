@@ -1,9 +1,5 @@
-# New ports collection makefile for: net-p2p/eiskaltdc
-# Date created:		28 Aug 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	eiskaltdcpp-qt
 PORTVERSION=	2.2.4
@@ -36,13 +32,14 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	ASPELL		"Build with aspell support" off \
-		FREE_SPACE	"Free space bar in status panel"	on \
-		DBUS_NOTIFY	"DBus notification support"	on \
-		QTSCRIPT	"QtScript support"	off \
-		QML	"Qt Declarative ui support" off \
-		SQLITE	"SQLite support (experimental)" off \
-		MINIUPNP	"UPnP support"	on
+OPTIONS_DEFINE=	ASPELL FREE_SPACE DBUS_NOTIFY QTSCRIPT QML SQLITE MINIUPNP
+OPTIONS_DEFAULT=	FREE_SPACE DBUS_NOTIFY MINIUPNP
+FREE_SPACE_DESC=	Free space bar in status panel
+DBUS_NOTIFY_DESC=	DBus notification support
+QTSCRIPT_DESC=		QtScript support
+QML_DESC=		Qt Declarative ui support
+SQLITE_DESC=		SQLite support (experimental)
+MINIUPNP_DESC=		UPnP support
 
 USE_QT4=	gui xml network qmake_build uic_build \
 		moc_build rcc_build linguist_build
@@ -58,27 +55,27 @@ INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ASPELL) && !defined(WITHOUT_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=on
 .else
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=0
 .endif
 
-.if defined(WITH_FREE_SPACE)
+.if ${PORT_OPTIONS:MFREE_SPACE}
 CMAKE_ARGS+=	-DFREE_SPACE_BAR_C:BOOL=ON
 .else
 CMAKE_ARGS+=	-DFREE_SPACE_BAR_C:BOOL=OFF
 .endif
 
-.if defined(WITH_DBUS_NOTIFY) && !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS_NOTIFY}
 CMAKE_ARGS+=	-DDBUS_NOTIFY:BOOL=ON
 USE_QT4+=	dbus
 .else
 CMAKE_ARGS+=	-DDBUS_NOTIFY:BOOL=OFF
 .endif
 
-.if defined(WITH_QTSCRIPT)
+.if ${PORT_OPTIONS:MQTSCRIPT}
 CMAKE_ARGS+=	-DUSE_JS:BOOL=ON
 USE_QT4+=	script
 RUN_DEPENDS+=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
@@ -88,34 +85,28 @@ CMAKE_ARGS+=	-DUSE_JS:BOOL=OFF
 PLIST_SUB+=	QTSCRIPT="@comment "
 .endif
 
-.if defined(WITH_QML)
+.if ${PORT_OPTIONS:MQML}
 CMAKE_ARGS+=	-DUSE_QT_QML:BOOL=ON
 USE_QT4+=	declarative
 .else
 CMAKE_ARGS+=	-DUSE_QT_QML:BOOL=OFF
 .endif
 
-.if defined(WITH_SQLITE) && !defined(WITHOUT_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=ON
 USE_QT4+=	sql-sqlite3
 .else
 CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=OFF
 .endif
 
-.if defined(WITH_MINIUPNP)
+.if ${PORT_OPTIONS:MMINIUPNP}
 LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700024
-USE_OPENSSL_PORT=yes
-.endif
-
 post-build:
 	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/${PORTNAME}/${PORTNAME}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

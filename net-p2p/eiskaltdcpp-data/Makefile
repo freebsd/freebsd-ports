@@ -1,9 +1,5 @@
-# New ports collection makefile for: net-p2p/eiskaltdc
-# Date created:		28 Aug 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	eiskaltdcpp-data
 PORTVERSION=	2.2.4
@@ -23,34 +19,36 @@ USE_XZ=		yes
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS=	EMOTICONS	"Install emoticons"	on \
-		EXAMPLES	"Install script examples"	on \
-		LUASCRIPTS	"Install lua script examples"	off \
-		SOUNDS	"Install sound files"	on
+OPTIONS_DEFINE=	EMOTICONS EXAMPLES LUASCRIPTS SOUND
+OPTIONS_DEFAULT=	EMOTICONS SOUNDS
+EMOTICONS_DESC=		Install emoticons
+EXAMPLES_DESC=		Install script examples
+LUASCRIPTS_DESC=	Install lua script examples
+SOUNDS_DESC=		Install sound files
 
 .include <bsd.port.options.mk>
 
 DATA_DIR=	${PREFIX}/share/eiskaltdcpp
 
-.if defined(WITH_EMOTICONS)
+.if ${PORT_OPTIONS:MEMOTICONS}
 PLIST_SUB+=	EMOTICONS=""
 .else
 PLIST_SUB+=	EMOTICONS="@comment "
 .endif
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-.if defined(WITH_LUASCRIPTS)
+.if ${PORT_OPTIONS:MLUASCRIPTS}
 PLIST_SUB+=	LUASCRIPTS=""
 .else
 PLIST_SUB+=	LUASCRIPTS="@comment "
 .endif
 
-.if defined(WITH_SOUNDS)
+.if ${PORT_OPTIONS:MSOUNDS}
 PLIST_SUB+=	SOUNDS=""
 .else
 PLIST_SUB+=	SOUNDS="@comment "
@@ -63,17 +61,17 @@ do-install:
 	@${MKDIR} "${LOCALBASE}/share/icons/hicolor/${SIZE}/apps"
 	@${CP} -v "${WRKSRC}/icons/icon_${SIZE}.png" "${LOCALBASE}/share/icons/hicolor/${SIZE}/apps/eiskaltdcpp.png"
 .endfor
-.if defined(WITH_EMOTICONS)
+.if ${PORT_OPTIONS:MEMOTICONS}
 	@${CP} -rv ${WRKSRC}/emoticons ${DATA_DIR}
 .endif
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${DATA_DIR}/examples
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${DATA_DIR}/examples
 .endif
-.if defined(WITH_LUASCRIPTS)
+.if ${PORT_OPTIONS:MLUASCRIPTS}
 	@${CP} -rv ${WRKSRC}/luascripts ${DATA_DIR}
 .endif
-.if defined(WITH_SOUNDS)
+.if ${PORT_OPTIONS:MSOUNDS}
 	@${CP} -rv ${WRKSRC}/sounds ${DATA_DIR}
 .endif
 

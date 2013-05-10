@@ -1,9 +1,5 @@
-# New ports collection makefile for:	verlihub-plugins-luascript
-# Date created:				3 May 2007
-# Whom:					Skylord
-#
+# Created by: Skylord
 # $FreeBSD$
-#
 
 PORTNAME=	luascript
 PORTVERSION=	1.8.1
@@ -23,7 +19,8 @@ CXXFLAGS+=	${LDFLAGS}
 CPPFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 
-OPTIONS=	SOCKET "Build with LuaSocket support" Off
+OPTIONS_DEFINE=	SOCKET
+SOCKET_DESC=	Build with LuaSocket support
 
 PLIST_FILES=	share/verlihub/scripts/ptokax.lua.inc \
 		share/verlihub/scripts/ptokaxtest.lua \
@@ -32,7 +29,7 @@ PLIST_DIRS=	share/verlihub/scripts
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SOCKET)
+.if ${PORT_OPTIONS:MSOCKET}
 LUA_COMPS+=	socket:lib
 CONFIGURE_ARGS+=	--with-luasocket
 

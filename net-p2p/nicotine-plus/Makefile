@@ -27,27 +27,30 @@ DOCSDIR=	share/doc/${PKGNAMEPREFIX:S/-//}
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 MAN1=		nicotine-import-winconfig.1 nicotine.1
 
-OPTIONS=	GEOIP "Enable the GeoIP based country code blocker" on \
-		PSYCO "Enable Psyco, the optimizing Python compiler" on \
-		MUTAGEN "Enable Mutagen for audio metadata support" on \
-		LIBSEXY	"Enable libsexy support"	on \
-		MINIUPNPC "Enable upnp support"	on
+OPTIONS_DEFINE=	GEOIP PSYCO MUTAGEN LIBSEXY MINIUPNPC DOCS
+OPTIONS_DEFINE_i386=	PSYCO
+OPTIONS_DEFAULT=	GEOIP PSYCO MUTAGEN LIBSEXY MINIUPNPC
+GEOIP_DESC=	Enable the GeoIP based country code blocker
+PSYCO_DESC=	Enable Psyco, the optimizing Python compiler
+MUTAGEN_DESC=	Enable Mutagen for audio metadata support
+LIBSEXY_DESC=	Enable libsexy support
+MINIUPNPC_DESC=	Enable upnp support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/GeoIP.so:${PORTSDIR}/net/py-GeoIP
 .endif
-.if defined(WITH_PSYCO) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MPSYCO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
-.if defined(WITH_MUTAGEN)
+.if ${PORT_OPTIONS:MMUTAGEN}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 .endif
-.if defined(WITH_LIBSEXY)
+.if ${PORT_OPTIONS:MLIBSEXY}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/sexy.so:${PORTSDIR}/x11-toolkits/py-sexy
 .endif
-.if defined(WITH_MINIUPNPC)
+.if ${PORT_OPTIONS:MMINIUPNPC}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/miniupnpc.so:${PORTSDIR}/net/py-miniupnpc
 .endif
 
@@ -55,11 +58,11 @@ post-extract:
 	@${MV} ${WRKSRC}/${PKGNAMEPREFIX:S/-//}.py ${WRKSRC}/${PKGNAMEPREFIX:S/-//}
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -i "" -e 's|^doc_files.*|doc_files = ""|g' ${WRKSRC}/setup.py
 .endif
 	@${REINPLACE_CMD} -e \
 		"s|sys\.prefix|\"${PREFIX}\"|g" -e \
 			"s|nicotine.py|nicotine|g" ${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

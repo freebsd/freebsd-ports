@@ -1,9 +1,5 @@
-# New ports collection makefile for: net-p2p/eiskaltdc
-# Date created:		28 Aug 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	eiskaltdcpp-daemon
 PORTVERSION=	2.2.4
@@ -30,7 +26,9 @@ USES=		cmake gettext
 USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	XMLRPC	"XMLRPC interface support" on
+OPTIONS_DEFINE=	XMLRPC
+OPTIONS_DEFAULT=	XMLRPC
+XMLRPC_DESC=	XMLRPC interface support
 
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
@@ -53,20 +51,14 @@ INSTALL_WRKSRC=	${WRKSRC}/nasdc
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XMLRPC) && !defined(WITHOUT_XMLRPC)
+.if ${PORT_OPTIONS:MXMLRPC}
 LIB_DEPENDS+=	xmlrpc++:${PORTSDIR}/net/xmlrpc-c-devel
 CMAKE_ARGS+=	-DXMLRPC_DAEMON:BOOL=ON
 .else
 CMAKE_ARGS+=	-DXMLRPC_DAEMON:BOOL=OFF
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700024
-USE_OPENSSL_PORT=yes
-.endif
-
 post-build:
 	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/nasdc/${PORTNAME}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

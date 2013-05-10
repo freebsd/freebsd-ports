@@ -30,7 +30,8 @@ NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" off
+OPTIONS_DEFINE=	SWTDEVEL
+SWTDEVEL_DESC=	Use SWT Development port
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -43,9 +44,9 @@ SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SWTDEVEL)
+.if ${PORT_OPTIONS:MSWTDEVEL}
 SWT=		swt-devel
 .else
 SWT=		swt
@@ -71,4 +72,4 @@ do-install:
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
