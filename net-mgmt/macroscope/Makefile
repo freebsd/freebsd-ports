@@ -1,9 +1,5 @@
-# New ports collection makefile for:	macroscope
-# Date created:		2007-05-14
-# Whom:			Dukashvili Guram <white_raven@users.berlios.de>
-#
+# Created by: Dukashvili Guram <white_raven@users.berlios.de>
 # $FreeBSD$
-#
 
 PORTNAME=		macroscope
 PORTVERSION=		1.0.3787
@@ -25,21 +21,23 @@ USE_BZIP2=		yes
 USE_DOS2UNIX=		yes
 USES=			cmake
 
-OPTIONS=		MYSQL		"With MySQL support" on \
-			FIREBIRD	"With Firebird support" off
+OPTIONS_DEFINE=	MYSQL FIREBIRD DOCS
+MYSQL_DESC=	With MySQL support
+FIREBIRD_DESC=	With Firebird support
+OPTIONS_DEFAULT=	MYSQL
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 CMAKE_ARGS+=		-DCMAKE_NOT_INSTALL_DOC:BOOL=ON
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 WANT_MYSQL_VER=		50
 USE_MYSQL=		yes
 .endif
 
-.if !defined(WITHOUT_FIREBIRD)
+.if ${PORT_OPTIONS:MFIREBIRD}
 WITH_FIREBIRD_VER=	2
 USE_FIREBIRD=		yes
 .endif

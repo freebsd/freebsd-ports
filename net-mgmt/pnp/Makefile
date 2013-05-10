@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pnp
-# Date created:				16 August 2008
-# Whom:					rea-fbsd@codelabs.ru
-#
+# Created by: rea-fbsd@codelabs.ru
 # $FreeBSD$
-#
 
 PORTNAME=	pnp
 PORTVERSION=	0.6.18
@@ -23,7 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
+OPTIONS_DEFINE=	PDF
+OPTIONS_DEFAULT=	PDF
+PDF_DESC=	Use built-in fpdf library to produce PDF views
 
 .include <bsd.port.options.mk>
 
@@ -47,7 +45,7 @@ PNP_URL?=	${NAGIOSHTMURL}/pnp
 FPDF_DIR?=	share/fpdf
 SPOOL_DIRS=	${PNP_STATE}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_RRDS}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_SPOOL}:${NAGIOSUSER}:${NAGIOSGROUP}:0750
 
-.if !defined(WITH_PDF)
+.if ! ${PORT_OPTIONS:MPDF}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-disable-pdf
 .endif
 
@@ -77,7 +75,7 @@ SUB_LIST=	SPOOL_DIRS=${SPOOL_DIRS} \
 		NAGIOSUSER=${NAGIOSUSER} \
 		NAGIOSGROUP=${NAGIOSGROUP}
 
-.if defined(WITH_PDF)
+.if ${PORT_OPTIONS:MPDF}
 PNP_USE_FPDF=	1
 .else
 PNP_USE_FPDF=	0

@@ -1,9 +1,5 @@
-# New ports collection makefile for: circe
-# Date created:		23 July 2010
-# Whom:			Berkeley NAC-Team
-#
+# Created by: Berkeley NAC-Team <circe-port-maintainers@bws.net.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	circe
 PORTVERSION=	0.2.3
@@ -33,11 +29,12 @@ USE_PERL5=	yes
 DIST_SUBDIR=	${PORTNAME}
 WRKSRC=		${WRKDIR}
 
-OPTIONS=	ENCRYPT "Encrypt the destination URL in redirection" Off
+OPTIONS_DEFINE=	ENCRYPT
+ENCRYPT_DESC=	Encrypt destination URL in redirection
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ENCRYPT)
+.if ${PORT_OPTIONS:MENCRYPT}
 RUN_DEPENDS+=	p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
 		p5-Crypt-OpenSSL-AES>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-AES
 .endif

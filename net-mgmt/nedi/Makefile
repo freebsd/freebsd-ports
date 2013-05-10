@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nedi
-# Date created:				2007-02-04
-# Whom:					cristi
-#
+# Created by: cristi <cristi@net.utcluj.ro>
 # $FreeBSD$
-#
 
 PORTNAME=	nedi
 DISTVERSION=	1.0.w
@@ -24,7 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-OPTIONS=	GD "Use GD" OFF
+OPTIONS_DEFINE=	GD
+GD_DESC=	Use GD
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -33,7 +30,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 USE_PHP=	session snmp mysql
 WANT_PHP_WEB=	yes
 
-.if defined(WITH_GD) && !defined(WITHOUT_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
 
