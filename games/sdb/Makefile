@@ -36,7 +36,7 @@ PLIST_SUB+=	MODEL_SUFFIX="md2"
 .else
 # big-endian requires different set of models
 DISTFILES+=	shotgun-debugger-1.0.mac-ppc.zip
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 PLIST_SUB+=	MODEL_SUFFIX="md2b"
 
 post-extract:

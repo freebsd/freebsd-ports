@@ -15,7 +15,7 @@ DISTNAME=	kawari-${PORTVERSION:S/.//g}
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A real kawari8 module for ninix-aya
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya
 
 EXTRACT_CMD=	${UNZIP_CMD}

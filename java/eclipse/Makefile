@@ -30,7 +30,7 @@ PATCH_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		${DEPEND_JAVA}
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		rsync:${PORTSDIR}/net/rsync \
-		unzip:${PORTSDIR}/archivers/unzip \
+		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2

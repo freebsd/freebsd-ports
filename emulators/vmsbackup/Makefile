@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.ZIP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads VMS BACKUP tapes
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 ALL_TARGET=	vmsbackup
 
 PLIST_FILES=	bin/vmsbackup

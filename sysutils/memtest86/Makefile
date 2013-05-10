@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME:S,b,s,}${EXTRACT_SUFX} ${DISTNAME:S,b,s,}.iso.zip
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Stand alone memory test for x86 architecture computers
 
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 ONLY_FOR_ARCHS=	i386
 
