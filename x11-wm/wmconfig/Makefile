@@ -24,14 +24,14 @@ OPTIONS_DEFAULT=	NLS DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USE_GETTEXT=	yes
+USES+=		gettext
 CONFIGURE_ARGS+=--enable-nls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
