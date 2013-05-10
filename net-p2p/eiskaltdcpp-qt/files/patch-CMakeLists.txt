@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
-+++ CMakeLists.txt	2011-10-03 10:40:18.000000000 +0300
+--- CMakeLists.txt.orig	2011-10-02 22:12:43.000000000 +0700
++++ CMakeLists.txt	2013-05-10 19:57:21.000000000 +0700
+@@ -256,7 +256,7 @@
+ endif()
+ message (STATUS "USED LOCAL BOOST HEADERS")
+ else (LOCAL_BOOST)
+-    find_package (Boost REQUIRED)
++    find_package (Boost COMPONENTS system REQUIRED)
+     if (Boost_VERSION VERSION_LESS 103900)
+         add_definitions(-DFIX_FOR_OLD_BOOST)
+     endif()
 @@ -370,16 +370,14 @@
      else (MINGW)
          set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")

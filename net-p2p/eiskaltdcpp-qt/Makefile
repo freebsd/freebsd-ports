@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	EiskaltDC++ Direct Connect client Qt GUI
 
 LICENSE=	GPLv3

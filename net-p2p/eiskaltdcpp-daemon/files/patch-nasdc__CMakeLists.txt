@@ -1,5 +1,5 @@
---- nasdc/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
-+++ nasdc/CMakeLists.txt	2011-10-03 10:51:06.000000000 +0300
+--- nasdc/CMakeLists.txt.orig	2011-10-02 22:12:43.000000000 +0700
++++ nasdc/CMakeLists.txt	2013-05-09 17:38:53.000000000 +0700
 @@ -49,7 +49,16 @@
                  ${nasdc_SRCS}
                  )
@@ -14,7 +14,7 @@
 +      endif (DCPP_LIB)
 +endif (BUILD_LIB)
 +
-+target_link_libraries (nasdc ${DCPP_LIB} ${XMLRPCLIBS})
++target_link_libraries (nasdc ${DCPP_LIB} ${XMLRPCLIBS} ${Boost_LIBRARIES} ${GETTEXT_LIBRARIES})
  
  if (UNIX)
   set (BINDIR bin)

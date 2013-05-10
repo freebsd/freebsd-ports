@@ -8,15 +8,13 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	EiskaltDC++ Direct Connect client daemon
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
-
-BROKEN=		does not link
 
 PROJECTHOST=	eiskaltdc
 
