@@ -13,4 +13,6 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-geom
 SAL_MODULE_UPPER=	GEOM
 
+BROKEN=		fails to build
+
 .include "${MASTERDIR}/Makefile"
