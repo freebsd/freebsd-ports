@@ -24,6 +24,9 @@
 
 name="barnyard2"
 rcvar=barnyard2_enable
+
+load_rc_config $name
+
 # set some defaults
 : ${barnyard2_enable="NO"}
 : ${barnyard2_conf="%%PREFIX%%/etc/barnyard2.conf"}
@@ -31,8 +34,6 @@ rcvar=barnyard2_enable
 
 command="%%PREFIX%%/bin/barnyard2"
 command_args="-c ${barnyard2_conf} -D"
-
-load_rc_config $name
 
 if [ -n "${barnyard2_rules}" ];then
   _1=$1
