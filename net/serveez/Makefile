@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serveez
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	net devel
 MASTER_SITES=	GNU
 
@@ -29,7 +29,7 @@ post-patch:
 		's| -release .*||' ${WRKSRC}/src/libserveez/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/date -r/s|^|#|' ${WRKSRC}/src/irc-server/Makefile.in
-	@${ECHO_CMD} 'static char created[] = "2013-01-29 15:17 UTC";' \
+	@${ECHO_CMD} 'static char created[] = "2013-03-27 07:52 UTC";' \
 		> ${WRKSRC}/src/irc-server/timestamp.c
 
 .include <bsd.port.mk>
