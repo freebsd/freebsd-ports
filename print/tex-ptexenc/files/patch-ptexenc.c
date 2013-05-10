@@ -1,5 +1,5 @@
 --- ptexenc.c.orig	2012-03-05 17:50:28.000000000 +0900
-+++ ptexenc.c	2013-03-06 06:34:13.000000000 +0900
++++ ptexenc.c	2013-05-10 13:31:02.000000000 +0900
 @@ -15,6 +15,7 @@
  #include <ptexenc/unicode-jp.h>
  
@@ -8,7 +8,7 @@
  
  #define ENC_UNKNOWN  0
  #define ENC_JIS      1
-@@ -23,7 +24,39 @@
+@@ -23,7 +24,42 @@
  #define ENC_UTF8     4
  #define ENC_UPTEX    5
  
@@ -39,6 +39,9 @@
 +	if (default_kanji_is_uptex)
 +		return (ENC_UPTEX);
 +	name = getenv("LANG");
++	if (name == NULL)
++		return (ENC_UTF8);
++
 +	for (i = 0; letable[i].name != NULL; i++) {
 +		if (fnmatch(letable[i].name, name, letable[i].flag) !=
 +		    FNM_NOMATCH)
@@ -49,7 +52,7 @@
  static boolean UPTEX_enabled;
  static boolean prior_file_enc = false;
  
-@@ -64,7 +97,7 @@
+@@ -64,7 +100,7 @@
  static int string_to_enc(const_string str)
  {
      if (str == NULL)                    return ENC_UNKNOWN;
@@ -58,7 +61,7 @@
      if (strcasecmp(str, "jis")    == 0) return ENC_JIS;
      if (strcasecmp(str, "euc")    == 0) return ENC_EUC;
      if (strcasecmp(str, "sjis")   == 0) return ENC_SJIS;
-@@ -92,7 +125,7 @@
+@@ -92,7 +128,7 @@
      } else if (enc != ENC_UNKNOWN) {
          return enc;
      }
@@ -67,7 +70,7 @@
  }
  
  static void set_file_enc(int enc)
-@@ -150,9 +183,9 @@
+@@ -150,9 +186,9 @@
  {
      UPTEX_enabled = enable;
      if (enable)

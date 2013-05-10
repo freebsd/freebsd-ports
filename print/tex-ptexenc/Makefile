@@ -2,6 +2,7 @@
 
 PORTNAME=	ptexenc
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
