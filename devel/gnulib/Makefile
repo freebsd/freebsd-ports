@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnulib
-# Date created:		20 March 2010
-# Whom:			Johans van Selst <johans@FreeBSD.org>
-#
+# Created by: Johans van Selst <johans@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnulib
 PORTVERSION=	20120404
@@ -18,6 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
+
+BROKEN=		fail to build
 
 PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
