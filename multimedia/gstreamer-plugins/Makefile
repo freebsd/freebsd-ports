@@ -55,6 +55,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include
 
+# workaround a crash in clang 3.3 crash llvm bug # 15840
+USE_GCC=	any
+
 DEFAULT_AUDIOSINK?=	osssink
 DEFAULT_AUDIOSRC?=	osssrc
 
