@@ -1,7 +1,4 @@
-# New ports collection makefile for:	museekplus
-# Date created:				06 Aug 2006
-# Whom:					Stefan Walter <stefan@FreeBSD.org>
-#
+# Created by: Stefan Walter <stefan@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	museekplus
@@ -25,29 +22,27 @@ SCONS_ARGS=	QTDIR=${QT_PREFIX} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
 DATADIR=	share/museek
 MAN1=		musetup.1 mulog.1 museekcontrol.1 muscan.1 muscand.1 museekd.1
 
-OPTIONS= \
-	MUSEEQ "Install Museeq (Qt3 client)" On \
-	QSA "Build Museeq with Qt Script support" On \
-	MUSETUPGTK "Install musetup-gtk" On \
-	PYMUCIPHER "Install python bindings for Mucipher" On \
-	VORBIS "Enable OGG Vorbis support in muscan" On \
-	MURMUR "Install PyGTK client" Off \
-	MUCOUS "Install Curses Python client" Off \
-	OPTIMIZED_CFLAGS "Build with optmizations" Off \
-	DEBUG "Build in debug mode" Off
+OPTIONS_DEFINE=	MUSEEQ QSA MUSETUPGTK PYMUCIPHER VORBIS MURMUR MUCOUS OPTIMIZED_CFLAGS DEBUG
+OPTIONS_DEFAULT=	MUSEEQ QSA MUSETUPGTK PYMUCIPHER VORBIS
+MUSEEQ_DESC=		Install Museeq (Qt3 client)
+QSA_DESC=		Build Museeq with Qt Script support
+MUSETUPGTK_DESC=	Install musetup-gtk
+PYMUCIPHER_DESC=	Install python bindings for Mucipher
+MURMUR_DESC=		Install PyGTK client
+MUCOUS_DESC=		Install Curses Python client
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYMUCIPHER) || defined(WITH_BINDINGS) || defined(WITH_MURMUR) || defined(WITH_CLIENTS) || defined(WITH_MUCOUS)
+.if ${PORT_OPTIONS:MPYMUCIPHER} || ${PORT_OPTIONS:MBINDINGS} || ${PORT_OPTIONS:MMURMUR} || ${PORT_OPTIONS:MCLIENTS} || ${PORT_OPTIONS:MMUCOUS}
 USE_PYTHON=	yes
 .endif
 
-.ifdef(WITH_MUSEEQ)
+.if ${PORT_OPTIONS:MMUSEEQ}
 USE_QT_VER=	3
 SCONS_ARGS+=	MUSEEQ=yes
 MAN1+=		museeq.1
 PLIST_SUB+=	MUSEEQ=""
-.ifdef(WITH_QSA)
+.if ${PORT_OPTIONS:MQSA}
 SCONS_ARGS+=	QSA=yes
 LIB_DEPENDS+=	qsa:${PORTSDIR}/devel/qsa
 .else
@@ -58,16 +53,14 @@ SCONS_ARGS+=	MUSEEQ=no
 PLIST_SUB+=	MUSEEQ="@comment "
 SCONS_ARGS+=	QSA=no
 .endif
-.ifdef(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 SCONS_ARGS+=	VORBIS=yes
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .else
 SCONS_ARGS+=	VORBIS=no
 .endif
 
-.include <bsd.port.pre.mk>
-
-.ifdef(WITH_MUSETUPGTK)
+.if ${PORT_OPTIONS:MMUSETUPGTK}
 SCONS_ARGS+=	MUSETUPGTK=yes
 MAN1+=		musetup-gtk.1
 PLIST_SUB+=	MUSETUPGTK=""
@@ -75,14 +68,14 @@ PLIST_SUB+=	MUSETUPGTK=""
 SCONS_ARGS+=	MUSETUPGTK=no
 PLIST_SUB+=	MUSETUPGTK="@comment "
 .endif
-.ifdef(WITH_PYMUCIPHER)
+.if ${PORT_OPTIONS:MPYMUCIPHER}
 SCONS_ARGS+=	PYMUCIPHER=yes
 PLIST_SUB+=	PYMUCIPHER=""
 .else
 SCONS_ARGS+=	PYMUCIPHER=no
 PLIST_SUB+=	PYMUCIPHER="@comment "
 .endif
-.ifdef(WITH_MURMUR)
+.if ${PORT_OPTIONS:MMURMUR}
 SCONS_ARGS+=	MURMUR=yes
 MAN1+=		murmur.1
 PLIST_SUB+=	MURMUR=""
@@ -90,7 +83,7 @@ PLIST_SUB+=	MURMUR=""
 SCONS_ARGS+=	MURMUR=no
 PLIST_SUB+=	MURMUR="@comment "
 .endif
-.ifdef(WITH_MUCOUS)
+.if ${PORT_OPTIONS:MMUCOUS}
 SCONS_ARGS+=	MUCOUS=yes
 MAN1+=		mucous.1
 PLIST_SUB+=	MUCOUS=""
@@ -98,12 +91,12 @@ PLIST_SUB+=	MUCOUS=""
 SCONS_ARGS+=	MUCOUS=no
 PLIST_SUB+=	MUCOUS="@comment "
 .endif
-.ifdef(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 SCONS_ARGS+=	RELEASE=yes
 .else
 SCONS_ARGS+=	RELEASE=no
 .endif
-.ifdef(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 SCONS_ARGS+=	MULOG="cycle,debug"
 .endif
 
@@ -117,14 +110,14 @@ post-patch:
 		${WRKSRC}/python-bindings/museek/SConscript
 
 post-install:
-.ifdef(WITH_MUCOUS)
+.if ${PORT_OPTIONS:MMUCOUS}
 	@${REINPLACE_CMD} -i "" -e "s,/usr/bin/python,${PYTHON_CMD},g" ${PREFIX}/bin/mucous
 .endif
-.ifdef(WITH_MUSETUPGTK)
+.if ${PORT_OPTIONS:MMUSETUPGTK}
 	@${REINPLACE_CMD} -i "" -e "s,/usr/bin/python,${PYTHON_CMD},g" ${PREFIX}/bin/musetup-gtk
 .endif
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

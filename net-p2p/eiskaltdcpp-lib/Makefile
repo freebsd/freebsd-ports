@@ -25,10 +25,9 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	LUA	"Lua scripting support"	off \
-		PCRE	"PCRE support in ADL Search" off \
-		IDN	"IDN support" on \
-		DHT	"DHT support" on
+OPTIONS_DEFINE=	LUA PCRE IDN DHT
+OPTIONS_DEFAULT=	IDN DHT
+DHT_DESC=	DHT support
 
 .include <bsd.port.options.mk>
 
@@ -39,7 +38,7 @@ CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=OFF
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON
 
-.if defined(WITH_LUA) && !defined(WITHOUT_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=	5.1
 CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=ON
 IGNORE=	crashes on connect attempt if built with Lua support
@@ -47,33 +46,27 @@ IGNORE=	crashes on connect attempt if built with Lua support
 CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=OFF
 .endif
 
-.if defined(WITH_PCRE) && !defined(WITHOUT_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CMAKE_ARGS+=	-DPERL_REGEX:BOOL=ON
 .else
 CMAKE_ARGS+=	-DPERL_REGEX:BOOL=OFF
 .endif
 
-.if defined(WITH_IDN) && !defined(WITHOUT_IDN)
+.if ${PORT_OPTIONS:MIDN}
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 CMAKE_ARGS+=	-DUSE_IDNA:BOOL=ON
 .else
 CMAKE_ARGS+=	-DUSE_IDNA:BOOL=OFF
 .endif
 
-.if defined(WITH_DHT) && !defined(WITHOUT_DHT)
+.if ${PORT_OPTIONS:MDHT}
 CMAKE_ARGS+=	-DWITH_DHT:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWITH_DHT:BOOL=OFF
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700024
-USE_OPENSSL_PORT=yes
-.endif
-
 post-build:
 	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/dcpp/libeiskaltdcpp.so.2.2"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
