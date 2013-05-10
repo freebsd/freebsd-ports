@@ -13,4 +13,6 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-yacs
 SAL_MODULE_UPPER=	YACS
 
+BROKEN=		fails to build
+
 .include "${MASTERDIR}/Makefile"
