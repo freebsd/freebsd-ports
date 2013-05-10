@@ -17,7 +17,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
-USE_TEX=	tetex
+USE_TEX=	tetex-base tetex-texmf
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
