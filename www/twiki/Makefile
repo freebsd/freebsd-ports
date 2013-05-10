@@ -5,7 +5,8 @@ PORTNAME=	twiki
 PORTVERSION=	5.1.4
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/
+MASTER_SITES=	SF/${PORTNAME}/TWiki%20for%20all%20Platforms/${DISTNAME} \
+		http://twiki.org/p/pub/Codev/Release/
 DISTNAME=	TWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
