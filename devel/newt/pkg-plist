@@ -92,8 +92,6 @@ libdata/pkgconfig/libnewt.pc
 %%NLS%%@dirrmtry share/locale/wo
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
-%%NLS%%@dirrmtry share/locale/tg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tg
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
