@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	paint
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	devel
 MASTER_SITES=	RG
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal painter
 
 USE_RUBY=	yes
