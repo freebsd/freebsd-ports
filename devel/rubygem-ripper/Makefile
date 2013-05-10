@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-ripper
-# Date created:				24 June 2012
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	ripper
 PORTVERSION=	1.0.5
@@ -16,6 +12,8 @@ COMMENT=	Parses Ruby source and tokenizes or builds an AST
 LICENSE=	BSD
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+
+BROKEN=		fails to build
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
