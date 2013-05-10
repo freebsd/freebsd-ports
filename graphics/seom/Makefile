@@ -17,6 +17,8 @@ COMMENT=	Real-time capture library for OpenGL applications
 
 NOMAN=		defined
 
+BROKEN=		fails to package
+
 USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_XORG=	x11 xv
