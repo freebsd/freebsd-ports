@@ -13,7 +13,7 @@ DISTVERSIONPREFIX?=	h3-
 PKGNAMEPREFIX?=	horde3-
 
 .if defined(USE_HORDE) && ${USE_HORDE:Mbase}
-RUN_DEPENDS+=	${HORBAS}/rpc.php:${PORTSDIR}/www/horde3-base
+RUN_DEPENDS+=	${HORBAS}/base/rpc.php:${PORTSDIR}/www/horde3-base
 .endif
 
 #USE_BZIP2=	yes
