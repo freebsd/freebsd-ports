@@ -152,6 +152,7 @@ bluej/lib/dutch/exception.help
 bluej/lib/dutch/javac.help
 bluej/lib/dutch/labels
 bluej/lib/dutch/moe.help
+bluej/lib/dutch/readme.txt
 bluej/lib/dutch/templates/README
 bluej/lib/dutch/templates/html.tmpl
 bluej/lib/dutch/templates/method.tmpl
@@ -371,6 +372,7 @@ bluej/lib/russian/templates/newclass/midlet.tmpl
 bluej/lib/russian/templates/newclass/stdclass.tmpl
 bluej/lib/russian/templates/newclass/unittest.tmpl
 bluej/lib/russian/templates/readme.tmpl
+bluej/lib/slovak/bluejparser.help
 bluej/lib/slovak/dialogues
 bluej/lib/slovak/exception.help
 bluej/lib/slovak/javac.help

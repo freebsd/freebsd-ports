@@ -1,12 +1,8 @@
-# New ports collection makefile for:	bluej
-# Date created:		27 June 2001
-# Whom:			Jeremy <karlj000@unbc.ca>
-#
+# Created by: Jeremy <karlj000@unbc.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	bluej
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.9
 CATEGORIES=	java editors
 MASTER_SITES=	http://www.bluej.org/download/files/ \
 		ftp://ftp.bluej.org/pub/bluej/
