@@ -69,3 +69,6 @@ share/dbus-1/system-services/org.freedesktop.PolicyKit.service
 @unexec rmdir /var/lib/PolicyKit-public 2>/dev/null || true
 @unexec rm -f /var/lib/misc/PolicyKit.reload 2>/dev/null || true
 @unexec rmdir /var/lib/misc 2>/dev/null || true
+@cwd /
+@dirrmtry var/lib
+@cwd
