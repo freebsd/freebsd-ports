@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	EiskaltDC++ Direct Connect client GTK GUI
 
 LICENSE=	GPLv3
@@ -16,8 +16,6 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${LOCALBASE}/share/eiskaltdcpp/keep_me:${PORTSDIR}/net-p2p/eiskaltdcpp-data
 LIB_DEPENDS=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
-
-BROKEN=		does not build
 
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 PROJECTHOST=	eiskaltdc
