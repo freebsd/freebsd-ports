@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	ppl
-# Date created:			Feb 5, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ppl
 PORTVERSION=	0.11.2
@@ -18,6 +13,8 @@ COMMENT=	The Parma Polyhedra Library
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+
+BROKEN=	fails to build
 
 PWL_DOC_PREFIX=	share/doc/pwl
 
