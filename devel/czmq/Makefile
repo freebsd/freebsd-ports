@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	czmq
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 
