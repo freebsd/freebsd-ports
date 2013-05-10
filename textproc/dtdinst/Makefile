@@ -1,37 +1,47 @@
-# New ports collection makefile for:   dtdinst
-# Date created:                3 February 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dtdinst
-PORTVERSION=	2003.06.19
-PORTREVISION=	2
+PORTVERSION=	2009.11.11
 CATEGORIES=	textproc java
-MASTER_SITES=	http://www.thaiopensource.com/download/
-DISTNAME=	${PORTNAME}-20030619
-EXTRACT_SUFX=	.zip
+MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	jing-trang
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts DTDs to XML instance, in a specific or RELAX NG format
 
-USE_ZIP=	YES
-USE_JAVA=	yes
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/copying.txt
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USE_ZIP=	yes
+USE_JAVA=	yes
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	%%JAVAJARDIR%%/dtdinst.jar share/xsl/dtdinst/dtdinst2rng.xsl
+PLIST_DIRS=	share/xsl/dtdinst
+PLIST_DIRSTRY=	share/xsl
+
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${JAVAJARDIR}
-	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/*.xsl ${PREFIX}/share/xsl/${PORTNAME}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/dtdinst.rng ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.jar ${JAVAJARDIR})
+	@${MKDIR} ${PREFIX}/share/xsl/dtdinst
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.xsl ${PREFIX}/share/xsl/dtdinst)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in dtdinst.rnc.txt dtdinst.rng index.html teixml.dtd.txt
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/example && ${INSTALL_DATA} * ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
