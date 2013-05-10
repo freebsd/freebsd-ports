@@ -16,6 +16,11 @@ BJAM_ARGS=	--layout=system \
 BJAM_ARGS+=	cxxflags=-fPIC
 .endif
 
+# Our compiler-flags will be added AFTER those set by bjam. We remove
+# the optimization level, because Boost sets it itself (to -O3 in case
+# of gcc/g++):
+BJAM_ARGS+=    cxxflags="${CXXFLAGS:N-O*}" cflags="${CFLAGS:N-O*}"
+
 NO_CCACHE=	yes
 .if ${CC:T:Mgcc*}
 BOOST_TOOLSET:=	gcc
