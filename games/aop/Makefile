@@ -1,30 +1,39 @@
-# New ports collection makefile for:	aop
-# Date created:				22. April 2004
-# Whom:					Aaron Zauner <az_mail@gmx.at>
-#
+# Created by: Aaron Zauner <az_mail@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	aop
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://raffi.at/code/aop/
+MASTER_SITES=	http://raffi.at/code/aop/ \
+		SF/nemysisfreebsdp/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A curses based arcade game with only 64 lines of code
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Ncurses based arcade game with only 64 lines of code
 
-DOCS=		COPYING README
+LICENSE=	GPLv2
+
+ALL_TARGET=	#empty
+
+PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
-.for ii in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
