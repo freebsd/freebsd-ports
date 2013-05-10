@@ -1,4 +1,5 @@
 bin/tvbrowser
+share/applications/tvbrowser.desktop
 %%DATADIR%%/COPYRIGHT.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/enwiki.url
@@ -70,7 +71,6 @@ bin/tvbrowser
 %%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3/persona.prop
 %%DATADIR%%/plugins/NewsPlugin.jar
 %%DATADIR%%/themepacks/themepack.zip
-%%DATADIR%%/tvbrowser.desktop
 %%DATADIR%%/tvbrowser.jar
 %%DATADIR%%/tvbrowser.sh
 %%DATADIR%%/website.url
@@ -85,3 +85,4 @@ bin/tvbrowser
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/hyphen
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
