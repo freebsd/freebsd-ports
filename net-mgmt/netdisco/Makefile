@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netdisco
-# Date created:				2006-04-08
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	netdisco
 PORTVERSION=	1.1
