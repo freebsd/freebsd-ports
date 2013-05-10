@@ -10,4 +10,4 @@ by one of the authors of Amazon's Dynamo. In a lot of ways you can
 think of Cassandra as Dynamo 2.0. Cassandra is in production use at
 Facebook but is still under heavy development.
 
-WWW:	http://cassandra.apache.org/
+WWW: http://cassandra.apache.org/
