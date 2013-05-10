@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20130421
+DISTVERSION=	05_20130505
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -36,12 +36,6 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile
-.endif
-
 .if ${OSVERSION} >= 1000024 || ${CC} == clang
 MAKEFILE=	mk_clang.mak
 .else
@@ -51,7 +45,6 @@ MAKEFILE=	makefile
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/makefile ${WRKSRC}/mk_clang.mak
 	${REINPLACE_CMD} -e '/FLOATTYPE_DOUBLE/s|undef|define|' ${WRKSRC}/config.h
-#	${REINPLACE_CMD} -i '' -e 's|./s7|${PREFIX}/bin/s7|g' ${WRKSRC}/../prg/chk_all.sd7
 
 do-install:
 #	install interpreter and compiler
@@ -71,7 +64,7 @@ do-install:
 	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
 #	install PORTEXAMPLES
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL} -d ${EXAMPLESDIR}
 	cd ${WRKSRC}/../prg && ${COPYTREE_SHARE} '*.dna *.sd7 *.dat *.s7i' ${EXAMPLESDIR}
 .endif
@@ -82,4 +75,4 @@ do-install:
 regression-test: build
 	cd ${WRKSRC} && ${GMAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
