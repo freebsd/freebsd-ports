@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mico
-# Date created:        11 July 1998
-# Whom:                Marc G. Fournier <scrappy@freebsd.org>
-#
+# Created by: Marc G. Fournier <scrappy@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mico
 PORTVERSION=	2.3.12
@@ -16,6 +12,8 @@ PATCHFILES=	mico-2.3.12-secfix1.diff
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, reliable, production-quality, standards-based CORBA middleware
+
+BROKEN=	fails to build
 
 PATCH_DIST_STRIP=	-p1
 WRKSRC=			${WRKDIR}/${PORTNAME}
