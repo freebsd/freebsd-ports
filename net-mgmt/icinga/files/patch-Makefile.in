@@ -1,37 +1,22 @@
---- Makefile.in.orig	2012-05-15 13:00:56.000000000 +0000
-+++ Makefile.in	2012-05-16 21:00:54.567967366 +0000
-@@ -362,13 +362,13 @@
- 	$(MAKE) install-basic
+--- Makefile.in.orig	2013-05-10 08:48:51.000000000 +0200
++++ Makefile.in	2013-05-10 08:50:03.000000000 +0200
+@@ -427,8 +427,8 @@ install-basic:
  
- install-basic:
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/archives
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CHECKRESULTDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/archives
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CHECKRESULTDIR)
- 	if [ $(INSTALLPERLSTUFF) = yes ]; then \
--		$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(P1FILELOC); \
--		$(INSTALL) -m 664 $(INSTALL_OPTS) p1.pl $(DESTDIR)$(P1FILELOC); \
-+		$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(P1FILELOC); \
-+		$(INSTALL) -m 644 $(INSTALL_OPTS) p1.pl $(DESTDIR)$(P1FILELOC); \
- 	fi;
- 
- 	@echo ""
-@@ -405,23 +405,23 @@
- 
- 
- install-config:
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/modules
--	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg
--	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg
+ install-cgiconf:
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg-sample
+ 
+ 
+ install-config: install-cgiconf
+@@ -436,17 +436,17 @@ install-config: install-cgiconf
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/modules
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg
+-	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg
@@ -41,72 +26,35 @@
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/modules
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg-sample
 +	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/notifications.cfg $(DESTDIR)$(CFGDIR)/objects/notifications.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/objects/timeperiods.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/objects/localhost.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg-sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/notifications.cfg $(DESTDIR)$(CFGDIR)/objects/notifications.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/objects/timeperiods.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/objects/localhost.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg-sample
  
  	@echo ""
  	@echo "*** Config files installed ***"
-@@ -432,7 +432,7 @@
- 	@echo ""
+@@ -464,7 +464,7 @@ install-testconfig:
  
  install-webconf:
--	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
-+	$(MKDIR) -p -m 755 $(DESTDIR)$(HTTPD_CONF)
- 	$(INSTALL) -m 644 sample-config/httpd.conf $(DESTDIR)$(HTTPD_CONF)/icinga.conf
+ 	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
+-	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE)
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE)-sample
  
  	@echo ""
-@@ -481,7 +481,7 @@
+ 	@echo "*** Icinga/Apache conf file installed ***"
+@@ -472,7 +472,7 @@ install-webconf:
  
+ install-webconf-auth:
  
- install-commandmode:
--	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(EXTCMDFILEDIR)
-+	$(INSTALL) -m 755 $(COMMAND_OPTS) -d $(DESTDIR)$(EXTCMDFILEDIR)
- 	chmod g+s $(DESTDIR)$(EXTCMDFILEDIR)
- 
- 	@echo ""
-@@ -489,18 +489,18 @@
- 	@echo ""
- 
- install-eventhandlers:
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(EVENTHANDLERDIR)
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(EVENTHANDLERDIR)/distributed-monitoring
--	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(EVENTHANDLERDIR)/redundancy-scenario1
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/submit_check_result $(DESTDIR)$(EVENTHANDLERDIR)/submit_check_result
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/disable_active_service_checks $(DESTDIR)$(EVENTHANDLERDIR)/disable_active_service_checks
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/enable_active_service_checks $(DESTDIR)$(EVENTHANDLERDIR)/enable_active_service_checks
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/disable_notifications $(DESTDIR)$(EVENTHANDLERDIR)/disable_notifications
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/enable_notifications $(DESTDIR)$(EVENTHANDLERDIR)/enable_notifications
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/distributed-monitoring/obsessive_svc_handler $(DESTDIR)$(EVENTHANDLERDIR)/distributed-monitoring/obsessive_svc_handler
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/distributed-monitoring/submit_check_result_via_nsca $(DESTDIR)$(EVENTHANDLERDIR)/distributed-monitoring/submit_check_result_via_nsca
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/redundancy-scenario1/handle-master-host-event $(DESTDIR)$(EVENTHANDLERDIR)/redundancy-scenario1/handle-master-host-event
--	$(INSTALL) -b -m 774 $(INSTALL_OPTS) contrib/eventhandlers/redundancy-scenario1/handle-master-proc-event $(DESTDIR)$(EVENTHANDLERDIR)/redundancy-scenario1/handle-master-proc-event
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(EVENTHANDLERDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(EVENTHANDLERDIR)/distributed-monitoring
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(EVENTHANDLERDIR)/redundancy-scenario1
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/submit_check_result $(DESTDIR)$(EVENTHANDLERDIR)/submit_check_result
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/disable_active_service_checks $(DESTDIR)$(EVENTHANDLERDIR)/disable_active_service_checks
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/enable_active_service_checks $(DESTDIR)$(EVENTHANDLERDIR)/enable_active_service_checks
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/disable_notifications $(DESTDIR)$(EVENTHANDLERDIR)/disable_notifications
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/enable_notifications $(DESTDIR)$(EVENTHANDLERDIR)/enable_notifications
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/distributed-monitoring/obsessive_svc_handler $(DESTDIR)$(EVENTHANDLERDIR)/distributed-monitoring/obsessive_svc_handler
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/distributed-monitoring/submit_check_result_via_nsca $(DESTDIR)$(EVENTHANDLERDIR)/distributed-monitoring/submit_check_result_via_nsca
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/redundancy-scenario1/handle-master-host-event $(DESTDIR)$(EVENTHANDLERDIR)/redundancy-scenario1/handle-master-host-event
-+	$(INSTALL) -b -m 755 $(INSTALL_OPTS) contrib/eventhandlers/redundancy-scenario1/handle-master-proc-event $(DESTDIR)$(EVENTHANDLERDIR)/redundancy-scenario1/handle-master-proc-event
+-	$(INSTALL) -b -m 644 $(INSTALL_OPTS) icinga.htpasswd $(DESTDIR)$(HTTPAUTHFILE)
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) icinga.htpasswd $(DESTDIR)$(HTTPAUTHFILE)-sample
  
  	@echo ""
- 	@echo "*** Sample Eventhandlers installed ***"
+ 	@echo "*** Icinga http auth file installed ***"
