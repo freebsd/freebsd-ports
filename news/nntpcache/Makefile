@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nntpcache
-# Date created:		6 January 1997
-# Whom:			proff@suburbia.net
-#
+# Created by: proff@suburbia.net
 # $FreeBSD$
-#
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
@@ -28,18 +24,17 @@ CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}
 AUTHINFO_EXT=	authinfo_pam.ext
 USE_RC_SUBR=	nntpcached
 
-OPTIONS=	LDAP "OpenLDAP support" off \
-		RADIUS "RADIUS support" off \
-		SPAMPHOBIA "Spamphobia NoCeM support" off
+OPTIONS_DEFINE=	LDAP RADIUS SPAMPHOBIA
+SPAMPHOBIA_DESC=	Spamphobia NoCeM support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_RADIUS)
+.if ${PORT_OPTIONS:MRADIUS}
 CONFIGURE_ARGS+=	--with-authinfo-radius
 AUTHINFO_EXT+=		authinfo_radius.ext
 .endif
 
-.if defined(WITH_LDAP) || defined(WITH_LDAP2)
+.if ${PORT_OPTIONS:MLDAP) || defined(WITH_LDAP2}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-authinfo-ldap
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
@@ -55,7 +50,7 @@ MAN8=		nntpcached.8 newshound.8
 PORTDOCS=	AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 		INSTALL LICENSING NEWS README README.INN VERSION
 
-.if defined(WITH_SPAMPHOBIA)
+.if ${PORT_OPTIONS:MSPAMPHOBIA}
 REVISEDATE=	20060903
 PATCH_SITES+=	http://people.freebsd.org/~leeym/:SPAMPHOBIA
 PATCHFILES+=	${DISTNAME}-spamphobia-${REVISEDATE}.diff.gz:SPAMPHOBIA
@@ -69,10 +64,10 @@ post-install:
 	@ ${CP} ${PREFIX}/etc/${PORTNAME}/VERSION ${NNTPSPOOLDIR} && \
 	  ${CHMOD} 640 ${NNTPSPOOLDIR}/VERSION
 	@ ${CHOWN} -R news:news ${NNTPSPOOLDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC} && ${FIND} ${PORTDOCS} \
 	  | ${CPIO_CMD} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
