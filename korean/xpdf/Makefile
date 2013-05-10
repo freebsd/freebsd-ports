@@ -7,6 +7,7 @@ CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-kofont
 DISTNAME=	xpdf-korean
+DIST_SUBDIR=	${DISTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Korean font support for xpdf

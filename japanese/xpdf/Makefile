@@ -3,10 +3,12 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.03
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-jafont
 DISTNAME=	xpdf-japanese
+DIST_SUBDIR=	${DISTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese font support for xpdf

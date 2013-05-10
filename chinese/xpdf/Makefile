@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	support/xpdf
 PKGNAMESUFFIX=	-zhfont
 DISTFILES=	xpdf-chinese-simplified-2011-sep-02${EXTRACT_SUFX} \
 		xpdf-chinese-traditional-2011-sep-02${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}-chinese-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Chinese font support for xpdf
