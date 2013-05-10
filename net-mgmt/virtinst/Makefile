@@ -13,6 +13,7 @@ COMMENT=	Module to help in starting installations inside of virtual machines
 LIB_DEPENDS=	virt.1000:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.9.1:${PORTSDIR}/www/py-urlgrabber
 
+FETCH_ARGS=	-Fpr
 USES=		gettext
 USE_PYTHON_RUN=	yes
 USE_PYTHON_BUILD=	yes
