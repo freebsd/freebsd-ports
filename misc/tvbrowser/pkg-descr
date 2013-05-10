@@ -1,8 +1,10 @@
-TV-Browser is a digital tv guide. The tv data are retrieved from
-multiple sources and can be downloaded from our servers after
-having been automatically processed.
+TV-Browser gets the daily TV program from the internet and shows it clearly
+aranged - like a printed TV guide. An internet connection is only necessary
+during the data update.
 
-Currently, TV-Browser supports tv and some radio channels from
-Germany, Austria and Switzerland, and the UK.
+Currently, TV-Browser supports more than 1000 TV and radio channels from
+Australia, Austria, Belgium, Croatia, Czech Repulic, Denmark, France, Germany,
+Great Britain, Ireland, Italy, Norway, Poland, Spain, Sweden,
+Switzerland and the USA.
 
 WWW: http://www.tvbrowser.org
