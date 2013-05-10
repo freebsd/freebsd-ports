@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/files/
 
@@ -18,8 +18,24 @@ MAN1=		wmconfig.1x
 
 PORTDOCS=	AUTHORS ChangeLog COPYING README TODO
 
+OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_DEFAULT=	NLS DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
