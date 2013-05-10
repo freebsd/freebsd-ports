@@ -14,6 +14,9 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/digital_ocean.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/digital_ocean.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/digital_ocean.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/libcloud_aws.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/libcloud_aws.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/libcloud_aws.pyo
@@ -35,9 +38,15 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/openstack.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/openstack.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/openstack.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/parallels.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/parallels.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/parallels.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/rackspace.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/rackspace.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/rackspace.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/saltify.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/saltify.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/saltify.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/config.py
 %%PYTHON_SITELIBDIR%%/saltcloud/config.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/config.pyo
@@ -63,6 +72,9 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/Ubuntu.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/wget-bootstrap-nocert.sh
 %%PYTHON_SITELIBDIR%%/saltcloud/deploy/wget-bootstrap.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/exceptions.py
+%%PYTHON_SITELIBDIR%%/saltcloud/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/exceptions.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/libcloudfuncs.py
 %%PYTHON_SITELIBDIR%%/saltcloud/libcloudfuncs.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/libcloudfuncs.pyo
