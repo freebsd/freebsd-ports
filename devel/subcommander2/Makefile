@@ -28,15 +28,15 @@ USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoheader autoconf
 ACLOCAL_ARGS=	-I ac-macros
+AUTOMAKE_ARGS=	--copy --force-missing --foreign
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--with-subversion=${LOCALBASE} --with-qt=${QT_PREFIX} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-apr-util=${LOCALBASE}/bin/apu-1-config \
 		--with-openssl=${OPENSSLBASE}
-
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS+=	-I${QT_INCDIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${QT_INCDIR} -I${LOCALBASE}/include
+LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
