@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
 .endif
 
