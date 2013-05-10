@@ -18,7 +18,7 @@
      // initialization.
  
 -    fprintf( stderr, e.getError()->getMessage() );
-+    fprintf( stderr, "%s", e.getError()->getMessage() );
++    fprintf( stderr, "%s", e.getError()->getMessage().getStr() );
      return EXIT_FAILURE;
    }
  
