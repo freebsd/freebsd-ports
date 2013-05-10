@@ -26,6 +26,8 @@ CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+BROKEN=		fails to build
+
 MAN1=		quantlib-config.1 quantlib-test-suite.1
 
 .include <bsd.port.pre.mk>
