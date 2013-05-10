@@ -1,9 +1,5 @@
-# New ports collection makefile for:  gprbuild-aux
-# Date created:                       12 December 2010
-# Whom:                               John Marino <draco@marino.st>
-#
+# Created by: John Marino <draco@marino.st>
 # $FreeBSD$
-#
 
 PORTNAME=	gprbuild-aux
 PORTVERSION=	${SNAPSHOT}
@@ -13,6 +9,11 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 
 MAINTAINER=	draco@marino.st
 COMMENT=	Adacore multi-language software build tool
+
+DEPRECATED=	Deprecated in favour of devel/gprbuild
+EXPIRATION_DATE=	2013-06-10
+
+BROKEN=		Does not build with recent ada toolchain rework
 
 BUILD_DEPENDS=	gnat-aux>=20101204:${PORTSDIR}/lang/gnat-aux
 BUILD_DEPENDS+=	xmlada>=3.2:${PORTSDIR}/textproc/xmlada
