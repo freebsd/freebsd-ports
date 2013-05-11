@@ -18,7 +18,6 @@ QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes
 
-USE_GCC=	any
 HAS_CONFIGURE=	yes
 USES=		pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/qt4
