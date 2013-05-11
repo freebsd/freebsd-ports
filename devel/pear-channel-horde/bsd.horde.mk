@@ -69,6 +69,7 @@ horde-Horde_Oauth-DEPEND=	${PEARDIR}/Horde/Oauth/Consumer.php:${PORTSDIR}/securi
 horde-Horde_Pdf-DEPEND=		${PEARDIR}/Horde/Pdf/Writer.php:${PORTSDIR}/textproc/pear-Horde_Pdf
 horde-Horde_Perms-DEPEND=	${PEARDIR}/Horde/Perms.php:${PORTSDIR}/security/pear-Horde_Perms
 horde-Horde_Prefs-DEPEND=	${PEARDIR}/Horde/Prefs.php:${PORTSDIR}/devel/pear-Horde_Prefs
+horde-Horde_Queue-DEPEND=	${PEARDIR}/Horde/Queue/Runner.php:${PORTSDIR}/devel/pear-Horde_Queue
 horde-Horde_Rdo-DEPEND=		${PEARDIR}/Horde/Rdo.php:${PORTSDIR}/devel/pear-Horde_Rdo
 horde-Horde_Role-DEPEND=	${PEARDIR}/PEAR/Installer/Role/Horde/Role.php:${PORTSDIR}/devel/pear-Horde_Role
 horde-Horde_Rpc-DEPEND=		${PEARDIR}/Horde/Rpc.php:${PORTSDIR}/net/pear-Horde_Rpc
