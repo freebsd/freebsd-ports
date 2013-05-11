@@ -1,5 +1,5 @@
 include/polyclipping/clipper.hpp
-lib/libpolyclipping.so.8.0.0
-lib/libpolyclipping.so.8
+lib/libpolyclipping.so.9.0.0
+lib/libpolyclipping.so.9
 lib/libpolyclipping.so
 @dirrmtry include/polyclipping
