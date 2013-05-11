@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dhcpd-pools
-# Date created:		26 January 2012
-# Whom:			Ryan Steinmetz (zi@FreeBSD.org)
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dhcpd-pools
-PORTVERSION=	2.18
+PORTVERSION=	2.23
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -18,10 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash
 
+USES=		charsetfix
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
 		--with-dhcpd-leases=/var/db/dhcpd/dhcpd.leases \
 		--with-uthash=${LOCALBASE}/include
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/dhcpd-pools
 PORTDATA=	dhcpd-pools.cgi snmptest.pl
