@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	LIBNET10 LIBNET11 GLIB2
 LIBNET10_DESC=	Use libnet 1.0.x
 LIBNET11_DESC=	Use libnet 1.1.x
 GLIB2_DESC=	Use GLIB2 for multiprocessing support
-OPTIONS_DEFAULT=	LIBNET11 GLIB2
+OPTIONS_DEFAULT=	LIBNET10 GLIB2
 
 WANT_GNOME=	yes
 USES=		pkgconfig
@@ -26,9 +26,9 @@ MAN3=		libnids.3
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+= PORTDOCS=""
+PLIST_SUB+=	PORTDOCS=""
 .else
-PLIST_SUB+= PORTDOCS="@comment "
+PLIST_SUB+=	PORTDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBNET10}
