@@ -1,4 +1,4 @@
-# Whom:					Michael Reifenberger <mr@freebsd.org>
+# Created by: Michael Reifenberger <mr@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	openscad
@@ -16,7 +16,6 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
-#RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	GLU:${PORTSDIR}/graphics/libGLU \
 		gmp:${PORTSDIR}/math/gmp \
 		mpfr:${PORTSDIR}/math/mpfr \
