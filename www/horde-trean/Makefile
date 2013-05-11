@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trean
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 
@@ -31,6 +31,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Db \
 		Horde_Exception \
 		Horde_Form \
+		Horde_Queue \
 		Horde_Notification \
 		Horde_Perms \
 		Horde_Util \
