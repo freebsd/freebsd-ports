@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTVERSION=	2.7.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -18,10 +17,10 @@ COMMENT=	An automatic 3D finite element mesh generator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		lapack.4:${PORTSDIR}/math/lapack
+		lapack:${PORTSDIR}/math/lapack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
@@ -54,7 +53,7 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	SHARED_LIB="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if defined(PORT_OPTIONS:MDOCS)
 CMAKE_ARGS+=	-DINSTALL_DOCS=OFF
 .endif
 
@@ -73,7 +72,7 @@ IGNORE=		requires that WITHOUT_METIS is not set if WITH_TAUCS is set
 
 .if !defined(WITHOUT_METIS)
 CMAKE_ARGS+=	-DENABLE_METIS=ON
-.if defined(NOPORTDOCS)
+.if defined(PORT_OPTIONS:MDOCS)
 IGNORE=		the license for Metis requires that its documentation is included
 .endif
 DISTFILES+=	manual.pdf
@@ -84,21 +83,21 @@ PLIST_SUB+=	METIS="@comment "
 .endif
 
 .if defined(WITH_TAUCS)
-LIB_DEPENDS+=	taucs.1:${PORTSDIR}/math/taucs
+LIB_DEPENDS+=	taucs:${PORTSDIR}/math/taucs
 CMAKE_ARGS+=	-DENABLE_TAUCS=ON
 .else
 CMAKE_ARGS+=	-DENABLE_TAUCS=OFF
 .endif
 
 .if !defined(WITHOUT_MED)
-LIB_DEPENDS+=	med.5:${PORTSDIR}/french/med
+LIB_DEPENDS+=	med:${PORTSDIR}/french/med
 CMAKE_ARGS+=	-DENABLE_MED=ON
 .else
 CMAKE_ARGS+=	-DENABLE_MED=OFF
 .endif
 
 .if !defined(WITHOUT_CGNS)
-LIB_DEPENDS+=	cgns.3:${PORTSDIR}/science/cgnslib
+LIB_DEPENDS+=	cgns:${PORTSDIR}/science/cgnslib
 CMAKE_ARGS+=	-DENABLE_CGNS=ON
 .else
 CMAKE_ARGS+=	-DENABLE_CGNS=OFF
@@ -109,7 +108,7 @@ CMAKE_ARGS+=	-DENABLE_GMM=OFF
 .endif
 
 .if defined(WITH_OCC)
-LIB_DEPENDS+=	TKernel.0:${PORTSDIR}/cad/opencascade
+LIB_DEPENDS+=	TKernel:${PORTSDIR}/cad/opencascade
 CMAKE_ARGS+=	-DENABLE_OCC=ON
 CONFLICTS=	gmsh-2.*
 .else
