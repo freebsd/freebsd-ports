@@ -3,6 +3,7 @@ lib/thunarx-2/thunar-media-tags-plugin.la
 lib/thunarx-2/thunar-media-tags-plugin.so
 share/locale/ar/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ast/LC_MESSAGES/thunar-media-tags-plugin.mo
+share/locale/bg/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ca/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/cs/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/da/LC_MESSAGES/thunar-media-tags-plugin.mo
@@ -20,6 +21,8 @@ share/locale/id/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/it/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ja/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/kk/LC_MESSAGES/thunar-media-tags-plugin.mo
+share/locale/ko/LC_MESSAGES/thunar-media-tags-plugin.mo
+share/locale/lt/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/lv/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/nb/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/nl/LC_MESSAGES/thunar-media-tags-plugin.mo
@@ -29,7 +32,9 @@ share/locale/pt/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ru/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/sk/LC_MESSAGES/thunar-media-tags-plugin.mo
+share/locale/sl/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/sq/LC_MESSAGES/thunar-media-tags-plugin.mo
+share/locale/sr/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/sv/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/tr/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ug/LC_MESSAGES/thunar-media-tags-plugin.mo
