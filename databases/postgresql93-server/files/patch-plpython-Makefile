@@ -1,0 +1,11 @@
+--- src/pl/plpython/Makefile.orig	Fri Nov 19 20:23:01 2004
++++ src/pl/plpython/Makefile	Tue Dec 28 23:32:16 2004
+@@ -9,7 +9,7 @@
+ # shared library.  Since there is no official way to determine this
+ # (at least not in pre-2.3 Python), we see if there is a file that is
+ # named like a shared library.
+-ifneq (,$(wildcard $(python_libdir)/libpython*$(DLSUFFIX)*))
++ifneq (,$(wildcard $(python_libdir)/../../libpython*$(DLSUFFIX)*))
+ shared_libpython = yes
+ endif
+ 
