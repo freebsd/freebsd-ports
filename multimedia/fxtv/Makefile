@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fxtv
-# Date created:		Thu Nov  4 19:54:04 EST 1999
-# Whom:			Randall Hopper <aa8vb@nc.rr.com>
-#
+# Created by: Randall Hopper <aa8vb@nc.rr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fxtv
 PORTVERSION=	1.03
@@ -27,13 +23,14 @@ MAN1=		fxtv.1
 
 ONLY_FOR_ARCHS=	alpha i386 ia64 amd64
 
-OPTIONS=	EXTRA "Extra programs required to record/playback/save" off
+OPTIONS_DEFINE=	EXTRA
+EXTRA_DESC=	Extra programs required to record/playback/save
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # This program does not actually require the programs below unless you
 #   use audio/video recording and/or playback and save to a non-raw format.
-.if defined(WITH_EXTRA)
+.if ${PORT_OPTIONS:MEXTRA}
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
@@ -43,4 +40,4 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox \
 pre-install:
 	${CP} ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

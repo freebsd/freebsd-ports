@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libvpx
-# Date created:		2010-05-21
-# Whom:			Ashish SHUKLA <ashish@FreeBSD.org>
-#
+# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libvpx
 PORTVERSION=	1.1.0
@@ -28,11 +24,11 @@ MAKE_JOBS_SAFE=yes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS=	DEBUG	"Enable debugging"	OFF \
-		POSTPROC	"Enable postprocessing"	ON \
-		RUNTIME	"Enable runtime CPU detection"	ON \
-		THREADS	"Enable multithread"	ON \
-		SHARED	"Enable shared-library support"	ON
+OPTIONS_DEFINE=	DEBUG POSTPROC RUNTIME THREADS SHARED
+OPTIONS_DEFAULT=	POSTPROC RUNTIME THREADS SHARED
+POSTPROC_DESC=	Enable postprocessing
+RUNTIME_DESC=	Enable runtime CPU detection
+SHARED_DESC=	Enable shared-library support
 
 ALL_TARGET=
 CONFIGURE_ARGS+=	--enable-pic --disable-install-srcs --enable-vp8 --disable-install-docs
@@ -40,30 +36,28 @@ MAKE_ARGS+=	DIST_DIR=${PREFIX} verbose=yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_POSTPROC)
+.if ${PORT_OPTIONS:MPOSTPROC}
 CONFIGURE_ARGS+=	--enable-postproc
 .endif
 
-.if defined(WITH_RUNTIME)
+.if ${PORT_OPTIONS:MRUNTIME}
 CONFIGURE_ARGS+=	--enable-runtime-cpu-detect
 .endif
 
-.if defined(WITHOUT_THREADS)
+.if ! ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--disable-multithread
 .endif
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 CONFIGURE_ARGS+=	--enable-shared
 PLIST_SUB+=	SHARED=""
 .else
 PLIST_SUB+=	SHARED="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--target=x86_64-linux-gcc
@@ -84,12 +78,7 @@ post-patch:
 		${WRKSRC}/build/make/configure.sh
 	@${GREP} -Rl '^#!/bin/bash' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,#!/bin/bash,#!/usr/bin/env bash,g'
-.if ${OSVERSION} < 700000
-	@${GREP} -Rl 'LIBVPX_SO.*extralibs' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
-		-e 's/\(LIBVPX_SO.*extralibs[[:space:]]*+=[[:space:]]*\)/\1-lc /g'
-.else
 	@${GREP} -Rl -- '-l\?pthread' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -E \
 		-e 's/-l?pthread/${PTHREAD_LIBS}/g'
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
