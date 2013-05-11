@@ -2,83 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.9.0
-PORTREVISION=	3
 CATEGORIES=	mail news ipv6
-MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
-MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Lightweight and very featureful GTK+ based e-mail and news client
 
-LICENSE=	GPLv3
-
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		curl:${PORTSDIR}/ftp/curl \
-		cairo:${PORTSDIR}/graphics/cairo \
-		png15:${PORTSDIR}/graphics/png \
 		etpan:${PORTSDIR}/mail/libetpan \
-		gmp:${PORTSDIR}/math/gmp \
-		freetype:${PORTSDIR}/print/freetype2 \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error:${PORTSDIR}/security/libgpg-error \
-		tasn1:${PORTSDIR}/security/libtasn1 \
-		nettle:${PORTSDIR}/security/nettle \
-		p11-kit:${PORTSDIR}/security/p11-kit \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
+		gcrypt:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-CONFLICTS=	sylpheed-claws
-
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xrandr xrender
-USE_GNOME=	atk glib20 gnomehack gtk20 libartlgpl2 libxml2 pango
-GNU_CONFIGURE=	yes
-USES=		pkgconfig iconv
+USE_GNOME=	gtk20
+USES=		iconv pathfix pkgconfig
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		claws-mail.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 JPILOT LDAP \
+		MANUAL NLS STARTUP THEMES
 
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --disable-dbus
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
-
-OPTIONS_DEFINE=	BOGOFILTER COMPFACE DEBUG DILLO ENCHANT GPGME IPV6 JPILOT LDAP \
-		MANUAL SPAMASSASSIN STARTUP THEMES
-
-BOGOFILTER_DESC=	Bogofilter plugin
 COMPFACE_DESC=		X-Face support
-DILLO_DESC=		Dillo HTML viewer plugin
 ENCHANT_DESC=		Spell checking support
-GPGME_DESC=		PGP/GnuPG/SMIME plugins
-JPILOT_DESC=		JPilot plugin
+JPILOT_DESC=		JPilot support
 MANUAL_DESC=		User manual
-SPAMASSASSIN_DESC=	SpamAssassin plugin
 STARTUP_DESC=		Startup notification support
 THEMES_DESC=		Additional themes
 
 OPTIONS_DEFAULT=	COMPFACE ENCHANT MANUAL STARTUP THEMES
 
+.include "Makefile.claws"
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBOGOFILTER}
-RUN_DEPENDS+=		bogofilter:${PORTSDIR}/mail/bogofilter
-CONFIGURE_ARGS+=	--enable-bogofilter-plugin
-PLIST_SUB+=		BOGO_PLUG=""
-.else
-CONFIGURE_ARGS+=	--disable-bogofilter-plugin
-PLIST_SUB+=		BOGO_PLUG="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MCOMPFACE}
 LIB_DEPENDS+=		compface:${PORTSDIR}/mail/faces
@@ -126,39 +79,8 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@Comment "
 .endif
 
-.if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-CONFIGURE_ARGS+=	--enable-spamassassin-plugin
-PLIST_SUB+=		SA_PLUG=""
-.else
-CONFIGURE_ARGS+=	--disable-spamassassin-plugin
-PLIST_SUB+=		SA_PLUG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGPGME}
-PLIST_SUB+=		GPGME=""
-CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
-			--enable-pgpinline-plugin --enable-smime-plugin
-LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme \
-			gpg-error:${PORTSDIR}/security/libgpg-error \
-			assuan:${PORTSDIR}/security/libassuan
-RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
-.else
-PLIST_SUB+=		GPGME="@comment "
-CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
-			--disable-pgpinline-plugin --disable-smime-plugin
-.endif
-
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-maintainer-mode
-.endif
-
-.if ${PORT_OPTIONS:MDILLO}
-PLIST_SUB+=	DILLO=""
-RUN_DEPENDS+=	dillo:${PORTSDIR}/www/dillo
-.else
-PLIST_SUB+=	DILLO="@comment "
-CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -168,8 +90,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MSTARTUP}
-LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification \
-			xcb-util:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=	--enable-startup-notification
 .else
 CONFIGURE_ARGS+=	--disable-startup-notification
@@ -180,14 +101,12 @@ RUN_DEPENDS+=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${POR
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lresolv||g; s|-lpisock\"|-liconv &|g' \
-		-e 's|-DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED||g' \
+	@${REINPLACE_CMD} -e 's|-lresolv||g; s|-lpisock\"|-liconv &|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/procmime.c
-	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@CLAWS_GNOME2:#@CLAWS_GNOME2:g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s:-Wno-unused-function::" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "/(GPGME_LIBS)/d" \
+		${WRKSRC}/src/Makefile.in
 	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
 

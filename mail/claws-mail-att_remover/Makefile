@@ -2,25 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	att_remover
-PORTVERSION=	1.0.15
-CATEGORIES=	mail
-MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
-PKGNAMEPREFIX=	claws-mail-
+PORTREVISION=	0
 
-MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Attachments removing plugin for Claws Mail
 
-LICENSE=	GPLv3
+CLAWS_PLUGINS_BUILD=	att_remover
 
-BUILD_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.9.0:${PORTSDIR}/mail/claws-mail
-
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf
-MAKE_JOBS_SAFE=	yes
-
-PLIST_FILES=	lib/claws-mail/plugins/att_remover.a \
-		lib/claws-mail/plugins/att_remover.la \
-		lib/claws-mail/plugins/att_remover.so
-
+.include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>
