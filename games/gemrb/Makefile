@@ -1,7 +1,8 @@
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
 
 PORTNAME=	gemrb
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
