@@ -19,7 +19,6 @@ MAN1=		wmconfig.1x
 PORTDOCS=	AUTHORS ChangeLog COPYING README TODO
 
 OPTIONS_DEFINE=	NLS DOCS
-OPTIONS_DEFAULT=	NLS DOCS
 
 .include <bsd.port.options.mk>
 
