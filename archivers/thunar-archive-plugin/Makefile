@@ -3,8 +3,7 @@
 #
 
 PORTNAME=	thunar-archive-plugin
-PORTVERSION=	0.3.0
-PORTREVISION=	8
+PORTVERSION=	0.3.1
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -16,7 +15,7 @@ COMMENT=	Archive plugin for the Thunar File Manager
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XFCE=	configenv libexo thunar
-USES=		gettext
+USES=		gettext pkgconfig
 INSTALLS_ICONS=	yes
 USE_GNOME=	intltool
 USE_GMAKE=	yes
