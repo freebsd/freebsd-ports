@@ -1,0 +1,12 @@
+The GPG plugins (PGP/Core, PGP/Mime and PGP/Inline) provide digital
+signature and encryption features:
+
+- Checking signatures of received emails
+- Decrypting received emails
+- Sending signed and/or encrypted emails
+- Creating new key pairs easily
+- Optionally, caching your passphrase or using gpg-agent.
+
+S/MIME plugin handles S/MIME signed and/or encrypted mails.
+
+WWW: http://claws-mail.org/plugin.php?plugin=gpg
