@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyteomics
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.5
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	makc@FreeBSD.org
@@ -13,7 +13,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=0:${PORTSDIR}/math/py-matplotlib \
 		${PYNUMPY}
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>

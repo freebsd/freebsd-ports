@@ -35,5 +35,3 @@
 %%PYTHON_SITELIBDIR%%/pyteomics/pylab_aux.pyc
 %%PYTHON_SITELIBDIR%%/pyteomics/pylab_aux.pyo
 @dirrmtry %%PYTHON_SITELIBDIR%%/pyteomics
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
