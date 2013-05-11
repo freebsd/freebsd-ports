@@ -6,7 +6,6 @@
 PATH=/bin:/usr/bin:/usr/sbin
 squid_homedir="/var/squid"
 squid_cache_basedir="${squid_homedir}/cache"
-squid_state_basedir="${squid_homedir}/run"
 squid_confdir=${PKG_PREFIX}/etc/squid
 squid_logdir="/var/log/squid"
 squid_rundir="/var/run/squid"
@@ -18,7 +17,7 @@ DEINSTALL)
 		cmp -s -z ${f} ${f}.default && rm ${f}
 	done
 	# try to cleanup directories in /var:
-	for d in ${squid_cache_basedir}/squid ${squid_cache_basedir} ${squid_state_basedir}/squid ${squid_state_basedir} ${squid_homedir} ${squid_logdir} ${squid_rundir}; do
+	for d in ${squid_cache_basedir}/squid ${squid_cache_basedir} ${squid_homedir} ${squid_logdir} ${squid_rundir}; do
 		rmdir ${d} 2>/dev/null
 	done
 	;;

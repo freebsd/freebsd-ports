@@ -1,7 +1,7 @@
      o You can find the configuration files for this package in the
        directory %%PREFIX%%/etc/squid.
 
-     o The default cache directory is /var/squid/.
+     o The default cache directory is /var/squid/cache/squid/.
        The default log directory is /var/log/squid/.
 
        Note:

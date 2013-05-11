@@ -38,6 +38,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.2.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -222,10 +223,11 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--sbindir=${PREFIX}/sbin  \
 		--datadir=${ETCDIR} \
 		--libexecdir=${PREFIX}/libexec/squid \
-		--localstatedir=/var/squid \
+		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-logdir=/var/log/squid \
 		--with-pidfile=/var/run/squid/squid.pid \
+		--with-swapdir=/var/squid/cache/squid \
 		--enable-auth \
 		--enable-build-info \
 		--enable-loadable-modules \
