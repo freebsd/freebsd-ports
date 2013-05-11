@@ -602,6 +602,8 @@ include/wine/windows/tmschema.h
 include/wine/windows/tom.h
 include/wine/windows/tom.idl
 include/wine/windows/traffic.h
+include/wine/windows/transact.h
+include/wine/windows/transact.idl
 include/wine/windows/twain.h
 include/wine/windows/udpmib.h
 include/wine/windows/uiautomation.h
@@ -733,8 +735,6 @@ include/wine/windows/ddk/usbdlib.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winddiui.h
 include/wine/windows/ddk/winsplp.h
-lib/libwine.so
-lib/libwine.so.1
 lib/wine/acledit.dll.so
 lib/wine/aclui.dll.so
 lib/wine/activeds.dll.so

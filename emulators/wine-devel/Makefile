@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.5.29
+DISTVERSION=	1.5.30
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -150,8 +150,6 @@ post-install:
 	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/fr.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/pl.UTF-8/man1
-	${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
-	${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
