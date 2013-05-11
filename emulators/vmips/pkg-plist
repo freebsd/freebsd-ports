@@ -4,4 +4,5 @@ etc/vmipsrc
 include/vmips/asm_regnames.h
 @dirrm include/vmips
 %%DATADIR%%/ld.script
+%%DATADIR%%/setup.S
 @dirrm %%DATADIR%%
