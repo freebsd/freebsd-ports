@@ -48,7 +48,7 @@ USE_GMAKE=	yes
 USE_GHOSTSCRIPT=9
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GNOME=	pango
 
 MAKEFILE=	GNUmakefile

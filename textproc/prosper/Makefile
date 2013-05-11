@@ -19,7 +19,7 @@ COMMENT=	LaTeX class for writing transparencies
 
 NO_BUILD=	yes
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

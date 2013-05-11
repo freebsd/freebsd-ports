@@ -41,7 +41,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
-USE_TEX=	tetex
+USE_TEX=	latex:build dvipsk:build
 .endif
 
 post-patch:

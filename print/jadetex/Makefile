@@ -16,7 +16,7 @@ COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_TEX=	tetex
+USE_TEX=	tex
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${TEXMFDIR}/web2c
 

@@ -20,7 +20,7 @@ COMMENT=		A non-validating XML parser, written in TeX
 
 LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png
 
-USE_TEX=	tetex
+USE_TEX=	tex
 
 .include <bsd.port.pre.mk>
 

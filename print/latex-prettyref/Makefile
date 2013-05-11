@@ -18,7 +18,7 @@ MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	Improved reference formatting for LaTeX2e
 
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 
 TEXMFDIR?=	share/texmf

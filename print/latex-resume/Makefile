@@ -19,7 +19,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A resume class for LaTeX
 
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

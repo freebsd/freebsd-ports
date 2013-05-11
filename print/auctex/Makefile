@@ -14,7 +14,7 @@ COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 
 LICENSE=	GPLv3
 
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR} \

@@ -21,7 +21,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
 
 USE_GMAKE=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1

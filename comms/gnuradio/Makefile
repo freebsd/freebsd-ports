@@ -51,7 +51,7 @@ TESTING_DESC=	Include testing support
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	tetex
+USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
 		dot:${PORTSDIR}/graphics/graphviz \

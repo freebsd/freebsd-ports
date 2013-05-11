@@ -16,10 +16,8 @@ DIST_SUBDIR=	latex
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	LaTeX class for American Astronomical Society (AAS) journals
 
-BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex
-
 USE_GHOSTSCRIPT=yes
-USE_TEX=	tetex
+USE_TEX=	latex dvipsk
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

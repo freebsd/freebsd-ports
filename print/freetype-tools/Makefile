@@ -24,7 +24,7 @@ LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_TEX=	tetex
+USE_TEX=	base texmf
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared

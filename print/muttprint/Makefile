@@ -30,7 +30,7 @@ NO_BUILD=	yes
 PLIST_SUB+=	LANGINFO="@comment "
 
 REINPLACE_ARGS=	-i ""
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GMAKE=	yes
 
 MAN1=		muttprint.1

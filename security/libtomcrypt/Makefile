@@ -47,7 +47,7 @@ CFLAGS+=	-DGMP_DESC
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	tetex
+USE_TEX=	latex:build
 PORTDOCS=	*
 .else
 MAKE_ARGS+=	NODOCS=yes

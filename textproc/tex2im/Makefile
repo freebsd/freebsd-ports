@@ -18,7 +18,7 @@ COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		bash:${PORTSDIR}/shells/bash
 
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	yes
 PLIST_FILES=	bin/tex2im
 PORTEXAMPLES=	example1.png example1.tex example2.png example2.tex \

@@ -17,7 +17,7 @@ COMMENT=	Converter from DVI to SVG
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	tetex
+USE_TEX=	base texmf
 ALL_TARGET=	# empty
 # workaround for svgfonts.c not including kpathsea/c-auto.h
 CFLAGS+=	-DHAVE_PROTOTYPES

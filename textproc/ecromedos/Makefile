@@ -22,7 +22,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 FIND_DIRS=	-type d
 FIND_DATA=	-type f -not \( -name "*.orig" -or -name "*.bak" \)

@@ -5,58 +5,50 @@
 TEX_MAINTAINER=	hrs@FreeBSD.org
 
 #
-# For ports which depend on TeX:
+# Ports which depend on TeX should use USE_TEX.
+#
 # USE_TEX=	yes
-# Note that teTeX or TeXLive is used based on $TEX_DEFAULT, and full version
-# of the packages will be installed as the dependency. 
+# imports variables only, and
+# USE_TEX=	full
+# means full teTeX or TeXLive dependency.
 #
-# For full teTeX dependency:
-# USE_TEX=	tetex
+# The other valid keywords (* means TeXLive specific):
 #
-# For full TeXLive dependency:
-# USE_TEX=	texlive
+#  base:	base part
+#  texmf:	texmf tree
 #
-# The other valid keywords:
-#
-#  tetex-base:	teTeX base
-#  tetex-texmf:	teTeX texmf tree
-#
-#  web2c:	WEB2C toolchain and TeX engines
-#  kpathsea:	kpathsea library
-#  ptexenc:	character code conversion library for pTeX
-#
-#  base:	TeXLive base
-#  texmf:	TeXLive texmf tree
-#  infra:	tlmgr dependency (Perl modules)
+#  web2c:	WEB2C toolchain and TeX engines[*]
+#  kpathsea:	kpathsea library[*]
+#  ptexenc:	character code conversion library for pTeX[*]
+#  infra:	tlmgr dependency (Perl modules)[*]
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
 #
 #  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
-#		METAFONT, MLTeX, PDFTeX, TeXsis
-#  aleph:	Aleph
+#		METAFONT, MLTeX, PDFTeX, TeXsis[*]
+#  tex:		TeX
+#  latex:	LaTeX
+#  aleph:	Aleph[*]
 #  jadetex:	JadeTeX
-#  luatex:	LuaTeX
+#  luatex:	LuaTeX[*]
 #  ptex:	pTeX
-#  xetex:	XeTeX
+#  xetex:	XeTeX[*]
 #  xmltex:	XMLTeX
 #
 #  texhash:	directory search hash regeneration
-#  updmap:	font map regeneration
-#  fmtutil:	format regeneration
+#  updmap:	font map regeneration[*]
+#  fmtutil:	format regeneration[*]
 #
+# Examples:
+# USE_TEX=	latex:build
+# USE_TEX=	formats:run
+# USE_TEX=	latex:build dvips:build
 
 # default TeX distribution.  "tetex" or "texlive"
 TEX_DEFAULT?=	tetex
 #TEX_DEFAULT?=	texlive
-
-# normalize
-TEX_DEFAULT:=	${TEX_DEFAULT:L}
-
-.if defined(USE_TEX) && !empty(USE_TEX:M[Yy][Ee][Ss])
-USE_TEX:=	${TEX_DEFAULT}
-.endif
 
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
@@ -79,99 +71,86 @@ CONFLICTS_TETEX= \
 	teTeX-*-[0-9]* *-teTeX-*-[0-9]* \
 	latex2e-[0-9]*
 
-.if !empty(USE_TEX:Mtetex-texmf) || !empty(USE_TEX:Mtetex)
+.if !empty(TEX_DEFAULT:U:MTETEX)
+CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
+.elif !empty(TEX_DEFAULT:U:MTEXLIVE)
+CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
+.else
+.error malformed TEX_DEFAULT: ${TEX_DEFAULT}
+.endif
+
+_TEX_LABEL:=	${TEX_DEFAULT:U:S/TEXLIVE/TEX/}
+
 _USE_TETEX_TEXMF=	${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf
-CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
-.endif
-.if !empty(USE_TEX:Mtetex-base) || !empty(USE_TEX:Mtetex)
+_USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-texmf
+
 _USE_TETEX_BASE=	mktexlsr:${PORTSDIR}/print/teTeX-base
-CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
-.endif
-.if !empty(USE_TEX:Mtetex-dvipsk) || !empty(USE_TEX:Mtetex)
+_USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
+
+_USE_TEX_INFRA=		${SITE_PERL}/TeXLive/TLConfig.pm:${PORTSDIR}/print/texlive-infra
+
 _USE_TETEX_DVIPSK=	dvips:${PORTSDIR}/print/dvipsk-tetex
-CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
-.endif
-
-.if !empty(USE_TEX:Mweb2c) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_WEB2C=		weave:${PORTSDIR}/devel/tex-web2c
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mjadetex) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_JADETEX=	jadetex:${PORTSDIR}/print/tex-jadetex
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mxmltex) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_XMLTEX=	xmltex:${PORTSDIR}/print/tex-xmltex
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mluatex) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mxetex) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_XETEX=		xetex:${PORTSDIR}/print/tex-xetex
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Maleph) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mptex) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_PTEX=		ptex:${PORTSDIR}/japanese/tex-ptex
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mkpathsea) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_KPATHSEA=	kpathsea:${PORTSDIR}/devel/tex-kpathsea
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mptexenc) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_PTEXENC=	ptexenc:${PORTSDIR}/print/tex-ptexenc
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mdvipsk) || !empty(USE_TEX:Mtexlive)
 _USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mxdvik) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mxdvipdfmx) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mbase) || !empty(USE_TEX:Mtexlive)
-_USE_TEXLIVE_BASE=	tlmgr:${PORTSDIR}/print/texlive-base
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mtexmf) || !empty(USE_TEX:Mtexlive)
-_USE_TEXLIVE_TEXMF=	${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-texmf
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Mformats) || !empty(USE_TEX:Mtexlive)
-_USE_TEX_FORMATS=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt:${PORTSDIR}/print/tex-formats
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
-.if !empty(USE_TEX:Minfra) || !empty(USE_TEX:Mtexlive)
-_USE_TEXLIVE_INFRA=	${SITE_PERL}/TeXLive/TLConfig.pm:${PORTSDIR}/print/texlive-infra
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.endif
 
-.for D in TETEX_TEXMF TETEX_BASE TETEX_DVIPSK \
-	TEXLIVE_BASE TEX_WEB2C TEXLIVE_TEXMF TEXLIVE_INFRA \
-	TEX_FORMATS TEX_ALEPH TEX_JADETEX TEX_XMLTEX TEX_LUATEX \
-	TEX_XETEX TEX_PTEX TEX_XDVIK TEX_DVIPSK TEX_DVIPDFMX
-RUN_DEPENDS+=	${_USE_${D}}
+_USE_TETEX_XDVIK=	xdvi:${PORTSDIR}/print/xdvik
+_USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
+
+_USE_TETEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/dvipdfmx
+_USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
+
+_USE_TETEX_TEX=		${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
+_USE_TEX_TEX=		${_USE_TEX_FORMATS}
+
+_USE_TETEX_LATEX=	${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
+_USE_TEX_LATEX=		${_USE_TEX_FORMATS}
+
+_USE_TETEX_JADETEX=	jadetex:${PORTSDIR}/print/jadetex
+_USE_TEX_JADETEX=	jadetex:${PORTSDIR}/print/tex-jadetex
+
+_USE_TETEX_XMLTEX=	xmltex:${PORTSDIR}/print/xmltex
+_USE_TEX_XMLTEX=	xmltex:${PORTSDIR}/print/tex-xmltex
+
+_USE_TETEX_PTEX=	ptex:${PORTSDIR}/japanese/ptex
+_USE_TEX_PTEX=		ptex:${PORTSDIR}/japanese/tex-ptex
+
+_USE_TEX_WEB2C=		weave:${PORTSDIR}/devel/tex-web2c
+_USE_TEX_KPATHSEA=	kpathsea:${PORTSDIR}/devel/tex-kpathsea
+_USE_TEX_PTEXENC=	ptexenc:${PORTSDIR}/print/tex-ptexenc
+_USE_TEX_FORMATS=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt:${PORTSDIR}/print/tex-formats
+_USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
+_USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
+_USE_TEX_XETEX=		xetex:${PORTSDIR}/print/tex-xetex
+
+.for D in TEXMF BASE \
+	DVIPSK DVIPDFMX XDVIK XMLTEX JADETEX
+_USE_TETEX_FULL+=	${_USE_TETEX_${D}}
 .endfor
-.for D in TETEX_TEXMF TETEX_BASE TETEX_DVIPSK \
-	TEXLIVE_BASE TEX_WEB2C TEXLIVE_TEXMF \
-	TEX_FORMATS TEX_ALEPH TEX_JADETEX TEX_XMLTEX TEX_LUATEX \
-	TEX_XETEX TEX_PTEX
-BUILD_DEPENDS+=	${_USE_${D}}
+.for D in TEXMF BASE WEB2C KPATHSEA PTEXENC INFRA \
+	FORMATS ALEPH XETEX JADETEX LUATEX XMLTEX PTEX \
+	DVIPSK DVIPDFMX XDVIK
+_USE_TEX_FULL+=		${_USE_TEX_${D}}
 .endfor
-.for D in TEX_KPATHSEA TEX_PTEXENC
-LIB_DEPENDS+=	${_USE_${D}}
-.endfor
+
+.if !empty(USE_TEX:U:MFULL)
+BUILD_DEPENDS+=	${_USE_${_TEX_LABEL}_FULL}
+RUN_DEPENDS+=	${_USE_${_TEX_LABEL}_FULL}
+.else
+. for _UU in ${USE_TEX:U}
+_U:=	${_UU}	# ugly but necessary in for loop
+.  if !empty(_U:MKPATHSEA) || !empty(_U:MPTEXENC)
+_C:=	LIB
+.  else
+.   if empty(_U:M*\:*)
+_C:=	BUILD RUN
+.   else
+_C:=	${_U:C/.*://}
+.   endif
+.  endif
+.  for _CC in ${_C}
+${_CC}_DEPENDS+=${_USE_${_TEX_LABEL}_${_UU:C/:.*$//}}
+.  endfor
+. endfor
+.endif
 
 .ORDER: do-texhash do-fmtutil do-updmap
 

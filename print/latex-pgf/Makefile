@@ -16,7 +16,7 @@ COMMENT=	A LaTeX package for TeX Portable Graphic Format
 
 NO_BUILD=	YES
 USE_ZIP=	YES
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \
 		TEXMFDIR=${TEXMFDIR}

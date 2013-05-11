@@ -15,12 +15,11 @@ MASTER_SITES=	http://www.redsymbol.net/software/l2p/dist/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Create PNG images from LaTeX math expressions
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex dvipsk
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

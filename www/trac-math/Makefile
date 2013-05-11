@@ -13,7 +13,7 @@ COMMENT=	Support for LaTeX math formulas in wiki pages
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_TEX=	tetex
+USE_TEX=	latex
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

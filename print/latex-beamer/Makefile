@@ -11,7 +11,7 @@ COMMENT=	A LaTeX class to create a beamer presentation
 
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/tex/latex/pgf/basiclayer/pgf.sty:${PORTSDIR}/print/latex-pgf
 
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist
 

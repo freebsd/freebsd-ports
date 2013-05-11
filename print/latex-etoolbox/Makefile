@@ -14,7 +14,7 @@ MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	A toolbox providing programming facilities for LaTeX
 
 USE_ZIP=	YES
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist
 

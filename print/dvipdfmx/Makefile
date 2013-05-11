@@ -23,7 +23,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		paper:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
-USE_TEX=	tetex
+USE_TEX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
 MAKE_JOBS_SAFE=	yes

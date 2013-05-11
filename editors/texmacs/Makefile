@@ -17,7 +17,7 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	yes
-USE_TEX=	tetex
+USE_TEX=	tex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

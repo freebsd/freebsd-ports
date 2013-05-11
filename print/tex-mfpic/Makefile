@@ -17,7 +17,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A TeX package that supports drawing pictures
 
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFDIR=${TEXMFDIR}
 TEXMFDIR=	share/texmf

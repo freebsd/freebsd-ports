@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	mtl regex-compat
-USE_TEX=	tetex
+USE_TEX=	latex
 
 STANDALONE=	yes
 EXECUTABLE=	lhs2TeX

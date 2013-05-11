@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	 --with-jpeg=no --with-png=no -with-tiff=no
 
 .if ${PORT_OPTIONS:MLATEX_GS}
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 .endif
 
 .if ${PORT_OPTIONS:MX11}

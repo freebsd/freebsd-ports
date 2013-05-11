@@ -18,7 +18,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that ties section structures and folders
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFDIR=${TEXMFDIR}
 

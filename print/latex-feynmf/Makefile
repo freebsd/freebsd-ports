@@ -19,7 +19,7 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for drawing of Feynman diagrams
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} FONTDIR=${FONTDIR} MPDIR=${MPDIR}
 

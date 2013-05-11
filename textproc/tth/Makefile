@@ -20,7 +20,7 @@ COMMENT=	A TeX to HTML translator
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 MAN1=		tth.1
 

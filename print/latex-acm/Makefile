@@ -17,7 +17,7 @@ MAINTAINER=	rea@FreeBSD.org
 COMMENT=	LaTeX styles for ACM journals
 
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	yes
 
 TEXMFLOCAL=	share/texmf-local

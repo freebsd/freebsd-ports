@@ -78,7 +78,7 @@ MPI_LIBS=	-lmpich -lmpl ${PTHREAD_LIBS}
 .endif
 
 .if !defined(NOPORTDOCS)
-USE_TEX=	tetex
+USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
 ALL_TARGET=	all pdf
 INSTALL_TARGET=	install install-pdf

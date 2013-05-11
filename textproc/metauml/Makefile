@@ -24,7 +24,7 @@ COMMENT=	A MetaPost library for typesetting UML diagrams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/thrunk/License
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} MPDIR=${MPDIR}
 
 TEXMFDIR=	share/texmf

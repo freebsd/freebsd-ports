@@ -15,11 +15,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module for producing high quality PostScript graphics
 
-RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_TEX=	tetex
+USE_TEX=	latex dvipsk
 
 DATADIR=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 

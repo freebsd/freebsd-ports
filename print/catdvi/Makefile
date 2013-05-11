@@ -15,7 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DVI to text/plain translator
 
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile

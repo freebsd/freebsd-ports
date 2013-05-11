@@ -20,7 +20,7 @@ COMMENT=	A LaTeX package for drawing logarithmic graph paper
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
 
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GMAKE=	YES
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R

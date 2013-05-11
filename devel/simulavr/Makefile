@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 BROKEN=		does not package
 
 #USE_BZIP2=	yes
-USE_TEX=	tetex
+USE_TEX=	latex:build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

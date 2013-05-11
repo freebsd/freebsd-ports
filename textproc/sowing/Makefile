@@ -15,13 +15,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processing tools to generate documentation from source files
 
 BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm	\
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_PERL5=	yes
 USE_GHOSTSCRIPT=yes
 USE_GMAKE=	yes
-USE_TEX=	tetex
+USE_TEX=	latex dvipsk
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}

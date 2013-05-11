@@ -18,11 +18,10 @@ DIST_SUBDIR=	latex
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	pLaTeX package that literally provides Japanese option to babel
 
-BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex \
-		iconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex ptex
 
 TEXMFDIR=	share/texmf
 STYDIR=		tex/generic/babel

@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--without-plot
 .endif
 
 .if ${PORT_OPTIONS:MTETEX}
-USE_TEX=		tetex
+USE_TEX=		base texmf latex
 CONFIGURE_ARGS+=	--with-kpsexpand \
 			--with-texdir=${LOCALBASE}/share/texmf/tex/latex/gnuplot
 PLIST_SUB+=		TETEX=""

@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that enables subnumbering of different floats
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
 

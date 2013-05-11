@@ -14,7 +14,7 @@ LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
 
 USE_BZIP2=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 USES=		bison gettext iconv
 USE_GMAKE=	yes
 

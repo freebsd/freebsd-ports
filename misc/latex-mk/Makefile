@@ -18,7 +18,7 @@ COMMENT=	A collection of makefile and scripts for LaTeX documents
 BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 RUN_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

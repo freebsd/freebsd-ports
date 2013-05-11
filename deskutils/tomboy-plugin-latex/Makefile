@@ -20,6 +20,6 @@ RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 .include <bsd.port.mk>

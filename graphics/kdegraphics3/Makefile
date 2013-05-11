@@ -34,7 +34,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_GL=		glut
 USE_BZIP2=	yes
-USE_TEX=	tetex
+USE_TEX=	latex:build
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-poppler
 USE_GMAKE=	yes

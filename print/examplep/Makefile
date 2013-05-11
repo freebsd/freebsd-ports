@@ -16,7 +16,7 @@ COMMENT=	LaTeX style files for typesetting verbatim source code listings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 PLIST=		${WRKDIR}/pkg-plist
 

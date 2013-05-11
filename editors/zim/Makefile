@@ -38,7 +38,7 @@ DITAA_DESC=		Diagram editor support
 RUN_DEPENDS+=	R:${PORTSDIR}/math/R
 .endif
 .if ${PORT_OPTIONS:MLATEX}
-USE_TEX=	tetex
+USE_TEX=	latex
 .endif
 .if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	fdp:${PORTSDIR}/graphics/graphviz
