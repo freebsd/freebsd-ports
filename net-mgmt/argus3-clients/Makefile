@@ -33,7 +33,9 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
+.if ${PORT_OPTIONS:MMANPAGES}
 MAN1+=		rasql.1 rasqlinsert.1 rasqltimeindex.1
+.endif
 .else
 PLIST_SUB+=	MYSQL="@comment "
 .endif
@@ -43,11 +45,13 @@ LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	--with-GeoIP=${LOCALBASE}
 .endif
 
+.if ${PORT_OPTIONS:MMANPAGES}
 MAN1+=	ra.1 rabins.1 racluster.1 raconvert.1 racount.1 radump.1 raevent.1 \
 	rafilteraddr.1 ragraph.1 ragrep.1 rahisto.1 ralabel.1 ranonymize.1 \
 	rapath.1 rapolicy.1 rasort.1 rasplit.1 rastream.1 rastrip.1
 MAN5=	racluster.5 radium.conf.5 ralabel.conf.5 ranonymize.5 rarc.5
 MAN8=	radium.8
+.endif
 
 do-install:
 .for i in ra rabins racluster raconvert racount radium radump raevent \
