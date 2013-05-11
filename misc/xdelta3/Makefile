@@ -13,7 +13,11 @@ COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 LICENSE=	GPLv2 # (or later)
 
-LATEST_LINK=	xdelta3
+.if !defined(SLAVE_ONLY)
+LATEST_LINK=   xdelta3
+.else
+LATEST_LINK=   py-xdelta3
+.endif
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

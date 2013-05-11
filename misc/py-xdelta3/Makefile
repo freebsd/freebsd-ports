@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-xdelta3
-# Date created:				7 Jun 2010
-# Whom:					Anonymous
-#
+# Created by: Anonymous
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 PORTEPOCH=	0
@@ -20,6 +16,7 @@ MASTERDIR=	${.CURDIR}/../../misc/xdelta3
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	xdelta3main
+SLAVE_ONLY=	yes
 
 WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}.so \
