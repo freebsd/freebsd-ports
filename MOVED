@@ -4247,10 +4247,9 @@ editors/nxml-emacs21||2013-05-02|Removed: obsolete
 textproc/ruby-libxml||2013-05-02|Has expired: Does not work with Ruby 1.9
 japanese/navi2ch-emacs21|japanese/navi2ch|2013-05-02|Removed: obsolete
 japanese/navi2ch-xemacs21-mule|japanese/navi2ch|2013-05-02|Removed: obsolete
-databases/phpmyadmin|databases/phpmyadmin35|2013-05-03|New port to track the older 3.5.x release branch
 devel/py-libgsf||2013-05-05|No longer supported by newer libgsf version
 devel/libgsf-gnome||2013-05-05|No longer supported by newer libgsf version
 textproc/ruby-sablot||2013-05-07|Has expired: Does not work with Ruby 1.9
-japanese/jisx0213-fonts|/japanese/font-jisx0213|2013-05-08|Renamed
+japanese/jisx0213-fonts|japanese/font-jisx0213|2013-05-08|Renamed
 x11-drivers/xf86-video-ati613||2013-05-10|Has expired: Old version, use xf86-video-ati instead
 devel/u-boot|devel/uboot-mkimage|2013-05-11|Port does not build full uboot distribution, only mkimage
