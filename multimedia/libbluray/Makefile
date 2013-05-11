@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libbluray
-# Date created:	19 February 2011
-# Whom:		kamikaze@bsdforen.de
-#
+# Created by: kamikaze@bsdforen.de
 # $FreeBSD$
-#
 
 PORTNAME=	libbluray
 PORTVERSION=	0.2.2
@@ -32,11 +28,12 @@ MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		CFLAGS=${CFLAGS:Q}
 
-OPTIONS=	JAVA "Enable Blu-Ray Java support" off
+OPTIONS_DEFINE=	JAVA
+JAVA_DESC+	Enable Blu-Ray Java support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 CATEGORIES+=	java
 USE_JAVA=	1.6+
