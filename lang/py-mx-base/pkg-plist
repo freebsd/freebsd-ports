@@ -14,7 +14,6 @@
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/Cache.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/Cache.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/Cache.pyo
-%%PYTHON_SITELIBDIR%%/mx/BeeBase/Doc/mxBeeBase.pdf
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/ExitFunctions.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/ExitFunctions.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/ExitFunctions.pyo
@@ -53,28 +52,13 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/DateTime.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/DateTime.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/DateTime.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Doc/mxDateTime.pdf
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/AtomicClock.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/AtomicClock.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/AtomicClock.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/CommandLine.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/CommandLine.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/CommandLine.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/Y2000.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/Y2000.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/Y2000.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/__init__.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/__init__.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/__init__.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/alarm.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/alarm.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/alarm.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/lifespan.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/lifespan.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/lifespan.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/numdate.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/numdate.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/Examples/numdate.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/AtomicClock.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/CommandLine.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/Y2000.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/alarm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/lifespan.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/DateTime/numdate.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/Feasts.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/Feasts.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/Feasts.pyo
@@ -207,7 +191,6 @@
 %%PYTHON_SITELIBDIR%%/mx/NewBuiltins.pyc
 %%PYTHON_SITELIBDIR%%/mx/NewBuiltins.pyo
 %%PYTHON_SITELIBDIR%%/mx/Proxy/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/mx/Proxy/Doc/mxProxy.pdf
 %%PYTHON_SITELIBDIR%%/mx/Proxy/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/Proxy/Proxy.py
 %%PYTHON_SITELIBDIR%%/mx/Proxy/Proxy.pyc
@@ -232,7 +215,6 @@
 %%PYTHON_SITELIBDIR%%/mx/Proxy/mxProxy/weakreftest.pyc
 %%PYTHON_SITELIBDIR%%/mx/Proxy/mxProxy/weakreftest.pyo
 %%PYTHON_SITELIBDIR%%/mx/Queue/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/mx/Queue/Doc/mxQueue.pdf
 %%PYTHON_SITELIBDIR%%/mx/Queue/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/Queue/README
 %%PYTHON_SITELIBDIR%%/mx/Queue/UserQueue.py
@@ -254,7 +236,6 @@
 %%PYTHON_SITELIBDIR%%/mx/Queue/queuebench.pyc
 %%PYTHON_SITELIBDIR%%/mx/Queue/queuebench.pyo
 %%PYTHON_SITELIBDIR%%/mx/Stack/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/mx/Stack/Doc/mxStack.pdf
 %%PYTHON_SITELIBDIR%%/mx/Stack/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/Stack/README
 %%PYTHON_SITELIBDIR%%/mx/Stack/UserStack.py
@@ -285,40 +266,17 @@
 %%PYTHON_SITELIBDIR%%/mx/TextTools/Constants/__init__.py
 %%PYTHON_SITELIBDIR%%/mx/TextTools/Constants/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/TextTools/Constants/__init__.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Doc/mxTextTools.pdf
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/HTML.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/HTML.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/HTML.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Loop.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Loop.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Loop.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Python.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Python.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Python.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/RTF.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/RTF.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/RTF.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/RegExp.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/RegExp.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/RegExp.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Tim.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Tim.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Tim.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Words.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Words.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/Words.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/__init__.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/__init__.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/__init__.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/altRTF.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/altRTF.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/altRTF.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/mysplit.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/mysplit.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/mysplit.pyo
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/pytag.py
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/pytag.pyc
-%%PYTHON_SITELIBDIR%%/mx/TextTools/Examples/pytag.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/HTML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/Loop.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/Python.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/RTF.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/RegExp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/Tim.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/Words.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/altRTF.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/mysplit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/TextTools/pytag.py
 %%PYTHON_SITELIBDIR%%/mx/TextTools/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/TextTools/README
 %%PYTHON_SITELIBDIR%%/mx/TextTools/TextTools.py
@@ -350,13 +308,8 @@
 %%PYTHON_SITELIBDIR%%/mx/TextTools/mxTextTools/testkj.pyc
 %%PYTHON_SITELIBDIR%%/mx/TextTools/mxTextTools/testkj.pyo
 %%PYTHON_SITELIBDIR%%/mx/Tools/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/mx/Tools/Doc/mxTools.pdf
-%%PYTHON_SITELIBDIR%%/mx/Tools/Examples/Acquisition.py
-%%PYTHON_SITELIBDIR%%/mx/Tools/Examples/Acquisition.pyc
-%%PYTHON_SITELIBDIR%%/mx/Tools/Examples/Acquisition.pyo
-%%PYTHON_SITELIBDIR%%/mx/Tools/Examples/__init__.py
-%%PYTHON_SITELIBDIR%%/mx/Tools/Examples/__init__.pyc
-%%PYTHON_SITELIBDIR%%/mx/Tools/Examples/__init__.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/Tools/Acquisition.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx/Tools/__init__.py
 %%PYTHON_SITELIBDIR%%/mx/Tools/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/Tools/NewBuiltins.py
 %%PYTHON_SITELIBDIR%%/mx/Tools/NewBuiltins.pyc
@@ -390,7 +343,6 @@
 %%PYTHON_SITELIBDIR%%/mx/Tools/mxTools/test_safecall.pyc
 %%PYTHON_SITELIBDIR%%/mx/Tools/mxTools/test_safecall.pyo
 %%PYTHON_SITELIBDIR%%/mx/UID/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/mx/UID/Doc/mxUID.pdf
 %%PYTHON_SITELIBDIR%%/mx/UID/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/UID/README
 %%PYTHON_SITELIBDIR%%/mx/UID/UID.py
@@ -409,7 +361,6 @@
 %%PYTHON_SITELIBDIR%%/mx/UID/mxUID/test.pyc
 %%PYTHON_SITELIBDIR%%/mx/UID/mxUID/test.pyo
 %%PYTHON_SITELIBDIR%%/mx/URL/COPYRIGHT
-%%PYTHON_SITELIBDIR%%/mx/URL/Doc/mxURL.pdf
 %%PYTHON_SITELIBDIR%%/mx/URL/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/URL/LazyModule.py
 %%PYTHON_SITELIBDIR%%/mx/URL/LazyModule.pyc
@@ -437,36 +388,38 @@
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-@dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/Doc
+%%PORTDOCS%%%%DOCSDIR%%/mxDateTime.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxProxy.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxQueue.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxStack.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxTextTools.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxTools.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxBeeBase.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxURL.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mxUID.pdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mx/DateTime
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mx/TextTools
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mx/Tools
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase
-@dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime/Doc
-@dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime/Examples
 @dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime
 @dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Misc
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy/mxProxy
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Queue/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Queue/mxQueue
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Queue
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Stack/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Stack/mxStack
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Stack
 @dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools/Constants
-@dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools/Doc
-@dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools/Examples
 @dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools/mxTextTools
 @dirrm %%PYTHON_SITELIBDIR%%/mx/TextTools
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Tools/Doc
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Tools/Examples
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Tools/mxTools
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Tools
-@dirrm %%PYTHON_SITELIBDIR%%/mx/UID/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/UID/mxUID
 @dirrm %%PYTHON_SITELIBDIR%%/mx/UID
-@dirrm %%PYTHON_SITELIBDIR%%/mx/URL/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/URL/mxURL
 @dirrm %%PYTHON_SITELIBDIR%%/mx/URL
 @dirrm %%PYTHON_SITELIBDIR%%/mx
