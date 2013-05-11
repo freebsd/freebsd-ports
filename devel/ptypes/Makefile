@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ptypes
-# Date created:			Aug 12, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ptypes
 PORTVERSION=	2.1.1
@@ -21,19 +16,18 @@ PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PTYPES_CFLAGS=	${CFLAGS}
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	DEBUG "Build debug version" off \
-		OPTIMIZED "Enable -O2 optimization" off
+OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not install on powerpc
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 DEBUG_FLAGS=	"-DDEBUG -g"
 .endif
-.if defined(WITH_OPTIMIZED)
+.if ${PORT_OPTIONS:MOPTIMIZED}
 PTYPES_CFLAGS+=-O2
 .endif
 
@@ -48,7 +42,7 @@ do-install:
 		${PREFIX}/lib
 	cd ${PREFIX}/lib; ${LN} -sf libptypes.so.${SHLIB_VER} libptypes.so
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${EXAMPLESDIR}/wshare
 	-${RM} -f ${WRKSRC}/wshare/*.o ${WRKSRC}/wshare/*.orig
 	${INSTALL_DATA} ${WRKSRC}/wshare/*.* ${EXAMPLESDIR}/wshare
@@ -58,4 +52,4 @@ do-install:
 	cd ${WRKSRC}/doc; ${TAR} cf - *| ${TAR} xf - -C ${DOCSDIR}/doc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

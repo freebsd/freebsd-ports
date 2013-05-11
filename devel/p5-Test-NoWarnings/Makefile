@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Test-NoWarnings
-# Date created:				May 12th 2004
-# Whom:	      				Alex Kapranoff <alex@kapranoff.ru>
-#
+# Created by: Alex Kapranoff <alex@kapranoff.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-NoWarnings
 PORTVERSION=	1.04
@@ -21,13 +17,14 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Test::NoWarnings.3
 
-OPTIONS=	DEVEL_STACKTRACE "Stack trace support" off
+OPTIONS_DEFINE=	DEVEL_STACKTRACE
+DEVEL_STACKTRACE_DESC=	Stack trace support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEVEL_STACKTRACE)
+.if ${PORT_OPTIONS:MDEVEL_STACKTRACE}
 BUILD_DEPENDS+=	p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
 RUN_DEPENDS+=	p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

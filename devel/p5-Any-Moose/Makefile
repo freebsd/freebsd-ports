@@ -16,17 +16,19 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Any::Moose.3
 
-OPTIONS=	MOOSE "Use Moose" off \
-		MOUSE "Use Mouse" on
+OPTIONS_DEFINE=	MOOSE MOUSE
+OPTIONS_DEFAULT=	MOUSE
+MOOSE_DESC=	Use Moose
+MOUSE_DESC=	Use Mouse
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MOOSE)
+.if ${PORT_OPTIONS:MMOOSE}
 BUILD_DEPENDS+=	p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS+=	p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 .endif
 
-.if defined(WITH_MOUSE)
+.if ${PORT_OPTIONS:MMOUSE}
 BUILD_DEPENDS+=	p5-Mouse>=0.40:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS+=	p5-Mouse>=0.40:${PORTSDIR}/devel/p5-Mouse
 .endif
