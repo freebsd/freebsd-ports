@@ -3092,6 +3092,7 @@
     SUBDIR += pear-Horde_Nls
     SUBDIR += pear-Horde_Notification
     SUBDIR += pear-Horde_Prefs
+    SUBDIR += pear-Horde_Queue
     SUBDIR += pear-Horde_Rdo
     SUBDIR += pear-Horde_Role
     SUBDIR += pear-Horde_Scheduler
