@@ -66,6 +66,7 @@
     SUBDIR += claws-mail-pgp
     SUBDIR += claws-mail-python
     SUBDIR += claws-mail-rssyl
+    SUBDIR += claws-mail-spamassassin
     SUBDIR += claws-mail-spamreport
     SUBDIR += claws-mail-tnef
     SUBDIR += claws-mail-vcalendar

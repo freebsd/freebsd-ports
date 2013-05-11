@@ -1,0 +1,9 @@
+This plugin enables the scanning of incoming mail received from a POP,
+IMAP, or LOCAL account using SpamAssassin. It can optionally delete mail
+identified as spam or save it to a designated folder, and also can be used
+to train a local  SpamAssassin (or a remote one if SpamAssassin >= 3.1 is
+installed both locally and remotely). According to your SpamAssassin server
+configuration, it can show worse performance than Bogofilter, (slower,
+eating more CPU), but can catch spam with better accuracy.
+
+WWW: http://claws-mail.org/plugin.php?plugin=spamassassin
