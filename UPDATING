@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130511:
+  AFFECTS: users of TeX
+  AUTHOR: hrs@FreeBSD.org
+
+  One can now choose TeXLive or teTeX by using TEX_DEFAULT.
+  Specifying TEX_DEFAULT=texlive, almost all of ports which use TeX
+  will install and depend on TeXLive-based ones.  Note that the
+  default value is still "tetex" and the two cannot coexist.  You need
+  to remove all of the TeX-related packages based on teTeX to try
+  TeXLive.
+
 20130507:
   AFFECTS: users of comms/usbmuxd or comms/libimobiledevice
   AUTHOR: avilla@FreeBSD.org
