@@ -15,8 +15,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/osp-q3-Variables.txt
 %%PORTDOCS%%%%DOCSDIR%%/osp-q3-Viewcam.txt
 %%DATADIR%%/1v1.cfg
+%%DATADIR%%/cfg-DefaultModeReference/1v1.cfg
+%%DATADIR%%/cfg-DefaultModeReference/clanarena.cfg
+%%DATADIR%%/cfg-DefaultModeReference/ctf.cfg
+%%DATADIR%%/cfg-DefaultModeReference/ffa.cfg
+%%DATADIR%%/cfg-DefaultModeReference/qil.cfg
+%%DATADIR%%/cfg-DefaultModeReference/settings.txt
+%%DATADIR%%/cfg-DefaultModeReference/team.cfg
 %%DATADIR%%/cfg-GfxExample/gfxdef.cfg
 %%DATADIR%%/cfg-GfxExample/z-osp-misc.pk3
+%%DATADIR%%/cfg-maps/1v1maps.txt
+%%DATADIR%%/cfg-maps/cbmaps.txt
+%%DATADIR%%/cfg-maps/clanarenamaps.txt
+%%DATADIR%%/cfg-maps/ctfmaps.txt
+%%DATADIR%%/cfg-maps/ffamaps.txt
+%%DATADIR%%/cfg-maps/teammaps.txt
 %%DATADIR%%/clanarena.cfg
 %%DATADIR%%/ctf-public.cfg
 %%DATADIR%%/ctf.cfg
@@ -38,6 +51,8 @@
 %%DATADIR%%/zz-osp-server3a.pk3
 @dirrm %%DATADIR%%/vm
 @dirrm %%DATADIR%%/locs
+@dirrm %%DATADIR%%/cfg-maps
 @dirrm %%DATADIR%%/cfg-GfxExample
+@dirrm %%DATADIR%%/cfg-DefaultModeReference
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
