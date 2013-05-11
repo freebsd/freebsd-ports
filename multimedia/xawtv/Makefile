@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xawtv
-# Date created:        03 March 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xawtv
 PORTVERSION=	3.95
@@ -21,11 +17,11 @@ RUN_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-OPTIONS=	AA		"Enable AA support" on \
-		DV		"Enable reading/writing raw dv files" off \
-		QUICKTIME	"Enable quicktime support" off \
-		ZVBI		"Enable libzvbi support" off \
-		MMX		"Enable mmx support (only for i386)" off
+OPTIONS_DEFINE=	AA DV QUICKTIME ZVBI
+OPTIONS_DEFINE_i386=	MMX
+OPTIONS_DEFAULT=	AA
+AA_DESC=	Enable AA support
+ZVBI_DESC=	Enable libzvbi support
 
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
@@ -49,16 +45,16 @@ MAN8=		v4l-conf.8
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_AA)
-CONFIGURE_ARGS+=--disable-aa
-PLIST_SUB+=	AA="@comment "
-.else
+.if ${PORT_OPTIONS:MAA}
 CONFIGURE_ARGS+=--enable-aa
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	AA=""
+.else
+CONFIGURE_ARGS+=--disable-aa
+PLIST_SUB+=	AA="@comment "
 .endif
 
-.if defined(WITH_ZVBI)
+.if ${PORT_OPTIONS:MZVBI}
 LIB_DEPENDS+=	zvbi.13:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 PLIST_SUB+=	ZVBI="" ZVBI5=""
@@ -67,7 +63,7 @@ CONFIGURE_ARGS+=--enable-zvbi=no
 PLIST_SUB+=	ZVBI="@comment " ZVBI5="@comment "
 .endif
 
-.if defined(WITH_DV)
+.if ${PORT_OPTIONS:MDV}
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
 PLIST_SUB+=	DV=
@@ -76,16 +72,12 @@ CONFIGURE_ARGS+=--enable-dv=no
 PLIST_SUB+=	DV="@comment "
 .endif
 
-.if defined(WITH_MMX)
-.if ${ARCH} == i386
+.if ${PORT_OPTIONS:MMMX}
 CONFIGURE_ARGS+=--enable-mmx
 CFLAGS+=	-DMMX=1
-.else
-BROKEN=		MMX support only works on i386, and you are running ${ARCH}
-.endif
 .endif
 
-.if defined(WITH_QUICKTIME)
+.if ${PORT_OPTIONS:MQUICKTIME}
 CONFIGURE_ARGS+=--enable-quicktime
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 PLIST_SUB+=	QT=
