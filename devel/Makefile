@@ -4337,8 +4337,8 @@
     SUBDIR += trac-bitten
     SUBDIR += trio
     SUBDIR += truc
-    SUBDIR += u-boot
     SUBDIR += uatraits
+    SUBDIR += uboot-mkimage 
     SUBDIR += uclmmbase
     SUBDIR += ucommon
     SUBDIR += ucpp
