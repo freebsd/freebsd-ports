@@ -17,10 +17,9 @@ RUN_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-OPTIONS_DEFINE=	AA DV QUICKTIME ZVBI
+OPTIONS_DEFINE=	AALIB DV QUICKTIME ZVBI
 OPTIONS_DEFINE_i386=	MMX
-OPTIONS_DEFAULT=	AA
-AA_DESC=	Enable AA support
+OPTIONS_DEFAULT=	AALIB
 ZVBI_DESC=	Enable libzvbi support
 
 USE_MOTIF=	yes
@@ -45,7 +44,7 @@ MAN8=		v4l-conf.8
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MAA}
+.if ${PORT_OPTIONS:MAALIB}
 CONFIGURE_ARGS+=--enable-aa
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	AA=""
