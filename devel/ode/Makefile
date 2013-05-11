@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ode
-# Date created:				11 Oct 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
-#
+# Created by: David Yeske <dyeske@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ode
 PORTVERSION=	0.11.1
@@ -23,10 +19,12 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-OPTIONS=	GIMPACT	"Enable gimpact instead of opcode support" off \
-		GYROSCOPIC "Configure ODE to work with gyroscopic term" on \
-		DOUBLE  "Enable double precision (BROKEN with GIMPACT)" off \
-		OU	"Enable Thread-local storage (Experimental)" off
+OPTIONS_DEFINE=	GIMPACT GYROSCOPIC DOUBLE OU
+OPTIONS_DEFAULT=	GYROSCOPIC
+GIMPACT_DESC=		Enable gimpact instead of opcode support
+GYROSCOPIC_DESC=	Configure ODE to work with gyroscopic term
+DOUBLE_DESC=		Enable double precision (BROKEN with GIMPACT)
+OU_DESC=		Enable Thread-local storage (Experimental)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -36,25 +34,25 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CFLAGS+=	-fPIC -DPIC
 .endif
 
-.if defined(WITH_GIMPACT) && defined(WITH_DOUBLE)
+.if ${PORT_OPTIONS:MGIMPACT) && defined(WITH_DOUBLE}
 IGNORE=	currently double precision is not supported by gimpact
 .endif
 
-.if !defined(WITH_GIMPACT)
+.if ! ${PORT_OPTIONS:MGIMPACT}
 CONFIGURE_ARGS+=	--with-trimesh=opcode
 .else
 CONFIGURE_ARGS+=	--with-trimesh=gimpact
 .endif
 
-.if defined(WITHOUT_GYROSCOPIC)
+.if ! ${PORT_OPTIONS:MGYROSCOPIC}
 CONFIGURE_ARGS+=	--disable-gyroscopic
 .endif
 
-.if defined(WITH_DOUBLE)
+.if ${PORT_OPTIONS:MDOUBLE}
 CONFIGURE_ARGS+=	--enable-double-precision
 .endif
 
-.if defined(WITH_OU)
+.if ${PORT_OPTIONS:MOU}
 CONFIGURE_ARGS+=	--enable-ou
 .else
 CONFIGURE_ARGS+=	--disable-ou

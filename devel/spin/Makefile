@@ -1,9 +1,5 @@
-# Ports collection makefile for: spin
-# Date created:		Oct 23, 1997
-# Whom:			jhanna@home.com
-#
+# Created by: jhanna@home.com
 # $FreeBSD$
-#
 
 PORTNAME=	spin
 PORTVERSION=	5.2.2
@@ -14,11 +10,13 @@ DISTNAME=	spin${PORTVERSION:S/.//g}
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
-OPTIONS=	XSPIN "Install xspin and TCL/Tk dependency" on
+OPTIONS_DEFINE=	XSPIN DOCS
+OPTIONS_DEFAULT=	XSPIN
+XSPIN_DESC=	Install xspin and TCL/Tk dependency
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XSPIN)
+.if ${PORT_OPTIONS:MXSPIN}
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
 XSPIN_TCL=	${WRKDIR}/Spin/Xspin5.2/xspin521.tcl
@@ -37,13 +35,13 @@ post-extract:
 	@${ECHO_MSG} "Unbundling promela example files..."
 	@cd ${WRKDIR}/Spin/Test && ${SH} ${WRKDIR}/Spin/Test/examples
 
-.if !defined(WITHOUT_XSPIN)
+.if ${PORT_OPTIONS:MXSPIN}
 pre-patch:
 	@${TR} -d '\r' < ${XSPIN_TCL} > ${XSPIN_TCL}.tmp
 	@${MV} -f ${XSPIN_TCL}.tmp ${XSPIN_TCL}
 .endif
 
-.if !defined(WITHOUT_XSPIN)
+.if ${PORT_OPTIONS:MXSPIN}
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
@@ -52,10 +50,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
-.if !defined(WITHOUT_XSPIN)
+.if ${PORT_OPTIONS:MXSPIN}
 	${INSTALL_SCRIPT} ${XSPIN_TCL} ${PREFIX}/bin/xspin
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/Doc
 	${MKDIR} ${DOCSDIR}/Examples
 	${MKDIR} ${DOCSDIR}/Test
@@ -72,4 +70,4 @@ MANPAGE_WRKSRC=	${WRKDIR}/Spin/Man
 MAN1=		spin.1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

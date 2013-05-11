@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ode
-# Date created:				11 Oct 2003
-# Whom:					David Yeske <dyeske@yahoo.com>
-#
+# Created by: David Yeske <dyeske@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ode
 DISTVERSION=	${ODEVER}-060223
@@ -24,7 +20,9 @@ USE_GL=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
+OPTIONS_DEFINE=	OPCODE
+OPTIONS_DEFAULT=	OPCODE
+OPCODE_DESC=	Enable code required by TriList (trimesh) class
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +38,7 @@ post-patch:
 		s|-L/usr/lib/X11R6||; s|-L/usr/lib/X11||; s|-L/usr/X11R6/lib|-L${LOCALBASE}/lib|; \
 		s|-fno-rtti||; s|-ffast-math|${CXXFLAGS} -I${LOCALBASE}/include|' \
 		${WRKSRC}/config/makefile.unix-gcc
-.if !defined(WITHOUT_OPCODE)
+.if ${PORT_OPTIONS:MOPCODE}
 	@${REINPLACE_CMD} -e 's/^#OPCODE_DIRECTORY/OPCODE_DIRECTORY/' \
 		${WRKSRC}/config/user-settings
 .endif

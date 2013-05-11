@@ -19,12 +19,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Util::Calc.3
 
-OPTIONS=	GMP	"Use GMP library"	off
+OPTIONS_DEFINE=	GMP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GMP)
+.if ${PORT_OPTIONS:MGMP}
 BUILD_DEPENDS+=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

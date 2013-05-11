@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SDL Console
-# Date created:				2008-04-27
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_console
 PORTVERSION=	2.1
@@ -19,15 +15,16 @@ USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	SDL_IMAGE "SDL Image support" Off
+OPTIONS_DEFINE=	SDL_IMAGE
+SDL_IMAGE_DESC=	SDL Image support
 
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat/s/aout/elf/' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SDL_IMAGE)
+.if ${PORT_OPTIONS:MSDL_IMAGE}
 USE_SDL+=	image
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
