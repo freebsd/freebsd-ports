@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.4.7
+PORTVERSION=	10.4.8
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/development/
 PKGNAMESUFFIX=	-devel
