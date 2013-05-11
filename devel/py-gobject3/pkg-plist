@@ -28,6 +28,9 @@ lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.py
 %%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.pyc
 %%PYTHON_SITELIBDIR%%/gi/_gobject/propertyhelper.pyo
+%%PYTHON_SITELIBDIR%%/gi/_gobject/signalhelper.py
+%%PYTHON_SITELIBDIR%%/gi/_gobject/signalhelper.pyc
+%%PYTHON_SITELIBDIR%%/gi/_gobject/signalhelper.pyo
 %%PYTHON_SITELIBDIR%%/gi/importer.py
 %%PYTHON_SITELIBDIR%%/gi/importer.pyc
 %%PYTHON_SITELIBDIR%%/gi/importer.pyo
@@ -40,6 +43,9 @@ lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gi/overrides/GLib.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GLib.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/GLib.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/GObject.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GObject.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/GObject.pyo
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gdk.pyo
@@ -67,7 +73,18 @@ lib/libpyglib-gi-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gi/types.py
 %%PYTHON_SITELIBDIR%%/gi/types.pyc
 %%PYTHON_SITELIBDIR%%/gi/types.pyo
+%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-pypython%%PYTHON_VER%%-freebsd-%%UNAME_R%%-%%ARCH%%.egg-info
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.py
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygtkcompat/generictreemodel.py
+%%PYTHON_SITELIBDIR%%/pygtkcompat/generictreemodel.pyc
+%%PYTHON_SITELIBDIR%%/pygtkcompat/generictreemodel.pyo
+%%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.py
+%%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.pyc
+%%PYTHON_SITELIBDIR%%/pygtkcompat/pygtkcompat.pyo
 libdata/pkgconfig/pygobject-3.0.pc
+@dirrm %%PYTHON_SITELIBDIR%%/pygtkcompat
 @dirrm %%PYTHON_SITELIBDIR%%/gi/repository
 @dirrm %%PYTHON_SITELIBDIR%%/gi/overrides
 @dirrm %%PYTHON_SITELIBDIR%%/gi/_gobject
