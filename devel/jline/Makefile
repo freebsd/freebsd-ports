@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libreadline-java
-# Date created:                21 September 2007
-# Whom:                        Martin Kammerhofer <mkamm@gmx.net>
-#
+# Created by: Martin Kammerhofer <mkamm@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=		jline
 PORTVERSION=		0.9.94
@@ -18,14 +14,15 @@ LICENSE=	BSD
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_JAVA=	yes
 USE_ZIP=	yes
-OPTIONS=	JLINEPATCH "Allow ConsoleRunner customized completion" OFF
+OPTIONS_DEFINE=	JLINEPATCH
+JLINEPATCH_DESC=	Allow ConsoleRunner customized completion
 JLINEJAR=	${WRKSRC}/jline-${PORTVERSION}.jar
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Update jar archive with patched jline.ConsoleRunner class.
 do-build:
-.ifdef(WITH_JLINEPATCH)
+.if ${PORT_OPTIONS:MJLINEPATCH}
 	${JAVAC} -classpath ${JLINEJAR} \
 		${WRKSRC}/src/src/main/java/jline/ConsoleRunner.java
 	${JAR} uvf ${JLINEJAR} -C ${WRKSRC}/src/src/main/java \
@@ -36,7 +33,7 @@ do-install:
 	${INSTALL_DATA} ${JLINEJAR} ${JAVAJARDIR}
 	${LN} -nfs ${JAVAJARDIR}/jline-${PORTVERSION}.jar \
 		   ${JAVAJARDIR}/jline.jar
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/apidocs ${WRKSRC}/examples ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/JLineCompleter.py ${DOCSDIR}/examples
@@ -64,4 +61,4 @@ plist:
 		${ECHO_CMD} "@dirrm %%DOCSDIR%%" ;	\
 	) | ${SED} -e 's/\.\//%%DOCSDIR%%\//' -e 's/^/%%PORTDOCS%%/' >>${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

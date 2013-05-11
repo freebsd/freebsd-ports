@@ -19,8 +19,6 @@ PLIST_FILES=	bin/fossil
 
 HAS_CONFIGURE=	yes
 
-USE_GMAKE=	yes
-
 OPTIONS_DEFINE=	JSON MARKDOWN STATIC
 JSON_DESC=	JSON API support
 MARKDOWN_DESC=	Markdown format support

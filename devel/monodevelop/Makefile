@@ -1,10 +1,5 @@
-# New ports collection makefile for:    	monodevelop
-# Date created:         			20040906
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.48 2007/11/07 20:30:04 killfill Exp $
-#
 
 PORTNAME=	monodevelop
 PORTVERSION=	3.0.2
@@ -29,16 +24,17 @@ MAN1=		mdtool.1 monodevelop.1
 USES=		gettext
 INSTALLS_ICONS=	yes
 
-OPTIONS=	MONOEXT "Enable extensions for Mono development" on \
-		GIT "Enable git support" on \
-		SVN "Enable subversion support" on
+OPTIONS_DEFINE=	MONOEXT GIT SVN
+OPTIONS_DEFAULT=	MONOEXT GIT SVN
+MONOEXT_DESC=	Extensions for Mono development
+GIT_DESC=	git support
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MONOEXT)
+.if ${PORT_OPTIONS:MMONOEXT}
 CONFIGURE_ARGS+=--enable-monoextensions
 PLIST_SUB+=	MONOEXT=""
 .else
@@ -46,7 +42,7 @@ CONFIGURE_ARGS+=--disable-monoextensions
 PLIST_SUB+=	MONOEXT="@comment "
 .endif
 
-.if !defined(WITHOUT_GIT)
+.if ${PORT_OPTIONS:MGIT}
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
 CONFIGURE_ARGS+=--enable-git
 PLIST_SUB+=	GIT=""
@@ -55,7 +51,7 @@ CONFIGURE_ARGS+=--disable-git
 PLIST_SUB+=	GIT="@comment "
 .endif
 
-.if !defined(WITHOUT_SVN)
+.if ${PORT_OPTIONS:MSVN}
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 CONFIGURE_ARGS+=--enable-subversion
 PLIST_SUB+=	SVN=""
@@ -77,4 +73,4 @@ post-install:
 	@-update-desktop-database
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

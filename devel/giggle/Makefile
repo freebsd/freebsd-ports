@@ -1,9 +1,5 @@
-# New ports collection makefile for:	giggle
-# Date created:		2008-10-01
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	giggle
 PORTVERSION=	0.5
@@ -17,14 +13,17 @@ COMMENT=	GTK+ frontend for git version control system
 BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
-OPTIONS=	EDS	"Evolution Data Server support"	On \
-		VTE	"Terminal Widget" On
+
+OPTIONS_DEFINE=	EDS VTE
+OPTIONS_DEFAULT=	EDS VTE
+EDS_DESC=	Evolution Data Server support
+VTE_DESC=	Terminal Widget
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 gtksourceview2 libglade2
-USES=		gettext
+USES=		gettext pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,16 +32,16 @@ PLIST_SUB+=	GIGGLE_VER=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_EDS)
-CONFIGURE_ARGS+=	--disable-evolution-data-server
-.elif defined(WITH_EDS)
+.if ${PORT_OPTIONS:MEDS}
 USE_GNOME+=	evolutiondataserver
+.else
+CONFIGURE_ARGS+=	--disable-evolution-data-server
 .endif
 
-.if defined(WITH_VTE)
+.if ${PORT_OPTIONS:MVTE}
 USE_GNOME+=	vte
 PLIST_SUB+=	VTE=""
-.elif defined(WITHOUT_VTE)
+.else
 CONFIGURE_ARGS+=	--disable-terminal
 PLIST_SUB+=	VTE="@comment "
 .endif
