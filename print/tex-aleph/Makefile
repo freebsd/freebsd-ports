@@ -65,7 +65,7 @@ CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--with-system-zziplib \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	aleph
 
 MAN1=	ofm2opl.1 opl2ofm.1 ovf2ovp.1 ovp2ovf.1 aleph.1 otp2ocp.1 \
