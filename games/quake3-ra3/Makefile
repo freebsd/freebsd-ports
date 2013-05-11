@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Rocket Arena 3
 
-NO_PACKAGE=	Package will be 102MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 131MB, set FORCE_PACKAGE if you really want it
 
 USE_ZIP=	yes
 USE_CRLF=	yes
