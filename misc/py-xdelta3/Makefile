@@ -11,6 +11,9 @@ COMMENT=	Python module for xdelta3
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 		${NONEXISTENT}:${PORTSDIR}/misc/xdelta3:build
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2013-06-11
+
 MASTERDIR=	${.CURDIR}/../../misc/xdelta3
 
 USE_PYTHON=	yes
