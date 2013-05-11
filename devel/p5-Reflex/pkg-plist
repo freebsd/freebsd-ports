@@ -87,12 +87,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-subclass-use.pl
 %%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-use.pl
 %%PORTDOCS%%%%DOCSDIR%%/intro/intro.pod
+%%PORTDOCS%%%%DOCSDIR%%/intro.otl
 %%PORTDOCS%%%%DOCSDIR%%/manual.otl
 %%PORTDOCS%%%%DOCSDIR%%/new-names.otl
 %%PORTDOCS%%%%DOCSDIR%%/patterns.otl
 %%PORTDOCS%%%%DOCSDIR%%/syntax.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/EchoStream.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleHelpers.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HttpClient.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HttpResponseEvent.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PoCoEvent.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PoCoPostback.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Proxy.pm
@@ -120,6 +123,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-19-net-ssh.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-20-mysql.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-21-poco-client-http.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-22-multiple-http-requests.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-23-multiple-http-subclass.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-24-client-http-callbacks.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-30-promise-timer.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-31-promise-object.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-32-promise-tiny.pl

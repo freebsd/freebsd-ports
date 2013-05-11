@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Reflex
-PORTVERSION=	0.098
+PORTVERSION=	0.099
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -105,6 +105,10 @@ MAN3=		MooseX::Role::Reactive.3 \
 		Reflex::Wakeup.3
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${RM} ${WRKSRC}/bench.pl
+	@${REINPLACE_CMD} -e '/^bench.pl$$/d' ${WRKSRC}/MANIFEST
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
