@@ -1,0 +1,7 @@
+This plugin enables the scanning of incoming mail received from a POP, IMAP,
+or LOCAL account using Bogofilter. It can optionally delete mail identified
+as spam or save it to a designated folder. Bogofilter is a pure Bayesian
+filter, therefore it has better speed performance than SpamAssassin but might
+catch less spam.
+
+WWW: http://claws-mail.org/plugin.php?plugin=bogofilter
