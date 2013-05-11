@@ -31,8 +31,10 @@ LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
+.if ${PORT_OPTIONS:MMANPAGES}
 MAN5=		argus.conf.5
 MAN8=		argus.8
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/lib/sasl2#${LOCALBASE}/lib/sasl2#' ${WRKSRC}/argus/ArgusOutput.c
