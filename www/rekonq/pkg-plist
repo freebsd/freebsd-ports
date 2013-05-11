@@ -96,6 +96,9 @@ share/doc/HTML/nl/rekonq/index.docbook
 share/doc/HTML/pt/rekonq/common
 share/doc/HTML/pt/rekonq/index.cache.bz2
 share/doc/HTML/pt/rekonq/index.docbook
+share/doc/HTML/pt_BR/rekonq/common
+share/doc/HTML/pt_BR/rekonq/index.cache.bz2
+share/doc/HTML/pt_BR/rekonq/index.docbook
 share/doc/HTML/sv/rekonq/common
 share/doc/HTML/sv/rekonq/index.cache.bz2
 share/doc/HTML/sv/rekonq/index.docbook
@@ -146,6 +149,7 @@ share/locale/hu/LC_MESSAGES/rekonq.mo
 share/locale/ia/LC_MESSAGES/rekonq.mo
 share/locale/it/LC_MESSAGES/rekonq.mo
 share/locale/km/LC_MESSAGES/rekonq.mo
+share/locale/lt/LC_MESSAGES/rekonq.mo
 share/locale/mr/LC_MESSAGES/rekonq.mo
 share/locale/nb/LC_MESSAGES/rekonq.mo
 share/locale/nl/LC_MESSAGES/rekonq.mo
@@ -167,6 +171,7 @@ share/locale/zh_TW/LC_MESSAGES/rekonq.mo
 @dirrmtry share/locale/ia
 @dirrm share/doc/HTML/uk/rekonq
 @dirrm share/doc/HTML/sv/rekonq
+@dirrm share/doc/HTML/pt_BR/rekonq
 @dirrm share/doc/HTML/pt/rekonq
 @dirrm share/doc/HTML/nl/rekonq
 @dirrm share/doc/HTML/fr/rekonq
