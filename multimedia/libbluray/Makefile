@@ -29,7 +29,7 @@ MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		CFLAGS=${CFLAGS:Q}
 
 OPTIONS_DEFINE=	JAVA
-JAVA_DESC+	Enable Blu-Ray Java support
+JAVA_DESC=	Enable Blu-Ray Java support
 
 .include <bsd.port.options.mk>
 
