@@ -1,4 +1,6 @@
 bin/openscad
+share/applications/openscad.desktop
+share/pixmaps/openscad.png
 %%DATADIR%%/examples/example001.scad
 %%DATADIR%%/examples/example002.scad
 %%DATADIR%%/examples/example003.scad
@@ -28,13 +30,17 @@ bin/openscad
 %%DATADIR%%/examples/example020.scad
 %%DATADIR%%/examples/example021.scad
 %%DATADIR%%/examples/example022.scad
+%%DATADIR%%/examples/example023.scad
 %%DATADIR%%/libraries/MCAD/openscad_testing.py
 %%DATADIR%%/libraries/MCAD/bearing.scad
 %%DATADIR%%/libraries/MCAD/boxes.scad
+%%DATADIR%%/libraries/MCAD/fonts.scad
 %%DATADIR%%/libraries/MCAD/hardware.scad
+%%DATADIR%%/libraries/MCAD/lego_compatibility.scad
+%%DATADIR%%/libraries/MCAD/math.scad
+%%DATADIR%%/libraries/MCAD/multiply.scad
 %%DATADIR%%/libraries/MCAD/servos.scad
 %%DATADIR%%/libraries/MCAD/teardrop.scad
-%%DATADIR%%/libraries/MCAD/math.scad
 %%DATADIR%%/libraries/MCAD/transformations.scad
 %%DATADIR%%/libraries/MCAD/gridbeam.scad
 %%DATADIR%%/libraries/MCAD/curves.scad
@@ -75,3 +81,4 @@ bin/openscad
 @dirrm %%DATADIR%%/libraries
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
