@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	4.2.2
+DISTVERSION=	4.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
-		http://dl.ispsystem.info/ioncube/${DISTVERSION}/
+MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
+		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
+		http://downloads2.ioncube.com/loader_downloads/
 DISTNAME=	${PORTNAME}_loaders_fre_${VER}_${ARCH:S,i386,x86,:S,amd64,x86-64,}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
