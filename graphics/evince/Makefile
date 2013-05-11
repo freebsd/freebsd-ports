@@ -55,7 +55,7 @@ DJVU_DESC=	DJVU support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
-USE_TEX=	tetex
+USE_TEX=	latex
 
 CONFIGURE_ARGS+=	--enable-dvi
 GCONF_SCHEMAS+=	evince-thumbnailer-dvi.schemas

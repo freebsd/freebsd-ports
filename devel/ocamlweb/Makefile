@@ -18,7 +18,7 @@ COMMENT=	A literate programming tool for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-USE_TEX=	tetex
+USE_TEX=	latex
 GNU_CONFIGURE= yes
 PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		MKTEXLSR=${MKTEXLSR}

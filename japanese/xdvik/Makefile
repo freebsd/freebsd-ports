@@ -24,7 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 DIST_SUBDIR=	xdvik
-USE_TEX=	tetex
+USE_TEX=	base texmf
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMFDIR:S,texmf$,,} \

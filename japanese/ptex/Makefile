@@ -31,7 +31,7 @@ CONFLICTS_INSTALL= \
 		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
 		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
-USE_TEX=	tetex
+USE_TEX=	base texmf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \

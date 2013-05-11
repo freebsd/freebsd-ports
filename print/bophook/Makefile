@@ -16,7 +16,7 @@ COMMENT=	Style file providing a beginning-of-page hook for LaTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 PLIST=		${WRKDIR}/pkg-plist
 

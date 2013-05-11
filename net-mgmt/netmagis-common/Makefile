@@ -28,7 +28,7 @@ USE_PGSQL+=	server pltcl
 
 .if ${PKGNAMESUFFIX} == -www
 USE_APACHE=	22+
-USE_TEX=	tetex
+USE_TEX=	tex
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 		pwgen:${PORTSDIR}/sysutils/pwgen \
 		${LOCALBASE}/libexec/apache22/mod_auth_pgsql.so:${PORTSDIR}/www/mod_auth_pgsql2

@@ -21,7 +21,7 @@ USE_EMACS=	yes
 
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
-USE_TEX=	tetex
+USE_TEX=	tex:build
 USE_GHOSTSCRIPT=yes
 .endif
 

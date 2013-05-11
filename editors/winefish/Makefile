@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui desktopfileutils gnomehier
-USE_TEX=	tetex
+USE_TEX=	latex
 
 OPTIONS_DEFINE=	CONTEXT VNTEX UNIKEY_GTK NLS DOCS
 CONTEXT_DESC=		ConTexT support (Experimental)

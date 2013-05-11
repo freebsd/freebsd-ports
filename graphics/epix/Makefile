@@ -18,13 +18,12 @@ COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
-		latex-pgf>=0:${PORTSDIR}/print/latex-pgf \
+BUILD_DEPENDS=	latex-pgf>=0:${PORTSDIR}/print/latex-pgf \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
-USE_TEX=	tetex
+USE_TEX=	latex dvipsk:build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \

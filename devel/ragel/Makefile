@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	tetex
+USE_TEX=	latex:build
 CONFIGURE_ARGS+=	--enable-manual
 BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
 PLIST_SUB+=	DOCS=""

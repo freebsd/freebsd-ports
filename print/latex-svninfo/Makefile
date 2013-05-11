@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	latex-
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A LaTeX package for Subversion support
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
 
 TEXMFLOCAL=	share/texmf-local

@@ -52,7 +52,7 @@ EXTRACT_ONLY=	${PORTNAME}.tar.gz
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
-USE_TEX=	tetex
+USE_TEX=	latex
 
 MAN1=		lgrind.1
 MAN5=		lgrindef.5

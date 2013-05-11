@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	niedbalski@gmail.com
 COMMENT=	A LaTeX package for a tabular that spans multiple pages
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
 USE_GMAKE=	yes

@@ -15,7 +15,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Math series, aka mathabx MetaFont fontset for TeX/LaTeX
 
 USE_ZIP=	YES
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	YES
 PLIST_SUB=	TEXMFLOCALDIR=${TEXMFLOCALDIR} \
 		MKTEXLSR=${MKTEXLSR} \

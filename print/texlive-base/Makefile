@@ -24,6 +24,7 @@ LIB_DEPENDS=	icuio:${PORTSDIR}/devel/icu \
 		zzip:${PORTSDIR}/devel/zziplib
 
 USE_TEX=	web2c kpathsea ptexenc texhash
+TEX_DEFAULT=	texlive	# override user configuration
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf

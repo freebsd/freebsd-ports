@@ -15,7 +15,7 @@ BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PERL_CONFIGURE=	yes
 
 MAN1=	latex2ps.1 latex2pdf.1 latex2dvi.1

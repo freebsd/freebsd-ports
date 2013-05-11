@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--disable-gc
 
 USE_GHOSTSCRIPT=yes
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_GL=	glut
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
@@ -80,11 +80,9 @@ INSTALL_TARGET+=	install-man
 #.if ${PORT_OPTIONS:MMANPAGES} || ${PORT_OPTIONS:MDOCS}
 # teTeX is too old to compile the asymptote documentation
 .if 0
+USE_TEX+=	dvipsk:build
 BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		latex:${PORTSDIR}/print/teTeX-base \
 		makeinfo:${PORTSDIR}/textproc/texi2html \
-		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
 		svn:${PORTSDIR}/devel/subversion \
 		texi2dvi:${PORTSDIR}/print/texinfo
 .endif

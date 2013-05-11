@@ -81,10 +81,9 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 
 # Choose appropriate settings for each LaTeX
 .if ${PORT_OPTIONS:MJATETEX}
-BUILD_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
-RUN_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
+USE_TEX=	ptex
 .else
-USE_TEX=	tetex
+USE_TEX=	latex
 .endif
 
 .include <bsd.port.mk>

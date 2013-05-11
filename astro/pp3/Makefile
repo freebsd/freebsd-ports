@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates celestial charts
 
 USE_BZIP2=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 .include <bsd.port.options.mk>
 

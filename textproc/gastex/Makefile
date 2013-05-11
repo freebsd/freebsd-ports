@@ -17,7 +17,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs and Automata Simplified in TeX
 
-USE_TEX=	tetex
+USE_TEX=	latex
 NO_BUILD=	yes
 
 TEXMFDIR?=	share/texmf

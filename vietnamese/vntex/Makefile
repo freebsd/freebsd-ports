@@ -17,7 +17,7 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
 USE_ZIP=	yes
-USE_TEX=	tetex
+USE_TEX=	tex
 NO_BUILD=	yes
 
 do-install:

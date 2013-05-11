@@ -52,7 +52,7 @@ BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
 .if ${PORT_OPTIONS:MPDFDOCS}
 ALL_TARGET+=	pdf
-USE_TEX=	tetex
+USE_TEX=	latex:build
 USE_GHOSTSCRIPT_BUILD=	yes
 MAKE_ARGS+=	HAVE_PDFDOCS=yes
 .endif # PDFDOCS

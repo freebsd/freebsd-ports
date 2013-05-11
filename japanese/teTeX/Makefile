@@ -11,19 +11,13 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A meta port for teTeX suite for Japanese (including pTeX and JTeX)
 
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex \
-		dvips:${PORTSDIR}/japanese/dvipsk \
-		jtex:${PORTSDIR}/japanese/texfamily \
+RUN_DEPENDS=	jtex:${PORTSDIR}/japanese/texfamily \
 		${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a
+
+USE_TEX=	base texmf dvipsk ptex
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS+=	xdvi:${PORTSDIR}/japanese/xdvik
+USE_TEX+=	xdvik
 .endif
-
-CONFLICTS=	texlive-[0-9]* tex-web2c-[0-9]* \
-		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
-		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]* 
-
-USE_TEX=	tetex
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
 TEXMFLOCAL_LSR=	${LOCALBASE}/share/texmf-local/ls-R
 TEXMFDISTDIR=	share/texmf-dist

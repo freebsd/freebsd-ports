@@ -19,7 +19,7 @@ BUILD_DEPENDS= ${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/jap
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
 		jtex:${PORTSDIR}/japanese/texfamily
 
-USE_TEX=	tetex
+USE_TEX=	base texmf
 MAKE_ENV=	JTEXTFMDIR=${LOCALBASE}/${TEXMFLOCALDIR}/fonts/tfm/muling/nttsub \
 		PTEXTFMDIR=${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex
 

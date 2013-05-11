@@ -18,7 +18,7 @@ COMMENT=	A LaTeX package for using UTF-8 as input encoding
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR="${MKTEXLSR}" CLASSDIR=${CLASSDIR}
 
 TEXMFDIR=	share/texmf

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_TEX=	tetex
+USE_TEX=	tex
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 

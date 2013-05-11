@@ -12,7 +12,7 @@ COMMENT=	Tools for manipulating fonts
 
 LICENSE=	GPLv2
 
-USE_TEX=	tetex
+USE_TEX=	base
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_kpathsea_kpathsea_h=yes
 CONFIGURE_ARGS=	--with-kpathsea=${LOCALBASE}

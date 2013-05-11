@@ -40,7 +40,7 @@ LATEX_DESC=	Install LaTeX if necessary (needed for pdf output)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLATEX}
-USE_TEX=	tetex
+USE_TEX=	latex
 .endif
 
 post-extract:

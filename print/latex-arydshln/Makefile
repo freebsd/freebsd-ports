@@ -17,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that draws dash-lines in array/tabular
 
-USE_TEX=	tetex
+USE_TEX=	latex
 PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local

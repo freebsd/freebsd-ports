@@ -18,7 +18,7 @@ NO_BUILD=	yes
 
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
-USE_TEX=	tetex
+USE_TEX=	latex
 
 MAN1=		latexmk.1
 PORTDOCS=	*

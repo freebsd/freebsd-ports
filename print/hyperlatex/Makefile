@@ -16,7 +16,7 @@ COMMENT=	Produce HTML and printed documents from LaTeX source
 
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
-USE_TEX=	tetex
+USE_TEX=	latex
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 

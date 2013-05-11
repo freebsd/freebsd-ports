@@ -17,7 +17,7 @@ COMMENT=	Korean TeX macro and utilities
 
 RUN_DEPENDS=	${BASE_MAP}:${PORTSDIR}/korean/ko.TeX-fonts-base
 
-USE_TEX=	tetex
+USE_TEX=	latex
 CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes

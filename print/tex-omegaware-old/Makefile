@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${TETEX_SRC}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Old version of ovf2ovp, ovp2ovf, ofm2opl, and opl2ofm
 
-USE_TEX=	tetex
+USE_TEX=	base texmf
 DIST_SUBDIR=	teTeX
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}/texk/web2c
 CONFIGURE_WRKSRC=	${WRKDIR}/tetex-src-${PORTVERSION}

@@ -19,7 +19,7 @@ RUN_DEPENDS+=	docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
 USE_PYTHON_BUILD=	yes
-USE_TEX=	tetex
+USE_TEX=	latex:build
 MAN1=		sgmltools-lite.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml --datadir=${PREFIX}/share

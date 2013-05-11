@@ -32,7 +32,7 @@ OPTIONS=	SMLNJ	"Bootstrap with SML/NJ (can take >15 hours)"	off \
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 		htmldoc:${PORTSDIR}/textproc/htmldoc
-USE_TEX=	tetex
+USE_TEX=	latex:build
 .else
 INSTALL_TARGET=	install-no-docs
 ALL_TARGET=	all-no-docs
