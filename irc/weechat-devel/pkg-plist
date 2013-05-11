@@ -52,6 +52,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.ja.html
+%%ICON%%share/icons/hicolor/32x32/apps/weechat.png
 %%NLS%%share/locale/cs/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/de/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weechat.mo
@@ -65,4 +66,8 @@ libdata/pkgconfig/weechat.pc
 @dirrmtry lib/weechat/plugins
 @dirrmtry lib/weechat
 %%DOCUMENTATION%%@dirrmtry share/doc/weechat
+%%ICON%%@dirrmtry share/icons/hicolor/32x32/apps
+%%ICON%%@dirrmtry share/icons/hicolor/32x32
+%%ICON%%@dirrmtry share/icons/hicolor
+%%ICON%%@dirrmtry share/icons
 @dirrm include/weechat
