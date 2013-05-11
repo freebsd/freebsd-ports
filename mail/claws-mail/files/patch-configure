@@ -1,0 +1,48 @@
+--- configure.orig	2013-05-10 16:42:16.000000000 +0200
++++ configure	2013-05-10 16:44:12.000000000 +0200
+@@ -20468,45 +20468,6 @@
+ if test $pkg_failed = yes; then
+    	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        LIBSOUP_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libsoup-2.4" 2>&1`
+-        else
+-	        LIBSOUP_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libsoup-2.4" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$LIBSOUP_PKG_ERRORS" >&5
+-
+-	as_fn_error $? "Package requirements (libsoup-2.4) were not met:
+-
+-$LIBSOUP_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables LIBSOUP_CFLAGS
+-and LIBSOUP_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details." "$LINENO" 5
+-elif test $pkg_failed = untried; then
+-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables LIBSOUP_CFLAGS
+-and LIBSOUP_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details" "$LINENO" 5; }
+ else
+ 	LIBSOUP_CFLAGS=$pkg_cv_LIBSOUP_CFLAGS
+ 	LIBSOUP_LIBS=$pkg_cv_LIBSOUP_LIBS

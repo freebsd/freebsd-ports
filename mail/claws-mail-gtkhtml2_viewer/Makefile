@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkhtml2_viewer
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -21,6 +22,9 @@ USE_AUTOTOOLS=	autoconf
 USE_GNOME=	gtk20
 USES=		iconv
 MAKE_JOBS_SAFE=	yes
+
+DEPRECATED=	No longer maintained, please use mail/claws-mail-fancy instead
+EXPIRATION_DATE=2013-06-11
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

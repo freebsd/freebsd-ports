@@ -1,0 +1,80 @@
+# $FreeBSD$
+
+PORTVERSION=	3.9.1
+CATEGORIES?=	mail
+MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
+
+MAINTAINER=	pawel@FreeBSD.org
+
+LICENSE=	GPLv3
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--disable-dbus
+
+CLAWS_PLUGINS=	acpi_notifier \
+		address_keeper \
+		archive \
+		att_remover \
+		attachwarner \
+		bogofilter \
+		bsfilter \
+		clamd \
+		fancy \
+		fetchinfo \
+		gdata \
+		geolocation \
+		mailmbox \
+		newmail \
+		notification \
+		pdf_viewer \
+		perl \
+		python \
+		pgpcore \
+		pgpinline \
+		pgpmime \
+		rssyl \
+		smime \
+		spam_report \
+		spamassassin \
+		tnef_parse \
+		vcalendar
+
+.for p in ${CLAWS_PLUGINS}
+CONFIGURE_ARGS+=	--disable-${p}-plugin
+.endfor
+
+.if defined(CLAWS_PLUGINS_BUILD)
+DISTNAME=	claws-mail-${PORTVERSION}
+PKGNAMEPREFIX=	claws-mail-
+
+BUILD_DEPENDS+=	claws-mail>=${PORTVERSION}:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS+=	claws-mail>=${PORTVERSION}:${PORTSDIR}/mail/claws-mail
+
+MASTERDIR=	${.CURDIR}/../../mail/claws-mail
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${NONEXISTENT}
+PKGMESSAGE=	${.CURDIR}/pkg-message
+
+.  for p in ${CLAWS_PLUGINS_BUILD}
+CONFIGURE_ARGS:=	${CONFIGURE_ARGS:S|--disable-${p}-plugin||}
+PLIST_FILES+=	lib/claws-mail/plugins/${p}.a  \
+		lib/claws-mail/plugins/${p}.la \
+		lib/claws-mail/plugins/${p}.so
+.  endfor
+
+do-build:
+.  for p in ${CLAWS_PLUGINS_BUILD}
+	cd ${WRKSRC}/src/plugins/${p} && ${GMAKE}
+.  endfor
+
+do-install:
+.  for p in ${CLAWS_PLUGINS_BUILD}
+	cd ${WRKSRC}/src/plugins/${p} && ${GMAKE} install
+.  endfor
+
+.endif

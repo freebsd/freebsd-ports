@@ -1,6 +1,0 @@
-lib/claws-mail/plugins/fetchinfo_plugin.a
-lib/claws-mail/plugins/fetchinfo_plugin.la
-lib/claws-mail/plugins/fetchinfo_plugin.so
-%%NLS%%share/locale/fr/LC_MESSAGES/fetchinfo-plugin.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/fetchinfo-plugin.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/fetchinfo-plugin.mo

@@ -1,23 +1,14 @@
---- Makefile.in.orig	2012-11-14 20:13:46.000000000 +0100
-+++ Makefile.in	2012-11-14 20:16:17.000000000 +0100
-@@ -41,7 +41,7 @@
- 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
- 	$(srcdir)/claws-features.h.in $(srcdir)/claws-mail.pc.in \
- 	$(srcdir)/config.h.in $(top_srcdir)/configure ABOUT-NLS \
--	AUTHORS COPYING ChangeLog INSTALL NEWS TODO
-+	AUTHORS ChangeLog INSTALL NEWS TODO RELEASE_NOTES
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/m4/check-type.m4 \
- 	$(top_srcdir)/m4/gnupg-check-typedef.m4 \
-@@ -359,7 +359,6 @@
- 	ChangeLog.gtk1 \
+--- Makefile.in.orig	2013-05-08 17:03:48.000000000 +0200
++++ Makefile.in	2013-05-08 17:10:43.000000000 +0200
+@@ -427,7 +427,6 @@
  	ChangeLog.pre2.0.0 \
  	ChangeLog.2.0.0-3.0.0 \
+ 	ChangeLog.3.0.0-3.9.0 \
 -	RELEASE_NOTES \
  	claws-mail-128x128.png \
  	claws-mail-64x64.png \
  	claws-mail.pc.in \
-@@ -388,8 +387,6 @@
+@@ -458,8 +457,6 @@
  clawsinclude_HEADERS = \
  	claws-features.h
  

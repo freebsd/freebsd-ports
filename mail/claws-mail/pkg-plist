@@ -156,14 +156,29 @@ include/claws-mail/news_gtk.h
 include/claws-mail/noticeview.h
 include/claws-mail/partial_download.h
 include/claws-mail/pine.h
-%%GPGME%%include/claws-mail/plugins/pgpcore/passphrase.h
-%%GPGME%%include/claws-mail/plugins/pgpcore/pgp_viewer.h
-%%GPGME%%include/claws-mail/plugins/pgpcore/prefs_gpg.h
-%%GPGME%%include/claws-mail/plugins/pgpcore/select-keys.h
-%%GPGME%%include/claws-mail/plugins/pgpcore/sgpgme.h
-%%GPGME%%include/claws-mail/plugins/pgpinline/pgpinline.h
-%%GPGME%%include/claws-mail/plugins/pgpmime/pgpmime.h
-%%GPGME%%include/claws-mail/plugins/smime/smime.h
+include/claws-mail/plugins/claws-mail/archiver.h
+include/claws-mail/plugins/claws-mail/archiver_prefs.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/eggaccelerators.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-error.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-info.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-key-file-registry.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-listener.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-marshal.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-registry.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-utils.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-x11-listener.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
+include/claws-mail/plugins/claws-mail/ical.h
+include/claws-mail/plugins/pgpcore/passphrase.h
+include/claws-mail/plugins/pgpcore/pgp_viewer.h
+include/claws-mail/plugins/pgpcore/prefs_gpg.h
+include/claws-mail/plugins/pgpcore/select-keys.h
+include/claws-mail/plugins/pgpcore/sgpgme.h
+include/claws-mail/plugins/pgpinline/pgpinline.h
+include/claws-mail/plugins/pgpmime/pgpmime.h
+include/claws-mail/plugins/smime/smime.h
+include/claws-mail/plugins/vcalendar/vcal_interface.h
 include/claws-mail/pop.h
 include/claws-mail/prefs_account.h
 include/claws-mail/prefs_actions.h
@@ -222,33 +237,9 @@ include/claws-mail/uri_opener.h
 include/claws-mail/vcard.h
 include/claws-mail/viewtypes.h
 include/claws-mail/wizard.h
-%%BOGO_PLUG%%lib/claws-mail/plugins/bogofilter.a
-%%BOGO_PLUG%%lib/claws-mail/plugins/bogofilter.la
-%%BOGO_PLUG%%lib/claws-mail/plugins/bogofilter.so
-%%DILLO%%lib/claws-mail/plugins/dillo_viewer.a
-%%DILLO%%lib/claws-mail/plugins/dillo_viewer.la
-%%DILLO%%lib/claws-mail/plugins/dillo_viewer.so
-%%GPGME%%lib/claws-mail/plugins/pgpcore.a
-%%GPGME%%lib/claws-mail/plugins/pgpcore.la
-%%GPGME%%lib/claws-mail/plugins/pgpcore.so
-%%GPGME%%lib/claws-mail/plugins/pgpinline.a
-%%GPGME%%lib/claws-mail/plugins/pgpinline.deps
-%%GPGME%%lib/claws-mail/plugins/pgpinline.la
-%%GPGME%%lib/claws-mail/plugins/pgpinline.so
-%%GPGME%%lib/claws-mail/plugins/pgpmime.a
-%%GPGME%%lib/claws-mail/plugins/pgpmime.deps
-%%GPGME%%lib/claws-mail/plugins/pgpmime.la
-%%GPGME%%lib/claws-mail/plugins/pgpmime.so
-%%GPGME%%lib/claws-mail/plugins/smime.a
-%%GPGME%%lib/claws-mail/plugins/smime.la
-%%GPGME%%lib/claws-mail/plugins/smime.so
-%%GPGME%%lib/claws-mail/plugins/smime.deps
-%%SA_PLUG%%lib/claws-mail/plugins/spamassassin.a
-%%SA_PLUG%%lib/claws-mail/plugins/spamassassin.la
-%%SA_PLUG%%lib/claws-mail/plugins/spamassassin.so
-lib/claws-mail/plugins/trayicon.a
-lib/claws-mail/plugins/trayicon.la
-lib/claws-mail/plugins/trayicon.so
+lib/claws-mail/plugins/pgpinline.deps
+lib/claws-mail/plugins/pgpmime.deps
+lib/claws-mail/plugins/smime.deps
 libdata/pkgconfig/claws-mail.pc
 share/applications/claws-mail.desktop
 %%DATADIR%%/OOo2claws-mail.pl
@@ -303,9 +294,9 @@ share/applications/claws-mail.desktop
 %%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
 %%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
 %%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
-share/icons/hicolor/128x128/apps/claws-mail-128x128.png
+share/icons/hicolor/128x128/apps/claws-mail.png
 share/icons/hicolor/48x48/apps/claws-mail.png
-share/icons/hicolor/64x64/apps/claws-mail-64x64.png
+share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/bg/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/claws-mail.mo
@@ -314,6 +305,7 @@ share/icons/hicolor/64x64/apps/claws-mail-64x64.png
 %%NLS%%share/locale/es/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/he/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/it/LC_MESSAGES/claws-mail.mo
@@ -331,7 +323,6 @@ share/icons/hicolor/64x64/apps/claws-mail-64x64.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 %%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/id_ID
-@dirrmtry %%DATADIR%%
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual/pl
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual/fr
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual/es
@@ -339,15 +330,19 @@ share/icons/hicolor/64x64/apps/claws-mail-64x64.png
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual/de
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual
 @dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
-%%GPGME%%@dirrm include/claws-mail/plugins/pgpmime
-%%GPGME%%@dirrm include/claws-mail/plugins/pgpinline
-%%GPGME%%@dirrm include/claws-mail/plugins/pgpcore
-%%GPGME%%@dirrm include/claws-mail/plugins/smime
+@dirrm include/claws-mail/plugins/vcalendar
+@dirrm include/claws-mail/plugins/smime
+@dirrm include/claws-mail/plugins/pgpmime
+@dirrm include/claws-mail/plugins/pgpinline
+@dirrm include/claws-mail/plugins/pgpcore
+@dirrm include/claws-mail/plugins/claws-mail/gtkhotkey
+@dirrm include/claws-mail/plugins/claws-mail
+@dirrm include/claws-mail/plugins
 @dirrm include/claws-mail/gtk
 @dirrm include/claws-mail/etpan
 @dirrm include/claws-mail/common
-@dirrmtry include/claws-mail/plugins
-@dirrmtry include/claws-mail
+@dirrm include/claws-mail
