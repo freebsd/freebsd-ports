@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xvid
-# Date created:		04 April 2002
-# Whom:			Michael Nottebrock <michaelnottebrock@gmx.net> et al
-#
+# Created by: Michael Nottebrock <michaelnottebrock@gmx.net> et al
 # $FreeBSD$
-#
 
 PORTNAME=	xvid
 PORTVERSION=	1.3.2
@@ -29,7 +25,7 @@ PLIST_FILES=	include/xvid.h \
 
 WRKSRC=		${WRKDIR}/xvidcore/build/generic
 
-OPTIONS=	OPTIMIZED_CFLAGS "Use XviD's default optimizations" off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +36,7 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS=		# let xvid's build system decide about those
 .endif
 
