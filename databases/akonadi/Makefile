@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/src/
@@ -82,8 +82,5 @@ post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
 		-e '/find_package(SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-
-post-install:
-	@-update-mime-database ${KDE4_PREFIX}/share/mime
 
 .include <bsd.port.mk>

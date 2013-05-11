@@ -17,7 +17,7 @@ lib/cmake/Akonadi/AkonadiTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Akonadi/AkonadiTargetsWithPrefix.cmake
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.9.1
+lib/libakonadiprotocolinternals.so.1.9.2
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global-mobile.conf
 share/config/akonadi/mysql-global.conf
@@ -40,7 +40,5 @@ share/mime/packages/akonadi-mime.xml
 @dirrmtry lib/cmake
 @dirrmtry include/akonadi/private
 @dirrmtry include/akonadi
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 %%SQLITE%%@cwd %%QT_PREFIX%%
 %%SQLITE%%%%QT_PLUGINDIR_REL%%/sqldrivers/libqsqlite3.so
