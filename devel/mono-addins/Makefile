@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mono-addins
-# Date created:				Aug 25 2008
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mono-addins
 PORTVERSION=	0.6.2
@@ -24,7 +19,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	GTK2 "Enable GTK support" on
+OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFAULT=	GTK2
 
 MAN1=		mautil.1
 
@@ -33,7 +29,7 @@ PLIST_SUB+=	VER=0.6.0
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
-.if !defined(WITHOUT_GTK2) && !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 USE_GNOME+=	gtksharp20
 CONFIGURE_ARGS+=	--enable-gui
 PLIST_SUB+=	OPT_GTK2=""

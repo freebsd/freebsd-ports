@@ -1,9 +1,5 @@
-# Ports collection Makefile for: libowfat
-# Date created:			Feb 21, 2004
-# Whom:				Thomas-Martin Seck <tmseck@netcologne.de>
-#
+# Created by: Thomas-Martin Seck <tmseck@netcologne.de>
 # $FreeBSD$
-#
 
 PORTNAME=	libowfat
 PORTVERSION=	0.29
@@ -19,13 +15,14 @@ ALL_TARGET=	dep all
 
 MAKEFILE=	GNUmakefile
 
-OPTIONS=	LIBOWFAT_OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
 MAKE_ENV+=	INSTALL="${INSTALL}"
 
-.if defined(WITH_LIBOWFAT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O2 -fomit-frame-pointer
 .endif
 
@@ -53,7 +50,7 @@ post-patch:
 	${REINPLACE_CMD} -e '56s|return ||' ${WRKSRC}/CAS.h
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

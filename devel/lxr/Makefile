@@ -1,9 +1,5 @@
-# Ports collection makefile for:	lxr
-# Date created:				11 Dec 2008
-# Whom:					Eygene Ryabinkin
-#
+# Created by: Eygene Ryabinkin
 # $FreeBSD$
-#
 
 PORTNAME=	lxr
 PORTVERSION=	0.10.2
@@ -23,8 +19,10 @@ PATCH_STRIP=	-p1
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-OPTIONS=	POSTGRESQL	"Enable PostgreSQL support"		on \
-		MYSQL		"Enable MySQL support (untested)"	off
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	PGSQL MYSQL
+OPTIONS_DEFAULT=	PGSQL
 
 # Name prefix for database tables, indexes, sequences and other stuff.
 DB_PREFIX=	lxr
@@ -44,23 +42,19 @@ PLIST_SUB+=	LXRTOPDIR=${LXRTOPDIR:S!^${PREFIX}/!!}
 SUB_LIST+=	LXRDIR=${LXRDIR}
 SUB_FILES+=	upgrade-0.9.10-postgres upgrade-0.9.10-mysql
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_POSTGRESQL) && defined(WITH_MYSQL)
-IGNORE=		you must choose only one database backend
-.endif
-
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 MSG_FILES+=	pkg_message.postgresql
 DB_DRIVER=	Pg
-.endif # defined(WITH_POSTGRESQL)
+.endif # ${PORT_OPTIONS:MPGSQL}
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 MSG_FILES+=	pkg_message.mysql
 DB_DRIVER=	mysql
-.endif # defined(WITH_MYSQL)
+.endif # ${PORT_OPTIONS:MMYSQL}
 
 MSG_FILES+=	pkg_message
 
@@ -111,12 +105,12 @@ do-install:
 .for f in ${LXR_CONF}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${LXRDIR}
 .endfor # ${LXR_CONF}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${LXR_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor # ${LXR_DOCS}
-.endif # !defined(NOPORTDOCS)
+.endif # ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} ${WRKSRC}/Local.pm ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} ${WRKSRC}/LXRversion.pm ${PREFIX}/${SITE_PERL_REL}
@@ -134,4 +128,4 @@ post-install:
 	@${CAT} ${WRKDIR}/${f}
 .endfor # ${MSG_FILES}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

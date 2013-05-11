@@ -1,9 +1,5 @@
-# New ports collection makefile for:		libdispatch
-# Date created:					2009-09-23
-# Whom:						stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	libdispatch
 PORTVERSION=	210
@@ -22,7 +18,9 @@ USE_LDCONFIG=	yes
 # This is needed because PIC support check in autoconf could fail for clang otherwise.
 CONFIGURE_ENV=	lt_cv_prog_compiler_pic_works=yes
 
-OPTIONS=	CLANG "Build with LLVM/Clang (required for blocks support)" on
+OPTIONS_DEFINE=	CLANG
+OPTIONS_DEFAULT=	CLANG
+CLANG_DESC=	Build with LLVM/Clang (required for blocks support)
 
 MAN3=	dispatch.3 dispatch_after.3 dispatch_api.3 dispatch_apply.3 \
 	dispatch_async.3 dispatch_benchmark.3 dispatch_group_create.3 \
@@ -92,7 +90,7 @@ BROKEN=		Does not link on sparc64-9
 .endif
 .endif
 
-.if !defined(WITHOUT_CLANG)
+.if ${PORT_OPTIONS:MCLANG}
 . if ${OSVERSION} < 900024
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
