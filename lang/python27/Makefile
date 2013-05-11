@@ -5,12 +5,12 @@ PORTNAME=	python27
 PORTVERSION=	2.7.3
 PORTREVISION=	6
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	${PYTHON_MASTER_SITES}
+MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	An interpreted object-oriented programming language
+COMMENT=	Interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
@@ -34,7 +34,8 @@ PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYMAJOR=${PYTHON_MAJOR_VER} \
-		PYVER_WITHPAT=${PORTVERSION:S/.c/c/}
+		PYVER_WITHPAT=${PORTVERSION:S/.c/c/} \
+		PORTVERSION=${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
@@ -72,11 +73,7 @@ CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSEM}
-.if ${OSVERSION} >= 701106
 SEM_MSG=	""
-.else
-IGNORE=		POSIX semaphore support only works in FreeBSD 7-STABLE and later
-.endif # ${OSVERSION} >= 701106
 .else
 SEM_MSG=	"@comment "
 .endif
@@ -208,9 +205,7 @@ pre-patch:
 
 post-patch:
 .if ${PORT_OPTIONS:MSEM}
-.if ${OSVERSION} >= 701106
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-setup.py
-.endif
 .endif
 .if defined(WITHOUT_NIS)
 	${REINPLACE_CMD} -e \

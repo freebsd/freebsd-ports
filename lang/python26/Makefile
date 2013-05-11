@@ -5,12 +5,12 @@ PORTNAME=	python26
 PORTVERSION=	2.6.8
 PORTREVISION=	4
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	${PYTHON_MASTER_SITES}
+MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	An interpreted object-oriented programming language
+COMMENT=	Interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
