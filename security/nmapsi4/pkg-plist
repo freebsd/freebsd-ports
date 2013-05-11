@@ -1,25 +1,16 @@
 bin/nmapsi4
-bin/nmapsi4-logr
 share/applications/nmapsi4-admin.desktop
-share/applications/nmapsi4-logr.desktop
 share/applications/nmapsi4.desktop
 share/dbus-1/interfaces/org.nmapsi4.Nmapsi4.xml
 share/icons/hicolor/128x128/apps/nmapsi4.png
 share/icons/hicolor/32x32/apps/nmapsi4.png
 share/icons/hicolor/64x64/apps/nmapsi4.png
-%%DATADIR%%/locale/nmapsi4-logr_cs.qm
-%%DATADIR%%/locale/nmapsi4-logr_de.qm
-%%DATADIR%%/locale/nmapsi4-logr_es.qm
-%%DATADIR%%/locale/nmapsi4-logr_fr.qm
-%%DATADIR%%/locale/nmapsi4-logr_it.qm
-%%DATADIR%%/locale/nmapsi4-logr_pl.qm
+%%DATADIR%%/locale/nmapsi4_ca.qm
 %%DATADIR%%/locale/nmapsi4_cs.qm
 %%DATADIR%%/locale/nmapsi4_de.qm
 %%DATADIR%%/locale/nmapsi4_es.qm
 %%DATADIR%%/locale/nmapsi4_fr.qm
 %%DATADIR%%/locale/nmapsi4_it.qm
-%%DATADIR%%/locale/nmapsi4_pl.qm
-%%DATADIR%%/locale/nmapsi4_pt_BR.qm
 %%DATADIR%%/locale/nmapsi4_ru.qm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
@@ -29,7 +20,6 @@ share/icons/hicolor/64x64/apps/nmapsi4.png
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
