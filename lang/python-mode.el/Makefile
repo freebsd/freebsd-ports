@@ -14,7 +14,6 @@ COMMENT=	Emacs lisp module for the Python language
 
 NO_BUILD=	yes
 
-CONFLICTS=	python-2.4.[012]*
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 

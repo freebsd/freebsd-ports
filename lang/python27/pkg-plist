@@ -744,9 +744,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.3.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PORTVERSION%%.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.3.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PORTVERSION%%.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/__main__.py
 %%PYTHON_LIBDIR%%/lib2to3/btm_matcher.py
@@ -845,7 +845,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_util.py
-%%PYTHON_LIBDIR%%/lib-dynload/Python-2.7.3-py%%PYVER%%.egg-info
+%%PYTHON_LIBDIR%%/lib-dynload/Python-%%PORTVERSION%%-py%%PYVER%%.egg-info
 %%PYTHON_LIBDIR%%/lib-dynload/_bisect.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_cn.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_hk.so
