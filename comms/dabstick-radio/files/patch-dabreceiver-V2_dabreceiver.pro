@@ -1,6 +1,6 @@
 --- dabreceiver-V2/dabreceiver.pro.orig
 +++ dabreceiver-V2/dabreceiver.pro
-@@ -138,38 +138,39 @@ LIBS += -lfaad
+@@ -138,39 +138,39 @@ LIBS += -lfaad
  #}
  
  #for fedora use the second set
@@ -32,6 +32,7 @@
  
  ##for FreeBSD use the third set (Thanks to Juergen Lock)
 -#unix {
+-#	QMAKE_CXXFLAGS += -D__FREEBSD__
 -#	HEADERS += ../input/dabstick.h
 -#	SOURCES += ../input/dabstick.cpp
 -#	INCLUDEPATH += ${LOCALBASE}/include/qwt

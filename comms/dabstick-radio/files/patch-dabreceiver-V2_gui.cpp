@@ -1,6 +1,6 @@
 --- dabreceiver-V2/gui.cpp.orig
 +++ dabreceiver-V2/gui.cpp
-@@ -646,6 +646,12 @@ QString a = ensemble. data (s, Qt::Displ
+@@ -661,6 +661,12 @@ QString a = ensemble. data (s, Qt::Displ
  	                break;
  	}
  
