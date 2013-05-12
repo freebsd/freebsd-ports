@@ -1,0 +1,9 @@
+bin/democonv
+bin/dm2server
+%%Q2DIR%%/release/game.so
+%%Q2DIR%%/proxy/relay/game.so
+%%Q2DIR%%/proxy/replay/game.so
+@dirrm %%Q2DIR%%/proxy/replay
+@dirrm %%Q2DIR%%/proxy/relay
+@dirrm %%Q2DIR%%/proxy
+@dirrm %%Q2DIR%%/release

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Q2 Relay
-# Date created:				23 Mar 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	relay
 PORTVERSION=	0.4
@@ -16,22 +12,20 @@ DISTNAME=	relay-${PORTVERSION}.src
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II multi-view demo recording facility
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 MAKE_ARGS=	MODE=release OBJ_DIR=. OUT_DIR=. Q2MODULE=game.so \
 		QUAKE2_DIR="${Q2DIR}" BIN_DIR="${PREFIX}/bin" \
 		CC="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=		${WRKDIR}/relay-${PORTVERSION}
-
-PLIST_FILES=	bin/democonv bin/dm2server \
-		%%Q2DIR%%/release/game.so \
-		%%Q2DIR%%/proxy/relay/game.so \
-		%%Q2DIR%%/proxy/replay/game.so
-PLIST_DIRS=	%%Q2DIR%%/proxy/replay %%Q2DIR%%/proxy/relay \
-		%%Q2DIR%%/proxy %%Q2DIR%%/release
 PORTDOCS=	FAQ README
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
@@ -45,18 +39,16 @@ post-patch: .SILENT
 		${WRKSRC}/common/mem.c
 	cd ${WRKSRC}/common && ${SH} -c 'for i in *.h; do \
 		${ECHO_CMD} >> $${i}; done'
-	# Reorganize #include's (use /bin/ed to avoid a patch)
+# Reorganize #include's (use /bin/ed to avoid a patch)
 	${ECHO_CMD} -e '35t30\n36d\nwq' | ${ED} -s ${WRKSRC}/common/net.h
 	${ECHO_CMD} -e '9t7\n10d\nwq' | ${ED} -s ${WRKSRC}/common/net.c
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 ED?=	/bin/ed
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
