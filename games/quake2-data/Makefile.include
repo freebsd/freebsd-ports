@@ -11,7 +11,7 @@
 # Q2DIR			- The Quake II data directory (also added to
 #			  MAKE_ENV, PLIST_SUB, and SUB_LIST)
 #
-# Some notes for making such kind of ports:
+# Some notes for making this kind of ports:
 #
 # - The game engines should be modified to add ${Q2DIR} as the first search
 #   path (it's a stack so new paths override previous ones), and add
@@ -42,11 +42,15 @@
 #   it as an option (off by default). If the engine is not compatible with
 #   the game.so files provided by the ports then ignore this rule.
 #
-# For the examples please see existing ports.
+# For the examples, please see existing ports.
 #
 
 Q2PKGNAMEPREFIX?=	quake2-
 Q2DIR?=		${LOCALBASE}/share/quake2
+
+.if ${PKGNAMEPREFIX} == ${Q2PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.  error include before <bsd.port.options.mk> if using Q2PKGNAMEPREFIX
+.endif
 
 MAKE_ENV+=	Q2DIR="${Q2DIR}"
 PLIST_SUB+=	Q2DIR="${Q2DIR:S/${LOCALBASE}\///}"
