@@ -1,0 +1,30 @@
+--- Makefile.am.orig	2013-03-26 10:31:48.000000000 +0100
++++ Makefile.am	2013-05-11 17:25:23.000000000 +0200
+@@ -91,18 +91,15 @@
+ 	fi
+ 	buildd=`pwd`; cd $(top_srcdir); sourced=`pwd`; cd $(prefix); installd=`pwd`; cd $$buildd; \
+ 	if [ "$$installd" != "$$sourced" ]; then \
+-		$(INSTALL) -d $(prefix)/inc; \
+-		cp -frL $(top_srcdir)/inc $(prefix); \
+-		cp -frL $$buildd/config.h $(prefix); \
++		mv $(top_srcdir)/inc $(top_srcdir)/OpenCASCADE; \
++		cp -frL $(top_srcdir)/OpenCASCADE $(prefix)/include/; \
++		mv $(top_srcdir)/OpenCASCADE $(top_srcdir)/inc; \
+ 		for d in  $(FoundationClasses_DIRS) $(ModelingData_DIRS) $(ModelingAlgorithms_DIRS) $(Visualization_DIRS) $(ApplicationFramework_DIRS) $(DataExchange_DIRS) $(Draw_DIRS); do \
+-			$(INSTALL) -d $(prefix)/src/$$d; \
+-			cp -frL $(top_srcdir)/src/$$d $(prefix)/src; \
++			$(INSTALL) -d $(prefix)/$(LOCCROOT)/src/$$d; \
++			cp -frL $(top_srcdir)/src/$$d $(prefix)/$(LOCCROOT)/src; \
+ 		done; \
+ 	fi
+-	if [ -e $(prefix)/inc/config.h ]; then \
+-		rm -f $(prefix)/inc/config.h; \
+-	fi
+-	cd $(prefix)/inc && ln -s ../config.h config.h
+-	cd $(top_srcdir) && cp *amk.sh $(prefix)
++	cp $(top_srcdir)/config.h $(prefix)/include/OpenCASCADE/
++	cd $(top_srcdir) && cp *amk.sh $(prefix)/$(LOCCROOT)/
+ 
+-.PHONY: FoundationClasses ModelingData ModelingAlgorithms Visualization ApplicationFramework DataExchange Draw
+\ No newline at end of file
++.PHONY: FoundationClasses ModelingData ModelingAlgorithms Visualization ApplicationFramework DataExchange Draw

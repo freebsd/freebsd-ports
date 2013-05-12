@@ -1,5 +1,5 @@
---- ros/src/OS/ModelingAlgorithms.tcl.orig	Thu Jun 30 11:18:06 2005
-+++ ros/src/OS/ModelingAlgorithms.tcl	Thu Aug 10 22:18:25 2006
+--- src/OS/ModelingAlgorithms.tcl.orig	Thu Jun 30 11:18:06 2005
++++ src/OS/ModelingAlgorithms.tcl	Thu Aug 10 22:18:25 2006
 @@ -45,10 +45,16 @@
  	HP-UX {
  	}

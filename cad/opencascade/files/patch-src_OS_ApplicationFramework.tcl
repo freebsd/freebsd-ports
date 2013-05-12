@@ -1,5 +1,5 @@
---- ros/src/OS/ApplicationFramework.tcl.orig	Thu Sep 22 19:55:08 2005
-+++ ros/src/OS/ApplicationFramework.tcl	Thu Aug 10 22:46:41 2006
+--- src/OS/ApplicationFramework.tcl.orig	Thu Sep 22 19:55:08 2005
++++ src/OS/ApplicationFramework.tcl	Thu Aug 10 22:46:41 2006
 @@ -68,6 +68,12 @@
  	    lappend l "[lindex [wokparam -v %CSF_TCL_HOME] 0]/include"
             lappend l "[lindex [lindex [wokparam -v %STLPortInclude] 0] 0]" 
