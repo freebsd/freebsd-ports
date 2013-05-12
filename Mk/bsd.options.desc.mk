@@ -132,6 +132,7 @@ HAL_DESC?=		HAL (Hardware Abstraction Layer) support
 HDF5_DESC?=		HDF-5 data format support
 HTTPD_DESC?=		httpd output streaming support
 HTTPS_DESC?=		HTTPS protocol support
+HUNSPELL_DESC?=		Spell checking support via Hunspell
 ICONS_DESC?=		Install icon theme(s)
 ICONV_DESC?=		Encoding conversion support via iconv
 ICU_DESC?=		Unicode support via ICU
