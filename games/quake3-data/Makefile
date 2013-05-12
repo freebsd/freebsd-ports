@@ -37,8 +37,8 @@ PLIST_SUB+=	TEAMARENA="@comment "
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAIL} +356 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${TAR} zxf - >/dev/null
+	@cd ${WRKDIR} && ${TAIL} +356 \
+		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xzf -
 
 do-install:
 	@${MKDIR} ${DATADIR}

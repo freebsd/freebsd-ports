@@ -13,10 +13,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Weapons Factory Arena
 
-NO_PACKAGE=	Package will be 200MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	package will be 200MB, set FORCE_PACKAGE if you really want it
 
 USE_ZIP=	yes
-USE_CRLF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
