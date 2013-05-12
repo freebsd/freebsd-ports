@@ -1,13 +1,8 @@
-# New ports collection makefile for:	quassel
-# Date created:		2008-08-10
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quassel
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -17,18 +12,20 @@ COMMENT=	Qt4 based distributed IRC client
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
-USES=		cmake
-USE_QT4=	qmake_build moc_build rcc_build uic_build
+USES=		cmake:outsource
+USE_QT4=	corelib network script sql \
+		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	KDE NLS
 OPTIONS_MULTI=	MODULE
 OPTIONS_MULTI_MODULE=	MONO CORE CLIENT
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULE}
 
 MONO_DESC=	Quassel standalone client
-CORE_DESC=	Quassel core
-CLIENT_DESC=	Quassel client
+CORE_DESC=	Quassel core (for use with client)
+CLIENT_DESC=	Quassel client (for use with core)
+KDE_DESC=	KDE 4 integration (for clients only)
 
 CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 		-DWANT_CORE=${QUASSEL_CORE} \
@@ -41,14 +38,22 @@ CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 USE_QT4+=	linguist_build
 .endif
 
-.if !${PORT_OPTIONS:MMONO} && !${PORT_OPTIONS:MCLIENT}
-PLIST_SUB+=	MONO_OR_CLIENT="@comment "
-.else
+.if ${PORT_OPTIONS:MMONO} || ${PORT_OPTIONS:MCLIENT}
+. if ${PORT_OPTIONS:MKDE}
+USE_KDE4=	automoc4 kdelibs
+CMAKE_ARGS+=	-DWITH_KDE=ON
+PLIST=		${PKGDIR}/pkg-plist.kde
+. else
+CMAKE_ARGS+=	-DWITH_KDE=OFF
+. endif
+USE_QT4+=	dbus gui phonon webkit xml xmlpatterns
+LIB_DEPENDS+=	dbusmenu-qt:${PORTSDIR}/devel/libdbusmenu-qt
 PLIST_SUB+=	MONO_OR_CLIENT=""
+.else
+PLIST_SUB+=	MONO_OR_CLIENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMONO}
-USE_QT4+=	dbus gui network script sql xml webkit
 QUASSEL_MONO=	ON
 PLIST_SUB+=	MONO=""
 .else
@@ -57,7 +62,8 @@ PLIST_SUB+=	MONO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCORE}
-USE_QT4+=	network script sql sql-sqlite3_run
+LIB_DEPENDS+=	qca.2:${PORTSDIR}/devel/qca
+USE_QT4+=	sql-sqlite3_run
 QUASSEL_CORE=	ON
 PLIST_SUB+=	CORE=""
 
@@ -71,7 +77,6 @@ PLIST_SUB+=	CORE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-USE_QT4+=	dbus gui network xml webkit
 QUASSEL_CLIENT=	ON
 PLIST_SUB+=	CLIENT=""
 .else
@@ -84,6 +89,8 @@ pre-configure:
 	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
+	${REINPLACE_CMD} -e 's,knotifyconfig,$${KDE4_KNOTIFYCONFIG_LIBRARY},' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 .if ${PORT_OPTIONS:MCORE}
