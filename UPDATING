@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130512:
+  AFFECTS: users of devel/hs-git-annex
+  AUTHOR: haskell@FreeBSD.org
+
+  On FreeBSD, git-annex incorrectly calculated SHA256 hashes for files
+  added to the annex repository due to the BSD-style output of
+  /sbin/sha256.  The result of this is silent data corruption.
+
+  This problem has been fixed, but every file stored in an annex
+  repository will fail a `git annex fsck` after the upgrade.  Thus,
+  before updating, it is wise to issue the command below and restore the
+  files.
+
+  $ git annex uninit
+
+  Corruptions can then be found by finding all files with the same hash.
+  Note that only files that were mishashed to the same location are a
+  problem.
+
 20130511:
   AFFECTS: users of TeX
   AUTHOR: hrs@FreeBSD.org
