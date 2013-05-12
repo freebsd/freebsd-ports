@@ -12,13 +12,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 bots
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	${PORTDOCS}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${Q1DIR}/${PORTNAME}
+PORTDOCS=	B08chg.txt Dedserv.txt Reaprb80.txt Skinspec.txt
 
 OPTIONS_DEFINE=	DOCS
 
+.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 do-install:
@@ -28,11 +31,9 @@ do-install:
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.  for f in B08chg.txt Dedserv.txt Reaprb80.txt Skinspec.txt
-	@${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" ${WRKSRC}/${f}
+.  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f:L}
 .  endfor
 .endif
 
-.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.mk>
