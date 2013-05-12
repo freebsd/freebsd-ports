@@ -12,9 +12,8 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
 LICENSE=	BSD
-BROKEN=		tries to link with both libnet1.0 and libnet1.1 
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet10/libnet.a:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
 
 GNU_CONFIGURE=	yes
@@ -30,7 +29,13 @@ MAN8=		arpspoof.8 ${PORTNAME}.8 macof.8 mailsnarf.8 tcpkill.8 \
 		tcpnice.8 urlsnarf.8 filesnarf.8 dnsspoof.8 msgsnarf.8 \
 		sshmitm.8 webmitm.8
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+LIBNET_VERSION=	10
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet${LIBNET_VERSION}-config
+LIBNET_INC=	"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
+# ugly hack because net/libnet10 doesn't install shared library, only static archive
+# so we can't use libnet-config10 --libs to retrieve linker flags
+LIBNET_LIB=	"-L${LOCALBASE}/include/libnet${LIBNET_VERSION} \
+		${LOCALBASE}/lib/libnet${LIBNET_VERSION}/libnet.a"
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +43,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 # the corresponding library and additional linker flags.
 LIBNIDS_GLIB2?=
 .if exists(${LOCALBASE}/lib/libnids.a)
-LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init || ${TRUE}
+LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init || ${ECHO_CMD}
 .endif
 
 .if !empty(LIBNIDS_GLIB2)
@@ -58,8 +63,8 @@ post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|libnet-config|${LIBNET_CONFIG:T}|; \
 		 s|test -f \$${prefix}/include/libnet.h|${TRUE}|; \
-		 s|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|; \
-		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+		 s|(LNETINC=).*|\1${LIBNET_INC}|; \
+		 s|(LNETLIB=).*|\1${LIBNET_LIB}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if !empty(LIBNIDS_GLIB2)

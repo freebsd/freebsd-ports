@@ -1,0 +1,55 @@
+--- ./Makefile.in.orig	2000-12-15 21:03:26.000000000 +0100
++++ ./Makefile.in	2013-03-15 07:33:57.000000000 +0100
+@@ -26,7 +26,7 @@
+ LNETLIB = @LNETLIB@
+ 
+ NIDSINC	= @NIDSINC@
+-NIDSLIB	= @NIDSLIB@
++NIDSLIB	= @NIDSLIB@ `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0`
+ 
+ DBINC	= @DBINC@
+ DBLIB	= @DBLIB@
+@@ -37,9 +37,8 @@
+ X11INC	= @X_CFLAGS@
+ X11LIB	= @X_LIBS@ @X_PRE_LIBS@ -lXmu -lX11 @X_EXTRA_LIBS@
+ 
+-INCS	= -I. $(NIDSINC) $(PCAPINC) $(LNETINC) $(DBINC) $(SSLINC) $(X11INC) \
+-	  -I$(srcdir)/missing
+-LIBS	= @LIBS@ -L$(srcdir) -lmissing
++INCS	= -I. $(NIDSINC) $(PCAPINC) $(LNETINC) $(DBINC) $(SSLINC) $(X11INC)
++LIBS	= @LIBS@ -L$(srcdir) -lmd
+ 
+ INSTALL	= @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+@@ -76,7 +75,7 @@
+ .c.o:
+ 	$(CC) $(CFLAGS) $(INCS) -c $(srcdir)/$*.c
+ 
+-all: libmissing.a $(PROGS)
++all: $(PROGS)
+ 
+ mount.c: mount.x
+ 	rpcgen -h mount.x -o mount.h
+@@ -86,13 +85,6 @@
+ 	rpcgen -h nfs_prot.x -o nfs_prot.h
+ 	rpcgen -c nfs_prot.x -o nfs_prot.c
+ 
+-$(LIBOBJS):
+-	$(CC) $(CFLAGS) $(INCS) -c $(srcdir)/missing/$*.c
+-
+-libmissing.a: $(LIBOBJS)
+-	ar -cr $@ $(LIBOBJS)
+-	$(RANLIB) $@
+-
+ dsniff: $(HDRS) $(SRCS) $(OBJS)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(DBLIB) $(SSLLIB)
+ 
+@@ -153,7 +145,7 @@
+ 	done
+ 
+ clean:
+-	rm -f *.o *~ $(GEN) libmissing.a $(PROGS) webmitm.crt
++	rm -f *.o *~ $(GEN) $(PROGS) webmitm.crt
+ 
+ distclean: clean
+ 	rm -f Makefile config.h config.cache config.log config.status
