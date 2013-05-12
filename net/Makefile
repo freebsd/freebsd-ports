@@ -335,6 +335,7 @@
     SUBDIR += libopennet
     SUBDIR += liboping
     SUBDIR += libosip
+    SUBDIR += libosip2
     SUBDIR += libpcap
     SUBDIR += libpcapnav
     SUBDIR += libproxy
