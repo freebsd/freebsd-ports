@@ -43,7 +43,6 @@ MAN1=		lyx.1 lyxclient.1 tex2lyx.1
 OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS
 OPTIONS_DEFAULT=	HUNSPELL NLS
 ENCHANT_DESC=		Spell checking using Enchant
-HUNSPELL_DESC=		Spell checking using Hunspell
 
 .include <bsd.port.options.mk>
 
