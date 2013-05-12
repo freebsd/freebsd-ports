@@ -254,5 +254,3 @@ share/mime/packages/krecipes-mime.xml
 @dirrm share/apps/krecipes/layouts
 @dirrm share/apps/krecipes/data
 @dirrm share/apps/krecipes
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

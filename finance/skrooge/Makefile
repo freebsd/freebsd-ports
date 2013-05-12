@@ -25,7 +25,4 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-post-install:
-	@-update-mime-database ${KDE4_PREFIX}/share/mime
-
 .include <bsd.port.mk>

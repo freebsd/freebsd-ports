@@ -67,7 +67,7 @@ USE_QT4+=	webkit
 CMAKE_ARGS+=	-DWITHOUT_QTWEBKIT=yes
 . endif
 .else #defined(PKGNAMESUFFIX)
-USE_KDE4=	kdelibs automoc4 kdeprefix
+USE_KDE4=	kdelibs automoc4 kdeprefix sharedmime
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif #defined(PKGNAMESUFFIX)
 

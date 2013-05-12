@@ -103,5 +103,3 @@ share/mime/packages/kdepim-mime.xml
 @dirrmtry share/apps/akonadi
 @dirrm share/akonadi/agents
 @dirrm share/akonadi
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

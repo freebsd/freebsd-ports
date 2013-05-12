@@ -2318,5 +2318,3 @@ share/pixmaps/kvirc.png
 @dirrm lib/kvirc/%%VER%%/modules
 @dirrm lib/kvirc/%%VER%%
 @dirrm lib/kvirc
-%%KDE%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-%%KDE%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

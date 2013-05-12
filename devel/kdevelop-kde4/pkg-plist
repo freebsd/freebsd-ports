@@ -550,5 +550,3 @@ share/mime/packages/kdevelop.xml
 @dirrmtry share/apps/kdevappwizard
 @dirrm include/kdevelop/make
 @dirrm include/kdevelop
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

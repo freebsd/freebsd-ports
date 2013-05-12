@@ -435,5 +435,3 @@ share/mime/packages/westley.xml
 @dirrm share/apps/kdenlive/effects/update
 @dirrm share/apps/kdenlive/effects
 @dirrm share/apps/kdenlive
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

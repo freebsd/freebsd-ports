@@ -1652,5 +1652,3 @@ share/mime/text/x-kilepr.xml
 @dirrm share/apps/kile/complete/abbreviation
 @dirrm share/apps/kile/complete
 @dirrm share/apps/kile
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

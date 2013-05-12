@@ -54,7 +54,4 @@ post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/app/CMakeLists.txt
 
-post-install:
-	@-update-mime-database ${PREFIX}/share/mime
-
 .include <bsd.port.mk>

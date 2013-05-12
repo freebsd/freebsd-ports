@@ -638,5 +638,3 @@ share/mime/packages/x-k3b.xml
 @dirrm share/apps/k3b/extra
 @dirrm share/apps/k3b/cdi
 @dirrm share/apps/k3b
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
