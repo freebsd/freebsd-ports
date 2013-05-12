@@ -1,6 +1,6 @@
 --- include/fmath.h.orig	2013-01-21 11:39:43.845857535 +1030
 +++ include/fmath.h	2013-01-21 11:39:52.142857433 +1030
-@@ -972,7 +972,7 @@
+@@ -976,7 +976,7 @@
  
  
  // Functions missing from FreeBSD
