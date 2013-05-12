@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hotot
-PORTVERSION=	0.9.8.13
+PORTVERSION=	0.9.8.14
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 GH_TAGNAME=	master
-GH_COMMIT=	e0c78bf
+GH_COMMIT=	1f68d33
 
 USES=		cmake gettext
 USE_PYTHON=	yes
