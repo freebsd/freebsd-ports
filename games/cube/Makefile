@@ -1,61 +1,60 @@
-# New ports collection makefile for:	cube
-# Date created:        17 October 2002
-# Whom:                Arjan van Leeuwen
-#
+# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cube
-PORTVERSION=	2005.08.29
+DISTVERSION=	2005_08_29
 PORTREVISION=	11
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2005_08_29
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTFILES=	${CUBE_DATA} ${CUBE_SRC}
 EXTRACT_ONLY=	${CUBE_SRC}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OpenGL 3D First Person Shooter game
+COMMENT=	OpenGL 3D FPS (first person shooter) game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}_source/src
-CFLAGS+=	-fsigned-char
-ALL_TARGET=	#empty
-MALE_JOBS_SAFE=	yes
+ALL_TARGET=	#
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
-OPTIONS_MULTI=	TYPE
-OPTIONS_MULTI_TYPE=	CLIENT DEDICATED
-OPTIONS_DEFAULT=	CLIENT DEDICATED
-CLIENT_DESC=	Build client
-DEDICATED_DESC=	Build dedicated server
+CFLAGS+=	-fsigned-char
+WRKSRC=		${WRKDIR}/${PORTNAME}_source/src
 
 SUB_FILES=	cube_client cube_server
 
-CUBE_DATA=	${PORTNAME}_${PORTVERSION:S/./_/g}_unix.tar.gz
-CUBE_SRC=	${PORTNAME}_${PORTVERSION:S/./_/g}_src.zip
+CUBE_DATA=	${PORTNAME}_${DISTVERSION}_unix.tar.gz
+CUBE_SRC=	${PORTNAME}_${DISTVERSION}_src.zip
+
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT SERVER
+OPTIONS_DEFAULT=	CLIENT SERVER
+
+FLAVOR_DESC=	Clients and servers
+CLIENT_DESC=	Build client
+SERVER_DESC=	Build dedicated server
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-USE_GL=		yes
+USE_GL=		glu
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
-PLIST_SUB+=	CLIENT=""
 CUBE_BIN+=	client
+PLIST_SUB+=	CLIENT=""
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDEDICATED}
+.if ${PORT_OPTIONS:MSERVER}
 ALL_TARGET+=	server
-PLIST_SUB+=	DEDICATED=""
 CUBE_BIN+=	server
+PLIST_SUB+=	SERVER=""
 .else
-PLIST_SUB+=	DEDICATED="@comment "
+PLIST_SUB+=	SERVER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -70,13 +69,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/cube_${f} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cube_${f} ${PREFIX}/libexec
 .endfor
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKDIR}/cube && ${COPYTREE_SHARE} "data packages" ${DATADIR}/)
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKDIR}/cube && ${COPYTREE_SHARE} "data packages" ${DATADIR})
 	${INSTALL_DATA} ${WRKDIR}/cube/autoexec.cfg ${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/cube/readme.html ${DOCSDIR}
-	@(cd ${WRKDIR}/cube/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
+	@(cd ${WRKDIR}/cube/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
