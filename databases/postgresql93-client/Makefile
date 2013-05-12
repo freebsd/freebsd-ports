@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	PostgreSQL database (client)
 
-MASTERDIR=	${.CURDIR}/../postgresql92-server
+MASTERDIR=	${.CURDIR}/../postgresql93-server
 
 BUILD_DIRS=	config src/include src/interfaces src/port \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
