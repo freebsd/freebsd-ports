@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metaocaml
-# Date created:			16 June 2005
-# Whom:				Geoffrey Mainland <mainland@apeiron.net>
-#
+# Created by: Geoffrey Mainland <mainland@apeiron.net>
 # $FreeBSD$
-#
 
 PORTNAME=	metaocaml
 PORTVERSION=	3.09.a30
@@ -60,8 +56,9 @@ MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
 		camlp4.1 ocpp.1
 
-OPTIONS=	X11 "build the X11 graphics library" on \
-		LABLTK "build the LablTk library" on
+OPTIONS_DEFINE=	X11 LABELTK
+OPTIONS_DEFAULT=	X11 LABELTK
+LABLTK_DESC=	build the LablTk library
 
 PLISTDIR=	${PREFIX}/lib/metaocaml \
 		${PREFIX}/share/examples/metaocaml \
@@ -69,12 +66,12 @@ PLISTDIR=	${PREFIX}/lib/metaocaml \
 		${PREFIX}/bin/metaocamlc \
 		${PREFIX}/bin/metaocamlopt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Have to set this here and can't use ${DATADIR} or MLINKS get screwed up
 MANPREFIX=	${PREFIX}/share/metaocaml
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 CONFIGURE_ARGS+=-x11include ${LOCALBASE}/include -x11lib ${LOCALBASE}/lib
 PLIST_SUB+=	X11=""
@@ -84,12 +81,12 @@ PLIST_SUB+=	X11="@comment "
 
 # We would like to use bsd.tcl.mk here, but we can't USE_TCL after including
 # bsd.port.pre.mk and we can't test WITH_LABLTK before including bsd.port.pre.mk
-.if defined(WITH_LABLTK)
+.if ${PORT_OPTIONS:MLABLTK}
 LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
 CONFIGURE_ARGS+=-tklibs "-L${LOCALBASE}/lib"
 PLIST_SUB+=	LABLTK=""
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=-tk-no-x11
 .endif
 .else
@@ -115,7 +112,7 @@ post-patch:
 		 s,-O,,' {} \;
 
 post-install:
-.if defined(WITH_LABLTK)
+.if ${PORT_OPTIONS:MLABLTK}
 .  for d in camltk labltk
 	${MKDIR} ${EXAMPLESDIR}/${d}
 	${CP} -R ${WRKSRC}/otherlibs/labltk/examples_${d}/* ${EXAMPLESDIR}/${d}
@@ -145,4 +142,4 @@ post-install:
 	echo "@dirrm ${MANPREFIX:S|${PREFIX}/||}" >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,11 +23,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 FULL_MAUDE_VER=	26b
-OPTIONS=	FULL_MAUDE "Install full-maude${FULL_MAUDE_VER}" On
+
+OPTIONS_DEFINE=	FULL_MAUDE
+OPTIONS_DEFAULT=	FULL_MAUDE
+FULL_MAUDE_DESC=	Install full-maude${FULL_MAUDE_VER}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FULL_MAUDE)
+.if ${PORT_OPTIONS:MFULL_MAUDE}
 MASTER_SITES+=	http://maude.lcc.uma.es/FullMaude/FM${FULL_MAUDE_VER}/:fm
 FULL_MAUDE=	full-maude${FULL_MAUDE_VER}.maude
 FULL_MAUDE_DIST=	${FULL_MAUDE}.zip
@@ -40,7 +43,7 @@ PLIST_SUB+=	FULL_MAUDE_VER="${FULL_MAUDE_VER}"
 PLIST_SUB+=	FULL_MAUDE="@comment "
 .endif
 
-.if defined(WITH_FULL_MAUDE)
+.if ${PORT_OPTIONS:MFULL_MAUDE}
 post-extract:
 	${UNZIP_CMD} ${DISTDIR}/${FULL_MAUDE_DIST} ${FULL_MAUDE} -d ${WRKDIR}
 .endif
@@ -49,7 +52,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/src/Mixfix/global.hh
 
-.if defined(WITH_FULL_MAUDE)
+.if ${PORT_OPTIONS:MFULL_MAUDE}
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/${FULL_MAUDE} ${DATADIR}
 .endif

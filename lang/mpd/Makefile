@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpd
-# Date Created:	2007-02-05
-# Whom:		Kai Wang <kaiw27@gmail.com>
-#
+# Created by: Kai Wang <kaiw27@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mpd
 PORTVERSION=	1.0.1
@@ -26,7 +22,8 @@ NO_LATEST_LINK=	yes
 
 USE_GMAKE=	yes
 
-OPTIONS=	X11 "Enable X11 support" on
+OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFAULT=	X11
 
 MAN1=		mpd.1 mpdl.1 mpdm.1 mpdprof.1
 MAN3=		mpdanimator.3 mpdgetopt.3 mpdwin.3
@@ -34,7 +31,7 @@ MAN5=		mpdmap.5 mpdtrace.5
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	X11="@comment "
 .else
 PLIST_SUB+=	X11=""
@@ -47,7 +44,7 @@ post-patch:
 		 s%^(MPDSRC =) .*%\1 ${WRKSRC}%; \
 		 s%^((MPD(CMD|LIB)|MAN[135]) =) /usr/local%\1 ${PREFIX}%" \
 		 ${WRKSRC}/Configuration
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -Ee 's%^(XINCL =) .*%\1 ${LOCALBASE}/include%' \
 		${WRKSRC}/Configuration
 .else
@@ -58,7 +55,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/lib/mpd
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
