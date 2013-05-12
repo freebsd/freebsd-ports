@@ -12,16 +12,16 @@ LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_PGSQL=	yes
-DEFAULT_PGSQL_VER=92
+DEFAULT_PGSQL_VER=93
 MASTERDIR=	${.CURDIR}/../postgresql${DEFAULT_PGSQL_VER}-server
 
 USES=		bison
 
-BUILD_DIRS=	src/port contrib
+BUILD_DIRS=	src/port src/common contrib
 INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
-CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl
+CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --disable-nls
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
 OPTIONS_DEFINE=	OSSP_UUID
