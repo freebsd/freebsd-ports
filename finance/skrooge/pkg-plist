@@ -643,5 +643,3 @@ share/mime/packages/x-skg.xml
 @dirrmtry share/akonadi
 @dirrmtry lib/kde4/plugins/grantlee/0.3
 @dirrmtry lib/kde4/plugins/grantlee
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

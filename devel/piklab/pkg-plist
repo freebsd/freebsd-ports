@@ -32,5 +32,3 @@ share/locale/it/LC_MESSAGES/piklab.mo
 %%KDE4%%@dirrm share/doc/HTML/en/piklab
 %%KDE4%%@dirrm share/apps/piklab/pics
 %%KDE4%%@dirrm share/apps/piklab
-%%KDE4%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-%%KDE4%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

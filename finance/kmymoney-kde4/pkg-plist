@@ -1422,5 +1422,3 @@ share/mime/packages/x-kmymoney.xml
 %%CALENDAR%%@dirrm share/apps/kmm_icalendarexport
 @dirrm share/apps/kmm_csvimport
 @dirrm include/kmymoney
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

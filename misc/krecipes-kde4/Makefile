@@ -1,9 +1,4 @@
-# ports collection makefile for:	krecipies
-# Date created:				19 March 2005
-# Whom:					hank
-#
 # $FreeBSD$
-#
 
 PORTNAME=	krecipes
 DISTVERSION=	2.0-beta2

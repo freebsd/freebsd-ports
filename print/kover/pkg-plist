@@ -26,5 +26,3 @@ share/mime/packages/kover.xml
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
 @dirrm share/apps/kover
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
