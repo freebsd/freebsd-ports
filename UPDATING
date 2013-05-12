@@ -14,11 +14,11 @@ you update your ports collection, before attempting any port upgrades.
   /sbin/sha256.  The result of this is silent data corruption.
 
   This problem has been fixed, but every file stored in an annex
-  repository will fail a `git annex fsck` after the upgrade.  Thus,
+  repository will fail a `git-annex fsck` after the upgrade.  Thus,
   before updating, it is wise to issue the command below and restore the
   files.
 
-  $ git annex uninit
+  $ git-annex uninit
 
   Corruptions can then be found by finding all files with the same hash.
   Note that only files that were mishashed to the same location are a
