@@ -50,6 +50,10 @@ PLIST_SUB=	OCCROOT="${LOCCROOT}"
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 900506
+BROKEN=		does not build on FreeBSD-8.x (xlocale.h required)
+.endif
+
 .if ${PORT_OPTIONS:MTBB}
 LIB_DEPENDS+=	tbb:${PORTSDIR}/devel/tbb
 CONFIGURE_ARGS+=--with-tbb-include=${LOCALBASE}/include	\
