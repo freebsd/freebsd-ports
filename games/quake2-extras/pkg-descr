@@ -1,6 +1,6 @@
-This port installs various Quake II extras:
+This port installs several Quake II extras:
 
-- High quality texture pack (requires support in engine).
-- High quality skin pack (requires JPEG and PNG support in engine).
+  - High quality texture pack (requires support in engine)
+  - High quality skin pack (requires JPEG and PNG support in engine)
 
 WWW: http://www-personal.umich.edu/~jimw/q2/index.htm
