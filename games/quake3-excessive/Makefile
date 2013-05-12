@@ -19,7 +19,6 @@ COMMENT=	Quake III Arena Mod: Excessive
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	yes
-USE_CRLF=	yes
 NO_BUILD=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}

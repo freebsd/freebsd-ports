@@ -14,7 +14,6 @@ COMMENT=	Quake III Arena mod: Urban Terror
 NO_PACKAGE=	package will be 445MB, set FORCE_PACKAGE if you really want it
 
 USE_ZIP=	yes
-USE_CRLF=	yes
 .if defined(.PARSEDIR)
 USE_GMAKE=	yes
 .endif

@@ -20,7 +20,6 @@ COMMENT=	Quake III Arena Mod: Freeze Tag
 WRKSRC=		${WRKDIR}/freeze
 
 USE_ZIP=	yes
-USE_CRLF=	yes
 NO_BUILD=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}
