@@ -251,10 +251,11 @@ foreach my $thisdir (@dirs) {
 	# Do commitfile checking but only if the user did not request automatic filling.
 	if (!$autofill) {
 		if (-f $c) {
-			system("$mv $c $tmpdir/commitfile") or errx(1, "Oops, can't move commitfile!");
+			system("$mv $c $tmpdir/commitfile") && errx(1, "Oops, can't move commitfile!");
 			print "\nRemember, you asked to use a commit file to read for the commit log.\n";
 			print "This means you'll get a message saying the log message was unchanged or\n";
 			print "not specified.  Just tell it to continue and it will be committed.\n\n";
+			$commitfile = "--file $tmpdir/commitfile";
 		}
 	} else {
 		## Set up the autofill file.
