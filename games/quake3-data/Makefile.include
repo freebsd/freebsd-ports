@@ -4,7 +4,7 @@
 Q3PKGNAMEPREFIX?=	quake3-
 Q3DIR?=		${LOCALBASE}/share/quake3
 
-.if ${PKGNAMEPREFIX} == ${Q3PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${Q3PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
 .  error include before <bsd.port.options.mk> if using Q3PKGNAMEPREFIX
 .endif
 

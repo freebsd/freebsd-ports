@@ -3,7 +3,7 @@
 DMPKGNAMEPREFIX?=	doom-
 DMDIR?=		${LOCALBASE}/share/doom
 
-.if ${PKGNAMEPREFIX} == ${DMPKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${DMPKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
 .  error include before <bsd.port.options.mk> if using DMPKGNAMEPREFIX
 .endif
 
