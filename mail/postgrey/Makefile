@@ -1,9 +1,5 @@
-# New ports collection makefile for:    postgrey
-# Date created:				24 August 2004
-# Whom:					Will Andrews <will@FreeBSD.org>
-#
+# Created by: Will Andrews <will@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	postgrey
 PORTVERSION=	1.34
@@ -41,6 +37,14 @@ USERS=		${PGY_USERNAME}
 GROUPS=		${PGY_GROUPNAME}
 MAN1=		${PORTNAME}.1 policy-test.1 postgreyreport.1
 
+USES=		shebangfix
+SHEBANG_FILES=	${WRKSRC}/postgrey
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/main.cf#/etc/postfix/main.cf#' ${WRKSRC}/postgrey
 	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' ${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
@@ -61,7 +65,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} ${PREFIX}/etc/postfix/dist-postgrey_${i}
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
