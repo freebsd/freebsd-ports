@@ -608,11 +608,10 @@ lib/libpgtypes.so.3
 lib/libpq.a
 lib/libpq.so
 lib/libpq.so.5
-lib/pkgconfig/libecpg.pc
-lib/pkgconfig/libecpg_compat.pc
-lib/pkgconfig/libpgtypes.pc
-lib/pkgconfig/libpq.pc
-@dirrmtry lib/pkgconfig
+libdata/pkgconfig/libecpg.pc
+libdata/pkgconfig/libecpg_compat.pc
+libdata/pkgconfig/libpgtypes.pc
+libdata/pkgconfig/libpq.pc
 lib/postgresql/pgxs/config/install-sh
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/Makefile.global
