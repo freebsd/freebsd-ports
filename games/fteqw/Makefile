@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fteqw
-# Date created:				2 Sep 2006
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fteqw
 PORTVERSION=	3343
@@ -20,49 +16,49 @@ USE_GMAKE=	yes
 USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 
-OPTIONS_MULTI=	EXE
-OPTIONS_MULTI_EXE=	DEDICATED OPENGL SDL
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	DEDICATED OPENGL OPTIMIZED_CFLAGS SDL
-DEDICATED_DESC=	Build dedicated server
-
 SUB_FILES=	pkg-message
 
-.include "${.CURDIR}/../quake-data/Makefile.include"
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	GLCLIENT SDLCLIENT SERVER
+OPTIONS_DEFAULT=	GLCLIENT SDLCLIENT SERVER OPTIMIZED_CFLAGS
 
+FLAVOR_DESC=	Clients and servers
+GLCLIENT_DESC=	Build OpenGL client
+SDLCLIENT_DESC=	Build SDL client
+SERVER_DESC=	Build dedicated server
+
+.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEDICATED}
+.if ${PORT_OPTIONS:MSERVER}
 ALL_TARGET+=	sv-rel
 PLIST_FILES+=	bin/fteqw-sv
-FTE_TARGETS+=	fteqw.sv
 .endif
 
-.if ${PORT_OPTIONS:MGL} || !empty(PORT_OPTIONS:MSDL)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+.if ${PORT_OPTIONS:MGLCLIENT} || !empty(PORT_OPTIONS:MSDLCLIENT)
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
-.if ${PORT_OPTIONS:MGL}
-USE_GL=		yes
+.if ${PORT_OPTIONS:MGLCLIENT}
+USE_GL=		gl
 ALL_TARGET+=	gl-rel
 PLIST_FILES+=	bin/fteqw-gl
-FTE_TARGETS+=	fteqw.gl
+.endif
+
+# SDL is used instead of the native X11 software version as it reports a
+# memory allocation error at startup.  It also fails with USEASM=true.
+.if ${PORT_OPTIONS:MSDLCLIENT}
+USE_SDL=	sdl
+ALL_TARGET+=	sw-rel
+PLIST_FILES+=	bin/fteqw-sdl
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZED_CFLAGS=true
-.endif
-
-# SDL is used instead of the native X11 software version as it reports a
-# memory allocation error at startup. It also fails with USEASM=true.
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-ALL_TARGET+=	sw-rel
-PLIST_FILES+=	bin/fteqw-sdl
-FTE_TARGETS+=	fteqw.sdl
 .endif
 
 post-patch:
@@ -72,8 +68,8 @@ post-patch:
 		${WRKSRC}/common/plugin.c ${WRKSRC}/server/svq3_game.c
 
 do-install:
-.for f in ${FTE_TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/release/${f} ${PREFIX}/bin/${f:S/./-/}
+.for f in ${PLIST_FILES:T}
+	${INSTALL_PROGRAM} ${WRKSRC}/release/${f:S/-/./} ${PREFIX}/bin/${f}
 .endfor
 
 post-install:
