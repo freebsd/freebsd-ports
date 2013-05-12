@@ -33,6 +33,7 @@ RETEXTURE_HQ_DESC=	High quality textures (200MB)
 RETEXTURE_LW_DESC=	Low (still good) quality textures (15MB)
 SKYBOXES_DESC=		Skyboxes (sky replacement images)
 
+.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREMODEL} || ${PORT_OPTIONS:MSKYBOXES}
@@ -135,5 +136,4 @@ do-install:
 	${CP} -a ${WRKSRC}/skyboxes/* ${DATADIR}/id1
 .endif
 
-.include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.mk>
