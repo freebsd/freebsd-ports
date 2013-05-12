@@ -19,7 +19,7 @@ Submitted to vendor:
        const char *pw = NULL;
        const char *user = NULL;
 --- ../generic/logutl.c	2009-09-14 11:11:40.000000000 -0400
-+++ ../generic/logutl.c	2010-02-24 22:53:36.000000000 -0500
++++ ../generic/logutl.c	2013-05-12 15:04:11.000000000 -0400
 @@ -87,5 +87,5 @@
  
      LogLevel *logLevel = NULL;
@@ -27,3 +27,97 @@ Submitted to vendor:
 +    int res = TCL_ERROR;
  
      if ((logData == NULL) || (levelStr == NULL) || (msg == NULL))
+@@ -465,7 +465,7 @@
+ 		case 'p':
+ #ifndef WIN32
+-		    sprintf(tmpStr, "%d", (int) getpid());
++		    sprintf(tmpStr, "%lu", (unsigned long)getpid());
+ #else
+-		    sprintf(tmpStr, "%d", (int) _getpid());
++		    sprintf(tmpStr, "%lu", (unsigned long)_getpid());
+ #endif
+ 		    Tcl_AppendToObj(fmsg, tmpStr, -1);
+@@ -473,5 +473,5 @@
+ 		case 't':
+ #ifdef TCL_THREADS
+-		    sprintf(tmpStr, "%d", (int) Tcl_GetCurrentThread());
++		    sprintf(tmpStr, "%lu", (unsigned long)(uintptr_t)Tcl_GetCurrentThread());
+ 		    Tcl_AppendToObj(fmsg, tmpStr, -1);
+ #else
+--- ../generic/nca_d.c	2009-09-14 11:11:40.000000000 -0400
++++ ../generic/nca_d.c	2013-05-12 14:55:21.000000000 -0400
+@@ -176,5 +176,4 @@
+ 
+     Tcl_Obj *key = NULL;
+-    unsigned char *keyBytes = NULL;
+     int keyLen = -1;
+     char *str = NULL;
+@@ -192,5 +191,5 @@
+     WebAssertData(interp, clientData, "web::decryptd", TCL_ERROR);
+     key = (Tcl_Obj *) clientData;
+-    keyBytes = Tcl_GetByteArrayFromObj(key, &keyLen);
++    Tcl_GetByteArrayFromObj(key, &keyLen);
+ 
+     if (keyLen < 1) {
+--- ../generic/formdata.c	2007-09-04 12:59:43.000000000 -0400
++++ ../generic/formdata.c	2013-05-12 14:56:59.000000000 -0400
+@@ -273,5 +273,4 @@
+     int isLast = TCL_ERROR;
+     long upLoadFileSize = 0;
+-    long bytesWritten = 0;
+     long bytesSkipped = 0;
+     Tcl_Obj *tmpFileName = NULL;
+@@ -353,5 +352,4 @@
+ 		}
+ 
+-		bytesWritten = 0;
+ 		bytesSkipped = 0;
+ 
+@@ -366,8 +364,7 @@
+ 		}
+ 
+-		bytesWritten =
+-		    readAndDumpBody(interp, channel, boundary, &isLast,
+-				    tmpFileName, upLoadFileSize,
+-				    requestData->filePermissions, &bytesSkipped);
++		readAndDumpBody(interp, channel, boundary, &isLast,
++				tmpFileName, upLoadFileSize,
++				requestData->filePermissions, &bytesSkipped);
+ 
+ 		if (fileNameLen > 0) {
+--- ../generic/log.c	2009-09-14 11:11:40.000000000 -0400
++++ ../generic/log.c	2013-05-12 14:58:45.000000000 -0400
+@@ -35,5 +35,4 @@
+     LogPlugIn *logtocmd = NULL;
+     LogPlugIn *logtosyslog = NULL;
+-    int ires = 0;
+ 
+     /* --------------------------------------------------------------------------
+@@ -86,5 +85,5 @@
+     logtochannel->handler = logToChannel;
+ 
+-    ires = registerLogPlugIn(interp, "channel", logtochannel);
++    registerLogPlugIn(interp, "channel", logtochannel);
+ 
+     /* --------------------------------------------------------------------------
+@@ -98,5 +97,5 @@
+     logtofile->handler = logToFile;
+ 
+-    ires = registerLogPlugIn(interp, "file", logtofile);
++    registerLogPlugIn(interp, "file", logtofile);
+ 
+     /* --------------------------------------------------------------------------
+@@ -110,5 +109,5 @@
+     logtocmd->handler = logToCmd;
+ 
+-    ires = registerLogPlugIn(interp, "command", logtocmd);
++    registerLogPlugIn(interp, "command", logtocmd);
+ 
+     /* --------------------------------------------------------------------------
+@@ -123,5 +122,5 @@
+     logtosyslog->handler = logToSyslog;
+ 
+-    ires = registerLogPlugIn(interp, "syslog", logtosyslog);
++    registerLogPlugIn(interp, "syslog", logtosyslog);
+ #endif
+     /* --------------------------------------------------------------------------
