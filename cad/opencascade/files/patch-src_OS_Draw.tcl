@@ -1,5 +1,5 @@
---- ros/src/OS/Draw.tcl.orig	Wed Nov 26 09:30:49 2003
-+++ ros/src/OS/Draw.tcl	Thu Aug 10 22:08:37 2006
+--- src/OS/Draw.tcl.orig	Wed Nov 26 09:30:49 2003
++++ src/OS/Draw.tcl	Thu Aug 10 22:08:37 2006
 @@ -50,6 +50,13 @@
  	    lappend l "[lindex [wokparam -v %CSF_TCL_HOME] 0]/include"
              lappend l "[lindex [lindex [wokparam -v %STLPortInclude] 0] 0]" 
