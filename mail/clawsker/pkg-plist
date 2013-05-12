@@ -1,6 +1,4 @@
 bin/clawsker
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/fr/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/es/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/id/LC_MESSAGES/clawsker.mo
@@ -9,6 +7,5 @@ bin/clawsker
 %%NLS%%share/locale/sr/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/clawsker.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin

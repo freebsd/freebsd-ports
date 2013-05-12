@@ -1,12 +1,8 @@
-# New ports collection makefile for:	clawsker
-# Date created:		2008-02-04
-# Whom:			Pawel Pekala <c0rn@o2.pl>
-#
+# Created by: Pawel Pekala <c0rn@o2.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	clawsker
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
@@ -15,13 +11,16 @@ COMMENT=	Applet to edit Claws Mail's hidden preferences
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail \
+RUN_DEPENDS=	claws-mail>=3.9.1:${PORTSDIR}/mail/claws-mail \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 
+USES=		shebangfix
+SHEBANG_FILES=	${PORTNAME}
 USE_PERL5=	yes
 
 MAN1=		clawsker.1
+PORTDOCS=	NEWS README
 
 .include <bsd.port.options.mk>
 
@@ -29,8 +28,13 @@ MAN1=		clawsker.1
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
-EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} '/^DATADIR/s|/share||' ${WRKSRC}/Makefile
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} '/-C po/d' ${WRKSRC}/Makefile
 .endif
 
 post-install:

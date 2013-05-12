@@ -1,6 +1,6 @@
---- clawsker.orig	Mon Feb  4 23:58:45 2008
-+++ clawsker	Mon Feb  4 23:59:08 2008
-@@ -345,8 +345,6 @@
+--- clawsker.orig	2013-05-08 10:56:43.000000000 +0200
++++ clawsker	2013-05-12 16:48:47.000000000 +0200
+@@ -389,14 +389,12 @@
  sub set_widget_hint() {
      if ($SHOWHINTS) {
          my ($wdgt, $hint) = @_;    
@@ -9,3 +9,10 @@
      }
  }
  
+ sub set_widget_sens() {
+     my ($wdgt, $versions) = @_;
+-    @ver = split(/,/, $versions);
++    my @ver = split(/,/, $versions);
+     if ($#ver == 1) {
+       $wdgt->set_sensitive (
+         &version_greater_or_equal ($CLAWSV, $ver[0])
