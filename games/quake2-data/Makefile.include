@@ -48,7 +48,7 @@
 Q2PKGNAMEPREFIX?=	quake2-
 Q2DIR?=		${LOCALBASE}/share/quake2
 
-.if ${PKGNAMEPREFIX} == ${Q2PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == "${Q2PKGNAMEPREFIX}" && defined(OPTIONSMKINCLUDED)
 .  error include before <bsd.port.options.mk> if using Q2PKGNAMEPREFIX
 .endif
 
