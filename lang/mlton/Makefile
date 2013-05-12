@@ -24,12 +24,13 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-OPTIONS=	SMLNJ	"Bootstrap with SML/NJ (can take >15 hours)"	off \
-		MINGW32	"Add the mingw32 target (requires wine)"	off
+OPTIONS_DEFINE=	SMLNJ MINGW32
+SMLNJ_DESC=	Bootstrap with SML/NJ (can take >15 hours)
+MINGW32_DESC=	Add the mingw32 target (requires wine)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 		htmldoc:${PORTSDIR}/textproc/htmldoc
 USE_TEX=	latex:build
@@ -40,11 +41,11 @@ ALL_TARGET=	all-no-docs
 
 SRC_DIST=	${DISTNAME}-1.src.tgz
 
-.if defined(WITH_SMLNJ)
+.if ${PORT_OPTIONS:MSMLNJ}
 BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
 BOOT_DIST=
 MAKE_ENV+=	SMLNJ_DEVEL=yes
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 ALL_TARGET=	nj-mlton all-no-docs
 .else
 ALL_TARGET=	bootstrap-nj
@@ -54,7 +55,7 @@ BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1.${MACHINE_ARCH}-freebsd${OSRELMAJ}.${BOOT_S
 MAKE_ENV+=	LD_LIBMAP=libgmp.so.7=libgmp.so.10
 .endif
 
-.if defined(WITH_MINGW32)
+.if ${PORT_OPTIONS:MMINGW32}
 BUILD_DEPENDS+=	wine:${PORTSDIR}/emulators/wine \
 		mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
 		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp
@@ -94,7 +95,7 @@ BOOT_VER=	20070826
 
 post-extract:
 	@${CP} ${FILESDIR}/add-local-cross ${WRKSRC}/bin/
-.if defined(WITH_SMLNJ)
+.if ${PORT_OPTIONS:MSMLNJ}
 	@${CP} ${FILESDIR}/upgrade-basis.sml ${WRKSRC}/mlton/
 	@for f in `ls ${FILESDIR}/ml.* ${FILESDIR}/mlb.*`; do \
 		${CP} $$f ${WRKSRC}/mlton/front-end/; \
@@ -131,7 +132,7 @@ post-patch:
 		${WRKSRC}/doc/guide/Installation.bak
 
 post-build:
-.if defined(WITH_MINGW32)
+.if ${PORT_OPTIONS:MMINGW32}
 	@${ECHO} Adding mingw32 target...
 	${WRKSRC}/bin/add-local-cross mingw32 x86 mingw
 .endif
@@ -147,10 +148,10 @@ post-install:
 	${FIND} ${PREFIX}/lib/mlton -type d -exec ${CHMOD} a+rx {} \;
 	${CHMOD} a+x ${PREFIX}/lib/mlton/mlton-compile
 	${CHMOD} a+x ${PREFIX}/lib/mlton/platform
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	${FIND} ${DOCSDIR} -type f -exec ${CHMOD} a+r {} \;
 	${FIND} ${DOCSDIR} -type d -exec ${CHMOD} a+rx {} \;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

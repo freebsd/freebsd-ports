@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dmd
-# Date created:				November 15 2010
-# Whom:					Ruben <chromium@hybridsource.org>
-#
+# Created by: Ruben <chromium@hybridsource.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dmd
 PORTVERSION=	1.076
@@ -27,13 +23,14 @@ LICENSE_NAME_DMD=	digital mars license
 LICENSE_FILE_DMD=	${WRKSRC}/../../license.txt
 LICENSE_PERMS_DMD=	no-pkg-mirror auto-accept
 
-OPTIONS=	SOURCE		"Compile dmd and phobos from source" off
+OPTIONS_DEFINE=	SOURCE DOCS
+SOURCE_DESC=	Compile dmd and phobos from source
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 MODULEDIR=	${PREFIX}/include/d/phobos
 
-.if defined(WITH_SOURCE)
+.if ${PORT_OPTIONS:MSOURCE}
 MAKEFILE=	posix.mak
 .else
 NO_BUILD=	yes
@@ -46,7 +43,7 @@ MAKE_ARGS+=	MODEL=32
 .endif
 
 post-patch:
-.if defined(WITH_SOURCE)
+.if ${PORT_OPTIONS:MSOURCE}
 	@${REINPLACE_CMD} -e "s|gcc|${CC}|"			\
 		${WRKSRC}/../phobos/freebsd.mak			\
 		${WRKSRC}/../phobos/etc/c/zlib/freebsd.mak	\
@@ -88,7 +85,7 @@ do-install:
 	${MKDIR} ${MODULEDIR}/etc/c
 	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/c/zlib.d ${MODULEDIR}/etc/c
 	cd ${WRKSRC}/../phobos && ${COPYTREE_SHARE} std ${MODULEDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 	cd ${WRKDIR}/dmd && ${COPYTREE_SHARE} html ${DOCSDIR}
@@ -97,4 +94,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${DOCSDIR}/phobos
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

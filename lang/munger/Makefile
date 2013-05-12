@@ -16,13 +16,14 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 MAN1=		munger.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	SQL  "include SQLite interface"  on
+OPTIONS_DEFINE=	SQLITE
+OPTIONS_DEFAULT=	SQLITE
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SQL)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	3
 MAKE_ARGS+=	-DWITH_SQL
 .endif
@@ -31,4 +32,4 @@ MAKE_ARGS+=	-DWITH_SQL
 BROKEN=		Does not link on sparc64
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
