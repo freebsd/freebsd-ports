@@ -1,7 +1,7 @@
 %%CLIENT%%bin/cube_client
-%%DEDICATED%%bin/cube_server
+%%SERVER%%bin/cube_server
 %%CLIENT%%libexec/cube_client
-%%DEDICATED%%libexec/cube_server
+%%SERVER%%libexec/cube_server
 %%DATADIR%%/autoexec.cfg
 %%DATADIR%%/data/Health.png
 %%DATADIR%%/data/crosshair.png
