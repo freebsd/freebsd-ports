@@ -770,6 +770,7 @@
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
     SUBDIR += pysolfc
+    SUBDIR += pyspacewar
     SUBDIR += pysycache
     SUBDIR += pysycache-lang
     SUBDIR += pysycache-themes
