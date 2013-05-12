@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A single player racing game
+COMMENT=	Single player racing game
 
 LICENSE=	GPLv2
 
@@ -22,6 +22,8 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAN6=	trophy.6
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

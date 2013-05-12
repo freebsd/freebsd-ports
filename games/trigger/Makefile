@@ -33,6 +33,8 @@ DESKTOP_ENTRIES="Trigger" "${COMMENT}" "" \
 
 PORTDOCS=	README-stereo.txt README.txt
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

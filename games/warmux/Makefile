@@ -1,9 +1,5 @@
-# Ports collection makefile for:  wormux
-# Date created:			  Thu Dec 16 18:46:55 EET 2004
-# Whom:				  Anton Yudin <toha@FreeBSD.org>
-#
+# Created by: Anton Yudin <toha@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	warmux
 DISTVERSION=	11.04.1
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
 		http://download.gna.org/${PORTNAME}/archive/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Wormux game
+COMMENT=	Turn-based artillery game with free software mascots
 
 LIB_DEPENDS=	xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		curl:${PORTSDIR}/ftp/curl
@@ -30,7 +26,7 @@ USE_DOS2UNIX=	fixed_class.h
 MANCOMPRESSED=	no
 MAN6=		warmux.6
 
-OPTIONS_DEFINE=	FRIBIDI SERVER NLS
+OPTIONS_DEFINE=	FRIBIDI SERVER NLS DEBUG
 FRIBIDI_DESC=	Enable bi-directional unicode support
 SERVER_DESC=	Enable dedicated server
 
@@ -44,7 +40,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,warmux_files.desktop,," ${WRKSRC}/data/Makefile.in
 	${FIND} -d ${WRKSRC}/data/ -name "*.*~" -delete
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug \
 			--enable-logging
 .endif

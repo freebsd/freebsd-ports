@@ -7,7 +7,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Qt4-based frontend for QEMU
+COMMENT=	Qt 4 based frontend for QEMU
 
 USE_BZIP2=	yes
 USE_QT4=	gui xml uic_build moc_build qmake_build rcc_build
@@ -16,6 +16,8 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 		"qtemu" "" false
+
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 

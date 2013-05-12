@@ -1,9 +1,5 @@
-# New ports collection makefile for:   frozen-bubble
-# Date created:        2002-10-06
-# Whom:                Klaus Goger <klaus.goger@reflex.at>
-#
+# Created by: Klaus Goger <klaus.goger@reflex.at>
 # $FreeBSD$
-#
 
 PORTNAME=	frozenbubble
 PORTVERSION=	2.2.0
@@ -29,6 +25,8 @@ REINPLACE_ARGS=	-i ""
 MAN6=		frozen-bubble-editor.6 frozen-bubble.6
 
 LEXECDIR=	${PREFIX}/libexec/${PORTNAME}
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

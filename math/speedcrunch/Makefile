@@ -1,9 +1,5 @@
-# New ports collection makefile for:	speedcrunch
-# Date created:		27 Jul 2007
-# Whom:                	Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	speedcrunch
 DISTVERSION=	0.10.1
@@ -22,6 +18,8 @@ MAKE_JOBS_SAFE=	yes
 
 LRELEASE_CMD=	${LOCALBASE}/bin/lrelease-qt4
 LRELEASE_ARGS=	-compress -silent
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

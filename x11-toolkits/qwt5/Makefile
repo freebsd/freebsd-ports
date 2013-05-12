@@ -23,6 +23,8 @@ PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
 
 STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.man>
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mp3unicode
-# Date created:		2007-09-29
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mp3unicode
 PORTVERSION=	1.2
@@ -25,6 +20,8 @@ CONFIGURE_ENV=	ICONV_CFLAGS="-I${LOCALBASE}/include" \
 MAN1=		mp3unicode.1
 PLIST_FILES=	bin/mp3unicode
 PORTDOCS=	COPYING README
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
