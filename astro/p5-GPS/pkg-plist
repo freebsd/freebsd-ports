@@ -1,15 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Garmin/.packlist
+%%SITE_PERL%%/GPS/Base.pm
 %%SITE_PERL%%/GPS/Garmin.pm
 %%SITE_PERL%%/GPS/Garmin/Constant.pm
 %%SITE_PERL%%/GPS/Garmin/Handler.pm
-%%SITE_PERL%%/GPS/Serial.pm
 %%SITE_PERL%%/GPS/NMEA.pm
-%%SITE_PERL%%/GPS/Base.pm
 %%SITE_PERL%%/GPS/NMEA/Handler.pm
-@dirrm %%SITE_PERL%%/GPS/Garmin
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Garmin
+%%SITE_PERL%%/GPS/Serial.pm
+%%SITE_PERL%%/mach/auto/GPS/Garmin/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/GPS/Garmin
+@dirrmtry %%SITE_PERL%%/mach/auto/GPS
 @dirrm %%SITE_PERL%%/GPS/NMEA
-@dirrm %%SITE_PERL%%/GPS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS
+@dirrm %%SITE_PERL%%/GPS/Garmin
 @dirrmtry %%SITE_PERL%%/GPS
-@dirrmtry %%SITE_PERL%%/auto/GPS
