@@ -11,8 +11,7 @@ COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	GUILE TCLTK
-TCLTK_DESC=	Tcl Scripting Support
+OPTIONS_DEFINE=	GUILE TCL
 
 USE_XORG=	x11 xi
 GNU_CONFIGURE=	yes
@@ -35,7 +34,7 @@ LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--disable-guile
 .endif
 
-.if ${PORT_OPTIONS:MTCLTK}
+.if ${PORT_OPTIONS:MTCL}
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 MAN1+=		xbindkeys_show.1
 PLIST_FILES+=	bin/xbindkeys_show
