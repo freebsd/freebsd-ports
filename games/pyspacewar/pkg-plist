@@ -1,0 +1,54 @@
+bin/pyspacewar
+%%PYTHON_SITELIBDIR%%/pyspacewar/__init__.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyspacewar/ai.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/ai.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/ai.pyo
+%%PYTHON_SITELIBDIR%%/pyspacewar/game.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/game.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/game.pyo
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/README.txt
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/background.jpg
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/planet_D3.png
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/planet_E0.png
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/planet_G0.png
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/planet_G2.png
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/planet_I0.png
+%%PYTHON_SITELIBDIR%%/pyspacewar/images/title.png
+%%PYTHON_SITELIBDIR%%/pyspacewar/main.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/main.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/main.pyo
+%%PYTHON_SITELIBDIR%%/pyspacewar/music/README.txt
+%%PYTHON_SITELIBDIR%%/pyspacewar/music/music.ini
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/Grenade2.au
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/Grenade2.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/Gun_Silencer.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/Pink_Noise1.au
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/Pink_Noise1.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/README.txt
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/bomb.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/briefcs1.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/coin2.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/electricshock.wav
+%%PYTHON_SITELIBDIR%%/pyspacewar/sounds/sounds.ini
+%%PYTHON_SITELIBDIR%%/pyspacewar/ui.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/ui.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/ui.pyo
+%%PYTHON_SITELIBDIR%%/pyspacewar/version.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/version.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/version.pyo
+%%PYTHON_SITELIBDIR%%/pyspacewar/world.py
+%%PYTHON_SITELIBDIR%%/pyspacewar/world.pyc
+%%PYTHON_SITELIBDIR%%/pyspacewar/world.pyo
+share/icons/hicolor/16x16/apps/pyspacewar.png
+share/icons/hicolor/22x22/apps/pyspacewar.png
+share/icons/hicolor/32x32/apps/pyspacewar.png
+share/icons/hicolor/48x48/apps/pyspacewar.png
+share/pixmaps/pyspacewar.png
+@dirrm %%PYTHON_SITELIBDIR%%/pyspacewar/sounds
+@dirrm %%PYTHON_SITELIBDIR%%/pyspacewar/music
+@dirrm %%PYTHON_SITELIBDIR%%/pyspacewar/images
+@dirrm %%PYTHON_SITELIBDIR%%/pyspacewar
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
