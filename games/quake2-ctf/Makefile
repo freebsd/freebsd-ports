@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake2-ctf
-# Date created:				26 Jul 2006
-# Whom:					alepulver
-#
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ctf
 PORTVERSION=	1.52
@@ -17,21 +13,22 @@ DISTFILES=	${CTF_DATA}:data \
 DIST_SUBDIR=	quake2lnx
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Quake II CTF (Capture The Flag) modification
+COMMENT=	Quake II CTF (Capture The Flag) mod
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	../../../ctf/readme.txt ../../../ctf/server.cfg
 WRKSRC=		${WRKDIR}/${CTF_SRC:S/.tar.gz//}/src/ctf
 
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 CTF_DATA=	q2ctf150.zip
 CTF_SRC=	quake2-r0.16.2.tar.gz
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+.include <bsd.port.options.mk>
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -44,15 +41,15 @@ post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
 do-install:
-	${MKDIR} ${Q2DIR}/ctf
+	@${MKDIR} ${Q2DIR}/ctf
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/ctf
 .for f in *.cfg *.pak
 	${INSTALL_DATA} ${WRKDIR}/ctf/${f} ${Q2DIR}/ctf
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/ctf/readme.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
