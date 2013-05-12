@@ -44,7 +44,6 @@ share/locale/bs/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/bs/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/bs/LC_MESSAGES/kipiplugins.mo
 share/locale/bs/LC_MESSAGES/libkgeomap.mo
-share/locale/bs/LC_MESSAGES/libkipi.mo
 share/locale/ca/LC_MESSAGES/digikam.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -74,7 +73,6 @@ share/locale/ca/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ca/LC_MESSAGES/kipiplugins.mo
 share/locale/ca/LC_MESSAGES/libkgeomap.mo
-share/locale/ca/LC_MESSAGES/libkipi.mo
 share/locale/cs/LC_MESSAGES/digikam.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -104,7 +102,6 @@ share/locale/cs/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/cs/LC_MESSAGES/kipiplugins.mo
 share/locale/cs/LC_MESSAGES/libkgeomap.mo
-share/locale/cs/LC_MESSAGES/libkipi.mo
 share/locale/da/LC_MESSAGES/digikam.mo
 share/locale/da/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/da/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -134,7 +131,6 @@ share/locale/da/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/da/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/da/LC_MESSAGES/kipiplugins.mo
 share/locale/da/LC_MESSAGES/libkgeomap.mo
-share/locale/da/LC_MESSAGES/libkipi.mo
 share/locale/de/LC_MESSAGES/digikam.mo
 share/locale/de/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/de/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -164,7 +160,6 @@ share/locale/de/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/de/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/de/LC_MESSAGES/kipiplugins.mo
 share/locale/de/LC_MESSAGES/libkgeomap.mo
-share/locale/de/LC_MESSAGES/libkipi.mo
 share/locale/el/LC_MESSAGES/digikam.mo
 share/locale/el/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/el/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -194,7 +189,6 @@ share/locale/el/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/el/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/el/LC_MESSAGES/kipiplugins.mo
 share/locale/el/LC_MESSAGES/libkgeomap.mo
-share/locale/el/LC_MESSAGES/libkipi.mo
 share/locale/en_GB/LC_MESSAGES/digikam.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/en_GB/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -281,7 +275,6 @@ share/locale/es/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/es/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/es/LC_MESSAGES/kipiplugins.mo
 share/locale/es/LC_MESSAGES/libkgeomap.mo
-share/locale/es/LC_MESSAGES/libkipi.mo
 share/locale/et/LC_MESSAGES/digikam.mo
 share/locale/et/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/et/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -311,7 +304,6 @@ share/locale/et/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/et/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/et/LC_MESSAGES/kipiplugins.mo
 share/locale/et/LC_MESSAGES/libkgeomap.mo
-share/locale/et/LC_MESSAGES/libkipi.mo
 share/locale/eu/LC_MESSAGES/digikam.mo
 share/locale/eu/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/eu/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -367,7 +359,6 @@ share/locale/fi/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/fi/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/fi/LC_MESSAGES/kipiplugins.mo
 share/locale/fi/LC_MESSAGES/libkgeomap.mo
-share/locale/fi/LC_MESSAGES/libkipi.mo
 share/locale/fr/LC_MESSAGES/digikam.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/fr/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -426,7 +417,6 @@ share/locale/ga/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ga/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ga/LC_MESSAGES/kipiplugins.mo
 share/locale/ga/LC_MESSAGES/libkgeomap.mo
-share/locale/ga/LC_MESSAGES/libkipi.mo
 share/locale/gl/LC_MESSAGES/digikam.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -456,7 +446,6 @@ share/locale/gl/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/gl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/gl/LC_MESSAGES/kipiplugins.mo
 share/locale/gl/LC_MESSAGES/libkgeomap.mo
-share/locale/gl/LC_MESSAGES/libkipi.mo
 share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/he/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/hi/LC_MESSAGES/digikam.mo
@@ -511,7 +500,6 @@ share/locale/hu/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/hu/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/hu/LC_MESSAGES/kipiplugins.mo
 share/locale/hu/LC_MESSAGES/libkgeomap.mo
-share/locale/hu/LC_MESSAGES/libkipi.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/is/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -598,7 +586,6 @@ share/locale/ja/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ja/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ja/LC_MESSAGES/kipiplugins.mo
 share/locale/ja/LC_MESSAGES/libkgeomap.mo
-share/locale/kk/LC_MESSAGES/libkipi.mo
 share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/km/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/km/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -635,7 +622,6 @@ share/locale/ko/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/ko/LC_MESSAGES/kipiplugin_sendimages.mo
-share/locale/ko/LC_MESSAGES/libkipi.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -665,7 +651,6 @@ share/locale/lt/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/lt/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/lt/LC_MESSAGES/kipiplugins.mo
 share/locale/lt/LC_MESSAGES/libkgeomap.mo
-share/locale/lt/LC_MESSAGES/libkipi.mo
 share/locale/lv/LC_MESSAGES/digikam.mo
 share/locale/lv/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/lv/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -708,7 +693,6 @@ share/locale/nb/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/nb/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/nb/LC_MESSAGES/kipiplugins.mo
 share/locale/nb/LC_MESSAGES/libkgeomap.mo
-share/locale/nb/LC_MESSAGES/libkipi.mo
 share/locale/nds/LC_MESSAGES/digikam.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/nds/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -768,7 +752,6 @@ share/locale/nl/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/nl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/nl/LC_MESSAGES/kipiplugins.mo
 share/locale/nl/LC_MESSAGES/libkgeomap.mo
-share/locale/nl/LC_MESSAGES/libkipi.mo
 share/locale/nn/LC_MESSAGES/digikam.mo
 share/locale/nn/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/nn/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -848,7 +831,6 @@ share/locale/pl/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/pl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pl/LC_MESSAGES/kipiplugins.mo
 share/locale/pl/LC_MESSAGES/libkgeomap.mo
-share/locale/pl/LC_MESSAGES/libkipi.mo
 share/locale/pt/LC_MESSAGES/digikam.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -878,7 +860,6 @@ share/locale/pt/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/pt/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pt/LC_MESSAGES/kipiplugins.mo
 share/locale/pt/LC_MESSAGES/libkgeomap.mo
-share/locale/pt/LC_MESSAGES/libkipi.mo
 share/locale/pt_BR/LC_MESSAGES/digikam.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -908,7 +889,6 @@ share/locale/pt_BR/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/pt_BR/LC_MESSAGES/kipiplugins.mo
 share/locale/pt_BR/LC_MESSAGES/libkgeomap.mo
-share/locale/pt_BR/LC_MESSAGES/libkipi.mo
 share/locale/ro/LC_MESSAGES/digikam.mo
 share/locale/ro/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/ro/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -937,7 +917,6 @@ share/locale/ro/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ro/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ro/LC_MESSAGES/kipiplugins.mo
 share/locale/ro/LC_MESSAGES/libkgeomap.mo
-share/locale/ro/LC_MESSAGES/libkipi.mo
 share/locale/ru/LC_MESSAGES/digikam.mo
 share/locale/ru/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/ru/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -999,7 +978,6 @@ share/locale/sk/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sk/LC_MESSAGES/kipiplugins.mo
 share/locale/sk/LC_MESSAGES/libkgeomap.mo
-share/locale/sk/LC_MESSAGES/libkipi.mo
 share/locale/sl/LC_MESSAGES/digikam.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -1027,7 +1005,6 @@ share/locale/sl/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sl/LC_MESSAGES/kipiplugins.mo
 share/locale/sl/LC_MESSAGES/libkgeomap.mo
-share/locale/sl/LC_MESSAGES/libkipi.mo
 share/locale/sq/LC_MESSAGES/digikam.mo
 share/locale/sq/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/sq/LC_MESSAGES/kipiplugin_batchprocessimages.mo
@@ -1075,7 +1052,6 @@ share/locale/sv/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sv/LC_MESSAGES/kipiplugins.mo
 share/locale/sv/LC_MESSAGES/libkgeomap.mo
-share/locale/sv/LC_MESSAGES/libkipi.mo
 share/locale/th/LC_MESSAGES/digikam.mo
 share/locale/th/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/th/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -1162,7 +1138,6 @@ share/locale/uk/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/uk/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/uk/LC_MESSAGES/kipiplugins.mo
 share/locale/uk/LC_MESSAGES/libkgeomap.mo
-share/locale/uk/LC_MESSAGES/libkipi.mo
 share/locale/vi/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_acquireimages.mo
@@ -1193,7 +1168,6 @@ share/locale/zh_CN/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/zh_CN/LC_MESSAGES/kipiplugins.mo
 share/locale/zh_CN/LC_MESSAGES/libkgeomap.mo
-share/locale/zh_CN/LC_MESSAGES/libkipi.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_advancedslideshow.mo
@@ -1223,4 +1197,3 @@ share/locale/zh_TW/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugins.mo
 share/locale/zh_TW/LC_MESSAGES/libkgeomap.mo
-share/locale/zh_TW/LC_MESSAGES/libkipi.mo
