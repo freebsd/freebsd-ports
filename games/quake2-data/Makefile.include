@@ -5,57 +5,52 @@
 # is installed (i.e. no need for pkg-message asking to copy the .pak files),
 # and the main game.so (except the engine incompatible with the original one).
 #
-# The following variables are defined, and can be used in the port.
-# Q2PKGNAMEPREFIX	- The package name prefix for Quake II additions.
-# Q2DIR			- The Quake II data directory (also added to MAKE_ENV,
-#			  PLIST_SUB and SUB_LIST).
+# The following variables are defined, and can be used in the port:
 #
-# The following are some notes for making this kind of ports.
+# Q2PKGNAMEPREFIX	- The package name prefix for Quake II additions
+# Q2DIR			- The Quake II data directory (also added to
+#			  MAKE_ENV, PLIST_SUB, and SUB_LIST)
+#
+# Some notes for making such kind of ports:
+#
 # - The game engines should be modified to add ${Q2DIR} as the first search
 #   path (it's a stack so new paths override previous ones), and add
-#   "~/.${PORTNAME}" as the last one (this is where it writes the
-#   configuration, saved games, etc.), which may need to be created if doesn't
-#   exist.
+#   "~/.${PORTNAME}" as the last one (this is where it writes configuration,
+#   saved games, etc.), which may need to be created if doesn't exist;
 # - If the engine needs to load additional data (renderers, pak files, etc.)
 #   don't install it in ${Q2DIR}, use ${PREFIX}/lib/${PORTNAME} instead and
-#   add that directory to the search paths immediately after ${Q2DIR}.
+#   add that directory to the search paths immediately after ${Q2DIR};
 # - The reason to use "~/.${PORTNAME}" for writing is in the case the program
 #   isn't compatible with the original engine (e.g. new console variables,
 #   different saved game format, etc.). If just the configuration is
 #   different it can write in "~/.quake2" but use a different configuration
-#   file name (not config.cfg).
+#   file name (not config.cfg);
 # - Search path summary (ordered):
-#   - cddir		- Directory to be prepended (optional, configurable).
-#   - ${Q2DIR}		- Base shared data directory.
-#   - ${LIBDIR}		- Program specific data directory (optional).
-#   - basedir		- Base data directory (configurable).
-#   - "~/.${PORTNAME}"	- Writing directory.
+#   - cddir		- Directory to be prepended (optional, configurable)
+#   - ${Q2DIR}		- Base shared data directory
+#   - ${LIBDIR}		- Program specific data directory (optional)
+#   - basedir		- Base data directory (configurable)
+#   - "~/.${PORTNAME}"	- Writing directory
 # - The "game${ARCH}.so" in game engines and modifications should be changed
 #   to just "game.so" (the ${ARCH} can cause incompatibilities with new
-#   platforms and is unnecessary).
+#   platforms and is unnecessary);
 # - The modifications and data which is common to all the engines should be
-#   installed in ${Q2DIR}.
+#   installed in ${Q2DIR};
 # - The engines should not install game.so files for the normal game, CTF,
 #   Rogue, Xatrix, and all other which exist as a separate port. If the
-#   version the engine provides is different than the original one then add it
-#   as an option (off by default). If the engine is not compatible with the
-#   game.so files provided by the ports then ignore this rule.
+#   version the engine provides is different than the original one then add
+#   it as an option (off by default). If the engine is not compatible with
+#   the game.so files provided by the ports then ignore this rule.
 #
-# For examples see the existing ports.
+# For the examples please see existing ports.
 #
-
-# Set variables
 
 Q2PKGNAMEPREFIX?=	quake2-
 Q2DIR?=		${LOCALBASE}/share/quake2
 
-# Add them to the ports system
-
 MAKE_ENV+=	Q2DIR="${Q2DIR}"
 PLIST_SUB+=	Q2DIR="${Q2DIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	Q2DIR="${Q2DIR}"
-
-# Add the dependency
 
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${Q2DIR}:${PORTSDIR}/games/quake2-data

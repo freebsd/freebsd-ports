@@ -1,18 +1,12 @@
 # Makefile for defining variables used by other Quake related ports.  See
-# `games/quake2-data/Makefile.include' for extensive description.
-
-# Set variables
+# `games/quake2-data/Makefile.include' for extensive description and usage.
 
 Q1PKGNAMEPREFIX?=	quake-
 Q1DIR?=		${LOCALBASE}/share/quake
 
-# Add them to the environment
-
 MAKE_ENV+=	Q1DIR="${Q1DIR}"
 PLIST_SUB+=	Q1DIR="${Q1DIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	Q1DIR="${Q1DIR}"
-
-# Add the dependency
 
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${Q1DIR}/id1/pak0.pak:${PORTSDIR}/games/quake-data

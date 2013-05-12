@@ -11,7 +11,7 @@ RUN_DEPENDS+=	${OABIN}:${PORTSDIR}/games/openarena
 
 .include <bsd.port.pre.mk>
 
-# You only need server or client.
+# You only need server or client
 .if exists(${LOCALBASE}/bin/oa_ded)
 OABIN=		oa_ded
 .elif exists(${LOCALBASE}/bin/openarena)
