@@ -190,13 +190,14 @@ IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 .endif # USE_MYSQL
 
 .if defined(USE_PGSQL)
-VALID_PGSQL_VER=	83 84 90 91 92
+VALID_PGSQL_VER=	83 84 90 91 92 93
 DEFAULT_PGSQL_VER?=	90
 PGSQL83_LIBVER=		5
 PGSQL84_LIBVER=		5
 PGSQL90_LIBVER=		5
 PGSQL91_LIBVER=		5
 PGSQL92_LIBVER=		5
+PGSQL93_LIBVER=		5
 
 # Setting/finding PostgreSQL version we want.
 .  if exists(${LOCALBASE}/bin/pg_config)
