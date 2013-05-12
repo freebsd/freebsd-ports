@@ -1,6 +1,6 @@
 %%CLIENT%%bin/worldofpadman
-%%SMP%%bin/worldofpadman-smp
-%%DEDICATED%%bin/worldofpadmanded
+%%SMPCLIENT%%bin/worldofpadman-smp
+%%SERVER%%bin/worldofpadmanded
 %%PORTDOCS%%%%DOCSDIR%%/banner.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright_de.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright_en.html
