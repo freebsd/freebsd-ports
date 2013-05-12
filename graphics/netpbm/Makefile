@@ -47,7 +47,7 @@ PLIST_SUB+=	X11='@comment '
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MMANPAGES}
+.if ${PORT_OPTIONS:MMANPAGES} || make(makesum) || defined(FETCH_ALL)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} netpbm-manpages-2013-03-09${EXTRACT_SUFX}:man
 # lifted from ${WRKSRC}/buildtools/Makefile.manpage
 HMAN1+=	411toppm.1 anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 \
