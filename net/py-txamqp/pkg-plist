@@ -85,7 +85,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/xmlutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/xmlutil.pyo
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/test
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/test
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib/thrift
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp/contrib
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/txamqp
