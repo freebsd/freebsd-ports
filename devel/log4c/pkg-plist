@@ -27,6 +27,7 @@ include/log4c/version.h
 lib/liblog4c.a
 lib/liblog4c.la
 lib/liblog4c.so
-lib/liblog4c.so.4
+lib/liblog4c.so.6
+libdata/pkgconfig/log4c.pc
 share/aclocal/log4c.m4
 @dirrm include/log4c
