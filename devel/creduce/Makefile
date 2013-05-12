@@ -31,6 +31,4 @@ USE_PERL5=	yes
 
 MAKE_JOBS_SAFE=	yes
 
-PORTDATA=	perl/pass_balanced.pm perl/pass_lines.pm perl/pass_peep.pm perl/creduce_utils.pm perl/pass_indent.pm perl/creduce_regexes.pm perl/pass_blank.pm perl/creduce_config.pm perl/pass_crc.pm perl/pass_ints.pm perl/pass_clang.pm perl/pass_ternary.pm
-
 .include <bsd.port.mk>
