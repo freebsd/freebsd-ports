@@ -4,23 +4,25 @@
 PORTNAME=	ut
 PORTVERSION=	3.7
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/
+MASTER_SITES=	http://bigfoot.morphos-team.net/misc/Quake3Mods/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
-DISTNAME=	urbanTerror${PORTVERSION:S/.//}_full
+DISTNAME=	UrbanTerror${PORTVERSION:S/.//}_full
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Urban Terror
 
+NO_PACKAGE=	package will be 445MB, set FORCE_PACKAGE if you really want it
+
 USE_ZIP=	yes
 USE_CRLF=	yes
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-NO_PACKAGE=	"Distfile is \>256MB\; define FORCE_PACKAGE if you really want this."
 .if defined(.PARSEDIR)
 USE_GMAKE=	yes
 .endif
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}
+
 PORT_OPTIONS=	DOCS
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
