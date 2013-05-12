@@ -3,6 +3,10 @@
 DMPKGNAMEPREFIX?=	doom-
 DMDIR?=		${LOCALBASE}/share/doom
 
+.if ${PKGNAMEPREFIX} == ${DMPKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.  error include before <bsd.port.options.mk> if using DMPKGNAMEPREFIX
+.endif
+
 MAKE_ENV+=	DMDIR="${DMDIR}"
 PLIST_SUB+=	DMDIR="${DMDIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	DMDIR="${DMDIR}"

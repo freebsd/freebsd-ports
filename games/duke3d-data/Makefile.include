@@ -16,6 +16,10 @@
 DN3DPKGNAMEPREFIX?=	duke3d-
 DN3DDIR?=	${LOCALBASE}/share/duke3d
 
+.if ${PKGNAMEPREFIX} == ${DN3DPKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.  error include before <bsd.port.options.mk> if using DN3DPKGNAMEPREFIX
+.endif
+
 MAKE_ENV+=	DN3DDIR="${DN3DDIR}"
 PLIST_SUB+=	DN3DDIR="${DN3DDIR:S/${LOCALBASE}\///}"
 SUB_LIST+=	DN3DDIR="${DN3DDIR}"
