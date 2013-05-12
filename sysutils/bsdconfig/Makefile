@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconfig
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/bsdconfig/
-DISTNAME=	${PORTNAME}.130509
+DISTNAME=	${PORTNAME}.130511
 EXTRACT_SUFX=	.txz
 
 PATCH_SITES=	${MASTER_SITES}
