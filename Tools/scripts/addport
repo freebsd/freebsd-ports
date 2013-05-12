@@ -104,8 +104,8 @@ my $rm = "rm";
 my $keyword = '\$FreeBSD\\\$';
 # vars required for commitfile
 my $descr; my $portversion; my $pkgcomment;
-my $tmp; my $pkgcommentlen; my $comment; my $maintainer;
-my $tmp2; my $offset; my $commitfile = "";
+my $tmp; my $pkgcommentlen; my $comment; my $maintainer = "";
+my $maintaineraddr; my $tmp2; my $offset; my $commitfile = "";
 my $moved = "";
 $tmp = $tmp2 = $offset = 0;
 
@@ -276,9 +276,11 @@ foreach my $thisdir (@dirs) {
 			chomp;
 			die ("Old style Makefile headers detected") if (/^# (?:[Nn]ew )?[Pp]orts collection [Mm]akefile/);
 			($maintainer) = (m/^# Created by:\s+(\w.*)$/) if (/^# Created by/);
+			($maintaineraddr) = (m/^MAINTAINER=\s+(\w.*)$/) if (/^MAINTAINER=/);
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
+		$maintainer = $maintaineraddr unless ($maintainer);
 		# Write out the data to the comment file.
 		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
 		if ($autofill_l) {
