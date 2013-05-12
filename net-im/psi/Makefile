@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A Qt-based Jabber client
+COMMENT=	Qt 4 based Jabber client
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
 CONFIGURE_ENV=	QMAKEFLAGS='${QMAKEFLAGS}'
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	ASPELL ENCHANT DBUS
+OPTIONS_DEFINE=	ASPELL ENCHANT DBUS DEBUG
 OPTIONS_DEFAULT=	ASPELL DBUS
 
 ASPELL_DESC=	Use aspell for spell checking
@@ -34,7 +34,7 @@ ENCHANT_DESC=	Use Enchant for spell checking
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--debug
 PLIST_SUB+=	DEBUG=""
 .else

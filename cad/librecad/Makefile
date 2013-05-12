@@ -1,9 +1,4 @@
-# New ports collection makefile for:	librecad
-# Date created:		2012-01-03
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	librecad
 PORTVERSION=	1.0.0
@@ -18,6 +13,8 @@ USE_XZ=	yes
 USE_QT4=	help qt3support help-tools_build moc_build qmake_build \
 		rcc_build uic_build uic3_build
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

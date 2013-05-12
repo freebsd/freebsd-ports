@@ -33,7 +33,7 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"${DATADIR}/qtiplot.png" \
 		"qtiplot" "" false
 
-OPTIONS_DEFINE=	DOCS PYTHON NLS
+OPTIONS_DEFINE=	DOCS PYTHON NLS DEBUG
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 DOCS_DESC=	Install the QtiPlot Handbook
@@ -89,7 +89,7 @@ post-patch:
 		${WRKSRC}/fitPlugins/*/*.pro
 	@${REINPLACE_CMD} -e '/^system($$$$LUPDATE/d; /^system($$$$LRELEASE/d' \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 	@${REINPLACE_CMD} -e \
 		"/^CONFIG.*release/s|release|debug|" \
 		${WRKSRC}/build.conf

@@ -28,6 +28,8 @@ PLIST_SUB=	INCLUDEDIR=include/${LATEST_LINK} \
 STRIP_FILES=	lib/libqwt6.so.${PORTVERSION} \
 		lib/libqwtmathml.so.${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
