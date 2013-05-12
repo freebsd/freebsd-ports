@@ -2906,7 +2906,6 @@ misc/tellico||2011-11-01|Leaves files behind on deinstall
 net/gsambad||2011-11-01|Does not fetch
 net/nocatauth-gateway||2011-11-01|Uses a UID registered to another port
 net/nocatauth-server||2011-11-01|Uses a UID registered to another port
-net/libosip2||2011-11-01|Does not fetch
 net/kmuddy||2011-11-01|Does not fetch
 net/netboot||2011-11-01|Does not build
 net-mgmt/jffnms||2011-11-01|Does not fetch
