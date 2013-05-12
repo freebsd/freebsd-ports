@@ -1,4 +1,4 @@
-# Created by: pat
+# Created by: Patrick Li <pat@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ut
@@ -8,8 +8,8 @@ MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	urbanTerror${PORTVERSION:S/.//}_full
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Quake III Arena Mod: Urban Terror
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Quake III Arena mod: Urban Terror
 
 USE_ZIP=	yes
 USE_CRLF=	yes
@@ -21,21 +21,21 @@ USE_GMAKE=	yes
 .endif
 
 DATADIR=	${Q3DIR}/${PORTNAME}
+PORT_OPTIONS=	DOCS
 
+.include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in *.pk3 description.txt
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for f in beta3.html radio_commands.txt readme*.txt
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+.  for f in beta3.html radio_commands.txt readme*.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.  endfor
 .endif
-
-.include "${.CURDIR}/../quake3-data/Makefile.include"
 
 .include <bsd.port.mk>
