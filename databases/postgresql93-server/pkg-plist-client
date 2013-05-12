@@ -601,7 +601,6 @@ lib/libecpg.so.6
 lib/libecpg_compat.a
 lib/libecpg_compat.so
 lib/libecpg_compat.so.3
-@comment lib/libpgcommon.a
 lib/libpgport.a
 lib/libpgtypes.a
 lib/libpgtypes.so
@@ -613,6 +612,7 @@ lib/pkgconfig/libecpg.pc
 lib/pkgconfig/libecpg_compat.pc
 lib/pkgconfig/libpgtypes.pc
 lib/pkgconfig/libpq.pc
+@dirrmtry lib/pkgconfig
 lib/postgresql/pgxs/config/install-sh
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/Makefile.global
