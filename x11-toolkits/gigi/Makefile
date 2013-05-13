@@ -47,6 +47,11 @@ CMAKE_ARGS+=	-DBUILD_OGRE_DRIVER:BOOL=OFF -DBUILD_OGRE_OIS_PLUGIN:BOOL=OFF
 PLIST_SUB+=	OGRE="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|TIME_UTC)|TIME_UTC_)|' \
+		${WRKSRC}/src/GUI.cpp
+	@${REINPLACE_CMD} -e 's| move_backward| ::adobe::move_backward|g' \
+		${WRKSRC}/GG/adobe/vector.hpp
 post-build:
 	@${REINPLACE_CMD} -Ee 's,^prefix=.*,prefix=${PREFIX},' \
 		${WRKSRC}/*.pc
