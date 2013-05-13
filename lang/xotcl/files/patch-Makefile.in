@@ -1,6 +1,14 @@
---- Makefile.in.orig	2009-03-04 16:11:13.000000000 +0100
-+++ Makefile.in	2010-05-11 10:36:59.435600858 +0200
-@@ -264,11 +264,11 @@
+--- Makefile.in.orig	2011-11-01 13:24:01.000000000 +0100
++++ Makefile.in	2013-05-13 11:07:34.000000000 +0200
+@@ -30,6 +30,7 @@
+ src_generic_dir		= ${srcdir}/generic
+ src_man_dir		= ${srcdir}/man
+ TCL_LIB_SPEC		= @TCL_LIB_SPEC@
++TCL_STUB_LIB_SPEC	= @TCL_STUB_LIB_SPEC@
+ TK_LIB_SPEC		= @TK_LIB_SPEC@
+ subdirs			= @subdirs@
+ aol_prefix		= @aol_prefix@
+@@ -264,11 +265,11 @@
  #========================================================================
  # This rule installs platform-independent files, such as header files.
  #========================================================================
@@ -15,7 +23,7 @@
  	done;
  	@echo "Installing Libraries to $(DESTDIR)$(pkglibdir)/"
  	@for i in $(libdirs) ; do \
-@@ -286,7 +286,7 @@
+@@ -286,7 +287,7 @@
  	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
  	done;
  	cat unix/pkgIndex.unix >> $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
@@ -24,25 +32,28 @@
  	@echo "Installing Applications to $(DESTDIR)$(pkglibdir)/apps/"
  	@for i in $(appdirs) ; do \
  	    echo "    Installing $$i/" ; \
-@@ -430,13 +430,15 @@
+@@ -429,14 +430,16 @@
+ xotclsh: tclAppInit.o $(PKG_OBJECTS) $(CONDITIONAL_STUB_OBJECTS)
  	$(CC) -rdynamic -o $@ tclAppInit.o \
  		$(PKG_OBJECTS) \
- 		$(CFLAGS)  $(TCL_LIB_SPEC) \
+-		$(CFLAGS)  $(TCL_LIB_SPEC) \
 -		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS)
++		$(CFLAGS)  $(TCL_STUB_LIB_SPEC) $(TCL_LIB_SPEC) \
 +		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS) \
 +		$(LDFLAGS_DEFAULT)
  
  xowish: tkAppInit.o $(PKG_OBJECTS) $(CONDITIONAL_STUB_OBJECTS)
  	$(CC) -rdynamic -o $@ tkAppInit.o \
  		$(PKG_OBJECTS) \
- 		$(CFLAGS)  $(TCL_LIB_SPEC) $(TK_LIB_SPEC) \
+-		$(CFLAGS)  $(TCL_LIB_SPEC) $(TK_LIB_SPEC) \
 -		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS)
++		$(CFLAGS)  $(TCL_STUB_LIB_SPEC) $(TCL_LIB_SPEC) $(TK_LIB_SPEC) \
 +		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS) \
 +		$(LDFLAGS_DEFAULT)
  
  install-shells:
  	@if test -f xotclsh; then \
-@@ -550,7 +552,6 @@
+@@ -550,7 +553,6 @@
  	    else \
  		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
  		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
@@ -50,7 +61,7 @@
  	    fi; \
  	    ext=`echo $$p|sed -e "s/.*\.//"`; \
  	    if test "x$$ext" = "xdll"; then \
-@@ -607,12 +608,12 @@
+@@ -607,12 +609,12 @@
  	  rm -f $(DESTDIR)$(bindir)/$$p; \
  	done
  
