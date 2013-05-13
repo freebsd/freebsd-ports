@@ -30,6 +30,15 @@ lib/enlightenment/modules/moon/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/moon/locale/pl/LC_MESSAGES/moon.mo
 %%NLS%%lib/enlightenment/modules/moon/locale/hu/LC_MESSAGES/moon.mo
 %%NLS%%lib/enlightenment/modules/moon/locale/sl/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/ca/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/gl/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/sr/LC_MESSAGES/moon.mo
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/moon/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/moon/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/moon/locale/hu/LC_MESSAGES

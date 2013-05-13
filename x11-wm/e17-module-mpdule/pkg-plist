@@ -2,6 +2,34 @@ lib/enlightenment/modules/mpdule/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mpdule/mpdule.edj
 lib/enlightenment/modules/mpdule/module.desktop
 lib/enlightenment/modules/mpdule/e-module-mpdule.edj
+%%NLS%%lib/enlightenment/modules/mpdule/locale/ca/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/eo/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/fr/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/it/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/pl/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/pt/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/ru/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/sr/LC_MESSAGES/mpdule.mo
+%%NLS%%lib/enlightenment/modules/mpdule/locale/tr/LC_MESSAGES/mpdule.mo
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale/ca
+%%NLS%%@dirrm lib/enlightenment/modules/mpdule/locale
 @dirrm lib/enlightenment/modules/mpdule/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mpdule
 @dirrmtry lib/enlightenment/modules

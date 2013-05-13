@@ -93,6 +93,12 @@ lib/enlightenment/modules/weather/module.desktop
 %%NLS%%lib/enlightenment/modules/weather/locale/tr/LC_MESSAGES/weather.mo
 %%NLS%%lib/enlightenment/modules/weather/locale/sk/LC_MESSAGES/weather.mo
 %%NLS%%lib/enlightenment/modules/weather/locale/sl/LC_MESSAGES/weather.mo
+%%NLS%%lib/enlightenment/modules/weather/locale/gl/LC_MESSAGES/weather.mo
+%%NLS%%lib/enlightenment/modules/weather/locale/sr/LC_MESSAGES/weather.mo
+%%NLS%%@dirrm lib/enlightenment/modules/weather/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/weather/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/weather/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/weather/locale/gl
 %%NLS%%@dirrm lib/enlightenment/modules/weather/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/weather/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/weather/locale/sk/LC_MESSAGES

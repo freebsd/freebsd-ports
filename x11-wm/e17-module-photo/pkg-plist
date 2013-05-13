@@ -23,6 +23,18 @@ lib/enlightenment/modules/photo/images/photo_logo.png
 %%NLS%%lib/enlightenment/modules/photo/locale/it/LC_MESSAGES/photo.mo
 %%NLS%%lib/enlightenment/modules/photo/locale/zh_CN/LC_MESSAGES/photo.mo
 %%NLS%%lib/enlightenment/modules/photo/locale/sl/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/ca/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/gl/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/ru/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/sr/LC_MESSAGES/photo.mo
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/photo/locale/zh_CN/LC_MESSAGES

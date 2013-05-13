@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	winselector
-PORTVERSION=	20120918
+PORTVERSION=	20130510
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/modules/
+MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org

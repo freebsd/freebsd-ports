@@ -29,6 +29,15 @@ lib/enlightenment/modules/mail/mail.edj
 %%NLS%%lib/enlightenment/modules/mail/locale/hu/LC_MESSAGES/mail.mo
 %%NLS%%lib/enlightenment/modules/mail/locale/pt_BR/LC_MESSAGES/mail.mo
 %%NLS%%lib/enlightenment/modules/mail/locale/sl/LC_MESSAGES/mail.mo
+%%NLS%%lib/enlightenment/modules/mail/locale/ca/LC_MESSAGES/mail.mo
+%%NLS%%lib/enlightenment/modules/mail/locale/gl/LC_MESSAGES/mail.mo
+%%NLS%%lib/enlightenment/modules/mail/locale/sr/LC_MESSAGES/mail.mo
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/mail/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/mail/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/mail/locale/pt_BR/LC_MESSAGES

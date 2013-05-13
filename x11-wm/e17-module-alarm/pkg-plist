@@ -32,6 +32,12 @@ lib/enlightenment/modules/alarm/alarm.edj
 %%NLS%%lib/enlightenment/modules/alarm/locale/es/LC_MESSAGES/alarm.mo
 %%NLS%%lib/enlightenment/modules/alarm/locale/hu/LC_MESSAGES/alarm.mo
 %%NLS%%lib/enlightenment/modules/alarm/locale/sl/LC_MESSAGES/alarm.mo
+%%NLS%%lib/enlightenment/modules/alarm/locale/gl/LC_MESSAGES/alarm.mo
+%%NLS%%lib/enlightenment/modules/alarm/locale/sr/LC_MESSAGES/alarm.mo
+%%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/gl
 %%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/alarm/locale/hu/LC_MESSAGES

@@ -11,6 +11,18 @@ lib/enlightenment/modules/evry-pidgin/module.desktop
 %%NLS%%lib/enlightenment/modules/evry-pidgin/locale/zh_CN/LC_MESSAGES/evry-pidgin.mo
 %%NLS%%lib/enlightenment/modules/evry-pidgin/locale/nl/LC_MESSAGES/evry-pidgin.mo
 %%NLS%%lib/enlightenment/modules/evry-pidgin/locale/sl/LC_MESSAGES/evry-pidgin.mo
+%%NLS%%lib/enlightenment/modules/evry-pidgin/locale/ca/LC_MESSAGES/evry-pidgin.mo
+%%NLS%%lib/enlightenment/modules/evry-pidgin/locale/eo/LC_MESSAGES/evry-pidgin.mo
+%%NLS%%lib/enlightenment/modules/evry-pidgin/locale/gl/LC_MESSAGES/evry-pidgin.mo
+%%NLS%%lib/enlightenment/modules/evry-pidgin/locale/sr/LC_MESSAGES/evry-pidgin.mo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/evry-pidgin/locale/nl/LC_MESSAGES

@@ -29,6 +29,15 @@ lib/enlightenment/modules/slideshow/slideshow.edj
 %%NLS%%lib/enlightenment/modules/slideshow/locale/eo/LC_MESSAGES/slideshow.mo
 %%NLS%%lib/enlightenment/modules/slideshow/locale/it/LC_MESSAGES/slideshow.mo
 %%NLS%%lib/enlightenment/modules/slideshow/locale/sl/LC_MESSAGES/slideshow.mo
+%%NLS%%lib/enlightenment/modules/slideshow/locale/ca/LC_MESSAGES/slideshow.mo
+%%NLS%%lib/enlightenment/modules/slideshow/locale/gl/LC_MESSAGES/slideshow.mo
+%%NLS%%lib/enlightenment/modules/slideshow/locale/sr/LC_MESSAGES/slideshow.mo
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/it/LC_MESSAGES

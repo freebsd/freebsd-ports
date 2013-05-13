@@ -29,6 +29,15 @@ lib/enlightenment/modules/flame/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/flame/locale/ar/LC_MESSAGES/flame.mo
 %%NLS%%lib/enlightenment/modules/flame/locale/he/LC_MESSAGES/flame.mo
 %%NLS%%lib/enlightenment/modules/flame/locale/sl/LC_MESSAGES/flame.mo
+%%NLS%%lib/enlightenment/modules/flame/locale/ca/LC_MESSAGES/flame.mo
+%%NLS%%lib/enlightenment/modules/flame/locale/gl/LC_MESSAGES/flame.mo
+%%NLS%%lib/enlightenment/modules/flame/locale/sr/LC_MESSAGES/flame.mo
+%%NLS%%@dirrm lib/enlightenment/modules/flame/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/flame/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/flame/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/flame/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/flame/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/flame/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/flame/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/flame/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/flame/locale/he/LC_MESSAGES

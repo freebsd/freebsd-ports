@@ -30,6 +30,15 @@ lib/enlightenment/modules/net/e-module-net.edj
 %%NLS%%lib/enlightenment/modules/net/locale/sv/LC_MESSAGES/net.mo
 %%NLS%%lib/enlightenment/modules/net/locale/ru/LC_MESSAGES/net.mo
 %%NLS%%lib/enlightenment/modules/net/locale/sl/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/ca/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/gl/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/sr/LC_MESSAGES/net.mo
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/net/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/net/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/net/locale/ru/LC_MESSAGES
