@@ -1,0 +1,6 @@
+This project provides first-class OAuth library support for Requests.
+
+OAuth can seem overly complicated and it sure has its quirks. Luckily,
+requests_oauthlib hides most of these and let you focus at the task at hand.
+
+WWW: https://github.com/requests/requests-oauthlib

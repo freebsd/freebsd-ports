@@ -1628,6 +1628,7 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-requests
     SUBDIR += py-requests-oauth-hook
+    SUBDIR += py-requests-oauthlib
     SUBDIR += py-restclient
     SUBDIR += py-rhodecode
     SUBDIR += py-routes
