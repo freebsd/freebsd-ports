@@ -1,9 +1,5 @@
-# New ports collection makefile for: tclcl
-# Date created:		23 April 1999
-# Whom:			obonilla@fisicc-ufm.edu
-#
+# Created by: obonilla@fisicc-ufm.edu
 # $FreeBSD$
-#
 
 PORTNAME=	tclcl
 PORTVERSION=	1.20
@@ -23,12 +19,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES.html TODO.html
-.endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # We have to link against the same Tcl/Tk version as OTcl does
 .if exists(${LOCALBASE}/bin/otclsh)
@@ -37,8 +30,6 @@ USE_TK=		${OTCL_TCLVER:S/.//}
 .else
 USE_TK=		84+
 .endif
-
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 
 CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
 
@@ -58,11 +49,11 @@ do-install:
 	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
