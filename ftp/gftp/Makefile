@@ -20,6 +20,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WANT_GNOME=	yes
 
+BROKEN=		Dumps core when connecting to a host with pthread_mutex_lock: Operation not permitted
+
 OPTIONS_DEFINE=	X11 NLS
 OPTIONS_DEFAULT=	X11
 
