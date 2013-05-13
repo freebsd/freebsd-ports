@@ -1,9 +1,5 @@
-# ports collection Makefile for: leafnode
-# Whom:			Brian Somers <brian@FreeBSD.org>
-# Date created:		1997-06-27
-#
+# Created by: Brian Somers <brian@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	leafnode
 DISTVERSION=	1.11.8
@@ -15,7 +11,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 
@@ -56,7 +52,7 @@ DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		KNOWNBUGS
 DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -70,7 +66,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/german

@@ -15,6 +15,8 @@ case "$2" in
 		temp.files; do
 		install -d -o news -g news -m 2775 %%SPOOLDIR%%/$d
 	done
+	mkdir -p "${PKG_PREFIX}/var/spool"
+	mkdir -p "${PKG_PREFIX}/lib/leafnode"
 	;;
 
     *)
