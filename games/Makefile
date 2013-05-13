@@ -562,6 +562,7 @@
     SUBDIR += linux-worldofgoo-demo
     SUBDIR += linwarrior
     SUBDIR += liquidwar
+    SUBDIR += live-f1
     SUBDIR += lm-solve
     SUBDIR += lmarbles
     SUBDIR += lmpc
