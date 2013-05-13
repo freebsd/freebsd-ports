@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xboard
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	xboard
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
@@ -23,12 +22,14 @@ PHALANX_DESC=	Install phalanx engine
 USE_XORG=	xt xpm xaw
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		MKDIR_P="${MKDIR}"
+CONFIGURE_ARGS+=MKDIR_P="${MKDIR}"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		xboard.6
 INFO=		xboard
 USE_PERL5_BUILD=yes
 INSTALLS_ICONS=	yes
+SUB_FILES=	pkg-deinstall
 DATADIR=	${PREFIX}/share/games/${PORTNAME}
 PORTDATA=	*
 
