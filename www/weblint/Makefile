@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEILB
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML validator and sanity checker
 
 MAN1=		weblint.1
