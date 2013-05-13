@@ -2,14 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	jasperserver
-PORTVERSION=	4.7.0
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	databases print java
-MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperReports%20Server%20${PORTVERSION}/:source1 \
-		SF/bsdsrc/:source2
-DISTFILES=	jasperreports-server-${PORTVERSION}-src.zip:source1 \
-		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source2
-EXTRACT_ONLY=	jasperreports-server-${PORTVERSION}-src.zip
+MASTER_SITES=	http://community.jaspersoft.com/sites/default/files/releases/:source1 \
+		SF/bsdsrc/:source2 \
+		http://dev.quadras.co.id/archiva/repository/internal/org/codehaus/mojo/cobertura-maven-plugin/2.5-Jaspersoft/:source3
+DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
+		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source2 \
+		cobertura-maven-plugin-2.5-Jaspersoft.jar:source3 \
+		cobertura-maven-plugin-2.5-Jaspersoft.pom:source3
+EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip \
+		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
@@ -19,15 +23,14 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
-SRCDIR=		${WRKDIR}/jasperreports-server-${PORTVERSION}-src
+SRCDIR=		${WRKDIR}/jasperreports-server-cp-${PORTVERSION}-src
 PATCH_WRKSRC=	${SRCDIR}
 WRKSRC=		${SRCDIR}/${PORTNAME}/buildomatic
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSMAVENARCH=	FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
-JSUPDATE=	4.5.0-${PORTVERSION}
+JSUPDATE=	4.7.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
@@ -78,15 +81,15 @@ PLIST_SUB+=	JDBC="mysql-connector-java.jar"
 
 #use version 90, application is certified w/ pg90
 .if ${PORT_OPTIONS:MPGSQL}
-WANT_PGSQL_VER=	90
+WANT_PGSQL_VER=	90+
 JDBC=	postgresql-9.0-802.jdbc4.jar
-DISTFILES+=	postgresql-9.0-802.jdbc4.jar:source2
+DISTFILES+=	postgresql-9.0-802.jdbc4.jar:source4
 USE_PGSQL=	yes
 DBUSER?=	pgsql
 DBPASS?=	pgsql
 DATABASE=	postgresql
 PLIST_SUB+=	JDBC=${JDBC}
-MASTER_SITES+=	http://jdbc.postgresql.org/download/:source2
+MASTER_SITES+=	http://jdbc.postgresql.org/download/:source4
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT6}
@@ -128,12 +131,6 @@ pre-fetch:
 # show the update warning before we fetch ~400MB sources
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
-pre-extract:
-	@if [ -e ~/.m2 -o -L ~/.m2 ]; then \
-		${ECHO} A maven repository exists in your home directory. Please remove ~/.m2; \
-		${FALSE} ; \
-	fi
-
 # We can not use the USE_DOS2UNIX routine, since WRKDIR is redefined
 # and we have to convert files in a directory above WRKSRC!
 pre-patch:
@@ -154,10 +151,10 @@ post-patch-script:
 	@${FIND} ${WRKDIR} -type f \( -name '*.orig' \) -delete
 	@${ECHO_MSG} " [ DONE ]"
 
-post-extract-script:
-	@${LN} -fs ${WRKDIR}/.m2 ~/.m2 && ${UNZIP_CMD} -qq ${DISTDIR}/${JSMAVENARCH} -d ${WRKDIR}/.m2
+pre-build: extract patch
+	@${MKDIR} ${JSREPO}/org/codehaus/mojo/cobertura-maven-plugin/2.5-Jaspersoft
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/cobertura-* ${JSREPO}/org/codehaus/mojo/cobertura-maven-plugin/2.5-Jaspersoft
 
-pre-build:
 	@${ECHO} "appServerType = ${APPTYPE}" > ${APP_PROPERTIES}
 	@${ECHO} "appServerDir = ${APPHOME}" >> ${APP_PROPERTIES}
 	@${ECHO} "dbType = ${DATABASE}" >> ${APP_PROPERTIES}
@@ -177,17 +174,25 @@ pre-build:
 .endif
 	@${ECHO} "js-path = ${JS}" >> ${APP_PROPERTIES}
 	@${ECHO} "js-pro-path = ${JS}" >> ${APP_PROPERTIES}
+	@${ECHO} "maven.build.type = repo" >> ${APP_PROPERTIES}
 	@${ECHO} "repo-path = ${JSREPO}" >> ${APP_PROPERTIES}
+	@${ECHO} "maven-localrepo-path = ${WRKDIR}/repository" >> ${APP_PROPERTIES}
 
 .if ${PORT_OPTIONS:MMYSQL}
-	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${SRCDIR}/${PORTNAME}/buildomatic/conf_source/db/mysql/jdbc/mysql-connector-java-5.1.17-bin.jar
+	@( if [ -f ${JAVAJARDIR}/mysql-connector-java.jar ] ; then \
+		${LN} -sf ${JAVAJARDIR}/mysql-connector-java.jar ${SRCDIR}/${PORTNAME}/buildomatic/conf_source/db/mysql/jdbc/mysql-connector-java-5.1.17-bin.jar; \
+	fi )
 .endif
 
 do-build:
 # although log will show Downloading, maven is in offline mode and can't download
+	${CP} ${APP_PROPERTIES} ${SRCDIR}/${PORTNAME}/buildomatic/sample_conf
 	@( cd ${WRKSRC} && ./js-ant clean-config )
 	@( cd ${WRKSRC} && ./js-ant gen-config )
 	@( ${CP} ${WRKDIR}/web.xml ${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml )
+.if ${PORT_OPTIONS:MMYSQL}
+	@( cd ${WRKSRC} && ./js-ant add-jdbc-driver )
+.endif
 	@( cd ${WRKSRC} && ./js-ant build-ce )
 
 .if empty(PORT_OPTIONS:MPGSQL)
@@ -206,9 +211,6 @@ do-build:
 	@${ECHO} "report.scheduler.mail.sender.protocol=${JSMAILPROTO}" >> ${QTZ_PROPERTIES}
 	@${ECHO} "report.scheduler.mail.sender.port=${JSMAILPORT}" >> ${QTZ_PROPERTIES}
 
-post-build:
-	@if [ -L ~/.m2 ]; then ${RM} -f ~/.m2; fi
-
 do-install:
 	@( cd ${WRKSRC} && ./js-ant deploy-webapp-ce )
 	@${INSTALL_DATA} ${FILESDIR}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME}
@@ -218,12 +220,12 @@ do-install:
 	@${INSTALL} -m 440 ${QTZ_PROPERTIES} ${JSHOME}/WEB-INF/
 
 #removed shipped driver from vendor
-.if empty(PORT_OPTIONS:MMYSQL)
-	${INSTALL_DATA} ${DISTDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
-	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc4.jar
-.else
+.if ${PORT_OPTIONS:MMYSQL}
 	@${RM} ${APPHOME}/${JDBCLOC}/mysql-connector-java-5.1.17-bin.jar
 	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${APPHOME}/${JDBCLOC}
+.else
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
+	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc4.jar
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

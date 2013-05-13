@@ -1,7 +1,7 @@
---- ./jasperserver/buildomatic/bin/dev.xml.orig	2012-08-21 17:14:07.000000000 -0700
-+++ ./jasperserver/buildomatic/bin/dev.xml	2012-08-21 17:14:14.000000000 -0700
-@@ -47,7 +47,7 @@
-                 <arg value="${currentConf}/maven_settings.xml"/>
+--- ./jasperserver/buildomatic/bin/dev.xml.orig	2013-05-02 17:15:28.000000000 -0700
++++ ./jasperserver/buildomatic/bin/dev.xml	2013-05-02 17:15:49.000000000 -0700
+@@ -68,7 +68,7 @@
+                 <arg value="${maven.settings.file}"/>
                  <!-- <arg value="-e"/> --> <!-- ERROR INFO MODE -->
                  <!-- <arg value="-X"/> --> <!-- DETAILED DEBUG MODE -->
 -                <!-- <arg value="-o"/> --> <!-- OFFLINE MODE -->
@@ -9,10 +9,10 @@
                  <args/>
              </exec>
          </sequential>
-@@ -111,15 +111,6 @@
+@@ -143,15 +143,6 @@
          </sequential>
      </macrodef>
-   
+ 
 -    <macrodef name="runsvn">
 -        <attribute name="dir" default="${buildBase}"/>
 -        <element name="args" implicit="yes"/>
@@ -25,7 +25,7 @@
  
  
      <!-- ======================================================================= -->
-@@ -138,7 +129,7 @@
+@@ -170,7 +161,7 @@
              <arg value="-Dversion=${maven.jdbc.version}"/>
              <arg value="-Dpackaging=jar"/>
              <arg value="-Dfile=${currentDbDir}/jdbc/${jdbcJar}"/>
@@ -34,8 +34,8 @@
          </runmaven>
      </target>
  
-@@ -222,101 +213,6 @@
-       <echo> </echo>
+@@ -239,71 +230,6 @@
+         <echo></echo>
      </target>
  
 -    <target name="test-svn"
@@ -82,19 +82,9 @@
 -        </runsvn>
 -    </target>
 -
--    <target name="checkout-repo"
--            depends="init-source-paths"
--            description="svn checkout repo">
--        <runsvn>
--            <arg value="co"/>
--            <arg value="${repo-url}"/>
--            <arg value="${repo-path}"/>
--        </runsvn>
--    </target>
--
 -    <target name="update-all"
--            depends="update-ce,update-pro,update-repo"
--            description="svn update of ce src, pro src, and js-repo">
+-            depends="update-ce,update-pro"
+-            description="svn update of ce src and pro src">
 -    </target>
 -
 -    <target name="update-ce"
@@ -113,39 +103,10 @@
 -        </runsvn>
 -    </target>
 -
--    <target name="update-repo"
--            depends="init-source-paths"
--            description="svn update repo">
--        <if>
--            <!-- if we have repo-rev set, then that means we do not want to automatically           -->
--            <!-- update our jasperserver-repo local source. If we update we will get HEAD revision. -->
--            <!-- in this case, if you want to update jasperserver-repo, do it manually              -->
--            
--            <isset property="repo-rev"/>
--            <then>
--                <echo>INFO: Using repo revision, skipping update: </echo>
--                <echo>INFO: repo-url = ${repo-url}</echo>
--            </then>
--        <else>
--            <runsvn dir="${repo-path}">
--                <arg value="update"/>
--            </runsvn>
--        </else>
--        </if>
--    </target>
- 
      <target name="build-src-all"
              depends="build-ce, build-pro"
-@@ -324,7 +220,7 @@
-     </target>
- 
-     <target name="build-ce"
--            depends="init-source-paths, set-ce-webapp-name, install-jdbc-dep"
-+            depends="init-source-paths, set-ce-webapp-name"
-             description="Builds JasperServer CE and copies WAR to install resources">
- 
-         <!-- set these values to package avoid runtime error on windows. these two     -->
-@@ -598,12 +494,6 @@
+             description="Builds JasperServer CE/Pro and copies WAR files to install resources">
+@@ -608,11 +534,6 @@
                           build ddl pro, init js db pro, run integration tests pro, run production data pro">
      </target>
  
@@ -154,7 +115,6 @@
 -            description="(do not do svn update), clean build all src, drop-recreate db, 
 -                         build ddl pro, init js db pro, run integration tests pro, run production data pro">
 -    </target>
--
+ 
      <target name="build-all-deploy"
              depends="build-all,deploy-webapp-pro"
-             description="call build-all target, deploy webapp pro">
