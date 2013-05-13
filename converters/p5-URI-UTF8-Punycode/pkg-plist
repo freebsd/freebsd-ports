@@ -5,6 +5,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8/Punycode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/URI/UTF8/Punycode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI/UTF8
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI
