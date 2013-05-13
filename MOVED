@@ -4252,3 +4252,4 @@ textproc/ruby-sablot||2013-05-07|Has expired: Does not work with Ruby 1.9
 japanese/jisx0213-fonts|japanese/font-jisx0213|2013-05-08|Renamed
 x11-drivers/xf86-video-ati613||2013-05-10|Has expired: Old version, use xf86-video-ati instead
 devel/u-boot|devel/uboot-mkimage|2013-05-11|Port does not build full uboot distribution, only mkimage
+misc/py-xdelta3||2013-05-13|No longer actively maintained upstream
