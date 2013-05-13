@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php5-pdo_cassandra
-# Date created:		2011-08-03
-# Whom:			Gasol Wu <gasol.wu@gmail.com>
-#
+# Created by: Gasol Wu <gasol.wu@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pdo_cassandra
 PORTVERSION=	0.2.1
@@ -29,7 +25,7 @@ USE_PHP_BUILD=	yes
 USE_PHP=	pdo
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4 52
+IGNORE_WITH_PHP=52
 THRIFT_CMD=	${LOCALBASE}/bin/thrift
 
 post-configure:

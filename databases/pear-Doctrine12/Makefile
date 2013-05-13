@@ -38,7 +38,6 @@ LATEST_LINK=	pear-Doctrine12
 .include <bsd.port.options.mk>
 
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 USE_PHP=	pdo
 WANT_PHP_CLI=	yes

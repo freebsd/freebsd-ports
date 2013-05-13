@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pecl-rrd
-# Date created:		2011-03-28
-# Whom:			Florian Smeets <flo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rrd
 DISTVERSION=	1.1.0
@@ -24,6 +19,5 @@ LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=4
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ LICENSE=	BSD
 USE_BZIP2=	YES
 
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 NO_BUILD=	YES
 USE_PHP=	pcre mysql mysqli session memcache sqlite3 curl

@@ -13,8 +13,6 @@ COMMENT=	PECL classes for Mongo Database Driver
 
 LICENSE=	AL2
 
-IGNORE_WITH_PHP=4
-
 USE_PHP=	yes
 USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
