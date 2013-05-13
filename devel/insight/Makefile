@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Gnu debugger with the Insight GUI front-end
