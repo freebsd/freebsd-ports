@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xotcl
-# Date created:				Mon Sep 25 15:31:00 CET 2006
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xotcl
-PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 CATEGORIES?=	lang tcl
 MASTER_SITES=	SF \
 		http://media.wu-wien.ac.at/download/
