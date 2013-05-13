@@ -42,7 +42,6 @@ MAN1=	gdb${VER}.1
 
 .if defined(WITH_INSIGHT)
 PKGNAMESUFFIX=	-insight
-PORTREVISION=	0
 USE_TK=	84+
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
