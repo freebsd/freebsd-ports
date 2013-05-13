@@ -3,6 +3,7 @@
 
 PORTNAME=	wget
 DISTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
@@ -16,6 +17,16 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+
+# Wget can handle the absence of pcre, but we hook an unconditional dependency
+# to pcre because if it is present in the system during compile time, then
+# wget will pick it and link with it. Thus the wget executable will later
+# depend on the presence of the pcre library. Wget does not support to
+# explicitly ignore the pcre library if it is present in the system and there
+# is no elegant way to do that.
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=GNUTLS OPENSSL
