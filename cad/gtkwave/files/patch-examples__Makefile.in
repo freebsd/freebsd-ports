@@ -1,15 +1,15 @@
---- examples/Makefile.in.orig	2012-01-24 19:38:00.000000000 +0100
-+++ examples/Makefile.in	2012-02-05 21:14:29.000000000 +0100
-@@ -16,7 +16,7 @@
- @SET_MAKE@
- 
- VPATH = @srcdir@
+--- examples/Makefile.in.orig	2013-03-26 18:49:34.000000000 +0100
++++ examples/Makefile.in	2013-05-13 14:27:25.957067041 +0200
+@@ -32,7 +32,7 @@
+     esac; \
+     test $$am__dry = yes; \
+   }
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -203,7 +203,7 @@
+@@ -249,7 +249,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  dist_examples_DATA = des.gtkw des.tcl des.v des.vzt transaction.fst transaction.gtkw transaction.c gtkwaverc

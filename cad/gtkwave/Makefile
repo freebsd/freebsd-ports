@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkwave
-PORTVERSION=	3.3.44
+PORTVERSION=	3.3.46
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
@@ -16,7 +16,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	TCL
+OPTIONS_DEFINE=	TCL GCONF
 TCL_DESC=	Enable support for TCL/TK
 
 PORTDOCS=	gtkwave.odt
@@ -30,6 +30,11 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
 			--with-tk=${TK_LIBDIR}
 .else
 CONFIGURE_ARGS+=	--disable-tcl
+.endif
+
+.if ${PORT_OPTIONS:MGCONF}
+CONFIGURE_ARGS+=	--with-gconf
+USE_GNOME+=	gconf2
 .endif
 
 MAN1=	ghwdump.1 gtkwave.1 evcd2vcd.1 fst2vcd.1 fstminer.1 lxt2miner.1 \
