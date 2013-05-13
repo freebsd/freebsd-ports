@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tix
-# Date created:		22 December 1996
-# Whom:			Thomas Gellekum <tg@freebsd.org>
-#
+# Created by: Thomas Gellekum <tg@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tix
 PORTVERSION=	8.4.3
@@ -23,7 +19,9 @@ CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tclconfig="${TCL_LIBDIR}" \
 		--with-tkconfig="${TK_LIBDIR}" \
 		--with-tclinclude="${TCL_INCLUDEDIR}" \
-		--with-tkinclude="${TK_INCLUDEDIR}"
+		--with-tkinclude="${TK_INCLUDEDIR}" \
+		--prefix=${PREFIX} \
+		--exec-prefix=${PREFIX}
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MANN=		TixIntro.n compound.n pixmap.n tix.n tixBalloon.n \
@@ -49,7 +47,7 @@ pre-extract:
 pre-configure:
 	@(cd ${WRKSRC} && \
 	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
-	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+	    INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
