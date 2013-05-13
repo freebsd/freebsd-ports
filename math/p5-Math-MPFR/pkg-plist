@@ -1,11 +1,15 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/MPFR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/MPFR/Prec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/MPFR/V.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/MPFR.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/MPFR.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/Prec/Prec.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/Prec/Prec.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/V/V.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/V/V.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/V
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR/Prec
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPFR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math/MPFR
