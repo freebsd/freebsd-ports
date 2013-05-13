@@ -1,0 +1,9 @@
+The official Formula 1 website includes a Java client, which during races,
+qualifying, and practice sessions, displays the Live Timing information from
+the race track.
+
+Live F1 is a native client for viewing the same Live Timing feed without the
+need for a Java-enabled web browser. A user account on formula1.com is still
+required.
+
+WWW: https://launchpad.net/live-f1
