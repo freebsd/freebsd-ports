@@ -13,7 +13,7 @@
  datadir		= @datadir@
  mandir		= @mandir@
  includedir	= @includedir@
-+docsdir		= /usr/local/share/doc/tktable
++docsdir		= %%DOCSDIR%%
  
  DESTDIR		=
  

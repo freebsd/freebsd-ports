@@ -1,9 +1,5 @@
-# New ports collection makefile for:  tktable
-# Date created:         25 Jun 2003
-# Whom:                 thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	tktable
 PORTVERSION=	2.10
@@ -18,7 +14,6 @@ COMMENT=	A table/matrix widget extension to Tk
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USE_XORG=	x11
 USE_TK=		84+
 
 GNU_CONFIGURE=	yes
@@ -26,22 +21,21 @@ PORTDOCS=	*
 
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tkinclude=${TK_INCLUDEDIR} \
-		--with-x
+		--with-x \
+		--prefix=${PREFIX} \
+		--exec-prefix=${PREFIX}
 
 post-patch:
-.if !defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|' \
+	    ${WRKSRC}/Makefile.in
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install-doc
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 .if defined(MAINTAINER_MODE)
@@ -50,4 +44,4 @@ test: build
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
