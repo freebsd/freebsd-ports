@@ -10,7 +10,7 @@ MAINTAINER=	yuri@tsoft.com
 COMMENT=	SIP (sofia-sip) Connection Manager for Telepathy Framework
 
 LIB_DEPENDS=	sofia-sip-ua:${PORTSDIR}/net/sofia-sip \
-		telepathy-glib:net-im/telepathy-glib \
+		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
