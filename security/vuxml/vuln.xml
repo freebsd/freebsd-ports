@@ -6585,7 +6585,7 @@ executed in your Internet Explorer while displaying the email.</p>
       <package>
 	<name>emacs</name>
 	<range><gt>24.*</gt><lt>24.2</lt></range>
-	<range><gt>23.*</gt><lt>23.4_2,1</lt></range>
+	<range><gt>23.*</gt><le>23.4_2</le></range>
       </package>
     </affects>
     <description>
