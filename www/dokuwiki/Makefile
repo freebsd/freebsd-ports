@@ -1,4 +1,4 @@
-# Created by:	Chin-San Huang <chinsan@mail2000.com.tw>
+# Created by: Chin-San Huang <chinsan@mail2000.com.tw>
 # $FreeBSD$
 
 PORTNAME=	dokuwiki
@@ -15,7 +15,7 @@ COMMENT=	A simple and easy to use wiki, no database required
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DIST_VER=	${PORTNAME}-2012-10-13
+DIST_VER=	${PORTNAME}-2013-05-10
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
