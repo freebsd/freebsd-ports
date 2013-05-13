@@ -3,6 +3,7 @@
 
 PORTNAME=	libpst
 PORTVERSION=	0.6.58
+PORTREVISION=	1
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
 		http://fossies.org/unix/privat/
@@ -16,10 +17,11 @@ LIB_DEPENDS=	gsf-1:${PORTSDIR}/devel/libgsf
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv pathfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
-CONFIGURE_ARGS+=	--disable-python
+CONFIGURE_ARGS+=	--disable-python --enable-libpst-shared
+USE_LDCONFIG=	yes
 
 MAN1=	lspst.1 pst2dii.1 pst2ldif.1 readpst.1
 MAN5=	outlook.pst.5
