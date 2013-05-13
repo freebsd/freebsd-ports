@@ -1,13 +1,9 @@
-# ex:ts=8
-# New ports collection makefile for:	XIST
-# Date created:			Nov 3, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xist
 PORTVERSION=	3.25
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
@@ -15,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An XML-based extensible HTML generator
+COMMENT=	XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_PKGNAMEPREFIX}ll-core>=1.11.1:${PORTSDIR}/devel/py-ll-core \

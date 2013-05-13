@@ -24,6 +24,8 @@ bin/oramerge
 bin/oramerge.py
 bin/ucat
 bin/ucat.py
+bin/ucp
+bin/ucp.py
 bin/uhpp
 bin/uhpp.py
 bin/uls
