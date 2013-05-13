@@ -4,7 +4,7 @@ PORTNAME=	vbsfilter
 PORTVERSION=	1.15
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://aeschi.ch.eu.org/milter/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 EXTRACT_SUFX=	.c
 EXTRACT_ONLY=	# empty
 
