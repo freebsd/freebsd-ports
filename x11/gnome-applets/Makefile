@@ -41,13 +41,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		mixer.schemas multiload.schemas stickynotes.schemas
 
-OPTIONS_DEFINE=	MINI_COMMANDER
+OPTIONS_DEFINE=	MINI_COMMANDER NOTIFY
 MINI_COMMANDER_DESC=	Mini-commander applet
 
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
-	!${PORT_OPTIONS:MNOTIFY}
+	${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
