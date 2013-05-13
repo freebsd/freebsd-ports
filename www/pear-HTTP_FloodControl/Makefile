@@ -18,6 +18,8 @@ PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB_DESC=	PEAR::MDB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 
+PEAR_AUTOINSTALL=	yes
+
 post-extract:
 	${MKDIR} ${WRKSRC}/docs
 	${MV} ${WRKSRC}/README ${WRKSRC}/LICENSE ${WRKSRC}/docs
