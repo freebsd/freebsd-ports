@@ -1,14 +1,11 @@
-# New ports collection makefile for:	intltool
-# Date created:				19th January 2001
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/textproc/intltool/Makefile,v 1.13 2010/05/29 19:19:26 kwm Exp $
+#   $MCom: ports/trunk/textproc/intltool/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	intltool
-PORTVERSION=	0.41.1
+PORTVERSION=	0.50.2
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://launchpadlibrarian.net/41841194/
+MASTER_SITES=	http://launchpadlibrarian.net/94524169/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
