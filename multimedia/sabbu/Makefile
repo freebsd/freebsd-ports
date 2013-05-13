@@ -2,7 +2,7 @@
 
 PORTNAME=	sabbu
 PORTVERSION=	0.3.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sabbu%20${PORTVERSION}
 
@@ -21,6 +21,9 @@ USE_GNOME=	gtk20
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscale
 
+OPTIONS_DEFINE=	GTKSPELL
+OPTIONS_DEFAULT=GTKSPELL
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -31,12 +34,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	WITH_NLS="@comment "
 .endif
 
-ASPELL_PORT?=	textproc/aspell
 .if ${PORT_OPTIONS:MGTKSPELL}
 LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
-PLIST_SUB+=	WITH_ASPELL=""
 .else
-PLIST_SUB+=	WITH_ASPELL="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
