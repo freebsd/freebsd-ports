@@ -24,6 +24,7 @@ NAUPLUG_DESC=	Enable Nautilus plugin
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_XORG=	x11 xscrnsaver
 INSTALLS_ICONS=	yes
