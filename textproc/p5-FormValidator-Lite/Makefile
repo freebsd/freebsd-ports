@@ -1,12 +1,9 @@
-# New ports collection makefile for:	p5-FormValidator-Lite
-# Date created:		2009-03-09
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
 #
 
 PORTNAME=	FormValidator-Lite
-PORTVERSION=	0.29
+PORTVERSION=	0.34
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,11 +15,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-		p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load
-RUN_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-		p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load
-
-TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
+		p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Email-Valid>0:${PORTSDIR}/mail/p5-Email-Valid \
+		p5-Email-Valid-Loose>0:${PORTSDIR}/mail/p5-Email-Valid-Loose \
+		p5-Filter>0:${PORTSDIR}/devel/p5-Filter
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Text-TestBase>0:${PORTSDIR}/textproc/p5-Text-TestBase \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
@@ -40,4 +38,10 @@ MAN3=		FormValidator::Lite.3 \
 		FormValidator::Lite::Messages::en.3 \
 		FormValidator::Lite::Messages::ja.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
