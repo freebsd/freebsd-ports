@@ -1,13 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	Flickr::API
-# Date created:			May 19, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Flickr-API
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
