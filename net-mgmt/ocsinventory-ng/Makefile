@@ -25,7 +25,6 @@ USE_MYSQL=	41+
 USE_PERL5=	yes
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	3
 USE_PHP=	mysql pcre zlib session xml gd zip openssl mbstring
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
