@@ -180,6 +180,7 @@
     SUBDIR += telepathy-qt
     SUBDIR += telepathy-qt4
     SUBDIR += telepathy-salut
+    SUBDIR += telepathy-sofiasip
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins

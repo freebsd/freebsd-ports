@@ -1,0 +1,5 @@
+bin/telepathy-sofiasip
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.sofiasip.service
+share/telepathy/managers/sofiasip.manager
+@dirrmtry share/telepathy/managers
+@dirrmtry share/telepathy
