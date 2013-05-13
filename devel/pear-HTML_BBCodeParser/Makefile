@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-HTML_BBCodeParser
-# Date created:			  29 May 2004
-# Whom:				  Lewis Thompson <purple@lewiz.net>
-#
+# Created by: Lewis Thompson <purple@lewiz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML_BBCodeParser
 PORTVERSION=	1.1
@@ -13,18 +9,9 @@ MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Parser to replace UBB style tags with their HTML equivalents
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
 
-CATEGORY=	HTML
-FILES=		BBCodeParser.php \
-		BBCodeParser/Filter/Basic.php \
-		BBCodeParser/Filter/Email.php \
-		BBCodeParser/Filter/Extended.php \
-		BBCodeParser/Filter/Images.php \
-		BBCodeParser/Filter/Links.php \
-		BBCodeParser/Filter/Lists.php
-EXAMPLES=	BBCodeParser.ini parser.php
-_EXAMPLESDIR=	BBCodeParser/example
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
