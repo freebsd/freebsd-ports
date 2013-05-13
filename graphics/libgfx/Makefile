@@ -16,11 +16,11 @@ COMMENT=	OpenGL/FLTK development
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
+		tiff:${PORTSDIR}/graphics/tiff \
 		png15:${PORTSDIR}/graphics/png \
-		gzstream.0:${PORTSDIR}/devel/gzstream \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		gzstream:${PORTSDIR}/devel/gzstream \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
