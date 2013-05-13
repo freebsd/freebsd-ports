@@ -3,10 +3,8 @@
 PORTNAME=	fidogate
 PORTVERSION=	4.4.10
 CATEGORIES=	news mail
-MASTER_SITES=	ftp://ftp.fidogate.org/pub/fidogate/ \
-		ftp://ftp.fu-berlin.de/unix/news/fidogate/ \
-		http://www.fidogate.org/pub/fidogate/
-MASTER_SITE_SUBDIR=	system/fido
+MASTER_SITES=	SF \
+		ftp://ftp.fu-berlin.de/unix/news/fidogate/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
