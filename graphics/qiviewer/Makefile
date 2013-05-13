@@ -3,7 +3,7 @@
 
 PORTNAME=	qiviewer
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,8 +13,8 @@ COMMENT=	Fast and lightweight image viewer
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_QT4=	gui xml dbus linguist_build qmake_build moc_build \
-		rcc_build uic_build
+USE_QT4=	gui xml dbus imageformats linguist_build qmake_build \
+		moc_build rcc_build uic_build
 QMAKEFLAGS+=	PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/qiviewer \
