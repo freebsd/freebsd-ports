@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wv2
-# Date created:         Do 28 Aug 2003 15:50:37 CEST
-# Whom:                 lofi@freebsd.org
-#
+# Created by: lofi@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	wv2
 PORTVERSION=	0.4.2
@@ -20,6 +16,9 @@ USES=		cmake iconv
 USE_LDCONFIG=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|LIBGSF_INCLUDE_DIR|PC_LIBGSF_INCLUDE_DIRS|g' \
+		-e 's|LIBGSF_LIBRARIES|PC_LIBGSF_LIBRARIES|g' \
+		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|glib/giochannel.h|glib.h|g' \
 		${WRKSRC}/src/olestream.h
 
