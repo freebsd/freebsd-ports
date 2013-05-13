@@ -54,15 +54,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/File/Next.pm
 %%SLIMDIR%%/CPAN/File/ReadBackwards.pm
 %%SLIMDIR%%/CPAN/File/Slurp.pm
-%%SLIMDIR%%/CPAN/File/Spec.pm
-%%SLIMDIR%%/CPAN/File/Spec/Cygwin.pm
-%%SLIMDIR%%/CPAN/File/Spec/Epoc.pm
-%%SLIMDIR%%/CPAN/File/Spec/Functions.pm
-%%SLIMDIR%%/CPAN/File/Spec/Mac.pm
-%%SLIMDIR%%/CPAN/File/Spec/OS2.pm
-%%SLIMDIR%%/CPAN/File/Spec/Unix.pm
-%%SLIMDIR%%/CPAN/File/Spec/VMS.pm
-%%SLIMDIR%%/CPAN/File/Spec/Win32.pm
 %%SLIMDIR%%/CPAN/HTML/Entities.pm
 %%SLIMDIR%%/CPAN/HTML/Filter.pm
 %%SLIMDIR%%/CPAN/HTML/Form.pm
@@ -2564,7 +2555,6 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/CPAN/HTTP/Cookies
 @dirrm %%SLIMDIR%%/CPAN/HTTP
 @dirrm %%SLIMDIR%%/CPAN/HTML
-@dirrm %%SLIMDIR%%/CPAN/File/Spec
 @dirrm %%SLIMDIR%%/CPAN/File/Copy
 @dirrm %%SLIMDIR%%/CPAN/File
 @dirrm %%SLIMDIR%%/CPAN/Exporter

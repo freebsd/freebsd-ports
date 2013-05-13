@@ -7,13 +7,13 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	markk@knigma.org
 COMMENT=	Slim Devices audio streaming server
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
@@ -93,6 +93,7 @@ EXCEPTFILES=	${DOCFILES} \
 		CPAN/Data/Page.pm \
 		CPAN/DBI.pm \
 		CPAN/EV.pm \
+		CPAN/File/Spec.pm \
 		CPAN/File/Temp.pm \
 		CPAN/File/Which.pm \
 		CPAN/GD.pm \
@@ -125,6 +126,7 @@ EXCEPTDIRS=	Bin \
 		CPAN/MRO \
 		CPAN/Path \
 		CPAN/Scope \
+		CPAN/File/Spec \
 		CPAN/Sub \
 		CPAN/SQL \
 		CPAN/Template \
@@ -175,6 +177,7 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's/skip-locking/skip-external-locking/' \
 		-e 's/default-character-set/character-set-server/'\
+		-e 's/table_cache/table_open_cache/'\
 		-e 's/default-collation/collation-server/'  ${WRKSRC}/MySQL/my.tt
 	${REINPLACE_CMD} \
 		-e 's/TYPE=InnoDB/ENGINE=InnoDB/' ${WRKSRC}/SQL/mysql/schema_*.sql
