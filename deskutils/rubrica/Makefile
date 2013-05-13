@@ -9,7 +9,7 @@ MASTER_SITES=	BERLIOS
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An addressbook for the GNOME 2 desktop
+COMMENT=	Addressbook for the GNOME 2 desktop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
