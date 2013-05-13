@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	0.9.6
+PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	aubio:${PORTSDIR}/audio/aubio \
 		evview:${PORTSDIR}/graphics/evince \
 		guile:${PORTSDIR}/lang/guile \
 		fftw3:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2 \
+		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 LICENSE=	GPLv3
 
@@ -28,7 +29,8 @@ LILYPOND_DESC=	Install LilyPond (Printing)
 USE_GNOME=	gtk20 gtksourceview2 librsvg2 libxml2
 USES=		bison
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-jack \
+CONFIGURE_ARGS=	--enable-gtk2 \
+		--enable-jack \
 		--disable-portmidi \
 		--sysconfdir=${PREFIX}/etc
 MAKE_JOBS_SAFE=	yes
@@ -46,13 +48,26 @@ RUN_DEPENDS+=	lilypond:${PORTSDIR}/print/lilypond
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|evince-view-2.30|evince-view-2.32|g' ${WRKSRC}/configure
+		'/^CFLAGS=/s|_LIBS|_CFLAGS| ; \
+		 s|-lpthread|-pthread|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc|| ; \
-		 /\/examples/d' ${WRKSRC}/Makefile.in
+		 /) install-data-hook/s|^|#|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|"firefox"|"xdg-open"|' ${WRKSRC}/src/prefops.c
 
 post-install:
-	@${LN} -sf ${DOCSDIR}/manual ${DATADIR}/manual
+	@${MKDIR} ${DATADIR}
+.for i in actions templates
+	@(cd ${WRKSRC} && ${TAR} --exclude "*Makefile*" -cf - ${i}) | \
+		(cd ${DATADIR} && ${TAR} --unlink -xf -)
+	@${FIND} ${DATADIR}/${i} -print0 | \
+		${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DATADIR}/${i} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} a+rx
+	@${FIND} ${DATADIR}/${i} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} ${SHAREMODE}
+.endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in AUTHORS ChangeLog NEWS README
