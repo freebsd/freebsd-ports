@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	mywwwatcher
-# Date created:				10 January 2007
-# Whom:					Petr Macek <pm@kostax.cz>
-#
+# Created by: Petr Macek <pm@kostax.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	mywwwatcher
 PORTVERSION=	3.2
@@ -19,7 +15,6 @@ WRKSRC=		${WRKDIR}/mywwwatcher
 WANT_PHP_WEB=		yes
 DEFAULT_PHP_VER=	5
 USE_PHP=		pcre session mysql
-IGNORE_WITH_PHP=	3
 
 NO_BUILD=	yes
 
