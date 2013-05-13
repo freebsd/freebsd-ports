@@ -32,6 +32,15 @@ lib/enlightenment/modules/wlan/module.desktop
 %%NLS%%lib/enlightenment/modules/wlan/locale/id/LC_MESSAGES/wlan.mo
 %%NLS%%lib/enlightenment/modules/wlan/locale/ru/LC_MESSAGES/wlan.mo
 %%NLS%%lib/enlightenment/modules/wlan/locale/sl/LC_MESSAGES/wlan.mo
+%%NLS%%lib/enlightenment/modules/wlan/locale/ca/LC_MESSAGES/wlan.mo
+%%NLS%%lib/enlightenment/modules/wlan/locale/gl/LC_MESSAGES/wlan.mo
+%%NLS%%lib/enlightenment/modules/wlan/locale/sr/LC_MESSAGES/wlan.mo
+%%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/wlan/locale/ru/LC_MESSAGES

@@ -32,6 +32,15 @@ lib/enlightenment/modules/taskbar/e-module-taskbar.edj
 %%NLS%%lib/enlightenment/modules/taskbar/locale/fr/LC_MESSAGES/taskbar.mo
 %%NLS%%lib/enlightenment/modules/taskbar/locale/nl/LC_MESSAGES/taskbar.mo
 %%NLS%%lib/enlightenment/modules/taskbar/locale/sl/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/ca/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/gl/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/sr/LC_MESSAGES/taskbar.mo
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nl/LC_MESSAGES

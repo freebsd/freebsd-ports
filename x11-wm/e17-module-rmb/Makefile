@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	rmb
-PORTVERSION=	20120918
+PORTVERSION=	20130510
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/modules/
+MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	An e17 module to emulate right mouse button
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

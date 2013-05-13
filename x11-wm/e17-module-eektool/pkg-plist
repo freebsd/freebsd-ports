@@ -8,6 +8,27 @@ lib/enlightenment/modules/eektool/images/icon.png
 %%NLS%%lib/enlightenment/modules/eektool/locale/fr/LC_MESSAGES/eektool.mo
 %%NLS%%lib/enlightenment/modules/eektool/locale/it/LC_MESSAGES/eektool.mo
 %%NLS%%lib/enlightenment/modules/eektool/locale/pt/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/ca/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/eo/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/es/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/gl/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/lt/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/sr/LC_MESSAGES/eektool.mo
+%%NLS%%lib/enlightenment/modules/eektool/locale/zh_CN/LC_MESSAGES/eektool.mo
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/pt/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/pt
 %%NLS%%@dirrm lib/enlightenment/modules/eektool/locale/it/LC_MESSAGES

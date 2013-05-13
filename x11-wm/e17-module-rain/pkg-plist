@@ -30,6 +30,12 @@ lib/enlightenment/modules/rain/drop-m.png
 %%NLS%%lib/enlightenment/modules/rain/locale/zh_CN/LC_MESSAGES/rain.mo
 %%NLS%%lib/enlightenment/modules/rain/locale/tr/LC_MESSAGES/rain.mo
 %%NLS%%lib/enlightenment/modules/rain/locale/sl/LC_MESSAGES/rain.mo
+%%NLS%%lib/enlightenment/modules/rain/locale/gl/LC_MESSAGES/rain.mo
+%%NLS%%lib/enlightenment/modules/rain/locale/sr/LC_MESSAGES/rain.mo
+%%NLS%%@dirrm lib/enlightenment/modules/rain/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/rain/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/rain/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/rain/locale/gl
 %%NLS%%@dirrm lib/enlightenment/modules/rain/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/rain/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/rain/locale/tr/LC_MESSAGES

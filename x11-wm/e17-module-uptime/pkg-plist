@@ -27,6 +27,15 @@ lib/enlightenment/modules/uptime/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/uptime/locale/uk/LC_MESSAGES/uptime.mo
 %%NLS%%lib/enlightenment/modules/uptime/locale/el/LC_MESSAGES/uptime.mo
 %%NLS%%lib/enlightenment/modules/uptime/locale/sl/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/ca/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/gl/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/sr/LC_MESSAGES/uptime.mo
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/el/LC_MESSAGES

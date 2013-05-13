@@ -10,6 +10,27 @@ lib/enlightenment/modules/engage/e-module-ng.edj
 %%NLS%%lib/enlightenment/modules/engage/locale/cs/LC_MESSAGES/engage.mo
 %%NLS%%lib/enlightenment/modules/engage/locale/pt/LC_MESSAGES/engage.mo
 %%NLS%%lib/enlightenment/modules/engage/locale/sl/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/ca/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/eo/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/es/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/gl/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/ru/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/sr/LC_MESSAGES/engage.mo
+%%NLS%%lib/enlightenment/modules/engage/locale/zh_CN/LC_MESSAGES/engage.mo
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/engage/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/engage/locale/pt/LC_MESSAGES

@@ -31,6 +31,15 @@ lib/enlightenment/modules/cpu/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/cpu/locale/pt_BR/LC_MESSAGES/cpu.mo
 %%NLS%%lib/enlightenment/modules/cpu/locale/sk/LC_MESSAGES/cpu.mo
 %%NLS%%lib/enlightenment/modules/cpu/locale/sl/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/ca/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/gl/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/sr/LC_MESSAGES/cpu.mo
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sk/LC_MESSAGES

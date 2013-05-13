@@ -17,6 +17,15 @@ lib/enlightenment/modules/screenshot/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/screenshot/locale/pt/LC_MESSAGES/screenshot.mo
 %%NLS%%lib/enlightenment/modules/screenshot/locale/nl/LC_MESSAGES/screenshot.mo
 %%NLS%%lib/enlightenment/modules/screenshot/locale/sl/LC_MESSAGES/screenshot.mo
+%%NLS%%lib/enlightenment/modules/screenshot/locale/ca/LC_MESSAGES/screenshot.mo
+%%NLS%%lib/enlightenment/modules/screenshot/locale/gl/LC_MESSAGES/screenshot.mo
+%%NLS%%lib/enlightenment/modules/screenshot/locale/sr/LC_MESSAGES/screenshot.mo
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/screenshot/locale/nl/LC_MESSAGES

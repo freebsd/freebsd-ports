@@ -48,6 +48,18 @@ lib/enlightenment/modules/news/e-module-news.edj
 %%NLS%%lib/enlightenment/modules/news/locale/tr/LC_MESSAGES/news.mo
 %%NLS%%lib/enlightenment/modules/news/locale/sk/LC_MESSAGES/news.mo
 %%NLS%%lib/enlightenment/modules/news/locale/sl/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/ca/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/gl/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/lt/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/sr/LC_MESSAGES/news.mo
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/news/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/news/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/news/locale/sk/LC_MESSAGES

@@ -1,60 +1,28 @@
 lib/enlightenment/modules/scale/module.desktop
 lib/enlightenment/modules/scale/e-module-scale.edj
 lib/enlightenment/modules/scale/%%E17_ARCH%%/module.so
-%%NLS%%lib/enlightenment/modules/scale/locale/el/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/uk/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/de/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/ja/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/ru/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/ko/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/pt/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/sv/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/zh_CN/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/sl/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/eo/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/it/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/sk/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/tr/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/bg/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/hr/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/hu/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/pl/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/es/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/lt/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/ar/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/he/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/cs/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/pt_BR/LC_MESSAGES/scale.mo
-%%NLS%%lib/enlightenment/modules/scale/locale/nl/LC_MESSAGES/scale.mo
 %%NLS%%lib/enlightenment/modules/scale/locale/fr/LC_MESSAGES/scale.mo
+%%NLS%%lib/enlightenment/modules/scale/locale/gl/LC_MESSAGES/scale.mo
+%%NLS%%lib/enlightenment/modules/scale/locale/sr/LC_MESSAGES/scale.mo
+%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/gl
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/fr
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/nl/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/nl
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/pt_BR
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/cs/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/cs
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/he/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/he
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ar/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ar
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/lt/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/lt
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/es/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/es
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/pl/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/pl
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/hu/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/hu
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/hr/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/hr
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/bg/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/bg
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/tr/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/tr
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sk/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sk
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/it/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/it
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/eo/LC_MESSAGES
@@ -63,22 +31,12 @@ lib/enlightenment/modules/scale/%%E17_ARCH%%/module.so
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/zh_CN
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sv/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/sv
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/pt/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/pt
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ko
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ru
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ja/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/ja
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/de/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/de
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/uk/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/uk
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/el/LC_MESSAGES
-%%NLS%%@dirrm lib/enlightenment/modules/scale/locale/el
 %%NLS%%@dirrm lib/enlightenment/modules/scale/locale
 @dirrm lib/enlightenment/modules/scale/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/scale

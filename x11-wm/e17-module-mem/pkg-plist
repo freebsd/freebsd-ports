@@ -29,6 +29,15 @@ lib/enlightenment/modules/mem/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/mem/locale/hr/LC_MESSAGES/mem.mo
 %%NLS%%lib/enlightenment/modules/mem/locale/bg/LC_MESSAGES/mem.mo
 %%NLS%%lib/enlightenment/modules/mem/locale/sl/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/ca/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/gl/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/sr/LC_MESSAGES/mem.mo
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/mem/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/mem/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/mem/locale/bg/LC_MESSAGES

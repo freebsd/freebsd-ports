@@ -10,6 +10,24 @@ lib/enlightenment/modules/evry-mpris/module.desktop
 %%NLS%%lib/enlightenment/modules/evry-mpris/locale/pt/LC_MESSAGES/evry-mpris.mo
 %%NLS%%lib/enlightenment/modules/evry-mpris/locale/sl/LC_MESSAGES/evry-mpris.mo
 %%NLS%%lib/enlightenment/modules/evry-mpris/locale/nl/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/ca/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/eo/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/es/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/gl/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/sr/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/zh_CN/LC_MESSAGES/evry-mpris.mo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/nl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/nl
 %%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/sl/LC_MESSAGES

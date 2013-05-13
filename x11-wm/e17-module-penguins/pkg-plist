@@ -29,6 +29,15 @@ lib/enlightenment/modules/penguins/e-module-penguins.edj
 %%NLS%%lib/enlightenment/modules/penguins/locale/sk/LC_MESSAGES/penguins.mo
 %%NLS%%lib/enlightenment/modules/penguins/locale/tr/LC_MESSAGES/penguins.mo
 %%NLS%%lib/enlightenment/modules/penguins/locale/sl/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/ca/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/gl/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/sr/LC_MESSAGES/penguins.mo
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sr
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/gl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/gl
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ca
 %%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/tr/LC_MESSAGES
