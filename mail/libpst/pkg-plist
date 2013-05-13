@@ -3,3 +3,16 @@ bin/nick2ldif
 bin/pst2ldif
 bin/readpst
 %%PST2DII%%bin/pst2dii
+include/libpst-4/libpst/common.h
+include/libpst-4/libpst/libpst.h
+include/libpst-4/libpst/libstrfunc.h
+include/libpst-4/libpst/lzfu.h
+include/libpst-4/libpst/timeconv.h
+include/libpst-4/libpst/vbuf.h
+lib/libpst.a
+lib/libpst.la
+lib/libpst.so
+lib/libpst.so.5
+libdata/pkgconfig/libpst.pc
+@dirrm include/libpst-4/libpst
+@dirrm include/libpst-4
