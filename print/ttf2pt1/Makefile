@@ -3,7 +3,7 @@
 
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -21,7 +21,14 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
 SHEBANG_FILES=	app/TeX/sfd2map \
 		app/TeX/cjk-latex-config \
 		other/showdf \
-		other/lst.pl
+		other/showg \
+		other/*.pl \
+		scripts/forceiso \
+		scripts/frommap \
+		scripts/inst_dir \
+		scripts/html2man \
+		scripts/t1fdir \
+		scripts/trans
 
 MAN1=		ttf2pt1.1 ttf2pt1_convert.1 ttf2pt1_x2gs.1
 
