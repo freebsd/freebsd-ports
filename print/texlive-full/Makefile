@@ -11,7 +11,8 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live, Full Version
 
-USE_TEX=	texlive texhash
+USE_TEX=	full texhash
+TEX_DEFAULT=	texlive
 NO_BUILD=	yes
 
 do-install:
