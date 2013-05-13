@@ -1,5 +1,8 @@
---- src/filelock.c.org	2008-01-07 23:30:11.000000000 -0500
-+++ src/filelock.c	2010-02-12 17:50:08.000000000 -0500
+
+$FreeBSD$
+
+--- src/filelock.c.orig
++++ src/filelock.c
 @@ -64,7 +64,12 @@
  
  #ifdef CLASH_DETECTION
@@ -32,3 +35,52 @@
    int desc;
  
    if (filename)
+@@ -272,16 +281,28 @@
+ 
+       emacs_close (desc);
+ 
++#if __FreeBSD_version >= 900007
++	  setutxdb (UTXDB_ACTIVE, filename);
++#else
+       utmpname (filename);
++#endif
+     }
+ 
++#if __FreeBSD_version >= 900007
++  setutxent ();
++#else
+   setutent ();
++#endif
+ 
+   while (1)
+     {
+       /* Find the next reboot record.  */
+       ut.ut_type = BOOT_TIME;
++#if __FreeBSD_version >= 900007
++      utp = getutxid (&ut);
++#else
+       utp = getutid (&ut);
++#endif
+       if (! utp)
+ 	break;
+       /* Compare reboot times and use the newest one.  */
+@@ -293,11 +314,19 @@
+ 	}
+       /* Advance on element in the file
+ 	 so that getutid won't repeat the same one.  */
++#if __FreeBSD_version >= 900007
++	  utp = getutxent ();
++#else
+       utp = getutent ();
++#endif
+       if (! utp)
+ 	break;
+     }
++#if __FreeBSD_version >= 900007
++  endutxent();
++#else
+   endutent ();
++#endif
+ }
+ #endif /* BOOT_TIME */
+ 

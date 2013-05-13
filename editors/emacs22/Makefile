@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -68,8 +67,6 @@ LATEST_LINK=	emacs22
 
 .if ${ARCH} == "ia64"
 BROKEN=	Emacs 22.X does not currently build on ia64
-.elif ${OSVERSION} >= 900007
-BROKEN=	does not build
 .endif
 
 pre-everything::
