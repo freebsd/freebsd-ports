@@ -1,5 +1,4 @@
 bin/glade-3
-bin/glade-3-previewer
 include/libgladeui-1.0/gladeui/glade-accels.h
 include/libgladeui-1.0/gladeui/glade-activatable-editor.h
 include/libgladeui-1.0/gladeui/glade-app.h
@@ -45,6 +44,7 @@ include/libgladeui-1.0/gladeui/glade-signal.h
 include/libgladeui-1.0/gladeui/glade-store-editor.h
 include/libgladeui-1.0/gladeui/glade-text-button.h
 include/libgladeui-1.0/gladeui/glade-tool-button-editor.h
+include/libgladeui-1.0/gladeui/glade-tool-item-group-editor.h
 include/libgladeui-1.0/gladeui/glade-treeview-editor.h
 include/libgladeui-1.0/gladeui/glade-utils.h
 include/libgladeui-1.0/gladeui/glade-widget-action.h
@@ -84,7 +84,6 @@ share/applications/glade-3.desktop
 %%DOCSDIR%%/catalogintro.html
 %%DOCSDIR%%/core.html
 %%DOCSDIR%%/dockables.html
-%%DOCSDIR%%/gladeui.devhelp
 %%DOCSDIR%%/gladeui.devhelp2
 %%DOCSDIR%%/gladeui-Glade-Parameter.html
 %%DOCSDIR%%/gladeui-Glade-Utils.html
@@ -145,9 +144,11 @@ share/applications/glade-3.desktop
 %%GNOME:%%%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gnome-pixmapentry.png
 %%GNOME:%%%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gnome-propertybox.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-aboutdialog.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-accelgroup.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-accellabel.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-action.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-actiongroup.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-adjustment.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-alignment.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-arrow.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-aspectframe.png
@@ -159,6 +160,7 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererpixbuf.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererprogress.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererspin.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererspinner.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-cellrenderertext.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-cellrenderertoggle.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-checkbutton.png
@@ -176,12 +178,14 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-dialog.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-drawingarea.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-entry.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-entrybuffer.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-entrycompletion.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-eventbox.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-expander.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserbutton.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserdialog.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserwidget.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-filefilter.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-fileselection.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-fixed.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-fontbutton.png
@@ -230,9 +234,15 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-scrolledwindow.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-separatormenuitem.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-separatortoolitem.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-sizegroup.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-spinbutton.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-spinner.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-statusbar.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-statusicon.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-table.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-textbuffer.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-texttag.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-texttagtable.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-textview.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-toggleaction.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-togglebutton.png
@@ -240,6 +250,11 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-toolbar.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-toolbutton.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-toolitem.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-toolitemgroup.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-toolpalette.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-treemodelfilter.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-treemodelsort.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-treeselection.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-treestore.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-treeview.png
 %%DATADIR%%/pixmaps/hicolor/16x16/actions/widget-gtk-treeviewcolumn.png
@@ -278,9 +293,11 @@ share/applications/glade-3.desktop
 %%GNOME:%%%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gnome-pixmapentry.png
 %%GNOME:%%%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gnome-propertybox.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-aboutdialog.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-accelgroup.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-accellabel.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-action.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-actiongroup.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-adjustment.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-alignment.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-arrow.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-aspectframe.png
@@ -292,6 +309,7 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererpixbuf.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererprogress.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererspin.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererspinner.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-cellrenderertext.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-cellrenderertoggle.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-checkbutton.png
@@ -309,12 +327,14 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-dialog.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-drawingarea.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-entry.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-entrybuffer.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-entrycompletion.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-eventbox.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-expander.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserbutton.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserdialog.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserwidget.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-filefilter.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-fileselection.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-fixed.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-fontbutton.png
@@ -363,9 +383,15 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-scrolledwindow.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-separatormenuitem.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-separatortoolitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-sizegroup.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-spinbutton.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-spinner.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-statusbar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-statusicon.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-table.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-textbuffer.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-texttag.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-texttagtable.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-textview.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-toggleaction.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-togglebutton.png
@@ -373,8 +399,14 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-toolbar.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-toolbutton.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-toolitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-toolitemgroup.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-toolpalette.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-treemodelfilter.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-treemodelsort.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-treeselection.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-treestore.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-treeview.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-treeviewcolumn.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-vbox.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-vbuttonbox.png
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-viewport.png
@@ -388,63 +420,63 @@ share/applications/glade-3.desktop
 %%DATADIR%%/pixmaps/hicolor/22x22/actions/widget-gtk-windowgroup.png
 %%DATADIR%%/pixmaps/plus.png
 %%DATADIR%%/pixmaps/selector.png
-share/gnome/help/glade/C/figures/main-window.png
-share/gnome/help/glade/C/glade.xml
-share/gnome/help/glade/C/legal.xml
-share/gnome/help/glade/bg/figures/main-window.png
-share/gnome/help/glade/bg/glade.xml
-share/gnome/help/glade/bg/legal.xml
-share/gnome/help/glade/cs/figures/main-window.png
-share/gnome/help/glade/cs/glade.xml
-share/gnome/help/glade/cs/legal.xml
-share/gnome/help/glade/de/figures/main-window.png
-share/gnome/help/glade/de/glade.xml
-share/gnome/help/glade/de/legal.xml
-share/gnome/help/glade/el/figures/main-window.png
-share/gnome/help/glade/el/glade.xml
-share/gnome/help/glade/el/legal.xml
-share/gnome/help/glade/en_GB/figures/main-window.png
-share/gnome/help/glade/en_GB/glade.xml
-share/gnome/help/glade/en_GB/legal.xml
-share/gnome/help/glade/eu/figures/main-window.png
-share/gnome/help/glade/eu/glade.xml
-share/gnome/help/glade/eu/legal.xml
-share/gnome/help/glade/es/figures/main-window.png
-share/gnome/help/glade/es/glade.xml
-share/gnome/help/glade/es/legal.xml
-share/gnome/help/glade/fr/figures/main-window.png
-share/gnome/help/glade/fr/glade.xml
-share/gnome/help/glade/fr/legal.xml
-share/gnome/help/glade/hi/figures/main-window.png
-share/gnome/help/glade/hi/glade.xml
-share/gnome/help/glade/hi/legal.xml
-share/gnome/help/glade/it/figures/main-window.png
-share/gnome/help/glade/it/glade.xml
-share/gnome/help/glade/it/legal.xml
-share/gnome/help/glade/ja/figures/main-window.png
-share/gnome/help/glade/ja/glade.xml
-share/gnome/help/glade/ja/legal.xml
-share/gnome/help/glade/oc/figures/main-window.png
-share/gnome/help/glade/oc/glade.xml
-share/gnome/help/glade/oc/legal.xml
-share/gnome/help/glade/pt_BR/figures/main-window.png
-share/gnome/help/glade/pt_BR/glade.xml
-share/gnome/help/glade/pt_BR/legal.xml
-share/gnome/help/glade/ru/figures/main-window.png
-share/gnome/help/glade/ru/glade.xml
-share/gnome/help/glade/ru/legal.xml
-share/gnome/help/glade/sl/figures/main-window.png
-share/gnome/help/glade/sl/glade.xml
-share/gnome/help/glade/sl/legal.xml
-share/gnome/help/glade/sv/figures/main-window.png
-share/gnome/help/glade/sv/glade.xml
-share/gnome/help/glade/sv/legal.xml
-share/gnome/help/glade/uk/figures/main-window.png
-share/gnome/help/glade/uk/glade.xml
-share/gnome/help/glade/uk/legal.xml
-share/gnome/help/glade/zh_CN/figures/main-window.png
-share/gnome/help/glade/zh_CN/glade.xml
-share/gnome/help/glade/zh_CN/legal.xml
+share/gnome/help/glade3/C/figures/main-window.png
+share/gnome/help/glade3/C/glade3.xml
+share/gnome/help/glade3/C/legal.xml
+share/gnome/help/glade3/bg/figures/main-window.png
+share/gnome/help/glade3/bg/glade3.xml
+share/gnome/help/glade3/bg/legal.xml
+share/gnome/help/glade3/cs/figures/main-window.png
+share/gnome/help/glade3/cs/glade3.xml
+share/gnome/help/glade3/cs/legal.xml
+share/gnome/help/glade3/de/figures/main-window.png
+share/gnome/help/glade3/de/glade3.xml
+share/gnome/help/glade3/de/legal.xml
+share/gnome/help/glade3/el/figures/main-window.png
+share/gnome/help/glade3/el/glade3.xml
+share/gnome/help/glade3/el/legal.xml
+share/gnome/help/glade3/en_GB/figures/main-window.png
+share/gnome/help/glade3/en_GB/glade3.xml
+share/gnome/help/glade3/en_GB/legal.xml
+share/gnome/help/glade3/eu/figures/main-window.png
+share/gnome/help/glade3/eu/glade3.xml
+share/gnome/help/glade3/eu/legal.xml
+share/gnome/help/glade3/es/figures/main-window.png
+share/gnome/help/glade3/es/glade3.xml
+share/gnome/help/glade3/es/legal.xml
+share/gnome/help/glade3/fr/figures/main-window.png
+share/gnome/help/glade3/fr/glade3.xml
+share/gnome/help/glade3/fr/legal.xml
+share/gnome/help/glade3/hi/figures/main-window.png
+share/gnome/help/glade3/hi/glade3.xml
+share/gnome/help/glade3/hi/legal.xml
+share/gnome/help/glade3/it/figures/main-window.png
+share/gnome/help/glade3/it/glade3.xml
+share/gnome/help/glade3/it/legal.xml
+share/gnome/help/glade3/ja/figures/main-window.png
+share/gnome/help/glade3/ja/glade3.xml
+share/gnome/help/glade3/ja/legal.xml
+share/gnome/help/glade3/oc/figures/main-window.png
+share/gnome/help/glade3/oc/glade3.xml
+share/gnome/help/glade3/oc/legal.xml
+share/gnome/help/glade3/pt_BR/figures/main-window.png
+share/gnome/help/glade3/pt_BR/glade3.xml
+share/gnome/help/glade3/pt_BR/legal.xml
+share/gnome/help/glade3/ru/figures/main-window.png
+share/gnome/help/glade3/ru/glade3.xml
+share/gnome/help/glade3/ru/legal.xml
+share/gnome/help/glade3/sl/figures/main-window.png
+share/gnome/help/glade3/sl/glade3.xml
+share/gnome/help/glade3/sl/legal.xml
+share/gnome/help/glade3/sv/figures/main-window.png
+share/gnome/help/glade3/sv/glade3.xml
+share/gnome/help/glade3/sv/legal.xml
+share/gnome/help/glade3/uk/figures/main-window.png
+share/gnome/help/glade3/uk/glade3.xml
+share/gnome/help/glade3/uk/legal.xml
+share/gnome/help/glade3/zh_CN/figures/main-window.png
+share/gnome/help/glade3/zh_CN/glade3.xml
+share/gnome/help/glade3/zh_CN/legal.xml
 share/icons/hicolor/16x16/apps/glade-3.png
 share/icons/hicolor/22x22/apps/glade-3.png
 share/icons/hicolor/24x24/apps/glade-3.png
@@ -517,65 +549,65 @@ share/locale/vi/LC_MESSAGES/glade3.mo
 share/locale/zh_CN/LC_MESSAGES/glade3.mo
 share/locale/zh_HK/LC_MESSAGES/glade3.mo
 share/locale/zh_TW/LC_MESSAGES/glade3.mo
-share/omf/glade/glade-C.omf
-share/omf/glade/glade-bg.omf
-share/omf/glade/glade-cs.omf
-share/omf/glade/glade-de.omf
-share/omf/glade/glade-el.omf
-share/omf/glade/glade-en_GB.omf
-share/omf/glade/glade-eu.omf
-share/omf/glade/glade-es.omf
-share/omf/glade/glade-fr.omf
-share/omf/glade/glade-hi.omf
-share/omf/glade/glade-it.omf
-share/omf/glade/glade-ja.omf
-share/omf/glade/glade-oc.omf
-share/omf/glade/glade-pt_BR.omf
-share/omf/glade/glade-ru.omf
-share/omf/glade/glade-sl.omf
-share/omf/glade/glade-sv.omf
-share/omf/glade/glade-uk.omf
-share/omf/glade/glade-zh_CN.omf
-@dirrm share/omf/glade
-@dirrm share/gnome/help/glade/zh_CN/figures
-@dirrm share/gnome/help/glade/zh_CN
-@dirrm share/gnome/help/glade/uk/figures
-@dirrm share/gnome/help/glade/uk
-@dirrm share/gnome/help/glade/sv/figures
-@dirrm share/gnome/help/glade/sv
-@dirrm share/gnome/help/glade/sl/figures
-@dirrm share/gnome/help/glade/sl
-@dirrm share/gnome/help/glade/ru/figures
-@dirrm share/gnome/help/glade/ru
-@dirrm share/gnome/help/glade/pt_BR/figures
-@dirrm share/gnome/help/glade/pt_BR
-@dirrm share/gnome/help/glade/oc/figures
-@dirrm share/gnome/help/glade/oc
-@dirrm share/gnome/help/glade/ja/figures
-@dirrm share/gnome/help/glade/ja
-@dirrm share/gnome/help/glade/it/figures
-@dirrm share/gnome/help/glade/it
-@dirrm share/gnome/help/glade/hi/figures
-@dirrm share/gnome/help/glade/hi
-@dirrm share/gnome/help/glade/fr/figures
-@dirrm share/gnome/help/glade/fr
-@dirrm share/gnome/help/glade/es/figures
-@dirrm share/gnome/help/glade/es
-@dirrm share/gnome/help/glade/eu/figures
-@dirrm share/gnome/help/glade/eu
-@dirrm share/gnome/help/glade/en_GB/figures
-@dirrm share/gnome/help/glade/en_GB
-@dirrm share/gnome/help/glade/el/figures
-@dirrm share/gnome/help/glade/el
-@dirrm share/gnome/help/glade/de/figures
-@dirrm share/gnome/help/glade/de
-@dirrm share/gnome/help/glade/cs/figures
-@dirrm share/gnome/help/glade/cs
-@dirrm share/gnome/help/glade/bg/figures
-@dirrm share/gnome/help/glade/bg
-@dirrm share/gnome/help/glade/C/figures
-@dirrm share/gnome/help/glade/C
-@dirrm share/gnome/help/glade
+share/omf/glade3/glade3-C.omf
+share/omf/glade3/glade3-bg.omf
+share/omf/glade3/glade3-cs.omf
+share/omf/glade3/glade3-de.omf
+share/omf/glade3/glade3-el.omf
+share/omf/glade3/glade3-en_GB.omf
+share/omf/glade3/glade3-eu.omf
+share/omf/glade3/glade3-es.omf
+share/omf/glade3/glade3-fr.omf
+share/omf/glade3/glade3-hi.omf
+share/omf/glade3/glade3-it.omf
+share/omf/glade3/glade3-ja.omf
+share/omf/glade3/glade3-oc.omf
+share/omf/glade3/glade3-pt_BR.omf
+share/omf/glade3/glade3-ru.omf
+share/omf/glade3/glade3-sl.omf
+share/omf/glade3/glade3-sv.omf
+share/omf/glade3/glade3-uk.omf
+share/omf/glade3/glade3-zh_CN.omf
+@dirrm share/omf/glade3
+@dirrm share/gnome/help/glade3/zh_CN/figures
+@dirrm share/gnome/help/glade3/zh_CN
+@dirrm share/gnome/help/glade3/uk/figures
+@dirrm share/gnome/help/glade3/uk
+@dirrm share/gnome/help/glade3/sv/figures
+@dirrm share/gnome/help/glade3/sv
+@dirrm share/gnome/help/glade3/sl/figures
+@dirrm share/gnome/help/glade3/sl
+@dirrm share/gnome/help/glade3/ru/figures
+@dirrm share/gnome/help/glade3/ru
+@dirrm share/gnome/help/glade3/pt_BR/figures
+@dirrm share/gnome/help/glade3/pt_BR
+@dirrm share/gnome/help/glade3/oc/figures
+@dirrm share/gnome/help/glade3/oc
+@dirrm share/gnome/help/glade3/ja/figures
+@dirrm share/gnome/help/glade3/ja
+@dirrm share/gnome/help/glade3/it/figures
+@dirrm share/gnome/help/glade3/it
+@dirrm share/gnome/help/glade3/hi/figures
+@dirrm share/gnome/help/glade3/hi
+@dirrm share/gnome/help/glade3/fr/figures
+@dirrm share/gnome/help/glade3/fr
+@dirrm share/gnome/help/glade3/es/figures
+@dirrm share/gnome/help/glade3/es
+@dirrm share/gnome/help/glade3/eu/figures
+@dirrm share/gnome/help/glade3/eu
+@dirrm share/gnome/help/glade3/en_GB/figures
+@dirrm share/gnome/help/glade3/en_GB
+@dirrm share/gnome/help/glade3/el/figures
+@dirrm share/gnome/help/glade3/el
+@dirrm share/gnome/help/glade3/de/figures
+@dirrm share/gnome/help/glade3/de
+@dirrm share/gnome/help/glade3/cs/figures
+@dirrm share/gnome/help/glade3/cs
+@dirrm share/gnome/help/glade3/bg/figures
+@dirrm share/gnome/help/glade3/bg
+@dirrm share/gnome/help/glade3/C/figures
+@dirrm share/gnome/help/glade3/C
+@dirrm share/gnome/help/glade3
 @dirrm %%DATADIR%%/pixmaps/hicolor/22x22/actions
 @dirrm %%DATADIR%%/pixmaps/hicolor/22x22
 @dirrm %%DATADIR%%/pixmaps/hicolor/16x16/actions
@@ -590,8 +622,6 @@ share/omf/glade/glade-zh_CN.omf
 @dirrm lib/glade3
 @dirrm include/libgladeui-1.0/gladeui
 @dirrm include/libgladeui-1.0
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
