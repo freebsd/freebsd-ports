@@ -24,10 +24,6 @@ post-patch:
 		-e 's|CFLAGS =|CFLAGS ?=|' \
 		${WRKSRC}/Makefile
 
-.if ${OSVERSION} >= 100000
-	@${REINPLACE_CMD} -e 's|-O9|-O3|' ${WRKSRC}/Makefile
-.endif
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libswe.a ${LOCALBASE}/lib
 	${MKDIR} ${LOCALBASE}/include/swe
