@@ -2,5 +2,4 @@ mod_ruby embeds the Ruby interpreter into the Apache web server,
 allowing Ruby CGI scripts to be executed natively.  These scripts will
 start up much faster than without mod_ruby.
 
-Author:	Shugo Maeda <shugo@modruby.net>
-WWW:	http://www.modruby.net/index.html.en
+Author:	Shugo Maeda
