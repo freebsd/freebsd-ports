@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 DIST_SUBDIR=	apsfilter
@@ -101,9 +101,10 @@ _DEPENDS_PSUTILS= \
 _DEPENDS_CONVERT= \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		wmf2eps:${PORTSDIR}/graphics/libwmf \
-		sk2ps:${PORTSDIR}/graphics/skencil \
 		tgif:${PORTSDIR}/graphics/tgif \
 		transfig:${PORTSDIR}/print/transfig
+# XXX: recent versions of skencil do not include sk2ps.
+#		sk2ps:${PORTSDIR}/graphics/skencil
 _DEPENDS_DVIPS=	dvips:${PORTSDIR}/print/dvipsk-tetex
 _DEPENDS_FIG2DEV= \
 		fig2dev:${PORTSDIR}/print/transfig
