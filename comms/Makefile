@@ -78,6 +78,7 @@
     SUBDIR += libfec
     SUBDIR += libimobiledevice
     SUBDIR += libirman
+    SUBDIR += libmodbus
     SUBDIR += libticables
     SUBDIR += libticables2
     SUBDIR += libticalcs2
