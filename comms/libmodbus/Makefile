@@ -14,6 +14,7 @@ GH_ACCOUNT=	stephane
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 PLIST_FILES=	include/modbus/modbus-rtu.h include/modbus/modbus-tcp.h \
 		include/modbus/modbus-version.h include/modbus/modbus.h \
