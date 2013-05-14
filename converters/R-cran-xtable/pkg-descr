@@ -1,0 +1,4 @@
+Functions converting an R object to an "xtable" object, which can
+then be printed as a LaTeX or HTML table.
+
+WWW: http://cran.r-project.org/web/packages/xtable/
