@@ -1,9 +1,5 @@
-# New ports collection makefile for:   uim-m17nlib
-# Date created:        31 August 2003
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-m17nlib-nox11
@@ -14,8 +10,8 @@ PKGNAMESUFFIX=	-m17nlib
 COMMENT=	Uim plugin using m17n library input method
 
 BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
-LIB_DEPENDS=	m17n.4:${PORTSDIR}/devel/m17n-lib \
-		uim.8:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	m17n:${PORTSDIR}/devel/m17n-lib \
+		uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 
 .if !defined(WITHOUT_M17NCONTRIB)

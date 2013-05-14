@@ -1,13 +1,8 @@
-# New ports collection makefile for:   uim-el
-# Date created:        24 December 2005
-# Whom:                MANTANI Nobutaka <nobutaka@freebsd.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uim-el
-PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTVERSION=	1.8.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

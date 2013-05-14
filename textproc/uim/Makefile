@@ -1,12 +1,8 @@
-# New ports collection makefile for:   uim
-# Date created:        31 August 2003
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uim
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.5
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)

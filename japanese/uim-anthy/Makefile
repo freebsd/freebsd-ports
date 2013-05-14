@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ja-uim-anthy
-# Date created:        31 August 2003
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
@@ -18,8 +14,8 @@ COMMENT=	Uim plugin using Anthy input method
 USE_GNOME=	gtk20
 .endif
 
-LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
-		uim.8:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	anthy:${PORTSDIR}/japanese/anthy \
+		uim:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

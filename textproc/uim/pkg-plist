@@ -400,14 +400,11 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/yahoo-jp-key-custom.scm
 %%DATADIR%%/yahoo-jp.scm
 %%DATADIR%%/zaurus.scm
-@dirrm include/libgcroots
-@dirrm include/sigscheme
 @dirrm include/uim
 @dirrm lib/uim/plugin
 @dirrm lib/uim
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
-@dirrm %%DOCSDIR_SIGSCHEME%%
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/helperdata
 @dirrm %%DATADIR%%/lib
