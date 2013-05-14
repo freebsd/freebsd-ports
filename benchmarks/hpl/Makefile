@@ -1,43 +1,20 @@
-# New ports collection makefile for:	hpl
-# Date Created:		22 February 2003
-# Whom:			Oliver Lehmann <oliver@FreeBSD.org>
-#
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hpl
-PORTVERSION=	2.0
-PORTREVISION=	8
+PORTVERSION=	2.1
+#PORTREVISION=	8
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
+MASTER_SITES=	${MASTER_SITE_NETLIB}
+MASTER_SITE_SUBDIR=benchmark/hpl
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
-.if !defined(WITH_LAM)
-LIB_DEPENDS=	mpich.2:${PORTSDIR}/net/mpich2
-.else
-BUILD_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
-RUN_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
-CC=		${LOCALBASE}/bin/mpicc
-FC=		${LOCALBASE}/bin/mpicc
-.endif
+LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
+		mpich:${PORTSDIR}/net/mpich2
 
 USE_FORTRAN=	yes
-
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libatlas.a) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.else
-WITH_BLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-.else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-.endif
-
 USE_LDCONFIG=	yes
 HPL_ARCH?=	FreeBSD_PIV_CBLAS
 ALL_TARGET=	arch=${HPL_ARCH}
@@ -73,32 +50,21 @@ MAN3=		HPL_abort.3 HPL_all_reduce.3 HPL_barrier.3 HPL_bcast.3 \
 		HPL_sum.3 HPL_timer.3 HPL_timer_cputime.3 HPL_timer_walltime.3 \
 		HPL_warn.3 HPL_xjumpm.3
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^TOPdir[ ]*=.*$$|TOPdir = ${WRKSRC}| ; \
 		s|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}| ; \
-		s|^LAdir[ ]*=.*$$|LAdir = ${LOCALBASE}/lib| ; \
+		s|^LAdir[ ]*=.*$$|LAdir = ${LOCALBASE}| ; \
 		s|^CC[ ]*=.*$$|CC = ${CC}| ; \
 		s|^CCFLAGS[ ]*=.*$$|CCFLAGS = $$\(HPL_DEFS\) ${CFLAGS} -fomit-frame-pointer -funroll-loops| ; \
 		s|^LINKER[ ]*=.*$$|LINKER = ${FC}| ; \
 		s|^ARCHIVER[ ]*=.*$$|ARCHIVER = ${AR}| ; \
 		s|ARCH[ )]|_&|g ; \
+		s|^HPL_OPTS[ ]*=.*$$|HPL_OPTS =| ; \
+		s|^LAlib[ ]*=.*$$|LAlib = $$\(LAdir\)/lib/libblas.a| ; \
 		s|libpmpich.a|libmpl.a ${PTHREAD_LIBS}|' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
-
-.if defined(WITH_LAM)
-	@${REINPLACE_CMD} -e 's|^MPdir[ ]*=.*$$|#&| ; s|^MPinc[ ]*=.*$$|#&| ; \
-		s|^MPlib[ ]*=.*$$|MPlib = /usr/lib/libg2c.a|' \
-		${WRKSRC}/setup/Make.${HPL_ARCH}
-.else
-	@${REINPLACE_CMD} -e 's|^MPdir[ ]*=.*$$|MPdir = ${LOCALBASE}|' \
-		${WRKSRC}/setup/Make.${HPL_ARCH}
-.endif
-
-.if defined(WITH_BLAS)
-	@${REINPLACE_CMD} -e 's|^HPL_OPTS[ ]*=.*$$|HPL_OPTS =| ; \
-		s|^LAlib[ ]*=.*$$|LAlib = $$\(LAdir\)/libblas.a|' \
-		${WRKSRC}/setup/Make.${HPL_ARCH}
-.endif
 
 	@${REINPLACE_CMD} -e 's|HPL\.dat|${PREFIX}/etc/${PORTNAME}/&|' \
 		${WRKSRC}/testing/ptest/HPL_pdinfo.c
@@ -112,11 +78,11 @@ do-install:
 .for man in ${MAN3}
 	${INSTALL_MAN} ${WRKSRC}/man/man3/${man} ${MANPREFIX}/man/man3/
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in BUGS COPYRIGHT HISTORY README TODO TUNING
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
