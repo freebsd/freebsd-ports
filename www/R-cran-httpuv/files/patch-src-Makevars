@@ -1,0 +1,11 @@
+--- src/Makevars.orig	2013-03-11 14:39:17.000000000 +0900
++++ src/Makevars	2013-05-11 17:48:34.000000000 +0900
+@@ -6,7 +6,7 @@
+ FRAMEWORK = -framework CoreServices
+ endif
+ 
+-PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"` ./libuv/libuv.a ./http-parser/http_parser.o ./sha1/sha1.o ./base64/base64.o $(FRAMEWORK)
++PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"` ./libuv/libuv.a ./http-parser/http_parser.o ./sha1/sha1.o ./base64/base64.o $(FRAMEWORK) -lkvm
+ PKG_CPPFLAGS += -I./libuv/include -I./http-parser -I./sha1 -I./base64
+ 
+ .PHONY: all libuv.a http-parser.o
