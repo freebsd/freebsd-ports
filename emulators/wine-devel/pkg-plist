@@ -735,6 +735,7 @@ include/wine/windows/ddk/usbdlib.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winddiui.h
 include/wine/windows/ddk/winsplp.h
+lib/libwine.so.1
 lib/wine/acledit.dll.so
 lib/wine/aclui.dll.so
 lib/wine/activeds.dll.so
