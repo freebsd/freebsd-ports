@@ -20,7 +20,7 @@ USE_PERL5=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSSL}
+.if !${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS=	--without-openssl
 .else
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -61,20 +61,14 @@ SUB_FILES=	pkg-install
 PKGINSTALL=	${WRKDIR}/pkg-install
 USE_RC_SUBR=	zmailer
 
-# local variable (we can't use ${SED} here)
-DOMAIN!=	/bin/hostname | ${SED} -e "s:^"`/bin/hostname -s`"\.*::g"
-.if (${DOMAIN} == "")
-DOMAIN=		"mydomain.com"
-.endif
-
 pre-install:
-	cd ${WRKSRC}/man && make install
+	cd ${WRKSRC}/man && make ${INSTALL_TARGET}
 
 post-install:
 	@${SETENV} PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # set up the initial mail.conf with reasonable settings.
 	@${ECHO_CMD} "# Where am I?" > ${PREFIX}/etc/zmailer/mail.conf.sample
-	@${ECHO_CMD} "orgdomain="${DOMAIN} >> ${PREFIX}/etc/zmailer/mail.conf.sample
+	@${ECHO_CMD} "orgdomain="`/bin/hostname | cut -d '.' -f 2-` >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO_CMD} "# Who am I?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO_CMD} "hostname="`/bin/hostname -s`'.$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO_CMD} "# Who do I claim to be?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
