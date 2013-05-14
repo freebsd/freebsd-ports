@@ -63,6 +63,16 @@ bin/chrome
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
+%%DATADIR%%/resources/inspector/AceTextEditor.js
+%%DATADIR%%/resources/inspector/acedevtools.css
+%%DATADIR%%/resources/inspector/breakpointsList.css
+%%DATADIR%%/resources/inspector/buildSystemOnly.js
+%%DATADIR%%/resources/inspector/flameChart.css
+%%DATADIR%%/resources/inspector/mode_css.js
+%%DATADIR%%/resources/inspector/mode_html.js
+%%DATADIR%%/resources/inspector/mode_javascript.js
+%%DATADIR%%/resources/inspector/sidebarPane.css
+%%DATADIR%%/resources/inspector/theme_textmate.js
 %%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/AuditsPanel.js
 %%DATADIR%%/resources/inspector/breadcrumbList.css
@@ -82,6 +92,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/heapProfiler.css
 %%DATADIR%%/resources/inspector/HeapSnapshotWorker.js
 %%DATADIR%%/resources/inspector/helpScreen.css
+%%DATADIR%%/resources/inspector/Images/addIcon.png
 %%DATADIR%%/resources/inspector/Images/applicationCache.png
 %%DATADIR%%/resources/inspector/Images/back.png
 %%DATADIR%%/resources/inspector/Images/breakpointBorder.png

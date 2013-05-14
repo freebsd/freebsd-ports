@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/about_ui.cc.orig	2012-10-31 21:02:22.000000000 +0200
-+++ chrome/browser/ui/webui/about_ui.cc	2012-11-07 15:58:46.000000000 +0200
-@@ -928,7 +928,7 @@
+--- chrome/browser/ui/webui/about_ui.cc.orig	2013-02-28 10:15:18.000000000 +0200
++++ chrome/browser/ui/webui/about_ui.cc	2013-03-06 20:47:33.000000000 +0200
+@@ -740,7 +740,7 @@
    return data;
  }
  
@@ -9,7 +9,7 @@
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -944,6 +944,7 @@
+@@ -756,6 +756,7 @@
    return data;
  }
  
@@ -17,20 +17,20 @@
  void AboutSandboxRow(std::string* data, const std::string& prefix, int name_id,
                       bool good) {
    data->append("<tr><td>");
-@@ -1005,6 +1006,7 @@
+@@ -818,6 +819,7 @@
    return data;
  }
  #endif
 +#endif
  
- std::string AboutVersionStaticContent(const std::string& query) {
-   return ResourceBundle::GetSharedInstance().GetRawDataResource(
-@@ -1396,7 +1398,7 @@
-   } else if (host == chrome::kChromeUIDNSHost) {
-     AboutDnsHandler::Start(this, request_id);
+ // AboutMemoryHandler ----------------------------------------------------------
+ 
+@@ -986,7 +988,7 @@
+   } else if (source_name_ == chrome::kChromeUIDNSHost) {
+     AboutDnsHandler::Start(profile(), callback);
      return;
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
+   } else if (source_name_ == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
  #endif
