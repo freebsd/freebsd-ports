@@ -1,0 +1,351 @@
+--- modules/server.mod/server.c.orig	2013-05-14 09:49:09.000000000 +0200
++++ modules/server.mod/server.c	2013-05-14 09:49:50.000000000 +0200
+@@ -1424,7 +1424,7 @@
+     if (slist != NULL) {
+       code = Tcl_SplitList(interp, slist, &lc, &list);
+       if (code == TCL_ERROR)
+-        return interp->result;
++        return (char *)Tcl_GetStringResult(interp);
+       for (i = 0; i < lc && i < 50; i++)
+         add_server((char *) list[i]);
+ 
+--- src/botcmd.c.orig	2013-05-14 09:24:30.000000000 +0200
++++ src/botcmd.c	2013-05-14 09:25:16.000000000 +0200
+@@ -297,7 +297,7 @@
+ 
+   else {
+     simple_sprintf(s, "assoc %d", chan);
+-    if ((Tcl_Eval(interp, s) != TCL_OK) || !interp->result[0])
++    if ((Tcl_Eval(interp, s) != TCL_OK) || !Tcl_GetStringResult(interp)[0])
+       botnet_send_priv(idx, botnetnick, nick, NULL, "%s %s%d: (* = owner, + ="
+                        " master, %% = botmaster, @ = op)\n",
+                        BOT_PEOPLEONCHAN, (chan < GLOBAL_CHANS) ? "" : "*",
+@@ -305,7 +305,7 @@
+     else
+       botnet_send_priv(idx, botnetnick, nick, NULL, "%s '%s' (%s%d): (* = "
+                        "owner, + = master, %% = botmaster, @ = op)\n",
+-                       BOT_PEOPLEONCHAN, interp->result, (chan < GLOBAL_CHANS) ?
++                       BOT_PEOPLEONCHAN, Tcl_GetStringResult(interp), (chan < GLOBAL_CHANS) ?
+                        "" : "*", chan % GLOBAL_CHANS);
+   }
+   for (i = 0; i < dcc_total; i++)
+--- src/botmsg.c.orig	2013-05-14 09:25:38.000000000 +0200
++++ src/botmsg.c	2013-05-14 09:26:21.000000000 +0200
+@@ -610,7 +610,8 @@
+   Tcl_SetVar(interp, "_idx", ss, 0);
+   if (Tcl_VarEval(interp, "storenote", " $_from $_to $_data $_idx", NULL) ==
+       TCL_OK) {
+-    if (interp->result && interp->result[0])
++    const char *res = Tcl_GetStringResult(interp);
++    if (res && res[0])
+       status = NOTE_FWD;
+     if (status == NOTE_AWAY) {
+       dprintf(iaway, "*** %s.\n", BOT_NOTEARRIVED);
+--- src/botnet.c.orig	2013-05-14 09:26:35.000000000 +0200
++++ src/botnet.c	2013-05-14 09:27:21.000000000 +0200
+@@ -383,12 +383,12 @@
+             BOT_LOCALCHAN);
+   else if (chan > 0) {
+     simple_sprintf(idle, "assoc %d", chan);
+-    if ((Tcl_Eval(interp, idle) != TCL_OK) || !interp->result[0])
++    if ((Tcl_Eval(interp, idle) != TCL_OK) || !Tcl_GetStringResult(interp)[0])
+       dprintf(idx, "%s %s%d:\n", BOT_USERSONCHAN,
+               (chan < GLOBAL_CHANS) ? "" : "*", chan % GLOBAL_CHANS);
+     else
+       dprintf(idx, "%s '%s%s' (%s%d):\n", BOT_USERSONCHAN,
+-              (chan < GLOBAL_CHANS) ? "" : "*", interp->result,
++              (chan < GLOBAL_CHANS) ? "" : "*", Tcl_GetStringResult(interp),
+               (chan < GLOBAL_CHANS) ? "" : "*", chan % GLOBAL_CHANS);
+   }
+   nicklen = botnicklen = 0;
+--- src/chanprog.c.orig	2013-05-14 09:27:38.000000000 +0200
++++ src/chanprog.c	2013-05-14 09:28:44.000000000 +0200
+@@ -300,12 +300,12 @@
+ 
+   dprintf(idx, "%s %s\n", MISC_TCLLIBRARY,
+           ((interp) && (Tcl_Eval(interp, "info library") == TCL_OK)) ?
+-          interp->result : "*unknown*");
++          Tcl_GetStringResult(interp): "*unknown*");
+ 
+   dprintf(idx, "%s %s (%s %s)\n", MISC_TCLVERSION,
+           ((interp) && (Tcl_Eval(interp, "info patchlevel") == TCL_OK)) ?
+-          interp->result : (Tcl_Eval(interp, "info tclversion") == TCL_OK) ?
+-          interp->result : "*unknown*", MISC_TCLHVERSION,
++          Tcl_GetStringResult(interp) : (Tcl_Eval(interp, "info tclversion") == TCL_OK) ?
++          Tcl_GetStringResult(interp) : "*unknown*", MISC_TCLHVERSION,
+           TCL_PATCH_LEVEL ? TCL_PATCH_LEVEL : "*unknown*");
+ 
+ #if HAVE_TCL_THREADS
+--- src/cmds.c.orig	2013-05-14 09:29:02.000000000 +0200
++++ src/cmds.c	2013-05-14 09:34:34.000000000 +0200
+@@ -78,13 +78,13 @@
+     dprintf(idx, "%s (* = owner, + = master, %% = botmaster, @ = op)\n", BOT_PARTYMEMBS);
+   else {
+     simple_sprintf(s, "assoc %d", chan);
+-    if ((Tcl_Eval(interp, s) != TCL_OK) || !interp->result[0])
++    if ((Tcl_Eval(interp, s) != TCL_OK) || !Tcl_GetStringResult(interp)[0])
+       dprintf(idx, "%s %s%d: (* = owner, + = master, %% = botmaster, @ = op)\n",
+                   BOT_PEOPLEONCHAN, (chan < GLOBAL_CHANS) ? "" :
+               "*", chan % GLOBAL_CHANS);
+     else
+       dprintf(idx, "%s '%s' (%s%d): (* = owner, + = master, %% = botmaster, @ = op)\n",
+-                  BOT_PEOPLEONCHAN, interp->result,
++                  BOT_PEOPLEONCHAN, Tcl_GetStringResult(interp),
+               (chan < GLOBAL_CHANS) ? "" : "*", chan % GLOBAL_CHANS);
+   }
+ 
+@@ -287,8 +287,8 @@
+     if ((par[0] < '0') || (par[0] > '9')) {
+       Tcl_SetVar(interp, "chan", par, 0);
+       if ((Tcl_VarEval(interp, "assoc ", "$chan", NULL) == TCL_OK) &&
+-          interp->result[0]) {
+-        chan = atoi(interp->result);
++          Tcl_GetStringResult(interp)[0]) {
++        Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &chan);
+       }
+       if (chan <= 0) {
+         dprintf(idx, "No such channel exists.\n");
+@@ -1730,8 +1730,8 @@
+         else {
+           Tcl_SetVar(interp, "chan", arg, 0);
+           if ((Tcl_VarEval(interp, "assoc ", "$chan", NULL) == TCL_OK) &&
+-              interp->result[0])
+-            newchan = atoi(interp->result);
++              Tcl_GetStringResult(interp)[0])
++            Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &newchan);  
+           else
+             newchan = -1;
+         }
+@@ -1753,8 +1753,8 @@
+         else {
+           Tcl_SetVar(interp, "chan", arg, 0);
+           if ((Tcl_VarEval(interp, "assoc ", "$chan", NULL) == TCL_OK) &&
+-              interp->result[0])
+-            newchan = atoi(interp->result);
++              Tcl_GetStringResult(interp)[0])
++            Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &newchan);
+           else
+             newchan = -1;
+         }
+@@ -2132,9 +2132,9 @@
+   debug1("(cmds.c->cmd_tcl) tcl: evaluate (.tcl): %s", msg);
+   code = Tcl_GlobalEval(interp, msg);
+   if (code == TCL_OK)
+-    dumplots(idx, "Tcl: ", interp->result);
++    dumplots(idx, "Tcl: ", (char *)Tcl_GetStringResult(interp));
+   else
+-    dumplots(idx, "Tcl error: ", interp->result);
++    dumplots(idx, "Tcl error: ", (char *)Tcl_GetStringResult(interp));
+ }
+ 
+ /* Perform a 'set' command */
+@@ -2152,18 +2152,18 @@
+   if (!msg[0]) {
+     strcpy(s, "info globals");
+     Tcl_Eval(interp, s);
+-    dumplots(idx, "Global vars: ", interp->result);
++    dumplots(idx, "Global vars: ", (char *)Tcl_GetStringResult(interp));
+     return;
+   }
+   strcpy(s + 4, msg);
+   code = Tcl_Eval(interp, s);
+   if (code == TCL_OK) {
+     if (!strchr(msg, ' '))
+-      dumplots(idx, "Currently: ", interp->result);
++      dumplots(idx, "Currently: ", (char *)Tcl_GetStringResult(interp));
+     else
+       dprintf(idx, "Ok, set.\n");
+   } else
+-    dprintf(idx, "Error: %s\n", interp->result);
++    dprintf(idx, "Error: %s\n", (char *)Tcl_GetStringResult(interp));
+ }
+ 
+ static void cmd_module(struct userrec *u, int idx, char *par)
+--- src/dcc.c.orig	2013-05-14 09:34:52.000000000 +0200
++++ src/dcc.c	2013-05-14 09:35:45.000000000 +0200
+@@ -1632,10 +1632,12 @@
+   Tcl_SetVar(interp, "_n", s, 0);
+   Tcl_SetVar(interp, "_a", args, 0);
+   if (Tcl_VarEval(interp, name, " $_n $_a", NULL) == TCL_ERROR) {
+-    putlog(LOG_MISC, "*", DCC_TCLERROR, name, interp->result);
++    putlog(LOG_MISC, "*", DCC_TCLERROR, name, Tcl_GetStringResult(interp));
+     return -1;
+   }
+-  return (atoi(interp->result));
++  int ret;
++  Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &ret);
++  return (ret);
+ }
+ 
+ static void dcc_script(int idx, char *buf, int len)
+--- src/dns.c.orig	2013-05-14 09:36:01.000000000 +0200
++++ src/dns.c	2013-05-14 09:36:55.000000000 +0200
+@@ -213,10 +213,10 @@
+     output = Tcl_Concat(2, argv);
+ 
+     if (Tcl_Eval(interp, output) == TCL_ERROR)
+-      putlog(LOG_MISC, "*", DCC_TCLERROR, tclinfo->proc, interp->result);
++      putlog(LOG_MISC, "*", DCC_TCLERROR, tclinfo->proc, Tcl_GetStringResult(interp));
+     Tcl_Free(output);
+   } else if (Tcl_Eval(interp, Tcl_DStringValue(&list)) == TCL_ERROR)
+-    putlog(LOG_MISC, "*", DCC_TCLERROR, tclinfo->proc, interp->result);
++    putlog(LOG_MISC, "*", DCC_TCLERROR, tclinfo->proc, Tcl_GetStringResult(interp));
+ 
+   Tcl_DStringFree(&list);
+ 
+--- src/main.c.orig	2013-05-14 09:37:10.000000000 +0200
++++ src/main.c	2013-05-14 09:37:42.000000000 +0200
+@@ -246,12 +246,12 @@
+ 
+     dprintf(-x, "Tcl library: %s\n",
+             ((interp) && (Tcl_Eval(interp, "info library") == TCL_OK)) ?
+-            interp->result : "*unknown*");
++            Tcl_GetStringResult(interp): "*unknown*");
+ 
+     dprintf(-x, "Tcl version: %s (header version %s)\n",
+             ((interp) && (Tcl_Eval(interp, "info patchlevel") == TCL_OK)) ?
+-            interp->result : (Tcl_Eval(interp, "info tclversion") == TCL_OK) ?
+-            interp->result : "*unknown*", TCL_PATCH_LEVEL ? TCL_PATCH_LEVEL :
++            Tcl_GetStringResult(interp) : (Tcl_Eval(interp, "info tclversion") == TCL_OK) ?
++            Tcl_GetStringResult(interp) : "*unknown*", TCL_PATCH_LEVEL ? TCL_PATCH_LEVEL :
+             "*unknown*");
+ 
+ #if HAVE_TCL_THREADS
+--- src/proto.h.orig	2013-05-14 09:38:45.000000000 +0200
++++ src/proto.h	2013-05-14 09:38:54.000000000 +0200
+@@ -239,8 +239,8 @@
+ char *hostnamefromip(unsigned long);
+ void killsock(int);
+ int answer(int, char *, unsigned long *, unsigned short *, int);
+-inline int open_listen(int *);
+-inline int open_listen_by_af(int *, int);
++int open_listen(int *);
++int open_listen_by_af(int *, int);
+ int open_address_listen(IP addr, int *);
+ int open_telnet(char *, int);
+ int open_telnet_dcc(int, char *, char *);
+--- src/tcl.c.orig	2013-05-14 09:39:15.000000000 +0200
++++ src/tcl.c	2013-05-14 09:39:44.000000000 +0200
+@@ -204,7 +204,7 @@
+         return "read-only variable";
+       else {
+         if (Tcl_ExprLong(interp, s, &l) == TCL_ERROR)
+-          return interp->result;
++          return Tcl_GetStringResult(interp);
+         if ((int *) ii->var == &max_dcc) {
+           if (l < max_dcc)
+             return "you can't DECREASE max-dcc";
+@@ -640,7 +640,7 @@
+   code = Tcl_Eval(interp, script);
+   if (code != TCL_OK) {
+     putlog(LOG_MISC, "*", "Tcl error in script for '%s':", whatzit);
+-    putlog(LOG_MISC, "*", "%s", interp->result);
++    putlog(LOG_MISC, "*", "%s", Tcl_GetStringResult(interp));
+   }
+ }
+ 
+--- src/tcldcc.c.orig	2013-05-14 09:40:00.000000000 +0200
++++ src/tcldcc.c	2013-05-14 09:41:07.000000000 +0200
+@@ -178,11 +178,11 @@
+     else {
+       Tcl_SetVar(irp, "chan", argv[2], 0);
+       if (Tcl_VarEval(irp, "assoc ", "$chan", NULL) != TCL_OK ||
+-          !interp->result[0]) {
++          !Tcl_GetStringResult(interp)[0]) {
+         Tcl_AppendResult(irp, "channel name is invalid", NULL);
+         return TCL_ERROR;
+       }
+-      chan = atoi(interp->result);
++      Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &chan);
+     }
+   } else
+     chan = atoi(argv[2]);
+@@ -622,11 +622,11 @@
+     if ((argv[1][0] < '0') || (argv[1][0] > '9')) {
+       Tcl_SetVar(interp, "chan", argv[1], 0);
+       if ((Tcl_VarEval(interp, "assoc ", "$chan", NULL) != TCL_OK) ||
+-          !interp->result[0]) {
++          !Tcl_GetStringResult(interp)[0]) {
+         Tcl_AppendResult(irp, "channel name is invalid", NULL);
+         return TCL_ERROR;
+       }
+-      chan = atoi(interp->result);
++      Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &chan);
+     } else
+       chan = atoi(argv[1]);
+     if ((chan < 0) || (chan > 199999)) {
+--- src/tclhash.c.orig	2013-05-14 09:41:32.000000000 +0200
++++ src/tclhash.c	2013-05-14 09:45:25.000000000 +0200
+@@ -643,14 +643,14 @@
+   x = Tcl_VarEval(interp, proc, param, NULL);
+   Context;
+   if (x == TCL_ERROR) {
+-    if (strlen(interp->result) > 400)
+-      interp->result[400] = 0;
+-    putlog(LOG_MISC, "*", "Tcl error [%s]: %s", proc, interp->result);
++    putlog(LOG_MISC, "*", "Tcl error [%s]: %s", proc, Tcl_GetStringResult(interp));
+     return BIND_EXECUTED;
+   } else {
+-    if (!strcmp(interp->result, "break"))
++    if (!strcmp(Tcl_GetStringResult(interp), "break"))
+       return BIND_EXEC_BRK;
+-    return (atoi(interp->result) > 0) ? BIND_EXEC_LOG : BIND_EXECUTED;
++    int ret;
++    Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &ret);
++    return (ret > 0) ? BIND_EXEC_LOG : BIND_EXECUTED;
+   }
+ }
+ 
+@@ -702,7 +702,7 @@
+           Tcl_SetVar(interp, "lastbind", (char *) tm->mask, TCL_GLOBAL_ONLY);
+           x = trigger_bind(tc->func_name, param);
+           if (match_type & BIND_ALTER_ARGS) {
+-            if (interp->result == NULL || !interp->result[0])
++            if (Tcl_GetStringResult(interp) == NULL || !Tcl_GetStringResult(interp)[0])
+               return x;
+           } else if ((match_type & BIND_WANTRET) && x == BIND_EXEC_LOG)
+             return x;
+@@ -868,10 +868,10 @@
+                      MATCH_MASK | BIND_USE_ATTR | BIND_STACKABLE |
+                      BIND_WANTRET | BIND_ALTER_ARGS);
+   if (x == BIND_EXECUTED || x == BIND_EXEC_LOG) {
+-    if (interp->result == NULL || !interp->result[0])
++    if (Tcl_GetStringResult(interp) == NULL || !Tcl_GetStringResult(interp)[0])
+       return "";
+     else
+-      return interp->result;
++      return Tcl_GetStringResult(interp);
+   } else
+     return text;
+ }
+@@ -896,7 +896,7 @@
+   Tcl_SetVar(interp, "_n", (char *) s, 0);
+   x = Tcl_VarEval(interp, cmd, " $_n", NULL);
+   if (x == TCL_ERROR)
+-    putlog(LOG_MISC, "*", "error on listen: %s", interp->result);
++    putlog(LOG_MISC, "*", "error on listen: %s", Tcl_GetStringResult(interp));
+ }
+ 
+ void check_tcl_chjn(const char *bot, const char *nick, int chan,
+--- src/tclhash.h.orig	2013-05-14 09:38:03.000000000 +0200
++++ src/tclhash.h	2013-05-14 09:38:25.000000000 +0200
+@@ -47,7 +47,7 @@
+ 
+ #ifndef MAKING_MODS
+ 
+-inline void garbage_collect_tclhash(void);
++void garbage_collect_tclhash(void);
+ 
+ void init_bind(void);
+ void kill_bind(void);
+--- src/users.c.orig	2013-05-14 09:45:44.000000000 +0200
++++ src/users.c	2013-05-14 09:46:18.000000000 +0200
+@@ -469,7 +469,7 @@
+   Tcl_SetVar(interp, "user", u->handle, 0);
+   n = 0;
+   if (Tcl_VarEval(interp, "notes ", "$user", NULL) == TCL_OK)
+-    n = atoi(interp->result);
++    Tcl_GetIntFromObj(interp, Tcl_GetObjResult(interp), &n);  
+   li = get_user(&USERENTRY_LASTON, u);
+   if (!li || !li->laston)
+     strcpy(s1, "never");
