@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paq
-PORTVERSION=	20130419
+PORTVERSION=	20130513
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaq625.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaq627.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 .if ${ARCH} == "amd64" || ( ${ARCH} == "i386" && !empty(MACHINE_CPU:Msse2) )
 ZPAQFLAGS=	-Dunix -msse2
 .else
-ZPAQFLAGS=	-DNOJIT
+ZPAQFLAGS=	-Dunix -DNOJIT
 .endif
 
 .if defined(WITH_DEBUG)
