@@ -1,0 +1,11 @@
+Shiny makes it super simple for R users like you to turn analyses
+into interactive web applications that anyone can use. Let your
+users choose input parameters using friendly controls like sliders,
+drop-downs, and text fields. Easily incorporate any number of outputs
+like plots, tables, and summaries.
+
+No HTML or JavaScript knowledge is necessary. If you have some
+experience with R, youre just minutes away from combining the
+statistical power of R with the simplicity of a web page.
+
+WWW: http://www.rstudio.com/shiny/

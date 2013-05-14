@@ -8,6 +8,7 @@
     SUBDIR += R-cran-Rpad
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-scrapeR
+    SUBDIR += R-cran-shiny
     SUBDIR += WebMagick
     SUBDIR += abyssws
     SUBDIR += ach
