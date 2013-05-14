@@ -1,0 +1,15 @@
+--- src/tkgate/Makefile.in.orig	2013-05-14 15:31:59.000000000 +0200
++++ src/tkgate/Makefile.in	2013-05-14 15:32:21.000000000 +0200
+@@ -263,10 +263,10 @@
+ 	editstate.h igenerate.h script.h yybasic.h elements.h message.h simulate.h zoom.h \
+ 	error.h modsym.h text.h expr.h module.h tkgate.h functions.h net.h tkgate_config.h tkgate_misc.h
+ 
+-tkgate_LDFLAGS = @TKGATE_LPATH@ @X_LIBS@ @COMMON_LPATH@
++tkgate_LDFLAGS = @COMMON_LPATH@ @TKGATE_LPATH@ @X_LIBS@
+ tkgate_SOURCES = $(BASE_OBJS) main.c
+ #tkgate_LDADD=libtkgate.la
+-tkgate_LDADD = @TKGATE_LIB@ -lcommon
++tkgate_LDADD = -lcommon @TKGATE_LIB@
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
