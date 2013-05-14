@@ -5,6 +5,10 @@
 # $FreeBSD$
 #
 
+# TODO
+# - UIDs/GIDs
+# - DOCs
+# 
 PORTNAME=	logstash
 PORTVERSION=	1.1.12
 CATEGORIES=	sysutils java
