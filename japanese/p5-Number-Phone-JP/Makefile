@@ -1,18 +1,18 @@
-# New ports collection makefile for:	ja-p5-Number-Phone-JP
-# Date created:				2005-11-24
-# Whom:					n-shigemura@ensure.jp
-#
+# Created by: n-shigemura@ensure.jp
 # $FreeBSD$
-#
 
 PORTNAME=	Number-Phone-JP
-PORTVERSION=	0.12
+PORTVERSION=	0.20130401
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:TANIGUCHI
 PKGNAMEPREFIX=	ja-p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to validate Japanese phone numbers
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
