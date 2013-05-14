@@ -1,4 +1,4 @@
---- Makefile.orig	Tue May  6 15:00:40 2003
+--- Makefile	Tue May  6 15:00:40 2003
 +++ Makefile	Tue Dec  5 16:44:03 2006
 @@ -1,4 +1,4 @@
 -include Make.include
@@ -6,26 +6,12 @@
  
  DISTFILES=\
  add-xscreensaver \
-@@ -21,18 +21,17 @@
+@@ -21,6 +21,6 @@
  win32/
  
- all:	libgfx/src/libgfx.a
+-all:	libgfx/src/libgfx.a
 -	cd src && make
++all:
 +	cd src && ${MAKE}
  
  libgfx/src/libgfx.a:
--	gunzip -c libgfx-1.0.1.tar.gz | tar x
--	cd libgfx && ./configure && cd src && make
-+	cd libgfx && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} && cd src && ${MAKE}
- 
- install: all
- 	sh ./installit $(DESTDIR)
- 
- clean:
--	make -C src clean
--	make -C win32 clean
-+	${MAKE} -C src clean
-+	${MAKE} -C win32 clean
- 
- dist:
- 	rm -rf fireflies-$(VERSION)
