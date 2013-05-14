@@ -29,8 +29,8 @@
 +namespace content {
 +namespace {
 +// The time periods, in milliseconds, between successive polls of the wifi data.
-+const int kDefaultPollingInterval = 120000;  // 2 mins
-+const int kNoChangePollingInterval = 300000;  // 5 mins
++const int kDefaultPollingInterval = 10000;  // 10s
++const int kNoChangePollingInterval = 120000;  // 2 mins
 +const int kTwoNoChangePollingInterval = 600000;  // 10 mins
 +const int kNoWifiPollingIntervalMilliseconds = 20 * 1000; // 20s
 +

@@ -3,8 +3,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	25.0.1364.172
-PORTREVISION=	1
+DISTVERSION=	27.0.1453.81
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -34,8 +33,8 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
 		cups:${PORTSDIR}/print/cups-client \
 		event-1:${PORTSDIR}/devel/libevent \
-		vpx:${PORTSDIR}/multimedia/libvpx \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
+		speechd:${PORTSDIR}/accessibility/speech-dispatcher \
 		pci:${PORTSDIR}/devel/libpci
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
@@ -63,10 +62,12 @@ GYP_DEFINES+=	use_cups=1 \
 		use_system_ffmpeg=0 \
 		use_system_libusb=1 \
 		use_system_libevent=1 \
-		use_system_libvpx=1 \
+		use_system_libvpx=0 \
+		linux_breakpad=0 \
 		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
+		linux_link_libspeechd=1 \
 		clang_use_chrome_plugins=0 \
 		disable_nacl=1 \
 		enable_webrtc=0 \
@@ -149,7 +150,7 @@ pre-everything::
 .if ${PORT_OPTIONS:MDEBUG}
 	@${ECHO_MSG} "and lots of free diskspace (~ 8.5GB)."
 .else
-	@${ECHO_MSG} "and a fair amount of free diskspace (~ 2.2GB)."
+	@${ECHO_MSG} "and a fair amount of free diskspace (~ 2.4GB)."
 .endif
 	@${ECHO_MSG}
 
@@ -164,6 +165,17 @@ post-patch:
 		${WRKSRC}/v8/build/common.gypi
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
 		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
+	@${REINPLACE_CMD} -e "s|is_linux|(is_linux or is_bsd)|" \
+		${WRKSRC}/chrome/browser/browser_resources.grd \
+		${WRKSRC}/chrome/app/theme/theme_resources.grd \
+		${WRKSRC}/chrome/browser/resources/task_manager/defines.js \
+		${WRKSRC}/tools/grit/grit/xtb_reader_unittest.py \
+		${WRKSRC}/ui/base/strings/app_locale_settings.grd \
+		${WRKSRC}/ui/base/strings/app_locale_settings_bn.xtb \
+		${WRKSRC}/ui/base/strings/app_locale_settings_ja.xtb \
+		${WRKSRC}/ui/base/strings/app_locale_settings_ko.xtb \
+		${WRKSRC}/ui/base/strings/app_locale_settings_ml.xtb \
+		${WRKSRC}/ui/base/strings/app_locale_settings_th.xtb
 
 do-configure:
 	cd ${WRKSRC} && \
@@ -187,9 +199,6 @@ do-install:
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
 
 post-install:
-	@${ECHO_MSG} "========================================================"
-	@${ECHO_MSG} "For best performance please enable shared memory support"
-	@${ECHO_MSG} "in chromium by setting kern.ipc.shm_allow_removed=1"
-	@${ECHO_MSG} "========================================================"
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
