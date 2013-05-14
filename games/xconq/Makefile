@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-Wno-deprecated-writable-strings
 CONFIGURE_ARGS=	--enable-alternate-scoresdir=${SCOREDIR} \
 		--enable-alternate-gameuser=root \
 		--enable-alternate-gamegroup=games

@@ -1,5 +1,23 @@
---- tcltk/tkmap.c.orig
-+++ tcltk/tkmap.c
+--- tcltk/tkmap.c.orig	2005-03-12 04:12:22.000000000 +0100
++++ tcltk/tkmap.c	2013-05-14 12:50:05.000000000 +0200
+@@ -436,7 +436,7 @@
+ 	    fraction = 0;
+ 	    fraction2 = 1;
+ 	    printf("map xview %g %g\n", fraction, fraction2);
+-	    sprintf(interp->result, "%g %g", fraction, fraction2);
++        Tcl_SetResult(interp, "0 1", TCL_STATIC);
+ 	} else {
+ 	    type = Tk_GetScrollInfo(interp, argc, argv, &fraction, &count);
+ 	    switch (type) {
+@@ -466,7 +466,7 @@
+ 	    fraction = 0;
+ 	    fraction2 = 1;
+ 	    printf("map yview %g %g\n", fraction, fraction2);
+-	    sprintf(interp->result, "%g %g", fraction, fraction2);
++        Tcl_SetResult(interp, "0 1", TCL_STATIC);
+ 	} else {
+ 	    type = Tk_GetScrollInfo(interp, argc, argv, &fraction, &count);
+ 	    switch (type) {
 @@ -976,8 +976,11 @@
      DGprintf("Pixel %d,%d -> unit %s\n", sx, sy, unit_desig(*unitp));
  #endif
