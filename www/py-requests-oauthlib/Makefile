@@ -3,7 +3,7 @@
 
 PORTNAME=	requests-oauthlib
 PORTVERSION=	0.3.1
-CATEGORIES=	net python
+CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
