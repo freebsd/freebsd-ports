@@ -296,6 +296,7 @@ include/fox-%%MAJORVER%%/FXTabBar.h
 include/fox-%%MAJORVER%%/FXTabBook.h
 include/fox-%%MAJORVER%%/FXTabItem.h
 include/fox-%%MAJORVER%%/FXTable.h
+include/fox-%%MAJORVER%%/FXTaskGroup.h
 include/fox-%%MAJORVER%%/FXText.h
 include/fox-%%MAJORVER%%/FXTextCodec.h
 include/fox-%%MAJORVER%%/FXTextField.h
