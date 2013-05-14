@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	slim
-PORTVERSION=	1.3.4
-PORTREVISION=	5
+PORTVERSION=	1.3.5
 CATEGORIES=	x11
-MASTER_SITES=	http://slim.berlios.de/releases/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
+		SF/slim.berlios
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Graphical login manager for X11, derived from Login.app
@@ -44,22 +44,17 @@ PLIST_SUB+=	PAM="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/${PORTNAME}.conf
-	@${REINPLACE_CMD} -e 's|"/etc"|"${PREFIX}/etc"|' \
-	    -e 's|slim.conf|slim.conf.sample|' \
-	    -e 's|set(MANDIR "$${CMAKE_INSTALL_PREFIX}/share/man")|set(MANDIR "${PREFIX}/man")|' \
-	    ${WRKSRC}/CMakeLists.txt
-	@${MV} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
-	@${REINPLACE_CMD} -e 's|std::snprintf|snprintf|' ${WRKSRC}/Ck.cpp
-
-# Fix a previous bad install - Ok to remove at version 1.3.5 or later
-pre-install:
-	@${RM} -f ${LOCALBASE}/share/man/man1/slim.1
-	@${RMDIR} ${LOCALBASE}/share/man/man1 2>/dev/null || true
-	@${RMDIR} ${LOCALBASE}/share/man 2>/dev/null || true
+	@${CP} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/slim.conf.sample
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		-e 's|/etc|${PREFIX}/etc|' \
+		-e 's|share/man|man|' \
+		-e 's|slim.conf|slim.conf.sample|' \
+		-e '/systemd/d' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 	@if [ ! -f ${PREFIX}/etc/slim.conf ]; then \
 		${CP} ${PREFIX}/etc/slim.conf.sample ${PREFIX}/etc/slim.conf ; \
 	fi

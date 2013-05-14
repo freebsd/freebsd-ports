@@ -1,5 +1,5 @@
---- themes/default/slim.theme.orig	2012-02-21 15:59:52.000000000 -0800
-+++ themes/default/slim.theme	2012-06-02 23:23:10.000000000 -0700
+--- ./themes/default/slim.theme.orig	2012-12-31 07:03:42.000000000 -0600
++++ ./themes/default/slim.theme	2013-03-23 14:10:35.000000000 -0500
 @@ -1,9 +1,10 @@
  # text04 theme for SLiM
  # by Johannes Winkelmann
