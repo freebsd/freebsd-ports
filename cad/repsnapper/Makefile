@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	repsnapper
-PORTVERSION=	2.0.0b01
-PORTREVISION=	1
+PORTVERSION=	2.2.0a4
 CATEGORIES=	cad
-MASTER_SITES=	http://nodeload.github.com/timschmidt/repsnapper/tarball/
+MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	#
 DIST_SUBDIR=	${PORTNAME}
@@ -55,7 +54,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/timschmidt-${PORTNAME}-39af569
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
