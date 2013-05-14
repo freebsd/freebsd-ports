@@ -3,7 +3,7 @@
 
 PORTNAME=	wget
 DISTVERSION=	1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
@@ -18,20 +18,12 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-# Wget can handle the absence of pcre, but we hook an unconditional dependency
-# to pcre because if it is present in the system during compile time, then
-# wget will pick it and link with it. Thus the wget executable will later
-# depend on the presence of the pcre library. Wget does not support to
-# explicitly ignore the pcre library if it is present in the system and there
-# is no elegant way to do that.
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=GNUTLS OPENSSL
-OPTIONS_DEFINE=	IPV6 NLS IDN
+OPTIONS_DEFINE=	IPV6 NLS IDN PCRE
 OPTIONS_DEFAULT=OPENSSL IDN
+
+PCRE_DESC=	Support Perl regular expressions in addition to POSIX
 
 .include <bsd.port.options.mk>
 
@@ -71,6 +63,15 @@ LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--enable-iri --with-libidn=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-iri
+.endif
+
+.if ${PORT_OPTIONS:MPCRE}
+# Wget will pick pcre automatically and link with it if it is present.
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 .endif
 
 MAN1=		wget.1
