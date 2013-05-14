@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	7.5.230
+PORTVERSION=	7.5.231
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
