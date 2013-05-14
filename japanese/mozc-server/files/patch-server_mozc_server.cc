@@ -1,10 +1,10 @@
---- server/mozc_server.cc.orig	2013-04-21 03:48:44.841269792 +0900
-+++ server/mozc_server.cc	2013-04-21 04:14:37.821269328 +0900
+--- server/mozc_server.cc.orig	2013-03-29 13:33:26.000000000 +0900
++++ server/mozc_server.cc	2013-04-27 15:18:29.000000000 +0900
 @@ -32,6 +32,9 @@
  #ifdef OS_WIN
  #include <windows.h>
  #endif
-+#ifdef __FreeBSD__
++#ifdef OS_FREEBSD
 +#include <signal.h>
 +#endif
  
@@ -14,7 +14,7 @@
  mozc::SessionServer *g_session_server = NULL;
  }
  
-+#ifdef __FreeBSD__
++#ifdef OS_FREEBSD
 +static void sig_func(int num)
 +{
 +  VLOG(1) << "signal " << num << " recieved.";
@@ -38,7 +38,7 @@
        return -1;
      }
  
-+#ifdef __FreeBSD__
++#ifdef OS_FREEBSD
 +    ::signal(SIGINT, sig_func);
 +    ::signal(SIGHUP, sig_func);
 +    ::signal(SIGTERM, sig_func);

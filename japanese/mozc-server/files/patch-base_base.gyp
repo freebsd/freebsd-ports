@@ -1,27 +1,27 @@
---- base/base.gyp.orig	2013-04-21 03:48:45.178270244 +0900
-+++ base/base.gyp	2013-04-21 04:16:38.943269499 +0900
+--- base/base.gyp.orig	2013-03-29 13:33:43.000000000 +0900
++++ base/base.gyp	2013-04-23 23:49:53.000000000 +0900
 @@ -265,20 +265,20 @@
          ['OS=="linux" and target_platform!="Android" and '
           'not (target_platform=="NaCl" and _toolset=="target")', {
            'cflags': [
 -            '<!@(<(pkg_config_command) --cflags-only-other openssl)',
-+            '%%OPENSSL_CFLAGS%%',
++            '<(openssl_cflags)',
            ],
            'defines': [
              'HAVE_OPENSSL=1',
            ],
            'include_dirs': [
 -            '<!@(<(pkg_config_command) --cflags-only-I openssl)',
-+            '-I%%OPENSSLINC%%/openssl',
++            '<(openssl_inc)',
            ],
            'link_settings': {
              'ldflags': [
 -              '<!@(<(pkg_config_command) --libs-only-L openssl)',
-+              '%%OPENSSL_LDFLAGS%% -L%%OPENSSLLIB%%',
++              '<(openssl_ldflags)',
              ],
              'libraries': [
 -              '<!@(<(pkg_config_command) --libs-only-l openssl)',
-+              '-lssl',
++              '<(openssl_lib)',
              ],
            },
          }],

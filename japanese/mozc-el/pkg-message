@@ -1,7 +1,7 @@
+
 To activate mozc, you will need to add the following lines to
 your ~/.emacs:
 
-(require 'mozc)
 (set-language-environment "Japanese")
 (setq default-input-method "japanese-mozc")
 (global-set-key (kbd "C-o") 'toggle-input-method)
