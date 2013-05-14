@@ -3,6 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	5.1.20130419
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -19,6 +20,7 @@ BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man
 FETCH_ARGS=	-Ap
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 USE_XZ=		yes
 INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
