@@ -11,6 +11,3 @@ etc/slim.conf.sample
 %%PAM%%@unexec if cmp -s %D/etc/pam.d/slim.default %D/etc/pam.d/slim; then rm -f %D/etc/pam.d/slim ; fi
 %%PAM%%etc/pam.d/slim.default
 %%PAM%%@exec if [ ! -f %D/etc/pam.d/slim ] ; then cp -p %D/%F %B/slim; fi
-@exec /bin/rm -f %D/share/man/man1/slim.1
-@exec rmdir "%D/share/man/man1" 2>/dev/null || true
-@exec rmdir "%D/share/man" 2>/dev/null || true

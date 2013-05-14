@@ -1,11 +1,11 @@
---- Ck.cpp.orig	2012-02-22 03:59:52.000000000 +0400
-+++ Ck.cpp	2012-07-19 00:03:34.000000000 +0400
+--- ./Ck.cpp.orig	2012-12-31 07:03:42.000000000 -0600
++++ ./Ck.cpp	2013-03-23 14:10:35.000000000 -0500
 @@ -91,7 +91,7 @@
  
-     vt = *((long *)return_value);
+ 	vt = *((long *)return_value);
  
--    std::snprintf(device, 32, "/dev/tty%ld", vt);
-+    std::snprintf(device, 32, "/dev/ttyv%ld", vt - 1);
+-	std::snprintf(device, 32, "/dev/tty%ld", vt);
++	snprintf(device, 32, "/dev/ttyv%ld", vt - 1);
  
-     if(return_value)
-       XFree(return_value);
+ 	if(return_value)
+ 	  XFree(return_value);
