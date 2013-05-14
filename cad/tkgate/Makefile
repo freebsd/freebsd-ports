@@ -15,7 +15,6 @@ LICENSE=	GPLv2 # (or later)
 GNU_CONFIGURE=	yes
 USES=		iconv
 USE_TK=		84+
-INVALID_TK_VER=	86
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		gmac.1 tkgate.1 verga.1
