@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk IRC client for the X Window System
 
-USE_TK=		84
+USE_TK=		84+
 USE_XORG=	xt
 
 GNU_CONFIGURE=	yes
