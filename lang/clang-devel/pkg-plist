@@ -420,6 +420,8 @@ lib/clang/%%CLANG_RELEASE%%/include/fma4intrin.h
 lib/clang/%%CLANG_RELEASE%%/include/fmaintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/immintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/lzcntintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/mm3dnow.h
+lib/clang/%%CLANG_RELEASE%%/include/mm_malloc.h
 lib/clang/%%CLANG_RELEASE%%/include/mmintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/module.map
 lib/clang/%%CLANG_RELEASE%%/include/nmmintrin.h
