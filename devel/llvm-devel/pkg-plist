@@ -3,6 +3,7 @@
 %%DATADIR%%/cmake/CheckAtomic.cmake
 %%DATADIR%%/cmake/ChooseMSVCCRT.cmake
 %%DATADIR%%/cmake/GetHostTriple.cmake
+%%DATADIR%%/cmake/GetSVN.cmake
 %%DATADIR%%/cmake/HandleLLVMOptions.cmake
 %%DATADIR%%/cmake/LLVM-Config.cmake
 %%DATADIR%%/cmake/LLVMConfig.cmake
@@ -90,7 +91,6 @@ include/llvm/ADT/ImmutableIntervalMap.h
 include/llvm/ADT/ImmutableList.h
 include/llvm/ADT/ImmutableMap.h
 include/llvm/ADT/ImmutableSet.h
-include/llvm/ADT/InMemoryStruct.h
 include/llvm/ADT/IndexedMap.h
 include/llvm/ADT/IntEqClasses.h
 include/llvm/ADT/IntervalMap.h
@@ -300,6 +300,7 @@ include/llvm/Config/llvm-config.h
 include/llvm/DIBuilder.h
 include/llvm/DebugInfo.h
 include/llvm/DebugInfo/DIContext.h
+include/llvm/DebugInfo/DWARFFormValue.h
 include/llvm/ExecutionEngine/ExecutionEngine.h
 include/llvm/ExecutionEngine/GenericValue.h
 include/llvm/ExecutionEngine/Interpreter.h
@@ -309,11 +310,13 @@ include/llvm/ExecutionEngine/JITMemoryManager.h
 include/llvm/ExecutionEngine/MCJIT.h
 include/llvm/ExecutionEngine/OProfileWrapper.h
 include/llvm/ExecutionEngine/ObjectBuffer.h
+include/llvm/ExecutionEngine/ObjectCache.h
 include/llvm/ExecutionEngine/ObjectImage.h
 include/llvm/ExecutionEngine/RuntimeDyld.h
 include/llvm/ExecutionEngine/SectionMemoryManager.h
 include/llvm/GVMaterializer.h
 include/llvm/IR/Argument.h
+include/llvm/IR/AsmWriter.h
 include/llvm/IR/Attributes.h
 include/llvm/IR/BasicBlock.h
 include/llvm/IR/CallingConv.h
@@ -357,6 +360,7 @@ include/llvm/IR/Use.h
 include/llvm/IR/User.h
 include/llvm/IR/Value.h
 include/llvm/IR/ValueSymbolTable.h
+include/llvm/IRReader/IRReader.h
 include/llvm/InitializePasses.h
 include/llvm/InstVisitor.h
 include/llvm/LinkAllIR.h
@@ -426,7 +430,6 @@ include/llvm/Object/ELF.h
 include/llvm/Object/Error.h
 include/llvm/Object/MachO.h
 include/llvm/Object/MachOFormat.h
-include/llvm/Object/MachOObject.h
 include/llvm/Object/ObjectFile.h
 include/llvm/Object/RelocVisitor.h
 include/llvm/Option/Arg.h
@@ -448,6 +451,7 @@ include/llvm/Support/ArrayRecycler.h
 include/llvm/Support/Atomic.h
 include/llvm/Support/BlockFrequency.h
 include/llvm/Support/BranchProbability.h
+include/llvm/Support/CBindingWrapping.h
 include/llvm/Support/CFG.h
 include/llvm/Support/COFF.h
 include/llvm/Support/CallSite.h
@@ -456,6 +460,7 @@ include/llvm/Support/Casting.h
 include/llvm/Support/CodeGen.h
 include/llvm/Support/CommandLine.h
 include/llvm/Support/Compiler.h
+include/llvm/Support/Compression.h
 include/llvm/Support/ConstantFolder.h
 include/llvm/Support/ConstantRange.h
 include/llvm/Support/ConvertUTF.h
@@ -485,7 +490,6 @@ include/llvm/Support/GCOV.h
 include/llvm/Support/GetElementPtrTypeIterator.h
 include/llvm/Support/GraphWriter.h
 include/llvm/Support/Host.h
-include/llvm/Support/IRReader.h
 include/llvm/Support/IncludeFile.h
 include/llvm/Support/InstIterator.h
 include/llvm/Support/IntegersSubset.h
@@ -541,6 +545,7 @@ include/llvm/Support/Timer.h
 include/llvm/Support/ToolOutputFile.h
 include/llvm/Support/Valgrind.h
 include/llvm/Support/ValueHandle.h
+include/llvm/Support/Watchdog.h
 include/llvm/Support/Win64EH.h
 include/llvm/Support/YAMLParser.h
 include/llvm/Support/YAMLTraits.h
@@ -633,6 +638,7 @@ lib/libLLVMHexagonAsmPrinter.a
 lib/libLLVMHexagonCodeGen.a
 lib/libLLVMHexagonDesc.a
 lib/libLLVMHexagonInfo.a
+lib/libLLVMIRReader.a
 lib/libLLVMInstCombine.a
 lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
@@ -665,6 +671,7 @@ lib/libLLVMNVPTXInfo.a
 lib/libLLVMObjCARCOpts.a
 lib/libLLVMObject.a
 lib/libLLVMOption.a
+lib/libLLVMPowerPCAsmParser.a
 lib/libLLVMPowerPCAsmPrinter.a
 lib/libLLVMPowerPCCodeGen.a
 lib/libLLVMPowerPCDesc.a
@@ -676,6 +683,11 @@ lib/libLLVMSparcCodeGen.a
 lib/libLLVMSparcDesc.a
 lib/libLLVMSparcInfo.a
 lib/libLLVMSupport.a
+lib/libLLVMSystemZAsmParser.a
+lib/libLLVMSystemZAsmPrinter.a
+lib/libLLVMSystemZCodeGen.a
+lib/libLLVMSystemZDesc.a
+lib/libLLVMSystemZInfo.a
 lib/libLLVMTableGen.a
 lib/libLLVMTarget.a
 lib/libLLVMTransformUtils.a
@@ -729,6 +741,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/ExceptionHandling.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/ExtendingLLVM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ExtendingLLVM.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/Extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Extensions.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/FileCheck.html
@@ -786,6 +800,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/MakefileGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/MarkedUpDisassembly.html
 %%PORTDOCS%%%%DOCSDIR%%/html/MarkedUpDisassembly.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/NVPTXUsage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/NVPTXUsage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/OCamlLangImpl1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/OCamlLangImpl1.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/OCamlLangImpl2.html
@@ -814,6 +830,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/Projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes_34.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes_34.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/SegmentedStacks.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SegmentedStacks.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/SourceLevelDebugging.html
@@ -888,8 +906,12 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-prof.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-ranlib.html
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-ranlib.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/llvm-readobj.html
+%%PORTDOCS%%%%DOCSDIR%%/html/llvm-readobj.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-stress.html
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-stress.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/llvm-symbolizer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/llvm-symbolizer.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-theme.css
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm.css
 %%PORTDOCS%%%%DOCSDIR%%/html/logo.png
@@ -923,6 +945,7 @@ lib/libprofile_rt.so
 @dirrm include/llvm/Object
 @dirrm include/llvm/MC/MCParser
 @dirrm include/llvm/MC
+@dirrm include/llvm/IRReader
 @dirrm include/llvm/IR
 @dirrm include/llvm/ExecutionEngine
 @dirrm include/llvm/DebugInfo
