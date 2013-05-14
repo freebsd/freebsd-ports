@@ -1,0 +1,43 @@
+--- src/canvas_sdl.h	2003-04-26 14:01:42.000000000 -0400
++++ src/canvas_sdl.h	2013-05-13 14:28:04.000000000 -0400
+@@ -10,11 +10,11 @@
+ protected:
+     SDL_Surface *surface;
+-    char *wm_title;
+-    char *wm_class;
++    const char *wm_title;
++    const char *wm_class;
+ 
+     // create the window (either SDL or GLX)
+     virtual int create_window();
+ public:
+-    CanvasSDL(Scene *s, bool full_screen, int mspf, char *wm_title, char *wm_class);
++    CanvasSDL(Scene *s, bool full_screen, int mspf, const char *wm_title, const char *wm_class);
+     virtual ~CanvasSDL() {}
+ 
+--- src/canvas_sdl.cc	2004-02-05 16:58:24.000000000 -0500
++++ src/canvas_sdl.cc	2013-05-13 14:27:03.000000000 -0400
+@@ -10,5 +10,5 @@
+ using namespace std;
+ 
+-CanvasSDL::CanvasSDL(Scene *s, bool fs, int m, char *t, char *c)
++CanvasSDL::CanvasSDL(Scene *s, bool fs, int m, const char *t, const char *c)
+     : CanvasBase(s, fs, m), wm_title(t), wm_class(c)
+ {
+--- src/vroot.h	2005-12-08 22:07:30.000000000 -0500
++++ src/vroot.h	2013-05-13 14:30:56.000000000 -0400
+@@ -82,4 +82,5 @@
+ #include <X11/Xatom.h>
+ #include <X11/Xlib.h>
++#include <stdio.h>	/* For sscanf */
+ 
+ static Window
+@@ -96,7 +97,6 @@
+ 		Display *dpy = DisplayOfScreen(screen);
+ 		Atom __SWM_VROOT = None;
+-		int i;
+ 		Window rootReturn, parentReturn, *children;
+-		unsigned int numChildren;
++		unsigned int i, numChildren;
+ 
+     /* first check for a hex or decimal window ID in the environment */

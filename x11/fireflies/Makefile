@@ -3,18 +3,19 @@
 
 PORTNAME=	fireflies
 PORTVERSION=	2.07
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Extension of xscreensaver
 
-CONFLICTS=	png-[0-9]*
+LIB_DEPENDS=	gfx:${PORTSDIR}/graphics/libgfx
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GL=		yes
+EXTRACT_AFTER_ARGS=--exclude '${DISTNAME}/libgfx*'
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/GL
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -25,11 +26,5 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 MAKE_ARGS=	CONFIGURE_ENV=${CONFIGURE_ENV:Q} \
 		CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT:Q} \
 		CONFIGURE_ARGS=${CONFIGURE_ARGS:Q}
-
-post-extract:
-	@(cd ${WRKSRC};  ${TAR} zxpf libgfx-1.0.1.tar.gz)
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|fltk|ignored-&|' ${WRKSRC}/libgfx/configure
 
 .include <bsd.port.mk>
