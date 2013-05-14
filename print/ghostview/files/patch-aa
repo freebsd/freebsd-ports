@@ -1,6 +1,15 @@
 --- misc.c.orig	Sat Jul 24 03:29:12 1993
 +++ misc.c	Wed Jun  5 22:41:39 2002
-@@ -60,8 +60,9 @@
+@@ -24,6 +24,8 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++
+ #ifndef SEEK_SET
+ #define SEEK_SET 0
+ #endif
+@@ -60,8 +62,9 @@
  #ifdef VMS
  #include <perror.h>
  #else
