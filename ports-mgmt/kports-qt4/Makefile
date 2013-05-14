@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	ports-mgmt kde
 MASTER_SITES=	SF
 
-MAINTAINER=	kports@soulrebel.in-berlin.de
+MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Qt4-Version of your favorite frontend to the Ports
 
 RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit \
@@ -29,6 +29,10 @@ OPTIONS_DEFINE=	DEBUG OXYGEN KDEBASE
 OPTIONS_DEFAULT=	OXYGEN KDEBASE
 OXYGEN_DESC=	Pull in Oxygen icons (recommended)
 KDEBASE_DESC=	Pull in kdebase-runtime for kdesu
+
+.if defined(WITH_PKGNG)
+IGNORE=		only works with traditional pkg-tools
+.endif
 
 .include <bsd.port.options.mk>
 
