@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Component-IKC
-PORTVERSION=	0.2303
+PORTVERSION=	0.2304
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,14 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	POE Inter-Kernel Communication
 
-BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-POE-API-Peek>=0:${PORTSDIR}/devel/p5-POE-API-Peek \
 		p5-POE-Component-Daemon>=0:${PORTSDIR}/devel/p5-POE-Component-Daemon \
 		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable
-RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-POE-API-Peek>=0:${PORTSDIR}/devel/p5-POE-API-Peek \
-		p5-POE-Component-Daemon>=0:${PORTSDIR}/devel/p5-POE-Component-Daemon \
-		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
