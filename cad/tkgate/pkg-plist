@@ -957,6 +957,8 @@ bin/gmac
 %%DATADIR%%/images/xor.b
 %%DATADIR%%/images/zoom_in.gif
 %%DATADIR%%/images/zoom_out.gif
+%%DATADIR%%/libexec/tkgate
+%%DATADIR%%/libexec/verga
 %%DATADIR%%/license.txt
 %%DATADIR%%/locale/ca/messages
 %%DATADIR%%/locale/ca/messages.bak
