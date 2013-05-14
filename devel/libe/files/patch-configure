@@ -1,0 +1,11 @@
+--- configure.orig	2013-04-02 21:37:25.502367016 +0000
++++ configure	2013-04-02 21:37:55.951368743 +0000
+@@ -19251,7 +19251,7 @@
+   esac
+ 
+ 
+-if test x"${target_cpu}" != "xx86_64"; then
++if test x"${target_cpu}" != "xamd64"; then
+     as_fn_error $? "'this library requires a 64-bit x86 processor'" "$LINENO" 5
+ fi
+ 

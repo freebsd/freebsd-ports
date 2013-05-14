@@ -964,6 +964,7 @@
     SUBDIR += libds
     SUBDIR += libdsp
     SUBDIR += libdwarf
+    SUBDIR += libe
     SUBDIR += libedit
     SUBDIR += libee
     SUBDIR += libelf
