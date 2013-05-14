@@ -3,6 +3,7 @@
 
 PORTNAME=	gnulib
 PORTVERSION=	20120404
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
@@ -13,9 +14,7 @@ COMMENT=	GNU portability library
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
 USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
-
-BROKEN=		fail to build
+USE_PERL5=	yes
 
 PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
