@@ -44,9 +44,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		enblend.1 enfuse.1
 PLIST_FILES=	bin/enblend bin/enfuse
+PLIST_DIRS+=	%%DOCSDIR%%
 
 post-install:
-		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
