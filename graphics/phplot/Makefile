@@ -1,21 +1,18 @@
-# New ports collection makefile for:	phplot
-# Date created:         21 Oct 2001
-# Whom:                 yukinopo@livedoor.com
-#
+# Created by: yukinopo@livedoor.com
 # $FreeBSD$
 
 PORTNAME=	phplot
-PORTVERSION=	5.8.0
+PORTVERSION=	6.1.0
 CATEGORIES=	graphics www
 MASTER_SITES=	SF:source1 \
-		SF/${PORTNAME}/Manual/20101003:source2
+		SF/${PORTNAME}/Manual/20130511:source2
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
-		${PORTNAME}docs-20101003.zip:source2
+		${PORTNAME}docs-20130511.zip:source2
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP class for creating scientific and business charts
 
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
 USE_ZIP=	yes
 USE_PHP=	yes
@@ -27,17 +24,21 @@ PHPLOT_DIR=	${PREFIX}/include/php/phplot
 
 LIBS=		phplot.php rgb.inc.php
 
-OPTIONS=	FONTS "Install TrueType fonts" on
+OPTIONS_DEFINE=		FONTS
+OPTIONS_DEFAULT=	FONTS
+FONTS_DESC=		install TrueType fonts
 
-.if defined(WITH_FONTS)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFONTS}
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 .endif
 
 do-install:
 	@${MKDIR} ${PHPLOT_DIR}
 	@${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/,} ${PHPLOT_DIR}/
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKDIR}/phplotdocs && ${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
