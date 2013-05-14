@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Set-Object
-PORTVERSION=	1.29
+PORTVERSION=	1.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Set::Object.3 Set::Object::Weak.3
+MAN3=		Set::Changes.3 Set::Object.3 Set::Object::Weak.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes.pod README
