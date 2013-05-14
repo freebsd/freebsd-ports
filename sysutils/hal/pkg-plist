@@ -126,6 +126,5 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @unexec rm -rf /var/run/hald/hald-runner 2>/dev/null || true
 @unexec rmdir /var/run/hald 2>/dev/null || true
 @unexec rmdir /var/cache/hald 2>/dev/null || true
-@unexec rmdir /var/cache 2>/dev/null || true
 @unexec rmdir /var/lib/hal 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
