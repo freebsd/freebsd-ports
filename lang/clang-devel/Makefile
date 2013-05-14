@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	3.3.r${SVN_REV}
+PORTVERSION=	3.4.r${SVN_REV}
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -144,6 +144,7 @@ post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
 
 post-install:
+	@${LN} -sf clang ${PREFIX}/bin/clang-cpp
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 		${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
 		${WRKSRC}/tools/clang/tools/scan-build/scan-build \
@@ -176,6 +177,7 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/clang \
 			bin/clang++ \
 			bin/clang-check \
+			bin/clang-cpp \
 			bin/clang-tblgen \
 			bin/scan-build \
 			bin/scan-view \
