@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	ports-mgmt kde
 MASTER_SITES=	SF
 
-MAINTAINER=	kports@soulrebel.in-berlin.de
+MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	KDE3-Version of your favorite frontend to the Ports
 
 USE_BZIP2=	yes
@@ -27,6 +27,10 @@ KDESU4_DESC=	With KDE4 kdesu
 GKSU_DESC=	With gksu
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_PKGNG)
+IGNORE=		only works with traditional pkg-tools
+.endif
 
 .if ! ${PORT_OPTIONS:MKDESU} && ! ${PORT_OPTIONS:MKDESU4} && ! ${PORT_OPTIONS:MGKSU}
 PKGMESSAGE=	${FILESDIR}/pkg-message.nosu
