@@ -6,6 +6,7 @@
     SUBDIR += MT
     SUBDIR += R-cran-RgoogleMaps
     SUBDIR += R-cran-Rpad
+    SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-scrapeR
     SUBDIR += WebMagick
     SUBDIR += abyssws
