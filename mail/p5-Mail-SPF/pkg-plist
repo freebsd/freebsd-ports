@@ -1,4 +1,4 @@
-bin/spfquery
+%%SPFQUERY%%bin/spfquery%%SPFQUERY_SUFFIX%%
 sbin/spfd
 %%SITE_PERL%%/Mail/SPF.pm
 %%SITE_PERL%%/Mail/SPF/MacroString.pm
