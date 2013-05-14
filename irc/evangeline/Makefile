@@ -15,6 +15,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_TCL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+    		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
 
 PLIST_FILES=	bin/evangeline
 
