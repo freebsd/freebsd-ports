@@ -1,13 +1,16 @@
---- emacs/Makefile.in.orig	2010-08-11 16:30:55.000000000 +0900
-+++ emacs/Makefile.in	2010-10-16 19:53:21.000000000 +0900
-@@ -846,18 +846,6 @@
+--- emacs/Makefile.in.orig	2013-03-31 19:14:02.000000000 +0900
++++ emacs/Makefile.in	2013-05-13 22:11:19.000000000 +0900
+@@ -872,21 +872,6 @@
  
  clean-libtool:
  	-rm -rf .libs _libs
 -install-dist_uimel_lispDATA: $(dist_uimel_lisp_DATA)
 -	@$(NORMAL_INSTALL)
--	test -z "$(uimel_lispdir)" || $(MKDIR_P) "$(DESTDIR)$(uimel_lispdir)"
 -	@list='$(dist_uimel_lisp_DATA)'; test -n "$(uimel_lispdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(uimel_lispdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(uimel_lispdir)" || exit 1; \
+-	fi; \
 -	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 -	  echo "$$d$$p"; \

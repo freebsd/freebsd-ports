@@ -1,16 +1,12 @@
-# New ports collection makefile for:   uim-gtk3
-# Date created:        6 August 2011
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-gtk3
 
 COMMENT=	GTK+ 3.x modules of uim input method
 
 USE_GNOME=	gtk30
-LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
