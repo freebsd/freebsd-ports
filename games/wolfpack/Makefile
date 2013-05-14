@@ -1,17 +1,12 @@
-# New ports collection makefile for:    wolfpack
-# Date created:                         26 October 1999
-# Whom:                                 Daniel O'Connor <darius@dons.net.au>
-#
+# Created by: Daniel O'Connor <darius@dons.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.3.30
+PORTVERSION=	4.3.31
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	empserver/${DISTNAME}
 DISTNAME=	empire-${PORTVERSION}
-EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
