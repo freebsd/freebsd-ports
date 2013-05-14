@@ -28,12 +28,9 @@ EVERYTHING_SHOTGUN_PATH=	evry-shotgun
 EVERYTHING_WEBSEARCH_PATH=	evry-websearch
 
 .for M in ${MODULES}
-OPTIONS+=	${M:U:S,-,_,g} "Install ${M} module"
-. if !defined(${M:U:S,-,_,g}_OFF)
-OPTIONS+=	on
-. else
-OPTIONS+=	off
-. endif
+OPTIONS_DEFINE+=	${M:U:S,-,_,g}
+OPTIONS_DEFAULT+=	${M:U:S,-,_,g}
+${M:U:S,-,_,g}_DESC=	Install ${M} module
 .endfor
 
 .include <bsd.port.options.mk>
@@ -42,7 +39,7 @@ OPTIONS+=	off
 . if !defined(${M:U:S,-,_,g}_PATH)
 ${M:U:S,-,_,g}_PATH=	${M}
 . endif
-. if !defined(WITHOUT_${M:U:S,-,_,g})
+. if ${PORT_OPTIONS:M${M:U:S,-,_,g}}
 RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:U:S,-,_,g}_PATH}/${E17_ARCH}/module.so:${PORTSDIR}/x11-wm/e17-module-${M}
 . endif
 .endfor
