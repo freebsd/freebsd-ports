@@ -5,6 +5,55 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130307:
+  AFFECTS: users of textproc/elasticsearch
+  AUTHOR: tj@FreeBSD.org
+
+  textproc/elasticsearch has been updated to 0.20.5.  This update also 
+  changes the required JDK to OpenJDK 7 as there are known issues when
+  running on a Java 1.6 JDK.
+
+20130307:
+  AFFECTS: users of audio/liblastfm
+  AUTHOR: nivit@FreeBSD.org
+
+  The audio/liblastfm has been updated to 1.0.6. The shared library version
+  has changed from 0 to 1. Please rebuild all ports that depends on it:
+
+  If you use portmaster:
+        portmaster -r liblastfm
+  If you use portupgrade:
+        portupgrade -fr audio/liblastfm
+  If you use pkgng with binary packages:
+        pkg install -fR audio/liblastfm
+
+20130305:
+  AFFECTS: users of devel/py-setuptools (i.e you)
+  AUTHOR: rm@FreeBSD.org
+
+  devel/py-setuptools was replaced with devel/py-distribute. Please do
+  the following according to package manager used. py-setuptools port
+  will be removed shortly.
+
+  # portmaster -o devel/py-distribute devel/py-setuptools
+    or
+  # portupgrade -fo devel/py-distribute devel/py-setuptools
+    or
+  # pkg set -o devel/py-setuptools:devel/py-distribute
+
+20130226:
+  AFFECTS: users of textproc/apache-solr
+  AUTHOR: vanilla@FreeBSD.org
+
+  textproc/apache-solr has beed repocopied to textproc/apache-solr3.
+  If you need to continue with the old stable version please run
+
+  # portmaster -o textproc/apache-solr3 textproc/apache-solr
+    or
+  # portupgrade -fo textproc/apache-solr3 textproc/apache-solr
+    or
+  # pkg set -o textproc/apache-solr:textproc/apache-solr3
+
 20130218:
   AFFECTS: users of net/samba4-devel
   AUTHOR: timur@FreeBSD.org
