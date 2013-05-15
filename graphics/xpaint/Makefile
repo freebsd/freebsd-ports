@@ -3,6 +3,7 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.9.9.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -17,10 +18,13 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jbig:${PORTSDIR}/graphics/jbigkit \
 		Xaw3dxft:${PORTSDIR}/x11-toolkits/libxaw3dxft
 
+RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils
+
 USE_BZIP2=	yes
 USE_XORG=	xft xmu xpm
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+USE_GHOSTSCRIPT_RUN=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
