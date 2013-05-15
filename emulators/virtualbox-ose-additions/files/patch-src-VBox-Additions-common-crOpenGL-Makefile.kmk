@@ -1,0 +1,40 @@
+--- src/VBox/Additions/common/crOpenGL/Makefile.kmk.orig	2013-04-12 12:35:06.000000000 +0200
++++ src/VBox/Additions/common/crOpenGL/Makefile.kmk	2013-05-02 23:33:26.523212251 +0200
+@@ -42,7 +42,7 @@
+ 
+ if1of ($(KBUILD_TARGET), linux solaris freebsd)
+  #VBoxOGL_DRI = 1
+- ifn1of ($(KBUILD_TARGET),solaris freebsd)   # No DRI on Solaris yet
++ ifn1of ($(KBUILD_TARGET),solaris)   # No DRI on Solaris yet
+   VBoxOGL_FAKEDRI = 1
+  endif
+ 
+@@ -209,8 +209,13 @@
+  	$(PATH_STAGE_LIB)/libXfixes.so \
+  	$(PATH_STAGE_LIB)/libXext.so
+  ifdef VBoxOGL_FAKEDRI
+-  VBoxOGL_LIBS += \
++  ifeq ($(KBUILD_TARGET), freebsd)
++    VBoxOGL_LIBS += \
++        elf
++  else
++    VBoxOGL_LIBS += \
+   	dl
++  endif
+  endif
+ endif
+ ifdef VBOX_WITH_CRHGSMI
+@@ -368,6 +373,13 @@
+ 		| $$(dir $$@)
+ 	$(call MSG_GENERATE,python,$@,$<)
+ 	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $< $(VBOX_PATH_CROGL_GLAPI)
++  else ifeq ($(KBUILD_TARGET),freebsd)
++$(VBOX_PATH_CROGL_GENFILES)/freebsd_exports.c: \
++		$(PATH_SUB_CURRENT)/FreeBSD_exports.py \
++		$(VBOX_CROGL_API_FILES) $(PATH_SUB_CURRENT)/entrypoints.py \
++		| $$(dir $$@)
++	$(call MSG_GENERATE,python,$@,$<)
++	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $< $(VBOX_PATH_CROGL_GLAPI)
+   else
+ $(VBOX_PATH_CROGL_GENFILES)/linux_exports.c: \
+ 		$(PATH_SUB_CURRENT)/Linux_exports.py \

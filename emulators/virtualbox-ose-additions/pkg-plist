@@ -4,6 +4,14 @@
 %%X11%%etc/xdg/autostart/vboxclient.desktop
 sbin/VBoxControl
 sbin/VBoxService
+%%OPENGL%%lib/VBoxOGL.so
+%%OPENGL%%lib/VBoxOGLarrayspu.so
+%%OPENGL%%lib/VBoxOGLcrutil.so
+%%OPENGL%%lib/VBoxOGLerrorspu.so
+%%OPENGL%%lib/VBoxOGLfeedbackspu.so
+%%OPENGL%%lib/VBoxOGLpackspu.so
+%%OPENGL%%lib/VBoxOGLpassthroughspu.so
+%%OPENGL%%lib/dri/vboxvideo_dri.so
 %%X11%%share/autostart/vboxclient.desktop
 %%X11%%lib/xorg/modules/drivers/vboxvideo_drv.so
 %%X11%%lib/xorg/modules/input/vboxmouse_drv.so
@@ -12,8 +20,10 @@ sbin/VBoxService
 %%X11%%@dirrmtry lib/xorg/modules/input
 %%X11%%@dirrmtry lib/xorg/modules
 %%X11%%@dirrmtry lib/xorg
+%%OPENGL%%@dirrmtry lib/dri
 %%X11%%@dirrmtry lib
 @cwd /
 %%KMODDIR%%/vboxguest.ko
+%%KMODDIR%%/vboxvideo.ko
 @exec /usr/sbin/kldxref /%%KMODDIR%%
 @unexec /usr/sbin/kldxref /%%KMODDIR%%
