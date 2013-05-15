@@ -1,18 +1,17 @@
-# New ports collection makefile for:	p5-Math-Expr
-# Date created:				20 Sep 2000
-# Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Expr
 PORTVERSION=	0.4
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:HAKANARDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for parsing mathematical expressions into a tree structure
+
+LICENSE=	GPLv2
 
 PERL_CONFIGURE=	yes
 
