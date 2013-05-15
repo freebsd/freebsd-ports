@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffuse
-PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTVERSION=	0.4.7
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -28,7 +27,7 @@ OPTIONS_DEFINE=	DATA DOCS MENU NLS
 DATA_DESC=	Enable syntax highlighting support
 MENU_DESC=	Enable a desktop program menu entry
 
-OPTIONS_DEFAULT=	DATA MENU
+OPTIONS_DEFAULT=DATA MENU
 
 .include <bsd.port.options.mk>
 
@@ -37,7 +36,7 @@ PORTDATA=	syntax
 .endif
 
 .if ${PORT_OPTIONS:MMENU}
-USE_GNOME+=	desktopfileutils
+USES+=		desktop-file-utils
 PLIST_SUB+=	MENU=""
 .else
 PLIST_SUB+=	MENU="@comment "
@@ -45,8 +44,8 @@ PLIST_SUB+=	MENU="@comment "
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-TRANSLATIONS=	de es it ja ko ru zh_CN
-MANLANG=	"" it ru
+TRANSLATIONS=	cs de es it ja ko pl ru zh_CN
+MANLANG=	"" cs it ru
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -76,17 +75,19 @@ post-install:
 	(cd ${WRKSRC}/src/usr/share/${PORTNAME} && \
 		${COPYTREE_SHARE} \* ${DATADIR})
 .endif
+
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+
 .if ${PORT_OPTIONS:MMENU}
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/pixmaps/${PORTNAME}.png \
 		${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/applications/*.desktop \
 		${DESKTOPDIR}
-	${LOCALBASE}/bin/update-desktop-database -q
 .endif
+
 .if ${PORT_OPTIONS:MNLS}
 .for x in ${TRANSLATIONS}
 	${MKDIR} ${WRKSRC}/translations/${x}
