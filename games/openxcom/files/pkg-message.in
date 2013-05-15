@@ -1,0 +1,14 @@
+==========================================================================
+
+OpenXcom requires original UFO: Enemy Unknown / X-Com: UFO Defense
+data files. Please copy all subfolders from original game into
+%%PREFIX%%/share/openxcom/data directory.
+
+Also note that if you get "GMDEFENT NOT FOUND" message, you need
+to patch your UFO to at least version 1.4. See
+
+http://openxcom.org/forum/index.php?topic=1129.0
+
+for reference.
+
+==========================================================================
