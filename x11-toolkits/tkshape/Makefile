@@ -35,8 +35,8 @@ WRKSRC=			${WRKDIR}/${PORTNAME:C/^tk//1}${PORTVERSION}
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-tclconf=${LOCALBASE}/lib/tcl${TCL_VER} \
-			--with-tkconf=${LOCALBASE}/lib/tk${TK_VER}
+CONFIGURE_ARGS=		--with-tclconf=${TCL_LIBDIR} \
+			--with-tkconf=${TK_LIBDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/unix
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 
