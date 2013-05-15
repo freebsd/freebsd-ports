@@ -1,5 +1,6 @@
 # Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
+
 PORTNAME=	collectd
 PORTVERSION=	5.2.1
 PORTREVISION=	1
@@ -394,7 +395,7 @@ PLIST_SUB+=	RRD="@comment "
 CONFIGURE_ARGS+=--enable-rrdcached
 PLIST_SUB+=	RRDCACHED=""
 .else
-CONFIGURE_ARGS+=--disable--rrdcached
+CONFIGURE_ARGS+=--disable-rrdcached
 PLIST_SUB+=	RRDCACHED="@comment "
 .endif
 
