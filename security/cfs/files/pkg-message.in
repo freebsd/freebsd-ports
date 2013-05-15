@@ -1,0 +1,22 @@
+===============================================================================
+Quick start instructions:
+
+  - add the following entry to /etc/exports:
+
+    %%CFSD_BOOTSTRAP%% localhost
+
+  - create the default CFS mountpoint (if you want to use a different
+    mountpoint, set the cfsd_mountpoint variable in /etc/rc.conf):
+
+    # mkdir /crypt
+
+  - enable rpcbind, mountd and cfsd in /etc/rc.conf:
+
+      cfsd_enable="YES"
+      mountd_enable="YES"
+
+  - start mountd and cfsd, or restart:
+
+    # service mountd start
+    # service cfsd start
+===============================================================================
