@@ -1,7 +1,4 @@
-# New ports collection makefile for:	eggdrop-devel
-# Date created:				June 13, 2011
-# Whom:						Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	eggdrop
@@ -20,6 +17,8 @@ LICENSE=	GPLv2
 
 USE_TCL=	85+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -112,7 +111,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}/html
 	cd ${WRKSRC}/doc/html && ${INSTALL_DATA} *.html ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/settings
-	cd ${WRKSRC}/doc/settings && $(RM) -rf CVS \
+	cd ${WRKSRC}/doc/settings && ${RM} -rf CVS \
 		&& ${INSTALL_DATA} * ${DOCSDIR}/settings
 .endif
 	@${CAT} ${PKGMESSAGE}
