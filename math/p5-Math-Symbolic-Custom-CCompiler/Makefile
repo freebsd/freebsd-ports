@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Math-Symbolic-Custom-CCompiler
-# Date created:				15 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Symbolic-Custom-CCompiler
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
