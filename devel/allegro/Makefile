@@ -10,8 +10,6 @@ MASTER_SITES=	SF/alleg/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
-BROKEN=		fails to build
-
 USE_AUTOTOOLS=	autoconf
 USE_GCC=	any
 USE_GMAKE=	yes
