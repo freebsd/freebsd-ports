@@ -56,6 +56,8 @@ lib/collectd/load.la
 lib/collectd/load.so
 lib/collectd/logfile.la
 lib/collectd/logfile.so
+%%MODBUS%%lib/collectd/modbus.la
+%%MODBUS%%lib/collectd/modbus.so
 %%MBMON%%lib/collectd/mbmon.la
 %%MBMON%%lib/collectd/mbmon.so
 %%MEMCACHED%%lib/collectd/memcached.la

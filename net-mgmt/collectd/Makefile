@@ -3,12 +3,14 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
+
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
