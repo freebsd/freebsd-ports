@@ -1,13 +1,15 @@
 bin/g2ipmsg
-bin/g2ipmsg_applet
+%%GNOMEPANEL%%bin/g2ipmsg_applet
 libdata/bonobo/servers/g2ipmsg.server
 share/applications/g2ipmsg.desktop
+share/locale/ja/LC_MESSAGES/g2ipmsg.mo
+share/locale/zh_CN/LC_MESSAGES/g2ipmsg.mo
 share/gnome-2.0/ui/g2ipmsg.xml
-share/pixmaps/ipmsg.png
+share/pixmaps/g2ipmsg/ipmsg.png
 share/pixmaps/g2ipmsg/ipmsg.xpm
 share/pixmaps/g2ipmsg/ipmsgrev.xpm
+share/pixmaps/ipmsg.png
 share/sounds/g2ipmsg/g2ipmsg.ogg
-share/locale/ja/LC_MESSAGES/g2ipmsg.mo
 @exec   %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm share/sounds/g2ipmsg
