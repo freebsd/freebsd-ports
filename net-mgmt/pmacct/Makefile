@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pmacct
-DISTVERSION=	0.14.2
+DISTVERSION=	0.14.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://mirrors.rit.edu/zi/

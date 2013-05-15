@@ -15,9 +15,12 @@ sbin/uacctd
 %%DATADIR%%/README.mask
 %%DATADIR%%/README.mpls_vpn_rd
 %%DATADIR%%/README.mysql
+%%DATADIR%%/README.nat
 %%DATADIR%%/README.pgsql
+%%DATADIR%%/README.pkt_len_distrib
 %%DATADIR%%/README.sampling_rate
 %%DATADIR%%/README.sqlite3
+%%DATADIR%%/README.timestamp
 %%DATADIR%%/pmacct-create-db.pgsql
 %%DATADIR%%/pmacct-create-db_bgp_v1.mysql
 %%DATADIR%%/pmacct-create-db_v1.mysql
@@ -83,5 +86,6 @@ sbin/uacctd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/probe_sflow.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrdtool-example.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampling.map.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tee_receivers.lst.example
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
