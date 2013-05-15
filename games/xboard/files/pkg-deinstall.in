@@ -1,3 +1,0 @@
-#!/bin/sh
-
-rmdir %%PREFIX%%/share/games 2>/dev/null || true

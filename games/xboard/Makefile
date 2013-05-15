@@ -3,6 +3,7 @@
 
 PORTNAME=	xboard
 PORTVERSION=	4.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
@@ -29,9 +30,7 @@ MAN6=		xboard.6
 INFO=		xboard
 USE_PERL5_BUILD=yes
 INSTALLS_ICONS=	yes
-SUB_FILES=	pkg-deinstall
-DATADIR=	${PREFIX}/share/games/${PORTNAME}
-PORTDATA=	*
+USES=		shared-mime-info
 
 .include <bsd.port.options.mk>
 
