@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ares
-# Date created:		8 September 2003
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	c-ares
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
@@ -54,7 +50,7 @@ CONFIGURE_ARGS+=--disable-optimize
 .endif
 
 USE_LDCONFIG=	yes
-SHLIB_VER=	2
+SHLIB_VER=	3
 
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
@@ -63,6 +59,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --disable-werror
 
 MAN3=	ares_cancel.3 \
+	ares_create_query.3 \
 	ares_destroy.3 ares_dup.3 \
 	ares_expand_name.3 ares_expand_string.3 \
 	ares_fds.3 \
@@ -71,6 +68,7 @@ MAN3=	ares_cancel.3 \
 	ares_gethostbyaddr.3 ares_gethostbyname.3 ares_gethostbyname_file.3 \
 	ares_getnameinfo.3 \
 	ares_getsock.3 \
+	ares_inet_ntop.3 ares_inet_pton.3 \
 	ares_init.3 ares_init_options.3 \
 	ares_library_cleanup.3 ares_library_init.3 \
 	ares_mkquery.3 \

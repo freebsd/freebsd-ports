@@ -32,19 +32,11 @@ Last-Update: 2010-12-19
  #ifdef  __cplusplus
  }
  #endif
---- ares_init.c.orig
-+++ ares_init.c
-@@ -66,6 +66,7 @@
- #include <errno.h>
- #include "ares.h"
- #include "inet_net_pton.h"
-+#include "inet_ntop.h"
- #include "ares_library_init.h"
- #include "ares_nowarn.h"
- #include "ares_private.h"
-@@ -1536,6 +1537,36 @@
+--- ares_init.c.orig	2013-02-17 11:44:02.000000000 -0500
++++ ares_init.c	2013-05-15 13:43:31.000000000 -0400
+@@ -1875,6 +1875,36 @@
  }
- #endif /* !WIN32 && !WATT32 */
+ #endif  /* !WIN32 & !WATT32 & !ANDROID & !__ANDROID__ */
  
 +int ares_get_config(struct ares_config_info *d, ares_channel c)
 +{
