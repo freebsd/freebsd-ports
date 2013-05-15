@@ -3,12 +3,14 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
+
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -22,7 +24,7 @@ OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_GRAPHITE WRITE_HTTP NOTIFYEMAIL
 OPTIONS_GROUP_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK GCRYPT \
-			NUTUPS INTERFACE IPMI MBMON MEMCACHED MYSQL NGINX \
+			NUTUPS INTERFACE IPMI MBMON MEMCACHED MODBUS MYSQL NGINX \
 			OPENVPN PDNS PGSQL PING PYTHON ROUTEROS SNMP TABLE \
 			TOKYOTYRANT VARNISH XMMS
 
@@ -46,6 +48,7 @@ INTERFACE_DESC=		Network interfaces (libstatgrab)
 IPMI_DESC=		IPMI plugin (openipmi)
 MBMON_DESC=		MBMon 
 MEMCACHED_DESC=		Memcached
+MODBUS_DESC=		Modbus support via libmodbus
 MYSQL_DESC=		MySQL
 NOTIFYEMAIL_DESC=	Email notifications (libesmtp)
 NGINX_DESC=		Nginx
@@ -111,8 +114,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-match_timediff \
 		--disable-match_value \
 		--disable-memcachec \
-		--disable-modbus \
-		--without-libmodbus \
 		--disable-multimeter \
 		--disable-netapp \
 		--without-libnetapp \
@@ -287,6 +288,15 @@ PLIST_SUB+=	MEMCACHED=""
 .else
 CONFIGURE_ARGS+=--disable-memcached --without-libmemcached
 PLIST_SUB+=	MEMCACHED="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMODBUS}
+CONFIGURE_ARGS+=--enable-modbus
+LIB_DEPENDS+=	modbus:${PORTSDIR}/comms/libmodbus
+PLIST_SUB+=	MODBUS=""
+.else
+CONFIGURE_ARGS+=--disable-modbus
+PLIST_SUB+=	MODBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
