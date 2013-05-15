@@ -1,9 +1,5 @@
-# New ports collection makefile for:	noffle
-# Date created:				28.06.2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	noffle
 PORTVERSION=	1.1.5
@@ -37,6 +33,8 @@ post-patch:
 		${WRKSRC}/docs/${PORTNAME}.1 \
 		${WRKSRC}/docs/${PORTNAME}.conf.5
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${PREFIX}/bin
@@ -46,12 +44,12 @@ do-install:
 		${PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/noffle.conf.example \
 		${PREFIX}/etc/noffle.conf.sample
-	@${ECHO} "
+	@${ECHO}
 	@${ECHO} "------------------------------------------------------------"
 	@${ECHO} "Sample of configuration file placed at"
 	@${ECHO} "${PREFIX}/etc/noffle.conf.sample"
-	@${ECHO} "------------------------------------------------------------
-	@${ECHO} "
+	@${ECHO} "------------------------------------------------------------"
+	@${ECHO}
 	@${MKDIR} ${SPOOL_DIR}
 	@${MKDIR} ${SPOOL_DIR}/data
 	@${MKDIR} ${SPOOL_DIR}/lock
@@ -59,8 +57,7 @@ do-install:
 	@${MKDIR} ${SPOOL_DIR}/overview
 	@${MKDIR} ${SPOOL_DIR}/requested
 	@${CHOWN} -R news:news ${SPOOL_DIR}
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
