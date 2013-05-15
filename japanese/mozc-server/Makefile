@@ -132,7 +132,7 @@ PLIST_FILES+=	bin/mozc_server
 
 post-extract-mozc_server:
 	@for F in jigyosyo-20130228.lzh ken_all-20130228.lzh; do \
-		${LHA_CMD} xfqw=${WRKSRC}/data/dictionary_oss ${DISTDIR}/$$F; \
+		${LHA_CMD} xfq2w=${WRKSRC}/data/dictionary_oss ${DISTDIR}/$$F; \
 	done
 	@cd ${WRKSRC}/data/dictionary_oss && \
 		${PYTHON_CMD} ${WRKSRC}/dictionary/gen_zip_code_seed.py \
