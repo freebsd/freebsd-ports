@@ -7,7 +7,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compile Math::Symbolic trees to C
 
 BUILD_DEPENDS=	p5-Math-Symbolic>=0.509:${PORTSDIR}/math/p5-Math-Symbolic \
