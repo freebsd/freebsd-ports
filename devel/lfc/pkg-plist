@@ -32,5 +32,7 @@ include/lfc/Timer.h
 include/lfc/Tokenizer.h
 include/lfc/TreeT.h
 lib/liblfc.a
-lib/liblfc.so.1
+lib/liblfc.so.0
+lib/liblfc.so
+lib/liblfc.la
 @dirrm include/lfc

@@ -1,11 +1,8 @@
-# New ports collection makefile for:	cego-xml
-# Date created:				Jun 12, 2010
-# Whom:					Kurt Jaeger <fbsd-ports@opsec.eu>
-#
+# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	lfcxml
-PORTVERSION=	1.0.27
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -14,7 +11,7 @@ COMMENT=	C++ XML library, used for databases/cego
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc
+LIB_DEPENDS=	lfc:${PORTSDIR}/devel/lfc
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
