@@ -1,5 +1,5 @@
 --- epplets/E-MemWatch.c.orig	2012-09-30 11:38:35.000000000 +0200
-+++ epplets/E-MemWatch.c	2013-05-14 18:17:45.000000000 +0200
++++ epplets/E-MemWatch.c	2013-05-15 09:51:28.000000000 +0200
 @@ -1,5 +1,6 @@
  /*
   * Copyright (C) 1999-2000, Michael Jennings
@@ -80,7 +80,7 @@
  
     if (kernel_2_6)
       {
-@@ -174,8 +194,23 @@
+@@ -174,8 +194,22 @@
       }
  
     fclose(fp);
@@ -102,11 +102,10 @@
 +   }
 +#endif 
 +   swap_val = 100. * used / total;
-+   printf ("swap_val: %d\n", swap_val);
  
     /*printf ("Swap: %lu %lu %d%%\n", total, used, swap_val); */
  
-@@ -273,6 +308,7 @@
+@@ -273,6 +307,7 @@
  {
  
     int                 prio;
@@ -114,7 +113,7 @@
  
     /* check for Kernel 2.6 */
     FILE               *fp;
-@@ -295,6 +331,7 @@
+@@ -295,6 +330,7 @@
  
     fclose(fp);
     /* end check for Kernel 2.6 */
