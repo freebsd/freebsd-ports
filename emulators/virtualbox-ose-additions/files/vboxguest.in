@@ -32,10 +32,26 @@ vboxguest_start()
 			return 1
 		fi
 	fi
+	if ! kldstat -q -m vgapci/vboxvideo;
+	then
+		if ! kldload vboxvideo > /dev/null 2>&1;
+		then
+			warn "Can't load vboxvideo module."
+			return 1
+		fi
+	fi
 }
 
 vboxguest_stop()
 {
+	if kldstat -q -m vgapci/vboxvideo;
+	then
+		if ! kldunload vboxvideo > /dev/null 2>&1;
+		then
+			warn "Can't unload vboxvideo module."
+			return 1
+		fi
+	fi
         if kldstat -q -m pci/vboxguest;
         then
                 if ! kldunload vboxguest > /dev/null 2>&1;

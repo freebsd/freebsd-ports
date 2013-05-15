@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.2.12
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -31,8 +32,7 @@ MAKE_JOBS_UNSAFE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-xpcom --disable-sdl-ttf --disable-pulse \
-		--disable-alsa --disable-dbus --disable-python \
-		--build-headless
+		--disable-alsa --disable-dbus --disable-python
 
 CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
@@ -70,9 +70,12 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
+USE_XORG+=	xcomposite xdamage xext xfixes
 USE_GL=		gl
+PLIST_SUB+=	OPENGL=""
 .else
 CONFIGURE_ARGS+=--disable-opengl
+PLIST_SUB+=	OPENGL="@comment "
 .endif
 
 .if ${ARCH} == i386
@@ -122,6 +125,9 @@ do-build:
 do-install:
 	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${KMODDIR}
+.if ${PORT_OPTIONS:MX11}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko ${KMODDIR}
+.endif
 	@/usr/sbin/kldxref ${KMODDIR}
 
 	${MKDIR} ${PREFIX}/etc/rc.d/
@@ -152,6 +158,20 @@ do-install:
 
 	${MKDIR} ${INPUTDIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_${XSERVER_ABI}.so ${INPUTDIR}/vboxmouse_drv.so
+.endif
+
+.if ${PORT_OPTIONS:MOPENGL}
+	${MKDIR} ${PREFIX}/lib
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGL.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLarrayspu.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLcrutil.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLerrorspu.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLfeedbackspu.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLpackspu.so ${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLpassthroughspu.so ${PREFIX}/lib/
+
+	${MKDIR} ${PREFIX}/lib/dri
+	${LN} -sf ${PREFIX}/lib/VBoxOGL.so ${PREFIX}/lib/dri/vboxvideo_dri.so
 .endif
 
 post-install:
