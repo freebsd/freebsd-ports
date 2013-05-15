@@ -12,6 +12,10 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # USE_TEX=	full
 # means full teTeX or TeXLive dependency.
 #
+# If a port needs to depend on a specific TeX distribution (teTeX or
+# TeXLive), specify either of "texlive" or "tetex" in USE_TEX in
+# addition to other keywords.
+#
 # The other valid keywords (* means TeXLive specific):
 #
 #  base:	base part
@@ -30,6 +34,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #		METAFONT, MLTeX, PDFTeX, TeXsis[*]
 #  tex:		TeX
 #  latex:	LaTeX
+#  pdftex:	PDFTeX
 #  aleph:	Aleph[*]
 #  jadetex:	JadeTeX
 #  luatex:	LuaTeX[*]
@@ -43,7 +48,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #
 # Examples:
 # USE_TEX=	latex:build
-# USE_TEX=	formats:run
+# USE_TEX=	formats texlive
 # USE_TEX=	latex:build dvips:build
 
 # default TeX distribution.  "tetex" or "texlive"
@@ -70,6 +75,13 @@ CONFLICTS_TETEX= \
 	teTeX-[0-9]* *-teTeX-[0-9]* \
 	teTeX-*-[0-9]* *-teTeX-*-[0-9]* \
 	latex2e-[0-9]*
+
+# override the user configuration
+.if !empty(USE_TEX:U:MTETEX)
+TEX_DEFAULT=	tetex
+.elif !empty(USE_TEX:U:MTEXLIVE)
+TEX_DEFAULT=	texlive
+.endif
 
 .if !empty(TEX_DEFAULT:U:MTETEX)
 CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
@@ -104,6 +116,9 @@ _USE_TEX_TEX=		${_USE_TEX_FORMATS}
 _USE_TETEX_LATEX=	${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
 _USE_TEX_LATEX=		${_USE_TEX_FORMATS}
 
+_USE_TETEX_PDFTEX=	${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
+_USE_TEX_PDFTEX=	${_USE_TEX_FORMATS}
+
 _USE_TETEX_JADETEX=	jadetex:${PORTSDIR}/print/jadetex
 _USE_TEX_JADETEX=	jadetex:${PORTSDIR}/print/tex-jadetex
 
@@ -121,36 +136,35 @@ _USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
 _USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
 _USE_TEX_XETEX=		xetex:${PORTSDIR}/print/tex-xetex
 
-.for D in TEXMF BASE \
-	DVIPSK DVIPDFMX XDVIK XMLTEX JADETEX
-_USE_TETEX_FULL+=	${_USE_TETEX_${D}}
-.endfor
-.for D in TEXMF BASE WEB2C KPATHSEA PTEXENC INFRA \
-	FORMATS ALEPH XETEX JADETEX LUATEX XMLTEX PTEX \
-	DVIPSK DVIPDFMX XDVIK
-_USE_TEX_FULL+=		${_USE_TEX_${D}}
-.endfor
+_USE_TETEX_FULL=texmf base \
+		dvipsk dvipdfmx xdvik xmltex jadetex
+_USE_TEX_FULL=	texmf base web2c infra \
+		formats aleph xetex jadetex luatex xmltex ptex \
+		dvipsk dvipdfmx xdvik \
+		kpathsea:lib ptexenc:lib
 
 .if !empty(USE_TEX:U:MFULL)
-BUILD_DEPENDS+=	${_USE_${_TEX_LABEL}_FULL}
-RUN_DEPENDS+=	${_USE_${_TEX_LABEL}_FULL}
-.else
-. for _UU in ${USE_TEX:U}
-_U:=	${_UU}	# ugly but necessary in for loop
-.  if !empty(_U:MKPATHSEA) || !empty(_U:MPTEXENC)
-_C:=	LIB
-.  else
-.   if empty(_U:M*\:*)
-_C:=	BUILD RUN
-.   else
-_C:=	${_U:C/.*://}
-.   endif
-.  endif
-.  for _CC in ${_C}
-${_CC}_DEPENDS+=${_USE_${_TEX_LABEL}_${_UU:C/:.*$//}}
-.  endfor
-. endfor
+USE_TEX:=	${_USE_${_TEX_LABEL}_FULL}
 .endif
+
+.for _UU in ${USE_TEX:U}
+_U:=	${_UU}	# ugly but necessary in for loop
+. if !empty(_U:U:MKPATHSEA) || !empty(_U:U:MPTEXENC)
+_U:=	${_U}:lib
+. endif
+. if empty(_U:M*\:*)
+_C:=	BUILD RUN
+. else
+_C:=	${_U:C/.*://}
+. endif
+. for _CC in ${_C:U}
+TEX_${_CC}_DEPENDS+=${_USE_${_TEX_LABEL}_${_UU:C/:.*$//}}
+. endfor
+.endfor
+
+.for _C in EXTRACT BUILD LIB RUN
+${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
+.endfor
 
 .ORDER: do-texhash do-fmtutil do-updmap
 
