@@ -159,6 +159,7 @@
     SUBDIR += buildtool-doc
     SUBDIR += bullet
     SUBDIR += bunny
+    SUBDIR += busybee
     SUBDIR += byaccj
     SUBDIR += bzapi
     SUBDIR += bzr
