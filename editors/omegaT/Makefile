@@ -1,15 +1,12 @@
-# New ports collection makefile for: 	OmegaT
-# Date created:				11 May 2008
-# Whom:					Rodrigo OSORIO <rodrigo@bebik.net>
+# Created by: Rodrigo OSORIO <rodrigo@bebik.net>
 # $FreeBSD$
-#
 
 PORTNAME=	omegaT
-DISTVERSION=	2.5.5_01
+DISTVERSION=	2.6.3_01
 PORTREVISION=	1
 CATEGORIES=	editors java x11
-MASTER_SITES=	SF/${PORTNAME:L}/OmegaT%20-%20Standard/OmegaT%202.5.5%20update%201/
-DISTNAME=	OmegaT_2.5.5_01_Source
+MASTER_SITES=	SF/${PORTNAME:L}/OmegaT%20-%20Standard/OmegaT%202.6.3%20update%201/
+DISTNAME=	OmegaT_2.6.3_01_Source
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rodrigo@bebik.net
