@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.0
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gawk
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU version of Awk
@@ -20,7 +19,9 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}
 
-MAN1=		gawk.1 dgawk.1 igawk.1 pgawk.1
+MAN1=		gawk.1 igawk.1
+MAN3=		filefuncs.3am fnmatch.3am fork.3am ordchr.3am readdir.3am \
+		readfile.3am revoutput.3am revtwoway.3am rwarray.3am time.3am
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

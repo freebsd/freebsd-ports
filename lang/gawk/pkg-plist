@@ -1,9 +1,31 @@
-bin/dgawk
 bin/gawk
 bin/gawk-%%VERSION%%
 bin/igawk
-bin/pgawk
-bin/pgawk-%%VERSION%%
+include/gawkapi.h
+lib/gawk/filefuncs.so
+lib/gawk/filefuncs.la
+lib/gawk/fnmatch.so
+lib/gawk/fnmatch.la
+lib/gawk/fork.so
+lib/gawk/fork.la
+lib/gawk/inplace.so
+lib/gawk/inplace.la
+lib/gawk/ordchr.so
+lib/gawk/ordchr.la
+lib/gawk/readdir.so
+lib/gawk/readdir.la
+lib/gawk/readfile.so
+lib/gawk/readfile.la
+lib/gawk/revoutput.so
+lib/gawk/revoutput.la
+lib/gawk/revtwoway.so
+lib/gawk/revtwoway.la
+lib/gawk/rwarray.so
+lib/gawk/rwarray.la
+lib/gawk/testext.so
+lib/gawk/testext.la
+lib/gawk/time.so
+lib/gawk/time.la
 libexec/awk/grcat
 libexec/awk/pwcat
 share/awk/assert.awk
@@ -14,6 +36,7 @@ share/awk/ftrans.awk
 share/awk/getopt.awk
 share/awk/gettime.awk
 share/awk/group.awk
+share/awk/inplace.awk
 share/awk/join.awk
 share/awk/libintl.awk
 share/awk/noassign.awk
@@ -33,9 +56,11 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/fr/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo
 @dirrm share/awk
 @dirrm libexec/awk
+@dirrm lib/gawk
