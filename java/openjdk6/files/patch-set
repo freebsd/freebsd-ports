@@ -8877,6 +8877,26 @@
    OTHER_LDLIBS  += $(LIBCXX)
  # setup the list of libraries to link in...
  ifeq ($(PLATFORM), linux)
+--- jdk/make/com/sun/jmx/Makefile
++++ jdk/make/com/sun/jmx/Makefile
+@@ -102,16 +102,7 @@
+ # when available, we need to run with latest rmic version available. rmic 
+ # launch tool not built at this stage but we can invoke via rmi class.
+ 
+-RMIC_JAVA = $(OUTPUTDIR)/bin/java
+-# need to treat 64bit solaris differently
+-ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
+-RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
+-endif
+-ifeq ($(PLATFORM)-$(LIBARCH), solaris-sparcv9)
+-RMIC_JAVA = $(OUTPUTDIR)/bin/sparcv9/java
+-endif
+-
+-RMIC = $(RMIC_JAVA) $(JAVA_TOOLS_FLAGS) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
++RMIC = $(BOOT_JAVA_CMD) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
+ 
+ $(CLASSDESTDIR)/%_Stub.class: $(CLASSDESTDIR)/%.class
+ 	$(prep-target)
 --- jdk/make/com/sun/security/auth/module/Makefile
 +++ jdk/make/com/sun/security/auth/module/Makefile
 @@ -70,7 +70,7 @@
