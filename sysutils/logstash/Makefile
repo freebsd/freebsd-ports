@@ -11,6 +11,7 @@
 # 
 PORTNAME=	logstash
 PORTVERSION=	1.1.12
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-flatjar
@@ -39,12 +40,16 @@ PLIST_SUB+=	LOGSTASH_HOME=${LOGSTASH_HOME_REL} LOGSTASH_JAR=${LOGSTASH_JAR} \
 		LOGSTASH_RUN=${LOGSTASH_RUN} \
 		LOGSTASH_DATA_DIR=${LOGSTASH_DATA_DIR}
 
+do-patch:
+	/usr/bin/bspatch ${DISTDIR}/${DIST_SUBDIR}/${LOGSTASH_JAR} \
+		${WRKDIR}/${LOGSTASH_JAR}.patched \
+		${FILESDIR}/view_fix.patch
 do-install:
 	${MKDIR} ${LOGSTASH_RUN}
 	${MKDIR} ${ETCDIR}
 	${MKDIR} ${LOGSTASH_HOME}
 	${MKDIR} ${LOGSTASH_DATA_DIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${LOGSTASH_JAR} ${LOGSTASH_HOME}
+	${INSTALL_DATA} ${WRKDIR}/${LOGSTASH_JAR}.patched ${LOGSTASH_HOME}/${LOGSTASH_JAR}
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${ETCDIR}
 	@if [ ! -f ${ETCDIR}/logstash.conf ]; then \
 		${CP} -p ${ETCDIR}/logstash.conf.sample ${ETCDIR}/logstash.conf ; \
