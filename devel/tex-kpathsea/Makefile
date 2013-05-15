@@ -15,7 +15,7 @@ COMMENT=	Path searching library for TeX
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_TEX=	yes
+USE_TEX=	texlive
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
 EXTRACT_FILES=	${DISTNAME}/build-aux \
 		${DISTNAME}/texk/kpathsea
