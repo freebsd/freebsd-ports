@@ -21,7 +21,7 @@ MAINTAINER=	daniel@ish.com.au
 COMMENT=	Tool for managing events and logs
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.7+
 
 NO_BUILD=	yes
 
