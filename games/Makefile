@@ -690,6 +690,7 @@
     SUBDIR += opensonic
     SUBDIR += openssn
     SUBDIR += openttd
+    SUBDIR += openxcom
     SUBDIR += openyahtzee
     SUBDIR += optimax
     SUBDIR += orbital_eunuchs_sniper
