@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvdstyler
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.3
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -13,25 +13,26 @@ COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	wxsvg>=1.1.13:${PORTSDIR}/graphics/wxsvg \
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		wxsvg>=1.1.14:${PORTSDIR}/graphics/wxsvg \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		zip:${PORTSDIR}/archivers/zip
+		docbook-sk>=4.1.2:${PORTSDIR}/textproc/docbook-sk \
+		xmlto:${PORTSDIR}/textproc/xmlto 
 LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
 		avcodec1:${PORTSDIR}/multimedia/ffmpeg1
-RUN_DEPENDS=	wxsvg>=1.1.13:${PORTSDIR}/graphics/wxsvg \
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		wxsvg>=1.1.14:${PORTSDIR}/graphics/wxsvg \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		zip:${PORTSDIR}/archivers/zip \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools
+		mkisofs:${PORTSDIR}/sysutils/cdrtools \
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 
 OPTIONS_DEFINE=	GNOME DOCS
 
-USES=		pkgconfig gettext
 USE_BZIP2=	yes
+USES=		gettext pkgconfig
 USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
@@ -74,6 +75,11 @@ pre-everything::
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 .endif
+
+post-extract:
+.for i in configure install-sh
+	@${CHMOD} ${BINMODE} ${WRKSRC}/${i}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e '/GNOMEUI2/s|"libgnomeui-2.0"|"${GNOMEUI_PC}"|g' \
