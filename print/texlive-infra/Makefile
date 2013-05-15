@@ -12,7 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Basic TeXLive infrastructure
 
 USE_XZ=		yes
-USE_TEX=	texmf
+USE_TEX=	texlive texmf
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

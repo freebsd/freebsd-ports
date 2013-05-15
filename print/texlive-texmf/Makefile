@@ -13,8 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 
 USE_XZ=		yes
-USE_TEX=	base texhash
-TEX_DEFAULT=	texlive # override user configuration
+USE_TEX=	texlive base texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
 NO_WRKSRC=	yes
