@@ -9,7 +9,7 @@ CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}_${PORTVERSION}_src.tar.gz
 
-MAINTAINER=	william88@gmail.com
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\

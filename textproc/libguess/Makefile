@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://distfiles.atheme.org/
 
-MAINTAINER=	william88@gmail.com
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	A high-speed character set detection library
 
 LIB_DEPENDS=	mowgli.2:${PORTSDIR}/devel/libmowgli

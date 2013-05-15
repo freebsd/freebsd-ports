@@ -5,7 +5,7 @@ PORTNAME=	qtile
 PORTVERSION=	0.5
 CATEGORIES=	x11-wm
 
-MAINTAINER=	william88@gmail.com
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	A small, flexible, scriptable tiling window manager written in Python
 
 LICENSE=	MIT
