@@ -16,6 +16,8 @@ LICENSE=        GPLv2
 
 USE_TCL=	85+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		eggdrop.1
