@@ -1,0 +1,11 @@
+--- libavogadro/src/extensions/swcntbuilder/tubegen/CMakeLists.txt.orig
++++ libavogadro/src/extensions/swcntbuilder/tubegen/CMakeLists.txt
+@@ -19,7 +19,7 @@
+ set_target_properties(tubegen PROPERTIES COMPILE_FLAGS "-w")
+ 
+ # Set -fPIC on x86_64
+-if("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "x86_64")
++if(NOT "${CMAKE_SYSTEM_PROCESSOR}" MATCHES "i386")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC"  )
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC"  )
+ endif()
