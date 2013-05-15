@@ -6,16 +6,10 @@
 #
 
 DISTVERSION?=	9.3beta1
-PORTREVISION?=	0
+PORTREVISION?=	1
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	pgsql@FreeBSD.org
-
-BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs \
-		src/backend/snowball src/backend/replication/libpqwalreceiver \
-		src/bin/initdb src/bin/pg_ctl \
-		src/bin/pg_controldata src/bin/pg_resetxlog src/pl
-INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if defined(CLIENT_ONLY)
 MAN1=		pg_basebackup.1 pg_isready.1 pg_xlogdump.1

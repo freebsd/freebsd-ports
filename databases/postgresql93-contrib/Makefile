@@ -1,7 +1,8 @@
-# Created by:			Palle Girgensohn <girgen@pingpong.net>
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
 
 PORTNAME=	postgresql
+PORTREVISION=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-contrib
 
