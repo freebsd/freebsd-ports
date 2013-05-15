@@ -18,7 +18,7 @@ LIB_DEPENDS=	openjpeg:${PORTSDIR}/graphics/openjpeg \
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_TEX=	kpathsea
+USE_TEX=	texlive kpathsea
 USES=		pkgconfig
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
 EXTRACT_FILES=	${DISTNAME}/build-aux \
