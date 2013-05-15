@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://git.sysphere.org/vicious/snapshot/
 DISTNAME=	vicious-${PORTVERSION}
 
-MAINTAINER=	william88@gmail.com
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Widgets for the awesome window manager
 
 RUN_DEPENDS=	awesome:${PORTSDIR}/x11-wm/awesome

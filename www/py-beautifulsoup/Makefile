@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.crummy.com/software/BeautifulSoup/bs4/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	beautifulsoup4-${PORTVERSION}
 
-MAINTAINER=	william88@gmail.com
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	HTML/XML Parser for Python
 
 USE_PYTHON=	yes
