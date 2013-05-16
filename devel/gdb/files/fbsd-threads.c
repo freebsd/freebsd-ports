@@ -338,7 +338,7 @@ extract_func_ptr(void *value)
 
   return (extract_typed_address
 	  ((gdb_byte *)value,
-	   builtin_type (target_gdbarch)->builtin_func_ptr));
+	   builtin_type (target_gdbarch ())->builtin_func_ptr));
 }
 
 static CORE_ADDR
@@ -347,7 +347,7 @@ extract_data_ptr(void *value)
 
   return (extract_typed_address
 	  ((gdb_byte *)value,
-	   builtin_type (target_gdbarch)->builtin_data_ptr));
+	   builtin_type (target_gdbarch ())->builtin_data_ptr));
 }
 
 static td_err_e
@@ -363,10 +363,10 @@ enable_thread_event (td_thragent_t *thread_agent, int event, CORE_ADDR *bp)
 
   /* Set up the breakpoint.  */
   (*bp) = (gdbarch_convert_from_func_ptr_addr
-	   (target_gdbarch,
+	   (target_gdbarch (),
 	    extract_func_ptr(&notify.u.bptaddr),
 	    &current_target));
-  create_thread_event_breakpoint (target_gdbarch, (*bp));
+  create_thread_event_breakpoint (target_gdbarch (), (*bp));
 
   return TD_OK;
 }
@@ -1537,7 +1537,7 @@ ps_lgetregs (struct ps_prochandle *ph, lwpid_t lwpid, prgregset_t gregset)
   old_chain = save_inferior_ptid ();
 
   inferior_ptid = BUILD_LWP (lwpid, ph->pid);
-  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch);
+  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch ());
 
   target_fetch_registers (regcache, -1);
   fill_gregset (regcache, gregset, -1);
@@ -1553,7 +1553,7 @@ ps_lsetregs (struct ps_prochandle *ph, lwpid_t lwpid, const prgregset_t gregset)
 
   old_chain = save_inferior_ptid ();
   inferior_ptid = BUILD_LWP (lwpid, ph->pid);
-  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch);
+  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch ());
 
   supply_gregset (regcache, gregset);
   target_store_registers (regcache, -1);
@@ -1569,7 +1569,7 @@ ps_lgetfpregs (struct ps_prochandle *ph, lwpid_t lwpid, prfpregset_t *fpregset)
 
   old_chain = save_inferior_ptid ();
   inferior_ptid = BUILD_LWP (lwpid, ph->pid);
-  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch);
+  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch ());
 
   target_fetch_registers (regcache, -1);
   fill_fpregset (regcache, fpregset, -1);
@@ -1586,7 +1586,7 @@ ps_lsetfpregs (struct ps_prochandle *ph, lwpid_t lwpid,
 
   old_chain = save_inferior_ptid ();
   inferior_ptid = BUILD_LWP (lwpid, ph->pid);
-  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch);
+  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch ());
 
   supply_fpregset (regcache, fpregset);
   target_store_registers (regcache, -1);
@@ -1603,7 +1603,7 @@ ps_lgetxmmregs (struct ps_prochandle *ph, lwpid_t lwpid, char *xmmregs)
 
   old_chain = save_inferior_ptid ();
   inferior_ptid = BUILD_LWP (lwpid, ph->pid);
-  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch);
+  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch ());
 
   target_fetch_registers (regcache, -1);
   i387_collect_fxsave (regcache, -1, xmmregs);
@@ -1620,7 +1620,7 @@ ps_lsetxmmregs (struct ps_prochandle *ph, lwpid_t lwpid,
 
   old_chain = save_inferior_ptid ();
   inferior_ptid = BUILD_LWP (lwpid, ph->pid);
-  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch);
+  regcache = get_thread_arch_regcache (inferior_ptid, target_gdbarch ());
 
   i387_supply_fxsave (regcache, -1, xmmregs);
   target_store_registers (regcache, -1);
