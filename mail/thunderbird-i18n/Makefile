@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	17.0.5
+PORTVERSION=	17.0.6
 CATEGORIES=	mail
-MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}esr/linux-i686/xpi
+MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${THUNDERBIRD_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
@@ -19,7 +19,7 @@ PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 NO_BUILD=	yes
-USE_THUNDERBIRD=	17
+USE_THUNDERBIRD=	yes
 USE_XPI=	thunderbird linux-thunderbird
 USE_SUBMAKE=	yes
 
@@ -75,8 +75,9 @@ post-patch:
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
 
 list-langs:
-	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/${MASTER_SITE_SUBDIR}"|\
-		perl -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
+	@fetch -qo- "https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}esr/linux-i686/xpi"|\
+		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1\n"}' |\
+		${AWK} 'BEGIN{ORS=" "}{print $$1}END{printf "\nNumber of languages: %d\n",NR}'
 
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.post.mk>

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	17.0.5
+DISTVERSION=	17.0.6
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -23,7 +22,7 @@ USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
 LATEST_LINK=	firefox-esr
 USE_GECKO=	gecko
-CONFLICTS=	firefox-2[0-9].* firefox-1[1-689].* firefox-10.*
+CONFLICTS=	firefox-2[0-35-9].* firefox-1[1-689].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
@@ -45,13 +44,9 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=	GSTREAMER PGO
-OPTIONS_DEFAULT=GIO
+OPTIONS_DEFINE=	PGO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
-
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-esr17

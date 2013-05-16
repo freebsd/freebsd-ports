@@ -5,14 +5,14 @@ PORTNAME=	nss
 PORTVERSION=	3.14.3
 #DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
+MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		nspr>=4.8.8:${PORTSDIR}/devel/nspr
+		nspr>=4.8.8:${PORTSDIR}/devel/nspr \
+		sqlite3>=3.7.15:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
@@ -35,7 +35,8 @@ SUB_LIST=	MAJOR_VERSION=${PORTVERSION:R:R} \
 DIST=		${WRKSRC:H:H}/dist
 
 EXTERNALS=	CVS dbm security/nss/lib/zlib nsprpub security/dbm
-EXTRACT_AFTER_ARGS= ${EXTERNALS:C,^,--exclude ${PORTNAME}-${PORTVERSION}/mozilla/,}
+EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
+	${EXTERNALS:C,^,--exclude ${PORTNAME}-${PORTVERSION}/mozilla/,}
 
 INSTALL_BINS=	certcgi certutil checkcert cmsutil crlutil derdump makepqg \
 		mangle modutil ocspclnt oidcalc p7content p7env p7sign \

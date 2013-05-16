@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	20.0
+PORTVERSION=	21.0
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
+MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
@@ -14,7 +14,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_FIREFOX=	20
+USE_FIREFOX=	21
 USE_XPI=	firefox linux-firefox
 
 USE_SUBMAKE=	yes
@@ -84,10 +84,10 @@ post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
 
-List-Langs:
-	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}/linux-i686/xpi"|\
+list-langs:
+	@fetch -qo- "https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi"|\
 		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1\n"}' |\
-		${AWK} 'BEGIN{ORS=" "}{print $1}END{printf "\nNumber of languages: %d\n",NR}'
+		${AWK} 'BEGIN{ORS=" "}{print $$1}END{printf "\nNumber of languages: %d\n",NR}'
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 
