@@ -179,7 +179,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 20+ 17 20+
+#                         Available values: yes 17+ 21+ 17 21+
 #                         NOTE:
 #                         default value 17 is used in case of USE_FIREFOX=yes
 #
@@ -221,11 +221,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 20
-_FIREFOX_RANGE_VERSIONS=	17+ 20+
+_FIREFOX_VERSIONS=			17 21
+_FIREFOX_RANGE_VERSIONS=	17+ 21+
 
 # For specifying [17, ..]+
-_FIREFOX_20P=	20 ${_FIREFOX_17P}
+_FIREFOX_21P=	21 ${_FIREFOX_17P}
 _FIREFOX_17P=	17
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-20_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+21_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -692,6 +692,7 @@ USE_GNOME+=	gtk20
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+CFLAGS+=		-O3
 MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 MOZ_OPTIONS+=	--enable-optimize
 .else
@@ -752,14 +753,8 @@ MOZ_OPTIONS+=	--disable-libproxy
 .if ${PORT_OPTIONS:MWEBRTC}
 BUILD_DEPENDS+=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	v4l2:${PORTSDIR}/multimedia/libv4l
-. if ${MOZILLA_VER:R:R} >= 21
-.  if ${PORT_OPTIONS:MOSS}
+. if ${PORT_OPTIONS:MOSS}
 IGNORE=		WEBRTC works only with ALSA and PULSEAUDIO audio backends
-.  endif
-. else
-.  if ! ${PORT_OPTIONS:MALSA}
-IGNORE=		WEBRTC works only with ALSA audio backend
-.  endif
 . endif
 .else
 MOZ_OPTIONS+=	--disable-webrtc
@@ -893,6 +888,7 @@ gecko-post-patch:
 			fenv.h \
 			kvm.h \
 			malloc_np.h \
+			ostream \
 			pthread_np.h \
 			pulse/pulseaudio.h \
 			spawn.h \
