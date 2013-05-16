@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Fork/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Fork
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
-@dirrmtry %%SITE_PERL%%/Proc/Fork
 @dirrmtry %%SITE_PERL%%/Proc
