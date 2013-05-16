@@ -57,6 +57,7 @@
 @exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/.empty
+%%WWWDIR%%/feed-icons/index.html
 %%WWWDIR%%/icons/.empty
 %%WWWDIR%%/image.php
 %%WWWDIR%%/images/alert.png
