@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/kom/KOM/}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Web based LysKOM client
 
 LICENSE=	BSD

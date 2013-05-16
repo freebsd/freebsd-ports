@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	A simple GTK+ 2.0 color selector
 
 USE_GNOME=	gtk20 gnomeprefix

@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	A color scheme builder for the GNOME desktop
 
 LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
