@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-HTML-CalendarMonthSimple
-# Date created:				May 27 2001
-# Whom:	      				vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-CalendarMonthSimple
 PORTVERSION=	1.25
@@ -15,7 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML::CalendarMonthSimple - Perl Module for Generating HTML Calendars
 
 BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 
 PERL_CONFIGURE=	yes
 
