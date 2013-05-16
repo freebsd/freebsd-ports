@@ -13,6 +13,9 @@ COMMENT=	Allow others to run commands as root
 
 LICENSE=	GPLv1
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
