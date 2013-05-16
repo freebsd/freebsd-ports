@@ -4,13 +4,11 @@
 PORTNAME=	enblend
 PORTVERSION=	4.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-# Care: the directory is the minor release number
-MASTER_SITE_SUBDIR=	enblend/enblend-enfuse/enblend-enfuse-4.1
+MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION:R}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
 
 MAINTAINER=	grog@FreeBSD.org
-COMMENT=	A tool for image blending with multiresolution splines
+COMMENT=	Tool for image blending with multiresolution splines
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
@@ -23,7 +21,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
-INFO=		enfuse enblend
 MAKE_JOBS_SAFE= yes
 USE_AUTOTOOLS=	automake:env autoconf:env
 USE_GMAKE=	yes
@@ -42,9 +39,9 @@ CONFIGURE_ARGS+=	--with-boost-filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+INFO=		enfuse enblend
 MAN1=		enblend.1 enfuse.1
 PLIST_FILES=	bin/enblend bin/enfuse
-PLIST_DIRS+=	%%DOCSDIR%%
 
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/${INFO_PATH}
