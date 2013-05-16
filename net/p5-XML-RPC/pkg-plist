@@ -1,5 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RPC/.packlist
 %%SITE_PERL%%/XML/RPC.pm
-@dirrmtry %%SITE_PERL%%/XML/RPC
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RPC/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RPC
+@dirrmtry %%SITE_PERL%%/XML
