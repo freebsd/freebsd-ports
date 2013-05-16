@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/CalendarMonthSimple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/CalendarMonthSimple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML
 @dirrmtry %%SITE_PERL%%/HTML
