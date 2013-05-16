@@ -1,13 +1,9 @@
-# New ports collection makefile for:	sysutils/p5-Same-SIDhelper
-# Date created:		2010-02-26
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Samba-SIDhelper
 PORTVERSION=	0.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Samba
