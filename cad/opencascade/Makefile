@@ -50,10 +50,6 @@ PLIST_SUB=	OCCROOT="${LOCCROOT}"
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900506
-BROKEN=		does not build on FreeBSD-8.x (xlocale.h required)
-.endif
-
 .if ${PORT_OPTIONS:MTBB}
 LIB_DEPENDS+=	tbb:${PORTSDIR}/devel/tbb
 CONFIGURE_ARGS+=--with-tbb-include=${LOCALBASE}/include	\
@@ -158,7 +154,8 @@ pre-configure:
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include/OpenCASCADE
-	${RM} ${OCCROOT}/src/OS/*.orig ${OCCROOT}/src/DrawResources/*.orig
+	${RM} ${OCCROOT}/src/OS/*.orig ${OCCROOT}/src/DrawResources/*.orig	\
+		${PREFIX}/include/OpenCASCADE/Standard_CLocaleSentry.hxx.orig
 	cd ${WRKSRC}/src && ${COPYTREE_SHARE} UnitsAPI ${OCCROOT}/src
 .if ${PORT_OPTIONS:MDATA}
 	${MKDIR} ${DATADIR}
