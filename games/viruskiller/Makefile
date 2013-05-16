@@ -13,6 +13,8 @@ COMMENT=	Arcade game that relies on quick reflexes
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS
+
 USE_SDL=	mixer image ttf net
 USE_GMAKE=	yes
 
@@ -22,11 +24,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKEFILE=	makefile
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=	Does not build with new libz
+.endif
+
 post-patch:
 	# Remove non-free restricted files:
 	${RM} -f ${WRKSRC}/music/* ${WRKSRC}/sound/*
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e "s|^.*install.*DOCS.*||g" \
 		-e "s|^.*mkdir.*DOCDIR.*||g" \
 		${WRKSRC}/makefile
