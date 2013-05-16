@@ -8,18 +8,38 @@
 %%WWWDIR%%/cache/images/.empty
 %%WWWDIR%%/cache/js/.empty
 %%WWWDIR%%/cache/simplepie/.empty
+%%WWWDIR%%/cache/upload/.empty
 %%WWWDIR%%/cdm.css
+%%WWWDIR%%/classes/.htaccess
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
 %%WWWDIR%%/classes/auth/base.php
 %%WWWDIR%%/classes/backend.php
+%%WWWDIR%%/classes/db.php
+%%WWWDIR%%/classes/db/mysql.php
+%%WWWDIR%%/classes/db/mysqli.php
+%%WWWDIR%%/classes/db/pdo.php
+%%WWWDIR%%/classes/db/pgsql.php
+%%WWWDIR%%/classes/db/prefs.php
+%%WWWDIR%%/classes/db/stmt.php
+%%WWWDIR%%/classes/dbupdater.php
 %%WWWDIR%%/classes/dlg.php
+%%WWWDIR%%/classes/feedenclosure.php
+%%WWWDIR%%/classes/feeditem.php
+%%WWWDIR%%/classes/feeditem/atom.php
+%%WWWDIR%%/classes/feeditem/common.php
+%%WWWDIR%%/classes/feeditem/rss.php
+%%WWWDIR%%/classes/feedparser.php
 %%WWWDIR%%/classes/feeds.php
 %%WWWDIR%%/classes/handler.php
 %%WWWDIR%%/classes/handler/protected.php
 %%WWWDIR%%/classes/handler/public.php
 %%WWWDIR%%/classes/iauthmodule.php
+%%WWWDIR%%/classes/idb.php
 %%WWWDIR%%/classes/ihandler.php
+%%WWWDIR%%/classes/logger.php
+%%WWWDIR%%/classes/logger/sql.php
+%%WWWDIR%%/classes/logger/syslog.php
 %%WWWDIR%%/classes/opml.php
 %%WWWDIR%%/classes/plugin.php
 %%WWWDIR%%/classes/pluginhandler.php
@@ -28,14 +48,13 @@
 %%WWWDIR%%/classes/pref/filters.php
 %%WWWDIR%%/classes/pref/labels.php
 %%WWWDIR%%/classes/pref/prefs.php
+%%WWWDIR%%/classes/pref/system.php
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
-%%WWWDIR%%/classes/sanitizedummy.php
 %%WWWDIR%%/classes/ttrssmailer.php
 @unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 %%WWWDIR%%/config.php-dist
 @exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
-%%WWWDIR%%/db-updater.php
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/icons/.empty
@@ -44,6 +63,7 @@
 %%WWWDIR%%/images/alert.svg
 %%WWWDIR%%/images/archive.png
 %%WWWDIR%%/images/blank_icon.gif
+%%WWWDIR%%/images/close_notify.svg
 %%WWWDIR%%/images/collapse.png
 %%WWWDIR%%/images/favicon-72px.png
 %%WWWDIR%%/images/favicon.png
@@ -69,11 +89,14 @@
 %%WWWDIR%%/images/sign_info.svg
 %%WWWDIR%%/images/tag.png
 %%WWWDIR%%/images/toolbar.png
+%%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/ccache.php
 %%WWWDIR%%/include/colors.php
+%%WWWDIR%%/include/crypt.php
 %%WWWDIR%%/include/db-prefs.php
 %%WWWDIR%%/include/db.php
 %%WWWDIR%%/include/digest.php
+%%WWWDIR%%/include/errorhandler.php
 %%WWWDIR%%/include/feedbrowser.php
 %%WWWDIR%%/include/functions.php
 %%WWWDIR%%/include/labels.php
@@ -86,12 +109,14 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/js/FeedTree.js
+%%WWWDIR%%/js/PluginHost.js
 %%WWWDIR%%/js/PrefFeedTree.js
 %%WWWDIR%%/js/PrefFilterTree.js
 %%WWWDIR%%/js/PrefLabelTree.js
 %%WWWDIR%%/js/deprecated.js
 %%WWWDIR%%/js/feedlist.js
 %%WWWDIR%%/js/functions.js
+%%WWWDIR%%/js/index.html
 %%WWWDIR%%/js/prefs.js
 %%WWWDIR%%/js/tt-rss.js
 %%WWWDIR%%/js/viewfeed.js
@@ -1475,10 +1500,12 @@
 %%WWWDIR%%/lib/dojo/uacss.js
 %%WWWDIR%%/lib/dojo/when.js
 %%WWWDIR%%/lib/dojo/window.js
+%%WWWDIR%%/lib/floIcon.php
 %%WWWDIR%%/lib/gettext/README
 %%WWWDIR%%/lib/gettext/gettext.inc
 %%WWWDIR%%/lib/gettext/gettext.php
 %%WWWDIR%%/lib/gettext/streams.php
+%%WWWDIR%%/lib/index.html
 %%WWWDIR%%/lib/jshrink/Minifier.php
 %%WWWDIR%%/lib/jshrink/README.md
 %%WWWDIR%%/lib/otphp/LICENCE
@@ -1923,10 +1950,10 @@
 %%WWWDIR%%/lib/scriptaculous/dragdrop.js
 %%WWWDIR%%/lib/scriptaculous/effects.js
 %%WWWDIR%%/lib/scriptaculous/scriptaculous.js
-%%WWWDIR%%/lib/simplepie/simplepie.inc
 %%WWWDIR%%/lib/sphinxapi.php
 %%WWWDIR%%/lib/timezones.txt
 %%WWWDIR%%/lib/xsl_mop-up.js
+%%WWWDIR%%/locale/.htaccess
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
@@ -1971,39 +1998,21 @@
 %%WWWDIR%%/plugins/af_pennyarcade/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
-%%WWWDIR%%/plugins/auth_imap/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
-%%WWWDIR%%/plugins/auth_ldap/init.php
-%%WWWDIR%%/plugins/auth_radius/init.php
-%%WWWDIR%%/plugins/auth_radius/php-radius/COPYING
-%%WWWDIR%%/plugins/auth_radius/php-radius/COPYING.LESSER
-%%WWWDIR%%/plugins/auth_radius/php-radius/radius.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
 %%WWWDIR%%/plugins/close_button/button.png
 %%WWWDIR%%/plugins/close_button/init.php
-%%WWWDIR%%/plugins/digest/digest.css
-%%WWWDIR%%/plugins/digest/digest.js
-%%WWWDIR%%/plugins/digest/digest_body.php
-%%WWWDIR%%/plugins/digest/images/tile.png
-%%WWWDIR%%/plugins/digest/init.php
-%%WWWDIR%%/plugins/digest/mobile.css
 %%WWWDIR%%/plugins/embed_original/button.png
 %%WWWDIR%%/plugins/embed_original/init.css
 %%WWWDIR%%/plugins/embed_original/init.js
 %%WWWDIR%%/plugins/embed_original/init.php
-%%WWWDIR%%/plugins/example/example.js
-%%WWWDIR%%/plugins/example/init.php
-%%WWWDIR%%/plugins/example_article/init.js
-%%WWWDIR%%/plugins/example_article/init.php
-%%WWWDIR%%/plugins/example_feed/init.php
-%%WWWDIR%%/plugins/example_routing/init.php
-%%WWWDIR%%/plugins/example_vfeed/init.php
 %%WWWDIR%%/plugins/googlereaderimport/init.js
 %%WWWDIR%%/plugins/googlereaderimport/init.php
 %%WWWDIR%%/plugins/googlereaderkeys/init.php
 %%WWWDIR%%/plugins/import_export/import_export.js
 %%WWWDIR%%/plugins/import_export/init.php
+%%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/plugins/instances/init.php
 %%WWWDIR%%/plugins/instances/instances.js
 %%WWWDIR%%/plugins/mail/init.php
@@ -2012,43 +2021,7 @@
 %%WWWDIR%%/plugins/mailto/init.js
 %%WWWDIR%%/plugins/mailto/init.php
 %%WWWDIR%%/plugins/mailto/mail.png
-%%WWWDIR%%/plugins/mobile/article.php
-%%WWWDIR%%/plugins/mobile/backend.php
-%%WWWDIR%%/plugins/mobile/cat.php
-%%WWWDIR%%/plugins/mobile/feed.php
-%%WWWDIR%%/plugins/mobile/home.php
-%%WWWDIR%%/plugins/mobile/index.php
-%%WWWDIR%%/plugins/mobile/init.php
-%%WWWDIR%%/plugins/mobile/iui/LICENSE.txt
-%%WWWDIR%%/plugins/mobile/iui/NOTICE.txt
-%%WWWDIR%%/plugins/mobile/iui/backButton.png
-%%WWWDIR%%/plugins/mobile/iui/blueButton.png
-%%WWWDIR%%/plugins/mobile/iui/cancel.png
-%%WWWDIR%%/plugins/mobile/iui/grayButton.png
-%%WWWDIR%%/plugins/mobile/iui/iui-logo-touch-icon.png
-%%WWWDIR%%/plugins/mobile/iui/iui.css
-%%WWWDIR%%/plugins/mobile/iui/iui.js
-%%WWWDIR%%/plugins/mobile/iui/iuix.css
-%%WWWDIR%%/plugins/mobile/iui/iuix.js
-%%WWWDIR%%/plugins/mobile/iui/listArrow.png
-%%WWWDIR%%/plugins/mobile/iui/listArrowSel.png
-%%WWWDIR%%/plugins/mobile/iui/listGroup.png
-%%WWWDIR%%/plugins/mobile/iui/loading.gif
-%%WWWDIR%%/plugins/mobile/iui/pinstripes.png
-%%WWWDIR%%/plugins/mobile/iui/redButton.png
-%%WWWDIR%%/plugins/mobile/iui/selection.png
-%%WWWDIR%%/plugins/mobile/iui/thumb.png
-%%WWWDIR%%/plugins/mobile/iui/toggle.png
-%%WWWDIR%%/plugins/mobile/iui/toggleOn.png
-%%WWWDIR%%/plugins/mobile/iui/toolButton.png
-%%WWWDIR%%/plugins/mobile/iui/toolbar.png
-%%WWWDIR%%/plugins/mobile/iui/whiteButton.png
-%%WWWDIR%%/plugins/mobile/login_form.php
-%%WWWDIR%%/plugins/mobile/logout.php
-%%WWWDIR%%/plugins/mobile/mobile-functions.php
-%%WWWDIR%%/plugins/mobile/mobile.css
-%%WWWDIR%%/plugins/mobile/mobile.js
-%%WWWDIR%%/plugins/mobile/prefs.php
+%%WWWDIR%%/plugins/mark_button/init.php
 %%WWWDIR%%/plugins/note/init.php
 %%WWWDIR%%/plugins/note/note.js
 %%WWWDIR%%/plugins/note/note.png
@@ -2064,6 +2037,7 @@
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
+%%WWWDIR%%/schema/.htaccess
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
 %%WWWDIR%%/schema/versions/mysql/10.sql
@@ -2084,7 +2058,12 @@
 %%WWWDIR%%/schema/versions/mysql/113.sql
 %%WWWDIR%%/schema/versions/mysql/114.sql
 %%WWWDIR%%/schema/versions/mysql/115.sql
+%%WWWDIR%%/schema/versions/mysql/116.sql
+%%WWWDIR%%/schema/versions/mysql/117.sql
+%%WWWDIR%%/schema/versions/mysql/118.sql
+%%WWWDIR%%/schema/versions/mysql/119.sql
 %%WWWDIR%%/schema/versions/mysql/12.sql
+%%WWWDIR%%/schema/versions/mysql/120.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2197,7 +2176,12 @@
 %%WWWDIR%%/schema/versions/pgsql/113.sql
 %%WWWDIR%%/schema/versions/pgsql/114.sql
 %%WWWDIR%%/schema/versions/pgsql/115.sql
+%%WWWDIR%%/schema/versions/pgsql/116.sql
+%%WWWDIR%%/schema/versions/pgsql/117.sql
+%%WWWDIR%%/schema/versions/pgsql/118.sql
+%%WWWDIR%%/schema/versions/pgsql/119.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
+%%WWWDIR%%/schema/versions/pgsql/120.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2292,6 +2276,7 @@
 %%WWWDIR%%/schema/versions/pgsql/97.sql
 %%WWWDIR%%/schema/versions/pgsql/98.sql
 %%WWWDIR%%/schema/versions/pgsql/99.sql
+%%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -2303,6 +2288,7 @@
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
 %%WWWDIR%%/utility.css
+%%WWWDIR%%/utils/.htaccess
 %%WWWDIR%%/utils/extract-i18n-js.pl
 %%WWWDIR%%/utils/localized_schema.txt
 %%WWWDIR%%/utils/regen_config_checks.sh
@@ -2322,30 +2308,18 @@
 @dirrm %%WWWDIR%%/plugins/share
 @dirrm %%WWWDIR%%/plugins/nsfw
 @dirrm %%WWWDIR%%/plugins/note
-@dirrm %%WWWDIR%%/plugins/mobile/iui
-@dirrm %%WWWDIR%%/plugins/mobile
+@dirrm %%WWWDIR%%/plugins/mark_button
 @dirrm %%WWWDIR%%/plugins/mailto
 @dirrm %%WWWDIR%%/plugins/mail
 @dirrm %%WWWDIR%%/plugins/instances
 @dirrm %%WWWDIR%%/plugins/import_export
 @dirrm %%WWWDIR%%/plugins/googlereaderkeys
 @dirrm %%WWWDIR%%/plugins/googlereaderimport
-@dirrm %%WWWDIR%%/plugins/example_vfeed
-@dirrm %%WWWDIR%%/plugins/example_routing
-@dirrm %%WWWDIR%%/plugins/example_feed
-@dirrm %%WWWDIR%%/plugins/example_article
-@dirrm %%WWWDIR%%/plugins/example
 @dirrm %%WWWDIR%%/plugins/embed_original
-@dirrm %%WWWDIR%%/plugins/digest/images
-@dirrm %%WWWDIR%%/plugins/digest
 @dirrm %%WWWDIR%%/plugins/close_button
 @dirrm %%WWWDIR%%/plugins/bookmarklets
 @dirrm %%WWWDIR%%/plugins/auth_remote
-@dirrm %%WWWDIR%%/plugins/auth_radius/php-radius
-@dirrm %%WWWDIR%%/plugins/auth_radius
-@dirrm %%WWWDIR%%/plugins/auth_ldap
 @dirrm %%WWWDIR%%/plugins/auth_internal
-@dirrm %%WWWDIR%%/plugins/auth_imap
 @dirrm %%WWWDIR%%/plugins/af_unburn
 @dirrm %%WWWDIR%%/plugins/af_redditimgur
 @dirrm %%WWWDIR%%/plugins/af_pennyarcade
@@ -2389,7 +2363,6 @@
 @dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ca_CA
 @dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/lib/simplepie
 @dirrm %%WWWDIR%%/lib/scriptaculous
 @dirrm %%WWWDIR%%/lib/pubsubhubbub
 @dirrm %%WWWDIR%%/lib/phpqrcode/tools
@@ -2641,14 +2614,18 @@
 @dirrmtry %%WWWDIR%%/icons
 @dirrmtry %%WWWDIR%%/feed-icons
 @dirrm %%WWWDIR%%/classes/pref
+@dirrm %%WWWDIR%%/classes/logger
 @dirrm %%WWWDIR%%/classes/handler
+@dirrm %%WWWDIR%%/classes/feeditem
+@dirrm %%WWWDIR%%/classes/db
 @dirrm %%WWWDIR%%/classes/auth
 @dirrm %%WWWDIR%%/classes
+@dirrmtry %%WWWDIR%%/cache/upload
 @dirrmtry %%WWWDIR%%/cache/simplepie
 @dirrmtry %%WWWDIR%%/cache/js
 @dirrmtry %%WWWDIR%%/cache/images
 @dirrmtry %%WWWDIR%%/cache/export
-@dirrm %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%/api
 @dirrmtry %%WWWDIR%%
 @dirrm %%DATADIR%%
