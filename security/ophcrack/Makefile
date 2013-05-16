@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.4.1
+PORTVERSION=	3.5.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -12,10 +12,15 @@ COMMENT=	Windows password cracker based on rainbow tables
 LICENSE=	AL2 GPLv2
 LICENSE_COMB=	multi
 
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/ophcrack
 PORTDOCS=	*
@@ -35,7 +40,7 @@ CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 .if ${PORT_OPTIONS:MGRAPH}
-LIB_DEPENDS=	qwt:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS+=	qwt:${PORTSDIR}/x11-toolkits/qwt5
 .else
 CONFIGURE_ARGS+=	--disable-graph
 .endif
