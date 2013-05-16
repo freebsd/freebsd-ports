@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBI
-PORTVERSION=	1.625
+PORTVERSION=	1.626
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -70,7 +70,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::Util::CacheMemory.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
-PORTDOCS=	Changes README
+PORTDOCS=	Changes
 
 .include <bsd.port.options.mk>
 
