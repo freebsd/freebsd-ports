@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	billiard
-PORTVERSION=	2.7.3.22
+PORTVERSION=	2.7.3.28
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python multiprocessing fork with improvements and bugfixes
+
+LICENSE=	BSD
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install

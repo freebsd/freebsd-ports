@@ -71,12 +71,35 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_multiprocessing.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_multiprocessing.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_multiprocessing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/compat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_package.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_package.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/test_package.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests/test_multiprocessing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests/test_multiprocessing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests/test_multiprocessing.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/funtests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard/dummy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/billiard
