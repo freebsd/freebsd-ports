@@ -1,61 +1,74 @@
-# New ports collection makefile for:	quat-gui
-# Date created:				2 May 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	quat
 PORTVERSION=	1.20
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
+#MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
+MASTER_SITES=	http://www.sourcefiles.org/Graphics/Fractals/
 PKGNAMESUFFIX=	-gui
-DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Three-dimensional fractal creator (X11 GUI)
+COMMENT=	Three-dimensional fractal creator (X11 GUI)
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LICENSE=	GPLv2 # (or later)
+
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_XORG=	xext
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lXext -lGL" FLUID="${LOCALBASE}/bin/fluid"
-CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CONFIGURE_ENV=	FLUID="${LOCALBASE}/bin/fluid"
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
+MAKE_JOBS_SAFE=	yes
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
+
+PORTDOCS=	*
+PLIST_FILES=	bin/quat
+
+DESKTOP_ENTRIES="Quat" "3D Fractal Generator" "" "${PORTNAME}" "" ""
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math
-.endif
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \
-		's|^...CFLAGS=|#CFLAGS=|; \
-		s|^...CXXFLAGS=|#CXXFLAGS=|' \
+		's,-(march=pentium|O3|ffast-math),,g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -E -e 's|-I\.[[:space:]]+-I\$$\(srcdir\)[[:space:]]+||' \
+	@${REINPLACE_CMD} -E -e \
+		's|-I\.[[:space:]]+-I\$$\(srcdir\)[[:space:]]+||' \
 		${WRKSRC}/gui/Makefile.in
-	@${REINPLACE_CMD} -e 's|#include <FL/fl_file_chooser.H>|#include <FL/Fl_File_Chooser.H>|' \
+	@${REINPLACE_CMD} -e \
+		's|<FL/fl_file_chooser.H>|<FL/Fl_File_Chooser.H>| ; \
+		 s|/doc/quat/|/doc/${UNIQUENAME}/|' \
 		${WRKSRC}/gui/MainWindow.cxx
 # disable data file installation since distfile does not do
 # The Right Thing(TM)
 	@${REINPLACE_CMD} -E -e \
-		's|^(install-data-am:).*$$|\1|' \
+		's|^(install-data-am:).*$$|\1| ; \
+		 s|^(SUBDIRS.*)doc|\1|' \
 		${WRKSRC}/Makefile.in
-.ifdef NOPORTDOCS
-	@${REINPLACE_CMD} '/install-data-am:/s/install-pkgdataDATA//' \
+	@${REINPLACE_CMD} -e \
+		's|@PACKAGE@|${UNIQUENAME}|' \
 		${WRKSRC}/doc/Makefile.in
-.endif
 
-post-configure:
-	@${REINPLACE_CMD} -E -e \
-		's|^(pkgdatadir).*$$|\1=${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}|' \
-		${WRKSRC}/doc/Makefile
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endif
 
 .include <bsd.port.mk>
