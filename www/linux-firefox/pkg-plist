@@ -2,32 +2,43 @@ bin/%%APP_NAME%%
 share/applications/%%APP_NAME%%.desktop
 lib/%%APP_NAME%%/Throbber-small.gif
 lib/%%APP_NAME%%/application.ini
-lib/%%APP_NAME%%/blocklist.xml
+lib/%%APP_NAME%%/browser/blocklist.xml
+lib/%%APP_NAME%%/browser/chrome.manifest
+lib/%%APP_NAME%%/browser/chrome/icons/default/default16.png
+lib/%%APP_NAME%%/browser/chrome/icons/default/default32.png
+lib/%%APP_NAME%%/browser/chrome/icons/default/default48.png
+lib/%%APP_NAME%%/browser/components/components.manifest
+lib/%%APP_NAME%%/browser/components/libbrowsercomps.so
+lib/%%APP_NAME%%/browser/crashreporter-override.ini
+lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%APP_NAME%%/browser/icons/mozicon128.png
+lib/%%APP_NAME%%/browser/omni.ja
+lib/%%APP_NAME%%/browser/searchplugins/amazondotcom.xml
+lib/%%APP_NAME%%/browser/searchplugins/bing.xml
+lib/%%APP_NAME%%/browser/searchplugins/eBay.xml
+lib/%%APP_NAME%%/browser/searchplugins/google.xml
+lib/%%APP_NAME%%/browser/searchplugins/twitter.xml
+lib/%%APP_NAME%%/browser/searchplugins/wikipedia.xml
+lib/%%APP_NAME%%/browser/searchplugins/yahoo.xml
 lib/%%APP_NAME%%/chrome.manifest
-lib/%%APP_NAME%%/chrome/icons/default/default16.png
-lib/%%APP_NAME%%/chrome/icons/default/default32.png
-lib/%%APP_NAME%%/chrome/icons/default/default48.png
-lib/%%APP_NAME%%/components/binary.manifest
-lib/%%APP_NAME%%/components/libbrowsercomps.so
+lib/%%APP_NAME%%/components/components.manifest
 lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libmozgnome.so
-lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/crashreporter
-lib/%%APP_NAME%%/crashreporter-override.ini
 lib/%%APP_NAME%%/crashreporter.ini
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
 lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
-lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 lib/%%APP_NAME%%/firefox
 lib/%%APP_NAME%%/firefox-bin
-lib/%%APP_NAME%%/icons/mozicon128.png
 lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
+lib/%%APP_NAME%%/libldap60.so
+lib/%%APP_NAME%%/libldif60.so
 lib/%%APP_NAME%%/libmozalloc.so
 lib/%%APP_NAME%%/libmozsqlite3.so
 lib/%%APP_NAME%%/libnspr4.so
@@ -38,6 +49,7 @@ lib/%%APP_NAME%%/libnssdbm3.so
 lib/%%APP_NAME%%/libnssutil3.so
 lib/%%APP_NAME%%/libplc4.so
 lib/%%APP_NAME%%/libplds4.so
+lib/%%APP_NAME%%/libprldap60.so
 lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
@@ -51,13 +63,6 @@ lib/%%APP_NAME%%/plugin-container
 lib/%%APP_NAME%%/precomplete
 lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/run-mozilla.sh
-lib/%%APP_NAME%%/searchplugins/amazondotcom.xml
-lib/%%APP_NAME%%/searchplugins/bing.xml
-lib/%%APP_NAME%%/searchplugins/eBay.xml
-lib/%%APP_NAME%%/searchplugins/google.xml
-lib/%%APP_NAME%%/searchplugins/twitter.xml
-lib/%%APP_NAME%%/searchplugins/wikipedia.xml
-lib/%%APP_NAME%%/searchplugins/yahoo.xml
 lib/%%APP_NAME%%/update-settings.ini
 lib/%%APP_NAME%%/updater
 lib/%%APP_NAME%%/updater.ini
@@ -68,27 +73,22 @@ lib/%%APP_NAME%%/webapprt/webapprt.ini
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
-@dirrm lib/%%APP_NAME%%/chrome/icons/default
-@dirrm lib/%%APP_NAME%%/chrome/icons
-@dirrm lib/%%APP_NAME%%/chrome
-@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/webapprt
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/modules/services-aitc
-@dirrm lib/%%APP_NAME%%/modules/services-common
-@dirrm lib/%%APP_NAME%%/modules/services-crypto
-@dirrm lib/%%APP_NAME%%/modules/services-notifications
-@dirrm lib/%%APP_NAME%%/modules/services-sync/engines
-@dirrm lib/%%APP_NAME%%/modules/services-sync
-@dirrm lib/%%APP_NAME%%/modules/sessionstore
-@dirrm lib/%%APP_NAME%%/modules
-@dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/webapprt/components
-@dirrm lib/%%APP_NAME%%/webapprt
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/browser/searchplugins
+@dirrm lib/%%APP_NAME%%/browser/icons
+@dirrm lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/browser/extensions
+@dirrm lib/%%APP_NAME%%/browser/components
+@dirrm lib/%%APP_NAME%%/browser/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/browser/chrome/icons
+@dirrm lib/%%APP_NAME%%/browser/chrome
+@dirrm lib/%%APP_NAME%%/browser
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications

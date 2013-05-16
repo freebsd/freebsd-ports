@@ -8,8 +8,7 @@
 PORTNAME=	nspr
 DISTVERSION=	4.9.6
 CATEGORIES=	devel
-MASTER_SITES=	MOZILLA
-MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	A platform-neutral API for system level and libc like functions

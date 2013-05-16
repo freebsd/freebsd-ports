@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	20.0
+DISTVERSION=	21.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -23,7 +22,7 @@ USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
-CONFLICTS=	firefox-1[07].*
+CONFLICTS=	firefox-24.* firefox-1[07].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
@@ -37,7 +36,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
-USE_DOS2UNIX=	media/webrtc/trunk/src/system_wrappers/source/spreadsortlib/spreadsort.hpp
+USE_DOS2UNIX=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 NO_MOZPKGINSTALL=yes
 
 FIREFOX_ICON=		${MOZILLA}.png
@@ -46,13 +45,10 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=	GSTREAMER PGO WEBRTC
-OPTIONS_DEFAULT=GIO WEBRTC
+OPTIONS_DEFINE=	PGO WEBRTC
+OPTIONS_DEFAULT=WEBRTC
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/OSS/ALSA/}
-
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-release
@@ -104,6 +100,9 @@ port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
 	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
+	${ECHO_CMD} "@dirrm lib/firefox/chrome/icons/default" >> ${PLISTD}
+	${ECHO_CMD} "@dirrm lib/firefox/chrome/icons" >> ${PLISTD}
+	${ECHO_CMD} "@dirrm lib/firefox/chrome" >> ${PLISTD}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps

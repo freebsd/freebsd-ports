@@ -51,6 +51,86 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a1ca8a4-bd82-11e2-b7a0-d43d7e0c7c02">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>18.0,1</gt><lt>21.0,1</lt></range>
+	<range><lt>17.0.6,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>17.0.6,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.18</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>17.0.6</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.18</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>17.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2013-41 Miscellaneous memory safety hazards (rv:21.0
+	    / rv:17.0.6)</p>
+	  <p>MFSA 2013-42 Privileged access for content level constructor</p>
+	  <p>MFSA 2013-43 File input control has access to full path</p>
+	  <p>MFSA 2013-44 Local privilege escalation through Mozilla
+	    Maintenance Service</p>
+	  <p>MFSA 2013-45 Mozilla Updater fails to update some Windows Registry
+	    entries</p>
+	  <p>MFSA 2013-46 Use-after-free with video and onresize event</p>
+	  <p>MFSA 2013-47 Uninitialized functions in DOMSVGZoomEvent</p>
+	  <p>MFSA 2013-48 Memory corruption found using Address Sanitizer</p>
+	  <p> </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-1942</cvename>
+	<cvename>CVE-2013-0801</cvename>
+	<cvename>CVE-2013-1669</cvename>
+	<cvename>CVE-2013-1670</cvename>
+	<cvename>CVE-2013-1671</cvename>
+	<cvename>CVE-2013-1672</cvename>
+	<cvename>CVE-2013-1674</cvename>
+	<cvename>CVE-2013-1675</cvename>
+	<cvename>CVE-2013-1676</cvename>
+	<cvename>CVE-2013-1677</cvename>
+	<cvename>CVE-2013-1678</cvename>
+	<cvename>CVE-2013-1679</cvename>
+	<cvename>CVE-2013-1680</cvename>
+	<cvename>CVE-2013-1681</cvename>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-40.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-41.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-42.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-43.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-44.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-45.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-46.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-47.html</url>
+	<url>http://www.mozilla.org/security/announce/2013/mfsa2013-48.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2013-05-14</discovery>
+      <entry>2013-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="efaa4071-b700-11e2-b1b9-f0def16c5c1b">
     <topic>nginx -- Stack-based buffer overflow</topic>
     <affects>
