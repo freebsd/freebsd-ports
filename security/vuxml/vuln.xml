@@ -51,6 +51,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0c65049-bddd-11e2-a0f6-001060e06fd4">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.285</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb13-14.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2728</cvename>
+      <cvename>CVE-2013-3324</cvename>
+      <cvename>CVE-2013-3325</cvename>
+      <cvename>CVE-2013-3326</cvename>
+      <cvename>CVE-2013-3327</cvename>
+      <cvename>CVE-2013-3328</cvename>
+      <cvename>CVE-2013-3329</cvename>
+      <cvename>CVE-2013-3330</cvename>
+      <cvename>CVE-2013-3331</cvename>
+      <cvename>CVE-2013-3332</cvename>
+      <cvename>CVE-2013-3333</cvename>
+      <cvename>CVE-2013-3334</cvename>
+      <cvename>CVE-2013-3335</cvename>
+    </references>
+    <dates>
+      <discovery>2013-05-14</discovery>
+      <entry>2013-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a1ca8a4-bd82-11e2-b7a0-d43d7e0c7c02">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
