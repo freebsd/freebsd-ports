@@ -11,7 +11,7 @@ PORTVERSION=	20041113
 CATEGORIES=	polish net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
 
 GNU_CONFIGURE=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	1.11
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Transforms bitmaps into vector graphics
 
 GNU_CONFIGURE=	yes

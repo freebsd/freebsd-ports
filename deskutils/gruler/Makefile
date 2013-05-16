@@ -11,7 +11,7 @@ PORTREVISION=	10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	A simple customizable GTK screen ruler
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2

@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://pimlico-project.org/sources/${PORTNAME}/
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	smyru@heron.pl
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Simple yet powerful address book based on Evolution data server
 
 CPPFLAGS+=	-I${LOCALBASE}/include
