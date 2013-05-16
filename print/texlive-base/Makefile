@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base
@@ -118,6 +118,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/web2c
+	${TOUCH} ${PREFIX}/${TEXMFCONFIGDIR}/web2c/.keep_me
 	${INSTALL_DATA} ${PREFIX}/${TEXMFDIR}/web2c/fmtutil.cnf \
 		${PREFIX}/${FMTUTIL_CNF}
 

@@ -325,7 +325,7 @@ bin/xdvipdfmx
 %%TEXMFDIR%%/scripts/texlive/rungs.tlu
 %%TEXMFDIR%%/scripts/texlive/tlmgr.pl
 %%TEXMFDIR%%/web2c/fmtutil.cnf
-@exec /bin/mkdir -p %%TEXMFCONFIGDIR%%/web2c
+%%TEXMFCONFIGDIR%%/web2c/.keep_me
 @exec %%INSTALL_DATA%% %D/%%TEXMFDIR%%/web2c/fmtutil.cnf %D/%%FMTUTIL_CNF%%
 @unexec /bin/rm -f %D/%%FMTUTIL_CNF%%
 @dirrmtry %%TEXMFCONFIGDIR%%/web2c
