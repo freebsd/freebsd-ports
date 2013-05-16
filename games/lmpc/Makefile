@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Litte Movie Processing Centre
-# Date created:				16 Mar 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lmpc
 PORTVERSION=	3.4.4
@@ -14,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FETCHED_DOCS:S/$/:doc/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A tool to manipulate games demo recordings
+COMMENT=	Tool to manipulate some FPS games demo recordings
 
 LICENSE=	GPLv2
 
@@ -30,7 +26,9 @@ FETCHED_DOCS=	${PORTNAME}.html ${PORTNAME}.pdf ${PORTNAME}.sgml
 PORTDOCS=	*
 PLIST_FILES=	${SCRIPTS:S,^,bin/,} ${PROGRAMS:S,^,bin/,}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"
 IGNORE=		does not work on ${ARCH}: assumes sizeof(long) == 4
@@ -43,10 +41,10 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/src/,} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${FETCHED_DOCS:S,^,${DISTDIR}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
