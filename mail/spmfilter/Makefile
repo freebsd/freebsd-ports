@@ -1,4 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
 # $FreeBSD$
 
 PORTNAME=	spmfilter
@@ -7,8 +6,10 @@ PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/attachments/download/60/
 
-MAINTAINER=	fw@moov.de
+MAINTAINER=	ast@treibsand.com
 COMMENT=	Spmfilter is a high-performance mail filtering framework, written in C
+
+LICENSE=	LGPL3
 
 BUILD_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp \
@@ -17,8 +18,6 @@ BUILD_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 RUN_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp \
 		glib>=2.14:${PORTSDIR}/devel/glib20
-
-LICENSE=	LGPL3
 
 USES=		cmake pkgconfig
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
