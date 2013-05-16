@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-sid
-PORTVERSION=	0.8.99.2
+PORTVERSION=	0.9.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tnsp.org/xs-files/
 
