@@ -1,12 +1,8 @@
-# Ports collection makefile for:	py-dojango
-# Date created:			Sept 13, 2010
-# Whom:				jpaetzel
-#
+# Created by: jpaetzel
 # $FreeBSD$
-#
 
 PORTNAME=	dojango
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	www python java
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
