@@ -773,6 +773,7 @@
     SUBDIR += relpath
     SUBDIR += rename
     SUBDIR += reoback
+    SUBDIR += replicant
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool
