@@ -4,7 +4,8 @@
 PORTNAME=	dualserver
 PORTVERSION=	7.01
 CATEGORIES=	dns net
-MASTER_SITES=	SF/dhcp-dns-server/Dual%20DHCP%20DNS%20Server/
+MASTER_SITES=	SF/dhcp-dns-server/Dual%20DHCP%20DNS%20Server/ \
+		http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}V${PORTVERSION}
 
 MAINTAINER=	rodrigo@bebik.net
