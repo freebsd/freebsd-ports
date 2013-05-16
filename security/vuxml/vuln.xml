@@ -170,34 +170,45 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="efaa4071-b700-11e2-b1b9-f0def16c5c1b">
-    <topic>nginx -- Stack-based buffer overflow</topic>
+    <topic>nginx -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>nginx</name>
-	<range><ge>1.2.0,1</ge><lt>1.4.1,1</lt></range>
+	<range><ge>1.2.0,1</ge><le>1.2.8,1</le></range>
+	<range><ge>1.3.0,1</ge><lt>1.4.1,1</lt></range>
       </package>
       <package>
 	<name>nginx-devel</name>
-	<range><ge>1.1.4</ge><lt>1.5.0</lt></range>
+	<range><ge>1.1.4</ge><le>1.2.8</le></range>
+	<range><ge>1.3.0</ge><lt>1.5.0</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
        <p>The nginx project reports:</p>
        <blockquote cite="http://nginx.org/en/security_advisories.html">
-       <p>A stack-based buffer overflow might occur in a worker process
-       process while handling a specially crafted request, potentially
-       resulting in arbitrary code execution.</p>
+	<p>A stack-based buffer overflow might occur in a worker process
+	  process while handling a specially crafted request, potentially
+	  resulting in arbitrary code execution. [CVE-2013-2028]</p>
+	<p>A security problem related to CVE-2013-2028 was identified,
+	  affecting some previous nginx versions if proxy_pass to
+	  untrusted upstream HTTP servers is used.</p>
+	<p>The problem may lead to a denial of service or a disclosure of a
+	  worker process memory on a specially crafted response from an
+	  upstream proxied server. [CVE-2013-2070]</p>
        </blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2013-2028</cvename>
+      <cvename>CVE-2013-2070</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2013/000114.html</url>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2013/000112.html</url>
     </references>
     <dates>
       <discovery>2013-05-07</discovery>
       <entry>2013-05-07</entry>
-      <modified>2013-05-07</modified>
+      <modified>2013-05-16</modified>
     </dates>
   </vuln>
 
