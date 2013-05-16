@@ -9,4 +9,4 @@ to control timing and windowing and a simple set of pre-packaged
 stimuli and methods. The code is platform independent, using Python
 and C libraries that are widely available.
 
-WWW:  http://www.psychopy.org/
+WWW: http://www.psychopy.org/
