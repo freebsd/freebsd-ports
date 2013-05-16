@@ -4,6 +4,7 @@
 #
 # PROVIDE: cfsd
 # REQUIRE: mountd
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable cfsd:
 #
@@ -22,7 +23,7 @@ rcvar=cfsd_enable
 
 load_rc_config $name
 
-: ${cfsd_enable=no}
+: ${cfsd_enable:=no}
 : ${cfsd_port=3049}
 : ${cfsd_mountpoint=/crypt}
 
@@ -35,7 +36,7 @@ stop_precmd=cfsd_prestop
 cfsd_poststart()
 {
 	if [ -n "$cfsd_mountpoint" ]; then
-		mount -o port="$cfsd_port",mntudp,nfsv2 localhost:%%CFSD_BOOTSTRAP%% "$cfsd_mountpoint"
+		mount -o port="$cfsd_port",udp,nfsv2,nolockd 127.0.0.1:%%CFSD_BOOTSTRAP%% "$cfsd_mountpoint"
 	fi
 }
 

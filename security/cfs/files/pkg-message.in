@@ -3,7 +3,7 @@ Quick start instructions:
 
   - add the following entry to /etc/exports:
 
-    %%CFSD_BOOTSTRAP%% localhost
+    %%CFSD_BOOTSTRAP%% 127.0.0.1
 
   - create the default CFS mountpoint (if you want to use a different
     mountpoint, set the cfsd_mountpoint variable in /etc/rc.conf):
