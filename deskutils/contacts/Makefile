@@ -1,9 +1,5 @@
-# New ports collection makefile for:	contacts
-# Date created:				2005-12-15
-# Whom:					Piotr SMyrak, smyru@heron.pl
-#
+# Created by: Piotr SMyrak, smyru@heron.pl
 # $FreeBSD$
-#
 
 PORTNAME=	contacts
 PORTVERSION=	0.9
@@ -14,6 +10,9 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Simple yet powerful address book based on Evolution data server
+
+DEPRECATED=		upstream project discontinued for years, upstream sources are gone
+EXPIRATION_DATE=	2013-06-13
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
