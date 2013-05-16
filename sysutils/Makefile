@@ -432,6 +432,7 @@
     SUBDIR += kfloppy
     SUBDIR += kgrubeditor
     SUBDIR += kgtk
+    SUBDIR += kibana
     SUBDIR += kiconvtool
     SUBDIR += kkbswitch
     SUBDIR += kkeyled

@@ -1,0 +1,99 @@
+%%WWWDIR%%/views/timezone.erb
+%%WWWDIR%%/static/stream.html
+%%WWWDIR%%/static/lib/js/stream.js
+%%WWWDIR%%/static/lib/js/shared.js
+%%WWWDIR%%/static/lib/js/lib/safebase64.js
+%%WWWDIR%%/static/lib/js/lib/json2.js
+%%WWWDIR%%/static/lib/js/lib/jquery.smartresize.js
+%%WWWDIR%%/static/lib/js/lib/jquery.min.js
+%%WWWDIR%%/static/lib/js/lib/jquery.history.js
+%%WWWDIR%%/static/lib/js/lib/jquery.flot.stack.min.js
+%%WWWDIR%%/static/lib/js/lib/jquery.flot.selection.min.js
+%%WWWDIR%%/static/lib/js/lib/jquery.flot.pie.min.js
+%%WWWDIR%%/static/lib/js/lib/jquery.flot.min.js
+%%WWWDIR%%/static/lib/js/lib/jquery-ui-1.8.16.custom.min.js
+%%WWWDIR%%/static/lib/js/lib/iso8601.min.js
+%%WWWDIR%%/static/lib/js/lib/excanvas.min.js
+%%WWWDIR%%/static/lib/js/lib/date.js
+%%WWWDIR%%/static/lib/js/lib/bootstrap-datepicker.js
+%%WWWDIR%%/static/lib/js/jquery-1.7.2.min.js
+%%WWWDIR%%/static/lib/js/ajax.js
+%%WWWDIR%%/static/lib/font/fontawesome-webfont.woff
+%%WWWDIR%%/static/lib/font/fontawesome-webfont.ttf
+%%WWWDIR%%/static/lib/font/fontawesome-webfont.svg
+%%WWWDIR%%/static/lib/font/fontawesome-webfont.eot
+%%WWWDIR%%/static/lib/css/style.css
+%%WWWDIR%%/static/lib/css/stream.css
+%%WWWDIR%%/static/lib/css/jquery.ui.datepicker.css
+%%WWWDIR%%/static/lib/css/jquery-ui-1.8.16.custom.css
+%%WWWDIR%%/static/lib/css/images/ui-icons_f6cf3b_256x240.png
+%%WWWDIR%%/static/lib/css/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/static/lib/css/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/static/lib/css/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/static/lib/css/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/static/lib/css/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_glass_75_ffffff_1x400.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/static/lib/css/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/static/lib/css/font-awesome.css
+%%WWWDIR%%/static/lib/css/bootstrap.min.css
+%%WWWDIR%%/static/lib/bootstrap/js/bootstrap.min.js
+%%WWWDIR%%/static/lib/bootstrap/js/bootstrap.js
+%%WWWDIR%%/static/lib/bootstrap/img/glyphicons-halflings.png
+%%WWWDIR%%/static/lib/bootstrap/img/glyphicons-halflings-white.png
+%%WWWDIR%%/static/lib/bootstrap/css/bootstrap.min.css
+%%WWWDIR%%/static/lib/bootstrap/css/bootstrap.css
+%%WWWDIR%%/static/index.html
+%%WWWDIR%%/static/images/search_red.png
+%%WWWDIR%%/static/images/search.png
+%%WWWDIR%%/static/images/main_bg.png
+%%WWWDIR%%/static/images/logo.png
+%%WWWDIR%%/static/images/kibana_banner.png
+%%WWWDIR%%/static/images/gradient.png
+%%WWWDIR%%/static/images/csv.gif
+%%WWWDIR%%/static/images/barload.gif
+%%WWWDIR%%/static/images/ajax-loader.gif
+%%WWWDIR%%/static/favicon.ico
+%%WWWDIR%%/static/blah.html
+%%WWWDIR%%/spec/spec_helper.rb
+%%WWWDIR%%/spec/kelastic_spec.rb
+%%WWWDIR%%/spec/id_request_spec.rb
+%%WWWDIR%%/spec/client_request_spec.rb
+%%WWWDIR%%/sample/kibana
+%%WWWDIR%%/lib/query.rb
+%%WWWDIR%%/lib/kelastic.rb
+%%WWWDIR%%/lib/id_request.rb
+%%WWWDIR%%/lib/compat.rb
+%%WWWDIR%%/lib/client_request.rb
+%%WWWDIR%%/kibana.rb
+%%WWWDIR%%/kibana.gemspec
+%%WWWDIR%%/kibana-daemon.rb
+%%WWWDIR%%/config.ru
+%%WWWDIR%%/Rakefile
+%%WWWDIR%%/README.md
+%%WWWDIR%%/LICENSE.md
+%%WWWDIR%%/KibanaConfig.rb
+%%WWWDIR%%/Gemfile.lock
+%%WWWDIR%%/Gemfile
+@dirrmtry %%WWWDIR%%/views/
+@dirrmtry %%WWWDIR%%/static/lib/js/lib
+@dirrmtry %%WWWDIR%%/static/lib/js
+@dirrmtry %%WWWDIR%%/static/lib/font
+@dirrmtry %%WWWDIR%%/static/lib/css/images
+@dirrmtry %%WWWDIR%%/static/lib/css
+@dirrmtry %%WWWDIR%%/static/lib/bootstrap/js
+@dirrmtry %%WWWDIR%%/static/lib/bootstrap/img
+@dirrmtry %%WWWDIR%%/static/lib/bootstrap/css
+@dirrmtry %%WWWDIR%%/static/lib/bootstrap
+@dirrmtry %%WWWDIR%%/static/lib
+@dirrmtry %%WWWDIR%%/static/images
+@dirrmtry %%WWWDIR%%/static/
+@dirrmtry %%WWWDIR%%/spec/
+@dirrmtry %%WWWDIR%%/sample/
+@dirrmtry %%WWWDIR%%/lib/
+@dirrmtry %%WWWDIR%%

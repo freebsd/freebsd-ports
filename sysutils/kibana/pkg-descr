@@ -1,0 +1,5 @@
+Kibana is a user friendly way to view, search and visualize your log data.
+Kibana is an open source (MIT License), browser based interface to Logstash and
+ElasticSearch.
+
+WWW: http://kibana.org/
