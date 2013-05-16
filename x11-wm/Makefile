@@ -107,7 +107,6 @@
     SUBDIR += kompmgr
     SUBDIR += larswm
     SUBDIR += libcompizconfig
-    SUBDIR += libdockapp
     SUBDIR += libwraster
     SUBDIR += lwm
     SUBDIR += lxsession
