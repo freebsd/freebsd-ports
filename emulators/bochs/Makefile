@@ -3,25 +3,27 @@
 
 PORTNAME=	bochs
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
+COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	A20_PIN ALIGN_CHECK ASSERT_CHECK \
+OPTIONS_DEFINE=	A20_PIN ALIGN_CHECK ASSERT_CHECK AVX \
 		CDROM CHAINING CLGD54XX CONF_MSRS CPP_SUFX \
 		DISASM DOCS \
-		E1000 ES1370 FAST_FUNCCALL FPU \
+		E1000 ES1370 FPU \
 		GAMEPORT IDLE_HACK IODEBUG \
 		LARGE_RAMFILE LOGGING LONG_PHY_ADDR \
 		MWAIT NE2000 OPTIMIZATIONS PCI PLUGINS PNIC \
 		RAW_SERIAL READLINE REPEAT_SPEED RFB \
-		SB16 SDL SHOW_IPS SMP SVGA SVM TERM USB USB_OHCI USB_XHCI \
+		SB16 SDL SHOW_IPS SMP SVGALIB SVM TERM USB USB_OHCI USB_XHCI \
 		VMX VOODOO WXGTK X11 X86_64 XPM
+OPTIONS_DEFINE_i386=	FAST_FUNCCALL
 OPTIONS_RADIO=	DEBUG
 OPTIONS_RADIO_DEBUG=	DEBUGGER GDB_STUB
 OPTIONS_DEFAULT=A20_PIN ALIGN_CHECK CDROM CONF_MSRS DISASM FPU LOGGING \
@@ -30,6 +32,7 @@ OPTIONS_DEFAULT=A20_PIN ALIGN_CHECK CDROM CONF_MSRS DISASM FPU LOGGING \
 A20_PIN_DESC=	Enable support for A20 pin
 ALIGN_CHECK_DESC=	Enable alignment check support
 ASSERT_CHECK_DESC=	Enable BX_ASSERT checks
+AVX_DESC=	Enable AVX instructions support
 CDROM_DESC=	Enable CDROM support
 CHAINING_DESC=	Enable handlers-chaining emulation speedups
 CLGD54XX_DESC=	Enable Cirrus Logic GD54xx video card
@@ -51,9 +54,9 @@ LARGE_RAMFILE_DESC=	Enable large ramfile support
 LOGGING_DESC=	Enable logging
 LONG_PHY_ADDR_DESC=	Enable support for physical address >= 32bit
 MWAIT_DESC=	Enable experimental MONITOR/MWAIT support
-NE2000_DESC=	Enable limited ne2000 support
+NE2000_DESC=	Enable ne2000 support
 OPTIMIZATIONS_DESC=	Enable all safe speed optimizations
-PCI_DESC=	Enable limited i440FX PCI support
+PCI_DESC=	Enable i440FX PCI support
 PLUGINS_DESC=	Enable building dynamic loadable plugins
 PNIC_DESC=	Enable PCI pseudo NIC (network card) support
 RAW_SERIAL_DESC=	Use raw serial port access
@@ -61,22 +64,20 @@ READLINE_DESC=	Enable readline support in debugger
 REPEAT_SPEED_DESC=	Enable repeated IO and mem copy speedups
 RFB_DESC=	Enable VNC server support in display
 SB16_DESC=	Enable Sound Blaster 16 emulation
-SDL_DESC=	Enable SDL display interface
 SHOW_IPS_DESC=	Enable logging of measured IPS
 SMP_DESC=	Enable SMP simulation support (CPU level 6)
-SVGA_DESC=	Enable SVGAlib support
 SVM_DESC=	Enable SVM (AMD: secure virtual machine) emulation
 TERM_DESC=	Use text only, console based interface
-USB_DESC=	Enable limited USB UHCI support
-USB_OHCI_DESC=	Enable limited USB OHCI support
-USB_XHCI_DESC=	Enable limited USB xHCI support
+USB_DESC=	Enable USB UHCI support
+USB_OHCI_DESC=	Enable USB OHCI support
+USB_XHCI_DESC=	Enable experimental USB xHCI support
 VMX_DESC=	Enable Virtialization extensions
 VOODOO_DESC=	Enable 3dfx Voodoo Graphics emulation
 X86_64_DESC=	Enable AMD x86-64 support
-XPM_DESC=	Enable XPM library support
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no
 CONFIGURE_ARGS=	--disable-docbook --disable-instrumentation
 MAKE_JOBS_SAFE=	yes
 
@@ -113,6 +114,12 @@ CONFIGURE_ARGS+=--disable-alignment-check
 CONFIGURE_ARGS+=--enable-assert-checks
 .else
 CONFIGURE_ARGS+=--disable-assert-checks
+.endif
+
+.if ${PORT_OPTIONS:MAVX}
+CONFIGURE_ARGS+=--enable-avx
+.else
+CONFIGURE_ARGS+=--disable-avx
 .endif
 
 .if ${PORT_OPTIONS:MCDROM}
@@ -311,7 +318,7 @@ CONFIGURE_ARGS+=--enable-smp
 WITH_CPU_LEVEL=	6
 .endif
 
-.if ${PORT_OPTIONS:MSVGA}
+.if ${PORT_OPTIONS:MSVGALIB}
 LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--with-svga
 .else
@@ -348,11 +355,14 @@ CONFIGURE_ARGS+=--enable-usb-xhci
 CONFIGURE_ARGS+=--disable-usb-xhci
 .endif
 
-.if ${PORT_OPTIONS:MVMX}
-CONFIGURE_ARGS+=--enable-vmx
+.if ${PORT_OPTIONS:MVMX} && ${PORT_OPTIONS:MX86_64}
+CONFIGURE_ARGS+=--enable-vmx=2
 WITH_CPU_LEVEL=	6
-.else
-CONFIGURE_ARGS+=--disable-vmx
+.endif
+
+.if ${PORT_OPTIONS:MVMX} && empty(PORT_OPTIONS:MX86_64)
+CONFIGURE_ARGS+=--enable-vmx=1
+WITH_CPU_LEVEL=	6
 .endif
 
 .if ${PORT_OPTIONS:MVOODOO}
@@ -394,17 +404,28 @@ IGNORE=		can not install: WITH_CPU_LEVEL must be an integer value between 3 and 
 CONFIGURE_ARGS+=--enable-cpu-level=${WITH_CPU_LEVEL}
 .endif
 
-.if ${PORT_OPTIONS:MSB16} || ${PORT_OPTIONS:MES1370}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
-CONFIGURE_ENV+=	SOUND_LINK_OPTS="-L${LOCALBASE}/lib"
-.endif
-
 .if ${PORT_OPTIONS:MGDB_STUB} && ${PORT_OPTIONS:MSMP}
 IGNORE=		GDB_STUB is incompatible with multiprocessor
 .endif
 
+.if empty(PORT_OPTIONS:MGAMEPORT) && ${PORT_OPTIONS:MES1370}
+IGNORE=		ES1370 soundcard support requires GAMEPORT support
+.endif
+
+.if empty(PORT_OPTIONS:MPCI) && ${PORT_OPTIONS:MES1370}
+IGNORE=		ES1370 soundcard support requires PCI support
+.endif
+
 .if empty(PORT_OPTIONS:MPCI) && ${PORT_OPTIONS:MVOODOO}
 IGNORE=		3dfx Voodoo Graphics emulation requires PCI support
+.endif
+
+.if empty(PORT_OPTIONS:MX86_64) && ${PORT_OPTIONS:MAVX}
+IGNORE=		AVX instructions support requires X86-64 support
+.endif
+
+.if empty(PORT_OPTIONS:MX86_64) && ${PORT_OPTIONS:MSVM}
+IGNORE=		SVM emulation requires X86-64 support
 .endif
 
 pre-everything::
