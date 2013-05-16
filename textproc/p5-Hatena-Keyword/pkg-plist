@@ -2,5 +2,4 @@
 %%SITE_PERL%%/Hatena/Keyword.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hatena/Keyword
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hatena
-@dirrmtry %%SITE_PERL%%/Hatena/Keyword
 @dirrmtry %%SITE_PERL%%/Hatena
