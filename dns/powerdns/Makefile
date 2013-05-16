@@ -57,7 +57,7 @@ DNSSEC_DESC=		Enable extra DNSSEC algorithms (13 & 14)
 BOTAN_DESC=		Use Botan
 CRYPTOPP_DESC=		Use Crypto++
 
-OPTIONS_DEFAULT=	PGSQL CRYPTOPP
+OPTIONS_DEFAULT=	PGSQL DNSSEC CRYPTOPP
 
 .include <bsd.port.options.mk>
 
