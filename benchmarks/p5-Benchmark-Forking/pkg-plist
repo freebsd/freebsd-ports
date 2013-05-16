@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Forking/.packlist
 %%SITE_PERL%%/Benchmark/Forking.pm
-@dirrmtry %%SITE_PERL%%/Benchmark/Forking
 @dirrmtry %%SITE_PERL%%/Benchmark
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Forking
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark
