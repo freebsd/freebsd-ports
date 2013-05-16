@@ -23,7 +23,7 @@ do-extract:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000000
+.if ${OSVERSION} >= 900000
 BROKEN=		does not build
 .endif
 
