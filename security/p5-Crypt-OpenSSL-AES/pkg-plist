@@ -5,6 +5,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/AES
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/AES
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

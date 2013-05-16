@@ -1,12 +1,9 @@
-# New ports collection makefile for:    p5-Crypt-OpenSSL-AES
-# Date created:				2008 July 06
-# Whom:					John Ferrell <jdferrell3@yahoo.com>
-#
+# Created by: John Ferrell <jdferrell3@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenSSL-AES
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
