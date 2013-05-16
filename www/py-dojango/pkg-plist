@@ -17,6 +17,9 @@
 %%PYTHON_SITELIBDIR%%/dojango/conf/settings.py
 %%PYTHON_SITELIBDIR%%/dojango/conf/settings.pyc
 %%PYTHON_SITELIBDIR%%/dojango/conf/settings.pyo
+%%PYTHON_SITELIBDIR%%/dojango/context_processors.py
+%%PYTHON_SITELIBDIR%%/dojango/context_processors.pyc
+%%PYTHON_SITELIBDIR%%/dojango/context_processors.pyo
 %%PYTHON_SITELIBDIR%%/dojango/contrib/__init__.py
 %%PYTHON_SITELIBDIR%%/dojango/contrib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dojango/contrib/__init__.pyo
@@ -26,9 +29,6 @@
 %%PYTHON_SITELIBDIR%%/dojango/contrib/auth/forms.py
 %%PYTHON_SITELIBDIR%%/dojango/contrib/auth/forms.pyc
 %%PYTHON_SITELIBDIR%%/dojango/contrib/auth/forms.pyo
-%%PYTHON_SITELIBDIR%%/dojango/context_processors.py
-%%PYTHON_SITELIBDIR%%/dojango/context_processors.pyc
-%%PYTHON_SITELIBDIR%%/dojango/context_processors.pyo
 %%PYTHON_SITELIBDIR%%/dojango/data/__init__.py
 %%PYTHON_SITELIBDIR%%/dojango/data/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dojango/data/__init__.pyo
@@ -62,8 +62,10 @@
 %%PYTHON_SITELIBDIR%%/dojango/data/piston/emitters.py
 %%PYTHON_SITELIBDIR%%/dojango/data/piston/emitters.pyc
 %%PYTHON_SITELIBDIR%%/dojango/data/piston/emitters.pyo
+%%PYTHON_SITELIBDIR%%/dojango/decorators.py
+%%PYTHON_SITELIBDIR%%/dojango/decorators.pyc
+%%PYTHON_SITELIBDIR%%/dojango/decorators.pyo
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango.profile.js
-%%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango_optimized.profile.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/_base.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/dojango.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/form/Form.js
@@ -76,9 +78,7 @@
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/ThumbnailPicker.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/plugins/InsertImage.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/resources/ThumbnailPicker.css
-%%PYTHON_SITELIBDIR%%/dojango/decorators.py
-%%PYTHON_SITELIBDIR%%/dojango/decorators.pyc
-%%PYTHON_SITELIBDIR%%/dojango/decorators.pyo
+%%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango_optimized.profile.js
 %%PYTHON_SITELIBDIR%%/dojango/forms/__init__.py
 %%PYTHON_SITELIBDIR%%/dojango/forms/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dojango/forms/__init__.pyo
@@ -117,8 +117,8 @@
 %%PYTHON_SITELIBDIR%%/dojango/templates/dojango/include.html
 %%PYTHON_SITELIBDIR%%/dojango/templates/dojango/include_i18n.html
 %%PYTHON_SITELIBDIR%%/dojango/templates/dojango/json_iframe.html
-%%PYTHON_SITELIBDIR%%/dojango/templates/dojango/test.html
 %%PYTHON_SITELIBDIR%%/dojango/templates/dojango/templatetag/datagrid_disp.html
+%%PYTHON_SITELIBDIR%%/dojango/templates/dojango/test.html
 %%PYTHON_SITELIBDIR%%/dojango/templatetags/__init__.py
 %%PYTHON_SITELIBDIR%%/dojango/templatetags/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dojango/templatetags/__init__.pyo
@@ -156,10 +156,10 @@
 %%PYTHON_SITELIBDIR%%/dojango/views.pyc
 %%PYTHON_SITELIBDIR%%/dojango/views.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/util
+@dirrm %%PYTHON_SITELIBDIR%%/dojango/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/templates/dojango/templatetag
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/templates/dojango
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/templates
-@dirrm %%PYTHON_SITELIBDIR%%/dojango/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/management
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/forms
