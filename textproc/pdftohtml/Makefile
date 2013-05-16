@@ -12,7 +12,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line tool for converting pdf-files into html
 
 CONFLICTS=	poppler-utils-[0-9]*
