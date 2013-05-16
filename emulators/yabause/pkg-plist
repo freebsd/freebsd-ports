@@ -10,4 +10,3 @@ bin/yabause
 share/pixmaps/yabause.png
 @dirrmtry share/yabause/yts
 @dirrmtry share/yabause
-@dirrmtry share/applications
