@@ -679,8 +679,4 @@ share/applications/sqlkit.desktop
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-@dirrmtry lib/python2.6/site-packages
-@dirrmtry lib/python2.6
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
