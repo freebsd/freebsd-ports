@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.9
+PORTVERSION=	0.3.10
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
@@ -10,8 +10,10 @@ MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" --libdir="${PREFIX}/lib" \
-		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include"
+CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \
+		--libdir="${PREFIX}/lib" \
+		--localedir="${PREFIX}/share/locale" \
+		--includedir="${LOCALBASE}/include"
 
 INSTALLS_ICONS=	yes
 USES=		gettext
@@ -24,7 +26,7 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		bareftp.1
 
-OPTIONS_DEFINE=	GNOMEKEYRING
+OPTIONS_DEFINE=	GNOMEKEYRING NLS
 OPTIONS_DEFAULT=	GNOMEKEYRING
 
 .include <bsd.port.options.mk>
@@ -35,6 +37,14 @@ BUILD_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
 RUN_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
 .else
 CONFIGURE_ARGS+=	--without-gnomekeyring
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 # TODO
