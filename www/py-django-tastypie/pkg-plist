@@ -25,6 +25,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/constants.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/constants.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tastypie/constants.pyo
