@@ -1,12 +1,9 @@
-# New ports collection makefile for:	phpmyfaq
-# Date created:		2005-04-15
-# Whom:			chinsan <chinsan@mail2000.com.tw>
-#
+# Created by: chinsan <chinsan@mail2000.com.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	phpmyfaq
 PORTVERSION=	2.7.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 
