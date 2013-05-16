@@ -73,6 +73,7 @@
 %%XPI_XPIDIR%%/content/firebug/css/cssModule.js
 %%XPI_XPIDIR%%/content/firebug/css/cssPanel.js
 %%XPI_XPIDIR%%/content/firebug/css/cssReps.js
+%%XPI_XPIDIR%%/content/firebug/css/loadHandler.js
 %%XPI_XPIDIR%%/content/firebug/css/selectorEditor.js
 %%XPI_XPIDIR%%/content/firebug/css/selectorModule.js
 %%XPI_XPIDIR%%/content/firebug/css/selectorPanel.js
