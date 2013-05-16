@@ -1,13 +1,8 @@
-# New ports collection makefile for:	CImg
-# Date created:         11 September 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	cimg
-PORTVERSION=	1.5.2
-PORTREVISION=	3
+PORTVERSION=	1.5.5
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -68,11 +63,18 @@ WITHOUT_LAPACK=	yes
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 . endif
 . if !defined(WITHOUT_FFMPEG)
-LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avformat1:${PORTSDIR}/multimedia/ffmpeg1
 . endif
 
 DOCBASE=	README.txt
-PROGS=		CImg_demo gmic use_jpeg_buffer
+PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
+	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros gmic	\
+	hough_transform2d image2ascii image_registration2d image_surface3d	\
+	jawbreaker mcf_levelsets2d mcf_levelsets3d odykill			\
+	pde_TschumperleDeriche2d pde_heatflow2d plotter1d radon_transform2d	\
+	scene3d spherical_function3d tetris tron tutorial use_RGBclass		\
+	use_chlpca use_draw_gradient use_jpeg_buffer use_nlmeans use_skeleton	\
+	wavelet_atrous
 .else
 NO_BUILD=	yes
 .endif
