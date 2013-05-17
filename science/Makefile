@@ -158,15 +158,6 @@
     SUBDIR += py-mlpy
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy-core
-    SUBDIR += py-obspy.db
-    SUBDIR += py-obspy.gse2
-    SUBDIR += py-obspy.imaging
-    SUBDIR += py-obspy.iris
-    SUBDIR += py-obspy.mseed
-    SUBDIR += py-obspy.signal
-    SUBDIR += py-obspy.taup
-    SUBDIR += py-obspy.wav
-    SUBDIR += py-obspy.xseed
     SUBDIR += py-paida
     SUBDIR += py-pydicom
     SUBDIR += py-scikit-learn

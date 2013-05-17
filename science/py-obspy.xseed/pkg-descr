@@ -1,5 +1,0 @@
-The obspy.xseed package contains methods in order to read, write and
-convert seismological meta data files in the Dataless SEED, RESP and
-XML-SEED format.
-
-WWW: http://www.obspy.org/
