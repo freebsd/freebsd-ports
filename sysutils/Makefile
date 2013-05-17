@@ -433,6 +433,7 @@
     SUBDIR += kgrubeditor
     SUBDIR += kgtk
     SUBDIR += kibana
+    SUBDIR += kibana-devel
     SUBDIR += kiconvtool
     SUBDIR += kkbswitch
     SUBDIR += kkeyled
