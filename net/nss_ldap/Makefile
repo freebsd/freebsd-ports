@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	nss_ldap
-# Date created:				4/1/2003
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: Jacques Vidrine <nectar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
@@ -26,7 +22,10 @@ USE_AUTOTOOLS=	automake aclocal autoconf autoheader
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
-OPTIONS=	LCLASS "Enable login classes via the loginClass attribute" on
+OPTIONS_DEFINE=	LCLASS KERBEROS
+OPTIONS_DEFAULT=LCLASS KERBEROS
+
+LCLASS_DESC=	Enable login classes via the loginClass attribute
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib
@@ -40,12 +39,13 @@ MAN5=	nss_ldap.5
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-.if !defined(WITHOUT_KERBEROS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=--enable-configurable-krb5-ccname-env
 .endif
 
-.if defined(WITH_LCLASS)
+.if ${PORT_OPTIONS:MLCLASS}
 CFLAGS+="-DHAVE_LOGIN_CLASSES"
 .endif
 
@@ -82,4 +82,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
