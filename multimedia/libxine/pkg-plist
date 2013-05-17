@@ -230,10 +230,7 @@ share/aclocal/xine.m4
 @dirrmtry lib/xine
 @dirrm %%DOCSDIR%%/hackersguide
 @dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl_PL
 %%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en_US
 @dirrm share/xine-lib/fonts
 @dirrm share/xine-lib
-@dirrmtry %%DATADIR%%
