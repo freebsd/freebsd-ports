@@ -4255,3 +4255,12 @@ misc/py-xdelta3||2013-05-13|No longer actively maintained upstream
 devel/py-celementtree||2013-05-16|Included into all supported python versions as xml.etree.cElementTree
 textproc/p5-KinoSearch||2013-05-16|Replaced by textproc/p5-KinoSearch1
 converters/R-cran-xtable||2013-05-17|Removed
+science/py-obspy.db||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.gse2||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.imaging||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.iris||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.mseed||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.signal||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.taup||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.wav||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy.xseed||2013-05-17|Removed: Use science/py-obspy instead
