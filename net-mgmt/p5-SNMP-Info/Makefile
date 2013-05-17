@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	2.11
+PORTVERSION=	3.01
 CATEGORIES=	net-mgmt perl5
-MASTER_SITES=	SF
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 module for gathering information from network devices
 
-LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 
 PERL_CONFIGURE=	yes
 
@@ -30,13 +30,11 @@ MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
 	SNMP::Info::Layer1::Allied.3 SNMP::Info::Layer1::Asante.3 \
 	SNMP::Info::Layer1::Bayhub.3 SNMP::Info::Layer1::S3000.3 \
 	SNMP::Info::Layer2.3 SNMP::Info::Layer2::Aironet.3 \
-	SNMP::Info::Layer2::Allied.3 \
-	SNMP::Info::Layer2::Bay.3 SNMP::Info::Layer2::Baystack.3 \
+	SNMP::Info::Layer2::Allied.3 SNMP::Info::Layer2::Cisco.3 \
 	SNMP::Info::Layer2::C1900.3 SNMP::Info::Layer2::C2900.3 \
 	SNMP::Info::Layer2::Catalyst.3 SNMP::Info::Layer2::Centillion.3 \
-	SNMP::Info::Layer2::Cisco.3 SNMP::Info::Layer2::Foundry.3 \
 	SNMP::Info::Layer2::HP.3 SNMP::Info::Layer2::HP4000.3 \
-	SNMP::Info::Layer2::N2270.3 \
+	SNMP::Info::Layer2::N2270.3 SNMP::Info::Layer2::Baystack.3 \
 	SNMP::Info::Layer2::NAP222x.3 SNMP::Info::Layer2::Orinoco.3 \
 	SNMP::Info::Layer2::ZyXEL_DSLAM.3 SNMP::Info::EDP.3 \
 	SNMP::Info::Layer3::Nexus.3 SNMP::Info::Layer3.3 \
@@ -58,6 +56,14 @@ MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
 	SNMP::Info::Layer3::NetSNMP.3 SNMP::Info::Layer3::Netscreen.3\
 	SNMP::Info::Layer3::Sun.3 SNMP::Info::Layer3::PacketFront.3 \
 	SNMP::Info::PowerEthernet.3 SNMP::Info::Layer3::HP9300.3 \
-	SNMP::Info::Layer3::AlcatelLucent.3 SNMP::Info::Layer3::Timetra.3
+	SNMP::Info::Layer3::AlcatelLucent.3 SNMP::Info::Layer3::Timetra.3 \
+	SNMP::Info::Layer2::Trapeze.3 \
+	SNMP::Info::Layer3::CiscoASA.3 \
+	SNMP::Info::Layer3::F5.3 \
+	SNMP::Info::AMAP.3 \
+	SNMP::Info::Layer3::H3C.3 \
+	SNMP::Info::Layer7::Netscaler.3 \
+	SNMP::Info::Layer2::NWSS2300.3 \
+	SNMP::Info::Layer3::Lantronix.3
 
 .include <bsd.port.mk>
