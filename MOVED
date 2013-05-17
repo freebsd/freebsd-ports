@@ -4264,3 +4264,4 @@ science/py-obspy.signal||2013-05-17|Removed: Use science/py-obspy instead
 science/py-obspy.taup||2013-05-17|Removed: Use science/py-obspy instead
 science/py-obspy.wav||2013-05-17|Removed: Use science/py-obspy instead
 science/py-obspy.xseed||2013-05-17|Removed: Use science/py-obspy instead
+science/py-obspy-core||2013-05-17|Use science/py-obspy instead
