@@ -47,6 +47,9 @@
 %%DATADIR%%/etc/web2ldap/templates/inputform_organization.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_posixAccount.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_pwdPolicy.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_sambaDomain.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_sambaGroupMapping.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_sambaSamAccount.html
 %%DATADIR%%/etc/web2ldap/templates/login.html
 %%DATADIR%%/etc/web2ldap/templates/login.html.de
 %%DATADIR%%/etc/web2ldap/templates/passwd.html
@@ -74,6 +77,9 @@
 %%DATADIR%%/etc/web2ldap/templates/read_organization.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_posixAccount.html
 %%DATADIR%%/etc/web2ldap/templates/read_pwdPolicy.html
+%%DATADIR%%/etc/web2ldap/templates/read_sambaDomain.html
+%%DATADIR%%/etc/web2ldap/templates/read_sambaGroupMapping.html
+%%DATADIR%%/etc/web2ldap/templates/read_sambaSamAccount.html
 %%DATADIR%%/etc/web2ldap/templates/rename.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_Base.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_Base.html.de
@@ -279,6 +285,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/schac.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/sudoers.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/sudoers.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vchupwdpolicy.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vchupwdpolicy.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/vpim.py
