@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	midori
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -26,19 +26,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-libnotify \
 		--enable-addons \
 		--enable-docs \
-		--disable-gtk3
-
-CONFIGURE_ARGS+=--jobs=${MAKE_JOBS_NUMBER}
+		--disable-gtk3 \
+		--jobs=${MAKE_JOBS_NUMBER}
 
 MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
-USE_GNOME=	glib20 gtk20 intltool libxml2 desktopfileutils
+USE_GNOME=	glib20 gtk20 intltool libxml2
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		desktop-file-utils pkgconfig
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
@@ -86,7 +85,6 @@ CONFIGURE_ARGS+=--disable-zeitgeist
 .endif
 
 post-install:
-	@-update-desktop-database
 .if ${PORT_OPTIONS:MAPIDOCS}
 	${MKDIR} ${DOCSDIR}/api/katze/html
 	${MKDIR} ${DOCSDIR}/api/midori/html
