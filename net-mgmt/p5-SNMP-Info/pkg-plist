@@ -30,14 +30,12 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/Airespace.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Aironet.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Allied.pm
-%%SITE_PERL%%/SNMP/Info/Layer2/Bay.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Baystack.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/C1900.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/C2900.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Catalyst.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Centillion.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Cisco.pm
-%%SITE_PERL%%/SNMP/Info/Layer2/Foundry.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HP.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HPVC.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HP4000.pm
@@ -45,7 +43,9 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/N2270.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/NAP222x.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Netgear.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/NWSS2300.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Orinoco.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Trapeze.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
 %%SITE_PERL%%/SNMP/Info/Layer3.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Arista.pm
@@ -60,14 +60,18 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/C4000.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C6500.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Cisco.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/CiscoASA.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/CiscoFWSM.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Contivity.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Dell.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Enterasys.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Extreme.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/F5.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Foundry.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Force10.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/H3C.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Juniper.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Lantronix.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Microsoft.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Mikrotik.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/N1600.pm
@@ -85,11 +89,13 @@
 %%SITE_PERL%%/SNMP/Info/Layer7.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/APC.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Neoteris.pm
+%%SITE_PERL%%/SNMP/Info/Layer7/Netscaler.pm
 %%SITE_PERL%%/SNMP/Info/MAU.pm
 %%SITE_PERL%%/SNMP/Info/NortelStack.pm
 %%SITE_PERL%%/SNMP/Info/PowerEthernet.pm
 %%SITE_PERL%%/SNMP/Info/RapidCity.pm
 %%SITE_PERL%%/SNMP/Info/SONMP.pm
+%%SITE_PERL%%/SNMP/Info/AMAP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info/.packlist
 @dirrm %%SITE_PERL%%/SNMP/Info/Layer7
 @dirrm %%SITE_PERL%%/SNMP/Info/Layer3
