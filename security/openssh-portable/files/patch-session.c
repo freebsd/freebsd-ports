@@ -105,33 +105,7 @@ PR:             35904
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1470,14 +1499,35 @@
- void
- do_setusercontext(struct passwd *pw)
- {
-+#ifdef CHROOT
-+	char *user_dir, *new_root;
-+#endif /* CHROOT */
- 	char *chroot_path, *tmp;
- 
-+ #ifdef CHROOT
-+	user_dir = xstrdup(pw->pw_dir);
-+	new_root = user_dir + 1;
-+ 
-+	while((new_root = strchr(new_root, '.')) != NULL) {
-+		new_root--;
-+		if(strncmp(new_root, "/./", 3) == 0) {
-+			*new_root = '\0';
-+			new_root += 2;
-+			if(chroot(user_dir) != 0)
-+				fatal("Couldn't chroot to user directory %s. %s", user_dir, strerror(errno));
-+			pw->pw_dir = new_root;
-+ 			break;
-+ 		}
-+ 		new_root += 2;
-+	}
-+ #endif /* CHROOT */
-+
+@@ -1473,9 +1502,9 @@
  	platform_setusercontext(pw);
  
  	if (platform_privileged_uidswap()) {
@@ -142,7 +116,7 @@ PR:             35904
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1700,6 +1750,10 @@
+@@ -1700,6 +1729,10 @@
  	 */
  	environ = env;
  
@@ -153,7 +127,7 @@ PR:             35904
  #if defined(KRB5) && defined(USE_AFS)
  	/*
  	 * At this point, we check to see if AFS is active and if we have
-@@ -1729,9 +1783,6 @@
+@@ -1729,9 +1762,6 @@
  	/* Change current directory to the user's home directory. */
  	if (chdir(pw->pw_dir) < 0) {
  		/* Suppress missing homedir warning for chroot case */
