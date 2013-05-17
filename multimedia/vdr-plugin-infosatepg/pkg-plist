@@ -2,5 +2,7 @@ lib/vdr/libvdr-infosatepg.so.%%APIVERSION%%
 @exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdr/infosatepg
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-infosatepg.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/vdr-infosatepg.mo
-@dirrmtry /var/cache/vdr/infosatepg
-@dirrmtry /var/cache/vdr
+@cwd /
+@dirrmtry var/cache/vdr/infosatepg
+@dirrmtry var/cache/vdr
+@cwd

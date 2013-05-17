@@ -10,5 +10,7 @@ lib/vdr/libvdr-osdteletext.so.%%APIVERSION%%
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/sk_SK/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/vdr-osdteletext.mo
-@dirrmtry /var/cache/vdr/vtx
-@dirrmtry /var/cache/vdr
+@cwd /
+@dirrmtry var/cache/vdr/vtx
+@dirrmtry var/cache/vdr
+@cwd

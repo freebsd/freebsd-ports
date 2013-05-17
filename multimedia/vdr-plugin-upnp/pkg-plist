@@ -13,5 +13,7 @@ etc/vdr/plugins/upnp/http/xml/cms_scpd.xml
 %%NLS%%share/locale/de-DE/LC_MESSAGES/vdr-upnp.mo
 %%NLS%%@dirrmtry share/locale/de-DE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de-DE
-@dirrmtry /var/cache/vdr/upnp
-@dirrmtry /var/cache/vdr
+@cwd /
+@dirrmtry var/cache/vdr/upnp
+@dirrmtry var/cache/vdr
+@cwd
