@@ -1,5 +1,0 @@
-The obspy.db package contains a waveform indexer collecting metadata
-from a file based waveform archive and storing in into a standard SQL
-database. Supported waveform formats depend on installed ObsPy packages.
-
-WWW: http://www.obspy.org/
