@@ -1,5 +1,5 @@
---- scons/gallium.py.orig	2012-11-09 19:16:31.000000000 +0100
-+++ scons/gallium.py	2013-01-14 17:25:58.000000000 +0100
+--- scons/gallium.py.orig	2013-03-20 00:28:25.000000000 +0100
++++ scons/gallium.py	2013-05-15 09:37:15.000000000 +0200
 @@ -246,11 +246,11 @@
          cppdefines += ['PROFILE']
      if env['platform'] in ('posix', 'linux', 'freebsd', 'darwin'):
@@ -17,7 +17,7 @@
              'HAVE_PTHREAD',
              'HAVE_POSIX_MEMALIGN',
          ]
-@@ -499,7 +499,9 @@
+@@ -501,7 +501,9 @@
      # Default libs
      libs = []
      if env['platform'] in ('darwin', 'freebsd', 'linux', 'posix', 'sunos'):
@@ -25,6 +25,6 @@
 +        libs += ['m', 'pthread']
 +        if env['platform'] != 'freebsd':
 +            libs += ['dl']
+     if env['platform'] in ('linux',):
+         libs += ['rt']
      env.Append(LIBS = libs)
- 
-     # OpenMP
