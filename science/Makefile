@@ -157,7 +157,7 @@
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
     SUBDIR += py-netCDF4
-    SUBDIR += py-obspy-core
+    SUBDIR += py-obspy
     SUBDIR += py-paida
     SUBDIR += py-pydicom
     SUBDIR += py-scikit-learn
