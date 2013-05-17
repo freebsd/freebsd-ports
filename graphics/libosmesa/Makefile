@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	9.0.2
+PORTVERSION=	9.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -26,13 +26,28 @@ USE_SCONS=	yes
 SCONS_TARGET=	osmesa
 SCONS_ARGS+=	build=release \
 		verbose=yes
-CCFLAGS+=	-I${LOCALBASE}/include
+SCONS_BUILDENV=	CC="${CC}" \
+		CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 MAKE_JOBS_UNSAFE=
 
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if (empty(CC:T:Mgcc4*) && empty(CC:T:Mclang*)) || (empty(CXX:T:Mg??4*) && empty(CXX:T:Mclang++*))
+.if (${OSVERSION} >= 900014) && (exists(/usr/bin/clang++) && exists(/usr/bin/clang))
+CC=	/usr/bin/clang
+CXX=	/usr/bin/clang++
+CPP=	/usr/bin/clang-cpp
+.else
+USE_GCC=4.6+
+.endif
+.endif
 
 .if ${ARCH} == "i386"
 SCONS_ARGS+=	machine=x86
