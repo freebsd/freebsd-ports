@@ -40,7 +40,7 @@ SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
-			KERB_GSSAPI OPENSSH_CHROOT HPN LPK X509 \
+			KERB_GSSAPI HPN LPK X509 \
 			OVERWRITE_BASE SCTP
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS
 OPTIONS_RADIO=		KERBEROS
@@ -48,7 +48,6 @@ OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	Enable tcp_wrappers support
 BSM_DESC=		Enable OpenBSM Auditing
 KERB_GSSAPI_DESC=	Enable Kerberos/GSSAPI patch (req: GSSAPI)
-OPENSSH_CHROOT_DESC=	Enable CHROOT support
 HPN_DESC=		Enable HPN-SSH patch
 LPK_DESC=		Enable LDAP Public Key (LPK) patch
 X509_DESC=		Enable x509 certificate patch
@@ -132,10 +131,6 @@ LDFLAGS=		# empty
 
 .if ${OPENSSLBASE} != "/usr"
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSH_CHROOT}
-CFLAGS+=		-DCHROOT
 .endif
 
 # http://www.psc.edu/index.php/hpn-ssh
