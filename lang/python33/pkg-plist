@@ -2329,6 +2329,10 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/reperf.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_docstrings.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_docstrings.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_doctests.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_doctests.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/script_helper.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/script_helper.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/seq_tests.cpython-33.pyc
@@ -3049,6 +3053,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_weakref.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_weakset.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_weakset.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_webbrowser.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_webbrowser.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_winreg.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_winreg.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_winsound.cpython-33.pyc
@@ -3348,6 +3354,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_separators.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_speedups.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_speedups.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_tool.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_tool.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_unicode.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_unicode.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/json_tests/test_decode.py
@@ -3364,6 +3372,7 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/json_tests/test_scanstring.py
 %%PYTHON_LIBDIR%%/test/json_tests/test_separators.py
 %%PYTHON_LIBDIR%%/test/json_tests/test_speedups.py
+%%PYTHON_LIBDIR%%/test/json_tests/test_tool.py
 %%PYTHON_LIBDIR%%/test/json_tests/test_unicode.py
 %%PYTHON_LIBDIR%%/test/keycert.passwd.pem
 %%PYTHON_LIBDIR%%/test/keycert.pem
@@ -3429,6 +3438,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/relimport.py
 %%PYTHON_LIBDIR%%/test/reperf.py
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
+%%PYTHON_LIBDIR%%/test/sample_doctest_no_docstrings.py
+%%PYTHON_LIBDIR%%/test/sample_doctest_no_doctests.py
 %%PYTHON_LIBDIR%%/test/script_helper.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
 %%PYTHON_LIBDIR%%/test/sgml_input.html
@@ -3630,6 +3641,7 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/test_email/test_email.py
 %%PYTHON_LIBDIR%%/test/test_email/test_generator.py
 %%PYTHON_LIBDIR%%/test/test_email/test_headerregistry.py
+%%PYTHON_LIBDIR%%/test/test_email/test_inversion.py
 %%PYTHON_LIBDIR%%/test/test_email/test_message.py
 %%PYTHON_LIBDIR%%/test/test_email/test_parser.py
 %%PYTHON_LIBDIR%%/test/test_email/test_pickleable.py
@@ -3645,6 +3657,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_email.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_generator.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_headerregistry.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_inversion.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_inversion.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_message.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_parser.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/test_email/__pycache__/test_pickleable.cpython-33.pyc
@@ -4048,6 +4062,7 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/test_xml_etree_c.py
 %%PYTHON_LIBDIR%%/test/test_xmlrpc.py
 %%PYTHON_LIBDIR%%/test/test_xmlrpc_net.py
+%%PYTHON_LIBDIR%%/test/test_webbrowser.py
 %%PYTHON_LIBDIR%%/test/test_zipfile.py
 %%PYTHON_LIBDIR%%/test/test_zipfile64.py
 %%PYTHON_LIBDIR%%/test/test_zipimport.py
@@ -4142,12 +4157,15 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-33.pyo
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-33.pyc
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_text.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_text.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-33.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-33.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_font.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_loadtk.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_misc.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_text.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_variables.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__init__.py

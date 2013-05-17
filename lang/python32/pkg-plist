@@ -128,6 +128,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/__pycache__/_dummy_thread.cpython-32.pyo
 %%PYTHON_LIBDIR%%/__pycache__/_markupbase.cpython-32.pyc
 %%PYTHON_LIBDIR%%/__pycache__/_markupbase.cpython-32.pyo
+%%PYTHON_LIBDIR%%/__pycache__/_osx_support.cpython-32.pyc
+%%PYTHON_LIBDIR%%/__pycache__/_osx_support.cpython-32.pyo
 %%PYTHON_LIBDIR%%/__pycache__/_pyio.cpython-32.pyc
 %%PYTHON_LIBDIR%%/__pycache__/_pyio.cpython-32.pyo
 %%PYTHON_LIBDIR%%/__pycache__/_strptime.cpython-32.pyc
@@ -422,6 +424,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/_compat_pickle.py
 %%PYTHON_LIBDIR%%/_dummy_thread.py
 %%PYTHON_LIBDIR%%/_markupbase.py
+%%PYTHON_LIBDIR%%/_osx_support.py
 %%PYTHON_LIBDIR%%/_pyio.py
 %%PYTHON_LIBDIR%%/_strptime.py
 %%PYTHON_LIBDIR%%/_threading_local.py
@@ -2421,6 +2424,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/mapping_tests.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/mock_socket.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/mock_socket.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/mp_fork_bomb.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/mp_fork_bomb.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/outstanding_bugs.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/outstanding_bugs.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/pickletester.cpython-32.pyc
@@ -2445,6 +2450,10 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/reperf.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_docstrings.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_docstrings.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_doctests.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/sample_doctest_no_doctests.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/script_helper.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/script_helper.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/seq_tests.cpython-32.pyc
@@ -2463,6 +2472,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test___future__.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test__locale.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test__locale.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test__osx_support.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test__osx_support.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_abc.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_abc.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_abstract_numbers.cpython-32.pyc
@@ -2667,6 +2678,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_fileinput.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_fileio.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_fileio.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_file_eintr.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_file_eintr.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_float.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_float.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_flufl.cpython-32.pyc
@@ -3071,6 +3084,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_tk.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_tokenize.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_tokenize.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_tools.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_tools.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_trace.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_trace.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_traceback.cpython-32.pyc
@@ -3435,6 +3450,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_separators.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_speedups.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_speedups.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_tool.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_tool.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_unicode.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/json_tests/__pycache__/test_unicode.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/json_tests/test_decode.py
@@ -3451,6 +3468,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/json_tests/test_scanstring.py
 %%PYTHON_LIBDIR%%/test/json_tests/test_separators.py
 %%PYTHON_LIBDIR%%/test/json_tests/test_speedups.py
+%%PYTHON_LIBDIR%%/test/json_tests/test_tool.py
 %%PYTHON_LIBDIR%%/test/json_tests/test_unicode.py
 %%PYTHON_LIBDIR%%/test/keycert.pem
 %%PYTHON_LIBDIR%%/test/keycert2.pem
@@ -3460,6 +3478,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/mapping_tests.py
 %%PYTHON_LIBDIR%%/test/math_testcases.txt
 %%PYTHON_LIBDIR%%/test/mock_socket.py
+%%PYTHON_LIBDIR%%/test/mp_fork_bomb.py
 %%PYTHON_LIBDIR%%/test/nullcert.pem
 %%PYTHON_LIBDIR%%/test/outstanding_bugs.py
 %%PYTHON_LIBDIR%%/test/pickletester.py
@@ -3477,10 +3496,21 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/relimport.py
 %%PYTHON_LIBDIR%%/test/reperf.py
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
+%%PYTHON_LIBDIR%%/test/sample_doctest_no_docstrings.py
+%%PYTHON_LIBDIR%%/test/sample_doctest_no_doctests.py
 %%PYTHON_LIBDIR%%/test/script_helper.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
 %%PYTHON_LIBDIR%%/test/sgml_input.html
 %%PYTHON_LIBDIR%%/test/sha256.pem
+%%PYTHON_LIBDIR%%/test/sndhdrdata/README
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.8svx
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.aifc
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.aiff
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.au
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.hcom
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.sndt
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.voc
+%%PYTHON_LIBDIR%%/test/sndhdrdata/sndhdr.wav
 %%PYTHON_LIBDIR%%/test/sortperf.py
 %%PYTHON_LIBDIR%%/test/ssl_cert.pem
 %%PYTHON_LIBDIR%%/test/ssl_key.pem
@@ -3508,6 +3538,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test___all__.py
 %%PYTHON_LIBDIR%%/test/test___future__.py
 %%PYTHON_LIBDIR%%/test/test__locale.py
+%%PYTHON_LIBDIR%%/test/test__osx_support.py
 %%PYTHON_LIBDIR%%/test/test_abc.py
 %%PYTHON_LIBDIR%%/test/test_abstract_numbers.py
 %%PYTHON_LIBDIR%%/test/test_aifc.py
@@ -3615,6 +3646,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_filecmp.py
 %%PYTHON_LIBDIR%%/test/test_fileinput.py
 %%PYTHON_LIBDIR%%/test/test_fileio.py
+%%PYTHON_LIBDIR%%/test/test_file_eintr.py
 %%PYTHON_LIBDIR%%/test/test_float.py
 %%PYTHON_LIBDIR%%/test/test_flufl.py
 %%PYTHON_LIBDIR%%/test/test_fnmatch.py
@@ -3816,6 +3848,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_timeout.py
 %%PYTHON_LIBDIR%%/test/test_tk.py
 %%PYTHON_LIBDIR%%/test/test_tokenize.py
+%%PYTHON_LIBDIR%%/test/test_tools.py
 %%PYTHON_LIBDIR%%/test/test_trace.py
 %%PYTHON_LIBDIR%%/test/test_traceback.py
 %%PYTHON_LIBDIR%%/test/test_ttk_guionly.py
@@ -3864,6 +3897,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_zipimport.py
 %%PYTHON_LIBDIR%%/test/test_zipimport_support.py
 %%PYTHON_LIBDIR%%/test/test_zlib.py
+%%PYTHON_LIBDIR%%/test/testbz2_bigmem.bz2
 %%PYTHON_LIBDIR%%/test/testcodec.py
 %%PYTHON_LIBDIR%%/test/testtar.tar
 %%PYTHON_LIBDIR%%/test/tf_inherit_check.py
@@ -3953,10 +3987,13 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-32.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-32.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-32.pyo
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-32.pyc
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-32.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_text.cpython-32.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_text.cpython-32.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_font.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_loadtk.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_misc.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_text.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__init__.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__pycache__/__init__.cpython-32.pyc
@@ -4346,6 +4383,7 @@ libdata/pkgconfig/python-3.2.pc
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules
 @dirrm %%PYTHON_LIBDIR%%/test/json_tests/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/test/json_tests
+@dirrm %%PYTHON_LIBDIR%%/test/sndhdrdata
 @dirrm %%PYTHON_LIBDIR%%/test/subprocessdata/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/test/subprocessdata
 @dirrm %%PYTHON_LIBDIR%%/test/tracedmodules/__pycache__

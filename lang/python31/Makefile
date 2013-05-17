@@ -11,6 +11,9 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
+DEPRECATED=	This port will reach it's EoL upstream soon, please migrate to lang/python33
+EXPIRATION_DATE=2014-06-01
+
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
 PATCH_WRKSRC=	${PYTHON_WRKSRC}
