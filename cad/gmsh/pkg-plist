@@ -73,6 +73,7 @@ include/gmsh/SVector3.h
 include/gmsh/StringUtils.h
 include/gmsh/VertexArray.h
 include/gmsh/Voronoi3D.h
+include/gmsh/boundaryLayersData.h
 include/gmsh/cartesian.h
 include/gmsh/crossConfTerm.h
 include/gmsh/directions3D.h
