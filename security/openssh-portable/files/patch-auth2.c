@@ -1,31 +1,12 @@
-r56266 | dinoex | 2002-03-17 14:24:24 -0600 (Sun, 17 Mar 2002) | 4 lines
+r99053 | des | 2002-06-29 05:57:13 -0500 (Sat, 29 Jun 2002) | 4 lines
 Changed paths:
-   M /head/security/hpn-ssh/Makefile
-   M /head/security/hpn-ssh/files/patch-auth.c
-   A /head/security/hpn-ssh/files/patch-auth1.c
-   A /head/security/hpn-ssh/files/patch-auth2.c
-   M /head/security/hpn-ssh/files/patch-session.c
-   M /head/security/openssh-portable/Makefile
-   M /head/security/openssh-portable/files/patch-auth.c
-   A /head/security/openssh-portable/files/patch-auth1.c
-   A /head/security/openssh-portable/files/patch-auth2.c
-   M /head/security/openssh-portable/files/patch-session.c
+   M /head/crypto/openssh/auth2.c
 
-Merged patches for HAVE_LOGIN_CAP from stable
-
-PR:             35904
+Apply class-imposed login restrictions.
 
 --- auth2.c.orig	2009-06-22 00:11:07.000000000 -0600
 +++ auth2.c	2010-09-14 16:14:12.000000000 -0600
-@@ -46,6 +46,7 @@
- #include "key.h"
- #include "hostfile.h"
- #include "auth.h"
-+#include "canohost.h"
- #include "dispatch.h"
- #include "pathnames.h"
- #include "buffer.h"
-@@ -217,6 +218,13 @@
+@@ -222,6 +221,13 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -39,29 +20,29 @@ PR:             35904
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -261,6 +269,27 @@
+@@ -274,6 +274,27 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
 +
 +#ifdef HAVE_LOGIN_CAP
-+        if (authctxt->pw != NULL) {
-+                lc = login_getpwclass(authctxt->pw);
-+                if (lc == NULL)
-+                        lc = login_getclassbyname(NULL, authctxt->pw);
-+                if (!auth_hostok(lc, from_host, from_ip)) {
-+                        logit("Denied connection for %.200s from %.200s [%.200s].",
-+                            authctxt->pw->pw_name, from_host, from_ip);
-+                        packet_disconnect("Sorry, you are not allowed to connect.");
-+                }
-+                if (!auth_timeok(lc, time(NULL))) {
-+                        logit("LOGIN %.200s REFUSED (TIME) FROM %.200s",
-+                            authctxt->pw->pw_name, from_host);
-+                        packet_disconnect("Logins not available right now.");
-+                }
-+                login_close(lc);
-+                lc = NULL;
-+        }
++	if (authctxt->pw != NULL) {
++		lc = login_getpwclass(authctxt->pw);
++		if (lc == NULL)
++			lc = login_getclassbyname(NULL, authctxt->pw);
++		if (!auth_hostok(lc, from_host, from_ip)) {
++			logit("Denied connection for %.200s from %.200s [%.200s].",
++			    authctxt->pw->pw_name, from_host, from_ip);
++			packet_disconnect("Sorry, you are not allowed to connect.");
++		}
++		if (!auth_timeok(lc, time(NULL))) {
++			logit("LOGIN %.200s REFUSED (TIME) FROM %.200s",
++			    authctxt->pw->pw_name, from_host);
++			packet_disconnect("Logins not available right now.");
++		}
++		login_close(lc);
++		lc = NULL;
++	}
 +#endif  /* HAVE_LOGIN_CAP */
 +
  	/* reset state */

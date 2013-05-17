@@ -1,0 +1,24 @@
+r223213 | brooks | 2011-06-17 17:01:10 -0500 (Fri, 17 Jun 2011) | 3 lines
+Changed paths:
+   M /user/brooks/openssh-hpn/channels.h
+
+It looks like the HPN patch didn't track the window size bump in OpenBSD
+rev 1.89 back in 2007.  Chase the updates to reduce diffs to head
+
+Index: channels.h
+===================================================================
+--- channels.h	(revision 223212)
++++ channels.h	(revision 223213)
+@@ -163,10 +163,10 @@
+ 
+ /* default window/packet sizes for tcp/x11-fwd-channel */
+ #define CHAN_SES_PACKET_DEFAULT	(32*1024)
+-#define CHAN_SES_WINDOW_DEFAULT	(4*CHAN_SES_PACKET_DEFAULT)
++#define CHAN_SES_WINDOW_DEFAULT	(64*CHAN_SES_PACKET_DEFAULT)
+ 
+ #define CHAN_TCP_PACKET_DEFAULT	(32*1024)
+-#define CHAN_TCP_WINDOW_DEFAULT	(4*CHAN_TCP_PACKET_DEFAULT)
++#define CHAN_TCP_WINDOW_DEFAULT	(64*CHAN_TCP_PACKET_DEFAULT)
+ 
+ #define CHAN_X11_PACKET_DEFAULT	(16*1024)
+ #define CHAN_X11_WINDOW_DEFAULT	(4*CHAN_X11_PACKET_DEFAULT)

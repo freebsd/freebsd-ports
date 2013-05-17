@@ -74,11 +74,11 @@ connections, do not protect connection handlers spawned from inetd.
 +#ifdef __FreeBSD__
 +	/*
 +	 * Initialize the resolver.  This may not happen automatically
-+	 * before privsep chroot().                                   
++	 * before privsep chroot().
 +	 */
 +	if ((_res.options & RES_INIT) == 0) {
-+		debug("res_init()");         
-+		res_init();         
++		debug("res_init()");
++		res_init();
 +	}
 +#ifdef GSSAPI
 +	/*
