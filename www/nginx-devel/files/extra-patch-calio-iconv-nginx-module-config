@@ -1,5 +1,5 @@
---- ../calio-iconv-nginx-module-abdac17/config.orig	2012-01-12 12:01:07.000000000 +0400
-+++ ../calio-iconv-nginx-module-abdac17/config	2011-10-11 03:30:35.000000000 +0400
+--- ../calio-iconv-nginx-module-b37efb5/config.orig	2013-04-16 17:57:17.000000000 -0700
++++ ../calio-iconv-nginx-module-b37efb5/config	2013-05-01 17:16:28.134624745 -0700
 @@ -39,12 +39,12 @@
      fi
  
