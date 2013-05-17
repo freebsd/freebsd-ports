@@ -1,9 +1,5 @@
-# New ports collection makefile for:    moosefs-master
-# Date created:         1 April 2010
-# Whom:                 Chifeng Qu <chifeng@gmail.com>
-#
+# Created by: Chifeng Qu <chifeng@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	moosefs
 PORTVERSION=	#set via include
@@ -41,8 +37,8 @@ pre-install:
 
 post-install:
 .for FILE in mfsmaster mfsexports mfsmetalogger mfstopology
-	@if [ ! -f ${PREFIX}/etc/${i}.cfg ]; then \
-		${CP} ${PREFIX}/etc/${FILE}.cfg.dist ${PREFIX}/etc/${FILE}.cfg ; \
+	@if [ ! -f ${PREFIX}/etc/${FILE}.cfg ]; then \
+		${CP} ${PREFIX}/etc/mfs/${FILE}.cfg.dist ${PREFIX}/etc/${FILE}.cfg ; \
 	fi
 .endfor
 

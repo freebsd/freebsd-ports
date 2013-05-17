@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moosefs
-PORTREVISION=	#
+PORTVERSION=	#set via include
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-client
 .include "${.CURDIR}/../moosefs-master/bsd.port.moosefs.mk"
@@ -33,5 +33,10 @@ CONFIGURE_ARGS=	--with-default-user=${MFSUSER} \
 post-patch:
 	${REINPLACE_CMD} -e 's;^general_mans;#general_mans;g' ${WRKSRC}/doc/Makefile.am \
 		${WRKSRC}/doc/Makefile.in
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/mfsmount.cfg ]; then \
+		${CP} ${PREFIX}/etc/mfs/mfsmount.cfg.dist ${PREFIX}/etc/mfsmount.cfg ; \
+	fi
 
 .include <bsd.port.mk>

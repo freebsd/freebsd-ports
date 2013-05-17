@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+WORKDIR=%%MFS_WORKDIR%%/mfs
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo "=> Deleting ${WORKDIR} if empty..."
+	rm -d ${WORKDIR} 2>/dev/null || true
+fi
