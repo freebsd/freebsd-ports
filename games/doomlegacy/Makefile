@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	doomlegacy
-DISTVERSION=	1.44_alpha3
+DISTVERSION=	1.44_alpha4
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://doomlegacy.sourceforge.net/releases/ \
 		http://freebsd.nsu.ru/distfiles/:wad
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_r${SVN_REV}
+# legacy.wad is not provided by upstream and must be regenerated manually
+# when needed (its contents change); luckily, it doesn't happen too often
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} legacy_wad${EXTRACT_SUFX}:wad
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Improved and extended version of Doom
 
 LICENSE=	GPLv2
@@ -21,24 +23,22 @@ USE_GL=		glu
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
 
-MAKE_ENV=	OLD_DEPENDENCIES=1		# since .dep file is removed
 CFLAGS+=	-DSVN_REV=\\\"${SVN_REV}\\\"
-WRKSRC=		${WRKDIR}/${PORTNAME}_${DISTVERSION:S/.//}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}_${DISTVERSION}/src
 
 PLIST_FILES=	bin/${PORTNAME} share/doom/legacy.wad
 PORTDOCS=	*
 
-SVN_REV=	845
+SVN_REV=	999
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFINE_i386=	ASM
-OPTIONS_DEFAULT_i386=	ASM
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-MAKE_ENV+=	USEASM=1
+MAKE_ENV=	USEASM=1 OLD_DEPENDENCIES=1
 .endif
 
 post-patch: .SILENT
@@ -50,14 +50,12 @@ post-patch: .SILENT
 # Ensure that gathered memory stats are printed correctly
 	${REINPLACE_CMD} -e 's|total, free|(int)total, (int)free|' \
 		${WRKSRC}/z_zone.c
-# Adjust config and save games directory name to be less ambiguous
-	${REINPLACE_CMD} -e 's|\.legacy|.${PORTNAME}|' ${WRKSRC}/doomdef.h
-# Change default value of DOOMWADDIR; better support for relative paths
-	${REINPLACE_CMD} -e 's|\(doomwaddir = \)"\."|\1"${DMDIR}"| ; \
-		1306,1309d' -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
+# Make local directory name less ambiguous; adjust default WAD search path
+	${REINPLACE_CMD} -e 's|\.legacy|.${PORTNAME}| ; \
+		/DEFWADS1/s|/.*|${DMDIR}"|' ${WRKSRC}/doomdef.h
+# Provide better support for relative paths (for `-iwad' switch)
+	${REINPLACE_CMD} -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
 			${WRKSRC}/d_main.c
-# Remove broken dependency file (wrong paths inside) and a copy of GPL
-	${RM} ${WRKSRC}/sdl.dep ; ${TOUCH} ${WRKSRC}/sdl.dep
 	${RM} ${WRKSRC}/_doc/LICENSE.txt
 
 do-install:

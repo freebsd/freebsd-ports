@@ -1,15 +1,15 @@
 --- Makefile.orig
 +++ Makefile
-@@ -76,7 +76,7 @@
+@@ -84,7 +84,7 @@
    # std=c89, does not support // commments, no inline, no asm
  
  # gcc or g++
 -CC=gcc
 +CC?=gcc
- 
- # End of User tunable settings
- 
-@@ -116,9 +116,9 @@
+ ifdef CC_WATCOM
+   CC=WATCOMC
+ endif
+@@ -135,9 +135,9 @@
      LIBS := -lopengl32 -lglu32 -lwsock32 -lm
    else
      # default is Linux, for all unix SDL
@@ -21,8 +21,8 @@
      # -L/usr/X11R6/lib is needed by Linux 2.4 and others that still have
      # the GLU libraries in an X11 directory.
      # -lm is needed for pow, powf, and other MATH1 functions.
-@@ -296,7 +296,7 @@
- 
+@@ -392,7 +392,7 @@
+ endif
  
  # compiler and linker flags
 -CFLAGS = $(WFLAGS)
@@ -30,12 +30,44 @@
  
  ifdef PROFILEMODE
  # build with gprof profiling information
-@@ -309,7 +309,7 @@
+@@ -405,7 +405,7 @@
  else
  # build a normal optimized version
    #CFLAGS += -O3
 -  CFLAGS += $(OPTLEV) -fomit-frame-pointer
 +  #CFLAGS += $(OPTLEV) -fomit-frame-pointer
  endif
+ endif
+ 
+@@ -583,7 +583,7 @@
+ 
+ # executable
+ $(BIN)/$(EXENAME): $(O) $(OBJS) $(MAINOBJ) versionstring
+-#	 @mkdir $(BIN)
++	@mkdir -p $(BIN)
+ 	@echo Linking...
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(MAINOBJ) \
+ 	-o $(BIN)/$(EXENAME) $(LIBS)
+@@ -651,7 +651,7 @@
+ ../dep/main2.dep : i*.c m*.c p*.c
+ ../dep/main3.dep : q*.c r*.c s*.c t*.c v*.c z*.c
+ # none: e*.c j*.c k*.c l*.c n*.c o*.c
+-../dep/hardware.dep : hardware/*.c hardware/*/*.c
++../dep/hardware.dep : hardware/*.c hardware/r_opengl/*.c
+ # $(INTERFACE).dep : $(INTERFACE)/*.c
+ ../dep/djgppdos.dep : djgppdos/*.c
+ ../dep/linux_x.dep : linux_x/*.c linux_x/musserv/*.c linux_x/sndserv/*.c
+@@ -673,11 +673,10 @@
+ ../dep :
+ 	@mkdir ../dep;
+ 
+-%.dep :
++%.dep : ../dep
+ 	@echo "Making dependencies $(@F)"
+-	if test ! -d ../dep; then mkdir ../dep; fi
+ 	$(CC) $(CFLAGS) -MM $^ > ../dep/$(@F)
+-	sed --separate -e "s@^[a-zA-Z0-9_]*.o:@\$$(O)/&@" ../dep/$(@F) > sed.dep
++	sed -e "s@^[a-zA-Z0-9_]*.o:@\$$(O)/&@" ../dep/$(@F) > sed.dep
+ 	mv sed.dep ../dep/$(@F)
  endif
  

@@ -1,6 +1,6 @@
 --- sdl/i_system.c.orig
 +++ sdl/i_system.c
-@@ -83,10 +83,7 @@
+@@ -84,10 +84,7 @@
  #  include <sys/mount.h>
  /*For meminfo*/
  #  include <sys/types.h>
@@ -12,7 +12,16 @@
  # endif
  #endif
  
-@@ -832,30 +829,16 @@ uint64_t I_GetFreeMem(uint64_t *total)
+@@ -516,6 +513,8 @@ void I_SysInit()
+ 
+   // Enable unicode key conversion
+   SDL_EnableUNICODE(1);
++  // Enable key auto repeat
++  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+ 
+   // Initialize the joystick subsystem.
+   I_JoystickInit();
+@@ -906,33 +905,19 @@ uint64_t I_GetFreeMem(uint64_t *total)
    // LINUX covers all the unix-type OS's.
  
  #ifdef FREEBSD
@@ -24,8 +33,8 @@
 -	{ NULL }
 -    };
 -    if ((kd = kvm_open(NULL, NULL, NULL, O_RDONLY, "kvm_open")) == NULL)
-+    unsigned long page_count, free_count, pagesize;
-+    size_t len = sizeof(unsigned long);
++    unsigned page_count, free_count, pagesize;
++    size_t len = sizeof(unsigned);
 +    if (sysctlbyname("vm.stats.vm.v_page_count", &page_count, &len, NULL, 0))
        goto guess;
 -
@@ -47,8 +56,20 @@
 +      goto guess;
 +    if (sysctlbyname("hw.pagesize", &pagesize, &len, NULL, 0))
 +      goto guess;
-+    *total = page_count * pagesize;
-+    return free_count * pagesize;
++    *total = (uint64_t)page_count * pagesize;
++    return (uint64_t)free_count * pagesize;
  #elif defined(SOLARIS)
      goto guess;
- #else
+-#else
++#endif
+     // Actual Linux
+ 
+ #define MEMINFO_FILE "/proc/meminfo"
+@@ -970,7 +955,6 @@ uint64_t I_GetFreeMem(uint64_t *total)
+   // make a conservative guess
+   *total = 32 << 20;
+   return   32 << 20;
+-#endif // Unix flavors
+ #elif defined(WIN32)
+   // windows
+ #if defined(WIN_LARGE_MEM) && defined( _WIN32_WINNT ) && (_WIN32_WINNT >= 0x0500)
