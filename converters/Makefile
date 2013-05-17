@@ -5,7 +5,6 @@
 
     SUBDIR += R-cran-RJSONIO
     SUBDIR += R-cran-rjson
-    SUBDIR += R-cran-xtable
     SUBDIR += aish
     SUBDIR += ascii2binary
     SUBDIR += asr10
