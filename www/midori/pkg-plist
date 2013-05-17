@@ -1,12 +1,15 @@
 bin/midori
 etc/xdg/midori/extensions/adblock/config
 etc/xdg/midori/search
+include/midori-%%VERSION%%/extensions/apps.h
 include/midori-%%VERSION%%/extensions/delayed-load.h
 include/midori-%%VERSION%%/extensions/external-download-manager.h
 include/midori-%%VERSION%%/extensions/history-list.h
 include/midori-%%VERSION%%/extensions/nsplugin-manager.h
+include/midori-%%VERSION%%/extensions/transfers.h
 lib/midori/libadblock.so
 lib/midori/libaddons.so
+lib/midori/libapps.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
 lib/midori/libcookie-permissions.so
@@ -24,6 +27,7 @@ lib/midori/libstatusbar-features.so
 lib/midori/libtab-panel.so
 lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
+lib/midori/libtransfers.so
 lib/midori/libweb-cache.so
 share/applications/midori.desktop
 share/applications/midori-private.desktop
@@ -130,6 +134,7 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 %%NLS%%share/locale/it/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/no/LC_MESSAGES/midori.mo
@@ -156,6 +161,8 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 %%DATADIR%%/res/gtk3.css
 %%DATADIR%%/res/logo-shade.png
 %%DATADIR%%/res/speeddial-head.html
+share/vala/vapi/apps.deps
+share/vala/vapi/apps.vapi
 share/vala/vapi/delayed-load.deps
 share/vala/vapi/delayed-load.vapi
 share/vala/vapi/external-download-manager.deps
@@ -164,6 +171,8 @@ share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
 share/vala/vapi/nsplugin-manager.deps
 share/vala/vapi/nsplugin-manager.vapi
+share/vala/vapi/transfers.deps
+share/vala/vapi/transfers.vapi
 @dirrmtry share/vala/vapi
 @dirrmtry share/vala
 @dirrm %%DATADIR%%/res
@@ -172,6 +181,8 @@ share/vala/vapi/nsplugin-manager.vapi
 %%NLS%%@dirrmtry share/locale/ug
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
 %%APIDOCS%%@dirrm %%DOCSDIR%%/api/midori/html
@@ -186,5 +197,3 @@ share/vala/vapi/nsplugin-manager.vapi
 @dirrm etc/xdg/midori/extensions/adblock
 @dirrm etc/xdg/midori/extensions
 @dirrm etc/xdg/midori
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
