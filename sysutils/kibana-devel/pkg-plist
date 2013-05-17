@@ -1,0 +1,167 @@
+%%WWWDIR%%/sample/server.js
+%%WWWDIR%%/sample/kibana.conf
+%%WWWDIR%%/partials/roweditor.html
+%%WWWDIR%%/partials/panelgeneral.html
+%%WWWDIR%%/partials/paneleditor.html
+%%WWWDIR%%/partials/modal.html
+%%WWWDIR%%/partials/load.html
+%%WWWDIR%%/partials/dasheditor.html
+%%WWWDIR%%/partials/dashboard.html
+%%WWWDIR%%/panels/timepicker/refreshctrl.html
+%%WWWDIR%%/panels/timepicker/module.js
+%%WWWDIR%%/panels/timepicker/module.html
+%%WWWDIR%%/panels/timepicker/editor.html
+%%WWWDIR%%/panels/text/module.js
+%%WWWDIR%%/panels/text/module.html
+%%WWWDIR%%/panels/text/lib/showdown.js
+%%WWWDIR%%/panels/text/editor.html
+%%WWWDIR%%/panels/table/module.js
+%%WWWDIR%%/panels/table/module.html
+%%WWWDIR%%/panels/table/editor.html
+%%WWWDIR%%/panels/stringquery/module.js
+%%WWWDIR%%/panels/stringquery/module.html
+%%WWWDIR%%/panels/stringquery/editor.html
+%%WWWDIR%%/panels/sort/module.js
+%%WWWDIR%%/panels/sort/module.html
+%%WWWDIR%%/panels/pie/module.js
+%%WWWDIR%%/panels/pie/module.html
+%%WWWDIR%%/panels/pie/editor.html
+%%WWWDIR%%/panels/parallelcoordinates/module.js
+%%WWWDIR%%/panels/parallelcoordinates/module.html
+%%WWWDIR%%/panels/parallelcoordinates/editor.html
+%%WWWDIR%%/panels/map2/module.js
+%%WWWDIR%%/panels/map2/module.html
+%%WWWDIR%%/panels/map2/lib/world-country-names.tsv
+%%WWWDIR%%/panels/map2/lib/world-110m.json
+%%WWWDIR%%/panels/map2/lib/topojson.v1.min.js
+%%WWWDIR%%/panels/map2/lib/queue.v1.min.js
+%%WWWDIR%%/panels/map2/lib/node-geohash.js
+%%WWWDIR%%/panels/map2/lib/d3.hexbin.v0.min.js
+%%WWWDIR%%/panels/map2/editor.html
+%%WWWDIR%%/panels/map2/display/geopoints.js
+%%WWWDIR%%/panels/map2/display/bullseye.js
+%%WWWDIR%%/panels/map2/display/binning.js
+%%WWWDIR%%/panels/map/module.js
+%%WWWDIR%%/panels/map/module.html
+%%WWWDIR%%/panels/map/lib/map.world.js
+%%WWWDIR%%/panels/map/lib/map.usa.js
+%%WWWDIR%%/panels/map/lib/map.europe.js
+%%WWWDIR%%/panels/map/lib/jquery.jvectormap.min.js
+%%WWWDIR%%/panels/map/editor.html
+%%WWWDIR%%/panels/hits/module.js
+%%WWWDIR%%/panels/hits/module.html
+%%WWWDIR%%/panels/hits/editor.html
+%%WWWDIR%%/panels/histogram/module.js
+%%WWWDIR%%/panels/histogram/module.html
+%%WWWDIR%%/panels/histogram/editor.html
+%%WWWDIR%%/panels/fields/module.js
+%%WWWDIR%%/panels/fields/module.html
+%%WWWDIR%%/panels/fields/micropanel.html
+%%WWWDIR%%/panels/fields/editor.html
+%%WWWDIR%%/panels/derivequeries/module.js
+%%WWWDIR%%/panels/derivequeries/module.html
+%%WWWDIR%%/panels/derivequeries/editor.html
+%%WWWDIR%%/panels/debug/module.js
+%%WWWDIR%%/panels/debug/module.html
+%%WWWDIR%%/panels/debug/editor.html
+%%WWWDIR%%/panels/dashcontrol/share.html
+%%WWWDIR%%/panels/dashcontrol/save.html
+%%WWWDIR%%/panels/dashcontrol/module.js
+%%WWWDIR%%/panels/dashcontrol/module.html
+%%WWWDIR%%/panels/dashcontrol/load.html
+%%WWWDIR%%/panels/dashcontrol/editor.html
+%%WWWDIR%%/panels/column/panelgeneral.html
+%%WWWDIR%%/panels/column/module.js
+%%WWWDIR%%/panels/column/module.html
+%%WWWDIR%%/panels/column/editor.html
+%%WWWDIR%%/js/services.js
+%%WWWDIR%%/js/panels.js
+%%WWWDIR%%/js/filters.js
+%%WWWDIR%%/js/directives.js
+%%WWWDIR%%/js/controllers.js
+%%WWWDIR%%/js/app.js
+%%WWWDIR%%/index.html
+%%WWWDIR%%/dashboards/default
+%%WWWDIR%%/config.js
+%%WWWDIR%%/common/lib/underscore.min.js.old
+%%WWWDIR%%/common/lib/underscore.min.js
+%%WWWDIR%%/common/lib/timepicker.js
+%%WWWDIR%%/common/lib/shared.js
+%%WWWDIR%%/common/lib/settings.js
+%%WWWDIR%%/common/lib/panels/timezone.js
+%%WWWDIR%%/common/lib/panels/jquery.flot.time.js
+%%WWWDIR%%/common/lib/panels/jquery.flot.stack.js
+%%WWWDIR%%/common/lib/panels/jquery.flot.selection.js
+%%WWWDIR%%/common/lib/panels/jquery.flot.pie.js
+%%WWWDIR%%/common/lib/panels/jquery.flot.js
+%%WWWDIR%%/common/lib/modernizr-2.6.1.min.js
+%%WWWDIR%%/common/lib/json2.min.js
+%%WWWDIR%%/common/lib/jquery-1.8.0.min.js
+%%WWWDIR%%/common/lib/filesaver.js
+%%WWWDIR%%/common/lib/elastic.min.js
+%%WWWDIR%%/common/lib/elastic.js
+%%WWWDIR%%/common/lib/elastic-angular-client.min.js
+%%WWWDIR%%/common/lib/elastic-angular-client.js
+%%WWWDIR%%/common/lib/datepicker.js
+%%WWWDIR%%/common/lib/dateformat.js
+%%WWWDIR%%/common/lib/date.js
+%%WWWDIR%%/common/lib/d3.v3.min.js
+%%WWWDIR%%/common/lib/bootstrap.min.js
+%%WWWDIR%%/common/lib/angular.min.js.1.0.2
+%%WWWDIR%%/common/lib/angular.min.js
+%%WWWDIR%%/common/lib/angular-strap.min.js
+%%WWWDIR%%/common/lib/angular-sanitize.min.js
+%%WWWDIR%%/common/lib/LAB.min.js
+%%WWWDIR%%/common/img/load_big.gif
+%%WWWDIR%%/common/img/load.gif
+%%WWWDIR%%/common/img/glyphicons-halflings.png
+%%WWWDIR%%/common/img/glyphicons-halflings-white.png
+%%WWWDIR%%/common/font/fontawesome-webfont.woff
+%%WWWDIR%%/common/font/fontawesome-webfont.ttf
+%%WWWDIR%%/common/font/fontawesome-webfont.svg
+%%WWWDIR%%/common/font/fontawesome-webfont.eot
+%%WWWDIR%%/common/font/FontAwesome.otf
+%%WWWDIR%%/common/css/timepicker.css
+%%WWWDIR%%/common/css/normalize.min.css
+%%WWWDIR%%/common/css/main.css
+%%WWWDIR%%/common/css/jquery-jvectormap.css
+%%WWWDIR%%/common/css/font-awesome.min.css
+%%WWWDIR%%/common/css/elasticjs.css
+%%WWWDIR%%/common/css/bootstrap.min.css.orig
+%%WWWDIR%%/common/css/bootstrap.min.css
+%%WWWDIR%%/common/css/bootstrap-responsive.min.css
+%%WWWDIR%%/common/css/animate.min.css
+%%WWWDIR%%/README.md
+%%WWWDIR%%/LICENSE.md
+@dirrmtry %%WWWDIR%%/sample/
+@dirrmtry %%WWWDIR%%/partials/
+@dirrmtry %%WWWDIR%%/panels/timepicker
+@dirrmtry %%WWWDIR%%/panels/text/lib
+@dirrmtry %%WWWDIR%%/panels/text
+@dirrmtry %%WWWDIR%%/panels/table
+@dirrmtry %%WWWDIR%%/panels/stringquery
+@dirrmtry %%WWWDIR%%/panels/sort
+@dirrmtry %%WWWDIR%%/panels/pie
+@dirrmtry %%WWWDIR%%/panels/parallelcoordinates
+@dirrmtry %%WWWDIR%%/panels/map2/lib
+@dirrmtry %%WWWDIR%%/panels/map2/display
+@dirrmtry %%WWWDIR%%/panels/map2
+@dirrmtry %%WWWDIR%%/panels/map/lib
+@dirrmtry %%WWWDIR%%/panels/map
+@dirrmtry %%WWWDIR%%/panels/hits
+@dirrmtry %%WWWDIR%%/panels/histogram
+@dirrmtry %%WWWDIR%%/panels/fields
+@dirrmtry %%WWWDIR%%/panels/derivequeries
+@dirrmtry %%WWWDIR%%/panels/debug
+@dirrmtry %%WWWDIR%%/panels/dashcontrol
+@dirrmtry %%WWWDIR%%/panels/column
+@dirrmtry %%WWWDIR%%/panels/
+@dirrmtry %%WWWDIR%%/js/
+@dirrmtry %%WWWDIR%%/dashboards/
+@dirrmtry %%WWWDIR%%/common/lib/panels
+@dirrmtry %%WWWDIR%%/common/lib
+@dirrmtry %%WWWDIR%%/common/img
+@dirrmtry %%WWWDIR%%/common/font
+@dirrmtry %%WWWDIR%%/common/css
+@dirrmtry %%WWWDIR%%/common/
+@dirrmtry %%WWWDIR%%
