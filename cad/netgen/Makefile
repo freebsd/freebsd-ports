@@ -3,6 +3,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
 
@@ -29,14 +30,13 @@ FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 OPTIONS_DEFINE=		OCC FFMPEG
 OCC_DESC=		Compile with OpenCascade geometry kernel
 FFMPEG_DESC=		video recording with FFmpeg
-OPTIONS_DEFAULT=	# OCC Switch it back on when opencascade is updated.
+OPTIONS_DEFAULT=	OCC
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCC}
-BROKEN=		The opencascade port needs to be updated before OCC will work
 LIB_DEPENDS+=	TKernel.0:${PORTSDIR}/cad/opencascade
-CXXFLAGS+=	-DOCCGEOMETRY -DOCC63 -DHAVE_WOK_CONFIG_H -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/OpenCAS/ros/inc
+CXXFLAGS+=	-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
 CONFIGURE_ARGS+=	--enable-occ
 .endif
 
