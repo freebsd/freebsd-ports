@@ -8,8 +8,40 @@ configuration files will no longer be available once sshd is chrooted.
 PR:             39953, 40894
 Submitted by:   dinoex
 
+r199804 | attilio | 2009-11-25 09:12:24 -0600 (Wed, 25 Nov 2009) | 13 lines
+Changed paths:
+   M /head/crypto/openssh/sshd.c
+   M /head/usr.sbin/cron/cron/cron.c
+   M /head/usr.sbin/inetd/inetd.c
+   M /head/usr.sbin/syslogd/syslogd.c
+
+Avoid sshd, cron, syslogd and inetd to be killed under high-pressure swap
+environments.
+Please note that this can't be done while such processes run in jails.
+
+Note: in future it would be interesting to find a way to do that
+selectively for any desired proccess (choosen by user himself), probabilly
+via a ptrace interface or whatever.
+
+r206397 | kib | 2010-04-08 07:07:40 -0500 (Thu, 08 Apr 2010) | 8 lines
+Changed paths:
+   M /head/crypto/openssh/sshd.c
+
+Enhance r199804 by marking the daemonised child as immune to OOM instead
+of short-living parent. Only mark the master process that accepts
+connections, do not protect connection handlers spawned from inetd.
+
+
 --- sshd.c.orig	2010-04-15 23:56:22.000000000 -0600
 +++ sshd.c	2010-09-14 16:14:13.000000000 -0600
+@@ -46,6 +46,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
++#include <sys/mman.h>
+ #include <sys/socket.h>
+ #ifdef HAVE_SYS_STAT_H
+ # include <sys/stat.h>
 @@ -83,6 +83,13 @@
  #include <prot.h>
  #endif
@@ -24,6 +56,17 @@ Submitted by:   dinoex
  #include "xmalloc.h"
  #include "ssh.h"
  #include "ssh1.h"
+@@ -1823,6 +1824,10 @@
+ 	/* Reinitialize the log (because of the fork above). */
+ 	log_init(__progname, options.log_level, options.log_facility, log_stderr);
+ 
++	/* Avoid killing the process in high-pressure swapping environments. */
++	if (!inetd_flag && madvise(NULL, 0, MADV_PROTECT) != 0)
++		debug("madvise(): %.200s", strerror(errno));
++
+ 	/* Initialize the random number generator. */
+ 	arc4random_stir();
+
 @@ -1864,6 +1871,29 @@
  	signal(SIGCHLD, SIG_DFL);
  	signal(SIGINT, SIG_DFL);
