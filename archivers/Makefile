@@ -175,6 +175,7 @@
     SUBDIR += sectar
     SUBDIR += sharutils
     SUBDIR += snappy
+    SUBDIR += snappy-java
     SUBDIR += squeeze
     SUBDIR += squsq
     SUBDIR += star
