@@ -11,6 +11,8 @@ DISTNAME=	jgoodies-${PORTNAME}-${PORTVERSION:S|.|_|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JGoodies Looks improve the appearance of your Java applications
 
+BROKEN=		checksum mismatch
+
 LICENSE=	BSD
 
 USE_ZIP=	yes
