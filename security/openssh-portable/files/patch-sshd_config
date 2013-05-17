@@ -1,13 +1,16 @@
-r99051 | des | 2002-06-29 05:55:18 -0500 (Sat, 29 Jun 2002) | 4 lines
-Changed paths:
-   M /head/crypto/openssh/ssh_config
-   M /head/crypto/openssh/sshd_config
-
-Document FreeBSD defaults.
-
---- sshd_config.orig	2009-10-11 04:51:09.000000000 -0600
-+++ sshd_config	2010-09-14 16:14:13.000000000 -0600
-@@ -36,7 +36,7 @@
+--- sshd_config.orig	2013-02-11 18:02:09.000000000 -0600
++++ sshd_config	2013-05-13 06:46:45.153627197 -0500
+@@ -10,6 +10,9 @@
+ # possible, but leave them commented.  Uncommented options override the
+ # default value.
+ 
++# Note that some of FreeBSD's defaults differ from OpenBSD's, and
++# FreeBSD has a few additional options.
++
+ #Port 22
+ #AddressFamily any
+ #ListenAddress 0.0.0.0
+@@ -37,7 +40,7 @@
  # Authentication:
  
  #LoginGraceTime 2m
@@ -16,7 +19,17 @@ Document FreeBSD defaults.
  #StrictModes yes
  #MaxAuthTries 6
  #MaxSessions 10
-@@ -55,11 +55,11 @@
+@@ -46,8 +49,7 @@
+ #PubkeyAuthentication yes
+ 
+ # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+-# but this is overridden so installations will only check .ssh/authorized_keys
+-AuthorizedKeysFile	.ssh/authorized_keys
++#AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2
+ 
+ #AuthorizedPrincipalsFile none
+ 
+@@ -64,11 +66,11 @@
  # Don't read the user's ~/.rhosts and ~/.shosts files
  #IgnoreRhosts yes
  
@@ -31,7 +44,7 @@ Document FreeBSD defaults.
  #ChallengeResponseAuthentication yes
  
  # Kerberos options
-@@ -72,7 +72,7 @@
+@@ -81,7 +83,7 @@
  #GSSAPIAuthentication no
  #GSSAPICleanupCredentials yes
  
@@ -40,7 +53,7 @@ Document FreeBSD defaults.
  # and session processing. If this is enabled, PAM authentication will 
  # be allowed through the ChallengeResponseAuthentication and
  # PasswordAuthentication.  Depending on your PAM configuration,
-@@ -81,12 +81,12 @@
+@@ -90,19 +92,19 @@
  # If you just want the PAM account and session checks to run without
  # PAM authentication, then enable this but set PasswordAuthentication
  # and ChallengeResponseAuthentication to 'no'.
@@ -55,3 +68,11 @@ Document FreeBSD defaults.
  #X11DisplayOffset 10
  #X11UseLocalhost yes
  #PrintMotd yes
+ #PrintLastLog yes
+ #TCPKeepAlive yes
+ #UseLogin no
+-UsePrivilegeSeparation sandbox		# Default for new installations.
++#UsePrivilegeSeparation sandbox
+ #PermitUserEnvironment no
+ #Compression delayed
+ #ClientAliveInterval 0
