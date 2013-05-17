@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2012-11-07 18:06:30.000000000 -0500
++++ CMakeLists.txt	2012-11-07 18:07:40.000000000 -0500
+@@ -93,6 +93,7 @@
+ include(GrPlatform) #define LIB_SUFFIX
+ set(GR_RUNTIME_DIR      bin)
+ set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
++set(GR_LIBDATA_DIR      libdata)
+ set(GR_INCLUDE_DIR      include)
+ set(GR_DATA_DIR         share)
+ set(GR_PKG_DATA_DIR     ${GR_DATA_DIR}/${CMAKE_PROJECT_NAME})
+@@ -197,7 +198,7 @@
+ 
+ INSTALL(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-osmosdr.pc
+-    DESTINATION ${GR_LIBRARY_DIR}/pkgconfig
++    DESTINATION ${GR_LIBDATA_DIR}/pkgconfig
+ )
+ 
+ ########################################################################
