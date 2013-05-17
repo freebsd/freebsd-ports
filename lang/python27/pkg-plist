@@ -139,8 +139,10 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/__future__.py
 %%PYTHON_LIBDIR%%/__phello__.foo.py
 %%PYTHON_LIBDIR%%/_abcoll.py
+%%PYTHON_LIBDIR%%/_osx_support.py
 %%PYTHON_LIBDIR%%/_pyio.py
 %%PYTHON_LIBDIR%%/_strptime.py
+%%PYTHON_LIBDIR%%/_sysconfigdata.py
 %%PYTHON_LIBDIR%%/_threading_local.py
 %%PYTHON_LIBDIR%%/_weakrefset.py
 %%PYTHON_LIBDIR%%/abc.py
@@ -291,6 +293,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/ctypes/test/test_values.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_varsize_struct.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_win32.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_wintypes.py
 %%PYTHON_LIBDIR%%/ctypes/util.py
 %%PYTHON_LIBDIR%%/ctypes/wintypes.py
 %%PYTHON_LIBDIR%%/curses/__init__.py
@@ -740,6 +743,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tests/test_scanstring.py
 %%PYTHON_LIBDIR%%/json/tests/test_separators.py
 %%PYTHON_LIBDIR%%/json/tests/test_speedups.py
+%%PYTHON_LIBDIR%%/json/tests/test_tool.py
 %%PYTHON_LIBDIR%%/json/tests/test_unicode.py
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
@@ -1284,6 +1288,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/lock_tests.py
 %%PYTHON_LIBDIR%%/test/mapping_tests.py
 %%PYTHON_LIBDIR%%/test/math_testcases.txt
+%%PYTHON_LIBDIR%%/test/mp_fork_bomb.py
 %%PYTHON_LIBDIR%%/test/nullcert.pem
 %%PYTHON_LIBDIR%%/test/outstanding_bugs.py
 %%PYTHON_LIBDIR%%/test/pickletester.py
@@ -1300,21 +1305,23 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/relimport.py
 %%PYTHON_LIBDIR%%/test/reperf.py
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
+%%PYTHON_LIBDIR%%/test/sample_doctest_no_docstrings.py
+%%PYTHON_LIBDIR%%/test/sample_doctest_no_doctests.py
 %%PYTHON_LIBDIR%%/test/script_helper.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
 %%PYTHON_LIBDIR%%/test/sha256.pem
 %%PYTHON_LIBDIR%%/test/sgml_input.html
 %%PYTHON_LIBDIR%%/test/sortperf.py
-%%PYTHON_LIBDIR%%/test/ssl_cert.pem
-%%PYTHON_LIBDIR%%/test/ssl_key.pem
 %%PYTHON_LIBDIR%%/test/string_tests.py
 %%PYTHON_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
+%%PYTHON_LIBDIR%%/test/symlink_support.py
 %%PYTHON_LIBDIR%%/test/test_MimeWriter.py
 %%PYTHON_LIBDIR%%/test/test_SimpleHTTPServer.py
 %%PYTHON_LIBDIR%%/test/test_StringIO.py
 %%PYTHON_LIBDIR%%/test/test___all__.py
 %%PYTHON_LIBDIR%%/test/test___future__.py
 %%PYTHON_LIBDIR%%/test/test__locale.py
+%%PYTHON_LIBDIR%%/test/test__osx_support.py
 %%PYTHON_LIBDIR%%/test/test_abc.py
 %%PYTHON_LIBDIR%%/test/test_abstract_numbers.py
 %%PYTHON_LIBDIR%%/test/test_aepack.py
@@ -1438,6 +1445,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_extcall.py
 %%PYTHON_LIBDIR%%/test/test_fcntl.py
 %%PYTHON_LIBDIR%%/test/test_file.py
+%%PYTHON_LIBDIR%%/test/test_file_eintr.py
 %%PYTHON_LIBDIR%%/test/test_file2k.py
 %%PYTHON_LIBDIR%%/test/test_filecmp.py
 %%PYTHON_LIBDIR%%/test/test_fileinput.py
@@ -1654,6 +1662,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_timeout.py
 %%PYTHON_LIBDIR%%/test/test_tk.py
 %%PYTHON_LIBDIR%%/test/test_tokenize.py
+%%PYTHON_LIBDIR%%/test/test_tools.py
 %%PYTHON_LIBDIR%%/test/test_trace.py
 %%PYTHON_LIBDIR%%/test/test_traceback.py
 %%PYTHON_LIBDIR%%/test/test_transformer.py

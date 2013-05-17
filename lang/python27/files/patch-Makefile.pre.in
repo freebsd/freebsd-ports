@@ -1,0 +1,14 @@
+--- ./Makefile.pre.in.orig	2013-04-06 18:02:34.000000000 +0400
++++ ./Makefile.pre.in	2013-04-07 22:30:19.000000000 +0400
+@@ -281,9 +281,9 @@
+ 
+ ##########################################################################
+ # AST
+-AST_H_DIR=	Include
++AST_H_DIR=	$(srcdir)/Include
+ AST_H=		$(AST_H_DIR)/Python-ast.h
+-AST_C_DIR=	Python
++AST_C_DIR=	$(srcdir)/Python
+ AST_C=		$(AST_C_DIR)/Python-ast.c
+ AST_ASDL=	$(srcdir)/Parser/Python.asdl
+ 

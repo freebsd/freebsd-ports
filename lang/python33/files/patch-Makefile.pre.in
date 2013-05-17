@@ -1,0 +1,46 @@
+--- ./Makefile.pre.in.orig	2013-04-06 11:41:48.000000000 +0400
++++ ./Makefile.pre.in	2013-04-08 16:16:25.000000000 +0400
+@@ -306,21 +306,21 @@
+ 
+ ##########################################################################
+ # AST
+-AST_H_DIR=	Include
++AST_H_DIR=	$(srcdir)/Include
+ AST_H=		$(AST_H_DIR)/Python-ast.h
+-AST_C_DIR=	Python
++AST_C_DIR=	$(srcdir)/Python
+ AST_C=		$(AST_C_DIR)/Python-ast.c
+ AST_ASDL=	$(srcdir)/Parser/Python.asdl
+ 
+ ASDLGEN_FILES=	$(srcdir)/Parser/asdl.py $(srcdir)/Parser/asdl_c.py
+ # XXX Note that a build now requires Python exist before the build starts
+-ASDLGEN=	@ASDLGEN@ $(srcdir)/Parser/asdl_c.py
++ASDLGEN=	@DISABLE_ASDLGEN@ $(srcdir)/Parser/asdl_c.py
+ 
+ ##########################################################################
+ # Python
+ 
+ OPCODETARGETS_H= \
+-		Python/opcode_targets.h
++		$(srcdir)/Python/opcode_targets.h
+ 
+ OPCODETARGETGEN= \
+ 		$(srcdir)/Python/makeopcodetargets.py
+@@ -742,7 +742,7 @@
+ Objects/setobject.o: $(srcdir)/Objects/stringlib/eq.h
+ 
+ $(OPCODETARGETS_H): $(OPCODETARGETGEN_FILES)
+-	$(OPCODETARGETGEN) $(OPCODETARGETS_H)
++#	$(OPCODETARGETGEN) $(OPCODETARGETS_H)
+ 
+ Python/ceval.o: $(OPCODETARGETS_H) $(srcdir)/Python/ceval_gil.h
+ 
+@@ -753,7 +753,7 @@
+ 
+ Objects/typeobject.o: Objects/typeslots.inc
+ Objects/typeslots.inc: $(srcdir)/Include/typeslots.h $(srcdir)/Objects/typeslots.py
+-	$(PYTHON) $(srcdir)/Objects/typeslots.py < $(srcdir)/Include/typeslots.h > Objects/typeslots.inc
++#	$(PYTHON) $(srcdir)/Objects/typeslots.py < $(srcdir)/Include/typeslots.h > Objects/typeslots.inc
+ 
+ ############################################################################
+ # Header files

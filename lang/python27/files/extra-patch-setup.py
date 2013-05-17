@@ -1,11 +1,11 @@
---- setup.py.bak	2010-08-15 14:57:00.347134100 +0800
-+++ setup.py	2010-08-15 15:00:06.019643300 +0800
-@@ -1402,10 +1402,22 @@
+--- setup.py.orig	2013-04-07 11:07:43.000000000 +0400
++++ setup.py	2013-04-07 11:16:36.000000000 +0400
+@@ -1544,10 +1544,22 @@
              macros = dict()
              libraries = []
  
--        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
-+        elif platform in ('freebsd4', 'freebsd5', 'freebsd6'):
+-        elif host_platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        elif host_platform in ('freebsd4', 'freebsd5', 'freebsd6'):
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
 -            macros = dict()
@@ -16,7 +16,7 @@
 +                )
 +            libraries = []
 +
-+        elif platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        elif host_platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
 +            macros = dict(                  # FreeBSD 7+
 +                HAVE_SEM_OPEN=1,
 +                HAVE_SEM_TIMEDWAIT=1,
@@ -24,4 +24,4 @@
 +                )
              libraries = []
  
-         elif platform.startswith('openbsd'):
+         elif host_platform.startswith('openbsd'):
