@@ -13,7 +13,7 @@ MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/nxproxy/:nxproxy \
 DISTFILES=	nxcomp-${DISTVERSION:S/2/1/}.tar.gz:nxcomp\
 		nxproxy-${DISTVERSION}.tar.gz:nxproxy
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An x2go helper program
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
