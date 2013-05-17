@@ -10,7 +10,7 @@
 -  else
 -    echo $cflags
 -  fi
-+   cflags="-I@includedir@/freetype2 -I@includedir@"
++   cflags="-I$includedir/freetype2 -I$includedir"
 +   echo $cflags
  fi
  
