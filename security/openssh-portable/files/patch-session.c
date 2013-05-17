@@ -17,31 +17,6 @@ PR:             35904
 
 --- session.c.orig	2011-07-21 18:55:33.883559116 +0200
 +++ session.c	2011-07-21 19:02:17.789294035 +0200
-@@ -896,6 +896,24 @@
- {
- 	FILE *f;
- 	char buf[256];
-+#ifdef HAVE_LOGIN_CAP
-+	const char *fname;
-+#endif
-+
-+#ifdef HAVE_LOGIN_CAP
-+	fname = login_getcapstr(lc, "copyright", NULL, NULL);
-+	if (fname != NULL && (f = fopen(fname, "r")) != NULL) {
-+		while (fgets(buf, sizeof(buf), f) != NULL)
-+			fputs(buf, stdout);
-+			fclose(f);
-+	} else
-+#endif /* HAVE_LOGIN_CAP */
-+		(void)printf("%s\n\t%s %s\n",
-+	"Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
-+	"The Regents of the University of California. ",
-+	"All rights reserved.");
-+
-+	(void)printf("\n");
- 
- 	if (options.print_motd) {
- #ifdef HAVE_LOGIN_CAP
 @@ -1125,6 +1143,9 @@
  	struct passwd *pw = s->pw;
  #if !defined (HAVE_LOGIN_CAP) && !defined (HAVE_CYGWIN)
