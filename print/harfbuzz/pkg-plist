@@ -18,6 +18,6 @@ include/harfbuzz/hb-version.h
 include/harfbuzz/hb.h
 lib/libharfbuzz.la
 lib/libharfbuzz.so
-lib/libharfbuzz.so.914
+lib/libharfbuzz.so.0
 libdata/pkgconfig/harfbuzz.pc
 @dirrm include/harfbuzz

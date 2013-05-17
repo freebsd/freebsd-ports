@@ -1,6 +1,6 @@
---- configure.orig	2013-03-28 14:35:03.000000000 +0000
-+++ configure	2013-03-28 14:35:49.000000000 +0000
-@@ -17114,553 +17114,20 @@
+--- configure.orig	2013-04-21 11:02:00.000000000 +0000
++++ configure	2013-04-21 11:07:06.000000000 +0000
+@@ -17019,655 +17019,31 @@
  
  
  
@@ -87,12 +87,12 @@
    HAVE_CAIRO_FALSE=
 -fi
 -
--
--
+ 
+ 
 -pkg_failed=no
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for CAIRO_FT" >&5
 -$as_echo_n "checking for CAIRO_FT... " >&6; }
--
+ 
 -if test -n "$PKG_CONFIG"; then
 -    if test -n "$CAIRO_FT_CFLAGS"; then
 -        pkg_cv_CAIRO_FT_CFLAGS="$CAIRO_FT_CFLAGS"
@@ -160,7 +160,7 @@
 -	have_cairo_ft=true
 -fi
 -if $have_cairo_ft; then
- 
+-
 -$as_echo "#define HAVE_CAIRO_FT 1" >>confdefs.h
 -
 -fi
@@ -232,7 +232,7 @@
 -        fi
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$ICU_PKG_ERRORS" >&5
- 
+-
 -	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
 -                have_icu=false
@@ -246,26 +246,25 @@
 -	have_icu=true
 -fi
 -if test "$have_icu" != "true"; then
--	# Extract the first word of "icu-config", so it can be a program name with args.
--set dummy icu-config; ac_word=$2
+-	if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}icu-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}icu-config; ac_word=$2
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 -$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_path_icu_config+:} false; then :
+-if ${ac_cv_prog_ICU_CONFIG+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
--  case $icu_config in
--  [\\/]* | ?:[\\/]*)
--  ac_cv_path_icu_config="$icu_config" # Let the user override the test with a path.
--  ;;
--  *)
--  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-  if test -n "$ICU_CONFIG"; then
+-  ac_cv_prog_ICU_CONFIG="$ICU_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
 -  test -z "$as_dir" && as_dir=.
 -    for ac_exec_ext in '' $ac_executable_extensions; do
 -  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
--    ac_cv_path_icu_config="$as_dir/$ac_word$ac_exec_ext"
+-    ac_cv_prog_ICU_CONFIG="${ac_tool_prefix}icu-config"
 -    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
@@ -273,31 +272,83 @@
 -  done
 -IFS=$as_save_IFS
 -
--  test -z "$ac_cv_path_icu_config" && ac_cv_path_icu_config="no"
--  ;;
--esac
 -fi
--icu_config=$ac_cv_path_icu_config
--if test -n "$icu_config"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $icu_config" >&5
--$as_echo "$icu_config" >&6; }
+-fi
+-ICU_CONFIG=$ac_cv_prog_ICU_CONFIG
+-if test -n "$ICU_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ICU_CONFIG" >&5
+-$as_echo "$ICU_CONFIG" >&6; }
 -else
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
 -fi
 -
 -
+-fi
+-if test -z "$ac_cv_prog_ICU_CONFIG"; then
+-  ac_ct_ICU_CONFIG=$ICU_CONFIG
+-  # Extract the first word of "icu-config", so it can be a program name with args.
+-set dummy icu-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_prog_ac_ct_ICU_CONFIG+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test -n "$ac_ct_ICU_CONFIG"; then
+-  ac_cv_prog_ac_ct_ICU_CONFIG="$ac_ct_ICU_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
+-    ac_cv_prog_ac_ct_ICU_CONFIG="icu-config"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-fi
+-fi
+-ac_ct_ICU_CONFIG=$ac_cv_prog_ac_ct_ICU_CONFIG
+-if test -n "$ac_ct_ICU_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_ICU_CONFIG" >&5
+-$as_echo "$ac_ct_ICU_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-  if test "x$ac_ct_ICU_CONFIG" = x; then
+-    ICU_CONFIG="no"
+-  else
+-    case $cross_compiling:$ac_tool_warned in
+-yes:)
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-ac_tool_warned=yes ;;
+-esac
+-    ICU_CONFIG=$ac_ct_ICU_CONFIG
+-  fi
+-else
+-  ICU_CONFIG="$ac_cv_prog_ICU_CONFIG"
+-fi
+-
 -	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ICU by using icu-config fallback" >&5
 -$as_echo_n "checking for ICU by using icu-config fallback... " >&6; }
--	if test "$icu_config" != "no" && "$icu_config" --version >/dev/null; then
+-	if test "$ICU_CONFIG" != "no" && "$ICU_CONFIG" --version >/dev/null; then
 -		have_icu=true
 -		# We don't use --cflags as this gives us a lot of things that we don't
 -		# necessarily want, like debugging and optimization flags
 -		# See man (1) icu-config for more info.
--		ICU_CFLAGS=`$icu_config --cppflags`
--		ICU_LIBS=`$icu_config --ldflags-libsonly`
--
--
+-		ICU_CFLAGS=`$ICU_CONFIG --cppflags`
+-		ICU_LIBS=`$ICU_CONFIG --ldflags-libsonly`
+ 
+ 
 -		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 -$as_echo "yes" >&6; }
 -	else
@@ -305,10 +356,10 @@
 -$as_echo "no" >&6; }
 -	fi
 -fi
--
+ 
 -if $have_icu; then
 -	CXXFLAGS="$CXXFLAGS `$PKG_CONFIG --variable=CXXFLAGS icu-uc`"
--
+ 
 -$as_echo "#define HAVE_ICU 1" >>confdefs.h
 -
 -fi
@@ -364,8 +415,8 @@
 -	pkg_failed=untried
 -fi
 -
--
--
+ 
+ 
 -if test $pkg_failed = yes; then
  
 -if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -380,7 +431,7 @@
 -        fi
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$ICU_LE_PKG_ERRORS" >&5
--
+ 
 -	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
 -                have_icu_le=false
@@ -394,26 +445,25 @@
 -	have_icu_le=true
 -fi
 -if test "$have_icu_le" != "true"; then
--	# Extract the first word of "icu-config", so it can be a program name with args.
--set dummy icu-config; ac_word=$2
+-	if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}icu-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}icu-config; ac_word=$2
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 -$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_path_icu_config+:} false; then :
+-if ${ac_cv_prog_ICU_CONFIG+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
--  case $icu_config in
--  [\\/]* | ?:[\\/]*)
--  ac_cv_path_icu_config="$icu_config" # Let the user override the test with a path.
--  ;;
--  *)
--  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-  if test -n "$ICU_CONFIG"; then
+-  ac_cv_prog_ICU_CONFIG="$ICU_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
 -  test -z "$as_dir" && as_dir=.
 -    for ac_exec_ext in '' $ac_executable_extensions; do
 -  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
--    ac_cv_path_icu_config="$as_dir/$ac_word$ac_exec_ext"
+-    ac_cv_prog_ICU_CONFIG="${ac_tool_prefix}icu-config"
 -    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
@@ -421,29 +471,81 @@
 -  done
 -IFS=$as_save_IFS
 -
--  test -z "$ac_cv_path_icu_config" && ac_cv_path_icu_config="no"
--  ;;
--esac
 -fi
--icu_config=$ac_cv_path_icu_config
--if test -n "$icu_config"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $icu_config" >&5
--$as_echo "$icu_config" >&6; }
+-fi
+-ICU_CONFIG=$ac_cv_prog_ICU_CONFIG
+-if test -n "$ICU_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ICU_CONFIG" >&5
+-$as_echo "$ICU_CONFIG" >&6; }
 -else
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
 -fi
 -
 -
+-fi
+-if test -z "$ac_cv_prog_ICU_CONFIG"; then
+-  ac_ct_ICU_CONFIG=$ICU_CONFIG
+-  # Extract the first word of "icu-config", so it can be a program name with args.
+-set dummy icu-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_prog_ac_ct_ICU_CONFIG+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test -n "$ac_ct_ICU_CONFIG"; then
+-  ac_cv_prog_ac_ct_ICU_CONFIG="$ac_ct_ICU_CONFIG" # Let the user override the test.
+-else
+-as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
+-    ac_cv_prog_ac_ct_ICU_CONFIG="icu-config"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-fi
+-fi
+-ac_ct_ICU_CONFIG=$ac_cv_prog_ac_ct_ICU_CONFIG
+-if test -n "$ac_ct_ICU_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_ICU_CONFIG" >&5
+-$as_echo "$ac_ct_ICU_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-  if test "x$ac_ct_ICU_CONFIG" = x; then
+-    ICU_CONFIG="no"
+-  else
+-    case $cross_compiling:$ac_tool_warned in
+-yes:)
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-ac_tool_warned=yes ;;
+-esac
+-    ICU_CONFIG=$ac_ct_ICU_CONFIG
+-  fi
+-else
+-  ICU_CONFIG="$ac_cv_prog_ICU_CONFIG"
+-fi
+-
 -	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ICU_LE by using icu-config fallback" >&5
 -$as_echo_n "checking for ICU_LE by using icu-config fallback... " >&6; }
--	if test "$icu_config" != "no" && "$icu_config" --version >/dev/null; then
+-	if test "$ICU_CONFIG" != "no" && "$ICU_CONFIG" --version >/dev/null; then
 -		have_icu_le=true
 -		# We don't use --cflags as this gives us a lot of things that we don't
 -		# necessarily want, like debugging and optimization flags
 -		# See man (1) icu-config for more info.
--		ICU_LE_CFLAGS=`$icu_config --cppflags`
--		ICU_LE_LIBS=`$icu_config --ldflags-libsonly --ldflags-layout`
+-		ICU_LE_CFLAGS=`$ICU_CONFIG --cppflags`
+-		ICU_LE_LIBS=`$ICU_CONFIG --ldflags-libsonly --ldflags-layout`
 -
 -
 -		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
@@ -466,13 +568,13 @@
    HAVE_ICU_LE_FALSE=
 -fi
 -
--
  
--
+ 
+ 
 -pkg_failed=no
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GRAPHITE2" >&5
 -$as_echo_n "checking for GRAPHITE2... " >&6; }
--
+ 
 -if test -n "$PKG_CONFIG"; then
 -    if test -n "$GRAPHITE2_CFLAGS"; then
 -        pkg_cv_GRAPHITE2_CFLAGS="$GRAPHITE2_CFLAGS"
