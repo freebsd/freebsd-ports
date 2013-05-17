@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-App-GitGot
-# Date created:		2010-11-12
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-GitGot
-PORTVERSION=	1.04
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GENEHACK
@@ -42,7 +38,8 @@ TEST_DEPENDS=	p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
 
 PERL_CONFIGURE=	yes
 
-MAN1=		got.1
+MAN1=		got.1 \
+		got-complete.1
 MAN3=		App::GitGot.3 \
 		App::GitGot::Command.3 \
 		App::GitGot::Command::add.3 \
@@ -51,6 +48,8 @@ MAN3=		App::GitGot.3 \
 		App::GitGot::Command::fork.3 \
 		App::GitGot::Command::gc.3 \
 		App::GitGot::Command::list.3 \
+		App::GitGot::Command::move.3 \
+		App::GitGot::Command::mux.3 \
 		App::GitGot::Command::push.3 \
 		App::GitGot::Command::remove.3 \
 		App::GitGot::Command::status.3 \

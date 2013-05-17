@@ -1,4 +1,5 @@
 bin/got
+bin/got-complete
 %%SITE_PERL%%/App/GitGot.pm
 %%SITE_PERL%%/App/GitGot/Command.pm
 %%SITE_PERL%%/App/GitGot/Command/add.pm
@@ -7,6 +8,8 @@ bin/got
 %%SITE_PERL%%/App/GitGot/Command/fork.pm
 %%SITE_PERL%%/App/GitGot/Command/gc.pm
 %%SITE_PERL%%/App/GitGot/Command/list.pm
+%%SITE_PERL%%/App/GitGot/Command/move.pm
+%%SITE_PERL%%/App/GitGot/Command/mux.pm
 %%SITE_PERL%%/App/GitGot/Command/push.pm
 %%SITE_PERL%%/App/GitGot/Command/remove.pm
 %%SITE_PERL%%/App/GitGot/Command/status.pm
