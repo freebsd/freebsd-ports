@@ -1,9 +1,10 @@
-PORTVERSION=	1.6.26
+PORTVERSION=	1.6.27
 PORTREVISION?=	0
 MASTER_SITES=	http://www.moosefs.org/tl_files/mfscode/ \
 		http://ports.quxingwen.com/dist/mfs/
 
-DISTNAME=	mfs-${PORTVERSION}
+DISTNAME=	mfs-${PORTVERSION}-1
+WRKSRC=		${WRKDIR}/mfs-${PORTVERSION}
 
 LICENSE=	GPLv3
 

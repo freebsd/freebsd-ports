@@ -5,4 +5,4 @@ to communicate with the managing server (to receive and modify
 file metadata) and with chunkservers (to exchange actual file
 data).
 
-WWW:	http://www.moosefs.org/
+WWW: http://www.moosefs.org/

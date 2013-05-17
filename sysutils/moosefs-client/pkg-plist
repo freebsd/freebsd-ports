@@ -18,4 +18,7 @@ bin/mfsappendchunks
 bin/mfsmount
 bin/mfstools
 bin/mfssnapshot
-etc/mfsmount.cfg.dist
+@unexec if cmp -s %D/etc/mfs/mfsmount.cfg.dist %D/etc/mfsmount.cfg; then rm -f %D/etc/mfsmount.cfg; fi
+etc/mfs/mfsmount.cfg.dist
+@exec  if [ ! -f %D/etc/mfsmount.cfg ]; then /bin/cp %D/%F %D/etc/mfsmount.cfg; fi
+@dirrm etc/mfs
