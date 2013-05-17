@@ -76,6 +76,7 @@ lib/%%XXE%%/addon/batik_imagetoolkit/xml-apis.readme
 lib/%%XXE%%/addon/config/catalog.xml
 lib/%%XXE%%/addon/config/common/css/cals_table.imp
 lib/%%XXE%%/addon/config/common/css/cals_table_base.imp
+lib/%%XXE%%/addon/config/common/css/object.imp
 lib/%%XXE%%/addon/config/common/css/visible_inclusions.imp
 lib/%%XXE%%/addon/config/common/css/xhtml_table.imp
 lib/%%XXE%%/addon/config/common/css/xhtml_table_base.imp
@@ -83,7 +84,9 @@ lib/%%XXE%%/addon/config/common/css/xmldata.css
 lib/%%XXE%%/addon/config/common/docbook.jar
 lib/%%XXE%%/addon/config/common/icons/addListItem.png
 lib/%%XXE%%/addon/config/common/icons/back.png
+lib/%%XXE%%/addon/config/common/icons/bold.png
 lib/%%XXE%%/addon/config/common/icons/boldText.png
+lib/%%XXE%%/addon/config/common/icons/boldText_menu.png
 lib/%%XXE%%/addon/config/common/icons/copy.png
 lib/%%XXE%%/addon/config/common/icons/cut.png
 lib/%%XXE%%/addon/config/common/icons/decrementColumnSpan.png
@@ -95,6 +98,7 @@ lib/%%XXE%%/addon/config/common/icons/deleteRow.png
 lib/%%XXE%%/addon/config/common/icons/documentation.png
 lib/%%XXE%%/addon/config/common/icons/down.png
 lib/%%XXE%%/addon/config/common/icons/editDocument.png
+lib/%%XXE%%/addon/config/common/icons/email.png
 lib/%%XXE%%/addon/config/common/icons/emphasisText.png
 lib/%%XXE%%/addon/config/common/icons/emphasisText_menu.png
 lib/%%XXE%%/addon/config/common/icons/figure.png
@@ -104,17 +108,23 @@ lib/%%XXE%%/addon/config/common/icons/heading.png
 lib/%%XXE%%/addon/config/common/icons/heading_menu.png
 lib/%%XXE%%/addon/config/common/icons/hyperText.png
 lib/%%XXE%%/addon/config/common/icons/hyperText_menu.png
+lib/%%XXE%%/addon/config/common/icons/image.png
+lib/%%XXE%%/addon/config/common/icons/image_after.png
 lib/%%XXE%%/addon/config/common/icons/incrementColumnSpan.png
 lib/%%XXE%%/addon/config/common/icons/incrementRowSpan.png
 lib/%%XXE%%/addon/config/common/icons/insertColumnAfter.png
 lib/%%XXE%%/addon/config/common/icons/insertColumnBefore.png
 lib/%%XXE%%/addon/config/common/icons/insertRowAfter.png
 lib/%%XXE%%/addon/config/common/icons/insertRowBefore.png
+lib/%%XXE%%/addon/config/common/icons/italic.png
 lib/%%XXE%%/addon/config/common/icons/italicText.png
+lib/%%XXE%%/addon/config/common/icons/italicText_menu.png
 lib/%%XXE%%/addon/config/common/icons/itemizedList.png
 lib/%%XXE%%/addon/config/common/icons/left.png
 lib/%%XXE%%/addon/config/common/icons/link.png
 lib/%%XXE%%/addon/config/common/icons/link_menu.png
+lib/%%XXE%%/addon/config/common/icons/media.png
+lib/%%XXE%%/addon/config/common/icons/media_menu.png
 lib/%%XXE%%/addon/config/common/icons/navigate.png
 lib/%%XXE%%/addon/config/common/icons/normalText.png
 lib/%%XXE%%/addon/config/common/icons/onlineHelp.png
@@ -126,14 +136,22 @@ lib/%%XXE%%/addon/config/common/icons/pasteBefore.png
 lib/%%XXE%%/addon/config/common/icons/plainText.png
 lib/%%XXE%%/addon/config/common/icons/pre.png
 lib/%%XXE%%/addon/config/common/icons/pre_menu.png
+lib/%%XXE%%/addon/config/common/icons/quote.png
 lib/%%XXE%%/addon/config/common/icons/right.png
 lib/%%XXE%%/addon/config/common/icons/section.png
 lib/%%XXE%%/addon/config/common/icons/section_menu.png
 lib/%%XXE%%/addon/config/common/icons/sortRows.png
+lib/%%XXE%%/addon/config/common/icons/strikethrough.png
+lib/%%XXE%%/addon/config/common/icons/subscript.png
+lib/%%XXE%%/addon/config/common/icons/superscript.png
 lib/%%XXE%%/addon/config/common/icons/table.png
 lib/%%XXE%%/addon/config/common/icons/table_menu.png
+lib/%%XXE%%/addon/config/common/icons/text_after.png
+lib/%%XXE%%/addon/config/common/icons/typewriter.png
 lib/%%XXE%%/addon/config/common/icons/typewriterText.png
 lib/%%XXE%%/addon/config/common/icons/typewriterText_menu.png
+lib/%%XXE%%/addon/config/common/icons/ulink.png
+lib/%%XXE%%/addon/config/common/icons/underline.png
 lib/%%XXE%%/addon/config/common/icons/up.png
 lib/%%XXE%%/addon/config/common/icons/viewDocument.png
 lib/%%XXE%%/addon/config/common/mime_types/.directory
@@ -240,6 +258,7 @@ lib/%%XXE%%/addon/config/dita/icons/topicref_after.png
 lib/%%XXE%%/addon/config/dita/icons/topicref_before.png
 lib/%%XXE%%/addon/config/dita/map.xxe
 lib/%%XXE%%/addon/config/dita/map_common.incl
+lib/%%XXE%%/addon/config/dita/media.incl
 lib/%%XXE%%/addon/config/dita/schema/v1.0.1/dtd/101changes.txt
 lib/%%XXE%%/addon/config/dita/schema/v1.0.1/dtd/concept.dtd
 lib/%%XXE%%/addon/config/dita/schema/v1.0.1/dtd/concept.mod
@@ -604,6 +623,7 @@ lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/notice.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/parent.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/parent_disabled.png
+lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/previous.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/previous_disabled.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/remember.png
@@ -611,7 +631,10 @@ lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/restriction.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/tip.png
 lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources/warning.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/META-INF/container.xml
+lib/%%XXE%%/addon/config/dita/xsl/epub/cover.xsl
 lib/%%XXE%%/addon/config/dita/xsl/epub/epub.xsl
+lib/%%XXE%%/addon/config/dita/xsl/epub/epub3.xsl
+lib/%%XXE%%/addon/config/dita/xsl/epub/epubCommon.xsl
 lib/%%XXE%%/addon/config/dita/xsl/epub/epubParams.xsl
 lib/%%XXE%%/addon/config/dita/xsl/epub/mimetype
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources.list
@@ -635,12 +658,14 @@ lib/%%XXE%%/addon/config/dita/xsl/epub/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/notice.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/parent.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/parent_disabled.png
+lib/%%XXE%%/addon/config/dita/xsl/epub/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/previous.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/previous_disabled.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/remember.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/restriction.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/tip.png
 lib/%%XXE%%/addon/config/dita/xsl/epub/resources/warning.png
+lib/%%XXE%%/addon/config/dita/xsl/epub/toc.xsl
 lib/%%XXE%%/addon/config/dita/xsl/fo/body.xsl
 lib/%%XXE%%/addon/config/dita/xsl/fo/ditac_anchor.xsl
 lib/%%XXE%%/addon/config/dita/xsl/fo/ditac_chunk.xsl
@@ -670,6 +695,7 @@ lib/%%XXE%%/addon/config/dita/xsl/fo/resources/fastpath.png
 lib/%%XXE%%/addon/config/dita/xsl/fo/resources/important.png
 lib/%%XXE%%/addon/config/dita/xsl/fo/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/fo/resources/notice.png
+lib/%%XXE%%/addon/config/dita/xsl/fo/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/fo/resources/remember.png
 lib/%%XXE%%/addon/config/dita/xsl/fo/resources/restriction.png
 lib/%%XXE%%/addon/config/dita/xsl/fo/resources/tip.png
@@ -707,6 +733,7 @@ lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/notice.png
 lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/parent.png
 lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/parent_disabled.png
+lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/previous.png
 lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/previous_disabled.png
 lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources/remember.png
@@ -736,6 +763,7 @@ lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/notice.png
 lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/parent.png
 lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/parent_disabled.png
+lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/previous.png
 lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/previous_disabled.png
 lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources/remember.png
@@ -761,6 +789,7 @@ lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/notice.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/parent.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/parent_disabled.png
+lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/previous.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/previous_disabled.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/remember.png
@@ -769,6 +798,8 @@ lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/tip.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/warning.png
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources/webhelp.css
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/webhelp.xsl
+lib/%%XXE%%/addon/config/dita/xsl/webhelp/webhelp5.xsl
+lib/%%XXE%%/addon/config/dita/xsl/webhelp/webhelpBase.xsl
 lib/%%XXE%%/addon/config/dita/xsl/webhelp/webhelpParams.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/body.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/ditac_anchor.xsl
@@ -807,6 +838,7 @@ lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/note.png
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/notice.png
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/parent.png
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/parent_disabled.png
+lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/play.png
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/previous.png
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/previous_disabled.png
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources/remember.png
@@ -824,6 +856,7 @@ lib/%%XXE%%/addon/config/dita/xsl/xhtml/userInterface.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/utilities.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/xhtml.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/xhtml1_1.xsl
+lib/%%XXE%%/addon/config/dita/xsl/xhtml/xhtml5.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/xhtmlBase.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/xhtmlParams.xsl
 lib/%%XXE%%/addon/config/dita/xsl/xhtml/xhtmlUtil.xsl
@@ -1067,12 +1100,6 @@ lib/%%XXE%%/addon/config/docbook/xsl/README
 lib/%%XXE%%/addon/config/docbook/xsl/RELEASE-NOTES.html
 lib/%%XXE%%/addon/config/docbook/xsl/VERSION
 lib/%%XXE%%/addon/config/docbook/xsl/VERSION.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/assembly/README
-lib/%%XXE%%/addon/config/docbook/xsl/assembly/assemble.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/assembly/schema/assembly51b7.rnc
-lib/%%XXE%%/addon/config/docbook/xsl/assembly/schema/docbook51b7.rnc
-lib/%%XXE%%/addon/config/docbook/xsl/assembly/topic-maker-chunk.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/assembly/topic-maker.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/common/af.xml
 lib/%%XXE%%/addon/config/docbook/xsl/common/am.xml
 lib/%%XXE%%/addon/config/docbook/xsl/common/ar.xml
@@ -1212,6 +1239,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/fo/glossary.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/graphics.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/graphics.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/fo/highlight.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/fo/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/fo/htmltbl.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/index.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/info.xsl
@@ -1243,24 +1271,33 @@ lib/%%XXE%%/addon/config/docbook/xsl/fo/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/toc.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/fo/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/fo/xep.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/fo/xref.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/README
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/bourne-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/c-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/cmake-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/common.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/cpp-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/csharp-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/css21-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/delphi-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/ini-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/java-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/javascript-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/lua-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/m2-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/myxml-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/perl-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/php-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/python-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/ruby-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/sql1999-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/sql2003-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/sql92-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/tcl-hl.xml
+lib/%%XXE%%/addon/config/docbook/xsl/highlighting/upc-hl.xml
 lib/%%XXE%%/addon/config/docbook/xsl/highlighting/xslthl-config.xml
 lib/%%XXE%%/addon/config/docbook/xsl/html/admon.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/annotations.xsl
@@ -1277,7 +1314,6 @@ lib/%%XXE%%/addon/config/docbook/xsl/html/changebars.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/chunk-changebars.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/chunk-code.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/chunk-common.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/html/chunk-common.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/html/chunk.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/chunker.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/chunkfast.xsl
@@ -1288,11 +1324,11 @@ lib/%%XXE%%/addon/config/docbook/xsl/html/docbook.css.xml
 lib/%%XXE%%/addon/config/docbook/xsl/html/docbook.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/ebnf.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/footnote.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/html/footnote.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/html/formal.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/glossary.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/graphics.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/highlight.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/html/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/html/html-rtf.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/html.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/htmltbl.xsl
@@ -1326,6 +1362,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/html/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/toc.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/html/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/html/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/html/xref.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/htmlhelp/htmlhelp-common.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/htmlhelp/htmlhelp.xsl
@@ -1334,32 +1371,24 @@ lib/%%XXE%%/addon/config/docbook/xsl/htmlhelp/profile-htmlhelp.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/images/annot-close.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/annot-open.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/blank.png
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/1.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/1.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/1.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/10.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/10.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/10.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/11.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/11.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/11.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/12.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/12.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/12.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/13.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/13.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/13.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/14.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/14.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/14.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/15.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/15.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/15.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/16.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/17.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/18.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/19.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/2.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/2.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/2.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/20.svg
@@ -1372,64 +1401,46 @@ lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/26.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/27.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/28.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/29.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/3.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/3.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/3.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/30.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/4.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/4.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/4.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/5.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/5.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/5.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/6.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/6.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/6.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/7.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/7.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/7.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/8.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/8.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/8.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/9.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/9.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/9.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/gif_callouts.list
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/png_callouts.list
 lib/%%XXE%%/addon/config/docbook/xsl/images/callouts/svg_callouts.list
-lib/%%XXE%%/addon/config/docbook/xsl/images/caution.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/caution.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/caution.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/draft.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/draft.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/gif_images.list
-lib/%%XXE%%/addon/config/docbook/xsl/images/home.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/home.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/home.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/important.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/important.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/important.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/next.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/next.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/next.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/note.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/note.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/note.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/png_images.list
-lib/%%XXE%%/addon/config/docbook/xsl/images/prev.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/prev.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/prev.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/svg_images.list
-lib/%%XXE%%/addon/config/docbook/xsl/images/tip.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/tip.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/tip.svg
 lib/%%XXE%%/addon/config/docbook/xsl/images/toc-blank.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/toc-minus.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/toc-plus.png
-lib/%%XXE%%/addon/config/docbook/xsl/images/up.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/up.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/up.svg
-lib/%%XXE%%/addon/config/docbook/xsl/images/warning.gif
 lib/%%XXE%%/addon/config/docbook/xsl/images/warning.png
 lib/%%XXE%%/addon/config/docbook/xsl/images/warning.svg
 lib/%%XXE%%/addon/config/docbook/xsl/javahelp/javahelp.xsl
@@ -1439,6 +1450,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/make_image_lists
 lib/%%XXE%%/addon/config/docbook/xsl/params/abstract.notitle.enabled.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/abstract.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/abstract.title.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/activate.external.olinks.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/active.toc.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/ade.extensions.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/admon.graphics.extension.xml
@@ -1556,6 +1568,8 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/default.table.rules.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/default.table.width.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/default.units.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/dingbat.font.family.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/disable.collapsible.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/disable.incremental.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/docbook.css.link.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/docbook.css.source.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/double.sided.xml
@@ -1587,9 +1601,17 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/feedback.with.ids.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/figure.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/filename-prefix.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/firstterm.only.link.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.footer.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.header.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.master.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.page-sequence.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/foil.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.region-after.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.region-before.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.region-body.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/foil.subtitle.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/foil.title.master.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/foil.title.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/foil.title.size.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/foilgroup.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/foilgroup.toc.xml
@@ -1608,6 +1630,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/footnote.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/footnote.sep.leader.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/fop.extensions.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/fop1.extensions.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/force.blank.pages.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/formal.object.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/formal.procedures.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/formal.title.placement.xml
@@ -1616,14 +1639,22 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/funcsynopsis.decoration.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/funcsynopsis.style.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/function.parens.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.consistent.ids.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.copyright.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.css.header.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.foilgroup.numbered.toc.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.foilgroup.toc.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.handoutnotes.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.id.attributes.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.index.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.legalnotice.link.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.manifest.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.meta.abstract.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.page.number.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.pubdate.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.revhistory.link.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.section.toc.level.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.speakernotes.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/generate.titlepage.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/generate.toc.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/glossary.as.blocks.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/glossary.collection.xml
@@ -1643,6 +1674,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/graphical.admonition.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/graphics.dir.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/graphicsize.extension.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/graphicsize.use.img.src.path.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/handoutnotes.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/header.column.widths.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/header.content.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/header.hr.xml
@@ -1835,6 +1867,8 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/marker.section.level.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/menuchoice.menu.separator.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/menuchoice.separator.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/minus.image.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/mml.embedding.mode.fo.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/mml.embedding.mode.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/monospace.font.family.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/monospace.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/monospace.verbatim.font.width.xml
@@ -1977,6 +2011,14 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/rootid.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/runinhead.default.title.end.punct.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/runinhead.title.end.punct.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/running.foot.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.controls.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.defaultview.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.opera.css.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.outline.css.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.path.prefix.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.print.css.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.slides.css.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/s5.slides.js.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/sans.font.family.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/saxon.callouts.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/saxon.character.representation.xml
@@ -2020,14 +2062,30 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/slide.font.family.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/slide.title.font.family.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/slides.js.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/slides.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.author.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.authorgroup.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.corpauthor.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.master.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.pubdate.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.region-body.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.subtitle.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slides.titlepage.title.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slidy.duration.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slidy.path.prefix.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slidy.slidy.css.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slidy.slidy.js.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/slidy.user.css.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/spacing.paras.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/speakernote.properties.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/speakernotes.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/subscript.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/superscript.properties.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/suppress.footer.navigation.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/suppress.header.navigation.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/suppress.homepage.title.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/suppress.navigation.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/svg.embedding.mode.fo.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/svg.embedding.mode.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/symbol.font.family.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/table.borders.with.css.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/table.caption.properties.xml
@@ -2100,6 +2158,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/use.local.olink.style.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/use.role.as.xrefstyle.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/use.role.for.mediaobject.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/use.svg.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/user.css.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/variablelist.as.blocks.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/variablelist.as.table.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/variablelist.max.termlength.xml
@@ -2116,6 +2175,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/params/webhelp.indexer.language.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/webhelp.start.filename.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/webhelp.tree.cookie.id.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/wordml.template.xml
+lib/%%XXE%%/addon/config/docbook/xsl/params/wrap.slidecontent.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/writing.mode.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/xbCollapsibleLists.js.xml
 lib/%%XXE%%/addon/config/docbook/xsl/params/xbDOM.js.xml
@@ -2159,12 +2219,15 @@ lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/component.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/division.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/docbook.css.xml
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/docbook.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/docbook.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/ebnf.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/footnote.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/formal.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/glossary.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/graphics.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/graphics.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/highlight.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/html-rtf.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/html.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/htmltbl.xsl
@@ -2179,6 +2242,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/math.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/oldchunker.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/onechunk.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/param.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/param.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/pi.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/profile-chunk-code.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/profile-chunk.xsl
@@ -2194,6 +2258,7 @@ lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/toc.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1/xref.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/admon.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/annotations.xsl
@@ -2210,22 +2275,22 @@ lib/%%XXE%%/addon/config/docbook/xsl/xhtml/changebars.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunk-changebars.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunk-code.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunk-common.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunk-common.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunk.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunker.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunkfast.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/chunktoc.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/component.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/division.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml/docbook-no-doctype.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/docbook.css.xml
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/docbook.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/ebnf.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/footnote.xsl
-lib/%%XXE%%/addon/config/docbook/xsl/xhtml/footnote.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/formal.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/glossary.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/graphics.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/highlight.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/html-rtf.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/html.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/htmltbl.xsl
@@ -2252,10 +2317,12 @@ lib/%%XXE%%/addon/config/docbook/xsl/xhtml/sections.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/synop.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/table.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/task.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml/titlepage.templates.xml
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/toc.xsl
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook/xsl/xhtml/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook/xsl/xhtml/xref.xsl
 lib/%%XXE%%/addon/config/docbook/xslMenu.incl
 lib/%%XXE%%/addon/config/docbook/xxe3_compat.incl
@@ -2285,15 +2352,10 @@ lib/%%XXE%%/addon/config/docbook5/template/V5.0/refentry.xml
 lib/%%XXE%%/addon/config/docbook5/template/V5.0/section.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/COPYING
 lib/%%XXE%%/addon/config/docbook5/xsl/README
+lib/%%XXE%%/addon/config/docbook5/xsl/README.ns
 lib/%%XXE%%/addon/config/docbook5/xsl/RELEASE-NOTES.html
 lib/%%XXE%%/addon/config/docbook5/xsl/VERSION
 lib/%%XXE%%/addon/config/docbook5/xsl/VERSION.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/assembly/README
-lib/%%XXE%%/addon/config/docbook5/xsl/assembly/assemble.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/assembly/schema/assembly51b7.rnc
-lib/%%XXE%%/addon/config/docbook5/xsl/assembly/schema/docbook51b7.rnc
-lib/%%XXE%%/addon/config/docbook5/xsl/assembly/topic-maker-chunk.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/assembly/topic-maker.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/common/addns.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/common/af.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/common/am.xml
@@ -2433,6 +2495,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/fo/glossary.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/graphics.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/graphics.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/highlight.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/fo/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/htmltbl.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/index.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/info.xsl
@@ -2464,24 +2527,33 @@ lib/%%XXE%%/addon/config/docbook5/xsl/fo/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/toc.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/fo/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/xep.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/fo/xref.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/README
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/bourne-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/c-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/cmake-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/common.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/cpp-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/csharp-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/css21-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/delphi-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/ini-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/java-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/javascript-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/lua-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/m2-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/myxml-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/perl-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/php-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/python-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/ruby-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/sql1999-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/sql2003-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/sql92-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/tcl-hl.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/upc-hl.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/highlighting/xslthl-config.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/html/admon.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/annotations.xsl
@@ -2498,7 +2570,6 @@ lib/%%XXE%%/addon/config/docbook5/xsl/html/changebars.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/chunk-changebars.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/chunk-code.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/chunk-common.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/html/chunk-common.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/html/chunk.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/chunker.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/chunkfast.xsl
@@ -2509,11 +2580,11 @@ lib/%%XXE%%/addon/config/docbook5/xsl/html/docbook.css.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/html/docbook.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/ebnf.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/footnote.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/html/footnote.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/html/formal.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/glossary.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/graphics.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/highlight.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/html/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/html/html-rtf.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/html.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/htmltbl.xsl
@@ -2547,6 +2618,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/html/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/toc.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/html/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/html/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/html/xref.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/htmlhelp/htmlhelp-common.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/htmlhelp/htmlhelp.xsl
@@ -2555,32 +2627,24 @@ lib/%%XXE%%/addon/config/docbook5/xsl/htmlhelp/profile-htmlhelp.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/images/annot-close.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/annot-open.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/blank.png
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/1.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/1.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/1.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/10.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/10.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/10.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/11.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/11.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/11.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/12.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/12.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/12.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/13.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/13.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/13.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/14.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/14.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/14.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/15.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/15.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/15.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/16.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/17.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/18.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/19.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/2.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/2.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/2.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/20.svg
@@ -2593,64 +2657,46 @@ lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/26.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/27.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/28.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/29.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/3.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/3.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/3.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/30.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/4.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/4.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/4.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/5.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/5.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/5.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/6.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/6.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/6.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/7.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/7.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/7.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/8.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/8.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/8.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/9.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/9.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/9.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/gif_callouts.list
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/png_callouts.list
 lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts/svg_callouts.list
-lib/%%XXE%%/addon/config/docbook5/xsl/images/caution.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/caution.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/caution.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/draft.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/draft.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/gif_images.list
-lib/%%XXE%%/addon/config/docbook5/xsl/images/home.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/home.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/home.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/important.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/important.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/important.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/next.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/next.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/next.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/note.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/note.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/note.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/png_images.list
-lib/%%XXE%%/addon/config/docbook5/xsl/images/prev.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/prev.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/prev.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/svg_images.list
-lib/%%XXE%%/addon/config/docbook5/xsl/images/tip.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/tip.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/tip.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/images/toc-blank.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/toc-minus.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/toc-plus.png
-lib/%%XXE%%/addon/config/docbook5/xsl/images/up.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/up.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/up.svg
-lib/%%XXE%%/addon/config/docbook5/xsl/images/warning.gif
 lib/%%XXE%%/addon/config/docbook5/xsl/images/warning.png
 lib/%%XXE%%/addon/config/docbook5/xsl/images/warning.svg
 lib/%%XXE%%/addon/config/docbook5/xsl/javahelp/javahelp.xsl
@@ -2660,6 +2706,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/make_image_lists
 lib/%%XXE%%/addon/config/docbook5/xsl/params/abstract.notitle.enabled.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/abstract.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/abstract.title.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/activate.external.olinks.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/active.toc.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/ade.extensions.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/admon.graphics.extension.xml
@@ -2777,6 +2824,8 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/default.table.rules.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/default.table.width.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/default.units.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/dingbat.font.family.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/disable.collapsible.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/disable.incremental.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/docbook.css.link.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/docbook.css.source.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/double.sided.xml
@@ -2808,9 +2857,17 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/feedback.with.ids.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/figure.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/filename-prefix.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/firstterm.only.link.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.footer.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.header.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.master.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.page-sequence.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.region-after.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.region-before.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.region-body.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.subtitle.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.title.master.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.title.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/foil.title.size.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/foilgroup.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/foilgroup.toc.xml
@@ -2829,6 +2886,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/footnote.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/footnote.sep.leader.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/fop.extensions.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/fop1.extensions.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/force.blank.pages.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/formal.object.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/formal.procedures.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/formal.title.placement.xml
@@ -2837,14 +2895,22 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/funcsynopsis.decoration.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/funcsynopsis.style.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/function.parens.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.consistent.ids.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.copyright.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.css.header.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.foilgroup.numbered.toc.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.foilgroup.toc.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.handoutnotes.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.id.attributes.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.index.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.legalnotice.link.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.manifest.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.meta.abstract.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.page.number.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.pubdate.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.revhistory.link.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.section.toc.level.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.speakernotes.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.titlepage.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/generate.toc.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/glossary.as.blocks.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/glossary.collection.xml
@@ -2864,6 +2930,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/graphical.admonition.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/graphics.dir.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/graphicsize.extension.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/graphicsize.use.img.src.path.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/handoutnotes.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/header.column.widths.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/header.content.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/header.hr.xml
@@ -3056,6 +3123,8 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/marker.section.level.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/menuchoice.menu.separator.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/menuchoice.separator.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/minus.image.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/mml.embedding.mode.fo.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/mml.embedding.mode.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/monospace.font.family.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/monospace.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/monospace.verbatim.font.width.xml
@@ -3198,6 +3267,14 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/rootid.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/runinhead.default.title.end.punct.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/runinhead.title.end.punct.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/running.foot.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.controls.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.defaultview.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.opera.css.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.outline.css.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.path.prefix.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.print.css.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.slides.css.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/s5.slides.js.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/sans.font.family.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/saxon.callouts.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/saxon.character.representation.xml
@@ -3241,14 +3318,30 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/slide.font.family.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/slide.title.font.family.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.js.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.author.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.authorgroup.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.corpauthor.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.master.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.pubdate.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.region-body.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.subtitle.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slides.titlepage.title.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slidy.duration.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slidy.path.prefix.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slidy.slidy.css.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slidy.slidy.js.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/slidy.user.css.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/spacing.paras.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/speakernote.properties.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/speakernotes.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/subscript.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/superscript.properties.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/suppress.footer.navigation.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/suppress.header.navigation.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/suppress.homepage.title.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/suppress.navigation.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/svg.embedding.mode.fo.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/svg.embedding.mode.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/symbol.font.family.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/table.borders.with.css.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/table.caption.properties.xml
@@ -3321,6 +3414,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/use.local.olink.style.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/use.role.as.xrefstyle.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/use.role.for.mediaobject.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/use.svg.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/user.css.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/variablelist.as.blocks.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/variablelist.as.table.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/variablelist.max.termlength.xml
@@ -3337,6 +3431,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/params/webhelp.indexer.language.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/webhelp.start.filename.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/webhelp.tree.cookie.id.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/wordml.template.xml
+lib/%%XXE%%/addon/config/docbook5/xsl/params/wrap.slidecontent.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/writing.mode.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/xbCollapsibleLists.js.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/params/xbDOM.js.xml
@@ -3388,6 +3483,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/glossary.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/graphics.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/graphics.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/highlight.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/html-rtf.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/html.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/htmltbl.xsl
@@ -3418,6 +3514,7 @@ lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/toc.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1/xref.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/admon.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/annotations.xsl
@@ -3434,22 +3531,22 @@ lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/changebars.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunk-changebars.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunk-code.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunk-common.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunk-common.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunk.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunker.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunkfast.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/chunktoc.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/component.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/division.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/docbook-no-doctype.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/docbook.css.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/docbook.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/ebnf.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/footnote.xsl
-lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/footnote.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/formal.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/glossary.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/graphics.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/highlight.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/highlight.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/html-rtf.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/html.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/htmltbl.xsl
@@ -3476,10 +3573,12 @@ lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/sections.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/synop.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/table.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/task.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/titlepage.templates.xml
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/titlepage.templates.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/titlepage.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/toc.xsl
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/verbatim.xsl
+lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/verbatim.xsl.ORI
 lib/%%XXE%%/addon/config/docbook5/xsl/xhtml/xref.xsl
 lib/%%XXE%%/addon/config/docbook5/xslMenu.incl
 lib/%%XXE%%/addon/config/xhtml/catalog.xml
@@ -3651,6 +3750,8 @@ lib/%%XXE%%/addon/dav_vdrive/stax-impl.LICENSE
 lib/%%XXE%%/addon/dav_vdrive/stax-impl.README
 lib/%%XXE%%/addon/dav_vdrive/stax-impl.jar
 lib/%%XXE%%/addon/dav_vdrive/stax2-api.jar
+lib/%%XXE%%/addon/en_dictionary/en.dar
+lib/%%XXE%%/addon/en_dictionary/en_dictionary.xxe_addon
 lib/%%XXE%%/addon/fop1_foprocessor/CHANGES_MADE_BY_XMLMIND.txt
 lib/%%XXE%%/addon/fop1_foprocessor/avalon-framework.jar
 lib/%%XXE%%/addon/fop1_foprocessor/avalon-framework.license
@@ -3753,6 +3854,7 @@ lib/%%XXE%%/addon/mathml_config/common/mathml.css
 lib/%%XXE%%/addon/mathml_config/common/mathml.incl
 lib/%%XXE%%/addon/mathml_config/common/mathml_chars.properties
 lib/%%XXE%%/addon/mathml_config/common/mathml_conf_pane_imagetoolkit.jar
+lib/%%XXE%%/addon/mathml_config/common/mathml_en.properties
 lib/%%XXE%%/addon/mathml_config/common/mathml_help.jar
 lib/%%XXE%%/addon/mathml_config/common/pane/Brackets.png
 lib/%%XXE%%/addon/mathml_config/common/pane/Equations.png
@@ -3882,13 +3984,17 @@ lib/%%XXE%%/addon/mathml_config/standalone/xsd/presentation/tokens.xsd.ORI
 lib/%%XXE%%/addon/mathml_config/xhtml5/mathml_support.imp
 lib/%%XXE%%/addon/mathml_config/xhtml5/mathml_support.incl
 lib/%%XXE%%/addon/mathml_config/xhtml5/sample.xhtml
-lib/%%XXE%%/addon/spell/en.dar
 lib/%%XXE%%/addon/xfc_foprocessor/xfc.LICENSE
 lib/%%XXE%%/addon/xfc_foprocessor/xfc.README
 lib/%%XXE%%/addon/xfc_foprocessor/xfc.jar
 lib/%%XXE%%/addon/xfc_foprocessor/xfc_ext.jar
 lib/%%XXE%%/addon/xfc_foprocessor/xfc_foprocessor.jar
 lib/%%XXE%%/addon/xfc_foprocessor/xfc_foprocessor.xxe_addon
+lib/%%XXE%%/addon/xsc_spellchecker/xsc.LICENSE
+lib/%%XXE%%/addon/xsc_spellchecker/xsc.README
+lib/%%XXE%%/addon/xsc_spellchecker/xsc.jar
+lib/%%XXE%%/addon/xsc_spellchecker/xsc_spellchecker.jar
+lib/%%XXE%%/addon/xsc_spellchecker/xsc_spellchecker.xxe_addon
 lib/%%XXE%%/bin/convertdoc
 lib/%%XXE%%/bin/convertdoc.bat
 lib/%%XXE%%/bin/csscheck
@@ -3906,12 +4012,9 @@ lib/%%XXE%%/bin/relaxng.jar
 lib/%%XXE%%/bin/resolver.jar
 lib/%%XXE%%/bin/saxon.jar
 lib/%%XXE%%/bin/saxon9.jar
-lib/%%XXE%%/bin/translatexxe
-lib/%%XXE%%/bin/translatexxe.bat
 lib/%%XXE%%/bin/xerces.jar
 lib/%%XXE%%/bin/xmltool
 lib/%%XXE%%/bin/xmltool.bat
-lib/%%XXE%%/bin/xsc.jar
 lib/%%XXE%%/bin/xxe
 lib/%%XXE%%/bin/xxe.bat
 lib/%%XXE%%/bin/xxe.exe
@@ -3977,7 +4080,9 @@ lib/%%XXE%%/demo/spreadsheet-demo/products.xhtml
 lib/%%XXE%%/demo/xhtml-table.xhtml
 lib/%%XXE%%/doc/commands/OrXXX_modifiers.html
 lib/%%XXE%%/doc/commands/XXE.close.html
+lib/%%XXE%%/doc/commands/XXE.compare.html
 lib/%%XXE%%/doc/commands/XXE.edit.html
+lib/%%XXE%%/doc/commands/XXE.editInclusion.html
 lib/%%XXE%%/doc/commands/XXE.new.html
 lib/%%XXE%%/doc/commands/XXE.open.html
 lib/%%XXE%%/doc/commands/XXE.save.html
@@ -3991,7 +4096,6 @@ lib/%%XXE%%/doc/commands/alert.html
 lib/%%XXE%%/doc/commands/alternative_commands.html
 lib/%%XXE%%/doc/commands/autoSpellChecker.html
 lib/%%XXE%%/doc/commands/beep.html
-lib/%%XXE%%/doc/commands/bookmark.html
 lib/%%XXE%%/doc/commands/cancelSelection.html
 lib/%%XXE%%/doc/commands/center.html
 lib/%%XXE%%/doc/commands/checkValidity.html
@@ -4001,6 +4105,7 @@ lib/%%XXE%%/doc/commands/commandref.html
 lib/%%XXE%%/doc/commands/commands.pdf
 lib/%%XXE%%/doc/commands/concepts.html
 lib/%%XXE%%/doc/commands/confirm.html
+lib/%%XXE%%/doc/commands/contextualMenu.html
 lib/%%XXE%%/doc/commands/contextual_commands.html
 lib/%%XXE%%/doc/commands/convert.html
 lib/%%XXE%%/doc/commands/convertCase.html
@@ -4013,23 +4118,23 @@ lib/%%XXE%%/doc/commands/copy.html
 lib/%%XXE%%/doc/commands/copyAsInclusion.html
 lib/%%XXE%%/doc/commands/copyChars.html
 lib/%%XXE%%/doc/commands/copyDocument.html
+lib/%%XXE%%/doc/commands/copyImage.html
 lib/%%XXE%%/doc/commands/copyProcessResources.html
+lib/%%XXE%%/doc/commands/custom_contextual_menu.html
 lib/%%XXE%%/doc/commands/cut.html
 lib/%%XXE%%/doc/commands/declareNamespace.html
 lib/%%XXE%%/doc/commands/declare_search_engines.html
 lib/%%XXE%%/doc/commands/delete.html
 lib/%%XXE%%/doc/commands/deleteChar.html
 lib/%%XXE%%/doc/commands/deleteSelectionOrDeleteChar.html
-lib/%%XXE%%/doc/commands/deleteSelectionOrJoinOrDeleteChar.html
+lib/%%XXE%%/doc/commands/deleteSelectionOrJoinBlockOrDeleteChar.html
 lib/%%XXE%%/doc/commands/deleteWord.html
 lib/%%XXE%%/doc/commands/diffSupport.html
 lib/%%XXE%%/doc/commands/docbook_to_multi_html.html
 lib/%%XXE%%/doc/commands/docbook_to_pdf.html
 lib/%%XXE%%/doc/commands/drag.html
 lib/%%XXE%%/doc/commands/drop.html
-lib/%%XXE%%/doc/commands/easySelectAt.html
 lib/%%XXE%%/doc/commands/editAttributes.html
-lib/%%XXE%%/doc/commands/editMenu.html
 lib/%%XXE%%/doc/commands/editObject.html
 lib/%%XXE%%/doc/commands/editPITarget.html
 lib/%%XXE%%/doc/commands/ensureSelectionAt.html
@@ -4079,9 +4184,10 @@ lib/%%XXE%%/doc/commands/insert.html
 lib/%%XXE%%/doc/commands/insertCharByName.html
 lib/%%XXE%%/doc/commands/insertCharSequence.html
 lib/%%XXE%%/doc/commands/insertControlChar.html
-lib/%%XXE%%/doc/commands/insertControlCharOrSplit.html
+lib/%%XXE%%/doc/commands/insertNewlineOrSplitBlock.html
 lib/%%XXE%%/doc/commands/insertNode.html
 lib/%%XXE%%/doc/commands/insertOrOverwriteString.html
+lib/%%XXE%%/doc/commands/insertSameBlock.html
 lib/%%XXE%%/doc/commands/insertSpecialChars.html
 lib/%%XXE%%/doc/commands/insertString.html
 lib/%%XXE%%/doc/commands/insertTextOrMoveDot.html
@@ -4101,7 +4207,6 @@ lib/%%XXE%%/doc/commands/macro_tutorial/customize.xxe
 lib/%%XXE%%/doc/commands/macro_variables.html
 lib/%%XXE%%/doc/commands/macro_vars.html
 lib/%%XXE%%/doc/commands/menu.html
-lib/%%XXE%%/doc/commands/menu_examples.html
 lib/%%XXE%%/doc/commands/menu_reference.html
 lib/%%XXE%%/doc/commands/mkdir.html
 lib/%%XXE%%/doc/commands/moveDotTo.html
@@ -4114,6 +4219,7 @@ lib/%%XXE%%/doc/commands/pass.html
 lib/%%XXE%%/doc/commands/pass_fail_help.html
 lib/%%XXE%%/doc/commands/paste.html
 lib/%%XXE%%/doc/commands/pasteAfterAs.html
+lib/%%XXE%%/doc/commands/pasteImageAs.html
 lib/%%XXE%%/doc/commands/pasteSystemSelection.html
 lib/%%XXE%%/doc/commands/pick.html
 lib/%%XXE%%/doc/commands/post.html
@@ -4148,7 +4254,6 @@ lib/%%XXE%%/doc/commands/run.html
 lib/%%XXE%%/doc/commands/search.html
 lib/%%XXE%%/doc/commands/searchReplace.html
 lib/%%XXE%%/doc/commands/selectAt.html
-lib/%%XXE%%/doc/commands/selectBlockAtY.html
 lib/%%XXE%%/doc/commands/selectConvertedFile.html
 lib/%%XXE%%/doc/commands/selectFile.html
 lib/%%XXE%%/doc/commands/selectLink.html
@@ -4167,12 +4272,14 @@ lib/%%XXE%%/doc/commands/showContentModel.html
 lib/%%XXE%%/doc/commands/showMatchingChar.html
 lib/%%XXE%%/doc/commands/spellCheck.html
 lib/%%XXE%%/doc/commands/split.html
+lib/%%XXE%%/doc/commands/splittable_blocks_spec.html
 lib/%%XXE%%/doc/commands/start.html
 lib/%%XXE%%/doc/commands/status.html
 lib/%%XXE%%/doc/commands/subProcess.html
 lib/%%XXE%%/doc/commands/tableEdit.html
 lib/%%XXE%%/doc/commands/testing_executable.html
 lib/%%XXE%%/doc/commands/toggleCollapsed.html
+lib/%%XXE%%/doc/commands/toggleTextStyle.html
 lib/%%XXE%%/doc/commands/transform.html
 lib/%%XXE%%/doc/commands/undo.html
 lib/%%XXE%%/doc/commands/uninclude.html
@@ -4209,6 +4316,7 @@ lib/%%XXE%%/doc/configure/cals_table.html
 lib/%%XXE%%/doc/configure/cals_table_editor.html
 lib/%%XXE%%/doc/configure/centralizing_configs.html
 lib/%%XXE%%/doc/configure/command.html
+lib/%%XXE%%/doc/configure/command_names.html
 lib/%%XXE%%/doc/configure/compare_webstart_centralizing.html
 lib/%%XXE%%/doc/configure/config_binding.html
 lib/%%XXE%%/doc/configure/config_converting.html
@@ -4218,6 +4326,7 @@ lib/%%XXE%%/doc/configure/config_css_table.html
 lib/%%XXE%%/doc/configure/config_detect.html
 lib/%%XXE%%/doc/configure/config_elementTemplate.html
 lib/%%XXE%%/doc/configure/config_file.html
+lib/%%XXE%%/doc/configure/config_interactive_image_resize.html
 lib/%%XXE%%/doc/configure/config_macro.html
 lib/%%XXE%%/doc/configure/config_menu.html
 lib/%%XXE%%/doc/configure/config_misc.html
@@ -4226,6 +4335,7 @@ lib/%%XXE%%/doc/configure/config_process.html
 lib/%%XXE%%/doc/configure/config_schema.html
 lib/%%XXE%%/doc/configure/config_tableEdit.html
 lib/%%XXE%%/doc/configure/config_template.html
+lib/%%XXE%%/doc/configure/config_text_style_toggles.html
 lib/%%XXE%%/doc/configure/config_toolBar.html
 lib/%%XXE%%/doc/configure/config_xml_catalog.html
 lib/%%XXE%%/doc/configure/configref.html
@@ -4309,6 +4419,14 @@ lib/%%XXE%%/doc/configure/remove_css.html
 lib/%%XXE%%/doc/configure/remove_template.html
 lib/%%XXE%%/doc/configure/replace_css.html
 lib/%%XXE%%/doc/configure/replace_template.html
+lib/%%XXE%%/doc/configure/resources/image_resize_handles.png
+lib/%%XXE%%/doc/configure/resources/sect_menu.png
+lib/%%XXE%%/doc/configure/resources/sect_toolbar.png
+lib/%%XXE%%/doc/configure/resources/text_style_menu.png
+lib/%%XXE%%/doc/configure/resources/text_style_menu_customize.png
+lib/%%XXE%%/doc/configure/resources/text_style_toggle.png
+lib/%%XXE%%/doc/configure/resources/text_style_toggle_show_active.png
+lib/%%XXE%%/doc/configure/resources/text_style_toggle_show_active_show_label.png
 lib/%%XXE%%/doc/configure/samples/customize/dita/0bookmap.xxe
 lib/%%XXE%%/doc/configure/samples/customize/dita/0map.xxe
 lib/%%XXE%%/doc/configure/samples/customize/dita/0topic.xxe
@@ -4422,6 +4540,7 @@ lib/%%XXE%%/doc/configure/template.html
 lib/%%XXE%%/doc/configure/testing_the_applet.html
 lib/%%XXE%%/doc/configure/text_pi.html
 lib/%%XXE%%/doc/configure/toolBar.html
+lib/%%XXE%%/doc/configure/toolBar_control.html
 lib/%%XXE%%/doc/configure/translation.html
 lib/%%XXE%%/doc/configure/validate.html
 lib/%%XXE%%/doc/configure/validateHook.html
@@ -4655,10 +4774,16 @@ lib/%%XXE%%/doc/dita/about.html
 lib/%%XXE%%/doc/dita/conref.html
 lib/%%XXE%%/doc/dita/help-2.html
 lib/%%XXE%%/doc/dita/help-3.html
+lib/%%XXE%%/doc/dita/help.epub
 lib/%%XXE%%/doc/dita/help.html
 lib/%%XXE%%/doc/dita/help.pdf
 lib/%%XXE%%/doc/dita/images/addListItem.png
-lib/%%XXE%%/doc/dita/images/boldText.png
+lib/%%XXE%%/doc/dita/images/animation.swf
+lib/%%XXE%%/doc/dita/images/audio.m4a
+lib/%%XXE%%/doc/dita/images/audio.mp3
+lib/%%XXE%%/doc/dita/images/audio.ogg
+lib/%%XXE%%/doc/dita/images/audio.wav
+lib/%%XXE%%/doc/dita/images/bold.png
 lib/%%XXE%%/doc/dita/images/check_map.png
 lib/%%XXE%%/doc/dita/images/clipboard.gif
 lib/%%XXE%%/doc/dita/images/conref_source.gif
@@ -4668,10 +4793,11 @@ lib/%%XXE%%/doc/dita/images/decrementColumnSpan.png
 lib/%%XXE%%/doc/dita/images/decrementRowSpan.png
 lib/%%XXE%%/doc/dita/images/definitionList.png
 lib/%%XXE%%/doc/dita/images/delete.png
+lib/%%XXE%%/doc/dita/images/dita_text_style_toggles.png
 lib/%%XXE%%/doc/dita/images/down.png
 lib/%%XXE%%/doc/dita/images/editDocument.png
 lib/%%XXE%%/doc/dita/images/figure_menu.png
-lib/%%XXE%%/doc/dita/images/hyperText.png
+lib/%%XXE%%/doc/dita/images/graphic.png
 lib/%%XXE%%/doc/dita/images/incrementColumnSpan.png
 lib/%%XXE%%/doc/dita/images/incrementRowSpan.png
 lib/%%XXE%%/doc/dita/images/indexterm_chooser.png
@@ -4680,10 +4806,12 @@ lib/%%XXE%%/doc/dita/images/insertColumnAfter.png
 lib/%%XXE%%/doc/dita/images/insertColumnBefore.png
 lib/%%XXE%%/doc/dita/images/insertRowAfter.png
 lib/%%XXE%%/doc/dita/images/insertRowBefore.png
-lib/%%XXE%%/doc/dita/images/italicText.png
+lib/%%XXE%%/doc/dita/images/italic.png
 lib/%%XXE%%/doc/dita/images/itemizedList.png
 lib/%%XXE%%/doc/dita/images/left.png
-lib/%%XXE%%/doc/dita/images/normalText.png
+lib/%%XXE%%/doc/dita/images/link.png
+lib/%%XXE%%/doc/dita/images/media_menu.png
+lib/%%XXE%%/doc/dita/images/no_audio.png
 lib/%%XXE%%/doc/dita/images/onlineHelp.png
 lib/%%XXE%%/doc/dita/images/orderedList.png
 lib/%%XXE%%/doc/dita/images/paragraph.png
@@ -4700,9 +4828,15 @@ lib/%%XXE%%/doc/dita/images/topicref.png
 lib/%%XXE%%/doc/dita/images/topicref_after.png
 lib/%%XXE%%/doc/dita/images/topicref_before.png
 lib/%%XXE%%/doc/dita/images/transcluded_conref_target.gif
-lib/%%XXE%%/doc/dita/images/typewriterText.png
+lib/%%XXE%%/doc/dita/images/typewriter.png
 lib/%%XXE%%/doc/dita/images/up.png
+lib/%%XXE%%/doc/dita/images/video.mp4
+lib/%%XXE%%/doc/dita/images/video.ogv
+lib/%%XXE%%/doc/dita/images/video.webm
+lib/%%XXE%%/doc/dita/images/video_poster.jpg
+lib/%%XXE%%/doc/dita/images/xxe_media_menu.png
 lib/%%XXE%%/doc/dita/index.html
+lib/%%XXE%%/doc/dita/media.html
 lib/%%XXE%%/doc/dita/preprocess_options.html
 lib/%%XXE%%/doc/dita/resources/attention.png
 lib/%%XXE%%/doc/dita/resources/basic.css
@@ -4723,6 +4857,7 @@ lib/%%XXE%%/doc/dita/resources/note.png
 lib/%%XXE%%/doc/dita/resources/notice.png
 lib/%%XXE%%/doc/dita/resources/parent.png
 lib/%%XXE%%/doc/dita/resources/parent_disabled.png
+lib/%%XXE%%/doc/dita/resources/play.png
 lib/%%XXE%%/doc/dita/resources/previous.png
 lib/%%XXE%%/doc/dita/resources/previous_disabled.png
 lib/%%XXE%%/doc/dita/resources/remember.png
@@ -4733,9 +4868,114 @@ lib/%%XXE%%/doc/dita/resources/xhtml.css
 lib/%%XXE%%/doc/dita/toc.html
 lib/%%XXE%%/doc/dita/topic_reference.html
 lib/%%XXE%%/doc/dita/transclusion_support.html
+lib/%%XXE%%/doc/dita/webhelp/_wh/icons/hide-navigation.gif
+lib/%%XXE%%/doc/dita/webhelp/_wh/icons/result-item.gif
+lib/%%XXE%%/doc/dita/webhelp/_wh/icons/show-navigation.gif
+lib/%%XXE%%/doc/dita/webhelp/_wh/icons/toc-collapsed.gif
+lib/%%XXE%%/doc/dita/webhelp/_wh/icons/toc-expanded.gif
+lib/%%XXE%%/doc/dita/webhelp/_wh/icons/toc-leaf.gif
+lib/%%XXE%%/doc/dita/webhelp/_wh/search.js
+lib/%%XXE%%/doc/dita/webhelp/_wh/toc.js
+lib/%%XXE%%/doc/dita/webhelp/_wh/wh.css
+lib/%%XXE%%/doc/dita/webhelp/_wh/wh.min.js
+lib/%%XXE%%/doc/dita/webhelp/about.html
+lib/%%XXE%%/doc/dita/webhelp/conref.html
+lib/%%XXE%%/doc/dita/webhelp/help-2.html
+lib/%%XXE%%/doc/dita/webhelp/help-3.html
+lib/%%XXE%%/doc/dita/webhelp/help.html
+lib/%%XXE%%/doc/dita/webhelp/images/addListItem.png
+lib/%%XXE%%/doc/dita/webhelp/images/animation.swf
+lib/%%XXE%%/doc/dita/webhelp/images/audio.m4a
+lib/%%XXE%%/doc/dita/webhelp/images/audio.mp3
+lib/%%XXE%%/doc/dita/webhelp/images/audio.ogg
+lib/%%XXE%%/doc/dita/webhelp/images/audio.wav
+lib/%%XXE%%/doc/dita/webhelp/images/bold.png
+lib/%%XXE%%/doc/dita/webhelp/images/check_map.png
+lib/%%XXE%%/doc/dita/webhelp/images/clipboard.gif
+lib/%%XXE%%/doc/dita/webhelp/images/conref_source.gif
+lib/%%XXE%%/doc/dita/webhelp/images/copy.png
+lib/%%XXE%%/doc/dita/webhelp/images/cut.png
+lib/%%XXE%%/doc/dita/webhelp/images/decrementColumnSpan.png
+lib/%%XXE%%/doc/dita/webhelp/images/decrementRowSpan.png
+lib/%%XXE%%/doc/dita/webhelp/images/definitionList.png
+lib/%%XXE%%/doc/dita/webhelp/images/delete.png
+lib/%%XXE%%/doc/dita/webhelp/images/dita_text_style_toggles.png
+lib/%%XXE%%/doc/dita/webhelp/images/down.png
+lib/%%XXE%%/doc/dita/webhelp/images/editDocument.png
+lib/%%XXE%%/doc/dita/webhelp/images/figure_menu.png
+lib/%%XXE%%/doc/dita/webhelp/images/graphic.png
+lib/%%XXE%%/doc/dita/webhelp/images/incrementColumnSpan.png
+lib/%%XXE%%/doc/dita/webhelp/images/incrementRowSpan.png
+lib/%%XXE%%/doc/dita/webhelp/images/indexterm_chooser.png
+lib/%%XXE%%/doc/dita/webhelp/images/indexterm_editor.png
+lib/%%XXE%%/doc/dita/webhelp/images/insertColumnAfter.png
+lib/%%XXE%%/doc/dita/webhelp/images/insertColumnBefore.png
+lib/%%XXE%%/doc/dita/webhelp/images/insertRowAfter.png
+lib/%%XXE%%/doc/dita/webhelp/images/insertRowBefore.png
+lib/%%XXE%%/doc/dita/webhelp/images/italic.png
+lib/%%XXE%%/doc/dita/webhelp/images/itemizedList.png
+lib/%%XXE%%/doc/dita/webhelp/images/left.png
+lib/%%XXE%%/doc/dita/webhelp/images/link.png
+lib/%%XXE%%/doc/dita/webhelp/images/media_menu.png
+lib/%%XXE%%/doc/dita/webhelp/images/no_audio.png
+lib/%%XXE%%/doc/dita/webhelp/images/onlineHelp.png
+lib/%%XXE%%/doc/dita/webhelp/images/orderedList.png
+lib/%%XXE%%/doc/dita/webhelp/images/paragraph.png
+lib/%%XXE%%/doc/dita/webhelp/images/pasteAfter.png
+lib/%%XXE%%/doc/dita/webhelp/images/pasteBefore.png
+lib/%%XXE%%/doc/dita/webhelp/images/pre_menu.png
+lib/%%XXE%%/doc/dita/webhelp/images/preprocess_options.png
+lib/%%XXE%%/doc/dita/webhelp/images/right.png
+lib/%%XXE%%/doc/dita/webhelp/images/section.png
+lib/%%XXE%%/doc/dita/webhelp/images/set_filter.png
+lib/%%XXE%%/doc/dita/webhelp/images/sortRows.png
+lib/%%XXE%%/doc/dita/webhelp/images/table_menu.png
+lib/%%XXE%%/doc/dita/webhelp/images/topicref.png
+lib/%%XXE%%/doc/dita/webhelp/images/topicref_after.png
+lib/%%XXE%%/doc/dita/webhelp/images/topicref_before.png
+lib/%%XXE%%/doc/dita/webhelp/images/transcluded_conref_target.gif
+lib/%%XXE%%/doc/dita/webhelp/images/typewriter.png
+lib/%%XXE%%/doc/dita/webhelp/images/up.png
+lib/%%XXE%%/doc/dita/webhelp/images/video.mp4
+lib/%%XXE%%/doc/dita/webhelp/images/video.ogv
+lib/%%XXE%%/doc/dita/webhelp/images/video.webm
+lib/%%XXE%%/doc/dita/webhelp/images/video_poster.jpg
+lib/%%XXE%%/doc/dita/webhelp/images/xxe_media_menu.png
+lib/%%XXE%%/doc/dita/webhelp/index.html
+lib/%%XXE%%/doc/dita/webhelp/media.html
+lib/%%XXE%%/doc/dita/webhelp/preprocess_options.html
+lib/%%XXE%%/doc/dita/webhelp/resources/attention.png
+lib/%%XXE%%/doc/dita/webhelp/resources/caution.png
+lib/%%XXE%%/doc/dita/webhelp/resources/child.png
+lib/%%XXE%%/doc/dita/webhelp/resources/child_disabled.png
+lib/%%XXE%%/doc/dita/webhelp/resources/danger.png
+lib/%%XXE%%/doc/dita/webhelp/resources/fastpath.png
+lib/%%XXE%%/doc/dita/webhelp/resources/first.png
+lib/%%XXE%%/doc/dita/webhelp/resources/first_disabled.png
+lib/%%XXE%%/doc/dita/webhelp/resources/important.png
+lib/%%XXE%%/doc/dita/webhelp/resources/last.png
+lib/%%XXE%%/doc/dita/webhelp/resources/last_disabled.png
+lib/%%XXE%%/doc/dita/webhelp/resources/new_window.png
+lib/%%XXE%%/doc/dita/webhelp/resources/next.png
+lib/%%XXE%%/doc/dita/webhelp/resources/next_disabled.png
+lib/%%XXE%%/doc/dita/webhelp/resources/note.png
+lib/%%XXE%%/doc/dita/webhelp/resources/notice.png
+lib/%%XXE%%/doc/dita/webhelp/resources/parent.png
+lib/%%XXE%%/doc/dita/webhelp/resources/parent_disabled.png
+lib/%%XXE%%/doc/dita/webhelp/resources/play.png
+lib/%%XXE%%/doc/dita/webhelp/resources/previous.png
+lib/%%XXE%%/doc/dita/webhelp/resources/previous_disabled.png
+lib/%%XXE%%/doc/dita/webhelp/resources/remember.png
+lib/%%XXE%%/doc/dita/webhelp/resources/restriction.png
+lib/%%XXE%%/doc/dita/webhelp/resources/tip.png
+lib/%%XXE%%/doc/dita/webhelp/resources/warning.png
+lib/%%XXE%%/doc/dita/webhelp/resources/webhelp.css
+lib/%%XXE%%/doc/dita/webhelp/topic_reference.html
+lib/%%XXE%%/doc/dita/webhelp/transclusion_support.html
 lib/%%XXE%%/doc/docbook/docbook_bindings.html
 lib/%%XXE%%/doc/docbook/docbook_menu.html
 lib/%%XXE%%/doc/docbook/docbook_table.html
+lib/%%XXE%%/doc/docbook/docbook_toolbar.html
 lib/%%XXE%%/doc/docbook/help.pdf
 lib/%%XXE%%/doc/docbook/html.css
 lib/%%XXE%%/doc/docbook/images/annot-close.png
@@ -4770,15 +5010,30 @@ lib/%%XXE%%/doc/docbook/images/toc-plus.png
 lib/%%XXE%%/doc/docbook/images/up.png
 lib/%%XXE%%/doc/docbook/images/warning.png
 lib/%%XXE%%/doc/docbook/index.html
+lib/%%XXE%%/doc/docbook/resources/addListItem.png
+lib/%%XXE%%/doc/docbook/resources/bold.png
+lib/%%XXE%%/doc/docbook/resources/definitionList.png
+lib/%%XXE%%/doc/docbook/resources/docbook_text_style_toggles.png
 lib/%%XXE%%/doc/docbook/resources/down.png
+lib/%%XXE%%/doc/docbook/resources/figure_menu.png
 lib/%%XXE%%/doc/docbook/resources/indexterm_chooser.png
 lib/%%XXE%%/doc/docbook/resources/indexterm_editor.png
+lib/%%XXE%%/doc/docbook/resources/italic.png
+lib/%%XXE%%/doc/docbook/resources/itemizedList.png
 lib/%%XXE%%/doc/docbook/resources/left.png
+lib/%%XXE%%/doc/docbook/resources/link.png
 lib/%%XXE%%/doc/docbook/resources/link_callouts.png
 lib/%%XXE%%/doc/docbook/resources/olinkedDocEditor.png
 lib/%%XXE%%/doc/docbook/resources/olinkedDocsEditor.png
+lib/%%XXE%%/doc/docbook/resources/orderedList.png
+lib/%%XXE%%/doc/docbook/resources/paragraph.png
+lib/%%XXE%%/doc/docbook/resources/pre.png
 lib/%%XXE%%/doc/docbook/resources/right.png
 lib/%%XXE%%/doc/docbook/resources/root_id.png
+lib/%%XXE%%/doc/docbook/resources/section_menu.png
+lib/%%XXE%%/doc/docbook/resources/table_menu.png
+lib/%%XXE%%/doc/docbook/resources/typewriter.png
+lib/%%XXE%%/doc/docbook/resources/ulink.png
 lib/%%XXE%%/doc/docbook/resources/up.png
 lib/%%XXE%%/doc/gui/about_dialog.html
 lib/%%XXE%%/doc/gui/action.html
@@ -4793,7 +5048,7 @@ lib/%%XXE%%/doc/gui/gui.pdf
 lib/%%XXE%%/doc/gui/gui/app/Professional.xxe_gui
 lib/%%XXE%%/doc/gui/gui/app/icons/.directory
 lib/%%XXE%%/doc/gui/gui/app/icons/aboutAction.png
-lib/%%XXE%%/doc/gui/gui/app/icons/addLinkAction.png
+lib/%%XXE%%/doc/gui/gui/app/icons/addNavigationMarkAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/addViewAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/checkSpellingPane.png
 lib/%%XXE%%/doc/gui/gui/app/icons/checkValidityPane.png
@@ -4819,6 +5074,8 @@ lib/%%XXE%%/doc/gui/gui/app/icons/executeCommandAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/extendSelectionToNextSiblingAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/extendSelectionToPreviousSiblingAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/findElementAction.png
+lib/%%XXE%%/doc/gui/gui/app/icons/goBackAction.png
+lib/%%XXE%%/doc/gui/gui/app/icons/goForwardAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/helpAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/includeAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/includeAfterAction.png
@@ -4834,6 +5091,7 @@ lib/%%XXE%%/doc/gui/gui/app/icons/installAddonsAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/joinAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/listBindingsAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/listPluginsAction.png
+lib/%%XXE%%/doc/gui/gui/app/icons/navigationHistoryAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/newAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/nextRemarkAction.png
 lib/%%XXE%%/doc/gui/gui/app/icons/openAction.png
@@ -4979,7 +5237,6 @@ lib/%%XXE%%/doc/help/advanced_tab.html
 lib/%%XXE%%/doc/help/attributes_form.html
 lib/%%XXE%%/doc/help/attributes_table.html
 lib/%%XXE%%/doc/help/automatic_spell_checker.html
-lib/%%XXE%%/doc/help/bookmarkMenu.html
 lib/%%XXE%%/doc/help/browseFilesPane.html
 lib/%%XXE%%/doc/help/changesMenu.html
 lib/%%XXE%%/doc/help/checkSpellingPane.html
@@ -5000,6 +5257,7 @@ lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.ConversionStylesheetsEditor
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.ParameterSetChooser.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.SaveAsTemplateAction.Prompt.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.SaveElementAsTemplateAction.Prompt.html
+lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.toolbar.TextStyleEditor.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.prefsheet.TreeViewSettingsEditor.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.vdrive.dialog.URLChooserDialog.html
 lib/%%XXE%%/doc/help/com.xmlmind.xslcustom.Customizer.html
@@ -5072,9 +5330,8 @@ lib/%%XXE%%/doc/help/install.html
 lib/%%XXE%%/doc/help/installAddonsOptions.html
 lib/%%XXE%%/doc/help/installing_xxe.html
 lib/%%XXE%%/doc/help/menuBar.html
-lib/%%XXE%%/doc/help/navigationToolBar.html
 lib/%%XXE%%/doc/help/newOptions.html
-lib/%%XXE%%/doc/help/nodePathBar.html
+lib/%%XXE%%/doc/help/nodePathTool.html
 lib/%%XXE%%/doc/help/nodeSelectionBar.html
 lib/%%XXE%%/doc/help/non_editable_nodes.html
 lib/%%XXE%%/doc/help/openOptions.html
@@ -5105,7 +5362,9 @@ lib/%%XXE%%/doc/help/resources/addBaseFontSize.png
 lib/%%XXE%%/doc/help/resources/addKeyboardShortcutDialog1.png
 lib/%%XXE%%/doc/help/resources/addKeyboardShortcutDialog2.png
 lib/%%XXE%%/doc/help/resources/addKeyboardShortcutDialog3.png
+lib/%%XXE%%/doc/help/resources/addNavigationMarkAction.png
 lib/%%XXE%%/doc/help/resources/addParam.png
+lib/%%XXE%%/doc/help/resources/addWebSearchService.png
 lib/%%XXE%%/doc/help/resources/add_table.png
 lib/%%XXE%%/doc/help/resources/after_ins.png
 lib/%%XXE%%/doc/help/resources/attributeTablePopup.png
@@ -5138,6 +5397,7 @@ lib/%%XXE%%/doc/help/resources/convert_to_emphasis.png
 lib/%%XXE%%/doc/help/resources/copyAction.png
 lib/%%XXE%%/doc/help/resources/copyAsInclusionAction.png
 lib/%%XXE%%/doc/help/resources/create.png
+lib/%%XXE%%/doc/help/resources/customize_text_styles_menu_item.png
 lib/%%XXE%%/doc/help/resources/cutAction.png
 lib/%%XXE%%/doc/help/resources/deleteAction.png
 lib/%%XXE%%/doc/help/resources/disabled.gif
@@ -5170,6 +5430,8 @@ lib/%%XXE%%/doc/help/resources/funchelp.png
 lib/%%XXE%%/doc/help/resources/generate_fo.png
 lib/%%XXE%%/doc/help/resources/generate_html.png
 lib/%%XXE%%/doc/help/resources/glob_set_fig.png
+lib/%%XXE%%/doc/help/resources/goBackAction.png
+lib/%%XXE%%/doc/help/resources/goForwardAction.png
 lib/%%XXE%%/doc/help/resources/help.png
 lib/%%XXE%%/doc/help/resources/helpAction.png
 lib/%%XXE%%/doc/help/resources/helperApplicationEditor.png
@@ -5182,9 +5444,11 @@ lib/%%XXE%%/doc/help/resources/insertAction.png
 lib/%%XXE%%/doc/help/resources/insertAfterAction.png
 lib/%%XXE%%/doc/help/resources/insertBeforeAction.png
 lib/%%XXE%%/doc/help/resources/joinAction.png
+lib/%%XXE%%/doc/help/resources/keyboardShortcutForWebSearch.png
 lib/%%XXE%%/doc/help/resources/loadParamSet.png
 lib/%%XXE%%/doc/help/resources/mainWindow.png
 lib/%%XXE%%/doc/help/resources/modular_book.png
+lib/%%XXE%%/doc/help/resources/navigationHistoryAction.png
 lib/%%XXE%%/doc/help/resources/newAction.png
 lib/%%XXE%%/doc/help/resources/new_chapter.png
 lib/%%XXE%%/doc/help/resources/node_path_bar.png
@@ -5223,8 +5487,14 @@ lib/%%XXE%%/doc/help/resources/searchDITATutorial.png
 lib/%%XXE%%/doc/help/resources/searchDITATutorial2.png
 lib/%%XXE%%/doc/help/resources/searchNextAction.png
 lib/%%XXE%%/doc/help/resources/selectAnchorAction.png
+lib/%%XXE%%/doc/help/resources/selectChildAction.png
 lib/%%XXE%%/doc/help/resources/selectLastExecutedDialog.png
 lib/%%XXE%%/doc/help/resources/selectLinkAction.png
+lib/%%XXE%%/doc/help/resources/selectNextLinkAction.png
+lib/%%XXE%%/doc/help/resources/selectNextSiblingAction.png
+lib/%%XXE%%/doc/help/resources/selectParentAction.png
+lib/%%XXE%%/doc/help/resources/selectPreviousLinkAction.png
+lib/%%XXE%%/doc/help/resources/selectPreviousSiblingAction.png
 lib/%%XXE%%/doc/help/resources/severity0.png
 lib/%%XXE%%/doc/help/resources/severity1.png
 lib/%%XXE%%/doc/help/resources/severity2.png
@@ -5235,6 +5505,8 @@ lib/%%XXE%%/doc/help/resources/showLogAction.png
 lib/%%XXE%%/doc/help/resources/splitAction.png
 lib/%%XXE%%/doc/help/resources/stopSearchAction.png
 lib/%%XXE%%/doc/help/resources/text_selection.png
+lib/%%XXE%%/doc/help/resources/text_style_editor.png
+lib/%%XXE%%/doc/help/resources/text_style_list_editor.png
 lib/%%XXE%%/doc/help/resources/toggleAutoSpellCheckAction.png
 lib/%%XXE%%/doc/help/resources/toggleAutoSpellCheckAction_selected.png
 lib/%%XXE%%/doc/help/resources/topic_set_fig.png
@@ -5250,6 +5522,7 @@ lib/%%XXE%%/doc/help/searchFilesPane.html
 lib/%%XXE%%/doc/help/searchMenu.html
 lib/%%XXE%%/doc/help/search_query_syntax.html
 lib/%%XXE%%/doc/help/selectMenu.html
+lib/%%XXE%%/doc/help/selectToolBar.html
 lib/%%XXE%%/doc/help/selection_and_selectMenu.html
 lib/%%XXE%%/doc/help/selection_types.html
 lib/%%XXE%%/doc/help/simple_tab.html
@@ -5258,12 +5531,15 @@ lib/%%XXE%%/doc/help/statusBar.html
 lib/%%XXE%%/doc/help/statusTool.html
 lib/%%XXE%%/doc/help/system_properties.html
 lib/%%XXE%%/doc/help/textSearchReplacePane.html
+lib/%%XXE%%/doc/help/textStyleListEditor.html
 lib/%%XXE%%/doc/help/toolBar.html
 lib/%%XXE%%/doc/help/toolsMenu.html
 lib/%%XXE%%/doc/help/toolsOptions.html
 lib/%%XXE%%/doc/help/using_include_tool.html
 lib/%%XXE%%/doc/help/viewMenu.html
 lib/%%XXE%%/doc/help/viewOptions.html
+lib/%%XXE%%/doc/help/webSearchMenu.html
+lib/%%XXE%%/doc/help/webSearchOptions.html
 lib/%%XXE%%/doc/help/wh/ConversionStylesheetsEditor_intro.html
 lib/%%XXE%%/doc/help/wh/ConversionStylesheetsEditor_reference.html
 lib/%%XXE%%/doc/help/wh/_wh/icons/hide-navigation.gif
@@ -5286,7 +5562,6 @@ lib/%%XXE%%/doc/help/wh/advanced_tab.html
 lib/%%XXE%%/doc/help/wh/attributes_form.html
 lib/%%XXE%%/doc/help/wh/attributes_table.html
 lib/%%XXE%%/doc/help/wh/automatic_spell_checker.html
-lib/%%XXE%%/doc/help/wh/bookmarkMenu.html
 lib/%%XXE%%/doc/help/wh/browseFilesPane.html
 lib/%%XXE%%/doc/help/wh/changesMenu.html
 lib/%%XXE%%/doc/help/wh/checkSpellingPane.html
@@ -5307,6 +5582,7 @@ lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.kit.part.ConversionStylesheetsEdi
 lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.kit.part.ParameterSetChooser.html
 lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.kit.part.SaveAsTemplateAction.Prompt.html
 lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.kit.part.SaveElementAsTemplateAction.Prompt.html
+lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.kit.part.toolbar.TextStyleEditor.html
 lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.kit.prefsheet.TreeViewSettingsEditor.html
 lib/%%XXE%%/doc/help/wh/com.xmlmind.xmleditapp.vdrive.dialog.URLChooserDialog.html
 lib/%%XXE%%/doc/help/wh/com.xmlmind.xslcustom.Customizer.html
@@ -5377,9 +5653,8 @@ lib/%%XXE%%/doc/help/wh/install.html
 lib/%%XXE%%/doc/help/wh/installAddonsOptions.html
 lib/%%XXE%%/doc/help/wh/installing_xxe.html
 lib/%%XXE%%/doc/help/wh/menuBar.html
-lib/%%XXE%%/doc/help/wh/navigationToolBar.html
 lib/%%XXE%%/doc/help/wh/newOptions.html
-lib/%%XXE%%/doc/help/wh/nodePathBar.html
+lib/%%XXE%%/doc/help/wh/nodePathTool.html
 lib/%%XXE%%/doc/help/wh/nodeSelectionBar.html
 lib/%%XXE%%/doc/help/wh/non_editable_nodes.html
 lib/%%XXE%%/doc/help/wh/openOptions.html
@@ -5410,7 +5685,9 @@ lib/%%XXE%%/doc/help/wh/resources/addBaseFontSize.png
 lib/%%XXE%%/doc/help/wh/resources/addKeyboardShortcutDialog1.png
 lib/%%XXE%%/doc/help/wh/resources/addKeyboardShortcutDialog2.png
 lib/%%XXE%%/doc/help/wh/resources/addKeyboardShortcutDialog3.png
+lib/%%XXE%%/doc/help/wh/resources/addNavigationMarkAction.png
 lib/%%XXE%%/doc/help/wh/resources/addParam.png
+lib/%%XXE%%/doc/help/wh/resources/addWebSearchService.png
 lib/%%XXE%%/doc/help/wh/resources/add_table.png
 lib/%%XXE%%/doc/help/wh/resources/after_ins.png
 lib/%%XXE%%/doc/help/wh/resources/attributeTablePopup.png
@@ -5443,6 +5720,7 @@ lib/%%XXE%%/doc/help/wh/resources/convert_to_emphasis.png
 lib/%%XXE%%/doc/help/wh/resources/copyAction.png
 lib/%%XXE%%/doc/help/wh/resources/copyAsInclusionAction.png
 lib/%%XXE%%/doc/help/wh/resources/create.png
+lib/%%XXE%%/doc/help/wh/resources/customize_text_styles_menu_item.png
 lib/%%XXE%%/doc/help/wh/resources/cutAction.png
 lib/%%XXE%%/doc/help/wh/resources/deleteAction.png
 lib/%%XXE%%/doc/help/wh/resources/disabled.gif
@@ -5475,6 +5753,8 @@ lib/%%XXE%%/doc/help/wh/resources/funchelp.png
 lib/%%XXE%%/doc/help/wh/resources/generate_fo.png
 lib/%%XXE%%/doc/help/wh/resources/generate_html.png
 lib/%%XXE%%/doc/help/wh/resources/glob_set_fig.png
+lib/%%XXE%%/doc/help/wh/resources/goBackAction.png
+lib/%%XXE%%/doc/help/wh/resources/goForwardAction.png
 lib/%%XXE%%/doc/help/wh/resources/help.png
 lib/%%XXE%%/doc/help/wh/resources/helpAction.png
 lib/%%XXE%%/doc/help/wh/resources/helperApplicationEditor.png
@@ -5487,9 +5767,11 @@ lib/%%XXE%%/doc/help/wh/resources/insertAction.png
 lib/%%XXE%%/doc/help/wh/resources/insertAfterAction.png
 lib/%%XXE%%/doc/help/wh/resources/insertBeforeAction.png
 lib/%%XXE%%/doc/help/wh/resources/joinAction.png
+lib/%%XXE%%/doc/help/wh/resources/keyboardShortcutForWebSearch.png
 lib/%%XXE%%/doc/help/wh/resources/loadParamSet.png
 lib/%%XXE%%/doc/help/wh/resources/mainWindow.png
 lib/%%XXE%%/doc/help/wh/resources/modular_book.png
+lib/%%XXE%%/doc/help/wh/resources/navigationHistoryAction.png
 lib/%%XXE%%/doc/help/wh/resources/newAction.png
 lib/%%XXE%%/doc/help/wh/resources/new_chapter.png
 lib/%%XXE%%/doc/help/wh/resources/node_path_bar.png
@@ -5528,8 +5810,14 @@ lib/%%XXE%%/doc/help/wh/resources/searchDITATutorial.png
 lib/%%XXE%%/doc/help/wh/resources/searchDITATutorial2.png
 lib/%%XXE%%/doc/help/wh/resources/searchNextAction.png
 lib/%%XXE%%/doc/help/wh/resources/selectAnchorAction.png
+lib/%%XXE%%/doc/help/wh/resources/selectChildAction.png
 lib/%%XXE%%/doc/help/wh/resources/selectLastExecutedDialog.png
 lib/%%XXE%%/doc/help/wh/resources/selectLinkAction.png
+lib/%%XXE%%/doc/help/wh/resources/selectNextLinkAction.png
+lib/%%XXE%%/doc/help/wh/resources/selectNextSiblingAction.png
+lib/%%XXE%%/doc/help/wh/resources/selectParentAction.png
+lib/%%XXE%%/doc/help/wh/resources/selectPreviousLinkAction.png
+lib/%%XXE%%/doc/help/wh/resources/selectPreviousSiblingAction.png
 lib/%%XXE%%/doc/help/wh/resources/severity0.png
 lib/%%XXE%%/doc/help/wh/resources/severity1.png
 lib/%%XXE%%/doc/help/wh/resources/severity2.png
@@ -5540,6 +5828,8 @@ lib/%%XXE%%/doc/help/wh/resources/showLogAction.png
 lib/%%XXE%%/doc/help/wh/resources/splitAction.png
 lib/%%XXE%%/doc/help/wh/resources/stopSearchAction.png
 lib/%%XXE%%/doc/help/wh/resources/text_selection.png
+lib/%%XXE%%/doc/help/wh/resources/text_style_editor.png
+lib/%%XXE%%/doc/help/wh/resources/text_style_list_editor.png
 lib/%%XXE%%/doc/help/wh/resources/toggleAutoSpellCheckAction.png
 lib/%%XXE%%/doc/help/wh/resources/toggleAutoSpellCheckAction_selected.png
 lib/%%XXE%%/doc/help/wh/resources/topic_set_fig.png
@@ -5555,6 +5845,7 @@ lib/%%XXE%%/doc/help/wh/searchFilesPane.html
 lib/%%XXE%%/doc/help/wh/searchMenu.html
 lib/%%XXE%%/doc/help/wh/search_query_syntax.html
 lib/%%XXE%%/doc/help/wh/selectMenu.html
+lib/%%XXE%%/doc/help/wh/selectToolBar.html
 lib/%%XXE%%/doc/help/wh/selection_and_selectMenu.html
 lib/%%XXE%%/doc/help/wh/selection_types.html
 lib/%%XXE%%/doc/help/wh/simple_tab.html
@@ -5563,12 +5854,15 @@ lib/%%XXE%%/doc/help/wh/statusBar.html
 lib/%%XXE%%/doc/help/wh/statusTool.html
 lib/%%XXE%%/doc/help/wh/system_properties.html
 lib/%%XXE%%/doc/help/wh/textSearchReplacePane.html
+lib/%%XXE%%/doc/help/wh/textStyleListEditor.html
 lib/%%XXE%%/doc/help/wh/toolBar.html
 lib/%%XXE%%/doc/help/wh/toolsMenu.html
 lib/%%XXE%%/doc/help/wh/toolsOptions.html
 lib/%%XXE%%/doc/help/wh/using_include_tool.html
 lib/%%XXE%%/doc/help/wh/viewMenu.html
 lib/%%XXE%%/doc/help/wh/viewOptions.html
+lib/%%XXE%%/doc/help/wh/webSearchMenu.html
+lib/%%XXE%%/doc/help/wh/webSearchOptions.html
 lib/%%XXE%%/doc/help/wh/webhelp.css
 lib/%%XXE%%/doc/help/wh/windowMenu.html
 lib/%%XXE%%/doc/help/wh/windowOptions.html
@@ -5627,8 +5921,8 @@ lib/%%XXE%%/doc/mathml/images/warning.png
 lib/%%XXE%%/doc/mathml/index.html
 lib/%%XXE%%/doc/mathml/integrate_mathml_with_other_doctype.html
 lib/%%XXE%%/doc/mathml/introduction.html
+lib/%%XXE%%/doc/mathml/mathmlPane.html
 lib/%%XXE%%/doc/mathml/mathml_prefs.html
-lib/%%XXE%%/doc/mathml/mathml_tool.html
 lib/%%XXE%%/doc/mathml/resources/BalloonHelp.png
 lib/%%XXE%%/doc/mathml/resources/ChooseFontFromList.png
 lib/%%XXE%%/doc/mathml/resources/EquationMenu.png
@@ -5648,6 +5942,14 @@ lib/%%XXE%%/doc/mathml/resources/fractionPalette.png
 lib/%%XXE%%/doc/mathml/resources/help_tmp_0.png
 lib/%%XXE%%/doc/mathml/resources/help_tmp_1.png
 lib/%%XXE%%/doc/mathml/resources/help_tmp_10.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_11.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_12.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_13.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_14.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_15.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_16.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_17.png
+lib/%%XXE%%/doc/mathml/resources/help_tmp_18.png
 lib/%%XXE%%/doc/mathml/resources/help_tmp_2.png
 lib/%%XXE%%/doc/mathml/resources/help_tmp_3.png
 lib/%%XXE%%/doc/mathml/resources/help_tmp_4.png
@@ -5796,13 +6098,13 @@ lib/%%XXE%%/doc/spreadsheet/resources/active.gif
 lib/%%XXE%%/doc/spreadsheet/resources/added3products.gif
 lib/%%XXE%%/doc/spreadsheet/resources/apply.gif
 lib/%%XXE%%/doc/spreadsheet/resources/applyhelp.gif
-lib/%%XXE%%/doc/spreadsheet/resources/capitalize.gif
+lib/%%XXE%%/doc/spreadsheet/resources/capitalize.png
 lib/%%XXE%%/doc/spreadsheet/resources/cellrefnotallowed.gif
 lib/%%XXE%%/doc/spreadsheet/resources/decoratedtable.gif
 lib/%%XXE%%/doc/spreadsheet/resources/demo.png
 lib/%%XXE%%/doc/spreadsheet/resources/disabled.gif
 lib/%%XXE%%/doc/spreadsheet/resources/evalerror.gif
-lib/%%XXE%%/doc/spreadsheet/resources/factorial.gif
+lib/%%XXE%%/doc/spreadsheet/resources/factorial.png
 lib/%%XXE%%/doc/spreadsheet/resources/firstversion.gif
 lib/%%XXE%%/doc/spreadsheet/resources/fixedsubtotal.gif
 lib/%%XXE%%/doc/spreadsheet/resources/fixedunitprices.png
@@ -5835,8 +6137,6 @@ lib/%%XXE%%/doc/spreadsheet/tutorial/products.html
 lib/%%XXE%%/doc/spreadsheet/tutorial_part.html
 lib/%%XXE%%/doc/spreadsheet/value_types.html
 lib/%%XXE%%/doc/spreadsheet/xpath_escapes.html
-lib/%%XXE%%/doc/translatexxe/command_line.html
-lib/%%XXE%%/doc/translatexxe/concepts.html
 lib/%%XXE%%/doc/translatexxe/html.css
 lib/%%XXE%%/doc/translatexxe/images/annot-close.png
 lib/%%XXE%%/doc/translatexxe/images/annot-open.png
@@ -5870,9 +6170,21 @@ lib/%%XXE%%/doc/translatexxe/images/toc-plus.png
 lib/%%XXE%%/doc/translatexxe/images/up.png
 lib/%%XXE%%/doc/translatexxe/images/warning.png
 lib/%%XXE%%/doc/translatexxe/index.html
-lib/%%XXE%%/doc/translatexxe/introduction.html
-lib/%%XXE%%/doc/translatexxe/procedure.html
+lib/%%XXE%%/doc/translatexxe/resources/first_empty_field.png
+lib/%%XXE%%/doc/translatexxe/resources/first_filled_field.png
+lib/%%XXE%%/doc/translatexxe/resources/last_empty_field.png
+lib/%%XXE%%/doc/translatexxe/resources/last_filled_field.png
+lib/%%XXE%%/doc/translatexxe/resources/next_empty_field.png
+lib/%%XXE%%/doc/translatexxe/resources/next_filled_field.png
+lib/%%XXE%%/doc/translatexxe/resources/previous_empty_field.png
+lib/%%XXE%%/doc/translatexxe/resources/previous_filled_field.png
+lib/%%XXE%%/doc/translatexxe/resources/recommended_section.png
+lib/%%XXE%%/doc/translatexxe/resources/translate.google.png
+lib/%%XXE%%/doc/translatexxe/translate_message.html
 lib/%%XXE%%/doc/translatexxe/translatexxe.pdf
+lib/%%XXE%%/doc/translatexxe/translatexxe_command_line.html
+lib/%%XXE%%/doc/translatexxe/using_other.html
+lib/%%XXE%%/doc/translatexxe/using_xxe.html
 lib/%%XXE%%/doc/xhtml/bindings.html
 lib/%%XXE%%/doc/xhtml/create.html
 lib/%%XXE%%/doc/xhtml/help.pdf
@@ -5912,6 +6224,7 @@ lib/%%XXE%%/doc/xhtml/index.html
 lib/%%XXE%%/doc/xhtml/menu.html
 lib/%%XXE%%/doc/xhtml/open.html
 lib/%%XXE%%/doc/xhtml/resources/addListItem.png
+lib/%%XXE%%/doc/xhtml/resources/bold.png
 lib/%%XXE%%/doc/xhtml/resources/copy.png
 lib/%%XXE%%/doc/xhtml/resources/cut.png
 lib/%%XXE%%/doc/xhtml/resources/decrementColumnSpan.png
@@ -5920,19 +6233,18 @@ lib/%%XXE%%/doc/xhtml/resources/definitionList.png
 lib/%%XXE%%/doc/xhtml/resources/deleteColumn.png
 lib/%%XXE%%/doc/xhtml/resources/deleteRow.png
 lib/%%XXE%%/doc/xhtml/resources/down.png
-lib/%%XXE%%/doc/xhtml/resources/emphasisText_menu.png
 lib/%%XXE%%/doc/xhtml/resources/figure_menu.png
 lib/%%XXE%%/doc/xhtml/resources/header_layout.png
 lib/%%XXE%%/doc/xhtml/resources/heading_menu.png
-lib/%%XXE%%/doc/xhtml/resources/hyperText_menu.png
 lib/%%XXE%%/doc/xhtml/resources/incrementColumnSpan.png
 lib/%%XXE%%/doc/xhtml/resources/incrementRowSpan.png
 lib/%%XXE%%/doc/xhtml/resources/insertColumnAfter.png
 lib/%%XXE%%/doc/xhtml/resources/insertColumnBefore.png
 lib/%%XXE%%/doc/xhtml/resources/insertRowAfter.png
 lib/%%XXE%%/doc/xhtml/resources/insertRowBefore.png
+lib/%%XXE%%/doc/xhtml/resources/italic.png
 lib/%%XXE%%/doc/xhtml/resources/itemizedList.png
-lib/%%XXE%%/doc/xhtml/resources/normalText.png
+lib/%%XXE%%/doc/xhtml/resources/link.png
 lib/%%XXE%%/doc/xhtml/resources/orderedList.png
 lib/%%XXE%%/doc/xhtml/resources/page_areas.png
 lib/%%XXE%%/doc/xhtml/resources/paragraph.png
@@ -5943,9 +6255,10 @@ lib/%%XXE%%/doc/xhtml/resources/section_menu.png
 lib/%%XXE%%/doc/xhtml/resources/showLogAction.png
 lib/%%XXE%%/doc/xhtml/resources/sortRows.png
 lib/%%XXE%%/doc/xhtml/resources/table_menu.png
-lib/%%XXE%%/doc/xhtml/resources/typewriterText_menu.png
+lib/%%XXE%%/doc/xhtml/resources/typewriter.png
 lib/%%XXE%%/doc/xhtml/resources/up.png
 lib/%%XXE%%/doc/xhtml/resources/viewDocument.png
+lib/%%XXE%%/doc/xhtml/resources/xhtml_text_style_toggles.png
 lib/%%XXE%%/doc/xhtml/table_rendering.html
 lib/%%XXE%%/doc/xhtml/toolbar.html
 lib/%%XXE%%/doc/xhtml/view.html
@@ -6001,6 +6314,8 @@ lib/%%XXE%%/legal/ditac.LICENSE
 lib/%%XXE%%/legal/ditac.README
 lib/%%XXE%%/legal/expr.LICENSE
 lib/%%XXE%%/legal/expr.README
+lib/%%XXE%%/legal/famfamfam-icons.LICENSE
+lib/%%XXE%%/legal/famfamfam-icons.README
 lib/%%XXE%%/legal/fatcow-icons.LICENSE
 lib/%%XXE%%/legal/fatcow-icons.README
 lib/%%XXE%%/legal/icons.LICENSE
@@ -6032,324 +6347,328 @@ lib/%%XXE%%/legal/xxe-dev.LICENSE
 lib/%%XXE%%/legal/xxe-eval.LICENSE
 lib/%%XXE%%/legal/xxe-pro.LICENSE
 lib/%%XXE%%/legal/xxe-site.LICENSE
-@dirrmtry lib/%%XXE%%/legal/xerces_PATCHES
-@dirrmtry lib/%%XXE%%/legal
-@dirrmtry lib/%%XXE%%/doc/xmltool/images/callouts
-@dirrmtry lib/%%XXE%%/doc/xmltool/images
-@dirrmtry lib/%%XXE%%/doc/xmltool
-@dirrmtry lib/%%XXE%%/doc/xhtml/resources
-@dirrmtry lib/%%XXE%%/doc/xhtml/images/callouts
-@dirrmtry lib/%%XXE%%/doc/xhtml/images
-@dirrmtry lib/%%XXE%%/doc/xhtml
-@dirrmtry lib/%%XXE%%/doc/translatexxe/images/callouts
-@dirrmtry lib/%%XXE%%/doc/translatexxe/images
-@dirrmtry lib/%%XXE%%/doc/translatexxe
-@dirrmtry lib/%%XXE%%/doc/spreadsheet/tutorial
-@dirrmtry lib/%%XXE%%/doc/spreadsheet/resources
-@dirrmtry lib/%%XXE%%/doc/spreadsheet/images/callouts
-@dirrmtry lib/%%XXE%%/doc/spreadsheet/images
-@dirrmtry lib/%%XXE%%/doc/spreadsheet/custom_functions
-@dirrmtry lib/%%XXE%%/doc/spreadsheet
-@dirrmtry lib/%%XXE%%/doc/rngsupport/samples
-@dirrmtry lib/%%XXE%%/doc/rngsupport/resources
-@dirrmtry lib/%%XXE%%/doc/rngsupport/images/callouts
-@dirrmtry lib/%%XXE%%/doc/rngsupport/images
-@dirrmtry lib/%%XXE%%/doc/rngsupport
-@dirrmtry lib/%%XXE%%/doc/resources
-@dirrmtry lib/%%XXE%%/doc/quickrefcard/src/quickrefcard
-@dirrmtry lib/%%XXE%%/doc/quickrefcard/src
-@dirrmtry lib/%%XXE%%/doc/quickrefcard
-@dirrmtry lib/%%XXE%%/doc/mathml/resources
-@dirrmtry lib/%%XXE%%/doc/mathml/images/callouts
-@dirrmtry lib/%%XXE%%/doc/mathml/images
-@dirrmtry lib/%%XXE%%/doc/mathml
-@dirrmtry lib/%%XXE%%/doc/help/wh/resources
-@dirrmtry lib/%%XXE%%/doc/help/wh/images/callouts
-@dirrmtry lib/%%XXE%%/doc/help/wh/images
-@dirrmtry lib/%%XXE%%/doc/help/wh/_wh/user/header_footer_files
-@dirrmtry lib/%%XXE%%/doc/help/wh/_wh/user
-@dirrmtry lib/%%XXE%%/doc/help/wh/_wh/icons
-@dirrmtry lib/%%XXE%%/doc/help/wh/_wh
-@dirrmtry lib/%%XXE%%/doc/help/wh
-@dirrmtry lib/%%XXE%%/doc/help/resources
-@dirrmtry lib/%%XXE%%/doc/help/images/callouts
-@dirrmtry lib/%%XXE%%/doc/help/images
-@dirrmtry lib/%%XXE%%/doc/help
-@dirrmtry lib/%%XXE%%/doc/gui/tutorial
-@dirrmtry lib/%%XXE%%/doc/gui/images/callouts
-@dirrmtry lib/%%XXE%%/doc/gui/images
-@dirrmtry lib/%%XXE%%/doc/gui/gui/applet/icons
-@dirrmtry lib/%%XXE%%/doc/gui/gui/applet
-@dirrmtry lib/%%XXE%%/doc/gui/gui/app/icons
-@dirrmtry lib/%%XXE%%/doc/gui/gui/app
-@dirrmtry lib/%%XXE%%/doc/gui/gui
-@dirrmtry lib/%%XXE%%/doc/gui
-@dirrmtry lib/%%XXE%%/doc/docbook/resources
-@dirrmtry lib/%%XXE%%/doc/docbook/images/callouts
-@dirrmtry lib/%%XXE%%/doc/docbook/images
-@dirrmtry lib/%%XXE%%/doc/docbook
-@dirrmtry lib/%%XXE%%/doc/dita/resources
-@dirrmtry lib/%%XXE%%/doc/dita/images
-@dirrmtry lib/%%XXE%%/doc/dita
-@dirrmtry lib/%%XXE%%/doc/dev
-@dirrmtry lib/%%XXE%%/doc/csssupport/resources
-@dirrmtry lib/%%XXE%%/doc/csssupport/images/callouts
-@dirrmtry lib/%%XXE%%/doc/csssupport/images
-@dirrmtry lib/%%XXE%%/doc/csssupport
-@dirrmtry lib/%%XXE%%/doc/configure/samples/xsd_section_config/sample
-@dirrmtry lib/%%XXE%%/doc/configure/samples/xsd_section_config
-@dirrmtry lib/%%XXE%%/doc/configure/samples/topic_plus_tag/sample
-@dirrmtry lib/%%XXE%%/doc/configure/samples/topic_plus_tag/dtd
-@dirrmtry lib/%%XXE%%/doc/configure/samples/topic_plus_tag
-@dirrmtry lib/%%XXE%%/doc/configure/samples/rng_section_config/sample
-@dirrmtry lib/%%XXE%%/doc/configure/samples/rng_section_config
-@dirrmtry lib/%%XXE%%/doc/configure/samples/dtd_section_config/sample
-@dirrmtry lib/%%XXE%%/doc/configure/samples/dtd_section_config
-@dirrmtry lib/%%XXE%%/doc/configure/samples/customize/xhtml
-@dirrmtry lib/%%XXE%%/doc/configure/samples/customize/docbook5
-@dirrmtry lib/%%XXE%%/doc/configure/samples/customize/docbook
-@dirrmtry lib/%%XXE%%/doc/configure/samples/customize/dita
-@dirrmtry lib/%%XXE%%/doc/configure/samples/customize
-@dirrmtry lib/%%XXE%%/doc/configure/samples
-@dirrmtry lib/%%XXE%%/doc/configure/images/callouts
-@dirrmtry lib/%%XXE%%/doc/configure/images
-@dirrmtry lib/%%XXE%%/doc/configure
-@dirrmtry lib/%%XXE%%/doc/commands/process_examples
-@dirrmtry lib/%%XXE%%/doc/commands/macro_tutorial
-@dirrmtry lib/%%XXE%%/doc/commands/macro_examples
-@dirrmtry lib/%%XXE%%/doc/commands/images/callouts
-@dirrmtry lib/%%XXE%%/doc/commands/images
-@dirrmtry lib/%%XXE%%/doc/commands
-@dirrmtry lib/%%XXE%%/doc/api
-@dirrmtry lib/%%XXE%%/doc
-@dirrmtry lib/%%XXE%%/demo/spreadsheet-demo
-@dirrmtry lib/%%XXE%%/demo/graphics
-@dirrmtry lib/%%XXE%%/demo/form-sampler
-@dirrmtry lib/%%XXE%%/demo/equations
-@dirrmtry lib/%%XXE%%/demo/docbook5-sample/images
-@dirrmtry lib/%%XXE%%/demo/docbook5-sample
-@dirrmtry lib/%%XXE%%/demo/docbook-modular-book
-@dirrmtry lib/%%XXE%%/demo/dita-sample
-@dirrmtry lib/%%XXE%%/demo/bugreport
-@dirrmtry lib/%%XXE%%/demo
-@dirrmtry lib/%%XXE%%/bin/mac
-@dirrmtry lib/%%XXE%%/bin/icon
-@dirrmtry lib/%%XXE%%/bin
-@dirrmtry lib/%%XXE%%/addon/xfc_foprocessor
-@dirrmtry lib/%%XXE%%/addon/spell
-@dirrmtry lib/%%XXE%%/addon/mathml_config/xhtml5
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/xsd/presentation
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/xsd/content
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/xsd/common
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/xsd
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/template
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/dtd/mathml
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/dtd/iso9573-13
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/dtd/iso8879
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone/dtd
-@dirrmtry lib/%%XXE%%/addon/mathml_config/standalone
-@dirrmtry lib/%%XXE%%/addon/mathml_config/fonts
-@dirrmtry lib/%%XXE%%/addon/mathml_config/docbook5/sample
-@dirrmtry lib/%%XXE%%/addon/mathml_config/docbook5
-@dirrmtry lib/%%XXE%%/addon/mathml_config/dita
-@dirrmtry lib/%%XXE%%/addon/mathml_config/common_rng/convert
-@dirrmtry lib/%%XXE%%/addon/mathml_config/common_rng
-@dirrmtry lib/%%XXE%%/addon/mathml_config/common/pane
-@dirrmtry lib/%%XXE%%/addon/mathml_config/common/icons
-@dirrmtry lib/%%XXE%%/addon/mathml_config/common
-@dirrmtry lib/%%XXE%%/addon/mathml_config
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/sample
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net/sourceforge/jeuclid/xxe
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net/sourceforge/jeuclid
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net/sourceforge
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/class
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/META-INF/services
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/META-INF
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/project
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd/mathml
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd/iso9573-13
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd/iso8879
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd
-@dirrmtry lib/%%XXE%%/addon/jeuclid_imagetoolkit
-@dirrmtry lib/%%XXE%%/addon/jai_imageio/legal
-@dirrmtry lib/%%XXE%%/addon/jai_imageio
-@dirrmtry lib/%%XXE%%/addon/ftp_vdrive
-@dirrmtry lib/%%XXE%%/addon/fop1_foprocessor
-@dirrmtry lib/%%XXE%%/addon/dav_vdrive/http_bug_fixes
-@dirrmtry lib/%%XXE%%/addon/dav_vdrive
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/xsl
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/xsd/5.0
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/xsd/1.1/modules
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/xsd/1.1
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/xsd
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/template/5.0
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/template/1.1
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/template/1.0
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/template
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/dtd/1.1/modules
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/dtd/1.1
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/dtd/1.0
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/dtd
-@dirrmtry lib/%%XXE%%/addon/config/xhtml/css
-@dirrmtry lib/%%XXE%%/addon/config/xhtml
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/xhtml
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/webhelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/template
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/profiling
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/params
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/lib
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/javahelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/images
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/htmlhelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/html
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/highlighting
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/fo
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/epub/META-INF
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/epub
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/eclipse
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/css
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/common
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/assembly/schema
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl/assembly
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/xsl
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/template/V5.0
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/template
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/rng/V5.0
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/rng
-@dirrmtry lib/%%XXE%%/addon/config/docbook5/css
-@dirrmtry lib/%%XXE%%/addon/config/docbook5
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/xhtml
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/webhelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/template
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/profiling
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/params
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/lib
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/javahelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/images/callouts
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/images
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/htmlhelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/html
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/highlighting
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/fo
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/epub/META-INF
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/epub
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/eclipse
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/css
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/common
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/assembly/schema
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/assembly
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/xhtml-1_1
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/xhtml
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/webhelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/html
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/fo
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/epub/META-INF
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/epub
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/5webhelp
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/5epub/META-INF
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/5epub
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND
-@dirrmtry lib/%%XXE%%/addon/config/docbook/xsl
-@dirrmtry lib/%%XXE%%/addon/config/docbook/template/V4.5
-@dirrmtry lib/%%XXE%%/addon/config/docbook/template/V4.4
-@dirrmtry lib/%%XXE%%/addon/config/docbook/template/V4.3
-@dirrmtry lib/%%XXE%%/addon/config/docbook/template/V4.2
-@dirrmtry lib/%%XXE%%/addon/config/docbook/template
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.5/ent
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.5
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.4/ent
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.4
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.3/ent
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.3
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.2/ent
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.2
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.1.2/ent
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd/V4.1.2
-@dirrmtry lib/%%XXE%%/addon/config/docbook/dtd
-@dirrmtry lib/%%XXE%%/addon/config/docbook/css/icons
-@dirrmtry lib/%%XXE%%/addon/config/docbook/css
-@dirrmtry lib/%%XXE%%/addon/config/docbook
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/xhtml
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/webhelp
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/javahelp
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/lcid
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/htmlhelp
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/fo/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/fo
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/epub/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/epub/META-INF
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/epub
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/common/messages
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl/common
-@dirrmtry lib/%%XXE%%/addon/config/dita/xsl
-@dirrmtry lib/%%XXE%%/addon/config/dita/template/v1.2/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/template/v1.2/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/template/v1.2
-@dirrmtry lib/%%XXE%%/addon/config/dita/template/v1.1/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/template/v1.1/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/template/v1.1
-@dirrmtry lib/%%XXE%%/addon/config/dita/template
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/xnal/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/xnal/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/xnal
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/technicalContent/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/technicalContent/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/technicalContent
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/subjectScheme/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/subjectScheme/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/subjectScheme
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/machineryIndustry/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/machineryIndustry/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/machineryIndustry
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/learning/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/learning/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/learning
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/ditaval/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/ditaval/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/ditaval
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/bookmap/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/bookmap/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/bookmap
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/base/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/base/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2/base
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.2
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.1/xsd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.1/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.1
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.0.1/dtd
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema/v1.0.1
-@dirrmtry lib/%%XXE%%/addon/config/dita/schema
-@dirrmtry lib/%%XXE%%/addon/config/dita/icons
-@dirrmtry lib/%%XXE%%/addon/config/dita/css_classed/icons
-@dirrmtry lib/%%XXE%%/addon/config/dita/css_classed
-@dirrmtry lib/%%XXE%%/addon/config/dita/css/icons
-@dirrmtry lib/%%XXE%%/addon/config/dita/css
-@dirrmtry lib/%%XXE%%/addon/config/dita
-@dirrmtry lib/%%XXE%%/addon/config/common/xslthl
-@dirrmtry lib/%%XXE%%/addon/config/common/xsd
-@dirrmtry lib/%%XXE%%/addon/config/common/whc/whc_template/_wh/icons
-@dirrmtry lib/%%XXE%%/addon/config/common/whc/whc_template/_wh
-@dirrmtry lib/%%XXE%%/addon/config/common/whc/whc_template
-@dirrmtry lib/%%XXE%%/addon/config/common/whc
-@dirrmtry lib/%%XXE%%/addon/config/common/mime_types
-@dirrmtry lib/%%XXE%%/addon/config/common/icons
-@dirrmtry lib/%%XXE%%/addon/config/common/css
-@dirrmtry lib/%%XXE%%/addon/config/common
-@dirrmtry lib/%%XXE%%/addon/config
-@dirrmtry lib/%%XXE%%/addon/batik_imagetoolkit/svg_dtd/svg11
-@dirrmtry lib/%%XXE%%/addon/batik_imagetoolkit/svg_dtd
-@dirrmtry lib/%%XXE%%/addon/batik_imagetoolkit
-@dirrmtry lib/%%XXE%%/addon
-@dirrmtry lib/%%XXE%%
+@dirrm lib/%%XXE%%/legal/xerces_PATCHES
+@dirrm lib/%%XXE%%/legal
+@dirrm lib/%%XXE%%/doc/xmltool/images/callouts
+@dirrm lib/%%XXE%%/doc/xmltool/images
+@dirrm lib/%%XXE%%/doc/xmltool
+@dirrm lib/%%XXE%%/doc/xhtml/resources
+@dirrm lib/%%XXE%%/doc/xhtml/images/callouts
+@dirrm lib/%%XXE%%/doc/xhtml/images
+@dirrm lib/%%XXE%%/doc/xhtml
+@dirrm lib/%%XXE%%/doc/translatexxe/resources
+@dirrm lib/%%XXE%%/doc/translatexxe/images/callouts
+@dirrm lib/%%XXE%%/doc/translatexxe/images
+@dirrm lib/%%XXE%%/doc/translatexxe
+@dirrm lib/%%XXE%%/doc/spreadsheet/tutorial
+@dirrm lib/%%XXE%%/doc/spreadsheet/resources
+@dirrm lib/%%XXE%%/doc/spreadsheet/images/callouts
+@dirrm lib/%%XXE%%/doc/spreadsheet/images
+@dirrm lib/%%XXE%%/doc/spreadsheet/custom_functions
+@dirrm lib/%%XXE%%/doc/spreadsheet
+@dirrm lib/%%XXE%%/doc/rngsupport/samples
+@dirrm lib/%%XXE%%/doc/rngsupport/resources
+@dirrm lib/%%XXE%%/doc/rngsupport/images/callouts
+@dirrm lib/%%XXE%%/doc/rngsupport/images
+@dirrm lib/%%XXE%%/doc/rngsupport
+@dirrm lib/%%XXE%%/doc/resources
+@dirrm lib/%%XXE%%/doc/quickrefcard/src/quickrefcard
+@dirrm lib/%%XXE%%/doc/quickrefcard/src
+@dirrm lib/%%XXE%%/doc/quickrefcard
+@dirrm lib/%%XXE%%/doc/mathml/resources
+@dirrm lib/%%XXE%%/doc/mathml/images/callouts
+@dirrm lib/%%XXE%%/doc/mathml/images
+@dirrm lib/%%XXE%%/doc/mathml
+@dirrm lib/%%XXE%%/doc/help/wh/resources
+@dirrm lib/%%XXE%%/doc/help/wh/images/callouts
+@dirrm lib/%%XXE%%/doc/help/wh/images
+@dirrm lib/%%XXE%%/doc/help/wh/_wh/user/header_footer_files
+@dirrm lib/%%XXE%%/doc/help/wh/_wh/user
+@dirrm lib/%%XXE%%/doc/help/wh/_wh/icons
+@dirrm lib/%%XXE%%/doc/help/wh/_wh
+@dirrm lib/%%XXE%%/doc/help/wh
+@dirrm lib/%%XXE%%/doc/help/resources
+@dirrm lib/%%XXE%%/doc/help/images/callouts
+@dirrm lib/%%XXE%%/doc/help/images
+@dirrm lib/%%XXE%%/doc/help
+@dirrm lib/%%XXE%%/doc/gui/tutorial
+@dirrm lib/%%XXE%%/doc/gui/images/callouts
+@dirrm lib/%%XXE%%/doc/gui/images
+@dirrm lib/%%XXE%%/doc/gui/gui/applet/icons
+@dirrm lib/%%XXE%%/doc/gui/gui/applet
+@dirrm lib/%%XXE%%/doc/gui/gui/app/icons
+@dirrm lib/%%XXE%%/doc/gui/gui/app
+@dirrm lib/%%XXE%%/doc/gui/gui
+@dirrm lib/%%XXE%%/doc/gui
+@dirrm lib/%%XXE%%/doc/docbook/resources
+@dirrm lib/%%XXE%%/doc/docbook/images/callouts
+@dirrm lib/%%XXE%%/doc/docbook/images
+@dirrm lib/%%XXE%%/doc/docbook
+@dirrm lib/%%XXE%%/doc/dita/webhelp/resources
+@dirrm lib/%%XXE%%/doc/dita/webhelp/images
+@dirrm lib/%%XXE%%/doc/dita/webhelp/_wh/icons
+@dirrm lib/%%XXE%%/doc/dita/webhelp/_wh
+@dirrm lib/%%XXE%%/doc/dita/webhelp
+@dirrm lib/%%XXE%%/doc/dita/resources
+@dirrm lib/%%XXE%%/doc/dita/images
+@dirrm lib/%%XXE%%/doc/dita
+@dirrm lib/%%XXE%%/doc/dev
+@dirrm lib/%%XXE%%/doc/csssupport/resources
+@dirrm lib/%%XXE%%/doc/csssupport/images/callouts
+@dirrm lib/%%XXE%%/doc/csssupport/images
+@dirrm lib/%%XXE%%/doc/csssupport
+@dirrm lib/%%XXE%%/doc/configure/samples/xsd_section_config/sample
+@dirrm lib/%%XXE%%/doc/configure/samples/xsd_section_config
+@dirrm lib/%%XXE%%/doc/configure/samples/topic_plus_tag/sample
+@dirrm lib/%%XXE%%/doc/configure/samples/topic_plus_tag/dtd
+@dirrm lib/%%XXE%%/doc/configure/samples/topic_plus_tag
+@dirrm lib/%%XXE%%/doc/configure/samples/rng_section_config/sample
+@dirrm lib/%%XXE%%/doc/configure/samples/rng_section_config
+@dirrm lib/%%XXE%%/doc/configure/samples/dtd_section_config/sample
+@dirrm lib/%%XXE%%/doc/configure/samples/dtd_section_config
+@dirrm lib/%%XXE%%/doc/configure/samples/customize/xhtml
+@dirrm lib/%%XXE%%/doc/configure/samples/customize/docbook5
+@dirrm lib/%%XXE%%/doc/configure/samples/customize/docbook
+@dirrm lib/%%XXE%%/doc/configure/samples/customize/dita
+@dirrm lib/%%XXE%%/doc/configure/samples/customize
+@dirrm lib/%%XXE%%/doc/configure/samples
+@dirrm lib/%%XXE%%/doc/configure/resources
+@dirrm lib/%%XXE%%/doc/configure/images/callouts
+@dirrm lib/%%XXE%%/doc/configure/images
+@dirrm lib/%%XXE%%/doc/configure
+@dirrm lib/%%XXE%%/doc/commands/process_examples
+@dirrm lib/%%XXE%%/doc/commands/macro_tutorial
+@dirrm lib/%%XXE%%/doc/commands/macro_examples
+@dirrm lib/%%XXE%%/doc/commands/images/callouts
+@dirrm lib/%%XXE%%/doc/commands/images
+@dirrm lib/%%XXE%%/doc/commands
+@dirrm lib/%%XXE%%/doc/api
+@dirrm lib/%%XXE%%/doc
+@dirrm lib/%%XXE%%/demo/spreadsheet-demo
+@dirrm lib/%%XXE%%/demo/graphics
+@dirrm lib/%%XXE%%/demo/form-sampler
+@dirrm lib/%%XXE%%/demo/equations
+@dirrm lib/%%XXE%%/demo/docbook5-sample/images
+@dirrm lib/%%XXE%%/demo/docbook5-sample
+@dirrm lib/%%XXE%%/demo/docbook-modular-book
+@dirrm lib/%%XXE%%/demo/dita-sample
+@dirrm lib/%%XXE%%/demo/bugreport
+@dirrm lib/%%XXE%%/demo
+@dirrm lib/%%XXE%%/bin/mac
+@dirrm lib/%%XXE%%/bin/icon
+@dirrm lib/%%XXE%%/bin
+@dirrm lib/%%XXE%%/addon/xsc_spellchecker
+@dirrm lib/%%XXE%%/addon/xfc_foprocessor
+@dirrm lib/%%XXE%%/addon/mathml_config/xhtml5
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/xsd/presentation
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/xsd/content
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/xsd/common
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/xsd
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/template
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/dtd/mathml
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/dtd/iso9573-13
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/dtd/iso8879
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone/dtd
+@dirrm lib/%%XXE%%/addon/mathml_config/standalone
+@dirrm lib/%%XXE%%/addon/mathml_config/fonts
+@dirrm lib/%%XXE%%/addon/mathml_config/docbook5/sample
+@dirrm lib/%%XXE%%/addon/mathml_config/docbook5
+@dirrm lib/%%XXE%%/addon/mathml_config/dita
+@dirrm lib/%%XXE%%/addon/mathml_config/common_rng/convert
+@dirrm lib/%%XXE%%/addon/mathml_config/common_rng
+@dirrm lib/%%XXE%%/addon/mathml_config/common/pane
+@dirrm lib/%%XXE%%/addon/mathml_config/common/icons
+@dirrm lib/%%XXE%%/addon/mathml_config/common
+@dirrm lib/%%XXE%%/addon/mathml_config
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/sample
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net/sourceforge/jeuclid/xxe
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net/sourceforge/jeuclid
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net/sourceforge
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src/net
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/src
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/class
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/META-INF/services
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project/META-INF
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/project
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd/mathml
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd/iso9573-13
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd/iso8879
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit/dtd
+@dirrm lib/%%XXE%%/addon/jeuclid_imagetoolkit
+@dirrm lib/%%XXE%%/addon/jai_imageio/legal
+@dirrm lib/%%XXE%%/addon/jai_imageio
+@dirrm lib/%%XXE%%/addon/ftp_vdrive
+@dirrm lib/%%XXE%%/addon/fop1_foprocessor
+@dirrm lib/%%XXE%%/addon/en_dictionary
+@dirrm lib/%%XXE%%/addon/dav_vdrive/http_bug_fixes
+@dirrm lib/%%XXE%%/addon/dav_vdrive
+@dirrm lib/%%XXE%%/addon/config/xhtml/xsl
+@dirrm lib/%%XXE%%/addon/config/xhtml/xsd/5.0
+@dirrm lib/%%XXE%%/addon/config/xhtml/xsd/1.1/modules
+@dirrm lib/%%XXE%%/addon/config/xhtml/xsd/1.1
+@dirrm lib/%%XXE%%/addon/config/xhtml/xsd
+@dirrm lib/%%XXE%%/addon/config/xhtml/template/5.0
+@dirrm lib/%%XXE%%/addon/config/xhtml/template/1.1
+@dirrm lib/%%XXE%%/addon/config/xhtml/template/1.0
+@dirrm lib/%%XXE%%/addon/config/xhtml/template
+@dirrm lib/%%XXE%%/addon/config/xhtml/dtd/1.1/modules
+@dirrm lib/%%XXE%%/addon/config/xhtml/dtd/1.1
+@dirrm lib/%%XXE%%/addon/config/xhtml/dtd/1.0
+@dirrm lib/%%XXE%%/addon/config/xhtml/dtd
+@dirrm lib/%%XXE%%/addon/config/xhtml/css
+@dirrm lib/%%XXE%%/addon/config/xhtml
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/xhtml-1_1
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/xhtml
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/webhelp
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/template
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/profiling
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/params
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/lib
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/javahelp
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/images/callouts
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/images
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/htmlhelp
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/html
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/highlighting
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/fo
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/epub/META-INF
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/epub
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/eclipse
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/css
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl/common
+@dirrm lib/%%XXE%%/addon/config/docbook5/xsl
+@dirrm lib/%%XXE%%/addon/config/docbook5/template/V5.0
+@dirrm lib/%%XXE%%/addon/config/docbook5/template
+@dirrm lib/%%XXE%%/addon/config/docbook5/rng/V5.0
+@dirrm lib/%%XXE%%/addon/config/docbook5/rng
+@dirrm lib/%%XXE%%/addon/config/docbook5/css
+@dirrm lib/%%XXE%%/addon/config/docbook5
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/xhtml-1_1
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/xhtml
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/webhelp
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/template
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/profiling
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/params
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/lib
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/javahelp
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/images/callouts
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/images
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/htmlhelp
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/html
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/highlighting
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/fo
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/epub/META-INF
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/epub
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/eclipse
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/css
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/common
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/xhtml-1_1
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/xhtml
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/webhelp
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/html
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/fo
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/epub/META-INF
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/epub
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/5webhelp
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/5epub/META-INF
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND/5epub
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl/CHANGES_MADE_BY_XMLMIND
+@dirrm lib/%%XXE%%/addon/config/docbook/xsl
+@dirrm lib/%%XXE%%/addon/config/docbook/template/V4.5
+@dirrm lib/%%XXE%%/addon/config/docbook/template/V4.4
+@dirrm lib/%%XXE%%/addon/config/docbook/template/V4.3
+@dirrm lib/%%XXE%%/addon/config/docbook/template/V4.2
+@dirrm lib/%%XXE%%/addon/config/docbook/template
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.5/ent
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.5
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.4/ent
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.4
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.3/ent
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.3
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.2/ent
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.2
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.1.2/ent
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd/V4.1.2
+@dirrm lib/%%XXE%%/addon/config/docbook/dtd
+@dirrm lib/%%XXE%%/addon/config/docbook/css/icons
+@dirrm lib/%%XXE%%/addon/config/docbook/css
+@dirrm lib/%%XXE%%/addon/config/docbook
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/xhtml/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/xhtml
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/webhelp/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/webhelp
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/javahelp/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/javahelp
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/htmlhelp/lcid
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/htmlhelp
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/fo/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/fo
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/epub/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/epub/META-INF
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/epub
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp/resources
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/eclipsehelp
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/common/messages
+@dirrm lib/%%XXE%%/addon/config/dita/xsl/common
+@dirrm lib/%%XXE%%/addon/config/dita/xsl
+@dirrm lib/%%XXE%%/addon/config/dita/template/v1.2/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/template/v1.2/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/template/v1.2
+@dirrm lib/%%XXE%%/addon/config/dita/template/v1.1/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/template/v1.1/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/template/v1.1
+@dirrm lib/%%XXE%%/addon/config/dita/template
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/xnal/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/xnal/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/xnal
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/technicalContent/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/technicalContent/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/technicalContent
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/subjectScheme/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/subjectScheme/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/subjectScheme
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/machineryIndustry/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/machineryIndustry/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/machineryIndustry
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/learning/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/learning/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/learning
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/ditaval/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/ditaval/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/ditaval
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/bookmap/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/bookmap/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/bookmap
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/base/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/base/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2/base
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.2
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.1/xsd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.1/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.1
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.0.1/dtd
+@dirrm lib/%%XXE%%/addon/config/dita/schema/v1.0.1
+@dirrm lib/%%XXE%%/addon/config/dita/schema
+@dirrm lib/%%XXE%%/addon/config/dita/icons
+@dirrm lib/%%XXE%%/addon/config/dita/css_classed/icons
+@dirrm lib/%%XXE%%/addon/config/dita/css_classed
+@dirrm lib/%%XXE%%/addon/config/dita/css/icons
+@dirrm lib/%%XXE%%/addon/config/dita/css
+@dirrm lib/%%XXE%%/addon/config/dita
+@dirrm lib/%%XXE%%/addon/config/common/xslthl
+@dirrm lib/%%XXE%%/addon/config/common/xsd
+@dirrm lib/%%XXE%%/addon/config/common/whc/whc_template/_wh/icons
+@dirrm lib/%%XXE%%/addon/config/common/whc/whc_template/_wh
+@dirrm lib/%%XXE%%/addon/config/common/whc/whc_template
+@dirrm lib/%%XXE%%/addon/config/common/whc
+@dirrm lib/%%XXE%%/addon/config/common/mime_types
+@dirrm lib/%%XXE%%/addon/config/common/icons
+@dirrm lib/%%XXE%%/addon/config/common/css
+@dirrm lib/%%XXE%%/addon/config/common
+@dirrm lib/%%XXE%%/addon/config
+@dirrm lib/%%XXE%%/addon/batik_imagetoolkit/svg_dtd/svg11
+@dirrm lib/%%XXE%%/addon/batik_imagetoolkit/svg_dtd
+@dirrm lib/%%XXE%%/addon/batik_imagetoolkit
+@dirrm lib/%%XXE%%/addon
+@dirrm lib/%%XXE%%
