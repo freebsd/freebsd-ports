@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Text-Quoted
-# Date created:				Mon April 14th, 2003
-# Whom:					Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Quoted
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
