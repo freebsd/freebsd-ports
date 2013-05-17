@@ -3,6 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	21.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
@@ -40,7 +41,7 @@ USE_DOS2UNIX=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spr
 NO_MOZPKGINSTALL=yes
 
 FIREFOX_ICON=		${MOZILLA}.png
-FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
+FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
@@ -100,14 +101,10 @@ port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
 	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
-	${ECHO_CMD} "@dirrm lib/firefox/chrome/icons/default" >> ${PLISTD}
-	${ECHO_CMD} "@dirrm lib/firefox/chrome/icons" >> ${PLISTD}
-	${ECHO_CMD} "@dirrm lib/firefox/chrome" >> ${PLISTD}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
-	${MKDIR} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 	@${CAT} ${PKGMESSAGE}
 
