@@ -11,7 +11,7 @@ COMMENT=	Network surveillance engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids-libnet11 \
 		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
