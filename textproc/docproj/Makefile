@@ -4,7 +4,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,17 +23,14 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		scr2png:${PORTSDIR}/graphics/scr2png \
 		scr2txt:${PORTSDIR}/textproc/scr2txt \
-		tidy:${PORTSDIR}/www/tidy-lib \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		peps:${PORTSDIR}/graphics/peps \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		${LOCALBASE}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
-		${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${LOCALBASE}/share/sgml/docbook/4.1/dtd/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
 		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:${PORTSDIR}/textproc/iso-schematron-xslt \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450 \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
 
@@ -91,8 +88,7 @@ do-install:	# empty
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENJADE} || ${ARCH} != "i386"
-RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade \
-		onsgmls:${PORTSDIR}/textproc/opensp
+RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 .endif
