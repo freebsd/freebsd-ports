@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	embryo
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 PORTEPOCH=	2
 CATEGORIES=	lang enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \

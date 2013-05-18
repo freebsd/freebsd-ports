@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eio
-PORTVERSION=	1.7.6.1
+PORTVERSION=	1.7.7
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
