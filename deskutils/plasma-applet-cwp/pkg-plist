@@ -1,6 +1,7 @@
 lib/kde4/plasma_applet_cwp.so
 share/apps/desktoptheme/default/widgets/satellite_image.svgz
 share/apps/desktoptheme/default/widgets/wind_arrow.svgz
+share/apps/desktoptheme/default/widgets/wind_calm.svgz
 share/apps/desktoptheme/default/widgets/wind_unknown.svgz
 share/apps/desktoptheme/default/widgets/wind_var.svgz
 share/apps/plasma-cwp/background_circle_black.png
