@@ -111,7 +111,6 @@
     SUBDIR += hs-persistent-sqlite
     SUBDIR += hs-persistent-template
     SUBDIR += hsqldb
-    SUBDIR += innobackup
     SUBDIR += innotop
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
