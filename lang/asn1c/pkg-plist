@@ -43,6 +43,7 @@ bin/unber
 %%DATADIR%%/ObjectDescriptor.h
 %%DATADIR%%/PrintableString.c
 %%DATADIR%%/PrintableString.h
+%%DATADIR%%/README
 %%DATADIR%%/REAL.c
 %%DATADIR%%/REAL.h
 %%DATADIR%%/RELATIVE-OID.c
@@ -97,6 +98,8 @@ bin/unber
 %%DATADIR%%/per_decoder.h
 %%DATADIR%%/per_encoder.c
 %%DATADIR%%/per_encoder.h
+%%DATADIR%%/per_opentype.c
+%%DATADIR%%/per_opentype.h
 %%DATADIR%%/xer_decoder.c
 %%DATADIR%%/xer_decoder.h
 %%DATADIR%%/xer_encoder.c
@@ -117,7 +120,6 @@ bin/unber
 %%DOCSDIR%%/FAQ
 %%DOCSDIR%%/README
 %%DOCSDIR%%/asn1c-quick.pdf
-%%DOCSDIR%%/asn1c-usage.html
 %%DOCSDIR%%/asn1c-usage.pdf
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/standard-modules
