@@ -2,28 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	qtile
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	x11-wm
 
 MAINTAINER=	wg@FreeBSD.org
-COMMENT=	A small, flexible, scriptable tiling window manager written in Python
+COMMENT=	Small, flexible, scriptable tiling window manager written in Python
 
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xpyb>0:${PORTSDIR}/x11/xpyb \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_PKGNAMEPREFIX}gobject>0:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_PKGNAMEPREFIX}gtk>0:${PORTSDIR}/x11-toolkits/py-gtk2
+		${PYTHON_PKGNAMEPREFIX}cairo>0:${PORTSDIR}/graphics/py-cairo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qtile
-GH_COMMIT=	dd52b52
-GH_TAGNAME=	v0.5
+GH_COMMIT=	8b133d4
+GH_TAGNAME=	v0.6
+
+USE_GNOME=	pygobject pygtk2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-PORTDOCS=	CHANGELOG INSTALL.rst LICENSE README.rst TODO.rst
+PORTDOCS=	CHANGELOG INSTALL.rst LICENSE README.rst
 
 .include <bsd.port.options.mk>
 

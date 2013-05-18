@@ -15,6 +15,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/command.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/command.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/command.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/configurable.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/configurable.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/configurable.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/confreader.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/confreader.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/confreader.pyo
@@ -24,6 +30,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/drawer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/drawer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/drawer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/group.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/group.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/group.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/hook.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/hook.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/hook.pyo
@@ -39,6 +48,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/floating.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/floating.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/floating.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/matrix.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/matrix.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/matrix.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/max.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/max.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/layout/max.pyo
@@ -92,6 +104,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/sh.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/sh.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/sh.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/state.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/state.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/state.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/utils.pyo
@@ -119,6 +134,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/currentlayout.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/currentlayout.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/currentlayout.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/google_calendar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/google_calendar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/google_calendar.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/graph.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/graph.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/graph.pyo
@@ -158,6 +176,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/systray.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/systray.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/systray.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/tasklist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/tasklist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/tasklist.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/textbox.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/textbox.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libqtile/widget/textbox.pyo
