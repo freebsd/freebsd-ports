@@ -8,7 +8,7 @@
 PORTNAME=	bsdinfo
 PORTVERSION=	0.22
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cloud.github.com/downloads/samaelszafran/bsdinfo/
+MASTER_SITES=	http://cloud.github.com/downloads/samupl/bsdinfo/
 
 MAINTAINER=	s@samu.pl
 COMMENT=	A simple utility to display system-based information
