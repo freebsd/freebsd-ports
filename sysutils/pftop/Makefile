@@ -7,7 +7,7 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
@@ -23,7 +23,7 @@ MANCOMPRESSED=	no
 .if ${OSVERSION} < 700049
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=37
 CFLAGS+=	-DHAVE_ALTQ=1
-.elif ${OSVERSION} < 900000
+.elif ${OSVERSION} < 900039
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
 CFLAGS+=	-DHAVE_ALTQ=1
 .else
@@ -32,10 +32,14 @@ CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
 		${FILESDIR}/extra-patch-cache.h \
 		${FILESDIR}/extra-patch-config.h \
-		${FILESDIR}/extra-patch-engine.c \
 		${FILESDIR}/extra-patch-pftop.c \
 		${FILESDIR}/extra-patch-sf-gencode.c
+.if ${OSVERSION} > 1000017
+CFLAGS+=	-DHAVE_FINE_GRAINED_LOCKING=1
 .endif
+.endif
+
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-engine.c
 
 MAKE_ENV+=	__MAKE_CONF=/dev/null
 
