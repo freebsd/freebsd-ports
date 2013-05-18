@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_TEX=	kpathsea web2c texmf texhash
+USE_TEX=	texlive kpathsea web2c texmf texhash
 TEXHASHDIR=	${TEXMFDISTDIR} ${TEXMFDIR}
 USES=		pkgconfig
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

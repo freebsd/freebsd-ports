@@ -16,7 +16,7 @@ COMMENT=	TeX Engine including Omega and e-TeX features
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_TEX=	kpathsea web2c texmf formats fmtutil
+USE_TEX=	texlive kpathsea web2c texmf formats fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	\
