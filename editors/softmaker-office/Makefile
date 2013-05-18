@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	ALL_DICTS
 OPTIONS_DEFAULT=	ALL_DICTS
 ALL_DICTS_DESC=	Install all available dictionaries
 
+RESTRICTED=	distribution with other products of any kind forbiden
 NO_CDROM=	distribution with other products of any kind forbiden
 NO_PACKAGE=	distribution with other products of any kind forbiden
 
