@@ -14,7 +14,7 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		paper:${PORTSDIR}/print/libpaper
 
-USE_TEX=	web2c kpathsea texmf texhash
+USE_TEX=	texlive web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDIR}
 USE_MOTIF=	yes
 USE_GMAKE=	yes

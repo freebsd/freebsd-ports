@@ -13,7 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Non-validating XML parser, written in TeX
 
 USE_XZ=		yes
-USE_TEX=	texmf pdftex fmtutil
+USE_TEX=	texlive texmf pdftex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \

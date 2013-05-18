@@ -12,7 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Formats for Basic TeX Engines
 
 NO_BUILD=	yes
-USE_TEX=	web2c kpathsea texmf texhash fmtutil
+USE_TEX=	texlive web2c kpathsea texmf texhash fmtutil
 TEXHASHDIRS=	${TEXMFVARDIR}
 TEX_FORMATS=	amstex context cslatex eplain latex-bin \
 		metafont mex mltex mptopdf pdftex tex texsis

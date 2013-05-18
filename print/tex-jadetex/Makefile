@@ -13,7 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX backend for Jade, DSSSL processor for SGML/XML documents
 
 USE_XZ=		yes
-USE_TEX=	texmf pdftex xmltex fmtutil
+USE_TEX=	texlive texmf pdftex xmltex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
