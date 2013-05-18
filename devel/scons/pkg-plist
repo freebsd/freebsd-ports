@@ -169,6 +169,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/CVS.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/FortranCommon.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/FortranCommon.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/FortranCommon.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/GettextCommon.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/GettextCommon.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/GettextCommon.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/JavaCommon.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/JavaCommon.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/JavaCommon.pyo
@@ -289,6 +292,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/gas.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/gcc.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/gcc.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/gcc.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/gettext.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/gettext.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/gettext.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/gfortran.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/gfortran.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/gfortran.pyo
@@ -367,6 +373,15 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/midl.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/mingw.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/mingw.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/mingw.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/msgfmt.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/msgfmt.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/msgfmt.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/msginit.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/msginit.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/msginit.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/msgmerge.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/msgmerge.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/msgmerge.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/mslib.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/mslib.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/mslib.pyo
@@ -442,6 +457,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/rpcgen.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/rpm.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/rpm.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/rpm.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/rpmutils.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/rpmutils.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/rpmutils.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/sgiar.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/sgiar.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/sgiar.pyo
@@ -493,6 +511,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/tlib.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/wix.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/wix.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/wix.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/xgettext.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/xgettext.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/xgettext.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/yacc.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/yacc.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/yacc.pyo
