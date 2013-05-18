@@ -149,7 +149,6 @@ share/locale/nn/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nn/LC_MESSAGES/kcm_emoticons.mo
 share/locale/nn/LC_MESSAGES/kcm_infobase.mo
 share/locale/nn/LC_MESSAGES/kcm_infosummary.mo
-share/locale/nn/LC_MESSAGES/kcm_krfb.mo
 share/locale/nn/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/nn/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/nn/LC_MESSAGES/kcm_memory.mo
@@ -266,7 +265,6 @@ share/locale/nn/LC_MESSAGES/kig.mo
 share/locale/nn/LC_MESSAGES/kigo.mo
 share/locale/nn/LC_MESSAGES/killbots.mo
 share/locale/nn/LC_MESSAGES/kimagemapeditor.mo
-share/locale/nn/LC_MESSAGES/kinetd.mo
 share/locale/nn/LC_MESSAGES/kinfocenter.mo
 share/locale/nn/LC_MESSAGES/kio4.mo
 share/locale/nn/LC_MESSAGES/kio_akonadi.mo
@@ -517,6 +515,7 @@ share/locale/nn/LC_MESSAGES/parley.mo
 share/locale/nn/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nn/LC_MESSAGES/phonon_kde.mo
 share/locale/nn/LC_MESSAGES/phononserver.mo
+share/locale/nn/LC_MESSAGES/picmi.mo
 share/locale/nn/LC_MESSAGES/plasma-desktop.mo
 share/locale/nn/LC_MESSAGES/plasma-netbook.mo
 share/locale/nn/LC_MESSAGES/plasma-overlay.mo

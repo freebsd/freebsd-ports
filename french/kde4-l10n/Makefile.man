@@ -34,6 +34,7 @@ MAN1+=	ktouch.1
 MAN1+=	makekdewidgets.1
 MAN1+=	okular.1
 MAN1+=	plasmaengineexplorer.1
+MAN1+=	plasmapkg.1
 MAN1+=	po2xml.1
 MAN1+=	preparetips.1
 MAN1+=	pruneemptydirs.1

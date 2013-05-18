@@ -1,14 +1,5 @@
---- ./cmake/modules/FindKDE4Internal.cmake.orig	2013-03-01 07:26:13.335789000 +0100
-+++ ./cmake/modules/FindKDE4Internal.cmake	2013-03-29 21:51:00.038340976 +0100
-@@ -716,7 +716,7 @@
- #####################  provide some options   ##########################################
- 
- option(KDE4_ENABLE_FINAL "Enable final all-in-one compilation")
--option(KDE4_BUILD_TESTS  "Build the tests" ON)
-+option(KDE4_BUILD_TESTS  "Build the tests")
- option(KDE4_ENABLE_HTMLHANDBOOK  "Create targets htmlhandbook for creating the html versions of the docbook docs")
- set(KDE4_SERIALIZE_TOOL "" CACHE STRING "Tool to serialize resource-intensive commands in parallel builds")
- 
+--- ./cmake/modules/FindKDE4Internal.cmake.orig	2012-11-30 07:17:39.000000000 +0000
++++ ./cmake/modules/FindKDE4Internal.cmake	2013-02-15 15:45:41.732493091 +0000
 @@ -893,8 +893,8 @@
     _set_fancy(XDG_MIME_INSTALL_DIR     "${SHARE_INSTALL_PREFIX}/mime/packages"  "The install dir for the xdg mimetypes")
  

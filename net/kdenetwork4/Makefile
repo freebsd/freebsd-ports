@@ -42,16 +42,7 @@ KOPETE_DESC=	Multi-protocol instant messenger
 KRDC_DESC=	RDP and VNC client for KDE
 KRFB_DESC=	VNC server for KDE
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800074
-CMAKE_ARGS+=	-DBUILD_kppp:BOOL=OFF
-PLIST_SUB+=	KPPP="@comment "
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-CMakeLists.txt
-CMAKE_ARGS+=	-DBUILD_kppp:BOOL=ON
-PLIST_SUB+=	KPPP=""
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKOPETE}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kopete:${PORTSDIR}/net-im/kopete-kde4
@@ -65,4 +56,4 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krdc:${PORTSDIR}/net/krdc
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krfb:${PORTSDIR}/net/krfb
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -181,7 +181,6 @@ share/locale/fi/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fi/LC_MESSAGES/kcm_emoticons.mo
 share/locale/fi/LC_MESSAGES/kcm_infobase.mo
 share/locale/fi/LC_MESSAGES/kcm_infosummary.mo
-share/locale/fi/LC_MESSAGES/kcm_krfb.mo
 share/locale/fi/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/fi/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/fi/LC_MESSAGES/kcm_memory.mo
@@ -302,7 +301,6 @@ share/locale/fi/LC_MESSAGES/kig.mo
 share/locale/fi/LC_MESSAGES/kigo.mo
 share/locale/fi/LC_MESSAGES/killbots.mo
 share/locale/fi/LC_MESSAGES/kimagemapeditor.mo
-share/locale/fi/LC_MESSAGES/kinetd.mo
 share/locale/fi/LC_MESSAGES/kinfocenter.mo
 share/locale/fi/LC_MESSAGES/kio4.mo
 share/locale/fi/LC_MESSAGES/kio_activities.mo
@@ -549,6 +547,7 @@ share/locale/fi/LC_MESSAGES/nepomukbackup.mo
 share/locale/fi/LC_MESSAGES/nepomukcleaner.mo
 share/locale/fi/LC_MESSAGES/nepomukcontroller.mo
 share/locale/fi/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/fi/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/fi/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/fi/LC_MESSAGES/nepomukserver.mo
 share/locale/fi/LC_MESSAGES/nepomukservicestub.mo

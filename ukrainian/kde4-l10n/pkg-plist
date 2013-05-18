@@ -2019,7 +2019,6 @@ share/locale/uk/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/uk/LC_MESSAGES/kcm_emoticons.mo
 share/locale/uk/LC_MESSAGES/kcm_infobase.mo
 share/locale/uk/LC_MESSAGES/kcm_infosummary.mo
-share/locale/uk/LC_MESSAGES/kcm_krfb.mo
 share/locale/uk/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/uk/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/uk/LC_MESSAGES/kcm_memory.mo
@@ -2140,7 +2139,6 @@ share/locale/uk/LC_MESSAGES/kig.mo
 share/locale/uk/LC_MESSAGES/kigo.mo
 share/locale/uk/LC_MESSAGES/killbots.mo
 share/locale/uk/LC_MESSAGES/kimagemapeditor.mo
-share/locale/uk/LC_MESSAGES/kinetd.mo
 share/locale/uk/LC_MESSAGES/kinfocenter.mo
 share/locale/uk/LC_MESSAGES/kio4.mo
 share/locale/uk/LC_MESSAGES/kio_activities.mo

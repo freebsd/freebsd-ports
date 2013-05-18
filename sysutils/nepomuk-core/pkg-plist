@@ -123,6 +123,7 @@ lib/libnepomukcommon.so
 lib/libnepomukcore.so
 lib/libnepomukcore.so.5
 lib/libnepomukcore.so.5.0.1
+lib/libnepomukextractor.so
 share/applications/kde4/nepomukbackup.desktop
 share/applications/kde4/nepomukcleaner.desktop
 share/apps/fileindexerservice/nepomukfileindexer.notifyrc

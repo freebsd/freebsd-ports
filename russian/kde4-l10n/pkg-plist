@@ -974,6 +974,8 @@ share/locale/ru/LC_MESSAGES/accountwizard_kolab.mo
 share/locale/ru/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/ru/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/ru/LC_MESSAGES/accountwizard_pop3.mo
+share/locale/ru/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
+share/locale/ru/LC_MESSAGES/activitymanager_uihandler_declarative.mo
 share/locale/ru/LC_MESSAGES/adblock.mo
 share/locale/ru/LC_MESSAGES/akonadi-filestore.mo
 share/locale/ru/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -1109,6 +1111,7 @@ share/locale/ru/LC_MESSAGES/kcalc.mo
 share/locale/ru/LC_MESSAGES/kcertpart.mo
 share/locale/ru/LC_MESSAGES/kcharselect.mo
 share/locale/ru/LC_MESSAGES/kcm-kwin-scripts.mo
+share/locale/ru/LC_MESSAGES/kcm_activities.mo
 share/locale/ru/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ru/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ru/LC_MESSAGES/kcm_attica.mo
@@ -1119,7 +1122,6 @@ share/locale/ru/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ru/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ru/LC_MESSAGES/kcm_infobase.mo
 share/locale/ru/LC_MESSAGES/kcm_infosummary.mo
-share/locale/ru/LC_MESSAGES/kcm_krfb.mo
 share/locale/ru/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ru/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/ru/LC_MESSAGES/kcm_memory.mo
@@ -1240,7 +1242,6 @@ share/locale/ru/LC_MESSAGES/kig.mo
 share/locale/ru/LC_MESSAGES/kigo.mo
 share/locale/ru/LC_MESSAGES/killbots.mo
 share/locale/ru/LC_MESSAGES/kimagemapeditor.mo
-share/locale/ru/LC_MESSAGES/kinetd.mo
 share/locale/ru/LC_MESSAGES/kinfocenter.mo
 share/locale/ru/LC_MESSAGES/kio4.mo
 share/locale/ru/LC_MESSAGES/kio_activities.mo
@@ -1279,6 +1280,7 @@ share/locale/ru/LC_MESSAGES/kio_trash.mo
 share/locale/ru/LC_MESSAGES/kio_zeroconf.mo
 share/locale/ru/LC_MESSAGES/kioclient.mo
 share/locale/ru/LC_MESSAGES/kioexec.mo
+share/locale/ru/LC_MESSAGES/kipiplugin_kxmlhelloworld.mo
 share/locale/ru/LC_MESSAGES/kiriki.mo
 share/locale/ru/LC_MESSAGES/kiten.mo
 share/locale/ru/LC_MESSAGES/kjots.mo
@@ -1427,6 +1429,7 @@ share/locale/ru/LC_MESSAGES/libkdepimmobileui.mo
 share/locale/ru/LC_MESSAGES/libkexiv2.mo
 share/locale/ru/LC_MESSAGES/libkholidays.mo
 share/locale/ru/LC_MESSAGES/libkimap.mo
+share/locale/ru/LC_MESSAGES/libkipi.mo
 share/locale/ru/LC_MESSAGES/libkldap.mo
 share/locale/ru/LC_MESSAGES/libkleopatra.mo
 share/locale/ru/LC_MESSAGES/libkmahjongg.mo
@@ -1507,12 +1510,14 @@ share/locale/ru/LC_MESSAGES/okular_plucker.mo
 share/locale/ru/LC_MESSAGES/okular_poppler.mo
 share/locale/ru/LC_MESSAGES/okular_tiff.mo
 share/locale/ru/LC_MESSAGES/okular_xps.mo
+share/locale/ru/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/ru/LC_MESSAGES/palapeli.mo
 share/locale/ru/LC_MESSAGES/parley.mo
 share/locale/ru/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ru/LC_MESSAGES/phonon_kde.mo
 share/locale/ru/LC_MESSAGES/phonon_vlc.mo
 share/locale/ru/LC_MESSAGES/phononserver.mo
+share/locale/ru/LC_MESSAGES/picmi.mo
 share/locale/ru/LC_MESSAGES/plasma-desktop.mo
 share/locale/ru/LC_MESSAGES/plasma-netbook.mo
 share/locale/ru/LC_MESSAGES/plasma-overlay.mo

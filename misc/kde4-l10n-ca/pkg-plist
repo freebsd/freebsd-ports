@@ -1302,9 +1302,47 @@ share/doc/HTML/ca/plasma-desktop/common
 share/doc/HTML/ca/plasma-desktop/index.cache.bz2
 share/doc/HTML/ca/plasma-desktop/index.docbook
 share/doc/HTML/ca/plasma-desktop/taskbar-settings.png
+share/doc/HTML/ca/rocs/common
+share/doc/HTML/ca/rocs/document-selector.png
+share/doc/HTML/ca/rocs/hi22-action-rocsadddata.png
+share/doc/HTML/ca/rocs/hi22-action-rocsaddedge.png
+share/doc/HTML/ca/rocs/hi22-action-rocsalignbottom.png
+share/doc/HTML/ca/rocs/hi22-action-rocsaligncircle.png
+share/doc/HTML/ca/rocs/hi22-action-rocsalignhmiddle.png
+share/doc/HTML/ca/rocs/hi22-action-rocsalignleft.png
+share/doc/HTML/ca/rocs/hi22-action-rocsalignright.png
+share/doc/HTML/ca/rocs/hi22-action-rocsaligntop.png
+share/doc/HTML/ca/rocs/hi22-action-rocsaligntree.png
+share/doc/HTML/ca/rocs/hi22-action-rocsalignvmiddle.png
+share/doc/HTML/ca/rocs/hi22-action-rocsdelete.png
+share/doc/HTML/ca/rocs/hi22-action-rocsdeletedata.png
+share/doc/HTML/ca/rocs/hi22-action-rocsnew.png
+share/doc/HTML/ca/rocs/hi22-action-rocsproperties.png
+share/doc/HTML/ca/rocs/hi22-action-rocsselectmove.png
+share/doc/HTML/ca/rocs/hi22-action-rocszoom.png
+share/doc/HTML/ca/rocs/index.cache.bz2
+share/doc/HTML/ca/rocs/index.docbook
+share/doc/HTML/ca/rocs/rocs-control-engine-debug.png
+share/doc/HTML/ca/rocs/rocs-control-engine-run.png
+share/doc/HTML/ca/rocs/rocs-control-engine-step.png
+share/doc/HTML/ca/rocs/rocs-control-engine-stop.png
+share/doc/HTML/ca/rocs/rocs-toolbar-alignment.png
+share/doc/HTML/ca/rocs/rocs-toolbar-main.png
 share/doc/HTML/ca/sonnet/common
 share/doc/HTML/ca/sonnet/index.cache.bz2
 share/doc/HTML/ca/sonnet/index.docbook
+share/doc/HTML/ca/step/circular-motor.png
+share/doc/HTML/ca/step/common
+share/doc/HTML/ca/step/disk-properties.png
+share/doc/HTML/ca/step/examples.docbook
+share/doc/HTML/ca/step/index.cache.bz2
+share/doc/HTML/ca/step/index.docbook
+share/doc/HTML/ca/step/mainwindow.png
+share/doc/HTML/ca/step/tutorial1.png
+share/doc/HTML/ca/step/tutorial3.png
+share/doc/HTML/ca/step/tutorial4.png
+share/doc/HTML/ca/step/tutorial5.png
+share/doc/HTML/ca/step/tutorials.docbook
 share/doc/HTML/ca/sweeper/common
 share/doc/HTML/ca/sweeper/index.cache.bz2
 share/doc/HTML/ca/sweeper/index.docbook
@@ -1487,7 +1525,6 @@ share/locale/ca/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ca/LC_MESSAGES/kcm_emoticons.mo
 share/locale/ca/LC_MESSAGES/kcm_infobase.mo
 share/locale/ca/LC_MESSAGES/kcm_infosummary.mo
-share/locale/ca/LC_MESSAGES/kcm_krfb.mo
 share/locale/ca/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ca/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/ca/LC_MESSAGES/kcm_memory.mo
@@ -1608,7 +1645,6 @@ share/locale/ca/LC_MESSAGES/kig.mo
 share/locale/ca/LC_MESSAGES/kigo.mo
 share/locale/ca/LC_MESSAGES/killbots.mo
 share/locale/ca/LC_MESSAGES/kimagemapeditor.mo
-share/locale/ca/LC_MESSAGES/kinetd.mo
 share/locale/ca/LC_MESSAGES/kinfocenter.mo
 share/locale/ca/LC_MESSAGES/kio4.mo
 share/locale/ca/LC_MESSAGES/kio_activities.mo
@@ -2092,7 +2128,9 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/umbrello
 @dirrm share/doc/HTML/ca/systemsettings
 @dirrm share/doc/HTML/ca/sweeper
+@dirrm share/doc/HTML/ca/step
 @dirrm share/doc/HTML/ca/sonnet
+@dirrm share/doc/HTML/ca/rocs
 @dirrm share/doc/HTML/ca/plasma-desktop
 @dirrm share/doc/HTML/ca/parley
 @dirrm share/doc/HTML/ca/onlinehelp

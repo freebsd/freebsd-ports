@@ -2043,7 +2043,6 @@ share/locale/de/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/de/LC_MESSAGES/kcm_emoticons.mo
 share/locale/de/LC_MESSAGES/kcm_infobase.mo
 share/locale/de/LC_MESSAGES/kcm_infosummary.mo
-share/locale/de/LC_MESSAGES/kcm_krfb.mo
 share/locale/de/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/de/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/de/LC_MESSAGES/kcm_memory.mo
@@ -2164,7 +2163,6 @@ share/locale/de/LC_MESSAGES/kig.mo
 share/locale/de/LC_MESSAGES/kigo.mo
 share/locale/de/LC_MESSAGES/killbots.mo
 share/locale/de/LC_MESSAGES/kimagemapeditor.mo
-share/locale/de/LC_MESSAGES/kinetd.mo
 share/locale/de/LC_MESSAGES/kinfocenter.mo
 share/locale/de/LC_MESSAGES/kio4.mo
 share/locale/de/LC_MESSAGES/kio_activities.mo
@@ -2411,6 +2409,7 @@ share/locale/de/LC_MESSAGES/nepomukbackup.mo
 share/locale/de/LC_MESSAGES/nepomukcleaner.mo
 share/locale/de/LC_MESSAGES/nepomukcontroller.mo
 share/locale/de/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/de/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/de/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/de/LC_MESSAGES/nepomukserver.mo
 share/locale/de/LC_MESSAGES/nepomukservicestub.mo

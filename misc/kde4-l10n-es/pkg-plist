@@ -391,6 +391,9 @@ share/doc/HTML/es/kcontrol/componentchooser/index.docbook
 share/doc/HTML/es/kcontrol/cookies/common
 share/doc/HTML/es/kcontrol/cookies/index.cache.bz2
 share/doc/HTML/es/kcontrol/cookies/index.docbook
+share/doc/HTML/es/kcontrol/cursortheme/common
+share/doc/HTML/es/kcontrol/cursortheme/index.cache.bz2
+share/doc/HTML/es/kcontrol/cursortheme/index.docbook
 share/doc/HTML/es/kcontrol/desktop/common
 share/doc/HTML/es/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/es/kcontrol/desktop/index.docbook
@@ -466,6 +469,9 @@ share/doc/HTML/es/kcontrol/khtml-adblock/index.docbook
 share/doc/HTML/es/kcontrol/khtml-behavior/common
 share/doc/HTML/es/kcontrol/khtml-behavior/index.cache.bz2
 share/doc/HTML/es/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/es/kcontrol/khtml-general/common
+share/doc/HTML/es/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/es/kcontrol/khtml-general/index.docbook
 share/doc/HTML/es/kcontrol/khtml-java-js/common
 share/doc/HTML/es/kcontrol/khtml-java-js/index.cache.bz2
 share/doc/HTML/es/kcontrol/khtml-java-js/index.docbook
@@ -484,9 +490,15 @@ share/doc/HTML/es/kcontrol/kwincompositing/index.docbook
 share/doc/HTML/es/kcontrol/kwindecoration/common
 share/doc/HTML/es/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/es/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/es/kcontrol/kwinscreenedges/common
+share/doc/HTML/es/kcontrol/kwinscreenedges/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwinscreenedges/index.docbook
 share/doc/HTML/es/kcontrol/language/common
 share/doc/HTML/es/kcontrol/language/index.cache.bz2
 share/doc/HTML/es/kcontrol/language/index.docbook
+share/doc/HTML/es/kcontrol/mouse/common
+share/doc/HTML/es/kcontrol/mouse/index.cache.bz2
+share/doc/HTML/es/kcontrol/mouse/index.docbook
 share/doc/HTML/es/kcontrol/nepomuk/common
 share/doc/HTML/es/kcontrol/nepomuk/index.cache.bz2
 share/doc/HTML/es/kcontrol/nepomuk/index.docbook
@@ -1326,6 +1338,7 @@ share/doc/HTML/es/kwrite/configuring.docbook
 share/doc/HTML/es/kwrite/fundamentals.docbook
 share/doc/HTML/es/kwrite/index.cache.bz2
 share/doc/HTML/es/kwrite/index.docbook
+share/doc/HTML/es/kwrite/menus.docbook
 share/doc/HTML/es/lokalize/common
 share/doc/HTML/es/lokalize/index.cache.bz2
 share/doc/HTML/es/lokalize/index.docbook
@@ -1571,7 +1584,6 @@ share/locale/es/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/es/LC_MESSAGES/kcm_emoticons.mo
 share/locale/es/LC_MESSAGES/kcm_infobase.mo
 share/locale/es/LC_MESSAGES/kcm_infosummary.mo
-share/locale/es/LC_MESSAGES/kcm_krfb.mo
 share/locale/es/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/es/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/es/LC_MESSAGES/kcm_memory.mo
@@ -1692,7 +1704,6 @@ share/locale/es/LC_MESSAGES/kig.mo
 share/locale/es/LC_MESSAGES/kigo.mo
 share/locale/es/LC_MESSAGES/killbots.mo
 share/locale/es/LC_MESSAGES/kimagemapeditor.mo
-share/locale/es/LC_MESSAGES/kinetd.mo
 share/locale/es/LC_MESSAGES/kinfocenter.mo
 share/locale/es/LC_MESSAGES/kio4.mo
 share/locale/es/LC_MESSAGES/kio_activities.mo
@@ -2330,13 +2341,16 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/paths
 @dirrm share/doc/HTML/es/kcontrol/netpref
 @dirrm share/doc/HTML/es/kcontrol/nepomuk
+@dirrm share/doc/HTML/es/kcontrol/mouse
 @dirrm share/doc/HTML/es/kcontrol/language
+@dirrm share/doc/HTML/es/kcontrol/kwinscreenedges
 @dirrm share/doc/HTML/es/kcontrol/kwindecoration
 @dirrm share/doc/HTML/es/kcontrol/kwincompositing
 @dirrm share/doc/HTML/es/kcontrol/kresources
 @dirrm share/doc/HTML/es/kcontrol/kremotecontrol
 @dirrm share/doc/HTML/es/kcontrol/khtml-plugins
 @dirrm share/doc/HTML/es/kcontrol/khtml-java-js
+@dirrm share/doc/HTML/es/kcontrol/khtml-general
 @dirrm share/doc/HTML/es/kcontrol/khtml-behavior
 @dirrm share/doc/HTML/es/kcontrol/khtml-adblock
 @dirrm share/doc/HTML/es/kcontrol/kgamma
@@ -2362,6 +2376,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/emoticons
 @dirrm share/doc/HTML/es/kcontrol/ebrowsing
 @dirrm share/doc/HTML/es/kcontrol/desktop
+@dirrm share/doc/HTML/es/kcontrol/cursortheme
 @dirrm share/doc/HTML/es/kcontrol/cookies
 @dirrm share/doc/HTML/es/kcontrol/componentchooser
 @dirrm share/doc/HTML/es/kcontrol/colors

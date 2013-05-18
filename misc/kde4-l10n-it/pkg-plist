@@ -189,6 +189,13 @@ share/doc/HTML/it/dragonplayer/man-dragon.1.docbook
 share/doc/HTML/it/filelight/common
 share/doc/HTML/it/filelight/index.cache.bz2
 share/doc/HTML/it/filelight/index.docbook
+share/doc/HTML/it/fundamentals/common
+share/doc/HTML/it/fundamentals/config.docbook
+share/doc/HTML/it/fundamentals/index.cache.bz2
+share/doc/HTML/it/fundamentals/index.docbook
+share/doc/HTML/it/fundamentals/install.docbook
+share/doc/HTML/it/fundamentals/tasks.docbook
+share/doc/HTML/it/fundamentals/ui.docbook
 share/doc/HTML/it/granatier/common
 share/doc/HTML/it/granatier/index.cache.bz2
 share/doc/HTML/it/granatier/index.docbook
@@ -252,6 +259,22 @@ share/doc/HTML/it/kapman/index.docbook
 share/doc/HTML/it/kapptemplate/common
 share/doc/HTML/it/kapptemplate/index.cache.bz2
 share/doc/HTML/it/kapptemplate/index.docbook
+share/doc/HTML/it/kate/advanced.docbook
+share/doc/HTML/it/kate/common
+share/doc/HTML/it/kate/configuring-part.docbook
+share/doc/HTML/it/kate/configuring.docbook
+share/doc/HTML/it/kate/fundamentals.docbook
+share/doc/HTML/it/kate/highlighting.docbook
+share/doc/HTML/it/kate/index.cache.bz2
+share/doc/HTML/it/kate/index.docbook
+share/doc/HTML/it/kate/man-kate.1.docbook
+share/doc/HTML/it/kate/mdi.docbook
+share/doc/HTML/it/kate/menus.docbook
+share/doc/HTML/it/kate/part.docbook
+share/doc/HTML/it/kate/plugins-part.docbook
+share/doc/HTML/it/kate/plugins.docbook
+share/doc/HTML/it/kate/regular-expressions.docbook
+share/doc/HTML/it/kate/vi.docbook
 share/doc/HTML/it/katomic/common
 share/doc/HTML/it/katomic/index.cache.bz2
 share/doc/HTML/it/katomic/index.docbook
@@ -1287,7 +1310,6 @@ share/locale/it/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/it/LC_MESSAGES/kcm_emoticons.mo
 share/locale/it/LC_MESSAGES/kcm_infobase.mo
 share/locale/it/LC_MESSAGES/kcm_infosummary.mo
-share/locale/it/LC_MESSAGES/kcm_krfb.mo
 share/locale/it/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/it/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/it/LC_MESSAGES/kcm_memory.mo
@@ -1408,7 +1430,6 @@ share/locale/it/LC_MESSAGES/kig.mo
 share/locale/it/LC_MESSAGES/kigo.mo
 share/locale/it/LC_MESSAGES/killbots.mo
 share/locale/it/LC_MESSAGES/kimagemapeditor.mo
-share/locale/it/LC_MESSAGES/kinetd.mo
 share/locale/it/LC_MESSAGES/kinfocenter.mo
 share/locale/it/LC_MESSAGES/kio4.mo
 share/locale/it/LC_MESSAGES/kio_activities.mo
@@ -2105,6 +2126,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kblackbox
 @dirrm share/doc/HTML/it/kbattleship
 @dirrm share/doc/HTML/it/katomic
+@dirrm share/doc/HTML/it/kate
 @dirrm share/doc/HTML/it/kapptemplate
 @dirrm share/doc/HTML/it/kapman
 @dirrm share/doc/HTML/it/kanagram
@@ -2117,6 +2139,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/jovie
 @dirrm share/doc/HTML/it/gwenview
 @dirrm share/doc/HTML/it/granatier
+@dirrm share/doc/HTML/it/fundamentals
 @dirrm share/doc/HTML/it/filelight
 @dirrm share/doc/HTML/it/dragonplayer
 @dirrm share/doc/HTML/it/dolphin

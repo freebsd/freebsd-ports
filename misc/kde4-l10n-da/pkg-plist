@@ -557,7 +557,6 @@ share/locale/da/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/da/LC_MESSAGES/kcm_emoticons.mo
 share/locale/da/LC_MESSAGES/kcm_infobase.mo
 share/locale/da/LC_MESSAGES/kcm_infosummary.mo
-share/locale/da/LC_MESSAGES/kcm_krfb.mo
 share/locale/da/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/da/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/da/LC_MESSAGES/kcm_memory.mo
@@ -678,7 +677,6 @@ share/locale/da/LC_MESSAGES/kig.mo
 share/locale/da/LC_MESSAGES/kigo.mo
 share/locale/da/LC_MESSAGES/killbots.mo
 share/locale/da/LC_MESSAGES/kimagemapeditor.mo
-share/locale/da/LC_MESSAGES/kinetd.mo
 share/locale/da/LC_MESSAGES/kinfocenter.mo
 share/locale/da/LC_MESSAGES/kio4.mo
 share/locale/da/LC_MESSAGES/kio_activities.mo
@@ -791,6 +789,7 @@ share/locale/da/LC_MESSAGES/kscreenlocker.mo
 share/locale/da/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/da/LC_MESSAGES/kscreensaver.mo
 share/locale/da/LC_MESSAGES/ksendemail.mo
+share/locale/da/LC_MESSAGES/ksgrd.mo
 share/locale/da/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/da/LC_MESSAGES/kshisen.mo
 share/locale/da/LC_MESSAGES/kshorturifilter.mo
@@ -924,6 +923,7 @@ share/locale/da/LC_MESSAGES/nepomukbackup.mo
 share/locale/da/LC_MESSAGES/nepomukcleaner.mo
 share/locale/da/LC_MESSAGES/nepomukcontroller.mo
 share/locale/da/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/da/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/da/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/da/LC_MESSAGES/nepomukserver.mo
 share/locale/da/LC_MESSAGES/nepomukservicestub.mo

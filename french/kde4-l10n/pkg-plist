@@ -1394,6 +1394,9 @@ share/doc/HTML/fr/marble/routing-5.png
 share/doc/HTML/fr/marble/routing-6.png
 share/doc/HTML/fr/marble/search-1.png
 share/doc/HTML/fr/marble/search-2.png
+share/doc/HTML/fr/okteta/common
+share/doc/HTML/fr/okteta/index.cache.bz2
+share/doc/HTML/fr/okteta/index.docbook
 share/doc/HTML/fr/okular/annotation-properties.png
 share/doc/HTML/fr/okular/annotations.png
 share/doc/HTML/fr/okular/bookmark-management.png
@@ -1493,6 +1496,9 @@ share/doc/HTML/fr/picmi/index.docbook
 share/doc/HTML/fr/plasma-desktop/common
 share/doc/HTML/fr/plasma-desktop/index.cache.bz2
 share/doc/HTML/fr/plasma-desktop/index.docbook
+share/doc/HTML/fr/rocs/common
+share/doc/HTML/fr/rocs/index.cache.bz2
+share/doc/HTML/fr/rocs/index.docbook
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
 share/doc/HTML/fr/sonnet/index.docbook
@@ -1670,7 +1676,6 @@ share/locale/fr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fr/LC_MESSAGES/kcm_emoticons.mo
 share/locale/fr/LC_MESSAGES/kcm_infobase.mo
 share/locale/fr/LC_MESSAGES/kcm_infosummary.mo
-share/locale/fr/LC_MESSAGES/kcm_krfb.mo
 share/locale/fr/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/fr/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/fr/LC_MESSAGES/kcm_memory.mo
@@ -1791,7 +1796,6 @@ share/locale/fr/LC_MESSAGES/kig.mo
 share/locale/fr/LC_MESSAGES/kigo.mo
 share/locale/fr/LC_MESSAGES/killbots.mo
 share/locale/fr/LC_MESSAGES/kimagemapeditor.mo
-share/locale/fr/LC_MESSAGES/kinetd.mo
 share/locale/fr/LC_MESSAGES/kinfocenter.mo
 share/locale/fr/LC_MESSAGES/kio4.mo
 share/locale/fr/LC_MESSAGES/kio_activities.mo
@@ -1904,6 +1908,7 @@ share/locale/fr/LC_MESSAGES/kscreenlocker.mo
 share/locale/fr/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/fr/LC_MESSAGES/kscreensaver.mo
 share/locale/fr/LC_MESSAGES/ksendemail.mo
+share/locale/fr/LC_MESSAGES/ksgrd.mo
 share/locale/fr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fr/LC_MESSAGES/kshisen.mo
 share/locale/fr/LC_MESSAGES/kshorturifilter.mo
@@ -2274,12 +2279,14 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/systemsettings
 @dirrm share/doc/HTML/fr/step
 @dirrm share/doc/HTML/fr/sonnet
+@dirrm share/doc/HTML/fr/rocs
 @dirrm share/doc/HTML/fr/plasma-desktop
 @dirrm share/doc/HTML/fr/picmi
 @dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/palapeli
 @dirrm share/doc/HTML/fr/onlinehelp
 @dirrm share/doc/HTML/fr/okular
+@dirrm share/doc/HTML/fr/okteta
 @dirrm share/doc/HTML/fr/marble
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize

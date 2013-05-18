@@ -142,7 +142,6 @@ share/locale/lv/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/lv/LC_MESSAGES/kcm_emoticons.mo
 share/locale/lv/LC_MESSAGES/kcm_infobase.mo
 share/locale/lv/LC_MESSAGES/kcm_infosummary.mo
-share/locale/lv/LC_MESSAGES/kcm_krfb.mo
 share/locale/lv/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/lv/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/lv/LC_MESSAGES/kcm_memory.mo
@@ -260,7 +259,6 @@ share/locale/lv/LC_MESSAGES/kig.mo
 share/locale/lv/LC_MESSAGES/kigo.mo
 share/locale/lv/LC_MESSAGES/killbots.mo
 share/locale/lv/LC_MESSAGES/kimagemapeditor.mo
-share/locale/lv/LC_MESSAGES/kinetd.mo
 share/locale/lv/LC_MESSAGES/kinfocenter.mo
 share/locale/lv/LC_MESSAGES/kio4.mo
 share/locale/lv/LC_MESSAGES/kio_akonadi.mo
