@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8818f7f-9182-11e2-9bdf-d48564727302">
+    <topic>optipng -- use-after-free vulnerability</topic>
+    <affects>
+      <package>
+	<name>optipng</name>
+	<range><ge>0.7</ge><lt>0.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="https://secunia.com/advisories/50654">
+	  <p>A vulnerability has been reported in OptiPNG, which can be
+	    exploited by malicious people to potentially compromise a user's
+	    system.</p>
+	  <p>The vulnerability is caused due to a use-after-free error related
+	    to the palette reduction functionality. No further information is
+	    currently available.</p>
+	  <p>Success exploitation may allow execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4432</cvename>
+      <url>https://secunia.com/advisories/50654</url>
+    </references>
+    <dates>
+      <discovery>2012-09-16</discovery>
+      <entry>2015-05-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a0c65049-bddd-11e2-a0f6-001060e06fd4">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
