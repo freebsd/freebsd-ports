@@ -1,5 +1,6 @@
-# One chunk of this OpenBSD patch has been removed
-# as it's already part of patch-pftop.c
+# One chunk of this OpenBSD patch has been removed as it's
+# already part of patch-pftop.c, another one has been extended
+# to fix the rule display in some views.
 $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
 --- pftop.c.orig	Wed Nov  7 06:36:46 2007
 +++ pftop.c	Wed Dec  2 21:14:56 2009
@@ -313,7 +314,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  #ifdef HAVE_INOUT_COUNT
  	{
  		u_int64_t sz = COUNTER(s->bytes[0]) + COUNTER(s->bytes[1]);
-@@ -988,14 +1161,14 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -988,18 +1161,18 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  		print_fld_size(FLD_PKTS, COUNTER(s->packets[0]) +
  			       COUNTER(s->packets[1]));
  		print_fld_size(FLD_BYTES, sz);
@@ -332,6 +333,11 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  
  #endif
  #ifdef HAVE_PFSYNC_STATE
+-	print_fld_uint(FLD_RULE, s->rule);
++	print_fld_uint(FLD_RULE, ntohl(s->rule));
+ #else
+ #ifdef HAVE_RULE_NUMBER
+ 	print_fld_uint(FLD_RULE, s->rule.nr);
 @@ -1475,8 +1648,12 @@ print_rule(struct pf_rule *pr)
  	print_fld_str(FLD_LABEL, pr->label);
  #endif
