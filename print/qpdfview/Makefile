@@ -3,7 +3,7 @@
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/131409309/
 
@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		cups:${PORTSDIR}/print/cups-client
 
-USE_QT4=	corelib dbus gui moc_build qmake_build rcc_build sql sql-sqlite3_run \
-		svg xml
+USE_QT4=	corelib dbus gui imageformats moc_build qmake_build rcc_build \
+		sql sql-sqlite3_run svg xml
 QMAKEFLAGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
