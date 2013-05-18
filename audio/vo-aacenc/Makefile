@@ -11,9 +11,6 @@ COMMENT=	VisualOn AAC encoder library
 
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/COPYING
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 
 GNU_CONFIGURE=	yes
 
