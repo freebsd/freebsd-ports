@@ -33,7 +33,7 @@ SUB_LIST=	LINUXBASE=${LINUXBASE}
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	alsalib dbuslibs xorglibs
+USE_LINUX_APPS=	alsalib dbuslibs gtk2 xorglibs
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-desktop
 
