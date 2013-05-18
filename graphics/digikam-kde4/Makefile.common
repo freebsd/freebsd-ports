@@ -12,7 +12,7 @@
 #	net/libkvkontakte
 #	net/libmediawiki
 
-DIGIKAM_VER=	3.1.0
+DIGIKAM_VER=	3.2.0
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/digikam
 
