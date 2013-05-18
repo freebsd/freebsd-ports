@@ -1,13 +1,9 @@
-# New ports collection makefile for:	iaxmodem
-# Date created:				15 Jun 2006
-# Whom:					Filippo Natali <filippo.natali@gmail.com>
-#
+# Created by: Filippo Natali <filippo.natali@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	iaxmodem
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
