@@ -74,7 +74,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 #			  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=		4.10.1
+KDE4_VERSION?=		4.10.3
 KDE4_BRANCH?=		stable
 KTP_VERSION?=		0.6.1
 KTP_BRANCH?=		stable
@@ -90,7 +90,8 @@ KDEVELOP_BRANCH?=	stable
 KDE4_PREFIX?=	${LOCALBASE}/kde4
 
 # Help cmake to find files when testing ports with non-default PREFIX
-CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE};${KDE4_PREFIX}"
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE};${KDE4_PREFIX}" \
+		-DKDE4_BUILD_TESTS:BOOL=OFF
 
 # ${PREFIX} and ${NO_MTREE} have to be defined in the pre-makefile section.
 .if defined(USE_KDE4) && ${USE_KDE4:Mkdeprefix} != ""

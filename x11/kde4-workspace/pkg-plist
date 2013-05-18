@@ -902,6 +902,7 @@ share/apps/kwrited/kwrited.notifyrc
 share/apps/plasma-desktop/init/00-defaultLayout.js
 share/apps/plasma-desktop/plasma-desktop.notifyrc
 share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
+share/apps/plasma-desktop/updates/set-hidden-single-vd-pager.js
 share/apps/plasma-desktop/updates/systray-to-notifications-widget.js
 share/apps/plasma-netbook/init/00-defaultLayout.js
 share/apps/plasma/dashboard/AppleClasses/AppleAnimator.js
@@ -927,7 +928,6 @@ share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultPanel/contents/
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultPanel/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/metadata.desktop
-share/apps/plasma/packages/org.kde.desktop.activitymanager/Messages.sh
 share/apps/plasma/packages/org.kde.desktop.activitymanager/contents/ui/.directory
 share/apps/plasma/packages/org.kde.desktop.activitymanager/contents/ui/ActivityDelegate.qml
 share/apps/plasma/packages/org.kde.desktop.activitymanager/contents/ui/main.qml

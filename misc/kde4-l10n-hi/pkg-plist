@@ -71,7 +71,6 @@ share/locale/hi/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hi/LC_MESSAGES/kcm_emoticons.mo
 share/locale/hi/LC_MESSAGES/kcm_infobase.mo
 share/locale/hi/LC_MESSAGES/kcm_infosummary.mo
-share/locale/hi/LC_MESSAGES/kcm_krfb.mo
 share/locale/hi/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/hi/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/hi/LC_MESSAGES/kcm_memory.mo
@@ -181,7 +180,6 @@ share/locale/hi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/hi/LC_MESSAGES/kiconfinder.mo
 share/locale/hi/LC_MESSAGES/kig.mo
 share/locale/hi/LC_MESSAGES/kimagemapeditor.mo
-share/locale/hi/LC_MESSAGES/kinetd.mo
 share/locale/hi/LC_MESSAGES/kinfocenter.mo
 share/locale/hi/LC_MESSAGES/kio4.mo
 share/locale/hi/LC_MESSAGES/kio_applications.mo

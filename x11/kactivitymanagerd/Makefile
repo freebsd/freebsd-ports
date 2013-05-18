@@ -2,7 +2,6 @@
 
 PORTNAME=	kactivitymanagerd
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -25,7 +24,7 @@ MAKE_JOBS_SAFE=	yes
 DISTINFO_FILE=	${.CURDIR}/../kactivities/distinfo
 
 # https://bugs.kde.org/show_bug.cgi?id=305529#c10
-CMAKE_ARGS+=    -DCMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS=-rdynamic
+CMAKE_ARGS+=	-DCMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS=-rdynamic
 
 # 'USES= moderncompiler' would help, for now force dependence on gcc
 USE_GCC=	4.6+

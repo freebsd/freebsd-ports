@@ -345,6 +345,7 @@ share/config/katemoderc
 share/config/katerc
 share/config/kateschemarc
 share/config/katesyntaxhighlightingrc
+share/config/ktexteditor_codesnippets_core.knsrc
 share/doc/HTML/en/kate/advanced.docbook
 share/doc/HTML/en/kate/comma-to.png
 share/doc/HTML/en/kate/common
@@ -445,7 +446,6 @@ share/kde4/servicetypes/kateplugin.desktop
 @dirrm share/apps/kate/plugins/katesymbolviewer
 @dirrm share/apps/kate/plugins/katesql
 @dirrm share/apps/kate/plugins/katesearch
-@dirrm share/apps/kate/plugins/katequickdocumentswitcher
 @dirrm share/apps/kate/plugins/kateopenheader
 @dirrm share/apps/kate/plugins/katemailfiles
 @dirrm share/apps/kate/plugins/katekonsole

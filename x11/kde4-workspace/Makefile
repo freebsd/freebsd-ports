@@ -2,7 +2,6 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -72,14 +71,15 @@ USE_RC_SUBR=	kdm4
 USERS=		kdm
 GROUPS=		kdm
 
-OPTIONS_DEFINE=	GPS UPOWER WALLPAPERS
+OPTIONS_DEFINE=	GPS KACTIVITY UPOWER WALLPAPERS
 OPTIONS_GROUP=	PHONON PLASMA
 OPTIONS_GROUP_PHONON=	GSTREAMER VLC
 OPTIONS_GROUP_PLASMA=	PYTHON RUBY
-OPTIONS_DEFAULT=GPS GSTREAMER UPOWER WALLPAPERS
+OPTIONS_DEFAULT=GPS GSTREAMER KACTIVITY UPOWER WALLPAPERS
 
 GPS_DESC=	GPS geolocation via gpsd
 GSTREAMER_DESC=	Multimedia via Phonon-GStreamer
+KACTIVITY_DESC=	Activity Manager daemon
 PYTHON_DESC=	Python plasmoids support
 RUBY_DESC=	Ruby plasmoids support
 UPOWER_DESC=	Power management via UPower
@@ -100,6 +100,10 @@ PLIST_SUB+=	GPS="@comment "
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER+=	core
 USE_QT4+=	phonon-gst_run
+.endif
+
+.if ${PORT_OPTIONS:MKACTIVITY}
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kactivitymanagerd:${PORTSDIR}/x11/kactivitymanagerd
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -124,6 +128,10 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/share/wallpapers/Horos/metadata.desktop:${PORTSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
+.endif
 
 .if ${OSVERSION} < 900004
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter

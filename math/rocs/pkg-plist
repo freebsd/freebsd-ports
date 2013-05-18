@@ -49,7 +49,6 @@ share/apps/rocs/icons/hicolor/16x16/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsselectmove.png
-share/apps/rocs/icons/hicolor/16x16/apps/rocs.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsaddedge.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsaddnode.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsalignbottom.png
@@ -72,7 +71,6 @@ share/apps/rocs/icons/hicolor/32x32/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsselectmove.png
-share/apps/rocs/icons/hicolor/32x32/apps/rocs.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaddedge.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsalignbottom.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaligncircle.png
@@ -83,7 +81,6 @@ share/apps/rocs/icons/hicolor/48x48/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsselectmove.png
-share/apps/rocs/icons/hicolor/48x48/apps/rocs.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaddedge.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsalignbottom.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaligncircle.png
@@ -135,6 +132,9 @@ share/doc/HTML/en/rocs/rocs-interfaces.png
 share/doc/HTML/en/rocs/rocs-screenshot.png
 share/doc/HTML/en/rocs/rocs-toolbar-alignment.png
 share/doc/HTML/en/rocs/rocs-toolbar-main.png
+share/icons/hicolor/16x16/apps/rocs.png
+share/icons/hicolor/32x32/apps/rocs.png
+share/icons/hicolor/48x48/apps/rocs.png
 share/kde4/services/rocs_GraphStructure.desktop
 share/kde4/services/rocs_ListStructure.desktop
 share/kde4/services/rocs_RootedTreeStructure.desktop
@@ -155,15 +155,12 @@ share/kde4/servicetypes/RocsToolsPlugin.desktop
 @dirrm share/apps/rocs/icons/hicolor/scalable
 @dirrm share/apps/rocs/icons/hicolor/64x64/actions
 @dirrm share/apps/rocs/icons/hicolor/64x64
-@dirrm share/apps/rocs/icons/hicolor/48x48/apps
 @dirrm share/apps/rocs/icons/hicolor/48x48/actions
 @dirrm share/apps/rocs/icons/hicolor/48x48
-@dirrm share/apps/rocs/icons/hicolor/32x32/apps
 @dirrm share/apps/rocs/icons/hicolor/32x32/actions
 @dirrm share/apps/rocs/icons/hicolor/32x32
 @dirrm share/apps/rocs/icons/hicolor/22x22/actions
 @dirrm share/apps/rocs/icons/hicolor/22x22
-@dirrm share/apps/rocs/icons/hicolor/16x16/apps
 @dirrm share/apps/rocs/icons/hicolor/16x16/actions
 @dirrm share/apps/rocs/icons/hicolor/16x16
 @dirrm share/apps/rocs/icons/hicolor

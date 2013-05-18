@@ -716,6 +716,7 @@ share/icons/hicolor/128x128/apps/kmail.png
 share/icons/hicolor/128x128/apps/knode.png
 share/icons/hicolor/128x128/apps/knotes.png
 share/icons/hicolor/128x128/apps/konsolekalendar.png
+share/icons/hicolor/128x128/apps/kontact-import-wizard.png
 share/icons/hicolor/128x128/apps/kontact.png
 share/icons/hicolor/128x128/apps/korg-journal.png
 share/icons/hicolor/128x128/apps/korg-todo.png
@@ -768,6 +769,7 @@ share/icons/hicolor/22x22/apps/ktimetracker.png
 share/icons/hicolor/256x256/apps/akonadiconsole.png
 share/icons/hicolor/256x256/apps/akregator.png
 share/icons/hicolor/256x256/apps/kleopatra.png
+share/icons/hicolor/256x256/apps/kontact-import-wizard.png
 share/icons/hicolor/32x32/actions/upload-media.png
 share/icons/hicolor/32x32/apps/akonadiconsole.png
 share/icons/hicolor/32x32/apps/akregator.png
@@ -813,6 +815,7 @@ share/icons/hicolor/64x64/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/kmail.png
 share/icons/hicolor/64x64/apps/knode.png
 share/icons/hicolor/64x64/apps/knotes.png
+share/icons/hicolor/64x64/apps/kontact-import-wizard.png
 share/icons/hicolor/64x64/apps/kontact.png
 share/icons/hicolor/64x64/apps/korg-journal.png
 share/icons/hicolor/64x64/apps/korg-todo.png
@@ -825,6 +828,7 @@ share/icons/hicolor/scalable/apps/kleopatra.svgz
 share/icons/hicolor/scalable/apps/kmail.svgz
 share/icons/hicolor/scalable/apps/knode.svgz
 share/icons/hicolor/scalable/apps/knotes.svgz
+share/icons/hicolor/scalable/apps/kontact-import-wizard.svgz
 share/icons/hicolor/scalable/apps/kontact.svgz
 share/icons/hicolor/scalable/apps/korg-journal.svgz
 share/icons/hicolor/scalable/apps/korg-todo.svgz

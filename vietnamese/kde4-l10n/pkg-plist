@@ -35,7 +35,6 @@ share/locale/vi/LC_MESSAGES/kbounce.mo
 share/locale/vi/LC_MESSAGES/kcm_attica.mo
 share/locale/vi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/vi/LC_MESSAGES/kcm_emoticons.mo
-share/locale/vi/LC_MESSAGES/kcm_krfb.mo
 share/locale/vi/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/vi/LC_MESSAGES/kcm_phonon.mo
 share/locale/vi/LC_MESSAGES/kcm_platform.mo
@@ -109,7 +108,6 @@ share/locale/vi/LC_MESSAGES/khotnewstuff.mo
 share/locale/vi/LC_MESSAGES/khtmlkttsd.mo
 share/locale/vi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/vi/LC_MESSAGES/kiconfinder.mo
-share/locale/vi/LC_MESSAGES/kinetd.mo
 share/locale/vi/LC_MESSAGES/kinfocenter.mo
 share/locale/vi/LC_MESSAGES/kio4.mo
 share/locale/vi/LC_MESSAGES/kio_applications.mo
