@@ -69,17 +69,16 @@ bin/capitalism
 %%DATADIR%%/images/tools/sellhouserow.png
 %%DATADIR%%/images/tools/trade.png
 %%DATADIR%%/images/tools/unmortage.png
-%%DATADIR%%/ts/Capid_de.trans
-%%DATADIR%%/ts/Capitalism_de.qm
-%%DATADIR%%/ts/Capitalism_de.ts
-%%DATADIR%%/ts/Capitalism_es.qm
-%%DATADIR%%/ts/Capitalism_es.ts
-%%DATADIR%%/ts/Capitalism_fi.qm
-%%DATADIR%%/ts/Capitalism_fi.ts
-%%DATADIR%%/ts/Capitalism_it.ts
-%%DATADIR%%/ts/Capitalism_pl.qm
-%%DATADIR%%/ts/Capitalism_pl.ts
-%%DATADIR%%/ts/Capitalism_ru.ts
+%%NLS%%%%DATADIR%%/ts/Capid_de.trans
+%%NLS%%%%DATADIR%%/ts/Capitalism_de.qm
+%%NLS%%%%DATADIR%%/ts/Capitalism_de.ts
+%%NLS%%%%DATADIR%%/ts/Capitalism_es.qm
+%%NLS%%%%DATADIR%%/ts/Capitalism_es.ts
+%%NLS%%%%DATADIR%%/ts/Capitalism_fi.qm
+%%NLS%%%%DATADIR%%/ts/Capitalism_fi.ts
+%%NLS%%%%DATADIR%%/ts/Capitalism_it.ts
+%%NLS%%%%DATADIR%%/ts/Capitalism_pl.qm
+%%NLS%%%%DATADIR%%/ts/Capitalism_pl.ts
 share/icons/hicolor/16x16/apps/capitalism.png
 share/icons/hicolor/22x22/apps/capitalism.png
 share/icons/hicolor/24x24/apps/capitalism.png
@@ -87,21 +86,7 @@ share/icons/hicolor/32x32/apps/capitalism.png
 share/icons/hicolor/48x48/apps/capitalism.png
 share/icons/hicolor/64x64/apps/capitalism.png
 share/pixmaps/capitalism.png
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/ts
+%%NLS%%@dirrm %%DATADIR%%/ts
 @dirrm %%DATADIR%%/images/tools
 @dirrm %%DATADIR%%/images/smilies
 @dirrm %%DATADIR%%/images/menu
