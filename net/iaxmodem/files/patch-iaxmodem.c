@@ -49,3 +49,20 @@
  #include <tiffio.h>
  
  #ifndef O_LARGEFILE
+@@ -1645,8 +1666,6 @@
+ 	}
+       }
+ 
+-    closedir(cfdir);
+-
+     if (pid == 0) {
+       /* Start the modem */
+       iaxmodem(config, 0);
+@@ -1654,6 +1673,8 @@
+       return 1;
+     }
+ 
++    closedir(cfdir);
++
+     return 0;
+ }
