@@ -13,10 +13,6 @@ COMMENT=	A Squid Report Generator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
