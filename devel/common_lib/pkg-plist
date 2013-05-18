@@ -1,0 +1,44 @@
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_application.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_bin.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_binary.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_calendar.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_consumer.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_csv.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_dqueue.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_lists.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_math.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_pool.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_queue.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_queue_srv.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_queue_tab.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_stats.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_string.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_timer.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_timer_srv.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/cl_url.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/common_lib.app
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/common_lib.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin/common_lib_sup.beam
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_application.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_bin.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_binary.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_calendar.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_consumer.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_csv.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_dqueue.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_lists.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_math.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_pool.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_queue.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_queue_srv.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_queue_tab.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_stats.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_string.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_timer.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_timer_srv.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/cl_url.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/common_lib.erl
+%%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src/common_lib_sup.erl
+@dirrm %%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/common_lib-%%VERSION%%

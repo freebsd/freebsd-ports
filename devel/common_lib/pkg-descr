@@ -1,0 +1,4 @@
+common_lib is a library of Erlang functions used by oserl and other
+projects.
+
+WWW: https://github.com/iamaleksey/common_lib
