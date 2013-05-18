@@ -4,7 +4,10 @@
 PORTNAME=	netembryo
 PORTVERSION=	0.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://lscube.org/files/downloads/netembryo/
+MASTER_SITES=		${MASTER_SITE_LOCAL} \
+			http://pkgs.fedoraproject.org/repo/pkgs/netembryo/netembryo-0.1.1.tar.bz2/d5a3c96b37fe3e4fb1c49df1f7a4a16f/ \
+			http://lscube.org/files/downloads/netembryo/
+MASTER_SITE_SUBDIR=	rakuco
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network abstraction library used by for feng, libnemesi, felix
@@ -13,8 +16,6 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
-
-BROKEN=		Does not fetch
 
 USE_BZIP2=	yes
 USES=		pathfix pkgconfig
