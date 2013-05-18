@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	checkmol
-PORTVERSION=	0.4e
+PORTVERSION=	0.5
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 DISTNAME=	${PORTNAME}
