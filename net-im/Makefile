@@ -195,6 +195,7 @@
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += xfce4-messenger-plugin
+    SUBDIR += yoono
     SUBDIR += ysm
     SUBDIR += zephyr
 
