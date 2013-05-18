@@ -1,13 +1,9 @@
-# Ports collection makefile for:		squeezeboxserver
-# Date created:					Wed Apr 14, 2004
-# Whom:						Brooks Davis <brooks@freebsd.org>
-#
+# Created by: Brooks Davis <brooks@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -174,12 +170,16 @@ post-patch:
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|g' \
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's/skip-locking/skip-external-locking/' \
 		-e 's/default-character-set/character-set-server/'\
-		-e 's/table_cache/table_open_cache/'\
 		-e 's/default-collation/collation-server/'  ${WRKSRC}/MySQL/my.tt
-	${REINPLACE_CMD} \
+# table_open_cache was known as table_cache in MySQL 5.1.2 and earlier
+	@if [ "$(MYSQL_VER)" != "50" ] ; then \
+		${REINPLACE_CMD} \
+			-e 's/table_cache/table_open_cache/' ${WRKSRC}/MySQL/my.tt ;\
+	fi
+	@${REINPLACE_CMD} \
 		-e 's/TYPE=InnoDB/ENGINE=InnoDB/' ${WRKSRC}/SQL/mysql/schema_*.sql
 
 do-build:
