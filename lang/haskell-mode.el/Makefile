@@ -1,40 +1,46 @@
-# New ports collection makefile for:	haskell-mode.el
-# Date created:		5 March 2004
-# Whom:			Josh Elsasser <jre@vineyard.net>
-#
+# Created by: Josh Elsasser <jre@vineyard.net>
 # $FreeBSD$
-#
 
 PORTNAME=	haskell-mode
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://projects.haskell.org/haskellmode-emacs/
 
 MAINTAINER=	umq@ueo.co.jp
-COMMENT=	An Emacs lisp mode for editing haskell programs
-
-NO_BUILD=	yes
+COMMENT=	Emacs lisp mode for editing haskell programs
 
 LICENSE=	GPLv3
-PORTDOCS=	ChangeLog NEWS fontlock.hs indent.hs README
+
+OPTIONS_DEFINE=	DOCS
+
+GH_ACCOUNT=	haskell
+GH_COMMIT=	166ec39
+GH_TAGNAME=	${PORTVERSION:S/./_/g}
+NO_BUILD=	yes
+PORTDOCS=	NEWS fontlock.hs indent.hs README.md
+USE_GITHUB=	yes
 
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
-ELISPFILES=	ghc-core.el haskell-c.el haskell-cabal.el haskell-decl-scan.el \
+ELISPFILES=	ghc-core.el haskell-align-imports.el haskell-c.el \
+		haskell-cabal.el haskell-checkers.el haskell-decl-scan.el \
 		haskell-doc.el haskell-font-lock.el haskell-ghci.el \
 		haskell-hugs.el haskell-indent.el haskell-indentation.el \
-		haskell-mode.el haskell-simple-indent.el haskell-site-file.el \
-		inf-haskell.el
+		haskell-interactive-mode.el haskell-mode.el \
+		haskell-move-nested.el  haskell-navigate-imports.el \
+		haskell-package.el haskell-process.el haskell-session.el \
+		haskell-show.el haskell-simple-indent.el haskell-site-file.el \
+		haskell-sort-imports.el haskell-string.el inf-haskell.el
 
 PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
 PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
 do-install:
 	@${MKDIR} ${ELISPDIR}
 	@${INSTALL_DATA} ${ELISPFILES:S,^,${WRKSRC}/,} ${ELISPDIR}/
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
