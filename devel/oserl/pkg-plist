@@ -1,0 +1,48 @@
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/gen_esme.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/gen_esme_session.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/gen_mc.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/gen_mc_session.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/oserl.app
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_base.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_base_syntax.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_disk_log_hlr.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_error.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_log_mgr.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_operation.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_param_syntax.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_pdu_syntax.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_ref_num.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_req_tab.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_session.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_sm.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin/smpp_tty_log_hlr.beam
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/include/e164.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/include/oserl.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/include/smpp_globals.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/gen_esme.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/gen_esme_session.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/gen_mc.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/gen_mc_session.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_base.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_base.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_base_syntax.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_base_syntax.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_disk_log_hlr.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_error.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_log_mgr.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_operation.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_param.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_param_syntax.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_param_syntax.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_pdu.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_pdu_syntax.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_pdu_syntax.hrl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_ref_num.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_req_tab.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_session.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_sm.erl
+%%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src/smpp_tty_log_hlr.erl
+@dirrm %%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/include
+@dirrm %%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/oserl-%%VERSION%%
