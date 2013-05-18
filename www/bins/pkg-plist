@@ -9,7 +9,6 @@ bin/bins_txt2xml
 %%DATADIR%%/templates.joi/imagenavbar.html
 %%DATADIR%%/templates.joi/navbar.html
 %%DATADIR%%/templates.joi/path.html
-%%DATADIR%%/templates.joi/static
 %%DATADIR%%/templates.joi/static/actthumb.png
 %%DATADIR%%/templates.joi/static/actthumb.png.bak
 %%DATADIR%%/templates.joi/static/albumtree.png
@@ -154,7 +153,6 @@ bin/bins_txt2xml
 %%DATADIR%%/templates.martin/imagenavbar.html
 %%DATADIR%%/templates.martin/navbar.html
 %%DATADIR%%/templates.martin/path.html
-%%DATADIR%%/templates.martin/static
 %%DATADIR%%/templates.martin/static/actthumb.png
 %%DATADIR%%/templates.martin/static/actthumb.png.bak
 %%DATADIR%%/templates.martin/static/albumtree.png
@@ -235,7 +233,6 @@ bin/bins_txt2xml
 %%DATADIR%%/templates.mwolson/imagelist.html
 %%DATADIR%%/templates.mwolson/navbar.html
 %%DATADIR%%/templates.mwolson/path.html
-%%DATADIR%%/templates.mwolson/static
 %%DATADIR%%/templates.mwolson/static/style.css
 %%DATADIR%%/templates.mwolson/static/style.css.bak
 %%DATADIR%%/templates.mwolson/subalbum.html
@@ -250,7 +247,6 @@ bin/bins_txt2xml
 %%DATADIR%%/templates.petrus/moreinfos.html
 %%DATADIR%%/templates.petrus/navbar.html
 %%DATADIR%%/templates.petrus/path.html
-%%DATADIR%%/templates.petrus/static
 %%DATADIR%%/templates.petrus/static/actthumb.png
 %%DATADIR%%/templates.petrus/static/actthumb.png.bak
 %%DATADIR%%/templates.petrus/static/albumtree.png
@@ -325,7 +321,6 @@ bin/bins_txt2xml
 %%DATADIR%%/templates.satyap/imagelist.html
 %%DATADIR%%/templates.satyap/navbar.html
 %%DATADIR%%/templates.satyap/path.html
-%%DATADIR%%/templates.satyap/static
 %%DATADIR%%/templates.satyap/static/style.css
 %%DATADIR%%/templates.satyap/static/style.css.bak
 %%DATADIR%%/templates.satyap/subalbum.html
@@ -428,5 +423,4 @@ share/locale/zh_TW/LC_MESSAGES/bins.mo
 @dirrm %%DATADIR%%/templates.marc
 @dirrm %%DATADIR%%/templates.joi/static
 @dirrm %%DATADIR%%/templates.joi
-@dirrm %%DATADIR%%/templates.default
 @dirrm %%DATADIR%%
