@@ -1346,6 +1346,7 @@
     SUBDIR += orbitcpp
     SUBDIR += orc
     SUBDIR += osc
+    SUBDIR += oserl
     SUBDIR += ossp-al
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
