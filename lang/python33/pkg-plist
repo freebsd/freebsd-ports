@@ -634,6 +634,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_values.cpython-33.pyo
 %%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_varsize_struct.cpython-33.pyc
 %%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_varsize_struct.cpython-33.pyo
+%%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_wintypes.cpython-33.pyc
+%%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_wintypes.cpython-33.pyo
 %%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_win32.cpython-33.pyc
 %%PYTHON_LIBDIR%%/ctypes/test/__pycache__/test_win32.cpython-33.pyo
 %%PYTHON_LIBDIR%%/ctypes/test/runtests.py
@@ -688,6 +690,7 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/ctypes/test/test_unicode.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_values.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_varsize_struct.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_wintypes.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_win32.py
 %%PYTHON_LIBDIR%%/ctypes/util.py
 %%PYTHON_LIBDIR%%/ctypes/wintypes.py
@@ -3069,6 +3072,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_xml_etree.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_xml_etree_c.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_xml_etree_c.cpython-33.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_xml_dom_minicompat.cpython-33.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_xml_dom_minicompat.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_xmlrpc.cpython-33.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_xmlrpc.cpython-33.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_xmlrpc_net.cpython-33.pyc
@@ -4060,6 +4065,7 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/test/test_xdrlib.py
 %%PYTHON_LIBDIR%%/test/test_xml_etree.py
 %%PYTHON_LIBDIR%%/test/test_xml_etree_c.py
+%%PYTHON_LIBDIR%%/test/test_xml_dom_minicompat.py
 %%PYTHON_LIBDIR%%/test/test_xmlrpc.py
 %%PYTHON_LIBDIR%%/test/test_xmlrpc_net.py
 %%PYTHON_LIBDIR%%/test/test_webbrowser.py

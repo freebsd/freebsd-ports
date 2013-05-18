@@ -3897,7 +3897,6 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_zipimport.py
 %%PYTHON_LIBDIR%%/test/test_zipimport_support.py
 %%PYTHON_LIBDIR%%/test/test_zlib.py
-%%PYTHON_LIBDIR%%/test/testbz2_bigmem.bz2
 %%PYTHON_LIBDIR%%/test/testcodec.py
 %%PYTHON_LIBDIR%%/test/testtar.tar
 %%PYTHON_LIBDIR%%/test/tf_inherit_check.py
