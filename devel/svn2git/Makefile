@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	svn2git
-DISTVERSION=	1.0.8
+DISTVERSION=	1.0.9
 CATEGORIES=	devel kde
 MASTER_SITES=	LOCAL/dbn/svn2git
 
