@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eina
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/

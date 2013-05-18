@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eet
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
