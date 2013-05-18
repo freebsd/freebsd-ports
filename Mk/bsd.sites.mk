@@ -736,6 +736,7 @@ MASTER_SITE_KDE+= \
 
 .if !defined(IGNORE_MASTER_SITE_LOGILAB)
 MASTER_SITE_LOGILAB+= \
+	http://download.logilab.org/pub/%SUBDIR%/ \
 	http://ftp.logilab.org/pub/%SUBDIR%/ \
 	ftp://ftp.logilab.org/pub/%SUBDIR%/ \
 	ftp://ftp.logilab.fr/pub/%SUBDIR%/
