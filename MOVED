@@ -4266,3 +4266,4 @@ science/py-obspy.wav||2013-05-17|Removed: Use science/py-obspy instead
 science/py-obspy.xseed||2013-05-17|Removed: Use science/py-obspy instead
 science/py-obspy-core|science/py-obspy|2013-05-17|Use science/py-obspy instead
 mail/sendmail-ldap|mail/sendmail|2013-05-17|Removed: Use mail/sendmail instead
+databases/innobackup|databases/xtrabackup|2013-05-18|Removed: Use databases/xtrabackup instead
