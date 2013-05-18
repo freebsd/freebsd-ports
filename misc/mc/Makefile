@@ -2,14 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.1.7
+PORTVERSION=	4.8.8
 PORTREVISION=	0
 CATEGORIES=	misc shells
-#MASTER_SITES=	http://www.midnight-commander.org/downloads/
-#MASTER_SITE_SUBDIR=	utils/file/managers/mc
-MASTER_SITES=	${MASTER_SITE_LOCAL}\
-		http://people.freebsd.org/~fjoe/
-MASTER_SITE_SUBDIR=	fjoe
+MASTER_SITES=	http://ftp.osuosl.org/pub/midnightcommander/
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
@@ -26,6 +22,8 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${UNZIP_CMD} UNZIP=${UNZIP_CMD}
 USE_AUTOTOOLS=	libtool
+
+PORTDATA=	*
 
 OPTIONS=	SLANG		"Build with SLang library" on \
 		ICONV		"Build with iconv recoding" on \
@@ -48,10 +46,8 @@ CONFIGURE_ARGS+=--enable-vfs-smb --with-configdir=${LOCALBASE}/etc\
 
 .if defined(WITH_ICONV) || !(defined(WITHOUT_ICONV) || defined(MINIMAL))
 USES+=		iconv
-PLIST_SUB=	CHARSETS=""
 .else
 CONFIGURE_ARGS+=--disable-charset
-PLIST_SUB=	CHARSETS="@comment "
 .endif
 
 .if !defined(WITH_NLS) && (defined(WITHOUT_NLS) || defined(MINIMAL))
