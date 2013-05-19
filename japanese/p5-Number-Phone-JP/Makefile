@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Number-Phone-JP
-PORTVERSION=	0.20130401
+PORTVERSION=	0.20130501
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TANIGUCHI
 PKGNAMEPREFIX=	ja-p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Perl5 module to validate Japanese phone numbers
 
 LICENSE=	ART10 GPLv1
