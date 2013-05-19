@@ -3185,6 +3185,7 @@
     SUBDIR += pear-channel-horde
     SUBDIR += pear-channel-openpear
     SUBDIR += pear-channel-pdepend
+    SUBDIR += pear-channel-phing
     SUBDIR += pear-channel-phpmd
     SUBDIR += pear-channel-phpunit
     SUBDIR += pear-channel-pirum
