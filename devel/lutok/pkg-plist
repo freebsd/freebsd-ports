@@ -1,0 +1,17 @@
+include/lutok/c_gate.hpp
+include/lutok/debug.hpp
+include/lutok/exceptions.hpp
+include/lutok/operations.hpp
+include/lutok/stack_cleaner.hpp
+include/lutok/state.hpp
+include/lutok/state.ipp
+include/lutok/test_utils.hpp
+lib/liblutok.a
+lib/liblutok.la
+lib/liblutok.so
+lib/liblutok.so.1
+libdata/pkgconfig/lutok.pc
+@exec mkdir -p %D/tests/lutok
+@dirrm tests/lutok
+@dirrmtry tests
+@dirrm include/lutok
