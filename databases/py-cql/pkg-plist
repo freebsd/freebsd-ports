@@ -31,5 +31,20 @@
 %%PYTHON_SITELIBDIR%%/cql/cassandra/ttypes.pyo
 %%PYTHON_SITELIBDIR%%/cql/cassandra/Cassandra.py
 %%PYTHON_SITELIBDIR%%/cql/cassandra/Cassandra.pyc
+%%PYTHON_SITELIBDIR%%/cql/query.pyo
+%%PYTHON_SITELIBDIR%%/cql/native.pyc
+%%PYTHON_SITELIBDIR%%/cql/cqltypes.pyo
+%%PYTHON_SITELIBDIR%%/cql/thrifteries.pyo
+%%PYTHON_SITELIBDIR%%/cql/apivalues.pyo
+%%PYTHON_SITELIBDIR%%/cql/query.py
+%%PYTHON_SITELIBDIR%%/cql/thrifteries.py
+%%PYTHON_SITELIBDIR%%/cql/query.pyc
+%%PYTHON_SITELIBDIR%%/cql/apivalues.py
+%%PYTHON_SITELIBDIR%%/cql/native.pyo
+%%PYTHON_SITELIBDIR%%/cql/cqltypes.pyc
+%%PYTHON_SITELIBDIR%%/cql/thrifteries.pyc
+%%PYTHON_SITELIBDIR%%/cql/apivalues.pyc
+%%PYTHON_SITELIBDIR%%/cql/cqltypes.py
+%%PYTHON_SITELIBDIR%%/cql/native.py
 @dirrm %%PYTHON_SITELIBDIR%%/cql/cassandra
 @dirrm %%PYTHON_SITELIBDIR%%/cql
