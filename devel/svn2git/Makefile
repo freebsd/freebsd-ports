@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	svn2git
-DISTVERSION=	1.0.9
+DISTVERSION=	1.0.10
 CATEGORIES=	devel kde
-MASTER_SITES=	LOCAL/dbn/svn2git
+MASTER_SITES=	LOCAL/dbn/${PORTNAME}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Imports svn repositories into git
