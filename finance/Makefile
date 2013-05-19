@@ -163,6 +163,7 @@
     SUBDIR += trytond_stock_supply
     SUBDIR += trytond_stock_supply_day
     SUBDIR += trytond_stock_supply_forecast
+    SUBDIR += trytond_stock_supply_production
     SUBDIR += trytond_timesheet
     SUBDIR += venice
     SUBDIR += weberp
