@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	rapidsvn
-PORTVERSION=	0.12.0
-PORTREVISION=	3
+PORTVERSION=	0.12.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.rapidsvn.org/download/release/0.12/
-DISTNAME=	${PORTNAME}-0.12.0-1
+MASTER_SITES=	http://www.rapidsvn.org/download/release/0.12.1/
+DISTNAME=	${PORTNAME}-0.12.1
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
-BUILD_DEPENDS=	neon-config:${PORTSDIR}/www/neon29 \
-		svn:${PORTSDIR}/devel/subversion \
+BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
 
@@ -31,19 +29,18 @@ CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \
 	--with-svn-include=${LOCALBASE}/include \
 	--with-svn-lib=${LOCALBASE}/lib \
-	--with-neon-config=neon-config \
 	--with-xsltproc=xsltproc \
 	--with-docbook-xsl-manpages=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl \
 	--program-prefix="" \
+	--with-doxygen=no \
 	--with-manpage=yes
 
 USE_LDCONFIG=	yes
 MAN1=		rapidsvn.1
 AUTOTOOLSFILES=	aclocal.m4
 
-post-configure:
-	@${FIND} ${WRKSRC} -name Makefile -print | \
-		${XARGS} ${REINPLACE_CMD} -e 's|MKDIR_P|mkdir_p|'
+pre-configure:
+	@cd ${WRKSRC} && ${AUTORECONF}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/manpage/rapidsvn.1 ${MAN1PREFIX}/man/man1/
