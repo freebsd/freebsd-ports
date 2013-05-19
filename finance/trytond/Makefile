@@ -1,18 +1,14 @@
-# New ports collection makefile for:	trytond
-# Date created:		09 July, 2009
-# Whom:			Wen Heping<wenheping@gmail.com>
-#
+# Created by: Wen Heping<wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	trytond
-PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTVERSION=	2.4.5
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads2.tryton.org/${PORTVERSION:R}/
+MASTER_SITES=	http://downloads2.tryton.org/${PORTVERSION:R}/ \
+		http://downloads2.tryton.org/${PORTVERSION:R}/
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A three-tiers high-level general purpose application platform
+MAINTAINER=	matthias@petermann.it
+COMMENT=	Tryton Application Platform (Server)
 
 LICENSE=	GPLv3
 
@@ -23,6 +19,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_PKGNAMEPREFIX}relatorio>=0.2.0:${PORTSDIR}/print/py-relatorio \
 		${PYTHON_PKGNAMEPREFIX}polib>=0.7.0:${PORTSDIR}/devel/py-polib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+CONFLICTS=	trytond-2.[68].*
 
 USERS=		trytond
 GROUPS=		trytond
