@@ -47,7 +47,7 @@ lib/libtarantoolsql.so
 lib/libtarantool.so.1.1
 lib/libtarantoolrpl.a
 lib/libtarantool.so
-%%DOCSDIR%%/README
+%%DOCSDIR%%/README.md
 %%DOCSDIR%%/box-protocol.txt
 %%DOCSDIR%%/LICENSE
 @dirrm %%DOCSDIR%%
