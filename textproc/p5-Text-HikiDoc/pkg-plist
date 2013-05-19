@@ -6,11 +6,9 @@
 %%SITE_PERL%%/Text/HikiDoc/Plugin/ins.pm
 %%SITE_PERL%%/Text/HikiDoc/Plugin/sub.pm
 %%SITE_PERL%%/Text/HikiDoc/Plugin/sup.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/syntaxhighlighter.pm
 %%SITE_PERL%%/Text/HikiDoc/Plugin/texthighlight.pm
 %%SITE_PERL%%/Text/HikiDoc/Plugin/vimcolor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/HikiDoc/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/HikiDoc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/HikiDoc/Plugin
 @dirrm %%SITE_PERL%%/Text/HikiDoc
 @dirrmtry %%SITE_PERL%%/Text
