@@ -14,6 +14,8 @@ LIB_DEPENDS=	cvm-v2client:${PORTSDIR}/security/cvm
 
 OPTIONS_DEFINE=	LUA
 
+OPTIONS_DEFAULT=	LUA
+
 USES=		qmail:vars
 
 CFLAGS+=	-I${CVM_INC}
