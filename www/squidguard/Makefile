@@ -71,6 +71,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid33
 
 .if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--with-ldap
+LDFLAGS+=		-L${LOCALBASE}/lib
 USE_OPENLDAP=		yes
 .else
 CONFIGURE_ARGS+=	--without-ldap
