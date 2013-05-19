@@ -1,13 +1,8 @@
-# New ports collection makefile for:    pdfgrep
-# Date created:                         2010-11-28
-# Whom:                                 Michael Ranner <michael@ranner.eu>
-#
+# Created by: Michael Ranner <michael@ranner.eu>
 # $FreeBSD$
-#
 
 PORTNAME=	pdfgrep
-PORTVERSION=	1.1
-PORTREVISION=	4
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +10,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	michael@ranner.eu
 COMMENT=	A tool to search text in PDF files
 
-LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
-
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
