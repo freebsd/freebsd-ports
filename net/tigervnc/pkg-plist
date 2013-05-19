@@ -3,6 +3,7 @@ bin/vncconfig
 bin/vncpasswd
 bin/vncserver
 %%VIEWER%%bin/vncviewer
+%%VIEWER%%share/icons/hicolor/scalable/apps/tigervnc.svg
 bin/x0vncserver
 lib/xorg/modules/extensions/libvnc.la
 lib/xorg/modules/extensions/libvnc.so
@@ -19,3 +20,7 @@ lib/xorg/modules/extensions/libvnc.so
 @dirrmtry lib/xorg/modules/extensions
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
+%%VIEWER%%@dirrmtry share/icons/hicolor/scalable/apps
+%%VIEWER%%@dirrmtry share/icons/hicolor/scalable
+%%VIEWER%%@dirrmtry share/icons/hicolor
+%%VIEWER%%@dirrmtry share/icons

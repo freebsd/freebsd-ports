@@ -3,7 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
@@ -12,9 +12,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:tigervnc
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	TigerVNC is an advanced VNC implementation
 
+LISENCE=	GPLv2
+LISENCE_FILE=	${WRKSRC}/LICENCE.TXT
+
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-servers/xorg-server:patch
-BUILD_DEPENDS+=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
+# almost equivalent to x11-servers/xorg-server's
+RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
+		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 CONFLICTS=	tridiavnc-[0-9]* \
 		tightvnc-[0-9]* \
@@ -33,7 +37,7 @@ USE_OPENSSL=	yes
 USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto \
 		inputproto kbproto pixman randrproto renderproto resourceproto \
 		scrnsaverproto videoproto xau xdmcp xext xkbfile xcmiscproto xextproto \
-		xfont xproto xrandr xtrans xtst
+		xfont xproto xrandr xtrans xtst xorg-macros
 
 MAN1+=		vncpasswd.1 \
 		x0vncserver.1 \
@@ -84,6 +88,10 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 USE_XORG+=	xcursor xfixes xft xinerama
 MAN1+=		vncviewer.1
 PLIST_SUB+=	VIEWER=""
+INSTALLS_ICONS=	yes
+DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote desktop" \
+			"${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg" \
+			"vncviewer" "Network;" false
 .else
 PLIST_SUB+=	VIEWER="@comment "
 .endif
@@ -109,7 +117,6 @@ CONFIGURE_ARGS+=	\
 		--with-xkb-output=/var/lib/xkb \
 		--with-xkb-bin-directory=${PREFIX}/bin \
 		--with-serverconfig-path=${PREFIX}/lib/X11 \
-		--with-dri-driver-path=${PREFIX}/lib/dri \
 		--disable-selective-werror
 
 .include <bsd.port.pre.mk>
@@ -145,5 +152,9 @@ post-build:
 
 post-install:
 	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install
+.if ${PORT_OPTIONS:MVIEWER}
+	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps/
+	@cd ${WRKSRC}/media/ && ${INSTALL_DATA} icons/tigervnc.svg ${PREFIX}/share/icons/hicolor/scalable/apps/
+.endif
 
 .include <bsd.port.post.mk>
