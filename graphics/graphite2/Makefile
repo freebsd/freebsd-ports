@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphite2
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
 EXTRACT_SUFX=	.tgz
