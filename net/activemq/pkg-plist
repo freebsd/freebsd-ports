@@ -4,38 +4,39 @@
 @unexec if [ -d %%MQDB%% ]; then echo "You should remove %%MQDB%% if you don't need it any more."; fi
 lib/activemq/bin/activemq
 lib/activemq/bin/activemq-admin
+lib/activemq/bin/activemq.jar
 lib/activemq/bin/diag
-lib/activemq/bin/run.jar
+lib/activemq/bin/wrapper.jar
 lib/activemq/conf
 lib/activemq/data
 lib/activemq/example
+lib/activemq/lib/activemq-broker-%%PORTVERSION%%.jar
+lib/activemq/lib/activemq-client-%%PORTVERSION%%.jar
 lib/activemq/lib/activemq-console-%%PORTVERSION%%.jar
-lib/activemq/lib/activemq-core-%%PORTVERSION%%.jar
 lib/activemq/lib/activemq-jaas-%%PORTVERSION%%.jar
+lib/activemq/lib/activemq-kahadb-store-%%PORTVERSION%%.jar
+lib/activemq/lib/activemq-openwire-legacy-%%PORTVERSION%%.jar
 lib/activemq/lib/activemq-protobuf-1.1.jar
 lib/activemq/lib/activemq-rar.txt
+lib/activemq/lib/activemq-spring-%%PORTVERSION%%.jar
 lib/activemq/lib/activemq-web-%%PORTVERSION%%.jar
 lib/activemq/lib/camel/activemq-camel-%%PORTVERSION%%.jar
 lib/activemq/lib/camel/camel-core-%%CAMELVERSION%%.jar
 lib/activemq/lib/camel/camel-jms-%%CAMELVERSION%%.jar
 lib/activemq/lib/camel/camel-spring-%%CAMELVERSION%%.jar
-lib/activemq/lib/extra/activemq-leveldb-%%PORTVERSION%%.jar
+lib/activemq/lib/extra/activemq-leveldb-store-%%PORTVERSION%%.jar
 lib/activemq/lib/extra/commons-beanutils-core-1.8.0.jar
 lib/activemq/lib/extra/commons-configuration-1.6.jar
 lib/activemq/lib/extra/commons-digester-1.8.jar
-lib/activemq/lib/extra/guava-10.0.1.jar
-lib/activemq/lib/extra/guice-3.0.jar
-lib/activemq/lib/extra/guice-multibindings-3.0.jar
+lib/activemq/lib/extra/guava-12.0.jar
 lib/activemq/lib/extra/hadoop-core-1.0.0.jar
-lib/activemq/lib/extra/hawtbuf-1.9.jar
 lib/activemq/lib/extra/hawtbuf-proto-1.9.jar
-lib/activemq/lib/extra/hawtdispatch-1.11.jar
-lib/activemq/lib/extra/hawtdispatch-scala-1.11.jar
-lib/activemq/lib/extra/hawtdispatch-transport-1.11.jar
+lib/activemq/lib/extra/hawtdispatch-1.12.jar
+lib/activemq/lib/extra/hawtdispatch-scala-1.12.jar
+lib/activemq/lib/extra/hawtdispatch-transport-1.12.jar
 lib/activemq/lib/extra/hawtjni-runtime-1.6.jar
 lib/activemq/lib/extra/jackson-core-asl-1.9.2.jar
 lib/activemq/lib/extra/jackson-mapper-asl-1.9.2.jar
-lib/activemq/lib/extra/javax.inject-1.jar
 lib/activemq/lib/extra/jetty-6.1.26.jar
 lib/activemq/lib/extra/jetty-util-6.1.26.jar
 lib/activemq/lib/extra/jsp-2.1-6.1.14.jar
@@ -49,37 +50,46 @@ lib/activemq/lib/extra/leveldbjni-linux64-%%LVDBJNIVERSION%%.jar
 lib/activemq/lib/extra/leveldbjni-osx-%%LVDBJNIVERSION%%.jar
 lib/activemq/lib/extra/leveldbjni-win32-%%LVDBJNIVERSION%%.jar
 lib/activemq/lib/extra/leveldbjni-win64-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/mqtt-client-1.3.jar
-lib/activemq/lib/extra/scala-library-2.9.1.jar
+lib/activemq/lib/extra/mqtt-client-1.4.jar
+lib/activemq/lib/extra/scala-library-2.10.0.jar
 lib/activemq/lib/extra/servlet-api-2.5-20081211.jar
 lib/activemq/lib/extra/servlet-api-2.5-6.1.14.jar
 lib/activemq/lib/extra/snappy-java-1.0.3.jar
 lib/activemq/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
 lib/activemq/lib/geronimo-jms_1.1_spec-1.1.1.jar
 lib/activemq/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
+lib/activemq/lib/hawtbuf-1.9.jar
 lib/activemq/lib/jcl-over-slf4j-1.6.6.jar
-lib/activemq/lib/kahadb-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activeio-core-3.1.4.jar
-lib/activemq/lib/optional/activemq-optional-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-amqp-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-http-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-jdbc-store-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-leveldb-store-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-log4j-appender-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-mqtt-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-pool-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-spring-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-stomp-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-xmpp-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/commons-beanutils-1.8.3.jar
 lib/activemq/lib/optional/commons-codec-1.6.jar
 lib/activemq/lib/optional/commons-collections-3.2.1.jar
 lib/activemq/lib/optional/commons-dbcp-1.4.jar
 lib/activemq/lib/optional/commons-lang-2.6.jar
-lib/activemq/lib/optional/commons-net-3.1.jar
+lib/activemq/lib/optional/commons-net-3.2.jar
 lib/activemq/lib/optional/commons-pool-1.6.jar
 lib/activemq/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
-lib/activemq/lib/optional/httpclient-4.2.1.jar
-lib/activemq/lib/optional/httpcore-4.2.1.jar
+lib/activemq/lib/optional/httpclient-4.2.3.jar
+lib/activemq/lib/optional/httpcore-4.2.3.jar
 lib/activemq/lib/optional/jasypt-1.9.0.jar
 lib/activemq/lib/optional/jasypt-spring3-1.9.0.jar
-lib/activemq/lib/optional/jettison-1.3.2.jar
+lib/activemq/lib/optional/jettison-1.3.3.jar
 lib/activemq/lib/optional/jmdns-3.4.1.jar
 lib/activemq/lib/optional/log4j-1.2.17.jar
 lib/activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
+lib/activemq/lib/optional/proton-0.3.0-fuse-2.jar
+lib/activemq/lib/optional/proton-api-0.3.0-fuse-2.jar
+lib/activemq/lib/optional/proton-jms-0.3.0-fuse-2.jar
 lib/activemq/lib/optional/slf4j-log4j12-1.6.6.jar
 lib/activemq/lib/optional/spring-aop-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-asm-%%SPRINGVERSION%%.RELEASE.jar
@@ -93,26 +103,61 @@ lib/activemq/lib/optional/spring-tx-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/stax2-api-3.0.2.jar
 lib/activemq/lib/optional/velocity-1.7.jar
 lib/activemq/lib/optional/woodstox-core-asl-4.1.4.jar
-lib/activemq/lib/optional/xbean-spring-3.11.1.jar
+lib/activemq/lib/optional/xbean-spring-3.12.jar
 lib/activemq/lib/optional/xpp3-1.1.4c.jar
-lib/activemq/lib/optional/xstream-1.4.3.jar
+lib/activemq/lib/optional/xstream-1.4.4.jar
 lib/activemq/lib/slf4j-api-1.6.6.jar
 lib/activemq/lib/web/core-3.1.1.jar
 lib/activemq/lib/web/geronimo-servlet_2.5_spec-1.2.jar
 lib/activemq/lib/web/jdom-1.0.jar
 lib/activemq/lib/web/jetty-all-server-%%JETTYVERSION%%.jar
 lib/activemq/lib/web/jetty-websocket-%%JETTYVERSION%%.jar
+lib/activemq/lib/web/jolokia-core-1.0.6.jar
+lib/activemq/lib/web/json-simple-1.1.jar
 lib/activemq/lib/web/jsp-2.1-glassfish-2.1.v20100127.jar
 lib/activemq/lib/web/jsp-api-2.1-glassfish-2.1.v20100127.jar
 lib/activemq/lib/web/rome-1.0.jar
 lib/activemq/lib/web/sitemesh-2.4.2.jar
 lib/activemq/lib/web/spring-web-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/web/spring-webmvc-%%SPRINGVERSION%%.RELEASE.jar
+lib/activemq/webapps-demo/demo/META-INF/LICENSE
+lib/activemq/webapps-demo/demo/META-INF/NOTICE
+lib/activemq/webapps-demo/demo/WEB-INF/web.xml
+lib/activemq/webapps-demo/demo/chat.css
+lib/activemq/webapps-demo/demo/chat.html
+lib/activemq/webapps-demo/demo/index.html
+lib/activemq/webapps-demo/demo/js/amq.js
+lib/activemq/webapps-demo/demo/js/amq_dojo_adapter.js
+lib/activemq/webapps-demo/demo/js/amq_jquery_adapter.js
+lib/activemq/webapps-demo/demo/js/amq_prototype_adapter.js
+lib/activemq/webapps-demo/demo/js/chat.js
+lib/activemq/webapps-demo/demo/js/dojo.js
+lib/activemq/webapps-demo/demo/js/jquery-1.4.2.min.js
+lib/activemq/webapps-demo/demo/js/prototype.js
+lib/activemq/webapps-demo/demo/portfolio/portfolio.html
+lib/activemq/webapps-demo/demo/portfolio/portfolio.js
+lib/activemq/webapps-demo/demo/sandbox/index.html
+lib/activemq/webapps-demo/demo/sandbox/portfolio.html
+lib/activemq/webapps-demo/demo/sandbox/portfolio.js
+lib/activemq/webapps-demo/demo/sandbox/util.js
+lib/activemq/webapps-demo/demo/sandbox/webmq.js
+lib/activemq/webapps-demo/demo/send.html
+lib/activemq/webapps-demo/demo/style.css
+lib/activemq/webapps-demo/demo/test/amq_test.html
+lib/activemq/webapps-demo/demo/test/assets/README
+lib/activemq/webapps-demo/demo/test/assets/jsunittest.js
+lib/activemq/webapps-demo/demo/test/assets/unittest.css
+lib/activemq/webapps-demo/demo/websocket/chat.css
+lib/activemq/webapps-demo/demo/websocket/chat.js
+lib/activemq/webapps-demo/demo/websocket/index.html
+lib/activemq/webapps-demo/demo/websocket/stomp.js
 lib/activemq/webapps/admin/404.html
 lib/activemq/webapps/admin/500.html
 lib/activemq/webapps/admin/META-INF/LICENSE
 lib/activemq/webapps/admin/META-INF/NOTICE
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/WebConsoleStarter$OsgiUtil.class
 lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/WebConsoleStarter.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/config/OsgiConfiguration.class
 lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CopyMessage.class
 lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CreateDestination.class
 lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CreateSubscriber.class
@@ -148,6 +193,7 @@ lib/activemq/webapps/admin/WEB-INF/webconsole-default.xml
 lib/activemq/webapps/admin/WEB-INF/webconsole-embedded.xml
 lib/activemq/webapps/admin/WEB-INF/webconsole-invm.xml
 lib/activemq/webapps/admin/WEB-INF/webconsole-jndi.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-osgi.xml
 lib/activemq/webapps/admin/WEB-INF/webconsole-properties.xml
 lib/activemq/webapps/admin/WEB-INF/webconsole-query.xml
 lib/activemq/webapps/admin/browse.jsp
@@ -218,37 +264,7 @@ lib/activemq/webapps/admin/topics.jsp
 lib/activemq/webapps/admin/xml/queues.jsp
 lib/activemq/webapps/admin/xml/subscribers.jsp
 lib/activemq/webapps/admin/xml/topics.jsp
-lib/activemq/webapps/demo/META-INF/LICENSE
-lib/activemq/webapps/demo/META-INF/NOTICE
-lib/activemq/webapps/demo/WEB-INF/web.xml
-lib/activemq/webapps/demo/chat.css
-lib/activemq/webapps/demo/chat.html
-lib/activemq/webapps/demo/index.html
-lib/activemq/webapps/demo/js/amq.js
-lib/activemq/webapps/demo/js/amq_dojo_adapter.js
-lib/activemq/webapps/demo/js/amq_jquery_adapter.js
-lib/activemq/webapps/demo/js/amq_prototype_adapter.js
-lib/activemq/webapps/demo/js/chat.js
-lib/activemq/webapps/demo/js/dojo.js
-lib/activemq/webapps/demo/js/jquery-1.4.2.min.js
-lib/activemq/webapps/demo/js/prototype.js
-lib/activemq/webapps/demo/portfolio/portfolio.html
-lib/activemq/webapps/demo/portfolio/portfolio.js
-lib/activemq/webapps/demo/sandbox/index.html
-lib/activemq/webapps/demo/sandbox/portfolio.html
-lib/activemq/webapps/demo/sandbox/portfolio.js
-lib/activemq/webapps/demo/sandbox/util.js
-lib/activemq/webapps/demo/sandbox/webmq.js
-lib/activemq/webapps/demo/send.html
-lib/activemq/webapps/demo/style.css
-lib/activemq/webapps/demo/test/amq_test.html
-lib/activemq/webapps/demo/test/assets/README
-lib/activemq/webapps/demo/test/assets/jsunittest.js
-lib/activemq/webapps/demo/test/assets/unittest.css
-lib/activemq/webapps/demo/websocket/chat.css
-lib/activemq/webapps/demo/websocket/chat.js
-lib/activemq/webapps/demo/websocket/index.html
-lib/activemq/webapps/demo/websocket/stomp.js
+lib/activemq/webapps/api/WEB-INF/web.xml
 lib/activemq/webapps/favicon.ico
 lib/activemq/webapps/fileserver/META-INF/LICENSE
 lib/activemq/webapps/fileserver/META-INF/NOTICE
@@ -331,15 +347,8 @@ lib/activemq/webapps/styles/type-settings.css
 @dirrm lib/activemq/webapps/fileserver/WEB-INF
 @dirrm lib/activemq/webapps/fileserver/META-INF
 @dirrm lib/activemq/webapps/fileserver
-@dirrm lib/activemq/webapps/demo/websocket
-@dirrm lib/activemq/webapps/demo/test/assets
-@dirrm lib/activemq/webapps/demo/test
-@dirrm lib/activemq/webapps/demo/sandbox
-@dirrm lib/activemq/webapps/demo/portfolio
-@dirrm lib/activemq/webapps/demo/js
-@dirrm lib/activemq/webapps/demo/WEB-INF
-@dirrm lib/activemq/webapps/demo/META-INF
-@dirrm lib/activemq/webapps/demo
+@dirrm lib/activemq/webapps/api/WEB-INF
+@dirrm lib/activemq/webapps/api
 @dirrm lib/activemq/webapps/admin/xml
 @dirrm lib/activemq/webapps/admin/test
 @dirrm lib/activemq/webapps/admin/styles
@@ -356,6 +365,7 @@ lib/activemq/webapps/styles/type-settings.css
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/handler
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/config
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache
@@ -365,6 +375,16 @@ lib/activemq/webapps/styles/type-settings.css
 @dirrm lib/activemq/webapps/admin/META-INF
 @dirrm lib/activemq/webapps/admin
 @dirrm lib/activemq/webapps
+@dirrm lib/activemq/webapps-demo/demo/websocket
+@dirrm lib/activemq/webapps-demo/demo/test/assets
+@dirrm lib/activemq/webapps-demo/demo/test
+@dirrm lib/activemq/webapps-demo/demo/sandbox
+@dirrm lib/activemq/webapps-demo/demo/portfolio
+@dirrm lib/activemq/webapps-demo/demo/js
+@dirrm lib/activemq/webapps-demo/demo/WEB-INF
+@dirrm lib/activemq/webapps-demo/demo/META-INF
+@dirrm lib/activemq/webapps-demo/demo
+@dirrm lib/activemq/webapps-demo
 @dirrm lib/activemq/lib/web
 @dirrm lib/activemq/lib/optional
 @dirrm lib/activemq/lib/extra

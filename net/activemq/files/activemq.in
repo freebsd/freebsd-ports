@@ -47,7 +47,7 @@ load_rc_config $name
 pidfile=/var/run/${name}.pid
 
 required_files="%%ETCDIR%%/activemq.xml"
-jar_file="%%DATADIR%%/bin/run.jar"
+jar_file="%%DATADIR%%/bin/activemq.jar"
 java_options=" 	-server -jar ${activemq_javargs} \
 		-Dactivemq.classpath=${activemq_classpath} \
 		-Dactivemq.conf=${activemq_conf} \

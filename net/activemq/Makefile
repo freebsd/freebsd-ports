@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	activemq
-PORTVERSION=	5.7.0
+PORTVERSION=	5.8.0
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/
@@ -15,7 +15,7 @@ NO_BUILD=	yes
 
 USE_JAVA=	yes
 LICENSE=	AL2
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 MQDATA=		${PREFIX}/lib/${PORTNAME}
 MQDB?=		/var/db/activemq
 DATADIR=	${MQDATA}
@@ -23,12 +23,11 @@ MQUSER?=	activemq
 MQGROUP?=	${MQUSER}
 USERS=		${MQUSER}
 GROUPS=		${MQGROUP}
-CAMELVERSION=	2.10.1
-SPRINGVERSION=	3.0.7
-SPRINGVERSION=	3.0.7
+CAMELVERSION=	2.10.3
+SPRINGVERSION=	3.1.3
 JETTYVERSION=	7.6.7.v20120910
-LVDBVERSION=	0.2
-LVDBJNIVERSION=	1.3
+LVDBVERSION=	0.5
+LVDBJNIVERSION=	1.5
 
 ALL_TARGET=	${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
@@ -95,9 +94,10 @@ do-install:
 	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${f} ${MQDATA}/bin
 .endfor
 
-	@cd ${WRKSRC}/bin && ${INSTALL_DATA} run.jar ${MQDATA}/bin
+	@cd ${WRKSRC}/bin && ${INSTALL_DATA} activemq.jar ${MQDATA}/bin
+	@cd ${WRKSRC}/bin && ${INSTALL_DATA} wrapper.jar ${MQDATA}/bin
 
-.for f in webapps lib
+.for f in webapps webapps-demo lib
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${MQDATA}
 .endfor
 

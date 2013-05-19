@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130519:
+  AFFECTS: users of net/activemq
+  AUTHOR: tj@FreeBSD.org
+
+  The JVM used by activemq has changed to OpenJDK 7. You will need to
+  make sure javavmwrapper is configured to use the installed 
+  java/openjdk7 JVM.
+
 20130512:
   AFFECTS: users of devel/hs-git-annex
   AUTHOR: haskell@FreeBSD.org
