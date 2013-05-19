@@ -1,0 +1,16 @@
+From the Phing homepage:
+
+PHing Is Not GNU make; it's a PHP project build system or build tool based on
+​Apache Ant. You can do anything with it that you could do with a traditiona
+build system like GNU make, and its use of simple XML build files and
+extensible PHP "task" classes make it an easy-to-use and highly flexible build
+framework.
+
+Features include running PHPUnit and SimpleTest unit tests (including test
+result and coverage reports), file transformations (e.g. token replacement,
+XSLT transformation, Smarty template transformations), file system operations,
+interactive build support, SQL execution, CVS/SVN/GIT operations, tools for
+creating PEAR packages, documentation generation (DocBlox, PhpDocumentor) and
+much, much more. 
+
+WWW: http://www.phing.info
