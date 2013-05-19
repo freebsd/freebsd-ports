@@ -7,7 +7,6 @@ bin/vsd2xhtml
 include/libvisio-0.0/libvisio/VSDStringVector.h
 include/libvisio-0.0/libvisio/VisioDocument.h
 include/libvisio-0.0/libvisio/libvisio.h
-lib/libvisio-0.0.a
 lib/libvisio-0.0.la
 lib/libvisio-0.0.so
 lib/libvisio-0.0.so.0
