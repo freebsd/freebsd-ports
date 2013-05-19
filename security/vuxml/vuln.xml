@@ -51,6 +51,75 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c72a2494-c08b-11e2-bb21-083e8ed0f47b">
+    <topic>plib -- stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>plib</name>
+	<range><lt>1.8.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2012-4552">
+	  <p>Stack-based buffer overflow in the error function in
+	  ssg/ssgParser.cxx in PLIB 1.8.5 allows remote attackers to
+	  execute arbitrary code via a crafted 3d model file that
+	  triggers a long error message, as demonstrated by a .ase
+	  file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>55839</bid>
+      <cvename>CVE-2012-4552</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2012/10/29/8</mlist>
+    </references>
+    <dates>
+      <discovery>2012-10-09</discovery>
+      <entry>2013-05-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="13bf0602-c08a-11e2-bb21-083e8ed0f47b">
+    <topic>plib -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>plib</name>
+	<range><lt>1.8.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="https://secunia.com/advisories/47297">
+	  <p>A vulnerability has been discovered in PLIB, which can be
+	  exploited by malicious people to compromise an application
+	  using the library. The vulnerability is caused due to a
+	  boundary error within the "ulSetError()" function
+	  (src/util/ulError.cxx) when creating the error message,
+	  which can be exploited to overflow a static buffer.</p>
+	  <p>Successful exploitation allows the execution of arbitrary
+	  code but requires that the attacker can e.g. control the
+	  content of an overly long error message passed to the
+	  "ulSetError()" function.</p>
+	  <p>The vulnerability is confirmed in version 1.8.5. Other
+	  versions may also be affected.</p>
+	  <p>Originally reported in TORCS by Andres Gomez.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-4620</cvename>
+      <mlist>http://openwall.com/lists/oss-security/2011/12/21/2</mlist>
+    </references>
+    <dates>
+      <discovery>2011-12-21</discovery>
+      <entry>2013-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8818f7f-9182-11e2-9bdf-d48564727302">
     <topic>optipng -- use-after-free vulnerability</topic>
     <affects>
