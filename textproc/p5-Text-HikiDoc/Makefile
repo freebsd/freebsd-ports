@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Text-HikiDoc
-# Date created:		2011-08-30
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-HikiDoc
-PORTVERSION=	1.019
+PORTVERSION=	1.020
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Pure Perl implementation of 'HikiDoc'
 
-PERL_CONFIGURE=	yes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+PERL_MODBUILD=	yes
 
 MAN3=	Text::HikiDoc::Plugin.3 Text::HikiDoc.3
 
