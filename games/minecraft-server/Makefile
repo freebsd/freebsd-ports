@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	games java
-MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/ \
-		http://denkrobat.de/minecraft/ \
+MASTER_SITES=	http://assets.minecraft.net/${PORTVERSION:S|.|_|g}/ \
 		http://media-mcw.cursecdn.com/f/f7/:icon
 DISTNAME=	minecraft_server
 DISTFILES=	minecraft_server.jar \
