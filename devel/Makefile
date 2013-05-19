@@ -3431,6 +3431,7 @@
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
+    SUBDIR += py-blinker
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore

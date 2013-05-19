@@ -1,0 +1,16 @@
+Fast, simple object-to-object and broadcast signaling.
+
+Blinker provides a fast dispatching system that allows any number of interested
+parties to subscribe to events, or "signals".
+
+Features:
+
+ - A global registry of named signals
+ - Anonymous signals
+ - Custom name registries
+ - Permanently or temporarily connected receivers
+ - Automatically disconnected receivers via weak referencing
+ - Sending arbitrary data payloads
+ - Collecting return values from signal receivers
+
+WWW: http://discorporate.us/projects/Blinker/
