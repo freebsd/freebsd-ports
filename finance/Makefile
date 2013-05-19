@@ -142,6 +142,7 @@
     SUBDIR += trytond_product_cost_history
     SUBDIR += trytond_product_measurements
     SUBDIR += trytond_product_price_list
+    SUBDIR += trytond_production
     SUBDIR += trytond_project
     SUBDIR += trytond_project_plan
     SUBDIR += trytond_project_revenue
