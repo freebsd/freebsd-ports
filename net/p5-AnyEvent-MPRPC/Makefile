@@ -1,12 +1,7 @@
-# New ports collection makefile for:	AnyEvent::MPRPC
-# Date created:		20 Oct 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-MPRPC
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-AnyEvent>=5.261:${PORTSDIR}/devel/p5-AnyEvent \
 	p5-Data-MessagePack>=0.34:${PORTSDIR}/devel/p5-Data-MessagePack \
-	p5-Data-MessagePack-Stream>=0.05:${PORTSDIR}/devel/p5-Data-MessagePack-Stream
+	p5-Data-MessagePack-Stream>=0.05:${PORTSDIR}/devel/p5-Data-MessagePack-Stream \
+	p5-AnyEvent-MessagePack>=0.19:${PORTSDIR}/devel/p5-AnyEvent-MessagePack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
