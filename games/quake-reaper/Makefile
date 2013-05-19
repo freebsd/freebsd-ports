@@ -17,7 +17,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${Q1DIR}/${PORTNAME}
-PORTDOCS=	B08chg.txt Dedserv.txt Reaprb80.txt Skinspec.txt
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
@@ -31,7 +31,7 @@ do-install:
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
+.  for f in B08chg.txt Dedserv.txt Reaprb80.txt Skinspec.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f:L}
 .  endfor
 .endif
