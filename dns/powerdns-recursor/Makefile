@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns-recursor
-PORTVERSION=	3.3
+PORTVERSION=	3.5.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -22,13 +22,15 @@ OPTIONS_DEFAULT=	SETUID
 SETUID_DESC=		Run as pdns_recursor user
 STATIC_DESC=		Build static binaries
 
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CXXFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 
 MAN8=		rec_control.8 pdns_recursor.8
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
@@ -46,8 +48,8 @@ GROUPS=		pdns
 USE_LUA=5.1
 LUA_COMPS=lua
 MAKE_ENV+=LUA=1
-MAKE_ENV+=LUA_CPPFLAGS_CONFIG=-I${LOCALBASE}/include/lua51
-MAKE_ENV+="LUA_LIBS_CONFIG=-L${LOCALBASE}/lib/lua51/ -llua"
+MAKE_ENV+=LUA_CPPFLAGS_CONFIG=-I${PREFIX}/include/lua51
+MAKE_ENV+="LUA_LIBS_CONFIG=-L${PREFIX}/lib/lua51/ -llua"
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC}
@@ -78,4 +80,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/*.8 ${PREFIX}/man/man8/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
