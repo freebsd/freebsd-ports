@@ -3,6 +3,7 @@
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3.6p1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-Socket6:${PORTSDIR}/net/p5-Socket6 \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
 USES=		iconv
