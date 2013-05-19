@@ -18,6 +18,7 @@
     SUBDIR += ephem
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
+    SUBDIR += garmindev
     SUBDIR += gkrellmoon2
     SUBDIR += glunarclock
     SUBDIR += gmapcatcher
