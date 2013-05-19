@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	12.09-2
-PORTREVISION=	2
+DISTVERSION=	13.05
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
