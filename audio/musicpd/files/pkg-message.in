@@ -4,7 +4,7 @@ The musicpd package has been successfully installed.
 
 In order to run the MPD server, you need to edit
 
-	%%PREFIX%%/etc/%%MPDCONF%%
+	%%PREFIX%%/etc/musicpd.conf
 
 and add the following line to /etc/rc.conf:
 
