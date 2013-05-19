@@ -3196,6 +3196,7 @@
     SUBDIR += pear-ezc_Base
     SUBDIR += pear-ezc_ConsoleTools
     SUBDIR += pear-pdepend-staticReflection
+    SUBDIR += pear-phing
     SUBDIR += pecl-APCu
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
