@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvisio
-PORTVERSION=	0.0.26
-PORTREVISION=	1
+PORTVERSION=	0.0.27
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/ \
 		LOCAL/sunpoet
