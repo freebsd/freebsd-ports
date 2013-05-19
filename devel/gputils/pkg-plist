@@ -142,6 +142,8 @@ bin/gpvo
 %%DATADIR%%/header/p16f1519.inc
 %%DATADIR%%/header/p16f1526.inc
 %%DATADIR%%/header/p16f1527.inc
+%%DATADIR%%/header/p16f1704.inc
+%%DATADIR%%/header/p16f1708.inc
 %%DATADIR%%/header/p16f1782.inc
 %%DATADIR%%/header/p16f1783.inc
 %%DATADIR%%/header/p16f1784.inc
@@ -165,6 +167,7 @@ bin/gpvo
 %%DATADIR%%/header/p16f1939.inc
 %%DATADIR%%/header/p16f1946.inc
 %%DATADIR%%/header/p16f1947.inc
+%%DATADIR%%/header/p16f1xxx.inc
 %%DATADIR%%/header/p16f505.inc
 %%DATADIR%%/header/p16f506.inc
 %%DATADIR%%/header/p16f526.inc
@@ -264,6 +267,8 @@ bin/gpvo
 %%DATADIR%%/header/p16lf1519.inc
 %%DATADIR%%/header/p16lf1526.inc
 %%DATADIR%%/header/p16lf1527.inc
+%%DATADIR%%/header/p16lf1704.inc
+%%DATADIR%%/header/p16lf1708.inc
 %%DATADIR%%/header/p16lf1782.inc
 %%DATADIR%%/header/p16lf1783.inc
 %%DATADIR%%/header/p16lf1784.inc
@@ -777,6 +782,8 @@ bin/gpvo
 %%DATADIR%%/lkr/16f1519_g.lkr
 %%DATADIR%%/lkr/16f1526_g.lkr
 %%DATADIR%%/lkr/16f1527_g.lkr
+%%DATADIR%%/lkr/16f1704_g.lkr
+%%DATADIR%%/lkr/16f1708_g.lkr
 %%DATADIR%%/lkr/16f1782_g.lkr
 %%DATADIR%%/lkr/16f1783_g.lkr
 %%DATADIR%%/lkr/16f1784_g.lkr
@@ -898,6 +905,8 @@ bin/gpvo
 %%DATADIR%%/lkr/16lf1519_g.lkr
 %%DATADIR%%/lkr/16lf1526_g.lkr
 %%DATADIR%%/lkr/16lf1527_g.lkr
+%%DATADIR%%/lkr/16lf1704_g.lkr
+%%DATADIR%%/lkr/16lf1708_g.lkr
 %%DATADIR%%/lkr/16lf1782_g.lkr
 %%DATADIR%%/lkr/16lf1783_g.lkr
 %%DATADIR%%/lkr/16lf1784_g.lkr
