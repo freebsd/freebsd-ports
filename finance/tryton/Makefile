@@ -3,8 +3,7 @@
 PORTNAME=	tryton
 PORTVERSION=	2.4.4
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads.tryton.org/2.4/ \
-		http://downloads2.tryton.org/2.4/
+MASTER_SITES=	http://downloads.tryton.org/2.4/
 
 MAINTAINER=	matthias@petermann.it
 COMMENT=	Tryton Application Platform (Gtk+ Client)

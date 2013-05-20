@@ -3,8 +3,7 @@
 PORTNAME=	trytond_account_statement
 PORTVERSION=	2.4.3
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/ \
-		http://downloads2.tryton.org/${PORTVERSION:R}/
+MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
 MAINTAINER=	matthias@petermann.it
 COMMENT=	Tryton Application Platform (Account Statement Module)
