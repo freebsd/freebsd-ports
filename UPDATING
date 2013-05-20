@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130520:
+  AFFECTS: users of textproc/elasticsearch
+  AUTHOR: tj@FreeBSD.org
+
+  This is the first stable release based on Lucene 4. We recommend testing
+  the upgrade before doing it in production.  
+
+  Upgrading from 0.20 requires a full cluster restart.
+
+  In order to be able to downgrade, stop indexing new data, issue a flush 
+  request, do the upgrade and only enable indexing of new data once you 
+  are certain that you no longer need to downgrade.  Once new data has 
+  been indexed, downgrading is no longer possible. To be extra safe, back 
+  up your data before upgrading.
+
 20130519:
   AFFECTS: users of net/activemq
   AUTHOR: tj@FreeBSD.org
