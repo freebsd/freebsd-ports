@@ -15,7 +15,9 @@
 %%SITE_PERL%%/RPC/ExtDirect/Demo/TestAction.pm
 %%SITE_PERL%%/RPC/ExtDirect/Demo/PollProvider.pm
 %%SITE_PERL%%/RPC/ExtDirect/Demo/Profile.pm
+%%SITE_PERL%%/RPC/ExtDirect/Request/PollHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/ExtDirect/.packlist
+@dirrm %%SITE_PERL%%/RPC/ExtDirect/Request
 @dirrm %%SITE_PERL%%/RPC/ExtDirect/Demo
 @dirrm %%SITE_PERL%%/RPC/ExtDirect
 @dirrmtry %%SITE_PERL%%/RPC
