@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	xdelta
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 PORTEPOCH=	1
 CATEGORIES?=	misc devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 LICENSE=	GPLv2 # (or later)
