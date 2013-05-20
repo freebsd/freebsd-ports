@@ -1,13 +1,8 @@
-# New ports collection makefile for:	numpy
-# Date created:				24 July 2006
-# Whom:					Tony Maher
-#
+# Created by: Tony Maher
 # $FreeBSD$
-#
 
 PORTNAME=	numpy
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.0/}/:doc \
@@ -75,8 +70,8 @@ PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
 PYDISTUTILS_BUILDARGS+=	--fcompiler=gnu95
 
 post-extract:
-	@${CP} ${DISTDIR}/numpy-ref.pdf ${WRKDIR}
-	@${CP} ${DISTDIR}/numpy-user.pdf ${WRKDIR}
+	@${CP} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${WRKDIR}
+	@${CP} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${WRKDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
@@ -118,8 +113,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/numpy-ref.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/numpy-user.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/numpy-ref-${PORTVERSION}.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/numpy-user-${PORTVERSION}.pdf ${DOCSDIR}
 .endif
 .if defined(WITH_FIXED_FENV)
 	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
