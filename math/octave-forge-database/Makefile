@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-database
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,7 +14,6 @@ OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-#USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 ALL_TARGET=
@@ -28,6 +27,6 @@ post-build:
 
 post-patch:
 	${REINPLACE_CMD} 's#postgresql/##' ${WRKSRC}/*
-	${REINPLACE_CMD} 's#endian.h#sys/endian.h#' ${WRKSRC}/*
+	${REINPLACE_CMD} 's#endian.h#sys/endian.h#' ${WRKSRC}/wrap_endian.h
 
 .include <bsd.port.post.mk>
