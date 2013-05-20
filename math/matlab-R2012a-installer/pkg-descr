@@ -1,0 +1,5 @@
+This port installs the prerequisites for Mathworks (r) Matlab R2012a for Linux
+and an installer script matlab-2012a-installer, which automates the somewhat
+tricky process of installing Linux Matlab.
+
+It requires installation media and a license file from Mathworks, Inc.

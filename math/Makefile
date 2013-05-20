@@ -244,6 +244,7 @@
     SUBDIR += matharray
     SUBDIR += mathomatic
     SUBDIR += matio
+    SUBDIR += matlab-R2012a-installer
     SUBDIR += matrices
     SUBDIR += matrix
     SUBDIR += maxima
