@@ -4,6 +4,7 @@
 %%PYPY_INCLUDEDIR%%/boolobject.h
 %%PYPY_INCLUDEDIR%%/bufferobject.h
 %%PYPY_INCLUDEDIR%%/bytesobject.h
+%%PYPY_INCLUDEDIR%%/ceval.h
 %%PYPY_INCLUDEDIR%%/code.h
 %%PYPY_INCLUDEDIR%%/compile.h
 %%PYPY_INCLUDEDIR%%/complexobject.h
@@ -1449,6 +1450,8 @@
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g178e1b25x1fd01a91.pypy-20.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g85535e98x310af836.pypy-20.so
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.py
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_hk.py
@@ -1488,9 +1491,12 @@
 %%PYPY_LIBDIR%%/lib_pypy/_ctypes/structure.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_ctypes/union.py
 %%PYPY_LIBDIR%%/lib_pypy/_ctypes/union.pyc
-%%PYPY_LIBDIR%%/lib_pypy/_ctypes_test.c
 %%PYPY_LIBDIR%%/lib_pypy/_ctypes_test.py
 %%PYPY_LIBDIR%%/lib_pypy/_ctypes_test.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_curses.py
+%%PYPY_LIBDIR%%/lib_pypy/_curses.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_curses_panel.py
+%%PYPY_LIBDIR%%/lib_pypy/_curses_panel.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_elementtree.py
 %%PYPY_LIBDIR%%/lib_pypy/_elementtree.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_functools.py
@@ -1499,8 +1505,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/_marshal.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_md5.py
 %%PYPY_LIBDIR%%/lib_pypy/_md5.pyc
-%%PYPY_LIBDIR%%/lib_pypy/_minimal_curses.py
-%%PYPY_LIBDIR%%/lib_pypy/_minimal_curses.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_interact.py
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_interact.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_irc_topic.py
@@ -1523,29 +1527,80 @@
 %%PYPY_LIBDIR%%/lib_pypy/_subprocess.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_testcapi.py
 %%PYPY_LIBDIR%%/lib_pypy/_testcapi.pyc
-%%PYPY_LIBDIR%%/lib_pypy/_testcapimodule.c
 %%PYPY_LIBDIR%%/lib_pypy/cPickle.py
 %%PYPY_LIBDIR%%/lib_pypy/cPickle.pyc
 %%PYPY_LIBDIR%%/lib_pypy/cStringIO.py
 %%PYPY_LIBDIR%%/lib_pypy/cStringIO.pyc
-%%PYPY_LIBDIR%%/lib_pypy/conftest.py
-%%PYPY_LIBDIR%%/lib_pypy/conftest.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi.egg-info
+%%PYPY_LIBDIR%%/lib_pypy/cffi/__init__.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/__init__.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/_ast_gen.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/_ast_gen.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/_build_tables.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/_build_tables.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/_c_ast.cfg
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ast_transforms.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ast_transforms.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_ast.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_ast.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_generator.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_generator.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_lexer.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_lexer.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_parser.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/c_parser.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/lextab.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/lextab.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/__init__.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/cpp.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/cpp.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/ctokens.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/ctokens.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/lex.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/lex.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/yacc.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply/yacc.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/plyparser.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/plyparser.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/yacctab.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/yacctab.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/api.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/api.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/backend_ctypes.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/backend_ctypes.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/commontypes.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/commontypes.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/cparser.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/cparser.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/ffiplatform.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/ffiplatform.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/gc_weakref.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/gc_weakref.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/model.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/model.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/vengine_cpy.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/vengine_cpy.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/vengine_gen.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/vengine_gen.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/verifier.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/verifier.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_locale_%%PYPY_ARCH%%_.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_locale_%%PYPY_ARCH%%_.pyc
+%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_locale_%%PYPY_BITS%%_.py
+%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_locale_%%PYPY_BITS%%_.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_locale_cache.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_locale_cache.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_ARCH%%_.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_ARCH%%_.pyc
+%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_BITS%%_.py
+%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_BITS%%_.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_cache.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_cache.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_%%PYPY_ARCH%%_.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_%%PYPY_ARCH%%_.pyc
+%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_%%PYPY_BITS%%_.py
+%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_%%PYPY_BITS%%_.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_cache.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_cache.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/autopath.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/autopath.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/dumpcache.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/dumpcache.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/locale.ctc.py
@@ -1556,8 +1611,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/resource.ctc.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/syslog.ctc.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/syslog.ctc.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/test/test_cache.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/test/test_cache.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_support.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_support.pyc
 %%PYPY_LIBDIR%%/lib_pypy/datetime.py
@@ -1590,56 +1643,26 @@
 %%PYPY_LIBDIR%%/lib_pypy/numpypy/core/arrayprint.pyc
 %%PYPY_LIBDIR%%/lib_pypy/numpypy/core/fromnumeric.py
 %%PYPY_LIBDIR%%/lib_pypy/numpypy/core/fromnumeric.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/multiarray.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/multiarray.pyc
 %%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numeric.py
 %%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numeric.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numerictypes.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numerictypes.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/shape_base.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/shape_base.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/umath.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/umath.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/__init__.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/function_base.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/function_base.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/shape_base.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/shape_base.pyc
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/twodim_base.py
+%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/twodim_base.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pwd.py
 %%PYPY_LIBDIR%%/lib_pypy/pwd.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/hack___pypy__.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/hack___pypy__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/inprogress_test_binascii_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/inprogress_test_binascii_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/no_test_pickle_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/no_test_pickle_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_collections.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_collections.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_coroutine.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_coroutine.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_datetime.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_datetime.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_dbm_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_dbm_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_defaultdict.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_defaultdict.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_deque_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_deque_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_exception_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_exception_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_grp_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_grp_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_marshal_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_marshal_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_md5_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_md5_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_os_wait.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_os_wait.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_pickle_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_pickle_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_resource.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_resource.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_sha_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_sha_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_site_extra.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_site_extra.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_stackless.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_stackless.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_stackless_pickling.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_stackless_pickling.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_structseq.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_structseq.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_syslog.py
-%%PYPY_LIBDIR%%/lib_pypy/pypy_test/test_syslog.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/__init__.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/cmdrepl.py
@@ -1680,18 +1703,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/readline.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/simple_interact.py
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/simple_interact.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/test/test_functional.py
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/test/test_functional.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/basic.py
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/basic.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/bugs.py
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/bugs.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/infrastructure.py
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/infrastructure.pyc
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/wishes.py
-%%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests/wishes.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/unicodedata_.py
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/unicodedata_.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/unix_console.py
@@ -3769,15 +3780,16 @@
 @dirrm %%PYPY_LIBDIR%%/multiprocessing
 @dirrm %%PYPY_LIBDIR%%/msilib
 @dirrm %%PYPY_LIBDIR%%/logging
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/pyrepl/tests
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/pyrepl/test
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/pyrepl
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/pypy_test
+@dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy/lib
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy/core
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/test
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache
+@dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply
+@dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser
+@dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/_ctypes
+@dirrm %%PYPY_LIBDIR%%/lib_pypy/__pycache__
 @dirrm %%PYPY_LIBDIR%%/lib_pypy
 @dirrm %%PYPY_LIBDIR%%/lib2to3/tests/data/fixers/myfixes
 @dirrm %%PYPY_LIBDIR%%/lib2to3/tests/data/fixers
