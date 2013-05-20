@@ -3,7 +3,6 @@ bin/pub2xhtml
 include/libmspub-0.0/libmspub/MSPUBDocument.h
 include/libmspub-0.0/libmspub/MSPUBStringVector.h
 include/libmspub-0.0/libmspub/libmspub.h
-lib/libmspub-0.0.a
 lib/libmspub-0.0.la
 lib/libmspub-0.0.so
 lib/libmspub-0.0.so.0
