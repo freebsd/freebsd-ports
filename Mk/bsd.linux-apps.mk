@@ -61,8 +61,8 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri esound
 					freealut gdkpixbuf gnutls gtk gtk2 hicontheme imlib jpeg libaudiofile \
 					libg2c libgcrypt libglade libglade2 libglu libgpg-error libmng libogg \
 					libsigcpp20 libtasn1 libtheora 	libvorbis libxml libxml2 mikmod naslibs \
-					openal openmotif openssl pango png png10 qt33 scimgtk scimlibs sdl12 \
-					sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
+					ncurses-base openal openmotif openssl pango png png10 qt33 scimgtk \
+					scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
 
 # 2.4.2 components
 _LINUX_APPS_ALL+=
@@ -356,6 +356,11 @@ openmotif_f10_FILE=	${LINUXBASE}/usr/lib/libXm.so.4
 openmotif_DETECT=	${openmotif${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openmotif_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-openmotif
 openmotif_DEPENDS=	xorglibs
+
+# no ncurses-base_FILE
+ncurses-base_f10_FILE=	${LINUXBASE}/lib/terminfo/a/ansi
+ncurses-base_DETECT=	${ncurses-base${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+ncurses-base_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-ncurses-base
 
 # no nspr_FILE
 nspr_f10_FILE=		${LINUXBASE}/lib/libnspr4.so
