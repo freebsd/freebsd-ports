@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmspub
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	print graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -17,9 +17,9 @@ LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
 		wpd-0.9:${PORTSDIR}/textproc/libwpd
 
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_XZ=		yes
+USES=		pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
