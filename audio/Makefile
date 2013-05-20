@@ -247,7 +247,6 @@
     SUBDIR += gnupod
     SUBDIR += gnustep-cdplayer
     SUBDIR += gogglesmm
-    SUBDIR += gogo-petit
     SUBDIR += goobox
     SUBDIR += gqmpeg
     SUBDIR += gqmpeg-devel
