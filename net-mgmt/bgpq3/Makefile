@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bgpq3
-PORTVERSION=	0.1.18
+PORTVERSION=	0.1.19
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/bgpq3/
 EXTRACT_SUFX=	.tgz
