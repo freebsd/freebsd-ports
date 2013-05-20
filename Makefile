@@ -122,13 +122,12 @@ ${INDEXDIR}/${INDEXFILE}:
 			echo "Before reporting this error, verify that you are running a supported"; \
 			echo "version of FreeBSD (see http://www.FreeBSD.org/ports/) and that you"; \
 			echo "have a complete and up-to-date ports collection.  (INDEX builds are"; \
-			echo "not supported with partial or out-of-date ports collections -- in"; \
-			echo "particular, if you are using cvsup, you must cvsup the \"ports-all\""; \
-			echo "collection, and have no \"refuse\" files.)  If that is the case, then"; \
+			echo "not supported with partial or out-of-date ports collections."; \
+			echo "If that is the case, then"; \
 			echo "report the failure to ports@FreeBSD.org together with relevant"; \
 			echo "details of your ports configuration (including FreeBSD version,"; \
 			echo "your architecture, your environment, and your /etc/make.conf"; \
-			echo "settings, especially compiler flags and WITH/WITHOUT settings)."; \
+			echo "settings, especially compiler flags and OPTIONS_SET/UNSET settings)."; \
 			echo; \
 			echo "Note: the latest pre-generated version of INDEX may be fetched"; \
 			echo "automatically with \"make fetchindex\"."; \
@@ -151,28 +150,13 @@ ${INDEXDIR}/${INDEXFILE}:
 print-index:	${INDEXDIR}/${INDEXFILE}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${INDEXDIR}/${INDEXFILE}
 
-CVS?= cvs
 GIT?= git
 SVN?= svn
-SUP?= csup
 PORTSNAP?= portsnap
 PORTSNAP_FLAGS?= -p ${.CURDIR}
-.if defined(SUPHOST)
-SUPFLAGS+=	-h ${SUPHOST}
-.endif
 .if !target(update)
 update:
-.if defined(SUP_UPDATE) && defined(PORTSSUPFILE)
-	@echo "--------------------------------------------------------------"
-	@echo ">>> Running ${SUP}"
-	@echo "--------------------------------------------------------------"
-	@${SUP} ${SUPFLAGS} ${PORTSSUPFILE}
-.elif defined(CVS_UPDATE)
-	@echo "--------------------------------------------------------------"
-	@echo ">>> Updating ${.CURDIR} from CVS repository" ${CVSROOT}
-	@echo "--------------------------------------------------------------"
-	cd ${.CURDIR}; ${CVS} -R -q update -A -P -d -I!
-.elif exists(${.CURDIR}/.svn)
+.if exists(${.CURDIR}/.svn)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating ${.CURDIR} using Subversion"
 	@echo "--------------------------------------------------------------"
@@ -190,8 +174,6 @@ update:
 	@echo "Error: 'make update' uses portsnap(8) by default and"
 	@echo "needs ${PORTSDIR} to be created by portsnap on its first run."
 	@echo "Please run 'portsnap fetch extract' first."
-	@echo "You can also define SUP_UPDATE and PORTSSUPFILE to use csup(1)"
-	@echo "or CVS_UPDATE to use cvs(1) for updating."
 .else
 	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
 	@${PORTSNAP} ${PORTSNAP_FLAGS} update
