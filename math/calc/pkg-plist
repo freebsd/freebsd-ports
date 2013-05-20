@@ -99,6 +99,7 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/dotest.cal
 %%DATADIR%%/dms.cal
 %%DATADIR%%/ellip.cal
+%%DATADIR%%/gvec.cal
 %%DATADIR%%/hello.cal
 %%DATADIR%%/help/COPYING
 %%DATADIR%%/help/COPYING-LGPL
