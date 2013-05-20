@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 
@@ -13,7 +13,7 @@ LICENSE=	ISCL
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS COPYING INSTALL NEWS THANKS
+PORTDOCS=	AUTHORS COPYING NEWS THANKS
 
 post-build:
 	cd ${WRKSRC} && ${MAKE} check
