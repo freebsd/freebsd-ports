@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rabbitmq
-# Date Created:				2008-07-11
-# Whom:					Phillip Neumann <pneumann@gmail.com>
-#
+# Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
