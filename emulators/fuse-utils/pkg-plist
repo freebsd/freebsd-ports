@@ -1,5 +1,6 @@
-%%AUDIOFILE%%bin/audio2tape
+%%AUDIOTOOLS%%bin/audio2tape
 bin/createhdf
+bin/fmfconv
 bin/listbasic
 bin/profile2map
 bin/raw2hdf
@@ -9,7 +10,7 @@ bin/rzxtool
 bin/scl2trd
 bin/snap2tzx
 bin/snapconv
-%%AUDIOFILE%%bin/tape2wav
+%%AUDIOTOOLS%%bin/tape2wav
 bin/tapeconv
 bin/tzxlist
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
