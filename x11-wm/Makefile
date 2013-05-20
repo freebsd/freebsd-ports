@@ -145,7 +145,7 @@
     SUBDIR += stumpwm
     SUBDIR += swm
     SUBDIR += tinywm
-    SUBDIR += transset-df
+    SUBDIR += transset
     SUBDIR += treewm
     SUBDIR += tvtwm
     SUBDIR += twm
