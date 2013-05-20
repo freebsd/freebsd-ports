@@ -23,9 +23,6 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/replaygain.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/replaygain.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/replaygain.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/rdm.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/rdm.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/rdm.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mpdupdate.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mpdupdate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mpdupdate.py
@@ -52,9 +49,6 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ihate.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ihate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ihate.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fuzzy_search.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fuzzy_search.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fuzzy_search.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fetchart.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fetchart.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fetchart.py
@@ -144,6 +138,28 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/test.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/test.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/test.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/smartplaylist.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/smartplaylist.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/smartplaylist.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/random.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/random.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/random.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/mbsync.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/mbsync.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/mbsync.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/fuzzy.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/fuzzy.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/fuzzy.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/util/confit.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/util/confit.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/util/confit.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/ui/migrate.pyo
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/ui/migrate.pyc
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/ui/migrate.py
+%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beets/config_default.yaml
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/web/templates
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/web/static
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/web
@@ -156,3 +172,5 @@ bin/beet
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beets
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
