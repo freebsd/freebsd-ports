@@ -1,0 +1,12 @@
+--- man/Makefile.orig	Fri Jan  7 09:53:38 2005
++++ man/Makefile	Fri Jan  7 09:53:54 2005
+@@ -1,6 +1,6 @@
+-RM = rm -f
+-INSTALL = install -m 755
+-INSTALL_DIR = /usr/man/man1
++RM ?= rm -f
++INSTALL = ${BSD_INSTALL_DATA}
++INSTALL_DIR = ${PREFIX}/man/man1
+ INSTALL_NAME = id3ren.1.gz
+ 
+ all:

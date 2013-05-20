@@ -3847,7 +3847,6 @@ security/saferpay||2012-11-28|Has expired: No more public distfiles
 x11-wm/qvwm||2012-11-28|Has expired: No more public distfiles
 astro/position||2012-11-28|Has expired: No more public distfiles
 astro/tangogps||2012-11-28|Has expired: No more public distfiles
-audio/id3ren||2012-11-28|Has expired: No more public distfiles
 audio/volumecontrol||2012-11-28|Has expired: No more public distfiles
 audio/wsoundprefs||2012-11-28|Has expired: Depends on the deprecated audio/wsoundserver and expired x11-toolkits/libdockapp
 audio/wsoundserver||2012-11-28|Has expired: Depends on deprecated libdockapp

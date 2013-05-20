@@ -1,0 +1,27 @@
+--- src/Makefile.orig	Fri Jan  7 10:08:02 2005
++++ src/Makefile	Fri Jan  7 10:08:30 2005
+@@ -1,9 +1,10 @@
+ CFLAGSDEBUG = -g -O2 -Wall -DDEBUG
+-CFLAGS = -s -O2 -Wall
+-CC = gcc
+-RM = rm -f
+-INSTALL = install -s -m 755
+-INSTALL_DIR = /usr/bin
++CFLAGS ?= -O2 -Wall
++STRIP ?= -s
++CC ?= gcc
++RM ?= rm -f
++INSTALL = ${BSD_INSTALL_PROGRAM}
++INSTALL_DIR = ${PREFIX}/bin
+ INSTALL_NAME = id3ren
+ 
+ SOURCES = id3ren.c id3tag.c id3file.c id3misc.c
+@@ -12,7 +13,7 @@
+ all:	${INSTALL_NAME}
+ 
+ ${INSTALL_NAME}: ${SOURCES} ${INCLUDES}
+-	${CC} ${CFLAGS} -o ${INSTALL_NAME} ${SOURCES}
++	${CC} ${CFLAGS} ${STRIP} -o ${INSTALL_NAME} ${SOURCES}
+ 
+ debug:
+ 	${CC} ${CFLAGSDEBUG} -o ${INSTALL_NAME} ${SOURCES}
