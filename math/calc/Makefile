@@ -1,13 +1,8 @@
-# New ports collection makefile for:    calc
-# Date created:         3 October 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	calc
-PORTVERSION=	2.12.4.3
-PORTREVISION=	1
+PORTVERSION=	2.12.4.8
 CATEGORIES=	math
 MASTER_SITES=	SF
 
