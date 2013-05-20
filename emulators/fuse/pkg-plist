@@ -2,21 +2,13 @@
 bin/fuse
 %%DATADIR%%/128-0.rom
 %%DATADIR%%/128-1.rom
-%%DATADIR%%/128p-0.rom
-%%DATADIR%%/128p-1.rom
-%%DATADIR%%/256s-0.rom
-%%DATADIR%%/256s-1.rom
-%%DATADIR%%/256s-2.rom
-%%DATADIR%%/256s-3.rom
 %%DATADIR%%/48.rom
 %%DATADIR%%/cassette.bmp
+%%DATADIR%%/disciple.rom
 %%DATADIR%%/disk_plus3.szx
-%%DATADIR%%/gluck.rom
-%%DATADIR%%/if1-1.rom
-%%DATADIR%%/if1-2.rom
 %%DATADIR%%/keyboard.scr
+%%DATADIR%%/menu_data.ui
 %%DATADIR%%/microdrive.bmp
-%%DATADIR%%/opus.rom
 %%DATADIR%%/plus2-0.rom
 %%DATADIR%%/plus2-1.rom
 %%DATADIR%%/plus3-0.rom
@@ -31,6 +23,7 @@ bin/fuse
 %%DATADIR%%/plusd.rom
 %%DATADIR%%/se-0.rom
 %%DATADIR%%/se-1.rom
+%%DATADIR%%/speccyboot-1.4.rom
 %%DATADIR%%/tape_128.szx
 %%DATADIR%%/tape_16.szx
 %%DATADIR%%/tape_2048.szx
@@ -48,7 +41,6 @@ bin/fuse
 %%DATADIR%%/tc2048.rom
 %%DATADIR%%/tc2068-0.rom
 %%DATADIR%%/tc2068-1.rom
-%%DATADIR%%/trdos.rom
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

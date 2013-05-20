@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libspectrum
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -28,7 +27,7 @@ AUDIOFILE_DESC=	Support loading from .wav files
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 .else
 CONFIGURE_ARGS+=--without-libaudiofile
 .endif
