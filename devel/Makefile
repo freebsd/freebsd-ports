@@ -1140,6 +1140,7 @@
     SUBDIR += linux-f10-libglade
     SUBDIR += linux-f10-libglade2
     SUBDIR += linux-f10-libsigc++20
+    SUBDIR += linux-f10-ncurses-base
     SUBDIR += linux-f10-nspr
     SUBDIR += linux-f10-sdl12
     SUBDIR += linux-js
