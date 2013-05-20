@@ -13,8 +13,6 @@ COMMENT=	Edje is a complex graphical design and layout engine
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
