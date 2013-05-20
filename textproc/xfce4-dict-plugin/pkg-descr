@@ -1,4 +1,4 @@
-With this plugin you can query a dictionary server (see RFC 2229) to search for
+With xfce4-dict you can query a dictionary server (see RFC 2229) to search for
 the translation or explanation of a word. You can also choose a dictionary
 offered by the server to improve your search results.
 
