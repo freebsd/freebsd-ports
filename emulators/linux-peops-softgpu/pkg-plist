@@ -7,6 +7,3 @@ share/psemupro/cfg/gpuPeopsSoftX.cfg
 @dirrmtry libexec/psemupro
 @dirrmtry share/psemupro/cfg
 @dirrmtry share/psemupro
-%%PORTDOCS%%%%DOCSDIR%%/peops_soft_readme_%%MAJOR%%_%%MINOR%%.txt
-%%PORTDOCS%%%%DOCSDIR%%/peops_soft_version_%%MAJOR%%_%%MINOR%%.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
