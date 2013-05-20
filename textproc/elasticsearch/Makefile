@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	0.20.6
+PORTVERSION=	0.90.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -20,18 +20,24 @@ USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	3.6.2
+LUCENEVER=	4.2.1
 CONFIG_FILES=	elasticsearch.yml logging.yml
 JARS=		elasticsearch-${PORTVERSION}.jar \
 		jna-3.3.0.jar \
 		jts-1.12.jar \
 		log4j-1.2.17.jar \
-		lucene-analyzers-${LUCENEVER}.jar \
+		lucene-analyzers-common-${LUCENEVER}.jar \
+		lucene-codecs-${LUCENEVER}.jar \
 		lucene-core-${LUCENEVER}.jar \
+		lucene-grouping-${LUCENEVER}.jar \
 		lucene-highlighter-${LUCENEVER}.jar \
+		lucene-join-${LUCENEVER}.jar \
 		lucene-memory-${LUCENEVER}.jar \
 		lucene-queries-${LUCENEVER}.jar \
-		snappy-java-1.0.4.1.jar \
+		lucene-queryparser-${LUCENEVER}.jar \
+		lucene-sandbox-${LUCENEVER}.jar \
+		lucene-spatial-${LUCENEVER}.jar \
+		lucene-suggest-${LUCENEVER}.jar \
 		spatial4j-0.3.jar
 DOCS=		LICENSE.txt \
 		NOTICE.txt \
