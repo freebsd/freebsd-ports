@@ -1,5 +1,5 @@
-mdtest is an MPI-coordinated metadata filesystem benchmark test that performs
-open/stat/close operations on files and directories and then reports achieved
-performance.
+mdtest is an MPI-coordinated metadata filesystem benchmark test that
+performs open/stat/close operations on files and directories and then
+reports achieved performance.
 
 WWW: http://sourceforge.net/projects/mdtest/
