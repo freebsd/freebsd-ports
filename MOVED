@@ -4267,4 +4267,4 @@ science/py-obspy-core|science/py-obspy|2013-05-17|Use science/py-obspy instead
 mail/sendmail-ldap|mail/sendmail|2013-05-17|Removed: Use mail/sendmail instead
 databases/innobackup|databases/xtrabackup|2013-05-18|Removed: Use databases/xtrabackup instead
 audio/gogo-petit||2013-05-20|Has expired: No more public distfiles
-x11-wm/transset-df|x11-wm/transset|2013-05-20|Chase upstream rename and move
+x11-wm/transset-df|x11-wm/transset|2013-05-20|Project was renamed
