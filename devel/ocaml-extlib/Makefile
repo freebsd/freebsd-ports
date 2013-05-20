@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	extlib
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complete - yet small - standard library for OCaml
+COMMENT=	Complete - yet small - standard library for OCaml
 
 LICENSE=	LGPL21
 
@@ -22,12 +22,13 @@ USE_OCAMLFIND_PLIST=yes
 ALL_TARGET=	all opt
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+= doc
+ALL_TARGET+=	doc
 PLIST_DIRSTRY=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
 .endif
 
