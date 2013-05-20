@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-formencode
-# Date created:		2005-11-16
-# Whom:			Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	formencode
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,20 +11,25 @@ DISTNAME=	FormEncode-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML form validation, generation, and conversion package
 
-USE_PYTHON=		-2.7
-USE_PYDISTUTILS=	easy_install
-USES=		gettext
+LICENSE=	PSFL
 
+OPTIONS_DEFINE=	DOCS
+
+USE_ZIP=	yes
+USES=		gettext:run
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	FormEncode
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
