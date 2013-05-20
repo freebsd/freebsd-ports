@@ -3,8 +3,7 @@
 PORTNAME=	trytond_purchase_shipment_cost
 PORTVERSION=	2.4.1
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/ \
-		http://downloads2.tryton.org/${PORTVERSION:R}/
+MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
 MAINTAINER=	matthias@petermann.it
 COMMENT=	Tryton Application Platform (Purchase Shipment Cost Module)
