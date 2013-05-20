@@ -2,9 +2,82 @@ bin/lordsawar
 bin/lordsawar-army-editor
 bin/lordsawar-city-editor
 bin/lordsawar-editor
+bin/lordsawar-game-host-client
+bin/lordsawar-game-host-server
+bin/lordsawar-game-list-client
+bin/lordsawar-game-list-server
 bin/lordsawar-pbm
 bin/lordsawar-shield-editor
 bin/lordsawar-tile-editor
+share/applications/lordsawar.desktop
+share/gnome/help/lordsawar/C/figures/army_bonus.png
+share/gnome/help/lordsawar/C/figures/army_unit_info.png
+share/gnome/help/lordsawar/C/figures/buy_production.png
+share/gnome/help/lordsawar/C/figures/city_window.png
+share/gnome/help/lordsawar/C/figures/conquer_city.png
+share/gnome/help/lordsawar/C/figures/fight_city_one_vs_two.png
+share/gnome/help/lordsawar/C/figures/fight_one_vs_one.png
+share/gnome/help/lordsawar/C/figures/fight_order.png
+share/gnome/help/lordsawar/C/figures/fighting_city_one_vs_two.png
+share/gnome/help/lordsawar/C/figures/fighting_one_vs_one.png
+share/gnome/help/lordsawar/C/figures/fought_city_one_vs_two.png
+share/gnome/help/lordsawar/C/figures/fought_one_vs_one.png
+share/gnome/help/lordsawar/C/figures/game_lobby.png
+share/gnome/help/lordsawar/C/figures/game_options.png
+share/gnome/help/lordsawar/C/figures/main_screen.png
+share/gnome/help/lordsawar/C/figures/main_screen_buttons.png
+share/gnome/help/lordsawar/C/figures/main_screen_center_on_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_defend_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_deselect_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_diplomacy_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_diplomacy_proposed_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_end_turn_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_move_all_stacks_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_move_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_move_stack_dir_buttons.png
+share/gnome/help/lordsawar/C/figures/main_screen_park_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_select_next_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_stack_search_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_cities.png
+share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_income.png
+share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_treasury.png
+share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_upkeep.png
+share/gnome/help/lordsawar/C/figures/main_screen_stat_icons.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_asterisk.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_caret.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_equals.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_gt.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_hash.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_lt.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_minus.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_pipe.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_plus.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_tilde.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_asterisk.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_caret.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_equals.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_gt.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_hash.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_lt.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_minus.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_pipe.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_plus.png
+share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_tilde.png
+share/gnome/help/lordsawar/C/figures/mousecursor_boat.png
+share/gnome/help/lordsawar/C/figures/mousecursor_goto.png
+share/gnome/help/lordsawar/C/figures/mousecursor_hand.png
+share/gnome/help/lordsawar/C/figures/mousecursor_magnifying_glass.png
+share/gnome/help/lordsawar/C/figures/mousecursor_rook.png
+share/gnome/help/lordsawar/C/figures/mousecursor_target.png
+share/gnome/help/lordsawar/C/figures/mousecursor_walk.png
+share/gnome/help/lordsawar/C/legal.xml
+share/gnome/help/lordsawar/C/lordsawar.xml
+share/icons/hicolor/32x32/apps/lordsawar.png
+share/icons/hicolor/64x64/apps/lordsawar.png
+share/locale/ca/LC_MESSAGES/lordsawar.mo
+share/locale/da/LC_MESSAGES/lordsawar.mo
+share/locale/de/LC_MESSAGES/lordsawar.mo
+share/locale/nl/LC_MESSAGES/lordsawar.mo
 %%DATADIR%%/army/bigdefault.lwa
 %%DATADIR%%/army/default.lwa
 %%DATADIR%%/citynames.xml
@@ -91,6 +164,7 @@ bin/lordsawar-tile-editor
 %%DATADIR%%/glade/medal-awarded-dialog.ui
 %%DATADIR%%/glade/military-advisor-dialog.ui
 %%DATADIR%%/glade/new-network-game-dialog.ui
+%%DATADIR%%/glade/new-profile-dialog.ui
 %%DATADIR%%/glade/new-random-map-dialog.ui
 %%DATADIR%%/glade/next-player-turn-dialog.ui
 %%DATADIR%%/glade/pick-network-game-to-join-dialog.ui
@@ -203,86 +277,19 @@ bin/lordsawar-tile-editor
 %%DATADIR%%/various/tilestyles.png
 %%DATADIR%%/various/waypoints.png
 %%DATADIR%%/various/win.png
-share/applications/lordsawar.desktop
-share/gnome/help/lordsawar/C/figures/army_bonus.png
-share/gnome/help/lordsawar/C/figures/army_unit_info.png
-share/gnome/help/lordsawar/C/figures/buy_production.png
-share/gnome/help/lordsawar/C/figures/city_window.png
-share/gnome/help/lordsawar/C/figures/conquer_city.png
-share/gnome/help/lordsawar/C/figures/fight_city_one_vs_two.png
-share/gnome/help/lordsawar/C/figures/fight_one_vs_one.png
-share/gnome/help/lordsawar/C/figures/fight_order.png
-share/gnome/help/lordsawar/C/figures/fighting_city_one_vs_two.png
-share/gnome/help/lordsawar/C/figures/fighting_one_vs_one.png
-share/gnome/help/lordsawar/C/figures/fought_city_one_vs_two.png
-share/gnome/help/lordsawar/C/figures/fought_one_vs_one.png
-share/gnome/help/lordsawar/C/figures/game_lobby.png
-share/gnome/help/lordsawar/C/figures/game_options.png
-share/gnome/help/lordsawar/C/figures/main_screen.png
-share/gnome/help/lordsawar/C/figures/main_screen_buttons.png
-share/gnome/help/lordsawar/C/figures/main_screen_center_on_stack_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_defend_stack_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_deselect_stack_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_diplomacy_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_diplomacy_proposed_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_end_turn_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_move_all_stacks_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_move_stack_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_move_stack_dir_buttons.png
-share/gnome/help/lordsawar/C/figures/main_screen_park_stack_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_select_next_stack_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_stack_search_button.png
-share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_cities.png
-share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_income.png
-share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_treasury.png
-share/gnome/help/lordsawar/C/figures/main_screen_stat_icon_upkeep.png
-share/gnome/help/lordsawar/C/figures/main_screen_stat_icons.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_asterisk.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_caret.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_equals.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_gt.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_hash.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_lt.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_minus.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_pipe.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_plus.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_black_tilde.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_asterisk.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_caret.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_equals.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_gt.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_hash.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_lt.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_minus.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_pipe.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_plus.png
-share/gnome/help/lordsawar/C/figures/main_screen_symbol_white_tilde.png
-share/gnome/help/lordsawar/C/figures/mousecursor_boat.png
-share/gnome/help/lordsawar/C/figures/mousecursor_goto.png
-share/gnome/help/lordsawar/C/figures/mousecursor_hand.png
-share/gnome/help/lordsawar/C/figures/mousecursor_magnifying_glass.png
-share/gnome/help/lordsawar/C/figures/mousecursor_rook.png
-share/gnome/help/lordsawar/C/figures/mousecursor_target.png
-share/gnome/help/lordsawar/C/figures/mousecursor_walk.png
-share/gnome/help/lordsawar/C/legal.xml
-share/gnome/help/lordsawar/C/lordsawar.xml
-share/locale/da/LC_MESSAGES/lordsawar.mo
-share/locale/nl/LC_MESSAGES/lordsawar.mo
-@dirrm %%DATADIR%%/army
-@dirrm %%DATADIR%%/citysets
+@dirrm %%DATADIR%%/various/items
+@dirrm %%DATADIR%%/various/editor
+@dirrm %%DATADIR%%/various
+@dirrm %%DATADIR%%/tilesets
+@dirrm %%DATADIR%%/shield
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/map
 @dirrm %%DATADIR%%/glade/editor
 @dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/map
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/shield
-@dirrm %%DATADIR%%/tilesets
-@dirrm %%DATADIR%%/various/editor
-@dirrm %%DATADIR%%/various/items
-@dirrm %%DATADIR%%/various
+@dirrm %%DATADIR%%/citysets
+@dirrm %%DATADIR%%/army
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/lordsawar/C/figures
 @dirrm share/gnome/help/lordsawar/C
 @dirrm share/gnome/help/lordsawar
 @dirrmtry share/applications
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome
