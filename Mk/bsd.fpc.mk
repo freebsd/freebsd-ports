@@ -7,7 +7,7 @@
 #
 # For FreeBSD committers:
 # Please send all suggested changes to the maintainer instead of committing
-# them to CVS yourself.
+# them to SVN yourself.
 #
 # USE_FPC		- If you set this to "yes", this automatically will install
 #			  free pascal compiler, if you need install additional fpc

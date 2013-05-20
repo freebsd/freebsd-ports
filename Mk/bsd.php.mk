@@ -5,7 +5,7 @@
 #
 # For FreeBSD committers:
 # Please send all suggested changes to the maintainer instead of committing
-# them to CVS yourself.
+# them to SVN yourself.
 #
 # $FreeBSD$
 #
