@@ -3,14 +3,12 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
-
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -50,7 +48,7 @@ MBMON_DESC=		MBMon
 MEMCACHED_DESC=		Memcached
 MODBUS_DESC=		Modbus support via libmodbus
 MYSQL_DESC=		MySQL
-NOTIFYEMAIL_DESC=	Email notifications (libesmtp)
+NOTIFYEMAIL_DESC=	Email notifications (libesmtp, libnotify)
 NGINX_DESC=		Nginx
 OPENVPN_DESC=		OpenVPN statistics
 PDNS_DESC=		PowerDNS
@@ -120,7 +118,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-netlink \
 		--disable-nfs \
 		--disable-notify_desktop \
-		--disable-notify_email \
 		--disable-olsrd \
 		--disable-onewire \
 		--disable-oracle \
@@ -320,6 +317,7 @@ PLIST_SUB+=	IPMI="@comment "
 
 .if ${PORT_OPTIONS:MNOTIFYEMAIL}
 LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify_email
 CONFIGURE_ARGS+=--with-libesmtp=${PREFIX}
 PLIST_SUB+=	NOTIFYEMAIL=""
