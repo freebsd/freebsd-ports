@@ -4,7 +4,7 @@
 
 PORTNAME=	libchamplain
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -12,14 +12,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A C library provides a Gtk+ widget to display rasterized maps/markers
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk \
-		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
+LIB_DEPENDS=	clutter-gtk-0.10:${PORTSDIR}/graphics/clutter-gtk \
+		soup-gnome-2.4:${PORTSDIR}/devel/libsoup-gnome
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gtk20 gnomehack ltverhack:1
+USES=		pathfix pkgconfig
+USE_GNOME=	gnomeprefix gtk20 ltverhack:1
+USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool
+USE_GL=		gl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
