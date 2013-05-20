@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdtest
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -34,14 +34,14 @@ MPICC=		${LOCALBASE}/bin/mpicc
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${MPICC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
+	(cd ${WRKSRC} && ${MPICC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c -lm)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 ${MANPREFIX}/man/man1)
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	(cd ${WRKSRC}/scripts && ${INSTALL_DATA} * ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
