@@ -3,8 +3,7 @@
 PORTNAME=	libvisio
 PORTVERSION=	0.0.27
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://dev-www.libreoffice.org/src/ \
-		LOCAL/sunpoet
+MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing the visio file format structure
@@ -17,13 +16,14 @@ LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		icui18n:${PORTSDIR}/devel/icu
 
-USE_XZ=		yes
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
+USE_PERL5_BUILD=yes
+USE_XZ=		yes
+USES=		pathfix pkgconfig
 
 .include <bsd.port.pre.mk>
 
