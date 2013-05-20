@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xrefresh
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xrefresh
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,7 +10,7 @@ COMMENT=	Refresh all or part of an X screen
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	x11
+USE_XORG=	x11 xorg-macros
 
 PLIST_FILES=	bin/xrefresh
 
