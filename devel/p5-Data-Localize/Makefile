@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Data::Localize
-# Date created:		09 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Localize
-PORTVERSION=	0.00022
+PORTVERSION=	0.00024
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -16,8 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for alternate data localization API
 
 RUN_DEPENDS=	\
-	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
-	p5-MooseX-AttributeHelpers>0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers
+	p5-Moo>=1.000008:${PORTSDIR}/devel/p5-Moo
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
