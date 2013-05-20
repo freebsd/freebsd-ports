@@ -366,6 +366,7 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
+    SUBDIR += hugin-devel
     SUBDIR += icat
     SUBDIR += icc-profiles-basiccolor
     SUBDIR += icc-profiles-openicc
