@@ -3,9 +3,10 @@
 
 PORTNAME=	munkres
 PORTVERSION=	1.0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	feld@feld.me
 COMMENT=	A Python implementation of the munkres algorithm
