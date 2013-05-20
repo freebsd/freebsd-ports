@@ -3,6 +3,7 @@
 
 PORTNAME=	drupal7
 PORTVERSION=	7.22
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -21,9 +22,8 @@ DRUPAL_VERSION=	7
 USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
 WANT_PHP_WEB=	yes
 
-OPTIONS+=	MYSQL "MySQL database support" on \
-		SQLITE3 "SQLite 3.x database support" off \
-		PGSQL "PostgreSQL database support" off
+OPTIONS_DEFINE=		MYSQL SQLITE3 PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
 NO_BUILD=	yes
 DOCS=		CHANGELOG.txt INSTALL.mysql.txt INSTALL.sqlite.txt \
@@ -33,17 +33,17 @@ DOCS=		CHANGELOG.txt INSTALL.mysql.txt INSTALL.sqlite.txt \
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_PHP+=	pdo_sqlite
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	41
 USE_PHP+=	pdo_mysql
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 USE_PHP+=	pdo_pgsql
 .endif
@@ -84,4 +84,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
