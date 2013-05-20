@@ -5,7 +5,8 @@ CATEGORIES=	mail ipv6
 MAINTAINER=	dinoex@FreeBSD.org
 
 WITH_TLS=	yes
-WITH_SASL2=	yes
+WITH_SASL=	yes
+WITH_SASLAUTHD=	yes
 SENDMAIL_PORT?=		sendmail
 MASTERDIR?=	${.CURDIR}/../${SENDMAIL_PORT}
 
