@@ -30,9 +30,9 @@ ${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}
 .done_translate_${PYPY_${inst}_NAME}:
 	${RM} -rf build_${PYPY_${inst}_NAME}
 	${MKDIR} build_${PYPY_${inst}_NAME}
-	(cd ${WRKSRC}/pypy/translator/goal; \
+	(cd ${WRKSRC}/pypy/goal; \
 		/usr/bin/time -l ${SETENV} TMPDIR=${.CURDIR}/build_${PYPY_${inst}_NAME} \
-		${PYTHON_CMD} translate.py --source ${PYPY_${inst}_TRANSLATE_ARGS} -O${PYPY_${inst}_OPT} \
+		${PYTHON_CMD} ../../rpython/bin/rpython --source ${PYPY_${inst}_TRANSLATE_ARGS} -O${PYPY_${inst}_OPT} \
 			targetpypystandalone.py ${PYPY_${inst}_OBJSPACE_ARGS} )
 	${TOUCH} .done_translate_${PYPY_${inst}_NAME}
 

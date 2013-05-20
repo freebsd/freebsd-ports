@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.0-beta1
+DISTVERSION=	2.0.1
 CATEGORIES=	lang python java
-MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
-DISTNAME=	release-${DISTVERSION}
-DIST_SUBDIR=	pypy
+MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -15,18 +14,24 @@ LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		ffi:${PORTSDIR}/devel/libffi
+		ffi:${PORTSDIR}/devel/libffi \
+		sqlite3:${PORTSDIR}/databases/sqlite3
 
 CLI_DESC=	(BROKEN) Translate a CLI (.NET) based pypy
 JVM_DESC=	(BROKEN) Translate a JVM (Java) based pypy
-PYPY_DESC=	Use pypy to translate (faster but uses more memory)
+PYTHON_DESC=	Use Python-2.7 to translate (slowest)
+PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
+PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
+PYINST_DESC=	Translation method
 SANDBOX_DESC=	Translate a sandboxed pypy
 .if !defined(PYPY_INST)
 OPTIONS_DEFINE+=	CLI JVM SANDBOX
 .endif
 LOCALBASE?=	/usr/local
 .if exists(${LOCALBASE}/bin/pypy)
-OPTIONS_DEFINE+=	PYPY
+OPTIONS_SINGLE=	PYINST
+OPTIONS_SINGLE_PYINST=	PYTHON PYPY PYPY_MINMEM
+OPTIONS_DEFAULT+=	PYPY_MINMEM
 .endif
 
 MANUAL_PACKAGE_BUILD=	runaway process on pointyhat
@@ -39,7 +44,7 @@ MAKE_JOBS_SAFE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-fcb6b056f00e
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -52,6 +57,9 @@ PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
 
 MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
+
+LOCALBASE_REFIX= \
+		lib/pypy2.0/lib_pypy/_sqlite3.py
 
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
@@ -66,6 +74,8 @@ USE_GCC=	yes
 
 .if ${PORT_OPTIONS:MPYPY} || defined(PYTHON_CMD)
 PYTHON_CMD?=	${LOCALBASE}/bin/pypy
+.elif ${PORT_OPTIONS:MPYPY_MINMEM}
+PYTHON_CMD?=	"${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
 .else
 USE_PYTHON_BUILD=	-2.7
 .endif
@@ -142,17 +152,23 @@ BROKEN=		JVM backend broken, partially supported upstream
 .if ${ARCH} == "i386"
 PYPY_ARCH=	x86_32
 PYPY_JITTABLE=	YES
+PYPY_BITS=	32
 .elif ${ARCH} == "amd64"
 PYPY_ARCH=	x86_64
 PYPY_JITTABLE=	YES
+PYPY_BITS=	64
 .elif ${ARCH} == "powerpc"
 PYPY_ARCH=	ppc_32
+PYPY_BITS=	32
 .elif ${ARCH} == "powerpc64"
 PYPY_ARCH=	ppc_64
+PYPY_BITS=	64
 .else
 PYPY_ARCH=	${ARCH}
+PYPY_BITS=	32
 .endif
 PLIST_SUB+=	PYPY_ARCH="${PYPY_ARCH}"
+PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
 .if !defined(PYPY_JITTABLE)
 .for inst in ${PYPY_INST}
@@ -168,22 +184,27 @@ PYPY_${inst}_OPT=	2
 # level.
 #
 .if ${PYPY_ARCH:M*64}
-.  if defined(PYTHON_CMD) && ${PYTHON_CMD:M*pypy*}
-# 64bit + pypy = 5.5 GiB
-PYPY_TRANSLATION_MEMORY=	5582872
+.  if ${PORT_OPTIONS:MPYPY}
+# 64bit + pypy = 5.9 GiB
+PYPY_TRANSLATION_MEMORY=	6138872
+.  elif ${PORT_OPTIONS:MPYPY_MINMEM}
+# 64bit + pypy (minimum memory) = 3.6GiB
+PYPY_TRANSLATION_MEMORY=	3855204
 .  else
-# 64bit + python = 4.3 GiB
-PYPY_TRANSLATION_MEMORY=	4349620
+# 64bit + python = 4.7 GiB
+PYPY_TRANSLATION_MEMORY=	4957688
 .  endif
 # 64bit system += 366 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 374784))
 .else
-.  if defined(PYTHON_CMD) && ${PYTHON_CMD:M*pypy*}
-# 32bit + pypy = 2.4GiB
-PYPY_TRANSLATION_MEMORY=	2423888
-.  else
-# 32bit + python = 2.1 GiB
-PYPY_TRANSLATION_MEMORY=	2111388
+.  if ${PORT_OPTIONS:MPYPY}
+# 32bit + pypy = 2.3GiB
+PYPY_TRANSLATION_MEMORY=	2689508
+.  elif ${PORT_OPTIONS:MPYPY_MINMEM}
+# 32bit + pypy (minimum memory) = 2.2GiB
+PYPY_TRANSLATION_MEMORY=	2329256
+# 32bit + python = 2.3 GiB
+PYPY_TRANSLATION_MEMORY=	2372640
 .  endif
 # 32bit system += 168 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 171787))
@@ -239,11 +260,14 @@ pre-fetch:
 
 post-extract:
 	${MKDIR} ${WRKSRC}/lib
+	${LN} -s ${WRKSRC}/lib ${WRKDIR}/lib
 	${MV} ${WRKSRC}/lib-python/${PYTHON_IMPL_VER} ${WRKSRC}/${PYPY_LIBDIR}
 	${MV} ${WRKSRC}/lib_pypy ${WRKSRC}/${PYPY_LIBDIR}/
 
 post-patch:
-	${FIND} ${WRKSRC}/lib -name '*.orig' -delete
+.for file in ${LOCALBASE_REFIX}
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${file}
+.endfor
 
 do-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -257,6 +281,14 @@ post-build:
 	-${FIND} ${WRKSRC}/${PYPY_LIBDIR} -type d | \
 		${SETENV} PYTHON_PATH=${WRKSRC} ${XARGS} \
 		${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
+.for mod in _sqlite3 _curses
+	${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
+.endfor
+	${FIND} ${WRKSRC}/lib -name '*.orig' -delete -or \
+		-name '*.bak' -delete -or \
+		-name '*.c' -delete -or \
+		-name '*.o' -delete
+	${FIND} ${WRKSRC}/lib -depth -type d -name tmp | ${XARGS} ${RM} -r
 	${MV} ${WRKSRC}/include ${WRKSRC}/include~
 	${MKDIR} ${WRKSRC}/include
 	${MV} ${WRKSRC}/include~ ${WRKSRC}/${PYPY_INCLUDEDIR}
@@ -266,6 +298,7 @@ do-install:
 	(cd ${WRKSRC}/${dir}; ${COPYTREE_SHARE} . ${PREFIX}/${dir})
 .endfor
 .for name in ${PYPY_NAMES:O}
+	${STRIP_CMD} ${WRKDIR}/${name}
 	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PREFIX}/bin/${name}${PYPY_VER}
 	${ECHO} bin/${name}${PYPY_VER} >> ${TMPPLIST}
 .endfor
@@ -288,6 +321,7 @@ pkg-plist: build
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|%%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|%%PYPY_INCLUDEDIR%%|g' \
 		-e 's|${PYPY_ARCH}|%%PYPY_ARCH%%|g' \
+		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
 			${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|@dirrm %%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|@dirrm %%PYPY_INCLUDEDIR%%|g' \
