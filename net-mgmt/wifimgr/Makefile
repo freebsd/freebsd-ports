@@ -20,11 +20,12 @@ INSTALLS_ICONS=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext pkgconfig
 PLIST_SUB+=	NLS=""
 .else
 CFLAGS+=	-DWITHOUT_NLS
 PLIST_SUB+=	NLS="@comment "
+MAKE_ENV+=	WITHOUT_NLS=${WITHOUT_NLS}
 .endif
 
 MAN8=		wifimgr.8
