@@ -38,4 +38,3 @@ libdata/pkgconfig/ini_config.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/dhash_example.c
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/pkgconfig
