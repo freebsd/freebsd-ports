@@ -1,15 +1,10 @@
-# ex:ts=8
-# Ports collection makefile for:	py-rlcompleter2
-# Date created:			Dec 31, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	rlcompleter2
-PORTVERSION=	0.96
+PORTVERSION=	0.98
 CATEGORIES=	devel python
-MASTER_SITES=	http://codespeak.net/rlcompleter2/download/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
