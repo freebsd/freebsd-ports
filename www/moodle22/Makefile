@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.10
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable22/
 EXTRACT_SUFX=	.tgz
@@ -13,7 +13,10 @@ COMMENT=	Course management system based on social constructionism
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle-1.*.* moodle-2.3.* moodle-2.4.*
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2013-08-20
+
+CONFLICTS=	moodle-1.*.* moodle-2.3.* moodle-2.4.* moodle-2.5.*
 LATEST_LINK=	moodle22
 
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
