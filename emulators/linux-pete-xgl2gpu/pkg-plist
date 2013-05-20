@@ -7,6 +7,3 @@ share/psemupro/cfg/gpuPeteXGL2.cfg
 @dirrmtry libexec/psemupro
 @dirrmtry share/psemupro/cfg
 @dirrmtry share/psemupro
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/version.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
