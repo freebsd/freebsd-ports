@@ -84,15 +84,14 @@ share/xawtv/uhf.list
 lib/X11/app-defaults/MoTV
 lib/X11/app-defaults/Xawtv
 lib/X11/app-defaults/mtt
-lib/X11/de/app-defaults/MoTV
 lib/X11/de_DE.UTF-8/app-defaults/MoTV
-lib/X11/fr/app-defaults/MoTV
-lib/X11/it/app-defaults/MoTV
-@dirrm lib/X11/it/app-defaults
-@dirrm lib/X11/it
-@dirrm lib/X11/fr/app-defaults
-@dirrm lib/X11/fr
+lib/X11/fr_FR.UTF-8/app-defaults/MoTV
+lib/X11/it_IT.UTF-8/app-defaults/MoTV
 @dirrm lib/X11/de_DE.UTF-8/app-defaults
 @dirrm lib/X11/de_DE.UTF-8
+@dirrm lib/X11/fr_FR.UTF-8/app-defaults
+@dirrm lib/X11/fr_FR.UTF-8
+@dirrm lib/X11/it_IT.UTF-8/app-defaults
+@dirrm lib/X11/it_IT.UTF-8
 @dirrm lib/X11/de/app-defaults
 @dirrm lib/X11/de

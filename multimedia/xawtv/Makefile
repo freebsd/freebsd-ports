@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xawtv
-PORTVERSION=	3.95
-PORTREVISION=	12
+PORTVERSION=	3.103
 CATEGORIES=	multimedia
-MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
+MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A TV viewing application and a few TV utilities
@@ -22,6 +21,7 @@ OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT=	AALIB
 ZVBI_DESC=	Enable libzvbi support
 
+USE_BZIP2=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -33,7 +33,7 @@ MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	alpha amd64 i386
 
-FILES_LIBJPEG=	console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
+FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 
 MAN1=		alevtd.1 dump-mixers.1 fbtv.1 mtt.1 motv.1 ntsc-cc.1 pia.1 \
 		propwatch.1 radio.1 record.1 rootv.1 scantv.1 showriff.1 \
@@ -93,6 +93,10 @@ post-patch:
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|-lquicktime|-L${LOCALBASE}/lib &|g' \
 		${WRKSRC}/configure
+
+	@${REINPLACE_CMD} -e 's|-ldl||g' \
+		${WRKSRC}/console/Subdir.mk \
+		${WRKSRC}/x11/Subdir.mk
 
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
