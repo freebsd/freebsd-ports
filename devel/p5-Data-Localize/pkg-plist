@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Data/Localize/Gettext.pm
 %%SITE_PERL%%/Data/Localize/Gettext/Parser.pm
 %%SITE_PERL%%/Data/Localize/Localizer.pm
+%%SITE_PERL%%/Data/Localize/Log.pm
 %%SITE_PERL%%/Data/Localize/MultiLevel.pm
 %%SITE_PERL%%/Data/Localize/Storage.pm
 %%SITE_PERL%%/Data/Localize/Storage/BerkeleyDB.pm
