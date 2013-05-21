@@ -1,0 +1,5 @@
+With meck you can easily mock modules in Erlang. You can also perform some
+basic validations on the mocked modules, such as making sure no unexpected
+exceptions occurred or looking at the call history.
+
+WWW: https://github.com/eproxus/meck
