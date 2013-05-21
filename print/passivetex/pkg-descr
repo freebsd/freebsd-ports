@@ -7,4 +7,4 @@ For example, to generate a PDF file from an FO file, run
 
     pdftex --interaction nonstopmode "&pdfxmltex" file.fo
 
-WWW: http://www.tei-c.org.uk/Software/passivetex/
+WWW: http://projects.oucs.ox.ac.uk/passivetex/
