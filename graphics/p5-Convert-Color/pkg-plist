@@ -4,7 +4,7 @@
 %%SITE_PERL%%/Convert/Color/CMYK.pm
 %%SITE_PERL%%/Convert/Color/HSL.pm
 %%SITE_PERL%%/Convert/Color/HSV.pm
-%%SITE_PERL%%/Convert/Color/HueBased.pm
+%%SITE_PERL%%/Convert/Color/HueChromaBased.pm
 %%SITE_PERL%%/Convert/Color/RGB.pm
 %%SITE_PERL%%/Convert/Color/RGB16.pm
 %%SITE_PERL%%/Convert/Color/RGB8.pm
