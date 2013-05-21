@@ -3253,7 +3253,6 @@
     SUBDIR += php5-json
     SUBDIR += php5-msgpack
     SUBDIR += php5-pcntl
-    SUBDIR += php5-phing
     SUBDIR += php5-pinba
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
