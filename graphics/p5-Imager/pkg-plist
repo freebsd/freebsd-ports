@@ -26,7 +26,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filters.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/BBox.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FT2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/T1.pm
@@ -39,6 +38,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/IO.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/ImageTypes.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Inline.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Install.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/LargeSamples.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Preprocess.pm
@@ -67,6 +67,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imio.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/immacros.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imperlio.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imrender.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayer.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayert.h
@@ -100,14 +101,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines
