@@ -1,13 +1,7 @@
-# New ports collection makefile for:	local::lib
-# Date created:		14 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	local-lib
-PORTVERSION=	1.008004
-PORTREVISION=	1
+PORTVERSION=	1.008009
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:APEIRON
