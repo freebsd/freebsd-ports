@@ -3,7 +3,7 @@
 
 PORTNAME=	php52
 PORTVERSION=	5.2.17
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 
 # BACKPORTS patch for lang/php52 and all php52-extensions
-PATCHFILES=	php52-backports-security-20121114.patch
+PATCHFILES=	php52-backports-security-20130320.patch
 PATCH_SITES+=	http://php52-backports.googlecode.com/files/
 
 .if !defined(PKGNAMESUFFIX)
