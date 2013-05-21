@@ -2,6 +2,7 @@
 
 PORTNAME=	trytond_stock_forecast
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
