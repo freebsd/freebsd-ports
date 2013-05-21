@@ -1,0 +1,13 @@
+--- plug-ins/tiff/Makefile.am.orig
++++ plug-ins/tiff/Makefile.am
+@@ -26,9 +26,8 @@
+ 	$(OYRANOS_LIBS) \
+ 	@LCMS_LIB@                           \
+ 	@LIBTIFF_LIB@				\
+-        $(top_builddir)/libhalf/cinepaint_half.lo       \
+         $(OPENEXR_LIBS) \
+-	-lc
++	-lm
+ 
+ DEPS = $(top_builddir)/lib/libcinepaint.la
+ 

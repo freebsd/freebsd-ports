@@ -1,0 +1,11 @@
+--- plug-ins/retinex/Makefile.am.orig
++++ plug-ins/retinex/Makefile.am
+@@ -20,7 +20,7 @@
+ 	$(X_LIBS) \
+         $(top_builddir)/libhalf/cinepaint_half.lo       \
+         $(OPENEXR_LIBS) \
+-	-lc
++	-lm
+ 
+ DEPS = $(top_builddir)/lib/libcinepaint.la
+ 

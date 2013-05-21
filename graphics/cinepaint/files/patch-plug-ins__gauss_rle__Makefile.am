@@ -1,0 +1,12 @@
+--- plug-ins/gauss_rle/Makefile.am.orig
++++ plug-ins/gauss_rle/Makefile.am
+@@ -15,8 +15,7 @@
+ LDADD = \
+ 	$(top_builddir)/lib/libcinepaint.la	\
+ 	$(X_LIBS)				\
+-					\
+-	-lc
++	-lm
+ 
+ DEPS = $(top_builddir)/lib/libcinepaint.la
+ 

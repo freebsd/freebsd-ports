@@ -1,0 +1,12 @@
+--- cinepaint-gtk.pc.in.orig
++++ cinepaint-gtk.pc.in
+@@ -11,6 +11,7 @@
+ Name: cinepaint-gtk
+ Description: Cinepaint Plug-In Library Using GTK+
+ Version: @MAJOR_VERSION@.@MINOR_VERSION@
+-Libs: -L${libdir} -lcinepaint @GTK_LIBS@
+-Cflags: -I${includedir} @GTK_CFLAGS@
++Requires: gtk+-2.0
++Libs: -L${libdir} -lcinepaint 
++Cflags: -I${includedir} 
+ 

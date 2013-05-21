@@ -1,0 +1,12 @@
+--- app/depth/Makefile.am.orig
++++ app/depth/Makefile.am
+@@ -11,7 +11,8 @@
+ 
+ libdepth_la_LIBADD = \
+ 	$(top_builddir)/lib/libcinepaint.la \
+-	$(GTK_LIBS)
++	$(GTK_LIBS) \
++	-lm
+ 
+ libdepth_la_SOURCES = \
+ 	bezier_select.c \

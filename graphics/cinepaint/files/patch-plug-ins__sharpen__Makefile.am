@@ -1,0 +1,13 @@
+--- plug-ins/sharpen/Makefile.am.orig
++++ plug-ins/sharpen/Makefile.am
+@@ -15,9 +15,7 @@
+ LDADD = \
+ 	$(top_builddir)/lib/libcinepaint.la	\
+ 	$(X_LIBS)				\
+-        $(top_builddir)/libhalf/cinepaint_half.lo       \
+-        $(OPENEXR_LIBS) \
+-	-lc
++        $(OPENEXR_LIBS)
+ 
+ DEPS = $(top_builddir)/lib/libcinepaint.la
+ 

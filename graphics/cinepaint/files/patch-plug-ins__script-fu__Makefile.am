@@ -1,0 +1,11 @@
+--- plug-ins/script-fu/Makefile.am.orig
++++ plug-ins/script-fu/Makefile.am
+@@ -59,7 +59,7 @@
+ 	$(top_builddir)/plug-ins/dbbrowser/dbbrowser_utils.o	\
+ 	$(top_builddir)/lib/libcinepaint.la			\
+ 	$(X_LIBS)						\
+-	-lc
++	-lm
+ 
+ DEPS = \
+ 	$(top_builddir)/plug-ins/dbbrowser/dbbrowser_utils.o	\

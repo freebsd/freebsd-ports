@@ -1,6 +1,124 @@
 bin/cinepaint
 bin/cinepaint-remote
 bin/cinepainttool
+include/cinepaint/app/errors.h
+include/cinepaint/app/trace.h
+include/cinepaint/chainbutton.h
+include/cinepaint/channelops_pdb.h
+include/cinepaint/compat.h
+include/cinepaint/config.h
+include/cinepaint/convert_pdb.h
+include/cinepaint/dialog.h
+include/cinepaint/dll_api.h
+include/cinepaint/edit_pdb.h
+include/cinepaint/export.h
+include/cinepaint/fileops_pdb.h
+include/cinepaint/fl_i18n_cinepaint.h
+include/cinepaint/float16.h
+include/cinepaint/gtkdirtree.h
+include/cinepaint/guides_pdb.h
+include/cinepaint/helpui.h
+include/cinepaint/image_convert.h
+include/cinepaint/image_limits.h
+include/cinepaint/image_pdb.h
+include/cinepaint/intl.h
+include/cinepaint/libgimp/gimp.h
+include/cinepaint/libgimp/gimp1.2.h
+include/cinepaint/libgimp/gimpcompat.h
+include/cinepaint/libgimp/gimpintl.h
+include/cinepaint/libgimp/gimpmath.h
+include/cinepaint/libgimp/gimpui.h
+include/cinepaint/libgimp/stdplugins-intl.h
+include/cinepaint/matrix.h
+include/cinepaint/menu.h
+include/cinepaint/pdb.h
+include/cinepaint/pixmap.h
+include/cinepaint/plugin_main.h
+include/cinepaint/plugin_pdb.h
+include/cinepaint/rint.h
+include/cinepaint/selection_pdb.h
+include/cinepaint/size_entry.h
+include/cinepaint/ui.h
+include/cinepaint/undo_pdb.h
+include/cinepaint/unit.h
+include/cinepaint/unit_pdb.h
+include/cinepaint/unitmenu.h
+include/cinepaint/version.h
+include/cinepaint/widgets.h
+include/cinepaint/wire/c_typedefs.h
+include/cinepaint/wire/datadir.h
+include/cinepaint/wire/dl_list.h
+include/cinepaint/wire/enums.h
+include/cinepaint/wire/event.h
+include/cinepaint/wire/iodebug.h
+include/cinepaint/wire/libtile.h
+include/cinepaint/wire/precision.h
+include/cinepaint/wire/protocol.h
+include/cinepaint/wire/taskswitch.h
+include/cinepaint/wire/wire.h
+include/cinepaint/wire/wire_types.h
+include/cinepaint/wire/wirebuffer.h
+lib/cinepaint/%%VER%%/extra/dcraw
+lib/cinepaint/%%VER%%/extra/jhead
+lib/cinepaint/%%VER%%/plug-ins/blur
+lib/cinepaint/%%VER%%/plug-ins/bmp
+lib/cinepaint/%%VER%%/plug-ins/bracketing_to_hdr
+lib/cinepaint/%%VER%%/plug-ins/cineon
+lib/cinepaint/%%VER%%/plug-ins/collect
+lib/cinepaint/%%VER%%/plug-ins/compose
+lib/cinepaint/%%VER%%/plug-ins/dbbrowser
+lib/cinepaint/%%VER%%/plug-ins/decompose
+lib/cinepaint/%%VER%%/plug-ins/dicom
+lib/cinepaint/%%VER%%/plug-ins/edge
+lib/cinepaint/%%VER%%/plug-ins/fits
+lib/cinepaint/%%VER%%/plug-ins/gauss_rle
+lib/cinepaint/%%VER%%/plug-ins/gbr
+lib/cinepaint/%%VER%%/plug-ins/gifload
+lib/cinepaint/%%VER%%/plug-ins/hdr
+lib/cinepaint/%%VER%%/plug-ins/iff
+lib/cinepaint/%%VER%%/plug-ins/iol
+lib/cinepaint/%%VER%%/plug-ins/jpeg
+lib/cinepaint/%%VER%%/plug-ins/mblur
+lib/cinepaint/%%VER%%/plug-ins/median
+lib/cinepaint/%%VER%%/plug-ins/minimum
+lib/cinepaint/%%VER%%/plug-ins/noisify
+lib/cinepaint/%%VER%%/plug-ins/openexr
+lib/cinepaint/%%VER%%/plug-ins/pdf
+lib/cinepaint/%%VER%%/plug-ins/pic
+lib/cinepaint/%%VER%%/plug-ins/png
+lib/cinepaint/%%VER%%/plug-ins/pnm
+%%PRINT%%lib/cinepaint/%%VER%%/plug-ins/print
+lib/cinepaint/%%VER%%/plug-ins/psd
+lib/cinepaint/%%VER%%/plug-ins/psd_save
+lib/cinepaint/%%VER%%/plug-ins/rawphoto
+lib/cinepaint/%%VER%%/plug-ins/retinex
+lib/cinepaint/%%VER%%/plug-ins/rotate
+lib/cinepaint/%%VER%%/plug-ins/screenshot
+lib/cinepaint/%%VER%%/plug-ins/script-fu
+lib/cinepaint/%%VER%%/plug-ins/sgi
+lib/cinepaint/%%VER%%/plug-ins/sharpen
+lib/cinepaint/%%VER%%/plug-ins/snoise
+lib/cinepaint/%%VER%%/plug-ins/sobel
+lib/cinepaint/%%VER%%/plug-ins/spread
+lib/cinepaint/%%VER%%/plug-ins/tga
+lib/cinepaint/%%VER%%/plug-ins/tiff
+lib/cinepaint/%%VER%%/plug-ins/unsharp
+lib/cinepaint/%%VER%%/plug-ins/xwd
+lib/libcinepaint.a
+lib/libcinepaint.la
+lib/libcinepaint.so
+lib/libcinepaint.so.1
+lib/libcinepaintHalf.a
+lib/libcinepaintHalf.la
+lib/libcinepaintHalf.so
+lib/libcinepaintHalf.so.1
+lib/libcinepaint_fl_i18n.a
+lib/libcinepaint_fl_i18n.la
+lib/libcinepaint_fl_i18n.so
+lib/libcinepaint_fl_i18n.so.1
+libdata/pkgconfig/cinepaint-gtk.pc
+share/aclocal/cinepaint.m4
+share/applications/cinepaint.desktop
 %%DATADIR%%/%%VER%%/brushes/10x10squareBlurf16.gbr
 %%DATADIR%%/%%VER%%/brushes/10x10squaref16.gbr
 %%DATADIR%%/%%VER%%/brushes/11circlef16.gbr
@@ -16,7 +134,6 @@ bin/cinepainttool
 %%DATADIR%%/%%VER%%/brushes/1circlef16.gbr
 %%DATADIR%%/%%VER%%/brushes/20x20squareBlurf16.gbr
 %%DATADIR%%/%%VER%%/brushes/20x20squaref16.gbr
-%%DATADIR%%/%%VER%%/brushes/30x30twinklef16.gbr
 %%DATADIR%%/%%VER%%/brushes/3circlef16.gbr
 %%DATADIR%%/%%VER%%/brushes/3fcirclef16.gbr
 %%DATADIR%%/%%VER%%/brushes/5circlef16.gbr
@@ -108,6 +225,8 @@ bin/cinepainttool
 %%DATADIR%%/%%VER%%/brushes/hsparks.gih
 %%DATADIR%%/%%VER%%/brushes/pixelf16.gbr
 %%DATADIR%%/%%VER%%/brushes/vine.gih
+%%DATADIR%%/%%VER%%/cinepaintrc
+%%DATADIR%%/%%VER%%/cinepaintrc_user
 %%DATADIR%%/%%VER%%/curves/D100ev0
 %%DATADIR%%/%%VER%%/curves/DavidFmidtoneBoostA
 %%DATADIR%%/%%VER%%/curves/EV3-4.0
@@ -220,8 +339,6 @@ bin/cinepainttool
 %%DATADIR%%/%%VER%%/curves/v3
 %%DATADIR%%/%%VER%%/curves/v3h
 %%DATADIR%%/%%VER%%/curves/v3hb
-%%DATADIR%%/%%VER%%/gimprc
-%%DATADIR%%/%%VER%%/gimprc_user
 %%DATADIR%%/%%VER%%/gradients/Abstract_1
 %%DATADIR%%/%%VER%%/gradients/Abstract_2
 %%DATADIR%%/%%VER%%/gradients/Abstract_3
@@ -413,70 +530,6 @@ bin/cinepainttool
 %%DATADIR%%/%%VER%%/spot.splash.ppm
 %%DATADIR%%/%%VER%%/tips.txt
 %%DATADIR%%/%%VER%%/user_install
-%%OPENEXR:%%lib/cinepaint/%%VER%%/plug-ins/openexr
-include/cinepaint/app/errors.h
-include/cinepaint/app/trace.h
-lib/cinepaint/%%VER%%/extra/dcraw
-lib/cinepaint/%%VER%%/extra/jhead
-lib/cinepaint/%%VER%%/plug-ins/blur
-lib/cinepaint/%%VER%%/plug-ins/bmp
-lib/cinepaint/%%VER%%/plug-ins/bracketing_to_hdr
-lib/cinepaint/%%VER%%/plug-ins/cineon
-lib/cinepaint/%%VER%%/plug-ins/collect
-lib/cinepaint/%%VER%%/plug-ins/compose
-lib/cinepaint/%%VER%%/plug-ins/dbbrowser
-lib/cinepaint/%%VER%%/plug-ins/decompose
-lib/cinepaint/%%VER%%/plug-ins/dicom
-lib/cinepaint/%%VER%%/plug-ins/edge
-lib/cinepaint/%%VER%%/plug-ins/fits
-lib/cinepaint/%%VER%%/plug-ins/gauss_rle
-lib/cinepaint/%%VER%%/plug-ins/gbr
-lib/cinepaint/%%VER%%/plug-ins/gifload
-lib/cinepaint/%%VER%%/plug-ins/hdr
-lib/cinepaint/%%VER%%/plug-ins/icc_examin_cp
-lib/cinepaint/%%VER%%/plug-ins/iff
-lib/cinepaint/%%VER%%/plug-ins/iol
-lib/cinepaint/%%VER%%/plug-ins/jpeg
-lib/cinepaint/%%VER%%/plug-ins/mblur
-lib/cinepaint/%%VER%%/plug-ins/median
-lib/cinepaint/%%VER%%/plug-ins/minimum
-lib/cinepaint/%%VER%%/plug-ins/noisify
-lib/cinepaint/%%VER%%/plug-ins/pdf
-lib/cinepaint/%%VER%%/plug-ins/pic
-lib/cinepaint/%%VER%%/plug-ins/png
-lib/cinepaint/%%VER%%/plug-ins/pnm
-lib/cinepaint/%%VER%%/plug-ins/psd
-lib/cinepaint/%%VER%%/plug-ins/psd_save
-lib/cinepaint/%%VER%%/plug-ins/rawphoto
-lib/cinepaint/%%VER%%/plug-ins/retinex
-lib/cinepaint/%%VER%%/plug-ins/rotate
-lib/cinepaint/%%VER%%/plug-ins/screenshot
-lib/cinepaint/%%VER%%/plug-ins/script-fu
-lib/cinepaint/%%VER%%/plug-ins/sgi
-lib/cinepaint/%%VER%%/plug-ins/sharpen
-lib/cinepaint/%%VER%%/plug-ins/snoise
-lib/cinepaint/%%VER%%/plug-ins/sobel
-lib/cinepaint/%%VER%%/plug-ins/spread
-lib/cinepaint/%%VER%%/plug-ins/tga
-lib/cinepaint/%%VER%%/plug-ins/tiff
-lib/cinepaint/%%VER%%/plug-ins/unsharp
-lib/cinepaint/%%VER%%/plug-ins/xwd
-lib/libcinepaint.a
-lib/libcinepaint.la
-lib/libcinepaint.so
-lib/libcinepaint.so.0
-lib/libcinepaintHalf.a
-lib/libcinepaintHalf.la
-lib/libcinepaintHalf.so
-lib/libcinepaintHalf.so.0
-lib/libcinepaint_fl_i18n.a
-lib/libcinepaint_fl_i18n.la
-lib/libcinepaint_fl_i18n.so
-lib/libcinepaint_fl_i18n.so.0
-libdata/pkgconfig/cinepaint-gtk.pc
-share/aclocal/cinepaint.m4
-share/applications/cinepaint.desktop
-share/fonts/FreeSans.ttf
 share/locale/ca/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/ca/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/ca/LC_MESSAGES/cinepaint.mo
@@ -489,24 +542,24 @@ share/locale/da/LC_MESSAGES/cinepaint.mo
 share/locale/de/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/de/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/de/LC_MESSAGES/cinepaint.mo
-share/locale/de/LC_MESSAGES/icc_examin_cp.mo
 share/locale/el/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/el/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/el/LC_MESSAGES/cinepaint.mo
 share/locale/en_GB/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/en_GB/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/en_GB/LC_MESSAGES/cinepaint.mo
-share/locale/eo/LC_MESSAGES/icc_examin_cp.mo
 share/locale/es/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/es/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/es/LC_MESSAGES/cinepaint.mo
+share/locale/eu/LC_MESSAGES/cinepaint-script-fu.mo
+share/locale/eu/LC_MESSAGES/cinepaint-std-plugins.mo
+share/locale/eu/LC_MESSAGES/cinepaint.mo
 share/locale/fi/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/fi/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/fi/LC_MESSAGES/cinepaint.mo
 share/locale/fr/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/fr/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/fr/LC_MESSAGES/cinepaint.mo
-share/locale/fr/LC_MESSAGES/icc_examin_cp.mo
 share/locale/ga/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/ga/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/ga/LC_MESSAGES/cinepaint.mo
@@ -577,22 +630,21 @@ share/locale/zh_TW/LC_MESSAGES/cinepaint-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/cinepaint-std-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/cinepaint.mo
 share/pixmaps/cinepaint.png
-@dirrm %%DATADIR%%/%%VER%%/brushes
-@dirrm %%DATADIR%%/%%VER%%/curves
-@dirrm %%DATADIR%%/%%VER%%/gradients
-@dirrm %%DATADIR%%/%%VER%%/iol
-@dirrm %%DATADIR%%/%%VER%%/palettes
-@dirrm %%DATADIR%%/%%VER%%/patterns
 @dirrm %%DATADIR%%/%%VER%%/scripts
+@dirrm %%DATADIR%%/%%VER%%/patterns
+@dirrm %%DATADIR%%/%%VER%%/palettes
+@dirrm %%DATADIR%%/%%VER%%/iol
+@dirrm %%DATADIR%%/%%VER%%/gradients
+@dirrm %%DATADIR%%/%%VER%%/curves
+@dirrm %%DATADIR%%/%%VER%%/brushes
 @dirrm %%DATADIR%%/%%VER%%
 @dirrm %%DATADIR%%
-@dirrm include/cinepaint/app
-@dirrm include/cinepaint/libgimp
-@dirrm include/cinepaint/wire
-@dirrm lib/cinepaint/%%VER%%/extra
-@dirrm lib/cinepaint/%%VER%%/plug-ins
-@dirrm lib/cinepaint/%%VER%%
-@dirrm include/cinepaint
-@dirrm lib/cinepaint
 @dirrmtry share/applications
-@dirrmtry share/fonts
+@dirrm lib/cinepaint/%%VER%%/plug-ins
+@dirrm lib/cinepaint/%%VER%%/extra
+@dirrm lib/cinepaint/%%VER%%
+@dirrm lib/cinepaint
+@dirrm include/cinepaint/wire
+@dirrm include/cinepaint/libgimp
+@dirrm include/cinepaint/app
+@dirrm include/cinepaint
