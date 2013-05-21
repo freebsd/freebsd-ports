@@ -1,33 +1,41 @@
-# New ports collection makefile for:    hfs
-# Date created:         17 November 1994
-# Whom:                 jmz
-#
+# Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hfs
-PORTVERSION=	0.37
+DISTVERSION=	0_37
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jmz
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
+MASTER_SITES=	LOCAL/jmz
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Read Macintosh HFS floppy disks, hard drives, and CDROMs
+COMMENT=	Read Macintosh HFS floppy disks, hard drives, and CD-ROMs
+
+LICENCE=	GPLv2
 
 CONFLICTS=	hfsutils-[0-9]*
 
 USE_GMAKE=	yes
+MAKE_ARGS=	CCPLUSPLUS="${CXX} -c" LD="${CXX}" DEBUG="${CFLAGS}" \
+		INSTALLPATH="${PREFIX}" MANINSTALLDIR="${MANPREFIX}/man/man1"
+
 MAN1=		hfs.1
 PLIST_FILES=	bin/hfs
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/.* ||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|Volume::Enumerate|Enumerate|' \
 		${WRKSRC}/volume.h
 
-pre-install:
-	@${MKDIR} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/man/man1
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
