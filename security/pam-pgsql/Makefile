@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7/
 MAINTAINER=	berend@pobox.com
 COMMENT=	PAM module for authenticating with PostgreSQL
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
@@ -23,8 +25,7 @@ post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/CHANGELOG \
-		${WRKSRC}/COPYRIGHT ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/CHANGELOG ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
