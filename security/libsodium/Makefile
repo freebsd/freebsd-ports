@@ -6,14 +6,14 @@ CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 
 MAINTAINER=	csosstudy@gmail.com
-COMMENT=	Library for build higher-level cryptographic tools
+COMMENT=	Library to build higher-level cryptographic tools
 
 LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS COPYING NEWS THANKS
+PORTDOCS=	AUTHORS NEWS THANKS
 
 post-build:
 	cd ${WRKSRC} && ${MAKE} check
