@@ -1,12 +1,7 @@
-# New ports collection makefile for:	HTML::Shakan
-# Date created:		21 May 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Shakan
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -16,7 +11,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of form html generator/validator
 
 RUN_DEPENDS=	\
-	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Email-Valid-Loose>=0.05:${PORTSDIR}/mail/p5-Email-Valid-Loose \
 	p5-FormValidator-Lite>=0.24:${PORTSDIR}/textproc/p5-FormValidator-Lite \
 	p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
@@ -24,7 +18,14 @@ RUN_DEPENDS=	\
 	p5-parent>0:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	\
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Lingua-JA-Regular-Unicode>0:${PORTSDIR}/japanese/p5-Lingua-JA-Regular-Unicode \
+	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
+	p5-DateTime-Format-HTTP>0:${PORTSDIR}/devel/p5-DateTime-Format-HTTP \
+	p5-Data-Model>0:${PORTSDIR}/devel/p5-Data-Model \
+	p5-DBIx-Skinny>0:${PORTSDIR}/databases/p5-DBIx-Skinny \
+	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 
 PERL_MODBUILD=	yes
 
