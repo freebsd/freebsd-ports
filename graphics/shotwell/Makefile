@@ -13,8 +13,7 @@ COMMENT=	Open source photo manager for GNOME
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	vala>=0.12.0:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		gee:${PORTSDIR}/devel/libgee06 \
 		json-glib-1.0:${PORTSDIR}/devel/json-glib \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
@@ -28,6 +27,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 USE_BZIP2=	yes
 USES=		gettext
 USE_GNOME=	gnomehier gconf2 gtk20 desktopfileutils librsvg2
+USE_SQLITE=	3
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -47,12 +47,17 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|share/shotwell|${DATADIR_REL}|g ; \
+		    s|--fatal-warnings||g ; \
 		    s|%%GCONF_CONFIG_SOURCE%%|${GCONF_CONFIG_SOURCE}|g' \
 			${WRKSRC}/${MAKEFILE}
 
 	@${REINPLACE_CMD} -E \
 		-e 's|\-n ||g' \
 			${WRKSRC}/configure.mk
+
+	@${REINPLACE_CMD} -E \
+		-e 's|--fatal-warnings||g' \
+			${WRKSRC}/plugins/Makefile.plugin.mk
 # attempt at a DATADIR safe port
 	@${REINPLACE_CMD} -E \
 		-e 's|\.get_child\("share")\.get_child\("shotwell")|${SHOTWELL_DATADIR}|' \
