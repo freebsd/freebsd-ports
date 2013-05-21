@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	kombu
-PORTVERSION=	2.5.6
+PORTVERSION=	2.5.7
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	An AMQP messaging framework for Python
+COMMENT=	AMQP messaging framework for Python
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=1.0.6:${PORTSDIR}/net/py-amqp \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=1.0.9:${PORTSDIR}/net/py-amqp \
 		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.3:${PORTSDIR}/devel/py-anyjson
 
 OPTIONS_DEFINE=	BEANSTALK BOTO MONGODB REDIS SQLALCHEMY ZMQ
@@ -27,7 +27,10 @@ ZMQ_DESC=	Include ZMQ transport support
 # Ports infrastructure bug
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.options.mk>
+USE_PYTHON=	2.5+
+USE_PYDISTUTILS=	easy_install
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBEANSTALK}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}beanstalkc>0:${PORTSDIR}/net/py-beanstalkc
@@ -53,7 +56,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlal
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq=>2.2.0:${PORTSDIR}/devel/py-pyzmq
 .endif
 
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	easy_install
+.if ${PYTHON_REL} < 270
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict \
+		${PYTHON_PKGNAMEPREFIX}importlib>=0:${PORTSDIR}/devel/py-importlib
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
