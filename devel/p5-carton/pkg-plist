@@ -1,7 +1,5 @@
 bin/carton
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/carton/.packlist
 %%SITE_PERL%%/Carton.pm
-%%SITE_PERL%%/Carton.pod
 %%SITE_PERL%%/Carton/CLI.pm
 %%SITE_PERL%%/Carton/Doc/Check.pod
 %%SITE_PERL%%/Carton/Doc/Exec.pod
@@ -16,4 +14,3 @@ bin/carton
 %%SITE_PERL%%/Carton/Util.pm
 @dirrm %%SITE_PERL%%/Carton/Doc
 @dirrm %%SITE_PERL%%/Carton
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/carton
