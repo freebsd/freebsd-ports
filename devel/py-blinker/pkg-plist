@@ -1,13 +1,13 @@
-lib/python2.7/site-packages/blinker/__init__.py
-lib/python2.7/site-packages/blinker/__init__.pyc
-lib/python2.7/site-packages/blinker/__init__.pyo
-lib/python2.7/site-packages/blinker/_saferef.py
-lib/python2.7/site-packages/blinker/_saferef.pyc
-lib/python2.7/site-packages/blinker/_saferef.pyo
-lib/python2.7/site-packages/blinker/_utilities.py
-lib/python2.7/site-packages/blinker/_utilities.pyc
-lib/python2.7/site-packages/blinker/_utilities.pyo
-lib/python2.7/site-packages/blinker/base.py
-lib/python2.7/site-packages/blinker/base.pyc
-lib/python2.7/site-packages/blinker/base.pyo
-@dirrmtry lib/python2.7/site-packages/blinker
+%%PYTHON_SITELIBDIR%%/blinker/__init__.py
+%%PYTHON_SITELIBDIR%%/blinker/__init__.pyc
+%%PYTHON_SITELIBDIR%%/blinker/__init__.pyo
+%%PYTHON_SITELIBDIR%%/blinker/_saferef.py
+%%PYTHON_SITELIBDIR%%/blinker/_saferef.pyc
+%%PYTHON_SITELIBDIR%%/blinker/_saferef.pyo
+%%PYTHON_SITELIBDIR%%/blinker/_utilities.py
+%%PYTHON_SITELIBDIR%%/blinker/_utilities.pyc
+%%PYTHON_SITELIBDIR%%/blinker/_utilities.pyo
+%%PYTHON_SITELIBDIR%%/blinker/base.py
+%%PYTHON_SITELIBDIR%%/blinker/base.pyc
+%%PYTHON_SITELIBDIR%%/blinker/base.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/blinker
