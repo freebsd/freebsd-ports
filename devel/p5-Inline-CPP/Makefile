@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Inline-CPP
-PORTVERSION=	0.42
+PORTVERSION=	0.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ COMMENT=	Write Perl subroutines and classes in C++
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	p5-Inline>=0.51:${PORTSDIR}/devel/p5-Inline \
+RUN_DEPENDS=	p5-Inline>=0.53:${PORTSDIR}/devel/p5-Inline \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 PERL_CONFIGURE=	yes
