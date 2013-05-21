@@ -2,6 +2,7 @@
 
 PORTNAME=	gr-osmosdr
 PORTVERSION=	20130509
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -13,7 +14,6 @@ COMMENT=	GNU Radio OsmoSDR module
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
-		doxygen:${PORTSDIR}/devel/doxygen \
 		cheetah:${PORTSDIR}/devel/py-cheetah
 LIB_DEPENDS=	gnuradio-core:${PORTSDIR}/comms/gnuradio \
 		gnuradio-fcd:${PORTSDIR}/comms/gnuradio \
