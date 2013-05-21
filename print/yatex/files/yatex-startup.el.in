@@ -2,10 +2,8 @@
 ;;   -- S. Taoka <taoka@FreeBSD.org>
 ;; $FreeBSD$
 
-;;;;;;;;;;; %%TARGETNAME%% (Ver.%%VERSION%%) ;;;;;;;;;;;
-
 (setq load-path (append (list 
-        "%%ELISPDIR%%/yatex"
+        "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex"
         ) load-path))
 (setq auto-mode-alist
      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
