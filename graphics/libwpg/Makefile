@@ -5,7 +5,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools to work with WordPerfect Graphics (WPG) files
 
 LICENSE=	LGPL21 MPL
