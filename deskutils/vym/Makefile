@@ -18,8 +18,6 @@ QMAKE_ARGS=	PREFIX=${PREFIX} \
 		DOCDIR=${DOCSDIR}
 QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
-BROKEN=		fails to package
-
 MAKE_JOBS_SAFE=	yes
 STRIP_FILES=	bin/vym
 
@@ -40,7 +38,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
+.if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/INSTALLS += doc/d' ${WRKSRC}/vym.pro
 .endif
 
