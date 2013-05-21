@@ -4,12 +4,8 @@
 %%SITE_PERL%%/Exporter/Declare/Export/Generator.pm
 %%SITE_PERL%%/Exporter/Declare/Export/Sub.pm
 %%SITE_PERL%%/Exporter/Declare/Export/Variable.pm
-%%SITE_PERL%%/Exporter/Declare/Magic.pm
-%%SITE_PERL%%/Exporter/Declare/Magic/Parser.pm
-%%SITE_PERL%%/Exporter/Declare/Magic/Sub.pm
 %%SITE_PERL%%/Exporter/Declare/Meta.pm
 %%SITE_PERL%%/Exporter/Declare/Specs.pm
-@dirrm %%SITE_PERL%%/Exporter/Declare/Magic
 @dirrm %%SITE_PERL%%/Exporter/Declare/Export
 @dirrm %%SITE_PERL%%/Exporter/Declare
 @dirrmtry %%SITE_PERL%%/Exporter
