@@ -54,6 +54,7 @@ MAN3=		Imager.3 \
 		Imager::Filters.3 \
 		Imager::Font.3 \
 		Imager::Font::BBox.3 \
+		Imager::Font::FT2.3 \
 		Imager::Font::FreeType2.3 \
 		Imager::Font::T1.3 \
 		Imager::Font::Test.3 \
