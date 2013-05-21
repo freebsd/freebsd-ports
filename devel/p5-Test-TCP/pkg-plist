@@ -1,7 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TCP/.packlist
+%%SITE_PERL%%/Net/EmptyPort.pm
 %%SITE_PERL%%/Test/TCP.pm
 %%SITE_PERL%%/Test/TCP/CheckPort.pm
 @dirrm %%SITE_PERL%%/Test/TCP
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TCP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Net
