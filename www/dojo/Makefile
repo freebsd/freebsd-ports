@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		dojo
-PORTVERSION=		1.8.3
+PORTVERSION=		1.9.0
 CATEGORIES=		www
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/
 DISTNAME=		dojo-release-${PORTVERSION}
@@ -39,7 +39,7 @@ do-install:
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 post-install:
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/dojo.conf; \
