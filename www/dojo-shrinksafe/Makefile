@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		shrinksafe
-PORTVERSION=		1.4.2
+PORTVERSION=		1.9.0
 CATEGORIES=		www java
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/glarkin
