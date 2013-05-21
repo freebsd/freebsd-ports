@@ -1,12 +1,7 @@
-# New ports collection makefile for:	p5-Net-Telnet
-# Date created:			March 3 1998
-# Whom:	      			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Telnet
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
