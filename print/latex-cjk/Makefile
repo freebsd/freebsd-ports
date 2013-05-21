@@ -21,7 +21,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
 
 USE_GMAKE=	yes
-USE_TEX=	latex
+USE_TEX=	tetex latex
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1
@@ -51,7 +51,7 @@ PLIST_SUB+=	CCMAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDVIPDFMX}
-RUN_DEPENDS+=	dvipdfmx:${PORTSDIR}/print/dvipdfmx
+USE_TEX+=	dvipdfmx
 # Configuration is done by "pkg-install"
 .endif
 
