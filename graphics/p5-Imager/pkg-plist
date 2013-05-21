@@ -26,6 +26,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filters.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/BBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FT2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/T1.pm
@@ -101,10 +102,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot
