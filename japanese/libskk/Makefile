@@ -16,6 +16,7 @@ LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+USE_GCC=	any
 USE_GNOME=	intltool gnomehack
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
