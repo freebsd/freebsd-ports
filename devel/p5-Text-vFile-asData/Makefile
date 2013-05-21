@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Text::vFile::asData
-# Date created:		21 Apr 2005
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Text-vFile-asData
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
