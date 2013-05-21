@@ -3212,6 +3212,7 @@
     SUBDIR += pecl-inclued
     SUBDIR += pecl-inotify
     SUBDIR += pecl-intl
+    SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
     SUBDIR += pecl-ncurses
