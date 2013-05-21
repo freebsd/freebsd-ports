@@ -1,0 +1,13 @@
+--- plug-ins/snoise/Makefile.am.orig
++++ plug-ins/snoise/Makefile.am
+@@ -14,9 +14,8 @@
+ 
+ LDADD = $(top_builddir)/lib/libcinepaint.la	\
+ 	$(X_LIBS)				\
+-        $(top_builddir)/libhalf/cinepaint_half.lo       \
+         $(OPENEXR_LIBS) \
+-	-lc
++	-lm
+ 
+ DEPS = \
+ 	$(top_builddir)/lib/libcinepaint.la

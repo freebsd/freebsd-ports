@@ -1,0 +1,23 @@
+--- cinepainttool.in.orig
++++ cinepainttool.in
+@@ -166,7 +166,7 @@
+       ;;
+     --cflags-local)
+       my_gtk_cflags=$gtk_cflags
+-      echo -I@abs_top_srcdir@ -I@abs_top_srcdir@/lib $my_gtk_cflags
++      echo $my_gtk_cflags
+       ;;
+     --libs | --libs-nocinepaintui)
+       my_gtk_libs=
+@@ -198,8 +198,9 @@
+           my_gtk_libs="$my_gtk_libs $i"
+         fi
+       done
+-      export `cat @abs_top_srcdir@/lib/libcinepaint.la | grep dlname | sed s/\'//g`
+-      echo @abs_top_srcdir@/lib/.libs/$dlname $my_gtk_libs
++      export `cat @libdir@/libcinepaint.la | grep dlname | sed -e s/\'//g -e s/dlname/dlname1/`
++      export `cat @libdir@/libcinepainthalf.la | grep dlname | sed -e s/\'//g -e s/dlname/dlname2/`
++      echo @libdir@/$dlname1 @libdir@/$dlname2 $my_gtk_libs
+       ;;
+     --libs-noui)
+       glib_ldflags=`echo $gtk_libs | sed -e 's/^.*-lgdk[^ ]* *\(-L[^ ]*\).*$/\1/' -e 's/^.* -lgdk[^ ]* .*$//'`

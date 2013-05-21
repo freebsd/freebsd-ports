@@ -1,0 +1,11 @@
+--- plug-ins/psd/Makefile.am.orig
++++ plug-ins/psd/Makefile.am
+@@ -15,7 +15,7 @@
+ LDADD = \
+ 	$(top_builddir)/lib/libcinepaint.la	\
+ 	$(X_LIBS)				\
+-	-lc
++	-lm
+ 
+ DEPS = \
+ 	$(top_builddir)/lib/libcinepaint.la

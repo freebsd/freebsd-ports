@@ -1,0 +1,13 @@
+--- plug-ins/edge/Makefile.am.orig
++++ plug-ins/edge/Makefile.am
+@@ -15,9 +15,8 @@
+ LDADD = \
+ 	$(top_builddir)/lib/libcinepaint.la	\
+ 	$(X_LIBS)				\
+-	$(top_builddir)/libhalf/cinepaint_half.lo       \
+         $(OPENEXR_LIBS) \
+-	-lc
++	-lm
+ 
+ DEPS = $(top_builddir)/lib/libcinepaint.la
+ 

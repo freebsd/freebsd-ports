@@ -1,76 +1,83 @@
-# New ports collection makefile for:	cinepaint
-# Date created:				11 Oct 2003
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cinepaint
-PORTVERSION=	0.22
-PORTREVISION=	10
+DISTVERSION=	1.0-4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${PORTVERSION}-1
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An editing tool used for painting and retouching of movies
+COMMENT=	Editing tool used for painting and retouching of movies
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LICENSE=	GPLv2 LGPL21 MIT
+LICENSE_COMB=	multi
+
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		ftgl:${PORTSDIR}/graphics/ftgl \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lcms:${PORTSDIR}/graphics/lcms \
 		png15:${PORTSDIR}/graphics/png \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		ftgl.2:${PORTSDIR}/graphics/ftgl
+		tiff:${PORTSDIR}/graphics/tiff \
+    		fltk:${PORTSDIR}/x11-toolkits/fltk
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
+OPTIONS_DEFINE=	OYRANOS PRINT
+OYRANOS_DESC=	ICC profile support via Oyranos
+PRINT_DESC=	Gutenprint (gimp-print) plugin
+
+USES=		gettext pkgconfig
+USE_XORG=	xmu
+USE_GNOME=	gtk20
+USE_GHOSTSCRIPT_RUN=yes
 USE_PYTHON=	yes
-USE_GNOME=	gtk12
-USES=		gettext
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
+LIBTOOLIZE_ARGS=--force
+ACLOCAL_ARGS=	-I aclocal
+AUTOMAKE_ARGS=	--copy --force-missing --foreign
 USE_LDCONFIG=	yes
-USE_XORG=	xpm xi xext xft xinerama
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_SUB=	VER="${DISTVERSION}"
 
 MAN1=		cinepaint.1 cinepainttool.1
 
-PLIST_SUB=	VER=${PORTVERSION}-1
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
-
-OPTIONS_DEFINE=	OPENEXR
-OPTIONS_DEFAULT=	OPENEXR
-OPENEXR_DESC=	Use OpenEXR
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-    		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include/openEXR
-PLIST_SUB+=	OPENEXR:=""
+.if ${PORT_OPTIONS:MOYRANOS}
+LIB_DEPENDS+=	oyranos:${PORTSDIR}/graphics/oyranos
 .else
-PLIST_SUB+=	OPENEXR:="@comment "
+CONFIGURE_ENV+=	ac_cv_path_OY_CONFIG=no
 .endif
 
-CPPFLAGS+=	${CFLAGS}
+.if ${PORT_OPTIONS:MPRINT}
+LIB_DEPENDS+=	gutenprint:${PORTSDIR}/print/gutenprint-base
+PLIST_SUB+=	PRINT=""
+.else
+CONFIGURE_ARGS+=	--disable-print
+PLIST_SUB+=	PRINT="@comment "
+.endif
+
+post-extract:
+	@${LN} -sf gimprc.in ${WRKSRC}/cinepaintrc.in
+	@${LN} -sf gimprc_user.in ${WRKSRC}/cinepaintrc_user.in
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's| -Wall||' \
-		${WRKSRC}/configure
-
-	@${REINPLACE_CMD} -E -e \
-		's|-LINUX.+$$|| ; s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-
+		'/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata| ; \
+		 s|gimprc|cinepaintrc|g' \
+		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e \
+		'/cms-profile-path/s|".*"|"${LOCALBASE}/share/color/icc"| ; \
+		 s|/usr/share|${LOCALBASE}/share|' \
+		${WRKSRC}/cinepaintrc.in
+	@${REINPLACE_CMD} -e \
+		's|gimprc|cinepaintrc|g' \
+		${WRKSRC}/user_install.in
 	@${REINPLACE_CMD} -e \
 		's|static GDrawableType|static GImageType|' \
 		${WRKSRC}/plug-ins/psd/psd.c
-
-	@${FIND} ${WRKSRC} -type f -name "*.c" -o -name "*.cpp" -o -name "*.cxx" -o -name "*.h" | ${XARGS} \
-	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; /^#include "FL/s|.h"$$|.H"|; \
-	   s|fl_file_chooser.H|Fl_File_Chooser.H|g; s|#include <Fl|#include <FL|g; s|<FL/gl.H>|<FL/gl.h>|'
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- plug-ins/collect/Makefile.am.orig
++++ plug-ins/collect/Makefile.am
+@@ -23,7 +23,7 @@
+ 	$(top_builddir)/lib/libcinepaint.la \
+ 	$(X_LIBS) \
+ 	$(FLTK_LIBS) \
+-	-lc
++	-lm
+ 
+ DEPS = $(top_builddir)/lib/libcinepaint.la \
+ 	$(top_builddir)/lib/fl_i18n/libcinepaint_fl_i18n.la

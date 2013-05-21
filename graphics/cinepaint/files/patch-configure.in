@@ -1,0 +1,43 @@
+--- configure.in.orig	2013-05-06 05:19:29.000000000 +0900
++++ configure.in	2013-05-09 01:25:06.000000000 +0900
+@@ -2,7 +2,7 @@
+ 
+ prefix=/usr/bin
+ 
+-AC_INIT(gimprc.in)
++AC_INIT(cinepaintrc.in)
+ AM_CONFIG_HEADER(lib/config.h)
+ 
+ dnl Initialize automake stuff
+@@ -109,7 +109,7 @@
+ dnl check for pkg-config
+ export PKG_CONFIG_PATH
+ AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+-if test "x$PKG_CONFIG" == "xno"; then
++if test "x$PKG_CONFIG" = "xno"; then
+   AC_MSG_WARN([
+ *** Check for pkg-config failed. Many packages requires it.
+ *** You can download it from http://pkgconfig.sourceforge.net/  .])
+@@ -517,9 +517,9 @@
+     if test "x$FLTK_CONFIG" != "xno"; then
+       FLTK_CONFIG="$FLTK_CONFIG"
+         FLTK_LDFLAGS="`$FLTK_CONFIG --use-images --ldflags | sed \"$STRIPOPT\"`"
+-        FLTK_LIBS_PURE="`echo $FLTK_LDFLAGS | sed  's/-O.// ; s/-isysroot /-L/ ; s/-arch ppc// ; s/-arch i386//'`"
++        FLTK_LIBS_PURE="`echo $FLTK_LDFLAGS | sed  's/ -O. // ; s/-isysroot /-L/ ; s/-arch ppc// ; s/-arch i386//'`"
+         FLTK_LIBS="\$(top_builddir)/lib/fl_i18n/libcinepaint_fl_i18n.la $FLTK_LIBS_PURE"
+-        FLTK_CFLAGS=`$FLTK_CONFIG --cxxflags | sed  's/-O.// ; s/-isysroot /-L/ ; s/-arch ppc// ; s/-arch i386//'`
++        FLTK_CFLAGS=`$FLTK_CONFIG --cxxflags | sed  's/ -O. // ; s/-isysroot /-L/ ; s/-arch ppc// ; s/-arch i386//'`
+     else
+       AC_MSG_WARN([
+ *** Check for fltk-config failed. Depending plug-ins may not compile.
+@@ -818,8 +818,8 @@
+ AC_OUTPUT(
+ Makefile
+ user_install
+-gimprc
+-gimprc_user
++cinepaintrc
++cinepaintrc_user
+ cinepainttool
+ cinepaint-gtk.pc
+ cinepaint.spec

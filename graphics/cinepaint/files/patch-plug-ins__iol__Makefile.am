@@ -1,0 +1,12 @@
+--- plug-ins/iol/Makefile.am.orig
++++ plug-ins/iol/Makefile.am
+@@ -35,9 +35,7 @@
+ LDADD = \
+ 	$(top_builddir)/lib/libcinepaint.la	\
+ 	$(X_LIBS)				\
+-        $(top_builddir)/libhalf/cinepaint_half.lo       \
+         $(OPENEXR_LIBS) \
+-	-lc					\
+ 	-lm					\
+ 	-lfl
+ 

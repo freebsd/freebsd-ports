@@ -1,0 +1,12 @@
+--- app/Makefile.am.orig
++++ app/Makefile.am
+@@ -420,7 +420,8 @@
+ 	$(GTK_LIBS) \
+ 	$(X_LIBS) \
+ 	$(OYRANOS_LIBS) \
+-	$(LCMS_LIB)
++	$(LCMS_LIB) \
++	-lm
+ 
+ cinepaint_remote_LDADD = \
+ 	$(GTK_LIBS) \
