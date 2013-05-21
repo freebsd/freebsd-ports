@@ -7,7 +7,7 @@
 
 PORTNAME=		sudosh3
 PORTVERSION=		3.2.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		SF/${PORTNAME}
 
@@ -15,12 +15,11 @@ MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Third version of the sudo shell
 CONFLICTS=		sudosh-*
 
-FORBIDDEN=		Secunia Advisory SA38292, ISS X-Force sudosh-replay-bo (55903), replay() function buffer overflow.
-
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=		yes
 
+EXTRACT_AFTER_ARGS=	|${TAR} -xpf - --exclude 'getopt.*'
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
 CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc"
 CONFIGURE_ARGS+=	--program-transform-name=''
