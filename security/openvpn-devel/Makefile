@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	201250
+DISTVERSION=	201321
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -22,14 +22,15 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man
 
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
-
 MAN8=		openvpn.8
 
-OPTIONS_DEFINE=	PW_SAVE PKCS11 POLARSSL
+OPTIONS_DEFINE=	PW_SAVE SNAPPY LZO PKCS11 POLARSSL
 PW_SAVE_DESC=	Interactive passwords may be read from a file
+SNAPPY_DESC=	Enable the Snappy compression library
+LZO_DESC=		Enable the LZO compression library
 PKCS11_DESC=	Use security/pkcs11-helper
 POLARSSL_DESC=	Build with PolarSSL instead of OpenSSL
+OPTIONS_DEFAULT= LZO SNAPPY
 
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
@@ -45,6 +46,18 @@ WITHOUT_CHECK=	yes
 
 .ifdef (LOG_OPENVPN)
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
+.endif
+
+.if ${PORT_OPTIONS:MLZO}
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
+.else
+CONFIGURE_ARGS+=	--disable-lzo
+.endif
+
+.if ${PORT_OPTIONS:MSNAPPY}
+LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
+.else
+CONFIGURE_ARGS+=	--disable-snappy
 .endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
