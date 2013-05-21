@@ -329,7 +329,6 @@ bin/xdvipdfmx
 @exec %%INSTALL_DATA%% %D/%%TEXMFDIR%%/web2c/fmtutil.cnf %D/%%FMTUTIL_CNF%%
 @unexec /bin/rm -f %D/%%FMTUTIL_CNF%%
 @dirrmtry %%TEXMFCONFIGDIR%%/web2c
-@unexec /bin/rm -f %D/%%TEXMFCONFIGDIR%%/ls-R
 @dirrmtry %%TEXMFCONFIGDIR%%
 @dirrmtry %%TEXMFDISTDIR%%/scripts/accfonts
 @dirrmtry %%TEXMFDISTDIR%%/scripts/authorindex
@@ -405,5 +404,3 @@ bin/xdvipdfmx
 @dirrmtry %%TEXMFDIR%%/scripts/texdoc
 @dirrmtry %%TEXMFDIR%%/scripts/texlive
 @dirrmtry %%TEXMFDIR%%/scripts
-@exec /bin/rm -f %%TEXMFVARDIR%%/ls-R
-@dirrmtry %%TEXMFVARDIR%%

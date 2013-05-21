@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base
@@ -23,7 +23,7 @@ LIB_DEPENDS=	icuio:${PORTSDIR}/devel/icu \
 		png15:${PORTSDIR}/graphics/png \
 		zzip:${PORTSDIR}/devel/zziplib
 
-USE_TEX=	texlive web2c kpathsea ptexenc texhash
+USE_TEX=	texlive web2c kpathsea ptexenc texhash-bootstrap
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
@@ -116,10 +116,13 @@ post-patch:
 		texk/tetex/texconfig-sys \
 		texk/tetex/updmap-sys.sh
 
-post-install:
+post-install-fmtutil:
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/web2c
 	${TOUCH} ${PREFIX}/${TEXMFCONFIGDIR}/web2c/.keep_me
 	${INSTALL_DATA} ${PREFIX}/${TEXMFDIR}/web2c/fmtutil.cnf \
 		${PREFIX}/${FMTUTIL_CNF}
+
+post-install: post-install-fmtutil
+.ORDER: post-install-fmtutil do-texhash
 
 .include <bsd.port.mk>

@@ -168,9 +168,21 @@ ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
 
 .ORDER: do-texhash do-fmtutil do-updmap
 
-.if !empty(USE_TEX:Mtexhash) || !empty(USE_TEX:Mfmtutil) || !empty(USE_TEX:Mupdmap)
+.if !empty(USE_TEX:Mtexhash) || \
+    !empty(USE_TEX:Mtexhash-bootstrap) || \
+    !empty(USE_TEX:Mfmtutil) || \
+    !empty(USE_TEX:Mupdmap)
 .PHONY:	do-texhash
 do-texhash:
+. if !empty(USE_TEX:Mtexhash-bootstrap)
+	@${LOCALBASE}/bin/mktexlsr ${TEXHASHDIRS:S,^,${PREFIX}/,}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/mktexlsr " \
+		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
+	@for D in ${TEXHASHDIRS}; do \
+		${ECHO_CMD} "@unexec ${RM} -f %D/$$D/ls-R"; \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/$$D 2> /dev/null || ${TRUE}"; \
+	done >> ${TMPPLIST}
+. else
 	@for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do \
 		if [ -r $$D/ls-R ]; then ${LOCALBASE}/bin/mktexlsr $$D; fi; \
 	done
@@ -182,6 +194,7 @@ do-texhash:
 		"if [ -r \$$D/ls-R ]; then " \
 			"${LOCALBASE}/bin/mktexlsr \$$D; " \
 		"fi; done" >> ${TMPPLIST}
+. endif
 
 post-install: do-texhash
 .endif
