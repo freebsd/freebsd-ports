@@ -1,12 +1,7 @@
-# New ports collection makefile for:	cpan::listchanges
-# Date created:		27 Feb 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cpan-listchanges
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -24,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=	cpan-listchanges.1
 MAN3=	App::cpanlistchanges.3
