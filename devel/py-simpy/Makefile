@@ -17,17 +17,20 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SimPy
 
-OPTIONS=	TKINTER		"Install py-tkinter for plot"      off
+OPTIONS_DEFINE=	TKINTER
+TKINTER_DESC=	py-tkinter for plot
+
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TKINTER)
+.if ${PORT_OPTIONS:MTKINTER}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
