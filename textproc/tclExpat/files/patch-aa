@@ -1,5 +1,5 @@
---- tclexpat.c	Sat Aug 22 03:35:44 1998
-+++ tclexpat.c	Mon Aug 14 14:58:38 2006
+--- tclexpat.c.orig	1998-08-22 09:35:44.000000000 +0200
++++ tclexpat.c	2013-05-13 12:11:18.000000000 +0200
 @@ -18,8 +18,9 @@
   *
   */
@@ -79,7 +79,18 @@
  
  /*
   *----------------------------------------------------------------------------
-@@ -267,7 +270,6 @@
+@@ -157,6 +160,10 @@
+      Tcl_Interp *interp; /* Interpreter to initialise. */
+ {
+ 
++  if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL) {
++    return TCL_ERROR;
++  }
++
+   Tcl_PkgProvide(interp, "expat", "1.1");
+ 
+   Tcl_CreateObjCommand(interp, "expat", TclExpatObjCmd, NULL, NULL);
+@@ -267,7 +274,6 @@
       Tcl_Interp *interp;
       TclExpatInfo *expat;
  {
@@ -87,7 +98,7 @@
  
    if (!(expat->parser = XML_ParserCreate(NULL))) {
      Tcl_SetResult(interp, "unable to create expat parser", NULL);
-@@ -284,22 +286,22 @@
+@@ -284,22 +290,22 @@
     */
  
    XML_SetElementHandler(expat->parser,
@@ -119,7 +130,7 @@
  				(void *) expat);
    XML_SetUserData(expat->parser,
  		  (void *) expat);
-@@ -327,7 +329,6 @@
+@@ -327,7 +333,6 @@
  TclExpatFreeParser(expat)
       TclExpatInfo *expat;
  {
@@ -127,7 +138,7 @@
  
    XML_ParserFree(expat->parser);
    expat->parser = NULL;
-@@ -357,9 +358,9 @@
+@@ -357,9 +362,9 @@
       Tcl_Obj *CONST objv[];
  {
    TclExpatInfo *expat = (TclExpatInfo *) clientData;
@@ -139,7 +150,7 @@
      "configure", "cget", "parse", "reset", NULL
    };
    enum options {
-@@ -464,10 +465,10 @@
+@@ -464,10 +469,10 @@
  
    if (!result) {
      Tcl_ResetResult(interp);
@@ -152,7 +163,7 @@
      Tcl_AppendResult(interp, s, NULL);
  
      return TCL_ERROR;
-@@ -514,7 +515,7 @@
+@@ -514,7 +519,7 @@
       int objc;
       Tcl_Obj *CONST objv[];
  {
@@ -161,7 +172,7 @@
      "-final",
      "-baseurl", 
      "-elementstartcommand",
-@@ -688,7 +689,7 @@
+@@ -688,7 +693,7 @@
    }
  
    if (doParse) {
@@ -170,7 +181,7 @@
    } else {
      return TCL_OK;
    }
-@@ -739,7 +740,7 @@
+@@ -739,7 +744,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -179,7 +190,7 @@
  TclExpatHandlerResult(expat, result)
       TclExpatInfo *expat;
       int result;
-@@ -795,7 +796,7 @@
+@@ -795,7 +800,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -188,7 +199,7 @@
  TclExpatElementStartHandler(userData, name, atts)
       void *userData;
       const char *name;
-@@ -828,8 +829,8 @@
+@@ -828,8 +833,8 @@
  
    atList = Tcl_NewListObj(0, NULL);
    for (atPtr = atts; atPtr[0] && atPtr[1]; atPtr += 2) {
@@ -199,7 +210,7 @@
    }
  
    /*
-@@ -840,14 +841,14 @@
+@@ -840,14 +845,14 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -216,7 +227,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -877,7 +878,7 @@
+@@ -877,7 +882,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -225,7 +236,7 @@
  TclExpatElementEndHandler(userData, name)
       void *userData;
       CONST char *name;
-@@ -911,13 +912,13 @@
+@@ -911,13 +916,13 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -241,7 +252,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -947,7 +948,7 @@
+@@ -947,7 +952,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -250,7 +261,7 @@
  TclExpatCharacterDataHandler(userData, s, len)
       void *userData;
       CONST char *s;
-@@ -970,13 +971,13 @@
+@@ -970,13 +975,13 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -266,7 +277,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1006,7 +1007,7 @@
+@@ -1006,7 +1011,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -275,7 +286,7 @@
  TclExpatProcessingInstructionHandler(userData, target, data)
       void *userData;
       CONST char *target;
-@@ -1029,14 +1030,14 @@
+@@ -1029,14 +1034,14 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -293,7 +304,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1066,7 +1067,7 @@
+@@ -1066,7 +1071,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -302,7 +313,7 @@
  TclExpatDefaultHandler(userData, s, len)
       void *userData;
       CONST char *s;
-@@ -1089,13 +1090,13 @@
+@@ -1089,13 +1094,13 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -318,7 +329,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1125,7 +1126,7 @@
+@@ -1125,7 +1130,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -327,7 +338,7 @@
  TclExpatUnparsedDeclHandler(userData, entityname, base, systemId, publicId, notationName)
       void *userData;
       CONST char *entityname;
-@@ -1151,25 +1152,25 @@
+@@ -1151,25 +1156,25 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -359,7 +370,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1199,7 +1200,7 @@
+@@ -1199,7 +1204,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -368,7 +379,7 @@
  TclExpatNotationDeclHandler(userData, notationName, base, systemId, publicId)
       void *userData;
       CONST char *notationName;
-@@ -1224,24 +1225,24 @@
+@@ -1224,24 +1229,24 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -398,7 +409,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1279,15 +1280,18 @@
+@@ -1279,15 +1284,18 @@
       XML_Encoding *info;
  {
    TclExpatInfo *expat = (TclExpatInfo *) encodingHandlerData;
@@ -419,7 +430,7 @@
    }
  
    /*
-@@ -1306,7 +1310,7 @@
+@@ -1306,7 +1314,7 @@
     * It would be desirable to be able to terminate parsing
     * if the return result is TCL_ERROR or TCL_BREAK.
     */
@@ -428,7 +439,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1317,7 +1321,8 @@
+@@ -1317,7 +1325,8 @@
  
    TclExpatHandlerResult(expat, result);
  
@@ -438,7 +449,7 @@
  }
  
  /*
-@@ -1336,7 +1341,7 @@
+@@ -1336,7 +1345,7 @@
   *----------------------------------------------------------------------------
   */
  
@@ -447,7 +458,7 @@
  TclExpatExternalEntityRefHandler(parser, openEntityNames, base, systemId, publicId)
       XML_Parser parser;
       CONST char *openEntityNames;
-@@ -1350,7 +1355,7 @@
+@@ -1350,7 +1359,7 @@
  
    if (expat->externalentitycommand == NULL ||
        expat->status != TCL_OK) {
@@ -456,7 +467,7 @@
    }
  
    /*
-@@ -1361,16 +1366,16 @@
+@@ -1361,16 +1370,16 @@
    Tcl_IncrRefCount(cmdPtr);
    Tcl_Preserve((ClientData) expat->interp);
  
@@ -478,7 +489,7 @@
    result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
  #else
    result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
-@@ -1381,7 +1386,7 @@
+@@ -1381,7 +1390,7 @@
  
    TclExpatHandlerResult(expat, result);
  
