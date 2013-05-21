@@ -2,24 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	Cdk
-PORTVERSION=	4.9.10
-PORTREVISION=	1
+PORTVERSION=	5.20120324
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://dickey.his.com/cdk/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	cdk-perl-20031210
+DISTNAME=	cdk-perl-${PORTVERSION:C,^[0-9]\.,,}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
 
-LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=	does not build
+LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
 
-post-patch:
-	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

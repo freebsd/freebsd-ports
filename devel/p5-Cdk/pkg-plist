@@ -10,11 +10,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Graph.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Histogram.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Itemlist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Label.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Marquee.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Matrix.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Mentry.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Label.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Radio.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Scale.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Scroll.pm
@@ -24,8 +24,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Viewer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/Cdk.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/Cdk.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/Cdk.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cdk
