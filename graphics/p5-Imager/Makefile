@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Imager
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -55,7 +54,6 @@ MAN3=		Imager.3 \
 		Imager::Filters.3 \
 		Imager::Font.3 \
 		Imager::Font::BBox.3 \
-		Imager::Font::FT2.3 \
 		Imager::Font::FreeType2.3 \
 		Imager::Font::T1.3 \
 		Imager::Font::Test.3 \
@@ -67,6 +65,7 @@ MAN3=		Imager.3 \
 		Imager::IO.3 \
 		Imager::ImageTypes.3 \
 		Imager::Inline.3 \
+		Imager::Install.3 \
 		Imager::LargeSamples.3 \
 		Imager::Matrix2d.3 \
 		Imager::Preprocess.3 \
