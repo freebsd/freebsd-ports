@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Convert::Color
-# Date created:		26 Feb 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-Color
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
