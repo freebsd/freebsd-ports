@@ -1,6 +1,11 @@
---- src/Makefile.in.orig	2008-02-22 13:11:02.000000000 -0800
-+++ src/Makefile.in	2010-01-14 20:56:27.381892777 -0800
-@@ -55,7 +55,7 @@
+--- src/Makefile.in	2008-02-22 16:11:02.000000000 -0500
++++ src/Makefile.in	2013-02-12 16:16:50.000000000 -0500
+@@ -51,11 +51,11 @@
+ 	string.$(OBJEXT) util.$(OBJEXT)
+ sudosh_OBJECTS = $(am_sudosh_OBJECTS)
+ sudosh_LDADD = $(LDADD)
+-am_sudosh_replay_OBJECTS = replay.$(OBJEXT) getopt.$(OBJEXT) \
++am_sudosh_replay_OBJECTS = replay.$(OBJEXT) \
  	string.$(OBJEXT) parse.$(OBJEXT) util.$(OBJEXT)
  sudosh_replay_OBJECTS = $(am_sudosh_replay_OBJECTS)
  sudosh_replay_LDADD = $(LDADD)
@@ -9,15 +14,29 @@
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -165,6 +165,7 @@
+@@ -165,10 +165,11 @@
  target_cpu = @target_cpu@
  target_os = @target_os@
  target_vendor = @target_vendor@
 +top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- sudosh_SOURCES = sudosh.c rand.c parse.c string.c getopt.h  struct.h  super.h util.c
-@@ -268,8 +269,8 @@
+-sudosh_SOURCES = sudosh.c rand.c parse.c string.c getopt.h  struct.h  super.h util.c
+-sudosh_replay_SOURCES = replay.c getopt.c getopt.h string.c parse.c  util.c
++sudosh_SOURCES = sudosh.c rand.c parse.c string.c struct.h super.h util.c
++sudosh_replay_SOURCES = replay.c string.c parse.c  util.c
+ EXTRA_DIST = sudosh.conf
+ all: all-am
+ 
+@@ -241,7 +242,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parse.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rand.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/replay.Po@am__quote@
+@@ -268,8 +268,8 @@
  	unique=`for i in $$list; do \
  	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
  	  done | \
@@ -28,7 +47,7 @@
  	mkid -fID $$unique
  tags: TAGS
  
-@@ -281,8 +282,8 @@
+@@ -281,8 +281,8 @@
  	unique=`for i in $$list; do \
  	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
  	  done | \
@@ -39,7 +58,7 @@
  	if test -z "$(ETAGS_ARGS)$$tags$$unique"; then :; else \
  	  test -n "$$unique" || unique=$$empty_fix; \
  	  $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
-@@ -292,13 +293,12 @@
+@@ -292,13 +292,12 @@
  CTAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
  		$(TAGS_FILES) $(LISP)
  	tags=; \
@@ -55,7 +74,7 @@
  	test -z "$(CTAGS_ARGS)$$tags$$unique" \
  	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
  	     $$tags $$unique
-@@ -442,7 +442,7 @@
+@@ -442,7 +441,7 @@
  
  install-sudosh.conf:
  	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
