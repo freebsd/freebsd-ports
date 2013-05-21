@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-Iterator-Rule
-PORTVERSION=	0.012
+PORTVERSION=	1.005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -19,7 +19,6 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-File-pushd>0:${PORTSDIR}/devel/p5-File-pushd \
-	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Path-Tiny>0:${PORTSDIR}/devel/p5-Path-Tiny \
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Filename>0:${PORTSDIR}/devel/p5-Test-Filename
