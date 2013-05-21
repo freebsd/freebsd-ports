@@ -1214,6 +1214,7 @@
     SUBDIR += maven3
     SUBDIR += mcpp
     SUBDIR += mdds
+    SUBDIR += meck
     SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator
