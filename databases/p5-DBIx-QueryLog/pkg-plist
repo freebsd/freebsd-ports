@@ -1,5 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/QueryLog/.packlist
 %%SITE_PERL%%/DBIx/QueryLog.pm
 @dirrmtry %%SITE_PERL%%/DBIx
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/QueryLog
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
