@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Furl/.packlist
 %%SITE_PERL%%/Furl.pm
 %%SITE_PERL%%/Furl/ConnectionCache.pm
 %%SITE_PERL%%/Furl/HTTP.pm
@@ -7,4 +6,3 @@
 %%SITE_PERL%%/Furl/Request.pm
 %%SITE_PERL%%/Furl/ZlibStream.pm
 @dirrm %%SITE_PERL%%/Furl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Furl
