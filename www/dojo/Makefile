@@ -10,6 +10,8 @@ MAINTAINER=		glarkin@FreeBSD.org
 COMMENT=		Open-source DHTML toolkit written in JavaScript
 
 NO_BUILD=		yes
+SHAREOWN=		www
+SHAREGRP=		www
 
 OPTIONS_DEFINE=		APACHE
 
@@ -29,15 +31,6 @@ PLIST_SUB+=		NOAPACHE="@comment "
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 .if ${PORT_OPTIONS:MAPACHE}
 post-install:
