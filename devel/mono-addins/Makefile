@@ -2,6 +2,7 @@
 
 PORTNAME=	mono-addins
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -29,7 +30,7 @@ PLIST_SUB+=	VER=0.6.0
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
-.if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtksharp20
 CONFIGURE_ARGS+=	--enable-gui
 PLIST_SUB+=	OPT_GTK2=""
