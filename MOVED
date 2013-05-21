@@ -4268,3 +4268,4 @@ mail/sendmail-ldap|mail/sendmail|2013-05-17|Removed: Use mail/sendmail instead
 databases/innobackup|databases/xtrabackup|2013-05-18|Removed: Use databases/xtrabackup instead
 audio/gogo-petit||2013-05-20|Has expired: No more public distfiles
 x11-wm/transset-df|x11-wm/transset|2013-05-20|Project was renamed
+print/yatex-xemacs||2013-05-21|Removed: obsolete

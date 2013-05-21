@@ -326,6 +326,5 @@
     SUBDIR += xpp
     SUBDIR += xtexsh
     SUBDIR += yatex
-    SUBDIR += yatex-xemacs
 
 .include <bsd.port.subdir.mk>
