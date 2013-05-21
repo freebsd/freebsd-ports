@@ -12,11 +12,9 @@ include/libwpd-%%MAJVER%%/libwpd/libwpd.h
 include/libwpd-%%MAJVER%%/libwpd-stream/WPXStream.h
 include/libwpd-%%MAJVER%%/libwpd-stream/WPXStreamImplementation.h
 include/libwpd-%%MAJVER%%/libwpd-stream/libwpd-stream.h
-lib/libwpd-%%MAJVER%%.a
 lib/libwpd-%%MAJVER%%.la
 lib/libwpd-%%MAJVER%%.so
 lib/libwpd-%%MAJVER%%.so.9
-lib/libwpd-stream-%%MAJVER%%.a
 lib/libwpd-stream-%%MAJVER%%.la
 lib/libwpd-stream-%%MAJVER%%.so
 lib/libwpd-stream-%%MAJVER%%.so.9

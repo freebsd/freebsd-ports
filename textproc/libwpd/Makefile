@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libwpd
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
 LICENSE=	LGPL21 MPL
