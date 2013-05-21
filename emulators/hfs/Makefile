@@ -19,13 +19,19 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CCPLUSPLUS="${CXX} -c" LD="${CXX}" DEBUG="${CFLAGS}" \
 		INSTALLPATH="${PREFIX}" MANINSTALLDIR="${MANPREFIX}/man/man1"
 
-MAN1=		hfs.1
-PLIST_FILES=	bin/hfs
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	ALIASES DOCS
+ALIASES_DESC=	Install subcommand symbolic links
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MALIASES}
+ALIASES=	bin/hcat bin/hcd bin/hdir bin/hls bin/hpwd bin/hread
+PLIST_FILES+=	${ALIASES}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/.* ||' ${WRKSRC}/Makefile
@@ -33,6 +39,11 @@ post-patch:
 		${WRKSRC}/volume.h
 
 post-install:
+.if ${PORT_OPTIONS:MALIASES}
+.  for l in ${ALIASES}
+	${LN} -sf ${PORTNAME} ${PREFIX}/${l}
+.  endfor
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
