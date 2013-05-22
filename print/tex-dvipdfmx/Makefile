@@ -3,6 +3,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20120420
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -36,9 +37,12 @@ EXTRACT_FILES= \
 EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${PREFIX}/share \
 	--strip-components 1 --no-same-permission --no-same-owner \
+	${EXCLUDE_FILES_TEXMF:S,^,--exclude ${DISTNAME_TEXMF}/,} \
 	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
 DISTVERSION_TEXMF=	20120701
 DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXMF}-texmf
+EXCLUDE_FILES_TEXMF= \
+	texmf/fonts/map/dvipdfmx/updmap/kanjix.map
 EXTRACT_FILES_TEXMF= \
 	texmf-dist/fonts/map/dvipdfm/ \
 	texmf/dvipdfm/config/ \

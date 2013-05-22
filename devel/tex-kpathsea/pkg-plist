@@ -58,12 +58,6 @@ lib/libkpathsea.a
 lib/libkpathsea.la
 lib/libkpathsea.so
 lib/libkpathsea.so.7
-%%TEXMFDIR%%/web2c/mktex.opt
-%%TEXMFDIR%%/web2c/mktexdir
-%%TEXMFDIR%%/web2c/mktexdir.opt
-%%TEXMFDIR%%/web2c/mktexnam
-%%TEXMFDIR%%/web2c/mktexnam.opt
-%%TEXMFDIR%%/web2c/mktexupd
 %%TEXMFDIR%%/web2c/texmf.cnf
 @dirrmtry %%TEXMFDIR%%/web2c
 @dirrmtry %%TEXMFDIR%%

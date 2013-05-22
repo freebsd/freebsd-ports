@@ -229,6 +229,7 @@ bin/xdvipdfmx
 %%TEXMFDISTDIR%%/scripts/bundledoc/arlatex
 %%TEXMFDISTDIR%%/scripts/bundledoc/bundledoc
 %%TEXMFDISTDIR%%/scripts/cachepic/cachepic.tlu
+%%TEXMFDISTDIR%%/scripts/checkcites/checkcites.lua
 %%TEXMFDISTDIR%%/scripts/context/perl/mptopdf.pl
 %%TEXMFDISTDIR%%/scripts/ctanify/ctanify
 %%TEXMFDISTDIR%%/scripts/ctanupload/ctanupload.pl
@@ -314,7 +315,6 @@ bin/xdvipdfmx
 %%TEXMFDISTDIR%%/scripts/urlbst/urlbst
 %%TEXMFDISTDIR%%/scripts/vpe/vpe.pl
 %%TEXMFDIR%%/scripts/a2ping/a2ping.pl
-%%TEXMFDIR%%/scripts/chktex/deweb.pl
 %%TEXMFDIR%%/scripts/ps2eps/ps2eps.pl
 %%TEXMFDIR%%/scripts/simpdftex/simpdftex
 %%TEXMFDIR%%/scripts/tetex/e2pall.pl
@@ -388,6 +388,7 @@ bin/xdvipdfmx
 @dirrmtry %%TEXMFDISTDIR%%/scripts/pmx
 @dirrmtry %%TEXMFDISTDIR%%/scripts/pst-pdf
 @dirrmtry %%TEXMFDISTDIR%%/scripts/cachepic
+@dirrmtry %%TEXMFDISTDIR%%/scripts/checkcites
 @dirrmtry %%TEXMFDISTDIR%%/scripts/context/perl
 @dirrmtry %%TEXMFDISTDIR%%/scripts/context
 @dirrmtry %%TEXMFDISTDIR%%/scripts/epspdf
@@ -396,8 +397,9 @@ bin/xdvipdfmx
 @dirrmtry %%TEXMFDISTDIR%%/scripts/oberdiek
 @dirrmtry %%TEXMFDISTDIR%%/scripts/pax
 @dirrmtry %%TEXMFDISTDIR%%/scripts/pedigree-perl
+@dirrmtry %%TEXMFDISTDIR%%/scripts
+@dirrmtry %%TEXMFDISTDIR%%
 @dirrmtry %%TEXMFDIR%%/scripts/a2ping
-@dirrmtry %%TEXMFDIR%%/scripts/chktex
 @dirrmtry %%TEXMFDIR%%/scripts/ps2eps
 @dirrmtry %%TEXMFDIR%%/scripts/simpdftex
 @dirrmtry %%TEXMFDIR%%/scripts/tetex

@@ -1,0 +1,29 @@
+--- texk/cjkutils/Makefile.in.orig	2013-05-22 13:57:46.000000000 +0900
++++ texk/cjkutils/Makefile.in	2013-05-22 13:58:53.000000000 +0900
+@@ -94,7 +94,7 @@
+ CONFIG_CLEAN_VPATH_FILES =
+ @WIN32_TRUE@am__EXEEXT_1 = gbklatex$(EXEEXT) gbkpdflatex$(EXEEXT)
+ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
+-	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(hbf2gf_cfgdir)"
++	"$(DESTDIR)$(man1dir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ bg5conv_SOURCES = bg5conv.c
+ bg5conv_OBJECTS = bg5conv.$(OBJEXT)
+@@ -1084,7 +1084,7 @@
+ all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) c-auto.h \
+ 		all-local
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(hbf2gf_cfgdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1142,7 +1142,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-hbf2gf_cfgDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

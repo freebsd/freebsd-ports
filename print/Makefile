@@ -303,6 +303,7 @@
     SUBDIR += tex-xmltex
     SUBDIR += texinfo
     SUBDIR += texlive-base
+    SUBDIR += texlive-docs
     SUBDIR += texlive-full
     SUBDIR += texlive-infra
     SUBDIR += texlive-texmf

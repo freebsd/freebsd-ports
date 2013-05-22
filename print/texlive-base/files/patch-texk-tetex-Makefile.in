@@ -1,0 +1,35 @@
+--- texk/tetex/Makefile.in.orig	2013-05-22 14:09:48.000000000 +0900
++++ texk/tetex/Makefile.in	2013-05-22 14:12:23.000000000 +0900
+@@ -106,10 +106,10 @@
+     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texconfigdir)" \
++am__installdirs = "$(DESTDIR)$(bindir)" \
+ 	"$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(bindir)" \
+ 	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" \
+-	"$(DESTDIR)$(texconfigdir)" "$(DESTDIR)$(web2cdir)"
++	"$(DESTDIR)$(web2cdir)"
+ SCRIPTS = $(dist_bin_SCRIPTS) $(dist_texconfig_SCRIPTS) \
+ 	$(dist_texmf_SCRIPTS) $(nodist_bin_SCRIPTS)
+ SOURCES =
+@@ -891,7 +891,7 @@
+ check: check-am
+ all-am: Makefile $(SCRIPTS) $(MANS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texconfigdir)" "$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(texconfigdir)" "$(DESTDIR)$(web2cdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(web2cdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -946,8 +946,8 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_texconfigDATA \
+-	install-dist_texconfigSCRIPTS install-dist_texmfSCRIPTS \
++install-data-am: \
++	install-dist_texmfSCRIPTS \
+ 	install-dist_web2cDATA install-man
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

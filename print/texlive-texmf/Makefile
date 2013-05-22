@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-texmf
@@ -18,33 +18,24 @@ TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
 NO_WRKSRC=	yes
 
-EXCLUDE_FILES=	\*/doc/man/\* \
-	texmf/web2c/mktex.opt \
-	texmf/web2c/mktexdir \
-	texmf/web2c/mktexdir.opt \
-	texmf/web2c/mktexnam \
-	texmf/web2c/mktexnam.opt \
-	texmf/web2c/mktexupd \
+EXCLUDE_FILES=	\*/doc/man \
+	texmf/doc \
 	texmf/web2c/texmf.cnf \
 	texmf/web2c/fmtutil.cnf \
-	texmf/web2c/updmap-hdr.cnf \
-	texmf/web2c/fmtutil-hdr.cnf \
 	texmf/scripts/a2ping \
-	texmf/scripts/chktex \
 	texmf/scripts/ps2eps \
 	texmf/scripts/tetex \
 	texmf/scripts/simpdftex \
-	texmf/scripts/texdoc/texdoc.tlu \
-	texmf/scripts/texlive/rungs.tlu \
-	texmf/scripts/texlive/tlmgr.pl \
-	texmf/xdvi/* \
-	texmf-dist/doc/aleph \
-	texmf-dist/doc/lualatex \
-	texmf-dist/doc/luatex \
-	texmf-dist/doc/xelatex \
-	texmf-dist/doc/xetex \
-	texmf-dist/doc/otherformats/jadetex \
-	texmf-dist/doc/otherformats/xmltex \
+	texmf/xdvi \
+	texmf/dvips \
+	texmf/fonts/enc/dvips \
+	texmf/fonts/map/dvips \
+	texmf/fonts/cmap/dvipdfmx \
+	texmf/fonts/map/dvipdfmx \
+	texmf/dvipdfmx \
+	texmf/dvipdfm \
+	texmf-dist/doc \
+	texmf-dist/dvips \
 	texmf-dist/fonts/misc/xetex \
 	texmf-dist/scripts/accfonts \
 	texmf-dist/scripts/authorindex \
@@ -140,13 +131,6 @@ EXCLUDE_FILES=	\*/doc/man/\* \
 	texmf-dist/tex/xmltex \
 	texmf/tex/generic/config/luatex-unicode-letters.tex \
 	texmf/tex/generic/config/luatexiniconfig.tex \
-	texmf-dist/doc/ptex \
-	texmf-dist/doc/platex \
-	texmf-dist/doc/uptex \
-	texmf-dist/doc/uplatex \
-	texmf-dist/doc/fonts/japanese-otf \
-	texmf-dist/doc/fonts/japanese-otf-uptex \
-	texmf-dist/doc/fonts/jfontmaps \
 	texmf-dist/fonts/source/ptex \
 	texmf-dist/fonts/ovp/public/japanese-otf-uptex \
 	texmf-dist/fonts/vf/ptex \
@@ -163,17 +147,17 @@ EXCLUDE_FILES=	\*/doc/man/\* \
 	texmf-dist/source/fonts/japanese-otf-uptex \
 	texmf-dist/source/fonts/japanese-otf \
 	texmf-dist/source/platex \
+	texmf-dist/source/uplatex \
 	texmf-dist/tex/ptex \
 	texmf-dist/tex/uptex \
 	texmf-dist/tex/platex \
 	texmf-dist/tex/uplatex \
 	texmf-dist/tex/generic/hyph-utf8/patterns/ptex \
-	texmf-dist/fonts/map/dvipdfmx/ptex \
-	texmf-dist/fonts/map/dvipdfmx/uptex \
-	texmf-dist/fonts/map/dvipdfmx/japanese-otf-uptex \
-	texmf-dist/fonts/map/dvipdfmx/japanese-otf \
-	texmf-dist/fonts/map/dvipdfmx/jfontmaps \
-	texmf/fonts/map/dvipdfmx/updmap/kanjix.map \
+	texmf-dist/tex/generic/dvips \
+	texmf-dist/fonts/enc/dvips \
+	texmf-dist/fonts/map/dvips \
+	texmf-dist/fonts/map/dvipdfmx \
+	texmf-dist/fonts/map/dvipdfm \
 	texmf-dist/fonts/cmap/uptex
 
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
@@ -185,5 +169,9 @@ do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS} -C ${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
+	for D in ${TEXMFDIR} ${TEXMFDISTDIR}; do \
+		${MKDIR} ${PREFIX}/$$D/doc && \
+		${TOUCH} ${PREFIX}/$$D/doc/.keep_me; \
+	done
 
 .include <bsd.port.mk>

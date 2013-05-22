@@ -14,6 +14,15 @@ COMMENT=	TeX Live, Full Version
 USE_TEX=	texlive full texhash
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+USE_TEX+=	docs
+.endif
+
 do-install:
 	@${DO_NADA}
 

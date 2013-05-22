@@ -3694,3 +3694,5 @@ bin/uptftopl
 %%TEXMFDISTDIR%%/fonts/cmap/uptex/UTF8-UTF16
 @dirrm %%TEXMFDISTDIR%%/fonts/cmap/uptex
 %%TEXMFDIR%%/fonts/map/dvipdfmx/updmap/kanjix.map
+@dirrmtry %%TEXMFDIR%%/fonts/map/dvipdfmx/updmap
+@dirrmtry %%TEXMFDIR%%/fonts/map/dvipdfmx
