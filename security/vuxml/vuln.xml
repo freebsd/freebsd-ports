@@ -51,6 +51,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="358133b5-c2b9-11e2-a738-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>27.0.1453.93</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/Stable%20Updates">
+	  <p>[235638] High CVE-2013-2837: Use-after-free in SVG. Credit to
+	    Slawomir Blazek.</p>
+	  <p>[235311] Medium CVE-2013-2838: Out-of-bounds read in v8. Credit to
+	    Christian Holler.</p>
+	  <p>[230176] High CVE-2013-2839: Bad cast in clipboard handling.
+	    Credit to Jon of MWR InfoSecurity.</p>
+	  <p>[230117] High CVE-2013-2840: Use-after-free in media loader.
+	    Credit to Nils of MWR InfoSecurity.</p>
+	  <p>[227350] High CVE-2013-2841: Use-after-free in Pepper resource
+	    handling. Credit to Chamal de Silva.</p>
+	  <p>[226696] High CVE-2013-2842: Use-after-free in widget handling.
+	    Credit to Cyril Cattiaux.</p>
+	  <p>[222000] High CVE-2013-2843: Use-after-free in speech handling.
+	    Credit to Khalil Zhani.</p>
+	  <p>[196393] High CVE-2013-2844: Use-after-free in style resolution.
+	    Credit to Sachin Shinde (@cons0ul).</p>
+	  <p>[188092] [179522] [222136] [188092] High CVE-2013-2845: Memory
+	    safety issues in Web Audio. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[177620] High CVE-2013-2846: Use-after-free in media loader.
+	    Credit to Chamal de Silva.</p>
+	  <p>[176692] High CVE-2013-2847: Use-after-free race condition with
+	    workers. Credit to Collin Payne.</p>
+	  <p>[176137] Medium CVE-2013-2848: Possible data extraction with XSS
+	    Auditor. Credit to Egor Homakov.</p>
+	  <p>[171392] Low CVE-2013-2849: Possible XSS with drag+drop or
+	    copy+paste. Credit to Mario Heiderich.</p>
+	  <p>[241595] High CVE-2013-2836: Various fixes from internal audits,
+	    fuzzing and other initiatives.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>2013-2836</cvename>
+      <cvename>2013-2837</cvename>
+      <cvename>2013-2838</cvename>
+      <cvename>2013-2839</cvename>
+      <cvename>2013-2840</cvename>
+      <cvename>2013-2841</cvename>
+      <cvename>2013-2842</cvename>
+      <cvename>2013-2843</cvename>
+      <cvename>2013-2844</cvename>
+      <cvename>2013-2845</cvename>
+      <cvename>2013-2846</cvename>
+      <cvename>2013-2847</cvename>
+      <cvename>2013-2848</cvename>
+      <cvename>2013-2849</cvename>
+      <url>http://googlechromereleases.blogspot.nl/search/Stable%20Updates</url>
+    </references>
+    <dates>
+      <discovery>2013-05-21</discovery>
+      <entry>2013-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c72a2494-c08b-11e2-bb21-083e8ed0f47b">
     <topic>plib -- stack-based buffer overflow</topic>
     <affects>
