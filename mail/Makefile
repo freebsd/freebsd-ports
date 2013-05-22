@@ -166,6 +166,8 @@
     SUBDIR += gmime2-sharp
     SUBDIR += gmime24
     SUBDIR += gmime24-sharp
+    SUBDIR += gmime26
+    SUBDIR += gmime26-sharp
     SUBDIR += gml
     SUBDIR += gnarwl
     SUBDIR += gnome-gmail-notifier

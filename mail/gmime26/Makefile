@@ -1,0 +1,55 @@
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
+# $FreeBSD$
+
+PORTNAME=	gmime
+PORTVERSION=	2.6.15
+PORTREVISION?=	0
+CATEGORIES?=	mail
+MASTER_SITES=	GNOME
+PKGNAMESUFFIX?=	-26
+
+MAINTAINER?=	ahicks@p-o.co.uk
+COMMENT?=	Library (written in C) for parsing and creating messages using MIME
+
+LICENSE=	LGPL21
+
+CONFLICTS=	gmime-1.0.*
+
+SLAVEDIRS=	mail/gmime26-sharp
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}26
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
+USE_GNOME+=	glib20 ltverhack
+USES=		pathfix pkgconfig iconv
+USE_LDCONFIG=	yes
+USE_XZ=		yes
+GNU_CONFIGURE=	yes
+# www.freebsd.org/cgi/query-pr.cgi?pr=118092
+# Rename uudecode and uuencode to gmime-* to not conflict with userland
+# fix kept in case issue returns
+CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
+		--enable-mono=no \
+		--program-transform-name="s/uuencode/gmime-uuencode/;s/uudecode/gmime-uudecode/;"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+LATEST_LINK?=	${PORTNAME}26
+
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in docs/reference/html/*
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
