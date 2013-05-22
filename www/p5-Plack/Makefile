@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack
-PORTVERSION=	1.0016
+PORTVERSION=	1.0024
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -11,6 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of PSGI reference implementation and utilities
 
 RUN_DEPENDS=	\
+	p5-Apache-LogFormat-Compiler>=0.12:${PORTSDIR}/www/p5-Apache-LogFormat-Compiler \
 	p5-Devel-StackTrace>=1.23:${PORTSDIR}/devel/p5-Devel-StackTrace \
 	p5-Devel-StackTrace-AsHTML>=0.11:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
 	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
@@ -22,7 +23,8 @@ RUN_DEPENDS=	\
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
 	p5-URI>=1.59:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
+	p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDir-Install
 TEST_DEPENDS=  \
 	p5-Authen-Simple-Passwd>0:${PORTSDIR}/security/p5-Authen-Simple-Passwd \
 	p5-CGI-Compile>0:${PORTSDIR}/www/p5-CGI-Compile \
