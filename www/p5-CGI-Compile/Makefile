@@ -1,12 +1,7 @@
-# New ports collection makefile for:	CGI::Compile
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Compile
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -20,7 +15,9 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings \
-	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI
+# Depending on Plack::Test causes cyclic dependencies.
 
 PERL_CONFIGURE=	yes
 
