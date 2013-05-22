@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.4.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -33,16 +33,12 @@ INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
 BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
 RUN_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
-.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
-.endif
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
@@ -59,23 +55,13 @@ OPTIONS_DEFINE=	ASSERTS DOCS MIPS_FPHACK
 ASSERTS_DESC=	Enable assertions (thread unsafe)
 MIPS_FPHACK_DESC=	MIPS long double hack (breaks ABI)
 
+CONFIGURE_ARGS+=	--enable-optimized
+
 MAN1=		clang.1
 
 PLIST_SUB+=	CLANG_RELEASE=${CLANG_RELEASE}
 
 .include <bsd.port.options.mk>
-
-.if defined(MAINTAINER_MODE)
-CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--enable-optimized
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-docs
-.else
-CONFIGURE_ARGS+=	--disable-docs
-.endif
 
 .if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--enable-assertions
@@ -83,6 +69,12 @@ RELTYPE=		Release+Asserts
 .else
 CONFIGURE_ARGS+=	--disable-assertions
 RELTYPE=		Release
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+.else
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .if ${PORT_OPTIONS:MMIPS_FPHACK}

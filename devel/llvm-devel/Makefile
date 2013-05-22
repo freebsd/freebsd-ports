@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.4.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -16,18 +17,13 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 CONFLICTS=	llvm-[23]* llvm31-[3]*
 
 GNU_CONFIGURE=	yes
-USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -41,34 +37,29 @@ MAKE_ARGS+=		REQUIRES_RTTI=1
 LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
+CONFIGURE_ARGS+=	--enable-optimized
 CONFIGURE_ARGS+=	--program-suffix=${DISTVERSION:C/\.r[0-9]*//}svn
 
-OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN
+OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN MANPAGES
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
 LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
-MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
-		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
-		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
-MLINKS=		lit.1 llvm-lit.1
+OPTIONS_DEFAULT=	MANPAGES
 
 LLVM_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
 
 .include <bsd.port.options.mk>
 
-.if defined(MAINTAINER_MODE)
-CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--enable-optimized
-.endif
-
 .if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--enable-assertions
 .else
 CONFIGURE_ARGS+=	--disable-assertions
+.endif
+
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
+BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -82,6 +73,14 @@ BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
 CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
 PLIST_FILES+=		lib/LLVMgold.so
+.endif
+
+.if ${PORT_OPTIONS:MMANPAGES}
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
+		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
+		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
+MLINKS=		lit.1 llvm-lit.1
 .endif
 
 .include <bsd.port.pre.mk>
@@ -133,7 +132,9 @@ pre-configure:
 	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
 
 post-build:
+.if ${PORT_OPTIONS:MMANPAGES}
 	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx html
 .endif
