@@ -1,14 +1,16 @@
-  HFS is the "Hierarchical File System" used on modern Macintosh computers.
-  With this package, you can read and write Macintosh-formatted media such as
-  floppy disks, CD-ROMs, and SCSI hard disks on most UNIX platforms. You can
-  also format raw media into an HFS volume.
+HFS is the "Hierarchical File System" used on modern Macintosh computers.
+With this package, you can read and write Macintosh-formatted media such as
+floppy disks, CD-ROMs, and SCSI hard disks on most UNIX platforms.  You can
+also format raw media into an HFS volume.
 
-  This package contains a number of different tools:
+This package contains a number of different tools:
 
-    * Several command-line programs (hmount, hls, hcopy, et al.)
-    * A Tk-based front-end for browsing and copying files through a
-        variety of transfer modes (MacBinary, BinHex, text, etc.)
-    * A Tcl package and interface for scriptable access to volumes
-    * A C library for low-level access to volumes
+  - Several command-line programs (hmount, hls, hcopy, et al.)
+  - Tk-based front-end for browsing and copying files through a
+    variety of transfer modes (MacBinary, BinHex, text, etc.)
+  - Tcl package and interface for scriptable access to volumes
+  - C library for low-level access to volumes
+
+Support for Apple's new Extended Format (HFS+) is currently not available.
 
 WWW: http://www.mars.org/home/rob/proj/hfs/
