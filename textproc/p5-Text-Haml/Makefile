@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Haml
-PORTVERSION=	0.990107
+PORTVERSION=	0.990108
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Text::Haml.3
+MAN3=	Text::Haml.3 \
+	Text::README.3
 
 .include <bsd.port.mk>
