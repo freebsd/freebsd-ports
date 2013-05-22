@@ -7,7 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-devel-[23]* llvm29-* llvm31-*
+CONFLICTS=	llvm-devel-[23]* llvm31-3*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -164,5 +164,17 @@ build-plist:
 	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's|${DOCSDIR}|%%DOCSDIR%%|' \
 	     -e 's|^|%%PORTDOCS%%@dirrm |' >> ${PLIST}
+
+.if make(svn-patch)
+.if !defined(PATCH_REV)
+.error svn-patch requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/llvm/trunk
+svn-patch:
+	printf "$$%s$$\n" FreeBSD > ${_PATCH_FILE}
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+.endif
 
 .include <bsd.port.post.mk>
