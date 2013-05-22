@@ -3,7 +3,7 @@
 #   $MCom: ports/graphics/gtk-update-icon-cache/Makefile,v 1.18 2013/03/04 17:44:37 kwm Exp $
 
 PORTNAME=	gtk-update-icon-cache
-PORTVERSION=	2.24.17
+PORTVERSION=	2.24.18
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
