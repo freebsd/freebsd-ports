@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pinba_engine
-# Date created:				24 Dec 2009
-# Whom:					raven428 <raven428@gmail.com>
-#
+# Created by: raven428 <raven428@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
@@ -29,7 +25,7 @@ FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	41 50
+IGNORE_WITH_MYSQL=	50
 
 MYSQL_WRKSRC=	$$(cd ${PORTSDIR}/${_MYSQL_SERVER} && ${MAKE} -V WRKSRC)
 

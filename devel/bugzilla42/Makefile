@@ -54,7 +54,6 @@ RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
-IGNORE_WITH_MYSQL=	41
 RUN_DEPENDS+=	p5-DBD-mysql>=4.0001:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
