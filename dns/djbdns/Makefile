@@ -16,10 +16,10 @@ COMMENT?=	A collection of secure and reliable DNS tools
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-OPTIONS_DEFINE=	DUMPCACHE IPV6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE
+OPTIONS_DEFINE=	DUMPCACHE IP6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE
 OPTIONS_DEFAULT=	MAN
 DUMPCACHE_DESC=	persistent cache for dnscache
-IPV6_DESC=	IPv6 support by Felix von Leitner
+IP6_DESC=	IPv6 support by Felix von Leitner
 IGNOREIP_DESC=	ignoreip2 patch by Russell Nelson
 JUMBO_DESC=	jumbo patch by Claudiu Costin
 MAN_DESC=	manual pages by Gerritt Pape
@@ -30,7 +30,7 @@ DNSCURVE_DESC=	DNSCurve support by Matthew Dempsky
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJUMBO}
-.if ${PORT_OPTIONS:MIPV6} || ${PORT_OPTIONS:MIGNOREIP} || ${PORT_OPTIONS:MSRV} || \
+.if ${PORT_OPTIONS:MIP6} || ${PORT_OPTIONS:MIGNOREIP} || ${PORT_OPTIONS:MSRV} || \
 	${PORT_OPTIONS:MDNSCURVE}
 BROKEN=		The jumbo patch currently conflicts with the IPv6, ignoreip2, SRV and DNSCURVE patches
 .endif
@@ -59,7 +59,7 @@ MAN8=		axfr-get.8 axfrdns.8 axfrdns-conf.8 dnscache-conf.8 \
 MANCOMPRESSED=	no
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
+.if ${PORT_OPTIONS:MIP6}
 PKGNAMESUFFIX=	-ipv6
 PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
 PATCH_SITES+=	http://www.fefe.de/dns/:ipv6
@@ -69,7 +69,7 @@ EXTRA_PATCHES+=	${FILESDIR}/uint32.patch ${FILESDIR}/djbdns-ipv6-ooyama.patch
 .endif
 
 .if ${PORT_OPTIONS:MDUMPCACHE} && ! ${PORT_OPTIONS:MJUMBO}
-.if ${PORT_OPTIONS:MIPV6}
+.if ${PORT_OPTIONS:MIP6}
 BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict
 .endif
 PATCH_SITES+=	http://efge.free.fr/djbdns/:dumpcache
@@ -79,7 +79,7 @@ CFLAGS+=	-DDUMPCACHE
 .endif
 
 .if ${PORT_OPTIONS:MIGNOREIP}
-.if ${PORT_OPTIONS:MIPV6}
+.if ${PORT_OPTIONS:MIP6}
 BROKEN=		The IPv6 patch already includes the ignoreip2 functionality
 .endif
 PATCH_SITES+=	http://tinydns.org/:ignoreip
@@ -100,7 +100,7 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 .if ${PORT_OPTIONS:MDNSCURVE}
-.if ${PORT_OPTIONS:MIPV6}
+.if ${PORT_OPTIONS:MIP6}
 BROKEN=	The IPv6 and DNSCurve patches are currently in conflict
 .endif
 PATCH_SITES+=	http://shinobi.dempsky.org/~matthew/patches/:dnscurve
@@ -117,10 +117,10 @@ DJBDNS_V6_VER=	test23
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-.if ${PORT_OPTIONS:MIPV6}
-PLIST_SUB+=	WITH_IPV6=""
+.if ${PORT_OPTIONS:MIP6}
+PLIST_SUB+=	WITH_IP6=""
 .else
-PLIST_SUB+=	WITH_IPV6="@comment "
+PLIST_SUB+=	WITH_IP6="@comment "
 .endif
 
 post-patch:
