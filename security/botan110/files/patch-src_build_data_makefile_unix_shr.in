@@ -1,0 +1,11 @@
+--- src/build-data/makefile/unix_shr.in.orig	2011-09-02 19:36:47.671575619 +0000
++++ src/build-data/makefile/unix_shr.in	2011-09-02 19:37:32.341486166 +0000
+@@ -20,7 +20,7 @@
+ LIBDIR        = $(DESTDIR)/%{libdir}
+ HEADERDIR     = $(DESTDIR)/%{includedir}/botan-$(SERIES)/botan
+ DOCDIR        = $(DESTDIR)/%{docdir}/botan-$(VERSION)
+-PKGCONF_DIR   = $(LIBDIR)/pkgconfig
++PKGCONF_DIR   = $(DESTDIR)/libdata/pkgconfig
+ 
+ CONFIG_SCRIPT = %{botan_config}
+ PKGCONFIG     = %{botan_pkgconfig}

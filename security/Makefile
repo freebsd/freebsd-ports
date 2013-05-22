@@ -42,6 +42,7 @@
     SUBDIR += bioapi
     SUBDIR += blindelephant
     SUBDIR += botan
+    SUBDIR += botan110
     SUBDIR += bro
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
