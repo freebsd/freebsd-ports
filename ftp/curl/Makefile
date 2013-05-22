@@ -106,7 +106,7 @@ IGNORE=			only supports CA bundle with OpenSSL
 .endif
 
 .if ${PORT_OPTIONS:MCARES}
-LIB_DEPENDS+=	cares.2:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=	cares:${PORTSDIR}/dns/c-ares
 CONFIGURE_ARGS+=	--enable-ares=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-ares
