@@ -95,20 +95,20 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>2013-2836</cvename>
-      <cvename>2013-2837</cvename>
-      <cvename>2013-2838</cvename>
-      <cvename>2013-2839</cvename>
-      <cvename>2013-2840</cvename>
-      <cvename>2013-2841</cvename>
-      <cvename>2013-2842</cvename>
-      <cvename>2013-2843</cvename>
-      <cvename>2013-2844</cvename>
-      <cvename>2013-2845</cvename>
-      <cvename>2013-2846</cvename>
-      <cvename>2013-2847</cvename>
-      <cvename>2013-2848</cvename>
-      <cvename>2013-2849</cvename>
+      <cvename>CVE-2013-2836</cvename>
+      <cvename>CVE-2013-2837</cvename>
+      <cvename>CVE-2013-2838</cvename>
+      <cvename>CVE-2013-2839</cvename>
+      <cvename>CVE-2013-2840</cvename>
+      <cvename>CVE-2013-2841</cvename>
+      <cvename>CVE-2013-2842</cvename>
+      <cvename>CVE-2013-2843</cvename>
+      <cvename>CVE-2013-2844</cvename>
+      <cvename>CVE-2013-2845</cvename>
+      <cvename>CVE-2013-2846</cvename>
+      <cvename>CVE-2013-2847</cvename>
+      <cvename>CVE-2013-2848</cvename>
+      <cvename>CVE-2013-2849</cvename>
       <url>http://googlechromereleases.blogspot.nl/search/Stable%20Updates</url>
     </references>
     <dates>
