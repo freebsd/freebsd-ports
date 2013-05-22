@@ -40,7 +40,6 @@ OPTIONS=	FAM		"Build in fam support for IDLE command"		off \
 		TRASHQUOTA	"Include deleted mails in the quota"		off \
 		GDBM		"Use gdbm db instead of system bdb"		off \
 		IPV6		"Build with IPv6 support"			on  \
-		DRAC		"Build with DRAC support"			off
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
@@ -63,12 +62,6 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		COURIERAUTHCONFIG=${PREFIX}/bin/courierauthconfig
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_DRAC)
-PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
-PATCHFILES=	courier-imap-4.8.1-drac.patch
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-.endif
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
