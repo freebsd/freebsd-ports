@@ -9,6 +9,12 @@ PORTREVISION=	1
 
 BOOKS=		glib gobject gio
 
+# custom DOCSDIR. This is because we want the references to be installed
+# in share/doc/${book} and not share/doc/glib/${book}
+DOCSDIR=	${PREFIX}/share/doc
+
+PORTDOCS=	glib/* gobject/* gio/*
+
 glib_MAN=	glib-gettextize.1
 gobject_MAN=	glib-genmarshal.1 glib-mkenums.1 gobject-query.1
 

@@ -35,7 +35,7 @@ DISTINFO_FILE=	${PARENTDIR}/distinfo
 REFERENCE_SRC?=	${WRKSRC}/docs/reference
 BOOKS?=		.
 
-PORTDOCS=	*
+PORTDOCS?=	*
 
 .if !target(do-build)
 do-build:
