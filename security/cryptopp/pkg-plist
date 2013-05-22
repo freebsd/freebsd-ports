@@ -103,6 +103,7 @@ include/cryptopp/seed.h
 include/cryptopp/serpent.h
 include/cryptopp/serpentp.h
 include/cryptopp/sha.h
+include/cryptopp/sha3.h
 include/cryptopp/shacal2.h
 include/cryptopp/shark.h
 include/cryptopp/simple.h

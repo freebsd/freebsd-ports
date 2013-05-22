@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		cryptopp
-PORTVERSION=		5.6.1
-PORTREVISION=		3
+PORTVERSION=		5.6.2
 CATEGORIES=		security
 MASTER_SITES=		SF \
 			http://www.cryptopp.com/
