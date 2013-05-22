@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Facebook-Graph
-PORTVERSION=	1.0500
+PORTVERSION=	1.0600
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIZEN
@@ -12,7 +12,7 @@ COMMENT=	Perl extension to integrate your apps with Facebook
 
 RUN_DEPENDS=	\
 	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
-	p5-AnyEvent-HTTP-LWP-UserAgent>=0.8:${PORTSDIR}/www/p5-AnyEvent-HTTP-LWP-UserAgent \
+	p5-AnyEvent-HTTP-LWP-UserAgent>=0.08:${PORTSDIR}/www/p5-AnyEvent-HTTP-LWP-UserAgent \
 	p5-DateTime>=0.61:${PORTSDIR}/devel/p5-DateTime \
 	p5-DateTime-Format-Strptime>=1.4000:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 	p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
