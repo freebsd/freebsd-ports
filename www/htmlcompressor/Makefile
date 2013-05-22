@@ -2,31 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	htmlcompressor
-PORTVERSION=	0.9.4
+PORTVERSION=	1.5.3
 CATEGORIES=	www java
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
+EXTRACT_SUFX=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML/XML Compressor
 
 LICENSE=	AL2
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_ZIP=	yes
+NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/htmlcompressor %%DATADIR%%/htmlcompressor.jar
-PLIST_DIRS=	%%DATADIR%%
+PLIST_FILES=	bin/htmlcompressor %%JAVAJARDIR%%/htmlcompressor.jar
+PLIST_DIRSTRY=	%%JAVAJARDIR%%
 SUB_FILES=	htmlcompressor
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/build/htmlcompressor-${PORTVERSION}.jar ${DATADIR}/htmlcompressor.jar
+	@${MKDIR} ${JAVAJARDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/htmlcompressor.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/htmlcompressor ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
