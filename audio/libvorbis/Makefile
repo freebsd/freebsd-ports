@@ -13,8 +13,8 @@ COMMENT=	Audio compression codec library
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 
@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} \
 		--disable-docs		# don't rebuild
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
