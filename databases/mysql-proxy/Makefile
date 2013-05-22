@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mysql-proxy
-# Date created:		2007-06-25
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql-proxy
 PORTVERSION=	0.8.3
@@ -27,6 +23,5 @@ USE_LDCONFIG=	yes
 USE_LUA=	5.1+
 USE_MYSQL=	yes
 USE_RC_SUBR=	mysql-proxy
-IGNORE_WITH_MYSQL=	41
 
 .include <bsd.port.mk>

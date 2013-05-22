@@ -38,7 +38,6 @@ OPTIONS_DEFAULT=	AUDITOR
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-database-backend=mysql
 USE_MYSQL=	compat
-IGNORE_WITH_MYSQL=	323 40 41
 PLIST_SUB+=	SQLITE="@comment "
 PLIST_SUB+=	MYSQL=""
 .else

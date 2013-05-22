@@ -1,9 +1,5 @@
-# New ports collection makefile for:	siteframe
-# Date created:				9 January 2006
-# Whom:					Glen Campbell
-#
+# Created by: Glen Campbell
 # $FreeBSD$
-#
 
 PORTNAME=	siteframe
 PORTVERSION=	5.0.2
@@ -19,9 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 USE_APACHE_RUN=	22+
 USE_PHP=	mysqli simplexml xml session gd
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	4
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	40
 
 # where to install
 NO_BUILD=	yes

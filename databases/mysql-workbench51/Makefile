@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MySQL Workbench
-# Date created:				21 June 2009
-# Whom:					Maxim Ignatenko
-#
+# Created by: Maxim Ignatenko
 # $FreeBSD$
-#
 
 PORTNAME=	mysql-workbench-oss
 PORTVERSION?=	5.1.16
@@ -59,7 +55,7 @@ CONFIGURE_ENV=	GNOME2_DIR="${LOCALBASE}" LUA_LIBS="-llua"
 
 USE_MYSQL=	client
 DEFAULT_MYSQL_VER=	51
-IGNORE_WITH_MYSQL=	41 55
+IGNORE_WITH_MYSQL=	55
 
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--enable-python-modules

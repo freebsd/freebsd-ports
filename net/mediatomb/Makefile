@@ -75,7 +75,6 @@ CONFIGURE_ARGS+=	--disable-sqlite3
 CONFIGURE_ARGS+=	--enable-mysql \
 			--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
 USE_MYSQL=		yes
-IGNORE_WITH_MYSQL=	41
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
