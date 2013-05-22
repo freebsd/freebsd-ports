@@ -1,6 +1,7 @@
---- src/stubs.c	Thu Jan  4 12:47:55 2007
-+++ src/stubs.c	Mon May 28 14:16:28 2007
-@@ -12,8 +12,7 @@
+--- src/stubs.c.orig	2007-01-04 18:47:55.000000000 +0100
++++ src/stubs.c	2013-05-22 17:34:59.000000000 +0200
+@@ -11,10 +11,9 @@
+ #include <stdlib.h>
  #include <string.h>
  #include <tcl.h>
 -#include <tk.h>
@@ -10,7 +11,9 @@
 +__FBSDID("$Id: stubs.c,v 1.7 2005/04/29 19:01:57 wn Exp $");
  
  static char resultbuf[SEARCHBUF];
-@@ -34,24 +33,24 @@
+ 
+@@ -33,26 +32,26 @@
+ ** the search word's base form.
  */
  
 -int wn_findvalidsearches (ClientData clientData, Tcl_Interp *interp, 
@@ -46,7 +49,9 @@
 +   Tcl_SetObjResult(interp, Tcl_NewIntObj(bitfield));
     return TCL_OK;
  }
-@@ -64,17 +63,15 @@
+ 
+@@ -63,19 +62,17 @@
+ ** the results of findvalidsearches.  Invoked from Tcl as "bit".
  */
  
 -int wn_bit (ClientData clientData, Tcl_Interp *interp,
@@ -71,7 +76,9 @@
 +   Tcl_SetObjResult(interp, Tcl_NewIntObj(bit(whichbit)));
     return TCL_OK;
  } 
-@@ -85,8 +82,9 @@
+ 
+@@ -84,13 +81,13 @@
+ ** It is invoked from Tcl simply as "search".
  */
  
 -int wn_search (ClientData clientData, Tcl_Interp *interp,
@@ -83,8 +90,23 @@
 -   char *morph;
 +   const char *morph;
     if (argc != 5) {
-       interp -> result = 
-@@ -112,6 +110,7 @@
+-      interp -> result = 
+-         "usage: search searchword partofspeechnum searchtypenum sensenum";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj ("usage: search searchword partofspeechnum searchtypenum sensenum", -1));
+       return TCL_ERROR;
+    }
+    pos = atoi (argv[2]);
+@@ -102,7 +99,7 @@
+          strcat (resultbuf, findtheinfo (morph, pos, searchtype, sense));
+       } while ((morph = morphstr (NULL, pos)) != NULL);
+    }
+-   interp -> result = resultbuf;
++   Tcl_SetObjResult(interp, Tcl_NewStringObj(resultbuf, -1));
+    return TCL_OK;
+ }
+ 
+@@ -111,10 +108,11 @@
+ ** results.
  */
   
 -int wn_glosses (ClientData clientData, Tcl_Interp *interp,
@@ -93,8 +115,13 @@
 +wn_glosses (ClientData clientData, Tcl_Interp *interp,
 +   int argc, const char *argv[]) {
     if (argc != 2) {
-       interp -> result = "usage: glosses [1 | 0]";
-@@ -127,6 +126,7 @@
+-      interp -> result = "usage: glosses [1 | 0]";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj("usage: glosses [1 | 0]", -1));
+       return TCL_ERROR;
+    }
+    dflag = atoi (argv[1]);
+@@ -126,10 +124,11 @@
+ ** results.
  */
   
 -int wn_fileinfo (ClientData clientData, Tcl_Interp *interp,
@@ -103,8 +130,13 @@
 +wn_fileinfo (ClientData clientData, Tcl_Interp *interp,
 +   int argc, const char *argv[]) {
     if (argc != 2) {
-       interp -> result = "usage: fileinfo [1 | 0]";
-@@ -142,6 +142,7 @@
+-      interp -> result = "usage: fileinfo [1 | 0]";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj("usage: fileinfo [1 | 0]", -1));
+       return TCL_ERROR;
+    }
+    fileinfoflag = atoi (argv[1]);
+@@ -141,10 +140,11 @@
+ ** in the search results.
  */
   
 -int wn_byteoffset (ClientData clientData, Tcl_Interp *interp,
@@ -113,8 +145,13 @@
 +wn_byteoffset (ClientData clientData, Tcl_Interp *interp,
 +   int argc, const char *argv[]) {
     if (argc != 2) {
-       interp -> result = "usage: byteoffset [1 | 0]";
-@@ -157,11 +158,15 @@
+-      interp -> result = "usage: byteoffset [1 | 0]";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj("usage: byteoffset [1 | 0]", -1));
+       return TCL_ERROR;
+    }
+    offsetflag = atoi (argv[1]);
+@@ -156,13 +156,17 @@
+ ** returned.
  */
   
 -int wn_senseflag (ClientData clientData, Tcl_Interp *interp,
@@ -134,7 +171,9 @@
 +   wnsnsflag = argc; /* argc got recycled here */
     return TCL_OK;
  }
-@@ -172,6 +177,7 @@
+ 
+@@ -171,26 +175,30 @@
+ ** type of search does.
  */
  
 -int wn_contextualhelp (ClientData clientData, Tcl_Interp *interp,
@@ -144,7 +183,8 @@
 +   int argc, Tcl_Obj * const objv[]) {
     int pos, searchtype;
     if (argc != 3) {
-@@ -179,7 +185,9 @@
+-      interp -> result = "usage: contextualhelp partofspeechnum searchtypenum";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj("usage: contextualhelp partofspeechnum searchtypenum", -1));
        return TCL_ERROR;
     }
 -   pos = atoi (argv[1]);
@@ -157,7 +197,8 @@
 +   Tcl_SetResult(interp, (char *)helptext[pos][searchtype], TCL_STATIC);
     return TCL_OK;
  }
-@@ -188,6 +196,7 @@
+ 
+ /* This command, accessed in Tcl as "reopendb" reopens the WordNet database.
  */
  
 -int wn_reopendb (ClientData clientData, Tcl_Interp *interp,
@@ -166,8 +207,13 @@
 +wn_reopendb (ClientData clientData, Tcl_Interp *interp,
 +   int argc, Tcl_Obj * const objv[]) {
     if (argc != 1) {
-       interp -> result = "usage: reopendb";
-@@ -202,6 +211,7 @@
+-      interp -> result = "usage: reopendb";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj("usage: reopendb", -1));
+       return TCL_ERROR;
+    }
+    re_wninit ();
+@@ -201,22 +209,40 @@
+ ** stop whatever search it is currently in the middle of performing.
  */
  
 -int wn_abortsearch (ClientData clientData, Tcl_Interp *interp,
@@ -176,8 +222,12 @@
 +wn_abortsearch (ClientData clientData, Tcl_Interp *interp,
 +   int argc, Tcl_Obj * const objv[]) {
     if (argc != 1) {
-       interp -> result = "usage: abortsearch";
-@@ -212,4 +222,20 @@
+-      interp -> result = "usage: abortsearch";
++      Tcl_SetObjResult(interp, Tcl_NewStringObj("usage: abortsearch", -1));
+       return TCL_ERROR;
+    }
+    abortsearch = 1;
+    return TCL_OK;
  }
  
 +/* Return text of the license. The license is compiled in anyway, so
@@ -198,7 +248,7 @@
 +
  /* This is a callback function invoked by the WordNet search engine every so
  ** often, to allow the interface to respond to events (especially the pressing
-@@ -217,5 +243,6 @@
+ ** of a stop button) during the search.
  */
  
 -void tkwn_doevents (void) {
@@ -206,7 +256,9 @@
 +tkwn_doevents (void) {
     while (Tcl_DoOneEvent (TCL_WINDOW_EVENTS | TCL_DONT_WAIT) != 0) {}
  }
-@@ -226,5 +253,6 @@
+ 
+@@ -225,13 +251,14 @@
+ ** specific, since it uses the native error reporting mechanism.
  */
  
 -int tkwn_displayerror (char *msg) {
@@ -214,14 +266,16 @@
 +tkwn_displayerror (const char *msg) {
  #ifdef _WINDOWS
     MessageBeep (MB_ICONEXCLAMATION);
-@@ -232,5 +260,5 @@
+    MessageBox (NULL, msg, "WordNet Library Error",
        MB_ICONEXCLAMATION | MB_OK | MB_TASKMODAL | MB_SETFOREGROUND);
  #else
 -   fprintf (stderr, "%s", msg);
 +   fputs(msg, stderr);
  #endif
     return -1;
-@@ -246,25 +274,26 @@
+ }
+@@ -245,26 +272,27 @@
+    interface_doevents_func = tkwn_doevents;
     display_message = tkwn_displayerror;
     wninit ();
 -   Tcl_CreateCommand (interp, "findvalidsearches", (void *) 
