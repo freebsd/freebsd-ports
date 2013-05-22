@@ -1,6 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ServerStatus/Lite/.packlist
 %%SITE_PERL%%/Plack/Middleware/ServerStatus/Lite.pm
 @dirrm %%SITE_PERL%%/Plack/Middleware/ServerStatus
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ServerStatus/Lite
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ServerStatus
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
