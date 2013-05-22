@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler
 
-CONFLICTS=	clang-devel-[23]* clang31-*
+CONFLICTS=	clang-devel-[23]*
 
 CLANG_NAME=	clang-${PORTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
@@ -31,15 +31,11 @@ INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
 BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
 RUN_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
-.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
-.endif
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
@@ -55,23 +51,13 @@ OPTIONS_DEFINE=	ASSERTS DOCS
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
 
+CONFIGURE_ARGS+=	--enable-optimized
+
 MAN1=		clang.1
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
-
-.if defined(MAINTAINER_MODE)
-CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--enable-optimized
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-docs
-.else
-CONFIGURE_ARGS+=	--disable-docs
-.endif
 
 .if ${PORT_OPTIONS:MASSERTS}
 CONFIGURE_ARGS+=	--enable-assertions
@@ -79,6 +65,12 @@ RELTYPE=		Release+Asserts
 .else
 CONFIGURE_ARGS+=	--disable-assertions
 RELTYPE=		Release
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+.else
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .include <bsd.port.pre.mk>
@@ -119,6 +111,7 @@ post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
 
 post-install:
+	@${LN} -sf clang ${PREFIX}/bin/clang-cpp
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 		${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
 		${WRKSRC}/tools/clang/tools/scan-build/scan-build \
@@ -150,6 +143,7 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/clang \
 			bin/clang++ \
 			bin/clang-check \
+			bin/clang-cpp \
 			bin/clang-tblgen \
 			bin/c-index-test \
 			bin/scan-build \
