@@ -3,7 +3,7 @@
 
 PORTNAME=		cryptopp
 PORTVERSION=		5.6.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		SF \
 			http://www.cryptopp.com/
