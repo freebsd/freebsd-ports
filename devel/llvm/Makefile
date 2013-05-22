@@ -16,7 +16,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
-.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 .if defined(MAINTAINER_MODE)
