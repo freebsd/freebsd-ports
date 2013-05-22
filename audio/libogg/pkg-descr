@@ -1,7 +1,8 @@
-Ogg project codecs use the Ogg bitstream format to arrange the raw,
-compressed bitstream into a more robust, useful form.  For example,
-the Ogg bitstream makes seeking, time stamping and error recovery
-possible, as well as mixing several separate, concurrent media
-streams into a single physical bitstream.
+Ogg is a multimedia container format and the native file and stream
+format for the Xiph.org multimedia codecs.  It encapsulates raw
+compressed data and allows the interleaving of audio and video data
+inside a single convient format.  Ogg is a stream oriented container
+and provides packet framing, error detection, and periodic timestamps
+for seeking.
 
-WWW: http://www.xiph.org/ogg/
+WWW: https://www.xiph.org/ogg/

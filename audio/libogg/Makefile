@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libogg
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 PORTEPOCH=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
@@ -10,11 +10,13 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
 
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-USES=	pathfix
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
