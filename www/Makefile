@@ -629,6 +629,7 @@
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-Gallery
     SUBDIR += p5-Apache-Htgroup
+    SUBDIR += p5-Apache-LogFormat-Compiler
     SUBDIR += p5-Apache-MP3
     SUBDIR += p5-Apache-ParseFormData
     SUBDIR += p5-Apache-Profiler
