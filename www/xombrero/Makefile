@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xombrero
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 EXTRACT_SUFX=	.tgz
@@ -14,15 +13,11 @@ COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 LICENSE=	ISCL
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		soup-2.4:${PORTSDIR}/devel/libsoup \
-		webkitgtk-1:${PORTSDIR}/www/webkit-gtk2
+		soup-2.4:${PORTSDIR}/devel/libsoup
 
 USES=		pkgconfig
 USE_PERL5_BUILD=yes
-USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
-
-MAKE_ENV=	GTK_VERSION="gtk2"
 
 MAN1=		xombrero.1
 PORTEXAMPLES=	favorites playflash.sh xombrero.conf
@@ -30,13 +25,26 @@ PORTEXAMPLES=	favorites playflash.sh xombrero.conf
 BUILD_WRKSRC=	${WRKSRC}/freebsd
 
 OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SINGLE=	GTK
+OPTIONS_SINGLE_GTK=GTK2 GTK3
+OPTIONS_DEFAULT=EXAMPLES GTK3
 
 SUB_FILES=	xombrero
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800041
 BROKEN=		does not build due to missing arc4random_buf in libc
+.endif
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME=	gtk20
+LIB_DEPENDS+=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+MAKE_ENV+=	GTK_VERSION="gtk2"
+.else # GTK3
+USE_GNOME=	gtk30
+LIB_DEPENDS+=	webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3
+MAKE_ENV+=	GTK_VERSION="gtk3"
 .endif
 
 post-patch:
@@ -66,4 +74,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/playflash.sh ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
