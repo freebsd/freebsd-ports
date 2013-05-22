@@ -19,7 +19,8 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # The other valid keywords (* means TeXLive specific):
 #
 #  base:	base part
-#  texmf:	texmf tree
+#  texmf:	texmf tree (except for documentation)
+#  docs:	documentation
 #
 #  web2c:	WEB2C toolchain and TeX engines[*]
 #  kpathsea:	kpathsea library[*]
@@ -98,6 +99,8 @@ _USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-t
 
 _USE_TETEX_BASE=	mktexlsr:${PORTSDIR}/print/teTeX-base
 _USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
+
+_USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
 
 _USE_TEX_INFRA=		${SITE_PERL}/TeXLive/TLConfig.pm:${PORTSDIR}/print/texlive-infra
 
@@ -196,13 +199,12 @@ do-texhash:
 		"fi; done" >> ${TMPPLIST}
 . endif
 
-post-install: do-texhash
+post-install-script: do-texhash
 .endif
 
 .if !empty(USE_TEX:Mfmtutil)
 .PHONY:	do-fmtutil
-post-install: do-fmtutil
-.for F in ${TEX_FORMATS}
+. for F in ${TEX_FORMATS}
 do-fmtutil: do-fmtutil-$F post-install-$F
 do-fmtutil-$F:
 	@${TEST} -n '${TEX_FORMAT_${F:U}}'
@@ -229,7 +231,9 @@ do-fmtutil-$F:
 		"> ${LOCALBASE}/${FMTUTIL_CNF}" >> ${TMPPLIST}
 _PLIST_FILES+=	${TEX_FORMAT_${F:U}_FILES}
 _PLIST_DIRSTRY+=${TEX_FORMAT_${F:U}_DIRS}
-.endfor
+. endfor
+post-install-script: do-fmtutil
+
 PLIST_FILES=	${_PLIST_FILES:O:u}
 PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} \
 		${TEXMFVARDIR}/web2c \
@@ -242,13 +246,14 @@ do-updmap:
 	${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
 		TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
 		${LOCALBASE}/bin/updmap-sys
-post-install: do-updmap
 	@${ECHO_CMD} "@exec ${SETENV} PATH=${PATH}:${LOCALBASE}/bin " \
 		"TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} " \
 		"${LOCALBASE}/bin/updmap-sys"  >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${SETENV} PATH=${PATH}:${LOCALBASE}/bin " \
 		"TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} " \
 		"${LOCALBASE}/bin/updmap-sys"  >> ${TMPPLIST}
+
+post-install-script: do-updmap
 .endif
 
 TEX_FORMAT_ALEPH?= \

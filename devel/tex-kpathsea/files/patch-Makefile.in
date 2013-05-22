@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2012-05-16 16:44:41.000000000 +0900
++++ Makefile.in	2013-05-22 15:09:13.000000000 +0900
+@@ -127,7 +127,7 @@
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" \
+-	"$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(web2cdir)" \
++	"$(DESTDIR)$(web2cdir)" \
+ 	"$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libkpathsea_la_DEPENDENCIES = $(LTLIBOBJS)
+@@ -1749,7 +1749,7 @@
+ 
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)"; do \
++	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+@@ -1809,7 +1809,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_web2cDATA install-dist_web2cSCRIPTS \
++install-data-am: installdirs-am \
+ 	install-kpseincludeHEADERS install-nodist_kpseincludeHEADERS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

@@ -2,6 +2,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.992
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -28,6 +29,7 @@ EXTRACT_FILES= \
 	build-aux \
 	texk/am \
 	texk/dvipsk \
+	texk/lcdf-typetools \
 	texk/kpathsea
 EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${PREFIX}/share \
@@ -63,9 +65,8 @@ INFO=	dvips
 pre-su-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
-	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx \
-		${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap
-	${TOUCH} ${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx/.keep_me \
-		${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap/.keep_me
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/texlive-${DISTVERSION_TEXMF}-source/texk/lcdf-typetools/7t.enc ${PREFIX}/${TEXMFDISTDIR}/fonts/enc/dvips/base/7t.enc
 
 .include <bsd.port.mk>
