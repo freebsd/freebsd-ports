@@ -1,6 +1,16 @@
---- ../generic/tcldom.c.orig	2013-05-13 11:36:27.000000000 +0200
-+++ ../generic/tcldom.c	2013-05-13 11:39:00.000000000 +0200
-@@ -5934,7 +5934,7 @@
+--- ../generic/tcldom.c.orig	2007-12-26 00:19:02.000000000 +0100
++++ ../generic/tcldom.c	2013-05-22 09:01:30.000000000 +0200
+@@ -5915,6 +5915,9 @@
+ |   tcldom_EvalLocked
+ |
+ \---------------------------------------------------------------------------*/
++#if !defined(Tcl_GetErrorLine)
++#define Tcl_GetErrorLine(interp) (interp->errorLine)
++#endif
+ 
+ static
+ int tcldom_EvalLocked (
+@@ -5934,7 +5937,7 @@
      if (ret == TCL_ERROR) {
          char msg[64 + TCL_INTEGER_SPACE];
          sprintf(msg, "\n    (\"%s %s\" body line %d)", Tcl_GetString(objv[0]),
