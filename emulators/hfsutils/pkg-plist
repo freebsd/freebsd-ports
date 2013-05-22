@@ -4,8 +4,7 @@ bin/hcopy
 bin/hdel
 bin/hdir
 bin/hformat
-bin/hfs
-bin/hfssh
+bin/hfsck
 bin/hls
 bin/hmkdir
 bin/hmount
@@ -14,4 +13,3 @@ bin/hrename
 bin/hrmdir
 bin/humount
 bin/hvol
-bin/xhfs
