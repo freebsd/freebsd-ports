@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -179,5 +179,20 @@ build-plist:
 	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's|${DATADIR}|@dirrm %%DATADIR%%|' \
 	     -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' >> ${PLIST}
+
+.if make(svn-patch)
+.if !defined(PATCH_REV)
+.error svn-patch requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/cfe/trunk
+svn-patch:
+	printf "$$%s$$\n" FreeBSD > ${_PATCH_FILE}
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
+	   sed -e 's;^--- ;--- tools/clang/;' | \
+	   sed -e 's;^+++ ;+++ tools/clang/;' >> \
+	   ${_PATCH_FILE}
+.endif
 
 .include <bsd.port.post.mk>
