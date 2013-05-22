@@ -19,16 +19,20 @@ LIB_DEPENDS=	busybee:${PORTSDIR}/devel/busybee \
 ONLY_FOR_ARCHS=	amd64
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+# The -D-efines and -include beat the code into shape on GCC 4.7/4.8
+# GCC 4.6 from ports and 9.1's base clang are fine,
+# upstream bug report at <https://github.com/rescrv/po6/issues/5>
+# This hack causes harmless "warning: '__STDC_LIMIT_MACROS' macro redefined"
+CPPFLAGS+=	-D__STDC_LIMIT_MACROS -Du_int32_t=uint32_t \
+		-include stdint.h -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pathfix pkgconfig
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 90014 || !exists(clang++)
-# newer GCC versions than 4.6 do not work; clang 3.1 seems fine;
-# bug report to upstream at: <https://github.com/rescrv/po6/issues/5>
-USE_GCC=	4.6
+.if ${OSVERSION} < 900014 || !exists(/usr/bin/clang++)
+# No clang++ installed, use GCC from ports:
+USE_GCC=	yes
 .else
 CC=		clang
 CXX=		clang++
