@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Apache/LogFormat/Compiler.pm
+@dirrmtry %%SITE_PERL%%/Apache/LogFormat
+@dirrmtry %%SITE_PERL%%/Apache
