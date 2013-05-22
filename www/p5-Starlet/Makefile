@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Starlet
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Starlet
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZUHO
