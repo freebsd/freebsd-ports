@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20130518
+PORTVERSION=	3.0.99.20130521
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -14,7 +14,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	e55e1410c0
+FSL_CHKIN=	45d02f1ed1
 
 MANCOMPRESSED=	yes
 MAN8=	poudriere.8
@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	ZSH
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
 PLIST_FILES=	etc/poudriere.conf.sample \
+		etc/rc.d/poudriere \
 		bin/poudriere \
 		libexec/poudriere/dirwatch \
 		libexec/poudriere/dirempty \
@@ -31,7 +32,6 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/awk/dependency_loop.awk \
 		share/poudriere/awk/humanize.awk \
 		share/poudriere/awk/json.awk \
-		share/poudriere/awk/make_index.awk \
 		share/poudriere/awk/siginfo_buildtime.awk \
 		share/poudriere/html/index.html \
 		share/poudriere/html/jquery-1.9.1.min.js \
