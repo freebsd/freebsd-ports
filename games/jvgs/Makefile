@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jvgs
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.5.1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$//}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,8 +24,6 @@ SUB_FILES=	${PORTNAME}
 NO_CDROM=	contains data under CC-by-NC-SA
 
 PORTDOCS=	AUTHORS
-
-PORTSCOUT=	skipv:0.5 # unplayable due to broken double jump
 
 .include <bsd.port.options.mk>
 
