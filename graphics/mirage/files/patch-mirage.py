@@ -1,20 +1,31 @@
---- mirage.py.orig	2013-04-10 19:04:47.000000000 +0200
-+++ mirage.py	2013-04-10 19:05:50.000000000 +0200
-@@ -1,3 +1,4 @@
-+#!/usr/bin/python2
- # $HeadURL: http://svn.berlios.de/svnroot/repos/mirageiv/branches/mirage-0.9.x/mirage.py $
- # $Id: mirage.py 337 2011-02-13 22:40:05Z fredricj $
+--- mirage.py.orig	2011-02-13 23:40:05.000000000 +0100
++++ mirage.py	2013-05-22 17:56:33.000000000 +0200
+@@ -71,7 +71,7 @@
  
-@@ -4575,10 +4576,10 @@
- 				timer_screensaver = gobject.timeout_add(1000, self.disable_screensaver_in_slideshow_mode)
+ 	def __init__(self):
+ 		
+-		gtk.gdk.threads_init()
++		#gtk.gdk.threads_init()
+ 		
+ 		# FIX THIS! Does not work on windows and what happens if mo-files exists
+ 		# in both dirs?
+@@ -841,9 +841,7 @@
+ 			self.thumbpane_bottom_coord_loaded = bottom_coord
+ 		# update images:
+ 		if not self.thumbpane_updating:
+-			thread = threading.Thread(target=self.thumbpane_update_pending_images, args=(force_upto_imgnum, None))
+-			thread.setDaemon(True)
+-			thread.start()
++			self.thumbpane_update_pending_images(force_upto_imgnum, None)
  
- 	def main(self):
-+		gtk.gdk.threads_enter()
- 		gtk.main()
-+		gtk.gdk.threads_leave()
+ 	def thumbpane_create_dir(self):
+ 		if not os.path.exists(os.path.expanduser('~/.thumbnails/')):
+@@ -4579,6 +4577,6 @@
  
  if __name__ == "__main__":
  	base = Base()
 -	gtk.gdk.threads_enter()
++	#gtk.gdk.threads_enter()
  	base.main()
 -	gtk.gdk.threads_leave()
++	#gtk.gdk.threads_leave()
