@@ -3,7 +3,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
@@ -14,10 +14,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		idn.17:${PORTSDIR}/dns/libidn \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		botan.0:${PORTSDIR}/security/botan
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		idn:${PORTSDIR}/dns/libidn \
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		botan-1.10:${PORTSDIR}/security/botan110
 
 SUB_FILES=	pkg-message
 USE_BZIP2=	yes
@@ -25,6 +25,7 @@ USE_PERL5_BUILD=yes
 USES=		iconv
 USE_GMAKE=	yes
 USE_LUA=	5.1+
+MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -59,10 +60,6 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == amd64
-USE_GCC=	4.2+
-.endif
-
 .if ${PORT_OPTIONS:MNLS}
 USES+=	gettext
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
@@ -89,7 +86,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s/\"lua/\"lua-${LUA_VER}/g" \
 		-e "s/\"idn/\"libidn/g" \
 		-e "s/\"pcre/\"libpcre/g" \
-		-e "s/\"botan/\"botan-1.8/g" \
+		-e "s/\"botan/\"botan-1.10/g" \
 		${WRKSRC}/configure
 
 post-install:

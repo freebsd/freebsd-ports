@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2011-03-26 10:43:10.000000000 +0100
++++ Makefile.in	2013-05-22 00:42:41.059149227 +0200
+@@ -976,7 +976,7 @@
+ @BUILD_PCH_TRUE@PCH_FILE = $(PCH_BUILD).gch
+ AM_CXXFLAGS = $(PCH_FLAGS)
+ SUFFIXES = .gch .merged.po .gmo
+-AM_CPPFLAGS = $(intl_CFLAGS) $(pcre_CFLAGS) $(botan_CFLAGS) \
++AM_CPPFLAGS = $(botan_CFLAGS) $(intl_CFLAGS) $(pcre_CFLAGS) \
+ 	$(lua_CFLAGS) $(sqlite3_CFLAGS) $(idn_CFLAGS) $(am__append_4) \
+ 	$(am__append_10) $(am__append_12) $(am__append_15)
+ LDADD = src/libplatform.a src/lib3rdparty.a $(intl_LIBS) $(pcre_LIBS) \
