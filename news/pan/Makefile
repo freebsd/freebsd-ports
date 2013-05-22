@@ -4,7 +4,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.139
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -15,7 +15,7 @@ COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		gmime-2.4:${PORTSDIR}/mail/gmime24
+		gmime-2.6:${PORTSDIR}/mail/gmime26
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -33,11 +33,11 @@ GTK3_DESC=	Use gtk+3 based UI instead of gtk+2
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=--without-gtk3
-.else
 USE_GNOME+=	gtk30
 CONFIGURE_ARGS+=--with-gtk3
+.else
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=--without-gtk3
 .endif
 
 .if !${PORT_OPTIONS:MGTKSPELL} || ${PORT_OPTIONS:MGTK3}
