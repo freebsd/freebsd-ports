@@ -6,7 +6,6 @@ share/pixmaps/dfarc.png
 share/locale/fr/LC_MESSAGES/dfarc.mo
 share/locale/pl/LC_MESSAGES/dfarc.mo
 share/locale/fi/LC_MESSAGES/dfarc.mo
-@dirrmtry icons/hicolor/32x32/mimetypes
 @dirrmtry share/applications
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
