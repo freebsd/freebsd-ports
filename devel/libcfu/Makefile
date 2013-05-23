@@ -11,6 +11,7 @@ COMMENT=	Simple library of tools for developing multithreaded software
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	automake aclocal
 INFO=		${PORTNAME}
 
 .include <bsd.port.mk>
