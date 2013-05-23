@@ -38,7 +38,7 @@
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/RateService_v8.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/ReturnTagService_v1.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/ShipService_v7.wsdl
-%%PYTHON_SITELIBDIR%%/fedex/wsdl/TrackService_v4.wsdl
+%%PYTHON_SITELIBDIR%%/fedex/wsdl/TrackService_v5.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/AddressValidationService_v2.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/CloseService_v2.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/CourierDispatchService_v3.wsdl
@@ -46,7 +46,7 @@
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/RateService_v8.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/ReturnTagService_v1.wsdl
 %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/ShipService_v7.wsdl
-%%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/TrackService_v4.wsdl
+%%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl/TrackService_v5.wsdl
 @dirrm %%PYTHON_SITELIBDIR%%/fedex/wsdl/test_server_wsdl
 @dirrm %%PYTHON_SITELIBDIR%%/fedex/wsdl
 @dirrm %%PYTHON_SITELIBDIR%%/fedex/services
