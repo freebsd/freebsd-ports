@@ -372,6 +372,7 @@
     SUBDIR += heirloom
     SUBDIR += hextools
     SUBDIR += hfsexplorer
+    SUBDIR += hfsutils
     SUBDIR += hidesvn
     SUBDIR += highlnk
     SUBDIR += hilite
