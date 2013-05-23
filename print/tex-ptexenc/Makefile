@@ -13,7 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for Japanese pTeX and its tools
 
 USE_XZ=		yes
-USE_TEX=	kpathsea
+USE_TEX=	texlive kpathsea
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc
