@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lablgl
-# Date created:         13. January 2002
-# Whom:                 Ronald Kuehn <rk@ronald.org>
-#
+# Created by: Ronald Kuehn <rk@ronald.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lablgl
 PORTVERSION=	20120306
@@ -27,7 +23,10 @@ USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	THREADS "Use a threaded Tcl/Tk (must match lang/ocaml)" on
+OPTIONS_DEFINE=	THREADS
+THREADS_DESC=	Threaded Tcl/Tk (must match lang/ocaml)
+
+OPTIONS_DEFAULT=	THREADS
 
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
@@ -36,11 +35,11 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/lablgl
 
 CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_TK=		84+
 INVALID_TK_VER =	86
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD =	${PTHREAD_LIBS}
 .endif
@@ -88,9 +87,9 @@ post-install:
 		${EXAMPLESDIR}/lablglut '! -name Makefile')
 	@(cd ${WRKSRC}/Togl/examples && ${COPYTREE_SHARE} \* \
 		${EXAMPLESDIR}/togl '! -name Makefile')
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

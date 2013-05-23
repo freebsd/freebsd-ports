@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-sorl-thumbnail
-# Date created:				24 November 2009
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sorl-thumbnail
 PORTVERSION=	3.2.5
@@ -25,21 +21,24 @@ USE_PYDISTUTILS=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-OPTIONS=	DJANGO "Enable Django" On \
-		PDF "Enable PDF Thumbnails" Off \
-		WORD "Enable Word Document thumbnail handling" Off
+OPTIONS_DEFINE=	DJANGO PDF WORD
+DJANGO_DESC=	Enable Django
+PDF_DESC=	PDF Thumbnails
+WORD_DESC=	Word Document thumbnail handling
+
+OPTIONS_DEFAULT=	DJANGO
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DJANGO)
+.if ${PORT_OPTIONS:MDJANGO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 .endif
 
-.if defined(WITH_PDF)
+.if ${PORT_OPTIONS:MPDF}
 RUN_DEPENDS+=	${LOCALBASE}/bin/Magick-config:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if defined(WITH_WORD)
+.if ${PORT_OPTIONS:MWORD}
 RUN_DEPENDS+=	wvVersion:${PORTSDIR}/textproc/wv
 .endif
 

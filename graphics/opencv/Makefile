@@ -36,91 +36,86 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-OPTIONS=	EIGEN2	"Include Eigen 2 support" on \
-		FFMPEG	"Include FFmpeg support" off \
-		GSTREAMER	"Include Gstreamer support" off \
-		GTK	"Include GTK+ support" off \
-		JASPER	"Include JPEG 2000 support" on \
-		JPEG	"Include JPEG support" on \
-		OPENEXR	"Include OpenEXR support" off \
-		PNG	"Include PNG support" on \
-		QT4	"Build with Qt backend support" off \
-		TBB	"Include TBB support" off \
-		TIFF	"Include TIFF support" on \
-		V4L	"Include Video4Linux support" on \
-		XINE	"Include XINE support" off
+OPTIONS_DEFINE=	EIGEN2 FFMPEG GSTREAMER GTK JASPER JPEG OPENEXR PNG \
+		QT4 TBB TIFF V4L XINE EXAMPLES
+EIGEN2_DESC=	Eigen 2 support
+GTK_DESC=	GTK+ support
+OPENEXR_DESC=	OpenEXR support
+TBB_DESC=	TBB support
+
+OPTIONS_DEFAULT=	EIGEN2 JASPER JPEG PNG TIFF V4L
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On -DINSTALL_C_EXAMPLES:BOOL=On
 PORTEXAMPLES+=	c cpp gpu
 .endif
 
-.if !defined(WITHOUT_EIGEN2)
+.if ${PORT_OPTIONS:MEIGEN2}
 BUILD_DEPENDS+=	${LOCALBASE}/include/eigen2/Eigen/Eigen:${PORTSDIR}/math/eigen2
 CMAKE_ARGS+=	-DWITH_EIGEN2:BOOL=On
 .else
 CMAKE_ARGS+=	-DDWITH_EIGEN2:BOOL=Off
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=Off
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
 CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=Off
 .endif
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK}
 USE_GNOME=	gtk20
 CMAKE_ARGS+=	-DWITH_GTK:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_GTK:BOOL=Off
 .endif
 
-.if !defined(WITHOUT_JASPER)
+.if ${PORT_OPTIONS:MJASPER}
 LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
 CMAKE_ARGS+=	-DWITH_JASPER:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_JASPER:BOOL=Off
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CMAKE_ARGS+=	-DWITH_JPEG:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_JPEG:BOOL=Off
 .endif
 
-.if defined(WITH_OPENEXR)
+.if ${PORT_OPTIONS:MOPENEXR}
 LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=Off
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CMAKE_ARGS+=	-DWITH_PNG:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
 .endif
 
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4+=	opengl moc_build qmake_build rcc_build uic_build qtestlib
 CMAKE_ARGS+=	-DWITH_QT:BOOL=On -DWITH_QT_OPENGL:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_QT:BOOL=Off
 .endif
 
-.if defined(WITH_TBB)
+.if ${PORT_OPTIONS:MTBB}
 LIB_DEPENDS+=	tbb.4:${PORTSDIR}/devel/tbb
 CMAKE_ARGS+=	-DWITH_TBB:BOOL=On \
 		-DTBBLIB_FOUND:BOOL=1 -DTBB_FOUND:BOOL=On \
@@ -131,14 +126,14 @@ CMAKE_ARGS+=	-DWITH_TBB:BOOL=On \
 CMAKE_ARGS+=	-DWITH_TBB:BOOL=Off
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CMAKE_ARGS+=	-DWITH_TIFF:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_TIFF:BOOL=Off
 .endif
 
-.if !defined(WITHOUT_V4L)
+.if ${PORT_OPTIONS:MV4L}
 LIB_DEPENDS+=	v4l2.0:${PORTSDIR}/multimedia/libv4l
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 CMAKE_ARGS+=	-DWITH_V4L:BOOL=On \
@@ -147,7 +142,7 @@ CMAKE_ARGS+=	-DWITH_V4L:BOOL=On \
 CMAKE_ARGS+=	-DWITH_V4L:BOOL=Off
 .endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 CMAKE_ARGS+=	-DWITH_XINE:BOOL=On
 .else
@@ -238,7 +233,7 @@ post-patch:
 		${WRKSRC}/OpenCVConfig.cmake.in > ${WRKSRC}/OpenCVConfig-core.cmake.in
 	@${LN} -sf OpenCVConfig-version.cmake.in ${WRKSRC}/OpenCVConfig-core-version.cmake.in
 .endif
-.if defined(NOPORTDOCS) || defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
+.if ! ${PORT_OPTIONS:MDOCS} || defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
 	@${REINPLACE_CMD} -e '/add_subdirectory(doc)/ d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
