@@ -55,21 +55,29 @@ lib/dovecot/libdovecot-sieve.a
 lib/dovecot/libdovecot-sieve.la
 lib/dovecot/libdovecot-sieve.so
 lib/dovecot/libdovecot-sieve.so.0
+lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.a
+lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.la
+lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.so
 lib/dovecot/settings/libmanagesieve_login_settings.a
 lib/dovecot/settings/libmanagesieve_login_settings.la
 lib/dovecot/settings/libmanagesieve_login_settings.so
 lib/dovecot/settings/libmanagesieve_settings.a
 lib/dovecot/settings/libmanagesieve_settings.la
 lib/dovecot/settings/libmanagesieve_settings.so
+lib/dovecot/sieve/lib90_sieve_extprograms_plugin.a
+lib/dovecot/sieve/lib90_sieve_extprograms_plugin.la
+lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
 libexec/dovecot/managesieve
 libexec/dovecot/managesieve-login
 share/doc/dovecot/example-config/conf.d/20-managesieve.conf
 share/doc/dovecot/example-config/conf.d/90-sieve.conf
+share/doc/dovecot/example-config/conf.d/90-sieve-extprograms.conf
 @dirrmtry libdata/ldconfig/dovecot-pigeonhole
 @dirrmtry share/doc/dovecot/example-config/conf.d
 @dirrmtry share/doc/dovecot/example-config
 @dirrmtry share/doc/dovecot
 @dirrmtry libexec/dovecot
+@dirrm lib/dovecot/sieve
 @dirrm lib/dovecot/settings
 @dirrmtry lib/dovecot
 @dirrm include/dovecot/sieve
