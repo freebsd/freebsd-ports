@@ -645,6 +645,10 @@ lib/libPocoCryptod.so
 lib/libPocoCryptod.so.12
 lib/libPocoData.so
 lib/libPocoData.so.12
+lib/libPocoDataMySQL.so
+lib/libPocoDataMySQL.so.12
+lib/libPocoDataMySQLd.so
+lib/libPocoDataMySQLd.so.12
 lib/libPocoDataSQLite.so
 lib/libPocoDataSQLite.so.12
 lib/libPocoDataSQLited.so
