@@ -179,7 +179,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/images/note.gif
 %%PORTDOCS%%%%DOCSDIR%%/en/images/tip.gif
 %%PORTDOCS%%%%DOCSDIR%%/en/images/warning.gif
-%%PORTDOCS%%%%DOCSDIR%%/en/pdf/Bugzilla-Guide.pdf
+@comment %%PORTDOCS%%%%DOCSDIR%%/en/pdf/Bugzilla-Guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/en/rel_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/txt/Bugzilla-Guide.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/Bugzilla-Guide.xml
