@@ -2,7 +2,6 @@
 %%APP_VERSION%%/webapps/jasperserver/META-INF/context.xml
 %%APP_VERSION%%/webapps/jasperserver/META-INF/foodmartDS-jdbc.xml
 %%APP_VERSION%%/webapps/jasperserver/META-INF/jasperserverDS-jdbc.xml
-%%APP_VERSION%%/webapps/jasperserver/META-INF/jboss-deployment-structure.xml
 %%APP_VERSION%%/webapps/jasperserver/META-INF/sugarcrmDS-jdbc.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/actionModel-adhocChart.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/actionModel-adhocCrosstab.xml
@@ -157,6 +156,8 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/addFileResourceFlow.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/addInputControlFlow.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/addListOfValuesFlow.xml
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/awsSettingsBeans.xml
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/awsSettingsFlow.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/dataTypeBeans.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/dataTypeFlow.xml
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/flows/defaultFlow.xml
@@ -262,6 +263,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jpivot/table/xls_mdxtable.xsl
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jpivot/toolbar/htoolbar.xsl
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jpivot/toolbar/vtoolbar.xsl
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.aws.datasource.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.diagnostic.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.jdbc.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/js.quartz.base.properties
@@ -284,6 +286,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/analysisView/analysisViewNaming.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/analysisView/analysisViewNamingState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/analysisView/mdxQuery.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/dataSource/addDataSourceAws.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/dataSource/addDataSourceBean.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/dataSource/addDataSourceCustom.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/addResource/dataSource/addDataSourceJDBC.jsp
@@ -331,6 +334,9 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/adminImport.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/administerState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/analysisOptions.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/awsConfiguration.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/awsConfigurationInclude.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/awsSettings.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/logSettings.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/templateCheckbox.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/administer/templateDetails.jsp
@@ -359,7 +365,9 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/Label.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/inputControls/commonInputControlsImports.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/listOlapViews.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/login/externalLogin.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/login/login.jsp
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/login/loginHelp.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/login/loginState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/login/rotating/login_rotating_community_0.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/loginError.jsp
@@ -435,7 +443,6 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/system/systemConfirm.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/viewReport/DefaultJasperViewer.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/viewReport/DefaultJasperViewerState.jsp
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/viewReport/FusionChartsIEFix.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/viewReport/ViewReport.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/viewReport/ViewReportState.jsp
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/jsp/modules/viewReport/reportOutput.jsp
@@ -501,6 +508,8 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.nwmatcher.js.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.prototype.js.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MIT.scriptaculous.js.txt
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MPL-1.0.txt
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.MPL.rhino.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.abbreviator.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.ant.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.antlr.txt
@@ -538,10 +547,12 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.jta.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.jug.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.jxl.txt
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.lgpl-2.1-xom.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.lgpl-2.1.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.log4j.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.mondrian.html
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.nanotree.txt
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.nux.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.objenesis.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.png-encoder.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/LICENSE.postgresql.txt
@@ -564,6 +575,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/aspectjrt-1.5.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/avalon-framework-api-4.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/avalon-framework-impl-4.3.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/aws-java-sdk-1.3.30-RC1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-1.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-jaxrpc-1.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/axis-saaj-1.3.jar
@@ -604,6 +616,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-httpclient-3.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-io-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-lang-2.5.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-lang3-3.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-logging-1.0.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-math-1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-net-3.1.jar
@@ -611,7 +624,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-validator-1.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/commons-vfs-1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/connector-api-1.5.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/connector-file-8.1.0.Final-lib.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/connector-file-8.2.0.Final-lib.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/dom4j-1.6.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/dwr-2.0.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ehcache-core-2.6.0.jar
@@ -620,7 +633,6 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/eigenbase-xom-1.3.0.11999.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/esapi-2.0GA.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/fop-0.95.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/geronimo-stax-api_1.0_spec-1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/groovy-all-2.0.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hadoop-core-1.0.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hibernate-core-3.3.2.GA-HHH-2763.jar
@@ -630,11 +642,12 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-jdbc-0.8.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-metastore-0.8.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/hive-service-0.8.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpclient-4.1.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpcore-4.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpclient-4.2.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpcore-4.2.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/httpmime-4.1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/iReport-utils-2.0.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/itext-2.1.7.js1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/infinispan-core-5.1.2.FINAL.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/itext-2.1.7.js2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-annotations-2.0.5.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-core-2.0.5.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jackson-core-asl-1.9.2.jar
@@ -645,26 +658,28 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jai_codec-1.1_mr.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jai_core-1.1_mr.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jakarta-regexp-1.4.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-chart-themes-5.0.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-chart-themes-5.1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-fonts-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperreports-ofc-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-impl-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-impl-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-impl-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-common-ws-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-core-util-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-export-tool-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-jax-rs-rest-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-remote-services-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-repository-hibernate-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-rest-server-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-search-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-war-jar-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-ws-server-5.0.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-common-impl-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-engine-impl-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-externalAuth-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-externalAuth-impl-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-api-metadata-impl-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-common-ws-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-core-util-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-dto-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-export-tool-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-jax-rs-rest-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-remote-services-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-repository-hibernate-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-rest-server-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-search-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-war-jar-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jasperserver-ws-server-5.1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/javacup-0.10k.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/javassist-3.7.ga.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jaxb-api-2.1.jar
@@ -677,6 +692,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-dmr-1.1.1.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-logging-3.1.0.GA.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-marshalling-1.3.11.GA.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-marshalling-river-1.3.11.GA.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-remoting-3.2.3.GA.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-sasl-1.0.0.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jboss-threads-2.0.0.GA.jar
@@ -691,11 +707,13 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jersey-spring-1.13-b01.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jettison-1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jfreechart-1.0.12.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ji-jpivot-5.0.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ji-wcf-5.0.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jgroups-3.0.8.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ji-jpivot-5.1.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/ji-wcf-5.1.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jmx-logger-log4j-0.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jmx-logger-tools-0.3.1.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/joda-time-1.6.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/joda-convert-1.3.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/joda-time-2.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-hive-datasource-1.0.3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/js-mongodb-datasource-1.0.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/jsf-api-1.1.jar
@@ -708,6 +726,7 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/log4j-1.2.12.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mail-1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mimepull-1.6.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mockito-all-1.9.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mondrian-3.2.0-13661-JS-3.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mondrian.dtd
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/mongo-java-driver-2.7.3.jar
@@ -718,8 +737,6 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/oro-2.0.8.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/png-encoder-1.5.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/poi-3.7.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/poi-ooxml-3.7.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/poi-ooxml-schemas-3.7.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/quartz-2.1.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/quartz-commonj-2.1.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/rhino-1.7R3.jar
@@ -752,35 +769,36 @@
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/spring-webmvc-3.1.0.RELEASE.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/standard-1.1.2.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/stax-api-1.0.1.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/stax2-api-3.1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/staxmapper-1.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-admin-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-api-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-client-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-common-core-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-engine-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-hibernate-dialect-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-jboss-integration-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-metadata-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-runtime-8.1.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-admin-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-api-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-client-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-common-core-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-engine-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-hibernate-dialect-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-jboss-integration-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-metadata-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/teiid-runtime-8.2.0.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-api-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-core-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-jsp-2.1.4.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/tiles-servlet-2.1.4.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-file-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-jdbc-8.1.0.Final.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-olap-8.1.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-file-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-jdbc-8.2.0.Final.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/translator-olap-8.2.0.Final.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/velocity-1.7.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/woodstox-core-asl-4.1.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/wsdl4j-1.5.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xalan-2.7.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xbean-2.2.0.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xercesImpl-2.9.0.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xercesImpl-2.10.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xml-apis-1.3.04.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xml-apis-ext-1.3.04.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xmlbeans-2.3.0.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xmlgraphics-commons-1.3.1.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xnio-api-3.0.3.GA.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xnio-nio-3.0.3.GA.jar
-%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xom-1.2.5.jar
+%%APP_VERSION%%/webapps/jasperserver/WEB-INF/lib/xom-1.2.9erh.jar
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/log4j.properties
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/logs/readme.txt
 %%APP_VERSION%%/webapps/jasperserver/WEB-INF/mondrian.connect.string.properties
@@ -819,7 +837,6 @@
 %%APP_VERSION%%/webapps/jasperserver/blank.htm
 %%APP_VERSION%%/webapps/jasperserver/cal/calendar.jsp
 %%APP_VERSION%%/webapps/jasperserver/errorPage.htm
-%%APP_VERSION%%/webapps/jasperserver/favicon.ico
 %%APP_VERSION%%/webapps/jasperserver/index.htm
 %%APP_VERSION%%/webapps/jasperserver/j/Thumbs.db
 %%APP_VERSION%%/webapps/jasperserver/j/arrow-ab.gif
@@ -867,7 +884,7 @@
 %%APP_VERSION%%/webapps/jasperserver/j/zoom-out-all-up.png
 %%APP_VERSION%%/webapps/jasperserver/j/zoom_in.cur
 %%APP_VERSION%%/webapps/jasperserver/j/zoom_out.cur
-%%APP_VERSION%%/webapps/jasperserver/jasperreports-flash-4.7.0.swf
+%%APP_VERSION%%/webapps/jasperserver/jasperreports-flash-5.0.1.swf
 %%APP_VERSION%%/webapps/jasperserver/jpivot/navi/cat-available.png
 %%APP_VERSION%%/webapps/jasperserver/jpivot/navi/cat-visible.png
 %%APP_VERSION%%/webapps/jasperserver/jpivot/navi/column.png
@@ -1019,10 +1036,6 @@
 %%APP_VERSION%%/webapps/jasperserver/jpivot/toolbar/zoom-down.png
 %%APP_VERSION%%/webapps/jasperserver/jpivot/toolbar/zoom-up.png
 %%APP_VERSION%%/webapps/jasperserver/js-create.ddl
-%%APP_VERSION%%/webapps/jasperserver/openflashchart/LICENSE-open-flash-chart.txt
-%%APP_VERSION%%/webapps/jasperserver/openflashchart/README.txt
-%%APP_VERSION%%/webapps/jasperserver/openflashchart/expressInstall.swf
-%%APP_VERSION%%/webapps/jasperserver/openflashchart/open-flash-chart.swf
 %%APP_VERSION%%/webapps/jasperserver/quartz.ddl
 %%APP_VERSION%%/webapps/jasperserver/scripts/actionModel.modelGenerator.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/actionModel.primaryNavigation.js
@@ -1062,7 +1075,6 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.tabs.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.tabularList.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.templateengine.js
-%%APP_VERSION%%/webapps/jasperserver/scripts/components.templateengine.tests.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.toolbarButtons.events.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.toolbarButtons.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/components.tooltip.js
@@ -1122,6 +1134,7 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.underscore.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.underscore.string.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.unittest.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/ext.utils.xregexp.unicode.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/import.app.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/import.extendedformview.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/import.formmodel.js
@@ -1133,6 +1146,7 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-ui-1.8.16.custom.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-ui-1.8.20.custom.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery-ui-timepicker-addon.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.datapicker.extensions.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.jcryption.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.jcryption.min.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js/jquery.ui.datepicker-de.js
@@ -1190,6 +1204,7 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/mng.common.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/mng.main.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/mustache.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/ns.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/old.report.view-report.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.role.mng.actions.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/org.role.mng.components.js
@@ -1219,7 +1234,12 @@
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.analysisConnection.xmla.locate.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.analysisView.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.base.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataSource.aws.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataSource.bean.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataSource.jdbc.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataSource.jndi.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataSource.js
+%%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataSource.virtual.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataType.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.dataType.locate.js
 %%APP_VERSION%%/webapps/jasperserver/scripts/resource.inputControl.js
@@ -1253,6 +1273,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/adhoc_icons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/adhoc_toolbar_buttons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/area_thumb.png
+%%APP_VERSION%%/webapps/jasperserver/themes/default/images/aws_logo.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/banner_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/bar_thumb.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/button_action_primary_sprite.png
@@ -1268,6 +1289,7 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/cursor_copy.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/dialogClose.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/disclosure_indicators_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/default/images/favicon.ico
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/floatingMenu_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/grid_20x20_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/default/images/home_bkgd.png
@@ -1316,6 +1338,25 @@
 %%APP_VERSION%%/webapps/jasperserver/themes/default/pages.css
 %%APP_VERSION%%/webapps/jasperserver/themes/default/samples.css
 %%APP_VERSION%%/webapps/jasperserver/themes/default/theme.css
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/adhoc_datatree_icons_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/banner_bkgd.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/button_action_primary_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/button_capsule_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/dialog_button_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/disclosure_indicators_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/footer_bkgd.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/home_bkgd.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/home_icons_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/list_node_animation.gif
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/lists_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/logo.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/menu_primaryNav_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/search_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/tabs_horizontal_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/tabs_vertical_sprite.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/ui-icons_469bdd_256x240.png
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images/wait_animation_large.gif
+%%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/overrides_custom.css
 %%APP_VERSION%%/webapps/jasperserver/themes/pods_summer/images/adhoc_toolbar_buttons_sprite.png
 %%APP_VERSION%%/webapps/jasperserver/themes/pods_summer/images/banner_bkgd.png
 %%APP_VERSION%%/webapps/jasperserver/themes/pods_summer/images/body_bkgnd.png
@@ -1395,6 +1436,11 @@
 %%APP_VERSION%%/webapps/jasperserver/wcf/wcf.css
 %%APP_VERSION%%/webapps/jasperserver/upgrade-%%DATABASE%%-%%JSUPDATE%%-ce.sql
 %%APP_VERSION%%/webapps/jasperserver/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql
+%%APP_VERSION%%/%%JDBCLOC%%/db2jcc-9.7.jar
+%%APP_VERSION%%/%%JDBCLOC%%/ingres-jdbc-9.2.0.jar
+%%APP_VERSION%%/%%JDBCLOC%%/ojdbc6-11.2.0.2.jar
+%%APP_VERSION%%/%%JDBCLOC%%/sqljdbc-1.6-2206.100.jar
+%%APP_VERSION%%/%%JDBCLOC%%/vertica_4.1.19_jdk_5.jar
 %%APP_VERSION%%/%%JDBCLOC%%/%%JDBC%%
 @exec if [ -f %D/%%APP_VERSION%%/%%JDBCLOC%%/%%JDBC%% ]; then /bin/chmod a+r %D/%%APP_VERSION%%/%%JDBCLOC%%/%%JDBC%%; else exit 1; fi
 @dirrm %%APP_VERSION%%/webapps/jasperserver/wcf/tree
@@ -1411,6 +1457,8 @@
 @dirrm %%APP_VERSION%%/webapps/jasperserver/wcf
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes/pods_summer/images
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes/pods_summer
+@dirrm %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark/images
+@dirrm %%APP_VERSION%%/webapps/jasperserver/themes/jasper_dark
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes/default/images
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes/default
 @dirrm %%APP_VERSION%%/webapps/jasperserver/themes
@@ -1422,7 +1470,6 @@
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery/js
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts/jquery
 @dirrm %%APP_VERSION%%/webapps/jasperserver/scripts
-@dirrm %%APP_VERSION%%/webapps/jasperserver/openflashchart
 @dirrm %%APP_VERSION%%/webapps/jasperserver/jpivot/toolbar
 @dirrm %%APP_VERSION%%/webapps/jasperserver/jpivot/table
 @dirrm %%APP_VERSION%%/webapps/jasperserver/jpivot/navi
