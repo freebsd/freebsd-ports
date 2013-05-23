@@ -1,5 +1,5 @@
 --- epplets/E-MemWatch.c.orig	2012-09-30 11:38:35.000000000 +0200
-+++ epplets/E-MemWatch.c	2013-05-15 09:51:28.000000000 +0200
++++ epplets/E-MemWatch.c	2013-05-23 16:58:29.000000000 +0200
 @@ -1,5 +1,6 @@
  /*
   * Copyright (C) 1999-2000, Michael Jennings
@@ -21,7 +21,16 @@
  #if 0
  #define D(x) do {printf("%10s | %7d:  [debug] ", __FILE__, __LINE__); printf x; fflush(stdout);} while (0)
  #else
-@@ -74,7 +82,7 @@
+@@ -63,6 +71,8 @@
+    char                buff[1024];
+    unsigned long       total, used, buffers, cached, free;
+ 
++   total = used = buffers = cached = free = 0;
++
+ #ifdef HAVE_LIBGTOP
+    int                 check = 0;
+    glibtop_mem         mem;
+@@ -74,7 +84,7 @@
     used = (unsigned long)mem.used;
     buffers = (unsigned long)mem.buffer;
     cached = (unsigned long)mem.cached;
@@ -30,7 +39,7 @@
     FILE               *fp;
  
     if (!(fp = fopen("/proc/meminfo", "r")))
-@@ -109,8 +117,20 @@
+@@ -109,8 +119,20 @@
  	sscanf(buff, "%*s %lu %lu %*u %*u %lu %lu", &total, &used, &buffers,
  	       &cached);
       }
@@ -41,18 +50,18 @@
 +   sysctlbyname("vm.stats.vm.v_free_count", &free, &len, NULL, 0);
 +   sysctlbyname("vfs.bufspace", &buffers, &len, NULL, 0);
 +   sysctlbyname("vm.stats.vm.v_cache_count", &cached, &len, NULL, 0);
-+
-+   cached *= pagesize;
-+   free *= pagesize;
  
 -#endif /* HAVE_LIBGTOP */
++   cached *= pagesize;
++   free *= pagesize;
++
 +   used = total - free;
 +
 +#endif 
  
     used -= (buffers + cached);
     mem_val = (int)((((float)used) / total) * 100.0);
-@@ -123,15 +143,15 @@
+@@ -123,15 +145,15 @@
       }
     else if (used < 1024 * 1024)
       {
@@ -71,7 +80,7 @@
       }
     Epplet_change_label(mem_label, buff);
  
-@@ -145,7 +165,7 @@
+@@ -145,7 +167,7 @@
  	used = (unsigned long)swap.used;
       }
     while (swap.total == 0 && swap.used == 0 && check++ < 15);
@@ -80,7 +89,7 @@
  
     if (kernel_2_6)
       {
-@@ -174,8 +194,22 @@
+@@ -174,8 +196,22 @@
       }
  
     fclose(fp);
@@ -105,7 +114,7 @@
  
     /*printf ("Swap: %lu %lu %d%%\n", total, used, swap_val); */
  
-@@ -273,6 +307,7 @@
+@@ -273,6 +309,7 @@
  {
  
     int                 prio;
@@ -113,7 +122,7 @@
  
     /* check for Kernel 2.6 */
     FILE               *fp;
-@@ -295,6 +330,7 @@
+@@ -295,6 +332,7 @@
  
     fclose(fp);
     /* end check for Kernel 2.6 */
