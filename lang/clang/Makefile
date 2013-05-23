@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -140,12 +140,12 @@ regression-test: ${BUILD_COOKIE}
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
+			bin/c-index-test \
 			bin/clang \
 			bin/clang++ \
 			bin/clang-check \
 			bin/clang-cpp \
 			bin/clang-tblgen \
-			bin/c-index-test \
 			bin/scan-build \
 			bin/scan-view \
 			lib/libclang*
