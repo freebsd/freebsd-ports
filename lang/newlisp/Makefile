@@ -127,11 +127,11 @@ post-patch:
 		${WRKSRC}/newlisp.h
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/util/newlispdoc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/util/newlispdoc ${PREFIX}/bin
 
 	@${MKDIR} ${DATADIR}/util
-	@${INSTALL_DATA} ${WRKSRC}/util/syntax.cgi \
+	${INSTALL_DATA} ${WRKSRC}/util/syntax.cgi \
 			${WRKSRC}/util/newlisp.vim \
 			${WRKSRC}/util/link.lsp \
 			${WRKSRC}/util/httpd-conf.lsp \
@@ -140,29 +140,29 @@ do-install:
 			${DATADIR}/util
 
 	@${MKDIR} ${DATADIR}/modules
-	@${INSTALL_DATA} ${MODULES:S,^,${WRKSRC}/modules/,:S,$,.lsp,} \
+	${INSTALL_DATA} ${MODULES:S,^,${WRKSRC}/modules/,:S,$,.lsp,} \
 		${DATADIR}/modules
 
-	@${INSTALL_MAN} ${WRKSRC}/doc/newlisp.1 ${PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/doc/newlispdoc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/newlisp.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/newlispdoc.1 ${PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MGUISERV}
 	@${MKDIR} ${DATADIR}/guiserver
 	@(cd ${WRKSRC}/guiserver/ && ${COPYTREE_SHARE} \*.lsp \
 		${DATADIR}/guiserver/ \
 		"! -name guiserver.lsp ! -name newlisp-edit.lsp")
-	@${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.jar ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.lsp ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/guiserver/newlisp-edit.lsp \
+	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.jar ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.lsp ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/guiserver/newlisp-edit.lsp \
 		${PREFIX}/bin/newlisp-edit
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .if ${PORT_OPTIONS:MGUISERV}
 	@${MKDIR} ${DOCSDIR}/guiserver
-	@${INSTALL_DATA} ${WRKSRC}/guiserver/index.html \
+	${INSTALL_DATA} ${WRKSRC}/guiserver/index.html \
 		${WRKSRC}/guiserver/guiserver.lsp.html \
 		${DOCSDIR}/guiserver
 .endif
@@ -170,7 +170,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
