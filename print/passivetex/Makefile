@@ -25,7 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	LICENSE README.passivetex index.html index.xml
 
-EXAMPLES=	Makefile chap01.xml chap02.xml chap03.xml chap04.xml \
+PORTEXAMPLES=	Makefile chap01.xml chap02.xml chap03.xml chap04.xml \
 		check.xsl darkness.fo darkness.pdf darkness.xml darkness.xsl \
 		exercise-print.xsl exercise.fo exercise.pdf exercise.xml \
 		fezziPic.png fotex.cfg.eg hyperref.cfg \
