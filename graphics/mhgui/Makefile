@@ -17,7 +17,7 @@ LIB_DEPENDS=	animorph.0:${PORTSDIR}/graphics/animorph \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PKGCONFIG=	build
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_XORG=	xi xmu ice sm
 USE_GL=		glut
