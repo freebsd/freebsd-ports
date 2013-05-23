@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	texpower
-# Date created:			Dec 30, 2003
-# Whom:				ijliao
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	texpower
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	latex-
@@ -17,7 +12,7 @@ DISTNAME=	${PORTNAME}-0-2
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Creating dynamic online presentations with LaTeX
 
-USE_TEX=	tetex
+USE_TEX=	tetex latex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} \
 		MKTEXLSR=${MKTEXLSR}
 
@@ -25,6 +20,10 @@ TEXMFLOCAL=	share/texmf-local
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 DOCFILES=	00readme.txt 01install.txt \
 		manual.pdf powersem.pdf texpower.pdf
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-build:
 	@(cd ${BUILD_WRKSRC} && \
@@ -39,7 +38,7 @@ do-install:
 	${MKDIR} ${PREFIX}/${TEXMFLOCAL}/tex/latex/${PORTNAME}/tpslifonts
 	cd ${WRKSRC}/tpslifonts && ${INSTALL_DATA} *.sty  \
 		${PREFIX}/${TEXMFLOCAL}/tex/latex/${PORTNAME}/tpslifonts
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
 .endif
