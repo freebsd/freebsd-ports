@@ -425,7 +425,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-seamonkey</name>
-	<range><lt>2.18</lt></range>
+	<range><lt>2.17.1</lt></range>
       </package>
       <package>
 	<name>linux-thunderbird</name>
@@ -433,7 +433,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>seamonkey</name>
-	<range><lt>2.18</lt></range>
+	<range><lt>2.17.1</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -488,6 +488,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-05-14</discovery>
       <entry>2013-05-15</entry>
+      <modified>2013-05-21</modified>
     </dates>
   </vuln>
 

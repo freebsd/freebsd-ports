@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.17
+PORTVERSION=	2.17.1
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
+MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
 DISTFILES=	${SEAMONKEY_I18N_:S/$/.langpack.xpi/:S/^/seamonkey-${PORTVERSION}./}
 DIST_SUBDIR=	xpi/${DISTNAME}
@@ -18,7 +18,7 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
-USE_SEAMONKEY=	17
+USE_SEAMONKEY=	yes
 USE_XPI=	seamonkey linux-seamonkey
 
 USE_SUBMAKE=	yes
@@ -79,10 +79,10 @@ post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
 
-List-Langs:
-	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${PORTVERSION}/langpack"|\
-		${PERL} -ne 'if(/.*href="seamonkey-${PORTVERSION}.([a-zA-Z-]+).langpack.xpi"/){print "$$1\n"}' |\
-		${AWK} 'BEGIN{ORS=" "}{print $1}END{printf "\nNumber of languages: %d\n",NR}'
+list-langs:
+	@fetch -qo- "https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack"|\
+		${PERL} -ne 'if(/.*href="${DISTNAME:S|-i18n||}.([a-zA-Z-]+).langpack.xpi.*/){print "$$1\n"}' |\
+		${AWK} 'BEGIN{ORS=" "}{print $$1}END{printf "\nNumber of languages: %d\n",NR}'
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 
