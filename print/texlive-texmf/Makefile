@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-texmf
@@ -22,6 +22,8 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf/doc \
 	texmf/web2c/texmf.cnf \
 	texmf/web2c/fmtutil.cnf \
+	texmf/web2c/fmtutil-hdr.cnf \
+	texmf/web2c/updmap-hdr.cfg \
 	texmf/scripts/a2ping \
 	texmf/scripts/ps2eps \
 	texmf/scripts/tetex \
