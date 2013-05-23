@@ -1,12 +1,8 @@
-# New ports collection makefile for:	JSON-XS
-# Date created:		25 Mar 2007
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	JSON-XS
-PORTVERSION=	2.33
+PORTVERSION=	2.34
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
