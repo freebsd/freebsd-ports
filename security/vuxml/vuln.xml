@@ -87,7 +87,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The OTRS Project reports:</p>
 	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-02/">
 	  <p>An attacker with permission to write changes, workorder items or FAQ articles could inject JavaScript code into the articles which would be executed by the browser of other users reading the article.</p>
 	</blockquote>
