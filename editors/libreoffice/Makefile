@@ -354,7 +354,7 @@ CXX=		/usr/bin/clang++
 CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .else
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
-BUILD_DEPENDS+=	clang>=3.2:${PORTSDIR}/lang/clang
+BUILD_DEPENDS+=	clang>=3.2_4:${PORTSDIR}/lang/clang
 USE_BINUTILS=	yes
 CC=		${LOCALBASE}/bin/clang
 CPP=		${CC} -E
