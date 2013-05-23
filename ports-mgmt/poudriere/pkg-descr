@@ -2,4 +2,4 @@ poudriere is a tool primarily designed to test package production on
 FreeBSD. However, most people will find it useful to bulk build ports
 for FreeBSD.
 
-WWW: http://fossil.etoilebsd.net/poudriere
+WWW: https://fossil.etoilebsd.net/poudriere/doc/3.0.2/doc/index.wiki
