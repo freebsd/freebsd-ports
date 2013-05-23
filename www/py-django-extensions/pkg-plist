@@ -91,6 +91,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/signals.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/signals.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/signals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/technical_response.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/technical_response.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/technical_response.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/utils.pyo
@@ -139,6 +142,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/passwd.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/passwd.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/passwd.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/pipchecker.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/pipchecker.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/pipchecker.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_settings.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_settings.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/print_settings.pyo
@@ -199,6 +205,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/validate_templates.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/validate_templates.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands/validate_templates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations/0001_empty.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations/0001_empty.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations/0001_empty.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/__init__.pyo
@@ -297,6 +309,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils
@@ -315,6 +328,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb/fields
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/mongodb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/migrations
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/management
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/jobs/yearly
