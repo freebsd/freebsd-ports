@@ -55,7 +55,6 @@
     SUBDIR += hatari
     SUBDIR += hercules
     SUBDIR += hfs
-    SUBDIR += hfsutils
     SUBDIR += higan
     SUBDIR += hugo
     SUBDIR += i386-wine-devel
