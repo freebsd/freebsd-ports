@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uwsgi
-# Date created:				23 May 2010
-# Whom:					Daniel Gerzo <danger@FreeBSD.org>
-#
+# Created by: Daniel Gerzo <danger@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uwsgi
 PORTVERSION=	1.9.10
@@ -22,11 +18,15 @@ USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_RC_SUBR=	uwsgi
 
+PLIST_FILES=	bin/uwsgi \
+		${PYTHONPREFIX_SITELIBDIR}/uwsgidecorators.py
+
 post-patch:
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${INSTALL_DATA}  ${WRKSRC}/uwsgidecorators.py ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	@${INSTALL_DATA}  ${WRKSRC}/uwsgidecorators.py ${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
