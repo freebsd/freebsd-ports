@@ -80,6 +80,9 @@
 %%PYTHON_SITELIBDIR%%/dpkt/ipx.py
 %%PYTHON_SITELIBDIR%%/dpkt/ipx.pyc
 %%PYTHON_SITELIBDIR%%/dpkt/ipx.pyo
+%%PYTHON_SITELIBDIR%%/dpkt/llc.py
+%%PYTHON_SITELIBDIR%%/dpkt/llc.pyc
+%%PYTHON_SITELIBDIR%%/dpkt/llc.pyo
 %%PYTHON_SITELIBDIR%%/dpkt/loopback.py
 %%PYTHON_SITELIBDIR%%/dpkt/loopback.pyc
 %%PYTHON_SITELIBDIR%%/dpkt/loopback.pyo
@@ -152,9 +155,15 @@
 %%PYTHON_SITELIBDIR%%/dpkt/smb.py
 %%PYTHON_SITELIBDIR%%/dpkt/smb.pyc
 %%PYTHON_SITELIBDIR%%/dpkt/smb.pyo
+%%PYTHON_SITELIBDIR%%/dpkt/snoop.py
+%%PYTHON_SITELIBDIR%%/dpkt/snoop.pyc
+%%PYTHON_SITELIBDIR%%/dpkt/snoop.pyo
 %%PYTHON_SITELIBDIR%%/dpkt/ssl.py
 %%PYTHON_SITELIBDIR%%/dpkt/ssl.pyc
 %%PYTHON_SITELIBDIR%%/dpkt/ssl.pyo
+%%PYTHON_SITELIBDIR%%/dpkt/ssl_ciphersuites.py
+%%PYTHON_SITELIBDIR%%/dpkt/ssl_ciphersuites.pyc
+%%PYTHON_SITELIBDIR%%/dpkt/ssl_ciphersuites.pyo
 %%PYTHON_SITELIBDIR%%/dpkt/stp.py
 %%PYTHON_SITELIBDIR%%/dpkt/stp.pyc
 %%PYTHON_SITELIBDIR%%/dpkt/stp.pyo
