@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-bitten
-# Date created:                      Oct 26 2009
-# Whom:                              Tim Niemueller <tim@niemueller.de>
-#
+# Created by: Tim Niemueller <tim@niemueller.de>
 # $FreeBSD$
-#
 
 PORTNAME=	bitten
 PORTVERSION=	0.6
@@ -26,11 +22,15 @@ GROUPS=		bitten-slave
 BITTEN_UID=	952
 BITTEN_GID=	952
 
-OPTIONS=	BITTEN_MASTER "Build bitten master" ON
+OPTIONS_DEFINE=	BITTEN_MASTER
+BITTEN_MASTER_DESC=	Build bitten master
+
+OPTIONS_DEFAULT=	BITTEN_MASTER
+
 .include <bsd.port.options.mk>
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-distribute
-.if defined(WITH_BITTEN_MASTER)
+.if ${PORT_OPTIONS:MBITTEN_MASTER}
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 .endif
 
@@ -48,11 +48,11 @@ PYDISTUTILS_PKGNAME=	Bitten
 PATCH_STRIP=	-p1
 USE_RC_SUBR=	bitten-slave
 
-.if defined(WITHOUT_BITTEN_MASTER)
+.if ${PORT_OPTIONS:MBITTEN_MASTER}
+PLIST_SUB+=	MASTER_PORT="" EGG_NAME="Bitten"
+.else
 PYDISTUTILS_EXTRA_INSTALLARGS=--without-master
 PLIST_SUB+=	MASTER_PORT="@comment " EGG_NAME="BittenSlave"
-.else
-PLIST_SUB+=	MASTER_PORT="" EGG_NAME="Bitten"
 .endif
 
 # reproduce rule here with added PYDISTUTILS_EXTRA_INSTALLARGS

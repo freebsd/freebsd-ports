@@ -1,20 +1,19 @@
-# New ports collection makefile for:    qtscriptgenerator
-# Date Created:                         13 Apr 2009
-# Whom:                                 Mina R Waheeb <syncer@gmail.com>
-#
+# Created by: Mina R Waheeb <syncer@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	qtscriptgenerator
 PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	syncer@gmail.com
 COMMENT=	Tool that generates Qt bindings for Qt Script
 
-OPTIONS=	PHONON	"Build Phonon support" on
+OPTIONS_DEFINE=	PHONON
+PHONON_DESC=	Build Phonon support
+OPTIONS_DEFAULT=	PHONON
 
 USE_QT4=	corelib declarative designer doc help help-tools gui \
 		iconengines imageformats inputmethods linguist network \
@@ -28,7 +27,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PHONON)
+.if ${PORT_OPTIONS:MPHONON}
 USE_QT4+=	phonon
 PLIST_SUB+=	PHONON=""
 .else
