@@ -4,7 +4,7 @@
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
 PORTREVISION=	3
-CATEGORIES=	emulators tk
+CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,14 +33,18 @@ MAN1=		hattrib.1 \
 		humount.1 \
 		hvol.1
 
-OPTIONS_DEFINE=	TCLTK DOCS
-TCLTK_DESC=	Build tools that require Tcl/Tk support
+OPTIONS_DEFINE=	TCLTK DEVLIBS DOCS
+
+TCLTK_DESC=	Enable Tcl interface (HFS "shell") and Tk-based GUI
+DEVLIBS_DESC=	Install developer libraries and header files
 
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}
+CATEGORIES+=	tcl tk
+
 USE_TCL=	84+
 USE_TK=		84+
 
@@ -56,6 +60,15 @@ PLIST_FILES+=	bin/hfs \
 		bin/xhfs
 .else
 CONFIGURE_ARGS=	--without-tcl --without-tk
+.endif
+
+.if ${PORT_OPTIONS:MDEVLIBS}
+CONFIGURE_ARGS+=	--enable-devlibs
+
+PLIST_FILES+=	include/hfs.h \
+		include/rsrc.h \
+		lib/libhfs.a \
+		lib/librsrc.a
 .endif
 
 post-patch:
