@@ -1,24 +1,6 @@
-%%PYTHON_INCLUDEDIR%%/dynrules/compat.h
-%%PYTHON_INCLUDEDIR%%/dynrules/dynrules.h
 %%PYTHON_SITELIBDIR%%/dynrules/__init__.py
 %%PYTHON_SITELIBDIR%%/dynrules/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/_dynrules.so
-%%PYTHON_SITELIBDIR%%/dynrules/LearnSystem.py
-%%PYTHON_SITELIBDIR%%/dynrules/LearnSystem.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/LearnSystem.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/MMapRuleManagement.py
-%%PYTHON_SITELIBDIR%%/dynrules/MMapRuleManagement.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/MMapRuleManagement.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/Rule.py
-%%PYTHON_SITELIBDIR%%/dynrules/Rule.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/Rule.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/RuleManagement.py
-%%PYTHON_SITELIBDIR%%/dynrules/RuleManagement.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/RuleManagement.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/RuleSet.py
-%%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyo
 %%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.py
 %%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.pyo
@@ -28,15 +10,6 @@
 %%PYTHON_SITELIBDIR%%/dynrules/test/__init__.py
 %%PYTHON_SITELIBDIR%%/dynrules/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/clearnsystem_test.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/clearnsystem_test.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/clearnsystem_test.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/crule_test.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/crule_test.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/crule_test.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/cruleset_test.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/cruleset_test.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/cruleset_test.pyo
 %%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.py
 %%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.pyo
@@ -46,18 +19,28 @@
 %%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.py
 %%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.pyo
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/capi.txt
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/__init__.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/runtests.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/runtests.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/runtests.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/support.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/support.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/support.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/testrunner.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/testrunner.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/testrunner.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/testutils.py
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/testutils.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/test/util/testutils.pyo
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/api.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/copying.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/cpp.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/intro.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/pyapi.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyclearnsystem.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pycrule.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pycruleset.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pylearnsystem.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pymmaprulemanagement.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyrule.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyrulemanagement.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/ref/pyruleset.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/todos.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/ajax-loader.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/basic.css
@@ -80,28 +63,22 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/up.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/html/api.html
+%%PORTDOCS%%%%DOCSDIR%%/html/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/html/capi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/news.html
 %%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
-%%PORTDOCS%%%%DOCSDIR%%/html/pyapi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyclearnsystem.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pycrule.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pycruleset.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pylearnsystem.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pymmaprulemanagement.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyrule.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyrulemanagement.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/pyruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/html/todos.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
+@dirrm %%PYTHON_SITELIBDIR%%/dynrules/test/util
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules/test
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules/examples
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules
-@dirrm %%PYTHON_INCLUDEDIR%%/dynrules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
