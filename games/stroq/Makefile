@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	stroq
-# Date created:				13 Jan 2005
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
 
 PORTNAME=	stroq
@@ -26,20 +23,21 @@ QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 PLIST_FILES=	bin/stroq
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	${REINPLACE_CMD} -e 's|PlaySquare::||' ${WRKSRC}/playsquare.h
-	${REINPLACE_CMD} -e 's|Puzzle::||' ${WRKSRC}/puzzle.h
-	${REINPLACE_CMD} -e 's|Square::||' ${WRKSRC}/square.h
-	${REINPLACE_CMD} -e 's|SelectPuzzleDialog::||' ${WRKSRC}/selectpuzzledialog.h
+	@${REINPLACE_CMD} -e 's|PlaySquare::||' ${WRKSRC}/playsquare.h
+	@${REINPLACE_CMD} -e 's|Puzzle::||' ${WRKSRC}/puzzle.h
+	@${REINPLACE_CMD} -e 's|Square::||' ${WRKSRC}/square.h
+	@${REINPLACE_CMD} -e 's|SelectPuzzleDialog::||' ${WRKSRC}/selectpuzzledialog.h
 
 do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${QMAKE} -project; \
-	${SETENV} ${MAKE_ENV} QMAKESPEC=${QMAKESPEC} ${QMAKE}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -project
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} QMAKESPEC=${QMAKESPEC} ${QMAKE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
