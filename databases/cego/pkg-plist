@@ -1,11 +1,8 @@
 bin/cego
 bin/cgadm
-bin/cgbackup
 bin/cgblow
 bin/cgclt
 bin/cglog
-bin/cgmkdb
-bin/cgrecover
 include/cego/CegoAdmNet.h
 include/cego/CegoAdminHandler.h
 include/cego/CegoBlob.h
@@ -30,8 +27,18 @@ include/cego/CegoTableObject.h
 include/cego/CegoViewObject.h
 include/cego/cgwrap.h
 lib/libcego.a
+lib/libcego.la
+lib/libcego.so
 lib/libcego.so.1
 lib/libcgwrap.a
+lib/libcgwrap.la
+lib/libcgwrap.so
 lib/libcgwrap.so.1
+share/cego/cgbackup
+share/cego/cgrecover
+share/cego/cgmkdb
+share/cego/startdb
+share/cego/stopdb
 @dirrm include/cego
+@dirrm share/cego
 @dirrmtry %%USER%%

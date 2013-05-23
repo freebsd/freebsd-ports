@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	dragon
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Combined C++ scanner/parser generator for LR compliant grammars
 
-LIB_DEPENDS=	lfc:${PORTSDIR}/devel/lfc
+LIB_DEPENDS=	lfcbase:${PORTSDIR}/devel/lfcbase
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dragon
 
