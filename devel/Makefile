@@ -915,7 +915,7 @@
     SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += lemon
-    SUBDIR += lfc
+    SUBDIR += lfcbase
     SUBDIR += lfcxml
     SUBDIR += libIDL
     SUBDIR += libPropList
