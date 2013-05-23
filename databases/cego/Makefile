@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.17.12
+PORTVERSION=	2.18.6
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.lemke-it.com/
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Relational and transactional database system
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
-LIB_DEPENDS=	lfc:${PORTSDIR}/devel/lfc \
+LIB_DEPENDS=	lfcbase:${PORTSDIR}/devel/lfcbase \
 		lfcxml:${PORTSDIR}/devel/lfcxml
 
 GNU_CONFIGURE=	yes
@@ -33,6 +33,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,-O3,,g' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/samples/cgplustest/Makefile.in \
-		${WRKSRC}/samples/cgwtest/Makefile.in
+		${WRKSRC}/samples/cgwraptest/Makefile.in
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/cego
+	@${CP} ${WRKSRC}/tools/* ${PREFIX}/share/cego/
 
 .include <bsd.port.mk>
