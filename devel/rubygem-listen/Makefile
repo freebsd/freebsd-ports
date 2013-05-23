@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Listen to file modifications and notify about the changes
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rb-kqueue>=0.2.0:${PORTSDIR}/devel/rubygem-rb-kqueue
 
