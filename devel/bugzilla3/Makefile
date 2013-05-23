@@ -28,6 +28,7 @@ USE_PERL5=	yes
 
 BINMODE=	700
 
+EXPIRATION_DATE=2013-08-30
 DEPRECATED=	Note that when Bugzilla 4.4 is released, the Bugzilla 3.6.x \
 		series will reach end of life
 
@@ -47,10 +48,6 @@ USE_APACHE_RUN=	22+
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
-.endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes

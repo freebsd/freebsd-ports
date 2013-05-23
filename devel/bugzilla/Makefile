@@ -45,10 +45,6 @@ USE_APACHE_RUN=	22+
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=2.9003:${PORTSDIR}/databases/p5-DBD-mysql
