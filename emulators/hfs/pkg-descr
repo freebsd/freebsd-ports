@@ -7,3 +7,5 @@ disks, hard drives, and CD-ROMs.  The following functions are available:
   - Copy an HFS file into a local file (read)
   - Display the contents of an HFS file (cat)
   - Display the partition table on a Macintosh volume
+
+There is no HFS+ volumes support available.
