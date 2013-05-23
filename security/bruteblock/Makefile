@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bruteblock
-# Date created:		30 Jul 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	bruteblock
 PORTVERSION=	0.0.5
@@ -28,6 +24,8 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 PORTDOCS=	FAQ README CHANGES
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblock ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblockd ${PREFIX}/sbin/
@@ -39,7 +37,7 @@ do-install:
 	fi
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${PREFIX}/man/man8/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}/
@@ -47,8 +45,6 @@ do-install:
 .endif
 
 post-install:
-.if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>

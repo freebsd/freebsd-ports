@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rezerwar
-# Date created:		09 Jul 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rezerwar
 PORTVERSION=	0.4.2
@@ -26,7 +22,9 @@ CONFIGURE_ENV=	TARGET_BIN=${PREFIX}/bin \
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
 post-patch:
 	@${REINPLACE_CMD} -e '/TARGET_DOC/ d' ${WRKSRC}/mkfiles/Makefile.main
 .endif

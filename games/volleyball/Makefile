@@ -1,9 +1,5 @@
-# New ports collection makefile for:	volleyball
-# Date created:		09 Oct 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	volleyball
 PORTVERSION=	0.8.6
@@ -37,6 +33,8 @@ DESKTOP_ENTRIES="Pocket Volleyball" \
 		"Game;SportsGame;ArcadeGame;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-configure:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
 		${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
@@ -45,7 +43,7 @@ post-install:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
