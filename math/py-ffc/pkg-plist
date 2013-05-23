@@ -131,6 +131,9 @@ bin/ffc
 %%PYTHON_SITELIBDIR%%/ffc/representation.py
 %%PYTHON_SITELIBDIR%%/ffc/representation.pyc
 %%PYTHON_SITELIBDIR%%/ffc/representation.pyo
+%%PYTHON_SITELIBDIR%%/ffc/representationutils.py
+%%PYTHON_SITELIBDIR%%/ffc/representationutils.pyc
+%%PYTHON_SITELIBDIR%%/ffc/representationutils.pyo
 %%PYTHON_SITELIBDIR%%/ffc/restrictedelement.py
 %%PYTHON_SITELIBDIR%%/ffc/restrictedelement.pyc
 %%PYTHON_SITELIBDIR%%/ffc/restrictedelement.pyo
@@ -170,12 +173,25 @@ bin/ffc
 %%PYTHON_SITELIBDIR%%/ffc/tensor/tensorrepresentation.py
 %%PYTHON_SITELIBDIR%%/ffc/tensor/tensorrepresentation.pyc
 %%PYTHON_SITELIBDIR%%/ffc/tensor/tensorrepresentation.pyo
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/__init__.py
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsgenerator.py
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsgenerator.pyc
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsgenerator.pyo
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsoptimization.py
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsoptimization.pyc
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsoptimization.pyo
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsrepresentation.py
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsrepresentation.pyc
+%%PYTHON_SITELIBDIR%%/ffc/uflacsrepr/uflacsrepresentation.pyo
 %%PYTHON_SITELIBDIR%%/ffc/utils.py
 %%PYTHON_SITELIBDIR%%/ffc/utils.pyc
 %%PYTHON_SITELIBDIR%%/ffc/utils.pyo
 %%PYTHON_SITELIBDIR%%/ffc/wrappers.py
 %%PYTHON_SITELIBDIR%%/ffc/wrappers.pyc
 %%PYTHON_SITELIBDIR%%/ffc/wrappers.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/ffc/uflacsrepr
 @dirrm %%PYTHON_SITELIBDIR%%/ffc/tensor
 @dirrm %%PYTHON_SITELIBDIR%%/ffc/quadrature
 @dirrm %%PYTHON_SITELIBDIR%%/ffc/errorcontrol
