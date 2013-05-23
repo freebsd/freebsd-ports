@@ -51,6 +51,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5b24a6b-c37c-11e2-addb-60a44c524f57">
+    <topic>otrs -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-03/">
+	  <p>An attacker with a valid agent login could manipulate URLs in the ticket split mechanism to see contents of tickets and they are not permitted to see.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-3551</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-03/</url>
+    </references>
+    <dates>
+      <discovery>2013-05-22</discovery>
+      <entry>2013-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="661bd031-c37d-11e2-addb-60a44c524f57">
+    <topic>otrs -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-02/">
+	  <p>An attacker with permission to write changes, workorder items or FAQ articles could inject JavaScript code into the articles which would be executed by the browser of other users reading the article.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2637</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-02/</url>
+    </references>
+    <dates>
+      <discovery>2013-04-02</discovery>
+      <entry>2013-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a429192-c36a-11e2-97a9-6805ca0b3d42">
     <topic>RT -- multiple vulnerabilities</topic>
     <affects>
