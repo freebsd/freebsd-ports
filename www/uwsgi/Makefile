@@ -25,8 +25,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
-	@${INSTALL_DATA}  ${WRKSRC}/uwsgidecorators.py ${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/uwsgidecorators.py ${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
