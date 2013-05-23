@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.4.r${SVN_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -171,6 +171,7 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/clang++ \
 			bin/clang-check \
 			bin/clang-cpp \
+			bin/clang-format \
 			bin/clang-tblgen \
 			bin/scan-build \
 			bin/scan-view \
@@ -203,6 +204,8 @@ build-plist:
 	cd ${PYTHONPREFIX_SITELIBDIR} && \
 	    ${FIND} ${PLIST_PYDIR_LIST} -type d | ${SORT} -r | \
 	    ${SED} -e 's|^|@dirrm %%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
+	echo "@dirrmtry %%PYTHON_SITELIBDIR%%" >> ${PLIST}
+	echo "@dirrmtry %%PYTHON_LIBDIR%%" >> ${PLIST}
 	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's|${DATADIR}|@dirrm %%DATADIR%%|' \
 	     -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' >> ${PLIST}
