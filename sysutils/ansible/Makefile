@@ -19,6 +19,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
+USES=		shebangfix
+SHEBANG_FILES=	${WRKSRC}/library/*
+
 SUB_FILES=	pkg-message
 PORTEXAMPLES=	*
 MAN1=	ansible-doc.1 ansible-playbook.1 ansible-pull.1 ansible.1
@@ -40,8 +43,6 @@ post-patch-script:
 		${WRKSRC}/lib/ansible/constants.py \
 		${WRKSRC}/lib/ansible/playbook/__init__.py \
 		${WRKSRC}/lib/ansible/runner/__init__.py
-	@${REINPLACE_CMD} -e "s|/usr/bin/python|/usr/bin/env python|" \
-		${WRKSRC}/library/*
 
 pre-install-script:
 	@(cd ${WRKSRC} && ${FIND} . -type f -name '*.bak' -exec ${RM} {} +)
