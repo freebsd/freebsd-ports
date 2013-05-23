@@ -1,7 +1,4 @@
-# ex:ts=8
-# New ports collection makefile for:	poco-ssl
-# Date created:			Jan 28, 2007
-# Whom:				wes
+# Created by: wes@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -19,49 +16,52 @@ COMMENT=	C++ Portable Components library with NetSSL and Database libraries
 
 CONFLICTS=	poco-[0-9]*
 
-OPTIONS=	TESTS	"Build testsuites" off \
-		SAMPLES	"Build sample programs" off \
-		MYSQL	"Build MySQL driver" on \
-		UODBC	"Build with ODBC driver" off \
-		IODBC	"Build with iODBC driver" on \
-		SQLITE	"Build SQLite driver" on
+OPTIONS_DEFINE=	TEST SAMPLES MYSQL SQLITE
+SAMPLES_DESC=	Build sample programs
+UODBC_DESC=	Build with ODBC driver
+IODBC_DESC=	Build with iODBC driver
+
+OPTIONS_RADIO=	ODBC
+OPTIONS_RADIO_ODBC=	UODBC IODBC
+ODBC_DESC=	ODBC Driver
+
+OPTIONS_DEFAULT=	MYSQL IODBC SQLITE
 
 CONFIGURE_ARGS= --config=FreeBSD
 
-.if !defined(WITH_TESTS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+= --no-tests
 .endif
 
-.if !defined(WITH_SAMPLES)
+.if ! ${PORT_OPTIONS:MSAMPLES}
 CONFIGURE_ARGS+= --no-samples
 .endif
 
 #
 # ODBC
 #
-.if defined(WITH_UODBC) && defined(WITH_IODBC)
-IGNORE=		please select either UODBC or IODBC, but not both
-.endif
 
-.if !defined(WITH_UODBC) && !defined(WITH_IODBC)
+.if ! ${PORT_OPTIONS:MUODBC) && ! ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+= --omit=Data/ODBC
 .endif
 
-.if defined(WITH_UODBC) && !defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MUODBC) && ! ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 .endif
 
-.if defined(WITH_IODBC) && !defined(WITH_UODBC)
+.if ${PORT_OPTIONS:MIODBC) && ! ${PORT_OPTIONS:MUODBC}
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .else
 CONFIGURE_ARGS+= --omit=Data/MySQL
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 .else
 CONFIGURE_ARGS+= --omit=Data/SQLite

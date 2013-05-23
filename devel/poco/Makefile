@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	poco
-# Date created:			Nov 30, 2006
-# Whom:				wes
-#
+# Created by: wes@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	poco
 PORTVERSION=	1.4.3
@@ -17,16 +12,18 @@ COMMENT=	C++ Portable Components library
 
 CONFLICTS=	poco-ssl-[0-9]*
 
-OPTIONS=	TESTS   "Build testsuites" off \
-		SAMPLES "Build sample programs" off
+OPTIONS_DEFINE=	TEST SAMPLES
+SAMPLES_DESC=	Build sample programs
 
 CONFIGURE_ARGS= --config=FreeBSD
 
-.if !defined(WITH_TESTS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+= --no-tests
 .endif
 
-.if !defined(WITH_SAMPLES)
+.if ! ${PORT_OPTIONS:MSAMPLES}
 CONFIGURE_ARGS+= --no-samples
 .endif
 
