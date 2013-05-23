@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-yaml
-# Date created:			Jan 3, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	yaml
 PORTVERSION=	3.10
@@ -16,7 +11,7 @@ DISTNAME=	PyYAML-${PORTVERSION}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Python YAML parser
 
-OPTIONS=	YAML "Enable LibYAML binding" Off
+OPTIONS_DEFINE=	YAML
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -27,14 +22,16 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.if !defined(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/)
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_YAML)
+.if ${PORT_OPTIONS:MYAML}
 PYSETUP=	setup.py --with-libyaml
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS+=	--include-dirs=${LOCALBASE}/include \

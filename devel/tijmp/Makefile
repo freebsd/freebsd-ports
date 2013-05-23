@@ -1,9 +1,5 @@
-# New ports collection makefile for: tijmp
-# Date created:		8 October 2007
-# Whom:			Ronald Klop <ronald@echteman.nl>
-#
+# Created by: Ronald Klop <ronald@echteman.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	tijmp
 PORTVERSION=	0.7
@@ -14,7 +10,7 @@ MASTER_SITES=	http://www.khelekore.org/jmp/tijmp/ \
 MAINTAINER=	ronald@echteman.nl
 COMMENT=	Tools Interface Java Memory Profiler
 
-OPTIONS=	OPTIMIZED_CFLAGS "Compile with -O3" off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 USE_GMAKE=	yes
 USE_JAVA=	yes
@@ -32,9 +28,10 @@ PLIST_FILES=	lib/lib${PORTNAME}.la \
 		lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS?=	-O3
 .endif
 

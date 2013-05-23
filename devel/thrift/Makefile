@@ -31,8 +31,9 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-libevent=${LOCALBASE} \
 		--enable-shared --enable-static --with-zlib
 CONFIGURE_ENV+=	${MAKE_ENV}
 
-OPTIONS=	GLIB "Building C (GLib) Library" off \
-		QT "Building Qt Library" off
+OPTIONS_DEFINE=	GLIB QT4
+GLIB_DESC=	C (GLib) Library
+
 # For Perl support, use devel/p5-Thrift.
 # For Python support, use devel/py-thrift.
 # For Ruby support, use devel/rubygem-thrift.
@@ -51,10 +52,11 @@ CONFIGURE_ARGS+=	\
 		--without-python \
 		--without-ruby
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 .include "bsd.thrift.mk"
 
-.if !defined(WITHOUT_GLIB)
+.if ${PORT_OPTIONS:MGLIB}
     CONFIGURE_ARGS+=	--with-c_glib
     LIB_DEPENDS+=	glib-2.0:${PORTSDIR}/devel/glib20
     PLIST_SUB+=		GLIB=""
@@ -64,7 +66,7 @@ CONFIGURE_ARGS+=	\
     PLIST_SUB+=		GLIB="@comment "
 .endif
 
-.if !defined(WITHOUT_QT)
+.if ${PORT_OPTIONS:MQT4}
     CONFIGURE_ARGS+=	--with-qt4
     USE_QT4=		network moc_build qmake_build rcc_build uic_build
     PLIST_SUB+=		QT=""
