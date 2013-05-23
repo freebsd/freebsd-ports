@@ -185,7 +185,7 @@ archivers/orange|archivers/liborange|2008-06-22|Moved to archivers/liborange
 security/barnyard-sguil6|security/barnyard-sguil|2008-06-22|Moved to security/barnyard-sguil
 java/bsh|lang/bsh|2008-06-22|Moved to lang/bsh
 www/mod_security2|www/mod_security21|2008-06-22|Moved to www/mod_security2
-devel/dumb|audio/dumb|2008-06-23|Moved to better category audio
+devel/dumb|audio/dumb|2008-06-23|Moved to a better category
 security/ca-roots||2008-06-29|No longer supported by FreeBSD Security Officer
 devel/subversion-perl|devel/p5-subversion|2008-06-30|Rename to reflect official perl5 modules naming scheme
 devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official Python modules naming scheme
@@ -923,7 +923,7 @@ sysutils/estctrl||2009-12-24|Incorporated into base system long ago
 sysutils/freebsd-sha1||2009-12-24|Incorporated into base system long ago
 sysutils/freebsd-sha256||2009-12-24|Incorporated into base system long ago
 irc/znc-extras||2009-12-24|Has expired: Migrate to irc/znc instead
-games/love|devel/love|2009-12-26|Move to better category
+games/love|devel/love|2009-12-26|Moved to a better category
 archivers/star-devel||2009-12-26|Removed
 databases/mysql54-client|databases/mysql55-client|2010-01-04|Updated to milestone 2
 databases/mysql54-server|databases/mysql55-server|2010-01-04|Updated to milestone 2
@@ -2136,9 +2136,9 @@ net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-networ
 devel/hs-uvector||2011-05-08|Removed: It is deprecated by devel/hs-vector
 devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms
 devel/jude-community|devel/astah-community|2011-05-09|Project was renamed
-net/skype12|net-im/skype12|2011-05-09|Moved to better category
-net/skype|net-im/skype|2011-05-09|Moved to better category
-net/skype-devel|net-im/skype-devel|2011-05-12|Moved to better category
+net/skype12|net-im/skype12|2011-05-09|Moved to a better category
+net/skype|net-im/skype|2011-05-09|Moved to a better category
+net/skype-devel|net-im/skype-devel|2011-05-12|Moved to a better category
 devel/libchipcard-kde||2011-05-14|Obsolete
 sysutils/libgksuui|sysutils/libgksu|2011-05-14|Removed: It is a part of sysutils/libgksu now
 security/barnyard-sguil|security/barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support
