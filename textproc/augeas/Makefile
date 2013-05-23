@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	augeas
-PORTVERSION=	0.10.0
-PORTREVISION=	5
+PORTVERSION=	1.0.0
+#PORTREVISION=	0
 CATEGORIES=	textproc
-MASTER_SITES=	http://augeas.net/download/
+MASTER_SITES=	http://download.augeas.net/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration editing tool
