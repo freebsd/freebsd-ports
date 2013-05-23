@@ -4271,3 +4271,4 @@ x11-wm/transset-df|x11-wm/transset|2013-05-20|Project was renamed
 print/yatex-xemacs||2013-05-21|Removed: obsolete
 devel/php5-phing|devel/pear-phing|2013-05-21|Replaced by devel/pear-phing
 emulators/hfsutils|sysutils/hfsutils|2013-05-23|Moved to a better category
+devel/lfc|devel/lfcbase|2013-05-23|Rename to avoid package conflicts
