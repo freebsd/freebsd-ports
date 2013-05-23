@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-fedex
-# Date created:				31 May 2012
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fedex
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@caomhin.org
 COMMENT=	A light wrapper around Fedex's Web Services SOAP API using suds
 
-LICENSE=	GPLv3
+LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}suds>=0:${PORTSDIR}/net/py-suds
 
