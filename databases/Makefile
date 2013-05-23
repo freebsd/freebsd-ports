@@ -756,6 +756,7 @@
     SUBDIR += py-simplecouchdb
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy
+    SUBDIR += py-sqlalchemy-devel
     SUBDIR += py-sqlalchemy06
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlite3dbm
