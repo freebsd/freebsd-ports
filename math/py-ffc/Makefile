@@ -1,29 +1,30 @@
-# New ports collection makefile for:	py-ffc
-# Date created:				12 April 2012
-# Whom:					Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ffc
-PORTVERSION=	1.0.0
+PORTVERSION=	${MMVERSION}.0
 CATEGORIES=	math python
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0.x/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	C++ code generator for multilinear forms
 
+LICENSE=	LGPL3
+
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	FFC
 
-FETCH_ARGS=	-Fpr
+FETCH_ARGS=	-F
 
 MAN1=		ffc.1
 MANCOMPRESSED=	yes
 
+MMVERSION=	1.2
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|"usr")|"usr", "local")|g' ${WRKSRC}/test/regression/test.py
+	${REINPLACE_CMD} -i '' -e 's|os.path.join(os.path.sep, "usr")|os.path.normpath("${PREFIX}")|' \
+		 ${WRKSRC}/test/regression/test.py
 
 .include <bsd.port.mk>
