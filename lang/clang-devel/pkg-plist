@@ -5,6 +5,7 @@ bin/clang
 bin/clang++
 bin/clang-check
 bin/clang-cpp
+bin/clang-format
 bin/clang-tblgen
 bin/scan-build
 bin/scan-view
@@ -510,6 +511,8 @@ lib/libclangTooling.a
 @dirrm include/clang-c
 @dirrm include/clang
 @dirrm %%PYTHON_SITELIBDIR%%/Resources
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
