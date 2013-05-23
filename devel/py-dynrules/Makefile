@@ -1,16 +1,9 @@
-# New ports collection makefile for:	py-dynrules
-# Date created:		2008-12-22
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dynrules
-PORTVERSION=	0.0.15
+PORTVERSION=	0.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	python-${PORTNAME}
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITES=	http://cdn.bitbucket.org/marcusva/py-dynrules/downloads/
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Dynamic Scripting for adaptive AI systems
@@ -18,8 +11,12 @@ COMMENT=	Dynamic Scripting for adaptive AI systems
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+OPTIONS=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}/html
 	@${TAR} -C ${WRKSRC}/doc/html -cf - . | \
 		${TAR} -C ${DOCSDIR}/html -xf -
