@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paq
-PORTVERSION=	20130513
+PORTVERSION=	20130522
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaq627.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaq628.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -126,7 +126,10 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 
 check regression-test test: build
-	${WRKSRC}/zpaq -list ${_DISTDIR}/calgarytest.zpaq
-	${WRKSRC}/zpaq -list ${_DISTDIR}/calgarytest2.zpaq
+.for _f in calgarytest.zpaq calgarytest2.zpaq
+.for _c in -list -test
+	${WRKSRC}/zpaq ${_c} ${_DISTDIR}/${_f}
+.endfor
+.endfor
 
 .include <bsd.port.mk>
