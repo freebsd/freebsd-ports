@@ -4,7 +4,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -32,7 +32,8 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:${PORTSDIR}/textproc/iso-schematron-xslt \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450 \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
-		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
+		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
+		zip:${PORTSDIR}/archivers/zip
 
 OPTIONS_DEFINE=		X11 JADETEX OPENJADE CJK SVN IGOR
 JADETEX_DESC=		Support building additional document formats (PDF)
