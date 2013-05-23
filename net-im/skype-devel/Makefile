@@ -1,9 +1,5 @@
-# New ports collection makefile for:	skype-devel
-# Date created:         Jun 21. 2004
-# Whom:                 netchild@FreeBSD.org
-#
+# Created by: netchild@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	skype
 PORTVERSION=	2.2.0.35
@@ -18,8 +14,11 @@ COMMENT=	P2P VoIP software, development version
 
 CONFLICTS=	skype-[0-9]*
 
-OPTIONS=	VIDEO	"[broken] Video sending support via multimedia/webcamd"	on \
-		NVIDIA_GL "Use libGL provided by NVidia binary drivers" off
+OPTIONS_DEFINE=	VIDEO NVIDIA_GL
+VIDEO_DESC=[broken] Video support
+NVIDIA_GL_DESC=	libGL provided by NVidia binary drivers
+
+OPTIONS_DEFAULT=	VIDEO
 
 CONFLICTS=	skype-1* skype-2.0* skype-2.1*
 
@@ -38,16 +37,17 @@ PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
 SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_NVIDIA_GL
+.if ${PORT_OPTIONS:MNVIDIA_GL}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=xorglibs
 .else
 USE_LINUX_APPS+=dri
 .endif
 
-.ifdef WITH_VIDEO
+.if ${PORT_OPTIONS:MVIDEO}
 . include "${PORTSDIR}/multimedia/linux_v4l2wrapper-kmod/Makefile.sub"
 RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 USE_LINUX_APPS+=libv4l
@@ -93,7 +93,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${PREFIX}/bin/skype
 	@${CHMOD} a+rx ${PREFIX}/bin/skype
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

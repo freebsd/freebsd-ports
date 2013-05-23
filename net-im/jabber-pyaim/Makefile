@@ -1,15 +1,11 @@
-# New ports collection makefile for:	Jabber Python AIM Transport
-# Date created:		2006-06-06
-# Whom:			Derek Kulinski <takeda@takeda.tk>
-#
+# Created by: Derek Kulinski <takeda@takeda.tk>
 # $FreeBSD$
-#
 
 PORTNAME=	pyaim
 PORTVERSION=	0.8a
 PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}-t-${PORTVERSION}
@@ -20,8 +16,9 @@ COMMENT=	Python AIM-Transport for Jabber
 
 PROJECTHOST=	pyaimt
 
-OPTIONS=	EJABBERD "Use transport with ejabberd" off \
-		TWISTED1 "Use old py-twisted 1.x" off
+OPTIONS_DEFINE=	EJABBERD TWISTED1
+EJABBERD_DESC=	transport with ejabberd
+TWISTED1_DESC=	old py-twisted 1.x
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
@@ -34,9 +31,10 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
 PORTDOCS=	COPYING README NEWS AUTHORS INSTALL
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_EJABBERD)
+.if ${PORT_OPTIONS:MEJABBERD}
 JABBER_USER?=	ejabberd
 SUB_LIST+=	JABBER_REQUIRE=ejabberd
 .else
@@ -44,7 +42,7 @@ JABBER_USER?=	jabber
 SUB_LIST+=	JABBER_REQUIRE=jabberd
 .endif
 
-.if defined(WITH_TWISTED1)
+.if ${PORT_OPTIONS:MTWISTED1}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
 .else
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore \
@@ -75,7 +73,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${EXAMPLESDIR}/etc/jabber-pyaim.xml
 	@[ -f ${PREFIX}/etc/jabber-pyaim.xml ] || ${CP} -v ${EXAMPLESDIR}/etc/jabber-pyaim.xml ${PREFIX}/etc/jabber-pyaim.xml
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for portdoc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${portdoc} ${DOCSDIR}/

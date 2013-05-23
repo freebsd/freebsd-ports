@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkabber-devel
-# Date created:				09 July 2005
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tkabber
 PORTVERSION=	0.11.1.a.20100207
@@ -38,7 +34,9 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 SUBDIRS=	emoticons ifacetk mclistbox msgs pixmaps plugins sounds \
 		tclxmpp trans
 
-OPTIONS=	ZLIB "with zlib support" off
+OPTIONS_DEFINE=	ZLIB
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
@@ -57,7 +55,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for i in AUTHORS COPYING ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -65,10 +63,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 LIB_DEPENDS+=	ztcl[0-9]:${PORTSDIR}/devel/ztcl
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
