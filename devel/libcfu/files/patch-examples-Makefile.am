@@ -1,0 +1,11 @@
+--- examples/Makefile.am.orig	2013-05-23 22:51:44.426274513 +0100
++++ examples/Makefile.am	2013-05-23 22:51:55.801273539 +0100
+@@ -4,7 +4,7 @@
+ if DEBUG
+ AM_CFLAGS = -Wall -W -Werror -I$(top_srcdir)/include -DCFU_DEBUG=1
+ else
+-AM_CFLAGS = -Wall -W -Werror -I$(top_srcdir)/include
++AM_CFLAGS = -Wall -W -I$(top_srcdir)/include
+ endif
+ 
+ AM_LDFLAGS =  -Xlinker -rpath -Xlinker $(top_src_dir)/src

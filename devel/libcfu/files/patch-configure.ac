@@ -1,0 +1,18 @@
+--- configure.ac.orig	2013-05-23 22:56:29.764274319 +0100
++++ configure.ac	2013-05-23 22:59:46.595272055 +0100
+@@ -15,12 +15,12 @@
+ SAVELIBS="$LIBS"
+ CFLAGS="-pthread $CFLAGS"
+ LIBS="-pthread $LIBS"
+-AC_CHECK_FUNC(pthread_mutex_init,,
+-    CFLAGS="$SAVECFLAGS"
++AC_CHECK_FUNC(pthread_mutex_init, ,
++    [CFLAGS="$SAVECFLAGS"
+     LIBS="$SAVELIBS"
+     AC_CHECK_LIB(pthread, pthread_mutex_init,,
+         AC_CHECK_LIB(pthreads, pthread_mutex_init,,
+-            AC_MSG_ERROR([No pthreads support found.]))))
++            AC_MSG_ERROR([No pthreads support found.])))])
+ 
+ # Checks for header files.
+ AC_HEADER_STDC
