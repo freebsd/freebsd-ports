@@ -28,7 +28,7 @@ RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 NO_BUILD=	yes
 PATCHDIR=	/dev/null
 
-OPTIONS+=	GDBM	"Use gdbm instead of system bdb"	off
+OPTIONS_DEFINE+=	GDBM
 
 .include "${.CURDIR}/Makefile.opt"
 
@@ -211,7 +211,7 @@ pre-install:
 .endif	# ${PKGNAMESUFFIX} == "-base"
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} ${_SHROWNGRP} -d ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
