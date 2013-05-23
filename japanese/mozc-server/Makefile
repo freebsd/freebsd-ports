@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.10.1390.102
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,6 +15,7 @@ COMMENT?=	Mozc Japanese Input Method, Server
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/third_party/gyp/LICENSE
 
+EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf \
 		zinnia:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
@@ -22,7 +23,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 USES=		pkgconfig iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PYTHON=	yes
+USE_PYTHON_BUILD=yes
 USE_OPENSSL=	yes
 
 MAKE_JOBS_SAFE=	yes
