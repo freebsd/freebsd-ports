@@ -3,6 +3,7 @@
 
 PORTNAME=	valyriatear
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 USE_GITHUB=	yes
