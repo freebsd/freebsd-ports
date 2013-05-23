@@ -1,9 +1,5 @@
-# New ports collection makefile for:	toycars
-# Date created:		15 Dec 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	toycars
 PORTVERSION=	0.3.10
@@ -27,10 +23,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${RM} ${WRKSRC}/data/.*Store
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
