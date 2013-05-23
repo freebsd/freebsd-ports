@@ -3,6 +3,7 @@
 
 PORTNAME=	htmlcompressor
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
@@ -20,7 +21,6 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/htmlcompressor %%JAVAJARDIR%%/htmlcompressor.jar
-PLIST_DIRSTRY=	%%JAVAJARDIR%%
 SUB_FILES=	htmlcompressor
 
 .include <bsd.port.pre.mk>
