@@ -1,9 +1,5 @@
-# New ports collection makefile for:	railroad-rampage
-# Date created:		08 Nov 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	railroad-rampage
 PORTVERSION=	1.2
@@ -35,6 +31,8 @@ DESKTOP_ENTRIES="Railroad Rampage" \
 		"Game;StrategyGame;ArcadeGame;" \
 		false
 
+.include <bsd.port.options.mk>
+
 do-build:
 	cd ${WRKSRC} && ${SETENV} \
 		LD_LIBRARY_PATH=${LOCALBASE}/lib/bennugd \
@@ -47,7 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/traintd.fpg ${WRKSRC}/RailroadRampage.dcb \
 		${WRKSRC}/RailroadRampage.png ${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}/
 .endif
