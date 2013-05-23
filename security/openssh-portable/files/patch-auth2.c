@@ -4,9 +4,17 @@ Changed paths:
 
 Apply class-imposed login restrictions.
 
---- auth2.c.orig	2009-06-22 00:11:07.000000000 -0600
-+++ auth2.c	2010-09-14 16:14:12.000000000 -0600
-@@ -222,6 +221,13 @@
+--- auth2.c.orig	2012-12-02 16:53:20.000000000 -0600
++++ auth2.c	2013-05-22 17:21:37.979631466 -0500
+@@ -46,6 +46,7 @@
+ #include "key.h"
+ #include "hostfile.h"
+ #include "auth.h"
++#include "canohost.h"
+ #include "dispatch.h"
+ #include "pathnames.h"
+ #include "buffer.h"
+@@ -219,6 +220,13 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -20,7 +28,7 @@ Apply class-imposed login restrictions.
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -274,6 +274,27 @@
+@@ -265,6 +273,27 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
