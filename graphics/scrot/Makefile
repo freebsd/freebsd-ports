@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scrot
-# Date created:				27 Oct 2000
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scrot
 PORTVERSION=	0.8
@@ -18,11 +14,14 @@ COMMENT=	A screen capture utility that utilizes Imlib2
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 GNU_CONFIGURE=	yes
-
-.if defined(NOPORTDOCS)
-MAKE_ENV=	NO_DOC=yes
-.endif
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		scrot.1
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
+MAKE_ENV=	NO_DOC=yes
+.endif
 
 .include <bsd.port.mk>
