@@ -113,6 +113,7 @@
     SUBDIR += codeigniter17
     SUBDIR += comclear
     SUBDIR += coppermine
+    SUBDIR += cowboy
     SUBDIR += cplanet
     SUBDIR += crawl
     SUBDIR += crp
