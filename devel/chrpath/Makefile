@@ -19,7 +19,6 @@ MAN1=		chrpath.1
 
 .if defined(.PARSEDIR)
 MAKE_ARGS=	RPATH=""
-USE_GMAKE=	yes
 .endif
 
 PLIST_FILES=	bin/chrpath
