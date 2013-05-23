@@ -1,9 +1,5 @@
-# New ports collection makefile for:    POV-Ray
-# Date created:         3 Dec 1996
-# Whom:                 paulo@isr.uc.pt
-#
+# Created by: paulo@isr.uc.pt
 # $FreeBSD$
-#
 
 PORTNAME=	povray
 PORTVERSION=	3.1g
@@ -21,7 +17,8 @@ COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-OPTIONS=	X11 "X Window support" On
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
 
 DIST_SUBDIR=	povray31
 LATEST_LINK=	povray31
@@ -34,9 +31,9 @@ LATEST_LINK=	povray31
 #   no UNIX source files for POV-Ray 3.1.
 #
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 ALL_TARGET=	newxwin
 POVBIN=		${BUILD_WRKSRC}/x-povray
@@ -70,4 +67,4 @@ do-install:
 post-install:
 	@${SH} ${FILESDIR}/script
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

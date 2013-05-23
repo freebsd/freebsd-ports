@@ -30,11 +30,14 @@ PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS=	TKINTER "Build with tkinter for X support" on
+OPTIONS_DEFINE=	TKINTER
+TKINTER_DESC=	tkinter for X support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	TKINTER
 
-.if !defined(WITHOUT_TKINTER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTKINTER}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 PLIST_SUB+=	TKINTER=""
@@ -42,7 +45,7 @@ PLIST_SUB+=	TKINTER=""
 PLIST_SUB+=	TKINTER="@comment "
 .endif
 
-.if defined(WITHOUT_TKINTER)
+.if ! ${PORT_OPTIONS:MTKINTER}
 post-patch:
 	@${REINPLACE_CMD} -e 's|if _tkinter|if None|g' ${WRKSRC}/setup.py
 .endif
@@ -53,9 +56,9 @@ post-install:
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Scripts/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Docs/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

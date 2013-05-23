@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgltext
-# Date created:		2006-02-20
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	libgltext
 PORTVERSION=	0.3.1
@@ -24,11 +20,12 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	EXAMPLES	"Compile examples, need libglut"	off
+OPTIONS_DEFINE=	EXAMPLES
+EXAMPLES_DESC=	Compile examples, need libglut
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 USE_GL=	glut
 FLAG_EXAMPLES=	true
 PLIST_SUB+=	EXAMPLES=""
@@ -49,7 +46,7 @@ do-install:
 		${LN} -s ${PORTNAME}.so.0 ${PORTNAME}.so
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${DOCSDIR}
 .endif
@@ -65,4 +62,4 @@ post-install:
 	@${ECHO_MSG}	""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

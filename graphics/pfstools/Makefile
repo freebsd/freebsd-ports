@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pfstools
-# Date created:		25 September 2007
-# Whom:			Daniel O'Connor <darius@dons.net.au>
-#
+# Created by: Daniel O'Connor <darius@dons.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	pfstools
 PORTVERSION=	1.6.4
@@ -31,15 +27,13 @@ LDFLAGS+=	${PFS_LDFLAGS}
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USES=	pkgconfig
 
-OPTIONS=	PPM "Compile programs that use PPM (NetPBM)" off \
-		EXR "Compile programs that use OpenEXR library" off \
-		TIFF "Compile programs that use TIFF library" on \
-		QT "Compile programs that use QT library" off \
-		IM "Compile programs that use ImageMagick library" off \
-		OCTAVE "Compile octave interface functions" off \
-		GL "Compile opengl code (pfsglview)" off
+OPTIONS_DEFINE=	NETPBM OPENEXR TIFF QT IMAGEMAGICK OCTAVE OPENGL
+QT_DESC=	QT library support
+OCTAVE_DESC=	Compile octave interface functions
+
+OPTIONS_DEFAULT=	TIFF
 
 MAN1=		pfsin.1 \
 		pfsout.1 \
@@ -75,9 +69,9 @@ MLINKS=		pfsoutppm.1 \
 		pfsoutppm.1 \
 		pfsoutrgbe.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PPM)
+.if ${PORT_OPTIONS:MNETPBM}
 CONFIGURE_ARGS+=--enable-ppm
 LIB_DEPENDS+=	netpbm.1:${PORTSDIR}/graphics/netpbm
 PLIST_SUB+=	PPM=""
@@ -86,7 +80,7 @@ CONFIGURE_ARGS+=--disable-ppm
 PLIST_SUB+=	PPM="@comment "
 .endif
 
-.if defined(WITH_EXR)
+.if ${PORT_OPTIONS:MOPENEXR}
 PFS_CPPFLAGS+=	${PTHREAD_CFLAGS}
 PFS_LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-openexr --with-exrdir=${LOCALBASE}/include/OpenEXR
@@ -97,7 +91,7 @@ CONFIGURE_ARGS+=--disable-openexr
 PLIST_SUB+=	EXR="@comment "
 .endif
 
-.if defined(WITH_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 CONFIGURE_ARGS+=--enable-tiff
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 PLIST_SUB+=	TIFF=""
@@ -106,7 +100,7 @@ CONFIGURE_ARGS+=--disable-tiff
 PLIST_SUB+=	TIFF="@comment "
 .endif
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT}
 CONFIGURE_ARGS+=--enable-qt
 USE_QT_VER=	3
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
@@ -118,7 +112,7 @@ CONFIGURE_ARGS+=--disable-qt
 PLIST_SUB+=	QT="@comment "
 .endif
 
-.if defined(WITH_IM)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick
 LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IM=""
@@ -127,7 +121,7 @@ CONFIGURE_ARGS+=--disable-imagemagick
 PLIST_SUB+=	IM="@comment "
 .endif
 
-.if defined(WITH_OCTAVE)
+.if ${PORT_OPTIONS:MOCTAVE}
 CONFIGURE_ARGS+=--enable-octave
 USE_FORTRAN=	yes
 
@@ -153,7 +147,7 @@ CONFIGURE_ARGS+=--disable-octave
 PLIST_SUB+=	OCTAVE="@comment "
 .endif
 
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 CONFIGURE_ARGS+=--enable-opengl
 USE_GL=		glut
 PLIST_SUB+=	GL=""
@@ -162,11 +156,11 @@ CONFIGURE_ARGS+=--disable-opengl
 PLIST_SUB+=	GL="@comment "
 .endif
 
-.if defined(WITH_OCTAVE)
+.if ${PORT_OPTIONS:MOCTAVE}
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/octave|${LOCALBASE}/bin/octave|' \
 		${WRKSRC}/src/octave/*
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   panoglview
-# Date created:        Sat Apr 28 07:59:00 UTC 2007
-# Whom:                argv[0] (Iouri V. Ivliev)
-#
+# Created by: argv[0] (Iouri V. Ivliev)
 # $FreeBSD$
-#
 
 PORTNAME=	panoglview
 PORTVERSION=	0.2.2
@@ -28,15 +24,16 @@ WX_CONF_ARGS=	relative
 
 PLIST_FILES=	bin/panoglview
 
-OPTIONS=	UNICODE	"Use UNICODE version of the wxgtk"	on
+OPTIONS_DEFINE=	UNICODE
+OPTIONS_DEFAULT=	UNICODE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not configure on powerpc
 .endif
 
-.if defined(WITH_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 WX_UNICODE=	yes
 CONFIGURE_ARGS+=	--with-unicode
 .else
@@ -44,4 +41,4 @@ CONFIGURE_ARGS+=	--with-unicode
 CONFIGURE_ARGS+=	--without-unicode
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

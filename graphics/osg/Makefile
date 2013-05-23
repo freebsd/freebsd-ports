@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Open Scene Graph
-# Date created:				26 Apr 2001
-# Whom:					Randall Hopper <aa8vb@nc.rr.com>
-#
+# Created by: Randall Hopper <aa8vb@nc.rr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	osg
 PORTVERSION=	3.0.1
@@ -24,9 +20,8 @@ CONFLICTS=	osg-devel-[0-9]*
 
 USE_GCC=	any
 USE_ZIP=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GL=		gl glu
-USE_GNOME=	pkgconfig
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
@@ -39,21 +34,15 @@ PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS=	CURL     "Support for cURL"                 off \
-		FREETYPE "Support for FreeType"             on \
-		GDAL     "Support for GDAL"                 off \
-		GIF      "Support for giflib"               on \
-		INVENTOR "Support for SGI OpenInventor"     off \
-		JASPER   "Support for JPEG2000"             off \
-		XINE     "Support for Xine"                 off \
-		ITK      "Support for InsightToolkit"       off \
-		VNC      "Support for LibVNCServer"         off \
-		OPENEXR  "Support for OpenEXR"              off \
-		FFMPEG   "Support for FFmpeg"               off \
-		SVG      "Support for SVG through librsvg2" off \
-		PDF      "Support for PDF through poppler"  off \
-		XRANDR   "Use Xrandr"                       on \
-		SDL      "Use SDL (joystick support in present3d)" off
+OPTIONS_DEFINE=	CURL FREETYPE GDAL GIF INVENTOR JASPER XINE ITK \
+		VNC OPENEXR FFMPEG SVG PDF XRANDR SDL
+GDAL_DESC=	GDAL support
+INVENTOR_DESC=	SGI OpenInventor support
+ITK_DESC=	InsightToolkit support
+VNC_DESC=	LibVNCServer support
+SDL_DESC=	Use SDL (joystick support in present3d)
+
+OPTIONS_DEFAULT=	FREETYPE GIF XRANDR
 
 # broken (openvrml from ports is too old)
 #		OPENVRML "Support for OpenVRML"             off
@@ -66,7 +55,7 @@ FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
 
 # options that affect FIND_PACKAGE
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 FORCE_REQUIRE+=	CURL
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
@@ -75,7 +64,7 @@ FORCE_IGNORE+=	CURL
 PLIST_SUB+=	CURL="@comment "
 .endif
 
-.if !defined(WITHOUT_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 FORCE_REQUIRE+=	FreeType
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	FREETYPE=""
@@ -84,7 +73,7 @@ FORCE_IGNORE+=	FreeType
 PLIST_SUB+=	FREETYPE="@comment "
 .endif
 
-.if defined(WITH_GDAL)
+.if ${PORT_OPTIONS:MGDAL}
 FORCE_REQUIRE+=	GDAL
 LIB_DEPENDS+=	gdal.17:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	GDAL=""
@@ -93,7 +82,7 @@ FORCE_IGNORE+=	GDAL
 PLIST_SUB+=	GDAL="@comment "
 .endif
 
-.if defined(WITH_GIF)
+.if ${PORT_OPTIONS:MGIF}
 FORCE_REQUIRE+=	GIFLIB
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 PLIST_SUB+=	GIF=""
@@ -102,7 +91,7 @@ FORCE_IGNORE+=	GIFLIB
 PLIST_SUB+=	GIF="@comment "
 .endif
 
-.if defined(WITH_INVENTOR)
+.if ${PORT_OPTIONS:MINVENTOR}
 FORCE_REQUIRE+=	Inventor
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libInventor.so:${PORTSDIR}/graphics/inventor
 RUN_DEPENDS+=	${LOCALBASE}/lib/libInventor.so:${PORTSDIR}/graphics/inventor
@@ -112,7 +101,7 @@ FORCE_IGNORE+=	Inventor
 PLIST_SUB+=	INVENTOR="@comment "
 .endif
 
-.if defined(WITH_JASPER)
+.if ${PORT_OPTIONS:MJASPER}
 FORCE_REQUIRE+=	Jasper
 LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
 PLIST_SUB+=	JASPER=""
@@ -121,7 +110,7 @@ FORCE_IGNORE+=	Jasper
 PLIST_SUB+=	JASPER="@comment "
 .endif
 
-#.if defined(WITH_OPENVRML)
+#.if ${PORT_OPTIONS:MOPENVRML}
 #FORCE_REQUIRE+=	OpenVRML
 #LIB_DEPENDS+=	openvrml.8:${PORTSDIR}/www/openvrml
 #PLIST_SUB+=	OPENVRML=""
@@ -130,7 +119,7 @@ FORCE_IGNORE+=	OpenVRML
 PLIST_SUB+=	OPENVRML="@comment "
 #.endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 FORCE_REQUIRE+=	Xine
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
@@ -139,7 +128,7 @@ FORCE_IGNORE+=	Xine
 PLIST_SUB+=	XINE="@comment "
 .endif
 
-.if defined(WITH_ITK)
+.if ${PORT_OPTIONS:MITK}
 FORCE_REQUIRE+=	ITK
 BUILD_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
 RUN_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
@@ -150,7 +139,7 @@ FORCE_IGNORE+=	ITK
 PLIST_SUB+=	ITK="@comment "
 .endif
 
-.if defined(WITH_VNC)
+.if ${PORT_OPTIONS:MVNC}
 FORCE_REQUIRE+=	LibVNCServer
 LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
 PLIST_SUB+=	VNC=""
@@ -159,7 +148,7 @@ FORCE_IGNORE+=	LibVNCServer
 PLIST_SUB+=	VNC="@comment "
 .endif
 
-.if defined(WITH_OPENEXR)
+.if ${PORT_OPTIONS:MOPENEXR}
 FORCE_REQUIRE+=	OpenEXR
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
@@ -168,7 +157,7 @@ FORCE_IGNORE+=	OpenEXR
 PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 FORCE_REQUIRE+=	FFmpeg
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
@@ -177,7 +166,7 @@ FORCE_IGNORE+=	FFmpeg
 PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 FORCE_REQUIRE+=	SDL
 USE_SDL=	sdl
 .else
@@ -185,7 +174,7 @@ FORCE_IGNORE+=	SDL
 .endif
 
 # options that affect PKG_CHECK_MODULES
-.if defined(WITH_SVG)
+.if ${PORT_OPTIONS:MSVG}
 FORCE_REQUIRE+=	RSVG
 LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	SVG=""
@@ -194,7 +183,7 @@ FORCE_IGNORE+=	RSVG
 PLIST_SUB+=	SVG="@comment "
 .endif
 
-.if defined(WITH_PDF)
+.if ${PORT_OPTIONS:MPDF}
 FORCE_REQUIRE+=	Poppler-glib
 LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 PLIST_SUB+=	PDF=""
@@ -203,23 +192,23 @@ FORCE_IGNORE+=	Poppler-glib
 PLIST_SUB+=	PDF="@comment "
 .endif
 
-.if defined(WITH_SVG) || defined(WITH_PDF)
+.if ${PORT_OPTIONS:MSVG} || ${PORT_OPTIONS:MPDF}
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 .endif
 
 # other options
-.if defined(WITHOUT_XRANDR)
-CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MXRANDR}
 CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 USE_XORG+=	xrandr
+.else
+CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_XRANDR)
-CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MXRANDR}
 CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 USE_XORG+=	xrandr
+.else
+CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
 .endif
 
 post-patch:
