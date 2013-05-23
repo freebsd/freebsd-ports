@@ -1,9 +1,5 @@
-## New ports collection makefile for:    ejabberd
-# Date created:                         03 July 2004
-# Whom:                                 Alexander Timoshenko <gonzo@univ.kiev.ua>
-#
+# Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	ejabberd
 PORTVERSION=	2.1.11
@@ -30,8 +26,7 @@ USES=		iconv
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 
-OPTIONS=	ODBC	"Enable ODBC support"			off \
-		PAM	"Enable setuid PAM auth support"	off
+OPTIONS_DEFINE=	ODBC PAM
 
 MAKE_ENV=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ARGS+=--localstatedir=/var --with-openssl=${OPENSSLBASE}
@@ -49,21 +44,21 @@ USE_OPENSSL=	yes
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=--enable-odbc
 PLIST_SUB+=	ODBC=""
 .else
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=--enable-pam
 PLIST_SUB+=	PAM=""
 .else
 PLIST_SUB+=	PAM="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
 .endif
 
@@ -75,7 +70,7 @@ post-install:
 	@${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 	${CHMOD} 4750 ${PREFIX}/lib/erlang/lib/${DISTNAME}/priv/bin/epam
 	${CHOWN} root:ejabberd ${PREFIX}/lib/erlang/lib/${DISTNAME}/priv/bin/epam
 	${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd ${PREFIX}/etc/pam.d/ejabberd

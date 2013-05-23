@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iserverd
-# Date created:				Sun Jun 10 17:51:00 GMT 2007
-# Whom:					Denis Rakhmangulov <danfocus@gmail.com>
-#
+# Created by: Denis Rakhmangulov <danfocus@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	iserverd
 PORTVERSION=	2.5.5
@@ -18,8 +14,10 @@ USE_PGSQL=	YES
 GNU_CONFIGURE=	YES
 USE_RC_SUBR=	iserverd
 
-OPTIONS=	KQUEUE "Use kqueue(2) instead of poll(2)" on \
-		DEBUG "Enable debugging symbols" off
+OPTIONS_DEFINE=	KQUEUE DEBUG
+KQUEUE_DESC=	kqueue(2) instead of poll(2)
+
+OPTIONS_DEFAULT=	KQUEUE
 
 CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} \
 		--with-bindir=${PREFIX}/bin \
@@ -33,7 +31,7 @@ MAN1=		db_convert.1
 MAN5=		iserv.conf.5 v3_proto.conf.5 v5_proto.conf.5
 MAN8=		iserverd.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 700042
 .if ${ARCH} == "sparc64"
@@ -41,10 +39,10 @@ BROKEN=		Does not compile with GCC 4.2
 .endif
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
-.if defined(WITH_KQUEUE)
+.if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=--with-kqueue
 .endif
 
@@ -61,4 +59,4 @@ post-install:
 	@${CHOWN} -R iserv /var/log/iserverd
 	@${CHOWN} -R iserv /var/run/iserverd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: naim
-# Date created:			02 March 1999
-# Whom:				mharo@area51.fremont.ca.us
-#
+# Created by: mharo@area51.fremont.ca.us
 # $FreeBSD$
-#
 
 PORTNAME=	naim
 PORTVERSION=	0.11.8.3.2
@@ -20,19 +16,20 @@ MAN1=		naim.1
 MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1
 PORTDOCS=	FAQ README commands.txt keyboard.txt
 
-OPTIONS=	DETACH "Enable 'detach' feature (requires misc/screen)" off
+OPTIONS_DEFINE=	DETACH
+DETACH_DESC=	Activate 'detach' feature (requires misc/screen)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--with-pkgdocdir=${DOCSDIR}
 .else
 CONFIGURE_ARGS+=	--without-pkgdocdir
 .endif
 
-.if defined(WITH_DETACH)
+.if ${PORT_OPTIONS:MDETACH}
 RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 CONFIGURE_ARGS+=	--enable-detach
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,16 +25,16 @@ CFLAGS+=		-I${LOCALBASE}/include
 
 USE_RC_SUBR=		jggtrans
 
-OPTIONS=		NODEBUG "Turn off debugging code" off \
-			EJABBERD "Use transport with ejabberd" off
+OPTIONS_DEFINE=	DEBUG EJABBERD
+EJABBERD_DESC=	transport with ejabberd
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NODEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
-.if defined(WITH_EJABBERD)
+.if ${PORT_OPTIONS:MEJABBERD}
 JABBER_USER?=	ejabberd
 SUB_LIST+=	JABBER_REQUIRE=ejabberd
 .else
@@ -49,4 +49,4 @@ post-install:
 	@${CP} -n ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml || ${TRUE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
