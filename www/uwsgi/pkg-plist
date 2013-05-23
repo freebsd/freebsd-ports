@@ -1,2 +1,0 @@
-bin/uwsgi
-%%PYTHON_SITELIBDIR%%/uwsgidecorators.py
