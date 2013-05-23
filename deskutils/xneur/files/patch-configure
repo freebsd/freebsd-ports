@@ -1,6 +1,6 @@
---- configure.orig	2011-03-13 20:00:53.000000000 +0300
-+++ configure	2011-03-13 20:01:47.000000000 +0300
-@@ -13690,7 +13690,7 @@
+--- configure.orig	2013-05-23 09:12:45.000000000 +0000
++++ configure	2013-05-23 09:14:17.000000000 +0000
+@@ -14490,7 +14490,7 @@
  
  fi
  
@@ -9,3 +9,12 @@
  
  
  
+@@ -15337,7 +15337,7 @@
+ 
+ fi
+ 
+-DEFAULT_CFLAGS="-Wall -Wextra -Werror -g0 -std=gnu99 -fPIC"
++DEFAULT_CFLAGS="-Wall -Wextra -g0 -std=gnu99 -fPIC"
+ 
+ 
+ ac_config_files="$ac_config_files pixmaps/Makefile plugins/Makefile plugins/test/Makefile plugins/statistic/Makefile share/Makefile share/sounds/Makefile share/languages/Makefile share/languages/by/Makefile share/languages/bg/Makefile share/languages/cz/Makefile share/languages/de/Makefile share/languages/ge/Makefile share/languages/gr/Makefile share/languages/en/Makefile share/languages/es/Makefile share/languages/ee/Makefile share/languages/fr/Makefile share/languages/gb/Makefile share/languages/am/Makefile share/languages/kz/Makefile share/languages/lt/Makefile share/languages/lv/Makefile share/languages/pl/Makefile share/languages/ro/Makefile share/languages/ru/Makefile share/languages/ua/Makefile share/languages/us/Makefile share/languages/uz/Makefile etc/Makefile lib/Makefile lib/lib/Makefile lib/ai/Makefile lib/config/Makefile lib/misc/Makefile lib/notify/Makefile lib/main/Makefile src/Makefile po/Makefile.in Makefile xnconfig.pc xneur.pc"
