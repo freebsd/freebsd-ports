@@ -1,8 +1,8 @@
-# Created by:	Jason Helfman <jgh@FreeBSD.org>
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	jasperserver
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 CATEGORIES=	databases print java
 MASTER_SITES=	http://community.jaspersoft.com/sites/default/files/releases/:source1 \
 		SF/bsdsrc/:source2 \
@@ -11,9 +11,9 @@ DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
 		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source2 \
 		cobertura-maven-plugin-2.5-Jaspersoft.jar:source3 \
 		cobertura-maven-plugin-2.5-Jaspersoft.pom:source3
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip \
 		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
@@ -30,7 +30,7 @@ WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSUPDATE=	4.7.0-${PORTVERSION}
+JSUPDATE=	5.0.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
@@ -82,14 +82,12 @@ PLIST_SUB+=	JDBC="mysql-connector-java.jar"
 #use version 90, application is certified w/ pg90
 .if ${PORT_OPTIONS:MPGSQL}
 WANT_PGSQL_VER=	90+
-JDBC=	postgresql-9.0-802.jdbc4.jar
-DISTFILES+=	postgresql-9.0-802.jdbc4.jar:source4
+JDBC=	postgresql-9.2-1002.jdbc4.jar
 USE_PGSQL=	yes
 DBUSER?=	pgsql
 DBPASS?=	pgsql
 DATABASE=	postgresql
 PLIST_SUB+=	JDBC=${JDBC}
-MASTER_SITES+=	http://jdbc.postgresql.org/download/:source4
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT6}
@@ -223,15 +221,13 @@ do-install:
 .if ${PORT_OPTIONS:MMYSQL}
 	@${RM} ${APPHOME}/${JDBCLOC}/mysql-connector-java-5.1.17-bin.jar
 	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${APPHOME}/${JDBCLOC}
-.else
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
-	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc4.jar
+	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.2-1002.jdbc4.jar
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	( cd ${SRCDIR}/${PORTNAME}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR} )
-.endif	
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${SRCDIR}/JasperReports-Server-CP-Source-Build-Guide.pdf ${DOCSDIR}
+.endif
 
 	@${CAT} ${PKGMESSAGE}
 
