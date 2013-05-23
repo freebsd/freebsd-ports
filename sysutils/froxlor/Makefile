@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-DISTVERSION=	0.9.28
+DISTVERSION=	0.9.28.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -17,7 +17,7 @@ NO_BUILD=	YES
 
 SUB_FILES+=	pkg-message pkg-deinstall
 
-USE_PHP=	xml bcmath posix filter session ftp mysql mysqli gettext
+USE_PHP=	xml bcmath posix filter session ftp mysql mysqli
 
 OPTIONS_DEFINE=	POWERDNS LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
 
@@ -129,6 +129,7 @@ USE_PHP+=	pcntl
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext:run
+USE_PHP+=	gettext
 .endif
 
 do-install:
