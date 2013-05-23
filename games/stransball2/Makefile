@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stransball2
-# Date created:		07 Apr 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	stransball2
 PORTVERSION=	1.5
@@ -21,10 +17,13 @@ LIB_DEPENDS=	SGE.0:${PORTSDIR}/devel/sdl_sge
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer sound
+MAKE_JOBS_SAFE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/sources
 
 PORTDOCS=	readme.txt
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${RM} -f ${WRKSRC}/sound/WS_FTP.LOG
@@ -40,7 +39,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'graphics sound maps demos' ${DATADIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
