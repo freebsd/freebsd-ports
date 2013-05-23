@@ -1,9 +1,5 @@
-# New ports collection makefile for:	animorph
-# Date created:		31 Mar 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	animorph
 PORTVERSION=	0.3
@@ -13,22 +9,24 @@ MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Morphing engine for MakeHuman
 
+LICENSE=	LGPL21
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^libanimorphdocdir =/ s|doc/|share/doc/|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|\$$(libdir)|\$$(exec_prefix)/libdata|' ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-libanimorphdocDATA||' ${WRKSRC}/Makefile.in
 .endif
 
