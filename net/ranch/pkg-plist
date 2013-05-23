@@ -1,0 +1,40 @@
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch.app
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_acceptor.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_acceptors_sup.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_app.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_conns_sup.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_listener_sup.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_protocol.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_server.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_ssl.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_sup.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_tcp.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin/ranch_transport.beam
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch.app.src
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_acceptor.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_acceptors_sup.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_app.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_conns_sup.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_listener_sup.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_protocol.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_server.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_ssl.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_sup.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_tcp.erl
+%%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src/ranch_transport.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/rebar.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/src/echo_protocol.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/src/tcp_echo.app.src
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/src/tcp_echo.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/src/tcp_echo_app.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/src/tcp_echo_sup.erl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/start.sh
+@dirrm %%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/ranch-%%VERSION%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp_echo/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp_echo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

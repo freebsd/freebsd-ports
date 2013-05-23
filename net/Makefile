@@ -974,6 +974,7 @@
     SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += raggle
+    SUBDIR += ranch
     SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += recvnet
