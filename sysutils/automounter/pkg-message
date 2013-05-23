@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Please restart the devd(8) daemon after install, especially when updating from
-a previous version of automounter.
-
-Note that stopping devd often leaves a stale PID file behind, which then
-blocks restarting it. Use a more roundabout way of restarting the service:
-	service devd stop; rm /var/run/devd.pid; service devd start
--------------------------------------------------------------------------------
