@@ -67,9 +67,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plflush.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plflush.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plflush.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plinit.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plinit.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/management/commands/plinit.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/__init__.pyo
@@ -82,6 +79,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0003_auto__chg_field_photosize_name.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0003_auto__chg_field_photosize_name.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0003_auto__chg_field_photosize_name.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0004_initial_photosizes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0004_initial_photosizes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/migrations/0004_initial_photosizes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/sample.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/test_&quoting.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/res/test_landscape.jpg
@@ -120,9 +120,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/helpers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/mock_settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/mock_settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/mock_settings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/photo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/photo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/photologue/tests/photo.pyo
