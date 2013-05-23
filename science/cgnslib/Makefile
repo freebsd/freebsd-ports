@@ -49,7 +49,7 @@ TESTSBIN=	cgwrite cgread test_partial
 .endif
 
 .if ${PORT_OPTIONS:MTOOLS}
-USE_TK=		yes
+USE_TK=		85
 USE_GL=		gl glu
 USE_XORG=	xmu
 CMAKE_ARGS+=	-DBUILD_CGNSTOOLS:BOOL=TRUE			\
