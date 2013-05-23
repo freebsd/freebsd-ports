@@ -349,6 +349,9 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.12/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.12/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.12/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -1655,6 +1658,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrmtry share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.13
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.12
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.9
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.6
