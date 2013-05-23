@@ -7,7 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.4.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -28,7 +28,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
