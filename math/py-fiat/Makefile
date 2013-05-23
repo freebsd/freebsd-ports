@@ -1,16 +1,12 @@
-# New ports collection makefile for:	py-fiat
-# Date created:				13 April 2012
-# Whom:					Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fiat
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	${MMVERSION}.0
 CATEGORIES=	math python
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0.x/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/${MMVERSION}.x/release-${MMVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${MMVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	FInite element Automatic Tabulator
@@ -25,5 +21,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	FIAT
 
 FETCH_ARGS=	-F
+
+MMVERSION=	1.1
 
 .include <bsd.port.mk>

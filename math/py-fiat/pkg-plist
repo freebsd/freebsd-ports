@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/FIAT/asci2vtk3d.py
 %%PYTHON_SITELIBDIR%%/FIAT/asci2vtk3d.pyc
 %%PYTHON_SITELIBDIR%%/FIAT/asci2vtk3d.pyo
+%%PYTHON_SITELIBDIR%%/FIAT/brezzi_douglas_fortin_marini.py
+%%PYTHON_SITELIBDIR%%/FIAT/brezzi_douglas_fortin_marini.pyc
+%%PYTHON_SITELIBDIR%%/FIAT/brezzi_douglas_fortin_marini.pyo
 %%PYTHON_SITELIBDIR%%/FIAT/brezzi_douglas_marini.py
 %%PYTHON_SITELIBDIR%%/FIAT/brezzi_douglas_marini.pyc
 %%PYTHON_SITELIBDIR%%/FIAT/brezzi_douglas_marini.pyo
