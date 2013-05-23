@@ -14,9 +14,10 @@ USE_GMAKE=	YES
 PLIST_FILES=	include/squish.h \
 		lib/libsquish.a
 
-OPTIONS_SINGLE=	SG1
-OPTIONS_SINGLE_SG1=	ALTIVEC SSE
+OPTIONS_RADIO=	RG1
+OPTIONS_RADIO_RG1=	ALTIVEC SSE
 ALTIVEC_DESC=	Use Altivec instructions
+RG1_DESC=	Optimizations Selection
 
 .include <bsd.port.options.mk>
 
