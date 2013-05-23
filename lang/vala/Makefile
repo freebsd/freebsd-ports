@@ -29,8 +29,8 @@ PLIST_SUB=	VERSION=${VALA_VER}
 .if defined(VALA_SLAVE)
 LIB_DEPENDS+=	vala-${VALA_VER}.0:${PORTSDIR}/lang/vala
 CONFIGURE_ARGS+=--enable-vapigen
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 MAN1=		vala-gen-introspect.1 vapigen.1
 .else
 CONFIGURE_ARGS+=--disable-vapigen
