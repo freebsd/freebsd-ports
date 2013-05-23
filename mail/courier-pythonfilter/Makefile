@@ -1,9 +1,5 @@
-# New ports collection makefile for:	courier-pythonfilter
-# Date created:				Jun 19, 2006
-# Whom:					Milan Obuch
-#
+# Created by: Milan Obuch
 # $FreeBSD$
-#
 
 PORTNAME=	courier-pythonfilter
 PORTVERSION=	1.6
@@ -26,43 +22,49 @@ MAILGID=	465
 LOCALSTATEDIR=	/var/spool/courier
 SCRIPTSDIR=	${PREFIX}/libexec/filters
 
-OPTIONS=	DEBUG		"debug module"					on \
-		NODUPLICATES	"noduplicates module"				off \
-		LOCALSENDERS	"localsenders module"				off \
-		CLAMAV_CLAMD	"clamav filter with py-pyclamd \ mutually"	off \
-		CLAMAV_LIB	"clamav filter with py-clamav  / exclusive"	off \
-		SPAMASSASSIN	"spamassassin module"				off \
-		AUTO_WHITELIST	"auto_whitelist module"				off \
-		WHITELIST_RELAY	"whitelist_relayclients module"			on \
-		WHITELIST_AUTH	"whitelist_auth module"				on \
-		WHITELIST_BLOCK	"whitelist_block module"			off \
-		WHITELIST_DNSWL	"whitelist_dnswl module"			off \
-		WHITELIST_SPF	"whitelist_spf module"				off \
-		DELIVEREDTO	"deliveredto module"				off \
-		PRIVATEADDR	"privateaddr module"				off \
-		SPFCHECK	"spfcheck module"				off \
-		NOSUCCESSDSN	"nosuccessdsn module"				off \
-		COMEAGAIN	"comeagain module"				off \
-		GREYLIST	"greylist module"				off \
-		DIALBACK	"dialback module"				off \
-		RATELIMIT	"ratelimit module"				off \
-		ATTACHMENTS	"attachments module"				off \
-		QUOTA		"quota module"					off
+OPTIONS_DEFINE=	DEBUG NODUPLICATES LOCALSENDERS SPAMASSASSIN AUTO_WHITELIST WHITELIST_RELAY WHITELIST_AUTH \
+		WHITELIST_BLOCK WHITELIST_DNSWL WHITELIST_DNSWL DELIVEREDTO PRIVATEADDR SPFCHECK NOSUCCESSDSN \
+		COMEAGAIN GREYLIST DIALBACK RATELIMIT ATTACHMENTS QUOTA
+
+DEBUG_DESC=	debug module
+NODUPLICATES_DESC=	noduplicates module
+LOCALSENDERS_DESC=	localsenders module
+CLAMAV_CLAMD_DESC=	clamav filter with py-pyclamd \ mutually
+CLAMAV_LIB_DESC=	clamav filter with py-clamav  / exclusive
+SPAMASSASSIN_DESC=	spamassassin module
+AUTO_WHITELIST_DESC=	auto_whitelist module
+WHITELIST_RELAY_DESC=	whitelist_relayclients module
+WHITELIST_AUTH_DESC=	whitelist_auth module
+WHITELIST_BLOCK_DESC=	whitelist_block module
+WHITELIST_DNSWL_DESC=	whitelist_dnswl module
+WHITELIST_SP_DESC=	Fwhitelist_spf module
+DELIVEREDTO_DESC=	deliveredto module
+PRIVATEADDR_DESC=	privateaddr module
+SPFCHECK_DESC=	spfcheck module
+NOSUCCESSDSN_DESC=	nosuccessdsn module
+COMEAGAIN_DESC=	comeagain module
+GREYLIST_DESC=	greylist module
+DIALBACK_DESC=	dialback module
+RATELIMIT_DESC=	ratelimit module
+ATTACHMENTS_DESC=	attachments module
+QUOTA_DESC=	quota module
+
+OPTIONS_RADIO=	RG1
+OPTIONS_RADIO_RG1=	CLAMAV_CLAMD CLAMAV_LIB
+RG1_DESC=	ClamAV Filter Option
+
+OPTIONS_DEFAULT=	DEBUG WHITELIST_RELAY WHITELIST_AUTH
 
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS:=${PYDISTUTILS_INSTALLARGS} --install-scripts=${SCRIPTSDIR}
 
-.if defined(WITH_CLAMAV_CLAMD) && !defined(WITH_CLAMAV_LIB)
+.if ${PORT_OPTIONS:MCLAMAV_CLAMD) && ! ${PORT_OPTIONS:MCLAMAV_LIB}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamd.py:${PORTSDIR}/security/py-pyclamd
 .endif
 
-.if defined(WITH_CLAMAV_LIB) && !defined(WITH_CLAMAV_CLAMD)
+.if ${PORT_OPTIONS:MCLAMAV_LIB) && ! ${PORT_OPTIONS:MCLAMAV_CLAMD}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamav.so:${PORTSDIR}/security/py-clamav
-.endif
-
-.if defined(WITH_CLAMAV_CLAMD) && defined(WITH_CLAMAV_LIB)
-BROKEN= py-pyclamd and py-clamav dependencies are mutually exclusive. Run 'make config' to (re)configure ${PKGNAME}
 .endif
 
 post-extract:
@@ -72,67 +74,67 @@ post-extract:
 post-configure:
 	@${ECHO_MSG} Adding your OPTIONS to sample config file...
 	@${ECHO_MSG} >> ${WRKSRC}/pythonfilter.conf.sample
-.if !defined(WITHOUT_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 	@${ECHO_MSG} debug >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_NODUPLICATES)
+.if ${PORT_OPTIONS:MNODUPLICATES}
 	@${ECHO_MSG} noduplicate >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_LOCALSENDERS)
+.if ${PORT_OPTIONS:MLOCALSENDERS}
 	@${ECHO_MSG} localsenders >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_CLAMAV_CLAMD) || defined(WITH_CLAMAV_LIB)
+.if ${PORT_OPTIONS:MCLAMAV_CLAMD) || ${PORT_OPTIONS:MCLAMAV_LIB}
 	@${ECHO_MSG} clamav >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_SPAMASSASSIN)
+.if ${PORT_OPTIONS:MSPAMASSASSIN}
 	@${ECHO_MSG} spamassassin >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_AUTO_WHITELIST)
+.if ${PORT_OPTIONS:MAUTO_WHITELIST}
 	@${ECHO_MSG} auto_whitelist >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if !defined(WITHOUT_WHITELIST_RELAY)
+.if ${PORT_OPTIONS:MWHITELIST_RELAY}
 	@${ECHO_MSG} whitelist_relayclients >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if !defined(WITHOUT_WHITELIST_AUTH)
+.if ${PORT_OPTIONS:MWHITELIST_AUTH}
 	@${ECHO_MSG} whitelist_auth >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_WHITELIST_BLOCK)
+.if ${PORT_OPTIONS:MWHITELIST_BLOCK}
 	@${ECHO_MSG} whitelist_block >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_WHITELIST_DNSWL)
+.if ${PORT_OPTIONS:MWHITELIST_DNSWL}
 	@${ECHO_MSG} whitelist_dnswl >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_WHITELIST_SPF)
+.if ${PORT_OPTIONS:MWHITELIST_SPF}
 	@${ECHO_MSG} whitelist_spf >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_DELIVEREDTO)
+.if ${PORT_OPTIONS:MDELIVEREDTO}
 	@${ECHO_MSG} deliveredto >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_PRIVATEADDR)
+.if ${PORT_OPTIONS:MPRIVATEADDR}
 	@${ECHO_MSG} privateaddr >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_SPFCHECK)
+.if ${PORT_OPTIONS:MSPFCHECK}
 	@${ECHO_MSG} spfcheck >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_NOSUCCESSDSN)
+.if ${PORT_OPTIONS:MNOSUCCESSDSN}
 	@${ECHO_MSG} nosuccessdsn >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_COMEAGAIN)
+.if ${PORT_OPTIONS:MCOMEAGAIN}
 	@${ECHO_MSG} comeagain >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_GREYLIST)
+.if ${PORT_OPTIONS:MGREYLIST}
 	@${ECHO_MSG} greylist >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_DIALBACK)
+.if ${PORT_OPTIONS:MDIALBACK}
 	@${ECHO_MSG} dialback >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_RATELIMIT)
+.if ${PORT_OPTIONS:MRATELIMIT}
 	@${ECHO_MSG} ratelimit >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_ATTACHMENTS)
+.if ${PORT_OPTIONS:MATTACHMENTS}
 	@${ECHO_MSG} attachments >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
-.if defined(WITH_QUOTA)
+.if ${PORT_OPTIONS:MQUOTA}
 	@${ECHO_MSG} quota >> ${WRKSRC}/pythonfilter.conf.sample
 .endif
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cclient
-# Date created:				2 July 2000
-# Whom:					Kelly Yancey <kbyanc@FreeBSD.org>
-#
+# Created by: Kelly Yancey <kbyanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cclient
 PORTVERSION=	2007f
@@ -22,16 +18,16 @@ COMMENT=	Mark Crispin's C-client mail access routines
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-OPTIONS=	SSL "Compile with SSL support" on \
-		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
-		IPV6 "Support IPv6" on \
-		MBX_DEFAULT "Use MBX as default mailbox format" off
+OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT IPV6 MBX_DEFAULT
+OPTIONS_DEFAULT=	SSL
+SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
+MBX_DEFAULT_DESC=	Use MBX as default mailbox format
 
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if ! defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 .endif
 
@@ -39,10 +35,10 @@ USE_OPENSSL=	yes
 
 USE_LDCONFIG=	yes
 ALL_TARGET=	bsf
-.if defined(WITHOUT_SSL)
+.if ! ${PORT_OPTIONS:MSSL}
 MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
-.if defined(WITH_SSL_AND_PLAINTEXT)
+.if ${PORT_OPTIONS:MSSL_AND_PLAINTEXT}
 MAKE_ARGS+=	SSLTYPE=unix SSLDIR=${OPENSSLDIR}
 .else
 MAKE_ARGS+=	SSLTYPE=unix.nopwd SSLDIR=${OPENSSLDIR}
@@ -65,16 +61,16 @@ post-patch:
 		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
 		${WRKSRC}/src/osdep/unix/env_unix.h
-.if ! defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@${REINPLACE_CMD} -e " \
 		s:SSLINCLUDE=/usr/include/openssl SSLLIB=/usr/lib:SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}: \
 		" ${WRKSRC}/Makefile
 .endif
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	@${REINPLACE_CMD} -e "s|^IP=4|IP=6|" ${WRKSRC}/Makefile \
 		${WRKSRC}/src/osdep/unix/Makefile
 .endif
-.if defined(WITH_MBX_DEFAULT)
+.if ${PORT_OPTIONS:MMBX_DEFAULT}
 	@${REINPLACE_CMD} -e "s|^CREATEPROTO=unixproto|CREATEPROTO=mbxproto|" \
 		${WRKSRC}/src/osdep/unix/Makefile
 .endif
@@ -91,7 +87,7 @@ PORTREV_H=	${WRKDIR}/portrevision.h
 
 post-build:
 	@${ECHO_CMD} "#define CCLIENT_PORTVERSION \"${PORTVERSION}\"" >${PORTREV_H}
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@${ECHO_CMD} "#define CCLIENT_SSLENABLED \"yes\"" >>${PORTREV_H}
 .else
 	@${ECHO_CMD} "#define CCLIENT_SSLENABLED \"no\"" >>${PORTREV_H}
@@ -113,7 +109,7 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${PORTREV_H} ${PREFIX}/include/c-client
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@${ECHO} "================================================================================"
 	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
 	@${ECHO} "the cclient library but do not support SSL may stop working or have problems"
