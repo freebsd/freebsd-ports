@@ -1,13 +1,9 @@
-# New ports collection makefile for:	sssd
-# Date created:				Sep 6 2011
-# Whom:					Andrew Elble <aweits@rit.edu>
-#
+# Created by: Andrew Elble <aweits@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	sssd
 DISTVERSION=	1.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
@@ -22,7 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		tdb.1:${PORTSDIR}/databases/tdb \
 		ldb:${PORTSDIR}/databases/ldb \
-		cares.2:${PORTSDIR}/dns/c-ares \
+		cares:${PORTSDIR}/dns/c-ares \
 		dbus:${PORTSDIR}/devel/dbus \
 		dhash.1:${PORTSDIR}/devel/ding-libs \
 		pcre.3:${PORTSDIR}/devel/pcre \
@@ -57,12 +53,16 @@ USES=		gettext iconv
 USE_PYTHON=	yes
 
 USE_RC_SUBR=	${PORTNAME}
-MAN5=		sssd-ipa.5 sssd-krb5.5 sssd-ldap.5 sssd-simple.5 \
-		sssd.conf.5
-MAN8=		pam_sss.8 sss_cache.8 sss_groupadd.8 sss_groupdel.8 \
-		sss_groupmod.8 sss_groupshow.8 sss_obfuscate.8 \
-		sss_useradd.8 sss_userdel.8 sss_usermod.8 sssd.8 \
-		sssd_krb5_locator_plugin.8
+MANLANG=	"" cs es nl uk
+MAN5_EN=	sssd-ipa.5 sssd-krb5.5 sssd-ldap.5 sssd-simple.5 sssd.conf.5
+MAN8_CS=	sss_groupdel.8
+MAN8_EN=	pam_sss.8 sss_cache.8 sss_groupadd.8 sss_groupdel.8 \
+		sss_groupmod.8 sss_groupshow.8 sss_obfuscate.8 sss_useradd.8 \
+		sss_userdel.8 sss_usermod.8 sssd.8 sssd_krb5_locator_plugin.8
+MAN8_ES=	sss_groupmod.8
+MAN8_NL=	sss_groupmod.8
+MAN8_UK=	sss_groupadd.8 sss_groupdel.8 sss_groupmod.8 sss_groupshow.8 \
+		sss_userdel.8 sss_usermod.8
 
 .include <bsd.port.pre.mk>
 
