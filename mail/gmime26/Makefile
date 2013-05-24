@@ -36,16 +36,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 LATEST_LINK?=	${PORTNAME}26
 
-PORTDOCS=	*
-
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
 		${WRKSRC}/Makefile.in
 
-post-install:
 .if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+
+post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in docs/reference/html/*
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
