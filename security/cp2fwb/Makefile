@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cp2fwb
-# Date created:			20 April 2002
-# Whom:				Christian Brueffer <chris@unixpages.org>
-#
+# Created by: Christian Brueffer <chris@unixpages.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cp2fwb
 PORTVERSION=	0.6
@@ -22,10 +18,6 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cp2fwbuilder ${PREFIX}/bin
