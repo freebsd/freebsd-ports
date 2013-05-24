@@ -1,11 +1,11 @@
---- htdocs/Makefile.in.orig	2012-05-14 13:21:26.387873095 +0200
-+++ htdocs/Makefile.in	2012-05-14 13:22:37.617874000 +0200
-@@ -424,7 +424,7 @@
+--- htdocs/Makefile.in.orig	2013-03-04 14:07:55.000000000 +0100
++++ htdocs/Makefile.in	2013-05-20 12:58:07.514020869 +0200
+@@ -433,7 +433,7 @@
  install-data-local:
  	$(MKDIR) -p $(DESTDIR)$(HTDOCSDIR)
  	$(ECHO)	"#!/bin/sh" > $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
--	$(ECHO)	"$(prefix)/bin/smokeping_cgi $(prefix)/etc/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
-+	$(ECHO)	"$(prefix)/bin/smokeping_cgi $(sysconfdir)/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
+-	$(ECHO)	"exec $(prefix)/bin/smokeping_cgi $(prefix)/etc/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
++	$(ECHO)	"exec $(prefix)/bin/smokeping_cgi $(sysconfdir)/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
  	chmod +x $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -101,6 +101,7 @@ smokeping/lib/Smokeping/probes/basefork.pm
 smokeping/lib/Smokeping/probes/basevars.pm
 smokeping/lib/Smokeping/probes/passwordchecker.pm
 smokeping/lib/Smokeping/probes/skel.pm
+smokeping/lib/Smokeping/probes/SendEmail.pm
 smokeping/lib/Smokeping/sorters/Loss.pm
 smokeping/lib/Smokeping/sorters/Max.pm
 smokeping/lib/Smokeping/sorters/Median.pm
