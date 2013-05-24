@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgmp
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp.gmplib.org/pub/gmp-${PORTVERSION}/
 PKGNAMEPREFIX=	mingw32-
