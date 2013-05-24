@@ -1,12 +1,12 @@
---- utils/Makefile.in.orig	2012-12-04 00:27:15.000000000 +0900
-+++ utils/Makefile.in	2012-12-04 00:27:30.000000000 +0900
-@@ -1505,9 +1505,7 @@
+--- utils/Makefile.in.orig	2013-04-03 22:42:37.000000000 +0900
++++ utils/Makefile.in	2013-04-03 22:43:41.000000000 +0900
+@@ -1816,9 +1816,7 @@
  @HWLOC_HAVE_CAIRO_FALSE@@HWLOC_HAVE_WINDOWS_FALSE@	rm -f $(DESTDIR)$(bindir)/lstopo
  @HWLOC_HAVE_CAIRO_FALSE@@HWLOC_HAVE_WINDOWS_FALSE@	cd $(DESTDIR)$(bindir) && $(LN_S) lstopo-no-graphics$(EXEEXT) lstopo$(EXEEXT) || true
- 	rm -f $(DESTDIR)$(man1dir)/hwloc-ls.1 $(DESTDIR)$(man1dir)/hwloc-info.1
--	cd $(DESTDIR)$(man1dir) && $(LN_S) lstopo.1 hwloc-ls.1 && $(LN_S) lstopo.1 hwloc-info.1
+ 	rm -f $(DESTDIR)$(man1dir)/hwloc-ls.1
+-	cd $(DESTDIR)$(man1dir) && $(LN_S) lstopo.1 hwloc-ls.1
  	rm -f $(DESTDIR)$(man1dir)/lstopo-no-graphics.1
 -	cd $(DESTDIR)$(man1dir) && $(LN_S) lstopo.1 lstopo-no-graphics.1
- 	$(SED) -e 's/abs_top_builddir\/utils/bindir/' -e '/abs_top_builddir/d' $(DESTDIR)$(bindir)/hwloc-assembler-remote > $(DESTDIR)$(bindir)/hwloc-assembler-remote.tmp && mv -f $(DESTDIR)$(bindir)/hwloc-assembler-remote.tmp $(DESTDIR)$(bindir)/hwloc-assembler-remote
+ 	$(SED) -e 's/HWLOC_top_builddir\/utils/bindir/' -e '/HWLOC_top_builddir/d' $(DESTDIR)$(bindir)/hwloc-assembler-remote > $(DESTDIR)$(bindir)/hwloc-assembler-remote.tmp && mv -f $(DESTDIR)$(bindir)/hwloc-assembler-remote.tmp $(DESTDIR)$(bindir)/hwloc-assembler-remote
  	chmod +x $(DESTDIR)$(bindir)/hwloc-assembler-remote
  
