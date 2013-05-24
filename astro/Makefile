@@ -37,6 +37,7 @@
     SUBDIR += libgal
     SUBDIR += libkgeomap
     SUBDIR += libnova
+    SUBDIR += libosmpbf
     SUBDIR += libroadnav
     SUBDIR += luna
     SUBDIR += marble
