@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.0802
+PORTVERSION=	2.1001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -45,7 +45,8 @@ TEST_DEPENDS=	\
 	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Test-DependentModules>=0.13:${PORTSDIR}/devel/p5-Test-DependentModules
+	p5-Test-DependentModules>=0.13:${PORTSDIR}/devel/p5-Test-DependentModules \
+	p5-Test-CheckDeps>=0:${PORTSDIR}/devel/p5-Test-CheckDeps
 
 CFLAGS+=	-I.	# mop.h
 MAKE_JOBS_UNSAFE=	yes
