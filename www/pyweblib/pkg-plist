@@ -19,13 +19,12 @@
 @dirrm %%PYTHON_SITELIBDIR%%/pyweblib
 @comment -
 @comment --- HTML documentation ---
-%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.forms.html
-%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.helper.html
-%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.html
-%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.httphelper.html
-%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.session.html
-%%PORTDOCS%%%%DOCSDIR%%/pydoc/pyweblib.sslenv.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pydoc
+%%PORTDOCS%%%%DOCSDIR%%/pyweblib.forms.html
+%%PORTDOCS%%%%DOCSDIR%%/pyweblib.helper.html
+%%PORTDOCS%%%%DOCSDIR%%/pyweblib.html
+%%PORTDOCS%%%%DOCSDIR%%/pyweblib.httphelper.html
+%%PORTDOCS%%%%DOCSDIR%%/pyweblib.session.html
+%%PORTDOCS%%%%DOCSDIR%%/pyweblib.sslenv.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment -
 @comment --- some examples here ---
