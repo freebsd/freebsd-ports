@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liblcfg
-# Date created:		2012-06-15
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liblcfg
 PORTVERSION=	0.2.2
