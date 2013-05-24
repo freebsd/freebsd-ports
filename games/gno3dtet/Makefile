@@ -3,7 +3,7 @@
 
 PORTNAME=	gno3dtet
 PORTVERSION=	1.96.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games gnome
 MASTER_SITES=	http://eseb.net/ftp/gno3dtet/
 EXTRACT_SUFX=	.tgz
