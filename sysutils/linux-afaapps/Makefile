@@ -15,6 +15,8 @@ COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 
 RESTRICTED=		binary redistribution license needs clarification
 
+EXTRACT_SUFX=	.tar.gz
+
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	arts
 ONLY_FOR_ARCHS=	i386 amd64
@@ -22,14 +24,9 @@ BRANDELF_FILES=	usr/sbin/afacli
 SRC_DISTFILES=	# empty, no sources available
 
 RPMFILE=	${PORTNAME}-${PORTVERSION}-2.${LINUX_RPM_ARCH}.rpm
-
-.include <bsd.port.pre.mk>
+EXTRACT_AFTER_ARGS=	-O ${RPMFILE} | ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} - ./usr/sbin/afacli.bin ./usr/sbin/getcfg.afa
 
 post-extract:
-	@cd ${WRKDIR} && ${RPM2CPIO} ${RPMFILE} | ${CPIO} -id --quiet && \
-	    ${RM} ${RPMFILE} readme
-	${RM} -rf ${WRKDIR}/dev
-	${RM} ${WRKDIR}/usr/sbin/afacli
-	${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
+	@${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
