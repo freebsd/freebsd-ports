@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dualserver
-PORTVERSION=	7.01
+PORTVERSION=	7.02
 CATEGORIES=	dns net
 MASTER_SITES=	SF/dhcp-dns-server/Dual%20DHCP%20DNS%20Server/ \
 		http://rodrigo.osorio.free.fr/freebsd/distfiles/
