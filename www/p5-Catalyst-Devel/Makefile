@@ -1,9 +1,5 @@
-# Ports collection makefile for:	www/p5-Catalyst-Devel
-# Date created:				July 11, 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Devel
 PORTVERSION=	1.37
@@ -47,10 +43,4 @@ MAN3=		Catalyst::Devel.3 \
 		Catalyst::Restarter::Win32.3 \
 		Module::Install::Catalyst.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
