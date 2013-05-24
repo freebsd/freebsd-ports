@@ -29,11 +29,10 @@ CONFLICTS=	spandsp-[0-9]*
 
 OPTIONS_DEFINE=	DOXYGEN
 
-PORTDOCS=	*
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
 CONFIGURE_ARGS+=--enable-doc
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
