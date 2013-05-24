@@ -16,7 +16,7 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} => 900007
+.if ${OSVERSION} >= 900007
 BROKEN=		Does not build with utmpx.
 .endif
 
