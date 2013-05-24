@@ -1,18 +1,14 @@
-# New ports collection makefile for:   dosbox
-# Date created:        28 July 2002
-# Whom:                Tom Carrick <knyghtmare@knyghtmare.com>
-#
+# Created by: Tom Carrick <knyghtmare@knyghtmare.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dosbox
 PORTVERSION=	0.74
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	knyght@gmail.com
-COMMENT=	An emulator of a PC with DOS
+COMMENT=	Emulator of a PC with DOS
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
@@ -27,6 +23,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-core-inline
 
+DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
+		"" "dosbox" \
+		"System;Emulator;" "true"
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#\/usr\/share\/doc\/dosbox#${DOCSDIR}#g' \
 		${WRKSRC}/docs/dosbox.1
@@ -34,7 +36,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dosbox ${PREFIX}/bin/dosbox
 	${INSTALL_MAN} ${WRKSRC}/docs/dosbox.1 ${MAN1PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
