@@ -99,7 +99,7 @@ post-install:
 	@${ECHO} "If you want to allow users to restart or shutdown the system,"
 	@${ECHO} "do not forget to add the following lines between the <config>"
 	@${ECHO} "tags in your PolicyKit.conf file."
-	@${ECHO} "  ${PREFIX}/etc/PolicyKit/PolicyKit.conf
+	@${ECHO} "  ${PREFIX}/etc/PolicyKit/PolicyKit.conf"
 	@${ECHO} ""
 	@${ECHO} "<match action=\"org.freedesktop.hal.power-management.shutdown\">"
 	@${ECHO} "    <return result=\"yes\"/>"
