@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libshhmsg
-# Date created:				1 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	libshhmsg
 PORTVERSION=	1.4.1
@@ -17,9 +12,12 @@ COMMENT=	Library for displaying messages
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes
+MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+
+.include <bsd.port.options.mk
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in CREDITS README shhmsg.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
