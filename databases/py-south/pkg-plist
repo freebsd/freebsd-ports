@@ -342,6 +342,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/utils/datetime_utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/utils/datetime_utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/utils/datetime_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/utils/py3.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/utils/py3.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/utils/py3.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/v2.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/v2.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/south/v2.pyo
