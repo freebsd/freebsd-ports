@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-FreshBooks-API
-# Date created:		2010-01-03
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-FreshBooks-API
 PORTVERSION=	0.23
@@ -65,10 +61,6 @@ MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Role::SendBy.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-Module-Build>=0.3601:${PORTSDIR}/devel/p5-Module-Build
-.endif
 
 .if ${PERL_LEVEL} < 501400
 RUN_DEPENDS+=	p5-parent>=0.224:${PORTSDIR}/devel/p5-parent
