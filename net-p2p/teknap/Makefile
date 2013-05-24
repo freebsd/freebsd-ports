@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TekNap napster client
-# Date created:				6 Jul 2000
-# Whom:					Carl Johan Madestrand
-#
+# Created by: Carl Johan Madestrand
 # $FreeBSD$
-#
 
 PORTNAME=	TekNap
 PORTVERSION=	1.3.g
@@ -64,6 +60,7 @@ pre-configure:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/mkinstalldirs/ s,$$(HELPDIR) $$(NAPLIB),,g' \
+		-e "s/-I-//g" \
 		${WRKSRC}/Makefile.in
 
 post-install:
