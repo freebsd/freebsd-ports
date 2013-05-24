@@ -2,34 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	4.10.8
-PORTREVISION=	5
+PORTVERSION=	4.10.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf autoheader automake libltdl
 WANT_GNOME=	yes
 
-OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT VIRT
+OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT LIBVIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_HTTP
+OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_HTTP NOTIFYEMAIL
 OPTIONS_GROUP_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK \
-			NUTUPS INTERFACE MBMON MEMCACHED MYSQL NGINX OPENVPN \
-			PDNS PGSQL PING PYTHON ROUTEROS SNMP TOKYOTYRANT XMMS
+			NUTUPS INTERFACE MBMON MEMCACHED MYSQL NGINX \
+			OPENVPN PDNS PGSQL PING PYTHON ROUTEROS SNMP \
+			TOKYOTYRANT XMMS
 OPTIONS_DEFAULT=	BIND INTERFACE PING SNMP RRDTOOL RRDCACHED
 
 CGI_DESC=		Install collection.cgi (requires RRDTOOL)
 BIND_DESC=		Enable BIND 9.5+ statistics
-DEBUG_DESC=		Enable debugging
-GCRYPT_DESC=		Build with libgcrypt
-VIRT_DESC=		Build with libvirt
 # INPUT
 APACHE_DESC=		Apache mod_status (libcurl)
 APCUPS_DESC=		APC UPS (apcupsd)
@@ -42,15 +39,12 @@ NUTUPS_DESC=		NUT UPS daemon
 INTERFACE_DESC=		Network interfaces (libstatgrab)
 MBMON_DESC=		MBMon
 MEMCACHED_DESC=		Memcached
-MYSQL_DESC=		MySQL
 NGINX_DESC=		Nginx
+NOTIFYEMAIL_DESC=	Email notifications (libesmtp, libnotify)
 OPENVPN_DESC=		OpenVPN statistics
 PDNS_DESC=		PowerDNS
-PGSQL_DESC=		PostgreSQL
 PING_DESC=		Network latency (liboping)
-PYTHON_DESC=		Python plugin
 ROUTEROS_DESC=		RouterOS plugin
-SNMP_DESC=		SNMP
 TOKYOTYRANT_DESC=	Tokyotyrant database
 XMMS_DESC=		XMMS
 # OUTPUT
@@ -108,7 +102,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-netlink \
 		--disable-nfs \
 		--disable-notify_desktop \
-		--disable-notify_email \
 		--disable-olsrd \
 		--disable-onewire \
 		--disable-oracle \
@@ -297,6 +290,17 @@ CONFIGURE_ARGS+=--disable-nginx
 PLIST_SUB+=	NGINX="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MNOTIFYEMAIL}
+LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=--enable-notify_email
+CONFIGURE_ARGS+=--with-libesmtp=${PREFIX}
+PLIST_SUB+=	NOTIFYEMAIL=""
+.else
+CONFIGURE_ARGS+=--disable-notify_email
+PLIST_SUB+=	NOTIFYEMAIL="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MOPENVPN}
 CONFIGURE_ARGS+=--enable-openvpn
 RUN_DEPENDS+=	${LOCALBASE}/sbin/openvpn:${PORTSDIR}/security/openvpn
@@ -387,7 +391,7 @@ CONFIGURE_ARGS+=--disable-tokyotyrant --without-libtokyotyrant
 PLIST_SUB+=	TOKYOTYRANT="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MVIRT}
+.if ${PORT_OPTIONS:MLIBVIRT}
 CONFIGURE_ARGS+=--enable-libvirt
 LIB_DEPENDS+=	virt.1000:${PORTSDIR}/devel/libvirt
 PLIST_SUB+=	VIRT=""
