@@ -3,7 +3,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
-PORTREVISION?=	1
+PORTREVISION?=	2
 DISTVERSIONSUFFIX=DrO_o
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
@@ -389,8 +389,10 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install --without-ldconfig
+.if !defined(XMMS2_SLAVE)
 	if [ ! -d ${DATADIR}/scripts/startup.d ]; then \
 		${MKDIR} ${DATADIR}/scripts/startup.d;\
 	fi
+.endif
 
 .include <bsd.port.mk>
