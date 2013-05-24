@@ -1,6 +1,16 @@
 --- wscript.orig	2011-10-20 21:26:08.000000000 +0200
-+++ wscript	2012-05-06 18:28:07.902349353 +0200
-@@ -295,9 +295,6 @@
++++ wscript	2013-05-24 16:57:29.409207485 +0200
+@@ -131,7 +131,8 @@
+             VERSION = bld.env.VERSION
+             )
+ 
+-    bld.install_files('${SHAREDDIR}', "mind.in.a.box-lament_snipplet.ogg")
++    if bld.env.BUILD_XMMS2D:
++        bld.install_files('${SHAREDDIR}', "mind.in.a.box-lament_snipplet.ogg")
+ 
+     bld.add_post_fun(shutdown)
+ 
+@@ -295,9 +296,6 @@
          conf.msg("uncommited changed", changed and "yes" or "no")
          conf.env.VERSION = "%s (git commit: %s%s)" % (BASEVERSION, nam, dirty)
  
@@ -10,7 +20,7 @@
      if conf.options.with_profiling:
          conf.env.with_profiling = True
          conf.env.append_unique('CFLAGS', ['--coverage'])
-@@ -330,7 +327,7 @@
+@@ -330,7 +328,7 @@
          conf.env.PKGCONFIGDIR = conf.options.pkgconfigdir
          Logs.pprint('Normal', conf.env.PKGCONFIGDIR) #XXX What is it ?
      else:
@@ -19,7 +29,7 @@
  
      if conf.options.config_prefix:
          for d in conf.options.config_prefix:
-@@ -339,6 +336,8 @@
+@@ -339,6 +337,8 @@
              conf.env.prepend_value('LIBPATH', os.path.join(d, 'lib'))
              conf.env.prepend_value('CPPPATH', os.path.join(d, 'include'))
  
