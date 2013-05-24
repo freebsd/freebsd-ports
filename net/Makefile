@@ -191,6 +191,7 @@
     SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
+    SUBDIR += grive
     SUBDIR += grsync
     SUBDIR += gsk
     SUBDIR += gspoof
