@@ -18,15 +18,6 @@
 %%PYTHON_SITELIBDIR%%/pyweblib/sslenv.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pyweblib
 @comment -
-@comment --- HTML documentation ---
-%%PORTDOCS%%%%DOCSDIR%%/pyweblib.forms.html
-%%PORTDOCS%%%%DOCSDIR%%/pyweblib.helper.html
-%%PORTDOCS%%%%DOCSDIR%%/pyweblib.html
-%%PORTDOCS%%%%DOCSDIR%%/pyweblib.httphelper.html
-%%PORTDOCS%%%%DOCSDIR%%/pyweblib.session.html
-%%PORTDOCS%%%%DOCSDIR%%/pyweblib.sslenv.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@comment -
 @comment --- some examples here ---
 %%EXAMPLESDIR%%/cgi-bin/test-forms.py
 %%EXAMPLESDIR%%/cgi-bin/test-session.py
