@@ -35,7 +35,7 @@ LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.
 .if exists(${LOCALBASE}/bin/gd2topng)
-WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || true
+WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || ${ECHO_CMD}
 .else
 WITH_X11_CHECK=		# empty
 .endif
