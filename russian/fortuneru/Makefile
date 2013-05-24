@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortuneru
-# Date created:        26-09-2001
-# Whom:                bestia@iptcom.net
-#
+# Created by: bestia@iptcom.net
 # $FreeBSD$
-#
 
 PORTNAME=	fortuneru
 PORTVERSION=	20090524
@@ -21,7 +17,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 STRCMD=		/usr/games/strfile
 
 do-install:
-	@${SETENV} STRCMD=${STRCMD} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} STRCMD=${STRCMD} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/share/games/fortune/rus
 	${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/share/games/fortune/rus
 
