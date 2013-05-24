@@ -10,6 +10,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		SQL backend for SquirrelMail Calendar plugin
 
+BROKEN=			does not build
+
 RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 PEARDIR=		${PREFIX}/share/pear
 
