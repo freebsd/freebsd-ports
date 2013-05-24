@@ -1,19 +1,15 @@
-# New ports collection makefile for:	py-south
-# Date created:			July 29 2009
-# Whom:				Stanislav Svirid <count@211.ru>
-#
+# Created by: Stanislav Svirid <count@211.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	south
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	South-${PORTVERSION}
 
 MAINTAINER=	wg@FreeBSD.org
-COMMENT=	This is South, intelligent schema migrations for Django apps
+COMMENT=	Intelligent schema migrations for Django apps
 
 LICENSE=	AL2
 
