@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey17			\
