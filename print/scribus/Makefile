@@ -35,7 +35,6 @@ USES=		cmake desktop-file-utils pkgconfig shared-mime-info
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWITH_ASPELL=NO -DWANT_HUNSPELL=YES
-CMAKE_VERBOSE=	YES
 
 MAN1=		scribus.1
 MANLANG=	"" pl de
