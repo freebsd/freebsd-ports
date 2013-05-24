@@ -1,12 +1,8 @@
-# New ports collection makefile for:	irssi-scripts
-# Date created:				Jul 14 2005
-# Whom:					Alexey Mikhailov <karma@ez.pereslavl.ru>
-#
+# Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	irssi-scripts
-PORTVERSION=	20120326
+PORTVERSION=	20130508
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/i/${PORTNAME}/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
