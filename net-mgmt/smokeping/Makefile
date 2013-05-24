@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smokeping
-PORTVERSION=	2.6.8
+PORTVERSION=	2.6.9
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -10,7 +10,7 @@ MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Latency logging and graphing system
 
-LIB_DEPENDS=	rrd.6:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
@@ -71,6 +71,7 @@ MAN3=		Smokeping_matchers_Avgratio.3 \
 		Smokeping_probes_OpenSSHJunOSPing.3 \
 		Smokeping_probes_Radius.3 \
 		Smokeping_probes_RemoteFPing.3 \
+		Smokeping_probes_SendEmail.3 \
 		Smokeping_probes_SSH.3 \
 		Smokeping_probes_SipSak.3 \
 		Smokeping_probes_TCPPing.3 \
@@ -117,6 +118,7 @@ OPTIONS_DEFINE=	ECHOPING CURL RADIUS TELNET DNS FPING LDAP LDAPSSL
 OPTIONS_DEFAULT=	FPING
 
 .include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MFPING}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 .endif
@@ -169,6 +171,8 @@ post-install:
 	[ -f ${PREFIX}/smokeping/htdocs/smokeping.fcgi ] || ${CP} ${PREFIX}/smokeping/htdocs/smokeping.fcgi.dist ${PREFIX}/smokeping/htdocs/smokeping.fcgi
 	${MKDIR} ${PREFIX}/smokeping/htdocs/img
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs
+	${MKDIR} ${PREFIX}/var/smokeping
+	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/smokeping
 .if !defined(BATCH)
 	${CAT} ${PKGMESSAGE}
 .endif
