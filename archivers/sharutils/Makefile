@@ -21,12 +21,13 @@ CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		sharutils
+USES=		charsetfix
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
-USES=		gettext
+USES+=		gettext
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 .else
 PLIST_SUB+=	NLS="@comment "
