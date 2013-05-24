@@ -81,7 +81,7 @@ PLIST_SUB+=	TOOLS="@comment "
 
 pre-everything::
 .if ${ARCH} == "i386"
-.if ${PORT_OPTIONS:MBDB) || ${PORT_OPTIONS:MTRANSLATE}
+.if ${PORT_OPTIONS:MBDB} || ${PORT_OPTIONS:MTRANSLATE}
 	@${ECHO} 'BDB/LibTranslate support may cause breakages in depended apps on ${ARCH}'
 	@${ECHO} 'Use it with caution'
 .endif
