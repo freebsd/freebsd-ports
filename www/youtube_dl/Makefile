@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2013.02.02
+PORTVERSION=	2013.05.10
 CATEGORIES=	www
 MASTER_SITES=	http://youtube-dl.org/downloads/${PORTVERSION}/ \
 		http://ftp.de.netbsd.org/pub/unix/Linux/MIRROR.gentoo/distfiles/
