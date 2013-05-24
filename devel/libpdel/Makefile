@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libpdel
-# Date created:				22 Apr 2002
-# Whom:					Archie Cobbs
-#
+# Created by: Archie Cobbs
 # $FreeBSD$
-#
 
 PORTNAME=	libpdel
 PORTVERSION=	0.5.3
@@ -15,6 +11,7 @@ MAINTAINER=	mav@alkar.net
 COMMENT=	Packet Design multi-purpose C library for embedded applications
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 USE_LDCONFIG=	yes
 

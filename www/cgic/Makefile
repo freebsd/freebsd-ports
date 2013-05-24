@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libcgic
-# Date created:				27 July 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	cgic
 PORTVERSION=	2.05
@@ -18,11 +14,14 @@ MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 MAKEFILE=	${FILESDIR}/Makefile.lib
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 USE_LDCONFIG=	yes
+MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 SHLIB_MAJOR=	${PORTVERSION:R}
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
