@@ -1,9 +1,5 @@
-# New ports collection makefile for:	FuzzyOcr
-# Date Created:				2006-11-03
-# Whom:					Shaun Amott <shaun@FreeBSD.org>
-#
+# Created by: Shaun Amott <shaun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	2.3b
@@ -51,10 +47,6 @@ PLIST_FILES=	${SA_CONFIGDIR}/FuzzyOcr.pm				\
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,g'		\
