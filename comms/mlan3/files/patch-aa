@@ -25,7 +25,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NOMAN=		1
++NO_MAN=		1
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mlan3
-# Date created:				January 16, 2002
-# Whom:					hm
-#
+# Created by: hm
 # $FreeBSD$
-#
 
 PORTNAME=	mlan3
 PORTVERSION=	1.00
