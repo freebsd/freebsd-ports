@@ -27,5 +27,3 @@ bin/gunshar
 %%NLS%%share/locale/vi/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sharutils.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
