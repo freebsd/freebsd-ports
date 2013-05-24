@@ -3,12 +3,14 @@
 
 PORTNAME=	yagf
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Graphical interface for an OCR program (cuneiform and tesseract)
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
