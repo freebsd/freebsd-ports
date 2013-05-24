@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fdm
-# Date created:		25 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fdm
 PORTVERSION=	1.6
@@ -25,17 +21,20 @@ MAKE_ARGS=	-DPCRE -DDB
 MAN1=	fdm.1
 MAN5=	fdm.conf.5
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[ch15]
 	@${REINPLACE_CMD} -e 's|/usr/local/include/openssl|/usr/include/openssl|;\
+		s|-I-||g;\
 		s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${MAKEFILE}
 
 post-install:
-.ifndef NOPORTEXAMPLES
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${INSTALL} -d ${EXAMPLESDIR}/
 	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}/
 .endif
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 .endif
