@@ -18,9 +18,6 @@ USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_RC_SUBR=	uwsgi
 
-PLIST_FILES=	bin/uwsgi \
-		${PYTHONPREFIX_SITELIBDIR}/uwsgidecorators.py
-
 post-patch:
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 
