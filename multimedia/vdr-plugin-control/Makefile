@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-control
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-control
 PORTVERSION=	0.0.2a45
