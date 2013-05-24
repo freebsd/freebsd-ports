@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -55,9 +55,15 @@ KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE}
 KMK_FLAGS=
 
+MAKE_FLAGS=	SYSDIR=${SRC_BASE}/sys
+
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
+MAKE_FLAGS+=	DEBUG_FLAGS="-O1 -g"
+PLIST_SUB+=	WITH_DEBUG=""
+.else
+PLIST_SUB+=	WITH_DEBUG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -120,13 +126,19 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC} && ${SH} env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
-	cd ${VBOX_BIN}/src && make SYSDIR=${SRC_BASE}/sys
+	cd ${VBOX_BIN}/src && make ${MAKE_FLAGS}
 
 do-install:
 	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${KMODDIR}
+.if ${PORT_OPTIONS:MDEBUG}
+	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${KMODDIR}
+.endif
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko ${KMODDIR}
+.if ${PORT_OPTIONS:MDEBUG}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko.symbols ${KMODDIR}
+.endif
 .endif
 	@/usr/sbin/kldxref ${KMODDIR}
 
