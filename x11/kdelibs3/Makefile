@@ -43,7 +43,6 @@ CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
-BROKEN=		kdelibs-3.5-openssl-1.0.0.patch is unfetchable
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
 
@@ -75,7 +74,7 @@ FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 1000014
-PATCH_SITES=		http://oschtan.academ.org/oschtan-overlay/kde-base/kdelibs/files/
+PATCH_SITES=		http://data.gpo.zugaina.org/kde-sunset/kde-base/kdelibs/files/
 PATCHFILES=		kdelibs-3.5-openssl-1.0.0.patch
 PATCH_DIST_STRIP=	-p1
 .else
