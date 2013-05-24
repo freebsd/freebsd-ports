@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	hwloc
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.6/downloads/ \
-		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.6/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION:R}/downloads/ \
+		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	The Portable Hardware Locality software package
@@ -16,7 +16,8 @@ LIB_DEPENDS=	pciaccess:${PORTSDIR}/devel/libpciaccess
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static \
-			--enable-libxml2
+			--enable-libxml2 \
+			--disable-gl
 USES=		pkgconfig pathfix iconv
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
