@@ -2929,7 +2929,7 @@ MANEXT=	.gz
 
 .if defined(.PARSEDIR)
 _MLINKS=	 ${_MLINKS_PREPEND} \
-		 ${MANLANG:S,^,man/,:S,/"",,:@m@${MLINKS:@p@${MAN${p:E}PREFIX}/$m/man${p:E}/$p${MANEXT}@}@}
+		 ${MANLANG:S,^,man/,:S,/"",,:@m@${MLINKS:@p@${MAN${p:E:C/(.).*/\1/g}PREFIX}/$m/man${p:E:C/(.).*/\1/g}/$p${MANEXT}@}@}
 .else
 __pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
  '{ if (NF % 2 != 0) { print "broken"; exit; } \
