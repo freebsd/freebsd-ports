@@ -1,0 +1,37 @@
+--- ./Src/DasherCore/DasherViewSquare.h.orig	2013-05-24 17:03:27.185956866 +0200
++++ ./Src/DasherCore/DasherViewSquare.h	2013-05-24 17:03:36.904410678 +0200
+@@ -20,11 +20,6 @@
+   class CDasherNode;
+ }
+ 
+-class Dasher::CDasherViewSquare;
+-class Dasher::CDasherModel;
+-class Dasher::CDelayedDraw;
+-class Dasher::CDasherNode;
+-
+ /// \ingroup View
+ /// @{
+ 
+--- ./Src/DasherCore/SettingsStore.h.orig	2013-05-24 16:53:08.087996232 +0200
++++ ./Src/DasherCore/SettingsStore.h	2013-05-24 16:53:40.137994206 +0200
+@@ -18,9 +18,6 @@
+   class CParameterNotificationEvent;
+ }
+ 
+-class Dasher::CEventHandler;
+-class Dasher::CParameterNotificationEvent;
+-
+ // Types that are parameters can be
+ enum ParameterType
+ {
+--- ./Src/DasherCore/View/DelayedDraw.h.orig	2013-05-24 17:00:06.589967502 +0200
++++ ./Src/DasherCore/View/DelayedDraw.h	2013-05-24 16:57:01.492979337 +0200
+@@ -15,8 +15,6 @@
+   class CDasherScreen;
+ }
+ 
+-class Dasher::CDasherScreen;
+-
+ namespace Dasher {
+   /// \ingroup View
+   /// @{
