@@ -1,9 +1,5 @@
-# New ports collection makefile for:    funktrackergold
-# Date created:                 Apr 1, 2001
-# Whom:                         Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	funktrackergold
 PORTVERSION=	1.5.2
@@ -19,6 +15,8 @@ COMMENT=	A curses MOD/FNK music tracker
 
 LICENSE=	GPLv2
 
+USE_GCC=	any
+
 WRKSRC=		${WRKDIR}/funkgold
 MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
 		EXTRA_LDFLAGS="${PTHREAD_LIBS}"
@@ -26,15 +24,15 @@ MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
 PORTDOCS=	INSTALL
 PLIST_FILES=	bin/funkgold
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
