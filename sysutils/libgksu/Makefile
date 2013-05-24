@@ -17,15 +17,12 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop \
 RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo
 
-USES=		pkgconfig
-USE_GNOME=	desktopfileutils glib20 gconf2
+USES=		desktop-file-utils pkgconfig
+USE_GNOME=	glib20 gconf2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc=no
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gksu.schemas
 USE_GMAKE=	yes
-
-post-install:
-	-update-desktop-database
 
 .include <bsd.port.mk>
