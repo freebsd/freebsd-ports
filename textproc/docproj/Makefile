@@ -4,7 +4,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -92,10 +92,6 @@ do-install:	# empty
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
-.endif
-
-.if ${PERL_LEVEL} < 500804
-RUN_DEPENDS+=	p5-Digest-MD5>=2.51:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
 .include <bsd.port.post.mk>
