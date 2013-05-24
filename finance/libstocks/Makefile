@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libstocks
-# Date created:         this 7th day of January, 2002
-# Whom:                 Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	libstocks
 PORTVERSION=	0.5.0
@@ -15,6 +11,7 @@ COMMENT=	A C library which can be used to fetch stocks quotes
 
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
+MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 post-patch:
 	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \

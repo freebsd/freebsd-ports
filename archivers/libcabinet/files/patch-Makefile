@@ -1,7 +1,7 @@
 --- Makefile.orig	Tue Aug 19 18:15:11 2003
 +++ Makefile	Tue Aug 19 18:33:06 2003
 @@ -0,0 +1,16 @@
-+NOPROFILE=	true
++NO_PROFILE=	true
 +CXXFLAGS+=	-Wno-deprecated 
 +LIB=		cabinet
 +LIBDIR=		${PREFIX}/lib
