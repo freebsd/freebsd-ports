@@ -92,6 +92,7 @@
     SUBDIR += busybox
     SUBDIR += busybox-unstable
     SUBDIR += byobu
+    SUBDIR += cbsd
     SUBDIR += ccd2iso
     SUBDIR += cciss_vol_status
     SUBDIR += ccze
