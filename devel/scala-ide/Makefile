@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://download.scala-ide.org/sdk/e37/scala210/stable/
 DISTNAME=	update-site
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}-20130413
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}-20130523
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Scala plugin for the Eclipse IDE
