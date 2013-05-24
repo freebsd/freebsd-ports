@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--with-authinfo-radius
 AUTHINFO_EXT+=		authinfo_radius.ext
 .endif
 
-.if ${PORT_OPTIONS:MLDAP} || defined(WITH_LDAP2}
+.if ${PORT_OPTIONS:MLDAP} || defined(WITH_LDAP2)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-authinfo-ldap
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
