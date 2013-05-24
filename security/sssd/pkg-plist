@@ -69,7 +69,6 @@ etc/sssd/sssd.api.d/sssd-krb5.conf
 etc/sssd/sssd.api.d/sssd-ipa.conf
 etc/sssd/sssd.api.conf
 etc/sssd/sssd.conf.sample
-@dirrmtry lib/pkgconfig
 @dirrmtry lib/ldb
 @dirrmtry etc/sssd/sssd.api.d
 @dirrmtry etc/sssd
@@ -77,6 +76,18 @@ etc/sssd/sssd.conf.sample
 @dirrm share/sssd
 @dirrm libexec/sssd
 @dirrm lib/sssd
+@dirrmtry man/uk/man8
+@dirrmtry man/uk/man5
+@dirrmtry man/uk
+@dirrmtry man/nl/man8
+@dirrmtry man/nl/man5
+@dirrmtry man/nl
+@dirrmtry man/es/man8
+@dirrmtry man/es/man5
+@dirrmtry man/es
+@dirrmtry man/cs/man8
+@dirrmtry man/cs/man5
+@dirrmtry man/cs
 @unexec if cmp -s %D/etc/sssd/sssd.conf.sample %D/etc/sssd/sssd.conf; then rm -f %D/etc/sssd/sssd.conf; fi
 @exec if [ ! -f %D/etc/sssd/sssd.conf ]; then cp -p %D/%F %B/sssd.conf; fi
 @unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
