@@ -14,9 +14,10 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		gmime-2.0:${PORTSDIR}/mail/gmime2 \
 		event-1.4:${PORTSDIR}/devel/libevent
 
-OPTIONS=	RSPAMD_GPERF "Enable google perf-tools profiling" off \
-		RSPAMD_JUDY "Enable Judy arrays usage for performance" off \
-		RSPAMD_REDIRECTOR "Install HTTP redirector" off
+OPTIONS_DEFINE=	GPERF JUDY REDIRECTOR
+GPERF_DESC=		google perf-tools profiling
+JUDY_DESC=		Judy arrays usage for performance
+REDIRECTOR_DESC=	Install HTTP redirector
 
 USE_RC_SUBR=	rspamd
 
@@ -25,7 +26,7 @@ PLIST_SUB+=	ETCDIR=etc/rspamd \
 CMAKE_ARGS+=	-DETC_PREFIX=${PREFIX}/etc -DPREFIX=${PREFIX} \
 		-DBUILD_PORT=yes
 
-USES=		cmake gettext iconv
+USES=		cmake gettext iconv pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20
@@ -36,18 +37,18 @@ USE_OPENSSL=	yes
 MAN8=	rspamd.8
 MAN1=	rspamc.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RSPAMD_GPERF)
+.if ${PORT_OPTIONS:MGPERF}
  CMAKE_ARGS+=	-DENABLE_GPERF_TOOLS=ON
  LIB_DEPENDS+=	profiler.1:${PORTSDIR}/devel/google-perftools
 .endif
 
-.if defined(WITH_RSPAMD_JUDY)
+.if ${PORT_OPTIONS:MJUDY}
  LIB_DEPENDS+=	Judy:${PORTSDIR}/devel/judy
 .endif
 
-.if defined(WITH_RSPAMD_REDIRECTOR)
+.if ${PORT_OPTIONS:MREDIRECTOR}
  USE_PERL5=	yes
  CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
  PLIST_SUB+=	REDIRECTOR=""
@@ -68,4 +69,4 @@ MAN1=	rspamc.1
  PLIST_SUB+=		REDIRECTOR="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
