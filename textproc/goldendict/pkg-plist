@@ -15,5 +15,3 @@ share/pixmaps/goldendict.png
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database || :
-@unexec %%LOCALBASE%%/bin/update-desktop-database || :
