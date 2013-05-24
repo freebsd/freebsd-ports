@@ -40,10 +40,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${DATADIR}/locale/
 	@-update-desktop-database
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION}<800067
-IGNORE=		wcscasecmp() id not implemented
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
