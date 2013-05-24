@@ -1,10 +1,6 @@
-# New ports collection makefile for:	notification-daemon
-# Date created:				2005-08-06
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
 #   $MCom: ports/deskutils/notification-daemon/Makefile,v 1.11 2011/06/11 19:51:12 mezz Exp $
-#
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.7.2
