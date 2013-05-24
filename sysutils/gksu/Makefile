@@ -14,8 +14,8 @@ LIB_DEPENDS=	gksu2:${PORTSDIR}/sysutils/libgksu \
 		nautilus-extension:${PORTSDIR}/x11-fm/nautilus \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
-USES=		pathfix pkgconfig
-USE_GNOME=	desktopfileutils gconf2 gnomeprefix gtk20 intlhack
+USES=		desktop-file-utils pathfix pkgconfig
+USE_GNOME=	gconf2 gnomeprefix gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -28,8 +28,5 @@ MLINKS=		gksu.1 gksudo.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gkeyfile.h|glib.h|g' \
 		${WRKSRC}/nautilus-gksu/libnautilus-gksu.c
-
-post-install:
-	-update-desktop-database
 
 .include <bsd.port.mk>
