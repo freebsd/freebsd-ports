@@ -40,7 +40,7 @@ LIB_DEPENDS+=	kexif:${PORTSDIR}/graphics/libkexif
 CONFIGURE_ARGS+=--without-kexif
 .endif
 
-.if ${PORT_OPTIONS:MKEXIDB) && {PORT_OPTIONS:MMYSQL}
+.if ${PORT_OPTIONS:MKEXIDB} && ${PORT_OPTIONS:MMYSQL}
 PLIST_SUB+=	KEXIDB=""
 .else
 CONFIGURE_ARGS+=--without-showimgdb

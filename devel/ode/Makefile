@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CFLAGS+=	-fPIC -DPIC
 .endif
 
-.if ${PORT_OPTIONS:MGIMPACT) && defined(WITH_DOUBLE}
+.if ${PORT_OPTIONS:MGIMPACT} && defined(WITH_DOUBLE}
 IGNORE=	currently double precision is not supported by gimpact
 .endif
 
