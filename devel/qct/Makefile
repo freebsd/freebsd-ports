@@ -1,16 +1,11 @@
-# New ports collection makefile for:	py-qt4-qct
-# Date created:				10 Apr 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qct
 PORTVERSION=	1.7
 PORTREVISION=	8
 CATEGORIES=	devel python
-MASTER_SITES=	http://qct.sourceforge.net/ \
-		ftp://ftp.ipt.ru/pub/download/${PORTNAME}/
+MASTER_SITES=	http://qct.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QCT GUI commit tool
