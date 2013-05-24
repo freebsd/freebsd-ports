@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A lightweight and user friendly ncurse based IRC client
+COMMENT=	A lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
@@ -16,25 +15,27 @@ CONFLICTS=	weechat-devel-0.*
 
 USE_LDCONFIG=	yes
 USES=		cmake iconv
+CMAKE_ARGS+=	-DENABLE_GUILE=no
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE ASPELL GNUTLS NLS DOCUMENTATION COLOR256
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE ASPELL \
+		GNUTLS NLS DOCUMENTATION COLOR256 ICON
 OPTIONS_DEFAULT=CHARSET
 
 BACKTRACE_DESC=	Provide crash backtraces
 CHARSET_DESC=	Charset conversion support
 DOCUMENTATION_DESC=	Build and install documentation
-GUILE_DESC=	Guile scripting support
 LUA_DESC=	Lua scripting support
 PERL_DESC=	Perl scripting support
 PYTHON_DESC=	Python scripting support
 RUBY_DESC=	Ruby scripting support
 TCL_DESC=	Tcl scripting support
 COLOR256_DESC=	Use ncurses port for 256 color support
+ICON_DESC=	Desktop icon
 
 .include <bsd.port.options.mk>
 
@@ -62,7 +63,7 @@ PLIST_SUB+=	ASPELL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.6-
 CMAKE_ARGS+=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
 		-DBSD_PYTHON_VER=${PYTHON_VERSION}
 PLIST_SUB+=	PYTHON=""
@@ -82,6 +83,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
+USES+=	pkgconfig
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
@@ -117,14 +119,6 @@ CMAKE_ARGS+=	-DENABLE_LUA=no
 PLIST_SUB+=	LUA="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
-PLIST_SUB+=	GUILE=""
-.else
-CMAKE_ARGS+=	-DENABLE_GUILE=no
-PLIST_SUB+=	GUILE="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MDOCUMENTATION}
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc
 BUILD_DEPENDS+=	source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
@@ -145,6 +139,12 @@ CMAKE_ARGS+=	-DNCURSES_INCLUDE_PATH=${LOCALBASE}/include/ncurses
 USES+=	ncurses
 .endif
 
+.if ${PORT_OPTIONS:MICON}
+PLIST_SUB+=	ICON=""
+.else
+PLIST_SUB+=	ICON="@comment "
+.endif
+
 MAN1=	weechat-curses.1
 
 post-patch:
@@ -156,17 +156,20 @@ post-patch:
 .if empty(PORT_OPTIONS:MBACKTRACE)
 	@${REINPLACE_CMD} -e '/IF.*FreeBSD/,/ENDIF.*FreeBSD/d' ${WRKSRC}/src/core/CMakeLists.txt
 .endif
+.if empty(PORT_OPTIONS:MICON)
+	@${REINPLACE_CMD} -e '/^# icon$$/,/^$$/d' ${WRKSRC}/CMakeLists.txt
+.endif
 
-pre-configure:                                                                                                            
-.if ${PORT_OPTIONS:MCOLOR256}                                                                                         
+pre-configure:
+.if ${PORT_OPTIONS:MCOLOR256}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "==> You have selected the ncurses 256 color option. Please ensure that"
-	@${ECHO_MSG} "==> the devel/ncurses port is built with the EXTCOLORS option enabled."                                                                                    
-	@${ECHO_MSG} "==>"                                                                                               
-	@${ECHO_MSG} "==> Press CTRL-C now if you would like to re-configure."                                                       
-	@${ECHO_MSG} ""                                                                                               
-	@sleep 5                                                                                                      
-.endif                                                                                                                
+	@${ECHO_MSG} "==> the devel/ncurses port is built with the EXTCOLORS option enabled."
+	@${ECHO_MSG} "==>"
+	@${ECHO_MSG} "==> Press Ctrl-C now if you want to re-configure."
+	@${ECHO_MSG} ""
+	@sleep 5
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MAN1PREFIX}/man/man1
