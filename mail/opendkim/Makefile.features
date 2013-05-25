@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--enable-identity_header
 .if ${PORT_OPTIONS:MLCOV}
 BROKEN=			Does not install
 BUILD_DEPENDS+=		lcov:${PORTSDIR}/devel/lcov \
-			${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+			p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 CONFIGURE_ARGS+=	--with-lcov
 .else
 CONFIGURE_ARGS+=	--without-lcov
