@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Compressor/.packlist
 %%SITE_PERL%%/CSS/Compressor.pm
+bin/csscompressor
 @dirrmtry %%SITE_PERL%%/CSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Compressor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
