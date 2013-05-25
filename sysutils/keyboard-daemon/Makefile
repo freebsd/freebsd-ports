@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keyboard-daemon
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
