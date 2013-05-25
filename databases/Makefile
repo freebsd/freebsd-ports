@@ -417,6 +417,7 @@
     SUBDIR += p5-DBM-Deep
     SUBDIR += p5-DBZ_File
     SUBDIR += p5-DMOZ-ParseRDF
+    SUBDIR += p5-DR-Tarantool
     SUBDIR += p5-DWH_File
     SUBDIR += p5-Dancer-Plugin-DBIC
     SUBDIR += p5-Dancer-Plugin-Database
