@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-plugin
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce4 plugin to query different dictionnaries
+COMMENT=	Xfce4 plugin to query different dictionaries
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
