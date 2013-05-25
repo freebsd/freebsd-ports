@@ -1474,6 +1474,7 @@
 %%WWWDIR%%/images/os/win2000.png
 %%WWWDIR%%/images/os/win2003.png
 %%WWWDIR%%/images/os/win7.png
+%%WWWDIR%%/images/os/win8.png
 %%WWWDIR%%/images/os/win95.png
 %%WWWDIR%%/images/os/win98.png
 %%WWWDIR%%/images/os/wince.png
@@ -1925,6 +1926,7 @@
 %%WWWDIR%%/lang/japanese.php
 %%WWWDIR%%/lang/luxembourgish.php
 %%WWWDIR%%/lang/norwegian.php
+%%WWWDIR%%/lang/persian.php
 %%WWWDIR%%/lang/polish.php
 %%WWWDIR%%/lang/portuguese.php
 %%WWWDIR%%/lang/russian.php
