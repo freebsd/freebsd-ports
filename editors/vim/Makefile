@@ -201,6 +201,7 @@ pre-configure:
 
 post-configure:
 	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} scratch config)
+	${REINPLACE_CMD} -e 's@#define HAVE_SYSINFO 1@/* #undef HAVE_SYSINFO */@' ${WRKSRC}/auto/config.h
 
 #	Clean up junk files to keep them from being installed.
 pre-install:
