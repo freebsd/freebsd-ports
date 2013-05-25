@@ -12,7 +12,6 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Tools and scripts to use with IMAP servers
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKDIR}/license.txt
 
 CONFLICTS=	imaputils-[0-9]*
 
