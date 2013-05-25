@@ -709,6 +709,7 @@
     SUBDIR += p5-CGI-Session
     SUBDIR += p5-CGI-Session-ExpireSessions
     SUBDIR += p5-CGI-Simple
+    SUBDIR += p5-CGI-Struct
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-Thin
     SUBDIR += p5-CGI-Untaint
