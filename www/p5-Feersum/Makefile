@@ -18,7 +18,6 @@ BUILD_DEPENDS=	p5-EV>=4.0:${PORTSDIR}/devel/p5-EV \
 		p5-Plack>=0.9950:${PORTSDIR}/www/p5-Plack
 RUN_DEPENDS=	p5-EV>=4.0:${PORTSDIR}/devel/p5-EV \
 		p5-Plack>=0.9950:${PORTSDIR}/www/p5-Plack
-
 TEST_DEPENDS=	p5-AnyEvent>=5.26.1:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Guard>=1.012:${PORTSDIR}/devel/p5-Guard \
 		p5-JSON-XS>=2:${PORTSDIR}/converters/p5-JSON-XS \
@@ -35,15 +34,4 @@ MAN3=		Feersum.3 \
 		Feersum::Runner.3 \
 		Plack::Handler::Feersum.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.if ${PERL_LEVEL} < 501200
-TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
