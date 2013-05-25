@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Plack-Test-ExternalServer
-# Date created:		2011-08-27
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Test-ExternalServer
 PORTVERSION=	0.01
@@ -14,24 +10,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run HTTP tests on external live servers
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Plack::Test::ExternalServer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
