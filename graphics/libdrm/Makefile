@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=--disable-vmwgfx
 .else
 CONFIGURE_ARGS=	--enable-nouveau-experimental-api
 LIBDRM_VERSION=	2.4.17
-LIBDRM_REVISION=0
+LIBDRM_REVISION=1
 PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
