@@ -813,6 +813,7 @@
     SUBDIR += rsyslog6-devel-rfc3195
     SUBDIR += rsyslog6-devel-snmp
     SUBDIR += rsyslog7
+    SUBDIR += rsyslog7-devel
     SUBDIR += rtty
     SUBDIR += ruby-quota
     SUBDIR += rubygem-SyslogLogger

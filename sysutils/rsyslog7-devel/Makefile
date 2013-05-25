@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.2.7
+PORTVERSION=	7.3.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
@@ -14,13 +17,12 @@ LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		sysinfo:${PORTSDIR}/devel/libsysinfo \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USE_LDCONFIG=	yes
+BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt \
+		rst2man:${PORTSDIR}/textproc/py-docutils
 
 PORTSCOUT=	limit:^6
 PORTDOCS=	*
 PORTEXAMPLES=	*
-
-
 
 OPTIONS_DEFINE=	DBI DOCS GNUTLS GSSAPI MYSQL PGSQL RELP RFC3195 SNMP
 
@@ -129,7 +131,6 @@ CONFLICTS=	rsyslog-[56].[0-9]*
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-GNU_CONFIGURE=	yes
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
