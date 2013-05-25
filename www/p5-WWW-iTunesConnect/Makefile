@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-iTunesConnect
-# Date created:				29 August 2009
-# Whom:					Brandon Fosdick <bfoz@bfoz.net>
-#
+# Created by: Brandon Fosdick <bfoz@bfoz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-iTunesConnect
 PORTVERSION=	1.16
@@ -32,10 +28,4 @@ PLIST_DIRS=	%%SITE_PERL%%/WWW \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/iTunesConnect \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
