@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Sub/Exporter/Lexical.pm
+%%SITE_PERL%%/Sub/Exporter/snippet.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/Lexical/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/Lexical
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub/Exporter
+@dirrmtry %%SITE_PERL%%/Sub
