@@ -16,8 +16,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
-		xcb:${PORTSDIR}/x11/libxcb
+		fltk:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
@@ -28,7 +27,7 @@ GH_COMMIT=	fb52aa2
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 USES=		cmake:outsource iconv
 USE_DOS2UNIX=	yes
-USE_XORG=	ice sm x11 xau xdamage xdmcp xext xfixes xft \
+USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft \
 		xinerama xrender xxf86vm
 USE_GL=		glu
 USE_GNOME=	libxml2

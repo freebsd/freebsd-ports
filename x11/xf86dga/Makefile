@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xf86dga
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xf86dga
 PORTVERSION=	1.0.3

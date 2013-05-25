@@ -10,7 +10,7 @@ COMMENT=	System load average display for X
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xorg-macros
+USE_XORG=	xt xaw
 
 MAN1=		xload.1
 

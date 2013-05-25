@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xtrans
-# Date Created:				08 Aug 2005
-# Whom:					Dejan Lesjak <lesi@FreeBSD.org>
-#
+# Created by: Dejan Lesjak <lesi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xtrans
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org

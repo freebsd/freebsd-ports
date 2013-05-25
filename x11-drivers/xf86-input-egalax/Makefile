@@ -25,7 +25,7 @@ IGNORE=         is useless without uep(4) kernel driver
 .endif
 
 .if defined(WITH_NEW_XORG)
-IGNORE=		does not build with X server 1.10
+IGNORE=		does not build with X server 1.12
 .endif
 
 .include <bsd.port.post.mk>

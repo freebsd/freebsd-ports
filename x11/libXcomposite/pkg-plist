@@ -4,3 +4,4 @@ lib/libXcomposite.la
 lib/libXcomposite.so
 lib/libXcomposite.so.1
 libdata/pkgconfig/xcomposite.pc
+@dirrmtry include/X11/extensions

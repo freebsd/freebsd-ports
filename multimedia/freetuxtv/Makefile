@@ -22,11 +22,10 @@ LIB_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GNOME=	glib20 gtk20
-USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
+USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

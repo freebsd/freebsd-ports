@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Print out X-Video extension adaptor information
 
 XORG_CAT=	app
-USE_XORG=	xv x11 xorg-macros
+USE_XORG=	xv x11
 
 PLIST_FILES=	bin/xvinfo
 

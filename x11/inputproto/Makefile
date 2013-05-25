@@ -1,17 +1,15 @@
-# New ports collection makefile for:	inputproto
-# Date Created:				08 Aug 2005
-# Whom:					Dejan Lesjak <lesi@FreeBSD.org>
-#
+# Created by: Dejan Lesjak <lesi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	inputproto
-PORTVERSION=	2.0.2
+PORTVERSION=	2.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Input extension headers
 
 XORG_CAT=	proto
+
+CONFIGURE_ARGS=	--without-asciidoc
 
 .include <bsd.port.mk>

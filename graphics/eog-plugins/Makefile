@@ -4,7 +4,7 @@
 
 PORTNAME=	eog-plugins
 PORTVERSION=	2.30.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,9 +18,10 @@ RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20
+USE_GL=		gl
+USE_GNOME=	gnomeprefix intlhack gtk20
 WANT_GNOME=	yes
-USES=		gettext
+USES=		gettext pathfix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

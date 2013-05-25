@@ -3,11 +3,11 @@
 include/GL/gl.h
 include/GL/gl_mangle.h
 include/GL/glext.h
-include/GL/glfbdev.h
+%%OLD%%include/GL/glfbdev.h
 include/GL/glx.h
 include/GL/glx_mangle.h
 include/GL/glxext.h
-include/GL/mesa_wgl.h
+%%OLD%%include/GL/mesa_wgl.h
 %%OLD%%include/GL/mglmesa.h
 include/GL/osmesa.h
 %%OLD%%include/GL/svgamesa.h

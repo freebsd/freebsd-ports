@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-games
 PORTVERSION=	2.32.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,6 +25,7 @@ USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
+USE_GL=		gl
 USES=		pathfix gettext
 USE_GNOME=	gnomeprefix intlhack librsvg2 desktopfileutils \
 		pygnomedesktop gnomedocutils

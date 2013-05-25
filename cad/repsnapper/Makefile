@@ -32,8 +32,7 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		expat:${PORTSDIR}/textproc/expat2 \
 		xml++-2.6:${PORTSDIR}/textproc/libxml++26 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm \
-		xcb:${PORTSDIR}/x11/libxcb
+		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm
 
 MAKE_JOBS_SAFE=	yes
 USES=		pkgconfig iconv
@@ -41,8 +40,8 @@ USE_GNOME=	gdkpixbuf2 gtk20 libxml2
 USE_GL=		glu glut
 USE_AUTOTOOLS=	automake libtool
 USE_GMAKE=	yes
-USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
+USE_XORG=	ice pixman sm x11 xau xcb composite xcursor xdamage xdmcp \
+		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 
 .include <bsd.port.options.mk>
 

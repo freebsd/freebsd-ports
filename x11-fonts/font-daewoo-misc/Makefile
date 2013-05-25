@@ -1,9 +1,5 @@
-# New ports collection makefile for:    font-daewoo-misc
-# Date created:		28 Aug 2005
-# Whom:			Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	font-daewoo-misc
 PORTVERSION=	1.0.3

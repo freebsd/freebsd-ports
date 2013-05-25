@@ -1,26 +1,25 @@
-# Created by: anholt@FreeBSD.org
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libGLw
-PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
+PORTVERSION=	8.0.0
 CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/glw/
+DISTNAME=	glw-${PORTVERSION}
+DIST_SUBDIR=	GL
 
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL widgets library
 
+USE_BZIP2=	yes
+USES=		pathfix pkgconfig
+USE_LDCONFIG=	yes
 USE_GL=		gl
 USE_MOTIF=	yes
-USE_XORG=	glproto xt x11 xext xxf86vm xdamage xfixes dri2proto
+USE_XORG=	x11 xt xext
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static --enable-motif
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-INSTALL_WRKSRC=	${WRKSRC}/src/glw
-BUILD_WRKSRC=	${WRKSRC}/src/glw
-
-.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
-
-.include <bsd.port.pre.mk>
-
-.if !(${ARCH} == "amd64" || ${ARCH} == "i386")
-CONFIGURE_ARGS+=--disable-gallium-intel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

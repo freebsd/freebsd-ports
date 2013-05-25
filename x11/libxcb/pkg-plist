@@ -18,6 +18,7 @@ include/xcb/xcbext.h
 include/xcb/xevie.h
 include/xcb/xf86dri.h
 include/xcb/xfixes.h
+include/xcb/xkb.h
 include/xcb/xinerama.h
 include/xcb/xinput.h
 include/xcb/xprint.h

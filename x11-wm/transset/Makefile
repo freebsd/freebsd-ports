@@ -11,7 +11,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Make your windows transparent
 
 XORG_CAT=	app
-USE_XORG=	x11 xproto xorg-macros
+USE_XORG=	x11 xproto
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		transset.1

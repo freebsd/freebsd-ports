@@ -10,7 +10,7 @@ COMMENT=	X standard colormap utility
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xmu x11 xorg-macros
+USE_XORG=	xmu x11
 
 PLIST_FILES=	bin/xstdcmap
 

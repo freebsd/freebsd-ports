@@ -26,14 +26,13 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
 		gpgme:${PORTSDIR}/security/gpgme \
 		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
 WRKSRC=		${WRKDIR}/trunk
 USES=		gettext iconv
 USE_GNOME=	glib20
-USE_XORG=	ice sm x11 xau xdmcp xext xrender
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_QT4=	corelib gui network xml script designer_build uic_build \
 		qmake_build moc_build rcc_build
 HAS_CONFIGURE=	yes

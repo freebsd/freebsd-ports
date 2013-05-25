@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xbacklight
-# Date Created:				11 Sep 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xbacklight
 PORTVERSION=	1.1.2

@@ -17,14 +17,14 @@ Xorg_Pre_Include=		bsd.xorg.mk
 
 # Some notes:
 #
-# app - requires pkgconfig, don't install shared libraries (I guess)
-# data - nothing I could factorize
+# app - Installs applications, no shared libraries.
+# data - Installs only data.
 # doc - no particular notes
-# driver - input depends on inputproto/renderproto at least
+# driver - input depends on inputproto/randrproto at least
 #          video depends on randrproto/renderproto at least
 # font - don't install .pc file
-# lib - various dependencies, install .pc file
-# proto - install .pc file, no dependencies, needed only at build time for most of them
+# lib - various dependencies, install .pc file, needs pathfix
+# proto - install .pc file, needs pathfix, most only needed at build time.
 # xserver - there's only one atm, I guess everything can fit into the port itself
 
 .if defined(XORG_CAT)
@@ -38,8 +38,17 @@ DIST_SUBDIR=	xorg/${XORG_CAT}
 MASTER_SITES?=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR?=	individual/${XORG_CAT}
 
+# All xorg ports needs pkgconfig to build, but some ports look for pkgconfig and
+# then continues the build.
+USES+=		pkgconfig
+
+# All xorg ports needs xorg-macros.
+. if ${PORTNAME} != xorg-macros
+USE_XORG+=      xorg-macros
+. endif
+
 . if ${XORG_CAT} == "app"
-USE_GNOME+=	pkgconfig
+# Nothing at the moment
 . endif
 
 . if ${XORG_CAT} == "data"
@@ -47,7 +56,6 @@ USE_GNOME+=	pkgconfig
 . endif
 
 . if ${XORG_CAT} == "driver"
-USE_GNOME+=	pkgconfig
 USE_XORG+=	xorg-server xproto randrproto xi
 # work around a llvm bug on i386, llvm bug #15806 
 # reproduced with clang 3.2 (current release) and 3.1
@@ -56,11 +64,12 @@ CFLAGS+=	-fno-optimize-sibling-calls
 .  endif
 CONFIGURE_ENV+=	DRIVER_MAN_SUFFIX=4x DRIVER_MAN_DIR='$$(mandir)/man4'
 .  if ${PORTNAME:M*input*}x != x
-USE_XORG+=	inputproto renderproto
+USE_XORG+=	inputproto videoproto fontsproto renderproto xextproto \
+		dri2proto
 .  elif ${PORTNAME:M*video*}x != x
-USE_XORG+=	fontsproto renderproto
+USE_XORG+=	videoproto fontsproto renderproto xextproto dri2proto
 .  else
-IGNORE=		doesn't contain either "driver" or "input"
+IGNORE=		doesn't contain either "video" or "input"
 .  endif
 . endif
 
@@ -84,10 +93,9 @@ INSTALLS_TTF?=	no
 .  endif
 
 .  if ${PORTNAME:M*font-util*}x != x
-USE_GNOME+=	gnomehack
+USES+=	pathfix
 NEED_MKFONTFOO=	no
 .  elif ${INSTALLS_TTF} == "yes"
-USE_GNOME+=	pkgconfig
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 .  else
@@ -123,23 +131,23 @@ post-install:
 . endif
 
 . if ${XORG_CAT} == "lib"
-USE_GNOME+=	gnomehack pkgconfig
+USES+=	pathfix
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--enable-malloc0returnsnull
 . endif
 
 . if ${XORG_CAT} == "proto"
-USE_GNOME+=	gnomehack
+USES+=	pathfix
 . endif
 
 . if ${XORG_CAT} == "xserver"
 DISTFILES?=	xorg-server-${PORTVERSION}.tar.bz2
 WRKSRC=		${WRKDIR}/xorg-server-${PORTVERSION}
-USE_GNOME+=	gnomehack
+USES+=	pathfix
 CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb
 
 LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:${PORTSDIR}/graphics/dri
-USE_XORG+=	pciaccess
+USE_XORG+=	pciaccess xextproto videoproto fontsproto dri2proto
 . endif
 
 .endif
@@ -192,6 +200,7 @@ XORG_MODULES=	bigreqsproto \
 				xaw6 \
 				xaw7 \
 				xbitmaps \
+				xcb \
 				xcmiscproto \
 				xcomposite \
 				xcursor \
@@ -274,6 +283,7 @@ xaw_LIB_PC_DEPENDS=		${xaw7_LIB_PC_DEPENDS}
 xaw6_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw6.pc:${PORTSDIR}/x11-toolkits/libXaw
 xaw7_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw7.pc:${PORTSDIR}/x11-toolkits/libXaw
 xbitmaps_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmaps
+xcb_LIB_PC_DEPENDS=			${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
 xcmiscproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcmiscproto.pc:${PORTSDIR}/x11/xcmiscproto
 xcomposite_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcomposite.pc:${PORTSDIR}/x11/libXcomposite
 xcursor_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xcursor.pc:${PORTSDIR}/x11/libXcursor

@@ -1,25 +1,18 @@
-# New ports collection makefile for:	xcb-proto
-# Date Created:				2006-08-23
-# Whom:					Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xcb-proto
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8
 CATEGORIES=	x11 python
-MASTER_SITES=	http://xcb.freedesktop.org/dist/ \
-		http://distfiles.pirateparty.in/%SUBDIR%/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ashish
+MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The X protocol C-language Binding (XCB) protocol
 
 BUILD_DEPENDS=	xmllint:${PORTSDIR}/textproc/libxml2
 
 USE_BZIP2=	yes
-USES=	pathfix
+USES=		pathfix
 USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xmh
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmh
 PORTVERSION=	1.0.2

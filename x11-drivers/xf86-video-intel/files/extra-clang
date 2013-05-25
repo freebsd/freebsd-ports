@@ -1,0 +1,53 @@
+--- src/intel_display.c.orig	2012-12-11 20:33:06.000000000 +0100
++++ src/intel_display.c	2012-12-11 20:33:45.000000000 +0100
+@@ -1691,7 +1691,7 @@
+ static drmModeEncoderPtr
+ intel_get_kencoder(struct intel_mode *mode, int num)
+ {
+-	struct intel_output *iterator;
++	struct intel_output *iterator = NULL;
+ 	int id = mode->mode_res->encoders[num];
+ 
+ 	list_for_each_entry(iterator, &mode->outputs, link)
+--- src/intel_batchbuffer.c.orig	2012-12-11 20:34:55.000000000 +0100
++++ src/intel_batchbuffer.c	2012-12-11 20:35:19.000000000 +0100
+@@ -119,7 +119,7 @@
+ static void intel_batch_do_flush(ScrnInfoPtr scrn)
+ {
+ 	intel_screen_private *intel = intel_get_screen_private(scrn);
+-	struct intel_pixmap *priv;
++	struct intel_pixmap *priv = NULL;
+ 
+ 	list_for_each_entry(priv, &intel->batch_pixmaps, batch)
+ 		priv->dirty = 0;
+--- src/sna/sna_damage.c.orig	2012-12-11 20:41:38.000000000 +0100
++++ src/sna/sna_damage.c	2012-12-11 20:42:23.000000000 +0100
+@@ -410,7 +410,7 @@
+ 	int n, nboxes;
+ 	BoxPtr boxes, free_boxes = NULL;
+ 	pixman_region16_t *region = &damage->region;
+-	struct sna_damage_box *iter;
++	struct sna_damage_box *iter = NULL;
+ 
+ 	assert(damage->mode != DAMAGE_ALL);
+ 	assert(damage->dirty);
+@@ -1671,7 +1671,7 @@
+ {
+ 	int n, nboxes;
+ 	BoxPtr boxes;
+-	struct sna_damage_box *iter;
++	struct sna_damage_box *iter = NULL;
+ 
+ 	RegionCopy(r, &damage->region);
+ 	if (!damage->dirty)
+--- uxa/uxa-accel.c.orig	2012-12-11 20:50:56.000000000 +0100
++++ uxa/uxa-accel.c	2012-12-11 20:51:14.000000000 +0100
+@@ -944,7 +944,7 @@
+ 
+ 	if (uxa_screen->info->flags & UXA_USE_GLAMOR) {
+ 		int ok = 0;
+-		RegionPtr region;
++		RegionPtr region = NULL;
+ 
+ 		if (uxa_prepare_access(pDst, UXA_GLAMOR_ACCESS_RW)) {
+ 			if (uxa_prepare_access(pSrc, UXA_GLAMOR_ACCESS_RO)) {

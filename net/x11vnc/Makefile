@@ -14,10 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		dbus:${PORTSDIR}/devel/dbus \
-		xcb:${PORTSDIR}/x11/libxcb \
 		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 
-USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordproto
+USE_XORG=	x11 xcb xdamage xfixes xrandr xinerama xext xtst xau xrender \
+		xdmcp recordproto
 
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib

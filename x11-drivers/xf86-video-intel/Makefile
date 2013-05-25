@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xf86-video-intel
-# Date Created:				28 May 2007
-# Whom:					lesi@FreeBSD.org
-#
+# Created by: lesi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-intel
 PORTVERSION=	${INTEL_VERSION}
@@ -18,15 +14,29 @@ USE_GL=		gl
 
 USE_LDCONFIG=	yes
 XORG_CAT=	driver
-USE_XORG=	xvmc xineramaproto xextproto x11 xf86driproto glproto
+USE_XORG=	glproto \
+		pixman \
+		x11 \
+		xext \
+		xf86driproto \
+		xineramaproto \
+		xrender \
+		xvmc
+
 MAN4=		intel.4x
 
 .if defined(WITH_NEW_XORG)
-INTEL_VERSION=	2.17.0
-INTEL_REVISION=	1
+INTEL_VERSION=	2.21.6
+INTEL_REVISION=	0
+CONFIGURE_ARGS+=	--enable-sna
 MAKE_JOBS_UNSAFE=yes
 PLIST_SUB+=	OLD="@comment "
-EXTRA_PATCHES+=	${PATCHDIR}/extra-i915kms
+EXTRA_PATCHES+=	${PATCHDIR}/extra-clang \
+		${PATCHDIR}/extra-src_sna_compiler.h \
+		${PATCHDIR}/extra-src_sna_kgem.c \
+		${PATCHDIR}/extra-src__sna__sna_threads.c \
+		${PATCHDIR}/extra-i915kms
+LIB_DEPENDS+=	xcb-util:${PORTSDIR}/x11/xcb-util
 .else
 INTEL_VERSION=	2.7.1
 INTEL_REVISION=	4

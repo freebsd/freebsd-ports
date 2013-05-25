@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xrandr
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xrandr
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org

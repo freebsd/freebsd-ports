@@ -1,7 +1,8 @@
+# Created by: thierry@pompo.net
 # $FreeBSD$
 
 PORTNAME=	freeglut
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -27,6 +28,8 @@ DOCS=	download.html freeglut.html freeglut_logo.png		\
 	progress.html structure.html
 BINS=	CallbackMaker Fractals Fractals_random Lorenz One shapes
 
+.include <bsd.port.options.mk>
+
 pre-configure:
 .for fract in Fractals/fractals.c Fractals_random/fractals_random.c
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"		\
@@ -38,14 +41,14 @@ post-build:
 		${WRKSRC}/progs/demos/CallbackMaker/.libs/callbackmaker
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/progs/demos/Fractals/fractals.dat ${EXAMPLESDIR}
 .for prog in ${BINS}

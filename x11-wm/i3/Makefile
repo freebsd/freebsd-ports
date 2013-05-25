@@ -14,8 +14,7 @@ COMMENT=	An improved dynamic tiling window manager
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	xcb:${PORTSDIR}/x11/libxcb \
-		startup-notification:${PORTSDIR}/x11/startup-notification \
+LIB_DEPENDS=	startup-notification:${PORTSDIR}/x11/startup-notification \
 		xcb-util:${PORTSDIR}/x11/xcb-util \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm \
@@ -29,7 +28,7 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
 USE_PERL5_RUN=	yes
-USE_XORG=	x11 xcursor
+USE_XORG=	x11 xcb xcursor
 USES=		pkgconfig iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes

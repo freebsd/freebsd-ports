@@ -1,0 +1,52 @@
+--- tests/modetest/Makefile.in.orig	2013-04-04 15:41:48.212028807 +0200
++++ tests/modetest/Makefile.in	2013-04-04 15:45:21.384003991 +0200
+@@ -36,8 +52,11 @@
+ host_triplet = @host@
+ @HAVE_INSTALL_TESTS_TRUE@bin_PROGRAMS = modetest$(EXEEXT)
+ @HAVE_INSTALL_TESTS_FALSE@noinst_PROGRAMS = modetest$(EXEEXT)
+-@HAVE_CAIRO_TRUE@am__append_1 = $(CAIRO_CFLAGS)
+-@HAVE_CAIRO_TRUE@am__append_2 = $(CAIRO_LIBS)
++@HAVE_STRCHRNUL_FALSE@am__append_1 = \
++@HAVE_STRCHRNUL_FALSE@	strchrnul.c
++
++@HAVE_CAIRO_TRUE@am__append_2 = $(CAIRO_CFLAGS)
++@HAVE_CAIRO_TRUE@am__append_3 = $(CAIRO_LIBS)
+ subdir = tests/modetest
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -53,7 +72,10 @@
+ CONFIG_CLEAN_VPATH_FILES =
+ am__installdirs = "$(DESTDIR)$(bindir)"
+ PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
+-am_modetest_OBJECTS = buffers.$(OBJEXT) modetest.$(OBJEXT)
++am__modetest_SOURCES_DIST = buffers.c modetest.c buffers.h strchrnul.c
++@HAVE_STRCHRNUL_FALSE@am__objects_1 = strchrnul.$(OBJEXT)
++am_modetest_OBJECTS = buffers.$(OBJEXT) modetest.$(OBJEXT) \
++	$(am__objects_1)
+ modetest_OBJECTS = $(am_modetest_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @HAVE_CAIRO_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+@@ -229,12 +265,10 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CFLAGS = -I$(top_srcdir)/include/drm -I$(top_srcdir)/libkms/ \
+-	-I$(top_srcdir) $(am__append_1)
+-modetest_SOURCES = \
+-	buffers.c modetest.c buffers.h
+-
++	-I$(top_srcdir) $(am__append_2)
++modetest_SOURCES = buffers.c modetest.c buffers.h $(am__append_1)
+ modetest_LDADD = $(top_builddir)/libdrm.la \
+-	$(top_builddir)/libkms/libkms.la $(am__append_2)
++	$(top_builddir)/libkms/libkms.la $(am__append_3)
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -333,6 +370,7 @@
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/buffers.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modetest.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strchrnul.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

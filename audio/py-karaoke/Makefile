@@ -15,8 +15,7 @@ LICENSE=	LGPL21 # (or later)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		aa:${PORTSDIR}/graphics/aalib \
-		xcb:${PORTSDIR}/x11/libxcb
+		aa:${PORTSDIR}/graphics/aalib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
 		${PYNUMPY}
@@ -27,7 +26,7 @@ MUTAGEN_DESC=	Enable Mutagen support
 USES=		iconv
 USE_ZIP=	yes
 USE_SDL=	sdl
-USE_XORG=	x11 xau xdmcp
+USE_XORG=	x11 xau xcb xdmcp
 USE_WX=		2.6+
 WX_COMPS=	python:lib
 

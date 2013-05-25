@@ -10,7 +10,7 @@ COMMENT=	X application for screen magnifying
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xorg-macros
+USE_XORG=	xt xaw
 
 MAN1=		xmag.1
 

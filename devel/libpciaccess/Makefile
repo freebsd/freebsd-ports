@@ -1,19 +1,14 @@
-# New ports collection makefile for:	libpciaccess
-# Date Created:				May 11 2008
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libpciaccess
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Generic PCI access library
 
 BUILD_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
-# XXX - Is it a runtime dep too?
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
 CONFIGURE_ARGS+=	--with-pciids-path=${LOCALBASE}/share/pciids

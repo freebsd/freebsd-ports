@@ -1,12 +1,8 @@
-# New ports collection makefile for:   libXmu
-# Date Created:			25 Jan, 2003
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libXmu
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 

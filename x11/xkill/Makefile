@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xkill
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xkill
 PORTVERSION=	1.0.3

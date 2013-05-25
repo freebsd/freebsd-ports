@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libXfontcache
-# Date Created:				21 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libXfontcache
 PORTVERSION=	1.0.5

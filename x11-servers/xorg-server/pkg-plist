@@ -12,6 +12,7 @@ include/xorg/bt829.h
 %%OLD%%include/xorg/bstorestr.h
 %%NEW%%include/xorg/callback.h
 %%OLD%%include/xorg/cfb8_16.h
+%%NEW%%include/xorg/client.h
 include/xorg/closestr.h
 include/xorg/closure.h
 include/xorg/colormap.h
@@ -83,6 +84,7 @@ include/xorg/mioverlay.h
 include/xorg/msp3430.h
 include/xorg/opaque.h
 include/xorg/os.h
+%%NEW%%include/xorg/optionstr.h
 include/xorg/panoramiXsrv.h
 include/xorg/panoramiX.h
 include/xorg/picture.h
@@ -138,6 +140,7 @@ include/xorg/xf86DDC.h
 include/xorg/xf86Modes.h
 include/xorg/xf86Module.h
 include/xorg/xf86Opt.h
+%%NEW%%include/xorg/xf86Optionstr.h
 include/xorg/xf86Optrec.h
 include/xorg/xf86Parser.h
 include/xorg/xf86Pci.h
@@ -225,7 +228,7 @@ lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
 share/aclocal/xorg-server.m4
 %%NEW%%@exec /bin/mkdir -p %D/share/X11/xorg.conf.d
-%%NEW%%@dirrm share/doc/xorg-server
+@comment %%NEW%%@dirrm share/doc/xorg-server
 @dirrm include/xorg
 @dirrm lib/xorg/modules/extensions/.xorg
 @dirrm lib/xorg/modules/extensions

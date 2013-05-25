@@ -10,7 +10,7 @@ COMMENT=	Display ditroff output
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xorg-macros
+USE_XORG=	xt xaw
 
 MAN1=		xditview.1
 

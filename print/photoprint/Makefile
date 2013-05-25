@@ -20,13 +20,12 @@ LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client \
 		pixman:${PORTSDIR}/x11/pixman \
 		png15:${PORTSDIR}/graphics/png \
 		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		tiff:${PORTSDIR}/graphics/tiff \
-		xcb:${PORTSDIR}/x11/libxcb
+		tiff:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
 USES=		gettext
 USE_GNOME=	desktopfileutils pango
-USE_XORG=	x11 xau xcomposite xcursor xdamage xdmcp xext \
+USE_XORG=	x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 INSTALLS_ICONS=	yes
 

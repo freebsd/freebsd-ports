@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	A sample screen saver for X
 
 XORG_CAT=	app
-USE_XORG=	x11 xscrnsaver xt xaw7 xt xorg-macros
+USE_XORG=	x11 xscrnsaver xt xaw7 xt
 
 MAN1=		beforelight.1
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xf86-input-acecad
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-input-acecad
 PORTVERSION=	1.5.0
@@ -13,7 +8,6 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org acecad input driver
 
 XORG_CAT=	driver
-USE_XORG=	xextproto videoproto
 MAN4=		acecad.4x
 
 .include <bsd.port.mk>

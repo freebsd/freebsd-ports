@@ -1,45 +1,42 @@
-# New ports collection makefile for:    xorg-server
-# Date created:		7 May 2004
-# Whom:			anholt@FreeBSD.org
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	xorg-server
 PORTVERSION=	${XORG_VERSION}
 PORTREVISION?=	${XORG_REVISION}
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
-DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2
+MASTER_SITES=	XORG
+MASTER_SITE_SUBDIR=	individual/xserver
+DISTNAME=	xorg-server-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT?=	X.Org X server and related programs
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
-
-RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config \
+RUN_DEPENDS=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
 		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 XORG_CAT=	xserver
 SLAVE_PORT?=	no
 
 .if defined(WITH_NEW_XORG)
-XORG_VERSION=	1.10.6
-XORG_REVISION=	2
+XORG_VERSION=	1.12.4
+XORG_REVISION=	0
 PLIST_SUB+=	OLD="@comment " NEW=""
-EXTRA_PATCHES+=	${FILESDIR}/extra-hw_dmx_glxProxy_compsize.h \
-		${FILESDIR}/extra-hw_dmx_glxProxy_glxcmds.h \
-		${FILESDIR}/extra-clang
+EXTRA_PATCHES+=	${FILESDIR}/extra-clang
 .else
 XORG_VERSION=	1.7.7
 XORG_REVISION=	6
 PLIST_SUB+=	OLD="" NEW="@comment "
-EXTRA_PATCHES+=	${FILESDIR}/extra-dix_events.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-include_eventstr.h
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-os-utils.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-include_eventstr.h \
+		${FILESDIR}/extra-os-utils.c \
+		${FILESDIR}/extra-Xserver-hw-xfree86-os-support-bsd-sparc64_video.c \
+		${FILESDIR}/extra-Xserver-os-xprintf.c \
+		${FILESDIR}/extra-servermd.h
 .endif
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
@@ -48,8 +45,7 @@ USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
 		resourceproto fontsproto inputproto xf86dgaproto \
 		videoproto compositeproto trapproto recordproto xineramaproto \
-		xinerama evieproto xfont fontenc xkbui pixman pciaccess \
-		xorg-macros
+		xinerama evieproto xfont fontenc xkbui pixman pciaccess
 
 MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
@@ -96,7 +92,7 @@ CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--enable-config-hal=yes
 .else
 CONFIGURE_ARGS+=	--enable-config-hal=no
@@ -115,7 +111,11 @@ CONFIGURE_ARGS+=--enable-install-setuid=no
 .endif
 
 .if ${ARCH} == i386
-EXTRA_PATCHES+=	${FILESDIR}/extra-arch-i386
+.if defined(WITH_NEW_XORG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-new-arch-i386
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-old-arch-i386
+.endif
 .endif
 
 .if ${ARCH} == ia64
@@ -166,6 +166,8 @@ post-patch:
 
 .if ${SLAVE_PORT} == "no"
 pre-su-install:
+# The .xorg dir because else the xorg-server might not load the correct 
+# libglx module.
 	${MKDIR} ${PREFIX}/lib/xorg/modules/extensions/.xorg
 	${INSTALL_LIB} ${WRKSRC}/hw/xfree86/dixmods/.libs/libglx.so \
 		${PREFIX}/lib/xorg/modules/extensions/.xorg/

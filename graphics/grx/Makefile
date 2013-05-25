@@ -13,15 +13,14 @@ COMMENT=	A 2D graphics library
 LICENSE=	LGPL20 MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		xcb:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 
 OPTIONS_DEFINE=	BGI BMP JPEG PNG PRINT TIFF ZLIB
 OPTIONS_DEFAULT=	ZLIB BGI BMP PNG PRINT
 BGI_DESC=	Enable BGI support
 BMP_DESC=	Enable BMP support
 
-USE_XORG=	x11 xau xdmcp
+USE_XORG=	x11 xau xcb xdmcp
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \

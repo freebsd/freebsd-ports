@@ -23,8 +23,7 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		cxx-gtk-utils-2-2.0:${PORTSDIR}/x11-toolkits/c++-gtk-utils \
-		xcb:${PORTSDIR}/x11/libxcb
+		cxx-gtk-utils-2-2.0:${PORTSDIR}/x11-toolkits/c++-gtk-utils
 RUN_DEPENDS=	ggv:${PORTSDIR}/print/ggv
 
 USES=		pkgconfig iconv
@@ -32,7 +31,7 @@ USE_GHOSTSCRIPT_RUN=yes
 USE_GNOME=	gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 USE_GCC=	4.4+
-USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
+USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 MAKE_JOBS_SAFE=	yes
 

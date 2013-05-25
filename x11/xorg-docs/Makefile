@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xorg-docs
-# Date Created:				Nov 2 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xorg-docs
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTEPOCH=	1
 CATEGORIES=	x11
 

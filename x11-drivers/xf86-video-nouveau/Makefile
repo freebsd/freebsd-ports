@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xf86-video-nouveau
-# Date Created:				29 Jan 2009
-# Whom:					Anonymous <swell.k@gmail.com>
-#
+# Created by: Anonymous <swell.k@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-nouveau
 PORTVERSION=	0.0.10.${SNAPDATE}
@@ -16,7 +12,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Free nouveau display driver for nvidia-based cards
 
 XORG_CAT=	driver
-USE_XORG=	videoproto xextproto xf86driproto glproto
+USE_XORG=	xf86driproto glproto
 MAN4=		nouveau.4x
 
 MAKE_JOBS_SAFE=	yes

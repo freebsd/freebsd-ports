@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xbitmaps
-# Date Created:				17 Feb 2006
-# Whom:					Dejan Lesjak <lesi@FreeBSD.org>
-#
+# Created by: Dejan Lesjak <lesi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xbitmaps
 PORTVERSION=	1.1.1

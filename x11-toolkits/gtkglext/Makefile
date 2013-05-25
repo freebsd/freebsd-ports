@@ -20,7 +20,6 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
-		xcb:${PORTSDIR}/x11/libxcb \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	DOCS
@@ -28,8 +27,8 @@ OPTIONS_DEFINE=	DOCS
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_XORG=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xmu xrandr xrender xt xxf86vm
+USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
+		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 USE_GL=		glu
 USES=		pathfix pkgconfig gettext iconv
 USE_GNOME=	gdkpixbuf2 gtk20

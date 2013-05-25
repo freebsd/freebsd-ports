@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	List resources in widgets
 
 XORG_CAT=	app
-USE_XORG=	xproto xt xmu xaw xorg-macros
+USE_XORG=	xproto xt xmu xaw
 
 PLIST_FILES=	bin/listres
 

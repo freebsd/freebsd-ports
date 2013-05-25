@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xvmcinfo
-# Date Created:				6 Dec 2008
-# Whom:					bms
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xvmcinfo
 PORTVERSION=	0.1

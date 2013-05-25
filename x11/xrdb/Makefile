@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xrdb
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xrdb
 PORTVERSION=	1.0.9

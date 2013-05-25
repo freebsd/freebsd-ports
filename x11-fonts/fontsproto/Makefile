@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fontsproto
-# Date Created:				08 Aug 2005
-# Whom:					Dejan Lesjak <lesi@FreeBSD.org>
-#
+# Created by: Dejan Lesjak <lesi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fontsproto
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mkcomposecache
-# Date Created:				30 Jan 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mkcomposecache
 PORTVERSION=	1.2.1

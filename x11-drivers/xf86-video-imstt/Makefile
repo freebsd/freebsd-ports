@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xf86-video-imstt
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-imstt
 PORTVERSION=	1.1.0

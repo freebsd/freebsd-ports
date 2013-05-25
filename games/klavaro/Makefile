@@ -19,13 +19,12 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		gtkdatabox:${PORTSDIR}/x11-toolkits/gtkdatabox \
-		xcb:${PORTSDIR}/x11/libxcb
+		gtkdatabox:${PORTSDIR}/x11-toolkits/gtkdatabox
 
 USES=		pkgconfig gettext iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext \
+USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes

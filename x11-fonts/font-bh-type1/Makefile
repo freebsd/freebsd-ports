@@ -1,9 +1,5 @@
-# New ports collection makefile for:    font-bh-type1
-# Date created:		28 Aug 2005
-# Whom:			Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	font-bh-type1
 PORTVERSION=	1.0.3

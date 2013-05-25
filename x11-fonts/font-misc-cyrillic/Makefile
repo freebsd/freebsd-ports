@@ -1,9 +1,5 @@
-# New ports collection makefile for:    font-misc-cyrillic
-# Date created:		28 Aug 2005
-# Whom:			Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	font-misc-cyrillic
 PORTVERSION=	1.0.3

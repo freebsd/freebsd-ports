@@ -1,12 +1,7 @@
-# New ports collection makefile for:	libXTrap
-# Date Created:				21 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libXTrap
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org

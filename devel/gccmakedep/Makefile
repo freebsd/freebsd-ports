@@ -16,16 +16,13 @@ PLIST_FILES=	bin/gccmakedep
 
 .include <bsd.port.pre.mk>
 
-.if defined(CC) && ${CC:T:M*clang*} == "clang" || ${OSVERSION} >= 1000024
-BUILD_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
-RUN_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
-CONFIGURE_ENV+=	ac_cv_path_RAWCPP="ucpp -s"
-
-post-build:
-	${REINPLACE_CMD} -e 's|^CC= *|CC=|' \
-		-e 's|^RM= *|RM=|' \
-		-e 's|^LN= *|LN=|' \
-		-e 's|^MV= *|MV=|' ${WRKSRC}/gccmakedep
+# Attempt to force use of GNU cpp, if it is installed as /usr/bin/gcpp.
+.if (${OSVERSION} >= 900506 && ${OSVERSION} < 1000000) || \
+    ${OSVERSION} >= 1000010
+CONFIGURE_ENV+=	ac_cv_path_RAWCPP="gcpp"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

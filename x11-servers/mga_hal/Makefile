@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mga_hal
-# Date created:				12 Jan 2005
-# Whom:					anholt@FreeBSD.org
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mga_hal
 PORTVERSION=	4.4.0

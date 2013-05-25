@@ -15,7 +15,12 @@ COMMENT=	TigerVNC is an advanced VNC implementation
 LISENCE=	GPLv2
 LISENCE_FILE=	${WRKSRC}/LICENCE.TXT
 
+.if defined(WITH_NEW_XORG)
+BROKEN=		Does not build
+.endif
+
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-servers/xorg-server:patch
+BUILD_DEPENDS=  ${LOCALBASE}/include/GL/internal/dri_interface.h:${PORTSDIR}/graphics/dri
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
 		xkbcomp:${PORTSDIR}/x11/xkbcomp

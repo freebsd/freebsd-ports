@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libXprintUtil
-# Date Created:				21 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libXprintUtil
 PORTVERSION=	1.0.1

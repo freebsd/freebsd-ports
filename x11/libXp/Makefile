@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libXp
-# Date Created:			4 May 2004
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libXp
 PORTVERSION=	1.0.1

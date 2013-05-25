@@ -1,17 +1,16 @@
-# New ports collection makefile for:	libxcb
-# Date Created:				2006-08-23
-# Whom:					Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libxcb
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The X protocol C-language Binding (XCB) library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
@@ -21,15 +20,12 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/l
 
 CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen --enable-xinput
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 USE_BZIP2=	yes
-USES=	pathfix
+USES=		pathfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xau xdmcp
-USE_PYTHON_BUILD=	2.5-2.7
+USE_PYTHON_BUILD=	2.5+
 
 GNU_CONFIGURE=	yes
 .for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS NEEDED_CFLAGS NEEDED_LIBS
@@ -46,8 +42,12 @@ XDMCP_LIBS=	-L${LOCALBASE}/lib -lXdmcp
 XPROTO_CFLAGS=	-I${LOCALBASE}/include
 XPROTO_LIBS=	-L${LOCALBASE}/lib
 
+.include "${.CURDIR}/manpages"
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MAKE} -C ${WRKSRC}/doc ${INSTALL_TARGET}
 .endif
 
