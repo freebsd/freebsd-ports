@@ -220,6 +220,7 @@
 %%WWWDIR%%/gui/templates/testcases/tcAssign2Tplan.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssignedToUser.tpl
 %%WWWDIR%%/gui/templates/testcases/tcCompareVersions.tpl
+%%WWWDIR%%/gui/templates/testcases/tcCreateFromIssueMantisXML.tpl
 %%WWWDIR%%/gui/templates/testcases/tcDelete.tpl
 %%WWWDIR%%/gui/templates/testcases/tcEdit.tpl
 %%WWWDIR%%/gui/templates/testcases/tcEdit_New_viewer.tpl
@@ -244,57 +245,6 @@
 %%WWWDIR%%/gui/templates/usermanagement/usersEdit.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersView.tpl
 %%WWWDIR%%/gui/templates/workAreaSimple.tpl
-%%WWWDIR%%/gui/templates_c/%%05^055^055DF0AD%%inc_del_onclick.tpl.php
-%%WWWDIR%%/gui/templates_c/%%0E^0EC^0EC3F9D8%%eventviewer.tpl.php
-%%WWWDIR%%/gui/templates_c/%%19^194^19441EB5%%inc_refreshTreeWithFilters.tpl.php
-%%WWWDIR%%/gui/templates_c/%%25^252^2520047E%%projectEdit.tpl.php
-%%WWWDIR%%/gui/templates_c/%%2B^2B1^2B14B811%%inc_testsuite_viewer_rw.tpl.php
-%%WWWDIR%%/gui/templates_c/%%2B^2B5^2B5F1EA9%%inc_copyrightnotice.tpl.php
-%%WWWDIR%%/gui/templates_c/%%2C^2C3^2C307F68%%inc_ext_table.tpl.php
-%%WWWDIR%%/gui/templates_c/%%2E^2E1^2E11686C%%tcView_viewer.tpl.php
-%%WWWDIR%%/gui/templates_c/%%31^31A^31A35F5F%%inc_filter_panel.tpl.php
-%%WWWDIR%%/gui/templates_c/%%34^344^344702A7%%input_dimensions.conf%7CnavBar.php
-%%WWWDIR%%/gui/templates_c/%%35^352^352624C3%%input_dimensions.conf%7CprojectView.php
-%%WWWDIR%%/gui/templates_c/%%39^39C^39C78510%%input_dimensions.conf%7CcontainerEdit.php
-%%WWWDIR%%/gui/templates_c/%%47^478^478526D1%%input_dimensions.conf%7Clogin.php
-%%WWWDIR%%/gui/templates_c/%%4A^4AE^4AEE5157%%input_dimensions.conf%7CprojectEdit.php
-%%WWWDIR%%/gui/templates_c/%%4E^4E2^4E21677E%%opt_transfer.inc.tpl.php
-%%WWWDIR%%/gui/templates_c/%%56^560^56038526%%inc_head.tpl.php
-%%WWWDIR%%/gui/templates_c/%%5A^5AB^5AB28840%%containerNew.tpl.php
-%%WWWDIR%%/gui/templates_c/%%5D^5DA^5DAE1AB0%%inc_ext_js.tpl.php
-%%WWWDIR%%/gui/templates_c/%%69^690^6902A81E%%input_dimensions.conf%7CtreeFilterForm.php
-%%WWWDIR%%/gui/templates_c/%%6A^6A5^6A537DD8%%login.tpl.php
-%%WWWDIR%%/gui/templates_c/%%6C^6CC^6CC329AE%%tcStepEdit.tpl.php
-%%WWWDIR%%/gui/templates_c/%%72^72D^72DAF6E8%%main.tpl.php
-%%WWWDIR%%/gui/templates_c/%%74^746^746826BD%%mainPageLeft.tpl.php
-%%WWWDIR%%/gui/templates_c/%%77^773^773CF248%%input_dimensions.conf%7CmainPage.php
-%%WWWDIR%%/gui/templates_c/%%7B^7B8^7B846452%%inc_testsuite_viewer_ro.tpl.php
-%%WWWDIR%%/gui/templates_c/%%7C^7C8^7C86128F%%input_dimensions.conf%7Ceventviewer.php
-%%WWWDIR%%/gui/templates_c/%%7F^7FF^7FFDA7BA%%inc_help.tpl.php
-%%WWWDIR%%/gui/templates_c/%%85^851^85132294%%error_icon.tpl.php
-%%WWWDIR%%/gui/templates_c/%%85^851^8516F146%%inc_attachments.tpl.php
-%%WWWDIR%%/gui/templates_c/%%86^869^86926229%%tcTree.tpl.php
-%%WWWDIR%%/gui/templates_c/%%86^86A^86A1E9DD%%projectView.tpl.php
-%%WWWDIR%%/gui/templates_c/%%8A^8AA^8AAF2C56%%inc_login_title.tpl.php
-%%WWWDIR%%/gui/templates_c/%%93^934^9343D7AD%%inc_update.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A1^A1C^A1CBA8B1%%mainPage.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A2^A28^A281DF89%%input_dimensions.conf%7CtcNew.php
-%%WWWDIR%%/gui/templates_c/%%A3^A3A^A3A847C8%%inc_tcbody.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A5^A55^A55CC92A%%inc_tree_control.tpl.php
-%%WWWDIR%%/gui/templates_c/%%B3^B39^B39DACD9%%inc_jsCfieldsValidation.tpl.php
-%%WWWDIR%%/gui/templates_c/%%B6^B6A^B6AD6561%%containerView.tpl.php
-%%WWWDIR%%/gui/templates_c/%%BB^BB4^BB4E6982%%tcView.tpl.php
-%%WWWDIR%%/gui/templates_c/%%CC^CC0^CC0255CA%%staticPage.tpl.php
-%%WWWDIR%%/gui/templates_c/%%D3^D39^D394A177%%input_dimensions.conf.php
-%%WWWDIR%%/gui/templates_c/%%D4^D4D^D4D455CA%%tcNew.tpl.php
-%%WWWDIR%%/gui/templates_c/%%D7^D7E^D7E0C57C%%inc_filter_panel_js.tpl.php
-%%WWWDIR%%/gui/templates_c/%%E2^E21^E21A3209%%inc_msg_from_array.tpl.php
-%%WWWDIR%%/gui/templates_c/%%E6^E68^E6831641%%navBar.tpl.php
-%%WWWDIR%%/gui/templates_c/%%E9^E9B^E9BD7D0A%%input_dimensions.conf%7CtcStepEdit.php
-%%WWWDIR%%/gui/templates_c/%%EB^EBA^EBAFA72D%%tcEdit_New_viewer.tpl.php
-%%WWWDIR%%/gui/templates_c/%%F1^F13^F1313A5A%%frmInner.tpl.php
-%%WWWDIR%%/gui/templates_c/%%F5^F50^F501ED3C%%mainPageRight.tpl.php
-%%WWWDIR%%/gui/templates_c/README.TXT
 %%WWWDIR%%/gui/themes/default/css/custom.css.example
 %%WWWDIR%%/gui/themes/default/css/testlink.css
 %%WWWDIR%%/gui/themes/default/css/tl_documents.css
@@ -306,6 +256,8 @@
 %%WWWDIR%%/gui/themes/default/images/add.png
 %%WWWDIR%%/gui/themes/default/images/add_small.png
 %%WWWDIR%%/gui/themes/default/images/answer.png
+%%WWWDIR%%/gui/themes/default/images/application_cascade.png
+%%WWWDIR%%/gui/themes/default/images/application_double.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2_16.png
 %%WWWDIR%%/gui/themes/default/images/arrow_org.gif
@@ -365,6 +317,9 @@
 %%WWWDIR%%/gui/themes/default/images/filter.png
 %%WWWDIR%%/gui/themes/default/images/flag_green.png
 %%WWWDIR%%/gui/themes/default/images/flag_yellow.png
+%%WWWDIR%%/gui/themes/default/images/folder_link.png
+%%WWWDIR%%/gui/themes/default/images/ghost16x16.png
+%%WWWDIR%%/gui/themes/default/images/ghost32x32.png
 %%WWWDIR%%/gui/themes/default/images/history.png
 %%WWWDIR%%/gui/themes/default/images/history_small.png
 %%WWWDIR%%/gui/themes/default/images/ico_all_l.gif
@@ -467,97 +422,6 @@
 %%WWWDIR%%/install/installNewDB.php
 %%WWWDIR%%/install/installStart.php
 %%WWWDIR%%/install/installUtils.php
-%%WWWDIR%%/install/migration/Migrator.php
-%%WWWDIR%%/install/migration/index.php
-%%WWWDIR%%/install/migration/migrate_16_to_17.php
-%%WWWDIR%%/install/migration/migrate_16_to_17_functions.php
-%%WWWDIR%%/install/migration/migrate_17/index.php
-%%WWWDIR%%/install/migration/migrate_17/migrate_17_to_18.php
-%%WWWDIR%%/install/migration/migrate_17/migrate_17_to_18_functions.php
-%%WWWDIR%%/install/migration/migrate_17/migration_start.php
-%%WWWDIR%%/install/migration/migrate_18/migrate_18_to_19.php
-%%WWWDIR%%/install/migration/migration_start.php
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/0_clean_up.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/bugs.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/build.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/category.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/component.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/db_version_table.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/keywords.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/mgtcategory.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/mgtcomponent.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/mgtproduct.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/mgttestcase.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/milestone.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/priority.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/project.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/projrights.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/req_tables.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/results.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/rights.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/testcase.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/user.sql
-%%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/0_clean_up.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/bugs.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/build.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/category.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/component.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/db_version_table.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/mgtcategory.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/mgtcomponent.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/mgtproduct.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/mgttestcase.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/milestone.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/project.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/req_tables.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/results.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/rights.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/testcase.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/user.sql
-%%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/bugs.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/build.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/category.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/component.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/requirements.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/results.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/user.sql
-%%WWWDIR%%/install/sql/alter_tables/1.6/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mssql/builds.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mssql/tcversions.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mssql/testplans.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mssql/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mysql/builds.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mysql/tcversions.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mysql/testplans.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/mysql/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/postgres/builds.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/postgres/tcversions.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/postgres/testplans.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7.1/postgres/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_3/builds.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_3/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_4/requirements.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_4/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_5/priorities.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_5/risk_assignments.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_5/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_2/requirements.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_2/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_3/milestones.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_3/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_4/remove_redundant_indexes.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_3/builds.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_3/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_4/requirements.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_4/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_5/priorities.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_5/risk_assignments.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_5/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/rc_2/requirements.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/rc_2/z_final_step.sql
-%%WWWDIR%%/install/sql/alter_tables/1.7/postgres/rc_3/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.8/mssql/DB.1.2/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.8/mssql/DB.1.2/db_version.sql
 %%WWWDIR%%/install/sql/alter_tables/1.8/mssql/DB.1.2/z_final_step.sql
@@ -612,87 +476,88 @@
 %%WWWDIR%%/lib/ajax/getrequirementnodes.php
 %%WWWDIR%%/lib/ajax/gettestcasesummary.php
 %%WWWDIR%%/lib/ajax/gettprojectnodes.php
-%%WWWDIR%%/lib/api/APIErrors.php
-%%WWWDIR%%/lib/api/APIKey.php
-%%WWWDIR%%/lib/api/api.const.inc.php
-%%WWWDIR%%/lib/api/sample_clients/java/comp.bat
-%%WWWDIR%%/lib/api/sample_clients/java/lib/commons-logging-1.1.jar
-%%WWWDIR%%/lib/api/sample_clients/java/lib/ws-commons-util-1.0.2.jar
-%%WWWDIR%%/lib/api/sample_clients/java/lib/xmlrpc-client-3.1-sources.jar
-%%WWWDIR%%/lib/api/sample_clients/java/lib/xmlrpc-client-3.1.jar
-%%WWWDIR%%/lib/api/sample_clients/java/lib/xmlrpc-common-3.1-sources.jar
-%%WWWDIR%%/lib/api/sample_clients/java/lib/xmlrpc-common-3.1.jar
-%%WWWDIR%%/lib/api/sample_clients/java/org/testlink/api/client/sample/TestlinkAPIXMLRPCClient.java
-%%WWWDIR%%/lib/api/sample_clients/java/org/testlink/api/client/sample/clientAddTestCaseToTestPlan.java
-%%WWWDIR%%/lib/api/sample_clients/java/run.bat
-%%WWWDIR%%/lib/api/sample_clients/perl/clientCreateBuild.pl
-%%WWWDIR%%/lib/api/sample_clients/perl/clientGetProjects.pl
-%%WWWDIR%%/lib/api/sample_clients/php/README.TXT
-%%WWWDIR%%/lib/api/sample_clients/php/clientAddPlatformToTestPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientAddTestCaseToTestPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientAssignRequirements.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCheckDevKey.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateBuild.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateNTestCases.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreatePlatform.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestCase.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestCaseSteps.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestProject.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestSuite.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientDeleteExecution.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientDeleteTestCaseSteps.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientDoesUserExist.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetBuilds.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetExecCountersByBuild.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetFirstLevelTestSuitesForTestProject.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetFullPath.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetLastExecutionResult.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetProjectPlatforms.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetProjectTestPlans.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetProjects.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCase.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCaseAttachments.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCaseCustomFieldDesignValue.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCaseIDByName.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCasesForTestPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCasesForTestSuite.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestCasesIDByName.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestPlanByName.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestPlanPlatforms.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestProjectByName.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestSuitesForTestPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTestSuitesForTestSuite.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientGetTotalsForPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientRemovePlatformFromTestPlan.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientReportTCResult.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientReportTCResultOVERWRITE.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientSample.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientSample2.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientSetTestCaseExecutionType.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientSetupTicket-5451.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
-%%WWWDIR%%/lib/api/sample_clients/php/clientUploadTestCaseAttachment.php
-%%WWWDIR%%/lib/api/sample_clients/php/css/style.css
-%%WWWDIR%%/lib/api/sample_clients/php/img/icon-foldout.gif
-%%WWWDIR%%/lib/api/sample_clients/php/index.php
-%%WWWDIR%%/lib/api/sample_clients/php/other/TheMuppetShow.jpg
-%%WWWDIR%%/lib/api/sample_clients/php/other/marilyn-monroe.jpg
-%%WWWDIR%%/lib/api/sample_clients/php/other/muppet-show.jpg
-%%WWWDIR%%/lib/api/sample_clients/php/sample.inc.php
-%%WWWDIR%%/lib/api/sample_clients/php/util.php
-%%WWWDIR%%/lib/api/sample_clients/python/clientGetProjects.py
-%%WWWDIR%%/lib/api/sample_clients/python/clientGetTestCaseForTestSuite.py
-%%WWWDIR%%/lib/api/sample_clients/python/clientSample.py
-%%WWWDIR%%/lib/api/sample_clients/ruby/clientSample.rb
-%%WWWDIR%%/lib/api/sample_extended_server/extended_server.php
-%%WWWDIR%%/lib/api/test/INSTALLING.txt
-%%WWWDIR%%/lib/api/test/TestlinkXMLRPCServerTest.php
-%%WWWDIR%%/lib/api/test/TestlinkXMLRPCServerTestData.php
-%%WWWDIR%%/lib/api/test/test_data.sql
-%%WWWDIR%%/lib/api/xmlrpc.class.php
-%%WWWDIR%%/lib/api/xmlrpc.php
+%%WWWDIR%%/lib/api/rest/v1/index.php
+%%WWWDIR%%/lib/api/rest/v1/tlRestApi.class.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/APIErrors.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/api.const.inc.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/comp.bat
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib/commons-logging-1.1.jar
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib/ws-commons-util-1.0.2.jar
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib/xmlrpc-client-3.1-sources.jar
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib/xmlrpc-client-3.1.jar
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib/xmlrpc-common-3.1-sources.jar
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib/xmlrpc-common-3.1.jar
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org/testlink/api/client/sample/TestlinkAPIXMLRPCClient.java
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org/testlink/api/client/sample/clientAddTestCaseToTestPlan.java
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/run.bat
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/perl/clientCreateBuild.pl
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/perl/clientGetProjects.pl
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/README.TXT
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddPlatformToTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddTestCaseToTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAssignRequirements.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCheckDevKey.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateBuild.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateNTestCases.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreatePlatform.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestCase.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestCaseSteps.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestProject.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestSuite.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDeleteExecution.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDeleteTestCaseSteps.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDoesUserExist.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetBuilds.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetExecCountersByBuild.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetFirstLevelTestSuitesForTestProject.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetFullPath.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetLastExecutionResult.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjectPlatforms.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjectTestPlans.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetProjects.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCase.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseAttachments.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseCustomFieldDesignValue.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseIDByName.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesForTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesForTestSuite.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesIDByName.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestPlanByName.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestPlanPlatforms.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestProjectByName.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestSuitesForTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestSuitesForTestSuite.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTotalsForPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientRemovePlatformFromTestPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResult.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultOVERWRITE.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample2.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetTestCaseExecutionType.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetupTicket-5451.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUploadTestCaseAttachment.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/css/style.css
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/img/icon-foldout.gif
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/index.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/other/TheMuppetShow.jpg
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/other/marilyn-monroe.jpg
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/other/muppet-show.jpg
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/sample.inc.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/util.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/python/clientGetProjects.py
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/python/clientGetTestCaseForTestSuite.py
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/python/clientSample.py
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/ruby/clientSample.rb
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_extended_server/extended_server.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/test/INSTALLING.txt
+%%WWWDIR%%/lib/api/xmlrpc/v1/test/TestlinkXMLRPCServerTest.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/test/TestlinkXMLRPCServerTestData.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/test/test_data.sql
+%%WWWDIR%%/lib/api/xmlrpc/v1/xmlrpc.class.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/xmlrpc.php
 %%WWWDIR%%/lib/attachments/attachmentdelete.php
 %%WWWDIR%%/lib/attachments/attachmentdownload.php
 %%WWWDIR%%/lib/attachments/attachmentupload.php
@@ -712,6 +577,7 @@
 %%WWWDIR%%/lib/execute/execNotes.php
 %%WWWDIR%%/lib/execute/execSetResults.php
 %%WWWDIR%%/lib/execute/getExecNotes.php
+%%WWWDIR%%/lib/functions/APIKey.class.php
 %%WWWDIR%%/lib/functions/assignment_mgr.class.php
 %%WWWDIR%%/lib/functions/attachments.inc.php
 %%WWWDIR%%/lib/functions/cfield_mgr.class.php
@@ -819,6 +685,7 @@
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redminerestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.tracxmlrpc.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.youtrackrestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test2.redminerestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test2_int_mantissoap.php
 %%WWWDIR%%/lib/issuetrackerintegration/fogbugzdbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/fogbugzrestInterface.class.php
@@ -922,11 +789,15 @@
 %%WWWDIR%%/lib/results/topLevelSuitesBarChart.php
 %%WWWDIR%%/lib/results/uncoveredTestCases.php
 %%WWWDIR%%/lib/testcases/archiveData.php
+%%WWWDIR%%/lib/testcases/archiveDataNew.php
 %%WWWDIR%%/lib/testcases/containerEdit.php
 %%WWWDIR%%/lib/testcases/listTestCases.php
 %%WWWDIR%%/lib/testcases/tcAssign2Tplan.php
 %%WWWDIR%%/lib/testcases/tcAssignedToUser.php
+%%WWWDIR%%/lib/testcases/tcCompareVersions-tocheck.php
 %%WWWDIR%%/lib/testcases/tcCompareVersions.php
+%%WWWDIR%%/lib/testcases/tcCreateFromIssue.php
+%%WWWDIR%%/lib/testcases/tcCreateFromIssueMantisXML.php
 %%WWWDIR%%/lib/testcases/tcEdit.php
 %%WWWDIR%%/lib/testcases/tcExecute.php
 %%WWWDIR%%/lib/testcases/tcExport.php
@@ -1015,6 +886,25 @@
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/lostPassword.php
+%%WWWDIR%%/third_party/Slim/Environment.php
+%%WWWDIR%%/third_party/Slim/Exception/Pass.php
+%%WWWDIR%%/third_party/Slim/Exception/Stop.php
+%%WWWDIR%%/third_party/Slim/Http/Headers.php
+%%WWWDIR%%/third_party/Slim/Http/Request.php
+%%WWWDIR%%/third_party/Slim/Http/Response.php
+%%WWWDIR%%/third_party/Slim/Http/Util.php
+%%WWWDIR%%/third_party/Slim/Log.php
+%%WWWDIR%%/third_party/Slim/LogWriter.php
+%%WWWDIR%%/third_party/Slim/Middleware.php
+%%WWWDIR%%/third_party/Slim/Middleware/ContentTypes.php
+%%WWWDIR%%/third_party/Slim/Middleware/Flash.php
+%%WWWDIR%%/third_party/Slim/Middleware/MethodOverride.php
+%%WWWDIR%%/third_party/Slim/Middleware/PrettyExceptions.php
+%%WWWDIR%%/third_party/Slim/Middleware/SessionCookie.php
+%%WWWDIR%%/third_party/Slim/Route.php
+%%WWWDIR%%/third_party/Slim/Router.php
+%%WWWDIR%%/third_party/Slim/Slim.php
+%%WWWDIR%%/third_party/Slim/View.php
 %%WWWDIR%%/third_party/Zend/Exception.php
 %%WWWDIR%%/third_party/Zend/Http/Client.php
 %%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Curl.php
@@ -5445,6 +5335,10 @@
 @dirrm %%WWWDIR%%/third_party/Zend/Http/Client
 @dirrm %%WWWDIR%%/third_party/Zend/Http
 @dirrm %%WWWDIR%%/third_party/Zend
+@dirrm %%WWWDIR%%/third_party/Slim/Middleware
+@dirrm %%WWWDIR%%/third_party/Slim/Http
+@dirrm %%WWWDIR%%/third_party/Slim/Exception
+@dirrm %%WWWDIR%%/third_party/Slim
 @dirrm %%WWWDIR%%/third_party
 @dirrmtry %%WWWDIR%%/logs
 @dirrm %%WWWDIR%%/locale/zh_CN
@@ -5486,119 +5380,99 @@
 @dirrm %%WWWDIR%%/lib/events
 @dirrm %%WWWDIR%%/lib/cfields
 @dirrm %%WWWDIR%%/lib/attachments
-@dirrm %%WWWDIR%%/lib/api/test
-@dirrm %%WWWDIR%%/lib/api/sample_extended_server
-@dirrm %%WWWDIR%%/lib/api/sample_clients/ruby
-@dirrm %%WWWDIR%%/lib/api/sample_clients/python
-@dirrm %%WWWDIR%%/lib/api/sample_clients/php/other
-@dirrm %%WWWDIR%%/lib/api/sample_clients/php/img
-@dirrm %%WWWDIR%%/lib/api/sample_clients/php/css
-@dirrm %%WWWDIR%%/lib/api/sample_clients/php
-@dirrm %%WWWDIR%%/lib/api/sample_clients/perl
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java/org/testlink/api/client/sample
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java/org/testlink/api/client
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java/org/testlink/api
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java/org/testlink
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java/org
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java/lib
-@dirrm %%WWWDIR%%/lib/api/sample_clients/java
-@dirrm %%WWWDIR%%/lib/api/sample_clients
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/test
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_extended_server
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/ruby
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/python
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/other
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/img
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/css
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/perl
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org/testlink/api/client/sample
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org/testlink/api/client
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org/testlink/api
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org/testlink
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/org
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/lib
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients
+@dirrm %%WWWDIR%%/lib/api/xmlrpc/v1
+@dirrm %%WWWDIR%%/lib/api/xmlrpc
+@dirrm %%WWWDIR%%/lib/api/rest/v1
+@dirrm %%WWWDIR%%/lib/api/rest
 @dirrm %%WWWDIR%%/lib/api
 @dirrm %%WWWDIR%%/lib/ajax
 @dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%/install/util
-@dirrm %%WWWDIR%%/install/sql/postgres
-@dirrm %%WWWDIR%%/install/sql/mysql
-@dirrm %%WWWDIR%%/install/sql/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/postgres/DB.1.3/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/postgres/DB.1.3/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/postgres/DB.1.3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/stepZ
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/step1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/postgres/DB.1.2
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/mysql/DB.1.2
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/mssql/DB.1.2
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.8
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/postgres/rc_3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/postgres/rc_2
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_5
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/postgres/beta_3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql/rc_2
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_5
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_4
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql/beta_3
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7.1/postgres
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7.1/mysql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7.1/mssql
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7.1
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.7
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.5_to_1.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables/1.0.4_to_1.6
-@dirrm %%WWWDIR%%/install/sql/alter_tables
-@dirrm %%WWWDIR%%/install/sql
-@dirrm %%WWWDIR%%/install/migration/migrate_18
-@dirrm %%WWWDIR%%/install/migration/migrate_17
-@dirrm %%WWWDIR%%/install/migration
-@dirrm %%WWWDIR%%/install/info
-@dirrm %%WWWDIR%%/install/img
-@dirrm %%WWWDIR%%/install/css
-@dirrm %%WWWDIR%%/install
+@dirrmtry %%WWWDIR%%/install/util
+@dirrmtry %%WWWDIR%%/install/sql/postgres
+@dirrmtry %%WWWDIR%%/install/sql/mysql
+@dirrmtry %%WWWDIR%%/install/sql/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/postgres/DB.1.3/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/postgres/DB.1.3/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/postgres/DB.1.3
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql/DB.1.6
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8/postgres/DB.1.2
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8/mysql/DB.1.2
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8/mssql/DB.1.2
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.8
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables
+@dirrmtry %%WWWDIR%%/install/sql
+@dirrmtry %%WWWDIR%%/install/info
+@dirrmtry %%WWWDIR%%/install/img
+@dirrmtry %%WWWDIR%%/install/css
+@dirrmtry %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/gui/themes/default/images
 @dirrm %%WWWDIR%%/gui/themes/default/css
 @dirrm %%WWWDIR%%/gui/themes/default
