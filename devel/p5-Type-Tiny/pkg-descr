@@ -1,0 +1,10 @@
+Type::Tiny is a tiny class for creating Moose-like type constraint objects which
+are compatible with Moo, Moose and Mouse.
+
+Maybe now we won't need to have separate MooseX, MouseX and MooX versions of
+everything? We can but hope...
+
+This documents the internals of Type::Tiny. Type::Tiny::Manual is a better
+starting place if you're new.
+
+WWW: http://search.cpan.org/dist/Type-Tiny/
