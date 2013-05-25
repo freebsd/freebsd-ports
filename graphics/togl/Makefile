@@ -32,6 +32,8 @@ PLIST_SUB=	TOGL_INSTDIR="${TOGL_INSTDIR:S,^${PREFIX}/,,}"
 CPPFLAGS+=	-I${TK_INCLUDEDIR}
 LDFLAGS+=	-L${TK_LIBDIR}
 
+PLIST_SUB+=	TK_VER=${TK_VER}
+
 .include <bsd.port.options.mk>
 
 post-patch:
