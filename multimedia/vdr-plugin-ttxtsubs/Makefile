@@ -1,13 +1,9 @@
-# New ports collection makefile for:	vdr-plugin-ttxtsubs
-# Date created:		Fri May 13 18:13:34 CEST 2011
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-ttxtsubs
 PORTVERSION=	0.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/725/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
