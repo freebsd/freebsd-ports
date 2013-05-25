@@ -15,11 +15,11 @@ LICENSE=	ISCL
 
 CONFLICTS=	imaputils-[0-9]*
 
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+USES=		shebangfix
+SHEBANG_FILES=	*.pl
 USE_PERL5_RUN=	yes
-
-do-build:
-	${REINPLACE_CMD} \
-		-e 's|/usr/bin/perl|${PERL}|g' ${WRKDIR}/*.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/*.pl ${PREFIX}/bin
