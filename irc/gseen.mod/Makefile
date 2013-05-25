@@ -40,7 +40,7 @@ post-extract:
 pre-build:
 	@${ECHO_CMD} gseen.mod >> ${WRKSRC}/.modules
 	@${ECHO_CMD} gseen.mod >> ${WRKSRC}/.known_modules
-	@cd ${WRKSRC} && ./configure
+	@cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS}
 
 do-install:
 	@${MKDIR} ${LOCALBASE}/lib/eggdrop ${LOCALBASE}/share/eggdrop/language
