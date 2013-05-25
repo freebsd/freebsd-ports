@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Togl
-# Date created:		Wed Aug 18 18:49:17 EDT 1999
-# Whom:			Randall Hopper <aa8vb@ipass.net>
-#
+# Created by: Randall Hopper <aa8vb@ipass.net>
 # $FreeBSD$
-#
 
 PORTNAME=	togl
 PORTVERSION=	1.7
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Togl/${PORTVERSION}
 DISTNAME=	Togl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Tk OpenGL widget
+COMMENT=	Tk OpenGL widget
 
 USE_XORG=	x11 xt xmu
 USE_GL=		gl
@@ -23,7 +19,7 @@ USE_TK_BUILD=	84+
 USE_TK=		84+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tk=${TK_LIBDIR} \
+CONFIGURE_ARGS+=--with-tk=${TK_LIBDIR} \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -36,6 +32,8 @@ PLIST_SUB=	TOGL_INSTDIR="${TOGL_INSTDIR:S,^${PREFIX}/,,}"
 CPPFLAGS+=	-I${TK_INCLUDEDIR}
 LDFLAGS+=	-L${TK_LIBDIR}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|wish |${WISH:T} |' ${WRKSRC}/*.tcl
 
@@ -47,11 +45,11 @@ do-install:
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${TOGL_INSTDIR}/libtogl.so.1
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so.1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Togl.html ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Makefile ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ben.rgb ${EXAMPLESDIR}
