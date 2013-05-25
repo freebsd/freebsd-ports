@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot2-antispam-plugin
-PORTVERSION=	20101222
-PORTREVISION=	7
+PORTVERSION=	20130429
 CATEGORIES=	mail
-MASTER_SITES=	http://www.bamus.cz/distfiles/
+MASTER_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
+		LOCAL/olgeni
 DISTFILES=	dovecot-antispam-plugin-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dovecot 2.x plugin for spam systems training
 
-BUILD_DEPENDS=	dovecot>=2.0.7:${PORTSDIR}/mail/dovecot2 \
+BUILD_DEPENDS=	dovecot>=2.2.0:${PORTSDIR}/mail/dovecot2 \
 		gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	dovecot>=2.0.7:${PORTSDIR}/mail/dovecot2
+RUN_DEPENDS=	dovecot>=2.2.0:${PORTSDIR}/mail/dovecot2
 
 CONFLICTS=	dovecot-antispam-1.*
-WRKSRC=		${WRKDIR}/dovecot-antispam-plugin-43880985e3dd
+WRKSRC=		${WRKDIR}/dovecot-antispam-plugin-5ebc6aae4d7c
 
 USE_AUTOTOOLS=	aclocal autoheader autoconf
 USE_BZIP2=	yes
