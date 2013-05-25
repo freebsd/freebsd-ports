@@ -3,7 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.0/
 
@@ -35,6 +35,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_OPENSSL=	yes
+USES=	shebangfix
+SHEBANG_FILES=	man/fixsp.pl
 
 CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
