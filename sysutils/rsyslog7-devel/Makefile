@@ -20,7 +20,7 @@ LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 
-PORTSCOUT=	limit:^6
+PORTSCOUT=	limit:^7\.3
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
