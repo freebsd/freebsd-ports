@@ -1,9 +1,5 @@
-# New ports collection makefile for:    font-ibm-type1
-# Date created:		28 Aug 2005
-# Whom:			Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	font-ibm-type1
 PORTVERSION=	1.0.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xf86-video-rdc
-# Date created:				14 April 2010
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-rdc
 PORTVERSION=	0.9
@@ -16,6 +12,10 @@ COMMENT=	X.Org RDC display driver
 #USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
+
+.if defined(WITH_NEW_XORG)
+IGNORE=         does not build with X server 1.12
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/xorg/modules/drivers

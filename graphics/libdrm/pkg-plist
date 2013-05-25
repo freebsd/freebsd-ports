@@ -17,12 +17,13 @@
 %%NEW%%include/libdrm/drm_mode.h
 %%NEW%%include/libdrm/drm_sarea.h
 %%NEW%%include/libdrm/i915_drm.h
+%%NEW%%%%INTEL_DRIVER%%include/libdrm/intel_aub.h
 %%NEW%%%%INTEL_DRIVER%%include/libdrm/intel_bufmgr.h
 %%NEW%%%%INTEL_DRIVER%%include/libdrm/intel_debug.h
 %%NEW%%include/libdrm/mach64_drm.h
 %%NEW%%include/libdrm/mga_drm.h
+%%NEW%%include/libdrm/nouveau.h
 %%NEW%%include/libdrm/nouveau_drm.h
-%%NEW%%include/libdrm/nouveau_drmif.h
 %%NEW%%include/libdrm/r128_drm.h
 %%NEW%%%%RADEON_DRIVERS%%include/libdrm/r600_pci_ids.h
 %%NEW%%%%RADEON_DRIVERS%%include/libdrm/radeon_bo.h
@@ -37,17 +38,14 @@
 %%NEW%%include/libdrm/sis_drm.h
 %%NEW%%include/libdrm/via_drm.h
 %%NEW%%%%KMS%%include/libkms/libkms.h
-include/nouveau/nouveau_bo.h
-include/nouveau/nouveau_channel.h
+%%OLD%%include/nouveau/nouveau_bo.h
+%%OLD%%include/nouveau/nouveau_channel.h
 %%OLD%%include/nouveau/nouveau_class.h
-include/nouveau/nouveau_device.h
-include/nouveau/nouveau_grobj.h
-include/nouveau/nouveau_notifier.h
-include/nouveau/nouveau_pushbuf.h
-%%NEW%%include/nouveau/nouveau_reloc.h
-include/nouveau/nouveau_resource.h
-%%NEW%%include/nouveau/nv04_pushbuf.h
-%%NEW%%include/nouveau/nvc0_pushbuf.h
+%%OLD%%include/nouveau/nouveau_device.h
+%%OLD%%include/nouveau/nouveau_grobj.h
+%%OLD%%include/nouveau/nouveau_notifier.h
+%%OLD%%include/nouveau/nouveau_pushbuf.h
+%%OLD%%include/nouveau/nouveau_resource.h
 include/xf86drm.h
 include/xf86drmMode.h
 lib/libdrm.la
@@ -58,7 +56,8 @@ lib/libdrm.so.2
 %%INTEL_DRIVER%%lib/libdrm_intel.so.1
 lib/libdrm_nouveau.la
 lib/libdrm_nouveau.so
-lib/libdrm_nouveau.so.1
+%%OLD%%lib/libdrm_nouveau.so.1
+%%NEW%%lib/libdrm_nouveau.so.2
 %%NEW%%%%RADEON_DRIVERS%%lib/libdrm_radeon.la
 %%NEW%%%%RADEON_DRIVERS%%lib/libdrm_radeon.so
 %%NEW%%%%RADEON_DRIVERS%%lib/libdrm_radeon.so.1
@@ -70,7 +69,7 @@ libdata/pkgconfig/libdrm.pc
 libdata/pkgconfig/libdrm_nouveau.pc
 %%NEW%%%%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_radeon.pc
 %%NEW%%%%KMS%%libdata/pkgconfig/libkms.pc
-@dirrm include/nouveau
+%%OLD%%@dirrm include/nouveau
 %%NEW%%%%KMS%%@dirrm include/libkms
 %%NEW%%@dirrm include/libdrm
 %%OLD%%@dirrm include/drm

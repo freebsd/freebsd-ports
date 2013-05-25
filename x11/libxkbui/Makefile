@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libxkbui
-# Date Created:			8 Feb 2006
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libxkbui
 PORTVERSION=	1.0.2

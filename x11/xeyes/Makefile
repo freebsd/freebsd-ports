@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xeyes
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xeyes
 PORTVERSION=	1.1.1

@@ -18,13 +18,12 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
-		xcb:${PORTSDIR}/x11/libxcb \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
 USES=		cmake gettext iconv
-USE_XORG=	ice sm x11 xau xdmcp xext xrender xt
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender xt
 USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build
 USE_GNOME=	glib20

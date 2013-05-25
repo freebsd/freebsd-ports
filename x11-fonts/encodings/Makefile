@@ -1,9 +1,4 @@
-# New ports collection makefile for:    encodings
-# Date created:				Oct 29 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	encodings
 PORTVERSION=	1.0.4

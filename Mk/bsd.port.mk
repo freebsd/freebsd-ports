@@ -1903,8 +1903,14 @@ X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
 X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
 
 .if defined(USE_IMAKE)
+.if (${OSVERSION} >= 900506 && ${OSVERSION} < 1000000) || \
+	${OSVERSION} >= 1000010
+CONFIGURE_ENV+=		IMAKECPP="gcpp"
+MAKE_ENV+=		IMAKECPP="gcpp"
+.else
 CONFIGURE_ENV+=		IMAKECPP="${CPP}"
 MAKE_ENV+=		IMAKECPP="${CPP}"
+.endif
 MAKE_FLAGS?=		CC="${CC}" CXX="${CXX}"
 BUILD_DEPENDS+=		imake:${X_IMAKE_PORT}
 .endif
@@ -1924,8 +1930,10 @@ MAKE_ENV+=		DISPLAY="localhost:1001"
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 _GL_gl_LIB_DEPENDS=		GL.1:${PORTSDIR}/graphics/libGL
+_GL_gl_USE_XORG=		glproto dri2proto
 _GL_glew_LIB_DEPENDS=		GLEW.1:${PORTSDIR}/graphics/glew
 _GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
+_GL_glu_USE_XORG=		glproto dri2proto
 _GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
 _GL_glut_LIB_DEPENDS=		glut.12:${PORTSDIR}/graphics/freeglut
 _GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
@@ -1939,6 +1947,8 @@ USE_GL=		glu
 		!defined(_GL_${_component}_RUN_DEPENDS)
 IGNORE=		uses unknown GL component
 .  else
+USE_XORG+=	${_GL_${_component}_USE_XORG}
+BUILD_DEPENDS+=	${_GL_${_component}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .  endif

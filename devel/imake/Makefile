@@ -1,8 +1,8 @@
-# Created by:				Eric Anholt <ahnholt@FreeBSD.org>
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	imake
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -11,12 +11,16 @@ COMMENT=	Imake and other utilities from X.Org
 
 RUN_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		makedepend:${PORTSDIR}/devel/makedepend \
-		${PREFIX}/lib/X11/config/xorg.cf:${PORTSDIR}/x11/xorg-cf-files
+		${LOCALBASE}/lib/X11/config/xorg.cf:${PORTSDIR}/x11/xorg-cf-files
 
 USE_PERL5=	yes
 
 XORG_CAT=	util
 USE_XORG=	xproto
+
+# clang's cpp destroys whitespace, particularly hard tabs in makefiles,
+# which is fatal for imake.
+CPPFLAGS+=	-DDEFAULT_CC=\\\"gcc\\\"
 
 .ifdef USE_IMAKE
 .error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -34,16 +38,14 @@ MAN1=		ccmakedep.1 \
 
 post-patch:
 	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/mkhtmlindex.pl
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
-.if defined(CC) && ${CC:T:M*clang*} == "clang" || ${OSVERSION} >= 1000024
-BUILD_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
-RUN_DEPENDS+=	ucpp:${PORTSDIR}/devel/ucpp
-CONFIGURE_ENV+=	ac_cv_path_RAWCPP="ucpp -s"
-
-post-build:
-	${REINPLACE_CMD} -e 's|^configdirspec= *|configdirspec=|' ${WRKSRC}/xmkmf
+# Attempt to force use of GNU cpp, if it is installed as /usr/bin/gcpp.
+.if (${OSVERSION} >= 900506 && ${OSVERSION} < 1000000) || \
+	${OSVERSION} >= 1000010
+CONFIGURE_ENV+=       ac_cv_path_RAWCPP="gcpp"
 .endif
 
 .include <bsd.port.post.mk>

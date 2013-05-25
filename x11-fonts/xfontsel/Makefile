@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Point and click selection of X11 font names
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xorg-macros
+USE_XORG=	xt xaw
 
 MAN1=		xfontsel.1
 

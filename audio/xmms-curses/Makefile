@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-curses
-# Date created:				2007-07-20
-# Whom:				Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-curses
 PORTVERSION=	0.2.2
@@ -16,12 +12,11 @@ COMMENT=	A ncurses program for (remote) controlling multimedia/xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \
-		xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs
 
 USES=		gettext iconv
 USE_GNOME=	gtk12
-USE_XORG=	x11 xau xdmcp xext xi
+USE_XORG=	x11 xau xcb xdmcp xext xi
 
 MAN1=	${PORTNAME}.1
 

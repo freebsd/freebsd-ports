@@ -15,13 +15,12 @@ COMMENT=	Dynamic, small, fast and simple window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		xcb:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 
 OPTIONS_DEFINE=	XINERAMA XFT DOCS
 OPTIONS_DEFAULT=XINERAMA
 
-USE_XORG=	x11 xau xdmcp xext
+USE_XORG=	x11 xau xcb xdmcp xext
 
 MAN1=		dwm.1
 PLIST_FILES=	bin/dwm

@@ -4,7 +4,7 @@
 
 PORTNAME=	empathy
 PORTVERSION=	2.34.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -101,6 +101,7 @@ PLIST_SUB+=	NST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMAP}
+USE_GL=		gl
 LIB_DEPENDS+=	champlain-0.8:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-map
 PLIST_SUB+=	MAP=""

@@ -27,8 +27,7 @@ LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		xcb:${PORTSDIR}/x11/libxcb
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 DEPRECATED=	Depends on QT3; unmaintained
 EXPIRATION_DATE=	2013-07-01
@@ -40,7 +39,7 @@ USE_QT_VER=	3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xft xi \
+USE_XORG=	ice sm x11 xau xcb xcursor xdmcp xext xfixes xft xi \
 		xinerama xrandr xrender xt
 USE_LDCONFIG=	yes
 QTCPPFLAGS+=	-L${LOCALBASE}/lib

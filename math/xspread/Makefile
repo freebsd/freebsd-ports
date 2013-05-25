@@ -31,9 +31,8 @@ PLIST_FILES=	bin/pxspread bin/xspread
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xau xdmcp xt
-LIB_DEPENDS+=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		xcb:${PORTSDIR}/x11/libxcb
+USE_XORG=	x11 xau xcb xdmcp xt
+LIB_DEPENDS+=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else

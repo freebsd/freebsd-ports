@@ -10,8 +10,7 @@ COMMENT=	Display information utility for X
 LICENSE=	MIT
 
 XORG_CAT=	app
-LIB_DEPENDS=	xcb:${PORTSDIR}/x11/libxcb
-USE_XORG=	dmx x11 xcomposite xext xinerama xorg-macros xproto xrender \
+USE_XORG=	dmx x11 xcb xcomposite xext xinerama xproto xrender \
 		xtst xxf86dga xxf86misc xxf86vm
 
 PLIST_FILES=	bin/xdpyinfo

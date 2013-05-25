@@ -1,8 +1,7 @@
-# Created by: anholt@FreeBSD.org
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libGLU
-PORTREVISION=	2
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 
@@ -19,11 +18,4 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/include/GL/glu*.h ${PREFIX}/include/GL/
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
-
-.include <bsd.port.pre.mk>
-
-.if !(${ARCH} == "amd64" || ${ARCH} == "i386")
-CONFIGURE_ARGS+=--disable-gallium-intel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

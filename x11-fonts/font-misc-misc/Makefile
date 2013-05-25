@@ -1,9 +1,5 @@
-# New ports collection makefile for:    font-misc-misc
-# Date created:		28 Aug 2005
-# Whom:			Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	font-misc-misc
 PORTVERSION=	1.1.2

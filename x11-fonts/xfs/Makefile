@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xfs
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xfs
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 
@@ -17,7 +12,7 @@ XORG_CAT=	app
 USE_GMAKE=	yes
 USE_XORG=	libfs xfont xtrans
 USE_RC_SUBR=	xfs
-CONFIGURE_ENV+=	ac_cv_path_XMLTO=""
+CONFIGURE_ARGS=	--without-xmlto --without-fop
 
 MAN1=		xfs.1
 

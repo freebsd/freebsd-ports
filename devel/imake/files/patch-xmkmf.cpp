@@ -1,17 +1,6 @@
---- work/imake-1.0.2/xmkmf.cpp	2004-04-23 18:42:00.000000000 +0000
-+++ xmkmf.cpp	2009-12-14 20:51:01.695597560 +0000
-@@ -53,6 +53,10 @@
-     args="-I$topdir/config/cf -DTOPDIR=$topdir -DCURDIR=$curdir"
- fi
- 
-+if [ -n "$CPP" -a -z "$IMAKECPP" ];then
-+    export IMAKECPP=$CPP
-+fi
-+
- echo imake $imake_defines $args
- case "$do_all" in
- yes)
-@@ -68,3 +72,12 @@
+--- xmkmf.cpp.orig	2012-03-08 06:47:32.000000000 +0100
++++ xmkmf.cpp	2013-03-17 22:53:14.000000000 +0100
+@@ -64,3 +64,12 @@
      imake $imake_defines $args
      ;;
  esac

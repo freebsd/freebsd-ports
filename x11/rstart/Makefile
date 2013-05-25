@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Sample implementation of a Remote Start client
 
 XORG_CAT=	app
-USE_XORG=	x11 xorg-macros
+USE_XORG=	x11
 
 MAN1=		rstart.1 rstartd.1
 

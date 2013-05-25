@@ -1,9 +1,4 @@
-# New ports collection makefile for:	liboldX
-# Date Created:				Dec 16 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	liboldX
 PORTVERSION=	1.0.1

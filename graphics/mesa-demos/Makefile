@@ -1,4 +1,4 @@
-# Created by: anholt@FreeBSD.org
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mesa-demos

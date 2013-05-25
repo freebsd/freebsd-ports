@@ -1,4 +1,4 @@
 SHA256 (xorg/driver/xf86-input-joystick-1.5.0.tar.bz2) = 718118c5d769529f604c1ff099fe637173442cf01fc40bdef7d45f4baea282a9
 SIZE (xorg/driver/xf86-input-joystick-1.5.0.tar.bz2) = 283763
-SHA256 (xorg/driver/xf86-input-joystick-1.6.0.tar.bz2) = 4f1c15ec7372dd340ec7e1a8ca19d75148896ee3883184c3663cbaa12cf738f1
-SIZE (xorg/driver/xf86-input-joystick-1.6.0.tar.bz2) = 310552
+SHA256 (xorg/driver/xf86-input-joystick-1.6.2.tar.bz2) = ee3b86ed72f3b5befdeed39909320f4b6970401cfbcc2cc0dfd8fb1c1576150d
+SIZE (xorg/driver/xf86-input-joystick-1.6.2.tar.bz2) = 327539

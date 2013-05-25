@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Server font list displayer for X
 
 XORG_CAT=	app
-USE_XORG=	x11 xorg-macros
+USE_XORG=	x11
 
 PLIST_FILES=	bin/xlsfonts
 

@@ -10,14 +10,13 @@ MASTER_SITES=	GNU
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	X events recorder and player
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		xcb:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_XORG=	x11 xau xdmcp xext xi xtst
+USE_XORG=	x11 xau xcb xdmcp xext xi xtst
 USE_GNOME=	gnomehack
 MAKE_JOBS_SAFE=	yes
 

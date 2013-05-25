@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130525:
+  AFFECTS: users of x11/xorg and all xorg ports
+  AUTHOR zeising@FreeBSD.org
+
+  xorg, including libraries and some drivers, was updated.
+  If you are running the default xorg distribution, no special upgrade procedure
+  should be neccessary.
+  If you are running with WITH_NEW_XORG= make sure to update and rebuild all
+  installed drivers since xorg-server has been updated.
+
 20130520:
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org

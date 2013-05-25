@@ -10,7 +10,7 @@ COMMENT=	XKB utility demos
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xkbfile x11 xaw inputproto xorg-macros
+USE_XORG=	xkbfile x11 xaw inputproto
 
 MAN1=		xkbbell.1 xkbvleds.1 xkbwatch.1
 

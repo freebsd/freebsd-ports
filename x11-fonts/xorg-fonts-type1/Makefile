@@ -1,12 +1,8 @@
-# New ports collection makefile for:    xorg-fonts-type1
-# Date created:		30 May 2004
-# Whom:			anholt@FreeBSD.org
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xorg-fonts-type1
-PORTVERSION=	7.5.1
+PORTVERSION=	7.7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	# none
 DISTFILES=	# none

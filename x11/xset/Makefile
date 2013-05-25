@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xset
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xset
 PORTVERSION=	1.2.2

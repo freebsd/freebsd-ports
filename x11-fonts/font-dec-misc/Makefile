@@ -1,9 +1,5 @@
-# New ports collection makefile for:    font-dec-misc
-# Date created:		28 Aug 2005
-# Whom:			Pawel Worach
-#
+# Created by: Pawel Worach
 # $FreeBSD$
-#
 
 PORTNAME=	font-dec-misc
 PORTVERSION=	1.0.3

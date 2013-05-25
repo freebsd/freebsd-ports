@@ -1,13 +1,8 @@
-# New ports collection makefile for:	xf86-video-mga
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-mga
-PORTVERSION=	1.4.13
-PORTEPOCH=	2
+PORTVERSION=	1.6.1
+PORTEPOCH=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,7 +11,7 @@ COMMENT=	X.Org mga display driver
 USE_GL=		gl
 
 XORG_CAT=	driver
-USE_XORG=	xf86driproto videoproto xextproto glproto
+USE_XORG=	xf86driproto glproto
 MAN4=		mga.4x
 
 pre-patch:

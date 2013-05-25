@@ -9,7 +9,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	A sample X compositing manager
 
 XORG_CAT=	app
-USE_XORG=	x11 xcomposite xfixes xdamage xorg-macros xrender
+USE_XORG=	x11 xcomposite xfixes xdamage xrender
 
 PLIST_FILES=	bin/${PORTNAME}
 

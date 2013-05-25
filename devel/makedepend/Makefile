@@ -1,20 +1,15 @@
-# New ports collection makefile for:	makedepend
-# Date created:				August 15th 1997
-# Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
-#
+# Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
 # $FreeBSD$
-#
 
 PORTNAME=	makedepend
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	A dependency generator for makefiles
+COMMENT=	Dependency generator for makefiles
 
 XORG_CAT=	util
-USE_GNOME=	pkgconfig
 USE_XORG=	xproto
 
 PLIST_FILES=	bin/makedepend

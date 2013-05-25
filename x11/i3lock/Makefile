@@ -16,7 +16,6 @@ COMMENT=	Slightly improved screen locker based on slock
 LICENSE=	BSD
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		xcb-image:${PORTSDIR}/x11/xcb-util-image \
 		ev.4:${PORTSDIR}/devel/libev
@@ -32,7 +31,7 @@ MAN1=	i3lock.1
 
 LDFLAGS+=	-liconv
 MAKE_JOBS_SAFE=	yes
-USE_XORG=	x11 xt xproto xext
+USE_XORG=	x11 xcb xt xproto xext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		iconv

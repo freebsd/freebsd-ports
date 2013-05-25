@@ -1,9 +1,4 @@
-# New ports collection makefile for:	x11perf
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	x11perf
 PORTVERSION=	1.5.4

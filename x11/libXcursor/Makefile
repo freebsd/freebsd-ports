@@ -1,12 +1,8 @@
-# New ports collection makefile for:   libXcursor
-# Date Created:			22 Nov, 2003
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libXcursor
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org

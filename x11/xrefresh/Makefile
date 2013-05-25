@@ -10,7 +10,7 @@ COMMENT=	Refresh all or part of an X screen
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	x11 xorg-macros
+USE_XORG=	x11
 
 PLIST_FILES=	bin/xrefresh
 

@@ -11,7 +11,7 @@ COMMENT=	X clipboard client
 LICENSE=	MIT
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xorg-macros
+USE_XORG=	xt xaw
 
 MAN1=		xclipboard.1 xcutsel.1
 

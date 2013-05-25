@@ -22,8 +22,7 @@ LIB_DEPENDS=	atkmm-1.6:${PORTSDIR}/accessibility/atkmm \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm \
-		xcb:${PORTSDIR}/x11/libxcb
+		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
@@ -31,7 +30,7 @@ USE_AUTOTOOLS=	libtool
 USES=		pkgconfig gettext iconv
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
+USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender 
 INSTALLS_ICONS=	yes
 

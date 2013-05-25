@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Graphical class browser for Xt
 
 XORG_CAT=	app
-USE_XORG=	xt xaw xorg-macros
+USE_XORG=	xt xaw
 
 MAN1=		viewres.1
 

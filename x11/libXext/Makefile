@@ -1,13 +1,8 @@
-# New ports collection makefile for:   libXext
-# Date Created:			29 Oct, 2003
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libXext
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	x11
 

@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Font dumper for the X font server
 
 XORG_CAT=	app
-USE_XORG=	libfs xorg-macros
+USE_XORG=	libfs
 
 PLIST_FILES=	bin/showfont
 

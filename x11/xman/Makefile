@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xman
-# Date Created:				17 Feb 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xman
 PORTVERSION=	1.1.2

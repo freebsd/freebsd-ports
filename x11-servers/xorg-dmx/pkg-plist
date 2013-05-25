@@ -11,5 +11,3 @@ bin/dmxtodmx
 bin/dmxwininfo
 bin/vdltodmx
 bin/xdmxconfig
-%%NEW%%@dirrmtry share/X11/xorg.conf.d
-%%NEW%%@dirrmtry share/X11

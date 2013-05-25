@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evieext
-# Date Created:				25 Apr 2006
-# Whom:					Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	evieext
 PORTVERSION=	1.1.1

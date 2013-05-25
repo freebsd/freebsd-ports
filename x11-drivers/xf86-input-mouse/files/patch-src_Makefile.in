@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	2011-07-05 18:09:54.000000000 +0200
++++ ./src/Makefile.in	2012-03-02 14:02:43.000000000 +0100
+@@ -279,7 +279,7 @@
+ # _ladir passes a dummy rpath to libtool so the thing will actually link
+ # TODO: -nostdlib/-Bstatic/-lgcc platform magic, not installing the .a, etc.
+ @DRIVER_NAME@_drv_la_LTLIBRARIES = @DRIVER_NAME@_drv.la
+-@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version
++@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version -lusbhid
+ @DRIVER_NAME@_drv_ladir = @inputdir@
+ 
+ # We have to list all the mouse drivers here, even if we don't build them, so

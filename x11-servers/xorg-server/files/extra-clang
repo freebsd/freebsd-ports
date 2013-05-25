@@ -1,53 +1,75 @@
---- hw/xfree86/common/xf86Xinput.c.orig	2012-12-13 23:58:55.673738569 +0100
-+++ hw/xfree86/common/xf86Xinput.c	2012-12-13 23:59:52.528738525 +0100
-@@ -479,7 +479,7 @@
- MatchAttrToken(const char *attr, struct list *patterns,
-                int (*compare)(const char *attr, const char *pattern))
+--- dix/events.c.orig	2012-07-09 02:32:59.000000000 +0200
++++ dix/events.c	2012-07-22 14:34:46.000000000 +0200
+@@ -5189,7 +5189,8 @@
+ InitEvents(void)
+ {
+     int i;
+-    QdEventPtr qe, tmp;
++    QdEventPtr qe = NULL;
++    QdEventPtr tmp;
+ 
+     inputInfo.numDevices = 0;
+     inputInfo.devices = (DeviceIntPtr) NULL;
+--- hw/xfree86/common/xf86Xinput.c.orig	2012-06-26 08:24:18.000000000 +0200
++++ hw/xfree86/common/xf86Xinput.c	2012-07-22 14:34:46.000000000 +0200
+@@ -524,7 +524,7 @@
+ MatchAttrToken(const char *attr, struct xorg_list *patterns,
+                int (*compare) (const char *attr, const char *pattern))
  {
 -    const xf86MatchGroup *group;
 +    const xf86MatchGroup *group = NULL;
  
      /* If there are no patterns, accept the match */
-     if (list_is_empty(patterns))
---- hw/xfree86/parser/InputClass.c.orig	2012-12-14 00:03:07.149734651 +0100
-+++ hw/xfree86/parser/InputClass.c	2012-12-14 00:04:09.522735172 +0100
-@@ -338,7 +338,8 @@
-     XF86ConfInputClassPtr prev;
- 
-     while (ptr) {
--        xf86MatchGroup *group, *next;
-+        xf86MatchGroup *group = NULL;
-+        xf86MatchGroup *next;
-         char **list;
- 
-         TestFree(ptr->identifier);
---- hw/xfree86/dri2/dri2.c.orig	2012-12-14 00:06:39.680738243 +0100
-+++ hw/xfree86/dri2/dri2.c	2012-12-14 00:08:14.310729622 +0100
-@@ -201,7 +201,7 @@
+     if (xorg_list_is_empty(patterns))
+--- hw/xfree86/dri2/dri2.c.orig	2012-07-09 02:32:59.000000000 +0200
++++ hw/xfree86/dri2/dri2.c	2012-07-22 14:38:42.000000000 +0200
+@@ -239,7 +239,7 @@
  static DRI2DrawableRefPtr
  DRI2LookupDrawableRef(DRI2DrawablePtr pPriv, XID id)
  {
 -    DRI2DrawableRefPtr ref;
 +    DRI2DrawableRefPtr ref = NULL;
  
-     list_for_each_entry(ref, &pPriv->reference_list, link) {
- 	if (ref->id == id)
-@@ -267,7 +267,8 @@
+     xorg_list_for_each_entry(ref, &pPriv->reference_list, link) {
+         if (ref->id == id)
+@@ -306,7 +306,8 @@
  {
      DRI2DrawablePtr pPriv = p;
-     DRI2ScreenPtr   ds = pPriv->dri2_screen;
+     DRI2ScreenPtr ds = pPriv->dri2_screen;
 -    DRI2DrawableRefPtr ref, next;
 +    DRI2DrawableRefPtr ref = NULL;
-+    DRI2DrawableRefPtr  next;
++    DRI2DrawableRefPtr next;
      WindowPtr pWin;
      PixmapPtr pPixmap;
      DrawablePtr pDraw;
-@@ -534,7 +535,7 @@
+@@ -587,7 +588,7 @@
  DRI2InvalidateDrawable(DrawablePtr pDraw)
  {
      DRI2DrawablePtr pPriv = DRI2GetDrawable(pDraw);
 -    DRI2DrawableRefPtr ref;
 +    DRI2DrawableRefPtr ref = NULL;
  
-     if (!pPriv)
+     if (!pPriv || !pPriv->needInvalidate)
          return;
+--- test/list.c.orig	2012-06-26 06:12:51.000000000 +0200
++++ test/list.c	2012-07-22 14:34:46.000000000 +0200
+@@ -187,7 +187,7 @@
+ {
+     struct parent parent = { 0 };
+     struct child child[3];
+-    struct child *c;
++    struct child *c = NULL;
+     int i = 0;
+ 
+     xorg_list_init(&parent.children);
+--- xfixes/cursor.c.orig	2012-07-06 07:17:19.000000000 +0200
++++ xfixes/cursor.c	2012-07-22 14:34:46.000000000 +0200
+@@ -1143,7 +1143,7 @@
+ barrier_find_nearest(CursorScreenPtr cs, int dir,
+                      int x1, int y1, int x2, int y2)
+ {
+-    struct PointerBarrierClient *c;
++    struct PointerBarrierClient *c = NULL;
+     struct PointerBarrier *nearest = NULL;
+     double min_distance = INT_MAX;      /* can't get higher than that in X anyway */
+ 

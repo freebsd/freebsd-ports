@@ -1,12 +1,8 @@
-# New ports collection makefile for:   xrender
-# Date Created:			2 Jul, 2003
-# Whom:				Foxfair Hu <foxfair@FreeBSD.org>
-#
+# Created by: Foxfair Hu <foxfair@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libXrender
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org

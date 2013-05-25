@@ -14,12 +14,11 @@ COMMENT=	Video Disk Recorder - softhddevice plugin
 
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		vdpau:${PORTSDIR}/multimedia/libvdpau \
-		xcb:${PORTSDIR}/x11/libxcb \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		asound:${PORTSDIR}/audio/alsa-lib
 
 USES=		pkgconfig
-USE_XORG+=	xv x11 xinerama
+USE_XORG+=	xv x11 xcb xinerama
 USE_GL+=	gl glu
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes

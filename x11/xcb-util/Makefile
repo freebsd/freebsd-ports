@@ -11,12 +11,10 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
-LIB_DEPENDS=	xcb:${PORTSDIR}/x11/libxcb
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_XORG=	xau xdmcp
+USE_XORG=	xau xcb xdmcp xorg-macros
 USE_AUTOTOOLS=	libtool
 
 GNU_CONFIGURE=	yes

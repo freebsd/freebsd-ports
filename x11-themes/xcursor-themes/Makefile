@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xcursor-themes
-# Date Created:				Nov 2 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xcursor-themes
 PORTVERSION=	1.0.3

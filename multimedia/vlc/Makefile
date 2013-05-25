@@ -636,9 +636,8 @@ CONFIGURE_ARGS+=--disable-x264
 .endif
 
 .if ${PORT_OPTIONS:MXCB}
-USE_XORG=	xpm
-LIB_DEPENDS+=	xcb:${PORTSDIR}/x11/libxcb \
-		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms
+USE_XORG=	xcb xpm
+LIB_DEPENDS+=	xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms
 CONFIGURE_ARGS+=--enable-xcb --with-x
 .else
 CONFIGURE_ARGS+=--disable-xcb --without-x

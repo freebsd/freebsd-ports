@@ -181,12 +181,12 @@ do-install-mozc_tool:
 
 # ibus_mozc
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
+USE_XORG=	xcb
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=1 \
 		enable_gtk_renderer=1
 
-LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus \
-		xcb-xfixes:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \

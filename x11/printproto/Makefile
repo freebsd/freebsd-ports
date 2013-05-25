@@ -1,9 +1,5 @@
-# New ports collection makefile for:	printproto
-# Date Created:				08 Aug 2005
-# Whom:					Dejan Lesjak <lesi@FreeBSD.org>
-#
+# Created by: Dejan Lesjak <lesi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	printproto
 PORTVERSION=	1.0.5

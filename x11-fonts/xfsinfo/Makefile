@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X font server information utility
 
 XORG_CAT=	app
-USE_XORG=	x11 libfs xorg-macros
+USE_XORG=	x11 libfs
 
 PLIST_FILES=	bin/xfsinfo
 

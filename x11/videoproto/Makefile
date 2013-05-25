@@ -1,9 +1,5 @@
-# New ports collection makefile for:	videoproto
-# Date Created:				09 Aug 2005
-# Whom:					Dejan Lesjak <lesi@FreeBSD.org>
-#
+# Created by: Dejan Lesjak <lesi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	videoproto
 PORTVERSION=	2.3.1

@@ -27,7 +27,6 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		freetype:${PORTSDIR}/print/freetype2 \
 		startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		xdg-basedir:${PORTSDIR}/x11/libxdg-basedir \
-		xcb:${PORTSDIR}/x11/libxcb \
 		xcb-util:${PORTSDIR}/x11/xcb-util \
 		xcb-image:${PORTSDIR}/x11/xcb-util-image \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
@@ -40,7 +39,8 @@ CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_EFL=	imlib2
 USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
-USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
+USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
+		xproto
 
 MAN1=	awesome.1 \
 	awesome-client.1

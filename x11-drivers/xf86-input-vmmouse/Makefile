@@ -1,17 +1,14 @@
-# New ports collection makefile for:	xf86-input-vmmouse
-# Date Created:				17 Feb 2006
-# Whom:					NIIMI Satoshi <sa2c@sa2c.net>
-#
+# Created by: NIIMI Satoshi <sa2c@sa2c.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-input-vmmouse
-PORTVERSION=	12.6.9
-PORTREVISION=	2
+PORTVERSION=	13.0.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmmouse input driver
+
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 
 XORG_CAT=	driver
 CONFIGURE_ARGS=	--with-hal-callouts-dir=${PREFIX}/libexec/hal/scripts
@@ -22,5 +19,11 @@ MAN4=		vmmouse.4x
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	The vmmouse protocol is only supported on x86-compatible architectures.
+
+.if defined(WITH_NEW_XORG)
+PLIST_SUB+=	NEW=""
+.else
+PLIST_SUB+=	NEW="@comment "
+.endif
 
 .include <bsd.port.mk>

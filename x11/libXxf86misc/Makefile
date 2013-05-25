@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libXxf86misc
-# Date Created:			8 Feb 2006
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libXxf86misc
 PORTVERSION=	1.0.3
