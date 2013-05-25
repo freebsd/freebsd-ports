@@ -38,7 +38,7 @@ stop_postcmd="kbdcontrol -a ${keyboard_daemon_device} < /dev/console"
 keyboard_daemon_prestart()
 {
 	: ${keyboard_daemon_device:?keyboard_daemon_device must be set in rc.conf}
-	kbdcontrol -A ${keyboard_daemon_device} < /dev/console
+	kbdcontrol -A ${keyboard_daemon_device##*/} < /dev/console
 }
 
 run_rc_command $1
