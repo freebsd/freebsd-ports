@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.2p2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -40,13 +40,14 @@ SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
-			HPN LPK X509 \
+			HPN LPK X509 KERB_GSSAPI \
 			OVERWRITE_BASE SCTP AES_THREADED
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS HPN
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	Enable tcp_wrappers support
 BSM_DESC=		Enable OpenBSM Auditing
+KERB_GSSAPI_DESC=	Enable Kerberos/GSSAPI patch (req: GSSAPI)
 HPN_DESC=		Enable HPN-SSH patch
 LPK_DESC=		Enable LDAP Public Key (LPK) [OBSOLETE]
 X509_DESC=		Enable x509 certificate patch
@@ -86,6 +87,15 @@ BROKEN=		X509 patch and SCTP patch do not apply cleanly together
 .  if ${PORT_OPTIONS:MLPK}
 BROKEN=		X509 patch and LPK patch do not apply cleanly together
 .  endif
+
+.  if ${PORT_OPTIONS:MKERB_GSSAPI}
+BROKEN=		X509 patch incompatible with KERB_GSSAPI patch
+.  endif
+
+.endif
+
+.if ${PORT_OPTIONS:MHEIMDAL_BASE} && ${PORT_OPTIONS:MKERB_GSSAPI}
+BROKEN=		KERB_GSSAPI Requires either MIT or HEMIDAL, does not build with base Heimdal currently
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
@@ -121,6 +131,12 @@ IGNORE=		You have selected HEIMDAL_BASE but do not have heimdal installed in bas
 CONFIGURE_LIBS+=	-lgssapi_krb5
 .	endif
 .  endif
+
+# Adapated from 5.7 patch at http://www.sxw.org.uk/computing/patches/
+.if ${PORT_OPTIONS:MKERB_GSSAPI}
+PATCHFILES+=		openssh-6.2p2-gsskex-all-20110125.patch.gz
+PATCH_DIST_STRIP=
+.endif
 .if ${OPENSSLBASE} == "/usr"
 CONFIGURE_ARGS+=	--without-rpath
 LDFLAGS=		# empty
