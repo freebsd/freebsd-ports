@@ -3,7 +3,7 @@
 
 PORTNAME=	postgrey
 PORTVERSION=	1.34
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -23,14 +23,13 @@ NO_BUILD=	yes
 POD2MAN?=	pod2man
 PORTDOCS=	README Changes README.exim
 SUB_FILES=	pkg-install
-SUB_LIST=	USER=${PGY_USERNAME} UID=${PGY_USERID} GROUP=${PGY_GROUPNAME} \
-		GID=${PGY_GROUPID} ETCFILES="${ETCFILES}" \
+SUB_LIST=	USER=${PGY_USERNAME} \
+		GROUP=${PGY_GROUPNAME} \
+		ETCFILES="${ETCFILES}" \
 		POSTGREYDIR=${PGY_DIR}
 ETCFILES=	whitelist_clients whitelist_recipients
 PGY_USERNAME?=	postgrey
-PGY_USERID?=	225
-PGY_GROUPNAME?=	${PGY_USERNAME}
-PGY_GROUPID?=	${PGY_USERID}
+PGY_GROUPNAME?=	postgrey
 PGY_DIR?=	/var/db/postgrey
 
 USERS=		${PGY_USERNAME}
@@ -40,12 +39,10 @@ MAN1=		${PORTNAME}.1 policy-test.1 postgreyreport.1
 USES=		shebangfix
 SHEBANG_FILES=	${WRKSRC}/postgrey
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
-
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's#nogroup#${PGY_GROUPNAME}#' ${WRKSRC}/postgrey
 	@${REINPLACE_CMD} -e 's#/etc/main.cf#/etc/postfix/main.cf#' ${WRKSRC}/postgrey
 	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' ${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
 	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PGY_DIR}#' ${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport

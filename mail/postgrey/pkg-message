@@ -1,0 +1,7 @@
+
+ATTENTION
+
+The startup script for postgrey will make it listen on TCP port
+10023 by default. If you want to use a different setting, please
+read the comments in the RC script and set the appropriate settings
+via rc.conf before starting postgrey.
