@@ -8,23 +8,3 @@
  
  	<!-- ================================================================== -->
  	<!-- Everything below this line is targets.								-->
-@@ -463,7 +462,10 @@
- 		<antcall target="-compile_native_win32" />
- 
- 		<condition property="lwjgl.platform.linux">
--			<os name="Linux" />
-+			<or>
-+				<os name="Linux" />
-+				<os name="FreeBSD" />
-+			</or>
- 		</condition>
- 		<antcall target="-compile_native_linux" />
- 
-@@ -604,6 +606,7 @@
- 		<condition property="native_path" value="libs/linux">
- 			<or>
- 				<os name="Linux" />
-+				<os name="FreeBSD" />
- 				<os name="SunOS" />
- 			</or>
- 		</condition>

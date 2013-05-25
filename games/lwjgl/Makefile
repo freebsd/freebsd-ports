@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lwjgl
-DISTVERSION=	2.8.5
+DISTVERSION=	2.9.0
 CATEGORIES=	games java
 MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:U}%20${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -55,7 +55,7 @@ PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}64.so
 post-patch:
 	@${REINPLACE_CMD} -e 's,PREFIX,${PREFIX},g' \
 		-e '/executable/s/gcc/${CC}/g' \
-		${WRKSRC}/platform_build/linux_ant/build.xml
+		${WRKSRC}/platform_build/bsd_ant/build.xml
 
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}/${PORTNAME}/ ..."
@@ -66,10 +66,10 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .if ${ARCH} == i386
-	@${INSTALL_DATA} ${WRKSRC}/libs/linux/lib${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	@${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 .if ${ARCH} == amd64
-	@${INSTALL_DATA} ${WRKSRC}/libs/linux/lib${PORTNAME}64.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	@${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 
 .include <bsd.port.post.mk>
