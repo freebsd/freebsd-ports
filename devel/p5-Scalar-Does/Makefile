@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Scalar-Does
-PORTVERSION=	0.102
+PORTVERSION=	0.200
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Like ref() but useful
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+BUILD_DEPENDS=	p5-Type-Tiny>=0.004:${PORTSDIR}/devel/p5-Type-Tiny \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-lexical-underscore>=0:${PORTSDIR}/devel/p5-lexical-underscore \
 		p5-namespace-clean>=0.19:${PORTSDIR}/devel/p5-namespace-clean
