@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Plack-Middleware-XForwardedFor
-# Date created:		2010-12-13
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-XForwardedFor
 PORTVERSION=	0.103060
@@ -23,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Plack::Middleware::XForwardedFor.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-parent>=0.223:${PORTSDIR}/devel/p5-parent
-RUN_DEPENDS+=	p5-parent>=0.223:${PORTSDIR}/devel/p5-parent
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
