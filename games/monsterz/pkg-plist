@@ -26,5 +26,5 @@ share/games/monsterz/sound/whip.wav
 @dirrmtry share/games
 @dirrmtry games
 @exec if [ ! -e %%SCOREDIR%% ] ; then mkdir -p -m 775 %%SCOREDIR%% ; fi
-@exec [ -e %%SCOREDIR%%/monsterz ] || touch %%SCOREDIR%%/monsterz && chmod g+w %%SCOREDIR%%/monsterz
+@exec [ -e %%SCOREDIR%%/monsterz ] || touch %%SCOREDIR%%/monsterz && chmod g+w %%SCOREDIR%%/monsterz && chown root:games %%SCOREDIR%%/monsterz
 @unexec if [ ! -s %%SCOREDIR%%/monsterz ] ; then rm -f %%SCOREDIR%%/monsterz && rm -r %%SCOREDIR%% || true ; fi
