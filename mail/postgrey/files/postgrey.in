@@ -7,41 +7,37 @@
 # BEFORE: mail
 # KEYWORD: shutdown
 
-#
 # Add the following lines to /etc/rc.conf to enable postgrey:
 #
-# postgrey_enable="YES"
+# postgrey_enable (bool)        Set to 'YES' to enable
+#                               Default: NO
+# postgrey_dbdir (path)         Location of postgrey database files.
+#                               Default: /var/db/postgrey
+# postgrey_flags (extra args)   Additional command-line parameters.
+#                               Default: --inet=10023
 #
-# See perldoc postgrey for flags
+# Note:
 #
+# postgrey_flags must include a --inet or --unix option or postgrey will
+# not run.  Change the --dbdir option with postgrey_dbdir.  Please see
+# the postgrey(1) man page or perldoc postgrey for more information.
 
 . /etc/rc.subr
 
 name=postgrey
-rcvar=postgrey_enable
-
-command=%%PREFIX%%/sbin/postgrey
-required_dirs=/var/db/postgrey
-extra_commands=reload
-
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
-
-# set defaults
 
 load_rc_config $name
 
-postgrey_enable=${postgrey_enable:-"NO"}
-postgrey_greylist_header=${postgrey_greylist_header:-"X-Greylist: delayed %t seconds by postgrey-%v at %h\; %d"}
-postgrey_pidfile=${postgrey_pidfile:-"/var/run/postgrey.pid"}
-postgrey_flags=${postgrey_flags:-"--pidfile=${postgrey_pidfile} \
-	--inet=10023 -d --user=%%USER%% --group=%%GROUP%% --dbdir=/var/db/postgrey \
-	--x-greylist-header=${postgrey_greylist_header}"}
+: ${postgrey_enable:=NO}
+: ${postgrey_dbdir:=/var/db/postgrey}
+: ${postgrey_flags:=--inet=10023}
 
-pidfile="${postgrey_pidfile}"
+command=%%PREFIX%%/sbin/postgrey
+pidfile=/var/run/postgrey.pid
+required_dirs=${postgrey_dbdir}
+
+command_args="-d --pidfile=${pidfile} --dbdir=${postgrey_dbdir}"
+
+stop_postcmd="rm -f ${pidfile}"
 
 run_rc_command "$1"

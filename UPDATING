@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130525:
+  AFFECTS: users of mail/postgrey
+  AUTHOR: Darren Pilgrim <ports.maintainer@evilphi.com>
+
+  The RC script for postgrey has been modified. If you use the
+  default value for postgrey_flags this does not affect you.
+
+  If you have postgrey listening on a unix socket or set any optional
+  values, please read the comments in the RC scripts and check your
+  settings in rc.conf prior to restarting postgrey.
+
+20130525:
   AFFECTS: users of x11/xorg and all xorg ports
   AUTHOR zeising@FreeBSD.org
 

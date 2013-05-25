@@ -1,21 +1,16 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.6 2012-04-18 07:54:30 crees Exp $
+# $FreeBSD$
 
 PATH=/bin:/usr/bin:/usr/sbin
 
 case $2 in
 
 PRE-INSTALL)
-  echo "---> Starting install script:"
-
-  if [ -z "%%POSTGREYDIR%%" -o \
-       -z "%%USER%%" -o -z "%%GROUP%%" -o \
-       -z "%%UID%%" -o -z "%%GID%%" ]; then
+  if [ -z "%%POSTGREYDIR%%" -o -z "%%USER%%" -o -z "%%GROUP%%" ]; then
     echo "ERROR: A required pragma was empty"
     exit 1
   fi
-
   ;;
 
 POST-INSTALL)
