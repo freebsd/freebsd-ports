@@ -3,14 +3,14 @@
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://atterer.net/jigdo/
+MASTER_SITES=	http://atterer.org/sites/atterer/files/2009-08/${PORTNAME}/
 
-MAINTAINER=	bra@fsn.hu
-COMMENT=	A utility used to retrieve very large files over the Internet
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Utility used to retrieve very large files over the Internet
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
