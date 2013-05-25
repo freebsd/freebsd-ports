@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Blog-Spam
-# Date created:		2010-11-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Blog-Spam
 PORTVERSION=	1.0.2
@@ -49,10 +45,4 @@ MAN3=		Blog::Spam::API.3 \
 		Blog::Spam::Plugin::wordcount.3 \
 		Blog::Spam::Server.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
