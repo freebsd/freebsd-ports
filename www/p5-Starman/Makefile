@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Starman
-PORTVERSION=	0.3006
+PORTVERSION=	0.3011
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -16,16 +16,19 @@ RUN_DEPENDS=	\
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-Net-Server>=0.91:${PORTSDIR}/net/p5-Net-Server \
 	p5-Plack>=0.9971:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
+	p5-Module-Build-Tiny>0:${PORTSDIR}/devel/p5-Module-Build-Tiny
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>=1.11:${PORTSDIR}/devel/p5-Test-TCP
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 USE_RC_SUBR=	starman
 
 MAN1=	starman.1
-MAN3=	Plack::Handler::Starman.3 \
-	Starman.3
+MAN3=	HTTP::Server::PSGI::Net::Server::PreFork.3 \
+	Plack::Handler::Starman.3 \
+	Starman.3 \
+	Starman::Server.3
 
 .include <bsd.port.mk>

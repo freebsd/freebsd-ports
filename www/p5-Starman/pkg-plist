@@ -4,10 +4,10 @@ bin/starman
 %%SITE_PERL%%/Plack/Handler/Starman.pm
 %%SITE_PERL%%/Starman.pm
 %%SITE_PERL%%/Starman/Server.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Starman
 @dirrmtry %%SITE_PERL%%/HTTP/Server/PSGI/Net/Server
 @dirrmtry %%SITE_PERL%%/HTTP/Server/PSGI/Net
 @dirrmtry %%SITE_PERL%%/HTTP/Server/PSGI
 @dirrmtry %%SITE_PERL%%/Plack/Handler
 @dirrmtry %%SITE_PERL%%/Plack
 @dirrm %%SITE_PERL%%/Starman
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Starman
