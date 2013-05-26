@@ -10,6 +10,8 @@
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.elc
 %%TRAMP_LISPDIR%%/password.el
 %%TRAMP_LISPDIR%%/password.elc
+%%TRAMP_LISPDIR%%/tramp-adb.el
+%%TRAMP_LISPDIR%%/tramp-adb.elc
 %%TRAMP_LISPDIR%%/tramp-cmds.el
 %%TRAMP_LISPDIR%%/tramp-cmds.elc
 %%TRAMP_LISPDIR%%/tramp-compat.el
