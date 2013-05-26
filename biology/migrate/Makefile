@@ -1,25 +1,20 @@
-# New ports collection makefile for:	migrate
-# Date created:		6 August 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	migrate
-PORTVERSION=	3.1.6
+PORTVERSION=	3.5.1
 CATEGORIES=	biology
-MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/ \
-		https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
+MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A program to estimate population sizes and migration rates
+COMMENT=	Program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"
-MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY"
+MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY -lstdc++"
 
 MAN1=		${PORTNAME}.1
 MLINKS=		${PORTNAME}.1 ${PORTNAME}-n.1
@@ -27,7 +22,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-n
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 NOT_FOR_ARCHS=	alpha
 ONLY_FOR_ARCHS_REASON=	Does not compile
@@ -52,17 +47,17 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-n ${PREFIX}/bin
 	${LN} -sf ${PORTNAME}-n ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in HISTORY HOWTO-PARALLEL README ${PORTNAME}.html
+.for i in HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
 	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/graphics
 	${INSTALL_DATA} ${WRKSRC}/../graphics/* ${DOCSDIR}/graphics
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/../example/[A-Za-z]* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
