@@ -1,0 +1,34 @@
+--- iconv_builtin.orig	2000-11-20 16:07:41.000000000 -0600
++++ iconv_builtin	2013-05-24 10:19:34.765696802 -0600
+@@ -31,9 +31,9 @@
+ #       iconv (Charset Conversion Library) v2.0
+ #
+ 
+-require 'getopts.pl';
++use Getopt::Std;
+ 
+-&Getopts('mno:s:');
++getopts('mno:s:');
+ 
+ if ($opt_o) {
+         open(STDOUT, ">$opt_o");
+--- ccs/iconv_mktbl.orig	2000-11-18 15:44:27.000000000 -0600
++++ ccs/iconv_mktbl	2013-05-24 10:43:06.598689960 -0600
+@@ -31,7 +31,7 @@
+ # 	iconv (Charset Conversion Library) v2.0
+ #
+ 
+-require 'getopts.pl';
++use Getopt::Std;
+ use integer;
+ 
+ sub pack_hex {
+@@ -144,7 +144,7 @@
+ $opt_p = '0x';
+ $opt_u = 1;
+ 
+-&Getopts('aCc:Mm:o:p:u:');
++getopts('aCc:Mm:o:p:u:');
+ #         ||| || | | +- u N:	field number for Unicode character codes
+ #         ||| || | +--- p str:	prefix
+ #         ||| || +----- o file:	output file name
