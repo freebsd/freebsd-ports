@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Monoceros.pm
+%%SITE_PERL%%/Monoceros/Server.pm
+%%SITE_PERL%%/Plack/Handler/Monoceros.pm
+%%SITE_PERL%%/Plack/Middleware/MonocerosStatus.pm
+@dirrm %%SITE_PERL%%/Monoceros
