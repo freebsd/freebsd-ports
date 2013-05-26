@@ -18,13 +18,12 @@ LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
+NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
 USES=		desktop-file-utils pkgconfig
 USE_XORG=	xtst
 USE_QT4=	corelib gui webkit phonon \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
-
-WRKSRC=		${WRKDIR}
 
 post-patch:
 	@${SED} -I.bak -e "s:/usr:${PREFIX}:" ${WRKSRC}/redist/goldendict.desktop
@@ -36,6 +35,6 @@ do-configure:
 
 post-install:
 	@${MKDIR} ${DATADIR}/locale
-	@${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${DATADIR}/locale/
+	${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${DATADIR}/locale/
 
 .include <bsd.port.mk>
