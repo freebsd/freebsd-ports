@@ -281,7 +281,6 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
-RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--enable-nginx
 PLIST_SUB+=	NGINX=""
