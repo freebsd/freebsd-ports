@@ -31,6 +31,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --disable-static
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 
+NO_PACKAGE=	hangs on pointyhat
+
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|-ldld||g;s|-ldl||g;/ALL_LINGUAS=/s|=(.*)|="\1"|;\
 		/LIBS=/s|-lgthr|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
