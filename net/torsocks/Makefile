@@ -1,20 +1,19 @@
-# New ports collection makefile for:	torsocks
-# Date created:				13 February 2009
-# Whom:					Andrei Lavreniyuk <andy.lavr@gmail.com>
-#
+# Created by: Andrei Lavreniyuk <andy.lavr@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	torsocks
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy.lavr@gmail.com
 COMMENT=	Most SOCKS-friendly applications way with Tor
 
-USE_AUTOTOOLS=	libtool aclocal autoconf
+LICENSE=	GPLv2
+
+USE_AUTOTOOLS=	libtool aclocal autoconf libtoolize
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 USE_GMAKE=	yes
@@ -26,35 +25,28 @@ MAN8=		torsocks.8
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	SOCKSDNS "Use socks server for DNS lookups" off \
-		OLDMETHOD "Do not use RTLD_NEXT parameter to dlsym" off \
-		NODEBUG "Disable output of error messages" off \
-		HOSTNAMES "Enable DNS lookups of socks server" off
+OPTIONS_DEFINE=	OLDMETHOD NODEBUG DOCS
 
-.include <bsd.port.pre.mk>
+OPTIONS_SINGLE=		DNS
+OPTIONS_SINGLE_DNS=	DEFAULT SOCKSDNS HOSTNAMES
 
-.if defined(WITH_SOCKSDNS)
+SOCKSDNS_DESC=	Use socks server for DNS lookups
+OLDMETHOD_DESC=	Do not use RTLD_NEXT parameter to dlsym
+NODEBUG_DESC=	Disable output of error messages
+HOSTNAMES_DESC=	Enable DNS lookups of socks server
+DOCS_DESC=	Install examples and docs
+DEFAULT_DESC=	DNS lookups default
+
+OPTIONS_DEFAULT=	DOCS DEFAULT
+
+PORTDOCS=	INSTALL README TODO ChangeLog
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSOCKSDNS}
 CONFIGURE_ARGS+=	--enable-socksdns
-.endif
-
-.if defined(WITH_OLDMETHOD)
-CONFIGURE_ARGS+=	--enable-oldmethod
-.endif
-
-.if defined(WITH_NODEBUG)
-CONFIGURE_ARGS+=	--disable-debug
-.endif
-
-.if defined(WITH_HOSTNAMES)
-CONFIGURE_ARGS+=	--enable-hostnames
-.endif
-
-.if defined(WITH_SOCKSDNS) && defined(WITH_HOSTNAMES)
-BROKEN=		HOSTNAMES option is not allowed when SOCKSDNS option is enabled
-.endif
 
 pre-everything::
-.if !defined(WITH_SOCKSDNS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use the SOCKSDNS option."
 	@${ECHO_MSG} "This option causes torsocks to intercept"
@@ -64,7 +56,10 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if !defined(WITH_OLDMETHOD)
+.if ${PORT_OPTIONS:MOLDMETHOD}
+CONFIGURE_ARGS+=	--enable-oldmethod
+
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use the OLDMETHOD option."
 	@${ECHO_MSG} "This forces torsocks not to use the"
@@ -75,7 +70,10 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if !defined(WITH_NODEBUG)
+.if ${PORT_OPTIONS:MNODEBUG}
+CONFIGURE_ARGS+=	--disable-debug
+
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use the NODEBUG option."
 	@${ECHO_MSG} "This configuration option tells torsocks"
@@ -83,7 +81,10 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if !defined(WITH_HOSTNAMES)
+.if ${PORT_OPTIONS:MHOSTNAMES}
+CONFIGURE_ARGS+=	--enable-hostnames
+
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use the HOSTNAMES option."
 	@${ECHO_MSG} "This enables DNS lookups on names"
@@ -99,17 +100,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@prefix@|${PREFIX}|' ${WRKSRC}/src/torsocks.in
 	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' ${WRKSRC}/src/dead_pool.c
 	@${MV} ${WRKSRC}/doc/torsocks.conf ${WRKSRC}/doc/torsocks.conf.sample
+	@${MV} ${WRKSRC}/configure.in ${WRKSRC}/configure.ac
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.sample ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.sample ${PREFIX}/etc
-.endif
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
