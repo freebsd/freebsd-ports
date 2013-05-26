@@ -18,10 +18,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-g
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/qct
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/qct.1.txt ${DOCSDIR}/qct.1.txt
 .endif
 
