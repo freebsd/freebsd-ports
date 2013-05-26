@@ -1,14 +1,14 @@
---- Makefile.orig	2013-02-14 11:04:30.880047783 +0100
-+++ Makefile	2013-02-14 11:05:05.096047700 +0100
-@@ -78,9 +78,9 @@
+--- Makefile.orig	2013-05-18 19:53:39.780480687 +0200
++++ Makefile	2013-05-18 19:54:36.579483230 +0200
+@@ -82,9 +82,9 @@
  easystroke.desktop: easystroke.desktop.in $(MOFILES)
  	intltool-merge po/ -d -u $< $@
  
 -desktop.c: easystroke.desktop
 +desktop.c:
  	echo "const char *desktop_file = \"\\" > $@
--	sed 's/Exec=easystroke/Exec=%s/' $< | sed 's/"/\\"/g' | sed 's/.*/&\\n\\/' >> $@
-+	sed 's/Exec=easystroke/Exec=%s/' easystroke.desktop | sed 's/"/\\"/g' | sed 's/.*/&\\n\\/' >> $@
+-	sed 's/Exec=easystroke/Exec=%1$$s/' $< | sed 's/"/\\"/g' | sed 's/.*/&\\n\\/' >> $@
++	sed 's/Exec=easystroke/Exec=%1$$s/' easystroke.desktop | sed 's/"/\\"/g' | sed 's/.*/&\\n\\/' >> $@
  	echo "\";" >> $@
  
- dbus-server.cc: dbus-server.h
+ po/POTFILES.in: $(CCFILES) $(HFILES)
