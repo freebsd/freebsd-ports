@@ -1,5 +1,5 @@
 --- Makefile.orig	2008-09-11 20:28:12.000000000 +0500
-+++ Makefile	2013-05-26 13:56:49.000000000 +0400
++++ Makefile	2013-05-26 20:10:47.000000000 +0400
 @@ -1,6 +1,6 @@
  #
  #
@@ -8,18 +8,16 @@
  #CFLAGS ?= -g
  # 
  # Defines:
-@@ -29,10 +29,10 @@ DEFS+=-DMAP_ONOFF
+@@ -29,9 +29,9 @@
  DEFS+=-DESC_C_TBL
  
  DESTDIR ?= /
 -BINDIR ?= $(DESTDIR)/bin
 -MAPDIR ?= $(DESTDIR)/etc/mapchan
 -LDFLAGS ?= -s
--LOADLIBES = -lutil
 +BINDIR?=$(PREFIX)/bin
 +MAPDIR?=$(PREFIX)/mapchan
-+LDFLAGS=-s -lutil -liconv -I /usr/local/include -L /usr/local/lib
-+LOADLIBES = -lutil -liconv
++LDFLAGS+=-s -lutil
+ LOADLIBES = -lutil
  #--------------------------------------------------------------
  CFLAGS += $(DEFS)
- 

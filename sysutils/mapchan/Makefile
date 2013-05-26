@@ -13,6 +13,8 @@ COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
 USES=		iconv
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	MAPDIR=${PREFIX}/etc/${PORTNAME}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 ETCDAT=		*.map default.sample
 MAN8=		mapchan.8
 PORTDOCS=	README
