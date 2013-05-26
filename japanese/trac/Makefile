@@ -10,19 +10,22 @@ MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	Trac-${PORTVERSION}.ja2
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	An enhanced wiki and issue tracking system for software projects
+COMMENT=	Enhanced wiki and issue tracking system for software projects
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 
-OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
-		DOCUTILS   "Allow additional text markup" On \
-		PYGMENTS   "Use generic syntax highlighter" On \
-		TZ         "Process Time Zones" On \
-		PGSQL	   "Use PostgreSQL instead of SQLite3" Off \
-		SUBVERSION "Support for subversion RCS" On
+OPTIONS_DEFINE=	SILVERCITY DOCUTILS PYGMENTS TZ PGSQL SVN
+SILVERCITY_DESC=	Use Silvercity for syntax highlighting
+DOCUTILS_DESC=	Allow additional text markup
+PYGMENTS_DESC=	Use generic syntax highlighter
+TZ_DESC=	Process Time Zones
+SVN_DESC=	Support for subversion RCS
+
+OPTIONS_DEFAULT=	SILVERCITY DOCUTILS PYGMENTS TZ SUBVERSION
+
 CONFLICTS=	trac-0.*
 
 USE_ZIP=	yes
@@ -62,32 +65,32 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SILVERCITY)
+.if ${PORT_OPTIONS:MSILVERCITY}
 RUN_DEPENDS+=	${LOCALBASE}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 .endif
 
-.if defined(WITH_DOCUTILS)
+.if ${PORT_OPTIONS:MDOCUTILS}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
 .endif
 
-.if defined(WITH_PYGMENTS)
+.if ${PORT_OPTIONS:MPYGMENTS}
 RUN_DEPENDS+=	${LOCALBASE}/bin/pygmentize:${PORTSDIR}/textproc/py-pygments
 .endif
 
-.if defined(WITH_TZ)
+.if ${PORT_OPTIONS:MTZ}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if !defined(WITHOUT_SUBVERSION)
+.if ${PORT_OPTIONS:MSVN}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/py-subversion
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

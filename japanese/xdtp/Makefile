@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XDTP (XML Document Transfer Program)
-# Date created:				11 October 2005
-# Whom:					Masanori OZAWA (ozawa@ongs.co.jp)
-#
+# Created by: Masanori OZAWA (ozawa@ongs.co.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	xdtp
 PORTVERSION=	1.3.1
@@ -19,35 +15,38 @@ COMMENT=	XDTP (XML Document Transfer Program)
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2 libxslt pkgconfig
+USE_GNOME=	libxml2 libxslt
+USES=	pkgconfig
 GNU_CONFIGURE=	yes
 
-OPTIONS=	GDK	"Build with Gdk-Pixbuf" on \
-		DEBUG	"Build with debug option" off \
-		INCLUDE	"Install with XDTP include files" on
+OPTIONS_DEFINE=	GDK DEBUG INCLUDE
+GDK_DESC=	Build with Gdk-Pixbuf
+INCLUDE_DESC=	Install with XDTP include files
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	GDK INCLUDE
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 
-.if defined(WITH_GDK)
+.if ${PORT_OPTIONS:MGDK}
 USE_GNOME+=	gtk20
 .else
 CONFIGURE_ENV+=	WITHOUT_GDK="yes"
 MAKE_ARGS+=	-DWITHOUT_GDK
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 MAKE_ARGS+=	-DDEBUG
 .endif
 
-.if defined(WITH_INCLUDE)
+.if ${PORT_OPTIONS:MINCLUDE}
 PLIST_SUB+=	XDTP_INC=""
 .else
 MAKE_ARGS+=	-DWITHOUT_INCLUDE
 PLIST_SUB+=	XDTP_INC="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
