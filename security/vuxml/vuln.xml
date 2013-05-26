@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4fb45a1c-c5d0-11e2-8400-001b216147b0">
+    <topic>couchdb -- DOM based Cross-Site Scripting via Futon UI</topic>
+    <affects>
+      <package>
+	<name>couchdb</name>
+	<range><lt>1.2.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Lehnardt reports:</p>
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/couchdb-user/201301.mbox/%3C2FFF2FD7-8EAF-4EBF-AFDA-5AEB6EAC853F@apache.org%3E">
+	  <p>Query parameters passed into the browser-based test suite
+	    are not sanitised, and can be used to load external resources.
+	    An attacker may execute JavaScript code in the browser, using
+	    the context of the remote user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-5650</cvename>
+      <url>http://mail-archives.apache.org/mod_mbox/couchdb-user/201301.mbox/%3C2FFF2FD7-8EAF-4EBF-AFDA-5AEB6EAC853F@apache.org%3E</url>
+    </references>
+    <dates>
+      <discovery>2012-01-14</discovery>
+      <entry>2013-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5b24a6b-c37c-11e2-addb-60a44c524f57">
     <topic>otrs -- information disclosure</topic>
     <affects>
