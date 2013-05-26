@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	chromium-bsu
-PORTVERSION=	0.9.15
-PORTREVISION=	2
+PORTVERSION=	0.9.15.1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
@@ -20,12 +19,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-glc
 MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
 
 MAN6=		chromium-bsu.6
 
-OPTIONS_DEFINE=	SDL_MIXER GLUT
+OPTIONS_DEFINE=	SDL_MIXER GLUT NLS DOCS
 SDL_MIXER_DESC=	Use SDL_mixer instead of OpenAL for audio
 GLUT_DESC=	Use GLUT instead of SDL for video
 
