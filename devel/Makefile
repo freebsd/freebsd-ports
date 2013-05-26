@@ -2103,6 +2103,7 @@
     SUBDIR += p5-IO-Detect
     SUBDIR += p5-IO-Digest
     SUBDIR += p5-IO-Event
+    SUBDIR += p5-IO-FDPass
     SUBDIR += p5-IO-HTML
     SUBDIR += p5-IO-Handle-Util
     SUBDIR += p5-IO-Interactive

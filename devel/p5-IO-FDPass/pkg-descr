@@ -1,0 +1,8 @@
+This small low-level module only has one purpose: pass a file
+descriptor to another process, using a (streaming) unix domain socket
+(on POSIX systems) or any (streaming) socket (on WIN32 systems).  The
+ability to pass file descriptors on windows is currently the unique
+selling point of this module. Have I mentioned that it is really
+small, too?
+
+WWW: http://search.cpan.org/dist/IO-FDPass/
