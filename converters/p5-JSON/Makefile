@@ -1,12 +1,7 @@
-# New ports collection makefile for:	JSON
-# Date created:		19 Aug 2005
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	JSON
-PORTVERSION=	2.53
+PORTVERSION=	2.58
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
