@@ -5,24 +5,20 @@ lib/libtorsocks.a
 lib/libtorsocks.la
 lib/libtorsocks.so
 lib/libtorsocks.so.1
-share/torsocks/DEBUG
-share/torsocks/README
-share/torsocks/README.TORDNS
-share/torsocks/SOCKS4.protocol
-share/torsocks/SOCKS5
-share/torsocks/compilewarnings.patch
-share/torsocks/conffile.patch
-share/torsocks/getaddrbyhost.patch
-share/torsocks/getpeername.patch
-share/torsocks/infiniteloop.patch
-share/torsocks/localaddresses.patch
-share/torsocks/socks-extensions.txt
-share/torsocks/tordns.patch
-share/torsocks/test/expectedresults.txt
-share/torsocks/test/run_tests.sh
-@dirrm share/torsocks/test
-@dirrm share/torsocks
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/torsocks.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/DEBUG
+%%DATADIR%%/README
+%%DATADIR%%/README.TORDNS
+%%DATADIR%%/SOCKS4.protocol
+%%DATADIR%%/SOCKS5
+%%DATADIR%%/compilewarnings.patch
+%%DATADIR%%/conffile.patch
+%%DATADIR%%/getaddrbyhost.patch
+%%DATADIR%%/getpeername.patch
+%%DATADIR%%/infiniteloop.patch
+%%DATADIR%%/localaddresses.patch
+%%DATADIR%%/socks-extensions.txt
+%%DATADIR%%/tordns.patch
+%%DATADIR%%/test/expectedresults.txt
+%%DATADIR%%/test/run_tests.sh
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%

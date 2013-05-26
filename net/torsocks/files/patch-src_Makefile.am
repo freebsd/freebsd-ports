@@ -1,0 +1,10 @@
+--- src/Makefile.am.orig	2011-10-24 22:26:34.000000000 +0300
++++ src/Makefile.am	2011-11-09 12:36:55.697224889 +0200
+@@ -1,6 +1,6 @@
+ # Makefile used by configure to create real Makefile
+ 
+-libdir = @libdir@/torsocks
++libdir = @prefix@/lib
+ 
+ # Install invocation scripts
+ bin_SCRIPTS = torsocks usewithtor

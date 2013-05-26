@@ -1,10 +1,9 @@
---- src/Makefile.am.orig	2011-10-24 22:26:34.000000000 +0300
-+++ src/Makefile.am	2011-11-09 12:36:55.697224889 +0200
-@@ -1,6 +1,6 @@
- # Makefile used by configure to create real Makefile
+--- Makefile.am.orig	2011-03-05 18:38:11.000000000 +0200
++++ Makefile.am	2013-03-20 10:13:28.517831100 +0200
+@@ -2,4 +2,6 @@
+ # have all needed files, that a GNU package needs
+ AUTOMAKE_OPTIONS = foreign 1.4
  
--libdir = @libdir@/torsocks
-+libdir = @prefix@/lib
- 
- # Install invocation scripts
- bin_SCRIPTS = torsocks usewithtor
++ACLOCAL_AMFLAGS= -I m4
++
+ SUBDIRS = src doc test
