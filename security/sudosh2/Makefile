@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-logdir="${SUDOSH_LOGDIR}"
 .else
 CONFIGURE_ARGS+=	--with-logdir=/var/log/sudosh
 .endif
-CFLAGS+=		-lutil
+LDFLAGS+=		-lutil
 
 MAN1=			sudosh.1
 MAN5=			sudosh.conf.5
