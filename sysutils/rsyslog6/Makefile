@@ -12,6 +12,9 @@ PKGNAMESUFFIX?=	-${MNAME}
 MAINTAINER=	brd@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP, and TLS
 
+DEPRECATED=	Use sysutils/rsyslog7
+EXPIRATION_DATE=2013-11-25
+
 USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
