@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acts-as-taggable-on
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
