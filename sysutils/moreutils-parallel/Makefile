@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils-parallel
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/m/moreutils
