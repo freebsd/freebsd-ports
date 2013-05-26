@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d87c2e9-c64d-11e2-9c22-50465d9ff992">
+    <topic>soccat -- FD leak</topic>
+    <affects>
+      <package>
+	<name>socat</name>
+	<range><lt>1.7.2.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gerhard Rieger reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2013/q2/411">
+	  <p>Under certain circumstances an FD leak occurs and can be misused for
+	    denial of service attacks against socat running in server mode.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+     <cvename>CVE-2013-3571</cvename>
+     <url>http://seclists.org/oss-sec/2013/q2/411</url>
+    </references>
+    <dates>
+      <discovery>2013-05-26</discovery>
+      <entry>2013-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79789daa-8af8-4e21-a47f-e8a645752bdb">
     <topic>ruby -- Object taint bypassing in DL and Fiddle in Ruby</topic>
     <affects>
