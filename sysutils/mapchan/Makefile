@@ -1,43 +1,43 @@
-# New ports collection makefile for: Utility "mapchan" of SCO Unix
-# Date created:   17 February 2004
-# Whom:    Konstantin Reznichenko <kot@premierbank.dp.ua>
-#
+# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	mapchan
-PORTVERSION=	2.0
+PORTVERSION=	3.2
 CATEGORIES=	sysutils converters
-MASTER_SITES=	http://www.iceb.vc.ukrtel.net/download/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	Implementation of the utility "mapchan" from SCO Unix
+COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
 
-USE_BZIP2=	yes
-
+USES=		iconv
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 MAKE_ENV=	MAPDIR=${PREFIX}/etc/${PORTNAME}
-
 ETCDAT=		*.map default.sample
-
 MAN8=		mapchan.8
-
 PORTDOCS=	README
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${CP} ${WRKSRC}/doc/mapchan.F ${WRKSRC}/doc/mapchan.8
 
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
-	@${CP} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/mapchan.c
+.include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${MANPREFIX}/man/man8
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${MANPREFIX}/man/man8
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+	${CP} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
+	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/mapchan.c
+.if ${OSVERSION} > 900007
+	${REINPLACE_CMD} -e "s|utmp.h|utmpx.h|" ${WRKSRC}/mapchan.c
+.endif
+
+.include <bsd.port.post.mk>
