@@ -51,6 +51,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79789daa-8af8-4e21-a47f-e8a645752bdb">
+    <topic>ruby -- Object taint bypassing in DL and Fiddle in Ruby</topic>
+    <affects>
+      <package>
+	<name>ruby19</name>
+	<range><lt>1.9.3.429,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby Developers report:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2013/05/14/taint-bypass-dl-fiddle-cve-2013-2065/">
+	  <p>There is a vulnerability in DL and Fiddle in Ruby where tainted
+	     strings can be used by system calls regardless of the $SAFE level
+	     set in Ruby.
+	  </p>
+	  <p>Native functions exposed to Ruby with DL or Fiddle do not check the
+	     taint values set on the objects passed in. This can result in
+	     tainted objects being accepted as input when a SecurityError
+	     exception should be raised.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2065</cvename>
+      <url>http://www.ruby-lang.org/en/news/2013/05/14/taint-bypass-dl-fiddle-cve-2013-2065/</url>
+    </references>
+    <dates>
+      <discovery>2013-05-14</discovery>
+      <entry>2013-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4fb45a1c-c5d0-11e2-8400-001b216147b0">
     <topic>couchdb -- DOM based Cross-Site Scripting via Futon UI</topic>
     <affects>
