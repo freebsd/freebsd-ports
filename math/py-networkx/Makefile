@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	networkx
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
