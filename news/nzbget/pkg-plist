@@ -32,10 +32,12 @@ sbin/nzbgetd
 %%DATADIR%%/webui/util.js
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%DATADIR%%/webui/img
 @dirrm %%DATADIR%%/webui/lib
 @dirrm %%DATADIR%%/webui
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec if cmp -s %D/etc/nzbget.conf %D/etc/nzbget.conf.sample; then rm -f %D/etc/nzbget.conf; fi
 etc/nzbget.conf.sample
 @exec [ -f %D/etc/nzbget.conf ] || cp %D/etc/nzbget.conf.sample %D/etc/nzbget.conf

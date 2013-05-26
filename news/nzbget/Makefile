@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nzbget
-PORTVERSION=	9.1
-PORTREVISION=	2
+PORTVERSION=	10.2
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -30,13 +29,13 @@ OPTIONS_SINGLE=	TLSLIB
 OPTIONS_SINGLE_TLSLIB=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	PAR GNUTLS
 
-PORTDOCS=	README
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAR}
  CONFIGURE_ARGS+= --enable-parcheck --disable-libpar2-bugfixes-check
  LIB_DEPENDS+=	par2:${PORTSDIR}/archivers/libpar2
+ # configure fail to test libpar2 with clang
+ USE_GCC=	any
 .else
  CONFIGURE_ARGS+= --disable-parcheck
 .endif
@@ -55,10 +54,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/nzbget.conf ${PREFIX}/etc/nzbget.conf.sample
 	@[ -f ${PREFIX}/etc/nzbget.conf ] || ${CP} ${PREFIX}/etc/nzbget.conf.sample \
 	${PREFIX}/etc/nzbget.conf
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
