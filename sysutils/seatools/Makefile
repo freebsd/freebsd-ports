@@ -1,9 +1,5 @@
-# Ports collection makefile for:	linux-seatools
-# Date created:		 		08 Apr 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		seatools
 PORTVERSION=		2.54
@@ -22,33 +18,28 @@ RESTRICTED=		The distfile should be downloaded by hand
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
 
+PLIST_FILES=		sbin/st
+PORTDOCS=		sthelp.txt
+
+OPTIONS_DEFINE=		DOCS
+
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/st
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/st ${PREFIX}/sbin/st
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/sthelp.txt ${DOCSDIR}/sthelp.txt
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/sthelp.txt ${DOCSDIR}/sthelp.txt
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=		PORTDOCS="@comment "
-.else
-PLIST_SUB+=		PORTDOCS=
-.endif
-
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
 IGNORE=	please access ${DOWNLOAD_URL} with a web browser, fill the web form.\
 Please place the downloaded ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}
-.endif
-
-.if ${OSVERSION} < 700037
-IGNORE=			needs CAM sg
 .endif
 
 .include <bsd.port.post.mk>
