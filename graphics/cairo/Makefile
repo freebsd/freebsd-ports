@@ -14,15 +14,15 @@ COMMENT=	Vector graphics library with cross-device output support
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		pixman-1.9:${PORTSDIR}/x11/pixman
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee
-USES=		pathfix
+USES=		pathfix pkgconfig
+USE_XORG=	pixman
 USE_GNOME=	ltverhack referencehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
