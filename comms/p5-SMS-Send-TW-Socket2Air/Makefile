@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SMS-Send-TW-Socket2Air
-# Date created:		2010-01-21
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	SMS-Send-TW-Socket2Air
 PORTVERSION=	0.01
@@ -24,10 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		SMS::Send::TW::Socket2Air.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-IGNORE=		perl 5.10 or above is required
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
