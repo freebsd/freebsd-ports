@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/InteractiveDebugger/.packlist
+%%SITE_PERL%%/Plack/Middleware/InteractiveDebugger.pm
+%%SITE_PERL%%/Plack/Middleware/InteractiveDebugger/HTML.pm
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/console.png
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/debugger.js
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/jquery.js
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/jquery.min.js
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/less.png
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/more.png
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/source.png
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/style.css
+@dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger
+@dirrm %%SITE_PERL%%/Plack/Middleware/InteractiveDebugger
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/InteractiveDebugger
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
