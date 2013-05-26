@@ -1,4 +1,4 @@
-# Created by:	Akinori MUSHA aka knu <knu@idaemons.org>
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 
 PORTNAME=	ruby
@@ -302,7 +302,7 @@ plist::
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 
-validate::
+validate:
 	@${MKDIR} ${WRKSRC}/rubyspec
 	rm -rf ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
