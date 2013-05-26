@@ -4272,3 +4272,12 @@ print/yatex-xemacs||2013-05-21|Removed: obsolete
 devel/php5-phing|devel/pear-phing|2013-05-21|Replaced by devel/pear-phing
 emulators/hfsutils|sysutils/hfsutils|2013-05-23|Moved to a better category
 devel/lfc|devel/lfcbase|2013-05-23|Rename to avoid package conflicts
+sysutils/rsyslog5||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-dbi||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-gnutls||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-gssapi||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-mysql||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-pgsql||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-relp||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-rfc3195||2013-05-25|Removed: use sysutils/rsyslog7
+sysutils/rsyslog5-snmp||2013-05-25|Removed: use sysutils/rsyslog7
