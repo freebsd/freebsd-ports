@@ -14,21 +14,23 @@ COMMENT=	Resolution tool for Intel i915 video cards
 
 USE_RC_SUBR=	915resolution
 
-DOCS=		README.txt LICENSE.txt chipset_info.txt changes.log
+PLIST_FILES=	sbin/915resolution
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	README.txt LICENSE.txt chipset_info.txt changes.log
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-.include <bsd.port.pre.mk>
 
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} 915resolution.c -o 915resolution
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/915resolution ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.if ${PORT_OPTIONS:DOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
