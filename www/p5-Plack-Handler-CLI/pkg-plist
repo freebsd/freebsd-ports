@@ -1,4 +1,1 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/CLI/.packlist
 %%SITE_PERL%%/Plack/Handler/CLI.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/CLI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler
