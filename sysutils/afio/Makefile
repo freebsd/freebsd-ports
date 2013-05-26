@@ -14,6 +14,7 @@ COMMENT=	Archiver & backup program w/ builtin compression
 ALL_TARGET=	${PORTNAME}
 MAN1=		afio.1
 OPTIONS_DEFINE=	DOCS EXAMPLES
+PORTDOCS=	README SCRIPTS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|' \
