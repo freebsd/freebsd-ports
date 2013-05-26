@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xyaku
-# Date created:		7 Dec 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xyaku
 PORTVERSION=	1.4.0
@@ -13,16 +9,19 @@ MASTER_SITES=	http://www.sepia.dti.ne.jp/inoue/software/xyaku/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A general dictionary/search engine front-end for X
+COMMENT=	General dictionary/search engine front-end for X
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
 
 USE_XORG=	x11 xt xext ice sm
 
-OPTIONS=	UTF8 "Use UTF-8 edict dictionaries" on
+OPTIONS_DEFINE=	UTF8
+OPTIONS_DEFAULT=	UTF8
 
-.if !defined(WITHOUT_UTF8)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MUTF8}
 EDICT_FILE=	${LOCALBASE}/share/dict/edict-utf-8/edict
 RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict-utf-8
 .else
@@ -43,7 +42,7 @@ post-extract:
 	${MV} ${WRKSRC}/addin/ChangeLog ${WRKSRC}/addin/ADDIN.ChangeLog
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/ja
 .for f in ${DOCS_EN}
