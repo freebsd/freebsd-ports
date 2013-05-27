@@ -1,18 +1,16 @@
-# New ports collection makefile for:    obliterate
-# Date created:         17 Nov 1999
-# Whom:                 Wes Peters <wes@FreeBSD.ORG>
-#
+# Created by: Wes Peters <wes@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	obliterate
 PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= wes
-
+MASTER_SITE_SUBDIR=wes
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Securely delete file[s]
+
+PLIST_FILES=	bin/obliterate
+MAN8=		obliterate.8
 
 .include <bsd.port.mk>
