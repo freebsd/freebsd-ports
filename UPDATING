@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   The default ruby version has been updated from 1.8 to 1.9. You'll need to
   rebuild all ports that depend on ruby:
 
-  # portmaster -r lang/ruby19
+  # portmaster -r ruby19
     or
   # portupgrade -fr lang/ruby19
     or
