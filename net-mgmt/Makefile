@@ -55,6 +55,7 @@
     SUBDIR += cricket
     SUBDIR += darkstat
     SUBDIR += devmon
+    SUBDIR += devmon-templates
     SUBDIR += dhcdrop
     SUBDIR += disco
     SUBDIR += docsis

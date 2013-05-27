@@ -1,0 +1,1497 @@
+devmon/templates/pware-xups/specs
+devmon/templates/pware-xups/power/transforms
+devmon/templates/pware-xups/power/thresholds
+devmon/templates/pware-xups/power/oids
+devmon/templates/pware-xups/power/message
+devmon/templates/pware-xups/power/exceptions
+devmon/templates/pware-xups/README
+devmon/templates/pware-best/specs
+devmon/templates/pware-best/power/transforms
+devmon/templates/pware-best/power/thresholds
+devmon/templates/pware-best/power/oids
+devmon/templates/pware-best/power/message
+devmon/templates/pware-best/power/exceptions
+devmon/templates/pware-best/README
+devmon/templates/powerware-9170/specs
+devmon/templates/powerware-9170/power/transforms
+devmon/templates/powerware-9170/power/thresholds
+devmon/templates/powerware-9170/power/oids
+devmon/templates/powerware-9170/power/message
+devmon/templates/powerware-9170/power/exceptions
+devmon/templates/powerware-9170/README
+devmon/templates/netapp-misc/volume/transforms
+devmon/templates/netapp-misc/volume/thresholds
+devmon/templates/netapp-misc/volume/oids
+devmon/templates/netapp-misc/volume/message
+devmon/templates/netapp-misc/volume/exceptions
+devmon/templates/netapp-misc/status/transforms
+devmon/templates/netapp-misc/status/thresholds
+devmon/templates/netapp-misc/status/oids
+devmon/templates/netapp-misc/status/message
+devmon/templates/netapp-misc/status/exceptions
+devmon/templates/netapp-misc/specs
+devmon/templates/netapp-misc/quota/transforms
+devmon/templates/netapp-misc/quota/thresholds
+devmon/templates/netapp-misc/quota/oids
+devmon/templates/netapp-misc/quota/message
+devmon/templates/netapp-misc/quota/exceptions
+devmon/templates/netapp-misc/netapptemp/transforms
+devmon/templates/netapp-misc/netapptemp/thresholds
+devmon/templates/netapp-misc/netapptemp/oids
+devmon/templates/netapp-misc/netapptemp/message
+devmon/templates/netapp-misc/netapptemp/exceptions
+devmon/templates/netapp-misc/if_load/transforms
+devmon/templates/netapp-misc/if_load/thresholds
+devmon/templates/netapp-misc/if_load/oids
+devmon/templates/netapp-misc/if_load/message
+devmon/templates/netapp-misc/if_load/exceptions
+devmon/templates/netapp-misc/cluster/transforms
+devmon/templates/netapp-misc/cluster/thresholds
+devmon/templates/netapp-misc/cluster/oids
+devmon/templates/netapp-misc/cluster/message
+devmon/templates/netapp-misc/cluster/exceptions
+devmon/templates/netapp-misc/README
+devmon/templates/linux-openwrt/specs
+devmon/templates/linux-openwrt/memory/transforms
+devmon/templates/linux-openwrt/memory/thresholds
+devmon/templates/linux-openwrt/memory/oids
+devmon/templates/linux-openwrt/memory/message
+devmon/templates/linux-openwrt/memory/exceptions
+devmon/templates/linux-openwrt/if_load/transforms
+devmon/templates/linux-openwrt/if_load/thresholds
+devmon/templates/linux-openwrt/if_load/oids
+devmon/templates/linux-openwrt/if_load/message
+devmon/templates/linux-openwrt/if_load/exceptions
+devmon/templates/linux-openwrt/disk/transforms
+devmon/templates/linux-openwrt/disk/thresholds
+devmon/templates/linux-openwrt/disk/oids
+devmon/templates/linux-openwrt/disk/message
+devmon/templates/linux-openwrt/disk/exceptions
+devmon/templates/ibm-rsa2/temp/transforms
+devmon/templates/ibm-rsa2/temp/thresholds
+devmon/templates/ibm-rsa2/temp/oids
+devmon/templates/ibm-rsa2/temp/message
+devmon/templates/ibm-rsa2/temp/exceptions
+devmon/templates/ibm-rsa2/status/transforms
+devmon/templates/ibm-rsa2/status/thresholds
+devmon/templates/ibm-rsa2/status/oids
+devmon/templates/ibm-rsa2/status/message
+devmon/templates/ibm-rsa2/status/exceptions
+devmon/templates/ibm-rsa2/specs
+devmon/templates/ibm-rsa2/fans/transforms
+devmon/templates/ibm-rsa2/fans/thresholds
+devmon/templates/ibm-rsa2/fans/oids
+devmon/templates/ibm-rsa2/fans/message
+devmon/templates/ibm-rsa2/fans/exceptions
+devmon/templates/ibm-rsa2/README
+devmon/templates/f5-bigip/vip/transforms
+devmon/templates/f5-bigip/vip/thresholds
+devmon/templates/f5-bigip/vip/oids
+devmon/templates/f5-bigip/vip/message
+devmon/templates/f5-bigip/vip/exceptions
+devmon/templates/f5-bigip/specs
+devmon/templates/f5-bigip/pool/transforms
+devmon/templates/f5-bigip/pool/thresholds
+devmon/templates/f5-bigip/pool/oids
+devmon/templates/f5-bigip/pool/message
+devmon/templates/f5-bigip/pool/exceptions
+devmon/templates/f5-bigip/memory/transforms
+devmon/templates/f5-bigip/memory/thresholds
+devmon/templates/f5-bigip/memory/oids
+devmon/templates/f5-bigip/memory/message
+devmon/templates/f5-bigip/memory/exceptions
+devmon/templates/f5-bigip/if_load/transforms
+devmon/templates/f5-bigip/if_load/thresholds
+devmon/templates/f5-bigip/if_load/oids
+devmon/templates/f5-bigip/if_load/message
+devmon/templates/f5-bigip/if_load/exceptions
+devmon/templates/f5-bigip/fan/transforms
+devmon/templates/f5-bigip/fan/thresholds
+devmon/templates/f5-bigip/fan/oids
+devmon/templates/f5-bigip/fan/message
+devmon/templates/f5-bigip/fan/exceptions
+devmon/templates/f5-bigip/cpu/transforms
+devmon/templates/f5-bigip/cpu/thresholds
+devmon/templates/f5-bigip/cpu/oids
+devmon/templates/f5-bigip/cpu/message
+devmon/templates/f5-bigip/cpu/exceptions
+devmon/templates/f5-bigip/connects/transforms
+devmon/templates/f5-bigip/connects/thresholds
+devmon/templates/f5-bigip/connects/oids
+devmon/templates/f5-bigip/connects/message
+devmon/templates/f5-bigip/connects/exceptions
+devmon/templates/f5-bigip/cluster/transforms
+devmon/templates/f5-bigip/cluster/thresholds
+devmon/templates/f5-bigip/cluster/oids
+devmon/templates/f5-bigip/cluster/message
+devmon/templates/f5-bigip/cluster/exceptions
+devmon/templates/f5-bigip/README
+devmon/templates/f5-bigip-lite/specs
+devmon/templates/f5-bigip-lite/if_load/transforms
+devmon/templates/f5-bigip-lite/if_load/thresholds
+devmon/templates/f5-bigip-lite/if_load/oids
+devmon/templates/f5-bigip-lite/if_load/message.bkp
+devmon/templates/f5-bigip-lite/if_load/message
+devmon/templates/f5-bigip-lite/if_load/exceptions
+devmon/templates/f5-bigip-lite/fan/transforms
+devmon/templates/f5-bigip-lite/fan/thresholds
+devmon/templates/f5-bigip-lite/fan/oids
+devmon/templates/f5-bigip-lite/fan/message
+devmon/templates/f5-bigip-lite/fan/exceptions
+devmon/templates/f5-bigip-lite/connects/transforms
+devmon/templates/f5-bigip-lite/connects/thresholds
+devmon/templates/f5-bigip-lite/connects/oids
+devmon/templates/f5-bigip-lite/connects/message
+devmon/templates/f5-bigip-lite/connects/exceptions
+devmon/templates/f5-bigip-lite/cluster/transforms
+devmon/templates/f5-bigip-lite/cluster/thresholds
+devmon/templates/f5-bigip-lite/cluster/oids
+devmon/templates/f5-bigip-lite/cluster/message
+devmon/templates/f5-bigip-lite/cluster/exceptions
+devmon/templates/f5-bigip-lite/README
+devmon/templates/dell-poweredge/temp/transforms
+devmon/templates/dell-poweredge/temp/thresholds
+devmon/templates/dell-poweredge/temp/oids
+devmon/templates/dell-poweredge/temp/message
+devmon/templates/dell-poweredge/temp/exceptions
+devmon/templates/dell-poweredge/specs
+devmon/templates/dell-poweredge/readme
+devmon/templates/dell-poweredge/raid/transforms
+devmon/templates/dell-poweredge/raid/thresholds
+devmon/templates/dell-poweredge/raid/oids
+devmon/templates/dell-poweredge/raid/message
+devmon/templates/dell-poweredge/raid/exceptions
+devmon/templates/dell-poweredge/power/transforms
+devmon/templates/dell-poweredge/power/thresholds
+devmon/templates/dell-poweredge/power/oids
+devmon/templates/dell-poweredge/power/message
+devmon/templates/dell-poweredge/power/exceptions
+devmon/templates/dell-poweredge/fans/transforms
+devmon/templates/dell-poweredge/fans/thresholds
+devmon/templates/dell-poweredge/fans/oids
+devmon/templates/dell-poweredge/fans/message
+devmon/templates/dell-poweredge/fans/exceptions
+devmon/templates/dell-poweredge/README
+devmon/templates/dell-perc/specs
+devmon/templates/dell-perc/raid/transforms
+devmon/templates/dell-perc/raid/thresholds
+devmon/templates/dell-perc/raid/oids
+devmon/templates/dell-perc/raid/message
+devmon/templates/dell-perc/raid/exceptions
+devmon/templates/compaq-server/temp/transforms
+devmon/templates/compaq-server/temp/thresholds
+devmon/templates/compaq-server/temp/oids
+devmon/templates/compaq-server/temp/message
+devmon/templates/compaq-server/temp/exceptions
+devmon/templates/compaq-server/specs
+devmon/templates/compaq-server/readme
+devmon/templates/compaq-server/raid/transforms
+devmon/templates/compaq-server/raid/thresholds
+devmon/templates/compaq-server/raid/oids
+devmon/templates/compaq-server/raid/message
+devmon/templates/compaq-server/raid/exceptions
+devmon/templates/compaq-server/power/transforms
+devmon/templates/compaq-server/power/thresholds
+devmon/templates/compaq-server/power/oids
+devmon/templates/compaq-server/power/message
+devmon/templates/compaq-server/power/exceptions
+devmon/templates/compaq-server/log/transforms
+devmon/templates/compaq-server/log/thresholds
+devmon/templates/compaq-server/log/oids
+devmon/templates/compaq-server/log/message
+devmon/templates/compaq-server/log/exceptions
+devmon/templates/compaq-server/fans/transforms
+devmon/templates/compaq-server/fans/thresholds
+devmon/templates/compaq-server/fans/oids
+devmon/templates/compaq-server/fans/message
+devmon/templates/compaq-server/fans/exceptions
+devmon/templates/compaq-server/README
+devmon/templates/cisco-pix/specs
+devmon/templates/cisco-pix/memory/transforms
+devmon/templates/cisco-pix/memory/thresholds
+devmon/templates/cisco-pix/memory/oids
+devmon/templates/cisco-pix/memory/message
+devmon/templates/cisco-pix/memory/exceptions
+devmon/templates/cisco-pix/cpu/transforms
+devmon/templates/cisco-pix/cpu/thresholds
+devmon/templates/cisco-pix/cpu/oids
+devmon/templates/cisco-pix/cpu/message
+devmon/templates/cisco-pix/cpu/exceptions
+devmon/templates/cisco-pix/connects/transforms
+devmon/templates/cisco-pix/connects/thresholds
+devmon/templates/cisco-pix/connects/oids
+devmon/templates/cisco-pix/connects/message
+devmon/templates/cisco-pix/connects/exceptions
+devmon/templates/cisco-pix/README
+devmon/templates/cisco-msfc2/specs
+devmon/templates/cisco-msfc2/memory/transforms
+devmon/templates/cisco-msfc2/memory/thresholds
+devmon/templates/cisco-msfc2/memory/oids
+devmon/templates/cisco-msfc2/memory/message
+devmon/templates/cisco-msfc2/memory/exceptions
+devmon/templates/cisco-msfc2/if_stat/transforms
+devmon/templates/cisco-msfc2/if_stat/thresholds
+devmon/templates/cisco-msfc2/if_stat/oids
+devmon/templates/cisco-msfc2/if_stat/message
+devmon/templates/cisco-msfc2/if_stat/exceptions
+devmon/templates/cisco-msfc2/if_load/transforms
+devmon/templates/cisco-msfc2/if_load/thresholds
+devmon/templates/cisco-msfc2/if_load/oids
+devmon/templates/cisco-msfc2/if_load/message
+devmon/templates/cisco-msfc2/if_load/exceptions
+devmon/templates/cisco-msfc2/if_err/transforms
+devmon/templates/cisco-msfc2/if_err/thresholds
+devmon/templates/cisco-msfc2/if_err/oids
+devmon/templates/cisco-msfc2/if_err/message
+devmon/templates/cisco-msfc2/if_err/exceptions
+devmon/templates/cisco-msfc2/if_dsc/transforms
+devmon/templates/cisco-msfc2/if_dsc/thresholds
+devmon/templates/cisco-msfc2/if_dsc/oids
+devmon/templates/cisco-msfc2/if_dsc/message
+devmon/templates/cisco-msfc2/if_dsc/exceptions
+devmon/templates/cisco-msfc2/if_col/transforms
+devmon/templates/cisco-msfc2/if_col/thresholds
+devmon/templates/cisco-msfc2/if_col/oids
+devmon/templates/cisco-msfc2/if_col/message
+devmon/templates/cisco-msfc2/if_col/exceptions
+devmon/templates/cisco-msfc2/cpu/transforms
+devmon/templates/cisco-msfc2/cpu/thresholds
+devmon/templates/cisco-msfc2/cpu/oids
+devmon/templates/cisco-msfc2/cpu/message.r34
+devmon/templates/cisco-msfc2/cpu/message.r23
+devmon/templates/cisco-msfc2/cpu/message.mine
+devmon/templates/cisco-msfc2/cpu/message
+devmon/templates/cisco-msfc2/cpu/exceptions
+devmon/templates/cisco-msfc2/README
+devmon/templates/cisco-asa/specs
+devmon/templates/cisco-asa/serial/transforms
+devmon/templates/cisco-asa/serial/thresholds
+devmon/templates/cisco-asa/serial/oids
+devmon/templates/cisco-asa/serial/message
+devmon/templates/cisco-asa/serial/exceptions
+devmon/templates/cisco-asa/memory/transforms
+devmon/templates/cisco-asa/memory/thresholds
+devmon/templates/cisco-asa/memory/oids
+devmon/templates/cisco-asa/memory/message
+devmon/templates/cisco-asa/memory/exceptions
+devmon/templates/cisco-asa/if_stat/transforms
+devmon/templates/cisco-asa/if_stat/thresholds
+devmon/templates/cisco-asa/if_stat/oids
+devmon/templates/cisco-asa/if_stat/message
+devmon/templates/cisco-asa/if_stat/exceptions
+devmon/templates/cisco-asa/if_load/transforms
+devmon/templates/cisco-asa/if_load/thresholds
+devmon/templates/cisco-asa/if_load/oids
+devmon/templates/cisco-asa/if_load/message
+devmon/templates/cisco-asa/if_load/exceptions
+devmon/templates/cisco-asa/if_err/transforms
+devmon/templates/cisco-asa/if_err/thresholds
+devmon/templates/cisco-asa/if_err/oids
+devmon/templates/cisco-asa/if_err/message
+devmon/templates/cisco-asa/if_err/exceptions
+devmon/templates/cisco-asa/if_dsc/transforms
+devmon/templates/cisco-asa/if_dsc/thresholds
+devmon/templates/cisco-asa/if_dsc/oids
+devmon/templates/cisco-asa/if_dsc/message
+devmon/templates/cisco-asa/if_dsc/exceptions
+devmon/templates/cisco-asa/cpu/transforms
+devmon/templates/cisco-asa/cpu/thresholds
+devmon/templates/cisco-asa/cpu/oids
+devmon/templates/cisco-asa/cpu/message
+devmon/templates/cisco-asa/cpu/exceptions
+devmon/templates/cisco-asa/connects/transforms
+devmon/templates/cisco-asa/connects/thresholds
+devmon/templates/cisco-asa/connects/oids
+devmon/templates/cisco-asa/connects/message
+devmon/templates/cisco-asa/connects/exceptions
+devmon/templates/cisco-asa/cluster/transforms
+devmon/templates/cisco-asa/cluster/thresholds
+devmon/templates/cisco-asa/cluster/oids
+devmon/templates/cisco-asa/cluster/message
+devmon/templates/cisco-asa/cluster/exceptions
+devmon/templates/cisco-asa/README
+devmon/templates/cisco-7206/specs
+devmon/templates/cisco-7206/serial/transforms
+devmon/templates/cisco-7206/serial/thresholds
+devmon/templates/cisco-7206/serial/oids
+devmon/templates/cisco-7206/serial/message
+devmon/templates/cisco-7206/serial/exceptions
+devmon/templates/cisco-7206/power/transforms
+devmon/templates/cisco-7206/power/thresholds
+devmon/templates/cisco-7206/power/oids
+devmon/templates/cisco-7206/power/message
+devmon/templates/cisco-7206/power/exceptions
+devmon/templates/cisco-7206/memory/transforms
+devmon/templates/cisco-7206/memory/thresholds
+devmon/templates/cisco-7206/memory/oids
+devmon/templates/cisco-7206/memory/message
+devmon/templates/cisco-7206/memory/exceptions
+devmon/templates/cisco-7206/if_stat/transforms
+devmon/templates/cisco-7206/if_stat/thresholds
+devmon/templates/cisco-7206/if_stat/oids
+devmon/templates/cisco-7206/if_stat/message
+devmon/templates/cisco-7206/if_stat/exceptions
+devmon/templates/cisco-7206/if_load/transforms
+devmon/templates/cisco-7206/if_load/thresholds
+devmon/templates/cisco-7206/if_load/oids
+devmon/templates/cisco-7206/if_load/message
+devmon/templates/cisco-7206/if_load/exceptions
+devmon/templates/cisco-7206/if_err/transforms
+devmon/templates/cisco-7206/if_err/thresholds
+devmon/templates/cisco-7206/if_err/oids
+devmon/templates/cisco-7206/if_err/message
+devmon/templates/cisco-7206/if_err/exceptions
+devmon/templates/cisco-7206/if_dsc/transforms
+devmon/templates/cisco-7206/if_dsc/thresholds
+devmon/templates/cisco-7206/if_dsc/oids
+devmon/templates/cisco-7206/if_dsc/message
+devmon/templates/cisco-7206/if_dsc/exceptions
+devmon/templates/cisco-7206/if_col/transforms
+devmon/templates/cisco-7206/if_col/thresholds
+devmon/templates/cisco-7206/if_col/oids
+devmon/templates/cisco-7206/if_col/message
+devmon/templates/cisco-7206/if_col/exceptions
+devmon/templates/cisco-7206/cpu/transforms
+devmon/templates/cisco-7206/cpu/thresholds
+devmon/templates/cisco-7206/cpu/oids
+devmon/templates/cisco-7206/cpu/message
+devmon/templates/cisco-7206/cpu/exceptions
+devmon/templates/cisco-7206/README
+devmon/templates/cisco-6509/temp/transforms
+devmon/templates/cisco-6509/temp/thresholds
+devmon/templates/cisco-6509/temp/oids
+devmon/templates/cisco-6509/temp/message
+devmon/templates/cisco-6509/temp/exceptions
+devmon/templates/cisco-6509/specs
+devmon/templates/cisco-6509/serial/transforms
+devmon/templates/cisco-6509/serial/thresholds
+devmon/templates/cisco-6509/serial/oids
+devmon/templates/cisco-6509/serial/message
+devmon/templates/cisco-6509/serial/exceptions
+devmon/templates/cisco-6509/power/transforms
+devmon/templates/cisco-6509/power/thresholds
+devmon/templates/cisco-6509/power/oids
+devmon/templates/cisco-6509/power/message
+devmon/templates/cisco-6509/power/exceptions
+devmon/templates/cisco-6509/memory/transforms
+devmon/templates/cisco-6509/memory/thresholds
+devmon/templates/cisco-6509/memory/oids
+devmon/templates/cisco-6509/memory/message
+devmon/templates/cisco-6509/memory/exceptions
+devmon/templates/cisco-6509/if_stat/transforms
+devmon/templates/cisco-6509/if_stat/thresholds
+devmon/templates/cisco-6509/if_stat/oids
+devmon/templates/cisco-6509/if_stat/message
+devmon/templates/cisco-6509/if_stat/exceptions
+devmon/templates/cisco-6509/if_load/transforms
+devmon/templates/cisco-6509/if_load/thresholds
+devmon/templates/cisco-6509/if_load/oids
+devmon/templates/cisco-6509/if_load/message
+devmon/templates/cisco-6509/if_load/exceptions
+devmon/templates/cisco-6509/if_err/transforms
+devmon/templates/cisco-6509/if_err/thresholds
+devmon/templates/cisco-6509/if_err/oids
+devmon/templates/cisco-6509/if_err/message
+devmon/templates/cisco-6509/if_err/exceptions
+devmon/templates/cisco-6509/if_dsc/transforms
+devmon/templates/cisco-6509/if_dsc/thresholds
+devmon/templates/cisco-6509/if_dsc/oids
+devmon/templates/cisco-6509/if_dsc/message
+devmon/templates/cisco-6509/if_dsc/exceptions
+devmon/templates/cisco-6509/if_col/transforms
+devmon/templates/cisco-6509/if_col/thresholds
+devmon/templates/cisco-6509/if_col/oids
+devmon/templates/cisco-6509/if_col/message
+devmon/templates/cisco-6509/if_col/exceptions
+devmon/templates/cisco-6509/fans/transforms
+devmon/templates/cisco-6509/fans/thresholds
+devmon/templates/cisco-6509/fans/oids
+devmon/templates/cisco-6509/fans/message
+devmon/templates/cisco-6509/fans/exceptions
+devmon/templates/cisco-6509/cpu/transforms
+devmon/templates/cisco-6509/cpu/thresholds
+devmon/templates/cisco-6509/cpu/oids
+devmon/templates/cisco-6509/cpu/message
+devmon/templates/cisco-6509/cpu/exceptions
+devmon/templates/cisco-6509/README
+devmon/templates/cisco-6506/specs
+devmon/templates/cisco-6506/serial/transforms
+devmon/templates/cisco-6506/serial/thresholds
+devmon/templates/cisco-6506/serial/oids
+devmon/templates/cisco-6506/serial/message
+devmon/templates/cisco-6506/serial/exceptions
+devmon/templates/cisco-6506/power/transforms
+devmon/templates/cisco-6506/power/thresholds
+devmon/templates/cisco-6506/power/oids
+devmon/templates/cisco-6506/power/message
+devmon/templates/cisco-6506/power/exceptions
+devmon/templates/cisco-6506/memory/transforms
+devmon/templates/cisco-6506/memory/thresholds
+devmon/templates/cisco-6506/memory/oids
+devmon/templates/cisco-6506/memory/message
+devmon/templates/cisco-6506/memory/exceptions
+devmon/templates/cisco-6506/if_stat/transforms
+devmon/templates/cisco-6506/if_stat/thresholds
+devmon/templates/cisco-6506/if_stat/oids
+devmon/templates/cisco-6506/if_stat/message
+devmon/templates/cisco-6506/if_stat/exceptions
+devmon/templates/cisco-6506/if_load/transforms
+devmon/templates/cisco-6506/if_load/thresholds
+devmon/templates/cisco-6506/if_load/oids
+devmon/templates/cisco-6506/if_load/message
+devmon/templates/cisco-6506/if_load/exceptions
+devmon/templates/cisco-6506/if_err/transforms
+devmon/templates/cisco-6506/if_err/thresholds
+devmon/templates/cisco-6506/if_err/oids
+devmon/templates/cisco-6506/if_err/message
+devmon/templates/cisco-6506/if_err/exceptions
+devmon/templates/cisco-6506/if_dsc/transforms
+devmon/templates/cisco-6506/if_dsc/thresholds
+devmon/templates/cisco-6506/if_dsc/oids
+devmon/templates/cisco-6506/if_dsc/message
+devmon/templates/cisco-6506/if_dsc/exceptions
+devmon/templates/cisco-6506/fans/transforms
+devmon/templates/cisco-6506/fans/thresholds
+devmon/templates/cisco-6506/fans/oids
+devmon/templates/cisco-6506/fans/message
+devmon/templates/cisco-6506/fans/exceptions
+devmon/templates/cisco-6506/cpu/transforms
+devmon/templates/cisco-6506/cpu/thresholds
+devmon/templates/cisco-6506/cpu/oids
+devmon/templates/cisco-6506/cpu/message
+devmon/templates/cisco-6506/cpu/exceptions
+devmon/templates/cisco-6506/README
+devmon/templates/cisco-5500/specs
+devmon/templates/cisco-5500/serial/transforms
+devmon/templates/cisco-5500/serial/thresholds
+devmon/templates/cisco-5500/serial/oids
+devmon/templates/cisco-5500/serial/message
+devmon/templates/cisco-5500/serial/exceptions
+devmon/templates/cisco-5500/power/transforms
+devmon/templates/cisco-5500/power/thresholds
+devmon/templates/cisco-5500/power/oids
+devmon/templates/cisco-5500/power/message
+devmon/templates/cisco-5500/power/exceptions
+devmon/templates/cisco-5500/memory/transforms
+devmon/templates/cisco-5500/memory/thresholds
+devmon/templates/cisco-5500/memory/oids
+devmon/templates/cisco-5500/memory/message
+devmon/templates/cisco-5500/memory/exceptions
+devmon/templates/cisco-5500/if_stat/transforms
+devmon/templates/cisco-5500/if_stat/thresholds
+devmon/templates/cisco-5500/if_stat/oids
+devmon/templates/cisco-5500/if_stat/message
+devmon/templates/cisco-5500/if_stat/exceptions
+devmon/templates/cisco-5500/if_load/transforms
+devmon/templates/cisco-5500/if_load/thresholds
+devmon/templates/cisco-5500/if_load/oids
+devmon/templates/cisco-5500/if_load/message
+devmon/templates/cisco-5500/if_load/exceptions
+devmon/templates/cisco-5500/if_err/transforms
+devmon/templates/cisco-5500/if_err/thresholds
+devmon/templates/cisco-5500/if_err/oids
+devmon/templates/cisco-5500/if_err/message
+devmon/templates/cisco-5500/if_err/exceptions
+devmon/templates/cisco-5500/if_dsc/transforms
+devmon/templates/cisco-5500/if_dsc/thresholds
+devmon/templates/cisco-5500/if_dsc/oids
+devmon/templates/cisco-5500/if_dsc/message
+devmon/templates/cisco-5500/if_dsc/exceptions
+devmon/templates/cisco-5500/fans/transforms
+devmon/templates/cisco-5500/fans/thresholds
+devmon/templates/cisco-5500/fans/oids
+devmon/templates/cisco-5500/fans/message
+devmon/templates/cisco-5500/fans/exceptions
+devmon/templates/cisco-5500/cpu/transforms
+devmon/templates/cisco-5500/cpu/thresholds
+devmon/templates/cisco-5500/cpu/oids
+devmon/templates/cisco-5500/cpu/message
+devmon/templates/cisco-5500/cpu/exceptions
+devmon/templates/cisco-5500/README
+devmon/templates/cisco-4500/specs
+devmon/templates/cisco-4500/serial/transforms
+devmon/templates/cisco-4500/serial/thresholds
+devmon/templates/cisco-4500/serial/oids
+devmon/templates/cisco-4500/serial/message
+devmon/templates/cisco-4500/serial/exceptions
+devmon/templates/cisco-4500/power/transforms
+devmon/templates/cisco-4500/power/thresholds
+devmon/templates/cisco-4500/power/oids
+devmon/templates/cisco-4500/power/message
+devmon/templates/cisco-4500/power/exceptions
+devmon/templates/cisco-4500/memory/transforms
+devmon/templates/cisco-4500/memory/thresholds
+devmon/templates/cisco-4500/memory/oids
+devmon/templates/cisco-4500/memory/message
+devmon/templates/cisco-4500/memory/exceptions
+devmon/templates/cisco-4500/if_stat/transforms
+devmon/templates/cisco-4500/if_stat/thresholds
+devmon/templates/cisco-4500/if_stat/oids
+devmon/templates/cisco-4500/if_stat/message
+devmon/templates/cisco-4500/if_stat/exceptions
+devmon/templates/cisco-4500/if_load/transforms
+devmon/templates/cisco-4500/if_load/thresholds
+devmon/templates/cisco-4500/if_load/oids
+devmon/templates/cisco-4500/if_load/message
+devmon/templates/cisco-4500/if_load/exceptions
+devmon/templates/cisco-4500/if_err/transforms
+devmon/templates/cisco-4500/if_err/thresholds
+devmon/templates/cisco-4500/if_err/oids
+devmon/templates/cisco-4500/if_err/message
+devmon/templates/cisco-4500/if_err/exceptions
+devmon/templates/cisco-4500/if_dsc/transforms
+devmon/templates/cisco-4500/if_dsc/thresholds
+devmon/templates/cisco-4500/if_dsc/oids
+devmon/templates/cisco-4500/if_dsc/message
+devmon/templates/cisco-4500/if_dsc/exceptions
+devmon/templates/cisco-4500/if_col/transforms
+devmon/templates/cisco-4500/if_col/thresholds
+devmon/templates/cisco-4500/if_col/oids
+devmon/templates/cisco-4500/if_col/message
+devmon/templates/cisco-4500/if_col/exceptions
+devmon/templates/cisco-4500/fans/transforms
+devmon/templates/cisco-4500/fans/thresholds
+devmon/templates/cisco-4500/fans/oids
+devmon/templates/cisco-4500/fans/message
+devmon/templates/cisco-4500/fans/exceptions
+devmon/templates/cisco-4500/cpu/transforms
+devmon/templates/cisco-4500/cpu/thresholds
+devmon/templates/cisco-4500/cpu/oids
+devmon/templates/cisco-4500/cpu/message
+devmon/templates/cisco-4500/cpu/exceptions
+devmon/templates/cisco-4500/README
+devmon/templates/cisco-3750/specs
+devmon/templates/cisco-3750/serial/transforms
+devmon/templates/cisco-3750/serial/thresholds
+devmon/templates/cisco-3750/serial/oids
+devmon/templates/cisco-3750/serial/message
+devmon/templates/cisco-3750/serial/exceptions
+devmon/templates/cisco-3750/power/transforms
+devmon/templates/cisco-3750/power/thresholds
+devmon/templates/cisco-3750/power/oids
+devmon/templates/cisco-3750/power/message
+devmon/templates/cisco-3750/power/exceptions
+devmon/templates/cisco-3750/memory/transforms
+devmon/templates/cisco-3750/memory/thresholds
+devmon/templates/cisco-3750/memory/oids
+devmon/templates/cisco-3750/memory/message
+devmon/templates/cisco-3750/memory/exceptions
+devmon/templates/cisco-3750/if_stat/transforms
+devmon/templates/cisco-3750/if_stat/thresholds
+devmon/templates/cisco-3750/if_stat/oids
+devmon/templates/cisco-3750/if_stat/message
+devmon/templates/cisco-3750/if_stat/exceptions
+devmon/templates/cisco-3750/if_load/transforms
+devmon/templates/cisco-3750/if_load/thresholds
+devmon/templates/cisco-3750/if_load/oids
+devmon/templates/cisco-3750/if_load/message
+devmon/templates/cisco-3750/if_load/exceptions
+devmon/templates/cisco-3750/if_err/transforms
+devmon/templates/cisco-3750/if_err/thresholds
+devmon/templates/cisco-3750/if_err/oids
+devmon/templates/cisco-3750/if_err/message
+devmon/templates/cisco-3750/if_err/exceptions
+devmon/templates/cisco-3750/if_dsc/transforms
+devmon/templates/cisco-3750/if_dsc/thresholds
+devmon/templates/cisco-3750/if_dsc/oids
+devmon/templates/cisco-3750/if_dsc/message
+devmon/templates/cisco-3750/if_dsc/exceptions
+devmon/templates/cisco-3750/if_col/transforms
+devmon/templates/cisco-3750/if_col/thresholds
+devmon/templates/cisco-3750/if_col/oids
+devmon/templates/cisco-3750/if_col/message
+devmon/templates/cisco-3750/if_col/exceptions
+devmon/templates/cisco-3750/fans/transforms
+devmon/templates/cisco-3750/fans/thresholds
+devmon/templates/cisco-3750/fans/oids
+devmon/templates/cisco-3750/fans/message
+devmon/templates/cisco-3750/fans/exceptions
+devmon/templates/cisco-3750/cpu/transforms
+devmon/templates/cisco-3750/cpu/thresholds
+devmon/templates/cisco-3750/cpu/oids
+devmon/templates/cisco-3750/cpu/message
+devmon/templates/cisco-3750/cpu/exceptions
+devmon/templates/cisco-3750/README
+devmon/templates/cisco-3725/specs
+devmon/templates/cisco-3725/power/transforms
+devmon/templates/cisco-3725/power/thresholds
+devmon/templates/cisco-3725/power/oids
+devmon/templates/cisco-3725/power/message
+devmon/templates/cisco-3725/power/exceptions
+devmon/templates/cisco-3725/if_stat/transforms
+devmon/templates/cisco-3725/if_stat/thresholds
+devmon/templates/cisco-3725/if_stat/oids
+devmon/templates/cisco-3725/if_stat/message
+devmon/templates/cisco-3725/if_stat/exceptions
+devmon/templates/cisco-3725/if_load/transforms
+devmon/templates/cisco-3725/if_load/thresholds
+devmon/templates/cisco-3725/if_load/oids
+devmon/templates/cisco-3725/if_load/message
+devmon/templates/cisco-3725/if_load/exceptions
+devmon/templates/cisco-3725/if_err/transforms
+devmon/templates/cisco-3725/if_err/thresholds
+devmon/templates/cisco-3725/if_err/oids
+devmon/templates/cisco-3725/if_err/message
+devmon/templates/cisco-3725/if_err/exceptions
+devmon/templates/cisco-3725/if_dsc/transforms
+devmon/templates/cisco-3725/if_dsc/thresholds
+devmon/templates/cisco-3725/if_dsc/oids
+devmon/templates/cisco-3725/if_dsc/message
+devmon/templates/cisco-3725/if_dsc/exceptions
+devmon/templates/cisco-3725/if_col/transforms
+devmon/templates/cisco-3725/if_col/thresholds
+devmon/templates/cisco-3725/if_col/oids
+devmon/templates/cisco-3725/if_col/message
+devmon/templates/cisco-3725/if_col/exceptions
+devmon/templates/cisco-3725/fans/transforms
+devmon/templates/cisco-3725/fans/thresholds
+devmon/templates/cisco-3725/fans/oids
+devmon/templates/cisco-3725/fans/message
+devmon/templates/cisco-3725/fans/exceptions
+devmon/templates/cisco-3725/cpu/transforms
+devmon/templates/cisco-3725/cpu/thresholds
+devmon/templates/cisco-3725/cpu/oids
+devmon/templates/cisco-3725/cpu/message
+devmon/templates/cisco-3725/cpu/exceptions
+devmon/templates/cisco-3725/README
+devmon/templates/cisco-3640/specs
+devmon/templates/cisco-3640/memory/transforms
+devmon/templates/cisco-3640/memory/thresholds
+devmon/templates/cisco-3640/memory/oids
+devmon/templates/cisco-3640/memory/message
+devmon/templates/cisco-3640/memory/exceptions
+devmon/templates/cisco-3640/if_stat/transforms
+devmon/templates/cisco-3640/if_stat/thresholds
+devmon/templates/cisco-3640/if_stat/oids
+devmon/templates/cisco-3640/if_stat/message
+devmon/templates/cisco-3640/if_stat/exceptions
+devmon/templates/cisco-3640/if_load/transforms
+devmon/templates/cisco-3640/if_load/thresholds
+devmon/templates/cisco-3640/if_load/oids
+devmon/templates/cisco-3640/if_load/message
+devmon/templates/cisco-3640/if_load/exceptions
+devmon/templates/cisco-3640/if_err/transforms
+devmon/templates/cisco-3640/if_err/thresholds
+devmon/templates/cisco-3640/if_err/oids
+devmon/templates/cisco-3640/if_err/message
+devmon/templates/cisco-3640/if_err/exceptions
+devmon/templates/cisco-3640/if_dsc/transforms
+devmon/templates/cisco-3640/if_dsc/thresholds
+devmon/templates/cisco-3640/if_dsc/oids
+devmon/templates/cisco-3640/if_dsc/message
+devmon/templates/cisco-3640/if_dsc/exceptions
+devmon/templates/cisco-3640/if_col/transforms
+devmon/templates/cisco-3640/if_col/thresholds
+devmon/templates/cisco-3640/if_col/oids
+devmon/templates/cisco-3640/if_col/message
+devmon/templates/cisco-3640/if_col/exceptions
+devmon/templates/cisco-3640/cpu/transforms
+devmon/templates/cisco-3640/cpu/thresholds
+devmon/templates/cisco-3640/cpu/oids
+devmon/templates/cisco-3640/cpu/message
+devmon/templates/cisco-3640/cpu/exceptions
+devmon/templates/cisco-3640/README
+devmon/templates/cisco-3550/specs
+devmon/templates/cisco-3550/serial/transforms
+devmon/templates/cisco-3550/serial/thresholds
+devmon/templates/cisco-3550/serial/oids
+devmon/templates/cisco-3550/serial/message
+devmon/templates/cisco-3550/serial/exceptions
+devmon/templates/cisco-3550/power/transforms
+devmon/templates/cisco-3550/power/thresholds
+devmon/templates/cisco-3550/power/oids
+devmon/templates/cisco-3550/power/message
+devmon/templates/cisco-3550/power/exceptions
+devmon/templates/cisco-3550/memory/transforms
+devmon/templates/cisco-3550/memory/thresholds
+devmon/templates/cisco-3550/memory/oids
+devmon/templates/cisco-3550/memory/message
+devmon/templates/cisco-3550/memory/exceptions
+devmon/templates/cisco-3550/if_stat/transforms
+devmon/templates/cisco-3550/if_stat/thresholds
+devmon/templates/cisco-3550/if_stat/oids
+devmon/templates/cisco-3550/if_stat/message
+devmon/templates/cisco-3550/if_stat/exceptions
+devmon/templates/cisco-3550/if_load/transforms
+devmon/templates/cisco-3550/if_load/thresholds
+devmon/templates/cisco-3550/if_load/oids
+devmon/templates/cisco-3550/if_load/message
+devmon/templates/cisco-3550/if_load/exceptions
+devmon/templates/cisco-3550/if_err/transforms
+devmon/templates/cisco-3550/if_err/thresholds
+devmon/templates/cisco-3550/if_err/oids
+devmon/templates/cisco-3550/if_err/message
+devmon/templates/cisco-3550/if_err/exceptions
+devmon/templates/cisco-3550/if_dsc/transforms
+devmon/templates/cisco-3550/if_dsc/thresholds
+devmon/templates/cisco-3550/if_dsc/oids
+devmon/templates/cisco-3550/if_dsc/message
+devmon/templates/cisco-3550/if_dsc/exceptions
+devmon/templates/cisco-3550/if_col/transforms
+devmon/templates/cisco-3550/if_col/thresholds
+devmon/templates/cisco-3550/if_col/oids
+devmon/templates/cisco-3550/if_col/message
+devmon/templates/cisco-3550/if_col/exceptions
+devmon/templates/cisco-3550/fans/transforms
+devmon/templates/cisco-3550/fans/thresholds
+devmon/templates/cisco-3550/fans/oids
+devmon/templates/cisco-3550/fans/message
+devmon/templates/cisco-3550/fans/exceptions
+devmon/templates/cisco-3550/cpu/transforms
+devmon/templates/cisco-3550/cpu/thresholds
+devmon/templates/cisco-3550/cpu/oids
+devmon/templates/cisco-3550/cpu/message
+devmon/templates/cisco-3550/cpu/exceptions
+devmon/templates/cisco-3550/README
+devmon/templates/cisco-3500/specs
+devmon/templates/cisco-3500/serial/transforms
+devmon/templates/cisco-3500/serial/thresholds
+devmon/templates/cisco-3500/serial/oids
+devmon/templates/cisco-3500/serial/message
+devmon/templates/cisco-3500/serial/exceptions
+devmon/templates/cisco-3500/memory/transforms
+devmon/templates/cisco-3500/memory/thresholds
+devmon/templates/cisco-3500/memory/oids
+devmon/templates/cisco-3500/memory/message
+devmon/templates/cisco-3500/memory/exceptions
+devmon/templates/cisco-3500/if_stat/transforms
+devmon/templates/cisco-3500/if_stat/thresholds
+devmon/templates/cisco-3500/if_stat/oids
+devmon/templates/cisco-3500/if_stat/message
+devmon/templates/cisco-3500/if_stat/exceptions
+devmon/templates/cisco-3500/if_load/transforms
+devmon/templates/cisco-3500/if_load/thresholds
+devmon/templates/cisco-3500/if_load/oids
+devmon/templates/cisco-3500/if_load/message
+devmon/templates/cisco-3500/if_load/exceptions
+devmon/templates/cisco-3500/if_err/transforms
+devmon/templates/cisco-3500/if_err/thresholds
+devmon/templates/cisco-3500/if_err/oids
+devmon/templates/cisco-3500/if_err/message
+devmon/templates/cisco-3500/if_err/exceptions
+devmon/templates/cisco-3500/if_dsc/transforms
+devmon/templates/cisco-3500/if_dsc/thresholds
+devmon/templates/cisco-3500/if_dsc/oids
+devmon/templates/cisco-3500/if_dsc/message
+devmon/templates/cisco-3500/if_dsc/exceptions
+devmon/templates/cisco-3500/if_col/transforms
+devmon/templates/cisco-3500/if_col/thresholds
+devmon/templates/cisco-3500/if_col/oids
+devmon/templates/cisco-3500/if_col/message
+devmon/templates/cisco-3500/if_col/exceptions
+devmon/templates/cisco-3500/cpu/transforms
+devmon/templates/cisco-3500/cpu/thresholds
+devmon/templates/cisco-3500/cpu/oids
+devmon/templates/cisco-3500/cpu/message
+devmon/templates/cisco-3500/cpu/exceptions
+devmon/templates/cisco-3500/README
+devmon/templates/cisco-2970/specs
+devmon/templates/cisco-2970/serial/transforms
+devmon/templates/cisco-2970/serial/thresholds
+devmon/templates/cisco-2970/serial/oids
+devmon/templates/cisco-2970/serial/message
+devmon/templates/cisco-2970/serial/exceptions
+devmon/templates/cisco-2970/power/transforms
+devmon/templates/cisco-2970/power/thresholds
+devmon/templates/cisco-2970/power/oids
+devmon/templates/cisco-2970/power/message
+devmon/templates/cisco-2970/power/exceptions
+devmon/templates/cisco-2970/memory/transforms
+devmon/templates/cisco-2970/memory/thresholds
+devmon/templates/cisco-2970/memory/oids
+devmon/templates/cisco-2970/memory/message
+devmon/templates/cisco-2970/memory/exceptions
+devmon/templates/cisco-2970/if_stat/transforms
+devmon/templates/cisco-2970/if_stat/thresholds
+devmon/templates/cisco-2970/if_stat/oids
+devmon/templates/cisco-2970/if_stat/message
+devmon/templates/cisco-2970/if_stat/exceptions
+devmon/templates/cisco-2970/if_load/transforms
+devmon/templates/cisco-2970/if_load/thresholds
+devmon/templates/cisco-2970/if_load/oids
+devmon/templates/cisco-2970/if_load/message
+devmon/templates/cisco-2970/if_load/exceptions
+devmon/templates/cisco-2970/if_err/transforms
+devmon/templates/cisco-2970/if_err/thresholds
+devmon/templates/cisco-2970/if_err/oids
+devmon/templates/cisco-2970/if_err/message
+devmon/templates/cisco-2970/if_err/exceptions
+devmon/templates/cisco-2970/if_dsc/transforms
+devmon/templates/cisco-2970/if_dsc/thresholds
+devmon/templates/cisco-2970/if_dsc/oids
+devmon/templates/cisco-2970/if_dsc/message
+devmon/templates/cisco-2970/if_dsc/exceptions
+devmon/templates/cisco-2970/if_col/transforms
+devmon/templates/cisco-2970/if_col/thresholds
+devmon/templates/cisco-2970/if_col/oids
+devmon/templates/cisco-2970/if_col/message
+devmon/templates/cisco-2970/if_col/exceptions
+devmon/templates/cisco-2970/fans/transforms
+devmon/templates/cisco-2970/fans/thresholds
+devmon/templates/cisco-2970/fans/oids
+devmon/templates/cisco-2970/fans/message
+devmon/templates/cisco-2970/fans/exceptions
+devmon/templates/cisco-2970/cpu/transforms
+devmon/templates/cisco-2970/cpu/thresholds
+devmon/templates/cisco-2970/cpu/oids
+devmon/templates/cisco-2970/cpu/message
+devmon/templates/cisco-2970/cpu/exceptions
+devmon/templates/cisco-2970/README
+devmon/templates/cisco-2960/specs
+devmon/templates/cisco-2960/serial/transforms
+devmon/templates/cisco-2960/serial/thresholds
+devmon/templates/cisco-2960/serial/oids
+devmon/templates/cisco-2960/serial/message
+devmon/templates/cisco-2960/serial/exceptions
+devmon/templates/cisco-2960/power/transforms
+devmon/templates/cisco-2960/power/thresholds
+devmon/templates/cisco-2960/power/oids
+devmon/templates/cisco-2960/power/message
+devmon/templates/cisco-2960/power/exceptions
+devmon/templates/cisco-2960/memory/transforms
+devmon/templates/cisco-2960/memory/thresholds
+devmon/templates/cisco-2960/memory/oids
+devmon/templates/cisco-2960/memory/message
+devmon/templates/cisco-2960/memory/exceptions
+devmon/templates/cisco-2960/if_stat/transforms
+devmon/templates/cisco-2960/if_stat/thresholds
+devmon/templates/cisco-2960/if_stat/oids
+devmon/templates/cisco-2960/if_stat/message
+devmon/templates/cisco-2960/if_stat/exceptions
+devmon/templates/cisco-2960/if_load/transforms
+devmon/templates/cisco-2960/if_load/thresholds
+devmon/templates/cisco-2960/if_load/oids
+devmon/templates/cisco-2960/if_load/message
+devmon/templates/cisco-2960/if_load/exceptions
+devmon/templates/cisco-2960/if_err/transforms
+devmon/templates/cisco-2960/if_err/thresholds
+devmon/templates/cisco-2960/if_err/oids
+devmon/templates/cisco-2960/if_err/message
+devmon/templates/cisco-2960/if_err/exceptions
+devmon/templates/cisco-2960/if_dsc/transforms
+devmon/templates/cisco-2960/if_dsc/thresholds
+devmon/templates/cisco-2960/if_dsc/oids
+devmon/templates/cisco-2960/if_dsc/message
+devmon/templates/cisco-2960/if_dsc/exceptions
+devmon/templates/cisco-2960/if_col/transforms
+devmon/templates/cisco-2960/if_col/thresholds
+devmon/templates/cisco-2960/if_col/oids
+devmon/templates/cisco-2960/if_col/message
+devmon/templates/cisco-2960/if_col/exceptions
+devmon/templates/cisco-2960/fans/transforms
+devmon/templates/cisco-2960/fans/thresholds
+devmon/templates/cisco-2960/fans/oids
+devmon/templates/cisco-2960/fans/message
+devmon/templates/cisco-2960/fans/exceptions
+devmon/templates/cisco-2960/cpu/transforms
+devmon/templates/cisco-2960/cpu/thresholds
+devmon/templates/cisco-2960/cpu/oids
+devmon/templates/cisco-2960/cpu/message
+devmon/templates/cisco-2960/cpu/exceptions
+devmon/templates/cisco-2960/README
+devmon/templates/cisco-2950/specs
+devmon/templates/cisco-2950/serial/transforms
+devmon/templates/cisco-2950/serial/thresholds
+devmon/templates/cisco-2950/serial/oids
+devmon/templates/cisco-2950/serial/message
+devmon/templates/cisco-2950/serial/exceptions
+devmon/templates/cisco-2950/power/transforms
+devmon/templates/cisco-2950/power/thresholds
+devmon/templates/cisco-2950/power/oids
+devmon/templates/cisco-2950/power/message
+devmon/templates/cisco-2950/power/exceptions
+devmon/templates/cisco-2950/memory/transforms
+devmon/templates/cisco-2950/memory/thresholds
+devmon/templates/cisco-2950/memory/oids
+devmon/templates/cisco-2950/memory/message
+devmon/templates/cisco-2950/memory/exceptions
+devmon/templates/cisco-2950/if_stat/transforms
+devmon/templates/cisco-2950/if_stat/thresholds
+devmon/templates/cisco-2950/if_stat/oids
+devmon/templates/cisco-2950/if_stat/message
+devmon/templates/cisco-2950/if_stat/exceptions
+devmon/templates/cisco-2950/if_load/transforms
+devmon/templates/cisco-2950/if_load/thresholds
+devmon/templates/cisco-2950/if_load/oids
+devmon/templates/cisco-2950/if_load/message
+devmon/templates/cisco-2950/if_load/exceptions
+devmon/templates/cisco-2950/if_err/transforms
+devmon/templates/cisco-2950/if_err/thresholds
+devmon/templates/cisco-2950/if_err/oids
+devmon/templates/cisco-2950/if_err/message
+devmon/templates/cisco-2950/if_err/exceptions
+devmon/templates/cisco-2950/if_dsc/transforms
+devmon/templates/cisco-2950/if_dsc/thresholds
+devmon/templates/cisco-2950/if_dsc/oids
+devmon/templates/cisco-2950/if_dsc/message
+devmon/templates/cisco-2950/if_dsc/exceptions
+devmon/templates/cisco-2950/if_col/transforms
+devmon/templates/cisco-2950/if_col/thresholds
+devmon/templates/cisco-2950/if_col/oids
+devmon/templates/cisco-2950/if_col/message
+devmon/templates/cisco-2950/if_col/exceptions
+devmon/templates/cisco-2950/fans/transforms
+devmon/templates/cisco-2950/fans/thresholds
+devmon/templates/cisco-2950/fans/oids
+devmon/templates/cisco-2950/fans/message
+devmon/templates/cisco-2950/fans/exceptions
+devmon/templates/cisco-2950/cpu/transforms
+devmon/templates/cisco-2950/cpu/thresholds
+devmon/templates/cisco-2950/cpu/oids
+devmon/templates/cisco-2950/cpu/message
+devmon/templates/cisco-2950/cpu/exceptions
+devmon/templates/cisco-2950/README
+devmon/templates/cisco-2900/specs
+devmon/templates/cisco-2900/serial/transforms
+devmon/templates/cisco-2900/serial/thresholds
+devmon/templates/cisco-2900/serial/oids
+devmon/templates/cisco-2900/serial/message
+devmon/templates/cisco-2900/serial/exceptions
+devmon/templates/cisco-2900/memory/transforms
+devmon/templates/cisco-2900/memory/thresholds
+devmon/templates/cisco-2900/memory/oids
+devmon/templates/cisco-2900/memory/message
+devmon/templates/cisco-2900/memory/exceptions
+devmon/templates/cisco-2900/if_stat/transforms
+devmon/templates/cisco-2900/if_stat/thresholds
+devmon/templates/cisco-2900/if_stat/oids
+devmon/templates/cisco-2900/if_stat/message
+devmon/templates/cisco-2900/if_stat/exceptions
+devmon/templates/cisco-2900/if_load/transforms
+devmon/templates/cisco-2900/if_load/thresholds
+devmon/templates/cisco-2900/if_load/oids
+devmon/templates/cisco-2900/if_load/message
+devmon/templates/cisco-2900/if_load/exceptions
+devmon/templates/cisco-2900/if_err/transforms
+devmon/templates/cisco-2900/if_err/thresholds
+devmon/templates/cisco-2900/if_err/oids
+devmon/templates/cisco-2900/if_err/message
+devmon/templates/cisco-2900/if_err/exceptions
+devmon/templates/cisco-2900/if_dsc/transforms
+devmon/templates/cisco-2900/if_dsc/thresholds
+devmon/templates/cisco-2900/if_dsc/oids
+devmon/templates/cisco-2900/if_dsc/message
+devmon/templates/cisco-2900/if_dsc/exceptions
+devmon/templates/cisco-2900/if_col/transforms
+devmon/templates/cisco-2900/if_col/thresholds
+devmon/templates/cisco-2900/if_col/oids
+devmon/templates/cisco-2900/if_col/message
+devmon/templates/cisco-2900/if_col/exceptions
+devmon/templates/cisco-2900/cpu/transforms
+devmon/templates/cisco-2900/cpu/thresholds
+devmon/templates/cisco-2900/cpu/oids
+devmon/templates/cisco-2900/cpu/message
+devmon/templates/cisco-2900/cpu/exceptions
+devmon/templates/cisco-2900/README
+devmon/templates/cisco-2811/specs
+devmon/templates/cisco-2811/if_stat/transforms
+devmon/templates/cisco-2811/if_stat/thresholds
+devmon/templates/cisco-2811/if_stat/oids
+devmon/templates/cisco-2811/if_stat/message
+devmon/templates/cisco-2811/if_stat/exceptions
+devmon/templates/cisco-2811/if_load/transforms
+devmon/templates/cisco-2811/if_load/thresholds
+devmon/templates/cisco-2811/if_load/oids
+devmon/templates/cisco-2811/if_load/message
+devmon/templates/cisco-2811/if_load/exceptions
+devmon/templates/cisco-2811/if_err/transforms
+devmon/templates/cisco-2811/if_err/thresholds
+devmon/templates/cisco-2811/if_err/oids
+devmon/templates/cisco-2811/if_err/message
+devmon/templates/cisco-2811/if_err/exceptions
+devmon/templates/cisco-2811/if_dsc/transforms
+devmon/templates/cisco-2811/if_dsc/thresholds
+devmon/templates/cisco-2811/if_dsc/oids
+devmon/templates/cisco-2811/if_dsc/message
+devmon/templates/cisco-2811/if_dsc/exceptions
+devmon/templates/cisco-2811/fans/transforms
+devmon/templates/cisco-2811/fans/thresholds
+devmon/templates/cisco-2811/fans/oids
+devmon/templates/cisco-2811/fans/message
+devmon/templates/cisco-2811/fans/exceptions
+devmon/templates/cisco-2811/cpu/transforms
+devmon/templates/cisco-2811/cpu/thresholds
+devmon/templates/cisco-2811/cpu/oids
+devmon/templates/cisco-2811/cpu/message
+devmon/templates/cisco-2811/cpu/exceptions
+devmon/templates/cisco-2811/README
+devmon/templates/cisco-2801/specs
+devmon/templates/cisco-2801/serial/transforms
+devmon/templates/cisco-2801/serial/thresholds
+devmon/templates/cisco-2801/serial/oids
+devmon/templates/cisco-2801/serial/message
+devmon/templates/cisco-2801/serial/exceptions
+devmon/templates/cisco-2801/memory/transforms
+devmon/templates/cisco-2801/memory/thresholds
+devmon/templates/cisco-2801/memory/oids
+devmon/templates/cisco-2801/memory/message
+devmon/templates/cisco-2801/memory/exceptions
+devmon/templates/cisco-2801/if_stat/transforms
+devmon/templates/cisco-2801/if_stat/thresholds
+devmon/templates/cisco-2801/if_stat/oids
+devmon/templates/cisco-2801/if_stat/message
+devmon/templates/cisco-2801/if_stat/exceptions
+devmon/templates/cisco-2801/if_load/transforms
+devmon/templates/cisco-2801/if_load/thresholds
+devmon/templates/cisco-2801/if_load/oids
+devmon/templates/cisco-2801/if_load/message
+devmon/templates/cisco-2801/if_load/exceptions
+devmon/templates/cisco-2801/if_err/transforms
+devmon/templates/cisco-2801/if_err/thresholds
+devmon/templates/cisco-2801/if_err/oids
+devmon/templates/cisco-2801/if_err/message
+devmon/templates/cisco-2801/if_err/exceptions
+devmon/templates/cisco-2801/if_dsc/transforms
+devmon/templates/cisco-2801/if_dsc/thresholds
+devmon/templates/cisco-2801/if_dsc/oids
+devmon/templates/cisco-2801/if_dsc/message
+devmon/templates/cisco-2801/if_dsc/exceptions
+devmon/templates/cisco-2801/if_col/transforms
+devmon/templates/cisco-2801/if_col/thresholds
+devmon/templates/cisco-2801/if_col/oids
+devmon/templates/cisco-2801/if_col/message
+devmon/templates/cisco-2801/if_col/exceptions
+devmon/templates/cisco-2801/fans/transforms
+devmon/templates/cisco-2801/fans/thresholds
+devmon/templates/cisco-2801/fans/oids
+devmon/templates/cisco-2801/fans/message
+devmon/templates/cisco-2801/fans/exceptions
+devmon/templates/cisco-2801/cpu/transforms
+devmon/templates/cisco-2801/cpu/thresholds
+devmon/templates/cisco-2801/cpu/oids
+devmon/templates/cisco-2801/cpu/message
+devmon/templates/cisco-2801/cpu/exceptions
+devmon/templates/cisco-2801/README
+devmon/templates/cisco-2600/specs
+devmon/templates/cisco-2600/power/transforms
+devmon/templates/cisco-2600/power/thresholds
+devmon/templates/cisco-2600/power/oids
+devmon/templates/cisco-2600/power/message
+devmon/templates/cisco-2600/power/exceptions
+devmon/templates/cisco-2600/if_stat/transforms
+devmon/templates/cisco-2600/if_stat/thresholds
+devmon/templates/cisco-2600/if_stat/oids
+devmon/templates/cisco-2600/if_stat/message
+devmon/templates/cisco-2600/if_stat/exceptions
+devmon/templates/cisco-2600/if_load/transforms
+devmon/templates/cisco-2600/if_load/thresholds
+devmon/templates/cisco-2600/if_load/oids
+devmon/templates/cisco-2600/if_load/message
+devmon/templates/cisco-2600/if_load/exceptions
+devmon/templates/cisco-2600/if_err/transforms
+devmon/templates/cisco-2600/if_err/thresholds
+devmon/templates/cisco-2600/if_err/oids
+devmon/templates/cisco-2600/if_err/message
+devmon/templates/cisco-2600/if_err/exceptions
+devmon/templates/cisco-2600/if_dsc/transforms
+devmon/templates/cisco-2600/if_dsc/thresholds
+devmon/templates/cisco-2600/if_dsc/oids
+devmon/templates/cisco-2600/if_dsc/message
+devmon/templates/cisco-2600/if_dsc/exceptions
+devmon/templates/cisco-2600/if_col/transforms
+devmon/templates/cisco-2600/if_col/thresholds
+devmon/templates/cisco-2600/if_col/oids
+devmon/templates/cisco-2600/if_col/message
+devmon/templates/cisco-2600/if_col/exceptions
+devmon/templates/cisco-2600/cpu/transforms
+devmon/templates/cisco-2600/cpu/thresholds
+devmon/templates/cisco-2600/cpu/oids
+devmon/templates/cisco-2600/cpu/message
+devmon/templates/cisco-2600/cpu/exceptions
+devmon/templates/cisco-2600/README
+devmon/templates/cisco-1841/specs
+devmon/templates/cisco-1841/serial/transforms
+devmon/templates/cisco-1841/serial/thresholds
+devmon/templates/cisco-1841/serial/oids
+devmon/templates/cisco-1841/serial/message
+devmon/templates/cisco-1841/serial/exceptions
+devmon/templates/cisco-1841/if_stat/transforms
+devmon/templates/cisco-1841/if_stat/thresholds
+devmon/templates/cisco-1841/if_stat/oids
+devmon/templates/cisco-1841/if_stat/message
+devmon/templates/cisco-1841/if_stat/exceptions
+devmon/templates/cisco-1841/if_load/transforms
+devmon/templates/cisco-1841/if_load/thresholds
+devmon/templates/cisco-1841/if_load/oids
+devmon/templates/cisco-1841/if_load/message
+devmon/templates/cisco-1841/if_load/exceptions
+devmon/templates/cisco-1841/if_err/transforms
+devmon/templates/cisco-1841/if_err/thresholds
+devmon/templates/cisco-1841/if_err/oids
+devmon/templates/cisco-1841/if_err/message
+devmon/templates/cisco-1841/if_err/exceptions
+devmon/templates/cisco-1841/if_dsc/transforms
+devmon/templates/cisco-1841/if_dsc/thresholds
+devmon/templates/cisco-1841/if_dsc/oids
+devmon/templates/cisco-1841/if_dsc/message
+devmon/templates/cisco-1841/if_dsc/exceptions
+devmon/templates/cisco-1841/if_col/transforms
+devmon/templates/cisco-1841/if_col/thresholds
+devmon/templates/cisco-1841/if_col/oids
+devmon/templates/cisco-1841/if_col/message
+devmon/templates/cisco-1841/if_col/exceptions
+devmon/templates/cisco-1841/fans/transforms
+devmon/templates/cisco-1841/fans/thresholds
+devmon/templates/cisco-1841/fans/oids
+devmon/templates/cisco-1841/fans/message
+devmon/templates/cisco-1841/fans/exceptions
+devmon/templates/cisco-1841/cpu/transforms
+devmon/templates/cisco-1841/cpu/thresholds
+devmon/templates/cisco-1841/cpu/oids
+devmon/templates/cisco-1841/cpu/message
+devmon/templates/cisco-1841/cpu/exceptions
+devmon/templates/cisco-1841/README
+devmon/templates/cisco-1700/specs
+devmon/templates/cisco-1700/memory/transforms
+devmon/templates/cisco-1700/memory/thresholds
+devmon/templates/cisco-1700/memory/oids
+devmon/templates/cisco-1700/memory/message
+devmon/templates/cisco-1700/memory/exceptions
+devmon/templates/cisco-1700/if_stat/transforms
+devmon/templates/cisco-1700/if_stat/thresholds
+devmon/templates/cisco-1700/if_stat/oids
+devmon/templates/cisco-1700/if_stat/message
+devmon/templates/cisco-1700/if_stat/exceptions
+devmon/templates/cisco-1700/if_load/transforms
+devmon/templates/cisco-1700/if_load/thresholds
+devmon/templates/cisco-1700/if_load/oids
+devmon/templates/cisco-1700/if_load/message
+devmon/templates/cisco-1700/if_load/exceptions
+devmon/templates/cisco-1700/if_err/transforms
+devmon/templates/cisco-1700/if_err/thresholds
+devmon/templates/cisco-1700/if_err/oids
+devmon/templates/cisco-1700/if_err/message
+devmon/templates/cisco-1700/if_err/exceptions
+devmon/templates/cisco-1700/if_dsc/transforms
+devmon/templates/cisco-1700/if_dsc/thresholds
+devmon/templates/cisco-1700/if_dsc/oids
+devmon/templates/cisco-1700/if_dsc/message
+devmon/templates/cisco-1700/if_dsc/exceptions
+devmon/templates/cisco-1700/if_col/transforms
+devmon/templates/cisco-1700/if_col/thresholds
+devmon/templates/cisco-1700/if_col/oids
+devmon/templates/cisco-1700/if_col/message
+devmon/templates/cisco-1700/if_col/exceptions
+devmon/templates/cisco-1700/README
+devmon/templates/aruba-5000/specs
+devmon/templates/aruba-5000/devices/transforms
+devmon/templates/aruba-5000/devices/thresholds
+devmon/templates/aruba-5000/devices/oids
+devmon/templates/aruba-5000/devices/message
+devmon/templates/aruba-5000/devices/exceptions
+devmon/templates/aruba-5000/cpu/transforms
+devmon/templates/aruba-5000/cpu/thresholds
+devmon/templates/aruba-5000/cpu/oids
+devmon/templates/aruba-5000/cpu/message
+devmon/templates/aruba-5000/cpu/exceptions
+devmon/templates/aruba-5000/aps/transforms
+devmon/templates/aruba-5000/aps/thresholds
+devmon/templates/aruba-5000/aps/oids
+devmon/templates/aruba-5000/aps/message
+devmon/templates/aruba-5000/aps/exceptions
+devmon/templates/aruba-5000/README
+devmon/templates/apc-9619/specs
+devmon/templates/apc-9619/power/transforms
+devmon/templates/apc-9619/power/thresholds
+devmon/templates/apc-9619/power/oids
+devmon/templates/apc-9619/power/message
+devmon/templates/apc-9619/power/exceptions
+devmon/templates/apc-9619/env/transforms
+devmon/templates/apc-9619/env/thresholds
+devmon/templates/apc-9619/env/oids
+devmon/templates/apc-9619/env/message
+devmon/templates/apc-9619/env/exceptions
+devmon/templates/apc-9619/README
+devmon/templates/apc-9617/specs
+devmon/templates/apc-9617/power/transforms
+devmon/templates/apc-9617/power/thresholds
+devmon/templates/apc-9617/power/oids
+devmon/templates/apc-9617/power/message
+devmon/templates/apc-9617/power/exceptions
+devmon/templates/apc-9617/README
+devmon/templates/apc-9606/specs
+devmon/templates/apc-9606/power/transforms
+devmon/templates/apc-9606/power/thresholds
+devmon/templates/apc-9606/power/oids
+devmon/templates/apc-9606/power/message
+devmon/templates/apc-9606/power/exceptions
+devmon/templates/apc-9606/README
+devmon/templates/apc-9205/specs
+devmon/templates/apc-9205/power/transforms
+devmon/templates/apc-9205/power/thresholds
+devmon/templates/apc-9205/power/oids
+devmon/templates/apc-9205/power/message
+devmon/templates/apc-9205/power/exceptions
+devmon/templates/apc-9205/README
+devmon/templates/REQUIREMENTS
+devmon/templates/README
+@dirrmtry devmon/templates/pware-xups/power
+@dirrmtry devmon/templates/pware-xups
+@dirrmtry devmon/templates/pware-best/power
+@dirrmtry devmon/templates/pware-best
+@dirrmtry devmon/templates/powerware-9170/power
+@dirrmtry devmon/templates/powerware-9170
+@dirrmtry devmon/templates/netapp-misc/volume
+@dirrmtry devmon/templates/netapp-misc/status
+@dirrmtry devmon/templates/netapp-misc/quota
+@dirrmtry devmon/templates/netapp-misc/netapptemp
+@dirrmtry devmon/templates/netapp-misc/if_load
+@dirrmtry devmon/templates/netapp-misc/cluster
+@dirrmtry devmon/templates/netapp-misc
+@dirrmtry devmon/templates/linux-openwrt/memory
+@dirrmtry devmon/templates/linux-openwrt/if_load
+@dirrmtry devmon/templates/linux-openwrt/disk
+@dirrmtry devmon/templates/linux-openwrt
+@dirrmtry devmon/templates/ibm-rsa2/temp
+@dirrmtry devmon/templates/ibm-rsa2/status
+@dirrmtry devmon/templates/ibm-rsa2/fans
+@dirrmtry devmon/templates/ibm-rsa2
+@dirrmtry devmon/templates/f5-bigip/vip
+@dirrmtry devmon/templates/f5-bigip/pool
+@dirrmtry devmon/templates/f5-bigip/memory
+@dirrmtry devmon/templates/f5-bigip/if_load
+@dirrmtry devmon/templates/f5-bigip/fan
+@dirrmtry devmon/templates/f5-bigip/cpu
+@dirrmtry devmon/templates/f5-bigip/connects
+@dirrmtry devmon/templates/f5-bigip/cluster
+@dirrmtry devmon/templates/f5-bigip-lite/if_load
+@dirrmtry devmon/templates/f5-bigip-lite/fan
+@dirrmtry devmon/templates/f5-bigip-lite/connects
+@dirrmtry devmon/templates/f5-bigip-lite/cluster
+@dirrmtry devmon/templates/f5-bigip-lite/.test
+@dirrmtry devmon/templates/f5-bigip-lite
+@dirrmtry devmon/templates/f5-bigip
+@dirrmtry devmon/templates/dell-poweredge/temp
+@dirrmtry devmon/templates/dell-poweredge/raid
+@dirrmtry devmon/templates/dell-poweredge/power
+@dirrmtry devmon/templates/dell-poweredge/fans
+@dirrmtry devmon/templates/dell-poweredge
+@dirrmtry devmon/templates/dell-perc/raid
+@dirrmtry devmon/templates/dell-perc
+@dirrmtry devmon/templates/compaq-server/temp
+@dirrmtry devmon/templates/compaq-server/raid
+@dirrmtry devmon/templates/compaq-server/power
+@dirrmtry devmon/templates/compaq-server/log
+@dirrmtry devmon/templates/compaq-server/fans
+@dirrmtry devmon/templates/compaq-server
+@dirrmtry devmon/templates/cisco-pix/memory
+@dirrmtry devmon/templates/cisco-pix/cpu
+@dirrmtry devmon/templates/cisco-pix/connects
+@dirrmtry devmon/templates/cisco-pix
+@dirrmtry devmon/templates/cisco-msfc2/memory
+@dirrmtry devmon/templates/cisco-msfc2/if_stat
+@dirrmtry devmon/templates/cisco-msfc2/if_load
+@dirrmtry devmon/templates/cisco-msfc2/if_err
+@dirrmtry devmon/templates/cisco-msfc2/if_dsc
+@dirrmtry devmon/templates/cisco-msfc2/if_col
+@dirrmtry devmon/templates/cisco-msfc2/cpu
+@dirrmtry devmon/templates/cisco-msfc2
+@dirrmtry devmon/templates/cisco-asa/serial
+@dirrmtry devmon/templates/cisco-asa/memory
+@dirrmtry devmon/templates/cisco-asa/if_stat
+@dirrmtry devmon/templates/cisco-asa/if_load
+@dirrmtry devmon/templates/cisco-asa/if_err
+@dirrmtry devmon/templates/cisco-asa/if_dsc
+@dirrmtry devmon/templates/cisco-asa/cpu
+@dirrmtry devmon/templates/cisco-asa/connects
+@dirrmtry devmon/templates/cisco-asa/cluster
+@dirrmtry devmon/templates/cisco-asa
+@dirrmtry devmon/templates/cisco-7206/serial
+@dirrmtry devmon/templates/cisco-7206/power
+@dirrmtry devmon/templates/cisco-7206/memory
+@dirrmtry devmon/templates/cisco-7206/if_stat
+@dirrmtry devmon/templates/cisco-7206/if_load
+@dirrmtry devmon/templates/cisco-7206/if_err
+@dirrmtry devmon/templates/cisco-7206/if_dsc
+@dirrmtry devmon/templates/cisco-7206/if_col
+@dirrmtry devmon/templates/cisco-7206/cpu
+@dirrmtry devmon/templates/cisco-7206
+@dirrmtry devmon/templates/cisco-6509/temp
+@dirrmtry devmon/templates/cisco-6509/serial
+@dirrmtry devmon/templates/cisco-6509/power
+@dirrmtry devmon/templates/cisco-6509/memory
+@dirrmtry devmon/templates/cisco-6509/if_stat
+@dirrmtry devmon/templates/cisco-6509/if_load
+@dirrmtry devmon/templates/cisco-6509/if_err
+@dirrmtry devmon/templates/cisco-6509/if_dsc
+@dirrmtry devmon/templates/cisco-6509/if_col
+@dirrmtry devmon/templates/cisco-6509/fans
+@dirrmtry devmon/templates/cisco-6509/cpu
+@dirrmtry devmon/templates/cisco-6509
+@dirrmtry devmon/templates/cisco-6506/serial
+@dirrmtry devmon/templates/cisco-6506/power
+@dirrmtry devmon/templates/cisco-6506/memory
+@dirrmtry devmon/templates/cisco-6506/if_stat
+@dirrmtry devmon/templates/cisco-6506/if_load
+@dirrmtry devmon/templates/cisco-6506/if_err
+@dirrmtry devmon/templates/cisco-6506/if_dsc
+@dirrmtry devmon/templates/cisco-6506/fans
+@dirrmtry devmon/templates/cisco-6506/cpu
+@dirrmtry devmon/templates/cisco-6506
+@dirrmtry devmon/templates/cisco-5500/serial
+@dirrmtry devmon/templates/cisco-5500/power
+@dirrmtry devmon/templates/cisco-5500/memory
+@dirrmtry devmon/templates/cisco-5500/if_stat
+@dirrmtry devmon/templates/cisco-5500/if_load
+@dirrmtry devmon/templates/cisco-5500/if_err
+@dirrmtry devmon/templates/cisco-5500/if_dsc
+@dirrmtry devmon/templates/cisco-5500/fans
+@dirrmtry devmon/templates/cisco-5500/cpu
+@dirrmtry devmon/templates/cisco-5500
+@dirrmtry devmon/templates/cisco-4500/serial
+@dirrmtry devmon/templates/cisco-4500/power
+@dirrmtry devmon/templates/cisco-4500/memory
+@dirrmtry devmon/templates/cisco-4500/if_stat
+@dirrmtry devmon/templates/cisco-4500/if_load
+@dirrmtry devmon/templates/cisco-4500/if_err
+@dirrmtry devmon/templates/cisco-4500/if_dsc
+@dirrmtry devmon/templates/cisco-4500/if_col
+@dirrmtry devmon/templates/cisco-4500/fans
+@dirrmtry devmon/templates/cisco-4500/cpu
+@dirrmtry devmon/templates/cisco-4500
+@dirrmtry devmon/templates/cisco-3750/serial
+@dirrmtry devmon/templates/cisco-3750/power
+@dirrmtry devmon/templates/cisco-3750/memory
+@dirrmtry devmon/templates/cisco-3750/if_stat
+@dirrmtry devmon/templates/cisco-3750/if_load
+@dirrmtry devmon/templates/cisco-3750/if_err
+@dirrmtry devmon/templates/cisco-3750/if_dsc
+@dirrmtry devmon/templates/cisco-3750/if_col
+@dirrmtry devmon/templates/cisco-3750/fans
+@dirrmtry devmon/templates/cisco-3750/cpu
+@dirrmtry devmon/templates/cisco-3750
+@dirrmtry devmon/templates/cisco-3725/power
+@dirrmtry devmon/templates/cisco-3725/if_stat
+@dirrmtry devmon/templates/cisco-3725/if_load
+@dirrmtry devmon/templates/cisco-3725/if_err
+@dirrmtry devmon/templates/cisco-3725/if_dsc
+@dirrmtry devmon/templates/cisco-3725/if_col
+@dirrmtry devmon/templates/cisco-3725/fans
+@dirrmtry devmon/templates/cisco-3725/cpu
+@dirrmtry devmon/templates/cisco-3725
+@dirrmtry devmon/templates/cisco-3640/memory
+@dirrmtry devmon/templates/cisco-3640/if_stat
+@dirrmtry devmon/templates/cisco-3640/if_load
+@dirrmtry devmon/templates/cisco-3640/if_err
+@dirrmtry devmon/templates/cisco-3640/if_dsc
+@dirrmtry devmon/templates/cisco-3640/if_col
+@dirrmtry devmon/templates/cisco-3640/cpu
+@dirrmtry devmon/templates/cisco-3640
+@dirrmtry devmon/templates/cisco-3550/serial
+@dirrmtry devmon/templates/cisco-3550/power
+@dirrmtry devmon/templates/cisco-3550/memory
+@dirrmtry devmon/templates/cisco-3550/if_stat
+@dirrmtry devmon/templates/cisco-3550/if_load
+@dirrmtry devmon/templates/cisco-3550/if_err
+@dirrmtry devmon/templates/cisco-3550/if_dsc
+@dirrmtry devmon/templates/cisco-3550/if_col
+@dirrmtry devmon/templates/cisco-3550/fans
+@dirrmtry devmon/templates/cisco-3550/cpu
+@dirrmtry devmon/templates/cisco-3550
+@dirrmtry devmon/templates/cisco-3500/serial
+@dirrmtry devmon/templates/cisco-3500/memory
+@dirrmtry devmon/templates/cisco-3500/if_stat
+@dirrmtry devmon/templates/cisco-3500/if_load
+@dirrmtry devmon/templates/cisco-3500/if_err
+@dirrmtry devmon/templates/cisco-3500/if_dsc
+@dirrmtry devmon/templates/cisco-3500/if_col
+@dirrmtry devmon/templates/cisco-3500/cpu
+@dirrmtry devmon/templates/cisco-3500
+@dirrmtry devmon/templates/cisco-2970/serial
+@dirrmtry devmon/templates/cisco-2970/power
+@dirrmtry devmon/templates/cisco-2970/memory
+@dirrmtry devmon/templates/cisco-2970/if_stat
+@dirrmtry devmon/templates/cisco-2970/if_load
+@dirrmtry devmon/templates/cisco-2970/if_err
+@dirrmtry devmon/templates/cisco-2970/if_dsc
+@dirrmtry devmon/templates/cisco-2970/if_col
+@dirrmtry devmon/templates/cisco-2970/fans
+@dirrmtry devmon/templates/cisco-2970/cpu
+@dirrmtry devmon/templates/cisco-2970
+@dirrmtry devmon/templates/cisco-2960/serial
+@dirrmtry devmon/templates/cisco-2960/power
+@dirrmtry devmon/templates/cisco-2960/memory
+@dirrmtry devmon/templates/cisco-2960/if_stat
+@dirrmtry devmon/templates/cisco-2960/if_load
+@dirrmtry devmon/templates/cisco-2960/if_err
+@dirrmtry devmon/templates/cisco-2960/if_dsc
+@dirrmtry devmon/templates/cisco-2960/if_col
+@dirrmtry devmon/templates/cisco-2960/fans
+@dirrmtry devmon/templates/cisco-2960/cpu
+@dirrmtry devmon/templates/cisco-2960
+@dirrmtry devmon/templates/cisco-2950/serial
+@dirrmtry devmon/templates/cisco-2950/power
+@dirrmtry devmon/templates/cisco-2950/memory
+@dirrmtry devmon/templates/cisco-2950/if_stat
+@dirrmtry devmon/templates/cisco-2950/if_load
+@dirrmtry devmon/templates/cisco-2950/if_err
+@dirrmtry devmon/templates/cisco-2950/if_dsc
+@dirrmtry devmon/templates/cisco-2950/if_col
+@dirrmtry devmon/templates/cisco-2950/fans
+@dirrmtry devmon/templates/cisco-2950/cpu
+@dirrmtry devmon/templates/cisco-2950
+@dirrmtry devmon/templates/cisco-2900/serial
+@dirrmtry devmon/templates/cisco-2900/memory
+@dirrmtry devmon/templates/cisco-2900/if_stat
+@dirrmtry devmon/templates/cisco-2900/if_load
+@dirrmtry devmon/templates/cisco-2900/if_err
+@dirrmtry devmon/templates/cisco-2900/if_dsc
+@dirrmtry devmon/templates/cisco-2900/if_col
+@dirrmtry devmon/templates/cisco-2900/cpu
+@dirrmtry devmon/templates/cisco-2900
+@dirrmtry devmon/templates/cisco-2811/if_stat
+@dirrmtry devmon/templates/cisco-2811/if_load
+@dirrmtry devmon/templates/cisco-2811/if_err
+@dirrmtry devmon/templates/cisco-2811/if_dsc
+@dirrmtry devmon/templates/cisco-2811/fans
+@dirrmtry devmon/templates/cisco-2811/cpu
+@dirrmtry devmon/templates/cisco-2811
+@dirrmtry devmon/templates/cisco-2801/serial
+@dirrmtry devmon/templates/cisco-2801/memory
+@dirrmtry devmon/templates/cisco-2801/if_stat
+@dirrmtry devmon/templates/cisco-2801/if_load
+@dirrmtry devmon/templates/cisco-2801/if_err
+@dirrmtry devmon/templates/cisco-2801/if_dsc
+@dirrmtry devmon/templates/cisco-2801/if_col
+@dirrmtry devmon/templates/cisco-2801/fans
+@dirrmtry devmon/templates/cisco-2801/cpu
+@dirrmtry devmon/templates/cisco-2801
+@dirrmtry devmon/templates/cisco-2600/power
+@dirrmtry devmon/templates/cisco-2600/if_stat
+@dirrmtry devmon/templates/cisco-2600/if_load
+@dirrmtry devmon/templates/cisco-2600/if_err
+@dirrmtry devmon/templates/cisco-2600/if_dsc
+@dirrmtry devmon/templates/cisco-2600/if_col
+@dirrmtry devmon/templates/cisco-2600/cpu
+@dirrmtry devmon/templates/cisco-2600
+@dirrmtry devmon/templates/cisco-1841/serial
+@dirrmtry devmon/templates/cisco-1841/if_stat
+@dirrmtry devmon/templates/cisco-1841/if_load
+@dirrmtry devmon/templates/cisco-1841/if_err
+@dirrmtry devmon/templates/cisco-1841/if_dsc
+@dirrmtry devmon/templates/cisco-1841/if_col
+@dirrmtry devmon/templates/cisco-1841/fans
+@dirrmtry devmon/templates/cisco-1841/cpu
+@dirrmtry devmon/templates/cisco-1841
+@dirrmtry devmon/templates/cisco-1700/memory
+@dirrmtry devmon/templates/cisco-1700/if_stat
+@dirrmtry devmon/templates/cisco-1700/if_load
+@dirrmtry devmon/templates/cisco-1700/if_err
+@dirrmtry devmon/templates/cisco-1700/if_dsc
+@dirrmtry devmon/templates/cisco-1700/if_col
+@dirrmtry devmon/templates/cisco-1700
+@dirrmtry devmon/templates/aruba-5000/devices
+@dirrmtry devmon/templates/aruba-5000/cpu
+@dirrmtry devmon/templates/aruba-5000/aps
+@dirrmtry devmon/templates/aruba-5000
+@dirrmtry devmon/templates/apc-9619/power
+@dirrmtry devmon/templates/apc-9619/env
+@dirrmtry devmon/templates/apc-9619
+@dirrmtry devmon/templates/apc-9617/power
+@dirrmtry devmon/templates/apc-9617
+@dirrmtry devmon/templates/apc-9606/power
+@dirrmtry devmon/templates/apc-9606
+@dirrmtry devmon/templates/apc-9205/power
+@dirrmtry devmon/templates/apc-9205
+@dirrmtry devmon/templates
+@dirrmtry devmon
