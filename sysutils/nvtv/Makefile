@@ -1,21 +1,16 @@
-# New ports collection makefile for:	nv-tv-out
-# Date Created:				19 May 2004
-# Whom:					Samuel Tardieu <sam@rfc1149.net>
-#
+# Created by: Samuel Tardieu <sam@rfc1149.net>
 # $FreeBSD$
-#
 
 PORTNAME=	nvtv
 PORTVERSION=	0.4.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/nv-tv-out/${PORTNAME}-src/${PORTVERSION}
-DISTNAME=	nvtv-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TV output on nvidia card
 
-LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
 
 ONLY_FOR_ARCHS=	i386
 
