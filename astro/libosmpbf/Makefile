@@ -3,7 +3,7 @@
 
 PORTNAME=	libosmpbf
 PORTVERSION=	1.3.0
-CATEGORIES=	astro devel
+CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library for handling binary OpenStreetMap data
