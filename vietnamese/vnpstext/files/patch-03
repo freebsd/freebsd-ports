@@ -1,5 +1,5 @@
---- vnpstext.c.orig	Wed Sep  2 14:01:59 1992
-+++ vnpstext.c	Sun Dec  8 01:24:48 1996
+--- ./vnpstext.c.orig	1992-09-02 23:01:59.000000000 +0200
++++ ./vnpstext.c	2013-05-27 16:27:32.390245389 +0200
 @@ -86,7 +86,8 @@
  dofile(input)
      FILE		*input;
@@ -20,3 +20,12 @@
  	if (!*line) printf("B\n");
  	else {
  
+@@ -180,7 +182,7 @@
+ 	printf("/S{Lcheck count{gsave show grestore}repeat 0 ld rmoveto}def\n");
+ 	printf("/L{Lcheck ld mul 0 exch rmoveto}def\n");
+ 	printf("/B{Lcheck 0 ld rmoveto}def\n");
+-	return;
++	return NULL;
+     }
+ 
+     /* filename specified, use it */
