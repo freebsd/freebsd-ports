@@ -8,7 +8,7 @@ lib/libgksu2.so.0
 lib/libgksu/gksu-run-helper
 libdata/pkgconfig/libgksu2.pc
 share/applications/gksu-properties.desktop
-share/libgksu/gksu-properties.glade
+share/libgksu/gksu-properties.ui
 share/pixmaps/gksu.png
 @dirrm share/libgksu
 @dirrm lib/libgksu

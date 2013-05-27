@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgksu
-PORTVERSION=	2.0.9
-PORTREVISION=	2
+PORTVERSION=	2.0.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
@@ -24,5 +23,6 @@ CONFIGURE_ARGS=	--enable-gtk-doc=no
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gksu.schemas
 USE_GMAKE=	yes
+MAN1=		gksu-properties.1
 
 .include <bsd.port.mk>
