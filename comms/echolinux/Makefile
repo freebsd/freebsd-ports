@@ -1,9 +1,5 @@
-# ports collection makefile for:	echolinux
-# Date created:		25 June 2004
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	echolinux
 PORTVERSION=	0.17a
@@ -17,6 +13,10 @@ COMMENT=	Amateur Radio Echolink client for UNIX
 
 LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms \
 		gsm.1:${PORTSDIR}/audio/gsm
+
+USE_GCC=	any
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' -e 's|/usr/include/X11|$${LOCALBASE}/include|' \
@@ -35,7 +35,7 @@ post-patch:
 		${WRKSRC}/echolinux/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 	@${INSTALL_DATA} ${WRKSRC}/Using_EchoLinux.txt ${DOCSDIR}/Using_EchoLinux.txt
