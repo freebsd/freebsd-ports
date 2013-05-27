@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Test/MockRandom.pm
 %%SITE_PERL%%/Test/MockRandom.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockRandom
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test
