@@ -58,5 +58,3 @@ share/locale/zh_TW/LC_MESSAGES/isomaster.mo
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry %%DESKTOPDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
