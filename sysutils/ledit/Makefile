@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ledit
-# Date created:			Feb 8, 2005
-# Whom:				Marwan Burelle <marwan.burelle@lri.fr>
-#
+# Created by: Marwan Burelle <marwan.burelle@lri.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	ledit
 PORTVERSION=	2.03
@@ -31,8 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ledit.1
 PORTDOCS=	CHANGES LICENSE README
-
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-configure:
 	${REINPLACE_CMD} -e '/^BINDIR=/s;/usr/local;${PREFIX};' \
@@ -40,12 +34,12 @@ do-configure:
 			-e '/^MANDIR=/s;/usr/local;${PREFIX};' \
 			${WRKSRC}/Makefile
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-. for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
