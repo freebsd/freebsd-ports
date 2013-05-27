@@ -132,7 +132,7 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
-RUBY_DEFAULT_VER?=	1.8
+RUBY_DEFAULT_VER?=	1.9
 
 RUBY_VER?=		${RUBY_DEFAULT_VER}
 
