@@ -29,6 +29,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-	@${ECHO_CMD} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
