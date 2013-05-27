@@ -1,9 +1,5 @@
-# New ports collection makefile for:	log_analysis
-# Date created:				5 July 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	log_analysis
 PORTVERSION=	0.46
@@ -11,12 +7,11 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://userpages.umbc.edu/~mabzug1/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility that extracts a summary of useful data from logs
+COMMENT=	Utility that extracts a summary of useful data from logs
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	TK
-TK_DESC=	Enable Tcl/Tk GUI support
+OPTIONS_DEFINE=	DOCS EXAMPLES TK
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
@@ -38,12 +33,12 @@ RUN_DEPENDS+=	p5-Tk>0:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Tutorial ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-* ${EXAMPLESDIR}
 .endif
