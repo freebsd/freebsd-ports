@@ -7,10 +7,9 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for doing remote power control
+COMMENT=	Tool for doing remote power control
 
 LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
