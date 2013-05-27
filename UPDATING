@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130527:
+  AFFECTS: users of lang/ruby18
+  AUTHOR: swills@FreeBSD.org
+
+  The default ruby version has been updated from 1.8 to 1.9. You'll need to
+  rebuild all ports that depend on ruby:
+
+  # portmaster -r lang/ruby19
+    or
+  # portupgrade -fr lang/ruby19
+    or
+  # pkg set -o lang/ruby18:lang/ruby19
+  # pkg install -fR lang/ruby19
+
+  If you wish to keep the 1.8 version as default, add the following lines
+  to your /etc/make.conf file:
+
+  #
+  # Keep ruby 1.8 as default version.
+  #
+  RUBY_DEFAULT_VER=1.8
+
 20130525:
   AFFECTS: users of sysutils/rsyslog5*
   AUTHOR: brd@FreeBSD.org
