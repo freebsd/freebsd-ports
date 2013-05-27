@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arts++
-# Date created:		Di   7 Nov 2000 19:48:50 CET
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	arts++
 PORTVERSION=	1.1.a13
@@ -24,14 +20,17 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsasagg.l artsportms.l artsportmagg.l artsintfms.l \
 		artsintfmagg.l artsnexthops.l artsnexthopagg.l artstos.l
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
+	@${REINPLACE_CMD} -e 's/make_pair/std::make_pair/' ${WRKSRC}/classes/include/Ipv4PrefixPatricia.hh.in
 
 post-configure:
 	@${REINPLACE_CMD} -E -e "s,( gcc\*),\1 | g++\*,g" ${WRKSRC}/libtool
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/html
 .for f in ChangeLog INSTALL WishList
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
