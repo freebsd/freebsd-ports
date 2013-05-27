@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fakeroot
-# Date created:				11 March 2004
-# Whom:					Meno Abels <meno.abels@adviser.com>
-#
+# Created by: Meno Abels <meno.abels@adviser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fakeroot
-PORTVERSION=	1.18.4
+PORTVERSION=	1.19
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
