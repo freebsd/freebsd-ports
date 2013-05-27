@@ -453,8 +453,6 @@ bin/texindex
 %%NLS%%@dirrmtry share/locale/de.us-ascii
 %%NLS%%@dirrmtry share/locale/es.us-ascii/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es.us-ascii
-%%NLS%%@dirrmtry share/locale/fr.us-ascii/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr.us-ascii
 %%NLS%%@dirrmtry share/locale/no.us-ascii/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/no.us-ascii
 %%NLS%%@dirrmtry share/locale/pt.us-ascii/LC_MESSAGES
