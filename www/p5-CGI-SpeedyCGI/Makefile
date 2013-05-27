@@ -31,6 +31,8 @@ CONFIGURE_ENV+=	WITHOUT_APACHE=yes
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/__inline__//g' \
+		${WRKSRC}/src/speedy_inc.h
 	@${PERL} -pi -e 's,apxs -q,${APXS} -q,;' \
 		${WRKSRC}/src/SpeedyMake.pl
 	@${PERL} -pi -e 's,APXS=apxs,APXS=${APXS},;' \
