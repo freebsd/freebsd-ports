@@ -1,15 +1,11 @@
-# New ports collection makefile for:    xmille
-# Date created:         30 Dec 1994
-# Whom:                 swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	xmille
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	XCONTRIB
 MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}
 
@@ -21,10 +17,16 @@ WRKSRC=		${WRKDIR}/Mille
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 MAN1=		xmille.1
+MANCOMPRESSED=	no
 PLIST_FILES=	bin/xmille
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-Wno-error=return-type
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.[ao]' -delete
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xmille ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xmille.man ${MANPREFIX}/man/man1/xmille.1
 
 .include <bsd.port.mk>
