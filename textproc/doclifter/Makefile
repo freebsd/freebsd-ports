@@ -1,13 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	doclifter
-# Date created:			Apr 1, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 #
 
 PORTNAME=	doclifter
-PORTVERSION=	2.8
+PORTVERSION=	2.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
