@@ -10,4 +10,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date
-@dirrmtry %%SITE_PERL%%/Date
