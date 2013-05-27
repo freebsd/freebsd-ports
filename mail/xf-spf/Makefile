@@ -14,6 +14,7 @@ LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
 
 USES=		qmail
 USE_BZIP2=	yes
+USE_GCC=	any
 
 SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
@@ -21,13 +22,13 @@ PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 PORTDOCS=	README TODO CHANGELOG COPYRIGHT
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
