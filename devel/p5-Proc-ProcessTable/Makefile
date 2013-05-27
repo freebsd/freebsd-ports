@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Proc-ProcessTable
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JWB
@@ -17,7 +17,7 @@ MAN3=		Proc::ProcessTable::Process.3 \
 		Proc::Killall.3 \
 		Proc::ProcessTable.3 \
 		Proc::Killfam.3
-PORTDOCS=	README README.freebsd
+PORTDOCS=	README README.freebsd-kvm README.freebsd-procfs
 
 post-install:
 .if !defined(NOPORTDOCS)
