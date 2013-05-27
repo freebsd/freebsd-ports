@@ -3,16 +3,16 @@
 
 PORTNAME=	eiciel
 PORTVERSION=	0.9.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
+COMMENT=	GNOME-based ACL editor, with integration into Nautilus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
 USES=		pathfix pkgconfig
