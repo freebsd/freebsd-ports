@@ -1,7 +1,3 @@
-# New ports collection makefile for:	texfamily
-# Date created:		9 Feb 2004
-# Whom:			hrs
-#
 # $FreeBSD$
 
 PORTNAME=	texfamily
@@ -30,7 +26,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
-USE_TEX=	base texmf
+USE_TEX=	tetex base texmf
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${KANJICODE}

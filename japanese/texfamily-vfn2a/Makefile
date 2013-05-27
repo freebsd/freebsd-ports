@@ -1,7 +1,3 @@
-# New ports collection makefile for:	texfamily-vfn2a
-# Date created:		13 June 2004
-# Whom:			hrs@FreeBSD.org
-#
 # $FreeBSD$
 
 PORTNAME=	texfamily-vfn2a
@@ -19,7 +15,7 @@ BUILD_DEPENDS= ${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/jap
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
 		jtex:${PORTSDIR}/japanese/texfamily
 
-USE_TEX=	base texmf
+USE_TEX=	tetex base texmf
 MAKE_ENV=	JTEXTFMDIR=${LOCALBASE}/${TEXMFLOCALDIR}/fonts/tfm/muling/nttsub \
 		PTEXTFMDIR=${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex
 
