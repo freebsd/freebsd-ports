@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # PROVIDE: sabnzbd
 # KEYWORD: shutdown
 #
@@ -22,70 +24,63 @@
 
 . /etc/rc.subr
 
-name="sabnzbd"
+name=sabnzbd
 rcvar=sabnzbd_enable
-
-# Required, for some reason, to find all our binaries when starting via service.
-PATH="%%PREFIX%%/bin:$PATH"
-
 load_rc_config ${name}
 
-: ${sabnzbd_enable:="NO"}
-: ${sabnzbd_user:="_sabnzbd"}
-: ${sabnzbd_group:="_sabnzbd"}
-: ${sabnzbd_conf_dir:="%%PREFIX%%/sabnzbd"}
+: ${sabnzbd_enable:=NO}
+: ${sabnzbd_user:=_sabnzbd}
+: ${sabnzbd_group:=_sabnzbd}
+: ${sabnzbd_conf_dir="%%PREFIX%%/sabnzbd"}
 
 required_dirs=${sabnzbd_conf_dir}
 
 start_cmd="${name}_start"
-#start_postcmd="${name}_poststart"
 status_cmd="${name}_status"
 stop_cmd="${name}_stop"
 start_precmd=sabnzbd_check_dir
 
-
-
 sabnzbd_start()
 {
-if [ ! -f "${sabnzbd_pid}" ]; then
-    su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
-    echo "Starting ${name}."
-else
-    GETPROCESSPID=`/bin/ps -auxw | /usr/bin/awk '/SABnzbd.py/ && !/awk/ && !/sh/ {print $2}'`
-    PIDFROMFILE=`cat ${sabnzbd_pid}`
-    if [ "$GETPROCESSPID" = "$PIDFROMFILE" ]; then
-        echo "${name} already running with PID: ${PIDFROMFILE} ?"
-        echo "Remove ${sabnzbd_pid} manually if needed."
-    else
-        rm -f ${sabnzbd_pid}
-        su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
-        echo "Starting ${name}."
-    fi
-fi
+	if [ ! -f "${sabnzbd_pid}" ]; then
+		su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
+		echo "Starting ${name}."
+	else
+		GETPROCESSPID=`/bin/ps -auxw | /usr/bin/awk '/SABnzbd.py/ && !/awk/ && !/sh/ {print $2}'`
+		PIDFROMFILE=`cat ${sabnzbd_pid}`
+		if [ "$GETPROCESSPID" = "$PIDFROMFILE" ]; then
+			echo "${name} already running with PID: ${PIDFROMFILE} ?"
+			echo "Remove ${sabnzbd_pid} manually if needed."
+		else
+			rm -f ${sabnzbd_pid}
+			su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
+			echo "Starting ${name}."
+		fi
+	fi
 }
-
-#sabnzbd_poststart() {
-#  echo `/bin/ps -auxw | /usr/bin/awk '/SABnzbd.py/ && !/awk/ {print $2}'` > $sabnzbd_pid
-#}
 
 # SABnzbd can only be cleanly stopped by calling the http api
-sabnzbd_stop() {
-    echo "Stopping $name"
-    if [ -f "${sabnzbd_conf_dir}/sabnzbd.ini" ]; then
-        apikey=`grep ^api_key ${sabnzbd_conf_dir}/sabnzbd.ini | tr -d " _"`
-        host=`grep -m1 -E '^host\ =\ [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9].'`
-        if [ ${host} = "0.0.0.0" ] ; then host="localhost" ; fi
-        port=`grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]'`
-        fetch -o /dev/null "http://${host}:${port}/api?mode=shutdown&${apikey}" > /dev/null 2>&1
-    else
-        sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
-        if [ -n "${sabnzbd_pid}" ]; then
-            kill ${sabnzbd_pid}
-        fi
-    fi
+sabnzbd_stop()
+{
+	echo "Stopping $name"
+	if [ -f "${sabnzbd_conf_dir}/sabnzbd.ini" ]; then
+		apikey=`grep ^api_key ${sabnzbd_conf_dir}/sabnzbd.ini | tr -d " _"`
+		host=`grep -m1 -E '^host\ =\ [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9].'`
+		if [ ${host} = "0.0.0.0" ] ; then 
+			host="localhost" ;
+		fi
+		port=`grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]'`
+		fetch -o /dev/null "http://${host}:${port}/api?mode=shutdown&${apikey}" > /dev/null 2>&1
+	else
+		sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
+	        if [ -n "${sabnzbd_pid}" ]; then
+			kill ${sabnzbd_pid}
+		fi
+	fi
 }
 
-sabnzbd_status() {
+sabnzbd_status()
+{
     sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
     if [ -n "${sabnzbd_pid}" ]; then
         echo "$name is running as ${sabnzbd_pid}"
@@ -94,10 +89,10 @@ sabnzbd_status() {
     fi
 }
 
-sabnzbd_check_dir() {
+sabnzbd_check_dir()
+{
     if [ ! -f "${required_dirs}" -a ! -d "${required_dirs}" -a ! -L "${required_dirs}" ]; then
-        mkdir -p ${required_dirs}
-        chown ${sabnzbd_user}:${sabnzbd_group} ${required_dirs}
+        install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${required_dirs}
     fi
 }
 
