@@ -662,9 +662,11 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/Bb-Major.scm
 %%DATADIR%%/actions/commandscripts/Bb-Pentascale.scm
 %%DATADIR%%/actions/commandscripts/Beam1234.scm
+%%DATADIR%%/actions/commandscripts/BeamLeftNone.scm
 %%DATADIR%%/actions/commandscripts/BeamLeftOne.scm
 %%DATADIR%%/actions/commandscripts/BeamLeftThree.scm
 %%DATADIR%%/actions/commandscripts/BeamLeftTwo.scm
+%%DATADIR%%/actions/commandscripts/BeamRightNone.scm
 %%DATADIR%%/actions/commandscripts/BeamRightOne.scm
 %%DATADIR%%/actions/commandscripts/BeamRightThree.scm
 %%DATADIR%%/actions/commandscripts/BeamRightTwo.scm
@@ -725,6 +727,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/ChooseBarline.scm
 %%DATADIR%%/actions/commandscripts/ChooseTimeSignature.scm
 %%DATADIR%%/actions/commandscripts/ChordComment.scm
+%%DATADIR%%/actions/commandscripts/ChordStaff.scm
 %%DATADIR%%/actions/commandscripts/ChordsForBar.scm
 %%DATADIR%%/actions/commandscripts/ChordsOverBass.scm
 %%DATADIR%%/actions/commandscripts/ClarinetInA.scm
@@ -815,8 +818,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/FirstTimeBar.scm
 %%DATADIR%%/actions/commandscripts/FixSlursInStaff.scm
 %%DATADIR%%/actions/commandscripts/FlageoletSelectionSwitcher.scm
+%%DATADIR%%/actions/commandscripts/FlattenInitialKeysigs.scm
 %%DATADIR%%/actions/commandscripts/FlattenKeysig.scm
 %%DATADIR%%/actions/commandscripts/FootPedalConductor.scm
+%%DATADIR%%/actions/commandscripts/Footnote.scm
 %%DATADIR%%/actions/commandscripts/ForAllLayouts.scm
 %%DATADIR%%/actions/commandscripts/ForceBarline.scm
 %%DATADIR%%/actions/commandscripts/Forte.scm
@@ -840,6 +845,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/HiHatFoot.scm
 %%DATADIR%%/actions/commandscripts/HiTom.scm
 %%DATADIR%%/actions/commandscripts/Hide.scm
+%%DATADIR%%/actions/commandscripts/HideAccidental.scm
 %%DATADIR%%/actions/commandscripts/HideBarlines.scm
 %%DATADIR%%/actions/commandscripts/HideClef.scm
 %%DATADIR%%/actions/commandscripts/HideEmptyStaffs.scm
@@ -916,6 +922,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/MoveToMovementBeginning.scm
 %%DATADIR%%/actions/commandscripts/MoveToMovementEnd.scm
 %%DATADIR%%/actions/commandscripts/MoveToPreviousEmptyMeasure.scm
+%%DATADIR%%/actions/commandscripts/MovementComposer.scm
 %%DATADIR%%/actions/commandscripts/MovementNoteheadsBaroque.scm
 %%DATADIR%%/actions/commandscripts/MovementNoteheadsCross.scm
 %%DATADIR%%/actions/commandscripts/MovementNoteheadsDefault.scm
@@ -934,6 +941,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/MovementSubtitle.scm
 %%DATADIR%%/actions/commandscripts/MovementTitle.scm
 %%DATADIR%%/actions/commandscripts/MultiMeasureRests.scm
+%%DATADIR%%/actions/commandscripts/MuteStaff.scm
 %%DATADIR%%/actions/commandscripts/MvntComment.scm
 %%DATADIR%%/actions/commandscripts/NeoMensuralNotehead.scm
 %%DATADIR%%/actions/commandscripts/NewStaffAfter.scm
@@ -992,8 +1000,11 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/PaperSize.scm
 %%DATADIR%%/actions/commandscripts/ParenthesizeChord.scm
 %%DATADIR%%/actions/commandscripts/ParenthesizeNote.scm
+%%DATADIR%%/actions/commandscripts/PartCombine.scm
 %%DATADIR%%/actions/commandscripts/PasteReplaceSelection.scm
+%%DATADIR%%/actions/commandscripts/PianoStaff.scm
 %%DATADIR%%/actions/commandscripts/PianoStaffEnd.scm
+%%DATADIR%%/actions/commandscripts/PianoStaffName.scm
 %%DATADIR%%/actions/commandscripts/PianoStaffStart.scm
 %%DATADIR%%/actions/commandscripts/Piece.scm
 %%DATADIR%%/actions/commandscripts/PitchShift.scm
@@ -1051,6 +1062,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/ScoreSubtitle.scm
 %%DATADIR%%/actions/commandscripts/ScoreTagline.scm
 %%DATADIR%%/actions/commandscripts/ScoreTitle.scm
+%%DATADIR%%/actions/commandscripts/ScoreVersion.scm
 %%DATADIR%%/actions/commandscripts/SearchBookmark.scm
 %%DATADIR%%/actions/commandscripts/SecondTimeBar.scm
 %%DATADIR%%/actions/commandscripts/Section.scm
@@ -1074,6 +1086,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/SetThumbnail.scm
 %%DATADIR%%/actions/commandscripts/SetTuningAllStaffs.scm
 %%DATADIR%%/actions/commandscripts/SetTuningStaff.scm
+%%DATADIR%%/actions/commandscripts/SharpenInitialKeysigs.scm
 %%DATADIR%%/actions/commandscripts/SharpenKeysig.scm
 %%DATADIR%%/actions/commandscripts/ShiftDown.scm
 %%DATADIR%%/actions/commandscripts/ShiftNext.scm
@@ -1162,6 +1175,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/ToggleCoda.scm
 %%DATADIR%%/actions/commandscripts/ToggleConduct.scm
 %%DATADIR%%/actions/commandscripts/ToggleCursorHighlight.scm
+%%DATADIR%%/actions/commandscripts/ToggleCurveControl.scm
 %%DATADIR%%/actions/commandscripts/ToggleDownBow.scm
 %%DATADIR%%/actions/commandscripts/ToggleEndPhrasingSlur.scm
 %%DATADIR%%/actions/commandscripts/ToggleFermata.scm
@@ -1173,7 +1187,9 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/ToggleLtoe.scm
 %%DATADIR%%/actions/commandscripts/ToggleMarcato.scm
 %%DATADIR%%/actions/commandscripts/ToggleMordent.scm
+%%DATADIR%%/actions/commandscripts/ToggleNoteDownTie.scm
 %%DATADIR%%/actions/commandscripts/ToggleNoteTie.scm
+%%DATADIR%%/actions/commandscripts/ToggleNoteUpTie.scm
 %%DATADIR%%/actions/commandscripts/TogglePlayAlongPlayback.scm
 %%DATADIR%%/actions/commandscripts/TogglePortato.scm
 %%DATADIR%%/actions/commandscripts/TogglePrall.scm
@@ -1193,10 +1209,12 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/ToggleTrill.scm
 %%DATADIR%%/actions/commandscripts/ToggleTripleting.scm
 %%DATADIR%%/actions/commandscripts/ToggleTupletBrackets.scm
+%%DATADIR%%/actions/commandscripts/ToggleTupletBracketsIfBeamed.scm
 %%DATADIR%%/actions/commandscripts/ToggleTupletNumbering.scm
 %%DATADIR%%/actions/commandscripts/ToggleUpBow.scm
 %%DATADIR%%/actions/commandscripts/ToggleUpPrall.scm
 %%DATADIR%%/actions/commandscripts/ToggleVeryLongFermata.scm
+%%DATADIR%%/actions/commandscripts/ToggleWysiwygMarks.scm
 %%DATADIR%%/actions/commandscripts/TransposeOctaveUp.scm
 %%DATADIR%%/actions/commandscripts/TransposeScorePrint.scm
 %%DATADIR%%/actions/commandscripts/TransposeStaffOutput.scm
@@ -1204,6 +1222,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/commandscripts/Tremolo.scm
 %%DATADIR%%/actions/commandscripts/Trill+Above.scm
 %%DATADIR%%/actions/commandscripts/Trill+Below.scm
+%%DATADIR%%/actions/commandscripts/TrillIsPlus.scm
 %%DATADIR%%/actions/commandscripts/Tutorial.scm
 %%DATADIR%%/actions/commandscripts/TypesetVersesAtEnd.scm
 %%DATADIR%%/actions/commandscripts/TypesettingOff.scm
@@ -1253,6 +1272,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/lalr.scm
 %%DATADIR%%/actions/lilypond/accordion-shifts.ily
 %%DATADIR%%/actions/lilypond/book-titling.ily
+%%DATADIR%%/actions/lilypond/control-points.ly
+%%DATADIR%%/actions/lilypond/red-dot.ly
 %%DATADIR%%/actions/lilypond/simplified-book-titling.ily
 %%DATADIR%%/actions/lyimport-lexer.scm
 %%DATADIR%%/actions/lyimport-parser.scm
@@ -1626,6 +1647,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicDown
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicUp
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/Ficta
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/HideAccidental
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/MoveNoteToCursor
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ReminderAccidental
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/RemoveDotSelectionSwitcher
@@ -1720,6 +1742,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/MezzoForte
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/MezzoPiano
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Footnote
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Glissando
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ParenthesizeChord
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ParenthesizeNote
@@ -1768,7 +1791,9 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartDownStems
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartUpStems
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/InsertTiedNoteDuration
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/ToggleNoteDownTie
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/ToggleNoteTie
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/ToggleNoteUpTie
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftDown
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealDialogDown
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealDialogUp
@@ -1822,6 +1847,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/TocTitle
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Book Titles/init.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/ScoreTagline
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/ScoreVersion
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreArranger
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreBreakbefore
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreComposer
@@ -1836,24 +1862,29 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreSubtitle
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/Simple Titles/ScoreTitle
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles/TaglineLink
+%%DATADIR%%/actions/menus/ObjectMenu/Score/ToggleCurveControl
+%%DATADIR%%/actions/menus/ObjectMenu/Score/ToggleWysiwygMarks
 %%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeOctaveUp
 %%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeScorePrint
+%%DATADIR%%/actions/menus/ObjectMenu/Score/TrillIsPlus
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ambitus
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CaptureScore/CaptureMeasuresForStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CaptureScore/DeleteCapturedMeasureForStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CaptureScore/InsertCaptureMeasureForStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ChangeStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CheckTiesInStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ChordStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/CreateCuesForStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/FixSlursInStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/NewStaffAfter
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/NewStaffBefore
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/PianoStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InstrumentName
-%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/NonPrintingStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Numbering/BarNumbers
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/CreateOssiaStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/HideOssia
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/ShowOssia
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Playback/MuteStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Playback/SetInitialVolumeToZero
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects/ClearStaffProlog
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects/TransposeStaffOutput
@@ -1869,6 +1900,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GroupStaffEnd
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GroupStaffStart
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffEnd
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffName
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffStart
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffMultiMeasureRests
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffOctaveUp
@@ -2057,6 +2089,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/templates/choral/SATB.denemo
 %%DATADIR%%/templates/choral/TTBB.denemo
 %%DATADIR%%/templates/drummap.denemo
+%%DATADIR%%/templates/jazz/ChordSymbols.denemo
 %%DATADIR%%/templates/jazz/JazzCombo.denemo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -2198,6 +2231,7 @@ share/applications/denemo.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ForcingBreaks.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/GraceLilyPondBugWorkaround.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/HandelFiguredBassExercises.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IndependentChordSymbols.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/InstrumentNames.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LeadSheet.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Metronome.denemo
