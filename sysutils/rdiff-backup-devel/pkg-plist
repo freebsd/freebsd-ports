@@ -104,9 +104,4 @@ bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/win_acls.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/win_acls.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/win_acls.pyo
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/rdiff_backup
