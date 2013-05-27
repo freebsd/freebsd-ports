@@ -1,12 +1,9 @@
-# New ports collection makefile for:	rdiff-backup
-# Date created:		Wed Jun 11 19:53:46 CEST 2003
-# Whom:			Gerhard Häring <gh@ghaering.de>
-#
+# Created by: Gerhard Häring <gh@ghaering.de>
 # $FreeBSD$
-#
 
 PORTNAME=	rdiff-backup
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
@@ -18,7 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local/remote mirroring+incremental backup
 
-LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	rsync:${PORTSDIR}/net/librsync
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 
@@ -27,17 +26,17 @@ USE_PYDISTUTILS=yes
 
 MAN1=		rdiff-backup.1 rdiff-backup-statistics.1
 
-DOCFILES=	CHANGELOG README COPYING FAQ.html
+PORTDOCS=	CHANGELOG README COPYING FAQ.html
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-install:
-.for man in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${man} ${PREFIX}/man/man1
-.endfor
-.if !defined(NOPORTDOCS)
+	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/,} ${PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
