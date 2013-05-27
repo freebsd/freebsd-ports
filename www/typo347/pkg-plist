@@ -934,10 +934,11 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/HTTP/Request2/MultipartBody.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/HTTP/Request2/Observer/Log.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/HTTP/Request2/Response.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/HTTP/Request2/SOCKS5.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/HTTP/Request2/SocketWrapper.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/Net/URL2.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/PEAR/Exception.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/data/HTTP_Request2/generate-list.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/data/HTTP_Request2/public-suffix-list.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/data/public-suffix-list.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/prototype/prototype.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/scriptaculous/builder.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/scriptaculous/controls.js
@@ -2807,7 +2808,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/scripts/thread.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/scripts/tmenu_layers.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/scripts/wapversionLib.inc
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/scripts/xmenu_layers.diff
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/scripts/xmlversionLib.inc
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/uploads/back1.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cms/tslib/media/uploads/back2.png
@@ -4174,6 +4174,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Resources/Public/JavaScript/Wizard/Viewport/Right.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter/AlphabeticTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter/AlphanumericTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Postprocessor/MailTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/AlphabeticTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/AlphanumericTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate/BetweenTest.php
@@ -8715,6 +8716,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func/mod1
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/func
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Validate
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Postprocessor
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System/Filter
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit/System
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Tests/Unit
@@ -9129,7 +9131,6 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/swfupload
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/scriptaculous
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/prototype
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/data/HTTP_Request2
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/data
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/PEAR
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/pear/Net
