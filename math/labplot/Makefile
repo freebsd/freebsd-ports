@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool for KDE
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
