@@ -1,9 +1,4 @@
-# New ports collection makefile for:	cx_Freeze
-# Date created:				05 Apr 2009
-# Whom:					Marcelo Araujo <araujo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cx_Freeze
 PORTVERSION=	4.3.1
