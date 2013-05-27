@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubix
-# Date created:		19 Nov 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rubix
 PORTVERSION=	1.0.6
@@ -20,15 +16,18 @@ USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \
 		XINC="-I${LOCALBASE}/include" XLIB="-L${LOCALBASE}/lib -lX11"
 ALL_TARGET=	${PORTNAME}
+USE_GCC=	any
 
 PORTDOCS=	${DOCFILES}
 PLIST_FILES=	bin/rubix
 
 DOCFILES=	AUTHORS BUGS INSTALL README TODO
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rubix ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
