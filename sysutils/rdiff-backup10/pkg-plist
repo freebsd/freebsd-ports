@@ -91,9 +91,4 @@ bin/rdiff-backup
 %%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.pyo
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/rdiff_backup
