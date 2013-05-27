@@ -13,20 +13,22 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+OPTIONS_DEFINE=	RESSCRIPTS
+RESSCRIPTS_DESC=	PERL resource scripts
+
 USE_BZIP2=	yes
+USES=		shebangfix
+SHEBANG_FILES=	extresso/*.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		icotool.1 wrestool.1
-PLIST_FILES=	bin/icotool \
-		bin/wrestool
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	RESSCRIPTS
-RESSCRIPTS_DESC=	PERL resource scripts
+MAN1=		icotool.1 wrestool.1
+PLIST_FILES=	bin/icotool \
+		bin/wrestool
 
 .include <bsd.port.options.mk>
 
@@ -36,16 +38,22 @@ USE_PERL5_RUN=	yes
 MAN1+=		extresso.1 genresscript.1
 PLIST_FILES+=	bin/extresso \
 		bin/genresscript
-.else
-post-patch:
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in \
-		${FILESDIR}/extra-patch-configure.ac
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not link on sparc64
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|extresso||' ${WRKSRC}/Makefile.in
+
+post-install:
+.if ${PORT_OPTIONS:MRESSCRIPTS}
+	@(cd ${WRKSRC}/extresso && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
 
 .include <bsd.port.post.mk>
