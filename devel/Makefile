@@ -205,6 +205,7 @@
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
     SUBDIR += chrpath
+    SUBDIR += chruby
     SUBDIR += cil
     SUBDIR += cityhash
     SUBDIR += cl-alexandria
