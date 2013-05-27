@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dwatch
-# Date created:		14 Aug 2002
-# Whom:			Andrew Turner <zombie@i4free.co.nz>
-#
+# Created by: Andrew Turner <zombie@i4free.co.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	dwatch
 PORTVERSION=	0.1.1
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://siag.nu/pub/dwatch/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Daemon Watcher
+COMMENT=	Daemon Watcher
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
