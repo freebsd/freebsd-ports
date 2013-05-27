@@ -2992,6 +2992,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception/CleanStateNotMemorized.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception/IllegalObjectType.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception/InconsistentQuerySettings.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception/InvalidClass.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception/InvalidNumberOfConstraints.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Persistence/Exception/InvalidPropertyType.php
