@@ -60,9 +60,8 @@ PHP_EXT_INC=	pcre spl
 
 HTTPD?=		${LOCALBASE}/sbin/httpd
 .if exists(${HTTPD})
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_MPM!=	${APXS} -q MPM_NAME
-.	if ${APACHE_MPM} == "worker" || ${APACHE_MPM} == "event"
+APACHE_THR!=	${HTTPD} -V | ${GREP} threaded
+.	if ${APACHE_THR:Myes}
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
 .	endif
 .elif defined(APACHE_PORT) && (${APACHE_PORT:M*worker*} != "" || ${APACHE_PORT:M*event*} != "")
