@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avbin
-# Date created:		03 Apr 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	avbin
 PORTVERSION=	7
@@ -32,7 +28,7 @@ CFLAGS+=	-fPIC
 
 do-build:
 	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -shared -soname ${LIBNAME} -o ${LIBNAME} \
+		${CC} ${CFLAGS} -shared -Wl,-soname,${LIBNAME} -o ${LIBNAME} \
 		src/avbin.c -Iinclude -I${LOCALBASE}/include \
 		-DAVBIN_VERSION=${PORTVERSION} -DFFMPEG_REVISION=0 \
 		-L${LOCALBASE}/lib -lavcodec -lavformat
@@ -41,7 +37,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${LIBNAME} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/avbin.h ${PREFIX}/include
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} '*' ${DOCSDIR}/
 .endif
