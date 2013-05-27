@@ -27,6 +27,7 @@ bin/graph-easy
 %%SITE_PERL%%/Graph/Easy/Parser.pm
 %%SITE_PERL%%/Graph/Easy/Parser/Graphviz.pm
 %%SITE_PERL%%/Graph/Easy/Parser/VCG.pm
+%%SITE_PERL%%/Graph/Easy/Util.pm
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Parser
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Node
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Layout
