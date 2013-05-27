@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 CONFLICTS=	hfs-[0-9]*
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes			# passing -jX breaks BSD make(1)
 ALL_TARGET=	all hfsck/hfsck
 
 MAN1=		hattrib.1 \
