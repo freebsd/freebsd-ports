@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Chillispot
-# Date created:                19 October 2005
-# Whom:                        Sevan Janiyan <venture37@geeklan.co.uk>
-#
+# Created by: Sevan Janiyan <venture37@geeklan.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
@@ -23,6 +19,7 @@ CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	chillispot
 SUB_FILES=	pkg-message installguide.txt
 MAN8=		chilli.8
+USE_GCC=	any
 
 OPTIONS_DEFINE=	APACHE RADIUS
 OPTIONS_SINGLE=	RADIUS
