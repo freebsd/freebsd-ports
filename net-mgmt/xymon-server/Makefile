@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xymon
-PORTVERSION=	4.3.10
-PORTREVISION=	3
+PORTVERSION=	4.3.11
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -16,9 +15,12 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		pcre:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
+		fping:${PORTSDIR}/net/fping \
+		mtr:${PORTSDIR}/net/mtr-nox11
 
-MAKE_JOBS_UNSAFE=	yes
+USERS=	xymon
+GROUPS=	xymon
 
 # Options
 XYMONUSER?=	xymon
@@ -27,6 +29,7 @@ XYMONHOSTIP?=	127.0.0.1
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV=	MAKE=gmake
 MAKE_ENV+=	XYMONUSER="${XYMONUSER}"
 MAKE_ENV+=	XYMONHOSTNAME="${XYMONHOSTNAME}"
@@ -79,18 +82,18 @@ LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 post-patch:
 	${REINPLACE_CMD} -e 's|!/bin/bash|!/usr/local/bin/bash|' \
 		${WRKSRC}/xymond/xymonreports.sh.DIST
+	${REINPLACE_CMD} -e 's|web-build client|web-build|' ${WRKSRC}/build/Makefile.rules
+	${REINPLACE_CMD} -e 's|install-docs install-client|install-docs|' ${WRKSRC}/build/Makefile.rules
+	${REINPLACE_CMD} -e 's|$(INSTALLETCDIR)/protocols.cfg|$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
+	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
+	${REINPLACE_CMD} -e 's|FPING="@FPING@"|FPING="fping"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
 
 # Configure script is interactive
 do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
-pre-install:
-	if ! pw groupshow ${XYMONUSER}; then pw groupadd ${XYMONUSER} -g 280; fi
-	if ! pw usershow ${XYMONUSER}; then pw useradd ${XYMONUSER} -g ${XYMONUSER} -u 280 \
-		-h - -d ${WWWDIR} -s /usr/sbin/nologin -c "Xymon Monitor"; fi
-
 post-install:
-	-${MKDIR} ${WWWDIR}/server/etc
+	${MKDIR} ${WWWDIR}/server/etc
 	${INSTALL_SCRIPT} ${WRKSRC}/build/upgrade430.sh ${WWWDIR}/server/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/build/renamevars ${WWWDIR}/server/bin/
 .for i in ${FIXME1}

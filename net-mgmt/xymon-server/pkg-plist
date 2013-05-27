@@ -1,6 +1,3 @@
-@exec if ! pw groupshow %%XYMONUSER%% 2>/dev/null; then pw groupadd %%XYMONUSER%% -g 280; fi
-@exec if ! pw usershow %%XYMONUSER%% 2>/dev/null; then pw useradd %%XYMONUSER%% -g %%XYMONUSER%% -u 280 -h - -d %%WWWDIR%% -s /usr/sbin/nologin -c "Xymon Monitor"; fi
-@unexec if pw usershow %%XYMONUSER%%; then pw userdel %%XYMONUSER%%; fi
 %%WWWDIR%%/cgi-bin/appfeed-critical.sh
 %%WWWDIR%%/cgi-bin/appfeed.sh
 %%WWWDIR%%/cgi-bin/certreport.sh
@@ -385,38 +382,22 @@
 %%WWWDIR%%/server/www/menu/xymonmenu-blue.css
 %%WWWDIR%%/server/www/menu/xymonmenu-grey.css
 %%WWWDIR%%/server/xymon.sh
-@exec mkdir %D/%%WWWDIR%%/data
-@exec mkdir %D/%%WWWDIR%%/data/acks
-@exec mkdir %D/%%WWWDIR%%/data/data
-@exec mkdir %D/%%WWWDIR%%/data/disabled
-@exec mkdir %D/%%WWWDIR%%/data/hist
-@exec mkdir %D/%%WWWDIR%%/data/histlogs
-@exec mkdir %D/%%WWWDIR%%/data/hostdata
-@exec mkdir %D/%%WWWDIR%%/data/logs
-@exec mkdir %D/%%WWWDIR%%/data/rrd
-@exec mkdir %D/%%WWWDIR%%/server/download
-@exec mkdir %D/%%WWWDIR%%/server/tmp
-@exec mkdir %D/%%WWWDIR%%/server/www/html
-@exec mkdir %D/%%WWWDIR%%/server/www/notes
-@exec mkdir %D/%%WWWDIR%%/server/www/rep
-@exec mkdir %D/%%WWWDIR%%/server/www/snap
-@exec mkdir %D/%%WWWDIR%%/server/www/wml
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/acks
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/data
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/disabled
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/hist
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/histlogs
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/hostdata
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/logs
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/data/rrd
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/download
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/tmp
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www/html
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www/notes
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www/rep
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www/snap
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www/wml
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/acks
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/data
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/disabled
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/hist
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/histlogs
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/hostdata
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/logs
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/data/rrd
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/download
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/tmp
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/html
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/notes
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/rep
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/snap
+@exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/wml
 @dirrm %%WWWDIR%%/server/www/wml
 @dirrm %%WWWDIR%%/server/www/snap
 @dirrm %%WWWDIR%%/server/www/rep
@@ -450,8 +431,5 @@
 @dirrm %%WWWDIR%%/cgi-secure
 @dirrm %%WWWDIR%%/cgi-bin
 @dirrmtry %%WWWDIR%%
-@exec mkdir -p %%VARBASE%%/log/xymon
-@exec chown %%XYMONUSER%% %%VARBASE%%/log/xymon
-@cwd %%VARBASE%%
-@dirrmtry log/xymon
-@cwd
+@exec install -d -o %%XYMONUSER%% -p %%VARBASE%%/log/xymon
+@dirrmtry %%VARBASE%%/log/xymon
