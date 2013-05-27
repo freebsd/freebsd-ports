@@ -1,56 +1,88 @@
 #!/bin/sh
 # $FreeBSD$
-
 # PROVIDE: devmon
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
-: ${devmon_enable="NO"}
-: ${devmon_config="%%PREFIX%%/devmon/devmon.cfg"}
-: ${devmon_db="%%PREFIX%%/devmon/hosts.db"}
-: ${devmon_pid="/var/run/devmon.pid"}
-
 . /etc/rc.subr
 
-name="devmon"
-rcvar="devmon_enable"
-load_rc_config $name
+name=devmon
+rcvar=devmon_enable
+load_rc_config ${name}
+
+: ${devmon_enable:=NO}
+: ${devmon_config="%%PREFIX%%/devmon/devmon.cfg"}
+: ${devmon_db="%%PREFIX%%/devmon/hosts.db"}
+: ${devmon_pid="/var/run/devmon/devmon.pid"}
+: ${devmon_user="%%USERS%%"}
+: ${devmon_group="%%GROUPS%%"}
+
 command="%%PREFIX%%/devmon/devmon"
 command_args="-c ${devmon_config} -d ${devmon_db}"
-command_interpreter="/usr/bin/perl"
+command_interpreter=/usr/bin/perl
 pidfile=${devmon_pid}
 
-stop_cmd="devmon_stopcmd"
-status_cmd="devmon_statuscmd"
+start_precmd=devmon_startprecmd
+status_cmd=devmon_statuscmd
+stop_cmd=devmon_stopcmd
 
-devmon_statuscmd()                                                                                                                                                              
+devmon_startprecmd()
 {
-if [ ! -e $pidfile ];                                                                                                                                                      
-    then
-        echo "pidfile does not exist. $name is not running?";
-    exit 1;
-fi
+	if [ ! -e ${devmon_config} ];
+		then
+		echo "Error: ${devmon_config} does not exist."
+	exit 1;
+	fi
 
-if pgrep -F $pidfile >/dev/null;
-    then
-        echo "$name is running.";
-    else
-        echo "$name is not running.";
-    exit 1;
-fi
+	TEMPLATESDIR=%%PREFIX%%/devmon/templates
+	if [ ! -e ${TEMPLATESDIR} ]
+		then
+		echo ""
+		echo "  ERROR: no templates exist. Please install device templates"
+		echo "  to: ${TEMPLATESDIR}"
+		echo "  They are available on the devmon SourceForge page via SVN."
+		echo "  Note, the older template tarballs do not work reliably."
+		echo ""
+		echo "  # svn co svn://svn.code.sf.net/p/devmon/code/trunk/templates ${TEMPLATESDIR}"
+		echo ""
+	exit 1;
+	fi
+
+	DEVMONLOG=$(grep "^LOGFILE=" ${devmon_config} | awk -F '=' '{print $2}')
+	if [ ! -e ${DEVMONLOG} ];
+		then
+		install -o devmon -g devmon /dev/null ${DEVMONLOG}
+	fi
+}
+
+devmon_statuscmd()
+{
+	if [ ! -e ${pidfile} ];
+		then
+		echo "pidfile does not exist. ${name} is not running?";
+	exit 1;
+	fi
+
+	if pgrep -F ${pidfile} >/dev/null;
+		then
+		echo "${name} is running.";
+	else
+		echo "${name} is not running.";
+	exit 1;
+	fi
 }
 
 devmon_stopcmd()
 {
-if pgrep -F $pidfile >/dev/null;
-    then
-	mypid=`cat $pidfile`;
-        kill $sig_stop $mypid;
-        wait_for_pids $mypid;
-    else
-        echo "$name is not running.";
-        exit 1;
-fi
+	if pgrep -F ${pidfile} >/dev/null;
+		then
+		mypid=`cat ${pidfile}`;
+		kill ${sig_stop} ${mypid};
+		wait_for_pids ${mypid};
+	else
+		echo "${name} is not running.";
+	exit 1;
+	fi
 }
 
 run_rc_command "$1"

@@ -3,6 +3,7 @@
 
 PORTNAME=	devmon
 DISTVERSION=	0.3.1-beta1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -16,6 +17,12 @@ RUN_DEPENDS=	p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 USE_PERL5=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	devmon
+
+USERS=	devmon
+GROUPS=	devmon
+
+SUB_LIST=	USERS=${USERS} \
+		GROUPS=${GROUPS}
 
 OPTIONS_DEFINE=	MYSQL
 
@@ -43,6 +50,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 	${INSTALL} -d ${DOCSDIR}/docs
 	${INSTALL} -d ${DOCSDIR}/extras
+	${INSTALL} -d -o ${USERS} -g ${GROUPS} /var/run/devmon
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/)
 	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} \* ${DOCSDIR}/extras/)
 .endif
