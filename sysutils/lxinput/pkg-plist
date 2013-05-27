@@ -74,8 +74,6 @@ share/lxinput/input-keyboard.png
 %%NLS%%@dirrmtry share/locale/frp
 %%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb_NO
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
