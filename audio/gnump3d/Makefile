@@ -1,9 +1,5 @@
-# Ports collection makefile for:	gnump3d
-# Date created:			May 27, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gnump3d
 PORTVERSION=	3.0
@@ -30,10 +26,6 @@ MAN1=		gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
-.endif
 
 post-patch:
 .for f in bin/gnump3d-index bin/gnump3d-top bin/gnump3d2 etc/gnump3d.conf \
