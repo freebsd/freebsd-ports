@@ -6,7 +6,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/Accessor/Fast/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/Accessor/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/Accessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
