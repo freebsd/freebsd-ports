@@ -1,7 +1,4 @@
-# New ports collection makefile for:	abcm2ps
-# Date created:				2003-06-27
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
