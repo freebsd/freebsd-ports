@@ -15,6 +15,9 @@ DISTNAME=	grep-${PORTVERSION}
 MAINTAINER=	jh@jameshoward.us
 COMMENT=	An implementation of grep(1) under a BSD-friendly license
 
+DEPRECATED=	included in base
+EXPIRATION_DATE=	2013-06-27
+
 USE_BZIP2=	YES
 
 PLIST_FILES=	bin/grep	\
