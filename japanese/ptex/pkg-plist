@@ -322,7 +322,6 @@ bin/tftopl-ptex
 @dirrm %%TEXMFDIR%%/ptex/platex/config
 %%TEXMFDIR%%/fonts/map/ptex/dvips/jis.map
 %%TEXMFDIR%%/fonts/map/ptex/dvips/morisawa.map
-@dirrmtry %%TEXMFDIR%%/dvips/ptex
 @exec /bin/mkdir -p %D/%%TEXMFCONFIGDIR%%/dvips/ptex
 @dirrmtry %%TEXMFCONFIGDIR%%/dvips/ptex
 %%TEXMFCONFIGDIR%%/texconfig/ptex/tcfmgr.map
