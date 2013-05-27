@@ -44,7 +44,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.2.1.jar
+%%T%%/lib/ecj-4.2.2.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -58,7 +58,6 @@
 %%T%%/lib/tomcat-i18n-ja.jar
 %%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-util.jar
-%%T%%/lib/tools.jar
 %%T%%/temp/safeToDelete.tmp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
