@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phantomjs
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -21,9 +21,7 @@ USE_QT4=	moc qmake gui webkit rcc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|!/|!/usr/local/|g' build.sh
-	cd ${WRKSRC}/src/qt && ${REINPLACE_CMD} -e 's|!/|!/usr/local/|g' preconfig.sh
-	cd ${WRKSRC} && ${LOCALBASE}/bin/bash -x build.sh --jobs 2
+	cd ${WRKSRC} && ${SETENV} OSTYPE=freebsd MAKEFLAGS= bash -x build.sh --jobs 2 --confirm
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${PREFIX}/bin/
