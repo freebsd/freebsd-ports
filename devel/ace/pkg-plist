@@ -502,6 +502,8 @@ include/ace/Lock.inl
 include/ace/Lock_Adapter_T.cpp
 include/ace/Lock_Adapter_T.h
 include/ace/Lock_Adapter_T.inl
+include/ace/Log_Category.h
+include/ace/Log_Category.inl
 include/ace/Log_Msg.h
 include/ace/Log_Msg.inl
 include/ace/Log_Msg_Backend.h
@@ -1136,6 +1138,7 @@ include/ace/config-win32-common.h
 include/ace/config-win32-dmc.h
 include/ace/config-win32-interix.h
 include/ace/config-win32-mingw.h
+include/ace/config-win32-mingw64.h
 include/ace/config-win32-msvc-10.h
 include/ace/config-win32-msvc-7.h
 include/ace/config-win32-msvc-8.h

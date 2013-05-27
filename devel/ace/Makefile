@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.1.8
+PORTVERSION=	6.1.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -20,8 +20,8 @@ CONFLICTS=	ace+tao-5*
 
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
-USES=		pkgconfig
 USE_BZIP2=	yes
+USES=		pkgconfig
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
