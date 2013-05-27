@@ -8,31 +8,28 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An automounting file system implemented in user-space using FUSE
+COMMENT=	File system automounting implemented in user-space using FUSE
 
+LICENSE=	GPLv2
+
+USES=		fuse pkgconfig
 MAKE_JOBS_SAFE=	yes
-
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
-
-USES=		fuse pkgconfig
-
 MAN1=		afuse.1
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-SUB_FILES=	pkg-message
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 	@${CAT} ${PKGMESSAGE}
+SUB_FILES=	pkg-message
 .endif
 
 .include <bsd.port.mk>
