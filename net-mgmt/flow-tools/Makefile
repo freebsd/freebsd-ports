@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flow-tools
-# Date created:				2000 Jul 25
-# Whom:					@BABOLO <.@babolo.ru>
-#
+# Created by: @BABOLO <.@babolo.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
@@ -16,9 +12,7 @@ COMMENT=	Suite of tools and library to work with netflow data
 
 PORTSCOUT=	skipv:0.411
 
-OPTIONS=	MYSQL	"Enable MySQL support"		off \
-		OPENSSL	"Enable OpenSSL support"	off \
-		PGSQL	"Enable PostgreSQL support"	off
+OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 
 CONFLICTS=	flow-tools-ng-[0-9]*
 
@@ -52,19 +46,19 @@ FLOW_CAPTURE_UID=	174
 FLOW_CAPTURE_GID=	174
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=--with-pgsql="${PREFIX}"
 USE_PGSQL=	yes
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=--with-mysql="${PREFIX}"
 USE_MYSQL=	yes
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
 .endif
 
@@ -85,4 +79,4 @@ post-install:
 	@${SETENV} ${SCRIPTS_ENV} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
