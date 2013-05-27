@@ -1,5 +1,5 @@
---- program/lib/Roundcube/rcube_session.php.orig	2013-04-15 22:42:22.000000000 +0200
-+++ program/lib/Roundcube/rcube_session.php	2013-05-07 12:49:19.000000000 +0200
+--- program/lib/Roundcube/rcube_session.php.orig	2013-05-16 20:06:31.000000000 +0200
++++ program/lib/Roundcube/rcube_session.php	2013-05-27 15:46:41.000000000 +0200
 @@ -33,7 +33,6 @@
      private $start;
      private $changed;
@@ -55,8 +55,8 @@
 -            if (is_array($a_oldvars)) {
 -                // remove unset keys on oldvars
 -                foreach ((array)$this->unsets as $var) {
--                    if (isset($a_oldvars[$k])) {
--                        unset($a_oldvars[$k]);
+-                    if (isset($a_oldvars[$var])) {
+-                        unset($a_oldvars[$var]);
 -                    }
 -                    else {
 -                        $path = explode('.', $var);
