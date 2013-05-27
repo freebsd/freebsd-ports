@@ -1,7 +1,3 @@
-# New ports collection makefile for:	platex-jsclasses
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
 # $FreeBSD$
 
 PORTNAME=	jsclasses
@@ -18,7 +14,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	New document class files for pLaTeX
 
 USE_ZIP=	YES
-USE_TEX=	latex ptex
+USE_TEX=	tetex latex ptex
 NO_BUILD=	YES
 PLIST_SUB=	CLASSDIR=${CLASSDIR} TFMDIR=${TFMDIR} \
 		PLDIR=${PLDIR} MKTEXLSR=${MKTEXLSR} \

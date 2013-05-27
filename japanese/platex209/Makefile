@@ -1,9 +1,5 @@
-# New ports collection makefile for:	platex209-euc
-# Date created:		01 Jan 1998
-# Whom:			Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
-#
+# Created by: Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	platex209
 PORTVERSION=	1.0
@@ -15,12 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Old version of ASCII Japanese pLaTeX (based on LaTeX 2.09)
 
-BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
-
-TEXMFDIR=	share/texmf
+USE_TEX=	tetex ptex
 WEB2CDIR=	${TEXMFDIR}/web2c/ptex
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 PLATEX209DIR=	${TEXMFDIR}/ptex/platex209
 
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
