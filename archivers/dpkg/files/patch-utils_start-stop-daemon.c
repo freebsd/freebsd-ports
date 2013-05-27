@@ -1,6 +1,6 @@
---- utils/start-stop-daemon.c.orig	2011-11-10 07:17:51.000000000 +0100
-+++ utils/start-stop-daemon.c	2012-03-16 20:31:14.000000000 +0100
-@@ -59,6 +59,7 @@
+--- utils/start-stop-daemon.c.orig	2013-03-08 17:45:46.000000000 +0100
++++ utils/start-stop-daemon.c	2013-05-08 20:44:18.000000000 +0200
+@@ -55,6 +55,7 @@
  #endif
  
  #if defined(OSOpenBSD) || defined(OSFreeBSD) || defined(OSNetBSD)
@@ -8,16 +8,7 @@
  #include <sys/param.h>
  #include <sys/proc.h>
  
-@@ -989,7 +990,7 @@
- 	kp = kvm_getprocs(kd, KERN_PROC_PID, pid, &nentries);
- 	if (kp == NULL)
- 		errx(1, "%s", kvm_geterr(kd));
--	pidexec = (&kp->kp_proc)->p_comm;
-+	pidexec = kp->ki_paddr->p_comm;
- 	if (strlen(name) != strlen(pidexec))
- 		return false;
- 	return (strcmp(name, pidexec) == 0) ? 1 : 0;
-@@ -1043,8 +1044,8 @@
+@@ -1164,8 +1165,8 @@
  	kp = kvm_getprocs(kd, KERN_PROC_PID, pid, &nentries);
  	if (kp == NULL)
  		errx(1, "%s", kvm_geterr(kd));
@@ -28,3 +19,12 @@
  		         &proc_uid, sizeof(uid_t));
  	else
  		return false;
+@@ -1253,7 +1254,7 @@
+ 	kp = kvm_getprocs(kd, KERN_PROC_PID, pid, &nentries);
+ 	if (kp == NULL)
+ 		errx(1, "%s", kvm_geterr(kd));
+-	process_name = (&kp->kp_proc)->p_comm;
++	process_name = kp->ki_paddr->p_comm;
+ 	if (strlen(name) != strlen(process_name))
+ 		return false;
+ 	return (strcmp(name, process_name) == 0);

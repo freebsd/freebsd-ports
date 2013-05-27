@@ -1,11 +1,8 @@
-# New ports collection makefile for:	dpkg
-# Date created:		1 April 2003
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.15.8.12
+PORTVERSION=	1.16.10
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -19,8 +16,8 @@ BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch
 
-USES=	iconv
-USE_BZIP2=	yes
+USES=		iconv
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -52,7 +49,8 @@ PLIST_SUB+=	NLS="@comment "
 .include "Makefile.man"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ncursesw/||g' ${WRKSRC}/dselect/main.cc
+	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
+		${WRKSRC}/configure
 
 post-install:
 	${MV} ${PREFIX}/sbin/install-info ${PREFIX}/sbin/dpkg-install-info
