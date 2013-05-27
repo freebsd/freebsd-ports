@@ -1,13 +1,9 @@
-# New ports collection makefile for:	metalog
-# Date Created:				27 Aug 2002
-# Whom:					Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	metalog
 DISTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/old
@@ -16,9 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern syslogd replacement with PCRE support
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -35,21 +30,21 @@ PORTDOCS=	AUTHORS NEWS README
 PORTEXAMPLES=	metalog.conf
 PLIST_FILES=	sbin/metalog
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/man/*[58]
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-.for doc in ${PORTDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-.for ex in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${ex} ${EXAMPLESDIR}
-.endfor
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
