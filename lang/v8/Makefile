@@ -25,7 +25,7 @@ _CLANG!=	clang --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.
 MAKE_ENV+=	LINK=clang++
 CFLAGS+=	-Wno-unused-private-field
 .if ${_CLANG} >= 33
-CFLAGS+=	-Wno-nested-anon-types
+CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .endif
 .else
 MAKE_ARGS+=	strictaliasing=off
