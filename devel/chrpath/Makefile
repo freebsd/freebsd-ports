@@ -17,10 +17,6 @@ GNU_CONFIGURE=	yes
 
 MAN1=		chrpath.1
 
-.if defined(.PARSEDIR)
-MAKE_ARGS=	RPATH=""
-.endif
-
 PLIST_FILES=	bin/chrpath
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
