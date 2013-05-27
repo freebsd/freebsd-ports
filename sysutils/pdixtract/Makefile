@@ -1,12 +1,9 @@
-# New ports collection makefile for:	pdixtract
-# Date created:				Mon Jul  4 23:21:23 CEST 2005
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pdixtract
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	markus
@@ -15,7 +12,9 @@ DISTNAME=	PDITOOL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts or converts .pdi file sets to .iso
 
-WRKSRC=		${WRKDIR}
+LICENSE=	GPLv2
+
+NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 PLIST_FILES=	bin/pdixtract
