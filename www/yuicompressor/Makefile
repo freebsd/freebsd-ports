@@ -5,7 +5,6 @@ PORTNAME=	yuicompressor
 PORTVERSION=	2.4.8
 CATEGORIES=	www java
 #MASTER_SITES=	http://tml.github.io/yui/
-MASTER_SITES+=	http://az.semmy.ru/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	az
 DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
