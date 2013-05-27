@@ -2,87 +2,127 @@
 # $FreeBSD$
 
 PORTNAME=	zynaddsubfx
-PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTVERSION=	2.4.3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A realtime software synthesizer
+COMMENT=	Realtime software synthesizer
 
-LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		expat.6:${PORTSDIR}/textproc/expat2
-BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml
+LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
+		mxml:${PORTSDIR}/textproc/mxml
+
+OPTIONS_DEFINE=	ALSAMIDI DSSI GUI LASH LO JACK PORTAUDIO DOCS EXAMPLES
+OPTIONS_DEFAULT=	GUI
+ALSAMIDI_DESC=	MIDI input through ALSA
+DSSI_DESC=	DSSI Plugin
+LO_DESC=	Open Sound Control support via LibLO
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-CXXFLAGS+=	-I${LOCALBASE}/include
-MAKE_JOBS_UNSAFE=	yes
+USES=		cmake
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	ALSAMIDI GUI
-OPTIONS_DEFAULT=	GUI
-ALSAMIDI_DESC=		midi input through ALSA
-OPTIONS_RADIO=	OUTPUT
-OPTIONS_RADIO_OUTPUT=	JACK PORTAUDIO
-OUTPUT_DESC=	Audio output type
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSAMIDI}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+.else
+CMAKE_ARGS+=	-DAlsaEnable:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MDSSI}
+BUILD_DEPENDS+=	dssi>0:${PORTSDIR}/audio/dssi
+LIB_DEPENDS+=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat
+RUN_DEPENDS+=	dssi>0:${PORTSDIR}/audio/dssi
+CFLAGS+=	-I${LOCALBASE}/include/dssi
+PLIST_SUB+=	DSSI=""
+.else
+CMAKE_ARGS+=	-DDssiEnable:BOOL=OFF
+PLIST_SUB+=	DSSI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGUI}
+LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
+CMAKE_ARGS+=	-DGuiModule:STRING=fltk
+.else
+CMAKE_ARGS+=	-DGuiModule:STRING=OFF
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+.else
+CMAKE_ARGS+=	-DJackEnable:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MLASH}
+LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
+.else
+CMAKE_ARGS+=	-DLashEnable:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MLO}
+LIB_DEPENDS+=	lo:${PORTSDIR}/audio/liblo
+.else
+CMAKE_ARGS+=	-DLibloEnable:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
+BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+CFLAGS+=	-I${LOCALBASE}/include/portaudio2
+LDFLAGS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so
+.else
+CMAKE_ARGS+=	-DPaEnable:BOOL=OFF
 .endif
 
-.if !defined(WITHOUT_GUI)
-LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+.if ${PORT_OPTIONS:MALSAMIDI} && ${PORT_OPTIONS:MDSSI}
+IGNORE=		selected mutually exclusive options: ALSAMIDI and DSSI
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64: invokes i386 asm
 .endif
 
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+CFLAGS+=	-DASM_F2I_YES
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e \
-		's|CXXFLAGS= -O2 -Wall -g -fPIC|CXXFLAGS=${CXXFLAGS}|g' \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e \
-		's|LIBS= -lm  -lmxml -lz|LIBS= -lm  -lmxml -lz -L${LOCALBASE}/lib|g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/FILES/s|^|#| ; \
+		 /DESTINATION/s|^|#| ; \
+		 /[[:blank:]])/s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|-O3 .* -fomit-frame-pointer|| ; \
+		 /-DASM_F2I_YES/d ; \
+		 /-g #/d ; \
+		 /pthread/d ; \
+		 s|lib64|lib|' ${WRKSRC}/src/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/src/Misc/Config.cpp
 
-.if ! ${PORT_OPTIONS:MALSAMIDI}
-	${REINPLACE_CMD} -e 's|LINUX_MIDIIN=ALSA|LINUX_MIDIIN=OSS|g' \
-		${WRKSRC}/Makefile.inc
+post-install:
+	@${MKDIR} ${DATADIR}/banks
+	@(cd ${WRKDIR}/${DISTNAME}/instruments/banks \
+		&& ${COPYTREE_SHARE} . ${DATADIR}/banks)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for i in AUTHORS.txt FAQ.txt HISTORY.txt README.txt
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+.endfor
 .endif
-.if ${PORT_OPTIONS:MJACK}
-	${REINPLACE_CMD} -e 's|LINUX_AUDIOOUT=OSS|LINUX_AUDIOOUT=OSS_AND_JACK|g' \
-		${WRKSRC}/Makefile.inc
-.endif
-.if ${PORT_OPTIONS:MPORTAUDIO}
-	${REINPLACE_CMD} -e 's|LINUX_AUDIOOUT=OSS|LINUX_AUDIOOUT=PA|g' \
-		${WRKSRC}/Makefile.inc
-.endif
-.if ! ${PORT_OPTIONS:MGUI}
-	${REINPLACE_CMD} -e 's|DISABLE_GUI=NO|DISABLE_GUI=YES|g' \
-		${WRKSRC}/Makefile.inc
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKDIR}/${DISTNAME}/instruments/examples \
+		&& ${INSTALL_DATA} * ${EXAMPLESDIR})
 .endif
 
-do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/zynaddsubfx ${PREFIX}/bin
-		${MKDIR} ${DATADIR}
-		${MKDIR} ${DATADIR}/banks
-		cd ${WRKDIR}/${DISTNAME}/banks && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/banks/{} \;
-		cd ${WRKDIR}/${DISTNAME}/banks && ${FIND} . -type f \
-			-exec ${INSTALL_DATA} {} ${DATADIR}/banks/{} \;
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
