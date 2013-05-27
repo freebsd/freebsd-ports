@@ -20,12 +20,3 @@ lib/arch/solaris/functions
 @dirrm lib/arch/irix
 @dirrm lib/arch/solaris
 @dirrm lib/arch
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/SECURITY
-%%PORTDOCS%%%%DOCSDIR%%/VERSION
-%%PORTDOCS%%%%DOCSDIR%%/download
-%%PORTDOCS%%%%DOCSDIR%%/features
-%%PORTDOCS%%%%DOCSDIR%%/intro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
