@@ -93,8 +93,6 @@ share/ggz/help/ggz-gtk-login.png
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ggz-gtk.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ggz-gtk.mo
 @dirrm share/ggz/help
-@dirrm share/ggz/ggz-gtk/help
 @dirrm share/ggz/ggz-gtk-client
-@dirrm share/ggz/ggz-gtk
 @dirrmtry share/applications
 @dirrmtry share/ggz
