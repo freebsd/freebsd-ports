@@ -43,7 +43,7 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 post-patch:
-.if empty(PORT_OPTIONS:MX11)
+.if ! ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e '/fonts/d' ${WRKSRC}/Makefile
 .endif
 	@${RM} ${WRKSRC}/bin/*.orig
