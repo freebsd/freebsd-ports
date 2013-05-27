@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Accessor-Fast-XS
-# Date created:		                18 Nov 2008
-# Whom:			                Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Accessor-Fast-XS
 PORTVERSION=	0.04
