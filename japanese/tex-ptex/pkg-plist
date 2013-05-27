@@ -164,6 +164,7 @@ bin/uptftopl
 %%TEXMFDISTDIR%%/doc/fonts/jfontmaps/updmap-otf.sh
 %%TEXMFDISTDIR%%/doc/fonts/jfontmaps/ChangeLog
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/jfontmaps
+@dirrmtry %%TEXMFDISTDIR%%/doc/fonts
 %%TEXMFDISTDIR%%/fonts/source/ptex/nmin-ngoth/nmin6.pl
 %%TEXMFDISTDIR%%/fonts/source/ptex/nmin-ngoth/ngoth6.pl
 %%TEXMFDISTDIR%%/fonts/source/ptex/nmin-ngoth/ngoth10.pl
@@ -3691,8 +3692,11 @@ bin/uptftopl
 %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/jfontmaps/uptex-kozuka-04.map
 %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/jfontmaps/otf-hiragino.map
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/jfontmaps
+@dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfmx
+@dirrmtry %%TEXMFDISTDIR%%/fonts/map
 %%TEXMFDISTDIR%%/fonts/cmap/uptex/UTF8-UTF16
 @dirrm %%TEXMFDISTDIR%%/fonts/cmap/uptex
+@dirrmtry %%TEXMFDISTDIR%%/fonts
 %%TEXMFDIR%%/fonts/map/dvipdfmx/updmap/kanjix.map
 @dirrmtry %%TEXMFDIR%%/fonts/map/dvipdfmx/updmap
 @dirrmtry %%TEXMFDIR%%/fonts/map/dvipdfmx
