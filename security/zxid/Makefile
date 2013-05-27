@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zxid
-# Date created:		2007-07-06
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zxid
 PORTVERSION=	1.05
@@ -29,6 +25,11 @@ ZXID_BINS=	smime zxcall zxcot zxdecode zxencdectest zxid zxidhlo \
 		zxidhlowsf zxidhrxmlwsc zxidhrxmlwsp zxididp zxidsimple \
 		zxidwsctool zxlogview zxpasswd
 
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/__inline//g' ${WRKSRC}/c/zx-attrs.c
+
 post-install:
 	${MKDIR} ${PREFIX}/include/zxid/
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${ZXID_BINS} ${PREFIX}/bin/
@@ -36,7 +37,7 @@ post-install:
 	${INSTALL_LIB} ${WRKSRC}/libzxid.so.0.0 ${PREFIX}/lib/libzxid.so.0
 	${LN} -sf libzxid.so.0 ${PREFIX}/lib/libzxid.so
 	cd ${WRKSRC}/ && ${INSTALL_DATA} *.h c/*.h ${PREFIX}/include/zxid/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} *.pd ${DOCSDIR}/
 .endif
