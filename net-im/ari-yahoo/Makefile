@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ari-yahoo
-# Date created:        15 November 2000
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ari-yahoo
 PORTVERSION=	1.10
@@ -16,6 +12,7 @@ COMMENT=	A console Yahoo! messenger client
 
 PLIST_FILES=	bin/ari-yahoo
 USE_GMAKE=	yes
+USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 
 pre-configure:
