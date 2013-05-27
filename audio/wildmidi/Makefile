@@ -35,6 +35,9 @@ post-patch:
 			${WRKSRC}/docs/wildmidi.cfg.5
 		${REINPLACE_CMD} -e 's@/usr/local/share/wildmidi/@${DATADIR}/@' \
 			-e 's@default_timifityconf@default_wildmidiconf@' \
+			-e 's@-fexpensive-optimizations@@g' \
+			-e 's@-finline-limit=32000@@g' \
+			-e 's@-frename-registers@@g' \
 			${WRKSRC}/configure
 		${REINPLACE_CMD} -e '/WM_MixerOptions/s/ \&\& / \& /' \
 			${WRKSRC}/src/wildmidi_lib.c
