@@ -1,9 +1,5 @@
-# New ports collection makefile for: p5-Date-Simple
-# Date created:                      15 May 2003
-# Whom:                              Alexey V. Antipovsky <kemm@in-line.ru>
-#
+# Created by: Alexey V. Antipovsky <kemm@in-line.ru>
 # $FreeBSD$
-#
 
 PORTNAME=		Date-Simple
 PORTVERSION=		3.03
