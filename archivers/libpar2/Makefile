@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+USE_GCC=	any
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
