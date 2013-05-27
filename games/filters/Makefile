@@ -17,6 +17,7 @@ CONFLICTS=	talkfilters-[0-9]* jive-[0-9]* chef-[0-9]* kenny-[0-9]* \
 USES=		shebangfix
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_GCC=	any
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
