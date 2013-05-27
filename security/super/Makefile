@@ -11,8 +11,6 @@ EXTRACT_SUFX=	-tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
-LICENSE=	GPLv1
-
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
