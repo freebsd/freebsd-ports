@@ -3,6 +3,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TreeBuilder/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TreeBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML/TreeBuilder/LibXML
 @dirrmtry %%SITE_PERL%%/HTML/TreeBuilder
 @dirrmtry %%SITE_PERL%%/HTML
