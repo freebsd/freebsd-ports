@@ -1,4 +1,0 @@
-sbin/mgeupsd
-sbin/powerhandler
-etc/rc.d/mgeupsd.sh
-man/man8/mgeupsd.8
