@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read Macintosh HFS floppy disks, hard drives, and CD-ROMs
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 CONFLICTS=	hfsutils-[0-9]*
 

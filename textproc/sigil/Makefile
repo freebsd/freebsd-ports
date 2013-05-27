@@ -16,7 +16,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		hunspell-1.3:${PORTSDIR}/textproc/hunspell \
 		pcre:${PORTSDIR}/devel/pcre
 
-LICENCE=	GPLv3
+LICENSE=	GPLv3
 
 USE_ZIP=	yes
 USES=		cmake pkgconfig

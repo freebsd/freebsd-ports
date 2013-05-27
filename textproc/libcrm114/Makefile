@@ -11,7 +11,7 @@ COMMENT=	CRM114 C-callable Library
 
 LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre
 
-LICENCE=	LGPL3
+LICENSE=	LGPL3
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
