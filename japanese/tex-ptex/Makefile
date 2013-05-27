@@ -2,10 +2,10 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
-PKGNAMEPREFIX=	tex-
+PKGNAMEPREFIX=	ja-tex-
 DISTNAME=	texlive-${DISTVERSION_TEXLIVE}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME_TEXMF}${EXTRACT_SUFX}
@@ -17,7 +17,7 @@ COMMENT=	ASCII Japanese pTeX
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_TEX=	kpathsea web2c ptexenc texmf formats fmtutil
+USE_TEX=	texlive kpathsea web2c ptexenc texmf formats fmtutil
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	\
 	build-aux \
