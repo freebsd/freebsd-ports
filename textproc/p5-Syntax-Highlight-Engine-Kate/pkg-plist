@@ -12,6 +12,8 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Ansys.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Apache_Configuration.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Asm6502.pm
+%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/BaseTestchild.pm
+%%SITE_PERL%%/Syntax/Highlight/Engine/Kate/BaseTest.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Bash.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/BibTeX.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/C.pm
