@@ -1,17 +1,13 @@
-# New ports collection makefile for:   daemon_controller
-# Date created:        31 October 2010
-# Whom:                Jacob Atzen <jatzen@gmail.com>
-#
+# Created by: Jacob Atzen <jatzen@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	daemon_controller
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
 
-MAINTAINER=	jatzen@gmail.com
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A library for implementing daemon management capabilities
 
 USE_RUBY=	yes
