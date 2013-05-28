@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	2.15.3
+PORTVERSION=	3.0.1
 CATEGORIES=	math lang
-MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
-		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
-		http://cran.at.r-project.org/src/base/R-2/ \
-		http://cran.au.r-project.org/src/base/R-2/ \
-		http://cran.br.r-project.org/src/base/R-2/ \
-		http://cran.ch.r-project.org/src/base/R-2/ \
-		http://cran.es.r-project.org/src/base/R-2/ \
-		http://cran.dk.r-project.org/src/base/R-2/ \
-		http://cran.uk.r-project.org/src/base/R-2/ \
-		http://cran.us.r-project.org/src/base/R-2/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-2/ \
-		http://lib.stat.cmu.edu/R/CRAN/src/base/R-2/ \
-		http://cran.stat.ucla.edu/src/base/R-2/ \
-		http://probability.ca/cran/src/base/R-2/
+MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
+		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
+		http://cran.at.r-project.org/%SUBDIR%/ \
+		http://cran.au.r-project.org/%SUBDIR%/ \
+		http://cran.br.r-project.org/%SUBDIR%/ \
+		http://cran.ch.r-project.org/%SUBDIR%/ \
+		http://cran.es.r-project.org/%SUBDIR%/ \
+		http://cran.dk.r-project.org/%SUBDIR%/ \
+		http://cran.uk.r-project.org/%SUBDIR%/ \
+		http://cran.us.r-project.org/%SUBDIR%/ \
+		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/%SUBDIR%/ \
+		http://lib.stat.cmu.edu/R/CRAN/%SUBDIR%/ \
+		http://cran.stat.ucla.edu/%SUBDIR%/ \
+		http://probability.ca/cran/%SUBDIR%/
+MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
@@ -27,7 +28,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
-CONFIGURE_ENV=		SED="${LOCALBASE}/bin/gsed"
+CONFIGURE_ENV=		SED="${LOCALBASE}/bin/gsed" \
+			ac_cv_have_decl_powl=yes ac_cv_have_decl_log1pl=yes
 
 OPTIONS_DEFINE=		MISSING
 
@@ -59,10 +61,12 @@ ATLAS_DESC=		Use ATLAS instead of BLAS/LAPACK
 ICU_DESC=		Use ICU for collation in multibyte locales
 PCRE_PORT_DESC =	Use devel/pcre instead of the bundled PCRE
 
-OPTIONS_DEFAULT=	ICU PCRE_PORT THREADS
+OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
 RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
+#now only used to build the R.1 manpage:
+USE_PERL5_BUILD=	yes
 
 MAN1=			R.1 Rscript.1
 
@@ -92,12 +96,11 @@ USES+=			iconv
 .endif # LIBRMATH_SLAVEPORT
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
-R_SOVERSION=		0
+R_SOVERSION=		1
 RBLAS_SOVERSION=	2
 RLAPACK_SOVERSION=	4
 RMATH_SOVERSION=	0
 USE_FORTRAN=		yes
-USE_PERL5_BUILD=	yes
 
 .include <bsd.port.options.mk>
 
@@ -146,7 +149,7 @@ CONFIGURE_ARGS+=	--without-ICU
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=			gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -242,9 +245,9 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
 .if ${PORT_OPTIONS:MPDF_MANUALS} && ${PORT_OPTIONS:MDOCS}
-BROKEN =		The PDF_MANUALS option cannot be used, because\
-			print/texinfo is incompatible with print/teTeX-base
-USE_TEX=		tex:build
+BROKEN=			The PDF_MANUALS option cannot be used, because it\
+			requires broken components of texlive
+USE_TEX=		texlive pdftex:build
 BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo
 ALL_TARGET+=		pdf
 CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
@@ -259,9 +262,15 @@ PLIST_SUB+=		PDF_MANUAL="@comment "
 
 post-patch:
 .if !${PORT_OPTIONS:MMISSING}
-	@${REINPLACE_CMD} -e 's|logl(|(long double)logq((__float128)|' \
+.if ${OSVERSION} < 1000016
+	@${REINPLACE_CMD} -e 's/# define EXP expl/# define EXP(x) (long double)expq((__float128)(x))/' \
+		${WRKSRC}/src/nmath/pnchisq.c
+.endif
+	@${REINPLACE_CMD} -Ee 's/(log)(1p)?l\(/(long double)\1\2q((__float128)/' \
 		${WRKSRC}/src/nmath/dnbeta.c \
 		${WRKSRC}/src/nmath/pnbeta.c
+	@${REINPLACE_CMD} -Ee 's/powl\((.*)(long double)/(long double)powq((__float128)\1__float128/' \
+		${WRKSRC}/src/main/format.c
 .endif
 	@${REINPLACE_CMD} -e \
 	'\|#include <math.h>|{x;s|^.*$$|#include ${LIBMH}|;H;x;}' \
@@ -277,8 +286,7 @@ post-patch:
 		${WRKSRC}/src/scripts/javareconf
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
 		${WRKSRC}/configure \
-		${WRKSRC}/config.site \
-		${WRKSRC}/src/extra/tzone/tzfile.h \
+		${WRKSRC}/src/library/profile/Rprofile.unix \
 		${WRKSRC}/src/scripts/javareconf
 .if !defined(LIBRMATH_SLAVEPORT)
 .if !${PORT_OPTIONS:MNLS}
@@ -287,6 +295,8 @@ post-patch:
 	${TAR} -czf temptgz --exclude='*/po/*' @$$tarfile ; \
 	${MV} temptgz $$tarfile ; \
 	done)
+	@${REINPLACE_CMD} -e '/ls -d $$(srcdir)\/inst/d' \
+		${WRKSRC}/src/library/translations/Makefile.in
 .endif
 
 .if !${PORT_OPTIONS:MMISSING}
@@ -311,6 +321,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${PREFIX}/lib/R/lib
 
 .else # LIBR_SLAVEPORT
+
+pre-configure-script:
+	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
 
 check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} LANGUAGE=en \
