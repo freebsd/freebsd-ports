@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mixxx
-PORTVERSION=	1.10.1
+PORTVERSION=	1.11.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	audio
-MASTER_SITES=	http://moo.glines.org/mixxx/%SUBDIR%/
+MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,16 +19,17 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		mad:${PORTSDIR}/audio/libmad \
 		sndfile:${PORTSDIR}/audio/libsndfile \
 		vorbis:${PORTSDIR}/audio/libvorbis \
-		tag:${PORTSDIR}/audio/taglib
+		tag:${PORTSDIR}/audio/taglib \
+		protobuf:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 
-OPTIONS_DEFINE=	LAME SHOUTCAST FAAD WAVPACK DOCS
+OPTIONS_DEFINE=	FAAD LAME SHOUTCAST TCMALLOC WAVPACK DOCS
+TCMALLOC_DESC=	Use Google's TCMalloc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_QT4=	corelib gui network opengl script sql svg webkit xml \
-		xmlpatterns linguist_build moc_build qmake_build rcc_build \
-		uic_build
+USE_QT4=	corelib gui network opengl script sql svg xml \
+		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glu
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
@@ -36,6 +37,16 @@ SCONS_ARGS=	qtdir="${QT_PREFIX}" optimize=0
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFAAD}
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad \
+		mp4v2:${PORTSDIR}/multimedia/mp4v2
+SCONS_ARGS+=	faad=1
+PLIST_SUB+=	FAAD=""
+.else
+SCONS_ARGS+=	faad=0
+PLIST_SUB+=	FAAD="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
@@ -48,14 +59,11 @@ SCONS_ARGS+=	shoutcast=1
 SCONS_ARGS+=	shoutcast=0
 .endif
 
-.if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad \
-		mp4v2:${PORTSDIR}/multimedia/mp4v2
-SCONS_ARGS+=	faad=1
-PLIST_SUB+=	FAAD=""
+.if ${PORT_OPTIONS:MTCMALLOC}
+LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
+SCONS_ARGS+=	perftools=1
 .else
-SCONS_ARGS+=	faad=0
-PLIST_SUB+=	FAAD="@comment "
+SCONS_ARGS+=	perftools=0
 .endif
 
 .if ${PORT_OPTIONS:MWAVPACK}
@@ -68,14 +76,17 @@ PLIST_SUB+=	WAVPACK="@comment "
 .endif
 
 post-patch:
-.for f in build/depends.py src/soundsourceproxy.cpp src/recording/encodermp3.cpp
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}
-.endfor
-	@${REINPLACE_CMD} -e "/_get_bzr_/s|^|#| ; /('install', docs)/d" \
+		 s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/build/depends.py
+	@${REINPLACE_CMD} -e "/('install', docs)/d" \
 		${WRKSRC}/src/SConscript
-	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx|" \
+	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx| ; \
+		 s|^Icon=.*|Icon=${PREFIX}/share/pixmaps/mixxx-icon.png|" \
 		${WRKSRC}/src/mixxx.desktop
+.for i in midi/midimessage.h qtscript-bytearray/bytearrayclass.h
+	@${ECHO_CMD} >> ${WRKSRC}/src/controllers/${i}
+.endfor
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/mixxx
