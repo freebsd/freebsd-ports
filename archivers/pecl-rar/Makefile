@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
