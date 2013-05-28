@@ -12,10 +12,23 @@ you update your ports collection, before attempting any port upgrades.
   The default ruby version has been updated from 1.8 to 1.9. You'll need to
   rebuild all ports that depend on ruby:
 
-  # portmaster -r ruby19
-    or
-  # portupgrade -fr lang/ruby19
-    or
+  If you use portmaster:
+  # portmaster -o lang/ruby19 lang/ruby18
+  # portmaster -R -r ruby-1.9
+
+  If you use portupgrade:
+  # portupgrade -f lang/ruby18
+  # portupgrade -f lang/ruby19 # if you have it installed
+  # make -C /usr/ports/ports-mgmt/portupgrade build deinstall install clean
+  # rm -f /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db
+  # pkgdb -uf
+  # portsdb -uf
+  # portupgrade -x ruby-1.8.\* -fr lang/ruby18
+
+  After these steps are complete, you can pkg_delete ruby 1.8 if you
+  no longer need it.
+
+  If you use pkgng:
   # pkg set -o lang/ruby18:lang/ruby19
   # pkg install -fR lang/ruby19
 
