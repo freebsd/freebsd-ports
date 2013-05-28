@@ -28,16 +28,11 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-# we could be on HEAD where CC is in fact clang 3.3 but since we have no 
-# __FreeBSD_version tag from when the 3.3 import happened we have to do some
-# probing
-#
-.if(${OSVERSION} >= 1000000)
-_CLANG!=	cc --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
-CFLAGS+=	-Wno-unused-comparison
+.if(${OSVERSION} >= 1000024)
+CCISCLANG!=	${CC} --version | ${HEAD} -1 | ${GREP} 'clang'
 .endif
 
-.if ${CC} == clang
+.if ${CC} == clang || defined(CCISCLANG)
 CFLAGS+=	-Wno-unused-comparison
 .endif
 
