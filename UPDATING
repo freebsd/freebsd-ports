@@ -19,10 +19,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use portupgrade:
   # portupgrade -f lang/ruby18
   # portupgrade -f lang/ruby19 # if you have it installed
-  # make -C /usr/ports/ports-mgmt/portupgrade build deinstall install clean
-  # rm -f /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db
-  # pkgdb -uf
-  # portsdb -uf
+  # portupgrade -f ports-mgmt/portupgrade
   # portupgrade -x ruby-1.8.\* -fr lang/ruby18
 
   After these steps are complete, you can pkg_delete ruby 1.8 if you
