@@ -22,7 +22,7 @@ lib/scm/gsubr.so
 lib/scm/hobbit.scm
 lib/scm/implcat
 lib/scm/ioext.so
-lib/scm/keysymdef.scm
+%%X11%%lib/scm/keysymdef.scm
 lib/scm/mkimpcat.scm
 lib/scm/patchlvl.h
 lib/scm/posix.so
@@ -78,6 +78,7 @@ lib/scm/slib/dynamic.scm
 lib/scm/slib/dynwind.scm
 lib/scm/slib/eval.scm
 lib/scm/slib/factor.scm
+lib/scm/slib/fluid-let.scm
 lib/scm/slib/fluidlet.scm
 lib/scm/slib/format.scm
 lib/scm/slib/formatst.scm
@@ -195,7 +196,7 @@ lib/scm/slib/uri.scm
 lib/scm/slib/values.scm
 lib/scm/slib/vet.scm
 lib/scm/slib/withfile.scm
-lib/scm/slib/wttest.scm
+lib/scm/slib/wttree-test.scm
 lib/scm/slib/wttree.scm
 lib/scm/slib/xml-parse.scm
 lib/scm/slib/yasyn.scm
@@ -204,9 +205,9 @@ lib/scm/socket.so
 lib/scm/unix.so
 lib/scm/wbtab.scm
 %%X11%%lib/scm/x.so
-lib/scm/x11.scm
-lib/scm/xatoms.scm
-lib/scm/xevent.scm
+%%X11%%lib/scm/x11.scm
+%%X11%%lib/scm/xatoms.scm
+%%X11%%lib/scm/xevent.scm
 @dirrm lib/scm/slib/psd
 @dirrm lib/scm/slib
 @dirrm lib/scm
