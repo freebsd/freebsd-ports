@@ -2,53 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	pmd
-PORTVERSION=	3.7
-PORTREVISION=	2
+PORTVERSION=	5.0.4
 CATEGORIES=	devel java
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Static analysis tool for Java source code
 
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+LICENSE=	BSD
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ANT=	yes
-
-MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar
-
+NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/bin
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' \
+		-e 's|LIB_DIR=$$(pwd -P)|LIB_DIR=${DATADIR}|' ${WRKSRC}/bin/run.sh
+
+.include <bsd.port.options.mk>
 
 do-install:
-.for script in bgastviewer.sh cpd.sh designer.sh pmd.sh
-	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|" \
-	  -e "s|%%JAVA_VERSION%%|${JAVA_VERSION}|" \
-	  -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
-	  ${INSTALL_WRKSRC}/bin/${script}
-.endfor
-	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/bgastviewer.sh ${PREFIX}/bin/bgastviewer
-	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/cpd.sh ${PREFIX}/bin/cpd
-	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/designer.sh ${PREFIX}/bin/pmd_designer
-	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/pmd.sh ${PREFIX}/bin/pmd
-	${MKDIR} ${DATADIR}
-	cd ${INSTALL_WRKSRC}/lib \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DATADIR}/ \;
-.if !defined(NOPORTDOCS)
-	cd ${INSTALL_WRKSRC}/docs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/run.sh ${PREFIX}/bin/pmd
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
