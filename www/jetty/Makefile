@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	jetty
-PORTVERSION=	8.1.8
+PORTVERSION=	8.1.11
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=jetty/stable-8/dist
-DISTNAME=	jetty-distribution-8.1.8.v20121106
+MASTER_SITE_SUBDIR=jetty/${PORTVERSION}.${JDVDATE}/dist
+DISTNAME=	jetty-distribution-${PORTVERSION}.${JDVDATE}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in Java
 
+JDVDATE=	v20130520
 USE_RC_SUBR=	${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
