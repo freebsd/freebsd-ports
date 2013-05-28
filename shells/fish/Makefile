@@ -2,71 +2,60 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	1.23.1
-PORTREVISION=	9
+PORTVERSION=	2.0.0
 CATEGORIES=	shells
-MASTER_SITES=	SF
+MASTER_SITES=	http://fishshell.com/files/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A user friendly command line shell
+COMMENT=	User friendly command line shell
 
-USE_AUTOTOOLS=	autoconf
+OPTIONS_DEFINE=	DOCS NLS
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USES=		iconv
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
+CONFIGURE_ARGS=	--docdir=${WRKDIR}/tmproot
+MAKE_JOBS_SAFE=	yes
 
-USES=		gettext iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LIBS="${LDFLAGS}"
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-OPTIONS_DEFINE=	XSEL DOXYGEN
-OPTIONS_DEFAULT=	XSEL DOXYGEN
-XSEL_DESC=	Build with xsel
+MAN1=		fish.1 fish_indent.1 fish_pager.1 fishd.1 mimedb.1
 
 .include <bsd.port.options.mk>
 
-MAN1=		alias.1 and.1 begin.1 bg.1 bind.1 block.1 \
-		break.1 breakpoint.1 builtin.1 case.1 cd.1 \
-		command.1 commandline.1 complete.1 contains.1 \
-		continue.1 count.1 dirh.1 dirs.1  else.1 \
-		emit.1 end.1 eval.1 exec.1 exit.1 fg.1 fish.1 \
-		fish_indent.1 fish_pager.1 fish_prompt.1 \
-		fishd.1 for.1 funced.1 funcsave.1 function.1 \
-		functions.1 help.1 if.1 isatty.1 jobs.1 math.1 \
-		mimedb.1 nextd.1 not.1 open.1 or.1 popd.1 \
-		prevd.1 psub.1 pushd.1 random.1 read.1 return.1 \
-		set.1 set_color.1 source.1 status.1 switch.1 \
-		trap.1 type.1 ulimit.1 umask.1 vared.1 while.1
-
-# Don't use the bundled xsel
-CONFIGURE_ARGS+=	--without-xsel
-
-.if ${PORT_OPTIONS:MXSEL}
-RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
-.endif
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
-
-.if ${OSVERSION} > 900008
-# already in base system
-PLIST_SUB+=	SEQ="@comment "
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+CONFIGURE_ENV+=	ac_cv_func_gettext=yes
+PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB+=	SEQ=""
+CONFIGURE_ARGS+=--without-gettext
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS} || ! ${PORT_OPTIONS:MDOXYGEN}
-	@${REINPLACE_CMD} -e 's|$(PROGRAMS) user_doc|$(PROGRAMS)|' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 589,593d ${WRKSRC}/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e \
+		'/^all:/s|user_doc|| ; \
+		 s| "$$(HAVE_GETTEXT)" = 1| x$$(HAVE_GETTEXT) = x1| ; \
+		 s| $$(HAVE_GETTEXT) = 1| x$$(HAVE_GETTEXT) = x1| ; \
+		 /fish\/man\/man1/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-rdynamic|-Wl,--export-dynamic| ; \
+		 /pthread_create/d ; \
+		 s|ncurses curses|curses| ; \
+		 s|ncurses.h||' ${WRKSRC}/configure.ac
 
 post-install:
-	${CP} ${DATADIR}/man/*.1 ${PREFIX}/man/man1/
-	${RM} -rf ${DATADIR}/man
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKDIR}/tmproot && ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
+.for i in fish fish_indent fish_pager fishd mimedb
+	@${STRIP_CMD} ${PREFIX}/bin/${i}
+.endfor
 	if ${GREP} -q '${PREFIX}/bin/${PORTNAME}' /etc/shells; then \
 		${TRUE}; \
 	else \
