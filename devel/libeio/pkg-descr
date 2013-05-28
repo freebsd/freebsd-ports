@@ -1,0 +1,11 @@
+Libeio is a full-featured asynchronous I/O library for C, modelled in
+similar style and spirit as libev.
+
+Features include: asynchronous read, write, open, close, stat, unlink,
+fdatasync, mknod, readdir etc. (basically the full POSIX API), sendfile
+(native on solaris, linux, hp-ux, freebsd, emulated everywehere else),
+readahead (emulated where not available).  It is fully event-library
+agnostic and can easily be integrated into any event-library (or used
+standalone, even in polling mode).
+
+WWW: http://software.schmorp.de/pkg/libeio.html
