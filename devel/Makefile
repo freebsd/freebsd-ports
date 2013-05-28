@@ -971,6 +971,7 @@
     SUBDIR += libe
     SUBDIR += libedit
     SUBDIR += libee
+    SUBDIR += libeio
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
     SUBDIR += libestr
