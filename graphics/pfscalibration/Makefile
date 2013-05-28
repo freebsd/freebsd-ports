@@ -1,7 +1,4 @@
-# New ports collection makefile for:   pfscalibration
-# Date created:        Fri Jun  1 15:44:40 UTC 2007
-# Whom:                argv[0] (Iouri V. Ivliev)
-#
+# Created by: Iouri V. Ivliev
 # $FreeBSD$
 
 PORTNAME=	pfscalibration
@@ -16,6 +13,7 @@ COMMENT=	Photometric calibration of cameras and recovery HDR images from the set
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib
 
+USES=		pkgconfig shebangfix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PFS_CPPFLAGS}
 LDFLAGS+=	${PFS_LDFLAGS}
@@ -29,11 +27,7 @@ MAN1=		jpeg2hdrgen.1 \
 		pfsinhdrgen.1 \
 		pfshdrcalibrate.1
 
-.include <bsd.port.pre.mk>
+SHEBANG_FILES=	src/dcraw2hdrgen src/jpeg2hdrgen
+bash_CMD=	${SH}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,#!/bin/bash,#!/bin/sh," \
-		${WRKSRC}/src/dcraw2hdrgen \
-		${WRKSRC}/src/jpeg2hdrgen
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
