@@ -1,7 +1,4 @@
-# New ports collection makefile for:   pfstmo
-# Date created:        Fri Jun  1 16:13:32 UTC 2007
-# Whom:                argv[0] (Iouri V. Ivliev)
-#
+# Created by: Iouri V. Ivliev
 # $FreeBSD$
 
 PORTNAME=	pfstmo
@@ -18,6 +15,7 @@ LIB_DEPENDS=	pfs-1.2:${PORTSDIR}/graphics/pfstools
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PFS_CPPFLAGS}
 LDFLAGS+=	${PFS_LDFLAGS}
