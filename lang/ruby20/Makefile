@@ -73,6 +73,10 @@ CONFIGURE_ARGS+=	--enable-install-doc
 CONFIGURE_ARGS+=	--disable-install-doc
 .endif
 
+.if ${ARCH} == "powerpc"
+CONFIGURE_ARGS+=	--disable-dtrace
+.endif
+
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		debugflags=
@@ -221,7 +225,7 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-plist::
+plist:
 	truncate -s0 pkg-plist
 .for FILE in ${INSTALLED_SCRIPTS}
 	@${ECHO_CMD} "bin/${FILE}%%RUBY_SUFFIX%%" >> pkg-plist
@@ -300,7 +304,7 @@ plist::
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 
-validate::
+validate:
 	@${MKDIR} ${WRKSRC}/rubyspec
 	rm -rf ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
