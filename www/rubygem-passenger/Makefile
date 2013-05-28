@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.19
+PORTVERSION=	4.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -38,11 +38,12 @@ BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
 .endif
 .endif
 
-LIB_DEPENDS+=	ev.4:${PORTSDIR}/devel/libev \
-		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	eio:${PORTSDIR}/devel/libeio \
+		ev:${PORTSDIR}/devel/libev \
+		curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-daemon_controller>=0.2.5:${PORTSDIR}/devel/rubygem-daemon_controller
+		rubygem-daemon_controller>=1.1.0:${PORTSDIR}/devel/rubygem-daemon_controller
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
@@ -77,22 +78,28 @@ post-install:
 		s!g++!${CXX}!g; \
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
-		46s!true!false!' \
-		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
+		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
+		177,179s!true!false!' \
+		${PREFIX}/${GEM_LIB_DIR}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
-		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
+		${PREFIX}/${GEM_LIB_DIR}/build/basics.rb
 .endif
 	@${REINPLACE_CMD} \
 		's!#{LIBEV_LIBS}!-L${LOCALBASE}/lib -lev!g' \
 		${PREFIX}/${GEM_LIB_DIR}/build/agents.rb
 	@${REINPLACE_CMD} \
 		's!-Iext/libev!!; \
-		268s!/usr/include/libev!${LOCALBASE}/include!; \
-		269s!-lev!-L${LOCALBASE}/lib -lev!' \
+		s!/usr/include/libev!${LOCALBASE}/include!; \
+		s!-lev!-L${LOCALBASE}/lib -lev!; \
+		s!-Iext/libeio!!; \
+		s!/usr/include/libeio!${LOCALBASE}/include!; \
+		s!-leio!-L${LOCALBASE}/lib -leio!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/common_library.rb
-
+	@${REINPLACE_CMD} \
+		's!-lpthread!${PTHREAD_LIBS}!g' \
+		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info/cxx_portability.rb
 .if ${PORT_OPTIONS:MAPACHE22}
 	(${PREFIX}/bin/passenger-install-apache2-module --auto)
 	@${CAT} ${PKGMESSAGE}

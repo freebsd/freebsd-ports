@@ -643,8 +643,8 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	3.0.19
-MASTER_SITES+=	RF/passenger/:passenger
+PASSENGER_VERSION=	4.0.4
+MASTER_SITES+=	http://phusion-passenger.googlecode.com/files/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
@@ -903,16 +903,20 @@ post-patch:
 		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/config
 .endif
 .if ${PORT_OPTIONS:MPASSENGER}
-	@${REINPLACE_CMD} 's!-Wall!!g; \
-		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
-		s!-O2!!g; \
-		42s!true!false!' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/config.rb
+	@${REINPLACE_CMD} \
+		'177,179s!true!false!' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/basics.rb
 	@${REINPLACE_CMD} \
 		's!-I/usr/include/libev!!; \
 		s!-lev!!; \
-		s!-Iext/libev!!' \
+		s!-Iext/libev!!; \
+		s!-I/usr/include/libeio!!; \
+		s!-leio!!; \
+		s!-Iext/libeio!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
+	@${REINPLACE_CMD} \
+		's!-lpthread!${PTHREAD_LIBS}!g' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/cxx_portability.rb
 .endif
 .if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \
