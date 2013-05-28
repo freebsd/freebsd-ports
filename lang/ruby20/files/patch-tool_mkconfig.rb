@@ -1,9 +1,9 @@
---- tool/mkconfig.rb.orig	2013-02-07 07:21:30.000000000 +0000
-+++ tool/mkconfig.rb	2013-02-17 21:42:09.807835598 +0000
-@@ -167,7 +167,8 @@
-   val
+--- tool/mkconfig.rb.orig	2013-05-27 03:20:03.501815638 +0000
++++ tool/mkconfig.rb	2013-05-27 03:20:31.093814303 +0000
+@@ -173,7 +173,8 @@
  end
  vars["prefix"] = ""
+ vars["exec_prefix"] = ""
 -prefix = vars.expand(vars["rubyarchdir"])
 +major, minor, *rest = RUBY_VERSION.split('.')
 +prefix = "/lib/ruby/#{major}.#{minor}/#{arch}"

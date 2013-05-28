@@ -1,9 +1,9 @@
---- configure.in.orig	2013-02-24 14:27:36.217251070 +0000
-+++ configure.in	2013-02-24 14:27:25.267251221 +0000
-@@ -1308,11 +1308,11 @@
-   ac_cv_func_fcntl=no
-   ],
- [	LIBS="-lm $LIBS"])
+--- configure.in.orig	2013-05-27 03:48:52.340695232 +0000
++++ configure.in	2013-05-27 03:49:12.060695078 +0000
+@@ -1380,11 +1380,11 @@
+ AC_CHECK_DECLS([sys_nerr], [], [], [$ac_includes_default
+ @%:@include <errno.h>])
+ 
 -AC_CHECK_LIB(crypt, crypt)
 -AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
 -AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
@@ -17,7 +17,7 @@
  
  AS_CASE(["$target_cpu"],
  [alpha*|sh4|sh4el|sh4eb], [AS_CASE(["$target_os"::"$GCC"],
-@@ -2018,7 +2018,7 @@
+@@ -2074,7 +2074,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,7 +26,7 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -2026,6 +2026,7 @@
+@@ -2082,6 +2082,7 @@
      if test x"$rb_with_pthread" = xyes; then
  	AC_DEFINE(_REENTRANT)
  	AC_DEFINE(_THREAD_SAFE)
@@ -34,7 +34,7 @@
  	AC_DEFINE(HAVE_LIBPTHREAD)
  	AC_CHECK_HEADERS(pthread_np.h, [], [], [@%:@include <pthread.h>])
  	AS_CASE([$pthread_lib],
-@@ -2263,7 +2264,6 @@
+@@ -2319,7 +2320,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -42,7 +42,7 @@
  			else
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			fi
-@@ -2649,6 +2649,7 @@
+@@ -2703,6 +2703,7 @@
      [freebsd*|dragonfly*], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
