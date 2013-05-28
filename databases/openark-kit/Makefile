@@ -1,8 +1,7 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 
 PORTNAME=	openark-kit
-PORTVERSION=	180
+PORTVERSION=	196
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
