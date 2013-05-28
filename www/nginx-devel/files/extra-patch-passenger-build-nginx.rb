@@ -1,34 +1,18 @@
---- ../passenger-3.0.19/build/nginx.rb.orig	2010-12-07 13:57:32.000000000 +0300
-+++ ../passenger-3.0.19/build/nginx.rb	2010-12-07 13:58:13.000000000 +0300
-@@ -23,10 +23,7 @@
- 
- desc "Build Nginx helper agent"
+--- ../passenger-4.0.4/build/nginx.rb.orig	2013-05-28 01:13:38.000000000 +0400
++++ ../passenger-4.0.4/build/nginx.rb	2013-05-28 19:21:20.000000000 +0400
+@@ -24,14 +24,11 @@
+ desc "Build Nginx support files"
  task :nginx => [
--	AGENT_OUTPUT_DIR + 'nginx/PassengerHelperAgent',
+ 	:nginx_without_native_support,
++        LIBBOOST_OXT,
+ 	NATIVE_SUPPORT_TARGET
+ ].compact
+ 
+ task :nginx_without_native_support => [
+-	AGENT_OUTPUT_DIR + 'PassengerHelperAgent',
 -	AGENT_OUTPUT_DIR + 'PassengerWatchdog',
 -	AGENT_OUTPUT_DIR + 'PassengerLoggingAgent',
--	:native_support
-+	AGENT_OUTPUT_DIR + 'nginx/PassengerHelperAgent'
- ]
+-	AGENT_OUTPUT_DIR + 'SpawnPreparer',
+ 	COMMON_LIBRARY.only(*NGINX_LIBS_SELECTOR).link_objects
+ ].flatten
  
- dependencies = [
-@@ -51,18 +48,7 @@
- 	LIBCOMMON,
- ]
- file AGENT_OUTPUT_DIR + 'nginx/PassengerHelperAgent' => dependencies do
--	output_dir = "#{AGENT_OUTPUT_DIR}nginx"
--	sh "mkdir -p #{output_dir}" if !File.directory?(output_dir)
--	create_executable "#{output_dir}/PassengerHelperAgent",
--		'ext/nginx/HelperAgent.cpp',
--		"-Iext -Iext/common " <<
--		"#{PlatformInfo.portability_cflags} " <<
--		"#{EXTRA_CXXFLAGS}  " <<
--		"#{LIBCOMMON} " <<
--		"#{LIBBOOST_OXT} " <<
--		"#{PlatformInfo.portability_ldflags} " <<
--		"#{AGENT_LDFLAGS} " <<
--		"#{EXTRA_LDFLAGS}"
-+	true
- end
- 
- task :clean => 'nginx:clean'
