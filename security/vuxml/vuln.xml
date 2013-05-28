@@ -51,6 +51,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="19751e06-c798-11e2-a373-000c29833058">
+    <topic>znc -- null pointer dereference in webadmin module</topic>
+    <affects>
+      <package>
+	<name>znc</name>
+	<range><lt>1.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>No advisory has been released yet.</p>
+	<blockquote cite="https://github.com/znc/znc/commit/2bd410ee5570cea127233f1133ea22f25174eb28">
+	  <p>Fix NULL pointer dereference in webadmin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/znc/znc/commit/2bd410ee5570cea127233f1133ea22f25174eb28</url>
+    </references>
+    <dates>
+      <discovery>2013-05-27</discovery>
+      <entry>2013-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d87c2e9-c64d-11e2-9c22-50465d9ff992">
     <topic>soccat -- FD leak</topic>
     <affects>
