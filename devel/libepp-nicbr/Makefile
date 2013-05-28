@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libepp-nicbr
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
 
@@ -25,13 +25,13 @@ CONFIGURE_ARGS=	--with-xerces-c=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE}
 MAKE_JOBS_SAFE=	yes
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 DATADIR=	${PREFIX}/share/${PORTNAME:S/-/_/}
 
 PLIST_SUB=	VER="${PORTVERSION}"
+
+.if defined(.PARSEDIR)
+USE_GMAKE=	yes
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -42,5 +42,9 @@ PLIST_SUB+=	READLINE=""
 CONFIGURE_ENV+=	ac_cv_lib_readline_readline=no
 PLIST_SUB+=	READLINE="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|ncurses|curses|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
