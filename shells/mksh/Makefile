@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mksh
-DISTVERSION=	R45
+DISTVERSION=	R46
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
