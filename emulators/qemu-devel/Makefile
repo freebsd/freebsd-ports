@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -30,8 +30,8 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?
 CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP \
-		USBREDIR GNS3 ADD_AUDIO X86_TARGETS BSD_USER \
+OPTIONS_DEFINE=	SAMBA X11 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP \
+		USBREDIR GNS3 X86_TARGETS BSD_USER \
 		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
@@ -43,11 +43,10 @@ PCAP_DESC=		pcap dependency (networking with bpf)
 SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
-ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
-OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP
+OPTIONS_DEFAULT=X11 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP
 
 .include <bsd.port.options.mk>
 
@@ -70,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-bsd-user
 .else
 CONFIGURE_ARGS+=	--enable-nptl
 .if ${ARCH} != "amd64"
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,armeb-bsd-user,mips-bsd-user,mipsel-bsd-user
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,moxie-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,armeb-bsd-user,mips-bsd-user,mipsel-bsd-user
 .endif
 .endif
 .endif
@@ -109,10 +108,15 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--enable-debug-info \
 	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
-.if empty(PORT_OPTIONS:MSDL)
+.if empty(PORT_OPTIONS:MX11)
+CONFIGURE_ARGS+=	--disable-gtk
 CONFIGURE_ARGS+=	--disable-sdl
+PLIST_SUB+=	GTK="@comment "
 .else
 USE_SDL=	sdl
+USE_GNOME+=	gtk20 vte
+USES+=		gettext
+PLIST_SUB+=	GTK=""
 .endif
 
 .if empty(PORT_OPTIONS:MGNUTLS)
@@ -148,8 +152,8 @@ USE_GL=		yes
 .if empty(PORT_OPTIONS:MUSBREDIR)
 CONFIGURE_ARGS+=	--disable-usb-redir
 .else
-BUILD_DEPENDS+=	usbredir>=0.4.3:${PORTSDIR}/net/usbredir
-RUN_DEPENDS+=	usbredir>=0.4.3:${PORTSDIR}/net/usbredir
+BUILD_DEPENDS+=	usbredir>=0.6:${PORTSDIR}/net/usbredir
+RUN_DEPENDS+=	usbredir>=0.6:${PORTSDIR}/net/usbredir
 .endif
 
 .if ${PORT_OPTIONS:MPCAP}
@@ -158,10 +162,6 @@ CONFIGURE_ARGS+=	--enable-pcap
 
 .if ${PORT_OPTIONS:MSTATIC_LINK}
 CONFIGURE_ARGS+=	--static
-.endif
-
-.if ${PORT_OPTIONS:MADD_AUDIO}
-CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus,hda
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}

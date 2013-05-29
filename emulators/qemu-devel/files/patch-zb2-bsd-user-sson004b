@@ -165,7 +165,7 @@ diff --git a/bsd-user/main.c b/bsd-user/main.c
 index b248a91..99b94c1 100644
 --- a/bsd-user/main.c
 +++ b/bsd-user/main.c
-@@ -56,10 +56,15 @@ const char *qemu_uname_release = CONFIG_UNAME_RELEASE;
+@@ -54,10 +54,15 @@ const char *qemu_uname_release = CONFIG_
  extern char **environ;
  enum BSDType bsd_type;
  
@@ -182,7 +182,7 @@ index b248a91..99b94c1 100644
  
  static void save_proc_pathname(void);
  char qemu_proc_pathname[PATH_MAX];
-@@ -126,7 +131,7 @@ static int pending_cpus;
+@@ -124,7 +129,7 @@ static int pending_cpus;
  /* Make sure everything is in a consistent state for calling fork(). */
  void fork_start(void)
  {
@@ -191,7 +191,7 @@ index b248a91..99b94c1 100644
  	pthread_mutex_lock(&exclusive_lock);
  	mmap_fork_start();
  }
-@@ -146,11 +151,11 @@ void fork_end(int child)
+@@ -144,11 +149,11 @@ void fork_end(int child)
  		pthread_mutex_init(&cpu_list_mutex, NULL);
  		pthread_cond_init(&exclusive_cond, NULL);
  		pthread_cond_init(&exclusive_resume, NULL);
@@ -205,7 +205,7 @@ index b248a91..99b94c1 100644
  	}
  }
  
-@@ -1012,10 +1017,7 @@ void cpu_loop(CPUMIPSState *env)
+@@ -1010,10 +1015,7 @@ void cpu_loop(CPUMIPSState *env)
  
  	for(;;) {
  		cpu_exec_start(env);
@@ -216,16 +216,16 @@ index b248a91..99b94c1 100644
  		cpu_exec_end(env);
  		switch(trapnr) {
  		case EXCP_SYSCALL: /* syscall exception */
-@@ -1481,7 +1483,7 @@ static void usage(void)
+@@ -1480,7 +1482,7 @@ static void usage(void)
             ,
             TARGET_ARCH,
             interp_prefix,
--           x86_stack_size,
-+           target_dflssiz,
-            DEBUG_LOGFILE);
+-           x86_stack_size);
++           target_dflssiz);
      exit(1);
  }
-@@ -1603,13 +1605,15 @@ int main(int argc, char **argv)
+ 
+@@ -1601,13 +1603,15 @@ int main(int argc, char **argv)
                  usage();
          } else if (!strcmp(r, "s")) {
              r = argv[optind++];
@@ -245,7 +245,7 @@ index b248a91..99b94c1 100644
          } else if (!strcmp(r, "L")) {
              interp_prefix = argv[optind++];
          } else if (!strcmp(r, "p")) {
-@@ -1797,7 +1801,7 @@ int main(int argc, char **argv)
+@@ -1791,7 +1795,7 @@ int main(int argc, char **argv)
          qemu_log("entry       0x" TARGET_ABI_FMT_lx "\n", info->entry);
      }
  

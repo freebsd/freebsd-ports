@@ -14,6 +14,7 @@ bin/qemu-system-i386
 %%NONX86%%bin/qemu-system-mips64
 %%NONX86%%bin/qemu-system-mips64el
 %%NONX86%%bin/qemu-system-mipsel
+%%NONX86%%bin/qemu-system-moxie
 %%NONX86%%bin/qemu-system-or32
 %%NONX86%%bin/qemu-system-ppc
 %%NONX86%%bin/qemu-system-ppc64
@@ -49,6 +50,13 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/acpi-dsdt.aml
 %%DATADIR%%/q35-acpi-dsdt.aml
 %%DATADIR%%/bios.bin
+%%DATADIR%%/efi-e1000.rom
+%%DATADIR%%/efi-eepro100.rom
+%%DATADIR%%/efi-ne2k_pci.rom
+%%DATADIR%%/efi-pcnet.rom
+%%DATADIR%%/efi-rtl8139.rom
+%%DATADIR%%/efi-virtio.rom
+%%DATADIR%%/s390-ccw.img
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/vgabios-qxl.bin
@@ -112,6 +120,12 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
+%%GTK%%share/locale/de_DE/LC_MESSAGES/qemu.mo
+%%GTK%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
+%%GTK%%share/locale/it/LC_MESSAGES/qemu.mo
+%%GTK%%share/locale/tr/LC_MESSAGES/qemu.mo
 @dirrm %%DATADIR%%/keymaps
+%%GTK%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%GTK%%@dirrmtry share/locale/de_DE
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DOCSDIR%%

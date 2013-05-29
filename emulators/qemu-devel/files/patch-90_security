@@ -1,4 +1,4 @@
-Index: qemu/hw/dma.c
+Index: qemu/hw/dma/i8257.c
 @@ -344,9 +344,11 @@ static void channel_run (int ncont, int 
      }
  #endif
@@ -14,7 +14,7 @@ Index: qemu/hw/dma.c
      ldebug ("dma_pos %d size %d\n", n, (r->base[COUNT] + 1) << ncont);
  }
  
-Index: qemu/hw/fdc.c
+Index: qemu/hw/block/fdc.c
 @@ -1445,7 +1445,8 @@ static uint32_t fdctrl_read_data(FDCtrl 
                                     fd_sector(cur_drv));
                      return 0;
@@ -35,10 +35,7 @@ Index: qemu/hw/fdc.c
                  FLOPPY_DPRINTF("error writing sector %d\n",
                                 fd_sector(cur_drv));
                  return;
-Index: qemu-0.8.2/hw/sb16.c
-===================================================================
---- qemu-0.8.2.orig/hw/sb16.c	2006-07-22 20:23:34.000000000 +0300
-+++ qemu-0.8.2/hw/sb16.c	2007-04-20 06:05:59.000000000 +0300
+Index: qemu-0.8.2/hw/audio/sb16.c
 @@ -1235,8 +1235,10 @@ static int SB_read_DMA (void *opaque, in
              s->block_size);
  #endif
@@ -52,7 +49,7 @@ Index: qemu-0.8.2/hw/sb16.c
      }
  
      return dma_pos;
-Index: qemu/hw/i8259.c
+Index: qemu/hw/intc/i8259.c
 @@ -291,7 +291,8 @@ static void pic_ioport_write(void *opaqu
              s->init4 = val & 1;
              s->single_mode = val & 2;
