@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bochs
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -73,7 +72,7 @@ USB_OHCI_DESC=	Enable USB OHCI support
 USB_XHCI_DESC=	Enable experimental USB xHCI support
 VMX_DESC=	Enable Virtialization extensions
 VOODOO_DESC=	Enable 3dfx Voodoo Graphics emulation
-X86_64_DESC=	Enable AMD x86-64 support
+X86_64_DESC=	Enable x86-64 instructions support
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -408,23 +407,27 @@ CONFIGURE_ARGS+=--enable-cpu-level=${WITH_CPU_LEVEL}
 IGNORE=		GDB_STUB is incompatible with multiprocessor
 .endif
 
-.if empty(PORT_OPTIONS:MGAMEPORT) && ${PORT_OPTIONS:MES1370}
+.if ${PORT_OPTIONS:MES1370} && empty(PORT_OPTIONS:MGAMEPORT)
 IGNORE=		ES1370 soundcard support requires GAMEPORT support
 .endif
 
-.if empty(PORT_OPTIONS:MPCI) && ${PORT_OPTIONS:MES1370}
+.if ${PORT_OPTIONS:MES1370} && empty(PORT_OPTIONS:MPCI)
 IGNORE=		ES1370 soundcard support requires PCI support
 .endif
 
-.if empty(PORT_OPTIONS:MPCI) && ${PORT_OPTIONS:MVOODOO}
+.if ${PORT_OPTIONS:MPNIC} && empty(PORT_OPTIONS:MPCI)
+IGNORE=		PCI pseudo NIC support requires PCI support
+.endif
+
+.if ${PORT_OPTIONS:MVOODOO} && empty(PORT_OPTIONS:MPCI)
 IGNORE=		3dfx Voodoo Graphics emulation requires PCI support
 .endif
 
-.if empty(PORT_OPTIONS:MX86_64) && ${PORT_OPTIONS:MAVX}
+.if ${PORT_OPTIONS:MAVX} && empty(PORT_OPTIONS:MX86_64)
 IGNORE=		AVX instructions support requires X86-64 support
 .endif
 
-.if empty(PORT_OPTIONS:MX86_64) && ${PORT_OPTIONS:MSVM}
+.if ${PORT_OPTIONS:MSVM} && empty(PORT_OPTIONS:MX86_64)
 IGNORE=		SVM emulation requires X86-64 support
 .endif
 
