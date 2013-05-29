@@ -3,4 +3,4 @@ lib(IPFIX) Protocol as a C library, for building IPFIX Collecting and
 libExporting Processes.
 
 
-WWW:	http://tools.netsa.cert.org/fixbuf/
+WWW: http://tools.netsa.cert.org/fixbuf/
