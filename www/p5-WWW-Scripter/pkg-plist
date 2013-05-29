@@ -4,7 +4,6 @@
 %%SITE_PERL%%/WWW/Scripter.pm
 %%SITE_PERL%%/WWW/Scripter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/.packlist
-@dirrmtry %%SITE_PERL%%/WWW/Scripter/_Mechanize
 @dirrmtry %%SITE_PERL%%/WWW/Scripter
 @dirrmtry %%SITE_PERL%%/WWW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter
