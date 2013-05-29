@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
