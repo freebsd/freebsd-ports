@@ -69,7 +69,7 @@ OPTIONS_DEFINE+=	SOCK ODBC RLOOKUPS SLP SLAPI TCP_WRAPPERS
 OPTIONS_DEFINE+=	ACCESSLOG AUDITLOG COLLECT CONSTRAINT DDS
 OPTIONS_DEFINE+=	DEREF DYNGROUP DYNLIST MEMBEROF PPOLICY PROXYCACHE
 OPTIONS_DEFINE+=	REFINT RETCODE RWM SEQMOD SSSVLV SYNCPROV TRANSLUCENT
-OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD DYNAMIC_BACKENDS SASL
+OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS SASL
 
 OPTIONS_DEFAULT=	BDB TCP_WRAPPERS SEQMOD SYNCPROV DYNAMIC_BACKENDS
 
@@ -110,6 +110,7 @@ TRANSLUCENT_DESC=	With Translucent Proxy overlay
 UNIQUE_DESC=		With attribute Uniqueness overlay
 VALSORT_DESC=		With Value Sorting overlay
 SMBPWD_DESC=		With Samba Password hashes overlay
+SHA2_DESC=		With SHA2 Password hashes overlay
 DYNAMIC_BACKENDS_DESC=	Build dynamic backends
 .endif
 
@@ -440,6 +441,12 @@ PLIST_SUB+=		SMBPWD=""
 PLIST_SUB+=		SMBPWD="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MSHA2}
+PLIST_SUB+=		SHA2=""
+.else
+PLIST_SUB+=		SHA2="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MRLOOKUPS}
 CONFIGURE_ARGS+=	--enable-rlookups
 PLIST_SUB+=		RLOOKUPS=""
@@ -510,10 +517,15 @@ test: build
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
-.if ${PORT_OPTIONS:MSMBPWD}
 post-build:
+	@${DO_NADA}
+.if ${PORT_OPTIONS:MSMBPWD}
 	@cd ${BUILD_WRKSRC}/contrib/slapd-modules/smbk5pwd; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} DEFS="-DDO_SAMBA" all
+.endif
+.if ${PORT_OPTIONS:MSHA2}
+	@cd ${BUILD_WRKSRC}/contrib/slapd-modules/passwd/sha2; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
 .endif
 .endif
 
@@ -552,6 +564,13 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/.libs/smbk5pwd.so.0 \
 		${PREFIX}/libexec/openldap/
 	@${LN} -s smbk5pwd.so.0 ${PREFIX}/libexec/openldap/smbk5pwd.so
+.endif
+.if ${PORT_OPTIONS:MSHA2}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/pw-sha2.la \
+		${PREFIX}/libexec/openldap/
+	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/.libs/pw-sha2.so.0 \
+		${PREFIX}/libexec/openldap/
+	@${LN} -s pw-sha2.so.0 ${PREFIX}/libexec/openldap/pw-sha2.so
 .endif
 .endif
 	@${CAT} ${PKGMESSAGE}
