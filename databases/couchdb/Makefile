@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	couchdb/releases/${PORTVERSION}
 DISTNAME=	apache-couchdb-${PORTVERSION}
 
-MAINTAINER=	till@php.net
+MAINTAINER=	adams-ports@ateamsystems.com
 COMMENT=	A document database server, accessible via a RESTful JSON API
 
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
