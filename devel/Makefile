@@ -4106,6 +4106,7 @@
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-mspec
     SUBDIR += rubygem-multi_json
+    SUBDIR += rubygem-murmurhash3
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-ncurses
     SUBDIR += rubygem-needle
