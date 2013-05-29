@@ -15,16 +15,27 @@ LIB_DEPENDS+=	spf2:${PORTSDIR}/mail/libspf2
 
 USE_XZ=		yes
 USE_RC_SUBR=	milter-callback
+USE_GCC=	any
 
 SUB_FILES=	pkg-message
 MAN8=		milter-callback.8
 
-MAKE_ENV+=	WITH_SPF=yes
 MAKE_JOBS_SAFE=	yes
 
-.if ${CC} == "clang" || ${CXX} == "clang++"
-BROKEN=	does not build with clang, uses nested functions
-.endif
+SRC_FILES=	cache.c commonprocs.c cpit.c dealwithmxes.c detectlamespf.c \
+		makedecision.c mcspf.c milter-callback.c pgupdate.c \
+		processdirectpart.c processmxpart.c pushhistory.c sigusr1.c
+
+CFLAGS+=	-DFREEBSD -DHAVE_NS_TYPE -DWITH_SPF -I${LOCALBASE}/include \
+		-I${WRKSRC} -std=gnu99
+LDFLAGS+=	-lmilter -lthr -L${LOCALBASE}/lib -lspf2
+
+do-build:
+.for f in ${SRC_FILES}
+	${CC} ${CFLAGS} -c ${WRKSRC}/${f} -o ${WRKSRC}/${f:C/\.c/.o/}
+.endfor
+	${CC} ${LDFLAGS} ${SRC_FILES:C/(.*)\.c/${WRKSRC}\/\1.o/} \
+		-o ${WRKSRC}/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
