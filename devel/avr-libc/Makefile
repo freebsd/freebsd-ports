@@ -1,19 +1,15 @@
-# New ports collection makefile for:   avr-libc
-# Date created:                04 Dec 2000
-# Whom:			Joerg Wunsch <joerg@freebsd.org>
-#
+# Created by: Joerg Wunsch <joerg@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	A C and math library for the Atmel AVR controller family
+COMMENT=	C and math library for the Atmel AVR controller family
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,18 +21,15 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
-.if !defined(NOPORTDOCS)
-OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" off
-.endif
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_AVRLIBCDOCS) || defined(NOPORTDOCS)
-WITHOUT_AVRLIBCDOCS=	true
-.undef WITH_AVRLIBCDOCS
+.if ! ${PORT_OPTIONS:MDOCS}
+.undef WITHOUT_AVRLIBCDOCS=	true
 .endif
 
-.if defined(WITH_AVRLIBCDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		fig2dev:${PORTSDIR}/print/transfig \
@@ -52,7 +45,7 @@ MAKE_JOBS_SAFE=	yes
 CONFLICTS=	avr-libc-devel-[0-9]*
 
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
-.if defined(WITH_AVRLIBCDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr \
 	--enable-doc --disable-versioned-doc --prefix=${PREFIX} \
 	--mandir=${PREFIX}/share/doc/avr-libc/man
@@ -69,13 +62,13 @@ CFLAGS=		-O
 CXXFLAGS=	-O
 
 post-patch:
-.if defined(WITHOUT_AVRLIBCDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/SUBDIRS/s,examples,,' ${WRKSRC}/doc/Makefile.in
 .endif
 
 do-install:
 		${RM} -f ${TMPPLIST}
-.if defined(WITH_AVRLIBCDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		(cd ${BUILD_WRKSRC}/doc/api/avr-libc-user-manual && \
 		 ${FIND} . -type f \
 		  \( -name '*.html' -or -name '*.css' -or \

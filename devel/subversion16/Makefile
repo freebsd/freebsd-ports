@@ -236,7 +236,7 @@ post-install:	${MKREPOS_TARGET}
 	cd ${WRKSRC}/tools ; \
 	  ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${DATADIR} -xf -
 	@${CHMOD} -R a-st,o+rX ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \

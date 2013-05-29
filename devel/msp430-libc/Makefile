@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msp430-libc
-# Date created:		15 October 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libc
 PORTVERSION=	1.0.${LIBCVERSION}
@@ -29,8 +25,12 @@ RUN_DEPENDS=	${LOCALBASE}/${LIBCTARGET}/include/${LIBCTARGET}.h:${PORTSDIR}/deve
 
 CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}-gcc${OTHERGCCVERSION}-[0-9]*
 
-OPTIONS=	GCC4 "Use new msp430-gcc4 compiler" on \
-		GCC3 "Use old msp430-gcc3 compiler" off
+OPTIONS_SINGLE=	SG1
+OPTIONS_SINGLE_SG1=	GCC4 GCC3
+GCC4_DESC=	Use new msp430-gcc4 compiler
+GCC3_DESC=	Use old msp430-gcc3 compiler
+
+OPTIONS_DEFAULT=	GCC4
 
 LIBCTARGET=	msp430
 LIBCVERSION=	20120224
@@ -46,22 +46,17 @@ PATCH_WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}libc-${LIBCVERSION}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GCC4)
-.if defined(WITH_GCC3)
-BROKEN=	Please, select msp430-gcc-4 or msp430-gcc-3, not both
-.endif
+.if ${PORT_OPTIONS:MGCC4}
 BUILD_DEPENDS+=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc
 PLIST_SUB+=	GCC3="@comment " GCC4=""
 NEEDGCCVERSION=	4
 PORTGCCVERSION=
 OTHEGCCVERSION=	3
-.elif defined(WITH_GCC3)
+.elif ${PORT_OPTIONS:MGCC3}
 PLIST_SUB+=	GCC3="" GCC4="@comment "
 NEEDGCCVERSION=	3
 PORTGCCVERSION=	${NEEDGCCVERSION}
 OTHEGCCVERSION=	4
-.else
-BROKEN=	Please, select msp430-gcc-4 either msp430-gcc-3
 .endif
 
 pre-configure:

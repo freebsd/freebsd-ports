@@ -94,7 +94,7 @@ PLIST_SUB+=	SVNMUCC=""
 PLIST_SUB+=	SVNMUCC="@comment "
 .endif
 
-.if !defined(NOPORTDOCS) && ${PORT_OPTIONS:MBOOK}
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
 BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
 BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf
 DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
