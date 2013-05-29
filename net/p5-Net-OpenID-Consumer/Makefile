@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-OpenID-Consumer
-# Date created:		2007-05-04
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-OpenID-Consumer
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	net security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
