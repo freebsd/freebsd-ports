@@ -748,6 +748,7 @@
     SUBDIR += py-gnutls
     SUBDIR += py-htpasswd
     SUBDIR += py-kerberos
+    SUBDIR += py-keyczar
     SUBDIR += py-keyring
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
