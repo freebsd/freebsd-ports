@@ -1,0 +1,10 @@
+SecretService provides a way to securely storing passwords and other secrets in
+Python.
+
+It uses DBus Secret Service API that is supported by GNOME Keyring (>= 2.30) and
+KWallet (>= 4.8).
+
+It allows to create new passwords, delete and search for passwords matching
+given attributes. It also supports graphical prompts when unlocking is needed.
+
+WWW: http://pypi.python.org/pypi/SecretStorage
