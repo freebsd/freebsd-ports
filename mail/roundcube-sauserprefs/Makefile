@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sauserprefs
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-
