@@ -15,6 +15,7 @@ LIB_DEPENDS=	X11:${PORTSDIR}/x11/libX11 \
 		png15:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
+USE_GCC=	any
 USE_SDL=	sdl image
 MAKE_JOBS_SAFE=	yes
 
