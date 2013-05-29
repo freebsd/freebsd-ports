@@ -38,6 +38,9 @@
 # MAINTAINER=	crees@FreeBSD.org
 #
 
+# Smartmatch operator (~~) used
+require 5.10.1;
+
 use Cwd "abs_path";
 use Getopt::Std;
 use Sys::Hostname;
