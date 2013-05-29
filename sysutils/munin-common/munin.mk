@@ -1,8 +1,10 @@
-MUNIN_VERSION=	2.0.13
+MUNIN_VERSION=	2.0.14
 MUNIN_SITES=	SF/${PORTNAME}/stable/${MUNIN_VERSION}
 MUNIN_DISTINFO=	${PORTSDIR}/sysutils/munin-common/distinfo
 MUNIN_PATCHES=	${PORTSDIR}/sysutils/munin-common/files/patch-Makefile \
 		${PORTSDIR}/sysutils/munin-common/files/patch-Makefile.config
+
+PORTSCOUT=	limit:^2\.0\.
 
 DBDIR?=		/var/${PORTNAME}
 DBDIRNODE?=	/var/${PORTNAME}

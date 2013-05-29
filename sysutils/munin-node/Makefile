@@ -3,7 +3,6 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -15,13 +14,11 @@ BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
 		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
 		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 		bash:${PORTSDIR}/shells/bash
 
@@ -38,6 +35,17 @@ SHEBANG_FILES=	node/sbin/munin-node
 
 ALL_TARGET=	build-node build-plugins
 INSTALL_TARGET=	install-node-prime install-plugins-prime
+
+OPTIONS_DEFINE=	SNMP
+OPTIONS_DEFAULT=	SNMP
+SNMP_DESC=	Include support for SNMP plugins
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSNMP}
+BUILD_DEPENDS+= p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS+= p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+.endif
 
 MAN1=		munin-node-configure.1 \
 		munin-node.1 \
