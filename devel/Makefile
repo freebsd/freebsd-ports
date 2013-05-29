@@ -3997,6 +3997,7 @@
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-benelux
+    SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bson
