@@ -1,61 +1,69 @@
-# New ports collection makefile for: 	larbin
-# Date Created:		26 March 2002
-# Whom:			Hiten Pandya <hiten@uk.FreeBSD.org>
-#
+# Created by: Hiten Pandya <hiten@uk.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	larbin
 PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful HTTP crawler with an easy interface
+COMMENT=	Powerful HTTP crawler with an easy interface
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		makedepend:${PORTSDIR}/devel/makedepend
 
+OPTIONS_DEFINE=	DOCS
+
+USES=		shebangfix
+SHEBANG_FILES=	configure
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	CXX=${CXX}
+MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
+PLIST_FILES=	bin/larbin etc/larbin.conf.sample
+
+.include <bsd.port.options.mk>
+
+pre-everything::
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Make sure you have a look at the larbin documentation available at:"
+	@${ECHO_MSG} "  http://larbin.sourceforge.net/custom-eng.html."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "====================================================================="
 
 post-patch:
-	@${SED} -e 's,CC=,CC?=,' -e 's,CFLAGS=-O3,CFLAGS+=,' < \
-		${WRKSRC}/adns/Makefile > ${WRKSRC}/adns/Makefile.new
-	@${MV} ${WRKSRC}/adns/Makefile.new ${WRKSRC}/adns/Makefile
-	${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,CFLAGS:=-O3,CFLAGS+=,g ; s,CXXFLAGS:=-Wall -O3,CXXFLAGS+=,g' \
-		${WRKSRC}/src/larbin.make
+	@${REINPLACE_CMD} -e \
+		'/CC=/s|echo|${TRUE:T}| ; \
+		 /CXX=/s|echo|${TRUE:T}| ; \
+		 /-lpthread/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|CFLAGS:=-O3|CFLAGS+=| ; \
+		 s|CXXFLAGS:=|CXXFLAGS+=| ; \
+		 s|-O3|| ; \
+		 s|-I-||' ${WRKSRC}/src/larbin.make
+	@${REINPLACE_CMD} -e \
+		'/delete \[\] tab/s|^|//|' ${WRKSRC}/src/utils/histogram.cc
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin/
-	@${INSTALL_DATA} ${WRKSRC}/larbin.conf ${PREFIX}/etc/larbin.conf.sample
-	@${MKDIR} ${PREFIX}/share/larbin
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/larbin/
-
-pre-configure: config-message
-
-config-message:
-	@${ECHO} "====================================================================="
-	@${ECHO} ""
-	@${ECHO} "Make sure you have a look at the larbin documentation available at:"
-	@${ECHO} "  http://larbin.sourceforge.net/custom-eng.html."
-	@${ECHO} ""
-	@${ECHO} "====================================================================="
+	${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/larbin.conf ${PREFIX}/etc/larbin.conf.sample
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
 
 post-install:
-	@${ECHO} "====================================================================="
-	@${ECHO} ""
-	@${ECHO} "You must invoke larbin with the name of the configuration file, e.g:"
-	@${ECHO} "larbin -c config-file"
-	@${ECHO} ""
-	@${ECHO} "Documentation: ${PREFIX}/share/larbin"
-	@${ECHO} "Sample Configuration file: ${PREFIX}/etc/larbin.conf.sample"
-	@${ECHO} ""
-	@${ECHO} "====================================================================="
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You must invoke larbin with the name of the configuration file, e.g:"
+	@${ECHO_MSG} "larbin -c config-file"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Documentation: ${DOCSDIR}"
+	@${ECHO_MSG} "Sample Configuration file: ${PREFIX}/etc/larbin.conf.sample"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "====================================================================="
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
