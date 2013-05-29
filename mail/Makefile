@@ -536,6 +536,7 @@
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-apolicy
+    SUBDIR += py-authres
     SUBDIR += py-cyruslib
     SUBDIR += py-libgmail
     SUBDIR += py-milter
