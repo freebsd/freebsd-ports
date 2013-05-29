@@ -4,7 +4,7 @@
 PORTNAME=	latexmk
 PORTVERSION=	435
 CATEGORIES=	print
-MASTER_SITES=	http://www.phys.psu.edu/~collins/software/latexmk/
+MASTER_SITES=	http://users.phys.psu.edu/~collins/software/latexmk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to completely automate generating output from LaTeX documents
