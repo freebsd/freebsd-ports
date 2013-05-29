@@ -3,7 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
@@ -12,12 +12,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:tigervnc
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	TigerVNC is an advanced VNC implementation
 
-LISENCE=	GPLv2
-LISENCE_FILE=	${WRKSRC}/LICENCE.TXT
-
-.if defined(WITH_NEW_XORG)
-BROKEN=		Does not build
-.endif
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-servers/xorg-server:patch
 BUILD_DEPENDS=  ${LOCALBASE}/include/GL/internal/dri_interface.h:${PORTSDIR}/graphics/dri
@@ -127,7 +123,10 @@ CONFIGURE_ARGS+=	\
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_NEW_XORG
-TIGERVNC_XORG_PATCH_VER=	110
+TIGERVNC_XORG_PATCH_VER=	112
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-unix_hw_vnc.patch \
+		${FILESDIR}/extra-patch-common_rdr.patch \
+		${FILESDIR}/extra-patch-common_rfb.patch
 .else
 TIGERVNC_XORG_PATCH_VER=	17
 .endif
@@ -146,6 +145,7 @@ pre-patch:
 	@${CP} -R `${XORG_WRKDIR}`/ ${WRKSRC}/unix/xserver/
 
 post-patch:
+	@${CP} ${FILESDIR}/xserver*.patch ${WRKSRC}/unix/
 	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver${TIGERVNC_XORG_PATCH_VER}.patch
 
 post-configure:
