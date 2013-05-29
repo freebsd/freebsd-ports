@@ -1,15 +1,12 @@
-# New ports collection makefile for:	dcc
-# Date Created:		6 May 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	dcc
 PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://his.luky.org/ftp/mirrors/irchat-pj/2.5/
+#MASTER_SITES=	http://gouketsu.net/irchat-pj/src/2.5/
+MASTER_SITES=	http://ftp.dti.ad.jp/pub/unix/net/irc/irchat-pj/2.5/
 DISTNAME=	irchat-pj-${PORTVERSION}p
 
 PATCH_SITES=	${MASTER_SITES}
@@ -19,11 +16,15 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DCC support program for irchat-pj
 
+LICENSE=	GPLv2 # (or later)
+
 USE_BZIP2=	yes
-PLIST_FILES=	bin/dcc
 ALL_TARGET=	dcc
-LDFLAGS+=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS} -DUSE_PTHREAD -DENABLE_PTHREAD_ATTR
+
+CFLAGS+=	-DUSE_PTHREAD -DENABLE_PTHREAD_ATTR
+LDFLAGS+=	-pthread
+
+PLIST_FILES=	bin/dcc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dcc ${PREFIX}/bin
