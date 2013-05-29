@@ -37,9 +37,6 @@ init_plugins() {
     if [ -n "$prevver" ]; then
 	echo -n "Initializing new plugins.."
 	${PKG_PREFIX}/sbin/munin-node-configure --shell --newer "${prevver%-*}" | sh -x
-    else
-	echo -n "Initializing plugins.."
-	${PKG_PREFIX}/sbin/munin-node-configure --shell | sh -x
     fi
     echo "done."
 }
@@ -65,7 +62,6 @@ EOT
 }
 
 newsyslog() {
-    if yesno "Would you like me to set up log rotation" y; then
 	if grep -q /var/log/munin/munin-node.log /etc/newsyslog.conf; then
 	    :
 	else
@@ -73,9 +69,6 @@ newsyslog() {
 /var/log/munin/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid
 EOT
 	fi
-    else
-	echo "/var/log/munin-node.log will grow without bounds."
-    fi
 }
 
 
@@ -90,5 +83,5 @@ case $2 in
 		${PKG_PREFIX}/etc/rc.d/munin-node start
 		newsyslog
 	fi
-	;;      
+	;;
 esac

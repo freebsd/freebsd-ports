@@ -17,3 +17,10 @@ present, the client will be started now.  Otherwise, edit
 
     %%PREFIX%%/etc/rc.d/munin-node start
 ********************************************************************
+
+For a list of plugins that will probably work run
+%%PREFIX%%/sbin/munin-node-configure --suggest
+
+If this is a fresh install run
+%%PREFIX%%/sbin/munin-node-configure --shell | sh -x
+to install the plugins automatically

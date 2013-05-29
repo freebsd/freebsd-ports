@@ -1,34 +1,5 @@
 #! /bin/sh
 
-ask() {
-    local question default answer
-
-    question=$1
-    default=$2
-    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-	read -p "${question} [${default}]? " answer
-    fi
-    if [ x${answer} = x ]; then
-	answer=${default}
-    fi
-    echo ${answer}
-}
-
-yesno() {
-    local dflt question answer
-
-    question=$1
-    dflt=$2
-    while :; do
-	answer=$(ask "${question}" "${dflt}")
-	case "${answer}" in
-	[Yy]*)		return 0;;
-	[Nn]*)		return 1;;
-	esac
-	echo "Please answer yes or no."
-    done
-}
-
 stop_process() {
     STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node
 
@@ -51,10 +22,9 @@ newsyslog() {
 	exit 0
     elif [ "$ENTRY" = "$DEFAULT" ]; then
 	delnewsyslog
-    elif yesno "You have changed the default munin-node entry in \"/etc/newsyslog.conf\".
-Do you want me to delete it?" y; then
-	delnewsyslog
-	echo "Done."
+    else
+    echo "You have changed the default munin-node entry in \"/etc/newsyslog.conf\"".
+    echo "If you deinstall munin-node permanently, you have to manually remove it"
     fi
 }
 
