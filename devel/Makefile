@@ -3509,6 +3509,7 @@
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-fs
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-fusefs
