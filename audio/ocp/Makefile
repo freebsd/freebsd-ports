@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
 WANT_GNOME=	desktopfileutils
+USE_GCC=	any
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
