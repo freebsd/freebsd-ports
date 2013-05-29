@@ -3,6 +3,7 @@
 
 PORTNAME=	cgit
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		GOOGLE_CODE:git
@@ -18,7 +19,8 @@ PROJECTHOST=	git-core
 GIT_VERSION=	1.8.2.3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv shebangfix
+SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 CFLAGS+=	-I${LOCALBASE}/include
