@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-PORTVERSION=	6.2.04
+PORTVERSION=	6.2.05
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A general purpose molecular modelling package
+COMMENT=	General purpose molecular modelling package
 
 RESTRICTED=	author requests no distribution except from his FTP site
 
@@ -26,7 +26,6 @@ INSTALL_TARGET=	rename
 MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
-
 
 .include <bsd.port.pre.mk>
 
