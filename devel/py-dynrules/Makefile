@@ -11,7 +11,7 @@ COMMENT=	Dynamic Scripting for adaptive AI systems
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

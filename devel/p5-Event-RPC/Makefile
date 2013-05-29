@@ -27,28 +27,32 @@ MAN3=	Event::RPC.3 \
 	Event::RPC::Message.3 \
 	Event::RPC::Server.3
 
-OPTIONS=	GLIB	"Register dependency to Glib event handler"	off \
-		EVENT	"Register dependency to Event.pm event handler"	on \
-		ANYEVENT	"Register dependency to AnyEvent event handler"	on \
-		SSL	"Register dependency to SSL lib"	on
+OPTIONS_DEFINE=	GLIB EVENT ANYEVENT SSL
+GLIB_DESC=	Dependency to Glib event handler
+EVENT_DESC=	Dependency to Event.pm event handler
+ANYEVENT_DESC=	Dependency to AnyEvent event handler
+SSL_DESC=	Dependency to SSL lib
 
+OPTIONS_DEFAULT=	EVENT ANYEVENT SSL
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
 
-.if !defined(WITHOUT_EVENT)
+.if ${PORT_OPTIONS:MEVENT}
 BUILD_DEPENDS+=	p5-Event>=0:${PORTSDIR}/devel/p5-Event
 .endif
 
-.if defined(WITH_ANYEVENT)
+.if ${PORT_OPTIONS:MANYEVENT}
 BUILD_DEPENDS+=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
 .endif
 
-.if defined(WITH_GLIB)
+.if ${PORT_OPTIONS:MGLIB}
 BUILD_DEPENDS+=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 BUILD_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL

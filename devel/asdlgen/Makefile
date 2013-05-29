@@ -1,9 +1,5 @@
-# New ports collection makefile for: asdlgen
-# Date created:	5 October 2007
-# Whom:         Johannes 5 Joemann <joemann@beefree.free.de>
-#
+# Created by: Johannes 5 Joemann <joemann@beefree.free.de>
 # $FreeBSD$
-#
 
 PORTNAME=	asdlgen
 PORTVERSION=	2.0.b20060323
@@ -16,22 +12,25 @@ MAINTAINER=	joemann@beefree.free.de
 COMMENT=	Interoperable serializers for C,C++,Haskell,Icon,Java,ML
 
 BUILD_DEPENDS=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
-.endif
 
 USE_DOS2UNIX=	src/icon/libasdl.icn
 
-OPTIONS=	CII "Install libcii for use by generated C and C++ code" on \
-		EXAMPLES "Install the simple 'arithexp' usage example" off
+OPTIONS_DEFINE=	CII EXAMPLES
+CII_DESC=	libcii for use by generated C and C++ code
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	CII
 
-.if defined(WITH_CII)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCII}
 RUN_DEPENDS+=	libcii>=1.1:${PORTSDIR}/devel/libcii
 .endif
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 DEMOVERSION=	20071030
 DEMOARCHIVE=	asdlgen-demo.${DEMOVERSION}.tar.gz
 DEMODIR=	arithexp
@@ -57,7 +56,7 @@ pre-patch:
 
 post-build:
 	cd ${WRKSRC}/src/sml && heap2exec asdlGen.*-bsd asdlGen
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for format in ascii html ps
 	@${MKDIR} ${WRKSRC}/doc-build/README
 	cd ${WRKSRC}/doc-build/README && \
@@ -73,12 +72,13 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/src/asdl/tests && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 	${INSTALL_DATA} -p ${WRKSRC}/src/asdl/std-types.asdl ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} -p ${WRKSRC}/COPYRIGHT ${DOCSDIR}
 	cd ${WRKSRC}/doc-build && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
-.if defined(WITH_EXAMPLES)
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKDIR}/${DEMODIR} && ${MAKE} clean
 	cd ${WRKDIR} && ${COPYTREE_SHARE} ${DEMODIR} ${EXAMPLESDIR}
 .endif
@@ -98,7 +98,7 @@ BUILD_DEPENDS+=	libcii>=1.1:${PORTSDIR}/devel/libcii \
 # for all supported languages. The "Test" structure is defined in
 # ${WRKSRC}/src/sml/test/harness.sml .
 test-compile:	depends clean-depends build
-.if defined(WITH_CII)
+.if ${PORT_OPTIONS:MCII}
 	cd ${WRKSRC}/src/sml && export SMLNJ_DEVEL=yes && \
 	${ECHO_CMD} "Test.do_it ();" | sml -m sources.cm
 .else
@@ -110,7 +110,7 @@ test-compile:	depends clean-depends build
 
 .ifmake test-demo
 test-demo:	clean depends clean-depends build
-.if defined(WITH_CII) && defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MCII) && ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKDIR}/${DEMODIR} && ${MAKE} ASDLGEN=${WRKSRC}/src/sml/asdlGen
 .else
 	@${ECHO_CMD} "You have to set the CII and EXAMPLES options"
@@ -120,4 +120,4 @@ test-demo:	clean depends clean-depends build
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
