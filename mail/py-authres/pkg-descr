@@ -1,0 +1,10 @@
+This is python module for RFC 5451 Authentication-Results Headers
+generation and parsing.
+It also supports Authentication Results extensions:
+
+RFC 5617 DKIM/ADSP
+RFC 6008 DKIM signature identification (header.b)
+RFC 6212 Vouch By Reference (VBR)
+draft-kucherawy-dmarc-base-00 DMARC
+
+WWW: https://launchpad.net/authentication-results-python/
