@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	passwd
-DISTVERSION=	5.0.0beta1
+DISTVERSION=	5.0.0RC1
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 
