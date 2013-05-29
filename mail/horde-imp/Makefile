@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	6.0.4
+PORTVERSION=	6.0.5
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
@@ -26,6 +26,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Compress \
 		Horde_Core \
 		Horde_Crypt \
+		Horde_Css_Parser \
 		Horde_Date \
 		Horde_Editor \
 		Horde_Exception \
@@ -44,6 +45,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Perms \
 		Horde_Serialize \
 		Horde_SpellChecker \
+		Horde_Stream_Filter \
 		Horde_Support \
 		Horde_Text_Filter \
 		Horde_Text_Flowed \
