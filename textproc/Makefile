@@ -131,6 +131,7 @@
     SUBDIR += docbook-xml-450
     SUBDIR += docbook-xsd
     SUBDIR += docbook-xsl
+    SUBDIR += docbook-xsl-ns
     SUBDIR += docbook2X
     SUBDIR += docbookide.el
     SUBDIR += docdiff
