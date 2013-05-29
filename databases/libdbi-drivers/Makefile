@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.8.3-1
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers for libdbi
 
 LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
