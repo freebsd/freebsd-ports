@@ -45,9 +45,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tommath.pdf ${DOCSDIR}/
 .endif
 
-regression-test:
-	(cd ${WRKSRC}; \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} -f ${MAKEFILE} mtest test; \
-	 ./mtest/mtest | ./test)
+#regression-test:
+#	(cd ${WRKSRC}; \
+#	 ${SETENV} ${MAKE_ENV} ${GMAKE} -f ${MAKEFILE} mtest test; \
+#	 ./mtest/mtest | ./test)
 
 .include <bsd.port.mk>
