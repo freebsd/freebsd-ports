@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mol2ps
-PORTVERSION=	0.3
+PORTVERSION=	0.3a
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
