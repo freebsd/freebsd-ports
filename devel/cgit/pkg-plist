@@ -13,6 +13,8 @@ lib/cgit/filters/html-converters/rst2html
 lib/cgit/filters/html-converters/txt2html
 lib/cgit/filters/syntax-highlighting.py
 lib/cgit/filters/about-formatting.sh
+@dirrm lib/cgit/html-converters/resources/
+@dirrm lib/cgit/html-converters/
 @dirrm lib/cgit/filters
 @dirrm lib/cgit
 @dirrm %%WWWDIR%%
