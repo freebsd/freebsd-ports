@@ -1,4 +1,5 @@
 bin/chrome
+share/applications/chromium-browser.desktop
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome.pak

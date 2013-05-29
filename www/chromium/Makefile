@@ -42,16 +42,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USES=		bison pkgconfig
+USES=		bison pkgconfig desktop-file-utils
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.6+
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 MAN1=		chrome.1
-
-DESKTOP_ENTRIES="Chromium" "Web browser" "${DATADIR}/product_logo_48.png" \
-		"chrome %U" "Network;WebBrowser;GTK;" true
 
 ALL_TARGET=	chrome
 
@@ -77,6 +74,10 @@ GYP_DEFINES+=	use_cups=1 \
 		os_ver=${OSVERSION} \
 		prefix_dir=${LOCALBASE} \
 		python_ver=${PYTHON_VER}
+
+SUB_FILES=	chromium-browser.desktop
+SUB_LIST=	COMMENT="${COMMENT}" \
+		DATADIR=${DATADIR}
 
 OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO CLANG DEBUG
 
@@ -196,6 +197,7 @@ do-install:
 .endfor
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop ${DESKTOPDIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
 
 post-install:
