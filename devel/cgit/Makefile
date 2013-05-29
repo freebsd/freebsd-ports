@@ -2,30 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
-		http://mirror.linux.org.au/software/scm/git/:git
+		GOOGLE_CODE:git
 DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
-		git-${GIT_VERSION}.tar.bz2:git
+		git-${GIT_VERSION}.tar.gz:git
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A fast webinterface for git
 
 LICENSE=	GPLv2
 
-GIT_VERSION=	1.7.4.4
+PROJECTHOST=	git-core
+GIT_VERSION=	1.8.2.3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		iconv
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	CGIT_SCRIPT_PATH=${WWWDIR} \
-		CGIT_CONFIG=${PREFIX}/etc/cgitrc \
-		NEEDS_LIBICONV=yes
+MAKE_ARGS+=	CGIT_SCRIPT_PATH=${WWWDIR} \
+		CGIT_CONFIG=${PREFIX}/etc/cgitrc
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
