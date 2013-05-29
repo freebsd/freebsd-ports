@@ -48,6 +48,6 @@ pre-patch: fix-shebang
 
 fix-shebang:
 	@cd ${WRKSRC}; \
-		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${REINPLACE_CMD} ${_SHEBANG_REINPLACE_ARGS}
+		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
 
 .endif
