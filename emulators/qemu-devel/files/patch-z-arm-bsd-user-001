@@ -314,14 +314,6 @@
  #ifdef __FreeBSD__
  /*
   * XXX this uses the undocumented oidfmt interface to find the kind of
-@@ -215,6 +225,7 @@ static int sysctl_oldcvt(void *holdp, si
-     case CTLTYPE_QUAD:
- #else
-     case CTLTYPE_U64:
-+    case CTLTYPE_S64:
- #endif
-         *(uint64_t *)holdp = tswap64(*(uint64_t *)holdp);
-         break;
 @@ -380,6 +391,9 @@ abi_long do_freebsd_syscall(void *cpu_en
                                      arg5,
                                      arg6));

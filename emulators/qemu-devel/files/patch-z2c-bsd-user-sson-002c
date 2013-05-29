@@ -107,17 +107,17 @@ index 146f022..7a99537 100644
 --- a/bsd-user/main.c
 +++ b/bsd-user/main.c
 @@ -34,6 +34,10 @@
- #include "qemu-timer.h"
- #include "envlist.h"
+ #include "qemu/timer.h"
+ #include "qemu/envlist.h"
  
 +#if defined(CONFIG_USE_NPTL) && defined(__FreeBSD__)
 +#include <sys/thr.h>
 +#endif
 +
- #define DEBUG_LOGFILE "/tmp/qemu.log"
- 
  int singlestep;
-@@ -70,42 +74,186 @@ int cpu_get_pic_interrupt(CPUX86State *env)
+ #if defined(CONFIG_USE_GUEST_BASE)
+ unsigned long mmap_min_addr;
+@@ -68,41 +72,185 @@ int cpu_get_pic_interrupt(CPUX86State *e
  }
  #endif
  
@@ -187,7 +187,7 @@ index 146f022..7a99537 100644
 +/* Start an exclusive operation.  Must only be called outside of cpu_exec. */
 +static inline void
 +start_exclusive(void)
- {
++{
 +	CPUArchState *other;
 +
 +	pthread_mutex_lock(&exclusive_lock);
@@ -204,19 +204,17 @@ index 146f022..7a99537 100644
 +	if (pending_cpus > 1) {
 +		pthread_cond_wait(&exclusive_cond, &exclusive_lock);
 +	}
- }
- 
--void fork_start(void)
++}
++
 +/* Finish an exclusive operation. */
 +static inline void
 +end_exclusive(void)
- {
++{
 +	pending_cpus = 0;
 +	pthread_cond_broadcast(&exclusive_resume);
 +	pthread_mutex_unlock(&exclusive_lock);
- }
- 
--void fork_end(int child)
++}
++
 +/* Wait for exclusive ops to finish, and begin cpu execution. */
 +static inline void
 +cpu_exec_start(CPUArchState *env)
@@ -245,16 +243,18 @@ index 146f022..7a99537 100644
 +
 +void
 +cpu_list_lock(void)
-+{
+ {
 +	pthread_mutex_lock(&cpu_list_mutex);
-+}
-+
+ }
+ 
+-void fork_start(void)
 +void
 +cpu_list_unlock(void)
-+{
+ {
 +	pthread_mutex_unlock(&cpu_list_mutex);
-+}
-+
+ }
+ 
+-void fork_end(int child)
 +#else /* ! CONFIG_USE_NPTL */
 +
 +/* These are no-ops because we are not threadsafe.  */
@@ -279,20 +279,20 @@ index 146f022..7a99537 100644
 +
 +static inline void
 +start_exclusive(void)
++{
++}
++
++static inline void
++end_exclusive(void)
++{
++}
++
++static inline void
++cpu_exec_start(CPUArchState *env)
  {
  }
  
 -void cpu_list_unlock(void)
-+static inline void
-+end_exclusive(void)
- {
- }
- 
-+static inline void
-+cpu_exec_start(CPUArchState *env)
-+{
-+}
-+
 +
 +static inline void
 +cpu_exec_end(CPUArchState *env)
@@ -306,14 +306,13 @@ index 146f022..7a99537 100644
 +
 +void
 +cpu_list_unlock(void)
-+{
-+}
+ {
+ }
 +#endif /* CONFIG_USE_NPTL */
-+
+ 
  #ifdef TARGET_I386
  /***********************************************************/
- /* CPUX86 core interface */
-@@ -740,7 +888,10 @@ void cpu_loop(CPUMIPSState *env)
+@@ -738,7 +886,10 @@ void cpu_loop(CPUMIPSState *env)
  
  	for(;;) {
  		cpu_exec_start(env);
@@ -324,7 +323,7 @@ index 146f022..7a99537 100644
  		cpu_exec_end(env);
  		switch(trapnr) {
  		case EXCP_SYSCALL: /* syscall exception */
-@@ -1206,6 +1357,18 @@ static void usage(void)
+@@ -1204,6 +1355,18 @@ static void usage(void)
  
  THREAD CPUArchState *thread_env;
  
