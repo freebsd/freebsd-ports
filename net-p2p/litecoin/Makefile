@@ -12,7 +12,7 @@ LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litecoin-project
-GH_COMMIT=	af9b6da
+GH_COMMIT=	8ad55e4
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_OPENSSL=	yes
