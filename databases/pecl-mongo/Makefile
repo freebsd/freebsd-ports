@@ -17,7 +17,7 @@ USE_PHP=	yes
 USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-
+CONFIGURE_ARGS=	--enable-mongo=${LOCALBASE}
 SUB_FILES=	pkg-message
 
 post-install:
