@@ -45,8 +45,6 @@ LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 
 .if ${LINUX_OSRELEASE}x == "x"
 IGNORE=			linuxulator is not (kld)loaded
-.elif ${LINUX_OSRELEASE} == "2.4.2"
-IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
 .endif
 
 .if (${GENTOO_OPTIMIZED} == "i686")

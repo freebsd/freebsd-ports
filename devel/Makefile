@@ -1135,7 +1135,6 @@
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
-    SUBDIR += linux-allegro
     SUBDIR += linux-f10-allegro
     SUBDIR += linux-f10-dbus-glib
     SUBDIR += linux-f10-dbus-libs
@@ -1147,10 +1146,6 @@
     SUBDIR += linux-f10-sdl12
     SUBDIR += linux-js
     SUBDIR += linux-kmod-compat
-    SUBDIR += linux-libglade
-    SUBDIR += linux-libglade2
-    SUBDIR += linux-libsigc++20
-    SUBDIR += linux-sdl12
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
     SUBDIR += lion

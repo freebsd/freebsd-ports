@@ -295,7 +295,6 @@
     SUBDIR += linux-f10-libtasn1
     SUBDIR += linux-f10-nss
     SUBDIR += linux-f10-openssl
-    SUBDIR += linux-openssl
     SUBDIR += linux-pam-docs
     SUBDIR += lockdown
     SUBDIR += log2timeline

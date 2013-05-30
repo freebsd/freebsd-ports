@@ -46,7 +46,6 @@
     SUBDIR += kftpgrabber
     SUBDIR += kpum
     SUBDIR += lftp
-    SUBDIR += linux-curl
     SUBDIR += linux-f10-curl
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
