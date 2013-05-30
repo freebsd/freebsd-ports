@@ -40,13 +40,13 @@ getport_recursive()
 	# "This function is recursive"
 	echo -n "==> Fetching $1 ..."
 	[ -d $tmpdir/${1%/*} ] || \
-	    $svn -q up --depth files "$tmpdir/${1%/*}@$rev" || \
+	    $svn -q up --depth files -r $rev "$tmpdir/${1%/*}" || \
 	    	err "Something went wrong with fetching category for $1.  Ensure you have the correct revision!"
-	$svn -q up "$tmpdir/$1@$rev" || \
+	$svn -q up -r $rev "$tmpdir/$1" || \
 		err "Something went wrong with fetching port files for $1."
 	echo " [DONE]"
 	echo "$1" >> $tmpdir/portdowngrade.originlist
-	deps=$(make PORTSDIR=$(pwd)/$tmpdir -C $tmpdir/$1 -V_DEPEND_DIRS:N\*/pkg:S,${PORTSDIR}/,,)
+	deps=$(make PORTSDIR=$PWD/$tmpdir -C $tmpdir/$1 '-V_DEPEND_DIRS:N*/pkg:C,.*/([^/]*/[^/]*)$,\1,')
 	if [ -n "$deps" ]; then
 		for port in $deps; do
 			if [ ! -d $tmpdir/$port ]; then
