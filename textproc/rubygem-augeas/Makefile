@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-augeas
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	http://augeas.net/download/ruby/
+MASTER_SITES=	http://download.augeas.net/ruby/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for Augeas
