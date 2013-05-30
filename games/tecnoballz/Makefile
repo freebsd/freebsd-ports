@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TecnoballZ
-# Date created:				19 Jan 2005
-# Whom:					Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	tecnoballz
 PORTVERSION=	0.92
