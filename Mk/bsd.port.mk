@@ -461,7 +461,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_LINUX		- Set to yes to say the port needs the default linux base port.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
-#				  If set to "7", a dependency is registered to emulators/linux_base.
 #				  Implies appropriate settings for STRIP and STRIP_CMD.
 # USE_LINUX_PREFIX
 #				- controls the action of PREFIX (see above). Only use this
@@ -479,7 +478,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # LINUX_OSRELEASE	- Contains the value of compat.linux.osrelease sysctl.
 #				  Will be used to distinguish which linux
 #				  infrastructure ports should be used.
-#				  Valid values: 2.4.2, 2.6.16.
+#				  Valid values: 2.6.16.
 # AUTOMATIC_PLIST
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
@@ -1865,11 +1864,7 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
 .	else
 .		if ${USE_LINUX:L} == "yes"
-.			if ${OSVERSION} < 800076 || ${LINUX_OSRELEASE} == "2.4.2"
-LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-fc4
-.			else
 LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-f10
-.			endif
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
@@ -1936,7 +1931,7 @@ _GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
 _GL_glu_USE_XORG=		glproto dri2proto
 _GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
 _GL_glut_LIB_DEPENDS=		glut.12:${PORTSDIR}/graphics/freeglut
-_GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+_GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux-dri74
 
 .if defined(USE_GL)
 . if ${USE_GL:L} == "yes"
