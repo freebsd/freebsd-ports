@@ -2,72 +2,57 @@
 #
 # $FreeBSD$
 #
-# PROVIDE: %%PORTNAME%%
+# PROVIDE: inspircd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
+# Add the following lines to /etc/rc.conf to enable inspircd:
 #
-# %%PORTNAME%%_enable="YES"
+# inspircd_enable="YES"
 #
 # Other rc.conf variables:
-# %%PORTNAME%%_flags="<set as needed>"
+# inspircd_flags="<set as needed>"
 #
-# %%PORTNAME%%_config="%%ETCDIR%%/%%PORTNAME%%.conf"
+# inspircd_config="%%ETCDIR%%/inspircd.conf"
 #                          -- path to config file
-# %%PORTNAME%%_pidfile="%%INSPIRCD_RUN%%/%%PORTNAME%%.pid"
+# inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"
 #                          -- location of pidfile: must match setting
-#                             in ${%%PORTNAME%%_conffile}
-# %%PORTNAME%%_logfile="%%INSPIRCD_LOG%%"
-#                          -- file %%PORTNAME%% writes logs to
+#                             in ${inspircd_conffile}
+# inspircd_logfile="%%INSPIRCD_LOG%%"
+#                          -- file inspircd writes logs to
 #
 . /etc/rc.subr
 
-name=%%PORTNAME%%
-rcvar=%%PORTNAME%%_enable
+name=inspircd
+rcvar=inspircd_enable
 
 load_rc_config ${name}
 
-: ${%%PORTNAME%%_enable="NO"}
-: ${%%PORTNAME%%_config="%%ETCDIR%%/%%PORTNAME%%.conf"}
-: ${%%PORTNAME%%_pidfile="%%INSPIRCD_RUN%%/%%PORTNAME%%.pid"}
-: ${%%PORTNAME%%_user=ircd}
-: ${%%PORTNAME%%_group=ircd}
-: ${%%PORTNAME%%_logfile="%%INSPIRCD_LOG%%"}
+: ${inspircd_enable:=NO}
+: ${inspircd_config="%%ETCDIR%%/inspircd.conf"}
+: ${inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"}
+: ${inspircd_user="%%USERS%%"}
+: ${inspircd_group="%%GROUPS%%"}
+: ${inspircd_logfile="%%INSPIRCD_LOG%%"}
+: ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
 
-command=%%PREFIX%%/bin/%%PORTNAME%%
-pidfile=${%%PORTNAME%%_pidfile}
-required_files=${%%PORTNAME%%_config}
-start_precmd=%%PORTNAME%%_prestart
+command=%%PREFIX%%/bin/inspircd
+pidfile=${inspircd_pidfile}
+required_files=${inspircd_config}
+start_precmd=inspircd_prestart
 
-%%PORTNAME%%_prestart ()
+inspircd_prestart()
 {
-    piddir=$(dirname ${%%PORTNAME%%_pidfile})
-    if [ ! -d ${piddir} ]; then
-        mkdir -m 755 -p ${piddir}
-        chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${piddir}
-    fi
-    logdir=$(dirname ${%%PORTNAME%%_logfile})
-    if [ ! -d ${logdir} ]; then
-        mkdir -m 755 -p ${logdir}
-        chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${logdir}
-    fi
+	piddir=$(dirname ${inspircd_pidfile})
+	if [ ! -d ${piddir} ]; then
+		install -m 755 -o ${inspircd_user} -g ${inspircd_group} ${piddir}
+	fi
+	logdir=$(dirname ${inspircd_logfile})
+	if [ ! -d ${logdir} ]; then
+		install -m 755 -o ${inspircd_user} -g ${inspircd_group} ${logdir}
+	fi
 }
-
-case "${%%PORTNAME%%_flags}" in
-    *--config\ *)
-    echo "Warning \$%%PORTNAME%%_flags includes --config option." \
-        "Please use \$%%PORTNAME%%_config instead."
-    ;;
-    *--logfile\ *)
-    echo "Warning \$%%PORTNAME%%_flags includes --logfile option." \
-         "Please use \$%%PORTNAME%%_logfile instead."
-    ;;
-    *)
-    %%PORTNAME%%_flags="${%%PORTNAME%%_flags} --logfile ${%%PORTNAME%%_logfile} --config ${%%PORTNAME%%_config}"
-    ;;
-esac
 
 run_rc_command "$1"

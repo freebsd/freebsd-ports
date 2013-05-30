@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130530:
+  AFFECTS: users of irc/inspircd
+  AUTHOR: swills@FreeBSD.org
+
+  The irc/inspircd port has been updated to 2.0.12. Some of the config option
+  names in the rc script have been changed. Check the script for more detail.
+
 20130527:
   AFFECTS: users of lang/ruby18
   AUTHOR: swills@FreeBSD.org

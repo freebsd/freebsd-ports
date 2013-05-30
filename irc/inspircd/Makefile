@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.0.12
 CATEGORIES=	irc
 
 MAINTAINER=	feld@feld.me
@@ -18,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	inspircd
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	d1cc59f
+GH_COMMIT=	9b96fee
 
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	BSDmakefile
@@ -31,7 +30,9 @@ INSPIRCD_RUN?=	/var/run/${PORTNAME}
 INSPIRCD_LOG?=	/var/log/${PORTNAME}/ircd.log
 SUB_LIST+=	PORTNAME=${PORTNAME} \
 		INSPIRCD_LOG=${INSPIRCD_LOG} \
-		INSPIRCD_RUN=${INSPIRCD_RUN}
+		INSPIRCD_RUN=${INSPIRCD_RUN} \
+		USERS=${USERS} \
+		GROUPS=${GROUPS}
 
 # Configure script is written in perl
 USE_PERL5_BUILD=yes
@@ -143,13 +144,5 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/${PORTNAME}/modules/*.so
 	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
-.for FILE in inspircd.censor inspircd.conf inspircd.filter inspircd.helpop-full \
-	inspircd.helpop inspircd.motd inspircd.quotes inspircd.rules links.conf modules.conf opers.conf
-	@if ${TEST} -f ${ETCDIR}/${FILE} && \
-		${TEST} ! -f ${ETCDIR}/examples/${FILE}.example ; then \
-			${CP} -p ${ETCDIR}/examples/${FILE}.example \
-			${ETCDIR}/${FILE}; \
-	fi
-.endfor
 
 .include <bsd.port.mk>
