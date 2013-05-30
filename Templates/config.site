@@ -73,7 +73,7 @@ ac_cv_header_argz_h=${ac_cv_header_argz_h=no}
 gl_cv_have_raw_decl_memmem=${gl_cv_have_raw_decl_memmem=yes}
 gl_cv_have_raw_decl_memcpy=${gl_cv_have_raw_decl_memcpy=no}
 gl_cv_have_raw_decl_memrchr=${gl_cv_have_raw_decl_memrchr=yes}
-gl_cv_have_raw_decl_rawmemchr=${gl_cv_have_raw_decl_rawmemrchr=yes}
+gl_cv_have_raw_decl_rawmemchr=${gl_cv_have_raw_decl_rawmemchr=yes}
 gl_cv_have_raw_decl_stpcpy=${gl_cv_have_raw_decl_stpcpy=yes}
 gl_cv_have_raw_decl_stpncpy=${gl_cv_have_raw_decl_stpncpy=yes}
 # This appears in FreeBSD 10 do not cache it.
@@ -148,7 +148,7 @@ gl_cv_sys_struct_timeval=${gl_cv_sys_struct_timeval=yes}
 # Functions
 ac_cv_func_shmget=${ac_cv_func_shmget=yes}
 ac_cv_func_mmap=${ac_cv_func_mmap=yes}
-ac_cv_func_getpagesize=${ac_cv_getpagesize=yes}
+ac_cv_func_getpagesize=${ac_cv_func_getpagesize=yes}
 ac_cv_func_munmap=${ac_cv_func_munmap=yes}
 ac_cv_func_mlock=${ac_cv_func_mlock=yes}
 ac_cv_func_munlock=${ac_cv_func_munlock=yes}
