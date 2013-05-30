@@ -14,5 +14,6 @@ bin/repoutil
 %%PORTDOCS%%%%DOCSDIR%%/reposado_operation.txt
 %%PORTDOCS%%%%DOCSDIR%%/reposado_preferences.txt
 %%PORTDOCS%%%%DOCSDIR%%/reposado_py2exe.txt
+%%PORTDOCS%%%%DOCSDIR%%/URL_rewrites.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
