@@ -1,0 +1,11 @@
+Generates SQL from Perl datastructures. This is a subclass of SQL::Abstract,
+fully compatible with the parent class, but it handles a few additional SQL
+constructs, and provides a different API with named parameters instead of
+positional parameters, so that various SQL fragments are more easily
+identified.
+
+This module was designed for the specific needs of DBIx::DataModel, but is
+published as a standalone distribution, because it may possibly be useful for
+other needs.
+
+WWW: http://search.cpan.org/dist/SQL-Abstract-More/
