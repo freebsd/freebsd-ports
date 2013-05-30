@@ -263,7 +263,7 @@ do-package: ${TMPPLIST}
 		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
 	@if ${PKG_CREATE} -o ${PKGREPOSITORY} ${PKGNAME}; then \
-		if [ "${PKGORIGIN}" = "ports-mgmt/pkg" ]; then \
+		if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
 			if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
 				if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
 					${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \

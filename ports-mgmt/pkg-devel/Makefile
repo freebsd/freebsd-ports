@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.0.12
-PORTREVISION=	1
+DISTVERSION=	1.1.0.b1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	LOCAL/portmgr \
-		http://files.etoilebsd.net/pkg/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/
+MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		LOCAL/portmgr
 
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	New generation package manager
@@ -31,16 +30,19 @@ USE_SUBMAKE=	yes
 
 MAN8=	pkg.8 \
 	pkg-add.8 \
+	pkg-annotate.8 \
 	pkg-autoremove.8 \
 	pkg-audit.8 \
 	pkg-backup.8 \
 	pkg-check.8 \
 	pkg-clean.8 \
+	pkg-convert.8 \
 	pkg-create.8 \
 	pkg-delete.8 \
 	pkg-fetch.8 \
 	pkg-info.8 \
 	pkg-install.8 \
+	pkg-lock.8 \
 	pkg-query.8 \
 	pkg-register.8 \
 	pkg-repo.8 \
@@ -56,14 +58,16 @@ MAN8=	pkg.8 \
 	pkg-version.8 \
 	pkg-which.8
 MAN5=	pkg.conf.5
+MAN3=	pkg_printf.3
 MLINKS=	pkg-delete.8 pkg-remove.8 \
+	pkg-lock.8 pkg-unlock.8 \
 	pkg.8 pkg-static.8
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PKGNG)
-.if ${WITH_PKGNG} == devel
-IGNORE=	WITH_PKGNG is defined to 'devel', this version is the stable one
+.if ${WITH_PKGNG} != devel
+IGNORE=	WITH_PKGNG is not defined to 'devel', this version is the devel one
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l

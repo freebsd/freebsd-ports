@@ -32,6 +32,7 @@
     SUBDIR += pchecker
     SUBDIR += pib
     SUBDIR += pkg
+    SUBDIR += pkg-devel
     SUBDIR += pkg-orphan
     SUBDIR += pkg-plist
     SUBDIR += pkg-rmleaf
