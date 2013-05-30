@@ -38,7 +38,15 @@ required_dirs=${sabnzbd_conf_dir}
 start_cmd="${name}_start"
 status_cmd="${name}_status"
 stop_cmd="${name}_stop"
-start_precmd=sabnzbd_check_dir
+start_precmd="${name}_prestart"
+
+sabnzbd_prestart()
+{
+	PATH=${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin
+	if [ ! -f "${required_dirs}" -a ! -d "${required_dirs}" -a ! -L "${required_dirs}" ]; then
+		install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${required_dirs}
+	fi
+}
 
 sabnzbd_start()
 {
@@ -81,19 +89,12 @@ sabnzbd_stop()
 
 sabnzbd_status()
 {
-    sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
-    if [ -n "${sabnzbd_pid}" ]; then
-        echo "$name is running as ${sabnzbd_pid}"
-    else
-       echo "$name is not running"
-    fi
-}
-
-sabnzbd_check_dir()
-{
-    if [ ! -f "${required_dirs}" -a ! -d "${required_dirs}" -a ! -L "${required_dirs}" ]; then
-        install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${required_dirs}
-    fi
+	sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
+	if [ -n "${sabnzbd_pid}" ]; then
+		echo "$name is running as ${sabnzbd_pid}"
+	else
+		echo "$name is not running"
+	fi
 }
 
 run_rc_command "$1"
