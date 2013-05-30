@@ -1,0 +1,5 @@
+This CPython extension provides Python bindings for cracklib.
+It contains a pythonic interface to cracklib's functions and
+some Python convenience functions.
+
+WWW: https://pypi.python.org/pypi/cracklib
