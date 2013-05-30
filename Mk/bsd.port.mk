@@ -1205,7 +1205,7 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 
 .if ${OSVERSION} >= 1000017
 .if !defined(WITHOUT_PKGNG)
-WITH_PKGNG=	yes
+WITH_PKGNG?=	yes
 .else
 .undef	WITH_PKGNG
 .endif
@@ -1650,10 +1650,14 @@ LIB32DIR=	lib
 .endif
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
+PKGNG_ORIGIN?=	ports-mgmt/pkg
 .if defined(WITH_PKGNG)
+.if ${WITH_PKGNG} == devel
+PKGNG_ORIGIN=		ports-mgmt/pkg-devel
+.endif
 .if !defined(PKG_DEPENDS)
 .if !defined(CLEAN_FETCH_ENV)
-PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
+PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKGNG_ORIGIN}
 .endif
 .endif
 .endif
