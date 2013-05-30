@@ -14,6 +14,5 @@ bin/net-bittorrent.pl
 %%SITE_PERL%%/Net/BitTorrent/Version.pm
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Torrent
-@dirrmtry %%SITE_PERL%%/Net/BitTorrent/DHT
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent
 @dirrmtry %%SITE_PERL%%/Net
