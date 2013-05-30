@@ -144,7 +144,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
 .if empty(PORT_OPTIONS:MOPENGL)
-CONFIGURE_ARGS+=	--disable-opengl
+CONFIGURE_ARGS+=	--disable-glx
 .else
 USE_GL=		yes
 .endif
