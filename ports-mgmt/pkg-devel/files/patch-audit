@@ -1,0 +1,48 @@
+diff --git libpkg/fetch.c libpkg/fetch.c
+index 88979da..5dd3a94 100644
+--- libpkg/fetch.c
++++ libpkg/fetch.c
+@@ -250,7 +250,7 @@ pkg_fetch_file_to_fd(struct pkg_repo *repo, const char *url, int dest, time_t *t
+ 	doc = u->doc;
+ 	while (remote == NULL) {
+ 		if (retry == max_retry) {
+-			if (repo->mirror_type == SRV &&
++			if (repo != NULL && repo->mirror_type == SRV &&
+ 			    (strncmp(u->scheme, "http", 4) == 0
+ 			     || strcmp(u->scheme, "ftp") == 0)) {
+ 				snprintf(zone, sizeof(zone),
+@@ -258,7 +258,7 @@ pkg_fetch_file_to_fd(struct pkg_repo *repo, const char *url, int dest, time_t *t
+ 				if (repo->srv == NULL)
+ 					repo->srv = dns_getsrvinfo(zone);
+ 				srv_current = repo->srv;
+-			} else if (repo->mirror_type == HTTP &&
++			} else if (repo != NULL && repo->mirror_type == HTTP &&
+ 			           strncmp(u->scheme, "http", 4) == 0) {
+ 				snprintf(zone, sizeof(zone),
+ 				    "%s://%s", u->scheme, u->host);
+@@ -268,9 +268,9 @@ pkg_fetch_file_to_fd(struct pkg_repo *repo, const char *url, int dest, time_t *t
+ 			}
+ 		}
+ 
+-		if (repo->mirror_type == SRV && repo->srv != NULL)
++		if (repo != NULL && repo->mirror_type == SRV && repo->srv != NULL)
+ 			strlcpy(u->host, srv_current->host, sizeof(u->host));
+-		else if (repo->mirror_type == HTTP && repo->http != NULL) {
++		else if (repo != NULL && repo->mirror_type == HTTP && repo->http != NULL) {
+ 			strlcpy(u->scheme, http_current->url->scheme, sizeof(u->scheme));
+ 			strlcpy(u->host, http_current->url->host, sizeof(u->host));
+ 			snprintf(docpath, MAXPATHLEN, "%s%s", http_current->url->doc, doc);
+@@ -291,11 +291,11 @@ pkg_fetch_file_to_fd(struct pkg_repo *repo, const char *url, int dest, time_t *t
+ 				retcode = EPKG_FATAL;
+ 				goto cleanup;
+ 			}
+-			if (repo->mirror_type == SRV && repo->srv != NULL) {
++			if (repo != NULL && repo->mirror_type == SRV && repo->srv != NULL) {
+ 				srv_current = srv_current->next;
+ 				if (srv_current == NULL)
+ 					srv_current = repo->srv;
+-			} else if (repo->mirror_type == HTTP && repo->http != NULL) {
++			} else if (repo != NULL && repo->mirror_type == HTTP && repo->http != NULL) {
+ 				http_current = repo->http->next;
+ 				if (http_current == NULL)
+ 					http_current = repo->http;
