@@ -1,10 +1,5 @@
-# New ports collection Makefile for:	mod_xmlns
-#
-# Date created:		10/01/2007
-# Whom:			Dominic Marks <dom@goodforbusiness.co.uk>
-#
+# Created by: Dominic Marks <dom@goodforbusiness.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_xmlns
 PORTVERSION=	0.97
@@ -25,13 +20,10 @@ USE_APACHE=	22+
 XML2_INC=	${LOCALBASE}/include/libxml2
 XML2_LIB=	${LOCALBASE}/lib
 
-do-extract:
-	@${DO_NADA}
-
-pre-fetch:
+pre-extract:
 	@${MKDIR} ${WRKDIR}
 
-post-fetch:
+do-extract:
 	@${CP} ${DISTDIR}/xmlns.h ${DISTDIR}/mod_xmlns.c ${WRKDIR}
 
 do-build:

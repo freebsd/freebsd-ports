@@ -1,10 +1,5 @@
-# New ports collection Makefile for:	mod_proxy_xml
-#
-# Date created:		10/01/2007
-# Whom:			Dominic Marks <dom@goodforbusiness.co.uk>
-#
+# Created by: Dominic Marks <dom@goodforbusiness.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_proxy_xml
 PORTVERSION=	0.1
@@ -29,13 +24,10 @@ AP_GENPLIST=	yes
 AP_INC=	${LOCALBASE}/include/libxml2
 AP_LIB=	${LOCALBASE}/lib -lxml2
 
-pre-fetch:
-	@${MKDIR} ${WRKDIR}/
-
-post-fetch:
-	@${CP} ${DISTDIR}/xmlns.h ${DISTDIR}/mod_proxy_xml.c ${WRKDIR}/
+pre-extract:
+	@${MKDIR} ${WRKDIR}
 
 do-extract:
-	@${DO_NADA}
+	@${CP} ${DISTDIR}/xmlns.h ${DISTDIR}/mod_proxy_xml.c ${WRKDIR}/
 
 .include <bsd.port.mk>
