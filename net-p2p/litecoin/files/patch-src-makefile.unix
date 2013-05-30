@@ -1,0 +1,22 @@
+--- src/makefile.unix.orig	2012-07-26 07:55:22.000000000 +0000
++++ src/makefile.unix	2013-05-30 03:57:45.000000000 +0000
+@@ -6,6 +6,11 @@
+ 
+ DEFS=-DUSE_IPV6 -DBOOST_SPIRIT_THREADSAFE
+ 
++BOOST_INCLUDE_PATH=%%PREFIX%%/include
++BDB_INCLUDE_PATH=%%PREFIX%%/include/db48
++BOOST_LIB_PATH=%%PREFIX%%/lib
++BDB_LIB_PATH=%%PREFIX%%/lib/db48
++
+ DEFS += $(addprefix -I,$(CURDIR) $(CURDIR)/obj $(BOOST_INCLUDE_PATH) $(BDB_INCLUDE_PATH) $(OPENSSL_INCLUDE_PATH))
+ LIBS = $(addprefix -L,$(BOOST_LIB_PATH) $(BDB_LIB_PATH) $(OPENSSL_LIB_PATH))
+ 
+@@ -44,7 +49,6 @@
+ LIBS+= \
+  -Wl,-B$(LMODE2) \
+    -l z \
+-   -l dl \
+    -l pthread
+ 
+ 

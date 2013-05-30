@@ -1,0 +1,15 @@
+Litecoin is a peer-to-peer Internet currency that enables instant payments to
+anyone in the world. It is based on the Bitcoin protocol but differs from
+Bitcoin in that it can be efficiently mined with consumer-grade hardware.
+Litecoin provides faster transaction confirmations (2.5 minutes on average) and
+uses memory-hard, scrypt-based mining proof-of-work algorithm to target the
+regular computers and GPUs most people already have. The Litecoin network is
+scheduled to produce 84 million currency units.
+
+One of the aims of Litecoin was to provide a mining algorithm that could run at
+the same time, on the same hardware used to mine bitcoins. With the rise of
+specialized ASICs for Bitcoin, Litecoin continues to satisfy these goals. It is
+unlikely for ASIC mining to be developed for Litecoin until the currency is
+widely used.
+
+WWW: http://www.litecoin.org/

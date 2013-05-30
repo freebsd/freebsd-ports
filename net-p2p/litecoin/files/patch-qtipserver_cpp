@@ -1,0 +1,13 @@
+--- src/qt/qtipcserver.cpp.orig	2012-07-26 17:55:22.000000000 +1000
++++ src/qt/qtipcserver.cpp	2013-05-28 16:10:27.000000000 +1000
+@@ -55,6 +55,10 @@
+     // problems.
+     return;
+ #endif
++#ifdef __FreeBSD__
++    // TODO: Fix it for FreeBSD too - ipcinit causes a spinlock
++    return;
++#endif    
+ 
+     message_queue* mq;
+     char strBuf[257];
