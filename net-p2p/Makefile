@@ -51,6 +51,7 @@
     SUBDIR += libtorrent-rasterbar-16-python
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
+    SUBDIR += litecoin
     SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder
