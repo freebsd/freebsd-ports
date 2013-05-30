@@ -15,11 +15,13 @@ include/libteredo/teredo.h
 include/libteredo/teredo-udp.h
 include/libteredo/tunnel.h
 include/libtun6/tun6.h
-@unexec [ -f %D/etc/miredo/miredo.conf ] && cmp -s %D/etc/miredo/miredo.conf %D/%%%EXAMPLESDIR%%/miredo.conf && rm %D/etc/miredo/miredo.conf || true
 etc/miredo/client-hook
-@exec [ -f %B/miredo/miredo.conf ] || cp %F %B/miredo/miredo.conf
+@unexec [ -f %D/etc/miredo/miredo.conf ] && cmp -s %D/etc/miredo/miredo.conf %D/%%%EXAMPLESDIR%%/miredo.conf && rm %D/etc/miredo/miredo.conf || true
 %%EXAMPLESDIR%%/miredo.conf
+@exec [ -f %B/miredo.conf ] || cp %F %B/miredo.conf
+@unexec [ -f %D/etc/miredo/miredo-server.conf ] && cmp -s %D/etc/miredo/miredo-server.conf %D/%%%EXAMPLESDIR%%/miredo-server.conf && rm %D/etc/miredo/miredo-server.conf || true
 %%EXAMPLESDIR%%/miredo-server.conf
+@exec [ -f %B/miredo-server.conf ] || cp %F %B/miredo-server.conf
 %%NLS%%share/locale/en/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/miredo.mo
