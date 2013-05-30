@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	dvd-slideshow
-PORTVERSION=	0.8.2
-PORTREVISION=	5
+PORTVERSION=	0.8.4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-2:main \
 		SF/${PORTNAME}/${PORTNAME}-themes/${THEMEVERSION}-1:themes
 DISTFILES=	${PORTNAME}-${PORTVERSION}-2${EXTRACT_SUFX}:main
-THEMEVERSION=	0.8.0
+THEMEVERSION=	0.8.4
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script that creates a slideshow-style DVD with some simple menus
@@ -56,11 +55,6 @@ WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${THEMEVERSION}-1
 PLIST_SUB+=	NOTHEMES=""
 .else
 PLIST_SUB+=	NOTHEMES="@comment "
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	NOPORTDOCS="@comment "
-.else
-PLIST_SUB+=	NOPORTDOCS=""
 .endif
 
 post-patch:

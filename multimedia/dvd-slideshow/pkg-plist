@@ -3,13 +3,13 @@ bin/dvd-menu
 bin/dir2slideshow
 bin/gallery1-to-slideshow
 bin/jigl2slideshow
-%%NOPORTDOCS%%%%DOCSDIR%%/changelog.html
-%%NOPORTDOCS%%%%DOCSDIR%%/gallery1-to-slideshow.html
-%%NOPORTDOCS%%%%DOCSDIR%%/dir2slideshow.html
-%%NOPORTDOCS%%%%DOCSDIR%%/jigl2slideshow.html
-%%NOPORTDOCS%%%%DOCSDIR%%/dvd-menu.html
-%%NOPORTDOCS%%%%DOCSDIR%%/dvd-slideshow.html
-%%NOPORTDOCS%%%%DOCSDIR%%/dvd-slideshowrc
+%%PORTDOCS%%%%DOCSDIR%%/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/gallery1-to-slideshow.html
+%%PORTDOCS%%%%DOCSDIR%%/dir2slideshow.html
+%%PORTDOCS%%%%DOCSDIR%%/jigl2slideshow.html
+%%PORTDOCS%%%%DOCSDIR%%/dvd-menu.html
+%%PORTDOCS%%%%DOCSDIR%%/dvd-slideshow.html
+%%PORTDOCS%%%%DOCSDIR%%/dvd-slideshowrc
 %%NOTHEMES%%%%DATADIR%%/themes/themes.readme.txt
 %%NOTHEMES%%%%DATADIR%%/themes/babyblue/thumbnail.jpg
 %%NOTHEMES%%%%DATADIR%%/themes/babyblue/bip.ttf
@@ -66,4 +66,4 @@ bin/jigl2slideshow
 %%NOTHEMES%%@dirrmtry %%DATADIR%%/themes
 %%NOTHEMES%%@dirrmtry %%DATADIR%%
 %%NOTHEMES%%@dirrmtry share/apps
-%%NOPORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
