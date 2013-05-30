@@ -13,13 +13,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USGS General Cartographic Transformation Package (GCTP)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
-
-.include <bsd.port.options.mk>
-
 USE_GMAKE=	yes
 ALL_TARGET=	libgctpc.so.1
-
 USE_LDCONFIG=	yes
+CFLAGS+=	-Wno-error=return-type
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libgctpc.a ${PREFIX}/lib
