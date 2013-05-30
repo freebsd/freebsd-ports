@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		miredo
-PORTVERSION=	 	1.2.5
-PORTREVISION=		2
+PORTVERSION=	 	1.2.6
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
@@ -23,7 +22,7 @@ POLICYTABLE_DESC=	Install policy table to support teredo
 MAN1=			teredo-mire.1
 MAN5=			miredo-server.conf.5 miredo.conf.5
 MAN8=			miredo-server.8 miredo.8 miredo-checkconf.8
-USE_RC_SUBR=		miredo_server miredo
+USE_RC_SUBR=		miredo-server miredo
 
 LDFLAGS+=		-L${LOCALBASE}/lib
 
