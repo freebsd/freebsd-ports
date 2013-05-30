@@ -36,10 +36,10 @@ libdata/pkgconfig/gammu.pc
 libdata/pkgconfig/gammu-smsd.pc
 lib/libGammu.so
 lib/libGammu.so.7
-lib/libGammu.so.7.1.32.0
+lib/libGammu.so.7.1.33.0
 lib/libgsmsd.so
 lib/libgsmsd.so.7
-lib/libgsmsd.so.7.1.32.0
+lib/libgsmsd.so.7.1.33.0
 share/gammu/gammu-s60-remote.sis
 share/gammu/gnapplet.ini
 share/gammu/gnapplet.sis
@@ -87,6 +87,8 @@ share/locale/pl/LC_MESSAGES/gammu.mo
 share/locale/pl/LC_MESSAGES/libgammu.mo
 share/locale/pt_BR/LC_MESSAGES/gammu.mo
 share/locale/pt_BR/LC_MESSAGES/libgammu.mo
+share/locale/ro/LC_MESSAGES/gammu.mo
+share/locale/ro/LC_MESSAGES/libgammu.mo
 share/locale/ru/LC_MESSAGES/gammu.mo
 share/locale/ru/LC_MESSAGES/libgammu.mo
 share/locale/sk/LC_MESSAGES/gammu.mo
@@ -97,6 +99,8 @@ share/locale/sw/LC_MESSAGES/gammu.mo
 share/locale/sw/LC_MESSAGES/libgammu.mo
 share/locale/tr/LC_MESSAGES/gammu.mo
 share/locale/tr/LC_MESSAGES/libgammu.mo
+share/locale/uk/LC_MESSAGES/gammu.mo
+share/locale/uk/LC_MESSAGES/libgammu.mo
 share/locale/zh_CN/LC_MESSAGES/gammu.mo
 share/locale/zh_CN/LC_MESSAGES/libgammu.mo
 share/locale/zh_TW/LC_MESSAGES/gammu.mo

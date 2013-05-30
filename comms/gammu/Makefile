@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gammu
-PORTVERSION=	1.32.0
+PORTVERSION=	1.33.0
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -45,10 +45,7 @@ PLIST_DIRSTRY+=	etc/bash_completion.d
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
 .endif
 
-.if ! ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS+=	-DINSTALL_DOC=OFF -DINSTALL_PHP_EXAMPLES=OFF -DINSTALL_MEDIA=OFF \
-		-DINSTALL_GNAPPLET=OFF
-.else
+.if ${PORT_OPTIONS:MDOCS}
 MAN1=		gammu.1 gammu-config.1 jadmaker.1 gammu-smsd.1 gammu-smsd-inject.1 \
 		gammu-smsd-monitor.1 gammu-detect.1
 MAN5=		gammu-backup.5 gammu-smsbackup.5 gammu-smsdrc.5 gammurc.5
@@ -56,6 +53,9 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 \
 		gammu-smsd-odbc.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7 gammu-smsd-null.7 \
 		gammu-smsd-run.7 gammu-smsd-sql.7
+.else
+CMAKE_ARGS+=	-DINSTALL_DOC=OFF -DINSTALL_PHP_EXAMPLES=OFF -DINSTALL_MEDIA=OFF \
+		-DINSTALL_GNAPPLET=OFF
 .endif
 
 .include <bsd.port.mk>
