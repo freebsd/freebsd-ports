@@ -484,6 +484,7 @@ RUN_DEPENDS+=	${GNUSTEP_LOCAL_SERVICES}/${_GNUSTEP_DEP:C/:.*//}.service/${_GNUST
 # source GNUstep.sh
 #
 .if defined(USE_GNUSTEP_CONFIGURE)
+NO_CCACHE=	Overrides PATH set from GNUstep.sh
 run-autotools::
 	@${DO_NADA}
 
@@ -508,6 +509,7 @@ do-configure:
 # source GNUstep.sh
 #
 .if defined(USE_GNUSTEP_BUILD)
+NO_CCACHE=	Overrides PATH set from GNUstep.sh
 do-build:
 .if defined(USE_GNUSTEP_MAKE_DIRS)
 .for i in ${USE_GNUSTEP_MAKE_DIRS}
