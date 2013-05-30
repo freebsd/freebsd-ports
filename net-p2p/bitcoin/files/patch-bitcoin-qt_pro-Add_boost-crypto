@@ -1,0 +1,11 @@
+diff -ur ../bitcoin-bitcoin-18c9239.orig/bitcoin-qt.pro ./bitcoin-qt.pro
+--- ../bitcoin-bitcoin-18c9239.orig/bitcoin-qt.pro	2013-05-24 22:50:15.000000000 +1000
++++ ./bitcoin-qt.pro	2013-05-24 22:51:35.000000000 +1000
+@@ -402,7 +402,7 @@
+ LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
+ # -lgdi32 has to happen after -lcrypto (see  #681)
+ win32:LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
+-LIBS += -lboost_system$$BOOST_LIB_SUFFIX -lboost_filesystem$$BOOST_LIB_SUFFIX -lboost_program_options$$BOOST_LIB_SUFFIX -lboost_thread$$BOOST_THREAD_LIB_SUFFIX
++LIBS += -lboost_system$$BOOST_LIB_SUFFIX -lboost_filesystem$$BOOST_LIB_SUFFIX -lboost_program_options$$BOOST_LIB_SUFFIX -lboost_thread$$BOOST_THREAD_LIB_SUFFIX -lboost_chrono$$BOOST_LIB_SUFFIX
+ win32:LIBS += -lboost_chrono$$BOOST_LIB_SUFFIX
+ macx:LIBS += -lboost_chrono$$BOOST_LIB_SUFFIX
