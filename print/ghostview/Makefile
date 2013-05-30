@@ -17,6 +17,7 @@ USE_IMAKE=	yes
 USE_XORG=	xbitmaps xaw
 USE_GHOSTSCRIPT_RUN=	yes
 MAKE_JOBS_SAFE=	yes
+CFLAGS+=	-Wno-error=return-type
 
 MAN1=		ghostview.1
 PLIST_FILES=	bin/ghostview \
