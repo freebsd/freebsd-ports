@@ -4,5 +4,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/ExpireSessions
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI/Session
