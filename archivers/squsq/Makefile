@@ -13,6 +13,7 @@ COMMENT=	Compressor/decompressor for CP/M "Squeeze" compressed files
 CONFLICTS=	squirrel-[0-9]*
 WRKSRC=		${WRKDIR}/t20-squsq
 MAKEFILE=	${FILESDIR}/Makefile
+CFLAGS+=	-Wno-error=return-type
 
 PLIST_FILES=	bin/sq bin/usq
 
