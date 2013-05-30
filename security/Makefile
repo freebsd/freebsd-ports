@@ -741,6 +741,7 @@
     SUBDIR += py-certify
     SUBDIR += py-clamav
     SUBDIR += py-crack
+    SUBDIR += py-cracklib
     SUBDIR += py-cryptkit
     SUBDIR += py-fail2ban
     SUBDIR += py-gnupg
