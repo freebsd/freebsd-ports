@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libshhopt
-# Date created:				11 April 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	libshhopt
 PORTVERSION=	1.1.7
