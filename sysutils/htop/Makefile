@@ -27,7 +27,7 @@ USES=		ncurses
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	-2.7
 
 MAN1=	htop.1
 
@@ -38,7 +38,7 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:/usr/bin/python:${LOCALBASE}/bin/python:' ${WRKSRC}/scripts/MakeHeader.py
+	@${REINPLACE_CMD} -e 's:/usr/bin/python:${PYTHON_CMD}:' ${WRKSRC}/scripts/MakeHeader.py
 
 pre-configure:
 	@[ -f /compat/linux/proc/stat ] || { ${CAT} ${PKGMESSAGE}; ${FALSE}; }
