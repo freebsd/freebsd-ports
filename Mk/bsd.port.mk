@@ -2193,9 +2193,15 @@ MAKE_JOBS_NUMBER=	1
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
 .	endif
 
+_CCACHE_PATH=	${LOCALBASE}/libexec/ccache
+
 # Prepend the ccache dir into the PATH and setup ccache env
-MAKE_ENV+=		PATH=${LOCALBASE}/libexec/ccache:${PATH}
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/libexec/ccache:${PATH}
+PATH:=	${_CCACHE_PATH}:${PATH}
+.if !${MAKE_ENV:M*PATH=*} && !${CONFIGURE_ENV:M*PATH=*}
+MAKE_ENV+=			PATH=${PATH}
+CONFIGURE_ENV+=		PATH=${PATH}
+.endif
+
 .	if defined(CCACHE_DIR)
 MAKE_ENV+=		CCACHE_DIR="${CCACHE_DIR}"
 CONFIGURE_ENV+=	CCACHE_DIR="${CCACHE_DIR}"
