@@ -73,7 +73,6 @@
     SUBDIR += libspectrum
     SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
-    SUBDIR += linux-libaio
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
     SUBDIR += linux-pete-mesagpu
@@ -82,7 +81,6 @@
     SUBDIR += linux-xjoypad
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
-    SUBDIR += linux_base-fc4
     SUBDIR += linux_base-gentoo-stage3
     SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += lisaem

@@ -125,11 +125,6 @@
     SUBDIR += linux-f10-pango
     SUBDIR += linux-f10-qt33
     SUBDIR += linux-f10-tk85
-    SUBDIR += linux-gtk
-    SUBDIR += linux-gtk2
-    SUBDIR += linux-openmotif
-    SUBDIR += linux-pango
-    SUBDIR += linux-qt33
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += neXtaw

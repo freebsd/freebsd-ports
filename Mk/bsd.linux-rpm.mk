@@ -1,7 +1,7 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.27 2012-05-23 08:17:49 miwi Exp $
+# $FreeBSD$
 #
 
 # Variables:
@@ -9,7 +9,7 @@
 #					  Valid values: fedora
 # LINUX_DIST_VER	- Use depends upon the dist-specific presets.
 #					  Valid values for "fedora": all version numbers
-#					  e.g. 3 for fedora core 3, 4 for fedora core 4
+#					  e.g. 10 for fedora 10
 #					  This is used to set MASTER_SITE_{,SRC_}SUBDIR
 #					  if it isn't already set.
 # MASTER_SITE_SRC_SUBDIR
@@ -57,36 +57,19 @@ LINUX_RPM_ARCH?=	${ARCH}
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
 LINUX_DIST?=		fedora
-. if ${OSVERSION} < 800076 || ${LINUX_OSRELEASE} == "2.4.2"
-LINUX_DIST_VER?=	4
-. else
 LINUX_DIST_VER?=	10
 .   if  !defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
         ${LINUX_DIST_VER} != 10
 IGNORE=		bsd.linux-rpm.mk test failed: default package building at OSVERSION>=800076 was changed to linux-f10 ports, please define OVERRIDE_LINUX_NONBASE_PORTS to build other linux infrastructure ports
 .   endif
-. endif
 
 # linux Fedora 10 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
 # linux_base-f10 (or greater) port
 .  if ${LINUX_DIST_VER} == 10
 # let's check for apropriate compat.linux.osrelease
 .    if (${LINUX_OSRELEASE} != "2.6.16")
-IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported at 8-CURRENT and has a limited support at 7-STABLE
+IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported by FreeBSD 8 and above
 .    endif
-# the default for OSVERSION < 800076
-.    if ${OSVERSION} < 800076
-# let's check if an apropriate linux base port is used
-.      if ${USE_LINUX} != f10
-IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with at least linux_base-f10, please read /usr/ports/UPDATING
-.      endif
-# let's check if OVERRIDE_LINUX_NONBASE_PORTS is defined
-.      ifndef(OVERRIDE_LINUX_NONBASE_PORTS)
-IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with defined OVERRIDE_LINUX_NONBASE_PORTS, please read /usr/ports/UPDATING
-.      endif
-# the default for OSVERSION >= 800076
-#.      else
-.    endif # ${OSVERSION} < 800076
 .  endif
 
 .  if defined(LINUX_DIST)
@@ -156,13 +139,11 @@ linux-rpm-clean-portdocs:
 
 .  if defined(AUTOMATIC_PLIST)
 
-.    if ${USE_LINUX} == "fc4" || ${USE_LINUX:L} == "yes"
-_LINUX_BASE_SUFFIX=		fc4
-.    elif ${USE_LINUX} == "f10"
+.    if ${USE_LINUX} == "f10" || ${USE_LINUX:L} == "yes"
 _LINUX_BASE_SUFFIX=		f10
 .    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\" and \"f10\"
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\" and \"f10\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm

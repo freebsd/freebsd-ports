@@ -123,8 +123,6 @@ LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 
 .if ${LINUX_OSRELEASE}x == "x"
 IGNORE=			linuxulator is not (kld)loaded
-.elif ${LINUX_OSRELEASE} == "2.4.2"
-IGNORE=			compat.linux.osrelease: 2.4.2 is not supported, please use 2.6.16
 .endif
 
 REMOVE_DIRS=		boot dev etc/fonts home initrd media root tmp var/log var/run var/tmp \
@@ -160,7 +158,7 @@ do-build:
 		${RM} -f ${WRKSRC}/$$F; \
 	done
 	@for F in ${ADD_DIRS}; do \
-		${MKDIR} -p ${WRKSRC}/$$F; \
+		${MKDIR} ${WRKSRC}/$$F; \
 	done
 	@for F in ${ADD_FILES}; do \
 		${TOUCH} ${WRKSRC}/$$F; \
