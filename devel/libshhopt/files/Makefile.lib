@@ -5,12 +5,11 @@ LIB=	shhopt
 LIBDIR=	${PREFIX}/lib
 SHLIB_MAJOR=	${SHLIB_VER}
 SHLIB_MINOR=	1
-NOPROFILE=	yes
-NOOBJ=	yes
+NO_PROFILE=	yes
+NO_OBJ=	yes
 
 INCS=	shhopt.h
 INCSDIR=${PREFIX}/include
-INCDIR=	${INCSDIR}		# for 4.x bsd.lib.mk
 
 SRCS=	shhopt.c
 
