@@ -51,6 +51,95 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce502902-ca39-11e2-9673-001e8c75030d">
+    <topic>devel/subversion -- svnserve remotely triggerable DoS</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.7.0</ge><lt>1.7.10</lt></range>
+	<range><ge>1.0.0</ge><lt>1.6.23</lt></range>
+       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion team reports:</p>
+	  <blockquote cite="http://subversion.apache.org/security/CVE-2013-2112-advisory.txt">
+	    <p>Subversion's svnserve server process may exit when an incoming TCP connection
+	      is closed early in the connection process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2112</cvename>
+    </references>
+    <dates>
+      <discovery>2013-05-31</discovery>
+      <entry>2013-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6d0bf320-ca39-11e2-9673-001e8c75030d">
+    <topic>devel/subversion -- contrib hook-scripts can allow arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.7.0</ge><lt>1.7.10</lt></range>
+	<range><ge>1.2.0</ge><lt>1.6.23</lt></range>
+       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion team reports:</p>
+	  <blockquote cite="http://subversion.apache.org/security/CVE-2013-2088-advisory.txt">
+	    <p>The script contrib/hook-scripts/check-mime-type.pl does not escape
+	      argv arguments to 'svnlook' that start with a hyphen.  This could be
+	      used to cause 'svnlook', and hence check-mime-type.pl, to error out.</p>
+	    <p>The script contrib/hook-scripts/svn-keyword-check.pl parses filenames
+	      from the output of 'svnlook changed' and passes them to a further
+	      shell command (equivalent to the 'system()' call of the C standard
+	      library) without escaping them.  This could be used to run arbitrary
+	      shell commands in the context of the user whom the pre-commit script
+	      runs as (the user who owns the repository).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2088</cvename>
+    </references>
+    <dates>
+      <discovery>2013-05-31</discovery>
+      <entry>2013-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="787d21b9-ca38-11e2-9673-001e8c75030d">
+    <topic>devel/subversion -- fsfs repositories can be corrupted by newline characters in filenames</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.7.0</ge><lt>1.7.10</lt></range>
+	<range><ge>1.1.0</ge><lt>1.6.23</lt></range>
+       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion team reports:</p>
+	  <blockquote cite="http://subversion.apache.org/security/CVE-2013-1968-advisory.txt">
+	    <p>If a filename which contains a newline character (ASCII 0x0a) is
+	      committed to a repository using the FSFS format, the resulting
+	      revision is corrupt.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1968</cvename>
+    </references>
+    <dates>
+      <discovery>2013-05-31</discovery>
+      <entry>2013-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a799a8e-c9d4-11e2-a424-14dae938ec40">
     <topic>irc/bitchx -- multiple vulnerabilities</topic>
     <affects>
