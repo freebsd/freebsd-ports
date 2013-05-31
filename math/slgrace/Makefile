@@ -24,6 +24,8 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's, install_docfiles,,' \
