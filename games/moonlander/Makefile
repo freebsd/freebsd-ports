@@ -20,7 +20,6 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/moon-lander
 
-OPTIONS=	SOUND
 OPTIONS_DEFINE=	SOUND
 
 .include <bsd.port.options.mk>
