@@ -125,7 +125,6 @@ share/xfce4/panel/plugins/xfce4-clipman-plugin.desktop
 @dirrm %%DOCSDIR%%/html/C
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
-@dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry etc/xdg/xfce4/panel
 @dirrmtry etc/xdg/xfce4
