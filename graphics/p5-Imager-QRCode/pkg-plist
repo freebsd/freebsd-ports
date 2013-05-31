@@ -3,5 +3,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/QRCode.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
 @dirrmtry %%SITE_PERL%%/Imager
