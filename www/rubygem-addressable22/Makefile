@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-addressable
-# Date created:				01 March 2009
 # Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	addressable
@@ -11,6 +8,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A replacement for the URI implementation
+
+NO_LATEST_LINK=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
