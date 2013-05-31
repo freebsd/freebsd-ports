@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SVN-Log
-# Date created:		2006-06-26
-# Whom:			Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Log
 PORTVERSION=	0.03
