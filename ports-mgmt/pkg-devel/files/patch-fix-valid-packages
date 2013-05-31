@@ -8,7 +8,7 @@ index e77138c..3168c0f 100644
  	[PKG_REPOURL] = {"repourl", PKG_REMOTE, 1},
 -	[PKG_DIGEST] = {"manifestdigest", PKG_REMOTE, 1}
 +	[PKG_DIGEST] = {"manifestdigest", PKG_REMOTE, 1},
-+	[PKG_REASON] = "reason", PKG_REMOTE, 1}
++	[PKG_REASON] = {"reason", PKG_REMOTE, 1}
  };
  
  int
