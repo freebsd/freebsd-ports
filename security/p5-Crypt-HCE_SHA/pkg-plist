@@ -1,9 +1,10 @@
 %%SITE_PERL%%/Crypt/HCE_SHA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/HCE_SHA/.packlist
 %%SITE_PERL%%/auto/Crypt/HCE_SHA/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/HCE_SHA
-@dirrm %%SITE_PERL%%/auto/Crypt/HCE_SHA
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/HCE_SHA/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/HCE_SHA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/auto/Crypt/HCE_SHA
 @dirrmtry %%SITE_PERL%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

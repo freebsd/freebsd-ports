@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-HCE_SHA
-# Date created:				October 8th 2001
-# Whom:	      				Gregory Neil Shapiro <gshapiro@FreeBSD.org>
-#
+# Created by: Gregory Neil Shapiro <gshapiro@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-HCE_SHA
 PORTVERSION=	0.70
