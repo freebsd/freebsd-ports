@@ -60,9 +60,7 @@ export JAVA_VENDOR=openjdk
 export JAVA_VERSION=1.7
 
 cassandra_prestop() {
-	$CASSANDRA_HOME/bin/nodetool -h localhost disablegossip
-	sleep 15
-	$CASSANDRA_HOME/bin/nodetool -h localhost drain 
+	$CASSANDRA_HOME/bin/nodetool -h localhost drain
 	return 0
 }
 

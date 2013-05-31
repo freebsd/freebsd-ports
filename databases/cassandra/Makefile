@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTVERSION=	1.1.11
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -24,23 +23,33 @@ USE_RC_SUBR=	cassandra
 CONFIGS=	cassandra-topology.properties \
 		cassandra.yaml \
 		log4j-server.properties \
-		log4j-tools.properties
+		log4j-tools.properties \
+		cassandra-rackdc.properties \
+		commitlog_archiving.properties
 SCRIPTS=	cassandra \
 		cassandra-cli \
 		json2sstable \
 		nodetool \
 		sstable2json \
 		sstablekeys \
-		sstableloader
+		sstableloader \
+		sstablescrub
 
-OPTIONS_DEFINE=	MX4J JNA CQL
+OPTIONS_DEFINE=	MX4J JNA CQL DOCS
 MX4J_DESC=	Enable HTTP interface for JMX
 JNA_DESC=	Use JNA native access
 CQL_DESC=	Install cqlsh
+DOCS_DESC=	Install javadoc documentation
 
 SUB_FILES=	repaircluster
 
 .include <bsd.port.options.mk>
+
+RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java
+
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	javadoc *.txt
+.endif
 
 .if ${PORT_OPTIONS:MMX4J}
 RUN_DEPENDS+=	${JAVAJARDIR}/mx4j-tools.jar:${PORTSDIR}/java/mx4j
@@ -56,7 +65,6 @@ PLIST_SUB+=	JNA="@comment "
 .endif
 .if ${PORT_OPTIONS:MCQL}
 USE_PYTHON=	yes
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cql>=0:${PORTSDIR}/databases/py-cql
 PLIST_SUB+=	CQL=""
 SCRIPTS+=	cqlsh
 .else
@@ -64,14 +72,15 @@ PLIST_SUB+=	CQL="@comment "
 .endif
 
 post-extract:
-	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server
+	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server \
+		${WRKSRC}/tools/bin/*.bat ${WRKSRC}/lib/snappy-java-*.jar
 .for i in ${CONFIGS}
 	@${MV} ${WRKSRC}/conf/${i} ${WRKSRC}/conf/${i}.sample
 .endfor
-	@${MV} ${WRKSRC}/bin/cqlshrc.sample ${WRKSRC}/conf
 .if empty(PORT_OPTIONS:MCQL)
 	@${RM} -r ${WRKSRC}/pylib
 	@${RM} ${WRKSRC}/bin/cqlsh
+	@${RM} ${WRKSRC}/lib/*.zip
 .endif
 
 post-patch:
@@ -98,6 +107,14 @@ do-build:
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${DATADIR}
+	@${LN} -s ${JAVAJARDIR}/snappy-java.jar ${DATADIR}/lib/snappy-java.jar
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@${MV} ${DATADIR}/javadoc ${DOCSDIR}
+	@${MV} ${DATADIR}/*.txt ${DOCSDIR}
+.else
+	${RM} -r ${DATADIR}/javadoc ${DATADIR}/*.txt
+.endif
 	@cd ${DATADIR}/bin/ && ${CHMOD} ${BINMODE} ${SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKDIR}/repaircluster ${DATADIR}/bin
 	@${LN} -s ${DATADIR}/bin/cassandra-cli ${PREFIX}/bin/cassandra-cli
@@ -107,6 +124,7 @@ do-install:
 	@${LN} -s ${DATADIR}/bin/json2sstable ${PREFIX}/bin/json2sstable
 	@${LN} -s ${DATADIR}/bin/sstable2json ${PREFIX}/bin/sstable2json
 	@${LN} -s ${DATADIR}/bin/sstablekeys ${PREFIX}/bin/sstablekeys
+	@${LN} -s ${DATADIR}/bin/sstablescrub ${PREFIX}/bin/sstablescrub
 
 .if ${PORT_OPTIONS:MCQL}
 	@${LN} -s ${DATADIR}/bin/cqlsh ${PREFIX}/bin/cqlsh
