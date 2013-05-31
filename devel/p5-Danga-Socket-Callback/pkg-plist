@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Danga/Socket/Callback.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga/Socket/Callback
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga
 @dirrmtry %%SITE_PERL%%/Danga/Socket
