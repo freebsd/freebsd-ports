@@ -14,7 +14,6 @@
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Method
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute
 @dirrmtry %%SITE_PERL%%/MooseX
