@@ -890,7 +890,6 @@ bin/supybot-wizard
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Lart
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Karma
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Internet
-@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Insult
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Herald
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local/simplejson
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Google/local
