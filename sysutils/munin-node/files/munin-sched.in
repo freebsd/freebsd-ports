@@ -15,7 +15,7 @@
 
 . /etc/rc.subr
 
-name="munin_sched"
+name=munin_sched
 rcvar=munin_sched_enable
 
 load_rc_config $name
@@ -30,13 +30,9 @@ stop_precmd=find_pidfile
 
 find_pidfile()
 {
-	if type get_pidfile_from_conf >/dev/null 2>&1 &&
-		get_pidfile_from_conf pid_file $munin_sched_config; then
-	    pidfile="${_pidfile_from_conf%node*}sched"
-	    pidfile="${pidfile}${_pidfile_from_conf#*node}"
-	else
-	    pidfile=`awk '$1 == "pid_file" { gsub("node","sched",$2); print $2; }' $munin_sched_config`
-	fi
+	get_pidfile_from_conf pid_file $munin_sched_config
+	pidfile="${_pidfile_from_conf%node*}sched"
+	pidfile="${pidfile}${_pidfile_from_conf#*node}"
 }
 
 run_rc_command "$1"

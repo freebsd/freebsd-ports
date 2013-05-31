@@ -19,28 +19,26 @@
 name="slim"
 rcvar=slim_enable
 
+load_rc_config slim
+
+: ${slim_enable:="NO"}
+
+command=%%PREFIX%%/bin/slim
+command_args="-d"
 start_precmd=${name}_rmfile
 stop_precmd=${name}_prestop
 stop_postcmd=${name}_rmfile
 
-load_rc_config $name
-
-: ${slim_enable="NO"}
-
-command=%%PREFIX%%/bin/slim
-command_args="-d"
-
 find_pidfile()
 {
-	if type get_pidfile_from_conf >/dev/null 2>&1 &&
-	    get_pidfile_from_conf lockfile %%PREFIX%%/etc/${name}.conf; then
+	if get_pidfile_from_conf lockfile %%PREFIX%%/etc/${name}.conf; then
 		pidfile="$_pidfile_from_conf"
 	else
 		pidfile="/var/run/${name}.pid"
 	fi
 }
 
-slim_rmfile ()
+slim_rmfile()
 {
 	local file
 
@@ -54,7 +52,7 @@ slim_rmfile ()
 	return 0
 }
 
-slim_prestop ()
+slim_prestop()
 {
 	local xpid
 
