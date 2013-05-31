@@ -1,6 +1,4 @@
-# New ports collection makefile for:  HTML-FormHandler
-# Date created:		2009-12-03
-# Whom:			gugu
+# Created by: gugu
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
