@@ -6,8 +6,9 @@ if [ "$2" = "POST-INSTALL" ]; then
    if [ ! -d $PKG_PREFIX/share/cassandra/conf ]; then exit 1; fi
    umask 027
    cd $PKG_PREFIX/share/cassandra/conf
-   for cfgfile in cassandra.yaml log4j-server.properties log4j-tools.properties \
-                  cassandra-topology.properties; do
+   for cfgfile in cassandra.yaml commitlog_archiving.properties \
+		log4j-server.properties log4j-tools.properties \
+		cassandra-topology.properties cassandra-rackdc.properties; do
        if [ ! -f $cfgfile ]; then
            cp -p $cfgfile.sample $cfgfile
        fi
