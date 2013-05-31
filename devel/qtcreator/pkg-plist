@@ -960,7 +960,6 @@ share/qtcreator/welcomescreen/widgets/qmldir
 @dirrm share/qtcreator/templates/wizards/qtquick2-extension
 @dirrm share/qtcreator/templates/wizards/qtquick1-extension
 @dirrm share/qtcreator/templates/wizards/qtcreatorplugin
-@dirrm share/qtcreator/templates/wizards/qml-extension
 @dirrm share/qtcreator/templates/wizards/plaincppapp-cmake
 @dirrm share/qtcreator/templates/wizards/plaincppapp
 @dirrm share/qtcreator/templates/wizards/plaincapp-cmake
