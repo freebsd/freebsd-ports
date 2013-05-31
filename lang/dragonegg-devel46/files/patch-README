@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- README.orig
 +++ README
-@@ -1,82 +1,15 @@
+@@ -1,74 +1,9 @@
  ----------------------
 -- BUILD INSTRUCTIONS -
 -----------------------
@@ -11,7 +11,7 @@ $FreeBSD$
 -Prerequisites
 --------------
 -
--The dragonegg plugin works with gcc 4.5, gcc 4.6 or gcc-4.7, so you will need to
+-The dragonegg plugin works with gcc 4.5, 4.6, 4.7 or 4.8, so you will need to
 -have one of these installed.  Many linux distributions ship one or both of them,
 -perhaps as an addon package; binaries can be downloaded for most platforms.
 -Otherwise you can always build gcc yourself.  Plugin support (--enable-plugin)
@@ -74,17 +74,9 @@ $FreeBSD$
  
 -Run gcc as usual, but pass -fplugin=./dragonegg.so as an extra command line
 -argument.  Make sure you use the gcc you built dragonegg against (see step 1)!
-+Run %%CC%% as usual, but pass -fplugin=%%PLUGINPATH%%
+-
++Run %CC% as usual, but pass -fplugin=%%PLUGINPATH%%
 +as an extra command line argument.
- 
  
  ------------------
  - USEFUL OPTIONS -
- ------------------
- 
--If you renamed dragonegg.so to something else, for example llvm.so, replace
---fplugin-arg-dragonegg with -fplugin-arg-llvm in the options below.
--
- -fplugin-arg-dragonegg-emit-ir
- -flto
-   Output LLVM IR rather than target assembler.  You need to use -S with this,
