@@ -142,7 +142,6 @@
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Role
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Field
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget
-@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Validate
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/TraitFor
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Result
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Render
