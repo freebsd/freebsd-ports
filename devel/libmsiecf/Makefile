@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmsiecf
-DISTVERSION=	alpha-20130417
+DISTVERSION=	alpha-20130529
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
-USES=		pathfix gettext iconv
+USES=		gettext iconv pathfix
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 
