@@ -6,5 +6,4 @@
 %%SITE_PERL%%/PAR/SetupTemp.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
-@dirrmtry %%SITE_PERL%%/auto/PAR
 @dirrmtry %%SITE_PERL%%/PAR
