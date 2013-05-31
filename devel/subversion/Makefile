@@ -4,7 +4,7 @@
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*
+CONFLICTS_INSTALL=	subversion-1.[6|8].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
