@@ -1,4 +1,5 @@
 %%SITE_PERL%%/HTML/TreeBuilder/LibXML.pm
 %%SITE_PERL%%/HTML/TreeBuilder/LibXML/Node.pm
+@dirrmtry %%SITE_PERL%%/HTML/TreeBuilder/LibXML
 @dirrmtry %%SITE_PERL%%/HTML/TreeBuilder
 @dirrmtry %%SITE_PERL%%/HTML
