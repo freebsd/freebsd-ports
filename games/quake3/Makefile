@@ -79,7 +79,7 @@ Q3BIN+=		q3ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGAMELIBS) || !defined(HAVE_VM_COMPILED}
+.if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	GAMELIBS=YES
 PLIST_SUB+=	GAMELIBS=""
 .else
@@ -111,7 +111,7 @@ do-install:
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MGAMELIBS) || !defined(HAVE_VM_COMPILED}
+.if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack
 	${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
