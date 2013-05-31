@@ -1,9 +1,5 @@
-# Ports collection makefile for: p5-Catalyst-Plugin-C3
-# Date created:			 Apr 6, 2007
-# Whom:				 lbr@freebsd.org
-#
+# Created by: lbr@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-C3
 PORTVERSION=	0.03
