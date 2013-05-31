@@ -106,6 +106,10 @@ include/clang/ASTMatchers/ASTMatchFinder.h
 include/clang/ASTMatchers/ASTMatchers.h
 include/clang/ASTMatchers/ASTMatchersInternal.h
 include/clang/ASTMatchers/ASTMatchersMacros.h
+include/clang/ASTMatchers/Dynamic/Diagnostics.h
+include/clang/ASTMatchers/Dynamic/Parser.h
+include/clang/ASTMatchers/Dynamic/Registry.h
+include/clang/ASTMatchers/Dynamic/VariantValue.h
 include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
 include/clang/Analysis/Analyses/Dominators.h
 include/clang/Analysis/Analyses/FormatString.h
@@ -125,11 +129,7 @@ include/clang/Analysis/DomainSpecific/ObjCNoReturn.h
 include/clang/Analysis/FlowSensitive/DataflowSolver.h
 include/clang/Analysis/FlowSensitive/DataflowValues.h
 include/clang/Analysis/ProgramPoint.h
-include/clang/Analysis/Support/BlkExprDeclBitVector.h
 include/clang/Analysis/Support/BumpVector.h
-include/clang/Analysis/Visitors/CFGRecStmtDeclVisitor.h
-include/clang/Analysis/Visitors/CFGRecStmtVisitor.h
-include/clang/Analysis/Visitors/CFGStmtVisitor.h
 include/clang/Basic/ABI.h
 include/clang/Basic/AddressSpaces.h
 include/clang/Basic/AllDiagnostics.h
@@ -446,6 +446,7 @@ lib/libclangAnalysis.a
 lib/libclangBasic.a
 lib/libclangCodeGen.a
 lib/libclangDriver.a
+lib/libclangDynamicASTMatchers.a
 lib/libclangEdit.a
 lib/libclangFormat.a
 lib/libclangFrontend.a
@@ -499,12 +500,12 @@ lib/libclangTooling.a
 @dirrm include/clang/Config
 @dirrm include/clang/CodeGen
 @dirrm include/clang/Basic
-@dirrm include/clang/Analysis/Visitors
 @dirrm include/clang/Analysis/Support
 @dirrm include/clang/Analysis/FlowSensitive
 @dirrm include/clang/Analysis/DomainSpecific
 @dirrm include/clang/Analysis/Analyses
 @dirrm include/clang/Analysis
+@dirrm include/clang/ASTMatchers/Dynamic
 @dirrm include/clang/ASTMatchers
 @dirrm include/clang/AST
 @dirrm include/clang/ARCMigrate
