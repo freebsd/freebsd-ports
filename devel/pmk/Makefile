@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pmk
-# Date created:		October 13, 2003
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pmk
 PORTVERSION=	0.10.4
