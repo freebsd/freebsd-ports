@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/Charset/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/Charset
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N
-@dirrmtry %%SITE_PERL%%/I18N/Charset
 @dirrmtry %%SITE_PERL%%/I18N

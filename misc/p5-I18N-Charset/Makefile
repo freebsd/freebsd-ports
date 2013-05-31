@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-I18N-Charset
-# Date created:			26 December 1999
-# Whom:	      			Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	I18N-Charset
 PORTVERSION=	1.39.4
