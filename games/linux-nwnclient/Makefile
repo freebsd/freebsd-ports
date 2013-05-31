@@ -1,9 +1,5 @@
-# New ports collection makefile for:    linux_nwnclient
-# Date created:         1 April 2003
-# Whom:                 Erik Olson <erikolson@olsonexpress.com>
-#
+# Created by: Erik Olson <erikolson@olsonexpress.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
@@ -36,8 +32,10 @@ USE_LINUX_APPS+=libglu
 USE_LINUX_APPS+=dri
 .endif
 
-OPTIONS=	NWMOVIES	"Install support for movies using BinkPlayer"	off
+OPTIONS_DEFINE=	NWMOVIES
+NWMOVIES_DESC=	Support for movies using BinkPlayer
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 # Client detection.  Currently, detects only original and Diamond editions.
@@ -45,7 +43,7 @@ OPTIONS=	NWMOVIES	"Install support for movies using BinkPlayer"	off
 CLIENT_FILES=	nwclientgold.tar.gz:GOLD \
 		nwclienthotu.tar.gz:HOTU \
 		English_linuxclient169_xp2.tar.gz:CLIENT
-.if !defined(WITHOUT_NWMOVIES)
+.if ${PORT_OPTIONS:MNWMOVIES}
 NWMOVIESFILE=	nwmovies-v4-public.20090223.080954.tar.gz
 BINKPLAYERFILE=	BinkLinuxPlayer.zip
 CLIENT_NWMOVIES=${NWMOVIESFILE}:NWMOVIES \

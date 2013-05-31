@@ -1,9 +1,5 @@
-# New ports collection makefile for:	balazarbrothers
-# Date created:		2006-05-07
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	balazarbrothers
 PORTVERSION=	0.3.1
@@ -34,12 +30,14 @@ PYDISTUTILS_PKGNAME=	BalazarBrothers
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 DATADIR=	share/balazar_brothers
 
-OPTIONS=	OPENAL	"Use openal sound system" on
+OPTIONS_DEFINE=	OPENAL
+OPTIONS_DEFAULT=	OPENAL
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPENAL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal
+.if ${PORT_OPTIONS:MOPENAL}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openal>=0:${PORTSDIR}/audio/py-openal
 .endif
 
 post-patch:

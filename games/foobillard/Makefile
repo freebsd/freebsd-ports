@@ -1,9 +1,5 @@
-# New ports collection makefile for:	foobillard
-# Date created:				26 October 2002
-# Whom:					Thomas Vogt <thomas.vogt@bsdunix.ch>
-#
+# Created by: Thomas Vogt <thomas.vogt@bsdunix.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	foobillard
 PORTVERSION=	3.0a
@@ -17,10 +13,11 @@ COMMENT=	Free OpenGL billiards game
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-OPTIONS=	SDL	"Use SDL instead of glut"	off \
-		NVIDIA_BUMPREF	"Enable NVidia extensions"	off
+OPTIONS_DEFINE=	SDL NVIDIA_BUMPREF
+SDL_DESC=	SDL instead of glut
+NVIDIA_BUMPREF_DESC=	NVidia extensions
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
@@ -38,7 +35,7 @@ DESKTOP_ENTRIES=	"Foobillard" \
 			"Game;Simulation;" \
 			false
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	yes
 CONFIGURE_ARGS+=	--enable-SDL
 .else
@@ -46,7 +43,7 @@ USE_GL=		glut
 CONFIGURE_ARGS+=	--enable-glut
 .endif
 
-.if !defined(WITH_NVIDIA_BUMPREF)
+.if ! ${PORT_OPTIONS:MNVIDIA_BUMPREF}
 CONFIGURE_ARGS+=	--disable-nvidia
 .endif
 
@@ -57,6 +54,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${PREFIX}/man/man6/foobillard.6
+	@${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${MAN6PREFIX}/man/man6/foobillard.6
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

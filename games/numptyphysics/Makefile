@@ -1,9 +1,5 @@
-# New ports collection makefile for:	numptyphysics
-# Date created:		04 Jan 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	numptyphysics
 DISTVERSION=	0.3.r20090104
@@ -27,12 +23,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DINSTALL_BASE_PATH=\"\\\"${DATADIR}\\\"\"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	MOREFPS "More FPS for smoother graphics" on
+OPTIONS_DEFINE=	MOREFPS
+MOREFPS_DESC=	Smoother graphics support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	MOREFPS
+
+.include <bsd.port.options.mk>
 
 post-patch:
-.if !defined(WITHOUT_MOREFPS)
+.if ${PORT_OPTIONS:MMOREFPS}
 	@${REINPLACE_CMD} -e '/define RENDER_RATE/ s|20|60|' \
 		${WRKSRC}/Config.h
 .endif
@@ -45,4 +44,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

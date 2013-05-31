@@ -1,9 +1,5 @@
-# New ports collection makefile for:	noegnud-addons
-# Date created:				7 April 2004
-# Whom:					Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	noegnud
 PORTVERSION=	0.8.0
@@ -13,51 +9,54 @@ PKGNAMESUFFIX=	-addons
 DISTFILES=	${DISTNAME}_data-tileset-absurd${EXTRACT_SUFX}
 
 MAINTAINER=	llwang@infor.org
-COMMENT=	The addons (tilesets and sound themes) for noeGNUd
+COMMENT=	Addons (tilesets and sound themes) for noeGNUd
 
 USE_BZIP2=	yes
 PLIST=		${WRKDIR}/pkg-plist
-OPTIONS=	TILESET_ABSURD		"absurd tileset"		on \
-		TILESET_ITAKURA		"itakura tileset"		off \
-		TILESET_MAZKO		"mazko tileset"			off \
-		TILESET_ABIGABI		"abigabi tileset"		off \
-		TILESET_GEODUCK		"geoduck tileset"		off \
-		TILESET_LAGGED		"lagged tileset"		off \
-		TILESET_AOKI		"aoki tileset"			off \
-		TILESET_FALCONSEYE	"falcons eye tileset"		off \
-		SOUND_NHS		"nhs (qt) sound theme"		off \
-		SOUND_FALCONSEYE	"falcons eye sound theme"	off
+OPTIONS_DEFINE=	ABSURD ITAKURA ITAKURA ABIGABI GEODUCK LAGGED AOKI TFALCONSEYE NHS SFALCONSEYE
+ABSURD_DESC=	absurd tileset
+ITAKURA_DESC=	itakura tileset
+MAZKO_DESC=	mazko tileset
+ABIGABI_DESC=	abigabi tileset
+GEODUCK_DESC=	geoduck tileset
+LAGGED_DESC=	lagged tileset
+AOKI_DESC=	aoki tileset
+TFALCONSEYE_DESC=	falcons eye tileset
+NHS_DESC=	nhs (qt) sound theme
+SFALCONSEYE_DESC=	falcons eye sound theme
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	ABSURD
 
-.if defined(WITHOUT_TILESET_ABSURD)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MABSURD}
 DISTFILES=
 .endif
-.if defined(WITH_TILESET_ITAKURA)
+.if ${PORT_OPTIONS:MITAKURA}
 DISTFILES+=	${DISTNAME}_data-tileset-itakura${EXTRACT_SUFX}
 .endif
-.if defined(WITH_TILESET_MAZKO)
+.if ${PORT_OPTIONS:MMAZKO}
 DISTFILES+=	${DISTNAME}_data-tileset-mazko${EXTRACT_SUFX}
 .endif
-.if defined(WITH_TILESET_ABIGABI)
+.if ${PORT_OPTIONS:MABIGABI}
 DISTFILES+=	${DISTNAME}_data-tileset-abigabi${EXTRACT_SUFX}
 .endif
-.if defined(WITH_TILESET_GEODUCK)
+.if ${PORT_OPTIONS:MGEODUCK}
 DISTFILES+=	${DISTNAME}_data-tileset-geoduck${EXTRACT_SUFX}
 .endif
-.if defined(WITH_TILESET_LAGGED)
+.if ${PORT_OPTIONS:MLAGGED}
 DISTFILES+=	${DISTNAME}_data-tileset-lagged${EXTRACT_SUFX}
 .endif
-.if defined(WITH_TILESET_AOKI)
+.if ${PORT_OPTIONS:MAOKI}
 DISTFILES+=	${DISTNAME}_data-tileset-aoki${EXTRACT_SUFX}
 .endif
-.if defined(WITH_TILESET_FALCONSEYE)
+.if ${PORT_OPTIONS:MTFALCONSEYE}
 DISTFILES+=	${DISTNAME}_data-tileset-falconseye${EXTRACT_SUFX}
 .endif
-.if defined(WITH_SOUND_NHS)
+.if ${PORT_OPTIONS:MNHS}
 DISTFILES+=	${DISTNAME}_data-sound-nhs${EXTRACT_SUFX}
 .endif
-.if defined(WITH_SOUND_FALCONSEYE)
+.if ${PORT_OPTIONS:MSFALCONSEYE}
 DISTFILES+=	${DISTNAME}_data-sound-falconseye${EXTRACT_SUFX}
 .endif
 
@@ -71,4 +70,4 @@ pre-install:
 do-install:
 	${CP} -R ${WRKSRC} ${PREFIX}/share
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

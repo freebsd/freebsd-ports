@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scummvm-tools
-# Date created:				28 May 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scummvm-tools
 DISTVERSION=	1.0.0rc1
@@ -33,11 +29,13 @@ MAKE_JOBS_SAFE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
-OPTIONS=	WX "Build wxWidgets GUI" On
+OPTIONS_DEFINE=	WXGTK
+OPTIONS_DEFAULT=	WXGTK
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_WX)
+.if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		2.4+
 WX_CONFIG=	${LOCALBASE}/bin/wxgtk2-2.8-config
 WX_COMP=	wx:lib:build
@@ -48,7 +46,7 @@ PLIST_SUB=	WX="@comment "
 .endif
 
 post-patch:
-.if defined(WITH_WX)
+.if ${PORT_OPTIONS:MWXGTK}
 	@${REINPLACE_CMD} -e 's,wx-config,${WX_CONFIG},' ${WRKSRC}/Makefile
 .else
 	@${REINPLACE_CMD} -e '/tools_gui$$(EXEEXT)$$/d' ${WRKSRC}/Makefile
@@ -66,7 +64,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

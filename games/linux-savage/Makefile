@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-savage
-# Date created:		2006-09-06
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	savage
 PORTVERSION=	2.00e
@@ -34,11 +30,13 @@ WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
 SAVAGEDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS=	NVIDIA_GL	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA_GL
+NVIDIA_GL_DESC=	Support for nvidia
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NVIDIA_GL)
+.if ${PORT_OPTIONS:MNVIDIA_GL}
 .	if !exists(${LINUXBASE}/usr/X11R6/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux-libGLU
@@ -74,7 +72,7 @@ do-install:
 .endfor
 	${LN} -s ${PREFIX}/${SAVAGEDIR}/libs/libfmod-3.75.so ${PREFIX}/${SAVAGEDIR}/libs/libfmod.so
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/licenses.txt ${PREFIX}/${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glheretic
-# Date created:		04 Feb 2000
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	heretic
 PORTVERSION=	1.2
@@ -20,36 +16,35 @@ USE_XORG=	x11 xi xpm xau
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
-OPTIONS=	X11	"Use X11"		on \
-		FASTX11	"Use FastX11"		off \
-		SDL	"Use SDL"		off \
-		WAD	"With shareware WAD"	on
+OPTIONS_DEFINE=	WAD
+OPTIONS_SINGLE=	SG1
+OPTIONS_SINGLE_SG1=	X11 FASTX11 SDL
+FASTX11_DESC=	Use FastX11
+WAD_DESC=	With shareware WAD
+SG1_DESC=	Graphics Selections
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	X11 WAD
 
-.if (defined(WITH_X11) && (defined(WITH_FASTX11) || defined(WITH_SDL))) || \
-    (defined(WITH_FASTX11) && (defined(WITH_X11) || defined(WITH_SDL)))
-IGNORE=		you must only define X11, xor FASTX11, xor SDL
-.endif
+.include <bsd.port.options.mk>
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 ALL_TARGET=	x11
 BINARY=		xheretic
 .endif
 
-.if defined(WITH_FASTX11)
+.if ${PORT_OPTIONS:MFASTX11}
 ALL_TARGET=	fastx11
 BINARY=		xaheretic
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	yes
 ALL_TARGET=	sdl
 BINARY=		sdlheretic
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 .endif
 
-.if defined(WITH_WAD)
+.if ${PORT_OPTIONS:MWAD}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source heretic_share.wad.gz:wad
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB=	WAD:=""
@@ -58,7 +53,7 @@ PLIST_SUB=	WAD:="@comment "
 .endif
 
 post-extract:
-.if !defined(WITHOUT_WAD)
+.if ${PORT_OPTIONS:MWAD}
 	@${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/heretic_share.wad.gz \
 		> ${WRKSRC}/heretic_share.wad
 .endif
@@ -67,15 +62,15 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/heretic
 	${INSTALL_PROGRAM} ${WRKSRC}/sndserver ${PREFIX}/bin/sndserver
-.if !defined(WITHOUT_WAD)
+.if ${PORT_OPTIONS:MWAD}
 	@${MKDIR} ${PREFIX}/share/heretic
 	${INSTALL_DATA} ${WRKSRC}/heretic_share.wad ${PREFIX}/share/heretic
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in "End User License Heretic Source Code.txt" Gamekeys.txt README.txt AUTHORS SourceReadme.txt Changelog README.opengl
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freedroidrpg
-# Date created:			18 Jul 2005
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freedroidrpg
 PORTVERSION=	0.15
@@ -23,13 +19,14 @@ CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 
 MAN6=		freedroidRPG.6
 
-OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
-		OPENGL "Enable the OpenGL support (highly recommended!)" on \
-		VORBIS "Enable vorbis support (music)" on
+OPTIONS_DEFINE=	BACKTRACE OPENGL VORBIS
+BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
+
+OPTIONS_DEFAULT=	BACKTRACE OPENGL VORBIS
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_BACKTRACE)
+.if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 CONFIGURE_ARGS+=--enable-backtrace
 STRIP=		#
@@ -37,14 +34,14 @@ STRIP=		#
 CONFIGURE_ARGS+=--disable-backtrace
 .endif
 
-.if !defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-opengl
 .else
 CONFIGURE_ARGS+=--disable-opengl
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=--enable-vorbis

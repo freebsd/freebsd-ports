@@ -1,7 +1,4 @@
-# New ports collection makefile for:	eduke32
-# Date Created:				1 Aug 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
 
 PORTNAME=	eduke32
@@ -28,12 +25,15 @@ USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
 SVNREVISION=	1923
 
-OPTIONS=	MIDI		"Enable original MIDI music support"	On \
-		TIMIDITYPLUS	"Use Timidity++ instead of Timidity"	Off \
-		VORBIS		"Enable Ogg Vorbis music files support"	On
+OPTIONS_DEFINE=	MIDI TIMIDITYPLUS VORBIS
+MIDI_DESC=	Original MIDI music support
+TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity
+
+OPTIONS_DEFAULT=	MIDI VORBIS
 
 .include "${.CURDIR}/../duke3d-data/Makefile.include"
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -44,20 +44,20 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if defined(WITH_MIDI)
-.if defined(WITH_TIMIDITYPLUS)
+.if ${PORT_OPTIONS:MMIDI}
+.if ${PORT_OPTIONS:MTIMIDITYPLUS}
 RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity++
 .else
 RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 .endif
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 post-patch:
-.if defined(WITHOUT_VORBIS)
+.if ! ${PORT_OPTIONS:MVORBIS}
 	@${REINPLACE_CMD} '/+= -lvorbis/d' ${WRKSRC}/Makefile
 .endif
 .if ${ARCH} != "i386"
@@ -82,11 +82,11 @@ do-install:
 .for f in eduke32 mapster32
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/samples/*.sample ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 . for f in cfg map m32 txt
 	${INSTALL_DATA} ${WRKSRC}/samples/*.${f} ${EXAMPLESDIR}

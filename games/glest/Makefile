@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glest
-# Date created:				2005-10-30
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	glest
 PORTVERSION=	3.2.2
@@ -36,13 +32,15 @@ SUB_FILES=		glest-wrapper pkg-message
 
 JAM_CMD=		${LOCALBASE}/bin/jam -qa
 
-OPTIONS=	EDITOR	"Build map editor"	off
+OPTIONS_DEFINE=	EDITOR
+EDITOR_DESC=	Build map editor
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_EDITOR)
+.if ${PORT_OPTIONS:MEDITOR}
 USE_WX=		2.6+
 WX_CONF_ARGS=	relative
 WANT_UNICODE=	yes
@@ -74,7 +72,7 @@ do-build:
 	@cd ${WRKSRC} && ${JAM_CMD}
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/code_license.txt ${DOCSDIR}/code_license.txt
 .endif

@@ -33,11 +33,12 @@ MAN6=		arx.6
 
 PORTDOCS=	AUTHORS CHANGELOG README.md
 
-OPTIONS=	CRASHREPORTER "Build crash reporter (requires Qt4)" off
+OPTIONS_DEFINE=	CRASHREPORTER 
+CRASHREPORTER_DESC=	Build crash reporter (requires Qt4)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CRASHREPORTER)
+.if ${PORT_OPTIONS:MCRASHREPORTER}
 USE_QT4=	corelib gui network rcc_build moc_build uic_build qmake_build
 CMAKE_ARGS+=	-DBUILD_CRASHREPORTER=ON
 PLIST_SUB+=	CRASHREPORTER=""
@@ -47,7 +48,7 @@ PLIST_SUB+=	CRASHREPORTER="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/

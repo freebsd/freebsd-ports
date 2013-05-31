@@ -36,8 +36,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-7.53/source
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
+
+OPTIONS_DEFAULT=	CLIENT DEDICATED
 
 PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
@@ -45,7 +49,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USES+=		pkgconfig
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
@@ -57,21 +61,17 @@ USE_OPENAL=	soft alut
 USE_XORG=	xxf86dga xxf86vm
 .endif
 
-.if !defined(WITH_CLIENT) && defined(WITH_DEDICATED)
+.if ! ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MDEDICATED}
 CONFIGURE_ARGS+=--disable-client
 .endif
 
-.if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT or DEDICATED)
-.endif
-
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 PLIST_SUB+=	CLIENT=""
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 PLIST_SUB+=	DEDICATED=""
 .else
 PLIST_SUB+=	DEDICATED="@comment "
@@ -89,11 +89,11 @@ do-install:
 	${LN} -s ${DATADIR}/arena/* ${LIBDIR}/arena
 	${LN} -s ${DATADIR}/botinfo ${LIBDIR}
 	${LN} -s ${DATADIR}/data1/* ${LIBDIR}/data1
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	${INSTALL_PROGRAM} ${WRKSRC}/crx \
 		${PREFIX}/bin/${PORTNAME}
 .endif
-.if defined(WITH_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 	${INSTALL_PROGRAM} ${WRKSRC}/crx-ded \
 		${PREFIX}/bin/${PORTNAME}-ded
 .endif

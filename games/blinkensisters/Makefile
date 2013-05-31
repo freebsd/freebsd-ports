@@ -1,9 +1,5 @@
-# New ports collection makefile for:	blinkensisters
-# Date created:		26 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	blinkensisters
 PORTVERSION=	0.5.3
@@ -26,18 +22,20 @@ ADDONS_WRKSRC=	${WRKDIR}/blinkensisters/lostpixels/game/addons
 
 PORTDOCS=	*
 
-OPTIONS=	ADDONS	"Install addons (~200 MB download size)" off \
-		SDL_MIXER	"Build with sound support" on \
-		SDL_NET	"Build with network support" on \
-		THEORA	"Build with theora support" off
+OPTIONS_DEFINE=	ADDONS SDL_MIXER SDL_NET THEORA
+ADDONS_DESC=	Install addons (~200 MB download size)
+SDL_MIXER_DESC=	Build with sound support
+SDL_NET_DESC=	Build with network support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	SDL_MIXER SDL_NET
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if defined(WITH_ADDONS)
+.if ${PORT_OPTIONS:MADDONS}
 DISTNAME=	LostPixels-${PORTVERSION}-source-with-addons
 PKGNAMESUFFIX=	-with-addons
 PLIST_SUB+=	ADDONS=""
@@ -46,41 +44,41 @@ DISTNAME=	LostPixels-${PORTVERSION}-source
 PLIST_SUB+=	ADDONS="@comment "
 .endif
 
-.if defined(WITHOUT_SDL_MIXER)
-CMAKE_ARGS+=	-DUSE_SDL_MIXER:BOOL=OFF
-PLIST_SUB+=	SDL_MIXER="@comment "
-.else
+.if ${PORT_OPTIONS:MSDL_MIXER}
 USE_SDL+=	mixer
 PLIST_SUB+=	SDL_MIXER=""
+.else
+CMAKE_ARGS+=	-DUSE_SDL_MIXER:BOOL=OFF
+PLIST_SUB+=	SDL_MIXER="@comment "
 .endif
 
-.if defined(WITHOUT_SDL_NET)
-CMAKE_ARGS+=	-DUSE_SDL_NET:BOOL=OFF
-PLIST_SUB+=	SDL_NET="@comment "
-.else
+.if ${PORT_OPTIONS:MSDL_NET}
 USE_SDL+=	net
 PLIST_SUB+=	SDL_NET=""
+.else
+CMAKE_ARGS+=	-DUSE_SDL_NET:BOOL=OFF
+PLIST_SUB+=	SDL_NET="@comment "
 .endif
 
-.if defined(WITH_THEORA)
+.if ${PORT_OPTIONS:MTHEORA}
 CMAKE_ARGS+=	-DUSE_THEORA:BOOL=ON
 .else
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^INSTALL.*doc/ d' ${WRKSRC}/CMakeLists.txt
 .endif
 	@${REINPLACE_CMD} -e 's|share/blinkensisters|${DATADIR:S,${PREFIX}/,,}|; \
 		s|share/doc/blinkensisters|${DOCSDIR:S,${PREFIX}/,,}|' \
 		${WRKSRC}/CMakeLists.txt
-.if defined(WITH_ADDONS)
+.if ${PORT_OPTIONS:MADDONS}
 	@${FIND} ${ADDONS_WRKSRC} -name "Makefile" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|bmfcompress|${WRKSRC}/&|'
 .endif
 
-.if defined(WITH_ADDONS)
+.if ${PORT_OPTIONS:MADDONS}
 post-build:
 	cd ${ADDONS_WRKSRC} && ${MAKE}
 
@@ -89,4 +87,4 @@ post-install:
 	${INSTALL_DATA} ${ADDONS_WRKSRC}/for_upload/*.bmf ${DATADIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

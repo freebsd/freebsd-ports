@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moonlander
-# Date created:				27 Jun 2003
-# Whom:					Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	moonlander
 PORTVERSION=	1.0
@@ -24,17 +20,18 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/moon-lander
 
-OPTIONS=	SOUND "Sound support" on
+OPTIONS=	SOUND
+OPTIONS_DEFINE=	SOUND
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 install_dirs=	fonts images
-.if defined(WITHOUT_SOUND)
-CFLAGS+=	-DNOSOUND
-PLIST_SUB+=	SOUND="@comment "
-.else
+.if ${PORT_OPTIONS:MSOUND}
 PLIST_SUB+=	SOUND=
 install_dirs+=	sounds
+.else
+CFLAGS+=	-DNOSOUND
+PLIST_SUB+=	SOUND="@comment "
 .endif
 
 do-configure:
@@ -52,4 +49,4 @@ post-install:
 	@${FIND} ${PREFIX}/share/moonlander -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 444
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

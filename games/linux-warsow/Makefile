@@ -1,7 +1,5 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
@@ -44,15 +42,18 @@ DESKTOP_ENTRIES="Warsow" \
 		"Game;" \
 		false
 
-OPTIONS=	CLIENT	"Install client"	on \
-		SERVER	"Install dedicated server"	on \
-		NVIDIA	"Install support for nvidia"	off
+OPTIONS_DEFINE=	NVIDIA
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT SERVER
+CLIENT_DESC=	Install client
+SERVER_DESC=	Dedicated server
+NVIDIA_DESC=	Support for nvidia
+FLAVOR_DESC=	Executable Selection
 
+OPTIONS_DEFAULT=	CLIENT SERVER
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
-IGNORE=		requires at least one of CLIENT and SERVER options
-.endif
 
 .if defined(WITH_NVIDIA)
 .	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)

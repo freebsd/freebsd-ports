@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mirrormagic
-# Date created:				1 April 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	mirrormagic
 PORTVERSION=	2.0.2
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An arcade style game with stereo sound for X Window System
+COMMENT=	Arcade style game with stereo sound for X Window System
 
 LICENSE=	GPLv2
 
@@ -23,11 +19,12 @@ MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		X11_PATH="${LOCALBASE}"
 WANT_SDL=	yes
 
-OPTIONS=	SDL	"SDL support"	on
+OPTIONS_DEFINE=	SDL
+OPTIONS_DEFAULT=	SDL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	image mixer sdl
 ALL_TARGET=	sdl
 .else
@@ -50,11 +47,11 @@ do-install:
 		${TAR} -C ${DATADIR} -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHMOD} 777 ${DATADIR}/scores
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in CHANGES CREDITS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
