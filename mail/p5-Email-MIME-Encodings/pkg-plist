@@ -3,6 +3,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Encodings
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
-@dirrmtry %%SITE_PERL%%/Email/MIME/Encodings
 @dirrmtry %%SITE_PERL%%/Email/MIME
 @dirrmtry %%SITE_PERL%%/Email
