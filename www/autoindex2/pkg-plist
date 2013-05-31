@@ -235,4 +235,4 @@
 @dirrm %%INSTALLDIR%%/templates/simple_image_gallery
 @dirrm %%INSTALLDIR%%/templates
 @dirrmtry %%INSTALLDIR%%
-@dirrmtry www/data
+
