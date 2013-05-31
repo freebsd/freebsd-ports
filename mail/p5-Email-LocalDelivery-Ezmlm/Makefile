@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Email-LocalDelivery-Ezmlm
-# Date created:				September 7 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-LocalDelivery-Ezmlm
 PORTVERSION=	0.10
