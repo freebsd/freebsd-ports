@@ -3,6 +3,7 @@
 
 PORTNAME=	sarg
 PORTVERSION=	2.3.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -34,6 +35,7 @@ MAN1=		sarg.1
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USES+=		gettext
+EXTRA_LDFLAGS=	-lintl
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-nls
@@ -71,6 +73,7 @@ CONFIGURE_ARGS+=--without-ldap
 .if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=--with-iconv
 USES+=	iconv
+EXTRA_LDFLAGS+=	-liconv
 .else
 CONFIGURE_ARGS+=--without-iconv
 .endif
@@ -80,8 +83,11 @@ post-extract:
 	@${CHMOD} 0755 ${WRKSRC}/configure
 
 post-patch:
-.if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/^LIBS/ s/$$/ -lintl/' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/test .*==/ s/==/=/' \
+		${WRKSRC}/configure.in
+.if ${PORT_OPTIONS:MNLS} || ${PORT_OPTIONS:MICONV}
+	@${REINPLACE_CMD} -e '/^LIBS/ s/$$/ ${EXTRA_LDFLAGS}/' \
+		${WRKSRC}/Makefile.in
 .endif
 
 pre-configure:
