@@ -19,7 +19,7 @@ USE_KDE4=	# Used below if KWallet support is enabled
 
 LICENSE=	AL2
 
-CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.6.[0-9]*
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[6|8].[0-9]*
 
 LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 			expat:${PORTSDIR}/textproc/expat2
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--with-ssl \
 			--with-expat=/usr/local/include:/usr/local/lib:expat
 
 .if defined(SVN_BUILD_BINDINGS)
-CONFLICTS_BUILD+=	${PORTNAME}-1.6.[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[6|8].[0-9]*
 LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
