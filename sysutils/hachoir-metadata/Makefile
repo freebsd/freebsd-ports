@@ -1,12 +1,9 @@
-# New ports collection makefile for:	hachoir-metadata
-# Date created:		25 January 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hachoir-metadata
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
@@ -19,6 +16,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/h
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+.include <bsd.port.pre.mk>
+
 PYDISTUTILS_CONFIGUREARGS+=	--disable-qt
 PYDISTUTILS_BUILDARGS+=	--disable-qt
 PYDISTUTILS_INSTALLARGS+=	--disable-qt
@@ -29,4 +28,4 @@ pre-everything::
 	@${ECHO_MSG} "py-gtk (x11-toolkits/py-gtk2) installed."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
