@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-threads
-# Date created:		2006-07-22
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	threads
-PORTVERSION=	1.86
+PORTVERSION=	1.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
