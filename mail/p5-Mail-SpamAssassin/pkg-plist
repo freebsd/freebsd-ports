@@ -151,3 +151,4 @@ lib/libspamc.so.0
 @dirrmtry etc/mail/spamassassin
 @dirrmtry etc/mail
 @unexec rm -rf /var/run/spamd
+@unexec rm -rf /var/spool/spamd
