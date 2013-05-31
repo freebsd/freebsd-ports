@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/KMeans/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/KMeans
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/KMeans
 @dirrmtry %%SITE_PERL%%/Algorithm

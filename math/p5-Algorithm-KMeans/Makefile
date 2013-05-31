@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-KMeans
-# Date created:				30 June, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-KMeans
 PORTVERSION=	1.40
