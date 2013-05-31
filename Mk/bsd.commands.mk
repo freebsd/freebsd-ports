@@ -72,6 +72,7 @@ OBJDUMP?=	/usr/bin/objdump
 PASTE?=		/usr/bin/paste
 PAX?=		/bin/pax
 PRINTF?=	/usr/bin/printf
+PS_CMD?=	/bin/ps
 PW?=		/usr/sbin/pw
 REALPATH?=	/bin/realpath
 RM?=		/bin/rm
