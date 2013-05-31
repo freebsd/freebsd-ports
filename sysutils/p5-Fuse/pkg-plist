@@ -4,4 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Fuse.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/autosplit.ix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Fuse
