@@ -1,9 +1,5 @@
-# New ports collection makefile for:	teewars
-# Date created:		17 Feb 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	teeworlds
 PORTVERSION=	0.6.1
@@ -31,15 +27,16 @@ WRKSRC=		${WRKDIR}/teeworlds-b177-r50edfd37-source
 
 PORTDOCS=	readme.txt license.txt
 
-OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
+OPTIONS_DEFINE=	SERVER
+SERVER_DESC=	Build dedicated server only
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=		Does not install on ia64: gets bus error
 .endif
 
-.if defined(WITH_TEEWORLDS_SERVER_ONLY)
+.if ${PORT_OPTIONS:MSERVER}
 BAM_TARGET=	server_release
 PLIST_SUB+=	CLIENT="@comment "
 PKGNAMESUFFX=	-server
@@ -75,17 +72,17 @@ do-build:
 		${BAM_WRKSRC}/bam -n -a -v ${_MAKE_JOBS:C/-j/-j /} ${BAM_TARGET}
 
 do-install:
-.if !defined(WITH_TEEWORLDS_SERVER_ONLY)
+.if ! ${PORT_OPTIONS:MSERVER}
 	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds ${PREFIX}/bin
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds_srv ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/other/icons/Teeworlds.ico ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pvpgn
-# Date created:				19 January 2005
-# Whom:					mek
-#
+# Created by: mek
 # $FreeBSD$
-#
 
 PORTNAME=	pvpgn
 PORTVERSION=	1.8.5
@@ -46,33 +42,33 @@ MAN1=		bnbot.1 bnchat.1 bnetd.1 bnftp.1 bni2tga.1 bnibuild.1 \
 		bniextract.1 bnilist.1 bnpass.1 bnstat.1 bntrackd.1 tgainfo.1
 MAN5=		bnetd.conf.5 bntext.5
 
-OPTIONS=	MYSQL "Include MySQL user accounts support" off \
-		PGSQL "Include PostgreSQL user accounts support" off \
-		SQLITE3 "Include SQLite3 user accounts support" off \
-		D2 "Enable Diablo II server (D2CS/D2DBS)" on
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 D2
+D2_DESC=	Diablo II server (D2CS/D2DBS)
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	D2
 
-.if defined(WITH_MYSQL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 CONFIGURE_ARGS+=--with-sqlite3
 .endif
 
-.if defined(WITHOUT_D2)
+.if ${PORT_OPTIONS:MD2}
+PLIST_SUB+=	WITH_D2=""
+.else
 CONFIGURE_ARGS+=	--disable-d2cs --disable-d2dbs
 PLIST_SUB+=	WITH_D2="@comment "
-.else
-PLIST_SUB+=	WITH_D2=""
 .endif
 
 ## support files
@@ -99,7 +95,7 @@ post-install:
 
 ## Additional documentation
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in INSTALL.unix PORTS README.fdwatch README.storage bnmotd.txt
 	${INSTALL_MAN} ${WRKSRC}/../docs/${i} ${DOCSDIR}
@@ -108,4 +104,4 @@ post-install:
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

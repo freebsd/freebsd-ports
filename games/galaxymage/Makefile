@@ -1,9 +1,5 @@
-# New ports collection makefile for:	galaxymage
-# Date created:		2006-01-30
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	galaxymage
 PORTVERSION=	0.3.0
@@ -23,11 +19,12 @@ USE_TWISTED=	yes
 USES=		gettext
 NO_BUILD=	yes
 
-OPTIONS=	PSYCO	"Use just-in-time Python compiler" off
+OPTIONS_DEFINE=	PSYCO
+PSYCO_DESC=	Use just-in-time Python compiler
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PSYCO)
+.if ${PORT_OPTIONS:MPSYCO}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
 
@@ -50,7 +47,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/locale/${FILE}/LC_MESSAGES/* \
 			${PREFIX}/share/locale/${FILE}/LC_MESSAGES
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && \
 		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
@@ -58,4 +55,4 @@ do-install:
 			"${DOCSDIR}/{}" \;
 	@${INSTALL_DATA} ${WRKSRC}/CREDITS.txt ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

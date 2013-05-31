@@ -14,10 +14,13 @@ SCRIPTDEV2REV=	245
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
 
-OPTIONS=	SCRIPTDEV2	"ScriptDev2"	on \
-		CLI		"Command Line Itrerface support" off \
-		RA		"Remote Administration support" off \
-		DBC		"Install DBC files" on
+OPTIONS_DEFINE=	SCRIPTDEV2 CLI RA DBC
+SCRIPTDEV2_DESC=	ScriptDev2 support
+CLI_DESC=	Command Line Itrerface support
+RA_DESC=	Remote Administration support
+DBC_DESC=	Install DBC files
+
+OPTIONS_DEFAULT=	SCRIPTDEV2 DBC
 
 USE_AUTOTOOLS=	aclocal libtoolize autoconf autoheader automake libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
@@ -29,30 +32,30 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS= --prefix=${PREFIX} --sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef WITH_SCRIPTDEV2
+.if ${PORT_OPTIONS:MSCRIPTDEV2}
 DISTFILES+=	ScriptDev2-${SCRIPTDEV2REV}.tar.gz
 EXTRA_PATCHES=	${FILESDIR}/ScriptDev2.patch
 PLIST_SUB+=	SD2=""
 .else
 PLIST_SUB+=	SD2="@comment "
 .endif
-.ifdef WITH_DBC
+.if ${PORT_OPTIONS:MDBC}
 PLIST_SUB+=	DBC=""
 DISTFILES+=	mangos-dbc2_3_0.tar.gz
 .else
 PLIST_SUB+=	DBC="@comment "
 .endif
-.ifdef WITH_CLI
+.if ${PORT_OPTIONS:MCLI}
 CONFIGURE_ARGS+=--enable-cli
 .endif
-.ifdef WITH_RA
+.if ${PORT_OPTIONS:MRA}
 CONFIGURE_ARGS+=--enable-ra
 .endif
 
 post-extract:
-.ifdef WITH_SCRIPTDEV2
+.if ${PORT_OPTIONS:MSCRIPTDEV2}
 	@${MV} ${WRKDIR}/ScriptDev2-${SCRIPTDEV2REV} ${WRKSRC}/src/bindings/ScriptDev2/
 .endif
 	@${LN} -s ${LTMAIN} ${WRKSRC}/
@@ -64,7 +67,7 @@ post-patch:
 		${WRKSRC}/src/mangosd/mangosd.conf.in
 	@${REINPLACE_CMD} -e '/^sysconf_DATA/,/conf/d' \
 		${WRKSRC}/src/mangosd/Makefile.am ${WRKSRC}/src/realmd/Makefile.am
-.ifdef WITH_SCRIPTDEV2
+.if ${PORT_OPTIONS:MSCRIPTDEV2}
 	@cd ${WRKSRC}/src/bindings/ScriptDev2/sql/Updates/&&\
 		${REINPLACE_CMD} -e '/pkgdata_DATA/,$$d' Makefile.am\
 		&&${ECHO_CMD} "pkgdata_DATA=`echo *.sql`">>Makefile.am
@@ -72,12 +75,12 @@ post-patch:
 
 run-autotools-automake:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS})
-.ifdef WITH_SCRIPTDEV2
+.if ${PORT_OPTIONS:MSCRIPTDEV2}
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS} src/bindings/ScriptDev2/Makefile)
 .endif
 
-.ifdef WITH_SCRIPTDEV2
+.if ${PORT_OPTIONS:MSCRIPTDEV2}
 post-build:
 	@(cd ${BUILD_WRKSRC}/src/bindings/ScriptDev2; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
@@ -86,11 +89,11 @@ post-install:
 	@for i in mangosd realmd;do cd ${PREFIX}/etc/&&\
 		${INSTALL_DATA} ${WRKSRC}/src/$$i/$$i.conf $$i.conf.sample&&\
 		${CP} -np $$i.conf.sample $$i.conf || ${TRUE} ;done
-.ifdef WITH_SCRIPTDEV2
+.if ${PORT_OPTIONS:MSCRIPTDEV2}
 	@(cd ${INSTALL_WRKSRC}/src/bindings/ScriptDev2 && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
-.ifdef WITH_DBC
+.if ${PORT_OPTIONS:MDBC}
 	@${CP} -Rf ${WRKDIR}/dbc ${PREFIX}/share/mangos/dbc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	daimonin-client
-# Date created:				15 Feb 2005
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	daimonin
 PORTVERSION=	0.10.5
@@ -31,29 +27,26 @@ SUB_LIST=	PORTVERSION=${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/client/make/linux
 
-OPTIONS=	KB_DESKTOP	"Install key bindings for desktop (num keypad)"		on \
-		KB_LAPTOP	"Install key bindings for laptop (789uojkl)"		off \
-		KB_ROGUE	"Install rogue-like key bindings (hjkl and yubn)"	off \
-		MUSIC		"Download and Install music files (83 Mb)"		on \
-		DEBUG		"Enable debugging messages in log"			off
+OPTIONS_DEFINE=	MUSIC DEBUG
+OPTIONS_SINGLE=	KB
+OPTIONS_SINGLE_KB=	KB_DESKTOP KB_LAPTOP KB_ROGUE
+KB_DESKTOP_DESC=	Key bindings for desktop (num keypad)
+KB_LAPTOP_DESC=	Key bindings for laptop (789uojkl)
+KB_ROGUE_DESC=	Rogue-like key bindings (hjkl and yubn)
+KB_DESC=	KB Selection
+MUSIC_DESC=	Download and Install music files (83 Mb)
+
+OPTIONS_DEFAULT=	KB_DESKTOP MUSIC
 
 DD?=		/bin/dd
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KB_DESKTOP) && defined(WITH_KB_LAPTOP) || \
-    defined(WITH_KB_LAPTOP) && defined(WITH_KB_ROGUE) || \
-    defined(WITH_KB_DESKTOP) && defined(WITH_KB_ROGUE)
-pre-fetch::
-	@${ECHO_MSG} 'error: only one of the KB_* OPTIONS may be used - rerun "make config"'
-	@${FALSE}
-.endif
-
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-wrapper.c
 .endif
 
-.if defined(WITH_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 RUN_DEPENDS+=	${DATADIR}/media/AnichGiantTrouble.ogg:${PORTSDIR}/games/daimonin-music
 .endif
 
@@ -79,10 +72,10 @@ post-install:
 	${CHMOD} a+x ${PREFIX}/bin/daimonin
 	@${FIND} ${DATADIR} -name '*.orig' -exec rm {} \;
 	${MV} ${DATADIR}/settings/keys.dat ${DATADIR}/settings/keys-desktop.dat
-.if defined(WITH_KB_LAPTOP)
+.if ${PORT_OPTIONS:MKB_LAPTOP}
 	@${ECHO} Configuring keyboard bindings for laptop
 	${LN} -s ${DATADIR}/settings/keys-laptop.dat ${DATADIR}/settings/keys.dat
-.elif defined(WITH_KB_ROGUE)
+.elif ${PORT_OPTIONS:MKB_ROGUE}
 	@${ECHO} Configuring rogue-like keyboard bindings
 	${LN} -s ${DATADIR}/settings/keys-rogue.dat ${DATADIR}/settings/keys.dat
 .else
@@ -90,4 +83,4 @@ post-install:
 	${LN} -s ${DATADIR}/settings/keys-desktop.dat ${DATADIR}/settings/keys.dat
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

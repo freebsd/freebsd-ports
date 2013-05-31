@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Nexuiz
-# Date created:				03 Jun 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
+COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
@@ -35,31 +31,33 @@ MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
 MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	#
 
-OPTIONS=	CLIENT		"Build GLX client"		on \
-		SDL_CLIENT	"Build SDL client"		on \
-		SERVER		"Build dedicated server"	on \
-		MAPPACK		"Install community map pack"	on
+OPTIONS_DEFINE=	MAPPACK
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT SDL_CLIENT SERVER
+CLIENT_DESC=	Build GLX client
+SDL_CLIENT_DESC=	Build SDL client
+SERVER_DESC=	Build dedicated server
+MAPPACK_DESC=	Install community map pack
+FLAVOR_DESC=	Executable Selection
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	CLIENT SDL_CLIENT SERVER MAPPAC
 
-.if !(defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT) || defined(WITH_SERVER))
-IGNORE=		requires at least one of [SDL_]CLIENT or SERVER options
-.endif
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MAPPACK)
+.if ${PORT_OPTIONS:MMAPPACK}
 DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}:mappack
 PLIST_SUB+=	MAPPACK=""
 .else
 PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
-.if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT} || defined{WITH_SDL_CLIENT}
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
 		png15:${PORTSDIR}/graphics/png \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		glut
 USE_XORG=	x11 xpm xxf86vm xxf86dga xext
 ALL_TARGET+=	cl-release
@@ -68,7 +66,7 @@ PLIST_SUB+=	CLIENT=""
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_SDL_CLIENT)
+.if ${PORT_OPTIONS:MSDL_CLIENT}
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 PLIST_SUB+=	SDL_CLIENT=""
@@ -76,7 +74,7 @@ PLIST_SUB+=	SDL_CLIENT=""
 PLIST_SUB+=	SDL_CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 ALL_TARGET+=	sv-release
 PLIST_SUB+=	SERVER=""
 .else
@@ -103,14 +101,14 @@ do-install:
 	@${MKDIR} ${DATADIR}/data ${DATADIR}/havoc
 	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
 	${INSTALL_DATA} ${WRKDIR}/Nexuiz/havoc/*.pk3 ${DATADIR}/havoc
-.if !defined(WITHOUT_MAPPACK)
+.if ${PORT_OPTIONS:MMAPPACK}
 	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${DATADIR}/data
 .endif
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} server ${DATADIR}
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
 	${FIND} ${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

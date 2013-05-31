@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysycache-lang
-# Date created:		2006-02-22
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	lang
 PORTVERSION=	2.0
@@ -24,15 +20,18 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}
 
-OPTIONS=	FRENCH	"French language support"	on \
-		GERMAN	"German language support"	on \
-		ITALIAN	"Italian language support"	on \
-		PORTUGUESE	"Portuguese language support"	on \
-		SPANISH	"Spanish language support"	on
+OPTIONS_DEFINE=	FRENCH GERMAN ITALIAN PORTUGUESE SPANISH
+FRENCH_DESC=	French language support
+GERMAN_DESC=	German language support
+ITALIAN_DESC=	Italian language support
+PORTUGUESE_DESC=	Portuguese language support
+SPANISH_DESC=	Spanish language support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	FRENCH GERMAN ITALIAN PORTUGUESE SPANISH
 
-.if !defined(WITHOUT_FRENCH)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFRENCH}
 DISTFILES+=	pysycache-lang-fr-${PORTVERSION}.zip
 PLIST_SUB+=	FRENCH=""
 FLAG_LANG=	true
@@ -41,7 +40,7 @@ HAVE_LANG+=	fr
 PLIST_SUB+=	FRENCH="@comment "
 .endif
 
-.if !defined(WITHOUT_GERMAN)
+.if ${PORT_OPTIONS:MGERMAN}
 DISTFILES+=	pysycache-lang-de-${PORTVERSION}.zip
 PLIST_SUB+=	GERMAN=""
 FLAG_LANG=	true
@@ -50,7 +49,7 @@ HAVE_LANG+=	de
 PLIST_SUB+=	GERMAN="@comment "
 .endif
 
-.if !defined(WITHOUT_ITALIAN)
+.if ${PORT_OPTIONS:MITALIAN}
 DISTFILES+=	pysycache-lang-it-${PORTVERSION}.zip
 PLIST_SUB+=	ITALIAN=""
 FLAG_LANG=	true
@@ -59,7 +58,7 @@ HAVE_LANG+=	it
 PLIST_SUB+=	ITALIAN="@comment "
 .endif
 
-.if !defined(WITHOUT_PORTUGUESE)
+.if ${PORT_OPTIONS:MPORTUGUESE}
 DISTFILES+=	pysycache-lang-pt-${PORTVERSION}.zip
 PLIST_SUB+=	PORTUGUESE=""
 FLAG_LANG=	true
@@ -68,7 +67,7 @@ HAVE_LANG+=	pt
 PLIST_SUB+=	PORTUGUESE="@comment "
 .endif
 
-.if !defined(WITHOUT_SPANISH)
+.if ${PORT_OPTIONS:MSPANISH}
 DISTFILES+=	pysycache-lang-es-${PORTVERSION}.zip
 PLIST_SUB+=	SPANISH=""
 FLAG_LANG=	true
@@ -100,4 +99,4 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

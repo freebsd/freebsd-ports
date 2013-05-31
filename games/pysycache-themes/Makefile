@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysycache-themes
-# Date created:		2006-02-22
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	themes
 PORTVERSION=	2.0
@@ -15,7 +11,7 @@ DISTFILES=	#
 DIST_SUBDIR=	pysycache
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	The pysycache themes support
+COMMENT=	Pysycache themes support
 
 RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache
 
@@ -24,19 +20,22 @@ NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}
 
-OPTIONS=	ANIMALS_MOVE	"Animals move mouse theme"	on \
-		EARTH_MOVE	"Earth move mouse theme"	on \
-		FOOD_MOVE	"Food move mouse theme"	on \
-		PLANTS_MOVE	"Plants move mouse theme"	on \
-		SKY_MOVE	"Sky move mouse theme"	on \
-		SPORTS_MOVE	"Sports move mouse theme"	on \
-		VEHICLE_MOVE	"Vehicle move mouse theme"	on \
-		WORLD_MOVE	"World move mouse theme"	on \
-		AFRICA_ACTIVITY	"Africa activity theme"	on
+OPTIONS_DEFINE=	ANIMALS EARTH FOOD PLANTS SKY SPORTS VEHICLE WORLD AFRICA
+ANIMALS_DESC=	Animals move mouse theme
+EARTH_DESC=	Earth move mouse theme
+FOOD_DESC=	Food move mouse theme
+PLANTS_DESC=	Plants move mouse theme
+SKY_DESC=	Sky move mouse theme
+SPORTS_DESC=	Sports move mouse theme
+VEHICLE_DESC=	Vehicle move mouse theme
+WORLD_DESC=	World move mouse theme
+AFRICA_DESC=		Africa activity theme
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	ANIMALS EARTH FOOD PLANTS SKY SPORTS VEHICLE WORLD AFRICA
 
-.if !defined(WITHOUT_ANIMALS_MOVE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MANIMALS}
 DISTFILES+=	animals-${PORTVERSION}.zip
 PLIST_SUB+=	ANIMALS=""
 FLAG_THEME=	true
@@ -45,7 +44,7 @@ HAVE_THEME+=	animals
 PLIST_SUB+=	ANIMALS="@comment "
 .endif
 
-.if !defined(WITHOUT_EARTH_MOVE)
+.if ${PORT_OPTIONS:MEARTH}
 DISTFILES+=	earth-${PORTVERSION}.zip
 PLIST_SUB+=	EARTH=""
 FLAG_THEME=	true
@@ -54,7 +53,7 @@ HAVE_THEME+=	earth
 PLIST_SUB+=	EARTH="@comment "
 .endif
 
-.if !defined(WITHOUT_FOOD_MOVE)
+.if ${PORT_OPTIONS:MFOOD}
 DISTFILES+=	food-${PORTVERSION}.zip
 PLIST_SUB+=	FOOD=""
 FLAG_THEME=	true
@@ -63,7 +62,7 @@ HAVE_THEME+=	food
 PLIST_SUB+=	FOOD="@comment "
 .endif
 
-.if !defined(WITHOUT_PLANTS_MOVE)
+.if ${PORT_OPTIONS:MPLANTS}
 DISTFILES+=	plants-${PORTVERSION}.zip
 PLIST_SUB+=	PLANTS=""
 FLAG_THEME=	true
@@ -72,7 +71,7 @@ HAVE_THEME+=	plants
 PLIST_SUB+=	PLANTS="@comment "
 .endif
 
-.if !defined(WITHOUT_SKY_MOVE)
+.if ${PORT_OPTIONS:MSKY}
 DISTFILES+=	sky-${PORTVERSION}.zip
 PLIST_SUB+=	SKY=""
 FLAG_THEME=	true
@@ -81,7 +80,7 @@ HAVE_THEME+=	sky
 PLIST_SUB+=	SKY="@comment "
 .endif
 
-.if !defined(WITHOUT_SPORTS_MOVE)
+.if ${PORT_OPTIONS:MSPORTS}
 DISTFILES+=	sports-${PORTVERSION}.zip
 PLIST_SUB+=	SPORTS=""
 FLAG_THEME=	true
@@ -90,7 +89,7 @@ HAVE_THEME+=	sports
 PLIST_SUB+=	SPORTS="@comment "
 .endif
 
-.if !defined(WITHOUT_VEHICLE_MOVE)
+.if ${PORT_OPTIONS:MVEHICLE}
 DISTFILES+=	vehicle-${PORTVERSION}.zip
 PLIST_SUB+=	VEHICLE=""
 FLAG_THEME=	true
@@ -99,7 +98,7 @@ HAVE_THEME+=	vehicle
 PLIST_SUB+=	VEHICLE="@comment "
 .endif
 
-.if !defined(WITHOUT_WORLD_MOVE)
+.if ${PORT_OPTIONS:MWORLD}
 DISTFILES+=	world-${PORTVERSION}.zip
 PLIST_SUB+=	WORLD=""
 FLAG_THEME=	true
@@ -108,7 +107,7 @@ HAVE_THEME+=	world
 PLIST_SUB+=	WORLD="@comment "
 .endif
 
-.if !defined(WITHOUT_AFRICA_ACTIVITY)
+.if ${PORT_OPTIONS:MAFRICA}
 DISTFILES+=	africa-${PORTVERSION}.zip
 PLIST_SUB+=	AFRICA=""
 FLAG_THEME=	true
@@ -140,4 +139,4 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Quake 4
-# Date created:				21 Oct 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	quake4
 PORTVERSION=	1.4.2
@@ -28,15 +24,18 @@ PLIST_SUB+=	Q4DIR="${Q4DIR}" \
 		LINUXBASE="${LINUXBASE}"
 SUB_FILES=	pkg-message
 
-OPTIONS=	SMP	"Install threaded version"	on \
-		GERMANY	"Germany version"	off
+OPTIONS_DEFINE=	THREADS GERMANY
+GERMANY_DESC=	Germany version
 
+OPTIONS_DEFAULT=	THREADS
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SMP)
-PLIST_SUB+=	SMP=""
+.if ${PORT_OPTIONS:MTHREADS}
+PLIST_SUB+=	THREADS=""
 .else
-PLIST_SUB+=	SMP="@comment "
+PLIST_SUB+=	THREADS="@comment "
 .endif
 
 do-extract:
@@ -63,7 +62,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${PREFIX}/${Q4DIR}
 .endfor
-.if !defined(WITHOUT_SMP)
+.if ${PORT_OPTIONS:MTHREADS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}quake4smp.sh ${PREFIX}/bin/${PKGNAMEPREFIX}quake4smp
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/quake4smp.x86 ${PREFIX}/${Q4DIR}
 .endif
@@ -82,7 +81,7 @@ do-install:
 			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
 
 	# All version (except germany) or only germany version
-.if defined(WITH_GERMANY)
+.if ${PORT_OPTIONS:MGERMANY}
 	@cd ${WRKSRC}/germany && \
 		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
 			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
@@ -93,7 +92,7 @@ do-install:
 .endif
 
 	# Documentation
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/Docs && \
 		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;

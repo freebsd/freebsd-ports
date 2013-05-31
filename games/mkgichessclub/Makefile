@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mkgichessclub
-# Date created:		2008-01-11
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale	<nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mkgichessclub
 PORTVERSION=	2.2.0
@@ -13,10 +9,13 @@ MASTER_SITES=	SF
 DISTNAME=	MKGIChessClub-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A chess playing server with a pure web interface
+COMMENT=	Chess playing server with a pure web interface
 
-OPTIONS=	GNUCHESS "Install gnuchess robot" on \
-		PHALANX	"Install phalanx robot" on
+OPTIONS_DEFINE=	GNUCHESS PHALANX
+GNUCHESS_DESC=	Install gnuchess robot
+PHALANX_DESC=	Install phalanx robot
+
+OPTIONS_DEFAULT=	GNUCHESS PHALANX
 
 NO_BUILD=	yes
 
@@ -28,12 +27,14 @@ USE_PYTHON=	yes
 
 WRKSRC=	${WRKDIR}/MKGIChessClub-${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${DATADIR}; cd ${WRKSRC}; \
 	${INSTALL_DATA} database/* ${DATADIR}; \
 	${MKDIR} ${WWWDIR}; cd www; ${CP} -R . ${WWWDIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}; \
 	${INSTALL_DATA} ${WRKSRC}/README.INSTALL ${DOCSDIR}
 .endif
@@ -42,14 +43,12 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if defined (WITH_GNUCHESS)
+.if ${PORT_OPTIONS:MGNUCHESS}
 RUN_DEPENDS+=	gnuchess:${PORTSDIR}/games/gnuchess
 .endif
 
-.if defined (WITH_PHALANX)
+.if ${PORT_OPTIONS:MPHALANX}
 RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

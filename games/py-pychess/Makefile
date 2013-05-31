@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pychess
-# Date created:		2008-01-23
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pychess
 DISTVERSION=	0.10rc1
@@ -21,13 +17,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=3-2.5.1_1:${PORTSDIR}/databases/py-
 
 INSTALLS_ICONS=	yes
 
-OPTIONS=	PYGSTREAMER "Install gst-python for audio support" off \
-		CRAFTY "Install crafty (chess engine)" off \
-		GNUCHESS "Install gnuchess (chess engine)" off \
-		PHALANX "Install phalanx (chess engine)" off \
-		SJENG "Install sjeng (chess engine)" off \
-		STRONGPLAYER "Install psyco/gmpy (strong player)" off \
-		STOCKFISH "Install stockfish (chess engine)" off
+OPTIONS_DEFINE=	PYGSTREAMER CRAFTY GNUCHESS PHALANX SJENG STRONGPLAYER STOCKFISH
+PYGSTREAMER_DESC=	Install gst-python for audio support
+CRAFTY_DESC=	Install crafty (chess engine)
+GNUCHESS_DESC=	Install gnuchess (chess engine)
+PHALANX_DESC=	Install phalanx (chess engine)
+SJENG_DESC=	Install sjeng (chess engine)
+STRONGPLAYER_DESC=	Install psyco/gmpy (strong player)
+STOCKFISH_DESC=	Install stockfish (chess engine)
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
@@ -50,35 +47,35 @@ MAKE_ENV+=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} ${PORTNAME} ${PYSETUP} lib/pychess/widgets/newGameDialog.py lib/pychess/Players/PyChess.py
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined (WITH_PYGSTREAMER)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}-gstreamer>=0.10.8:${PORTSDIR}/multimedia/py-gstreamer
+.if ${PORT_OPTIONS:MPYGSTREAMER}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10.8:${PORTSDIR}/multimedia/py-gstreamer
 .endif
 
-.if defined (WITH_CRAFTY)
+.if ${PORT_OPTIONS:MCRAFTY}
 RUN_DEPENDS+=	crafty:${PORTSDIR}/games/crafty
 .endif
 
-.if defined (WITH_GNUCHESS)
+.if ${PORT_OPTIONS:MGNUCHESS}
 RUN_DEPENDS+=	gnuchess:${PORTSDIR}/games/gnuchess
 .endif
 
-.if defined (WITH_PHALANX)
+.if ${PORT_OPTIONS:MPHALANX}
 RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
 .endif
 
-.if defined (WITH_SJENG)
+.if ${PORT_OPTIONS:MSJENG}
 RUN_DEPENDS+=	sjeng:${PORTSDIR}/games/sjeng
 .endif
 
-.if defined (WITH_STRONGPLAYER)
+.if ${PORT_OPTIONS:MSTRONGPLAYER}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psyco>=1.6:${PORTSDIR}/devel/py-psyco
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>=1.13:${PORTSDIR}/math/py-gmpy
 .endif
 
-.if defined (WITH_STOCKFISH)
+.if ${PORT_OPTIONS:MSTOCKFISH}
 RUN_DEPENDS+=	stockfish:${PORTSDIR}/games/stockfish
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

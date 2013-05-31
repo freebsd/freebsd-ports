@@ -1,9 +1,5 @@
-# New ports collection makefile for:	luola
-# Date created:		20 Jan 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	luola
 PORTVERSION=	1.3.0
@@ -25,18 +21,20 @@ USE_SDL=	sdl image ttf
 
 CONFIGURE_ARGS=	--program-prefix=''
 
-OPTIONS=	SDL_GFX	"Enable sdl_gfx for nicer graphics" on \
-		SOUND "Enable sound" on
+OPTIONS_DEFINE=	SDL_GFX SOUND
+SDL_GFX_DESC=	Nicer graphics
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	SDL_GFX SOUND
 
-.if defined(WITHOUT_SDL_GFX)
-CONFIGURE_ARGS+=	--disable-sdl-gfx
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSDL_GFX}
 USE_SDL+=	gfx
+.else
+CONFIGURE_ARGS+=	--disable-sdl-gfx
 .endif
 
-.if !defined(WITHOUT_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 CONFIGURE_ARGS+=	--enable-sound
 USE_SDL+=	mixer
 .endif
@@ -46,11 +44,11 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/*.lev ${WRKDIR}/*.png ${DATADIR}/levels
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in README FAQ
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

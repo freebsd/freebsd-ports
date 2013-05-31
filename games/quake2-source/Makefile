@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake2-source
-# Date created:				29 Sep 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	source
 PORTVERSION=	3.21
@@ -22,23 +18,24 @@ COMMENT=	Quake II game source
 
 NO_BUILD=	yes
 
-OPTIONS=	CTF "Install Capture The Flag mod source" off \
-		ROGUE "Install Ground Zero (Rogue) mission pack source" off \
-		XATRIX "Install The Reckoning (Xatrix) mission pack source" off
+OPTIONS_DEFINE=	CTF ROGUE XATRIX
+CTF_DESC=	Capture The Flag mod source
+ROGUE_DESC=	Ground Zero (Rogue) mission pack source
+XATRIX_DESC=	Reckoning (Xatrix) mission pack source
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CTF)
+.if ${PORT_OPTIONS:MCTF}
 PLIST_SUB+=	CTF=""
 .else
 PLIST_SUB+=	CTF="@comment "
 .endif
 
-.if defined(WITH_ROGUE)
+.if ${PORT_OPTIONS:MROGUE}
 DISTFILES+=	roguesrc320.shar.Z:id
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_rogue_g__local.h \
 		${FILESDIR}/extra-patch-src_rogue_q__shared.c
@@ -48,7 +45,7 @@ PLIST_SUB+=	ROGUE=""
 PLIST_SUB+=	ROGUE="@comment "
 .endif
 
-.if defined(WITH_XATRIX)
+.if ${PORT_OPTIONS:MXATRIX}
 DISTFILES+=	xatrixsrc320.shar.Z:id
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_xatrix_q__shared.c
 XATRIX_OFF=	441
@@ -59,7 +56,7 @@ PLIST_SUB+=	XATRIX="@comment "
 
 post-extract:
 .for f in rogue xatrix
-.   if defined(WITH_${f:U})
+.   if ${PORT_OPTIONS:M${f:U}}
 	@${MKDIR} ${WRKSRC}/src/${f}
 	@(cd ${WRKSRC}/src/${f} && ${GUNZIP_CMD} -c \
 		${DISTDIR}/${DIST_SUBDIR}/${f}src320.shar.Z > \
@@ -78,10 +75,10 @@ do-install:
 	${CP} -R ${WRKSRC}/src/game ${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/Makefile.game ${DATADIR}/game/Makefile
 .for f in ctf rogue xatrix
-.   if defined(WITH_${f:U})
+.   if ${PORT_OPTIONS:M${f:U}}
 	${CP} -R ${WRKSRC}/src/${f} ${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/Makefile.${f} ${DATADIR}/${f}/Makefile
 .   endif
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

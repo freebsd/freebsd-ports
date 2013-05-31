@@ -1,9 +1,5 @@
-# New ports collection makefile for:	d2x-xl
-# Date created:		25 Feb 2009
-# Whom:			Aragon Gouveia
-#
+# Created by: Aragon Gouveia
 # $FreeBSD$
-#
 
 PORTNAME=	d2x-xl
 PORTVERSION=	1.14.121
@@ -38,15 +34,16 @@ USE_DOS2UNIX=	missing depcomp
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	OPENGL "Use OpenGL for 3D graphics" on
+OPTIONS_DEFINE=	OPENGL
+OPTIONS_DEFAULT=	OPENGL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if !defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		gl glu
 CONFIGURE_ARGS+=--with-opengl
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -74,4 +71,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/d2x-xl ${PREFIX}/bin/d2x-xl
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

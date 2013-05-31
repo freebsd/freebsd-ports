@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Scourge
-# Date created:		2005-10-08
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	scourge
 PORTVERSION=	0.21.1
@@ -14,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/.src/}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
+COMMENT=	Rogue-like game
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${DATADIR}/config/scourge.cfg:${PORTSDIR}/games/scourge-data
@@ -33,11 +29,11 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
@@ -53,4 +49,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

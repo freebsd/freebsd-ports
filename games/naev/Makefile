@@ -1,9 +1,5 @@
-# New ports collection makefile for:	naev
-# Date created:		2009-04-26
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	naev
 PORTVERSION=	0.5.3
@@ -35,19 +31,21 @@ MAN6=		naev.6
 PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS=	OPENAL 		"Use the OpenAL sound backend"	on \
-		SDL_MIXER	"Use the SDL_mixer sound backend"	on
+OPTIONS_DEFINE=	OPENAL SDL_MIXER
+SDL_MIXER_DESC=	SDL_mixer sound backend
+
+OPTIONS_DEFINE=	OPENAL SDL_MIXER
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OPENAL)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=		yes
 CONFIGURE_ARGS+=	--with-openal=yes
 .else
 CONFIGURE_ARGS+=	--with-openal=no
 .endif
 
-.if defined(WITH_SDL_MIXER)
+.if ${PORT_OPTIONS:MSDL_MIXER}
 USE_SDL+=		mixer
 CONFIGURE_ARGS+=	--with-sdlmixer=yes
 .else
@@ -56,7 +54,7 @@ CONFIGURE_ARGS+=	--with-sdlmixer=no
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

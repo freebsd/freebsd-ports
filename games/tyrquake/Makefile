@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tyrquake
-# Date created:				13 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	tyrquake
 PORTVERSION=	0.59
@@ -20,18 +16,21 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	QBASEDIR="${Q1DIR}" X11BASE=${LOCALBASE}
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		X86_ASM "Enable x86 assembly code when possible" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFINE_i386=	ASM
+ASM_DESC=	x86 assembly code when possible
+
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS ASM
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZED_CFLAGS=N
 .endif
 
-.if defined(WITHOUT_X86_ASM) || ${ARCH} != "i386"
+.if ! ${PORT_OPTIONS:MASM}
 MAKE_ENV+=	USE_X86_ASM=N
 .endif
 
@@ -42,7 +41,7 @@ do-install:
 .for file in tyr-quake tyr-glquake tyr-qwcl tyr-glqwcl tyr-qwsv
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
@@ -52,4 +51,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-nerogame
-# Date created:		2007-10-04
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nerogame
 PORTVERSION=	2.0
@@ -24,15 +20,17 @@ SUB_FILES=	nerogame pkg-message
 DATADIR=	share/${PKGNAMEPREFIX}${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-OPTIONS=	NVIDIA  "Install support for nvidia"    off
+OPTIONS_DEFINE=	NVIDIA
+NVIDIA_DESC=	Nvidia support
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800076
 BROKEN=		does not build
 .endif
 
-.if defined(WITH_NVIDIA)
+.if ${PORT_OPTIONS:MNVIDIA}
 .	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .	endif

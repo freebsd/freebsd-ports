@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:   	armagetron
-# Date created:                        	12 November 2005
-# Whom:                                 Maxime Henrion <mux@FreeBSD.org>
-#
+# Created by: Maxime Henrion <mux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	armagetron
 PORTVERSION=	0.2.8.2.1
@@ -27,12 +22,15 @@ LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-OPTIONS=	MUSIC	"Compile in support for background music" on \
-		ARMA_SERVER_ONLY	"Build dedicated server only" off
+OPTIONS_DEFINE=	MUSIC ARMA_SERVER_ONLY
+MUSIC_DESC=	Compile in support for background music
+ARMA_SERVER_ONLY_DESC=	Build dedicated server only
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	MUSIC
 
-.if defined(WITH_ARMA_SERVER_ONLY)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MARMA_SERVER_ONLY}
 CONFIGURE_ARGS+=	--disable-glout
 PLIST_SUB+=	CLIENT="@comment " SERVER="" SUFFIX="-dedicated"
 PKGNAMESUFFX=	-dedicated
@@ -42,7 +40,7 @@ USE_GL=		gl
 USE_SDL=	sdl image
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
 PLIST_SUB+=	CLIENT="" SERVER="@comment " SUFFIX=""
-.if !defined(WITHOUT_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 USE_SDL+=	mixer
 CONFIGURE_ARGS+=--enable-music
 .endif
@@ -58,4 +56,4 @@ post-patch:
 	    ${WRKSRC}/batch/*.in
 	@${FIND} ${WRKSRC}/batch -name '*.bak' -o -name '*.orig' -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

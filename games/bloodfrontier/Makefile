@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sauerbraten
-# Date created:		2006-02-01
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	bloodfrontier
 DISTVERSION=	B2
@@ -27,9 +23,14 @@ MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	bfclient bfserver
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		OPTIMIZED_CFLAGS "Enabled additional optimizations" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_MULTI=	FLAVOR
+OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC= Build dedicated server
+FLAVOR_DESC=	Executable Selections
+
+OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
 
@@ -37,23 +38,19 @@ OPTIONS=	CLIENT "Build client" on \
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT or DEDICATED)
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 PLIST_FILES+=	bin/bfclient libexec/bfclient
 BINARIES+=	client
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 PLIST_FILES+=	bin/bfserver libexec/bfserver
 BINARIES+=	server
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer
 CXXFLAGS+=	-O3 -fomit-frame-pointer
 .endif
