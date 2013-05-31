@@ -15,7 +15,7 @@
 
 . /etc/rc.subr
 
-name="munin_node"
+name=munin_node
 rcvar=munin_node_enable
 
 load_rc_config $name
@@ -31,12 +31,8 @@ stop_precmd=find_pidfile
 
 find_pidfile()
 {
-	if type get_pidfile_from_conf >/dev/null 2>&1 &&
-		get_pidfile_from_conf pid_file $munin_node_config; then
-	    pidfile="$_pidfile_from_conf"
-	else
-	    pidfile=`awk '$1 == "pid_file" { print $2 }' $munin_node_config`
-	fi
+	get_pidfile_from_conf pid_file $munin_node_config
+	pidfile="$_pidfile_from_conf"
 }
 
-run_rc_command "$1"
+run_rc_command $1
