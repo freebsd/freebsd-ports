@@ -253,7 +253,6 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/compatibility
-@dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration/schema
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/leak
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/memory
