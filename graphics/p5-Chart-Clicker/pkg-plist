@@ -37,7 +37,6 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
 %%SITE_PERL%%/Chart/Clicker/Tutorial.pm
-@dirrmtry %%SITE_PERL%%/Chart/Clicker/Shape
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Renderer
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Drawing
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Decoration/Legend
