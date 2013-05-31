@@ -1,6 +1,5 @@
 %%SITE_PERL%%/HTML/TableContentParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableContentParser/.packlist
-@dirrm %%SITE_PERL%%/HTML/TableContentParser
 @dirrmtry %%SITE_PERL%%/HTML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableContentParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
