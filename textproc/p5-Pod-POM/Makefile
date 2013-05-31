@@ -1,13 +1,8 @@
-# New ports collection makefile for:	Pod::POM
-# Date created:		18 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-POM
-PORTVERSION=	0.27
-PORTREVISION=	2
+PORTVERSION=	0.28
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
