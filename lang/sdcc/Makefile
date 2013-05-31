@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sdcc
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 DISTVERSIONPREFIX=	src-
-PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -19,8 +18,10 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-OPTIONS_DEFINE= DEVLIB DOCS HC08 MCS51 PIC UCSIM Z80
-OPTIONS_DEFAULT=${OPTIONS_DEFINE:NDOCS}
+OPTIONS_DEFINE= 	DEVLIB DOCS UCSIM
+OPTIONS_MULTI=		TARGETS
+OPTIONS_MULTI_TARGETS=	HC08 MCS51 PIC Z80
+OPTIONS_DEFAULT=	DEVLIB UCSIM HC08 MCS51 PIC Z80
 DEVLIB_DESC=	Device libraries
 HC08_DESC=	Freescale 68HC08/S08
 MCS51_DESC=	Intel MCS51, Maxim DS80C390/DS80C400
@@ -28,11 +29,16 @@ PIC_DESC=	Microchip PIC
 UCSIM_DESC=	The ucSim simulator
 Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000/3000A
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror
+CPPFLAGS+=	-idirafter ${LOCALBASE}/include
+CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror \
+		--enable-new-pics docdir=${DOCSDIR}
 CONFIGURE_ENV=	ARCH=""
-WRKSRC= 	${WRKDIR}/sdcc
+PLIST_FILES=	bin/as2gbmap bin/makebin bin/packihx bin/sdar bin/sdcc	\
+		bin/sdcclib bin/sdcpp bin/sdld bin/sdld6808 bin/sdldgb	\
+		bin/sdldz80 bin/sdnm bin/sdobjcopy bin/sdranlib
+PORTDATA=	*
+PORTDOCS=	*
+WRKSRC= 	${WRKDIR}/sdcc-${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -40,35 +46,30 @@ WRKSRC= 	${WRKDIR}/sdcc
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${PORT_OPTIONS:MDEVLIB}
-PLIST_SUB+=	DEVLIB=""
-.else
+.if empty(PORT_OPTIONS:MDEVLIB)
 CONFIGURE_ARGS+=--disable-device-lib
-PLIST_SUB+=	DEVLIB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHC08}
-PLIST_SUB+=	HC08=""
+PLIST_FILES+=	bin/sdas6808 %%UCSIM%%bin/shc08
 .else
 CONFIGURE_ARGS+=--disable-hc08 --disable-hc08-port --disable-s08-port
-PLIST_SUB+=	HC08="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMCS51}
-PLIST_SUB+=	MCS51=""
+PLIST_FILES+=	bin/sdas390 bin/sdas8051 %%UCSIM%%bin/s51		\
+		%%UCSIM%%bin/sdcdb %%UCSIM%%bin/sdcdb.el		\
+		%%UCSIM%%bin/sdcdbsrc.el
 .else
 CONFIGURE_ARGS+=--disable-51 --disable-mcs51-port \
 		--disable-ds390-port --disable-ds400-port
-PLIST_SUB+=	MCS51="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPIC}
-BUILD_DEPENDS+= gputils>=0.14.2:${PORTSDIR}/devel/gputils
-RUN_DEPENDS+=	gputils>=0.14.2:${PORTSDIR}/devel/gputils
-PLIST_SUB+=	PIC=""
+BUILD_DEPENDS+= gputils>=1.0.0:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=	gpasm:${PORTSDIR}/devel/gputils
 .else
 CONFIGURE_ARGS+=--disable-pic14-port --disable-pic16-port
-PLIST_SUB+=	PIC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUCSIM}
@@ -79,20 +80,23 @@ PLIST_SUB+=	UCSIM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZ80}
-PLIST_SUB+=	Z80=""
+PLIST_FILES+=	bin/sdasgb bin/sdasrab bin/sdasz80 %%UCSIM%%bin/sz80
 .else
 CONFIGURE_ARGS+=--disable-z80 --disable-z80-port --disable-z180-port \
 		--disable-gbz80-port --disable-r2k-port --disable-r3ka-port
-PLIST_SUB+=	Z80="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
+		${WRKSRC}/Makefile.in \
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/sim/ucsim/packages_in.mk
 .endif
+
+post-install:
+	${FIND} -d ${DATADIR} -type d -empty -delete
 
 .include <bsd.port.post.mk>
