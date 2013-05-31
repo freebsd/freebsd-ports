@@ -114,7 +114,6 @@ share/xfce4/doc/fr/images/xfprint_virtualpages.png
 share/xfce4/doc/fr/xfprint.html
 @dirrm include/xfce4/libxfprint
 @dirrmtry include/xfce4
-@dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4/xfprint-plugins
 @dirrmtry lib/xfce4
 @dirrmtry share/applications
@@ -125,8 +124,6 @@ share/xfce4/doc/fr/xfprint.html
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr/images
