@@ -67,6 +67,7 @@ include/libexplain/getchar.h
 include/libexplain/getcwd.h
 include/libexplain/getdomainname.h
 include/libexplain/getgroups.h
+include/libexplain/gethostbyname.h
 include/libexplain/gethostname.h
 include/libexplain/getpeername.h
 include/libexplain/getpgid.h
@@ -74,6 +75,7 @@ include/libexplain/getpgrp.h
 include/libexplain/getresgid.h
 include/libexplain/getresuid.h
 include/libexplain/getrlimit.h
+include/libexplain/getrusage.h
 include/libexplain/getsockname.h
 include/libexplain/getsockopt.h
 include/libexplain/gettimeofday.h
@@ -204,10 +206,12 @@ include/libexplain/writev.h
 lib/libexplain.a
 lib/libexplain.la
 lib/libexplain.so
-lib/libexplain.so.53
+lib/libexplain.so.54
+lib/pkgconfig/libexplain.pc
 share/doc/libexplain/building.pdf
 share/doc/libexplain/new_system_call.pdf
 share/doc/libexplain/readme.pdf
 share/doc/libexplain/reference.pdf
 @dirrm include/libexplain
 @dirrm %%DOCSDIR%%
+@dirrmtry lib/pkgconfig

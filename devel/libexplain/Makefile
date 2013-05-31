@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libexplain
-PORTVERSION=	1.1
-DISTVERSIONSUFFIX=	.D001
+PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://libexplain.sourceforge.net/ \
-		CRITICAL
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Library which may be used to explain Unix and Linux system call errors
@@ -28,7 +26,8 @@ MAKE_JOBS_SAFE=	yes
 .include "Makefile.man"
 
 post-patch:
-	${REINPLACE_CMD} -e "s|sed '|gsed '|g" -e 's|sleep 1|true|' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|sed -e|gsed -e|g' -e 's|\ sed\ | gsed |g' \
+		-e '/@sleep 1/d' \
+			${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
