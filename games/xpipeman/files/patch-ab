@@ -1,9 +1,9 @@
---- Imakefile.orig	Tue Jul 28 19:56:27 1992
-+++ Imakefile	Mon Jul 22 14:05:57 2002
+--- ./Imakefile.orig	1992-07-28 23:56:27.000000000 +0000
++++ ./Imakefile	2013-05-31 12:26:22.000000000 +0000
 @@ -1,7 +1,7 @@
  
 -     SCORE_FILE = -DSCORE_FILE=\"/usr/games/lib/xpipescores\"
-+     SCORE_FILE = -DSCORE_FILE=\"$(LIBDIR)/xpipescores\"
++     SCORE_FILE = -DSCORE_FILE=\"$(PREFIX)/lib/X11/xpipescores\"
        MAXSCORES = -DMAXSCORES=20
 -        DEFINES = $(SCORE_FILE) $(MAXSCORES) -DSYSV
 +        DEFINES = $(SCORE_FILE) $(MAXSCORES)
