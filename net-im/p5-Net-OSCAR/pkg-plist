@@ -102,7 +102,6 @@ bin/oscartest
 @dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/14
 @dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/13
 @dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/1
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/0
 @dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks
 @dirrm %%SITE_PERL%%/Net/OSCAR
 @dirrmtry %%SITE_PERL%%/Net
