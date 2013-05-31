@@ -110,7 +110,7 @@ test-compile:	depends clean-depends build
 
 .ifmake test-demo
 test-demo:	clean depends clean-depends build
-.if ${PORT_OPTIONS:MCII) && ${PORT_OPTIONS:MEXAMPLES}
+.if ${PORT_OPTIONS:MCII} && ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKDIR}/${DEMODIR} && ${MAKE} ASDLGEN=${WRKSRC}/src/sml/asdlGen
 .else
 	@${ECHO_CMD} "You have to set the CII and EXAMPLES options"
