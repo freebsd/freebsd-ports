@@ -852,6 +852,7 @@
     SUBDIR += p5-Continuity
     SUBDIR += p5-Corona
     SUBDIR += p5-Dancer
+    SUBDIR += p5-Dancer-Logger-Log4perl
     SUBDIR += p5-Dancer-Plugin-Feed
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
