@@ -60,8 +60,6 @@ share/pear/Auth/Yadis/XRDS.php
 share/pear/Auth/Yadis/XRI.php
 share/pear/Auth/Yadis/XRIRes.php
 share/pear/Auth/Yadis/Yadis.php
-@dirrmtry share/pear/Services/Yadis
-@dirrmtry share/pear/Services
 @dirrmtry share/pear/Auth/Yadis
 @dirrmtry share/pear/Auth/OpenID
 @dirrmtry share/pear/Auth
