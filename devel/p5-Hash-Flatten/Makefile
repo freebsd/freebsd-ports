@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Hash-Flatten
-# Date created:		2009-03-29
-# Whom:			Andrej Zverev <az@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-Flatten
 PORTVERSION=	1.19
