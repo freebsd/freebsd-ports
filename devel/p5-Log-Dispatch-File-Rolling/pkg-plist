@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Log/Dispatch/File/Rolling.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/File/Rolling/.packlist
-@dirrm %%SITE_PERL%%/Log/Dispatch/File/Rolling
 @dirrmtry %%SITE_PERL%%/Log/Dispatch/File
 @dirrmtry %%SITE_PERL%%/Log/Dispatch
 @dirrmtry %%SITE_PERL%%/Log
