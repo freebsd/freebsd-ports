@@ -1,0 +1,6 @@
+This goal of this project is to provide a consistent interface to LBL's libpcap
+packet capture library.  This does not provide packet processing functionality,
+it simply provides the interface for capturing packets, and passing yielding
+those packets.
+
+WWW: https://github.com/shadowbq/pcaprub
