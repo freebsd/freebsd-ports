@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Dancer/Logger/Log4perl.pm
+%%SITE_PERL%%/mach/auto/Dancer/Logger/Log4perl/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Dancer/Logger/Log4perl
+@dirrmtry %%SITE_PERL%%/mach/auto/Dancer/Logger
+@dirrmtry %%SITE_PERL%%/mach/auto/Dancer
+@dirrmtry %%SITE_PERL%%/Dancer/Logger
+@dirrmtry %%SITE_PERL%%/Dancer
