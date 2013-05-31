@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tardy
-PORTVERSION=	1.26
-DISTVERSIONSUFFIX=	.D001
-PORTREVISION=	2
+PORTVERSION=	1.27
+DISTVERSIONSUFFIX=	.D001.orig
 CATEGORIES=	archivers
 MASTER_SITES=	SF/tardy/${PORTVERSION}/
+DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways
@@ -38,7 +38,8 @@ BUILD_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 post-patch:
 .for var in CFLAGS LDFLAGS
 	@${REINPLACE_CMD} -e 's|^\(${var}\)\ =\ \(.*\)|\1 ?= \2|' \
-		${WRKSRC}/Makefile.in
+		-e '/ps2pdf/d' \
+			${WRKSRC}/Makefile.in
 .endfor
 
 do-install:
