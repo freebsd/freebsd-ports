@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Dancer/Template/Xslate.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
-@dirrmtry %%SITE_PERL%%/Dancer/Template
 @dirrmtry %%SITE_PERL%%/Dancer
