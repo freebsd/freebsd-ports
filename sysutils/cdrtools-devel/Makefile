@@ -18,7 +18,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	3.01a13
+PORTVERSION=	3.01a14
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
