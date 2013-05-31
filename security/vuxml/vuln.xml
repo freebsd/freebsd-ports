@@ -51,6 +51,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0a799a8e-c9d4-11e2-a424-14dae938ec40">
+    <topic>irc/bitchx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>BitchX</name>
+	<range><lt>1.2.*,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>bannedit reports:</p>
+	<blockquote cite="http://www.cvedetails.com/cve/CVE-2007-4584/">
+	  <p>Stack-based buffer overflow in BitchX 1.1 Final allows remote IRC
+	    servers to execute arbitrary code via a long string in a MODE
+	    command, related to the p_mode variable.</p>
+	</blockquote>
+	<p>Nico Golde reports:</p>
+	<blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=449149">
+	  <p>There is a security issue in ircii-pana in bitchx' hostname
+	    command.  The e_hostname function (commands.c) uses tmpnam to
+	    create a temporary file which is known to be insecure.</p>
+	</blockquote>
+	<p>Chris reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27556">
+	  <p>Chris has reported a vulnerability in the Cypress script for
+	    BitchX, which can be exploited by malicious people to disclose
+	    potentially sensitive information or to compromise a vulnerable
+	    system.</p>
+
+	  <p>The vulnerability is caused due to malicious code being present
+	    in the modules/mdop.m file.  This can be exploited to disclose the
+	    content of various system files or to execute arbitrary shell
+	    commands.</p>
+
+	  <p>Successful exploitation allows execution of arbitrary code, but
+	    requires the control of the "lsyn.webhop.net" domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4584</cvename>
+      <cvename>CVE-2007-5839</cvename>
+      <cvename>CVE-2007-5922</cvename>
+    </references>
+    <dates>
+      <discovery>2007-08-28</discovery>
+      <entry>2013-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19751e06-c798-11e2-a373-000c29833058">
     <topic>znc -- null pointer dereference in webadmin module</topic>
     <affects>

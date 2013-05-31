@@ -4333,3 +4333,4 @@ x11-toolkits/linux-gtk2||2013-05-30|Has expired: Only used on FreeBSD 7, which i
 x11-toolkits/linux-openmotif||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
 x11-toolkits/linux-pango||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
 x11-toolkits/linux-qt33||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
+irc/bitchx-devel|irc/bitchx|2013-05-31|Release finally cut
