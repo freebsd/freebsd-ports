@@ -17,6 +17,7 @@ EXPIRATION_DATE=2013-08-01
 CONFLICTS=	mediawiki-1.19.* mediawiki-1.2[0-9].*
 
 FETCH_ARGS=	-pr
+NO_LATEST_LINK=	yes
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
