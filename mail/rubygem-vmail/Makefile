@@ -1,11 +1,8 @@
-# New ports collection makefile for:	Ruby-vmail
-# Date created:		2010 12-15
-# Whom:			Hsin-Han You <hhyou@cs.nctu.edu.tw>
-#
+# Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	vmail
-PORTVERSION=	1.5.0
+PORTVERSION=	2.8.4
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +10,11 @@ MAINTAINER=	hhyou@cs.nctu.edu.tw
 COMMENT=	A Vim interface to Gmail
 
 RUN_DEPENDS=	rubygem-mail>=2.2.12:${PORTSDIR}/mail/rubygem-mail \
-		rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline
+		rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
+		rubygem-sequel>=3.24.1:${PORTSDIR}/devel/rubygem-sequel \
+		rubygem-sqlite3>=1.3.3:${PORTSDIR}/databases/rubygem-sqlite3 \
+		rubygem-versionomy>=0.4.4:${PORTSDIR}/devel/rubygem-versionomy \
+		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim-lite
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
