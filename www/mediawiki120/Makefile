@@ -33,7 +33,7 @@ IMAGICK_DESC=	use ImageMagick
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server
+USE_MYSQL=	client
 USE_PHP+=	mysql
 .endif
 
