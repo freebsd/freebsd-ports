@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sass
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.9
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
