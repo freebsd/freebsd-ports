@@ -1793,6 +1793,7 @@
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
+    SUBDIR += rubygem-selnium-webdriver
     SUBDIR += rubygem-simple-rss
     SUBDIR += rubygem-sinatra
     SUBDIR += rubygem-sinatra-respond_to
