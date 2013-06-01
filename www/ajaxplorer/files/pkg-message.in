@@ -1,0 +1,10 @@
+************************************************************************
+
+Ajaxplorer has been installed in %%WWWDIR%%.
+
+You need to configure your webserver to publish that directory.
+
+Please also read http://ajaxplorer.info/documentation/administration/
+for further details on how to secure and configure your installation.
+
+************************************************************************
