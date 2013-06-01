@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130601:
+  AFFECTS: users of textproc/ack
+  AUTHOR: rakuco@FreeBSD.org
+
+  ack has been updated to version 2.04. It is slightly incompatible with some
+  options present in ack1. For more information, see
+  http://beyondgrep.com/ack-2.0.
+
 20130530:
   AFFECTS: users of irc/inspircd
   AUTHOR: swills@FreeBSD.org
