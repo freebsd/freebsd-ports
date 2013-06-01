@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-aipy
-# Date created:		2008-11-11
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	aipy
 PORTVERSION=	1.1.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pyliblo
-# Date created:		2009-01-25
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pyliblo
 PORTVERSION=	0.9.1
