@@ -1,12 +1,8 @@
-# Ports collection makefile for:	tzinfo
-# Date created:				9 June 2006
-# Whom:					Rui Lopes (rgl ruilopes com)
-#
+# Whom:	Rui Lopes (rgl ruilopes com)
 # $FreeBSD$
-#
 
 PORTNAME=	tzinfo
-PORTVERSION=	0.3.35
+PORTVERSION=	0.3.37
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
