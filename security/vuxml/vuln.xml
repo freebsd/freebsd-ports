@@ -1680,6 +1680,8 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <url>https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-f375aa67cc</url>
       <cvename>CVE-2013-2061</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2013/05/06/6</url>
+      <url>https://github.com/OpenVPN/openvpn/commit/11d21349a4e7e38a025849479b36ace7c2eec2ee</url>
     </references>
     <dates>
       <discovery>2013-03-19</discovery>
