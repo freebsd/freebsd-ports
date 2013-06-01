@@ -2,7 +2,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://rubyeb.sourceforge.net/ \
 		SF/rubyeb/rubyeb/rubyeb-${PORTVERSION}
@@ -11,9 +11,6 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bind of EB library
-
-DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
 
 LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
@@ -25,10 +22,6 @@ INSTALL_TARGET=	site-install
 EXAMPLES=	hook2.rb test.rb
 
 .include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
