@@ -1,12 +1,21 @@
 bin/ack
-%%BASH%%etc/bash_completion.d/ack.bash_completion.sh
 %%SITE_PERL%%/App/Ack.pm
-%%SITE_PERL%%/App/Ack/Plugin/Basic.pm
-%%SITE_PERL%%/App/Ack/Plugin.pm
-%%SITE_PERL%%/App/Ack/Repository.pm
+%%SITE_PERL%%/App/Ack/ConfigDefault.pm
+%%SITE_PERL%%/App/Ack/ConfigFinder.pm
+%%SITE_PERL%%/App/Ack/ConfigLoader.pm
+%%SITE_PERL%%/App/Ack/Filter.pm
+%%SITE_PERL%%/App/Ack/Filter/Default.pm
+%%SITE_PERL%%/App/Ack/Filter/Extension.pm
+%%SITE_PERL%%/App/Ack/Filter/FirstLineMatch.pm
+%%SITE_PERL%%/App/Ack/Filter/Inverse.pm
+%%SITE_PERL%%/App/Ack/Filter/Is.pm
+%%SITE_PERL%%/App/Ack/Filter/Match.pm
 %%SITE_PERL%%/App/Ack/Resource.pm
+%%SITE_PERL%%/App/Ack/Resource/Basic.pm
+%%SITE_PERL%%/App/Ack/Resources.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ack/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ack
-@dirrmtry %%SITE_PERL%%/App/Ack/Plugin
+@dirrmtry %%SITE_PERL%%/App/Ack/Resource
+@dirrmtry %%SITE_PERL%%/App/Ack/Filter
 @dirrmtry %%SITE_PERL%%/App/Ack
 @dirrmtry %%SITE_PERL%%/App
