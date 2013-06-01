@@ -1,9 +1,5 @@
-# New ports collection makefile for:	greylite
-# Date created:		2007-12-11
-# Whom:			Mij <mij@bitchx.it>
-#
+# Created by: Mij <mij@bitchx.it>
 # $FreeBSD$
-#
 
 PORTNAME=	greylite
 PORTVERSION=	2.3
@@ -25,18 +21,20 @@ PLIST_FILES=	bin/greylite \
 MAN8=		greylite.8
 MANCOMPRESSED=	yes
 
-OPTIONS=	GEOIP		"Support for GeoIP in suspicion rules" On \
-		DNSBLENV   	"Module for interfacing with DNS blacklists" On \
-		UCSPI2SOCKET "Module for using greylite as SMTP proxy" On
+OPTIONS_DEFINE=	GEOIP DNSBLENV UCSPI2SOCKET
+OPTIONS_DEFAULT=	GEOIP DNSBLENV UCSPI2SOCKET
+GEOIP_DESC=		Support for GeoIP in suspicion rules
+DNSBLENV_DESC=		Module for interfacing with DNS blacklists
+UCSPI2SOCKET_DESC=	Module for using greylite as SMTP proxy
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 MAKE_ARGS+=	WITH_GEOIP=yep
 .endif
 
-.if !defined(WITHOUT_DNSBLENV)
+.if ${PORT_OPTIONS:MDNSBLENV}
 LIB_DEPENDS+=	cares:${PORTSDIR}/dns/c-ares
 MAKE_ARGS+=	WITH_DNSBLENV=yep
 PLIST_SUB+=	DNSBLENV=""
@@ -44,7 +42,7 @@ PLIST_SUB+=	DNSBLENV=""
 PLIST_SUB+=	DNSBLENV="@comment "
 .endif
 
-.if !defined(WITHOUT_UCSPI2SOCKET)
+.if ${PORT_OPTIONS:MUCSPI2SOCKET}
 MAKE_ARGS+=	WITH_UCSPI2SOCKET=yep
 PLIST_SUB+=	UCSPI2SOCKET=""
 .else

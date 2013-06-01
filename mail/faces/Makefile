@@ -1,10 +1,5 @@
-# New ports collection makefile for:	faces-1.6.1
-# Date created:		09 December 96
-# Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
-#			Andreas Klemm <andreas@FreeBSD.org>
-#
+# Created by: Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 # $FreeBSD$
-#
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
@@ -15,10 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Visual mail, user, and print face server
 
-OPTIONS=	X11 "X11/GTK support" on	\
-		NAS "NAS audio support" off	\
-		RPLAY "rplay audio support" off	\
-		SOX "Sox audio support" off
+OPTIONS_DEFINE=	X11 NAS RPLAY SOX DOCS NLS
+OPTIONS_DEFAULT=	X11
+X11_DESC=	X11/GTK support
+RPLAY_DESC=	rplay audio support
+SOX_DESC=	Sox audio support
 
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
@@ -31,7 +27,7 @@ PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	X11="@comment "
 WITH_AUDIO=	# none
 .else # with X11
@@ -46,7 +42,7 @@ CONFIGURE_ARGS=	--enable-imap --enable-pop \
 MAN1+=		faces.1
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls
 .endif
 
@@ -81,7 +77,7 @@ post-patch:
 do-build:
 	cd ${WRKSRC}/compface && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${FILESDIR}/Makefile.compface ${MAKE_ARGS} ${ALL_TARGET}
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	cd ${WRKSRC}/faces && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 .endif
@@ -99,12 +95,12 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${PREFIX}/bin
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/faces/faces ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${LOCALBASE}/lib/X11/app-defaults/Faces
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
