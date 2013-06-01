@@ -1,9 +1,5 @@
-# New ports collection makefile for:	paml
-# Date created:				7 July 2000
-# Whom:					dbader@eece.unm.edu
-#
+# Created by: dbader@eece.unm.edu
 # $FreeBSD$
-#
 
 PORTNAME=	paml
 PORTVERSION=	4.4c

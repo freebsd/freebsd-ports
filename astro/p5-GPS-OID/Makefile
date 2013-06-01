@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-GPS-OID
-# Date created:				June 3, 2010
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	GPS-OID
 PORTVERSION=	0.07

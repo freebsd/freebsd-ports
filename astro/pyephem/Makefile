@@ -1,9 +1,5 @@
-# Ports collection makefile for:        py-emphem
-# Date created:                 Feb 27, 2007
-# Whom:                         db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	pyephem
 PORTVERSION=	3.7.5.1
