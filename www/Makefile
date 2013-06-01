@@ -14,6 +14,7 @@
     SUBDIR += ach
     SUBDIR += admuser
     SUBDIR += adzap
+    SUBDIR += ajaxplorer
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
