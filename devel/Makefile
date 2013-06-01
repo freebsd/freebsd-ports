@@ -3999,6 +3999,7 @@
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-caesars
+    SUBDIR += rubygem-capybara
     SUBDIR += rubygem-celluloid
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
