@@ -9,7 +9,7 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Kbdscan shows the scancodes of keys pressed
 
 LICENSE=	ISC
-LICENSE_GROUPS=	FSF GPL OSI
+LICENSE_GROUPS=	FSF GPL OSI COPYFREE
 LICENSE_NAME=	ISC License - ISCL
 LICENSE_FILE=	${FILESDIR}/LICENSE-kbdscan
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
