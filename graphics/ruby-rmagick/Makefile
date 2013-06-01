@@ -13,7 +13,18 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
+OPTIONS_DEFINE=		X11
+OPTIONS_DEFAULT=	X11
+
+OPTIONSFILE?=	${PORT_DBDIR}/ruby-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+.else
+LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick-nox11
+.endif
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
