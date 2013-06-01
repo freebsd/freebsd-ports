@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-hike
-# Date created:		2011-09-10
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Whom:	Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hike
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
