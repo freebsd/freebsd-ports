@@ -11,6 +11,8 @@ MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	New generation package manager
 
+LATEST_LINK=	pkg-devel
+
 LICENSE=	BSD
 
 USE_XZ=		yes
