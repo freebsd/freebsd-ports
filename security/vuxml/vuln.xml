@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1225549f-ca91-11e2-b3b8-f0def16c5c1b">
+    <topic>passenger -- security vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-passenger</name>
+	<range><lt>4.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Phusion reports:</p>
+	<blockquote cite="http://blog.phusion.nl/2013/05/29/phusion-passenger-4-0-5-released/">
+	  <p>A denial of service and arbitrary code execution by hijacking temp files. [CVE-2013-2119]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2119</cvename>
+      <url>http://blog.phusion.nl/2013/05/29/phusion-passenger-4-0-5-released/</url>
+    </references>
+    <dates>
+      <discovery>2013-05-29</discovery>
+      <entry>2013-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce502902-ca39-11e2-9673-001e8c75030d">
     <topic>devel/subversion -- svnserve remotely triggerable DoS</topic>
     <affects>
