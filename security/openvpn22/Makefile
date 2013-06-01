@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -17,6 +17,9 @@ LICENSE=	GPLv2
 
 LATEST_LINK=	openvpn22
 CONFLICTS_INSTALL=	openvpn-devel-[0-9]* openvpn-2.[!2]* openvpn-beta-[0-9]*
+
+DEPRECATED=		Please migrate to a newer OpenVPN version
+EXPIRATION_DATE=	2013-09-01
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
