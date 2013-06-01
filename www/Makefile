@@ -1807,6 +1807,7 @@
     SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrobots
+    SUBDIR += rubygem-websocket
     SUBDIR += rubygem-yapra
     SUBDIR += runsomebrowser
     SUBDIR += sahi
