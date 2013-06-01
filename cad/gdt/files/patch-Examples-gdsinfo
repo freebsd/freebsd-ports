@@ -1,12 +1,14 @@
---- Examples/gdsinfo.orig	Sun Apr 29 15:54:57 2007
-+++ Examples/gdsinfo	Sun Apr 29 15:55:08 2007
-@@ -75,9 +75,6 @@
+--- Examples/gdsinfo.orig	2008-06-20 02:04:27.000000000 +0900
++++ Examples/gdsinfo	2013-05-30 10:54:47.000000000 +0900
+@@ -75,10 +75,7 @@
  $topCellNames =~ s/\s+/ /g;
  
  # help find gds2gdt
 -my $uname_s = `/bin/uname -s`; # OS name
 -chomp $uname_s;
 -$ENV{'PATH'} = "/bin:/usr/bin:/user/ic/gnu/$uname_s/bin:".$ENV{'PATH'};
- my $gds2gdt = which("gds2gdt");
+-my $gds2gdt = which("gds2gdt");
++my $gds2gdt = '%%PREFIX%%/bin/gds2gdt';
  unless ($gds2gdt)
  {
+     die $REVERSE_RED.ERROR."$COLOR_RESET unable to find gds2gdt in \$PATH";
