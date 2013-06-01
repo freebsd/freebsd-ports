@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-uglifier
-# Date created:		2011-09-12
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Whom: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uglifier
-PORTVERSION=	1.3.0
+PORTVERSION=	2.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
