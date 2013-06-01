@@ -4206,6 +4206,7 @@
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-webby
+    SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-yajl-ruby077
     SUBDIR += rubygem-yui-compressor
