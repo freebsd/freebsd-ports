@@ -45,7 +45,7 @@
 
 PKGNAMEPREFIX?=	redmine-
 
-RUN_DEPENDS+=	redmine>=0.9:${PORTSDIR}/www/redmine
+RUN_DEPENDS+=	redmine>=2.0:${PORTSDIR}/www/redmine
 
 USE_RUBY=	yes
 .if !defined(PLIST)
@@ -67,14 +67,14 @@ do-build: redmine-plugin-plist
 
 redmine-plugin-plist:
 .if defined(_GEN_PLIST)
-	cd ${WRKSRC} && ${FIND} . -type f | ${GREP} -v '\.orig$$' | ${SED} -e's|^\.|${WWWDIR_REL}/vendor/plugins/${REDMINE_PLUGIN_NAME}|' >> ${PLIST}
-	cd ${WRKSRC} && ${FIND} -d . -type d | ${SED} -e's|^\.|@dirrm ${WWWDIR_REL}/vendor/plugins/${REDMINE_PLUGIN_NAME}|' >> ${PLIST}
+	cd ${WRKSRC} && ${FIND} . -type f | ${GREP} -v '\.orig$$' | ${SED} -e's|^\.|${WWWDIR_REL}/plugins/${REDMINE_PLUGIN_NAME}|' >> ${PLIST}
+	cd ${WRKSRC} && ${FIND} -d . -type d | ${SED} -e's|^\.|@dirrm ${WWWDIR_REL}/plugins/${REDMINE_PLUGIN_NAME}|' >> ${PLIST}
 .else
 	@${DO_NADA}
 .endif
 
 do-install:
-	${MKDIR} "${WWWDIR}/vendor/plugins/${REDMINE_PLUGIN_NAME}"
-	${TAR} -C "${WRKSRC}" -cf - --exclude '*.orig' . | ${TAR} -C "${WWWDIR}/vendor/plugins/${REDMINE_PLUGIN_NAME}" -xf -
+	${MKDIR} "${WWWDIR}/vendor/${REDMINE_PLUGIN_NAME}"
+	${TAR} -C "${WRKSRC}" -cf - --exclude '*.orig' . | ${TAR} -C "${WWWDIR}/plugins/${REDMINE_PLUGIN_NAME}" -xf -
 
 .include <bsd.port.mk>

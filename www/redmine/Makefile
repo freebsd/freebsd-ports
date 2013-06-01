@@ -1,13 +1,8 @@
-# New ports collection makefile for:	redmine
-# Date created:		2009-02-24
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	redmine
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +12,22 @@ COMMENT=	A flexible project management web application
 
 RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
 		rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
-		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n
+		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n \
+		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
+		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
+		rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick \
+		rubygem-rails>=3.2.13:${PORTSDIR}/www/rubygem-rails \
+		rubygem-capybara>=2.0.0:${PORTSDIR}/devel/rubygem-capybara \
+		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
+		rubygem-coderay>=1.0.6:${PORTSDIR}/textproc/rubygem-coderay \
+		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
+		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
+		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap \
+		rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql \
+		rubygem-yard>=0:${PORTSDIR}/textproc/rubygem-yard \
+		rubygem-shoulda>=2.11.3:${PORTSDIR}/devel/rubygem-shoulda \
+		rubygem-mocha>=0.9.12:${PORTSDIR}/devel/rubygem-mocha
 
-.if defined(RUBY_VER) && ${RUBY_VER} != "1.8"
-IGNORE=		requires ruby1.8, but you have RUBY_VER set to 1.9
-.else
-RUBY_VER=	1.8
-.endif
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RAKE=	yes
@@ -54,6 +58,7 @@ RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/RMagick2.so:${PORTSDIR}/graphics/ruby-rmagick
 .endif
 
+.if ${PORT_OPTIONS:MWWWSERVER}
 .if ${PORT_OPTIONS:MTHIN}
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
@@ -64,6 +69,7 @@ SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 .if ${PORT_OPTIONS:MPASSENGER}
 RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
+.endif
 .endif
 
 post-extract:
@@ -83,7 +89,10 @@ post-install:
 		${INSTALL_DATA} ${WWWDIR}/config/settings.yml-dist	\
 			${WWWDIR}/config/settings.yml;			\
 	fi
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	for subdir in files log tmp public/plugin_assets; do \
+		${CHOWN} -R :${WWWGRP} ${WWWDIR}/$$subdir; \
+		${CHMOD} -R g+w ${WWWDIR}/$$subdir; \
+	done
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
