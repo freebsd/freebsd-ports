@@ -106,6 +106,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/AbstractVertexList.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/AbstractVertexList.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/AbstractVertexList.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/Benchmark.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/Benchmark.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/Benchmark.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/DenseGraph.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/DenseGraph.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/DenseGraph.pyo
