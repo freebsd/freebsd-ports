@@ -3,6 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	5.9
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -13,7 +14,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
-BUILD_DEPENDS= bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -29,7 +30,6 @@ OPTIONS_DEFINE_amd64=	387
 
 PLIST_FILES=	bin/sage
 USE_FORTRAN=	yes
-USE_GCC=	4.7+
 USE_TK=		yes
 USE_GMAKE=	yes
 USE_TEX=	latex:build
@@ -54,6 +54,7 @@ CFLAGS:=	${CFLAGS:C/^-O.*$//}
 FFLAGS:=	${CFLAGS:C/^-O.*$//}
 
 MAKE_ENV+=	SAGE_PORT=yes \
+		SAGE_INSTALL_GCC=no \
 		SAGE_ATLAS_LIB=${LOCALBASE}/lib \
 		DOT_SAGE=${WRKSRC}/tmp/.sage \
 		SAGE_FAT_BINARY=yes
