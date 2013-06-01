@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tilt
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
