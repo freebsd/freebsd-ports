@@ -1662,7 +1662,9 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openvpn</name>
-	<range><lt>2.3.1</lt></range>
+	<range><lt>2.0.9_4</lt></range>
+	<range><ge>2.1.0</ge><lt>2.2.2_2</lt></range>
+	<range><ge>2.3.0</ge><lt>2.3.1</lt></range>
       </package>
     </affects>
     <description>
@@ -1677,10 +1679,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>https://community.openvpn.net/openvpn/wiki/SecurityAnnouncement-f375aa67cc</url>
+      <cvename>CVE-2013-2061</cvename>
     </references>
     <dates>
       <discovery>2013-03-19</discovery>
       <entry>2013-03-31</entry>
+      <modified>2013-06-01</modified>
     </dates>
   </vuln>
 
