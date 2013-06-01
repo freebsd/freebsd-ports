@@ -46,13 +46,14 @@ MAN8=		cdcc.8 dbclean.8 dblist.8 dcc.8 dccd.8 dccifd.8 dccm.8 \
 #		like SpamAssassin may need to be explicitly told where
 #		to find dccifd's socket.
 #
-OPTIONS=	DCCIFD	"DCC interface daemon (for SpamAssassin etc)"	on \
-		DCCM	"DCC milter (for Sendmail only)"	on \
-		DCCD	"DCC server"	on \
-		DCCGREY	"DCC greylisting server"	on \
-		IPV6	"IPv6 support"	on  \
-		ALT_HOME	"DCC home in /var/dcc"	off \
-		PORTS_SENDMAIL	"Use base Sendmail if off, ports if on"	off
+OPTIONS_DEFINE=	DCCIFD DCCM DCCD DCCGREY IPV6 ALT_HOME PORTS_SENDMAIL
+OPTIONS_DEFAULT=	DCCIFD DCCM DCCD DCCGREY
+DCCIFD_DESC=		DCC interface daemon (for SpamAssassin etc)
+DCCM_DESC=		DCC milter (for Sendmail only)
+DCCD_DESC=		DCC server
+DCCGREY_DESC=		DCC greylisting server
+ALT_HOME_DESC=		DCC home in /var/dcc
+PORTS_SENDMAIL_DESC=	Use base Sendmail if off, ports if on
 
 ## User for DCC files and SUID binaries
 #
@@ -76,7 +77,7 @@ SUB_LIST+=		WRKSRC=${WRKSRC} DCCHOME=${DCCHOME}
 
 ## /var/dcc home support
 #
-.if defined(WITH_ALT_HOME)
+.if ${PORT_OPTIONS:MALT_HOME}
 CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
 DCCHOME=		/var/dcc
 PLIST_SUB+=		WITH_ALT_HOME=""
@@ -89,19 +90,19 @@ CONFIGURE_ARGS+=	--homedir=${DCCHOME}
 
 ## dccm milter support
 #
-.if defined(WITH_DCCM)
+.if ${PORT_OPTIONS:MDCCM}
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
 IGNORE=		neither base system nor Ports version of Sendmail installed, cannot build milter
 .endif
-.if defined(WITHOUT_PORTS_SENDMAIL) && !exists(/usr/lib/libmilter.a)
+.if ! ${PORT_OPTIONS:MPORTS_SENDMAIL} && !exists(/usr/lib/libmilter.a)
 IGNORE=		base system Sendmail not found or too old, rebuild with WITH_PORTS_SENDMAIL=yes or WITHOUT_DCCM=yes
 .endif
-.if defined(WITH_PORTS_SENDMAIL) && !exists(${LOCALBASE}/lib/libmilter.a)
+.if ${PORT_OPTIONS:MPORTS_SENDMAIL} && !exists(${LOCALBASE}/lib/libmilter.a)
 IGNORE=		ports Sendmail not found, rebuild with WITHOUT_PORTS_SENDMAIL=yes or WITHOUT_DCCM=yes
 .endif
 
-.if defined(WITHOUT_PORTS_SENDMAIL)
+.if ! ${PORT_OPTIONS:MPORTS_SENDMAIL}
 MILTERBASE=	/usr
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
@@ -127,7 +128,7 @@ PLIST_SUB+=	WITH_DCCM="@comment "
 
 ## dccifd client interface daemon support
 #
-.if defined(WITHOUT_DCCIFD)
+.if ! ${PORT_OPTIONS:MDCCIFD}
 CONFIGURE_ARGS+=	--disable-dccifd
 PLIST_SUB+=	WITH_DCCIFD="@comment "
 .else
@@ -137,7 +138,7 @@ USE_RC_SUBR+=	dccifd
 
 ## dccd server support
 #
-.if defined(WITHOUT_DCCD) && defined(WITHOUT_DCCGREY)
+.if ! ${PORT_OPTIONS:MDCCD} && ! ${PORT_OPTIONS:MDCCGREY}
 CONFIGURE_ARGS+=	--disable-server
 PLIST_SUB+=	WITH_DCCD="@comment "
 .else
@@ -146,30 +147,28 @@ PLIST_SUB+=	WITH_DCCD=""
 
 ## IPV6 support
 #
-.if defined(WITHOUT_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-IPv6
 .endif
 
 ## Packing list and rcNG script fixups
 #
-.if defined(WITHOUT_DCCIFD) && defined(WITHOUT_DCCM)
+.if ! ${PORT_OPTIONS:MDCCIFD} && ! ${PORT_OPTIONS:MDCCM}
 PLIST_SUB+=	WITH_IFD_MILT="@comment "
 .else
 PLIST_SUB+=	WITH_IFD_MILT=""
 .endif
 
-.if defined(WITH_DCCD)
+.if ${PORT_OPTIONS:MDCCD}
 USE_RC_SUBR+=	dccd
 .endif
 
-.if defined(WITH_DCCGREY)
+.if ${PORT_OPTIONS:MDCCGREY}
 USE_RC_SUBR+=	dccgrey
 PLIST_SUB+=	WITH_DCCGREY=""
 .else
 PLIST_SUB+=	WITH_DCCGREY="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO_MSG} ' '
@@ -186,4 +185,4 @@ post-install:
 #
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
