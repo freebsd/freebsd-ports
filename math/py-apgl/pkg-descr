@@ -13,4 +13,4 @@ Dijkstras algorithm
 wrappers for LibSVM, and some mlpy learning algorithms
     * Unit tested using the Python unittest framework
 
-WWW:   http://packages.python.org/apgl/
+WWW: http://packages.python.org/apgl/
