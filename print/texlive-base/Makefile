@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base
@@ -95,7 +95,7 @@ MAN1=	afm2pl.1 allcm.1 allec.1 allneeded.1 bbox.1 bg5conv.1		\
 	dvihp.1 dvilj.1 dvilj2p.1 dvilj4.1 dvilj4l.1 dvilj6.1		\
 	dvipng.1 dvipos.1 dvired.1 dviselect.1 dvisvgm.1 dvitodvi.1	\
 	e2pall.1 extconv.1 fmtutil-sys.1 fmtutil.1 fontinst.1		\
-	hbf2gf.1 kpsepath.1 kpsetool.1 kpsewhere.1 kpsexpand.1		\
+	gsftopk.1 hbf2gf.1 kpsepath.1 kpsetool.1 kpsewhere.1 kpsexpand.1\
 	lacheck.1 m-tx.1 mag.1 makeindex.1 mendex.1 mkindex.1		\
 	mktexfmt.1 mmafm.1 mmpfb.1 mptopdf.1 otfinfo.1 otftotfm.1	\
 	pdfclose.1 pdfopen.1 pfb2pfa.1 pk2bm.1 pmx2pdf.1 pmxab.1	\

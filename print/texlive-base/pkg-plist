@@ -123,6 +123,7 @@ bin/mkt1font
 bin/mktexfmt
 bin/mmafm
 bin/mmpfb
+bin/mptopdf
 bin/mtxrun
 bin/musixflx
 bin/musixtex

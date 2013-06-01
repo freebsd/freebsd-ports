@@ -429,12 +429,9 @@ TEX_FORMAT_MPTOPDF?= \
 	"mptopdf pdftex - -translate-file=cp227.tcx mptopdf.tex"
 TEX_FORMAT_MPTOPDF_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/mptopdf.log \
-	${TEXMFVARDIR}/web2c/pdftex/mptopdf.fmt \
-	bin/mptopdf
+	${TEXMFVARDIR}/web2c/pdftex/mptopdf.fmt
 TEX_FORMAT_MPTOPDF_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
-post-install-mptopdf:
-	${LN} -sf pdftex ${PREFIX}/bin/mptopdf
 
 TEX_FORMAT_PDFTEX?= \
 	"pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini" \
