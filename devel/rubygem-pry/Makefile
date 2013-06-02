@@ -1,21 +1,18 @@
-# New ports collection makefile for:	pry
-# Date created:		2012-02-08
-# Whom:			Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-#
+# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pry
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.12.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An IRB alternative and runtime developer console
 
+BUILD_DEPENDS=	rubygem-rdoc>=3.12:${PORTSDIR}/devel/rubygem-rdoc
 RUN_DEPENDS=	rubygem-coderay>=1.0.5:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-method_source>=0.8:${PORTSDIR}/devel/rubygem-method_source \
-		rubygem-slop>=3.3.1:${PORTSDIR}/devel/rubygem-slop
+		rubygem-slop>=3.4.0:${PORTSDIR}/devel/rubygem-slop
 
 USE_RUBY=	yes
 USE_RAKE=	yes
