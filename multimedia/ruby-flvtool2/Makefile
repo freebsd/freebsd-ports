@@ -12,14 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Manipulation tool for Macromedia Flash Video files
 
-DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
