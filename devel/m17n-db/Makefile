@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.m17n.org/m17n-lib-download/:m17n \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/:m17n \
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
-MASTER_SITE_SUBDIR=	glibc/:glibc
+MASTER_SITE_SUBDIR=	m17n/:m17n \
+		glibc/:glibc
 DISTFILES=	${M17N_DISTFILE}:m17n \
 		${GLIBC_DISTFILE}:glibc
 EXTRACT_ONLY=	${M17N_DISTFILE}
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Data files for the m17n library
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
