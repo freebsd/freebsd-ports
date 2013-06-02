@@ -1,5 +1,5 @@
 --- configure.ac.orig	2013-04-02 01:07:55.000000000 +0000
-+++ configure.ac	2013-06-02 13:07:55.000000000 +0000
++++ configure.ac	2013-06-02 13:38:33.000000000 +0000
 @@ -191,9 +191,9 @@
  	AC_MSG_ERROR(Cannot find GLib!)
  fi
@@ -30,3 +30,12 @@
  
  #if test "$gnome" = yes; then
  #	AC_PATH_PROG(pkgconfigpath, pkg-config)
+@@ -684,7 +684,7 @@
+ 	PKG_CHECK_MODULES(LIBXML2, libxml-2.0 >= 2.0.0, [
+ 	AC_DEFINE(HAVE_ISO_CODES)
+ 	AC_DEFINE(USE_LIBSEXY)
+-	GUI_CFLAGS="$GUI_CFLAGS -I/usr/include/libxml2"
++	GUI_CFLAGS="$GUI_CFLAGS $LIBXML2_CFLAGS"
+ 	LIBS="$LIBS -lxml2"
+ 	], [
+ 	AC_MSG_ERROR(Cannot find libxml2!)

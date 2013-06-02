@@ -37,10 +37,10 @@ OPTIONS_RADIO_SPELL=	LIBSEXY GTKSPELL STATIC
 OPTIONS_DEFAULT=	SOCKS XFT OPENSSL PERL DOAT DBUS NOTIFY LIBSEXY
 
 TEXTFE_DESC=		Build the Text frontend
-DOAT_DESC=		Enable Do At plugin
-STATIC_DESC=		Enable Spell checking
-LIBSEXY_DESC=		Enable Spell checking through Libsexy
-GTKSPELL_DESC=		Enable Spell checking through GTKSpell
+DOAT_DESC=		Build the Do At plugin
+STATIC_DESC=		Spell checking embedded in the binary
+LIBSEXY_DESC=		Spell checking through Libsexy
+GTKSPELL_DESC=		Spell checking through GTKSpell
 
 .include <bsd.port.options.mk>
 
