@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-rake-compiler
-# Date created:				December 16, 2011
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	rake-compiler
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
