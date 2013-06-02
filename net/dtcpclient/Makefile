@@ -1,9 +1,4 @@
-# New ports collection makefile for:	dtcpclient
-# Date Created:		Feb 27 2003
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dtcpclient
 PORTVERSION=	20090812
