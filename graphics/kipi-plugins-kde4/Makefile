@@ -9,6 +9,7 @@ DISTFILES=	#
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 kipi graphics plugins (meta port)
 
+.MAKE.FreeBSD_UL=	yes
 LATEST_LINK=	${PORTNAME}-kde4
 
 NO_BUILD=	yes
