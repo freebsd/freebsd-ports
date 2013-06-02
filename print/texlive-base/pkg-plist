@@ -14,7 +14,6 @@ bin/bg5+pdflatex
 bin/bg5conv
 bin/bg5latex
 bin/bg5pdflatex
-bin/biber
 bin/bibexport
 bin/bibtex8
 bin/bibtexu
