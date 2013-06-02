@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	portsreinstall
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0.0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SFJP/${PORTNAME}/57782/ \
+MASTER_SITES=	SFJP/${PORTNAME}/58925/ \
 		http://www.mwghennndo.com/softwares/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@samurai.mwghennn.net

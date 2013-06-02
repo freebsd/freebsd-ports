@@ -2,3 +2,20 @@ bin/portsreinstall
 @unexec if cmp -s %D/etc/portsreinstall.conf.sample %D/etc/portsreinstall.conf; then rm -f %D/etc/portsreinstall.conf; fi
 etc/portsreinstall.conf.sample
 @exec [ -f %B/portsreinstall.conf ] || cp %B/%f %B/portsreinstall.conf
+lib/portsreinstall/libcommand.sh
+lib/portsreinstall/libconf.sh
+lib/portsreinstall/libdatabase_build.sh
+lib/portsreinstall/libdatabase_query.sh
+lib/portsreinstall/libdatabase_record.sh
+lib/portsreinstall/libdeinstall.sh
+lib/portsreinstall/libfileedit.sh
+lib/portsreinstall/libmessage.sh
+lib/portsreinstall/libmisc.sh
+lib/portsreinstall/liboptions.sh
+lib/portsreinstall/libpkgsys.sh
+lib/portsreinstall/libprogram.sh
+lib/portsreinstall/libreinstall.sh
+lib/portsreinstall/libstr.sh
+lib/portsreinstall/libtemp.sh
+lib/portsreinstall/libusage.sh
+@dirrm lib/portsreinstall
