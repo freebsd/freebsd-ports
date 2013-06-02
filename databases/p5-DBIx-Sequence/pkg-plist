@@ -1,7 +1,6 @@
 %%SITE_PERL%%/DBIx/Sequence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Sequence/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Sequence
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Sequence
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/Sequence
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/DBIx
