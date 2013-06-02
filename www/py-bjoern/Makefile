@@ -1,31 +1,26 @@
-# New ports collection makefile for: py-bjoern
-# Date created:	2011-10-23
-# Whom:	Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	bjoern
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	A screamingly fast Python WSGI server
+MAINTAINER=	olivierd@FreeBSD.org
+COMMENT=	Fast Python WSGI server
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	ev.4:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lc
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/setup.py
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
 
 .include <bsd.port.mk>
