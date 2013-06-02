@@ -9,6 +9,7 @@ DISTFILES=	# none
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Geany plugins (meta port)
 
+.MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 
 .include "${.CURDIR}/files/bsd.geany-plugins.mk"
