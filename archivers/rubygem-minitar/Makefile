@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-minitar
-# Date created:		2012-08-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	minitar
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
