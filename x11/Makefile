@@ -365,6 +365,7 @@
     SUBDIR += xf86vidmodeproto
     SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfce4-conf
+    SUBDIR += xfce4-embed-plugin
     SUBDIR += xfce4-quicklauncher-plugin
     SUBDIR += xfce4-screenshooter-plugin
     SUBDIR += xfce4-taskmanager
