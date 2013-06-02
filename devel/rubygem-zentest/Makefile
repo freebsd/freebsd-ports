@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-zentest
-# Date created:				13 April 2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zentest
-PORTVERSION=	4.8.2
+PORTVERSION=	4.9.2
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
