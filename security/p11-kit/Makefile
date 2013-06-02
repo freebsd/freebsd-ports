@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p11-kit
-# Date created:				2011-07-24
-# Whom:				Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	p11-kit
 PORTVERSION=	0.16.3
@@ -22,6 +18,7 @@ CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
 		--with-system-anchors=${LOCALBASE}/share/certs/ca-root-nss.crt
 MAKE_ENV=	exampledir=${EXAMPLESDIR}
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack gnomehack
 USE_LDCONFIG=	yes
