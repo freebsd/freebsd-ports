@@ -3523,6 +3523,7 @@
     SUBDIR += py-gitpython
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
+    SUBDIR += py-grab
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
