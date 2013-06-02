@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-excon
-# Date created:		2012-08-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	excon
-PORTVERSION=	0.16.5
+PORTVERSION=	0.22.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
