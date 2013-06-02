@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-mspec
-# Date created:		2012-05-16
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mspec
-PORTVERSION=	1.5.17
+PORTVERSION=	1.5.20
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
