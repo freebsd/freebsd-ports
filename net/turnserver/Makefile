@@ -2,6 +2,7 @@
 
 PORTNAME=	turnserver
 PORTVERSION=	1.8.5.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -11,8 +12,7 @@ COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	ssl:${PORTSDIR}/security/openssl \
-		event-2:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
 
 SUB_FILES=	pkg-message
 
@@ -76,7 +76,7 @@ CONFIGURE_ENV+=	TURN_NO_MYSQL=1
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	hiredis:${PORTSDIR}/databases/hiredis/
+LIB_DEPENDS+=	hiredis:${PORTSDIR}/databases/hiredis
 .else
 CONFIGURE_ENV+=	TURN_NO_HIREDIS=1
 .endif
