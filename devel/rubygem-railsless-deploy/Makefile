@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-railsless-deploy
-# Date created:		2011-08-31
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	railsless-deploy
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
