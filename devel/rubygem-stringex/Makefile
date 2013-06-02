@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-stringex
-# Date created:				11 Jun 2010
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	stringex
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
