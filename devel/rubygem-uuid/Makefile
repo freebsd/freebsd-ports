@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-uuid
-# Date created:		06 Nov 2008
-# Whom:			Wen Heping<wenheping@gmail.com>
-#
+# Created by: Wen Heping<wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	uuid
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
