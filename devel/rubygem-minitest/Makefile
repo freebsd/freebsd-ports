@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-minitest
-# Date created:		2011-06-19
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	minitest
-PORTVERSION=	3.3.0
+PORTVERSION=	5.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
