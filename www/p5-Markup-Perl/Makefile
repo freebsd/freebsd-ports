@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Markup-Perl
-# Date created:				1 September 2008
-# Whom:	      				Jeremy Chadwick <koitsu@FreeBSD.org>
-#
+# Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Markup-Perl
 PORTVERSION=	0.5
