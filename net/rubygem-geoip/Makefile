@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoip
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
