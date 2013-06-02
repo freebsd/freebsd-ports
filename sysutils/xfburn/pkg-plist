@@ -125,8 +125,6 @@ share/locale/ur_PK/LC_MESSAGES/xfburn.mo
 @dirrmtry share/locale/lt
 @dirrmtry share/locale/lv/LC_MESSAGES
 @dirrmtry share/locale/lv
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/nl/LC_MESSAGES
 @dirrmtry share/locale/nl
 @dirrmtry share/locale/pa/LC_MESSAGES
