@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-uuidtools
-# Date created:				11 Jun 2010
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	uuidtools
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
