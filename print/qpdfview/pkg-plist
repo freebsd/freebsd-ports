@@ -6,6 +6,8 @@ share/applications/qpdfview.desktop
 %%DATADIR%%/help.html
 %%DATADIR%%/qpdfview.svg
 %%DATADIR%%/qpdfview_ast.qm
+%%DATADIR%%/qpdfview_az.qm
+%%DATADIR%%/qpdfview_bg.qm
 %%DATADIR%%/qpdfview_bs.qm
 %%DATADIR%%/qpdfview_ca.qm
 %%DATADIR%%/qpdfview_cs.qm
@@ -13,10 +15,12 @@ share/applications/qpdfview.desktop
 %%DATADIR%%/qpdfview_de.qm
 %%DATADIR%%/qpdfview_el.qm
 %%DATADIR%%/qpdfview_en_GB.qm
+%%DATADIR%%/qpdfview_eo.qm
 %%DATADIR%%/qpdfview_es.qm
 %%DATADIR%%/qpdfview_eu.qm
 %%DATADIR%%/qpdfview_fi.qm
 %%DATADIR%%/qpdfview_fr.qm
+%%DATADIR%%/qpdfview_gl.qm
 %%DATADIR%%/qpdfview_he.qm
 %%DATADIR%%/qpdfview_hr.qm
 %%DATADIR%%/qpdfview_id.qm
