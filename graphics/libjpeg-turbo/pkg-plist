@@ -16,3 +16,4 @@ lib/libjpeg.so.%%SOVERSION%%
 lib/libturbojpeg.a
 lib/libturbojpeg.la
 lib/libturbojpeg.so
+lib/libturbojpeg.so.0
