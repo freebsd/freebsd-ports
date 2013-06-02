@@ -23,8 +23,8 @@ REINPLACE_CMD?=	${SED} -i~
 
 .for inst in ${PYPY_INST}
 
-${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c
-	${CP} build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c \
+${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION:C/[0-9]*$/x/}-0/testing_1/pypy-c
+	${CP} build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION:C/[0-9]*$/x/}-0/testing_1/pypy-c \
 		${PYPY_${inst}_NAME}
 
 .done_translate_${PYPY_${inst}_NAME}:
@@ -36,7 +36,7 @@ ${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}
 			targetpypystandalone.py ${PYPY_${inst}_OBJSPACE_ARGS} )
 	${TOUCH} .done_translate_${PYPY_${inst}_NAME}
 
-build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c: .done_translate_${PYPY_${inst}_NAME}
-	${REINPLACE_CMD} -e 's|^%.o: %.c$$|.c.o:|g' build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/Makefile
-	/usr/bin/time -l ${MAKE} -C build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1 pypy-c
+build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION:C/[0-9]*$/x/}-0/testing_1/pypy-c: .done_translate_${PYPY_${inst}_NAME}
+	${REINPLACE_CMD} -e 's|^%.o: %.c$$|.c.o:|g' build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION:C/[0-9]*$/x/}-0/testing_1/Makefile
+	/usr/bin/time -l ${MAKE} -C build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION:C/[0-9]*$/x/}-0/testing_1 pypy-c
 .endfor
