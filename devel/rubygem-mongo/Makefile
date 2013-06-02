@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-mongo
-# Date created:		18 Feburary 2012
-# Whom:			Evan Sarmiento <bsdports@wayfair.com>
-#
+# Created by: Evan Sarmiento <bsdports@wayfair.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mongo
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
