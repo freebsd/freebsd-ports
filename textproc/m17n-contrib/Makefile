@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	m17n-contrib
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.14
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	m17n
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	User-contributed input methods for the m17n library
 
-BUILD_DEPENDS=	m17n-db>=1.6.3:${PORTSDIR}/devel/m17n-db
-RUN_DEPENDS=	m17n-db>=1.6.3:${PORTSDIR}/devel/m17n-db
+BUILD_DEPENDS=	m17n-db>=1.6.4:${PORTSDIR}/devel/m17n-db
+RUN_DEPENDS=	m17n-db>=1.6.4:${PORTSDIR}/devel/m17n-db
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

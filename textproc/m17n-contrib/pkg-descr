@@ -10,5 +10,4 @@ The port also provides the tbl2mim.awk script for conversion of keyboard
 files used by textproc/scim-table-imengine into SCIM-independent .mim format
 (usable by m17n library).
 
-WWW: http://www.m17n.org/
-     http://www.m17n.org/m17n-lib-en/contribution.html
+WWW: http://www.nongnu.org/m17n/
