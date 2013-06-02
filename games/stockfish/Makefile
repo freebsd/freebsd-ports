@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	stockfish
-PORTVERSION=	2.3.1
+PORTVERSION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://cl.ly/2t3y2k2Y3Y1H/download/:src \
+MASTER_SITES=	http://cl.ly/2n1O3h2d3u2W/download/:src \
 		http://www.execve.net/sf/:src \
-		http://api.cld.me/2R1L1Y0V0b1M3M1B1D26/download/:book \
+		http://cl.ly/3x333m0G173F/download/:book \
 		http://www.execve.net/sf/:book
 DISTNAME=	stockfish-${PORTVERSION:S/.//g}-linux
 DISTFILES=	stockfish-${PORTVERSION:S/.//g}-linux.zip:src \
-		sf-211-book.zip:book
+		stockfish-231-book.zip:book
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
@@ -21,7 +21,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 MYARCH=		${ARCH}
-BOOKDIR=	sf-211-book
+BOOKDIR=	.
 PORTDOCS=	Readme.txt polyglot.ini
 PORTDATA=	Book.bin
 FETCH_ARGS=	-Fpr
