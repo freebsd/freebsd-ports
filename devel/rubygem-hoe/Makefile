@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-hoe
-# Date created:				5 December 2006
-# Whom:					Jonathan Weiss (<jw@innerewut.de>)
-#
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
 # $FreeBSD$
 
 PORTNAME=	hoe
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
