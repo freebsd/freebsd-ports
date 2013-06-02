@@ -63,6 +63,7 @@ include/pinot/ViewHistory.h
 include/pinot/Visibility.h
 include/pinot/WebEngine.h
 include/pinot/WorkerThreads.h
+include/pinot/cjkv/CJKVTokenizer.h
 include/pinot/filters/Filter.h
 include/pinot/filters/FilterFactory.h
 include/pinot/filters/HtmlFilter.h
@@ -164,5 +165,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrm lib/pinot
 @dirrm include/pinot/xdgmime
 @dirrm include/pinot/filters
+@dirrm include/pinot/cjkv
 @dirrm include/pinot
 @dirrm etc/pinot
