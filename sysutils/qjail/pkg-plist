@@ -1,17 +1,23 @@
 bin/qjail
-etc/qjail.conf.sample
+bin/qjail.vnet.be
+bin/qjail.vnet.ng
 etc/qjail.portsnap.conf
-etc/rc.d/qjail-jail2
-etc/rc.d/qjail2
+etc/rc.d/qjail.bootime
+%%EXAMPLESDIR%%/vnet/jail.amd64
+%%EXAMPLESDIR%%/vnet/jail.i386
+%%EXAMPLESDIR%%/vnet/nullfs.diff
+%%EXAMPLESDIR%%/vnet/ipfw.rules.host
+%%EXAMPLESDIR%%/vnet/ipfw.rules.vnet
+%%EXAMPLESDIR%%/vnet/ipf.rules.host
+%%EXAMPLESDIR%%/vnet/ipf.rules.vnet
+%%EXAMPLESDIR%%/vnet/pf.rules.host
+%%EXAMPLESDIR%%/vnet/pf.rules.vnet
 %%EXAMPLESDIR%%/default/etc/make.conf
 %%EXAMPLESDIR%%/default/etc/motd
 %%EXAMPLESDIR%%/default/etc/periodic.conf
 %%EXAMPLESDIR%%/default/etc/rc.conf
 %%EXAMPLESDIR%%/default/root/.cshrc
 %%EXAMPLESDIR%%/default/usr/local/etc/sudoers
-%%EXAMPLESDIR%%/nullmailer-example/etc/mail/mailer.conf
-%%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
-%%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/remotes
 %%EXAMPLESDIR%%/ssh-default/etc/group
 %%EXAMPLESDIR%%/ssh-default/etc/make.conf
 %%EXAMPLESDIR%%/ssh-default/etc/master.passwd
@@ -32,6 +38,12 @@ etc/rc.d/qjail2
 %%EXAMPLESDIR%%/ssh-default/usr/home/qjail/.rhosts
 %%EXAMPLESDIR%%/ssh-default/usr/home/qjail/.shrc
 %%EXAMPLESDIR%%/ssh-default/usr/local/etc/sudoers
+@dirrm %%EXAMPLESDIR%%/default/usr/local/etc
+@dirrm %%EXAMPLESDIR%%/default/usr/local
+@dirrm %%EXAMPLESDIR%%/default/usr
+@dirrm %%EXAMPLESDIR%%/default/root
+@dirrm %%EXAMPLESDIR%%/default/etc
+@dirrm %%EXAMPLESDIR%%/default
 @dirrm %%EXAMPLESDIR%%/ssh-default/usr/home/qjail
 @dirrm %%EXAMPLESDIR%%/ssh-default/usr/home
 @dirrm %%EXAMPLESDIR%%/ssh-default/usr/local/etc
@@ -41,17 +53,5 @@ etc/rc.d/qjail2
 @dirrm %%EXAMPLESDIR%%/ssh-default/etc/ssh
 @dirrm %%EXAMPLESDIR%%/ssh-default/etc
 @dirrm %%EXAMPLESDIR%%/ssh-default
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/mail
-@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc
-@dirrm %%EXAMPLESDIR%%/nullmailer-example
-@dirrm %%EXAMPLESDIR%%/default/usr/local/etc
-@dirrm %%EXAMPLESDIR%%/default/usr/local
-@dirrm %%EXAMPLESDIR%%/default/usr
-@dirrm %%EXAMPLESDIR%%/default/root
-@dirrm %%EXAMPLESDIR%%/default/etc
-@dirrm %%EXAMPLESDIR%%/default
+@dirrm %%EXAMPLESDIR%%/vnet
 @dirrm %%EXAMPLESDIR%%

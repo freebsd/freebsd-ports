@@ -1,13 +1,20 @@
-This is the last version that handles both the 8.x and 9.x install
-media formats. 
-
 Qjail [ q = quick ] is a 4th generation wrapper for the basic chroot jail
 system that includes security and performance enhancements. Plus a new level
 of "user friendliness" enhancements dealing with deploying just a few jails or
 large jail environments consisting of 100's of jails.
 
+This version of qjail has been converted from using the legacy rc.d-method as 
+used in all previous versions of qjail, to using the jail(8) jail.conf-method 
+available in RELEASE-9.1. This upgrade provides the ability to enable the 
+following new options on a per-jail basis. exec.fib, allow.raw_sockets, 
+allow.quotas, allow.mount.nullfs, allow.mount.zfs, cpuset.id, securelevel, 
+vnet.interface, and vnet. The vnet option gives a jail its own network stack 
+using the experimental vimage software. This qjail version is not functional 
+for RELEASES older than RELEASE-9.1. The vnet option has only been tested on 
+i386 and amd64 equipment.
+
 Qjail requires no knowledge of the jail command usage. It uses "nullfs" for
-read-only system binaries, sharing one copy of them with all the jails.
+read-only system executables, sharing one copy of them with all the jails.
 
 Uses "mdconfig" to create sparse image jails. Sparse image jails provide a
 method to limit the total disk space a jail can consume, while only occupying
