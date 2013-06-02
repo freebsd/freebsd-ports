@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	lang python java
 MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
