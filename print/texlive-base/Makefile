@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base
@@ -47,6 +47,7 @@ EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/libs/teckit \
 		${DISTNAME}/libs/zlib \
 		${DISTNAME}/libs/zziplib \
+		${DISTNAME}/utils/biber \
 		${DISTNAME}/utils/psutils
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
