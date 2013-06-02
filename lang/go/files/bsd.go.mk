@@ -47,7 +47,7 @@ BUILD_DEPENDS+=	${GO_CMD}:${PORTSDIR}/lang/go
 GO_ENV+=	GOROOT=${GOROOT}	\
 		GOPATH=${WRKDIR}	\
 		GOARCH=${GOARCH}	\
-		GOOS=freebsd		\
+		GOOS=${OPSYS:L}		\
 		CGO_CFLAGS="${CGO_CFLAGS}" \
 		CGO_LDFLAGS="${CGO_LDFLAGS}"
 PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR}	\
@@ -57,7 +57,7 @@ PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR}	\
 .if !target(post-extract)
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H}
-	@${LN} -s ${WRKSRC} ${GO_WRKSRC}
+	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
 .endif
 
 .if !target(do-build)

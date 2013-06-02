@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	go${PORTVERSION}.src
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A concurrent, garbage-collected language
+COMMENT=	Go programming language
 
 LICENSE=	BSD
 
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
 SUB_LIST+=	GOOBJ=${GOOBJ} \
-		ARCH=${GOARCH}
+		ARCH=${GOARCH} \
+		GOOS=${OPSYS:L}
 
 .include <bsd.port.pre.mk>
 
@@ -44,7 +45,7 @@ do-build:
 		GOROOT_FINAL=${PREFIX}/go	\
 		GOBIN=				\
 		GOARCH=${GOARCH}		\
-		GOOS=freebsd			\
+		GOOS=${OPSYS:L}			\
 		bash make.bash)
 
 post-install:
@@ -53,7 +54,10 @@ post-install:
 do-install:
 	@${CP} -a ${WRKSRC} ${PREFIX}
 .for f in go godoc gofmt
-	@${LN} -s ${PREFIX}/go/bin/${f} ${PREFIX}/bin/${f}
+	@${LN} -sf ${PREFIX}/go/bin/${f} ${PREFIX}/bin/${f}
 .endfor
+
+regression-test: build
+	(cd ${WRKSRC}/src && GOROOT=${WRKSRC} ./run.bash --no-rebuild --banner)
 
 .include <bsd.port.post.mk>

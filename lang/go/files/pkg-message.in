@@ -3,7 +3,7 @@
  environment properly. The following environment variables should
  be set:
 
- GOOS=freebsd
+ GOOS=%%GOOS%%
  GOARCH=%%ARCH%%
  GOROOT=%%PREFIX%%/go
 
