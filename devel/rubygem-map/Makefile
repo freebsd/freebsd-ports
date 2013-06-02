@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-map
-# Date created:		2012-06-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	map
-PORTVERSION=	6.2.0
+PORTVERSION=	6.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
