@@ -25,7 +25,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS OPTIMIZED_CFLAGS PGO DOCS
-PGO_DESC=	Enable Profile-Guided Optimization
 
 MAN1=	tre_agrep.1
 

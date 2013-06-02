@@ -44,7 +44,6 @@ CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
 		reto_procmailrc.recipe
 
 OPTIONS_DEFINE=	PGO
-PGO_DESC=	Profile-Guided Optimization
 
 .include <bsd.port.options.mk>
 
