@@ -26,12 +26,12 @@
  { return aluF2I(val)+2147483648u; }
  static __inline ALshort aluF2S(ALfloat val)
 -{ return aluF2I(val)>>16; }
-+{ return aluF2I(val)>>9; }
++{ return aluF2I25(val)>>9; }
  static __inline ALushort aluF2US(ALfloat val)
  { return aluF2S(val)+32768; }
  static __inline ALbyte aluF2B(ALfloat val)
 -{ return aluF2I(val)>>24; }
-+{ return aluF2I(val)>>17; }
++{ return aluF2I25(val)>>17; }
  static __inline ALubyte aluF2UB(ALfloat val)
  { return aluF2B(val)+128; }
  
