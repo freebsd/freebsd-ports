@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lxappearance
-# Date created:                2008/06/20
-# Whom:                        chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	lxappearance
 PORTVERSION=	0.5.2
