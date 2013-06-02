@@ -20,7 +20,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		bison iconv
+USES=		bison iconv pkgconfig
 
 MAN1=		openvas-libnasl-config.1 openvas-nasl.1
 
