@@ -1,12 +1,8 @@
-# New ports collection makefile for:   ocaml-pxp
-# Date created:        29 March 2003
-# Whom:                Stephane Legrand <stephane@freebsd.org>
-#
+# Created by: Stephane Legrand <stephane@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pxp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
