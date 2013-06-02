@@ -28,7 +28,7 @@ OPTIONS_DEFINE= IPV6 MYSQL PGSQL
 
 USE_RC_SUBR=	jabber
 USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		gettext iconv pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/jabber
 MAKE_JOBS_UNSAFE=	yes
