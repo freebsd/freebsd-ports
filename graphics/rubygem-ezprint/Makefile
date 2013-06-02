@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-ezprint
-# Date created:				2011-06-16
-# Whom:					rpsfa@rit.edu
-#
+# Created by: rpsfa@rit.edu
 # $FreeBSD$
 
 PORTNAME=	ezprint
-PORTVERSION=	0.3.1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
