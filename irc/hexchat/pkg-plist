@@ -1,0 +1,76 @@
+bin/hexchat
+%%TEXTFE%%bin/hexchat-text
+include/hexchat-plugin.h
+%%OPENSSL%%lib/hexchat/plugins/checksum.la
+%%OPENSSL%%lib/hexchat/plugins/checksum.so
+%%DOAT%%lib/hexchat/plugins/doat.la
+%%DOAT%%lib/hexchat/plugins/doat.so
+%%OPENSSL%%lib/hexchat/plugins/fishlim.la
+%%OPENSSL%%lib/hexchat/plugins/fishlim.so
+%%PERL%%lib/hexchat/plugins/perl.la
+%%PERL%%lib/hexchat/plugins/perl.so
+%%PYTHON%%lib/hexchat/plugins/python.la
+%%PYTHON%%lib/hexchat/plugins/python.so
+share/applications/hexchat.desktop
+%%DBUS%%share/dbus-1/services/org.hexchat.service.service
+share/icons/hicolor/48x48/apps/hexchat.png
+share/icons/hicolor/scalable/apps/hexchat.svg
+%%NLS%%share/locale/af/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/am/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/az/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/be/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/da/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/de/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/el/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/es/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/et/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/id/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/it/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/no/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/th/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/wa/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/hexchat.mo
+share/pixmaps/hexchat.png
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrmtry share/applications
+@dirrm lib/hexchat/plugins
+@dirrm lib/hexchat
