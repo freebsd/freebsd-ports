@@ -12,6 +12,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Meta-port of all gstreamer 1.x plugins with options
 
+.MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 USE_GSTREAMER1=	yes
 

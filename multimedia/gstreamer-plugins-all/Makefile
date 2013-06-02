@@ -13,6 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Meta-port of all gstreamer plugins with options
 
+.MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 USE_GSTREAMER=	yes
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
