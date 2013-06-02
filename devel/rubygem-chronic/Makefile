@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-chronic
-# Date created:		7 April 2009
-# Whom:			Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chronic
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
