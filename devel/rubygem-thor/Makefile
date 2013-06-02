@@ -12,6 +12,6 @@ COMMENT=	A scripting framework that replaces rake, sake, and rubigen
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/rake2thor	bin/thor
+PLIST_FILES=	bin/thor
 
 .include <bsd.port.mk>
