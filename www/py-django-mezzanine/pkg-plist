@@ -561,6 +561,9 @@ bin/mezzanine-project
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/0004_set_site_permissions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/0004_set_site_permissions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/0004_set_site_permissions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/0005_auto__chg_field_sitepermission_user__del_unique_sitepermission_user.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/0005_auto__chg_field_sitepermission_user__del_unique_sitepermission_user.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/0005_auto__chg_field_sitepermission_user__del_unique_sitepermission_user.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mezzanine/core/migrations/__init__.pyo
