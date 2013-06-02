@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	efax-gtk
-PORTVERSION=	3.2.11
+PORTVERSION=	3.2.12
 CATEGORIES=	comms
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tgz
@@ -12,27 +12,15 @@ COMMENT=	GUI frontend for efax program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		jbig:${PORTSDIR}/graphics/jbigkit \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		cxx-gtk-utils-2-2.0:${PORTSDIR}/x11-toolkits/c++-gtk-utils
+LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+		cxx-gtk-utils-2-2.2:${PORTSDIR}/x11-toolkits/c++-gtk-utils
 RUN_DEPENDS=	ggv:${PORTSDIR}/print/ggv
 
-USES=		pkgconfig iconv
+USES=		pkgconfig
 USE_GHOSTSCRIPT_RUN=yes
-USE_GNOME=	gdkpixbuf2 gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GCC=	4.4+
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
-		xi xinerama xrandr xrender
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	efax-[0-9]*
