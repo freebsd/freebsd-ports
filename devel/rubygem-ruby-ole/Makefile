@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-ruby-ole
-# Date created:				30 October 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-ole
-PORTVERSION=	1.2.11.4
+PORTVERSION=	1.2.11.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
