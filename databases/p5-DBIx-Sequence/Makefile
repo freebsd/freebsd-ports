@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Sequence
-# Date created:				6 Jan 2006
-# Whom:					Jon Nistor <nistor@snickers.org>
-#
+# Created by: Jon Nistor <nistor@snickers.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Sequence
 PORTVERSION=	1.5
