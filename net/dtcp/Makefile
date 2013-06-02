@@ -1,9 +1,4 @@
-# New ports collection makefile for:	dtcp
-# Date Created:		Sep 27 2002
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dtcp
 PORTVERSION=	20130602
