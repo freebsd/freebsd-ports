@@ -457,7 +457,6 @@
     SUBDIR += p5-WWW-Hotmail
     SUBDIR += p5-ZConf-Mail
     SUBDIR += p5-qpsmtpd
-    SUBDIR += p5-vpopmail
     SUBDIR += pantomime
     SUBDIR += pathalias
     SUBDIR += pear-Contact_Vcard_Build
@@ -519,7 +518,6 @@
     SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
-    SUBDIR += postfix26
     SUBDIR += postfix27
     SUBDIR += postfix28
     SUBDIR += postfix29
@@ -736,7 +734,6 @@
     SUBDIR += vm
     SUBDIR += vm-pop3d
     SUBDIR += vmailmgr
-    SUBDIR += vodmr
     SUBDIR += vpopmail
     SUBDIR += vqadmin
     SUBDIR += vqregister

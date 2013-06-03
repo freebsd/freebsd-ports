@@ -799,7 +799,6 @@
     SUBDIR += umurmur
     SUBDIR += vagalume
     SUBDIR += vamp-plugin-sdk
-    SUBDIR += ventrilo-server
     SUBDIR += vitunes
     SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc

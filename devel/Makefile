@@ -67,9 +67,6 @@
     SUBDIR += argp-standalone
     SUBDIR += argtable
     SUBDIR += arm-elf-binutils
-    SUBDIR += arm-rtems-binutils
-    SUBDIR += arm-rtems-gcc
-    SUBDIR += arm-rtems-gdb
     SUBDIR += aros-sdk
     SUBDIR += art
     SUBDIR += as31
@@ -843,9 +840,6 @@
     SUBDIR += hwloc
     SUBDIR += hyena
     SUBDIR += hypersrc
-    SUBDIR += i386-rtems-binutils
-    SUBDIR += i386-rtems-gcc
-    SUBDIR += i386-rtems-gdb
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
@@ -1131,7 +1125,6 @@
     SUBDIR += libxalloc
     SUBDIR += libxs
     SUBDIR += libytnef
-    SUBDIR += libzrtp
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
@@ -1199,9 +1192,6 @@
     SUBDIR += m17n-lib
     SUBDIR += m4
     SUBDIR += m6811-binutils
-    SUBDIR += m68k-rtems-binutils
-    SUBDIR += m68k-rtems-gcc
-    SUBDIR += m68k-rtems-gdb
     SUBDIR += magit
     SUBDIR += make++
     SUBDIR += makedepend
@@ -1232,9 +1222,6 @@
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
     SUBDIR += mingw64-binutils
-    SUBDIR += mips-rtems-binutils
-    SUBDIR += mips-rtems-gcc
-    SUBDIR += mips-rtems-gdb
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
@@ -3308,9 +3295,6 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
-    SUBDIR += powerpc-rtems-binutils
-    SUBDIR += powerpc-rtems-gcc
-    SUBDIR += powerpc-rtems-gdb
     SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
@@ -4244,9 +4228,6 @@
     SUBDIR += sfslite-noopt
     SUBDIR += sgb
     SUBDIR += sgl
-    SUBDIR += sh-rtems-binutils
-    SUBDIR += sh-rtems-gcc
-    SUBDIR += sh-rtems-gdb
     SUBDIR += shapelib
     SUBDIR += shflags
     SUBDIR += shiboken
@@ -4272,9 +4253,6 @@
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += sourcenav
-    SUBDIR += sparc-rtems-binutils
-    SUBDIR += sparc-rtems-gcc
-    SUBDIR += sparc-rtems-gdb
     SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spin

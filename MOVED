@@ -4333,3 +4333,29 @@ x11-toolkits/linux-openmotif||2013-05-30|Has expired: Only used on FreeBSD 7, wh
 x11-toolkits/linux-pango||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
 x11-toolkits/linux-qt33||2013-05-30|Has expired: Only used on FreeBSD 7, which is end-of-life
 irc/bitchx-devel|irc/bitchx|2013-05-31|Release finally cut
+mail/p5-vpopmail||2013-06-03|Has expired: Broken for more than 6 month
+mail/vodmr||2013-06-03|Has expired: depends on expired mail/p5-vpopmail
+audio/ventrilo-server||2013-06-03|Has expired: No more public distfiles
+devel/libzrtp||2013-06-03|Has expired: No more public distfiles
+mail/postfix26||2013-06-03|Has expired: No longer supported by upstream
+devel/i386-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/mips-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/arm-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/sh-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/powerpc-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/sparc-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/mips-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/i386-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/sh-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/powerpc-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/sparc-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/arm-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/m68k-rtems-binutils||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/m68k-rtems-gcc||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/sh-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/m68k-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/i386-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/arm-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/sparc-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/mips-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+devel/powerpc-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
