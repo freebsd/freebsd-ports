@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_security
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
