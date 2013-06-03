@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qupzilla
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.qupzilla.com/uploads/
 DISTNAME=	QupZilla-${PORTVERSION}
