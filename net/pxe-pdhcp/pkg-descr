@@ -1,0 +1,8 @@
+An implementation of Preboot Execution Environment (PXE) server.
+
+pxe-pdhcp works with DHCP server running on another host. The DHCP
+server doesn't need to be configured for any PXE specific
+options. This means that you can set up network boot environment
+without re-configuring existent DHCP server.
+
+WWW: https://github.com/frsyuki/pxe-pdhcp
