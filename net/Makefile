@@ -895,6 +895,7 @@
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += pxe
+    SUBDIR += pxe-pdhcp
     SUBDIR += py-GeoIP
     SUBDIR += py-amqp
     SUBDIR += py-amqplib

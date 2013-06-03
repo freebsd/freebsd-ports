@@ -1,0 +1,22 @@
+# $FreeBSD$
+
+PROG=		pxe-pdhcp
+SRCS=		pdhcp.c pxe-pdhcp.c
+MAN=		${PROG}.8
+NO_MANCOMPRESS=
+
+PREFIX?=	/usr/local
+LOCALBASE?=	/usr/local
+MANDIR?=	${PREFIX}/man/man
+BINDIR?=	${PREFIX}/sbin
+
+.if !empty(PORTDOCS)
+FILES=		README.md
+FILESDIR?=	${PREFIX}/share/doc/${PROG}
+
+beforeinstall:
+	mkdir -p ${FILESDIR}
+.endif
+
+.include <bsd.prog.mk>
+
