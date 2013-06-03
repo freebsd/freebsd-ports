@@ -19,18 +19,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_TCL=	yes
-USE_TCL_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
 
 INFO=		${PORTNAME}
 
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR}
+CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
+		--enable-threads
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

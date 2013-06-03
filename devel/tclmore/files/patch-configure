@@ -1,5 +1,18 @@
---- configure.orig	Fri May 21 20:24:40 2004
-+++ configure	Wed Apr 26 10:55:55 2006
+--- configure.orig	2004-05-21 18:24:40.000000000 +0200
++++ configure	2013-04-22 13:44:49.000000000 +0200
+@@ -6702,9 +6702,9 @@
+ 	    # Special check for weird MP-RAS system (uname returns weird
+ 	    # results, and the version is kept in special file).
+ 
+-	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
+-	    fi
++#	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
++#		system=MP-RAS-`awk '{print $1}' /etc/.relid'`
++#	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
+ 	    fi
 @@ -7847,11 +7847,12 @@
  		EXTRA_CFLAGS="-pthread"
  	    	LDFLAGS="$LDFLAGS -pthread"
