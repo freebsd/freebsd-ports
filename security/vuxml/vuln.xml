@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9dfb63b8-8f36-11e2-b34d-000c2957946c">
+    <topic>www/mod_security -- NULL pointer dereference DoS</topic>
+    <affects>
+      <package>
+	<name>mod_security</name>
+	<range><lt>2.7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/526746">
+	  <p>When ModSecurity receives a request body with a size bigger than the
+	     value set by the "SecRequestBodyInMemoryLimit" and with a "Content-Type"
+	     that has no request body processor mapped to it, ModSecurity will
+	     systematically crash on every call to "forceRequestBodyVariable".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2765</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-2765</url>
+    </references>
+    <dates>
+      <discovery>2013-05-27</discovery>
+      <entry>2013-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1225549f-ca91-11e2-b3b8-f0def16c5c1b">
     <topic>passenger -- security vulnerability</topic>
     <affects>
