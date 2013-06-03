@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://ftp.tux.org/pub/X-Windows/ftp.hungry.com/chrpath/
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to modify DT_RPATH in existing ELF binaries
 
 LICENSE=	GPLv2
