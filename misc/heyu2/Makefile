@@ -1,9 +1,5 @@
-# New ports collection makefile for:	heyu2
-# Date created:		29 March 2004
-# Whom:			mstowe@chicago.us.mensa.org
-#
+# Created by: mstowe@chicago.us.mensa.org
 # $FreeBSD$
-#
 
 PORTNAME=	heyu2
 PORTVERSION=	2.10
@@ -33,36 +29,39 @@ MAN5=		x10aux.5 \
 		x10rfxmeters.5 \
 		x10rfxsensors.5
 
-OPTIONS=	CM17A		"X10 CM17A \"Firecracker\" Support"		on \
-		EXTENDED	"Extended Type 0 (Shutter/Shade) Support"	on \
-		RFXSENS		"RFXSensors (RF) Support"			on \
-		RFXMETER	"RFXMeter (RF) Support"				on \
-		DMX		"Digimax Thermostat Support"			on \
-		OREGON	 	"Oregon Support"				on
+OPTIONS_DEFINE=	CM17A EXTENDED RFXSENS RFXMETER DMX OREGON
+CM17A_DESC=	X10 CM17A "Firecracker" Support
+EXTENDED_DESC=	Extended Type 0 (Shutter/Shade) Support
+RFXSENS_DESC=	RFXSensors (RF) Support
+RFXMETER_DESC=	RFXMeter (RF) Support
+DMX_DESC=	Digimax Thermostat Support
+OREGON_DESC=	Oregon Support
+
+OPTIONS_DEFAULT=	CM17A EXTENDED RFXSENS RFXMETER DMX OREGON
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_CM17A)
+.if ! ${PORT_OPTIONS:MCM17A}
 CONFIGURE_ARGS+=	nocm17a
 .endif
 
-.if !defined(WITH_EXTENDED)
+.if ! ${PORT_OPTIONS:MEXTENDED}
 CONFIGURE_ARGS+=	noext0
 .endif
 
-.if !defined(WITH_RFXSENS)
+.if ! ${PORT_OPTIONS:MRFXSENS}
 CONFIGURE_ARGS+=	norfxs
 .endif
 
-.if !defined(WITH_RFXMETER)
+.if ! ${PORT_OPTIONS:MRFXMETER}
 CONFIGURE_ARGS+=	norfxm
 .endif
 
-.if !defined(WITH_DMX)
+.if ! ${PORT_OPTIONS:MDMX}
 CONFIGURE_ARGS+=	nodmx
 .endif
 
-.if !defined(WITH_OREGON)
+.if ! ${PORT_OPTIONS:MOREGON}
 CONFIGURE_ARGS+=	noore
 .endif
 
