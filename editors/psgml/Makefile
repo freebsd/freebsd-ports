@@ -1,13 +1,9 @@
-# New ports collection makefile for:	psgml for emacs
-# Date created:		23 January 1999
-# Whom:			shige
-#
+# Created by: Shigeyuki Fukushima <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psgml
 PORTVERSION=	1.3.2
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/${PORTNAME}/ALPHA%20${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -16,8 +12,8 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	hrs
 PATCHFILES=	psgml-symbol-conflict-050503.diff.gz
 
-MAINTAINER?=	hrs@FreeBSD.org
-COMMENT=	A major mode for editing SGML and XML documents for ${EMACS_PORT_NAME}
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Major mode for editing SGML and XML documents for Emacs
 
 SUB_FILES=	${PSGML_STARTUPEL}
 SUB_LIST=	PSGML_LISPDIR=${PSGML_LISPDIR}

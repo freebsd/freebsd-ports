@@ -1,6 +1,17 @@
---- psgml-edit.el.orig	2012-08-04 11:53:07.000000000 +0900
-+++ psgml-edit.el	2012-08-04 11:55:00.000000000 +0900
-@@ -1870,24 +1870,28 @@
+--- psgml-edit.el.orig	2013-06-03 13:44:59.000000000 +0900
++++ psgml-edit.el	2013-06-03 14:13:25.000000000 +0900
+@@ -185,7 +185,9 @@
+     (goto-char (sgml-element-start element))
+     (delete-char (sgml-element-stag-len element))
+     (insert (sgml-delim "STAGO")
+-            (sgml-general-insert-case gi)
++            (if (symbolp gi)
++                (sgml-general-insert-case (symbol-name gi))
++              (sgml-general-insert-case gi))
+             tagc)
+     (let* ((newel (sgml-find-context-of (point)))
+ 	   (newattlist (sgml-element-attlist newel))
+@@ -1870,24 +1872,28 @@
     (invert
      (or (looking-at "&#\\([0-9]+\\)[;\n]?")
  	(error "No character reference after point"))
