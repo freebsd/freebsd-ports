@@ -5,6 +5,7 @@ PORTNAME=	thunderbird
 PORTVERSION=	17.0.6
 CATEGORIES=	mail
 DISTNAME=	${PORTNAME}-${DISTVERSION}esr
+MASTER_SITES=   MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
