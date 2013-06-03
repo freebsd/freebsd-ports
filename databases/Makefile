@@ -574,7 +574,6 @@
     SUBDIR += pgworksheet
     SUBDIR += php-adodb-ext
     SUBDIR += php-mdcached
-    SUBDIR += php-sqlite3
     SUBDIR += php5-creole
     SUBDIR += php5-dba
     SUBDIR += php5-interbase
