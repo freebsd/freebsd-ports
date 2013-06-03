@@ -23,10 +23,11 @@
 %%WWWDIR%%/adminer/include/functions.inc.php
 %%WWWDIR%%/adminer/include/lang.inc.php
 %%WWWDIR%%/adminer/include/pdo.inc.php
+%%WWWDIR%%/adminer/include/tmpfile.inc.php
 %%WWWDIR%%/adminer/include/version.inc.php
 %%WWWDIR%%/adminer/include/xxtea.inc.php
-%%WWWDIR%%/adminer/index.php
 %%WWWDIR%%/adminer/indexes.inc.php
+%%WWWDIR%%/adminer/index.php
 %%WWWDIR%%/adminer/lang/ar.inc.php
 %%WWWDIR%%/adminer/lang/bn.inc.php
 %%WWWDIR%%/adminer/lang/ca.inc.php
@@ -54,30 +55,16 @@
 %%WWWDIR%%/adminer/lang/tr.inc.php
 %%WWWDIR%%/adminer/lang/uk.inc.php
 %%WWWDIR%%/adminer/lang/xx.inc.php
-%%WWWDIR%%/adminer/lang/zh-tw.inc.php
 %%WWWDIR%%/adminer/lang/zh.inc.php
+%%WWWDIR%%/adminer/lang/zh-tw.inc.php
 %%WWWDIR%%/adminer/plugin.php
-%%WWWDIR%%/designs/brade/adminer.css
-%%WWWDIR%%/designs/bueltge/adminer.css
-%%WWWDIR%%/designs/cvicebni-ubor/adminer.css
-%%WWWDIR%%/designs/haeckel/adminer.css
-%%WWWDIR%%/designs/hever/adminer.css
-%%WWWDIR%%/designs/jukin/adminer.css
-%%WWWDIR%%/designs/kahi/adminer.css
-%%WWWDIR%%/designs/konya/adminer.css
-%%WWWDIR%%/designs/ng9/adminer.css
-%%WWWDIR%%/designs/paranoiq/adminer.css
-%%WWWDIR%%/designs/pilot/adminer.css
-%%WWWDIR%%/designs/pokorny/adminer.css
-%%WWWDIR%%/designs/price/adminer.css
-%%WWWDIR%%/designs/readme.txt
 %%WWWDIR%%/adminer/privileges.inc.php
 %%WWWDIR%%/adminer/procedure.inc.php
 %%WWWDIR%%/adminer/processlist.inc.php
 %%WWWDIR%%/adminer/schema.inc.php
 %%WWWDIR%%/adminer/scheme.inc.php
-%%WWWDIR%%/adminer/select.inc.php
 %%WWWDIR%%/adminer/script.inc.php
+%%WWWDIR%%/adminer/select.inc.php
 %%WWWDIR%%/adminer/sequence.inc.php
 %%WWWDIR%%/adminer/sql.inc.php
 %%WWWDIR%%/adminer/static/arrow.gif
@@ -98,6 +85,21 @@
 %%WWWDIR%%/changes.txt
 %%WWWDIR%%/compile.php
 %%WWWDIR%%/coverage.php
+%%WWWDIR%%/designs/brade/adminer.css
+%%WWWDIR%%/designs/bueltge/adminer.css
+%%WWWDIR%%/designs/cvicebni-ubor/adminer.css
+%%WWWDIR%%/designs/haeckel/adminer.css
+%%WWWDIR%%/designs/hever/adminer.css
+%%WWWDIR%%/designs/jukin/adminer.css
+%%WWWDIR%%/designs/kahi/adminer.css
+%%WWWDIR%%/designs/konya/adminer.css
+%%WWWDIR%%/designs/nette/adminer.css
+%%WWWDIR%%/designs/ng9/adminer.css
+%%WWWDIR%%/designs/paranoiq/adminer.css
+%%WWWDIR%%/designs/pilot/adminer.css
+%%WWWDIR%%/designs/pokorny/adminer.css
+%%WWWDIR%%/designs/price/adminer.css
+%%WWWDIR%%/designs/readme.txt
 %%WWWDIR%%/editor/db.inc.php
 %%WWWDIR%%/editor/example.php
 %%WWWDIR%%/editor/include/adminer.inc.php
@@ -110,9 +112,10 @@
 %%WWWDIR%%/externals/jush/jush.css
 %%WWWDIR%%/externals/jush/jush.js
 %%WWWDIR%%/lang.php
-%%WWWDIR%%/readme.txt
 %%WWWDIR%%/plugins/database-hide.php
+%%WWWDIR%%/plugins/dump-alter.php
 %%WWWDIR%%/plugins/dump-date.php
+%%WWWDIR%%/plugins/dump-json.php
 %%WWWDIR%%/plugins/dump-xml.php
 %%WWWDIR%%/plugins/dump-zip.php
 %%WWWDIR%%/plugins/edit-calendar.php
@@ -123,21 +126,23 @@
 %%WWWDIR%%/plugins/file-upload.php
 %%WWWDIR%%/plugins/foreign-system.php
 %%WWWDIR%%/plugins/frames.php
+%%WWWDIR%%/plugins/json-column.php
 %%WWWDIR%%/plugins/links-direct.php
 %%WWWDIR%%/plugins/login-servers.php
 %%WWWDIR%%/plugins/login-table.php
+%%WWWDIR%%/plugins/master-slave.php
 %%WWWDIR%%/plugins/password-sha1.php
 %%WWWDIR%%/plugins/plugin.php
 %%WWWDIR%%/plugins/readme.txt
-%%WWWDIR%%/plugins/tables-filter.php
 %%WWWDIR%%/plugins/slugify.php
 %%WWWDIR%%/plugins/sql-log.php
+%%WWWDIR%%/plugins/tables-filter.php
 %%WWWDIR%%/plugins/tinymce.php
 %%WWWDIR%%/plugins/translation.php
 %%WWWDIR%%/plugins/version-noverify.php
 %%WWWDIR%%/plugins/wymeditor.php
+%%WWWDIR%%/readme.txt
 %%WWWDIR%%/tests/0-login.html
-%%WWWDIR%%/tests/1-create-database.html
 %%WWWDIR%%/tests/10-clone.html
 %%WWWDIR%%/tests/11-reference.html
 %%WWWDIR%%/tests/12-update.html
@@ -148,12 +153,13 @@
 %%WWWDIR%%/tests/17-export.html
 %%WWWDIR%%/tests/18-events.html
 %%WWWDIR%%/tests/19-procedures.html
-%%WWWDIR%%/tests/2-create-table.html
+%%WWWDIR%%/tests/1-create-database.html
 %%WWWDIR%%/tests/20-partitioning.html
 %%WWWDIR%%/tests/21-variables.html
 %%WWWDIR%%/tests/22-history.html
 %%WWWDIR%%/tests/23-editor.html
 %%WWWDIR%%/tests/24-explain.html
+%%WWWDIR%%/tests/2-create-table.html
 %%WWWDIR%%/tests/3-create-index.html
 %%WWWDIR%%/tests/4-create-table-2.html
 %%WWWDIR%%/tests/5-foreign-key.html
@@ -178,6 +184,7 @@
 @dirrm %%WWWDIR%%/designs/jukin
 @dirrm %%WWWDIR%%/designs/kahi
 @dirrm %%WWWDIR%%/designs/konya
+@dirrm %%WWWDIR%%/designs/nette
 @dirrm %%WWWDIR%%/designs/ng9
 @dirrm %%WWWDIR%%/designs/paranoiq
 @dirrm %%WWWDIR%%/designs/price
@@ -188,7 +195,6 @@
 @dirrm %%WWWDIR%%/editor/static
 @dirrm %%WWWDIR%%/editor
 @dirrm %%WWWDIR%%/externals/JsShrink
-@dirrm %%WWWDIR%%/externals/jsmin-php
 @dirrm %%WWWDIR%%/externals/jush
 @dirrm %%WWWDIR%%/externals
 @dirrm %%WWWDIR%%/plugins
