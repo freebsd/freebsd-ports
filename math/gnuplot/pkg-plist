@@ -36,8 +36,8 @@ bin/lasergnu
 %%DATADIR%%/4.6/js/previouszoom.png
 %%DATADIR%%/4.6/js/textzoom.png
 %%DATADIR%%/4.6/lua/gnuplot-tikz.lua
-%%TETEX%%share/texmf/tex/latex/gnuplot/gnuplot.cfg
-%%TETEX%%@dirrm share/texmf/tex/latex/gnuplot
+%%TEX%%share/texmf/tex/latex/gnuplot/gnuplot.cfg
+%%TEX%%@dirrm share/texmf/tex/latex/gnuplot
 @dirrm %%DATADIR%%/4.6/lua
 @dirrm %%DATADIR%%/4.6/js
 %%X11%%@dirrm %%DATADIR%%/4.6/app-defaults

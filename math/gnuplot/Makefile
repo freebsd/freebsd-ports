@@ -6,7 +6,7 @@ CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A command-driven interactive function plotting program
+COMMENT=	Command-line driven graphing utility
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-lasergnu \
@@ -17,32 +17,28 @@ CONFIGURE_ARGS+=--with-lasergnu \
 		--with-bitmap-terminals
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	CAIRO GD GRIDBOX PDF PLOT TETEX THINSPLINES WX X11
-CAIRO_DESC=		Enable CAIRO support
-GD_DESC=		Enable GD support
+OPTIONS_DEFINE=	CAIRO DOCS EXAMPLES GD GRIDBOX PDF PLOT TEX THINSPLINES WX X11
 GRIDBOX_DESC=		Use the gridbox optimization for hidden3d
-PDF_DESC=		Enable PDF support
 PLOT_DESC=		Enable plot support
-TETEX_DESC=		Search kpsexpand at run-time
+TEX_DESC=		Search kpsexpand at run-time
 THINSPLINES_DESC=	Enable thin plate splines for grids in dgrid3d
-WX_DESC=		Enable WX support
-X11_DESC=		Enable X11 support
+WX_DESC=		wxWidgets (formerly wxWindows) support
 
-OPTIONS_DEFAULT=CAIRO GD PDF PLOT TETEX WX X11
+OPTIONS_DEFAULT=CAIRO GD PDF PLOT TEX WX X11
 
 MAN1=		gnuplot.1 lasergnu.1
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo
 USE_GNOME+=		pango
 .else
 CONFIGURE_ARGS+=	--without-cairo
 .endif
 
 .if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=		gd:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=	--with-gd=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-gd
@@ -53,7 +49,7 @@ CONFIGURE_ARGS+=	--disable-h3d-quadtree --enable-h3d-gridbox
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=		pdf.6:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=		pdf:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-pdf
@@ -61,19 +57,19 @@ CONFIGURE_ARGS+=	--without-pdf
 
 .if ${PORT_OPTIONS:MPLOT}
 USE_XORG+=		xaw xmu xt xext
-LIB_DEPENDS+=		plot.4:${PORTSDIR}/graphics/plotutils
+LIB_DEPENDS+=		plot:${PORTSDIR}/graphics/plotutils
 CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-plot
 .endif
 
-.if ${PORT_OPTIONS:MTETEX}
+.if ${PORT_OPTIONS:MTEX}
 USE_TEX=		base texmf latex
 CONFIGURE_ARGS+=	--with-kpsexpand \
 			--with-texdir=${LOCALBASE}/share/texmf/tex/latex/gnuplot
-PLIST_SUB+=		TETEX=""
+PLIST_SUB+=		TEX=""
 .else
-PLIST_SUB+=		TETEX="@comment "
+PLIST_SUB+=		TEX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHINSPLINES}
@@ -97,15 +93,15 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 .endif
 
 post-patch:
-.if ! ${PORT_OPTIONS:MTETEX}
+.if ! ${PORT_OPTIONS:MTEX}
 	@${REINPLACE_CMD} -e \
 		'/^install:/s/install-am//' ${WRKSRC}/share/LaTeX/Makefile.in
 .endif
@@ -113,7 +109,7 @@ post-patch:
 		's|)/@PACKAGE@/@PKG_MAJOR@|)|g' ${WRKSRC}/src/Makefile.in
 	@${FIND} "${WRKSRC}" -name '*.orig' -delete
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@cd ${WRKSRC}/docs && ${MAKE} groff
 .endif
@@ -125,7 +121,8 @@ post-install:
 	cd ${WRKSRC}/demo && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/psdoc
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} gnuplot.txt gnuplot.dvi \
 		gnuplot.ps ${DOCSDIR}
