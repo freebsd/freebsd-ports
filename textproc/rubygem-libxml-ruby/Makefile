@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-libxml-ruby
-# Date created:				08 Aug 2012
-# Whom:					Michael Schout <mschout@gkg.net>
-#
+# Created by: Michael Schout <mschout@gkg.net>
 # $FreeBSD$
 
 PORTNAME=	libxml-ruby
-PORTVERSION=	2.3.3
+PORTVERSION=	2.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
