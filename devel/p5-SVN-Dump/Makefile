@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-SVN-Dump
-# Date created:				Aug 8 2008
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Dump
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
