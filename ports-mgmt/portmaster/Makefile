@@ -14,7 +14,7 @@ COMMENT=	Manage your ports without external databases or languages
 LICENSE=	BSD
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	portmaster
+GH_ACCOUNT=	freebsd
 GH_COMMIT=	2a29846
 GH_TAGNAME=	${GH_COMMIT}
 
