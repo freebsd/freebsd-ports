@@ -80,6 +80,7 @@
     SUBDIR += odsclient
     SUBDIR += opendd
     SUBDIR += opendnssec
+    SUBDIR += opendnssec13
     SUBDIR += openresolv
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-BIND-Config-Parser
