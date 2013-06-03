@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Net-Subnet
-# Date created:		2011-10-06
-# Whom:			Henk van Oers <hvo.pm@xs4all.nl>
-#
+# Created by: Henk van Oers <hvo.pm@xs4all.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Subnet
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
