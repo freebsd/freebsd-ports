@@ -2,7 +2,6 @@
 
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
-PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -22,8 +21,8 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
 
-AFS_DISTVERSION=	1.6.1
-DBVERSION=	2011-08-14
+AFS_DISTVERSION=	1.6.2
+DBVERSION=	2013-01-28
 
 OPTIONS_DEFINE=	FUSE
 
@@ -44,6 +43,10 @@ PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
 		AFSCACHEDIR=${AFSCACHEDIR:C,^/,,}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 1000000
+BROKEN=		Does not build
+.endif
 
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
