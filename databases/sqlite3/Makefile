@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.7.17
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2013/ http://www2.sqlite.org/2013/ http://www3.sqlite.org/2013/
 DISTNAME=	sqlite-autoconf-3071700
@@ -25,7 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS_DEFINE=	FTS3 ICU RTREE RAMTABLE UPD_DEL_LIMIT URI SOUNDEX METADATA \
-		STAT3 DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY SQLLOG THREADSAFE \
+		STAT3 DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADSAFE \
 		EXTENSION
 OPTIONS_DEFAULT=	FTS3 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADSAFE EXTENSION
 FTS3_DESC=		Enable FTS3/4 (Full Text Search) module
@@ -41,7 +42,6 @@ DIRECT_READ_DESC=	File is read directly from disk
 MEMMAN_DESC=		Allows it to release unused memory
 SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
-SQLLOG_DESC=		Allow logging operations
 THREADSAFE_DESC=	Build thread-safe library
 EXTENSION_DESC=		Allow loadable extensions
 
@@ -137,10 +137,6 @@ CPPFLAGS+=		-DSQLITE_SECURE_DELETE=1
 CPPFLAGS+=		-DSQLITE_ENABLE_UNLOCK_NOTIFY=1
 .endif
 
-.if ${PORT_OPTIONS:MSQLLOG}
-CPPFLAGS+=		-DSQLITE_ENABLE_SQLLOG=1
-.endif
-
 .if ${PORT_OPTIONS:MMETADATA}
 CPPFLAGS+=		-DSQLITE_ENABLE_COLUMN_METADATA=1
 .endif
@@ -160,9 +156,6 @@ CONFIGURE_ARGS+=	--disable-dynamic-extensions
 
 post-patch:
 	@${REINPLACE_CMD} '/^pkgconf/s,$${libdir},$${prefix}/libdata,' ${WRKSRC}/Makefile.in
-.if ${PORT_OPTIONS:MSQLLOG}
-	@${ECHO_CMD} "void sqlite3_init_sqllog(void) { /* fake function */ }" >> ${WRKSRC}/shell.c
-.endif
 
 post-build:
 .if ${ARCH}=="i386"
