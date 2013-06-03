@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-raindrops
-# Date created:		2011-11-16
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	raindrops
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
