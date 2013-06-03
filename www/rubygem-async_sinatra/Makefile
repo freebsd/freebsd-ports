@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	async_sinatra
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
