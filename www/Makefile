@@ -1746,6 +1746,7 @@
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
+    SUBDIR += rubygem-http-cookie
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-innate
