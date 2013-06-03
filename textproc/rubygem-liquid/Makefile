@@ -1,11 +1,8 @@
-# Ports collection makefile for:	liquid
-# Date created:				24 Dec 2009
-# Whom:					peter.schuller@infidyne.com
-#
+# Created by: peter.schuller@infidyne.com
 # $FreeBSD$
 
 PORTNAME=	liquid
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
