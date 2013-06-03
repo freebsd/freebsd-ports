@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.3.13
+PORTVERSION=	1.3.14
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -24,13 +24,15 @@ USE_LDCONFIG=	yes
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
+CONFLICTS=	opendnssec-1.4*
+
 MAN1=		ods-hsmspeed.1 ods-hsmutil.1 ods-ksmutil.1
 MAN5=		ods-timing.5
 MAN7=		opendnssec.7
 MAN8=		ods-control.8 ods-enforcerd.8 ods-signer.8 ods-signerd.8
 
 OPTIONS_DEFINE=		SOFTHSM AUDITOR MYSQL
-SOFTHSM_DESC=		Build/update SOFTHSM as well
+SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
 AUDITOR_DESC=		Build with Auditor
 OPTIONS_DEFAULT=	AUDITOR
 
@@ -50,6 +52,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAUDITOR}
+BUILD_DEPENDS+=	rubygem-soap4r>=0:${PORTSDIR}/devel/rubygem-soap4r
 BUILD_DEPENDS+=	rubygem-dnsruby>=1.53:${PORTSDIR}/dns/rubygem-dnsruby
 USE_RUBY=	yes
 PLIST_SUB+=	AUDITOR=""
@@ -78,8 +81,4 @@ post-install:
 .endif
 	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/opendnssec
 
-.include <bsd.port.pre.mk>
-.if ${PORT_OPTIONS:MAUDITOR} && ${RUBY_VER} == 1.9
-BROKEN=	does not work with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
