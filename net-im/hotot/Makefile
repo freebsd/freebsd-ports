@@ -13,7 +13,6 @@ LICENSE=	LGPL3
 USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
-GH_TAGNAME=	master
 GH_COMMIT=	1f68d33
 
 USES=		cmake gettext
