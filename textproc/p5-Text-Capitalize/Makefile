@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Capitalize
-# Date created:				24 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Capitalize
 PORTVERSION=	1.3
