@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-mechanize
-# Date created:				5 Feb 2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mechanize
-PORTVERSION=	2.5.1
+PORTVERSION=	2.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	WWW::Mechanize, a handy web browsing ruby object
 
 RUN_DEPENDS=	rubygem-domain_name>=0.5.1:${PORTSDIR}/net/rubygem-domain_name \
+		rubygem-http-cookie>=1.0.0:${PORTSDIR}/www/rubygem-http-cookie \
 		rubygem-mime-types>=1.17.2:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-net-http-digest_auth>=1.1.1:${PORTSDIR}/www/rubygem-net-http-digest_auth \
 		rubygem-net-http-persistent>=2.5.2:${PORTSDIR}/www/rubygem-net-http-persistent \
