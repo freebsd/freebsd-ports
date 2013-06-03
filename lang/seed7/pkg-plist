@@ -9,12 +9,13 @@ lib/seed7/lib/array.s7i
 lib/seed7/lib/bigfile.s7i
 lib/seed7/lib/bigint.s7i
 lib/seed7/lib/bigrat.s7i
-lib/seed7/lib/binary.s7i
+lib/seed7/lib/bin32.s7i
 lib/seed7/lib/bitmapfont.s7i
 lib/seed7/lib/bitset.s7i
 lib/seed7/lib/bitsetof.s7i
 lib/seed7/lib/boolean.s7i
 lib/seed7/lib/bstring.s7i
+lib/seed7/lib/bytedata.s7i
 lib/seed7/lib/cards.s7i
 lib/seed7/lib/category.s7i
 lib/seed7/lib/cgi.s7i
@@ -25,8 +26,10 @@ lib/seed7/lib/clib_file.s7i
 lib/seed7/lib/color.s7i
 lib/seed7/lib/complex.s7i
 lib/seed7/lib/console.s7i
+lib/seed7/lib/crc32.s7i
 lib/seed7/lib/cronos16.s7i
 lib/seed7/lib/cronos27.s7i
+lib/seed7/lib/deflate.s7i
 lib/seed7/lib/dialog.s7i
 lib/seed7/lib/dir.s7i
 lib/seed7/lib/draw.s7i
@@ -57,6 +60,7 @@ lib/seed7/lib/html.s7i
 lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
+lib/seed7/lib/inflate.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/keybd.s7i
@@ -92,6 +96,7 @@ lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i
 lib/seed7/lib/sokoban1.s7i
 lib/seed7/lib/stars.s7i
+lib/seed7/lib/stdfont8.s7i
 lib/seed7/lib/stdfont9.s7i
 lib/seed7/lib/stdfont10.s7i
 lib/seed7/lib/stdfont12.s7i
