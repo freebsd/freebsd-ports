@@ -6,7 +6,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python API documentation generation tool
 
 LICENSE=	MIT
