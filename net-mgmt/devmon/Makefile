@@ -3,7 +3,7 @@
 
 PORTNAME=	devmon
 DISTVERSION=	0.3.1-beta1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -26,11 +26,16 @@ SUB_LIST=	USERS=${USERS} \
 
 OPTIONS_DEFINE=	MYSQL
 
+REINPLACE_ARGS=	-i ''
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/var/run/devmon.pid|/var/run/devmon/devmon.pid|g' ${WRKSRC}/devmon.cfg ${WRKSRC}/modules/dm_config.pm
 
 pre-install:
 	(cd ${WRKSRC} && ${MV} devmon.cfg devmon.cfg.dist)
