@@ -4359,3 +4359,4 @@ devel/arm-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.
 devel/sparc-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
 devel/mips-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
 devel/powerpc-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
+databases/php-sqlite3||2013-06-03|Has expired: No upstream development and superseded by databases/php5-sqlite3 and databases/php53-sqlite3
