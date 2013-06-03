@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libregf
-DISTVERSION=	alpha-20130420
+DISTVERSION=	alpha-20130601
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,8 +13,8 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
-USES=		fuse pathfix gettext iconv
-USE_PYTHON=	yes
+USES=		fuse gettext iconv pathfix
+USE_PYTHON=	-2.7
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
