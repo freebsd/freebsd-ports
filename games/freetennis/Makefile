@@ -8,7 +8,10 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tennis simulation
+COMMENT=	Tennis simulation
+
+DEPRECATED=	Depends on expired graphics/ocaml-images
+EXPIRATION_DATE=2013-08-04
 
 BUILD_DEPENDS=	ocamlopt:${PORTSDIR}/lang/ocaml \
 		${OCAML_DEPENDS}
