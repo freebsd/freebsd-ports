@@ -5,9 +5,9 @@
 %%WWWDIR%%/config/global.ini.php
 %%WWWDIR%%/config/manifest.inc.php
 %%WWWDIR%%/core/API/DataTableGenericFilter.php
-%%WWWDIR%%/core/API/DataTableManipulator/LabelFilter.php
-%%WWWDIR%%/core/API/DataTableManipulator/Flattener.php
 %%WWWDIR%%/core/API/DataTableManipulator.php
+%%WWWDIR%%/core/API/DataTableManipulator/Flattener.php
+%%WWWDIR%%/core/API/DataTableManipulator/LabelFilter.php
 %%WWWDIR%%/core/API/DocumentationGenerator.php
 %%WWWDIR%%/core/API/Proxy.php
 %%WWWDIR%%/core/API/Request.php
@@ -34,6 +34,7 @@
 %%WWWDIR%%/core/DataFiles/Currencies.php
 %%WWWDIR%%/core/DataFiles/LanguageToCountry.php
 %%WWWDIR%%/core/DataFiles/Languages.php
+%%WWWDIR%%/core/DataFiles/Providers.php
 %%WWWDIR%%/core/DataFiles/SearchEngines.php
 %%WWWDIR%%/core/DataFiles/Socials.php
 %%WWWDIR%%/core/DataTable.php
@@ -212,6 +213,14 @@
 %%WWWDIR%%/core/Updates/0.7.php
 %%WWWDIR%%/core/Updates/0.9.1.php
 %%WWWDIR%%/core/Updates/1.1.php
+%%WWWDIR%%/core/Updates/1.10-b4.php
+%%WWWDIR%%/core/Updates/1.10.1.php
+%%WWWDIR%%/core/Updates/1.10.2-b1.php
+%%WWWDIR%%/core/Updates/1.10.2-b2.php
+%%WWWDIR%%/core/Updates/1.11-b1.php
+%%WWWDIR%%/core/Updates/1.12-b1.php
+%%WWWDIR%%/core/Updates/1.12-b15.php
+%%WWWDIR%%/core/Updates/1.12-b16.php
 %%WWWDIR%%/core/Updates/1.2-rc1.php
 %%WWWDIR%%/core/Updates/1.2-rc2.php
 %%WWWDIR%%/core/Updates/1.2.3.php
@@ -232,18 +241,13 @@
 %%WWWDIR%%/core/Updates/1.7.2-rc7.php
 %%WWWDIR%%/core/Updates/1.8.3-b1.php
 %%WWWDIR%%/core/Updates/1.8.4-b1.php
-%%WWWDIR%%/core/Updates/1.9-b9.php
 %%WWWDIR%%/core/Updates/1.9-b16.php
 %%WWWDIR%%/core/Updates/1.9-b19.php
+%%WWWDIR%%/core/Updates/1.9-b9.php
 %%WWWDIR%%/core/Updates/1.9.1-b2.php
+%%WWWDIR%%/core/Updates/1.9.3-b10.php
 %%WWWDIR%%/core/Updates/1.9.3-b3.php
 %%WWWDIR%%/core/Updates/1.9.3-b8.php
-%%WWWDIR%%/core/Updates/1.9.3-b10.php
-%%WWWDIR%%/core/Updates/1.10-b4.php
-%%WWWDIR%%/core/Updates/1.10.1.php
-%%WWWDIR%%/core/Updates/1.10.2-b1.php
-%%WWWDIR%%/core/Updates/1.10.2-b2.php
-%%WWWDIR%%/core/Updates/1.11-b1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -273,7 +277,7 @@
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/LICENSE.txt
-%%WWWDIR%%/js/README
+%%WWWDIR%%/js/README.md
 %%WWWDIR%%/js/index.php
 %%WWWDIR%%/js/piwik.js
 %%WWWDIR%%/lang/am.php
@@ -390,9 +394,9 @@
 %%WWWDIR%%/libs/HTML/QuickForm2/Rule/NotRegex.php
 %%WWWDIR%%/libs/HTML/QuickForm2/Rule/Regex.php
 %%WWWDIR%%/libs/HTML/QuickForm2/Rule/Required.php
+%%WWWDIR%%/libs/MaxMindGeoIP/geoip.inc
 %%WWWDIR%%/libs/MaxMindGeoIP/geoipcity.inc
 %%WWWDIR%%/libs/MaxMindGeoIP/geoipregionvars.php
-%%WWWDIR%%/libs/MaxMindGeoIP/geoip.inc
 %%WWWDIR%%/libs/PEAR.php
 %%WWWDIR%%/libs/PEAR/Exception.php
 %%WWWDIR%%/libs/PEAR/FixPHP5PEARWarnings.php
@@ -477,7 +481,7 @@
 %%WWWDIR%%/libs/Smarty/plugins/outputfilter.trimwhitespace.php
 %%WWWDIR%%/libs/Smarty/plugins/shared.escape_special_chars.php
 %%WWWDIR%%/libs/Smarty/plugins/shared.make_timestamp.php
-%%WWWDIR%%/libs/UserAgentParser/README
+%%WWWDIR%%/libs/UserAgentParser/README.md
 %%WWWDIR%%/libs/UserAgentParser/UserAgentParser.php
 %%WWWDIR%%/libs/UserAgentParser/UserAgentParser.test.php
 %%WWWDIR%%/libs/Zend/Auth.php
@@ -888,6 +892,7 @@
 %%WWWDIR%%/libs/javascript/json2.js
 %%WWWDIR%%/libs/javascript/sprintf.js
 %%WWWDIR%%/libs/jqplot/MIT-LICENSE.txt
+%%WWWDIR%%/libs/jqplot/build_minified_script.sh
 %%WWWDIR%%/libs/jqplot/excanvas.min.js
 %%WWWDIR%%/libs/jqplot/gpl-2.0.txt
 %%WWWDIR%%/libs/jqplot/jqplot-custom.min.js
@@ -896,6 +901,7 @@
 %%WWWDIR%%/libs/jqplot/jqplot.canvasGridRenderer.js
 %%WWWDIR%%/libs/jqplot/jqplot.core.js
 %%WWWDIR%%/libs/jqplot/jqplot.divTitleRenderer.js
+%%WWWDIR%%/libs/jqplot/jqplot.linePattern.js
 %%WWWDIR%%/libs/jqplot/jqplot.lineRenderer.js
 %%WWWDIR%%/libs/jqplot/jqplot.linearAxisRenderer.js
 %%WWWDIR%%/libs/jqplot/jqplot.markerRenderer.js
@@ -915,15 +921,14 @@
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-jqueryui.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-placeholder.txt
 %%WWWDIR%%/libs/jquery/MIT-LICENSE-scrollto.txt
-%%WWWDIR%%/libs/jquery/MIT-LICENSE-tooltip.txt
 %%WWWDIR%%/libs/jquery/gpl-2.0.txt
 %%WWWDIR%%/libs/jquery/gpl-3.0.txt
 %%WWWDIR%%/libs/jquery/jquery-ui.js
+%%WWWDIR%%/libs/jquery/jquery.browser.js
 %%WWWDIR%%/libs/jquery/jquery.history.js
 %%WWWDIR%%/libs/jquery/jquery.js
 %%WWWDIR%%/libs/jquery/jquery.placeholder.js
 %%WWWDIR%%/libs/jquery/jquery.scrollTo.js
-%%WWWDIR%%/libs/jquery/jquery.tooltip.js
 %%WWWDIR%%/libs/jquery/jquery.truncate.js
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-anim_basic_16x16.gif
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
@@ -941,14 +946,14 @@
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/libs/jquery/themes/base/jquery-ui.css
 %%WWWDIR%%/libs/jsmin/jsmin.php
+%%WWWDIR%%/libs/pChart2.1.3/GPLv3.txt
+%%WWWDIR%%/libs/pChart2.1.3/change.log
 %%WWWDIR%%/libs/pChart2.1.3/class/pData.class.php
 %%WWWDIR%%/libs/pChart2.1.3/class/pDraw.class.php
-%%WWWDIR%%/libs/pChart2.1.3/class/pPie.class.php
 %%WWWDIR%%/libs/pChart2.1.3/class/pImage.class.php
-%%WWWDIR%%/libs/pChart2.1.3/change.log
-%%WWWDIR%%/libs/pChart2.1.3/GPLv3.txt
-%%WWWDIR%%/libs/pChart2.1.3/readme.txt
+%%WWWDIR%%/libs/pChart2.1.3/class/pPie.class.php
 %%WWWDIR%%/libs/pChart2.1.3/index.php
+%%WWWDIR%%/libs/pChart2.1.3/readme.txt
 %%WWWDIR%%/libs/sparkline/CHANGES
 %%WWWDIR%%/libs/sparkline/DESIGN
 %%WWWDIR%%/libs/sparkline/LICENSE-BSD.txt
@@ -976,8 +981,8 @@
 %%WWWDIR%%/libs/tcpdf/fonts/helveticabi.php
 %%WWWDIR%%/libs/tcpdf/fonts/helveticai.php
 %%WWWDIR%%/libs/tcpdf/fonts/hysmyeongjostdmedium.php
-%%WWWDIR%%/libs/tcpdf/fonts/kozminproregular.php
 %%WWWDIR%%/libs/tcpdf/fonts/kozgopromedium.php
+%%WWWDIR%%/libs/tcpdf/fonts/kozminproregular.php
 %%WWWDIR%%/libs/tcpdf/fonts/msungstdlight.php
 %%WWWDIR%%/libs/tcpdf/fonts/stsongstdlight.php
 %%WWWDIR%%/libs/tcpdf/fonts/symbol.php
@@ -1016,12 +1021,15 @@
 %%WWWDIR%%/misc/others/iframeWidget.htm
 %%WWWDIR%%/misc/others/iframeWidget_localhost.php
 %%WWWDIR%%/misc/others/phpdoc-config.ini
+%%WWWDIR%%/misc/others/phpstorm-codestyles/Piwik_codestyle.xml
+%%WWWDIR%%/misc/others/phpstorm-codestyles/README.md
 %%WWWDIR%%/misc/others/stress.sh
 %%WWWDIR%%/misc/others/test_cookies_GenerateHundredsWebsitesAndVisits.php
 %%WWWDIR%%/misc/others/test_generateLotsVisitsWebsites.php
 %%WWWDIR%%/misc/others/tracker_simpleImageTracker.php
 %%WWWDIR%%/misc/others/uninstall-delete-piwik-directory.php
 %%WWWDIR%%/misc/others/widget_example_lastvisits.html
+%%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/proxy-hide-piwik-url/piwik.php
 %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
@@ -1062,8 +1070,8 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/Controller.php
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
-%%WWWDIR%%/plugins/CoreHome/DataTableRowAction/RowEvolution.php
 %%WWWDIR%%/plugins/CoreHome/DataTableRowAction/MultiRowEvolution.php
+%%WWWDIR%%/plugins/CoreHome/DataTableRowAction/RowEvolution.php
 %%WWWDIR%%/plugins/CoreHome/templates/autocomplete.js
 %%WWWDIR%%/plugins/CoreHome/templates/broadcast.js
 %%WWWDIR%%/plugins/CoreHome/templates/calendar.js
@@ -1073,12 +1081,13 @@
 %%WWWDIR%%/plugins/CoreHome/templates/datatable.js
 %%WWWDIR%%/plugins/CoreHome/templates/datatable.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_actions.tpl
-%%WWWDIR%%/plugins/CoreHome/templates/datatable_actions_js.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_actions_recursive.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_actions_subdatable.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_cell.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_footer.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/datatable_head.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_js.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/datatable_manager.js
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_rowactions.js
 %%WWWDIR%%/plugins/CoreHome/templates/date.js
 %%WWWDIR%%/plugins/CoreHome/templates/donate.css
@@ -1130,7 +1139,6 @@
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline.js
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline_footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/styles.css
-%%WWWDIR%%/plugins/CoreHome/templates/tooltip.js
 %%WWWDIR%%/plugins/CoreHome/templates/top_bar.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/top_bar_hello_menu.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/top_bar_top_menu.tpl
@@ -1155,18 +1163,103 @@
 %%WWWDIR%%/plugins/DBStats/API.php
 %%WWWDIR%%/plugins/DBStats/Controller.php
 %%WWWDIR%%/plugins/DBStats/DBStats.php
-%%WWWDIR%%/plugins/DBStats/templates/index.tpl
 %%WWWDIR%%/plugins/DBStats/MySQLMetadataProvider.php
+%%WWWDIR%%/plugins/DBStats/templates/index.tpl
+%%WWWDIR%%/plugins/Dashboard/API.php
 %%WWWDIR%%/plugins/Dashboard/Controller.php
 %%WWWDIR%%/plugins/Dashboard/Dashboard.php
 %%WWWDIR%%/plugins/Dashboard/templates/dashboard.css
 %%WWWDIR%%/plugins/Dashboard/templates/dashboard.js
-%%WWWDIR%%/plugins/Dashboard/templates/dashboardWidget.js
 %%WWWDIR%%/plugins/Dashboard/templates/dashboardObject.js
+%%WWWDIR%%/plugins/Dashboard/templates/dashboardWidget.js
 %%WWWDIR%%/plugins/Dashboard/templates/header.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/index.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/standalone.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/widgetMenu.js
+%%WWWDIR%%/plugins/DevicesDetection/API.php
+%%WWWDIR%%/plugins/DevicesDetection/Controller.php
+%%WWWDIR%%/plugins/DevicesDetection/DevicesDetection.php
+%%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced/UserAgentParserEnhanced.php
+%%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced/regexes/browsers.yml
+%%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced/regexes/mobiles.yml
+%%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced/regexes/oss.yml
+%%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced/spyc.php
+%%WWWDIR%%/plugins/DevicesDetection/functions.php
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Acer.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Alcatel.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Apple.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Asus.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Audiovox.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Avvio.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Becker.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Beetel.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/BenQ.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Compal.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Cricket.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Dell.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/DoCoMo.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Ericsson.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Google.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Gradiente.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Grundig.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/HP.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/HTC.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Haier.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Huawei.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/INQ.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/KDDI.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Karbonn.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Kindle.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Kyocera.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/LG.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/LGUPlus.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Lanix.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Lenovo.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/MicroMax.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Microsoft.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Mio.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Mitsubishi.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Motorola.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/MyPhone.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/NGM.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Nintendo.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Nokia.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/O2.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/OPPO.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Onda.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Orange.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Palm.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Panasonic.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Pantech.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Philips.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/RIM.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Samsung.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Sanyo.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Sega.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Softbank.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Sony Ericsson.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Sony.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/T-Mobile.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Telit.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/TiPhone.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Vertu.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Videocon.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Zonda.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/eTouch.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/i-mobile.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/unknown.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/computer.png
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/console.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/dual.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/mobile.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/normal.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/smartphone.png
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/tablet.png
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/tv.png
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/unknown.gif
+%%WWWDIR%%/plugins/DevicesDetection/images/screens/wide.gif
+%%WWWDIR%%/plugins/DevicesDetection/lang/en.php
+%%WWWDIR%%/plugins/DevicesDetection/templates/index.tpl
 %%WWWDIR%%/plugins/DoNotTrack/DoNotTrack.php
 %%WWWDIR%%/plugins/ExampleAPI/API.php
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
@@ -1176,7 +1269,9 @@
 %%WWWDIR%%/plugins/ExamplePlugin/config/local.config.sample.php
 %%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
 %%WWWDIR%%/plugins/ExamplePlugin/templates/piwikDownloads.tpl
+%%WWWDIR%%/plugins/ExampleRssWidget/Controller.php
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
+%%WWWDIR%%/plugins/ExampleRssWidget/Rss.php
 %%WWWDIR%%/plugins/ExampleRssWidget/templates/styles.css
 %%WWWDIR%%/plugins/ExampleUI/API.php
 %%WWWDIR%%/plugins/ExampleUI/Controller.php
@@ -1214,14 +1309,14 @@
 %%WWWDIR%%/plugins/ImageGraph/Controller.php
 %%WWWDIR%%/plugins/ImageGraph/ImageGraph.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Evolution.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/PieGraph.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Pie.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/HorizontalBar.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Exception.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/VerticalBar.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/3DPie.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Evolution.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Exception.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/GridGraph.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/HorizontalBar.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Pie.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/PieGraph.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/VerticalBar.php
 %%WWWDIR%%/plugins/ImageGraph/fonts/tahoma.ttf
 %%WWWDIR%%/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
 %%WWWDIR%%/plugins/ImageGraph/templates/index.tpl
@@ -1238,14 +1333,14 @@
 %%WWWDIR%%/plugins/Installation/templates/finished.tpl
 %%WWWDIR%%/plugins/Installation/templates/firstWebsiteSetup.tpl
 %%WWWDIR%%/plugins/Installation/templates/generalSetup.tpl
+%%WWWDIR%%/plugins/Installation/templates/install.css
 %%WWWDIR%%/plugins/Installation/templates/integrityDetails.tpl
+%%WWWDIR%%/plugins/Installation/templates/structure.tpl
+%%WWWDIR%%/plugins/Installation/templates/systemCheck.tpl
 %%WWWDIR%%/plugins/Installation/templates/systemCheckPage.css
 %%WWWDIR%%/plugins/Installation/templates/systemCheckPage.tpl
 %%WWWDIR%%/plugins/Installation/templates/systemCheckSection.tpl
 %%WWWDIR%%/plugins/Installation/templates/systemCheck_legend.tpl
-%%WWWDIR%%/plugins/Installation/templates/install.css
-%%WWWDIR%%/plugins/Installation/templates/structure.tpl
-%%WWWDIR%%/plugins/Installation/templates/systemCheck.tpl
 %%WWWDIR%%/plugins/Installation/templates/tablesCreation.tpl
 %%WWWDIR%%/plugins/Installation/templates/welcome.tpl
 %%WWWDIR%%/plugins/LanguagesManager/API.php
@@ -1276,6 +1371,7 @@
 %%WWWDIR%%/plugins/Live/templates/lastVisits.tpl
 %%WWWDIR%%/plugins/Live/templates/live.css
 %%WWWDIR%%/plugins/Live/templates/scripts/live.js
+%%WWWDIR%%/plugins/Live/templates/simpleLastVisitCount.tpl
 %%WWWDIR%%/plugins/Live/templates/totalVisits.tpl
 %%WWWDIR%%/plugins/Live/templates/visitorLog.tpl
 %%WWWDIR%%/plugins/Login/Auth.php
@@ -1311,13 +1407,13 @@
 %%WWWDIR%%/plugins/MultiSites/images/arrow_asc.gif
 %%WWWDIR%%/plugins/MultiSites/images/arrow_desc.gif
 %%WWWDIR%%/plugins/MultiSites/images/arrow_down.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_down_green.png
 %%WWWDIR%%/plugins/MultiSites/images/arrow_up.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_up_red.png
 %%WWWDIR%%/plugins/MultiSites/images/door_in.png
 %%WWWDIR%%/plugins/MultiSites/images/link.gif
 %%WWWDIR%%/plugins/MultiSites/images/loading-blue.gif
 %%WWWDIR%%/plugins/MultiSites/images/stop.png
-%%WWWDIR%%/plugins/MultiSites/images/arrow_down_green.png
-%%WWWDIR%%/plugins/MultiSites/images/arrow_up_red.png
 %%WWWDIR%%/plugins/MultiSites/templates/common.js
 %%WWWDIR%%/plugins/MultiSites/templates/index.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/row.tpl
@@ -1325,8 +1421,8 @@
 %%WWWDIR%%/plugins/Overlay/API.php
 %%WWWDIR%%/plugins/Overlay/Controller.php
 %%WWWDIR%%/plugins/Overlay/Overlay.php
-%%WWWDIR%%/plugins/Overlay/client/client.js
 %%WWWDIR%%/plugins/Overlay/client/client.css
+%%WWWDIR%%/plugins/Overlay/client/client.js
 %%WWWDIR%%/plugins/Overlay/client/close.png
 %%WWWDIR%%/plugins/Overlay/client/followingpages.js
 %%WWWDIR%%/plugins/Overlay/client/linktags.eps
@@ -1359,8 +1455,8 @@
 %%WWWDIR%%/plugins/PDFReports/templates/pdf.js
 %%WWWDIR%%/plugins/PDFReports/templates/report_parameters.tpl
 %%WWWDIR%%/plugins/PrivacyManager/Controller.php
-%%WWWDIR%%/plugins/PrivacyManager/PrivacyManager.php
 %%WWWDIR%%/plugins/PrivacyManager/LogDataPurger.php
+%%WWWDIR%%/plugins/PrivacyManager/PrivacyManager.php
 %%WWWDIR%%/plugins/PrivacyManager/ReportsPurger.php
 %%WWWDIR%%/plugins/PrivacyManager/templates/databaseSize.tpl
 %%WWWDIR%%/plugins/PrivacyManager/templates/privacySettings.js
@@ -1423,6 +1519,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/jyxo.1188.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ko.search.need2find.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/lo.st.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/maps.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/meta.rrzn.uni-hannover.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/meta.ua.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/metager2.de.png
@@ -1442,7 +1539,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/rpmfind.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/s1.metacrawler.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/scour.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/search.1und1.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.aol.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.babylon.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.bluewin.ch.png
@@ -1480,7 +1576,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/start.iplay.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/startgoogle.startpagina.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.freenet.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/suche.gmx.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.info.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.t-online.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.web.de.png
@@ -1504,8 +1599,8 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.baidu.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.blogdigger.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.blogpulse.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.crawler.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.charter.net.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.crawler.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.cuil.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.dasoertliche.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.eniro.se.png
@@ -1521,8 +1616,8 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.flix.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gnadenmeer.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.interia.pl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gomeo.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.interia.pl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.goyellow.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gulesider.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.highbeam.com.png
@@ -1585,6 +1680,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.zoznam.sk.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www1.dastelefonbuch.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www2.austronaut.at.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www2.inbox.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www3.zoek.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.gif
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.png
@@ -1609,6 +1705,7 @@
 %%WWWDIR%%/plugins/Referers/images/socials/habbo.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/hi5.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/hyves.nl.png
+%%WWWDIR%%/plugins/Referers/images/socials/identi.ca.png
 %%WWWDIR%%/plugins/Referers/images/socials/lastfm.ru.png
 %%WWWDIR%%/plugins/Referers/images/socials/linkedin.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/livejournal.ru.png
@@ -1620,12 +1717,14 @@
 %%WWWDIR%%/plugins/Referers/images/socials/mylife.ru.png
 %%WWWDIR%%/plugins/Referers/images/socials/myspace.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/myyearbook.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/news.ycombinator.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/nk.pl.png
 %%WWWDIR%%/plugins/Referers/images/socials/odnoklassniki.ru.png
 %%WWWDIR%%/plugins/Referers/images/socials/orkut.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/pinterest.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/plaxo.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/qzone.qq.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/reddit.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/renren.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/ru.netlog.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/skyrock.com.png
@@ -1643,20 +1742,25 @@
 %%WWWDIR%%/plugins/Referers/images/socials/vk.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/vkontakte.ru.png
 %%WWWDIR%%/plugins/Referers/images/socials/vkrugudruzei.ru.png
+%%WWWDIR%%/plugins/Referers/images/socials/weibo.com.png
 %%WWWDIR%%/plugins/Referers/images/socials/xing.com.png
+%%WWWDIR%%/plugins/Referers/images/socials/xx.png
 %%WWWDIR%%/plugins/Referers/templates/Websites_SocialNetworks.tpl
 %%WWWDIR%%/plugins/Referers/templates/index.tpl
 %%WWWDIR%%/plugins/Referers/templates/searchEngines_Keywords.tpl
 %%WWWDIR%%/plugins/SEO/API.php
 %%WWWDIR%%/plugins/SEO/Controller.php
+%%WWWDIR%%/plugins/SEO/MajesticClient.php
 %%WWWDIR%%/plugins/SEO/RankChecker.php
 %%WWWDIR%%/plugins/SEO/SEO.php
+%%WWWDIR%%/plugins/SEO/images/majesticseo.png
 %%WWWDIR%%/plugins/SEO/images/whois.png
 %%WWWDIR%%/plugins/SEO/templates/index.tpl
 %%WWWDIR%%/plugins/SEO/templates/rank.js
 %%WWWDIR%%/plugins/SecurityInfo/Controller.php
 %%WWWDIR%%/plugins/SecurityInfo/LICENSE
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/PhpSecInfo.php
+%%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/README
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application/php.php
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application/piwik.php
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/CGI/force_redirect.php
@@ -1686,9 +1790,35 @@
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Curl.php
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Session.php
 %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Test_Suhosin.php
-%%WWWDIR%%/plugins/SecurityInfo/README
 %%WWWDIR%%/plugins/SecurityInfo/SecurityInfo.php
 %%WWWDIR%%/plugins/SecurityInfo/templates/index.tpl
+%%WWWDIR%%/plugins/SegmentEditor/API.php
+%%WWWDIR%%/plugins/SegmentEditor/Controller.php
+%%WWWDIR%%/plugins/SegmentEditor/SegmentEditor.php
+%%WWWDIR%%/plugins/SegmentEditor/images/ajax-loader.gif
+%%WWWDIR%%/plugins/SegmentEditor/images/bg-inverted-corners.png
+%%WWWDIR%%/plugins/SegmentEditor/images/bg-segment-search.png
+%%WWWDIR%%/plugins/SegmentEditor/images/bg-select.png
+%%WWWDIR%%/plugins/SegmentEditor/images/close.png
+%%WWWDIR%%/plugins/SegmentEditor/images/close_btn.png
+%%WWWDIR%%/plugins/SegmentEditor/images/dashboard_h_bg_hover.png
+%%WWWDIR%%/plugins/SegmentEditor/images/down_arrow.png
+%%WWWDIR%%/plugins/SegmentEditor/images/icon-users.png
+%%WWWDIR%%/plugins/SegmentEditor/images/reset_search.png
+%%WWWDIR%%/plugins/SegmentEditor/images/scroller.png
+%%WWWDIR%%/plugins/SegmentEditor/images/search_btn.png
+%%WWWDIR%%/plugins/SegmentEditor/images/segment-close.png
+%%WWWDIR%%/plugins/SegmentEditor/images/segment-move.png
+%%WWWDIR%%/plugins/SegmentEditor/images/slide.png
+%%WWWDIR%%/plugins/SegmentEditor/images/up_arrow.png
+%%WWWDIR%%/plugins/SegmentEditor/templates/Segmentation.css
+%%WWWDIR%%/plugins/SegmentEditor/templates/Segmentation.js
+%%WWWDIR%%/plugins/SegmentEditor/templates/jquery.jscrollpane.css
+%%WWWDIR%%/plugins/SegmentEditor/templates/jquery.jscrollpane.js
+%%WWWDIR%%/plugins/SegmentEditor/templates/jquery.mousewheel.js
+%%WWWDIR%%/plugins/SegmentEditor/templates/mwheelIntent.js
+%%WWWDIR%%/plugins/SegmentEditor/templates/scroll.css
+%%WWWDIR%%/plugins/SegmentEditor/templates/selector.tpl
 %%WWWDIR%%/plugins/SitesManager/API.php
 %%WWWDIR%%/plugins/SitesManager/Controller.php
 %%WWWDIR%%/plugins/SitesManager/SitesManager.php
@@ -1696,15 +1826,15 @@
 %%WWWDIR%%/plugins/SitesManager/templates/DisplayJavascriptCode.tpl
 %%WWWDIR%%/plugins/SitesManager/templates/SitesManager.js
 %%WWWDIR%%/plugins/SitesManager/templates/SitesManager.tpl
+%%WWWDIR%%/plugins/SitesManager/templates/Tracking.tpl
 %%WWWDIR%%/plugins/Transitions/API.php
 %%WWWDIR%%/plugins/Transitions/Controller.php
 %%WWWDIR%%/plugins/Transitions/Transitions.php
 %%WWWDIR%%/plugins/Transitions/templates/transitions.css
 %%WWWDIR%%/plugins/Transitions/templates/transitions.js
-%%WWWDIR%%/plugins/Transitions/templates/transitions_icon.png
 %%WWWDIR%%/plugins/Transitions/templates/transitions.tpl
+%%WWWDIR%%/plugins/Transitions/templates/transitions_icon.png
 %%WWWDIR%%/plugins/Transitions/templates/transitions_icon_hover.png
-%%WWWDIR%%/plugins/SitesManager/templates/Tracking.tpl
 %%WWWDIR%%/plugins/UserCountry/API.php
 %%WWWDIR%%/plugins/UserCountry/Controller.php
 %%WWWDIR%%/plugins/UserCountry/GeoIPAutoUpdater.php
@@ -1998,7 +2128,6 @@
 %%WWWDIR%%/plugins/UserCountryMap/Controller.php
 %%WWWDIR%%/plugins/UserCountryMap/UserCountryMap.php
 %%WWWDIR%%/plugins/UserCountryMap/css/map.css
-%%WWWDIR%%/plugins/UserCountryMap/css/qtip.css
 %%WWWDIR%%/plugins/UserCountryMap/css/realtime-map.css
 %%WWWDIR%%/plugins/UserCountryMap/css/visitor-map.css
 %%WWWDIR%%/plugins/UserCountryMap/img/cities.png
@@ -2014,7 +2143,7 @@
 %%WWWDIR%%/plugins/UserCountryMap/js/vendor/kartograph.js
 %%WWWDIR%%/plugins/UserCountryMap/js/vendor/kartograph.min.js
 %%WWWDIR%%/plugins/UserCountryMap/js/vendor/kmeans.js
-%%WWWDIR%%/plugins/UserCountryMap/js/vendor/raphael-min.js
+%%WWWDIR%%/plugins/UserCountryMap/js/vendor/raphael.min.js
 %%WWWDIR%%/plugins/UserCountryMap/js/visitor-map.js
 %%WWWDIR%%/plugins/UserCountryMap/svg/AF.svg
 %%WWWDIR%%/plugins/UserCountryMap/svg/AFG.svg
@@ -2215,6 +2344,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CA.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CH.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/CM.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CS.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/DF.gif
@@ -2243,6 +2373,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MC.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MO.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/NB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/NF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/NS.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OP.gif
@@ -2253,6 +2384,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SM.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/TB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/TI.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/UN.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/UNK.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/WO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/WP.gif
@@ -2264,9 +2396,12 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/BEO.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BLB.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BSD.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/COS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/DFB.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/DSI.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/GTV.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/HPX.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/IOS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/IPA.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/IPD.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/IPH.gif
@@ -2300,6 +2435,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/WI7.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WI8.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WII.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WIN.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WIU.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WME.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WMO.gif
@@ -2499,15 +2635,18 @@
 @dirrm %%WWWDIR%%/plugins/UserCountryMap/img
 @dirrm %%WWWDIR%%/plugins/UserCountryMap/css
 @dirrm %%WWWDIR%%/plugins/UserCountryMap
-@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp
-@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider
 @dirrm %%WWWDIR%%/plugins/UserCountry/templates
 @dirrm %%WWWDIR%%/plugins/UserCountry/flags
+@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider/GeoIp
+@dirrm %%WWWDIR%%/plugins/UserCountry/LocationProvider
 @dirrm %%WWWDIR%%/plugins/UserCountry
 @dirrm %%WWWDIR%%/plugins/Transitions/templates
 @dirrm %%WWWDIR%%/plugins/Transitions
 @dirrm %%WWWDIR%%/plugins/SitesManager/templates
 @dirrm %%WWWDIR%%/plugins/SitesManager
+@dirrm %%WWWDIR%%/plugins/SegmentEditor/templates
+@dirrm %%WWWDIR%%/plugins/SegmentEditor/images
+@dirrm %%WWWDIR%%/plugins/SegmentEditor
 @dirrm %%WWWDIR%%/plugins/SecurityInfo/templates
 @dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Suhosin
 @dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Session
@@ -2576,6 +2715,14 @@
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin
 @dirrm %%WWWDIR%%/plugins/ExampleAPI
 @dirrm %%WWWDIR%%/plugins/DoNotTrack
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/templates
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/lang
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/images/screens
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/images/brand
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/images
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced/regexes
+@dirrm %%WWWDIR%%/plugins/DevicesDetection/UserAgentParserEnhanced
+@dirrm %%WWWDIR%%/plugins/DevicesDetection
 @dirrm %%WWWDIR%%/plugins/Dashboard/templates
 @dirrm %%WWWDIR%%/plugins/Dashboard
 @dirrm %%WWWDIR%%/plugins/DBStats/templates
@@ -2585,9 +2732,9 @@
 @dirrm %%WWWDIR%%/plugins/CoreUpdater
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
-@dirrm %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates/images
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates
+@dirrm %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
 @dirrm %%WWWDIR%%/plugins/CoreHome
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome
@@ -2601,6 +2748,7 @@
 @dirrm %%WWWDIR%%/plugins/API
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
+@dirrm %%WWWDIR%%/misc/others/phpstorm-codestyles
 @dirrm %%WWWDIR%%/misc/others
 @dirrm %%WWWDIR%%/misc/log-analytics
 @dirrm %%WWWDIR%%/misc/cron
