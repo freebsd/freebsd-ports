@@ -4,6 +4,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	27.0.1453.93
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -74,6 +75,14 @@ GYP_DEFINES+=	use_cups=1 \
 		os_ver=${OSVERSION} \
 		prefix_dir=${LOCALBASE} \
 		python_ver=${PYTHON_VER}
+
+# FreeBSD Chromium Api Key
+# Set up Google API keys, see http://www.chromium.org/developers/how-tos/api-keys .
+# Note: these are for FreeBSD use ONLY. For your own distribution,
+# please get your own set of keys.
+GYP_DEFINES+=	google_api_key=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
+		google_default_client_id=996322985003.apps.googleusercontent.com \
+		google_default_client_secret=IR1za9-1VK0zZ0f_O8MVFicn
 
 SUB_FILES=	chromium-browser.desktop
 SUB_LIST=	COMMENT="${COMMENT}" \
