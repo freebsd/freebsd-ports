@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Spreadsheet/Excel for Ruby
-# Date created:		8 December 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spreadsheet
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
