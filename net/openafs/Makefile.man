@@ -7,6 +7,7 @@ MAN1+=	copyauth.1
 MAN1+=	dlog.1
 MAN1+=	fs.1
 MAN1+=	fs_apropos.1
+MAN1+=	fs_bypassthreshold.1
 MAN1+=	fs_checkservers.1
 MAN1+=	fs_checkvolumes.1
 MAN1+=	fs_chgrp.1
