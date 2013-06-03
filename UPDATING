@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130603:
+  AFFECTS: users of dns/opendnssec
+  AUTHOR: wg@FreeBSD.org
+
+  Some database changes have been made between version 1.3 and 1.4,
+  upgrading needs to be done manually by running the following scripts:
+
+  For MySQL users:
+  PREFIX/share/opendnssec/migrate_adapters_1.mysql
+
+  For SQLite users:
+  PREFIX/share/opendnssec/migrate_adapters_1.sqlite3
+
+  For the full migration explanation see:
+  PREFIX/share/doc/opendnssec/MIGRATION
+
+  opendnssec 1.3 version was preserved as dns/opendnssec13 port.
+
 20130601:
   AFFECTS: users of textproc/ack
   AUTHOR: rakuco@FreeBSD.org

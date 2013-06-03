@@ -1,33 +1,43 @@
+%%AUDITOR%%bin/ods-auditor
 bin/ods-hsmspeed
 bin/ods-hsmutil
-bin/ods-kaspcheck
 bin/ods-ksmutil
+%%AUDITOR%%bin/ods-kaspcheck
 bin/ods-kasp2html
-@unexec if cmp -s %D/etc/opendnssec/addns.xml %D/etc/opendnssec/addns.xml.sample; then rm -f %D/etc/opendnssec/addns.xml; fi
-%%ETCDIR%%/addns.xml.sample
 @unexec if cmp -s %D/etc/opendnssec/conf.xml %D/etc/opendnssec/conf.xml.sample; then rm -f %D/etc/opendnssec/conf.xml; fi
 %%ETCDIR%%/conf.xml.sample
 @unexec if cmp -s %D/etc/opendnssec/kasp.xml %D/etc/opendnssec/kasp.xml.sample; then rm -f %D/etc/opendnssec/kasp.xml; fi
 %%ETCDIR%%/kasp.xml.sample
+@unexec if cmp -s %D/etc/opendnssec/zonefetch.xml %D/etc/opendnssec/zonefetch.xml.sample; then rm -f %D/etc/opendnssec/zonefetch.xml; fi
+%%ETCDIR%%/zonefetch.xml.sample
 @unexec if cmp -s %D/etc/opendnssec/zonelist.xml %D/etc/opendnssec/zonelist.xml.sample; then rm -f %D/etc/opendnssec/zonelist.xml; fi
 %%ETCDIR%%/zonelist.xml.sample
+%%AUDITOR%%lib/opendnssec/kasp_auditor/auditor.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/changed_config.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/commands.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/config.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/key_tracker.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/parse.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/preparser.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor.rb
+%%AUDITOR%%lib/opendnssec/kasp_auditor/partial_auditor.rb
+%%AUDITOR%%lib/opendnssec/kasp_checker.rb
+%%AUDITOR%%lib/opendnssec/time_shift.rb
 sbin/ods-control
 sbin/ods-enforcerd
 sbin/ods-signer
 sbin/ods-signerd
-%%DATADIR%%/addns.rnc
-%%DATADIR%%/addns.rng
 %%DATADIR%%/conf.rnc
 %%DATADIR%%/conf.rng
 %%SQLITE%%%%DATADIR%%/database_create.sqlite3
 %%MYSQL%%%%DATADIR%%/database_create.mysql
-%%DATADIR%%/enforcerstate.rnc
-%%DATADIR%%/enforcerstate.rng
 %%DATADIR%%/kasp.rnc
 %%DATADIR%%/kasp.rng
 %%DATADIR%%/kasp2html.xsl
 %%DATADIR%%/signconf.rnc
 %%DATADIR%%/signconf.rng
+%%DATADIR%%/zonefetch.rnc
+%%DATADIR%%/zonefetch.rng
 %%DATADIR%%/zonelist.rnc
 %%DATADIR%%/zonelist.rng
 @dirrm var/opendnssec/unsigned
@@ -36,6 +46,8 @@ sbin/ods-signerd
 @dirrm var/opendnssec/signconf
 @dirrm var/opendnssec
 @dirrm %%DATADIR%%
+@dirrm lib/opendnssec/kasp_auditor
+@dirrm lib/opendnssec
 @dirrm %%ETCDIR%%
 @exec mkdir -p %D/var/run/opendnssec
 @exec mkdir -p %D/var/opendnssec/unsigned
