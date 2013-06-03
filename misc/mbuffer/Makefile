@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mbuffer
-# Date created:				Dec 14 2006
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mbuffer
 PORTVERSION=	2011.07.24
@@ -14,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A tool for buffering data streams
+COMMENT=	Tool for buffering data streams
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,11 +23,14 @@ PLIST_FILES=	bin/mbuffer
 
 MAN1=		${PORTNAME}.1
 
-OPTIONS=	MHASH	"Use mhash for hash generation"	on
+OPTIONS_DEFINE=	MHASH
+MHASH_DESC=	Use mhash for hash generation
+
+OPTIONS_DEFAULT=	MHASH
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MHASH)
+.if ${PORT_OPTIONS:MMHASH}
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

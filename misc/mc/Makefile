@@ -25,13 +25,11 @@ USE_AUTOTOOLS=	libtool
 
 PORTDATA=	*
 
-OPTIONS=	SLANG		"Build with SLang library" on \
-		ICONV		"Build with iconv recoding" on \
-		NLS		"Build with NLS support" on \
-		EDIT		"Build with internal editor" on \
-		X11		"Build with X11 library" off \
-		SUBSHELL	"Build with subshell support" on \
-		SAMBA		"Build with Samba support" on
+OPTIONS_DEFINE=	SLANG ICONV NLS EDIT X11 SUBSHELL SMB
+EDIT_DESC=	Build with internal editor
+SUBSHELL_DESC=	Build with subshell support
+
+OPTIONS_DEFAULT=	SLANG ICONV NLS EDIT X11 SUBSHELL SMB
 
 post-patch:
 	${REINPLACE_CMD} -e 's/SUBDIRS = intl/SUBDIRS =/' ${WRKSRC}/Makefile.in
@@ -39,18 +37,18 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SAMBA) || !(defined(WITHOUT_SAMBA) || defined(MINIMAL))
+.if ${PORT_OPTIONS:MSMB} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--enable-vfs-smb --with-configdir=${LOCALBASE}/etc\
 		--with-codepagedir=${LOCALBASE}/etc/codepages
 .endif
 
-.if defined(WITH_ICONV) || !(defined(WITHOUT_ICONV) || defined(MINIMAL))
+.if ${PORT_OPTIONS:MICONV} && !defined(MINIMAL)
 USES+=		iconv
 .else
 CONFIGURE_ARGS+=--disable-charset
 .endif
 
-.if !defined(WITH_NLS) && (defined(WITHOUT_NLS) || defined(MINIMAL))
+.if ! ${PORT_OPTIONS:MNLS} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -61,27 +59,27 @@ PLIST_SUB+=	NLS=""
 _MANLANG=	es hu it pl ru sr
 .endif
 
-.if !defined(WITH_X11) || (defined(WITHOUT_X11) || defined(MINIMAL))
+.if ! ${PORT_OPTIONS:MX11} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--without-x
 .else
 USE_XORG=	x11 xext
 .endif
 
-.if !defined(WITH_EDIT) && (defined(WITHOUT_EDIT) || defined(MINIMAL))
+.if ! ${PORT_OPTIONS:MEDIT} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--without-edit
 PLIST_SUB+=	EDITOR="@comment "
 .else
 PLIST_SUB+=	EDITOR=""
 .endif
 
-.if !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
+.if ! ${PORT_OPTIONS:MSLANG} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 CONFIGURE_ARGS+=--with-screen=slang --with-slang-includes=${LOCALBASE}/include
 .endif
 
-.if !defined(WITH_SUBSHELL) && (defined(WITHOUT_SUBSHELL) || defined(MINIMAL))
+.if ! ${PORT_OPTIONS:MSUBSHELL} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--without-subshell
 .endif
 

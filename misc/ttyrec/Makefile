@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ttyrec
-# Date created:                Feb 14, 2001
-# Whom:                        Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ttyrec
 PORTVERSION=	1.0.8
@@ -21,9 +17,10 @@ PLIST_FILES=	bin/ttyplay \
 MAN1=	ttyplay.1 ttyrec.1
 BINS=	ttyplay ttyrec ttytime
 
-OPTIONS=	OPENPTY "Use openpty instead" off
+OPTIONS_DEFINE=	OPENPTY
+OPENPTY_DESC=	Use openpty instead
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" -e "s|^CFLAGS|#CFLAGS|g" \
@@ -33,8 +30,8 @@ do-install:
 	${INSTALL_PROGRAM} ${BINS:S,^,${WRKSRC}/,} ${PREFIX}/bin
 	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/,} ${MAN1PREFIX}/man/man1
 
-.if defined(WITH_OPENPTY)
+.if ${PORT_OPTIONS:MOPENPTY}
 CFLAGS+=	-DHAVE_openpty -lutil
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

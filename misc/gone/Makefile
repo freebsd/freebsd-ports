@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gone
-# Date created:        19 April 1998
-# Whom:                marcus
-#
+# Created by: marcus
 # $FreeBSD$
-#
 
 PORTNAME=	gone
 PORTVERSION=	1.3.6
@@ -17,8 +13,10 @@ MAN1=		gone.1
 PLIST_FILES=	bin/gone
 GNU_CONFIGURE=	yes
 
-OPTIONS=	SETUID "Install gone setuid root for password support" OFF
+OPTIONS_DEFINE=	SETUID
+SETUID_DESC=	Install gone setuid root for password support
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 #
@@ -26,7 +24,7 @@ OPTIONS=	SETUID "Install gone setuid root for password support" OFF
 # override this with WITH_SETUID=yes in your environment.
 # Be aware that setting gone to suid MAY be a security hole.
 #
-.if defined(WITH_SETUID)
+.if ${PORT_OPTIONS:MSETUID}
 CONFIGURE_ENV=	with_setuid=yes
 .else
 CONFIGURE_ENV=	with_setuid=no

@@ -1,9 +1,5 @@
-# ports collection makefile for:	krecipies
-# Date created:				19 March 2005
-# Whom:					hank
-#
+# Created by: Henry Miller <hank@millerfarm.com>
 # $FreeBSD$
-#
 
 PORTNAME=	krecipes
 PORTVERSION=	0.9.1
@@ -17,25 +13,24 @@ COMMENT=	Recipe database for cooks
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 
-OPTIONS=	SQLITE "Support for SQLite backend" on \
-		MYSQL "Support for MySQL backend" off \
-		POSTGRESQL "Support for PostgreSQL backend" off
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	SQLITE MYSQL PGSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SQLITE)
-CONFIGURE_ARGS+=	--without-sqlite
-.else
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
+.else
+CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
 .else
 CONFIGURE_ARGS+=	--without-postgresql
@@ -44,10 +39,4 @@ CONFIGURE_ARGS+=	--without-postgresql
 post-extract:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
-pre-configure:
-.if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
-	@${ECHO} "You must have at least one database backend"
-	@exit 1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
