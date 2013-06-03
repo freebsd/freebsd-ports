@@ -1,0 +1,13 @@
+The Query DSL for ElasticSearch (see Query DSL
+<http://www.elasticsearch.org/guide/reference/query-dsl>), which is used
+to write queries and filters, is simple but verbose, which can make it
+difficult to write and understand large queries.
+
+ElasticSearch::SearchBuilder is an SQL::Abstract-like query language
+which exposes the full power of the query DSL, but in a more compact,
+Perlish way.
+
+This module is considered stable. If you have suggestions for
+improvements to the API or the documenation, please contact me.
+
+WWW: http://search.cpan.org/dist/ElasticSearch-SearchBuilder/

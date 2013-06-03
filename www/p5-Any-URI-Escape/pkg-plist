@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Any/URI/Escape.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/URI/Escape/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/URI/Escape
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/URI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any
+@dirrmtry %%SITE_PERL%%/Any/URI/Escape
+@dirrmtry %%SITE_PERL%%/Any/URI
+@dirrmtry %%SITE_PERL%%/Any
