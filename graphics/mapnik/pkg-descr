@@ -12,4 +12,4 @@ access, regular expressions, parsing and so on, Mapnik doesn't re-invent
 the wheel, but utilizes best of breed industry standard libraries from
 boost.org.
 
-WWW:	http://www.mapnik.org/
+WWW: http://www.mapnik.org/
