@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
-		http://de.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 

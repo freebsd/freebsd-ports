@@ -33,8 +33,10 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/lang/english_US.lng
 %%DATADIR%%/lang/esperanto.lng
 %%DATADIR%%/lang/estonian.lng
+%%DATADIR%%/lang/faroese.lng
 %%DATADIR%%/lang/finnish.lng
 %%DATADIR%%/lang/french.lng
+%%DATADIR%%/lang/gaelic.lng
 %%DATADIR%%/lang/galician.lng
 %%DATADIR%%/lang/german.lng
 %%DATADIR%%/lang/greek.lng
