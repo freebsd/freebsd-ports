@@ -1,0 +1,130 @@
+--- openafs-1.6.1/src/kauth/Makefile.in.orig
++++ openafs-1.6.1/src/kauth/Makefile.in
+@@ -24,6 +24,8 @@ LT_deps = $(top_builddir)/src/ubik/liboafs_ubik.la \
+ 	  $(top_builddir)/src/rxkad/liboafs_rxkad.la
+ LT_libs =
+ 
++INSTALL_KAUTH = @INSTALL_KAUTH@
++
+ INCLS=${TOP_INCDIR}/ubik.h \
+              ${TOP_INCDIR}/lwp.h \
+              ${TOP_INCDIR}/lock.h  \
+@@ -248,62 +250,66 @@ rebuild: rebuild.o $(LIBS) libkauth.a
+ install: kaserver kas kpwvalid kas klog klog.krb knfs kpasswd libkauth.a \
+ 		libkauth.krb.a rebuild kdb ka-forwarder kautils.h kauth.h \
+ 		kaport.h
+-	${INSTALL} -d ${DESTDIR}${afssrvlibexecdir}
+-	${INSTALL} -d ${DESTDIR}${bindir}
+-	${INSTALL} -d ${DESTDIR}${sbindir}
+-	${INSTALL} -d ${DESTDIR}${afssrvbindir}
+-	${INSTALL} -d ${DESTDIR}${afssrvsbindir}
+-	${INSTALL} -d ${DESTDIR}${libdir}/afs
+-	${INSTALL} -d ${DESTDIR}${includedir}/afs
+-	${INSTALL_PROGRAM} kaserver ${DESTDIR}${afssrvlibexecdir}/kaserver
+-	${INSTALL_PROGRAM} kas ${DESTDIR}${sbindir}/kas
+-	${INSTALL_PROGRAM} kpwvalid ${DESTDIR}${sbindir}/kpwvalid
+-	${INSTALL_PROGRAM} kas ${DESTDIR}${afssrvsbindir}/kas
+-	${INSTALL_PROGRAM} kpwvalid ${DESTDIR}${afssrvsbindir}/kpwvalid
+-	${INSTALL_PROGRAM} klog ${DESTDIR}${bindir}/klog
+-	${INSTALL_PROGRAM} klog.krb ${DESTDIR}${bindir}/klog.krb
+-	${INSTALL_PROGRAM} klog ${DESTDIR}${afssrvbindir}/klog
+-	${INSTALL_PROGRAM} klog.krb ${DESTDIR}${afssrvbindir}/klog.krb
+-	${INSTALL_PROGRAM} knfs ${DESTDIR}${bindir}/knfs
+-	${INSTALL_PROGRAM} kpasswd ${DESTDIR}${bindir}/kpasswd
+-	${INSTALL_PROGRAM} kpwvalid ${DESTDIR}${bindir}/kpwvalid
+-	${INSTALL_DATA} libkauth.a ${DESTDIR}${libdir}/afs/libkauth.a
+-	${INSTALL_DATA} libkauth.krb.a ${DESTDIR}${libdir}/afs/libkauth.krb.a
+-	${INSTALL_PROGRAM} rebuild ${DESTDIR}${afssrvsbindir}/kadb_check
+-	${INSTALL_PROGRAM} kdb ${DESTDIR}${afssrvsbindir}/kdb
+-	${INSTALL_PROGRAM} ka-forwarder ${DESTDIR}${afssrvsbindir}/ka-forwarder
+-	${INSTALL_DATA} kautils.h ${DESTDIR}${includedir}/afs/kautils.h
+-	${INSTALL_DATA} kauth.h ${DESTDIR}${includedir}/afs/kauth.h
+-	${INSTALL_DATA} ${srcdir}/kaport.h ${DESTDIR}${includedir}/afs/kaport.h
++	if [ "x${INSTALL_KAUTH}" = "xyes" ]; then \
++		${INSTALL} -d ${DESTDIR}${afssrvlibexecdir}; \
++		${INSTALL} -d ${DESTDIR}${bindir}; \
++		${INSTALL} -d ${DESTDIR}${sbindir}; \
++		${INSTALL} -d ${DESTDIR}${afssrvbindir}; \
++		${INSTALL} -d ${DESTDIR}${afssrvsbindir}; \
++		${INSTALL} -d ${DESTDIR}${libdir}/afs; \
++		${INSTALL} -d ${DESTDIR}${includedir}/afs; \
++		${INSTALL_PROGRAM} kaserver ${DESTDIR}${afssrvlibexecdir}/kaserver; \
++		${INSTALL_PROGRAM} kas ${DESTDIR}${sbindir}/kas; \
++		${INSTALL_PROGRAM} kpwvalid ${DESTDIR}${sbindir}/kpwvalid; \
++		${INSTALL_PROGRAM} kas ${DESTDIR}${afssrvsbindir}/kas; \
++		${INSTALL_PROGRAM} kpwvalid ${DESTDIR}${afssrvsbindir}/kpwvalid; \
++		${INSTALL_PROGRAM} klog ${DESTDIR}${bindir}/klog; \
++		${INSTALL_PROGRAM} klog.krb ${DESTDIR}${bindir}/klog.krb; \
++		${INSTALL_PROGRAM} klog ${DESTDIR}${afssrvbindir}/klog; \
++		${INSTALL_PROGRAM} klog.krb ${DESTDIR}${afssrvbindir}/klog.krb; \
++		${INSTALL_PROGRAM} knfs ${DESTDIR}${bindir}/knfs; \
++		${INSTALL_PROGRAM} kpasswd ${DESTDIR}${bindir}/kpasswd; \
++		${INSTALL_PROGRAM} kpwvalid ${DESTDIR}${bindir}/kpwvalid; \
++		${INSTALL_DATA} libkauth.a ${DESTDIR}${libdir}/afs/libkauth.a; \
++		${INSTALL_DATA} libkauth.krb.a ${DESTDIR}${libdir}/afs/libkauth.krb.a; \
++		${INSTALL_PROGRAM} rebuild ${DESTDIR}${afssrvsbindir}/kadb_check; \
++		${INSTALL_PROGRAM} kdb ${DESTDIR}${afssrvsbindir}/kdb; \
++		${INSTALL_PROGRAM} ka-forwarder ${DESTDIR}${afssrvsbindir}/ka-forwarder; \
++		${INSTALL_DATA} kautils.h ${DESTDIR}${includedir}/afs/kautils.h; \
++		${INSTALL_DATA} kauth.h ${DESTDIR}${includedir}/afs/kauth.h; \
++		${INSTALL_DATA} ${srcdir}/kaport.h ${DESTDIR}${includedir}/afs/kaport.h; \
++	fi
+ 
+ dest: kaserver kas kpwvalid kas klog klog.krb knfs kpasswd libkauth.a \
+ 		libkauth.krb.a rebuild kdb ka-forwarder kautils.h kauth.h \
+ 		kaport.h
+-	${INSTALL} -d ${DEST}/root.server/usr/afs/bin
+-	${INSTALL} -d ${DEST}/etc
+-	${INSTALL} -d ${DEST}/bin
+-	${INSTALL} -d ${DEST}/lib/afs
+-	${INSTALL} -d ${DEST}/include/afs
+-	${INSTALL_PROGRAM} kaserver ${DEST}/root.server/usr/afs/bin/kaserver
+-	${INSTALL_PROGRAM} kas ${DEST}/etc/kas
+-	${INSTALL_PROGRAM} kpwvalid ${DEST}/etc/kpwvalid
+-	${INSTALL_PROGRAM} kas ${DEST}/root.server/usr/afs/bin/kas
+-	${INSTALL_PROGRAM} kpwvalid ${DEST}/root.server/usr/afs/bin/kpwvalid
+-	${INSTALL_PROGRAM} klog ${DEST}/bin/klog
+-	${INSTALL_PROGRAM} klog.krb ${DEST}/bin/klog.krb
+-	${INSTALL_PROGRAM} klog ${DEST}/root.server/usr/afs/bin/klog
+-	${INSTALL_PROGRAM} klog.krb ${DEST}/root.server/usr/afs/bin/klog.krb
+-	${INSTALL_PROGRAM} knfs ${DEST}/bin/knfs
+-	${INSTALL_PROGRAM} kpasswd ${DEST}/bin/kpasswd
+-	${INSTALL_PROGRAM} kpwvalid ${DEST}/bin/kpwvalid
+-	${INSTALL_DATA} libkauth.a ${DEST}/lib/afs/libkauth.a
+-	${INSTALL_DATA} libkauth.krb.a ${DEST}/lib/afs/libkauth.krb.a
+-	${INSTALL_PROGRAM} kdb ${DEST}/etc/kdb
+-	${INSTALL_PROGRAM} rebuild ${DEST}/etc/kadb_check
+-	${INSTALL_PROGRAM} ka-forwarder ${DEST}/root.server/usr/afs/bin/ka-forwarder
+-	${INSTALL_DATA} kautils.h ${DEST}/include/afs/kautils.h
+-	${INSTALL_DATA} kauth.h ${DEST}/include/afs/kauth.h
+-	${INSTALL_DATA} ${srcdir}/kaport.h ${DEST}/include/afs/kaport.h
++	if [ "x${INSTALL_KAUTH}" = "xyes" ]; then \
++		${INSTALL} -d ${DEST}/root.server/usr/afs/bin; \
++		${INSTALL} -d ${DEST}/etc; \
++		${INSTALL} -d ${DEST}/bin; \
++		${INSTALL} -d ${DEST}/lib/afs; \
++		${INSTALL} -d ${DEST}/include/afs; \
++		${INSTALL_PROGRAM} kaserver ${DEST}/root.server/usr/afs/bin/kaserver; \
++		${INSTALL_PROGRAM} kas ${DEST}/etc/kas; \
++		${INSTALL_PROGRAM} kpwvalid ${DEST}/etc/kpwvalid; \
++		${INSTALL_PROGRAM} kas ${DEST}/root.server/usr/afs/bin/kas; \
++		${INSTALL_PROGRAM} kpwvalid ${DEST}/root.server/usr/afs/bin/kpwvalid; \
++		${INSTALL_PROGRAM} klog ${DEST}/bin/klog; \
++		${INSTALL_PROGRAM} klog.krb ${DEST}/bin/klog.krb; \
++		${INSTALL_PROGRAM} klog ${DEST}/root.server/usr/afs/bin/klog; \
++		${INSTALL_PROGRAM} klog.krb ${DEST}/root.server/usr/afs/bin/klog.krb; \
++		${INSTALL_PROGRAM} knfs ${DEST}/bin/knfs; \
++		${INSTALL_PROGRAM} kpasswd ${DEST}/bin/kpasswd; \
++		${INSTALL_PROGRAM} kpwvalid ${DEST}/bin/kpwvalid; \
++		${INSTALL_DATA} libkauth.a ${DEST}/lib/afs/libkauth.a; \
++		${INSTALL_DATA} libkauth.krb.a ${DEST}/lib/afs/libkauth.krb.a; \
++		${INSTALL_PROGRAM} kdb ${DEST}/etc/kdb; \
++		${INSTALL_PROGRAM} rebuild ${DEST}/etc/kadb_check; \
++		${INSTALL_PROGRAM} ka-forwarder ${DEST}/root.server/usr/afs/bin/ka-forwarder; \
++		${INSTALL_DATA} kautils.h ${DEST}/include/afs/kautils.h; \
++		${INSTALL_DATA} kauth.h ${DEST}/include/afs/kauth.h; \
++		${INSTALL_DATA} ${srcdir}/kaport.h ${DEST}/include/afs/kaport.h; \
++	fi
+ 
+ #
+ # Misc. targets
