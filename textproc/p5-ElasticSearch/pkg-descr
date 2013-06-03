@@ -1,0 +1,17 @@
+ElasticSearch is an Open Source (Apache 2 license), distributed, RESTful
+Search Engine based on Lucene, and built for the cloud, with a JSON API.
+
+Check out its features: <http://www.elasticsearch.org/>
+
+This module is a thin API which makes it easy to communicate with an
+ElasticSearch cluster.
+
+It maintains a list of all servers/nodes in the ElasticSearch cluster,
+and spreads the load across these nodes in round-robin fashion. If the
+current active node disappears, then it attempts to connect to another
+node in the list.
+
+Forking a process triggers a server list refresh, and a new connection
+to a randomly chosen node in the list.
+
+WWW: http://search.cpan.org/dist/ElasticSearch/
