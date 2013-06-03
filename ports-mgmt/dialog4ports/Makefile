@@ -28,6 +28,8 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
+
 ## This is used by 'make config' via Tools/scripts/dialog4ports.sh
 ## Use caution in changing
 .if !exists(${DIALOG4PORTS})
