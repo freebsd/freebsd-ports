@@ -109,6 +109,9 @@
 %%PYTHON_SITELIBDIR%%/unidecode/x028.py
 %%PYTHON_SITELIBDIR%%/unidecode/x028.pyc
 %%PYTHON_SITELIBDIR%%/unidecode/x028.pyo
+%%PYTHON_SITELIBDIR%%/unidecode/x029.py
+%%PYTHON_SITELIBDIR%%/unidecode/x029.pyc
+%%PYTHON_SITELIBDIR%%/unidecode/x029.pyo
 %%PYTHON_SITELIBDIR%%/unidecode/x02c.py
 %%PYTHON_SITELIBDIR%%/unidecode/x02c.pyc
 %%PYTHON_SITELIBDIR%%/unidecode/x02c.pyo
