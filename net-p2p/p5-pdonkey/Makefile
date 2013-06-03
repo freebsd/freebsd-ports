@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pdonkey
-# Date Created:			Feb 25, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pdonkey
 PORTVERSION=	0.05
@@ -16,6 +11,9 @@ DISTNAME=	P2P-pDonkey-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl tools for eDonkey network
+
+DEPRECATED=	Depends on expired multimedia/p5-Video-Info
+EXPIRATION_DATE=2013-07-03
 
 BUILD_DEPENDS=	p5-Digest-MD4>=0:${PORTSDIR}/security/p5-Digest-MD4 \
 		p5-Data-Hexdumper>=0:${PORTSDIR}/devel/p5-Data-Hexdumper \
