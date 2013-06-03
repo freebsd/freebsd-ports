@@ -31,13 +31,14 @@ MAN7=		xkeyboard-config.7
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
+# !nls case doesn't work correctly, comment it out.
+#.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+#.else
+#CONFIGURE_ARGS+=--disable-nls
+#PLIST_SUB+=	NLS="@comment "
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' -e 's|==|=|g' \
