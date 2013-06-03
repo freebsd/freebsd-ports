@@ -10,8 +10,8 @@ MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 		git-${GIT_VERSION}.tar.gz:git
 
-MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	A fast webinterface for git
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast webinterface for git
 
 LICENSE=	GPLv2
 
