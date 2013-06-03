@@ -3,21 +3,22 @@
 %%WWWDIR%%/cgit.png
 %%PORTDOCS%%%%DOCSDIR%%/cgitrc.5.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/cgit/filters/about-formatting.sh
 lib/cgit/filters/commit-links.sh
-lib/cgit/filters/syntax-highlighting.sh
-lib/cgit/filters/html-converters/resources/markdown.pl
-lib/cgit/filters/html-converters/resources/rst-template.txt
 lib/cgit/filters/html-converters/man2html
 lib/cgit/filters/html-converters/md2html
+lib/cgit/filters/html-converters/resources/markdown.pl
+lib/cgit/filters/html-converters/resources/rst-template.txt
 lib/cgit/filters/html-converters/rst2html
 lib/cgit/filters/html-converters/txt2html
 lib/cgit/filters/syntax-highlighting.py
+lib/cgit/filters/syntax-highlighting.sh
 lib/cgit/filters/about-formatting.sh
-@dirrm lib/cgit/html-converters/resources/
-@dirrm lib/cgit/html-converters/
+@dirrm lib/cgit/filters/html-converters/resources/
+@dirrm lib/cgit/filters/html-converters/
 @dirrm lib/cgit/filters
 @dirrm lib/cgit
 @dirrm %%WWWDIR%%
 @exec mkdir -p /var/cache/%%PORTNAME%%
 @dirrmtry /var/cache/%%PORTNAME%%
-@dirrmtry /var/cache/
+@dirrmtry /var/cache
