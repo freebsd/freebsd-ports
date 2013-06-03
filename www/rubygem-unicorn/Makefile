@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-unicorn
-# Date created:		2011-11-16
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unicorn
-PORTVERSION=	4.3.1
+PORTVERSION=	4.6.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
