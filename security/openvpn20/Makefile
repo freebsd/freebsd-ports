@@ -12,6 +12,8 @@ MASTER_SITES=	http://openvpn.net/release/
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
+LICENSE=	GPLv2
+
 DEPRECATED=		Please migrate to a newer OpenVPN version
 EXPIRATION_DATE=	2013-07-11
 
