@@ -11,8 +11,6 @@ MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	New generation package manager
 
-LATEST_LINK=	pkg-devel
-
 LICENSE=	BSD
 
 USE_XZ=		yes
@@ -77,6 +75,7 @@ NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
 .if exists(${PKG_BIN})
 NB_NEWPKGS!=	${PKG_INFO} -aq | wc -l
 .else
+LATEST_LINK=	pkg-devel
 NB_NEWPKGS=	0
 .endif
 # Only show the pre-everything notice if they have not already
