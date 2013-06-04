@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpuv
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6.3
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -23,5 +22,8 @@ USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
 MAKE_ENV=	MAKE=${GMAKE}
+
+post-patch:
+	@${REINPLACE_CMD} 's|/bin/bash|/bin/sh|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
