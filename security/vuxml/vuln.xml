@@ -51,6 +51,65 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4865d189-cd62-11e2-ae11-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>27.0.1453.110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>[242322] Medium CVE-2013-2855: Memory corruption in dev tools API.
+	    Credit to "daniel.zulla".</p>
+	  <p>[242224] High CVE-2013-2856: Use-after-free in input handling.
+	    Credit to miaubiz.</p>
+	  <p>[240124] High CVE-2013-2857: Use-after-free in image handling.
+	    Credit to miaubiz.</p>
+	  <p>[239897] High CVE-2013-2858: Use-after-free in HTML5 Audio. Credit
+	    to "cdel921".</p>
+	  <p>[237022] High CVE-2013-2859: Cross-origin namespace pollution.
+	    to "bobbyholley".</p>
+	  <p>[225546] High CVE-2013-2860: Use-after-free with workers accessing
+	    database APIs. Credit to Collin Payne.</p>
+	  <p>[209604] High CVE-2013-2861: Use-after-free with SVG. Credit to
+	    miaubiz.</p>
+	  <p>[161077] High CVE-2013-2862: Memory corruption in Skia GPU
+	    handling. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[232633] Critical CVE-2013-2863: Memory corruption in SSL socket
+	    handling. Credit to Sebastian Marchand of the Chromium development
+	    community.</p>
+	  <p>[239134] High CVE-2013-2864: Bad free in PDF viewer. Credit to
+	    Mateusz Jurczyk, with contributions by Gynvael Coldwind, both from
+	    Google Security Team.</p>
+	  <p>[246389] High CVE-2013-2865: Various fixes from internal audits,
+	    fuzzing and other initiatives.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2855</cvename>
+      <cvename>CVE-2013-2856</cvename>
+      <cvename>CVE-2013-2857</cvename>
+      <cvename>CVE-2013-2858</cvename>
+      <cvename>CVE-2013-2859</cvename>
+      <cvename>CVE-2013-2860</cvename>
+      <cvename>CVE-2013-2861</cvename>
+      <cvename>CVE-2013-2862</cvename>
+      <cvename>CVE-2013-2863</cvename>
+      <cvename>CVE-2013-2864</cvename>
+      <cvename>CVE-2013-2865</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-06-04</discovery>
+      <entry>2013-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2eebebff-cd3b-11e2-8f09-001b38c3836c">
     <topic>xorg -- protocol handling issues in X Window System client libraries</topic>
     <affects>
