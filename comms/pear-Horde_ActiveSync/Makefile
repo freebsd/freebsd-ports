@@ -1,12 +1,7 @@
-# Ports collection makefile for:  pear-Horde_ActiveSync
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Horde_ActiveSync
-PORTVERSION=	2.3.6
+PORTVERSION=	2.4.0
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
