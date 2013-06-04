@@ -16,7 +16,8 @@ USES=		bison iconv
 
 MAN1=		btedit.1 dbverify.1 llines.1
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -27,7 +28,7 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's,ncursesw/curses.h,curses.h,' \
 		${WRKSRC}/src/hdrs/mycurses.h
-.ifdef NOPORTDOCS
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's,install-data-am: install-docDATA,install-data-am:,' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,install-data-am: install-dist_pkgdataDATA install-docDATA install-man,install-data-am: install-dist_pkgdataDATA,' \
