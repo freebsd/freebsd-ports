@@ -21,3 +21,9 @@ bin/monitorix
 %%WWWDIR%%/cgi
 @dirrmtry %%WWWDIR%%/imgs
 @dirrmtry %%WWWDIR%%
+
+@comment rrd files are now kept in /var/db/monitorix, we'll move
+@comment previous files over for the user
+@exec [ -d %%DBDIR%% ] || install -d -o %%WWW_OWNER%% -g %%WWW_GROUP%% %%DBDIR%%
+@exec [ -f %%DATADIR%%/fs.rrd ] && mv %%DATADIR%%/*.rrd %%DBDIR%%
+@unexec rmdir %%DBDIR%% 2>/dev/null || true

@@ -7,20 +7,30 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-monitorix_enable=${monitorix_enable:-"NO"}
-
 . /etc/rc.subr
 
-name="monitorix"
+name=monitorix
 rcvar=monitorix_enable
 
 load_rc_config $name
 
+: ${monitorix_enable:=NO}
+
 start_cmd="${name}_start"
+start_precmd=monitorix_check_rrds
 
 pidfile="/var/run/${name}.pid"
-command_interpreter="."
+command_interpreter=.
 procname="%%PREFIX%%/bin/${name}"
+
+monitorix_check_rrds()
+{
+	baselib=`grep ^base_lib %%PREFIX%%/etc/monitorix.conf`
+	baselib=${baselib##*= }
+	if [ "$baselib" = "%%DATADIR%%/" ]; then
+		err 1 "Please update your monitorix.conf, replacing the base_lib value with %%DBDIR%%/ (note trailing slash)."
+	fi
+}
 
 monitorix_start()
 {

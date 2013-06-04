@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	monitorix
-PORTVERSION=	3.0.0
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
@@ -30,6 +30,7 @@ MANCOMPRESSED=	no
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 
+DBDIR?=		/var/db/${PORTNAME}
 CGIDIR?=	www/cgi-bin
 CGIPATH?=	/cgi-bin
 WWW_OWNER?=	${WWWOWN}
@@ -38,11 +39,13 @@ REPORT_LANG=	ca de en it pl
 WWWROOT=	${WWWDIR:S,/${PORTNAME}$,,}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PERL=${PERL}
+SUB_LIST=	PERL=${PERL} \
+		DBDIR=${DBDIR}
 
 PLIST_SUB+=	CGIDIR=${CGIDIR} \
 		WWW_OWNER=${WWW_OWNER} \
-		WWW_GROUP=${WWW_GROUP}
+		WWW_GROUP=${WWW_GROUP} \
+		DBDIR=${DBDIR}
 
 WWW_FILES=	logo_top.png \
 		logo_bot.png \
@@ -51,11 +54,13 @@ WWW_FILES=	logo_top.png \
 PORTDOCS=	*
 PORTDATA=	*.pm
 
+.include <bsd.port.options.mk>
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "DATADIR=${DATADIR}	Where do you put RRD databases?"
+	@${ECHO_MSG} "DBDIR=${DBDIR}	Where do you put RRD databases?"
 	@${ECHO_MSG} "CGIDIR=${CGIDIR}	Where do you put cgi?"
 	@${ECHO_MSG} "CGIPATH=${CGIPATH}	What is the relative URL for cgi files?"
 	@${ECHO_MSG} "WWWDIR=${WWWDIR}	Where do you put httpd's document root?"
@@ -69,7 +74,7 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.cgi
 	@${REINPLACE_CMD} \
 		-e 's|^\(base_dir *= *\).*|\1${WWWDIR}/|' \
-		-e 's|^\(base_lib *= *\).*|\1${DATADIR}/|' \
+		-e 's|^\(base_lib *= *\).*|\1${DBDIR}/|' \
 		-e 's|^\(base_cgi *= *\).*|\1${CGIPATH}/|' \
 		-e 's|^\(secure_log[[:space:]]*= *\).*|\1/var/log/auth.log|' \
 		-e "s|/var/lib/milter-greylist/db/|/var/milter-greylist/|" \
@@ -98,7 +103,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/reports/${l}.html \
 		${WWWDIR}/reports/$l.html.sample
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for f in docs/* README README.FreeBSD README.nginx Changes
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
@@ -113,6 +118,12 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/monitorix.conf ]; then \
 		${CP} -p ${PREFIX}/etc/monitorix.conf.sample \
 			${PREFIX}/etc/monitorix.conf ; \
+	fi
+	if [ ! -d ${DBDIR} ]; then \
+		${INSTALL} -d -o ${WWW_OWNER} -g ${WWW_GROUP} ${DBDIR}; \
+		if [ -f ${DATADIR}/fs.rrd ]; then \
+			${MV} ${DATADIR}/*.rrd ${DBDIR}; \
+		fi; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
