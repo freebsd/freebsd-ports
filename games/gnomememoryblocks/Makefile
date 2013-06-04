@@ -11,6 +11,9 @@ DISTNAME=	gnome-memblocks-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory Blocks game for GNOME
 
+DEPRECATED=	Unsupported upstream
+EXPIRATION_DATE=	2013-07-04
+
 USES=        pathfix gettext
 USE_GNOME=	gnomeprefix gnomelibs gdkpixbuf
 USE_AUTOTOOLS=	libtool

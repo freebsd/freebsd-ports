@@ -12,6 +12,9 @@ DISTNAME=	gnome-chess-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI chess front-end to crafy, for the GNOME Desktop Environment
 
+DEPRECATED=	Unsupported upstream
+EXPIRATION_DATE=	2013-07-04
+
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
