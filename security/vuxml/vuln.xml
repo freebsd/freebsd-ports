@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e3f64457-cccd-11e2-af76-206a8a720317">
+    <topic>krb5 -- UDP ping-pong vulnerability in the kpasswd (password changing) service.  [CVE-2002-2443]</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><le>1.11.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>No advisory has been released yet.</p>
+	<blockquote cite="http://web.mit.edu/kerberos/www/krb5-1.11/">
+	  <p>schpw.c in the kpasswd service in kadmind in MIT Kerberos 5
+	  (aka krb5) before 1.11.3 does not properly validate UDP packets
+	  before sending responses, which allows remote attackers to cause
+	  a denial of service (CPU and bandwidth consumption) via a forged
+	  packet that triggers a communication loop, as demonstrated by
+	  krb_pingpong.nasl, a related issue to CVE-1999-0103.
+	  [CVE-2002-2443].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2002-2443</cvename>
+      <url>http://web.mit.edu/kerberos/www/krb5-1.11/</url>
+    </references>
+    <dates>
+      <discovery>2013-05-10</discovery>
+      <entry>2013-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bf376b7-cc6b-11e2-a424-14dae938ec40">
     <topic>net/openafs -- buffer overflow</topic>
     <affects>
