@@ -1,18 +1,16 @@
-# New ports collection makefile for:    p5-Data-ShowTable
-# Date created:				September 10th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-ShowTable
-PORTVERSION=	3.3
+PORTVERSION=	4.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to pretty-print arrays of data
+
+LICENSE=	GPLv2
 
 PERL_CONFIGURE=	yes
 
