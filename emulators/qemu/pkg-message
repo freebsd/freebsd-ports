@@ -1,10 +1,9 @@
 FreeBSD host notes
 ==================
 
-- Needs to run as root in order to use /dev/tap* networking (why?) (actually
-  RELENG_6 and above now has a sysctl net.link.tap.user_open to allow users to
-  use it too.  Don't forget to adjust device node permissions in
-  /etc/devfs.rules.)
+- Needs to set net.link.tap.user_open sysctl in order to use /dev/tap*
+  networking as non-root.  Don't forget to adjust device node permissions in
+  /etc/devfs.rules.
 
 - slirp (usermode networking) is fixed now in cvs, on FreeSBIE 1.0 guests you
   still have to manually do: echo nameserver 10.0.2.3 >/etc/resolv.conf but
@@ -45,8 +44,8 @@ FreeBSD host notes
   the same way.
 
 - The -smb option (smb-export local dir to guest using the default
-  slirp networking) needs the net/samba34 port/package installed
-  in addition to qemu.
+  slirp networking) needs the net/samba36 port/package installed
+  in addition to qemu. (SAMBA knob.)
 
 - If you want to use usb devices connected to the host in the guest
   (usb_add host:... monitor command; this doesn't work on FreeBSD 8 and
