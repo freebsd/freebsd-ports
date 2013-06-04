@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Structures_DataGrid_Renderer_HTMLTable
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
