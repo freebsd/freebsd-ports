@@ -1,29 +1,22 @@
-# New ports collection makefile for:	xlisp-stat
-# Date created:				Tue Aug 15 17:57:48 CDT 1995
-# Whom:					Eric L. Hernes <erich@rrnet.com>
-#
+# Created by: Eric L. Hernes <erich@rrnet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xlispstat
-PORTVERSION=	3.52.20
-PORTREVISION=	2
+PORTVERSION=	3.52.23
 CATEGORIES=	math lang lisp
-MASTER_SITES=	ftp://ftp.stat.umn.edu/pub/xlispstat/current/ \
-		http://lib.stat.cmu.edu/xlispstat/Src/current/ \
-		ftp://ftp.stat.unipg.it/pub/stat/xlispstat/current/ \
-		ftp://srsuna.shlrc.mq.edu.au/pub/xlispstat/current/ \
-		ftp://statlab.uni-heidelberg.de/pub/mirrors/umn/xlispstat/current/
+MASTER_SITES=	http://homepage.stat.uiowa.edu/~luke/xls/xlispstat/3-52/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A statistics/X11 based lisp interpreter
+COMMENT=	Statistics/X11 based lisp interpreter
 
-GNU_CONFIGURE=	yes
-ALL_TARGET=	${PORTNAME}
+LICENSE=	BSD
+
 USE_XORG=	x11
-
-post-patch:
-	@${REINPLACE_CMD} '/^static double fmax/d' ${WRKSRC}/lowess.c
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	UCFLAGS="${CFLAGS}"
+ALL_TARGET=	${PORTNAME}
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
