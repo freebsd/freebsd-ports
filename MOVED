@@ -4363,4 +4363,11 @@ databases/php-sqlite3||2013-06-03|Has expired: No upstream development and super
 databases/mysql50-server||2013-06-04|Unsupported upstream since 2012-01-09
 databases/mysql50-client||2013-06-04|Unsupported upstream since 2012-01-09
 databases/mysql50-scripts||2013-06-04|Unsupported upstream since 2012-01-09
-databases/p5-DBD-mysql50||2013-06-04|Depends on databases/mysql41-server, which was removed
+databases/p5-DBD-mysql50||2013-06-04|Depends on databases/mysql50-server, which was removed
+databases/postgresql83-client||2013-06-04|Has expired: Update to supported version
+databases/postgresql83-contrib||2013-06-04|Has expired: Update to supported version
+databases/postgresql83-docs||2013-06-04|Has expired: Update to supported version
+databases/postgresql83-plperl||2013-06-04|Has expired: Update to supported version
+databases/postgresql83-plpython||2013-06-04|Has expired: Update to supported version
+databases/postgresql83-pltcl||2013-06-04|Has expired: Update to supported version
+databases/postgresql83-server||2013-06-04|Has expired: Update to supported version
