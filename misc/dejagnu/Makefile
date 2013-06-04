@@ -6,7 +6,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	misc tcl tk
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Automated program/system tester
 
 LICENSE=	GPLv3
