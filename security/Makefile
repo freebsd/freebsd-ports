@@ -604,7 +604,6 @@
     SUBDIR += pam-pgsql
     SUBDIR += pam_abl
     SUBDIR += pam_alreadyloggedin
-    SUBDIR += pam_authsrv
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
