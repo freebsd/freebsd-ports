@@ -15,11 +15,8 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2\
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	MYSQL "MySQL database support" off \
-		SQLITE3 "SQLite 3.x database support" off \
-		FIREBIRD "Firebird (Interbase) database support" off \
-		PGSQL "PostgreSQL database support" off \
-		CLANG "Build harbour with Clang (gcc if disabled)" off
+OPTIONS_DEFINE=	MYSQL SQLITE FIREBIRD PGSQL CLANG
+CLANG_DESC=	Build harbour with Clang (gcc if disabled)
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	does not compile on sparc64: assertion failed
@@ -84,15 +81,15 @@ MAKE_ENV=	HB_ARCHITECTURE=${HB_ARCH} \
 		HB_USER_CFLAGS=${HB_USER_CFLAGS} \
 		HB_USER_LDFLAGS=${HB_USER_LDFLAGS}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	HB_INSTALL_DOC=${DOCSDIR}
 .else
 MAKE_ENV+=	HB_INSTALL_DOC=no
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_CLANG)
+.if ${PORT_OPTIONS:MCLANG}
 HB_COMPILER=	clang
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
@@ -102,14 +99,14 @@ HB_COMPILER=	gcc
 USE_GCC=	4.2+
 .endif
 
-.if defined(WITH_FIREBIRD)
+.if ${PORT_OPTIONS:MFIREBIRD}
 USE_FIREBIRD=	yes
 MAKE_ENV+=	HB_WITH_FIREBIRD=nolocal
 .else
 MAKE_ENV+=	HB_WITH_FIREBIRD=no
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 MAKE_ENV+=	HB_WITH_SQLITE3=nolocal
 PLIST_SUB+=	WITH_SQLITE3=""
@@ -118,14 +115,14 @@ MAKE_ENV+=	HB_WITH_SQLITE3=no
 PLIST_SUB+=	WITH_SQLITE3="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 MAKE_ENV+=	HB_WITH_MYSQL=nolocal
 .else
 MAKE_ENV+=	HB_WITH_MYSQL=no
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 MAKE_ENV+=	HB_WITH_PGSQL=nolocal
 .else

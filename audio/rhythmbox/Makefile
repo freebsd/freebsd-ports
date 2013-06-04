@@ -42,30 +42,27 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	rhythmbox.schemas
 
-OPTIONS=	DAAP "Enable iTunes music sharing" off \
-		IPOD "Enable iPod support" on \
-		FAAD "Enable FAAD decoder support" off \
-		NOTIFY "Enable libnotify support" on \
-		VORBIS "Enable Ogg/Vorbis support" on \
-		LIRC "Enable Infrared syncing support" off \
-		MTP "Enable MS Media Transfer Protocol support" off \
-		ITMS_PLUGIN "Enable iTunes browser plugin" on
+OPTIONS_DEFINE=	DAAP IPOD FAAD NOTIFY VORBIS LIRC MTP ITMS_PLUGIN
+OPTIONS_DEFAULT=	IPOD NOTIFY VORBIS ITMS_PLUGIN
+DAAP_DESC=		iTunes music sharing
+IPOD_DESC=		iPod support
+ITMS_PLUGIN_DESC=	iTunes browser plugin
 
 MAN1=		rhythmbox-client.1 rhythmbox.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 USE_GSTREAMER+=		vorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
 .endif
 
-.if defined(WITH_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 USE_GSTREAMER+=		faad
 .endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 CONFIGURE_ARGS+=--enable-lirc
@@ -74,7 +71,7 @@ CONFIGURE_ARGS+=--disable-lirc
 PLIST_SUB+=	LIRC="@comment "
 .endif
 
-.if defined(WITH_MTP)
+.if ${PORT_OPTIONS:MMTP}
 LIB_DEPENDS+=		mtp:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=		MTP=""
 CONFIGURE_ARGS+=	--with-mtp
@@ -83,7 +80,7 @@ CONFIGURE_ARGS+=	--without-mtp
 PLIST_SUB+=		MTP="@comment "
 .endif
 
-.if defined(WITH_DAAP)
+.if ${PORT_OPTIONS:MDAAP}
 CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
 LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app \
     			gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
@@ -96,7 +93,7 @@ CONFIGURE_ARGS+=	--disable-daap
 PLIST_SUB+=		DAAP="@comment "
 .endif
 
-.if !defined(WITHOUT_NOTIFY)
+.if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS+=		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 .else
@@ -114,7 +111,7 @@ CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if !defined(WITHOUT_IPOD)
+.if ${PORT_OPTIONS:MIPOD}
 LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-ipod
 PLIST_SUB+=	IPOD=""
@@ -123,7 +120,7 @@ CONFIGURE_ARGS+=--without-ipod
 PLIST_SUB+=	IPOD="@comment "
 .endif
 
-.if !defined(WITHOUT_ITMS_PLUGIN)
+.if ${PORT_OPTIONS:MITMS_PLUGIN}
 USE_WEBPLUGINS=	gecko18
 WEBPLUGINS_FILES=librhythmbox-itms-detection-plugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
@@ -136,4 +133,4 @@ CONFIGURE_ARGS+=--disable-browser-plugin
 PLIST_SUB+=	ITMS_PLUGIN="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

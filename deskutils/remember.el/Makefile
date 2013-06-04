@@ -1,9 +1,5 @@
-# New ports collection makefile for:	remember.el
-# Date created:				March 09 2005
-# Whom:					Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	remember.el
 PORTVERSION=	2.0
@@ -21,8 +17,9 @@ USE_GMAKE=	yes
 
 INFO=		remember remember-extra
 
-OPTIONS=	BBDB "BBDB support" off
-OPTIONS+=	PLANNER "Planner.el support" off
+OPTIONS_DEFINE=	BBDB PLANNER
+BBDB_DESC=	BBDB support
+PLANNER_DESC=	Planner.el support
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +27,7 @@ OPTIONS+=	PLANNER "Planner.el support" off
 IGNORE=		incorporated into Emacs 23/24
 .endif
 
-.if !defined(WITHOUT_BBDB)
+.if ${PORT_OPTIONS:MBBDB}
 .if ${EMACS_NAME} == "xemacs"
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages
 .else
@@ -41,7 +38,7 @@ PLIST_SUB+=	HAS_BBDB=""
 PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
-.if !defined(WITHOUT_PLANNER)
+.if ${PORT_OPTIONS:MPLANNER}
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
 PLIST_SUB+=	HAS_PLANNER=""
 .else

@@ -1,7 +1,4 @@
-# Ports collection makefile for:	spidermonkey
-# Date created:		Fri Apr 18, 2003
-# Whom:			Dan Rench <citric@cubicone.tmetic.com>
-#
+# Created by: Dan Rench <citric@cubicone.tmetic.com>
 # $FreeBSD$
 
 PORTNAME=	spidermonkey17
@@ -44,11 +41,11 @@ PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
 WRKSRC=		${WRKDIR}/${SRC_DIR}
 EXTRACT_AFTER_ARGS= --exclude js/jsd
 
-OPTIONS=	UTF8 "Enable UTF8 support" Off
+OPTIONS_DEFINE=	UTF8
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_UTF8)
+.if ${PORT_OPTIONS:MUTF8}
 CFLAGS+=	-DJS_C_STRINGS_ARE_UTF8
 .endif
 

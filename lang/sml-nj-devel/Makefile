@@ -1,9 +1,5 @@
-# New ports collection makefile for: sml/nj
-# Date created:        7 July 1998
-# Whom:                jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	smlnj
 PORTVERSION=	110.71
@@ -23,9 +19,10 @@ USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	i386
 
-OPTIONS=	EVERYTHING "install everything from the SML/NJ distribution" off \
-		RECOMPILE  "recompile the SML compiler - implies EVERYTHING" off \
-		POSITION64 "use 64bit fi""le positions - implies RECOMPILE"  off
+OPTIONS_DEFINE=	EVERYTHING RECOMPILE POSITION64
+EVERYTHING_DESC=	install everything from the SML/NJ distribution
+RECOMPILE_DESC=		recompile the SML compiler - implies EVERYTHING
+POSITION64_DESC=	use 64bit fi""le positions - implies RECOMPILE
 
 SUB_FILES=	pkg-install
 SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
@@ -45,18 +42,18 @@ DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz ml-lpt.tgz \
 
 PLIST_SUB=	MLARCH=${MLARCH}
 
-.if defined(WITH_POSITION64)
+.if ${PORT_OPTIONS:MPOSITION64}
 WITH_RECOMPILE?=	${WITH_POSITION64}
 CMB_COMMAND=	'(\#set o CMB.symval) "USE_64_BIT_POSITIONS" (SOME 1);'
 .else
 CMB_COMMAND=
 .endif
 
-.if defined(WITH_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 WITH_EVERYTHING?=	${WITH_RECOMPILE}
 .endif
 
-.if defined(WITH_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 DISTFILES+=	cm.tgz compiler.tgz eXene.tgz ml-burg.tgz \
 		nlffi.tgz pgraph.tgz smlnj-c.tgz system.tgz
 .endif
@@ -76,7 +73,7 @@ MLSRCS+=	${MLROOT}/${srcdir}
 MLTARGETS=	heap2asm
 MLEXE=		heap2exec ml-antlr ml-build ml-lex ml-makedepend \
 		ml-ulex ml-yacc sml
-.if defined(WITH_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLTARGETS+=	eXene ml-burg ml-nlffi-lib ml-nlffigen \
 		mlrisc-tools nowhere pgraph-util src-smlnj
 MLEXE+=		ml-burg ml-nlffigen nowhere
@@ -89,7 +86,7 @@ MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything \
 
 pre-fetch:
 	@${ECHO}
-.if !defined(WITH_EVERYTHING)
+.if ! ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build/install'
 	@${ECHO} ' eXene (X Windows toolkit),'
 	@${ECHO} ' ml-burg (tree transformer),'
@@ -97,11 +94,11 @@ pre-fetch:
 	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
 	@${ECHO} ' various libraries, and all the sources.'
 .endif
-.if !defined(WITH_RECOMPILE)
+.if ! ${PORT_OPTIONS:MRECOMPILE}
 	@${ECHO} 'Use make WITH_RECOMPILE=yes to recompile the compiler.'
 	@${ECHO} ' This implies WITH_EVERYTHING.'
 .endif
-.if !defined(WITH_POSITION64)
+.if ! ${PORT_OPTIONS:MPOSITION64}
 	@${ECHO} 'Use make WITH_POSITION64=yes to use 64bit file positions.'
 	@${ECHO} ' This implies WITH_RECOMPILE.'
 .endif
@@ -128,7 +125,7 @@ do-configure:
 # Recompilation requires ml-lex and ml-yacc. All requested targets
 # will be built later using the recompiled core system after
 # removing targets.customized. See "do-build" below.
-.if defined(WITH_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 	( ${ECHO_CMD} "request	ml-yacc" && \
 	  ${ECHO_CMD} "request	ml-lex" && \
 	  ${ECHO_CMD} "request	ml-lex-mllex-tool" && \
@@ -141,7 +138,7 @@ do-configure:
 # a subsequent make install.
 # See base/system/README for information on recompiling the compiler.
 
-.if defined(WITH_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 RECOMPILEDIR=	base/system
 .else
 RECOMPILEDIR=
@@ -159,7 +156,7 @@ MLSTANDARDPATCHDIRS_CMD=	cd ${FILESDIR} && \
 			  do if ${LS} do-patch-$${srcdir}_* 1>&- 2>&- ; \
 			     then ${ECHO_CMD} -n $${srcdir} " " ; break ; fi ; \
 			  done ) || ${TRUE}
-.if defined(WITH_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLSOURCEPATCHES_CMD=	cd ${FILESDIR} && \
 			( ${LS} do-patch-* 2>&- || \
 			  ${TRUE} )
@@ -176,7 +173,7 @@ do-build:
 	MLSTANDARDPATCHDIRS=`${MLSTANDARDPATCHDIRS_CMD}` \
 	MLSOURCEPATCHES=`${MLSOURCEPATCHES_CMD}` \
 	./config/install.sh
-.if defined(WITH_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 	-${RM} ${WRKDIR}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
 	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
@@ -205,9 +202,9 @@ do-build:
 # Nowadays PLIST has to be computed before installation. We do it in
 # "pre-install" because source extraction happens during "build".
 
-.if defined(WITH_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLNOINSTALL=	.cm
-.if defined(WITH_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 MLNOINSTALL+=	sml.bin.${MLARCH}-unix sml.boot.${MLARCH}-unix \
 		sml.lib sml.${MLARCH}-bsd
 .endif
@@ -248,7 +245,7 @@ pre-install:
 # In case of recompilation, installml installs the sml heap and the
 # libraries built during compiler bootstrap to ${MLBIN} and ${MLLIB}.
 
-.if defined(WITH_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLSRCEXCLUDES=
 .for excl in ${MLNOINSTALL}
 MLSRCEXCLUDES+=	--exclude "${excl}"
@@ -257,7 +254,7 @@ MLSRCEXCLUDES+=	--exclude "${excl}"
 
 do-install:
 	${MKDIR} "${MLROOT}"
-.if !defined(WITH_RECOMPILE)
+.if ! ${PORT_OPTIONS:MRECOMPILE}
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	INSTALLDIR="${MLROOT}" ./config/install.sh
@@ -281,7 +278,7 @@ do-install:
 	( eval $${MLARCHOPSYS} ; \
 	${STRIP_CMD} "${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" )
 	@${CHOWN} -R ${BINOWN}:${BINGRP} "${MLBIN}" "${MLLIB}"
-.if defined(WITH_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} '(* Cleaning base/runtime: *)'
 	cd ${WRKDIR}/base/runtime/objs && ${GMAKE} clean
 	@${ECHO} -n '(* Installing sources into ${MLROOT} ...'

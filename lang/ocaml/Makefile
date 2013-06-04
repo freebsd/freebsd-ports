@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml
-# Date created:		24 December 1996
-# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	ocaml
 PORTVERSION=	3.12.1
@@ -28,11 +24,11 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" -cc "${CC}" -as "${AS}" \
 		-aspp "${CC} -c" -partialld "${LD} -r"
-OPTIONS=	X11	"Build with X11 support" on \
-		TK	"Build LablTk library (requires X11 support)" on \
-		THREADS	"Build with Posix threads support" on \
-		CMP_LIB	"Install compiler's libraries" off \
-		OPT_DEF	"Use system-optimized binaries by default" off
+OPTIONS_DEFINE=	X11 TK THREADS CMP_LIB OPT_DEF
+OPTIONS_DEFAULT=	X11 TK THREADS
+TK_DESC=	LablTk library (requires X11 support)
+CMP_LIB_DESC=	Install compiler's libraries
+OPT_DEF_DESC=	Use system-optimized binaries by default
 
 MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]
@@ -51,7 +47,7 @@ PLIST_SUB+=	PROF=""
 
 .include "${FILESDIR}/manfiles"
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD=		${PTHREAD_LIBS}
@@ -62,7 +58,7 @@ THR_LD=		#empty
 CONFIGURE_ARGS+=-no-pthread
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	X11=""
 USE_XORG=	x11
 CONFIGURE_ARGS+=-x11include ${LOCALBASE}/include -x11lib ${LOCALBASE}/lib
@@ -74,9 +70,9 @@ CONFLICTS+=	ocaml-[0-9]* ocaml-notk-[0-9]*
 CONFIGURE_ARGS+=-no-x11
 .endif
 
-.if defined(WITHOUT_TK)
+.if ! ${PORT_OPTIONS:MTK}
 PLIST_SUB+=	TK="@comment "
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 SFX=		-notk
 CONFLICTS+=	ocaml-[0-9]* ocaml-nox11-[0-9]*
 .endif
@@ -115,7 +111,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$(CC)|' \
 		${WRKSRC}/*/Makefile \
 		${WRKSRC}/*/*/Makefile
-.if defined(WITH_TK)
+.if ${PORT_OPTIONS:MTK}
 	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|' \
 		${WRKSRC}/otherlibs/labltk/examples_labltk/hello.tcl
 .endif
@@ -146,7 +142,7 @@ check test: install
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
-.if !defined(WITHOUT_TK)
+.if ${PORT_OPTIONS:MTK}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/otherlibs/labltk && \
 		${COPYTREE_SHARE} examples_labltk ${EXAMPLESDIR} \
@@ -164,7 +160,7 @@ post-install:
 	@${CHMOD} 644 ${PREFIX}/lib/ocaml/ld.conf
 
 # Do we want .opt version of tools to be the default ?
-.if defined(WITH_OPT_DEF)
+.if ${PORT_OPTIONS:MOPT_DEF}
 . for module in ${MODOPT}
 #	First, we save bytecode version
 	@${MV} ${PREFIX}/bin/${module} ${PREFIX}/bin/${module}.byte
@@ -177,7 +173,7 @@ post-install:
 .endif
 
 # Add compiler's libs if required
-.if defined(WITH_CMP_LIB)
+.if ${PORT_OPTIONS:MCMP_LIB}
 	@${MKDIR}  ${PREFIX}/lib/ocaml/compiler-lib
 	@${INSTALL_DATA} ${WRKSRC}/utils/*.cm* ${PREFIX}/lib/ocaml/compiler-lib
 	@${INSTALL_DATA} ${WRKSRC}/utils/*.o ${PREFIX}/lib/ocaml/compiler-lib

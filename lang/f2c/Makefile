@@ -1,9 +1,5 @@
-# Ports collection makefile for:	f2c-freebsd
-# Date created:				28 DEC 1998
-# Whom:					Steven G. Kargl
-#
+# Created by: Steven G. Kargl
 # $FreeBSD$
-#
 
 PORTNAME=	f2c
 PORTVERSION=	20060810
@@ -24,13 +20,16 @@ GUNZIP_CMD=	minigzip -d
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	LEAD_0 "Print with leading zeros" Off
+OPTIONS_DEFINE=	LEAD_0
+LEAD_0_DESC=	Print with leading zeros
 
 
 # Set FCNAME to the name of the Fortran 77 / F2C wrapper.
 FCNAME?=	fc
 PLIST_SUB=	FCNAME=${FCNAME}
-.if defined(WITH_FC)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFC}
 PLIST_SUB+=	FC=""
 .else
 PLIST_SUB+=	FC="@comment "
@@ -53,7 +52,7 @@ pre-patch:
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/fc
-.if !defined(WITHOUT_LEAD_0)
+.if ${PORT_OPTIONS:MLEAD_0}
 	${REINPLACE_CMD} -e 's|CFLAGS += -fPIC|CFLAGS += -fPIC -DWANT_LEAD_0|' ${WRKSRC}/libf2c/Makefile
 	${REINPLACE_CMD} -e 's|#CFLAGS = -O|CFLAGS = -O -DWANT_LEAD_0|' ${WRKSRC}/src/Makefile
 .endif
@@ -71,7 +70,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/f2c ${PREFIX}/bin
-.if defined(WITH_FC)
+.if defined(WITH_MFC)
 	${INSTALL_SCRIPT} ${WRKSRC}/fc ${PREFIX}/bin/${FCNAME}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/src/f2c.h ${PREFIX}/include
@@ -81,7 +80,7 @@ do-install:
 	${LN} -sf libf2c.so.2 ${PREFIX}/lib/libf2c.so
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
