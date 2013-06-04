@@ -110,6 +110,7 @@ horde-Horde_View-DEPEND=	${PEARDIR}/Horde/View.php:${PORTSDIR}/devel/pear-Horde_
 horde-Horde_Xml_Element-DEPEND=	${PEARDIR}/Horde/Xml/Element.php:${PORTSDIR}/textproc/pear-Horde_Xml_Element
 horde-Horde_Xml_Wbxml-DEPEND=	${PEARDIR}/Horde/Xml/Wbxml.php:${PORTSDIR}/textproc/pear-Horde_Xml_Wbxml
 horde-content-DEPEND=		${LOCALBASE}/${HORDE_DIR}/content/lib/Tagger.php:${PORTSDIR}/devel/horde-content
+horde-gollem-DEPEND=		${LOCALBASE}/${HORDE_DIR}/gollem/index.php:${PORTSDIR}/ftp/horde-gollem
 horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:${PORTSDIR}/www/horde-base
 horde-imp-DEPEND=		${LOCALBASE}/${HORDE_DIR}/imp/index.php:${PORTSDIR}/mail/horde-imp
 horde-ingo-DEPEND=		${LOCALBASE}/${HORDE_DIR}/ingo/index.php:${PORTSDIR}/mail/horde-ingo
@@ -117,6 +118,7 @@ horde-kronolith-DEPEND=		${LOCALBASE}/${HORDE_DIR}/kronolith/index.php:${PORTSDI
 horde-mnemo-DEPEND=		${LOCALBASE}/${HORDE_DIR}/mnemo/index.php:${PORTSDIR}/deskutils/horde-mnemo
 horde-nag-DEPEND=		${LOCALBASE}/${HORDE_DIR}/nag/index.php:${PORTSDIR}/deskutils/horde-nag
 horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:${PORTSDIR}/devel/horde-timeobjects
+horde-trean-DEPEND=		${LOCALBASE}/${HORDE_DIR}/trean/index.php:${PORTSDIR}/www/horde-trean
 horde-turba-DEPEND=		${LOCALBASE}/${HORDE_DIR}/turba/index.php:${PORTSDIR}/mail/horde-turba
 
 .if defined(USE_HORDE_RUN)
