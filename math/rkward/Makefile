@@ -30,10 +30,12 @@ FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
-.if defined(WITHOUT_NLS)
-NLS=		"@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 NLS=		""
+.else
+NLS=		"@comment "
 .endif
 PLIST_SUB+=	NLS=${NLS}
 
@@ -45,11 +47,11 @@ pre-configure:
 		${PHP2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|-lgfortran|-L${FORTRANLIBDIR2} -lgfortran|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|rkward po doc|rkward po|'	\
 		${WRKSRC}/Makefile.in
 .endif
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e 's|SUBDIRS = rkward po|SUBDIRS = rkward|'	\
 		${WRKSRC}/Makefile.in
 .endif

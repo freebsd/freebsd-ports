@@ -32,13 +32,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 MAN1=		rkward.1
 
-.if defined(WITHOUT_NLS)
-NLS=		"@comment "
-.else
-NLS=		""
-.endif
-PLIST_SUB+=	NLS=${NLS}
-
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
 .endif
@@ -48,6 +41,13 @@ RECDEP_DESC=	Recommended runtime dependencies
 OPTIONS_DEFAULT=RECDEP
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+NLS=		""
+.else
+NLS=		"@comment "
+.endif
+PLIST_SUB+=	NLS=${NLS}
 
 .if ${PORT_OPTIONS:MRECDEP}
 LR_MOD_DIR=	${LOCALBASE}/lib/R/library
@@ -62,7 +62,7 @@ RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:${PORTSDIR}/textproc/R-cran-R2HTML	\
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
 		${WRKSRC}/rkward/rbackend/rkfrontendtransmitter.cpp
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(doc)|#ADD_SUBDIRECTORY(doc)|'	\
 		${WRKSRC}/CMakeLists.txt
 .else
@@ -70,7 +70,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's,V4.1-Based Variant V1.0,V4.2-Based Variant V1.1,g' \
 		${WRKSRC}/doc/rkward/index.docbook
 .endif
-.if defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(po)|#ADD_SUBDIRECTORY(po)|'	\
 		${WRKSRC}/CMakeLists.txt
 .endif
