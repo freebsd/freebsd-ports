@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.0
 CATEGORIES=	dns net pear
 
 MAINTAINER=	miwi@FreeBSD.org
