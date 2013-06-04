@@ -1,11 +1,10 @@
-# Created by:	Adam Weinberger <adamw@FreeBSD.org>
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	easytag
-PORTVERSION=	2.1.7
-PORTREVISION=	3
+PORTVERSION=	2.1.8
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28gtk%202%29/${PORTVERSION:C/\.[0-9]+$//}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GTK2 Tag editor for MP3 and OGG files
@@ -19,9 +18,11 @@ LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib \
 MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USES=		gettext
+USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GTK
 LDFLAGS+=	-L${LOCALBASE}/lib
