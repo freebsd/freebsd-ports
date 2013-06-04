@@ -25,6 +25,9 @@ LDCONFIG_LIB32=	${LDCONFIG} -32
 
 .include <bsd.port.pre.mk>
 
+ONLY_FOR_ARCH=	i386 amd64
+ONLY_FOR_ARCH_REASON= FreeBSD 4.x did not support this architecture
+
 COMPAT4X_ARCH=	${ARCH}
 COMPAT4X_OSVERSION=	5.3
 PLIST=			${.CURDIR}/pkg-plist.freebsd5
@@ -38,12 +41,6 @@ TARGET_DIR=		${TARGET32_DIR}
 PLIST_SUB+=		LIBDIR="lib32"
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 			${PORTNAME}.ab
-.elif ${ARCH} == alpha
-PLIST_SUB+=		LIBDIR="lib"
-COMPAT4X_DISTFILES=	${PORTNAME}.aa \
-			${PORTNAME}.ab
-.else
-IGNORE=			is unsupported (FreeBSD 4.x did not run on this architecture)
 .endif
 
 .if ${COMPAT4X_ARCH} == i386
