@@ -132,6 +132,7 @@
     SUBDIR += pecl-lzf
     SUBDIR += pecl-phk
     SUBDIR += pecl-rar
+    SUBDIR += php-horde_lz4
     SUBDIR += php5-bz2
     SUBDIR += php5-phar
     SUBDIR += php5-zip
