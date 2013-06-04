@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liblbfgs
-# Date created:		2010-06-08
-# Whom:			Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liblbfgs
 PORTVERSION=	1.10
@@ -11,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://cloud.github.com/downloads/chokkan/liblbfgs/
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
+COMMENT=	Library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,16 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env
 
-OPTIONS=	OPTIMIZED "Enable SSE2 optimization routines" Off
+OPTIONS_DEFINE=	OPTIMIZED
+OPTIMIZED_DESC=	SSE2 optimization routines
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 700000)
-IGNORE=	does not install properly on 6.x
-.endif
+.include <bsd.port.options.mk>
 
 # Enable/disable compilation optimizations.
-.if defined(WITH_OPTIMIZED)
+.if ${PORT_OPTIONS:MOPTIMIZED}
 CONFIGURE_ARGS+=	--enable-sse2
 .endif
 
@@ -38,8 +31,8 @@ PLIST_FILES=	lib/liblbfgs-1.10.so.0.0 lib/liblbfgs.a lib//liblbfgs.la \
 PORTDOCS=	README INSTALL COPYING AUTHORS ChangeLog NEWS
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
