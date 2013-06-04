@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,13 +10,12 @@ MASTER_SITE_SUBDIR=	individual/${XORG_CAT}/${PORTNAME}
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
 XORG_CAT=	data
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intlhack
+USE_GNOME=	intlhack libxslt:build
 USES=		pathfix
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
