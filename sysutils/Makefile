@@ -752,6 +752,7 @@
     SUBDIR += pydf
     SUBDIR += pyrenamer
     SUBDIR += qjail
+    SUBDIR += qjail2
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += quicksynergy
