@@ -1146,7 +1146,6 @@
     SUBDIR += linux-f10-ncurses-base
     SUBDIR += linux-f10-nspr
     SUBDIR += linux-f10-sdl12
-    SUBDIR += linux-js
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
