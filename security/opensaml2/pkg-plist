@@ -25,6 +25,7 @@ include/saml/saml2/metadata/AbstractMetadataProvider.h
 include/saml/saml2/metadata/DiscoverableMetadataProvider.h
 include/saml/saml2/metadata/DynamicMetadataProvider.h
 include/saml/saml2/metadata/EndpointManager.h
+include/saml/saml2/metadata/EntityMatcher.h
 include/saml/saml2/metadata/Metadata.h
 include/saml/saml2/metadata/MetadataCredentialContext.h
 include/saml/saml2/metadata/MetadataCredentialCriteria.h
@@ -46,7 +47,7 @@ include/saml/signature/SignableObject.h
 include/saml/signature/SignatureProfileValidator.h
 include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
-lib/libsaml.so.7
+lib/libsaml.so.8
 lib/libsaml.so
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -67,6 +68,8 @@ share/xml/opensaml/cs-sstc-schema-assertion-01.xsd
 share/xml/opensaml/cs-sstc-schema-protocol-01.xsd
 share/xml/opensaml/cs-sstc-schema-assertion-1.1.xsd
 share/xml/opensaml/cs-sstc-schema-protocol-1.1.xsd
+share/xml/opensaml/saml-async-slo-v1.0.xsd
+share/xml/opensaml/saml-metadata-rpi-v1.0.xsd
 share/xml/opensaml/saml-schema-assertion-2.0.xsd
 share/xml/opensaml/saml-schema-authn-context-2.0.xsd
 share/xml/opensaml/saml-schema-authn-context-auth-telephony-2.0.xsd

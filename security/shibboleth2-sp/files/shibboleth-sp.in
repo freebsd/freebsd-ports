@@ -11,9 +11,43 @@
 name="shibboleth_sp"
 rcvar=shibboleth_sp_enable
 
+: ${shibboleth_sp_enable:='NO'}
+: ${shibboleth_sp_flags:=''}
+
 command=${shibboleth_sp_program:-%%PREFIX%%/sbin/shibd}
-pidfile="${shibboleth_sp_pidfile:-/var/run/${name}.pid}"
-command_args="-f -p ${pidfile}"
+pidfile="${shibboleth_sp_pidfile:-/var/run/shibboleth/${name}.pid}"
+start_precmd="shibboleth_sp_configtest"
+restart_precmd="shibboleth_sp_configtest"
+configtest_cmd="shibboleth_sp_configtest"
+keygen_cmd="shibboleth_sp_keygen"
+
+shibboleth_sp_user=%%SHIBD_USER%%
+shibboleth_sp_group=%%SHIBD_GROUP%%
 
 load_rc_config $name
+
+command_args="-f -p ${pidfile} -u ${shibboleth_sp_user} -g ${shibboleth_sp_group}"
+confdir=${SHIBSP_CFGDIR:-%%PREFIX%%/etc}/shibboleth
+cert=sp-cert.pem
+key=sp-key.pem
+
+shibboleth_sp_configtest() {
+	if [ ! -s ${confdir}/${key} -o ! -s ${confdir}/${cert} ]; then
+		run_rc_command keygen
+	else
+		# update from 2.4.x, chown %%SHIBD_USER%% the key and cert
+	       	for f in ${confdir}/${key} ${confdir}/${cert}; do
+			set X `stat ${f}`
+			test $6 != ${shibboleth_sp_user} && chown ${shibboleth_sp_user}:${shibboleth_sp_group} ${f}
+		done
+	fi
+	${command} ${shibboleth_sp_flags} -u ${shibboleth_sp_user} -g ${shibboleth_sp_group} -t
+}
+
+shibboleth_sp_keygen() {
+	%%SH%% ${confdir}/keygen.sh -o ${confdir} -u ${shibboleth_sp_user} -g ${shibboleth_sp_group}
+}
+
+extra_commands="configtest keygen"
+
 run_rc_command "$1"

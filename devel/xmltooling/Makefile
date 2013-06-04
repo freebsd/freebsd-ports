@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	xmltooling
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel security
-MASTER_SITES=	http://www.shibboleth.net/downloads/c++-opensaml/2.4.3/
+MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.5.2/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		log4shib.1:${PORTSDIR}/devel/log4shib \
 		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
-		xml-security-c.16:${PORTSDIR}/security/apache-xml-security-c
+		xml-security-c.17:${PORTSDIR}/security/apache-xml-security-c
+	
+BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
