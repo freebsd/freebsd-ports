@@ -43,6 +43,7 @@ horde-Horde_Exception-DEPEND=	${PEARDIR}/Horde/Exception.php:${PORTSDIR}/devel/p
 horde-Horde_Feed-DEPEND=	${PEARDIR}/Horde/Feed.php:${PORTSDIR}/www/pear-Horde_Feed
 horde-Horde_Form-DEPEND=	${PEARDIR}/Horde/Form.php:${PORTSDIR}/www/pear-Horde_Form
 horde-Horde_Group-DEPEND=	${PEARDIR}/Horde/Group/Base.php:${PORTSDIR}/security/pear-Horde_Group
+horde-Horde_HashTable-DEPEND=	${PEARDIR}/Horde/HashTable/Base.php:${PORTSDIR}/databases/pear-Horde_HashTable
 horde-Horde_History-DEPEND=	${PEARDIR}/Horde/History.php:${PORTSDIR}/devel/pear-Horde_History
 horde-Horde_Http-DEPEND=	${PEARDIR}/Horde/Http.php:${PORTSDIR}/www/pear-Horde_Http
 horde-Horde_Icalendar-DEPEND=	${PEARDIR}/Horde/Icalendar.php:${PORTSDIR}/devel/pear-Horde_Icalendar
