@@ -13,9 +13,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Petri-Net Simulator for Xwindows
 
 NO_WRKSUBDIR=	yes
+
 USE_XORG=	x11 xaw
 MAKEFILE=	makefile
 ALL_TARGET=	pns
+MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	*
+PLIST_FILES=	bin/xpns \
+		libexec/xpns/pns \
+		%%DATADIR%%/pns.hlp \
+		%%DATADIR%%/pns.shell
+PLIST_DIRS=	%%DATADIR%% \
+		libexec/xpns
 
 .include <bsd.port.options.mk>
 
@@ -23,15 +33,14 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xpns
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xpns ${PREFIX}/bin/xpns
-	${MKDIR} ${PREFIX}/libexec/xpns
-	${INSTALL_PROGRAM} ${WRKSRC}/pns ${PREFIX}/libexec/xpns
-	${MKDIR} ${PREFIX}/share/xpns
-	${INSTALL_DATA} ${WRKSRC}/pns.hlp ${PREFIX}/share/xpns
-	${INSTALL_DATA} ${WRKSRC}/pns.shell ${PREFIX}/share/xpns
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} xpns ${PREFIX}/bin)
+	@${MKDIR} ${PREFIX}/libexec/xpns
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pns ${PREFIX}/libexec/xpns)
+	@${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} pns.hlp pns.shell ${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/xpns
-	${INSTALL_DATA} ${WRKSRC}/*.net ${PREFIX}/share/doc/xpns
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.net ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
