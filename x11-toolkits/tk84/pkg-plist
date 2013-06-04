@@ -95,7 +95,6 @@ lib/tk%%TK_VER%%/demos/ruler.tcl
 lib/tk%%TK_VER%%/demos/sayings.tcl
 lib/tk%%TK_VER%%/demos/search.tcl
 lib/tk%%TK_VER%%/demos/spin.tcl
-lib/tk%%TK_VER%%/demos/square
 lib/tk%%TK_VER%%/demos/states.tcl
 lib/tk%%TK_VER%%/demos/style.tcl
 lib/tk%%TK_VER%%/demos/tclIndex

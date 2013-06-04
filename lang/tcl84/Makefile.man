@@ -237,7 +237,6 @@ MAN3=	TCL_MEM_DEBUG.${MAN_SUFFIX}.3 \
 	Tcl_GetMaster.${MAN_SUFFIX}.3 \
 	Tcl_GetMathFuncInfo.${MAN_SUFFIX}.3 \
 	Tcl_GetNameOfExecutable.${MAN_SUFFIX}.3 \
-	Tcl_GetOSTypeFromObj.${MAN_SUFFIX}.3 \
 	Tcl_GetObjResult.${MAN_SUFFIX}.3 \
 	Tcl_GetObjType.${MAN_SUFFIX}.3 \
 	Tcl_GetOpenFile.${MAN_SUFFIX}.3 \
@@ -298,10 +297,6 @@ MAN3=	TCL_MEM_DEBUG.${MAN_SUFFIX}.3 \
 	Tcl_ListObjLength.${MAN_SUFFIX}.3 \
 	Tcl_ListObjReplace.${MAN_SUFFIX}.3 \
 	Tcl_LogCommandInfo.${MAN_SUFFIX}.3 \
-	Tcl_MacConvertTextResource.${MAN_SUFFIX}.3 \
-	Tcl_MacEvalResource.${MAN_SUFFIX}.3 \
-	Tcl_MacFindResource.${MAN_SUFFIX}.3 \
-	Tcl_MacSetEventProc.${MAN_SUFFIX}.3 \
 	Tcl_Main.${MAN_SUFFIX}.3 \
 	Tcl_MakeFileChannel.${MAN_SUFFIX}.3 \
 	Tcl_MakeSafe.${MAN_SUFFIX}.3 \
@@ -316,7 +311,6 @@ MAN3=	TCL_MEM_DEBUG.${MAN_SUFFIX}.3 \
 	Tcl_NewIntObj.${MAN_SUFFIX}.3 \
 	Tcl_NewListObj.${MAN_SUFFIX}.3 \
 	Tcl_NewLongObj.${MAN_SUFFIX}.3 \
-	Tcl_NewOSTypeObj.${MAN_SUFFIX}.3 \
 	Tcl_NewObj.${MAN_SUFFIX}.3 \
 	Tcl_NewStringObj.${MAN_SUFFIX}.3 \
 	Tcl_NewUnicodeObj.${MAN_SUFFIX}.3 \
@@ -394,7 +388,6 @@ MAN3=	TCL_MEM_DEBUG.${MAN_SUFFIX}.3 \
 	Tcl_SetLongObj.${MAN_SUFFIX}.3 \
 	Tcl_SetMainLoop.${MAN_SUFFIX}.3 \
 	Tcl_SetMaxBlockTime.${MAN_SUFFIX}.3 \
-	Tcl_SetOSTypeObj.${MAN_SUFFIX}.3 \
 	Tcl_SetObjErrorCode.${MAN_SUFFIX}.3 \
 	Tcl_SetObjLength.${MAN_SUFFIX}.3 \
 	Tcl_SetObjResult.${MAN_SUFFIX}.3 \
@@ -581,7 +574,6 @@ MANN=	SafeBase.${MAN_SUFFIX}.n \
 	registry.${MAN_SUFFIX}.n \
 	regsub.${MAN_SUFFIX}.n \
 	rename.${MAN_SUFFIX}.n \
-	resource.${MAN_SUFFIX}.n \
 	return.${MAN_SUFFIX}.n \
 	scan.${MAN_SUFFIX}.n \
 	seek.${MAN_SUFFIX}.n \

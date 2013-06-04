@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-04-17 22:29:49.000000000 +0200
-+++ Makefile.in	2009-02-26 11:41:29.840998305 +0100
-@@ -57,6 +57,8 @@
+--- Makefile.in.orig	2013-05-28 17:05:26.000000000 +0200
++++ Makefile.in	2013-06-03 14:45:07.000000000 +0200
+@@ -56,6 +56,8 @@
  
  # Directory in which to install the include file tcl.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -102,7 +104,7 @@
+@@ -101,7 +103,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -18,7 +18,7 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -469,7 +471,8 @@
+@@ -468,7 +470,8 @@
  
  all: binaries libraries doc
  
@@ -28,7 +28,7 @@
  
  libraries:
  
-@@ -480,6 +483,15 @@
+@@ -479,6 +482,15 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f $@
  	@MAKE_LIB@
@@ -44,7 +44,7 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -606,7 +618,7 @@
+@@ -605,7 +617,7 @@
  dltest.marker: ${STUB_LIB_FILE}
  	cd dltest ; $(MAKE)
  
@@ -53,10 +53,14 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -635,6 +647,12 @@
- 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+@@ -631,9 +643,15 @@
+ 	@if test ! -x $(SRC_DIR)/install-sh; then \
+ 	    chmod +x $(SRC_DIR)/install-sh; \
+ 	    fi
+-	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
++	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@
- 	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
+ 	@chmod 555 $(DLL_INSTALL_DIR)/$(LIB_FILE)
 +	@ln -sf $(LIB_FILE) $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.so
 +	@echo "Installing libtcl${SHORT_TCL_VER}.a"
 +	@$(INSTALL_DATA) libtcl${SHORT_TCL_VER}.a \
@@ -66,7 +70,7 @@
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -642,8 +660,9 @@
+@@ -641,8 +659,9 @@
  	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
@@ -78,17 +82,17 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -651,7 +670,8 @@
+@@ -668,7 +687,8 @@
  	@EXTRA_INSTALL_BINARIES@
  
  install-libraries: libraries
--	@for i in $(INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
-+	@for i in $(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
-+		  $(SCRIPT_INSTALL_DIR); \
+-	@for i in "$(INCLUDE_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)"; \
++	@for i in "$(GENERIC_INCLUDE_INSTALL_DIR)" "$(UNIX_INCLUDE_INSTALL_DIR)" \
++	    "$(SCRIPT_INSTALL_DIR)"; \
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -673,11 +693,17 @@
+@@ -690,11 +710,17 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";

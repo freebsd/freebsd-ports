@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.4.19
-PORTREVISION=	3
+PORTVERSION=	8.4.20
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_TCLTK} \
+		SF/tcl/Tcl/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -69,7 +69,6 @@ post-patch:
 	     s|@TK_BUILD_STUB_LIB_PATH@|@TK_STUB_LIB_PATH@|; \
 	     s|@TK_SRC_DIR@|${PREFIX}/include/tk${TK_VER}|' \
 	     ${WRKSRC}/tkConfig.sh.in
-	@(cd ${WRKSRC}/..; ${PATCH} -p0 < ${PATCHDIR}/extra-lastevent-patch)
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
 
