@@ -4371,3 +4371,4 @@ databases/postgresql83-plperl||2013-06-04|Has expired: Update to supported versi
 databases/postgresql83-plpython||2013-06-04|Has expired: Update to supported version
 databases/postgresql83-pltcl||2013-06-04|Has expired: Update to supported version
 databases/postgresql83-server||2013-06-04|Has expired: Update to supported version
+deskutils/msynctool-devel|deskutils/osynctool|2013-06-04|Development of msynctool ceased and project was renamed

@@ -15,7 +15,7 @@ COMMENT=	A command line client for the OpenSync framework
 
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022
 
-CONFLICTS=	msynctool-devel-[0-9]*
+CONFLICTS=	osynctool-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
