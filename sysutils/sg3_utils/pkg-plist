@@ -1,3 +1,11 @@
+bin/scsi_logging_level
+bin/scsi_mandat
+bin/scsi_readcap
+bin/scsi_ready
+bin/scsi_satl
+bin/scsi_start
+bin/scsi_stop
+bin/scsi_temperature
 bin/sg_compare_and_write
 bin/sg_decode_sense
 bin/sg_format
