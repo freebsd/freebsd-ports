@@ -1,0 +1,7 @@
+ifluatex –- provides the \ifluatex switch
+
+The package looks for LuaTEX regardless of its mode and provides the
+switch \ifluatex; it works with Plain TEX or LATEX.  The package is part
+of the oberdiek bundle.
+
+WWW: http://www.ctan.org/pkg/ifluatex

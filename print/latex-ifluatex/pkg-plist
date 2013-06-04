@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/ifluatex.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/ifluatex.dtx
+%%CLASSDIR%%/ifluatex.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

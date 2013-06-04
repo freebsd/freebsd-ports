@@ -141,6 +141,7 @@
     SUBDIR += latex-csquotes
     SUBDIR += latex-etoolbox
     SUBDIR += latex-feynmf
+    SUBDIR += latex-ifluatex
     SUBDIR += latex-keystroke
     SUBDIR += latex-logpap
     SUBDIR += latex-logreq
