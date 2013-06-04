@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lbdb
-# Date created:		2 February 2000
-# Whom:			mwest@uct.ac.za
-#
+# Created by: mwest@uct.ac.za
 # $FreeBSD$
-#
 
 PORTNAME=	lbdb
 PORTVERSION=	0.37
@@ -17,9 +13,10 @@ COMMENT=	Set of tools for use with mutt's external mail address query feature
 RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
-OPTIONS=	ABOOK "Enable abook address book support" off \
-		EVOLUTION "Enable Ximan Evolution support" off \
-		GPG "Enable GNU Privacy Guard support" off
+OPTIONS_DEFINE=	ABOOK EVOLUTION GPG
+ABOOK_DESC=	abook address book support
+EVOLUTION_DESC=	Ximan Evolution support
+GPG_DESC=	GNU Privacy Guard support
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -28,13 +25,13 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if exists (/usr/bin/getent)
 WITH_GETENT=	yes
 .endif
 
-.if defined(WITH_GPG)
+.if ${PORT_OPTIONS:MGPG}
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 PLIST_SUB+=	GPG=""
@@ -42,7 +39,7 @@ PLIST_SUB+=	GPG=""
 PLIST_SUB+=	GPG="@comment "
 .endif
 
-.if defined(WITH_ABOOK)
+.if ${PORT_OPTIONS:MABOOK}
 BUILD_DEPENDS+=	abook:${PORTSDIR}/mail/abook
 RUN_DEPENDS+=	abook:${PORTSDIR}/mail/abook
 PLIST_SUB+=	ABOOK=""
@@ -50,7 +47,7 @@ PLIST_SUB+=	ABOOK=""
 PLIST_SUB+=	ABOOK="@comment "
 .endif
 
-.if defined(WITH_EVOLUTION)
+.if ${PORT_OPTIONS:MEVOLUTION}
 BUILD_DEPENDS+=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS+=	evolution:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION=""
@@ -58,7 +55,7 @@ PLIST_SUB+=	EVOLUTION=""
 PLIST_SUB+=	EVOLUTION="@comment "
 .endif
 
-.if defined(WITH_GETENT)
+.if ${PORT_OPTIONS:MGETENT}
 PLIST_SUB+=	GETENT=""
 .else
 PLIST_SUB+=	GETENT="@comment "
@@ -70,4 +67,4 @@ MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1 lbdb_dotlock.1 \
 post-patch:
 	${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/m_muttalias.sh.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# New ports collection makefile for: Mew
-# Date created:		21 November 1997
-# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#			Hiroto Kagotani <hiroto.kagotani@gmail.com>
-#
+# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mew
 PORTVERSION=	6.5
@@ -16,14 +11,15 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Messaging in the Emacs World for emacs
 
-OPTIONS=	DATABASE "Database feature support (with Ruby & Sqlite3)" on
+OPTIONS_DEFINE=	DATABASE DOCS
+DATABASE_DESC=	Database feature support (with Ruby & Sqlite3)
 
 # emacs port setup
 USE_EMACS=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DATABASE)
+.if ${PORT_OPTIONS:MDATABASE}
 RUN_DEPENDS=	rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
 .endif
 
@@ -38,7 +34,7 @@ CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew \
 # target name for make build and install
 ALL_TARGET=	all info
 INSTALL_TARGET=	install
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	jinfo
 INSTALL_TARGET+=install-jinfo
 .endif
@@ -46,12 +42,12 @@ INSTALL_TARGET+=install-jinfo
 # manuals
 MAN1=		cmew.1 mew-pinentry.1 mewcat.1 mewdecode.1 mewencode.1 mewest.1 mewl.1 smew.1 incm.1
 INFO=		mew
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 INFO+=		mew.ja
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} ; \
 		${INSTALL_DATA} 00* dot.* ${DOCSDIR}/ ; \
@@ -60,4 +56,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

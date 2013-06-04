@@ -1,9 +1,5 @@
-# New ports collection makefile for:	imap-uw
-# Date created:		9 Jan 1997
-# Whom:			pst
-#
+# Created by: pst
 # $FreeBSD$
-#
 
 PORTNAME=	imap
 PORTVERSION=	2007f
@@ -37,23 +33,25 @@ ALL_TARGET=	bsf
 # This port must have the same SSL settings as mail/cclient, which it depends on
 # To make MBX format the default mailbox format, change the settings of cclient
 
-OPTIONS=	SSL "Compile with SSL support" on \
-		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
-		DRAC "Dynamically open MTA for relaying" off \
-		NETSCAPE_BRAIN_DAMAGE "See Makefile for documentation" off
+OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT DRAC NETSCAPE_BRAIN_DAMAGE DOCS
+OPTIONS_DEFAULT=	SSL
+SSL_DESC=		Compile with SSL support
+SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
+DRAC_DESC=		Dynamically open MTA for relaying
+NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 MAKE_ARGS+=	WITH_DRAC=yes
 .endif
 
-.if defined(WITHOUT_SSL)
+.if ! ${PORT_OPTIONS:MSSL}
 MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
 USE_OPENSSL=	yes
-.if defined(WITH_SSL_AND_PLAINTEXT)
+.if ${PORT_OPTIONS:MSSL_AND_PLAINTEXT}
 MAKE_ARGS+=	SSLTYPE=unix
 .else
 MAKE_ARGS+=	SSLTYPE=unix.nopwd
@@ -61,7 +59,7 @@ MAKE_ARGS+=	SSLTYPE=unix.nopwd
 .endif
 
 # Define this to get somewhat better interoperability with Netscape.
-.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
+.if ${PORT_OPTIONS:MNETSCAPE_BRAIN_DAMAGE}
 MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
 .endif
 # See src/imapd/Makefile for more information about these three options.
@@ -74,7 +72,7 @@ post-patch:
 
 pre-build:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
 .else
 	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h no
@@ -100,7 +98,7 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 	@${ECHO} "================================================================================"
 	@${ECHO} "To have DRAC working, you must create ${PREFIX}/etc/dracd.host, containing"
 	@${ECHO} "the hostname of the DRAC server:"
@@ -108,7 +106,7 @@ post-install:
 	@${ECHO} "localhost"
 	@${ECHO} "================================================================================"
 .endif
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@${ECHO}
 	@${ECHO} "To create and install a new SSL certificate for imapd and ipop3d, type \"make"
 	@${ECHO} "cert\". Or install manually in ${PREFIX}/certs."
@@ -119,7 +117,7 @@ post-install:
 	@${ECHO} "imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd        imapd"
 	@${ECHO} "================================================================================"
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} -m 0755 -p ${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/docs -cf - . | \
 		(umask 022; ${TAR} -C ${DOCSDIR} -xf -)

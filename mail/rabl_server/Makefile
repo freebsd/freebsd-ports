@@ -1,11 +1,5 @@
-# New ports collection makefile for:	rabl_server
-# Date created:				2005-10-25
-# Whom:					Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 # $FreeBSD$
-#
-# $Tecnik: ports/mail/rabl_server/Makefile,v 1.7 2005/12/09 19:54:50 itetcu Exp $
-#
 
 PORTNAME=	rabl_server
 PORTVERSION=	1.0.0
@@ -22,15 +16,15 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	CHANGE README RELEASE.NOTES
 
-OPTIONS=	DEBUG "Enable DEBUG messages"	off
+OPTIONS_DEFINE=	DEBUG DOCS
 
 USE_RC_SUBR=	${PORTNAME}
 
 RABL_GROUP?=	bind
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=		-g -DDEBUG
 STRIP_CMD=		# empty
@@ -53,11 +47,11 @@ post-install:
 	${INSTALL} -o ${SHAREOWN} -g ${RABL_GROUP} -m 0640 \
 		${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .	for i in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .	endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
