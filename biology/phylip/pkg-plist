@@ -33,6 +33,8 @@ bin/restml
 bin/retree
 bin/seqboot
 bin/treedist
+lib/libdrawgram.so
+lib/libdrawtree.so
 %%DATADIR%%/font1
 %%DATADIR%%/font2
 %%DATADIR%%/font3
