@@ -11,3 +11,22 @@
  extern Tcl_Interp *interp;
  char *nextword();
  
+@@ -78,14 +82,14 @@
+ 
+ 	/* Print the tcl result. */
+ 	if (result == TCL_OK) {
+-		if (*interp->result != 0)
+-			putl(interp->result, PL_SL);
++		if (Tcl_GetStringResult(interp) != 0)
++			putl(Tcl_GetStringResult(interp), PL_SL);
+ 	} else {
+-		if (interp->result) {
++		if (Tcl_GetStringResult(interp)) {
+ 			sprintf(mbuf, 
+ 				"%s[=Error=] %s%s",
+ 				printcolor(ColERROR, ColSANE),
+-				interp->result,
++				Tcl_GetStringResult(interp),
+ 				printcolor(ColSANE, ColSANE));
+ 			putl(mbuf, PL_SL);
+ 		} else {

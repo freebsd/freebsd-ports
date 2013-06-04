@@ -5,7 +5,8 @@ PORTNAME=	icb
 PORTVERSION=	5.1.0
 PORTREVISION=	4
 CATEGORIES=	net-im tcl
-MASTER_SITES=	http://www.obfuscation.org/icb/
+#MASTER_SITES=	http://www.obfuscation.org/icb/
+MASTER_SITES=	http://fossies.org/linux/misc/old/
 DISTNAME=	c${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
