@@ -256,6 +256,8 @@ include/gromacs/tgroup.h
 include/gromacs/thread_mpi.h
 include/gromacs/thread_mpi/atomic.h
 include/gromacs/thread_mpi/atomic/cycles.h
+include/gromacs/thread_mpi/atomic/derived.h
+include/gromacs/thread_mpi/atomic/fujitsu_sparc64.h
 include/gromacs/thread_mpi/atomic/gcc.h
 include/gromacs/thread_mpi/atomic/gcc_ia64.h
 include/gromacs/thread_mpi/atomic/gcc_intrinsics.h
@@ -985,6 +987,27 @@ libdata/pkgconfig/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 %%DATADIR%%/top/gromos53a6.ff/tip3p.itp
 %%DATADIR%%/top/gromos53a6.ff/tip4p.itp
 %%DATADIR%%/top/gromos53a6.ff/watermodels.dat
+%%DATADIR%%/top/gromos54a7.ff/aminoacids.c.tdb
+%%DATADIR%%/top/gromos54a7.ff/aminoacids.hdb
+%%DATADIR%%/top/gromos54a7.ff/aminoacids.n.tdb
+%%DATADIR%%/top/gromos54a7.ff/aminoacids.r2b
+%%DATADIR%%/top/gromos54a7.ff/aminoacids.rtp
+%%DATADIR%%/top/gromos54a7.ff/aminoacids.vsd
+%%DATADIR%%/top/gromos54a7.ff/atomtypes.atp
+%%DATADIR%%/top/gromos54a7.ff/dppc.itp
+%%DATADIR%%/top/gromos54a7.ff/ff_dum.itp
+%%DATADIR%%/top/gromos54a7.ff/ffbonded.itp
+%%DATADIR%%/top/gromos54a7.ff/ffnonbonded.itp
+%%DATADIR%%/top/gromos54a7.ff/forcefield.doc
+%%DATADIR%%/top/gromos54a7.ff/forcefield.itp
+%%DATADIR%%/top/gromos54a7.ff/ions.itp
+%%DATADIR%%/top/gromos54a7.ff/popc.itp
+%%DATADIR%%/top/gromos54a7.ff/spc.itp
+%%DATADIR%%/top/gromos54a7.ff/spce.itp
+%%DATADIR%%/top/gromos54a7.ff/tip3p.itp
+%%DATADIR%%/top/gromos54a7.ff/tip4p.itp
+%%DATADIR%%/top/gromos54a7.ff/tmcl.itp
+%%DATADIR%%/top/gromos54a7.ff/watermodels.dat
 %%DATADIR%%/top/gurgle.dat
 %%DATADIR%%/top/ha-shift.dat
 %%DATADIR%%/top/highway.dat
@@ -1042,6 +1065,7 @@ libdata/pkgconfig/libmd%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 %%DATADIR%%/top/vdwradii.dat
 %%DATADIR%%/top/xlateat.dat
 @dirrm %%DATADIR%%/top/oplsaa.ff
+@dirrm %%DATADIR%%/top/gromos54a7.ff
 @dirrm %%DATADIR%%/top/gromos53a6.ff
 @dirrm %%DATADIR%%/top/gromos53a5.ff
 @dirrm %%DATADIR%%/top/gromos45a3.ff
