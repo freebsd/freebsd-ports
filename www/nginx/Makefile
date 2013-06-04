@@ -82,6 +82,7 @@ OPTIONS_DEFINE=	\
 	LET \
 	LUA \
 	MEMC \
+	MODSECURITY \
 	NAXSI \
 	PASSENGER \
 	POSTGRES \
@@ -170,6 +171,7 @@ ICONV_DESC=			3rd party iconv module
 LET_DESC=			3rd party let module
 LUA_DESC=			3rd party lua module
 MEMC_DESC=			3rd party memc (memcached) module
+MODSECURITY_DESC=		3rd party mod_security module
 NAXSI_DESC=			3rd party naxsi module
 PASSENGER_DESC=			3rd party passenger module
 POSTGRES_DESC=			3rd party postgresql module
@@ -626,6 +628,18 @@ DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
 .endif
 
+.if ${PORT_OPTIONS:MMODSECURITY}
+NGINX_MODSECURITY_VERSION=	2.7.4
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
+		apr-1:${PORTSDIR}/devel/apr1
+USE_APACHE=	22+
+USE_GNOME=	libxml2
+MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
+DISTFILES+=	modsecurity-apache_${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-config
+.endif
+
 .if ${PORT_OPTIONS:MNAXSI}
 NGINX_NAXSI_VERSION=	0.50
 MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
@@ -955,6 +969,18 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_VERSION:S/^0-g//}/config
+.endif
+.if ${PORT_OPTIONS:MMODSECURITY}
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION}/nginx/modsecurity/config
+.endif
+
+pre-configure:
+.if ${PORT_OPTIONS:MMODSECURITY}
+	( cd ${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION} && \
+		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
+		${MAKE} )
 .endif
 
 do-build:
