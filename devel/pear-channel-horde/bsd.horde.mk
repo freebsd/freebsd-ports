@@ -37,6 +37,7 @@ horde-Horde_Css_Parser-DEPEND=	${PEARDIR}/Horde/Css/Parser.php:${PORTSDIR}/www/p
 horde-Horde_Data-DEPEND=	${PEARDIR}/Horde/Data.php:${PORTSDIR}/devel/pear-Horde_Data
 horde-Horde_Date-DEPEND=	${PEARDIR}/Horde/Date.php:${PORTSDIR}/devel/pear-Horde_Date
 horde-Horde_Date_Parser-DEPEND=	${PEARDIR}/Horde/Date/Parser.php:${PORTSDIR}/devel/pear-Horde_Date_Parser
+horde-Horde_Dav-DEPEND=		${PEARDIR}/Horde/Dav/Client.php:${PORTSDIR}/www/pear-Horde_Dav
 horde-Horde_Db-DEPEND=		${PEARDIR}/Horde/Db.php:${PORTSDIR}/databases/pear-Horde_Db
 horde-Horde_Editor-DEPEND=	${PEARDIR}/Horde/Editor.php:${PORTSDIR}/www/pear-Horde_Editor
 horde-Horde_Exception-DEPEND=	${PEARDIR}/Horde/Exception.php:${PORTSDIR}/devel/pear-Horde_Exception	
