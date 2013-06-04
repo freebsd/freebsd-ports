@@ -169,7 +169,6 @@
     SUBDIR += moregroupware
     SUBDIR += mrundlg
     SUBDIR += msynctool
-    SUBDIR += msynctool-devel
     SUBDIR += multisync
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
@@ -189,6 +188,7 @@
     SUBDIR += orage
     SUBDIR += org-mode.el
     SUBDIR += osmo
+    SUBDIR += osynctool
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo
     SUBDIR += p5-ZConf-BGSet
