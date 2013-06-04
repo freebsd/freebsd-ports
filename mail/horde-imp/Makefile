@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-imp
-# Date created:			  Mon Oct 08, 2001
-# Whom:				  Thierry Thomas (<thierry@thomas.as>)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	imp
-PORTVERSION=	6.0.5
+PORTVERSION=	6.1.0
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 

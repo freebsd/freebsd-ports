@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-passwd
-# Date created:			  Oct 28, 2011
-# Whom:				  Martin Matuska (mm@FreeBSD.org)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	passwd
-DISTVERSION=	5.0.0RC1
+PORTVERSION=	5.0.0
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 

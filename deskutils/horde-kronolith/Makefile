@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kronolith
-PORTVERSION=	4.0.5
+PORTVERSION=	4.1.0
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
@@ -31,6 +31,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Data \
 		Horde_Date \
 		Horde_Date_Parser \
+		Horde_Dav \
 		Horde_Exception \
 		Horde_Form \
 		Horde_Group \

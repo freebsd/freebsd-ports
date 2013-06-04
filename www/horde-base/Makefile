@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-base
-# Date created:			  Sun Oct 07, 2001
-# Whom:				  Thierry Thomas (<thierry@thomas.as>)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	horde
-PORTVERSION=	5.0.5
+PORTVERSION=	5.1.0
 CATEGORIES=	www pear
 PKGNAMEPREFIX=
 
