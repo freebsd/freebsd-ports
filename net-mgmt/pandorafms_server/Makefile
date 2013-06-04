@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pandorafms_server
-# Date created:		2011-11-22
-# Whom:			KIKUCHI Koichiro <koichiro@rworks.jp>
-#
+# Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	pandora_server
 PORTVERSION=	${PANDORA_VERSION}
@@ -38,11 +34,13 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
 
-OPTIONS=	TENTACLE	"Install tentacle_server"		on \
-		XPROBE		"Install xprobe"			on \
-		PGSQL		"Use PostgreSQL backend (experimental)"	off \
-		ORACLE		"Use Oracle backend (experimental)"	off \
-		EXTRAS		"Extra dependencies for util scripts"	on
+OPTIONS_DEFINE=	TENTACLE XPROBE PGSQL ORACLE EXTRAS
+OPTIONS_DEFAULT=	TENTACLE XPROBE EXTRAS
+TENTACLE_DESC=	Install tentacle_server
+XPROBE_DESC=	Install xprobe
+PGSQL_DESC=	Use PostgreSQL backend (experimental)
+ORACLE_DESC=	Use Oracle backend (experimental)
+EXTRAS_DESC=	Extra dependencies for util scripts
 
 PERL_CONFIGURE=	yes
 SUB_LIST+=	PERL="${PERL}"
@@ -66,23 +64,23 @@ PORTDOCS+=	README
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_TENTACLE)
+.if ! ${PORT_OPTIONS:MTENTACLE}
 PLIST_SUB+=	TENTACLE="@comment "
 .else
 PLIST_SUB+=	TENTACLE=""
 USE_RC_SUBR+=	tentacle_server
 MAN1+=		tentacle_server.1
 .endif
-.if defined(WITH_XPROBE)
+.if ${PORT_OPTIONS:MXPROBE}
 RUN_DEPENDS+=	${LOCALBASE}/bin/xprobe2:${PORTSDIR}/net/xprobe
 .endif
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
-.if defined(WITH_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
-.if defined(WITH_EXTRAS)
+.if ${PORT_OPTIONS:MEXTRAS}
 # plugin/bgp_pluin.pl
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 # plugin/multicast.pl
@@ -124,7 +122,7 @@ post-patch:
 		`${GREP} -rl /usr/bin/perl ${WRKSRC} | ${GREP} -v pandora_server_installer`
 
 post-install:
-.if defined(WITH_TENTACLE)
+.if ${PORT_OPTIONS:MTENTACLE}
 	@cd ${WRKSRC} && ${SH} pandora_server_installer --install
 .else
 	@cd ${WRKSRC} && ${SH} pandora_server_installer --install --no-tentacle
