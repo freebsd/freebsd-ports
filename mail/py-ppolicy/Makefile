@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-ppolicy
-# Date created:				27 November 2008
-# Whom:	      				Chifeng QU <chifeng@gmail.com>
-#
+# Created by: Chifeng QU <chifeng@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ppolicy
 PORTVERSION=	2.6.6
@@ -27,24 +23,23 @@ DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 SUB_FILES=	pkg-message
 
-OPTIONS=	GeoIP "Use GeoIP support" On \
-		LDAP "Use LDAP support" On \
-		MYSQL "Use MySQL support" Off
+OPTIONS_DEFINE=	GEOIP LDAP MYSQL DOCS
+OPTIONS_DEFAULT=	GEOIP LDAP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GeoIP)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/GeoIP.so:${PORTSDIR}/net/py-GeoIP
+.if ${PORT_OPTIONS:MGEOIP}
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/GEOIP.so:${PORTSDIR}/net/py-GEOIP
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.1:${PORTSDIR}/net/py-ldap2
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MODULES ${DOCSDIR}
@@ -57,4 +52,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ppolicy.tap ${PREFIX}/sbin
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,11 +19,11 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 
 USE_LDCONFIG=	${PREFIX}/lib/spmfilter
 
-OPTIONS=	DEBUG	"Enable Debugging"	off
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=	-DENABLE_DEBUG=TRUE
 .endif
 
@@ -37,4 +37,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' \
 		${WRKSRC}/cmake/Modules/SMFMacros.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

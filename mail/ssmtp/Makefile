@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssmtp
-# Date created:		9 Jan 2001
-# Whom:			Tomasz Paszkowski <ns88@k.pl>
-#
+# Created by: Tomasz Paszkowski <ns88@k.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
@@ -35,26 +31,27 @@ MAILERCONF=	/etc/mail/mailer.conf
 MAN8=		ssmtp.8
 MAN5=		ssmtp.conf.5
 
-OPTIONS=	LOGFILE		"Enable log file" off \
-		IPV6		"Enable IPv6 support" on \
-		USERPREFS	"Enable user defined revaliases" on \
-		XORIGIP		"Add X-Originating-IP header" on \
+OPTIONS_DEFINE=	LOGFILE IPV6 USERPREFS XORIGIP
+OPTIONS_DEFINE= USERPREFS XORIGIP
+LOGFILE_DESC=	log file
+USERPREFS_DESC=	user defined revaliases
+XORIGIP_DESC=	Add X-Originating-IP header
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LOGFILE)
+.if ${PORT_OPTIONS:MLOGFILE}
 CONFIGURE_ARGS+=	--enable-logfile
 .endif
 
-.if defined(WITH_XORIGIP)
+.if ${PORT_OPTIONS:MXORIGIP}
 EXTRA_PATCHES=	${FILESDIR}/remote-addr.patch
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-inet6
 .endif
 
-.if !defined(WITHOUT_USERPREFS)
+.if ${PORT_OPTIONS:MUSERPREFS}
 CFLAGS+=	-DUSERPREFS
 pre-everything::
 	@${ECHO_CMD} "If you don't want to let your users set their own revalias address"

@@ -1,9 +1,5 @@
-# New ports collection makefile for: qsf
-# Date created:		15 January 2004
-# Whom:			liamfoy@sepulcrum.org
-#
+# Created by: liamfoy@sepulcrum.org
 # $FreeBSD$
-#
 
 PORTNAME=	qsf
 PORTVERSION=	1.2.7
@@ -12,11 +8,10 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	jack@jarasoft.net
-COMMENT=	A small fast spam filter intended to be used with procmail
+COMMENT=	Small fast spam filter intended to be used with procmail
 
-OPTIONS=	GDBM "GDBM support" off \
-		MYSQL "MySQL support" off \
-		SQLITE2 "SQLite2 support" off
+OPTIONS_DEFINE=	GDBM MYSQL SQLITE2
+SQLITE2_DESC=	SQLite2 support
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -27,21 +22,21 @@ PLIST_FILES=	bin/qsf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_SQLITE2)
+.if ${PORT_OPTIONS:MSQLITE2}
 USE_SQLITE=	2
 .else
 CONFIGURE_ARGS+=	--without-sqlite
@@ -50,4 +45,4 @@ CONFIGURE_ARGS+=	--without-sqlite
 post-patch:
 	@${REINPLACE_CMD} -e 's|Linux|@VERSION@|g' ${WRKSRC}/doc/quickref.1.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

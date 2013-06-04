@@ -20,11 +20,11 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 
 USE_LDCONFIG=	${PREFIX}/lib/spmfilter
 
-OPTIONS=	DEBUG	"Enable Debugging"	off
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=    -DENABLE_DEBUG=TRUE
 .endif
 
@@ -38,9 +38,9 @@ post-patch:
 		${WRKSRC}/cmake/Modules/SMFMacros.cmake
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}/contrib
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/contrib/virus-notify.txt ${DOCSDIR}/contrib
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

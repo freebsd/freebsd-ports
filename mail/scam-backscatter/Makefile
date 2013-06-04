@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scam-backscatter
-# Date created:				2010-05-27
-# Whom:					Janne Snabb <snabb@epipe.com>
-#
+# Created by: Janne Snabb <snabb@epipe.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scam-backscatter
 PORTVERSION=	1.5.1
@@ -23,9 +19,10 @@ SUB_FILES=	pkg-message
 MAKEFILE=	Makefile.freebsd
 ALL_TARGET=
 
-OPTIONS=	ALLDOMAINS "Verify any domain with the backend" Off \
-		EHLO "Use EHLO instead of HELO in SMTP session" Off \
-		USEMAILERTABLE "Use mailertable to map domains to backends" Off
+OPTIONS_DEFINE=	ALLDOMAINS EHLO USEMAILERTABLE DOCS
+ALLDOMAINS_DESC=	Verify any domain with the backend
+EHLO_DESC=		Use EHLO instead of HELO in SMTP session
+USEMAILERTABLE_DESC=	Use mailertable to map domains to backends
 
 .include <bsd.port.options.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
@@ -37,13 +34,13 @@ LIBS+=		${SENDMAIL_LDADD}
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
 
-.if defined(WITH_ALLDOMAINS)
+.if ${PORT_OPTIONS:MALLDOMAINS}
 CFLAGS+=	-DALLDOMAINS
 .endif
-.if defined(WITH_EHLO)
+.if ${PORT_OPTIONS:MEHLO}
 CFLAGS+=	-DEHLO
 .endif
-.if defined(WITH_USEMAILERTABLE)
+.if ${PORT_OPTIONS:MUSEMAILERTABLE}
 CFLAGS+=	-DUSEMAILERTABLE
 .endif
 
@@ -62,7 +59,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scam.conf ${PREFIX}/etc/mail/scam-back.conf.sample
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/INSTALL ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/License ${DOCSDIR}

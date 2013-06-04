@@ -25,50 +25,45 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS=	DB4 	"Enable DB4 backend" 	on  \
-		DEBUG 	"Enable Debugging" 	off \
-		LDAP 	"Enable LDAP backend" 	off \
-		MYSQL 	"Enable MYSQL backend" 	off \
-		PGSQL	"Enable PGSQL backend"	off
+OPTIONS_DEFINE=	DB4 DEBUG LDAP MYSQL PGSQL
+OPTIONS_DEFAULT=	DB4
+DB4_DESC=	DB4 backend
 
 # Default requirement for spmfilter rc script
 _REQUIRE=	LOGIN
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_DB4) || defined(WITHOUT_DB4)
-CMAKE_ARGS+=	-DWITHOUT_DB4=TRUE
-.else
+.if ${PORT_OPTIONS:MDB4}
 USE_BDB=	yes
 CMAKE_ARGS+=	-DDB4_INCLUDE_DIR="${BDB_INCLUDE_DIR}"
+.else
+CMAKE_ARGS+=	-DWITHOUT_DB4=TRUE
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=	-DENABLE_DEBUG=TRUE
 .endif
 
-.if !defined(WITH_LDAP) || defined(WITHOUT_LDAP)
-CMAKE_ARGS+=	-DWITHOUT_LDAP=TRUE
-.else
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
-.if defined(WITH_OPENLDAP_VER)
+.if ${PORT_OPTIONS:MOPENLDAP_VER}
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 _REQUIRE+=	slapd
-.endif
-
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
-CMAKE_ARGS+=	-DWITHOUT_ZDB=TRUE
 .else
-LIB_DEPENDS+=	zdb:${PORTSDIR}/databases/libzdb
+CMAKE_ARGS+=	-DWITHOUT_LDAP=TRUE
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
+LIB_DEPENDS+=	zdb:${PORTSDIR}/databases/libzdb
 USE_MYSQL=	yes
 _REQUIRE+=	mysql
+.else
+CMAKE_ARGS+=	-DWITHOUT_ZDB=TRUE
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 _REQUIRE+=	postgresql
 .endif
@@ -96,4 +91,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

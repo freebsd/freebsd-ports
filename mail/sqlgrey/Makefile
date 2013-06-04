@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sqlgrey
-# Date created:				17 Feb 2005
-# Whom:					mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	sqlgrey
 PORTVERSION=	1.8.0
@@ -36,30 +32,28 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 MAN1=	sqlgrey.1
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	PGSQL MYSQL SQLITE STATS DOCS
+STATS_DESC=	Depend on Date::Calc for logstats.pl script
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changelog FAQ HOWTO README TODO
 .endif
 
-OPTIONS=	PGSQL "PostgreSQL backend" off \
-		MYSQL "MySQL backend" off \
-		SQLITE "SQLite backend" off \
-		STATS "Depend on Date::Calc for logstats.pl script" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
-.if defined(WITH_STATS)
+.if ${PORT_OPTIONS:MSTATS}
 RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
@@ -77,7 +71,7 @@ do-install:
 	@[ "${i}" = "dyn_fqdn.regexp" ] || [ "${i}" = "smtp_server.regexp" ] || [ "${i}" = "sqlgrey.conf" ] || ${TOUCH} ${PREFIX}/${ETCDIR}/${i}.local
 	@[ -f ${PREFIX}/${ETCDIR}/${i} ] || ${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
@@ -86,4 +80,4 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

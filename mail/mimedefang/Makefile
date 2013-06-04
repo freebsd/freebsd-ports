@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mimedefang
-# Date created:				13 May 2002
-# Whom:					Andrey V. Pevnev <andrey@mgul.ac.ru>
-#
+# Created by: Andrey V. Pevnev <andrey@mgul.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.73
@@ -23,7 +19,9 @@ BUILD_DEPENDS=	\
 	p5-Mail-SpamAssassin>=3.0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	CLAMAV	"Enable Clamav" on
+OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS
+OPTIONS_DEFAULT=	CLAMAV
+CLAMAV_DESC=	Enable Clamav
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
@@ -61,7 +59,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 CONFIGURE_ARGS+=	--with-milterinc=${LOCALBASE}/include --with-milterlib=${LOCALBASE}/lib
 .endif
 
-.if defined (MIMEDEFANG_DISABLE_CLAMAV) || defined(WITHOUT_CLAMAV)
+.if defined (MIMEDEFANG_DISABLE_CLAMAV) || ! ${PORT_OPTIONS:MCLAMAV}
 CONFIGURE_ARGS+=	--disable-antivirus \
 			--disable-clamav \
 			--disable-clamd
@@ -79,7 +77,7 @@ pre-install:
 post-install:
 	@${REINPLACE_CMD} -e 's,%%CHMOD%%,${CHMOD},g' ${WRKSRC}/examples/init-script
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
 .endif
@@ -89,7 +87,7 @@ post-install:
 	fi
 .endfor
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${INSTALL_DATA} stream-by-domain-filter \
 		suggested-minimum-filter-for-windows-clients README ${EXAMPLESDIR}/
