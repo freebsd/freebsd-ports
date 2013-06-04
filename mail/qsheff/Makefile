@@ -30,68 +30,68 @@ ETCFILES=	install-wrapper.sh uninstall-wrapper.sh qsheff.attach-default \
 
 CONFIGURE_ARGS+=	--with-qmaildir=${QMAIL_PREFIX}
 
-OPTIONS=	CLAMAV "Integrate with Clam AntiVirus" on \
-		SPAMTAG "Enable Spam Tagging" off \
-		VIRUSTAG "Enable Virus Tagging" off \
-		DISABLELOCAL "Disable Filters For Local Users" off \
-		SYSLOG "Enable Syslog Logging" off \
-		BACKUP "Enable Logging Incoming/Outgoing Mail" off \
-		CUSTOMERROR "Enable Custom Error Patch" off \
-		DEBUG "Enable Debug Messages" off
+OPTIONS_DEFINE=	CLAMAV SPAMTAG VIRUSTAG DISABLELOCAL SYSLOG BACKUP CUSTOMERROR DEBUG
+OPTIONS_DEFAULT=	CLAMAV
+CLAMAV_DESC=		Integrate with Clam AntiVirus
+SPAMTAG_DESC=		Spam Tagging
+VIRUSTAGSC=		Virus Tagging
+DISABLELOCAL_DESC=	Disable Filters For Local Users
+BACKUP_DESC=		Logging Incoming/Outgoing Mail
+CUSTOMERROR_DESC=	Custom Error Patch
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CLAMAV)
+.if ${PORT_OPTIONS:MCLAMAV}
 RUN_DEPENDS+=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 CONFIGURE_ARGS+=	--with-clamav
 CONFIGURE_ARGS+=	--with-clamd-socket=/var/run/clamav/clamd
 .endif
 
-.if defined(WITH_SPAMTAG)
+.if ${PORT_OPTIONS:MSPAMTAG}
 CONFIGURE_ARGS+=	--enable-spam-tag
 .endif
 
-.if defined(WITH_VIRUSTAG)
+.if ${PORT_OPTIONS:MVIRUSTAG}
 CONFIGURE_ARGS+=	--enable-virus-tag
 .endif
 
-.if defined(WITH_SYSLOG)
+.if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--enable-syslog
 .endif
 
-.if defined(WITH_DISABLELOCAL)
+.if ${PORT_OPTIONS:MDISABLELOCAL}
 CONFIGURE_ARGS+=	--disable-local-users
 .endif
 
-.if defined(WITH_BACKUP)
+.if ${PORT_OPTIONS:MBACKUP}
 CONFIGURE_ARGS+=	--enable-backup
 .endif
 
-.if defined(WITH_CUSTOMERROR)
+.if ${PORT_OPTIONS:MCUSTOMERROR}
 CONFIGURE_ARGS+=	--enable-custom-error
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CFLAGS =|CFLAGS +=|" ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|\(install-data-am: \)install-qsheffdocDATA|\1|g' \
 			  -e 's| contribute$$||g' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-build:
-.if defined(WITHOUT_CLAMAV)
+.if ! ${PORT_OPTIONS:MCLAMAV}
 	@${REINPLACE_CMD} -e 's|enable_virus_prog = 1|enable_virus_prog = 0|g' \
 		${WRKSRC}/etc/qsheff.conf-default
 .endif
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/doc
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${INSTALL_DATA} ${FILES:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/doc/

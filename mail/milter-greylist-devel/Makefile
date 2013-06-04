@@ -1,9 +1,5 @@
-# New ports collection makefile for:	milter-greylist
-# Date created:				27 Apr 2004
-# Whom:					Cyril Guibourg
-#
+# Created by: Cyril Guibourg
 # $FreeBSD$
-#
 
 PORTNAME=	milter-greylist
 PORTVERSION=	4.3.9
@@ -23,11 +19,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	LIBSPF2 "Include SPF support" off\
-		GEOIP "Include GeoIP support" off\
-		CURL "Include curl support" off\
-		OPENLDAP "Include OpenLDAP support" off\
-		POSTFIX "Use Postfix instead of Sendmail" off
+OPTIONS_DEFINE=	LIBSPF2 GEOIP CURL LDAP POSTFIX
+LIBSPF2_DESC=	Include SPF support
+POSTFIX_DESC=	Use Postfix instead of Sendmail
 
 .include <bsd.port.pre.mk>
 
@@ -48,23 +42,23 @@ MAN8=		milter-greylist.8
 ##
 # If you have a reentrant resolver (starting with RELENG_5_2) you can use SPF
 ##
-.if defined(WITH_LIBSPF2)
+.if ${PORT_OPTIONS:MLIBSPF2}
 BUILD_DEPENDS+=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
 CONFIGURE_ARGS+=	--with-libspf2=${LOCALBASE}
 .endif
-.if defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 BUILD_DEPENDS+=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
 .endif
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .endif
-.if defined(WITH_OPENLDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=yes
 CONFIGURE_ARGS+=	--with-openldap
 .endif
-.if defined(WITH_POSTFIX)
+.if ${PORT_OPTIONS:MPOSTFIX}
 CONFIGURE_ARGS+=	--enable-postfix
 .else
 LDFLAGS+=	${SENDMAIL_LDFLAGS}
@@ -96,11 +90,11 @@ do-install:
 post-install:
 	@${MKDIR} /var/milter-greylist
 	@${CHOWN} -R mailnull /var/milter-greylist
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-.if !defined (NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif

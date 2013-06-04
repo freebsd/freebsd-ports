@@ -1,9 +1,5 @@
-# New ports collection makefile for: sqwebmail
-# Date created:		23 Sep 2000
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME=	sqwebmail
 PORTVERSION=	5.6.1
@@ -20,20 +16,19 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
 
-OPTIONS=	CACHEDIR	"Cache logins"					on \
-		FAM		"Build in fam support for IDLE command"		on \
-		GDBM		"Use gdbm db instead of system bdb"		off \
-		GZIP		"Compress messages with gzip"			on \
-		HTTPS		"Generate https:// URLs for all accesses"	off \
-		HTTPS_LOGIN	"Generate https:// URLs only for login"		off \
-		ISPELL		"Provide spell checking"			off \
-		MIMETYPES	"search for a mime.types file"			off \
-		SENTRENAME	"Periodic rename the Sent folder"		on \
-		CHARSET		"Enable charsets"				off
+OPTIONS_DEFINE=	CACHEDIR FAM GDBM GZIP HTTPS HTTPS_LOGIN ISPELL MIMETYPES SENTRENAME CHARSET
+OPTIONS_DEFAULT=	CACHEDIR FAM GZIP SENTRENAME
+CACHEDIR_DESC=	Cache logins
+FAM_DESC=	Build in fam support for IDLE command
+GDBM_DESC=	Use gdbm db instead of system bdb
+GZIP_DESC=	Compress messages with gzip
+HTTPS_DESC=	Generate https:// URLs for all accesses
+HTTPS_LOGIN_DESC=	Generate https:// URLs only for login
+MIMETYPES_DESC=	search for a mime.types file
+SENTRENAME_DESC=	Periodic rename the Sent folder
+CHARSET_DESC=	charsets
 
-.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
-.endif
 
 CGIBINDIR?=	www/cgi-bin-dist
 CGIBINSUBDIR?=	sqwebmail
@@ -92,11 +87,11 @@ INSTALL_TARGET=	install-strip install-configure
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
 .endif
 
-.if defined(WITH_FAM)
+.if ${PORT_OPTIONS:MFAM}
 USE_FAM=	yes
 .endif
 
-.if defined(WITHOUT_CACHEDIR)
+.if ! ${PORT_OPTIONS:MCACHEDIR}
 PLIST_SUB+=		CACHE="@comment "
 CONFIGURE_ARGS+=	--without-cachedir
 .else
@@ -105,21 +100,21 @@ CONFIGURE_ARGS+=	--with-cachedir=${CACHEDIR} \
 			--with-cacheowner=${CACHEOWNER}
 .endif
 
-.if defined(WITH_HTTPS_LOGIN)
+.if ${PORT_OPTIONS:MHTTPS_LOGIN}
 CONFIGURE_ARGS+=	--enable-https=login
-.elif defined(WITH_HTTPS)
+.elif ${PORT_OPTIONS:MHTTPS}
 CONFIGURE_ARGS+=	--enable-https
 .endif
 
-.if defined(WITHOUT_SENTRENAME)
+.if ! ${PORT_OPTIONS:MSENTRENAME}
 CONFIGURE_ARGS+=	--disable-autorenamesent
 .endif
 
-.if defined(WITHOUT_GZIP)
+.if ! ${PORT_OPTIONS:MGZIP}
 CONFIGURE_ARGS+=	--without-gzip
 .endif
 
-.if defined(WITH_ISPELL)
+.if ${PORT_OPTIONS:MISPELL}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
@@ -127,46 +122,46 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
 CONFIGURE_ARGS+=	--without-ispell
 .endif
 
-.if defined(WITH_MIMETYPES)
+.if ${PORT_OPTIONS:MMIMETYPES}
 RUN_DEPENDS+=		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 CONFIGURE_ARGS+=	--enable-mimetypes=${LOCALBASE}/etc
 .else
 CONFIGURE_ARGS+=	--disable-mimetypes
 .endif
 
-.if defined(WITH_TIMEOUTHARD)
+.if ${PORT_OPTIONS:MTIMEOUTHARD}
 CONFIGURE_ARGS+=	--enable-hardtimeout=${WITH_TIMEOUTHARD}
 .endif
 
-.if defined(WITH_TIMEOUTSOFT)
+.if ${PORT_OPTIONS:MTIMEOUTSOFT}
 CONFIGURE_ARGS+=	--enable-softtimeout=${WITH_TIMEOUTSOFT}
 .endif
 
-.if defined(WITH_MAXMSGSIZE)
+.if ${PORT_OPTIONS:MMAXMSGSIZE}
 CONFIGURE_ARGS+=	--with-maxmsgsize=${WITH_MAXMSGSIZE}
 .endif
 
-.if defined(WITH_MAXARGSIZE)
+.if ${PORT_OPTIONS:MMAXARGSIZE}
 CONFIGURE_ARGS+=	--with-maxargsize=${WITH_MAXARGSIZE}
 .endif
 
-.if defined(WITH_MAXFORMARGSIZE)
+.if ${PORT_OPTIONS:MMAXFORMARGSIZE}
 CONFIGURE_ARGS+=	--with-maxformargsize=${WITH_MAXFORMARGSIZE}
 .endif
 
-.if defined(WITH_CHARSET)
+.if ${PORT_OPTIONS:MCHARSET}
 CONFIGURE_ARGS+=	--enable-unicode
 .endif
 
-.if defined(WITH_AUTOPURGE)
+.if ${PORT_OPTIONS:MAUTOPURGE}
 CONFIGURE_ARGS+=	--enable-autopurge=${WITH_AUTOPURGE}
 .endif
 
-.if defined(WITH_MAXPURGE)
+.if ${PORT_OPTIONS:MMAXPURGE}
 CONFIGURE_ARGS+=	--enable-maxpurge=${WITH_MAXPURGE}
 .endif
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-db=gdbm
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .else
@@ -174,7 +169,7 @@ CONFIGURE_ARGS+=--with-db=db
 .endif
 
 post-patch:
-.if !defined(WITH_FAM)
+.if ! ${PORT_OPTIONS:MFAM}
 	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
 		${WRKSRC}/maildir/configure
 .endif
@@ -209,7 +204,7 @@ post-install:
 #		${FILESDIR}/sqwebmail-sqwebmaild.sh > ${WRKDIR}/sqwebmail-sqwebmaild.sh
 #	${INSTALL_SCRIPT} ${WRKDIR}/sqwebmail-sqwebmaild.sh ${RCDIR}/sqwebmail-sqwebmaild.sh
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for a in ${EXTRA_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
