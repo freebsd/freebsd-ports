@@ -115,6 +115,9 @@ lib/tcl%%TCL_VER%%/msgcat1.3/msgcat.tcl
 lib/tcl%%TCL_VER%%/msgcat1.3/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
+lib/tcl%%TCL_VER%%/platform/pkgIndex.tcl
+lib/tcl%%TCL_VER%%/platform/platform.tcl
+lib/tcl%%TCL_VER%%/platform/shell.tcl
 lib/tcl%%TCL_VER%%/package.tcl
 lib/tcl%%TCL_VER%%/parray.tcl
 lib/tcl%%TCL_VER%%/safe.tcl
@@ -125,6 +128,7 @@ lib/tcl%%TCL_VER%%/tcltest2.2/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/tcltest2.2/tcltest.tcl
 lib/tcl%%TCL_VER%%/word.tcl
 @dirrm lib/tcl%%TCL_VER%%/tcltest2.2
+@dirrm lib/tcl%%TCL_VER%%/platform
 @dirrm lib/tcl%%TCL_VER%%/opt0.4
 @dirrm lib/tcl%%TCL_VER%%/msgcat1.3
 @dirrm lib/tcl%%TCL_VER%%/http2.5
