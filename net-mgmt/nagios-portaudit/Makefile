@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-portaudit
-# Date created:				19 August 2008
-# Whom:					rea-fbsd@codelabs.ru
-#
+# Created by: rea-fbsd@codelabs.ru
 # $FreeBSD$
-#
 
 PORTNAME=	portaudit
 PORTVERSION=	1.0
@@ -17,9 +13,11 @@ DISTNAME=	check_portaudit-${PORTVERSION}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Nagios plug-in to get portaudit/portupgrade status
 
-OPTIONS=	PORTAUDIT "Enable portaudit check" ON \
-		PORTUPGRADE "Enable portupgrade check" ON \
-		PORTUPGRADE_DEVEL "Use portupgrade-devel" OFF
+OPTIONS_DEFINE=	PORTAUDIT PORTUPGRADE PORTUPGRADE_DEVEL
+OPTIONS_DEFAULT=	PORTAUDIT PORTUPGRADE
+PORTAUDIT_DESC=		Enable portaudit check
+PORTUPGRADE_DESC=	Enable portupgrade check
+PORTUPGRADE_DEVEL_DESC=	Use portupgrade-devel
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
@@ -27,23 +25,23 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_PORTUPGRADE) && !defined(WITH_PORTAUDIT) && !defined(WITH_PORTAUDIT_DEVEL)
+.if ! ${PORT_OPTIONS:MPORTUPGRADE} && ! ${PORT_OPTIONS:MPORTAUDIT} && ! ${PORT_OPTIONS:MPORTAUDIT_DEVEL}
 IGNORE=		unusable without portupgrade and portaudit
 .endif
 
-.if defined(WITH_PORTUPGRADE) && defined(WITH_PORTUPGRADE_DEVEL)
+.if ${PORT_OPTIONS:MPORTUPGRADE} && ${PORT_OPTIONS:MPORTUPGRADE_DEVEL}
 IGNORE=		choose either portupgrade or portupgrade-devel, not both
 .endif
 
-.if defined(WITH_PORTAUDIT)
+.if ${PORT_OPTIONS:MPORTAUDIT}
 RUN_DEPENDS+=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif
 
-.if defined(WITH_PORTUPGRADE)
+.if ${PORT_OPTIONS:MPORTUPGRADE}
 RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
 .endif
 
-.if defined(WITH_PORTUPGRADE_DEVEL)
+.if ${PORT_OPTIONS:MPORTUPGRADE_DEVEL}
 RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade-devel
 .endif
 

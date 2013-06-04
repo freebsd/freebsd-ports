@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pandorafms_console
-# Date created:		2011-11-21
-# Whom:			KIKUCHI Koichiro <koichiro@rworks.jp>
-#
+# Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	pandora_console
 PORTVERSION=	${PANDORA_VERSION}
@@ -18,7 +14,8 @@ LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
 RUN_DEPENDS=	${LOCALBASE}/bin/twopi:${PORTSDIR}/graphics/graphviz
 
-OPTIONS=	PGSQL "Use PostgreSQL backend (experimental)" off
+OPTIONS_DEFINE=	PGSQL
+PGSQL_DESC=	Use PostgreSQL backend (experimental)
 
 USE_APACHE_RUN=	22+
 USE_PHP=	curl gd gettext json ldap mbstring mysql snmp session \
@@ -32,7 +29,7 @@ SUB_LIST+=	APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
@@ -52,7 +49,7 @@ do-install:
 	@cd ${WRKSRC} && ${SH} pandora_console_install --force-install
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for x in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${x} ${DOCSDIR}

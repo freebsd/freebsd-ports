@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-devel
-# Date created:				14 July 2007
-# Whom:					Jarrod Sayers <jarrod@netleader.com.au>
-#
+# Created by: Jarrod Sayers <jarrod@netleader.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	nagios
 DISTVERSIONPREFIX=HEAD-
@@ -30,10 +26,11 @@ CONFLICTS=	nagios-[123].*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX:C/-$//}
 
-OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
-		NANOSLEEP "Use nanosleep in event timing" off \
-		EVENT_BROKER "Enable event broker functionality" off \
-		UNHANDLED_HACK "Display passive checks in unhandled queries" off
+OPTIONS_DEFINE=	EMBEDDED_PERL NANOSLEEP EVENT_BROKER UNHANDLED_HACK
+EMBEDDED_PERL_DESC=	Embedded Perl
+NANOSLEEP_DESC=		Use nanosleep in event timing
+EVENT_BROKER_DESC=	Event broker functionality
+UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 
 GNU_CONFIGURE=	yes
 WANT_PHP_MOD=	yes
@@ -95,7 +92,7 @@ SUB_LIST=	PREFIX=${PREFIX} \
 
 USE_PHP=	yes
 
-.if defined(WITH_EMBEDDED_PERL)
+.if ${PORT_OPTIONS:MEMBEDDED_PERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
@@ -104,18 +101,18 @@ PLIST_SUB+=	EMBEDDED_PERL=""
 PLIST_SUB+=	EMBEDDED_PERL="@comment "
 .endif
 
-.if defined(WITH_NANOSLEEP)
+.if ${PORT_OPTIONS:MNANOSLEEP}
 CONFIGURE_ARGS+=	--enable-nanosleep
 .endif
 
-.if defined(WITH_EVENT_BROKER)
+.if ${PORT_OPTIONS:MEVENT_BROKER}
 CONFIGURE_ARGS+=	--enable-event-broker
 .else
 CONFIGURE_ARGS+=	--disable-event-broker
 .endif
 
 post-patch:
-.if defined(WITH_UNHANDLED_HACK)
+.if ${PORT_OPTIONS:MUNHANDLED_HACK}
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 .endif

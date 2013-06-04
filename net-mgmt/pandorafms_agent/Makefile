@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pandorafms_agent
-# Date created:		2011-11-22
-# Whom:			KIKUCHI Koichiro <koichiro@rworks.jp>
-#
+# Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	pandora_agent
 PORTVERSION=	${PANDORA_VERSION}
@@ -16,7 +12,9 @@ COMMENT=	Pandora FMS agent, Perl version
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
-OPTIONS=	TENTACLE_SERVER "Install tentalce_server" on
+OPTIONS_DEFINE=	TENTACLE_SERVER
+OPTIONS_DEFAULT=	TENTACLE_SERVER
+TENTACLE_SERVER_DESC=	Install tentalce_server
 
 USE_PERL5=	yes
 SUB_LIST+=	PERL="${PERL}"
@@ -33,7 +31,7 @@ PORTDOCS+=	README
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TENTACLE_SERVER)
+.if ${PORT_OPTIONS:MTENTACLE_SERVER}
 CONFLICTS=	pandora_server-4*
 PLIST_SUB+=	TENTACLE_SERVER=""
 .else
@@ -41,7 +39,7 @@ PLIST_SUB+=	TENTACLE_SERVER="@comment "
 .endif
 
 post-patch:
-.if !defined(WITH_TENTACLE_SERVER)
+.if ! ${PORT_OPTIONS:MTENTACLE_SERVER}
 	@${REINPLACE_CMD} \
 		-e '/TENTACLE_SERVER/s/^/#/' \
 		${WRKSRC}/pandora_agent_installer
@@ -77,7 +75,7 @@ do-install:
 	@cd ${WRKSRC} && ${SH} pandora_agent_installer --force-install
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for x in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${x} ${DOCSDIR}

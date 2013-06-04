@@ -1,9 +1,5 @@
-# New ports collection makefile for:	weathermap
-# Date created:		2007-05-03
-# Whom:			Felippe de Meirelles Motta <lippe@freebsdbrasil.com.br>
-#
+# Created by: Felippe de Meirelles Motta <lippe@freebsdbrasil.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	weathermap
 PORTVERSION=	1.1.1
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-OPTIONS=	WGET "Enable WGET support" OFF
+OPTIONS_DEFINE=	WGET
+WGET_DESC=	WGET support
 
 PORTDOCS=	README LICENSE INSTALL
 
@@ -32,7 +29,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_WGET)
+.if ${PORT_OPTIONS:MWGET}
 RUN_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
 .endif
 
@@ -49,7 +46,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/example/weathermap.conf ${PREFIX}/etc/weathermap/weathermap.sample.conf
 	@[ -f ${PREFIX}/etc/weathermap/weathermap.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/example/weathermap.conf ${PREFIX}/etc/weathermap/weathermap.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
