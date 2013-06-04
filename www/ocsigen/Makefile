@@ -1,7 +1,4 @@
-# New ports collection makefile for: ocsigen
-# Date created: March 14, 2007
-# Whom: Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
 
 PORTNAME=	ocsigen
@@ -29,8 +26,9 @@ USE_OCAML_LDCONFIG=	yes
 
 SA_DIR=		${PREFIX}/${OCAML_SITELIBDIR}
 
-OPTIONS=	SQLITE "Use sqlite as a database backend" OFF \
-		CAMLZIP "Use camlzip for compression" ON
+OPTIONS_DEFINE=	SQLITE CAMLZIP
+OPTIONS_DEFAULT=	CAMLZIP
+CAMLZIP_DESC=	Use camlzip for compression
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -50,16 +48,17 @@ CONFIGURE_ARGS=	--name ${PORTNAME} \
 
 ALL_TARGET=	depend all
 INSTALL_TARGET=	installnodoc
-.if !defined(NOPORTDOCS)
+
+MAN1=		ocsigen.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=	docinstall
 PORTDOCS=		*
 .endif
 
-MAN1=		ocsigen.1
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 BUILD_DEPENDS+=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
 RUN_DEPENDS+=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
 CONFIGURE_ARGS+=	--enable-sqlite
@@ -68,13 +67,13 @@ PLIST_FILES+=	lib/ocsigen/extensions/ocsipersist-sqlite.cma
 CONFIGURE_ARGS+=	--disable-sqlite
 .endif
 
-.if defined(WITHOUT_CAMLZIP)
-CONFIGURE_ARGS+=	--disable-camlzip
-.else
+.if ${PORT_OPTIONS:MCAMLZIP}
 CONFIGURE_ARGS+=	--enable-camlzip
 BUILD_DEPENDS+=	ocaml-zip>=1.03_2:${PORTSDIR}/archivers/ocaml-zip
 RUN_DEPENDS+=	ocaml-zip>=1.03_2:${PORTSDIR}/archivers/ocaml-zip
 PLIST_FILES+=	lib/ocsigen/extensions/deflatemod.cmo
+.else
+CONFIGURE_ARGS+=	--disable-camlzip
 .endif
 
 post-install:
@@ -83,4 +82,4 @@ post-install:
 	    ${PREFIX}/etc/${PORTNAME}/ocsigen.conf; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

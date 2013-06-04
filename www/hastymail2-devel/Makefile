@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hastymail
-# Date created:		2006-11-04
-# Whom:			Bartlomiej Rutkowski <r@robakdesign.com>
-#
+# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hastymail2
 PORTVERSION=	1.1.${HASTYMAIL_REV:S/.//g}
@@ -34,27 +30,26 @@ CONFLICTS=	hastymail2-1.[0-9]*
 
 HASTYMAIL_REV=	2011.08.22
 
-OPTIONS=	PGSQL	"Use PostgreSQL" off \
-		MYSQL	"Use MySQL" off \
-		DB	"Use older pear DB (instead of MDB2)" off
+OPTIONS_DEFINE=	PGSQL MYSQL DB
+DB_DESC=	Use older pear DB (instead of MDB2)
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-.if !defined(WITH_DB)
+.if ! ${PORT_OPTIONS:MDB}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
 .endif
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-.if !defined(WITH_DB)
+.if ! ${PORT_OPTIONS:MDB}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
 .endif
 .endif
 
-.if defined(WITH_DB) && (defined(WITH_MYSQL) || defined(WITH_PGSQL))
+.if ${PORT_OPTIONS:MDB} && (${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL}}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
@@ -84,4 +79,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

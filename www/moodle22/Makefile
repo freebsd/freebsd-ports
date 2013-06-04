@@ -23,31 +23,29 @@ USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
 		soap openssl simplexml spl dom json zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
-OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
-		PGSQL   "Add support for a PostgreSQL database server" Off \
-		MSSQL   "Add support for a MS SQL Server" Off \
-		LDAP    "Add LDAP authentication functionality" Off \
-		MIMETEX "Add mimeTeX filter functionality" Off
+OPTIONS_DEFINE=	MYSQL PGSQL MSSQL LDAP MIMETEX
+OPTIONS_DEFAULT=	MYSQL
+MIMETEX_DESC=	mimeTeX filter functionality
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysqli
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 USE_PHP+=	mssql
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
@@ -79,11 +77,11 @@ do-install:
 		>> ${TMPPLIST}
 	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
-.if !defined(WITHOUT_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

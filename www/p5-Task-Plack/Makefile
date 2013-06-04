@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Task::Plack
-# Date created:		17 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Task-Plack
 PORTVERSION=	0.25
@@ -19,38 +14,42 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Task::Plack.3
 
-OPTIONS=FASTCGI	"FastCGI daemon and dispatcher" off \
-	STACKTRACE "Stacktrace with lexical variables" off \
-	HANDLEIO "Utility to create IO::Handle-ish objects" off \
-	CORE "Core and Essential Tools" on \
-	SERVER "Recommended PSGI Servers and Plack handlers" off \
-	EXTRASRV "Extra PSGI servers and Plack handlers" off \
-	MIDDLE "Recommended middleware components" off \
-	EXTRAMID "Extra Middleware Components" off \
-	TOOLS "Tools" off \
-	CATALYST "Catalyst Engine" off \
-	SQUATTING "Squatting::On" off \
-	CGIAPP "CGI::Application::PSGI" off
+OPTIONS_DEFINE=	FASTCGI STACKTRACE HANDLEIO CORE SERVER EXTRASRV MIDDLE \
+		EXTRAMID TOOLS CATALYST SQUATTING CGIAPP
+OPTIONS_DEFAULT=	CORE
+
+FASTCGI_DESC=		FastCGI daemon and dispatcher
+STACKTRACE_DESC=	Stacktrace with lexical variables
+HANDLEIO_DESC=		Utility to create IO::Handle-ish objects
+CORE_DESC=		Core and Essential Tools
+SERVER_DESC=		Recommended PSGI Servers and Plack handlers
+EXTRASRV_DESC=		Extra PSGI servers and Plack handlers
+MIDDLE_DESC=		Recommended middleware components
+EXTRAMID_DESC=		Extra Middleware Components
+TOOLS_DESC=		Tools
+CATALYST_DESC=		Catalyst Engine
+SQUATTING_DESC=		Squatting::On
+CGIAPP_DESC=		CGI::Application::PSGI
 #OPTIONS:=${OPTIONS:C/off/on/g}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 DEP+=	p5-FCGI>=0.71:${PORTSDIR}/www/p5-FCGI \
 	p5-FCGI-Client>=0.04:${PORTSDIR}/www/p5-FCGI-Client \
 	p5-FCGI-ProcManager>=0.19:${PORTSDIR}/www/p5-FCGI-ProcManager \
 	p5-Net-FastCGI>=0.11:${PORTSDIR}/www/p5-Net-FastCGI
 .endif
 
-.if defined(WITH_STACKTRACE)
+.if ${PORT_OPTIONS:MSTACKTRACE}
 DEP+=	p5-Devel-StackTrace-WithLexicals>=0.05:${PORTSDIR}/devel/p5-Devel-StackTrace-WithLexicals
 .endif
 
-.if defined(WITH_HANDLEIO)
+.if ${PORT_OPTIONS:MHANDLEIO}
 DEP+=	p5-IO-Handle-Util>=0.01:${PORTSDIR}/devel/p5-IO-Handle-Util
 .endif
 
-.if defined(WITH_CORE)
+.if ${PORT_OPTIONS:MCORE}
 DEP+=	p5-PSGI>=1.03:${PORTSDIR}/www/p5-PSGI \
 	p5-Plack>=0.9934:${PORTSDIR}/www/p5-Plack \
 	p5-CGI-PSGI>=0.11:${PORTSDIR}/www/p5-CGI-PSGI \
@@ -58,7 +57,7 @@ DEP+=	p5-PSGI>=1.03:${PORTSDIR}/www/p5-PSGI \
 	p5-CGI-Compile>=0.11:${PORTSDIR}/www/p5-CGI-Compile
 .endif
 
-.if defined(WITH_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 DEP+=	p5-HTTP-Server-Simple-PSGI>=0.14:${PORTSDIR}/www/p5-HTTP-Server-Simple-PSGI \
 	p5-Starman>=0.2004:${PORTSDIR}/www/p5-Starman \
 	p5-Twiggy>=0.1005:${PORTSDIR}/www/p5-Twiggy \
@@ -66,7 +65,7 @@ DEP+=	p5-HTTP-Server-Simple-PSGI>=0.14:${PORTSDIR}/www/p5-HTTP-Server-Simple-PSG
 	p5-Corona>=0.1004:${PORTSDIR}/www/p5-Corona
 .endif
 
-.if defined(WITH_EXTRASRV)
+.if ${PORT_OPTIONS:MEXTRASRV}
 DEP+=	p5-POE-Component-Server-PSGI>=0.5:${PORTSDIR}/www/p5-POE-Component-Server-PSGI \
 	p5-Plack-Handler-AnyEvent-ReverseHTTP>=0.04:${PORTSDIR}/www/p5-Plack-Handler-AnyEvent-ReverseHTTP \
 	p5-Plack-Handler-SCGI>=0.02:${PORTSDIR}/www/p5-Plack-Handler-SCGI \
@@ -76,7 +75,7 @@ DEP+=	p5-POE-Component-Server-PSGI>=0.5:${PORTSDIR}/www/p5-POE-Component-Server-
 #	p5-Plack-Handler-Mongrel2>0:${PORTSDIR}/www/p5-Plack-Handler-Mongrel2
 .endif
 
-.if defined(WITH_MIDDLE)
+.if ${PORT_OPTIONS:MMIDDLE}
 DEP+=	p5-Plack-Middleware-Deflater>=0.03:${PORTSDIR}/www/p5-Plack-Middleware-Deflater \
 	p5-Plack-Middleware-Session>=0.11:${PORTSDIR}/www/p5-Plack-Middleware-Session \
 	p5-Plack-Middleware-Debug>=0.09:${PORTSDIR}/www/p5-Plack-Middleware-Debug \
@@ -87,7 +86,7 @@ DEP+=	p5-Plack-Middleware-Deflater>=0.03:${PORTSDIR}/www/p5-Plack-Middleware-Def
 	p5-Plack-Middleware-ConsoleLogger>=0.01:${PORTSDIR}/www/p5-Plack-Middleware-ConsoleLogger
 .endif
 
-.if defined(WITH_EXTRAMID)
+.if ${PORT_OPTIONS:MEXTRAMID}
 DEP+=	p5-Plack-Middleware-JSConcat>=0.29:${PORTSDIR}/www/p5-Plack-Middleware-JSConcat \
 	p5-Plack-Middleware-Throttle>=0.01:${PORTSDIR}/www/p5-Plack-Middleware-Throttle \
 	p5-Plack-Middleware-Status>=1.101150:${PORTSDIR}/www/p5-Plack-Middleware-Status \
@@ -95,20 +94,20 @@ DEP+=	p5-Plack-Middleware-JSConcat>=0.29:${PORTSDIR}/www/p5-Plack-Middleware-JSC
 	p5-Plack-Middleware-File-Sass>=0.01:${PORTSDIR}/www/p5-Plack-Middleware-File-Sass
 .endif
 
-.if defined(WITH_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 DEP+=	p5-Test-WWW-Mechanize-PSGI>=0.35:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI \
 	p5-Flea>=0.02:${PORTSDIR}/www/p5-Flea
 .endif
 
-.if defined(WITH_CATALYST)
+.if ${PORT_OPTIONS:MCATALYST}
 DEP+=	p5-Catalyst-Engine-PSGI>=0.09:${PORTSDIR}/www/p5-Catalyst-Engine-PSGI
 .endif
 
-.if defined(WITH_SQUATTING)
+.if ${PORT_OPTIONS:MSQUATTING}
 DEP+=	p5-Squatting-On-PSGI>=0.04:${PORTSDIR}/www/p5-Squatting-On-PSGI
 .endif
 
-.if defined(WITH_CGIAPP)
+.if ${PORT_OPTIONS:MCGIAPP}
 DEP+=	p5-CGI-Application-PSGI>=1.00:${PORTSDIR}/www/p5-CGI-Application-PSGI
 .endif
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moodle
-# Date created:				30 September 2005
-# Whom:					Javier Martin Rueda <jmrueda@diatel.upm.es>
-#
+# Created by: Javier Martin Rueda <jmrueda@diatel.upm.es>
 # $FreeBSD$
-#
 
 PORTNAME=	moodle
 PORTVERSION=	1.9.19
@@ -19,17 +15,14 @@ CONFLICTS=	moodle-2.*.*
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype
 WRKSRC=		${WRKDIR}/moodle
 
-OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
-		PGSQL   "Add support for a PostgreSQL database server" Off \
-		MSSQL   "Add support for a MS SQL Server" Off \
-		ZLIB    "Add zip/unzip functionality" On \
-		NETWORK "Add Moodle Network functionality" Off \
-		LDAP    "Add LDAP authentication functionality" Off \
-		MIMETEX "Add mimeTeX filter functionality" Off
+OPTIONS_DEFINE=	MYSQL PGSQL MSSQL ZLIB NETWORK LDAP MIMETEX
+OPTIONS_DEFAULT=	ZLIB
+NETWORK_DESC=	Moodle Network functionality
+MIMETEX_DESC=	mimeTeX filter functionality
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_MSSQL)
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMSSQL}
 pre-fetch:
 	@${ECHO_MSG} "
 	@${ECHO_MSG} "You didn't activate support for any database server!"
@@ -43,31 +36,31 @@ pre-fetch:
 	@sleep 5
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 USE_PHP+=	mssql
 .endif
 
-.if !defined(WITHOUT_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 USE_PHP+=	zlib
 .endif
 
-.if defined(WITH_NETWORK)
+.if ${PORT_OPTIONS:MNETWORK}
 USE_PHP+=	openssl
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if !defined(WITHOUT_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
@@ -96,11 +89,11 @@ do-install:
 		>> ${TMPPLIST}
 	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
-.if !defined(WITHOUT_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 	${LN} -sf ${PREFIX}/www/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

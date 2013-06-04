@@ -1,7 +1,4 @@
-# New ports collection makefile for:	www/mambo
-# Date created:				Mon Apr 18, 2005
-# Whom:					Francisco Cabrita <include@npf.pt.freebsd.org>
-#
+# Created by: Francisco Cabrita <include@npf.pt.freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	mambo
@@ -16,23 +13,23 @@ COMMENT=	A dynamic web content management system (CMS)
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message
 
-OPTIONS=	MYSQLI "MySQL 4.1+ back-end (use mysqli PHP extension)" on
-OPTIONS+=	MYSQL "MySQL back-end (use mysql PHP extension)" off
+OPTIONS_DEFAULT=	MYSQLI
+OPTIONS_MULTI=	DB
+DB_DESC=	database back-end
+OPTIONS_MULTI_DB=	MYSQLI MYSQL
+MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
+MYSQL_DESC=	MySQL back-end (use mysql PHP extension)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_PHP=	session zlib gd pdf xml pcre
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_MYSQLI)
+.if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
-.endif
-
-.if defined(WITHOUT_MYSQL) && !defined(WITH_MYSQLI)
-IGNORE=	needs at least one database back-end
 .endif
 
 do-extract:
@@ -57,4 +54,4 @@ do-install:
 post-install:
 		@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
