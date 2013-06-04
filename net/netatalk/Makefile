@@ -30,14 +30,14 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE}
 
-OPTIONS=	APPLETALK	"Enable AppleTalk protocol support" on \
-		SRVLOC		"Enable Service Location Protocol support" off \
-		PAM		"Enable PAM support" off \
-		TIMELORD	"Enable Timelord network time service" off \
-		KRB5		"Enable Kerberos V UAM" off \
-		ZEROCONF	"Enable Zeroconf (Bonjour) support" on \
-		LDAP		"Enable LDAP support" off \
-		SENDFILE	"Enable sendfile support" off
+OPTIONS_DEFINE=	APPLETALK SRVLOC PAM TIMELORD KRB5 ZEROCONF LDAP SENDFILE
+OPTIONS_DEFAULT=	APPLETALK
+APPLETALK_DESC=	AppleTalk protocol support
+SRVLOC_DESC=	Service Location Protocol support
+TIMELORD_DESC=	Timelord network time service
+KRB5_DESC=	Kerberos V UAM
+ZEROCONF_DESC=	Zeroconf (Bonjour) support
+SENDFILE_DESC=	sendfile support
 
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
@@ -53,16 +53,16 @@ MAN8=		afpd.8 cnid_dbd.8 cnid_metad.8 timelord.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1* yudit-[0-9]*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KRB5)
+.if ${PORT_OPTIONS:MKRB5}
 CONFIGURE_ARGS+=	--enable-krbV-uam
 PLIST_SUB+=		NETATALKKRB5=""
 .else
 PLIST_SUB+=		NETATALKKRB5="@comment "
 .endif
 
-.if defined(WITH_APPLETALK)
+.if ${PORT_OPTIONS:MAPPLETALK}
 CONFIGURE_ARGS+=	--enable-ddp
 PLIST_SUB+=		APPLETALK=""
 MAN1+=			aecho.1 getzones.1 nbp.1 nbplkup.1 nbprgstr.1 \
@@ -76,7 +76,7 @@ FILES+=			atalkd.conf papd.conf
 PLIST_SUB+=		APPLETALK="@comment "
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		NETATALKPAM=""
 .else
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--without-pam
 PLIST_SUB+=		NETATALKPAM="@comment "
 .endif
 
-.if defined(WITH_SRVLOC)
+.if ${PORT_OPTIONS:MSRVLOC}
 CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
 LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
 SUB_LIST+=		SRVLOC="slpd"
@@ -92,14 +92,14 @@ SUB_LIST+=		SRVLOC="slpd"
 SUB_LIST+=		SRVLOC=""
 .endif
 
-.if defined (WITH_TIMELORD)
+.if ${PORT_OPTIONS:MTIMELORD}
 CONFIGURE_ARGS+=	--enable-timelord
 PLIST_SUB+=		TIMELORD=""
 .else
 PLIST_SUB+=		TIMELORD="@comment "
 .endif
 
-.if defined (WITH_ZEROCONF)
+.if ${PORT_OPTIONS:MZEROCONF}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=	--disable-zerconf
 SUB_LIST+=		ZEROCONF=""
 .endif
 
-.if defined (WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--with-ldap
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_OPENLDAP=		yes
@@ -118,16 +118,10 @@ USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if defined (WITH_SENDFILE)
+.if ${PORT_OPTIONS:MSENDFILE}
 CONFIGURE_ARGS+=	--enable-sendfile
 .else
 CONFIGURE_ARGS+=	--disable-sendfile
-.endif
-
-.if ${OSVERSION} < 800031
-PLIST_SUB+=	ATFUNCS="@comment "
-.else
-PLIST_SUB+=	ATFUNCS=""
 .endif
 
 post-patch:
@@ -151,4 +145,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

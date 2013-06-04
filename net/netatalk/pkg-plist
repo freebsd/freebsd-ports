@@ -1,4 +1,3 @@
-%%ATFUNCS%%bin/ad
 %%APPLETALK%%bin/add_netatalk_printer
 bin/adv1tov2
 %%APPLETALK%%bin/aecho

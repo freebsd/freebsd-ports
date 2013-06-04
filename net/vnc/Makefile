@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vnc
-# Date created:		24 February 1998
-# Whom:			msmith
-#
+# Created by: msmith
 # $FreeBSD$
-#
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
@@ -31,7 +27,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST=		${WRKDIR}/pkg-plist
 CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]*
 
-OPTIONS=	SERVER "Install VNC server components" on
+OPTIONS_DEFINE=	SERVER
+OPTIONS_DEFINE=	SERVER
+SERVER_DESC=	Install VNC server components
 
 MAN1=		vncviewer.1 \
 		vncpasswd.1 \
@@ -48,7 +46,7 @@ PREFIX=${REALVNC_BASE}
 BROKEN=		Does not compile on arm
 .endif
 
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 MASTER_SITES+=	${MASTER_SITE_XORG:S/$/:x/}
 MASTER_SITE_SUBDIR+=	4.3.0/:x
 DISTFILES+=	X430src-1.tgz:x \
@@ -77,13 +75,13 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-extract:
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@cd ${WRKSRC} && ${TAR} -cf - -C ${WRKDIR} xc | ${TAR} -xf - && \
 	${RM} -rf ${WRKDIR}/xc
 .endif
 
 post-patch:
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		${WRKSRC}/xc/config/cf/vnc.def
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' \
@@ -92,7 +90,7 @@ post-patch:
 .endif
 
 post-build:
-.if defined(WITHOUT_SERVER)
+.if ! ${PORT_OPTIONS:MSERVER}
 	@${ECHO_MSG} "Skipping build of VNC server."
 .else
 	cd ${WRKSRC}/xc && make CC=${CC} CXX=${CXX} World
@@ -100,7 +98,7 @@ post-build:
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
 		${ECHO_CMD} lib/modules/extensions/vnc.so ; \
 		${ECHO_CMD} "@dirrmtry lib/modules/extensions" ; \
@@ -114,7 +112,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f}/${f} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${f}/${f}.man ${PREFIX}/man/man1/${f}.1
 .endfor
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/vnc/classes|${DATADIR}/classes|g' \
 		${WRKSRC}/vncserver
