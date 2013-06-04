@@ -1,9 +1,5 @@
-# New ports collection makefile for:	google-gadgets
-# Date created:		2008-06-08
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.11.2
@@ -46,32 +42,34 @@ WANT_GNOME=	yes
 USES=	pathfix
 INSTALLS_ICONS=	yes
 
-OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on\
-		GTK		"Build GTK Host"			on\
-		QT		"Build Qt Host"				on\
-		GTKWEBKIT	"Build with GTK Webkit support"		on\
-		MOZILLA		"Build with Mozilla support"		on
+OPTIONS_DEFINE=	DEBUGGING GTKWEBKIT MOZILLA
+OPTIONS_DEFAULT=	DEBUGGING GTK QT GTKWEBKIT MOZILLA
+OPTIONS_MULTI=	UI
+OPTIONS_MULTI_UI=	GTK QT
+UI_DESC=	Host toolkit
+DEBUGGING_DESC=	debug output on runtime
+GTK_DESC=	Build GTK Host
+QT_DESC=	Build Qt Host
+GTKWEBKIT_DESC=	Build with GTK Webkit support
+MOZILLA_DESC=	Build with Mozilla support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT}
 USE_QT4=	webkit opengl gui corelib script network moc_build
 .endif
 
-.if defined(WITH_GTKWEBKIT)
+.if ${PORT_OPTIONS:MGTKWEBKIT}
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
 LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 .endif
 
-.if defined(WITH_MOZILLA)
+.if ${PORT_OPTIONS:MMOZILLA}
 USE_GECKO=	libxul19
 .endif
 
-.if defined(WITHOUT_GTKWEBKIT) && defined(WITHOUT_MOZILLA) && defined(WITH_GTK)
-IGNORE=	gtk host requires GTK Webkit or/and Mozilla support to be enabled. Please, rerun 'make config'
-.elif defined(WITH_GTKWEBKIT) && defined(WITHOUT_GTK)
-.undef WITHOUT_GTK
-WITH_GTK=yes
+.if ${PORT_OPTIONS:MGTKWEBKIT} && ! ${PORT_OPTIONS:MGTK}
+PORT_OPTIONS+=	GTK
 
 pre-everything::
 	@${ECHO_MSG} "==> GTK Webkit or/and Mozilla support is enabled."
@@ -83,11 +81,19 @@ pre-everything::
 
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-deprecated-declarations
 
-.if defined(WITH_DEBUGGING)
+.if ${PORT_OPTIONS:MDEBUGGING}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MGTK}
+USE_GNOME=	gtk20
+PLIST_SUB+=	GTK=""
+CONFIGURE_ARGS+=	--enable-gtk-host
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libsoup-2.4.pc:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CONFIGURE_ARGS+=	--with-ssl-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
+.else
 PLIST_SUB+=	GTK="@comment "
 CONFIGURE_ARGS+=	--disable-gtk-host \
 			--disable-libggadget-gtk \
@@ -96,42 +102,29 @@ CONFIGURE_ARGS+=	--disable-gtk-host \
 			--disable-webkit-script-runtime \
 			--disable-gtkwebkit-browser-element \
 			--disable-soup-xml-http-request
-.elif defined(WITH_GTK)
-USE_GNOME=	gtk20
-PLIST_SUB+=	GTK=""
-CONFIGURE_ARGS+=	--enable-gtk-host
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libsoup-2.4.pc:${PORTSDIR}/devel/libsoup
-LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-CONFIGURE_ARGS+=	--with-ssl-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
-
 .endif
 
-.if defined(WITHOUT_GTKWEBKIT)
-PLIST_SUB+=	GTKWEBKIT="@comment "
-CONFIGURE_ARGS+=	--disable-webkit-script-runtime	--disable-gtkwebkit-browser-element
-.elif defined(WITH_GTKWEBKIT)
+.if ${PORT_OPTIONS:MGTKWEBKIT}
 PLIST_SUB+=	GTKWEBKIT=""
+PLIST_SUB+=	GTKWEBKIT="@comment "
+.else
+CONFIGURE_ARGS+=	--disable-webkit-script-runtime	--disable-gtkwebkit-browser-element
 .endif
 
-.if defined(WITHOUT_MOZILLA)
+.if ${PORT_OPTIONS:MMOZILLA}
+PLIST_SUB+=	MOZILLA=""
+.else
 PLIST_SUB+=	MOZILLA="@comment "
 CONFIGURE_ARGS+=	--disable-smjs-script-runtime	--disable-gtkmoz-browser-element
-.elif defined(WITH_MOZILLA)
-PLIST_SUB+=	MOZILLA=""
 .endif
 
-.if defined(WITHOUT_QT)
+.if ${PORT_OPTIONS:MQT}
+PLIST_SUB+=	QT=""
+CONFIGURE_ARGS+=	--enable-qt-host
+.else
 PLIST_SUB+=	QT="@comment "
 CONFIGURE_ARGS+=	--disable-qt-host --disable-libggadget-qt --disable-qt-system-framework\
 			--disable-qtwebkit-browser-element --disable-qt-script-runtime --disable-qt-xml-http-request
-.else
-PLIST_SUB+=	QT=""
-CONFIGURE_ARGS+=	--enable-qt-host
-.endif
-
-.if defined(WITHOUT_QT) && defined(WITHOUT_GTK)
-IGNORE=	requires GTK or/and Qt host to be enabled. Please, rerun 'make config'
 .endif
 
 post-patch:

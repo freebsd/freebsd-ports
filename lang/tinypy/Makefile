@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinypy
-# Date created:		2009-02-26
-# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
-#
+# Created by: Marcin Cieslak <saper@SYSTEM.PL>
 # $FreeBSD$
-#
 
 PORTNAME=	tinypy
 PORTVERSION=	1.1
@@ -22,11 +18,12 @@ PYDISTUTILS_NOEGGINFO=		yes
 PLIST_FILES=	bin/tinypy
 PORTEXAMPLES=	*
 
-OPTIONS=	PYGAME "Enable PyGame support (requires SDL)" off
+OPTIONS_DEFINE=	PYGAME
+PYGAME_DESC=	PyGame support (requires SDL)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYGAME)
+.if ${PORT_OPTIONS:MPYGAME}
 PYDISTUTILS_BUILD_TARGET+=	pygame
 USE_SDL=	sdl
 .endif
@@ -42,7 +39,7 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/tinypy ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES) && defined(WITH_PYGAME)
+.if ${PORT_OPTIONS:MEXAMPLES} && ${PORT_OPTIONS:MPYGAME}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/julia.py ${EXAMPLESDIR}
 .endif
