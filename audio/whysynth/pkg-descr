@@ -4,11 +4,12 @@ Disposable Soft Synth Interface (DSSI).  A brief list of features:
 - 4 oscillators, 2 filters, 3 LFOs, and 5 envelope generators per
   voice.
 
-- 7 oscillator modes: minBLEP, wavecycle, asynchronous granular, FM,
-  waveshaper, noise, and PADsynth.
+- 11 oscillator modes: minBLEP, wavecycle, chorused wavecycle,
+  asynchronous granular, three FM modes, waveshaper, noise,
+  PADsynth, and phase distortion.
 
-- 5 filter modes.
+- 10 filter modes.
 
-- flexible modulation and mixdown options.
+- flexible modulation and mixdown options, plus effects.
 
 WWW: http://smbolton.com/whysynth.html
