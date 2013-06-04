@@ -3,14 +3,13 @@
 
 PORTNAME=	haskeline
 PORTVERSION=	0.7.0.3
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command-line interface for user input, written in Haskell
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	transformers>=0.2
 USES+=		iconv

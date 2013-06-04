@@ -2,11 +2,11 @@
 
 PORTNAME=	resource-pool
 PORTVERSION=	0.2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A high-performance striped resource pooling implementation
+COMMENT=	High-performance striped resource pooling implementation
 
 LICENSE=	BSD
 

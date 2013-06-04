@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	publicsuffixlist
-PORTVERSION=	0.0.3
+PORTVERSION=	0.1
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Alex is a tool for generating lexical analysers in Haskell
+COMMENT=	Tool for generating lexical analysers in Haskell
 
 LICENSE=	BSD
 

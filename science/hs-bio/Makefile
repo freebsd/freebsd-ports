@@ -3,15 +3,13 @@
 
 PORTNAME=	bio
 PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A bioinformatics library
+COMMENT=	Bioinformatics library
 
 LICENSE=	LGPL21
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	mtl parallel parsec QuickCheck>=2 tagsoup>=0.8
 

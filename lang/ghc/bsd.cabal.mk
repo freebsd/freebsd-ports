@@ -21,7 +21,6 @@ NO_BUILD=	yes
 
 DIST_SUBDIR?=	cabal
 
-CABAL_SETUP?=	Setup.lhs
 SETUP_CMD?=	./setup
 
 ALEX_CMD?=	${LOCALBASE}/bin/alex
@@ -33,16 +32,16 @@ CABAL_DIRS+=	${DATADIR} ${EXAMPLESDIR} ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
 
 GHC_HADDOCK_CMD=${LOCALBASE}/bin/haddock-ghc-${GHC_VERSION}
 
-CABAL_DOCSDIR=		${PREFIX}/share/doc/ghc-${GHC_VERSION}/cabal
+CABAL_DOCSDIR=		${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
 CABAL_DOCSDIR_REL=	${CABAL_DOCSDIR:S,^${PREFIX}/,,}
 
-DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}/cabal/${DISTNAME}
+DATADIR=	${PREFIX}/share/cabal/ghc-${GHC_VERSION}/${DISTNAME}
 DOCSDIR=	${CABAL_DOCSDIR}/${DISTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}/cabal/${DISTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}/${DISTNAME}
 
 GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
 
-CABAL_LIBDIR=		${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
+CABAL_LIBDIR=		${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
 CABAL_LIBSUBDIR=	${DISTNAME}
 CABAL_LIBDIR_REL=	${CABAL_LIBDIR:S,^${PREFIX}/,,}
 
@@ -82,6 +81,11 @@ USE_GCC=	4.6+
 CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
 			--with-ranlib=${RANLIB}
 
+.if ${PORT_OPTIONS:MLLVM}
+BUILD_DEPENDS+=		llvm>=3.0:${PORTSDIR}/devel/llvm
+CONFIGURE_ARGS+=	--ghc-option=-fllvm
+.endif
+
 .if defined(USE_ALEX)
 BUILD_DEPENDS+=	${ALEX_CMD}:${PORTSDIR}/devel/hs-alex
 CONFIGURE_ARGS+=	 --with-alex=${ALEX_CMD}
@@ -99,7 +103,7 @@ CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 
 .if defined(EXECUTABLE)
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
-USES+=	iconv
+USES+=		iconv
 .endif
 
 .if defined(USE_CABAL)
@@ -146,7 +150,7 @@ HADDOCK_OPTS=	# empty
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
 HSCOLOUR_VERSION=	1.20.3
-HSCOLOUR_DATADIR=	${LOCALBASE}/share/ghc-${GHC_VERSION}/cabal/hscolour-${HSCOLOUR_VERSION}
+HSCOLOUR_DATADIR=	${LOCALBASE}/share/cabal/ghc-${GHC_VERSION}/hscolour-${HSCOLOUR_VERSION}
 HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif # HSCOLOUR
 .endif # HADDOCK_AVAILABLE
@@ -190,28 +194,24 @@ post-patch::
 		${WRKSRC}/doc/configure.ac
 .endif
 
-# Purge Haskell 98 (required for GHC 7.2 or later)
-.if defined(HASKELL98)
-	@${REINPLACE_CMD} -E 's|haskell98[,]?||' \
-		${WRKSRC}/${PORTNAME}.cabal
-
-	@${REINPLACE_CMD} 's|import List|import Data.List| ; \
-		s|import Char|import Data.Char| ; \
-		s|import Ratio|import Data.Ratio| ; \
-		s|import Monad|import Control.Monad| ; \
-		s|import IO|import System.IO.Error| ; \
-		s|import Directory|import System.Directory| ; \
-		s|import Maybe|import Data.Maybe| ; \
-		s|import Array|import Data.Array|' \
-		`${FIND} ${WRKSRC} -name '*.hs'`
-.endif
+_BUILD_SETUP=	${GHC_CMD} -o ${SETUP_CMD} -package Cabal --make
 
 .if !target(do-configure)
 do-configure:
 .if !defined(METAPORT)
-	cd ${WRKSRC} && ${GHC_CMD} --make ${CABAL_SETUP} -o setup -package Cabal
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-			${SETUP_CMD} configure --ghc --prefix=${PREFIX} --extra-include-dirs="${LOCALBASE}/include" --extra-lib-dirs="${LOCALBASE}/lib" ${__handle_datadir__} ${CONFIGURE_ARGS}
+	@if [ -f ${WRKSRC}/Setup.hs ]; then \
+	    cd ${WRKSRC} && ${_BUILD_SETUP} Setup.hs; fi
+	@if [ -f ${WRKSRC}/Setup.lhs ]; then \
+	    cd ${WRKSRC} && ${_BUILD_SETUP} Setup.lhs; fi
+	@if [ -f ${WRKSRC}/${SETUP_CMD} ]; then \
+	    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	    ${SETUP_CMD} configure --ghc --prefix=${PREFIX} \
+		--extra-include-dirs="${LOCALBASE}/include" --extra-lib-dirs="${LOCALBASE}/lib" \
+		${__handle_datadir__} ${CONFIGURE_ARGS}; \
+	else \
+	    ${ECHO_MSG} "===>  ${PKGNAME} configure fails: no setup program could be created."; \
+	    exit 1; \
+	fi
 
 .if ${PORT_OPTIONS:MDOCS}
 .if defined(XMLDOCS) && defined(USE_AUTOTOOLS)

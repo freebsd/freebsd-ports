@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	cmdargs
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command line argument processing
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	transformers>=0.2
 

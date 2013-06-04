@@ -2,15 +2,13 @@
 
 PORTNAME=	tls-extra
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	TLS extra default values and helpers
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	certificate>=1.3.5 cipher-aes>=0.1 cipher-rc4 crypto-pubkey \
 		crypto-random-api cryptohash>=0.6 mtl network>=2.3 \

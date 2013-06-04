@@ -2,11 +2,11 @@
 
 PORTNAME=	hxt
 PORTVERSION=	9.3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A collection of tools for processing XML with Haskell
+COMMENT=	Collection of tools for processing XML with Haskell
 
 LICENSE=	MIT
 

@@ -3,11 +3,11 @@
 
 PORTNAME=	dlist
 PORTVERSION=	0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A list-like type supporting O(1) append for Haskell
+COMMENT=	List-like type supporting O(1) append for Haskell
 
 LICENSE=	BSD
 

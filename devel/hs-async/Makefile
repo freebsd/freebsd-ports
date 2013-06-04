@@ -1,16 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	async
-PORTVERSION=	2.0.1.3
-PORTREVISION=	1
+PORTVERSION=	2.0.1.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Run IO operations asynchronously and wait for their results
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	stm>=2.2
 

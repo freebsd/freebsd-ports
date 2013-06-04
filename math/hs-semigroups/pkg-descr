@@ -1,4 +1,4 @@
-Haskell 98 semigroups In mathematics, a semigroup is an algebraic structure
+Haskell 98 semigroups.  In mathematics, a semigroup is an algebraic structure
 consisting of a set together with an associative binary operation. A
 semigroup generalizes a monoid in that there might not exist an identity
 element. It also (originally) generalized a group (a monoid with all

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	QuickCheck
-PORTVERSION=	2.5.1.1
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

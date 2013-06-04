@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	http-reverse-proxy
-PORTVERSION=	0.1.1.3
+PORTVERSION=	0.1.1.6
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Reverse proxy HTTP requests, either over raw sockets or with WAI
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	blaze-builder>=0.3 case-insensitive>=0.4 classy-prelude>=0.3 \
 		conduit>=0.5 data-default http-conduit>=1.6 http-types>=0.6 \

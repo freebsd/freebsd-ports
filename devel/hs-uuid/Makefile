@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	uuid
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.13
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Creating, comparing, parsing and printing Universally Unique Identifiers
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	cryptohash>=0.7 maccatcher>=1.0 random>=1.0.1
 

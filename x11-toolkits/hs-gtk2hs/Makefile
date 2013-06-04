@@ -3,12 +3,12 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A GTK2 Binding for Haskell
+COMMENT=	GTK2 Binding for Haskell
 
 METAPORT=	yes
 USE_CABAL=	glib gio cairo pango gtk

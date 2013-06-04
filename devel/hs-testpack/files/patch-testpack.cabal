@@ -1,11 +1,11 @@
 --- ./testpack.cabal.orig	2013-02-25 16:03:46.000000000 +0100
-+++ ./testpack.cabal	2013-03-09 17:54:39.000000000 +0100
++++ ./testpack.cabal	2013-05-04 00:08:00.417315359 +0200
 @@ -39,7 +39,7 @@
  
   Build-Depends: base >= 3 && < 5,
                 mtl, HUnit,
 -               QuickCheck >= 2.1.0.3 && < 2.5
-+               QuickCheck >= 2.1.0.3 && < 2.6
++               QuickCheck >= 2.1.0.3 && < 2.7
  
   If flag(splitBase)
     Build-Depends: base >= 3 && < 5, containers, random

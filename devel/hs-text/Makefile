@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	text
-PORTVERSION=	0.11.2.3
-PORTREVISION=	1
+PORTVERSION=	0.11.3.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	An efficient packed Unicode text type
+COMMENT=	Efficient packed Unicode text type
 
 LICENSE=	BSD
 

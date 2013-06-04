@@ -1,0 +1,11 @@
+--- ./wxcore.cabal.orig	2012-07-04 12:29:33.000000000 +0200
++++ ./wxcore.cabal	2013-04-30 23:37:11.000000000 +0200
+@@ -80,7 +80,7 @@
+     build-depends:
+       array >= 0.2 && < 0.5,
+       base >= 4 && < 5,
+-      containers >= 0.2 && < 0.5
++      containers >= 0.2 && < 0.6
+   else
+     build-depends:
+       array >= 0.1 && < 0.3,

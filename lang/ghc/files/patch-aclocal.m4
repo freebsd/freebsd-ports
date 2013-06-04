@@ -1,5 +1,5 @@
---- aclocal.m4.orig	2012-06-06 19:10:25.000000000 +0200
-+++ aclocal.m4	2013-02-03 01:28:58.024638318 +0100
+--- aclocal.m4.orig	2013-04-18 23:22:46.000000000 +0200
++++ aclocal.m4	2013-04-29 20:32:30.000000000 +0200
 @@ -19,6 +19,8 @@
      # In bindists, we haven't called AC_CANONICAL_{BUILD,HOST,TARGET}
      # so this justs uses $bootstrap_target.
@@ -15,10 +15,10 @@
              ;;
 -        x86_64)
 +        x86_64|amd64)
-             GET_ARM_ISA()
              test -z "[$]2" || eval "[$]2=ArchX86_64"
              ;;
-@@ -186,7 +188,7 @@
+         powerpc)
+@@ -185,7 +187,7 @@
  
      checkVendor() {
          case [$]1 in
@@ -27,21 +27,12 @@
              ;;
          *)
              echo "Unknown vendor [$]1"
-@@ -1835,7 +1837,7 @@
+@@ -1889,7 +1891,7 @@
    vax)
      $2="vax"
      ;;
 -  x86_64)
 +  x86_64|amd64)
      $2="x86_64"
-     ;;
-   *)
-@@ -1875,7 +1877,7 @@
-   freebsd|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|cygwin32|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
-     $2="$1"
-     ;;
--  freebsd8) # like i686-gentoo-freebsd8
-+  freebsd*) # like i686-gentoo-freebsd8
-     $2="freebsd"
      ;;
    *)

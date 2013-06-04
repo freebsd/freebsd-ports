@@ -3,14 +3,13 @@
 
 PORTNAME=	MemoTrie
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Trie-based memo functions
 
 LICENSE=	BSD
-FILE_LICENSE=	COPYING
 
 USE_CABAL=	void
 

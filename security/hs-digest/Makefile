@@ -2,15 +2,13 @@
 
 PORTNAME=	digest
 PORTVERSION=	0.0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Various cryptographic hashes for Bytestrings
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	zlib
 

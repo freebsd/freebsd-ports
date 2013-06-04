@@ -2,11 +2,11 @@
 
 PORTNAME=	shakespeare-i18n
 PORTVERSION=	1.0.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A type-based approach to internationalization
+COMMENT=	Type-based approach to internationalization
 
 LICENSE=	MIT
 

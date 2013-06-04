@@ -1,5 +1,5 @@
 --- ./src/GenUtil.hs.orig	2008-02-10 15:38:31.000000000 +0100
-+++ ./src/GenUtil.hs	2012-05-13 11:53:22.000000000 +0200
++++ ./src/GenUtil.hs	2013-05-01 00:53:12.000000000 +0200
 @@ -39,7 +39,7 @@
      -- ** Simple deconstruction
      fromLeft,fromRight,fsts,snds,splitEither,rights,lefts,
@@ -49,12 +49,25 @@
  
  
  {-# INLINE fromRight #-}
+@@ -284,10 +286,10 @@
+ lefts xs = [x | Left x <- xs]
+ 
+ ioM :: Monad m => IO a -> IO (m a)
+-ioM action = catch (fmap return action) (\e -> return (fail (show e)))
++ioM action = System.IO.Error.catchIOError (fmap return action) (\e -> return (fail (show e)))
+ 
+ ioMp :: MonadPlus m => IO a -> IO (m a)
+-ioMp action = catch (fmap return action) (\_ -> return mzero)
++ioMp action = System.IO.Error.catchIOError (fmap return action) (\_ -> return mzero)
+ 
+ -- | reformat a string to not be wider than a given width, breaking it up
+ -- between words.
 @@ -381,7 +383,7 @@
  -- | looks up an enviornment variable and returns it in a 'MonadPlus' rather
  -- than raising an exception if the variable is not set.
  lookupEnv :: MonadPlus m => String -> IO (m String)
 -lookupEnv s = catch (fmap return $ System.getEnv s) (\e -> if IO.isDoesNotExistError e then return mzero else ioError e)
-+lookupEnv s = catch (fmap return $ System.Environment.getEnv s) (\e -> if System.IO.Error.isDoesNotExistError e then return mzero else ioError e)
++lookupEnv s = System.IO.Error.catchIOError (fmap return $ System.Environment.getEnv s) (\e -> if System.IO.Error.isDoesNotExistError e then return mzero else ioError e)
  
  {-# SPECIALIZE fmapLeft :: (a -> c) -> [(Either a b)] -> [(Either c b)] #-}
  fmapLeft :: Functor f => (a -> c) -> f (Either a b) -> f (Either c b)

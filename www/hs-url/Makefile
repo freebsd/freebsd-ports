@@ -3,11 +3,11 @@
 
 PORTNAME=	url
 PORTVERSION=	2.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A library for working with URLs
+COMMENT=	Library for working with URLs
 
 LICENSE=	BSD
 

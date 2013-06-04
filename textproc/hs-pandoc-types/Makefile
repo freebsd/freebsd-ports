@@ -2,15 +2,13 @@
 
 PORTNAME=	pandoc-types
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Types for representing a structured document
 
 LICENSE=	GPLv2
-FILE_LICENSE=	COPYING
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	syb
 
