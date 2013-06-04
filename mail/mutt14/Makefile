@@ -34,11 +34,9 @@ MUTT_ICONV_DESC=	mutt iconv
 
 USE_OPENSSL=	yes
 
+OPTIONS_EXCLUDE_alpha=	SGML_DOCS
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
-OPTIONS_EXCLUDE=	SGML_DOCS
-.elif ${ARCH} == "alpha"
-#  coredump in sgmls
 OPTIONS_EXCLUDE=	SGML_DOCS
 .endif
 
