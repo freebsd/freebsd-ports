@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libtsnnls
-# Date created:        18 October 2010
-# Whom:                Tz-Huan Huang <tzhuan@gmail.com>
-#
+# Created by: Tz-Huan Huang <tzhuan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtsnnls
 PORTVERSION=	2.3.3
@@ -17,21 +13,22 @@ GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GOTOBLAS "Use gotoblas (conflict with USE_ATLAS)" off \
-		ATLAS "Use atlas (conflict with USE_GOTOBLAS)" off
+OPTIONS_DEFINE=	GOTOBLAS ATLAS
+GOTOBLAS_DESC=	Use gotoblas (conflict with USE_ATLAS)
+ATLAS_DESC=	Use atlas (conflict with USE_GOTOBLAS)
 # DMALLOC "Use dmalloc" off
 
 .include <bsd.port.options.mk>
 
 WITH_BLAS=reference
-.if defined(WITH_GOTOBLAS)
+.if ${PORT_OPTIONS:MGOTOBLAS}
 WITH_BLAS=gotoblas
-.elif defined(WITH_ATLAS)
+.elif ${PORT_OPTIONS:MATLAS}
 WITH_BLAS=atlas
 .endif
 
 # FIXME compiling error when using dmalloc
-#.if defined(WITH_DMALLOC)
+#.if ${PORT_OPTIONS:MDMALLOC}
 #CONFIGURE_ARGS+=--with-dmalloc
 #LIB_DEPENDS+=dmalloc.1:${PORTSDIR}/devel/dmalloc
 #.endif
