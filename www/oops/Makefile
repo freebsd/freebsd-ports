@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oops
-# Date created:		15 August 2000
-# Whom:			osa
-#
+# Created by: osa
 # $FreeBSD$
-#
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
@@ -49,43 +45,39 @@ USE_RC_SUBR=	oops
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-OPTIONS=	GIGABASE	"GigaBase storage" on \
-		DB4		"Berkeley DB v4 storage" off \
-		MYSQL		"MySQL auth support" off \
-		PGSQL		"PostgreSQL auth support" off \
-		PCRE		"PCRE support" off
+OPTIONS_DEFINE= MYSQL PGSQL PCRE
+OPTIONS_RADIO=	DB
+OPTIONS_RADIO_DB=	GIGABASE DB4
+DB_DESC=	DB storage
+OPTIONS_DEFAULT=	GIGABASE
+GIGABASE_DESC=	GigaBase storage
+DB4_DESC=	Berkeley DB v4 storage
+MYSQL_DESC=	MySQL auth support
+PGSQL_DESC=	PostgreSQL auth support
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GIGABASE)
-.if defined (WITH_DB4)
-BROKEN=	Only one DB storage can be used (First)
-.endif
-
+.if ${PORT_OPTIONS:MGIGABASE}
 LIB_DEPENDS+=	gigabase_r.2:${PORTSDIR}/databases/gigabase
 CONFIGURE_ARGS+=	--without-DB
 .endif
 
-.if defined(WITH_DB4)
-.if defined(WITHOUT_GIGABASE)
+.if ${PORT_OPTIONS:MDB4}
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 CONFIGURE_ARGS+=	--without-GB
-.else
-BROKEN=	Only one DB storage can be used
-.endif
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	YES
 CONFIGURE_ARGS+=	--with-MYSQL=${PREFIX}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	YES
 CONFIGURE_ARGS+=	--with-PGSQL=${PREFIX}/pgsql
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-regexp=pcre
 .endif

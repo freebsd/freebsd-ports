@@ -1,9 +1,5 @@
-# New ports collection makefile for:	interchange
-# Date created:		2 July 2002
-# Whom:			Seth Kingsley <sethk@meowfishies.com>
-#
+# Created by: Seth Kingsley <sethk@meowfishies.com>
 # $FreeBSD$
-#
 
 PORTNAME=	interchange
 PORTVERSION=	5.6.1
@@ -24,18 +20,18 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 
-OPTIONS=	MYSQL "Add MySQL support" on \
-		PGSQL "Add PostgreSQL support" off
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_RC_SUBR=	interchange
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
@@ -117,4 +113,4 @@ post-install:
 .endfor
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

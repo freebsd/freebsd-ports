@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mahara
-# Date created:				21 Feb, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mahara
 PORTVERSION=	1.1.8
@@ -17,16 +13,16 @@ USE_BZIP2=	yes
 USE_PHP=	session json curl xml xmlrpc openssl simplexml
 FETCH_ARGS=	-pRr
 
-OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
-		PGSQL   "Add support for a PostgreSQL database server" Off
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
@@ -60,4 +56,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

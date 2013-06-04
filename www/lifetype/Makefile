@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lifetype
-# Date created:		Wed Jan 11 09:37:54 CST 2006
-# Whom:			clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	lifetype
 PORTVERSION=	1.2.11
@@ -30,21 +26,21 @@ USE_ZIP=	YES
 WANT_PHP_WEB=	YES
 WWWDOCROOT?=	www
 
-OPTIONS=	BIG5		"With Big5 chinese template fix" off \
-		GD		"With GD Support" on \
-		IMAGICK		"With ImageMagick Support" off
+OPTIONS_DEFINE=	BIG5 GD IMAGEMAGICK
+OPTIONS_DEFAULT=	GD
+BIG5_DESC=	Big5 chinese template fix
+#
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_GD)
+.if ${PORT_OPTIONS:MGD}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
 .endif
 
-.if defined(WITH_IMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/${imagick_DEPENDS}
 .endif
 
-.if defined(WITHOUT_GD) && !defined(WITH_IMAGICK)
+.if ! ${PORT_OPTIONS:MGD} && ! ${PORT_OPTIONS:MIMAGEMAGICK}
 pre-patch:
 	@${ECHO_CMD} "Without GD or ImageMagick support. No thumbnails will be generated at all."
 .endif
@@ -54,7 +50,7 @@ post-extract:
 	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${CONTRIBE_VERSION}__all_${x}${EXTRACT_SUFX}
 .endfor
 
-.if defined(WITH_BIG5)
+.if ${PORT_OPTIONS:MBIG5}
 
 post-patch:
 	${FIND} ${WRKSRC}/templates -name "*.template" | \
@@ -79,4 +75,4 @@ post-install:
 	@${SED} -e 's|%%PLOGURL%%|${PLOGURL}|' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

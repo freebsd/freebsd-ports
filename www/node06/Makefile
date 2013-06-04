@@ -1,9 +1,5 @@
-# New ports collection makefile for:		node
-# Date created:					2010-04-12
-# Whom:						Jin-Sih Lin <linpct@gmail.com>
-#
+# Created by: Jin-Sih Lin <linpct@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	node
 PORTVERSION=	0.6.21
@@ -16,7 +12,8 @@ COMMENT=	V8 JavaScript for client and server
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-OPTIONS=	SHARED_V8 "Build with lang/v8" off
+OPTIONS_DEFINE=	SHARED_V8
+SHARED_V8_DESC=	Build with lang/v8
 
 CONFLICTS=	node-0.[0-57-9]* node-devel-0.[0-9]*
 
@@ -41,7 +38,7 @@ WAF_ARGS=	--jobs=${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SHARED_V8)
+.if ${PORT_OPTIONS:MSHARED_V8}
 CONFIGURE_ARGS+=--shared-v8 \
 		--shared-v8-includes=${LOCALBASE}/include \
 		--shared-v8-libpath=${LOCALBASE}/lib \

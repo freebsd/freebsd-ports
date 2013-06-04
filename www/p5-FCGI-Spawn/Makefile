@@ -24,19 +24,20 @@ USE_RC_SUBR+=	fcgi_spawn
 MAN3=		FCGI::Spawn.3 FCGI::Spawn::BinUtils.3
 MAN1=		fcgi_spawn.1
 
-OPTIONS=	MYSQL   "MySQL dependency to run on RC start"         off \
-		PGSQL   "PgSQL dependency to run on RC start"         off
+OPTIONS_DEFINE=	MYSQL PGSQL
+MYSQL_DESC=	MySQL dependency to run on RC start
+PGSQL_DESC=	PgSQL dependency to run on RC start
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 # RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 SUB_LIST+=	MYSQL=mysql
 .	else
 SUB_LIST+=	MYSQL=
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 # RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql
 .	else
@@ -51,4 +52,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

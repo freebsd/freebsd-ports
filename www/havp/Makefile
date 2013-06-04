@@ -1,9 +1,5 @@
-# New ports collection makefile for:	havp
-# Date created:				17 June 2006
-# Whom:					Elisey Savateev <b3k@mail.ru>
-#
+# Created by: Elisey Savateev <b3k@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	havp
 PORTVERSION=	0.91
@@ -32,25 +28,27 @@ PLIST_SUB+=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 
-OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
-		CLAMAV "Enable libclamav support" on \
-		TROPHIE "Enable Trend Micro (Trophie) support" off
+OPTIONS_DEFINE=	SSL CLAMAV TROPHIE
+OPTIONS_DEFAULT=	SSL CLAMAV
+SSL_DESC=	SSL proxying (not scanned, only forwarded!)
+CLAMAV_DESC=	libclamav support
+TROPHIE_DESC=	Trend Micro (Trophie) support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--enable-ssl-tunnel
 .else
 CONFIGURE_ARGS+=	--disable-ssl-tunnel
 .endif
 
-.if defined(WITH_CLAMAV)
+.if ${PORT_OPTIONS:MCLAMAV}
 CONFIGURE_ARGS+=	--enable-clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif
 
-.if defined(WITH_TROPHIE)
+.if ${PORT_OPTIONS:MTROPHIE}
 CONFIGURE_ARGS+=	--enable-trophie
 .else
 CONFIGURE_ARGS+=	--disable-trophie
@@ -68,4 +66,4 @@ post-install:
 	@${CP} ${WRKSRC}/etc/havp/whitelist ${EXAMPLESDIR}/whitelist.sample
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

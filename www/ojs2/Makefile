@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ojs
-# Date created:				4 March 2006
-# Whom:					Filipe Rocha <filiperocha@gmail.com>
-#
+# Created by: Filipe Rocha <filiperocha@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ojs2
 PORTVERSION=	2.2.1
@@ -24,11 +20,12 @@ USE_PHP=	mbstring session
 DEFAULT_PHP_VER=5
 WANT_PHP_WEB=	yes
 
-OPTIONS=	MYSQL "Use a MySQL database" on \
-		PGSQL "Use a PostgreSQL database" off \
-		LDAP  "Use LDAP authentication" off \
-		CURL  "Use cURL" on \
-		MEMCACHE "Use memcached cache system" off\
+OPTIONS_DEFINE=	LDAP CURL MEMCACHE DOCS
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL LDAP
+MEMCACHE_DESC=	memcached cache system
+DB_DESC=	DB backend
 
 pre-install::
 	@${ECHO_MSG} "======================================================================"
@@ -39,36 +36,33 @@ pre-install::
 	@${ECHO_MSG} "Hit Control-C now"
 	@${ECHO_MSG} "======================================================================"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=		needs at least least one DB backend; please rerun 'make config'
-.endif
 
-.ifndef(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.ifdef(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.ifdef(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.ifdef(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 USE_PHP+=	curl
 .endif
 
-.ifdef(WITH_MEMCACHE)
+.if ${PORT_OPTIONS:MMEMCACHE}
 USE_PHP+=	memcache
 .endif
 
 NONDOCS=	cache/fc-locale-list.php classes config.inc.php \
 		dbscripts help includes index.php js lib locale pages \
 		plugins public registry rt styles templates tools
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DOCS=		docs
 .endif
 
@@ -92,11 +86,11 @@ do-install:
 	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/${DOCS} && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

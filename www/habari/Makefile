@@ -1,9 +1,5 @@
-# New ports collection makefile for:	habari
-# Date created:				Mar 30 2008
-# Whom:					Ayumi M <ayu@commun.jp>
-#
+# Created by: Ayumi M <ayu@commun.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	habari
 PORTVERSION=	0.8
@@ -19,26 +15,23 @@ USE_PHP=	ctype filter hash json mbstring pcre pdo session simplexml tokenizer zl
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
-OPTIONS=	MYSQL "Use MySQL" on \
-		PGSQL "Use PostgreSQL" off \
-		SQLITE "Use SQLite" off
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	pdo_mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	pdo_sqlite
-.endif
-
-.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
-IGNORE=	please choose the type of database
 .endif
 
 post-patch:
@@ -52,7 +45,7 @@ do-install:
 .for f in system user
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${WWWDIR})
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in LICENSE NOTICE README.md doc/MIT.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -60,4 +53,4 @@ do-install:
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} manual ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

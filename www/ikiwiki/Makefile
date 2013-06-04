@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ikiwiki
-# Date created:		21 Apr 2007
-# Whom:			Henrik Brix Andersen <henrik@brixandersen.dk>
-#
+# Created by: Henrik Brix Andersen <henrik@brixandersen.dk>
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
@@ -40,18 +37,20 @@ PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 USES=		gettext
 
-OPTIONS=	PO4A "Install translated underlays" On \
-		SEARCH "Install search backend" On \
-		W3M "Install w3m CGI wrapper" Off
+OPTIONS_DEFINE=	PO4A SEARCH W3M
+OPTIONS_DEFAULT=	PO4A SEARCH
+PO4A_DESC=	Install translated underlays
+SEARCH_DESC=	Install search backend
+W3M_DESC=	Install w3m CGI wrapper
 
 MAN1=		ikiwiki.1 ikiwiki-calendar.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PO4A)
+.if ${PORT_OPTIONS:MPO4A}
 PLIST_SUB+=	PO4A=""
 RUN_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
 BUILD_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
@@ -59,13 +58,13 @@ BUILD_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
 PLIST_SUB+=	PO4A="@comment "
 .endif
 
-.if defined(WITH_SEARCH)
+.if ${PORT_OPTIONS:MSEARCH}
 RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
 		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
 .endif
 
-.if defined(WITH_W3M)
+.if ${PORT_OPTIONS:MW3M}
 MAKE_ENV+=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
 PLIST_SUB+=	W3M=""
 .else
@@ -104,18 +103,18 @@ post-patch:
 		-e "s|/etc/highlight|${LOCALBASE}/etc/highlight|" \
 		-e "s|/usr/share/highlight|${LOCALBASE}/share/highlight|" \
 		${WRKSRC}/IkiWiki/Plugin/highlight.pm
-.ifndef(WITH_PO4A)
+.if ! ${PORT_OPTIONS:MPO4A}
 	@${REINPLACE_CMD} -i '' \
 		-e 's|^\(TRANSLATED_UNDERLAYS=\).*|\1|' \
 		${WRKSRC}/po/Makefile
 .endif
-.ifndef(WITH_W3M)
+.if ! ${PORT_OPTIONS:MW3M}
 	@${REINPLACE_CMD} -i '' \
 		-e '/w3m/d' \
 		-e '/W3M/d' \
 		 ${WRKSRC}/Makefile.PL
 .endif
-.if defined(NOPORTEXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -i '' \
 		-e 's|\(install -d ${EXAMPLESDIR}\)|#\1|' \
 		-e 's|\(cp -aL doc/examples\)|#\1|' \
@@ -127,15 +126,15 @@ post-install:
 	${MKDIR} ${PREFIX}/etc/ikiwiki
 	${INSTALL_DATA} ${WRKSRC}/auto.setup ${PREFIX}/etc/ikiwiki
 	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${PREFIX}/etc/ikiwiki
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/wikilist ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_vhs
-# Date created:				Sun Jul 25 2004
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_vhs
 PORTVERSION=	1.1.0
@@ -36,40 +32,42 @@ AP_EXTRAS+=	-DHAVE_MOD_PHP_SUPPORT
 PORTDOCS=	ChangeLog AUTHORS README README.logs README.mod_suphp WARNING \
 		README.phpopt THANKS WARNING WARNING.THREADS README.LDAP
 
-OPTIONS=	LDAP	"Enable mod_ldap support"				on  \
-		DBD	"Enable mod_dbd support"				off \
-		ITK	"Enable mpm-itk support (needs a specific apache)"	off \
-		VDEBUG	"Enable debug version (very verbose !)"			off
+OPTIONS_DEFINE=	LDAP DBD ITK VDEBUG DOCS
+OPTIONS_DEFAULT=	LDAP
+LDAP_DESC=	mod_ldap support
+DBD_DESC=	mod_dbd support
+ITK_DESC=	mpm-itk support (needs a specific apache)
+VDEBUG_DESC=	debug version (very verbose !)
 
 .include <bsd.port.options.mk>
 
 ### mod_vhs options
-.if defined(WITH_LDAP)
-.if defined(WITHOUT_DBD)
+.if ${PORT_OPTIONS:MLDAP}
+.if ! ${PORT_OPTIONS:MDBD}
 AP_EXTRAS+=	-DHAVE_LDAP_SUPPORT
 .else
 .error You cannot use LDAP and DBD at the same time.
 .endif
 .endif
 
-.if defined(WITH_DBD)
-.if defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MDBD}
+.if ! ${PORT_OPTIONS:MLDAP}
 AP_EXTRAS+=	-DHAVE_MOD_DBD_SUPPORT
 .else
 .error You cannot use LDAP and DBD at the same time.
 .endif
 .endif
 
-.if defined(WITH_ITK)
+.if ${PORT_OPTIONS:MITK}
 AP_EXTRAS+=	-DHAVE_MPM_ITK_SUPPORT
 .endif
 
-.if defined(WITH_VDEBUG)
+.if ${PORT_OPTIONS:MVDEBUG}
 AP_EXTRAS+=	-DVH_DEBUG
 .endif
 
 post-install:
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
