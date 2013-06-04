@@ -1,11 +1,7 @@
-# Ports collection makefile for:  horde-groupware
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	groupware
-PORTVERSION=	5.0.5
+PORTVERSION=	5.1.0
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
@@ -19,11 +15,13 @@ LATEST_LINK=	horde-${PORTNAME}
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		content \
+		gollem \
 		horde \
 		kronolith \
 		mnemo \
 		nag \
 		timeobjects \
+		trean \
 		turba
 
 .include <bsd.port.pre.mk>

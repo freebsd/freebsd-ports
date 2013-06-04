@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-turba
-# Date created:			  Sat Nov 16, 2001
-# Whom:				  Thierry Thomas (<thierry@thomas.as>)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	turba
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.0
 PKGNAMEPREFIX=	horde-
 CATEGORIES=	mail www pear
 

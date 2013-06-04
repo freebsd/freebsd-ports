@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-mnemo
-# Date created:			  Sun May 19, 2002
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mnemo
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
