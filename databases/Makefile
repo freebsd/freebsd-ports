@@ -645,13 +645,6 @@
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
-    SUBDIR += postgresql83-client
-    SUBDIR += postgresql83-contrib
-    SUBDIR += postgresql83-docs
-    SUBDIR += postgresql83-plperl
-    SUBDIR += postgresql83-plpython
-    SUBDIR += postgresql83-pltcl
-    SUBDIR += postgresql83-server
     SUBDIR += postgresql84-client
     SUBDIR += postgresql84-contrib
     SUBDIR += postgresql84-docs
