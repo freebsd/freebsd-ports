@@ -4360,3 +4360,7 @@ devel/sparc-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtem
 devel/mips-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
 devel/powerpc-rtems-gdb||2013-06-03|Has expired: many issues; see https://www.rtems.org/bugzilla/show_bug.cgi?id=2099
 databases/php-sqlite3||2013-06-03|Has expired: No upstream development and superseded by databases/php5-sqlite3 and databases/php53-sqlite3
+databases/mysql50-server||2013-06-04|Unsupported upstream since 2012-01-09
+databases/mysql50-client||2013-06-04|Unsupported upstream since 2012-01-09
+databases/mysql50-scripts||2013-06-04|Unsupported upstream since 2012-01-09
+databases/p5-DBD-mysql50||2013-06-04|Depends on databases/mysql41-server, which was removed

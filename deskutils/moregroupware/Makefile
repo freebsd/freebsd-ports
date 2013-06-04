@@ -32,7 +32,7 @@ USES+=		gettext
 .if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql74-server
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/mysql:${PORTSDIR}/databases/mysql50-server
+USE_MYSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MADDONS}

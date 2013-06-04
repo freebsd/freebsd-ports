@@ -105,7 +105,6 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	55
 # MySQL client version currently supported.
-MYSQL50_LIBVER=		15
 MYSQL51_LIBVER=		16
 MYSQL53m_LIBVER=	16
 MYSQL55_LIBVER=		18

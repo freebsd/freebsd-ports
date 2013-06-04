@@ -51,7 +51,6 @@ OPTIONS+=	CLAMAV "Enable clamav support" on
 OPTIONS+=	CLAMAV_DEVEL "Enable clamav support" off
 OPTIONS+=	CLAMAV_LOCAL "RUN_DEPEND on selected clamav" on
 #
-OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL51 "Use MySQL 5.1.x as back-end" off
 OPTIONS+=	MYSQL55 "Use MySQL 5.5.x as back-end" on
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
@@ -256,10 +255,7 @@ _DBDRV:=	${_DBDRV:S/hash_drv,//}
 PLIST_SUB+=	HASH="@comment "
 .endif
 
-.ifndef(WITHOUT_MYSQL50)
-WANT_MYSQL_VER=	50
-#PKGNAMESUFFIX=	-mysql50
-.elifdef(WITH_MYSQL51)
+.ifdef(WITH_MYSQL51)
 WANT_MYSQL_VER=	51
 #PKGNAMESUFFIX=	-mysql51
 .elifdef(WITH_MYSQL55)
@@ -267,8 +263,7 @@ WANT_MYSQL_VER=	55
 #PKGNAMESUFFIX=	-mysql55
 .endif
 
-.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || \
-	!defined(WITHOUT_MYSQL50) || defined(WITH_MYSQL51) || defined(WITH_MYSQL55)
+.if defined(WITH_MYSQL51) || defined(WITH_MYSQL55)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
@@ -356,7 +351,7 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
 .ifdef(WITH_EXIM_LDA)
-.	ifdef(WITH_MYSQL40) || (WITH_MYSQL41)
+.	ifdef(WITH_MYSQL51) || (WITH_MYSQL55)
 _EXIM_EXT=	-mysql
 .	elifdef(WITH_POSTGRESQL)
 _EXIM_EXT=	-postgresql
@@ -528,7 +523,7 @@ pre-configure:
 	@${ECHO_CMD} "You need MySQL, PostgreSQL or Hash for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
-.if ( defined(WITH_MYSQL40) && defined(WITH_MYSQL41) && !defined(WITHOUT_MYSQL50) && defined(WITH_MYSQL51))
+.if (defined(WITH_MYSQL51) && defined(WITH_MYSQL55))
 	@${ECHO_CMD} "You can compile with only one MySQL version driver."
 	@${FALSE}
 .endif

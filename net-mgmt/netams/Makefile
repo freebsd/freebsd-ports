@@ -66,7 +66,7 @@ RUN_DEPENDS+=		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} && ${PORT_OPTIONS:MCGI}
-RUN_DEPENDS+=		p5-DBD-mysql50>=0:${PORTSDIR}/databases/p5-DBD-mysql50
+RUN_DEPENDS+=		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MCGI}
