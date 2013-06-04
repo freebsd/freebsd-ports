@@ -1059,7 +1059,6 @@
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba-smbclient
-    SUBDIR += samba34
     SUBDIR += samba36
     SUBDIR += samba4
     SUBDIR += samba4wins
