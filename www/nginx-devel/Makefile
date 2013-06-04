@@ -692,7 +692,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 
 .if ${PORT_OPTIONS:MRTMP}
 NGINX_RTMP_VERSION=	1.0.0
-GIT_RTMP_VERSION=	0-gd27f964
+GIT_RTMP_VERSION=	0-g613234b
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
