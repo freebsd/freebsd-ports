@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  ia64sim
-# Date created:			  Tue Oct 10, 2000
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	ia64sim
 PORTVERSION=	0.5
@@ -20,10 +15,6 @@ USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
-.endif
-
 EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc
 USE_GMAKE=	yes
@@ -36,9 +27,11 @@ pre-build:
 	${RM} -f ${WRKSRC}/obj/*.o
 	${RM} -f ${WRKSRC}/ia64sim
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ia64sim ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ia64user.txt ${WRKSRC}/readme ${DOCSDIR}
 .endif
