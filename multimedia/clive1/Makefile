@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clive
-# Date created:		2007-02-11
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clive
 PORTVERSION=	1.0.2
@@ -28,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 USE_BZIP2=	yes
 # not compatible with 3.0
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	-2.7
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1 ${PORTNAME}-passwd.1
@@ -36,52 +32,53 @@ MAN1=	${PORTNAME}.1 ${PORTNAME}-passwd.1
 CONFIGURE_ARGS=	--with-doc=no
 .endif
 
-OPTIONS=	FEEDPARSER	"Enable feed parsing" off \
-		FFMPEG	"Install ffmpeg for re-encoding" off \
-		MPLAYER	"Install mplayer as video player" off \
-		NEWT	"Install devel/newt (support for a simple GUI)" off \
-		PYCRYPTO	"Install pycrypto to encrypt login password" off \
-		SQLITE3 "Install sqlite3 for caching visited URLs" off \
-		VLC	"Install vlc as video player" off \
-		XCLIP	"Install xclip (read URLs from clipboard)" off \
-		XINE	"Install xine as video player" off
+OPTIONS_DEFINE=	FEEDPARSER FFMPEG MPLAYER NEWT PYCRYPTO SQLITE3 VLC XCLIP XINE
+FEEDPARSER_DESC=	Feed parsing support
+FFMPEG_DESC=	ffmpeg for re-encoding
+MPLAYER_DESC=	mplayer as video player
+NEWT_DESC=	simple GUI support
+PYCRYPTO_DESC=	Encrypted login password support
+VLC_DESC=	vlc as video player
+XCLIP_DESC=	xclip (read URLs from clipboard)
+XINE_DESC=	xine as video player
+
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FEEDPARSER)
+.if ${PORT_OPTIONS:MFEEDPARSER}
 RUN_DEPENDS+=	${PKGNAMEPREFIX}feedparser>=4.1_2:${PORTSDIR}/textproc/py-feedparser
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
-.if defined(WITH_MPLAYER)
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_NEWT)
+.if ${PORT_OPTIONS:MNEWT}
 RUN_DEPENDS+=	newt${PYTHON_PKGNAMESUFFIX}>=0.51.0_4:${PORTSDIR}/devel/newt
 .endif
 
-.if defined(WITH_PYCRYPTO)
+.if ${PORT_OPTIONS:MPYCRYPTO}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0.1_1:${PORTSDIR}/security/py-pycrypto
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.5.2_1:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if defined(WITH_VLC)
+.if ${PORT_OPTIONS:MVLC}
 RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 .endif
 
-.if defined(WITH_XCLIP)
+.if ${PORT_OPTIONS:MXCLIP}
 RUN_DEPENDS+=	xclip:${PORTSDIR}/x11/xclip
 .endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 .endif
 
@@ -89,4 +86,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
 	${WRKSRC}/src/scripts/clive ${WRKSRC}/src/scripts/clive-passwd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
