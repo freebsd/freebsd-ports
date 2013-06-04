@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A tool for RDF site summaries based news-check
+COMMENT=	Tool for RDF site summaries based news-check
 
 LICENSE=	BSD
 

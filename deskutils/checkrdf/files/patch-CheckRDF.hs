@@ -1,6 +1,6 @@
 --- ./CheckRDF.hs.orig	2007-03-02 19:13:07.000000000 +0100
-+++ ./CheckRDF.hs	2012-05-13 13:10:24.395459549 +0200
-@@ -18,15 +18,20 @@
++++ ./CheckRDF.hs	2013-05-01 00:09:20.000000000 +0200
+@@ -18,15 +18,21 @@
  
  import RDFConfig
  
@@ -14,6 +14,7 @@
 -import Directory ( doesFileExist, getPermissions, readable, removeFile )
 -import List ( partition, intersperse, groupBy, sortBy)
 -import Time (getClockTime,toCalendarTime,calendarTimeToString)
++import System.IO.Error ( catchIOError )
 +import System.Directory ( doesFileExist, getPermissions, readable, removeFile )
 +import Data.List ( partition, intersperse, groupBy, sortBy)
 +import System.Time (getClockTime,toCalendarTime,calendarTimeToString)
@@ -26,7 +27,7 @@
  import Text.XML.HaXml.Xtract.Parse  (parseXtract)
  import Text.PrettyPrint.HughesPJ    (render, vcat)
  import Text.XML.HaXml.Pretty        (content)
-@@ -52,15 +57,15 @@
+@@ -52,15 +58,15 @@
  mkNewRDF :: RDFConfig -> FilePath -> String -> RDF
  mkNewRDF config filename contents =
       let elem = getElem $ xmlParse filename contents
@@ -48,7 +49,7 @@
                       )
                       $ map show [0..len1-1])
             else []
-@@ -69,7 +74,7 @@
+@@ -69,7 +75,7 @@
               ,clink  = cl
               ,citems = rdfitems
               }
@@ -57,3 +58,16 @@
         dfilter f = \ x -> f x x
         mkRDFItem (t,l) = RDFItem {title = substituteChar '\n' ' ' $ rmCDATA t
                                   ,link  = filter (/='\n') $ rmCDATA l
+@@ -109,9 +115,9 @@
+     if iseof
+      then return []
+      else do line <- hGetLine h
+-             mrdf <- catch (do rdf <- (readIO line :: IO RDF)
+-                               return $ Just rdf)
+-                           (const $ return Nothing)
++             mrdf <- catchIOError (do rdf <- (readIO line :: IO RDF)
++                                      return $ Just rdf)
++                                  (const $ return Nothing)
+              maybe (return [])
+                    (\rdf -> do rdfs <- readRDFs h
+                                return $! rdf : rdfs)
