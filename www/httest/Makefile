@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httest
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -29,8 +29,8 @@ USES=		iconv
 USE_LUA=	yes
 USE_OPENSSL=	yes
 
-MAN1=		htntlm.1 htproxy.1 htremote.1 httest.1 hturlext.1 htx2b.1
-PLIST_FILES=	bin/htntlm bin/htproxy bin/htremote bin/httest bin/hturlext bin/htx2b
+MAN1=		htntlm.1 htproxy.1 htremote.1 httest.1
+PLIST_FILES=	bin/htntlm bin/htproxy bin/htremote bin/httest
 PORTEXAMPLES=	*
 
 post-patch:
