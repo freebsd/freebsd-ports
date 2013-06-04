@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gaim
-# Date created:			26 Mar 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net-im/libpurple/Makefile,v 1.32 2010/05/10 04:21:19 marcus Exp $
-#
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.10.7
@@ -47,33 +43,36 @@ WITH_GNOME=	yes
 
 PRPL_MODULES=
 
-OPTIONS=	BONJOUR "Enable mDNS support" on \
-		DBUS "Enable DBUS bindings" on \
-		GNUTLS "Use GNUTLS for encryption support" off \
-		NSS "Use Mozilla NSS for encryption support" on \
-		SASL "Cyrus SASL support (for jabberd)" off \
-		GSTREAMER "Use GStreamer for playing sounds" on \
-		VV "Enable video and voice support" on \
-		IDN "Enable support for international domains" on \
-		PERL "Perl scripting" off \
-		TCLTK "Tcl/Tk scripting" off \
-		SAMETIME "The Lotus Sametime chat protocol" off \
-		SILC "The Secure Internet Live Conferencing protocol" off \
-		GG "The Gadu-Gadu chat protocol" on \
-		IRC "The Internet Relay Chat protocol" on \
-		JABBER "The Jabber/XMPP/Google Talk protocol" on \
-		MSN "The MSN Messenger protocol" on \
-		MYSPACE "The MySpaceIM protocol" on \
-		NOVELL "The Novell GroupWise chat protocol" on \
-		OSCAR "The AIM/ICQ/Oscar protocol" on \
-		QQ "The Tercent QQ chat protocol" on \
-		SIMPLE "The SIMPLE chat protocol" on \
-		YAHOO "The Yahoo! Messenger protocol" on \
-		ZEPHYR "The Zephyr chat protocol" on
+OPTIONS_DEFINE=	BONJOUR DBUS GNUTLS NSS SASL GSTREAMER VV IDN PERL TCLTK \
+		SAMETIME SILC GG IRC JABBER MSN MYSPACE NOVELL OSCAR QQ \
+		SIMPLE YAHOO ZEPHYR
+OPTIONS_DEFAULT=	BONJOUR DBUS NSS GSTREAMER VV IDN GG IRC JABBER MSN \
+			MYSPACE NOVELL OSCAR QQ SIMPLE YAHOO ZEPHYR
+BONJOUR_DESC=	mDNS support
+GNUTLS_DESC=	Use GNUTLS for encryption support
+NSS_DESC=	Use Mozilla NSS for encryption support
+SASL_DESC=	Cyrus SASL support (for jabberd)
+GSTREAMER_DESC=	Use GStreamer for playing sounds
+VV_DESC=	Video and voice support
+SAMETIME_DESC=	The Lotus Sametime chat protocol
+SILC_DESC=	The Secure Internet Live Conferencing protocol
+GG_DESC=	The Gadu-Gadu chat protocol
+IRC_DESC=	The Internet Relay Chat protocol
+JABBER_DESC=	The Jabber/XMPP/Google Talk protocol
+MSN_DESC=	The MSN Messenger protocol
+MYSPACE_DESC=	The MySpaceIM protocol
+NOVELL_DESC=	The Novell GroupWise chat protocol
+OSCAR_DESC=	The AIM/ICQ/Oscar protocol
+QQ_DESC=	The Tercent QQ chat protocol
+SIMPLE_DESC=	The SIMPLE chat protocol
+YAHOO_DESC=	The Yahoo! Messenger protocol
+ZEPHYR_DESC=	The Zephyr chat protocol
 
 .if defined(WITH_GTKUI)
-OPTIONS+=	GTKSPELL "Spell checking support" on \
-		CAP "Enable Contact Availability Prediction plugin" on
+OPTIONS_DEFINE+=	GTKSPELL CAP
+OPTIONS_DEFAULT+=	GTKSPELL CAP
+GTKSPELL_DESC=	Spell checking support
+CAP_DESC=	Contact Availability Prediction plugin
 .endif
 
 OPTIONSFILE=	${PORT_DBDIR}/${UNIQUENAME}/options
@@ -82,7 +81,7 @@ CONFIGURE_ARGS+=--disable-doxygen
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TCLTK)
+.if ${PORT_OPTIONS:MTCLTK}
 USE_TK=			yes
 CFLAGS+=		-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tcl${TCL_VER}
 CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
@@ -111,13 +110,13 @@ CONFIGURE_ARGS+=	--disable-gevolution
 PLIST_SUB+=		EVO="@comment not installed: "
 #.endif
 
-.if !defined(WITHOUT_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER+=	core good
 .else
 CONFIGURE_ARGS+=--disable-gstreamer
 .endif
 
-.if !defined(WITHOUT_VV) && !defined(WITHOUT_GSTREAMER)
+.if ${PORT_OPTIONS:MVV} && ${PORT_OPTIONS:MGSTREAMER}
 LIB_DEPENDS+=	gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2
 PLIST_SUB+=	VV=""
 .else
@@ -125,13 +124,13 @@ CONFIGURE_ARGS+=--disable-vv
 PLIST_SUB+=	VV="@comment "
 .endif
 
-.if !defined(WITHOUT_IDN)
+.if ${PORT_OPTIONS:MIDN}
 LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 .else
 CONFIGURE_ARGS+=--disable-idn
 .endif
 
-.if defined(WITH_GTKUI) && !defined(WITHOUT_CAP)
+.if ${PORT_OPTIONS:MCAP}
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--enable-cap
 PLIST_SUB+=	CAP=""
@@ -140,7 +139,7 @@ CONFIGURE_ARGS+=--disable-cap
 PLIST_SUB+=	CAP="@comment not installed: "
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls=yes
 PLIST_SUB+=		GNUTLS=""
@@ -149,7 +148,7 @@ CONFIGURE_ARGS+=	--enable-gnutls=no
 PLIST_SUB+=		GNUTLS="@comment "
 .endif
 
-.if !defined(WITHOUT_NSS)
+.if ${PORT_OPTIONS:MNSS}
 LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--enable-nss=yes \
 			--with-nspr-includes=${LOCALBASE}/include/nspr \
@@ -162,12 +161,12 @@ CONFIGURE_ARGS+=	--enable-nss=no
 PLIST_SUB+=		NSS="@comment "
 .endif
 
-.if defined(WITH_SASL)
+.if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-cyrus-sasl
 .endif
 
-.if !defined(WITHOUT_BONJOUR)
+.if ${PORT_OPTIONS:MBONJOUR}
 LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	BONJOUR=""
 PRPL_MODULES:=	bonjour,${PRPL_MODULES}
@@ -176,13 +175,13 @@ CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	BONJOUR="@comment not installed: "
 .endif
 
-.if defined(WITH_GTKUI) && !defined(WITHOUT_GTKSPELL)
+.if ${PORT_OPTIONS:MGTKSPELL}
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
 .else
 CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .if !defined(PIDGIN_SLAVE)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
@@ -194,7 +193,7 @@ CONFIGURE_ARGS+=	--disable-dbus
 PLIST_SUB+=		DBUS="@comment not installed: "
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
@@ -206,7 +205,7 @@ CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		PERL:="@comment not installed: "
 .endif
 
-.if defined(WITH_SAMETIME)
+.if ${PORT_OPTIONS:MSAMETIME}
 LIB_DEPENDS+=	meanwhile.1:${PORTSDIR}/net-im/meanwhile
 PLIST_SUB+=	SAMETIME=""
 PRPL_MODULES:=	sametime,${PRPL_MODULES}
@@ -215,7 +214,7 @@ PLIST_SUB+=	SAMETIME="@comment not installed: "
 CONFIGURE_ARGS+=--disable-meanwhile
 .endif
 
-.if defined(WITH_SILC)
+.if ${PORT_OPTIONS:MSILC}
 LIB_DEPENDS+=		silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
 CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
 			--with-silc-libs=${LOCALBASE}/lib
@@ -225,77 +224,77 @@ PRPL_MODULES:=		silc,${PRPL_MODULES}
 PLIST_SUB+=		SILC="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_GG)
+.if ${PORT_OPTIONS:MGG}
 PLIST_SUB+=		GG=""
 PRPL_MODULES:=		gg,${PRPL_MODULES}
 .else
 PLIST_SUB+=		GG="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_IRC)
+.if ${PORT_OPTIONS:MIRC}
 PLIST_SUB+=		IRC=""
 PRPL_MODULES:=		irc,${PRPL_MODULES}
 .else
 PLIST_SUB+=		IRC="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_JABBER)
+.if ${PORT_OPTIONS:MJABBER}
 PLIST_SUB+=		JABBER=""
 PRPL_MODULES:=		jabber,${PRPL_MODULES}
 .else
 PLIST_SUB+=		JABBER="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_MSN)
+.if ${PORT_OPTIONS:MMSN}
 PLIST_SUB+=		MSN=""
 PRPL_MODULES:=		msn,${PRPL_MODULES}
 .else
 PLIST_SUB+=		MSN="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_MYSPACE)
+.if ${PORT_OPTIONS:MMYSPACE}
 PLIST_SUB+=		MYSPACE=""
 PRPL_MODULES:=		myspace,${PRPL_MODULES}
 .else
 PLIST_SUB+=		MYSPACE="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_NOVELL)
+.if ${PORT_OPTIONS:MNOVELL}
 PLIST_SUB+=		NOVELL=""
 PRPL_MODULES:=		novell,${PRPL_MODULES}
 .else
 PLIST_SUB+=		NOVELL="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_OSCAR)
+.if ${PORT_OPTIONS:MOSCAR}
 PLIST_SUB+=		OSCAR=""
 PRPL_MODULES:=		oscar,${PRPL_MODULES}
 .else
 PLIST_SUB+=		OSCAR="@comment not installed: "
 .endif
 
-#.if !defined(WITHOUT_QQ)
+#.if ${PORT_OPTIONS:MQQ}
 #PLIST_SUB+=		QQ=""
 #PRPL_MODULES:=		qq,${PRPL_MODULES}
 #.else
 #PLIST_SUB+=		QQ="@comment not installed: "
 #.endif
 
-.if !defined(WITHOUT_SIMPLE)
+.if ${PORT_OPTIONS:MSIMPLE}
 PLIST_SUB+=		SIMPLE=""
 PRPL_MODULES:=		simple,${PRPL_MODULES}
 .else
 PLIST_SUB+=		SIMPLE="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_YAHOO)
+.if ${PORT_OPTIONS:MYAHOO}
 PLIST_SUB+=		YAHOO=""
 PRPL_MODULES:=		yahoo,${PRPL_MODULES}
 .else
 PLIST_SUB+=		YAHOO="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_ZEPHYR)
+.if ${PORT_OPTIONS:MZEPHYR}
 PLIST_SUB+=		ZEPHYR=""
 PRPL_MODULES:=		zephyr,${PRPL_MODULES}
 .else
@@ -303,7 +302,7 @@ PLIST_SUB+=		ZEPHYR="@comment not installed: "
 .endif
 
 pre-everything::
-.if defined(WITHOUT_GNUTLS) && defined(WITHOUT_NSS)
+.if ! ${PORT_OPTIONS:MGNUTLS} && ! ${PORT_OPTIONS:MNSS}
 	@${ECHO_MSG} "WARNING: In order to use MSN, you must enable the GNUTLS and/or NSS options."
 .endif
 
