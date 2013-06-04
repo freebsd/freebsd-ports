@@ -28,6 +28,7 @@ NO_BUILD=	yes
 
 .include "${.CURDIR}/Makefile.options"
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/Makefile.skins"
@@ -42,26 +43,19 @@ post-extract:
 	@${FIND} ${WRKSRC} -type d \( -name '.svn' \) -delete
 
 pre-build:
-# Build and install all skins (rather expensive)
-.if (defined(BATCH) && !defined(_OPTIONS_READ)) || defined(WITH_SKIN_ALL)
-.for f in ${ALLSKINS}
-WITH_SKIN_${f}=	yes
-.endfor
-.endif # WITH_SKIN_ALL
+.if ${PORT_OPTIONS:MALL}
+PORT_OPTIONS+=	${ALLSKINS}
+.endif
 
 post-build-script:
 .for f in ${ALLSKINS}
-.ifdef(WITH_SKIN_${f})
+.if $(PORT_OPTIONS:M${f})
 PLIST_SUB+=	${f}="" WITHOUT_SKIN_${f}="@comment "
-HAVE_SKIN=	true
 DISTFILES+=	${${f}_FILE}${EXTRACT_SUFX}
 .else
 PLIST_SUB+=	${f}="@comment " WITHOUT_SKIN_${f}=""
 .endif
 .endfor
-.if !defined(HAVE_SKIN)
-IGNORE=	no skin selected
-.endif
 
 do-install:
 # both anotate and create target directories
