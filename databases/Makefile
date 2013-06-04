@@ -506,6 +506,7 @@
     SUBDIR += pear-DB_ldap2
     SUBDIR += pear-Doctrine12
     SUBDIR += pear-Horde_Db
+    SUBDIR += pear-Horde_HashTable
     SUBDIR += pear-Horde_Imsp
     SUBDIR += pear-Horde_Memcache
     SUBDIR += pear-MDB
