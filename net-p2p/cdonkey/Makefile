@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	cDonkey
-# Date created:			Feb 9, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cdonkey
 PORTVERSION=	0.9.0
@@ -14,21 +9,27 @@ MASTER_SITES=	http://www.sourcefiles.org/Internet/File_Sharing/Edonkey/
 DISTNAME=	cDonkey-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open and free core client for the eDonkey protocol
+COMMENT=	Open and free core client for the eDonkey protocol
 
-PLIST_FILES=	bin/cDonkey
-USE_BDB=	41
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--with-berkeley-db="${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}"
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/cDonkey-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+USE_BZIP2=	yes
+USE_BDB=	41
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--with-berkeley-db="${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}"
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/cDonkey
 
 post-patch:
-	${REINPLACE_CMD} -e "s|-ldb|-l${BDB_LIB_NAME}|g" ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|/etc/|${LOCALBASE}/etc/|" \
-		${WRKSRC}/donkey.cpp ${WRKSRC}/donkey.h
+	@${REINPLACE_CMD} -e \
+		's|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-fno-for-scope||' ${WRKSRC}/Makefile.in
+.for i in donkey.cpp donkey.h
+	@${REINPLACE_CMD} -e \
+		's|/etc/|${LOCALBASE}/etc/|' ${WRKSRC}/${i}
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
