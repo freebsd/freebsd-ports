@@ -59,6 +59,7 @@ share/X11/xkb/keycodes/fujitsu
 share/X11/xkb/keycodes/hp
 share/X11/xkb/keycodes/ibm
 share/X11/xkb/keycodes/macintosh
+share/X11/xkb/keycodes/olpc
 share/X11/xkb/keycodes/sgi_vndr/indigo
 share/X11/xkb/keycodes/sgi_vndr/indy
 share/X11/xkb/keycodes/sgi_vndr/iris
@@ -302,6 +303,7 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/nb/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/xkeyboard-config.mo
