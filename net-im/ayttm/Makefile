@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ayttm
-# Date created:			1 Mar 2000
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ayttm
 PORTVERSION=	0.5.0.111
@@ -20,10 +16,9 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		gpgme.19:${PORTSDIR}/security/gpgme \
 		pspell.16:${PORTSDIR}/textproc/aspell
 
-OPTIONS=	ARTS	"Enable aRts support"		off \
-		ESOUND	"Enable EsounD support"		off \
-		AIM_TOC	"Include aim-toc service"	off \
-		ICQ_TOC "Include icq-toc service"	off
+OPTIONS_DEFINE=	ARTS ESOUND AIM_TOC ICQ_TOC
+AIM_TOC_DESC=	Include aim-toc service
+ICQ_TOC_DESC=	Include icq-toc service
 
 USE_BZIP2=	yes
 USE_XORG=	xpm xscrnsaver
@@ -40,26 +35,26 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
-.if defined(WITH_AIM_TOC)
+.if ${PORT_OPTIONS:MAIM_TOC}
 CONFIGURE_ARGS+=	--enable-aim-toc
 PLIST_SUB+=		AIM_TOC=""
 .else
 PLIST_SUB+=		AIM_TOC="@comment "
 .endif
 
-.if defined(WITH_ICQ_TOC)
+.if ${PORT_OPTIONS:MICQ_TOC}
 CONFIGURE_ARGS+=	--enable-icq-toc
 PLIST_SUB+=		ICQ_TOC=""
 .else
