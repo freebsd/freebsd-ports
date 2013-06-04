@@ -163,6 +163,7 @@
     SUBDIR += dc3dd
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
+    SUBDIR += ddpt
     SUBDIR += ddrescue
     SUBDIR += debhelper
     SUBDIR += debootstrap
