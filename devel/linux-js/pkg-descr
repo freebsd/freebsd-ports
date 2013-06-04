@@ -1,3 +1,0 @@
-This port provides a FreeBSD kernel module implementing the Linux joystick
-interface (/dev/input/js?), as well as calibration (jscal) and test (jstest)
-utilities.

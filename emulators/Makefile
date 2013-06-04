@@ -123,7 +123,6 @@
     SUBDIR += open-vm-tools
     SUBDIR += open-vm-tools-nox11
     SUBDIR += openmsx
-    SUBDIR += osmose
     SUBDIR += p5-Acme-6502
     SUBDIR += parallels-tools
     SUBDIR += pcemu
