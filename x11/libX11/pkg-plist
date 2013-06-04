@@ -94,15 +94,9 @@ lib/X11/locale/iso8859-9e/XLC_LOCALE
 lib/X11/locale/ja.JIS/Compose
 lib/X11/locale/ja.JIS/XI18N_OBJS
 lib/X11/locale/ja.JIS/XLC_LOCALE
-lib/X11/locale/ja.S90/Compose
-lib/X11/locale/ja.S90/XI18N_OBJS
-lib/X11/locale/ja.S90/XLC_LOCALE
 lib/X11/locale/ja.SJIS/Compose
 lib/X11/locale/ja.SJIS/XI18N_OBJS
 lib/X11/locale/ja.SJIS/XLC_LOCALE
-lib/X11/locale/ja.U90/Compose
-lib/X11/locale/ja.U90/XI18N_OBJS
-lib/X11/locale/ja.U90/XLC_LOCALE
 lib/X11/locale/ja/Compose
 lib/X11/locale/ja/XI18N_OBJS
 lib/X11/locale/ja/XLC_LOCALE
@@ -234,9 +228,7 @@ libdata/pkgconfig/x11.pc
 @dirrm lib/X11/locale/ko_KR.UTF-8
 @dirrm lib/X11/locale/ko
 @dirrm lib/X11/locale/ja_JP.UTF-8
-@dirrm lib/X11/locale/ja.U90
 @dirrm lib/X11/locale/ja.SJIS
-@dirrm lib/X11/locale/ja.S90
 @dirrm lib/X11/locale/ja.JIS
 @dirrm lib/X11/locale/ja
 @dirrm lib/X11/locale/iso8859-9e

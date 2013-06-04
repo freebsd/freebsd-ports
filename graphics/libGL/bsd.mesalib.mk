@@ -56,14 +56,16 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-configure \
 		${PATCHDIR}/extra-src-glsl_ir_constant_expression.cpp \
 		${PATCHDIR}/extra-src__gallium__include__pipe__p_config.h \
 		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_array.c \
-		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_render_t.c
+		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_render_t.c \
+		${PATCHDIR}/extra-src_glx_XF86dri.c
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-configure-old \
 		${PATCHDIR}/extra-mach64_context.h-old \
 		${PATCHDIR}/extra-src__mesa__x86-64__glapi_x86-64.S \
 		${PATCHDIR}/extra-src__mesa__x86-64__xform4.S \
 		${PATCHDIR}/extra-src__mesa__x86__glapi_x86.S \
-		${PATCHDIR}/extra-src__mesa__x86__read_rgba_span_x86.S
+		${PATCHDIR}/extra-src__mesa__x86__read_rgba_span_x86.S \
+		${PATCHDIR}/extra-src_glx_x11_XF86dri.c
 CONFIGURE_ARGS+=--disable-glut --disable-glw
 .endif
 

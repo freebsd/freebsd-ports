@@ -4,3 +4,4 @@ lib/libXv.la
 lib/libXv.so
 lib/libXv.so.1
 libdata/pkgconfig/xv.pc
+@dirrmtry include/X11/extensions

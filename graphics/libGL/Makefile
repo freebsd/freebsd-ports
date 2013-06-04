@@ -3,13 +3,13 @@
 
 PORTNAME=	libGL
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL library that renders using GLX or DRI
 
 LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat:${PORTSDIR}/textproc/expat2
 
 USES=		pkgconfig
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto:both
