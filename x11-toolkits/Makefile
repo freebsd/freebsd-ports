@@ -76,8 +76,10 @@
     SUBDIR += gtoolkit
     SUBDIR += guile-gtk
     SUBDIR += hippo-canvas
+    SUBDIR += hs-GLURaw
     SUBDIR += hs-GLUT
     SUBDIR += hs-OpenGL
+    SUBDIR += hs-OpenGLRaw
     SUBDIR += hs-frantk
     SUBDIR += hs-gtk
     SUBDIR += hs-gtk2hs

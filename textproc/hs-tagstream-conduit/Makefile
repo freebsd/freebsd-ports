@@ -2,14 +2,13 @@
 
 PORTNAME=	tagstream-conduit
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Streamlined HTML tag parser
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	attoparsec attoparsec-conduit>=0.5 blaze-builder \
 		blaze-builder-conduit>=0.5 case-insensitive conduit>=0.5 \

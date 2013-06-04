@@ -2,14 +2,13 @@
 
 PORTNAME=	crypto-numbers
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Cryptographic numbers: functions and algorithms
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	crypto-random-api>=0.2 vector
 

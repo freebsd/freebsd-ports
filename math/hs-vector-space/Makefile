@@ -3,14 +3,13 @@
 
 PORTNAME=	vector-space
 PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Vector & affine spaces, linear maps, and derivatives
 
 LICENSE=	BSD
-FILE_LICENSE=	COPYING
 
 USE_CABAL=	Boolean>=0.1.0 MemoTrie>=0.5 NumInstances>=1.0
 

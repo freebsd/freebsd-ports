@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hspec-expectations
-PORTVERSION=	0.3.0.3
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

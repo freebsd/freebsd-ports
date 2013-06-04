@@ -3,21 +3,26 @@ bin/ghc
 bin/ghci
 bin/ghc-pkg
 bin/runhaskell
-bin/haddock-ghc-%%GHC_VERSION%%
-bin/ghci-%%GHC_VERSION%%
-bin/hsc2hs
-bin/ghc-pkg-%%GHC_VERSION%%
 bin/runghc
-bin/ghc-%%GHC_VERSION%%
 bin/hp2ps
 bin/hpc
+bin/hsc2hs
+bin/ghc-%%GHC_VERSION%%
+bin/ghci-%%GHC_VERSION%%
+bin/ghc-pkg-%%GHC_VERSION%%
+bin/haddock-ghc-%%GHC_VERSION%%
+bin/runghc-%%GHC_VERSION%%
 @exec /bin/ln -sf %D/bin/haddock-ghc-%%GHC_VERSION%% %D/bin/haddock || return true
 @unexec /bin/rm -f %D/bin/haddock || return true
-@exec /bin/mkdir -p %D/%%GHC_LIBDIR%%/cabal  || return true
-@exec /bin/mkdir -p %D/%%DOCSDIR%%/cabal     || return true
-@exec /bin/mkdir -p %D/%%DATADIR%%/cabal     || return true
-@exec /bin/mkdir -p %D/%%EXAMPLESDIR%%/cabal || return true
-@dirrm %%DATADIR%%/cabal
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/cabal
-@dirrm %%EXAMPLESDIR%%
+@exec /bin/mkdir -p %D/lib/cabal/ghc-%%GHC_VERSION%%             || return true
+@exec /bin/mkdir -p %D/share/cabal/ghc-%%GHC_VERSION%%           || return true
+@exec /bin/mkdir -p %D/share/doc/cabal/ghc-%%GHC_VERSION%%       || return true
+@exec /bin/mkdir -p %D/share/examples/cabal/ghc-%%GHC_VERSION%%  || return true
+@dirrmtry lib/cabal/ghc-%%GHC_VERSION%%
+@dirrmtry lib/cabal
+@dirrmtry share/cabal/ghc-%%GHC_VERSION%%
+@dirrmtry share/cabal
+@dirrmtry share/doc/cabal/ghc-%%GHC_VERSION%%
+@dirrmtry share/doc/cabal
+@dirrmtry share/examples/cabal/ghc-%%GHC_VERSION%%
+@dirrmtry share/examples/cabal

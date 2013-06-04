@@ -2,15 +2,13 @@
 
 PORTNAME=	cprng-aes
 PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Crypto Pseudo Random Number Generator using AES
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	cipher-aes>=0.1 crypto-api>=0.8 crypto-random-api>=0.2 \
 		entropy>=0.2 random

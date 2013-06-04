@@ -2,11 +2,11 @@
 
 PORTNAME=	pureMD5
 PORTVERSION=	2.1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Haskell-only implementation of MD5 digest (hash) yalgorithm
+COMMENT=	Haskell-only implementation of MD5 digest (hash) yalgorithm
 
 LICENSE=	BSD
 

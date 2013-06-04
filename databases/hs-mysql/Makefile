@@ -3,11 +3,11 @@
 
 PORTNAME=	mysql
 PORTVERSION=	0.1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A low-level MySQL client library
+COMMENT=	Low-level MySQL client library
 
 LICENSE=	BSD
 

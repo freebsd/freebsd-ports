@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	7.4.2
-PORTREVISION=	1
+PORTVERSION=	7.6.3
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -22,7 +21,7 @@ HSCOLOUR_VERSION=	1.20.2
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
-CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.*
+CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.* ghc-7.4.*
 
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
@@ -309,10 +308,10 @@ pre-configure:
 
 post-install:
 	# cabalised hs-foo-ghc ports
-	@${MKDIR} ${GHC_LIBDIR}/cabal
-	@${MKDIR} ${DOCSDIR}/cabal
-	@${MKDIR} ${EXAMPLESDIR}/cabal
-	@${MKDIR} ${DATADIR}/cabal
+	@${MKDIR} ${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${PREFIX}/share/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${DOCSDIR}/html/libraries && ./gen_contents_index
 .endif
@@ -320,6 +319,5 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${LN} -sf ${PREFIX}/bin/haddock-ghc-${GHC_VERSION} ${PREFIX}/bin/haddock
 .endif
-	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>

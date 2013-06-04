@@ -17,11 +17,12 @@ LOCALBASE?=	/usr/local
 GHC_CMD?=	${LOCALBASE}/bin/ghc
 HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
 HSCOLOUR_CMD?=	${LOCALBASE}/bin/HsColour
-GHC_VERSION=	7.4.2
+GHC_VERSION=	7.6.3
 
 HSCOLOUR_DESC?=	Colorize generated documentation by HsColour
 DYNAMIC_DESC?=	Add support for dynamic linking
 PROFILE_DESC?=	Add support for profiling
+LLVM_DESC?=	Use the LLVM backend for code generation
 
 .if !exists(${GHC_CMD}) || (exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.dyn_hi) && !defined(IGNORE_DYNAMIC))
 OPTIONS_DEFINE+=	DYNAMIC
@@ -30,6 +31,10 @@ OPTIONS_DEFAULT+=	DYNAMIC
 
 .if !exists(${GHC_CMD}) || (exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.p_hi) && !defined(IGNORE_PROFILE))
 OPTIONS_DEFINE+=	PROFILE
+.endif
+
+.if !defined(IGNORE_LLVM)
+OPTIONS_DEFINE+=	LLVM
 .endif
 
 .if !exists(${GHC_CMD}) || ((exists(${HADDOCK_CMD}) && exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) && !defined(NOPORTDOCS))

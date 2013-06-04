@@ -1,0 +1,11 @@
+--- ./test-framework-quickcheck2.cabal.orig	2012-12-06 17:59:40.000000000 +0100
++++ ./test-framework-quickcheck2.cabal	2013-05-03 21:35:58.000000000 +0200
+@@ -22,7 +22,7 @@
+ Library
+         Exposed-Modules:        Test.Framework.Providers.QuickCheck2
+ 
+-        Build-Depends:          test-framework >= 0.7.1, QuickCheck >= 2.4 && < 2.6, extensible-exceptions >= 0.1.1 && < 0.2.0
++        Build-Depends:          test-framework >= 0.7.1, QuickCheck >= 2.4 && < 2.7, extensible-exceptions >= 0.1.1 && < 0.2.0
+         if flag(base3)
+                 Build-Depends:          base >= 3 && < 4, random >= 1
+         else

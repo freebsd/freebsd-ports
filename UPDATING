@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130604:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  The Glorious Glasgow Haskell Compiler has been updated to version
+  7.6.3 and Haskell Platform to 2013.2.0.0.  Hence it is recommended to
+  rebuild or reinstall all the dependent ports by one of the following
+  commands:
+
+  # portmaster -w -r ghc
+  or
+  # portupgrade -fr lang/ghc
+  or
+  # pkg install -fR lang/ghc
+
+  Note that prefixes used for hs- ports (Cabal packages) have been
+  changed to PREFIX/{lib,share,share/doc}/cabal/ghc-GHC_VERSION to
+  enable more seamless upgrades in the future.
+
 20130603:
   AFFECTS: users of dns/opendnssec
   AUTHOR: wg@FreeBSD.org

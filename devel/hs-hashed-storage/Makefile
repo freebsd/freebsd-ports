@@ -2,7 +2,7 @@
 
 PORTNAME=	hashed-storage
 PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,8 +10,7 @@ COMMENT=	Hashed file storage support code
 
 LICENSE=	BSD
 
-CABAL_SETUP=	Setup.hs
-USE_CABAL=	dataenc mmap>=0.5 mtl zlib
+USE_CABAL=	dataenc extensible-exceptions mmap>=0.5 mtl zlib
 
 CONFIGURE_ARGS+=	--flags="-test"
 

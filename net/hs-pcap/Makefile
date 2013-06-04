@@ -3,11 +3,11 @@
 
 PORTNAME=	pcap
 PORTVERSION=	0.4.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A system-independent interface for user-level packet capture
+COMMENT=	System-independent interface for user-level packet capture
 
 LICENSE=	BSD
 

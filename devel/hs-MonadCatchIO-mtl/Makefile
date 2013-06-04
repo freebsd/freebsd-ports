@@ -3,7 +3,7 @@
 
 PORTNAME=	MonadCatchIO-mtl
 PORTVERSION=	0.3.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Monad-transformer version of the Control.Exception module
 
 LICENSE=	BSD
 
-USE_CABAL=	mtl
+USE_CABAL=	extensible-exceptions mtl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP
-PORTVERSION=	4000.2.5
-PORTREVISION=	1
+PORTVERSION=	4000.2.8
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Haskell library for client-side HTTP
+COMMENT=	Library for client-side HTTP
 
 LICENSE=	BSD
 

@@ -2,15 +2,13 @@
 
 PORTNAME=	SHA
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Implementations of the SHA suite of message digest functions
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 OPTIONS_DEFINE=		EXE
 

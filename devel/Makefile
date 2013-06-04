@@ -676,6 +676,7 @@
     SUBDIR += hs-ansi-wl-pprint
     SUBDIR += hs-arrows
     SUBDIR += hs-asn1-data
+    SUBDIR += hs-asn1-types
     SUBDIR += hs-async
     SUBDIR += hs-attempt
     SUBDIR += hs-base-unicode-symbols
@@ -706,6 +707,11 @@
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
     SUBDIR += hs-data-default
+    SUBDIR += hs-data-default-class
+    SUBDIR += hs-data-default-instances-base
+    SUBDIR += hs-data-default-instances-containers
+    SUBDIR += hs-data-default-instances-dlist
+    SUBDIR += hs-data-default-instances-old-locale
     SUBDIR += hs-data-pprint
     SUBDIR += hs-date-cache
     SUBDIR += hs-datetime
@@ -716,6 +722,7 @@
     SUBDIR += hs-either
     SUBDIR += hs-enumerator
     SUBDIR += hs-errors
+    SUBDIR += hs-extensible-exceptions
     SUBDIR += hs-failure
     SUBDIR += hs-fast-logger
     SUBDIR += hs-fgl
@@ -766,6 +773,7 @@
     SUBDIR += hs-lifted-base
     SUBDIR += hs-logict
     SUBDIR += hs-mmap
+    SUBDIR += hs-mmorph
     SUBDIR += hs-monad-control
     SUBDIR += hs-monad-logger
     SUBDIR += hs-monad-par
@@ -781,6 +789,7 @@
     SUBDIR += hs-profunctor-extras
     SUBDIR += hs-profunctors
     SUBDIR += hs-project-template
+    SUBDIR += hs-quickcheck-io
     SUBDIR += hs-random
     SUBDIR += hs-ranges
     SUBDIR += hs-reactive

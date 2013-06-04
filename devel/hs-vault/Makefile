@@ -2,14 +2,13 @@
 
 PORTNAME=	vault
 PORTVERSION=	0.2.0.4
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A persistent store for values of arbitrary types
+COMMENT=	Persistent store for values of arbitrary types
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	hashable>=1.1 unordered-containers>=0.2.1.0
 

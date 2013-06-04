@@ -3,14 +3,13 @@
 
 PORTNAME=	math-functions
 PORTVERSION=	0.1.3.0
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Special mathematical functions and Chebyshev polynomials
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	erf>=2 vector>=0.7
 

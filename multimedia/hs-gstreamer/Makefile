@@ -2,7 +2,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.12.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,9 +11,6 @@ COMMENT=	Binding to the GStreamer open source multimedia framework
 LIB_DEPENDS=	gstreamer:${PORTSDIR}/multimedia/gstreamer
 
 LICENSE=	LGPL21
-FILE_LICENSE=	COPYING
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	glib>=0.12 mtl
 

@@ -3,14 +3,13 @@
 
 PORTNAME=	smallcheck
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Property-based testing library
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	logict mtl
 

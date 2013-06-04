@@ -1,0 +1,11 @@
+--- ./wxdirect.cabal.orig	2012-04-18 17:05:11.000000000 +0200
++++ ./wxdirect.cabal	2013-04-30 22:35:06.000000000 +0200
+@@ -66,7 +66,7 @@
+   if flag(splitBase)
+     build-depends:
+         base       >= 4     && < 5,
+-        containers >= 0.2   && < 0.5
++        containers >= 0.2   && < 0.6
+   else
+     build-depends:
+         base       >= 3     && < 4,

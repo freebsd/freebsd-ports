@@ -2,13 +2,11 @@
 
 PORTNAME=	wxc
 PORTVERSION=	0.90.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	wxHaskell C++ wrapper
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	wxdirect>=0.90
 

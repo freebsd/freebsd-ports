@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	texmath
-PORTVERSION=	0.6.1.3
+PORTVERSION=	0.6.1.5
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Conversion of LaTeX math formulas to MathML or OMML
 
 LICENSE=	GPLv2
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	parsec>=3 syb xml
 

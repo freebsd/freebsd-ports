@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	2.11.0
-PORTREVISION=	1
+PORTVERSION=	2.13.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A documentation-generation tool for Haskell libraries
+COMMENT=	Documentation-generation tool for Haskell libraries
 
 LICENSE=	BSD
 

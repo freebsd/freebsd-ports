@@ -3,7 +3,7 @@
 
 PORTNAME=	porte
 PORTVERSION=	0.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	sbahra@repnop.org
@@ -11,8 +11,7 @@ COMMENT=	FreeBSD ports index search and statistical analysis tool
 
 LICENSE=	BSD
 
-CABAL_SETUP=	Setup.hs
-USE_CABAL=	stringsearch
+USE_CABAL=	extensible-exceptions stringsearch
 
 EXECUTABLE=	porte
 

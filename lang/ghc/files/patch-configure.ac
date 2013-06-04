@@ -1,5 +1,5 @@
---- configure.ac.orig	2012-06-06 19:10:25.000000000 +0200
-+++ configure.ac	2013-02-02 17:31:55.193634655 +0100
+--- ./configure.ac.orig	2013-04-19 00:31:00.000000000 +0200
++++ ./configure.ac	2013-04-30 19:30:40.381161098 +0200
 @@ -89,6 +89,59 @@
    fi
    WithGhc="$GHC"])
@@ -60,7 +60,17 @@
  
  dnl ** Tell the make system which OS we are using
  dnl $OSTYPE is set by the operating system to "msys" or "cygwin" or something 
-@@ -717,7 +770,6 @@
+@@ -379,6 +432,9 @@
+ BuildingCrossCompiler=NO
+ PortingCompiler=NO
+ CrossCompiling=NO
++
++build=`echo $build | sed -e 's/amd64-/x86_64-/g; s/-freebsd.*$/-freebsd/g'`
++
+ # If 'host' and 'target' differ, then this means we are building a cross-compiler.
+ if test "$host" != "$target" ; then
+     BuildingCrossCompiler=YES
+@@ -839,7 +895,6 @@
  FP_VISIBILITY_HIDDEN
  
  dnl ** check for librt

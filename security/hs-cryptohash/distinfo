@@ -1,2 +1,2 @@
-SHA256 (cabal/cryptohash-0.8.3.tar.gz) = 6263bc5df13e463430a6a31e10f4ff64b0652dd8c4c013e1aa50c448d95a98b9
-SIZE (cabal/cryptohash-0.8.3.tar.gz) = 64654
+SHA256 (cabal/cryptohash-0.9.0.tar.gz) = f4e8e41f35303f58ed2ad9f9a7b683c0055617ac2bd9fa0ec363fc3bd0cdff46
+SIZE (cabal/cryptohash-0.9.0.tar.gz) = 65000

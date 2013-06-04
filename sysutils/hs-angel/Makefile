@@ -2,15 +2,13 @@
 
 PORTNAME=	angel
 PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Process management and supervision daemon
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	configurator>=0.1 MissingH mtl stm>=2.0 text>=0.11 \
 		unordered-containers>=0.1.4

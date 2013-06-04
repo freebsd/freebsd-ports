@@ -1,0 +1,10 @@
+--- ./activehs-base.cabal.orig	2012-09-11 09:56:08.000000000 +0200
++++ ./activehs-base.cabal	2013-05-03 21:25:00.000000000 +0200
+@@ -22,6 +22,6 @@
+     ActiveHs.Base
+   Build-Depends:
+     base >= 4.0 && < 4.7,
+-    QuickCheck >= 2.4 && < 2.6
++    QuickCheck >= 2.4 && < 2.7
+ 
+ 

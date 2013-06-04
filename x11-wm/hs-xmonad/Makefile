@@ -3,7 +3,7 @@
 
 PORTNAME=	xmonad
 PORTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Tiling window manager
 
 LICENSE=	BSD
 
-USE_CABAL=	mtl utf8-string>=0.3 X11>=1.5
+USE_CABAL=	extensible-exceptions mtl utf8-string>=0.3 X11>=1.5
 USE_XORG=	x11
 
 MAN1=		xmonad.1

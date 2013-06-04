@@ -2,15 +2,13 @@
 
 PORTNAME=	language-c
 PORTVERSION=	0.3.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Analysis and generation of C code in Haskell
 
 LICENSE=	BSD
-
-CABAL_SETUP=	Setup.hs
 
 USE_ALEX=	yes
 USE_HAPPY=	yes
