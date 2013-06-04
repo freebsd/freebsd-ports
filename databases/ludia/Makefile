@@ -20,7 +20,9 @@ RUN_DEPENDS=	senna-cfg:${PORTSDIR}/textproc/senna
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_PGSQL=	server
-WANT_PGSQL_VER=	83
+# WANT_PGSQL_VER=	83
+
+BROKEN=		Does not work with postgresql-9.0 or postgresql-8.4
 
 # let configure find postgres stuff in non-standard places
 CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
