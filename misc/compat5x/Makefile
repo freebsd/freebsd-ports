@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
@@ -32,12 +32,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: fails to link lib/compat/libpthread.so.1
-.endif
-
-.if ${ARCH} == alpha
-PLIST_SUB+=	ALPHA=""
-.else
-PLIST_SUB+=	ALPHA="@comment "
 .endif
 
 .if ${ARCH} == amd64
