@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hello
-# Date created:				Fri Jul 23, 1999
-# Whom:					shipley@dis.org
-#
+# Created by: shipley@dis.org
 # $FreeBSD$
-#
 
 PORTNAME=	hello
 PORTVERSION=	2.8
@@ -20,7 +16,9 @@ GNU_CONFIGURE=	YES
 MAN1=		hello.1
 INFO=		hello
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

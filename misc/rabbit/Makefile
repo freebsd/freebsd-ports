@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rabbit
-# Date created:		2010-08-01
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rabbit
 PORTVERSION=	1.0.9
@@ -32,14 +28,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
-USES=		gettext
-RUN_DEPENDS+=	rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
-PLIST_SUB+=	NLS=""
-.endif
-
 RUBY_SHEBANG_FILES=	bin/rabbirack \
 			bin/rabbirc \
 			bin/rabbit \
@@ -57,6 +45,14 @@ MIMETEX_DESC=	Run with mimetex
 TWITTER_DESC=	Run with Twitter
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES=		gettext
+RUN_DEPENDS+=	rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MMIMETEX}
 RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
@@ -79,12 +75,12 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
