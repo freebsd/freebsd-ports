@@ -3,7 +3,7 @@
 
 PORTNAME=	autozen
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/ \
 		http://www.sourcefiles.org/Miscellaneous/
@@ -53,15 +53,14 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/autozen ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/seq2wav ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/zentime ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/autozen.1 ${MANPREFIX}/man/man1/
-	${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} autozen seq2wav ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} zentime ${PREFIX}/bin)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} autozen.1 ${MANPREFIX}/man/man1)
+	@${MKDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.seq ${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${COPYTREE_SHARE} ${WRKSRC}/doc/HTML ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} HTML ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
