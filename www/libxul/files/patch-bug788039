@@ -1,16 +1,5 @@
 # Bug 788039 - With no prefix search libevent via pkg-config.
 
---- config/autoconf.mk.in~
-+++ config/autoconf.mk.in
-@@ -227,7 +227,7 @@ MOZ_HUNSPELL_CFLAGS = @MOZ_HUNSPELL_CFLA
- 
- MOZ_NATIVE_LIBEVENT = @MOZ_NATIVE_LIBEVENT@
- MOZ_LIBEVENT_LIBS = @MOZ_LIBEVENT_LIBS@
--MOZ_LIBEVENT_INCLUDES = @MOZ_LIBEVENT_INCLUDES@
-+MOZ_LIBEVENT_CFLAGS = @MOZ_LIBEVENT_CFLAGS@
- 
- MOZ_NATIVE_LIBVPX = @MOZ_NATIVE_LIBVPX@
- MOZ_LIBVPX_LIBS = @MOZ_LIBVPX_LIBS@
 --- configure.in~
 +++ configure.in
 @@ -3854,7 +3854,7 @@ fi

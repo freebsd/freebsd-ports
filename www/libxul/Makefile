@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	10.0.12
+DISTVERSION=	17.0.6
 CATEGORIES?=	www devel
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	firefox/releases/${DISTVERSION}esr/source
+MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
-BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9.2:${PORTSDIR}/devel/nspr \
 		nss>=3.13.6_1:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.7.1:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.13:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=		${WRKDIR}/mozilla-esr10
-CONFLICTS=	mozilla-[0-9]* libxul-1.9.*
+WRKSRC=		${WRKDIR}/mozilla-esr17
+CONFLICTS=	libxul-1.9.*
 
 USE_AUTOTOOLS=	autoconf213:env
+USE_PYTHON_BUILD=-2.7
 WANT_GNOME=	yes
 USE_QT4=	# empty
 QT_NONSTANDARD=	yes
@@ -45,17 +46,11 @@ PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
 
-OPTIONS_DEFAULT=GIO
-
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
 .if ${USE_MOZILLA:M-nss}
 MOZ_PKGCONFIG_FILES+=	mozilla-nss
-.endif
-
-.if !empty(CXX:M*clang++*) || (${CXX:Mc++} && ${OSVERSION} > 1000023)
-CXXFLAGS+=	-Wno-return-type-c-linkage
 .endif
 
 post-patch:
