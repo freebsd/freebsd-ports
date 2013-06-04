@@ -108,7 +108,6 @@ freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
 fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
-fwtk/*			security/fwtk		No redistribution allowed
 gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
