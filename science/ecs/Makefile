@@ -40,19 +40,21 @@ CONFIGURE_ARGS+=--with-adf=${LOCALBASE}		\
 CONFIGURE_ARGS+=--without-adf --without-ccm
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
 PORTDOCS=	mi_ecs.pdf mt_ecs.pdf
@@ -76,12 +78,12 @@ CONFIGURE_ARGS+=	--with-scotch=${LOCALBASE}
 .endif
 
 pre-configure:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/^SUBDIRS/s| po| po doc|' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 .endif
