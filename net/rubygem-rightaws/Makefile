@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-rightaws
-# Date created:			01 May 2008
-# Whom:				Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rightaws
 PORTVERSION=	1.10.0
@@ -23,14 +19,15 @@ GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 UNIQUENAME=	${PORTNAME}
 
-OPTIONS=	LIBXML "Use libxml instead of REXML" Off
+OPTIONS_DEFINE=	LIBXML
+LIBXML_DESC=	Use libxml instead of REXML
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LIBXML)
+.if ${PORT_OPTIONS:MLIBXML}
 RUN_DEPENDS+=	rubygem-libxml-ruby>=2.3.3:${PORTSDIR}/textproc/rubygem-libxml-ruby
 .else
 USE_RUBY_FEATURES=	rexml
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

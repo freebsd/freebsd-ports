@@ -28,9 +28,15 @@ USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
 USE_PYTHON=	yes
 
-OPTIONS=	JAVA	"build MPE Jumpshot-4" on \
-		SMPD	"use SMPD instead of MPD, for a mixed-OS cluster" off \
-		X11	"build MPE graphics routines" on
+OPTIONS_DEFINE_i386=	JAVA
+OPTIONS_DEFINE_amd64=	JAVA
+OPTIONS_DEFINE=	SMPD X11 DOCS
+OPTIONS_DEFAULT_i386=	JAVA
+OPTIONS_DEFAULT_amd64=	JAVA
+OPTIONS_DEFAULT=	X11
+JAVA_DESC=	build MPE Jumpshot-4
+SMPD_DESC=	use SMPD instead of MPD, for a mixed-OS cluster
+X11_DESC=	build MPE graphics routines
 
 CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 		--docdir="${DOCSDIR}"
@@ -57,20 +63,16 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	VERBOSE=1
 .endif
 
-.if !(${ARCH} == "amd64" || ${ARCH} == "i386")
-WITHOUT_JAVA=	no_java_available_for_${ARCH}
-.endif
-
-.if defined(WITHOUT_JAVA)
+.if ! ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--without-java
 PLIST_SUB+=	JAVA="@comment "
 PLX11=		"@comment "
 .else
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 IGNORE =	WITH_JAVA requires WITH_X11
 .endif
 CONFIGURE_ARGS+=	--with-java="${JAVA_HOME}"
@@ -90,7 +92,7 @@ WITH_RECV_TIMEOUT?=	100
 WITH_RECV_TIMEOUT?=	20
 .endif
 
-.if defined(WITH_SMPD)
+.if ${PORT_OPTIONS:MSMPD}
 CONFIGURE_ARGS+=	--with-pmi=smpd --with-pm=smpd
 PLIST_SUB+=	PM_MPD="@comment " PM_SMPD=""
 .else
@@ -98,7 +100,7 @@ CONFIGURE_ARGS+=	--with-pmi=simple --with-pm=mpd
 PLIST_SUB+=	PM_MPD="" PM_SMPD="@comment "
 .endif
 
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--disable-graphics
 PLIST_SUB+=	X11="@comment "
 .else
@@ -109,7 +111,7 @@ PLIST_SUB+=	X11=${PLX11}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .include "${FILESDIR}/manpages"
 .endif
 
@@ -133,13 +135,13 @@ pre-configure:
 	${FIND} ${WRKSRC} -name configure | ${XARGS}	\
 		${REINPLACE_CMD} -e 's|doc/$${PACKAGE}|doc/${PORTNAME}|'
 .for fin in ${DOC2PATCH}
-. if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|%%PORTDOCS%%|#|' ${WRKSRC}/${fin}
-. else
+. if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|%%PORTDOCS%%||' ${WRKSRC}/${fin}
+. else
+	${REINPLACE_CMD} -e 's|%%PORTDOCS%%|#|' ${WRKSRC}/${fin}
 . endif
 .endfor
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|lib doc share|lib share|'	\
 		${WRKSRC}/src/mpe2/src/slog2sdk/sbin/install-package.in
 .endif

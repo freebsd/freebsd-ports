@@ -32,14 +32,15 @@ NO_INSTALL_MANPAGES=	yes
 
 MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
-OPTIONS=	JVNC_VIEWER "Install Java-based vnc viewer" off
+OPTIONS_DEFINE=	JVNC_VIEWER
+JVNC_VIEWER_DESC=	Install Java-based vnc viewer
 
 #.include <bsd.port.pre.mk>
 
 ### use me when 5.5, 6.1, 6.2R die or we do impement something in b.p.m
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_JVNC_VIEWER)
+.if ${PORT_OPTIONS:MJVNC_VIEWER}
 USE_JAVA=	yes
 JAVA_RUN=	yes
 PLIST_SUB+=	JVNC_VIEWER=""
@@ -73,7 +74,7 @@ do-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${FILE}
 .endfor
 .endif
-.ifdef(WITH_JVNC_VIEWER)
+.if ${PORT_OPTIONS:MJVNC_VIEWER}
 	@${MKDIR} ${DATADIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
 .endif

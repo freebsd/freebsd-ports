@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openser
-# Date created:				20 October 2005
-# Whom:					jesusr
-#
+# Created by: jesusr
 # $FreeBSD$
-#
 
 PORTNAME=	openser
 PORTVERSION=	1.2.3
@@ -59,16 +55,14 @@ PORTDOCS=	*
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	RC_DIRS="${RC_DIRS}" RC_FILES="${RC_FILES}"
 
-OPTIONS=	MYSQL "MySQL support" on \
-		POSTGRESQL "PostgreSQL support" off \
-		UNIXODBC "UnixODBC support" off \
-		TLS "TLS support" off \
-		SNMPSTATS "SNMPStats support" off \
-		AUTHRADIUS "auth_radius module" off
+OPTIONS_DEFINE=	MYSQL PGSQL UNIXODBC TLS SNMPSTATS AUTHRADIUS
+OPTIONS_DEFAULT=	MYSQL
+SNMPSTATS_DESC=		SNMPStats support
+AUTHRADIUS_DESC=	auth_radius module
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 MODULES+=	mysql
 PLIST_FILES+=	lib/openser/openserctl/openserctl.mysql sbin/openser_mysql.sh
@@ -76,22 +70,22 @@ PLIST_FILES+=	lib/openser/openserctl/openserctl.mysql sbin/openser_mysql.sh
 MAKE_ENV+=	MYSQL=mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 MODULES+=	postgres
 PLIST_FILES+=	lib/openser/openserctl/openserctl.pgsql sbin/openser_postgresql.sh
 .else
-MAKE_ENV+=	POSTGRESQL=postgres
+MAKE_ENV+=	PGSQL=postgres
 .endif
 
-.if defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 MODULES+=	unixodbc
 .else
 MAKE_ENV+=	UNIXODBC=unixodbc
 .endif
 
-.if defined(WITH_TLS)
+.if ${PORT_OPTIONS:MTLS}
 MODULES+=	tlsops
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 TLS_RC_FILES=	tls/rootCA/cacert.pem \
@@ -119,14 +113,14 @@ MAKE_ENV+=	TLSOPS=tlsops
 MAKE_ARGS+=	TLS=""
 .endif
 
-.if defined(WITH_SNMPSTATS)
+.if ${PORT_OPTIONS:MSNMPSTATS}
 RUN_DEPENDS+=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp
 MODULES+=	snmpstats
 .else
 MAKE_ENV+=	SNMPSTATS=snmpstats
 .endif
 
-.if defined(WITH_AUTHRADIUS)
+.if ${PORT_OPTIONS:MAUTHRADIUS}
 MODULES+=	auth_radius
 PLIST_FILES+=	lib/openser/modules/auth_radius.so
 .else
@@ -137,7 +131,7 @@ PLIST_FILES+=	${MODULES:S|^|lib/openser/modules/|:S|$|.so|} \
 		${RC_FILES:S|^|etc/openser/|:S|$|.default|}
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|install-doc install-man|install-man|' \
 		${WRKSRC}/Makefile
 .endif
@@ -176,4 +170,4 @@ post-install:
 .endfor
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

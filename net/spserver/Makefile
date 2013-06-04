@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spserver
-# Date created:				18 June 2007
-# Whom:					vanilla@
-#
+# Created by: vanilla@
 # $FreeBSD$
-#
 
 PORTNAME=	spserver
 PORTVERSION=	0.9.5
@@ -22,13 +18,13 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all build_openssl
 
-OPTIONS=	GNUTLS		"Enable gnutls support" off
+OPTIONS_DEFINE=	GNUTLS
 #		MATRIXSSL	"Enable matrixssl support" off \
 #		XYSSL		"Enable xyssl support" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MATRIXSSL)
+.if ${PORT_OPTIONS:MMATRIXSSL}
 BUILD_DEPENDS=	${PREFIX}/lib/libmatrixsslstatic.a:${PORTSDIR}/security/matrixssl
 ALL_TARGET+=	build_matrixssl
 PLIST_SUB+=	WITH_MATRIXSSL=""
@@ -36,7 +32,7 @@ PLIST_SUB+=	WITH_MATRIXSSL=""
 PLIST_SUB+=	WITH_MATRIXSSL="@comment "
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 ALL_TARGET+=	build_gnutls
 PLIST_SUB+=	WITH_GNUTLS=""
@@ -44,7 +40,7 @@ PLIST_SUB+=	WITH_GNUTLS=""
 PLIST_SUB+=	WITH_GNUTLS="@comment "
 .endif
 
-.if defined(WITH_XYSSL)
+.if ${PORT_OPTIONS:MXYSSL}
 BUILD_DEPENDS=	${PREFIX}/lib/libxyssl.a:${PORTSDIR}/security/xyssl
 ALL_TARGET+=	build_xyssl
 PLIST_SUB+=	WITH_XYSSL=""
@@ -68,22 +64,22 @@ do-install:
 	@${INSTALL} ${WRKSRC}/openssl/libspopenssl.so ${PREFIX}/lib/libspopenssl.so.1
 	@${LN} -s ${PREFIX}/lib/libspopenssl.so.1 ${PREFIX}/lib/libspopenssl.so
 
-.if defined (WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 	@${INSTALL} ${WRKSRC}/gnutls/spgnutls.hpp ${PREFIX}/include/spserver
 	@${INSTALL} ${WRKSRC}/gnutls/libspgnutls.so ${PREFIX}/lib/libspgnutls.so.1
 	@${LN} -s ${PREFIX}/lib/libspgnutls.so.1 ${PREFIX}/lib/libspgnutls.so
 .endif
 
-.if defined (WITH_MATRIXSSL)
+.if ${PORT_OPTIONS:MMATRIXSSL}
 	@${INSTALL} ${WRKSRC}/matrixssl/spmatrixssl.hpp ${PREFIX}/include/spserver
 	@${INSTALL} ${WRKSRC}/matrixssl/libspmatrixssl.so ${PREFIX}/lib/libspmatrixssl.so.1
 	@${LN} -s ${PREFIX}/lib/libspmatrixssl.so.1 ${PREFIX}/lib/libspmatrixssl.so
 .endif
 
-.if defined (WITH_XYSSL)
+.if ${PORT_OPTIONS:MXYSSL}
 	@${INSTALL} ${WRKSRC}/xyssl/spxyssl.hpp ${PREFIX}/include/spserver
 	@${INSTALL} ${WRKSRC}/xyssl/libspxyssl.so ${PREFIX}/lib/libspxyssl.so.1
 	@${LN} -s ${PREFIX}/lib/libspxyssl.so.1 ${PREFIX}/lib/libspxyssl.so
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
