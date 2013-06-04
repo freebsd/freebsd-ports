@@ -34,6 +34,14 @@ MUTT_ICONV_DESC=	mutt iconv
 
 USE_OPENSSL=	yes
 
+.if defined (MUTT_LITE)
+PKGNAMESUFFIX=	-lite
+OPTIONS_EXCLUDE=	SGML_DOCS
+.elif ${ARCH} == "alpha"
+#  coredump in sgmls
+OPTIONS_EXCLUDE=	SGML_DOCS
+.endif
+
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
@@ -42,14 +50,6 @@ WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
-.endif
-
-.if defined (MUTT_LITE)
-PKGNAMESUFFIX=	-lite
-WITH_SGML_DOCS:=no
-.elif ${ARCH} == "alpha"
-#  coredump in sgmls
-WITH_SGML_DOCS:=no
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
