@@ -27,12 +27,14 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		elmo.1 elmoconf.pl.1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USES+=		gettext
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>

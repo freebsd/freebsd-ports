@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  mutt w/pgp hooks
-# Date created:			  Thur July 25, 1996
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.3
@@ -29,15 +24,13 @@ COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}14${PKGNAMESUFFIX}
 
-OPTIONS=	NLS "Native Language Support via gettext utilities" on \
- SLANG "Adds display/screen management via S-Lang" off \
- NCURSES "Adds ncurses console graphics support" off \
- SGML_DOCS "Enable mutt SGML documentation" off \
- LOCALES_FIX "Enable locales fixes" off \
- MUTT_XFACE "Adds mutt X-Face" off \
- MUTT_FLOCK "Enable mutt flock" on \
- MUTT_ICONV "Enable mutt iconv" on \
- GSSAPI "GSSAPI (Kerberos) support" on
+OPTIONS_DEFINE=	NLS SLANG NCURSES SGML_DOCS LOCALES_FIX MUTT_XFACE MUTT_FLOCK MUTT_ICONV GSSAPI
+OPTIONS_DEFAULT=	MUTT_FLOCK MUTT_ICONV GSSAPI
+SGML_DOCS_DESC=		mutt SGML documentation
+LOCALES_FIX_DESC=	locales fixes
+MUTT_XFACE_DESC=	Adds mutt X-Face
+MUTT_FLOCK_DESC=	mutt flock
+MUTT_ICONV_DESC=	mutt iconv
 
 USE_OPENSSL=	yes
 
@@ -59,19 +52,19 @@ WITH_SGML_DOCS:=no
 WITH_SGML_DOCS:=no
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
-.if defined(WITHOUT_MUTT_ICONV)
-IGNORE=	the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
-	WITHOUT_NLS is also given
+.if ! ${PORT_OPTIONS:MMUTT_ICONV}
+IGNORE=	the MUTT_ICONV options of the mutt port only be deactivate if \
+	NLS is also deactivated
 .endif
-.elif !defined(WITHOUT_MUTT_ICONV)
+.elif ${PORT_OPTIONS:MMUTT_ICONV}
 USES+=	iconv
 .endif
 
-.if defined(WITH_SLANG)
+.if ${PORT_OPTIONS:MSLANG}
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-.elif defined(WITH_NCURSES)
+.elif ${PORT_OPTIONS:MNCURSES}
 USES+=	ncurses:port
 .else
 USES+=	ncurses
@@ -80,10 +73,10 @@ USES+=	ncurses
 .if defined(WITH_MUTT_CYRUS_SASL)
 IGNORE=	the SASL support for mutt has been withdrawn. Please use the mutt-devel port instead
 .endif
-.if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
+.if ${PORT_OPTIONS:MSGML_DOCS}
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
-.if defined(WITH_MUTT_XFACE)
+.if ${PORT_OPTIONS:MMUTT_XFACE}
 PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/news/slrnface:extract
 RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
 .endif
@@ -103,32 +96,32 @@ CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
-.if defined(WITHOUT_MUTT_FLOCK)
+.if ${PORT_OPTIONS:MMUTT_FLOCK}
 CONFIGURE_ARGS+=	--disable-flock
 .else
 CONFIGURE_ARGS+=	--enable-flock
 .endif
-.if defined(WITH_LOCALES_FIX)
+.if ${PORT_OPTIONS:MLOCALES_FIX}
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
-.if defined(WITHOUT_MUTT_ICONV) && defined(WITHOUT_NLS)
+.if ! ${PORT_OPTIONS:MMITT_ICONV} && ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-iconv
 .else
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 .endif
-.if defined(WITH_SLANG)
+.if ${PORT_OPTIONS:MSLANG}
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
-.elif defined(WITH_NCURSES)
+.elif ${PORT_OPTIONS:MNCURSES}
 CONFIGURE_ARGS+=	--with-curses=${NCURSESBASE}
 CFLAGS+=	-I${NCURSESINC}
 .endif
-.if !defined(WITHOUT_GSSAPI)
+.if ${PORT_OPTIONS:MGSSAPI}
 .if exists(${LOCALBASE}/bin/gss-client)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
@@ -148,7 +141,7 @@ post-patch::
 	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
 		${WRKSRC}/contrib/Makefile.in
 
-.if defined(WITH_MUTT_XFACE)
+.if ${PORT_OPTIONS:MMUTT_XFACE}
 post-patch::
 	@${ECHO} "===>  Applying XFACE patch"
 	slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
@@ -174,7 +167,7 @@ pre-build:
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
@@ -186,7 +179,7 @@ post-build:
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/muttrc.man
-.if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
+.if ${PORT_OPTIONS:MSGML_DOCS}
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles > ${PLIST}
@@ -196,12 +189,12 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${DOCSDIR}
-.if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
+.if ${PORT_OPTIONS:MSGML_DOCS}
 	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m 0755 \
 	    -d ${DOCSDIR}/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
@@ -209,7 +202,7 @@ post-install:
 .endif
 .endif
 
-.if defined(WITH_MUTT_XFACE)
+.if ${PORT_OPTIONS:MMUTT_XFACE}
 	@${ECHO} ""
 	@${ECHO} "************************************************************"
 	@${ECHO} "  To enable the XFACE support in mutt you also have to add"

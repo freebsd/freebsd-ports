@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kcheckgmail
-# Date created:				17 June 2007
-# Whom:					YUAN Jue <yuanjue@FreeBSD.org>
-#
+# Created by: YUAN Jue <yuanjue@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kcheckgmail
@@ -21,7 +18,9 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDELIBS_VER=3
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -34,7 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 MAN1=		kcheckgmail.1
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/subdirs
 .endif
 
