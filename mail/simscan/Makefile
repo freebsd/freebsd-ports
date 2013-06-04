@@ -28,16 +28,18 @@ SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX} \
 PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
 		SIMSCAN_DIR=${PORTNAME}
 
-OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
-		RIPMIME "Ripmime Processing (if Clamav ScanMail disabled)" on \
-		SPAMD "Support for SpamAssassin Spam Filtering" off \
-		USER "Turn On Per User SpamAssassin (required SPAMD)" off \
-		DOMAIN "Turn On Per Domain Based Checking" off \
-		ATTACH "Turn On Attachment Scanning (required CLAMAV)" off \
-		DROPMSG "Drop Message in Case of Virus Found" off \
-		PASSTHRU "Pass Spam Thru, Do Not Reject (required SPAMD)" off \
-		HEADERS "Add a Received Line With Versions of Scanners" off \
-		DSPAM "Turn on DSPAM scanning" off
+OPTIONS_DEFINE=	CLAMAV RIPMIME SPAMD USER DOMAIN ATTACH DROPMSG PASSTHRU HEADERS DSPAM
+OPTIONS_DEFAULT=	CLAMAV RIPMIME
+CLAMAV_DESC=	Support for ClamAV Virus Scanning
+RIPMIME_DESC=	Ripmime Processing (if Clamav ScanMail disabled)
+SPAMD_DESC=	Support for SpamAssassin Spam Filtering
+USER_DESC=	Turn On Per User SpamAssassin (required SPAMD)
+DOMAIN_DESC=	Turn On Per Domain Based Checking
+ATTACH_DESC=	Turn On Attachment Scanning (required CLAMAV)
+DROPMSG_DESC=	Drop Message in Case of Virus Found
+PASSTHRU_DESC=	Pass Spam Thru, Do Not Reject (required SPAMD)
+HEADERS_DESC=	Add a Received Line With Versions of Scanners
+DSPAM_DESC=	Turn on DSPAM scanning
 
 .include <bsd.port.pre.mk>
 
@@ -47,50 +49,50 @@ CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
 		--enable-workdir=${WORKDIR} \
 		--enable-user=nobody
 
-.if defined(WITHOUT_CLAMAV)
+.if ! ${PORT_OPTIONS:MCLAMAV}
 CONFIGURE_ARGS+=	--enable-clamav=n
 .else
 BUILD_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
 .endif
 
-.if defined(WITHOUT_RIPMIME)
+.if ! ${PORT_OPTIONS:MRIPMIME}
 CONFIGURE_ARGS+=--disable-ripmime
 .else
 BUILD_DEPENDS+=	ripmime:${PORTSDIR}/mail/ripmime
 .endif
 
-.if defined(WITH_SPAMD)
+.if ${PORT_OPTIONS:MSPAMD}
 BUILD_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=--enable-spam=y
 CONFIGURE_ARGS+=--enable-spamassassin-path=${LOCALBASE}/bin/spamassassin
 .endif
 
-.if defined(WITH_USER)
+.if ${PORT_OPTIONS:MUSER}
 CONFIGURE_ARGS+=--enable-spamc-user=y
 .endif
 
-.if defined(WITH_DOMAIN)
+.if ${PORT_OPTIONS:MDOMAIN}
 CONFIGURE_ARGS+=--enable-per-domain=y
 .endif
 
-.if defined(WITH_ATTACH)
+.if ${PORT_OPTIONS:MATTACH}
 CONFIGURE_ARGS+=--enable-attach=y
 .endif
 
-.if defined(WITH_DROPMSG)
+.if ${PORT_OPTIONS:MDROPMSG}
 CONFIGURE_ARGS+=--enable-dropmsg=y
 .endif
 
-.if defined(WITH_PASSTHRU)
+.if ${PORT_OPTIONS:MPASSTHRU}
 CONFIGURE_ARGS+=--enable-spam-passthru=y
 .endif
 
-.if defined(WITH_HEADERS)
+.if ${PORT_OPTIONS:MHEADERS}
 CONFIGURE_ARGS+=--enable-received=y
 CONFIGURE_ARGS+=--enable-sigtool-path=${LOCALBASE}/bin/sigtool
 .endif
 
-.if defined(WITH_DSPAM)
+.if ${PORT_OPTIONS:MDSPAM}
 CONFIGURE_ARGS+=--enable-dspam=y
 BUILD_DEPENDS+=	dspam:${PORTSDIR}/mail/dspam
 .endif
@@ -148,7 +150,7 @@ pre-install:
 
 post-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

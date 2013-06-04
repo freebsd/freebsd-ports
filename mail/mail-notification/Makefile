@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail-notification
-# Date created:			18 Sep 2003
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	mail-notification
 DISTVERSION=	5.4
@@ -31,63 +27,65 @@ GCONF_SCHEMAS=	mail-notification.schemas
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS=	EVOLUTION "Evolution support" off \
-		GMAIL "Gmail support" on \
-		HOTMAIL "Windows Live Hotmail support" on \
-		IMAP "IMAP support" on \
-		MAILDIR "Maildir support" on \
-		MBOX "mbox support" on \
-		MH "MH support" on \
-		MOZILLA "Mozilla products support" on \
-		POP3 "POP3 support" on \
-		SASL "SASL authentication support" on \
-		SSL "SSL/TLS support" on \
-		SYLPHEED "Sylpheed support" on \
-		YAHOO "Yahoo! Mail support" on
+OPTIONS_DEFINE=	EVOLUTION GMAIL HOTMAIL IMAP MAILDIR MBOX MH MOZILLA \
+		POP3 SASL SSL SYLPHEED YAHOO
+OPTIONS_DEFAULT=	GMAIL HOTMAIL IMAP MAILDIR MBOX MH MOZILLA \
+			POP3 SASL SSL SYLPHEED YAHOO
+EVOLUTION_DESC=	Evolution support
+GMAIL_DESC=	Gmail support
+HOTMAIL_DESC=	Windows Live Hotmail support
+IMAP_DESC=	IMAP support
+MAILDIR_DESC=	Maildir support
+MBOX_DESC=	mbox support
+MH_DESC=	MH support
+MOZILLA_DESC=	Mozilla products support
+POP3_DESC=	POP3 support
+SYLPHEED_DESC=	Sylpheed support
+YAHOO_DESC=	Yahoo! Mail support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MBOX)
+.if ! ${PORT_OPTIONS:MMBOX}
 JB_CONF_ARGS+=	mbox=no
 .endif
-.if defined(WITHOUT_MH)
+.if ! ${PORT_OPTIONS:MMH}
 JB_CONF_ARGS+=	mh=no
 .endif
-.if defined(WITHOUT_MAILDIR)
+.if ! ${PORT_OPTIONS:MMAILDIR}
 JB_CONF_ARGS+=	maildir=no
 .endif
-.if defined(WITHOUT_POP3)
+.if ! ${PORT_OPTIONS:MPOP3}
 JB_CONF_ARGS+=	pop3=no
 .endif
-.if defined(WITHOUT_IMAP)
+.if ! ${PORT_OPTIONS:MIMAP}
 JB_CONF_ARGS+=	imap=no
 .endif
-.if defined(WITHOUT_POP3) && defined(WITHOUT_IMAP)
+.if ! ${PORT_OPTIONS:MPOP3} && ! ${PORT_OPTIONS:MIMAP}
 # only POP3 and IMAP use SSL and SASL
 WITHOUT_SSL=	yes
 WITHOUT_SASL=	yes
 .endif
-.if defined(WITHOUT_GMAIL)
+.if ! ${PORT_OPTIONS:MGMAIL}
 JB_CONF_ARGS+=	gmail=no
 PLIST_SUB+=	GMAIL="@comment "
 .else
 PLIST_SUB+=	GMAIL=""
 .endif
-.if defined(WITHOUT_HOTMAIL)
+.if ! ${PORT_OPTIONS:MHOTMAIL}
 JB_CONF_ARGS+=	hotmail=no
 PLIST_SUB+=	HOTMAIL="@comment "
 .else
 RUN_DEPENDS+=	getlive:${PORTSDIR}/mail/getlive
 PLIST_SUB+=	HOTMAIL=""
 .endif
-.if defined(WITHOUT_YAHOO)
+.if ! ${PORT_OPTIONS:MYAHOO}
 JB_CONF_ARGS+=	yahoo=no
 PLIST_SUB+=	YAHOO="@comment "
 .else
 RUN_DEPENDS+=	fetchyahoo:${PORTSDIR}/mail/fetchyahoo
 PLIST_SUB+=	YAHOO=""
 .endif
-.if defined(WITHOUT_EVOLUTION)
+.if ! ${PORT_OPTIONS:MEVOLUTION}
 JB_CONF_ARGS+=	evolution=no
 PLIST_SUB+=	EVOLUTION="@comment "
 .else
@@ -97,29 +95,29 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mai
 USE_GNOME+=	gtkhtml3
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}
 .endif
-.if defined(WITHOUT_MOZILLA)
+.if ! ${PORT_OPTIONS:MMOZILLA}
 JB_CONF_ARGS+=	mozilla=no
 .endif
-.if defined(WITHOUT_SYLPHEED)
+.if ! ${PORT_OPTIONS:MSYLPHEED}
 JB_CONF_ARGS+=	sylpheed=no
 .endif
-.if defined(WITH_MBOX) \
-	|| defined(WITH_MH) \
-	|| defined(WITH_MAILDIR) \
-	|| defined(WITH_POP3) \
-	|| defined(WITH_IMAP) \
-	|| defined(WITH_MOZILLA) \
-	|| defined(WITH_SYLPHEED) \
-	|| defined(WITH_HOTMAIL) \
-	|| defined(WITH_YAHOO)
+.if ${PORT_OPTIONS:MMBOX} \
+	|| ${PORT_OPTIONS:MMH} \
+	|| ${PORT_OPTIONS:MMAILDIR} \
+	|| ${PORT_OPTIONS:MPOP3} \
+	|| ${PORT_OPTIONS:MIMAP} \
+	|| ${PORT_OPTIONS:MMOZILLA} \
+	|| ${PORT_OPTIONS:MSYLPHEED} \
+	|| ${PORT_OPTIONS:MHOTMAIL} \
+	|| ${PORT_OPTIONS:MYAHOO}
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 .endif
-.if defined(WITHOUT_SSL)
+.if ! ${PORT_OPTIONS:MSSL}
 JB_CONF_ARGS+=	ssl=no
 .else
 USE_OPENSSL=	yes
 .endif
-.if defined(WITHOUT_SASL)
+.if ! ${PORT_OPTIONS:MSASL}
 JB_CONF_ARGS+=	sasl=no
 .else
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2

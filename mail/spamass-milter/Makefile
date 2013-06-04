@@ -1,9 +1,5 @@
-# New ports collection makefile for:   spamass-milter
-# Date created:        29 April 2002
-# Whom:                Eugene M. Kim <ab@astralblue.net>
-#
+# Created by: Eugene M. Kim <ab@astralblue.net>
 # $FreeBSD$
-#
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.3.2
@@ -21,28 +17,27 @@ LICENSE=	GPLv2
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	ADDAUTH_PATCH "Bypass checks for SMTP AUTH connections" off \
-		REJECTTEXT_PATCH "Customize SMTP reject message" off \
-		LDAP "LDAP support" off \
-		SENDMAIL_PORT "Build against sendmail port" off \
-		IPV6 "Apply IPv6 whitelist patch" off
+OPTIONS_DEFINE=	ADDAUTH_PATCH REJECTTEXT_PATCH LDAP SENDMAIL_PORT IPV6
+ADDAUTH_PATCH_DESC=	Bypass checks for SMTP AUTH connections
+REJECTTEXT_PATCH_DESC=	Customize SMTP reject message
+SENDMAIL_PORT_DESC=	Build against sendmail port
 
 .include <bsd.port.pre.mk>
 
 ORIG_ARGS=	fd:mMp:P:r:u:D:i:b:B:e:x
 NEW_ARGS:=	${ORIG_ARGS}
 
-.if defined(WITH_ADDAUTH_PATCH)
+.if ${PORT_OPTIONS:MADDAUTH_PATCH}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addauth
 NEW_ARGS:=	${NEW_ARGS}a
 .endif
 
-.if defined(WITH_REJECTTEXT_PATCH)
+.if ${PORT_OPTIONS:MREJECTTEXT_PATCH}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext1
 NEW_ARGS:=	${NEW_ARGS}R:
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ipv6
 .endif
 
@@ -56,13 +51,13 @@ WITH_LDAP=yes
 .undef WITHOUT_LDAP
 .endif
 
-.if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 .endif
 
@@ -81,12 +76,12 @@ pre-patch:
 post-patch:
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \
 		${FILESDIR}/activation.txt > ${WRKDIR}/activation.txt
-.if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MLDAP}
 	@${REINPLACE_CMD} -e 's|-lmilter|-lmilter -lldap|g' ${WRKSRC}/configure
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/activation.txt ${DOCSDIR}/activation.txt
 .for f in ${PORTDOCS}

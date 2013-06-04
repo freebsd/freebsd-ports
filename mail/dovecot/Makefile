@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dovecot
-# Date created:				12/08/2002
-# Whom:			Dominic Marks <dominic.marks@btinternet.com>
-#
+# Created by: Dominic Marks <dominic.marks@btinternet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot
 PORTVERSION=	1.2.17
@@ -57,16 +53,11 @@ DOVECOT_GID?=	143
 
 PROTOCOLS=	imap pop3
 
-OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
-		SSL		"SSL support"		on  \
-		MANAGESIEVE	"ManageSieve support"	on  \
-		GSSAPI		"GSSAPI support"	off \
-		VPOPMAIL	"VPopMail support"	off \
-		BDB		"BerkleyDB support"	off \
-		LDAP		"OpenLDAP support"	off \
-		PGSQL		"PostgreSQL support"	off \
-		MYSQL		"MySQL support"		off \
-		SQLITE		"SQLite support"	off
+OPTIONS_DEFINE=	KQUEUE SSL MANAGESIEVE GSSAPI VPOPMAIL BDB LDAP PGSQL MYSQL SQLITE
+OPTIONS_DEFAULT=	KQUEUE SSL MANAGESIEVE
+KQUEUE_DESC=		kqueue(2) support
+MANAGESIEVE_DESC=	ManageSieve support
+VPOPMAIL_DESC=		VPopMail support
 
 .include <bsd.port.pre.mk>
 
@@ -88,13 +79,13 @@ REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
 
 ## kqueue(2) support
 #
-.if !defined(WITHOUT_KQUEUE)
+.if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=	--with-ioloop=kqueue
 .endif
 
 ## SSL support
 #
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 PROTOCOLS+=		imaps pop3s
 .else
 CONFIGURE_ARGS+=	--without-ssl
@@ -102,7 +93,7 @@ CONFIGURE_ARGS+=	--without-ssl
 
 ## ManageSieve support
 #
-.if defined(WITH_MANAGESIEVE)
+.if ${PORT_OPTIONS:MMANAGESIEVE}
 MANAGESIEVEVERSION!=	${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V PORTVERSION
 PATCH_SITES!=		${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V MASTER_SITES
 PATCHFILES+=		dovecot-${PORTVERSION}-managesieve-${MANAGESIEVEVERSION}.diff.gz
@@ -113,7 +104,7 @@ DOCS+=			README.managesieve
 
 ## GSSAPI support
 #
-.if defined(WITH_GSSAPI)
+.if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=	--with-gssapi
 .else
 CONFIGURE_ARGS+=	--without-gssapi
@@ -121,7 +112,7 @@ CONFIGURE_ARGS+=	--without-gssapi
 
 ## VPopMail Support
 #
-.if defined(WITH_VPOPMAIL)
+.if ${PORT_OPTIONS:MVPOPMAIL}
 VPOPMAIL=		${LOCALBASE}/vpopmail/bin/vchkpw
 BUILD_DEPENDS+=		${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=	--with-vpopmail
@@ -131,7 +122,7 @@ CONFIGURE_ARGS+=	--without-vpopmail
 
 ## BDB Support
 #
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--with-db
 CFLAGS+=		-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
@@ -143,7 +134,7 @@ PLIST_SUB+=		BDB="@comment "
 
 ## OpenLDAP Support
 #
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
@@ -155,7 +146,7 @@ PLIST_SUB+=		LDAP="@comment "
 
 ## PostgreSQL Support
 #
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql
 PLIST_SUB+=		SQL=""
@@ -167,7 +158,7 @@ PLIST_SUB+=		SQL="@comment "
 
 ## MySQL Support
 #
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 PLIST_SUB+=		SQL=""
@@ -179,7 +170,7 @@ PLIST_SUB+=		SQL="@comment "
 
 ## SQLite Support
 #
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=		3
 CONFIGURE_ARGS+=	--with-sqlite
 PLIST_SUB+=		SQL=""
@@ -219,7 +210,7 @@ post-install:
 		| ${SED} -e 's:^@exec ::; s:%D:${PREFIX}:g;' \
 		> ${WRKDIR}/.PLIST.exec \
 		&& ${SH} ${WRKDIR}/.PLIST.exec
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
