@@ -84,6 +84,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/bugs.html
 %%DOCSDIR%%%%PORTVERSION%%/html/compiling.html
 %%DOCSDIR%%%%PORTVERSION%%/html/contact.html
+%%DOCSDIR%%%%PORTVERSION%%/html/cgroups.html
 %%DOCSDIR%%%%PORTVERSION%%/html/csharp.html
 %%DOCSDIR%%%%PORTVERSION%%/html/deployment.html
 %%DOCSDIR%%%%PORTVERSION%%/html/devguide.html
@@ -282,17 +283,18 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/libvirt.mo
-@dirrmtry etc/logrotate.d
-@dirrm include/libvirt
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
-@exec /bin/mkdir -p %%PREFIX%%/lib/libvirt/connection-driver
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.la
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_secret.la
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_storage.la
+lib/libvirt/connection-driver/libvirt_driver_vbox.so
+lib/libvirt/connection-driver/libvirt_driver_vbox.la
+@dirrmtry etc/logrotate.d
+@dirrm include/libvirt
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
 @dirrm lib/libvirt/connection-driver
 @dirrm lib/libvirt/lock-driver
 @dirrm lib/libvirt
