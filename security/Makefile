@@ -152,7 +152,6 @@
     SUBDIR += fwipe
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
-    SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += gcipher
     SUBDIR += gnome-gpg
