@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xparam
-# Date created:			Dec 23, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xparam
 PORTVERSION=	1.22
@@ -13,10 +8,13 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A general-purpose tool for parameter handling in C++
+COMMENT=	General-purpose tool for parameter handling in C++
+
+LICENSE=	GPLv2 # (or later)
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
