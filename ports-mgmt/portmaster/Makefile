@@ -18,6 +18,8 @@ GH_ACCOUNT=	freebsd
 GH_COMMIT=	2a29846
 GH_TAGNAME=	${GH_COMMIT}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_PROJECT}-${GH_COMMIT}
+
 OPTIONS_DEFINE=	BASH ZSH
 
 PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
