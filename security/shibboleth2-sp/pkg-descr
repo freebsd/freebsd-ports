@@ -10,4 +10,4 @@ service provider manages secured resources. User access to resources
 is based on assertions received by the service provider (SP) from
 an identity provider.
 
-WWW:	http://shibboleth.internet2.edu/
+WWW: http://shibboleth.internet2.edu/

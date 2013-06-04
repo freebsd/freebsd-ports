@@ -253,5 +253,6 @@ elasticsearch:*:965:
 ossec:*:966:
 kippo:*:969:
 colord:*:970:
+shibd:*:971:
 nogroup:*:65533:
 nobody:*:65534:

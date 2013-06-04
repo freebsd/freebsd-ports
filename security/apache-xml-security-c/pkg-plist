@@ -160,7 +160,7 @@ include/xsec/xkms/XKMSValidateResult.hpp
 include/xsec/xkms/XKMSValidityInterval.hpp
 lib/libxml-security-c.a
 lib/libxml-security-c.so
-lib/libxml-security-c.so.16
+lib/libxml-security-c.so.17
 @dirrm include/xsec/xkms
 @dirrm include/xsec/xenc
 @dirrm include/xsec/utils/unixutils

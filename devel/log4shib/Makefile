@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	log4shib
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.6
 CATEGORIES=	devel
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	http://shibboleth.net/downloads/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
 
 USE_AUTOTOOLS=	libtool
@@ -21,8 +21,8 @@ USE_GNOME=	pkgconfig gnomehack
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs --disable-doxygen
 USE_LDCONFIG=	yes
 
+USES=		pathfix
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

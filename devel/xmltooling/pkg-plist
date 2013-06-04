@@ -48,7 +48,10 @@ include/xmltooling/security/KeyInfoCredentialContext.h
 include/xmltooling/security/KeyInfoResolver.h
 include/xmltooling/security/OpenSSLCredential.h
 include/xmltooling/security/OpenSSLCryptoX509CRL.h
+include/xmltooling/security/OpenSSLPathValidator.h
 include/xmltooling/security/OpenSSLTrustEngine.h
+include/xmltooling/security/PKIXPathValidatorParams.h
+include/xmltooling/security/PathValidator.h
 include/xmltooling/security/SecurityHelper.h
 include/xmltooling/security/SignatureTrustEngine.h
 include/xmltooling/security/TrustEngine.h
@@ -84,13 +87,14 @@ include/xmltooling/validation/Validator.h
 include/xmltooling/validation/ValidatorSuite.h
 include/xmltooling/version.h
 lib/libxmltooling-lite.so
-lib/libxmltooling-lite.so.5
+lib/libxmltooling-lite.so.6
 lib/libxmltooling.so
-lib/libxmltooling.so.5
+lib/libxmltooling.so.6
 libdata/pkgconfig/xmltooling.pc
 share/xml/xmltooling/catalog.xml
 share/xml/xmltooling/soap-envelope.xsd
 share/xml/xmltooling/xenc-schema.xsd
+share/xml/xmltooling/xenc11-schema.xsd
 share/xml/xmltooling/xml.xsd
 share/xml/xmltooling/xmldsig-core-schema.xsd
 share/xml/xmltooling/xmldsig11-schema.xsd

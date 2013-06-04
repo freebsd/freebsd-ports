@@ -2,53 +2,58 @@
 # $FreeBSD$
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	security www
-MASTER_SITES=	http://www.shibboleth.net/downloads/service-provider/${PORTVERSION}/
+MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
-LIB_DEPENDS=	saml.7:${PORTSDIR}/security/opensaml2
-
-OPTIONS_DEFINE=	APACHE22
-APACHE22_DESC=	Use Apache version 2.2 instead of version 2.0
+LIB_DEPENDS=	saml.8:${PORTSDIR}/security/opensaml2
 
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_ENV=	NOKEYGEN=YES
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	shibboleth-sp
-USE_AUTOTOOLS=	autoconf automake:env libtool:env
-WRKSRC=		${WRKDIR}/shibboleth-${PORTVERSION}
 
 LATEST_LINK=	shibboleth2-sp
 
+USERS=		shibd
+GROUPS=		shibd
+
+USE_APACHE=	22-24
+USE_OPENSSL=	yes
+
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MAPACHE22}
-USE_APACHE=	22
+.if ${APACHE_VERSION} == 22
 CONFIGURE_ARGS=	--enable-apache-22 --with-apxs22=${APXS}
 PLIST_SUB+=	WITH_APACHE_22=""
-PLIST_SUB+=	WITH_APACHE_20="@comment "
+PLIST_SUB+=	WITH_APACHE_24="@comment "
 .else
-IGNORE=	apache20 is no longer available
-#USE_APACHE=	20
-#CONFIGURE_ARGS=	--enable-apache-20 --with-apxs2=${APXS} --with-apr=${PREFIX}/lib/apache2/apr-config --with-apu=${PREFIX}/lib/apache2/apu-config
+CONFIGURE_ARGS=	--enable-apache-24 --with-apxs24=${APXS}
 PLIST_SUB+=	WITH_APACHE_22="@comment "
-PLIST_SUB+=	WITH_APACHE_20=""
+PLIST_SUB+=	WITH_APACHE_24=""
 .endif
+
+SUB_LIST+=	SH=${SH}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+SUB_LIST+=	SHIBD_USER=${USERS}
+SUB_LIST+=	SHIBD_GROUP=${GROUPS}
+PLIST_SUB+=	SHIBD_USER=${USERS}
+PLIST_SUB+=	SHIBD_GROUP=${GROUPS}
+
 CONFIGURE_ARGS+=	--localstatedir=/var --with-log4shib=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE} --with-xmltooling=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-doxygen-doc
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|/run|/run/shibboleth|' ${WRKSRC}/configs/Makefile.in
-	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@-@PACKAGE_VERSION@|/doc/@PACKAGE@|' \
-		${WRKSRC}/configs/Makefile.am ${WRKSRC}/configs/Makefile.in \
-		${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.in
-	${RM} ${WRKSRC}/aclocal.m4
-	@cd ${WRKSRC} && ${AUTORECONF} -fvi
+post-install:
+	${CHOWN} -R ${USERS}:${GROUPS} /var/cache/shibboleth ;\
+	${CHOWN} -R ${USERS}:${GROUPS} /var/log/shibboleth ;\
+       	${CHOWN} -R ${USERS}:${WWWGRP} /var/run/shibboleth ;\
+       	${CHMOD} -R u=rwx,g=rx,o= /var/run/shibboleth
 
 .include <bsd.port.post.mk>

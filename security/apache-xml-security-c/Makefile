@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	xml-security-c
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=santuario/c-library
 PKGNAMEPREFIX=	apache-
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Apache XML security libraries - C++ version
 
 LICENSE=	AL2

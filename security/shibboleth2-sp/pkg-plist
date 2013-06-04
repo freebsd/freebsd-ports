@@ -64,11 +64,13 @@ etc/shibboleth/shibd-suse
 etc/shibboleth/shibd-osx.plist
 etc/shibboleth/apache.config
 etc/shibboleth/apache2.config
+@unexec if cmp -s %D/etc/shibboleth/attrChecker.html.dist %D/etc/shibboleth/attrChecker.html; then rm -f %D/etc/shibboleth/attrChecker.html; fi
+etc/shibboleth/attrChecker.html.dist
+@exec if [ ! -f %D/etc/shibboleth/attrChecker.html ] ; then cp -p %D/etc/shibboleth/attrChecker.html.dist %D/etc/shibboleth/attrChecker.html; fi
 etc/shibboleth/apache22.config
+etc/shibboleth/apache24.config
 etc/shibboleth/keygen.sh
 etc/shibboleth/upgrade.xsl
-etc/shibboleth/sp-key.pem
-etc/shibboleth/sp-cert.pem
 @unexec if cmp -s %D/etc/shibboleth/postTemplate.html.dist %D/etc/shibboleth/postTemplate.html; then rm -f %D/etc/shibboleth/postTemplate.html; fi
 etc/shibboleth/postTemplate.html.dist
 @exec if [ ! -f %D/etc/shibboleth/postTemplate.html ] ; then cp -p %D/etc/shibboleth/postTemplate.html.dist %D/etc/shibboleth/postTemplate.html; fi
@@ -88,6 +90,7 @@ include/shibsp/SessionCacheEx.h
 include/shibsp/TransactionLog.h
 include/shibsp/attribute/Attribute.h
 include/shibsp/attribute/AttributeDecoder.h
+include/shibsp/attribute/BinaryAttribute.h
 include/shibsp/attribute/ExtensibleAttribute.h
 include/shibsp/attribute/NameIDAttribute.h
 include/shibsp/attribute/ScopedAttribute.h
@@ -102,10 +105,10 @@ include/shibsp/attribute/resolver/AttributeExtractor.h
 include/shibsp/attribute/resolver/AttributeResolver.h
 include/shibsp/attribute/resolver/ResolutionContext.h
 include/shibsp/base.h
-include/shibsp/config_pub.h
 include/shibsp/binding/ArtifactResolver.h
 include/shibsp/binding/ProtocolProvider.h
 include/shibsp/binding/SOAPClient.h
+include/shibsp/config_pub.h
 include/shibsp/exceptions.h
 include/shibsp/handler/AbstractHandler.h
 include/shibsp/handler/AssertionConsumerService.h
@@ -113,6 +116,7 @@ include/shibsp/handler/Handler.h
 include/shibsp/handler/LogoutHandler.h
 include/shibsp/handler/LogoutInitiator.h
 include/shibsp/handler/RemotedHandler.h
+include/shibsp/handler/SecuredHandler.h
 include/shibsp/handler/SessionInitiator.h
 include/shibsp/lite/CommonDomainCookie.h
 include/shibsp/lite/SAMLConstants.h
@@ -126,21 +130,20 @@ include/shibsp/security/SecurityPolicy.h
 include/shibsp/security/SecurityPolicyProvider.h
 include/shibsp/util/CGIParser.h
 include/shibsp/util/DOMPropertySet.h
+include/shibsp/util/IPRange.h
 include/shibsp/util/PropertySet.h
 include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
-lib/libshibsp.so.5
+lib/libshibsp.so.6
 lib/libshibsp.so
 lib/shibboleth/adfs.so
-lib/shibboleth/adfs.la
 lib/shibboleth/adfs-lite.so
-lib/shibboleth/adfs-lite.la
+lib/shibboleth/plugins-lite.so
+lib/shibboleth/plugins.so
 %%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
-%%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.la
-%%WITH_APACHE_20%%lib/shibboleth/mod_shib_20.so
-%%WITH_APACHE_20%%lib/shibboleth/mod_shib_20.la
-lib/libshibsp-lite.so.5
+%%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
+lib/libshibsp-lite.so.6
 lib/libshibsp-lite.so
 sbin/shibd
 share/xml/shibboleth/catalog.xml
@@ -155,20 +158,22 @@ share/xml/shibboleth/shibboleth-metadata-1.0.xsd
 share/xml/shibboleth/shibboleth.xsd
 share/xml/shibboleth/WS-Trust.xsd
 share/doc/shibboleth/CREDITS.txt
+share/doc/shibboleth/FASTCGI.LICENSE
 share/doc/shibboleth/LICENSE.txt
+share/doc/shibboleth/LOG4CPP.LICENSE
 share/doc/shibboleth/NOTICE.txt
+share/doc/shibboleth/OPENSSL.LICENSE
 share/doc/shibboleth/README.txt
 share/doc/shibboleth/RELEASE.txt
-share/doc/shibboleth/FASTCGI.LICENSE
-share/doc/shibboleth/OPENSSL.LICENSE
-share/doc/shibboleth/LOG4CPP.LICENSE
 share/doc/shibboleth/main.css
-share/doc/shibboleth/logo.jpg
-@exec mkdir -p %D/data
+@exec mkdir -p /var/cache/shibboleth
+@exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/cache/shibboleth
 @exec mkdir -p /var/log/shibboleth
+@exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/log/shibboleth
 @exec mkdir -p /var/run/shibboleth
-@exec chown www:www /var/run/shibboleth
-@exec chmod -R ug=rwx,o= /var/run/shibboleth
+@exec chown -R %%SHIBD_USER%%:%%WWWGRP%%  /var/run/shibboleth
+@exec chmod -R u=rwx,g=rx,o= /var/run/shibboleth
+@unexec rm -rf /var/cache/shibboleth 2>&1 >/dev/null || true
 @unexec rm -rf /var/run/shibboleth 2>&1 >/dev/null || true
 @dirrmtry share/doc/shibboleth/api
 @dirrmtry share/doc/shibboleth
