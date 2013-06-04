@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-shout
-# Date created:		2011-07-09
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	shout
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
