@@ -12,6 +12,7 @@ bin/uniconv
 @unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
 etc/afp.conf.dist
 %%DBUS%%etc/dbus-1/system.d/netatalk-dbus.conf
+%%DBUS%%etc/dbus-1/system.d/afp.conf
 @exec [ -f %B/afp.conf ] || cp %B/%f %B/afp.conf
 @unexec if cmp -s %D/etc/extmap.conf %D/etc/extmap.conf.dist; then rm -f %D/etc/extmap.conf; fi
 etc/extmap.conf.dist
