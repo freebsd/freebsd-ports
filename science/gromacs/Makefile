@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
