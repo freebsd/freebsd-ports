@@ -548,7 +548,7 @@ post-install:
 			virtual_user_aliases.sql \
 			virtual_users.sql ${EXAMPLESDIR}/mysql
 .endif
-.if ${PORT_OPTIONS:MPOSTGRESQL}
+.if ${PORT_OPTIONS:MPGSQL}
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
 		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/pgsql
