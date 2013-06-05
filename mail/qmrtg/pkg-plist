@@ -24,4 +24,4 @@ etc/qmrtg.conf.dist
 %%PORTDOCS%%%%DOCSDIR%%/RUNNING.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %%QMRTG_DBDIR%%
-@unexec rmdir %%QMRTG_DBDIR%% 2>/dev/null || true
+@dirrmtry %%QMRTG_DBDIR%%
