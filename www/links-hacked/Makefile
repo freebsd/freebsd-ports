@@ -1,9 +1,5 @@
-# New ports collection makefile for:	links-hacked
-# Date created:		24 September 2011
-# Whom:			Peter Vereshagin <peter@vereshagin.org>
-#
+# Created by: Peter Vereshagin <peter@vereshagin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	links-hacked
 DISTVERSION=	101110
@@ -30,16 +26,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 USE_OPENSSL=	yes
 
-OPTIONS=	SVGALIB "non-X11 graphics support" off \
-		DIRECTFB "directfb driver support" off \
-		X11 "X11 graphics support" on \
-		FORMSAVE "Enable forms saving" on \
-		JS "Enable Javascript (very basic)" on \
-		FREETYPE "Enable Freetype renderer" on
+OPTIONS_DEFINE=	SVGALIB DIRECTFB X11 FORMSAVE JS FREETYPE
+OPTIONS_DEFAULT=	X11 FORMSAVE JS FREETYPE
+DIRECTFB_DESC=	directfb driver support
+FORMSAVE_DESC=	Enable forms saving
+JS_DESC=	Enable Javascript (very basic)
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
+.if ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MDIRECTFB}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -48,21 +43,21 @@ CONFIGURE_ARGS+=	--enable-graphics
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
-.ifdef(WITH_SVGALIB)
+.if ${PORT_OPTIONS:MSVGALIB}
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=	--with-svgalib
 .else
 CONFIGURE_ARGS+=	--without-svgalib
 .endif
 
-.ifdef(WITH_DIRECTFB)
+.if ${PORT_OPTIONS:MDIRECTFB}
 LIB_DEPENDS+=	directfb-1.4.5:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb
 .else
 CONFIGURE_ARGS+=	--without-directfb
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xproto
 CONFIGURE_ARGS+=	--with-x
 DESKTOP_ENTRIES="Links" \
@@ -76,20 +71,20 @@ PLIST_FILES+=	share/pixmaps/links.xpm
 CONFIGURE_ARGS+=	--without-x
 .endif
 
-.ifdef(WITH_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
 
-.ifdef(WITH_FORMSAVE)
+.if ${PORT_OPTIONS:MFORMSAVE}
 CONFIGURE_ARGS+=	--enable-form-saving
 .else
 CONFIGURE_ARGS+=	--disable-form-saving
 .endif
 
-.ifdef(WITH_JS)
+.if ${PORT_OPTIONS:MJS}
 CONFIGURE_ARGS+=	--enable-javascript
 .else
 CONFIGURE_ARGS+=	--disable-javascript
@@ -98,7 +93,7 @@ CONFIGURE_ARGS+=	--disable-javascript
 MAN1=		links.1
 PLIST_FILES+=	bin/links
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${PREFIX}/share/pixmaps/links.xpm
 .endif
