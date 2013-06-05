@@ -80,7 +80,7 @@ PICFLAG?=	-fpic
 FFLAGS_PROFILE?=	-pg
 FFLAGS_SHARED ?=	${PICFLAG}
 
-.if ${PORT_OPTIONS:MPROFILE) && !exists(/usr/lib/libc_p.a}
+.if ${PORT_OPTIONS:MPROFILE} && !exists(/usr/lib/libc_p.a)
 IGNORE=	you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
