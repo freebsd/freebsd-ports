@@ -204,7 +204,7 @@ SUB_LIST+=	CLAMD=
 _DBDRV_COUNT=	# blank, but defined so we can check against it
 _DBDRV=		pgsql_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
-.if ${PORT_OPTIONS:MPGQL}
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql-includes=${LOCALBASE}/include \
 		--with-pgsql-libraries=${LOCALBASE}/lib
