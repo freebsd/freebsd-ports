@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lapack
-# Date created:         2 July 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME?=	lapack
 PORTVERSION=	3.4.2
@@ -23,9 +19,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_FORTRAN=	yes
 
-OPTIONS=	PROFILE "Build profiling libraries" Off \
-		SHARED	"Build shared libraries and PIC archives" On \
-		STATIC	"Build (non-PIC) archives" On
+OPTIONS_DEFINE=	PROFILE SHARED STATIC
+OPTIONS_DEFAULT=	SHARED STATIC
+PROFILE_DESC=	Build profiling libraries
+SHARED_DESC=	Build shared libraries and PIC archives
+STATIC_DESC=	Build (non-PIC) archives
 
 MAKE_ENV=	BLASLIB="${BLASLIB}"
 MAKE_JOBS_SAFE=	yes
@@ -82,17 +80,17 @@ PICFLAG?=	-fpic
 FFLAGS_PROFILE?=	-pg
 FFLAGS_SHARED ?=	${PICFLAG}
 
-.if defined(WITH_PROFILE) && !exists(/usr/lib/libc_p.a)
+.if ${PORT_OPTIONS:MPROFILE) && !exists(/usr/lib/libc_p.a}
 IGNORE=	you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 USE_LDCONFIG=	yes
 .endif
 
 .for o in PROFILE SHARED STATIC
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 PLIST_SUB+=	${o}=""
 .else
 PLIST_SUB+=	${o}="@comment "
@@ -110,7 +108,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's@\./lapack_testing\.py@${S} &@' \
 		${WRKSRC}/Makefile
 .for o in PROFILE SHARED
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 	@${CP} -a ${WRKSRC} ${WRKSRC_${o}}
 .endif
 .endfor
@@ -119,7 +117,7 @@ do-build: ${MAN_TARGET} build-profile build-shared build-static
 
 .for o in PROFILE SHARED STATIC
 build-${o:L}: patch
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 	${PRINTF} "\n\nBuilding ${o:L} libraries:\n\n\n"
 	cd ${WRKSRC_${o}}; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FFLAGS_${o}}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ARCH="${AR}" ${ALL_TARGET}
@@ -135,7 +133,7 @@ build-manpages: patch
 .endif
 
 post-build:
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 .for L in ${LIBS}
 	cd ${WRKSRC_SHARED} ; ${FC} ${FFLAGS} ${FFLAGS_SHARED} ${LDFLAGS} -shared \
 	-o lib${P}${L}.so.${SVERSION} -Wl,-x -Wl,-soname,lib${P}${L}.so.${SVERSION} \
@@ -143,11 +141,11 @@ post-build:
 .endfor
 .endif
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 TESTS ?=	test-shared
-.elif defined(WITH_STATIC)
+.elif ${PORT_OPTIONS:MSTATIC}
 TESTS ?=	test-static
-.elif defined(WITH_PROFILE)
+.elif ${PORT_OPTIONS:MPROFILE}
 TESTS ?=	test-profile
 .endif
 
@@ -155,7 +153,7 @@ check regression-test test: ${TESTS}
 
 .for o in PROFILE SHARED STATIC
 test-${o:L}: build-${o:L}
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 	@${PRINTF} "\n\nTesting ${o:L} libraries:\n\n\n"
 	@cd ${WRKSRC_${o}}; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FFLAGS_${o}}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ARCH="${AR}" ${TEST_TARGET}
@@ -168,15 +166,15 @@ test-${o:L}: build-${o:L}
 
 do-install:
 .for L in ${LIBS}
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 	@${INSTALL_DATA} ${WRKSRC}/lib${L}.a ${PREFIX}/lib/lib${P}${L}.a
 .endif
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib${L}.a ${PREFIX}/lib/lib${P}${L}_pic.a
 	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib${P}${L}.so.${SVERSION} ${PREFIX}/lib
 	@${LN} -sf lib${P}${L}.so.${SVERSION} ${PREFIX}/lib/lib${P}${L}.so
 .endif
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 	@${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${L}.a ${PREFIX}/lib/lib${P}${L}_p.a
 .endif
 .endfor

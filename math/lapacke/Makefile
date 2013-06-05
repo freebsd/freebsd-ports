@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lapacke
-# Date created: 17 Feb 2011
-# Whom:         Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-#
+# Created by: Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	lapacke
 PORTVERSION=	3.4.0
@@ -24,8 +20,9 @@ USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PROFILE "Build a profiling library" Off \
-		XLAPACKE "Install interfaces to XLAPACK" Off
+OPTIONS_DEFINE=	PROFILE XLAPACKE
+PROFILE_DESC=	Build a profiling library
+XLAPACKE_DESC=	Install interfaces to XLAPACK
 
 .include <bsd.port.pre.mk>
 
@@ -35,7 +32,7 @@ LAPACKE_LIBNAME_TMG=	lapacke_tmg
 MAKE_ENV+=		"SHLIB_MAJOR=${LAPACKE_SVERSION}" \
 			"LAPACKE_LIBNAME=${LAPACKE_LIBNAME}" \
 			"LAPACKE_LIBNAME_TMG=${LAPACKE_LIBNAME_TMG}"
-.if defined (WITH_XLAPACKE)
+.if ${PORT_OPTIONS:MXLAPACKE}
 XLAPACKE_LIBNAME=	xlapacke
 MAKE_ENV+=		"XLAPACKE_LIBNAME=${XLAPACKE_LIBNAME}"
 .endif
@@ -69,13 +66,13 @@ LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
-.if defined (WITH_XLAPACKE)
+.if ${PORT_OPTIONS:MXLAPACKE}
 LIB_DEPENDS+=		xlapack.4:${PORTSDIR}/math/xlapack
 .endif
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README
 .endif
 PLIST_FILES=	include/lapacke.h \
@@ -86,13 +83,13 @@ PLIST_FILES=	include/lapacke.h \
 		lib/lib${LAPACKE_LIBNAME_TMG}.so \
 		lib/lib${LAPACKE_LIBNAME}.so.${LAPACKE_SVERSION} \
 		lib/lib${LAPACKE_LIBNAME_TMG}.so.${LAPACKE_SVERSION}
-.if defined (WITH_XLAPACKE)
+.if ${PORT_OPTIONS:MXLAPACKE}
 PLIST_FILES+=	lib/lib${XLAPACKE_LIBNAME}.a \
 		lib/lib${XLAPACKE_LIBNAME}.so \
 		lib/lib${XLAPACKE_LIBNAME}.so.${LAPACKE_SVERSION}
 .endif
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
 IGNORE =	you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
@@ -102,7 +99,7 @@ base system profiling libraries
 .endif
 PLIST_FILES+=	lib/lib${LAPACKE_LIBNAME}_p.a \
 		lib/lib${LAPACKE_LIBNAME_TMG}_p.a
-.if defined (WITH_XLAPACKE)
+.if ${PORT_OPTIONS:MXLAPACKE}
 PLIST_FILES+=	lib/lib${XLAPACKE_LIBNAME}_p.a
 .endif
 .else
@@ -135,7 +132,7 @@ post-patch:
 			-e 's;%%__XLAPACKE%%;\#;g' \
 			${WRKSRC}/lib/Makefile
 
-.if defined (WITH_XLAPACKE)
+.if ${PORT_OPTIONS:MXLAPACKE}
 	@${MKDIR} ${WRKSRC}/libx
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/libx/Makefile
 	@${REINPLACE_CMD} -e 's;%%__XLAPACKE%%;;g' \
@@ -147,7 +144,7 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif

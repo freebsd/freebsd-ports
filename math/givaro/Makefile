@@ -1,9 +1,5 @@
-# New ports collection makefile for:	givaro
-# Date created: 	5 Oct 2011
-# Whom: 	b.f. <bf@FreeBSD.org>
-#
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	givaro
 PORTVERSION=	3.5.0
@@ -28,7 +24,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DOCS)  && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS)  && !defined(NOPORTDOCS}
 BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ARGS+=	--enable-doc --with-docdir="${DOCSDIR}"
 .elifndef(NOPORTDOCS)
@@ -46,11 +42,11 @@ post-patch:
 		-e '/^WARN_CFLAGS="-Wall"/d' \
 		-e '/if test "x$$WARN" = "xyes"/s/$$/ WARN_CFLAGS="-Wall" ;/' \
 		${WRKSRC}/configure
-.if defined(WITH_DOCS)  && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS)  && !defined(NOPORTDOCS}
 	@${REINPLACE_CMD} -e 's/sed -i/& ""/' ${WRKSRC}/docs/Makefile.in
 .endif
 
-.if defined(WITH_DOCS)  && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS)  && !defined(NOPORTDOCS}
 post-install:
 	@${TOUCH} ${DOCSDIR}/givaro-dev-html/.keep-me
 

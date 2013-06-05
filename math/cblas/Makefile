@@ -1,20 +1,11 @@
-# ex:ts=8
-# Ports collection makefile for:	cblas
-# Date created:			6 January 2012
-# Whom:				bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cblas
 PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	NL/blas/blast-forum/ LOCAL/bf
 DISTFILES=	cblas.tgz
-.if make(makesum) || !defined(NOPORTDOCS)
-DISTFILES+=	blas-report.pdf
-EXTRACT_ONLY=	cblas.tgz
-.endif
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Reference implementation of the C interface to the legacy Fortran BLAS
@@ -25,9 +16,11 @@ USE_FORTRAN=	yes
 
 CONFLICTS_INSTALL=	atlas-[0-9]* atlas-devel-[0-9]*
 
-OPTIONS=	PROFILE "Build profiling libraries" Off \
-		SHARED	"Build shared libraries and PIC archives" On \
-		STATIC	"Build (non-PIC) archives" On
+OPTIONS_DEFINE=	PROFILE SHARED STATIC
+OPTIONS_DEFAULT=	SHARED STATIC
+PROFILE_DESC=	Build profiling libraries
+SHARED_DESC=	Build shared libraries and PIC archives
+STATIC_DESC=	Build (non-PIC) archives
 
 PLIST_FILES=	include/cblas.h include/cblas_f77.h
 PLIST_SUB=	SVERSION="${SVERSION}"
@@ -41,6 +34,11 @@ WRKSRC_STATIC=		${WRKSRC}
 
 .include <bsd.port.options.mk>
 
+.if make(makesum) || ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	blas-report.pdf
+EXTRACT_ONLY=	cblas.tgz
+.endif
+
 MANGLING?=	-DADD_
 CFLAGS+=	${MANGLING}
 
@@ -53,16 +51,16 @@ PICFLAG?=	-fpic
 FLAGS_PROFILE?=	-pg
 FLAGS_SHARED ?=	${PICFLAG}
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 PLIST_FILES+=	lib/libcblas_pic.a lib/libcblas.so lib/libcblas.so.${SVERSION}
 TESTS ?=	test-shared
 USE_LDCONFIG=	yes
 .endif
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 PLIST_FILES+=	lib/libcblas.a
 TESTS ?=	test-static
 .endif
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 PLIST_FILES+=	lib/libcblas_p.a
 TESTS ?=	test-profile
 .endif
@@ -75,7 +73,7 @@ post-patch:
 			${WRKSRC}/Makefile.LINUX > ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's@$$(ARCH)@$$(AR)@' ${WRKSRC}/src/Makefile
 .for o in PROFILE SHARED
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 	@${CP} -a ${WRKSRC} ${WRKSRC_${o}}
 .endif
 .endfor
@@ -84,7 +82,7 @@ do-build: build-profile build-shared build-static
 
 .for o in PROFILE SHARED STATIC
 build-${o:L}: patch
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 	@${PRINTF} "\n\nBuilding ${o:L} libraries:\n\n\n"
 	@cd ${WRKSRC_${o}}/src; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FLAGS_${o}}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all
@@ -93,7 +91,7 @@ build-${o:L}: patch
 .endfor
 
 post-build:
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 	cd ${WRKSRC_SHARED}/lib ; ${FC} ${FFLAGS} ${FFLAGS_SHARED} ${LDFLAGS} -shared \
 	-o libcblas.so.${SVERSION} -Wl,-x -Wl,-soname,libcblas.so.${SVERSION} \
 	-Wl,--whole-archive libcblas.a -Wl,--no-whole-archive
@@ -108,7 +106,7 @@ check regression-test test: ${TESTS}
 
 .for o in PROFILE SHARED STATIC
 test-${o:L}: build-${o:L}
-.if defined(WITH_${o})
+.if ${PORT_OPTIONS:M${o}}
 	@${PRINTF} "\n\nTesting ${o:L} libraries:\n\n\n"
 	@cd ${WRKSRC_${o}}/testing; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FLAGS_${o}}" \
 	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all run
@@ -120,15 +118,15 @@ test-${o:L}: build-${o:L}
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 	@${INSTALL_DATA} ${WRKSRC}/lib/libcblas.a ${PREFIX}/lib
 .endif
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib/libcblas.a ${PREFIX}/lib/libcblas_pic.a
 	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib/libcblas.so.${SVERSION} ${PREFIX}/lib
 	@${LN} -sf libcblas.so.${SVERSION} ${PREFIX}/lib/libcblas.so
 .endif
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 	@${INSTALL_DATA} ${WRKSRC_PROFILE}/lib/libcblas.a ${PREFIX}/lib/libcblas_p.a
 .endif
 

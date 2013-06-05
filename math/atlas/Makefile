@@ -1,9 +1,5 @@
-# New ports collection makefile for:	atlas
-# Date created:		12 February 2001
-# Whom:			Nakata Maho <maho@FreeBSD.org>
-#
+# Created by: Nakata Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	atlas
 PORTVERSION=	3.8.4
@@ -26,11 +22,15 @@ USE_FORTRAN=	yes
 CONFLICTS=	atlas-devel-[0-9]* cblas-[0-9]*
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
-OPTIONS=	ARCHDEF		"Use a specified architectural default" off \
-		SHARED		"Build static PIC archives and shared libraries" on \
-		STATIC		"Build static (non-PIC) archives" off \
-		TSC		"If WALL_TIMER is enabled, use the TSC" off \
-		WALL_TIMER	"Use less robust timing with higher resolution" off
+OPTIONS_DEFINE=	ARCHDEF TSC WALL_TIMER
+OPTIONS_DEFAULT=	SHARED
+OPTIONS_MULTI=	BUILDTYPE
+OPTIONS_MULTI_BUILDTYPE=	SHARED STATIC
+ARCHDEF_DESC=		Use a specified architectural default
+SHARED_DESC=		Build static PIC archives and shared libraries
+STATIC_DESC=		Build static (non-PIC) archives
+TSC_DESC=		If WALL_TIMER is enabled, use the TSC
+WALL_TIMER_DESC=	Use less robust timing with higher resolution
 
 PORTSCOUT=	limitw:1,even
 WRKSRC=		${WRKDIR}/ATLAS
@@ -63,7 +63,7 @@ PORT${i}=	*
 .  endif
 .endfor
 
-.if defined(WITH_ARCHDEF)
+.if ${PORT_OPTIONS:MARCHDEF}
 .  if defined(ARCHDEF)
 .    if ${ARCHDEF} == "NONE"
 ARCHDEFFLAG=	-Si archdef 0
@@ -73,14 +73,12 @@ IGNORE =	: You have set WITH_ARCHDEF, but have not defined ARCHDEF
 .  endif
 .endif
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 USE_LDCONFIG=	yes
-.elifndef(WITH_STATIC)
-IGNORE =	: You must select at least one of WITH_SHARED and WITH_STATIC
 .endif
 
 .for opt in SHARED STATIC
-.  if defined(WITH_${opt})
+.  if ${PORT_OPTIONS:M${opt}}
 PLIST_SUB+=	${opt}=""
 .  else
 PLIST_SUB+=	${opt}="@comment "
@@ -151,7 +149,7 @@ post-configure:
 
 do-build:
 .for opt in shared static
-.  if defined(WITH_${opt:U})
+.  if ${PORT_OPTIONS:M${opt:U}}
 	@${ECHO_CMD} "Building the LAPACK archives with ${opt} ATLAS flags:"
 	F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
 	LW=`${MAKE} -C ${PORTSDIR}/math/lapack -V ${${opt:U}_LAPACK_WRKSRC}` ; \
@@ -195,13 +193,13 @@ L2=	-Wl,--no-whole-archive -Wl,--as-needed ${PTHREAD_LIBS}
 
 post-build:
 .for opt in shared static
-.  if defined(WITH_${opt:U})
+.  if ${PORT_OPTIONS:M${opt:U}}
 	@${ECHO_CMD} "Timing ${opt} ATLAS:"
 	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} time ; \
 	cd ARCHS ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ArchNew tarfile
 .  endif
 .endfor
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 	@${ECHO_CMD} "Building ATLAS shared libraries:"
 	@F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
 	cd ${WRKSRC}/shared/lib ; \
@@ -219,7 +217,7 @@ SHARED_BLAS=	-L${LOCALBASE}/lib -lblas
 
 check regression-test test: build
 .  for opt in shared static
-.    if defined(WITH_${opt:U})
+.    if ${PORT_OPTIONS:M${opt:U}}
 	@${ECHO_CMD} "Testing ${opt} ATLAS:"
 	@cd ${WRKSRC}/${opt} ; ${SETENV} ${MAKE_ENV} BLAS="${${opt:U}_BLAS}" \
 	${MAKE} ${MAKE_ARGS} check ptcheck error_report
@@ -229,10 +227,10 @@ check regression-test test: build
 
 do-install:
 .for i in libatlas libcblas libf77blas liblapack libptcblas libptf77blas
-.  if defined(WITH_STATIC)
+.  if ${PORT_OPTIONS:MSTATIC}
 	@${INSTALL_DATA} ${WRKSRC}/static/lib/${i}.a ${PREFIX}/lib/${i:S|lapack|alapack|}.a
 .  endif
-.  if defined(WITH_SHARED)
+.  if ${PORT_OPTIONS:MSHARED}
 	@${INSTALL_DATA} ${WRKSRC}/shared/lib/${i}.a ${PREFIX}/lib/${i:S|lapack|alapack|}_pic.a
 	@${INSTALL_DATA} ${WRKSRC}/shared/lib/${i:S|lapack|alapack|}.so.2 ${PREFIX}/lib
 	@${LN} -sf ${i:S|lapack|alapack|}.so.2 ${PREFIX}/lib/${i:S|lapack|alapack|}.so
@@ -241,7 +239,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/cblas.h   ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/clapack.h ${PREFIX}/include
 .for opt in shared static
-.  if defined(WITH_${opt:U})
+.  if ${PORT_OPTIONS:M${opt:U}}
 	@${MKDIR} ${PREFIX}/include/atlas/${opt}
 	@${INSTALL_DATA} ${WRKSRC}/${opt}/include/* ${PREFIX}/include/atlas/${opt}
 	@cd ${PREFIX} ; \
@@ -256,7 +254,7 @@ do-install:
 .  endif
 .endfor
 	@${ECHO_CMD} "@dirrm include/atlas" >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif

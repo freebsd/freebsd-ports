@@ -1,9 +1,5 @@
-# New ports collection makefile for:   isabelle
-# Date created:        08 August 2005
-# Whom:                Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	isabelle
 PORTVERSION=	2009.2
@@ -12,31 +8,36 @@ MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \
 		http://mirror.cse.unsw.edu.au/pub/isabelle/dist/
 DISTNAME=	Isabelle2009-2
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DISTFILES=	${DISTNAME}.tar.gz \
 		${DISTNAME}_library.tar.gz
 .endif
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	A generic proof assistant
+COMMENT=	Generic proof assistant
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS=	POLYML  "Use Poly/ML (fast but broken) instead of SML/NJ" off
-OPTIONS+=	RLWRAP       "Use rlwrap as line editor"                  on
-OPTIONS+=	LEDIT        "Use ledit as line editor"                   off
-OPTIONS+=	HOL_ALGEBRA  "Build optional heap: HOL-Algebra"           off
-OPTIONS+=	HOL_NOMINAL  "Build optional heap: HOL-Nominal"           off
-OPTIONS+=	HOL_NSA      "Build optional heap: HOL-NSA"               off
-OPTIONS+=	HOL_WORD     "Build optional heap: HOL-Word"              off
-OPTIONS+=	HOL_TLA      "Build optional heap: TLA"                   off
-OPTIONS+=	HOL_HOL4     "Build optional heap: HOL4"                  off
-OPTIONS+=	EMACS_PKG    "Build with Emacs Packages"                  off
+OPTIONS_DEFINE=	POLYML RLWRAP LEDIT HOL_ALGEBRA HOL_NOMINAL HOL_NSA HOL_WORD \
+		HOL_TLA HOL_HOL4 EMACS_PKG
+OPTIONS_DEFAULT=	RLWRAP
+POLYML_DESC=		Use Poly/ML (fast but broken) instead of SML/NJ
+RLWRAP_DESC=		Use rlwrap as line editor
+LEDIT_DESC=		Use ledit as line editor
+HOL_ALGEBRA_DESC=	Build optional heap: HOL-Algebra
+HOL_NOMINAL_DESC=	Build optional heap: HOL-Nominal
+HOL_NSA_DESC=		Build optional heap: HOL-NSA
+HOL_WORD_DESC=		Build optional heap: HOL-Word
+HOL_TLA_DESC=		Build optional heap: TLA
+HOL_HOL4_DESC=		Build optional heap: HOL4
+EMACS_PKG_DESC=		Build with Emacs Packages
 
 USE_PERL5=	yes
 
-.if defined(WITH_EMACS_PKG)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEMACS_PKG}
 	USE_EMACS=	yes # for EMACS_SITE_LISPDIR
 	EMACS_NO_BUILD_DEPENDS=yes
 	EMACS_NO_RUN_DEPENDS=yes
@@ -51,11 +52,11 @@ DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_RLWRAP)
+.if ${PORT_OPTIONS:MRLWRAP}
 RUN_DEPENDS+=	rlwrap:${PORTSDIR}/devel/rlwrap
 LINE_EDIT=	"${PREFIX}/bin/rlwrap"
 .else
-.if defined(WITH_LEDIT)
+.if ${PORT_OPTIONS:MLEDIT}
 RUN_DEPENDS+=	ledit:${PORTSDIR}/sysutils/ledit
 LINE_EDIT=	"${PREFIX}/bin/ledit"
 .else
@@ -63,44 +64,44 @@ LINE_EDIT=	""
 .endif
 .endif
 
-.if defined(WITH_HOL_ALGEBRA)
+.if ${PORT_OPTIONS:MHOL_ALGEBRA}
 HEAP_HOL_ALGEBRA=""
 EXTRA_HOL+=-m HOL-Algebra
 .else
 HEAP_HOL_ALGEBRA="@comment "
 .endif
-.if defined(WITH_HOL_NOMINAL)
+.if ${PORT_OPTIONS:MHOL_NOMINAL}
 HEAP_HOL_NOMINAL=""
 EXTRA_HOL+=-m HOL-Nominal
 .else
 HEAP_HOL_NOMINAL="@comment "
 .endif
-.if defined(WITH_HOL_NSA)
+.if ${PORT_OPTIONS:MHOL_NSA}
 HEAP_HOL_NSA=""
 EXTRA_HOL+=-m HOL-NSA
 .else
 HEAP_HOL_NSA="@comment "
 .endif
-.if defined(WITH_HOL_WORD)
+.if ${PORT_OPTIONS:MHOL_WORD}
 HEAP_HOL_WORD=""
 EXTRA_HOL+=-m HOL-Word
 .else
 HEAP_HOL_WORD="@comment "
 .endif
-.if defined(WITH_HOL_TLA)
+.if ${PORT_OPTIONS:MHOL_TLA}
 HEAP_HOL_TLA=""
 EXTRA_HOL+=-m TLA
 .else
 HEAP_HOL_TLA="@comment "
 .endif
-.if defined(WITH_HOL_HOL4)
+.if ${PORT_OPTIONS:MHOL_HOL4}
 HEAP_HOL_HOL4=""
 EXTRA_HOL+=-m HOL4
 .else
 HEAP_HOL_HOL4="@comment "
 .endif
 
-.if !defined(WITH_POLYML)
+.if ! ${PORT_OPTIONS:MPOLYML}
 ML_SYSTEM=	smlnj-110
 ML_HOME=	${LOCALBASE}/smlnj/bin
 ML_OPTIONS=	-Ccontrol.poly-eq-warn=false @SMLdebug=/dev/null
@@ -119,7 +120,7 @@ PLIST_SUB+=	HEAPSUBDIR=${ML_SYSTEM}_${ML_PLATFORM} \
 		HEAP_HOL_WORD=${HEAP_HOL_WORD} \
 		HEAP_HOL_TLA=${HEAP_HOL_TLA} \
 		HEAP_HOL_HOL4=${HEAP_HOL_HOL4}
-.if !defined(WITH_POLYML)
+.if ! ${PORT_OPTIONS:MPOLYML}
 BUILD_DEPENDS+=	smlnj-devel>=110.71:${PORTSDIR}/lang/sml-nj-devel
 MAKE_ENV+=	SMLNJ_DEVEL=yes
 .else
@@ -159,7 +160,7 @@ post-install:
 	${WRKSRC}/bin/isabelle install \
 		-d ${PREFIX}/share/isabelle \
 		-p ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}

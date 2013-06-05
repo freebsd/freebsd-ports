@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crlibm
-# Date created:		10 January 2012
-# Whom:			bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	crlibm
 DISTVERSION=	1.0beta4
@@ -13,9 +9,6 @@ MASTER_SITES=	http://lipforge.ens-lyon.fr/frs/download.php/%SUBDIR%/:1,2,3 \
 		LOCAL/bf/crlibm:4
 MASTER_SITE_SUBDIR=	162/:1 153/:2 154/:3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1,4
-.if make(makesum) || !defined(NOPORTDOCS)
-DISTFILES+=	crlibm-1.0beta3.pdf:2,4 tripledoubleprocedures-1.0beta3.pdf:3,4
-.endif
 DIST_SUBDIR=	crlibm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -28,9 +21,14 @@ GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-OPTIONS=	"TEST" "Include all test capabilities (requires MPFR)" "on"
+OPTIONS_DEFINE=	TEST
+OPTIONS_DEFAULT=	TEST
+TEST_DESC=	Include all test capabilities (requires MPFR)
 
 .include <bsd.port.options.mk>
+.if make(makesum) || ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	crlibm-1.0beta3.pdf:2,4 tripledoubleprocedures-1.0beta3.pdf:3,4
+.endif
 
 post-patch:
 #7-STABLE has log2() in libm after r226457 on 17 Oct 2011, but
@@ -48,7 +46,7 @@ CFLAGS+=		-msse2 -mfpmath=sse
 CONFIGURE_ARGS+=	--enable-sse2
 .endif
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+=	--enable-mpfr
 LIB_DEPENDS+=		mpfr.4:${PORTSDIR}/math/mpfr
 .else
@@ -59,7 +57,7 @@ check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} check
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	${DISTFILES:C|\:.*||:M*.pdf}
 
 post-install:

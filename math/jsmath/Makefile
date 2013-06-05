@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jsMath
-# Date created:		2006-02-23
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	jsMath
 DISTVERSION=	3.6e
@@ -16,15 +12,17 @@ COMMENT=	JavaScript tool for including mathematics in web pages
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-OPTIONS=	IMAGE_FONTS "Enable image fonts" On \
-		SPRITE_FONTS "Enable sprite fonts" Off
+OPTIONS_DEFINE=	IMAGE_FONTS SPRITE_FONTS
+OPTIONS_DEFAULT=	IMAGE_FONTS
+IMAGE_FONTS_DESC=	Image fonts
+SPRITE_FONTS_DESC=	Sprite fonts
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IMAGE_FONTS)
+.if ${PORT_OPTIONS:MIMAGE_FONTS}
 RUN_DEPENDS+=	${WWWDIR}/fonts/cm-fonts/alpha/def.js:${PORTSDIR}/math/jsmath-fonts
 .endif
-.if defined(WITH_SPRITE_FONTS)
+.if ${PORT_OPTIONS:MSPRITE_FONTS}
 RUN_DEPENDS+=	${WWWDIR}/fonts-sprite/cm-fonts/font.js:${PORTSDIR}/math/jsmath-fonts-sprite
 .endif
 

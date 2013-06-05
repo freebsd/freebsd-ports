@@ -1,9 +1,5 @@
-# New ports collection makefile for:    levmar
-# Date created: 18 May 2010
-# Whom:         Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-#
+# Created by: Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	levmar
 PORTVERSION=	2.5
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.ics.forth.gr/~lourakis/levmar/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
-COMMENT=	A GPL-licensed library implementing the Levenberg-Marquardt algorithm
+COMMENT=	GPL-licensed library implementing the Levenberg-Marquardt algorithm
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,7 +18,8 @@ USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PROFILE "Build a profiling library" Off
+OPTIONS_DEFINE=	PROFILE
+PROFILE_DESC=	Build a profiling library
 
 .include <bsd.port.pre.mk>
 
@@ -53,10 +50,10 @@ BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README.txt
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	lmdemo.c Makefile.demo
 .endif
 PLIST_FILES=	include/levmar.h \
@@ -64,7 +61,7 @@ PLIST_FILES=	include/levmar.h \
 	lib/liblevmar.so \
 	lib/liblevmar.so.2
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
 IGNORE =	you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
@@ -89,11 +86,11 @@ post-extract:
 			${WRKSRC}/Makefile.demo
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR})
 .endif
