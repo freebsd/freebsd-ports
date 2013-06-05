@@ -1,8 +1,5 @@
-# New ports collection makefile for:	callweaver
-# Date created:				28 June 2009
-# Whom:					Alexander V. Chernikov <melifaro@ipfw.ru>
+# Created by: Alexander V. Chernikov <melifaro@ipfw.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	callweaver
 PORTVERSION=	1.2.1
@@ -33,28 +30,25 @@ PLIST_SUB+=	CWUSER=${CWUSER} CWGROUP=${CWGROUP}
 
 MAN8=		callweaver.8 safe_callweaver.8
 
-OPTIONS=	SIPTCP		"Enable SIP TCP/TLS support" on \
-		POSTGRES	"Enable PostgreSQL support" off \
-		MYSQL		"Enable MySQL support" off \
-		EXTUDP		"Enable extented UDP support for multi-homed" off \
-		ZAPTEL		"Enable Zapata Telefony" off \
-		FAX		"Enable audio/T.38 app_fax/chan_fax/FaxGateway/etc" on \
-		SPEEX		"Build  speex codec" on \
-		VORBIS		"Enable VORBIS/Vorbis format support" on \
-		MEETME		"Build  app_meetme (requires ZAPTEL)" off \
-		LDAP		"Build  app_ldap application" off \
-		SNMP		"Enable SNMP support (broken)" off \
-		DEBUG		"Enable debug support" off
+OPTIONS_DEFINE=	SIPTCP PGSQL MYSQL EXTUDP ZAPTEL FAX SPEEX VORBIS MEETME LDAP SNMP DEBUG
+OPTIONS_DEFAULT=	SIPTCP FAX SPEEX VORBIS
+SIPTCP_DESC=	SIP TCP/TLS support
+EXTUDP_DESC=	extented UDP support for multi-homed
+ZAPTEL_DESC=	Zapata Telefony
+FAX_DESC=	audio/T.38 app_fax/chan_fax/FaxGateway/etc
+MEETME_DESC=	Build  app_meetme (requires ZAPTEL)
+LDAP_DESC=	Build  app_ldap application
+SNMP_DESC=	SNMP support (broken)
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--with-readme --with-license --with-credits
 .else
 CONFIGURE_ARGS+=	--without-readme --without-license --without-credits
 .endif
 
-.if defined(WITH_SIPTCP)
+.if ${PORT_OPTIONS:MSIPTCP}
 CONFIGURE_ARGS+=	--enable-sip-tcp-support
 PLIST_SUB+=	TLS=""
 .else
@@ -62,7 +56,7 @@ CONFIGURE_ARGS+=	--disable-sip-tcp-support
 PLIST_SUB+=	TLS="@comment "
 .endif
 
-.if defined(WITH_POSTGRES)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 PG_INC=	`${LOCALBASE}/bin/pg_config --includedir`
 PG_LIB=	`${LOCALBASE}/bin/pg_config --libdir`
@@ -72,7 +66,7 @@ PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-mysql --with-cdr_mysql
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
@@ -80,11 +74,11 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_EXTUDP)
+.if ${PORT_OPTIONS:MEXTUDP}
 CONFIGURE_ARGS+=	--enable-udpfromto
 .endif
 
-.if defined(WITH_MEETME)
+.if ${PORT_OPTIONS:MMEETME}
 WITH_ZAPTEL=yes
 CONFIGURE_ARGS+=	--with-app_meetme
 PLIST_SUB+=	MEETME=""
@@ -93,7 +87,7 @@ CONFIGURE_ARGS+=	--without-app_meetme
 PLIST_SUB+=	MEETME="@comment "
 .endif
 
-.if defined(WITH_ZAPTEL)
+.if ${PORT_OPTIONS:MZAPTEL}
 CONFIGURE_ARGS+=	--enable-zaptel --with-chan_zap
 BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
@@ -105,7 +99,7 @@ CONFIGURE_ARGS+=	--disable-zaptel --without-chan_zap
 PLIST_SUB+=	ZAPTEL="@comment "
 .endif
 
-.if defined(WITH_FAX)
+.if ${PORT_OPTIONS:MFAX}
 FAXDEV_PATH=	/var/run/fax
 CONFIGURE_ARGS+=	--with-app_t38gateway --with-app_txfax --with-app_rxfax --with-chan_fax --with-app_faxdetect --with-tiff-includes="${LOCALBASE}/include/" --with-tiff-libs="${LOCALBASE}/lib"
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
@@ -115,14 +109,14 @@ CONFIGURE_ARGS+=	--without-app_t38gateway --without-app_txfax --without-app_rxfa
 PLIST_SUB+=	FAX="@comment "
 .endif
 
-#.if defined(WITH_ODBC)
+#.if ${PORT_OPTIONS:MODBC}
 #CONFIGURE_ARGS+=	--enable-odbc
 #LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 #.else
 #CONFIGURE_ARGS+=	--disable-odbc
 #.endif
 
-.if defined(WITH_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 CONFIGURE_ARGS+=	--with-codec_speex
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 PLIST_SUB+=	SPEEX=""
@@ -131,7 +125,7 @@ CONFIGURE_ARGS+=	--without-codec_speex
 PLIST_SUB+=	SPEEX="@comment "
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 CONFIGURE_ARGS+=	--with-format_oggvorbis
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
@@ -140,7 +134,7 @@ CONFIGURE_ARGS+=	--without-format_oggvorbis
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--enable-openldap --with-ldap-dir="${LOCALBASE}"
 PLIST_SUB+=	LDAP=""
@@ -149,7 +143,7 @@ CONFIGURE_ARGS+=	--disable-openldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-res_snmp
 PLIST_SUB+=	SNMP=""
@@ -158,12 +152,12 @@ CONFIGURE_ARGS+=	--without-res_snmp
 PLIST_SUB+=	SNMP="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--disable-optimization --enable-debug
 .endif
 
 post-install:
-.if defined(WITH_FAX)
+.if ${PORT_OPTIONS:MFAX}
 	@${MKDIR} ${FAXDEV_PATH}
 	@${CHOWN} ${CWUSER}:${CWGROUP} ${FAXDEV_PATH}
 	@${REINPLACE_CMD} -i "" -e 's?/dev/fax/?${FAXDEV_PATH}?' ${PREFIX}/etc/${PORTNAME}/chan_fax.conf*

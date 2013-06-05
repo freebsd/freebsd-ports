@@ -1,9 +1,5 @@
-# New ports collection makefile for:	c3270
-# Date created:		04 October 2004
-# Whom:			pdseniura@techie.com
-#
+# Created by: pdseniura@techie.com
 # $FreeBSD$
-#
 
 PORTNAME=	c3270
 PORTVERSION=	3.3.12ga13
@@ -19,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-USES=		iconv
+USES=		iconv readline
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -31,80 +27,83 @@ MAN1=		c3270.1 \
 MAN5=		ibm_hosts.5
 MANCOMPRESSED=	no
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
 # c3270's ./configure script supports these.
 # Within it all options except DBCS are enabled by default.
 
-OPTIONS=OPENSSL		"Build with OpenSSL support"		on	\
-	READLINE	"Use system Readline library"		on	\
-	PR3287		"Build pr3287 component"		on	\
-	ANSI		"Include NVT (ANSI) support"		on	\
-	APL		"Include APL support"			on	\
-	DBCS		"Include EBCDIC DBCS support"		off	\
-	FT		"Include IND\$$FILE support"		on	\
-	LOCAL_PROCESS	"Include Local Process support"		on	\
-	PRINTER		"Include printer session support"	on	\
-	SCRIPT		"Include scripting support"		on	\
-	TN3270E		"Include TN3270-Extended support"	on	\
-	TRACE		"Include trace support"			on
+OPTIONS_DEFINE=	OPENSSL READLINE PR3287 ANSI APL DBCS FT LOCAL_PROCESS \
+		PRINTER SCRIPT TN3270E TRACE
+OPTIONS_DEFAULT=	OPENSSL READLINE PR3287 ANSI APL FT LOCAL_PROCESS \
+			PRINTER SCRIPT TN3270E TRACE
+PR3287_DESC=		Build pr3287 component
+ANSI_DESC=		Include NVT (ANSI) support
+APL_DESC=		Include APL support
+DBCS_DESC=		Include EBCDIC DBCS support
+FT_DESC=		Include IND\$$FILE support
+LOCAL_PROCESS_DESC=	Include Local Process support
+PRINTER_DESC=		Include printer session support
+SCRIPT_DESC=		Include scripting support
+TN3270E_DESC=		Include TN3270-Extended support
+TRACE_DESC=		Include trace support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_OPENSSL) && !defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+.endif
+
+.if ! ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--disable-ssl
 .undef USE_OPENSSL
 .endif
 
-.if defined(WITHOUT_READLINE) && !defined(WITH_READLINE)
+.if ! ${PORT_OPTIONS:MREADLINE}
 CONFIGURE_ARGS+=	--without-readline
+.undef USE_READLINE
 .endif
 
-.if defined(WITHOUT_ANSI) && !defined(WITH_ANSI)
+.if ! ${PORT_OPTIONS:MANSI}
 CONFIGURE_ARGS+=	--disable-ansi
 .endif
 
-.if defined(WITHOUT_APL) && !defined(WITH_APL)
+.if ! ${PORT_OPTIONS:MAPL}
 CONFIGURE_ARGS+=	--disable-apl
 .endif
 
 # EBCDIC double-byte character set support is disabled by default
-.if defined(WITH_DBCS) && !defined(WITHOUT_DBCS)
+.if ${PORT_OPTIONS:MDBCS}
 CONFIGURE_ARGS+=	--enable-dbcs
 PLIST_SUB+=	DBCS=""
 .else
 PLIST_SUB+=	DBCS="@comment "
 .endif
 
-.if defined(WITHOUT_FT) && !defined(WITH_FT)
+.if ! ${PORT_OPTIONS:MFT}
 CONFIGURE_ARGS+=	--disable-ft
 .endif
 
-.if defined(WITHOUT_LOCAL_PROCESS) && !defined(WITH_LOCAL_PROCESS)
+.if ! ${PORT_OPTIONS:MLOCAL_PROCESS}
 CONFIGURE_ARGS+=	--disable-local-process
 .endif
 
-.if defined(WITHOUT_PRINTER) && !defined(WITH_PRINTER)
+.if ! ${PORT_OPTIONS:MPRINTER}
 CONFIGURE_ARGS+=	--disable-printer
 .endif
 
-.if defined(WITHOUT_SCRIPT) && !defined(WITH_SCRIPT)
+.if ! ${PORT_OPTIONS:MSCRIPT}
 CONFIGURE_ARGS+=	--disable-script
 .endif
 
-.if defined(WITHOUT_TN3270E) && !defined(WITH_TN3270E)
+.if ! ${PORT_OPTIONS:MTN3270E}
 CONFIGURE_ARGS+=	--disable-tn3270e
 .endif
 
-.if defined(WITHOUT_TRACE) && !defined(WITH_TRACE)
+.if ! ${PORT_OPTIONS:MTRACE}
 CONFIGURE_ARGS+=	--disable-trace
 .endif
 
 post-install:
 	@( cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} Makefile install.man )
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 .for i in ${PORTDOCS}
@@ -113,4 +112,4 @@ post-install:
 	@${ECHO_MSG} "===> Extra Documentation installed in ${DOCSDIR}/html ."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

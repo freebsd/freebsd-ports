@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	gnomemeeting
-# Date created:				24/07/2001
-# Whom:					roger@FreeBSD.org
-#
+# Created by: roger@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	ekiga
 PORTVERSION=	2.0.11
@@ -16,8 +12,8 @@ COMMENT=	VoIP phone for GNOME
 
 LIB_DEPENDS=	opal_r:${PORTSDIR}/net/opal
 
-OPTIONS=	AVAHI	"Support Avahi for service discovery on LAN" on \
-		DBUS	"Use D-BUS for interprocess communication" on
+OPTIONS_DEFINE=	AVAHI DBUS
+OPTIONS_DEFAULT=	AVAHI DBUS
 
 CONFLICTS=	ekiga-3.*
 
@@ -46,16 +42,16 @@ pre-configure:
 			{printf $$NF}' ${LOCALBASE}/include/opal/opal/buildopts.h`," \
 		${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifndef (WITHOUT_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=--enable-avahi
 .else
 CONFIGURE_ARGS+=--disable-avahi
 .endif
 
-.ifndef (WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	DBUS:=""
@@ -64,4 +60,4 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	DBUS:="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
