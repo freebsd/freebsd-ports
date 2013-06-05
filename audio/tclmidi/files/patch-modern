@@ -638,473 +638,6 @@
  }
  
  Event *
---- tclmCmd.cxx	1996-08-04 23:47:12.000000000 -0400
-+++ tclmCmd.cxx	2012-04-11 01:14:10.000000000 -0400
-@@ -41,39 +41,27 @@
- #include "tclmEvnt.h"
- #include "patchlvl.h"
- 
--static int Tclm_MidiMake(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiFree(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiRead(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiWrite(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiConfig(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiRewind(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiGet(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiPut(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiDelete(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiMerge(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiSplit(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiCopy(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv);
--static int Tclm_MidiVersion(ClientData client_data, Tcl_Interp *interp,
--    int argc, char **argv);
--static int Tclm_MidiTrack(ClientData client_data, Tcl_Interp *interp,
--    int argc, char **argv);
--static int Tclm_MidiGrep(ClientData client_data, Tcl_Interp *interp,
--    int argc, char **argv);
-+static Tcl_CmdProc Tclm_MidiMake;
-+static Tcl_CmdProc Tclm_MidiFree;
-+static Tcl_CmdProc Tclm_MidiRead;
-+static Tcl_CmdProc Tclm_MidiWrite;
-+static Tcl_CmdProc Tclm_MidiConfig;
-+static Tcl_CmdProc Tclm_MidiRewind;
-+static Tcl_CmdProc Tclm_MidiGet;
-+static Tcl_CmdProc Tclm_MidiPut;
-+static Tcl_CmdProc Tclm_MidiDelete;
-+static Tcl_CmdProc Tclm_MidiMerge;
-+static Tcl_CmdProc Tclm_MidiSplit;
-+static Tcl_CmdProc Tclm_MidiCopy;
-+static Tcl_CmdProc Tclm_MidiVersion;
-+static Tcl_CmdProc Tclm_MidiTrack;
-+static Tcl_CmdProc Tclm_MidiGrep;
- static int Tclm_GetTrack(TclmInterp *tclm_interp, Tcl_Interp *interp,
-     const char *str, Song **song, int *track);
- 
-+#define SET_CONST_RESULT(string)	\
-+	Tcl_SetResult(interp, (char *)(void *)string, TCL_STATIC)
-+
- 
- /*
-  * DllEntryPoint --
-@@ -98,8 +86,7 @@
- 
- 	ti = new TclmInterp;
- 	if (ti == 0) {
--		Tcl_SetResult(interp, "Out of memory in Tclmidi_Init",
--		    TCL_STATIC);
-+		SET_CONST_RESULT("Out of memory in Tclmidi_Init");
- 		return (TCL_ERROR);
- 	}
- 	Tcl_CreateCommand(interp, "midimake", Tclm_MidiMake, ti, 0);
-@@ -129,7 +116,7 @@
- 
- int
- Tclm_MidiMake(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *s;
-@@ -145,13 +132,13 @@
- 	s = new Song;
- 	key = tclm_interp->AddSong(s);
- 	Tcl_SetResult(interp, key, TCL_VOLATILE);
--	delete key;
-+	delete[] key;
- 	return (TCL_OK);
- }
- 
- int
- Tclm_MidiFree(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 
-@@ -171,7 +158,7 @@
- 
- int
- Tclm_MidiRead(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	Tcl_Channel channel;
- 	int mode;
-@@ -211,7 +198,7 @@
- 
- int
- Tclm_MidiWrite(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *song;
-@@ -250,12 +237,13 @@
- 
- int
- Tclm_MidiConfig(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	ostrstream *buf;
- 	TclmInterp *tclm_interp;
- 	Song *song;
--	char *str, **sub_argv;
-+	char *str;
-+	const char **sub_argv;
- 	int i, sub_argc, value;
- 
- 	if (argc < 2) {
-@@ -338,8 +326,8 @@
- 			}
- 			break;
- 		default:
--			Tcl_SetResult(interp, "wrong # args: should be "
--			    "{format|division|tracks ?value?}", TCL_STATIC);
-+			SET_CONST_RESULT("wrong # args: should be "
-+			    "{format|division|tracks ?value?}");
- 			return (TCL_ERROR);
- 			break;
- 		}
-@@ -350,7 +338,7 @@
- 
- int
- Tclm_MidiRewind(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *song;
-@@ -380,7 +368,7 @@
- 
- int
- Tclm_MidiGet(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	ostrstream *buf;
- 	long time;
-@@ -421,7 +409,7 @@
- 		printable = 0;
- 		while (!printable) {
- 			if ((e = song->NextEvent(track)) == 0) {
--				Tcl_SetResult(interp, "EOT", TCL_STATIC);
-+				SET_CONST_RESULT("EOT");
- 				printable = 1;
- 			} else {
- 				buf = new ostrstream;
-@@ -432,7 +420,7 @@
- 					    TCL_VOLATILE);
- 					printable = 1;
- 				}
--				delete str;
-+				delete[] str;
- 				delete buf;
- 			}
- 		}
-@@ -440,7 +428,7 @@
- 		printable = 0;
- 		while (!printable) {
- 			if ((e = song->PrevEvent(track)) == 0) {
--				Tcl_SetResult(interp, "EOT", TCL_STATIC);
-+				SET_CONST_RESULT("EOT");
- 				printable = 1;
- 			} else {
- 				buf = new ostrstream;
-@@ -459,7 +447,7 @@
- 		if (Tcl_GetLong(interp, argv[3], &time) != TCL_OK)
- 			return (TCL_ERROR);
- 		if ((events = song->GetEvents((short)track, time)) == 0)
--			Tcl_SetResult(interp, "EOT", TCL_STATIC);
-+			SET_CONST_RESULT("EOT");
- 		else {
- 			for (e = events; e != 0; e = e->GetNextEvent()) {
- 				buf = new ostrstream;
-@@ -477,7 +465,7 @@
- 
- int
- Tclm_MidiPut(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *song;
-@@ -514,17 +502,16 @@
- 
- 	if ((event = Tclm_ParseEvent(interp, argv[3])) == 0) {
- 		if (strlen(interp->result) == 0)
--			Tcl_SetResult(interp, "No more memory", TCL_STATIC);
-+			SET_CONST_RESULT("No more memory");
- 		return (TCL_ERROR);
- 	}
- 	if (event->IsWildcard()) {
--		Tcl_SetResult(interp, "Can't put wildcard events in a song",
--		    TCL_STATIC);
-+		SET_CONST_RESULT("Can't put wildcard events in a song");
- 		return (TCL_ERROR);
- 	}
- 	new_e1 = song->PutEvent(track, *event);
- 	if (new_e1 == 0) {
--		Tcl_SetResult(interp, "Couldn't put event", TCL_STATIC);
-+		SET_CONST_RESULT("Couldn't put event");
- 		return (TCL_ERROR);
- 	}
- 	// check to see if it has a note off too
-@@ -534,8 +521,7 @@
- 	if (np != 0) {
- 		new_e2 = (NoteEvent *)song->PutEvent(track, *np);
- 		if (new_e2 == 0) {
--			Tcl_SetResult(interp, "Couldn't put event",
--			    TCL_STATIC);
-+			SET_CONST_RESULT("Couldn't put event");
- 			return (TCL_ERROR);
- 		}
- 		((NoteEvent *)new_e1)->SetNotePair(new_e2);
-@@ -549,7 +535,7 @@
- 
- int
- Tclm_MidiDelete(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *song;
-@@ -592,17 +578,16 @@
- 		if (Tcl_GetLong(interp, argv[5], (long *)&end) != TCL_OK)
- 			return (TCL_ERROR);
- 		if (!song->DeleteRange(track, start, end)) {
--			Tcl_SetResult(interp, "couldn't delete range",
--			    TCL_STATIC);
-+			SET_CONST_RESULT("couldn't delete range");
- 			return (TCL_ERROR);
- 		}
--		Tcl_SetResult(interp, "1", TCL_STATIC);
-+		SET_CONST_RESULT("1");
- 		return (TCL_OK);
- 	}
- 
- 	if ((event = Tclm_ParseEvent(interp, argv[3])) == 0) {
- 		if (strlen(interp->result) == 0)
--			Tcl_SetResult(interp, "No more memory", TCL_STATIC);
-+			SET_CONST_RESULT("No more memory");
- 		return (TCL_ERROR);
- 	}
- 	// If this is a NoteOn/NoteOff pair, get real NoteOff from tree
-@@ -616,7 +601,7 @@
- 		for (e = events; e != 0 && !(*event == *e);
- 		    e = e->GetNextEvent());
- 		if (e == 0) {
--			Tcl_SetResult(interp, "0", TCL_STATIC);
-+			SET_CONST_RESULT("0");
- 			delete ((NoteEvent *)event)->GetNotePair();
- 			delete event;
- 			return (TCL_OK);
-@@ -625,7 +610,7 @@
- 		// find real NoteOff pair and delete it
- 		note_off = ((NoteEvent *)e)->GetNotePair();
- 		if (!song->DeleteEvent(track, *note_off)) {
--			Tcl_SetResult(interp, "0", TCL_STATIC);
-+			SET_CONST_RESULT("0");
- 			delete ((NoteEvent *)event)->GetNotePair();
- 			delete event;
- 			return (TCL_OK);
-@@ -633,7 +618,7 @@
- 		delete ((NoteEvent *)event)->GetNotePair();
- 	}
- 	if (!song->DeleteEvent(track, *event)) {
--		Tcl_SetResult(interp, "0", TCL_STATIC);
-+		SET_CONST_RESULT("0");
- 		if (event->GetType() == NOTEON &&
- 		   ((NoteEvent *)event)->GetNotePair() != 0)
- 			delete ((NoteEvent *)event)->GetNotePair();
-@@ -641,13 +626,13 @@
- 		return (TCL_OK);
- 	}
- 	delete event;
--	Tcl_SetResult(interp, "1", TCL_STATIC);
-+	SET_CONST_RESULT("1");
- 	return (TCL_OK);
- }
- 
- int
- Tclm_MidiMerge(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *dest_song, *src_song;
-@@ -680,7 +665,7 @@
- 
- int
- Tclm_MidiSplit(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *src_song, *meta_song, *normal_song;
-@@ -715,7 +700,7 @@
- 
- int
- Tclm_MidiCopy(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	EventTree *tmp_track;
-@@ -748,6 +733,7 @@
- 	scalar = (double)dest_song->GetDivision() / src_song->GetDivision();
- 
- 	tmp_track = src_song->GetRange(src_track, sstart, send);
-+fprintf(stderr, "Got tmp_track as %p\n", tmp_track);
- 	if (tmp_track == 0) {
- 		Tcl_AppendResult(interp, "Couldn't get range from: ", argv[3],
- 		    " to ", argv[4], 0);
-@@ -757,20 +743,23 @@
- 		if (!src_song->DeleteRange(src_track, sstart, send)) {
- 			Tcl_AppendResult(interp, "Couldn't remove events "
- 			    "from source track", 0);
-+			delete tmp_track;
- 			return (TCL_ERROR);
- 		}
- 	}
- 	if (!dest_song->Add(dest_track, *tmp_track, dstart, scalar)) {
- 		Tcl_AppendResult(interp, "Couldn't add range", 0);
-+		delete tmp_track;
- 		return (TCL_ERROR);
- 	}
-+fprintf(stderr, "Deleting tmp_track %p\n", tmp_track);
- 	delete tmp_track;
- 	return (TCL_OK);
- }
- 
- int
- Tclm_MidiVersion(ClientData client_data, Tcl_Interp *interp, int argc,
--    char *argv[])
-+    const char *argv[])
- {
- 	ClientData *dummy;
- 
-@@ -782,13 +771,13 @@
- 		    argv[0], "\"", 0);
- 		return (TCL_ERROR);
- 	}
--	Tcl_SetResult(interp, (char *)TCLMIDI_VERSION, TCL_STATIC);
-+	SET_CONST_RESULT(TCLMIDI_VERSION);
- 	return (TCL_OK);
- }
- 
- int
- Tclm_MidiTrack(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *song;
-@@ -848,7 +837,7 @@
- 
- int
- Tclm_MidiGrep(ClientData client_data, Tcl_Interp *interp, int argc,
--    char **argv)
-+    const char **argv)
- {
- 	TclmInterp *tclm_interp;
- 	Song *song;
-@@ -857,6 +846,7 @@
- 	NoteEvent *np;
- 	ostrstream *buf;
- 	char *str;
-+	int result;
- 
- 	if (argc < 4) {
- 		Tcl_AppendResult(interp, "wrong # args: should be \"",
-@@ -888,7 +878,7 @@
- 	num_events = argc - 3;
- 	events = new Event *[num_events];
- 	if (events == 0) {
--		Tcl_SetResult(interp, "No more memory", TCL_STATIC);
-+		SET_CONST_RESULT("No more memory");
- 		return (TCL_ERROR);
- 	}
- 	for (i = 0; i < num_events; i++) {
-@@ -896,8 +886,7 @@
- 		events[i] = Tclm_ParseEvent(interp, argv[i + 3]);
- 		if (events[i] == 0) {
- 			if (strlen(interp->result) == 0)
--				Tcl_SetResult(interp, "No more memory",
--				    TCL_STATIC);
-+				SET_CONST_RESULT("No more memory");
- 			i--;
- 			for (; i >= 0; i--) {
- 				if (events[i]->GetType() == NOTEON) {
-@@ -913,9 +902,11 @@
- 		}
- 	}
- 	if (!song->Grep(track, events, num_events, &matched, &num_matched)) {
--		Tcl_SetResult(interp, "midigrep failed", TCL_STATIC);
--		return (TCL_ERROR);
--	}
-+		SET_CONST_RESULT("midigrep failed");
-+		result = TCL_ERROR;
-+	} else
-+		result = TCL_OK;
-+
- 	for (i = 0; i < num_events; i++) {
- 		if (events[i]->GetType() == NOTEON) {
- 			np = ((NoteEvent *)events[i])->GetNotePair();
-@@ -924,33 +915,33 @@
- 		}
- 		delete events[i];
- 	}
--	delete events;
-+	delete[] events;
- 	for (i = 0; i < num_matched; i++) {
- 		buf = new ostrstream;
- 		Tclm_PrintEvent(*buf, matched[i]);
- 		str = buf->str();
- 		if (str != 0 && str[0] != '\0')
- 			Tcl_AppendElement(interp, str);
--		delete str;
-+		delete[] str;
- 		delete buf;
- 	}
--	delete matched;
-+	delete[] matched;
-+	return (result);
- 	return (TCL_OK);
- }
- 
--
- int
- Tclm_GetTrack(TclmInterp *tclm_interp, Tcl_Interp *interp, const char *str,
-     Song **song, int *track)
- {
--	char **sub_argv;
-+	const char **sub_argv;
- 	int sub_argc;
- 
--	if (Tcl_SplitList(interp, (char *)str, &sub_argc, &sub_argv) != TCL_OK)
-+	if (Tcl_SplitList(interp, str, &sub_argc, &sub_argv) != TCL_OK)
- 		return (TCL_ERROR);
- 	if (sub_argc != 2) {
--		Tcl_SetResult(interp, "bad track designation: "
--		    "should be \"{MidiID Track}\"", TCL_STATIC);
-+		SET_CONST_RESULT("bad track designation: "
-+		    "should be \"{MidiID Track}\"");
- 		Tcl_Ckfree((char *)sub_argv);
- 		return (TCL_ERROR);
- 	}
 --- tclmEvnt.cxx	1996-07-29 20:14:11.000000000 -0400
 +++ tclmEvnt.cxx	2012-04-07 15:42:14.000000000 -0400
 @@ -44,6 +44,9 @@
@@ -1825,8 +1358,97 @@
 -    char **argv);
 +    const char **argv);
  #endif
---- tclmPlay.cxx	1996-08-04 23:47:12.000000000 -0400
-+++ tclmPlay.cxx	2012-04-07 14:08:43.000000000 -0400
+--- tclmPtch.cxx	1996-08-04 23:47:13.000000000 -0400
++++ tclmPtch.cxx	2012-04-07 14:08:43.000000000 -0400
+@@ -37,10 +37,8 @@
+ #include "tclmidi.h"
+ #include "TclmIntp.h"
+ 
+-static int Tclm_PatchRead(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_PatchFree(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
++static Tcl_CmdProc Tclm_PatchRead;
++static Tcl_CmdProc Tclm_PatchFree;
+ 
+ int
+ Tclm_PatchInit(Tcl_Interp *interp, TclmInterp *tclm_interp)
+@@ -53,7 +51,7 @@
+ 
+ int
+ Tclm_PatchRead(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	Tcl_Channel channel;
+ 	int mode;
+@@ -96,7 +94,7 @@
+ 
+ int
+ Tclm_PatchFree(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 
+--- song/EvntTree.cxx.orig	1996-08-05 05:47:38.000000000 +0200
++++ song/EvntTree.cxx	2013-05-14 11:22:45.000000000 +0200
+@@ -611,7 +611,7 @@
+ 					for (j = 0; j < num_found; j++)
+ 						new_found[j] = found[j];
+ 					new_found[j] = e;
+-					delete found;
++					delete[] found;
+ 					found = new_found;
+ 					num_found++;
+ 				}
+@@ -631,7 +631,7 @@
+ 					for (j = 0; j < num_found; j++)
+ 						new_found[j] = found[j];
+ 					new_found[j] = e;
+-					delete found;
++					delete[] found;
+ 					found = new_found;
+ 					num_found++;
+ 				}
+@@ -735,6 +735,7 @@
+ 		assert(new_event != 0);
+ 		place = rb_insert_b(place, (char *)time, (char *)new_event);
+ 	}
++
+ 	curr_event = new_event;
+ 	new_event->SetEventTreeNode(place);
+ 	return (new_event);
+@@ -746,7 +747,7 @@
+ 	Event *e, *events, *prev;
+ 	EventTreeNode *n, *next_n;
+ 
+-	n = (EventTreeNode *)event.GetEventTreeNode();
++	n = event.GetEventTreeNode();
+ 	if (n != 0) {
+ 		e = &event;
+ 		prev = e->GetPrevEvent();
+@@ -785,6 +786,9 @@
+ 			}
+ 			
+ 		}
++		if (e->GetNextEvent() == 0 ||
++		    (prev && prev->GetEventTreeNode() != n))
++			rb_delete_node(n);
+ 	} else {
+ 		// This is the only event in the node
+ 		if (curr_event == e) {
+@@ -818,7 +822,7 @@
+ 	/* get each event in order and delete it */
+ 	while ((e = NextEvent()) != 0)
+ 		DeleteEvent(*e);
+-		
++
+ 	/* then free head */
+ 	free(head);
+ 	head = 0;
+--- tclmPlay.cxx.orig	1996-08-05 05:47:12.000000000 +0200
++++ tclmPlay.cxx	2013-06-05 15:46:23.000000000 +0200
 @@ -43,30 +43,24 @@
  #include "TclmDr75.h"
  #endif
@@ -2029,12 +1651,14 @@
  		return (TCL_ERROR);
  	}
  	num_events = 0;
-@@ -585,8 +579,7 @@
+@@ -584,9 +578,8 @@
+ 				num_events++;
  			}
  		} else {
- 			if (strlen(interp->result) == 0) {
+-			if (strlen(interp->result) == 0) {
 -				Tcl_SetResult(interp, "Out of memory",
 -				    TCL_STATIC);
++			if (strlen(Tcl_GetStringResult(interp)) == 0) {
 +				SET_CONST_RESULT("Out of memory");
  				return (TCL_ERROR);
  			}
@@ -2048,92 +1672,474 @@
  {
  	ostrstream *buf;
  	TclmInterp *tclm_interp;
---- tclmPtch.cxx	1996-08-04 23:47:13.000000000 -0400
-+++ tclmPtch.cxx	2012-04-07 14:08:43.000000000 -0400
-@@ -37,10 +37,8 @@
- #include "tclmidi.h"
- #include "TclmIntp.h"
+--- tclmCmd.cxx.orig	1996-08-05 05:47:12.000000000 +0200
++++ tclmCmd.cxx	2013-06-05 15:46:37.000000000 +0200
+@@ -41,39 +41,27 @@
+ #include "tclmEvnt.h"
+ #include "patchlvl.h"
  
--static int Tclm_PatchRead(ClientData client_data, Tcl_Interp *interp, int argc,
+-static int Tclm_MidiMake(ClientData client_data, Tcl_Interp *interp, int argc,
 -    char **argv);
--static int Tclm_PatchFree(ClientData client_data, Tcl_Interp *interp, int argc,
+-static int Tclm_MidiFree(ClientData client_data, Tcl_Interp *interp, int argc,
 -    char **argv);
-+static Tcl_CmdProc Tclm_PatchRead;
-+static Tcl_CmdProc Tclm_PatchFree;
+-static int Tclm_MidiRead(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiWrite(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiConfig(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiRewind(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiGet(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiPut(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiDelete(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiMerge(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiSplit(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiCopy(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv);
+-static int Tclm_MidiVersion(ClientData client_data, Tcl_Interp *interp,
+-    int argc, char **argv);
+-static int Tclm_MidiTrack(ClientData client_data, Tcl_Interp *interp,
+-    int argc, char **argv);
+-static int Tclm_MidiGrep(ClientData client_data, Tcl_Interp *interp,
+-    int argc, char **argv);
++static Tcl_CmdProc Tclm_MidiMake;
++static Tcl_CmdProc Tclm_MidiFree;
++static Tcl_CmdProc Tclm_MidiRead;
++static Tcl_CmdProc Tclm_MidiWrite;
++static Tcl_CmdProc Tclm_MidiConfig;
++static Tcl_CmdProc Tclm_MidiRewind;
++static Tcl_CmdProc Tclm_MidiGet;
++static Tcl_CmdProc Tclm_MidiPut;
++static Tcl_CmdProc Tclm_MidiDelete;
++static Tcl_CmdProc Tclm_MidiMerge;
++static Tcl_CmdProc Tclm_MidiSplit;
++static Tcl_CmdProc Tclm_MidiCopy;
++static Tcl_CmdProc Tclm_MidiVersion;
++static Tcl_CmdProc Tclm_MidiTrack;
++static Tcl_CmdProc Tclm_MidiGrep;
+ static int Tclm_GetTrack(TclmInterp *tclm_interp, Tcl_Interp *interp,
+     const char *str, Song **song, int *track);
+ 
++#define SET_CONST_RESULT(string)	\
++	Tcl_SetResult(interp, (char *)(void *)string, TCL_STATIC)
++
+ 
+ /*
+  * DllEntryPoint --
+@@ -98,8 +86,7 @@
+ 
+ 	ti = new TclmInterp;
+ 	if (ti == 0) {
+-		Tcl_SetResult(interp, "Out of memory in Tclmidi_Init",
+-		    TCL_STATIC);
++		SET_CONST_RESULT("Out of memory in Tclmidi_Init");
+ 		return (TCL_ERROR);
+ 	}
+ 	Tcl_CreateCommand(interp, "midimake", Tclm_MidiMake, ti, 0);
+@@ -129,7 +116,7 @@
  
  int
- Tclm_PatchInit(Tcl_Interp *interp, TclmInterp *tclm_interp)
-@@ -53,7 +51,7 @@
- 
- int
- Tclm_PatchRead(ClientData client_data, Tcl_Interp *interp, int argc,
+ Tclm_MidiMake(ClientData client_data, Tcl_Interp *interp, int argc,
 -    char **argv)
 +    const char **argv)
  {
- 	Tcl_Channel channel;
- 	int mode;
-@@ -96,7 +94,7 @@
+ 	TclmInterp *tclm_interp;
+ 	Song *s;
+@@ -145,13 +132,13 @@
+ 	s = new Song;
+ 	key = tclm_interp->AddSong(s);
+ 	Tcl_SetResult(interp, key, TCL_VOLATILE);
+-	delete key;
++	delete[] key;
+ 	return (TCL_OK);
+ }
  
  int
- Tclm_PatchFree(ClientData client_data, Tcl_Interp *interp, int argc,
+ Tclm_MidiFree(ClientData client_data, Tcl_Interp *interp, int argc,
 -    char **argv)
 +    const char **argv)
  {
  	TclmInterp *tclm_interp;
  
---- song/EvntTree.cxx.orig	1996-08-05 05:47:38.000000000 +0200
-+++ song/EvntTree.cxx	2013-05-14 11:22:45.000000000 +0200
-@@ -611,7 +611,7 @@
- 					for (j = 0; j < num_found; j++)
- 						new_found[j] = found[j];
- 					new_found[j] = e;
--					delete found;
-+					delete[] found;
- 					found = new_found;
- 					num_found++;
- 				}
-@@ -631,7 +631,7 @@
- 					for (j = 0; j < num_found; j++)
- 						new_found[j] = found[j];
- 					new_found[j] = e;
--					delete found;
-+					delete[] found;
- 					found = new_found;
- 					num_found++;
- 				}
-@@ -735,6 +735,7 @@
- 		assert(new_event != 0);
- 		place = rb_insert_b(place, (char *)time, (char *)new_event);
- 	}
-+
- 	curr_event = new_event;
- 	new_event->SetEventTreeNode(place);
- 	return (new_event);
-@@ -746,7 +747,7 @@
- 	Event *e, *events, *prev;
- 	EventTreeNode *n, *next_n;
+@@ -171,7 +158,7 @@
  
--	n = (EventTreeNode *)event.GetEventTreeNode();
-+	n = event.GetEventTreeNode();
- 	if (n != 0) {
- 		e = &event;
- 		prev = e->GetPrevEvent();
-@@ -785,6 +786,9 @@
+ int
+ Tclm_MidiRead(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	Tcl_Channel channel;
+ 	int mode;
+@@ -211,7 +198,7 @@
+ 
+ int
+ Tclm_MidiWrite(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+@@ -250,12 +237,13 @@
+ 
+ int
+ Tclm_MidiConfig(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	ostrstream *buf;
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+-	char *str, **sub_argv;
++	char *str;
++	const char **sub_argv;
+ 	int i, sub_argc, value;
+ 
+ 	if (argc < 2) {
+@@ -338,8 +326,8 @@
  			}
- 			
+ 			break;
+ 		default:
+-			Tcl_SetResult(interp, "wrong # args: should be "
+-			    "{format|division|tracks ?value?}", TCL_STATIC);
++			SET_CONST_RESULT("wrong # args: should be "
++			    "{format|division|tracks ?value?}");
+ 			return (TCL_ERROR);
+ 			break;
  		}
-+		if (e->GetNextEvent() == 0 ||
-+		    (prev && prev->GetEventTreeNode() != n))
-+			rb_delete_node(n);
- 	} else {
- 		// This is the only event in the node
- 		if (curr_event == e) {
-@@ -818,7 +822,7 @@
- 	/* get each event in order and delete it */
- 	while ((e = NextEvent()) != 0)
- 		DeleteEvent(*e);
--		
+@@ -350,7 +338,7 @@
+ 
+ int
+ Tclm_MidiRewind(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+@@ -380,7 +368,7 @@
+ 
+ int
+ Tclm_MidiGet(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	ostrstream *buf;
+ 	long time;
+@@ -421,7 +409,7 @@
+ 		printable = 0;
+ 		while (!printable) {
+ 			if ((e = song->NextEvent(track)) == 0) {
+-				Tcl_SetResult(interp, "EOT", TCL_STATIC);
++				SET_CONST_RESULT("EOT");
+ 				printable = 1;
+ 			} else {
+ 				buf = new ostrstream;
+@@ -432,7 +420,7 @@
+ 					    TCL_VOLATILE);
+ 					printable = 1;
+ 				}
+-				delete str;
++				delete[] str;
+ 				delete buf;
+ 			}
+ 		}
+@@ -440,7 +428,7 @@
+ 		printable = 0;
+ 		while (!printable) {
+ 			if ((e = song->PrevEvent(track)) == 0) {
+-				Tcl_SetResult(interp, "EOT", TCL_STATIC);
++				SET_CONST_RESULT("EOT");
+ 				printable = 1;
+ 			} else {
+ 				buf = new ostrstream;
+@@ -459,7 +447,7 @@
+ 		if (Tcl_GetLong(interp, argv[3], &time) != TCL_OK)
+ 			return (TCL_ERROR);
+ 		if ((events = song->GetEvents((short)track, time)) == 0)
+-			Tcl_SetResult(interp, "EOT", TCL_STATIC);
++			SET_CONST_RESULT("EOT");
+ 		else {
+ 			for (e = events; e != 0; e = e->GetNextEvent()) {
+ 				buf = new ostrstream;
+@@ -477,7 +465,7 @@
+ 
+ int
+ Tclm_MidiPut(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+@@ -513,18 +501,17 @@
+ 	}
+ 
+ 	if ((event = Tclm_ParseEvent(interp, argv[3])) == 0) {
+-		if (strlen(interp->result) == 0)
+-			Tcl_SetResult(interp, "No more memory", TCL_STATIC);
++		if (strlen(Tcl_GetStringResult(interp)) == 0)
++			SET_CONST_RESULT("No more memory");
+ 		return (TCL_ERROR);
+ 	}
+ 	if (event->IsWildcard()) {
+-		Tcl_SetResult(interp, "Can't put wildcard events in a song",
+-		    TCL_STATIC);
++		SET_CONST_RESULT("Can't put wildcard events in a song");
+ 		return (TCL_ERROR);
+ 	}
+ 	new_e1 = song->PutEvent(track, *event);
+ 	if (new_e1 == 0) {
+-		Tcl_SetResult(interp, "Couldn't put event", TCL_STATIC);
++		SET_CONST_RESULT("Couldn't put event");
+ 		return (TCL_ERROR);
+ 	}
+ 	// check to see if it has a note off too
+@@ -534,8 +521,7 @@
+ 	if (np != 0) {
+ 		new_e2 = (NoteEvent *)song->PutEvent(track, *np);
+ 		if (new_e2 == 0) {
+-			Tcl_SetResult(interp, "Couldn't put event",
+-			    TCL_STATIC);
++			SET_CONST_RESULT("Couldn't put event");
+ 			return (TCL_ERROR);
+ 		}
+ 		((NoteEvent *)new_e1)->SetNotePair(new_e2);
+@@ -549,7 +535,7 @@
+ 
+ int
+ Tclm_MidiDelete(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+@@ -592,17 +578,16 @@
+ 		if (Tcl_GetLong(interp, argv[5], (long *)&end) != TCL_OK)
+ 			return (TCL_ERROR);
+ 		if (!song->DeleteRange(track, start, end)) {
+-			Tcl_SetResult(interp, "couldn't delete range",
+-			    TCL_STATIC);
++			SET_CONST_RESULT("couldn't delete range");
+ 			return (TCL_ERROR);
+ 		}
+-		Tcl_SetResult(interp, "1", TCL_STATIC);
++		SET_CONST_RESULT("1");
+ 		return (TCL_OK);
+ 	}
+ 
+ 	if ((event = Tclm_ParseEvent(interp, argv[3])) == 0) {
+-		if (strlen(interp->result) == 0)
+-			Tcl_SetResult(interp, "No more memory", TCL_STATIC);
++		if (strlen(Tcl_GetStringResult(interp)) == 0)
++			SET_CONST_RESULT("No more memory");
+ 		return (TCL_ERROR);
+ 	}
+ 	// If this is a NoteOn/NoteOff pair, get real NoteOff from tree
+@@ -616,7 +601,7 @@
+ 		for (e = events; e != 0 && !(*event == *e);
+ 		    e = e->GetNextEvent());
+ 		if (e == 0) {
+-			Tcl_SetResult(interp, "0", TCL_STATIC);
++			SET_CONST_RESULT("0");
+ 			delete ((NoteEvent *)event)->GetNotePair();
+ 			delete event;
+ 			return (TCL_OK);
+@@ -625,7 +610,7 @@
+ 		// find real NoteOff pair and delete it
+ 		note_off = ((NoteEvent *)e)->GetNotePair();
+ 		if (!song->DeleteEvent(track, *note_off)) {
+-			Tcl_SetResult(interp, "0", TCL_STATIC);
++			SET_CONST_RESULT("0");
+ 			delete ((NoteEvent *)event)->GetNotePair();
+ 			delete event;
+ 			return (TCL_OK);
+@@ -633,7 +618,7 @@
+ 		delete ((NoteEvent *)event)->GetNotePair();
+ 	}
+ 	if (!song->DeleteEvent(track, *event)) {
+-		Tcl_SetResult(interp, "0", TCL_STATIC);
++		SET_CONST_RESULT("0");
+ 		if (event->GetType() == NOTEON &&
+ 		   ((NoteEvent *)event)->GetNotePair() != 0)
+ 			delete ((NoteEvent *)event)->GetNotePair();
+@@ -641,13 +626,13 @@
+ 		return (TCL_OK);
+ 	}
+ 	delete event;
+-	Tcl_SetResult(interp, "1", TCL_STATIC);
++	SET_CONST_RESULT("1");
+ 	return (TCL_OK);
+ }
+ 
+ int
+ Tclm_MidiMerge(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *dest_song, *src_song;
+@@ -680,7 +665,7 @@
+ 
+ int
+ Tclm_MidiSplit(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *src_song, *meta_song, *normal_song;
+@@ -715,7 +700,7 @@
+ 
+ int
+ Tclm_MidiCopy(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	EventTree *tmp_track;
+@@ -748,6 +733,7 @@
+ 	scalar = (double)dest_song->GetDivision() / src_song->GetDivision();
+ 
+ 	tmp_track = src_song->GetRange(src_track, sstart, send);
++fprintf(stderr, "Got tmp_track as %p\n", tmp_track);
+ 	if (tmp_track == 0) {
+ 		Tcl_AppendResult(interp, "Couldn't get range from: ", argv[3],
+ 		    " to ", argv[4], 0);
+@@ -757,20 +743,23 @@
+ 		if (!src_song->DeleteRange(src_track, sstart, send)) {
+ 			Tcl_AppendResult(interp, "Couldn't remove events "
+ 			    "from source track", 0);
++			delete tmp_track;
+ 			return (TCL_ERROR);
+ 		}
+ 	}
+ 	if (!dest_song->Add(dest_track, *tmp_track, dstart, scalar)) {
+ 		Tcl_AppendResult(interp, "Couldn't add range", 0);
++		delete tmp_track;
+ 		return (TCL_ERROR);
+ 	}
++fprintf(stderr, "Deleting tmp_track %p\n", tmp_track);
+ 	delete tmp_track;
+ 	return (TCL_OK);
+ }
+ 
+ int
+ Tclm_MidiVersion(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char *argv[])
++    const char *argv[])
+ {
+ 	ClientData *dummy;
+ 
+@@ -782,13 +771,13 @@
+ 		    argv[0], "\"", 0);
+ 		return (TCL_ERROR);
+ 	}
+-	Tcl_SetResult(interp, (char *)TCLMIDI_VERSION, TCL_STATIC);
++	SET_CONST_RESULT(TCLMIDI_VERSION);
+ 	return (TCL_OK);
+ }
+ 
+ int
+ Tclm_MidiTrack(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+@@ -848,7 +837,7 @@
+ 
+ int
+ Tclm_MidiGrep(ClientData client_data, Tcl_Interp *interp, int argc,
+-    char **argv)
++    const char **argv)
+ {
+ 	TclmInterp *tclm_interp;
+ 	Song *song;
+@@ -857,6 +846,7 @@
+ 	NoteEvent *np;
+ 	ostrstream *buf;
+ 	char *str;
++	int result;
+ 
+ 	if (argc < 4) {
+ 		Tcl_AppendResult(interp, "wrong # args: should be \"",
+@@ -888,16 +878,15 @@
+ 	num_events = argc - 3;
+ 	events = new Event *[num_events];
+ 	if (events == 0) {
+-		Tcl_SetResult(interp, "No more memory", TCL_STATIC);
++		SET_CONST_RESULT("No more memory");
+ 		return (TCL_ERROR);
+ 	}
+ 	for (i = 0; i < num_events; i++) {
+ 		// parse events
+ 		events[i] = Tclm_ParseEvent(interp, argv[i + 3]);
+ 		if (events[i] == 0) {
+-			if (strlen(interp->result) == 0)
+-				Tcl_SetResult(interp, "No more memory",
+-				    TCL_STATIC);
++			if (strlen(Tcl_GetStringResult(interp)) == 0)
++				SET_CONST_RESULT("No more memory");
+ 			i--;
+ 			for (; i >= 0; i--) {
+ 				if (events[i]->GetType() == NOTEON) {
+@@ -913,9 +902,11 @@
+ 		}
+ 	}
+ 	if (!song->Grep(track, events, num_events, &matched, &num_matched)) {
+-		Tcl_SetResult(interp, "midigrep failed", TCL_STATIC);
+-		return (TCL_ERROR);
+-	}
++		SET_CONST_RESULT("midigrep failed");
++		result = TCL_ERROR;
++	} else
++		result = TCL_OK;
 +
- 	/* then free head */
- 	free(head);
- 	head = 0;
+ 	for (i = 0; i < num_events; i++) {
+ 		if (events[i]->GetType() == NOTEON) {
+ 			np = ((NoteEvent *)events[i])->GetNotePair();
+@@ -924,33 +915,33 @@
+ 		}
+ 		delete events[i];
+ 	}
+-	delete events;
++	delete[] events;
+ 	for (i = 0; i < num_matched; i++) {
+ 		buf = new ostrstream;
+ 		Tclm_PrintEvent(*buf, matched[i]);
+ 		str = buf->str();
+ 		if (str != 0 && str[0] != '\0')
+ 			Tcl_AppendElement(interp, str);
+-		delete str;
++		delete[] str;
+ 		delete buf;
+ 	}
+-	delete matched;
++	delete[] matched;
++	return (result);
+ 	return (TCL_OK);
+ }
+ 
+-
+ int
+ Tclm_GetTrack(TclmInterp *tclm_interp, Tcl_Interp *interp, const char *str,
+     Song **song, int *track)
+ {
+-	char **sub_argv;
++	const char **sub_argv;
+ 	int sub_argc;
+ 
+-	if (Tcl_SplitList(interp, (char *)str, &sub_argc, &sub_argv) != TCL_OK)
++	if (Tcl_SplitList(interp, str, &sub_argc, &sub_argv) != TCL_OK)
+ 		return (TCL_ERROR);
+ 	if (sub_argc != 2) {
+-		Tcl_SetResult(interp, "bad track designation: "
+-		    "should be \"{MidiID Track}\"", TCL_STATIC);
++		SET_CONST_RESULT("bad track designation: "
++		    "should be \"{MidiID Track}\"");
+ 		Tcl_Ckfree((char *)sub_argv);
+ 		return (TCL_ERROR);
+ 	}
