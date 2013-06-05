@@ -1,12 +1,8 @@
-# New ports collection makefile for:	treetop
-# Date created:		11 Oct, 2009
-# Whom:			Wen Heping <ruby@FreeBSD.org>
-#
+# Created by: Wen Heping <ruby@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	treetop
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.14
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
