@@ -1,8 +1,8 @@
---- ./salt/utils/__init__.py.orig	2013-03-19 09:30:55.000000000 +0400
-+++ ./salt/utils/__init__.py	2013-03-20 20:22:28.000000000 +0400
-@@ -228,6 +228,15 @@
-         # default path based on busybox's default
-         default_path = "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin"
+--- salt/utils/__init__.py.orig	2013-05-29 00:20:55.000000000 -0600
++++ salt/utils/__init__.py	    2013-05-31 10:13:41.486795573 -0600
+@@ -242,6 +242,15 @@
+         default_path = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin'
+         search_path = os.environ.get('PATH', default_path)
  
 +        p = os.environ.get('PATH')
 +        if p is not None:
@@ -13,6 +13,6 @@
 +                pp.append('/usr/local/sbin')
 +            os.environ['PATH'] = os.pathsep.join(pp)
 +
-         for path in os.environ.get('PATH', default_path).split(os.pathsep):
+         for path in search_path.split(os.pathsep):
              full_path = os.path.join(path, exe)
              if os.access(full_path, os.X_OK):
