@@ -34,16 +34,17 @@ USE_SCONS=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-OPTIONS=	NOCLIENTS "Omit client commands" off \
-		INFINITE  "Infinite retry in client commands" off
+OPTIONS_DEFINE=	NOCLIENTS INFINITE
+NOCLIENTS_DESC=	Omit client commands
+INFINITE_DESC=	Infinite retry in client commands
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_INFINITE)
+.if ${PORT_OPTIONS:MINFINITE}
 SCONS_ARGS+=	disable-timeout=yes
 .endif
 
-.if !defined(WITH_NOCLIENTS)
+.if ! ${PORT_OPTIONS:MNOCLIENTS}
 .for command in ${CLIENTS}
 PLIST_FILES+=	bin/${command}
 .endfor
@@ -61,13 +62,13 @@ post-build:
 	@${CP} ${WRKSRC}/doc/*.html ${WRKSRC}
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(WITH_NOCLIENTS)
+.if ! ${PORT_OPTIONS:MNOCLIENTS}
 .for command in ${CLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${command} ${PREFIX}/bin
 .endfor

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freedbd
-# Date created:				25 Aug 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	freedbd
 PORTVERSION=	0.1
@@ -20,11 +16,11 @@ USE_PERL5_RUN=	yes
 PLIST_FILES=	bin/freedbd bin/freedbd-txt2xml %%EXAMPLESDIR%%/sample_db.txt
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
-OPTIONS=	XML "XML support" off
+OPTIONS_DEFINE=	XML
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XML)
+.if ${PORT_OPTIONS:MXML}
 USE_GNOME+=	libxml2
 CONFIGURE_ARGS+=--with-xml
 RUN_DEPENDS+=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
@@ -35,7 +31,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/txt2xml.pl ${PREFIX}/bin/freedbd-txt2xml
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/sample_db.txt ${EXAMPLESDIR}
-.if defined(WITH_XML)
+.if ${PORT_OPTIONS:MXML}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/db_parse.pl ${PREFIX}/bin/freedbd-parse
 	${INSTALL_DATA} ${WRKSRC}/examples/sample_db.xml ${EXAMPLESDIR}
 .endif

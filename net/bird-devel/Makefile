@@ -18,7 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --enable-mpls
 USE_CSTD=	gnu89
 
-OPTIONS=	KMPLS		"Enable kernel MPLS support" Off
+OPTIONS_DEFINE=	KMPLS
+KMPLS_DESC=	kernel MPLS support
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -26,7 +27,7 @@ USE_RC_SUBR=	bird
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_KMPLS)
+.if ${PORT_OPTIONS:MKMPLS}
 CONFIGURE_ARGS+=	--enable-kmpls
 .endif
 

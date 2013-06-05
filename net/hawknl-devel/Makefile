@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hawknl
-# Date created:		2006-03-04
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	hawknl
 PORTVERSION=	1.70
@@ -29,7 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=	${WRKDIR}/HawkNL1.70
 
-OPTIONS=	OPTIMIZATION	"Enable optimization"	off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +33,7 @@ OPTIONS=	OPTIMIZATION	"Enable optimization"	off
 BROKEN=		does not compile on ${ARCH}
 .endif
 
-.if defined(WITH_OPTIMIZATION)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-funroll-all-loops -ffast-math -fomit-frame-pointer -D_GNU_SOURCE -D_REENTRANT
 .endif
 
@@ -46,7 +42,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/nlinternal.h ${WRKSRC}/src/htinternal.h
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in readme.txt NLchanges.txt
 	@${INSTALL_DATA} ${WRKSRC}/src/${FILE} ${DOCSDIR}

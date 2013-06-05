@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asterisk-addons
-# Date created:				23 March 2006
-# Whom:					Fabian Gast <fgast@only640k.org>
-#
+# Created by: Fabian Gast <fgast@only640k.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asterisk14
 PORTVERSION=	1.4.13
@@ -20,7 +16,8 @@ COMMENT=	GPL modules for the Asterisk Open Source PBX
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
-OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
+OPTIONS_DEFINE=	SAMPLE_CONFIG
+SAMPLE_CONFIG_DESC=	Install sample configuration files
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 USE_AUTOTOOLS=	libtool
@@ -30,7 +27,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SAMPLE_CONFIG)
+.if ${PORT_OPTIONS:MSAMPLE_CONFIG}
 PLIST_SUB+=	SAMPLE_CONFIG=""
 .else
 PLIST_SUB+=	SAMPLE_CONFIG="@comment "
@@ -43,7 +40,7 @@ pre-configure:
 	fi
 
 post-install:
-.if defined(WITH_SAMPLE_CONFIG)
+.if ${PORT_OPTIONS:MSAMPLE_CONFIG}
 	@cd ${WRKSRC} && ${GMAKE} samples
 .endif
 

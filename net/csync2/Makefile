@@ -9,7 +9,7 @@ MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
-COMMENT=	A cluster synchronization tool
+COMMENT=	Cluster synchronization tool
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		tasn1.5:${PORTSDIR}/security/libtasn1 \
@@ -18,9 +18,12 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-OPTIONS=	CSYNC2_COMPARE "Install csync2-compare script" off
+OPTIONS_DEFINE=	CSYNC2_COMPARE
+CSYNC2_COMPARE_DESC=	Install csync2-compare script
 
-.include <bsd.port.pre.mk>
+USES=	pkgconfig
+
+.include <bsd.port.options.mk>
 
 MAN1=		csync2.1
 
@@ -35,7 +38,7 @@ USE_RC_SUBR=	csync2
 PLIST_FILES=	etc/csync2.cfg-dist \
 		sbin/csync2
 
-.if defined(WITH_CSYNC2_COMPARE)
+.if ${PORT_OPTIONS:MCSYNC2_COMPARE}
 RUN_DEPENDS+=	bash>=0:${PORTSDIR}/shells/bash
 PLIST_FILES+=	sbin/csync2-compare
 CSYNC2_COMPARE=	csync2-compare
@@ -51,4 +54,4 @@ post-patch:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

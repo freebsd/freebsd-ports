@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bcusdk-eibd
-# Date Created:				6 December 2007
-# Whom:					Björn König <bkoenig@alpha-tierchen.de>
-#
+# Created by: Björn König <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	bcusdk
 PORTVERSION=	0.0.4
@@ -29,12 +25,11 @@ CONFIGURE_ARGS+=--enable-onlyeibd \
 		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS}"
 
-OPTIONS=	JAVA "Install Java client library" off \
-		EXAMPLES "Install example client applications" on
+OPTIONS_DEFINE=	JAVA EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=--enable-java
 USE_JAVA=	yes
 PLIST_SUB+=	JAVA=""
@@ -42,7 +37,7 @@ PLIST_SUB+=	JAVA=""
 PLIST_SUB+=	JAVA="@comment "
 .endif
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
@@ -52,15 +47,15 @@ pre-patch:
 	@${REINPLACE_CMD} "s,-ri,-Ei.bak," ${WRKSRC}/eibd/client/php/Makefile.in
 	@${REINPLACE_CMD} "s, bcu,," ${WRKSRC}/eibd/Makefile.in
 	@${REINPLACE_CMD} "s, php,," ${WRKSRC}/eibd/client/Makefile.in
-.if !defined(WITH_EXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} "s, examples,," ${WRKSRC}/eibd/Makefile.in
 .else
 	@${REINPLACE_CMD} -e "s,^\(examplesdir = \).*,\1${EXAMPLESDIR}," \
 		-e "s,^\(bindir = \).*,\1${EXAMPLESDIR}/bin," \
 		${WRKSRC}/eibd/examples/Makefile.in
 .endif
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 	@${REINPLACE_CMD} "s,^\(javadir = \).*,\1${JAVASHAREDIR}," ${WRKSRC}/eibd/client/java/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
