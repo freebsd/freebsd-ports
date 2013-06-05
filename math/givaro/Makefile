@@ -16,25 +16,21 @@ LICENSE_PERMS=	auto-accept
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
-OPTIONS=	DOCS "build HTML documents (requires doxygen)" off
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS =	--with-gmp="${LOCALBASE}"
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOXYGEN
+
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS)  && !defined(NOPORTDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ARGS+=	--enable-doc --with-docdir="${DOCSDIR}"
-.elifndef(NOPORTDOCS)
-NOPORTDOCS=	yes
 .endif
 
-.if ${LOCALBASE} == "/usr/local"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/{s/-O2 //;s/-pipe//;}' \
@@ -42,11 +38,11 @@ post-patch:
 		-e '/^WARN_CFLAGS="-Wall"/d' \
 		-e '/if test "x$$WARN" = "xyes"/s/$$/ WARN_CFLAGS="-Wall" ;/' \
 		${WRKSRC}/configure
-.if ${PORT_OPTIONS:MDOCS)  && !defined(NOPORTDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN)
 	@${REINPLACE_CMD} -e 's/sed -i/& ""/' ${WRKSRC}/docs/Makefile.in
 .endif
 
-.if ${PORT_OPTIONS:MDOCS)  && !defined(NOPORTDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 post-install:
 	@${TOUCH} ${DOCSDIR}/givaro-dev-html/.keep-me
 
