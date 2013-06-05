@@ -2,17 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	valgrind
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.1
 PORTEPOCH=	1
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/:dist \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/:dist \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/:manpages
+		http://mirror.shatow.net/freebsd/${PORTNAME}/:dist
 PKGNAMESUFFIX=	-snapshot
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
-		${DISTNAME}-manpages${EXTRACT_SUFX}:manpages
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
@@ -40,6 +37,8 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+PORTDOCS=	html
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.options.mk>
@@ -50,11 +49,6 @@ PLIST_SUB+=	MPI=""
 .else
 PLIST_SUB+=	MPI="@comment "
 .endif
-
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libsupc++
-
-post-install:
-	(cd ${WRKDIR}/valgrind-manpages/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
 
 .include <bsd.port.pre.mk>
 
@@ -69,6 +63,11 @@ PLIST_SUB+=	X86=""
 .else
 PLIST_SUB+=	X86="" ARCH=x86
 PLIST_SUB+=	AMD64="@comment "
+.endif
+
+.if !${PORT_OPTIONS:MDOCS}
+post-patch:
+	@${RM} -rf ${WRKSRC}/docs/html
 .endif
 
 .include <bsd.port.post.mk>
