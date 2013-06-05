@@ -1,7 +1,4 @@
-# New ports collection makefile for:	samhain-server
-# Date created:				2005-10-31
-# Whom:					David Thiel
-#
+# Created by: David Thiel
 # $FreeBSD$
 #
 

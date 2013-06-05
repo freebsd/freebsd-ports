@@ -13,13 +13,15 @@ COMMENT=	The Samhain Intrusion Detection System
 
 LICENSE=	GPLv2
 
-OPTIONS=	KCHECK "Enable rogue KLD detection" off \
-		GPG "Enable GnuPG support" off \
-		MYSQL "Enable MySQL logging" off \
-		POSTGRESQL "Enable PostgreSQL logging" off \
-		XML_LOGS "Enable XML-formatted logs" on \
-		LIBWRAP "Enable TCP wrapper support" on \
-		PRELUDE "Enable Prelude Framework support" off
+OPTIONS_DEFINE=	KCHECK GPG MYSQL PGSQL XML_LOGS LIBWRAP PRELUDE
+OPTIONS_DEFAULT=	XML_LOGS LIBWRAP
+KCHECK_DESC=	Enable rogue KLD detection
+GPG_DESC=	Enable GnuPG support
+MYSQL_DESC=	Enable MySQL logging
+PGSQL_DESC=	Enable PostgreSQL logging
+XML_LOGS_DESC=	Enable XML-formatted logs
+LIBWRAP_DESC=	Enable TCP wrapper support
+PRELUDE_DESC=	Enable Prelude Framework support
 
 SUB_FILES+=	pkg-install
 
@@ -41,7 +43,7 @@ MANUAL_PACKAGE_BUILD=	fails to link on pointyhat
 EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-config-h-in
 .endif
 
-.if defined(WITH_GPG)
+.if ${PORT_OPTIONS:MGPG}
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif
 
@@ -49,7 +51,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
 		--enable-suidcheck
 
-.if !defined(WITHOUT_XML_LOGS)
+.if ${PORT_OPTIONS:MXML_LOGS}
 CONFIGURE_ARGS+=	--enable-xml-log
 .endif
 .if defined(WITH_RUNAS_USER)
@@ -57,24 +59,24 @@ CONFIGURE_ARGS+=	--enable-identity=${WITH_RUNAS_USER}
 .else
 CONFIGURE_ARGS+=	--enable-identity=yule
 .endif
-.if defined(WITH_KCHECK)
+.if ${PORT_OPTIONS:MKCHECK}
 CONFIGURE_ARGS+=	--with-kcheck
 .endif
-.if defined(WITH_GPG)
+.if ${PORT_OPTIONS:MGPG}
 CONFIGURE_ARGS+=	--with-gpg=${PREFIX}/bin/gpg
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-database=mysql \
 			--with-cflags=-I${LOCALBASE}/include/mysql \
 			--with-libs=-L${LOCALBASE}/lib/mysql
 .endif
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-database=postgresql
 .endif
-.if !defined(WITHOUT_LIBWRAP)
+.if ${PORT_OPTIONS:MLIBWRAP}
 CONFIGURE_ARGS+=	--with-libwrap
 .endif
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 CONFIGURE_ARGS+=	--enable-network=client \
 		--with-data-file=REQ_FROM_SERVER/var/lib/samhain/data.samhain \
 		--with-config-file=REQ_FROM_SERVER
@@ -82,7 +84,7 @@ PLIST_SUB+=	SAMHAIN="" SETPWD="" YULE="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5+=	samhainrc.5
 MAN8+=	samhain.8
-.elif defined(WITH_SERVER)
+.elif ${PORT_OPTIONS:MSERVER}
 CONFIGURE_ARGS+=	--enable-network=server
 SUB_LIST+=	WITH_YULE="yes"
 PLIST_SUB+=	YULE="" SAMHAIN="@comment " SETPWD="@comment "
@@ -96,13 +98,13 @@ EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5+=	samhainrc.5
 MAN8+=	samhain.8
 .endif
-.if defined(WITH_LOG_SERVER)
-CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
+.if ${PORT_OPTIONS:MLOG_SERVER}
+CONFIGURE_ARGS+=	--with-logserver=true
 .endif
-.if defined(WITH_ALT_LOG_SERVER)
-CONFIGURE_ARGS+=	--with-altlogserver=${WITH_ALT_LOG_SERVER}
+.if ${PORT_OPTIONS:MALT_LOG_SERVER}
+CONFIGURE_ARGS+=	--with-altlogserver=true
 .endif
-.if defined(WITH_PRELUDE)
+.if ${PORT_OPTIONS:MPRELUDE}
 LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--with-prelude
 .endif
@@ -122,7 +124,7 @@ pre-everything::
 IGNORE=		can't build client and server at once
 .endif
 
-.if defined(WITH_KCHECK)
+.if ${PORT_OPTIONS:MKCHECK}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem"
 	@${ECHO_MSG} "and /dev/mem. If you're not building as root, please hit"
@@ -130,11 +132,11 @@ IGNORE=		can't build client and server at once
 	@${ECHO_MSG}
 .endif
 
-.if defined(WITH_MYSQL) && !defined(WITH_XML_LOGS)
+.if ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MXML_LOGS}
 IGNORE=		XML logging is required to log to MySQL
 .endif
 
-.if defined(WITH_POSTGRESQL) && !defined(WITH_XML_LOGS)
+.if ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MXML_LOGS}
 IGNORE=		XML logging is required to log to Postgres
 .endif
 
@@ -154,7 +156,7 @@ post-install:
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/yule.sh
 	@${CP} ${WRKSRC}/yulerc ${PREFIX}/etc/yulerc.sample
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-2_3.pdf ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server.html ${DOCSDIR}

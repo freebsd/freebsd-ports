@@ -1,9 +1,5 @@
-# New ports collection makefile for:	samhain-client
-# Date created:				2005-10-31
-# Whom:					David Thiel
-#
+# Created by: David Thiel
 # $FreeBSD$
-#
 #
 # This port recognizes the following non-boolean tunables:
 #
