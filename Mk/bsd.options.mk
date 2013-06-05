@@ -157,6 +157,29 @@ OPTIONS_GROUP_${group}:=	${OPTIONS_GROUP_${group}:N${opt}}
 .  endfor
 .endfor
 
+# Remove empty SINGLE/GROUP/RADIO/MULTI
+# Can be empty because of exclude/slaves
+.for single in ${OPTIONS_SINGLE}
+.if empty(OPTIONS_SINGLE_${single})
+OPTIONS_SINGLE:=	${OPTIONS_SINGLE:N${single}}
+.endif
+.endfor
+.for radio in ${OPTIONS_RADIO}
+.if empty(OPTIONS_RADIO_${radio})
+OPTIONS_RADIO:=	${OPTIONS_RADIO:N${radio}}
+.endif
+.endfor
+.for group in ${OPTIONS_GROUP}
+.if empty(OPTIONS_GROUP_${group})
+OPTIONS_GROUP:=	${OPTIONS_GROUP:N${group}}
+.endif
+.endfor
+.for multi in ${OPTIONS_MULTI}
+.if empty(OPTIONS_MULTI_${multi})
+OPTIONS_MULTI:=	${OPTIONS_MULTI:N${multi}}
+.endif
+.endfor
+
 # complete list
 COMPLETE_OPTIONS_LIST=	${ALL_OPTIONS}
 .for single in ${OPTIONS_SINGLE}
