@@ -333,6 +333,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/debugthg.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/debugthg.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/debugthg.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/editor.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/editor.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/editor.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.pyo
@@ -351,12 +354,12 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/paths.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/paths.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/paths.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/settings.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/settings.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/settings.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/shlib.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/shlib.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/shlib.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/terminal.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/terminal.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/terminal.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/thgstatus.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/thgstatus.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/thgstatus.pyo
@@ -440,7 +443,6 @@ share/pixmaps/tortoisehg/icons/menuimport.ico
 share/pixmaps/tortoisehg/icons/menulog.ico
 share/pixmaps/tortoisehg/icons/menumerge.ico
 share/pixmaps/tortoisehg/icons/menupatch.ico
-share/pixmaps/tortoisehg/icons/menurelocate.ico
 share/pixmaps/tortoisehg/icons/menurepobrowse.ico
 share/pixmaps/tortoisehg/icons/menurevert.ico
 share/pixmaps/tortoisehg/icons/menurevisiongraph.ico
@@ -471,6 +473,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-archive.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect-bad-good.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect-good-bad.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-bundle.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-clone.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-commit.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-compress.svg
@@ -541,6 +544,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/view-diff.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-file.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-filter.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-refresh.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/view-hidden.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/visualdiff.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/help-browser.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/help-readme.svg
