@@ -275,9 +275,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.py
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.pyo
-%%PYTHON_SITELIBDIR%%/salt/modules/locale.py
-%%PYTHON_SITELIBDIR%%/salt/modules/locale.pyc
-%%PYTHON_SITELIBDIR%%/salt/modules/locale.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/localemod.py
+%%PYTHON_SITELIBDIR%%/salt/modules/localemod.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/localemod.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/locate.py
 %%PYTHON_SITELIBDIR%%/salt/modules/locate.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/locate.pyo
