@@ -1,9 +1,5 @@
-# Ports collection makefile for: gotoblas
-# Date created:         20070203
-# Whom:			Sato Hiroki <hrs@FreeBSD.org>
-#
+# Created by: Sato Hiroki <hrs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
@@ -42,15 +38,16 @@ SUB_FILES=	pkg-message
 SUB_LIST=	MAXTHREADS=${MAXTHREADS}
 
 .if defined(PACKAGE_BUILDING)
-DYNAMIC_ARCH_DEFAULT=	on
-.else
-DYNAMIC_ARCH_DEFAULT=	off
+OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
+OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
 .endif
 
-OPTIONS=	DYNAMIC_ARCH	"Support multiple CPU types on i386 and amd64" \
-							${DYNAMIC_ARCH_DEFAULT} \
-		INTERFACE64	"Use 8 byte integers on 64-bit architectures" off \
-		OPENMP		"Use OpenMP for threading" off
+OPTIONS_DEFINE_i386=	DYNAMIC_ARCH
+OPTIONS_DEFINE_amd64=	DYNAMIC_ARCH
+OPTIONS_DEFINE=	INTERFACE64 OPENMP
+DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
+INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
+OPENMP_DESC=		Use OpenMP for threading
 #		QUAD_PRECISION	"Support IEEE quad precision (experimental)" off
 
 .include <bsd.port.pre.mk>
@@ -63,23 +60,19 @@ GOTOFLAGS+=	BINARY32=1
 GOTOFLAGS+=	BINARY64=1
 .endif
 
-.if ! ( defined(WITH_DYNAMIC_ARCH) && ( ${ARCH} == "amd64" || ${ARCH} == "i386" ) )
-MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
-.endif
-
-.if defined(WITH_DYNAMIC_ARCH)
+.if ${PORT_OPTIONS:MDYNAMIC_ARCH}
 GOTOFLAGS+=	DYNAMIC_ARCH=1
 .endif
 
-.if defined(WITH_INTERFACE64)
+.if ${PORT_OPTIONS:MINTERFACE64}
 GOTOFLAGS+=	INTERFACE64=1
 .endif
 
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 GOTOFLAGS+=	USE_OPENMP=1
 .endif
 
-.if defined(WITH_QUAD_PRECISION)
+.if ${PORT_OPTIONS:MQUAD_PRECISION}
 BROKEN =	WITH_QUAD_PRECISION is broken; please disable this option
 GOTOFLAGS+=	QUAD_PRECISION=1
 .endif
@@ -112,7 +105,7 @@ post-patch:
 	-e 's+%%_GCC_RUNTIME%%+${_GCC_RUNTIME}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 	${REINPLACE_CMD} -e "s+GOTO_NUM_THREADS+OMP_NUM_THREADS+g" \
 		${WRKSRC}/test/Makefile \
 		${WRKSRC}/ctest/Makefile
@@ -128,12 +121,12 @@ do-build:
 	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2p.a
 	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2p.so.1
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 	${LOCALBASE}/bin/strip -X ${WRKDIR}/lib/*.so.1
 .endif
 
 BENCHMARK_MAXTHREADS?=	${MAXTHREADS}
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 BENCHMARK_THREADS_FLAG =	OMP_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 .else
 BENCHMARK_THREADS_FLAG =	GOTO_NUM_THREADS=${BENCHMARK_MAXTHREADS}
