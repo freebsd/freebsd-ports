@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a3c2dee5-cdb9-11e2-b9ce-080027019be0">
+    <topic>telepathy-gabble -- TLS verification bypass</topic>
+    <affects>
+      <package>
+	<name>telepathy-gabble</name>
+	<range><lt>0.16.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon McVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/telepathy/2013-May/006449.html">
+	  <p>This release fixes a man-in-the-middle attack.</p>
+	  <p>If you use an unencrypted connection to a "legacy Jabber"
+	     (pre-XMPP) server, this version of Gabble will not connect
+	     until you make one of these configuration changes:</p>
+	  <p>. upgrade the server software to something that supports XMPP 1.0; or</p>
+	  <p>. use an encrypted "old SSL" connection, typically on port 5223
+	     (old-ssl); or</p>
+	  <p>. turn off "Encryption required (TLS/SSL)" (require-encryption).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1431</cvename>
+      <url>http://lists.freedesktop.org/archives/telepathy/2013-May/006449.html</url>
+    </references>
+    <dates>
+      <discovery>2013-05-27</discovery>
+      <entry>2013-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4865d189-cd62-11e2-ae11-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
