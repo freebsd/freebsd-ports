@@ -1,7 +1,4 @@
-# New ports collection makefile for:	polypaudio
-# Date created:		29 October 2004
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports-stable/audio/pulseaudio/Makefile,v 1.7 2010/06/25 20:35:01 kwm Exp $
 #
@@ -59,10 +56,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 USERS=		pulse
 GROUPS=		pulse pulse-access pulse-rt
 
-OPTIONS=	JACK "JACK audio support" Off \
-		AVAHI "Enable Avahi mDNS support" On \
-		HAL "Enable HAL support" On \
-		GCONF "Enable GConf support" On
+OPTIONS_DEFINE=	JACK AVAHI HAL GCONF
+OPTIONS_DEFAULT=	AVAHI HAL GCONF
 
 PULSE_VERSION=	${PORTVERSION}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
@@ -73,7 +68,7 @@ MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
@@ -81,7 +76,7 @@ PLIST_SUB+=	JACK="@comment "
 CONFIGURE_ARGS+=--disable-jack
 .endif
 
-.if !defined(WITHOUT_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	AVAHI=""
 .else
@@ -89,7 +84,7 @@ CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	AVAHI="@comment "
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	HAL=""
 .else
@@ -97,7 +92,7 @@ CONFIGURE_ARGS+=--disable-hal
 PLIST_SUB+=	HAL="@comment "
 .endif
 
-.if !defined(WITHOUT_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 PLIST_SUB+=	GCONF=""
 .else
