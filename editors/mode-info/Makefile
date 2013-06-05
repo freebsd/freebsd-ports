@@ -1,13 +1,9 @@
-# New ports collection makefile for:	elisp-info.el
-# Date Created:		21 Jan 2002
-# Whom:			Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mode-info
 PORTVERSION=	0.8.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
@@ -20,12 +16,6 @@ MI_ELISP_LANG?=	en
 MI_WITH_MAKE?=	yes
 
 .if (${MI_WITH_ELISP} == "yes")
-.if (${MI_ELISP_LANG} == "en")
-BUILD_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
-RUN_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
-.else
-IGNORE=	cannot install: MI_ELISP_LANG should be "en"
-.endif
 MI_INDEX+=	mi-elisp.idx
 PLIST_SUB+=	MI_WITH_ELISP=""
 .else
@@ -43,7 +33,7 @@ PLIST_SUB+=	MI_WITH_MAKE="@comment "
 
 USE_EMACS=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 LISPDIR?=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -64,7 +54,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mode-info/
 .endfor
 	${RM} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mode-info/ChangeLog
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in README README.ja ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -72,4 +62,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
