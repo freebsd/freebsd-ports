@@ -296,12 +296,12 @@
 %%MPIDIR%%/lib/openmpi/mca_topo_unity.so
 %%MPIDIR%%/lib/openmpi/mca_vprotocol_pessimist.la
 %%MPIDIR%%/lib/openmpi/mca_vprotocol_pessimist.so
-%%MPIDIR%%/lib/pkgconfig/ompi-c.pc
-%%MPIDIR%%/lib/pkgconfig/ompi-cxx.pc
-%%MPIDIR%%/lib/pkgconfig/ompi-f77.pc
-%%MPIDIR%%/lib/pkgconfig/ompi-f90.pc
-%%MPIDIR%%/lib/pkgconfig/ompi.pc
-%%MPIDIR%%/lib/pkgconfig/orte.pc
+%%MPIDIR%%/libdata/pkgconfig/ompi-c.pc
+%%MPIDIR%%/libdata/pkgconfig/ompi-cxx.pc
+%%MPIDIR%%/libdata/pkgconfig/ompi-f77.pc
+%%MPIDIR%%/libdata/pkgconfig/ompi-f90.pc
+%%MPIDIR%%/libdata/pkgconfig/ompi.pc
+%%MPIDIR%%/libdata/pkgconfig/orte.pc
 %%MPIDIR%%/share/openmpi/amca-param-sets/example.conf
 %%MPIDIR%%/share/openmpi/help-coll-sync.txt
 %%MPIDIR%%/share/openmpi/help-dash-host.txt
@@ -468,7 +468,6 @@
 @dirrm %%MPIDIR%%/man/man3
 @dirrm %%MPIDIR%%/man/man1
 @dirrm %%MPIDIR%%/man
-@dirrm %%MPIDIR%%/lib/pkgconfig
 @dirrm %%MPIDIR%%/lib/openmpi
 @dirrm %%MPIDIR%%/lib
 @dirrm %%MPIDIR%%/include/vampirtrace
