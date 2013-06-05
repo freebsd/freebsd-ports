@@ -1,9 +1,5 @@
-# New ports collection makefile for:	horde
-# Date created:			24 February 2007
-# Whom:				Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	meta
 PORTVERSION=	1.0
@@ -18,103 +14,106 @@ COMMENT=	Meta port for the horde framework
 NO_BUILD=	yes
 LHORDEDIR?=	www/horde
 
-OPTIONS=	ANSEL "Photo Gallery" off	\
-		CHORA "CVS Web Viewer" off	\
-		DIMP "Dynamic Imp" off	\
-		GOLLEM "Web-Based File Manager" off	\
-		HERMES "Time Tracking Application" off	\
-		HPASSWD "Password Changing Module" off	\
-		IMP "IMAP Webmail System" on	\
-		INGO "Email-Filter Management" on	\
-		JETA "Java SSH Applets" off	\
-		KRONOLITH "Calendar Application" off \
-		MIMP "Mobile Webmail System" off	\
-		MNEMO "Notes and Memo Application" off	\
-		NAG "Task List Manager" on	\
-		NIC "Network Monitor" off	\
-		TREAN "Bookmark Manager" off	\
-		TURBA "Contact Management" on	\
-		VACATION "Vacation & Auto Respond" off	\
-		WHUPS "Bug Tracking/Ticket System" off	\
-		KLUTZ "Comic Strip Viewer" off
+OPTIONS_DEFINE=	ANSEL CHORA DIMP GOLLEM HPASSWD IMP INGO JETA \
+		KRONOLITH MIMP MNEMO NAG NIC TREAN TURBA VACATION \
+		WHUPS KLUTZ
+ANSEL_DESC=	Photo Gallery
+CHORA_DESC=	CVS Web Viewer
+DIMP_DESC=	Dynamic Imp
+GOLLEM_DESC=	Web-Based File Manager
+HERMES_DESC=	Time Tracking Application
+HPASSWD_DESC=	Password Changing Module
+IMP_DESC=	IMAP Webmail System
+INGO_DESC=	Email-Filter Management
+JETA_DESC=	Java SSH Applets
+KRONOLITH_DESC=	Calendar Application
+MIMP_DESC=	Mobile Webmail System
+MNEMO_DESC=	Notes and Memo Application
+NAG_DESC=	Task List Manager
+NIC_DESC=	Network Monitor
+TREAN_DESC=	Bookmark Manager
+TURBA_DESC=	Contact Management
+VACATION_DESC=	Vacation & Auto Respond
+WHUPS_DESC=	Bug Tracking/Ticket System
+KLUTZ_DESC=	Comic Strip Viewer
 
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde3-base
 
-.if !defined(WITHOUT_IMP)
+.if ${PORT_OPTIONS:MIMP}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/imp/index.php:${PORTSDIR}/mail/horde3-imp
 .endif
 
-.if defined(WITH_MIMP)
+.if ${PORT_OPTIONS:MMIMP}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mimp/index.php:${PORTSDIR}/mail/horde3-mimp
 .endif
 
-.if defined(WITH_DIMP)
+.if ${PORT_OPTIONS:MDIMP}
 RUN_DEPENDS+= ${LOCALBASE}/${LHORDEDIR}/dimp/compose.php:${PORTSDIR}/mail/horde3-dimp
 .endif
 
-.if !defined(WITHOUT_INGO)
+.if ${PORT_OPTIONS:MINGO}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ingo/filters.php:${PORTSDIR}/mail/horde3-ingo
 .endif
 
-.if !defined(WITHOUT_TURBA)
+.if ${PORT_OPTIONS:MTURBA}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/turba/minisearch.php:${PORTSDIR}/mail/horde3-turba
 .endif
 
-.if defined(WITH_KRONOLITH)
+.if ${PORT_OPTIONS:MKRONOLITH}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/kronolith/index.php:${PORTSDIR}/deskutils/horde3-kronolith
 .endif
 
-.if defined(WITH_MNEMO)
+.if ${PORT_OPTIONS:MMNEMO}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mnemo/index.php:${PORTSDIR}/deskutils/horde3-mnemo
 .endif
 
-.if !defined(WITHOUT_NAG)
+.if ${PORT_OPTIONS:MNAG}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nag/data.php:${PORTSDIR}/deskutils/horde3-nag
 .endif
 
-.if defined(WITH_CHORA)
+.if ${PORT_OPTIONS:MCHORA}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/chora/index.php:${PORTSDIR}/devel/horde3-chora
 .endif
 
-.if defined(WITH_GOLLEM)
+.if ${PORT_OPTIONS:MGOLLEM}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/gollem/index.php:${PORTSDIR}/ftp/horde3-gollem
 .endif
 
-.if defined(WITH_JETA)
+.if ${PORT_OPTIONS:MJETA}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/jeta/index.php:${PORTSDIR}/security/horde3-jeta
 .endif
 
-.if defined(WITH_HPASSWD)
+.if ${PORT_OPTIONS:MHPASSWD}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/passwd/index.php:${PORTSDIR}/www/horde3-passwd
 .endif
 
-.if defined(WITH_VACATION)
+.if ${PORT_OPTIONS:MVACATION}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/vacation/main.php:${PORTSDIR}/mail/horde3-vacation
 .endif
 
-.if defined(WITH_TREAN)
+.if ${PORT_OPTIONS:MTREAN}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/trean/data.php:${PORTSDIR}/www/horde3-trean
 .endif
 
-.if defined(WITH_NIC)
+.if ${PORT_OPTIONS:MNIC}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nic/status.php:${PORTSDIR}/net-mgmt/horde3-nic
 .endif
 
-.if defined(WITH_ANSEL)
+.if ${PORT_OPTIONS:MANSEL}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ansel/gallery.php:${PORTSDIR}/www/horde3-ansel
 .endif
 
-.if defined(WITH_WHUPS)
+.if ${PORT_OPTIONS:MWHUPS}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/whups/index.php:${PORTSDIR}/devel/horde3-whups
 .endif
 
-.if defined(WITH_HERMES)
+.if ${PORT_OPTIONS:MHERMES}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/hermes/index.php:${PORTSDIR}/deskutils/horde3-hermes
 .endif
 
-.if defined(WITH_KLUTZ)
+.if ${PORT_OPTIONS:MKLUTZ}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/klutz/index.php:${PORTSDIR}/deskutils/horde3-klutz
 .endif
 

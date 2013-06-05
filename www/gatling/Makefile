@@ -1,9 +1,5 @@
-# Ports collection Makefile for: gatling
-# Date created:			Feb 21, 2004
-# Whom:				Thomas-Martin Seck <tmseck@netcologne.de>
-#
+# Created by: Thomas-Martin Seck <tmseck@netcologne.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gatling
 PORTVERSION=	0.13
@@ -35,15 +31,15 @@ PORTDOCS=	CHANGES README README.antidos README.cgi README.ftp \
 PORTEXAMPLES=	run-gatling cgi acc getlinks hcat hitprofile matchiprange \
 		referrer
 
-OPTIONS=	GATLING_BENCHMARKS "Install some benchmark programs" on \
-		GATLING_SMB "Add (read only) SMB support" on \
-		GATLING_TLS "Build and install tlsgatling" on \
-		GATLING_ZLIB "Compress outgoing data" on \
-		GATLING_OPTIMIZED_CFLAGS "Add additional optimizations" on
+OPTIONS_DEFINE=	BENCHMARKS SMB TLS ZLIB OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	BENCHMARKS SMB TLS ZLIB OPTIMIZED_CFLAGS
+BENCHMARKS_DESC=	Install some benchmark programs
+TLS_DESC=		Build and install tlsgatling
+ZLIB_DESC=		Compress outgoing data
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GATLING_BENCHMARKS) || defined(WITH_BENCHMARKS)
+.if ${PORT_OPTIONS:MBENCHMARKS}
 PORTDOCS+=	README.bindbench README.forkbench README.httpbench \
 		README.manymapbench README.mmapbench
 bin+=		bindbench forkbench forksbench httpbench ioerr manymapbench \
@@ -53,11 +49,11 @@ MAN1+=		bench.1
 MAKE_ENV+=	BENCHMARKS=1
 .endif
 
-.if defined(WITH_GATLING_OPTIMIZED_CFLAGS) && !defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS} && !defined(WITH_DEBUG)
 CFLAGS+=	-O2 -fomit-frame-pointer
 .endif
 
-.if defined(WITH_GATLING_SMB)
+.if ${PORT_OPTIONS:MSMB}
 USES+=		iconv
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	ICONV=1
@@ -65,17 +61,17 @@ MAKE_ENV+=	ICONV=1
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-disable_smb
 .endif
 
-.if defined(WITH_GATLING_TLS)
+.if ${PORT_OPTIONS:MTLS}
 MAKE_ENV+=	TLSGATLING=1
 sbin+=		tlsgatling
 PORTDOCS+=	README.tls
 .endif
 
-.if defined(WITH_GATLING_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 MAKE_ENV+=	ZLIB=1
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	DEBUG=1
 STRIP=
 .endif
@@ -93,7 +89,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${sbin} ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/gatling_wrapper ${PREFIX}/sbin
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
@@ -101,7 +97,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
 .endif
 	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
