@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openldap23-server
-# Date created:				02 May 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
-#
+# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
-#
 
 PORTNAME=		openldap
 DISTVERSION=		2.3.43
@@ -46,32 +42,36 @@ PORTREVISION_CLIENT=	1
 PORTREVISION_SERVER=	0
 
 .if !defined(CLIENT_ONLY)
-OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
-		PERL "With Perl backend" off \
-		SHELL "With Shell backend (disables threading)" off \
-		ODBC "With SQL backend" off \
-		SLP "With SLPv2 (RFC 2608) support" off \
-		SLAPI "With Netscape SLAPI plugin API" off \
-		TCP_WRAPPERS "With tcp wrapper support" on \
-		BDB "With BerkeleyDB support" on \
-		ACCESSLOG "With In-Directory Access Logging overlay" off \
-		AUDITLOG "With Audit Logging overlay" off \
-		DENYOP "With Deny Operation overlay" off \
-		DYNGROUP "With Dynamic Group overlay" off \
-		DYNLIST "With Dynamic List overlay" off \
-		LASTMOD "With Last Modification overlay" off \
-		PPOLICY "With Password Policy overlay" off \
-		PROXYCACHE "With Proxy Cache overlay" off \
-		REFINT "With Referential Integrity overlay" off \
-		RETCODE "With Return Code testing overlay" off \
-		RWM "With Rewrite/Remap overlay" off \
-		SYNCPROV "With Syncrepl Provider overlay" off \
-		TRANSLUCENT "With Translucent Proxy overlay" off \
-		UNIQUE "With attribute Uniqueness overlay" off \
-		VALSORT "With Value Sorting overlay" off \
-		ACI "With per-object ACIs (experimental)" off \
-		DYNAMIC_BACKENDS "Build dynamic backends" on \
-		SLURPD "Build slurpd replication daemon" on
+OPTIONS_DEFINE=	SASL PERL SHELL ODBC SLP SLAPI TCP_WRAPPERS BDB ACCESSLOG DENYOP \
+		DYNGROUP DYNLIST LASTMOD PPOLICY PROXYCACHE REFINT RETCODE RWM \
+		SYNCPROV TRANSLUCENT UNIQUE VALSORT ACI DYNAMIC_BACKENDS SLURPD
+OPTIONS_DEFAULT=	TCP_WRAPPERS BDB DYNAMIC_BACKENDS SLURPD
+SASL_DESC=		With (Cyrus) SASL2 support
+PERL_DESC=		With Perl backend
+SHELL_DESC=		With Shell backend (disables threading)
+ODBC_DESC=		With SQL backend
+SLP_DESC=		With SLPv2 (RFC 2608) support
+SLAPI_DESC=		With Netscape SLAPI plugin API
+TCP_WRAPPERS_DESC=	With tcp wrapper support
+BDB_DESC=		With BerkeleyDB support
+ACCESSLOG_DESC=		With In-Directory Access Logging overlay
+AUDITLOG_DESC=		With Audit Logging overlay
+DENYOP_DESC=		With Deny Operation overlay
+DYNGROUP_DESC=		With Dynamic Group overlay
+DYNLIST_DESC=		With Dynamic List overlay
+LASTMOD_DESC=		With Last Modification overlay
+PPOLICY_DESC=		With Password Policy overlay
+PROXYCACHE_DESC=	With Proxy Cache overlay
+REFINT_DESC=		With Referential Integrity overlay
+RETCODE_DESC=		With Return Code testing overlay
+RWM_DESC=		With Rewrite/Remap overlay
+SYNCPROV_DESC=		With Syncrepl Provider overlay
+TRANSLUCENT_DESC=	With Translucent Proxy overlay
+UNIQUE_DESC=		With attribute Uniqueness overlay
+VALSORT_DESC=		With Value Sorting overlay
+ACI_DESC=		With per-object ACIs (experimental)
+DYNAMIC_BACKENDS_DESC=	Build dynamic backends
+SLURPD_DESC=		Build slurpd replication daemon
 .endif
 
 .if defined(CLIENT_ONLY)
@@ -87,7 +87,7 @@ CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g'
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if ${PORT_OPTIONS:MSASL}
 PKGNAMESUFFIX=		-sasl-client
 COMMENT=		Open source LDAP client implementation with SASL2 support
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
@@ -141,7 +141,7 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
 			--enable-dynamic
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
@@ -171,7 +171,7 @@ USE_RC_SUBR=		slapd ${SLURPDSH}
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
-.if defined(WITH_MODULES) || !defined(WITHOUT_DYNAMIC_BACKENDS) || defined(WITH_SLAPI)
+.if defined(WITH_MODULES) || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
 USE_AUTOTOOLS+=		libltdl
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
@@ -181,7 +181,7 @@ PLIST_SUB+=		MODULES="@comment "
 
 SED_MODULES=		-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/'
 
-.if !defined(WITHOUT_DYNAMIC_BACKENDS)
+.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS}
 BACKEND_ENABLE=		"mod"
 BACKEND_PLIST=		""
 SED_MODULES+=		-e 's/\# *\(modulepath\)/\1/' \
@@ -203,73 +203,73 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 
 PLIST_SUB+=		BACKEND=${BACKEND_PLIST}
 
-.if defined(WITH_ACCESSLOG)
+.if ${PORT_OPTIONS:MACCESSLOG}
 CONFIGURE_ARGS+=	--enable-accesslog
 .endif
 
-.if defined(WITH_AUDITLOG)
+.if ${PORT_OPTIONS:MAUDITLOG}
 CONFIGURE_ARGS+=	--enable-auditlog
 .endif
 
-.if defined(WITH_DENYOP)
+.if ${PORT_OPTIONS:MDENYOP}
 CONFIGURE_ARGS+=	--enable-denyop
 .endif
 
-.if defined(WITH_DYNGROUP)
+.if ${PORT_OPTIONS:MDYNGROUP}
 CONFIGURE_ARGS+=	--enable-dyngroup
 .endif
 
-.if defined(WITH_DYNLIST)
+.if ${PORT_OPTIONS:MDYNLIST}
 CONFIGURE_ARGS+=	--enable-dynlist
 .endif
 
-.if defined(WITH_LASTMOD)
+.if ${PORT_OPTIONS:MLASTMOD}
 CONFIGURE_ARGS+=	--enable-lastmod
 .endif
 
-.if defined(WITH_PPOLICY)
+.if ${PORT_OPTIONS:MPPOLICY}
 CONFIGURE_ARGS+=	--enable-ppolicy
 .endif
 
-.if defined(WITH_PROXYCACHE)
+.if ${PORT_OPTIONS:MPROXYCACHE}
 CONFIGURE_ARGS+=	--enable-proxycache
 .endif
 
-.if defined(WITH_REFINT)
+.if ${PORT_OPTIONS:MREFINT}
 CONFIGURE_ARGS+=	--enable-refint
 .endif
 
-.if defined(WITH_RETCODE)
+.if ${PORT_OPTIONS:MRETCODE}
 CONFIGURE_ARGS+=	--enable-retcode
 .endif
 
-.if defined(WITH_RWM)
+.if ${PORT_OPTIONS:MRWM}
 CONFIGURE_ARGS+=	--enable-rwm
 .endif
 
-.if defined(WITH_SYNCPROV)
+.if ${PORT_OPTIONS:MSYNCPROV}
 CONFIGURE_ARGS+=	--enable-syncprov
 .else
 CONFIGURE_ARGS+=	--disable-syncprov
 .endif
 
-.if defined(WITH_TRANSLUCENT)
+.if ${PORT_OPTIONS:MTRANSLUCENT}
 CONFIGURE_ARGS+=	--enable-translucent
 .endif
 
-.if defined(WITH_UNIQUE)
+.if ${PORT_OPTIONS:MUNIQUE}
 CONFIGURE_ARGS+=	--enable-unique
 .endif
 
-.if defined(WITH_VALSORT)
+.if ${PORT_OPTIONS:MVALSORT}
 CONFIGURE_ARGS+=	--enable-valsort
 .endif
 
-.if defined(WITH_ACI)
+.if ${PORT_OPTIONS:MACI}
 CONFIGURE_ARGS+=	--enable-aci
 .endif
 
-.if defined(WITHOUT_BDB)
+.if ! ${PORT_OPTIONS:MBDB}
 CONFIGURE_ARGS+=	--disable-bdb \
 			--disable-hdb \
 			--enable-ldbm-api=bcompat
@@ -304,7 +304,7 @@ CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDB_LIB_NAME:R},' \
 			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDB_LIB_NAME:R},'
 .endif
 
-.if defined(WITH_SHELL)
+.if ${PORT_OPTIONS:MSHELL}
 CONFIGURE_ARGS+=	--without-threads --enable-shell=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SHELL=${BACKEND_PLIST}
 .else
@@ -312,7 +312,7 @@ PLIST_SUB+=		BACK_SHELL="@comment "
 WANT_OPENLDAP_THREADS=	yes
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--enable-perl=${BACKEND_ENABLE}
 CONFIGURE_ENV+=		PERLBIN="${PERL}"
@@ -321,7 +321,7 @@ PLIST_SUB+=		BACK_PERL=${BACKEND_PLIST}
 PLIST_SUB+=		BACK_PERL="@comment "
 .endif
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if ${PORT_OPTIONS:MSASL}
 CONFIGURE_ARGS+=	--enable-spasswd
 .endif
 
@@ -333,7 +333,7 @@ IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
 WITH_IODBC?=	yes
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--enable-sql=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SQL=${BACKEND_PLIST}
 .if defined(WITH_IODBC)
@@ -345,7 +345,7 @@ LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=		BACK_SQL="@comment "
 .endif
 
-.if defined(WITH_SLAPI)
+.if ${PORT_OPTIONS:MSLAPI}
 CONFIGURE_ARGS+=	--enable-slapi
 PLIST_SUB+=		SLAPI=""
 USE_LDCONFIG=		yes
@@ -353,7 +353,7 @@ USE_LDCONFIG=		yes
 PLIST_SUB+=		SLAPI="@comment "
 .endif
 
-.if defined(WITH_SLP)
+.if ${PORT_OPTIONS:MSLP}
 CONFIGURE_ARGS+=	--enable-slp
 LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
 .endif
@@ -367,7 +367,7 @@ CONFIGURE_ARGS+=	--disable-slurpd
 .endif
 
 # Include tcp-wrapper support
-.if !defined(WITHOUT_TCP_WRAPPERS) && exists(/usr/include/tcpd.h)
+.if ${PORT_OPTIONS:MTCP_WRAPPERS} && exists(/usr/include/tcpd.h)
 CONFIGURE_ARGS+=	--enable-wrappers
 .endif
 
@@ -425,7 +425,7 @@ pre-su-install:
 
 post-install:
 .if defined(CLIENT_ONLY)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 	@for dir in drafts rfc; do \
