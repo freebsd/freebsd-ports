@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.004.20121024
+PORTVERSION=	1.8.004.20130531
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-egw-pear-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	A web based GroupWare system
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
@@ -28,11 +28,15 @@ SUB_FILES=	pkg-message
 SUB_LIST=	EG_DIR=${EG_DIR} \
 		EG_DATA=${EG_DATA}
 
-OPTIONS_DEFINE=	MYSQL POSTGRE OSSL TNEF ZIP IMAP GD LDAP MBSTRING
+OPTIONS_DEFINE=	MYSQL POSTGRES OSSL TNEF ZIP IMAP GD LDAP MBSTRING
 OPTIONS_DEFAULT=MYSQL OSSL TNEF ZIP IMAP
 
 OSSL_DESC=	enable SSL connection support
 TNEF_DESC=	decoding winmail.dat attachments in felamimail support
+IMAP_DESC=	IMAP support
+MBSTRING_DESC=	Support multi-byte character sets
+POSTGRES_DESC=	PostgreSQL database support
+ZIP_DESC=	Install PHP zip extension
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MMYSQL}
@@ -40,7 +44,7 @@ USE_PHP+=	mysql
 USE_PHP+=	pdo_mysql
 .endif
 
-.if ${PORT_OPTIONS:MPOSTGRE}
+.if ${PORT_OPTIONS:MPOSTGRES}
 USE_PHP+=	pgsql
 USE_PHP+=	pdo_pgsql
 .endif
