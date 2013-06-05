@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slim-themes
-# Date Created:				22 May 2009
-# Whom:				 	Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.1
@@ -17,7 +13,9 @@ MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Theme pack for SLiM login app
 
 # But that's not all, see below.
-OPTIONS=	ALL_THEMES		"Include all themes" on
+OPTIONS_DEFINE=	ALL_THEMES
+OPTIONS_DEFAULT=	ALL_THEMES
+ALL_THEMES_DESC=	Include all themes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -31,25 +29,25 @@ PLIST_SUB+=	THEMEDIR=${THEMEDIR_REL}
 # I am substituting ' ' -> '+' because make in 6.x isn't able to properly
 # catch quoted strings with spaces.  7.x and 8.x are fine with this, so
 # once 6.x will be deorbited, we could switch just to spaces.
-THEMELIST=	GENTOO_SIMPLE%"Gentoo+simple+theme"%slim-gentoo-simple.tar.bz2%slim-gentoo-simple%gentoo-simple%old_themes \
-		ARCHLINUX_SIMPLE%"ArchLinux+simple+theme"%slim-archlinux-simple.tar.gz%slim-archlinux-simple%archlinux-simple%old_themes \
-		DEBIAN_MOREBLUE%"Debian+moreblue+theme"%slim-debian-moreblue.tar.bz2%debian-moreblue%debian-moreblue%old_themes \
-		FINGERPRINT%"Fingerprint+theme"%slim-fingerprint.tar.gz%fingerprint%fingerprint%old_themes \
-		FLAT%"Flat+theme"%slim-flat.tar.gz%flat%flat%old_themes \
-		LAKE%"Lake+theme"%slim-lake.tar.gz%lake%lake%old_themes \
-		RAINBOW%"Rainbow+theme"%slim-rainbow.tar.gz%rainbow%rainbow%old_themes \
-		REAR_WINDOW%"Rear+Window+theme"%slim-rear-window.tar.gz%rear-window%rear-window%old_themes \
-		SCOTLAND_ROAD%"Scotland+Road+theme"%slim-scotland-road.tar.gz%scotland-road%scotland-road%old_themes \
-		SUBWAY%"Subway+theme"%slim-subway.tar.gz%subway%subway%old_themes \
-		WAVE%"Wave+theme"%slim-wave.tar.gz%wave%wave%old_themes \
-		LUNAR_LINUX%"Lunar+Linux+theme"%slim-lunar-0.4.tar.bz2%slim-lunar-0.4%lunar%old_themes \
-		ZENWALK%"Zenwalk+theme"%slim-zenwalk.tar.gz%Zenwalk%zenwalk%old_themes \
-		PARALLEL_DIMS%"Parallel+Dimensions+theme"%slim-parallel-dimensions.tar.gz%parallel-dimensions%parallel-dimensions%old_themes \
-		CAPERNOITED%"Capernoited+theme"%slim-capernoited.tar.gz%capernoited%capernoited%old_themes \
-		MINDLOCK%"Mindlock+theme"%slim-mindlock.tar.gz%mindlock%mindlock%old_themes \
-		FLOWER2%"Flower2+theme"%slim-flower2.tar.gz%flower2%flower2%old_themes \
-		FREEBSD%"FreeBSD+theme"%fbsd-slim-theme.tar.bz2%fbsd%fbsd%new_themes \
-		GNEWSENSE%"gNewSense+theme"%slim-gnewsense-1.1.tar.bz2%slim-gnewsense-1.1%gnewsense%new_themes
+THEMELIST=	GENTOO_SIMPLE%Gentoo+simple+theme%slim-gentoo-simple.tar.bz2%slim-gentoo-simple%gentoo-simple%old_themes \
+		ARCHLINUX_SIMPLE%ArchLinux+simple+theme%slim-archlinux-simple.tar.gz%slim-archlinux-simple%archlinux-simple%old_themes \
+		DEBIAN_MOREBLUE%Debian+moreblue+theme%slim-debian-moreblue.tar.bz2%debian-moreblue%debian-moreblue%old_themes \
+		FINGERPRINT%Fingerprint+theme%slim-fingerprint.tar.gz%fingerprint%fingerprint%old_themes \
+		FLAT%Flat+theme%slim-flat.tar.gz%flat%flat%old_themes \
+		LAKE%Lake+theme%slim-lake.tar.gz%lake%lake%old_themes \
+		RAINBOW%Rainbow+theme%slim-rainbow.tar.gz%rainbow%rainbow%old_themes \
+		REAR_WINDOW%Rear+Window+theme%slim-rear-window.tar.gz%rear-window%rear-window%old_themes \
+		SCOTLAND_ROAD%Scotland+Road+theme%slim-scotland-road.tar.gz%scotland-road%scotland-road%old_themes \
+		SUBWAY%Subway+theme%slim-subway.tar.gz%subway%subway%old_themes \
+		WAVE%Wave+theme%slim-wave.tar.gz%wave%wave%old_themes \
+		LUNAR_LINUX%Lunar+Linux+theme%slim-lunar-0.4.tar.bz2%slim-lunar-0.4%lunar%old_themes \
+		ZENWALK%Zenwalk+theme%slim-zenwalk.tar.gz%Zenwalk%zenwalk%old_themes \
+		PARALLEL_DIMS%Parallel+Dimensions+theme%slim-parallel-dimensions.tar.gz%parallel-dimensions%parallel-dimensions%old_themes \
+		CAPERNOITED%Capernoited+theme%slim-capernoited.tar.gz%capernoited%capernoited%old_themes \
+		MINDLOCK%Mindlock+theme%slim-mindlock.tar.gz%mindlock%mindlock%old_themes \
+		FLOWER2%Flower2+theme%slim-flower2.tar.gz%flower2%flower2%old_themes \
+		FREEBSD%FreeBSD+theme%fbsd-slim-theme.tar.bz2%fbsd%fbsd%new_themes \
+		GNEWSENSE%gNewSense+theme%slim-gnewsense-1.1.tar.bz2%slim-gnewsense-1.1%gnewsense%new_themes
 
 # Pollute OPTIONS and DISTFILES.  Cool magic ;))
 # We're using immediate assignment and two variables, because there is
@@ -62,7 +60,6 @@ desc=	${t:C/^[^%]*%([^%]*)%.*$/\\1/1:C/\+/ /g}
 sdir=	${t:C/^[^%]*%[^%]*%[^%]*%([^%]*)%.*$/\\1/1}
 ddir=	${t:C/^[^%]*%[^%]*%[^%]*%[^%]*%([^%]*)%.*$/\\1/1}
 mtag=	${t:C/^[^%]*%[^%]*%[^%]*%[^%]*%[^%]*%([^%]*)$/\\1/1}
-${n}_NAME:=	${n}
 .if ${mtag} == ""
 ${n}_DIST:=	${d}
 .else
@@ -70,8 +67,9 @@ ${n}_DIST:=	${d}:${mtag}
 .endif
 ${n}_SDIR:=	${sdir}
 ${n}_DDIR:=	${ddir}
-NEWOPTS:=	${OPTIONS}	${n} ${desc} off
-OPTIONS:=	${NEWOPTS}
+OPTIONS_DEFINE:=	${OPTIONS_DEFINE} ${n}
+A+=		${n}
+${n}_DESC:=	${desc}
 NEWTHEMES:=	${ALLTHEMES}	${n}
 ALLTHEMES:=	${NEWTHEMES}
 .endfor # t in ${THEMELIST}
@@ -79,8 +77,10 @@ ALLTHEMES:=	${NEWTHEMES}
 .include <bsd.port.pre.mk>
 
 .for n in ${ALLTHEMES}
-.if defined(WITH_ALL_THEMES) || defined(WITH_${n})
-WITH_${n}=	yes
+.if ${PORT_OPTIONS:MALL_THEMES} || ${PORT_OPTIONS:M${n}}
+.if ! ${PORT_OPTIONS:M${n}}
+PORT_OPTIONS+=	${n}
+.endif
 NEWDISTFILES:=	${DISTFILES}	${${n}_DIST}
 DISTFILES:=	${NEWDISTFILES}
 SEEN_THEMES=	yes
@@ -89,29 +89,29 @@ PLIST_SUB:=	${NEW_PLIST_SUB}
 .else
 NEW_PLIST_SUB:=	${PLIST_SUB}	${n}="@comment "
 PLIST_SUB:=	${NEW_PLIST_SUB}
-.endif # defined(WITH_ALL_THEMES) || defined(WITH_${n})
+.endif # ${PORT_OPTIONS:MALL_THEMES} || ${PORT_OPTIONS:M${n}}
 .endfor # n in ${THEMELIST}
 
 .if !defined(SEEN_THEMES)
 IGNORE=		at least one theme must be selected
 .endif
 
-.if defined(WITH_PARALLEL_DIMS)
+.if ${PORT_OPTIONS:MPARALLEL_DIMS}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-parallel-dimensions-slim.theme
 
 post-patch:
 	@${RM} ${WRKSRC}/parallel-dimensions/slim.theme.orig
-.endif # defined(WITH_PARALLEL_DIMS)
+.endif # ${PORT_OPTIONS:MPARALLEL_DIMS}
 
 # Install selected themes.  Another regexp voodoo, yay! \o/
 do-install:
 	${MKDIR} ${THEMEDIR}
 .for n in ${ALLTHEMES}
-.if defined(WITH_${n})
+.if ${PORT_OPTIONS:M${n}}
 	${MKDIR} ${THEMEDIR}/${${n}_DDIR}
 	cd "${WRKSRC}/${${n}_SDIR}" && \
 	  ${COPYTREE_SHARE} . ${THEMEDIR}/${${n}_DDIR}
-.endif # defined(WITH_${n})
+.endif # ${PORT_OPTIONS:M${n}}
 .endfor # t in ${THEMELIST}
 
 .include <bsd.port.post.mk>
