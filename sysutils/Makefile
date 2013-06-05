@@ -865,7 +865,6 @@
     SUBDIR += setquota
     SUBDIR += sformat
     SUBDIR += sg3_utils
-    SUBDIR += sge62
     SUBDIR += shlock
     SUBDIR += shmcat
     SUBDIR += sievelog
