@@ -16,7 +16,7 @@ DISTNAME=	cvsup-snap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File distribution system optimized for CVS
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
 .if !defined(SLAVE_WITHOUT_GUI)
 OPTIONS+=	X11 "Build with X11 support" on
@@ -32,10 +32,7 @@ WITH_STATIC=	yes
 M3FLAGS+=	-DSTATIC
 .endif
 
-.if ${ARCH} == "alpha"
-TARGET=		FBSD_ALPHA
-.elif ${ARCH} == "amd64"
-MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+.if ${ARCH} == "amd64"
 TARGET=		FBSD_AMD64
 AMD64_PATCHES=	p-amd64-aa p-amd64-zlib
 .elif ${ARCH} == "i386"
@@ -65,14 +62,6 @@ CONFLICTS=	cvsup-without-gui-[0-9]*
 MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
 MAN1=		cvpasswd.1 cvsup.1
 MAN8=		cvsupd.8
-
-pre-fetch:
-.if !defined(WITHOUT_X11) && ${ARCH} == "amd64"
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} "* CVSup with X11 is not yet supported on amd64.     *"
-	@${ECHO_MSG} "* I will build cvsup without X11 support now.       *"
-	@${ECHO_MSG} "*****************************************************"
-.endif
 
 pre-patch:
 .if ${ARCH} == "amd64"
