@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	goblin
-# Date created:			Mar 3, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	goblin
 DISTVERSION=	2.8b30
@@ -16,14 +11,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Graph Object Library for Network Programming Problems
 
-USE_TK=		84+
-USE_TCL=	84+
+CONFLICTS=	glpk-*
+
+USE_GCC=	any
+NO_CCACHE=	yes
+USE_TK=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		LD="${CXX}" LIBS="-lm ${LDFLAGS}" \
-		libtcl=${USE_TCL} libtk=${USE_TK} prefix=${PREFIX}
+		libtcl=${USE_TCL} libtk=${USE_TK} \
+		prefix=${PREFIX}
 ALL_TARGET=	all shared
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
@@ -38,9 +37,10 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' ${WRKSRC}/display
-	${REINPLACE_CMD} -e 's|%%WISH%%|${WISH}|g;s|%%PREFIX%%|${PREFIX}|g' \
+	${REINPLACE_CMD} -e \
+	    's|%%WISH%%|${WISH}|g; \
+	     s|%%PREFIX%%|${PREFIX}|g' \
 	    ${WRKSRC}/Makefile.conf
 	${REINPLACE_CMD} -e 's|\./gosh|${PREFIX}/bin/gosh|; \
 	    s|\[pwd\] tcl|${PREFIX}/lib/goblin|g' \
@@ -56,10 +56,10 @@ do-install:
 	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} \*.h ${PREFIX}/include/${PORTNAME})
 	${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/tcl && ${COPYTREE_SHARE} \* ${PREFIX}/lib/${PORTNAME})
-	${INSTALL_DATA} ${WRKSRC}/lib/libglpk.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/libgoblin.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libglpk.so ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libgoblin.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libglpk.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libglpk.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
 	${INSTALL} -d ${DOCSDIR}/html
