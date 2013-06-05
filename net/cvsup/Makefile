@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsup
-# Date created:		7 August 1996
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	cvsup
 PORTVERSION=	16.1h
@@ -18,19 +14,17 @@ COMMENT=	File distribution system optimized for CVS
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
-.if !defined(SLAVE_WITHOUT_GUI)
-OPTIONS+=	X11 "Build with X11 support" on
+OPTIONS_DEFINE=	X11 STATIC
+OPTIONS_EXCLUDE_amd64=	X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSTATIC}
+WITH_STATIC=	yes
+M3FLAGS+=	-DSTATIC
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if defined(STATIC)
-WITH_STATIC=	yes
-.endif
-
-.if defined(WITH_STATIC) && !defined(WITHOUT_STATIC)
-M3FLAGS+=	-DSTATIC
-.endif
 
 .if ${ARCH} == "amd64"
 TARGET=		FBSD_AMD64
@@ -41,7 +35,7 @@ TARGET=		FreeBSD4
 TARGET=		FBSD_SPARC64
 .endif
 
-.if defined(WITHOUT_X11)
+.if ! ${PORT_OPTIONS:MX11}
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
 PKGNAMESUFFIX=	-without-gui
