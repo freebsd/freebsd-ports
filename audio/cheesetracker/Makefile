@@ -31,10 +31,6 @@ PLIST_FILES=	bin/cheesetracker_qt
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
-.endif
-
 .if ${ARCH} != "i386"
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .endif
@@ -48,7 +44,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cheesetracker/program__QT/cheesetracker_qt ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/cheesetracker/examples/*.it ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/cheesetracker/examples/*.xm ${EXAMPLESDIR}
