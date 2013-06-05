@@ -38,7 +38,7 @@ post-patch:
 		-e '/^WARN_CFLAGS="-Wall"/d' \
 		-e '/if test "x$$WARN" = "xyes"/s/$$/ WARN_CFLAGS="-Wall" ;/' \
 		${WRKSRC}/configure
-.if ${PORT_OPTIONS:MDOXYGEN)
+.if ${PORT_OPTIONS:MDOXYGEN}
 	@${REINPLACE_CMD} -e 's/sed -i/& ""/' ${WRKSRC}/docs/Makefile.in
 .endif
 
