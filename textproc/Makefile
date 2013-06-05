@@ -1278,6 +1278,7 @@
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-coderay
+    SUBDIR += rubygem-colorator
     SUBDIR += rubygem-colored
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-diff-lcs
