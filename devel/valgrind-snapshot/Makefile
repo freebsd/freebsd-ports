@@ -5,11 +5,11 @@ PORTNAME=	valgrind
 PORTVERSION=	3.8.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/:dist \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/:dist
+MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/
 PKGNAMESUFFIX=	-snapshot
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
