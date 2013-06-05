@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ggiterm
-# Date created:		20 October 2003
-# Whom:			andi_payn@speedymail.com
-#
+# Created by: andi_payn@speedymail.com
 # $FreeBSD$
-#
 
 PORTNAME=	ggiterm
 PORTVERSION=	0.7.1
@@ -15,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for GGI
 
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
+
+DEPRECATED=	Unmaintained and broken
+EXPIRATION_DATE=2013-09-01
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ggi-prefix=${LOCALBASE}

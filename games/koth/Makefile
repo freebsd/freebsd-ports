@@ -1,9 +1,5 @@
-# New ports collection makefile for:	koth
-# Date created:			15 Oct 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	koth
 PORTVERSION=	0.8.0
@@ -16,6 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer tank artillery game similar to Scorched Earth
 
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
+
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=2013-09-01
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
