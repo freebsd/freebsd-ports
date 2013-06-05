@@ -1,9 +1,6 @@
-# New ports collection makefile for:	freebsd-doc-en
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
+
 # Several knobs can be used to select the documentation formats.
 #
 # WITH_HTML_SPLIT allows the build of the "html-split" format:
@@ -55,11 +52,13 @@ DOCBASE?=		share/doc/freebsd
 
 PLIST=		${WRKDIR}/pkg-plist
 
-OPTIONS=	HTML		"Single HTML file per document" Off \
-		HTML_SPLIT	"The default HTML format used on www.FreeBSD.org" On \
-		PDF		"PDF format" On \
-		PS		"PostScript format" Off \
-		TXT		"Plain text" Off
+OPTIONS_DEFINE=	HTML HTML_SPLIT PDF PS TXT
+OPTIONS_DEFAULT=	HTML_SPLIT PDF
+HTML_DESC=		Single HTML file per document
+HTML_SPLIT_DESC=	The default HTML format used on www.FreeBSD.org
+PDF_DESC=		PDF format
+PS_DESC=		PostScript format
+TXT_DESC=		Plain text
 
 .include <bsd.port.pre.mk>
 
@@ -74,7 +73,7 @@ WITH_${F}=		yes
 
 # translate "WITH_FOO=yes" into "DOCFORMAT+=FOO".
 .for F in ${AVAILABLEFORMATS}
-.if defined(WITH_${F}) && !empty(WITH_${F})
+.if ${PORT_OPTIONS:M${F}}
 DOCFORMAT+=	${F:L:S,_,-,}
 .endif
 .endfor
@@ -85,7 +84,7 @@ DOCFORMAT=		html-split
 WITH_HTML_SPLIT=	yes
 .endif
 
-.if defined(WITH_PDF) || defined(WITH_PS)
+.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
 BUILD_DEPENDS=	docproj>=1.17:${PORTSDIR}/textproc/docproj
 .else
 BUILD_DEPENDS=	docproj-nojadetex>=1.17:${PORTSDIR}/textproc/docproj-nojadetex
@@ -98,7 +97,7 @@ PLIST_FORMATS+=	${F:L}
 .endfor
 
 # when html or html-split is defined as the format, add HTML_COMMON.
-.if defined(WITH_HTML) || defined(WITH_HTML_SPLIT)
+.if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MHTML_SPLIT}
 PLIST_FORMATS+=	html-common
 .endif
 
