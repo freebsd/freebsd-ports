@@ -1,16 +1,15 @@
 # $FreeBSD$
-#    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.22 2012/08/08 16:56:40 kwm Exp $
+#    $MCom: ports/trunk/net-im/telepathy-gabble/Makefile 17271 2013-04-01 15:16:27Z kwm $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.6
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Jabber Connection Manager for Telepathy Framework
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		telepathy-glib>=0.18.0:${PORTSDIR}/net-im/telepathy-glib \
+BUILD_DEPENDS=	telepathy-glib>=0.18.0:${PORTSDIR}/net-im/telepathy-glib \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
 		nice:${PORTSDIR}/net-im/libnice \
@@ -20,10 +19,12 @@ LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
 		loudmouth-1:${PORTSDIR}/net-im/loudmouth
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
+PORTSCOUT=	limitw:1,even
+
 GNU_CONFIGURE=	yes
-LDFLAGS+=	${PTHREAD_LIBS}
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
+USES=		pathfix pkgconfig
+USE_GNOME=	glib20 libxslt:build
 USE_SQLITE=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
