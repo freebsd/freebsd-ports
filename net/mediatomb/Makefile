@@ -43,26 +43,29 @@ PLIST_SUB=	MEDIATOMB_USER=${MEDIATOMB_USER} \
 		MEDIATOMB_DIR=${MEDIATOMB_DIR} \
 		MEDIATOMB_MASK=${MEDIATOMB_MASK} \
 
-OPTIONS=	SQLITE3 "sqlite3 support" on \
-		MYSQL "MySQL support" on \
-		JS "JavaScript (SpiderMonkey) support" on \
-		LIBEXIF "libexif support" on \
-		TAGLIB "taglib support" on \
-		FFMPEG "ffmpeg metadata extraction support" on \
-		FFMPEGTHUMBNAILER "ffmpeg thumbnailer support" on \
-		EXTERNAL_TRANSCODING "external transcoding support" on \
-		CURL "curl support" on \
-		ID3LIB "id3lib support" off \
-		LIBEXTRACTOR "libextractor support" off \
-		DEBUG "debug build" off
+OPTIONS_DEFINE=	SQLITE MYSQL JS LIBEXIF FFMPEGTHUMBNAILER \
+		EXTERNAL_TRANSCODING CURL DEBUG
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	SQLITE MYSQL
+OPTIONS_RADIO=	METADATA TAG
+OPTIONS_RADIO_METADATA=	FFMPEG LIBEXTRACTOR
+OPTIONS_RADIO_TAG=	TAGLIB ID3LIB
+METADATA_DESC=	Metadata extractor
+TAG_DESC=	Tag library
+OPTIONS_DEFAULT=	SQLITE MYSQL JS LIBEXIF TAGLIB FFMPEG FFMPEGTHUMBNAILER \
+			EXTERNAL_TRANSCODING CURL
+DB_DESC=			Database backend
+JS_DESC=			JavaScript (SpiderMonkey) support
+TAGLIB_DESC=			taglib support
+FFMPEG_DESC=			ffmpeg metadata extraction support
+FFMPEGTHUMBNAILER_DESC=		ffmpeg thumbnailer support
+EXTERNAL_TRANSCODING_DESC=	external transcoding support
+ID3LIB_DESC=			id3lib support
+LIBEXTRACTOR_DESC=		libextractor support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_SQLITE3) && defined(WITHOUT_MYSQL)
-IGNORE=	is useless without a database. Please (re)run 'make config' and choose either SQLITE3 or MYSQL
-.endif
-
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--enable-sqlite3 \
 			--with-sqlite3-h="${LOCALBASE}/include" \
 			--with-sqlite3-libs="${LOCALBASE}/lib"
@@ -71,7 +74,7 @@ LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--disable-sqlite3
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-mysql \
 			--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
 USE_MYSQL=		yes
@@ -79,7 +82,7 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
-.if defined(WITH_JS)
+.if ${PORT_OPTIONS:MJS}
 CONFIGURE_ARGS+=	--enable-libjs \
 			--with-js-h="${LOCALBASE}/include" \
 			--with-js-libs="${LOCALBASE}/lib"
@@ -88,7 +91,7 @@ LIB_DEPENDS+=		js:${PORTSDIR}/lang/spidermonkey17
 CONFIGURE_ARGS+=	--disable-libjs
 .endif
 
-.if defined(WITH_LIBEXIF)
+.if ${PORT_OPTIONS:MLIBEXIF}
 CONFIGURE_ARGS+=	--enable-libexif \
 			--with-libexif-h="${LOCALBASE}/include" \
 			--with-libexif-libs="${LOCALBASE}/lib"
@@ -97,13 +100,13 @@ LIB_DEPENDS+=		exif:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=	--disable-libexif
 .endif
 
-.if defined(WITH_EXTERNAL_TRANSCODING)
+.if ${PORT_OPTIONS:MEXTERNAL_TRANSCODING}
 CONFIGURE_ARGS+=	--enable-external-transcoding
 .else
 CONFIGURE_ARGS+=	--disable-external-transcoding
 .endif
 
-.if defined(WITH_FFMPEGTHUMBNAILER)
+.if ${PORT_OPTIONS:MFFMPEGTHUMBNAILER}
 CONFIGURE_ARGS+=	--enable-ffmpegthumbnailer \
 			--with-ffmpegthumbnailer-h="${LOCALBASE}/include" \
 			--with-ffmpegthumbnailer-libs="${LOCALBASE}/lib"
@@ -113,7 +116,7 @@ CONFIGURE_ARGS+=	--disable-ffmpegthumbnailer
 .endif
 
 # CURL is only useful in combination with EXTERNAL_TRANSCODING
-.if defined(WITH_CURL) && defined(WITH_EXTERNAL_TRANSCODING)
+.if ${PORT_OPTIONS:MCURL} && ${PORT_OPTIONS:MEXTERNAL_TRANSCODING}
 CONFIGURE_ARGS+=	--enable-curl \
 			--with-curl-cfg="${LOCALBASE}/bin/curl-config"
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
@@ -121,18 +124,14 @@ LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--disable-curl
 .endif
 
-.if defined(WITH_FFMPEG) && defined(WITH_LIBEXTRACTOR)
-IGNORE=	cannot be compiled with both, ffmpeg and libextractor. Please (re)run 'make config' and deselect either FFMPEG or LIBEXTRACTOR
-.endif
-
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 CONFIGURE_ARGS+=	--enable-ffmpeg
 LIB_DEPENDS+=		avformat:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=	--disable-ffmpeg
 .endif
 
-.if defined(WITH_LIBEXTRACTOR)
+.if ${PORT_OPTIONS:MLIBEXTRACTOR}
 CONFIGURE_ARGS+=	--enable-libextractor \
 			--with-extractor-h="${LOCALBASE}/include" \
 			--with-extractor-libs="${LOCALBASE}/lib"
@@ -141,11 +140,7 @@ LIB_DEPENDS+=		extractor:${PORTSDIR}/textproc/libextractor
 CONFIGURE_ARGS+=	--disable-libextractor
 .endif
 
-.if defined(WITH_ID3LIB) && defined(WITH_TAGLIB)
-IGNORE=	cannot be compiled with both, taglib and id3lib. Please (re)run 'make config' and deselect either TAGLIB or ID3LIB
-.endif
-
-.if defined(WITH_ID3LIB)
+.if ${PORT_OPTIONS:MID3LIB}
 CONFIGURE_ARGS+=	--enable-id3lib \
 			--with-id3lib-h="${LOCALBASE}/include" \
 			--with-id3lib-libs="${LOCALBASE}/lib"
@@ -154,7 +149,7 @@ LIB_DEPENDS+=		id3:${PORTSDIR}/audio/id3lib
 CONFIGURE_ARGS+=	--disable-id3lib
 .endif
 
-.if defined(WITH_TAGLIB)
+.if ${PORT_OPTIONS:MTAGLIB}
 CONFIGURE_ARGS+=	--enable-taglib \
 			--with-taglib-cfg="${LOCALBASE}/bin/taglib-config"
 LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
@@ -162,7 +157,7 @@ LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--disable-taglib
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-tombdebug
 .else
 CONFIGURE_ARGS+=	--disable-tombdebug
