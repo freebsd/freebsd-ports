@@ -20,24 +20,28 @@ USE_ZIP=	yes
 EYEDIR?=	${PREFIX}/www/eyeOS
 THEMESDIR=	${EYEDIR}/system/themes
 
-OPTIONS=	Crystal_THEME "based on the Crystal Open Source icons" On
-OPTIONS+=	Executive_THEME "designed specially for Companies" On
-OPTIONS+=	Kids_THEME "designed specially for Kids and Schools" On
-OPTIONS+=	LateBloomer_THEME "based on the Crystal theme" On
-OPTIONS+=	Mac_THEME "based on OSX 2.1 Open Source icons" On
-OPTIONS+=	Mini_THEME "with mall icons based on Nuvola icon set" On
-OPTIONS+=	NuoveXT_THEME "based on 'NuoveXT' Open Source icons" On
-OPTIONS+=	Nuvola_THEME "inspired in the great icons Nuvola" On
-OPTIONS+=	WaterSide_THEME "inspired in countryside of Saskatchewan" On
-OPTIONS+=	fromX_THEME "based on Tango Icons" On
-OPTIONS+=	eyeOSVista_THEME "based on the new Vista style" On
-OPTIONS+=	animus_THEME "created by AnimusMedia.com" On
-OPTIONS+=	minimal_THEME "based on minimalist art" On
+OPTIONS_DEFINE=	Crystal_THEME Executive_THEME Kids_THEME LateBloomer_THEME \
+		Mac_THEME Mini_THEME NuoveXT_THEME Nuvola_THEME WaterSide_THEME \
+		eyeOSVista_THEME animus_THEME minimal_THEME
+OPTIONS_DEFAULT:=	${OPTIONS_DEFINE:M*_THEME}
+Crystal_THEME_DESC=	based on the Crystal Open Source icons
+Executive_THEME_DESC=	designed specially for Companies
+Kids_THEME_DESC=	designed specially for Kids and Schools
+LateBloomer_THEME_DESC=	based on the Crystal theme
+Mac_THEME_DESC=	based on OSX 2.1 Open Source icons
+Mini_THEME_DESC=	with mall icons based on Nuvola icon set
+NuoveXT_THEME_DESC=	based on 'NuoveXT' Open Source icons
+Nuvola_THEME_DESC=	nspired in the great icons Nuvola
+WaterSide_THEME_DESC=	inspired in countryside of Saskatchewan
+fromX_THEME_DESC=	based on Tango Icons
+eyeOSVista_THEME_DESC=	based on the new Vista style
+animus_THEME_DESC=	created by AnimusMedia.com
+minimal_THEME_DESC=	based on minimalist art
 
 .include <bsd.port.pre.mk>
 
-.for theme in ${OPTIONS:M*_THEME:S/_THEME//}
-.ifndef WITHOUT_${theme}_THEME
+.for theme in ${OPTIONS_DEFINE:M*_THEME:S/_THEME//}
+.if ${PORT_OPTIONS:M${theme}_THEME}
 EYETHEMES+=	${theme}
 PLIST_SUB+=	${theme:U}=${THEMESDIR:S,^${PREFIX}/,,}/${theme}
 PLIST_SUB+=	D${theme:U}="@dirrm ${THEMESDIR:S,^${PREFIX}/,,}/${theme}"
