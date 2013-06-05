@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Builder
-PORTVERSION=	0.80
+PORTVERSION=	0.81
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ TEST_DEPENDS=	p5-Devel-Cycle>=1.07:${PORTSDIR}/devel/p5-Devel-Cycle \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::Dispatch.3 \
@@ -31,7 +31,7 @@ MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::generic.3 \
 		DateTime::Format::Builder::Tutorial.3
 
-PORTDOCS=	CREDITS Changes README
+PORTDOCS=	Changes README
 PORTEXAMPLES=	Apache.pm Fall.pm ICal.pm MySQL.pm Simple.pm Tivoli.pm W3CDTF.pm
 
 .include <bsd.port.options.mk>
