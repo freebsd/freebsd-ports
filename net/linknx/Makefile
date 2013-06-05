@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linknx
-# Date Created:				23 October 2008
-# Whom:					Björn König <bkoenig@alpha-tierchen.de>
-#
+# Created by: Björn König <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	linknx
 PORTVERSION=	0.0.1.25
@@ -22,18 +18,25 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-I${LOCALBASE}/include -L/${LOCALBASE}/lib"
 
-OPTIONS=	LIBESMTP "Install libesmtp for SMTP support" on \
-		LIBCURL "Install libcurl for Clickatell SMS support" off
+OPTIONS_DEFINE=	LIBESMTP LIBCURL
+OPTIONS_DEFAULT=	LIBESMTP
+LIBESMTP_DESC=	Install libesmtp for SMTP support
+LIBCURL_DESC=	Install libcurl for Clickatell SMS support
 
 .include <bsd.port.pre.mk>
 
-.if (defined(WITH_LIBESMTP) || exists(${LOCALBASE}/include/libesmtp.h))
-CONFIGURE+=	--enable-smtp
+.if ${PORT_OPTIONS:MLIBESMTP}
+CONFIGURE_ARGS+=	--enable-smtp
 LIB_DEPENDS+=	esmtp.7:${PORTSDIR}/mail/libesmtp
+.else
+CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
-.if (defined(WITH_LIBCURL) || exists(${LOCALBASE}/lib/libcurl.so))
+.if ${PORT_OPTIONS:MLIBCURL}
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
 USE_RC_SUBR=	${PORTNAME}
