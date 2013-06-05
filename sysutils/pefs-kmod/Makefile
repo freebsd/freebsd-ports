@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pefs
-DISTVERSION=	2013-02-03
+DISTVERSION=	2013-04-13
 CATEGORIES=	sysutils kld
 MASTER_SITES=	https://pefs.googlecode.com/files/
 PKGNAMESUFFIX=	-kmod
