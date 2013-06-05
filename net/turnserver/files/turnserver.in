@@ -10,7 +10,7 @@
 # to enable this service:
 #
 # turnserver_enable (bool):	Set to NO by default.
-#				Set it to YES to enable doormand.
+#				Set it to YES to enable turnserver.
 # turnserver_config (path):	Set to %%PREFIX%%/etc/turnserver.conf
 #				by default.
 
