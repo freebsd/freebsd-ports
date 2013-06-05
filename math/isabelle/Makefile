@@ -8,10 +8,6 @@ MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \
 		http://mirror.cse.unsw.edu.au/pub/isabelle/dist/
 DISTNAME=	Isabelle2009-2
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES=	${DISTNAME}.tar.gz \
-		${DISTNAME}_library.tar.gz
-.endif
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Generic proof assistant
@@ -36,6 +32,11 @@ EMACS_PKG_DESC=		Build with Emacs Packages
 USE_PERL5=	yes
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES=	${DISTNAME}.tar.gz \
+		${DISTNAME}_library.tar.gz
+.endif
 
 .if ${PORT_OPTIONS:MEMACS_PKG}
 	USE_EMACS=	yes # for EMACS_SITE_LISPDIR
