@@ -78,7 +78,6 @@
     SUBDIR += linux-pete-mesagpu
     SUBDIR += linux-pete-xgl2gpu
     SUBDIR += linux-systemsimcell
-    SUBDIR += linux-xjoypad
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
     SUBDIR += linux_base-gentoo-stage3
