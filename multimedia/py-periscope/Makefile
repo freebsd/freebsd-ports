@@ -1,7 +1,4 @@
-# New ports collection makefile for:	periscope
-# Date created:		Sun Jul 24 20:23:58 UTC 2011
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	periscope
@@ -27,8 +24,12 @@ USE_GNOME=	desktopfileutils
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 NO_WRKSUBDIR=	yes
+USES=	desktop-file-utils
 
-OPTIONS=	UNRAR "Enable support for rar (.rar) compressed subtitles" on
+OPTIONS_DEFINE=	UNRAR
+UNRAR_DESC=	rar support (.rar) for compressed subtitles
+
+OPTIONS_DEFAULT=	UNRAR
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR_WITHOUT_PREFIX:Q}
 
@@ -38,12 +39,11 @@ post-install:
 	@${MKDIR} ${DESKTOPDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/periscope.desktop \
 		${DESKTOPDIR}
-	@-${LOCALBASE}/bin/update-desktop-database
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-# unrar (.rar) support
-.if !defined(WITHOUT_UNRAR)
+.if ${PORT_OPTIONS:MUNRAR}
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 

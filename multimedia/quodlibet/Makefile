@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quodlibet
-# Date created:			19 December 2005
-# Whom:				Byung-Hee HWANG <bh@izb.knu.ac.kr>
-#
+# Created by: Byung-Hee HWANG <bh@izb.knu.ac.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	quodlibet
 PORTVERSION=	2.2
@@ -26,76 +22,68 @@ USE_GSTREAMER=	gconf good python
 
 MAN1=		exfalso.1 quodlibet.1
 
-OPTIONS=	FLAC "Flac audio support" on
-OPTIONS+=	MP3 "MP3 audio support" on
-OPTIONS+=	MPEG4IP "AAC/mp4 support with MPEG4IP" on
-OPTIONS+=	MUSEPACK "Musepack (MPC, musicpd, libmpcdec) support" on
-OPTIONS+=	OGG "OGG multimedia container support" on
-OPTIONS+=	SPC "SPC (SNES ROM audio) support" on
-OPTIONS+=	SPEEX "OGG/Speex audio support" on
-OPTIONS+=	VORBIS "OGG/Vorbis audio support" on
-OPTIONS+=	WAVPACK "Wavpack support" on
-OPTIONS+=	DBUS "Enable dbus (iPod, storage) support" on
-OPTIONS+=	REMOTE "Enable remote playback" on
-OPTIONS+=	EXTENSIONS "Enable extensions" off
+OPTIONS_DEFINE=	FLAC MP3 AAC MUSEPACK OGG SPC SPEEX VORBIS WAVPACK DBUS REMOTE EXTENSIONS
+SPC_DESC=	SPC (SNES ROM audio) support
+SPEEX_DESC=	OGG/Speex audio support
+REMOTE_DESC=	Enable remote playback
+EXTENSIONS_DESC=	Enable extensions
 
+OPTIONS_DEFAULT=	FLAC MP3 AAC MUSEPACK OGG SPC SPEEX VORBIS WAVPACK DBUS REMOTE
+
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OGG)
+.if ${PORT_OPTIONS:MOGG}
 USE_GSTREAMER+=	ogg
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 USE_GSTREAMER+=	vorbis
 .endif
 
-.if !defined(WITHOUT_SPC)
+.if ${PORT_OPTIONS:MSPC}
 USE_GSTREAMER+=	spc
 .endif
 
-.if !defined(WITHOUT_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 USE_GSTREAMER+=	speex
 .endif
 
-.if !defined(WITHOUT_MP3)
+.if ${PORT_OPTIONS:MMP3}
 USE_GSTREAMER+=	mp3
 .endif
 
-.if !defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 USE_GSTREAMER+=	flac
 .endif
 
-.if !defined(WITHOUT_MUSEPACK) || !defined(WITHOUT_WAVPACK) \
-		|| !defined(WITHOUT_MPEG4IP)
-.endif
-
-.if !defined(WITHOUT_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 USE_GSTREAMER+=	musepack
 .endif
 
-.if !defined(WITHOUT_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 USE_GSTREAMER+=	wavpack
 .endif
 
-.if !defined(WITHOUT_MPEG4IP)
+.if ${PORT_OPTIONS:MAAC}
 LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 USE_GSTREAMER+=	faad
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
 
-.if !defined(WITHOUT_REMOTE)
+.if ${PORT_OPTIONS:MREMOTE}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 USE_GSTREAMER+=	gnomevfs
 .endif
 
-.if defined(WITH_EXTENSIONS)
+.if ${PORT_OPTIONS:MEXTENSIONS}
 USE_GNOME+=	pygnomeextras
 PLIST_SUB+=	EXTENSIONS=""
 .else
