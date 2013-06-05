@@ -1,9 +1,5 @@
-# New ports collection makefile for:	milter-skem
-# Date created:				14 July 2004
-# Whom:					Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	skem
 PORTVERSION=	1.0.1
@@ -19,16 +15,20 @@ PLIST_FILES=	sbin/skem
 MAN8=		skem.8
 MANCOMPRESSED=	maybe
 
-OPTIONS=	SKEM_MILTER421 "Sendmail was built with -D_FFR_MILTER_421" off \
-		SKEM_NO_CLEANUP "Omit the auto-cleanup module" off \
-		SKEM_NO_LOGWATCHER "Omit the log-watching module" off \
-		SKEM_NETINET6 "Support IPv6 addresses (not tested)" off \
-		SKEM_NETINET "Support IPv4 addresses" on
+OPTIONS_DEFINE=	SKEM_MILTER421 SKEM_NO_CLEANUP SKEM_NO_LOGWATCHER SKEM_NETINET6 SKEM_NETINET
+SKEM_MILTER421_DESC=	Sendmail was built with -D_FFR_MILTER_421
+SKEM_NO_CLEANUP_DESC=	Omit the auto-cleanup module
+SKEM_NO_LOGWATCHER_DESC=	Omit the log-watching module
+SKEM_NETINET6_DESC=	Support IPv6 addresses (not tested)
+SKEM_NETINET_DESC=	Support IPv4 addresses
+
+OPTIONS_DEFAULT=	SKEM_NETINET
+
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
@@ -45,10 +45,10 @@ MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .endif
 
-.for o in ${OPTIONS:MSKEM_*}
-.	if defined(WITH_$o)
+.for o in ${PORT_OPTIONS:MSKEM_*}
+.	if ${PORT_OPTIONS:M$o}
 MAKE_ARGS+=	-D$o
 .	endif
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
