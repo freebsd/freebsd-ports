@@ -14,6 +14,9 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
 
+DEPRECATED=	lacks an upstream source
+EXPIRATION_DATE=	2013-08-01
+
 .include <bsd.port.options.mk>
 
 USE_BZIP2=	yes

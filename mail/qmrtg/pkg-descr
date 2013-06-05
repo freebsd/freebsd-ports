@@ -9,5 +9,3 @@ its modules are general enough to parse any kind of log file passed
 through multilog (see daemontools).
 
 Qmrtg is a modern alternative to qmailmrtg7.
-
-WWW: http://dev.publicshout.org/qmrtg/
