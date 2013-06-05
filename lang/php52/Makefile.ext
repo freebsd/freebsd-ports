@@ -48,12 +48,17 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .if ${PHP_MODNAME} == "dba"
 CONFIGURE_ARGS+=--enable-dba
 
-OPTIONS=	CDB "cdb database support" on \
-		DB4 "Berkeley DB4 support" off \
-		GDBM "GDBM database support" off \
-		QDBM "QDBM database support" off \
-		INIFILE "INI file support" on \
-		FLATFILE "flatfile support" on
+OPTIONS_DEFINE=	CDB DB4 INIFILE FLATFILE
+OPTIONS_DEFAULT=	CDB INIFILE FLATFILE
+OPTIONS_RADIO=	DBM
+OPTIONS_RADIO_DBM=	GDBM QDBM
+
+CDB_DESC=	cdb database support
+DB4_DESC=	Berkeley DB4 support
+GDBM_DESC=	GDBM database support
+QDBM_DESC=	QDBM database support
+INIFILE_DESC=	INI file support
+FLATFILE_DESC=	flatfile support
 
 PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 .endif
@@ -96,22 +101,19 @@ USE_OPENSSL=	yes
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
-.	if !defined(WITHOUT_X11)
-USE_XORG=	xpm
-.	endif
 
 CONFIGURE_ARGS+=--with-gd \
 		--with-freetype-dir=${LOCALBASE} \
 		--with-jpeg-dir=${LOCALBASE} \
 		--with-png-dir=${LOCALBASE} \
 		--with-zlib-dir=/usr
-.	if !defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
-.	endif
 
-OPTIONS=	T1LIB "Include T1lib support" on \
-		TRUETYPE "Enable TrueType string function" on \
-		JIS "Enable JIS-mapped Japanese font support" off
+OPTIONS_DEFINE=	T1LIB TRUETYPE JIS X11
+OPTIONS_DEFAULT=	T1LIB TRUETYPE X11
+
+T1LIB_DESC=	Include T1lib support
+TRUETYPE_DESC=	TrueType string function
+JIS_DESC=	JIS-mapped Japanese font support
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -143,12 +145,7 @@ USES+=		iconv
 LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
-
-LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
-.endif
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
@@ -174,7 +171,10 @@ CONFIGURE_ARGS+=--with-ldap-sasl
 .if ${PHP_MODNAME} == "mbstring"
 CONFIGURE_ARGS+=--enable-mbstring
 
-OPTIONS=	REGEX "Enable multibyte regex support" on
+OPTIONS_DEFINE=	REGEX
+OPTIONS_DEFAULT=	REGEX
+
+REGEX_DESC=	multibyte regex support
 
 PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls oniguruma
 .endif
@@ -251,7 +251,8 @@ CONFIGURE_ARGS+=--enable-pcntl
 .endif
 
 .if ${PHP_MODNAME} == "pcre"
-OPTIONS=	BUNDLED_PCRE "Select if you use apache 2.0.x" off
+OPTIONS_DEFINE=	BUNDLE_PCRE
+BUNDLED_PCRE_DESC=	Select if you use apache 2.0.x
 .endif
 
 .if ${PHP_MODNAME} == "pdo"
@@ -264,7 +265,9 @@ CONFIGURE_ARGS+=--with-pdo-dblib=${LOCALBASE}
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 
-OPTIONS=	MSSQL	"Enable Microsoft SQL Server support" off
+OPTIONS_DEFINE=	MSSQL
+
+MSSQL_DESC=	Microsoft SQL Server support
 .endif
 
 .if ${PHP_MODNAME} == "pdo_firebird"
@@ -322,7 +325,6 @@ CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
 .      else
 CONFIGURE_ARGS+=--with-pdo-sqlite
 .      endif
-
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 PHP_HEADER_DIRS=sqlite/src
@@ -418,7 +420,7 @@ PHP_HEADER_DIRS=libsqlite/src
 USE_PHP=	spl
 USE_PHP_BUILD=	yes
 
-OPTIONS=	UTF8 "Enable UTF-8 support" off
+OPTIONS_DEFINE=	UTF8
 .endif
 
 .if ${PHP_MODNAME} == "sybase_ct"
@@ -517,49 +519,60 @@ CONFIGURE_ARGS+=--with-zlib=/usr
 .include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "dba"
-.	if defined(WITHOUT_CDB)
+.	if ! ${PORT_OPTIONS:MCDB}
 CONFIGURE_ARGS+=--without-cdb
 .	endif
-.	if defined(WITH_DB4)
+.	if ${PORT_OPTIONS:MDB4}
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 
 USE_BDB=		40+
 WITH_BDB_HIGHEST=	yes
 .	endif
-.	if defined(WITH_GDBM)
+.	if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .	endif
-.	if defined(WITH_QDBM)
+.	if ${PORT_OPTIONS:MQDBM}
 LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 
 CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
 .	endif
-.	if defined(WITHOUT_INIFILE)
+.	if ! ${PORT_OPTIONS:MINIFILE}
 CONFIGURE_ARGS+=--disable-inifile
 .	endif
-.	if defined(WITHOUT_FLATFILE)
+.	if ! ${PORT_OPTIONS:MFLATFILE}
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
 
 .if ${PHP_MODNAME} == "gd"
-.	if !defined(WITHOUT_T1LIB)
+.	if ${PORT_OPTIONS:MX11}
+USE_XORG=	xpm
+CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
+.	endif
+.	if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
 
 CONFIGURE_ARGS+=--with-t1lib=${LOCALBASE}
 .	endif
-.	if !defined(WITHOUT_TRUETYPE)
+.	if ${PORT_OPTIONS:MTRUETYPE}
 CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
-.	if defined(WITH_JIS)
+.	if ${PORT_OPTIONS:MJIS}
 CONFIGURE_ARGS+=--enable-gd-jis-conv
 .	endif
 .endif
 
+.if ${PHP_MODNAME} == "imap"
+.	if ${PORT_OPTIONS:MSSL}
+CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
+.	endif
+.endif
+
 .if ${PHP_MODNAME} == "mbstring"
-.	if defined(WITHOUT_REGEX)
+.	if ! ${PORT_OPTIONS:MREGEX}
 CONFIGURE_ARGS+=--disable-mbregex
 .	endif
 .endif
@@ -579,7 +592,7 @@ pre-configure:
 .endif
 
 .if ${PHP_MODNAME} == "pcre"
-.	if defined(WITH_BUNDLED_PCRE)
+.	if ${PORT_OPTIONS:MBUNDLED_PCRE}
 CONFIGURE_ARGS+=--with-pcre-regex=yes
 
 PHP_HEADER_DIRS=pcrelib
@@ -593,8 +606,9 @@ post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
+
 .if ${PHP_MODNAME} == "pdo_dblib"
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 .else
 LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
@@ -602,7 +616,7 @@ LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 .endif
 
 .if ${PHP_MODNAME} == "sqlite"
-.	if defined(WITH_UTF8)
+.	if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=--enable-sqlite-utf8
 .	endif
 .endif

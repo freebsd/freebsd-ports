@@ -40,20 +40,25 @@ CONFIGURE_ARGS=	\
 
 USE_GNOME=	libxml2
 
-OPTIONS=	CLI "Build CLI version" on \
-		CGI "Build CGI version" on \
-		APACHE "Build Apache module" off \
-		DEBUG "Enable debug" off \
-		SUHOSIN "Enable Suhosin protection system (not for jails)" on \
-		MULTIBYTE "Enable zend multibyte support" off \
-		IPV6 "Enable ipv6 support" on \
-		MAILHEAD "Enable mail header patch" off \
-		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
-		DISCARD "Enable discard-path support (CGI only)" off \
-		FASTCGI "Enable fastcgi support (CGI only)" on \
-		FPM "Enable fastcgi process manager (CGI only)" off \
-		PATHINFO "Enable path-info-check support (CGI only)" on \
-		LINKTHR "Link thread lib (for threaded extensions)" off
+OPTIONS_DEFINE=	CLI CGI APACHE DEBUG SUHOSIN MULTIBYTE IPV6 MAILHEAD REDIRECT DISCARD \
+		FASTCGI FPM PATHINFO LINKTHR
+
+OPTIONS_DEFAULT=	CLI CGI SUHOSIN PATHINFO FASTCGI PATHINFO
+
+CLI_DESC=	Build CLI version
+CGI_DESC=	Build CGI version
+FPM_DESC=	Build FPM version (experimental)
+APACHE_DESC=	Build Apache module
+AP2FILTER_DESC=	Use Apache 2.x filter interface (experimental)
+SUHOSIN_DESC=	Suhosin protection system
+MULTIBYTE_DESC=	zend multibyte support
+MAILHEAD_DESC=	mail header patch
+LINKTHR_DESC=	Link thread lib (for threaded extensions)
+REDIRECT_DESC=	force-cgi-redirect support (CGI only)
+DISCARD_DESC=	discard-path support (CGI only)
+FASTCGI_DESC=	fastcgi support (CGI only)
+FPM_DESC=	fastcgi process manager (CGI only)
+PATHINFO_DESC=	path-info-check support (CGI only)
 
 CONFLICTS=	php53-5* php5-5*
 
@@ -63,8 +68,8 @@ MAN1=		php-config.1 phpize.1
 
 PATCH_DIST_STRIP=	-p1
 
-.if defined(WITH_FPM) && defined(WITH_CGI)
-. if defined(WITHOUT_FASTCGI)
+.if ${PORT_OPTIONS:MFPM} && ${PORT_OPTIONS:MCGI}
+. if ! ${PORT_OPTIONS:MFASTCGI}
 IGNORE=		FPM requires FastCGI support
 . endif
 PATCHFILES+=	php-5.2.14-fpm-0.5.14-freebsd.patch.gz
@@ -94,7 +99,7 @@ CONFIGURE_ARGS+=	--enable-fpm \
 PLIST_SUB+=	FPM="@comment "
 .endif
 
-.if !defined(WITHOUT_SUHOSIN)
+.if ${PORT_OPTIONS:MSUHOSIN}
 PATCHFILES+=	suhosin-patch-5.2.16-0.9.7.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
@@ -102,13 +107,13 @@ PLIST_SUB+=	SUHOSIN=""
 PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
-.if defined(WITH_MAILHEAD)
+.if ${PORT_OPTIONS:MMAILHEAD}
 #PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
 PATCHFILES+=	php-5.2.10-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
-.if !defined(WITHOUT_CLI)
+.if ${PORT_OPTIONS:MCLI}
 PHP_SAPI+=	cli
 PLIST_SUB+=	CLI=""
 MAN1+=		php.1
@@ -117,19 +122,19 @@ PLIST_SUB+=	CLI="@comment "
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
-.if !defined(WITHOUT_CGI)
+.if ${PORT_OPTIONS:MCGI}
 PHP_SAPI+=	cgi
 PLIST_SUB+=	CGI=""
-.if defined(WITH_REDIRECT)
+.if ${PORT_OPTIONS:MREDIRECT}
 CONFIGURE_ARGS+=--enable-force-cgi-redirect
 .endif
-.if defined(WITH_DISCARD)
+.if ${PORT_OPTIONS:MDISCARD}
 CONFIGURE_ARGS+=--enable-discard-path
 .endif
-.if !defined(WITHOUT_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 CONFIGURE_ARGS+=--enable-fastcgi
 .endif
-.if defined(WITHOUT_PATHINFO)
+.if ! ${PORT_OPTIONS:MPATHINFO}
 CONFIGURE_ARGS+=--disable-path-info-check
 .endif
 .else
@@ -137,7 +142,7 @@ PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
 .endif
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 PHP_SAPI+=	mod
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
@@ -150,19 +155,19 @@ PLIST_SUB+=	APACHE=""
 PLIST_SUB+=	APACHE="@comment "
 .endif
 
-.if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
+.if ! ${PORT_OPTIONS:MREGEX_TYPE} || ${WITH_REGEX_TYPE} == "php"
 CONFIGURE_ARGS+=--with-regex=php
-.elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "system"
+.elif ${PORT_OPTIONS:MREGEX_TYPE} && ${WITH_REGEX_TYPE} == "system"
 CONFIGURE_ARGS+=--with-regex=system
-.elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "apache"
+.elif ${PORT_OPTIONS:MREGEX_TYPE} && ${WITH_REGEX_TYPE} == "apache"
 CONFIGURE_ARGS+=--with-regex=apache
 .endif
 
-.if !defined(WITH_ZEND_VM) || ${WITH_ZEND_VM} == "CALL"
+.if ! ${PORT_OPTIONS:MZEND_VM} || ${WITH_ZEND_VM} == "CALL"
 CONFIGURE_ARGS+=--with-zend-vm=CALL
-.elif defined(WITH_ZEND_VM) && ${WITH_ZEND_VM} == "SWITCH"
+.elif ${PORT_OPTIONS:MZEND_VM} && ${WITH_ZEND_VM} == "SWITCH"
 CONFIGURE_ARGS+=--with-zend-vm=SWITCH
-.elif defined(WITH_ZEND_VM) && ${WITH_ZEND_VM} == "GOTO"
+.elif ${PORT_OPTIONS:MZEND_VM} && ${WITH_ZEND_VM} == "GOTO"
 CONFIGURE_ARGS+=--with-zend-vm=GOTO
 .endif
 
@@ -171,26 +176,26 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 
-.if defined(WITH_LINKTHR)
+.if ${PORT_OPTIONS:MLINKTHR}
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITH_MULTIBYTE)
+.if ${PORT_OPTIONS:MMULTIBYTE}
 CONFIGURE_ARGS+=--enable-zend-multibyte
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
-.if defined(WITH_FPM) && defined(WITH_CGI)
+.if ${PORT_OPTIONS:MFPM} && ${PORT_OPTIONS:MCGI}
 	@${REINPLACE_CMD} -e 's,BUILD_CGI=\"\\$$\(.*\)\\$$(EXTRA_LIBS),BUILD_CGI=\"\\$$\1\\$$(EXTRA_LIBS) \\$$(SAPI_EXTRA_LIBS),g' \
 		${WRKSRC}/sapi/cgi/config9.m4
 .endif
@@ -212,13 +217,13 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
-.if defined(WITH_FPM) && defined(WITH_CGI)
+.if ${PORT_OPTIONS:MFPM} && ${PORT_OPTIONS:MCGI}
 	@${INSTALL_DATA} ${WRKDIR}/php-fpm.conf.sample ${PREFIX}/etc
 	@${MKDIR} `dirname ${PHP_FPM_PID}`
 	@${MKDIR} `dirname ${PHP_FPM_LOG}`
 	@cd ${PREFIX}/etc && ${CP} -n php-fpm.conf.sample php-fpm.conf || ${TRUE}
 .endif
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
