@@ -4379,3 +4379,4 @@ net/samba34|net/samba36|2013-06-04|Removed: Unmaintained by upstream
 devel/linux-js||2013-06-04|Has expired: Broken for more than 6 month
 emulators/osmose||2013-06-04|Removed: depends on expired devel/linux-js
 security/pam_authsrv||2013-06-04|Removed: depends on expired and removed security/fwtk
+emulators/linux-xjoypad||2013-06-05|Removed: depend on expired devel/linux-js, consider using emulators/joytran instead
