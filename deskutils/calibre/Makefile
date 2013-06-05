@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.30
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -46,6 +46,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		pdftohtml:${PORTSDIR}/graphics/poppler-utils \
 		lshal:${PORTSDIR}/sysutils/hal
 
+USES=		shared-mime-info
 USE_XZ=		yes
 USE_PYTHON=	2.7
 USE_QT4=	qmake_build moc_build
