@@ -173,8 +173,8 @@ share/doc/shibboleth/main.css
 @exec mkdir -p /var/run/shibboleth
 @exec chown -R %%SHIBD_USER%%:%%WWWGRP%%  /var/run/shibboleth
 @exec chmod -R u=rwx,g=rx,o= /var/run/shibboleth
-@unexec rm -rf /var/cache/shibboleth 2>&1 >/dev/null || true
-@unexec rm -rf /var/run/shibboleth 2>&1 >/dev/null || true
+@dirrmtry /var/cache/shibboleth
+@dirrmtry /var/run/shibboleth
 @dirrmtry share/doc/shibboleth/api
 @dirrmtry share/doc/shibboleth
 @dirrmtry lib/shibboleth
