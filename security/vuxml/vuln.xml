@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6b97436c-ce1e-11e2-9cb2-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS due to unescaped HTML output in Create View page</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.0</ge><lt>4.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-6.php">
+	  <p>When creating a view with a crafted name and an incorrect
+	  CREATE statement, it is possible to trigger an XSS.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	  logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users from accessing the required
+	  form.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-6.php</url>
+      <cvename>CVE-2013-3742</cvename>
+    </references>
+    <dates>
+      <discovery>2013-06-05</discovery>
+      <entry>2013-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a3c2dee5-cdb9-11e2-b9ce-080027019be0">
     <topic>telepathy-gabble -- TLS verification bypass</topic>
     <affects>
