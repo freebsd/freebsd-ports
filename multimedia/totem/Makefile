@@ -1,8 +1,6 @@
-# Whom:                 Hendrik Scholz <hendrik@scholz.net>
-#
+# Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
 #   $MCom: ports/multimedia/totem/Makefile,v 1.151 2010/09/27 19:04:37 kwm Exp $
-#
 
 PORTNAME=	totem
 PORTVERSION=	2.32.0
@@ -12,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
+COMMENT?=	Gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata \
@@ -26,9 +24,9 @@ CONFLICTS=	totem-3.[0-9]*
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-USES=		pathfix gettext
-USE_GNOME=	gnomeprefix intlhack desktopfileutils \
-		nautilus2 ltverhack pygtk2 gnomehier
+USES=		pathfix gettext desktop-file-utils
+USE_GNOME=	gnomeprefix intlhack nautilus2 \
+		ltverhack pygtk2 gnomehier
 USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
@@ -46,12 +44,13 @@ MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
 
-OPTIONS=	LIRC "Enable lirc support" off \
-		GALAGO "Enable Galago support" off \
-		BROWSER_PLUGINS "Enable install plugins for gecko browser" on \
-		PUBLISH "Enable Publish (network playlist) plugin" off \
-#		TRACKER "Enable tracker local search plugin" off
+OPTIONS_DEFINE=	LIRC GALAGO BROWSER_PLUGINS PUBLISH TRACKER
+GALAGO_DESC=	Galago support
+BROWSER_PLUGINS_DESC=	Plugins for gecko browser
+PUBLISH_DESC=	Publish (network playlist) plugin
+TRACKER_DESC=	Tracker local search plugin
 
+OPTIONS_DEFAULT=	BROWSER_PLUGINS
 # check configure script for allowed_plugins="..." for new plugins
 TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 		properties skipto youtube opensubtitles screenshot \
@@ -60,6 +59,7 @@ TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 # Not using:
 # TOTEM_PLUGINS= mythtv bemused jamendo
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PUBLISH)
@@ -78,7 +78,7 @@ PLIST_SUB+=	PUBLISH="@comment "
 PLIST_SUB+=	TRACKER="@comment "
 #.endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
@@ -86,7 +86,7 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
 PLIST_SUB+=	LIRC="@comment "
 .endif
 
-.if defined(WITH_GALAGO)
+.if ${PORT_OPTIONS:MGALAGO}
 LIB_DEPENDS+=	galago.3:${PORTSDIR}/devel/libgalago
 PLIST_SUB+=	GALAGO=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
@@ -94,7 +94,7 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
 PLIST_SUB+=	GALAGO="@comment "
 .endif
 
-.if !defined(WITHOUT_BROWSER_PLUGINS)
+.if ${PORT_OPTIONS:MBROWSER_PLUGINS}
 CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-gmp-plugin \
 		--enable-narrowspace-plugin
@@ -130,7 +130,6 @@ post-patch:
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 
 post-install:
-	@-update-desktop-database
 	${MKDIR} ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi

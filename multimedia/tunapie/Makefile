@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tunapie
-# Date created:		2006-04-03
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	tunapie
 PORTVERSION=	2.1.18
@@ -23,13 +19,14 @@ USE_PYTHON=	yes
 USE_WX=	2.6+
 WX_COMPS=	python:run
 
-OPTIONS=	ADULT	"non-censored TV listings" off \
-		AMAROK	"use amarok instead of mplayer" off \
-		TOTEM	"use totem instead of mplayer" off \
-		VLC	"use vlc instead of mplayer" off \
-		XINE	"use xine instead of mplayer" off \
-		AUDACIOUS	"use audacious instead of xmms" off \
-		BEEP_MEDIA_PLAYER	"use beep-media-player instead of xmms" off
+OPTIONS_DEFINE=	ADULT AMAROK TOTEM VLC XINE AUDACIOUS BEEP_MEDIA_PLAYER
+ADULT_DESC=	non-censored TV listings
+AMAROK_DESC=	use amarok instead of mplayer
+TOTEM_DESC=	use totem instead of mplayer
+VLC_DESC=	use vlc instead of mplayer
+XINE_DESC=	use xine instead of mplayer
+AUDACIOUS_DESC=	use audacious instead of xmms
+BEEP_MEDIA_PLAYER_DESC=	use beep-media-player instead of xmms
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	tunapie.1
@@ -53,32 +50,33 @@ do-install:
 	@${MKDIR} ${DESKTOPDIR}
 	@cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
 .if !defined(NO_INSTALL_MANPAGES)
-	@${CP} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
+	@${CP} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 .endif
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ADULT)
+.if ${PORT_OPTIONS:MADULT}
 ADULT_TVLIST=	--adult
 .endif
 
 # default VIDEOPLAYER
-.if defined(WITH_AMAROK)
+.if ${PORT_OPTIONS:MAMAROK}
 RUN_DEPENDS+=	amarok:${PORTSDIR}/audio/amarok
-.elif defined(WITH_TOTEM)
+.elif ${PORT_OPTIONS:MTOTEM}
 RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
-.elif defined(WITH_XINE)
+.elif ${PORT_OPTIONS:MXINE}
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
-.elif defined(WITH_VLC)
+.elif ${PORT_OPTIONS:MVLC}
 RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 .else
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 # default AUDIOPLAYER
-.if defined(WITH_AUDACIOUS)
+.if ${PORT_OPTIONS:MAUDACIOUS}
 RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
-.elifdef(WITH_BEEP_MEDIA_PLAYER)
+.elif ${PORT_OPTIONS:MBEEP_MEDIA_PLAYER}
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 .else
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms

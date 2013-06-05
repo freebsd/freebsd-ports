@@ -563,8 +563,6 @@ share/vala/vapi/totem.vapi
 @dirrm lib/totem/plugins
 @dirrm lib/totem
 %%BROWSER_PLUGINS%%@dirrmtry %%WEBPLUGINS_DIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
