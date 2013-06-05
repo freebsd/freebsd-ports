@@ -306,6 +306,7 @@
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
     SUBDIR += goocanvas
+    SUBDIR += goocanvas2
     SUBDIR += goocanvasmm
     SUBDIR += goom
     SUBDIR += gource
