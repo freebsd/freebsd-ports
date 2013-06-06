@@ -1299,6 +1299,7 @@
     SUBDIR += rubygem-linguistics
     SUBDIR += rubygem-liquid
     SUBDIR += rubygem-loofah
+    SUBDIR += rubygem-ltsv
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
