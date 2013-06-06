@@ -37,7 +37,7 @@ MAKE_ARGS+=	INI_FILE_fmax=${DATADIR}/fmax.ini \
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MOCFLAGS}
+.if ${PORT_OPTIONS:MOPTIMIZED_CLAGS}
 CFLAGS+=	-O2
 .else
 CFLAGS+=
