@@ -766,7 +766,6 @@ share/gps/plug-ins/wsdl2aws.xml
 @dirrm %%EXAMPLESDIR%%/web_elements
 @dirrm %%EXAMPLESDIR%%/templates
 @dirrm %%EXAMPLESDIR%%/images
-@dirrm %%EXAMPLESDIR%%/bin
 @dirrm %%EXAMPLESDIR%%
 @dirrm lib/gnat/aws
 @dirrm lib/aws/native/static
@@ -778,3 +777,4 @@ share/gps/plug-ins/wsdl2aws.xml
 @dirrm include/aws
 @dirrmtry lib/gnat
 @dirrmtry share/gps/plug-ins
+@dirrmtry share/gps
