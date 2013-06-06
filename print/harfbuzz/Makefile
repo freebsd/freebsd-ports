@@ -3,19 +3,22 @@
 
 PORTNAME=	harfbuzz
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	OpenType text shaping engine
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		icudata:${PORTSDIR}/devel/icu \
+		graphite2:${PORTSDIR}/graphics/graphite2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
-USE_GNOME=	glib20 ltverhack
+USE_GNOME=	cairo glib20 ltverhack
 USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.pre.mk>
