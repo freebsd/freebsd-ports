@@ -534,8 +534,8 @@ MASTER_SITE_GENTOO+= \
 #                 default: not set, mandatory
 #
 .if defined(USE_GITHUB)
-.if ${GH_TAGNAME} == master || ${GH_COMMIT} == master
-BROKEN?=	Using master as GH_TAGNAME or GH_COMMIT is invalid. \
+.if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
+BROKEN?=	Using master as GH_TAGNAME is invalid. \
 		Must use a version or commit hash so the upstream does\
 		not "reroll" as soon as the branch is updated
 .endif
