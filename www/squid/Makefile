@@ -239,7 +239,7 @@ basic_auth+=	SASL
 libexec+=	sasl_auth
 .endif
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
-.if ${PORT_OPTIONS:MNIS_AUTH) && !defined(NO_NIS) && !defined(WITHOUT_NIS}
+.if ${PORT_OPTIONS:MNIS_AUTH} && !defined(NO_NIS) && !defined(WITHOUT_NIS)
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif
