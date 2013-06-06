@@ -94,45 +94,6 @@ ALL_OPTIONS+=	${opt}
 .endfor
 
 ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
-
-#XXX  to kill when old option framework won't be used anymore
-.if defined(OPTIONS)
-NO_OPTIONS_SORT=	yes
-.  undef optname
-.  for O in ${OPTIONS:S|\#|\\\#|g}
-opt:=	${O}
-.    if !defined(optname)
-optname:=	${O}
-ALL_OPTIONS+=	${O}
-.if !defined(OPTIONS_DEFINE) || empty(OPTIONS_DEFINE:M${O})
-OPTIONS_DEFINE+=	${O}
-.endif
-PORT_OPTIONS+=	${O}
-.    elif !defined(optdesc)
-optdesc:=	${opt}
-${optname}_DESC:=	${opt:S|"||g}
-.    else
-.      if ${opt:L} == off
-.        if defined(PORT_OPTIONS) && defined(optname)
-NO_OPTIONS+=	${optname}
-NO_OPTIONS:=	${NO_OPTIONS:O:u}
-.        else
-.        endif
-.      endif
-.      undef optname
-.      undef optdesc
-.    endif
-.  endfor
-.  if defined(NO_OPTIONS)
-.    for O in ${NO_OPTIONS}
-PORT_OPTIONS:=	 ${PORT_OPTIONS:N${O}}
-.    endfor
-.  endif
-#.  undef NO_OPTIONS
-.endif
-#XXX end of compatibility
-
-ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
 
 # Remove global options the port maintainer doesn't want
