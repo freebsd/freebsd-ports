@@ -51,6 +51,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72f35727-ce83-11e2-be04-005056a37f68">
+    <topic>dns/bind9* -- iA recursive resolver can be crashed by a query for a malformed zone</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.3.1</lt></range>
+      </package>
+      <package>
+	<name>bind99-base</name>
+	<range><lt>9.9.3.1</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<range><lt>9.8.5.1</lt></range>
+      </package>
+      <package>
+	<name>bind98-base</name>
+	<range><lt>9.8.5.1</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<range><lt>9.6.3.2.ESV.R9</lt></range>
+      </package>
+      <package>
+	<name>bind96-base</name>
+	<range><lt>9.6.3.2.ESV.R9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-00967">
+	  <p>A bug has been discovered in the most recent releases of
+	  BIND 9 which has the potential for deliberate exploitation
+	  as a denial-of-service attack. By sending a recursive
+	  resolver a query for a record in a specially malformed zone,
+	  an attacker can cause BIND 9 to exit with a fatal
+	  "RUNTIME_CHECK" error in resolver.c.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-3919</cvename>
+    </references>
+    <dates>
+      <discovery>2013-06-04</discovery>
+      <entry>2013-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b97436c-ce1e-11e2-9cb2-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS due to unescaped HTML output in Create View page</topic>
     <affects>
