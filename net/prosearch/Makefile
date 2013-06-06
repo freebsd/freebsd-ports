@@ -23,29 +23,28 @@ USE_PERL5_RUN=	YES
 
 #todo
 # user and group for crawler, nginx
-OPTIONS=\
-		CRAWLER "With crawler deps (nmap, p5-libwww)" on \
-		SAMBA "crawler with SAMBA (file://)" on \
-		RSYNC " crawler with RSYNC " off \
-		APACHE "With web server apache2.2+" on \
-		MOD_PERL2 "With MOD_PERL2" off \
-		MOD_FASTCGI "With MOD_FASTCGI" off \
-		DB "With database server deps" on \
-		MYSQL "mysql" on \
-		MARIA "maria (mysql replace)" off \
-		PGSQL "postgres" off \
-		PGPP "postgres pure Perl connection driver" off \
-		SQLITE "sqlite" off \
-		SPHINX "sphinx fulltext search engine" off
+OPTIONS_DEFINE=	CRAWLER SAMBA RSYNC APACHE MOD_PERL2 MOD_FASTCGI \
+		DB MYSQL MARIA PGSQL PGPP SQLITE SPHINX
+OPTIONS_DEFAULT=	CRAWLER SAMBA APACHE DB MYSQL
+CRAWLER_DESC=		With crawler deps (nmap, p5-libwww)
+SAMBA_DESC=		crawler with SAMBA (file://)
+RSYNC_DESC=		crawler with RSYNC
+APACHE_DESC=		With web server apache2.2+
+MOD_PERL2_DESC=		With MOD_PERL2
+MOD_FASTCGI_DESC=	With MOD_FASTCGI
+DB_DESC=		With database server deps
+MARIA_DESC=		maria (mysql replace)
+PGPP_DESC=		postgres pure Perl connection driver
+SPHINX_DESC=		sphinx fulltext search engine
 
 #		NGINX "With web server deps (NGINX)" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 RUN_DEPENDS+=\
 p5-lib-abs>=0:${PORTSDIR}/devel/p5-lib-abs
 
-.if defined(WITH_CRAWLER)
+.if ${PORT_OPTIONS:MCRAWLER}
 RUN_DEPENDS+=\
 p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 p5-URI>=0:${PORTSDIR}/net/p5-URI \
@@ -55,79 +54,79 @@ nmap:${PORTSDIR}/security/nmap \
 p5-Net-DirectConnect>=0:${PORTSDIR}/net-p2p/p5-Net-DirectConnect
 .endif
 
-.if defined(WITH_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
 .endif
 
-.if defined(WITH_RSYNC)
+.if ${PORT_OPTIONS:MRSYNC}
 RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 .endif
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
 
-.if defined(WITH_NGINX)
+.if ${PORT_OPTIONS:MNGINX}
 RUN_DEPENDS+=\
 nginx:${PORTSDIR}/www/nginx
 .endif
 
-.if defined(WITH_MOD_PERL2)
+.if ${PORT_OPTIONS:MMOD_PERL2}
 RUN_DEPENDS+=\
 ${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .endif
 
-.if defined(WITH_MOD_FASTCGI)
+.if ${PORT_OPTIONS:MMOD_FASTCGI}
 RUN_DEPENDS+=\
 ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi	\
 p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 .endif
 
-.if defined(WITH_SPHINX)
+.if ${PORT_OPTIONS:MSPHINX}
 WITH_MYSQL=	client	# for dbi
 RUN_DEPENDS+=\
 searchd:${PORTSDIR}/textproc/sphinxsearch-devel
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	client
 RUN_DEPENDS+=\
 p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_DB) && defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	server
 .endif
 
-.if defined(WITH_MARIA)
+.if ${PORT_OPTIONS:MMARIA}
 RUN_DEPENDS+=\
 p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 ${LOCALBASE}bin/mysql:${PORTSDIR}/databases/mariadb-client
 .endif
 
-.if defined(WITH_DB) && defined(WITH_MARIA)
+.if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMARIA}
 RUN_DEPENDS+=\
 ${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mariadb-server
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 RUN_DEPENDS+=\
 p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if  defined(WITH_PGPP)
+.if ${PORT_OPTIONS:MPGPP}
 RUN_DEPENDS+=\
 p5-DBD-PgPP>=0:${PORTSDIR}/databases/p5-DBD-PgPP
 .endif
 
-.if (defined(WITH_PGSQL) || defined(WITH_PGPP)) && defined(WITH_DB)
+.if ${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MPGPP} || ${PORT_OPTIONS:MDB}
 USE_PGSQL=	yes
 RUN_DEPENDS+=\
 ${LOCALBASE}/bin/postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 RUN_DEPENDS+=\
 p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
@@ -145,4 +144,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
