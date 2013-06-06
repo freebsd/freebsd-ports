@@ -818,6 +818,7 @@
     SUBDIR += rubygem-chef-server
     SUBDIR += rubygem-chef-solr
     SUBDIR += rubygem-facter
+    SUBDIR += rubygem-fluent-mixin-plaintextformatter
     SUBDIR += rubygem-fluentd
     SUBDIR += rubygem-fssm
     SUBDIR += rubygem-god
