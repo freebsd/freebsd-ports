@@ -16,16 +16,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
+USE_GCC=	any
 
 PORTDOCS=	*
 
 MAN6=		opencity.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 802502
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-macros.h
-.endif
+.include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
 post-patch:
@@ -33,4 +30,4 @@ post-patch:
 		${WRKSRC}/docs/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
