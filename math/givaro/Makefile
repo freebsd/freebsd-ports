@@ -22,11 +22,14 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOXYGEN
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ARGS+=	--enable-doc --with-docdir="${DOCSDIR}"
+PLIST_SUB+=	DOXYGEN=""
+.else
+PLIST_SUB+=	DOXYGEN="@comment "
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -52,4 +55,4 @@ check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
