@@ -1,9 +1,5 @@
-# New ports collection makefile for:   SQL Buddy
-# Date created:        17 August 2008
-# Whom:                Chenguang LI
-#
+# Created by: Chenguang LI
 # $FreeBSD$
-#
 
 PORTNAME=	sqlbuddy
 PORTVERSION=	1.3.3
@@ -22,17 +18,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PHP=	ctype pcre session
 WANT_PHP_WEB=	yes
 
-OPTIONS+=	MYSQL  "MySQL support" on \
-		SQLITE "SQLite support" off
+OPTIONS_DEFINE=	MYSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	sqlite
 .endif
 
@@ -53,4 +49,4 @@ do-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
