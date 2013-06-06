@@ -16,8 +16,13 @@ LICENSE=	BSD
 
 EVAS_GENERIC_LOADERS=	gst pdf ps raw svg xcf
 
+#bmake compatibility
+.MAKE.FreeBSD_UL= yes
+
 .for NODE in ${EVAS_GENERIC_LOADERS}
-OPTIONS+=	${NODE:U} "Install ${NODE} evas generic loader" on
+OPTIONS_DEFINE+=	${NODE:U}
+OPTIONS_DEFAULT+=	${NODE:U}
+${NODE:U}_DESC=	Install ${NODE} evas generic loader
 .endfor
 
 DIST_SUBDIR=	e17
@@ -36,7 +41,7 @@ CONFIGURE_ARGS+=	--enable-image-loader-generic
 .include <bsd.port.options.mk>
 
 .for NODE in ${EVAS_GENERIC_LOADERS}
-. if !defined(WITHOUT_${NODE:U})
+. if ${PORT_OPTIONS:M${NODE:U}}
 RUN_DEPENDS+=	${LOCALBASE}/lib/evas/utils/evas_image_loader.${NODE}:${PORTSDIR}/graphics/evas_generic_loaders-${NODE}
 . endif
 .endfor

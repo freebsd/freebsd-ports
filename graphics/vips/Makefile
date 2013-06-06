@@ -10,8 +10,10 @@ MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
 
-OPTIONS+=	LIBOIL	"Use liboil for CPU-optimized primitives" on
-OPTIONS+=	PYTHON	"Create Python bindings" ${PYPRESENT}
+OPTIONS_DEFINE=	LIBOIL PYTHON
+OPTIONS_DEFAULT=	LIBOIL
+LIBOIL_DESC=	Use leiboil for CPU-optimized primitives
+PYTHON_DESC=	Create Python bindings
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
@@ -26,6 +28,9 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		lcms:${PORTSDIR}/graphics/lcms
 
 PYPRESENT!=	which python > /dev/null && echo on || echo off
+.if ${PYPRESENT} == on
+OPTIONS_DEFAULT+=	PYTHON
+.endif
 USE_GMAKE=	yes
 USES=		gettext
 USE_PERL5_BUILD=yes
@@ -39,8 +44,9 @@ post-configure:
 	${REINPLACE_CMD} -Ee 's,^(G?MSGFMT = *)$$,\1${LOCALBASE}/bin/msgfmt,g' \
 		${WRKSRC}/po/Makefile
 
+.include <bsd.port.options.mk>
 # Don't extract doc/ subdirectory - the simplest way:
-.ifdef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 EXTRACT_AFTER_ARGS=	--exclude doc
 EXTRA_PATCHES=	${FILESDIR}/nodoc-patch
 .endif
@@ -56,8 +62,7 @@ CONFIGURE_ARGS+=--with-$p-libraries=${LOCALBASE}/lib
 
 .include "Makefile.man"
 
-.include <bsd.port.options.mk>
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 PLIST_SUB+=	PY=""
 .else
@@ -71,7 +76,7 @@ PLIST_SUB+=	PY="@comment "
 BROKEN=		Does not compile on sparc64-9
 .endif
 
-.if defined(WITH_LIBOIL)
+.if ${PORT_OPTIONS:MLIBOIL}
 LIB_DEPENDS+=	oil:${PORTSDIR}/devel/liboil
 .else
 CONFIGURE_ARGS+=	--without-liboil
