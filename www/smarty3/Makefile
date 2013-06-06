@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smarty3
-PORTVERSION=	3.1.12
+PORTVERSION=	3.1.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/files/
 DISTNAME=	Smarty-${PORTVERSION}
