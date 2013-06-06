@@ -24,6 +24,8 @@ WANT_SDL=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ARTS ESOUND SDL VORBIS SMPEG
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT_i386=	ASM
 SMPEG_DESC=	smpeg support
 
 .include <bsd.port.options.mk>
@@ -68,12 +70,10 @@ CONFIGURE_ARGS+=--enable-smpeg
 CONFIGURE_ARGS+=--disable-smpeg
 .endif
 
-.if ${ARCH} == "i386"
-OPTIONS+=	X86_ASM "Enable x86 assembly code" on
-.if !defined(WITHOUT_X86_ASM)
+.if ${PORT_OPTIONS:MASM}
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
-.endif
+
 
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	does not compile
