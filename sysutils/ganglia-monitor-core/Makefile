@@ -1,9 +1,4 @@
-# Ports collection makefile for:	ganglia-monitor-core
-# Date created:				Wed Jan 23, 2003
-# Whom:					Brooks Davis <brooks@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.1.7
@@ -25,7 +20,9 @@ LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-OPTIONS+=	GMETAD "include gmetad" on
+OPTIONS_DEFINE=	GMETAD
+OPTIONS_DEFAULT=	GMETAD
+GMETAD_DESC=	include gmetad
 
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
@@ -55,14 +52,12 @@ IGNORE=		the variable GMOND_CONF must point to a file when defined
 GMOND_CONF=	${WRKDIR}/gmond.conf
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_RC_SUBR=	gmond
-.if defined (WITH_GMETAD)
+.if ${PORT_OPTIONS:MGMETAD}
 USE_RC_SUBR+=	gmetad
-.endif
 
-.if defined (WITH_GMETAD)
 LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
@@ -75,7 +70,7 @@ SUB_LIST+=	GMETAD="\#"
 USE_LDCONFIG=	yes
 
 MAN1=		gmetric.1 gmond.1 gstat.1
-.if defined (WITH_GMETAD)
+.if ${PORT_OPTIONS:MGMETAD}
 MAN1+=		gmetad.1
 .endif
 MAN5=		gmond.conf.5
@@ -118,7 +113,7 @@ post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
 post-install:
-.if defined(WITH_GMETAD)
+.if ${PORT_OPTIONS:MGMETAD}
 	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh ${PREFIX}/sbin/gmetasnap
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${GMETAD_CONF} ${PREFIX}/etc/gmetad.conf.sample
@@ -130,4 +125,4 @@ post-install:
 	${INSTALL_DATA} ${GMOND_CONF} ${PREFIX}/etc/gmond.conf.sample
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
