@@ -74,7 +74,7 @@ redmine-plugin-plist:
 .endif
 
 do-install:
-	${MKDIR} "${WWWDIR}/vendor/${REDMINE_PLUGIN_NAME}"
+	${MKDIR} "${WWWDIR}/plugins/${REDMINE_PLUGIN_NAME}"
 	${TAR} -C "${WRKSRC}" -cf - --exclude '*.orig' . | ${TAR} -C "${WWWDIR}/plugins/${REDMINE_PLUGIN_NAME}" -xf -
 
 .include <bsd.port.mk>
