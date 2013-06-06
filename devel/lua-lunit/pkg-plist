@@ -1,0 +1,9 @@
+bin/lunit
+%%LUA_MODSHAREDIR%%/lunit-tests.lua
+%%LUA_MODSHAREDIR%%/lunit-console.lua
+%%LUA_MODSHAREDIR%%/lunit.lua
+%%PORTDOCS%%%%DOCSDIR%%/DOCUMENTATION
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.lua
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
