@@ -15,7 +15,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Script to turn intuitively written math into latex
 
 USE_PERL5=	yes
-USE_TEX=	latex:build
+USE_TEX=	latex:build dvipsk:build
 
 post-patch:
 	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/naturalmath
