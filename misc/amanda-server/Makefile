@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amanda
-# Date created:				28th Feb 1995
-# Whom:					gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
 PORTNAME=	amanda
 PORTVERSION=	3.3.2
@@ -42,9 +38,9 @@ PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-OPTIONS=	GNUTAR "use GNU tar" on
-
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GNUTAR
+OPTIONS_DEFAULT=	GNUTAR
+GNUTAR_DESC=	use GNU tar
 
 .if defined(AMANDA_USER)
 USERS=		${AMANDA_USER}
@@ -66,7 +62,16 @@ CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
 CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
 .endif
 
-.if !defined(WITHOUT_GNUTAR)
+.if !defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=	PLOT SAMBA S3
+PLOT_DESC=	Enable ploting, requires X11 libraries
+SAMBA_DESC=	Enable the use of smbclient
+S3_DESC=	Enable Amazon S3 device support
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTAR}
 CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
 		--with-gnutar=${LOCALBASE}/bin/gtar
 BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
@@ -119,11 +124,7 @@ MAN8=		amaddclient.8 amadmin.8 amaespipe.8 amcheck.8 \
 		amtape.8 amtoc.8 amtapetype.8 \
 		amvault.8
 
-OPTIONS+=	PLOT "enable ploting, requires X11 libraries" off\
-		SAMBA "enable the use of smbclient" off \
-		S3 "enable Amazon S3 device support" off
-
-.if defined (WITH_PLOT)
+.if ${PORT_OPTIONS:MPLOT}
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 MAN8+=		amplot.8
@@ -134,7 +135,7 @@ PLIST_SUB+=	PLOT='@comment '
 CONFIGURE_ARGS+=	--without-gnuplot
 .endif
 
-.if defined (WITH_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 SAMBA_PORT?=	samba36
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
@@ -142,7 +143,7 @@ CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 
 # If configure founds libcurl, automatically enabled it (with plist change).
-.if defined(WITH_S3)
+.if ${PORT_OPTIONS:MS3}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-s3-device
 PLIST_SUB+=	S3DEVICE=''
@@ -216,4 +217,4 @@ post-install:
 #   Prefix @WANT_CLIENT_TRUE@ for client only files.
 #   For debugging: dbprintf(_("getcmd: %s\n"), line);
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amanda
-# Date created:				28th Feb 1995
-# Whom:					gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
 PORTNAME=	amanda
 PORTVERSION=	2.6.1p2
@@ -20,8 +16,9 @@ WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda26-client
 
 NO_LATEST_LINK=	yes
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig glib20
+USE_GNOME=	glib20
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 PATCH_STRIP=
@@ -38,9 +35,8 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 
-OPTIONS=	GNUTAR "use GNU tar" on
-
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GNUTAR
+GNUTAR_DESC=	use GNU tar
 
 AMANDA_USER?=		operator
 AMANDA_GROUP?=		operator
@@ -58,7 +54,21 @@ CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
 CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 .endif
 
-.if !defined(WITHOUT_GNUTAR)
+.if !defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=	PLOT SAMBA MTX AESPIPE S3
+PLOT_DESC=	Enable ploting, requires X11 libraries
+SAMBA_DESC=	Enable the use of smbclient
+MTX_DESC=	Enable the use of mtx changer scripts
+AESPIPE_DESC=	Enable encryption. Needed by amcrypt
+S3_DESC=	Enable Amazon S3 device support
+.else
+OPTIONS_DEFINE+=	ZFSCOMP
+ZFSCOMP_DESC=	Accurate estimation of compressed ZFS filesystems
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTAR}
 CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
 		--with-gnutar=${LOCALBASE}/bin/gtar
 BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
@@ -107,13 +117,7 @@ MAN8=		amaddclient.8 amadmin.8 amaespipe.8 amcheck.8 \
 		amtape.8 amtoc.8 amtapetype.8 \
 		amvault.8
 
-OPTIONS+=	PLOT "enable ploting, requires X11 libraries" off\
-		SAMBA "enable the use of smbclient" off \
-		MTX "enable the use of mtx changer scripts" off \
-		AESPIPE "enable encryption. Needed by amcrypt" off \
-		S3 "enable Amazon S3 device support" off
-
-.if defined (WITH_PLOT)
+.if ${PORT_OPTIONS:MPLOT}
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 MAN8+=		amplot.8
@@ -124,25 +128,25 @@ PLIST_SUB+=	PLOT='@comment '
 CONFIGURE_ARGS+=	--without-gnuplot
 .endif
 
-.if defined (WITH_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 SAMBA_PORT?=	samba36
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
 CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 
-.if defined (WITH_MTX)
+.if ${PORT_OPTIONS:MMTX}
 BUILD_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 .endif
 
-.if defined (WITH_AESPIPE)
+.if ${PORT_OPTIONS:MAESPIPE}
 RUN_DEPENDS+=	aespipe:${PORTSDIR}/security/aespipe
 .else
 .endif
 
 # If configure founds libcurl, automatically enabled it (with plist change).
-.if defined(WITH_S3)
+.if ${PORT_OPTIONS:MS3}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-s3-device
 PLIST_SUB+=	S3DEVICE=''
@@ -176,8 +180,6 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-OPTIONS+=	ZFSCOMP "accurate estimation of compressed ZFS filesystems" off
-
 CONFLICTS=	amanda-client-2.5.* amanda-client-3.*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 
@@ -198,7 +200,7 @@ MAN8=		amanda.8 \
 		script-email.8
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/example/chg-multi.conf \
 		${WRKSRC}/example/chg-scsi.conf \
@@ -212,7 +214,7 @@ post-install:
 
 .endif
 
-.if defined(WITH_ZFSCOMP)
+.if ${PORT_OPTIONS:MZFSCOMP}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-application-src::amzfs-sendrecv.pl
 .endif
 
@@ -225,4 +227,4 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-application-src::amzfs-sendrecv.pl
 #     which should be handled by amanda-client only.
 #   o pthread issue: http://wiki.zmanda.com/index.php/Installation/OS_Specific_Notes/Installing_Amanda_on_FreeBSD#Threading_and_-pthread
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
