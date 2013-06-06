@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Redis
-# Date created:		2009-09-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Redis
-PORTVERSION=	1.9510
+PORTVERSION=	1.9610
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MELO
@@ -20,7 +16,6 @@ BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
-
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
