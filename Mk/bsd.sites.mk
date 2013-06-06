@@ -534,6 +534,11 @@ MASTER_SITE_GENTOO+= \
 #                 default: not set, mandatory
 #
 .if defined(USE_GITHUB)
+.if ${GH_TAGNAME} == master || ${GH_COMMIT} == master
+BROKEN?=	Using master as GH_TAGNAME or GH_COMMIT is invalid. \
+		Must use a version or commit hash so the upstream does\
+		not "reroll" as soon as the branch is updated
+.endif
 MASTER_SITE_GITHUB+=		https://nodeload.github.com/%SUBDIR% \
 				http://nodeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
