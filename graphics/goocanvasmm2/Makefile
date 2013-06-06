@@ -6,6 +6,7 @@ PORTNAME=	goocanvasmm
 PORTVERSION=	1.90.9
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ bindings for the goocanvas widget for GTK
