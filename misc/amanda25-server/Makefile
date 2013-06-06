@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amanda
-# Date created:				28th Feb 1995
-# Whom:					gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
 PORTNAME=	amanda
 PORTVERSION=	2.5.1p3
@@ -34,10 +30,10 @@ WANT_PERL=	yes
 
 SAMBA_PORT?=	net/samba36
 
-OPTIONS=	GNUTAR "use GNU tar" on \
-		SSH "enable ssh-auth" off
-
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GNUTAR SSH
+OPTIONS_DEFAULT=	SSH
+GNUTAR_DESC=	use GNU tar
+SSH_DESC=	Enable ssh-auth
 
 AMANDA_USER?=		operator
 AMANDA_GROUP?=		operator
@@ -58,10 +54,6 @@ CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
 .endif
 
-.if defined (WITH_SSH)
-CONFIGURE_ARGS+=	--with-ssh-security
-.endif
-
 # AMANDA_PORTRANGE is obsoleted.  Use AMANDA_TCPPORTRANGE instead.
 .if defined (AMANDA_PORTRANGE)
 AMANDA_TCPPORTRANGE=	${AMANDA_PORTRANGE}
@@ -70,7 +62,24 @@ AMANDA_TCPPORTRANGE=	${AMANDA_PORTRANGE}
 CONFIGURE_ARGS+=	--with-tcpportrange=${AMANDA_TCPPORTRANGE}
 .endif
 
-.if !defined(WITHOUT_GNUTAR)
+.if !defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=	PLOT SAMBA MTX AESPIPE
+PLOT_DESC=	Eenable ploting, requires X11 libraries
+SAMBA_DESC=	Enable the use of smbclient
+MTX_DESC=	Enable the use of mtx changer scripts
+AESPIPE_DESC=	Enable encryption. Needed by amcrypt
+.else
+OPTIONS_DEFINE+=	DUMP_SNAPSHOT
+DUMP_SNAPSHOT_DESC=	Use snapshot by using dump -L
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSH}
+CONFIGURE_ARGS+=	--with-ssh-security
+.endif
+
+.if ${PORT_OPTIONS:MGNUTAR}
 CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
 		--with-gnutar=${LOCALBASE}/bin/gtar
 BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
@@ -126,12 +135,7 @@ MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
 		amoverview.8 amreport.8 amrmtape.8 amstatus.8 \
 		amtape.8 amtoc.8 amverify.8 amverifyrun.8 amtapetype.8
 
-OPTIONS+=	PLOT "enable ploting, requires X11 libraries" off\
-		SAMBA "enable the use of smbclient" off \
-		MTX "enable the use of mtx changer scripts" off \
-		AESPIPE "enable encryption. Needed by amcrypt" off
-
-.if defined (WITH_PLOT)
+.if ${PORT_OPTIONS:MPLOT}
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 MAN8+=		amplot.8
@@ -140,18 +144,18 @@ PLIST_SUB+=	PLOT=''
 PLIST_SUB+=	PLOT='@comment '
 .endif
 
-.if defined (WITH_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 
-.if defined (WITH_MTX)
+.if ${PORT_OPTIONS:MMTX}
 BUILD_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 .endif
 
-.if defined (WITH_AESPIPE)
+.if ${PORT_OPTIONS:MAESPIPE}
 RUN_DEPENDS+=	aespipe:${PORTSDIR}/security/aespipe
 .endif
 
@@ -194,8 +198,6 @@ CONFIGURE_ARGS+=--without-server
 MAN5=		amanda.conf.5 amanda-client.conf.5
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
-OPTIONS+=	DUMP_SNAPSHOT "use snapshot by using dump -L" off
-
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/amanda
 	${CP} -R ${WRKSRC}/example/amanda.conf \
@@ -208,7 +210,7 @@ post-install:
 	${TOUCH} /etc/amandates
 	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} /etc/amandates
 
-.if defined (WITH_DUMP_SNAPSHOT)
+.if ${PORT_OPTIONS:MDUMP_SNAPSHOT}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendbackup-dump.c
 .endif
 
@@ -218,4 +220,4 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendbackup-dump.c
 #   o amanda-server installs lib/libamandad.a which should be handled by
 #     amanda-client only.
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
