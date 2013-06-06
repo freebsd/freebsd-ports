@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-rubyrep
-# Date created:		2011-07-30
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		rubyrep
 PORTVERSION=		1.2.0
@@ -25,18 +21,18 @@ RUBYGEM_AUTOPLIST=	yes
 
 USE_RC_SUBR=	rubyrep
 
-OPTIONS =	MYSQL "Enable MySQL support" off \
-		PGSQL "Enable PostgreSQL support" on
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFAULT=	PGSQL
 
 PLIST_FILES=	bin/rubyrep
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	ruby-mysql>=0:${PORTSDIR}/databases/ruby-mysql
 .endif
 
