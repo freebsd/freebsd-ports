@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdv
-# Date created:				Sun Nov 18 19:42:02 BRST 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdv
 PORTVERSION=	1.0.0
@@ -19,6 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
+USES=	pkgconfig pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-gtk
 CONFIGURE_ENV=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LOCALBASE}/libdata/pkgconfig
@@ -31,9 +28,9 @@ MAN1=	dubdv.1 dvconnect.1 encodedv.1
 PORTDOCS=	AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 		README.dvconnect README.encoder TODO
 
-OPTIONS+=	SDL	"Add SDL support" off
+OPTIONS_DEFINE=	SDL DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # XXX - work around compiler bug
 # Optimizations -O{1,s,2,3} work
@@ -41,15 +38,12 @@ OPTIONS+=	SDL	"Add SDL support" off
 # Therefore, make sure we have AT LEAST -O and avoid -O0
 CFLAGS:=	-O ${CFLAGS:N-O0}
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 CONFIGURE_ARGS+=	--enable-sdl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|(pkgconfigdir =).+(/pkgconfig)|\1 ${PREFIX}/libdata\2|' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
 		${WRKSRC}/libdv/dv.h \
 		${WRKSRC}/libdv/dv_types.h \
@@ -65,11 +59,11 @@ post-patch:
 		${WRKSRC}/libdv.pc.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
