@@ -21,8 +21,13 @@
 %%SITE_PERL%%/Git/PurePerl/PackIndex/Version1.pm
 %%SITE_PERL%%/Git/PurePerl/PackIndex/Version2.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol.pm
+%%SITE_PERL%%/Git/PurePerl/Protocol/Git.pm
+%%SITE_PERL%%/Git/PurePerl/Protocol/File.pm
+%%SITE_PERL%%/Git/PurePerl/Protocol/SSH.pm
+%%SITE_PERL%%/Git/PurePerl/Config.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
+@dirrm %%SITE_PERL%%/Git/PurePerl/Protocol
 @dirrm %%SITE_PERL%%/Git/PurePerl/PackIndex
 @dirrm %%SITE_PERL%%/Git/PurePerl/Pack
 @dirrm %%SITE_PERL%%/Git/PurePerl/Object
