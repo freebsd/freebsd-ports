@@ -17,7 +17,6 @@ DISTNAME=		Mail-Cclient-${PORTVERSION}
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl interface to the c-client mailbox API
 
-PERL_CONFIGURE=	yes
 LIB_DEPENDS=		c-client4.9:${PORTSDIR}/mail/cclient
 
 PERL_CONFIGURE=		yes
