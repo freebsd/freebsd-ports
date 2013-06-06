@@ -1,7 +1,4 @@
-# New ports collection makefile for:   synce-rra
-# Date created:                March 2004
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
 
 PORTNAME=	librra
@@ -18,8 +15,10 @@ LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
 RUN_DEPENDS+=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
 
-OPTIONS?=	TOOLS	"Build with minor rra command line tools" on \
-		RECURR	"Enable experimential recurrence support" off
+OPTIONS_DEFINE=	TOOLS RECURR
+OPTIONS_DEFAULT=	TOOLS
+TOOLS_DESC=	Build with minor rra command line tools
+RECURR_DESC=	Enable experimential recurrence support
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
@@ -28,7 +27,7 @@ USES=		pathfix iconv
 CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
 			--with-libmimedir="${LOCALBASE}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(RRA_SLAVE) && ${RRA_SLAVE} == "pythonb"
 # If we're building python bindings, omit building tools
@@ -37,7 +36,7 @@ CONFIGURE_ARGS+=	--enable-python-bindings --disable-minor-tools
 # Not building bindings
 MAN1=	synce-matchmaker.1
 CONFIGURE_ARGS+=	--disable-python-bindings
-.if defined(WITHOUT_TOOLS)
+.if ! ${PORT_OPTIONS:MTOOLS}
 PLIST_SUB+=	TOOLS="@comment "
 CONFIGURE_ARGS+=	--disable-minor-tools
 .else
@@ -52,7 +51,7 @@ MAN1+=		rra-appointment-from-vevent.1 \
 PLIST_SUB+=	TOOLS=""
 .endif
 
-.if defined(WITH_RECURR)
+.if ${PORT_OPTIONS:MRECURR}
 CONFIGURE_ARGS+=	--enable-recurrence
 .endif
 .endif
@@ -61,4 +60,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
