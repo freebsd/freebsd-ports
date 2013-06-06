@@ -1,16 +1,11 @@
-# ex:ts=8
-# Ports collection makefile for:	AnyData
-# Date created:			Jun 29, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	AnyData
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JZUCKER
+MASTER_SITE_SUBDIR=	CPAN:SDOWIDEIT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
