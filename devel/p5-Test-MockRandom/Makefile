@@ -14,8 +14,6 @@ COMMENT=	Replaces random number generation with non-random number generation
 
 PERL_MODBUILD=	yes
 
-PERL_CONFIGURE=	yes
-
 MAN3=		Test::MockRandom.3
 
 .include <bsd.port.mk>
