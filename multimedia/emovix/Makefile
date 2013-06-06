@@ -16,6 +16,5 @@ COMMENT=	Mini Linux distro to create bootable video CDs
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_PERL5_BUILD=yes
 
 .include <bsd.port.mk>
