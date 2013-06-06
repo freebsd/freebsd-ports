@@ -535,8 +535,8 @@ MASTER_SITE_GENTOO+= \
 #
 .if defined(USE_GITHUB)
 .if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
-BROKEN?=	Using master as GH_TAGNAME is invalid. \
-		Must use a version or commit hash so the upstream does\
+IGNORE?=	Using master as GH_TAGNAME is invalid. \
+		Must use a tag or commit hash so the upstream does\
 		not "reroll" as soon as the branch is updated
 .endif
 MASTER_SITE_GITHUB+=		https://nodeload.github.com/%SUBDIR% \
