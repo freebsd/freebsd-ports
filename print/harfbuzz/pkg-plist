@@ -1,5 +1,6 @@
 bin/hb-ot-shape-closure
 bin/hb-shape
+bin/hb-view
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
@@ -7,6 +8,8 @@ include/harfbuzz/hb-font.h
 include/harfbuzz/hb-ft.h
 include/harfbuzz/hb-glib.h
 include/harfbuzz/hb-gobject.h
+include/harfbuzz/hb-graphite2.h
+include/harfbuzz/hb-icu.h
 include/harfbuzz/hb-ot-layout.h
 include/harfbuzz/hb-ot-tag.h
 include/harfbuzz/hb-ot.h
