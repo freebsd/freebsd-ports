@@ -3544,6 +3544,7 @@
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
     SUBDIR += py-jsonrpclib
+    SUBDIR += py-jsonschema
     SUBDIR += py-kazoo
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
