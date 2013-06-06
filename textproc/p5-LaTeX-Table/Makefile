@@ -40,7 +40,6 @@ RUN_DEPENDS=	p5-Test-NoWarnings>=0.084:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-MooseX-FollowPBP>=0.03:${PORTSDIR}/devel/p5-MooseX-FollowPBP
 
-PERL_CONFIGURE=	yes
 PERL_MODBUILD=	yes
 
 MAN1=	csv2pdf.1 ltpretty.1
