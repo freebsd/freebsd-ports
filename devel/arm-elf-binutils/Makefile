@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		gettext
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} CFLAGS="-I/usr/local/include"
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror CFLAGS="-I/usr/local/include"
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}c++filt.1 \
