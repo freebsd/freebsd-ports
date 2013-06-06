@@ -1,79 +1,79 @@
-.if defined(WITH_AUTHENTICATION_FW)
+.if ${PORT_OPTIONS:MAUTHENTICATION_FW}
 BLOCKS+=	authentication-fw
 BLOCKS+=	session-fw
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_BATIK)
+.if ${PORT_OPTIONS:MBATIK}
 BLOCKS+=	batik
 .endif
 
-.if defined(WITH_BSF)
+.if ${PORT_OPTIONS:MBSF}
 BLOCKS+=	bsf
 .endif
 
-.if defined(WITH_CHAPERON)
+.if ${PORT_OPTIONS:MCHAPERON}
 BLOCKS+=	chaperon
 .endif
 
-.if defined(WITH_DATABASES)
+.if ${PORT_OPTIONS:MDATABASES}
 BLOCKS+=	databases
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_FOP)
+.if ${PORT_OPTIONS:MFOP}
 BLOCKS+=	fop
 BLOCKS+=	batik
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_FORMS)
+.if ${PORT_OPTIONS:MFORMS}
 BLOCKS+=	forms
 BLOCKS+=	ajax
 BLOCKS+=	template
 .endif
 
-.if defined(WITH_HSQLDB)
+.if ${PORT_OPTIONS:MHSQLDB}
 BLOCKS+=	hsqldb
 BLOCKS+=	databases
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 BLOCKS+=	html
 .endif
 
-.if defined(WITH_ITEXT)
+.if ${PORT_OPTIONS:MITEXT}
 BLOCKS+=	itext
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_JFOR)
+.if ${PORT_OPTIONS:MJFOR}
 BLOCKS+=	jfor
 .endif
 
-.if defined(WITH_JSP)
+.if ${PORT_OPTIONS:MJSP}
 BLOCKS+=	jsp
 .endif
 
-.if defined(WITH_LINKREWRITER)
+.if ${PORT_OPTIONS:MLINKREWRITER}
 BLOCKS+=	linkrewriter
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_LUCENE)
+.if ${PORT_OPTIONS:MLUCENE}
 BLOCKS+=	lucene
 .endif
 
-.if defined(WITH_MIDI)
+.if ${PORT_OPTIONS:MMIDI}
 BLOCKS+=	midi
 .endif
 
-.if defined(WITH_NAMING)
+.if ${PORT_OPTIONS:MNAMING}
 BLOCKS+=	naming
 .endif
 
-.if defined(WITH_OJB)
+.if ${PORT_OPTIONS:MOJB}
 BLOCKS+=	ojb
 BLOCKS+=	ajax
 BLOCKS+=	databases
@@ -83,15 +83,15 @@ BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_PARANOID)
+.if ${PORT_OPTIONS:MPARANOID}
 BLOCKS+=	paranoid
 .endif
 
-.if defined(WITH_POI)
+.if ${PORT_OPTIONS:MPOI}
 BLOCKS+=	poi
 .endif
 
-.if defined(WITH_PORTAL)
+.if ${PORT_OPTIONS:MPORTAL}
 BLOCKS+=	portal
 BLOCKS+=	ajax
 BLOCKS+=	auth
@@ -106,98 +106,98 @@ BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_PROFILER)
+.if ${PORT_OPTIONS:MPROFILER}
 BLOCKS+=	profiler
 BLOCKS+=	auth
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 BLOCKS+=	python
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_SESSION_FW)
+.if ${PORT_OPTIONS:MSESSION_FW}
 BLOCKS+=	session-fw
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_VELOCITY)
+.if ${PORT_OPTIONS:MVELOCITY}
 BLOCKS+=	velocity
 .endif
 
-.if defined(WITH_WEB3)
+.if ${PORT_OPTIONS:MWEB3}
 BLOCKS+=	web3
 .endif
 
-.if defined(WITH_XMLDB)
+.if ${PORT_OPTIONS:MXMLDB}
 BLOCKS+=	xmldb
 BLOCKS+=	databases
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_XSP)
+.if ${PORT_OPTIONS:MXSP}
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 BLOCKS+=	php
 .endif
 
-.if defined(WITH_PORTAL_FW)
+.if ${PORT_OPTIONS:MPORTAL_FW}
 BLOCKS+=	portal-fw
 BLOCKS+=	authentication-fw
 BLOCKS+=	session-fw
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_SWF)
+.if ${PORT_OPTIONS:MSWF}
 BLOCKS+=	swf
 .endif
 
-.if defined(WITH_WOODY)
+.if ${PORT_OPTIONS:MWOODY}
 BLOCKS+=	woody
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_AJAX)
+.if ${PORT_OPTIONS:MAJAX}
 BLOCKS+=	ajax
 BLOCKS+=	template
 .endif
 
-.if defined(WITH_APPLES)
+.if ${PORT_OPTIONS:MAPPLES}
 BLOCKS+=	apples
 BLOCKS+=	ajax
 BLOCKS+=	forms
 BLOCKS+=	template
 .endif
 
-.if defined(WITH_ASCIIART)
+.if ${PORT_OPTIONS:MASCIIART}
 BLOCKS+=	asciiart
 .endif
 
-.if defined(WITH_AUTH)
+.if ${PORT_OPTIONS:MAUTH}
 BLOCKS+=	auth
 .endif
 
-.if defined(WITH_AXIS)
+.if ${PORT_OPTIONS:MAXIS}
 BLOCKS+=	axis
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_CAPTCHA)
+.if ${PORT_OPTIONS:MCAPTCHA}
 BLOCKS+=	captcha
 BLOCKS+=	template
 .endif
 
-.if defined(WITH_CRON)
+.if ${PORT_OPTIONS:MCRON}
 BLOCKS+=	cron
 .endif
 
-.if defined(WITH_DELI)
+.if ${PORT_OPTIONS:MDELI}
 BLOCKS+=	deli
 .endif
 
-.if defined(WITH_EVENTCACHE)
+.if ${PORT_OPTIONS:MEVENTCACHE}
 BLOCKS+=	eventcache
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -206,7 +206,7 @@ BLOCKS+=	jms
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_FACES)
+.if ${PORT_OPTIONS:MFACES}
 BLOCKS+=	faces
 BLOCKS+=	ajax
 BLOCKS+=	auth
@@ -223,11 +223,11 @@ BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_IMAGEOP)
+.if ${PORT_OPTIONS:MIMAGEOP}
 BLOCKS+=	imageop
 .endif
 
-.if defined(WITH_JAVAFLOW)
+.if ${PORT_OPTIONS:MJAVAFLOW}
 BLOCKS+=	javaflow
 BLOCKS+=	ajax
 BLOCKS+=	databases
@@ -238,11 +238,11 @@ BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_JCR)
+.if ${PORT_OPTIONS:MJCR}
 BLOCKS+=	jcr
 .endif
 
-.if defined(WITH_JMS)
+.if ${PORT_OPTIONS:MJMS}
 BLOCKS+=	jms
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -250,16 +250,16 @@ BLOCKS+=	hsqldb
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_LINOTYPE)
+.if ${PORT_OPTIONS:MLINOTYPE}
 BLOCKS+=	linotype
 .endif
 
-.if defined(WITH_MAIL)
+.if ${PORT_OPTIONS:MMAIL}
 BLOCKS+=	mail
 BLOCKS+=	asciiart
 .endif
 
-.if defined(WITH_PETSTORE)
+.if ${PORT_OPTIONS:MPETSTORE}
 BLOCKS+=	petstore
 BLOCKS+=	ajax
 BLOCKS+=	databases
@@ -270,15 +270,15 @@ BLOCKS+=	velocity
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_PROXY)
+.if ${PORT_OPTIONS:MPROXY}
 BLOCKS+=	proxy
 .endif
 
-.if defined(WITH_QDOX)
+.if ${PORT_OPTIONS:MQDOX}
 BLOCKS+=	qdox
 .endif
 
-.if defined(WITH_QUERYBEAN)
+.if ${PORT_OPTIONS:MQUERYBEAN}
 BLOCKS+=	querybean
 BLOCKS+=	ajax
 BLOCKS+=	databases
@@ -290,7 +290,7 @@ BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_REPOSITORY)
+.if ${PORT_OPTIONS:MREPOSITORY}
 BLOCKS+=	repository
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -300,11 +300,11 @@ BLOCKS+=	jms
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_SERIALIZERS)
+.if ${PORT_OPTIONS:MSERIALIZERS}
 BLOCKS+=	serializers
 .endif
 
-.if defined(WITH_SLIDE)
+.if ${PORT_OPTIONS:MSLIDE}
 BLOCKS+=	slide
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -315,23 +315,23 @@ BLOCKS+=	repository
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_SLOP)
+.if ${PORT_OPTIONS:MSLOP}
 BLOCKS+=	slop
 .endif
 
-.if defined(WITH_STX)
+.if ${PORT_OPTIONS:MSTX}
 BLOCKS+=	stx
 .endif
 
-.if defined(WITH_TAGLIB)
+.if ${PORT_OPTIONS:MTAGLIB}
 BLOCKS+=	taglib
 .endif
 
-.if defined(WITH_TEMPLATE)
+.if ${PORT_OPTIONS:MTEMPLATE}
 BLOCKS+=	template
 .endif
 
-.if defined(WITH_TOUR)
+.if ${PORT_OPTIONS:MTOUR}
 BLOCKS+=	tour
 BLOCKS+=	ajax
 BLOCKS+=	batik
@@ -342,11 +342,11 @@ BLOCKS+=	template
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_VALIDATION)
+.if ${PORT_OPTIONS:MVALIDATION}
 BLOCKS+=	validation
 .endif
 
-.if defined(WITH_WEBDAV)
+.if ${PORT_OPTIONS:MWEBDAV}
 BLOCKS+=	webdav
 BLOCKS+=	cron
 BLOCKS+=	databases
@@ -357,7 +357,7 @@ BLOCKS+=	repository
 BLOCKS+=	xsp
 .endif
 
-.if defined(WITH_XSLTAL)
+.if ${PORT_OPTIONS:MXSLTAL}
 BLOCKS+=	xsltal
 .endif
 

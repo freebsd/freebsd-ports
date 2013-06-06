@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cocoon
@@ -78,7 +77,7 @@ post-configure:
 	${SED} -e 's/.*include.block\(.*\)=.*$$/include.block\1=false/' < ${WRKSRC}/blocks.properties | \
 	${SED} ${BLOCKSEXP} > ${WRKSRC}/local.blocks.properties
 	${CP} ${WRKSRC}/build.properties ${WRKSRC}/local.build.properties
-.if (! defined(WITH_DOCS))
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} \
        	-e 's/^#\(exclude.webapp.documentation=\)/\1/' \
        	-e 's/^#\(exclude.webapp.javadocs=\)/\1/' \
@@ -86,7 +85,7 @@ post-configure:
        	-e 's/^#\(exclude.javadocs=\)/\1/' \
        	${WRKSRC}/local.build.properties
 .endif
-.if (! defined(WITH_SAMPLES))
+.if ! ${PORT_OPTIONS:MSAMPLES}
 	${REINPLACE_CMD} \
        	-e 's/^#\(exclude.webapp.samples=\)/\1/' \
        	-e 's/^#\(exclude.webapp.test-suite=\)/\1/' \

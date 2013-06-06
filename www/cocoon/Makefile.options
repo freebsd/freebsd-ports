@@ -1,68 +1,197 @@
 # ex:ts=22
 #
-OPTIONS+=	DOCS	"Include the documentation"	on
-OPTIONS+=	SAMPLES	"Include the samples"		on
-OPTIONS+=	SOURCES	"Include the sources in jars"	off
 
-OPTIONS+=	AUTHENTICATION_FW	"Enable the authentication-fw block"	on
-OPTIONS+=	BATIK	"Enable the batik block"	on
-OPTIONS+=	BSF	"Enable the bsf block"	on
-OPTIONS+=	CHAPERON	"Enable the chaperon block"	on
-OPTIONS+=	DATABASES	"Enable the databases block"	on
-OPTIONS+=	FOP	"Enable the fop block"	on
-OPTIONS+=	FORMS	"Enable the forms block"	on
-OPTIONS+=	HSQLDB	"Enable the hsqldb block"	on
-OPTIONS+=	HTML	"Enable the html block"	on
-OPTIONS+=	ITEXT	"Enable the itext block"	on
-OPTIONS+=	JFOR	"Enable the jfor block"	on
-OPTIONS+=	JSP	"Enable the jsp block"	on
-OPTIONS+=	LINKREWRITER	"Enable the linkrewriter block"	on
-OPTIONS+=	LUCENE	"Enable the lucene block"	on
-OPTIONS+=	MIDI	"Enable the midi block"	on
-OPTIONS+=	NAMING	"Enable the naming block"	on
-OPTIONS+=	OJB	"Enable the ojb block"	on
-OPTIONS+=	PARANOID	"Enable the paranoid block"	on
-OPTIONS+=	POI	"Enable the poi block"	on
-OPTIONS+=	PORTAL	"Enable the portal block"	on
-OPTIONS+=	PROFILER	"Enable the profiler block"	on
-OPTIONS+=	PYTHON	"Enable the python block"	on
-OPTIONS+=	SESSION_FW	"Enable the session-fw block"	on
-OPTIONS+=	VELOCITY	"Enable the velocity block"	on
-OPTIONS+=	WEB3	"Enable the web3 block"	on
-OPTIONS+=	XMLDB	"Enable the xmldb block"	on
-OPTIONS+=	XSP	"Enable the xsp block"	on
-OPTIONS+=	PHP	"Enable the php block"	off
-OPTIONS+=	PORTAL_FW	"Enable the portal-fw block"	off
-OPTIONS+=	SWF	"Enable the swf block"	off
-OPTIONS+=	WOODY	"Enable the woody block"	off
-OPTIONS+=	AJAX	"Enable the ajax block"	on
-OPTIONS+=	APPLES	"Enable the apples block"	on
-OPTIONS+=	ASCIIART	"Enable the asciiart block"	on
-OPTIONS+=	AUTH	"Enable the auth block"	on
-OPTIONS+=	AXIS	"Enable the axis block"	on
-OPTIONS+=	CAPTCHA	"Enable the captcha block"	on
-OPTIONS+=	CRON	"Enable the cron block"	on
-OPTIONS+=	DELI	"Enable the deli block"	on
-OPTIONS+=	EVENTCACHE	"Enable the eventcache block"	on
-OPTIONS+=	FACES	"Enable the faces block"	on
-OPTIONS+=	IMAGEOP	"Enable the imageop block"	on
-OPTIONS+=	JAVAFLOW	"Enable the javaflow block"	on
-OPTIONS+=	JCR	"Enable the jcr block"	off
-OPTIONS+=	JMS	"Enable the jms block"	on
-OPTIONS+=	LINOTYPE	"Enable the linotype block"	on
-OPTIONS+=	MAIL	"Enable the mail block"	on
-OPTIONS+=	PETSTORE	"Enable the petstore block"	on
-OPTIONS+=	PROXY	"Enable the proxy block"	on
-OPTIONS+=	QDOX	"Enable the qdox block"	on
-OPTIONS+=	QUERYBEAN	"Enable the querybean block"	on
-OPTIONS+=	REPOSITORY	"Enable the repository block"	on
-OPTIONS+=	SERIALIZERS	"Enable the serializers block"	on
-OPTIONS+=	SLIDE	"Enable the slide block"	on
-OPTIONS+=	SLOP	"Enable the slop block"	on
-OPTIONS+=	STX	"Enable the stx block"	on
-OPTIONS+=	TAGLIB	"Enable the taglib block"	on
-OPTIONS+=	TEMPLATE	"Enable the template block"	on
-OPTIONS+=	TOUR	"Enable the tour block"	on
-OPTIONS+=	VALIDATION	"Enable the validation block"	on
-OPTIONS+=	WEBDAV	"Enable the webdav block"	on
-OPTIONS+=	XSLTAL	"Enable the xsltal block"	on
+OPTIONS_DEFINE=	\
+	DOCS \
+	SAMPLES \
+	SOURCES \
+	AUTHENTICATION_FW \
+	BATIK \
+	BSF \
+	CHAPERON \
+	DATABASES \
+	FOP \
+	FORMS \
+	HSQLDB \
+	HTML \
+	ITEXT \
+	JFOR \
+	JSP \
+	LINKREWRITER \
+	LUCENE \
+	MIDI \
+	NAMING \
+	OJB \
+	PARANOID \
+	POI \
+	PORTAL \
+	PROFILER \
+	PYTHON \
+	SESSION_FW \
+	VELOCITY \
+	WEB3 \
+	XMLDB \
+	XSP \
+	PHP \
+	PORTAL_FW \
+	SWF \
+	WOODY \
+	AJAX \
+	APPLES \
+	ASCIIART \
+	AUTH \
+	AXIS \
+	CAPTCHA \
+	CRON \
+	DELI \
+	EVENTCACHE \
+	FACES \
+	IMAGEOP \
+	JAVAFLOW \
+	JCR \
+	JMS \
+	LINOTYPE \
+	MAIL \
+	PETSTORE \
+	PROXY \
+	QDOX \
+	QUERYBEAN \
+	REPOSITORY \
+	SERIALIZERS \
+	SLIDE \
+	SLOP \
+	STX \
+	TAGLIB \
+	TEMPLATE \
+	TOUR \
+	VALIDATION \
+	WEBDAV \
+	XSLTAL
+
+OPTIONS_DEFAULT=	\
+	DOCS \
+	SAMPLES \
+	AUTHENTICATION_FW \
+	BATIK \
+	BSF \
+	CHAPERON \
+	DATABASES \
+	FOP \
+	FORMS \
+	HSQLDB \
+	HTML \
+	ITEXT \
+	JFOR \
+	JSP \
+	LINKREWRITER \
+	LUCENE \
+	MIDI \
+	NAMING \
+	OJB \
+	PARANOID \
+	POI \
+	PORTAL \
+	PROFILER \
+	PYTHON \
+	SESSION_FW \
+	VELOCITY \
+	WEB3 \
+	XMLDB \
+	XSP \
+	AJAX \
+	APPLES \
+	ASCIIART \
+	AUTH \
+	AXIS \
+	CAPTCHA \
+	CRON \
+	DELI \
+	EVENTCACHE \
+	FACES \
+	IMAGEOP \
+	JAVAFLOW \
+	JMS \
+	LINOTYPE \
+	MAIL \
+	PETSTORE \
+	PROXY \
+	QDOX \
+	QUERYBEAN \
+	REPOSITORY \
+	SERIALIZERS \
+	SLIDE \
+	SLOP \
+	STX \
+	TAGLIB \
+	TEMPLATE \
+	TOUR \
+	VALIDATION \
+	WEBDAV \
+	XSLTAL
+
+
+DOCS_DESC=	Include the documentationn
+SAMPLES_DESC=	Include the samples
+SOURCES_DESC=	Include the sources in jarsff
+AUTHENTICATION_FW_DESC=	Enable the authentication-fw blockn
+BATIK_DESC=	Enable the batik blockn
+BSF_DESC=	Enable the bsf blockn
+CHAPERON_DESC=	Enable the chaperon blockn
+DATABASES_DESC=	Enable the databases blockn
+FOP_DESC=	Enable the fop blockn
+FORMS_DESC=	Enable the forms blockn
+HSQLDB_DESC=	Enable the hsqldb blockn
+HTML_DESC=	Enable the html blockn
+ITEXT_DESC=	Enable the itext blockn
+JFOR_DESC=	Enable the jfor blockn
+JSP_DESC=	Enable the jsp blockn
+LINKREWRITER_DESC=	Enable the linkrewriter blockn
+LUCENE_DESC=	Enable the lucene blockn
+MIDI_DESC=	Enable the midi blockn
+NAMING_DESC=	Enable the naming blockn
+OJB_DESC=	Enable the ojb blockn
+PARANOID_DESC=	Enable the paranoid blockn
+POI_DESC=	Enable the poi blockn
+PORTAL_DESC=	Enable the portal blockn
+PROFILER_DESC=	Enable the profiler blockn
+PYTHON_DESC=	Enable the python blockn
+SESSION_FW_DESC=	Enable the session-fw blockn
+VELOCITY_DESC=	Enable the velocity blockn
+WEB3_DESC=	Enable the web3 blockn
+XMLDB_DESC=	Enable the xmldb blockn
+XSP_DESC=	Enable the xsp blockn
+PHP_DESC=	Enable the php blockff
+PORTAL_FW_DESC=	Enable the portal-fw blockff
+SWF_DESC=	Enable the swf blockff
+WOODY_DESC=	Enable the woody blockff
+AJAX_DESC=	Enable the ajax blockn
+APPLES_DESC=	Enable the apples blockn
+ASCIIART_DESC=	Enable the asciiart blockn
+AUTH_DESC=	Enable the auth blockn
+AXIS_DESC=	Enable the axis blockn
+CAPTCHA_DESC=	Enable the captcha blockn
+CRON_DESC=	Enable the cron blockn
+DELI_DESC=	Enable the deli blockn
+EVENTCACHE_DESC=	Enable the eventcache blockn
+FACES_DESC=	Enable the faces blockn
+IMAGEOP_DESC=	Enable the imageop blockn
+JAVAFLOW_DESC=	Enable the javaflow blockn
+JCR_DESC=	Enable the jcr blockff
+JMS_DESC=	Enable the jms blockn
+LINOTYPE_DESC=	Enable the linotype blockn
+MAIL_DESC=	Enable the mail blockn
+PETSTORE_DESC=	Enable the petstore blockn
+PROXY_DESC=	Enable the proxy blockn
+QDOX_DESC=	Enable the qdox blockn
+QUERYBEAN_DESC=	Enable the querybean blockn
+REPOSITORY_DESC=	Enable the repository blockn
+SERIALIZERS_DESC=	Enable the serializers blockn
+SLIDE_DESC=	Enable the slide blockn
+SLOP_DESC=	Enable the slop blockn
+STX_DESC=	Enable the stx blockn
+TAGLIB_DESC=	Enable the taglib blockn
+TEMPLATE_DESC=	Enable the template blockn
+TOUR_DESC=	Enable the tour blockn
+VALIDATION_DESC=	Enable the validation blockn
+WEBDAV_DESC=	Enable the webdav blockn
+XSLTAL_DESC=	Enable the xsltal blockn
