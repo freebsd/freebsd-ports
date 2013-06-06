@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,8 @@ COMMENT=	GNOME 2 visual diff and merge tool
 LICENSE=	GPLv2
 
 USE_XZ=		yes
-USE_GNOME=	desktopfileutils pygnome2
+USE_GNOME=	pygnome2
+USES=		desktop-file-utils
 USE_PYTHON=	-2.7
 USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX}

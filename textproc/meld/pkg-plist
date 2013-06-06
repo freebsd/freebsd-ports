@@ -193,6 +193,7 @@ share/icons/hicolor/scalable/apps/meld.svg
 %%NLS%%share/locale/en_GB/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/es/LC_MESSAGES/meld.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/meld.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/meld.mo
@@ -232,10 +233,12 @@ share/icons/hicolor/scalable/apps/meld.svg
 %%DATADIR%%/icons/filter-normal-24.png
 %%DATADIR%%/icons/meld-locked.png
 %%DATADIR%%/icons/meld-unlocked.png
+%%DATADIR%%/icons/meld-vc-icon.png
 %%DATADIR%%/icons/vc-add-24.png
 %%DATADIR%%/icons/vc-checkout-24.png
 %%DATADIR%%/icons/vc-commit-24.png
 %%DATADIR%%/icons/vc-icon.png
+%%DATADIR%%/icons/vc-push-24.png
 %%DATADIR%%/icons/vc-remove-24.png
 %%DATADIR%%/icons/vc-resolve-24.png
 %%DATADIR%%/icons/vc-update-24.png
@@ -252,6 +255,7 @@ share/icons/hicolor/scalable/apps/meld.svg
 %%DATADIR%%/ui/tab-placeholder.ui
 %%DATADIR%%/ui/vcview-ui.xml
 %%DATADIR%%/ui/vcview.ui
+share/mime/application/x-meld-comparison.xml
 share/mime/packages/meld.xml
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
@@ -277,5 +281,3 @@ share/omf/meld/meld-fr.omf
 @dirrm lib/meld/meld/ui
 @dirrm lib/meld/meld
 @dirrm lib/meld
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
