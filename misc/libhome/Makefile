@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libhome
-# Date created:				Fri Aug 14 2003
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libhome
 PORTVERSION=	0.10.2
@@ -14,11 +10,13 @@ MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Library providing a getpwname() emulation
 
-OPTIONS+=	LDAP "Support for LDAP queries" on
-OPTIONS+=	MYSQL "Support for MySQL queries" on
-OPTIONS+=	BDB "Support for Berkeley DB" on
-OPTIONS+=	PAM "Support for PAM (Experimental)" off
-OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
+OPTIONS_DEFINE=	LDAP MYSQL BDB PAM PGSQL
+OPTIONS_DEFAULT=	LDAP MYSQL BDB
+LDAP_DESC=	Support for LDAP queries
+MYSQL_DESC=	Support for MySQL queries
+BDB_DESC=	Support for Berkeley DB
+PAM_DESC=	Support for PAM (Experimental)
+PGSQL_DESC=	Support for PostgreSQL (Experimental)
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -31,27 +29,27 @@ WITH_BDB_VER=	${LIBHOME_WITH_BDB_VER}
 
 CONFIGURE_ARGS+=	--with-proxy --with-nss
 
-.if !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}/include/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_DB3) || defined(WITH_DB4)
+.if defined(WITH_MDB3) || defined(WITH_DB4)
 WITH_BDB=		yes
 OBSOLETE_BDB_VAR=	WITH_DB3 WITH_DB4
 IGNORE=	Use 'make config' to select Berkeley DB.
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=		yes
 INVALID_BDB_VER=	2
 . if defined(WITH_BDB_VER) && ${WITH_BDB_VER} == 3
@@ -64,13 +62,13 @@ CONFIGURE_ARGS+=	--with-db-libdir=${BDB_LIB_DIR}
 CONFIGURE_ARGS+=	--without-db3 --without-db4
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--with-pam
 .else
 CONFIGURE_ARGS+=	--without-pam
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-pgsql
 USE_PGSQL=	YES
 .else
@@ -82,7 +80,7 @@ MAN8=		home_proxy.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig ${WRKSRC}/configure
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 	@${REINPLACE_CMD} -e 's;db-4.3 db-4.2;${BDB_LIB_NAME};g' \
 		${WRKSRC}/configure
 .endif
