@@ -3,7 +3,7 @@
 
 PORTNAME=	buildapp
 PORTVERSION=	1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://www.xach.com/lisp/
 DISTNAME=	${PORTNAME}
