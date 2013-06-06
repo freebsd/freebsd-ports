@@ -1,15 +1,11 @@
-# New ports collection makefile for:	p5-Config-GitLike
-# Date created:		2011-02-07
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin
 # $FreeBSD$
-#
 
 PORTNAME=	Config-GitLike
-PORTVERSION=	1.05
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:SPANG
+MASTER_SITE_SUBDIR=	CPAN:ALEXMV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
