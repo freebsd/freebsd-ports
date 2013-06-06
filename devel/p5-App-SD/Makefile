@@ -19,11 +19,13 @@ BUILD_DEPENDS=	p5-DateTime>=:${PORTSDIR}/devel/p5-DateTime \
 		p5-Prophet>=0:${PORTSDIR}/databases/p5-Prophet \
 		p5-Test-Script-Run>=0.02:${PORTSDIR}/devel/p5-Test-Script-Run
 
-OPTIONS+=	GITHUB "Enable github sync" on \
-		GOOGLECODE "Add support for google code" on \
-		HIVEMINDER "Enable huveminder sync" on \
-		TRAC "Enable trac sync" on \
-		RT "Enable rt sync" on
+OPTIONS_DEFINE=	GITHUB GOOGLECODE HIVEMINDER TRAC RT
+OPTIONS_DEFAULT=	GITHUB GOOGLECODE HIVEMINDER TRAC RT
+GITHUB_DESC=		Enable github sync
+GOOGLECODE_DESC=	Add support for google code
+HIVEMINDER_DESC=	Enable huveminder sync
+TRAC_DESC=		Enable trac sync
+RT_DESC=		Enable rt sync
 
 PERL_CONFIGURE=	yes
 
@@ -53,25 +55,25 @@ MAN1=	sd.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GITHUB)
+.if ${PORT_OPTIONS:MGITHUB}
 BUILD_DEPENDS+=	p5-Net-GitHub>=0.18:${PORTSDIR}/net/p5-Net-GitHub
 .endif
 
-.if defined(WITH_GOOGLECODE)
+.if ${PORT_OPTIONS:MGOOGLECODE}
 BUILD_DEPENDS+=	p5-Net-Google-Code>=0.14:${PORTSDIR}/net/p5-Net-Google-Code
 .endif
 
-.if defined(WITH_HIVEMINDER)
+.if ${PORT_OPTIONS:MHIVEMINDER}
 BUILD_DEPENDS+=	p5-Net-Jifty>=0.09:${PORTSDIR}/net/p5-Net-Jifty \
 		p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME
 .endif
 
-.if defined(WITH_TRAC)
+.if ${PORT_OPTIONS:MTRAC}
 BUILD_DEPENDS+=	p5-Net-Trac>=0.13:${PORTSDIR}/www/p5-Net-Trac
 .endif
 
-.if defined(WITH_RT)
+.if ${PORT_OPTIONS:MRT}
 BUILD_DEPENDS+=	p5-RT-Client-REST>=0:${PORTSDIR}/www/p5-RT-Client-REST
 .endif
 
