@@ -14,14 +14,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
-OPTIONS_DEFINE=	LTHREAD FFMPEG MYSQL PGSQL DOCS EXAMPLES
+OPTIONS_DEFINE=	FFMPEG MYSQL PGSQL DOCS EXAMPLES
 OPTIONS_SINGLE=	VIDEO
 OPTIONS_SINGLE_VIDEO=	BKTR PWCBSD
 OPTIONS_DEFAULT=	BKTR FFMPEG
 VIDEO_DESC=	Video capture driver. Choose one of BKTR or PWCBSD
 BKTR_DESC=	BKTR based TV capture cards
 PWCBSD_DESC=	PWCBSD based Webcams
-LTHREAD_DESC=	Use LinuxThreads instead of native POSIX threads
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
@@ -54,12 +53,7 @@ CFLAGS+=	-DWITHOUT_V4L
 CONFIGURE_ARGS+=--without-pwcbsd
 .endif
 
-.if ${PORT_OPTIONS:MLTHREAD}
-LIB_DEPENDS+=	lthread:${PORTSDIR}/devel/linuxthreads
-CONFIGURE_ARGS+=--with-linuxthreads
-.else
 CONFIGURE_ARGS+=--without-linuxthreads
-.endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
