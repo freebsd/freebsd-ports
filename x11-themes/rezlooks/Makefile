@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rezlooks
-# Date created:		2006-07-02
-# Whom:			brandoncash@gmail.com
-#
+# Created by: brandoncash@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	rezlooks
 PORTVERSION=	0.6
@@ -20,9 +16,13 @@ WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
-OPTIONS+=	ANIMATION "Animation support" On
+OPTIONS_DEFINE=	ANIMATION
+OPTIONS_DEFAULT=	ANIMATION
+ANIMATION_DESC=	Animation support
 
-.if !defined(WITHOUT_ANIMATION)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MANIMATION}
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
