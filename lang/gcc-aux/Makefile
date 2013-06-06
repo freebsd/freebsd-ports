@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}
@@ -289,6 +290,7 @@ test-c:
 
 do-install:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTINY}
+	cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | xargs rmdir
 	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
 
 post-install:
