@@ -23,19 +23,20 @@ CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS+=	--with-user=mailnull --with-group=mail \
 		--with-confdir=${PREFIX}/etc/masqmail --with-logdir=/var/log/masqmail
 
-OPTIONS +=	RESOLVER	"Resolver"		on
-OPTIONS +=	AUTH		"SMTP AUTH (RFC2554) support"	on
-OPTIONS +=	DEBUG		"Enable Debugging"	off
+OPTIONS_DEFINE=	RESOLVER AUTH DEBUG
+OPTIONS_DEFAULT=	RESOLVER AUTH
+RESOLVER_DESC=	Resolver
+AUTH_DESC=	SMTP AUTH (RFC2554) support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_RESOLVER)
+.if ! ${PORT_OPTIONS:MRESOLVER}
 CONFIGURE_ARGS+=	--disable-resolver
 .endif
-.if defined(WITH_AUTH)
+.if ${PORT_OPTIONS:MAUTH}
 CONFIGURE_ARGS+=	--enable-auth
 .endif
-.if defined(WITHOUT_DEBUG)
+.if ! ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
@@ -46,7 +47,7 @@ post-install:
 	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/localnet.route ${PREFIX}/etc/masqmail/localnet.route-dist
 	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/openssl.route ${PREFIX}/etc/masqmail/openssl.route-dist
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/docs
 	cd ${WRKSRC} && ${CP} ChangeLog NEWS AUTHORS COPYING README TODO INSTALL THANKS ${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/)
