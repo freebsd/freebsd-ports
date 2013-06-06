@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pianobar
-PORTVERSION=	2012.12.01
-PORTREVISION=	2
+PORTVERSION=	2013.05.19
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
@@ -26,6 +25,7 @@ PLIST_FILES=	bin/pianobar
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ARGS+=	CC="${CC}"
 
 CFLAGS+=	-I${LOCALBASE}/include -std=c99
 LDFLAGS+=	-L${LOCALBASE}/lib
