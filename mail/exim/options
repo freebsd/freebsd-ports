@@ -1,49 +1,119 @@
-OPTIONS+= \
-	ALT_CONFIG_PREFIX "Restrict the set of configuration files" off \
-	AUTH_CRAM_MD5 "Enable CRAM-MD5 authentication mechanisms" on \
-	AUTH_DOVECOT "Enable Dovecot authentication mechanisms" on \
-	AUTH_PLAINTEXT "Enable plaintext authentication" on \
-	AUTH_RADIUS "Enable radius (RFC 2865) authentication" off \
-	AUTH_SASL "Enable use of Cyrus SASL auth library" off \
-	AUTH_SPA "Enable Secure Password Authentication" on \
-	CDB "Enable CDB-style lookups" on \
-	CONTENT_SCAN "Enable exiscan email content scanner" off \
-	DAEMON "Install scripts to run as a daemon" on \
-	DCC "Enable DCC at ACL support via dccifd" off \
-	DEBUG "Build with debugging symbols" off \
-	DISABLE_D_OPT "Disable macros overrides using option -D" on \
-	DKIM "Enable support for DKIM" on \
-	DNSDB "Enable DNS-style lookups" on \
-	DSEARCH "Enable directory-list lookups" on \
-	EMBEDDED_PERL "Enable embedded Perl interpreter" on \
-	EXIMON "Build eximon monitor (require XFree86!)" off \
-	ICONV "Enable header charset conversion" on \
-	IPV6 "Enable IPv6 support" on \
-	KAS "Build with Kaspersky AntiSpam local scan" off \
-	LISTMATCH_RHS "Enable pre-4.77 behaviour for match_*" off \
-	LMTP "RFC2033 SMTP over command pipe transport" on \
-	LSEARCH "Enable wildcarded-file lookups" on \
-	MAILDIR "Enable Maildir mailbox format" on \
-	MAILSTORE "Enable Mailstore mailbox format" on \
-	MBX "Enable MBX mailbox format" on \
-	MYSQL "Link against libmysqlclient library" off \
-	NIS "Enable NIS-style lookups" on \
-	OLD_DEMIME "Enable old, deprecated "demime" ACL" on \
-	OPENLDAP "Link against libldap" off \
-	PAM "Enable PAM authentication mechanisms" on \
-	PASSWD "Enable /etc/passwd lookups" on \
-	PGSQL "Link against libpq" off \
-	READLINE "Enable readline(3) library" off \
-	SASLAUTHD "Enable use of Cyrus SASL auth daemon" off \
-	SA_EXIM "SA-Exim support" off \
-	SO_1024 "Build with Spamooborona-1024 local scan" off \
-	SPF "Enable Sender Policy Framework checking" off \
-	SQLITE "Enable SQLite lookups" off \
-	SRS "Enable Sender Rewriting Scheme" off \
-	SRS_ALT "Enable alternative SRS library" off \
-	SUID "Install the exim binary suid root" on \
-	TCP_WRAPPERS "Enable /etc/hosts.allow access control" off \
-	TLS "Enable TLS support" on \
-	GNUTLS "Use GnuTLS instead of OpenSSL for TLS" off \
-	WISHLIST "Include the unsupported patches" off \
-	XCLIENT "Enable XCLIENT command in exim" off
+OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
+			AUTH_CRAM_MD5 \
+			AUTH_DOVECOT \
+			AUTH_PLAINTEXT \
+			AUTH_RADIUS \
+			AUTH_SASL \
+			AUTH_SPA \
+			CDB \
+			CONTENT_SCAN \
+			DAEMON \
+			DCC \
+			DEBUG \
+			DISABLE_D_OPT \
+			DKIM \
+			DNSDB \
+			DSEARCH \
+			EMBEDDED_PERL \
+			EXIMON \
+			ICONV \
+			IPV6 \
+			KAS \
+			LISTMATCH_RHS \
+			LMTP \
+			LSEARCH \
+			MAILDIR \
+			MAILSTORE \
+			MBX \
+			MYSQL \
+			NIS \
+			OLD_DEMIME \
+			OPENLDAP \
+			PAM \
+			PASSWD \
+			PGSQL \
+			READLINE \
+			SASLAUTHD \
+			SA_EXIM \
+			SO_1024 \
+			SPF \
+			SQLITE \
+			SRS \
+			SRS_ALT \
+			SUID \
+			TCP_WRAPPERS \
+			TLS \
+			GNUTLS \
+			WISHLIST \
+			XCLIENT
+
+OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
+			AUTH_DOVECOT \
+			AUTH_PLAINTEXT \
+			AUTH_SPA \
+			CDB \
+			DAEMON \
+			DISABLE_D_OPT \
+			DKIM \
+			DNSDB \
+			DSEARCH \
+			EMBEDDED_PERL \
+			ICONV \
+			LTMP \
+			LSEARCH \
+			MAILDIR \
+			MAILSTORE \
+			MBX \
+			NIS \
+			OLD_DEMIME \
+			PAM \
+			PASSWD \
+			SUID \
+			TLS
+
+
+ALT_CONFIG_PREFIX_DESC=	Restrict the set of configuration files
+AUTH_CRAM_MD5_DESC=	Enable CRAM-MD5 authentication mechanisms
+AUTH_DOVECOT_DESC=	Enable Dovecot authentication mechanisms
+AUTH_PLAINTEXT_DESC=	Enable plaintext authentication
+AUTH_RADIUS_DESC=	Enable radius (RFC 2865) authentication
+AUTH_SASL_DESC=		Enable use of Cyrus SASL auth library
+AUTH_SPA_DESC=		Enable Secure Password Authentication
+CDB_DESC=		Enable CDB-style lookups
+CONTENT_SCAN_DESC=	Enable exiscan email content scanner
+DAEMON_DESC=		Install scripts to run as a daemon
+DCC_DESC=		Enable DCC at ACL support via dccifd
+DISABLE_D_OPT_DESC=	Disable macros overrides using option -D
+DKIM_DESC=		Enable support for DKIM
+DNSDB_DESC=		Enable DNS-style lookups
+DSEARCH_DESC=		Enable directory-list lookups
+EMBEDDED_PERL_DESC=	Enable embedded Perl interpreter
+EXIMON_DESC=		Build eximon monitor (require XFree86!)
+ICONV_DESC=		Enable header charset conversion
+KAS_DESC=		Build with Kaspersky AntiSpam local scan
+LISTMATCH_RHS_DESC=	Enable pre-4.77 behaviour for match_*
+LMTP_DESC=		RFC2033 SMTP over command pipe transport
+LSEARCH_DESC=		Enable wildcarded-file lookups
+MAILDIR_DESC=		Enable Maildir mailbox format
+MAILSTORE_DESC=		Enable Mailstore mailbox format
+MBX_DESC=		Enable MBX mailbox format
+MYSQL_DESC=		Link against libmysqlclient library
+NIS_DESC=		Enable NIS-style lookups
+OLD_DEMIME_DESC=	Enable old, deprecated "demime" ACL
+OPENLDAP_DESC=		Link against libldap
+PAM_DESC=		Enable PAM authentication mechanisms
+PASSWD_DESC=		Enable /etc/passwd lookups
+PGSQL_DESC=		Link against libpq
+READLINE_DESC=		Enable readline(3) library
+SASLAUTHD_DESC=		Enable use of Cyrus SASL auth daemon
+SA_EXIM_DESC=		SA-Exim support
+SO_1024_DESC=		Build with Spamooborona-1024 local scan
+SPF_DESC=		Enable Sender Policy Framework checking
+SQLITE_DESC=		Enable SQLite lookups
+SRS_DESC=		Enable Sender Rewriting Scheme
+SRS_ALT_DESC=		Enable alternative SRS library
+SUID_DESC=		Install the exim binary suid root
+TCP_WRAPPERS_DESC=	Enable /etc/hosts.allow access control
+GNUTLS_DESC=		Use GnuTLS instead of OpenSSL for TLS
+WISHLIST_DESC=		Include the unsupported patches
+XCLIENT_DESC=		Enable XCLIENT command in exim
