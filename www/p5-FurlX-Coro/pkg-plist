@@ -1,8 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FurlX/Coro/.packlist
-%%SITE_PERL%%/FurlX/.dim.pl
 %%SITE_PERL%%/FurlX/Coro.pm
 %%SITE_PERL%%/FurlX/Coro/HTTP.pm
 @dirrm %%SITE_PERL%%/FurlX/Coro
 @dirrmtry %%SITE_PERL%%/FurlX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FurlX/Coro
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FurlX
