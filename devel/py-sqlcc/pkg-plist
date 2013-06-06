@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/sqlcc/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlcc/data_src.py
 %%PYTHON_SITELIBDIR%%/sqlcc/funcs.py
