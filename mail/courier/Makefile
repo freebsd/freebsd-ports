@@ -1,9 +1,5 @@
-# New ports collection makefile for: Courier MTA
-# Date created:		17 Oct 2001
-# Whom:			Yarema <yds@CoolRat.org>
-#
+# Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
-#
 
 PORTNAME=	courier
 PORTVERSION=	0.65.3
@@ -114,114 +110,36 @@ PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
 SUB_LIST:=	${PLIST_SUB}
 SUB_FILES+=	pkg-install pkg-message crontab sharedindexupdate
 
-OPTIONS+=LDAP "LDAP-based mail aliasing support"
-.if (exists(${LOCALBASE}/lib/libldap.a) && exists(${LOCALBASE}/lib/liblber.a)) || defined(WITH_LDAP)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
+OPTIONS_DEFINE=	LDAP GNUPG PROCMAIL SENDFAX UUCP IPV6 MAILDROPFLAGS \
+		WEBMAILFLAGS WEBMAILRSENT
+OPTIONS_GROUP=	EXPERIMENTAL
+OPTIONS_GROUP_EXPERIMENTAL=	WEBMAILXFACE
+OPTIONS_RADIO=	ALIASES SPELL
+OPTIONS_RADIO_ALIASES=	SYSTEMALIASES EMPTYALIASES
+OPTIONS_RADIO_SPELL=	ASPELL ISPELL
 
-.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
-.include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
-.endif
+OPTIONS_DEFAULT=WEBMAILRSENT SYSTEMALIASES
 
-OPTIONS+=GNUPG "GNU Privacy Guard support for WebMail"
-.if exists(${LOCALBASE}/bin/gpg) || defined(WITH_GNUPG)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
+LDAP_DESC=	LDAP-based mail aliasing support
+GNUPG_DESC=	GNU Privacy Guard support for WebMail
+ASPELL_DESC=	ASpell support for WebMail
+ISPELL_DESC=	ISpell support for WebMail
+PROCMAIL_DESC=	Procmail local delivery support
+SENDFAX_DESC=	mgetty+sendfax support
+UUCP_DESC=	UUCP support
+MAILDROPFLAGS_DESC=	maildrop set flags patch
+WEBMAILFLAGS_DESC=	webmail show flags patch
+WEBMAILXFACE_DESC=	experimental webmail X-Face patch
+WEBMAILRSENT_DESC=	enable Autorename Sent folder
+SYSTEMALIASES_DESC=	symlink system /etc/aliases
+EMPTYALIASES_DESC=	create empty aliases file
 
-OPTIONS+=ASPELL "ASpell support for WebMail  / mutually"
-.if exists(${LOCALBASE}/bin/aspell) || defined(WITH_ASPELL)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=ISPELL "ISpell support for WebMail  \ exclusive"
-.if exists(${LOCALBASE}/bin/ispell) || defined(WITH_ISPELL)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=PROCMAIL "Procmail local delivery support"
-.if exists(${LOCALBASE}/bin/procmail) || defined(WITH_PROCMAIL)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=SENDFAX "mgetty+sendfax support"
-.if exists(${LOCALBASE}/sbin/sendfax) && exists(${LOCALBASE}/bin/pnmscale) && exists(${LOCALBASE}/bin/gs) || defined(WITH_SENDFAX)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=UUCP "UUCP support"
-.if exists(/usr/bin/uux) || exists(${LOCALBASE}/bin/uux) || defined(WITH_UUCP)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=IPV6 "IPv6 support"
-.if defined(WITH_IPV6)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=MAILDROPFLAGS "maildrop set flags patch"
-.if defined(WITH_MAILDROPFLAGS)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=WEBMAILFLAGS "webmail show flags patch"
-.if defined(WITH_WEBMAILFLAGS)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=WEBMAILXFACE "experimental webmail X-Face patch"
-.if defined(WITH_WEBMAILXFACE)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=WEBMAILRSENT "enable Autorename Sent folder"
-.if !defined(WITHOUT_WEBMAILRSENT)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=SYSTEMALIASES "symlink system /etc/aliases"
-.if !defined(WITHOUT_SYSTEMALIASES)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-OPTIONS+=EMPTYALIASES "create empty aliases file"
-.if defined(WITH_EMPTYALIASES)
-OPTIONS+=on
-.else
-OPTIONS+=off
-.endif
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 .include "${.CURDIR}/Makefile.doc"
 .include "${.CURDIR}/Makefile.man"
 .include "${.CURDIR}/Makefile.own"
 
-.if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 WITH_AUTH_LDAP=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:${PORTSDIR}/net/courier-authlib-ldap
@@ -234,7 +152,7 @@ PLIST_SUB+=	WITHLDAP="@comment "
 SUB_LIST+=	WITHLDAP="@comment "
 .endif
 
-.if defined(WITH_SYSTEMALIASES) && !defined(WITHOUT_SYSTEMALIASES)
+.if ${PORT_OPTIONS:MSYSTEMALIASES}
 PLIST_SUB+=	WITHSYSTEMALIASES=""
 SUB_LIST+=	WITHSYSTEMALIASES=""
 .else
@@ -242,7 +160,7 @@ PLIST_SUB+=	WITHSYSTEMALIASES="@comment "
 SUB_LIST+=	WITHSYSTEMALIASES="@comment "
 .endif
 
-.if defined(WITH_EMPTYALIASES) && !defined(WITHOUT_EMPTYALIASES)
+.if ${PORT_OPTIONS:MEMPTYALIASES}
 PLIST_SUB+=	WITHEMPTYALIASES=""
 SUB_LIST+=	WITHEMPTYALIASES=""
 .else
@@ -254,37 +172,29 @@ SUB_LIST+=	WITHEMPTYALIASES="@comment "
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
 .endif
 
-.if defined(WITH_GNUPG) && !defined(WITHOUT_GNUPG)
+.if ${PORT_OPTIONS:MGNUPG}
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif
 
-.if defined(WITH_ASPELL) && !defined(WITHOUT_ASPELL) && !defined(WITH_ISPELL)
+.if ${PORT_OPTIONS:MASPELL}
 BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/aspell
-.endif
-
-.if defined(WITH_ISPELL) && !defined(WITHOUT_ISPELL) && !defined(WITH_ASPELL)
+.elif ${PORT_OPTIONS:MISPELL}
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/ispell
-.endif
-
-.if defined(WITH_ASPELL) && defined(WITH_ISPELL)
-BROKEN=	ASpell and ISpell are mutually exclusive. Run 'make config' to (re)configure ${PKGNAME}
-.endif
-
-.if !defined(WITH_ASPELL) && !defined(WITH_ISPELL)
+.else
 CONFIGURE_ARGS+=--without-ispell
 .endif
 
-.if defined(WITH_PROCMAIL) && !defined(WITHOUT_PROCMAIL)
+.if ${PORT_OPTIONS:MPROCMAIL}
 BUILD_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
 RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
 .endif
 
-.if defined(WITH_SENDFAX) && !defined(WITHOUT_SENDFAX)
+.if ${PORT_OPTIONS:MSENDFAX}
 USE_GHOSTSCRIPT=yes
 SENDFAX_DEPENDS=sendfax:${PORTSDIR}/comms/mgetty+sendfax \
 		pnmscale:${PORTSDIR}/graphics/netpbm
@@ -298,7 +208,7 @@ PLIST_SUB+=	WITHFAX="@comment "
 SUB_LIST+=	WITHFAX="@comment "
 .endif
 
-.if defined(WITH_UUCP) && !defined(WITHOUT_UUCP)
+.if ${PORT_OPTIONS:MUUCP}
 .if !exists(/usr/bin/uux)
 BUILD_DEPENDS+=	uux:${PORTSDIR}/net/freebsd-uucp
 RUN_DEPENDS+=	uux:${PORTSDIR}/net/freebsd-uucp
@@ -309,26 +219,26 @@ PLIST_SUB+=	WITHUUCP=""
 PLIST_SUB+=	WITHUUCP="@comment "
 .endif
 
-.if defined(WITH_IPV6) || !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--with-ipv6
 .else
 CONFIGURE_ARGS+=--without-ipv6
 .endif
 
-.if defined(WITH_MAILDROPFLAGS) || !defined(WITHOUT_MAILDROPFLAGS)
+.if ${PORT_OPTIONS:MMAILDROPFLAGS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-maildrop__maildir.C
 .endif
 
-.if defined(WITH_WEBMAILXFACE) || !defined(WITHOUT_WEBMAILXFACE)
+.if ${PORT_OPTIONS:MWEBMAILXFACE}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__msg2html.c
 .endif
 
-.if defined(WITH_WEBMAILFLAGS) || !defined(WITHOUT_WEBMAILFLAGS)
+.if ${PORT_OPTIONS:MWEBMAILFLAGS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__folder.c ${FILESDIR}/extra-patch-webmail__maildir.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__maildir.h ${FILESDIR}/extra-patch-webmail__images__sqwebmail.css
 .endif
 
-.if defined(WITH_WEBMAILRSENT) || !defined(WITHOUT_WEBMAILRSENT)
+.if ${PORT_OPTIONS:MWEBMAILRSENT}
 CONFIGURE_ARGS+=--enable-autorenamesent
 .else
 CONFIGURE_ARGS+=--disable-autorenamesent
@@ -408,7 +318,7 @@ post-install:
 		| ${SED} -e 's:^@exec ::' -e 's:%D:${PREFIX}:g' \
 		> ${WRKDIR}/.PLIST.exec \
 		&& ${SH} ${WRKDIR}/.PLIST.exec
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} ${_DOCOWNGRP} -d ${DOCSDIR}/html
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -437,4 +347,4 @@ post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
