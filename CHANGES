@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130606:
+AUTHOR: bapt@FreeBSD.org
+
+  The macro OPTIONS is no more a recognize macro, please use the new 
+  options framework
+
 20130509:
 AUTHOR: kwm@FreeBSD.org
 
