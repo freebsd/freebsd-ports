@@ -1,9 +1,5 @@
-# New ports collection makefile for:	transkode
-# Date created:				6 August 2007
-# Whom:					Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	transkode
 PORTVERSION=	0.7
@@ -31,83 +27,78 @@ USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS+=	FAAD "Enable MPEG-2 and MPEG-4 AAC audio decoder" on
-OPTIONS+=	FFMPEG "Enable ffmpeg audio/video encoder" on
-OPTIONS+=	FLAC "Enable Free lossless audio codec" on
-OPTIONS+=	FLAME "Enable fast MP3 encoder" on
-OPTIONS+=	SPEEX "Enable patent-free voice codec" on
-OPTIONS+=	FAAC "Enable PEG-2 and MPEG-4 AAC audio encoder" on
-OPTIONS+=	MUSEPACK "Enable musepack (mpc) encoder" on
-OPTIONS+=	LPAC "Enable Lossless audio codec" on
-OPTIONS+=	OGG "Enable Ogg Vorbis encode" on
-OPTIONS+=	WAVPACK "Enable both 16 and 24bit wav format" on
-OPTIONS+=	TWOLAME "Enable MPEG Audio Layer 2 encoder" on
-OPTIONS+=	TTA "Enable lossless (de)compressor" on
-OPTIONS+=	SHORTEN "Enable lossless compression for waveform files" off
-OPTIONS+=	OPTIMFROG "Enable Lossless audio codec" on
-OPTIONS+=	BONK "Enable Lossy/lossless audio compressor" on
-OPTIONS+=	MAC "Enable Monkey's Audio lossless codec" on
-OPTIONS+=	MPLAYER "Enable mplayer support" off
-OPTIONS+=	GSTREAMER "Enable gstreamer support" off
+OPTIONS_DEFINE=	FAAD FFMPEG FLAC FLAME SPEEX FAAC MUSEPACK LPAC OGG \
+		WAVPACK TWOLAME TTA SHORTEN OPTIMFROG BONK MAC \
+		MPLAYER GSTREAMER
+OPTIONS_DEFAULT=	FAAD FFMPEG FAAC FLAME SPEEX FAAC MUSEPACK \
+			LPAC OGG WAVPACK TWOLAME TTA OPTIMFROG BONK \
+			MAC
+FLAME_DESC=	Fast MP3 encoder
+LPAC_DESC=	Lossless audio codec
+TTA_DESC=	Lossless (de)compressor
+SHORTEN_DESC=	Lossless compression for waveform files
+OPTIMFROG_DESC=	Lossless audio codec
+BONK_DESC=	Lossy/lossless audio compressor
+MAC_DESC=	Monkey's Audio lossless codec
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 RUN_DEPENDS+=faad:${PORTSDIR}/audio/faad
 .endif
-.if !defined(WITHOUT_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 RUN_DEPENDS+=ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 .endif
-.if !defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=flac:${PORTSDIR}/audio/flac
 .endif
-.if !defined(WITHOUT_FLAME)
+.if ${PORT_OPTIONS:MFLAME}
 RUN_DEPENDS+=lame:${PORTSDIR}/audio/lame
 .endif
-.if !defined(WITHOUT_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 RUN_DEPENDS+=speexenc:${PORTSDIR}/audio/speex
 .endif
-.if !defined(WITHOUT_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 RUN_DEPENDS+=faac:${PORTSDIR}/audio/faac
 .endif
-.if !defined(WITHOUT_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 RUN_DEPENDS+=mpcenc:${PORTSDIR}/audio/musepack
 .endif
-.if !defined(WITHOUT_LPAC)
+.if ${PORT_OPTIONS:MLPAC}
 RUN_DEPENDS+=lpac:${PORTSDIR}/audio/lpac
 .endif
-.if !defined(WITHOUT_OGG)
+.if ${PORT_OPTIONS:MOGG}
 RUN_DEPENDS+=oggenc:${PORTSDIR}/audio/vorbis-tools
 .endif
-.if !defined(WITHOUT_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 RUN_DEPENDS+=wavpack:${PORTSDIR}/audio/wavpack
 .endif
-.if !defined(WITHOUT_TWOLAME)
+.if ${PORT_OPTIONS:MTWOLAME}
 RUN_DEPENDS+=twolame:${PORTSDIR}/audio/twolame
 .endif
-.if !defined(WITHOUT_TTA)
+.if ${PORT_OPTIONS:MTTA}
 RUN_DEPENDS+=ttaenc:${PORTSDIR}/audio/tta
 .endif
-.if defined(WITH_SHORTEN)
+.if ${PORT_OPTIONS:MSHORTEN}
 RUN_DEPENDS+=shorten:${PORTSDIR}/audio/shorten
 .endif
-.if !defined(WITHOUT_OPTIMFROG)
+.if ${PORT_OPTIONS:MOPTIMFROG}
 RUN_DEPENDS+=ofr:${PORTSDIR}/audio/optimfrog
 .endif
-.if !defined(WITHOUT_BONK)
+.if ${PORT_OPTIONS:MBONK}
 RUN_DEPENDS+=bonk:${PORTSDIR}/audio/bonk
 .endif
-.if !defined(WITHOUT_MAC)
+.if ${PORT_OPTIONS:MMAC}
 RUN_DEPENDS+=mac:${PORTSDIR}/audio/mac
 .endif
-.if defined(WITH_MPLAYER)
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 RUN_DEPENDS+=gst-launch-0.10:${PORTSDIR}/multimedia/gstreamer
 .endif
 
 post-patch:
 	${REINPLACE_CMD} 's/applnk/applications/g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
