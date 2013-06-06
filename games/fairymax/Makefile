@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	fairymax
-# Date created:				22 April 2011
-# Whom:					Kalten <kalten@gmx.at>
-#
+# Created by: Kalten <kalten@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	fairymax
 PORTVERSION=	4.8Q
@@ -18,7 +14,8 @@ COMMENT=	Chess engine for shatranj, courier chess, and others
 
 CONFLICTS=	fairymax-4.8Q.[0-9]* fairymax-4.8Q.[0-9]*_[0-9]*
 
-OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAUTL=	OPTIMIZED_CFLAGS
 
 DIST_SUBDIR=	${PORTNAME}
 
@@ -40,10 +37,10 @@ MAKE_ARGS+=	INI_FILE_fmax=${DATADIR}/fmax.ini \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_OCFLAGS) && !defined(WITH_OCFLAGS)
-CFLAGS+=
-.else
+.if ! ${PORT_OPTIONS:MOCFLAGS}
 CFLAGS+=	-O2
+.else
+CFLAGS+=
 .endif
 
 post-patch:

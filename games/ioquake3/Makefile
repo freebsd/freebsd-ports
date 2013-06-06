@@ -30,25 +30,28 @@ WITHOUT_DLRENDERER=	yes
 # Client config
 WITH_CLIENT=	yes
 WITHOUT_DEDICATED=	yes
-OPTIONS+=	SERVER "Install dedicated server" on \
-		CURL "Enable cURL for http/ftp download" on \
-		OPENAL "Enable OpenAL audio output" on \
-		MUMBLE "Enable Mumble support (no dependencies)" on \
-		VORBIS "Enable Ogg Vorbis support" on
+OPTIONS_DEFINE=	SERVER CURL OPENAL MUMBLE VORBIS DEBUG
+OPTIONS_DEFAULT=	SERVER CURL OPENAL MUMBLE VORBIS
+SERVER_DESC=	Install dedicated server
+MUMBLE_DESC=	Enable Mumble support (no dependencies)
 . if defined(NO_TOOLS)
 WITHOUT_TOOLS=	yes
 . else
-OPTIONS+=	TOOLS "Enable modding tools" on
+OPTIONS_DEFINE+=	TOOLS
+OPTIONS_DEFAULT+=	TOOLS
+TOOLS_DESC=	Enable modding tools
 . endif
 . if defined(HAS_DLRENDERER)
-OPTIONS+=	DLRENDERER "Build dynamically loaded renderer" on
-. else
-WITHOUT_DLRENDERER=	yes
+OPTIONS_DEFINE+=	DLRENDERER
+OPTIONS_DEFAULT+=	DLRENDERER
+DLRENDERER_DESC=	Build dynamically loaded renderer
 . endif
 .endif
 # Common config
 .if !defined(NO_GAMELIBS)
-OPTIONS+=	GAMELIBS "Build game libraries" off
+OPTIONS_DEFINE+=	GAMELIBS
+OPTIONS_DEFAULT+=	GAMELIBS
+GAMELIBS_DESC=	Build game libraries
 .endif
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
@@ -85,49 +88,42 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 .include <bsd.port.options.mk>
 
-.if defined(NO_GAMELIBS) && defined(WITH_GAMELIBS)
-IGNORE=		does not support WITH_GAMELIBS
-.endif
-.if !defined(HAS_DLRENDERER) && defined(WITH_DLRENDERER)
-IGNORE=		does not support WITH_DLRENDERER
-.endif
-
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=	debug
 .endif
 
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 RUN_DEPENDS+=	${Q3SERVER}${BINSUFFIX}:${PORTSDIR}/games/${PORTNAME}-server
 .endif
 
 .if !defined(DESKTOP_ENTRIES)
-. if !defined(WITHOUT_CLIENT)
+. if ${PORT_OPTIONS:MCLIENT}
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER}" "${COMMENT}"  \
 		"${Q3ICON}" \
 		"${Q3CLIENT}${BINSUFFIX}" "Game;" false
 . endif
-. if defined(WITH_SMP)
+. if ${PORT_OPTIONS:MSMP}
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER} SMP" "${COMMENT}" \
 		"${Q3ICON}" \
 		"${Q3CLIENT}-smp${BINSUFFIX}" "Game;" false
 . endif
 .endif
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    !defined(WITH_SMP)
+.if ! ${PORT_OPTIONS:MCLIENT} && ! ${PORT_OPTIONS:MDEDICATED} && \
+    ! ${PORT_OPTIONS:MSMP}
 IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
-.if !defined(WITHOUT_CLIENT) || defined(WITH_SMP)
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP}
 # cURL
-.if !defined(WITHOUT_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 MAKE_ARGS+=	USE_CURL=1 USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0
 .endif
 # OpenAL
-.if !defined(WITHOUT_OPENAL)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al
 MAKE_ARGS+=	USE_OPENAL=1 USE_OPENAL_DLOPEN=0
 .else
@@ -136,14 +132,14 @@ MAKE_ARGS+=	USE_OPENAL=0
 # SDL
 USE_SDL=	sdl
 # Vorbis
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ARGS+=	USE_CODEC_VORBIS=1
 .else
 MAKE_ARGS+=	USE_CODEC_VORBIS=0
 .endif
 # Mumble
-.if !defined(WITHOUT_MUMBLE)
+.if ${PORT_OPTIONS:MMUMBLE}
 MAKE_ARGS+=	USE_MUMBLE=1
 .else
 MAKE_ARGS+=	USE_MUMBLE=0
@@ -154,7 +150,7 @@ WITHOUT_DLRENDERER=	yes
 .endif
 
 # SMP is only built with CLIENT.
-.if !defined(WITHOUT_CLIENT) || defined(WITH_SMP)
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP}
 MAKE_ARGS+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
 Q3BIN+=		${Q3CLIENT}
@@ -163,7 +159,7 @@ MAKE_ARGS+=	BUILD_CLIENT=0
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ARGS+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
 Q3BIN+=		${Q3SERVER}
@@ -172,7 +168,7 @@ MAKE_ARGS+=	BUILD_SERVER=0
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS)
+.if ${PORT_OPTIONS:MGAMELIBS}
 MAKE_ARGS+=	BUILD_GAME_SO=1
 PLIST_SUB+=	GAMELIBS=""
 .else
@@ -180,7 +176,7 @@ PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
 # Note that SMP is only supported on OS-X, hence the option has been removed.
-.if defined(WITH_SMP)
+.if ${PORT_OPTIONS:MSMP}
 MAKE_ARGS+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
 Q3BIN+=		${Q3CLIENT}-smp
@@ -189,7 +185,7 @@ MAKE_ARGS+=	BUILD_CLIENT_SMP=0
 PLIST_SUB+=	SMP="@comment "
 .endif
 
-.if !defined(WITHOUT_DLRENDERER)
+.if ${PORT_OPTIONS:MDLRENDERER}
 PLIST_SUB+=	DLRENDERER=""
 MAKE_ARGS+=	USE_RENDERER_DLOPEN=1
 .else
@@ -197,7 +193,7 @@ MAKE_ARGS+=	USE_RENDERER_DLOPEN=0
 PLIST_SUB+=	DLRENDERER="@comment "
 .endif
 
-.if !defined(WITHOUT_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 PLIST_SUB+=	TOOLS=""
 .else
 PLIST_SUB+=	TOOLS="@comment "
@@ -208,25 +204,25 @@ do-install: ${Q3INSTALL}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${ARCH} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
-.if !defined(WITHOUT_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 .for bin in ${Q3TOOLS}
 	${INSTALL_PROGRAM} ${BUILDDIR}/tools/${bin} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
 .endif
-.if !defined(WITHOUT_DLRENDERER)
+.if ${PORT_OPTIONS:MDLRENDERER}
 .for renderer in ${Q3RENDERER}
 	${MKDIR} ${LIBDIR}
 	${INSTALL_LIB} ${BUILDDIR}/${renderer}.so ${LIBDIR}
 .endfor
 .endif
-.if defined(WITH_GAMELIBS)
+.if ${PORT_OPTIONS:MGAMELIBS}
 .for dir in ${Q3BASE}
 	${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_LIB} ${BUILDDIR}/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxpaint-fonts
-# Date created:				15 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxpaint
 PORTVERSION=	2004.06.05
@@ -33,9 +29,14 @@ CHINESE_SIMPLIFIED_CODE=	zh_cn
 KOREAN_CODE=			ko
 VIETNAMESE_CODE=		vi
 
+#Bmake compatibility
+.MAKE.FreeBSD_UL= yes
+
 # Generate options menu.
 .for l in ${LANGS}
-OPTIONS+=	${l:U} "${l:S/_/ /} fonts" on
+OPTIONS_DEFINE+=	${l:U}
+OPTIONS_DEFAULT+=	${l:U}
+${l:U}_DESC=	${l:S/_/ /} fonts
 .endfor
 
 # Set MASTER_SITES
@@ -46,11 +47,11 @@ MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-fonts/${${l:U}_DISTNAME}:${l:U}
 # Do not use the same OPTIONS directory as "games/tuxpaint".
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Set DISTFILES and PLIST_FILES according to OPTIONS.
 .for l in ${LANGS}
-.	if !defined(WITHOUT_${l:U})
+.	if ${PORT_OPTIONS:M${l:U}}
 DISTFILES+=	${PORTNAME}-ttf-${${l:U}_DISTNAME}${EXTRACT_SUFX}:${l:U}
 PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}.ttf
 PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs/COPYING.txt
@@ -63,7 +64,7 @@ PLIST_DIRS+=	%%DATADIR%%/fonts/locale/${${l:U}_CODE}_docs
 do-install:
 	${MKDIR} ${DATADIR}/fonts/locale
 .for l in ${LANGS}
-.	if defined(WITH_${l:U})
+.	if ${PORT_OPTIONS:M${l:U}}
 		${INSTALL_DATA} \
 			${WRKSRC}/${PORTNAME}-ttf-${${l:U}_DISTNAME}/${${l:U}_CODE}.ttf \
 			${DATADIR}/fonts/locale
@@ -74,4 +75,4 @@ do-install:
 .	endif
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
