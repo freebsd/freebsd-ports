@@ -52,7 +52,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="72f35727-ce83-11e2-be04-005056a37f68">
-    <topic>dns/bind9* -- iA recursive resolver can be crashed by a query for a malformed zone</topic>
+    <topic>dns/bind9* -- A recursive resolver can be crashed by a query for a malformed zone</topic>
     <affects>
       <package>
 	<name>bind99</name>
