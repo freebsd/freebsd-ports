@@ -1177,6 +1177,7 @@
     SUBDIR += lua-filename
     SUBDIR += lua-gettext
     SUBDIR += lua-lgi
+    SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
     SUBDIR += lua-rds-parser
