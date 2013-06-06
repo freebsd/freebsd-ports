@@ -248,7 +248,7 @@ WANT_MYSQL_VER=	55
 #PKGNAMESUFFIX=	-mysql55
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL51) || ${PORT_OPTIONS:MMYSQL55}
+.if ${PORT_OPTIONS:MMYSQL51} || ${PORT_OPTIONS:MMYSQL55}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
@@ -494,7 +494,7 @@ pre-configure:
 	@${ECHO_CMD} "DOMAIN_SCALE and LARGE_SCALE are incopatible"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MLIGHTHTTPD) && ! ${PORT_OPTIONS:MWEBUI}
+.if ${PORT_OPTIONS:MLIGHTHTTPD} && ! ${PORT_OPTIONS:MWEBUI)
 	@${ECHO_CMD} "There's no reason to depend on LightHTTPD if you're not using WebUI"
 	@${FALSE}
 .endif
