@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mohawk
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.etoilebsd.net/mohawk/tarball/ \
 		http://fossil.bsdsx.fr/mohawk/tarball/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
 
 MAINTAINER=	mohawk@bsdsx.fr
 COMMENT=	Simple and lightweight HTTP daemon
@@ -31,12 +30,14 @@ MAN8=	mhtpasswd.8 \
 CFLAGS+=        -I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib/event2
 
+.include <bsd.port.options.mk>
+
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/examples/minimal.conf ${PREFIX}/etc/mohawk.conf.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/mhtpasswd.sh ${PREFIX}/bin/mhtpasswd
-.if !defined(NOPORTEXAMPLES)
+	${INSTALL_DATA} ${WRKSRC}/examples/minimal.conf ${PREFIX}/etc/mohawk.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/mhtpasswd.sh ${PREFIX}/bin/mhtpasswd
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
