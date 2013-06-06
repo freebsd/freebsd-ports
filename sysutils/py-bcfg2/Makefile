@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-bcfg2
-# Date created:		1 June 2007
-# Whom:			Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
-#
 
 PORTNAME=	bcfg2
 PORTVERSION=	1.1.1
@@ -22,8 +18,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-OPTIONS+=	CHEETAH "support Cheetah Templates" off \
-		GENSHI "support Genshi Templates" off
+OPTIONS_DEFINE=	CHEETAH GENSHI
+CHEETAH_DESC=	Support Cheetah Templates
+GENSHI_DESC=	Support Genshi Templates
 
 .include <bsd.port.options.mk>
 
@@ -35,11 +32,11 @@ USE_RC_SUBR=	bcfg2
 PYDISTUTILS_PKGNAME=	Bcfg2
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-.if defined(WITH_CHEETAH)
+.if ${PORT_OPTIONS:MCHEETAH}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
 .endif
 
-.if defined(WITH_GENSHI)
+.if ${PORT_OPTIONS:MGENSHI}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Genshi>0:${PORTSDIR}/textproc/py-genshi
 .endif
 
@@ -65,7 +62,7 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/var/lock|/var/run|' ${WRKSRC}/src/lib/$f
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
