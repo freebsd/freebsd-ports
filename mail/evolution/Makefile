@@ -1,10 +1,10 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.241 2012/09/01 23:02:10 mezz Exp $
+#   $MCom: ports/trunk/mail/evolution/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	evolution
 PORTVERSION=	2.32.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,9 +21,9 @@ CONFLICTS=	evolution-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		bison pathfix gettext
+USES=		bison desktop-file-utils gettext pathfix
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver gtkhtml3 \
-		desktopfileutils gnomedocutils ltasneededhack gnomedesktop
+		gnomedocutils ltasneededhack gnomedesktop
 USE_AUTOTOOLS=	libtool
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes
