@@ -15,7 +15,7 @@ COMMENT=	File distribution system optimized for CVS
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
 OPTIONS_DEFINE=	X11 STATIC
-OPTIONS_EXCLUDE_amd64=	X11
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 
