@@ -524,7 +524,9 @@ MASTER_SITE_GENTOO+= \
 # GH_PROJECT    - name of the project on GitHub
 #                 default: ${PORTNAME}
 #
-# GH_TAGNAME    - name of the tag to download (master, 2.0.1, ...)
+# GH_TAGNAME    - name of the tag to download (2.0.1, hash, ...)
+#                 Using the name of a branch here is incorrect. It is
+#                 possible to do GH_TAGNAME=${GH_COMMIT} to do a snapshot
 #                 default: ${DISTVERSION}
 #
 # GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
