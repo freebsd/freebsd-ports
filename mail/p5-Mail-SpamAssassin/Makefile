@@ -1,6 +1,5 @@
 # Created by: Anthony Kim
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.2
@@ -37,29 +36,30 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
 		LOCALSTATEDIR="${DBDIR}/spamassassin"
 
-OPTIONS+=	AS_ROOT "Run spamd as root (recommended)" on \
-		SPAMC "Build spamd/spamc (not for amavisd)" on \
-		SACOMPILE "sa-compile" off \
-		DKIM "DKIM/DomainKeys Identified Mail" on \
-		SSL "Build with SSL support for spamd/spamc" on \
-		GNUPG "Install GnuPG (for sa-update)" on \
-		MYSQL "Add MySQL support" off \
-		PGSQL "Add PostreSQL support" off \
-		RAZOR "Add Vipul's Razor support" on \
-		SPF_QUERY "Add SPF query support" off \
-		RELAY_COUNTRY "Relay country support" off \
-		DCC "Add DCC support (see LICENSE)" off
+OPTIONS_DEFINE=	AS_ROOT SPAMC SACOMPILE DKIM SSL GNUPG MYSQL PGSQL RAZOR \
+		SPF_QUERY RELAY_COUNTRY DCC
+OPTIONS_DEFAULT=	AS_ROOT SPAMC DKIM SSL GNUPG RAZOR
+AS_ROOT_DESC=		Run spamd as root (recommended)
+SPAMC_DESC=		Build spamd/spamc (not for amavisd)
+SACOMPILE_DESC=		sa-compile
+DKIM_DESC=		DKIM/DomainKeys Identified Mail
+SSL_DESC=		Build with SSL support for spamd/spamc
+GNUPG_DESC=		Install GnuPG (for sa-update)
+RAZOR_DESC=		Add Vipul's Razor support
+SPF_QUERY_DESC=		Add SPF query support
+RELAY_COUNTRY_DESC=	Relay country support
+DCC_DESC=		Add DCC support (see LICENSE)
 
 SUB_FILES=	pkg-install
 SUB_LIST=	USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}"
 
-.if !defined(WITHOUT_SSL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined (WITH_SPAMC)
+.if ${PORT_OPTIONS:MSPAMC}
 CONFIGURE_ARGS+=	BUILD_SPAMC=yes
 .else
 CONFIGURE_ARGS+=	BUILD_SPAMC=no
@@ -67,14 +67,14 @@ WITH_AS_ROOT=
 WITHOUT_SSL=1
 .endif
 
-.if defined(WITH_SPF_QUERY)
+.if ${PORT_OPTIONS:MSPF_QUERY}
 RUN_DEPENDS+=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 CFLAGS+=	-I${OPENSSLINC}
@@ -86,29 +86,31 @@ CONFIGURE_ARGS+=	ENABLE_SSL=no
 PLIST_SUB+=	SSL="@comment "
 .endif
 
-.if !defined(WITHOUT_GNUPG)
+.if ${PORT_OPTIONS:MGNUPG}
 RUN_DEPENDS+=	gnupg>=1.4.7:${PORTSDIR}/security/gnupg1
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_RAZOR)
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MRAZOR}
 RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
 .else
 .if   ${PERL_LEVEL} < 501000
-.if !defined(WITH_DKIM)
+.if ! ${PORT_OPTIONS:MDKIM}
 RUN_DEPENDS+=	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
 .endif
 .endif
 .endif
 
-.if defined(WITH_DKIM)
+.if ${PORT_OPTIONS:MDKIM}
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 . if ${PERL_LEVEL} < 501000
 RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
@@ -121,15 +123,15 @@ RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL
 . endif
 .endif
 
-.if defined(WITH_SACOMPILE)
+.if ${PORT_OPTIONS:MSACOMPILE}
 RUN_DEPENDS+=	re2c>=.12.0:${PORTSDIR}/devel/re2c
 .endif
 
-.if defined(WITH_RELAY_COUNTRY)
+.if ${PORT_OPTIONS:MRELAY_COUNTRY}
 RUN_DEPENDS+=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
 .endif
 
-.if defined(WITH_DCC)
+.if ${PORT_OPTIONS:MDCC}
 RUN_DEPENDS+=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
 .endif
 
@@ -144,12 +146,12 @@ PORTDOCS=	${DOCS} sql ldap
 
 USE_RC_SUBR=	sa-spamd
 
-.if defined(WITH_MYSQL) || defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL}
 SUB_LIST+=	SQL_FLAG="-Q"
 .else
 SUB_LIST+=	SQL_FLAG=""
 .endif
-.if !defined(WITH_AS_ROOT)
+.if ! ${PORT_OPTIONS:MAS_ROOT}
 SUB_LIST+=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
 .else
 SUB_LIST+=	RUN_AS_USER=""
@@ -168,28 +170,28 @@ post-patch::
 	@${REINPLACE_CMD} -e '/^CC =/d; \
 		s|@SSLCFLAGS@|& $${CFLAGS}|g' ${WRKSRC}/spamc/Makefile.in
 
-.if defined(WITH_RAZOR)
+.if ${PORT_OPTIONS:MRAZOR}
 	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
 .endif
-.if defined(WITH_RELAY_COUNTRY)
+.if ${PORT_OPTIONS:MRELAY_COUNTRY}
 	${REINPLACE_CMD} -e '/RelayCountry/s/^# ?loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
 .endif
-.if !defined(WITH_DKIM)
+.if ! ${PORT_OPTIONS:MDKIM}
 	${REINPLACE_CMD} -e '/DKIM/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v312.pre
 .endif
-.if !defined(WITH_SPF_QUERY)
+.if ! ${PORT_OPTIONS:MSPF_QUERY}
 	${REINPLACE_CMD} -e '/SPF/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/init.pre
 .endif
-.if defined(WITH_DCC)
+.if ${PORT_OPTIONS:MDCC}
 	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
-.if defined(WITH_SACOMPILE)
+.if ${PORT_OPTIONS:MSACOMPILE}
 	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
 .endif
 
 post-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libspamc.so)
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libsslspamc.so)
 .endif
 
@@ -197,14 +199,14 @@ pre-su-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
 	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libsslspamc.so ${PREFIX}/lib/libsslspamc.so.0
 	@${LN} -sf libsslspamc.so.0 ${PREFIX}/lib/libsslspamc.so
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${PREFIX}/include
 
 post-install::
-.if defined (WITH_SPAMC)
+.if ${PORT_OPTIONS:MSPAMC}
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
 .endif
 	@[ -f ${ETCDIR}/init.pre ] || \
@@ -224,7 +226,7 @@ post-install::
 		${INSTALL_DATA} ${ETCDIR}/v330.pre.sample \
 			${ETCDIR}/v330.pre
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/ldap
 	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCSSQL:S|^|${WRKSRC}/sql/|} ${DOCSDIR}/sql
