@@ -11,8 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
 USES=		shebangfix
-USE_PERL5_BUILD=yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
