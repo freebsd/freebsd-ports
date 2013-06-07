@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e2fsprogs-libss
-# Date created:			23 November 2009
-# Whom:				Ben Kaduk <kaduk@mit.edu>
-#
+# Created by: Ben Kaduk <kaduk@mit.edu>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	devel
@@ -15,8 +11,7 @@ COMMENT=	Command-line interface parsing library from e2fsprogs
 CONFLICTS=	heimdal-[0-9]*
 CONFLICTS+=	krb4-[0-9]*
 
-WITHOUT_NLS=	yes
-OPTIONS=	#
+OPTIONS_EXCLUDE=	DOCS EXAMPLES IPV6 NLS
 CONFIGURE_ARGS=	--enable-elf-shlibs
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 GNU_CONFIGURE=	yes
