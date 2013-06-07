@@ -21,16 +21,6 @@ PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500809
-BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.elsif ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
-.endif
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-.endif
-
 .if ${PORT_OPTIONS:MUNICODE}
 WX_UNICODE=	yes
 WX_UNI=		uni_
