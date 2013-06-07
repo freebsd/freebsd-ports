@@ -1,10 +1,6 @@
-# New ports collection makefile for:	xscreensaver-gnome
-# Date created:				13th February 2002
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/xscreensaver-gnome/Makefile,v 1.5 2007/08/15 18:29:16 mezz Exp $
-#
 
 PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	5.12
@@ -38,10 +34,11 @@ CONFIGURE_ENV=	LIBS="-lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS?=	PAM "Pluggable Authentication Module support" on \
-		KEYRING "Enable GnomeKeyring integration (needs PAM)" on \
-		ALL_FORTUNES "Enable support for all fortunes" off \
-		SETUID_HACKS "Install sonar hack suid so it can ping" off
+OPTIONS_DEFINE=	PAM KEYRING ALL_FORTUNES SETUID_HACKS
+OPTIONS_DEFAULT=	PAM KEYRING
+KEYRING_DESC=		GnomeKeyring integration (needs PAM)
+ALL_FORTUNES_DESC=	Support for all fortunes
+SETUID_HACKS_DESC=	Install sonar hack suid so it can ping
 
 SUB_FILES+=	xscreensaver.pam
 
@@ -88,11 +85,11 @@ MAN6?=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ALL_FORTUNES)
+.if ${PORT_OPTIONS:MALL_FORTUNES}
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .endif
 
-.if defined(WITH_PAM) || defined(WITH_KEYRING)
+.if ${PORT_OPTIONS:MPAM} || ${PORT_OPTIONS:MKEYRING}
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		PAM=""
 .else
@@ -100,14 +97,14 @@ CONFIGURE_ARGS+=	--without-pam
 PLIST_SUB+=		PAM="@comment "
 .endif
 
-.if defined(WITH_KEYRING)
+.if ${PORT_OPTIONS:MKEYRING}
 SUB_LIST+=		PAM_KEYRING=
 RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
 .else
 SUB_LIST+=		PAM_KEYRING=\#
 .endif
 
-.if defined(WITH_SETUID_HACKS)
+.if ${PORT_OPTIONS:MSETUID_HACKS}
 CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
@@ -121,7 +118,7 @@ post-patch:
 	    	s|malloc.h|stdlib.h|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
 	    	${WRKSRC}/${f}
@@ -136,7 +133,7 @@ pre-build:
 	@(cd ${WRKSRC}/hacks/glx && ./molecules.sh molecules.h ../images/molecules/*.pdb)
 
 pre-install:
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 	@${CP} ${WRKDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
 .endif
 
