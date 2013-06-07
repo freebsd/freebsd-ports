@@ -1,21 +1,13 @@
-# New ports collection makefile for:	p5-Log-Log4perl
-# Date created:				Sat Oct 19 11:22:09 CEST 2002
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.40
+PORTVERSION=	1.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Log4j implementation for Perl
-
-RUN_DEPENDS+=	p5-Storable>0:${PORTSDIR}/devel/p5-Storable
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -47,6 +39,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Filter::Boolean.3 \
 		Log::Log4perl::Filter::LevelMatch.3 \
 		Log::Log4perl::Filter::LevelRange.3 \
+		Log::Log4perl::Filter::MDC.3 \
 		Log::Log4perl::Filter::StringMatch.3 \
 		Log::Log4perl::InternalDebug.3 \
 		Log::Log4perl::JavaMap.3 \
