@@ -1,5 +1,5 @@
---- client/CMakeLists.txt.orig	2013-01-22 17:54:50.000000000 +0100
-+++ client/CMakeLists.txt	2013-02-13 14:47:51.000000000 +0100
+--- client/CMakeLists.txt.orig	2013-06-03 00:02:34.000000000 +0200
++++ client/CMakeLists.txt	2013-06-06 00:49:27.110952603 +0200
 @@ -33,17 +33,20 @@
  
  ADD_DEFINITIONS(${READLINE_DEFINES})
@@ -40,7 +40,7 @@
  TARGET_LINK_LIBRARIES(mysql_plugin mysqlclient)
  
 +IF(FALSE)
- MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
+ MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc sql_string.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
  
 @@ -75,6 +82,7 @@
