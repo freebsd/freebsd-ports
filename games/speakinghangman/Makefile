@@ -14,6 +14,9 @@ EXTRACT_ONLY=	${RESTRICTED_FILES}
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Educational game to practice and expand English and Spanish
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2013-07-07
+
 RESTRICTED=	License does not allow redistribution
 RESTRICTED_FILES=	${PORTNAME}free-${DISTVERSION}${EXTRACT_SUFX}
 
