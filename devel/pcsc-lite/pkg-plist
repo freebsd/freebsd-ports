@@ -23,4 +23,3 @@ sbin/pcscd
 @dirrm lib/pcsc/drivers
 @dirrm lib/pcsc
 @dirrm include/PCSC
-@dirrmtry etc/reader.conf.d
