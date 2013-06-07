@@ -473,6 +473,7 @@
     SUBDIR += libretto-config
     SUBDIR += libsunacl
     SUBDIR += libumberlog
+    SUBDIR += liburcu
     SUBDIR += libutempter
     SUBDIR += libzeitgeist
     SUBDIR += lineak-defaultplugin
@@ -981,7 +982,6 @@
     SUBDIR += usermin
     SUBDIR += userneu
     SUBDIR += userneu-devel
-    SUBDIR += userspace-rcu
     SUBDIR += usrinfo
     SUBDIR += utcount
     SUBDIR += vbetool

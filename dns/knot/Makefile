@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	urcu:${PORTSDIR}/sysutils/userspace-rcu
+LIB_DEPENDS=	urcu:${PORTSDIR}/sysutils/liburcu
 
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
