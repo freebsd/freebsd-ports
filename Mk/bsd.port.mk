@@ -6180,7 +6180,7 @@ config-recursive:
 
 .if !target(config-conditional)
 config-conditional: pre-config
-.if defined(COMPLETE_OPTIONS_LIST) && !defined(NO_DIALOG)
+.if defined(COMPLETE_OPTIONS_LIST) && !empty(_OPTIONS_WITHOUT_GLOBALS) && !defined(NO_DIALOG)
 .  if !defined(_FILE_COMPLETE_OPTIONS_LIST) || ${COMPLETE_OPTIONS_LIST:O} != ${_FILE_COMPLETE_OPTIONS_LIST:O}
 	@cd ${.CURDIR} && ${MAKE} do-config;
 .  endif

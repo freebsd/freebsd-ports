@@ -54,6 +54,8 @@ OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 #ALL_OPTIONS=	DOCS \
 #		NLS
 
+GLOBAL_OPTIONS=	DOCS NLS EXAMPLES IPV6
+
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTDOCS)
 PORT_OPTIONS+=	DOCS
@@ -315,3 +317,8 @@ WITH_${opt}:=  true
 .endfor
 .endif
 ###
+
+_OPTIONS_WITHOUT_GLOBALS:=	${COMPLETE_OPTIONS_LIST}
+.for opt in ${GLOBAL_OPTIONS}
+_OPTIONS_WITHOUT_GLOBALS:=	${_OPTIONS_WITHOUT_GLOBALS:N${opt}}
+.endfor
