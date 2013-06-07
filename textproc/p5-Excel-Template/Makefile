@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Excel::Template
-# Date created:				06 December 2005
-# Whom:					Espen Tagestad <espen@tagestad.no>
-#
+# Created by: Espen Tagestad <espen@tagestad.no>
 # $FreeBSD$
-#
 
 PORTNAME=	Excel-Template
 PORTVERSION=	0.34
@@ -56,11 +52,4 @@ MAN3=		Excel::Template.3 \
 		Excel::Template::Iterator.3 \
 		Excel::Template::TextObject.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String
-CONFIGURE_ARGS+=	USE_UNICODE=1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
