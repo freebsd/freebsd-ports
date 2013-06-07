@@ -21,7 +21,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Keruspe
 GH_PROJECT=	Bomb-her-man
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	8f5aa22
 
 USE_SDL=	sdl image mixer ttf

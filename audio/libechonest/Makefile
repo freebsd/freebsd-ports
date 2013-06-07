@@ -15,7 +15,7 @@ LIB_DEPENDS=	qjson:${PORTSDIR}/devel/qjson
 
 GH_ACCOUNT=	dschmidt
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	f9a55d1
 
 USES=		cmake pkgconfig

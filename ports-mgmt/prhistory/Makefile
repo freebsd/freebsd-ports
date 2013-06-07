@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	9113c59
 
 MAN7=	prhistory.7

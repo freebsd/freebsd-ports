@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130607:
+AUTHOR: bdrewery@FreeBSD.org
+
+  * Checks were added to block GH_TAGNAME=master as this is not a valid
+    setup. A known hash or tag should be used for GH_TAGNAME instead of
+    a branch name. As soon as a branch is updated, the known checksum
+    in the distinfo would then be invalid.
+
 20130606:
 AUTHOR: bdrewery@FreeBSD.org
 

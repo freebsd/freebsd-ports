@@ -17,7 +17,7 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
 GH_COMMIT=	72c81bf
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 
 USES=		cmake
 USE_LDCONFIG=	yes

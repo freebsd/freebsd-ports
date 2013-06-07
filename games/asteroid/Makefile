@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
 GH_PROJECT=	asteroid
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	6d23595
 
 USE_GL=		glut
