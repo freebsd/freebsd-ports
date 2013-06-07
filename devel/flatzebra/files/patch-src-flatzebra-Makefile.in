@@ -1,6 +1,6 @@
---- src/flatzebra/Makefile.in.orig	2009-08-21 08:57:35.167862535 +0000
-+++ src/flatzebra/Makefile.in	2009-08-21 08:58:09.594287891 +0000
-@@ -96,7 +96,7 @@
+--- src/flatzebra/Makefile.in.orig	2012-07-14 05:41:48.000000000 +0200
++++ src/flatzebra/Makefile.in	2013-06-06 16:56:34.000000000 +0200
+@@ -120,7 +120,7 @@
  ETAGS = etags
  CTAGS = ctags
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -9,3 +9,14 @@
  ACLOCAL = @ACLOCAL@
  AMTAR = @AMTAR@
  API = @API@
+@@ -274,8 +274,8 @@
+ 	font_13x7.xpm
+ 
+ libflatzebra_0_1_la_CXXFLAGS = \
+-	$(SDL_CFLAGS) \
+-	-I$(top_srcdir)/src
++	-I$(top_srcdir)/src \
++	$(SDL_CFLAGS)
+ 
+ libflatzebra_0_1_la_LIBADD = \
+ 	$(SDL_LIBS)
