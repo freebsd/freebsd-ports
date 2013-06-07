@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paq
-PORTVERSION=	20130522
+PORTVERSION=	20130606
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaq628.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaq629.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -45,11 +45,11 @@ DISTFILES+=	bmp_j4c.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)
-DISTFILES+=	zpaq1.pdf zpaq201.pdf
+DISTFILES+=	zpaq1.pdf zpaq202.pdf
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpaq201.pdf zpipe.cpp
+PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpaq202.pdf zpipe.cpp
 .endif
 
 .if !defined(NOPORTDATA)
