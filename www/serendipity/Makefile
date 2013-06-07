@@ -1,12 +1,8 @@
-# New ports collection makefile for:	serendipity
-# Date created:		2005-DEC-13
-# Whom:			babak@farrokhi.net
-#
+# Created by: babak@farrokhi.net
 # $FreeBSD$
-#
 
 PORTNAME=	serendipity
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7
 CATEGORIES=	www
 MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 
