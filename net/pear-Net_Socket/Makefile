@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_Socket
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.14
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
