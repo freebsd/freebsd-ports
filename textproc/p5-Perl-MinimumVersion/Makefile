@@ -27,8 +27,4 @@ MAN3=	Perl::MinimumVersion.3
 post-patch:
 	@${PERL} -pi -e '$$_="" if m/Test::/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
