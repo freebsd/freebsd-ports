@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsysinfo
-# Date created:		14 April 2012
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libsysinfo
 PORTVERSION=	0.0.2
@@ -17,6 +13,8 @@ LICENSE=	BSD
 
 USE_LDCONFIG=	yes
 PROJECTHOST=	sysinfo-bsd
+
+LDFLAGS+=	-lkvm
 
 PLIST_FILES=	include/sys/sysinfo.h \
 	lib/libsysinfo.a \
