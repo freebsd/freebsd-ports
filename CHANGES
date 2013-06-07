@@ -11,6 +11,18 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20130606:
+AUTHOR: bdrewery@FreeBSD.org
+
+  * WRKSRC_SUBDIR has been added to simplify overriding WRKSRC
+    to use a subdirectory:
+
+  WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+  Becomes:
+
+  WRKSRC_SUBDIR=	src
+
+20130606:
 AUTHOR: bapt@FreeBSD.org
 
   The OPTIONS macro is no longer recognized, please use the new options
