@@ -1,5 +1,3 @@
-bin/flexget
-bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/dependency_links.txt
@@ -10,6 +8,12 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/config_schema.py
+%%PYTHON_SITELIBDIR%%/flexget/config_schema.pyc
+%%PYTHON_SITELIBDIR%%/flexget/config_schema.pyo
+%%PYTHON_SITELIBDIR%%/flexget/db_schema.py
+%%PYTHON_SITELIBDIR%%/flexget/db_schema.pyc
+%%PYTHON_SITELIBDIR%%/flexget/db_schema.pyo
 %%PYTHON_SITELIBDIR%%/flexget/entry.py
 %%PYTHON_SITELIBDIR%%/flexget/entry.pyc
 %%PYTHON_SITELIBDIR%%/flexget/entry.pyo
@@ -40,6 +44,9 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/api_tvdb.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/api_tvdb.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/api_tvdb.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/api_tvrage.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/api_tvrage.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/api_tvrage.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/cli/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/cli/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/cli/__init__.pyo
@@ -73,6 +80,15 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/download/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/download/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/download/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released_movies.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released_movies.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released_movies.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released_series.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released_series.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/est_released_series.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/exit/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/exit/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/exit/__init__.pyo
@@ -247,9 +263,15 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/mock.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/mock.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/mock.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/plex.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/plex.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/plex.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/pogcal.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/pogcal.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/pogcal.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/regexp_parse.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/regexp_parse.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/regexp_parse.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/rlslog.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/rlslog.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/rlslog.pyo
@@ -274,9 +296,6 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/trakt_list.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/trakt_list.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/trakt_list.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/input/tvtorrents.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/input/tvtorrents.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/input/tvtorrents.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/local/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/local/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/local/__init__.pyo
@@ -286,9 +305,6 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/content_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/content_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/content_size.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/feed.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/feed.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/feed.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/imdb_lookup.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/imdb_lookup.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/imdb_lookup.pyo
@@ -307,6 +323,9 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/series.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/series.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/series.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/task.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/task.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/task.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/thetvdb_lookup.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/thetvdb_lookup.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo/thetvdb_lookup.pyo
@@ -418,9 +437,15 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/move.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/move.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/move.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/notify_osd.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/notify_osd.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/notify_osd.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/notifymyandroid.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/notifymyandroid.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/notifymyandroid.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/nzbget.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/nzbget.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/nzbget.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/prowl.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/prowl.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/prowl.pyo
@@ -433,9 +458,15 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/queue_movies.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/queue_movies.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/queue_movies.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/rapidpush.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/rapidpush.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/rapidpush.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/rss.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/rss.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/rss.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/rtorrent_magnet.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/rtorrent_magnet.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output/rtorrent_magnet.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/sabnzbd.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/sabnzbd.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output/sabnzbd.pyo
@@ -493,6 +524,9 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_verbose_details.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_verbose_details.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_verbose_details.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/search_btn.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/search_btn.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/search_btn.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_kat.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_kat.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_kat.pyo
@@ -562,15 +596,15 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentleech.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentleech.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentleech.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentz.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentz.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentz.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_urlrewrite.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_urlrewrite.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_urlrewrite.pyo
-%%PYTHON_SITELIBDIR%%/flexget/schema.py
-%%PYTHON_SITELIBDIR%%/flexget/schema.pyc
-%%PYTHON_SITELIBDIR%%/flexget/schema.pyo
 %%PYTHON_SITELIBDIR%%/flexget/task.py
 %%PYTHON_SITELIBDIR%%/flexget/task.pyc
 %%PYTHON_SITELIBDIR%%/flexget/task.pyo
@@ -579,6 +613,7 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/templates/email/failed.template
 %%PYTHON_SITELIBDIR%%/flexget/templates/email/html.template
 %%PYTHON_SITELIBDIR%%/flexget/templates/make_html/default.template
+%%PYTHON_SITELIBDIR%%/flexget/templates/rss/default.template
 %%PYTHON_SITELIBDIR%%/flexget/ui/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/ui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/ui/__init__.pyo
@@ -607,14 +642,48 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/authentication/authentication.py
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/authentication/authentication.pyc
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/authentication/authentication.pyo
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config/__init__.py
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config/config.py
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config/config.pyc
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config/config.pyo
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/__init__.pyo
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/configure.py
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/configure.pyc
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/configure.pyo
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/JSONARY_LICENSE.txt
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/css/loading.gif
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/css/page.index.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/js/jquery.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/js/jsonary.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/js/page.index.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/plugins/jsonary.hash.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/plugins/jsonary.jstl.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/plugins/jsonary.render.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/plugins/jsonary.render.table.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/plugins/jsonary.undo.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/api.jsonary.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/api.jsonary.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/basic.jsonary.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/basic.jsonary.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/common.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/flexget.jsonary.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/flexget.jsonary.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/images/background-fade-bold.png
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/images/background-fade.png
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/images/background-stripe.png
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/list-links.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/list-schemas.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/plain.jsonary.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/plain.jsonary.js
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/schemas.jsonary.css
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/schemas.jsonary.js
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/templates/configure.html
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/templates/edit.html
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/templates/edit_jsonary.html
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/templates/edit_text.html
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/templates/new.html
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/execute/__init__.py
@@ -675,6 +744,12 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schedule/schedule.pyc
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schedule/schedule.pyo
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schedule/templates/schedule.html
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema/__init__.py
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema/__init__.pyc
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema/schema.py
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema/schema.pyc
+%%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema/schema.pyo
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/series/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/series/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/series/__init__.pyo
@@ -825,6 +900,8 @@ bin/flexget-webui
 %%PYTHON_SITELIBDIR%%/flexget/validator.py
 %%PYTHON_SITELIBDIR%%/flexget/validator.pyc
 %%PYTHON_SITELIBDIR%%/flexget/validator.pyo
+bin/flexget
+bin/flexget-webui
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/utils/titles
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/utils
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/templates
@@ -845,6 +922,7 @@ bin/flexget-webui
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/series/static/css
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/series/static
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/series
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schema
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schedule/templates
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/schedule
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/plugins/templates
@@ -866,12 +944,20 @@ bin/flexget-webui
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/execute/static
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/execute
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/templates
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers/images
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/renderers
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/js
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static/css
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure/static
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/configure
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/config
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/authentication
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/archive/templates
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins/archive
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/ui
+@dirrm %%PYTHON_SITELIBDIR%%/flexget/templates/rss
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/templates/make_html
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/templates/email
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/templates
