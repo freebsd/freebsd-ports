@@ -2,4 +2,4 @@ The sysinfo(3) function is a GNU interface for retrieving common information
 about the configuration and state of the system, such as is returned by
 sysctl(3) and sysconf(3).
 
-WWW:	http://code.google.com/p/sysinfo-bsd/
+WWW: http://code.google.com/p/sysinfo-bsd/
