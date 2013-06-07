@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130607:
+  AFFECTS: Nobody
+  AUTHOR: wxs@FreeBSD.org
+
+  FreeBSD 8.4 released.
+
 20130604:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org
@@ -939,6 +945,12 @@ you update your ports collection, before attempting any port upgrades.
   OpenSMTPD port has been updated to the latest portable snapshot. There
   has been several changes to the configuration between the last version
   and this version, which requires configuration file need to be reviewed.
+
+20121230:
+  AFFECTS: Nobody
+  AUTHOR: wxs@FreeBSD.org
+
+  FreeBSD 9.1 released.
 
 20121229:
   AFFECTS: users of devel/libical
