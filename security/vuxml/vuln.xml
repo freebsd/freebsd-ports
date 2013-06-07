@@ -56,27 +56,27 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>bind99</name>
-	<range><lt>9.9.3.1</lt></range>
+	<range><gt>9.9.3</gt><lt>9.9.3.1</lt></range>
       </package>
       <package>
 	<name>bind99-base</name>
-	<range><lt>9.9.3.1</lt></range>
+	<range><gt>9.9.3</gt><lt>9.9.3.1</lt></range>
       </package>
       <package>
 	<name>bind98</name>
-	<range><lt>9.8.5.1</lt></range>
+	<range><gt>9.8.5</gt><lt>9.8.5.1</lt></range>
       </package>
       <package>
 	<name>bind98-base</name>
-	<range><lt>9.8.5.1</lt></range>
+	<range><gt>9.8.5</gt><lt>9.8.5.1</lt></range>
       </package>
       <package>
 	<name>bind96</name>
-	<range><lt>9.6.3.2.ESV.R9</lt></range>
+	<range><gt>9.6.3.1.ESV.R9</gt><lt>9.6.3.2.ESV.R9</lt></range>
       </package>
       <package>
 	<name>bind96-base</name>
-	<range><lt>9.6.3.2.ESV.R9</lt></range>
+	<range><gt>9.6.3.1.ESV.R9</gt><lt>9.6.3.2.ESV.R9</lt></range>
       </package>
     </affects>
     <description>
@@ -98,6 +98,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-06-04</discovery>
       <entry>2013-06-06</entry>
+      <modified>2013-06-07</modified>
     </dates>
   </vuln>
 
