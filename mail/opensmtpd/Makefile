@@ -1,12 +1,8 @@
-# New ports collection makefile for:	opensmtpd
-# Date created:		2012-05-13
-# Whom:			Ashish SHUKLA <ashish@FreeBSD.org>
-#
+# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	opensmtpd
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.3
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -16,8 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}p1
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	OpenSMTPD is a free MTA
 
-LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
 
 LICENSE_NAME=	ISCL
 
@@ -27,7 +22,7 @@ OPTIONS_DEFAULT=	PAM
 
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/
 
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
