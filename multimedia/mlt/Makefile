@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.8.8
-PORTREVISION?=	1
+PORTVERSION=	0.9.0
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -19,9 +19,9 @@ SLAVE_PORT?=	no
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
 
-USES=		pkgconfig
-USE_GNOME=	gnomehack libxml2
+USE_GNOME=	libxml2
 USE_SDL=	image
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gpl --enable-gpl3
 USE_GMAKE=	yes
@@ -41,14 +41,15 @@ PORTEXAMPLES=	demo
 
 MAN1=		melt.1
 
-OPTIONS_DEFINE=	DV FFMPEG FREI0R GTK2 JACK QT4 QUICKTIME \
+OPTIONS_DEFINE=	DOCS DV EXAMPLES FFMPEG FREI0R GTK2 JACK KDE4 QT4 QUICKTIME \
 		SAMPLERATE SOX SWFDEC VDPAU VORBIS
 OPTIONS_DEFAULT=DV FFMPEG FREI0R GTK2 QT4 \
 		SAMPLERATE SOX SWFDEC VORBIS
 
-GTK2_DESC=	Images, text rendering, etc. via GTK+ 2
-QT4_DESC=	Kdenlive titles, images, etc. via QImage
-SOX_DESC=	SoX audio effects
+GTK2_DESC=	Images and text rendering via GTK+ 2
+KDE4_DESC=	QImage extra formats support
+QT4_DESC=	Kdenlive titles and images support via QImage
+SOX_DESC=	SoX audio effects support
 
 .include <bsd.port.options.mk>
 
@@ -107,11 +108,17 @@ PLIST_SUB+=	JACK="@comment "
 
 .if ${PORT_OPTIONS:MQT4}
 LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
-USE_QT4+=	gui svg xml
+USE_QT4+=	corelib gui opengl svg xml
 CONFIGURE_ARGS+=--enable-qimage \
 		--qimage-includedir="${QT_INCDIR}" \
 		--qimage-libdir="${QT_LIBDIR}"
 PLIST_SUB+=	QT4=""
+. if ${PORT_OPTIONS:MKDE4}
+USE_KDE4+=	kdelibs
+CONFIGURE_ENV+=	PATH="${KDE4_PREFIX}/bin:$$PATH"
+. else
+CONFIGURE_ARGS+=--without-kde
+. endif
 .else
 CONFIGURE_ARGS+=--disable-qimage
 PLIST_SUB+=	QT4="@comment "
