@@ -10,7 +10,7 @@ COMMENT=	Full-featured asynchronous I/O library for C
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scunningham
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	e1a62ab
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 GNU_CONFIGURE=	yes

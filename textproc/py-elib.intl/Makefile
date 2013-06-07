@@ -12,7 +12,7 @@ COMMENT=	Enhanced internationalization services for Python modules
 LICENSE=	LGPL3
 
 GH_ACCOUNT=	dieterv
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	d09997c
 USE_GITHUB=	yes
 

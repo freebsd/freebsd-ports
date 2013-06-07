@@ -14,7 +14,7 @@ DOCCOMM_DESC=	Retain doc-comments in internal php structures
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	42067ac
 
 OPTIONS_DEFINE=	DOCCOMM

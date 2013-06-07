@@ -15,7 +15,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 GH_ACCOUNT=	mattn
 GH_COMMIT=	cab80f2
-GH_TAGNAME=	master
+GH_TAGNAME=	${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
 
