@@ -4383,3 +4383,4 @@ lang/elisp-manual||2013-06-05|Has expired: Broken for more than 6 months
 sysutils/sge62||2013-06-05|Has expired: Ancient and unsupported release
 x11-toolkits/ruby-wx||2013-06-07|Has expired: Does not work with Ruby 1.9
 sysutils/userspace-rcu|sysutils/liburcu|2013-06-07|Renamed correctly according to upstream
+mail/mixminion||2013-06-07|Has expired: This port requires python version, we haven't in the ports tree already
