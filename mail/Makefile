@@ -285,7 +285,6 @@
     SUBDIR += minimalist
     SUBDIR += missey
     SUBDIR += mixmaster
-    SUBDIR += mixminion
     SUBDIR += ml
     SUBDIR += mlmmj
     SUBDIR += mls
