@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="59e7163c-cf84-11e2-907b-0025905a4770">
+    <topic>php5 -- Heap based buffer overflow in quoted_printable_encode</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.16</lt></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP development team reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>A Heap-based buffer overflow flaw was found in the php
+	    quoted_printable_encode() function. A remote attacker could use
+	    this flaw to cause php to crash or execute arbirary code with the
+	    permission of the user running php</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2110</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=964969</url>
+    </references>
+    <dates>
+      <discovery>2013-06-06</discovery>
+      <entry>2013-06-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72f35727-ce83-11e2-be04-005056a37f68">
     <topic>dns/bind9* -- A recursive resolver can be crashed by a query for a malformed zone</topic>
     <affects>
