@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Business-PayPal
-# Date created:				Fri 29 Sep 2006
-# Whom:					Steven Kreuzer
-#
+# Created by: Steven Kreuzer
 # $FreeBSD$
-#
 
 PORTNAME=	Business-PayPal
 PORTVERSION=	0.05
@@ -22,10 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Business::PayPal.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
