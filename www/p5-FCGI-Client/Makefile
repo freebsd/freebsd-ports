@@ -1,9 +1,4 @@
-# New ports collection makefile for:	FCGI::Client
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	FCGI-Client
 PORTVERSION=	0.08
@@ -29,10 +24,4 @@ MAN3=	FCGI::Client.3 \
 	FCGI::Client::RecordFactory.3 \
 	FCGI::Client::RecordHeader.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 501000
-RUN_DEPENDS+=	p5-autodie>0:${PORTSDIR}/devel/p5-autodie
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
