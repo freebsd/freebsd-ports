@@ -1,9 +1,7 @@
-# Created by: Alberto Villa <villa.alberto@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src/
@@ -12,28 +10,32 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	KDE professional quality non-linear video editing suite
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	mlt.5:${PORTSDIR}/multimedia/mlt \
-		qjson.0:${PORTSDIR}/devel/qjson
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	mlt:${PORTSDIR}/multimedia/mlt \
+		qjson:${PORTSDIR}/devel/qjson
+RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
 USE_QT4=	dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
-USE_BZIP2=	yes
 USES=		cmake
+USE_BZIP2=	yes
+CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 MAKE_JOBS_SAFE=	yes
+
+# Keep in sync with multimedia/mlt, possibly.
+FFMPEG_SUFX=	1
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
-OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA SCREENREC XINE
-DVDWIZARD_DESC=	DVD authoring with DVDAuthor and cdrtools
-SCREENREC_DESC=	Screen recording with recordMyDesktop
-XINE_DESC=	DVD previewing with xine
+OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA NLS SCREENCAST XINE
+OPTIONS_DEFAULT=DVDWIZARD FREI0R LADSPA SCREENCAST XINE
 
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+DVDWIZARD_DESC=	DVD authoring via DVDAuthor and cdrtools
+SCREENCAST_DESC=Screen capture support via recordMyDesktop
+#V4L_DESC=	Webcam support via Video 4 Linux
+XINE_DESC=	DVD preview support via xine
 
 .include <bsd.port.options.mk>
 
@@ -58,18 +60,25 @@ CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSCREENREC}
+.if ${PORT_OPTIONS:MSCREENCAST}
 RUN_DEPENDS+=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 .endif
+
+#.if ${PORT_OPTIONS:MV4L}
+#LIB_DEPENDS+=	v4l2:${PORTSDIR}/multimedia/libv4l
+#BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+#.else
+CMAKE_ARGS+=	-DWITH_V4L:BOOL=FALSE
+#.endif
 
 .if ${PORT_OPTIONS:MXINE}
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -E -e '/${PORTNAME}.(menu|xpm)/ d' \
+	@${REINPLACE_CMD} -E -e '/${PORTNAME}.(menu|xpm)/ d' \
 		${PATCH_WRKSRC}/data/CMakeLists.txt
-	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
+	@${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/src/mimetypes/CMakeLists.txt
 
 .include <bsd.port.mk>

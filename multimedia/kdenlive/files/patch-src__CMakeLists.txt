@@ -1,0 +1,11 @@
+--- ./src/CMakeLists.txt.orig	2013-04-06 21:25:09.000000000 +0200
++++ ./src/CMakeLists.txt	2013-06-05 15:33:12.402759625 +0200
+@@ -14,6 +14,8 @@
+ option(WITH_V4L "Build capture support with Video4Linux" ON)
+ option(WITH_JogShuttle "Build Jog/Shuttle support" ON)
+ 
++set(FFMPEG_SUFFIX "" CACHE STRING "FFmpeg custom suffix")
++add_definitions(-DFFMPEG_SUFFIX=\\\"\"${FFMPEG_SUFFIX}\"\\\")
+ 
+ 
+ if(WITH_V4L)
