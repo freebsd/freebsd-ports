@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dovecot-antispam
-# Date created:		Sat Jan  5 16:31:30 MSK 2008
-# Whom:			Denis Shaposhnikov <dsh@wizard.volgograd.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@wizard.volgograd.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot-antispam
 PORTVERSION=	1.3
@@ -25,10 +21,31 @@ USE_LDCONFIG=	${PREFIX}/lib/dovecot/imap
 
 MAN7=		dovecot-antispam.7
 
-OPTIONS+=	DSPAM "direct dspam training" on
-OPTIONS+=	MAILTRAIN "send mail to special addresses for training" off
-OPTIONS+=	DEBUG "Turn on debug information (syslog)" off
-OPTIONS+=	DEBUG_VERBOSE "Turn on verbose debug" off
+OPTIONS_DEFINE=	DSPAM MAILTRAIN DEBUG DEBUG_VERBOSE
+OPTIONS_DEFAULT=	DSPAM
+DSPAM_DESC=		Direct dspam training
+MAILTRAIN_DESC=		send mail to special addresses for training
+DEBUG_DESC=		Turn on debug information (syslog)
+DEBUG_VERBOSE_DESC=	Turn on verbose debug
+
+.include <bsd.port.options.mk>
+
+do-configure:
+	DOVECOT=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` && \
+		${ECHO} "DOVECOT=$$DOVECOT" > ${WRKSRC}/.config
+.if ${PORT_OPTIONS:MDSPAM}
+	${ECHO} "BACKEND=dspam-exec"  >> ${WRKSRC}/.config
+.endif
+.if ${PORT_OPTIONS:MMAILTRAIN}
+	${ECHO} "BACKEND=mailtrain"  >> ${WRKSRC}/.config
+.endif
+.if ${PORT_OPTIONS:MDEBUG}
+	${ECHO} "DEBUG=syslog"  >> ${WRKSRC}/.config
+.endif
+.if ${PORT_OPTIONS:MDEBUG_VERBOSE}
+	${ECHO} "DEBUG_VERBOSE=1"  >> ${WRKSRC}/.config
+.endif
+	${ECHO} "PLUGINNAME=antispam" >> ${WRKSRC}/.config
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib90_antispam_plugin.so \
@@ -38,23 +55,4 @@ do-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-do-configure:
-	DOVECOT=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` && \
-		${ECHO} "DOVECOT=$$DOVECOT" > ${WRKSRC}/.config
-.if defined(WITH_DSPAM)
-	${ECHO} "BACKEND=dspam-exec"  >> ${WRKSRC}/.config
-.endif
-.if defined(WITH_MAILTRAIN)
-	${ECHO} "BACKEND=mailtrain"  >> ${WRKSRC}/.config
-.endif
-.if defined(WITH_DEBUG)
-	${ECHO} "DEBUG=syslog"  >> ${WRKSRC}/.config
-.endif
-.if defined(WITH_DEBUG_VERBOSE)
-	${ECHO} "DEBUG_VERBOSE=1"  >> ${WRKSRC}/.config
-.endif
-	${ECHO} "PLUGINNAME=antispam" >> ${WRKSRC}/.config
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
