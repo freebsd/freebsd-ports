@@ -13,10 +13,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A mailing list manager
 
-.if defined(WITH_SHA1_COOKIES)
-RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
-.endif
-
 USES=		shebangfix
 USE_PERL5=	yes
 
@@ -31,12 +27,6 @@ PKGMESSAGE=	${FILESDIR}/post-install-notes
 DOCSDIR=	${PREFIX}/${PORTNAME}/doc
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITH_SHA1_COOKIES)
-. if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
-. endif
-.endif
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
