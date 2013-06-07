@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	mail
 MASTER_SITES=	http://cdn.bitbucket.org/vstakhov/rspamd/downloads/
 
@@ -10,9 +10,9 @@ COMMENT=	Fast spam filtering system
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		gmime-2.0:${PORTSDIR}/mail/gmime2 \
-		event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		gmime-2:${PORTSDIR}/mail/gmime2 \
+		event-1:${PORTSDIR}/devel/libevent
 
 OPTIONS_DEFINE=	GPERF JUDY REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -24,7 +24,7 @@ USE_RC_SUBR=	rspamd
 PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-DETC_PREFIX=${PREFIX}/etc -DPREFIX=${PREFIX} \
-		-DBUILD_PORT=yes
+		-DBUILD_PORT=yes -DNO_SHARED=ON
 
 USES=		cmake gettext iconv pkgconfig
 USE_LDCONFIG=	yes
