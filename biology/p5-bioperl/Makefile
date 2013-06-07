@@ -13,8 +13,7 @@ DISTNAME=	BioPerl-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of Perl modules for bioinformatics
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/lang/${PERL_PORT} \
-		${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/DB_File.pm:${PORTSDIR}/lang/${PERL_PORT} \
+BUILD_DEPENDS=	p5-Text-Tabs+Wrap>=0:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
 		p5-Bio-ASN1-EntrezGene>=0:${PORTSDIR}/biology/p5-Bio-ASN1-EntrezGene \
 		p5-Class-AutoClass>=0:${PORTSDIR}/devel/p5-Class-AutoClass \
 		p5-Data-Stag>=0:${PORTSDIR}/devel/p5-Data-Stag \
