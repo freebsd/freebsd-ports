@@ -569,7 +569,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${WRKDIR}/${DISTNAME} unless NO_WRKSUBDIR is set,
 #				  in which case simply ${WRKDIR}
 # WRKSRC_SUBDIR	- A subdirectory of ${WRKSRC} where the distribution actually
-#				  build in.
+#				  builds in.
 #				  Default: not set
 # NO_WRKSUBDIR	- Assume port unpacks directly into ${WRKDIR}.
 # PATCHDIR		- A directory containing any additional patches you made
