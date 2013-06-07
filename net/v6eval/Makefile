@@ -11,6 +11,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPv6 Conformance Test Platform
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 RUN_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
 
