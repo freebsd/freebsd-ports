@@ -2,10 +2,6 @@ bin/domination-FlashGUI
 bin/domination-Increment1GUI
 bin/domination-SimpleGUI
 bin/domination-SwingGUI
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
-%%PORTDOCS%%%%DOCSDIR%%/ReadMe.txt
-%%PORTDOCS%%%%DOCSDIR%%/commands.txt
-%%PORTDOCS%%%%DOCSDIR%%/todo.txt
 %%DATADIR%%/ChangeLog.txt
 %%DATADIR%%/CommandLine.cmd
 %%DATADIR%%/CommandLine.sh
@@ -506,4 +502,3 @@ share/pixmaps/domination.png
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

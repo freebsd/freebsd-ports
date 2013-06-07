@@ -1,7 +1,8 @@
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	domination
-PORTVERSION=	1.1.1.3
+PORTVERSION=	1.1.1.4
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game  \
 		http://domination.sourceforge.net/maps/
@@ -13,8 +14,6 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Board game that is a bit like the well known game Risk
 
 LICENSE=	GPLv3
-
-OPTIONS_DEFINE=	DOCS
 
 FETCH_ARGS?=	-Fpr
 USE_ZIP=	yes
@@ -47,17 +46,10 @@ SUB_FILES=	${PORTNAME}-FlashGUI \
 		${PORTNAME}-SimpleGUI \
 		${PORTNAME}-SwingGUI
 
-DESKTOP_ENTRIES="Domination" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" "false"
+DESKTOP_ENTRIES="Domination" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" false
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
 
 post-extract-script:
 .for f in ${MAPS:S/$/.zip/}
