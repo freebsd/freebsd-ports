@@ -238,7 +238,6 @@
     SUBDIR += ruby-poppler
     SUBDIR += ruby-tk
     SUBDIR += ruby-vte
-    SUBDIR += ruby-wx
     SUBDIR += sakura
     SUBDIR += scintilla
     SUBDIR += sdl_pango
