@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-PPI
-# Date created:				24 March 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PPI
 PORTVERSION=	1.215
@@ -121,11 +117,4 @@ MAN3=	PPI.3 \
 	PPI::Transform.3 \
 	PPI::Transform::UpdateCopyright.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
