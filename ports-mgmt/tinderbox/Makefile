@@ -46,10 +46,12 @@ WEBUI=		yes
 .endif
 
 .if defined(WEBUI)
+EXTRA_PATCHES+=	${PATCHDIR}/fail-reasons-patch
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
 .else
+EXTRACT_BEFORE_ARGS=	--exclude webui -xf
 PLIST_SUB+=	WEBUI="@comment "
 .endif
 
@@ -96,11 +98,6 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 
 .if ${PORT_OPTIONS:MLOG_COMPRESS}
 RUN_DEPENDS+=	p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
-.endif
-
-.if ! defined(WEBUI)
-post-extract:
-	@${RM} -R ${WRKSRC}/webui
 .endif
 
 post-patch:
