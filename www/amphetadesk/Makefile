@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	AmphetaDesk
-# Date created:				8 April 2004
-# Whom:					kstailey
-#
+# Created by: kstailey
 # $FreeBSD$
-#
 
 PORTNAME=	amphetadesk
 PORTVERSION=	0.93.1
@@ -45,10 +41,6 @@ PORTDOCS=	\
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -print0 | \
