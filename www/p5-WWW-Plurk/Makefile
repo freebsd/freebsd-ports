@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Plurk
-# Date created:		2008-08-04
-# Whom:			Yi-Hsuan Hsin <mhsin@mhsin.org>
-#
+# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Plurk
 PORTVERSION=	0.02
@@ -30,10 +26,4 @@ MAN3=		WWW::Plurk.3 WWW::Plurk::Friend.3 WWW::Plurk::Message.3
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
