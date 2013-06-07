@@ -568,6 +568,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  unpacks to.
 #				  Default: ${WRKDIR}/${DISTNAME} unless NO_WRKSUBDIR is set,
 #				  in which case simply ${WRKDIR}
+# WRKSRC_SUBDIR	- A subdirectory of ${WRKSRC} where the distribution actually
+#				  build in.
+#				  Default: not set
 # NO_WRKSUBDIR	- Assume port unpacks directly into ${WRKDIR}.
 # PATCHDIR		- A directory containing any additional patches you made
 #				  to port this software to FreeBSD.
@@ -1542,6 +1545,9 @@ WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 WRKSRC?=		${WRKDIR}
 .else
 WRKSRC?=		${WRKDIR}/${DISTNAME}
+.endif
+.if defined(WRKSRC_SUBDIR)
+WRKSRC:=		${WRKSRC}/${WRKSRC_SUBDIR}
 .endif
 
 PATCH_WRKSRC?=	${WRKSRC}
