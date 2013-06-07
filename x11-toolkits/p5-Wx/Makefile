@@ -48,11 +48,6 @@ MAN3=		Wx.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.48:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.48:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
 .if ${PERL_LEVEL} < 501508
 BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=3.15:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 RUN_DEPENDS+=	p5-ExtUtils-ParseXS>=3.15:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
