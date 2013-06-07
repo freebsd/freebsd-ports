@@ -86,6 +86,7 @@ bin/recollindex
 %%DATADIR%%/images/spreadsheet.png
 %%DATADIR%%/images/text-x-python.png
 %%DATADIR%%/images/txt.png
+%%DATADIR%%/images/video.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_cs.qm
 %%DATADIR%%/translations/recoll_de.qm
@@ -106,8 +107,4 @@ bin/recollindex
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/applications
+%%QT%%@dirrmtry share/applications
