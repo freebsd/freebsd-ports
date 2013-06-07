@@ -241,9 +241,9 @@ SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -liconv,' \
 SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
 .endif
 
-.if ${PORT_OPTIONS:MLDAP) || defined(LDAP_LIB_TYPE} \
-	|| ${PORT_OPTIONS:MOPENLDAP1) || defined(WITH_OPENLDAP2} \
-	|| ${PORT_OPTIONS:MOPENLDAP20) || defined(WITH_OPENLDAP21}
+.if ${PORT_OPTIONS:MLDAP} || defined(LDAP_LIB_TYPE) \
+	|| ${PORT_OPTIONS:MOPENLDAP1} || defined(WITH_OPENLDAP2) \
+	|| ${PORT_OPTIONS:MOPENLDAP20} || defined(WITH_OPENLDAP21)
 BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
 .endif
 
