@@ -1,0 +1,6 @@
+ConfigExpanderInput and ConfigExpanderOutput plugins provide simple
+configuration template to write items repeatedly.  In section, you can
+write actual configuration for actual input/output plugin, with
+special directives for loop controls.
+
+WWW: https://github.com/tagomoris/fluent-plugin-config-expander
