@@ -494,7 +494,7 @@ pre-configure:
 	@${ECHO_CMD} "DOMAIN_SCALE and LARGE_SCALE are incopatible"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MLIGHTHTTPD} && ! ${PORT_OPTIONS:MWEBUI)
+.if ${PORT_OPTIONS:MLIGHTHTTPD} && ! ${PORT_OPTIONS:MWEBUI}
 	@${ECHO_CMD} "There's no reason to depend on LightHTTPD if you're not using WebUI"
 	@${FALSE}
 .endif
