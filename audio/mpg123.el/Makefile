@@ -7,6 +7,7 @@ CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
+DISTFILES=	mpg123el.cgi?${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end to mpg123/ogg123 audio player for Emacsen
@@ -20,16 +21,12 @@ NO_BUILD=	yes
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-myFETCH_CMD=	${FETCH_CMD} -AR
-
-BROKEN=		fails to fetch
-
-do-fetch:
-	${myFETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES}/mpg123el.cgi?${PORTVERSION}
+FETCH_ARGS=	-AR
+FETCH_BEFORE_ARGS=	-o mpg123el.cgi?${PORTVERSION}
 
 do-install:
 	${MKDIR} ${ELISPDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${ELISPDIR}/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/mpg123el.cgi?${PORTVERSION} ${ELISPDIR}/${PORTNAME}
 # For XEmacs
 	${MKDIR} ${XELISPDIR}
 	${LN} -sf ${ELISPDIR}/${PORTNAME} ${XELISPDIR}/${PORTNAME}
