@@ -41,10 +41,6 @@ RUN_DEPENDS+=	p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP
 RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_buildstaticpages.pl
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_configure.pl
