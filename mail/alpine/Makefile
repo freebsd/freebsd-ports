@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 EXTRA_PATCHES=	${FILESDIR}/cons25-alpine_keymenu.c
 .endif
 
-.if ${PORT_OPTIONS:MQUOTA) || defined(WITH_MAILDIR}
+.if ${PORT_OPTIONS:MQUOTA} || ${PORT_OPTIONS:MMAILDIR}
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dougb/alpine-${PORTVERSION}/
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
