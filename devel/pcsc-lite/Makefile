@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pcsc-lite
-# Date created:                15 Oct 2001
-# Whom:                        Toni Andjelkovic <toni@soth.at>
-#
+# Created by: Toni Andjelkovic <toni@soth.at>
 # $FreeBSD$
-#
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.8
