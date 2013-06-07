@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-hidef
-# Date created:			2007/03/02
-# Whom:				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	hidef
 PORTVERSION=	0.1.8
