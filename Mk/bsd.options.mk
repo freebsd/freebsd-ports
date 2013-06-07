@@ -139,6 +139,7 @@ OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
 .for opt in ${_ALL_EXCLUDE}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
 ALL_OPTIONS:=		${ALL_OPTIONS:N${opt}}
+PORT_OPTIONS:=		${PORT_OPTIONS:N${opt}}
 .endfor
 
 # Remove illegal per-arch options
