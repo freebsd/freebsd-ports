@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viking
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -22,12 +21,12 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-USES=		iconv pkgconfig
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USES=		iconv desktop-file-utils pkgconfig
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
-USE_GNOME=	desktopfileutils gnomedocutils gtk20
+USE_GNOME=	gnomedocutils gtk20
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
@@ -38,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=	GEOTAG GPSD
+OPTIONS_DEFINE=		NLS GEOTAG GPSD
 OPTIONS_DEFAULT=	GEOTAG
 GEOTAG_DESC=	Geotag support
 GPSD_DESC=	Realtime GPS tracking
@@ -67,6 +66,7 @@ CONFIGURE_ARGS+=	--disable-realtime-gps-tracking
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|Science;|Education;Science;|' ${WRKSRC}/src/viking.desktop.in
 
 post-install:
 # Port not install in figures jpg and png, this is cleaner as patch
@@ -75,9 +75,8 @@ post-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-	@-update-desktop-database -q
 
 .include <bsd.port.mk>
