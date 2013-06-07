@@ -24,6 +24,7 @@ include/mlt++/MltTractor.h
 include/mlt++/MltTransition.h
 include/mlt++/config.h
 include/mlt/framework/mlt.h
+include/mlt/framework/mlt_animation.h
 include/mlt/framework/mlt_cache.h
 include/mlt/framework/mlt_consumer.h
 include/mlt/framework/mlt_deque.h
@@ -54,8 +55,9 @@ lib/libmlt++.so.%%PORTVERSION%%
 lib/libmlt++.so.3
 lib/libmlt.so
 lib/libmlt.so.%%PORTVERSION%%
-lib/libmlt.so.5
+lib/libmlt.so.6
 %%FFMPEG%%lib/mlt/libmltavformat.so
+lib/mlt/libmltavsync.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
 lib/mlt/libmltdgraft.so
@@ -86,6 +88,8 @@ libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
 %%FFMPEG%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%FFMPEG%%%%DATADIR%%/avformat/producer_avformat.yml
+%%DATADIR%%/avsync/consumer_blipflash.yml
+%%DATADIR%%/avsync/producer_blipflash.yml
 %%DATADIR%%/core/consumer_multi.yml
 %%DATADIR%%/core/data_fx.properties
 %%DATADIR%%/core/filter_audiowave.yml
@@ -133,15 +137,18 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/feeds/PAL/obscure.properties
 %%FREI0R%%%%DATADIR%%/frei0r/blacklist.txt
 %%FREI0R%%%%DATADIR%%/frei0r/not_thread_safe.txt
+%%FREI0R%%%%DATADIR%%/frei0r/param_name_map.yaml
 %%GTK2%%%%DATADIR%%/gtk2/consumer_gtk2_preview.yml
 %%GTK2%%%%DATADIR%%/gtk2/filter_dynamictext.yml
 %%GTK2%%%%DATADIR%%/gtk2/filter_rescale.yml
+%%GTK2%%%%DATADIR%%/gtk2/producer_count.yml
 %%GTK2%%%%DATADIR%%/gtk2/producer_pango.yml
 %%GTK2%%%%DATADIR%%/gtk2/producer_pixbuf.yml
 %%JACK%%%%DATADIR%%/jackrack/blacklist.txt
 %%JACK%%%%DATADIR%%/jackrack/consumer_jack.yml
 %%JACK%%%%DATADIR%%/jackrack/filter_jackrack.yml
 %%JACK%%%%DATADIR%%/jackrack/filter_ladspa.yml
+%%JACK%%%%DATADIR%%/jackrack/producer_ladspa.yml
 %%DATADIR%%/kdenlive/filter_boxblur.yml
 %%DATADIR%%/kdenlive/filter_freeze.yml
 %%DATADIR%%/kdenlive/filter_wave.yml
@@ -290,6 +297,9 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/presets/consumer/avformat/x264-medium-pass1
 %%DATADIR%%/presets/filter/brightness/from_black
 %%DATADIR%%/presets/filter/brightness/to_black
+%%DATADIR%%/presets/filter/movit.blur/blur_in
+%%DATADIR%%/presets/filter/movit.blur/blur_in_out
+%%DATADIR%%/presets/filter/movit.blur/blur_out
 %%DATADIR%%/presets/filter/volume/fade_in
 %%DATADIR%%/presets/filter/volume/fade_out
 %%DATADIR%%/profiles/atsc_1080i_50
@@ -385,6 +395,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%QT4%%@dirrm %%DATADIR%%/qimage
 @dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/presets/filter/volume
+@dirrm %%DATADIR%%/presets/filter/movit.blur
 @dirrm %%DATADIR%%/presets/filter/brightness
 @dirrm %%DATADIR%%/presets/filter
 @dirrm %%DATADIR%%/presets/consumer/avformat/stills
@@ -437,6 +448,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%DV%%@dirrm %%DATADIR%%/dv
 @dirrm %%DATADIR%%/decklink
 @dirrm %%DATADIR%%/core
+@dirrm %%DATADIR%%/avsync
 %%FFMPEG%%@dirrm %%DATADIR%%/avformat
 @dirrm %%DATADIR%%
 @dirrm lib/mlt
