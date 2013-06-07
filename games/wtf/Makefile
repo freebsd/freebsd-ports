@@ -1,19 +1,12 @@
-# ex:ts=8
-# New ports collection makefile for:   	wtf
-# Date created:                        	29 December 2001
-# Whom:                                 Maxime Henrion <mux@FreeBSD.org>
-#
+# Created by: Maxime Henrion <mux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wtf
-PORTVERSION=	20111107
+PORTVERSION=	20130605
 CATEGORIES=	games
-MASTER_SITES=	http://tuxaco.net/downloads/ \
-		http://download.goodking.org/downloads/ \
-		http://files.etoilebsd.net/goodking/
+MASTER_SITES=	SF/bsdwtf
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
