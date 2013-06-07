@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Text::VimColor
-# Date created:		2004-07-25
-# Whom:			Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-#
+# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-VimColor
 PORTVERSION=	0.14
@@ -29,10 +25,6 @@ MAN1=		text-vimcolor.1
 MAN3=		Text::VimColor.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
 
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-Term-ANSIColor>=3:${PORTSDIR}/devel/p5-Term-ANSIColor
