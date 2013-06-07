@@ -1,13 +1,4 @@
 bin/connectagram
-icons/hicolor/128x128/apps/connectagram.png
-icons/hicolor/16x16/apps/connectagram.png
-icons/hicolor/22x22/apps/connectagram.png
-icons/hicolor/24x24/apps/connectagram.png
-icons/hicolor/256x256/apps/connectagram.png
-icons/hicolor/32x32/apps/connectagram.png
-icons/hicolor/48x48/apps/connectagram.png
-icons/hicolor/64x64/apps/connectagram.png
-icons/hicolor/scalable/apps/connectagram.svg
 share/applications/connectagram.desktop
 %%DATADIR%%/data/en/words
 %%DATADIR%%/data/fr/words
@@ -17,10 +8,23 @@ share/applications/connectagram.desktop
 %%DATADIR%%/patterns/3.png
 %%DATADIR%%/patterns/4.png
 %%DATADIR%%/patterns/5.png
+%%DATADIR%%/translations/connectagram_cs.qm
+%%DATADIR%%/translations/connectagram_de.qm
+%%DATADIR%%/translations/connectagram_el.qm
 %%DATADIR%%/translations/connectagram_en.qm
 %%DATADIR%%/translations/connectagram_fr.qm
 %%DATADIR%%/translations/connectagram_ro.qm
 %%DATADIR%%/translations/connectagram_ru.qm
+%%DATADIR%%/translations/connectagram_tr.qm
+share/icons/hicolor/128x128/apps/connectagram.png
+share/icons/hicolor/16x16/apps/connectagram.png
+share/icons/hicolor/22x22/apps/connectagram.png
+share/icons/hicolor/24x24/apps/connectagram.png
+share/icons/hicolor/256x256/apps/connectagram.png
+share/icons/hicolor/32x32/apps/connectagram.png
+share/icons/hicolor/48x48/apps/connectagram.png
+share/icons/hicolor/64x64/apps/connectagram.png
+share/icons/hicolor/scalable/apps/connectagram.svg
 share/pixmaps/connectagram.png
 share/pixmaps/connectagram.xpm
 @dirrm %%DATADIR%%/translations
@@ -30,23 +34,3 @@ share/pixmaps/connectagram.xpm
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry icons/hicolor/scalable/apps
-@dirrmtry icons/hicolor/scalable
-@dirrmtry icons/hicolor/64x64/apps
-@dirrmtry icons/hicolor/64x64
-@dirrmtry icons/hicolor/48x48/apps
-@dirrmtry icons/hicolor/48x48
-@dirrmtry icons/hicolor/32x32/apps
-@dirrmtry icons/hicolor/32x32
-@dirrmtry icons/hicolor/256x256/apps
-@dirrmtry icons/hicolor/256x256
-@dirrmtry icons/hicolor/24x24/apps
-@dirrmtry icons/hicolor/24x24
-@dirrmtry icons/hicolor/22x22/apps
-@dirrmtry icons/hicolor/22x22
-@dirrmtry icons/hicolor/16x16/apps
-@dirrmtry icons/hicolor/16x16
-@dirrmtry icons/hicolor/128x128/apps
-@dirrmtry icons/hicolor/128x128
-@dirrmtry icons/hicolor
-@dirrmtry icons
