@@ -1,24 +1,19 @@
-# New ports collection makefile for:   recoll
-# Date created:        5 December 2005
-# Whom:                J.F. Dockes <jean-francois.dockes@wanadoo.fr>
-#
+# Created by: J.F. Dockes <jean-francois.dockes@wanadoo.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	recoll
-PORTVERSION=	1.18.1
-PORTREVISION=	1
+PORTVERSION=	1.18.2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
+MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Personal full text search package, based on Xapian
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core
+BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 
-USES=		iconv
+USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -30,8 +25,11 @@ MAN1=		recollindex.1
 MAN5=		recoll.conf.5
 
 OPTIONS_DEFINE=	QT4 ASPELL PYTHON X11MON
-OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
 X11MON_DESC=	X11 session monitoring support
+OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
+
+# Wrong versioning upstream
+PORTSCOUT=	skipv:1.19
 
 .include <bsd.port.options.mk>
 
