@@ -1,0 +1,4 @@
+TailInput exteded plugin for fluentd.  It assumes that this plug-in is
+used with "fluent-plugin-tail-alternative".
+
+WWW: https://github.com/yteraoka/fluent-plugin-tail-asis
