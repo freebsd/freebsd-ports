@@ -54,17 +54,21 @@ REF_LIST=	accessibility/at-spi-reference \
 
 NO_BUILD=	yes
 
+.MAKE.FreeBSD_UL= yes
+
 REF_LIST_INC=	${.CURDIR}/Makefile.inc
 .include "${REF_LIST_INC}"
 
-.include <bsd.port.pre.mk>
-
 .for ref in ${_PORT_REF_LIST:C/^([^:]+).*/\1/}
-OPTIONS+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U} "Install ${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//} programing reference " on
+OPTIONS_DEFINE+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U}
+OPTIONS_DEFAULT+=	${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U}
+${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U}_DESC=	Install ${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//} programing reference
 .endfor
 
+.include <bsd.port.options.mk>
+
 .for ref in ${_PORT_REF_LIST}
-.if !defined(WITHOUT_${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U:C/^([^:]+).*/\1/})
+.if ${PORT_OPTIONS:M${ref:C|^[^/]+/([^/]+).*|\1|:S/-reference//:S/-/_/:U:C/^([^:]+).*/\1/}}
 RUN_DEPENDS+=	${ref:C|^[^:]+:([^:]+).*|\1|:C|^[^/]+/([^/]+).*|\1|}>0:${PORTSDIR}/${ref:C/^([^:]+).*/\1/}
 .endif
 .endfor
@@ -78,4 +82,4 @@ create-ref-list:
 	(cd ${PORTSDIR}/${port} && ${ECHO_CMD} "${port}:`${MAKE} -V PORTNAME` \\" >> ${REF_LIST_INC})
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
