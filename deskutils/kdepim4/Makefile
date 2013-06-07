@@ -35,6 +35,9 @@ USE_QT4=	corelib dbus declarative designer_build gui network opengl \
 USE_XORG=	x11 xscrnsaver
 CMAKE_ARGS+=	-DKDEPIM_BUILD_MOBILE:BOOL=FALSE
 USE_GMAKE=	yes
+# Avoids Clang error:
+# https://git.reviewboard.kde.org/r/108617
+CXXFLAGS+=	-Wno-error=return-type
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
