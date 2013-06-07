@@ -102,7 +102,7 @@ _USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
 
 _USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
 
-_USE_TEX_INFRA=		${SITE_PERL}/TeXLive/TLConfig.pm:${PORTSDIR}/print/texlive-infra
+_USE_TEX_INFRA=		texlive-infra>=0:${PORTSDIR}/print/texlive-infra
 
 _USE_TETEX_DVIPSK=	dvips:${PORTSDIR}/print/dvipsk-tetex
 _USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
