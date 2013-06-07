@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-expect
-# Date created:			2006/08/17
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	expect
 PORTVERSION=	0.2.9
