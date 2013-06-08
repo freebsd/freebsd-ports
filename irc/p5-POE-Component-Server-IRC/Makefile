@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Component-Server-IRC
-# Date created:		2008-04-15
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-IRC
 PORTVERSION=	1.54
