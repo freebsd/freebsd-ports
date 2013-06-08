@@ -64,6 +64,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/constants.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/constants.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/constants.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/cp949prober.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/cp949prober.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/cp949prober.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/escprober.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/escprober.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade/escprober.pyo
@@ -154,6 +157,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/connectionpool.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/connectionpool.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/connectionpool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/ntlmpool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/ntlmpool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/ntlmpool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/pyopenssl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/pyopenssl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib/pyopenssl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/exceptions.pyo
@@ -196,11 +208,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/utils.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/packages/ssl_match_hostname
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/packages
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/packages/ssl_match_hostname
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/packages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/urllib3
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages/charade
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests/packages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/requests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
