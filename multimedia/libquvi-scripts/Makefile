@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	libquvi-scripts
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.15
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded lua scripts for libquvi and utility scripts
+
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	NSFW
 NSFW_DESC=	Enable adult website support
@@ -20,6 +23,8 @@ USES=		pathfix
 MAN7=		libquvi-scripts.7
 
 PROJECTHOST=	quvi
+
+PORTSCOUT=	limit:0.4.[0-9]*
 
 .include <bsd.port.options.mk>
 
