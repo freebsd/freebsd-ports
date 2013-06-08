@@ -71,6 +71,8 @@ include/valgrind/vki/vki-arm-linux.h
 include/valgrind/vki/vki-darwin.h
 include/valgrind/vki/vki-freebsd.h
 include/valgrind/vki/vki-linux.h
+include/valgrind/vki/vki-machine-types-amd64-freebsd.h
+include/valgrind/vki/vki-machine-types-x86-freebsd.h
 include/valgrind/vki/vki-mips32-linux.h
 include/valgrind/vki/vki-posixtypes-amd64-linux.h
 include/valgrind/vki/vki-posixtypes-arm-linux.h
