@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.1.34
+PORTVERSION=	1.1.35
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.sfr-fresh.com/unix/www/
