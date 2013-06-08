@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.17.0
+PORTVERSION=	1.17.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,8 @@ CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-metalink \
 		--without-libcares --without-libexpat --without-libgcrypt \
 		--without-libgmp --without-libnettle
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} OPENSSL_LIBS="-L${OPENSSLLIB} -lssl" \
-		ZLIB_CFLAGS=-I${INCLUDEDIR} ZLIB_LIBS="-L${LIBDIR} -lz"
+		AZLIB_CFLAGS=-I${INCLUDEDIR} ZLIB_LIBS="-L${LIBDIR} -lz" \
+		ac_cv_path_RST2HTML=no
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	libxml2
@@ -80,15 +81,20 @@ USE_SQLITE=	yes
 CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not install on powerpc-9
+.endif
+
 post-patch:
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|\(install-exec-am\) install-data-am|\1|' ${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not install on powerpc-9
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
