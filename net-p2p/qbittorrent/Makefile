@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -9,14 +9,16 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	nemysis@gmx.ch
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		torrent-rasterbar.7:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
+LICENSE=	GPLv2
 
-HAS_CONFIGURE=	yes
+# ABI versions specified on purpose for libtorrent-rasterbar
+LIB_DEPENDS=	torrent-rasterbar.7:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16 \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+
 USES=		pkgconfig
+HAS_CONFIGURE=	yes
 USE_QT4=	corelib network qmake_build moc_build rcc_build
 QT_NONSTANDARD=	yes
-
 MAKE_JOBS_SAFE=	yes
 
 MAN1?=		qbittorrent.1
@@ -30,6 +32,8 @@ OPTIONS_DEFINE=	DBUS
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
+PORTDOCS=	AUTHORS Changelog README TODO
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
@@ -42,6 +46,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,qputenv,!&,' ${WRKSRC}/src/main.cpp
 
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+
 .if !defined(QB_NOX_SLAVE)
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
 .else
