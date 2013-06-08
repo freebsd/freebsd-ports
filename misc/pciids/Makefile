@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pciids
-PORTVERSION=	20130504
+PORTVERSION=	20130530
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -23,7 +23,7 @@ do-install:
 
 # maintainer section:
 
-MS_DIFF=	${MS_WRKSRC}/${MS_DISTFILES}.diff
+MS_DIFF=	${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.diff
 MS_DISTFILES=	pci.ids
 MS_MASTER_SITE=	http://pci-ids.ucw.cz/
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
@@ -41,11 +41,11 @@ maketar: do-clean extract
 	@${CP} ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${PORTVERSION}/${MS_DISTFILES}
 	@(cd ${MS_WRKSRC}/ && ${DIFF} -u ${PORTNAME}-${PORTVERSION}/${MS_DISTFILES} ${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
 	@if [ -s ${MS_DIFF} ]; then \
+		${CP} -i ${MS_DIFF} ${.CURDIR}/; \
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
-		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
+		sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
 		${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile; \
 		cd ${.CURDIR}/ && ${MAKE} makesum; \
-		${CP} -i ${MS_DIFF} ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff; \
 		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff ***"; \
 	else \
 		${ECHO_MSG} "*** ${MS_MASTER_SITE}${MS_DISTFILES} is unchanged (${PORTVERSION}) ***"; \
