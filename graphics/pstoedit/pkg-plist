@@ -39,27 +39,6 @@ lib/pstoedit/libp2edrvstd.so.0
 %%EMF%%lib/pstoedit/libp2edrvwmf.so.0
 libdata/pkgconfig/pstoedit.pc
 share/aclocal/pstoedit.m4
-%%PORTDOCS%%%%DOCSDIR%%/changelog.htm
-%%PORTDOCS%%%%DOCSDIR%%/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/pstoedit.htm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cliptst2.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/closepathtest.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colrtest.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eofill.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eschertr.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/figtext.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/illusion.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imagetest_1.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imagetest_2.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imagetest_3.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/largetextspace.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/letters.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneimg.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathtest.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spiral.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textmat.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twopages.ps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/woglim.ps
 %%DATADIR%%/drvhpgl.pencolors
 %%DATADIR%%/examplefigmap.fmp
 %%DATADIR%%/latex2e.fmp
@@ -67,10 +46,10 @@ share/aclocal/pstoedit.m4
 %%DATADIR%%/safer.ps
 %%DATADIR%%/svg.fmp
 %%DATADIR%%/swffonts/default.fdb
+%%DATADIR%%/unix.fmp
 %%DATADIR%%/wemf.fmp
+%%DATADIR%%/windows.fmp
 @dirrm %%DATADIR%%/swffonts
 @dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pstoedit
 @dirrm include/pstoedit
