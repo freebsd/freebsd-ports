@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Date-Pcalc
-# Date created:				5 July 2001
-# Whom:	      				Gregory Shapiro <gshapiro@freebsd.org>
-#
+# Created by: Gregory Shapiro <gshapiro@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-Pcalc
 PORTVERSION=	6.1
