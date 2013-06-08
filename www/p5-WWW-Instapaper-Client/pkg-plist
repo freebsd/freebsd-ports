@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/WWW/Instapaper/Client.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Instapaper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/Instapaper
 @dirrmtry %%SITE_PERL%%/WWW
