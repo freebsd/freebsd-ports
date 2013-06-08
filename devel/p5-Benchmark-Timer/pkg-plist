@@ -3,6 +3,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Timer/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Timer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Benchmark/Timer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Benchmark
 @dirrmtry %%SITE_PERL%%/Benchmark
