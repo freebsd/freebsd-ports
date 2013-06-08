@@ -3,10 +3,10 @@
 PORTNAME=	portmaster
 PORTVERSION=	3.16
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	GH \
-		LOCAL/bdrewery/${PORTNAME}/ \
-  		http://mirror.shatow.net/freebsd/portmaster/
-DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
+MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
+  		http://mirror.shatow.net/freebsd/portmaster/ \
+		GH
+DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
@@ -17,8 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_COMMIT=	2a29846
 GH_TAGNAME=	${GH_COMMIT}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_PROJECT}-${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH
 
