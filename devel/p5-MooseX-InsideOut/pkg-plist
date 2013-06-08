@@ -9,4 +9,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/InsideOut
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry blib/script
