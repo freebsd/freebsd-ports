@@ -1,0 +1,12 @@
+--- ./configure.in.orig	2011-04-01 06:08:36.000000000 +1100
++++ ./configure.in	2013-05-26 00:19:28.032315432 +1000
+@@ -3378,7 +3378,8 @@
+                        rm -f conftest.{c,S}
+                        ])
+         if test "$ac_cv_have_visibility_builtin_bug" = "no" -a \
+-                "$ac_cv_have_visibility_class_bug" = "no"; then
++                "$ac_cv_have_visibility_class_bug" = "no" -a \
++		"$OS_ARCH" != "FreeBSD" ; then
+           VISIBILITY_FLAGS='-I$(DIST)/system_wrappers_js -include $(topsrcdir)/config/gcc_hidden.h'
+           WRAP_SYSTEM_INCLUDES=1
+           STL_FLAGS='-I$(DIST)/stl_wrappers'
