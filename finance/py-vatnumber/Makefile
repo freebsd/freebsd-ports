@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-vatnumber
-# Date created:				26 March 2012
-# Whom:					Qian Jin <eric.siroh@gmail.com>
-#
+# Created by: Qian Jin <eric.siroh@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	vatnumber
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	finance python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
