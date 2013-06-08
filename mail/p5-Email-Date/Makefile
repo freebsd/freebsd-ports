@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Email-Date
-# Date created:		2004-07-26
-# Whom:			Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Date
 PORTVERSION=	1.10.3
