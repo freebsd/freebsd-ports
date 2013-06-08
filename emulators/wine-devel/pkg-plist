@@ -735,6 +735,7 @@ include/wine/windows/ddk/usbdlib.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winddiui.h
 include/wine/windows/ddk/winsplp.h
+lib/libwine.so
 lib/libwine.so.1
 lib/wine/acledit.dll.so
 lib/wine/aclui.dll.so
@@ -857,6 +858,7 @@ lib/wine/ddraw.dll.so
 lib/wine/ddrawex.dll.so
 lib/wine/devenum.dll.so
 lib/wine/dhcpcsvc.dll.so
+lib/wine/difxapi.dll.so
 lib/wine/dinput.dll.so
 lib/wine/dinput8.dll.so
 lib/wine/dispdib.dll16.so
@@ -1014,6 +1016,7 @@ lib/wine/fakedlls/ddraw.dll
 lib/wine/fakedlls/ddrawex.dll
 lib/wine/fakedlls/devenum.dll
 lib/wine/fakedlls/dhcpcsvc.dll
+lib/wine/fakedlls/difxapi.dll
 lib/wine/fakedlls/dinput.dll
 lib/wine/fakedlls/dinput8.dll
 lib/wine/fakedlls/dispdib.dll16

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.5.30
-PORTREVISION=	1
+DISTVERSION=	1.5.31
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -126,7 +125,7 @@ RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 .endif
 
 .if ${PORT_OPTIONS:MGECKO}
-RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-1.9-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 .endif
 
 .if ${PORT_OPTIONS:MMONO}
@@ -151,7 +150,7 @@ post-install:
 	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/fr.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/pl.UTF-8/man1
-	@${INSTALL_LIB} ${WRKSRC}/libs/wine/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
+	@${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
