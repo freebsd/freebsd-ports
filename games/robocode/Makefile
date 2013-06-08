@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	robocode
-PORTVERSION=	1.8.0.0
+PORTVERSION=	1.8.1.0
 CATEGORIES=	games java
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons
@@ -31,8 +31,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 SUB_FILES=	${PORTNAME}.sh pkg-message
 
-DESKTOP_ENTRIES="Robocode" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+DESKTOP_ENTRIES="Robocode" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;StrategyGame;" false
 
 .include <bsd.port.options.mk>
@@ -53,7 +52,7 @@ post-install:
 	${MKDIR} -m a+rwx ${DATADIR}/config
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
