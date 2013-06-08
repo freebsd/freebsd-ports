@@ -8,9 +8,11 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/1tvru.lua
 %%DATADIR%%/lua/website/academicearth.lua
 %%DATADIR%%/lua/website/ardmediathek.lua
+%%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/audioboo.lua
 %%DATADIR%%/lua/website/bbc.lua
 %%NSFW%%%%DATADIR%%/lua/website/beeg.lua
+%%DATADIR%%/lua/website/bikeradar.lua
 %%DATADIR%%/lua/website/break.lua
 %%DATADIR%%/lua/website/canalplus.lua
 %%DATADIR%%/lua/website/cbsnews.lua
@@ -22,7 +24,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/foxnews.lua
 %%DATADIR%%/lua/website/funnyordie.lua
 %%DATADIR%%/lua/website/gaskrank.lua
-%%DATADIR%%/lua/website/golem.lua
 %%DATADIR%%/lua/website/guardian.lua
 %%DATADIR%%/lua/website/imdb.lua
 %%NSFW%%%%DATADIR%%/lua/website/jizzhut.lua
@@ -63,7 +64,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%NSFW%%%%DATADIR%%/lua/website/xhamster.lua
 %%NSFW%%%%DATADIR%%/lua/website/xnxx.lua
 %%NSFW%%%%DATADIR%%/lua/website/xvideos.lua
-%%DATADIR%%/lua/website/yfrog.lua
 %%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
 %%DATADIR%%/lua/website/youtube.lua
 %%DATADIR%%/version
