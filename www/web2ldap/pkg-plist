@@ -247,6 +247,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/entrust.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/exchange.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/exchange.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/freeradius.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/freeradius.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ibmds.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ibmds.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/krb5.py
