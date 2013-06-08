@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -28,8 +28,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	X11 GRAPH DOCS
 OPTIONS_DEFAULT=	X11 GRAPH
 
-X11_DESC=	Build GUI frontend (Qt4-based)
-GRAPH_DESC=	Graph rendering support via Qwt
+X11_DESC=	Build Qt 4 GUI frontend
+GRAPH_DESC=	Enable graph rendering via Qwt
 
 .include <bsd.port.options.mk>
 
@@ -50,6 +50,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
 .endif
+	@${ECHO_MSG} ; ${CAT} ${PKGMESSAGE} ; ${ECHO_MSG}
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
