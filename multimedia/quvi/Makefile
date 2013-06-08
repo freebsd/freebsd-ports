@@ -11,11 +11,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool for parsing flash media stream URLs
 
-LICENSE=	GPLv3
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	libquvi>=0.4.0:${PORTSDIR}/multimedia/libquvi
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	libquvi>=0.4.0:${PORTSDIR}/multimedia/libquvi
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
@@ -23,5 +24,7 @@ USE_XZ=		yes
 
 MAN1=		quvi.1
 PLIST_FILES=	bin/quvi
+
+PORTSCOUT=	limit:0.4.[0-9]*
 
 .include <bsd.port.mk>
