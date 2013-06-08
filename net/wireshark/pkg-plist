@@ -6,17 +6,18 @@ bin/dumpcap
 %%MERGECAP%%
 %%RANDPKT%%
 %%RAWSHARK%%
+%%REORDERCAP%%
 bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.la
 lib/libwireshark.so
-lib/libwireshark.so.2
+lib/libwireshark.so.3
 lib/libwiretap.la
 lib/libwiretap.so
 lib/libwiretap.so.3
 lib/libwsutil.la
 lib/libwsutil.so
-lib/libwsutil.so.2
+lib/libwsutil.so.3
 lib/wireshark/plugins/%%PORTVERSION%%/asn1.la
 lib/wireshark/plugins/%%PORTVERSION%%/asn1.so
 lib/wireshark/plugins/%%PORTVERSION%%/docsis.la
@@ -43,6 +44,8 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimax.la
 lib/wireshark/plugins/%%PORTVERSION%%/wimax.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.la
 lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
+lib/wireshark/plugins/%%PORTVERSION%%/wimaxmacphy.la
+lib/wireshark/plugins/%%PORTVERSION%%/wimaxmacphy.so
 %%DATADIR%%/AUTHORS-SHORT
 %%DATADIR%%/COPYING
 %%DATADIR%%/capinfos.html
@@ -54,8 +57,12 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%LUA%%%%DATADIR%%/dtd_gen.lua
 %%DATADIR%%/dumpcap.html
 %%DATADIR%%/diameter/AlcatelLucent.xml
+%%DATADIR%%/diameter/ChinaTelecom.xml
 %%DATADIR%%/diameter/Cisco.xml
 %%DATADIR%%/diameter/Ericsson.xml
+%%DATADIR%%/diameter/Nokia.xml
+%%DATADIR%%/diameter/NokiaSiemensNetworks.xml
+%%DATADIR%%/diameter/SKT.xml
 %%DATADIR%%/diameter/TGPPGmb.xml
 %%DATADIR%%/diameter/TGPPRx.xml
 %%DATADIR%%/diameter/TGPPS9.xml
@@ -99,7 +106,10 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/manuf
 %%DATADIR%%/mergecap.html
 %%DATADIR%%/pdml2html.xsl
+%%DATADIR%%/profiles/Bluetooth/colorfilters
+%%DATADIR%%/profiles/Classic/colorfilters
 %%DATADIR%%/radius/README.radius_dictionary
+%%DATADIR%%/radius/custom.includes
 %%DATADIR%%/radius/dictionary
 %%DATADIR%%/radius/dictionary.3com
 %%DATADIR%%/radius/dictionary.3gpp
@@ -208,9 +218,12 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.rfc4849
 %%DATADIR%%/radius/dictionary.rfc5090
 %%DATADIR%%/radius/dictionary.rfc5176
+%%DATADIR%%/radius/dictionary.rfc5447
 %%DATADIR%%/radius/dictionary.rfc5580
 %%DATADIR%%/radius/dictionary.rfc5607
 %%DATADIR%%/radius/dictionary.rfc5904
+%%DATADIR%%/radius/dictionary.rfc6519
+%%DATADIR%%/radius/dictionary.rfc6572
 %%DATADIR%%/radius/dictionary.riverstone
 %%DATADIR%%/radius/dictionary.roaringpenguin
 %%DATADIR%%/radius/dictionary.shasta
@@ -242,6 +255,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.zyxel
 %%DATADIR%%/randpkt.html
 %%DATADIR%%/rawshark.html
+%%DATADIR%%/reordercap.html
 %%DATADIR%%/services
 %%DATADIR%%/smi_modules
 %%DATADIR%%/tshark.html
@@ -258,6 +272,9 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 @dirrm %%DATADIR%%/wimaxasncp
 @dirrm %%DATADIR%%/tpncp
 @dirrm %%DATADIR%%/radius
+@dirrm %%DATADIR%%/profiles/Classic
+@dirrm %%DATADIR%%/profiles/Bluetooth
+@dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/dtds
 @dirrm %%DATADIR%%/diameter
