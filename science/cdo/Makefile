@@ -1,14 +1,10 @@
-# New ports collection makefile for:	CDO
-# Date created:			29 May 2006
-# Whom:				Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cdo
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/2879/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/5287/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,8 +18,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-cdi-lib --program-transform-name="" --with-zlib=/usr
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-USES=	pathfix
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 HDF5_VER?=	18
 NETCDF_VER?=	4
@@ -95,7 +92,7 @@ post-build:
 	@cd ${WRKSRC}/src/ && ${SETENV} CDO_PATH=${WRKSRC}/src/cdo ${WRKSRC}/src/cdotest
 .endif
 
-regression-test:
+regression-test test: build
 	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.post.mk>
