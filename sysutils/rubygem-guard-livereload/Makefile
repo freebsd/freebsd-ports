@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	guard-livereload
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically reloads your browser when 'view' files are modified
 
-RUN_DEPENDS=	rubygem-em-websocket>=0.2.0:${PORTSDIR}/www/rubygem-em-websocket \
-		rubygem-guard>=1.5.0:${PORTSDIR}/sysutils/rubygem-guard \
-		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-em-websocket>=0.5:${PORTSDIR}/www/rubygem-em-websocket \
+		rubygem-guard>=1.8:${PORTSDIR}/sysutils/rubygem-guard \
+		rubygem-multi_json>=1.7:${PORTSDIR}/devel/rubygem-multi_json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
