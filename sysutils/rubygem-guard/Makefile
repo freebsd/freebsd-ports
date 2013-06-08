@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool to easily handle events on file system modifications
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-formatador>=0.2.4:${PORTSDIR}/devel/rubygem-formatador \
 		rubygem-listen>=1:${PORTSDIR}/devel/rubygem-listen \
 		rubygem-lumberjack>=1.0.2:${PORTSDIR}/devel/rubygem-lumberjack \
