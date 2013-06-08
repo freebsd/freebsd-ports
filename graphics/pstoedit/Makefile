@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.61
-PORTREVISION=	2
+PORTVERSION=	3.62
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -14,13 +13,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
-OPTIONS_DEFINE=	MAGICK EMF MING PLOTUTILS DOCS EXAMPLES
+OPTIONS_DEFINE=	MAGICK EMF MING PLOTUTILS
 OPTIONS_DEFAULT=	MAGICK EMF PLOTUTILS
 EMF_DESC=	Enable emf interface
 MING_DESC=	Enable swf interface
 PLOTUTILS_DESC=	Enable libplot interface
 
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -31,13 +30,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		pstoedit.1
 
-.include <bsd.port.options.mk>
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAGICK}
 LIB_DEPENDS+=	Magick++:${PORTSDIR}/graphics/ImageMagick
