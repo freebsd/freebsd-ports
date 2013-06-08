@@ -11,7 +11,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
-BROKEN=		fails to build
+BROKEN=		gnustep backend dependencies install files into the same place
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
