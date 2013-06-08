@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	2.12.16
+PORTVERSION=	2.12.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
 		LOCAL/sunpoet
@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Looks for problems in internet draft formatting
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
