@@ -3,4 +3,3 @@
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh/js/plackAutoRefresh.min.js
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh/js
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/AutoRefresh
