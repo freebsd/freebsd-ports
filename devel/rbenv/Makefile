@@ -12,7 +12,7 @@ COMMENT=	Manage multiple versions of ruby
 LICENSE=	RBENV
 LICENSE_NAME=	Sam Stephenson
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -23,6 +23,11 @@ GH_COMMIT=	9375e99
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
+
+REINPLACE_ARGS=	-i ''
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|\$$root/completions|${DATADIR}/completions|g" ${WRKSRC}/libexec/rbenv-init
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-local-exec ${PREFIX}/bin
