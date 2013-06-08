@@ -55,8 +55,6 @@
 @dirrmtry %%SITE_PERL%%/Badger/Reporter
 @dirrmtry %%SITE_PERL%%/Badger/Log
 @dirrmtry %%SITE_PERL%%/Badger/Hub
-@dirrmtry %%SITE_PERL%%/Badger/Filesystem/Log
-@dirrmtry %%SITE_PERL%%/Badger/Filesystem/Base
 @dirrmtry %%SITE_PERL%%/Badger/Filesystem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Badger
 @dirrmtry %%SITE_PERL%%/Badger/Factory
