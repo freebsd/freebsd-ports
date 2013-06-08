@@ -10,8 +10,6 @@
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/SweetArgs.pm
 %%SITE_PERL%%/MooseX/POE/Role.pm
 %%SITE_PERL%%/MooseX/POE/SweetArgs.pm
-@dirrmtry %%SITE_PERL%%/ooseX
-@dirrmtry %%SITE_PERL%%/MooseX/POE/Object
 @dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Method
 @dirrmtry %%SITE_PERL%%/MooseX/POE/Meta
