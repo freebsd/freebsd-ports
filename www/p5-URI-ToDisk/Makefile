@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-URI-ToDisk
-# Date created:		08 March 2008
-# Whom:			Cory R King <coryking@mozimedia.com>
-#
+# Created by: Cory R King <coryking@mozimedia.com>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-ToDisk
 PORTVERSION=	1.12

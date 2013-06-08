@@ -1,6 +1,5 @@
 %%SITE_PERL%%/URI/ToDisk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/ToDisk/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/ToDisk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
 @dirrmtry %%SITE_PERL%%/URI
