@@ -4,15 +4,13 @@
 PORTNAME=	pngcrush
 PORTVERSION=	1.7.51
 CATEGORIES=	graphics
-MASTER_SITES=	SF/pmt/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/pmt/${PORTNAME}/old-versions/1.7/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-nolib
 
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Optimizer for PNG files
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
-BROKEN=		Does not fetch
 
 USE_XZ=		yes
 USE_GMAKE=	yes
