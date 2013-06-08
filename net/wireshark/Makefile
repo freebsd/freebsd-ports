@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.8.7
+PORTVERSION=	1.10.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -41,7 +41,8 @@ DESKTOP_ENTRIES=	"Wireshark" "Network Protocol Analyzer" \
 
 WIRESHARK_LIBS=
 
-.for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt
+.for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
+    reordercap
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no
