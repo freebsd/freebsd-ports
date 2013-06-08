@@ -34,8 +34,6 @@ OPTIONS_DEFAULT=	PAR GNUTLS
 .if ${PORT_OPTIONS:MPAR}
  CONFIGURE_ARGS+= --enable-parcheck --disable-libpar2-bugfixes-check
  LIB_DEPENDS+=	par2:${PORTSDIR}/archivers/libpar2
- # configure fail to test libpar2 with clang
- USE_GCC=	any
 .else
  CONFIGURE_ARGS+= --disable-parcheck
 .endif
