@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glfw
-PORTVERSION=	2.7.7
+PORTVERSION=	2.7.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -22,7 +22,7 @@ INSTALL_TARGET=	x11-install
 USE_XORG=	x11 xau xcb xdamage xdmcp xext xfixes xrandr xrender xxf86vm
 USE_GL=		glu
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	include/GL/glfw.h \
 		lib/libglfw.a \
@@ -30,8 +30,25 @@ PLIST_FILES=	include/GL/glfw.h \
 		lib/libglfw.so.0 \
 		libdata/pkgconfig/libglfw.pc
 
-PORTDOCS=	*.pdf
-PORTEXAMPLES=	Makefile.x11.in *.c *.tga
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	*.html
+
+DOCSRCDIR2=	${WRKSRC}/docs
+DOCSDIR2=	${DOCSDIR}/docs
+DOC_FILES2=	*.pdf *.sty *.tex *.txt
+
+PORTEXAMPLES=	*
+
+EXAMPLESSRCDIR1=	${WRKSRC}/examples
+EXAMPLES_FILES1=	boing gears heightmap listmodes mipmaps mtbench mthello \
+			pong3d splitview triangle wave
+
+EXAMPLESSRCDIR2=	${WRKSRC}/tests
+EXAMPLESDIR2=		${EXAMPLESDIR}/tests
+EXAMPLES_FILES2=	accuracy defaults dynamic events fsaa fsinput iconify \
+			joysticks peter reopen tearing version
 
 .include <bsd.port.options.mk>
 
@@ -52,15 +69,18 @@ post-install:
 	${LN} -sf ${PREFIX}/lib/libglfw.so.0 ${PREFIX}/lib/libglfw.so
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-.for e in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${e} ${EXAMPLESDIR}
-.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR1}/|} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLESSRCDIR1}/*.tga ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR2}
+	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR2}/|} ${EXAMPLESDIR2}
 .endif
 
 .include <bsd.port.mk>
