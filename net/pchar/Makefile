@@ -14,14 +14,19 @@ COMMENT=	Sandia Internet path characterization tool
 GNU_CONFIGURE=	yes
 MAN8=		pchar.8
 
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS= --with-pcap
+CONFIGURE_ENV+=	ac_cv_sizeof_bool=1
 
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	sbin/pchar
+
+PORTDOCS=	README CHANGES FAQ
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} ; ${INSTALL_DATA} README CHANGES FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
