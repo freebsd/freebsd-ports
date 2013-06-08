@@ -1,8 +1,5 @@
-# New ports collection makefile for:  MooseX-InsideOut
-# Whom: gugu
-# Date created: 03 December 2009
+# Created by: gugu
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-InsideOut
 PORTVERSION=	0.106
