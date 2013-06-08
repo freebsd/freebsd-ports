@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	${RELEASE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--enable-termcap --enable-bsdpad --enable-getcap \
 		--enable-colorfgbg --disable-home-terminfo \
-		--with-pkg-config=no \
+		--with-pkg-config=yes --enable-pc-files \
 		--includedir=${PREFIX}/include/ncurses \
 		--with-shared \
 		--without-curses-h --with-termlib --program-prefix= \
@@ -33,9 +33,11 @@ OPTIONS_DEFINE=	EXTCOLORS TRACE DEBUG
 EXTCOLORS_DESC=	256-color support (only for ncursesw)
 TRACE_DESC=	Add trace() function to all models of ncurses
 
-CONFIGURE_ENV=	gnat_exists="no"
+CONFIGURE_ENV=	PKG_CONFIG_LIBDIR=${LOCALBASE}/libdata/pkgconfig \
+		gnat_exists="no"
 
 USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
 NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec
