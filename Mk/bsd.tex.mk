@@ -50,7 +50,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # Examples:
 # USE_TEX=	latex:build
 # USE_TEX=	formats texlive
-# USE_TEX=	latex:build dvips:build
+# USE_TEX=	latex:build dvipsk:build
 
 # default TeX distribution.  "tetex" or "texlive"
 TEX_DEFAULT?=	tetex
@@ -220,6 +220,7 @@ do-fmtutil-$F:
 			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
 			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format; \
 		done
+	@${LOCALBASE}/bin/mktexlsr ${TEXMFVARDIR:S,^,${PREFIX}/,}
 	@${ECHO_CMD} "@exec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"(${GREP} -v \"\#$F\$$\"; ${PRINTF} \"%%s\t\#$F\n\" " \
