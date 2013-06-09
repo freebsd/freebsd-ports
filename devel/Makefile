@@ -4049,6 +4049,7 @@
     SUBDIR += rubygem-getopt-declare
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gibbler
+    SUBDIR += rubygem-gio2
     SUBDIR += rubygem-git
     SUBDIR += rubygem-glib2
     SUBDIR += rubygem-gobject-introspection
