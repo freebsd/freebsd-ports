@@ -17,7 +17,6 @@ LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 USE_ZIP=	yes
 USE_PHP=	yes
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	4
 NO_BUILD=	YES
 
 PHPLOT_DIR=	${PREFIX}/include/php/phplot

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php-chartdirector
-# Date created:			29 Jul 2007
-# Whom:				<swhetzel@gmail.com>
-#
+# Created by: <swhetzel@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chartdirector
 PORTVERSION=	5.0.2
@@ -19,7 +15,6 @@ USE_PHP=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
-IGNORE_WITH_PHP?=4
 DEFAULT_PHP_VER?=5
 USE_LDCONFIG=	yes
 
