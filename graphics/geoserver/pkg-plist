@@ -1230,7 +1230,6 @@
 @dirrmtry %%G%%/data_dir/data
 @dirrmtry %%G%%/data_dir/demo
 @dirrmtry %%G%%/data_dir/layergroups
-@dirrmtry %%G%%/data_dir/logs
 @dirrmtry %%G%%/data_dir/palettes
 @dirrmtry %%G%%/data_dir/plugIns
 @dirrmtry %%G%%/data_dir/security
