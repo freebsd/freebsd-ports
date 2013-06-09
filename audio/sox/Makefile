@@ -3,7 +3,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.3.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=	--without-lame
 
 .if ${PORT_OPTIONS:MFLAC}
 CONFIGURE_ARGS+=	--with-flac
-LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		FLAC:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=	--without-flac
 .endif

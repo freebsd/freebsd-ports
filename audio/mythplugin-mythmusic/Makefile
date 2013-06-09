@@ -3,6 +3,7 @@
 
 PORTNAME=	mythmusic
 PORTVERSION=	0.26.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -15,7 +16,7 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Music playing plugin for MythTV
 
 LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
-		FLAC.10:${PORTSDIR}/audio/flac \
+		FLAC:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		tag.1:${PORTSDIR}/audio/taglib \
 		fftw3f:${PORTSDIR}/math/fftw3-float

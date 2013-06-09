@@ -3,6 +3,7 @@
 
 PORTNAME=	mixxx
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/

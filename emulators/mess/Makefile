@@ -3,6 +3,7 @@
 
 PORTNAME=	mess
 PORTVERSION=	0.148${PATCHSUFFIX}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/mame.mirror/MAME%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \

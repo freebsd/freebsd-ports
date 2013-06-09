@@ -1,28 +1,9 @@
 
 $FreeBSD$
 
---- src/plugin_xmms/Makefile.in.orig
-+++ src/plugin_xmms/Makefile.in
-@@ -147,7 +147,7 @@
- LIBS = @LIBS@
- 
- # Don't build a static library
--LIBTOOL = $(top_builddir)/libtool-disable-static
-+LIBTOOL = @LIBTOOL@ --tag=disable-static
- LN_S = @LN_S@
- LTLIBICONV = @LTLIBICONV@
- LTLIBOBJS = @LTLIBOBJS@
-@@ -264,8 +264,7 @@
- 	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
- 	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
- 	$(top_builddir)/src/share/utf8/libutf8.la \
--	$(top_builddir)/src/libFLAC/libFLAC.la \
--	-L$(top_builddir)/src/libFLAC/.libs \
-+	-lFLAC \
- 	@OGG_LIBS@ \
- 	@XMMS_LIBS@ \
- 	@LIBICONV@
-@@ -283,8 +282,7 @@
+--- src/plugin_xmms/Makefile.in.orig	2013-05-27 10:11:57.951933000 +0200
++++ src/plugin_xmms/Makefile.in	2013-06-09 19:13:03.000000000 +0200
+@@ -127,8 +127,7 @@ libxmms_flac_la_DEPENDENCIES =  \
  	$(top_builddir)/src/share/grabbag/libgrabbag.la \
  	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
  	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
@@ -32,3 +13,13 @@ $FreeBSD$
  am__objects_1 = charset.lo configure.lo fileinfo.lo http.lo plugin.lo \
  	tag.lo
  am_libxmms_flac_la_OBJECTS = $(am__objects_1)
+@@ -360,8 +359,7 @@ libxmms_flac_la_LIBADD = \
+ 	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
+ 	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
+ 	$(top_builddir)/src/share/utf8/libutf8.la \
+-	$(top_builddir)/src/libFLAC/libFLAC.la \
+-	-L$(top_builddir)/src/libFLAC/.libs \
++	-lFLAC \
+ 	@XMMS_LIBS@ \
+ 	@LIBICONV@
+ 

@@ -7,7 +7,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--disable-cpu-clip
 .endif
 
 .if ${PORT_OPTIONS:MEXTERNAL}
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-external-libs

@@ -3,6 +3,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -113,7 +114,7 @@ PLIST_SUB+=	DVDREAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac
 .endif
