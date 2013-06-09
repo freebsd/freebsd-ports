@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Image-Graph
-# Date created:			  01 March 2005
-# Whom:				  Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image_Graph
 PORTVERSION=	0.8.0
@@ -21,7 +17,6 @@ USE_PHP=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*php$$
 DEFAULT_PHP_VER=	5 
-IGNORE_WITH_PHP=	4
 
 LATEST_LINK=	pear-Image_Graph
 

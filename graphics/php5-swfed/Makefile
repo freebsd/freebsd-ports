@@ -18,7 +18,6 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
 
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	4
 USE_PHP=	zlib
 USE_PHPEXT=	yes
 
