@@ -1,4 +1,4 @@
-%%GTK%%bin/gssdp-device-sniffer
+%%GTK3%%bin/gssdp-device-sniffer
 include/gssdp-1.0/libgssdp/gssdp-client.h
 include/gssdp-1.0/libgssdp/gssdp-error.h
 include/gssdp-1.0/libgssdp/gssdp-resource-browser.h
@@ -10,7 +10,7 @@ lib/libgssdp-1.0.la
 lib/libgssdp-1.0.so
 lib/libgssdp-1.0.so.3
 libdata/pkgconfig/gssdp-1.0.pc
-%%GTK%%%%DATADIR%%/gssdp-device-sniffer.ui
+%%GTK3%%%%DATADIR%%/gssdp-device-sniffer.ui
 share/gir-1.0/GSSDP-1.0.gir
 share/gtk-doc/html/gssdp/GSSDPClient.html
 share/gtk-doc/html/gssdp/GSSDPResourceBrowser.html
@@ -30,7 +30,7 @@ share/gtk-doc/html/gssdp/up.png
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrmtry share/gir-1.0
-%%GTK%%@dirrm %%DATADIR%%
+%%GTK3%%@dirrm %%DATADIR%%
 @dirrmtry lib/girepository-1.0
 @dirrmtry include/gssdp-1.0/libgssdp
 @dirrmtry include/gssdp-1.0
