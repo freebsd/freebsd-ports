@@ -1293,6 +1293,7 @@
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
+    SUBDIR += rubygem-jsmin
     SUBDIR += rubygem-kramdown
     SUBDIR += rubygem-kwalify
     SUBDIR += rubygem-libxml-ruby

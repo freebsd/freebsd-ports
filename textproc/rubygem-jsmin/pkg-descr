@@ -1,0 +1,3 @@
+Ruby implementation of Douglas Crockford's JSMin JavaScript minifier.
+
+WWW: http://github.com/rgrove/jsmin/
