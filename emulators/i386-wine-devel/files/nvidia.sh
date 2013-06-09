@@ -56,8 +56,11 @@
 # Version 1.9 - 2012/10/31
 #  - fix permission of extracts files
 # Version 1.10 - 2013/05/06
-#  - s/wine-fbsd64/i386-wine/
+#  - s/wine-fbsd64/i386-wine/g
 #  - fix unwanted failures due to `set -e`
+# Version 1.11 - 2013/05/26
+#  - install libGL.so.1 to ${PREFIX}/lib32/.nvidia and link to it
+#  - add deinstall option
 
 set -e
 
@@ -81,7 +84,7 @@ terminate() {
 
 }
 
-args=`getopt -n $*`
+args=`getopt -dn $*`
 if [ $? -ne 0 ]
 then
   echo "Usage: $0 [-n]"
@@ -91,6 +94,19 @@ set -- $args
 while true
 do
   case $1 in
+    -d)
+      rm -f ${PREFIX}/lib32/libGL.so.1 
+      rm -f ${PREFIX}/lib32/libGLcore.so.1 ${PREFIX}/lib32/libnvidia-tls.so.1 
+      rm -f ${PREFIX}/lib32/libnvidia-glcore.so.1 ${PREFIX}/lib32/libnvidia-tls.so.1
+      rm -rf  ${PREFIX}/lib32/.nvidia/
+      if [ -d ${PREFIX}/lib32/.libGL-new ]
+      then
+        ln -s .libGL-new/libGL.so.1 ${PREFIX}/lib32/libGL.so.1
+      else
+        ln -s .libGL/libGL.so.1 ${PREFIX}/lib32/libGL.so.1
+      fi
+      exit 0
+      ;;
     -n)
       NO_FETCH=yes
       ;;
@@ -168,11 +184,15 @@ for i in $EXTRACT_LIST
 do
   EXTRACT_ARGS="$EXTRACT_ARGS --include NVIDIA-FreeBSD-x86-${NV}/obj/$i"
 done
-[ -f ${PREFIX}/lib32/libGL.so.1~ ] \
-  || cp ${PREFIX}/lib32/libGL.so.1 ${PREFIX}/lib32/libGL.so.1~
 umask 0333
 tar $EXTRACT_ARGS -xvf NVIDIA-FreeBSD-x86-${NV}.tar.gz \
   || terminate 3 "Failed to extract NVIDIA-FreeBSD-x86-${NV}.tar.gz"
+mkdir -p ${PREFIX}/lib32/.nvidia \
+  || terminate 9 "Failed to create .nvidia shadow directory"
+mv ${PREFIX}/lib32/libGL.so.1 ${PREFIX}/lib32/.nvidia/ \
+  || terminate 10 "Failed to move libGL.so.1 to .nvidia/ shadow directory"
+ln -s .nvidia/libGL.so.1 ${PREFIX}/lib32/libGL.so.1 \
+  || terminate 11 "Failed to link to .nvidia/libGL.so.1 in the shadow directory"
 
 echo "=> Cleaning up..."
 [ -n "$NO_REMOVE_NVIDIA" ] || rm -vf NVIDIA-FreeBSD-x86-${NV}.tar.gz \

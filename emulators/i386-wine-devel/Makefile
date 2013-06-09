@@ -12,6 +12,8 @@ MASTERDIR=	${.CURDIR}/../wine-devel
 PKGINSTALL=	${.CURDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
+RUN_DEPENDS=	dri>0:${PORTSDIR}/graphics/dri
+
 ACTUAL-PACKAGE-DEPENDS=	${DO_NADA}
 WINELIBDIR=	${PREFIX}/lib32
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/bin32 --libdir=${WINELIBDIR}
@@ -22,7 +24,7 @@ WINE_SLAVE_BUILD=	yes
 USE_LDCONFIG32=	${WINELIBDIR} ${WINELIBDIR}/wine
 
 # Hook into post-install and do some adapting to make i386 binaries work nicely
-# under FreeBSD/amd64 (include add dependant i386 libs)
+# under FreeBSD/amd64
 post-install-script:
 	# Install bounce script to access the 32bit executables
 	${INSTALL_SCRIPT} ${.CURDIR}/files/binbounce ${PREFIX}/bin/wine
@@ -30,11 +32,15 @@ post-install-script:
 		[ "$${i}" = "wine" ] || ${LN} -f ${PREFIX}/bin/wine ${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
-	if [ -n "${WITH_PKGNG}" ]; then \
-		echo '@dirrmtry bin32' >> ${TMPPLIST}; \
-	else \
-		echo '@unexec rmdir %D/bin32 2>/dev/null || true' >> ${TMPPLIST}; \
-	fi
+	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
+	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
+	echo '@dirrm bin32' >> ${TMPPLIST}
+	# Install dri libraries (internal libGL requirements)
+	${MKDIR} ${PREFIX}/lib32/.libGL/dri
+	for i in ${LOCALBASE}/lib/dri/*.so; do \
+		${INSTALL_DATA} $${i} ${PREFIX}/lib32/.libGL/dri/ ; \
+		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
+	done
 	# Find all libraries that are linked too (via ldd(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${PREFIX}/!g" | \
 	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | \
@@ -42,8 +48,13 @@ post-install-script:
 	| sort -u | grep -v '^\(/usr\)\?/lib' | grep -v "^${PREFIX}/lib32/libwine.so" \
 	| grep -v "^${PREFIX}/lib32/wine" > ${WRKDIR}/winelibs
 	for i in `cat ${WRKDIR}/winelibs` ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/lib32/ ; \
-		echo lib32/`basename $${i}` >> ${TMPPLIST} ; \
+		if [ `basename $${i}` != libGL.so.1 ]; then \
+			${INSTALL_DATA} $${i} ${PREFIX}/lib32/ ; \
+			echo lib32/$${i##*/} >> ${TMPPLIST} ; \
+		else \
+			${INSTALL_DATA} $${i} ${PREFIX}/lib32/.libGL/ ; \
+			echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST} ; \
+		fi ; \
 	done
 	# Find all soft dependancies (via strings(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${PREFIX}/!g" | \
