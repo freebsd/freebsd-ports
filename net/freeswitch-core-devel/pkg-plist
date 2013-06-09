@@ -344,7 +344,6 @@ www/freeswitch/htdocs/slimtest.htm.sample
 @dirrmtry %%ETCDIR%%/grammar
 @dirrmtry %%ETCDIR%%/conf/directory/default
 @dirrmtry %%ETCDIR%%/conf/directory/
-@dirrmtry %%ETCDIR%%/conf/autoload_configs
 @dirrmtry %%ETCDIR%%/conf
 @dirrmtry %%ETCDIR%%
 @cwd /var
