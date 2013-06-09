@@ -3,7 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -12,6 +12,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz ${PORTNAME}-help-0.5.1-src.tar.
 
 MAINTAINER=	bbtruk@users.sourceforge.net
 COMMENT=	Total Commander like file manager for the X Window System
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
@@ -45,7 +47,7 @@ OPTIONS_DEFAULT=	GTK2
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
-USE_GNOME=	gtk20 gdkpixbuf
+USE_GNOME+=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 .endif
@@ -66,6 +68,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' ${WRKSRC}/src/dmhelpmanager.pas
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/src/uGlobsPaths.pas
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/install/linux/doublecmd.desktop
 	@${REINPLACE_CMD} -e 's|.GetSize|.Size|g' ${WRKSRC}/src/platform/uClipboard.pas
 	@${REINPLACE_CMD} -e '176d' ${WRKSRC}/src/uxmlconfig.pas
 
@@ -81,7 +85,7 @@ post-build:
 pre-install:
 	@${RM} -f ${PLIST}
 
-.for FILE in %%DATADIR%%/doublecmd.ext.example \
+.for FILE in %%DATADIR%%/doublecmd.png %%DATADIR%%/doublecmd.ext.example \
 	%%DATADIR%%/editor.col %%DATADIR%%/twilight.col %%DATADIR%%/pixmaps.txt \
 	%%DATADIR%%/default.bar %%DATADIR%%/multiarc.ini bin/doublecmd \
 	share/applications/doublecmd.desktop
@@ -129,7 +133,7 @@ do-install:
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 
-.for FILE in doublecmd.ext.example editor.col twilight.col pixmaps.txt default.bar multiarc.ini
+.for FILE in doublecmd.png doublecmd.ext.example editor.col twilight.col pixmaps.txt default.bar multiarc.ini
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/doublecmd ${PREFIX}/bin/${PORTNAME}
