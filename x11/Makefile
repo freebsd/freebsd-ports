@@ -253,6 +253,7 @@
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome2
     SUBDIR += ruby-gtktrayicon
+    SUBDIR += rubygem-gnome2
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += rxvt-unicode
