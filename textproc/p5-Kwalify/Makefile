@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Kwalify
-# Date created:				2008/10/23
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Kwalify
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SREZIC
