@@ -2,10 +2,10 @@
 bin/linm
 bin/linm.csh
 bin/linm.sh
-etc/linm/colorset.cfg
-etc/linm/default.cfg
-etc/linm/keyset.cfg
-@dirrm etc/linm
+%%ETCDIR%%/colorset.cfg
+%%ETCDIR%%/default.cfg
+%%ETCDIR%%/keyset.cfg
+etc/profile.d/linm_alias.sh
 lib/liblinmpluginarc.a
 lib/liblinmpluginarc.la
 lib/liblinmpluginarc.so
@@ -18,12 +18,19 @@ lib/liblinmpluginsftp.a
 lib/liblinmpluginsftp.la
 lib/liblinmpluginsftp.so
 lib/liblinmpluginsftp.so.0
+%%SMB%%lib/liblinmpluginsmb.a
+%%SMB%%lib/liblinmpluginsmb.la
+%%SMB%%lib/liblinmpluginsmb.so
+%%SMB%%lib/liblinmpluginsmb.so.0
+share/applications/LinM.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ko_euckr
 %%PORTDOCS%%%%DOCSDIR%%/README.ko_utf8
+share/locale/ko/LC_MESSAGES/linm.mo
+share/pixmaps/linm.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%share/locale/ko/LC_MESSAGES/linm_euckr.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/linm_utf8.mo
+@dirrmtry share/applications
+@dirrmtry etc/profile.d
+@dirrm %%ETCDIR%%
