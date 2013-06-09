@@ -23,7 +23,6 @@ NO_BUILD=	yes
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-message
 
