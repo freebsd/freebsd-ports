@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.unixodbc.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
-CONFLICTS=	libiodbc-[0-9]* virtuoso-*
+CONFLICTS=	libiodbc-[0-9]*
 
 USES=		iconv
 GNU_CONFIGURE=	yes
