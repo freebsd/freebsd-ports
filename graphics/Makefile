@@ -946,6 +946,7 @@
     SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
+    SUBDIR += rubygem-cairo
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-chunky_png
     SUBDIR += rubygem-dragonfly
