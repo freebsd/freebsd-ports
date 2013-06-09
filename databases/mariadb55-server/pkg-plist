@@ -33,6 +33,7 @@ lib/mysql/libmysqld.a
 lib/mysql/libmysqld.so
 lib/mysql/libmysqld.so.18
 lib/mysql/plugin/adt_null.so
+lib/mysql/plugin/auth_0x0100.so
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
@@ -53,6 +54,7 @@ lib/mysql/plugin/mysql_clear_password.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
+lib/mysql/plugin/query_cache_info.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/sql_errlog.so
