@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keyring
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +20,14 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS_DEFINE=		CRYPT_FILE GNOME_KEYRING KDE_KWALLET
-GNOME_KEYRING_DESC=	GNOME Keyring backend
-KDE_KWALLET_DESC=	KDE KWallet backend
-CRYPT_FILE_DESC=	Crypt(ed) File backend
+OPTIONS_DEFINE=		CRYPT_FILE GNOME_KEYRING KDE_KWALLET KEYCZAR PYFS \
+			SECRET_SERVICE
+CRYPT_FILE_DESC=	Install pycrpto to support the Crypt(ed) File backend
+GNOME_KEYRING_DESC=	Install GNOME Keyring to support the Gnome backend
+KDE_KWALLET_DESC=	Install KDE KWallet to support the kwallet backend
+KEYCZAR_DESC=		Install keyczar to support keyring encryption
+PYFS_DESC=		Install pyfilesystem to support the pyfs backend
+SECRET_SERVICE_DESC=	Install SecretStorage to support the SecretService backend
 
 .include <bsd.port.options.mk>
 
@@ -37,6 +41,18 @@ USE_GNOME+=	pygnomedesktop
 
 .if ${PORT_OPTIONS:MKDE_KWALLET}
 USE_KDE4+=	pykde4
+.endif
+
+.if ${PORT_OPTIONS:MKEYCZAR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}keyczar>=0.71c:${PORTSDIR}/security/py-keyczar
+.endif
+
+.if ${PORT_OPTIONS:MPYFS}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fs>=0.4.0:${PORTSDIR}/devel/py-fs
+.endif
+
+.if ${PORT_OPTIONS:MSECRET_SERVICE}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}SecretStorage>=1.0.0:${PORTSDIR}/security/py-SecretStorage
 .endif
 
 .include <bsd.port.mk>
