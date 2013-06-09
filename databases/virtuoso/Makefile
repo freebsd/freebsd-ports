@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
-CPPFLAGS+=	-std=gnu89 -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 		ISQL=isql-vt
@@ -80,9 +80,10 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 .if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+IODBC_CPPFLAGS=
 PLIST_SUB+=	WITH_IODBC=""
 .else
-#CPPFLAGS+=	-I../../libsrc/odbcsdk/include
+IODBC_CPPFLAGS=	-I../../libsrc/odbcsdk/include
 PLIST_SUB+=	WITH_IODBC="@comment "
 .endif
 
