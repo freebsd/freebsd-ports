@@ -15,7 +15,6 @@ NO_LATEST_LINK=	yes
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=4
 
 TYPO3WWW=	www
 TYPO3RELEASE=	45
