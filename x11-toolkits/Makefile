@@ -240,6 +240,7 @@
     SUBDIR += ruby-vte
     SUBDIR += rubygem-gdk3
     SUBDIR += rubygem-gtk2
+    SUBDIR += rubygem-gtk3
     SUBDIR += rubygem-pango
     SUBDIR += sakura
     SUBDIR += scintilla
