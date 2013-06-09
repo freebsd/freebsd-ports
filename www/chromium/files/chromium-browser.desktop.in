@@ -7,5 +7,5 @@ Comment=%%COMMENT%%
 Icon=%%DATADIR%%/product_logo_48.png
 Exec=chrome %U
 Categories=Application;Network;WebBrowser;
-MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;/x-scheme-handler/https;x-scheme-handler/ftp;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
 StartupNotify=true
