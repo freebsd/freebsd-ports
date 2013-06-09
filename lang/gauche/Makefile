@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gauche
-PORTVERSION=	0.9.3.3	# Keep databases/gauche-gdbm in sync with this
+PORTVERSION=	0.9.3.3
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
@@ -33,7 +34,7 @@ DATADIR?=	${PREFIX}/share/${PORTNAME}-0.9
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tls=none \
- 		--with-iconv=${LOCALBASE}
+		--with-iconv=${LOCALBASE}
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}"
 USES=		iconv
@@ -72,6 +73,12 @@ CONFIGURE_ARGS+=--with-slib=${WRKDIR}
 PLIST_SUB+=	SLIB="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MPTHREADS}
+CONFIGURE_ARGS+=	--enable-threads=pthreads
+.else
+CONFIGURE_ARGS+=	--enable-threads=no
+.endif
+
 .if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=	--enable-multibyte=utf-8
 .elif ${PORT_OPTIONS:MEUCJP}
@@ -88,7 +95,7 @@ NOT_FOR_ARCHS=		ia64 powerpc sparc64
 NOT_FOR_ARCHS_REASON=	Does not compile on ia64, powerpc, or sparc64
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|all: info|all:|' ${WRKSRC}/doc/Makefile.in
 .endif
 
