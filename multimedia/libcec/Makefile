@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libcec
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.3
 CATEGORIES=	multimedia
+MASTER_SITES=	GH
 
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Library to control Pulse-Eight's HDMI-CEC adapter
@@ -13,24 +14,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pulse-Eight
-GH_COMMIT=	178d498
+GH_COMMIT=	54be21e
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
-USES=		pkgconfig
-USE_GMAKE=	yes
-USE_AUTORECONF=	yes
+USES=		pathfix pkgconfig
+PATHFIX_MAKEFILEIN=Makefile.am
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CFLAGS+=	-D_FILE_OFFSET_BITS=64
-
-post-patch:
-	${REINPLACE_CMD} 's|-Werror||' \
-		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} 's|$$(libdir)/\(pkgconfig\)|$$(prefix)/libdata/\1|' \
-		${WRKSRC}/src/lib/Makefile.am
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
