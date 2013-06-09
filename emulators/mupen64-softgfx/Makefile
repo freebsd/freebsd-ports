@@ -14,6 +14,6 @@ PLUGIN_NAME=	mupen64_soft_gfx
 
 MASTERDIR=	${.CURDIR}/../mupen64-base
 
-OPTIONS_OVERRIDE=	GTK2
+OPTIONS_SLAVE=	GTK2
 
 .include "${MASTERDIR}/Makefile"
