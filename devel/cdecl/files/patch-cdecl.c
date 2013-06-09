@@ -1,8 +1,15 @@
---- cdecl.c.orig	Mon Jan 15 19:54:46 1996
-+++ cdecl.c	Sat Aug 11 21:12:11 2001
-@@ -63,10 +63,16 @@
+--- ./cdecl.c.orig	1996-01-16 04:54:46.000000000 +0100
++++ ./cdecl.c	2013-06-10 00:06:29.231069167 +0200
+@@ -59,14 +59,22 @@
+  */
+ 
+ char cdeclsccsid[] = "@(#)cdecl.c	2.5 1/15/96";
+-
++
  #include <stdio.h>
  #include <ctype.h>
++#include <unistd.h>
++
  #if __STDC__ || defined(DOS)
 +# if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#  include <sys/param.h>
@@ -17,6 +24,14 @@
  #else
  # ifndef NOVARARGS
  #  include <varargs.h>
+@@ -124,7 +132,6 @@
+ 
+ #if __STDC__
+   char *ds(char *), *cat(char *, ...), *visible(int);
+-  int getopt(int,char **,char *);
+   int main(int, char **);
+   int yywrap(void);
+   int dostdin(void);
 @@ -138,7 +145,9 @@
    void docast(char*, char*, char*, char*);
    void dodexplain(char*, char*, char*, char*);

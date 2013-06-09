@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 16 14:36:38 1996
-+++ Makefile	Sat Nov 30 22:45:23 2002
+--- ./Makefile.orig	1996-01-16 06:36:38.000000000 +0100
++++ ./Makefile	2013-06-10 00:05:02.101069622 +0200
 @@ -15,13 +15,13 @@
  #
  # add -DUSE_READLINE	To compile in support for the GNU readline library.
