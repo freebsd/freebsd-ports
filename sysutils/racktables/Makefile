@@ -19,7 +19,6 @@ PORTEXAMPLES=	init-sample-racks.sql syncdomain.php
 
 WANT_PHP_WEB=	yes
 USE_PHP=	bcmath gd json mbstring mysql pdo_mysql session
-IGNORE_WITH_PHP=4
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWDIR_REL=${WWWDIR_REL} WWWDIR=${WWWDIR}
 WWWUSER?=	www
