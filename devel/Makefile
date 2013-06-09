@@ -4051,6 +4051,7 @@
     SUBDIR += rubygem-gibbler
     SUBDIR += rubygem-git
     SUBDIR += rubygem-glib2
+    SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
