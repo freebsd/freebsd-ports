@@ -23,7 +23,7 @@ PLIST_FILES=	bin/less bin/lesskey bin/lessecho
 GNU_CONFIGURE=	yes
 MAN1=		less.1 lesskey.1 lessecho.1
 
-.if ${PORT_OPTIONS:MCOLOUR_LESS}
+.if ${PORT_OPTIONS:MCOLOR_LESS}
 CPPFLAGS+=	-DCOLOR_LESS
 
 pre-fetch:
