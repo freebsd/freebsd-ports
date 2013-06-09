@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-cTemplate
-# Date created:				07 May 2006
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	cTemplate
 PORTVERSION=	1.11
@@ -23,7 +19,6 @@ USE_XZ=		yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	4
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
