@@ -15,6 +15,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
 		xmltooling.6:${PORTSDIR}/devel/xmltooling
 
+BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} \
 		--with-xmltooling=${LOCALBASE} --disable-doxygen-doc
