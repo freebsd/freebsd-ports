@@ -242,6 +242,7 @@
     SUBDIR += rubygem-gtk2
     SUBDIR += rubygem-gtk3
     SUBDIR += rubygem-gtksourceview2
+    SUBDIR += rubygem-gtksourceview3
     SUBDIR += rubygem-pango
     SUBDIR += rubygem-poppler
     SUBDIR += rubygem-vte
