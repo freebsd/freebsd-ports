@@ -1,35 +1,42 @@
-# ex:ts=8
-# Ports collection makefile for:	qgo
-# Date created:			Mar 22, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	qgo
-PORTVERSION=	1.5.4.3
-PORTREVISION=	3
+PORTVERSION=	2.s764
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_2~svn764.orig
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Go board and SGF editor written with the Qt library
+COMMENT=	Go board and SGF editor written with the Qt library
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DEPRECATED=	Depends on QT3; unmaintained
-EXPIRATION_DATE=	2013-07-01
+USE_BZIP2=	yes
+USES=		desktop-file-utils
+USE_QT4=	gui network qtestlib moc_build qmake_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
 
-USE_XORG=	x11 ice xext
-USE_QT_VER=	3
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/qgo share/applications/qgo.desktop share/pixmaps/qgo.png
+PLIST_DIRSTRY=	share/applications
 
 post-patch:
-	@${REINPLACE_CMD} -e '/NOOPT/s|^CXXFLAGS=|#CXXFLAGS=|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/templates/*.desktop
+		'/Icon/s|=.*|=${PREFIX}/share/pixmaps/qgo.png| ; \
+		 /^MimeType/s|=.*|=text/sgf|' ${WRKSRC}/src/qgo.desktop
+	@${REINPLACE_CMD} -e \
+		's|debug|release|' ${WRKSRC}/src/src.pro
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/mainwindow_settings.cpp
+
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
+
+do-install:
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} qgo ${PREFIX}/bin)
+	@${MKDIR} ${DESKTOPDIR}
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} qgo.desktop ${DESKTOPDIR})
+	(cd ${WRKSRC}/src/ressources/pics && ${INSTALL_DATA} qgo.png \
+		${PREFIX}/share/pixmaps)
 
 .include <bsd.port.mk>
