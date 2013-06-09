@@ -2,6 +2,7 @@
 
 PORTNAME=	poudriere
 PORTVERSION=	3.0.99.20130608
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -55,8 +56,8 @@ PLIST_DIRS=	libexec/poudriere \
 		etc/poudriere.d/hooks \
 		etc/poudriere.d \
 		share/poudriere/awk \
-		share/poudriere/html \
 		share/poudriere/html/assets \
+		share/poudriere/html \
 		share/poudriere
 
 .include <bsd.port.options.mk>
