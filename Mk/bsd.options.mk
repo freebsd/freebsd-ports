@@ -65,12 +65,10 @@ PORT_OPTIONS+=	DOCS
 PORT_OPTIONS+=	NLS
 .endif
 
-# Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTEXAMPLES)
 PORT_OPTIONS+=	EXAMPLES
 .endif
 
-# Activate IPV6 by default
 PORT_OPTIONS+=	IPV6
 
 # Add per arch options
