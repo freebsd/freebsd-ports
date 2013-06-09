@@ -949,6 +949,7 @@
     SUBDIR += rubygem-cairo
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-chunky_png
+    SUBDIR += rubygem-clutter
     SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-ezprint
