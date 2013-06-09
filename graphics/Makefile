@@ -953,6 +953,7 @@
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-ezprint
     SUBDIR += rubygem-gd2
+    SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
