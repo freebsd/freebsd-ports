@@ -56,14 +56,14 @@ IGNORE=		You cannot select both SA_KAS and SO_1024 options
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MSA_EXIM) || defined(FETCH_ALL}
+.if ${PORT_OPTIONS:MSA_EXIM} || defined(FETCH_ALL)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
 MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-.if ${PORT_OPTIONS:MSO_1024) || defined(FETCH_ALL}
+.if ${PORT_OPTIONS:MSO_1024} || defined(FETCH_ALL)
 MASTER_SITES+=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/:so_1024
 DISTFILES+=	spamooborona1024-src-${SO_1024_VERSION}.tar.gz:so_1024
 .endif
