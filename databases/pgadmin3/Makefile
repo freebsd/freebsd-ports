@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pgadmin3
-PORTVERSION=	1.16.0
-PORTREVISION=	1
+PORTVERSION=	1.16.1
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ARGS=	--with-wx-version=${USE_WX}
+CONFIGURE_ARGS=	--with-wx-version=${USE_WX} --enable-databasedesigner
 USE_GNOME=	libxml2 libxslt
 USE_WX=		2.8
 WX_COMPS=	wx contrib
