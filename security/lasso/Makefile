@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lasso
-# Date created:		2007-07-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lasso
 PORTVERSION=	2.1.1
@@ -40,7 +36,6 @@ PLIST_SUB+=	WITH_PERL="@comment "
 .if !empty(PORT_OPTIONS:MPHP)
 CONFIGURE_ARGS+=	--enable-php5 \
 		--with-php5-config="${LOCALBASE}/bin/php-config"
-IGNORE_WITH_PHP=	4
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=	WITH_PHP5=""
