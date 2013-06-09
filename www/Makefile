@@ -1805,6 +1805,7 @@
     SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-url-mount
     SUBDIR += rubygem-url_escape
+    SUBDIR += rubygem-webkit-gtk
     SUBDIR += rubygem-webkit-gtk2
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrobots
