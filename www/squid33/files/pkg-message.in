@@ -22,7 +22,7 @@
 
      Note:
      If you just updated your Squid installation from an earlier version,
-     make sure to check your Squid configuration against the 3.2 default
+     make sure to check your Squid configuration against the 3.3 default
      configuration file %%PREFIX%%/etc/squid/squid.conf.default.
      
      %%PREFIX%%/etc/squid/squid.conf.documented is a fully annotated
