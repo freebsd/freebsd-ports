@@ -4050,6 +4050,7 @@
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gibbler
     SUBDIR += rubygem-git
+    SUBDIR += rubygem-glib2
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
