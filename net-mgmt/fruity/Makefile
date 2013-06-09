@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fruity
-# Date created:        29 December 2006
-# Whom:                Dan Langille <dan@langille.org>
-#
+# Created by: Dan Langille <dan@langille.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fruity
 DISTVERSION=	1.0-rc2
@@ -21,7 +17,6 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message patch-includes-config.inc fruity.config.inc
 
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=4
 DEFAULT_PHP_VER=5
 USE_MYSQL=	yes
 SUB_LIST+=	REQ_MYSQL=mysql
