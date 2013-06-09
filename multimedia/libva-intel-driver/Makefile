@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -34,11 +34,11 @@ PLIST_FILES=	lib/va/i965_drv_video.so \
 .if defined(WITH_NEW_XORG)
 pre-configure:
 .if !exists(${LOCALBASE}/lib/libkms.so)
-	@${ECHO} "${PKGNAME}: Rebuild graphics/libdrm with the WITH_KMS option."
+	@${ECHO} "${PKGNAME}: Rebuild graphics/libdrm with the KMS option enabled."
 	@${FALSE}
 .endif
 .else
-BROKEN=	This port need libdrm version that is available when WITH_NEW_XORG is set
+BROKEN=		This port needs libdrm version that is available when WITH_NEW_XORG is set
 .endif
 
 post-patch:	.SILENT
