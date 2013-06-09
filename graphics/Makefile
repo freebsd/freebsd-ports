@@ -957,6 +957,7 @@
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-geokit
+    SUBDIR += rubygem-goocanvas
     SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-image_science
