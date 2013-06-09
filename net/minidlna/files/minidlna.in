@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # $FreeBSD$
 #
 # PROVIDE: minidlna
@@ -14,21 +13,21 @@
 
 name=minidlna
 rcvar=minidlna_enable
-command=%%PREFIX%%/sbin/minidlna
+command=%%PREFIX%%/sbin/minidlnad
 
 load_rc_config $name
 
 minidlna_enable=${minidlna_enable-"NO"}
 minidlna_uid=${minidlna_uid-"%%USER%%"}
 
-pidfile="/var/db/minidlna/minidlna.pid"
+pidfile="/var/run/minidlna/minidlna.pid"
 
 start_precmd="rm -f $pidfile"
 stop_postcmd=$start_precmd
 
-command_args="-P $pidfile -u $minidlna_uid"
+command_args="-P $pidfile -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
 extra_commands=rescan
-rescan_cmd="$command -R -u $minidlna_uid"
-required_dirs="/var/db/minidlna"
+rescan_cmd="$command -R -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
+required_dirs="/var/run/minidlna /var/db/minidlna"
 
 run_rc_command $1

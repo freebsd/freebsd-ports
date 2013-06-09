@@ -2,29 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	minidlna
-PORTVERSION=	1.0.25
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}_${PORTVERSION}_src.tar.gz
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\
-		jpeg:${PORTSDIR}/graphics/jpeg	\
+		jpeg:${PORTSDIR}/graphics/jpeg		\
 		exif:${PORTSDIR}/graphics/libexif	\
 		id3tag:${PORTSDIR}/audio/libid3tag	\
-		ogg:${PORTSDIR}/audio/libogg     	\
+		ogg:${PORTSDIR}/audio/libogg		\
 		vorbis:${PORTSDIR}/audio/libvorbis	\
-		FLAC:${PORTSDIR}/audio/flac      	\
+		FLAC:${PORTSDIR}/audio/flac		\
 		avformat:${PORTSDIR}/multimedia/ffmpeg
 
+GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-MAKEFILE=	${FILESDIR}/BSDmakefile
-MAKE_ENV+=	FILESDIR="${FILESDIR}" INSTALL_DATA="${INSTALL_DATA}"
-EXTRACT_AFTER_ARGS=--exclude getifaddr.c
+CONFIGURE_ARGS+=--with-db-path=/var/db/minidlna \
+		--with-os-url="http://www.FreeBSD.org"
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
@@ -34,23 +32,26 @@ SUB_LIST+=	USER=${USERS}
 USERS=	dlna
 GROUPS=	dlna
 
+MAN5=	minidlna.conf.5
+MAN8=	minidlnad.8
+
 .include <bsd.port.options.mk>
 
-do-configure:
 .if ${PORT_OPTIONS:MNLS}
-	${CP} ${FILESDIR}/config.h.in ${WRKSRC}/config.h
+USES+=		gettext
+PLIST_SUB+=	NLS=""
 .else
-	${SED} 's,^#define HAVE_ICONV_H,/* & */,' ${FILESDIR}/config.h.in > \
-		${WRKSRC}/config.h
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-	${FMT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${MAN5:S,^,${WRKSRC}/,} ${MANPREFIX}/man/man5/
+	${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/,} ${MANPREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/minidlna.conf ${PREFIX}/etc/minidlna.conf.sample
+	@${MKDIR} /var/run/minidlna
+	@${MKDIR} /var/db/minidlna
+	@${CHOWN} ${USERS} /var/db/minidlna
+	@${FMT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800500
-EXTRA_PATCHES=	${FILESDIR}/scandir-patch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
