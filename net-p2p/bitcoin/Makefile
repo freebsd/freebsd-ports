@@ -20,7 +20,7 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitcoin
 GH_PROJECT=	bitcoin
-GH_COMMIT=	09e437b
+GH_COMMIT=	94933c3
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_GMAKE=	yes
