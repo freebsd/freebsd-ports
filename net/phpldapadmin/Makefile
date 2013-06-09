@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session xml iconv hash
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	4
 
 OPTIONS_DEFINE=	SUPHP
 SUPHP_DESCR=	suPHP support
