@@ -24,7 +24,6 @@ OPTIONS_DEFINE=	TIDY
 
 USE_PHP=	dom xml simplexml iconv mysql xsl session pcre gd
 
-IGNORE_WITH_PHP=	4
 DEFAULT_PHP_VER=	5
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

@@ -15,7 +15,6 @@ USE_DRUPAL=	yes
 DRUPAL6_PORT=	yes
 
 USE_PHP=	gd pcre session xml mbstring
-IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 
 OPTIONS_DEFINE=	MYSQLI MYSQL PGSQL
