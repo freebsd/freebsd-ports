@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.51
+PORTVERSION=	1.53
 CATEGORIES=	databases python
 MASTER_SITES=	http://ftp.tummy.com/pub/python-memcached/ \
 		http://ftp.tummy.com/pub/python-memcached/old-releases/ \
