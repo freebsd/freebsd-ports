@@ -2,5 +2,3 @@ share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp2
 @dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
 @dirrmtry share/devhelp/books
 @dirrmtry share/devhelp
-@dirrmtry share/glibmm-%%API_VERSION%%/doctool
-@dirrmtry share/glibmm-%%API_VERSION%%
