@@ -53,21 +53,24 @@ load_rc_config ${name}
 : ${squid_pidfile:=/var/run/squid/squid.pid}
 : ${squid_user:=squid}
 
-command=%%PREFIX%%/sbin/squid
+squid_command="%%PREFIX%%/sbin/squid"
 
 # Make sure that we invoke squid with "-f ${squid_conf}"; define this
 # variable early so reload_cmd and stop_precmd pick it up:
 
-command_args="-f ${squid_conf}"
+required_args="-f ${squid_conf}"
 extra_commands=reload
-reload_cmd="${command} ${command_args} ${squid_flags} -k reconfigure"
-start_precmd=squid_setfib
-stop_precmd="${command} ${command_args} ${squid_flags} -k check 2>/dev/null"
+reload_cmd="${squid_command} ${required_args} ${squid_flags} -k reconfigure"
+start_precmd=squid_prestart
+start_cmd="${squid_command} ${required_args} ${squid_flags}"
+start_postcmd=squid_getpid
+stop_precmd="${squid_command} ${required_args} ${squid_flags} -k check 2>/dev/null"
 stop_cmd=squid_stop
 
 pidfile=${squid_pidfile}
-procname=squid-1
+procname="?squid-*"
 required_dirs=${squid_chdir}
+state_dir=/var/run/squid
 
 # squid(8) will not start if ${squid_conf} is not present so try
 # to catch that beforehand via ${required_files} rather than make
@@ -75,8 +78,13 @@ required_dirs=${squid_chdir}
 
 required_files=${squid_conf}
 
-squid_setfib()
+squid_prestart()
 {
+	# prepare the state directory:
+	[ -d ${state_dir} ] && rm -rf ${state_dir}
+	install -d -o ${squid_user} -m 0755 ${state_dir}
+
+	# setup FIB tables:
 	if command -v check_namevarlist > /dev/null 2>&1; then
 		check_namevarlist fib && return 0
 	fi
@@ -84,18 +92,35 @@ squid_setfib()
 	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
 
 	squid_fib=${squid_fib:-"NONE"}
-	if [ "x${squid_fib}" != "xNONE" ]; then
-		command="setfib -F ${squid_fib} ${command}"
+	if [ "${squid_fib}" != "NONE" ]; then
+		start_cmd="setfib -F ${squid_fib} ${squid_command} ${required_args} ${squid_flags}"
 	else
 		return 0
 	fi
 }
 
+squid_getpid()
+{
+	# retrieve the PID of the Squid master process explicitly here
+	# in case rc.subr was unable to determine it:
+	if [ -z "$rc_pid" ]; then
+		while ! [ -f ${pidfile} ]; do
+			sleep 1
+		done
+		read _pid _junk <${pidfile}
+		[ -z "${_pid}" ] || pid=${_pid}
+	else
+		pid=${rc_pid}
+	fi
+}
+
 squid_stop()
 {
+	squid_getpid
 	echo "Stopping ${name}."
-	${command} ${command_args} ${squid_flags} -k shutdown
+	${squid_command} ${required_args} ${squid_flags} -k shutdown
 	run_rc_command poll
+	rm -rf ${state_dir}
 }
 
 run_rc_command $1

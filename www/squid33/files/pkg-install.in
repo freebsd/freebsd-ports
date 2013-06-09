@@ -9,7 +9,6 @@ squid_homedir="/var/squid"
 squid_cache_basedir="${squid_homedir}/cache"
 squid_confdir="${PKG_PREFIX:-%%PREFIX%%}/etc/squid"
 squid_logdir="/var/log/squid"
-squid_rundir="/var/run/squid"
 # these are hardcoded, see /usr/ports/UIDs and /usr/ports/GIDs:
 squid_user=squid
 squid_group=squid
@@ -53,14 +52,6 @@ POST-INSTALL)
 	else
 		chown ${squid_user} ${squid_logdir}
 		chgrp ${squid_group} ${squid_logdir}
-	fi
-	if [ ! -d ${squid_rundir} ]; then
-		echo "Creating ${squid_rundir}..."
-		install -d -o ${squid_user} -g ${squid_group} \
-		    -m 0755 ${squid_rundir}
-	else
-		chown ${squid_user} ${squid_rundir}
-		chgrp ${squid_group} ${squid_rundir}
 	fi
 	for file in cachemgr.conf errorpage.css mime.conf msntauth.conf squid.conf; do
 		if [ ! -f ${squid_confdir}/${file} \

@@ -39,7 +39,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.3.${SQUID_STABLE_VER}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -48,14 +47,14 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.solnet.ch/mirror/squid/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/squid/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
-		http://www.squid-cache.org/Versions/v3/3.2/ \
-		http://www2.us.squid-cache.org/Versions/v3/3.2/ \
-		http://www3.us.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.at.squid-cache.org/Versions/v3/3.2/ \
-		http://www.eu.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.ie.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.jp.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.za.squid-cache.org/Versions/v3/3.2/
+		http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www3.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www1.at.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www.eu.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www1.ie.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www1.jp.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
+		http://www1.za.squid-cache.org/Versions/v3/${PORTVERSION:R}/
 MASTER_SITE_SUBDIR=	squid
 DIST_SUBDIR=	squid3.3
 
@@ -67,8 +66,14 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.ie.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v3/3.2/changesets
-PATCHFILES=	#empty
+PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
+PATCHFILES=		squid-3.3-12566.patch \
+			squid-3.3-12567.patch \
+			squid-3.3-12568.patch \
+			squid-3.3-12569.patch \
+			squid-3.3-12570.patch \
+			squid-3.3-12571.patch \
+			squid-3.3-12572.patch
 
 MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
@@ -78,7 +83,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid33
 
-SQUID_STABLE_VER=	4
+SQUID_STABLE_VER=	5
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!3].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
