@@ -16,6 +16,7 @@ lib/libgctpc.so.1
 %%PORTDOCS%%%%DOCSDIR%%/appendixB.txt
 %%PORTDOCS%%%%DOCSDIR%%/appendixC.txt
 %%PORTDOCS%%%%DOCSDIR%%/for_init.ps
+%%PORTDOCS%%%%DOCSDIR%%/error_codes.txt
 %%PORTDOCS%%%%DOCSDIR%%/gctp.ps
 %%PORTDOCS%%%%DOCSDIR%%/inv_init.ps
 %%PORTDOCS%%%%DOCSDIR%%/overview.ps
