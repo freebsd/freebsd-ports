@@ -1,12 +1,8 @@
-# New ports collection makefile for:   sdparm
-# Date created:        Nov 11, 2009
-# Whom:                Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdparm
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
@@ -18,8 +14,10 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-MAN8=		sdparm.8
+MAN8=		sas_disk_blink.8 \
+		sdparm.8
 
-PLIST_FILES=	bin/sdparm
+PLIST_FILES=	bin/sas_disk_blink \
+		bin/sdparm
 
 .include <bsd.port.mk>
