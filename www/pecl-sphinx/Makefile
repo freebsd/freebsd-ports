@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pecl-sphinx
-# Date created:         2011-06-6
-# Whom:                 Max Baryshnikov <mephius@gmail.com>
-#
+# Created by: Max Baryshnikov <mephius@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sphinx
 DISTVERSION=	1.2.0
@@ -19,7 +15,6 @@ COMMENT=	Sphinx search engine php client
 LIB_DEPENDS=	sphinxclient.0:${PORTSDIR}/textproc/libsphinxclient
 
 USE_PHP=	yes
-IGNORE_WITH_PHP=4
 USE_PHPEXT=	yes
 PHP_MODNAME=	sphinx
 
