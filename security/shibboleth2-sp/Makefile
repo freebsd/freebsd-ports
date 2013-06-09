@@ -12,6 +12,8 @@ COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 LIB_DEPENDS=	saml.8:${PORTSDIR}/security/opensaml2
 
+BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
+
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
