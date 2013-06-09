@@ -1,11 +1,8 @@
-Submitted by Vladimir B. Grebenschikov this patch recognizes Samsung's
-images as JPEGs.
-
 diff --git utils.c utils.c
-index 36ff168..5a7ff87 100644
+index d46f2f0..15e7905 100644
 --- utils.c
 +++ utils.c
-@@ -324,7 +324,7 @@ is_audio(const char * file)
+@@ -396,7 +396,7 @@ is_audio(const char * file)
  int
  is_image(const char * file)
  {
