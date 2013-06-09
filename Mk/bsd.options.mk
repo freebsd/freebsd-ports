@@ -73,9 +73,6 @@ PORT_OPTIONS+=	EXAMPLES
 # Activate IPV6 by default
 PORT_OPTIONS+=	IPV6
 
-# Exclude per arch options
-_ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} ${OPTIONS_SLAVE}
-
 # Add per arch options
 .for opt in ${OPTIONS_DEFINE_${ARCH}}
 .if empty(OPTIONS_DEFINE:M${opt})
@@ -98,15 +95,11 @@ ALL_OPTIONS+=	${opt}
 ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
 
-# Remove global options the port maintainer doesn't want
-.for opt in ${_ALL_EXCLUDE}
+# Remove options the port maintainer doesn't want
+.for opt in ${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} ${OPTIONS_SLAVE}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
 ALL_OPTIONS:=		${ALL_OPTIONS:N${opt}}
 PORT_OPTIONS:=		${PORT_OPTIONS:N${opt}}
-.endfor
-
-# Remove illegal per-arch options
-.for opt in ${_ALL_EXCLUDE}
 .  for single in ${OPTIONS_SINGLE}
 OPTIONS_SINGLE_${single}:=	${OPTIONS_SINGLE_${single}:N${opt}}
 .  endfor
