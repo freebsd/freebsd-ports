@@ -19,6 +19,6 @@ USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	pthreads
-IGNORE_WITH_PHP=4 52
+IGNORE_WITH_PHP=	52
 
 .include <bsd.port.mk>
