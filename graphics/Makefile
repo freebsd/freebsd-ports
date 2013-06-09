@@ -965,6 +965,7 @@
     SUBDIR += rubygem-png
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-rmagick
+    SUBDIR += rubygem-rsvg2
     SUBDIR += rubygem-scruffy
     SUBDIR += rubygem-turing
     SUBDIR += rubyphoto
