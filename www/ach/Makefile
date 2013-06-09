@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ACH
-# Date Created: 			2010-10-05
-# Whom:					Carlo Strub <c-s@c-s.li>
-#
+# Created by: Carlo Strub <c-s@c-s.li>
 # $FreeBSD$
-#
 
 PORTNAME=	ACH
 PORTVERSION=	1.0.2
@@ -18,7 +14,6 @@ LICENSE=	GPLv3
 
 USE_MYSQL=	yes
 USE_PHP=	yes
-IGNORE_WITH_PHP=	4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 NO_BUILD=	yes

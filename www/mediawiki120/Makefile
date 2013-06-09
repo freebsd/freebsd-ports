@@ -15,7 +15,6 @@ CONFLICTS=	mediawiki-1.1[0-9].*
 
 FETCH_ARGS=	-pr
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
-IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
