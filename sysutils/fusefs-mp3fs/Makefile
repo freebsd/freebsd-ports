@@ -3,6 +3,7 @@
 
 PORTNAME=	mp3fs
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/downloads/khenriks/${PORTNAME}/
 PKGNAMEPREFIX=	fusefs-

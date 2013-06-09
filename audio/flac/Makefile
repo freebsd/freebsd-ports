@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flac
-PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTVERSION=	1.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 
@@ -12,28 +11,28 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sse \
 		--with-ogg="${LOCALBASE}" \
+		--disable-silent-rules \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
-CPPFLAGS+=	-I${WRKSRC}/include
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	ICONV
+OPTIONS_DEFINE=	DOCS ICONV
 OPTIONS_DEFAULT=ICONV
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CONFIGURE_ARGS+=--with-libiconv-prefix="${LOCALBASE}"
-.else
-CONFIGURE_ARGS+=--without-libiconv-prefix
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 .if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	DOC=doc
 .else
@@ -52,10 +51,6 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 pre-patch:
 	@${REINPLACE_CMD} 's:^docdir = $$(datadir)/doc/$$(PACKAGE)-$$(VERSION):docdir = $$(datadir)/doc/$$(PACKAGE):' \
 		`find ${WRKSRC}/doc -name Makefile.in`
-
-# "obj" is magic to our make(1)
-post-configure:
-	@${RM} -rf ${WRKSRC}/obj
 
 post-build:
 	${REINPLACE_CMD} 's:%%PREFIX%%:${PREFIX}:' ${WRKSRC}/man/flac.1

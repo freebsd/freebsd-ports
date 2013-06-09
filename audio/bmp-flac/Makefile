@@ -7,7 +7,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	20040316
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://ccm.sherry.jp/tmp/
 PKGNAMEPREFIX=	bmp-
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLAC input plugin for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
-		FLAC.10:${PORTSDIR}/audio/flac
+		FLAC:${PORTSDIR}/audio/flac
 
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		FLAC.10:${PORTSDIR}/audio/flac \
+		FLAC:${PORTSDIR}/audio/flac \
 		ogg:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \

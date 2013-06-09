@@ -2,6 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.17.3
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -73,7 +74,7 @@ MSG=You still have ${PREFIX}/etc/mpd.conf in existence-- this file is no longer 
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac \
 		--disable-oggflac

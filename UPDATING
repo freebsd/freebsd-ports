@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130609:
+  AFFECTS: users of audio/flac and any port that depends on it
+  AUTHOR: naddy@FreeBSD.org
+
+  FLAC has been updated to 1.3.0 and the shared library versions
+  have been bumped.  Please rebuild all ports that depend on it:
+
+  # portmaster -r flac
+    or
+  # portupgrade -fr audio/flac
+    or
+  # pkg install -fR audio/flac
+
 20130607:
   AFFECTS: Nobody
   AUTHOR: wxs@FreeBSD.org

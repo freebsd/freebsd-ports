@@ -3,7 +3,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta11
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
  		http://wickedmachine.net/mirror/

@@ -3,6 +3,7 @@
 
 PORTNAME=	alure
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/alure-releases/
 

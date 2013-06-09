@@ -3,6 +3,7 @@
 
 PORTNAME=	kio-audiocd
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -14,7 +15,7 @@ COMMENT=	KDE IOSlave for accessing audio CDs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		ogg.8:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis

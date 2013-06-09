@@ -3,7 +3,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	FLAC OGG ZLIB
 
 # --with-flac is on by default
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		FLAC:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=	--without-flac
 .endif
