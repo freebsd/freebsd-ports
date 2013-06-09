@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-operator
-# Date created:			2006-01-31
-# Whom:				Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	operator
 PORTVERSION=	0.3
@@ -22,7 +18,6 @@ LICENSE=	PHP30
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER?=	53
-IGNORE_WITH_PHP=	4
 PHP_MODNAME=	${PORTNAME}
 
 post-extract::
