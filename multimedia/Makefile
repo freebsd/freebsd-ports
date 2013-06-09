@@ -320,6 +320,7 @@
     SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
     SUBDIR += ruby-flvtool2
+    SUBDIR += rubygem-clutter-gstreamer
     SUBDIR += rubygem-gstreamer
     SUBDIR += sabbu
     SUBDIR += schroedinger
