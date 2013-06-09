@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpmailer
-# Date created:		6 April 2007
-# Whom:			Zhen REN <bg1tpt@gmail.com>
-#
+# Created by: Zhen REN <bg1tpt@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	phpmailer
 PORTVERSION=	5.2.2
@@ -21,7 +17,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
-IGNORE_WITH_PHP=	4
 USE_PHP=	pcre
 
 SUB_FILES=	pkg-message
