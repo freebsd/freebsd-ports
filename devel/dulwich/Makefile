@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dulwich
-PORTVERSION=	0.8.7
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
-		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	http://www.samba.org/~jelmer/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	marco.broeder@gmx.eu
@@ -17,12 +16,10 @@ LICENSE_COMB=	dual
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS HACKING NEWS README introduction.txt \
-		object-store.txt protocol.txt remote.txt repo.txt
+		object-store.txt protocol.txt remote.txt repo.txt tag.txt
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
-
-FETCH_ARGS=	-Fpr	# default '-AFpr' prevents 302 redirects by launchpad
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
@@ -39,7 +36,7 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${CP} ${WRKSRC}/docs/*.txt ${WRKSRC}/docs/tutorial/*.txt ${WRKSRC}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
