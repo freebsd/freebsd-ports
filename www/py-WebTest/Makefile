@@ -17,6 +17,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=1.2:${PORTSDIR}/www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}waitress>0:${PORTSDIR}/www/py-waitress
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=1.2:${PORTSDIR}/www/py-webob \
+		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:${PORTSDIR}/www/py-beautifulsoup \
+		${PYTHON_PKGNAMEPREFIX}waitress>0:${PORTSDIR}/www/py-waitress
 
 USE_ZIP=		yes
 USE_PYTHON=		yes
