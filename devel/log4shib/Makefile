@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnomehack
-CONFIGURE_ARGS=	--with-pthreads --disable-html-docs --disable-doxygen
+CONFIGURE_ARGS=	--disable-html-docs --disable-doxygen
 USE_LDCONFIG=	yes
 
 USES=		pathfix
