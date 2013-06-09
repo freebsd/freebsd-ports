@@ -17,6 +17,5 @@ LICENSE=	PHP30
 CONFIGURE_ARGS=	--enable-timezonedb
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=4
 
 .include <bsd.port.mk>
