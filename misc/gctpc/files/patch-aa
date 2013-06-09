@@ -18,7 +18,7 @@ $FreeBSD$
  
  OBJECTS=		\
  		$(ARCHIVE)(alberfor.o) $(ARCHIVE)(alberinv.o) \
-@@ -56,8 +58,13 @@
+@@ -56,6 +58,11 @@
  	  cproj.c report.c lamccfor.c lamccinv.c paksz.c untfz.c sphdz.c \
  	  br_gctp.c Makefile cproj.h proj.h
  
@@ -28,8 +28,5 @@ $FreeBSD$
 +	rm -rf objs
 +
  $(ARCHIVE):	$(OBJECTS)
--		ranlib geolib.a
-+		ranlib libgctpc.a
  
  
- $(ARCHIVE)(gctp.o):	 	$(INCS)
