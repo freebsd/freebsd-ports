@@ -37,4 +37,5 @@ share/polkit-1/actions/org.freedesktop.upower.qos.policy
 @dirrm include/libupower-glib
 @dirrm etc/UPower
 @unexec rmdir /var/lib/DeviceKit-power 2>/dev/null || true
+@unexec rmdir /var/lib/upower 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
