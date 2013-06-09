@@ -23,7 +23,6 @@ SPINLOCKS_DESC=	Spinlocks (experimental)
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-apc
-IGNORE_WITH_PHP=4
 PHP_MODNAME=	${PORTNAME:L}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

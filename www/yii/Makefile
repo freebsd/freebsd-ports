@@ -16,7 +16,6 @@ LICENSE=	BSD
 NO_BUILD=	yes
 USE_PHP=	pcre spl
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=	4
 
 SUB_FILES=	pkg-message
 
