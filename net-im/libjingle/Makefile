@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
 		ilbc:${PORTSDIR}/net/ilbc \
 		ortp:${PORTSDIR}/net/linphone-base \
@@ -19,26 +22,25 @@ CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
 		clusterit-[0-9]* pcp-[0-9]* synce-librapi2-[0-9]*
 
 USES=		pkgconfig
+USE_DOS2UNIX=	README
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool
-USE_DOS2UNIX=	README
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ilbc=${LOCALBASE} \
-		--with-speex=${LOCALBASE}
-CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
-		EXPAT_CFLAGS="-I${LOCALBASE}/include" \
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	EXPAT_CFLAGS="-I${LOCALBASE}/include" \
 		EXPAT_LIBS="-L${LOCALBASE}/lib -lexpat" \
-		GLIB_CFLAGS="$$(${PKG_CONFIG} --cflags glib-2.0)" \
-		GLIB_LIBS="$$(${PKG_CONFIG} --libs glib-2.0)" \
+		GLIB_CFLAGS="$$(pkg-config --cflags glib-2.0)" \
+		GLIB_LIBS="$$(pkg-config --libs glib-2.0)" \
 		ILBC_CFLAGS="-I${LOCALBASE}/include/ilbc" \
 		ILBC_LIBS="-L${LOCALBASE}/lib -lilbc" \
-		SPEEX_CFLAGS="$$(${PKG_CONFIG} --cflags speex)" \
-		SPEEX_LIBS="$$(${PKG_CONFIG} --libs speex)"
-CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC} ${PTHREAD_CFLAGS} -g
+		SPEEX_CFLAGS="$$(pkg-config --cflags speex)" \
+		SPEEX_LIBS="$$(pkg-config --libs speex)"
+CONFIGURE_ARGS=	--with-ilbc=${LOCALBASE} \
+		--with-speex=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
-LDFLAGS+=-L${LOCALBASE}/lib -L${OPENSSLLIB} ${PTHREAD_LIBS}
+
+CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include -g
+LDFLAGS+=	-L${OPENSSLLIB} -L${LOCALBASE}/lib -pthread
 
 PORTDOCS=	AUTHORS \
 		ChangeLog \
@@ -72,6 +74,12 @@ post-configure:
 		'#define ${feature} 1' >> \
 		${CONFIGURE_WRKSRC}/config.h
 .endfor
+	@${REINPLACE_CMD} -e \
+		'/^int main/s|char\* argv|char** argv|' \
+		${WRKSRC}/talk/base/virtualsocket_unittest.cc
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|`pkg-config --cflags gtk+-2.0`|| ; \
+		 s|-lpthread|-pthread|'
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
