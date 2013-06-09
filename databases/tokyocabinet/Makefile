@@ -42,8 +42,9 @@ UYIELD_DESC=	Detecting race conditions
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 PORTDOCS=	*
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
