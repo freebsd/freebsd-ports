@@ -1,3 +1,4 @@
+bin/prophet
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/superfish.css
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/style.css
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/superfish-vertical.css
@@ -20,7 +21,6 @@
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images/shadow.png
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images/arrows-cccccc.png
 %%SITE_PERL%%/Prophet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prophet/.packlist
 %%SITE_PERL%%/Prophet/Test.pm
 %%SITE_PERL%%/Prophet/Resolver.pm
 %%SITE_PERL%%/Prophet/Resolver/FromResolutionDB.pm
