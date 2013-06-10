@@ -29,6 +29,8 @@ CFLAGS+=	-DSTRATAGUS_LIB_PATH='"\"${DATADIR}\""'
 DESKTOP_ENTRIES=	"Bos Wars" "${COMMENT}" "" \
 			"boswars" "Game;StrategyGame;" false
 
+PORTDOCS=	*
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -48,7 +50,7 @@ do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.txt ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+	${COPYTREE_SHARE} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
