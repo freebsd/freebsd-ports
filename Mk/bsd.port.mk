@@ -6179,7 +6179,7 @@ MULTI_EOL=	": you have to choose at least one of them"
 SINGLE_EOL=	": you have to select exactly one of them"
 RADIO_EOL=	": you can only select none or one of them"
 showconfig:
-.if !empty(ALL_OPTIONS) || !empty(OPTIONS_SINGLE) || !empty(OPTIONS_MULTI) || !empty(OPTIONS_RADIO) || !empty(OPTIONS_GROUP)
+.if !empty(COMPLETE_OPTIONS_LIST)
 	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}":
 .for opt in ${ALL_OPTIONS}
 .  if empty(PORT_OPTIONS:M${opt})
