@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.6.1
+PORTVERSION=	1.8.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} turn.extra.docs-1.8.4.2.tar.gz
 
 MAINTAINER=	mom040267@gmail.com
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
@@ -34,7 +35,7 @@ OPTIONS_DEFAULT=	MYSQL PGSQL REDIS
 
 .include <bsd.port.options.mk>
 
-PORTDOCS=
+PORTDOCS=	html TURNServerRESTAPI.pdf TurnNetworks.pdf
 PORTREADMEDOCS=	README.turnserver README.turnadmin README.turnutils INSTALL
 
 _BIN_UTILS=	peer stunclient rfc5769check uclient
@@ -119,7 +120,7 @@ do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} ${f} ${DOCSDIR})
+	(cd ${WRKSRC}/../turndocs/docs/ && ${COPYTREE_SHARE} ${f} ${DOCSDIR})
 .endfor
 .for f in ${PORTREADMEDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
