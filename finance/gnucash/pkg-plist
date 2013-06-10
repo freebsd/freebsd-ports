@@ -200,6 +200,7 @@ include/gnucash/policy.h
 include/gnucash/pricecell.h
 include/gnucash/print-session.h
 include/gnucash/qof-gobject.h
+include/gnucash/qof-string-cache.h
 include/gnucash/qof.h
 include/gnucash/qofbackend-p.h
 include/gnucash/qofbackend.h
@@ -1040,12 +1041,8 @@ share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
 @dirrmtry share/locale/es_NI/LC_MESSAGES
 @dirrmtry share/locale/es_NI
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
 @dirrm share/gnucash/ui
 @dirrm share/gnucash/scm/qif-import
 @dirrm share/gnucash/scm/gnumeric
