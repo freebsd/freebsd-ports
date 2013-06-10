@@ -4164,6 +4164,7 @@
     SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
+    SUBDIR += rubygem-safe_yaml
     SUBDIR += rubygem-sdl
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
