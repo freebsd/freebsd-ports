@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomevfs
-# Date created:				28th June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by:	Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	1.0.5
@@ -15,6 +11,9 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
+
+DEPRECATED=	No more depend on, No more supported upstream
+EXPIRATION_DATE=	2013-07-10
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
