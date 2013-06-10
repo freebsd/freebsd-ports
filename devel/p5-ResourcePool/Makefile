@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ResourcePool
-PORTVERSION=	1.0106
+PORTVERSION=	1.0107
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://www.fatalmind.com/projects/ResourcePool/
