@@ -6175,9 +6175,9 @@ config-conditional: pre-config
 
 .if !target(showconfig)
 .include "${PORTSDIR}/Mk/bsd.options.desc.mk"
-MULTI_EOL=	": you have to choose at least one of them"
-SINGLE_EOL=	": you have to select exactly one of them"
-RADIO_EOL=	": you can only select none or one of them"
+MULTI_EOL=	: you have to choose at least one of them
+SINGLE_EOL=	: you have to select exactly one of them
+RADIO_EOL=	: you can only select none or one of them
 showconfig:
 .if !empty(COMPLETE_OPTIONS_LIST)
 	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}":
