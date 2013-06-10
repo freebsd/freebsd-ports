@@ -22,8 +22,9 @@ LICENSE=		AL2 MIT
 LICENSE_COMB=		multi
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
-BUILD_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-			cmake:${PORTSDIR}/devel/cmake
+BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip \
+			cmake:${PORTSDIR}/devel/cmake \
+			v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
 			ffi:${PORTSDIR}/devel/libffi \
 			asound:${PORTSDIR}/audio/alsa-lib \
@@ -33,7 +34,7 @@ LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
 
 ##################################################
 VM_VERSION=		${PORTVERSION}.${SVNVERSION}
-SVNVERSION=		2602
+SVNVERSION=		2614
 IMAGEVERSION=		4.3
 SQUEAK_SRC=		SqueakV41.sources
 SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
@@ -44,6 +45,7 @@ SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
 DIST_SUBDIR=		squeak
 ONLY_FOR_ARCHS=		i386 amd64
 MAN1=			squeak.1
+USE_GCC=		4.2+
 USE_GMAKE=		yes
 USE_GL=			gl
 HAS_CONFIGURE=		yes
@@ -67,7 +69,6 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../unix/cmake/configure
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
-# USES+=		cmake
 CMAKE_SOURCE_PATH=	../unix
 
 SUB_FILES=		pkg-message
