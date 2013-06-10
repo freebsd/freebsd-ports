@@ -599,7 +599,6 @@
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gprbuild
-    SUBDIR += gprbuild-aux
     SUBDIR += gps
     SUBDIR += gpsim
     SUBDIR += gputils
