@@ -1312,6 +1312,7 @@
     SUBDIR += rubygem-rchardet
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-ri_cal
+    SUBDIR += rubygem-rttool
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
