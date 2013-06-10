@@ -106,17 +106,10 @@ OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
 
 # complete list
 COMPLETE_OPTIONS_LIST=	${ALL_OPTIONS}
-.for single in ${OPTIONS_SINGLE}
-COMPLETE_OPTIONS_LIST+=	${OPTIONS_SINGLE_${single}}
-.endfor
-.for radio in ${OPTIONS_RADIO}
-COMPLETE_OPTIONS_LIST+=	${OPTIONS_RADIO_${radio}}
-.endfor
-.for multi in ${OPTIONS_MULTI}
-COMPLETE_OPTIONS_LIST+=	${OPTIONS_MULTI_${multi}}
-.endfor
-.for group in ${OPTIONS_GROUP}
-COMPLETE_OPTIONS_LIST+= ${OPTIONS_GROUP_${group}}
+.for otype in SINGLE RADIO MULTI GROUP
+.  for m in ${OPTIONS_${otype}}
+COMPLETE_OPTIONS_LIST+=	${OPTIONS_${otype}_${m}}
+.  endfor
 .endfor
 
 ## Now create the list of activated options
