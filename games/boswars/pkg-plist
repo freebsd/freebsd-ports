@@ -1,36 +1,4 @@
 bin/boswars
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/scripts/unittype.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/config.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/findlua.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/game.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/index.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/limits.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/magic.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/makeindex.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/mappresentation.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/mapsetup.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/savegame.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/showindex.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/sound.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/triggers.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/ui.html
-%%PORTDOCS%%%%DOCSDIR%%/scripts/ai.html
-%%PORTDOCS%%%%DOCSDIR%%/tolua-copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/stratagus-changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/media.html
-%%PORTDOCS%%%%DOCSDIR%%/lua5-copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/guichan-copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/gpl3.txt
-%%PORTDOCS%%%%DOCSDIR%%/gpl.html
-%%PORTDOCS%%%%DOCSDIR%%/gcclibs-copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/development.html
-%%PORTDOCS%%%%DOCSDIR%%/xiph-copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/README-SDL.txt
 %%DATADIR%%/campaigns/swindler/campaign.lua
 %%DATADIR%%/campaigns/swindler/level01.smp
 %%DATADIR%%/campaigns/swindler/level01.sms
@@ -328,7 +296,6 @@ bin/boswars
 %%DATADIR%%/patches/plain2.lua
 %%DATADIR%%/patches/plain2.png
 %%DATADIR%%/patches/plain4.lua
-%%DATADIR%%/patches/te0.lua
 %%DATADIR%%/patches/plain4.png
 %%DATADIR%%/patches/plain8.lua
 %%DATADIR%%/patches/plain8.png
@@ -338,6 +305,7 @@ bin/boswars
 %%DATADIR%%/patches/rockyMountainR.png
 %%DATADIR%%/patches/smallWetPlain.lua
 %%DATADIR%%/patches/smallWetPlain.png
+%%DATADIR%%/patches/te0.lua
 %%DATADIR%%/patches/te0.png
 %%DATADIR%%/patches/te1.lua
 %%DATADIR%%/patches/te1.png
@@ -705,8 +673,7 @@ bin/boswars
 %%DATADIR%%/units/weakhotspot/hotspot.png
 %%DATADIR%%/units/weakhotspot/hotspot_i.png
 %%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
-@dirrm share/licenses/boswars-2.6.1
-@dirrm share/licenses
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/units/weakhotspot
 @dirrm %%DATADIR%%/units/vehiclefactory
 @dirrm %%DATADIR%%/units/vault
@@ -793,5 +760,3 @@ bin/boswars
 @dirrm %%DATADIR%%/campaigns/swindler
 @dirrm %%DATADIR%%/campaigns
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
