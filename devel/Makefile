@@ -4124,6 +4124,7 @@
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
+    SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rainbow
