@@ -12,6 +12,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q-Audio -- digital audio interface for the Q language
 
+DEPRECATED=	Q-Lang is no longer supported. See lang/pure instead.
+EXPIRATION_DATE=2013-08-10
+
 LIB_DEPENDS=	q.8:${PORTSDIR}/lang/q \
     		jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
