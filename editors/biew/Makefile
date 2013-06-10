@@ -51,9 +51,16 @@ post-patch:
 # Allow it to find definition of `uintmax_t' (required at least for ia64)
 	@${REINPLACE_CMD} -e 's,<sys/types,<stdint,' \
 		${WRKSRC}/biewlib/sysdep/generic/__config.h
-# Fix BTx group of x86 opcodes disasm bug (sf.net bug id 3150304)
+# Fix BTx group of x86 opcodes disasm bug (upstream ticket #44, closed)
 	@${REINPLACE_CMD} -e 's,DisP->codelen++),++DisP->codelen),' \
 		${WRKSRC}/plugins/disasm/ix86/ix86_fun.c
+# Fix inline assembly to make Clang happy (ticket #49)
+	@${REINPLACE_CMD} -e '/srcptr/s,::"g",::"r",' \
+		${WRKSRC}/biewlib/sysdep/ia32/aclib_template.c \
+		${WRKSRC}/biewlib/sysdep/x86_64/aclib_template.c
+	@${REINPLACE_CMD} -E 's,fild|fistp,&s,' \
+		${WRKSRC}/biewlib/sysdep/ia32/cpu_info.c \
+		${WRKSRC}/biewlib/sysdep/x86_64/cpu_info.c
 
 post-build:
 # Convert Russian text files to UTF-8 encoding (doing it in post-build
