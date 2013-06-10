@@ -4385,3 +4385,4 @@ x11-toolkits/ruby-wx||2013-06-07|Has expired: Does not work with Ruby 1.9
 sysutils/userspace-rcu|sysutils/liburcu|2013-06-07|Renamed correctly according to upstream
 mail/mixminion||2013-06-07|Has expired: This port requires python version, we haven't in the ports tree already
 devel/gprbuild-aux|devel/gprbuild|2013-06-10|Has expired: Deprecated in favour of devel/gprbuild
+devel/linuxthreads||2013-06-10|Has expired: Broken for more than 6 month
