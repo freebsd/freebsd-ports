@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-cms
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +13,9 @@ COMMENT=	Content management system built with the Django framework
 LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}south>=0.7.3:${PORTSDIR}/databases/py-south \
-		${PYTHON_PKGNAMEPREFIX}django>=1.3.1:${PORTSDIR}/www/py-django \
+		${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}django-classy-tags>=0.3.4.1:${PORTSDIR}/www/py-django-classy-tags \
-		${PYTHON_PKGNAMEPREFIX}django-mptt>=0.4.2:${PORTSDIR}/www/py-django-mptt \
+		${PYTHON_PKGNAMEPREFIX}django-mptt>=0.5.2:${PORTSDIR}/www/py-django-mptt \
 		${PYTHON_PKGNAMEPREFIX}django-sekizai>=0.6.1:${PORTSDIR}/www/py-django-sekizai \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.90:${PORTSDIR}/www/py-html5lib
 
@@ -27,8 +26,6 @@ OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_MULTI=	DATABASE
 OPTIONS_DEFAULT=SQLITE
 OPTIONS_MULTI_DATABASE=MYSQL PGSQL SQLITE
-
-BROKEN=	fails to build
 
 .include <bsd.port.options.mk>
 
