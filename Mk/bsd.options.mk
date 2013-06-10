@@ -83,41 +83,21 @@ OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
 OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
 PORT_OPTIONS:=		${PORT_OPTIONS:N${opt}}
-.  for single in ${OPTIONS_SINGLE}
-OPTIONS_SINGLE_${single}:=	${OPTIONS_SINGLE_${single}:N${opt}}
-.  endfor
-.  for radio in ${OPTIONS_RADIO}
-OPTIONS_RADIO_${radio}:=	${OPTIONS_RADIO_${radio}:N${opt}}
-.  endfor
-.  for multi in ${OPTIONS_MULTI}
-OPTIONS_MULTI_${multi}:=	${OPTIONS_MULTI_${multi}:N${opt}}
-.  endfor
-.  for group in ${OPTIONS_GROUP}
-OPTIONS_GROUP_${group}:=	${OPTIONS_GROUP_${group}:N${opt}}
+.  for otype in SINGLE RADIO MULTI GROUP
+.    for m in ${OPTIONS_${otype}}
+OPTIONS_${otype}_${m}:=	${OPTIONS_${otype}_${m}:N${opt}}
+.    endfor
 .  endfor
 .endfor
 
 # Remove empty SINGLE/GROUP/RADIO/MULTI
 # Can be empty because of exclude/slaves
-.for single in ${OPTIONS_SINGLE}
-.if empty(OPTIONS_SINGLE_${single})
-OPTIONS_SINGLE:=	${OPTIONS_SINGLE:N${single}}
-.endif
-.endfor
-.for radio in ${OPTIONS_RADIO}
-.if empty(OPTIONS_RADIO_${radio})
-OPTIONS_RADIO:=	${OPTIONS_RADIO:N${radio}}
-.endif
-.endfor
-.for group in ${OPTIONS_GROUP}
-.if empty(OPTIONS_GROUP_${group})
-OPTIONS_GROUP:=	${OPTIONS_GROUP:N${group}}
-.endif
-.endfor
-.for multi in ${OPTIONS_MULTI}
-.if empty(OPTIONS_MULTI_${multi})
-OPTIONS_MULTI:=	${OPTIONS_MULTI:N${multi}}
-.endif
+.for otype in SINGLE RADIO MULTI GROUP
+.  for m in ${OPTIONS_${otype}}
+.    if empty(OPTIONS_${otype}_${m})
+OPTIONS_${otype}:=	${OPTIONS_${otype}:N${m}}
+.    endif
+.  endfor
 .endfor
 
 # Sort options
