@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}-lang/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q -- equational programming language
 
-DEPRECATED=	Q-Lang is no longer supported. See lang/pure instead.
+DEPRECATED=	Q-Lang is no longer supported. See lang/pure instead
 EXPIRATION_DATE=2013-08-10 
 
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick \
