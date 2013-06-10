@@ -6222,10 +6222,10 @@ showconfig:
 		@${ECHO_MSG} "====> ${${m}_DESC}${${otype}_EOL}"
 .    endif
 .    for opt in ${OPTIONS_${otype}_${m}}
-.      if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "     ${opt}=off"
-.      else
+.      if ${PORT_OPTIONS:M${opt}}
 	@${ECHO_MSG} -n "     ${opt}=on"
+.      else
+	@${ECHO_MSG} -n "     ${opt}=off"
 .      endif
 .      if !empty(${opt}_DESC)
 	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
@@ -6278,6 +6278,14 @@ rmconfig-recursive:
 .endif # rmconfig-recursive
 
 .if !target(pretty-print-config)
+MULTI_START=	[
+MULTI_END=	]
+GROUP_START=	[
+GROUP_END=	]
+SINGLE_START=	(
+SINGLE_END=	)
+RADIO_START=	(
+RADIO_END=	)
 pretty-print-config:
 .for opt in ${ALL_OPTIONS}
 .  if empty(PORT_OPTIONS:M${opt})
@@ -6286,54 +6294,21 @@ pretty-print-config:
 	@${ECHO_MSG} -n "+${opt} "
 .  endif
 .endfor
-.for multi in ${OPTIONS_MULTI}
-	@${ECHO_MSG} -n "${multi}[ "
-.  for opt in ${OPTIONS_MULTI_${multi}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "-${opt} "
-.    else
+.for otype in MULTI GROUP SINGLE RADIO
+.  for m in ${OPTIONS_${otype}}
+	@${ECHO_MSG} -n "${m}${${otype}_START} "
+.    for opt in ${OPTIONS_${otype}_${m}}
+.    if ${PORT_OPTIONS:M${opt}}
 	@${ECHO_MSG} -n "+${opt} "
+.    else
+	@${ECHO_MSG} -n "-${opt} "
 .    endif
 .  endfor
-	@${ECHO_MSG} -n "] "
-.endfor
-.for single in ${OPTIONS_SINGLE}
-	@${ECHO_MSG} -n "${single}( "
-.  for opt in ${OPTIONS_SINGLE_${single}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "-${opt} "
-.    else
-	@${ECHO_MSG} -n "+${opt} "
-.    endif
+	@${ECHO_MSG} -n "${${otype}_END} "
 .  endfor
-	@${ECHO_MSG} -n ") "
 .endfor
-.for radio in ${OPTIONS_RADIO}
-	@${ECHO_MSG} -n "${radio}( "
-.  for opt in ${OPTIONS_RADIO_${radio}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "-${opt} "
-.    else
-	@${ECHO_MSG} -n "+${opt} "
-.    endif
-.  endfor
-	@${ECHO_MSG} -n ") "
-.endfor
-.for group in ${OPTIONS_GROUP}
-	@${ECHO_MSG} -n "${group}[ "
-.  for opt in ${OPTIONS_GROUP_${group}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "-${opt} "
-.    else
-	@${ECHO_MSG} -n "+${opt} "
-.    endif
-.  endfor
-	@${ECHO_MSG} -n "] "
-.endfor
-.undef multi
-.undef single
-.undef radio
-.undef group
+.undef otype
+.undef m
 .undef opt
 	@${ECHO_MSG} ""
 .endif # pretty-print-config
