@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cpm(1)
-# Date created:		25 December 1994
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
 #
 
@@ -17,6 +14,8 @@ COMMENT=	Utility to transfer files from/to CP/M (R) diskettes
 
 WRKSRC=		${WRKDIR}/cpm
 MAN1=		cpm.1
+
+USE_GCC=	any
 
 #
 # need our own build target to pass PREFIX down to the make command
