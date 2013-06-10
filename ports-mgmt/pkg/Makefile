@@ -63,6 +63,7 @@ MLINKS=	pkg-delete.8 pkg-remove.8 \
 
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} == devel
+NO_LATEST_LINK=	yes
 IGNORE=	WITH_PKGNG is defined to 'devel', this version is the stable one
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
