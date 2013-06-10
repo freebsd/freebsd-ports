@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	mail
 MASTER_SITES=	http://cdn.bitbucket.org/vstakhov/rspamd/downloads/
 
