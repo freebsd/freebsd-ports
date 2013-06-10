@@ -49,9 +49,7 @@
 .if !defined(OPTIONSMKINCLUDED)
 OPTIONSMKINCLUDED=	bsd.options.mk
 
-OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
-OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 
 #ALL_OPTIONS=	DOCS \
 #		NLS
@@ -178,7 +176,6 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
 
-# XXX To remove once UNIQUENAME will be removed
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_SET}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
@@ -191,37 +188,13 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 .  for opt in ${${UNIQUENAME}_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
-# XXX To remove once UNIQUENAME will be removed
 
-## Set the options specified per-port (set by user in make.conf)
-.  for opt in ${${OPTIONS_NAME}_SET}
-.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
-PORT_OPTIONS+=	${opt}
-.    endif
-.  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-
-## Unset the options excluded per-port (set by user in make.conf)
-.  for opt in ${${OPTIONS_NAME}_UNSET}
-PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
-.  endfor
-
-# XXX to remove once UNIQUENAME is removed
 ## options files (from dialog)
 .  if exists(${OPTIONSFILE}) && !make(rmconfig)
 .  include "${OPTIONSFILE}"
 .  endif
 .  if exists(${OPTIONSFILE}.local)
 .  include "${OPTIONSFILE}.local"
-.  endif
-# XXX to remove once UNIQUENAME is removed
-
-## options files (from dialog)
-.  if exists(${OPTIONS_FILE}) && !make(rmconfig)
-.  include "${OPTIONS_FILE}"
-.  endif
-.  if exists(${OPTIONS_FILE}.local)
-.  include "${OPTIONS_FILE}.local"
 .  endif
 
 ### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
