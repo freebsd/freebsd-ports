@@ -28,7 +28,7 @@ USE_GCC=	any
 USE_TK=		84+
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-magick="`pkg-config ImageMagick --libs`" \
