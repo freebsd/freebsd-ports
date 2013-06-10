@@ -1147,7 +1147,6 @@
     SUBDIR += linux-f10-sdl12
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
-    SUBDIR += linuxthreads
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
