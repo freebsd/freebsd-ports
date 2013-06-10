@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trac
-PORTVERSION=	0.12.3
+PORTVERSION=	1.0.1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -11,10 +11,9 @@ DISTNAME=	Trac-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
-		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
-		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.6:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.5:${PORTSDIR}/devel/py-babel
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=		SILVERCITY DOCUTILS PYGMENTS TZ PGSQL SVN
 OPTIONS_DEFAULT=	SILVERCITY DOCUTILS PYGMENTS TZ SVN
@@ -25,7 +24,7 @@ TZ_DESC=		Process Time Zones
 
 CONFLICTS=	ja-trac-[0-9]*
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.7-
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Trac
 PYDISTUTILS_NOEGGINFO=	yes
@@ -74,19 +73,22 @@ x-generate-plist:
 		' | ${TR} -s '\n') > temp-pkg-plist
 
 pre-install:
-	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/cgi-bin/trac.fcgi \
-	    ${WRKSRC}/cgi-bin/trac.cgi
+	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/contrib/cgi-bin/trac.fcgi \
+	    ${WRKSRC}/contrib/cgi-bin/trac.cgi
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-. for d in rpm workflow
-	@${MKDIR} ${EXAMPLESDIR}/${d}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/${d}/* ${EXAMPLESDIR}/${d}/
+	@${MKDIR} ${EXAMPLESDIR}/sample-plugins
+	@${MKDIR} ${EXAMPLESDIR}/rpm
+	@${INSTALL_DATA} ${WRKSRC}/contrib/rpm/* ${EXAMPLESDIR}/rpm
+	@${FIND} ${WRKSRC}/contrib -type f -maxdepth 1 -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/ \;
+. for d in permissions workflow
+	@${MKDIR} ${EXAMPLESDIR}/sample-plugins/${d}
+	@${INSTALL_DATA} ${WRKSRC}/sample-plugins/${d}/* ${EXAMPLESDIR}/sample-plugins/${d}/
 	@${RM} -rf ${WRKSRC}/contrib/${d}
 . endfor
-	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample-plugins/*.py ${EXAMPLESDIR}/sample-plugins/
 	@${MKDIR} ${DATADIR}/cgi-bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/cgi-bin/* ${DATADIR}/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi-bin/* ${DATADIR}/cgi-bin
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}

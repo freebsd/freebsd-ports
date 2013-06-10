@@ -1,31 +1,41 @@
-bin/trac-admin
-bin/tracd
 %%DATADIR%%/cgi-bin/trac.cgi
 %%DATADIR%%/cgi-bin/trac.fcgi
-@dirrm %%DATADIR%%/cgi-bin
-@dirrm %%DATADIR%%
-%%EXAMPLESDIR%%/rpm/installscript
-%%EXAMPLESDIR%%/rpm/makerpm
-%%EXAMPLESDIR%%/workflow/README
-%%EXAMPLESDIR%%/workflow/enterprise-workflow.ini
-%%EXAMPLESDIR%%/workflow/migrate_original_to_basic.py
-%%EXAMPLESDIR%%/workflow/opensource-workflow.ini
-%%EXAMPLESDIR%%/workflow/showworkflow
-%%EXAMPLESDIR%%/workflow/simple-workflow.ini
-%%EXAMPLESDIR%%/workflow/trivial-workflow.ini
-%%EXAMPLESDIR%%/workflow/workflow_parser.py
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/bugzilla2trac.py
 %%EXAMPLESDIR%%/checkwiki.py
 %%EXAMPLESDIR%%/emailfilter.py
 %%EXAMPLESDIR%%/htdigest.py
 %%EXAMPLESDIR%%/htpasswd.py
+%%EXAMPLESDIR%%/l10n_diff_index.py
+%%EXAMPLESDIR%%/l10n_reset_en_GB.py
+%%EXAMPLESDIR%%/l10n_revert_lineno_conflicts.py
 %%EXAMPLESDIR%%/migrateticketmodel.py
+%%EXAMPLESDIR%%/rpm/installscript
+%%EXAMPLESDIR%%/rpm/makerpm
+%%EXAMPLESDIR%%/sample-plugins/HelloWorld.py
+%%EXAMPLESDIR%%/sample-plugins/Timestamp.py
+%%EXAMPLESDIR%%/sample-plugins/milestone_to_version.py
+%%EXAMPLESDIR%%/sample-plugins/permissions/debug_perm.py
+%%EXAMPLESDIR%%/sample-plugins/permissions/public_wiki_policy.py
+%%EXAMPLESDIR%%/sample-plugins/permissions/vulnerability_tickets.py
+%%EXAMPLESDIR%%/sample-plugins/revision_links.py
+%%EXAMPLESDIR%%/sample-plugins/workflow/CodeReview.py
+%%EXAMPLESDIR%%/sample-plugins/workflow/DeleteTicket.py
+%%EXAMPLESDIR%%/sample-plugins/workflow/MilestoneOperation.py
+%%EXAMPLESDIR%%/sample-plugins/workflow/StatusFixer.py
+%%EXAMPLESDIR%%/sample-plugins/workflow/VoteOperation.py
+%%EXAMPLESDIR%%/sample-plugins/workflow/enterprise-review-workflow.ini
 %%EXAMPLESDIR%%/sourceforge2trac.py
 %%EXAMPLESDIR%%/trac-pre-commit-hook
 %%EXAMPLESDIR%%/trac-svn-hook
 %%EXAMPLESDIR%%/trac-svn-post-commit-hook.cmd
-@dirrm %%EXAMPLESDIR%%/workflow
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+bin/trac-admin
+bin/tracd
+@dirrm %%DATADIR%%/cgi-bin
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%/sample-plugins/workflow
+@dirrm %%EXAMPLESDIR%%/sample-plugins/permissions
+@dirrm %%EXAMPLESDIR%%/sample-plugins
 @dirrm %%EXAMPLESDIR%%/rpm
 @dirrm %%EXAMPLESDIR%%
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
