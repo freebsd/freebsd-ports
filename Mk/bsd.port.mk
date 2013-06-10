@@ -6195,6 +6195,9 @@ config-conditional: pre-config
 
 .if !target(showconfig)
 .include "${PORTSDIR}/Mk/bsd.options.desc.mk"
+MULTI_EOL=	": you have to choose at least one of them"
+SINGLE_EOL=	": you have to select exactly one of them"
+RADIO_EOL=	": you can only select none or one of them"
 showconfig:
 .if !empty(ALL_OPTIONS) || !empty(OPTIONS_SINGLE) || !empty(OPTIONS_MULTI) || !empty(OPTIONS_RADIO) || !empty(OPTIONS_GROUP)
 	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}":
@@ -6209,72 +6212,31 @@ showconfig:
 .  endif
 	@${ECHO_MSG} ""
 .endfor
+
 #multi and conditional multis
-.for multi in ${OPTIONS_MULTI}
-	@${ECHO_MSG} "====> Options available for the multi ${multi}: you have to choose at least one of them"
-.  for opt in ${OPTIONS_MULTI_${multi}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "     ${opt}=off"
+.for otype in MULTI GROUP SINGLE RADIO
+.  for m in ${OPTIONS_${otype}}
+.    if empty(${m}_DESC)
+		@${ECHO_MSG} "====> Options available for the ${otype:L} ${m}${${otype}_EOL}"
 .    else
-	@${ECHO_MSG} -n "     ${opt}=on"
+		@${ECHO_MSG} "====> ${${m}_DESC}${${otype}_EOL}"
 .    endif
-.    if !empty(${opt}_DESC)
-	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
-.    endif
-	@${ECHO_MSG} ""
-.  endfor
-.endfor
-#single and conditional singles
-
-.for single in ${OPTIONS_SINGLE}
-	@${ECHO_MSG} "====> Options available for the single ${single}: you have to select exactly one of them"
-.  for opt in ${OPTIONS_SINGLE_${single}}
-.    if empty(PORT_OPTIONS:M${opt})
+.    for opt in ${OPTIONS_${otype}_${m}}
+.      if empty(PORT_OPTIONS:M${opt})
 	@${ECHO_MSG} -n "     ${opt}=off"
-.    else
+.      else
 	@${ECHO_MSG} -n "     ${opt}=on"
-.    endif
-.    if !empty(${opt}_DESC)
+.      endif
+.      if !empty(${opt}_DESC)
 	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
-.    endif
+.      endif
 	@${ECHO_MSG} ""
+.    endfor
 .  endfor
 .endfor
 
-.for radio in ${OPTIONS_RADIO}
-	@${ECHO_MSG} "====> Options available for the radio ${radio}: you can only select none or one of them"
-.  for opt in ${OPTIONS_RADIO_${radio}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "     ${opt}=off"
-.    else
-	@${ECHO_MSG} -n "     ${opt}=on"
-.    endif
-.    if !empty(${opt}_DESC)
-	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
-.    endif
-	@${ECHO_MSG} ""
-.  endfor
-.endfor
-
-.for group in ${OPTIONS_GROUP}
-	@${ECHO_MSG} "====> Options available for the group ${group}"
-.  for opt in ${OPTIONS_GROUP_${group}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "     ${opt}=off"
-.    else
-	@${ECHO_MSG} -n "     ${opt}=on"
-.    endif
-.    if !empty(${opt}_DESC)
-	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
-.    endif
-	@${ECHO_MSG} ""
-.  endfor
-.endfor
-
-.undef multi
-.undef single
-.undef radio
-.undef group
+.undef otype
+.undef m
 .undef opt
 	@${ECHO_MSG} "===> Use 'make config' to modify these settings"
 .endif
