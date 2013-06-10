@@ -6,3 +6,9 @@ etc/renrot/tags.conf.sample
 @dirrm etc/renrot
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/renrot/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/renrot
+%%SITE_PERL%%/Image/RenRot/Config.pm
+%%SITE_PERL%%/Image/RenRot/FileUtil.pm
+%%SITE_PERL%%/Image/RenRot/Logging.pm
+%%SITE_PERL%%/Image/RenRot/TimeUtil.pm
+%%SITE_PERL%%/Image/RenRot/Util.pm
+@dirrm %%SITE_PERL%%/Image/RenRot

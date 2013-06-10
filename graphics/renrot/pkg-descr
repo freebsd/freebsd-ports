@@ -1,13 +1,13 @@
 RenRot is utility written in Perl, aiming to carry out different processing
 tasks upon the image files (especially those containing EXIF data).
 
-RenRot renames files according to the flexible name template (allowing
+RenRot renames files according to the flexible name template (allowing the
 DateTimeOriginal and FileModifyDate EXIF tags, if they exist, otherwise, the
 name will be set according to the current time stamp).  Furthermore, RenRot
 can aggregate files according to the shooting time period.
 
 Additionally, it can losslessly rotate JPEGs and their thumbnails, based on
-Orientation EXIF tag, or given angle.
+the Orientation EXIF tag, or a given angle.
 
 The script can also put commentary into the Commentary and UserComment tags.
 Personal details can be specified via XMP tags defined in a configuration
