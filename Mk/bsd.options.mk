@@ -51,9 +51,6 @@ OPTIONSMKINCLUDED=	bsd.options.mk
 
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 
-#ALL_OPTIONS=	DOCS \
-#		NLS
-
 GLOBAL_OPTIONS=	DOCS NLS EXAMPLES IPV6
 
 # Set the default values for the global options, as defined by portmgr
@@ -85,18 +82,10 @@ OPTIONS_DEFAULT+=	${opt}
 .endif
 .endfor
 
-# Append options set by the port Makefile
-.for opt in ${OPTIONS_DEFINE}
-ALL_OPTIONS+=	${opt}
-.endfor
-
-ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
-OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
-
 # Remove options the port maintainer doesn't want
 .for opt in ${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} ${OPTIONS_SLAVE}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
-ALL_OPTIONS:=		${ALL_OPTIONS:N${opt}}
+OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
 PORT_OPTIONS:=		${PORT_OPTIONS:N${opt}}
 .  for single in ${OPTIONS_SINGLE}
 OPTIONS_SINGLE_${single}:=	${OPTIONS_SINGLE_${single}:N${opt}}
@@ -134,6 +123,10 @@ OPTIONS_GROUP:=	${OPTIONS_GROUP:N${group}}
 OPTIONS_MULTI:=	${OPTIONS_MULTI:N${multi}}
 .endif
 .endfor
+
+# Sort options
+ALL_OPTIONS:=	${OPTIONS_DEFINE:O:u}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:O:u}
 
 # complete list
 COMPLETE_OPTIONS_LIST=	${ALL_OPTIONS}
@@ -282,15 +275,7 @@ WITHOUT_NLS=	yes
 .endif
 
 .if defined(NO_OPTIONS_SORT)
-_SORTED_OPTIONS:=	${ALL_OPTIONS}
-ALL_OPTIONS:=
-.for opt in ${OPTIONS_DEFINE}
-.if ${_SORTED_OPTIONS:M${opt}}
-ALL_OPTIONS+=	${opt}
-.endif
-.endfor
-.undef opt
-.undef _SORTED_OPTIONS
+ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
 
 ### to be removed once old OPTIONS disappear
