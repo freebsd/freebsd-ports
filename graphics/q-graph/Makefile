@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	q-
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q-Graph -- graph library and editor for the Q language
 
-DEPRECATED=	Q-Lang is no longer supported. See lang/pure instead.
+DEPRECATED=	Q-Lang is no longer supported. See lang/pure instead
 EXPIRATION_DATE=2013-08-10 
 
 LIB_DEPENDS=	q.8:${PORTSDIR}/lang/q
