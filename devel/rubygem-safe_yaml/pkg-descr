@@ -1,0 +1,4 @@
+Parse YAML safely, without that pesky arbitrary object deserialization
+vulnerability
+
+WWW: http://dtao.github.io/safe_yaml/
