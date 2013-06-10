@@ -83,53 +83,13 @@ fake-pkg:
 .endfor
 	@${ECHO_CMD} "]" >> ${MANIFESTF}
 	@${ECHO_CMD} -n "options: {" >> ${MANIFESTF}
-.for opt in ${ALL_OPTIONS}
+.for opt in ${COMPLETE_OPTIONS_LIST}
 .if empty(PORT_OPTIONS:M${opt})
 	@${ECHO_CMD} -n "${opt}: off," >> ${MANIFESTF}
 .else
 	@${ECHO_CMD} -n "${opt}: on," >> ${MANIFESTF}
 .endif
 .endfor
-.for multi in ${OPTIONS_MULTI}
-.  for opt in ${OPTIONS_MULTI_${multi}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "${opt}: off, " >> ${MANIFESTF}
-.    else
-	@${ECHO_MSG} -n "${opt}: on, " >> ${MANIFESTF}
-.    endif
-.  endfor
-.endfor
-.for single in ${OPTIONS_SINGLE}
-.  for opt in ${OPTIONS_SINGLE_${single}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "${opt}: off, " >> ${MANIFESTF}
-.    else
-	@${ECHO_MSG} -n "${opt}: on, " >> ${MANIFESTF}
-.    endif
-.  endfor
-.endfor
-.for radio in ${OPTIONS_RADIO}
-.  for opt in ${OPTIONS_RADIO_${radio}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "${opt}: off, " >> ${MANIFESTF}
-.    else
-	@${ECHO_MSG} -n "${opt}: on, " >> ${MANIFESTF}
-.    endif
-.  endfor
-.endfor
-.for group in ${OPTIONS_GROUP}
-.  for opt in ${OPTIONS_GROUP_${group}}
-.    if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "${opt}: off, " >> ${MANIFESTF}
-.    else
-	@${ECHO_MSG} -n "${opt}: on, " >> ${MANIFESTF}
-.    endif
-.  endfor
-.endfor
-.undef multi
-.undef single
-.undef radio
-.undef group
 .undef opt
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
 	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
