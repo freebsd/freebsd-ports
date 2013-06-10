@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bleach
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ COMMENT=	An easy whitelist-based HTML-sanitizing tool for Python
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.95:${PORTSDIR}/www/py-html5lib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib==0.95:${PORTSDIR}/www/py-html5lib
 
 USE_GITHUB=		yes
 USE_PYTHON=		yes
@@ -19,12 +19,12 @@ USE_PYDISTUTILS=	easy_install
 
 GH_ACCOUNT=	jsocol
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	ab7c8b3
+GH_COMMIT=	baf1eac
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		nosetests:${PORTSDIR}/devel/py-nose \
 
 regression-test: build
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} nosetests
-	
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+
 .include <bsd.port.mk>
