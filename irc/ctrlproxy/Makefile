@@ -22,6 +22,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 
 MAN1=		ctrlproxy.1
 MAN5=		ctrlproxy_config.5
