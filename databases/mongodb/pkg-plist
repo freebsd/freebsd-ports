@@ -66,6 +66,7 @@ include/mongo/client/model.h
 include/mongo/client/parallel.h
 include/mongo/client/redef_macros.h
 include/mongo/client/sasl_client_authenticate.h
+include/mongo/client/sasl_client_session.h
 include/mongo/client/syncclusterconnection.h
 include/mongo/client/undef_macros.h
 include/mongo/db/auth/action_set.h
@@ -323,7 +324,6 @@ include/mongo/util/fail_point_service.h
 include/mongo/util/file.h
 include/mongo/util/file_allocator.h
 include/mongo/util/goodies.h
-include/mongo/util/gsasl_session.h
 include/mongo/util/hashtab.h
 include/mongo/util/heapcheck.h
 include/mongo/util/hex.h
@@ -360,6 +360,7 @@ include/mongo/util/queue.h
 include/mongo/util/ramlog.h
 include/mongo/util/safe_num.h
 include/mongo/util/scopeguard.h
+include/mongo/util/sequence_util.h
 include/mongo/util/signal_handlers.h
 include/mongo/util/stack_introspect.h
 include/mongo/util/stacktrace.h
