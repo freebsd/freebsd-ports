@@ -6078,37 +6078,17 @@ D4P_ENV+=	PKGHELP="${PKGHELP}"
 .for opt in ${ALL_OPTIONS}
 D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
 .endfor
-.for multi in ${OPTIONS_MULTI}
-D4P_ENV+=	OPTIONS_MULTI_${multi}="${OPTIONS_MULTI_${multi}}" \
-		${multi}_DESC=""${${multi}_DESC:Q}""
-.  for opt in ${OPTIONS_MULTI_${multi}}
+.for otype in MULTI GROUP SINGLE RADIO
+.  for m in ${OPTIONS_${otype}}
+D4P_ENV+=	OPTIONS_${otype}_${m}="${OPTIONS_${otype}_${m}}" \
+		${m}_DESC=""${${m}_DESC:Q}""
+.    for opt in ${OPTIONS_${otype}_${m}}
 D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
+.    endfor
 .  endfor
 .endfor
-.for single in ${OPTIONS_SINGLE}
-D4P_ENV+=	OPTIONS_SINGLE_${single}="${OPTIONS_SINGLE_${single}}" \
-		${single}_DESC=""${${single}_DESC:Q}""
-.  for opt in ${OPTIONS_SINGLE_${single}}
-D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
-.  endfor
-.endfor
-.for radio in ${OPTIONS_RADIO}
-D4P_ENV+=	OPTIONS_RADIO_${radio}="${OPTIONS_RADIO_${radio}}" \
-		${radio}_DESC=""${${radio}_DESC:Q}""
-.  for opt in ${OPTIONS_RADIO_${radio}}
-D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
-.  endfor
-.endfor
-.for group in ${OPTIONS_GROUP}
-D4P_ENV+=	OPTIONS_GROUP_${group}="${OPTIONS_GROUP_${group}}" \
-		${group}_DESC=""${${group}_DESC:Q}""
-.  for opt in ${OPTIONS_GROUP_${group}}
-D4P_ENV+=	 ${opt}_DESC=""${${opt}_DESC:Q}""
-.  endfor
-.endfor
-.undef multi
-.undef single
-.undef group
+.undef m
+.undef otype
 .undef opt
 .endif # pre-config
 
