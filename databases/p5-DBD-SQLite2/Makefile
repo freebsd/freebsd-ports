@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-DBD-SQLite
-# Date created:				2002/03/30
-# Whom:					nork@cityfujisawa.ne.jp
-#
+# Created by: nork@cityfujisawa.ne.jp
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-SQLite2
-PORTVERSION=	0.33
+PORTVERSION=	0.36
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
