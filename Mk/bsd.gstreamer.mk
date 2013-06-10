@@ -60,8 +60,6 @@ GST1_MINOR_VERSION=	.0
 GST1_SHLIB_VERSION=	0
 GST1_MINIMAL_VERSION=	.5
 
-MAKE_ENV+=	GI_SCANNER_DISABLE_CACHE=yes
-
 #
 # missing base: alsa ivorbisdec
 # missing good: pulseaudio(need newer pulse version)
