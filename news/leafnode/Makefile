@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.8
-PORTREVISION=	2
+DISTVERSION=	1.11.9
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
