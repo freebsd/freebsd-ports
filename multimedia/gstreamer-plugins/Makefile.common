@@ -281,7 +281,7 @@ gst_faad_PLIST_FILES=	${GST_LIB_DIR}/libgstfaad.la \
 gst_faad_DIST=	bad
 
 # flac
-gst_flac_LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+gst_flac_LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 gst_flac_PLIST_FILES=	${GST_LIB_DIR}/libgstflac.la \
 			${GST_LIB_DIR}/libgstflac.so
 
