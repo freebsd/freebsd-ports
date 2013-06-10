@@ -1,2 +1,4 @@
-SHA256 (turnserver-1.8.6.1.tar.gz) = 146472da46121cb338b6588af34de7f1fca0850884d6ecae9e1262b2f30301f0
-SIZE (turnserver-1.8.6.1.tar.gz) = 211963
+SHA256 (turnserver-1.8.6.3.tar.gz) = 3c7dec04dfb3d064a5fc2f85d162270141fc801740566979d8fdc92548fa88ea
+SIZE (turnserver-1.8.6.3.tar.gz) = 204809
+SHA256 (turn.extra.docs-1.8.4.2.tar.gz) = c93c1195ce053a9ce3e44c3b5d9534d2d15cabb7a76854ea3ad69e17ca4c5a8c
+SIZE (turn.extra.docs-1.8.4.2.tar.gz) = 465768
