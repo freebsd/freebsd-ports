@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.5400
+PORTVERSION=	0.5600
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARSCHAP
@@ -38,6 +38,7 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP::Control::PersistentSearch.3 \
 		Net::LDAP::Control::PostRead.3 \
 		Net::LDAP::Control::PreRead.3 \
+		Net::LDAP::Control::Relax.3 \
 		Net::LDAP::Control::ProxyAuth.3 \
 		Net::LDAP::Control::Sort.3 \
 		Net::LDAP::Control::SortResult.3 \
