@@ -1085,6 +1085,7 @@
     SUBDIR += libredblack
     SUBDIR += libregf
     SUBDIR += librelp
+    SUBDIR += librest
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libserver
