@@ -76,7 +76,6 @@ NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
 .if exists(${PKG_BIN})
 NB_NEWPKGS!=	${PKG_INFO} -aq | wc -l
 .else
-LATEST_LINK=	pkg-devel
 NB_NEWPKGS=	0
 .endif
 # Only show the pre-everything notice if they have not already
@@ -102,6 +101,8 @@ pre-everything::
 
 .endif
 .endif
+.else
+LATEST_LINK=	pkg-devel
 .endif
 
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
