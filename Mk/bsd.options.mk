@@ -49,7 +49,9 @@
 .if !defined(OPTIONSMKINCLUDED)
 OPTIONSMKINCLUDED=	bsd.options.mk
 
+OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
+OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 
 #ALL_OPTIONS=	DOCS \
 #		NLS
@@ -176,6 +178,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
 
+# XXX To remove once UNIQUENAME will be removed
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_SET}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
@@ -188,13 +191,37 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 .  for opt in ${${UNIQUENAME}_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
+# XXX To remove once UNIQUENAME will be removed
 
+## Set the options specified per-port (set by user in make.conf)
+.  for opt in ${${OPTIONS_NAME}_SET}
+.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
+PORT_OPTIONS+=	${opt}
+.    endif
+.  endfor
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+
+## Unset the options excluded per-port (set by user in make.conf)
+.  for opt in ${${OPTIONS_NAME}_UNSET}
+PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.  endfor
+
+# XXX to remove once UNIQUENAME is removed
 ## options files (from dialog)
 .  if exists(${OPTIONSFILE}) && !make(rmconfig)
 .  include "${OPTIONSFILE}"
 .  endif
 .  if exists(${OPTIONSFILE}.local)
 .  include "${OPTIONSFILE}.local"
+.  endif
+# XXX to remove once UNIQUENAME is removed
+
+## options files (from dialog)
+.  if exists(${OPTIONS_FILE}) && !make(rmconfig)
+.  include "${OPTIONS_FILE}"
+.  endif
+.  if exists(${OPTIONS_FILE}.local)
+.  include "${OPTIONS_FILE}.local"
 .  endif
 
 ### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
@@ -306,51 +333,10 @@ WITH_${opt}:=  true
 .endif
 .      undef opt
 .endfor
+.endif
 ###
-
-.for opt in ${COMPLETE_OPTIONS_LIST}
-# PLIST_SUB
-PLIST_SUB?=
-.  if defined(OPTIONS_SUB)
-.    if ! ${PLIST_SUB:M${opt}=*}
-.      if ${PORT_OPTIONS:M${opt}}
-PLIST_SUB:=	${PLIST_SUB} ${opt}=""
-.      else
-PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
-.      endif
-.    endif
-.  endif
-
-.  if ${PORT_OPTIONS:M${opt}}
-.    if defined(${opt}_CONFIGURE_ENABLE)
-CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
-.    endif
-.    if defined(${opt}_CONFIGURE_ON)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
-.    endif
-.    for flags in CFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ENV USES DISTFILES
-.      if defined(${opt}_${flags})
-${flags}+=	${${opt}_${flags}}
-.      endif
-.    endfor
-.    for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
-.      if defined(${opt}_${deptype}_DEPENDS)
-${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
-.      endif
-.    endfor
-.  else
-.    if defined(${opt}_CONFIGURE_ENABLE)
-CONFIGURE_ARGS+=	--disable-${${opt}_CONFIGURE_ENABLE}
-.    endif
-.    if defined(${opt}_CONFIGURE_OFF)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
-.    endif
-.  endif
-.endfor
 
 _OPTIONS_WITHOUT_GLOBALS:=	${COMPLETE_OPTIONS_LIST}
 .for opt in ${GLOBAL_OPTIONS}
 _OPTIONS_WITHOUT_GLOBALS:=	${_OPTIONS_WITHOUT_GLOBALS:N${opt}}
 .endfor
-
-.endif
