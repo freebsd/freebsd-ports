@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.69
+PORTVERSION=	5.1.70
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -72,17 +72,9 @@ BROKEN=		Does not compile on arm
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
-.if defined(WITH_LINUXTHREADS)
-CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
-CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
-CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
-CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
-LIB_DEPENDS+=	lthread:${PORTSDIR}/devel/linuxthreads
-CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
-.else
+
 CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
-.endif
 
 .if defined(BUILD_OPTIMIZED)
 CFLAGS+=	-O3 -fno-omit-frame-pointer
@@ -140,7 +132,6 @@ pre-fetch:
 	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections"
 	@${ECHO} "				(define WITHOUT_YASSL for backward compatibility)."
-	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
 	@${ECHO} "				(try it if you use libpthread)."
 	@${ECHO} "	WITH_FAST_MUTEXES=yes	Replace mutexes with spinlocks."
