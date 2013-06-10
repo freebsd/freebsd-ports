@@ -76,11 +76,7 @@ OPTIONS_DEFINE+=	${opt}
 .endfor
 
 # Add per arch defaults
-.for opt in ${OPTIONS_DEFAULT_${ARCH}}
-.if empty(OPTIONS_DEFAULT:M${opt})
-OPTIONS_DEFAULT+=	${opt}
-.endif
-.endfor
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
 
 # Remove options the port maintainer doesn't want
 .for opt in ${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} ${OPTIONS_SLAVE}
