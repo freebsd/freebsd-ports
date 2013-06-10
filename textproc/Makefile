@@ -1290,6 +1290,7 @@
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-formosa
     SUBDIR += rubygem-heredoc_unindent
+    SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
