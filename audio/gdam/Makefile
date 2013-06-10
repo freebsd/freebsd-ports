@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdam
-# Date created:				6th Nov 2003
-# Whom:					Pav Lucistnik <pav@oook.cz>
-#
+# Created by: Pav Lucistnik <pav@oook.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	gdam
 PORTVERSION=	0.942
@@ -13,6 +9,9 @@ MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	DJ mixing software suitable for live performances
+
+DEPRECATED=	Broken for a while
+EXPIRATION_DATE=	2013-07-10
 
 BUILD_DEPENDS=	${LOCALBASE}/include/xmms/plugin.h:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
