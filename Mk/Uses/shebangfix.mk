@@ -7,6 +7,10 @@
 # Feature:	shebangfix
 # Usage:	USES=shebangfix
 #
+# To define that the file to modify are: ${WRKSRC}/path1/file and all the .pl files in ${WRKSRC}/path2:
+#
+# SHEBANG_FILES=	path1/file path2/*.pl
+#
 # To define new shebang scheme, in the port Makefile add:
 #
 # SHEBANG_LANG=	lua
