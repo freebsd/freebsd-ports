@@ -1,0 +1,8 @@
+librest is a library that was designed to make it easier to access RESTful
+web services.
+
+It comprises of two parts: the first aims to make it easier to make requests
+by providing a wrapper around libsoup, the second aids with XML parsing by
+wrapping libxml2.
+
+WWW: https://live.gnome.org/Librest
