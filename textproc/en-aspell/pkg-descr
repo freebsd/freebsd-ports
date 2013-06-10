@@ -1,7 +1,3 @@
 Aspell English dictionaries.
 
-Note: if you have installed textproc/aspell, English dictionaries have already
-      been installed; this port is only useful if you had previously installed
-      textproc/aspell-without-dicten.
-
 WWW: http://aspell.sourceforge.net/
