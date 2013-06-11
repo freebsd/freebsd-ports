@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XmBibTeX
-# Date created:				06 Nov 1997
-# Whom:					Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmbibtex
 PORTVERSION=	1.7
@@ -13,9 +9,9 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/tex
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A reference manager based on the BibTeX file format
+COMMENT=	Reference manager based on the BibTeX file format
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
