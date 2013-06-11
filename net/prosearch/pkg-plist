@@ -116,7 +116,5 @@
 @dirrm %%SEARCHDIR%%/example
 @dirrm %%SEARCHDIR%%/lib
 @dirrm %%SEARCHDIR%%/t
-@dirrmtry %%SEARCHDIR%%/tmp
-@dirrmtry %%SEARCHDIR%%/var
 @dirrmtry %%SEARCHDIR%%/web
 @dirrmtry %%SEARCHDIR%%
