@@ -1,14 +1,9 @@
-# New ports collection makefile for:	django-mptt
-# Date created:				2011-02-16
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	django-mptt
 PORTVERSION=	0.5.4
 CATEGORIES=	www python
-MASTER_SITES=	https://github.com/django-mptt/django-mptt/tarball/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
@@ -19,17 +14,13 @@ LICENSE=	BSD
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
-GITVERSION=	4310e7e 
+USE_GITHUB=	yes
+GH_ACCOUNT=	django-mptt
+GH_COMMIT=	4310e7e
+GH_TAGNAME=	${PORTVERSION}
 
-FETCH_ARGS=	-Fpr
 USES=		gettext
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GITVERSION}
-
-do fetch:
-	[ -f ${DISTDIR}/${DISTFILES} ] || \
-		${FETCH_CMD} -o ${DISTDIR}/${DISTFILES} \
-			${MASTER_SITES}${PORTVERSION}
 
 .include <bsd.port.mk>
