@@ -1,0 +1,7 @@
+TinyXML-2 is a simple, small, efficient, C++ XML parser that can be easily
+integrated into other programs. It attempts to be flexible, but correct.  It
+does not rely on exceptions or RTTI. It has UTF-8 support, but does not parse or
+use DTDs or XSL. It doesn't have the STL support of TinyXML-1, but uses less
+memory, has a proper namespace, and is faster.
+
+WWW: http://grinninglizard.com/tinyxml2/index.html

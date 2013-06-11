@@ -1428,6 +1428,7 @@
     SUBDIR += ti-hunspell
     SUBDIR += tidyp
     SUBDIR += tinyxml
+    SUBDIR += tinyxml2
     SUBDIR += tk-aspell
     SUBDIR += tk-hunspell
     SUBDIR += tkdiff
