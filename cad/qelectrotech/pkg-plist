@@ -338,5 +338,9 @@ share/mimelnk/application/x-qet-element.desktop
 @dirrmtry man/fr.UTF-8
 @dirrmtry man/pt_PT/man1
 @dirrmtry man/pt_PT
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man1
+@dirrmtry man/es
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
