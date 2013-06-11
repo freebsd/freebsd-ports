@@ -3,6 +3,7 @@
 
 PORTNAME=	swift
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://launchpadlibrarian.net/136145662/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:${PORTSDIR}/net/py-eventlet 
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
+USE_RC_SUBR=	swift
 
 MAN1=		swift-account-auditor.1 \
 		swift-account-reaper.1 \
