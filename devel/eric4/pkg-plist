@@ -895,7 +895,7 @@
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qframe4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qgroupbox4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qmdiarea4.tmpl
-%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qscrollarea4.tmpl   
+%%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qscrollarea4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qstackedwidget4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qtabwidget4.tmpl
 %%PYTHON_SITELIBDIR%%/eric4/DesignerTemplates/qtoolbox4.tmpl
