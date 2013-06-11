@@ -141,3 +141,15 @@ libexec/mc/mc.sh
 @dirrm libexec/mc/ext.d
 @dirrm libexec/mc
 @dirrm etc/mc
+@dirrmtry man/sr/man1
+@dirrmtry man/sr
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/hu/man1
+@dirrmtry man/hu
+@dirrmtry man/es/man1
+@dirrmtry man/es
