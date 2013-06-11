@@ -1,0 +1,22 @@
+--- intl/Makefile.in.orig	2013-06-11 08:30:00.000000000 -0300
++++ intl/Makefile.in	2013-06-11 08:31:11.000000000 -0300
+@@ -447,7 +447,6 @@
+ 	  temp=$(DESTDIR)$(localedir)/t-locale.alias; \
+ 	  dest=$(DESTDIR)$(localedir)/locale.alias; \
+ 	  sed -f ref-add.sed $$orig > $$temp; \
+-	  $(INSTALL_DATA) $$temp $$dest; \
+ 	  rm -f $$temp; \
+ 	else \
+ 	  : ; \
+@@ -556,11 +555,6 @@
+ 	    temp=$(DESTDIR)$(localedir)/t-locale.alias; \
+ 	    dest=$(DESTDIR)$(localedir)/locale.alias; \
+ 	    sed -f ref-del.sed $$dest > $$temp; \
+-	    if grep '^# Packages using this file: $$' $$temp > /dev/null; then \
+-	      rm -f $$dest; \
+-	    else \
+-	      $(INSTALL_DATA) $$temp $$dest; \
+-	    fi; \
+ 	    rm -f $$temp; \
+ 	  fi; \
+ 	else \
