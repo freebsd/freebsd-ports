@@ -129,7 +129,7 @@ libexec/ioctld
 %%NLS%%share/locale/de/LC_MESSAGES/ekg2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ekg2.mo
 @dirrm %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%/scripts
+%%PERL_PLUGIN%%@dirrmtry %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/plugins/autoresponder
 @dirrm %%DATADIR%%/plugins/gg
 %%GPG_PLUGIN%%@dirrm %%DATADIR%%/plugins/gpg
