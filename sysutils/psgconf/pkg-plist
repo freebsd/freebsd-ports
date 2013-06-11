@@ -186,7 +186,6 @@ bin/platform-name
 @dirrmtry %%SITE_PERL%%/PSGConf/Action/svcs
 @dirrmtry %%SITE_PERL%%/PSGConf/Action
 @dirrmtry %%SITE_PERL%%/PSGConf/Control/Apache
-@dirrmtry %%SITE_PERL%%/PSGConf/Control/Library
 @dirrmtry %%SITE_PERL%%/PSGConf/Control/RPC
 @dirrmtry %%SITE_PERL%%/PSGConf/Control
 @dirrmtry %%SITE_PERL%%/PSGConf/Data
