@@ -1,4 +1,5 @@
 %%XPI_XPIDIR%%/chrome/content/about.xul
+%%XPI_XPIDIR%%/chrome/content/changecode.js
 %%XPI_XPIDIR%%/chrome/content/click/click.js
 %%XPI_XPIDIR%%/chrome/content/extensions/extensions.js
 %%XPI_XPIDIR%%/chrome/content/extensions/sage.js
@@ -16,31 +17,45 @@
 %%XPI_XPIDIR%%/chrome/content/minit/autoReload.xul
 %%XPI_XPIDIR%%/chrome/content/minit/minit.js
 %%XPI_XPIDIR%%/chrome/content/minit/renameTab.xul
+%%XPI_XPIDIR%%/chrome/content/minit/tabView.js
 %%XPI_XPIDIR%%/chrome/content/minit/tablib.js
-%%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay17.css
-%%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay4.css
-%%XPI_XPIDIR%%/chrome/content/overlay/browsroverlay_base.css
+%%XPI_XPIDIR%%/chrome/content/overlay/browsr.css
+%%XPI_XPIDIR%%/chrome/content/overlay/browsr_17.css
 %%XPI_XPIDIR%%/chrome/content/overlay/tabContextMenu.xul
 %%XPI_XPIDIR%%/chrome/content/places/bookmarkProperties.xul
 %%XPI_XPIDIR%%/chrome/content/places/places.js
 %%XPI_XPIDIR%%/chrome/content/places/places.xul
-%%XPI_XPIDIR%%/chrome/content/pref/incontentPreferences.xul
-%%XPI_XPIDIR%%/chrome/content/pref/overlaySanitizeUI.js
-%%XPI_XPIDIR%%/chrome/content/pref/overlaySanitizeUI.xul
-%%XPI_XPIDIR%%/chrome/content/pref/pref-appearance.css
-%%XPI_XPIDIR%%/chrome/content/pref/pref-appearance.js
-%%XPI_XPIDIR%%/chrome/content/pref/pref-appearance.xml
-%%XPI_XPIDIR%%/chrome/content/pref/pref-appearance.xul
-%%XPI_XPIDIR%%/chrome/content/pref/pref-filetype.js
-%%XPI_XPIDIR%%/chrome/content/pref/pref-filetype.xul
-%%XPI_XPIDIR%%/chrome/content/pref/pref-tabmix.js
-%%XPI_XPIDIR%%/chrome/content/pref/pref-tabmix.xul
-%%XPI_XPIDIR%%/chrome/content/pref/preferencesOverlay.js
-%%XPI_XPIDIR%%/chrome/content/pref/preferencesOverlay.xul
-%%XPI_XPIDIR%%/chrome/content/pref/shortcuts/shortcuts.js
-%%XPI_XPIDIR%%/chrome/content/pref/shortcuts/shortcuts.xml
-%%XPI_XPIDIR%%/chrome/content/pref/shortcuts/shortcuts.xul
-%%XPI_XPIDIR%%/chrome/content/pref/tab_panel.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/appearance.js
+%%XPI_XPIDIR%%/chrome/content/preferences/appearance.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/bindings.xml
+%%XPI_XPIDIR%%/chrome/content/preferences/events.js
+%%XPI_XPIDIR%%/chrome/content/preferences/events.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/incompatible.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/links.js
+%%XPI_XPIDIR%%/chrome/content/preferences/links.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/menu.js
+%%XPI_XPIDIR%%/chrome/content/preferences/menu.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/mouse.js
+%%XPI_XPIDIR%%/chrome/content/preferences/mouse.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/overlay/incontentPreferences.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/overlay/overlaySanitizeUI.js
+%%XPI_XPIDIR%%/chrome/content/preferences/overlay/overlaySanitizeUI.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/overlay/preferencesOverlay.js
+%%XPI_XPIDIR%%/chrome/content/preferences/overlay/preferencesOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/overlay/tab_panel.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/preferences.js
+%%XPI_XPIDIR%%/chrome/content/preferences/preferences.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/session.js
+%%XPI_XPIDIR%%/chrome/content/preferences/session.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/shortcuts.js
+%%XPI_XPIDIR%%/chrome/content/preferences/shortcuts.xml
+%%XPI_XPIDIR%%/chrome/content/preferences/shortcuts.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/subdialogs/pref-appearance.css
+%%XPI_XPIDIR%%/chrome/content/preferences/subdialogs/pref-appearance.js
+%%XPI_XPIDIR%%/chrome/content/preferences/subdialogs/pref-appearance.xml
+%%XPI_XPIDIR%%/chrome/content/preferences/subdialogs/pref-appearance.xul
+%%XPI_XPIDIR%%/chrome/content/preferences/subdialogs/pref-filetype.js
+%%XPI_XPIDIR%%/chrome/content/preferences/subdialogs/pref-filetype.xul
 %%XPI_XPIDIR%%/chrome/content/session/promptservice.js
 %%XPI_XPIDIR%%/chrome/content/session/promptservice.xul
 %%XPI_XPIDIR%%/chrome/content/session/session.js
@@ -329,11 +344,12 @@
 %%XPI_XPIDIR%%/chrome/skin/locked.png
 %%XPI_XPIDIR%%/chrome/skin/newtab.png
 %%XPI_XPIDIR%%/chrome/skin/preferences.css
-%%XPI_XPIDIR%%/chrome/skin/prefs.css
+%%XPI_XPIDIR%%/chrome/skin/preferencesOverlay.css
 %%XPI_XPIDIR%%/chrome/skin/protected.png
 %%XPI_XPIDIR%%/chrome/skin/refresh.png
 %%XPI_XPIDIR%%/chrome/skin/renameTab.css
 %%XPI_XPIDIR%%/chrome/skin/sessionmanager.png
+%%XPI_XPIDIR%%/chrome/skin/shortcuts.css
 %%XPI_XPIDIR%%/chrome/skin/tab.css
 %%XPI_XPIDIR%%/chrome/skin/tabslist.png
 %%XPI_XPIDIR%%/chrome/skin/tmp.png
@@ -355,6 +371,7 @@
 %%XPI_XPIDIR%%/modules/SingleWindowModeUtils.jsm
 %%XPI_XPIDIR%%/modules/Slideshow.jsm
 %%XPI_XPIDIR%%/modules/extensions/CompatibilityCheck.jsm
+%%XPI_XPIDIR%%/modules/extensions/SessionManagerAddon.jsm
 %%XPI_XPIDIR%%/modules/extensions/TabGroupsManager.jsm
 %%XPI_XPIDIR%%/modules/log.jsm
 @dirrm %%XPI_XPIDIR%%/chrome/content/click
@@ -364,8 +381,9 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content/minit
 @dirrm %%XPI_XPIDIR%%/chrome/content/overlay
 @dirrm %%XPI_XPIDIR%%/chrome/content/places
-@dirrm %%XPI_XPIDIR%%/chrome/content/pref/shortcuts
-@dirrm %%XPI_XPIDIR%%/chrome/content/pref
+@dirrm %%XPI_XPIDIR%%/chrome/content/preferences/overlay
+@dirrm %%XPI_XPIDIR%%/chrome/content/preferences/subdialogs
+@dirrm %%XPI_XPIDIR%%/chrome/content/preferences
 @dirrm %%XPI_XPIDIR%%/chrome/content/session
 @dirrm %%XPI_XPIDIR%%/chrome/content/tab
 @dirrm %%XPI_XPIDIR%%/chrome/content
