@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olsrd
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.6/ \
 		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
