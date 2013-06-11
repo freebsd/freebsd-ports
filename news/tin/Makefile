@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tin
-# Date created:		25 July 1996
-# Whom:			obrien@cs.ucdavis.edu
-#
+# Created by: obrien@cs.ucdavis.edu
 # $FreeBSD$
-#
 
 PORTNAME=	tin
 PORTVERSION=	2.0.1
