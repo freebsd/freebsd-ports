@@ -1087,8 +1087,6 @@ share/pixmaps/stellarium.xpm
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
-@dirrmtry share/locale/hw/LC_MESSAGES
-@dirrmtry share/locale/hw
 @dirrmtry share/locale/ht/LC_MESSAGES
 @dirrmtry share/locale/ht
 @dirrmtry share/locale/hrx/LC_MESSAGES
