@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	fairymax
-PORTVERSION=	4.8Q
-PORTREVISION=	1
+PORTVERSION=	4.8S.5
 CATEGORIES=	games
 MASTER_SITES=	http://freeheimdall.homeunix.org/files/
-DISTNAME=	${PORTNAME}-c7a129e
-# http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=c7a129ead81286990efb8409f238c48c7109c83b;sf=tgz
+DISTNAME=	${PORTNAME}-b6a7fa8
+# http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=b6a7fa8ae7c54db7bb5a9415ccae3fd55e9b360e;sf=tgz
 
 MAINTAINER=	kalten@gmx.at
 COMMENT=	Chess engine for shatranj, courier chess, and others
 
-CONFLICTS=	fairymax-4.8Q.[0-9]* fairymax-4.8Q.[0-9]*_[0-9]*
+CONFLICTS=	fairymax-4.8Q.*
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
@@ -32,12 +31,12 @@ MLINKS=		${PORTNAME}.6 shamax.6 \
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-MAKE_ARGS+=	INI_FILE_fmax=${DATADIR}/fmax.ini \
-		INI_FILE_qmax=${DATADIR}/qmax.ini
+MAKE_ARGS+=	INI_F=${DATADIR}/fmax.ini \
+		INI_Q=${DATADIR}/qmax.ini
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CLAGS}
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O2
 .else
 CFLAGS+=
