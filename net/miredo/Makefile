@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		miredo
-PORTVERSION=	 	1.2.6
-PORTREVISION=		1
+PORTVERSION=		1.2.6
+PORTREVISION=		2
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 

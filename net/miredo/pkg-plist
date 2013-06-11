@@ -18,10 +18,8 @@ include/libtun6/tun6.h
 etc/miredo/client-hook
 @unexec [ -f %D/etc/miredo/miredo.conf ] && cmp -s %D/etc/miredo/miredo.conf %D/%%%EXAMPLESDIR%%/miredo.conf && rm %D/etc/miredo/miredo.conf || true
 %%EXAMPLESDIR%%/miredo.conf
-@exec [ -f %B/miredo.conf ] || cp %F %B/miredo.conf
-@unexec [ -f %D/etc/miredo/miredo-server.conf ] && cmp -s %D/etc/miredo/miredo-server.conf %D/%%%EXAMPLESDIR%%/miredo-server.conf && rm %D/etc/miredo/miredo-server.conf || true
+@exec [ -f %D/etc/miredo/miredo.conf ] || cp %B/miredo.conf %D/etc/miredo/miredo.conf
 %%EXAMPLESDIR%%/miredo-server.conf
-@exec [ -f %B/miredo-server.conf ] || cp %F %B/miredo-server.conf
 %%NLS%%share/locale/en/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/miredo.mo
