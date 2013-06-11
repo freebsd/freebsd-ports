@@ -396,7 +396,6 @@ share/cairo-dock/plug-ins/wifi/preview.jpg
 share/cairo-dock/plug-ins/Xgamma/Xgamma.conf
 share/cairo-dock/plug-ins/Xgamma/icon.png
 share/cairo-dock/plug-ins/Xgamma/preview.jpg
-@dirrmtry lib/pkgconfig
 %%ALSA_MIXER%%@dirrm share/cairo-dock/plug-ins/AlsaMixer
 @dirrm share/cairo-dock/plug-ins/Animated-icons
 @dirrm share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic

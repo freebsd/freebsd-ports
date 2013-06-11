@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xrender
 USE_DOS2UNIX=	YES
-USES=		cmake gettext
+USES=		cmake gettext pathfix
 USE_GCC=	4.6+
 MAKE_JOBS_SAFE=	YES
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
