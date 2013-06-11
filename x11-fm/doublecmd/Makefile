@@ -3,7 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -24,7 +24,7 @@ MAN1=		${PORTNAME}.1
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(pas)
 USE_FPC=	yes
-USE_GNOME=	desktopfileutils
+WANT_GNOME=	yes
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 PROJECT_FILE=	src/doublecmd.lpi
@@ -37,17 +37,13 @@ OPTIONS_DEFINE=		DEBUG
 OPTIONS_SINGLE=		LCL
 OPTIONS_SINGLE_LCL=	GTK2 QT4
 
-GTK2_DESC=		Use gtk20 interface
-QT4_DESC=		Use qt4 interface
-DEBUG_DESC=		Build with complete symbolic debug information
-
 OPTIONS_DEFAULT=	GTK2
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
-USE_GNOME+=	gtk20 gdkpixbuf
+USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 .endif
@@ -115,8 +111,6 @@ pre-install:
 	@${ECHO} "@dirrm %%DOCSDIR%%" >> ${PLIST}
 .endif
 
-	@${ECHO_CMD} "@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${PLIST}
-	@${ECHO_CMD} "@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry share/applications" >> ${PLIST}
 
 do-install:
@@ -141,7 +135,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${DESKTOPDIR}/
 
 post-install:
-	-@update-desktop-database
 	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 	@${CAT} ${PKGMESSAGE}
 
