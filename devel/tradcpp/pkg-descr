@@ -1,0 +1,8 @@
+tradcpp is a traditional (K&R-style) preprocessor.
+
+It has the particular property that it doesn't (for the most part)
+trash whitespace, so it can be used on makefiles.
+
+This is only release 0.1; it is missing some features and doubtless
+has quite a few bugs, but it's capable of building at least some
+packages when used with imake.
