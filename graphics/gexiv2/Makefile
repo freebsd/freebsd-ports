@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gexiv2
-PORTVERSION=	0.4.1
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/${PORTNAME}/${PORTVERSION:R}/
-DISTNAME=	libgexiv2-${PORTVERSION}
+DISTNAME=	libgexiv2_${PORTVERSION}
+WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2
 
 USES=		pkgconfig
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
