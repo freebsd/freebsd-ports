@@ -6,8 +6,6 @@
 %%SITE_PERL%%/POE/Component/Jabber/J2.pm
 %%SITE_PERL%%/POE/Component/Jabber/Events.pm
 %%SITE_PERL%%/POE/Component/Jabber.pm
-@dirrmtry %%SITE_PERL%%/POE/Component/Jabber/Utility
-@dirrmtry %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
