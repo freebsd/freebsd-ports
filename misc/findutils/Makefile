@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	aehlig@linta.de
 COMMENT=	GNU find utilities
 
+USES+=		charsetfix
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
