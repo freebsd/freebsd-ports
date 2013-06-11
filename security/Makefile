@@ -741,6 +741,7 @@
     SUBDIR += py-crack
     SUBDIR += py-cracklib
     SUBDIR += py-cryptkit
+    SUBDIR += py-ecdsa
     SUBDIR += py-fail2ban
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
