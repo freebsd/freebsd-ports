@@ -1,4 +1,4 @@
-@comment $FreeBSD:
+@comment $FreeBSD$
 sbin/circe-redirect
 sbin/circe-context-daemon
 sbin/circe-daemon
@@ -19,6 +19,3 @@ etc/ipfw.init.dist
 etc/ipfw.local.dist
 etc/rc.d/circed
 %%SITE_PERL%%/LibNAC.pm
-@dirrmtry etc/env
-@dirrmtry share/nac
-@dirrmtry libexec/nac
