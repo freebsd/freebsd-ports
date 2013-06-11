@@ -294,6 +294,7 @@ db46_DEPENDS=	db-4.6.0:${PORTSDIR}/databases/db46
 db47_DEPENDS=	db-4.7.0:${PORTSDIR}/databases/db47
 db48_DEPENDS=	db-4.8.0:${PORTSDIR}/databases/db48
 db5_DEPENDS=	db-5.3.0:${PORTSDIR}/databases/db5
+db6_DEPENDS=	db-6.0.0:${PORTSDIR}/databases/db6
 # Detect db versions by finding some files
 db40_FIND=	${LOCALBASE}/include/db4/db.h
 db41_FIND=	${LOCALBASE}/include/db41/db.h
@@ -304,6 +305,7 @@ db46_FIND=	${LOCALBASE}/include/db46/db.h
 db47_FIND=	${LOCALBASE}/include/db47/db.h
 db48_FIND=	${LOCALBASE}/include/db48/db.h
 db5_FIND=	${LOCALBASE}/include/db5/db.h
+db6_FIND=	${LOCALBASE}/include/db6/db.h
 
 # For specifying [40, 41, ..]+
 _DB_40P=	40 ${_DB_41P}
@@ -314,7 +316,8 @@ _DB_44P=	44 ${_DB_46P}
 _DB_46P=	46 ${_DB_47P}
 _DB_47P=	47 ${_DB_48P}
 _DB_48P=	48 ${_DB_5P}
-_DB_5P=		5
+_DB_5P=		5 ${_DB_6P}
+_DB_6P=		6
 
 # Override the global WITH_BDB_VER with the
 # port specific <UNIQUENAME>_WITH_BDB_VER
@@ -454,6 +457,10 @@ BDB_LIB_DIR=		${LOCALBASE}/lib/db48
 BDB_LIB_NAME=		db-5.3
 BDB_LIB_CXX_NAME=	db_cxx-5.3
 BDB_LIB_DIR=		${LOCALBASE}/lib/db5
+.  elif ${_BDB_VER} == 6
+BDB_LIB_NAME=		db-6.0
+BDB_LIB_CXX_NAME=	db_cxx-6.0
+BDB_LIB_DIR=		${LOCALBASE}/lib/db6
 .  endif
 BDB_LIB_NAME?=		db${_BDB_VER}
 BDB_LIB_CXX_NAME?=	db${_BDB_VER}_cxx
