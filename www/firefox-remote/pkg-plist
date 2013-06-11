@@ -4,4 +4,3 @@ bin/thunderbird-remote
 %%MENU_THUNDERBIRD%%share/applications/mozilla_thunderbird.desktop
 %%MENU_FIREFOX%%share/pixmaps/mozilla_firefox.png
 %%MENU_THUNDERBIRD%%share/pixmaps/mozilla_thunderbird.png
-@dirrmtry share/applications
