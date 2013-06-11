@@ -1,7 +1,4 @@
-# Ports collection makefile for:	ekg2
-# Date created:				27 Dec 2005
-# Whom:					Aleksander Fafula <alex@bsdguru.org>
-#
+# Created by: Aleksander Fafula <alex@bsdguru.org>
 # $FreeBSD$
 
 PORTNAME=	ekg2
