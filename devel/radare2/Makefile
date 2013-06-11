@@ -1,9 +1,5 @@
-# New ports collection makefile for:	radare2
-# Date created:				15 August 2011
-# Whom:					Karsten Pedersen <kpedersen@opencde.org>
-#
+# Created by: Karsten Pedersen <kpedersen@opencde.org>
 # $FreeBSD$
-#
 
 PORTNAME=	radare2
 PORTVERSION=	0.8.1

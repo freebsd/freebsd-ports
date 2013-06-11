@@ -222,5 +222,4 @@ lib/radare2/%%PORTVERSION%%/radare.rb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/radare2/%%PORTVERSION%%
 @dirrm lib/radare2
-@dirrmtry lib/pkgconfig
 @dirrm include/libr
