@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	f1lt
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/jgh/games/${PORTNAME}/
@@ -45,6 +45,12 @@ post-patch-script:
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} F1LT.pro
+
+post-build-script:
+	@${REINPLACE_CMD} -e 's|-$$(INSTALL_FILE)|${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 644|g' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-$$(INSTALL_PROGRAM)|${INSTALL} -s -o ${SHAREOWN} -g ${SHAREGRP} -m 755|g' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
