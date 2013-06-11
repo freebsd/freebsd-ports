@@ -24,6 +24,9 @@ CONFLICTS=	lyx-1.4* lyx-devel-* lyx-2*
 MAJOR_VERSION=	1.6
 MINOR_VERSION=	10
 
+DEPRECATED=	Unmaintained upstream, upgrading to the 2.x series is advised
+EXPIRATION_DATE=	2013-07-11
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT4=	gui moc_build uic_build rcc_build
