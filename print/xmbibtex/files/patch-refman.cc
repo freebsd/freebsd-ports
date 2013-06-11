@@ -1,5 +1,14 @@
 --- src/refman.cc.orig	2007-08-03 16:51:55.000000000 +0200
 +++ refman.cc	2007-08-03 16:52:33.000000000 +0200
+@@ -75,7 +75,7 @@
+ Widget        message;
+ main_menu     mymenu;
+ 
+-
++int
+ main(int argc, char *argv[])
+ {
+   Widget        main_w, menubar, PullDown;
 @@ -260,7 +260,7 @@
    static Widget fsb_load, ftype, fsb_save, fsb_print;
    XmStringTable str_list;
