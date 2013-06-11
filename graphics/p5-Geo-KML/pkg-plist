@@ -14,7 +14,6 @@
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/atom-2005
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.0
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.1
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/xal-2.0
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd
