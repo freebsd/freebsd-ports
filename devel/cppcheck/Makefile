@@ -3,6 +3,7 @@
 
 PORTNAME=	cppcheck
 PORTVERSION=	1.60.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -11,14 +12,14 @@ COMMENT=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3
 
-#LIB_DEPENDS=	tinyxml:${PORTSDIR}/textproc/tinyxml
+LIB_DEPENDS=	tinyxml2:${PORTSDIR}/textproc/tinyxml2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 ALL_TARGET=	cppcheck
 LDFLAGS+=	-L${LOCALBASE}/lib
-#MAKE_ENV+=	TINYXML=-ltinyxml
+MAKE_ENV+=	TINYXML=-ltinyxml2
 
 OPTIONS_DEFINE=		MATCHCOMPILER RULES
 OPTIONS_DEFAULT=	MATCHCOMPILER RULES
@@ -53,9 +54,9 @@ MAKE_ENV+=	HAVE_RULES=yes
 .endif
 
 post-patch:
-#	@${REINPLACE_CMD} \
-#	-e 's|-Iexternals/tinyxml|-I${LOCALBASE}/include|' \
-#		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+	-e 's|-Iexternals/tinyxml|-I${LOCALBASE}/include|' \
+		${WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '\|DB2MAN=|d' \
 		${WRKSRC}/Makefile
