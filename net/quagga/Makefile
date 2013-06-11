@@ -3,6 +3,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.22
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	quagga
@@ -25,7 +26,7 @@ USE_PERL5_BUILD=yes
 FETCH_ARGS=	-Fpr
 
 MAN1=		vtysh.1
-MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 watchquagga.8
+MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 watchquagga.8 ospfclient.8
 INFO=		quagga
 
 OPTIONS_DEFINE=	ISISD PAM OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS DLMALLOC \
