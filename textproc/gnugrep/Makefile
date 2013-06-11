@@ -1,9 +1,5 @@
-# New ports collection makefile for:    grep
-# Date created:                         5 February 2010
-# Whom:                                 Gabor Kovesdan <gabor@FreeBSD.org>
-#
+# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grep
 PORTVERSION=	2.12
@@ -19,6 +15,7 @@ LICENSE=	GPLv3
 
 CONFLICTS=	bsd-grep-[0-9]*
 
+USES+=		charsetfix
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 
