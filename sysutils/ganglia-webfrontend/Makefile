@@ -1,9 +1,4 @@
-# Ports collection makefile for:	ganglia-webfrontend
-# Date created:				Thu Fed 20, 2003
-# Whom:					Brooks Davis <brooks@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.1.7
@@ -13,7 +8,7 @@ MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
 DISTNAME=	ganglia-${PORTVERSION}
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
