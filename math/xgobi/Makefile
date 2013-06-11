@@ -17,6 +17,7 @@ NO_CDROM=	Restrictive copyright (do not sell for profit)
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}/src
 CONFIGURE_WRKSRC=	${PATCH_WRKSRC}
 BUILD_WRKSRC=	${PATCH_WRKSRC}
+CFLAGS+=	-Wno-return-type
 
 USE_IMAKE=	true
 USE_XORG=	xbitmaps xaw
