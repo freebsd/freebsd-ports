@@ -21,6 +21,7 @@ RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USES=		pathfix
 USE_FORTRAN=	yes
 USE_GCC=	4.6+
 USES=		gettext iconv

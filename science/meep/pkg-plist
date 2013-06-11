@@ -13,5 +13,4 @@ include/meep/vec.hpp
 %%DATADIR%%/meep-enums.scm
 %%DATADIR%%/meep.scm
 @dirrm %%DATADIR%%
-@dirrmtry lib/pkgconfig
 @dirrm include/meep
