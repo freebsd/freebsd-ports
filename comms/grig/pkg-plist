@@ -15,4 +15,3 @@ share/pixmaps/grig/smeter.png
 @dirrmtry lib/locale
 @dirrm share/pixmaps/grig
 @dirrm %%DATADIR%%
-@dirrmtry locale

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grig
-# Date created:				2004-01-22
-# Whom:					Matt Dawson <matt@mattsnetwork.co.uk>
-#
+# Created by: Matt Dawson <matt@mattsnetwork.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	grig
 PORTVERSION=	0.8.0
