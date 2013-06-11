@@ -26,6 +26,8 @@ LIB_DEPENDS+=	gstreamer-1.0:${PORTSDIR}/multimedia/gstreamer1 \
 		orc-0.4:${PORTSDIR}/devel/orc
 RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
+PORTSCOUT=	limitw:1,even
+
 BASE_PORTVERSION=	1.0.7
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
