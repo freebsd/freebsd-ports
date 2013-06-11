@@ -1,9 +1,4 @@
-# New ports collection makefile for:	virtio-kmod
-# Date created:		20 Nov 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	virtio
 PORTVERSION=	0.${SVN_REV}
@@ -14,14 +9,14 @@ PKGNAMESUFFIX=	-kmod-${OSBRANCH}
 DISTFILES=	${FILE_8} ${FILE_9}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	virtio kernel modules port for 8.[23]/9.[01]
+COMMENT=	virtio kernel modules port for 8.[234]/9.[01]
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}
 KMODDIR?=	/boot/modules
 PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
-NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
+NEEDSUBDIRS=	amd64 cam conf contrib dev/pci geom i386 kern net netinet netinet6 \
 	sys tools vm x86
 
 .include <bsd.port.pre.mk>
@@ -30,7 +25,7 @@ NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
 IGNORE=		requires kernel source to be installed
 .endif
 
-SVN_REV=	242658
+SVN_REV=	250249
 FILE_8=		${PORTNAME}-8-0.${SVN_REV}${EXTRACT_SUFX}
 FILE_9=		${PORTNAME}-9-0.${SVN_REV}${EXTRACT_SUFX}
 .if ${OSREL} == "8.2"
@@ -38,6 +33,9 @@ OSBRANCH=	8.2
 EXTRACT_ONLY=	${FILE_8}
 .elif ${OSREL} == "8.3"
 OSBRANCH=	8.3
+EXTRACT_ONLY=	${FILE_8}
+.elif ${OSREL} == "8.4"
+OSBRANCH=	8.4
 EXTRACT_ONLY=	${FILE_8}
 .elif ${OSREL} == "9.0"
 OSBRANCH=	9.0
@@ -86,8 +84,9 @@ maintainer-tar:
 	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${FILE_8} dev modules
 
 maintainer-check:
-	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD stable/9/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
+	@new9=`svn log -ql 1 ${SVN_MIRROR}@HEAD stable/9/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
+	new8=`svn log -ql 1 ${SVN_MIRROR}@HEAD stable/8/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
 	old="${SVN_REV}";\
-	if [ "$${new}" -gt "$${old}" ]; then ${ECHO_MSG} "New virtio rev: r$${new}"; fi
+	if [ "$${new9}" -gt "$${old}" ]; then ${ECHO_MSG} "New virtio rev: r$${new9} (was $${old}, 8-stable is $${new8})"; fi
 
 .include <bsd.port.post.mk>
