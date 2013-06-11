@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xbattle
-# Date created:         6 Apr 97
-# Whom:                 Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	xbattle
 PORTVERSION=	5.4.1
@@ -13,11 +9,13 @@ MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A concurrent multi-player battle strategy game
+COMMENT=	Concurrent multi-player battle strategy game
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 MAN1=		xbattle.1
+
+CFLAGS+=	-Wno-return-type
 
 post-install:
 	$(MKDIR) $(PREFIX)/share/xbattle
