@@ -108,8 +108,4 @@ share/vala/vapi/skk-1.0.vapi
 @dirrmtry %%DATADIR%%/rules/act
 @dirrmtry %%DATADIR%%/rules
 @dirrmtry %%DATADIR%%
-@dirrmtry libexec/libskk
-@dirrmtry lib/locale/ja/LC_MESSAGES
-@dirrmtry lib/locale/ja
-@dirrmtry lib/locale
 @dirrmtry include/libskk
