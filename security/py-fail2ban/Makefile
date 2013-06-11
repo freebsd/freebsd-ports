@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTVERSION=	0.8.9
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +13,9 @@ COMMENT=	Scans log files and bans IP that makes too many password failures
 
 LICENSE=	GPLv2
 
-GITVERSION=	0-g51a3be2
+GITVERSION=	0-g152c619
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-ff91bd4
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-1a3155a
 
 MAKE_JOBS_SAFE=	yes
 
@@ -28,7 +27,9 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-purelib=${PYTHON_SITELIBDIR} \
 				--install-data=${ETCDIR}
-PYDISTUTILS_PKGVERSION=	0.8.8
+PYDISTUTILS_PKGVERSION=	0.8.9
+
+PORTDOCS=	README.md DEVELOP
 
 FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/man/fail2ban-client.1 \
@@ -37,12 +38,21 @@ FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/client/configreader.py \
 		${WRKSRC}/fail2ban-client
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'
 	@${REINPLACE_CMD} -e 's,/bin/grep,grep,g' \
 		${WRKSRC}/config/action.d/sendmail-whois-lines.conf
 
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${ECHO_MSG} "===> Installing additional documentation in ${DOCSDIR}."
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
