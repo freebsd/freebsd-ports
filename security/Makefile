@@ -774,6 +774,7 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
     SUBDIR += py-rsa
+    SUBDIR += py-slowaes
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
     SUBDIR += py-tlslite
