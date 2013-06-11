@@ -271,6 +271,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/limits.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/limits.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/limits.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/text.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/text.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/text.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/url.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/url.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/url.pyo

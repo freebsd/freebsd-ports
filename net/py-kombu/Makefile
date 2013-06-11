@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	kombu
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.10
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	AMQP messaging framework for Python
 
 LICENSE=	BSD
@@ -21,14 +21,14 @@ BEANSTALK_DESC=	Include beanstalkd transport support
 BOTO_DESC=	Include AWS transport support
 MONGODB_DESC=	Include MongoDB transport support
 REDIS_DESC=	Include Redis transport support
-SQLALCHEMY_DESC=	Include SQLAlchemy transport support
+SQLALCHEMY_DESC=Include SQLAlchemy transport support
 ZMQ_DESC=	Include ZMQ transport support
 
 # Ports infrastructure bug
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	2.7-
+USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.pre.mk>
 
