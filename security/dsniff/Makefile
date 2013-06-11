@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet10/libnet.a:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	X11
