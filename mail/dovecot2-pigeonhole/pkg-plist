@@ -72,7 +72,6 @@ libexec/dovecot/managesieve-login
 share/doc/dovecot/example-config/conf.d/20-managesieve.conf
 share/doc/dovecot/example-config/conf.d/90-sieve.conf
 share/doc/dovecot/example-config/conf.d/90-sieve-extprograms.conf
-@dirrmtry libdata/ldconfig/dovecot-pigeonhole
 @dirrmtry share/doc/dovecot/example-config/conf.d
 @dirrmtry share/doc/dovecot/example-config
 @dirrmtry share/doc/dovecot
