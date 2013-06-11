@@ -1,21 +1,22 @@
 # $FreeBSD$
 
-PORTNAME=	cracklib
-PORTVERSION=	2.8.19
-CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	crees@FreeBSD.org
-COMMENT=	CPython extension module wrapping the libcrack library
+COMMENT=	Python bindings for cracklib
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
+MASTERDIR=	${.CURDIR}/../cracklib
+BUILD_WRKSRC=	${WRKSRC}/python
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+PYTHON_SLAVEPORT=	yes
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e \
+	"{s#__version__ = '[^']*'#__version__ = '${PORTVERSION}'#;}" \
+	${BUILD_WRKSRC}/*.py
+
+.include "${MASTERDIR}/Makefile"
