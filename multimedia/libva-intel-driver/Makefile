@@ -38,7 +38,7 @@ pre-configure:
 	@${FALSE}
 .endif
 .else
-BROKEN=		This port needs libdrm version that is available when WITH_NEW_XORG is set
+IGNORE=		this port needs libdrm version that is available when WITH_NEW_XORG is set
 .endif
 
 post-patch:	.SILENT
