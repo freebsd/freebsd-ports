@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Authentication-Store-DBIx-Class
-# Date created:				2008-09-18
-# Whom:					Oleg Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Authentication-Store-DBIx-Class
 PORTVERSION=	0.1503
