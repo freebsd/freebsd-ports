@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tvtwm
-# Date created:		5th December 1994
-# Whom:			gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
 PORTNAME=	tvtwm
 PORTVERSION=	pl11
@@ -22,6 +18,8 @@ USE_XORG=	xbitmaps xpm xmu
 MAN1=		tvtwm.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/tvtwm
+
+CFLAGS+=	-Wno-return-type
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tvtwm ${PREFIX}/bin
