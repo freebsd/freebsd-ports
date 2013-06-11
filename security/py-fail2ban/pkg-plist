@@ -6,6 +6,9 @@
 %%ETCDIR%%/action.d/ipfilter.conf
 %%ETCDIR%%/action.d/ipfw.conf
 %%ETCDIR%%/action.d/iptables-allports.conf
+%%ETCDIR%%/action.d/iptables-blocktype.conf
+%%ETCDIR%%/action.d/iptables-ipset-proto4.conf
+%%ETCDIR%%/action.d/iptables-ipset-proto6.conf
 %%ETCDIR%%/action.d/iptables-multiport-log.conf
 %%ETCDIR%%/action.d/iptables-multiport.conf
 %%ETCDIR%%/action.d/iptables-new.conf
@@ -17,6 +20,7 @@
 %%ETCDIR%%/action.d/mail.conf
 %%ETCDIR%%/action.d/mynetwatchman.conf
 %%ETCDIR%%/action.d/pf.conf
+%%ETCDIR%%/action.d/route.conf
 %%ETCDIR%%/action.d/sendmail-buffered.conf
 %%ETCDIR%%/action.d/sendmail-whois-lines.conf
 %%ETCDIR%%/action.d/sendmail-whois.conf
@@ -28,6 +32,7 @@
 %%ETCDIR%%/filter.d/apache-nohome.conf
 %%ETCDIR%%/filter.d/apache-noscript.conf
 %%ETCDIR%%/filter.d/apache-overflows.conf
+%%ETCDIR%%/filter.d/assp.conf
 %%ETCDIR%%/filter.d/asterisk.conf
 %%ETCDIR%%/filter.d/bsd-sendmail.conf
 %%ETCDIR%%/filter.d/bsd-sshd.conf
@@ -42,6 +47,7 @@
 %%ETCDIR%%/filter.d/gssftpd.conf
 %%ETCDIR%%/filter.d/lighttpd-auth.conf
 %%ETCDIR%%/filter.d/lighttpd-fastcgi.conf
+%%ETCDIR%%/filter.d/mysqld-auth.conf
 %%ETCDIR%%/filter.d/named-refused.conf
 %%ETCDIR%%/filter.d/pam-generic.conf
 %%ETCDIR%%/filter.d/php-url-fopen.conf
@@ -50,8 +56,10 @@
 %%ETCDIR%%/filter.d/pure-ftpd.conf
 %%ETCDIR%%/filter.d/qmail.conf
 %%ETCDIR%%/filter.d/recidive.conf
+%%ETCDIR%%/filter.d/roundcube-auth.conf
 %%ETCDIR%%/filter.d/sasl.conf
 %%ETCDIR%%/filter.d/sieve.conf
+%%ETCDIR%%/filter.d/sogo-auth.conf
 %%ETCDIR%%/filter.d/sshd-ddos.conf
 %%ETCDIR%%/filter.d/sshd.conf
 %%ETCDIR%%/filter.d/vsftpd.conf
@@ -83,6 +91,8 @@
 %%PYTHON_SITELIBDIR%%/client/jailsreader.pyc
 %%PYTHON_SITELIBDIR%%/common/__init__.py
 %%PYTHON_SITELIBDIR%%/common/__init__.pyc
+%%PYTHON_SITELIBDIR%%/common/exceptions.py
+%%PYTHON_SITELIBDIR%%/common/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/common/helpers.py
 %%PYTHON_SITELIBDIR%%/common/helpers.pyc
 %%PYTHON_SITELIBDIR%%/common/protocol.py
