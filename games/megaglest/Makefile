@@ -3,6 +3,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -53,7 +54,7 @@ post-patch:
 do-install:
 	${STRIP_CMD} ${WRKSRC}/mk/linux/megaglest
 	@${MKDIR} ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/mk/linux/megaglest ${PREFIX}/bin/${PORTNAME}
