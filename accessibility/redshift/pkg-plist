@@ -39,4 +39,4 @@ share/icons/hicolor/scalable/apps/redshift-status-on.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry lib/python2.6/site-packages/gtk_redshift
+%%GUI%%@dirrmtry lib/python2.6/site-packages/gtk_redshift
