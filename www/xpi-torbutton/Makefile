@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	torbutton
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	www
 MASTER_SITES=	https://www.torproject.org/dist/torbutton/
 
