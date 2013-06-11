@@ -53,7 +53,6 @@ apps/ROX-Session/setup.pyc
 apps/ROX-Session/setup.pyo
 bin/rox-session
 %%GDM%%share/applications/rox.desktop
-@dirrmtry share/applications
 @dirrm apps/ROX-Session/images
 @dirrm apps/ROX-Session/Messages
 @dirrm apps/ROX-Session
