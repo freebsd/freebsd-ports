@@ -1,9 +1,5 @@
-# New ports collection makefile for:	podsleuth
-# Date created:		2008-07-09
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	podsleuth
 PORTVERSION=	0.6.7
