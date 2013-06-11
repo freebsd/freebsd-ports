@@ -3806,5 +3806,4 @@ www/moregroupware/setup/templates/default/media/status_warning.gif
 %%ADDONS%%@dirrm www/moregroupware/modules/workflow/templates
 %%ADDONS%%@dirrm www/moregroupware/modules/workflow
 @dirrm www/moregroupware/modules
-@dirrmtry www/moregroupware/templates_c
 @dirrm www/moregroupware
