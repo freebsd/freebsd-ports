@@ -5,7 +5,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Realm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class
