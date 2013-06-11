@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IO-YAML
-# Date created:		2006-08-17
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-YAML
 PORTVERSION=	0.08
