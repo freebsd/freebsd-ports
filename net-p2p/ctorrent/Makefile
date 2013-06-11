@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.rahul.net/dholmes/ctorrent/
 DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	BitTorrent Client written in C for FreeBSD and Linux
 
 GNU_CONFIGURE=	yes
