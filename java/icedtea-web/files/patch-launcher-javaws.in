@@ -1,16 +1,19 @@
---- launcher/javaws.in.orig	2012-03-05 11:04:20.493026000 -0500
-+++ launcher/javaws.in	2012-03-05 19:04:39.000000000 -0500
-@@ -1,11 +1,11 @@
--#!/bin/bash
-+#!%%LOCALBASE%%/bin/bash
- 
- JAVA=@JAVA@
- LAUNCHER_BOOTCLASSPATH=@LAUNCHER_BOOTCLASSPATH@
- LAUNCHER_FLAGS=-Xms8m
+--- launcher/javaws.in.orig	2013-05-03 15:08:24.149521000 -0400
++++ launcher/javaws.in	2013-06-10 19:49:57.000000000 -0400
+@@ -6,7 +6,7 @@
  CLASSNAME=net.sourceforge.jnlp.runtime.Boot
  BINARY_LOCATION=@JAVAWS_BIN_LOCATION@
+ SPLASH_LOCATION=@JAVAWS_SPLASH_LOCATION@
 -PROGRAM_NAME=javaws
 +PROGRAM_NAME=itweb-javaws
  CP=@JRE@/lib/rt.jar
  
- JAVA_ARGS=( )
+ PROPERTY_NAME=deployment.jre.dir
+@@ -86,6 +86,6 @@
+   k=$((k+1))
+ done
+ 
+-exec -a "javaws" "${COMMAND[@]}"
++exec -a "itweb-javaws" "${COMMAND[@]}"
+ 
+ exit $?
