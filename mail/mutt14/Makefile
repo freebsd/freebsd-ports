@@ -3,6 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.3
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -19,18 +20,29 @@ PATCHFILES=	patch-${PATCHVERSION}.rr.compressed.gz:vvv \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
-COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
+COMMENT?=	The Mongrel of Mailers (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}14${PKGNAMESUFFIX}
 
-OPTIONS_DEFINE=	NLS SLANG NCURSES SGML_DOCS LOCALES_FIX MUTT_XFACE MUTT_FLOCK MUTT_ICONV GSSAPI
+OPTIONS_DEFINE=	NLS SGML_DOCS LOCALES_FIX MUTT_XFACE MUTT_FLOCK MUTT_ICONV GSSAPI
 OPTIONS_DEFAULT=	MUTT_FLOCK MUTT_ICONV GSSAPI
-SGML_DOCS_DESC=		mutt SGML documentation
-LOCALES_FIX_DESC=	locales fixes
-MUTT_XFACE_DESC=	Adds mutt X-Face
-MUTT_FLOCK_DESC=	mutt flock
-MUTT_ICONV_DESC=	mutt iconv
+
+OPTIONS_RADIO=		CONS
+OPTIONS_RADIO_CONS=	SLANG NCURSES
+
+.if defined(PACKAGE_BUILDING) && !defined (MUTT_LITE)
+OPTIONS_DEFAULT+=	SLANG
+.endif
+
+CONS_DESC=	Console driver (if none chosen, uses ncurses from base system)
+SLANG_DESC=	Adds display/screen management via S-Lang
+NCURSES_DESC=	Adds console graphics support with ncurses from ports
+SGML_DOCS_DESC=	Build mutt's SGML documentation
+LOCALES_FIX_DESC=	Enable locales fixes
+MUTT_XFACE_DESC=	Adds mutt X-Face support
+MUTT_FLOCK_DESC=	Use flock() for file locks
+MUTT_ICONV_DESC=	Enable mutt's iconv character conversion feature
 
 USE_OPENSSL=	yes
 
@@ -52,8 +64,8 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
 .if ! ${PORT_OPTIONS:MMUTT_ICONV}
-IGNORE=	the MUTT_ICONV options of the mutt port only be deactivate if \
-	NLS is also deactivated
+IGNORE=	the MUTT_ICONV options of the mutt port only be disabled if \
+	NLS is also disabled
 .endif
 .elif ${PORT_OPTIONS:MMUTT_ICONV}
 USES+=	iconv
@@ -94,9 +106,9 @@ CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 .if ${PORT_OPTIONS:MMUTT_FLOCK}
-CONFIGURE_ARGS+=	--disable-flock
-.else
 CONFIGURE_ARGS+=	--enable-flock
+.else
+CONFIGURE_ARGS+=	--disable-flock
 .endif
 .if ${PORT_OPTIONS:MLOCALES_FIX}
 CONFIGURE_ARGS+=	--enable-locales-fix
@@ -107,7 +119,7 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-.if ! ${PORT_OPTIONS:MMITT_ICONV} && ! ${PORT_OPTIONS:MNLS}
+.if ! ${PORT_OPTIONS:MMUTT_ICONV} && ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-iconv
 .else
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
