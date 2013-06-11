@@ -51,6 +51,68 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d7a43ee6-d2d5-11e2-9894-002590082ac6">
+    <topic>owncloud -- Multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>owncloud</name>
+	<range><lt>5.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ownCloud development team reports:</p>
+	<blockquote cite="http://owncloud.org/about/security/advisories/">
+	  <p>oC-SA-2013-019 / CVE-2013-2045: Multiple SQL Injections.
+	    Credit to Mateusz Goik (aliantsoft.pl).</p>
+	  <p>oC-SA-2013-020 / CVE-2013-[2039,2085]: Multiple directory traversals.
+	    Credit to Mateusz Goik (aliantsoft.pl).</p>
+	  <p>oC-SQ-2013-021 / CVE-2013-[2040-2042]: Multiple XSS vulnerabilities.
+	    Credit to Mateusz Goik (aliantsoft.pl) and Kacper R. (http://devilteam.pl).</p>
+	  <p>oC-SA-2013-022 / CVE-2013-2044: Open redirector.
+	    Credit to Mateusz Goik (aliantsoft.pl).</p>
+	  <p>oC-SA-2013-023 / CVE-2013-2047: Password autocompletion.</p>
+	  <p>oC-SA-2013-024 / CVE-2013-2043: Privilege escalation in the calendar application.
+	    Credit to Mateusz Goik (aliantsoft.pl).</p>
+	  <p>oC-SA-2013-025 / CVE-2013-2048: Privilege escalation and CSRF in the API.</p>
+	  <p>oC-SA-2013-026 / CVE-2013-2089: Incomplete blacklist vulnerability.</p>
+	  <p>oC-SA-2013-027 / CVE-2013-2086: CSRF token leakage.</p>
+	  <p>oC-SA-2013-028 / CVE-2013-[2149-2150]: Multiple XSS vulnerabilities.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-019/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-020/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-021/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-022/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-023/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-024/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-025/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-026/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-027/</url>
+      <url>http://owncloud.org/about/security/advisories/oC-SA-2013-028/</url>
+      <cvename>CVE-2013-2039</cvename>
+      <cvename>CVE-2013-2040</cvename>
+      <cvename>CVE-2013-2041</cvename>
+      <cvename>CVE-2013-2042</cvename>
+      <cvename>CVE-2013-2043</cvename>
+      <cvename>CVE-2013-2044</cvename>
+      <cvename>CVE-2013-2045</cvename>
+      <cvename>CVE-2013-2047</cvename>
+      <cvename>CVE-2013-2048</cvename>
+      <cvename>CVE-2013-2085</cvename>
+      <cvename>CVE-2013-2086</cvename>
+      <cvename>CVE-2013-2089</cvename>
+      <cvename>CVE-2013-2149</cvename>
+      <cvename>CVE-2013-2150</cvename>
+    </references>
+    <dates>
+      <discovery>2013-05-14</discovery>
+      <entry>2013-06-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59e7163c-cf84-11e2-907b-0025905a4770">
     <topic>php5 -- Heap based buffer overflow in quoted_printable_encode</topic>
     <affects>
