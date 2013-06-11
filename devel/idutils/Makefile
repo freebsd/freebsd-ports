@@ -11,6 +11,7 @@ COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 
 CONFLICTS=	coreutils-[0-9]* linux-gid-[0-9]* sh-utils-[0-9]*
 
+USES+=		charsetfix
 LICENSE=	GPLv3
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
