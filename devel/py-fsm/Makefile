@@ -1,0 +1,22 @@
+# $FreeBSD$
+
+PORTNAME=	fsm
+PORTVERSION=	0.01
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	python-${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	skreuzer@FreeBSD.org
+COMMENT=	Pure Python Implementation of a Finite State Machine
+
+LICENSE=	BSD
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.0:${PORTSDIR}/graphics/py-graphviz
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_EGGINFO=	python_${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
+
+.include <bsd.port.mk>

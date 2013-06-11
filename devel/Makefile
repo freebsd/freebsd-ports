@@ -3498,6 +3498,7 @@
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
     SUBDIR += py-fs
+    SUBDIR += py-fsm
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-fusefs
