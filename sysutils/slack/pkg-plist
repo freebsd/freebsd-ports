@@ -15,6 +15,5 @@ sbin/slack
 @unexec rmdir /var/lib/slack 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
 @unexec rmdir /var/cache/slack 2>/dev/null || true
-@unexec rmdir /var/cache 2>/dev/null || true
 @dirrm lib/slack
 @dirrm libexec/slack

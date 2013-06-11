@@ -1,9 +1,5 @@
-# New ports collection makefile for:   slack
-# Date created:                        3 October 2008
-# Whom:                                Steve Atwell
-#
+# Created by: Steve Atwell
 # $FreeBSD$
-#
 
 PORTNAME=	slack
 PORTVERSION=	0.15.2
