@@ -5641,7 +5641,6 @@ sbin/update-gosa
 @dirrm %%WWWDIR%%/plugins/personal
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/setup
-@dirrmtry %%WWWDIR%%/state
 @dirrm %%WWWDIR%%
 @dirrm %%EXAMPLESDIR%%/contrib/openldap
 @dirrm %%EXAMPLESDIR%%/contrib/plugins/squid
