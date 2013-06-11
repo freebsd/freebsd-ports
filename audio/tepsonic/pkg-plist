@@ -9,10 +9,6 @@ share/icons/hicolor/256x256/apps/tepsonic.png
 share/icons/hicolor/32x32/apps/tepsonic.png
 share/icons/hicolor/48x48/apps/tepsonic.png
 share/icons/hicolor/64x64/apps/tepsonic.png
-@dirrm %%DATADIR%%/locale/tepsonic
-@dirrm %%DATADIR%%/locale/lastfmscrobbler
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
