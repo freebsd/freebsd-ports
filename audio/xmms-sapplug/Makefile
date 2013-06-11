@@ -29,7 +29,9 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
 
-.if ${CXX:T} != "clang++"
+_CLANG!=	clang --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+
+.if ${CXX:T} != "clang++" && !defined(_CLANG)
 CXXFLAGS+=	--no-exceptions
 .endif
 
