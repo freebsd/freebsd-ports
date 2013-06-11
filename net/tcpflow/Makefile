@@ -1,23 +1,36 @@
-# New ports collection makefile for:	tcpflow
-# Date created:		20 August 1999
-# Whom:			Jose M. Alcaide <jose@we.lc.ehu.es>
-#
+# Created by: Jose M. Alcaide <jose@we.lc.ehu.es>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpflow
-PORTVERSION=	0.21
-PORTREVISION=	1
+DISTVERSION=	1.4.0b1
 CATEGORIES=	net
-MASTER_SITES=	http://www.circlemud.org/pub/jelson/tcpflow/
+MASTER_SITES=	http://www.digitalcorpora.org/downloads/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for capturing data transmitted as part of TCP connections
+MAINTAINER=	antoine@FreeBSD.org
+COMMENT=	Program that captures data transmitted as part of TCP connections
 
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake14
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/icl/interval.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		tcpflow.1
 PLIST_FILES=	bin/tcpflow
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+.include <bsd.port.options.mk>
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
