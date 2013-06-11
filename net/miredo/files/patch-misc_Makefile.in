@@ -1,14 +1,5 @@
 --- misc/Makefile.in.orig	2013-05-24 00:51:51.000000000 +0900
 +++ misc/Makefile.in	2013-05-30 21:43:05.059112147 +0900
-@@ -18,7 +18,7 @@
- # Makefile.am - misc Makefile for miredo
- 
- # ***********************************************************************
--# *  Copyright © 2004-2009 Rémi Denis-Courmont.                         *
-+# *  Copyright 息 2004-2009 R辿mi Denis-Courmont.                         *
- # *  This program is free software; you can redistribute and/or modify  *
- # *  it under the terms of the GNU General Public License as published  *
- # *  by the Free Software Foundation; version 2 of the license, or (at  *
 @@ -395,27 +395,11 @@
  	@list='$(examples_DATA)'; test -n "$(examplesdir)" || list=; \
  	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
