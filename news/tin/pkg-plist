@@ -17,5 +17,3 @@ etc/tin.defaults.dist
 %%NLS%%share/locale/ru/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tin.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
