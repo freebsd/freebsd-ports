@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rd-mode.el
-PORTVERSION=	0.6.31
+PORTVERSION=	0.6.38
 CATEGORIES=	textproc ruby elisp
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	ruby-	# not ${RUBY_PKGNAMEPREFIX} since this is not version specific
@@ -28,6 +28,7 @@ do-extract:
 	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool; ${MAKE} -V WRKSRC`/utils ${WRKSRC}
 
 do-install:
+	${MKDIR} ${RUBY_ELISPDIR}/
 	${MKDIR} ${XEMACSLISPDIR}/
 .for f in ${ELISP_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_ELISPDIR}/
