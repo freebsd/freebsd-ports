@@ -31,7 +31,7 @@ PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
 PATCHFILES+=	qmailadmin-1.2.12-onchange.3.patch:onchange
 PATCH_DIST_STRIP+=	-p1
 
-PORTSCOUT=	ignore:1.2.16
+PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=	IPAUTH USER_INDEX MODIFY_QUOTA DOMAIN_AUTOFILL \
 		IDX IDX_SQL HELP SPAM_DETECTION SPAM_NEEDS_EMAIL \
