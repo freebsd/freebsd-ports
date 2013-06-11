@@ -2,7 +2,7 @@
 %%PAD_TOOLS%%bin/pad-join
 %%PAD_TOOLS%%bin/pad-make-script
 %%PAD_TOOLS%%bin/pad-make-binary
+%%PAD_TOOLS%%bin/xshar
 bin/webjob
-bin/xshar
 etc/webjob-execute.cfg.sample
 etc/webjob-get-url.cfg.sample

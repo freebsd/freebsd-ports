@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		webjob
-PORTVERSION=		1.8.0
+PORTVERSION=		1.9.0
 CATEGORIES=		sysutils security
 MASTER_SITES=		SF
 EXTRACT_SUFX=		.tgz
@@ -30,6 +30,7 @@ PLIST_SUB+=		PAD_TOOLS="@comment "
 
 .if ! ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--without-ssl
+PLIST_SUB+=		DSV_TOOLS="@comment "
 .else
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
