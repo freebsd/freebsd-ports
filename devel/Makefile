@@ -4355,6 +4355,7 @@
     SUBDIR += tortoisehg2
     SUBDIR += tpasm
     SUBDIR += trac-bitten
+    SUBDIR += tradcpp
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += uatraits
