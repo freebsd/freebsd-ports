@@ -45,4 +45,5 @@ share/sounds/gnome-memblocks/flip07.wav
 @dirrm share/pixmaps/gnome-memblocks
 @dirrm share/gnome/help/gnome-memblocks/C
 @dirrm share/gnome/help/gnome-memblocks
+@dirrmtry share/games
 @dirrm lib/gnome-memblocks
