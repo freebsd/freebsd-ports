@@ -35,8 +35,6 @@ share/mime/packages/gnochm.xml
 @dirrm share/gnome/help/gnochm
 @dirrm share/gnochm/glade
 @dirrm share/gnochm
-@dirrmtry man/it/man1
-@dirrmtry man/it
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/applications
