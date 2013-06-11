@@ -18,10 +18,6 @@ CONFIGURE_ARGS=	--with-opengl-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 DESKTOP_ENTRIES=	"GL-117" \
 			"Action flight simulator" \
 			"" \
