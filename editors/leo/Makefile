@@ -1,9 +1,5 @@
-# New ports collection makefile for:	leo
-# Date created:			2002/11/17
-# Whom:				Alan Eldridge <ports@geeksrus.net>
-#
+# Created by: Alan Eldridge <ports@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	leo
 PORTVERSION=	4.10
@@ -32,7 +28,7 @@ PYENCHANT_DESC=	Enable PyEnchant support
 WRKSRC=		${WRKDIR}/Leo-${PORTVERSION}-final
 
 USE_ZIP=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 
 LEO_DIR=	${PYTHONPREFIX_SITELIBDIR}/leo
 
