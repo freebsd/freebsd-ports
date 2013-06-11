@@ -52,3 +52,6 @@ libdata/pkgconfig/verbiste-0.1.pc
 @dirrm %%DOCSDIR%%
 @dirrm include/verbiste-0.1/verbiste
 @dirrm include/verbiste-0.1
+@dirrmtry man/fr/man3
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
