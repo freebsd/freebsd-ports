@@ -269,7 +269,6 @@ share/applications/piqsl.desktop
 @dirrm %%DATADIR%%/examples/features/archives
 @dirrm %%DATADIR%%/examples/features
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
 @dirrm lib/aqsis
 @dirrm include/aqsis/ri
