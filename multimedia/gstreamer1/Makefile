@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		gobject-introspection>=1.31.1:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
+PORTSCOUT=	limitw:1,even
+
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USES=		bison gettext pathfix pkgconfig
 # workaround a crash in clang 3.3 crash llvm bug # 15840
