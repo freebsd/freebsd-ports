@@ -1,9 +1,5 @@
-# New ports collection makefile for:	entrans
-# Date created:		Jan-25-2007
-# Whom:			Prudhvi Krishna <prudhvikrishna@gmail.com>
-#
+# Created by: Prudhvi Krishna <prudhvikrishna@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	entrans
 PORTVERSION=	0.3.2
@@ -29,8 +25,7 @@ pre-install:
 		${SED} -e 's|^|${ENTRANS}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${ENTRANS}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${ENTRANS} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${ENTRANS} >> ${PLIST}
 	if [ ! -f ${WRKSRC}/conf/database.conf.php.sample ]; then ${CP} \
 		${WRKSRC}/conf/database.conf.php.sample ${WRKSRC}/conf/database.conf.php; fi
 
