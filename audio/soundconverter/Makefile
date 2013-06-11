@@ -1,9 +1,5 @@
-# New ports collection makefile for:   soundconverter
-# Date created:        04 September 2007
-# Whom:                Jona Joachim <jaj@hcl-club.lu>
-#
+# Created by: Jona Joachim <jaj@hcl-club.lu>
 # $FreeBSD$
-#
 
 PORTNAME=	soundconverter
 PORTVERSION=	1.5.4

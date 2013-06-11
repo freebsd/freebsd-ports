@@ -54,10 +54,4 @@ share/icons/hicolor/scalable/apps/soundconverter.svg
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@dirrmtry lib/locale/te/LC_MESSAGES
-@dirrmtry lib/locale/te
-@dirrmtry lib/locale/sv_SE/LC_MESSAGES
-@dirrmtry lib/locale/sv_SE
-@dirrmtry lib/locale/sr@latin/LC_MESSAGES
-@dirrmtry lib/locale/sr@latin
 @dirrm %%DATADIR%%
