@@ -313,7 +313,6 @@
 @dirrm %%PHPBBDIR%%/db
 @dirrm %%PHPBBDIR%%/images/smiles
 @dirrmtry %%PHPBBDIR%%/images/avatars/gallery
-@dirrmtry %%PHPBBDIR%%/images/avatars/upload
 @dirrmtry %%PHPBBDIR%%/images/avatars
 @dirrmtry %%PHPBBDIR%%/images
 @dirrm %%PHPBBDIR%%/includes
@@ -328,4 +327,4 @@
 @dirrmtry %%PHPBBDIR%%/templates/subSilver
 @dirrmtry %%PHPBBDIR%%/templates
 @dirrmtry %%PHPBBDIR%%
-@dirrmtry www/data
+
