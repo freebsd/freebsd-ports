@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmemory
-# Date Created:		Sat Feb  7 21:37:09 EST 1998
-# Whom:			Dave Chapeskie <dchapes@ddm.on.ca>
-#
+# Created by: Dave Chapeskie <dchapes@ddm.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	xmemory
 PORTVERSION=	3.7
