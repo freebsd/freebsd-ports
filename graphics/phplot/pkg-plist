@@ -101,7 +101,6 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/start-multiple.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/SetXTitleColor.html
-%%PORTDOCS%%%%DOCSDIR%%/examples
 %%PORTDOCS%%%%DOCSDIR%%/examples/horizerror.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/lines2.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/boxplot1.png
@@ -167,7 +166,6 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/SetXDataLabelPos.html
 %%PORTDOCS%%%%DOCSDIR%%/SetXTimeFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-colorstyle.html
-%%PORTDOCS%%%%DOCSDIR%%/images
 %%PORTDOCS%%%%DOCSDIR%%/images/shape-target.png
 %%PORTDOCS%%%%DOCSDIR%%/images/thumbnail-pie.png
 %%PORTDOCS%%%%DOCSDIR%%/images/thumbnail-boxes.png

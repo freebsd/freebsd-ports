@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
 		${PORTNAME}docs-20130511.zip:source2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PHP class for creating scientific and business charts
+COMMENT=	PHP class for creating scientific and business charts
 
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
