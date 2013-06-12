@@ -17,6 +17,9 @@
 #				  installed from a port, but without the version number.
 #				  Use this if you need to replace "#!" lines in scripts.
 # PERL_VERSION	- Full version of perl5 (see below for current value).
+# 
+# PERL_VER	- Short version of perl5 (major.minor without patchlevel)
+#
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
 #				  M is major version, N is minor version, and P is
 #				  the patch level. E.g., PERL_VERSION=5.14.2 would give
@@ -31,20 +34,23 @@
 #				  This value is added to PLIST_SUB.
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
 #				  patch, build, install or run phases.
-# PERL_CONFIGURE
-#				- Configure using Perl's MakeMaker.  Implies USE_PERL5.
-# USE_PERL5_BUILD
-#				- If set, this port uses perl5 in one or more of the
+#
+# PERL_CONFIGURE	- Configure using Perl's MakeMaker.  Implies USE_PERL5.
+#
+# USE_PERL5_BUILD	- If set, this port uses perl5 in one or more of the
 #				  extract, patch, build or install phases.
-# USE_PERL5_RUN	- If set, this port uses perl5 for running.
-# PERL_MODBUILD	- Use Module::Build to configure, build and install port.
+#
+# USE_PERL5_RUN		- If set, this port uses perl5 for running.
+#
+# PERL_MODBUILD		- Use Module::Build to configure, build and install port.
 
 .if !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
 
 Perl_Pre_Include=			bsd.perl.mk
 PERL_Include_MAINTAINER=	perl@FreeBSD.org
 
-PERL_VERSION?=	5.14.2
+PERL_VERSION?=	5.14.4
+PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
@@ -74,7 +80,7 @@ PERL_PORT?=	perl5.14
 PERL_PORT?=	perl5.12
 .endif
 
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
@@ -141,7 +147,7 @@ IGNORE=	improper use of USE_PERL5
 Perl_Post_Include=		bsd.perl.mk
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-			PERL_VER=${PERL_VERSION} \
+			PERL_VER=${PERL_VER} \
 			PERL_ARCH=${PERL_ARCH} \
 			SITE_PERL=${SITE_PERL_REL}
 
@@ -189,7 +195,7 @@ RUN_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
-MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VER}
 .undef HAS_CONFIGURE
 .endif # defined(PERL_CONFIGURE)
 

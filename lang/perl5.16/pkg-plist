@@ -14,10 +14,9 @@ bin/instmodsh
 bin/json_pp
 bin/libnetcfg
 bin/perl
-bin/perl%%PERL_VER%%
+bin/perl%%PERL_VERSION%%
 @exec ln -fs %D/%F %B/perl5
 @unexec rm -f %B/perl5 2>&1 >/dev/null || true
-bin/perl-after-upgrade
 bin/perlbug
 bin/perldoc
 bin/perlivp
@@ -1042,6 +1041,7 @@ lib/perl5/%%PERL_VER%%/pod/perl5143delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5160delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5161delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5162delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5163delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl561delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl56delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl581delta.pod
