@@ -16,9 +16,6 @@ USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
