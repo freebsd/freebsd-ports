@@ -2,22 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	xnee
-PORTVERSION=	3.15
-PORTREVISION=	1
+PORTVERSION=	3.16
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	X events recorder and player
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
-
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_XORG=	x11 xau xcb xdmcp xext xi xtst
-USE_GNOME=	gnomehack
+USE_XORG=	xtst
+USES=		pathfix
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
@@ -32,17 +29,8 @@ PNEE_DESC=	GNOME panel frontend
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNEE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-
 CONFIGURE_ARGS+=--enable-gui
-USES+=		gettext iconv
-USE_XORG+=	pixman xcomposite xcursor xdamage xfixes xinerama xrandr xrender
-USE_GNOME+=	gdkpixbuf2 gtk20 libgnomeui
+USE_GNOME+=	gtk20
 MAN1+=		gnee.1
 PLIST_SUB+=	GNEE=""
 DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PORTNAME}.png" \
