@@ -68,8 +68,6 @@ share/icons/hicolor/96x96/apps/pairs.png
 share/icons/hicolor/96x96/apps/pairseditor.png
 share/icons/hicolor/scalable/apps/pairs.svgz
 share/icons/hicolor/scalable/apps/pairseditor.svgz
-@dirrmtry share/icons/hicolor/20x20/apps
-@dirrmtry share/icons/hicolor/20x20
 @dirrm share/apps/pairseditor
 @dirrm share/apps/pairs/themes
 @dirrm share/apps/pairs/players
