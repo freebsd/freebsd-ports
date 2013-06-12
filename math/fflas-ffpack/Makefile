@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 OPTIONS_DEFINE=	DOXYGEN OPTIMIZED_CFLAGS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${LOCALBASE} == "/usr/local"
 CPPFLAGS+=	-I${LOCALBASE}/include
