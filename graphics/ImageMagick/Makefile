@@ -420,7 +420,7 @@ pre-configure:
 
 post-install: test
 .if ${PORT_OPTIONS:MPERL}
-	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
+	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
 .endif
 .if ${PORT_OPTIONS:MMODULES}
 . if ${PORT_OPTIONS:M16BIT_PIXEL}

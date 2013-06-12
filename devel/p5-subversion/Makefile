@@ -19,7 +19,7 @@ PKGDIR=		${.CURDIR}
 
 USE_PERL5=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 MAN3=		SVN::Base.3 \
 		SVN::Client.3 \
 		SVN::Core.3 \

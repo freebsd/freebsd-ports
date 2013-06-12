@@ -102,7 +102,7 @@ MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
 
 .if ${PORT_OPTIONS:MPERL_MODULE}
 MAN3=		RRDp.3 RRDs.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 .endif
 
 post-extract:

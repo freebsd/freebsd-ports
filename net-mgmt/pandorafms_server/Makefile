@@ -127,7 +127,7 @@ post-install:
 .else
 	@cd ${WRKSRC} && ${SH} pandora_server_installer --install --no-tentacle
 .endif
-	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/perllocal.pod
+	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 .if !defined(NOPORTDOC)
 	@${MKDIR} ${DOCSDIR}
 .for x in ${PORTDOCS}

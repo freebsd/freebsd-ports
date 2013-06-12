@@ -21,7 +21,7 @@ USE_FORTRAN=	yes
 USE_PERL5=	yes
 
 MAN3=		PGPLOT.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
