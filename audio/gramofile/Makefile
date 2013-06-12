@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gramofile
-# Date created:		Fri Jan 28 18:40:38 CET 2000
-# Whom:			nox@jelal.kn-bremen.de
-#
+# Created by: nox@jelal.kn-bremen.de
 # $FreeBSD$
-#
 
 PORTNAME=	gramofile
 PORTVERSION=	1.6P
@@ -28,7 +24,7 @@ USE_CSTD=	gnu89
 MAKE_ARGS+=	CC=${CC}
 MAKE_ARGS+=	CXX=${CXX}
 
-PERLCOREDIR=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/mach/CORE
+PERLCOREDIR=	${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE
 MAKE_ARGS+=	PERLCOREDIR=${PERLCOREDIR}
 
 post-patch:
