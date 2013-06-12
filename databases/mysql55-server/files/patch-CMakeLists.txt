@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2010-12-03 18:58:24.000000000 +0100
-+++ CMakeLists.txt	2010-12-23 18:02:02.000000000 +0100
-@@ -293,7 +293,6 @@
+--- CMakeLists.txt.orig	2013-05-16 17:47:15.000000000 +0200
++++ CMakeLists.txt	2013-06-12 09:41:06.000000000 +0200
+@@ -306,7 +306,6 @@
  
  ADD_SUBDIRECTORY(extra)
  IF(NOT WITHOUT_SERVER)
@@ -8,7 +8,7 @@
    ADD_SUBDIRECTORY(client)
    ADD_SUBDIRECTORY(sql)
    ADD_SUBDIRECTORY(sql/share)
-@@ -301,14 +300,10 @@
+@@ -314,14 +313,10 @@
    OPTION (WITH_EMBEDDED_SERVER "Compile MySQL with embedded server" OFF)
    IF(WITH_EMBEDDED_SERVER) 
     ADD_SUBDIRECTORY(libmysqld)
@@ -23,7 +23,18 @@
    IF(UNIX)
      ADD_SUBDIRECTORY(man)
    ENDIF()
-@@ -343,6 +338,7 @@
+@@ -365,8 +360,10 @@
+ ELSE()
+   SET(CPACK_GENERATOR "TGZ")
+ ENDIF() 
++IF(FALSE)
+ ADD_SUBDIRECTORY(packaging/WiX)
+ ADD_SUBDIRECTORY(packaging/solaris)
++ENDIF() 
+ 
+ # Create a single package with "make package"
+ # (see http://public.kitware.com/Bug/view.php?id=11452)
+@@ -379,6 +376,7 @@
  #
  # RPM installs documentation directly from the source tree
  #
@@ -31,7 +42,7 @@
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
    INSTALL(FILES COPYING LICENSE.mysql 
    DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -367,3 +363,4 @@
+@@ -404,3 +402,4 @@
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
  ENDIF()
