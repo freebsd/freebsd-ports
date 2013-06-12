@@ -2,29 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	bf2c
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	rene0
+GH_COMMIT=	4761081
 USE_XZ=		yes
-USE_GMAKE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bf2c ${PREFIX}/bin
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
