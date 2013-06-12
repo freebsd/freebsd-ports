@@ -5,8 +5,9 @@ PORTNAME=	hmconv
 PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	korean mail
-MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
-		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/code/hmconv/
+MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/code/hmconv/ \
+		ftp://ftp.kaist.ac.kr/hangul/code/hmconv/ \
+		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	hmconv1.0pl3
 
 MAINTAINER=	ports@FreeBSD.org
