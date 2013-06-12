@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tradcpp
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
 
@@ -10,12 +10,12 @@ COMMENT=	Traditional (K&R-style) C preprocessor
 
 LICENSE=	BSD
 
+MANCOMPRESSED=	yes
+MAKE_JOBS_SAFE=	yes
+MAKE_ARGS=	BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man/man
+
 PLIST_FILES=	bin/tradcpp
 
-post-patch:
-	@${REINPLACE_CMD} 's/NOMAN/NO_MAN/' ${WRKSRC}/Makefile
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+MAN1=		tradcpp.1
 
 .include <bsd.port.mk>
