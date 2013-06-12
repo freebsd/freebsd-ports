@@ -109,7 +109,6 @@ bin/prophet
 %%SITE_PERL%%/Prophet/Util.pm
 %%SITE_PERL%%/Prophet/Conflict.pm
 %%SITE_PERL%%/Prophet/FilesystemReplica.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prophet
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css
