@@ -1,0 +1,11 @@
+--- cf-agent/Makefile.in.orig	2013-06-12 09:10:17.000000000 -0400
++++ cf-agent/Makefile.in	2013-06-12 13:17:39.103623377 -0400
+@@ -53,7 +53,7 @@
+ target_triplet = @target@
+ sbin_PROGRAMS = cf-agent$(EXEEXT)
+ @HAVE_NOVA_TRUE@am__append_1 = -I$(abs_top_srcdir)/nova/libcfagent
+-@HAVE_AVAHI_CLIENT_TRUE@@HAVE_AVAHI_COMMON_TRUE@am__append_2 = -ldl
++@HAVE_AVAHI_CLIENT_TRUE@@HAVE_AVAHI_COMMON_TRUE@am__append_2 =
+ @HAVE_NOVA_TRUE@am__append_3 = ../nova/libcfagent/libcfagent.la
+ @NT_FALSE@am__append_4 = nfs.c nfs.h
+ @HAVE_NOVA_FALSE@am__append_5 = cf-agent-enterprise-stubs.c cf-agent-enterprise-stubs.h
