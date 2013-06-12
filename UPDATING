@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130612:
+  AFFECTS: users of  lang/perl* and any port that depends on it
+  AUTHOR: az@FreeBSD.org
+
+  lang/perl5.12 upgrade from version 5.12.4 to 5.12.5
+  lang/perl5.14 upgrade from version 5.14.2 to 5.14.4
+  lang/perl5.16 upgrade from version 5.16.2 to 5.16.3
+
+  Also was modification to directory structure where
+  is perl installed. Instead major.minor.patchlevel now only major.minor. 
+  The "perl-after-upgrade" script is removed.
+
+  Please rebuild all perl ports and all ports that 
+  depend in it:
+
+  # portmaster -r perl
+    or
+  # portupgrade -rf perl
+    or 
+  # pkg install -fR perl
+
 20130609:
   AFFECTS: users of audio/flac and any port that depends on it
   AUTHOR: naddy@FreeBSD.org

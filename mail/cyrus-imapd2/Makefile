@@ -22,6 +22,8 @@ CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^1].*
 
 LATEST_LINK=	${PORTNAME}2
 
+PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
+
 USE_RC_SUBR=	imapd
 
 USE_OPENSSL=	yes
@@ -128,8 +130,8 @@ post-patch:
 
 post-install:
 .for f in ${CYRUS_MAN3}
-		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${f}
-		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${f}.gz \
+		@${GZIP_CMD} ${PREFIX}/${PERLMAN}/man/man3/${f}
+		@${ECHO_CMD} ${PERLMAN}/man/man3/${f}.gz \
 			>>${TMPPLIST}
 .endfor
 .for f in ${CYRUS_MAN8}

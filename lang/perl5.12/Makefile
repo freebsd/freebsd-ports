@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	5
+PORTREVISION=	0
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -37,9 +37,10 @@ USE_PERL_DESC=		Rewrite links in /usr/bin
 
 PORTSCOUT=	limitw:1,even
 
-PERL_VERSION=	5.12.4
+PERL_VERSION=	5.12.5
+PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 USE_BZIP2=	yes
@@ -47,13 +48,13 @@ HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
-	-Darchlib=${PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH} \
-	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VERSION} \
-	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VERSION}/perl/man/man3 \
+	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
+	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
+	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/perl/man/man3 \
 	-Dman1dir=${PREFIX}/man/man1 \
 	-Dsitearch=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} \
 	-Dsitelib=${PREFIX}/${SITE_PERL_REL} -Dscriptdir=${PREFIX}/bin \
-	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3 \
+	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
@@ -70,15 +71,15 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 .if defined(PERL_VENDOR_PREFIX)
 CONFIGURE_ARGS+=	\
 	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
-	-Dvendorarch=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH} \
+	-Dvendorarch=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
 	-Dvendorbin=${PERL_VENDOR_PREFIX}/bin \
-	-Dvendorlib=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION} \
-	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VERSION}/man/man3 \
+	-Dvendorlib=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER} \
+	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
 .endif
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-		PERL_VER=${PERL_VERSION} \
+		PERL_VER=${PERL_VER} \
 		PERL_ARCH=${PERL_ARCH} \
 		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
@@ -148,9 +149,9 @@ NO_LATEST_LINK=	yes
 .if ${PORT_OPTIONS:MGDBM}
 MAN3+=	GDBM_File.3
 .endif
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}/perl
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
 
-BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VERSION}/BSDPAN
+BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
 		ExtUtils/MakeMaker.pm \
@@ -164,21 +165,19 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 post-patch:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
 		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
+		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
 		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
 		-e 's|%%LINK_USRBIN%%|${LINK_USRBIN}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
-		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
+		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
 		${FILESDIR}/perl-man.conf \
 		> ${WRKDIR}/perl-man.conf
-	${SED} -e 's|%%PERL%%|${PERL}|g; s|%%PERL_VERSION%%|${PERL_VERSION}|g; s|%%PKGNAME%%|${PKGNAME}|g' \
-		${FILESDIR}/perl-after-upgrade \
-		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.12|g;' \
+	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -200,12 +199,9 @@ pre-su-install:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VERSION}
 	@${STRIP_CMD} ${PREFIX}/bin/perl
-	@${PREFIX}/bin/pod2man ${WRKDIR}/perl-after-upgrade >${WRKDIR}/perl-after-upgrade.1
-	@${INSTALL_SCRIPT} ${WRKDIR}/perl-after-upgrade ${PREFIX}/bin/perl-after-upgrade
-	@${INSTALL_MAN} ${WRKDIR}/perl-after-upgrade.1 ${MAN1PREFIX}/man/man1/perl-after-upgrade.1
 	@${LN} -sf ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/perl5
 .if ${OSVERSION} >= 900022
-	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${PREFIX}/etc/man.d/perl${PERL_VERSION}.conf
+	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${PREFIX}/etc/man.d/perl${PERL_VER}.conf
 .endif
 .for files in ${BSDPAN_FILES}
 	${MKDIR} ${BSDPAN_DEST}/${files:H}
@@ -214,14 +210,10 @@ post-install:
 .endfor
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+AZ: 
 test: build
 	@(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
 
 regression-test: test
-
-rebuild-xs:
-	${LOCALBASE}/sbin/portupgrade -f `(${FIND} ${PKG_DBDIR}/p5*/+CONTENTS | \
-		${XARGS} ${GREP} -El 'site_perl.*\.so' | \
-		${SED} -e 's!/var/db/pkg/!!; s!/+CONTENTS!!;')`
 
 .include <bsd.port.post.mk>

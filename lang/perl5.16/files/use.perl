@@ -4,6 +4,7 @@
 
 this=`echo -n $0 | /usr/bin/sed -e 's!^.*/!!'`
 PERL_VERSION="%%PERL_VERSION%%"
+PERL_VER="%%PERL_VER%%"
 MAKE_CONF=%%MAKE_CONF%%
 banner=`date +"%F %T"`
 banner="# added by use.perl $banner"
@@ -89,9 +90,9 @@ do_create_links()
 do_post_install()
 {
 	INCLUDEDIR=/usr/include
-	install -d ${PKG_PREFIX}/lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto
-	install -d ${PKG_PREFIX}/lib/perl5/site_perl/%%PERL_VERSION%%/auto
-	install -d ${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/man/man3
+	install -d ${PKG_PREFIX}/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto
+	install -d ${PKG_PREFIX}/lib/perl5/site_perl/%%PERL_VER%%/auto
+	install -d ${PKG_PREFIX}/lib/perl5/%%PERL_VER%%/man/man3
 	cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h >/dev/null
 }
 
@@ -142,8 +143,8 @@ do_spam_manpath()
 	if [ -f /etc/manpath.config ] ; then
 		echo -n "Spamming /etc/manpath.config..."
 		echo "$banner" >>/etc/manpath.config
-		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/man" >>/etc/manpath.config
-		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/perl/man" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VER%%/man" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VER%%/perl/man" >>/etc/manpath.config
 		echo " Done."
 	fi
 }
