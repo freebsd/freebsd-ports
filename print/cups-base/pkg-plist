@@ -11,6 +11,7 @@
 @exec mkdir -p %D/etc/cups/ppd || true
 @exec mkdir -p %D/etc/cups/interfaces || true
 @unexec rm -rf %%CACHEDIR%% 2>/dev/null || true
+@unexec rmdir /var/spool/cups/tmp 2>/dev/null || true
 @unexec rmdir /var/spool/cups 2>/dev/null || true
 @unexec rmdir /var/log/cups 2>/dev/null || true
 @unexec rmdir /var/run/cups/certs 2>/dev/null || true
