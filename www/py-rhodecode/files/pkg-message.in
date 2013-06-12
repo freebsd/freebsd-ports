@@ -1,3 +1,9 @@
-Read instructions for setup in:
+For upgrade instructions please read:
+http://pythonhosted.org/RhodeCode/upgrade.html
 
+To create a rhodecode configuration file run the following commands:
+%%PREFIX%%/bin/paster make-config RhodeCode %%PREFIX%%/etc/rhodecode/production.ini
+%%PREFIX%%/bin/paster setup-rhodecode %%PREFIX%%/etc/rhodecode/production.ini
+
+Further instructions for setup:
 http://packages.python.org/RhodeCode/setup.html#setup
