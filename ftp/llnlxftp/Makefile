@@ -1,9 +1,5 @@
-# New ports collection makefile for:	llnlxftp
-# Date created:				9 November 1997
-# Whom: Dima Ruban <dima@FreeBSD.org>
-#
+# Created by: Dima Ruban <dima@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	llnlxftp
 PORTVERSION=	2.1
@@ -21,6 +17,10 @@ WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xp xt
+
+CFLAGS+=	-Wno-implicit-int \
+		-Wno-implicit-function-declaration \
+		-Wno-return-type
 
 MAN1=		xftp.1
 
