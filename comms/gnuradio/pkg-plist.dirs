@@ -18,6 +18,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/noaa
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/pager
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/qtgui
+@dirrm %%PYTHON_SITELIBDIR%%/gnuradio/modtool
 %%UHD%%@dirrm %%PYTHON_SITELIBDIR%%/gnuradio/uhd
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/vocoder
 @dirrm %%PYTHON_SITELIBDIR%%/gnuradio/wavelet
@@ -34,6 +35,7 @@
 @dirrmtry etc/gnuradio
 @dirrm include/gnuradio/analog
 @dirrm include/gnuradio/blocks
+@dirrm include/gnuradio/digital
 @dirrm include/gnuradio/fft
 @dirrm include/gnuradio/filter
 @dirrm include/gnuradio/swig
@@ -41,6 +43,8 @@
 @dirrm include/gruel/swig
 @dirrm include/gruel
 @dirrm include/volk
+@dirrm lib/cmake/gnuradio
+@dirrmtry lib/cmake
 @dirrmtry libdata/pkgconfig
 @dirrm libexec/gnuradio
 @dirrm share/gnuradio/examples/atsc
@@ -73,4 +77,20 @@
 @dirrm share/gnuradio/grc/blocks
 @dirrm share/gnuradio/grc/freedesktop
 @dirrm share/gnuradio/grc
+@dirrm share/gnuradio/modtool/gr-newmod/apps
+@dirrm share/gnuradio/modtool/gr-newmod/cmake/Modules
+@dirrm share/gnuradio/modtool/gr-newmod/cmake
+@dirrm share/gnuradio/modtool/gr-newmod/include/howto
+@dirrm share/gnuradio/modtool/gr-newmod/include
+@dirrm share/gnuradio/modtool/gr-newmod/grc
+@dirrm share/gnuradio/modtool/gr-newmod/python
+@dirrm share/gnuradio/modtool/gr-newmod/lib
+@dirrm share/gnuradio/modtool/gr-newmod/swig
+@dirrm share/gnuradio/modtool/gr-newmod/docs/doxygen/doxyxml/generated
+@dirrm share/gnuradio/modtool/gr-newmod/docs/doxygen/doxyxml
+@dirrm share/gnuradio/modtool/gr-newmod/docs/doxygen/other
+@dirrm share/gnuradio/modtool/gr-newmod/docs/doxygen
+@dirrm share/gnuradio/modtool/gr-newmod/docs
+@dirrm share/gnuradio/modtool/gr-newmod
+@dirrm share/gnuradio/modtool
 @dirrm share/gnuradio

@@ -1,18 +1,6 @@
---- CMakeLists.txt.orig	2013-01-08 15:56:55.000000000 -0500
-+++ CMakeLists.txt	2013-03-12 11:12:02.000000000 -0500
-@@ -41,8 +41,9 @@
- # Set the version information here
- set(VERSION_INFO_MAJOR_VERSION 3)
- set(VERSION_INFO_API_COMPAT    6)
--set(VERSION_INFO_MINOR_VERSION 4)
--set(VERSION_INFO_MAINT_VERSION git)
-+set(VERSION_INFO_MINOR_VERSION 3)
-+#set(VERSION_INFO_MINOR_VERSION 4)
-+set(VERSION_INFO_MAINT_VERSION 0)
- include(GrVersion) #setup version info
- 
- # Append -O2 optimization flag for Debug builds
-@@ -103,6 +104,14 @@
+--- CMakeLists.txt.orig	2013-06-04 11:21:38.000000000 -0500
++++ CMakeLists.txt	2013-06-04 14:46:17.000000000 -0500
+@@ -104,6 +104,14 @@
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
  set(GR_RUNTIME_DIR      bin)
@@ -27,7 +15,7 @@
  set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
  set(GR_INCLUDE_DIR      include)
  set(GR_DATA_DIR         share)
-@@ -140,6 +149,22 @@
+@@ -151,6 +159,22 @@
  )
  
  ########################################################################
@@ -50,7 +38,7 @@
  # Enable python component
  ########################################################################
  find_package(PythonLibs)
-@@ -221,12 +246,13 @@
+@@ -235,11 +259,13 @@
  ########################################################################
  # Distribute the README file
  ########################################################################
@@ -60,8 +48,7 @@
      DESTINATION ${GR_PKG_DOC_DIR}
      COMPONENT "docs"
  )
--
-+endif(ENABLE_DOCS)
++endif()
+ 
  ########################################################################
  # The following dependency libraries are needed by all gr modules:
- ########################################################################

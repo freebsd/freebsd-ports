@@ -1,0 +1,22 @@
+--- gr-utils/src/python/modtool/CMakeLists.txt.orig	2013-05-01 18:57:50.000000000 -0500
++++ gr-utils/src/python/modtool/CMakeLists.txt	2013-06-07 15:31:07.000000000 -0500
+@@ -54,9 +54,18 @@
+     ${CMAKE_CURRENT_BINARY_DIR}/modtool.conf
+ @ONLY)
+ 
++# FreeBSD needs an original copy
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+ install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/modtool.conf
+     DESTINATION ${GR_PREFSDIR}
++    RENAME "modtool.conf.sample"
+     COMPONENT "utils"
+ )
+-
++elseif()
++install(
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/modtool.conf
++    DESTINATION ${GR_PREFSDIR}
++    COMPONENT "utils"
++)
++endif()

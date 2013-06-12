@@ -1,6 +1,6 @@
---- gr-audio/lib/CMakeLists.txt.orig	2012-09-04 19:43:06.000000000 -0500
-+++ gr-audio/lib/CMakeLists.txt	2012-10-01 11:36:39.000000000 -0500
-@@ -116,8 +116,8 @@
+--- gr-audio/lib/CMakeLists.txt.orig	2013-05-01 18:57:50.000000000 -0500
++++ gr-audio/lib/CMakeLists.txt	2013-06-07 15:29:10.000000000 -0500
+@@ -120,8 +120,8 @@
  find_package(Portaudio)
  
  if(PORTAUDIO_FOUND)
@@ -11,7 +11,7 @@
      list(APPEND gr_audio_libs ${PORTAUDIO_LIBRARIES})
      add_definitions(${PORTAUDIO_DEFINITIONS})
      list(APPEND gr_audio_sources
-@@ -151,3 +151,10 @@
+@@ -169,3 +169,12 @@
  GR_LIBRARY_FOO(gnuradio-audio RUNTIME_COMPONENT "audio_runtime" DEVEL_COMPONENT "audio_devel")
  
  install(FILES ${gr_audio_confs} DESTINATION ${GR_PREFSDIR} COMPONENT "audio_runtime")
@@ -21,4 +21,6 @@
 +  get_filename_component(nconf_file ${conf_file} NAME)
 +  install(FILES ${conf_file} DESTINATION ${GR_PREFSDIR} RENAME ${nconf_file}.sample COMPONENT "audio_run_time")
 +endforeach(conf_file)
++elseif()
++  install(FILES ${gr_audio_confs} DESTINATION ${GR_PREFSDIR} COMPONENT "audio_runtime")
 +endif()
