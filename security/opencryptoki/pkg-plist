@@ -25,6 +25,10 @@ sbin/pkcs11_startup
 sbin/pkcs_slot
 sbin/pkcsconf
 sbin/pkcsslotd
+@exec mkdir -p %D/var/lib/opencryptoki/swtok
+@exec mkdir -p %D/var/lib/opencryptoki/tpm
+@dirrmtry var/lib/opencryptoki/tpm
+@dirrmtry var/lib/opencryptoki/swtok
 @dirrmtry var/lib/opencryptoki
 @dirrmtry var/lib
 @dirrmtry var
