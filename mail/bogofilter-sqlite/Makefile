@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bogofilter-sqlite
-# Date created:				2005-05-24
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <mandree@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bogofilter
 PORTREVISION=	0
