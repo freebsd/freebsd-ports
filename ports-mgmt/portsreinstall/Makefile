@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	portsreinstall
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SFJP/${PORTNAME}/58925/ \
-		http://www.mwghennndo.com/softwares/${PORTNAME}/
+MASTER_SITES=	SFJP/${PORTNAME}/58980/ \
+		http://www.mwghennndo.com/software/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@samurai.mwghennn.net
 COMMENT=	Ports upgrading utility for massive forced reinstall
