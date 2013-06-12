@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ASTK
-# Date created:		Thu Jul 09 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	astk
 
