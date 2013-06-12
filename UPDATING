@@ -9,21 +9,21 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of  lang/perl* and any port that depends on it
   AUTHOR: az@FreeBSD.org
 
-  lang/perl5.12 upgrade from version 5.12.4 to 5.12.5
-  lang/perl5.14 upgrade from version 5.14.2 to 5.14.4
-  lang/perl5.16 upgrade from version 5.16.2 to 5.16.3
+  lang/perl5.12 has been upgraded from version 5.12.4 to 5.12.5
+  lang/perl5.14 has been upgraded from version 5.14.2 to 5.14.4
+  lang/perl5.16 has been upgraded from version 5.16.2 to 5.16.3
 
-  Also was modification to directory structure where
-  is perl installed. Instead major.minor.patchlevel now only major.minor. 
-  The "perl-after-upgrade" script is removed.
+  The directory structure where Perl is installed has also been modified:
+  "major.minor" is now used instead of "major.minor.patchlevel".
 
-  Please rebuild all perl ports and all ports that 
-  depend in it:
+  The "perl-after-upgrade" script has been removed.
+
+  Please rebuild all Perl ports and all ports that depend on it:
 
   # portmaster -r perl
     or
   # portupgrade -rf perl
-    or 
+    or
   # pkg install -fR perl
 
 20130609:
