@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
+USES=		charsetfix
 MAN1=		wdiff.1
 INFO=		wdiff
 
@@ -25,10 +26,6 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-
-post-patch:	.SILENT
-	${REINPLACE_CMD} '/^install-exec-local:/s/install-exec-localcharset//' \
-		${WRKSRC}/lib/Makefile.in
 .endif
 
 .include <bsd.port.mk>
