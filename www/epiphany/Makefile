@@ -29,8 +29,8 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		pathfix gettext
-USE_GNOME=	gnomeprefix intlhack gnomedesktop desktopfileutils
+USES=		desktop-file-utils gettext pathfix
+USE_GNOME=	gnomeprefix intlhack gnomedesktop
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
@@ -76,7 +76,5 @@ post-patch:
 		-e 's|EPIPHANY_API_VERSION=2.29|EPIPHANY_API_VERSION=2.30|g' \
 		${WRKSRC}/configure
 
-post-install:
-	@-update-desktop-database
-
 .include <bsd.port.mk>
+
