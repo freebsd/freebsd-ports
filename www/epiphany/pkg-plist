@@ -401,14 +401,9 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrmtry lib/epiphany/%%EPHY_VERSION%%/plugins
-@dirrmtry lib/epiphany/%%EPHY_VERSION%%
-@dirrmtry lib/epiphany
 @dirrm include/epiphany/%%EPHY_VERSION%%/epiphany
 @dirrm include/epiphany/%%EPHY_VERSION%%
 @dirrm include/epiphany
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yo/LC_MESSAGES
