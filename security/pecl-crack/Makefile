@@ -1,13 +1,9 @@
-# Ports collection makefile for:  pecl-crack
-# Date created:			  07 March 2006
-# Whom:				  Bill Moran <wmoran@collaborativefusion.com>
-#
+# Created by: Bill Moran <wmoran@collaborativefusion.com>
 # $FreeBSD$
-#
 
 PORTNAME=	crack
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security www
 MASTER_SITES=	http://www.osuweb.net/~ahaning/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	wmoran@collaborativefusion.com
 COMMENT=	PECL extension to cracklib
 
-LIB_DEPENDS=	crack.10:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
