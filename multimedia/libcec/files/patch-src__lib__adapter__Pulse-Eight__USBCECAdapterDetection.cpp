@@ -1,5 +1,5 @@
---- ./src/lib/adapter/Pulse-Eight/USBCECAdapterDetection.cpp.orig	2013-05-13 13:09:14.000000000 +0000
-+++ ./src/lib/adapter/Pulse-Eight/USBCECAdapterDetection.cpp	2013-06-08 12:30:51.000000000 +0000
+--- ./src/lib/adapter/Pulse-Eight/USBCECAdapterDetection.cpp.orig	2013-05-13 15:09:14.000000000 +0200
++++ ./src/lib/adapter/Pulse-Eight/USBCECAdapterDetection.cpp	2013-06-12 16:31:03.000000000 +0200
 @@ -61,6 +61,8 @@
  #include <libudev.h>
  }
@@ -9,7 +9,7 @@
  #include <stdio.h>
  #include <unistd.h>
  #endif
-@@ -434,22 +436,68 @@
+@@ -434,22 +436,77 @@
    }
  #elif defined(__FreeBSD__)
    char devicePath[PATH_MAX + 1];
@@ -25,13 +25,15 @@
    {
 -    (void)snprintf(devicePath, sizeof(devicePath), "/dev/ttyU%d", i);
 -    if (strDevicePath && strcmp(devicePath, strDevicePath) != 0)
++    unsigned int iVendor, iProduct;
 +    memset(infos, 0, sizeof(infos));
 +    (void)snprintf(sysctlname, sizeof(sysctlname),
 +      "dev.umodem.%d.%%pnpinfo", i);
 +    if (sysctlbyname(sysctlname, infos, &infos_size,
 +      NULL, 0) != 0)
 +        break;
-+    if (strstr(infos, "vendor=0x2548") == NULL)
++    pos = strstr(infos, "vendor=");
++    if (pos == NULL)
        continue;
 -    if (!access(devicePath, 0))
 -    {
@@ -41,9 +43,16 @@
 -      deviceList[iFound].iProductId = CEC_VID;
 -      deviceList[iFound].adapterType = ADAPTERTYPE_P8_EXTERNAL; // will be overridden when not doing a "quick scan" by the actual type
 -      iFound++;
-+    if (strstr(infos, "product=0x1001") == NULL
-+    && strstr(infos, "product=0x1002") == NULL)
++    sscanf(pos, "vendor=%x ", &iVendor);
++
++    pos = strstr(infos, "product=");
++    if (pos == NULL)
 +      continue;
++    sscanf(pos, "product=%x ", &iProduct);
++
++    if (iVendor != CEC_VID || (iProduct != CEC_PID && iProduct != CEC_PID2))
++      continue;
++
 +    pos = strstr(infos, "ttyname=");
 +    if (pos == NULL)
 +      continue;
@@ -82,8 +91,8 @@
      }
 +    snprintf(deviceList[iFound].strComPath, sizeof(deviceList[iFound].strComPath), "%s", devicePath);
 +    snprintf(deviceList[iFound].strComName, sizeof(deviceList[iFound].strComName), "%s", devicePath);
-+    deviceList[iFound].iVendorId = CEC_VID;
-+    deviceList[iFound].iProductId = CEC_VID;
++    deviceList[iFound].iVendorId = iVendor;
++    deviceList[iFound].iProductId = iProduct;
 +    deviceList[iFound].adapterType = ADAPTERTYPE_P8_EXTERNAL; // will be overridden when not doing a "quick scan" by the actual type
 +    iFound++;
    }
