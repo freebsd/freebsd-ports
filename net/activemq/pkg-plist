@@ -393,4 +393,3 @@ lib/activemq/webapps/styles/type-settings.css
 @dirrm lib/activemq/bin
 @dirrm lib/activemq
 @dirrmtry %%ETCDIR%%
-@dirrmtry activemq
