@@ -2,7 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.3rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/pre-releases/3.3/rc3/
 DISTNAME=	cfe-source-${DISTVERSION}
@@ -51,6 +51,8 @@ OPTIONS_DEFINE=	ASSERTS DOCS
 ASSERTS_DESC=	Enable assertions (thread unsafe)
 
 CONFIGURE_ARGS+=	--enable-optimized
+# Build some docs manually later
+CONFIGURE_ARGS+=	--disable-docs
 
 MAN1=		clang${LLVM_SUFFIX}.1
 
@@ -61,6 +63,7 @@ COMMANDS=	c-index-test \
 		clang++ \
 		clang-check \
 		clang-cpp \
+		clang-format \
 		clang-tblgen
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
@@ -72,12 +75,6 @@ RELTYPE=		Release+Asserts
 .else
 CONFIGURE_ARGS+=	--disable-assertions
 RELTYPE=		Release
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-docs
-.else
-CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .include <bsd.port.pre.mk>
@@ -108,7 +105,10 @@ pre-build:
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
 post-build:
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
+	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} man
+.if ${PORT_OPTIONS:MDOCS}
+	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} html ps
+.endif
 
 post-install:
 	${LN} -sf ${LLVM_PREFIX}/bin/clang ${LLVM_PREFIX}/bin/clang-cpp
@@ -118,6 +118,9 @@ post-install:
 	${LN} -f ${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
+	cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} install-html install-ps
+.endif
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
 
