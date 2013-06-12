@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.5
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}
@@ -10,28 +10,29 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
 
-BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12\
-		swig:${PORTSDIR}/devel/swig13\
-		cheetah:${PORTSDIR}/devel/py-cheetah\
-		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
-		py*-lxml>=0:${PORTSDIR}/devel/py-lxml\
-		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2\
-		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4\
-		xdg-open:${PORTSDIR}/devel/xdg-utils\
-		guile:${PORTSDIR}/lang/guile\
-		git:${PORTSDIR}/devel/git\
-		jackd:${PORTSDIR}/audio/jack\
-		aserver:${PORTSDIR}/audio/alsa-lib
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3\
-		fftw3f:${PORTSDIR}/math/fftw3-float\
+BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12 \
+		swig:${PORTSDIR}/devel/swig13 \
+		cheetah:${PORTSDIR}/devel/py-cheetah \
+		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4 \
+		xdg-open:${PORTSDIR}/devel/xdg-utils \
+		guile:${PORTSDIR}/lang/guile \
+		git:${PORTSDIR}/devel/git
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
 		qwt:${PORTSDIR}/x11-toolkits/qwt5 \
 		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		portaudio.2:${PORTSDIR}/audio/portaudio2 \
+		jack:${PORTSDIR}/audio/jack \
+		asound:${PORTSDIR}/audio/alsa-lib \
 		gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem\
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4
 
 USES=		cmake:outsource
+CMAKE_VERBOSE=	yes
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.7+
 USE_WX=		2.6+
@@ -46,18 +47,19 @@ OPTIONS_DEFAULT=	USRP
 USRP_DESC=	Include USRP support (UHD) from Ettus
 TESTING_DESC=	Include testing support
 
-.include <bsd.port.options.mk>
-
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
 		dot:${PORTSDIR}/graphics/graphviz \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf \
+		latex:${PORTSDIR}/print/teTeX
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
+CMAKE_ARGS+=	-DENABLE_BAD_BOOST="ON"
 CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
 HAVE_PORTDOCS=	YES
 .else
@@ -81,7 +83,6 @@ BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
 CMAKE_ARGS+=	-DENABLE_TESTING:STRING="OFF"
 .endif
 
-.include <bsd.port.options.mk>
 post-patch:
 	${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
 	    ${XARGS} ${REINPLACE_CMD} -e \
@@ -124,7 +125,7 @@ post-install:
 .if	defined(HAVE_PORTDOCS)
 	@${ECHO} gnuradio docs are in ${DOCSDIR}
 .endif
-	@${ECHO} conf files are in ${PREFIX}/etc/gnuradio/conf.d
+	@${ECHO} sample conf files are in ${PREFIX}/etc/gnuradio/conf.d
 	@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

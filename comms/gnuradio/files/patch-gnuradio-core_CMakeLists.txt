@@ -1,18 +1,24 @@
---- gnuradio-core/CMakeLists.txt.orig	2013-01-08 15:56:55.000000000 -0500
-+++ gnuradio-core/CMakeLists.txt	2013-02-23 13:32:18.000000000 -0500
-@@ -107,6 +107,15 @@
-     DEPENDS      "gruel_swig;core_python;core_devel"
- )
+--- gnuradio-core/CMakeLists.txt.orig	2013-05-01 18:57:50.000000000 -0500
++++ gnuradio-core/CMakeLists.txt	2013-06-07 15:26:21.000000000 -0500
+@@ -118,11 +118,21 @@
+     ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-core.conf
+ @ONLY)
  
 +# Install an original for FreeBSD
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+install(
-+    FILES gnuradio-core.conf
-+    DESTINATION ${GR_PREFSDIR}
+ install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-core.conf
+     DESTINATION ${GR_PREFSDIR}
 +    RENAME "gnuradio-core.conf.sample"
+     COMPONENT "core_runtime"
+ )
++elseif()
++install(
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-core.conf
++    DESTINATION ${GR_PREFSDIR}
 +    COMPONENT "core_runtime"
 +)
 +endif()
- install(
-     FILES gnuradio-core.conf
-     DESTINATION ${GR_PREFSDIR}
+ 
+ if(ENABLE_GR_LOG AND HAVE_LOG4CPP)
+ install(FILES
