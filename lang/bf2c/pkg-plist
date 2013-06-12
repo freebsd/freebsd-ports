@@ -1,3 +1,4 @@
 bin/bf2c
-%%PORTDOCS%%%%DOCSDIR%%/README
+bin/gen_bf
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
