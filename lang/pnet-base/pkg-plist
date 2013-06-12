@@ -139,11 +139,11 @@ lib/libILSupport.a
 %%I386%%share/gc/simple_example.html
 %%I386%%share/gc/tree.html
 %%I386%%@dirrmtry include/gc
-@dirrmtry include/pnet/gc
+%%I386%%@dirrmtry include/pnet/gc
 @dirrmtry include/pnet
 @dirrmtry lib/cscc/plugins
 @dirrmtry lib/cscc
-@dirrmtry lib/elf
-@dirrmtry lib/pnet/elf
-@dirrmtry lib/pnet
-@dirrmtry share/gc
+%%I386%%@dirrmtry lib/elf
+%%I386%%@dirrmtry lib/pnet/elf
+%%I386%%@dirrmtry lib/pnet
+%%I386%%@dirrmtry share/gc
