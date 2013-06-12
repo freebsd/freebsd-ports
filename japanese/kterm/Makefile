@@ -38,6 +38,7 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 USE_IMAKE=	yes
 USE_XORG=	xaw
+CFLAGS+=	-Wno-return-type
 
 MAN1=		kterm.1
 MANLANG=	"" ja
