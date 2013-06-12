@@ -672,7 +672,6 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrmtry share/apps/desktoptheme/Tibanna
 @dirrm share/apps/desktoptheme/Produkt/lancelot
 @dirrmtry share/apps/desktoptheme/Produkt
-@dirrmtry share/apps/desktoptheme/Clean-Bend
 @dirrm share/apps/desktoptheme/Aya/lancelot
 @dirrmtry share/apps/desktoptheme/Aya
 @dirrm share/apps/desktoptheme/Androbit/lancelot
