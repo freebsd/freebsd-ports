@@ -29,7 +29,7 @@ PLIST_FILES=	bin/aimsniff
 
 .include <bsd.port.options.mk>
 
-.if !exists(${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/GDBM_File.pm)
+.if !exists(${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/GDBM_File.pm)
 #IGNORE=		You need perl compiled with GDBM support
 .endif
 
