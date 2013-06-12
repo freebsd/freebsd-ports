@@ -1,4 +1,4 @@
-# Whom:	will
+# Created by:	will
 # $FreeBSD$
 
 PORTNAME=	Crypt-Cracklib
