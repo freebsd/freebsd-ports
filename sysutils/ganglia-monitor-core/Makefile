@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.1.7
-PORTREVISION=	5
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -16,7 +15,8 @@ COMMENT=	Ganglia cluster monitor, monitoring daemon
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
 		confuse:${PORTSDIR}/devel/libconfuse \
-		pcre:${PORTSDIR}/devel/pcre
+		pcre:${PORTSDIR}/devel/pcre \
+		expat:${PORTSDIR}/textproc/expat2
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -33,6 +33,11 @@ CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1 "LDFLAGS=${LDFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+USERS=	ganglia
+GROUPS=	ganglia
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 SUB_FILES=	pkg-install
 
@@ -71,7 +76,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		gmetric.1 gmond.1 gstat.1
 .if ${PORT_OPTIONS:MGMETAD}
-MAN1+=		gmetad.1
+MAN1+=		gmetad.1 gmetad.py.1
 .endif
 MAN5=		gmond.conf.5
 

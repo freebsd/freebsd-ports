@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: head/sysutils/ganglia-monitor-core/files/gmond.in 302141 2012-08-05 23:19:36Z dougb $
 
 # PROVIDE: gmond
 # REQUIRE: DAEMON
