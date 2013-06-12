@@ -91,7 +91,7 @@ _IMAGEMAGICK_THREADS_IGNORE_MSG=. Define WITH_THREADS
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
 PLIST_SUB+=		WITH_PERL=''
 MAN3=			Image::Magick.3
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VER}
 # PerlMagick not works with threads, if perl is not threaded, and vice versa
 . if defined(PERL_THREADED)
 _IMAGEMAGICK_THREADS_PERL_MSG=Perl is threaded
