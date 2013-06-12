@@ -2,35 +2,10 @@
 
 u=ganglia
 g=ganglia
-ugid=102
-homedir=/nonexistent
-shell=/sbin/nologin
 rrd_rootdir=/var/db/ganglia/rrds
 
 case $2 in
 POST-INSTALL)
-	if pw group show "${g}" >/dev/null 2>&1; then
-		echo "Using existing group \"${g}\"."
-	else
-		echo "Creating group \"${g}\", (gid: ${ugid})."
-		pw groupadd ${g} -g ${ugid}
-		if [ $? != 0 ]; then
-			echo "Failed to add group \"${g}\"."
-			exit 1
-		fi
-	fi
-	if pw user show "${u}" >/dev/null 2>&1; then
-		echo "Using existing user \"${u}\"."
-	else
-		echo "Creating user \"${u}\", (uid: ${ugid})."
-		pw useradd ${u} -u ${ugid} -g ${ugid} -h - \
-		    -d ${homedir} -s ${shell} -c "Ganglia User"
-		if [ $? != 0 ]; then
-			echo "Failed to add user \"${u}\"."
-			exit 1
-		fi
-	fi
-
 	if [ ! -f %%PREFIX%%/etc/gmond.conf ]; then
 		cp %%PREFIX%%/etc/gmond.conf.sample %%PREFIX%%/etc/gmond.conf
 	fi

@@ -1,13 +1,8 @@
-
-$FreeBSD$
-
---- gmond/modules/conf.d/modpython.conf.in.orig
-+++ gmond/modules/conf.d/modpython.conf.in
-@@ -13,6 +13,6 @@
+--- gmond/modules/conf.d/modpython.conf.in.orig	2012-10-01 18:52:02.000000000 +0000
++++ gmond/modules/conf.d/modpython.conf.in	2012-10-01 18:52:22.000000000 +0000
+@@ -13,4 +13,4 @@
    }
  }
  
--include ('@sysconfdir@/conf.d/*.pyconf')
-+include ('@sysconfdir@/%%GMONDCONFDIR%%/*.pyconf')
- 
- 
+-include ("@sysconfdir@/conf.d/*.pyconf")
++include ("@sysconfdir@/%%GMONDCONFDIR%%/*.pyconf")

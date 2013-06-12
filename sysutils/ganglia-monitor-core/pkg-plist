@@ -9,13 +9,14 @@ etc/gmond.conf.sample
 %%GMETAD%%etc/gmetad.conf.sample
 include/ganglia.h
 include/ganglia_gexec.h
+include/gm_file.h
 include/gm_mmn.h
 include/gm_metric.h
 include/gm_msg.h
 include/gm_protocol.h
 include/gm_value.h
-lib/libganglia-3.1.7.so
-lib/libganglia-3.1.7.so.0
+lib/libganglia-%%PORTVERSION%%.so
+lib/libganglia-%%PORTVERSION%%.so.0
 lib/libganglia.a
 lib/libganglia.la
 lib/libganglia.so
