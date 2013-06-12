@@ -15,3 +15,5 @@ share/pixmaps/wbar/wbar.png
 @dirrm %%DATADIR%%
 @dirrmtry etc/bash_completion.d
 @dirrm etc/wbar.d
+@dirrmtry man/es/man1
+@dirrmtry man/es
