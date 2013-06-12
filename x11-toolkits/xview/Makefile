@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XView
-# Date created:		22 November 1994
-# Whom:			ljo (orig)
-#
+# Created by: ljo (orig)
 # $FreeBSD$
-#
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1.4.19c
@@ -31,6 +27,7 @@ IMAKEINCLUDE=	"-I${WRKSRC}/config -I${LOCALBASE}/lib/X11/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World
 SUB_FILES=	pkg-message
+CFLAGS+=	-Wno-return-type
 
 MAN1=		xview.1
 
