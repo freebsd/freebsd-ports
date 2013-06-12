@@ -19,6 +19,8 @@ include/syslog-ng/cfg-lexer.h
 include/syslog-ng/cfg-parser.h
 include/syslog-ng/cfg.h
 include/syslog-ng/children.h
+include/syslog-ng/cfg-args.h
+include/syslog-ng/cfg-lexer-subst.h
 include/syslog-ng/compat.h
 include/syslog-ng/control.h
 include/syslog-ng/crypto.h
@@ -86,7 +88,7 @@ include/syslog-ng/uuid.h
 include/syslog-ng/vptransform.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.4.1.so
+lib/libsyslog-ng-3.4.2.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libcryptofuncs.la
 lib/syslog-ng/libcryptofuncs.so
