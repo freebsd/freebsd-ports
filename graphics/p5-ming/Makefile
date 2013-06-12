@@ -15,7 +15,7 @@ COMMENT=	Perl5 module for Ming which allows you to create Flash 4/5 movies
 
 CONFIGURE_ARGS=	--enable-perl
 INSTALL_WRKSRC=	${WRKSRC}/perl_ext
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 PATCH_WRKSRC=	${WRKSRC}/perl_ext
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist

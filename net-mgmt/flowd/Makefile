@@ -64,7 +64,7 @@ post-install:
 	${PERL} Makefile.PL INSTALLSITEMAN3DIR=${MAN3PREFIX}/man/man3 PREFIX=${PREFIX} && \
 	${GMAKE} && \
 	${GMAKE} install;
-	-@${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/perllocal.pod
+	-@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

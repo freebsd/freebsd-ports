@@ -70,7 +70,7 @@ PORTDOCS=	AUTHORS \
 		README.FreeBSD \
 		TODO
 
-MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VER}
 MAN3=		ZoneMinder::Trigger::Connection.3 \
 		ZoneMinder::Control::Ncs370.3 \
 		ZoneMinder::Trigger::Channel::Serial.3 \

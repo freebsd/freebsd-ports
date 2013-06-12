@@ -27,7 +27,7 @@ USES=		pathfix pkgconfig
 
 OPTIONS_DEFINE=		DOCS PERL NLS
 
-MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VER}
 
 .include <bsd.port.options.mk>
 

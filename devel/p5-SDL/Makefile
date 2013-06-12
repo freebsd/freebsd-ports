@@ -56,7 +56,7 @@ USE_SDL+=	ttf
 
 USE_LDCONFIG=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 
 MAN3=	SDL.3		\
 	SDL::App.3	\

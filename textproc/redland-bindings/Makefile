@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=PYTHON
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perl
 PLIST_SUB+=	WITH_PERL=""
-MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
+MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VER}
 MAN3=		RDF::Redland.3 \
 		RDF::Redland::BlankNode.3 \
 		RDF::Redland::Iterator.3 \
@@ -72,7 +72,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 
 post-install:
 .if ${PORT_OPTIONS:MPERL}
-	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
+	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
 .endif
 
 .include <bsd.port.mk>

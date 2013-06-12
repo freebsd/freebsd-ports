@@ -111,7 +111,7 @@ MAN8=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmconstant.8 \
 MAN3=	RPM.3 RPM::Constant.3 RPM::Dependencies.3 \
 	RPM::Files.3 RPM::Header.3 RPM::PackageIterator.3 \
 	RPM::Problems.3 RPM::Spec.3 RPM::Transaction.3
-MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VER}
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

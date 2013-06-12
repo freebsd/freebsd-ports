@@ -412,7 +412,7 @@ post-install:
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 	${LN} -s ${DOCSDIR}/git.html ${DOCSDIR}/index.html
 .endif
-	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
+	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
