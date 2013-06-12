@@ -945,6 +945,7 @@
     SUBDIR += py-tweepy
     SUBDIR += py-twistedPair
     SUBDIR += py-twitter
+    SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-urllib3
     SUBDIR += py-xmlrpc
