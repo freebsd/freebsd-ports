@@ -24,3 +24,5 @@ share/locale/ru/LC_MESSAGES/scmxx.mo
 @dirrmtry man/de/
 @dirrmtry man/ru/man1
 @dirrmtry man/ru/
+@dirrmtry man/it/man1
+@dirrmtry man/it
