@@ -22,10 +22,6 @@ USE_RC_SUBR=	cf-execd cf-serverd
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 WITH_BDB_VER?=	47
 USE_BDB=	yes
 USE_OPENSSL=	yes
