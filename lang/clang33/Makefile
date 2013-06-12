@@ -2,6 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.3rc3
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/pre-releases/3.3/rc3/
 DISTNAME=	cfe-source-${DISTVERSION}
@@ -20,11 +21,8 @@ WRKSRC=		${WRKDIR}/${LLVM_NAME}
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
-BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
-.endif
+BUILD_DEPENDS+=	llc${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
+RUN_DEPENDS+=	llc${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
 LLVM_SUFFIX=	33
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -122,15 +120,6 @@ post-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
-
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
-regression-test: ${BUILD_COOKIE}
-	if [ `${ID} -u` = 0 ]; then \
-		${CHOWN} -R nobody ${WRKSRC}/test; \
-		su -m nobody -c ${TEST_CMD}; \
-	else \
-		${SH} -c ${TEST_CMD}; \
-	fi
 
 PLIST_FILE_LIST=	${COMMANDS:S|^|bin/|} \
 			lib/libclang*
