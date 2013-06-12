@@ -3,12 +3,14 @@ bin/clang33
 bin/clang++33
 bin/clang-check33
 bin/clang-cpp33
+bin/clang-format33
 bin/clang-tblgen33
 llvm33/bin/c-index-test
 llvm33/bin/clang
 llvm33/bin/clang++
 llvm33/bin/clang-check
 llvm33/bin/clang-cpp
+llvm33/bin/clang-format
 llvm33/bin/clang-tblgen
 llvm33/include/clang-c/CXCompilationDatabase.h
 llvm33/include/clang-c/CXString.h
