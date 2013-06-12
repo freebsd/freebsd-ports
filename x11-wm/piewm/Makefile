@@ -15,4 +15,6 @@ USE_IMAKE=	yes
 USE_XORG=	xbitmaps xpm xmu
 MAN1=		piewm.1
 
+CFLAGS+=	-Wno-return-type
+
 .include <bsd.port.mk>
