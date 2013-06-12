@@ -56,6 +56,8 @@ USE_GCC=	4.6
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/bobcat-${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/doc/libbobcat3"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
@@ -75,7 +77,7 @@ post-patch:
 		s|-lX11|-lX11 -L${LOCALBASE}/lib| ; \
 		s|-lmilter|-lmilter -lpthread|' \
 		${WRKSRC}/icmake/special
-.if empty(PORT_OPTIONS:MDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|#define DOCOTHER||' \
 		${WRKSRC}/INSTALL.im
 .endif
