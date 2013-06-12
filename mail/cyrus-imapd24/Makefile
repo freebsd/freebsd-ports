@@ -20,7 +20,7 @@ CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].*
 
 LATEST_LINK=	${PORTNAME}24
 
-+PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
+PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
 
 USE_RC_SUBR=	imapd
 USE_OPENSSL=	yes
