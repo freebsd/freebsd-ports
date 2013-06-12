@@ -2,22 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.5.0b1
-PORTEPOCH=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-devel
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
 
-LATEST_LINK=	cfengine-devel
+LATEST_LINK=	cfengine35
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-[23]*
-
-IGNORE=		Development has not branched from 3.5.0 yet
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
@@ -77,13 +73,5 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
 LIB_DEPENDS+=		virt.1000:${PORTSDIR}/devel/libvirt
 .endif
-
-MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
-	cf-serverd.8	cf-execd.8	\
-	cf-promises.8	cf-runagent.8
-
-post-patch:
-		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
-				  ${WRKSRC}/docs/Makefile.in
 
 .include <bsd.port.post.mk>
