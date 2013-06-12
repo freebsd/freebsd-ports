@@ -51,6 +51,3 @@ GNUstep/System/Tools/Preferences
 @dirrm GNUstep/System/Applications/Preferences.app/Resources/English.lproj
 @dirrm GNUstep/System/Applications/Preferences.app/Resources
 @dirrm GNUstep/System/Applications/Preferences.app
-@dirrmtry Network/Library/Preferences
-@dirrmtry Network/Library
-@dirrmtry Network
