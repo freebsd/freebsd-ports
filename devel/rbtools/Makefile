@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	${ORIGNAME:L}
-DISTVERSION=	0.4.3
+DISTVERSION=	0.5
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION:C|^(...).*|\1|}/ \
-		http://eggrepo.eea.europa.eu/pypi/RBTools/
+MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSION}/
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
@@ -21,6 +20,7 @@ PYDISTUTILS_PKGNAME=	${ORIGNAME}
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 PLIST_FILES=	bin/post-review \
+		bin/rbt \
 		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
