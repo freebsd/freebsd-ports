@@ -31,7 +31,6 @@ bin/rbbr
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/doc
 @dirrm %%RUBY_SITELIBDIR%%/rbbr
 share/locale/fr/LC_MESSAGES/rbbr.mo
-share/locale/cy/LC_MESSAGES/rbbr.mo
 share/locale/ja/LC_MESSAGES/rbbr.mo
 share/locale/be/LC_MESSAGES/rbbr.mo
 share/locale/de/LC_MESSAGES/rbbr.mo
