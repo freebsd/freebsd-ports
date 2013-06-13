@@ -5,10 +5,8 @@
 #
 # ----- configure --------------------------------------------------
 #
-  $EDITOR %%ETCDIR%%/knot.min.conf
-# -or-
-# $EDITOR %%ETCDIR%%/knot.full.conf
-# and save it as %%ETCDIR%%/knot.conf
+  cp %%ETCDIR%%/knot.sample.conf %%ETCDIR%%/knot.conf
+  $EDITOR %%ETCDIR%%/knot.conf
 #
 # ----- prepare ----------------------------------------------------
 #
@@ -22,4 +20,11 @@
   %%PREFIX%%/etc/rc.d/knotd start
 #
 ####################################################################
+
+
+  When upgrading from version of before 1.3.0-RC1:
+  mind the default config file location has changed.
+
+
+====================================================================
 

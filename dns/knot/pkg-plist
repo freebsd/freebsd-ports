@@ -1,16 +1,11 @@
 @stopdaemon knotd
-%%ETCDIR%%/example.com.zone
-@unexec if cmp -s %B/knot.min.conf %B/knot.conf; then rm -f %B/knot.conf; fi
-%%ETCDIR%%/knot.full.conf
-%%ETCDIR%%/knot.min.conf
+@unexec if cmp -s %B/knot.sample.conf %B/knot.conf; then rm -f %B/knot.conf; fi
 @exec [ -f %B/knot.conf ] || cp %B/%f %B/knot.conf
+%%ETCDIR%%/example.com.zone
 %%ETCDIR%%/knot.sample.conf
 @dirrmtry %%ETCDIR%%
-libexec/knot-zcompile
-libexec/unittests
-libexec/unittests-libknot
-libexec/unittests-libknot-realdata
-libexec/unittests-xfr
-libexec/unittests-zcompile
+sbin/kdig
+sbin/khost
 sbin/knotc
 sbin/knotd
+sbin/knsupdate
