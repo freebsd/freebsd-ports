@@ -3591,30 +3591,31 @@ patch-dos2unix:
 do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-.for i in ${_PATCHFILES}
-.  if defined(PATCH_DEBUG_TMP) && ${PATCH_DEBUG_TMP} == yes
-	@${ECHO_MSG} "===>   Applying distribution patch $i"
-.  endif
-	@(cd ${_DISTDIR}; \
-	case $i in \
-		*.Z|*.gz) ${GZCAT} $i ;; \
-		*.bz2) ${BZCAT} $i ;; \
-		*.xz) ${XZCAT} $i ;; \
-		*) ${CAT} $i ;; \
-	esac | ${PATCH} ${PATCH_DIST_ARGS} )
-.  endfor
+	@set -e ; \
+	(cd ${_DISTDIR} ; \
+	for i  in ${_PATCHFILES}; do \
+		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
+			@${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
+		fi ; \
+		case $$i in \
+		*.Z|*.gz) ${GZCAT} $$i ;; \
+		*.bz2) ${BZCAT} $$i ;; \
+		*.xz) ${XZCAT} $$i ;; \
+		*) ${CAT} $$i ;; \
+		esac | ${PATCH} ${PATCH_DIST_ARGS} ; \
+	done )
 .endif
 .if defined(EXTRA_PATCHES)
-.  for i in ${EXTRA_PATCHES}
-	@${ECHO_MSG} "===>  Applying extra patch $i"
-	@(cd ${_DISTDIR}; \
-	case $i in \
-		*.Z|*.gz) ${GZCAT} $i ;; \
-		*.bz2) ${BZCAT} $i ;; \
-		*.xz) ${XZCAT} $i ;; \
-		*) ${CAT} $i ;; \
-	esac | ${PATCH} ${PATCH_DIST_ARGS} )
-.  endfor
+	@set -e ; \
+	for i in ${EXTRA_PATCHES}; do \
+		${ECHO_MSG} "===>  Applying extra patch $$i" ; \
+		case $$i in \
+		*.Z|*.gz) ${GZCAT} $$i ;; \
+		*.bz2) ${BZCAT} $$i ;; \
+		*.xz) ${XZCAT} $$i ;; \
+		*) ${CAT} $$i ;; \
+		esac | ${PATCH} ${PATCH_ARGS} ; \
+	done
 .endif
 	@set -e ;\
 	if [ -d ${PATCHDIR} ]; then \
