@@ -16,3 +16,4 @@ etc/snmp/snmptt.conf.generic-dist
 %%PORTDOCS%%%%DOCSDIR%%/snmpttconvert.html
 %%PORTDOCS%%%%DOCSDIR%%/snmpttconvertmib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/snmp
