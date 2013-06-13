@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rdfdb
-# Date created:                 28 December 2001
-# Whom:                         Philip Jenvey <pjenvey@turntables.org>
-#
+# Created by: Philip Jenvey <pjenvey@turntables.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rdfdb
 PORTVERSION=	0.46
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.guha.com/
 DISTNAME=	rdfdb_src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight RDF database
+COMMENT=	Lightweight RDF database
 
 USE_BDB=	40+
 INVALID_BDB_VER=2
@@ -25,9 +21,11 @@ WRKSRC=	${WRKDIR}/rdfdb
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=
-CFLAGS+=	${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS} -Wno-return-type
 
 RDFDB_PORT?=	7001
+
+PLIST_FILES=	bin/rdfdb bin/rdfdb etc/rc.d/rdfdb-server.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
@@ -37,7 +35,7 @@ post-patch:
 		${WRKSRC}/makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/rdfdb ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/rdfdb ${PREFIX}/bin
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%RDFDB_DIR%%|${RDFDB_DIR}|g; \
 		s|%%RDFDB_PORT%%|${RDFDB_PORT}|g" \
 		< ${FILESDIR}/rdfdb-server.sh.tmpl \
