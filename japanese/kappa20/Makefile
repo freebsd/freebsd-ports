@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kappafont
-# Date created:		8 Oct 1998
-# Whom: Kawaguti Ginga <ginga@athena.club.ne.jp>
-#
+# Created by: Kawaguti Ginga <ginga@athena.club.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	k20fonts
 PORTVERSION=	0.396
