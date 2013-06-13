@@ -34,6 +34,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle7.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialattribute1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialattribute2.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialcolor1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets1.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets10.mapyrus
