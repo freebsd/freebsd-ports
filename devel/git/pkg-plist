@@ -1,5 +1,5 @@
 bin/git
-%%P4%%bin/git-p4
+%%P4%%bin/git-p4.py
 %%P4%%bin/git-p4import
 bin/git-upload-pack
 bin/git-receive-pack
@@ -174,6 +174,7 @@ libexec/git-core/git-stash
 libexec/git-core/git-status
 libexec/git-core/git-stripspace
 libexec/git-core/git-submodule
+%%CONTRIB%%libexec/git-core/git-subtree
 %%SVN%%libexec/git-core/git-svn
 libexec/git-core/git-symbolic-ref
 libexec/git-core/git-tag
@@ -999,6 +1000,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.2.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.2.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -1030,6 +1033,10 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/Makefile
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/git-credential-gnome-keyring.c
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/.gitignore
+%%CONTRIB%%share/git-core/contrib/credential/netrc/Makefile
+%%CONTRIB%%share/git-core/contrib/credential/netrc/git-credential-netrc
+%%CONTRIB%%share/git-core/contrib/credential/netrc/test.netrc
+%%CONTRIB%%share/git-core/contrib/credential/netrc/test.pl
 %%CONTRIB%%share/git-core/contrib/credential/osxkeychain/Makefile
 %%CONTRIB%%share/git-core/contrib/credential/osxkeychain/git-credential-osxkeychain.c
 %%CONTRIB%%share/git-core/contrib/credential/osxkeychain/.gitignore
@@ -1182,6 +1189,7 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/gnome-keyring
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/osxkeychain
+%%CONTRIB%%@dirrm share/git-core/contrib/credential/netrc
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/wincred
 %%CONTRIB%%@dirrm share/git-core/contrib/credential
 %%CONTRIB%%@dirrm share/git-core/contrib/diffall

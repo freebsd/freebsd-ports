@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	1.8.2.3
+PORTVERSION=	1.8.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -327,6 +327,9 @@ IGNORE=	using GITWEB support requires PERL support
 
 .if ${PORT_OPTIONS:MCONTRIB}
 PLIST_SUB+=	CONTRIB=""
+BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
+		asciidoc:${PORTSDIR}/textproc/asciidoc
+MAN1+=		git-subtree.1
 .else
 PLIST_SUB+=	CONTRIB="@comment "
 .endif
@@ -387,6 +390,8 @@ post-patch:
 .endif
 .if empty(PORT_OPTIONS:MP4)
 	@${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
+		${WRKSRC}/contrib/subtree/git-subtree.sh
 .endif
 
 post-build:
@@ -427,10 +432,12 @@ post-install:
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${PREFIX}/share/git-core/contrib
 	${CP} -R ${WRKSRC}/contrib/* ${PREFIX}/share/git-core/contrib
+	cd ${WRKSRC}/contrib/subtree && ${SETENV} ${MAKE_ENV} \
+		${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} install install-doc
 .endif
 .if ${PORT_OPTIONS:MP4}
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/git-p4 ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${PREFIX}/bin/
 .endif
 .if ${PORT_OPTIONS:METCSHELLS}
 	@${ECHO_MSG} "===> Updating ${SHELLS}"
