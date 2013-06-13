@@ -3,13 +3,15 @@
 
 PORTNAME=	euler
 PORTVERSION=	1.61.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.61
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program computes with real and complex numbers and matrices
+COMMENT=	Program computes with real and complex numbers and matrices
+
+LICENCE=	GPLv2
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
