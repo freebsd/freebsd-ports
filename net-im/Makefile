@@ -159,6 +159,7 @@
     SUBDIR += qxmpp-leechcraft
     SUBDIR += ramblercontacts
     SUBDIR += rubygem-earthquake
+    SUBDIR += rubygem-hipchat
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-xmpp4r
     SUBDIR += sendxmpp
