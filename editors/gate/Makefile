@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	gate
-# Date created:					15 June 2000
-# Whom:                        		James Howard
-#
+# Created by: James Howard
 # $FreeBSD$
-#
 
 PORTNAME=	gate
 PORTVERSION=	2.06
