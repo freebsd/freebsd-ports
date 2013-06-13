@@ -31,9 +31,9 @@ USE_XZ=		yes
 USES=		pathfix
 
 MAN1=		aria2c.1
-MANLANG=	"" ru pt
+MANLANG=	"" pt ru
 PLIST_FILES=	bin/aria2c
-PLIST_DIRS=	man/ru/man1 \
+PLIST_DIRSTRY=	man/ru/man1 \
 		man/ru \
 		man/pt/man1 \
 		man/pt
@@ -56,7 +56,7 @@ PLIST_FILES+=	%%DOCSDIR%%/README \
 		%%DOCSDIR%%/xmlrpc/README.txt \
 		%%DOCSDIR%%/xmlrpc/aria2mon \
 		%%DOCSDIR%%/xmlrpc/aria2rpc
-PLIST_DIRS+=	%%DOCSDIR%%/xmlrpc \
+PLIST_DIRS=	%%DOCSDIR%%/xmlrpc \
 		%%DOCSDIR%%/bash_completion \
 		%%DOCSDIR%%
 .endif
