@@ -1,31 +1,32 @@
---- Makefile.orig	2011-11-03 14:39:05.000000000 -0700
-+++ Makefile	2012-03-14 14:07:24.000000000 -0700
-@@ -273,7 +273,6 @@
- 	gstreamer-base-0.10 \
- 	gstreamer-pbutils-0.10 \
- 	gtk+-2.0 \
+--- Makefile.orig	2013-04-03 16:16:24.000000000 -0300
++++ Makefile	2013-06-12 22:39:11.000000000 -0300
+@@ -300,7 +300,6 @@
+ 	gstreamer-base-1.0 \
+ 	gstreamer-pbutils-1.0 \
+ 	gtk+-3.0 \
 -	gudev-1.0 \
  	libexif \
  	libgphoto2 \
- 	libsoup-2.4 \
-@@ -309,7 +308,6 @@
- 	gstreamer-base-0.10 >= 0.10.28 \
- 	gstreamer-pbutils-0.10 >= 0.10.32 \
- 	gtk+-2.0 >= 2.18.0 \
+ 	json-glib-1.0 \
+@@ -332,7 +331,6 @@
+ 	gstreamer-plugins-base-1.0 >= 1.0.0 \
+ 	gstreamer-pbutils-1.0 >= 1.0.0 \
+ 	gtk+-3.0 >= 3.0.11 \
 -	gudev-1.0 >= 145 \
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
- 	libsoup-2.4 >= 2.26.0 \
-@@ -434,7 +432,7 @@
- # if not available.
- LIBRAW_CONFIG=./libraw-config
+ 	libraw >= 0.13.2 \
+@@ -453,6 +451,9 @@
+ # Required for gudev-1.0
+ CFLAGS += -DG_UDEV_API_IS_SUBJECT_TO_CHANGE
  
--define check_valac_version
-+define xcheck_valac_version
- 	@ ./chkver min $(VALAC_VERSION) $(MIN_VALAC_VERSION) || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 )
- 	$(if $(MAX_VALAC_VERSION),\
- 		@ ./chkver max $(VALAC_VERSION) $(MAX_VALAC_VERSION) || ( echo 'Shotwell cannot be built by Vala compiler $(MAX_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 ),)
-@@ -556,8 +554,8 @@
++# do not forget about libintl
++LDFLAGS += -lintl
++
+ define check_valadate_version
+ 	@ pkg-config $(VALADATE_PKG_NAME) --atleast-version=$(MIN_VALADATE_VERSION) || ( echo 'Shotwell testing requires Valadate $(MIN_VALADATE_VERSION) or greater.  You are running' `pkg-config --modversion $(VALADATE_PKG_NAME)` '\b.'; exit 1 )
+ endef
+@@ -570,8 +571,8 @@
  	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  endif
  ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
@@ -36,50 +37,3 @@
  endif
  ifndef DISABLE_ICON_UPDATE
  	-gtk-update-icon-cache -t -f $(DESTDIR)$(PREFIX)/share/icons/hicolor || :
-@@ -640,7 +638,7 @@
- 	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
- endif
- ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
--	rm -f $(DESTDIR)/usr/share/GConf/gsettings/shotwell.convert
-+	rm -f $(DESTDIR)$(PREFIX)/share/GConf/gsettings/shotwell.convert
- endif
- 
- $(PC_FILE): $(PC_INPUT) $(MAKE_FILES)
-@@ -660,7 +658,6 @@
- 
- # EXPANDED_SRC_FILES includes UNITIZE_INITS and UNITIZE_ENTRY
- $(VALA_STAMP): $(EXPANDED_SRC_FILES) $(EXPANDED_VAPI_FILES) $(EXPANDED_SRC_HEADER_FILES)
--	$(call check_valac_version)
- 	@echo Compiling Vala code...
- 	@mkdir -p $(BUILD_DIR)
- 	@$(VALAC) --ccode --directory=$(BUILD_DIR) --basedir=src \
-@@ -677,10 +674,10 @@
- 	@
- 
- $(EXPANDED_OBJ_FILES): %.o: %.c $(CONFIG_IN) Makefile
--	$(CC) -c $(VALA_CFLAGS) `$(LIBRAW_CONFIG) --cflags` $(CFLAGS) -o $@ $<
-+	$(CC) -c $(VALA_CFLAGS) `pkg-config --cflags libraw` -o $@ $<
- 
- $(PROGRAM): $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP) $(THUMBNAILER_BIN)
--	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -o $@
-+	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -o $@
- 	glib-compile-schemas misc
- 
- $(THUMBNAILER_BIN): $(EXPANDED_THUMBNAILER_SRC_FILES)
-@@ -691,7 +688,6 @@
- 
- .PHONY: $(PLUGINS_DIR)
- $(PLUGINS_DIR): $(PLUGIN_VAPI) $(PLUGIN_HEADER) $(PLUGIN_DEPS)
--	$(call check_valac_version)
- 	@$(MAKE) --directory=$@ PLUGINS_VERSION="$(VERSION)" USER_VALAFLAGS="$(USER_VALAFLAGS)" \
- 		PLUGIN_CFLAGS="$(PLUGIN_CFLAGS)"
- 
-@@ -709,7 +705,7 @@
- glade: lib$(PROGRAM).so
- 
- lib$(PROGRAM).so: $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP)
--	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -shared -o $@
-+	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -shared -o $@
- 
- .PHONY: pkgcheck
- pkgcheck:

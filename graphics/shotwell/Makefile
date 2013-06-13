@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.11.6
-PORTREVISION=	3
+PORTVERSION=	0.14.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
@@ -12,7 +11,8 @@ COMMENT=	Open source photo manager for GNOME
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	vala>=0.12.0:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala>=0.18.0:${PORTSDIR}/lang/vala \
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		gee:${PORTSDIR}/devel/libgee06 \
 		json-glib-1.0:${PORTSDIR}/devel/json-glib \
@@ -20,35 +20,29 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		gexiv2:${PORTSDIR}/graphics/gexiv2 \
 		exif:${PORTSDIR}/graphics/libexif \
 		gphoto2:${PORTSDIR}/graphics/libgphoto2 \
-		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
+		webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
 		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		raw:${PORTSDIR}/graphics/libraw
+		raw:${PORTSDIR}/graphics/libraw \
+		rest:${PORTSDIR}/devel/librest
 
-USE_BZIP2=	yes
-USES=		gettext
-USE_GNOME=	gnomehier gconf2 gtk20 desktopfileutils librsvg2
+USE_XZ=		yes
+USES=		shebangfix gettext desktop-file-utils
+USE_GNOME=	gnomehier gconf2 gtk20 librsvg2
 USE_SQLITE=	3
 USE_GMAKE=	yes
+USE_GSTREAMER1=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--disable-icon-update \
-		--with-gconf-schema-file-dir=${PREFIX}/etc/gconf/schemas
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-icon-update
 CONFIGURE_ENV+=	--define=NO_CAMERA
 INSTALLS_ICONS=	yes
 
-GLIB_SCHEMAS=	org.yorba.shotwell.gschema.xml org.yorba.shotwell-extras.gschema.xml
+SHEBANG_FILES=	${WRKSRC}/${CONFIGURE_SCRIPT} ${WRKSRC}/chkver
 
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|/bin/bash|${SH}|g ; s|/usr/bin/env.*bash|${SH}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT} \
-		${WRKSRC}/libraw-config
+GLIB_SCHEMAS=	org.yorba.shotwell.gschema.xml org.yorba.shotwell-extras.gschema.xml
 
 post-configure:
 	@${REINPLACE_CMD} -E \
-		-e 's|share/shotwell|${DATADIR_REL}|g ; \
-		    s|--fatal-warnings||g ; \
-		    s|%%GCONF_CONFIG_SOURCE%%|${GCONF_CONFIG_SOURCE}|g' \
+		-e 's|share/shotwell|${DATADIR_REL}|g' \
 			${WRKSRC}/${MAKEFILE}
 
 	@${REINPLACE_CMD} -E \

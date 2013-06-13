@@ -1,17 +1,28 @@
 bin/shotwell
 bin/shotwell-video-thumbnailer
+lib/shotwell/plugins/builtin/f-spot-24.png
 lib/shotwell/plugins/builtin/facebook.png
+lib/shotwell/plugins/builtin/facebook_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/flickr.png
+lib/shotwell/plugins/builtin/flickr_pin_entry_pane.glade
+lib/shotwell/plugins/builtin/flickr_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/picasa.png
+lib/shotwell/plugins/builtin/picasa_auth_code_entry_pane.glade
+lib/shotwell/plugins/builtin/picasa_not_set_up_pane.glade
+lib/shotwell/plugins/builtin/picasa_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/piwigo.png
 lib/shotwell/plugins/builtin/piwigo_authentication_pane.glade
 lib/shotwell/plugins/builtin/piwigo_publishing_options_pane.glade
+lib/shotwell/plugins/builtin/shotwell-data-imports.so
 lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
 lib/shotwell/plugins/builtin/shotwell-publishing.so
 lib/shotwell/plugins/builtin/shotwell-transitions.so
 lib/shotwell/plugins/builtin/slideshow-plugin.png
+lib/shotwell/plugins/builtin/tumblr.png
 lib/shotwell/plugins/builtin/yandex_publish_model.glade
 lib/shotwell/plugins/builtin/youtube.png
+lib/shotwell/plugins/builtin/youtube_publishing_options_pane.glade
+libexec/shotwell/shotwell-settings-migrator
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
 share/gnome/help/shotwell/C/edit-adjustments.page
@@ -21,6 +32,7 @@ share/gnome/help/shotwell/C/edit-external.page
 share/gnome/help/shotwell/C/edit-nondestructive.page
 share/gnome/help/shotwell/C/edit-redeye.page
 share/gnome/help/shotwell/C/edit-rotate.page
+share/gnome/help/shotwell/C/edit-straighten.page
 share/gnome/help/shotwell/C/edit-time-date.page
 share/gnome/help/shotwell/C/edit-undo.page
 share/gnome/help/shotwell/C/figures/crop_thirds.jpg
@@ -44,6 +56,8 @@ share/gnome/help/shotwell/C/organize-title.page
 share/gnome/help/shotwell/C/other-files.page
 share/gnome/help/shotwell/C/other-missing.page
 share/gnome/help/shotwell/C/other-multiple.page
+share/gnome/help/shotwell/C/other-plugins.page
+share/gnome/help/shotwell/C/raw.page
 share/gnome/help/shotwell/C/running.page
 share/gnome/help/shotwell/C/share-background.page
 share/gnome/help/shotwell/C/share-export.page
@@ -54,12 +68,14 @@ share/gnome/help/shotwell/C/share-upload.page
 share/gnome/help/shotwell/C/view-displaying.page
 share/gnome/help/shotwell/C/view-information.page
 share/gnome/help/shotwell/C/view-sidebar.page
-share/GConf/gsettings/shotwell.convert
 share/icons/hicolor/16x16/apps/shotwell.svg
 share/icons/hicolor/24x24/apps/shotwell.svg
 share/icons/hicolor/scalable/apps/shotwell.svg
+share/locale/af/LC_MESSAGES/shotwell.mo
 share/locale/ar/LC_MESSAGES/shotwell-extras.mo
 share/locale/ar/LC_MESSAGES/shotwell.mo
+share/locale/as/LC_MESSAGES/shotwell-extras.mo
+share/locale/as/LC_MESSAGES/shotwell.mo
 share/locale/ast/LC_MESSAGES/shotwell-extras.mo
 share/locale/ast/LC_MESSAGES/shotwell.mo
 share/locale/bg/LC_MESSAGES/shotwell-extras.mo
@@ -78,6 +94,7 @@ share/locale/el/LC_MESSAGES/shotwell-extras.mo
 share/locale/el/LC_MESSAGES/shotwell.mo
 share/locale/en_GB/LC_MESSAGES/shotwell-extras.mo
 share/locale/en_GB/LC_MESSAGES/shotwell.mo
+share/locale/eo/LC_MESSAGES/shotwell-extras.mo
 share/locale/es/LC_MESSAGES/shotwell-extras.mo
 share/locale/es/LC_MESSAGES/shotwell.mo
 share/locale/et/LC_MESSAGES/shotwell-extras.mo
@@ -90,12 +107,16 @@ share/locale/fr/LC_MESSAGES/shotwell-extras.mo
 share/locale/fr/LC_MESSAGES/shotwell.mo
 share/locale/gl/LC_MESSAGES/shotwell-extras.mo
 share/locale/gl/LC_MESSAGES/shotwell.mo
+share/locale/gu/LC_MESSAGES/shotwell.mo
 share/locale/he/LC_MESSAGES/shotwell-extras.mo
 share/locale/he/LC_MESSAGES/shotwell.mo
+share/locale/hi/LC_MESSAGES/shotwell-extras.mo
+share/locale/hi/LC_MESSAGES/shotwell.mo
 share/locale/hr/LC_MESSAGES/shotwell-extras.mo
 share/locale/hr/LC_MESSAGES/shotwell.mo
 share/locale/hu/LC_MESSAGES/shotwell-extras.mo
 share/locale/hu/LC_MESSAGES/shotwell.mo
+share/locale/ia/LC_MESSAGES/shotwell.mo
 share/locale/id/LC_MESSAGES/shotwell-extras.mo
 share/locale/id/LC_MESSAGES/shotwell.mo
 share/locale/it/LC_MESSAGES/shotwell-extras.mo
@@ -104,6 +125,9 @@ share/locale/ja/LC_MESSAGES/shotwell-extras.mo
 share/locale/ja/LC_MESSAGES/shotwell.mo
 share/locale/kk/LC_MESSAGES/shotwell-extras.mo
 share/locale/kk/LC_MESSAGES/shotwell.mo
+share/locale/km/LC_MESSAGES/shotwell.mo
+share/locale/kn/LC_MESSAGES/shotwell-extras.mo
+share/locale/kn/LC_MESSAGES/shotwell.mo
 share/locale/ko/LC_MESSAGES/shotwell-extras.mo
 share/locale/ko/LC_MESSAGES/shotwell.mo
 share/locale/lt/LC_MESSAGES/shotwell-extras.mo
@@ -112,10 +136,16 @@ share/locale/lv/LC_MESSAGES/shotwell-extras.mo
 share/locale/lv/LC_MESSAGES/shotwell.mo
 share/locale/mk/LC_MESSAGES/shotwell-extras.mo
 share/locale/mk/LC_MESSAGES/shotwell.mo
+share/locale/ml/LC_MESSAGES/shotwell-extras.mo
+share/locale/ml/LC_MESSAGES/shotwell.mo
+share/locale/mr/LC_MESSAGES/shotwell-extras.mo
+share/locale/mr/LC_MESSAGES/shotwell.mo
 share/locale/nb/LC_MESSAGES/shotwell-extras.mo
 share/locale/nb/LC_MESSAGES/shotwell.mo
 share/locale/nl/LC_MESSAGES/shotwell-extras.mo
 share/locale/nl/LC_MESSAGES/shotwell.mo
+share/locale/or/LC_MESSAGES/shotwell-extras.mo
+share/locale/or/LC_MESSAGES/shotwell.mo
 share/locale/pa/LC_MESSAGES/shotwell-extras.mo
 share/locale/pa/LC_MESSAGES/shotwell.mo
 share/locale/pl/LC_MESSAGES/shotwell-extras.mo
@@ -146,10 +176,12 @@ share/locale/tr/LC_MESSAGES/shotwell-extras.mo
 share/locale/tr/LC_MESSAGES/shotwell.mo
 share/locale/uk/LC_MESSAGES/shotwell-extras.mo
 share/locale/uk/LC_MESSAGES/shotwell.mo
+share/locale/vi/LC_MESSAGES/shotwell.mo
 share/locale/zh_CN/LC_MESSAGES/shotwell-extras.mo
 share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell-extras.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
+share/GConf/gsettings/shotwell.convert
 %%DATADIR%%/icons/all-rejected.png
 %%DATADIR%%/icons/crop-pivot-reticle.png
 %%DATADIR%%/icons/crop.svg
@@ -182,8 +214,6 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/icons/publish.png
 %%DATADIR%%/icons/redeye.png
 %%DATADIR%%/icons/rejected.svg
-%%DATADIR%%/icons/searchbox-clear.svg
-%%DATADIR%%/icons/searchbox-find.svg
 %%DATADIR%%/icons/shotwell-16.svg
 %%DATADIR%%/icons/shotwell-24.svg
 %%DATADIR%%/icons/shotwell-street.jpg
@@ -191,6 +221,7 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/icons/shotwell.svg
 %%DATADIR%%/icons/slideshow-extension-point.png
 %%DATADIR%%/icons/sprocket.png
+%%DATADIR%%/icons/straighten.svg
 %%DATADIR%%/icons/three-star-filter-plus.svg
 %%DATADIR%%/icons/three-stars.svg
 %%DATADIR%%/icons/two-star-filter-plus.svg
@@ -200,6 +231,7 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/icons/zoom-out.png
 %%DATADIR%%/ui/collection.ui
 %%DATADIR%%/ui/direct.ui
+%%DATADIR%%/ui/direct_context.ui
 %%DATADIR%%/ui/event.ui
 %%DATADIR%%/ui/events_directory.ui
 %%DATADIR%%/ui/fullscreen.ui
@@ -208,27 +240,39 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/ui/media.ui
 %%DATADIR%%/ui/offline.ui
 %%DATADIR%%/ui/photo.ui
+%%DATADIR%%/ui/photo_context.ui
 %%DATADIR%%/ui/savedsearch.ui
 %%DATADIR%%/ui/search_bar.ui
-%%DATADIR%%/ui/set_background_dialog.glade
 %%DATADIR%%/ui/search_sidebar_context.ui
+%%DATADIR%%/ui/set_background_dialog.glade
 %%DATADIR%%/ui/shotwell.glade
 %%DATADIR%%/ui/shotwell.xml
 %%DATADIR%%/ui/sidebar_default_context.ui
 %%DATADIR%%/ui/tag_sidebar_context.ui
 %%DATADIR%%/ui/tags.ui
+%%DATADIR%%/ui/top.ui
 %%DATADIR%%/ui/trash.ui
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrm share/gnome/help/shotwell/C/figures
 @dirrm share/gnome/help/shotwell/C
 @dirrm share/gnome/help/shotwell
-@dirrmtry share/applications
+@dirrm libexec/shotwell
 @dirrm lib/shotwell/plugins/builtin
 @dirrm lib/shotwell/plugins
 @dirrm lib/shotwell
