@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	p5-Digest-MD5-Reverse
-# Date created:				17 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Digest-MD5-Reverse
