@@ -1,15 +1,15 @@
 bin/frozen-bubble
 bin/frozen-bubble-editor
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/FBLE.pm
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.so
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_c_stuff.pm
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_config.pm
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_net.pm
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_net_discover.pm
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fb_stuff.pm
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/fbsyms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/FBLE.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.so
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_c_stuff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_net.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_net_discover.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_stuff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fbsyms.pm
 libexec/frozenbubble/fb-server
 %%DATADIR%%/data/demo1.bz2
 %%DATADIR%%/data/demo2.bz2
@@ -3268,9 +3268,5 @@ libexec/frozenbubble/fb-server
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm libexec/frozenbubble
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/fb_c_stuff
-@dirrmtry lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto
-@dirrmtry lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%
-@dirrmtry lib/perl5/site_perl/%%PERL_VERSION%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
