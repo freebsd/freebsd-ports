@@ -1,9 +1,5 @@
-# New ports collection makefile for:	orville-write
-# Date created:		4 December 1999
-# Whom:			James Howard <howardj@wam.umd.edu>
-#
+# Created by: James Howard <howardj@wam.umd.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	orville-write
 PORTVERSION=	2.55
@@ -14,7 +10,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced replacement for write/mesg
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-Wno-return-type
 
+PLIST_FILES=	bin/amin bin/helpers bin/huh bin/jot bin/mesg bin/tel \
+		bin/telegram bin/write etc/orville.conf etc/wrthist etc/wrttmp
 MAN1=		amin.1 helpers.1 huh.1 mesg.1 write.1
 
 .include <bsd.port.pre.mk>
