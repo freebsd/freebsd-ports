@@ -5,7 +5,7 @@
  use strict;
  use Getopt::Std;
 -use lib '/usr/share/perl5/algotutor';
-+use lib '!!PREFIX!!/lib/perl5/site_perl/!!PERL_VER!!/algotutor';
++use lib '!!SITE_PERL!!/algotutor';
  
  BEGIN {
      my ($path) = $0 =~ m#(.*/)#;

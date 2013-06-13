@@ -26,7 +26,7 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 post-patch:
 	${REINPLACE_CMD}  -e 's,#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/algotutor
 	${PERL} -pi -e "s'!!PREFIX!!'${PREFIX}'g" ${WRKSRC}/algotutor
-	${REINPLACE_CMD} -e 's,!!PERL_VER!!,${PERL_VER},' \
+	${REINPLACE_CMD} -e 's,!!SITE_PERL!!,${SITE_PERL},' \
 		${WRKSRC}/algotutor
 
 do-install:
