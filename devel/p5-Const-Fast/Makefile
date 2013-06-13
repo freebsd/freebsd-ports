@@ -3,6 +3,7 @@
 
 PORTNAME=	Const-Fast
 PORTVERSION=	0.014
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEONT
@@ -17,7 +18,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Module-Build-Tiny>=0.021:${PORTSDIR}/devel/p5-Module-Build-Tiny
 RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Sub-Exporter-Progressive>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
+		p5-Sub-Exporter-Progressive>=0.001.007:${PORTSDIR}/devel/p5-Sub-Exporter-Progressive
 TEST_DEPENDS=	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_MODBUILD=	yes
