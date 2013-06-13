@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Digest/MD5/Reverse.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
 @dirrmtry %%SITE_PERL%%/Digest/MD5
 @dirrmtry %%SITE_PERL%%/Digest/
