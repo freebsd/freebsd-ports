@@ -1,13 +1,9 @@
-# New ports collection makefile for:	gaim-guifications
-# Date created:		2004-05-04
-# Whom:			ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	musictracker
 PORTVERSION=	0.4.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	pidgin-
@@ -15,14 +11,19 @@ PKGNAMEPREFIX=	pidgin-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Pidgin to displays the music track currently playing
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
+
+PLIST_FILES=	lib/pidgin/musictracker.a lib/pidgin/musictracker.la \
+		lib/pidgin/musictracker.so
 
 .include <bsd.port.mk>
