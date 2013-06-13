@@ -1,9 +1,5 @@
-# New ports collection makefile for:	physcalc
-# Date created:				Sun 27 Aug 2000
-# Whom:					Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	physcalc
 PORTVERSION=	2.4
@@ -24,6 +20,7 @@ USE_ZIP=	yes
 DEFS=		-DSHAREDIR="\"${PREFIX}/share/physcalc/\""
 SRCS=		physconv.c physmain.c physmlib.c physnode.c physoper.c \
 		physsolv.c
+CFLAGS+=	-Wno-return-type
 
 pre-build:
 	${REINPLACE_CMD} -e "s@void main@int main@g" ${WRKSRC}/physmain.c
