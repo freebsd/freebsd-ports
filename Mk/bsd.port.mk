@@ -4799,7 +4799,8 @@ makesum: check-checksum-algorithms
 
 .if !target(checksum)
 checksum: fetch check-checksum-algorithms
-	@${checksum_init} \
+	@set -e ; \
+	${checksum_init} \
 	if [ -f ${DISTINFO_FILE} ]; then \
 		cd ${DISTDIR}; OK="";\
 		for file in ${_CKSUMFILES}; do \
