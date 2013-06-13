@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection Makefile for:	rot
-# Date created:			Sep 21, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	rot
 PORTVERSION=	1.2
@@ -17,9 +12,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rotates a file so that lines become columns and vice versa
 
 ALL_TARGET=	${PORTNAME}
+CFLAGS+=	-Wno-return-type
 
 MAN1=		rot.1
 PLIST_FILES=	bin/rot
+
+post-patch:
+	@${REINPLACE_CMD} "s:^CFLAGS=:#CFLAGS=:" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rot ${PREFIX}/bin
