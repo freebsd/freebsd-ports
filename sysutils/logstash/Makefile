@@ -9,7 +9,7 @@
 # - DOCs
 # 
 PORTNAME=	logstash
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 PORTREVISION=	5
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/
