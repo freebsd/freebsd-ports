@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-yard
-# Date created:		2011-10-20
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yard
-PORTVERSION=	0.8.2.1
+PORTVERSION=	0.8.6.1
 CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
