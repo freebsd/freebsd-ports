@@ -23,6 +23,7 @@ MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
 CONFLICTS?=	afterstep-2*
 PORTSCOUT=	limit:^1\.[0-9.]*$$
 CFLAGS+=	-Wno-return-type
+USE_CSTD=	gnu89
 
 SRCDIRS=	afterstep \
 		modules/Animate modules/Audio modules/Auto \
@@ -34,8 +35,6 @@ post-patch:
 			-e 's|%%PREFIX%%|${PREFIX}|g' \
 			${WRKSRC}/configure.h \
 			${WRKSRC}/sample.steprc
-		${REINPLACE_CMD} \
-			-e 's/__inline__//g' \
 			${WRKSRC}/configure.h
 		@ for i in ${SRCDIRS}; do \
 			cd ${WRKSRC}/$$i; \
