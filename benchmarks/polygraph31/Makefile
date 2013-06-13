@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
+DEPRECATED=	Broken since March 2010
+EXPIRATION_DATE=2013-07-13
+
 GNU_CONFIGURE=	YES
 CPPFLAGS+=	-Wno-deprecated
 CONFIGURE_ARGS+=--datadir=${DATADIR}
