@@ -222,10 +222,6 @@ share/omf/xiphos/xiphos-fr.omf
 @dirrm %%DATADIR%%
 @dirrm share/pixmaps/xiphos
 @dirrm share/omf/xiphos
-@dirrm share/locale/nb_NO/LC_MESSAGES
-@dirrm share/locale/nb_NO
-@dirrm share/locale/he_IL/LC_MESSAGES
-@dirrm share/locale/he_IL
 @dirrm share/gnome/help/xiphos/fr/figures
 @dirrm share/gnome/help/xiphos/fr
 @dirrm share/gnome/help/xiphos/fa/figures
