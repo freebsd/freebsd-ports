@@ -54,11 +54,11 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.2
-lib/libhogweed.so.2.4
+lib/libhogweed.so.2.5
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.6
+lib/libnettle.so.4.7
 libdata/pkgconfig/nettle.pc
 libdata/pkgconfig/hogweed.pc
 @dirrm include/nettle
