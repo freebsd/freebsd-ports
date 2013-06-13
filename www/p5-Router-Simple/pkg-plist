@@ -3,5 +3,5 @@
 %%SITE_PERL%%/Router/Simple/Declare.pm
 %%SITE_PERL%%/Router/Simple/Route.pm
 %%SITE_PERL%%/Router/Simple/SubMapper.pm
-@dirrm %%SITE_PERL%%/Router/Simple
+@dirrmtry %%SITE_PERL%%/Router/Simple
 @dirrmtry %%SITE_PERL%%/Router
