@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nettle
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
