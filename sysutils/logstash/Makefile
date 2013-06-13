@@ -10,7 +10,7 @@
 # 
 PORTNAME=	logstash
 PORTVERSION=	1.1.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-flatjar
