@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-IPC-Run3
-# Date created:				Apr 27 2004
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-Run3
-PORTVERSION=	0.045
+PORTVERSION=	0.046
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
