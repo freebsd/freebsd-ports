@@ -34,6 +34,7 @@ rcvar=logstash_enable
 
 piddir="/var/run/${name}"
 pidfile="${piddir}/${name}.pid"
+start_precmd="logstash_precmd"
 
 if [ -d $piddir ]; then
 	mkdir -p $piddir
@@ -45,7 +46,7 @@ command="/usr/sbin/daemon"
 load_rc_config "${name}"
 
 : ${logstash_enable="NO"}
-: ${logstash_home="%%LOGSTASH_HOME%%"}
+: ${logstash_home="%%PREFIX%%/etc/${name}"}
 : ${logstash_config="%%PREFIX%%/etc/${name}/${name}.conf"}
 : ${logstash_jar="%%LOGSTASH_HOME%%/%%LOGSTASH_JAR%%"}
 : ${logstash_java_home="%%JAVA_HOME%%"}
@@ -76,6 +77,14 @@ if [ -z "${logstash_agent_flags}" ]; then
         logstash_agent_flags="-f ${logstash_config}"
     fi
 fi
+
+logstash_precmd ()
+{
+    if [ ! -d ${piddir} ]; then
+        mkdir -p ${piddir}
+    fi
+    chown -R ${logstash_user}:${logstash_group} ${piddir}
+}
 
 command_args="-f -p ${pidfile} ${java_cmd} ${logstash_java_flags} -jar ${logstash_jar} ${logstash_agent_flags}"
 required_files="${java_cmd} ${logstash_config}"
