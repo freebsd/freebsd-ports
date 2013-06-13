@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e9e410b-d462-11e2-8d57-080027019be0">
+    <topic>dbus -- local dos</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.16.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon McVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2013-June/015696.html">
+	  <p>Alexandru Cornea discovered a vulnerability in libdbus caused
+	     by an implementation bug in _dbus_printf_string_upper_bound().
+	     This vulnerability can be exploited by a local user to crash
+	     system services that use libdbus, causing denial of service.
+	     It is platform-specific: x86-64 Linux is known to be affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2168</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2013-June/015696.html</url>
+    </references>
+    <dates>
+      <discovery>2013-06-13</discovery>
+      <entry>2013-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fce67546-d2e7-11e2-a9bf-98fc11cdc4f5">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
