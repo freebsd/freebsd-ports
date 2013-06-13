@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.2.18
+PORTVERSION=	1.2.28
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -45,7 +45,7 @@ RUN_DEPENDS+=	node>=0.8.0:${PORTSDIR}/www/node
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKSRC}/tmp|' ${WRKSRC}/Makefile
+	@${SED} -i '' -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
 
 # maintainer section:
 # require: bash, git, gmake, node
