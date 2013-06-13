@@ -182,6 +182,7 @@ freeswitch:*:610:
 monkeysphere:*:641:
 aox:*:666:
 bnetd:*:700:
+logstash:*:701:
 bopm:*:717:
 openxpki:*:777:
 puppet:*:814:
