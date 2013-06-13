@@ -1,0 +1,16 @@
+# $FreeBSD$
+
+PREFIX?=	/usr/local
+LOCALBASE?=	/usr/local
+BINDIR?=	${PREFIX}/bin
+MANDIR?=	${PREFIX}/man/man
+NO_MANCOMPRESS=
+
+.PATH: ${.CURDIR}/../tools ${.CURDIR}/../manuals
+
+PROG=	${.CURDIR:T}
+MAN=	${PROG}.1
+LDADD=	-lpcap -lm
+CFLAGS+=	-DIPV6TOOLKITCONF=\"${PREFIX}/etc/ipv6toolkit.conf\"
+
+.include <bsd.prog.mk>

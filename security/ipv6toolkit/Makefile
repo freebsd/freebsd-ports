@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6toolkit
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.4
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.si6networks.com/tools/ipv6toolkit/
 DISTNAME=	ipv6-toolkit-v${PORTVERSION}
@@ -13,16 +13,31 @@ LICENSE=	GPLv3
 
 MAKE_ENV=	DATADIR=${DATADIR}
 MAKE_JOBS_SAFE=	yes
+SUB_FILES=	BSDMakefile Makefile
+MAKEFILE=	BSDMakefile
 PORTDOCS=	README.TXT
-MAN1=		flow6.1 frag6.1 icmp6.1 jumbos6.1 na6.1 ni6.1 ns6.1 ra6.1 \
+MAN1=		flow6.1 frag6.1 icmp6.1 jumbo6.1 na6.1 ni6.1 ns6.1 ra6.1 \
 		rd6.1 rs6.1 scan6.1 tcp6.1
 MAN5=		ipv6toolkit.conf.5
 
-post-patch:
+PROGDIRS= address6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+post-extract:
+	@cd ${WRKSRC} && ${MKDIR} ${PROGDIRS}
+
+post-patch: apply-slist
 	${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
 		${WRKSRC}/data/ipv6toolkit.conf
+	${INSTALL_DATA} ${WRKDIR}/BSDMakefile ${WRKSRC}
+	for D in ${PROGDIRS}; do \
+		${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}/$$D; \
+	done
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}

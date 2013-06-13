@@ -1,0 +1,22 @@
+# $FreeBSD$
+
+SUBDIR=	address6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
+
+.PATH: ${.CURDIR}/manuals
+
+FILESGROUPS=	CONF DB
+CONF=		data/ipv6toolkit.conf
+CONFDIR?=	${PREFIX}/etc
+DB=		data/oui.txt
+DBDIR?=		${PREFIX}/share/ipv6toolkit
+
+PREFIX?=	/usr/local
+MANDIR?=	${PREFIX}/man/man
+MAN=		ipv6toolkit.conf.5
+NO_MANCOMPRESS=
+
+beforeinstall:
+	install -d -m 0555 ${DBDIR}
+afterinstall: installfiles maninstall
+
+.include <bsd.prog.mk>
