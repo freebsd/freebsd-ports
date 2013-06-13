@@ -17,7 +17,7 @@ bin/zmwatch.pl
 bin/zmx10.pl
 @unexec if cmp -s %D/etc/zm.conf.sample %D/etc/zm.conf; then rm -f %D/etc/zm.conf; fi
 etc/zm.conf.sample
-lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/ZoneMinder.pm
 %%SITE_PERL%%/ZoneMinder/Base.pm
 %%SITE_PERL%%/ZoneMinder/Config.pm
@@ -320,10 +320,3 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 @dirrm %%SITE_PERL%%/ZoneMinder/Memory
 @dirrm %%SITE_PERL%%/ZoneMinder/Control
 @dirrm %%SITE_PERL%%/ZoneMinder
-@dirrmtry %%SITE_PERL%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5/%%PERL_VERSION%%/man/man3
-@dirrmtry lib/perl5/%%PERL_VERSION%%/man
-@dirrmtry lib/perl5/%%PERL_VERSION%%/mach
-@dirrmtry lib/perl5/%%PERL_VERSION%%
-@dirrmtry lib/perl5
