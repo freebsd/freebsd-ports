@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Monitor-Simple
-# Date created:		2011-10-25
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Monitor-Simple
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.8
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,15 +18,9 @@ BUILD_DEPENDS=	p5-IO-CaptureOutput>=0:${PORTSDIR}/devel/p5-IO-CaptureOutput \
 		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-IO-CaptureOutput>=0:${PORTSDIR}/devel/p5-IO-CaptureOutput \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which
 
 PERL_CONFIGURE=	yes
 
@@ -43,11 +33,4 @@ MAN3=		Monitor::Simple.3 \
 		Monitor::Simple::UserAgent.3 \
 		Monitor::Simple::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Getopt-Long>=2.38:${PORTSDIR}/devel/p5-Getopt-Long
-RUN_DEPENDS+=	p5-Getopt-Long>=2.38:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

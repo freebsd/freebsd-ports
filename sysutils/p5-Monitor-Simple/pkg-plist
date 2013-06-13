@@ -7,6 +7,7 @@ bin/smonitor
 %%SITE_PERL%%/Monitor/Simple/UserAgent.pm
 %%SITE_PERL%%/Monitor/Simple/Utils.pm
 %%SITE_PERL%%/Monitor/Simple/configs/bad-config.cfg
+%%SITE_PERL%%/Monitor/Simple/configs/cbrc-apps-monitor-on-baloo.xml
 %%SITE_PERL%%/Monitor/Simple/configs/erroneous-monitor-cfg.xml
 %%SITE_PERL%%/Monitor/Simple/configs/monitor-default.css
 %%SITE_PERL%%/Monitor/Simple/configs/monitor-simple-cfg.xml.template
@@ -17,6 +18,7 @@ bin/smonitor
 %%SITE_PERL%%/Monitor/Simple/notifiers/send-email-via-ssh
 %%SITE_PERL%%/Monitor/Simple/plugins/born-to-be-killed.pl
 %%SITE_PERL%%/Monitor/Simple/plugins/check-get.pl
+%%SITE_PERL%%/Monitor/Simple/plugins/check_mem2.pl
 %%SITE_PERL%%/Monitor/Simple/plugins/check-post.pl
 %%SITE_PERL%%/Monitor/Simple/plugins/check-prg.pl
 %%SITE_PERL%%/Monitor/Simple/plugins/check-url.pl
