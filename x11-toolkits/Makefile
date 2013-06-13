@@ -189,6 +189,7 @@
     SUBDIR += pure-gtk
     SUBDIR += pure-tk
     SUBDIR += py-Pmw
+    SUBDIR += py-SquareMap
     SUBDIR += py-fltk
     SUBDIR += py-gnome-desktop
     SUBDIR += py-gnome-extras
