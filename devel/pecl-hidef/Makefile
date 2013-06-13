@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hidef
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.13
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,8 +16,14 @@ LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-hidef
+
+CFLAGS+=-I${LOCALBASE}/include
+LDFLAGS+=-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' \
+	${WRKSRC}/hidef.c
 
 .include <bsd.port.mk>
