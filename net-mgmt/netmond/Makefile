@@ -24,14 +24,9 @@ GROUPS=	${USERS}
 #MK_IFGRAPH=	yes
 PATCHDIR=	${WRKDIR}/patches
 
-.if defined(MK_IFGRAPH)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-.else
-CONFIGURE_ARGS=	--without-ifgraph
-.endif
-
 GNU_CONFIGURE=	yes
 USES=		bison
+CFLAGS+=	-Wno-return-type
 
 BINOWN=		root
 BINGRP=		netmon
@@ -39,15 +34,20 @@ BINMODE=	0550
 
 PLIST_FILES=	sbin/netmond sbin/netmond_watchdog sbin/netmondctl \
 		etc/netmond.conf.sample
-.if defined(MK_IFGRAPH)
-PLIST_FILES+=	sbin/ifgraph
-.endif
-
 USE_RC_SUBR=	netmond
-
 SUB_FILES+=	pkg-message netmond_watchdog netmondctl
-
 PORTDOCS=	README README.ru CHANGES README.port.eng README.port.ru index.html netmond.css en/ ru/
+
+OPTIONS_DEFINE=	DOCS GD
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGD}
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+PLIST_FILES+=	sbin/ifgraph
+.else
+CONFIGURE_ARGS=	--without-ifgraph
+.endif
 
 post-extract:
 	${MKDIR} ${PATCHDIR}
@@ -63,8 +63,8 @@ do-install:
 	${INSTALL_SCRIPT}   ${WRKDIR}/netmondctl ${PREFIX}/sbin/netmondctl
 	${INSTALL_DATA} ${WRKSRC}/netmon.conf.sample ${PREFIX}/etc/netmond.conf.sample
 	${CHMOD} u+s ${PREFIX}/sbin/netmond
-.if !defined(NOPORTDOCS)
-	${MKDIR}  ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR}  ${DOCSDIR}
 	${CHMOD} 755 ${DOCSDIR}
 	${TAR}  -zxf ${DISTDIR}/${DISTNAME}.docs${EXTRACT_SUFX} -C ${DOCSDIR}
 .endif
