@@ -1,9 +1,5 @@
-# New ports collection makefile for:	columns
-# Date created:				26 August 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	columns
 PORTVERSION=	1.2b
@@ -23,8 +19,12 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/Columns
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
