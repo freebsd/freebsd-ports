@@ -4991,7 +4991,7 @@ _INSTALL_DEPENDS=	\
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
-	@for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
+	@set -e ; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
 		prog=$${i%%:*}; \
 		if [ -z "$$prog" ]; then \
 			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
@@ -5089,7 +5089,7 @@ ${deptype:L}-depends:
 
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
-	@for i in ${LIB_DEPENDS}; do \
+	@set -e ; for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*}; \
 		pattern="`${ECHO_CMD} $$lib | ${SED} -E -e 's/\./\\\\./g' -e 's/(\\\\)?\+/\\\\+/g'`"\
 		dir=$${i#*:}; \
