@@ -1,3 +1,5 @@
 bin/rubber
 bin/rubber-info
 bin/rubber-pipe
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
