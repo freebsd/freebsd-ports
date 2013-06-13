@@ -3,7 +3,7 @@
 #   $MCom: ports/devel/dbus/Makefile,v 1.58 2013/02/15 15:06:49 kwm Exp $
 
 PORTNAME=	dbus
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.12
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -41,7 +41,7 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
-X11_DESC=	X11 Desktop Environments
+X11_DESC=	Support X11 Desktop Environments
 
 .include <bsd.port.options.mk>
 
