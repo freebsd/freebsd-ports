@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Geo-Coder-Google
-# Date created:				2008-11-06
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Coder-Google
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ARCANEZ
