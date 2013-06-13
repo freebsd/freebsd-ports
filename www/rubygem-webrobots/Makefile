@@ -1,17 +1,15 @@
-# New ports collection makefile for:	rubygem-webrobots
-# Date created:		2011-10-31
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	webrobots
-PORTVERSION=	0.0.13
+PORTVERSION=	0.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write robots.txt compliant web robots in Ruby
+
+LICENSE=	BSD
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
