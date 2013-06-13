@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rhodecode
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:${PORTSDIR}/www/py-pastescript \
 		mercurial>=2.6:${PORTSDIR}/devel/mercurial
 
-USE_PYTHON=	2.7-
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	RhodeCode
 
