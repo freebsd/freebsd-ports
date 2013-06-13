@@ -836,6 +836,7 @@
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
+    SUBDIR += rubygem-parallel
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
     SUBDIR += rubygem-sys-filesystem
