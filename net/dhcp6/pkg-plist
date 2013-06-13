@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 @unexec %D/etc/rc.d/dhcp6s.sh forcestop 2>/dev/null || true
 @unexec %D/etc/rc.d/dhcp6relay.sh forcestop 2>/dev/null || true
 @unexec %D/etc/rc.d/dhcp6c.sh forcestop 2>/dev/null || true
@@ -10,6 +11,3 @@ sbin/dhcp6c
 sbin/dhcp6relay
 sbin/dhcp6s
 sbin/dhcp6ctl
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
