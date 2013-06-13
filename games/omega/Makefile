@@ -1,9 +1,5 @@
-# New ports collection makefile for:	omega
-# Date created:				14 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	omega
 PORTVERSION=	0.90.4
@@ -12,10 +8,11 @@ MASTER_SITES=	http://www.alcyone.com/binaries/omega/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complex rogue-style game of dungeon exploration
+COMMENT=	Complex rogue-style game of dungeon exploration
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	# empty
+CFLAGS+=	-Wno-return-type
 MAN6=		omega.6
 
 MYPORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
