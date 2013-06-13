@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.options.mk>
