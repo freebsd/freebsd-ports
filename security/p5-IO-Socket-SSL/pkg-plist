@@ -1,7 +1,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL/.packlist
 %%SITE_PERL%%/IO/Socket/SSL.pm
+%%SITE_PERL%%/IO/Socket/SSL/Intercept.pm
+%%SITE_PERL%%/IO/Socket/SSL/Utils.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO/Socket/SSL
 @dirrmtry %%SITE_PERL%%/IO/Socket
 @dirrmtry %%SITE_PERL%%/IO
