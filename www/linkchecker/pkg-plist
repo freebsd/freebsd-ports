@@ -416,6 +416,8 @@ share/icons/hicolor/64x64/apps/linkchecker.png
 @dirrmtry share/applications
 @dirrmtry man/de/man1
 @dirrmtry man/de
+@dirrmtry man/de/man5
+@dirrmtry man/de
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/linkcheck/network
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/linkcheck/logger
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/linkcheck/htmlutil
