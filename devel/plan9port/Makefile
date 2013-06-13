@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20120820
+PORTVERSION=	20130320
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/
 EXTRACT_SUFX=	.tgz
@@ -76,7 +76,7 @@ MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 
 MAN4=		0intro.4 9pserve.4 acme.4 import.4 plumber.4 ramfs.4 \
 		vacfs.4 factotum.4 srv.4 9pfuse.4 tapefs.4 smugfs.4 \
-		fontsrv.4
+		fontsrv.4 9import.4
 
 MAN7=		utf.7 regexp.7 0intro.7 color.7 face.7 font.7 image.7 \
 		man.7 map.7 ms.7 plot.7 plumb.7 thumbprint.7 ndb.7 \

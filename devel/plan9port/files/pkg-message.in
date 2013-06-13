@@ -1,4 +1,5 @@
-You should benefit from adding these to your profile environment:
+You should benefit from adding these to your profile environment (example
+for sh/bash, adjust for tcsh as appropriate):
 
 	PLAN9=%%PREFIX%%/plan9; export PLAN9
 	PATH=$PATH:$PLAN9/bin; export PATH
