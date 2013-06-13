@@ -1,6 +1,6 @@
---- ./Makefile.orig	2012-02-18 15:17:14.650207401 -0500
-+++ ./Makefile	2012-02-18 15:19:42.390202289 -0500
-@@ -301,8 +301,8 @@
+--- Makefile.orig	2013-06-12 14:17:51.000000000 -0400
++++ Makefile	2013-06-12 14:24:27.000000000 -0400
+@@ -349,8 +349,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -11,12 +11,12 @@
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
-@@ -322,15 +322,15 @@
+@@ -372,15 +372,15 @@
  prefix = $(HOME)
  bindir_relative = bin
  bindir = $(prefix)/$(bindir_relative)
--mandir = share/man
--infodir = share/info
+-mandir = $(prefix)/share/man
+-infodir = $(prefix)/share/info
 +mandir = $(prefix)/man
 +infodir = $(prefix)/info
  gitexecdir = libexec/git-core
@@ -26,12 +26,12 @@
 +gitwebdir = $(sharedir)/examples/git/gitweb
  localedir = $(sharedir)/locale
  template_dir = share/git-core/templates
--htmldir = share/doc/git-doc
-+htmldir = share/doc/git
+-htmldir = $(prefix)/share/doc/git-doc
++htmldir = $(prefix)/share/doc/git
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -339,21 +339,21 @@
+@@ -393,21 +393,21 @@
  
  export prefix bindir sharedir sysconfdir gitwebdir localedir
  
@@ -68,7 +68,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -1438,9 +1438,9 @@
+@@ -1136,9 +1136,9 @@
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
