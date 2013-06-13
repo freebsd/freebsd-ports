@@ -1,18 +1,14 @@
-# New ports collection makefile for:	p5-AnyEvent-CouchDB
-# Date created:		2011-09-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-CouchDB
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A non-blocking CouchDB client based on jquery.couch.js
+COMMENT=	Non-blocking CouchDB client based on jquery.couch.js
 
 LICENSE=	MIT
 
