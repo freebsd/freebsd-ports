@@ -63,7 +63,7 @@ procname="${java_cmd}"
 
 logstash_chdir=${logstash_home}
 
-if [ -z ${logstash_agent_flags} ]; then
+if [ -z "${logstash_agent_flags}" ]; then
     if [ ${logstash_mode} == "standalone" ]; then
         logstash_agent_flags="agent -f ${logstash_config} -- web --port ${logstash_port} --backend elasticsearch:///?local ${logstash_log_options}"
     elif [ ${logstash_mode} == "agent" ];then
