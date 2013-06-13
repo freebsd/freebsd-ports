@@ -43,7 +43,7 @@ RUN_DEPENDS+=	vncviewer:${PORTSDIR}/net/tightvnc
 .endif
 
 .if ${PORT_OPTIONS:MXNEST}
-RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
+RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver
 .endif
 
 .include <bsd.port.pre.mk>
