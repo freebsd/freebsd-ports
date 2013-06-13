@@ -1,10 +1,10 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/graphics/evince/Makefile,v 1.159 2012/09/01 23:02:10 mezz Exp $
+#    $MCom: ports/trunk/graphics/evince/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	evince
 PORTVERSION=	2.32.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,9 +27,8 @@ USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USES=		pathfix gettext
-USE_GNOME=	intlhack gnomeprefix desktopfileutils \
-		gnomedocutils ltasneededhack gconf2
+USES=		desktop-file-utils gettext pathfix
+USE_GNOME=	intlhack gnomeprefix gnomedocutils ltasneededhack gconf2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -61,7 +60,7 @@ CONFIGURE_ARGS+=	--enable-dvi
 GCONF_SCHEMAS+=	evince-thumbnailer-dvi.schemas
 PLIST_SUB+=		DVI=""
 
-. if defined(WITH_T1LIB)
+. if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	t1:${PORTSDIR}/devel/t1lib
 CONFIGURE_ARGS+=	--enable-t1lib
 . else
@@ -108,7 +107,6 @@ PLIST_SUB+=		DJVU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOMICS}
-RUN_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 CONFIGURE_ARGS+=	--enable-comics
 GCONF_SCHEMAS+=		evince-thumbnailer-comics.schemas
 PLIST_SUB+=		COMICS=""
@@ -124,8 +122,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
 		${WRKSRC}/help/reference/libdocument/Makefile.in \
 		${WRKSRC}/help/reference/libview/Makefile.in
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
