@@ -1,0 +1,5 @@
+dropbox-sdk is a library that provides a plain function-call interface to the
+Dropbox API web endpoints.
+
+WWW: https://www.dropbox.com/developers
+RG:  https://rubygems.org/gems/dropbox-sdk

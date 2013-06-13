@@ -1025,6 +1025,7 @@
     SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-domain_name
+    SUBDIR += rubygem-dropbox-sdk
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-http_parser.rb
     SUBDIR += rubygem-httpauth
