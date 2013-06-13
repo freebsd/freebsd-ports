@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.innodb.com/download/embedded_innodb/
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Standalone version of the MySQL storage engine InnoDB
 
+DEPRECATED=	The Embedded InnoDB project was terminated a few years ago
+EXPIRATION_DATE=2013-07-11
+
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
