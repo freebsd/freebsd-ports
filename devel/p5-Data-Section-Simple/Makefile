@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Section-Simple
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,9 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read data from __DATA__
 
-BUILD_DEPENDS=	p5-Module-Build-Tiny>=0.013:${PORTSDIR}/devel/p5-Module-Build-Tiny
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Data::Section::Simple.3
 
