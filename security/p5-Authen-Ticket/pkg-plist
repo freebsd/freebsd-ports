@@ -1,7 +1,3 @@
-lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket::Client.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket::Server.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket::Signature.3
 %%SITE_PERL%%/Authen/Ticket.pm
 %%SITE_PERL%%/Authen/Ticket/Client.pm
 %%SITE_PERL%%/Authen/Ticket/Server.pm
