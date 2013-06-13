@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program computes with real and complex numbers and matrices
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

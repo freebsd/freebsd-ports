@@ -15,7 +15,7 @@ COMMENT=	SEGA Genesis emulator
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_SDL=	sdl
