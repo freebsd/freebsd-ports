@@ -12,17 +12,19 @@
 #   Set to "NO" by default.
 #   Set it to "YES" to enable logstash
 #
+# logstash_flags (string):
+#   flags to logstash.
+#
+# logstash_java_flags (string):
+#   flags to Java VM. default is "-Des.path.data=${logstash_elastic_datadir}"
+#
 # logstash_mode :
-#   Set to "standalone" by default.
+#   run logstash with pre-defined flags if logstash_flags is not set. Set to ""
+#   by default, which does nothing.
 #   Valid options:
 #     "standalone": agent, web & elasticsearch
 #     "web": Starts logstash as a web ui
 #     "agent": Justs works as a log shipper 
-#
-# logstash_logging (bool):
-#   Set to "NO" by default.
-#   Set it to "YES" to enable logstash logging to file
-#   Default output to /var/log/logstash.log
 #
 
 . /etc/rc.subr
@@ -48,33 +50,32 @@ load_rc_config "${name}"
 : ${logstash_jar="%%LOGSTASH_HOME%%/%%LOGSTASH_JAR%%"}
 : ${logstash_java_home="%%JAVA_HOME%%"}
 : ${logstash_log="NO"}
-: ${logstash_mode="standalone"}
+: ${logstash_mode=""}
 : ${logstash_port="9292"}
 : ${logstash_elastic_backend=""}
 : ${logstash_log_file="${logdir}/${name}.log"}
 : ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
+: ${logstash_log_options="--log ${logstash_log_file}"}
+: ${logstash_java_flags="-Des.path.data=${logstash_elastic_datadir}"}
 
 java_cmd="${logstash_java_home}/bin/java"
 procname="${java_cmd}"
 
 logstash_chdir=${logstash_home}
-logstash_log_options=""
-logstash_elastic_options=""
 
-if [ ${logstash_log} == "YES" ]; then
-	logstash_log_options=" --log ${logstash_log_file}" 
+if [ -z ${logstash_flags} ]; then
+    if [ ${logstash_mode} == "standalone" ]; then
+        logstash_flags="agent -f ${logstash_config} -- web --port ${logstash_port} --backend elasticsearch:///?local ${logstash_log_options}"
+    elif [ ${logstash_mode} == "agent" ];then
+        logstash_flags="agent -f ${logstash_config} ${logstash_log_options}"
+    elif [ ${logstash_mode} == "web" ];then
+        logstash_flags="web --port ${logstash_port} --backend elasticsearch://${logstash_elastic_backend}/ ${logstash_log_options}"
+    else
+        logstash_flags="-f ${logstash_config}"
+    fi
 fi
 
-if [ ${logstash_mode} == "standalone" ]; then
-	logstash_args="agent -f ${logstash_config} -- web --port ${logstash_port} --backend elasticsearch:///?local ${logstash_log_options}"
-	logstash_elastic_options=" -Des.path.data=${logstash_elastic_datadir}"
-elif [ ${logstash_mode} == "agent" ];then
-	logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
-elif [ ${logstash_mode} == "web" ];then
-	logstash_args="web --port ${logstash_port} --backend elasticsearch://${logstash_elastic_backend}/ ${logstash_log_options}"
-fi
-
-command_args="-f -p ${pidfile} ${java_cmd} ${logstash_elastic_options} -jar ${logstash_jar} ${logstash_args}"
+command_args="-f -p ${pidfile} ${java_cmd} ${logstash_java_flags} -jar ${logstash_jar} ${logstash_flags}"
 required_files="${java_cmd} ${logstash_config}"
 
 run_rc_command "$1"
