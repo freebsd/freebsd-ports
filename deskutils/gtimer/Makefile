@@ -1,18 +1,16 @@
-# New ports collection makefile for:	gtimer
-# Date created:        25 February 1999
-# Whom:                Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtimer
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A timer for your personal activities
+COMMENT=	Timer for your personal activities
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -25,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
