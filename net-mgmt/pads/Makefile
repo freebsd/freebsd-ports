@@ -1,20 +1,16 @@
-# New ports collection makefile for: pads
-# Date created: 21 Feburary 2005
-# Whom: Andrew Thompson <andy@fud.org.nz>
-#
+# Created by: Andrew Thompson <andy@fud.org.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	pads
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/passive/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passively detect network assets
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 
