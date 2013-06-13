@@ -25,7 +25,5 @@ share/pixmaps/toppler.xpm
 %%DATADIR%%/toppler.hsc
 %%DATADIR%%/toppler.ogg
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/cz/LC_MESSAGES
-@dirrmtry share/locale/cz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
