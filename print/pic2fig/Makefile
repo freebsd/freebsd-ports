@@ -1,7 +1,4 @@
-# New ports collection makefile for:    pic2fig
-# Date created:         14 Jan 2001
-# Whom:                 Patrick Powell <papowell@astart.com>
-#
+# Created by: Patrick Powell <papowell@astart.com>
 # $FreeBSD$
 
 PORTNAME=	pic2fig
@@ -16,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pic format to fig format converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-Wno-return-type
 MAN1=		pic2fig.1
 PLIST_FILES=	bin/pic2fig
 
