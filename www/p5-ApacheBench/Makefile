@@ -1,12 +1,8 @@
-# Ports collection Makefile for:		p5-ApacheBench
-# Date created:					11 Jan 2002
-# Whom:						dom@happygiraffe.net
-#
+# Created by: dom@happygiraffe.net
 # $FreeBSD$
-#
 
 PORTNAME=	ApacheBench
-PORTVERSION=	0.72
+PORTVERSION=	0.73
 CATEGORIES=	www benchmarks perl5
 MASTER_SITES=	CPAN/HTTPD
 PKGNAMEPREFIX=	p5-
