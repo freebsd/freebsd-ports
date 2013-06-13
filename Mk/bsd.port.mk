@@ -1897,7 +1897,6 @@ LIB_DEPENDS+=		Xm.4:${PORTSDIR}/x11-toolkits/open-motif
 X_IMAKE_PORT=		${PORTSDIR}/devel/imake
 X_FONTSERVER_PORT=	${PORTSDIR}/x11-fonts/xfs
 X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-vfbserver
-X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-nestserver
 X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/encodings
 X_FONTS_MISC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
 X_FONTS_100DPI_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-100dpi
