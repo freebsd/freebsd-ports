@@ -1,0 +1,23 @@
+bin/strip_duplicates.py
+%%PYTHON_SITELIBDIR%%/meliae/__init__.py
+%%PYTHON_SITELIBDIR%%/meliae/__init__.pyc
+%%PYTHON_SITELIBDIR%%/meliae/__init__.pyo
+%%PYTHON_SITELIBDIR%%/meliae/_intset.so
+%%PYTHON_SITELIBDIR%%/meliae/_loader.so
+%%PYTHON_SITELIBDIR%%/meliae/_scanner.so
+%%PYTHON_SITELIBDIR%%/meliae/files.py
+%%PYTHON_SITELIBDIR%%/meliae/files.pyc
+%%PYTHON_SITELIBDIR%%/meliae/files.pyo
+%%PYTHON_SITELIBDIR%%/meliae/loader.py
+%%PYTHON_SITELIBDIR%%/meliae/loader.pyc
+%%PYTHON_SITELIBDIR%%/meliae/loader.pyo
+%%PYTHON_SITELIBDIR%%/meliae/perf_counter.py
+%%PYTHON_SITELIBDIR%%/meliae/perf_counter.pyc
+%%PYTHON_SITELIBDIR%%/meliae/perf_counter.pyo
+%%PYTHON_SITELIBDIR%%/meliae/scanner.py
+%%PYTHON_SITELIBDIR%%/meliae/scanner.pyc
+%%PYTHON_SITELIBDIR%%/meliae/scanner.pyo
+%%PYTHON_SITELIBDIR%%/meliae/warn.py
+%%PYTHON_SITELIBDIR%%/meliae/warn.pyc
+%%PYTHON_SITELIBDIR%%/meliae/warn.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/meliae
