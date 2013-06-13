@@ -49,6 +49,7 @@ LANGCODE=	chs:zh_CN cht:zh_TW dan:da_DK deu:de_DE enu:en_US \
 		esp:es_ES fra:fr_FR ita:it_IT jpn:ja_JP kor:ko_KR \
 		nld:nl_NL nor:nb_NO ptb:pt_BR suo:fi_FI sve:sv_SE
 
+.MAKE.FreeBSD_UL=	yes
 ADOBE_LANG?=	ENU
 .for L in ${ADOBE_LANG:L}
 LOCALE_NAME=	${LANGCODE:M${L}\:*:C/.*\://}
