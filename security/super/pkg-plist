@@ -8,3 +8,5 @@ bin/super
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.tab
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/var
+@dirrmtry var
