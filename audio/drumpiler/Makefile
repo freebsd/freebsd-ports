@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	drumpiler
-# Date created:			Jan 15, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	drumpiler
 PORTVERSION=	0.9.0
@@ -16,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drum machine compiler
 
 USE_SDL=	sdl
-CFLAGS+=	`${SDL_CONFIG} --cflags`
+CFLAGS+=	`${SDL_CONFIG} --cflags` -Wno-return-type
 LIBS+=		`${SDL_CONFIG} --libs`
 PLIST_FILES=	bin/drumpiler
 
