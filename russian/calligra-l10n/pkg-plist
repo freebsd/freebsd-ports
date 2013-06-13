@@ -69,5 +69,3 @@ share/locale/ru/LC_MESSAGES/thesaurus_tool.mo
 share/locale/ru/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/ru/sheets
 @dirrm share/doc/HTML/ru/calligra
-@dirrmtry share/apps/calligra/autocorrect
-@dirrmtry share/apps/calligra
