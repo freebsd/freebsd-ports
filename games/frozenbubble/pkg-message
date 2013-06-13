@@ -10,4 +10,3 @@ Try to start it with:
 or for FreeBSD version 7 and above:
 
 	$ LD_PRELOAD=/usr/lib/libpthread.so frozen-bubble
-
