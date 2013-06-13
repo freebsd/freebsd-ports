@@ -6,12 +6,11 @@
 #
 
 # TODO
-# - UIDs/GIDs
 # - DOCs
 # 
 PORTNAME=	logstash
 PORTVERSION=	1.1.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-flatjar
@@ -27,6 +26,8 @@ JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 
 USE_RC_SUBR=	logstash
+USERS=	${PORTNAME}
+GROUPS=	${PORTNAME}
 
 LOGSTASH_HOME?=	${PREFIX}/${PORTNAME}
 LOGSTASH_HOME_REL?=	${LOGSTASH_HOME:S,^${PREFIX}/,,}
