@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdu
-# Date created:		9 February 1995
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	xdu
 PORTVERSION=	3.0
