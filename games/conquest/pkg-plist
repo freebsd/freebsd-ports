@@ -6,7 +6,5 @@ sbin/conqoper
 sbin/conqstrat
 %%DATADIR%%/conqnews.doc.sample
 %%DATADIR%%/conquest.doc
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/conquest
 @dirrm %%DATADIR%%
