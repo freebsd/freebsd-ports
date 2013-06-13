@@ -174,6 +174,7 @@ pre-configure:
 .endif
 
 post-install:
+	@${MKDIR} ${PREFIX}/etc/racoon
 	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && ${ECHO_CMD} ipsec` ]; then \
 	    ${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
 	    ${ECHO_MSG} "         You must build the kernel if you want to run racoon on the host"; \
@@ -181,7 +182,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${RM} -f ${WRKSRC}/src/racoon/samples/*.in
 	@${CP} -r ${WRKSRC}/src/racoon/samples/* ${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/src/racoon/doc/* ${DOCSDIR}
 .endif
