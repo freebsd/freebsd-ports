@@ -2,24 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Web-based network management tool for moderate to large networks
 
-OPTIONS_DEFINE=	GRAPHVIZ OUIDL MIBS
+OPTIONS_DEFINE=	GRAPHVIZ MIBS
 OPTIONS_DEFAULT=GRAPHVIZ MIBS
 MIBS_DESC=	Depend on net-mgmt/netdisco-mibs
-OUIDL_DESC=	Download oui.txt file
 GRAPHVIZ_DESC=	Install GraphViz for network map support
 
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI	\
 		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		p5-SNMP-Info>=0:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
+		p5-SNMP-Info>=3.01:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
 		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
 		p5-DB_File-Lock>=0:${PORTSDIR}/devel/p5-DB_File-Lock \
 		p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session \
@@ -44,7 +43,7 @@ NETDISCO_RUNDIR=/var/run
 NETDISCO_DBDIR=	/var/db/netdisco
 
 SUB_FILES=	pkg-message
-SUB_LIST=	NETDISCO_DBDIR=${NETDISCO_DBDIR} NETDISCO_RUNDIR=${NETDISCO_RUNDIR} NETDISCO_USER=${USERS}
+SUB_LIST=	NETDISCO_DBDIR=${NETDISCO_DBDIR} NETDISCO_RUNDIR=${NETDISCO_RUNDIR} NETDISCO_USER=${USERS} NETDISCO_GROUP=${GROUPS}
 PLIST_SUB=	NETDISCO_DBDIR=${NETDISCO_DBDIR} NETDISCO_RUNDIR=${NETDISCO_RUNDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -84,12 +83,6 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	p5-Graph>=0:${PORTSDIR}/math/p5-Graph	\
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
-.endif
-
-.if ${PORT_OPTIONS:MOUIDL}
-PLIST_SUB+=	OUIDL=""
-.else
-PLIST_SUB+=	OUIDL="@comment "
 .endif
 
 pre-install:
@@ -157,10 +150,6 @@ do-install:
 			test -L ${LOCALBASE}/${APACHEETCDIR}/Includes/netdisco_apache_dir.conf || \
 				${LN} -s ${ETCDIR}/netdisco_apache_dir.conf ${LOCALBASE}/${APACHEETCDIR}/Includes/netdisco_apache_dir.conf;\
 		fi)
-.	endif
-
-.	if ${PORT_OPTIONS:MOUIDL}
-		${FETCH_CMD} -q -o ${DATADIR}/oui.txt http://standards.ieee.org/develop/regauth/oui/oui.txt
 .	endif
 
 post-install:

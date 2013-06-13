@@ -3,7 +3,6 @@ bin/parse_kismet_ap
 bin/parse_mac
 bin/port_control
 %%SITE_PERL%%/netdisco.pm
-%%OUIDL%%%%DATADIR%%/oui.txt
 %%DATADIR%%/sql/admin.sql
 %%DATADIR%%/sql/device.sql
 %%DATADIR%%/sql/device_ip.sql
@@ -21,7 +20,9 @@ bin/port_control
 %%DATADIR%%/sql/node_ip.sql
 %%DATADIR%%/sql/node_monitor.sql
 %%DATADIR%%/sql/node_nbt.sql
+%%DATADIR%%/sql/node_vlan.sql
 %%DATADIR%%/sql/node_wireless.sql
+%%DATADIR%%/sql/node_wireless_ssid.sql
 %%DATADIR%%/sql/oui.sql
 %%DATADIR%%/sql/pg
 %%DATADIR%%/sql/process.sql
@@ -32,6 +33,7 @@ bin/port_control
 %%DATADIR%%/sql/upgrade-0.94-to-0.95.sql
 %%DATADIR%%/sql/upgrade-0.95-to-1.0.sql
 %%DATADIR%%/sql/upgrade-1.0-to-1.1.sql
+%%DATADIR%%/sql/upgrade-1.1-to-1.2.sql
 %%DATADIR%%/sql/user_log.sql
 %%DATADIR%%/sql/users.sql
 %%DATADIR%%/Makefile
@@ -56,7 +58,6 @@ bin/port_control
 %%WWWDIR%%/device_search.html
 %%WWWDIR%%/discoball2.gif
 %%WWWDIR%%/doc/ChangeLog.txt
-%%WWWDIR%%/doc/README.html
 %%WWWDIR%%/doc/index.html
 %%WWWDIR%%/doc/netdisco-api-backend.html
 %%WWWDIR%%/doc/netdisco-api-shared.html

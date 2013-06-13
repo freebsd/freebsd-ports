@@ -12,7 +12,8 @@ tmpdir=${PKG_TMPDIR}/deinst_netdisco.$$
 
 if [ ! -x ${apxscmd} ]; then
         echo Can\'t find the apxs program: ${apxscmd}.
-        exit 1
+	echo Don\'t forget to update apache config manually
+        exit 0
 fi
 
 confdir=`${apxscmd} -q SYSCONFDIR`
