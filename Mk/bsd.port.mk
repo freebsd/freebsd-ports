@@ -3591,31 +3591,31 @@ patch-dos2unix:
 do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@(cd ${_DISTDIR}; \
-	  for i in ${_PATCHFILES}; do \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
-		fi; \
-		case $$i in \
-			*.Z|*.gz) \
-				${GZCAT} $$i | ${PATCH} ${PATCH_DIST_ARGS}; \
-				;; \
-			*.bz2) \
-				${BZCAT} $$i | ${PATCH} ${PATCH_DIST_ARGS}; \
-				;; \
-			*) \
-				${PATCH} ${PATCH_DIST_ARGS} < $$i; \
-				;; \
-		esac; \
-	  done)
+.for i in ${_PATCHFILES}
+.  if defined(PATCH_DEBUG_TMP) && ${PATCH_DEBUG_TMP} == yes
+	@${ECHO_MSG} "===>   Applying distribution patch $$i"
+.  endif
+	@case $i in \
+		*.Z|*.gz) ${GZCAT} $i ;; \
+		*.bz2) ${BZCAT} $i ;; \
+		*.xz) ${XZCAT} $i ;; \
+		*) ${CAT} $i ;; \
+	esac | ${PATCH} ${PATCH_DIST_ARGS}
+.  endfor
 .endif
 .if defined(EXTRA_PATCHES)
-	@for i in ${EXTRA_PATCHES}; do \
-		${ECHO_MSG} "===>  Applying extra patch $$i"; \
-		${PATCH} ${PATCH_ARGS} < $$i; \
-	done
+.  for i in ${EXTRA_PATCHES}
+	@${ECHO_MSG} "===>  Applying extra patch $i" ; \
+	case $i in \
+		*.Z|*.gz) ${GZCAT} $i ;; \
+		*.bz2) ${BZCAT} $i ;; \
+		*.xz) ${XZCAT} $i ;; \
+		*) ${CAT} $i ;; \
+	esac | ${PATCH} ${PATCH_DIST_ARGS}
+.  endfor
 .endif
-	@if [ -d ${PATCHDIR} ]; then \
+	@set -e ;\
+	if [ -d ${PATCHDIR} ]; then \
 		if [ "`${ECHO_CMD} ${PATCHDIR}/patch-*`" != "${PATCHDIR}/patch-*" ]; then \
 			${ECHO_MSG} "===>  Applying ${OPSYS} patches for ${PKGNAME}" ; \
 			PATCHES_APPLIED="" ; \
