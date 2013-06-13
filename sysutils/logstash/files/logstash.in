@@ -57,6 +57,8 @@ load_rc_config "${name}"
 : ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
 : ${logstash_log_options="--log ${logstash_log_file}"}
 : ${logstash_java_flags="-Des.path.data=${logstash_elastic_datadir}"}
+: ${logstash_user="logstash"}
+: ${logstash_group="logstash"}
 
 java_cmd="${logstash_java_home}/bin/java"
 procname="${java_cmd}"
