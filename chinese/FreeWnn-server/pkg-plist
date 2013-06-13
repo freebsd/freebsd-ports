@@ -24,8 +24,6 @@ lib/wnn/zh_TW/dic/sys/cns_wd.dic
 lib/wnn/zh_TW/dic/sys/full.con
 lib/wnn/zh_TW/dic/sys/full.conR
 @dirrm lib/wnn/zh_CN/dic/sys
-@dirrm lib/wnn/zh_CN/dic/usr
 @dirrm lib/wnn/zh_CN/dic
 @dirrm lib/wnn/zh_TW/dic/sys
-@dirrm lib/wnn/zh_TW/dic/usr
 @dirrm lib/wnn/zh_TW/dic
