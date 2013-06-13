@@ -1,13 +1,9 @@
-# New ports collection makefile for:	multimedia/zoneminder
-# Date created:				2011-04-08
-# Whom:					bsam, based on ports by achix (1.23 & local camera stuff),
-#					Richard Lee and Electric Messiah
+# Created by: bsam, based on ports by achix (1.23 & local camera stuff),
 # $FreeBSD$
-#
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.25.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
