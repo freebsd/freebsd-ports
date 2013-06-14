@@ -36,7 +36,7 @@ OPENSSL_CONFIGURE_OFF=	--without-crypto --without-ssl
 
 GCRYPT_LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 GCRYPT_CONFIGURE_ON=	--with-gcrypt
-GCRYPT_CONFIGURE_ON=	--without-gcrypt
+GCRYPT_CONFIGURE_OFF=	--without-gcrypt
 
 IPV6_CONFIGURE_ON=	--with-ipv6
 IPV6_CONFIGURE_OFF=	--without-ipv6
