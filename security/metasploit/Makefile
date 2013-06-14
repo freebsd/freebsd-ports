@@ -2,22 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-DISTVERSION=	4.5.0
+DISTVERSION=	4.6.2
 CATEGORIES=	security
-MASTER_SITES=	http://downloads.metasploit.com/data/releases/
+MASTER_SITES=	http://downloads.metasploit.com/data/releases/archive/
 DISTNAME=	framework-${DISTVERSION}
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
-RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm				\
-		nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
+		nmap:${PORTSDIR}/security/nmap \
+		rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport \
+		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
+		rubygem-msgpack>=0:${PORTSDIR}/devel/rubygem-msgpack \
+		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
+		rubygem-pcaprub>=0:${PORTSDIR}/net/rubygem-pcaprub \
+		rubygem-robots>=0:${PORTSDIR}/www/rubygem-robots
 
 WRKSRC=		${WRKDIR}/msf3
-SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
-		msfopcode msfpayload msfpescan msfweb
-
-OPTIONS_DEFINE=	SVN
+SCRIPTS=	msfbinscan msfcli msfconsole msfd msfelfscan msfencode \
+		msfmachscan msfpayload msfpescan msfrop msfrpc msfrpcd msfvenom
 
 NO_BUILD=	yes
 USES=		ncurses:port
@@ -25,23 +29,23 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DB
+OPTIONS_DEFAULT=DB
+DB_DESC=	Database support
 
-.if ${RUBY_VER} == 1.8
-RUN_DEPENDS+=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems
-.else
-RUN_DEPENDS+=	rubygem-actionpack>0:${PORTSDIR}/www/rubygem-actionpack	\
-		rubygem-sqlite3>0:${PORTSDIR}/databases/rubygem-sqlite3	\
-		rubygem-activerecord>0:${PORTSDIR}/databases/rubygem-activerecord \
-		rubygem-activesupport>0:${PORTSDIR}/devel/rubygem-activesupport
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDB}
+RUN_DEPENDS+=	rubygem-activerecord>=0:${PORTSDIR}/databases/rubygem-activerecord \
+		rubygem-metasploit_data_models>=0.15.1:${PORTSDIR}/security/rubygem-metasploit_data_models \
+		rubygem-pg>=0.11:${PORTSDIR}/databases/rubygem-pg
 .endif
 
-.if ${PORT_OPTIONS:MSVN}
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-.endif
+post-patch:
+	${REINPLACE_CMD} 's|bundler/setup|rubygems|' ${WRKSRC}/lib/msfenv.rb
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}
 .for f in ${SCRIPTS}
 	${LN} -s ${DATADIR}/${f} ${PREFIX}/bin/${f}
@@ -56,4 +60,4 @@ post-install:
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,${PREFIX}/,, ; s,^,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
