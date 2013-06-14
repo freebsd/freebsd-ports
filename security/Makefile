@@ -852,6 +852,7 @@
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-hmac
+    SUBDIR += rubygem-metasploit_data_models
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh

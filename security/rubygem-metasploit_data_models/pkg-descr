@@ -1,0 +1,11 @@
+MetasploitDataModels exists to do several key things:
+- Allow code sharing between Metasploit Framework (MSF) and the commercial
+versions of Metasploit (Community, Express, Pro -- usually referred to
+collectively as "Pro")
+- Give developers a lightweight entry point to MSF's backend for use in
+developing tools that gather data intended for later use with Metasploit
+(e.g. specialized scanners)
+- Make it easy to keep commercial stuff private while increasing the
+functionality of the open-source tools we provide to the community
+
+WWW: https://github.com/rapid7/metasploit_data_models/
