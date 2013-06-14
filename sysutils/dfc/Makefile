@@ -1,9 +1,4 @@
-# New ports collection makefile for:	dfc
-# Date created:		2012-04-01
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dfc
 PORTVERSION=	3.0.0
@@ -22,15 +17,10 @@ CMAKE_ARGS+=	-DMAN_PATH=${MANPREFIX}/man -DDFC_DOC_PATH=${DOCSDIR}
 MANLANG=	"" fr
 MAN1=		dfc.1
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-CMAKE_ARGS+=	-DNLS_ENABLED=true
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DNLS_ENABLED=false
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CMAKE_ON=	-DNLS_ENABLED=true
+NLS_CMAKE_OFF=	-DNLS_ENABLED=false
 
 .include <bsd.port.mk>
