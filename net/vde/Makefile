@@ -14,6 +14,7 @@ CONFLICTS=	vde2-[0-9]*
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_CSTD=	gnu89
 
 .include <bsd.port.pre.mk>
 
