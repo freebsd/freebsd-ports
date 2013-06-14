@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cnupm
-# Date created:				29 October 2003
-# Whom:					Dennis S.Davidoff <null@1system.ru>
-#
+# Created by: Dennis S.Davidoff <null@1system.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cnupm
 PORTVERSION=	3.12

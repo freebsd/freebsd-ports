@@ -5,3 +5,5 @@ sbin/cnupmstat
 @exec install -o %%CNUPM_OWN%% -g %%CNUPM_GRP%% -m 750 -d %D/var/cnupm
 @exec pw usermod -n %%CNUPM_OWN%% -d %D/var/cnupm
 @dirrmtry var/cnupm
+@exec mkdir -p %D/var
+@dirrmtry var
