@@ -10,6 +10,7 @@ MASTER_SITES=	SF/desk3d/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Virtual Desktop Switcher
 
+USE_XORG=	xmu
 USE_GL=		glut
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
