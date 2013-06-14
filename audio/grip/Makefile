@@ -12,7 +12,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11
 USES=		pathfix pkgconfig
@@ -29,47 +29,22 @@ OPTIONS_DEFAULT=	CDPARANOIA VORBIS
 OPTIONS_DEFAULT+=	LAME
 .endif
 
-.include <bsd.port.pre.mk>
+OPTIONS_SUB=	yes
+
+CDPARANOIA_LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia
+CDPARANOIA_CONFIGURE_ENABLE=	cdpar
+CDDA2WAV_RUN_DEPENDS=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
+FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
+FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
+LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+VORBIS_RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .if defined(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
 DEFAULT_CDROM_DEVICE=/dev/acd0
-.endif
-
-.if ${PORT_OPTIONS:MCDPARANOIA}
-LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
-CONFIGURE_ARGS+=	--enable-cdpar
-.else
-CONFIGURE_ARGS+=	--disable-cdpar
-.endif
-
-.if ${PORT_OPTIONS:MCDDA2WAV}
-RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
-.endif
-
-.if ${PORT_OPTIONS:MFAAC}
-RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
 .endif
 
 pre-everything::
@@ -86,4 +61,4 @@ post-patch:
 		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","--no-midside -w -q 100 --artist %a --album %d --track %t --title %n --year %y --genre %g -b %b %w -o %m", "m4a"},|' \
 		${WRKSRC}/src/gripcfg.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
