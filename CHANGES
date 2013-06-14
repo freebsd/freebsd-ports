@@ -11,6 +11,37 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20130614:
+AUTHOR:	bapt@FreeBSD.org
+
+  * New macros to help dealing with ports that have options:
+
+  OPTIONS_SUB=yes when set in a port, all the option names are automatically
+  added to the PLIST_SUB with "@comment " value in case the option is off and
+  empty value in case the options is on.
+
+  ${OPT}_CONFIGURE_ENABLE=<aname> will automatically add:
+  CONFIGURE_ARGS+=--enable-<aname> in case OPT is activated
+  CONFIGURE_ARGS+=--disable-<aname> in case OPT is deactivated
+
+  ${OPT}_CONFIGURE_ON=<something> will automatically add:
+  CONFIGURE_ARGS+=<something> in case OPT is activated
+
+  ${OPT_CONFIGURE_OFF=<something> will automatically add:
+  CONFIGURE_ARGS+=<something> in case OPT is deactivated
+
+  ${OPT}_CFLAGS will append the specified new flags to CFLAGS if OPT is 'on'
+  ${OPT}_CXXFLAGS will append the specified new flags to CXXFLAGS if OPT is 'on'
+  ${OPT}_LDFLAGS will append the specified new flags to LDFLAGS if OPT is 'on'
+
+  ${OPT}_CONFIGURE_ENV will append the specified variables to CONFIGURE_ENV if
+  OPT is 'on'
+  ${OPT}_MAKE_ENV will append the specified variables to MAKE_ENV if OPT is 'on'
+
+  ${OPT}_USES will append the speficied uses to USES if OPT is 'on'
+
+  ${OPT}_DISTFILES will append the specified distiles to DISTFILES if OPT in 'on'
+
+20130614:
 AUTHOR: bapt@FreeBSD.org
 
   * New 'display' USES macro to handle building ports that may require a
