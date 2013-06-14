@@ -2482,7 +2482,6 @@ ledger-smb/utils/notify_short/README
 ledger-smb/utils/notify_short/config.pl
 ledger-smb/utils/notify_short/listener.pl
 ledger-smb/winprint.bat
-@dirrmtry ledger-smb/users/members
 @dirrm ledger-smb/utils/notify_short
 @dirrm ledger-smb/utils/fixme
 @dirrm ledger-smb/utils/custom_fields
