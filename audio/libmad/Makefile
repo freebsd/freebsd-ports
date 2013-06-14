@@ -12,17 +12,17 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
+OPTIONS_DEFINE=	SPEED
+SPEED_DESC=	Optimize for speed over accuracy
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debugging \
 		--enable-sso
-.if defined(WITH_SPEED)
-CONFIGURE_ARGS+=	--enable-speed
-.else
-CONFIGURE_ARGS+=	--enable-accuracy
-.endif
+
+SPEED_CONFIGURE_ON=	--enable-speed
+SPEED_CONFIGURE_OFF=	--enable-accuracy
 
 post-patch:
 	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
