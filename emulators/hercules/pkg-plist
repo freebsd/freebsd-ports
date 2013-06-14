@@ -1,3 +1,4 @@
+bin/bldlvlck
 bin/cckd2ckd
 bin/cckdcdsk
 bin/cckdcomp
@@ -5,7 +6,6 @@ bin/cckddiag
 bin/cckdswap
 bin/cfba2fba
 bin/ckd2cckd
-bin/cvslvlck
 bin/dasdcat
 bin/dasdconv
 bin/dasdcopy
