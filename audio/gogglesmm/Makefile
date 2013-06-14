@@ -26,6 +26,8 @@ FOX17_DESC=	Use development branch of FOX
 NEWREMOTE_DESC=	Use new remote player
 GCRYPT_DESC=	Use libgcrypt for md5 calculation
 
+OPTIONS_SUB=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 MAKE_JOBS_SAFE=	yes
