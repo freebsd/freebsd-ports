@@ -1,9 +1,5 @@
-# New ports collection makefile for:	efax
-# Date created:				11 May 2002
-# Whom:					MITA Yoshio <mita@FreeBSD.org>
-#
+# Created by: MITA Yoshio <mita@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	efax-0.9a
 PORTVERSION=	001114a7
