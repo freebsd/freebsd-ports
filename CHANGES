@@ -47,6 +47,9 @@ AUTHOR:	bapt@FreeBSD.org
   ${OPT_CMAKE_OFF=<something> will automatically add:
   CMAKE_ARGS+=<something> in case OPT is deactivated
 
+  ${OPT}_${TYPE}_DEPENDS=<something> will automatically add:
+  ${TYPE_DEPENDS}+=<something> in case OPT is 'on'
+
 20130614:
 AUTHOR: bapt@FreeBSD.org
 
