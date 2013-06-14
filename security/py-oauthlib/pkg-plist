@@ -110,6 +110,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/uri_validate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/uri_validate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/uri_validate.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/rfc6749/grant_types
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/rfc6749/endpoints
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/rfc6749/clients
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2/rfc6749
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth1/rfc5849
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauthlib/oauth1
