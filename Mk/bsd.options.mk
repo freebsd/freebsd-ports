@@ -287,5 +287,47 @@ WITH_${opt}:=  true
 .   endif
 .endif
 .endfor
-.endif
 ###
+
+.for opt in ${COMPLETE_OPTIONS_LIST}
+# PLIST_SUB
+PLIST_SUB?=
+.  if defined(OPTIONS_SUB)
+.    if ! ${PLIST_SUB:M${opt}=*}
+.      if ${PORT_OPTIONS:M${opt}}
+PLIST_SUB:=	${PLIST_SUB} ${opt}=""
+.      else
+PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
+.      endif
+.    endif
+.  endif
+
+.  if ${PORT_OPTIONS:M${opt}}
+.    if defined(${opt}_CONFIGURE_ENABLE)
+CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
+.    endif
+.    if defined(${opt}_CONFIGURE_ON)
+CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
+.    endif
+.    for flags in CFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ENV USES DISTFILES
+.      if defined(${opt}_${flags})
+${flags}+=	${${opt}_${flags}}
+.      endif
+.    endfor
+.    for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
+.      if defined(${opt}_${deptype}_DEPENDS)
+${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
+.      endif
+.    endfor
+.  else
+.    if defined(${opt}_CONFIGURE_ENABLE)
+CONFIGURE_ARGS+=	--disable-${${opt}_CONFIGURE_ENABLE}
+.    endif
+.    if defined(${opt}_CONFIGURE_OFF)
+CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
+.    endif
+.  endif
+.endfor
+
+
+.endif
