@@ -1,46 +1,72 @@
 #-*- tab-width: 4; -*-
+# ex:ts=4
+#
 # $FreeBSD$
-# Global options
 #
-# OPTIONS_DEFINE		- List of options this ports accept
+# These variables are used in port makefiles to define the options for a port.
+#
+# OPTIONS_DEFINE			- List of options this ports accept
 # OPTIONS_DEFINE_${ARCH}	- List of options this ports accept and are
-#				specific to ${ARCH}
-# OPTIONS_DEFAULT		- List of options activated by default
+#							  specific to ${ARCH}
+# OPTIONS_DEFAULT			- List of options activated by default
 # OPTIONS_DEFAULT_${ARCH}	- List of options activated by default for a
-#				given arch
+#							  given arch
 #
-# OPTIONS_EXCLUDE		- List of options unsupported (useful for slave ports)
-# OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
-# ${OPTION}_DESC		- Description the the ${OPTION}
+# ${OPTION}_DESC			- Description of the ${OPTION}
 #
-# OPTIONS_SINGLE		- List of single-choice grouped options: 1 and
-# 				  only 1 among N
-# OPTIONS_RADIO			- List of radio-choice grouped options: 0 or 1
-#				  among N
-# OPTIONS_MULTI			- List of multiple-choice grouped options: at
-#				  least 1 among N
-# OPTIONS_GROUP			- List of group-choice grouped options: 0 or
-#				  more among N
+# OPTIONS_SINGLE			- List of single-choice grouped options: 1 and
+# 							  only 1 among N
+# OPTIONS_RADIO				- List of radio-choice grouped options: 0 or 1
+#							  among N
+# OPTIONS_MULTI				- List of multiple-choice grouped options: at
+#							  least 1 among N
+# OPTIONS_GROUP				- List of group-choice grouped options: 0 or
+#							  more among N
 #
 # OPTIONS_SINGLE_${NAME}	- List of OPTIONS grouped as single choice (for
-#				the single named as ${NAME} as defined in
-#				OPTIONS_SINGLE)
+#							  the single named as ${NAME} as defined in
+#							  OPTIONS_SINGLE)
 # OPTIONS_RADIO_${NAME}		- List of OPTIONS grouped as radio choice (for
-#				the radio named as ${NAME} as defined in
-#				OPTIONS_RADIO)
+#							  the radio named as ${NAME} as defined in
+#							  OPTIONS_RADIO)
 # OPTIONS_MULTI_${NAME}		- List of OPTIONS grouped as multiple-choice
-#				(for the multi named as ${NAME} as defined in
-#				OPTIONS_MULTI)
+#							  (for the multi named as ${NAME} as defined in
+#							  OPTIONS_MULTI)
 # OPTIONS_GROUP_${NAME}		- List of OPTIONS grouped as group-choice (for
-#				the group named as ${NAME} as defined in
-#				OPTIONS_GROUP)
+#							  the group named as ${NAME} as defined in
+#							  OPTIONS_GROUP)
 #
-# WITH				Set options from the command line
-# WITHOUT			Unset options from the command line
+# OPTIONS_EXCLUDE			- List of options unsupported (useful for slave ports)
+# OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
+# OPTIONS_SLAVE				- This is designed for slave ports, it removes an
+#							  option from the options list inherited from the
+#							  master port and it always adds it to PORT_OPTIONS
+#							  meaning activated
 #
-# OPTIONS_SLAVE			This is designed for slave ports, it removes an option
-# 				from the options list inherited from the master port
-# 				and it always adds it to PORT_OPTIONS meaning activated
+# These variables can be used in make.conf to configure options.  They are
+# processed in the order listed below, i.e. later variables override the effects
+# of previous variables.  Options saved using the options dialog are processed
+# right before OPTIONS_SET_FORCE.  When building a port a dialog to configure
+# options will only appear if there are new options, i.e. options which have not
+# been configured before either using the option dialog in a previous build or
+# using the variables below.  You can force the dialog to appear by running
+# "make config".
+#
+# OPTIONS_SET				- List of options to enable for all ports.
+# OPTIONS_UNSET				- List of options to disable for all ports. 
+# ${UNIQUENAME}_SET			- List of options to enable for a specific port.
+# ${UNIQUENAME}_UNSET		- List of options to disable for a specific port.
+#
+# OPTIONS_SET_FORCE			- List of options to enable for all ports.
+# OPTIONS_UNSET_FORCE		- List of options to disable for all ports.
+# ${UNIQUENAME}_SET_FORCE	- List of options to enable for a specific port.
+# ${UNIQUENAME}_UNSET_FORCE	- List of options to disable for a specific port.
+#
+# These variables can be used on the command line. They override the effects of
+# the make.conf variables above.
+#
+# WITH						- Set options from the command line
+# WITHOUT					- Unset options from the command line
 
 ##
 # Set all the options available for the ports, beginning with the
