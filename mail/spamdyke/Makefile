@@ -25,26 +25,13 @@ USE_GCC=	any
 OPTIONS_DEFINE=	TLS DEBUG DEBUG_EXCESSIVE DOCS
 OPTIONS_DEFAULT=	TLS
 DEBUG_DESC=	Enable debugging output
+DEBUG_EXCESSIVE_DESC=	Enable excessive debugging output
+
+TLS_CONFIGURE_ENABLE=			tls
+DEBUG_CONFIGURE_ENABLE=			debug-output
+DEBUG_EXCESSIVE_CONFIGURE_ENABLE=	excessive-output
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTLS}
-CONFIGURE_ARGS+=	--enable-tls
-.else
-CONFIGURE_ARGS+=	--disable-tls
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--with-debug-output
-.else
-CONFIGURE_ARGS+=	--without-debug-output
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG_EXCESSIVE}
-CONFIGURE_ARGS+=	--with-excessive-output
-.else
-CONFIGURE_ARGS+=	--without-excessive-output
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
