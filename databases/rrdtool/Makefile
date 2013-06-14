@@ -107,7 +107,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/^POD3/#POD3/' ${WRKSRC}/doc/Makefile.in
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/[[:space:]]install-idocDATA//g' \
 		-e 's/[[:space:]]install-ihtmlDATA//g' \
 		-e 's/^[[:space:]].*cd .* rrdtool.html index.html/	#/' \
