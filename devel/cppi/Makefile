@@ -10,7 +10,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A tool to indent the C preprocessor directives
 
 USE_XZ=		yes
-USES=		gettext
+USES=		gettext charsetfix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
