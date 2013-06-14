@@ -44,7 +44,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.options.mk>
 
-if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64="" ARCH=amd64
 . if !exists(/usr/lib32/libc.so)
 CONFIGURE_ARGS+=	--enable-only64bit
