@@ -9,7 +9,6 @@
 %%WWWDIR%%/cache/js/.empty
 %%WWWDIR%%/cache/simplepie/.empty
 %%WWWDIR%%/cache/upload/.empty
-%%WWWDIR%%/cdm.css
 %%WWWDIR%%/classes/.htaccess
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
@@ -55,6 +54,11 @@
 @unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
 %%WWWDIR%%/config.php-dist
 @exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
+%%WWWDIR%%/css/cdm.css
+%%WWWDIR%%/css/layout.css
+%%WWWDIR%%/css/prefs.css
+%%WWWDIR%%/css/tt-rss.css
+%%WWWDIR%%/css/utility.css
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/feed-icons/index.html
@@ -1501,7 +1505,6 @@
 %%WWWDIR%%/lib/dojo/uacss.js
 %%WWWDIR%%/lib/dojo/when.js
 %%WWWDIR%%/lib/dojo/window.js
-%%WWWDIR%%/lib/floIcon.php
 %%WWWDIR%%/lib/gettext/README
 %%WWWDIR%%/lib/gettext/gettext.inc
 %%WWWDIR%%/lib/gettext/gettext.php
@@ -1518,7 +1521,31 @@
 %%WWWDIR%%/lib/otphp/vendor/libs.php
 %%WWWDIR%%/lib/phpmailer/class.phpmailer.php
 %%WWWDIR%%/lib/phpmailer/class.smtp.php
-%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-en.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-ar.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-br.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-ca.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-ch.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-cz.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-de.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-dk.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-es.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-et.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-fi.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-fo.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-fr.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-hu.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-it.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-ja.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-nl.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-no.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-pl.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-ro.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-ru.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-se.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-sk.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-tr.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-zh.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-zh_cn.php
 %%WWWDIR%%/lib/phpqrcode/CHANGELOG
 %%WWWDIR%%/lib/phpqrcode/INSTALL
 %%WWWDIR%%/lib/phpqrcode/README
@@ -1999,6 +2026,7 @@
 %%WWWDIR%%/plugins/af_pennyarcade/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
+%%WWWDIR%%/plugins/af_whomp/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
@@ -2034,7 +2062,6 @@
 %%WWWDIR%%/plugins/swap_jk/init.php
 %%WWWDIR%%/plugins/updater/init.php
 %%WWWDIR%%/plugins/updater/updater.js
-%%WWWDIR%%/prefs.css
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
@@ -2065,6 +2092,7 @@
 %%WWWDIR%%/schema/versions/mysql/119.sql
 %%WWWDIR%%/schema/versions/mysql/12.sql
 %%WWWDIR%%/schema/versions/mysql/120.sql
+%%WWWDIR%%/schema/versions/mysql/121.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2183,6 +2211,7 @@
 %%WWWDIR%%/schema/versions/pgsql/119.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
 %%WWWDIR%%/schema/versions/pgsql/120.sql
+%%WWWDIR%%/schema/versions/pgsql/121.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2285,10 +2314,8 @@
 %%WWWDIR%%/templates/resetpass_template.txt
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/default.css
-%%WWWDIR%%/tt-rss.css
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
-%%WWWDIR%%/utility.css
 %%WWWDIR%%/utils/.htaccess
 %%WWWDIR%%/utils/extract-i18n-js.pl
 %%WWWDIR%%/utils/localized_schema.txt
@@ -2321,6 +2348,7 @@
 @dirrm %%WWWDIR%%/plugins/bookmarklets
 @dirrm %%WWWDIR%%/plugins/auth_remote
 @dirrm %%WWWDIR%%/plugins/auth_internal
+@dirrm %%WWWDIR%%/plugins/af_whomp
 @dirrm %%WWWDIR%%/plugins/af_unburn
 @dirrm %%WWWDIR%%/plugins/af_redditimgur
 @dirrm %%WWWDIR%%/plugins/af_pennyarcade
@@ -2614,6 +2642,7 @@
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%/icons
 @dirrmtry %%WWWDIR%%/feed-icons
+@dirrm %%WWWDIR%%/css
 @dirrm %%WWWDIR%%/classes/pref
 @dirrm %%WWWDIR%%/classes/logger
 @dirrm %%WWWDIR%%/classes/handler
