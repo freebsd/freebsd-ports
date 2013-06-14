@@ -45,13 +45,11 @@
 ##
 # Set all the options available for the ports, beginning with the
 # global ones and ending with the ones decided by the maintainer.
-# Options global to the entire ports tree
+
 .if !defined(OPTIONSMKINCLUDED)
 OPTIONSMKINCLUDED=	bsd.options.mk
 
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
-
-GLOBAL_OPTIONS=	DOCS NLS EXAMPLES IPV6
 
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTDOCS)
@@ -116,8 +114,10 @@ COMPLETE_OPTIONS_LIST+=	${OPTIONS_${otype}_${m}}
 .if defined(OPTIONS_OVERRIDE)
 # Special case $OPTIONS_OVERRIDE; if it is defined forget about anything done
 # before
+NEW_OPTIONS=
 PORT_OPTIONS:=	${OPTIONS_OVERRIDE}
 .else
+NEW_OPTIONS=	${COMPLETE_OPTIONS_LIST}
 
 ## Set default options defined by the port maintainer
 .  for opt in ${OPTIONS_DEFAULT}
@@ -129,6 +129,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 .  for opt in ${OPTIONS_SET}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
@@ -136,12 +137,14 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 ## Remove the options excluded system-wide (set by user in make.conf)
 .  for opt in ${OPTIONS_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
 
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_SET}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
@@ -149,6 +152,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 ## Unset the options excluded per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
 
 ## options files (from dialog)
@@ -174,12 +178,14 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  for opt in ${OPTIONS_FILE_SET}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 .for opt in ${OPTIONS_FILE_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .endfor
 .undef opt
 
@@ -190,6 +196,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  for opt in ${OPTIONS_SET_FORCE}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
@@ -197,12 +204,14 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 ## Remove the options excluded system-wide (set by user in make.conf)
 .  for opt in ${OPTIONS_UNSET_FORCE}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
 
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_SET_FORCE}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
@@ -210,6 +219,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 ## Unset the options excluded per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_UNSET_FORCE}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
 
 
@@ -217,12 +227,14 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .for opt in ${WITH}
 .  if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endif
 .endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 .for opt in ${WITHOUT}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .endfor
 
 .for opt in ${OPTIONS_SLAVE}
@@ -262,8 +274,3 @@ WITH_${opt}:=  true
 .endfor
 .endif
 ###
-
-_OPTIONS_WITHOUT_GLOBALS:=	${COMPLETE_OPTIONS_LIST}
-.for opt in ${GLOBAL_OPTIONS}
-_OPTIONS_WITHOUT_GLOBALS:=	${_OPTIONS_WITHOUT_GLOBALS:N${opt}}
-.endfor
