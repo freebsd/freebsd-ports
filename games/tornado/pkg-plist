@@ -8,4 +8,16 @@ share/locale/nl/LC_MESSAGES/tornado.mo
 share/locale/no/LC_MESSAGES/tornado.mo
 share/locale/ru/LC_MESSAGES/tornado.mo
 share/locale/pt/LC_MESSAGES/tornado.mo
-@dirrm share/games
+@dirrmtry share/games
+@dirrmtry man/ru/man6
+@dirrmtry man/ru
+@dirrmtry man/no/man6
+@dirrmtry man/no
+@dirrmtry man/nl/man6
+@dirrmtry man/nl
+@dirrmtry man/it/man6
+@dirrmtry man/it
+@dirrmtry man/fr/man6
+@dirrmtry man/fr
+@dirrmtry man/de/man6
+@dirrmtry man/de
