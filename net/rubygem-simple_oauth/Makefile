@@ -1,17 +1,15 @@
-# New ports collection makefile for:	simple_oauth
-# Date created:				Mar 03, 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	simple_oauth
-PORTVERSION=	0.1.9
+PORTVERSION=	0.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Rubygem for Simply builds and verifies OAuth headers
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
