@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alac
-# Date created:		2005-03-08
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	alac
 PORTVERSION=	0.2.0
@@ -18,11 +14,15 @@ COMMENT=	Basic decoder for Apple Lossless Audio Codec files (ALAC)
 WRKSRC=		${WRKDIR}/${PORTNAME}_decoder
 ALL_TARGET=	alac
 
+OPTIONS_DEFINE=	DOCS DEBUG
+
 PLIST_FILES=	bin/alac
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if !defined(WITH_DEBUG)
+.if ! ${PORT_OTPIONS:MDEBUG}
 	@${REINPLACE_CMD} -e 's|-ggdb||' \
 		${WRKSRC}/${MAKEFILE}
 .endif
@@ -31,7 +31,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/alac ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
