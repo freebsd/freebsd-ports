@@ -1,9 +1,5 @@
-# ports collection makefile for:	kudu
-# Date created:		28 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	kudu
 PORTVERSION=	0.1.2
@@ -13,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D skeletal animation tool, powered by GTK+ and OpenGL
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
