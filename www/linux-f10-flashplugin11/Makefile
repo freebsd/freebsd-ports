@@ -35,14 +35,13 @@ CONFLICTS=	linux-flashplugin-9* linux-f8-flashplugin10* linux-f10-flashplugin10*
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	include gnome support for .desktop file
 
-.include <bsd.port.pre.mk>
+OPTIONS_SUB=	yes
+GNOME_USES=	desktop-file-utils
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
 INSTALLS_ICONS=	yes
-USE_GNOME=	desktopfileutils
-PLIST_SUB+=	GNOME=""
-.else
-PLIST_SUB+=	GNOME="@comment "
 .endif
 
 post-patch:
@@ -54,9 +53,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${DESKTOPDIR}
 	@(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons)
-.if ${PORT_OPTIONS:MGNOME}
-	@update-desktop-database
-.endif
 
+.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
 .include <bsd.port.post.mk>
