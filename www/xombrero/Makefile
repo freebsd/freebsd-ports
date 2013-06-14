@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xombrero
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 EXTRACT_SUFX=	.tgz
