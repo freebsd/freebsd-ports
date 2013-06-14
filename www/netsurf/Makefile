@@ -1,96 +1,71 @@
-# New ports collection makefile for:	netsurf
-# Date created:		17 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netsurf
-PORTVERSION=	2.9
-PORTREVISION=	2
+PORTVERSION=	3.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.netsurf-browser.org/projects/releases/ \
-		http://www.netsurf-browser.org/downloads/releases/:netsurf
-DISTFILES=	${WAPCAPLET_DISTNAME}${EXTRACT_SUFX} \
-		${HUBBUB_DISTNAME}${EXTRACT_SUFX} \
-		${CSS_DISTNAME}${EXTRACT_SUFX} \
-		${NSBMP_DISTNAME}${EXTRACT_SUFX} \
-		${NSGIF_DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}:netsurf
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source-full/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-full-src
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	A lightweight web browser
+COMMENT=	Lightweight web browser
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libparserutils.a:${PORTSDIR}/devel/libparserutils
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		mng.1:${PORTSDIR}/graphics/libmng
+BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		mng:${PORTSDIR}/graphics/libmng
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USE_GNOME=	libglade2 librsvg2 libxml2
 USE_GMAKE=	yes
+ALL_TARGET=	#empty
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV=	PKG_CONFIG_PATH="${WRKDIR}/fakeroot/lib/pkgconfig:${LOCALBASE}/libdata/pkgconfig"
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
-		WARNFLAGS="${CFLAGS}" Q=""
+		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
+USES=		bison
+USE_GNOME=	librsvg2
 MAKE_JOBS_SAFE=	yes
+
+NSFB_VERSION=	0.1.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-full-${PORTVERSION}
 
 DESKTOP_ENTRIES="NetSurf" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
-WAPCAPLET_DISTNAME=	libwapcaplet-0.1.1-src
-HUBBUB_DISTNAME=	hubbub-0.1.2-src
-CSS_DISTNAME=		libcss-0.1.2-src
-NSBMP_DISTNAME=		libnsbmp-0.0.3-src
-NSGIF_DISTNAME=		libnsgif-0.0.3-src
+OPTIONS_DEFINE=	GSTREAMER WEBP
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MGSTREAMER}
+USE_GSTREAMER=	yes
+.endif
+
+.if ${PORT_OPTIONS:MWEBP}
+LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's| -O2 | |' ${WRKSRC}/Makefile.defaults
-	@${REINPLACE_CMD} -e \
-		's| -g | |' ${WRKSRC}/gtk/Makefile.target
+	@${REINPLACE_CMD} '/^NSFB_LINUX_AVAILABLE/ s|yes|no| ; s| -g||' \
+		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/Makefile
+	@${REINPLACE_CMD} 's|endian|sys/endian|' \
+		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/src/plot/*bpp*.c
+	@${REINPLACE_CMD} 's| -O2||' \
+		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.defaults
+	@${REINPLACE_CMD} '/OpenSSL/d ; s| -g||' \
+		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.target
 	@${REINPLACE_CMD} -e '/ifeq.*clang/s/word 1/filter clang/' \
-		${WRKDIR}/*/build/makefiles/Makefile.tools
+		${WRKSRC}/src/buildsystem-1.0/makefiles/Makefile.tools
+	@${REINPLACE_CMD} 's| -g||' \
+		${WRKSRC}/src/nsgenbind-0.0.1/src/Makefile
 
 do-configure:
-	@${TOUCH} ${WRKSRC}/Makefile.config
-	@${ECHO_CMD} 'NETSURF_USE_HARU_PDF=NO' >> ${WRKSRC}/Makefile.config
-	@${ECHO_CMD} 'NETSURF_USE_LIBICONV_PLUG=NO' >> ${WRKSRC}/Makefile.config
-	@${ECHO_CMD} 'NETSURF_USE_NSSVG=NO' >> ${WRKSRC}/Makefile.config
-	@${ECHO_CMD} 'NETSURF_USE_ROSPRITE=NO' >> ${WRKSRC}/Makefile.config
-	@${ECHO_CMD} 'NETSURF_USE_WEBP=NO' >> ${WRKSRC}/Makefile.config
-
-pre-build:
-	@${MKDIR} ${WRKDIR}/fakeroot
-.for dir in ${WAPCAPLET_DISTNAME:S/-src//} ${HUBBUB_DISTNAME:S/-src//} \
-		${CSS_DISTNAME:S/-src//} ${NSBMP_DISTNAME} ${NSGIF_DISTNAME}
-	@${MAKE_ENV} ${GMAKE} -C${WRKDIR}/${dir} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} \
-		${MAKE_ARGS} ${INSTALL_TARGET} PREFIX="${WRKDIR}/fakeroot"
-.endfor
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nsgtk ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DATADIR}
-	@(${TAR} --exclude "C" --exclude "*.glade" -C ${WRKSRC}/gtk/res \
-		-L -cf - . | ${TAR} -C ${DATADIR} --unlink -xf -)
-	@${LN} -sf en ${DATADIR}/C
-	@(cd ${WRKSRC}/gtk/res ; \
-		for i in `${LS} -d *.glade` ; do \
-			 ${CAT} $$i | ${GZIP_CMD} > ${DATADIR}/$$i ; \
-		done)
-	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}/src/netsurf-${PORTVERSION}
+.if ${PORT_OPTIONS:MGSTREAMER}
+	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
+		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
+.endif
+.if ${PORT_OPTIONS:MWEBP}
+	@${REINPLACE_CMD} '/NETSURF_USE_WEBP/ s|NO|YES|' \
+		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
 .endif
 
 .include <bsd.port.mk>
