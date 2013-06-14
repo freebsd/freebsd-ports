@@ -12,3 +12,4 @@ share/doc/efax/printcap.sample
 @unexec /bin/rm /var/spool/fax/outgoing/lock
 @unexec /bin/rmdir /var/spool/fax/incoming
 @unexec /bin/rmdir /var/spool/fax/outgoing
+@unexec /bin/rmdir /var/spool/fax
