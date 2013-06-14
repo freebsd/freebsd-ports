@@ -227,6 +227,7 @@ share/pixmaps/v_sim.xpm
 @dirrm %%DOCSDIR%%
 @dirrm lib/v_sim/plug-ins
 @dirrm lib/v_sim
+@dirrmtry lib/python/site-packages/gtk-2.0/gi/overrides
 @dirrmtry lib/python/site-packages/gtk-2.0/gi
 @dirrmtry lib/python/site-packages/gtk-2.0
 @dirrmtry lib/python/site-packages
