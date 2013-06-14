@@ -679,7 +679,9 @@ post-patch:
 . endif
 .endif
 .if defined(SLAVE_MYSQL)
-	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
+	@${REINPLACE_CMD} \
+	  -e 's|/opt/mysql|${LOCALBASE}|' \
+	  -e "s,MYSQL_LIBS=.*,MYSQL_LIBS=\`${LOCALBASE}/bin/mysql_config --libs\`," \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_SPAMCONTROL)
 	@${ECHO_CMD} ${WRKDIR} > ${WRKSRC}/conf-qmail
