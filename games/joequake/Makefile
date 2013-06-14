@@ -1,9 +1,5 @@
-# New ports collection makefile for:	joequake
-# Date created:				5 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
@@ -24,6 +20,7 @@ WRKSRC=		${WRKDIR}/src
 
 USE_GMAKE=	yes
 USE_ZIP=	yes
+USE_CSTD=	gnu89
 
 MAKEFILE=	Makefile.linux
 
