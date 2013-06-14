@@ -1,9 +1,5 @@
-# New ports collection makefile for:	server of FreeWnn
-# Date created:		00/08/25
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	korean
 PKGNAMESUFFIX=	-server
