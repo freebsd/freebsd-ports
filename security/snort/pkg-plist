@@ -215,7 +215,6 @@ lib/snort/dynamic_output/libsf_dynamic_output.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.la
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
