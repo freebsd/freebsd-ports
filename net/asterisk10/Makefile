@@ -279,7 +279,7 @@ post-patch:
 
 post-configure:
 .if !empty(PORT_OPTIONS:MMYSQL) || !empty(PORT_OPTIONS:MNEWG711) || !empty(PORT_OPTIONS:MOOH323) || !empty(PORT_OPTIONS:MH323)
-	@cd ${WRKSRC} && make menuselect.makeopts
+	@cd ${WRKSRC} && gmake menuselect.makeopts
 .if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
@@ -297,6 +297,7 @@ post-configure:
 .endif
 
 post-install:
+	@${MKDIR} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
 	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
 
 .include <bsd.port.post.mk>

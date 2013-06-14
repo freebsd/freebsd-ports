@@ -467,7 +467,6 @@ lib/asterisk/modules/res_realtime.so
 %%WITH_SRTP%%lib/asterisk/modules/res_srtp.so
 %%WITH_DAHDI%%lib/asterisk/modules/res_timing_dahdi.so
 lib/asterisk/modules/res_timing_pthread.so
-lib/asterisk/modules/res_timing_kqueue.so
 lib/asterisk/modules/app_adsiprog.so
 lib/asterisk/modules/app_alarmreceiver.so
 lib/asterisk/modules/app_amd.so
