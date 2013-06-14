@@ -1,9 +1,5 @@
-# New ports collection makefile for:	goonies
-# Date created:		07 Sep 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	goonies
 PORTVERSION=	1.0.1
@@ -26,20 +22,19 @@ MAKEFILE=	../build/linux/Makefile
 MAKE_ENV=	DATADIR="${DATADIR}"
 MAKE_JOBS_SAFE=	yes
 
+PLIST_FILES=	bin/${PORTNAME}
+
 DATADIRS=	sound graphics maps
 PORTDOCS=	*
+PORTDATA=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
-.if ${OSVERSION} < 800501 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900006)
-	@${REINPLACE_CMD} -e 's|__APPLE__|__FreeBSD__|' \
-		${WRKSRC}/src/SFXManager.cpp
-.endif
 	@${REINPLACE_CMD} -e 's|sound/|${DATADIR}/sound/|g' \
 		${WRKSRC}/src/SFXManager.cpp
 	@${REINPLACE_CMD} -e 's|graphics/|${DATADIR}/graphics/|g' \
@@ -48,14 +43,14 @@ post-patch:
 		${WRKSRC}/src/TheGoonies.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/goonies ${PREFIX}/bin
-	cd ${WRKSRC} && \
-		${FIND} ${DATADIRS} -type d -exec ${MKDIR} ${DATADIR}/{} \; ;\
-		${FIND} ${DATADIRS} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-
-.if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/goonies ${PREFIX}/bin/
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} 'sound graphics maps' ${DATADIR}/
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
