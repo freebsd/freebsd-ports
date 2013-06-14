@@ -1,7 +1,4 @@
-# New ports collection makefile for:	hotkeys
-# Date created:				May 20th, 2003
-# Whom:					Andy Pavlo <amp0928@rit.edu>
-#
+# Created by: Andy Pavlo <amp0928@rit.edu>
 # $FreeBSD$
 
 PORTNAME=	hotkeys
@@ -13,6 +10,8 @@ DISTNAME=	hotkeys_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
