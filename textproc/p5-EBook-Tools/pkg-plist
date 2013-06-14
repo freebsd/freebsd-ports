@@ -9,5 +9,3 @@
 bin/ebook
 @dirrmtry %%SITE_PERL%%/EBook/Tools
 @dirrmtry %%SITE_PERL%%/EBook
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/EBook/Tools
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/EBook

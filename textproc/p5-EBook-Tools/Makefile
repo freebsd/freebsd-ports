@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-EBook-Tools
-# Date created:		20 February 2009
-# Whom:	      		simond@irrelevant.org
-#
+# Created by: simond@irrelevant.org
 # $FreeBSD$
-#
 
 PORTNAME=	EBook-Tools
 PORTVERSION=	0.4.9
