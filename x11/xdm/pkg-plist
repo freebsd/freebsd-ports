@@ -47,6 +47,7 @@ share/X11/app-defaults/Chooser
 @unexec rmdir /var/lib/xdm/authdir/authfiles 2>/dev/null || true
 @unexec rmdir /var/lib/xdm/authdir 2>/dev/null
 @unexec rmdir /var/lib/xdm 2>/dev/null
+@unexec rmdir /var/lib 2>/dev/null
 @dirrm lib/X11/xdm/pixmaps
 @dirrm lib/X11/xdm
 @dirrm %%EXAMPLESDIR%%
