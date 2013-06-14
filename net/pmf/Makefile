@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pmf
-# Date created:		24 Sep 1994
-# Whom:			adam
-#
+# Created by: adam
 # $FreeBSD$
-#
 
 PORTNAME=	pmf
 PORTVERSION=	1.13.1
@@ -21,6 +17,10 @@ DOCSRC=		${WRKSRC}/../doc
 XMPSRC=		${WRKSRC}/../examples
 SUB_FILES=	pmfrc.default
 
+CFLAGS+=	-Wno-return-type
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pmf ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
@@ -29,12 +29,12 @@ do-install:
 	@${MKDIR} ${DATADIR}/helpfiles
 	${INSTALL_DATA} ${SYSSRC}/helpfiles/.pmfrc ${DATADIR}/helpfiles
 	${INSTALL_DATA} ${SYSSRC}/helpfiles/* ${DATADIR}/helpfiles
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${XMPSRC}/.pmfrc ${EXAMPLESDIR}/dot.pmfrc
 	${INSTALL_DATA} ${XMPSRC}/* ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCSRC}/* ${DOCSDIR}
 .endif
