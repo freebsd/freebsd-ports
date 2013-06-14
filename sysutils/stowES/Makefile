@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	stowES
-# Date created:			Mar 17, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stowES
 PORTVERSION=	0.5.6
@@ -15,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stow enhancement script
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
 
@@ -28,17 +22,19 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO \
 		${PORTNAME}.html ${PORTNAME}.pod ${PORTNAME}.txt
 PLIST_FILES=	bin/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|'md5sum',|'md5',|" ${WRKSRC}/${PORTNAME}.in
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_SCRIPT} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
