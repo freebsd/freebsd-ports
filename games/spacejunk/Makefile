@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A video game about traveling in 2D planetary systems
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
 MAKE_JOBS_SAFE=	yes
