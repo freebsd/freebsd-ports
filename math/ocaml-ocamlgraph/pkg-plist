@@ -11,6 +11,7 @@
 %%OCAMLGRAPHDIR%%/components.mli
 %%OCAMLGRAPHDIR%%/contraction.mli
 %%OCAMLGRAPHDIR%%/delaunay.mli
+%%OCAMLGRAPHDIR%%/dominator.mli
 %%OCAMLGRAPHDIR%%/dot.mli
 %%OCAMLGRAPHDIR%%/dot_ast.mli
 %%OCAMLGRAPHDIR%%/dot_parser.mli
@@ -24,12 +25,14 @@
 %%OCAMLGRAPHDIR%%/graph.cmo
 %%OCAMLGRAPHDIR%%/graph.cmx
 %%OCAMLGRAPHDIR%%/graph.cmxa
+%%OCAMLGRAPHDIR%%/graphml.mli
 %%OCAMLGRAPHDIR%%/graphviz.mli
 %%OCAMLGRAPHDIR%%/imperative.mli
 %%OCAMLGRAPHDIR%%/kruskal.mli
 %%OCAMLGRAPHDIR%%/leaderlist.mli
 %%OCAMLGRAPHDIR%%/mcs_m.mli
 %%OCAMLGRAPHDIR%%/md.mli
+%%OCAMLGRAPHDIR%%/merge.mli
 %%OCAMLGRAPHDIR%%/minsep.mli
 %%OCAMLGRAPHDIR%%/nonnegative.mli
 %%OCAMLGRAPHDIR%%/oper.mli
