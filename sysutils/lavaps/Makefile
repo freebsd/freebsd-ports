@@ -1,18 +1,16 @@
-# New ports collection makefile for:	lavaps
-# Date created:		11-Oct-99
-# Whom:			johnh@isi.edu
-#
+# Created by: johnh@isi.edu
 # $FreeBSD$
-#
 
 PORTNAME=	lavaps
 PORTVERSION=	2.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lava lamp of currently running processes
+COMMENT=	Lava lamp of currently running processes
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
