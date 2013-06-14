@@ -16,11 +16,11 @@ MAKE_JOBS_SAFE=	yes
 SUB_FILES=	BSDMakefile Makefile
 MAKEFILE=	BSDMakefile
 PORTDOCS=	README.TXT
-MAN1=		flow6.1 frag6.1 icmp6.1 jumbo6.1 na6.1 ni6.1 ns6.1 ra6.1 \
-		rd6.1 rs6.1 scan6.1 tcp6.1
+MAN1=		address6.1 flow6.1 frag6.1 icmp6.1 jumbo6.1 na6.1 ni6.1 \
+		ns6.1 ra6.1 rd6.1 rs6.1 scan6.1 tcp6.1
 MAN5=		ipv6toolkit.conf.5
 
-PROGDIRS= address6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
+PROGDIRS=	${MAN1:S/.1//}
 
 OPTIONS_DEFINE=	DOCS
 
