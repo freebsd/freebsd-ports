@@ -127,7 +127,11 @@ PLIST_SUB+=	IA64_NA=""
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
 PLIST_SUB+=	PPC_NA="@comment "
-EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-powerpc
+.if defined(WITH_NEW_XORG)
+EXTRA_PATCHES=	${.CURDIR}/files/extra-new-arch-powerpc
+.else
+EXTRA_PATCHES=	${.CURDIR}/files/extra-old-arch-powerpc
+.endif
 .else
 PLIST_SUB+=	PPC_NA=""
 .endif
