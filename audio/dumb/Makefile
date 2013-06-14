@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dumb
-# Date created:        26 January 2005
-# Whom:                Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	dumb
 PORTVERSION=	0.9.3
@@ -40,7 +36,7 @@ CFLAGS+=	-fPIC
 pre-configure:
 	@${CP} ${FILESDIR}/config.txt ${WRKSRC}/make
 	@${REINPLACE_CMD} -e "s,@LOCALBASE@,${LOCALBASE}," ${WRKSRC}/make/config.txt
-.if defined(WITH_ALLEGRO)
+.if ${PORT_OPTIONS:MALLEGRO}
 	@${REINPLACE_CMD} -e "s,@ALLEGRO@,," ${WRKSRC}/make/config.txt
 .else
 	@${REINPLACE_CMD} -e "s,@ALLEGRO@,#," ${WRKSRC}/make/config.txt
