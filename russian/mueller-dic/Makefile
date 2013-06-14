@@ -1,9 +1,5 @@
-# New ports collection makefile for: mueller-dic
-# Date created:		14 Jan 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mueller-dic
 PORTVERSION=	1.2
@@ -21,9 +17,11 @@ USE_GMAKE=	yes
 USES=		iconv
 SUB_FILES=	mueller
 
-WRKSRC=	${WRKDIR}/mf
+WRKSRC=		${WRKDIR}/mf
 WRKSRC_DIC=	${WRKDIR}/usr/local/share/dict
 WRKSRC_DOC=	${WRKDIR}/usr/local/share/mova
+
+OPTIONS_DEFINE=	DOCS
 
 post-build:
 # convert dictionary to other charsets
@@ -37,20 +35,17 @@ post-build:
 	${WRKSRC}/mf -d ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.CP1251 -hash
 	${WRKSRC}/mf -d ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.UTF-8 -hash
 
+.include <bsd.port.options.mk>
+
 do-install:
 	# install program with different name (it conflicts with teTeX)
 	${INSTALL_PROGRAM} ${WRKSRC}/mf ${PREFIX}/bin/muellerfind
 	${INSTALL_SCRIPT} ${WRKDIR}/mueller ${PREFIX}/bin/
 
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.KOI8-R ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.KOI8-R.h ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.CP1251 ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.CP1251.h ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.UTF-8 ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.UTF-8.h ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.* ${DATADIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC_DOC}/Mueller7.txt ${DOCSDIR}/Mueller7.txt
 .endif
