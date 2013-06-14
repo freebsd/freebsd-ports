@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fvcool
-# Date created:				5 October 2002
-# Whom:				Frerich Raabe <frerich.raabe@gmx.de>
-#
+# Created by: Frerich Raabe <frerich.raabe@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	fvcool
 PORTVERSION=	1.0.4
@@ -20,10 +16,11 @@ USE_RC_SUBR=	fvcool
 SUB_FILES=	pkg-message
 SUB_LIST+=	"PORTNAME=${PORTNAME}"
 ALL_TARGET=	fvcool
-PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,^${PREFIX}/,,}
 
 PORTDOCS=	ReadMe ReadMe.jp ReadMe.tech_KT133
 PLIST_FILES=	sbin/fvcool
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CC@|& ${CFLAGS}|; \
@@ -35,12 +32,12 @@ do-install: install-doc
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
+.include <bsd.port.options.mk>
+
 install-doc:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
