@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130614:
+AUTHOR: bapt@FreeBSD.org
+
+  * New 'display' USES macro to handle building ports that may require a
+    a display to build.
+
+  USES= display[:install] will start Xvfb and set the DISPLAY environment
+  variable before the installation phase and stop it at the end. (install is
+  the implicit value)
+
+  USES= display:build will start Xvfb and set the DISPLAY environment variable
+  before the build phase and stop it at the end.
+
 20130607:
 AUTHOR: bdrewery@FreeBSD.org
 
