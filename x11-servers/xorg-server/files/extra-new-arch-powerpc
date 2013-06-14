@@ -1,0 +1,14 @@
+--- hw/xfree86/os-support/bsd/ppc_video.c.orig	2012-05-17 19:09:03.000000000 +0200
++++ hw/xfree86/os-support/bsd/ppc_video.c	2013-06-03 13:46:05.165578200 +0200
+@@ -135,7 +135,11 @@
+ {
+ 
+     if (ioBase != MAP_FAILED) {
++#if defined(__FreeBSD__)
++        munmap(__DEVOLATILE(unsigned char *, ioBase), 0x10000);
++#else
+         munmap(__UNVOLATILE(ioBase), 0x10000);
++#endif
+         ioBase = MAP_FAILED;
+     }
+ }
