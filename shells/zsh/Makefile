@@ -54,60 +54,28 @@ PORTDOCS=	*
 PORTEXAMPLES=	zlogin zshenv zshrc
 SHELLS=		/etc/shells
 
+OPTIONS_SUB=	yes
+
+DOCS_DISTFILES=		${DISTNAME}-doc${EXTRACT_SUFX}:doc
+GDBM_LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+GDBM_CONFIGURE_ENABLE=	gdbm
+PCRE_LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+PCRE_CONFIGURE_ENABLE=	pcre
+MEM_CONFIGURE_ENABLE=	zsh-mem
+SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
+MAILDIR_CONFIGURE_ENABLE=	maildit-support
+STATIC_LDFLAGS=		-static
+STATIC_CONFIGURE_ON=	--disable-dynamic
+STATIC_CONFIGURE_OFF=	--disable-dynamic
+DEBUG_CONFIGURE_ENABLE=	zsh-debug
+MULTIBYTE_CONFIGURE_ENABLE=	multibyte
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
-.endif
-
-.if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
-PLIST_SUB+=		GDBM=""
-.else
-CONFIGURE_ARGS+=	--disable-gdbm
-PLIST_SUB+=		GDBM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
-PLIST_SUB+=		PCRE=""
-.else
-CONFIGURE_ARGS+=	--disable-pcre
-PLIST_SUB+=		PCRE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMEM}
-CONFIGURE_ARGS+=	--enable-zsh-mem
-.endif
-
-.if ${PORT_OPTIONS:MSECURE_FREE}
-CONFIGURE_ARGS+=	--enable-zsh-secure-free
-.endif
-
-.if ${PORT_OPTIONS:MMAILDIR}
-CONFIGURE_ARGS+=	--enable-maildir-support
-.endif
-
 .if ${PORT_OPTIONS:MSTATIC}
-LDFLAGS+=	-static
-CONFIGURE_ARGS+=	--disable-dynamic
 PLIST_SUB+=		SHARED="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-dynamic
 PLIST_SUB+=		SHARED=""
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-zsh-debug
-.else
-CONFIGURE_ARGS+=	--disable-zsh-debug
-.endif
-
-.if ${PORT_OPTIONS:MMULTIBYTE}
-CONFIGURE_ARGS+=	--enable-multibyte
-.else
-CONFIGURE_ARGS+=	--disable-multibyte
 .endif
 
 post-patch:
