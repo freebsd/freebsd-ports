@@ -22,7 +22,7 @@ PORTDOCS=	README
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ! ${PORT_OTPIONS:MDEBUG}
+.if ! ${PORT_OPTIONS:MDEBUG}
 	@${REINPLACE_CMD} -e 's|-ggdb||' \
 		${WRKSRC}/${MAKEFILE}
 .endif
