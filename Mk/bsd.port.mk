@@ -6185,11 +6185,7 @@ showconfig:
 .if !empty(COMPLETE_OPTIONS_LIST)
 	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}":
 .for opt in ${ALL_OPTIONS}
-.  if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "     ${opt}=off"
-.  else
-	@${ECHO_MSG} -n "     ${opt}=on"
-.  endif
+	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n "     ${opt}=$${match:-off}"
 .  if !empty(${opt}_DESC)
 	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
 .  endif
@@ -6205,11 +6201,7 @@ showconfig:
 		@${ECHO_MSG} "====> ${${m}_DESC}${${otype}_EOL}"
 .    endif
 .    for opt in ${OPTIONS_${otype}_${m}}
-.      if ${PORT_OPTIONS:M${opt}}
-	@${ECHO_MSG} -n "     ${opt}=on"
-.      else
-	@${ECHO_MSG} -n "     ${opt}=off"
-.      endif
+	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n "     ${opt}=$${match:-off}"
 .      if !empty(${opt}_DESC)
 	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
 .      endif
@@ -6271,22 +6263,14 @@ RADIO_START=	(
 RADIO_END=	)
 pretty-print-config:
 .for opt in ${ALL_OPTIONS}
-.  if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_MSG} -n "-${opt} "
-.  else
-	@${ECHO_MSG} -n "+${opt} "
-.  endif
+	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="+" ; ${ECHO_MSG} -n "$${match:--}${opt} "
 .endfor
 .for otype in MULTI GROUP SINGLE RADIO
 .  for m in ${OPTIONS_${otype}}
 	@${ECHO_MSG} -n "${m}${${otype}_START} "
 .    for opt in ${OPTIONS_${otype}_${m}}
-.    if ${PORT_OPTIONS:M${opt}}
-	@${ECHO_MSG} -n "+${opt} "
-.    else
-	@${ECHO_MSG} -n "-${opt} "
-.    endif
-.  endfor
+		@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="+" ; ${ECHO_MSG} -n "$${match:--}${opt} "
+.    endfor
 	@${ECHO_MSG} -n "${${otype}_END} "
 .  endfor
 .endfor
