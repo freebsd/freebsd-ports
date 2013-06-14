@@ -83,11 +83,7 @@ fake-pkg:
 	@${ECHO_CMD} "]" >> ${MANIFESTF}
 	@${ECHO_CMD} -n "options: {" >> ${MANIFESTF}
 .for opt in ${COMPLETE_OPTIONS_LIST}
-.if empty(PORT_OPTIONS:M${opt})
-	@${ECHO_CMD} -n "${opt}: off," >> ${MANIFESTF}
-.else
-	@${ECHO_CMD} -n "${opt}: on," >> ${MANIFESTF}
-.endif
+	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n " ${opt}: $${match:-off}," >> ${MANIFESTF}
 .endfor
 .undef opt
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
