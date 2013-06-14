@@ -39,7 +39,6 @@ share/locale/ja/LC_MESSAGES/wdm.mo
 share/locale/ru/LC_MESSAGES/wdm.mo
 @dirrmtry lib/X11/wdm/pixmaps
 @exec mkdir -p %D/lib/X11/wdm/authdir
-@dirrmtry lib/X11/wdm/authdir/authfiles
 @dirrmtry lib/X11/wdm/authdir
 @dirrmtry lib/X11/wdm
 %%PAM%%@cwd %%LOCALBASE%%
