@@ -40,11 +40,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 \
 LDFLAGS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so \
 		-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
+LILYPOND_RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond
 
-.if ${PORT_OPTIONS:MLILYPOND}
-RUN_DEPENDS+=	lilypond:${PORTSDIR}/print/lilypond
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
