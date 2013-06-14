@@ -6969,8 +6969,6 @@ share/templates/TextDocument.desktop
 @dirrm share/kde4/services/kexi
 @dirrm share/icons/hicolor/512x512/apps
 @dirrm share/icons/hicolor/512x512
-@dirrmtry share/icons/hicolor/45x45/mimetypes
-@dirrmtry share/icons/hicolor/45x45
 @dirrm share/icons/hicolor/1024x1024/apps
 @dirrm share/icons/hicolor/1024x1024
 @dirrm share/doc/HTML/en/stage
