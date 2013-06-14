@@ -30,4 +30,4 @@ etc/penv.conf.default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %%DBDIR%%
-@dirrmtry %%DBDIR%% 2>/dev/null || true
+@dirrmtry %%DBDIR%%
