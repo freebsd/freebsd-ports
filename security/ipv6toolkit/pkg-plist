@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/address6
 bin/flow6
 bin/frag6
 bin/icmp6
