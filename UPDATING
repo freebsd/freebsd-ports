@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130614:
+  AFFECTS: users who set port options in make.conf
+  AUTHOR: tijl@FreeBSD.org
+
+  Configuring options in make.conf using variables like OPTIONS_SET and
+  OPTIONS_UNSET now also suppresses the option dialog for those options.
+  This means that when building a port the option dialog will only appear if
+  there are truly new options that have not been configured before using either
+  the dialog or make.conf.  This allows you to set options like DOCS, NLS,
+  X11, etc. once for all ports and not have option dialogs pop up if those are
+  the only options.  For a list of variables you can set in make.conf to
+  control options see Mk/bsd.options.mk.
+
 20130612:
   AFFECTS: users of  lang/perl* and any port that depends on it
   AUTHOR: az@FreeBSD.org
