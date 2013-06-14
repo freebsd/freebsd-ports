@@ -1,21 +1,22 @@
-# New ports collection makefile for:	tm
-# Date created:		18 December 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tm
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/tm/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal mixer
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	ChangeLog DOCS index.html
 MAKE_ENV=	LINUX_LIBS=-lutil
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${MV} ${WRKSRC}/web/index.html ${WRKSRC}/
@@ -26,11 +27,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|pty.h|libutil.h|' ${WRKSRC}/app_term.c
 	@${ECHO_CMD} '#include <string.h>' >> ${WRKSRC}/main.h
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
