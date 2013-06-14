@@ -57,8 +57,4 @@ lib/astrolog/seplm36.se1
 lib/astrolog/seplm42.se1
 lib/astrolog/seplm48.se1
 lib/astrolog/seplm54.se1
-%%PORTDOCS%%%%DOCSDIR%%/changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/helpfile.540
-%%PORTDOCS%%%%DOCSDIR%%/readme.541
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/astrolog

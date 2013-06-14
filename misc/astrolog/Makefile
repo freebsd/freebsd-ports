@@ -28,18 +28,22 @@ EPHE=		sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
 		swephm36.tar.gz:ephe swephm42.tar.gz:ephe \
 		swephm48.tar.gz:ephe swephm54.tar.gz:ephe
 
-.if !defined(WITHOUT_X11)
-USE_XORG=	x11
-MAKE_ARGS=	-DX11
-.endif
 DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
-DOCS=		helpfile.540 readme.541 changes.txt
+PORTDOCS=	helpfile.540 readme.541 changes.txt
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+USE_XORG=	x11
+MAKE_ARGS=	-DX11
+.endif
 
 post-extract:
 	${RM} ${WRKDIR}/swe[a-z]*
@@ -56,9 +60,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/helpfile.540 for help"
