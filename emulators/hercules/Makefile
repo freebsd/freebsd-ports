@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hercules
-PORTVERSION=	3.07
+PORTVERSION=	3.08
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.hercules-390.org/
+MASTER_SITES=	http://downloads.hercules-390.eu/
 
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	System/370, ESA/390, and z/Architecture Emulator
