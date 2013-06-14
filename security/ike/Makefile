@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ike
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	security net
 MASTER_SITES=	https://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -28,7 +28,7 @@ CMAKE_ARGS+=	-DETCDIR:PATH="${PREFIX}/etc" \
 
 OPTIONS_DEFINE=	QTGUI NATT LDAP DEBUG
 QTGUI_DESC=	Enable QT client front end applications
-NATT_DESC=	Enable NAT-Traversal (kernel-patch required)
+NATT_DESC=	Enable NAT-Traversal
 LDAP_DESC=	Enable LDAP XAuth daemon support
 
 .include <bsd.port.options.mk>
@@ -60,20 +60,6 @@ PLIST_SUB+=	QTGUI=""
 PLIST_SUB+=	QTGUI="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PORT_OPTIONS:MNATT}
-. if ${OSVERSION} < 800000
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-	@${ECHO_MSG} "===> WARNING: You will need to patch your kernel for NAT-T functionality!"
-	@${ECHO_MSG} "===>   http://people.freebsd.org/~vanhu/NAT-T/patch-natt-7.2-2009-05-12.diff"
-	@${ECHO_MSG} "===> You may need to edit the patch if it fails to apply cleanly."
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-	@sleep 3
-. endif
-.endif
-
 post-install:
 	@if ! ${SYSCTL} -a | ${GREP} -q ipsec; then \
 	${ECHO_MSG} "===> -------------------------------------------------------------------------"; \
@@ -89,4 +75,4 @@ post-install:
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
