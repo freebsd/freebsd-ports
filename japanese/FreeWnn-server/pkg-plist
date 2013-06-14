@@ -37,5 +37,4 @@ lib/wnn/ja_JP/dic/wnncons/tankan3.dic
 @dirrm lib/wnn/ja_JP/dic/pubdic
 @dirrm lib/wnn/ja_JP/dic/src
 @dirrm lib/wnn/ja_JP/dic/wnncons
-@dirrmtry lib/wnn/ja_JP/dic/usr
 @dirrmtry lib/wnn/ja_JP/dic
