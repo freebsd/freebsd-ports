@@ -93,5 +93,3 @@ lib/X11/it_IT.UTF-8/app-defaults/MoTV
 @dirrm lib/X11/fr_FR.UTF-8
 @dirrm lib/X11/it_IT.UTF-8/app-defaults
 @dirrm lib/X11/it_IT.UTF-8
-@dirrm lib/X11/de/app-defaults
-@dirrm lib/X11/de
