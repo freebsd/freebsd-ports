@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spideroak
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 #PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://spideroak.com/getbuild?platform=slackware&arch=${ARCH:S,amd,x86_,}&dummy=/
