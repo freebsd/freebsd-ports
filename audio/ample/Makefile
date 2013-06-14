@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	ample
-# Date created:			March 21, 2002
-# Whom:				patrick
-#
+# Created by: patrick
 # $FreeBSD$
-#
 
 PORTNAME=	ample
 PORTVERSION=	0.5.7
@@ -19,5 +14,9 @@ GNU_CONFIGURE=	yes
 MAN1=		ample.1
 MAN5=		ample.conf.5 ample.html.5
 PLIST_FILES=	bin/ample
+PLIST_DIRSTRY=	var/log var
+
+post-install:
+	@${ECHO_CMD} "@exec mkdir -p %D/var/log" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
