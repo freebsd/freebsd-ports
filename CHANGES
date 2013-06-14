@@ -41,6 +41,12 @@ AUTHOR:	bapt@FreeBSD.org
 
   ${OPT}_DISTFILES will append the specified distiles to DISTFILES if OPT in 'on'
 
+  ${OPT}_CMAKE_ON=<something> will automatically add:
+  CMAKE_ARGS+=<something> in case OPT is activated
+
+  ${OPT_CMAKE_OFF=<something> will automatically add:
+  CMAKE_ARGS+=<something> in case OPT is deactivated
+
 20130614:
 AUTHOR: bapt@FreeBSD.org
 
