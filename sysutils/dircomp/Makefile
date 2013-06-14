@@ -1,26 +1,24 @@
-# New ports collection makefile for:	DirComp
-# Date created:		20 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DirComp
 PORTVERSION=	1.3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTNAME:S/C/c/}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare two directories
 
+LICENSE=	GPLv2
+
 .ifndef WITHOUT_X11
-LIB_DEPENDS=	XGP.0:${PORTSDIR}/devel/libXGP
+LIB_DEPENDS=	XGP:${PORTSDIR}/devel/libXGP
 PLIST_FILES+=	bin/XDirComp
 .else
 MK_PATCH+=	s/@MYSUBDIRS@/Common/g;
 .endif
-LIB_DEPENDS+=	YGP.0:${PORTSDIR}/devel/libYGP
+LIB_DEPENDS+=	YGP:${PORTSDIR}/devel/libYGP
 
 GNU_CONFIGURE=	yes
 USES=		gettext
