@@ -69,7 +69,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|	po ||'	\
 		${WRKSRC}/Makefile.in
 .endif
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|Documentation||'	\
 		${WRKSRC}/Makefile.in
 .endif
