@@ -66,7 +66,7 @@ SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
 MAILDIR_CONFIGURE_ENABLE=	maildit-support
 STATIC_LDFLAGS=		-static
 STATIC_CONFIGURE_ON=	--disable-dynamic
-STATIC_CONFIGURE_OFF=	--disable-dynamic
+STATIC_CONFIGURE_OFF=	--enable-dynamic
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 MULTIBYTE_CONFIGURE_ENABLE=	multibyte
 
