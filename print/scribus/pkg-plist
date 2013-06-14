@@ -3248,3 +3248,7 @@ share/pixmaps/scribus.png
 @dirrmtry share/mimelnk
 @dirrmtry share/emacs/site-lisp
 @dirrmtry share/emacs
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/de/man1
+@dirrmtry man/de
