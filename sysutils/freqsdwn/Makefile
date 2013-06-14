@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freqsdwn
-# Date created:				2005/11/20
-# Whom:					n-shigemura@ensure.jp
-#
+# Created by: n-shigemura@ensure.jp
 # $FreeBSD$
-#
 
 PORTNAME=	freqsdwn
 PORTVERSION=	2.00
@@ -24,9 +20,9 @@ IGNORE=		${RESTRICTED}
 USE_RC_SUBR=	freqshpd 000.freqshpk
 PLIST_SUB=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
 SUB_LIST=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
+OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/freqship
-PORTDOCS=	README
 
 CONFDIR?=	${PREFIX}/etc/freqship
 
@@ -44,6 +40,8 @@ post-extract:
 		@${CP} ${FILESDIR}/Makefile.${dir} ${WRKSRC}/${dir:subdir=}/Makefile
 .endfor
 
+.include <bsd.port.options.mk>
+
 post-install:
 		@${MKDIR} ${CONFDIR}
 .for FILE in UPSFILE UPSSTAT PMSGERR PMSGOK DELAY
@@ -51,11 +49,9 @@ post-install:
 		@[ -f ${PREFIX}/etc/freqship/${FILE} ] || \
 			${CP} ${WRKSRC}/initdata/${FILE} ${PREFIX}/etc/freqship/${FILE}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		@${MKDIR} ${DOCSDIR}
-.for FILE in ${PORTDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 		@${CAT} ${PKGMESSAGE}
 
