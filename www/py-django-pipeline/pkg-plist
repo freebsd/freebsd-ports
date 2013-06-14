@@ -42,6 +42,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/uglifyjs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/uglifyjs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/uglifyjs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/yuglify.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/yuglify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/yuglify.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/yui.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/yui.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pipeline/compressors/yui.pyo
