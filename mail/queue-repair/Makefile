@@ -16,11 +16,9 @@ OPTIONS_DEFINE=		DOCS QMAIL_PORT
 OPTIONS_DEFAULT=	QMAIL_PORT
 QMAIL_PORT_DESC=	Depend on qmail port
 
-.include <bsd.port.options.mk>
+QMAIL_PORT_USES=	qmail:run
 
-.if ${PORT_OPTIONS:MQMAIL_PORT}
-USES=		qmail:run
-.endif
+.include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/queue-repair
 PORTDOCS=	BLURB CHANGELOG TODO
