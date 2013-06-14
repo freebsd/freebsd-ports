@@ -41,9 +41,3 @@ bin/hello
 %%NLS%%share/locale/vi/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/hello.mo
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/rm/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rm
