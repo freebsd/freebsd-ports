@@ -120,10 +120,7 @@ PORT_OPTIONS:=	${OPTIONS_OVERRIDE}
 NEW_OPTIONS=	${COMPLETE_OPTIONS_LIST}
 
 ## Set default options defined by the port maintainer
-.  for opt in ${OPTIONS_DEFAULT}
-PORT_OPTIONS+=	${opt}
-.  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+PORT_OPTIONS+=	${OPTIONS_DEFAULT}
 
 ## Set system-wide defined options (set by user in make.conf)
 .  for opt in ${OPTIONS_SET}
@@ -132,7 +129,6 @@ PORT_OPTIONS+=	${opt}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Remove the options excluded system-wide (set by user in make.conf)
 .  for opt in ${OPTIONS_UNSET}
@@ -147,7 +143,6 @@ PORT_OPTIONS+=	${opt}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Unset the options excluded per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_UNSET}
@@ -167,7 +162,6 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
 PORT_OPTIONS+=	${opt}
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 .endif
 .if defined(WITHOUT_${opt})
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
@@ -181,13 +175,11 @@ PORT_OPTIONS+=	${opt}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 .for opt in ${OPTIONS_FILE_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .endfor
-.undef opt
 
 .endif
 
@@ -199,7 +191,6 @@ PORT_OPTIONS+=	${opt}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Remove the options excluded system-wide (set by user in make.conf)
 .  for opt in ${OPTIONS_UNSET_FORCE}
@@ -214,7 +205,6 @@ PORT_OPTIONS+=	${opt}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .    endif
 .  endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Unset the options excluded per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_UNSET_FORCE}
@@ -230,17 +220,17 @@ PORT_OPTIONS+=	${opt}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endif
 .endfor
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 .for opt in ${WITHOUT}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .endfor
 
-.for opt in ${OPTIONS_SLAVE}
-PORT_OPTIONS+=	${opt}
-.endfor
-.undef opt
+# Finally, add options required by slave ports
+PORT_OPTIONS+=	${OPTIONS_SLAVE}
+
+# Sort options and eliminate duplicates
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Now some compatibility
 .if empty(PORT_OPTIONS:MDOCS)
@@ -270,7 +260,6 @@ WITHOUT_${opt}:=	true
 WITH_${opt}:=  true
 .   endif
 .endif
-.      undef opt
 .endfor
 .endif
 ###
