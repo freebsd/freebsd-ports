@@ -707,4 +707,4 @@
 @dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/classes
 @dirrm %%WWWDIR%%/.settings
-@dirrmtry %%WWWDIR%%
+@dirrm %%WWWDIR%%
