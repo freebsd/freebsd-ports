@@ -25,37 +25,26 @@ CONFIGURE_ARGS=	--without-x
 
 OPTIONS_DEFINE=	GNUTLS OPENSSL GCRYPT IPV6
 OPTIONS_DEFAULT=	OPENSSL
-GNUTLS_DESC=	Enable GnuTLS support
-OPENSSL_DESC=	Enable OpenSSL support
-GCRYPT_DESC=	Enable libgcrypt support
+GCRYPT_DESC=	libgcrypt support
+
+GNUTLS_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ON=	--with-gnutls
+GNUTLS_CONFIGURE_OFF=	--without-gnutls
+
+OPENSSL_CONFIGURE_ON=	--with-ssl
+OPENSSL_CONFIGURE_OFF=	--without-crypto --without-ssl
+
+GCRYPT_LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+GCRYPT_CONFIGURE_ON=	--with-gcrypt
+GCRYPT_CONFIGURE_ON=	--without-gcrypt
+
+IPV6_CONFIGURE_ON=	--with-ipv6
+IPV6_CONFIGURE_OFF=	--without-ipv6
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-gnutls
-.else
-CONFIGURE_ARGS+=	--without-gnutls
-.endif
-
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-ssl
-.else
-CONFIGURE_ARGS+=	--without-crypto --without-ssl
-.endif
-
-.if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=	--with-gcrypt
-.else
-CONFIGURE_ARGS+=	--without-gcrypt
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--with-ipv6
-.else
-CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
 post-patch:
