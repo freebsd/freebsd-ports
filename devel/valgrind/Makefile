@@ -28,6 +28,9 @@ MAN1=		callgrind_control.1 \
 OPTIONS_DEFINE=	MPI
 MPI_DESC=	Enable build of MPI wrappers
 
+MPI_LIB_DEPENDS=	mpich:${PORTSDIR}/net/mpich2
+
+OPTIONS_SUB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=	pathfix pkgconfig
@@ -41,16 +44,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMPI}
-LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
-PLIST_SUB+=	MPI=""
-.else
-PLIST_SUB+=	MPI="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
+if ${ARCH} == "amd64"
 PLIST_SUB+=	AMD64="" ARCH=amd64
 . if !exists(/usr/lib32/libc.so)
 CONFIGURE_ARGS+=	--enable-only64bit
@@ -68,4 +62,4 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/docs/html
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
