@@ -309,6 +309,9 @@ CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
 .    if defined(${opt}_CONFIGURE_ON)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
 .    endif
+.    if defined(${opt}_CMAKE_ON)
+CMAKE_ARGS+=	${${opt}_CMAKE_ON}
+.    endif
 .    for flags in CFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ENV USES DISTFILES
 .      if defined(${opt}_${flags})
 ${flags}+=	${${opt}_${flags}}
@@ -325,6 +328,9 @@ CONFIGURE_ARGS+=	--disable-${${opt}_CONFIGURE_ENABLE}
 .    endif
 .    if defined(${opt}_CONFIGURE_OFF)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
+.    endif
+.    if defined(${opt}_CMAKE_OFF)
+CMAKE_ARGS+=	${${opt}_CMAKE_OFF}
 .    endif
 .  endif
 .endfor
