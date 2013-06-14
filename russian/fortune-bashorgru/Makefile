@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortune-bashorgru
-# Date created:        19-04-2007
-# Whom:                dindin@dindin.ru
-#
+# Created by: dindin@dindin.ru
 # $FreeBSD$
-#
 
 PORTNAME=	fortune-bashorgru
 PORTVERSION=	20080903
@@ -22,14 +18,8 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${PREFIX}/share/games/fortune/ru_RU.UTF-8
 	@${MKDIR} ${PREFIX}/share/games/fortune/ru_RU.KOI8-R
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/utf-8/fortune-bashorgru ${PREFIX}/share/games/fortune/ru_RU.UTF-8/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/utf-8/fortune-bashorgru.dat ${PREFIX}/share/games/fortune/ru_RU.UTF-8/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/utf-8/fortune-bashorgru-freebsd ${PREFIX}/share/games/fortune/ru_RU.UTF-8/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/utf-8/fortune-bashorgru-freebsd.dat ${PREFIX}/share/games/fortune/ru_RU.UTF-8/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/koi8-r/fortune-bashorgru ${PREFIX}/share/games/fortune/ru_RU.KOI8-R/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/koi8-r/fortune-bashorgru.dat ${PREFIX}/share/games/fortune/ru_RU.KOI8-R/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/koi8-r/fortune-bashorgru-freebsd ${PREFIX}/share/games/fortune/ru_RU.KOI8-R/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/koi8-r/fortune-bashorgru-freebsd.dat ${PREFIX}/share/games/fortune/ru_RU.KOI8-R/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/utf-8/* ${PREFIX}/share/games/fortune/ru_RU.UTF-8/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/koi8-r/* ${PREFIX}/share/games/fortune/ru_RU.KOI8-R/
 	${INSTALL_DATA} ${WRKSRC}/fortune-update.py ${EXAMPLESDIR}/
 
 post-install:
