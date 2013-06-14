@@ -23,19 +23,9 @@ OPTIONS_DEFINE=	JSON MARKDOWN STATIC
 JSON_DESC=	JSON API support
 MARKDOWN_DESC=	Markdown format support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJSON}
-CONFIGURE_ARGS+=	--json
-.endif
-
-.if ${PORT_OPTIONS:MMARKDOWN}
-CONFIGURE_ARGS+=	--markdown
-.endif
-
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=	--static
-.endif
+JSON_CONFIGURE_ON=	--json
+MARKDOWN_CONFIGURE_ON=	--markdown
+STATIC_CONFIGURE_ON=	--static
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
