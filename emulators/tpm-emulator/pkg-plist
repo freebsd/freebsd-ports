@@ -6,3 +6,5 @@ lib/libtddl.so.1
 lib/libtddl.so.1.2.0.7
 @dirrmtry var/db/tpm
 @dirrmtry var/db
+@exec mkdir -p %D/var
+@dirrmtry var
