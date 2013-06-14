@@ -11,16 +11,14 @@ DISTNAME=	MIDI-Perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for handling MIDI files
 
+OPTIONS_DEFINE=	GD
+
 PERL_CONFIGURE=	YES
 
 MAN3=		MIDI.3 MIDI::Event.3 MIDI::Filespec.3 MIDI::Opus.3 MIDI::Score.3 \
 		MIDI::Simple.3 MIDI::Track.3
 
-.include <bsd.port.pre.mk>
+GD_BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+GD_RUN_DEPENDS=		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
-.if defined(WITH_GD)
-BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
