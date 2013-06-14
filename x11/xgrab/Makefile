@@ -15,9 +15,9 @@ COMMENT=	X11 image grabber
 
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
+USES=		display:build
 USE_XORG=	x11
 USE_IMAKE=	yes
-USE_DISPLAY=	yes
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
@@ -25,10 +25,9 @@ MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 XMKMF=		xmkmf
 CFLAGS+=	-Wno-error=return-type
 
-.if (!defined(DISPLAY) || ${DISPLAY} == "") && !defined(PACKAGE_BUILDING)
-IGNORE=		Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X.
-.endif
-
 MAN1=		xgrab.1 xgrabsc.1
+
+post-patch:
+	@${REINPLACE_CMD} 's,\*envp,\*\*envp,g' ${WRKSRC}/xgrabxaw.c
 
 .include <bsd.port.mk>
