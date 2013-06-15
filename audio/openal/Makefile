@@ -90,7 +90,7 @@ post-patch:
 		s|Libs: |&${PTHREAD_LIBS} |;\
 		s|Cflags: |&${PTHREAD_CFLAGS} |' \
 		${WRKSRC}/admin/pkgconfig/openal.pc.in
-.if defined(WITHOUT_X86_ASM)
+.if ! ${PORT_OPTIONS:MASM}
 	@${REINPLACE_CMD} -e '/^NASM=/ s|=.*|=no|' ${WRKSRC}/configure
 .endif
 
