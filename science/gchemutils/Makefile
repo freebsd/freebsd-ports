@@ -55,7 +55,8 @@ XUL_DESC=	Build browser plugin (requires Xulrunner)
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MXUL}
-USE_GECKO=	libxul19
+BROKEN=		Does not work with newer libxul
+USE_GECKO=	libxul
 CONFIGURE_ARGS+=--enable-mozilla-plugin
 PLIST_SUB+=	XUL=""
 .else

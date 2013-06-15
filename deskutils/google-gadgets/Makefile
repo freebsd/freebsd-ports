@@ -65,7 +65,7 @@ LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 .endif
 
 .if ${PORT_OPTIONS:MMOZILLA}
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 .endif
 
 .if ${PORT_OPTIONS:MGTKWEBKIT} && ! ${PORT_OPTIONS:MGTK}

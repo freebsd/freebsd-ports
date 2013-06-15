@@ -14,11 +14,17 @@ MASTER_SITES=	http://virtual-estates.net/~mi/port-stuff/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Browser plugin for Real or Helix Players
 
+BROKEN=		Does not work with newer libxul
+
+DEPRECATED=	Does not work with newer libxul
+EXPIRATION_DATE=	2013-09-01
+
+
 USE_BZIP2	 =	yes
 USE_DOS2UNIX	 =	yes
 MAKEFILE	 =	${FILESDIR}/BSDmakefile
-USE_GECKO	 =	libxul19
-MAKE_ENV	+=	TOP="${WRKSRC}" GECKO=${GECKO:S/19//}
+USE_GECKO	 =	libxul
+MAKE_ENV	+=	TOP="${WRKSRC}" GECKO=${GECKO}
 MAKE_JOBS_UNSAFE =	yes
 
 USE_WEBPLUGINS=	native

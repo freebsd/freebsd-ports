@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moonshine
-# Date created:				May 14 2009
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	moonshine
 PORTVERSION=	0.7
@@ -15,11 +11,14 @@ DISTNAME=	abock-${PORTNAME}-${GITCOMMIT}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Windows Media playback through Moonlight and Firefox
 
+DEPRECATED=	Does not work with newer libxul
+EXPIRATION_DATE=	2013-09-01
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 GITCOMMIT=	35085a4
 
 USE_GMAKE=	yes
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoconf autoheader automake
 LIBTOOLIZE_ARGS=	--force --copy --automake
 AUTOMAKE_ARGS=	--gnu --add-missing --force --copy -Wno-portability

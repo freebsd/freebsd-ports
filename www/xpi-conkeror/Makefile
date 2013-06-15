@@ -18,7 +18,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A completely keyboard driven browser based on firefox
 
 WRKSRC=	${WRKDIR}/conkeror
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 
 BUILD_ID=echo -n `whoami`@`hostname`_`date +%s`
 

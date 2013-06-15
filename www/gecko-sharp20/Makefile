@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings to embed Mozilla
 
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 USE_GNOME=	gtksharp20
 LATEST_LINK=	gecko-sharp20
 GNU_CONFIGURE=	yes

@@ -36,7 +36,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/
 LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client -pthread
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=openvrml.so

@@ -21,7 +21,7 @@ MOZILLA_PLUGIN_DESC=	Mozilla plugin
 USE_XZ=		yes
 USES=        pathfix
 USE_GNOME=	gtk20
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"

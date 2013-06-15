@@ -60,7 +60,8 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if ${PORT_OPTIONS:MMOZILLA}
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
+BROKEN=		Does now work with newer libxul
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
 .endif
