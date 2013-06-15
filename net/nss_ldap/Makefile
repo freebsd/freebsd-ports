@@ -75,9 +75,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
 
 post-install:
-.if !exists(${PREFIX}/etc/nss_ldap.conf)
-	${CP} -p ${PREFIX}/etc/nss_ldap.conf.sample ${PREFIX}/etc/nss_ldap.conf
-.endif
+	@if [ ! -f ${PREFIX}/etc/nss_ldap.conf ]; then \
+		${CP} -pv ${PREFIX}/etc/nss_ldap.conf.sample ${PREFIX}/etc/nss_ldap.conf ; \
+	fi
 .if !defined(PACKAGE_BUILDING)
 	@${CAT} ${PKGMESSAGE}
 .endif
