@@ -1,0 +1,23 @@
+bin/ior_rand
+bin/iorate
+%%DATADIR%%/cycle
+%%DATADIR%%/devices.ior
+%%DATADIR%%/gen_dev.awk
+%%DATADIR%%/gen_devs
+%%DATADIR%%/gen_iops
+%%DATADIR%%/gen_iops.awk
+%%DATADIR%%/gen_stats
+%%DATADIR%%/gen_stats.awk
+%%DATADIR%%/gen_sum.awk
+%%DATADIR%%/gen_sums
+%%DATADIR%%/gen_totals
+%%DATADIR%%/gen_totals.awk
+%%DATADIR%%/patterns.ior
+%%DATADIR%%/run_ast
+%%DATADIR%%/run_test
+%%DATADIR%%/run_var
+%%DATADIR%%/tests-ast.ior
+%%DATADIR%%/tests-fx.ior
+%%DATADIR%%/tests-var.ior
+%%DATADIR%%/tests.ior
+@dirrm %%DATADIR%%
