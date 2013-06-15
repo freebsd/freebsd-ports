@@ -25,6 +25,7 @@ CONFLICTS=	vpopmail-devel-5.*
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+OPTIONS_SUB=	yes
 
 USERS=		vpopmail
 GROUPS=		vchkpw
@@ -38,6 +39,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${VPOPMAIL_DIR}/etc/tcp.smtp \
 		--enable-non-root-build \
+		--enable-logging=${LOGLEVEL} \
 		--enable-vpopuser=${USERS} \
 		--enable-vpopgroup=${GROUPS}
 
@@ -131,7 +133,51 @@ PORT_OPTIONS+=	SQL_LOG
 PORT_OPTIONS+=	SQL_LOG_TRIM
 .endif
 
-.include <bsd.port.pre.mk>
+DOMAIN_QUOTAS_CONFIGURE_ON=	--enable-domainquotas=y
+DOMAIN_QUOTAS_CONFIGURE_OFF=	--enable-domainquotas=n
+PASSWD_CONFIGURE_ON=		--enable-passwd
+MD5_PASSWORDS_CONFIGURE_OFF=	--disable-md5-passwords
+VALIAS_CONFIGURE_ON=		--enable-valias
+ROAMING_CONFIGURE_ON=		--enable-roaming-users
+CLEAR_PASSWD_CONFIGURE_OFF=	--disable-clear-passwd
+LEARN_PASSWORDS_CONFIGURE_ON=	--enable-learn-passwords
+LDAP_CONFIGURE_ON=		--enable-auth-module=ldap
+ORACLE_CONFIGURE_ON=		--enable-auth-module=oracle
+SYBASE_CONFIGURE_ON=		--enable-auth-module=sybase
+SINGLE_DOMAIN_CONFIGURE_ON=	--disable-many-domains
+IP_ALIAS_CONFIGURE_ON=		--enable-ip-alias-domains
+QMAIL_EXT_CONFIGURE_ON=		--enable-qmail-ext
+FILE_LOCKING_CONFIGURE_OFF=	--disable-file-locking
+FILE_SYNC_CONFIGURE_ON=		--enable-file-sync
+AUTH_LOG_CONFIGURE_OFF=		--disable-auth-logging
+USERS_BIG_DIR_CONFIGURE_OFF=	--disable-users-big-dir
+SEEKABLE_CONFIGURE_OFF=		--disable-make-seekable
+ROAMING_CONFIGURE_ON=		--enable-relay-clear-minutes=${RELAYCLEAR}
+
+MYSQL_CONFIGURE_ON=		--enable-auth-module=mysql \
+				--enable-incdir=${LOCALBASE}/include/mysql \
+				--enable-libdir=${LOCALBASE}/lib/mysql
+MYSQL_REPLICATION_CONFIGURE_ON=	--enable-mysql-replication
+MYSQL_LIMITS_CONFIGURE_ON=	--enable-mysql-limits
+
+PGSQL_CONFIGURE_ON=		--enable-auth-module=pgsql
+SQL_LOG_CONFIGURE_ON=		--enable-sql-logging
+ONCHANGE_SCRIPT_CONFIGURE_ON=	--enable-onchange-script
+MAILDROP_CONFIGURE_ON=		--enable-maildrop=y \
+				--enable-maildrop-prog=${LOCALBASE}/bin/maildrop
+MAILDROP_CONFIGURE_OFF=		--enable-maildrop=n
+
+MAILDROP_RUN_DEPENDS=		maildrop:${PORTSDIR}/${MAILDROP_PORT}
+MAILDROP_BUILD_DEPENDS=		maildrop:${PORTSDIR}/${MAILDROP_PORT}
+
+SPAMASSASSIN_CONFIGURE_ON=	--enable-spamassassin \
+				--enable-spamc-prog=${LOCALBASE}/bin/spamc \
+				--enable-spam-threshold=${SPAM_THRESHOLD}
+SPAMASSASSIN_BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+SPAMASSASSIN_RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+SPAMFOLDER_CONFIGURE_ON=	--enable-spam-junkfolder
+
+.include <bsd.port.options.mk>
 
 # PostgreSQL database configuration options
 #
@@ -212,7 +258,6 @@ USE_OPENLDAP=	yes
 .if ${PORT_OPTIONS:MLDAP_SASL}
 WANT_OPENLDAP_SASL=	yes
 .endif
-CONFIGURE_ARGS+=	--enable-auth-module=ldap
 LDAP_FILES=		${WRKSRC}/doc/README.ldap \
 			${WRKSRC}/ldap/nsswitch.conf \
 			${WRKSRC}/ldap/pam_ldap.conf \
@@ -220,23 +265,10 @@ LDAP_FILES=		${WRKSRC}/doc/README.ldap \
 			${WRKSRC}/ldap/qmailUser.schema \
 			${WRKSRC}/ldap/slapd.conf \
 			${WRKSRC}/ldap/vpopmail.ldif
-PLIST_SUB+=	LDAP=""
-.else
-PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-auth-module=mysql \
-			--enable-incdir=${LOCALBASE}/include/mysql \
-			--enable-libdir=${LOCALBASE}/lib/mysql
-PLIST_SUB+=	MYSQL=""
-.if ${PORT_OPTIONS:MMYSQL_REPLICATION}
-CONFIGURE_ARGS+=	--enable-mysql-replication
-.endif
-.if ${PORT_OPTIONS:MMYSQL_LIMITS}
-CONFIGURE_ARGS+=	--enable-mysql-limits
-.endif
 
 .if defined(WITH_MYSQL_USER) || defined(WITH_MYSQL_READ_USER) || defined(WITH_MYSQL_UPDATE_USER)
 BROKEN_MYSQL_PARAMS=	true
@@ -253,8 +285,6 @@ BROKEN_MYSQL_PARAMS=	true
 .if defined(BROKEN_MYSQL_PARAMS)
 BROKEN=	The MySQL connection parameters are no longer setup at compile time - please edit the ${VPOPMAIL_DIR}/etc/vpopmail.mysql file instead
 .endif
-.else
-PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(DEFAULT_DOMAIN)
@@ -267,41 +297,19 @@ BROKEN=		The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--enable-auth-module=pgsql
 .endif
 
-.if ${PORT_OPTIONS:MSQL_LOG}
-CONFIGURE_ARGS+=	--enable-sql-logging
 .if ${PORT_OPTIONS:MSQL_LOG_TRIM}
 EXTRA_PATCHES+=	${FILESDIR}/sql-remove-deleted.patch
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
 EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
 .endif
 
-.if ${PORT_OPTIONS:MONCHANGE_SCRIPT}
-CONFIGURE_ARGS+=	--enable-onchange-script
-.endif
-
 .if ${PORT_OPTIONS:MMAILDROP}
-CONFIGURE_ARGS+=	--enable-maildrop=y \
-			--enable-maildrop-prog=${LOCALBASE}/bin/maildrop
-BUILD_DEPENDS+=	maildrop:${PORTSDIR}/${MAILDROP_PORT}
-RUN_DEPENDS+=	maildrop:${PORTSDIR}/${MAILDROP_PORT}
 MAILDROP_FILES=		${WRKSRC}/maildrop/maildroprc.v1 \
 			${WRKSRC}/maildrop/maildroprc.v2
-PLIST_SUB+=	MAILDROP=""
-.else
-CONFIGURE_ARGS+=	--enable-maildrop=n
-PLIST_SUB+=	MAILDROP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOMAIN_QUOTAS}
-CONFIGURE_ARGS+=	--enable-domainquotas=y
-.else
-CONFIGURE_ARGS+=	--enable-domainquotas=n
 .endif
 
 .if empty(PORT_OPTIONS:MDOCS)
@@ -315,84 +323,7 @@ CFLAGS+=	-fPIC
 #
 # Some suggestions from Gabriel Ambuehl <gabriel_ambuehl@buz.ch>
 #
-
-CONFIGURE_ARGS+=	--enable-logging=${LOGLEVEL}
-
-.if ${PORT_OPTIONS:MPASSWD}
-CONFIGURE_ARGS+=	--enable-passwd
-.endif
-
-.if empty(PORT_OPTIONS:MMD5_PASSWORDS)
-CONFIGURE_ARGS+=	--disable-md5-passwords
-.endif
-
-.if ${PORT_OPTIONS:MVALIAS}
-CONFIGURE_ARGS+=	--enable-valias
-.endif
-
-.if ${PORT_OPTIONS:MROAMING}
-CONFIGURE_ARGS+=	--enable-roaming-users \
-			--enable-relay-clear-minutes=${RELAYCLEAR}
-.endif
-
-.if empty(PORT_OPTIONS:MCLEAR_PASSWD)
-CONFIGURE_ARGS+=	--disable-clear-passwd
-.endif
-
-.if ${PORT_OPTIONS:MLEARN_PASSWORDS}
-CONFIGURE_ARGS+=	--enable-learn-passwords
-.endif
-
-.if ${PORT_OPTIONS:MSYBASE}
-CONFIGURE_ARGS+=	--enable-auth-module=sybase
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-CONFIGURE_ARGS+=	--enable-auth-module=oracle
-.endif
-
-.if ${PORT_OPTIONS:MSINGLE_DOMAIN}
-CONFIGURE_ARGS+=	--disable-many-domains
-.endif
-
-.if ${PORT_OPTIONS:MIP_ALIAS}
-CONFIGURE_ARGS+=	--enable-ip-alias-domains
-.endif
-
-.if ${PORT_OPTIONS:MQMAIL_EXT}
-CONFIGURE_ARGS+=	--enable-qmail-ext
-.endif
-
-.if empty(PORT_OPTIONS:MFILE_LOCKING)
-CONFIGURE_ARGS+=	--disable-file-locking
-.endif
-
-.if ${PORT_OPTIONS:MFILE_SYNC}
-CONFIGURE_ARGS+=	--enable-file-sync
-.endif
-
-.if empty(PORT_OPTIONS:MAUTH_LOG)
-CONFIGURE_ARGS+=	--disable-auth-logging
-.endif
-
-.if empty(PORT_OPTIONS:MUSERS_BIG_DIR)
-CONFIGURE_ARGS+=	--disable-users-big-dir
-.endif
-
-.if empty(PORT_OPTIONS:MSEEKABLE)
-CONFIGURE_ARGS+=	--disable-make-seekable
-.endif
-
-.if ${PORT_OPTIONS:MSPAMASSASSIN}
-BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-CONFIGURE_ARGS+=	--enable-spamassassin \
-			--enable-spamc-prog=${LOCALBASE}/bin/spamc \
-			--enable-spam-threshold=${SPAM_THRESHOLD}
-.if ${PORT_OPTIONS:MSPAMFOLDER}
-CONFIGURE_ARGS+=	--enable-spam-junkfolder
-.endif
-.endif
-
+#
 DOCS=		README README.activedirectory README.filelocking \
 		README.ipaliasdomains README.ldap README.maildrop \
 		README.mysql \
@@ -515,4 +446,4 @@ post-install:
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${VPOPMAIL_DIR}/doc/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
