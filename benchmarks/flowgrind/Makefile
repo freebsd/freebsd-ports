@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	flowgrind
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://launchpad.net/flowgrind/trunk/${PORTNAME}-${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/flowgrind/trunk/${PORTNAME}-0.6/+download/
 
 MAINTAINER=	lars@eggert.org
 COMMENT=	Measure throughput and other metrics for TCP
