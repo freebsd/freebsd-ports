@@ -1,14 +1,11 @@
-# New ports collection makefile for:	oldrunner
-# Date created:				20 July 2010
-# Whom:					Frederic Culot <frederic@culot.org>
-#
+# Created by: Frederic Culot <frederic@culot.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oldrunner
 PORTVERSION=	20120131
 CATEGORIES=	games
-MASTER_SITES=	ftp://culot.org/culot/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	culot
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A textmode remake of Broderbund's LodeRunner
