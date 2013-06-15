@@ -215,6 +215,7 @@ include/wine/windows/devicetopology.h
 include/wine/windows/devicetopology.idl
 include/wine/windows/devpkey.h
 include/wine/windows/devpropdef.h
+include/wine/windows/difxapi.h
 include/wine/windows/digitalv.h
 include/wine/windows/dimm.h
 include/wine/windows/dimm.idl
@@ -605,6 +606,10 @@ include/wine/windows/traffic.h
 include/wine/windows/transact.h
 include/wine/windows/transact.idl
 include/wine/windows/twain.h
+include/wine/windows/txcoord.h
+include/wine/windows/txcoord.idl
+include/wine/windows/txdtc.h
+include/wine/windows/txdtc.idl
 include/wine/windows/udpmib.h
 include/wine/windows/uiautomation.h
 include/wine/windows/uiautomationclient.h
@@ -744,6 +749,7 @@ lib/wine/actxprxy.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
+lib/wine/api-ms-win-core-localregistry-l1-1-0.dll.so
 lib/wine/api-ms-win-core-winrt-error-l1-1-0.dll.so
 lib/wine/api-ms-win-core-winrt-string-l1-1-0.dll.so
 lib/wine/api-ms-win-downlevel-advapi32-l1-1-0.dll.so
@@ -902,6 +908,7 @@ lib/wine/fakedlls/actxprxy.dll
 lib/wine/fakedlls/advapi32.dll
 lib/wine/fakedlls/advpack.dll
 lib/wine/fakedlls/amstream.dll
+lib/wine/fakedlls/api-ms-win-core-localregistry-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-winrt-error-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-winrt-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l1-1-0.dll
