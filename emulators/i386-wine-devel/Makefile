@@ -32,8 +32,6 @@ post-install-script:
 		[ "$${i}" = "wine" ] || ${LN} -f ${PREFIX}/bin/wine ${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
-	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
-	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
 	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install dri libraries (internal libGL requirements)
 	${MKDIR} ${PREFIX}/lib32/.libGL/dri
@@ -41,6 +39,8 @@ post-install-script:
 		${INSTALL_DATA} $${i} ${PREFIX}/lib32/.libGL/dri/ ; \
 		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
 	done
+	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
+	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
 	# Find all libraries that are linked too (via ldd(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${PREFIX}/!g" | \
 	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | \

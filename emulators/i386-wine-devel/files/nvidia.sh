@@ -187,7 +187,7 @@ done
 umask 0333
 tar $EXTRACT_ARGS -xvf NVIDIA-FreeBSD-x86-${NV}.tar.gz \
   || terminate 3 "Failed to extract NVIDIA-FreeBSD-x86-${NV}.tar.gz"
-mkdir -p ${PREFIX}/lib32/.nvidia \
+mkdir -m 0755 -p ${PREFIX}/lib32/.nvidia \
   || terminate 9 "Failed to create .nvidia shadow directory"
 mv ${PREFIX}/lib32/libGL.so.1 ${PREFIX}/lib32/.nvidia/ \
   || terminate 10 "Failed to move libGL.so.1 to .nvidia/ shadow directory"
