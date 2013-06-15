@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gifsicle
-# Date created:			19 December 1998
-# Whom:				Brad Hendrickse <bradh@iafrica.com>
-#
+# Created by: Brad Hendrickse <bradh@iafrica.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.63
+PORTVERSION=	1.70
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -19,24 +15,27 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gifdiff.1 gifsicle.1
 
-.if !defined(HAVE_UNISYS_LICENSE)
-CONFIGURE_ARGS+=	--enable-ungif
-.endif
+PORTDOCS=	NEWS README
 
-.if defined(WITHOUT_X11)
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MX11}
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x --disable-gifview
-PLIST_SUB=	X11='@comment '
 .else
 USE_XORG=	x11
 MAN1+=		gifview.1
-PLIST_SUB=	X11=''
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
