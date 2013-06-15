@@ -26,13 +26,10 @@ MAN3=		tse3.3
 
 OPTIONS_DEFINE=	ARTS DOCS
 
-.include <bsd.port.options.mk>
+ARTS_LIB_DEPENDS=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
+ARTS_CONFIGURE_OFF=	--without-aRts
 
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
-.else
-CONFIGURE_ARGS+=	--without-aRts
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
