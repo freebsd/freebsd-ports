@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	xmj@chaot.net
-COMMENT=	A COADS compliant time parser
+COMMENT=	A COARDS compliant time parser
 
 LICENSE=	MIT
 
