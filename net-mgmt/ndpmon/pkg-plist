@@ -4,8 +4,14 @@ sbin/ndpmon
 %%DATADIR%%/demopipeprogram.pl.sample
 %%DATADIR%%/neighbor_list.dtd
 %%PY%%%%DATADIR%%/create_html_table.py
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/make-manuf
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/manuf.tmpl
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/wka.tmpl
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/manuf
 var/ndpmon/neighbor_list.xml
 @dirrmtry var/ndpmon
 @dirrmtry var
+@dirrmtry %%DATADIR%%/plugins/mac_resolv
+@dirrmtry %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
 @dirrmtry %%ETCDIR%%
