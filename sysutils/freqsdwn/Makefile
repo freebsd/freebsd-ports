@@ -23,36 +23,39 @@ SUB_LIST=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/freqship
+PORTDOCS=	README
 
 CONFDIR?=	${PREFIX}/etc/freqship
 
 pre-fetch::
-		@[ -f ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ] || (   \
-		${ECHO} "Please read and accept following LICENSE:";                \
-		${ECHO} "http://www.mitsubishielectric.co.jp/frequps/f_down/keiyaku.html"; \
-		${ECHO} "Please 'make do-fetch' manually, if you accept it.";       \
-		${FALSE})
+	@[ -f ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ] || (   \
+	${ECHO} "Please read and accept following LICENSE:";                \
+	${ECHO} "http://www.mitsubishielectric.co.jp/frequps/f_down/keiyaku.html"; \
+	${ECHO} "Please 'make do-fetch' manually, if you accept it.";       \
+	${FALSE})
 
 post-extract:
-		@${CP} ${WRKSRC}/common/freqship.org ${WRKSRC}/common/freqship.h
-		@${CP} ${FILESDIR}/UPSFILE ${WRKSRC}/initdata/
+	@${CP} ${WRKSRC}/common/freqship.org ${WRKSRC}/common/freqship.h
+	@${CP} ${FILESDIR}/UPSFILE ${WRKSRC}/initdata/
 .for dir in subdir daemon upsdown
-		@${CP} ${FILESDIR}/Makefile.${dir} ${WRKSRC}/${dir:subdir=}/Makefile
+	@${CP} ${FILESDIR}/Makefile.${dir} ${WRKSRC}/${dir:subdir=}/Makefile
 .endfor
 
 .include <bsd.port.options.mk>
 
 post-install:
-		@${MKDIR} ${CONFDIR}
+	@${MKDIR} ${CONFDIR}
 .for FILE in UPSFILE UPSSTAT PMSGERR PMSGOK DELAY
-		@${INSTALL_DATA} ${WRKSRC}/initdata/${FILE} ${PREFIX}/etc/freqship/${FILE}-dist
-		@[ -f ${PREFIX}/etc/freqship/${FILE} ] || \
-			${CP} ${WRKSRC}/initdata/${FILE} ${PREFIX}/etc/freqship/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/initdata/${FILE} ${PREFIX}/etc/freqship/${FILE}-dist
+	@[ -f ${PREFIX}/etc/freqship/${FILE} ] || \
+		${CP} ${WRKSRC}/initdata/${FILE} ${PREFIX}/etc/freqship/${FILE}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-		@${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-		@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
