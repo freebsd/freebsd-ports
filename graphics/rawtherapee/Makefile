@@ -61,7 +61,7 @@ post-patch:
 
 # paranoia: run rawtherapee --help to be sure it finds all its
 # shared libraries (this hinges on proper RPATH setting and propagation)
-post-build:
+post-install:
 	${PREFIX}/bin/rawtherapee --help 2>&1 \
 	| ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
 
