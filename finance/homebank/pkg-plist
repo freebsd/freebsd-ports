@@ -1,10 +1,6 @@
 bin/homebank
 share/application-registry/homebank.applications
 share/applications/homebank.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/datas/example.xhb
 %%DATADIR%%/datas/hb-categories-de.csv
 %%DATADIR%%/datas/hb-categories-en.csv
@@ -327,9 +323,4 @@ share/mime/packages/homebank.xml
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/datas
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
