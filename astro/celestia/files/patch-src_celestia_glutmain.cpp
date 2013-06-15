@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/celestia/glutmain.cpp.orig	Sat Nov  2 23:20:19 2002
 +++ src/celestia/glutmain.cpp	Tue Mar 16 12:47:46 2004
 @@ -511,8 +511,8 @@
