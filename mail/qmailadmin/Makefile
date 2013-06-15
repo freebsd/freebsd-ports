@@ -3,7 +3,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
@@ -77,6 +77,10 @@ SPAM_DETECTION_CONFIGURE_ON=	--enable-modify-spam=y
 SPAM_NEEDS_EMAIL_CONFIGURE_ENABLE=	spamcmd-needs-email
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIDX}
+EXTRA_PATCHES+=		${FILESDIR}/extra-ezmlm-idx7.patch
+.endif
 
 .if ${PORT_OPTIONS:MSPAM_DETECTION} && defined(SPAM_COMMAND)
 CONFIGURE_ARGS+=	--enable-spam-command="${SPAM_COMMAND}"
