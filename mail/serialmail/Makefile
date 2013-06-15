@@ -14,8 +14,10 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+UCSPI_SSL_RUN_DEPENDS=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
 
 USES=		qmail:run
+OPTIONS_SUB=	yes
 
 RESTRICTED=	Unsure of DJB license
 
@@ -40,12 +42,7 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 .if ${PORT_OPTIONS:MUCSPI_SSL}
-RUN_DEPENDS+=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
-
 MLINKS+=	maildirsmtp.1 maildirsmtps.1
-PLIST_SUB+=	UCSPI_SSL=""
-.else
-PLIST_SUB+=	UCSPI_SSL="@comment "
 .endif
 
 post-patch:
