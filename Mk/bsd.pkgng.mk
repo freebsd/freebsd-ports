@@ -21,6 +21,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
 						gio-querymodules \
 						ldconfig \
+						load-octave-pkg \
 						update-desktop-database update-mime-database \
 						gdk-pixbuf-query-loaders catalog.ports \
 						glib-compile-schemas
