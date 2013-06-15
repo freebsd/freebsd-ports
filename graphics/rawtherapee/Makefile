@@ -6,7 +6,7 @@ PORTVERSION=	4.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	A powerful RAW image processing application
 
 LICENSE=	GPLv3
