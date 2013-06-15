@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.11
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -24,6 +24,8 @@ MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
+# base GCC and clang in 9.1-RELEASE are insufficient:
+USE_GCC=	4.6+
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -39,6 +41,7 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
+MAN1=		rawtherapee.1
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
@@ -50,6 +53,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#<auto_ptr.h>#<memory>#g' \
 		${WRKSRC}/rtgui/darkframe.h ${WRKSRC}/rtgui/flatfield.h \
 		${WRKSRC}/rtgui/icmpanel.h
+	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.pre.mk>
 
