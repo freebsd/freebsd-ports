@@ -2,6 +2,7 @@
 
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
@@ -22,7 +23,8 @@ LIBOWFAT_PORT?=	devel/libowfat
 TINYLDAP_DATA?=	${PREFIX}/tinyldap/data
 SBINFILES=	acl addindex bindrequest dumpacls dumpidx idx2ldif parse \
 		tinyldap_debug tinyldap_standalone
-BINFILES=	ldapclient ldapclient_str ldapdelete md5password mysql2ldif
+BINFILES=	ldapclient ldapclient_str md5password mysql2ldif \
+		tinyldapdelete
 DOCFILES=	ACL FORMAT GETTING.STARTED README README.security RFCs \
 		THANKS TODO
 
@@ -33,6 +35,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tinyldap ${PREFIX}/libexec/
+	${CP} -p ${WRKSRC}/ldapdelete ${WRKSRC}/tinyldapdelete
 .for i in ${BINFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor

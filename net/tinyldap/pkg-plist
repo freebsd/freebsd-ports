@@ -1,6 +1,6 @@
 bin/ldapclient
 bin/ldapclient_str
-bin/ldapdelete
+bin/tinyldapdelete
 bin/md5password
 bin/mysql2ldif
 libexec/tinyldap
