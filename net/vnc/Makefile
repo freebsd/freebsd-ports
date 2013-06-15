@@ -3,7 +3,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://home.bluelife.at/ports/distfiles/${DIST_SUBDIR}/:vnc
 DISTNAME=	vnc-4_1_3-unixsrc
@@ -28,7 +28,7 @@ PLIST=		${WRKDIR}/pkg-plist
 CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]*
 
 OPTIONS_DEFINE=	SERVER
-OPTIONS_DEFINE=	SERVER
+OPTIONS_DEFAULT=	SERVER
 SERVER_DESC=	Install VNC server components
 
 MAN1=		vncviewer.1 \
