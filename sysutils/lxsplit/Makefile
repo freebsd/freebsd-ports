@@ -3,7 +3,7 @@
 
 PORTNAME=	lxsplit
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	Simple program to split or join files
 LICENSE=	GPLv2
 
 PLIST_FILES=	bin/lxsplit
-PORTDOCS=	COPYING ChangeLog README
+PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
