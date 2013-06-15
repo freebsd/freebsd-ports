@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-youtube-viewer
 PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nemysis@gmx.ch
@@ -35,7 +35,7 @@ GH_COMMIT=	c26d9a7
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/WWW-YoutubeViewer
 
 CONFIGURE_ARGS+=${DATADIR}
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.14+
 
 MAN3=		WWW::YoutubeViewer::RegularExpressions.3 \
 		WWW::YoutubeViewer.3 \
@@ -78,16 +78,7 @@ PLIST_SUB+=	GTK2="@comment "
 RUN_DEPENDS+=	${LOCALBASE}/bin/gcap:${PORTSDIR}/multimedia/gcap
 .endif
 
-post-extract:
-.if ! exists(${LOCALBASE}/bin/per5.16.2)
-	@${ECHO_CMD}
-	@${ECHO_MSG} "GTK Youtube Viewer 3.07 requires lang/perl5.16 to use CLI version"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please read /usr/ports/UPDATING"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Hit ^c now if you don't wish to do this."
-	@${ECHO_MSG}
-.endif
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -n '1,/create_build_script()/p' \
@@ -97,6 +88,13 @@ post-patch:
 			${WRKSRC}/Build.PL
 	@cd ${WRKSRC}/bin && ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		gtk-youtube-viewer youtube-viewer
+.if ${PERL_LEVEL} <= 501600
+	@${CP} ${FILESDIR}/yv_5.16_to_5.10.pl ${WRKSRC}
+	@${CP} ${WRKSRC}/bin/youtube-viewer ${WRKSRC}/bin/youtube-viewer-2patch
+	@${PERL} \
+	${WRKSRC}/yv_5.16_to_5.10.pl ${WRKSRC}/bin/youtube-viewer-2patch > ${WRKSRC}/bin/youtube-viewer
+	@${RM} ${WRKSRC}/bin/youtube-viewer-2patch
+.endif
 
 .if ! ${PORT_OPTIONS:MCLI}
 	@${REINPLACE_CMD} -e "s|'bin/youtube-viewer',||" \
@@ -123,4 +121,4 @@ post-install:
 regression-test: build
 	cd ${WRKSRC} && ${PERL} ./Build test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

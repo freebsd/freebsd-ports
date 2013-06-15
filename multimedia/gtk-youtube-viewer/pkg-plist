@@ -20,13 +20,4 @@
 %%GTK2%%@dirrm %%DATADIR%%
 %%GTK2%%@dirrmtry share/applications
 %%GTK2%%@dirrm %%SITE_PERL%%/mach/auto/WWW/YoutubeViewer
-%%GTK2%%@dirrm %%SITE_PERL%%/mach/auto/WWW
-%%GTK2%%@dirrm %%SITE_PERL%%/mach/auto
-%%GTK2%%@dirrm %%SITE_PERL%%/mach
 @dirrm %%SITE_PERL%%/WWW/YoutubeViewer
-@dirrm %%SITE_PERL%%/WWW
-@dirrm %%SITE_PERL%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5/5.14.2/man
-@dirrmtry lib/perl5/5.14.2
-@dirrmtry lib/perl5
