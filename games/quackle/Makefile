@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quackle
-# Date created:			15 Feb 2008
-# Whom:				shoemaker@bluebottle.com (Jonathan Shoemaker)
-#
+# Created by: shoemaker@bluebottle.com (Jonathan Shoemaker)
 # $FreeBSD$
-#
 
 PORTNAME=	quackle
 PORTVERSION=	0.97
@@ -14,7 +10,7 @@ MASTER_SITES=	http://people.csail.mit.edu/jasonkb/quackle/downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	A scrabble-like word game utilizing qt4
+COMMENT=	Scrabble-like word game utilizing Qt4
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -22,8 +18,9 @@ LICENSE_COMB=	dual
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/quacker
 
-USE_QT4=	corelib gui moc_build qmake_build
 USE_GMAKE=	yes
+USE_GCC=	any
+USE_QT4=	gui moc_build qmake_build
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
