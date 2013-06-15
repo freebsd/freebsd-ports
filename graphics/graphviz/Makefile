@@ -150,7 +150,7 @@ PLIST_SUB+=		WITH_XPM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
+USES+=			gettext
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
