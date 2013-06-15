@@ -1,0 +1,10 @@
+
+*****************************************************************
+*                                                               *
+*  To update to local MAC database run the following commands:  *
+*                                                               *
+*  cd /usr/local/share/ndpmon/plugins/mac_resolv/               *
+*  ./make-manuf                                                 *
+*  /usr/local/etc/rc.d/ndpmonitor restart                       *
+*                                                               *
+*****************************************************************

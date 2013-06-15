@@ -3,7 +3,7 @@
 
 PORTNAME=	ndpmon
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.4/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ OPTIONS_DEFINE=		PY4SUITE MACRESOLV
 OPTIONS_DEFAULT=	
 
 PY4SUITE_DESC=		Depend on py-4suite-xml (for generating HTML)
-MACRESOLV_DESC=		Enable MAC Manufacturer Resolution
+MACRESOLV_DESC=		Enable MAC Manufacturer Resolution (use p5-libwww)
 
 .include <bsd.port.options.mk>
 
@@ -45,8 +45,11 @@ PORTDOCS=	INSTALL README
 
 .if ${PORT_OPTIONS:MMACRESOLV}
 CONFIGURE_ARGS+=--enable-mac-resolv
+BUILD_DEPENDS+=	p5-libwww>=6.05:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS+=	p5-libwww>=6.05:${PORTSDIR}/www/p5-libwww
+PLIST_SUB+=	MACRESOLV=""
 .else
-CONFIGURE_ARGS+=--disable-mac-resolv
+PLIST_SUB+=	MACRESOLV="@comment "
 .endif
 
 post-patch:
@@ -69,6 +72,12 @@ do-install:
 .if ${PORT_OPTIONS:MPY4SUITE}
 	${INSTALL_SCRIPT} ${WRKSRC}/create_html_table.py ${DATADIR}
 .endif
+.if ${PORT_OPTIONS:MMACRESOLV}
+	${MKDIR} ${DATADIR}/plugins/mac_resolv
+	${INSTALL_SCRIPT} ${WRKSRC}/plugins/mac_resolv/make-manuf ${DATADIR}/plugins/mac_resolv
+	${INSTALL_DATA} ${WRKSRC}/plugins/mac_resolv/*.tmpl ${DATADIR}/plugins/mac_resolv
+	${INSTALL_DATA} ${WRKSRC}/plugins/mac_resolv/manuf ${DATADIR}/plugins/mac_resolv
+.endif
 
 	${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/config_ndpmon.xml ${ETCDIR}/config_ndpmon.xml-dist
@@ -80,6 +89,9 @@ do-install:
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MMACRESOLV}
+	@${CAT} ${PKGMESSAGE}.MACRESOLV
 .endif
 
 .include <bsd.port.mk>
