@@ -25,9 +25,8 @@ INSTALLS_ICONS=	yes
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgsf
 
 OPTIONS_SINGLE=		BACKEND
-OPTIONS_SINGLE_BACKEND=	GTKHTML LIBXUL WEBKIT
+OPTIONS_SINGLE_BACKEND=	GTKHTML WEBKIT
 GTKHTML_DESC=		Use gtkhtml for rendering
-LIBXUL_DESC=		Use xulrunner for rendering
 WEBKIT_DESC=		Use webkit for rendering (preferred)
 
 OPTIONS_DEFAULT=	WEBKIT
@@ -37,11 +36,6 @@ OPTIONS_DEFAULT=	WEBKIT
 .if ${PORT_OPTIONS:MWEBKIT}
 WAF_CONFIGURE_ARGS=	--backend=webkit
 LIB_DEPENDS=		webkitgtk:${PORTSDIR}/www/webkit-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MLIBXUL}
-WAF_CONFIGURE_ARGS=	--backend=xulrunner
-USE_GECKO=		libxul19
 .endif
 
 .if ${PORT_OPTIONS:MGTKHTML}

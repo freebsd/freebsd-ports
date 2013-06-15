@@ -4387,3 +4387,4 @@ devel/linuxthreads||2013-06-10|Has expired: Broken for more than 6 month
 mail/claws-mail-gtkhtml2_viewer|mail/claws-mail-fancy|2013-06-11|Has expired: No longer maintained, please use mail/claws-mail-fancy instead
 mail/claws-mail-cachesaver||2013-06-11|Has expired: No longer maintained by Claws Mail team
 deskutils/contacts||2013-06-13|Has expired: upstream project discontinued for years, upstream sources are gone
+www/libxul19|www/libxul|2013-06-15|Has bee vulnerable for a long time, unsupported upstream

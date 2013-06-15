@@ -15,7 +15,12 @@ DISTNAME=	gwt-dev-plugin-${PORTVERSION}-partial
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Web Toolkit Developer Plugin for Firefox
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul19
+BROKEN=		Does not build
+
+DEPRECATED=	Requires an ancient version of Firefox to build
+EXPIRATION_DATE=	2013-07-15
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 
 ONLY_FOR_ARCHS=	amd64 i386
 

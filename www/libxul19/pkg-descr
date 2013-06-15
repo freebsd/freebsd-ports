@@ -1,7 +1,0 @@
-Mozilla runtime package that can be used to bootstrap XUL+XPCOM applications
-that are as rich as Firefox and Thunderbird. It will provide mechanisms for
-installing, upgrading, and uninstalling these applications. XULRunner will
-also provide libxul, a solution which allows the embedding of Mozilla
-technologies in other projects and products.
-
-WWW: http://developer.mozilla.org/en/docs/XULRunner

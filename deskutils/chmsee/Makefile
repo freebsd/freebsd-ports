@@ -10,13 +10,18 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
+BROKEN=		Does not work with newer libxul
+
+DEPRECATED=	Does not work with newer libxul
+EXPIRATION_DATE=	2013-09-01
+
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 LICENSE=	GPLv2
 
 USE_GNOME=	gnomehier libglade2
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 USES=		cmake gettext
 CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=TRUE
 INSTALLS_ICONS=	yes

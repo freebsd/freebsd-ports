@@ -25,7 +25,7 @@ CACHE_DESC=	Enable caching of remote media to local storage
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	glib20
-USE_GECKO=	libxul libxul19
+USE_GECKO=	libxul
 USE_WEBPLUGINS=	native
 
 WEBPLUGINS_FILES=	${PORTNAME}.so

@@ -12,12 +12,18 @@ PKGNAMESUFFIX=	-mozjs
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla JavaScript plug-in for libproxy
 
+BROKEN=		Does not work with newer libxul
+
+DEPRECATED=	Does not work with newer libxul
+EXPIRATION_DATE=	2013-09-01
+
+
 LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 
 LIBPROXY_SLAVE=	mozjs
 

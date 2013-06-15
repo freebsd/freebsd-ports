@@ -45,7 +45,7 @@ post-patch:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXULRUNNER}
-USE_GECKO=	libxul19
+USE_GECKO=	libxul
 CONFIGURE_ARGS+=	--with-javascript=xulrunner
 .else
 CONFIGURE_ARGS+=	--with-javascript=none
