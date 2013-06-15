@@ -26,6 +26,7 @@
     SUBDIR += httperf
     SUBDIR += imb
     SUBDIR += interbench
+    SUBDIR += iorate
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += iperf
