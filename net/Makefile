@@ -931,6 +931,7 @@
     SUBDIR += py-port-for
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
+    SUBDIR += py-pysphere
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
     SUBDIR += py-s3cmd
