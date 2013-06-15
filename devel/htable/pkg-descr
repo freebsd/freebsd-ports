@@ -3,4 +3,4 @@ inspired by the implementations of spray and red-black trees found in
 *BSD kernels. To use it, you only need to copy the header file
 "htable.h" into your project.
 
-WWW:	http://culot.org/public/Code/htable.html
+WWW: http://culot.org/public/Code/htable.html
