@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/coards/__init__.py
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/coards/__init__.pyc
+%%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/coards/__init__.pyo
+bin/coards
+@dirrmtry %%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/coards
+@dirrmtry %%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg/EGG-INFO
+@dirrmtry %%PYTHON_SITELIBDIR%%/coards-1.0.5-py2.7.egg

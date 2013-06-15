@@ -152,6 +152,7 @@
     SUBDIR += psi3
     SUBDIR += psychopy
     SUBDIR += py-DendroPy
+    SUBDIR += py-coards
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
     SUBDIR += py-mdp
