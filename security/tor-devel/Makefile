@@ -30,7 +30,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.spline.de/dist/ \
 		http://tor.taiga-san.net/dist/ \
 		http://tor.vesta.nu/dist/ \
-		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
 		https://torproject.antagonism.org/dist/ \
 		https://torproject.crypto.is/dist/ \
