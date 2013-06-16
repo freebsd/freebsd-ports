@@ -6,7 +6,7 @@
          return os.path.join(sys.prefix, "share", "electrum")
 +    elif (sys.platform.startswith("dragonfly") or
 +          sys.platform.startswith("freebsd")):
-+	return os.path.join(sys.prefix, "share", "electrum")
++	return os.path.join('%%PREFIX%%', "share", "electrum")
      elif (platform.system() == "Darwin" or
 -          platform.system() == "DragonFly" or
  	  platform.system() == "NetBSD"):
