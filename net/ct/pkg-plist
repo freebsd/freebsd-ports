@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 v6eval/ct/00README.ct
 v6eval/ct/CHANGELOG.ct
-v6eval/ct/COPYRIGHT
 v6eval/ct/INSTALL.ct
 v6eval/ct/Makefile
 v6eval/ct/Makefile.inc
