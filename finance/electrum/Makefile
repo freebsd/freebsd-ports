@@ -21,6 +21,7 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Electrum
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/setup.py ${WRKSRC}/lib/util.py
 
 .include <bsd.port.mk>

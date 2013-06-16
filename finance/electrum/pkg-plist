@@ -110,9 +110,6 @@ bin/electrum
 %%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/electrum_plugins
-@dirrm %%PYTHON_SITELIBDIR%%/electrum_gui
-@dirrm %%PYTHON_SITELIBDIR%%/electrum
 share/app-install/icons/electrum.png
 share/applications/electrum.desktop
 share/electrum/README
@@ -138,10 +135,13 @@ share/locale/sl/LC_MESSAGES/electrum.mo
 share/locale/ta/LC_MESSAGES/electrum.mo
 share/locale/vi/LC_MESSAGES/electrum.mo
 share/locale/zh/LC_MESSAGES/electrum.mo
+@dirrm share/electrum/sahara
+@dirrm share/electrum/dark
+@dirrm share/electrum/cleanlook
+@dirrm share/electrum
+@dirrmtry share/applications
 @dirrmtry share/app-install/icons
 @dirrmtry share/app-install
-@dirrmtry share/applications
-@dirrm share/electrum/cleanlook
-@dirrm share/electrum/dark
-@dirrm share/electrum/sahara
-@dirrm share/electrum
+@dirrm %%PYTHON_SITELIBDIR%%/electrum_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/electrum_gui
+@dirrm %%PYTHON_SITELIBDIR%%/electrum
