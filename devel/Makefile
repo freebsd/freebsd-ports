@@ -915,6 +915,7 @@
     SUBDIR += kscope
     SUBDIR += kyra
     SUBDIR += kyua
+    SUBDIR += kyua-atf-compat
     SUBDIR += kyua-testers
     SUBDIR += lasi
     SUBDIR += lcov
