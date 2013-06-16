@@ -10,21 +10,36 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arkanoid/Breakout clone with pretty graphics
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 MAKE_ENV=	DATADIR=${DATADIR}/
+USE_GMAKE=	yes
+USE_DOS2UNIX=	main.cpp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/${PORTNAME}
+
 PORTDOCS=	*
+PORTDATA=	*
 
 .include <bsd.port.options.mk>
 
+do-build:
+	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --cflags --libs` \
+		-lGL -lGLU -lSDL_image -lSDL_ttf -lSDL_mixer \
+		-DDATADIR="\"${DATADIR}/\"" main.cpp -o ${PORTNAME}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdl-ball ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/themes && ${COPYTREE_SHARE} . ${DATADIR}/
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
