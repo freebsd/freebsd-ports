@@ -3,6 +3,7 @@
 
 PORTNAME=	v6eval
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/v6eval/
