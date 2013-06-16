@@ -1,9 +1,5 @@
-# New ports collection makefile for:	concentration
-# Date created:				10 Nov 2005
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	concentration
 PORTVERSION=	1.2
@@ -23,8 +19,5 @@ CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 MAN6=		concentration.6
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-std=gnu99 ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
