@@ -1,0 +1,29 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MR/Tarantool/.packlist
+%%SITE_PERL%%/MR/Pending.pm
+%%SITE_PERL%%/MR/IProto.pm
+%%SITE_PERL%%/MR/Tarantool/Box/Singleton.pm
+%%SITE_PERL%%/MR/Tarantool/Box.pm
+%%SITE_PERL%%/MR/IProto/Connection.pm
+%%SITE_PERL%%/MR/IProto/Message.pm
+%%SITE_PERL%%/MR/IProto/NoResponse.pm
+%%SITE_PERL%%/MR/IProto/Role/Debuggable.pm
+%%SITE_PERL%%/MR/IProto/Cluster.pm
+%%SITE_PERL%%/MR/IProto/Cluster/Server.pm
+%%SITE_PERL%%/MR/IProto/Response.pm
+%%SITE_PERL%%/MR/IProto/Server/Connection.pm
+%%SITE_PERL%%/MR/IProto/Server.pm
+%%SITE_PERL%%/MR/IProto/Error.pm
+%%SITE_PERL%%/MR/IProto/Request.pm
+%%SITE_PERL%%/MR/IProto/Connection/Async.pm
+%%SITE_PERL%%/MR/IProto/Connection/Sync.pm
+%%SITE_PERL%%/MR/SilverBox.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MR/Tarantool
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MR
+@dirrm %%SITE_PERL%%/MR/Tarantool/Box
+@dirrm %%SITE_PERL%%/MR/Tarantool
+@dirrm %%SITE_PERL%%/MR/IProto/Server
+@dirrm %%SITE_PERL%%/MR/IProto/Role
+@dirrm %%SITE_PERL%%/MR/IProto/Connection
+@dirrm %%SITE_PERL%%/MR/IProto/Cluster
+@dirrm %%SITE_PERL%%/MR/IProto
+@dirrm %%SITE_PERL%%/MR
