@@ -1,6 +1,8 @@
 bin/udcli
 lib/libudis86.a
 lib/libudis86.la
+lib/libudis86.so
+lib/libudis86.so.0
 include/udis86.h
 include/libudis86/extern.h
 include/libudis86/itab.h
