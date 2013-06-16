@@ -1,9 +1,8 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdata
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.18
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,25 +27,16 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-# avoid warning with Python > 2.5
-.if ${PYTHON_REL} > 250
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_atom-mock_service.py \
-		${FILESDIR}/extra-patch-src_gdata_tlslite-mathls.py \
-		${FILESDIR}/extra-patch-src_gdata_tlslite-messages.py \
-		${FILESDIR}/extra-patch-src_gdata_tlslite-TLSRecordLayer.py \
-		${FILESDIR}/extra-patch-src_gdata_tlslite_utils-jython_compat.py
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MM2CRYPTO}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.20:${PORTSDIR}/security/py-m2crypto
 .endif
 .if ${PORT_OPTIONS:MPYCRYPTO}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 .endif
 .if ${PORT_OPTIONS:MGMPY}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gmpy.so:${PORTSDIR}/math/py-gmpy
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy
 .endif
 
 post-install:
@@ -55,4 +45,4 @@ post-install:
 	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
