@@ -914,6 +914,7 @@
     SUBDIR += kprof
     SUBDIR += kscope
     SUBDIR += kyra
+    SUBDIR += kyua
     SUBDIR += kyua-testers
     SUBDIR += lasi
     SUBDIR += lcov
