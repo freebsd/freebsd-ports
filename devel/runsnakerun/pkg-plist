@@ -1,0 +1,47 @@
+bin/runsnake
+bin/runsnakemem
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/_meliaejson.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/_meliaejson.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/_meliaejson.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/homedirectory.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/homedirectory.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/homedirectory.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/hotshotreader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/hotshotreader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/hotshotreader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/listviews.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/listviews.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/listviews.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/macshim.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/macshim.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/macshim.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/meliaeadapter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/meliaeadapter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/meliaeadapter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/meliaeloader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/meliaeloader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/meliaeloader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/pstatsadapter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/pstatsadapter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/pstatsadapter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/pstatsloader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/pstatsloader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/pstatsloader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/runsnake.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/runsnake.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/runsnake.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
