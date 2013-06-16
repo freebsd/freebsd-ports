@@ -1,7 +1,0 @@
-include/tpl.h
-lib/libtpl.la
-lib/libtpl.so.0
-lib/libtpl.so
-lib/libtpl.a
-%%PORTDOCS%%%%DOCSDIR%%/userguide.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
