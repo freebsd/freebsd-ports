@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  slurpie
-# Date created:			  Sun Feb 12, 2000
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	slurpie
 PORTVERSION=	2.0b
@@ -20,6 +15,8 @@ COMMENT=	A passwd file cracker (supports distributed nodes)
 PLIST_FILES=	sbin/slurp sbin/slurpie
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 # Fix for GCC 4.2
 	@${REINPLACE_CMD} -e \
@@ -28,7 +25,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slurp* ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
