@@ -3594,7 +3594,7 @@ do-patch:
 	(cd ${_DISTDIR} ; \
 	for i  in ${_PATCHFILES}; do \
 		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			@${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
+			${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
 		fi ; \
 		case $$i in \
 		*.Z|*.gz) ${GZCAT} $$i ;; \
