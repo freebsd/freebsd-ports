@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GOOGLE_CODE
@@ -13,8 +13,15 @@ COMMENT=	Go programming language
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
-		bison:${PORTSDIR}/devel/bison
+USES=		shebangfix
+SHEBANG_LANG=	sh
+SHEBANG_FILES=	${WRKSRC}/src/*.bash \
+		${WRKSRC}/doc/progs/run \
+		${WRKSRC}/doc/articles/wiki/*.bash \
+		${WRKSRC}/test/bench/shootout/timing.sh
+
+sh_OLD_CMD=	${SETENV} bash
+sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64
@@ -35,18 +42,17 @@ GOOBJ=6
 PLIST_SUB+=	ENAM=""
 .endif
 
-PLIST_SUB+=	ARCH=${GOARCH}		\
+PLIST_SUB+=	ARCH=${GOARCH} \
 		GOOBJ=${GOOBJ}
 
+post-patch:
+	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
+
 do-build:
-	(cd ${WRKSRC}/src &&			\
-		GOTRACEBACK=2			\
-		GOROOT=${WRKSRC}		\
-		GOROOT_FINAL=${PREFIX}/go	\
-		GOBIN=				\
-		GOARCH=${GOARCH}		\
-		GOOS=${OPSYS:L}			\
-		bash make.bash)
+	cd ${WRKSRC}/src && \
+		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
+		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:L} \
+		${SH} make.bash
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
@@ -58,6 +64,6 @@ do-install:
 .endfor
 
 regression-test: build
-	(cd ${WRKSRC}/src && GOROOT=${WRKSRC} ./run.bash --no-rebuild --banner)
+	cd ${WRKSRC}/src && GOROOT=${WRKSRC} PATH=${WRKSRC}/bin:${PATH} ${SH} run.bash --no-rebuild --banner
 
 .include <bsd.port.post.mk>
