@@ -54,7 +54,7 @@ post-patch:
 		${WRKSRC}/src/netsurf-${PORTVERSION}/gtk/Makefile.target
 	@${REINPLACE_CMD} -e '/ifeq.*clang/s/word 1/filter clang/' \
 		${WRKSRC}/src/buildsystem-1.0/makefiles/Makefile.tools
-	@${REINPLACE_CMD} 's| -g||' \
+	@${REINPLACE_CMD} -e 's| -g|| ; s|flex|${LOCALBASE}/bin/&|' \
 		${WRKSRC}/src/nsgenbind-0.0.1/src/Makefile
 
 do-configure:
