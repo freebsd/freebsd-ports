@@ -10,6 +10,9 @@ MASTER_SITES=	SF/passive/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passively detect network assets
 
+CFLAGS+=	-Wno-return-type
+USE_CSTD=	gnu89
+
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
