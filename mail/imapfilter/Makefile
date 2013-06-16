@@ -1,14 +1,12 @@
-# New ports collection makefile for:	imapfilter
-# Date created:        28 July 2002
-# Whom:                Lefteris Chatzibarbas <lefcha@hellug.gr>
-#
+# Created by: Lefteris Chatzibarbas <lefcha@hellug.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 #PORTREVISION=	0
 CATEGORIES=	mail
+MASTER_SITES=	http://www.gegenunendlich.de/distfiles/ \
+		GH
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
@@ -17,13 +15,14 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_LUA=	5.1
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lefcha
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	7593368
+GH_COMMIT=	ef03d60
 
 MAN1=		imapfilter.1
 MAN5=		imapfilter_config.5
