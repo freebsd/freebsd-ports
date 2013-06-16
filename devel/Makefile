@@ -693,6 +693,7 @@
     SUBDIR += hs-bsd-sysctl
     SUBDIR += hs-byteorder
     SUBDIR += hs-bytestring-nums
+    SUBDIR += hs-bytestring-show
     SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
     SUBDIR += hs-cereal
