@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.2.0p3
-PORTREVISION=	1
+PORTVERSION=	1.2.2p2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/ \
 		LOCAL/ohauer
