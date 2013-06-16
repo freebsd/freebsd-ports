@@ -13,12 +13,11 @@ lib/cgit/filters/html-converters/rst2html
 lib/cgit/filters/html-converters/txt2html
 lib/cgit/filters/syntax-highlighting.py
 lib/cgit/filters/syntax-highlighting.sh
-lib/cgit/filters/about-formatting.sh
-@dirrm lib/cgit/filters/html-converters/resources/
-@dirrm lib/cgit/filters/html-converters/
+@dirrm lib/cgit/filters/html-converters/resources
+@dirrm lib/cgit/filters/html-converters
 @dirrm lib/cgit/filters
 @dirrm lib/cgit
 @dirrm %%WWWDIR%%
 @exec mkdir -p /var/cache/%%PORTNAME%%
-@dirrmtry /var/cache/%%PORTNAME%%
-@dirrmtry /var/cache
+@exec chown %%WWWOWN%%:%%WWWGRP%% /var/cache/%%PORTNAME%%
+@unexec rmdir /var/cache/%%PORTNAME%% 2>/dev/null || true
