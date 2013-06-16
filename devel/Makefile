@@ -914,6 +914,7 @@
     SUBDIR += kprof
     SUBDIR += kscope
     SUBDIR += kyra
+    SUBDIR += kyua-testers
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
