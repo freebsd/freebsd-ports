@@ -65,7 +65,7 @@ post-install:
 	${PYTHON_CMD} -m py_compile ${SITE_PY}
 	${PYTHON_CMD} -OO -m py_compile ${SITE_PY}
 	${CP} ${EASYINSTALL_PTH} ${EASYINSTALL_PTH}.dist
-	${LN} ${EASYINSTALL_PTH}.dist ${PYTHON_SITELIBDIR}/distribute.pth
+	${LN} -sf ${EASYINSTALL_PTH}.dist ${PYTHON_SITELIBDIR}/distribute.pth
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	if [ -f ${PKGMESSAGE} ]; then ${CAT} ${PKGMESSAGE}; fi
 
