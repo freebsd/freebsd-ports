@@ -1,0 +1,11 @@
+--- xkb/Makefile.in.orig	2013-06-16 11:16:48.000000000 +0000
++++ xkb/Makefile.in	2013-06-16 11:17:08.000000000 +0000
+@@ -816,7 +816,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_xkbcompiledDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-am
+ 
