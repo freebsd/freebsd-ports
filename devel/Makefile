@@ -4221,6 +4221,7 @@
     SUBDIR += rubygem-zoom
     SUBDIR += rudeconfig
     SUBDIR += rudiments
+    SUBDIR += runsnakerun
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += sabre
