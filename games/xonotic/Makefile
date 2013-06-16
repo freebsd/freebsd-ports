@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xonotic
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	games
-MASTER_SITES=	http://hagger.rbi.informatik.uni-frankfurt.de/xonotic/ \
-		http://dl.xonotic.org/
+MASTER_SITES=	http://nl.dl.xonotic.org/ \
+		http://mirror.bitmissile.com/xonotic/releases/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
@@ -28,6 +27,7 @@ MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \
 MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	#
 BINARIES=	#
+USE_GCC=	4.6+
 
 OPTIONS_DEFAULT=CLIENT DEDICATED
 OPTIONS_MULTI=	COMPONENTS
