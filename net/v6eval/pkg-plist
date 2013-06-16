@@ -126,15 +126,132 @@ v6eval/doc/00README
 v6eval/doc/00README.v6eval
 v6eval/doc/CHANGELOG
 v6eval/doc/CHANGELOG.v6eval
-v6eval/doc/COPYRIGHT
 v6eval/doc/INSTALL
 v6eval/doc/INSTALL.v6eval
+v6eval/doc/INSTALL.dummies
 v6eval/etc/nut.def.sample
 v6eval/etc/tn.def.sample
 v6eval/include/std.def
 v6eval/include/stdaddr.def
 v6eval/include/stdconst.def
 v6eval/include/stdpacket.def
+v6eval/sample/64tunnel_ll_ping/packet.def
+v6eval/sample/64tunnel_ll_ping/ping.html
+v6eval/sample/64tunnel_ll_ping/ping.seq
+v6eval/sample/HBHoptAfterDstOpt/HBHoptAfterDstOpt.html
+v6eval/sample/HBHoptAfterDstOpt/HBHoptAfterDstOpt.seq
+v6eval/sample/HBHoptAfterDstOpt/packet.def
+v6eval/sample/INDEX
+v6eval/sample/Makefile
+v6eval/sample/jumbo/jumbo.html
+v6eval/sample/jumbo/jumbo.seq
+v6eval/sample/jumbo/packet.def
+v6eval/sample/mld-general/mld-general.html
+v6eval/sample/mld-general/mld-general.seq
+v6eval/sample/mld-general/packet.def
+v6eval/sample/na_w_mtu/na_w_mtu.html
+v6eval/sample/na_w_mtu/na_w_mtu.seq
+v6eval/sample/na_w_mtu/packet.def
+v6eval/sample/ping/packet.def
+v6eval/sample/ping/ping.html
+v6eval/sample/ping/ping.seq
+v6eval/sample/ping4/packet.def
+v6eval/sample/ping4/ping4.html
+v6eval/sample/ping4/ping4.seq
+v6eval/sample/ping_frag/packet.def
+v6eval/sample/ping_frag/ping_frag.html
+v6eval/sample/ping_frag/ping_frag.seq
+v6eval/sample/ping_from_many_host/packet.def
+v6eval/sample/ping_from_many_host/ping.html
+v6eval/sample/ping_from_many_host/ping.seq
+v6eval/sample/ping_glosite/packet.def
+v6eval/sample/ping_glosite/ping_glosite.html
+v6eval/sample/ping_glosite/ping_glosite.seq
+v6eval/sample/ping_w_ah/packet.def
+v6eval/sample/ping_w_ah/ping.html
+v6eval/sample/ping_w_ah/ping.seq
+v6eval/sample/ping_w_ah/setkey.cf
+v6eval/sample/ping_w_ahesp/packet.def
+v6eval/sample/ping_w_ahesp/ping.html
+v6eval/sample/ping_w_ahesp/ping.seq
+v6eval/sample/ping_w_ahesp/setkey.cf
+v6eval/sample/ping_w_esp/packet.def
+v6eval/sample/ping_w_esp/ping.html
+v6eval/sample/ping_w_esp/ping.seq
+v6eval/sample/ping_w_esp/setkey.cf
+v6eval/sample/ping_w_espicv/packet.def
+v6eval/sample/ping_w_espicv/ping.html
+v6eval/sample/ping_w_espicv/ping.seq
+v6eval/sample/ping_w_espicv/setkey.cf
+v6eval/sample/ping_w_espicvespicv/packet.def
+v6eval/sample/ping_w_espicvespicv/ping.html
+v6eval/sample/ping_w_espicvespicv/ping.seq
+v6eval/sample/ping_w_espicvespicv/setkey.cf
+v6eval/sample/portunreach/packet.def
+v6eval/sample/portunreach/portunreach.html
+v6eval/sample/portunreach/portunreach.seq
+v6eval/sample/redirect/packet.def
+v6eval/sample/redirect/redirect.html
+v6eval/sample/redirect/redirect.seq
+v6eval/sample/timeexceeded/packet.def
+v6eval/sample/timeexceeded/timeexceeded.html
+v6eval/sample/timeexceeded/timeexceeded.seq
+v6eval/sample/udpecho/packet.def
+v6eval/sample/udpecho/udpecho.html
+v6eval/sample/udpecho/udpecho.seq
+v6eval/sample/unknownnext/packet.def
+v6eval/sample/unknownnext/unknownnext.html
+v6eval/sample/unknownnext/unknownnext.seq
+v6eval/sample_stddef/SendRecv/Recv.seq
+v6eval/sample_stddef/SendRecv/Send.seq
+v6eval/sample_stddef/SendRecv/packet.def
+v6eval/sample_stddef/aes-ctr/aes-ctr.seq
+v6eval/sample_stddef/aes-ctr/packet.def
+v6eval/sample_stddef/igmp/igmpv3_test.def
+v6eval/sample_stddef/igmp/igmpv3_test.seq
+v6eval/sample_stddef/igmp/igmpv3_test.sh
+v6eval/sample_stddef/mldv2/mldv2_test.def
+v6eval/sample_stddef/mldv2/mldv2_test.seq
+v6eval/sample_stddef/mldv2/mldv2_test.sh
+v6eval/sample_stddef/ping_frag/packet.def
+v6eval/sample_stddef/ping_frag/ping_frag.seq
+v6eval/sample_stddef/ping_glosite/packet.def
+v6eval/sample_stddef/ping_glosite/ping_glosite.seq
+v6eval/sample_stddef/snmp/snmp.def
+v6eval/sample_stddef/snmp/snmp.seq
+v6eval/sample_stddef/snmp/snmp_sample.sh
+v6eval/sample_stddef/tcp_handshake/packet.def
+v6eval/sample_stddef/tcp_handshake/tcp_handshake.seq
+@dirrm v6eval/sample_stddef/tcp_handshake
+@dirrm v6eval/sample_stddef/snmp
+@dirrm v6eval/sample_stddef/ping_glosite
+@dirrm v6eval/sample_stddef/ping_frag
+@dirrm v6eval/sample_stddef/mldv2
+@dirrm v6eval/sample_stddef/igmp
+@dirrm v6eval/sample_stddef/aes-ctr
+@dirrm v6eval/sample_stddef/SendRecv
+@dirrm v6eval/sample_stddef
+@dirrm v6eval/sample/unknownnext
+@dirrm v6eval/sample/udpecho
+@dirrm v6eval/sample/timeexceeded
+@dirrm v6eval/sample/redirect
+@dirrm v6eval/sample/portunreach
+@dirrm v6eval/sample/ping_w_espicvespicv
+@dirrm v6eval/sample/ping_w_espicv
+@dirrm v6eval/sample/ping_w_esp
+@dirrm v6eval/sample/ping_w_ahesp
+@dirrm v6eval/sample/ping_w_ah
+@dirrm v6eval/sample/ping_glosite
+@dirrm v6eval/sample/ping_from_many_host
+@dirrm v6eval/sample/ping_frag
+@dirrm v6eval/sample/ping4
+@dirrm v6eval/sample/ping
+@dirrm v6eval/sample/na_w_mtu
+@dirrm v6eval/sample/mld-general
+@dirrm v6eval/sample/jumbo
+@dirrm v6eval/sample/HBHoptAfterDstOpt
+@dirrm v6eval/sample/64tunnel_ll_ping
+@dirrm v6eval/sample
 @dirrm v6eval/bin/manual
 @dirrm v6eval/bin/unknown
 @dirrm v6eval/bin
