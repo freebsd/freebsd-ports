@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tickr
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 #PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.newsrssticker.com/src/ \
