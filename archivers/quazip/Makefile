@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quazip
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 #PORTREVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	SF
@@ -16,7 +16,7 @@ QMAKE_ARGS=	PREFIX=${PREFIX} ${QMAKE_PRO}
 QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
 
 USE_LDCONFIG=	yes
-USE_QT4=	corelib moc_build qmake_build
+USE_QT4=	corelib moc_build qtestlib qmake_build
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
