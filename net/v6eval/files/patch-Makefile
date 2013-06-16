@@ -1,6 +1,6 @@
 --- Makefile.orig	2005-05-25 11:46:16.000000000 +0900
-+++ Makefile	2013-06-17 01:07:40.000000000 +0900
-@@ -1,10 +1,12 @@
++++ Makefile	2013-06-17 02:10:06.000000000 +0900
+@@ -1,24 +1,26 @@
  SUBDIR=lib bin etc script include
 -PREFIX= /usr/local/v6eval
 +PREFIX?=	/usr/local
@@ -17,8 +17,10 @@
  #SECTIONS=       1 2 3 4 5 6 7 8 9 n
  SECTIONS=       1
  .MAIN: depend all
-@@ -13,12 +15,12 @@
- 		[ -d $$i ] || mkdir $$i; \
+ beforeinstall:
+ 	for i in $(DIRS); do \
+-		[ -d $$i ] || mkdir $$i; \
++		[ -d $$i ] || install -d -m 555 $$i; \
  	done
  #	for i in $(SECTIONS); do \
 -#		[ -d $(PREFIX)/man/man$$i ] || mkdir $(PREFIX)/man/man$$i; \
