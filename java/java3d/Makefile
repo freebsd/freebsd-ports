@@ -3,7 +3,7 @@
 
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java graphics games devel
 MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 DISTNAME=	java3d-${PORTVERSION}
@@ -29,10 +29,17 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 do-build:
-	cd ${WRKSRC}/vecmath && ${ANT} dist
-	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes -Dports.localbase=${LOCALBASE} jar-opt
+	cd ${WRKSRC}/vecmath && ${SETENV} ${MAKE_ENV} ${ANT} dist
+	cd ${WRKSRC}/j3d-core \
+		&& ${SETENV} ${MAKE_ENV} ${ANT} -Dbuild.type=fcs \
+						-Dis${OPSYS}=yes \
+						-Dports.localbase=${LOCALBASE} \
+						jar-opt
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/j3d-core && ${ANT} -Dbuild.type=fcs -Dis${OPSYS}=yes docs-public
+	cd ${WRKSRC}/j3d-core \
+		&& ${SETENV} ${MAKE_ENV} ${ANT} -Dbuild.type=fcs \
+						-Dis${OPSYS}=yes \
+						docs-public
 .endif
 
 do-install:
