@@ -1,4 +1,2 @@
-SHA256 (fping-3.4.tar.gz) = d42528af4931f16a8e3438bd4a45cfdd72163ad8835a3c95351c336a26e56afe
-SIZE (fping-3.4.tar.gz) = 142986
-SHA256 (fping_timestamps.patch) = 5e07b36e2029a042de79536c30d852a7ee65d90216747ca68fe54eba94798f3a
-SIZE (fping_timestamps.patch) = 2211
+SHA256 (fping-3.5.tar.gz) = 09b8960e235341bae6000085d38106357eae656a79e0119bd27e816c9003656a
+SIZE (fping-3.5.tar.gz) = 145512
