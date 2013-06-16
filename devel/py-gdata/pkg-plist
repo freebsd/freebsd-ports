@@ -136,39 +136,27 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/apps_property_entry.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/client.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/data.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/groups/client.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/groups/data.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/groups/client.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/groups/data.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/groups/client.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/groups/data.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/organization/client.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/organization/data.py
-%%PYTHON_SITELIBDIR%%/gdata/apps/organization/client.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/organization/data.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/organization/client.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/organization/data.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/apps_property_entry.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/client.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/data.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps/apps_property_entry.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/client.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/apps_property_entry.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/apps_property_entry.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/apps_property_entry.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/audit/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/audit/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/audit/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/audit/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/audit/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/audit/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/client.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/data.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyo
@@ -184,6 +172,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/groups/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/groups/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/groups/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/client.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/data.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/groups/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/groups/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/groups/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/groups/service.pyo
@@ -205,6 +199,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/client.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/data.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/organization/service.pyo
@@ -622,52 +622,6 @@
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.py
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/youtube
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/webmastertools
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite/utils
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite/integration
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheets
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/sites
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/projecthosting
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/opensearch
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/oauth
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/notebook
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/media
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/health
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/finance
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/dublincore
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/contentforshopping
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar_resource
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/books
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/organization
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/multidomain
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/audit
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/analytics
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/acl
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Util
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Cipher
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto
-@dirrm %%PYTHON_SITELIBDIR%%/gdata
-@dirrm %%PYTHON_SITELIBDIR%%/atom
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/account_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/data_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/mgmt_feed_demo.py
@@ -709,6 +663,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/interface/templates/404.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/interface/templates/base.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/interface/templates/scheduler_form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/rotmodel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/sessions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/settings_default.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/atom/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/atom/auth.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/atom/client.py
@@ -727,9 +684,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/domain_mgmt_app.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/gdata/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/gdata/apps/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/rotmodel.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/sessions.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/appengine_utilities/settings_default.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/gdata/apps/adminsettings/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/gdata/apps/adminsettings/service.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/marketplace_sample/gdata/apps/apps_property_entry.py
@@ -977,3 +931,49 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/apps
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/analytics
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/youtube
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/webmastertools
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite/utils
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite/integration
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/tlslite
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheets
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/sites
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/projecthosting
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/opensearch
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/oauth
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/notebook
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/media
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/health
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/finance
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/dublincore
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/contentforshopping
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar_resource
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/books
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/organization
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/multidomain
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/audit
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/analytics
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/acl
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Util
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/PublicKey
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Protocol
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Hash
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto/Cipher
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/Crypto
+@dirrm %%PYTHON_SITELIBDIR%%/gdata
+@dirrm %%PYTHON_SITELIBDIR%%/atom
