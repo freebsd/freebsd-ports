@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xplore
-# Date created:				13 August 2003
-# Whom:					Albert Graef <ag@muwiinfa.geschichte.uni-mainz.de>
-#
+# Created by: Albert Graef <ag@muwiinfa.geschichte.uni-mainz.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xplore
 PORTVERSION=	1.2a
@@ -14,10 +10,13 @@ MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Motif file manager
 
+LICENSE=	GPLv2
+
 USE_IMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xpm
 MAKE_JOBS_UNSAFE=yes
+CFLAGS+=	-Wno-return-type
 
 MAN1=		xplore.1 xploretype.1
 
