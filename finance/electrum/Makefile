@@ -1,10 +1,11 @@
 # Created by: Neil Booth
 # $FreeBSD$
 
-PORTNAME=	Electrum
+PORTNAME=	electrum
 PORTVERSION=	1.7.3
 CATEGORIES=	finance python
 MASTER_SITES=	http://download.electrum.org/download/
+DISTNAME=	Electrum-${PORTVERSION}
 
 MAINTAINER=	kyuupichan@gmail.com
 COMMENT=	Easy to use Bitcoin client
@@ -17,5 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}slowaes>0:${PORTSDIR}/security/py-slowaes \
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	Electrum
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
