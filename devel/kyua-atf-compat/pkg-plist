@@ -1,0 +1,5 @@
+bin/atf-report
+bin/atf-run
+bin/atf2kyua
+@dirrmtry tests/kyua-atf-compat
+@dirrmtry tests
