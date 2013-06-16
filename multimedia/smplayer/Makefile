@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.5
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
@@ -28,6 +28,8 @@ MANCOMPRESSED=	yes
 PORTDOCS=	Changelog Copying.txt Install.txt Not_so_obvious_things.txt \
 		Readme.txt Release_notes.txt
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|qmake|${QMAKE}|g' \
 		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|g' \
@@ -36,11 +38,9 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
