@@ -68,9 +68,11 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/linux-2.4.21-40.EL-custom.diff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc.highsock
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats_haproxy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tarpit.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-section-kw.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/url-switching.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/400.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/403.http
