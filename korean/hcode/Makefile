@@ -3,9 +3,11 @@
 
 PORTNAME=	hcode
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	korean
-MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
-		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/incoming/
+MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/incoming/ \
+		ftp://ftp.kaist.ac.kr/hangul/incoming/ \
+		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
 DISTNAME=	hcode2.1-mailpatch3
 
