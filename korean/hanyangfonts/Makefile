@@ -1,9 +1,5 @@
-# New ports collection makefile for:    hanyangfonts
-# Date created:         22 Mar 1997
-# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hanyangfonts
 PORTVERSION=	1.0

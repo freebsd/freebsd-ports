@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nhpf-1.42
-# Date created:         25 May 1997
-# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nhpf
 PORTVERSION=	1.42

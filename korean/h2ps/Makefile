@@ -1,11 +1,5 @@
-# New ports collection makefile for:    h2ps-2.06
-# Date created:         20 May 1997
-# Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
-# Thanks to SungGon Yi <skon@stats.snu.ac.kr> for advising 2.06 ports
-#
 
 PORTNAME=	h2ps
 PORTVERSION=	2.06

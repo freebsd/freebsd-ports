@@ -1,9 +1,5 @@
-# New ports collection makefile for:	seri font collection
-# Date created:		Fri Mar 27 17:26:42 KST 1998
-# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kaistfonts-ksc
 PORTVERSION=	1.0
