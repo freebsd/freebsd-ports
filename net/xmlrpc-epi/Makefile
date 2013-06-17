@@ -1,53 +1,45 @@
-# New ports collection makefile for:	xmlrpc-epi
-# Date created:			19 February 2007
-# Whom:				Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlrpc-epi
-PORTVERSION=	0.54.1
+PORTVERSION=	0.54.2
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A general purpose implementation of the xmlrpc specification in C
+COMMENT=	General purpose implementation of the xmlrpc specification in C
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LICENSE=	MIT
 
-USE_GMAKE=	yes
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+
 USES=		iconv
-USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean	\
+METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean \
 		TestInt TestString TestDouble TestBase64 TestDateTime
 
 CONFLICTS=	xmlrpc-c-0.* xmlrpc-c-devel-[0-9]*
 
-WRKSRC=	${WRKDIR}/${PORTNAME:C/-.*//}
-
-pre-configure:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
-	${REINPLACE_CMD} -e '/^LTCOMPILE =/s/--mode=/--tag=CC --mode=/'
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
-	${REINPLACE_CMD} -e '/^LINK =/s/--mode=/--tag=CC --mode=/'
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 regression-test:
 .for tm in ${METHODS}
-	cd ${WRKSRC}/sample &&	\
-	./sample -method method_${tm}
+	cd ${WRKSRC}/sample && ./sample -method method_${tm}
 .endfor
 
 .include <bsd.port.mk>
