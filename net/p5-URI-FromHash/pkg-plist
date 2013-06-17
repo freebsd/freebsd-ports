@@ -1,2 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/FromHash/.packlist
 %%SITE_PERL%%/URI/FromHash.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/FromHash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
 @dirrmtry %%SITE_PERL%%/URI

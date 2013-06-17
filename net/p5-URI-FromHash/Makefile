@@ -1,23 +1,22 @@
-# New ports collection makefile for:	p5-URI-FromHash
-# Date created:		2 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-FromHash
-DISTVERSION=	0.03
+DISTVERSION=	0.04
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Create URI from hash of components
 
-RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-URI>=1.22:${PORTSDIR}/net/p5-URI
+LICENSE=	ART20
 
-PERL_MODBUILD=	YES
+BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-URI>=1.22:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	YES
 
 MAN3=		URI::FromHash.3
 
