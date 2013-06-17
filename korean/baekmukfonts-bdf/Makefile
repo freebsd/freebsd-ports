@@ -1,9 +1,5 @@
-# New ports collection makefile for:	baekmuk fonts(x11)
-# Date created:		23 Jul 1999
-# Whom:			CHOI Junho <cjh@kr.freebsd.org>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
