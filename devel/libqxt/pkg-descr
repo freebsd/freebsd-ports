@@ -1,0 +1,13 @@
+LibQxt is an extension library for Qt providing a suite of cross-platform
+utility classes to add functionality not readily available in the Qt toolkit.
+The following modules are available.
+
+ * QxtBerkeley - provides a Qt interface to the Berkeley DB.
+ * QxtCore     - extends QtCore and contains core non-GUI functionality.
+ * QxtGui      - extends QxtCore and QtGui.
+ * QxtNetwork  - extends QtNetwork with RPC functionality.
+ * QxtSql      - extends QtSql with serializable queries.
+ * QxtWeb      - provides tools for creating web services using Qt.
+ * QxtZeroconf - implements configure free service discovery.
+
+WWW: http://dev.libqxt.org/libqxt/wiki/Home
