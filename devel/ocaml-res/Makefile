@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	res
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/res/downloads/
 PKGNAMEPREFIX=	ocaml-
