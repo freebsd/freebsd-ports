@@ -1,31 +1,31 @@
-# New ports collection makefile for:	pixmap
-# Date created:		19 February 1995
-# Whom:			jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	pixmap
 PORTVERSION=	2.6
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications/pixmap
+MASTER_SITES=	XCONTRIB/applications/pixmap
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A pixmap editor based on XPM library
+COMMENT=	Pixmap editor based on XPM library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # requires rgb.txt
-BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb \
-		showrgb:${PORTSDIR}/x11/rgb
+BUILD_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
+		xrdb:${PORTSDIR}/x11/xrdb
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-WRKSRC=		${WRKDIR}/pixmap
-USE_IMAKE=	yes
 USE_XORG=	xpm xbitmaps x11 xaw xmu xt sm ice xext
-MAN1=		pixmap.1
+USE_IMAKE=	yes
 
-CFLAGS+=	-D_X_SENTINEL\(x\)= -D_X_ATTRIBUTE_PRINTF\(x,y\)=
+CFLAGS+=	-D_X_SENTINEL\(x\)= -D_X_ATTRIBUTE_PRINTF\(x,y\)= \
+		-D_X_DEPRECATED= -DUSG
+
+MAN1=		pixmap.1
 
 .include <bsd.port.mk>
