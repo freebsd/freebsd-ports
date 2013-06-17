@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trimines
-# Date created:		02 May 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	trimines
 PORTVERSION=	1.3.0

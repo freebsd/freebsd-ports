@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Encode-Locale
-# Date created:		04 Mar 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-Locale
 PORTVERSION=	1.03

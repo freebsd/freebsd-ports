@@ -1,18 +1,13 @@
-# New ports collection makefile for:	solarconquest
-# Date created:		06 Apr 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	solarconquest
 PORTVERSION=	0.2
 PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://games.sajthelper.com/ \
-		${MASTER_SITE_LOCAL} \
+		LOCAL/ehaupt \
 		http://mirror.amdmi3.ru/distfiles/
-MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	SolarConquest
 
 MAINTAINER=	amdmi3@FreeBSD.org

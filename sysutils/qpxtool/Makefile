@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qpxtool
-# Date created:		23 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	qpxtool
 DISTVERSION=	0.7.1_002
