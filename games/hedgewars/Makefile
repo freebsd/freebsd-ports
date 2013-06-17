@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hedgewars
-DISTVERSION=	0.9.18-3
+PORTVERSION=	0.9.19
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/hedgewars/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,9 +32,34 @@ PLIST_FILES=	bin/hedgewars bin/hwengine \
 PLIST_DIRSTRY=	share/applications
 PORTDATA=	*
 
+OPTIONS_DEFINE=	VIDEOREC SERVER
+OPTIONS_DEFAULT=VIDEOREC SERVER
+VIDEOREC_DESC=	Enable video recording (requires ffmpeg)
+SERVER_DESC=	Build server (requires haskell)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MVIDEOREC}
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+.else
+CMAKE_ARGS+=	-DNOVIDEOREC=1
+.endif
+
+.if ${PORT_OPTIONS:MSERVER}
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
+		hs-vector>=0:${PORTSDIR}/devel/hs-vector \
+		hs-network>=0:${PORTSDIR}/net/hs-network \
+		hs-utf8-string>=0:${PORTSDIR}/devel/hs-utf8-string \
+		hs-bytestring-show>=0:${PORTSDIR}/devel/hs-bytestring-show \
+		hs-dataenc>=0:${PORTSDIR}/converters/hs-dataenc \
+		hs-random>=0:${PORTSDIR}/devel/hs-random \
+		hs-hslogger>=0:${PORTSDIR}/devel/hs-hslogger
+PLIST_FILES+=	bin/hedgewars-server
+.else
+CMAKE_ARGS+=	-DNOSERVER=1
+.endif
+
 post-patch:
-	@${ECHO} "include_directories(${LOCALBASE}/include)" >> \
-		${WRKSRC}/QTfrontend/CMakeLists.txt
 .if defined(NOPORTDATA)
 	@${REINPLACE_CMD} -e '/add_subdirectory.*Data/I d' \
 		${WRKSRC}/share/hedgewars/CMakeLists.txt
@@ -42,7 +67,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/misc/hedgewars.desktop \
+	${INSTALL_DATA} ${WRKSRC}/share/hedgewars/Data/misc/hedgewars.desktop \
 		${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/misc/hedgewars.png \
 		${PREFIX}/share/pixmaps/
