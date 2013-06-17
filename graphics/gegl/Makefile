@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.2/
 
@@ -22,13 +22,13 @@ SPIRO_DESC=	Spiro support
 #UMFPACK_DESC=	UMFpack support
 
 USE_GNOME=	glib20 intltool
-USES=		pathfix pkgconfig gettext
+USES=		gettext pathfix pkgconfig shebangfix
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no
-CONFIGURE_ARGS+=--without-vala
+CONFIGURE_ARGS+=--without-vala --disable-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
@@ -39,6 +39,8 @@ PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}" GEGL_VER=${GEGL_VER}
 EXAMPLES=	2geglbuffer csugar float-lookup \
 		gegl-convert gegl-slicer geglbuffer-add-image \
 		geglbuffer-clock hello-world-video hello-world
+
+SHEBANG_FILES=	tools/xml_insert.sh
 
 .include <bsd.port.options.mk>
 
@@ -191,20 +193,21 @@ PLIST_SUB+=	EXIV2="@comment "
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		vimdot:${PORTSDIR}/graphics/graphviz
+USE_RUBY=	yes
+RUBY_NO_RUN_DEPENDS=yes
 .else
 CONFIGURE_ARGS+=--disable-docs
 .endif
 
 post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	${REINPLACE_CMD} -e '10s|\\||; 11,13d' \
-		${WRKSRC}/Makefile.am
+.if ! ${PORT_OPTIONS:MDOCS}
+	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
+		${WRKSRC}/Makefile.in
 .endif
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|/usr/bin/ruby|/usr/bin/env ruby|' \
-		${WRKSRC}/tools/gobj2dot.rb
 
 .if ${PORT_OPTIONS:MDOCS}
 pre-configure:
@@ -216,7 +219,8 @@ pre-configure:
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/docs && ${GMAKE}
+	cd ${WRKSRC}/docs && ${GMAKE} index.html
+	cd ${WRKSRC}/docs/gallery && ${GMAKE} index.html
 .endif
 
 post-install:
