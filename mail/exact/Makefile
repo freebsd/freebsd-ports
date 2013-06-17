@@ -1,12 +1,9 @@
-# New ports collection makefile for:	exact
-# Date created:				26/05/2003
-# Whom:					mwest@uct.ac.za
-#
+# Created by: mwest@uct.ac.za
 # $FreeBSD$
-#
 
 PORTNAME=	exact
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://adju.st/dist/exact/
 
@@ -17,6 +14,7 @@ MAILUSER?=	mailnull
 MAILGROUP?=	mailnull
 MAILLOG?=	/var/log/maillog
 EXACTDIR?=	/var/exact
+PLIST_SUB+=	MAILUSER=${MAILUSER} MAILGROUP=${MAILGROUP} EXACTDIR=${EXACTDIR}
 
 FETCH_CMD=	/usr/bin/fetch -Rr
 USE_GMAKE=	yes

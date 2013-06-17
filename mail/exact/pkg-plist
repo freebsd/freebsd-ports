@@ -1,3 +1,6 @@
 sbin/exact
 etc/exact.conf.sample
 etc/rc.d/exact.sh
+@exec mkdir -p %%EXACTDIR%%
+@exec chown %%MAILUSER%%:%%MAILGROUP%% %%EXACTDIR%%
+@unexec rmdir %%EXACTDIR%% 2>/dev/null || true
