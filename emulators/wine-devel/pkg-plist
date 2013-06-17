@@ -750,6 +750,7 @@ lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
 lib/wine/api-ms-win-core-localregistry-l1-1-0.dll.so
+lib/wine/api-ms-win-core-processthreads-l1-1-0.dll.so
 lib/wine/api-ms-win-core-winrt-error-l1-1-0.dll.so
 lib/wine/api-ms-win-core-winrt-string-l1-1-0.dll.so
 lib/wine/api-ms-win-downlevel-advapi32-l1-1-0.dll.so
@@ -909,6 +910,7 @@ lib/wine/fakedlls/advapi32.dll
 lib/wine/fakedlls/advpack.dll
 lib/wine/fakedlls/amstream.dll
 lib/wine/fakedlls/api-ms-win-core-localregistry-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-winrt-error-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-winrt-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l1-1-0.dll
