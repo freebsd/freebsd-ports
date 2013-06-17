@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ganyremote
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
@@ -15,9 +15,9 @@ RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		gettext
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USES=		gettext
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
