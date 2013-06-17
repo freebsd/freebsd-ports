@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkcomm
-# Date created:		05 Jun 1999
-# Whom:			CHOI Junho <cjh@kr.freebsd.org>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkcomm
 PORTVERSION=	0.8.1

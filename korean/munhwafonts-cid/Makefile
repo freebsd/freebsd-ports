@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Munhwa fonts collection(cid)
-# Date created:		30 Jun 1999
-# Whom:			CHOI Junho <cjh@kr.freebsd.org>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	munhwafonts-cid
 PORTVERSION=	1.0

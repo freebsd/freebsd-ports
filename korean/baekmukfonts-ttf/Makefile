@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Baekmuk Korean TrueType fonts
-# Date created:		17 Jan 2000
-# Whom:			CHOI Junho <cjh@kr.freebsd.org>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.2

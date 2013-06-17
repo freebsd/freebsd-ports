@@ -1,4 +1,4 @@
-# Created by: CHOI Junho <cjh@kr.freebsd.org>
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	imhangul

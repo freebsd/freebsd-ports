@@ -1,9 +1,5 @@
-# New ports collection makefile for: uniksc
-# Date created:		15 Oct 2000
-# Whom:			cjh
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	uniksc
 PORTVERSION=	0.9
