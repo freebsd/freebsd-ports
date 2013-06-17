@@ -20,6 +20,7 @@ PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
 						gio-querymodules \
+						gtk-query-immodules \
 						ldconfig \
 						load-octave-pkg \
 						update-desktop-database update-mime-database \

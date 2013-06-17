@@ -35,5 +35,5 @@ share/locale/zh_TW/LC_MESSAGES/oxim.mo
 @dirrmtry share/locale/zh_HK
 %%GTK2%%@dirrmtry lib/gtk-2.0/immodules
 %%GTK2%%@dirrmtry lib/gtk-2.0
-%%GTK2%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-%%GTK2%%@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
