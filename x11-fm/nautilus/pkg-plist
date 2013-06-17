@@ -238,10 +238,6 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry lib/nautilus
 @dirrm include/nautilus/libnautilus-extension
 @dirrm include/nautilus
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm share/doc/libnautilus-extension
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
