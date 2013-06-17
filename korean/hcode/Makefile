@@ -1,9 +1,5 @@
-# New ports collection makefile for:    hcode
-# Date created:         31 Mar 1997
-# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hcode
 PORTVERSION=	2.1.3

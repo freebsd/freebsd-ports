@@ -1,9 +1,5 @@
-# New ports collection makefile for:    hpscat-1.3jshin
-# Date created:         4 Apr 1997
-# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
-#
+# Created by: Junho CHOI <junho.choi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hpscat
 PORTVERSION=	1.3jshin
