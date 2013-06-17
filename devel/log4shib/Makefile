@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	log4shib
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://shibboleth.net/downloads/${PORTNAME}/${DISTVERSION}/
 
