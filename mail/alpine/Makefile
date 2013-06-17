@@ -2,7 +2,7 @@
 
 PORTNAME?=	alpine
 PORTVERSION=	2.00
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/
 DIST_SUBDIR=	alpine-${PORTVERSION}
@@ -16,8 +16,8 @@ MOUSE_DESC=	Enable mouse support for xterm
 ISPELL_DESC=	Use ispell instead of aspell as default speller
 NOSPELL_DESC=	Use no default speller (overrides both)
 .if !defined(PICO_ALPINE_SLAVE)
-OPTIONS_DEFINE+=	PICO IPV6 LDAP PASSFILE CONS25 QUOTA MAILDIR
-OPTIONS_DEFAULT+=	PICO
+OPTIONS_DEFINE+=	PICO IPV6 LDAP PASSFILE CONS25 QUOTA MAILDIR SSL
+OPTIONS_DEFAULT+=	PICO SSL
 PICO_DESC=	Build and install pico, the default editor
 PASSFILE_DESC=	Support for a stored password file (DANGEROUS)
 CONS25_DESC=	Add a patch to support color for default console
