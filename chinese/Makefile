@@ -33,7 +33,6 @@
     SUBDIR += cnprint
     SUBDIR += cwtex
     SUBDIR += cwtexttf
-    SUBDIR += cxterm
     SUBDIR += dictd-database
     SUBDIR += docproj
     SUBDIR += enscript
