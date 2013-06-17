@@ -17,7 +17,7 @@ USE_BDB=	44+
 USE_BZIP2=	yes
 USE_QT4=	qmake_build moc_build rcc_build corelib gui gui \
 		designer
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/qxt
 
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
