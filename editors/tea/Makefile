@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-DISTVERSION=	35.0.0
+PORTVERSION=	36.0.1
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
@@ -11,16 +11,18 @@ COMMENT=	Simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USE_DOS2UNIX=	rvln.*
-USE_QT4=	gui moc_build qmake_build rcc_build
-MAKE_JOBS_SAFE=	yes
-
-PLIST_FILES=	bin/${PORTNAME}
-
 OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	ASPELL HUNSPELL
 OPTIONS_DEFAULT=	ASPELL
+
+USE_BZIP2=	yes
+USE_QT4=	gui moc_build qmake_build rcc_build
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
+
+DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
+		"${PORTNAME}" "" ""
 
 .include <bsd.port.options.mk>
 
@@ -40,12 +42,17 @@ QMAKEFLAGS+=	USE_HUNSPELL=false
 
 post-patch:
 	@${REINPLACE_CMD} -e \
+		's|Q_OS_LINUX|Q_OS_UNIX|' ${WRKSRC}/document.cpp
+	@${REINPLACE_CMD} -e \
 		's|/usr/include|${LOCALBASE}/include|' ${WRKSRC}/src.pro
 
 do-configure:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC}/bin \
+		&& ${INSTALL_PROGRAM} tea ${PREFIX}/bin)
+	(cd ${WRKSRC}/icons \
+		&& ${INSTALL_DATA} tea_icon_v2.png ${PREFIX}/share/pixmaps)
 
 .include <bsd.port.mk>
