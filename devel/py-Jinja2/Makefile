@@ -1,13 +1,9 @@
-# New ports collection makefile for:	jinja
-# Date created:		2007-02-14
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Jinja2
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +14,7 @@ COMMENT?=	Fast and easy to use stand-alone template engine
 
 LICENSE=	BSD
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 .if empty(PKGNAMESUFFIX)
 USE_PYDISTUTILS=	easy_install
 .endif
@@ -32,6 +28,8 @@ SPEEDUPS_DESC=	Enable speedups
 BABEL_DESC=	Enable Babel extension
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
 
 .include <bsd.port.options.mk>
 

@@ -9,22 +9,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_debugsupport.c
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_bundle.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_bundle.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_bundle.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_constants.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_constants.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_constants.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_native.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_native.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_native.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/tests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/tests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_stringdefs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_stringdefs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_stringdefs.pyo
@@ -154,9 +141,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test2.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test2.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test_filter_and_linestatements.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test_filter_and_linestatements.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/test_filter_and_linestatements.pyo
@@ -204,7 +188,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
