@@ -1,3 +1,4 @@
+bin/arduino
 arduino/arduino
 %%EXAMPLES%%arduino/examples/01.Basics/AnalogReadSerial/AnalogReadSerial.ino
 %%EXAMPLES%%arduino/examples/01.Basics/BareMinimum/BareMinimum.ino
@@ -85,7 +86,6 @@ arduino/arduino
 %%EXAMPLES%%arduino/examples/10.StarterKit/p14_TweakTheArduinoLogo/p14_TweakTheArduinoLogo.ino
 %%EXAMPLES%%arduino/examples/10.StarterKit/p15_HackingButtons/p15_HackingButtons.ino
 %%EXAMPLES%%arduino/examples/ArduinoISP/ArduinoISP.ino
-%%EXAMPLES%%@dirrm arduino/examples/ArduinoISP
 arduino/hardware/arduino/boards.txt
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168.c
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_atmega1280.hex
@@ -104,6 +104,15 @@ arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.c
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.hex
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168_atmega328_bt.hex
 arduino/hardware/arduino/bootloaders/bt/Makefile
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Caterina-Robot-Control.hex
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Caterina-Robot-Motor.hex
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Caterina-Robot.txt
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Caterina.c
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Caterina.h
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Descriptors.c
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Descriptors.h
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/Makefile
+arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot/README.md
 arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Caterina-LilyPadUSB.hex
 arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Caterina.c
 arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB/Caterina.h
@@ -188,9 +197,12 @@ arduino/hardware/arduino/cores/arduino/WInterrupts.c
 arduino/hardware/arduino/cores/arduino/WMath.cpp
 arduino/hardware/arduino/cores/arduino/WString.cpp
 arduino/hardware/arduino/cores/arduino/WString.h
+arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c
+arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c
+arduino/hardware/arduino/cores/arduino/avr-libc/sectionname.h
+arduino/hardware/arduino/cores/arduino/avr-libc/stdlib_private.h
 arduino/hardware/arduino/cores/arduino/binary.h
 arduino/hardware/arduino/cores/arduino/main.cpp
-arduino/hardware/arduino/cores/arduino/malloc.c
 arduino/hardware/arduino/cores/arduino/new.cpp
 arduino/hardware/arduino/cores/arduino/new.h
 arduino/hardware/arduino/cores/arduino/wiring.c
@@ -199,6 +211,42 @@ arduino/hardware/arduino/cores/arduino/wiring_digital.c
 arduino/hardware/arduino/cores/arduino/wiring_private.h
 arduino/hardware/arduino/cores/arduino/wiring_pulse.c
 arduino/hardware/arduino/cores/arduino/wiring_shift.c
+arduino/hardware/arduino/cores/robot/Arduino.h
+arduino/hardware/arduino/cores/robot/CDC.cpp
+arduino/hardware/arduino/cores/robot/Client.h
+arduino/hardware/arduino/cores/robot/HID.cpp
+arduino/hardware/arduino/cores/robot/HardwareSerial.cpp
+arduino/hardware/arduino/cores/robot/HardwareSerial.h
+arduino/hardware/arduino/cores/robot/IPAddress.cpp
+arduino/hardware/arduino/cores/robot/IPAddress.h
+arduino/hardware/arduino/cores/robot/Platform.h
+arduino/hardware/arduino/cores/robot/Print.cpp
+arduino/hardware/arduino/cores/robot/Print.h
+arduino/hardware/arduino/cores/robot/Printable.h
+arduino/hardware/arduino/cores/robot/Server.h
+arduino/hardware/arduino/cores/robot/Stream.cpp
+arduino/hardware/arduino/cores/robot/Stream.h
+arduino/hardware/arduino/cores/robot/Tone.cpp
+arduino/hardware/arduino/cores/robot/USBAPI.h
+arduino/hardware/arduino/cores/robot/USBCore.cpp
+arduino/hardware/arduino/cores/robot/USBCore.h
+arduino/hardware/arduino/cores/robot/USBDesc.h
+arduino/hardware/arduino/cores/robot/Udp.h
+arduino/hardware/arduino/cores/robot/WCharacter.h
+arduino/hardware/arduino/cores/robot/WInterrupts.c
+arduino/hardware/arduino/cores/robot/WMath.cpp
+arduino/hardware/arduino/cores/robot/WString.cpp
+arduino/hardware/arduino/cores/robot/WString.h
+arduino/hardware/arduino/cores/robot/binary.h
+arduino/hardware/arduino/cores/robot/main.cpp
+arduino/hardware/arduino/cores/robot/new.cpp
+arduino/hardware/arduino/cores/robot/new.h
+arduino/hardware/arduino/cores/robot/wiring.c
+arduino/hardware/arduino/cores/robot/wiring_analog.c
+arduino/hardware/arduino/cores/robot/wiring_digital.c
+arduino/hardware/arduino/cores/robot/wiring_private.h
+arduino/hardware/arduino/cores/robot/wiring_pulse.c
+arduino/hardware/arduino/cores/robot/wiring_shift.c
 arduino/hardware/arduino/firmwares/atmegaxxu2/Arduino-COMBINED-dfu-usbserial-atmega16u2-Mega2560-Rev3.hex
 arduino/hardware/arduino/firmwares/atmegaxxu2/Arduino-COMBINED-dfu-usbserial-atmega16u2-MegaADK-Rev3.hex
 arduino/hardware/arduino/firmwares/atmegaxxu2/Arduino-COMBINED-dfu-usbserial-atmega16u2-Uno-Rev3.hex
@@ -236,6 +284,7 @@ arduino/hardware/arduino/firmwares/wifishield/scripts/ArduinoWifiShield_upgrade_
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/.cproject
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/.project
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/Release/wifiHD.elf
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/Release/wifiHD.hex
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_access.h
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_at45dbx.h
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/CONFIG/conf_ebi.h
@@ -426,6 +475,7 @@ arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wifi_spi.h
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wl_cm.c
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wl_cm.h
 arduino/hardware/arduino/firmwares/wifishield/wifiHD/src/wl_definitions.h
+arduino/hardware/arduino/firmwares/wifishield/wifiHD/wifiHD.cproj
 arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/.cproject
 arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/.project
 arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/Release/wifi_dnld.elf
@@ -495,17 +545,22 @@ arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/printf-stdarg.h
 arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/startup.c
 arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/startup.h
 arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/src/wl_fw.h
+arduino/hardware/arduino/firmwares/wifishield/wifi_dnld/wifi_dnld.cproj
+arduino/hardware/arduino/firmwares/wifishield/wifishield.atsln
 arduino/hardware/arduino/programmers.txt
 %%ATMEGA644P%%arduino/hardware/arduino/variants/atmega644p/pins_arduino.h
 arduino/hardware/arduino/variants/eightanaloginputs/pins_arduino.h
 arduino/hardware/arduino/variants/leonardo/pins_arduino.h
 arduino/hardware/arduino/variants/mega/pins_arduino.h
 arduino/hardware/arduino/variants/micro/pins_arduino.h
+arduino/hardware/arduino/variants/robot_control/pins_arduino.h
+arduino/hardware/arduino/variants/robot_motor/pins_arduino.h
 arduino/hardware/arduino/variants/standard/pins_arduino.h
 arduino/hardware/tools/avr/bin
 arduino/hardware/tools/avr/etc
 arduino/lib/RXTXcomm.jar
 arduino/lib/about.jpg
+arduino/lib/arduino_icon.ico
 arduino/lib/core.jar
 arduino/lib/ecj.jar
 arduino/lib/jna.jar
@@ -528,6 +583,10 @@ arduino/lib/theme/theme.txt
 arduino/lib/version.txt
 arduino/libraries/EEPROM/EEPROM.cpp
 arduino/libraries/EEPROM/EEPROM.h
+%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_clear/eeprom_clear.ino
+%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_read/eeprom_read.ino
+%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_write/eeprom_write.ino
+arduino/libraries/EEPROM/keywords.txt
 arduino/libraries/Esplora/Esplora.cpp
 arduino/libraries/Esplora/Esplora.h
 %%EXAMPLES%%arduino/libraries/Esplora/examples/Beginners/EsploraAccelerometer/EsploraAccelerometer.ino
@@ -544,6 +603,54 @@ arduino/libraries/Esplora/Esplora.h
 %%EXAMPLES%%arduino/libraries/Esplora/examples/Experts/EsploraRemote/EsploraRemote.ino
 %%EXAMPLES%%arduino/libraries/Esplora/examples/Experts/EsploraTable/EsploraTable.ino
 arduino/libraries/Esplora/keywords.txt
+arduino/libraries/Ethernet/Dhcp.cpp
+arduino/libraries/Ethernet/Dhcp.h
+arduino/libraries/Ethernet/Dns.cpp
+arduino/libraries/Ethernet/Dns.h
+arduino/libraries/Ethernet/Ethernet.cpp
+arduino/libraries/Ethernet/Ethernet.h
+arduino/libraries/Ethernet/EthernetClient.cpp
+arduino/libraries/Ethernet/EthernetClient.h
+arduino/libraries/Ethernet/EthernetServer.cpp
+arduino/libraries/Ethernet/EthernetServer.h
+arduino/libraries/Ethernet/EthernetUdp.cpp
+arduino/libraries/Ethernet/EthernetUdp.h
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/BarometricPressureWebServer/BarometricPressureWebServer.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/ChatServer/ChatServer.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpAddressPrinter/DhcpAddressPrinter.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpChatServer/DhcpChatServer.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClient/PachubeClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClientString/PachubeClientString.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/TelnetClient/TelnetClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/TwitterClient/TwitterClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/UDPSendReceiveString/UDPSendReceiveString.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/UdpNtpClient/UdpNtpClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebClient/WebClient.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebClientRepeating/WebClientRepeating.ino
+%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebServer/WebServer.ino
+arduino/libraries/Ethernet/keywords.txt
+arduino/libraries/Ethernet/util.h
+arduino/libraries/Ethernet/utility/socket.cpp
+arduino/libraries/Ethernet/utility/socket.h
+arduino/libraries/Ethernet/utility/w5100.cpp
+arduino/libraries/Ethernet/utility/w5100.h
+arduino/libraries/Firmata/Boards.h
+arduino/libraries/Firmata/Firmata.cpp
+arduino/libraries/Firmata/Firmata.h
+arduino/libraries/Firmata/LICENSE.txt
+arduino/libraries/Firmata/TODO.txt
+%%EXAMPLES%%arduino/libraries/Firmata/examples/AllInputsFirmata/AllInputsFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/AnalogFirmata/AnalogFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/EchoString/EchoString.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/I2CFirmata/I2CFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/LICENSE.txt
+%%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/OldStandardFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/ServoFirmata/ServoFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleAnalogFirmata/SimpleAnalogFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleDigitalFirmata/SimpleDigitalFirmata.ino
+%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/LICENSE.txt
+%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/StandardFirmata.ino
+arduino/libraries/Firmata/keywords.txt
 arduino/libraries/GSM/GSM.h
 arduino/libraries/GSM/GSM3CircularBuffer.cpp
 arduino/libraries/GSM/GSM3CircularBuffer.h
@@ -612,7 +719,6 @@ arduino/libraries/GSM/GSM3SoftSerial.h
 arduino/libraries/GSM/GSM3VoiceCallService.cpp
 arduino/libraries/GSM/GSM3VoiceCallService.h
 arduino/libraries/GSM/License.txt
-arduino/libraries/GSM/keywords.txt
 %%EXAMPLES%%arduino/libraries/GSM/examples/GSMPachubeClient/GSMPachubeClient.ino
 %%EXAMPLES%%arduino/libraries/GSM/examples/GSMPachubeClientString/GSMPachubeClientString.ino
 %%EXAMPLES%%arduino/libraries/GSM/examples/GsmTwitterClient/GsmTwitterClient.ino
@@ -628,109 +734,7 @@ arduino/libraries/GSM/keywords.txt
 %%EXAMPLES%%arduino/libraries/GSM/examples/Tools/TestGPRS/TestGPRS.ino
 %%EXAMPLES%%arduino/libraries/GSM/examples/Tools/TestModem/TestModem.ino
 %%EXAMPLES%%arduino/libraries/GSM/examples/Tools/TestWebServer/TestWebServer.ino
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestWebServer
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestModem
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestGPRS
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/PinManagement
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/GsmScanNetworks
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/BandManagement
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/SendSMS
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/ReceiveVoiceCall
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/ReceiveSMS
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/MakeVoiceCall
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmWebServer
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmWebClient
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmTwitterClient
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GSMPachubeClientString
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GSMPachubeClient
-%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples
-@dirrm arduino/libraries/GSM
-arduino/libraries/WiFi/WiFi.cpp
-arduino/libraries/WiFi/WiFi.h
-arduino/libraries/WiFi/WiFiClient.cpp
-arduino/libraries/WiFi/WiFiClient.h
-arduino/libraries/WiFi/WiFiServer.cpp
-arduino/libraries/WiFi/WiFiServer.h
-%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectNoEncryption/ConnectNoEncryption.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectWithWEP/ConnectWithWEP.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectWithWPA/ConnectWithWPA.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/ScanNetworks/ScanNetworks.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/SimpleWebServerWiFi/SimpleWebServerWiFi.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiChatServer/WifiChatServer.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiPachubeClient/WifiPachubeClient.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiPachubeClientString/WifiPachubeClientString.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiTwitterClient/WifiTwitterClient.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiWebClient/WifiWebClient.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiWebClientRepeating/WifiWebClientRepeating.ino
-%%EXAMPLES%%arduino/libraries/WiFi/examples/WifiWebServer/WifiWebServer.ino
-arduino/libraries/WiFi/keywords.txt
-arduino/libraries/WiFi/utility/debug.h
-arduino/libraries/WiFi/utility/server_drv.cpp
-arduino/libraries/WiFi/utility/server_drv.h
-arduino/libraries/WiFi/utility/socket.c
-arduino/libraries/WiFi/utility/socket.h
-arduino/libraries/WiFi/utility/spi_drv.cpp
-arduino/libraries/WiFi/utility/spi_drv.h
-arduino/libraries/WiFi/utility/wifi_drv.cpp
-arduino/libraries/WiFi/utility/wifi_drv.h
-arduino/libraries/WiFi/utility/wifi_spi.h
-arduino/libraries/WiFi/utility/wl_definitions.h
-arduino/libraries/WiFi/utility/wl_types.h
-@dirrm arduino/libraries/WiFi/utility
-%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_clear/eeprom_clear.ino
-%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_read/eeprom_read.ino
-%%EXAMPLES%%arduino/libraries/EEPROM/examples/eeprom_write/eeprom_write.ino
-arduino/libraries/EEPROM/keywords.txt
-arduino/libraries/Ethernet/Dhcp.cpp
-arduino/libraries/Ethernet/Dhcp.h
-arduino/libraries/Ethernet/Dns.cpp
-arduino/libraries/Ethernet/Dns.h
-arduino/libraries/Ethernet/Ethernet.cpp
-arduino/libraries/Ethernet/Ethernet.h
-arduino/libraries/Ethernet/EthernetClient.cpp
-arduino/libraries/Ethernet/EthernetClient.h
-arduino/libraries/Ethernet/EthernetServer.cpp
-arduino/libraries/Ethernet/EthernetServer.h
-arduino/libraries/Ethernet/EthernetUdp.cpp
-arduino/libraries/Ethernet/EthernetUdp.h
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/BarometricPressureWebServer/BarometricPressureWebServer.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/ChatServer/ChatServer.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpAddressPrinter/DhcpAddressPrinter.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/DhcpChatServer/DhcpChatServer.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/DnsWebClient/DnsWebClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClient/PachubeClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/PachubeClientString/PachubeClientString.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/TelnetClient/TelnetClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/TwitterClient/TwitterClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/UDPSendReceiveString/UDPSendReceiveString.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/UdpNtpClient/UdpNtpClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebClient/WebClient.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebClientRepeating/WebClientRepeating.ino
-%%EXAMPLES%%arduino/libraries/Ethernet/examples/WebServer/WebServer.ino
-arduino/libraries/Ethernet/keywords.txt
-arduino/libraries/Ethernet/util.h
-arduino/libraries/Ethernet/utility/socket.cpp
-arduino/libraries/Ethernet/utility/socket.h
-arduino/libraries/Ethernet/utility/w5100.cpp
-arduino/libraries/Ethernet/utility/w5100.h
-arduino/libraries/Firmata/Boards.h
-arduino/libraries/Firmata/Firmata.cpp
-arduino/libraries/Firmata/Firmata.h
-arduino/libraries/Firmata/LICENSE.txt
-arduino/libraries/Firmata/TODO.txt
-%%EXAMPLES%%arduino/libraries/Firmata/examples/AllInputsFirmata/AllInputsFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/AnalogFirmata/AnalogFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/EchoString/EchoString.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/I2CFirmata/I2CFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/LICENSE.txt
-%%EXAMPLES%%arduino/libraries/Firmata/examples/OldStandardFirmata/OldStandardFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/ServoFirmata/ServoFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleAnalogFirmata/SimpleAnalogFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/SimpleDigitalFirmata/SimpleDigitalFirmata.ino
-%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/LICENSE.txt
-%%EXAMPLES%%arduino/libraries/Firmata/examples/StandardFirmata/StandardFirmata.ino
-arduino/libraries/Firmata/keywords.txt
+arduino/libraries/GSM/keywords.txt
 arduino/libraries/LiquidCrystal/LiquidCrystal.cpp
 arduino/libraries/LiquidCrystal/LiquidCrystal.h
 %%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/Autoscroll/Autoscroll.ino
@@ -744,6 +748,89 @@ arduino/libraries/LiquidCrystal/LiquidCrystal.h
 %%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/TextDirection/TextDirection.ino
 %%EXAMPLES%%arduino/libraries/LiquidCrystal/examples/setCursor/setCursor.ino
 arduino/libraries/LiquidCrystal/keywords.txt
+arduino/libraries/Robot_Control/Adafruit_GFX.cpp
+arduino/libraries/Robot_Control/Adafruit_GFX.h
+arduino/libraries/Robot_Control/ArduinoRobot.cpp
+arduino/libraries/Robot_Control/ArduinoRobot.h
+arduino/libraries/Robot_Control/Arduino_LCD.cpp
+arduino/libraries/Robot_Control/Arduino_LCD.h
+arduino/libraries/Robot_Control/Compass.cpp
+arduino/libraries/Robot_Control/Compass.h
+arduino/libraries/Robot_Control/EEPROM_I2C.cpp
+arduino/libraries/Robot_Control/EEPROM_I2C.h
+arduino/libraries/Robot_Control/EasyTransfer2.cpp
+arduino/libraries/Robot_Control/EasyTransfer2.h
+arduino/libraries/Robot_Control/Fat16.cpp
+arduino/libraries/Robot_Control/Fat16.h
+arduino/libraries/Robot_Control/Fat16Config.h
+arduino/libraries/Robot_Control/Fat16mainpage.h
+arduino/libraries/Robot_Control/Fat16util.h
+arduino/libraries/Robot_Control/FatStructs.h
+arduino/libraries/Robot_Control/Melody.cpp
+arduino/libraries/Robot_Control/Motors.cpp
+arduino/libraries/Robot_Control/Multiplexer.cpp
+arduino/libraries/Robot_Control/Multiplexer.h
+arduino/libraries/Robot_Control/RobotSdCard.cpp
+arduino/libraries/Robot_Control/SPI.cpp
+arduino/libraries/Robot_Control/SPI.h
+arduino/libraries/Robot_Control/SdCard.cpp
+arduino/libraries/Robot_Control/SdCard.h
+arduino/libraries/Robot_Control/SdInfo.h
+arduino/libraries/Robot_Control/Sensors.cpp
+arduino/libraries/Robot_Control/Squawk.cpp
+arduino/libraries/Robot_Control/Squawk.h
+arduino/libraries/Robot_Control/SquawkSD.cpp
+arduino/libraries/Robot_Control/SquawkSD.h
+arduino/libraries/Robot_Control/Wire.cpp
+arduino/libraries/Robot_Control/Wire.h
+arduino/libraries/Robot_Control/communication.cpp
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R01_Logo/R01_Logo.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R02_Line_Follow/R02_Line_Follow.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R03_Disco_Bot/R03_Disco_Bot.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R04_Compass/R04_Compass.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R05_Inputs/R05_Inputs.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R06_Wheel_Calibration/R06_Wheel_Calibration.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R07_Runaway_Robot/R07_Runaway_Robot.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R08_Remote_Control/R08_Remote_Control.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R09_Picture_Browser/R09_Picture_Browser.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R10_Rescue/R10_Rescue.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/explore/R11_Hello_User/R11_Hello_User.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/AllIOPorts/AllIOPorts.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/Beep/Beep.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/CleanEEPROM/CleanEEPROM.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/Compass/Compass.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/IRArray/IRArray.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/LCDDebugPrint/LCDDebugPrint.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/LCDPrint/LCDPrint.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/LCDWriteText/LCDWriteText.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/LineFollowWithPause/LineFollowWithPause.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/Melody/Melody.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/MotorTest/MotorTest.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/SpeedByPotentiometer/SpeedByPotentiometer.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/TurnTest/TurnTest.ino
+%%EXAMPLES%%arduino/libraries/Robot_Control/examples/learn/keyboardTest/keyboardTest.ino
+arduino/libraries/Robot_Control/glcdfont.c
+arduino/libraries/Robot_Control/helper.cpp
+arduino/libraries/Robot_Control/information.cpp
+arduino/libraries/Robot_Control/keyboard.cpp
+arduino/libraries/Robot_Control/lcd.cpp
+arduino/libraries/Robot_Control/utility/RobotTextManager.cpp
+arduino/libraries/Robot_Control/utility/RobotTextManager.h
+arduino/libraries/Robot_Control/utility/VirtualKeyboard.cpp
+arduino/libraries/Robot_Control/utility/VirtualKeyboard.h
+arduino/libraries/Robot_Control/utility/scripts_Hello_User.h
+arduino/libraries/Robot_Control/utility/twi.c
+arduino/libraries/Robot_Control/utility/twi.h
+arduino/libraries/Robot_Motor/ArduinoRobotMotorBoard.cpp
+arduino/libraries/Robot_Motor/ArduinoRobotMotorBoard.h
+arduino/libraries/Robot_Motor/EasyTransfer2.cpp
+arduino/libraries/Robot_Motor/EasyTransfer2.h
+arduino/libraries/Robot_Motor/LineFollow.h
+arduino/libraries/Robot_Motor/Multiplexer.cpp
+arduino/libraries/Robot_Motor/Multiplexer.h
+%%EXAMPLES%%arduino/libraries/Robot_Motor/examples/Robot_IR_Array_Test/Robot_IR_Array_Test.ino
+%%EXAMPLES%%arduino/libraries/Robot_Motor/examples/Robot_Motor_Core/Robot_Motor_Core.ino
+arduino/libraries/Robot_Motor/lineFollow.cpp
 arduino/libraries/SD/File.cpp
 arduino/libraries/SD/README.txt
 arduino/libraries/SD/SD.cpp
@@ -788,6 +875,69 @@ arduino/libraries/Stepper/Stepper.h
 %%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_oneStepAtATime/stepper_oneStepAtATime.ino
 %%EXAMPLES%%arduino/libraries/Stepper/examples/stepper_speedControl/stepper_speedControl.ino
 arduino/libraries/Stepper/keywords.txt
+arduino/libraries/TFT/README.md
+arduino/libraries/TFT/TFT.cpp
+arduino/libraries/TFT/TFT.h
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTBitmapLogo/TFTBitmapLogo.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTBitmapLogo/arduino.bmp
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTColorPicker/TFTColorPicker.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTDisplayText/TFTDisplayText.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTEtchASketch/TFTEtchASketch.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTGraph/TFTGraph.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Arduino/TFTPong/TFTPong.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTBitmapLogo/EsploraTFTBitmapLogo.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTBitmapLogo/arduino.bmp
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTColorPicker/EsploraTFTColorPicker.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTEtchASketch/EsploraTFTEtchASketch.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTGraph/EsploraTFTGraph.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTHorizion/EsploraTFTHorizion.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTPong/EsploraTFTPong.ino
+%%EXAMPLES%%arduino/libraries/TFT/examples/Esplora/EsploraTFTTemp/EsploraTFTTemp.ino
+arduino/libraries/TFT/keywords.txt
+arduino/libraries/TFT/utility/Adafruit-README.txt
+arduino/libraries/TFT/utility/Adafruit-license.txt
+arduino/libraries/TFT/utility/Adafruit_GFX.cpp
+arduino/libraries/TFT/utility/Adafruit_GFX.h
+arduino/libraries/TFT/utility/Adafruit_ST7735.cpp
+arduino/libraries/TFT/utility/Adafruit_ST7735.h
+arduino/libraries/TFT/utility/PImage.h
+arduino/libraries/TFT/utility/glcdfont.c
+arduino/libraries/TFT/utility/keywords.txt
+arduino/libraries/WiFi/WiFi.cpp
+arduino/libraries/WiFi/WiFi.h
+arduino/libraries/WiFi/WiFiClient.cpp
+arduino/libraries/WiFi/WiFiClient.h
+arduino/libraries/WiFi/WiFiServer.cpp
+arduino/libraries/WiFi/WiFiServer.h
+arduino/libraries/WiFi/WiFiUdp.cpp
+arduino/libraries/WiFi/WiFiUdp.h
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectNoEncryption/ConnectNoEncryption.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectWithWEP/ConnectWithWEP.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ConnectWithWPA/ConnectWithWPA.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/ScanNetworks/ScanNetworks.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/SimpleWebServerWiFi/SimpleWebServerWiFi.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiChatServer/WiFiChatServer.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiPachubeClient/WiFiPachubeClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiPachubeClientString/WiFiPachubeClientString.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiTwitterClient/WiFiTwitterClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiUdpNtpClient/WiFiUdpNtpClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiUdpSendReceiveString/WiFiUdpSendReceiveString.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiWebClient/WiFiWebClient.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiWebClientRepeating/WiFiWebClientRepeating.ino
+%%EXAMPLES%%arduino/libraries/WiFi/examples/WiFiWebServer/WiFiWebServer.ino
+arduino/libraries/WiFi/keywords.txt
+arduino/libraries/WiFi/utility/debug.h
+arduino/libraries/WiFi/utility/server_drv.cpp
+arduino/libraries/WiFi/utility/server_drv.h
+arduino/libraries/WiFi/utility/socket.c
+arduino/libraries/WiFi/utility/socket.h
+arduino/libraries/WiFi/utility/spi_drv.cpp
+arduino/libraries/WiFi/utility/spi_drv.h
+arduino/libraries/WiFi/utility/wifi_drv.cpp
+arduino/libraries/WiFi/utility/wifi_drv.h
+arduino/libraries/WiFi/utility/wifi_spi.h
+arduino/libraries/WiFi/utility/wl_definitions.h
+arduino/libraries/WiFi/utility/wl_types.h
 arduino/libraries/Wire/Wire.cpp
 arduino/libraries/Wire/Wire.h
 %%EXAMPLES%%arduino/libraries/Wire/examples/SFRRanger_reader/SFRRanger_reader.ino
@@ -1111,15 +1261,14 @@ arduino/logo.png
 %%REFDOCS%%arduino/reference/arduinoWideRender.css
 %%REFDOCS%%arduino/reference/environment.html
 %%REFDOCS%%arduino/reference/index.html
-%%REFDOCS%%@dirrm arduino/reference
 arduino/revisions.txt
 arduino/tools/Mangler/make.sh
 arduino/tools/Mangler/src/Mangler.java
 arduino/tools/howto.txt
-bin/arduino
 @dirrm arduino/tools/Mangler/src
 @dirrm arduino/tools/Mangler
 @dirrm arduino/tools
+%%REFDOCS%%@dirrm arduino/reference
 @dirrm arduino/libraries/Wire/utility
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/slave_sender
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/slave_receiver
@@ -1129,13 +1278,16 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/SFRRanger_reader
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples
 @dirrm arduino/libraries/Wire
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiWebServer
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiWebClientRepeating
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiWebClient
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiTwitterClient
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiPachubeClientString
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiPachubeClient
-%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WifiChatServer
+@dirrm arduino/libraries/WiFi/utility
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiWebServer
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiWebClientRepeating
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiWebClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiUdpSendReceiveString
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiUdpNtpClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiTwitterClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiPachubeClientString
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiPachubeClient
+%%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/WiFiChatServer
 %%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/SimpleWebServerWiFi
 %%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ScanNetworks
 %%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ConnectWithWPA
@@ -1143,6 +1295,24 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples/ConnectNoEncryption
 %%EXAMPLES%%@dirrm arduino/libraries/WiFi/examples
 @dirrm arduino/libraries/WiFi
+@dirrm arduino/libraries/TFT/utility
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTTemp
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTPong
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTHorizion
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTGraph
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTEtchASketch
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTColorPicker
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora/EsploraTFTBitmapLogo
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Esplora
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino/TFTPong
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino/TFTGraph
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino/TFTEtchASketch
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino/TFTDisplayText
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino/TFTColorPicker
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino/TFTBitmapLogo
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples/Arduino
+%%EXAMPLES%%@dirrm arduino/libraries/TFT/examples
+@dirrm arduino/libraries/TFT
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/stepper_speedControl
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/stepper_oneStepAtATime
 %%EXAMPLES%%@dirrm arduino/libraries/Stepper/examples/stepper_oneRevolution
@@ -1171,6 +1341,40 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples/CardInfo
 %%EXAMPLES%%@dirrm arduino/libraries/SD/examples
 @dirrm arduino/libraries/SD
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Motor/examples/Robot_Motor_Core
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Motor/examples/Robot_IR_Array_Test
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Motor/examples
+@dirrm arduino/libraries/Robot_Motor
+@dirrm arduino/libraries/Robot_Control/utility
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/keyboardTest
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/TurnTest
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/SpeedByPotentiometer
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/MotorTest
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/Melody
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/LineFollowWithPause
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/LCDWriteText
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/LCDPrint
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/LCDDebugPrint
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/IRArray
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/Compass
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/CleanEEPROM
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/Beep
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn/AllIOPorts
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/learn
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R11_Hello_User
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R10_Rescue
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R09_Picture_Browser
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R08_Remote_Control
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R07_Runaway_Robot
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R06_Wheel_Calibration
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R05_Inputs
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R04_Compass
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R03_Disco_Bot
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R02_Line_Follow
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore/R01_Logo
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples/explore
+%%EXAMPLES%%@dirrm arduino/libraries/Robot_Control/examples
+@dirrm arduino/libraries/Robot_Control
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/setCursor
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/TextDirection
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/SerialDisplay
@@ -1183,6 +1387,24 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples/Autoscroll
 %%EXAMPLES%%@dirrm arduino/libraries/LiquidCrystal/examples
 @dirrm arduino/libraries/LiquidCrystal
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestWebServer
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestModem
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/TestGPRS
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/PinManagement
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/GsmScanNetworks
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools/BandManagement
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/Tools
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/SendSMS
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/ReceiveVoiceCall
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/ReceiveSMS
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/MakeVoiceCall
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmWebServer
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmWebClient
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GsmTwitterClient
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GSMPachubeClientString
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples/GSMPachubeClient
+%%EXAMPLES%%@dirrm arduino/libraries/GSM/examples
+@dirrm arduino/libraries/GSM
 %%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/StandardFirmata
 %%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/SimpleDigitalFirmata
 %%EXAMPLES%%@dirrm arduino/libraries/Firmata/examples/SimpleAnalogFirmata
@@ -1204,7 +1426,6 @@ bin/arduino
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/TelnetClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/PachubeClientString
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/PachubeClient
-%%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DnsWebClient
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DhcpChatServer
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/DhcpAddressPrinter
 %%EXAMPLES%%@dirrm arduino/libraries/Ethernet/examples/ChatServer
@@ -1239,6 +1460,8 @@ bin/arduino
 @dirrm arduino/hardware/tools/avr
 @dirrm arduino/hardware/tools
 @dirrm arduino/hardware/arduino/variants/standard
+@dirrm arduino/hardware/arduino/variants/robot_motor
+@dirrm arduino/hardware/arduino/variants/robot_control
 @dirrm arduino/hardware/arduino/variants/micro
 @dirrm arduino/hardware/arduino/variants/mega
 @dirrm arduino/hardware/arduino/variants/leonardo
@@ -1364,6 +1587,8 @@ bin/arduino
 @dirrm arduino/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu
 @dirrm arduino/hardware/arduino/firmwares/atmegaxxu2
 @dirrm arduino/hardware/arduino/firmwares
+@dirrm arduino/hardware/arduino/cores/robot
+@dirrm arduino/hardware/arduino/cores/arduino/avr-libc
 @dirrm arduino/hardware/arduino/cores/arduino
 @dirrm arduino/hardware/arduino/cores
 @dirrm arduino/hardware/arduino/bootloaders/stk500v2
@@ -1371,6 +1596,7 @@ bin/arduino
 @dirrm arduino/hardware/arduino/bootloaders/lilypad/src
 @dirrm arduino/hardware/arduino/bootloaders/lilypad
 @dirrm arduino/hardware/arduino/bootloaders/caterina-LilyPadUSB
+@dirrm arduino/hardware/arduino/bootloaders/caterina-Arduino_Robot
 @dirrm arduino/hardware/arduino/bootloaders/caterina
 @dirrm arduino/hardware/arduino/bootloaders/bt
 @dirrm arduino/hardware/arduino/bootloaders/atmega8
@@ -1378,6 +1604,7 @@ bin/arduino
 @dirrm arduino/hardware/arduino/bootloaders
 @dirrm arduino/hardware/arduino
 @dirrm arduino/hardware
+%%EXAMPLES%%@dirrm arduino/examples/ArduinoISP
 %%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p15_HackingButtons
 %%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p14_TweakTheArduinoLogo
 %%EXAMPLES%%@dirrm arduino/examples/10.StarterKit/p13_TouchSensorLamp
