@@ -3,10 +3,11 @@
 
 PORTNAME=	hanyangfonts
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=   ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
-		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
+MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/fonts/ \
+		ftp://ftp.kaist.ac.kr/hangul/fonts/ \
+		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	hanyang-font-pcf
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,6 +16,8 @@ COMMENT=	Hanyang Hangul fonts for X11
 RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+
+SUB_FILES=	pkg-message
 
 NO_WRKSUBDIR=   yes
 
@@ -31,8 +34,8 @@ do-build:
 do-install:
 	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
 	@cd ${WRKSRC}; \
-	for file in ${FONTS}; do \
-		${INSTALL_DATA} "$$file".pcf.gz ${PREFIX}/lib/X11/fonts/local; \
+	for f in ${FONTS}; do \
+		${INSTALL_DATA} "$$f".pcf.gz ${PREFIX}/lib/X11/fonts/local; \
 	done; \
 	mkfontdir ${PREFIX}/lib/X11/fonts/local
 

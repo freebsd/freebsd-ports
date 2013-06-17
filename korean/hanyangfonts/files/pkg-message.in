@@ -9,12 +9,12 @@ Please note:
 
  Section "Files"
      ...
-     FontPath   "/usr/X11R6/lib/X11/fonts/local/"
+     FontPath   "%%PREFIX%%/lib/X11/fonts/local/"
      ...
 
  Or, run this command at your X desktop:
 
- # xset +fp /usr/X11R6/lib/X11/fonts/local/ && xset fp rehash
+ # xset +fp %%PREFIX%%/lib/X11/fonts/local/ && xset fp rehash
 
  Don't forget to add the directory to your /etc/XF86Config, for
  add the correct font path after you reboots X.
