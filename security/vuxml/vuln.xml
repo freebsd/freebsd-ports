@@ -51,6 +51,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80af2677-d6c0-11e2-8f5e-001966155bea">
+    <topic>tor -- guard discovery</topic>
+    <affects>
+      <package>
+	<name>tor-devel</name>
+	<range><lt>0.2.4.13.a_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="https://gitweb.torproject.org/tor.git/commit/2a95f3171681ee53c97ccba9d80f4454b462aaa7">
+	  <p>Disable middle relay queue overfill detection code due to possible guard discovery attack</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://trac.torproject.org/projects/tor/ticket/9072</url>
+    </references>
+    <dates>
+      <discovery>2013-06-15</discovery>
+      <entry>2013-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e9e410b-d462-11e2-8d57-080027019be0">
     <topic>dbus -- local dos</topic>
     <affects>
