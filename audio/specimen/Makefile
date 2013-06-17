@@ -1,32 +1,38 @@
-# New ports collection makefile for:	specimen
-# Date created:		2007-03-06
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	specimen
 DISTVERSION=	0.5.2-rc3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://zhevny.com/specimen/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI controllable audio sampler
 
-LIB_DEPENDS=	phat.0:${PORTSDIR}/x11-toolkits/phat \
-		jack.0:${PORTSDIR}/audio/jack \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		lash.2:${PORTSDIR}/audio/lash
-BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
-
 # Between 0.109.0 and earlier versions there was an api change in JACK.
 # However, the library version number was not changed.  The line above
 # is supposed to work around that.
 
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
+		lash:${PORTSDIR}/audio/lash \
+		samplerate:${PORTSDIR}/audio/libsamplerate \
+		sndfile:${PORTSDIR}/audio/libsndfile \
+		phat:${PORTSDIR}/x11-toolkits/phat
+
+USE_GNOME=	libgnomecanvas libxml2
 USE_GMAKE=	yes
-USE_GNOME=	libxml2 libgnomecanvas
+GNU_CONFIGURE=	yes
+
+DESKTOP_ENTRIES="Specimen" "" "${DATADIR}/pixmaps/specimen.png" \
+		"${PORTNAME}" "" ""
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-Werror|| ; \
+		 s|-O3|$$CFLAGS|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-l\.\.|-I..|' ${WRKSRC}/src/gui/Makefile.in
 
 .include <bsd.port.mk>
