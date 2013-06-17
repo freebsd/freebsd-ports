@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION} \
 		http://download.handbrake.fr/handbrake/contrib/:contrib
@@ -38,6 +38,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi
+RUN_DEPENDS=	${LOCALBASE}/lib/libdvdcss.so:${PORTSDIR}/multimedia/libdvdcss
 
 USE_AUTOTOOLS=	libtool aclocal
 LIBTOOLFILES=	configure
@@ -125,6 +126,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/contrib/libass/module.defs \
 		${WRKSRC}/libhb/module.defs ${WRKSRC}/test/module.defs
+	@${REINPLACE_CMD} -e 's|libdvdcss\.so\.2|libdvdcss.so|' \
+		${BUILD_WRKSRC}/contrib/libdvdread/libdvdread/src/dvd_input.c
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/HandBrakeCLI ${PREFIX}/bin
