@@ -1,23 +1,21 @@
-# New ports collection makefile for:    xdtm
-# Date created:         		26th April 1995
-# Whom:                 		gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
-PORTNAME=		xdtm
-PORTVERSION=		2.5.8
-PORTREVISION=		2
-CATEGORIES=		x11
-MASTER_SITES=		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+PORTNAME=	xdtm
+PORTVERSION=	2.5.8
+PORTREVISION=	2
+CATEGORIES=	x11
+MASTER_SITES=	XCONTRIB/applications
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=	A graphical shell for the X Window System
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphical shell for the X Window System
 
-USE_IMAKE=		yes
-USE_XORG=		xaw
-WRKSRC=			${WRKDIR}/xdtm
-MAN1=			xdtm.1
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_XORG=	xaw
+USE_IMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
+
+MAN1=		xdtm.1
 
 .include <bsd.port.mk>
