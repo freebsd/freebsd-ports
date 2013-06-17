@@ -1,9 +1,5 @@
-# New ports collection makefile for:   inadyn
-# Date created:        9 September 2005
-# Whom:                Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	inadyn
 PORTVERSION=	1.96.2
@@ -15,7 +11,7 @@ MASTER_SITE_SUBDIR=	dhn
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
-COMMENT=	INADYN - Simple DYNAMIC DNS client
+COMMENT=	Dynamic DNS update client
 
 USE_RC_SUBR=	inadyn
 USE_ZIP=	yes
@@ -23,13 +19,15 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN8=		inadyn.8
 MAN5=		inadyn.conf.5
-.endif
+MAN8=		inadyn.8
 
 PORTDOCS=	readme.html
 PLIST_FILES=	bin/inadyn
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
@@ -41,14 +39,12 @@ post-patch:
 		${WRKSRC}/src/dyndns.h
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} -p ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/linux/inadyn ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/inadyn.8 ${MANPREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/man/inadyn.conf.5 ${MANPREFIX}/man/man5
-.endif
 
 .include <bsd.port.mk>
