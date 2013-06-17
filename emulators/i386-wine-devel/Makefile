@@ -32,15 +32,12 @@ post-install-script:
 		[ "$${i}" = "wine" ] || ${LN} -f ${PREFIX}/bin/wine ${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
-	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install dri libraries (internal libGL requirements)
 	${MKDIR} ${PREFIX}/lib32/.libGL/dri
 	for i in ${LOCALBASE}/lib/dri/*.so; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/lib32/.libGL/dri/ ; \
 		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
 	done
-	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
-	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
 	# Find all libraries that are linked too (via ldd(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${PREFIX}/!g" | \
 	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | \
@@ -66,11 +63,14 @@ post-install-script:
 			echo lib32/$${i} >> ${TMPPLIST} ; \
 		fi ; \
 	done
+	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
+	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
 	if [ -n "${WITH_PKGNG}" ]; then \
 		echo '@dirrmtry lib32' >> ${TMPPLIST}; \
 	else \
 		echo '@unexec rmdir %D/lib32 2>/dev/null || true' >> ${TMPPLIST}; \
 	fi
+	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install nvidia patching script
 	${INSTALL_SCRIPT} ${.CURDIR}/files/nvidia.sh ${DATADIR}/patch-nvidia.sh
 	echo ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
