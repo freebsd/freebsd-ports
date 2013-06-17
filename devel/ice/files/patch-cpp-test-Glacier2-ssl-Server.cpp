@@ -18,15 +18,6 @@
  }
  
  }
-@@ -99,7 +105,7 @@
-     }
- 
-     virtual void
--    ice_ping(const Ice::Current& current)
-+    ice_ping(const Ice::Current& current) const
-     {
-         testContext(_ssl, current.ctx);
-     }
 @@ -133,8 +139,11 @@
      {
          testContext(true, current.ctx);

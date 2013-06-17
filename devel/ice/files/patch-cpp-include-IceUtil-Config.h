@@ -1,19 +1,11 @@
---- cpp.orig/include/IceUtil/Config.h	2011-06-15 21:43:58.000000000 +0200
-+++ cpp/include/IceUtil/Config.h	2012-09-10 11:43:58.000000000 +0200
-@@ -248,3 +248,16 @@ public:
- #define ICE_DEFAULT_MUTEX_PROTOCOL PrioNone
- 
+--- cpp.orig/include/IceUtil/Config.h	2013-03-11 15:19:46.000000000 +0000
++++ cpp/include/IceUtil/Config.h	2013-05-20 02:09:58.239194578 +0000
+@@ -51,7 +51,7 @@
+ // Check for C++ 11 support
+ //
+ #if (defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5)) && defined(__GXX_EXPERIMENTAL_CXX0X__)) || \
+-    (defined(__clang__) && (__clang_major__ >= 4) && __cplusplus >= 201103) || \
++    (defined(__clang__) && ((defined(__APPLE__) && __clang_major__ >= 4) || (!defined(__APPLE__) && __clang_major__ >= 3)) && __cplusplus >= 201103) || \
+     (defined(_MSC_VER) && (_MSC_VER >= 1600))
+ #   define ICE_CPP11
  #endif
-+
-+
-+//
-+// Macro used for declaring destructors that might throw - required for C++11
-+//
-+#if __cplusplus >= 201103L
-+#define ICE_DESTRUCTORS_DONT_THROW_BY_DEFAULT
-+#define ICE_NOEXCEPT_FALSE noexcept(false)
-+#define ICE_NOEXCEPT_TRUE noexcept(true)
-+#else
-+#define ICE_NOEXCEPT_FALSE
-+#define ICE_NOEXCEPT_TRUE
-+#endif

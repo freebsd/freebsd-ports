@@ -1,13 +1,5 @@
---- cpp.orig/allTests.py	2011-06-15 21:43:58.000000000 +0200
-+++ cpp/allTests.py	2012-03-04 20:14:52.000000000 +0100
-@@ -25,6 +25,7 @@
- # List of all basic tests.
- #
- tests = [ 
-+
-     ("IceUtil/condvar", ["once", "win32only"]),
-     ("IceUtil/thread",  ["once"]),
-     ("IceUtil/unicode", ["once"]),
+--- cpp.orig/allTests.py	2013-03-11 15:19:58.000000000 +0000
++++ cpp/allTests.py	2013-05-19 22:25:00.000000000 +0000
 @@ -62,7 +63,7 @@
      ("Ice/servantLocator", ["core"]),
      ("Ice/interceptor", ["core"]),
@@ -22,9 +14,9 @@
  if TestUtil.isWin32() or os.getuid() == 0:
      tests += [
 -        ("IceUtil/priority", ["core", "nodarwin"]),
--        ("Ice/threadPoolPriority", ["core", "nodarwin"])
+-        ("Ice/threadPoolPriority", ["core", "nodarwin", "nomx"])
 +        ("IceUtil/priority", ["core", "nodarwin", "nofreebsd"]),
-+        ("Ice/threadPoolPriority", ["core", "nodarwin", "nofreebsd"])
++        ("Ice/threadPoolPriority", ["core", "nodarwin", "nofreebsd", "nomx"])
          ]
  
  if __name__ == "__main__":

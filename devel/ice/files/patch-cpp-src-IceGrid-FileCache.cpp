@@ -1,20 +1,16 @@
---- cpp.orig/src/IceGrid/FileCache.cpp	2011-06-15 21:43:58.000000000 +0200
-+++ cpp/src/IceGrid/FileCache.cpp	2012-09-10 11:43:58.000000000 +0200
-@@ -195,15 +195,12 @@ FileCache::read(const string& file, Ice::Long offset, int size, Ice::Long& newOf
- 
-         totalSize += lineSize;
-         lines.push_back(line);
--#if defined(_MSC_VER) && (_MSC_VER < 1300)
+--- cpp.orig/src/IceGrid/FileCache.cpp	2013-03-11 15:19:12.271195149 +0000
++++ cpp/src/IceGrid/FileCache.cpp	2013-06-01 17:47:48.636196265 +0000
+@@ -195,11 +195,11 @@
+         // Some eofbit cases will also set failbit. So first
+         // check eof.
+         //
 -        if(is.eof())
-+        
 +        if(is.eof() || is.fail())
          {
              newOffset += line.size();
          }
-         else
--#else
--        if(!is.fail())
--#endif
+-        else if(!is.fail())
++        else
          {
              newOffset = is.tellg();
          }

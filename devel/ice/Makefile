@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=		Ice
-PORTVERSION=		3.4.2
-PORTREVISION=		3
+PORTVERSION=		3.5.0
 CATEGORIES=		devel
-MASTER_SITES=		http://download.zeroc.com/Ice/3.4/
+MASTER_SITES=		http://download.zeroc.com/Ice/3.5/
 
 MAINTAINER=		freebsd@grem.de
 COMMENT=		Modern alternative to object middleware such as CORBA/COM/DCOM/COM+
+
+LICENSE=		GPLv2
 
 LIB_DEPENDS=		expat:${PORTSDIR}/textproc/expat2 \
 			mcpp:${PORTSDIR}/devel/mcpp
@@ -26,8 +27,8 @@ USE_PYTHON_BUILD=	yes
 
 USE_GMAKE=		yes
 USES=			iconv
-USE_BDB=		42+
-INVALID_BDB_VER=	2 3 40 41
+USE_BDB=		5
+INVALID_BDB_VER=	2 3 40 41 42 43 44 46 47 48
 USE_LDCONFIG=		yes
 BUILD_WRKSRC=		${WRKSRC}/cpp
 INSTALL_WRKSRC=		${WRKSRC}/cpp
@@ -43,6 +44,10 @@ BROKEN=			does not compile on ia64
 
 .if ${ARCH} == "sparc64"
 BROKEN=			fails to link
+.endif
+
+.if ${OSVERSION} >= 1000000
+BROKEN=			Does not work on FreeBSD 10
 .endif
 
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))

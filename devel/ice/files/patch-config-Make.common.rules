@@ -1,0 +1,18 @@
+--- config.orig/Make.common.rules	2013-05-20 22:21:58.666286011 +0000
++++ config/Make.common.rules	2013-05-20 22:20:50.897196090 +0000
+@@ -378,11 +378,15 @@
+ 	then \
+ 	    echo "Creating $(install_slicedir)..." ; \
+ 	    $(call mkdir, $(install_slicedir)) ; \
++	fi
++
++	@if test -d $(install_slicedir) ; \
++	then \
+ 	    cd $(top_srcdir)/../slice ; \
+ 	    for subdir in * ; \
+ 	    do \
+ 	        echo "Copying slice/$$subdir to $(install_slicedir)..." ; \
+ 	        cp -fpr $$subdir $(install_slicedir) ; \
+ 	    done ; \
+-	    fi
++	fi
