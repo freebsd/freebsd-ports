@@ -51,6 +51,7 @@
     SUBDIR += gnuradio
     SUBDIR += gpredict
     SUBDIR += gpsk31
+    SUBDIR += gqrx
     SUBDIR += gr-osmosdr
     SUBDIR += grig
     SUBDIR += gscmxx
