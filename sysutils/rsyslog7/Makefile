@@ -1,25 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.2.4
-PORTREVISION?=	1
+PORTVERSION=	7.2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	brd@FreeBSD.org
-COMMENT?=	Syslogd supporting SQL, TCP, and TLS
+COMMENT=	Syslogd supporting SQL, TCP, and TLS
+
+LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
+		estr:${PORTSDIR}/devel/libestr \
+		json.0:${PORTSDIR}/devel/json-c \
+		sysinfo:${PORTSDIR}/devel/libsysinfo \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
-		estr:${PORTSDIR}/devel/libestr \
-		sysinfo:${PORTSDIR}/devel/libsysinfo \
-		json.0:${PORTSDIR}/devel/json-c \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
-
 PORTSCOUT=	limit:^6
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DBI GNUTLS GSSAPI MYSQL PGSQL RELP RFC3195 SNMP
+OPTIONS_DEFINE=	DBI DOCS GNUTLS GSSAPI MYSQL PGSQL RELP RFC3195 SNMP
 
 DBI_DESC=	LibDBI output module for rsyslog
 GNUTLS_DESC=	GNUTLS module for rsyslog
@@ -38,6 +39,8 @@ USE_PKGCONFIG=	yes
 CONFIGURE_ARGS+=--enable-libdbi
 PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
 		lib/rsyslog/omlibdbi.so
+.else
+CONFIGURE_ARGS+=--disable-libdbi
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
@@ -47,6 +50,8 @@ USE_PKGCONFIG=	yes
 CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
 		lib/rsyslog/lmnsd_gtls.so
+.else
+CONFIGURE_ARGS+=--disable-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
@@ -57,6 +62,8 @@ PLIST_FILES+=	lib/rsyslog/imgssapi.la \
 		lib/rsyslog/lmgssutil.so \
 		lib/rsyslog/omgssapi.la \
 		lib/rsyslog/omgssapi.so
+.else
+CONFIGURE_ARGS+=--disable-gssapi-krb5
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -64,6 +71,8 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 PLIST_FILES+=	lib/rsyslog/ommysql.so \
 					lib/rsyslog/ommysql.la
+.else
+CONFIGURE_ARGS+=--disable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -71,6 +80,8 @@ USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_FILES+=	lib/rsyslog/ompgsql.so \
 					lib/rsyslog/ompgsql.la
+.else
+CONFIGURE_ARGS+=--disable-pgsql
 .endif
 
 .if ${PORT_OPTIONS:MRELP}
@@ -81,6 +92,8 @@ PLIST_FILES+=	lib/rsyslog/imrelp.la \
 		lib/rsyslog/imrelp.so \
 		lib/rsyslog/omrelp.la \
 		lib/rsyslog/omrelp.so
+.else
+CONFIGURE_ARGS+=--disable-relp
 .endif
 
 .if ${PORT_OPTIONS:MRFC3195}
@@ -89,6 +102,8 @@ USE_PKGCONFIG=	yes
 CONFIGURE_ARGS+=--enable-rfc3195
 PLIST_FILES+=	lib/rsyslog/im3195.la \
 		lib/rsyslog/im3195.so
+.else
+CONFIGURE_ARGS+=--disable-rfc3195
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
@@ -96,8 +111,9 @@ LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
 PLIST_FILES+=	lib/rsyslog/omsnmp.la \
 		lib/rsyslog/omsnmp.so
+.else
+CONFIGURE_ARGS+=--disable-snmp
 .endif
-
 
 .ifdef WITH_MYSQL_MICROSECONDS
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
@@ -144,12 +160,12 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/*jpg ${DOCSDIR}/
 .endif
-.ifndef NOPORTEXAMPLES
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${EXAMPLESDIR}
 .endif
