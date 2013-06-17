@@ -1,13 +1,7 @@
-qiv (graphics/qiv) is a great image viewer, but it does not use gtk2
-but imlib for image handling. This is bad, because many distributions
-(well, at least gentoo) do not offer this library anymore as it's
-quite old and not maintained anymore.
-
-When the first release of pqiv was written, I used python, hence the
-name. I expected somebody else to write a c-rewrite of qiv, so I
-didn't really care about that. About one month later nothing had
-happened yet, so I did this on my own. Starting from 0.4 pqiv means
-"pretty quick image viewer", written in pure C, using gtk+-2.0.
+Originally, PQIV was written as a drop-in replacement for QIV. The first
+release was not more than a Python script, hence the name. Now, PQIV is
+a (modulo some small extras) full featured clone of QIV written in C
+using GTK-2 and GLIB-2.
 
 Features include:
 * Fullscreen
@@ -17,7 +11,8 @@ Features include:
 * Move by drag & drop in fullscreen
 * Keep preferences in a configuration file
 * Rather small executable (~36k), low ram consumtion, quick
-* Execute predefined commands, pipe images through them or display their output
+* Execute predefined commands, pipe images through them or display
+  their output
 * Real transparency
 * Fade between images
 
