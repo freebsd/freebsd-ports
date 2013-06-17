@@ -154,5 +154,5 @@ share/icons/gcin.png
 @dirrmtry lib/gtk-2.0/immodules
 @dirrmtry lib/gtk-2.0
 @dirrm lib/gcin
-@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

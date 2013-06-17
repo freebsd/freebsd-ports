@@ -115,7 +115,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
+	@${LOCALBASE}/bin/gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
 

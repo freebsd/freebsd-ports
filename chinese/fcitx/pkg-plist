@@ -86,11 +86,11 @@ lib/libfcitx-utils.so.0.1
 lib/girepository-1.0/Fcitx-1.0.typelib
 share/gir-1.0/Fcitx-1.0.gir
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
-%%GTK2%%@exec gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
-%%GTK2%%@unexec gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
 %%GTK3%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-fcitx.so
-%%GTK3%%@exec gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
-%%GTK3%%@unexec gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
+%%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
+%%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 %%QT4%%lib/qt4/plugins/inputmethods/libqtim-fcitx.so
 %%QT4%%@dirrmtry lib/qt4/plugins/inputmethods
 %%QT4%%@dirrmtry lib/qt4/plugins

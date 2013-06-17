@@ -31,6 +31,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-	gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
+	${LOCALBASE}/bin/gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 
 .include <bsd.port.mk>
