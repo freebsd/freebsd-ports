@@ -1,30 +1,34 @@
-# New ports collection makefile for:	kdirstat
-# Date created:		25 Jun 2002
-# Whom:			Stefan Jahn <stefan.jahn@nemesis-sektor.de>
-#
+# Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
 # $FreeBSD$
-#
 
 PORTNAME=	kdirstat
-PORTVERSION=	2.4.4
-PORTREVISION=	7
+PORTVERSION=	2.7.4
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://kdirstat.sourceforge.net/download/
+MASTER_SITES=	https://bitbucket.org/jeromerobert/k4dirstat/get/
+DISTNAME=	k4dirstat-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small KDE utility that sums up disk usage for directory trees
+COMMENT=	KDE utility that sums up disk usage for directory trees
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+LICENSE=	GPLv2
 
-DEPRECATED=	Depends on QT3; unmaintained
-EXPIRATION_DATE=	2013-07-01
+WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-33ed79e1054e
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		cmake desktop-file-utils
+USE_KDE4=	automoc4 kdelibs kdeprefix libkonq
+USE_QT4=	moc_build qmake_build rcc_build uic_build
+INSTALLS_ICONS=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e \
+		'/^Categories/s|=.*|=Qt;KDE;Utility;|' \
+		${WRKSRC}/src/k4dirstat.desktop
+	@${REINPLACE_CMD} -e \
+		's|<sys/errno.h>|<errno.h>|' \
+		${WRKSRC}/src/kdirreadjob.cpp
+
+post-install:
+	@${LN} -sf k4dirstat ${PREFIX}/bin/kdirstat
 
 .include <bsd.port.mk>

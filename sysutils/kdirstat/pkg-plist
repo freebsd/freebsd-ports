@@ -1,39 +1,23 @@
+bin/k4dirstat
 bin/kdirstat
-share/applnk/Utilities/kdirstat.desktop
-share/apps/kconf_update/fix_move_to_trash_bin.pl
-share/apps/kconf_update/kdirstat.upd
-share/apps/kdirstat/icons/hicolor/16x16/actions/symlink.png
-share/apps/kdirstat/icons/hicolor/32x32/actions/symlink.png
-share/apps/kdirstat/icons/hicolor/48x48/actions/symlink.png
-share/apps/kdirstat/icons/locolor/16x16/actions/symlink.png
-share/apps/kdirstat/kdirstatui.rc
-share/doc/HTML/en/kdirstat/common
-share/doc/HTML/en/kdirstat/feedback-mail.png
-share/doc/HTML/en/kdirstat/index.cache.bz2
-share/doc/HTML/en/kdirstat/index.docbook
-share/doc/HTML/en/kdirstat/kdirstat-config-cleanups.png
-share/doc/HTML/en/kdirstat/kdirstat-config-tree-colors.png
-share/doc/HTML/en/kdirstat/kdirstat-main.png
-share/icons/hicolor/16x16/apps/kdirstat.png
-share/icons/hicolor/32x32/apps/kdirstat.png
-share/icons/locolor/16x16/apps/kdirstat.png
-share/icons/locolor/32x32/apps/kdirstat.png
-share/locale/de/LC_MESSAGES/kdirstat.mo
-share/locale/fr/LC_MESSAGES/kdirstat.mo
-share/locale/hu/LC_MESSAGES/kdirstat.mo
-share/locale/it/LC_MESSAGES/kdirstat.mo
-share/locale/ja/LC_MESSAGES/kdirstat.mo
-@dirrm share/doc/HTML/en/kdirstat
-@dirrm share/apps/kdirstat/icons/locolor/16x16/actions
-@dirrm share/apps/kdirstat/icons/locolor/16x16
-@dirrm share/apps/kdirstat/icons/locolor
-@dirrm share/apps/kdirstat/icons/hicolor/48x48/actions
-@dirrm share/apps/kdirstat/icons/hicolor/48x48
-@dirrm share/apps/kdirstat/icons/hicolor/32x32/actions
-@dirrm share/apps/kdirstat/icons/hicolor/32x32
-@dirrm share/apps/kdirstat/icons/hicolor/16x16/actions
-@dirrm share/apps/kdirstat/icons/hicolor/16x16
-@dirrm share/apps/kdirstat/icons/hicolor
-@dirrm share/apps/kdirstat/icons
-@dirrm share/apps/kdirstat
-@dirrmtry share/apps/kconf_update
+share/applications/kde4/k4dirstat.desktop
+share/apps/k4dirstat/k4dirstatui.rc
+share/config.kcfg/k4dirstat.kcfg
+share/doc/HTML/en/k4dirstat/common
+share/doc/HTML/en/k4dirstat/feedback-mail.png
+share/doc/HTML/en/k4dirstat/index.cache.bz2
+share/doc/HTML/en/k4dirstat/index.docbook
+share/doc/HTML/en/k4dirstat/kdirstat-config-cleanups.png
+share/doc/HTML/en/k4dirstat/kdirstat-config-tree-colors.png
+share/doc/HTML/en/k4dirstat/kdirstat-main.png
+share/icons/hicolor/16x16/apps/k4dirstat.png
+share/icons/hicolor/32x32/apps/k4dirstat.png
+share/icons/hicolor/48x48/apps/k4dirstat.png
+share/icons/hicolor/scalable/apps/k4dirstat.svgz
+share/locale/de/LC_MESSAGES/k4dirstat.mo
+share/locale/fr/LC_MESSAGES/k4dirstat.mo
+share/locale/hu/LC_MESSAGES/k4dirstat.mo
+share/locale/it/LC_MESSAGES/k4dirstat.mo
+share/locale/ja/LC_MESSAGES/k4dirstat.mo
+@dirrm share/doc/HTML/en/k4dirstat
+@dirrm share/apps/k4dirstat
