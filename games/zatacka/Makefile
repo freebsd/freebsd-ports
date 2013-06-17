@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zatacka
-# Date created:		26 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	zatacka
 PORTVERSION=	0.1.8

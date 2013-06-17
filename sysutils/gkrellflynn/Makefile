@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellflynn
-# Date Created:				Fri Aug 17 15:57:42 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellflynn
 PORTVERSION=	0.8

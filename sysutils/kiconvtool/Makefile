@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kiconvtool
-# Date created:		25 Jun 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kiconvtool
 PORTVERSION=	0.96

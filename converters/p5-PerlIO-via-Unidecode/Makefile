@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PerlIO-via-Unidecode
-# Date created:		12 Mar 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PerlIO-via-Unidecode
 PORTVERSION=	1.01

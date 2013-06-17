@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tomatoes
-# Date created:				2005 07 Feb
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomatoes
 PORTVERSION=	1.5

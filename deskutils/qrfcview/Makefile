@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qrfcview
-# Date created:		9 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qrfcview
 PORTVERSION=	0.62
