@@ -27,12 +27,13 @@ PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	6
+XORG_REVISION=	7
 PLIST_SUB+=	OLD="" NEW="@comment "
-EXTRA_PATCHES+=	${FILESDIR}/extra-include_eventstr.h \
-		${FILESDIR}/extra-os-utils.c \
+EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-hw-xfree86-os-support-bsd-sparc64_video.c \
 		${FILESDIR}/extra-Xserver-os-xprintf.c \
+		${FILESDIR}/extra-include_eventstr.h \
+		${FILESDIR}/extra-os-utils.c \
 		${FILESDIR}/extra-servermd.h
 .endif
 
