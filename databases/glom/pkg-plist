@@ -241,13 +241,11 @@ share/omf/glom/glom-sv.omf
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/applications
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/applications
 @dirrm include/glom-1.12/libglom/document/bakery/view
 @dirrm include/glom-1.12/libglom/document/bakery
 @dirrm include/glom-1.12/libglom/document
