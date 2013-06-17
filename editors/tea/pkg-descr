@@ -1,6 +1,6 @@
-TEA is powerful text editor for Unix-like systems.  It depends on Qt4 and,
-optionally, GNU Aspell.  With an ultimately small size, TEA provides
-hundreds of functions.  Some of the features include:
+TEA is powerful text editor for Unix-like systems. It depends on Qt4
+and, optionally, GNU Aspell or Hunspell. With an ultimately small size,
+TEA provides hundreds of functions. Some of the features include:
 
   - Built-in MC-like file manager (with support for archived files)
   - Spellchecker (using the Aspell or/and Hunspell)
