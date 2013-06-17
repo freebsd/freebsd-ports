@@ -33,8 +33,6 @@ SUB_FILES=	hpscat.sh pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 USE_PERL5=	yes
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hpscat ${PREFIX}/bin/hpscat.bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/hpscat.sh ${PREFIX}/bin/hpscat
