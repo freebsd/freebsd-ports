@@ -5,7 +5,7 @@
  {
    // if not even enabled manually, just go away
 -  if (pref.rem_mode != REMOTE_SOCK) return;
-+  if (pref.rem_mode != REMOTE_SOCK) return 0;
++  if (pref.rem_mode != REMOTE_SOCK) return FALSE;
    
  printf("Removing the remote pipes\n");
    close(pref.inpipe);
