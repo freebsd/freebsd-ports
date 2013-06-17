@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.4.23
+PORTVERSION=	1.4.24
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
@@ -19,7 +19,7 @@ LICENSE_COMB=	multi
 CONFLICTS=	haproxy-devel-[0-9]*
 
 USE_RC_SUBR=	haproxy
-USE_GMAKE=	YES
+USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 MAN1=		haproxy.1
 
