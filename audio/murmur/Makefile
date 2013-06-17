@@ -3,7 +3,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio net
 MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
@@ -31,7 +31,7 @@ BONJOUR_DESC=	Bonjour Support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICE}
-LIB_DEPENDS+=	Ice.34:${PORTSDIR}/devel/ice
+LIB_DEPENDS+=	Ice:${PORTSDIR}/devel/ice
 .else
 CONFIG+=	no-ice
 .endif
