@@ -7,7 +7,7 @@
 # It enables hpscat to print file without loading font in gs
 #
 
-HFONTPATH=%%PREFIX%%/share/fonts/ked-hpscat
+HFONTPATH=%%FONTDIR%%
 
 options=$*
 fileoutput=0
