@@ -14,6 +14,8 @@ COMMENT?=	Fast and easy to use stand-alone template engine
 
 LICENSE=	BSD
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
+
 USE_PYTHON=	yes
 .if empty(PKGNAMESUFFIX)
 USE_PYDISTUTILS=	easy_install
@@ -28,8 +30,6 @@ SPEEDUPS_DESC=	Enable speedups
 BABEL_DESC=	Enable Babel extension
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
-
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
 
 .include <bsd.port.options.mk>
 
@@ -74,7 +74,6 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
-
 
 check regression-test test: build
 .if empty(PKGNAMESUFFIX)
