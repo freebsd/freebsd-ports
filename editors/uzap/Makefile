@@ -16,4 +16,8 @@ NO_WRKSUBDIR=	yes
 MAN1=		uzap.1
 PLIST_FILES=	bin/uzap
 
+BROKEN=			does not fetch
+DEPRECATED=		does not fetch
+EXPIRATION_DATE=	2013-07-17
+
 .include <bsd.port.mk>
