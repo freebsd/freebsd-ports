@@ -5,7 +5,7 @@ PORTNAME=	vertx
 PORTVERSION=	1.3.1
 #PORTREVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://vertx.io/downloads/
+MASTER_SITES=	http://vert-x.github.io/vertx-downloads/downloads/
 DISTNAME=	vert.x-${PORTVERSION}.final
 
 MAINTAINER=	nivit@FreeBSD.org
