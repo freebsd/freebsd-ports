@@ -1,0 +1,26 @@
+--- cpp.orig/Makefile	2013-03-11 15:19:46.000000000 +0000
++++ cpp/Makefile	2013-05-19 22:06:57.713280491 +0000
+@@ -11,11 +11,22 @@
+ 
+ include $(top_srcdir)/config/Make.rules
+ 
+-SUBDIRS		= config src include test
++SUBDIRS		= config src include
++
++ifeq ($(NOTESTS),)
++SUBDIRS		:= $(SUBDIRS) test
++endif
+ 
+ ifeq ($(shell uname | grep MINGW),)
++ifeq ($(NODEMOS),)
+ SUBDIRS		:= $(SUBDIRS) demo
+ endif
++endif
++
++ifeq ($(NOPORTDOCS),)
++SUBDIRS		:= $(SUBDIRS) doc
++endif
++
+ 
+ INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir) $(install_includedir) $(install_configdir)
+ 
