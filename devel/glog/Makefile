@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glog
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +15,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 GNU_CONFIGURE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
-USE_GCC=	4.2+
 PROJECTHOST=	google-glog
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,7 +32,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-utilities.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^docdir.*|docdir = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
 	    ${WRKSRC}/Makefile.in
 .endif
