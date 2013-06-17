@@ -1,5 +1,5 @@
---- src/torrent.c.orig	Thu Nov 17 16:18:29 2005
-+++ src/torrent.c	Thu Nov 17 16:19:26 2005
+--- src/torrent.c.orig	2013-06-17 21:58:19.795111620 +0400
++++ src/torrent.c	2013-06-17 21:58:27.445112740 +0400
 @@ -328,6 +328,8 @@
  	int x, y;
  
@@ -46,3 +46,12 @@
  	for(y = 0; y < yBSize; y++) {
  		for(x = 0; x < xBSize; x++) {
  			if(board[y][x] && (board[y][x]->color == color ||
+@@ -1045,7 +1048,7 @@
+ 
+ /*****************************************************
+  ****************************************************/
+-inline void SE_CheckEvents()
++void SE_CheckEvents()
+ {
+ 	SDL_Event event;
+ 	int x, y;
