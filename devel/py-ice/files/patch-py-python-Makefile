@@ -9,7 +9,7 @@
  	@for i in $(PACKAGES) ; \
  	do \
 -	    $(INSTALL_DATA) -r $$i $(install_pythondir) ; \
-+	    $(INSTALL_DATA) -d $(install_pythondir)/$$i ; \
++	    mkdir -p $(install_pythondir)/$$i ; \
 +	    $(INSTALL_DATA) $$i/*.py* $(install_pythondir)/$$i ; \
  	done
  
