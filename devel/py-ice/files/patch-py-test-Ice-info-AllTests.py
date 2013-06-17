@@ -1,11 +1,11 @@
---- py/test/Ice/info/AllTests.py.orig	2011-06-15 19:44:00.000000000 +0000
-+++ py/test/Ice/info/AllTests.py	2012-09-11 19:18:30.188273390 +0000
+--- py/test/Ice/info/AllTests.py.orig	2013-03-11 15:19:47.000000000 +0000
++++ py/test/Ice/info/AllTests.py	2013-05-20 14:25:56.860196743 +0000
 @@ -7,12 +7,31 @@
  #
  # **********************************************************************
  
--import Ice, Test, threading
-+import Ice, Test, threading, sys, subprocess
+-import Ice, Test, sys, threading
++import Ice, Test, sys, threading, subprocess
  
  def test(b):
      if not b:
@@ -31,9 +31,9 @@
 +    return isFreeBSD() and sysctl("security.jail.jailed")
 +
  def allTests(communicator, collocated):
-     print "testing proxy endpoint information...",
- 
-@@ -64,12 +83,12 @@
+     sys.stdout.write("testing proxy endpoint information... ")
+     sys.stdout.flush()
+@@ -67,12 +86,12 @@
  
      ipEndpoint = endpoints[0].getInfo()
      test(ipEndpoint.type() == Ice.TCPEndpointType or ipEndpoint.type() == 2)
@@ -48,7 +48,7 @@
      test(udpEndpoint.datagram())
      test(udpEndpoint.port > 0)
  
-@@ -104,7 +123,7 @@
+@@ -108,7 +127,7 @@
      ipinfo = base.ice_getConnection().getEndpoint().getInfo()
      test(ipinfo.port == 12010)
      test(not ipinfo.compress)
@@ -57,16 +57,16 @@
  
      ctx = testIntf.getEndpointInfoAsContext()
      test(ctx["host"] == ipinfo.host)
-@@ -114,7 +133,7 @@
+@@ -118,7 +137,7 @@
  
      udp = base.ice_datagram().ice_getConnection().getEndpoint().getInfo()
      test(udp.port == 12010)
 -    test(udp.host == defaultHost)
 +    test(udp.host == defaultHost or isFreeBSDJail())
  
-     print "ok"
+     print("ok")
  
-@@ -124,8 +143,8 @@
+@@ -129,8 +148,8 @@
      test(not info.incoming)
      test(len(info.adapterName) == 0)
      test(info.remotePort == 12010)
