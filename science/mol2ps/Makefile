@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mol2ps
-PORTVERSION=	0.3a
+PORTVERSION=	0.4
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
@@ -22,7 +22,7 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 
 USE_FPC=	yes
 
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/color.conf
+PLIST_FILES=	bin/${PORTNAME} bin/mol2svg %%DATADIR%%/color.conf
 PLIST_DIRS=	%%DATADIR%%
 
 do-build:
@@ -30,6 +30,7 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${PREFIX}/bin && ${LN} ${PORTNAME} mol2svg)
 	@${MKDIR} ${DATADIR}
 	(cd ${FILESDIR} && ${INSTALL_DATA} color.conf ${DATADIR})
 
