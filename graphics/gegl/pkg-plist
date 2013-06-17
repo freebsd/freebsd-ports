@@ -292,27 +292,9 @@ lib/libgegl-%%GEGL_VER%%.la
 lib/libgegl-%%GEGL_VER%%.so
 lib/libgegl-%%GEGL_VER%%.so.%%GEGL_MINOR%%
 libdata/pkgconfig/gegl-%%GEGL_VER%%.pc
-%%PORTDOCS%%share/gtk-doc/html/gegl/brightness-contrast.c.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-area-filter.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-composer.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-filter.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-meta.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-point-composer.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-point-filter.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-point-render.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-sink.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-source.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-temporal.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-plugin.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.css
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.h.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/operations.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/brightness-contrast.c.html
-%%PORTDOCS%%%%DOCSDIR%%/class-hierarchy.html
-%%PORTDOCS%%%%DOCSDIR%%/development.html
 %%PORTDOCS%%%%DOCSDIR%%/devhelp.css
 %%PNG%%%%PORTDOCS%%%%DOCSDIR%%/gallery/OpenRaster-00.png
 %%PORTDOCS%%%%DOCSDIR%%/gallery/OpenRaster-00.txt
@@ -363,9 +345,6 @@ share/locale/sl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 @dirrm include/gegl-%%GEGL_VER%%/opencl
 @dirrm include/gegl-%%GEGL_VER%%
 @dirrm lib/gegl-%%GEGL_VER%%
-%%PORTDOCS%%@dirrm share/gtk-doc/html/gegl
-%%PORTDOCS%%@dirrmtry share/gtk-doc/html
-%%PORTDOCS%%@dirrmtry share/gtk-doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gallery
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
