@@ -5,7 +5,7 @@ dependency chains up and down upgrading packages recursively.
 
 This package also includes the following utilities:
 portinstall:	Helps you install new ports in a handy way.
-portcvsweb:	Instantly lets you browse change history via CVSweb.
+portsvnweb:	Instantly lets you browse change history via SVNweb.
 portversion:	Replaces pkg_version(1) and helps you upgrade packages
 		with portupgrade(1). (runs much faster)
 portsclean:	Cleans ports workdir's, unreferenced distfiles,
