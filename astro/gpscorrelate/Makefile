@@ -3,8 +3,10 @@
 
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	astro geography
-MASTER_SITES=	http://freefoote.dview.net/linux/
+MASTER_SITES=	GH
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correlate digital camera photos with GPS data in GPX format
@@ -12,9 +14,13 @@ COMMENT=	Correlate digital camera photos with GPS data in GPX format
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2 \
-		gtkmm-2:${PORTSDIR}/x11-toolkits/gtkmm24
+		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 OPTIONS_DEFINE=	DOCS
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	freefoote
+GH_COMMIT=	a36646b
 
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
@@ -29,15 +35,16 @@ PLIST_FILES=	bin/gpscorrelate bin/gpscorrelate-gui
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	's|^CFLAGS|#CFLAGS| ; \
-	s|^override CFLAGS|override IFLAGS| ; \
-	s|gtk+-2.0)|gtk+-2.0 exiv2)| ; \
-	s|-I/usr/include/exiv2|| ; \
-	s|-lexiv2|| ; \
-	/^all:/s|gpscorrelate.1|| ; \
-	s|g++ $$(OFLAGS)|$$(CXX) $$(OFLAGS)| ; \
-	s|g++ $$(CFLAGS)|$$(CXX) $$(CXXFLAGS) $$(IFLAGS)| ; \
-	s|gcc $$(CFLAGS)|$$(CC) $$(CFLAGS) $$(IFLAGS)|' ${WRKSRC}/Makefile
+		's|^CFLAGS|#CFLAGS| ; \
+		 s|^override CFLAGS|override IFLAGS| ; \
+		 s|gtk+-2.0)|gtk+-2.0 exiv2)| ; \
+		 s|-I/usr/include/exiv2|| ; \
+		 s|-lexiv2|| ; \
+		 /^all:/s|gpscorrelate.1|| ; \
+		 s|g++ $$(OFLAGS)|$$(CXX) $$(OFLAGS)| ; \
+		 s|g++ $$(CFLAGS)|$$(CXX) $$(CXXFLAGS) $$(IFLAGS)| ; \
+		 s|gcc $$(CFLAGS)|$$(CC) $$(CFLAGS) $$(IFLAGS)|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate ${PREFIX}/bin
@@ -45,7 +52,7 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/gpscorrelate.1 ${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/RELEASES ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
