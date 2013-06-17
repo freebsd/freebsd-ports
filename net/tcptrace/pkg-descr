@@ -1,28 +1,15 @@
-tcptrace a TCP dump file analysis tool written by Shawn Ostermann
-at Ohio University. It is NOT a packet capture program. It reads
-output dump files in the formats of several popular packet capturing
-programs: tcpdump, snoop, etherpeek, and netm.  It can also output
-(ie, convert thus converting to) tcpdump format files.
+tcptrace is a TCP connection analysis tool. It can tell you detailed
+information about TCP connections by sifting through dump files.
+The dump file formats supported are:
+   Standard tcpdump format (you need the pcap library)
+   Sun's snoop format
+   Macintosh Etherpeek format
+   HP/NetMetrix protocol analysis format
+   NS simulator output format
+   NetScout
+   NLANR Tsh Format
 
-For each connection, it keeps track of elapsed time, bytes/segments
-sent and received, retransmissions, round trip times, window
-advertisements, throughput, etc.  Its output format ranges from
-Simple to Long to Very Detailed.
-
-It can also produce three different types of graphs, as follows: 
-
-   Time Sequence Graph 
-     This is the format that Tim Shepard started using at MIT some
-     years ago. It shows segments sent and ACKs returned as a
-     function of time.
-   Instantaneous Throughput 
-     This format shows the instantaneous (averaged over a few
-     segments) throughput of the connection as a function of time.
-   Round Trip Times 
-     This format shows the round trip times for the ACKs as a
-     function of time.
-
-The graphs produced are viewable only by Tim Shepard's wonderful
-xplot program (in math/xplot).
+To see the graphs, you'll also need Tim Shepard's xplot program,
+available at http://www.xplot.org
 
 WWW: http://www.tcptrace.org/

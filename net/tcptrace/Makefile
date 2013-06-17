@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcptrace
-# Date created:		3 March 1997
-# Whom:			fenner
-#
+# Created by: fenner
 # $FreeBSD$
-#
 
 PORTNAME=	tcptrace
 PORTVERSION=	6.6.7
@@ -11,31 +7,35 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A TCP dump file analysis tool
+COMMENT=	TCP dump file analysis tool
 
-MAKE_JOBS_SAFE=  yes
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tcptrace
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/xpl2gpl
 
 MAN1=		tcptrace.1
 
-DOCFILES=	ARGS CHANGES COPYING COPYRIGHT FAQ README README.mailing_list \
+PORTDOCS=	ARGS CHANGES FAQ README README.mailing_list \
 		README.modules README.tline_graphs README.tput_graphs \
-		README.version README.xpl2gpl THANKS WWW \
-		dot_tcptracerc
+		README.version README.xpl2gpl THANKS dot_tcptracerc
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/xpl2gpl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tcptrace.man ${PREFIX}/man/man1/tcptrace.1
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${MAN1PREFIX}/man/man1/${PORTNAME}.1
+
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
