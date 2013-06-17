@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
@@ -35,7 +35,7 @@ DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 
 OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES
 ATMEGA644P_DESC=	ATmega644p patches
-DOCS_DESC=	 	Install the reference documents
+DOCS_DESC=		Install the reference documents
 
 INSLIST=	arduino hardware lib libraries logo.png revisions.txt tools
 
