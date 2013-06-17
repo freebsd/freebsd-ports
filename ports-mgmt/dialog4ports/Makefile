@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dialog4ports
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://m1cro.tk/dialog4ports/ \
 		http://files.etoilebsd.net/dialog4ports/ \
