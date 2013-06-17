@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pefile
-# Date created:				16 July 2006
-# Whom:					antoine.brodin@laposte.net
-#
+# Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pefile
 DISTVERSION=	1.2.10-123
@@ -12,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
-COMMENT=	A python module to read and work with PE files
+COMMENT=	Python module to read and work with PE files
 
 LICENSE=	MIT
 
@@ -20,12 +16,17 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	${DISTVERSION:C,-,_,g}
 
+OPTIONS_DEFINE=	DOCS
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

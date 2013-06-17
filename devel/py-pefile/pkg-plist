@@ -5,5 +5,3 @@
 %%PYTHON_SITELIBDIR%%/peutils.py
 %%PYTHON_SITELIBDIR%%/peutils.pyc
 %%PYTHON_SITELIBDIR%%/peutils.pyo
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
