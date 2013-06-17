@@ -1,5 +1,4 @@
 bin/revelation
-%%PYTHON_SITELIBDIR%%/revelation/_cracklib.so
 %%PYTHON_SITELIBDIR%%/revelation/PBKDF2.py
 %%PYTHON_SITELIBDIR%%/revelation/PBKDF2.pyc
 %%PYTHON_SITELIBDIR%%/revelation/PBKDF2.pyo
@@ -21,9 +20,6 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/config.py
 %%PYTHON_SITELIBDIR%%/revelation/config.pyc
 %%PYTHON_SITELIBDIR%%/revelation/config.pyo
-%%PYTHON_SITELIBDIR%%/revelation/cracklib.py
-%%PYTHON_SITELIBDIR%%/revelation/cracklib.pyc
-%%PYTHON_SITELIBDIR%%/revelation/cracklib.pyo
 %%PYTHON_SITELIBDIR%%/revelation/data.py
 %%PYTHON_SITELIBDIR%%/revelation/data.pyc
 %%PYTHON_SITELIBDIR%%/revelation/data.pyo
@@ -112,7 +108,3 @@ share/mime/packages/revelation.xml
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/datahandler
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/bundle
 @dirrm %%PYTHON_SITELIBDIR%%/revelation
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
