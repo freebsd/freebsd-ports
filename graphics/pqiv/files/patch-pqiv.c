@@ -1,6 +1,6 @@
 --- pqiv.c.orig	2009-10-08 19:49:20.000000000 +0900
 +++ pqiv.c	2009-10-10 17:43:14.000000000 +0900
-@@ -273,7 +273,7 @@
+@@ -288,7 +288,7 @@
                  #ifndef NO_COMMANDS
                  " -<n> s         Set command number n (1-9) to s \n"
                  "                See manpage for advanced commands (starting with > or |) \n"
@@ -9,7 +9,7 @@
                  #endif
  
                  "\n"
-@@ -297,7 +297,7 @@
+@@ -312,7 +312,7 @@
                  " v              Vertical flip \n"
                  " i              Show/hide info box \n"
                  " s              Slideshow toggle \n"
@@ -18,7 +18,7 @@
                  #ifndef NO_COMMANDS
                  " <n>            Run command n (1-3) \n"
                  #endif
-@@ -1737,12 +1737,12 @@
+@@ -1955,12 +1955,12 @@
  			}
  			break;
  			/* }}} */
@@ -35,7 +35,16 @@
  			if(link(currentFile->fileName, buf) != 0) {
  				/* Failed to link image, try copying it */
  				if(copyFile(currentFile->fileName, buf) != TRUE) {
-@@ -2214,13 +2214,13 @@
+@@ -2252,8 +2252,6 @@
+ /* glib & threads initialization {{{ */
+ 	DEBUG1("Debug mode enabled");
+ 	g_type_init();
+-	g_thread_init(NULL);
+-	gdk_threads_init();
+ 	if(gtk_init_check(&argc, &argv) == FALSE) {
+ 		die("Failed to open X11 display.");
+ 	}
+@@ -2436,13 +2434,13 @@
  				}
  				optionCommands[i] = g_strdup((gchar*)optarg);
  				break;
