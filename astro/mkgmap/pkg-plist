@@ -1,0 +1,7 @@
+bin/mkgmap
+%%DATADIR%%/lib/fastutil-6.5.2-mkg.1.jar
+%%DATADIR%%/lib/osmpbf-1.1.1-754a33af.jar
+%%DATADIR%%/lib/protobuf-java-2.4.1.jar
+%%DATADIR%%/mkgmap.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
