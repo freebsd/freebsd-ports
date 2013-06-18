@@ -7,4 +7,3 @@ etc/mman.xml.dist
 @cwd /
 @exec mkdir -p %%MMAN_CACHE%%
 @dirrmtry %%MMAN_CACHE%%
-@dirrm /var/cache
