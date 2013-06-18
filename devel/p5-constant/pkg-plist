@@ -1,0 +1,3 @@
+%%SITE_PERL%%/constant.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant
