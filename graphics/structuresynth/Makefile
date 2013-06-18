@@ -1,9 +1,5 @@
-# New ports collection makefile for:	structuresynth
-# Date created:		06 Apr 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	structuresynth
 PORTVERSION=	1.5.0
@@ -20,6 +16,7 @@ USE_ZIP=	yes
 USE_QT4=	qmake_build corelib gui opengl moc_build rcc_build xml script
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/structure-synth
+USE_DOS2UNIX=	*.cpp *.h
 
 post-extract:
 	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kiki
-# Date created:		24 Oct 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	kiki
 PORTVERSION=	1.0.2

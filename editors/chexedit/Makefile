@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chexedit
-# Date Created:				8 Jul 2000
-# Whom:					Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chexedit
 PORTVERSION=	0.9.7

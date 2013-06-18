@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uniconvertor
-# Date created:		15 Nov 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	uniconvertor
 PORTVERSION=	1.1.5

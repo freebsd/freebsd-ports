@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnurobbo
-# Date created:		05 Mar 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnurobbo
 PORTVERSION=	0.66
@@ -24,9 +20,11 @@ MAKE_ENV=	PACKAGE_DATA_DIR="${DATADIR}" \
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/define DEBUG_DUMP_VM_USAGE/ d' ${WRKSRC}/game.c
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/DOCDIR/ d' ${WRKSRC}/Makefile
 .endif
 

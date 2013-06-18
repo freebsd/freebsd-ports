@@ -1,9 +1,5 @@
-# New ports collection makefile for:	meritous
-# Date created:		24 Nov 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	meritous
 PORTVERSION=	1.2
@@ -22,10 +18,13 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
 ALL_TARGET=	default
-USE_DOS2UNIX=	dat/d/helpfile.txt
+USE_DOS2UNIX=	dat/d/helpfile.txt src/*.c
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
+PORTDATA=	*
+
+PLIST_FILES=	bin/${PORTNAME}
 
 DESKTOP_ENTRIES="Meritous" \
 		"Action-adventure dungeon crawl game" \
@@ -34,15 +33,18 @@ DESKTOP_ENTRIES="Meritous" \
 		"Game;ActionGame;AdventureGame;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|dat/|${DATADIR}/|' ${WRKSRC}/src/*.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/meritous ${PREFIX}/bin
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/dat && ${COPYTREE_SHARE} \* ${DATADIR}
-
-.if !defined(NOPORTDOCS)
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif

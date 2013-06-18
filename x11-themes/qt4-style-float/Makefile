@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4-style-float
-# Date created:		26 Nov 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	float
 PORTVERSION=	0.1a2

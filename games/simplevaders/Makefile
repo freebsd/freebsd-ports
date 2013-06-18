@@ -1,9 +1,5 @@
-# New ports collection makefile for:	simplevaders
-# Date created:		21 Apr 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	simplevaders
 PORTVERSION=	0.8
@@ -14,6 +10,8 @@ MASTER_SITES=	http://dusted.dk/download/ \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A Space-Invaders like 2D space shooter
+
+LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer image ttf

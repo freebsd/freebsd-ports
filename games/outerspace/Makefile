@@ -1,9 +1,5 @@
-# New ports collection makefile for:	outerspace
-# Date created:		27 Mar 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	outerspace
 PORTVERSION=	0.2.2

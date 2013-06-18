@@ -1,9 +1,5 @@
-# New ports collection makefile for:	interlogic
-# Date created:		01 Oct 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	interlogic
 PORTVERSION=	0.30
@@ -23,6 +19,9 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/interlogic
 
 PLIST_FILES=	bin/interlogic
+
+post-patch:
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/missing # suppress autotools madness
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/interlogic ${PREFIX}/bin/

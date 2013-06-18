@@ -1,9 +1,5 @@
-# New ports collection makefile for:	funnyboat
-# Date created:		18 Mar 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	funnyboat
 PORTVERSION=	1.5
@@ -28,6 +24,8 @@ SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
 PORTDOCS=	README.txt
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/data
@@ -35,8 +33,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/data/* ${PREFIX}/lib/${PORTNAME}/data
 	${INSTALL_SCRIPT} ${WRKDIR}/funnyboat_ ${PREFIX}/bin/funnyboat
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

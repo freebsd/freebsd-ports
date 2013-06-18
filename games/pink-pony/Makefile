@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pink-pony
-# Date created:		07 Jul 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pink-pony
 PORTVERSION=	1.2.1
@@ -15,12 +11,12 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tron-like multiplayer racing game
 
-LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
+LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
 		protobuf:${PORTSDIR}/devel/protobuf \
-		glfw.0:${PORTSDIR}/graphics/glfw \
+		glfw:${PORTSDIR}/graphics/glfw \
 		Half:${PORTSDIR}/graphics/ilmbase \
-		ftgl.2:${PORTSDIR}/graphics/ftgl \
-		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
+		ftgl:${PORTSDIR}/graphics/ftgl \
+		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
 RUN_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
 
@@ -29,10 +25,13 @@ USE_SCONS=	yes
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pink-pony.sh
+USE_DOS2UNIX=	lib/GL/GLee.h
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,(GLSL|levels|models|music|textures|fonts)/,${DATADIR}/&,' \
@@ -49,7 +48,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.png ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.desktop ${PREFIX}/share/applications/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif

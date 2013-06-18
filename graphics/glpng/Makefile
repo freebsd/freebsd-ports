@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glpng
-# Date created:		06 Mar 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	glpng
 PORTVERSION=	1.45
@@ -21,6 +17,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USE_GL=		gl
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	glpng.c
 
 AR?=		/usr/bin/ar
 

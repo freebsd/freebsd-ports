@@ -1,9 +1,5 @@
-# New ports collection makefile for:	meandmyshadow
-# Date created:		15 Jan 2012
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	meandmyshadow
 PORTVERSION=	0.4
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Me and My Shadow puzzle/platform game
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USES=		cmake
 USE_SDL=	sdl ttf image mixer image gfx
@@ -32,15 +28,17 @@ DESKTOP_ENTRIES="Me and My Shadow" \
 		"Game;LogicGame;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/FindSDL_gfx.cmake
 
 post-install:
-	${MKDIR} -p ${PREFIX}/share/pixmaps/
+	${MKDIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/icons/64x64/meandmyshadow.png \
 		${PREFIX}/share/pixmaps/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS ChangeLog docs/*
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	egoboo
-# Date created:				Apr 28 2003
-# Whom:					Jan Stocker <Jan.Stocker@t-online.de>
-#
+# Created by: Jan Stocker <Jan.Stocker@t-online.de>
 # $FreeBSD$
 
 PORTNAME=	egoboo
@@ -19,9 +16,14 @@ COMMENT=	A 3D dungeon crawling adventure in the spirit of NetHack
 USE_SDL=	sdl ttf mixer image
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_DOS2UNIX=	*.c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/game
 MAKEFILE=	Makefile.unix
+
+PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
+
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/egoboo|${DATADIR}|g; \
@@ -29,9 +31,11 @@ post-patch:
 		${WRKSRC}/egoboo.sh
 
 post-install:
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	@cd ${WRKDIR}/${DISTNAME:S/-/-data-/} && \
 		${COPYTREE_SHARE} . ${DATADIR}
+.endif
 
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 

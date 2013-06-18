@@ -1,9 +1,5 @@
-# New ports collection makefile for:	connectfive
-# Date created:			20 Sep 2005
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	connectfive
 PORTVERSION=	1.0.2
@@ -24,8 +20,15 @@ USE_SDL=	sdl
 USE_GL=		gl
 USE_XORG=	xmu xext x11
 USE_GMAKE=	yes
+USE_DOS2UNIX=	glfont2.h
 
 WRKSRC=		${WRKDIR}/connectFive
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTDATA=	*
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile.linux
@@ -33,11 +36,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Board::||' ${WRKSRC}/Board.h
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/connectfive ${PREFIX}/bin/
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/
-.if !defined(NOPORTDOCS)
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.txt ${WRKSRC}/LICENSE.txt ${WRKSRC}/README.txt ${DOCSDIR}/
 .endif

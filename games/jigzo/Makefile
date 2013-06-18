@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glpuzzle
-# Date created:				09 Jan 2006
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	jigzo
 PORTVERSION=	0.6.1
@@ -17,11 +13,12 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An OpenGL jigsaw puzzle game
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_SDL=	sdl mixer
 USE_GL=		gl
 USE_GMAKE=	yes
+MAKE_ARGS=	CXX=${CXX}
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
@@ -32,6 +29,8 @@ DESKTOP_ENTRIES="Jigzo" \
 		"jigzo" \
 		"Game;LogicGame;KidsGame;" \
 		false
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|int_p_NULL|NULL|g" \
@@ -46,9 +45,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "font image puzzles sound" \
-	${DATADIR}/
+		${DATADIR}/
 
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

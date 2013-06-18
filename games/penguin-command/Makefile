@@ -1,9 +1,5 @@
-# New ports collection makefile for:	penguin-command
-# Date created:			Apr 4, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	penguin-command
 PORTVERSION=	1.6.11
@@ -15,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A clone of the classic game Missile Command
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes

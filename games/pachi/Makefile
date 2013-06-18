@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pachi
-# Date created:		18 Sep 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pachi
 PORTVERSION=	1.0

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hnb
-# Date created:				Fri Jul  6 05:37:14 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	hnb
 PORTVERSION=	1.9.17
@@ -21,7 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		hnb.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"
 BROKEN=		segfaults on 64bit systems
@@ -34,11 +30,11 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hnb ${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/../doc/hnb.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for FILE in Documentation.hnb Documentation.html hnbrc
 	${INSTALL_DATA} ${WRKSRC}/../doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
