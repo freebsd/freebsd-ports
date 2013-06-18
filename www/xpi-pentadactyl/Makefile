@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	dactyl
 
-MAINTAINER=	mbsd@isgroup.com.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox for Vim and Links addicts
 
 XPI_NUM=	235854
