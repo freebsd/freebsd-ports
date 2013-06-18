@@ -4389,3 +4389,4 @@ mail/claws-mail-cachesaver||2013-06-11|Has expired: No longer maintained by Claw
 deskutils/contacts||2013-06-13|Has expired: upstream project discontinued for years, upstream sources are gone
 www/libxul19|www/libxul|2013-06-15|Has been vulnerable for a long time, unsupported upstream
 chinese/cxterm||2013-06-17|Has expired: does not compile
+games/rtcw|games/linux-rtcw|2013-06-18|Renamed (Linux binary port)
