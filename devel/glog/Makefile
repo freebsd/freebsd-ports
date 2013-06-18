@@ -22,14 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} =="powerpc" || ${ARCH} =="sparc64"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-utilities.cc
-.endif
-
-.if ${ARCH} == "amd64"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-utilities.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^docdir.*|docdir = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
 .if ! ${PORT_OPTIONS:MDOCS}
