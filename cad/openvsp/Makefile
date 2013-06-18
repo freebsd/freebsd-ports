@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	cad
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
 GH_TAGNAME=	${GH_PROJECT}_${PORTVERSION}
-GH_COMMIT=	fb52aa2
+GH_COMMIT=	5e7532c
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 USES=		cmake:outsource iconv
@@ -33,7 +33,6 @@ USE_GL=		glu
 USE_GNOME=	libxml2
 
 PORTEXAMPLES=	*
-INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 PLIST_FILES=	bin/vsp
 
@@ -42,10 +41,10 @@ CFLAGS+=	-I${LOCALBASE}/include/openNURBS
 .include <bsd.port.options.mk>
 
 do-install:
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/vsp/vsp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/vsp/vsp ${PREFIX}/bin
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_PORTEXAMPLES}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
