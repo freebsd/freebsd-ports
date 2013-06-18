@@ -17,12 +17,6 @@ MAN3=	Thread::Suspend.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-threads>=1.39:${PORTSDIR}/devel/p5-threads \
-		p5-threads-shared>=1.01:${PORTSDIR}/devel/p5-threads-shared
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "----------------------------------------------------------"
 	@${ECHO_MSG} "This module requires a threaded perl.  If your install"

@@ -19,15 +19,4 @@ MAN3=	POD2::DE::local::lib.3 \
 	lib::core::only.3 \
 	local::lib.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-Install>=1.43:${PORTSDIR}/devel/p5-ExtUtils-Install
-.endif
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-Module-Build>=0.36:${PORTSDIR}/devel/p5-Module-Build
-RUN_DEPENDS+=	p5-Module-Build>=0.36:${PORTSDIR}/devel/p5-Module-Build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -56,12 +56,6 @@ MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.sh.1 mlmmj-proce
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PERL_WEBINTERFACE)
-. if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-. endif
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/mlmmj-make-ml.sh
 

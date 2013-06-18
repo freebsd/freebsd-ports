@@ -30,10 +30,4 @@ MAN3=		MouseX::Foreign.3 \
 		MouseX::Foreign::Meta::Role::Method::Destructor.3 \
 		MouseX::NonMoose.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

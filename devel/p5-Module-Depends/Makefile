@@ -22,10 +22,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		Module::Depends::Intrusive.3 Module::Depends.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-Parse-CPAN-Meta>=0:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

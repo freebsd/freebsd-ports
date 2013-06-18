@@ -38,10 +38,4 @@ MAN3=		Data::Serializer.3 Data::Serializer::Bencode.3 \
 		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
 		Data::Serializer::YAML::Syck.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

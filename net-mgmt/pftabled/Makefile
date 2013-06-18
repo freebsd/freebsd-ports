@@ -25,9 +25,6 @@ PYTHONC_DESC=	A Sample Python Client
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPERLC}
-. if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-. endif
 PLIST_FILES+=	bin/pftabled-client.pl
 .endif
 

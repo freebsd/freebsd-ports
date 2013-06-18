@@ -120,9 +120,6 @@ RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 .if ${PORT_OPTIONS:MPDF}
 RUN_DEPENDS+=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2
-. if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MISPELL}

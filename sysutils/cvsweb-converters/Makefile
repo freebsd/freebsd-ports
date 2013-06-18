@@ -31,10 +31,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
 post-install:
 	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' -- \
 		${.CURDIR}/pkg-message >${PKGMESSAGE}

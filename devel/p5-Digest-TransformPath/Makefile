@@ -19,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Digest::TransformPath.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-Digest-MD5>=2.36:${PORTSDIR}/security/p5-Digest-MD5
-BUILD_DEPENDS+=	p5-Digest-MD5>=2.36:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
