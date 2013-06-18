@@ -3,7 +3,7 @@
 
 PORTNAME=	rtorrent-devel
 PORTVERSION=	0.9.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
@@ -16,8 +16,6 @@ RUN_DEPENDS=	libtorrent-devel=0.13.3:${PORTSDIR}/net-p2p/libtorrent-devel
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-[0-9]*
-
-USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
