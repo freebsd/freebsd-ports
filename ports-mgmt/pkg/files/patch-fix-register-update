@@ -1,0 +1,39 @@
+diff --git libpkg/fetch.c libpkg/fetch.c
+index c2e5919..8e902ae 100644
+--- libpkg/fetch.c
++++ libpkg/fetch.c
+@@ -145,7 +145,7 @@ pkg_fetch_file_to_fd(const char *url, int dest, time_t t)
+ 	retry = max_retry;
+ 
+ 	u = fetchParseURL(url);
+-	if (t != 0)
++	if (t != 0 && st.mtime != 0)
+ 		u->ims_time = t;
+ 
+ 	doc = u->doc;
+diff --git newvers.sh newvers.sh
+index 207aab0..651231f 100755
+--- newvers.sh
++++ newvers.sh
+@@ -41,7 +41,7 @@
+ : ${PKG_MINOR_VERSION="0"}
+ : ${PKG_PATCH_LEVEL="13"}
+  
+-: ${PORTREVISION:=""}
++: ${PORTREVISION:="1"}
+ : ${PORTEPOCH:=}
+ 
+ # ------------------------------------------------------------------
+diff --git pkg/register.c pkg/register.c
+index 385f8a2..ce29612 100644
+--- pkg/register.c
++++ pkg/register.c
+@@ -119,7 +119,7 @@ exec_register(int argc, char **argv)
+ 				err(1, "cannot allocate memory");
+ 			break;
+ 		case 'd':
+-			pkg_set(pkg, PKG_AUTOMATIC, true);
++			pkg_set(pkg, PKG_AUTOMATIC, (int64_t)true);
+ 			break;
+ 		case 'i':
+ 			if ((input_path = strdup(optarg)) == NULL)
