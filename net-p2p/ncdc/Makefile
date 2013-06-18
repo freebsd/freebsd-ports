@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncdc
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17
 PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Lightweight direct connect client with ncurses interface
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre:${PORTSDIR}/devel/pcre \
