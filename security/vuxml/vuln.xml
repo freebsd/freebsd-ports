@@ -185,8 +185,9 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2013-3343</cvename>
     </references>
     <dates>
-      <discovery>2013-08-11</discovery>
-      <entry>2013-08-14</entry>
+      <discovery>2013-06-11</discovery>
+      <entry>2013-06-14</entry>
+      <modified>2013-06-18</modified>
     </dates>
   </vuln>
 
