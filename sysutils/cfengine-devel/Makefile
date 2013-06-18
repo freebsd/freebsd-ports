@@ -18,6 +18,7 @@ FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 CONFLICTS=	cfengine-[23]*
 
 IGNORE=		Development has not branched from 3.5.0 yet
+BROKEN=		Not fetchavle
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
