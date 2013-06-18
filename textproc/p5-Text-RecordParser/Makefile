@@ -1,11 +1,7 @@
-# New ports collection makefile for:	p5-Text-RecordParser
-# Date created:				Nov 23 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
 # $FreeBSD$
 
 PORTNAME=	Text-RecordParser
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
