@@ -2,7 +2,7 @@
 
 PORTNAME?=	rtorrent
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -14,8 +14,6 @@ RUN_DEPENDS=	libtorrent=0.13.2_1:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-devel-[0-9]*
-
-USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
