@@ -2975,6 +2975,7 @@
     SUBDIR += p5-capitalization
     SUBDIR += p5-carton
     SUBDIR += p5-common-sense
+    SUBDIR += p5-constant
     SUBDIR += p5-constant-boolean
     SUBDIR += p5-constant-def
     SUBDIR += p5-constant-lexical
