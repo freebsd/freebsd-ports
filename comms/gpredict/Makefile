@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/gpredict/Gpredict/${PORTVERSION}
 
-MAINTAINER=	matt@chronos.org.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \

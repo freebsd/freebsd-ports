@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FUSINV
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	am@raisa.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network discovery support for FusionInventory Agent
 
 LICENSE=	GPLv2
