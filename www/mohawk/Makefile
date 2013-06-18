@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mohawk
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.etoilebsd.net/mohawk/tarball/ \
 		http://fossil.bsdsx.fr/mohawk/tarball/
