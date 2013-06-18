@@ -127,6 +127,7 @@
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
+    SUBDIR += fbopenssl
     SUBDIR += fcheck
     SUBDIR += fcrackzip
     SUBDIR += fiked

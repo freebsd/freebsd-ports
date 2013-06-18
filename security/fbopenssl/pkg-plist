@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+include/fbopenssl/asn1help.h
+include/fbopenssl/filehelp.h
+include/fbopenssl/gssapi.h
+include/fbopenssl/krb5help.h
+include/fbopenssl/spnego.h
+include/fbopenssl/spnegohelp.h
+lib/libfbopenssl.a
+lib/libfbopenssl_p.a
+lib/libfbopenssl.so
+lib/libfbopenssl.so.0
