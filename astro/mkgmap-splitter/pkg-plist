@@ -1,5 +1,4 @@
 bin/mkgmap-splitter
-%%DATADIR%%/lib/dsiutils-1.0.11.jar
 %%DATADIR%%/lib/fastutil.jar
 %%DATADIR%%/lib/osmpbf.jar
 %%DATADIR%%/lib/protobuf.jar
