@@ -1,0 +1,9 @@
+d2to1 (the 'd' is for 'distutils') allows using distutils2-like
+setup.cfg files for a package's metadata with a distribute/setuptools
+setup.py script.
+
+It works by providing a distutils2-formatted setup.cfg file containing
+all of a package's metadata, and a very minimal setup.py which will
+slurp its arguments from the setup.cfg.
+
+WWW: https://github.com/iguananaut/d2to1
