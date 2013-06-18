@@ -10,7 +10,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20${PORTVERSION}/
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The menu-cache portion of LXDE
 
 USE_GNOME=	gnomehack gtk20 pkgconfig

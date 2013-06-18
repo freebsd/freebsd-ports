@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20${PORTVERSION}
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Session Manager
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/lxde/LXDE%20Icon%20Theme/lxde-icon-theme-${PORTVERSION}
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Icon Theme
 
 USE_BZIP2=	YES

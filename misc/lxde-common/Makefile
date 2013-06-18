@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/LXDE%20Common%20${PORTVERSION}
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Common files
 
 USE_GNOME=	gtk20

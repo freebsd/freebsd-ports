@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Florence OnScreen Keyboard
 
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
