@@ -7,7 +7,7 @@ CATEGORIES=	sysutils games
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount packed data files of various games (PACK, WAD, etc.)
 
 LICENSE=	GPLv2
