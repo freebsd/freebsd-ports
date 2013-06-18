@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkgmap
-PORTVERSION=	r2487
+PORTVERSION=	r2648
 CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,14 +17,14 @@ JAVA_VERSION=	1.6+
 
 SUB_FILES=	${PORTNAME}.sh
 
-PLIST_FILES=	bin/${PORTNAME} ${JAVAJARDIR:C,${PREFIX}/?,,}/${PORTNAME}.jar
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${JAVAJARDIR}/
+	${MKDIR} ${DATADIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}/lib/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
