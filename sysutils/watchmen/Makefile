@@ -38,10 +38,6 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500805
-RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql

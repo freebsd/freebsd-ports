@@ -37,10 +37,6 @@ EXAMPLES=	userlist userneu.conf.example
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 do-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5

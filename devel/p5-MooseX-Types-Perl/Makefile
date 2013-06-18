@@ -24,11 +24,6 @@ MAN3=		MooseX::Types::Perl.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-version>=0.82:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-version>=0.82:${PORTSDIR}/devel/p5-version
-.endif
-
 .if ${PERL_LEVEL} < 501400
 TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 .endif

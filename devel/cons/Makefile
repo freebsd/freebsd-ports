@@ -30,10 +30,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
 	${INSTALL_MAN} ${WRKSRC}/cons.1.gz ${PREFIX}/man/man1/cons.1.gz

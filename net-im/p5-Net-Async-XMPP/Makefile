@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TEAM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous XMPP client and server
 
 RUN_DEPENDS=	p5-IO-Async>=0.37:${PORTSDIR}/devel/p5-IO-Async \
@@ -27,10 +27,4 @@ MAN3=		Net::Async::XMPP.3 \
 		Net::Async::XMPP::Protocol.3 \
 		Net::Async::XMPP::Server.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

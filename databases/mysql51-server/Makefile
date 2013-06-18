@@ -192,9 +192,6 @@ USE_MYSQL=	yes
 WANT_MYSQL_VER=	51
 
 RUN_DEPENDS=	p5-DBD-mysql51>=0:${PORTSDIR}/databases/p5-DBD-mysql51
-.if ${PERL_LEVEL} <= 500800
-RUN_DEPENDS+=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
-.endif
 
 LATEST_LINK=	mysql51-scripts
 

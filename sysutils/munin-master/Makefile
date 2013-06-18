@@ -77,11 +77,6 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-BUILD_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL

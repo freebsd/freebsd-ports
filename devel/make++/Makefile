@@ -46,10 +46,6 @@ MAN1=		makepp.1 makepp_build_algorithm.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=--htmldir=none
 .else

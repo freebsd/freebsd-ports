@@ -18,11 +18,4 @@ MAN3=	CPAN::Changes.3 \
 	CPAN::Changes::Spec.3 \
 	Test::CPAN::Changes.3 \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-version>=0.79:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-version>=0.79:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

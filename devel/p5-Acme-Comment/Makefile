@@ -21,11 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Acme::Comment.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Text-Balanced>=1.99:${PORTSDIR}/textproc/p5-Text-Balanced
-RUN_DEPENDS+=	p5-Text-Balanced>=1.99:${PORTSDIR}/textproc/p5-Text-Balanced
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

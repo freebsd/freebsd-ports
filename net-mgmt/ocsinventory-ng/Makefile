@@ -31,10 +31,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
 do-install:
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache binutils dtd etc ocsreports" ${DATADIR}/)

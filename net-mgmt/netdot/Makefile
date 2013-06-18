@@ -60,13 +60,6 @@ PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
-.endif
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
-.endif
-
 INSTALL_TARGET=	install		\
 	PREFIX=${WWWDIR}	\
 	APACHEUSER=${WWWOWN}	\

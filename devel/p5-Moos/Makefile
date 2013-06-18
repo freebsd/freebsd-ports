@@ -26,11 +26,4 @@ MAN3=		Moos.3 \
 		Moos::Role.3 \
 		oos.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
-RUN_DEPENDS+=	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

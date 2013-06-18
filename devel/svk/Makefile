@@ -158,25 +158,6 @@ MAN3=		SVK.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500807
-BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.if ${PERL_LEVEL} < 500808
-BUILD_DEPENDS+=	p5-Getopt-Long>=2.35:${PORTSDIR}/devel/p5-Getopt-Long
-RUN_DEPENDS+=	p5-Getopt-Long>=2.35:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
-.if ${PERL_LEVEL} < 500903
-BUILD_DEPENDS+=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
-RUN_DEPENDS+=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "If you see some missing dependency, please update your"

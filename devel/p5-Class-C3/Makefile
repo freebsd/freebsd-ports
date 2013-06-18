@@ -28,10 +28,4 @@ BUILD_DEPENDS+=	p5-Algorithm-C3>=0.07:${PORTSDIR}/devel/p5-Algorithm-C3
 RUN_DEPENDS+=	p5-Algorithm-C3>=0.07:${PORTSDIR}/devel/p5-Algorithm-C3
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

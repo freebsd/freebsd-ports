@@ -72,14 +72,6 @@ MIBINCLUDES:=${MIBINCLUDES:S/,$//}
 MIBINCLUDES="#please add here mibs dirs list (at least snmp and rfc ones)"
 .endif
 
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
 .if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	p5-Graph>=0:${PORTSDIR}/math/p5-Graph	\
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz

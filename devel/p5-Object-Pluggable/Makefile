@@ -29,10 +29,6 @@ MAN3=		Object::Pluggable.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Pod-Parser>=1.36:${PORTSDIR}/textproc/p5-Pod-Parser
-.endif
-
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

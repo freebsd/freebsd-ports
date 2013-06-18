@@ -31,11 +31,6 @@ GROUPS=	www
 
 .include <bsd.port.pre.mk>
 
-# A reliable version of Time::HiRes is included with perl 5.8.7 and later.
-.if ${PERL_LEVEL} < 500807
-RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
 		${WRKSRC}/cricket-conf.pl.sample
