@@ -142,6 +142,8 @@ USES+=		iconv
 .endif
 
 .if ${PHP_MODNAME} == "imap"
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=	SSL
 LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
