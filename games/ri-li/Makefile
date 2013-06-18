@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ri-li
-# Date created:		03 Jul 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Ri-li
 PORTVERSION=	2.0.1

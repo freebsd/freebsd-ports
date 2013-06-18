@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autopano-sift-c
-# Date created:		10 Jul 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	autopano-sift-C
 PORTVERSION=	2.5.1
@@ -14,12 +10,12 @@ MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Automatic panorama control point generation tool, C port
 
-RESTRICTED=	May be covered by patents
-
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		pano13:${PORTSDIR}/graphics/libpano13
+
+RESTRICTED=	May be covered by patents
 
 CONFLICTS=	autopano-sift-[0-9]*
 
@@ -35,10 +31,12 @@ PORTDOCS=	*
 MAN1=		autopano-c-complete.1 autopano.1 generatekeys.1
 MAN7=		autopano-sift-c.7
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/CMakeLists.txt
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.1ST ${DOCSDIR}/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wings
-# Date Created:				5 March 2003
-# Whom:				 	olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	wings
 PORTVERSION=	1.4.1

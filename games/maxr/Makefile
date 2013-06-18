@@ -1,9 +1,5 @@
-# New ports collection makefile for:	maxr
-# Date created:		23 Dec 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	maxr
 PORTVERSION=	0.2.8

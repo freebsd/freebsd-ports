@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jag
-# Date created:		03 Jul 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jag
 PORTVERSION=	0.3.2

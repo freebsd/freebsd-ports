@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pengupop
-# Date created:		14 Jun 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pengupop
 PORTVERSION=	2.2.6

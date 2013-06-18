@@ -1,9 +1,5 @@
-# New ports collection makefile for:	love
-# Date created:		01 Aug 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	love
 DISTVERSION=	0.5-0
@@ -37,13 +33,15 @@ PLIST_FILES=	bin/love5
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}5
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
 		${WRKSRC}/src/opengl/love_opengl.cpp
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
 		${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in changes.txt readme.txt

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	passage
-# Date created:		23 Apr 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	passage
 PORTVERSION=	4

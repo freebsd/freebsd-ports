@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crrcsim
-# Date created:		17 Jun 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	crrcsim
 PORTVERSION=	0.9.11
@@ -15,8 +11,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Model-airplane flight simulation program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -38,9 +34,11 @@ DESKTOP_ENTRIES="CRRCsim" \
 		"Game;Simulation;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/portaudio/ s|==|=|' ${WRKSRC}/configure
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-pkgdataDATA||; \
 		/^SUBDIRS =/ s|=.*|= man|' ${WRKSRC}/documentation/Makefile.in
 .endif

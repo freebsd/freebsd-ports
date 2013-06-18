@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4-style-quantumstyle
-# Date created:		26 Nov 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quantumstyle
 DISTVERSION=	rc6

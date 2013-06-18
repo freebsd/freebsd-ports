@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dangen
-# Date created:		25 Aug 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	dangen
 PORTVERSION=	0.5
@@ -26,9 +22,14 @@ DESKTOP_ENTRIES="dangen" \
 		"Game;ArcadeGame;" \
 		false
 
-PORTDOCS=	README
+PORTDOCS=	*
+
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/image/font.png
+PLIST_DIRS=	%%DATADIR%%/image %%DATADIR%%
 
 MAN6=		dangen.6
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile.in \
@@ -36,12 +37,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(datadir)/games/|$$(datadir)/|' ${WRKSRC}/spqr/image/Makefile.in
 	@${REINPLACE_CMD} -e 's|/games||' ${WRKSRC}/util.c
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

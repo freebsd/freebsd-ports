@@ -1,9 +1,5 @@
-# New ports collection makefile for:	critterding
-# Date created:		15 Oct 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	critterding
 DISTVERSION=	beta12
@@ -14,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sources
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Evolving Artificial Life
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -24,10 +20,12 @@ USE_GL=		gl
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-system-ftgl
-USE_GCC=	4.2+
+USE_GCC=	yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README AUTHORS Changelog
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|../share/critterding|${DATADIR}|' \
@@ -36,7 +34,7 @@ post-patch:
 pre-configure:
 	cd ${WRKSRC} && ${AUTORECONF} -fi
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sdlsand
-# Date created:		22 Apr 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	sdlsand
 PORTVERSION=	20061017
@@ -22,6 +18,8 @@ WRKSRC=		${WRKDIR}/SDL\ Sand/SDL\ Sand
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	readme.txt
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/crtdbg/ d' ${WRKSRC}/CmdLine.cpp
 
@@ -32,7 +30,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif

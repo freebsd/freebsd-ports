@@ -1,4 +1,0 @@
-bin/dangen
-%%DATADIR%%/image/font.png
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sfml
-# Date created:		07 Jul 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sfml
 PORTVERSION=	1.6
@@ -15,10 +11,10 @@ DISTNAME=	SFML-${PORTVERSION}-sdk-linux-32
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
 USE_OPENAL=	al
@@ -34,6 +30,8 @@ PORTDOCS=	*
 
 PORTSCOUT=	limit:[^c]$$
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${RM} -f ${WRKSRC}/lib/*
 	@${FIND} ${WRKSRC}/samples/bin/ -type f -maxdepth 1 -delete
@@ -42,7 +40,7 @@ post-install:
 .for lib in audio graphics network system window
 	@${LN} -s libsfml-${lib}.so.${PORTVERSION} ${PREFIX}/lib/libsfml-${lib}.so.${PORTVERSION:C/^([0-9]).*/\1/}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "*" ${DOCSDIR}/
 .endif

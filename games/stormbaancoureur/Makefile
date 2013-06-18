@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sturmbahnfahrer
-# Date created:		07 Sep 2006
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	stormbaancoureur
 PORTVERSION=	2.1.5
@@ -27,18 +23,18 @@ INSTALL_WRKSRC=	${WRKSRC}/src-stormbaancoureur
 
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__DATADIR|"${DATADIR}"|' \
 		${WRKSRC}/src-stormbaancoureur/main.cxx
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

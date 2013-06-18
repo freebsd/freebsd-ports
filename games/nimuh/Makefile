@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nimuh
-# Date created:		27 Jan 2008
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	nimuh
 PORTVERSION=	1.02
@@ -15,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERS
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game destined to improve the knowledge of Andalusia
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

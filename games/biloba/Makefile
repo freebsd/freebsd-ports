@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biloba
-# Date created:		02 Oct 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	biloba
 PORTVERSION=	0.9.3

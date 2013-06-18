@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gitg
-# Date created:		2010-03-19
-# Whom:			kipz <somicide@gmail.com>
-#
+# Created by: kipz <somicide@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gitg
 PORTVERSION=	0.0.8
@@ -14,10 +10,10 @@ MASTER_SITES=	GNOME
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
 
-RUN_DEPENDS=	git>=1.7.0.2:${PORTSDIR}/devel/git
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	git>=1.7.0.2:${PORTSDIR}/devel/git
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
