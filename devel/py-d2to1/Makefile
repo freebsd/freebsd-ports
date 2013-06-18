@@ -1,4 +1,4 @@
-# Created by: Charlie & <root@freebsd-90-amd64>
+# Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	d2to1
@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	root@freebsd-90-amd64
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Distutils2-like setup.cfg files with setuptools setup.py
 
 LICENSE=	BSD
