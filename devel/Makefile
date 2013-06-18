@@ -1083,6 +1083,7 @@
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpthread-stubs
+    SUBDIR += libqxt
     SUBDIR += librcc
     SUBDIR += librcd
     SUBDIR += libreadline-java
