@@ -18,6 +18,7 @@ USE_PYTHON_BUILD=	yes
 USE_GNOME=	glib20
 USE_SQLITE=	3
 
+USES+=		pkgconfig
 USE_LDCONFIG=	yes
 
 MAN1=		xmms2.1 xmms2d.1 xmms2-launcher.1
@@ -56,10 +57,6 @@ XML_DESC=	Support XML based playlists (XSPF, RSS)
 .endif # !XMMS_SLAVE
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 800030
-BROKEN=		Does not compile on 7.x: Requires fstatat(2)
-.endif
 
 .if defined(XMMS2_SLAVE)
 EXCLUDE+=	--without-xmms2d
