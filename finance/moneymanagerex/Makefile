@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.codelathe.com/${PORTNAME}/installer/linux/ \
 		SF/moneymanagerex/moneymanagerex/Version%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, open-source, easy-to-use personal finance software
 
 LICENSE=	GPLv2

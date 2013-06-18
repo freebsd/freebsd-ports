@@ -6,7 +6,7 @@ PORTVERSION=	0.2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Double-array trie implementation library
 
 LICENSE=	LGPL21
