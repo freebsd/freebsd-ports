@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xmltooling
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.5.2/
+MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.5.3/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
