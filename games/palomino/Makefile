@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	palomino
-PORTVERSION=	20121026
-PORTREVISION=	2
+PORTVERSION=	20130527
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.palomino3d.org/sim/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
@@ -14,6 +13,8 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Action flight simulation computer program using OSG
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	osg:${PORTSDIR}/graphics/osg
 
@@ -32,23 +33,19 @@ TERRAIN_VER=	20080206
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	JOYSTICK SDL PLIB GUI
+OPTIONS_DEFINE=	SDL PLIB GUI
 OPTIONS_DEFAULT=	SDL GUI
 
-JOYSTICK_DESC=	Enable joystick support through linux-js
 SDL_DESC=	SDL support for input and sound
 PLIB_DESC=	Enable sound support through plib
 GUI_DESC=	Enable FLTK GUI
 
+PORTDOCS=	*
+
 DESKTOP_ENTRIES=	"Palomino" "${COMMENT}" "${PORTNAME}" \
-			"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+			"${PORTNAME}" "Game;ArcadeGame;" false
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJOYSTICK}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
-RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
-.endif
 
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl mixer
@@ -71,30 +68,34 @@ post-patch:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE(/ s|)| REQUIRED)|' \
 		${WRKSRC}/CMakeModules/libraries.cmake
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_OSSIM/ d' ${WRKSRC}/CMakeLists.txt
-.if empty(PORT_OPTIONS:MJOYSTICK)
+
+# Please look MOVED 2013-06-04
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_LINUX_JOYSTICK/ d' ${WRKSRC}/CMakeLists.txt
-.endif
-.if empty(PORT_OPTIONS:MSDL)
+
+.if ! ${PORT_OPTIONS:MSDL}
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_SDL/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-.if empty(PORT_OPTIONS:MPLIB)
+
+.if ! ${PORT_OPTIONS:MPLIB}
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_PLIB/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-.if empty(PORT_OPTIONS:MGUI)
+
+.if ! ${PORT_OPTIONS:MGUI}
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_FLTK/ d' ${WRKSRC}/CMakeLists.txt
 .endif
+
 	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
-	       	${WRKSRC}/src/base/conf.cc
+		${WRKSRC}/src/base/conf.cc
 	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|"scripts"|"${DATADIR}/scripts"|' \
-	       	${WRKSRC}/src/lua_bind/defs.hh
+		${WRKSRC}/src/lua_bind/defs.hh
 	@${REINPLACE_CMD} -e 's|doc/html/|${DOCSDIR}/|' ${WRKSRC}/src/gui/gui.cc
 
 post-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} "data scripts" ${DATADIR}/
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data scripts" ${DATADIR})
 # docs are used from within the game, so this is unconditional
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${DOCSDIR})
 
 	${LN} -sf ${DOCSDIR}/images/palominoLogo.png \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png

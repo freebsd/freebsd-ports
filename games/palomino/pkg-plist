@@ -1,52 +1,5 @@
 bin/palomino
 share/pixmaps/palomino.png
-%%DOCSDIR%%/coding.html
-%%DOCSDIR%%/compression.html
-%%DOCSDIR%%/crash.html
-%%DOCSDIR%%/docs.css
-%%DOCSDIR%%/images/arrowBlue.gif
-%%DOCSDIR%%/images/arrowGreen.gif
-%%DOCSDIR%%/images/arrowRed.gif
-%%DOCSDIR%%/images/arrowWhite.gif
-%%DOCSDIR%%/images/arrowYellow.gif
-%%DOCSDIR%%/images/favicon.png
-%%DOCSDIR%%/images/palominoLogo.png
-%%DOCSDIR%%/images/palomino_pegasus_50x40.png
-%%DOCSDIR%%/images/sprite1.png
-%%DOCSDIR%%/images/sprite2.png
-%%DOCSDIR%%/images/sprite3.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/issues.html
-%%DOCSDIR%%/lua_scripts.html
-%%DOCSDIR%%/manual.css
-%%DOCSDIR%%/manual.html
-%%DOCSDIR%%/math.html
-%%DOCSDIR%%/module_base.html
-%%DOCSDIR%%/module_base_configuration.html
-%%DOCSDIR%%/module_collision.html
-%%DOCSDIR%%/module_control.html
-%%DOCSDIR%%/module_fx.html
-%%DOCSDIR%%/module_game.html
-%%DOCSDIR%%/module_gfx.html
-%%DOCSDIR%%/module_graph.html
-%%DOCSDIR%%/module_gui.html
-%%DOCSDIR%%/module_hud.html
-%%DOCSDIR%%/module_init.html
-%%DOCSDIR%%/module_input.html
-%%DOCSDIR%%/module_lua.html
-%%DOCSDIR%%/module_math.html
-%%DOCSDIR%%/module_object.html
-%%DOCSDIR%%/module_physics.html
-%%DOCSDIR%%/module_program.html
-%%DOCSDIR%%/module_shader.html
-%%DOCSDIR%%/module_shadows.html
-%%DOCSDIR%%/module_sky.html
-%%DOCSDIR%%/module_sound.html
-%%DOCSDIR%%/module_view.html
-%%DOCSDIR%%/module_world.html
-%%DOCSDIR%%/rules.html
-%%DOCSDIR%%/scene.html
-%%DOCSDIR%%/terrain.html
 %%DATADIR%%/data/fonts/README.txt
 %%DATADIR%%/data/fonts/arial.ttf
 %%DATADIR%%/data/fonts/masque.ttf
@@ -516,5 +469,3 @@ share/pixmaps/palomino.png
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
