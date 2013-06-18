@@ -140,15 +140,6 @@ _JAVA_PORTS_INSTALLED!=		${MAKE} -V _JAVA_PORTS_INSTALLED USE_JAVA=1 -f ${PORTSD
 UID!=	${ID} -u
 .endif
 
-.if exists(${LOCALBASE}/sbin/pkg_info)
-PKG_INFO?=	${LOCALBASE}/sbin/pkg_info
-.else
-PKG_INFO?=	/usr/sbin/pkg_info
-.endif
-.if !defined(PKGINSTALLVER)
-PKGINSTALLVER!=	${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
-.endif
-
 .endif
 
 INDEXDIR?=	${PORTSDIR}
@@ -374,7 +365,6 @@ README.html:
 	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	UID="${UID:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	HAVE_COMPAT_IA32_KERN="${HAVE_COMPAT_IA32_KERN}" \
 	CONFIGURE_MAX_CMD_LEN="${CONFIGURE_MAX_CMD_LEN}" \
 	PYTHON_DEFAULT_VERSION="${PYTHON_DEFAULT_VERSION}" \

@@ -123,7 +123,7 @@ sub readfrom {
     return wantarray ? @childout : $childout[0];
 }
 
-foreach (qw(ARCH OPSYS OSREL OSVERSION PKGINSTALLVER UID)) {
+foreach (qw(ARCH OPSYS OSREL OSVERSION UID)) {
     my @cachedenv = readfrom $portsdir, $make, "-V$_";
     $ENV{$_} = $cachedenv[0];
 }
