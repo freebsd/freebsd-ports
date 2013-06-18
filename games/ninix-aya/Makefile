@@ -24,6 +24,8 @@ USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 
+OPTIONS_DEFINE=	DOCS NLS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -43,11 +45,11 @@ post-patch:
 		-e 's,lib/ninix,libexec/ninix,'	\
 		-e 's,/doc,/share/doc/ninix,' \
 		${WRKSRC}/Makefile
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/docdir)$$/d' \
 		${WRKSRC}/Makefile
 .endif
-.if ${PORT_OPTIONS:MNLS}
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/localedir/d' \
 		${WRKSRC}/Makefile
 .endif
