@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--with-tr1-implementation=none
 post-patch:
 	${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
 			${WRKSRC}/configure.py
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/$$(MKDIR_INSTALL) $$(DOCDIR)/d' \
 			-e '/$$(INSTALL_CMD_DATA) $$$$i $$(DOCDIR); /d' \
 			${WRKSRC}/src/build-data/makefile/unix_shr.in
