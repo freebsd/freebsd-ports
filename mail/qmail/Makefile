@@ -452,7 +452,7 @@ PATCHFILES+=	qmail-spf-rc5.patch:spf
 PLIST_SUB+=		EXTTODO=""
 DOCFILES_WRKSRC+=	EXTTODO
 
-. if !empty{PORT_OPTIONS:MBIG_TODO_PATCH) || !empty(PORT_OPTIONS:MBIGTODO)
+. if !empty(PORT_OPTIONS:MBIG_TODO_PATCH) || !empty(PORT_OPTIONS:MBIGTODO)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ext_big_todo/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:ext_big_todo
 EXT_BIG_TODO_PATCH=	ext_todo-20030105+big-todo.103.patch
