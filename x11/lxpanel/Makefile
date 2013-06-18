@@ -6,7 +6,7 @@ PORTVERSION=	0.5.12
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
 
 LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache
@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-plugins=volume,deskno,kbled,xkb,batt\
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${WRKSRC}
+CFLAGS+=	-I${WRKSRC} -Wno-return-type
+USE_CSTD=	gnu89
 USE_GMAKE=	yes
 
 MAN1=		lxpanel.1 lxpanelctl.1
