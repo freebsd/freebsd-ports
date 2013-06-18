@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mohawk
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.etoilebsd.net/mohawk/tarball/ \
 		http://fossil.bsdsx.fr/mohawk/tarball/
@@ -12,7 +12,7 @@ COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD
 
-LIB_DEPENDS=    event-2.0:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \
 		sbin/mohawk \
@@ -27,8 +27,8 @@ MAN5=	mohawk.conf.5
 MAN8=	mhtpasswd.8 \
 	mohawk.8
 
-CFLAGS+=        -I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
-LDFLAGS+=       -L${LOCALBASE}/lib/event2
+CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/event2
 
 .include <bsd.port.options.mk>
 
