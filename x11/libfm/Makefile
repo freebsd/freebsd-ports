@@ -6,7 +6,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The libFM backend library to PCManFM
 
 LICENSE=	GPLv2

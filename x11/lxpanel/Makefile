@@ -6,7 +6,7 @@ PORTVERSION=	0.5.12
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
 
 LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache

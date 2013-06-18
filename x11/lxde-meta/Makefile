@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	#none
 DISTFILES=	#none
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" of the LXDE desktop slimmed down for FreeBSD releases
 
 RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox \
