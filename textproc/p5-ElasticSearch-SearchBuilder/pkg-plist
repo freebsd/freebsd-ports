@@ -1,0 +1,5 @@
+%%SITE_PERL%%/ElasticSearch/SearchBuilder.pm
+%%SITE_PERL%%/mach/auto/ElasticSearch/SearchBuilder/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/ElasticSearch/SearchBuilder
+@dirrmtry %%SITE_PERL%%/mach/auto/ElasticSearch
+@dirrmtry %%SITE_PERL%%/ElasticSearch
