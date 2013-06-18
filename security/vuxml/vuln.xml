@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="abef280d-d829-11e2-b71c-8c705af55518">
+    <topic>FreeBSD -- Privilege escalation via mmap</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.0</gt><lt>9.1_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.freebsd.org/security/advisories/FreeBSD-SA-13%3a06.mmap.asc">
+	  <p>Due to insufficient permission checks in the virtual memory
+	    system, a tracing process (such as a debugger) may be able to
+	    modify portions of the traced process's address space to which
+	    the traced process itself does not have write access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2171</cvename>
+      <freebsdsa>SA-13:06.mmap</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2013-06-18</discovery>
+      <entry>2013-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="279e5f4b-d823-11e2-928e-08002798f6ff">
     <topic>apache-xml-security-c -- heap overflow</topic>
     <affects>
