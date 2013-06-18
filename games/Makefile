@@ -544,6 +544,7 @@
     SUBDIR += linux-quake3-demo
     SUBDIR += linux-quake4
     SUBDIR += linux-quake4-demo
+    SUBDIR += linux-rtcw
     SUBDIR += linux-savage
     SUBDIR += linux-savage-samuraiwars
     SUBDIR += linux-skulltag
@@ -848,7 +849,6 @@
     SUBDIR += rottdc
     SUBDIR += rt2-demo
     SUBDIR += rtb
-    SUBDIR += rtcw
     SUBDIR += rubix
     SUBDIR += ruby-exmars
     SUBDIR += sampsvr
