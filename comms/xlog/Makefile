@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.chronos.org.uk/download/
 MASTER_SITE_SUBDIR=	xlog
 
-MAINTAINER=	matt@chronos.org.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio logging application
 
 USES=		gettext

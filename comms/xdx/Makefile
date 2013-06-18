@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdx
-# Date created:				2004-05-21
-# Whom:					Matt Dawson <matt@mattsnetwork.co.uk>
-#
+# Created by: Matt Dawson <matt@mattsnetwork.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	xdx
 PORTVERSION=	2.4
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.chronos.org.uk/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	matt@chronos.org.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio DX cluster monitor
 
 USE_GNOME=	gtk20
