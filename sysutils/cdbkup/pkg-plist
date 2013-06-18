@@ -3,3 +3,5 @@ sbin/cdbkup
 sbin/cdcat
 sbin/cdrstr
 sbin/cdsplit
+@exec install -d -o root -g operator -m 700 /var/cdbkup
+@unexec rmdir /var/cdbkup 2>/dev/null || true
