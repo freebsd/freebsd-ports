@@ -24,7 +24,7 @@ pidfile=/var/run/${name}/${name}.pid
 
 required_files=${exabgp_conf}
 
-command="%%PYTHON_SITELIBDIR%%/${name}/application.py"
+command="%%PYTHON_SITELIBDIR%%/${name}/application/bgp.py"
 procname="%%PYTHON_CMD%%"
 
 start_cmd="exabgp_start"

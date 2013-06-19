@@ -3,6 +3,7 @@
 
 PORTNAME=	exabgp
 PORTVERSION=	3.1.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://mirrors.rit.edu/zi/
