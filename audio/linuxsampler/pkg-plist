@@ -51,3 +51,7 @@ libdata/pkgconfig/linuxsampler.pc
 @dirrm include/linuxsampler/drivers
 @dirrm include/linuxsampler/common
 @dirrm include/linuxsampler
+@cwd /var
+lib/linuxsampler/instruments.db
+@dirrm lib/linuxsampler
+@dirrmtry lib
