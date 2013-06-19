@@ -423,6 +423,7 @@
     SUBDIR += jps
     SUBDIR += jtop
     SUBDIR += jtopen
+    SUBDIR += jvmtop
     SUBDIR += jx
     SUBDIR += k3b
     SUBDIR += k3b-kde4
