@@ -143,5 +143,3 @@ share/locale/uk/LC_MESSAGES/words.mo
 @dirrm share/doc/HTML/uk/sheets
 @dirrm share/doc/HTML/uk/kexi
 @dirrm share/doc/HTML/uk/calligra
-@dirrmtry share/apps/calligra/autocorrect
-@dirrmtry share/apps/calligra
