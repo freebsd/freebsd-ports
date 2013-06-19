@@ -700,8 +700,6 @@
     SUBDIR += pxtools
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
-    SUBDIR += py-MySQLdb41
-    SUBDIR += py-MySQLdb50
     SUBDIR += py-MySQLdb51
     SUBDIR += py-MySQLdb55
     SUBDIR += py-PyGreSQL

@@ -4394,3 +4394,5 @@ multimedia/p5-Video-Info||2013-06-19|Has expired: Broken for more than 6 month
 net-p2p/p5-pdonkey||2013-06-19|Removed: depends on expired multimedia/p5-Video-Info
 lang/boo||2013-06-19|Has expired: BROKEN for more than 6 month
 math/petsc-mpich||2013-06-19|Has expired: BROKEN for more than 6 month
+databases/py-MySQLdb41||2013-06-19|Depends on databases/mysql41-client, which was removed
+databases/py-MySQLdb50||2013-06-19|Depends on databases/mysql50-client, which was removed
