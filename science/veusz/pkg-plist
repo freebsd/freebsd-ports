@@ -97,18 +97,33 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/document/datasets.py
 %%PYTHON_SITELIBDIR%%/veusz/document/datasets.pyc
 %%PYTHON_SITELIBDIR%%/veusz/document/datasets.pyo
+%%PYTHON_SITELIBDIR%%/veusz/document/dbusinterface.py
+%%PYTHON_SITELIBDIR%%/veusz/document/dbusinterface.pyc
+%%PYTHON_SITELIBDIR%%/veusz/document/dbusinterface.pyo
 %%PYTHON_SITELIBDIR%%/veusz/document/doc.py
 %%PYTHON_SITELIBDIR%%/veusz/document/doc.pyc
 %%PYTHON_SITELIBDIR%%/veusz/document/doc.pyo
 %%PYTHON_SITELIBDIR%%/veusz/document/emf_export.py
 %%PYTHON_SITELIBDIR%%/veusz/document/emf_export.pyc
 %%PYTHON_SITELIBDIR%%/veusz/document/emf_export.pyo
+%%PYTHON_SITELIBDIR%%/veusz/document/export.py
+%%PYTHON_SITELIBDIR%%/veusz/document/export.pyc
+%%PYTHON_SITELIBDIR%%/veusz/document/export.pyo
+%%PYTHON_SITELIBDIR%%/veusz/document/importparams.py
+%%PYTHON_SITELIBDIR%%/veusz/document/importparams.pyc
+%%PYTHON_SITELIBDIR%%/veusz/document/importparams.pyo
+%%PYTHON_SITELIBDIR%%/veusz/document/linked.py
+%%PYTHON_SITELIBDIR%%/veusz/document/linked.pyc
+%%PYTHON_SITELIBDIR%%/veusz/document/linked.pyo
 %%PYTHON_SITELIBDIR%%/veusz/document/mime.py
 %%PYTHON_SITELIBDIR%%/veusz/document/mime.pyc
 %%PYTHON_SITELIBDIR%%/veusz/document/mime.pyo
 %%PYTHON_SITELIBDIR%%/veusz/document/operations.py
 %%PYTHON_SITELIBDIR%%/veusz/document/operations.pyc
 %%PYTHON_SITELIBDIR%%/veusz/document/operations.pyo
+%%PYTHON_SITELIBDIR%%/veusz/document/painthelper.py
+%%PYTHON_SITELIBDIR%%/veusz/document/painthelper.pyc
+%%PYTHON_SITELIBDIR%%/veusz/document/painthelper.pyo
 %%PYTHON_SITELIBDIR%%/veusz/document/readcsv.py
 %%PYTHON_SITELIBDIR%%/veusz/document/readcsv.pyc
 %%PYTHON_SITELIBDIR%%/veusz/document/readcsv.pyo
@@ -130,11 +145,55 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/embed_remote.py
 %%PYTHON_SITELIBDIR%%/veusz/embed_remote.pyc
 %%PYTHON_SITELIBDIR%%/veusz/embed_remote.pyo
+%%PYTHON_SITELIBDIR%%/veusz/examples/bar_labels.dat
+%%PYTHON_SITELIBDIR%%/veusz/examples/bar_labels.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/bar_options.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/barplots.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/boxplot.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/broken_axis.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/coloredpoints.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/contour.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/dataset_operations.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/datebar.dat
+%%PYTHON_SITELIBDIR%%/veusz/examples/datebar.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/embedexample.py
+%%PYTHON_SITELIBDIR%%/veusz/examples/example_csv.csv
+%%PYTHON_SITELIBDIR%%/veusz/examples/example_csv.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/example_import.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/example_import_1.dat
+%%PYTHON_SITELIBDIR%%/veusz/examples/example_import_2.dat
+%%PYTHON_SITELIBDIR%%/veusz/examples/fit.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/functions.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/hatching.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/histo.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/inside.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/isolatedaxes.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/labels.dat
+%%PYTHON_SITELIBDIR%%/veusz/examples/labels.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/linked_datasets.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/mandelbrot.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/markerspolygon.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/mathml.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/multiaxes.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/multixy.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/polar.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/profile.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/shapes.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/sin.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/sin_byhand.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/spectrum.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/stackedxy.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/starchart.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/ternary.vsz
+%%PYTHON_SITELIBDIR%%/veusz/examples/tutorialdata.csv
+%%PYTHON_SITELIBDIR%%/veusz/examples/vectorfield.vsz
 %%PYTHON_SITELIBDIR%%/veusz/helpers/__init__.py
 %%PYTHON_SITELIBDIR%%/veusz/helpers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/veusz/helpers/__init__.pyo
 %%PYTHON_SITELIBDIR%%/veusz/helpers/_nc_cntr.so
 %%PYTHON_SITELIBDIR%%/veusz/helpers/qtloops.so
+%%PYTHON_SITELIBDIR%%/veusz/helpers/qtmml.so
+%%PYTHON_SITELIBDIR%%/veusz/helpers/recordpaint.so
 %%PYTHON_SITELIBDIR%%/veusz/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/veusz/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/veusz/plugins/__init__.pyo
@@ -150,6 +209,9 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/plugins/toolsplugin.py
 %%PYTHON_SITELIBDIR%%/veusz/plugins/toolsplugin.pyc
 %%PYTHON_SITELIBDIR%%/veusz/plugins/toolsplugin.pyo
+%%PYTHON_SITELIBDIR%%/veusz/plugins/votable.py
+%%PYTHON_SITELIBDIR%%/veusz/plugins/votable.pyc
+%%PYTHON_SITELIBDIR%%/veusz/plugins/votable.pyo
 %%PYTHON_SITELIBDIR%%/veusz/pyqtdistutils.py
 %%PYTHON_SITELIBDIR%%/veusz/pyqtdistutils.pyc
 %%PYTHON_SITELIBDIR%%/veusz/pyqtdistutils.pyo
@@ -213,9 +275,15 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/utils/action.py
 %%PYTHON_SITELIBDIR%%/veusz/utils/action.pyc
 %%PYTHON_SITELIBDIR%%/veusz/utils/action.pyo
+%%PYTHON_SITELIBDIR%%/veusz/utils/colormap.py
+%%PYTHON_SITELIBDIR%%/veusz/utils/colormap.pyc
+%%PYTHON_SITELIBDIR%%/veusz/utils/colormap.pyo
 %%PYTHON_SITELIBDIR%%/veusz/utils/dates.py
 %%PYTHON_SITELIBDIR%%/veusz/utils/dates.pyc
 %%PYTHON_SITELIBDIR%%/veusz/utils/dates.pyo
+%%PYTHON_SITELIBDIR%%/veusz/utils/extbrushfilling.py
+%%PYTHON_SITELIBDIR%%/veusz/utils/extbrushfilling.pyc
+%%PYTHON_SITELIBDIR%%/veusz/utils/extbrushfilling.pyo
 %%PYTHON_SITELIBDIR%%/veusz/utils/fitlm.py
 %%PYTHON_SITELIBDIR%%/veusz/utils/fitlm.pyc
 %%PYTHON_SITELIBDIR%%/veusz/utils/fitlm.pyo
@@ -246,6 +314,12 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/utils/version.py
 %%PYTHON_SITELIBDIR%%/veusz/utils/version.pyc
 %%PYTHON_SITELIBDIR%%/veusz/utils/version.pyo
+%%PYTHON_SITELIBDIR%%/veusz/utils/vzdbus.py
+%%PYTHON_SITELIBDIR%%/veusz/utils/vzdbus.pyc
+%%PYTHON_SITELIBDIR%%/veusz/utils/vzdbus.pyo
+%%PYTHON_SITELIBDIR%%/veusz/utils/vzsamp.py
+%%PYTHON_SITELIBDIR%%/veusz/utils/vzsamp.pyc
+%%PYTHON_SITELIBDIR%%/veusz/utils/vzsamp.pyo
 %%PYTHON_SITELIBDIR%%/veusz/veusz_listen.py
 %%PYTHON_SITELIBDIR%%/veusz/veusz_listen.pyc
 %%PYTHON_SITELIBDIR%%/veusz/veusz_listen.pyo
@@ -258,6 +332,9 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/widgets/axis.py
 %%PYTHON_SITELIBDIR%%/veusz/widgets/axis.pyc
 %%PYTHON_SITELIBDIR%%/veusz/widgets/axis.pyo
+%%PYTHON_SITELIBDIR%%/veusz/widgets/axisbroken.py
+%%PYTHON_SITELIBDIR%%/veusz/widgets/axisbroken.pyc
+%%PYTHON_SITELIBDIR%%/veusz/widgets/axisbroken.pyo
 %%PYTHON_SITELIBDIR%%/veusz/widgets/axisticks.py
 %%PYTHON_SITELIBDIR%%/veusz/widgets/axisticks.pyc
 %%PYTHON_SITELIBDIR%%/veusz/widgets/axisticks.pyo
@@ -276,7 +353,6 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/widgets/controlgraph.py
 %%PYTHON_SITELIBDIR%%/veusz/widgets/controlgraph.pyc
 %%PYTHON_SITELIBDIR%%/veusz/widgets/controlgraph.pyo
-%%PYTHON_SITELIBDIR%%/veusz/widgets/data/colormaps.dat
 %%PYTHON_SITELIBDIR%%/veusz/widgets/fit.py
 %%PYTHON_SITELIBDIR%%/veusz/widgets/fit.pyc
 %%PYTHON_SITELIBDIR%%/veusz/widgets/fit.pyo
@@ -331,6 +407,9 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/widgets/shape.py
 %%PYTHON_SITELIBDIR%%/veusz/widgets/shape.pyc
 %%PYTHON_SITELIBDIR%%/veusz/widgets/shape.pyo
+%%PYTHON_SITELIBDIR%%/veusz/widgets/ternary.py
+%%PYTHON_SITELIBDIR%%/veusz/widgets/ternary.pyc
+%%PYTHON_SITELIBDIR%%/veusz/widgets/ternary.pyo
 %%PYTHON_SITELIBDIR%%/veusz/widgets/textlabel.py
 %%PYTHON_SITELIBDIR%%/veusz/widgets/textlabel.pyc
 %%PYTHON_SITELIBDIR%%/veusz/widgets/textlabel.pyo
@@ -349,6 +428,7 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/windows/datanavigator.py
 %%PYTHON_SITELIBDIR%%/veusz/windows/datanavigator.pyc
 %%PYTHON_SITELIBDIR%%/veusz/windows/datanavigator.pyo
+%%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_axis-broken.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_axis.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_bar.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_boxplot.svg
@@ -370,6 +450,7 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_polar.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_polygon.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_rect.svg
+%%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_ternary.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_vectorfield.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/button_xy.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/downarrow.png
@@ -383,6 +464,7 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_boxfill.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_curve.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_diamond.svg
+%%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_diamondfill.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_fillhorz.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_fillvert.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_linehorz.svg
@@ -391,6 +473,7 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_linevertbar.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/error_none.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/kde-application-exit.svg
+%%PYTHON_SITELIBDIR%%/veusz/windows/icons/kde-clipboard.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/kde-dataset-new-veuszedit.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/kde-dataset2d-new-veuszedit.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/kde-document-export.svg
@@ -454,6 +537,7 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz-edit-prefs.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz-pick-data.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz-shape-menu.svg
+%%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz-view-fullscreen.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz-zoom-graph.svg
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz.png
 %%PYTHON_SITELIBDIR%%/veusz/windows/icons/veusz.svg
@@ -474,18 +558,21 @@ bin/veusz_listen
 %%PYTHON_SITELIBDIR%%/veusz/windows/treeeditwindow.py
 %%PYTHON_SITELIBDIR%%/veusz/windows/treeeditwindow.pyc
 %%PYTHON_SITELIBDIR%%/veusz/windows/treeeditwindow.pyo
+%%PYTHON_SITELIBDIR%%/veusz/windows/tutorial.py
+%%PYTHON_SITELIBDIR%%/veusz/windows/tutorial.pyc
+%%PYTHON_SITELIBDIR%%/veusz/windows/tutorial.pyo
 %%PYTHON_SITELIBDIR%%/veusz/windows/widgettree.py
 %%PYTHON_SITELIBDIR%%/veusz/windows/widgettree.pyc
 %%PYTHON_SITELIBDIR%%/veusz/windows/widgettree.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/windows/icons
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/windows
-@dirrm %%PYTHON_SITELIBDIR%%/veusz/widgets/data
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/utils
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/setting
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/qtwidgets
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/helpers
+@dirrm %%PYTHON_SITELIBDIR%%/veusz/examples
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/document
 @dirrm %%PYTHON_SITELIBDIR%%/veusz/dialogs
 @dirrm %%PYTHON_SITELIBDIR%%/veusz
