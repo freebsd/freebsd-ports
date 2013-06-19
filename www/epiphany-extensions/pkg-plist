@@ -282,7 +282,6 @@ share/omf/epiphany-extensions/epiphany-extensions-sv.omf
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry lib/epiphany/%%VERSION%%/extensions
-@dirrmtry lib/epiphany/%%VERSION%%/plugins
 @dirrmtry lib/epiphany/%%VERSION%%
 @dirrmtry lib/epiphany
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
