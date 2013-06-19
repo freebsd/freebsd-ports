@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/Info/.packlist
-%%SITE_PERL%%/Video/Info.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/Info
-@dirrmtry %%SITE_PERL%%/Video
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video
