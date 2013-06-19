@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-Ex
-# Date created:		2006-07-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Ex
 PORTVERSION=	2.38
