@@ -518,7 +518,6 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
     SUBDIR += petsc
-    SUBDIR += petsc-mpich
     SUBDIR += pgcalc
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
