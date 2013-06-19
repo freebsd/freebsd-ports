@@ -1,13 +1,9 @@
-# New ports collection makefile for:	trackballs
-# Date created:				21 November 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	trackballs
 PORTVERSION=	1.1.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/music/1.4/:music
@@ -24,10 +20,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
-USES=		gettext shared-mime-info
+USES=		desktop-file-utils gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
 MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 
