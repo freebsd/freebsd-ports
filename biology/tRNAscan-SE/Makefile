@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tRNAscan-SE
-# Date created:				15 Jan 2002
-# Whom:					chuynh@biolateral.com.au
-#
+# Created by: chuynh@biolateral.com.au
 # $FreeBSD$
-#
 
 PORTNAME=	tRNAscan-SE
 PORTVERSION=	1.23
@@ -13,7 +9,7 @@ MASTER_SITES=	ftp://selab.janelia.org/pub/software/tRNAscan-SE/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An improved tool for transfer RNA detection
+COMMENT=	Improved tool for transfer RNA detection
 
 USE_PERL5=	yes
 MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
@@ -21,7 +17,12 @@ MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
 		CC="${CC}" \
 		CFLAGS="${CFLAGS}"
 
+PLIST_FILES+=	bin/covels-SE bin/coves-SE bin/eufindtRNA bin/tRNAscan-SE bin/trnascan-1.4
 MAN1=		tRNAscan-SE.1
+PORTDATA=	*
+PORTDOCS=	Manual.ps
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|tRNAscanSE setpaths|tRNAscanSE|g ; \
@@ -38,12 +39,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 
+.include <bsd.port.options.mk>
+
 #
 # have to install before testing as path to data files is hardcoded
 #
 post-install:
-	@ cd ${WRKSRC} && $(MAKE) testrun
-.if !defined(NOPORTDOCS)
+	@ cd ${WRKSRC} && ${MAKE} testrun
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Manual.ps ${DOCSDIR}
 .endif
