@@ -328,7 +328,8 @@ IGNORE=	using GITWEB support requires PERL support
 .if ${PORT_OPTIONS:MCONTRIB}
 PLIST_SUB+=	CONTRIB=""
 BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
-		asciidoc:${PORTSDIR}/textproc/asciidoc
+		asciidoc:${PORTSDIR}/textproc/asciidoc \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
 MAN1+=		git-subtree.1
 .else
 PLIST_SUB+=	CONTRIB="@comment "
