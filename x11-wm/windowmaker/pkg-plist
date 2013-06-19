@@ -351,6 +351,10 @@ share/WindowMaker/wmmacros
 @dirrm share/WINGs
 @dirrmtry man/sk/man1
 @dirrmtry man/sk
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/cs/man1
+@dirrmtry man/cs
 @dirrm include/WINGs
 @dirrm etc/WindowMaker
 @dirrm GNUstep/Applications/WPrefs.app/xpm
