@@ -1,7 +1,5 @@
 # Created by: nork@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ampasCTL
 PORTVERSION=	1.4.1
