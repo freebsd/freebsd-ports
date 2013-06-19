@@ -1,9 +1,5 @@
-# New ports collection makefile for:	naga10
-# Date created:		25 Feb 1998
-# Whom:	Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
-#
+# Created by: Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	naga10
 PORTVERSION=	1.1
