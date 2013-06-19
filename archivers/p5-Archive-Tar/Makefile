@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Archive-Tar
-# Date created:				Nov 14 2000
-# Whom:	      				Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.90
+PORTVERSION=	1.92
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
