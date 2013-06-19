@@ -3,6 +3,7 @@
 
 PORTNAME=	pytsk
 DISTVERSION=	2012-11-10
+PORTREVISION=	1
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Python bindings for the Sleuthkit
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	tsk3:${PORTSDIR}/sysutils/sleuthkit
+LIB_DEPENDS=	tsk:${PORTSDIR}/sysutils/sleuthkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -24,10 +25,12 @@ PYDISTUTILS_PKGVERSION=0.1
 
 post-patch:
 	${REINPLACE_CMD} -e '/socket\.h/ { h; s|socket|types|; G; }' ${WRKSRC}/misc.h
-	${REINPLACE_CMD} -e 's|/usr/include/tsk3/|${LOCALBASE}/include/tsk3/|' \
+	${REINPLACE_CMD} -e 's|/usr/include/tsk3/|${LOCALBASE}/include/tsk/|' \
 		-e "s|LIBRARY_DIRS = \[\]|LIBRARY_DIRS = ['${LOCALBASE}/lib/']|" \
+		-e "s|LIBRARIES = \['tsk3'|LIBRARIES = ['tsk'|" \
 		-e "s|= \[CONFIG\['TSK3_HEADER_LOCATION'\]\]|= ['${LOCALBASE}/include/']|" \
 		${WRKSRC}/setup.py
+	${REINPLACE_CMD} 's|tsk3/libtsk|tsk/libtsk|' ${WRKSRC}/tsk3.h
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	LICENSE README

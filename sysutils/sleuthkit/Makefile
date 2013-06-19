@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sleuthkit
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.0
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-DATADIR=	${PREFIX}/share/tsk3
+DATADIR=	${PREFIX}/share/tsk
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 PORTDOCS=	NEWS.txt README.txt
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--without-libewf
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
