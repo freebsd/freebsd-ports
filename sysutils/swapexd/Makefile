@@ -1,18 +1,13 @@
-# New ports collection makefile for:	swapexd
-# Date created:				26 March 2011
-# Whom:					Jesse Smith
-#
+# Created by: Jesse Smith
 # $FreeBSD$
-#
 
 PORTNAME=	swapexd
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://makeapbi.sourceforge.net/${PORTNAME}/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
-COMMENT=	A tool for growing and shrinking on-disk swap space
+COMMENT=	Tool for growing and shrinking on-disk swap space
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
@@ -26,8 +21,6 @@ post-patch:
 .if ${OSVERSION} < 800076
 	@${REINPLACE_CMD} -e "s,swapctl -s -m ,swapctl -s -h ,g" ${WRKSRC}/swapexd.c
 .endif
-# Clang fix
-	@${REINPLACE_CMD} -e '1s/^CC=.*$$/CC=${CC}/' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
