@@ -12,7 +12,9 @@ you update your ports collection, before attempting any port upgrades.
   devel/subversion has been upgraded from 1.7.10 to 1.8.0
   subversion-1.7.x is available as devel/subversion17
 
-  To stay on subversion-1.7.x use the following command
+  To stay on subversion-1.7.x set in /etc/make.conf 
+  WITH_SUBVERSION_VER=17
+  and use the following command
   
   # pkg set -o devel/subversion:devel/subversion17
 
