@@ -1,14 +1,9 @@
-# ex:ts=8
-# Ports collection makefile for:	libgenome
-# Date created:			Jul 30, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libgenome
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://pages.cs.wisc.edu/~darling/libgenome/releases/
 DISTNAME=	libGenome-${PORTVERSION}
@@ -16,16 +11,22 @@ DISTNAME=	libGenome-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing bioinformatic related software in C++
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|@CXXFLAGS@|g' ${WRKSRC}/src/Makefile.in
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.css ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.png ${DOCSDIR}
