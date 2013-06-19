@@ -435,6 +435,7 @@
     SUBDIR += flickrnet
     SUBDIR += flowdesigner
     SUBDIR += flyspray
+    SUBDIR += fmake
     SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
