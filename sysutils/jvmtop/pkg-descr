@@ -1,0 +1,9 @@
+Jvmtop is a lightweight console application to monitor all accessible, running
+jvms on a machine. In a top-like manner, it displays JVM internal metrics
+(e.g. memory information) of running java processes.
+
+It's tested with different releases of Oracle JDK, IBM JDK and OpenJDK on
+Linux, Solaris and Windows hosts.  Jvmtop requires a JDK - a JRE will not
+suffice.
+
+WWW: http://code.google.com/p/jvmtop/
