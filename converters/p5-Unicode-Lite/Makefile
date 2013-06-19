@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Unicode-Lite
-# Date created:				23th March 2003
-# Whom:					Maxim Maximov (mcsi@agava.com)
-#
+# Created by: Maxim Maximov (mcsi@agava.com)
 # $FreeBSD$
-#
 
 PORTNAME=	Unicode-Lite
 PORTVERSION=	0.12
@@ -18,6 +14,8 @@ BUILD_DEPENDS=	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
 		p5-Unicode-Map>=0:${PORTSDIR}/converters/p5-Unicode-Map \
 		p5-enum>=0:${PORTSDIR}/devel/p5-enum
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+BROKEN=		Overwrites bin/map from converters/p5-Unicode-Map
 
 PERL_CONFIGURE=	yes
 
