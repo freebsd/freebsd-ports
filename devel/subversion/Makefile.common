@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.10
+PORTVERSION=	1.8.0
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
 		${MASTER_SITE_LOCAL:S/$/:book/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
-DIST_SUBDIR=	subversion17
+DIST_SUBDIR=	subversion18
 MASTER_SITE_SUBDIR=	subversion/:main \
 			lev/:book
 
@@ -19,18 +19,17 @@ USE_KDE4=	# Used below if KWallet support is enabled
 
 LICENSE=	AL2
 
-CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[6|8].[0-9]*
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[6|7].[0-9]*
 
 LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 			expat:${PORTSDIR}/textproc/expat2
 
-CONFIGURE_ARGS+=	--with-ssl \
-			--without-swig \
+CONFIGURE_ARGS+=	--without-swig \
 			--with-sqlite=${LOCALBASE} \
 			--with-expat=/usr/local/include:/usr/local/lib:expat
 
 .if defined(SVN_BUILD_BINDINGS)
-CONFLICTS_BUILD+=	${PORTNAME}-1.[6|8].[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[6|7].[0-9]*
 LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
@@ -38,15 +37,6 @@ OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be inclu
 
 .include <bsd.port.options.mk>
 			
-# Default is "on"
-.if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
-PLIST_SUB+=	NEON=""
-.else
-CONFIGURE_ARGS+=--without-neon
-PLIST_SUB+=	NEON="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}

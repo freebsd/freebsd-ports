@@ -3,13 +3,13 @@ bin/svn
 bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
+bin/svnmucc
 bin/svnrdump
 bin/svnserve
 bin/svnsync
 %%ASVN%%bin/asvn
 %%SVNAUTHZ_VALIDATE%%bin/svnauthz-validate
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
-%%SVNMUCC%%bin/svnmucc
 bin/svnversion
 include/subversion-1/mod_authz_svn.h
 include/subversion-1/mod_dav_svn.h
@@ -96,10 +96,6 @@ lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so.0
-%%NEON%%lib/libsvn_ra_neon-1.a
-%%NEON%%lib/libsvn_ra_neon-1.la
-%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so
-%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so.0
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra_local-1.so
@@ -162,6 +158,66 @@ lib/libsvn_wc-1.la
 %%WITHOUT_GETTEXT%%share/locale/sv/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_CN/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_TW/LC_MESSAGES/subversion.mo
+%%DATADIR%%/client-side/detach.py
+%%DATADIR%%/client-side/mergeinfo-sanitizer.py
+%%DATADIR%%/client-side/svn-bench/cl.h
+%%DATADIR%%/client-side/svn-bench/client_errors.h
+%%DATADIR%%/client-side/svn-bench/help-cmd.c
+%%DATADIR%%/client-side/svn-bench/notify.c
+%%DATADIR%%/client-side/svn-bench/null-export-cmd.c
+%%DATADIR%%/client-side/svn-bench/null-list-cmd.c
+%%DATADIR%%/client-side/svn-bench/null-log-cmd.c
+%%DATADIR%%/client-side/svn-bench/svn-bench.c
+%%DATADIR%%/client-side/svn-bench/util.c
+%%DATADIR%%/dev/aprerr.txt
+%%DATADIR%%/dev/benchmarks/suite1/generate_charts
+%%DATADIR%%/dev/fsfs-access-map.c
+%%DATADIR%%/dev/fsfs-reorg.c
+%%DATADIR%%/dev/gdb-py/README
+%%DATADIR%%/dev/gdb-py/svndbg/__init__.py
+%%DATADIR%%/dev/gdb-py/svndbg/printers.py
+%%DATADIR%%/dev/histogram.py
+%%DATADIR%%/dev/merge-graph.py
+%%DATADIR%%/dev/mergegraph/__init__.py
+%%DATADIR%%/dev/mergegraph/mergegraph.py
+%%DATADIR%%/dev/mergegraph/save_as_sh.py
+%%DATADIR%%/dev/remove-trailing-whitespace.sh
+%%DATADIR%%/dev/sbox-ospath.py
+%%DATADIR%%/dev/svnraisetreeconflict/svnraisetreeconflict.c
+%%DATADIR%%/dist/_gnupg.py
+%%DATADIR%%/dist/make-deps-tarball.sh
+%%DATADIR%%/dist/templates/download.ezt
+%%DATADIR%%/dist/templates/stable-news.ezt
+%%DATADIR%%/examples/walk-config-auth.py
+%%DATADIR%%/hook-scripts/control-chars.py
+%%DATADIR%%/hook-scripts/persist-ephemeral-txnprops.py
+%%DATADIR%%/hook-scripts/validate-files.conf.example
+%%DATADIR%%/hook-scripts/validate-files.py
+%%DATADIR%%/server-side/fsfs-stats.c
+%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.la
+%%DATADIR%%/server-side/svnauthz.c
+%%DATADIR%%/server-side/svnpredumpfilter.py
+%%DATADIR%%/server-side/svnpubsub/README.txt
+%%DATADIR%%/server-side/svnpubsub/commit-hook.py
+%%DATADIR%%/server-side/svnpubsub/daemonize.py
+%%DATADIR%%/server-side/svnpubsub/irkerbridge.py
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnpubsub
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnpubsub.debian
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnpubsub.freebsd
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnpubsub.solaris
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnwcsub
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnwcsub.debian
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnwcsub.freebsd
+%%DATADIR%%/server-side/svnpubsub/rc.d/svnwcsub.solaris
+%%DATADIR%%/server-side/svnpubsub/svnpubsub.tac
+%%DATADIR%%/server-side/svnpubsub/svnpubsub/__init__.py
+%%DATADIR%%/server-side/svnpubsub/svnpubsub/client.py
+%%DATADIR%%/server-side/svnpubsub/svnpubsub/server.py
+%%DATADIR%%/server-side/svnpubsub/svntweet.py
+%%DATADIR%%/server-side/svnpubsub/svnwcsub.conf.example
+%%DATADIR%%/server-side/svnpubsub/svnwcsub.py
+%%DATADIR%%/server-side/svnpubsub/testserver.py
+%%DATADIR%%/server-side/svnpubsub/watcher.py
 %%DATADIR%%/backup/hot-backup.py
 %%DATADIR%%/bdb/erase-all-text-data.py
 %%DATADIR%%/bdb/skel.py
@@ -230,8 +286,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/client-side/svn-graph.pl
 %%DATADIR%%/client-side/svn-ssl-fingerprints.sh
 %%DATADIR%%/client-side/svn-viewspec.py
-%%DATADIR%%/client-side/svnmucc/svnmucc.c
-%%DATADIR%%/client-side/svnmucc/svnmucc-test.py
 %%DATADIR%%/client-side/wcfind
 %%DATADIR%%/dev/analyze-svnlogs.py
 %%DATADIR%%/dev/benchmarks/large_dirs/create_bigdir.sh
@@ -245,7 +299,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/datecheck.py
 %%DATADIR%%/dev/find-bad-style.py
 %%DATADIR%%/dev/find-unmoved-deprecated.sh
-%%DATADIR%%/dev/gcov.patch
 %%DATADIR%%/dev/gen-javahl-errors.py
 %%DATADIR%%/dev/gen-py-errors.py
 %%DATADIR%%/dev/gen_junit_report.py
@@ -272,7 +325,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/svn-entries.el
 %%DATADIR%%/dev/svn-merge-revs.py
 %%DATADIR%%/dev/svnqlite3-dump
-%%DATADIR%%/dev/svnraisetreeconflict/main.c
 %%DATADIR%%/dev/trails.py
 %%DATADIR%%/dev/unix-build/Makefile.svn
 %%DATADIR%%/dev/unix-build/README
@@ -297,15 +349,12 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dist/dist.sh
 %%DATADIR%%/dist/download-release.sh
 %%DATADIR%%/dist/extract-for-examination.sh
-%%DATADIR%%/dist/getsigs.py
 %%DATADIR%%/dist/nightly.sh
 %%DATADIR%%/dist/rat-excludes
 %%DATADIR%%/dist/release.py
 %%DATADIR%%/dist/templates/nightly-candidates.ezt
-%%DATADIR%%/dist/templates/rc-candidates.ezt
 %%DATADIR%%/dist/templates/rc-news.ezt
 %%DATADIR%%/dist/templates/rc-release-ann.ezt
-%%DATADIR%%/dist/templates/stable-candidates.ezt
 %%DATADIR%%/dist/templates/stable-release-ann.ezt
 %%DATADIR%%/dist/test.sh
 %%DATADIR%%/examples/blame.py
@@ -354,7 +403,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/server-side/svn-populate-node-origins-index.c
 %%DATADIR%%/server-side/svn-rep-sharing-stats.c
 %%DATADIR%%/server-side/svn_server_log_parse.py
-%%DATADIR%%/server-side/svnauthz-validate.c
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
@@ -382,12 +430,15 @@ lib/libsvn_wc-1.la
 @dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
 @dirrm %%DATADIR%%/buildbot/slaves
 @dirrm %%DATADIR%%/buildbot
-@dirrm %%DATADIR%%/client-side/svnmucc
+@dirrm %%DATADIR%%/client-side/svn-bench
 @dirrm %%DATADIR%%/client-side
 @dirrm %%DATADIR%%/dev/benchmarks/large_dirs
 @dirrm %%DATADIR%%/dev/benchmarks/suite1
 @dirrm %%DATADIR%%/dev/benchmarks
 @dirrm %%DATADIR%%/dev/iz
+@dirrm %%DATADIR%%/dev/gdb-py/svndbg
+@dirrm %%DATADIR%%/dev/gdb-py
+@dirrm %%DATADIR%%/dev/mergegraph
 @dirrm %%DATADIR%%/dev/svnraisetreeconflict
 @dirrm %%DATADIR%%/dev/unix-build
 @dirrm %%DATADIR%%/dev/wc-ng
@@ -402,6 +453,10 @@ lib/libsvn_wc-1.la
 @dirrm %%DATADIR%%/hook-scripts
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/server-side/mod_dontdothat
+@dirrm %%DATADIR%%/server-side/svnpubsub/notes
+@dirrm %%DATADIR%%/server-side/svnpubsub/rc.d
+@dirrm %%DATADIR%%/server-side/svnpubsub/svnpubsub
+@dirrm %%DATADIR%%/server-side/svnpubsub
 @dirrm %%DATADIR%%/server-side
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%

@@ -4,39 +4,36 @@
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[6|8].[0-9]*
+CONFLICTS_INSTALL=	subversion-1.[6|7].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnrdump.1 \
-		svnsync.1 svnversion.1
+		svnsync.1 svnversion.1 svnmucc.1
 MAN5=		svnserve.conf.5
 MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
-OPTIONS_DEFINE=	P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE \
+OPTIONS_DEFINE=	P4_STYLE_MARKERS FREEBSD_TEMPLATE \
 		MOD_DAV_SVN MOD_DONTDOTHAT SVNAUTHZ_VALIDATE \
-		NEON SERF \
+		SERF \
 		SASL BDB \
 		MAINTAINER_DEBUG \
-		SVNSERVE_WRAPPER SVNMUCC \
+		SVNSERVE_WRAPPER \
 		STATIC \
 		GNOME_KEYRING KDE_KWALLET \
 		BOOK TEST
 
-OPTIONS_DEFAULT=P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE NEON
+OPTIONS_DEFAULT=P4_STYLE_MARKERS FREEBSD_TEMPLATE SERF
 
 P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
-ENHANCED_KEYWORD_DESC=	Enhanced svn:keyword support
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
 MOD_DONTDOTHAT_DESC=	mod_dontdothat for Apache 2.X
-NEON_DESC=		WebDAV/Delta-V repo access module (neon)
 SERF_DESC=		WebDAV/Delta-V repo access module (serf)
 MAINTAINER_DEBUG_DESC=	Build debug version
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper
-SVNMUCC_DESC=		Install Multiple URL Command Client
 SVNAUTHZ_VALIDATE_DESC=	install svnauthz-validate
 STATIC_DESC=		Build static version (no shared libs)
 GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
@@ -54,7 +51,7 @@ SVNFSTYPE?=	fsfs
 SUB_FILES=	pkg-install \
 		pkg-deinstall
 		
-BOOK_VERSION=	4304
+BOOK_VERSION=	4515
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -67,9 +64,6 @@ MKREPOS_TARGET=	_mkrepos
 # Patches required for use with the FreeBSD Project repository only
 .if ${PORT_OPTIONS:MP4_STYLE_MARKERS}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3way-conflict-markers
-.endif
-.if ${PORT_OPTIONS:MENHANCED_KEYWORD}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-enhanced-keyword
 .endif
 .if ${PORT_OPTIONS:MFREEBSD_TEMPLATE}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fbsd-template
@@ -86,12 +80,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-svnserve-wrapper
 .else
 PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
-.endif
-
-.if ${PORT_OPTIONS:MSVNMUCC}
-PLIST_SUB+=	SVNMUCC=""
-.else
-PLIST_SUB+=	SVNMUCC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
@@ -132,12 +120,6 @@ LIB_DEPENDS=
 .endif
 
 pre-everything::
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MNEON}
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
-.else
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
-.endif
 	@${ECHO_MSG} ""
 .if ${PORT_OPTIONS:MBDB}
 	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend enabled."
@@ -292,13 +274,6 @@ post-install:	${MKREPOS_TARGET}
 .endif
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
-.endif
-.if ${PORT_OPTIONS:MSVNMUCC}
-. if ${PORT_OPTIONS:MSTATIC}
-	@${INSTALL} ${WRKSRC}/tools/client-side/svnmucc/svnmucc ${PREFIX}/bin
-. else
-	@${INSTALL} ${WRKSRC}/tools/client-side/svnmucc/.libs/svnmucc ${PREFIX}/bin
-. endif
 .endif
 
 repository:	_mkrepos
