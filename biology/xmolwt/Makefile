@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculate atom weight and percent of each element for a given formula
 
-OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFINE=	DOCS GTK2
 
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.gtk
@@ -40,7 +40,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmolwt ${PREFIX}/bin
 	${LN} -sf gmolwt ${PREFIX}/bin/molwt
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/Howtouse.* ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/Readme ${PREFIX}/share/doc/xmolwt
