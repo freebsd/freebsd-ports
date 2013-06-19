@@ -26,7 +26,7 @@ AUTHOR:	bapt@FreeBSD.org
   ${OPT}_CONFIGURE_ON=<something> will automatically add:
   CONFIGURE_ARGS+=<something> in case OPT is activated
 
-  ${OPT_CONFIGURE_OFF=<something> will automatically add:
+  ${OPT}_CONFIGURE_OFF=<something> will automatically add:
   CONFIGURE_ARGS+=<something> in case OPT is deactivated
 
   ${OPT}_CFLAGS will append the specified new flags to CFLAGS if OPT is 'on'
@@ -44,7 +44,7 @@ AUTHOR:	bapt@FreeBSD.org
   ${OPT}_CMAKE_ON=<something> will automatically add:
   CMAKE_ARGS+=<something> in case OPT is activated
 
-  ${OPT_CMAKE_OFF=<something> will automatically add:
+  ${OPT}_CMAKE_OFF=<something> will automatically add:
   CMAKE_ARGS+=<something> in case OPT is deactivated
 
   ${OPT}_${TYPE}_DEPENDS=<something> will automatically add:
