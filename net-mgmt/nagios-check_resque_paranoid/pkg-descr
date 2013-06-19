@@ -1,0 +1,4 @@
+This program checks Resque jobs by queueing, and polling
+
+WWW: https://github.com/ochko/check_resque_paranoid
+RG:  https://rubygems.org/gems/check_resque_paranoid
