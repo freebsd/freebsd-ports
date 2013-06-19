@@ -32,7 +32,4 @@ bin/fastdnaml/usertree
 bin/fastdnaml/usertrees
 bin/fastdnaml/weights
 bin/fastdnaml/weights_categories
-%%PORTDOCS%%%%DOCSDIR%%/fastDNAml_doc_1.2.txt
-%%PORTDOCS%%%%DOCSDIR%%/fastDNAml_scripts.txt
 @dirrm bin/fastdnaml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
