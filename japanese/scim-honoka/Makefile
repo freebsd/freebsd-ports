@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ja-scim-honoka
-# Date created:		2 June 2006
-# Whom:			Masashi CHIBA
-#
+# Created by: Masashi CHIBA
 # $FreeBSD$
-#
 
 PORTNAME=	scim-honoka
 PORTVERSION=	0.9.1

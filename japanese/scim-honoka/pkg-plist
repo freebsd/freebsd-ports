@@ -21,6 +21,4 @@ include/honoka/honokastatus.h
 include/honoka/preeditor.h
 share/locale/ja/LC_MESSAGES/honoka.mo
 libdata/pkgconfig/honoka.pc
-@dirrmtry lib/scim-1.0/1.4.0/honoka
-@dirrmtry share/scim-1.0/icons
 @dirrmtry include/honoka
