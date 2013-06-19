@@ -1,9 +1,5 @@
-# New ports collection makefile for:	REXX/imc
-# Date created:				Septermber 21 96
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76
@@ -12,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/
 
-MAINTAINER=	g.gonter@ieee.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A procedural programming language designed by IBM's UK Laboratories
 
 CONFLICTS=	rexx-regina-* oorexx-[0-9]*

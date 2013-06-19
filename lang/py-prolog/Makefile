@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-prolog
-# Date created:		28 Jun 2003
-# Whom:			Gerhard Gonter <g.gonter@ieee.org>
-#
+# Created by: Gerhard Gonter <g.gonter@ieee.org>
 # $FreeBSD$
 
 PORTNAME=	prolog
@@ -12,7 +9,7 @@ MASTER_SITES=	SF/py${PORTNAME}/PyProlog/PyProlog-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyProlog-${PORTVERSION}
 
-MAINTAINER=	g.gonter@ieee.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python extension embedding SWI-Prolog
 
 BUILD_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
