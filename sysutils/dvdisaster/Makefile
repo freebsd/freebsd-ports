@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dvdisaster
-# Date created:                         2006/08/13
-# Whom:                                 Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	dvdisaster
 PORTVERSION=	0.72.4
