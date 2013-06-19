@@ -319,6 +319,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmp_target_mib.3 \
 	snmp_user_based_sm_mib.3 \
 	snmp_view_based_acm_mib.3 \
+	snmpa_mib_data.3 \
+	snmpa_mib_storage.3 \
 	snmpa.3 \
 	snmpa_conf.3 \
 	snmpa_discovery_handler.3 \

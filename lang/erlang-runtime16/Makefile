@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	16.b
-PORTREVISION=	2
+PORTVERSION=	16.b.01
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -26,7 +25,7 @@ COMMENT=	A functional programming language from Ericsson
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION:C/\..*//}
 
-WRKSRC=		${WRKDIR}/otp_src_R16B
+WRKSRC=		${WRKDIR}/otp_src_R16B01
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
@@ -51,7 +50,7 @@ DTRACE_DESC=	Enable DTrace support (experimental)
 
 OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
-ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
+ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
 
 .include <bsd.port.options.mk>
 
