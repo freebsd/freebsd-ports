@@ -1,16 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	entr
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://entrproject.org/code/
 
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Runs arbitrary commands when files change
 
-WRKSRC=	${WRKDIR}/eradman-entr-587c18272485/
-
-MAKE_JOBS_SAFE=	yes
+WRKSRC=	${WRKDIR}/eradman-entr-6b1f1d242775/
 
 PLIST_FILES=	bin/entr
 MAN1=	entr.1
