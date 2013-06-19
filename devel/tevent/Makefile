@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.17
+PORTVERSION=		0.9.18
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -61,7 +61,9 @@ _MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON_RUN=		yes
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/_tevent.so \
-			%%PYTHON_SITELIBDIR%%/tevent.py
+			%%PYTHON_SITELIBDIR%%/tevent.py  \
+			%%PYTHON_SITELIBDIR%%/tevent.pyc \
+			%%PYTHON_SITELIBDIR%%/tevent.pyo
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
 .else
@@ -100,5 +102,9 @@ do-build:
 
 do-install:
 			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
+.if ${PORT_OPTIONS:MPYTHON}
+			${PYTHON_CMD} -m py_compile ${PYTHON_SITELIBDIR}/tevent.py
+			${PYTHON_CMD} -O -m py_compile ${PYTHON_SITELIBDIR}/tevent.py
+.endif
 
 .include <bsd.port.post.mk>
