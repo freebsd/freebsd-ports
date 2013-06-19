@@ -2,29 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	gnomechess
-PORTVERSION=	0.3.3
-PORTREVISION=	11
+PORTVERSION=	3.8.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/gnome-chess/0.3
+MASTER_SITE_SUBDIR=	sources/gnome-chess/3.8
 DISTNAME=	gnome-chess-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A GUI chess front-end to crafy, for the GNOME Desktop Environment
 
-DEPRECATED=	Unsupported upstream
-EXPIRATION_DATE=	2013-07-04
-
-BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty \
+		itstool:${PORTSDIR}/textproc/itstool \
+		xmllint:${PORTSDIR}/textproc/libxml2 \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USES=        pathfix
-USE_GNOME=	gnomecanvas gnomeprefix libglade
+USES=		pathfix pkgconfig desktop-file-utils shared-mime-info
+USE_GL=		gl glu
+USE_GNOME=	gtk30 librsvg2
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_XZ=		yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	XML_I18N_UPDATE="${TRUE}" XML_I18N_EXTRACT="${TRUE}"
+DATADIR=	${PREFIX}/share/gnome-chess
+
+MAN6=		gnome-chess.6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
