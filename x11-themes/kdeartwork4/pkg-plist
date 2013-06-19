@@ -6899,5 +6899,3 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/apps/desktoptheme/Androbit/opaque
 @dirrm share/apps/desktoptheme/Androbit/dialogs
 @dirrmtry share/apps/desktoptheme/Androbit
-@dirrmtry share/apps/aurorae/themes
-@dirrmtry share/apps/aurorae
