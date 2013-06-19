@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-ansel
-# Date created:			  Oct 19, 2011
-# Whom:				  Martin Matuska (mm@FreeBSD.org)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ansel
-PORTVERSION=	2.0.2
+DISTVERSION=	3.0.0beta1
 CATEGORIES=	www pear graphics
 PKGNAMEPREFIX=	horde-
 
@@ -18,9 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	horde-${PORTNAME}
 
-BROKEN=		Not yet supported under horde 5.x
-
-USE_PHP=	gettext
+USE_PHP=	gettext hash
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		horde \
