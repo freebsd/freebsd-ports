@@ -4,7 +4,7 @@
 PORTNAME=	visualvm
 PORTVERSION=	1.3.5
 CATEGORIES=	java devel
-MASTER_SITES=	http://java.net/downloads/visualvm/release${PORTVERSION:S/.//g}/
+MASTER_SITES=	https://java.net/downloads/visualvm/release${PORTVERSION:S/.//g}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}
 
 MAINTAINER=	swills@FreeBSD.org
