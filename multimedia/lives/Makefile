@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -68,32 +68,20 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
-OPTIONS_DEFINE=	DOXYGEN FREI0R
+OPTIONS_DEFINE=	DOCS DOXYGEN FREI0R NLS
+OPTIONS_SUB=	yes
+
+DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
+FREI0R_BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+FREI0R_RUN_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-PORTDOCS=	html
-.else
-CONFIGURE_ARGS+=--disable-doxygen
-.endif
-
-.if ${PORT_OPTIONS:MFREI0R}
-BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-RUN_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-PLIST_SUB+=	FREI0R=""
-.else
+.if ! ${PORT_OPTIONS:MFREI0R}
 CONFIGURE_ENV+=	ac_cv_header_frei0r_h=no
-PLIST_SUB+=	FREI0R="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -121,9 +109,13 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MDOXYGEN}
+	@cd ${PREFIX} && \
+	${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST} && \
+	${FIND} ${DOCSDIR:S|${PREFIX}/||} -type d | ${SORT} -r | \
+	${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
