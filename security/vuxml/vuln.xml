@@ -924,7 +924,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="6d87c2e9-c64d-11e2-9c22-50465d9ff992">
-    <topic>soccat -- FD leak</topic>
+    <topic>socat -- FD leak</topic>
     <affects>
       <package>
 	<name>socat</name>
