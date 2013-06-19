@@ -63,7 +63,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OTRS Project reports:</p>
 	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-04/">
-	  <p>An attacker with a valid agent login could manipulate URLs in the ticket watch mechanism to see contents of tickets they are not permitted to see.</p>
+	  <p>An attacker with a valid agent login could manipulate URLs in the ticket
+	    watch mechanism to see contents of tickets they are not permitted to see.</p>
 	</blockquote>
       </body>
     </description>
