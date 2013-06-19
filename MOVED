@@ -4390,3 +4390,5 @@ deskutils/contacts||2013-06-13|Has expired: upstream project discontinued for ye
 www/libxul19|www/libxul|2013-06-15|Has been vulnerable for a long time, unsupported upstream
 chinese/cxterm||2013-06-17|Has expired: does not compile
 games/rtcw|games/linux-rtcw|2013-06-18|Renamed (Linux binary port)
+multimedia/p5-Video-Info||2013-06-19|Has expired: Broken for more than 6 month
+net-p2p/p5-pdonkey||2013-06-19|Removed: depends on expired multimedia/p5-Video-Info
