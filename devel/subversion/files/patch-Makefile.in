@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-06-06 21:01:29.000000000 +0400
++++ Makefile.in	2013-06-20 01:28:44.000000000 +0400
+@@ -85,7 +85,7 @@
+ swig_pydir_extra = @libdir@/svn-python/svn
+ swig_pldir = @libdir@/svn-perl
+ swig_rbdir = $(SWIG_RB_SITE_ARCH_DIR)/svn/ext
+-toolsdir = @bindir@/svn-tools
++toolsdir = @bindir@
+ 
+ javahl_javadir = @libdir@/svn-javahl
+ javahl_javahdir = @libdir@/svn-javahl/include

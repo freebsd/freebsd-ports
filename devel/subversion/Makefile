@@ -15,31 +15,24 @@ MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
-OPTIONS_DEFINE=	P4_STYLE_MARKERS FREEBSD_TEMPLATE \
-		MOD_DAV_SVN MOD_DONTDOTHAT SVNAUTHZ_VALIDATE \
-		SERF \
-		SASL BDB \
-		MAINTAINER_DEBUG \
-		SVNSERVE_WRAPPER \
-		STATIC \
-		GNOME_KEYRING KDE_KWALLET \
-		BOOK TEST
+OPTIONS_DEFINE=	BDB BOOK GNOME_KEYRING KDE_KWALLET MAINTAINER_DEBUG \
+		MOD_DAV_SVN P4_STYLE_MARKERS FREEBSD_TEMPLATE SASL \
+		SERF STATIC SVNSERVE_WRAPPER TEST TOOLS \
 
 OPTIONS_DEFAULT=P4_STYLE_MARKERS FREEBSD_TEMPLATE SERF
 
-P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
-FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
-MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
-MOD_DONTDOTHAT_DESC=	mod_dontdothat for Apache 2.X
-SERF_DESC=		WebDAV/Delta-V repo access module (serf)
-MAINTAINER_DEBUG_DESC=	Build debug version
-SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper
-SVNAUTHZ_VALIDATE_DESC=	install svnauthz-validate
-STATIC_DESC=		Build static version (no shared libs)
+BOOK_DESC=		Install the Subversion Book
 GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
 KDE_KWALLET_DESC=	Build with KDE KWallet auth support
-BOOK_DESC=		Install the Subversion Book
+MAINTAINER_DEBUG_DESC=	Build debug version
+MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
+P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
+FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
+SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
+STATIC_DESC=		Build static version (no shared libs)
+SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
+TOOLS_DESC=		Install several tools (svnauthz-validate and mod_dontdothat are among them)
 
 .include "Makefile.common"
 
@@ -80,6 +73,12 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-svnserve-wrapper
 .else
 PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
+.endif
+
+.if ${PORT_OPTIONS:MTOOLS}
+PLIST_SUB+=	TOOLS=""
+.else
+PLIST_SUB+=	TOOLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
@@ -131,13 +130,19 @@ pre-everything::
 	@${ECHO_MSG} "Build debug version."
 	@${ECHO_MSG} ""
 .endif
+.if ${PORT_OPTIONS:MTOOLS}
+	@${ECHO_MSG} "Several tools enabled."
+.else
+	@${ECHO_MSG} "You can enable installation fo tools"
+.endif
+	@${ECHO_MSG} ""
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
 .endif
 	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && ${PORT_OPTIONS:MMOD_DAV_SVN}
+.if ${PORT_OPTIONS:MTOOLS} && ${PORT_OPTIONS:MMOD_DAV_SVN}
 	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
 .else
 	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
@@ -145,10 +150,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 	@${ECHO_MSG} "svnserve wrapper enabled."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	@${ECHO_MSG} "svnauthz-validate enabled."
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_REPOSITORY_CREATION)
@@ -243,15 +244,15 @@ pre-install:
 .endif
 
 post-install:	${MKREPOS_TARGET}
+.if ${PORT_OPTIONS:MTOOLS}
+	cd ${WRKSRC} && ${MAKE} install-tools
+.endif
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
+.if ${PORT_OPTIONS:MTOOLS}
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
 .endif
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	${LIBTOOL} --mode=install ${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/tools/server-side/svnauthz-validate ${PREFIX}/bin
 .endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
