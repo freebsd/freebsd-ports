@@ -49,9 +49,6 @@ post-install:
 	${INSTALL_MAN} ${MAN5:S,^,${WRKSRC}/,} ${MANPREFIX}/man/man5/
 	${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/,} ${MANPREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/minidlna.conf ${PREFIX}/etc/minidlna.conf.sample
-	@${MKDIR} /var/run/minidlna
-	@${MKDIR} /var/db/minidlna
-	@${CHOWN} ${USERS} /var/db/minidlna
 	@${FMT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
