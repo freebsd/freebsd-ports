@@ -62,8 +62,6 @@ share/lxterminal/lxterminal.conf
 share/lxterminal/lxterminal-preferences.ui
 @dirrm share/lxterminal
 @dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb_NO
 %%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_VE
 %%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
