@@ -21,7 +21,6 @@ USES=		pathfix pkgconfig desktop-file-utils shared-mime-info
 USE_GL=		gl glu
 USE_GNOME=	gtk30 librsvg2
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_XZ=		yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
@@ -36,6 +35,7 @@ MAN6=		gnome-chess.6
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
+USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
