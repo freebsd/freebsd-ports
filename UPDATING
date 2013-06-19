@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130619:
+  AFFECTS: users of devel/subversion
+  AUTHOR: ohauer@FreeBSD.org
+
+  devel/subversion has been upgraded from 1.7.10 to 1.8.0
+  subversion-1.7.x is available as devel/subversion17
+
+  To stay on subversion-1.7.x use the following command
+  
+  # pkg set -o devel/subversion:devel/subversion17
+
+  or
+
+  # portmaster -o devel/subversion17 devel/subversion
+
 20130614:
   AFFECTS: users who set port options in make.conf
   AUTHOR: tijl@FreeBSD.org

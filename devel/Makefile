@@ -4306,6 +4306,7 @@
     SUBDIR += subversion
     SUBDIR += subversion-static
     SUBDIR += subversion16
+    SUBDIR += subversion17
     SUBDIR += subversive
     SUBDIR += sunterlib
     SUBDIR += svk
