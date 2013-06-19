@@ -7,7 +7,7 @@
 
 PORTNAME=	trackballs
 PORTVERSION=	1.1.4
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/music/1.4/:music
@@ -24,7 +24,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
-USES=		gettext
+USES=		gettext shared-mime-info
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	desktopfileutils
@@ -67,6 +67,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${DATADIR}/music/
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	-@update-desktop-database
 
 .include <bsd.port.mk>
