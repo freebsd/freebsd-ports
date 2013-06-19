@@ -3,6 +3,7 @@
 
 PORTNAME=	phylip
 PORTVERSION=	3.695
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/
@@ -24,6 +25,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
 		DFLAGS="${CFLAGS} -DX -I${LOCALBASE}/include" \
 		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt -lm"
 MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
