@@ -1,9 +1,5 @@
-# New ports collection makefile for:	monafonts
-# Date created:		14 February 2001
-# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	monafonts
 PORTVERSION=	2.90
