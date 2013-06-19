@@ -7014,7 +7014,8 @@ executed in your Internet Explorer while displaying the email.</p>
     </references>
     <dates>
       <discovery>2012-10-02</discovery>
-      <entry>2012-08-31</entry>
+      <entry>2012-10-22</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -14336,7 +14337,8 @@ executed in your Internet Explorer while displaying the email.</p>
     </references>
     <dates>
       <discovery>2011-07-20</discovery>
-      <entry>2011-02-10</entry>
+      <entry>2012-02-10</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -14827,8 +14829,9 @@ executed in your Internet Explorer while displaying the email.</p>
       <freebsdsa>SA-11:09.pam_ssh</freebsdsa>
     </references>
     <dates>
-      <discovery>2012-12-23</discovery>
+      <discovery>2011-12-23</discovery>
       <entry>2012-01-29</entry>
+      <modified>2013-06-18</modified>
     </dates>
   </vuln>
 
@@ -15232,7 +15235,8 @@ executed in your Internet Explorer while displaying the email.</p>
     </references>
     <dates>
       <discovery>2012-01-15</discovery>
-      <entry>2011-12-19</entry>
+      <entry>2012-01-20</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -27257,8 +27261,8 @@ executed in your Internet Explorer while displaying the email.</p>
       <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-002.txt</url>
     </references>
     <dates>
-      <discovery>2010-04-23</discovery>
-      <entry>2010-04-18</entry>
+      <discovery>2010-02-16</discovery>
+      <entry>2010-04-19</entry>
     </dates>
   </vuln>
 
@@ -32042,9 +32046,9 @@ executed in your Internet Explorer while displaying the email.</p>
       <url>http://securityreason.com/achievement_securityalert/58</url>
     </references>
     <dates>
-      <discovery>2009-11-28</discovery>
+      <discovery>2008-11-28</discovery>
       <entry>2009-05-16</entry>
-      <modified>2010-05-02</modified>
+      <modified>2013-06-16</modified>
     </dates>
   </vuln>
 
@@ -34134,7 +34138,7 @@ executed in your Internet Explorer while displaying the email.</p>
       <url>http://typo3.org/teams/security/security-bulletins/typo3-sa-2009-001/</url>
     </references>
     <dates>
-      <discovery>2009-02-27</discovery>
+      <discovery>2009-02-07</discovery>
       <entry>2009-02-09</entry>
     </dates>
   </vuln>
@@ -48726,8 +48730,8 @@ executed in your Internet Explorer while displaying the email.</p>
     </references>
     <dates>
       <discovery>2006-12-06</discovery>
-      <entry>2006-10-12</entry>
-      <modified>2010-05-12</modified>
+      <entry>2006-12-12</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -56561,7 +56565,6 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2006-01-11</discovery>
       <entry>2006-01-27</entry>
-      <modified>2006-01-11</modified>
     </dates>
   </vuln>
 
@@ -72679,7 +72682,7 @@ http_access deny Gopher</pre>
       </references>
     <dates>
       <discovery>2004-08-18</discovery>
-      <entry>2004-08-16</entry>
+      <entry>2004-10-18</entry>
     </dates>
   </vuln>
 
@@ -74105,7 +74108,7 @@ http_access deny Gopher</pre>
       <bid>10724</bid>
     </references>
     <dates>
-      <discovery>2007-07-07</discovery>
+      <discovery>2004-07-07</discovery>
       <entry>2004-09-27</entry>
       <modified>2004-10-02</modified>
     </dates>
@@ -74169,7 +74172,7 @@ http_access deny Gopher</pre>
       <bid>10725</bid>
     </references>
     <dates>
-      <discovery>2007-07-07</discovery>
+      <discovery>2004-07-07</discovery>
       <entry>2004-09-27</entry>
       <modified>2004-10-02</modified>
     </dates>
@@ -76976,9 +76979,9 @@ http_access deny Gopher</pre>
       <mlist>http://asg.web.cmu.edu/archive/message.php?mailbox=archive.cyrus-announce&amp;msg=25</mlist>
     </references>
     <dates>
-      <discovery>2004-12-12</discovery>
-      <entry>2004-05-12</entry>
-      <modified>2004-06-27</modified>
+      <discovery>2004-05-12</discovery>
+      <entry>2004-09-20</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
