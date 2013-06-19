@@ -28,30 +28,31 @@ bin/tsk_comparedir
 bin/tsk_gettimes
 bin/tsk_loaddb
 bin/tsk_recover
-include/tsk3/auto/tsk_auto.h
-include/tsk3/base/tsk_base.h
-include/tsk3/base/tsk_os.h
-include/tsk3/fs/tsk_ext2fs.h
-include/tsk3/fs/tsk_fatfs.h
-include/tsk3/fs/tsk_ffs.h
-include/tsk3/fs/tsk_fs.h
-include/tsk3/fs/tsk_hfs.h
-include/tsk3/fs/tsk_iso9660.h
-include/tsk3/fs/tsk_ntfs.h
-include/tsk3/hashdb/tsk_hashdb.h
-include/tsk3/img/tsk_img.h
-include/tsk3/libtsk.h
-include/tsk3/tsk_incs.h
-include/tsk3/vs/tsk_bsd.h
-include/tsk3/vs/tsk_dos.h
-include/tsk3/vs/tsk_gpt.h
-include/tsk3/vs/tsk_mac.h
-include/tsk3/vs/tsk_sun.h
-include/tsk3/vs/tsk_vs.h
-lib/libtsk3.a
-lib/libtsk3.la
-lib/libtsk3.so
-lib/libtsk3.so.9
+include/tsk/auto/tsk_auto.h
+include/tsk/base/tsk_base.h
+include/tsk/base/tsk_os.h
+include/tsk/fs/tsk_ext2fs.h
+include/tsk/fs/tsk_fatfs.h
+include/tsk/fs/tsk_ffs.h
+include/tsk/fs/tsk_fs.h
+include/tsk/fs/tsk_hfs.h
+include/tsk/fs/tsk_iso9660.h
+include/tsk/fs/tsk_ntfs.h
+include/tsk/fs/tsk_yaffs.h
+include/tsk/hashdb/tsk_hashdb.h
+include/tsk/img/tsk_img.h
+include/tsk/libtsk.h
+include/tsk/tsk_incs.h
+include/tsk/vs/tsk_bsd.h
+include/tsk/vs/tsk_dos.h
+include/tsk/vs/tsk_gpt.h
+include/tsk/vs/tsk_mac.h
+include/tsk/vs/tsk_sun.h
+include/tsk/vs/tsk_vs.h
+lib/libtsk.a
+lib/libtsk.la
+lib/libtsk.so
+lib/libtsk.so.10
 %%DATADIR%%/sorter/default.sort
 %%DATADIR%%/sorter/freebsd.sort
 %%DATADIR%%/sorter/images.sort
@@ -59,12 +60,12 @@ lib/libtsk3.so.9
 %%DATADIR%%/sorter/openbsd.sort
 %%DATADIR%%/sorter/solaris.sort
 %%DATADIR%%/sorter/windows.sort
-@dirrm include/tsk3/vs
-@dirrm include/tsk3/img
-@dirrm include/tsk3/hashdb
-@dirrm include/tsk3/fs
-@dirrm include/tsk3/base
-@dirrm include/tsk3/auto
-@dirrm include/tsk3
+@dirrm include/tsk/vs
+@dirrm include/tsk/img
+@dirrm include/tsk/hashdb
+@dirrm include/tsk/fs
+@dirrm include/tsk/base
+@dirrm include/tsk/auto
+@dirrm include/tsk
 @dirrm %%DATADIR%%/sorter
 @dirrm %%DATADIR%%
