@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pxz
-PORTVERSION=	0.20101123
+PORTVERSION=	0.20120930
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -25,6 +25,8 @@ MAN1=	pxz.1
 
 MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
+
+USE_GCC?=	yes
 
 .include <bsd.port.pre.mk>
 
