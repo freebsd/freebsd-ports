@@ -89,7 +89,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GPERF=${LOCALBASE}/bin/gperf \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
-			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
+			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
+			TMPDIR=${WRKDIR}
 
 CONFIGURE_ARGS+=	--disable-dependency-tracking \
 			--disable-fetch-external \
@@ -100,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-dependency-tracking \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 			--with-os-version=${OSVERSION} \
 			--with-parallelism=${MAKE_JOBS_NUMBER} \
-			--with-solver-and-workdir-root=${TMPDIR}/lobuild \
+			--with-solver-and-workdir-root=${WRKDIR} \
 			--with-unix-wrapper="libreoffice" \
 			--with-vendor="FreeBSD ports ${PKGVERSION}"
 
@@ -376,12 +377,8 @@ MAKE_ENV+=	ENVLINKFLAGS="${LDFLAGS}"
 MAKE_ENV+=	LANG=C LC_ALL=C
 MAKE_ENV+=	SED="${LOCALBASE}/bin/gsed" USE_GMAKE=1
 
-TMPDIR?=	/tmp
-
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
-	@${MKDIR} ${WRKDIR}/lobuild
-	@${LN} -fs ${WRKDIR}/lobuild ${TMPDIR}
 
 post-configure:
 	@${TOUCH} ${WRKSRC}/src.downloaded
@@ -445,9 +442,5 @@ post-install:
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
 	@${LOCALBASE}/bin/update-desktop-database 2>/dev/null || ${TRUE}
 .endif
-
-post-clean:
-	@${RM} -f ${TMPDIR}/lobuild
-	@${RM} -fr ${TMPDIR}/LibreOffice ${TMPDIR}/LibreOffice_SDK
 
 .include <bsd.port.post.mk>
