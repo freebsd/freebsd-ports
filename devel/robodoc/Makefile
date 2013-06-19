@@ -1,16 +1,12 @@
-# New ports collection makefile for:	robodoc
-# Date created:				15 Dec 1999
-# Whom:					Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	robodoc
 PORTVERSION=	4.99.36
 CATEGORIES=	devel
 MASTER_SITES=	http://rfsber.home.xs4all.nl/Robo/DistSource/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Code reference program similar to cxref that produces HTML
 
 GNU_CONFIGURE=	yes
