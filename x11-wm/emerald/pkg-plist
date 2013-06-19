@@ -91,12 +91,8 @@ share/locale/bn_IN/LC_MESSAGES/emerald.mo
 share/pixmaps/emerald-theme-manager-icon.png
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ja_JP/LC_MESSAGES
-@dirrmtry share/locale/ja_JP
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
-@dirrmtry share/locale/ca_ES/LC_MESSAGES
-@dirrmtry share/locale/ca_ES
 @dirrmtry %%DATADIR%%/theme
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
