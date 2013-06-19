@@ -1,13 +1,9 @@
-# New ports collection makefile for:	ORTEP-III
-# Date created:		1999-05-08
-# Whom:			Ryo MIYAMOTO
-#
+# Created by: Ryo MIYAMOTO
 # $FreeBSD$
-#
 
 PORTNAME=	ortep3
 PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/ortep/:Z \
 		ftp://ftp.ornl.gov/pub/ortep/src/:f
@@ -15,19 +11,27 @@ DISTFILES=	ortep.tar.Z:Z ortep.f:f
 EXTRACT_ONLY=	ortep.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
+COMMENT=	Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 
-.if defined(WITH_PGPLOT)
-LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
-.endif
+PGPLOT_LIB_DEPENDS=	pgplot:${PORTSDIR}/graphics/pgplot
 
 USE_FORTRAN=	yes
 WRKSRC=		${WRKDIR}/ortep/src
 MAKE_ARGS=	LFLAGS="${LFLAGS}"
 
-.if defined(WITH_PGPLOT)
+PGPLOT_LFLAGS=	-L${LOCALBASE}/lib -lpgplot -lX11
+
+PLIST_FILES+=	bin/ortep3
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES PGPLOT
+PGPLOT_DESC=	Fortran subroutine package for drawing graphs
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPGPLOT}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa
-LFLAGS=		-L${LOCALBASE}/lib -lpgplot -lX11
 .endif
 
 post-extract:
@@ -39,17 +43,15 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ortep3 ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/doc/ortep3
-	${INSTALL_DATA} ${WRKSRC}/../README.1st \
-		${PREFIX}/share/doc/ortep3
-	@${MKDIR} ${PREFIX}/share/doc/ortep3/examples
-	${INSTALL_DATA} ${WRKSRC}/../examples/* \
-		${PREFIX}/share/doc/ortep3/examples
-	@${MKDIR} ${PREFIX}/share/doc/ortep3/man
-	${INSTALL_DATA} ${WRKSRC}/../man/* \
-		${PREFIX}/share/doc/ortep3/man
-	@${MKDIR} ${PREFIX}/share/doc/ortep3/src
-	${INSTALL_DATA} ${WRKSRC}/000readme.txt \
-		${PREFIX}/share/doc/ortep3/src
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}/src
+	${INSTALL_DATA} ${WRKSRC}/../README.1st ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../man/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/000readme.txt ${DOCSDIR}/src
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/../examples/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
