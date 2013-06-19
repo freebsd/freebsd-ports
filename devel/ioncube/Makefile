@@ -1,12 +1,8 @@
-# New ports collection makefile for:    ioncube
-# Date created:		Fri Feb 12 21:43:10 CET 2010
-# Whom:			Svyatoslav Lempert <svyatoslav.lempert@gmail.com>
-#
+# Created by: Svyatoslav Lempert <svyatoslav.lempert@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ioncube
-DISTVERSION=	4.4.0
+DISTVERSION=	4.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
@@ -28,10 +24,7 @@ DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 .include <bsd.port.pre.mk>
 
 # Detect OS Version
-VER=	7
-.if ${OSVERSION} >= 800000
 VER=	8
-.endif
 .if ${OSVERSION} >= 900000
 VER=	9
 .endif
