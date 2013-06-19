@@ -1,5 +1,5 @@
 The Swap Extender Daemon is designed to monitor the amount of swap space
-available on the system and create moer on-disk swap as needed. Additionally
+available on the system and create more on-disk swap as needed. Additionally
 Swap Extender will remove unwanted swap space when memory is freed.
 
 WWW: http://makeapbi.sourceforge.net/
