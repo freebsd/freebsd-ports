@@ -1,7 +1,7 @@
-A documentation tool for C, C++, Java, Assembler, Basic, 
-Fortran, LaTeX, Postscript, Tcl/Tk, LISP, Forth, Perl, 
-Shell Scripts, Occam, COBOL, and many other languages. It
-is similar to cxref in that it produces HTML output based
-on your code.
+A source code documentation tool for C, C++, Fortran, Perl,
+shell scripts, Assembler, DCL, DB/C, Tcl/Tk, Forth, Lisp,
+COBOL, Occam, Basic, HTML, Clarion, and more. It can produce
+documentation in HTML, XML DocBook, TROFF, ASCII, LaTeX or
+RTF format.
 
-WWW: http://www.xs4all.nl/~rfsber/Robo/robodoc.html
+WWW: http://rfsber.home.xs4all.nl/Robo/
