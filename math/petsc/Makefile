@@ -14,8 +14,6 @@ COMMENT=	Portable, Extensible Toolkit for Scientific computation
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\
 		qsub:${PORTSDIR}/sysutils/torque
 
-SLAVEDIRS=	math/petsc-mpich
-
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 CONFIGURE_SCRIPT=	config/configure.py
@@ -54,7 +52,9 @@ CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 			--with-umfpack-lib="[${UMFPACK_LIBS:C/^/${L}/:C/,/, ${L}/g}]"
 .endif
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 #USE_TEX=	latex:build
 #BUILD_DEPENDS+=	c2html:${PORTSDIR}/textproc/c2html	\
@@ -64,8 +64,6 @@ PORTDOCS=	*
 LIBSCALAPACK=	${LOCALBASE}/lib/libscalapack.a
 LIBBLACS=	${LOCALBASE}/lib/libblacs.a
 MPIDIR=		${LOCALBASE}
-
-.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
 WITH_OPENMPI=	yes
@@ -270,7 +268,7 @@ post-install:
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bin
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bmake
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bmake
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS}	\
 		${MAKEFILE} ${MAKE_ARGS} install_docs)
 .endif
@@ -295,4 +293,4 @@ regression-test:
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
