@@ -1,13 +1,9 @@
-# New ports collection makefile for:	iet
-# Date created:		2011-02-25
-# Whom:			Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iet
 PORTVERSION=	1.4.20.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/iscsitarget/iscsitarget/${PORTVERSION}/
 DISTNAME=	iscsitarget-${PORTVERSION}
