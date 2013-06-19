@@ -1,4 +1,0 @@
-bin/fluctuate
-%%PORTDOCS%%%%DOCSDIR%%/errors.doc
-%%PORTDOCS%%%%DOCSDIR%%/fluctuate.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

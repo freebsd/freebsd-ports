@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fluctuate
-# Date created:		6 August 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fluctuate
 PORTVERSION=	1.40
@@ -12,16 +8,23 @@ MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/fluctuate/
 DISTNAME=	${PORTNAME}1.4.src.doc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to fit population models
+COMMENT=	Program to fit population models
 
 WRKSRC=		${WRKDIR}/${PORTNAME}1.4
 ALL_TARGET=	${PORTNAME}
 
+PLIST_FILES=	bin/fluctuate
+PORTDOCS=	errors.doc fluctuate.doc
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}/
 .endif
