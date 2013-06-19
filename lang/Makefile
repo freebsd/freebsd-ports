@@ -19,7 +19,6 @@
     SUBDIR += basic256
     SUBDIR += bf2c
     SUBDIR += bigloo
-    SUBDIR += boo
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += caml-light
