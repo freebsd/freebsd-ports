@@ -7,7 +7,7 @@
 
 PORTNAME=	vietunicode-trichlor
 PORTVERSION=	2004.04.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/VietFonts-TriChlor/TrichlorSet%20v2004
 DISTNAME=	VietFonts_TriChlor_ttf
