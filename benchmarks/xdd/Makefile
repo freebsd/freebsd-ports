@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/xdd
-# Date created:				29.05.2006
-# Whom:					Gerhard Gonter <g.gonter@ieee.org>
-#
+# Created by: Gerhard Gonter <g.gonter@ieee.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xdd
 PORTVERSION=	65
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.ioperformance.com/xddversions/
 DISTNAME=	xdd65.013007
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	g.gonter@ieee.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring and characterizing disk subsystem I/O
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

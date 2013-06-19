@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmradio
-# Date created:		1 Oct 1999
-# Whom:			runge@rostock.zgdv.de
-#
+# Created by: runge@rostock.zgdv.de
 # $FreeBSD$
-#
 
 PORTNAME=	xmradio
 PORTVERSION=	1.2
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://core.de/~coto/radio/
 
-MAINTAINER=	g.gonter@ieee.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif based FM tuner (for use with bt848 driver)
 
 # This program does not actually depend on the below, but they are pretty

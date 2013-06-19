@@ -6,7 +6,7 @@ PORTVERSION=	1.3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.contactor.se/~dast/stuff/
 
-MAINTAINER=	g.gonter@ieee.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail to SMS converter
 
 GNU_CONFIGURE=	yes
