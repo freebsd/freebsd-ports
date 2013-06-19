@@ -12,6 +12,7 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 
+.MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
