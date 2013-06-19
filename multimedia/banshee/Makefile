@@ -22,14 +22,13 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins \
 		${LOCALBASE}/libdata/pkgconfig/notify-sharp.pc:${PORTSDIR}/devel/notify-sharp
 
-# For now, remove APPLEDEV and BOO since they are broken
+# For now, remove APPLEDEV since it is broken
 OPTIONS_DEFINE=	DOCS BPMDETECT GIO MTP WEBKIT YOUTUBE
 
 APPLEDEV_DESC=	Apple device
-BOO_DESC=	Boo
 BPMDETECT_DESC=	Force dependency on soundtouch (required for BPM detection)
 GIO_DESC=	Use GIO for disk access
-WEBKIT_DESC=	Build and/or install extensions using Webkit 
+WEBKIT_DESC=	Build and/or install extensions using Webkit
 YOUTUBE_DESC=	Build and/or install the Youtube extension
 
 OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
@@ -45,7 +44,7 @@ USE_XORG=	xrandr xxf86vm
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware
+CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
 
 .include <bsd.port.options.mk>
 
@@ -83,16 +82,6 @@ PLIST_SUB+=	OPT_DOCS="@comment "
 USE_GSTREAMER+=	soundtouch
 .endif
 
-.if ${PORT_OPTIONS:MBOO}
-CONFIGURE_ARGS+=--enable-boo
-BUILD_DEPENDS+=	booc:${PORTSDIR}/lang/boo
-RUN_DEPENDS+=	booc:${PORTSDIR}/lang/boo
-PLIST_SUB+=	OPT_BOO=""
-.else
-CONFIGURE_ARGS+=--disable-boo
-PLIST_SUB+=	OPT_BOO="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MAPPLEDEV}
 CONFIGURE_ARGS+=--enable-appledevice
 LIB_PC_DEPENDS+=${LOCALBASE}/libdata/pkgconfig/libgpodsharp.pc:${PORTSDIR}/audio/libgpod
@@ -103,7 +92,7 @@ CONFIGURE_ARGS+=--disable-appledevice
 PLIST_SUB+=	APPLEDEV="@comment "
 .endif
 
-.if ${PORTSDIR:MMTP}
+.if ${PORT_OPTIONS:MMTP}
 CONFIGURE_ARGS+=--enable-mtp
 LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=	OPT_MTP=""

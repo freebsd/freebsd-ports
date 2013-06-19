@@ -49,8 +49,6 @@ lib/banshee/Extensions/Banshee.AmazonMp3.exe
 lib/banshee/Extensions/Banshee.AmazonMp3.exe.mdb
 lib/banshee/Extensions/Banshee.Audiobook.dll
 lib/banshee/Extensions/Banshee.Audiobook.dll.mdb
-%%OPT_BOO%%lib/banshee/Extensions/Banshee.BooScript.dll
-%%OPT_BOO%%lib/banshee/Extensions/Banshee.BooScript.dll.mdb
 lib/banshee/Extensions/Banshee.Bpm.dll
 lib/banshee/Extensions/Banshee.Bpm.dll.mdb
 lib/banshee/Extensions/Banshee.CoverArt.dll
