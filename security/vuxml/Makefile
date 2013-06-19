@@ -18,6 +18,8 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr \
 		${LOCALBASE}/share/xml/dtd/xhtml-modularization/VERSION:${PORTSDIR}/textproc/xhtml-modularization \
 		${LOCALBASE}/share/xml/dtd/xhtml-basic/xhtml-basic10.dtd:${PORTSDIR}/textproc/xhtml-basic
 
+USE_PYTHON_RUN=	yes
+
 NO_MTREE=	YES
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}
@@ -91,6 +93,7 @@ validate: tidy
 		${ECHO_CMD} Consider using ${VUXML_FILE}.unexpanded for final commit; \
 		return 1; \
 	fi
+	${PYTHON_CMD} files/extra-validation.py
 
 tidy: vuln.xml
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \

@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # $FreeBSD$
 
 import datetime
 import xml.etree.ElementTree as ET
 import sys
 
-tree = ET.parse('../vuln.xml')
+tree = ET.parse('vuln.xml')
 root = tree.getroot()
 
 namespace = "{http://www.vuxml.org/apps/vuxml-1}"
