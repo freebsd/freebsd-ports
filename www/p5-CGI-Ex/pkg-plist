@@ -19,6 +19,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI/Ex/App
-@dirrmtry %%SITE_PERL%%/CGI/Ex/Template
 @dirrmtry %%SITE_PERL%%/CGI/Ex
 @dirrmtry %%SITE_PERL%%/CGI
