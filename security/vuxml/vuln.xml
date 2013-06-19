@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b97d289-d8cf-11e2-a1f5-60a44c524f57">
+    <topic>otrs -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-04/">
+	  <p>An attacker with a valid agent login could manipulate URLs in the ticket watch mechanism to see contents of tickets they are not permitted to see.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4088</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-04/</url>
+    </references>
+    <dates>
+      <discovery>2013-06-18</discovery>
+      <entry>2013-06-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="abef280d-d829-11e2-b71c-8c705af55518">
     <topic>FreeBSD -- Privilege escalation via mmap</topic>
     <affects>
