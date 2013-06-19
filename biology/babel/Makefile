@@ -16,16 +16,24 @@ CONFLICTS_INSTALL=	openbabel-*
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+PLIST_FILES+=	bin/babel libexec/babel
+PORTDATA=	element.lis new.lis quanta.lis types.lis
+PORTDOCS=	README.1ST
+
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	${SED} -e 's%@PREFIX@%${PREFIX}%g' \
 		${FILESDIR}/babel.sh >${WRKSRC}/babel.sh
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/babel ${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/babel.sh ${PREFIX}/bin/babel
-	@${MKDIR} ${PREFIX}/share/babel
-	${INSTALL_DATA} ${WRKSRC}/*.lis ${PREFIX}/share/babel
-.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.lis ${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.1ST ${DOCSDIR}
 .endif
