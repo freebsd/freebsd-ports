@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lamarc
-# Date created:		6 August 2001
-# Whom:			Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lamarc
 PORTVERSION=	2.1.8
@@ -13,7 +9,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://evolution.genetics.washington.edu/lamarc/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A package of programs for computing population parameters
+COMMENT=	Package of programs for computing population parameters
 
 LICENSE=	AL2
 
