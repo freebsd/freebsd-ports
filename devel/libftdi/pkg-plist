@@ -10,6 +10,10 @@ bin/serial_test
 bin/simple
 include/ftdi.h
 %%BOOST%%include/ftdi.hpp
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_ftdi.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ftdi.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ftdi.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 lib/libftdi.a
 lib/libftdi.la
 lib/libftdi.so
