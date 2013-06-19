@@ -34,5 +34,3 @@ lib/ganglia/modsys.so
 sbin/gmond
 @dirrmtry etc/gmond.conf.d
 @dirrm lib/ganglia
-@dirrmtry var/db/ganglia/rrds
-@dirrmtry var/db/ganglia
