@@ -1,9 +1,5 @@
-# New ports collection makefile for:	canna-server
-# Date created:		7 September 2008
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	canna
 PORTVERSION=	3.7p3
