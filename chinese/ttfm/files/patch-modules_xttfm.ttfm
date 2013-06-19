@@ -1,5 +1,5 @@
---- ./modules/xttfm.ttfm.orig	Tue Nov  4 07:08:32 2003
-+++ ./modules/xttfm.ttfm	Mon Nov 27 02:06:25 2006
+--- modules/xttfm.ttfm.orig	2003-11-04 07:08:32.000000000 +0800
++++ modules/xttfm.ttfm	2013-06-18 01:32:45.000000000 +0800
 @@ -25,8 +25,8 @@
  
  # Global constants
@@ -11,9 +11,16 @@
  export PATH; PATH=/bin:/sbin:/usr/bin:/usr/sbin:$PREFIX/bin:$PREFIX/sbin:$X11BASE/bin
  export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXX`"
  export DefaultFontPath; DefaultFontPath=$PREFIX/share/fonts/TrueType
-@@ -87,15 +87,11 @@
+@@ -86,16 +86,18 @@
+     for f in "$@"; do
          targetname=`basename $f`
  
++        # Remove font files.
++        # We only remove those fonts in $DefaultFontPath which are symbolic.
++        filetype=`file "$DefaultFontPath/$targetname" |grep -e "^$DefaultFontPath/$targetname: symbolic link to"`
++        [ ! "X$filetype" = "X" ] && rm -f "$DefaultFontPath/$targetname"
++        rm -f "$XTTFFONTPATH/$targetname"
++
          # Update fonts.scale
 -        rm -f $TEMPFILE
 -        if [ ! -r $XTTFFONTPATH/fonts.scale ]; then
@@ -30,6 +37,19 @@
          if [ -r $XTTFFONTPATH/../encodings/large/encodings.dir ]; then
              mkfontdir -e $XTTFFONTPATH/../encodings/large $XTTFFONTPATH
          else
+@@ -107,12 +109,6 @@
+         ALIASPATTERN=`eval echo $ALIASPATTERN`
+         sed -e "/$ALIASPATTERN/d" $XTTFFONTPATH/fonts.alias > $TEMPFILE
+         mv -f $TEMPFILE $XTTFFONTPATH/fonts.alias
+-
+-        # Remove font files.
+-        # We only remove those fonts in $DefaultFontPath which are symbolic.
+-        filetype=`file "$DefaultFontPath/$targetname" |grep -e "^$DefaultFontPath/$targetname: symbolic link to"`
+-        [ ! "X$filetype" = "X" ] && rm -f "$DefaultFontPath/$targetname"
+-        rm -f "$XTTFFONTPATH/$targetname"
+     done
+ }
+ 
 @@ -133,29 +129,11 @@
      fontencoding=${10}
  
