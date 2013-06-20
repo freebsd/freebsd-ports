@@ -22,3 +22,4 @@ share/locale/th/LC_MESSAGES/remmina-plugins.mo
 share/locale/tr/LC_MESSAGES/remmina-plugins.mo
 share/locale/uk/LC_MESSAGES/remmina-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/remmina-plugins.mo
+@dirrmtry include/remmina

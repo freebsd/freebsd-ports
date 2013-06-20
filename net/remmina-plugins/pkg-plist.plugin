@@ -1,14 +1,8 @@
-lib/remmina/plugins/remmina-plugin-%%PLUGIN%%.a
-lib/remmina/plugins/remmina-plugin-%%PLUGIN%%.la
 lib/remmina/plugins/remmina-plugin-%%PLUGIN%%.so
-%%TELEP%%share/dbus-1/services/org.freedesktop.Telepathy.Client.Remmina.service
-%%ICONS%%share/remmina/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%.png
-%%ICONS%%%%SSH%%share/remmina/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%-ssh.png
-%%ICONS%%share/remmina/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%.png
 %%ICONS%%%%SSH%%share/remmina/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%-ssh.png
-%%TELEP%%share/telepathy/clients/Remmina.client
-@dirrmtry lib/remmina/plugins
-@dirrmtry lib/remmina
+%%ICONS%%share/remmina/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%.png
+%%ICONS%%%%SSH%%share/remmina/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%-ssh.png
+%%ICONS%%share/remmina/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%.png
 @dirrmtry share/remmina/icons/hicolor/22x22/emblems
 @dirrmtry share/remmina/icons/hicolor/22x22
 @dirrmtry share/remmina/icons/hicolor/16x16/emblems
@@ -16,5 +10,6 @@ lib/remmina/plugins/remmina-plugin-%%PLUGIN%%.so
 @dirrmtry share/remmina/icons/hicolor
 @dirrmtry share/remmina/icons
 @dirrmtry share/remmina
-%%TELEP%%@dirrmtry share/telepathy/clients
-%%TELEP%%@dirrmtry share/telepathy
+@dirrmtry lib/remmina/plugins
+@dirrmtry lib/remmina
+@dirrmtry include/remmina

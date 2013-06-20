@@ -2,30 +2,40 @@
 # $FreeBSD$
 
 PORTNAME?=	remmina-plugins
-PORTVERSION=	0.9.2
-PORTREVISION?=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	net gnome
-MASTER_SITES=	# Empty
-DISTFILES?=	# Empty
+USE_GITHUB=	yes
+GH_ACCOUNT=	FreeRDP
+GH_PROJECT=	remmina
+GH_COMMIT=	356c033
+GH_TAGNAME=	${PORTVERSION}
+DISTNAME=	remmina-plugins-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+
+MAINTAINER?=	fluffy@FreeBSD.org
 COMMENT?=	Remmina plugin system
 
 .if defined(PKGNAMESUFFIX)
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 .else
 
-OPTIONS_DEFINE=	RDP VNC XDMCP TELEP
-OPTIONS_DEFAULT=	RDP VNC XDMCP TELEP
+OPTIONS_DEFINE=	KEYRING RDP VNC XDMCP TELEP NX
+OPTIONS_DEFAULT=	KEYRING RDP VNC XDMCP TELEP
+KEYRING_DESC=	GNOME Keyring plugin
 RDP_DESC=	RDP protocol plugin
 VNC_DESC=	VNC protocol plugin
 XDMCP_DESC=	XDMCP protocol plugin
 TELEP_DESC=	Telepathy protocol plugin
+NX_DESC=	NX protocol plugin
 
 NO_BUILD=	yes
 PATCHDIR=	# none
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKEYRING}
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugins-gnome.so:${PORTSDIR}/net/remmina-plugin-gnome
+.endif
 
 .if ${PORT_OPTIONS:MRDP}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-rdp.so:${PORTSDIR}/net/remmina-plugin-rdp
@@ -41,6 +51,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:${PORTSDI
 
 .if ${PORT_OPTIONS:MTELEP}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:${PORTSDIR}/net/remmina-plugin-telepathy
+.endif
+
+.if ${PORT_OPTIONS:MNX}
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-nx.so:${PORTSDIR}/net/remmina-plugin-nx
 .endif
 
 do-install:	# empty

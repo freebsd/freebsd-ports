@@ -1,15 +1,12 @@
-# New ports collection makefile for:	remmina-plugin-rdp
-# Date created:				24 June 2010
-# Whom:					Alexander Logvinov <avl@FreeBSD.org>
-#
+# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-rdp
 
 COMMENT=	Remmina plugin for RDP protocol
 
-LIB_DEPENDS=	freerdp.0:${PORTSDIR}/net/freerdp
+BUILD_DEPENDS=	freerdp>=1.0.0:${PORTSDIR}/net/freerdp
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
