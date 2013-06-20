@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   devel/subversion has been upgraded from 1.7.10 to 1.8.0
 
   If you want to upgrade, and use http/https access to repositories,
-  please check, that SERF option is enableds, as NEON support
+  please check, that the SERF option is enabled, as NEON support
   is gone. Also, mod_dontdothat and svnauthz_validate are
   now eanbled with one option TOOLS, among other new tools
   and SVNMUCC is enabled always.
