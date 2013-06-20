@@ -10,6 +10,13 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ohauer@FreeBSD.org
 
   devel/subversion has been upgraded from 1.7.10 to 1.8.0
+
+  If you want to upgrade, and use http/https access to repositories,
+  please check, that SERF option is enableds, as NEON support
+  is gone. Also, mod_dontdothat and svnauthz_validate are
+  now eanbled with one option TOOLS, among other new tools
+  and SVNMUCC is enabled always.
+
   subversion-1.7.x is available as devel/subversion17
 
   To stay on subversion-1.7.x set in /etc/make.conf 
