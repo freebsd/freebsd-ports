@@ -853,6 +853,7 @@
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-hmac
+    SUBDIR += rubygem-jugyo-twitter_oauth
     SUBDIR += rubygem-metasploit_data_models
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-sftp
