@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpser
-# Date created:		2008-09-24
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpser
 DISTVERSION=	1.0rc12
@@ -20,12 +16,15 @@ LDFLAGS+=	${PTHREAD_LIBS}
 PORTDOCS=	README CHANGES
 PLIST_FILES=	bin/tcpser
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/tcpser ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-		${INSTALL_MAN} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpser ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/CHANGES ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
