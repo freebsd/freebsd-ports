@@ -1,12 +1,7 @@
-# New ports collection makefile for:	textproc/p5-Pod-Spell
-# Date created:				16 April 2008
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Spell
-PORTVERSION=	1.01
+PORTVERSION=	1.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +14,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=	podspell.1
 MAN3=	Pod::Spell.3 \
 	Pod::Wordlist.3
 
