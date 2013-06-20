@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cdr_read
-# Date created:				15 June 2004
-# Whom:				Konstantin Reznichenko <kot@premierbank.dp.ua>
-#
+# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	cdr_read
 PORTVERSION=	1.09
@@ -21,9 +17,13 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/cdr_read
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/readme_eng.txt ${DOCSDIR}/readme.txt
 .endif
