@@ -3,13 +3,14 @@
 
 PORTNAME=	lxpanel
 PORTVERSION=	0.5.12
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
 
-LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache
+LIB_DEPENDS=	menu-cache:${PORTSDIR}/x11/menu-cache
 RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
 OPTIONS_DEFINE=	ALSA NLS

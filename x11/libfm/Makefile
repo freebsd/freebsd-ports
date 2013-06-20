@@ -3,6 +3,7 @@
 
 PORTNAME=	libfm
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
@@ -12,7 +13,7 @@ COMMENT=	The libFM backend library to PCManFM
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
-		menu-cache.1:${PORTSDIR}/x11/menu-cache
+		menu-cache:${PORTSDIR}/x11/menu-cache
 
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool

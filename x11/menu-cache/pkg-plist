@@ -1,10 +1,9 @@
-lib/libmenu-cache.so
-lib/libmenu-cache.so.1
-lib/libmenu-cache.la
-lib/libmenu-cache.a
-libdata/pkgconfig/libmenu-cache.pc
-libexec/menu-cached
-libexec/menu-cache-gen
 include/menu-cache/menu-cache.h
+lib/libmenu-cache.a
+lib/libmenu-cache.la
+lib/libmenu-cache.so
+lib/libmenu-cache.so.2
+libdata/pkgconfig/libmenu-cache.pc
+libexec/menu-cache-gen
+libexec/menu-cached
 @dirrm include/menu-cache
-@dirrmtry libdata/pkgconfig
