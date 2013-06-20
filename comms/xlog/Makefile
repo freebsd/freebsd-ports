@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	xlog
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio logging application
 
+LICENSE=	GPLv3
+
 USES=		gettext
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
@@ -22,7 +24,6 @@ CONFIGURE_ARGS=	--with-mime-update \
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 
 MAN1=		xlog.1
-LICENSE=	GPLv3
 
 .include <bsd.port.options.mk>
 
