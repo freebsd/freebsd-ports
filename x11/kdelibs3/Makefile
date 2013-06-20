@@ -73,7 +73,7 @@ FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 1000014
+.if ${OSVERSION} > 901000
 PATCH_SITES=		http://data.gpo.zugaina.org/kde-sunset/kde-base/kdelibs/files/
 PATCHFILES=		kdelibs-3.5-openssl-1.0.0.patch
 PATCH_DIST_STRIP=	-p1
