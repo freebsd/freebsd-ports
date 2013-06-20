@@ -3,4 +3,4 @@ around test cases. If you know JUnit or some of the PHPUnit clones this
 will need no explanation. It also adds JWebUnit style testing including
 cookies, authentication and form handling
 
-WWW: http://sourceforge.net/projects/simpletest/
+WWW: http://simpletest.org
