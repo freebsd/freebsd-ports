@@ -27,6 +27,7 @@ USE_GNOME=	gtk20 pango
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	FORCE_GMAKE=yes
+MAKE_ENV+=	LANG=C
 
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
