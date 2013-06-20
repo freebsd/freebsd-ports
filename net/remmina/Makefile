@@ -2,39 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	remmina
-PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	net gnome
-MASTER_SITES=	SF/${PORTNAME}/0.9
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	The GTK+ Remote Desktop Client
 
-OPTIONS_DEFINE=	SSH GCRYPT TERM AVAHI UNIQUE NLS
-OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI UNIQUE
-SSH_DESC=	SSH tunneling support
-GCRYPT_DESC=	libgcrypt support for password encryption
-TERM_DESC=	terminal support
-UNIQUE_DESC=	Unique-App support
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/${PORTNAME}/COPYING
 
-GNU_CONFIGURE=	yes
+USES=		cmake desktop-file-utils
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 desktopfileutils
+USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -Wl,-rpath -Wl,${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CFLAGS+=	-I${WRKSRC}/remmina/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
 SUB_FILES=	pkg-message
+USE_GITHUB=	yes
+GH_ACCOUNT=	FreeRDP
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	356c033
+GH_TAGNAME=	${PORTVERSION}
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-Remmina-${GH_COMMIT}
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+OPTIONS_DEFINE=	SSH GCRYPT TERM AVAHI UNIQUE NLS
+OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI UNIQUE NLS
+SSH_DESC=	Build with SSH tunneling support
+GCRYPT_DESC=	Build with libgcrypt support for password encryption
+TERM_DESC=	Build with terminal support
+AVAHI_DESC=	Build with Avahi support
+UNIQUE_DESC=	Build with Unique-App support
 
 .include <bsd.port.options.mk>
+
+CMAKE_ARGS+=	--build=build
+# now cannot build with gtk30 because requisite ports are old
+CMAKE_ARGS+=	-DGTK_VERSION=2
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
@@ -45,35 +54,49 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libssh.so.4:${PORTSDIR}/security/libssh
 LDFLAGS+=	-fstack-protector
 .endif
 .else
-CONFIGURE_ARGS+=--disable-ssh
+CMAKE_ARGS+=	-DWITH_SSH=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .else
-CONFIGURE_ARGS+=--disable-gcrypt
+CMAKE_ARGS+=	-DWITH_GCRYPT=OFF
 .endif
 
 .if ${PORT_OPTIONS:MTERM}
 USE_GNOME+=	vte
 .else
-CONFIGURE_ARGS+=--disable-vte
+CMAKE_ARGS+=	-DWITH_VTE=OFF
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	avahi-ui.0:${PORTSDIR}/net/avahi-gtk
+LIB_DEPENDS+=	avahi-ui:${PORTSDIR}/net/avahi-gtk
 .else
-CONFIGURE_ARGS+=--disable-avahi
+CMAKE_ARGS+=	-DWITH_AVAHI=OFF
 .endif
 
 .if ${PORT_OPTIONS:MUNIQUE}
-LIB_DEPENDS+=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS+=	unique:${PORTSDIR}/x11-toolkits/unique
 .else
-CONFIGURE_ARGS+=--disable-unique
+CMAKE_ARGS+=	-DWITH_UNIQUE=OFF
+.endif
+
+post-patch:
+	@# fit avahi to current PORTVERSION
+	${REINPLACE_CMD} -e's|avahi-ui>=0.6.30|avahi-ui>=0.6.29|' ${WRKSRC}/cmake/FindAVAHI.cmake
+	${REINPLACE_CMD} -e's|avahi-client>=0.6.30|avahi-client>=0.6.29|' ${WRKSRC}/cmake/FindAVAHI.cmake
+	@# do not build plugins and locales , they are provided by separated ports
+	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins)||' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e's|add_subdirectory(remmina-plugins-gnome)||' ${WRKSRC}/CMakeLists.txt
+.if !${PORT_OPTIONS:MNLS}
+	${REINPLACE_CMD} -e's|add_subdirectory(po)||' ${WRKSRC}/remmina/CMakeLists.txt
 .endif
 
 post-install:
-	@-update-desktop-database
+	@# localized desktop entry file is not included remmina 1.0.0, install manually
+	${MKDIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${PREFIX}/share/applications/
+	${CP} -a ${DATADIR}/icons/ ${PREFIX}/share/icons
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

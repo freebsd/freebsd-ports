@@ -1,9 +1,5 @@
-# New ports collection makefile for:	remmina-plugin-telepathy
-# Date created:				24 June 2010
-# Whom:					Alexander Logvinov <avl@FreeBSD.org>
-#
+# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-telepathy
 
