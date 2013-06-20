@@ -1,0 +1,22 @@
+Bugzilla is one example of a class of programs called "Defect Tracking
+Systems", or, more commonly, "Bug-Tracking Systems". Defect Tracking
+Systems allow individual or groups of developers to keep track of
+outstanding bugs in their product effectively.
+
+Bugzilla has matured immensely, and now boasts many advanced features.
+These include:
+
+  * integrated, product-based granular security schema
+  * inter-bug dependencies and dependency graphing
+  * advanced reporting capabilities
+  * a robust, stable RDBMS back-end
+  * extensive configurability
+  * a very well-understood and well-thought-out natural bug resolution
+    protocol
+  * email, XML, console, and HTTP APIs
+  * available integration with automated software configuration
+    management systems, including Perforce and CVS (through the
+    Bugzilla email interface and checkin/checkout scripts)
+  * too many more features to list
+
+WWW: http://www.bugzilla.org/

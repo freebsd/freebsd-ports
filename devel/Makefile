@@ -148,6 +148,7 @@
     SUBDIR += bugzilla
     SUBDIR += bugzilla3
     SUBDIR += bugzilla42
+    SUBDIR += bugzilla44
     SUBDIR += build
     SUBDIR += buildapp
     SUBDIR += buildbot

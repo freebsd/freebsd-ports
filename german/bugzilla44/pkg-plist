@@ -1,0 +1,282 @@
+%%WWWDIR%%/template/de/default/account/auth/login-small.html.tmpl
+%%WWWDIR%%/template/de/default/account/auth/login.html.tmpl
+%%WWWDIR%%/template/de/default/account/cancel-token.txt.tmpl
+%%WWWDIR%%/template/de/default/account/create.html.tmpl
+%%WWWDIR%%/template/de/default/account/created.html.tmpl
+%%WWWDIR%%/template/de/default/account/email/change-new.txt.tmpl
+%%WWWDIR%%/template/de/default/account/email/change-old.txt.tmpl
+%%WWWDIR%%/template/de/default/account/email/confirm-new.html.tmpl
+%%WWWDIR%%/template/de/default/account/email/confirm.html.tmpl
+%%WWWDIR%%/template/de/default/account/email/request-new.txt.tmpl
+%%WWWDIR%%/template/de/default/account/password/forgotten-password.txt.tmpl
+%%WWWDIR%%/template/de/default/account/password/set-forgotten-password.html.tmpl
+%%WWWDIR%%/template/de/default/account/prefs/account.html.tmpl
+%%WWWDIR%%/template/de/default/account/prefs/email.html.tmpl
+%%WWWDIR%%/template/de/default/account/prefs/permissions.html.tmpl
+%%WWWDIR%%/template/de/default/account/prefs/prefs.html.tmpl
+%%WWWDIR%%/template/de/default/account/prefs/saved-searches.html.tmpl
+%%WWWDIR%%/template/de/default/account/prefs/settings.html.tmpl
+%%WWWDIR%%/template/de/default/account/profile-activity.html.tmpl
+%%WWWDIR%%/template/de/default/admin/admin.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/add.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/del.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/edit-common.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/footer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/reclassify.html.tmpl
+%%WWWDIR%%/template/de/default/admin/classifications/select.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/edit-common.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/footer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/components/select-product.html.tmpl
+%%WWWDIR%%/template/de/default/admin/confirm-action.html.tmpl
+%%WWWDIR%%/template/de/default/admin/custom_fields/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/custom_fields/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/custom_fields/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/custom_fields/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/fieldvalues/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/fieldvalues/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/fieldvalues/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/fieldvalues/footer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/fieldvalues/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/fieldvalues/select-field.html.tmpl
+%%WWWDIR%%/template/de/default/admin/flag-type/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/flag-type/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/flag-type/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/groups/confirm-remove.html.tmpl
+%%WWWDIR%%/template/de/default/admin/groups/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/groups/delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/groups/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/groups/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/keywords/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/keywords/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/keywords/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/keywords/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/milestones/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/milestones/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/milestones/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/milestones/footer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/milestones/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/milestones/select-product.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/admin.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/advanced.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/attachment.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/auth.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/bugchange.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/bugfields.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/common.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/core.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/dependencygraph.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/editparams.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/general.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/groupsecurity.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/index.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/ldap.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/mta.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/patchviewer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/query.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/radius.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/shadowdb.html.tmpl
+%%WWWDIR%%/template/de/default/admin/params/usermatch.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/edit-common.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/footer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/groupcontrol/confirm-edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/groupcontrol/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/groupcontrol/updated.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/list-classifications.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/products/updated.html.tmpl
+%%WWWDIR%%/template/de/default/admin/sanitycheck/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/sanitycheck/messages.html.tmpl
+%%WWWDIR%%/template/de/default/admin/settings/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/sudo.html.tmpl
+%%WWWDIR%%/template/de/default/admin/table.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/listselectvars.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/responsibilities.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/search.html.tmpl
+%%WWWDIR%%/template/de/default/admin/users/userdata.html.tmpl
+%%WWWDIR%%/template/de/default/admin/versions/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/admin/versions/create.html.tmpl
+%%WWWDIR%%/template/de/default/admin/versions/edit.html.tmpl
+%%WWWDIR%%/template/de/default/admin/versions/footer.html.tmpl
+%%WWWDIR%%/template/de/default/admin/versions/list.html.tmpl
+%%WWWDIR%%/template/de/default/admin/versions/select-product.html.tmpl
+%%WWWDIR%%/template/de/default/admin/workflow/comment.html.tmpl
+%%WWWDIR%%/template/de/default/admin/workflow/edit.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/choose.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/confirm-delete.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/create.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/created.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/createformcontents.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/delete_reason.txt.tmpl
+%%WWWDIR%%/template/de/default/attachment/diff-file.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/diff-footer.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/diff-header.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/edit.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/list.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/midair.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/show-multiple.html.tmpl
+%%WWWDIR%%/template/de/default/attachment/updated.html.tmpl
+%%WWWDIR%%/template/de/default/bug/activity/show.html.tmpl
+%%WWWDIR%%/template/de/default/bug/activity/table.html.tmpl
+%%WWWDIR%%/template/de/default/bug/choose.html.tmpl
+%%WWWDIR%%/template/de/default/bug/comments.html.tmpl
+%%WWWDIR%%/template/de/default/bug/create/comment-guided.txt.tmpl
+%%WWWDIR%%/template/de/default/bug/create/create-guided.html.tmpl
+%%WWWDIR%%/template/de/default/bug/create/create.html.tmpl
+%%WWWDIR%%/template/de/default/bug/create/created.html.tmpl
+%%WWWDIR%%/template/de/default/bug/create/make-template.html.tmpl
+%%WWWDIR%%/template/de/default/bug/create/user-message.html.tmpl
+%%WWWDIR%%/template/de/default/bug/dependency-graph.html.tmpl
+%%WWWDIR%%/template/de/default/bug/dependency-tree.html.tmpl
+%%WWWDIR%%/template/de/default/bug/edit.html.tmpl
+%%WWWDIR%%/template/de/default/bug/field-help.none.tmpl
+%%WWWDIR%%/template/de/default/bug/field.html.tmpl
+%%WWWDIR%%/template/de/default/bug/format_comment.txt.tmpl
+%%WWWDIR%%/template/de/default/bug/knob.html.tmpl
+%%WWWDIR%%/template/de/default/bug/link.html.tmpl
+%%WWWDIR%%/template/de/default/bug/navigate.html.tmpl
+%%WWWDIR%%/template/de/default/bug/process/bugmail.html.tmpl
+%%WWWDIR%%/template/de/default/bug/process/confirm-duplicate.html.tmpl
+%%WWWDIR%%/template/de/default/bug/process/header.html.tmpl
+%%WWWDIR%%/template/de/default/bug/process/midair.html.tmpl
+%%WWWDIR%%/template/de/default/bug/process/results.html.tmpl
+%%WWWDIR%%/template/de/default/bug/process/verify-new-product.html.tmpl
+%%WWWDIR%%/template/de/default/bug/show-header.html.tmpl
+%%WWWDIR%%/template/de/default/bug/show-multiple.html.tmpl
+%%WWWDIR%%/template/de/default/bug/show.html.tmpl
+%%WWWDIR%%/template/de/default/bug/summarize-time.html.tmpl
+%%WWWDIR%%/template/de/default/email/bugmail-common.txt.tmpl
+%%WWWDIR%%/template/de/default/email/bugmail-header.txt.tmpl
+%%WWWDIR%%/template/de/default/email/bugmail.html.tmpl
+%%WWWDIR%%/template/de/default/email/bugmail.txt.tmpl
+%%WWWDIR%%/template/de/default/email/flagmail.txt.tmpl
+%%WWWDIR%%/template/de/default/email/lockout.txt.tmpl
+%%WWWDIR%%/template/de/default/email/sanitycheck.txt.tmpl
+%%WWWDIR%%/template/de/default/email/sudo.txt.tmpl
+%%WWWDIR%%/template/de/default/email/whine.txt.tmpl
+%%WWWDIR%%/template/de/default/filterexceptions.pl
+%%WWWDIR%%/template/de/default/flag/list.html.tmpl
+%%WWWDIR%%/template/de/default/global/calendar.js.tmpl
+%%WWWDIR%%/template/de/default/global/choose-classification.html.tmpl
+%%WWWDIR%%/template/de/default/global/choose-product.html.tmpl
+%%WWWDIR%%/template/de/default/global/code-error.html.tmpl
+%%WWWDIR%%/template/de/default/global/common-links.html.tmpl
+%%WWWDIR%%/template/de/default/global/confirm-action.html.tmpl
+%%WWWDIR%%/template/de/default/global/confirm-user-match.html.tmpl
+%%WWWDIR%%/template/de/default/global/docslinks.html.tmpl
+%%WWWDIR%%/template/de/default/global/field-descs.none.tmpl
+%%WWWDIR%%/template/de/default/global/gzversion.html.tmpl
+%%WWWDIR%%/template/de/default/global/header.html.tmpl
+%%WWWDIR%%/template/de/default/global/message.html.tmpl
+%%WWWDIR%%/template/de/default/global/message.txt.tmpl
+%%WWWDIR%%/template/de/default/global/messages.html.tmpl
+%%WWWDIR%%/template/de/default/global/reason-descs.none.tmpl
+%%WWWDIR%%/template/de/default/global/setting-descs.none.tmpl
+%%WWWDIR%%/template/de/default/global/site-navigation.html.tmpl
+%%WWWDIR%%/template/de/default/global/tabs.html.tmpl
+%%WWWDIR%%/template/de/default/global/useful-links.html.tmpl
+%%WWWDIR%%/template/de/default/global/user-error.html.tmpl
+%%WWWDIR%%/template/de/default/global/value-descs.none.tmpl
+%%WWWDIR%%/template/de/default/global/variables.none.tmpl
+%%WWWDIR%%/template/de/default/index.html.tmpl
+%%WWWDIR%%/template/de/default/list/change-columns.html.tmpl
+%%WWWDIR%%/template/de/default/list/edit-multiple.html.tmpl
+%%WWWDIR%%/template/de/default/list/list.atom.tmpl
+%%WWWDIR%%/template/de/default/list/list.html.tmpl
+%%WWWDIR%%/template/de/default/list/quips.html.tmpl
+%%WWWDIR%%/template/de/default/list/server-push.html.tmpl
+%%WWWDIR%%/template/de/default/list/table.html.tmpl
+%%WWWDIR%%/template/de/default/pages/bug-writing.html.tmpl
+%%WWWDIR%%/template/de/default/pages/fields.html.tmpl
+%%WWWDIR%%/template/de/default/pages/linked.html.tmpl
+%%WWWDIR%%/template/de/default/pages/linkify.html.tmpl
+%%WWWDIR%%/template/de/default/pages/quicksearch.html.tmpl
+%%WWWDIR%%/template/de/default/pages/sudo.html.tmpl
+%%WWWDIR%%/template/de/default/reports/chart.csv.tmpl
+%%WWWDIR%%/template/de/default/reports/chart.html.tmpl
+%%WWWDIR%%/template/de/default/reports/chart.png.tmpl
+%%WWWDIR%%/template/de/default/reports/components.html.tmpl
+%%WWWDIR%%/template/de/default/reports/create-chart.html.tmpl
+%%WWWDIR%%/template/de/default/reports/delete-series.html.tmpl
+%%WWWDIR%%/template/de/default/reports/duplicates-simple.html.tmpl
+%%WWWDIR%%/template/de/default/reports/duplicates-table.html.tmpl
+%%WWWDIR%%/template/de/default/reports/duplicates.html.tmpl
+%%WWWDIR%%/template/de/default/reports/edit-series.html.tmpl
+%%WWWDIR%%/template/de/default/reports/keywords.html.tmpl
+%%WWWDIR%%/template/de/default/reports/menu.html.tmpl
+%%WWWDIR%%/template/de/default/reports/old-charts.html.tmpl
+%%WWWDIR%%/template/de/default/reports/report-simple.html.tmpl
+%%WWWDIR%%/template/de/default/reports/report-table.csv.tmpl
+%%WWWDIR%%/template/de/default/reports/report-table.html.tmpl
+%%WWWDIR%%/template/de/default/reports/report.html.tmpl
+%%WWWDIR%%/template/de/default/reports/series.html.tmpl
+%%WWWDIR%%/template/de/default/request/queue.html.tmpl
+%%WWWDIR%%/template/de/default/search/boolean-charts.html.tmpl
+%%WWWDIR%%/template/de/default/search/field.html.tmpl
+%%WWWDIR%%/template/de/default/search/form.html.tmpl
+%%WWWDIR%%/template/de/default/search/knob.html.tmpl
+%%WWWDIR%%/template/de/default/search/search-advanced.html.tmpl
+%%WWWDIR%%/template/de/default/search/search-create-series.html.tmpl
+%%WWWDIR%%/template/de/default/search/search-plugin.xml.tmpl
+%%WWWDIR%%/template/de/default/search/search-report-graph.html.tmpl
+%%WWWDIR%%/template/de/default/search/search-report-select.html.tmpl
+%%WWWDIR%%/template/de/default/search/search-report-table.html.tmpl
+%%WWWDIR%%/template/de/default/search/search-specific.html.tmpl
+%%WWWDIR%%/template/de/default/search/tabs.html.tmpl
+%%WWWDIR%%/template/de/default/search/type-select.html.tmpl
+%%WWWDIR%%/template/de/default/setup/strings.txt.pl
+%%WWWDIR%%/template/de/default/welcome-admin.html.tmpl
+%%WWWDIR%%/template/de/default/whine/mail.html.tmpl
+%%WWWDIR%%/template/de/default/whine/mail.txt.tmpl
+%%WWWDIR%%/template/de/default/whine/multipart-mime.txt.tmpl
+%%WWWDIR%%/template/de/default/whine/schedule.html.tmpl
+@dirrmtry %%WWWDIR%%/template/de/default/whine
+@dirrmtry %%WWWDIR%%/template/de/default/setup
+@dirrmtry %%WWWDIR%%/template/de/default/search
+@dirrmtry %%WWWDIR%%/template/de/default/request
+@dirrmtry %%WWWDIR%%/template/de/default/reports
+@dirrmtry %%WWWDIR%%/template/de/default/pages
+@dirrmtry %%WWWDIR%%/template/de/default/list
+@dirrmtry %%WWWDIR%%/template/de/default/global
+@dirrmtry %%WWWDIR%%/template/de/default/flag
+@dirrmtry %%WWWDIR%%/template/de/default/email
+@dirrmtry %%WWWDIR%%/template/de/default/bug/process
+@dirrmtry %%WWWDIR%%/template/de/default/bug/create
+@dirrmtry %%WWWDIR%%/template/de/default/bug/activity
+@dirrmtry %%WWWDIR%%/template/de/default/bug
+@dirrmtry %%WWWDIR%%/template/de/default/attachment
+@dirrmtry %%WWWDIR%%/template/de/default/admin/workflow
+@dirrmtry %%WWWDIR%%/template/de/default/admin/versions
+@dirrmtry %%WWWDIR%%/template/de/default/admin/users
+@dirrmtry %%WWWDIR%%/template/de/default/admin/settings
+@dirrmtry %%WWWDIR%%/template/de/default/admin/sanitycheck
+@dirrmtry %%WWWDIR%%/template/de/default/admin/products/groupcontrol
+@dirrmtry %%WWWDIR%%/template/de/default/admin/products
+@dirrmtry %%WWWDIR%%/template/de/default/admin/params
+@dirrmtry %%WWWDIR%%/template/de/default/admin/milestones
+@dirrmtry %%WWWDIR%%/template/de/default/admin/keywords
+@dirrmtry %%WWWDIR%%/template/de/default/admin/groups
+@dirrmtry %%WWWDIR%%/template/de/default/admin/flag-type
+@dirrmtry %%WWWDIR%%/template/de/default/admin/fieldvalues
+@dirrmtry %%WWWDIR%%/template/de/default/admin/custom_fields
+@dirrmtry %%WWWDIR%%/template/de/default/admin/components
+@dirrmtry %%WWWDIR%%/template/de/default/admin/classifications
+@dirrmtry %%WWWDIR%%/template/de/default/admin
+@dirrmtry %%WWWDIR%%/template/de/default/account/prefs
+@dirrmtry %%WWWDIR%%/template/de/default/account/password
+@dirrmtry %%WWWDIR%%/template/de/default/account/email
+@dirrmtry %%WWWDIR%%/template/de/default/account/auth
+@dirrmtry %%WWWDIR%%/template/de/default/account
+@dirrmtry %%WWWDIR%%/template/de/default
+@dirrmtry %%WWWDIR%%/template/de
