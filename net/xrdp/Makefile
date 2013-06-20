@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/xrdp/xrdp/${PORTVERSION}
@@ -24,19 +24,39 @@ USE_AUTOTOOLS=	autoconf:env automake:env libtool
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 
-CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var --enable-freerdp1
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFLICTS=	xrdp-devel-[0-9]*
+BUILD_DEPENDS+=	freerdp>=1.0.2:${PORTSDIR}/net/freerdp
 
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 
-OPTIONS_DEFINE=	DEBUG GATEWAY JP106
-OPTIONS_DEFAULT=	JP106
-GATEWAY_DESC=	Install xrdp as RDP gateway (no VNC backend)
+OPTIONS_DEFINE=	DEBUG JP106
+OPTIONS_DEFAULT=	JP106 TIGERVNC
+OPTIONS_RADIO=	XVNC
+OPTIONS_RADIO_XVNC=	REALVNC TIGERVNC TIGHTVNC TRIDIAVNC
+REALVNC_DESC=	Use RealVNC
+TIGERVNC_DESC=	Use TigerVNC (recommended)
+TIGHTVNC_DESC=	Use TightVNC
+TRIDIAVNC_DESC=	Use TridiaVNC
 JP106_DESC=	Install Japanese JP106 keymap
 
 .include <bsd.port.options.mk>
+
+# Which Xserver to use
+.if ${PORT_OPTIONS:MREALVNC}
+RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/vnc
+.endif
+.if ${PORT_OPTIONS:MTIGERVNC}
+RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tigervnc
+.endif
+.if ${PORT_OPTIONS:MTIGHTVNC}
+RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tightvnc
+.endif
+.if ${PORT_OPTIONS:MTRIDIAVNC}
+RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tridiavnc
+.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-xrdpdebug
@@ -54,10 +74,6 @@ PLIST_SUB+=	JP106=""
 PLIST_SUB+=	JP106="@comment "
 .endif
 
-.if !${PORT_OPTIONS:MGATEWAY}
-RUN_DEPENDS+=	Xvnc:${PORTSDIR}/net/vnc
-.endif
-
 MAN5=		sesman.ini.5 xrdp.ini.5
 MAN8=		xrdp-sesman.8 xrdp-sesrun.8 xrdp.8
 
@@ -72,13 +88,11 @@ pre-configure:
 	@cd ${WRKSRC} && ./bootstrap
 
 post-install:
-.for f in rsakeys.ini sesman.ini startwm.sh xrdp.ini
+.for f in sesman.ini startwm.sh xrdp.ini
 	@if [ ! -f ${PREFIX}/etc/xrdp/$f ]; then \
 		${CP} -p ${PREFIX}/etc/xrdp/$f.sample ${PREFIX}/etc/xrdp/$f ; \
 	fi
 .endfor
-	@if cmp -s ${PREFIX}/etc/xrdp/rsakeys.ini.sample ${PREFIX}/etc/xrdp/rsakeys.ini; then \
-		${PREFIX}/bin/xrdp-keygen xrdp ${PREFIX}/etc/xrdp/rsakeys.ini; fi
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
