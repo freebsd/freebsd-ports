@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.1.14
-PORTREVISION=	1
+PORTVERSION=	3.2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -34,7 +33,11 @@ BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
 		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
 		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
 		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP
+		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP \
+		p5-IO-Interactive>=0:${PORTSDIR}/devel/p5-IO-Interactive \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML \
+		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=		MYSQL PGSQL REPORTS_MODULES SMTP POP3 IMAP LDAP PDF \
@@ -67,17 +70,17 @@ PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		System/Crypt System/CustomerAuth System/CustomerUser \
 		System/CustomerUser/ System/
 DOCS_DIRS_LIST=	"" manual/en
-DOCS_FILES_LIST=	C[A-Z]* INSTALL RE* UPGRADING
+DOCS_FILES_LIST=	C[A-Z]* INSTALL.md RE* UPGRADING.md
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_FILES=	scripts/suse* scripts/redhat* \
-		var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/_source \
+		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
 USE_APACHE_RUN=	22+
 USE_PERL5=	yes
 
-PLIST_SUB+=	VER_CKEDITOR="3.6.6"
+PLIST_SUB+=	VER_CKEDITOR="4.0"
 
 .include <bsd.port.pre.mk>
 
@@ -177,7 +180,7 @@ do-install:
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${OTRSDIR}/Kernel
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][lh] ${OTRSDIR}/scripts/
-	@${INSTALL_DATA} ${WRKSRC}/scripts/*.p[hm]* ${WRKSRC}/scripts/apache* \
+	@${INSTALL_DATA} ${WRKSRC}/scripts/apache* \
 		${WRKSRC}/scripts/*.sql ${OTRSDIR}/scripts/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${OTRSDIR}/scripts/database/update/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${OTRSDIR}/scripts/database/
