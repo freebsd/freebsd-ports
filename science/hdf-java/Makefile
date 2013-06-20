@@ -11,8 +11,8 @@ EXTRACT_SUFX=	-src.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java interface to HDF5
 
-LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	hdf5:${PORTSDIR}/science/hdf5-18 \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 		--with-libjpeg=${LOCALBASE} \
 		--without-hdf4 \
 		--without-h4toh5
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -65,7 +66,7 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/UsersGuide
+	@${MKDIR} ${DOCSDIR}/UsersGuide
 	(cd ${WRKSRC}/docs/hdfview/ && ${COPYTREE_SHARE} "UsersGuide" ${DOCSDIR}/)
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} "javadocs" ${DOCSDIR}/)
 .endif
