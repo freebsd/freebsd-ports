@@ -1,13 +1,9 @@
-# New ports collection makefile for:	gnarwl
-# Date created:				Mon Mar 29 2003
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gnarwl
 PORTVERSION=	3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.onyxbits.de/sites/default/files/
 EXTRACT_SUFX=	.tgz
@@ -15,14 +11,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email autoresponder that gets data from LDAP
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 USE_GMAKE=	yes
 USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-docdir=${DOCSDIR}
+CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 
 MAN8=		damnit.8 gnarwl.8
 MANCOMPRESSED=	yes
