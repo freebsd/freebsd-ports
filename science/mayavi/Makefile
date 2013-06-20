@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	MayaVi-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A scientific data visualizer
+COMMENT=	Scientific data visualizer
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/vtk.pth:${PORTSDIR}/math/vtk-python \
@@ -20,10 +20,19 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	MayaVi
 CPIO_ARGS=	--quiet -pdum -R
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${FIND} * | ${CPIO} ${CPIO_ARGS} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR})
 .endif
