@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	earthquake
-PORTVERSION=	0.9.4
+PORTVERSION=	1.0.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	rubygem-twitter-stream>=0.1.15:${PORTSDIR}/net/rubygem-twitter-st
 		rubygem-awesome_print>=1.0.2:${PORTSDIR}/devel/rubygem-awesome_print \
 		rubygem-launchy>=2.0.5:${PORTSDIR}/devel/rubygem-launchy \
 		rubygem-oauth>=0.4.5:${PORTSDIR}/net/rubygem-oauth \
-		rubygem-twitter_oauth>=0.4.3:${PORTSDIR}/security/rubygem-twitter_oauth \
+		rubygem-jugyo-twitter_oauth>=0.5.0.pre5:${PORTSDIR}/security/rubygem-jugyo-twitter_oauth \
 		rubygem-slop>=2.4.4:${PORTSDIR}/devel/rubygem-slop
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
