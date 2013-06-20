@@ -21,3 +21,5 @@ var/lib/gnarwl/footer.txt.sample
 @dirrm var/lib/gnarwl/bin
 @dirrm var/lib/gnarwl/block
 @dirrm var/lib/gnarwl
+@dirrmtry var/lib
+@dirrmtry var
