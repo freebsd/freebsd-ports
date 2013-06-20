@@ -1,18 +1,15 @@
-# New ports collection makefile for:   lxde-icon-theme
-# Date created:                09/23/2010
-# Whom:                        Kris Moore <kmoore@freebsd.org>
-#
+# Created by: Kris Moore <kmoore@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lxde-icon-theme
-PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	x11-themes
-MASTER_SITES=	SF/lxde/LXDE%20Icon%20Theme/lxde-icon-theme-${PORTVERSION}
+MASTER_SITES=	SF/lxde/LXDE%20Icon%20Theme/lxde-icon-theme-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	LXDE Icon Theme
+
+LICENSE=	GPLv3
 
 USE_BZIP2=	YES
 USE_GMAKE=	yes
@@ -22,5 +19,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 DATADIR=	${PREFIX}/share/lxde
 INSTALLS_ICONS=	YES
+
+PORTDOCS=	AUTHORS
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|cp -raf --no-preserve=ownership|cp -RpPf|' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
