@@ -1,34 +1,60 @@
-# New ports collection makefile for:   Florence
-# Date created:                2011/07/26
-# Whom:                        Kris Moore <kmoore@freebsd.org>
-#
+# Created by: Kris Moore <kmoore@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	florence
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Florence OnScreen Keyboard
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Extensible scalable virtual keyboard
 
-LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
-		cspi.10:${PORTSDIR}/accessibility/at-spi
+LICENSE=	GPLv2 GFDL
+LICENSE_COMB=	dual
 
-USE_XORG=	xtst
-USE_GNOME=	gtk20 intlhack gnomedocutils gconf2 librsvg2 gnomepanel
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
+BUILD_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core
 
 USE_BZIP2=	yes
-USES=		gettext iconv
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext iconv pathfix
+USE_XORG=	xtst xext
+USE_GNOME=	gtk30 cairo intlhack gnomedocutils librsvg2
+USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix=${LOCALBASE}
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
-GCONF_SCHEMAS=	florence.schemas
+GLIB_SCHEMAS=	org.florence.gschema.xml
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+MAN1=		${PORTNAME}.1 ${PORTNAME}_applet.1
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+OPTIONS_DEFINE=	NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Application;Accessibility;System;|' \
+		${WRKSRC}/data/florence.desktop.in.in
+
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's|^ALL_LINGUAS.*|ALL_LINGUAS =|' \
+		${WRKSRC}/po/Makefile.in.in
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

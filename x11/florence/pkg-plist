@@ -1,6 +1,4 @@
 bin/florence
-bin/florence_applet
-lib/bonobo/servers/florence.server
 share/applications/florence.desktop
 %%DATADIR%%/florence.conf
 %%DATADIR%%/florence.css
@@ -57,6 +55,13 @@ share/applications/florence.desktop
 %%DATADIR%%/styles/bright/florence.style
 %%DATADIR%%/styles/default/florence.defs
 %%DATADIR%%/styles/default/florence.style
+%%DATADIR%%/styles/default/sounds/modifier_press.ogg
+%%DATADIR%%/styles/default/sounds/modifier_release.ogg
+%%DATADIR%%/styles/default/sounds/press.ogg
+%%DATADIR%%/styles/default/sounds/release.ogg
+%%DATADIR%%/styles/default/sounds/return_press.ogg
+%%DATADIR%%/styles/default/sounds/return_release.ogg
+%%DATADIR%%/styles/default/sounds/sounds.xml
 %%DATADIR%%/styles/default/symbols.xml
 %%DATADIR%%/styles/hard/default.svg
 %%DATADIR%%/styles/hard/florence.defs
@@ -111,36 +116,67 @@ share/applications/florence.desktop
 %%DATADIR%%/svg11/svg-xlink-attrib.rnc
 %%DATADIR%%/svg11/svg11.rnc
 share/gnome/help/florence/C/figures/behaviour.png
+share/gnome/help/florence/C/figures/bigger.png
+share/gnome/help/florence/C/figures/close.png
+share/gnome/help/florence/C/figures/configuration.png
 share/gnome/help/florence/C/figures/florence.png
 share/gnome/help/florence/C/figures/layout.png
+share/gnome/help/florence/C/figures/minimize.png
+share/gnome/help/florence/C/figures/move.png
+share/gnome/help/florence/C/figures/smaller.png
 share/gnome/help/florence/C/figures/style.png
+share/gnome/help/florence/C/figures/switch.png
 share/gnome/help/florence/C/figures/window.png
 share/gnome/help/florence/C/florence.xml
 share/gnome/help/florence/C/gfdl.dbk
 share/gnome/help/florence/fr/figures/behaviour.png
+share/gnome/help/florence/fr/figures/bigger.png
+share/gnome/help/florence/fr/figures/close.png
+share/gnome/help/florence/fr/figures/configuration.png
 share/gnome/help/florence/fr/figures/florence.png
 share/gnome/help/florence/fr/figures/layout.png
+share/gnome/help/florence/fr/figures/minimize.png
+share/gnome/help/florence/fr/figures/move.png
+share/gnome/help/florence/fr/figures/smaller.png
 share/gnome/help/florence/fr/figures/style.png
+share/gnome/help/florence/fr/figures/switch.png
 share/gnome/help/florence/fr/figures/window.png
 share/gnome/help/florence/fr/florence.xml
-share/locale/fr/LC_MESSAGES/florence.mo
+share/gnome/help/florence/ru/figures/behaviour.png
+share/gnome/help/florence/ru/figures/bigger.png
+share/gnome/help/florence/ru/figures/close.png
+share/gnome/help/florence/ru/figures/configuration.png
+share/gnome/help/florence/ru/figures/florence.png
+share/gnome/help/florence/ru/figures/layout.png
+share/gnome/help/florence/ru/figures/minimize.png
+share/gnome/help/florence/ru/figures/move.png
+share/gnome/help/florence/ru/figures/smaller.png
+share/gnome/help/florence/ru/figures/style.png
+share/gnome/help/florence/ru/figures/switch.png
+share/gnome/help/florence/ru/figures/window.png
+share/gnome/help/florence/ru/florence.xml
+%%NLS%%share/locale/fr/LC_MESSAGES/florence.mo
+%%NLS%%share/locale/it/LC_MESSAGES/florence.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/florence.mo
 share/omf/florence/florence-C.omf
 share/omf/florence/florence-fr.omf
+share/omf/florence/florence-ru.omf
 share/pixmaps/florence.svg
-@dirrm lib/bonobo/servers
-@dirrm lib/bonobo
+@dirrm share/omf/florence
+@dirrm share/gnome/help/florence/ru/figures
+@dirrm share/gnome/help/florence/ru
 @dirrm share/gnome/help/florence/fr/figures
 @dirrm share/gnome/help/florence/fr
 @dirrm share/gnome/help/florence/C/figures
 @dirrm share/gnome/help/florence/C
 @dirrm share/gnome/help/florence
-@dirrm share/omf/florence
-@dirrm share/omf
 @dirrm %%DATADIR%%/svg11
 @dirrm %%DATADIR%%/styles/hard
+@dirrm %%DATADIR%%/styles/default/sounds
 @dirrm %%DATADIR%%/styles/default
 @dirrm %%DATADIR%%/styles/bright
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/relaxng
 @dirrm %%DATADIR%%/layouts
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
