@@ -3,7 +3,8 @@ bin/efax
 bin/efix
 etc/efax.rc.sample
 etc/efax.rc.sample.ja
-@unexec /bin/rm /var/spool/fax/outgoing/lock
-@dirrmtry /var/spool/fax/incoming
-@dirrmtry /var/spool/fax/outgoing
-@dirrmtry /var/spool/fax
+@cwd /
+var/spool/fax/outgoing/lock
+@dirrmtry var/spool/fax/incoming
+@dirrmtry var/spool/fax/outgoing
+@dirrmtry var/spool/fax
