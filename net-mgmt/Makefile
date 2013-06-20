@@ -133,6 +133,7 @@
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-portaudit
+    SUBDIR += nagios-rubygem-nagiosplugin
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
