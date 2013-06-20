@@ -1,25 +1,22 @@
-# ex:ts=8
-# Ports collection makefile for:	mpb
-# Date created:			Apr 4, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mpb
 PORTVERSION=	1.4.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		hdf5.0:${PORTSDIR}/science/hdf5 \
-		ctl.4:${PORTSDIR}/science/libctl \
-		guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	fftw:${PORTSDIR}/math/fftw \
+		hdf5:${PORTSDIR}/science/hdf5 \
+		ctl:${PORTSDIR}/science/libctl \
+		guile:${PORTSDIR}/lang/guile
 
 USE_FORTRAN=	yes
 
@@ -32,11 +29,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=	--with-lapack=-llapack
 .endif
 
