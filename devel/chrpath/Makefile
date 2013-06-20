@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		chrpath.1
 
-USE_FMAKE=	yes
+USES=		fmake
 
 PLIST_FILES=	bin/chrpath
 
