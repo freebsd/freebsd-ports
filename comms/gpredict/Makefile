@@ -10,6 +10,8 @@ MASTER_SITES=	SF/gpredict/Gpredict/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		goocanvas:${PORTSDIR}/graphics/goocanvas
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
@@ -21,8 +23,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --localedir=${PREFIX}/share/locale
 USE_GMAKE=	yes
 
 MAN1=		gpredict.1
-
-LICENSE=	GPLv2
 
 .include <bsd.port.options.mk>
 
