@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.2.1
-PORTREVISION=	3
+PORTVERSION=	5.3.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -18,54 +17,30 @@ WANT_GNOME=	yes
 
 LATEST_LINK=	collectd5
 
-OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT VIRT
-OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_GRAPHITE WRITE_HTTP NOTIFYEMAIL
-OPTIONS_GROUP_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK GCRYPT \
-			NUTUPS INTERFACE IPMI MBMON MEMCACHED MODBUS MYSQL NGINX \
-			OPENVPN PDNS PGSQL PING PYTHON ROUTEROS SNMP TABLE \
-			TOKYOTYRANT VARNISH XMMS
+OPTIONS_DEFINE=		CGI CURL DEBUG DBI GCRYPT JSON MEMCACHEC MODBUS MYSQL NUTUPS PGSQL PING PYTHON REDIS ROUTEROS RRDTOOL SNMP STATGRAB TOKYOTYRANT VIRT XML XMMS
 
-OPTIONS_DEFAULT=	BIND INTERFACE PING SNMP RRDTOOL RRDCACHED
-
-CGI_DESC=		Install collection.cgi (requires RRDTOOL)
-BIND_DESC=		Enable BIND 9.5+ statistics
+CGI_DESC=		Install collection.cgi (requires rrdtool)
+CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
 DEBUG_DESC=		Enable debugging
+DBI_DESC=		Enable dbi plugin
 GCRYPT_DESC=		Build with libgcrypt
-VIRT_DESC=		Build with libvirt
-# INPUT
-APACHE_DESC=		Apache mod_status (libcurl)
-APCUPS_DESC=		APC UPS (apcupsd)
-CURL_DESC=		CURL generic web statistics
-CURL_JSON_DESC=		CURL JSON generic web statistics
-CURL_XML_DESC=		CURL XML generic web statistics
-DBI_DESC=		database abstraction library
-DISK_DESC=		Disk performance statistics
-NUTUPS_DESC=		NUT UPS daemon
-INTERFACE_DESC=		Network interfaces (libstatgrab)
-IPMI_DESC=		IPMI plugin (openipmi)
-MBMON_DESC=		MBMon 
-MEMCACHED_DESC=		Memcached
-MODBUS_DESC=		Modbus support via libmodbus
-MYSQL_DESC=		MySQL
-NOTIFYEMAIL_DESC=	Email notifications (libesmtp, libnotify)
-NGINX_DESC=		Nginx
-OPENVPN_DESC=		OpenVPN statistics
-PDNS_DESC=		PowerDNS
-PGSQL_DESC=		PostgreSQL
-PING_DESC=		Network latency (liboping)
-PYTHON_DESC=		Python plugin
-ROUTEROS_DESC=		RouterOS plugin
-SNMP_DESC=		SNMP
-TABLE_DESC=		Table plugin
-TOKYOTYRANT_DESC=	Tokyotyrant database
-VARNISH_DESC=		Varnish plugin
-XMMS_DESC=		XMMS
-# OUTPUT
-RRDTOOL_DESC=		RRDTool
-RRDCACHED_DESC=		RRDTool Cached (requires RRDTOOL)
-WRITE_GRAPHITE_DESC=	write_graphite
-WRITE_HTTP_DESC=	write_http
+JSON_DESC=		Enable JSON plugins
+MEMCACHEC_DESC=		Enable memcachec plugin
+MODBUS_DESC=		Enable modbus plugin
+MYSQL_DESC=		Enable mysql-basd plugins
+NUTUPS_DESC=		Enable nut (ups) plugin
+PGSQL_DESC=		Enable postgresql-basd plugins
+PING_DESC=		Enable ping plugin
+PYTHON_DESC=		Enable python-based plugins
+REDIS_DESC=		Enable redis-based plugins
+ROUTEROS_DESC=		Enable routeros plugin
+RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
+SNMP_DESC=		Enable SNMP plugin
+STATGRAB_DESC=		Enable statgrab-based plugins (disk, interface, etc)
+TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
+VIRT_DESC=		Enable libvirt plugin (requires XML)
+XML_DESC=		Enable XML plugins
+XMMS_DESC=		Enable xmms plugin
 
 MAN1=		collectd.1 collectd-nagios.1 collectd-tg.1 collectdmon.1 collectdctl.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
@@ -82,75 +57,97 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-# NOTE: Feel free to submit patches adding support for any of these
-#       disabled plugins.  If a plugin requires external dependencies,
-#       make it optional through OPTIONS defaulting to Off.  Some of
-#       these are Linux specific, but others will probably run on
-#       FreeBSD as well, given a bit of careful attention.
+# NOTE: Plugins without dependencies are defined further down.
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--disable-all-plugins \
 		--disable-getifaddrs \
-		--disable-apple_sensors \
-		--disable-ascent \
-		--disable-battery \
-		--disable-conntrack \
-		--disable-contextswitch \
-		--disable-cpufreq \
-		--disable-entropy \
-		--disable-fscache \
-		--disable-gmond \
-		--disable-hddtemp \
-		--disable-ipmi \
-		--disable-iptables \
-		--disable-ipvs \
-		--disable-irq \
-		--disable-java \
+		--disable-static \
 		--without-java \
-		--disable-madwifi \
-		--disable-match_empty_counter \
-		--disable-match_hashed \
-		--disable-match_regex \
-		--disable-match_timediff \
-		--disable-match_value \
-		--disable-memcachec \
-		--disable-multimeter \
-		--disable-netapp \
-		--without-libnetapp \
-		--disable-netlink \
-		--disable-nfs \
-		--disable-notify_desktop \
-		--disable-olsrd \
-		--disable-onewire \
-		--disable-oracle \
-		--disable-perl \
-		--disable-pinba \
-		--disable-protocols \
-		--disable-sensors \
-		--disable-serial \
-		--disable-table \
-		--disable-tape \
-		--disable-target_notification \
-		--disable-target_replace \
-		--disable-target_scale \
-		--disable-target_set \
-		--disable-teamspeak2 \
-		--disable-ted \
-		--disable-thermal \
-		--disable-vmem \
-		--disable-vserver \
-		--disable-wireless \
-		--without-perl-bindings \
-		--without-librabbitmq \
-		--disable-varnish \
-		--without-libvarnish \
 		--without-libcredis \
-		--without-libganglia \
-		--without-libupsclient \
+		--without-libcurl \
+		--without-libdbi \
 		--without-libesmtp \
-		--disable-static
+		--without-libganglia \
+		--without-libgcrypt \
+		--without-libiptc \
+		--without-libjvm \
+		--without-libkstat \
+		--without-libmemcached \
+		--without-libmodbus \
+		--without-libmongoc \
+		--without-libmysql \
+		--without-libnetlink \
+		--without-libnetapp \
+		--without-libnetsnmp \
+		--without-libnotify \
+		--without-libopenipmi \
+		--without-liboping \
+		--without-libowcapi \
+		--without-libperfstat \
+		--without-libperl \
+		--without-libpq \
+		--without-librabbitmq \
+		--without-librouteros \
+		--without-librrd \
+		--without-libsensors \
+		--without-libstatgrab \
+		--without-libtokyotyrant \
+		--without-libupsclient \
+		--without-libvarnish \
+		--without-libvirt \
+		--without-libxmms \
+		--without-libyajl \
+		--without-oracle \
+		--without-perl-bindings \
+		--without-python
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
+# NOTE: Plugins without external dependencies
+CONFIGURE_ARGS+=	\
+		--enable-aggregation \
+		--enable-apcups \
+		--enable-contextswitch \
+		--enable-cpu \
+		--enable-csv \
+		--enable-df \
+		--enable-dns \
+		--enable-email \
+		--enable-exec \
+		--enable-filecount \
+		--enable-load \
+		--enable-logfile \
+		--enable-match_empty_counter \
+		--enable-match_hashed \
+		--enable-match_regex \
+		--enable-match_timediff \
+		--enable-match_value \
+		--enable-mbmon \
+		--enable-memcached \
+		--enable-memory \
+		--enable-network \
+		--enable-ntpd \
+		--enable-openvpn \
+		--enable-powerdns \
+		--enable-pf \
+		--enable-processes \
+		--enable-swap \
+		--enable-syslog \
+		--enable-table \
+		--enable-tail \
+		--enable-target_notification \
+		--enable-target_replace \
+		--enable-target_scale \
+		--enable-target_set \
+		--enable-target_v5upgrade \
+		--enable-tcpconns \
+		--enable-teamspeak2 \
+		--enable-ted \
+		--enable-threshold \
+		--enable-unixsock \
+		--enable-uptime \
+		--enable-users \
+		--enable-uuid \
+		--enable-write_graphite \
+		--enable-zfs_arc
 
 .if ${PORT_OPTIONS:MCGI}
 RUN_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
@@ -158,323 +155,209 @@ RUN_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 PLIST_SUB+=	CGI=""
-.  if empty(PORT_OPTIONS:MRRDTOOL)
+.if empty(PORT_OPTIONS:MRRDTOOL)
 IGNORE=		CGI requires RRDTOOL. Either select RRDTOOL or deselect CGI
-.  endif
+.endif
 .else
 PLIST_SUB+=	CGI="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MBIND}
-CONFIGURE_ARGS+=--enable-bind
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
-PLIST_SUB+=	BIND=""
-.else
-CONFIGURE_ARGS+=--disable-bind
-PLIST_SUB+=	BIND="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAPACHE}
-CONFIGURE_ARGS+=--enable-apache
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	APACHE=""
-.else
-CONFIGURE_ARGS+=--disable-apache
-PLIST_SUB+=	APACHE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAPCUPS}
-CONFIGURE_ARGS+=--enable-apcups
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/apcupsd:${PORTSDIR}/sysutils/apcupsd
-PLIST_SUB+=	APCUPS=""
-.else
-CONFIGURE_ARGS+=--disable-apcups
-PLIST_SUB+=	APCUPS="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MCURL}
-CONFIGURE_ARGS+=--enable-curl --with-libcurl=${LOCALBASE}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE} \
+		--enable-apache \
+		--enable-curl \
+		--enable-nginx \
+		--enable-write_http
 PLIST_SUB+=	CURL=""
 .else
-CONFIGURE_ARGS+=--disable-curl
 PLIST_SUB+=	CURL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MCURL_JSON}
-.if empty(PORT_OPTIONS:MCURL)
-IGNORE=	using CURL_JSON requires CURL support
-.endif
+.if ${PORT_OPTIONS:MCURL} && ${PORT_OPTIONS:MJSON}
 CONFIGURE_ARGS+=--enable-curl_json
-LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
 PLIST_SUB+=	CURL_JSON=""
 .else
-CONFIGURE_ARGS+=--disable-curl_json --without-libyajl
 PLIST_SUB+=	CURL_JSON="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MCURL_XML}
-.if empty(PORT_OPTIONS:MCURL)
-IGNORE=	using CURL_XML requires CURL support
-.endif
-CONFIGURE_ARGS+=--enable-curl_xml
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+.if ${PORT_OPTIONS:MCURL} && ${PORT_OPTIONS:MXML}
+CONFIGURE_ARGS+=	\
+		--enable-ascent \
+		--enable-bind \
+		--enable-curl_xml
 PLIST_SUB+=	CURL_XML=""
 .else
-CONFIGURE_ARGS+=--disable-curl_xml
 PLIST_SUB+=	CURL_XML="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=--enable-debug
+.endif
+
 .if ${PORT_OPTIONS:MDBI}
-CONFIGURE_ARGS+=--enable-dbi --with-libdbi=${LOCALBASE}
 LIB_DEPENDS+=	dbi:${PORTSDIR}/databases/libdbi
+CONFIGURE_ARGS+=--with-libdbi=${LOCALBASE} --enable-dbi
 PLIST_SUB+=	DBI=""
 .else
-CONFIGURE_ARGS+=--disable-dbi --without-libdbi
 PLIST_SUB+=	DBI="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDISK}
-CONFIGURE_ARGS+=--enable-disk
-PLIST_SUB+=	DISK=""
-.else
-CONFIGURE_ARGS+=--disable-disk
-PLIST_SUB+=	DISK="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGCRYPT}
-CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=--with-libgcrypt=${LOCALBASE}
 .endif
 
-.if ${PORT_OPTIONS:MNUTUPS}
-CONFIGURE_ARGS+=--enable-nut --with-libupsclient
-LIB_DEPENDS+=	upsclient:${PORTSDIR}/sysutils/nut
-PLIST_SUB+=	NUTUPS=""
-.else
-CONFIGURE_ARGS+=--disable-nut
-PLIST_SUB+=	NUTUPS="@comment "
+.if ${PORT_OPTIONS:MJSON}
+LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
+CONFIGURE_ARGS+=--with-libyajl=${LOCALBASE}
 .endif
 
-.if ${PORT_OPTIONS:MINTERFACE}
-USES+=		pkgconfig
-CONFIGURE_ARGS+=--enable-interface
-LIB_DEPENDS+=	statgrab:${PORTSDIR}/devel/libstatgrab
-PLIST_SUB+=	INTERFACE=""
-CONFIGURE_ENV+=	LIBS="`pkg-config --libs libstatgrab`"
-.else
-CONFIGURE_ARGS+=--disable-interface
-PLIST_SUB+=	INTERFACE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMBMON}
-CONFIGURE_ARGS+=--enable-mbmon
-RUN_DEPENDS+=	${LOCALBASE}/bin/mbmon:${PORTSDIR}/sysutils/mbmon
-PLIST_SUB+=	MBMON=""
-.else
-CONFIGURE_ARGS+=--disable-mbmon
-PLIST_SUB+=	MBMON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHED}
+.if ${PORT_OPTIONS:MMEMCACHEC}
 LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
-CONFIGURE_ARGS+=--enable-memcached
-CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE}
-PLIST_SUB+=	MEMCACHED=""
+CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE} --enable-memcachec
+PLIST_SUB+=	MEMCACHEC=""
 .else
-CONFIGURE_ARGS+=--disable-memcached --without-libmemcached
-PLIST_SUB+=	MEMCACHED="@comment "
+PLIST_SUB+=	MEMCACHEC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMODBUS}
-CONFIGURE_ARGS+=--enable-modbus
 LIB_DEPENDS+=	modbus:${PORTSDIR}/comms/libmodbus
+CONFIGURE_ARGS+=--enable-modbus
 PLIST_SUB+=	MODBUS=""
 .else
-CONFIGURE_ARGS+=--disable-modbus
 PLIST_SUB+=	MODBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--enable-mysql
+CONFIGURE_ARGS+=--with-libmysql=${LOCALBASE} --enable-mysql
 PLIST_SUB+=	MYSQL=""
 .else
-CONFIGURE_ARGS+=--disable-mysql
 PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIPMI}
-USES+=		pkgconfig
-CONFIGURE_ARGS+=--enable-ipmi
-LIB_DEPENDS+=	OpenIPMI:${PORTSDIR}/sysutils/openipmi
-PLIST_SUB+=	IPMI=""
-.else
-CONFIGURE_ARGS+=--disable-ipmi
-PLIST_SUB+=	IPMI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFYEMAIL}
 LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=--enable-notify_email
-CONFIGURE_ARGS+=--with-libesmtp=${PREFIX}
+CONFIGURE_ARGS+=--with-libesmtp=${LOCALBASE} \
+		--with-libnotify=${LOCALBASE} \
+		--enable-notify_email
 PLIST_SUB+=	NOTIFYEMAIL=""
 .else
-CONFIGURE_ARGS+=--disable-notify_email
 PLIST_SUB+=	NOTIFYEMAIL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MNGINX}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=--enable-nginx
-PLIST_SUB+=	NGINX=""
+.if ${PORT_OPTIONS:MNUTUPS}
+LIB_DEPENDS+=	upsclient:${PORTSDIR}/sysutils/nut
+CONFIGURE_ARGS+=--with-upsclient=${LOCALBASE} --enable-nut
+PLIST_SUB+=	NUTUPS=""
 .else
-CONFIGURE_ARGS+=--disable-nginx
-PLIST_SUB+=	NGINX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENVPN}
-CONFIGURE_ARGS+=--enable-openvpn
-RUN_DEPENDS+=	${LOCALBASE}/sbin/openvpn:${PORTSDIR}/security/openvpn
-PLIST_SUB+=	OPENVPN=""
-.else
-CONFIGURE_ARGS+=--disable-openvpn
-PLIST_SUB+=	OPENVPN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPDNS}
-USE_PDNS=	yes
-CONFIGURE_ARGS+=--enable-powerdns
-PLIST_SUB+=	PDNS=""
-.else
-CONFIGURE_ARGS+=--disable-powerdns
-PLIST_SUB+=	PDNS="@comment "
+PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=--enable-postgresql
+CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE} --enable-postgresql
 PLIST_SUB+=	PGSQL=""
 .else
-CONFIGURE_ARGS+=--disable-postgresql
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPING}
 LIB_DEPENDS+=	oping:${PORTSDIR}/net/liboping
-CONFIGURE_ARGS+=--enable-ping
+CONFIGURE_ARGS+=--with-liboping=${LOCALBASE} --enable-ping
 PLIST_SUB+=	PING=""
 .else
-CONFIGURE_ARGS+=--disable-ping
 PLIST_SUB+=	PING="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		yes
-CONFIGURE_ARGS+=--enable-python
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=--with-python=${LOCALBASE} --enable-python
 PLIST_SUB+=	PYTHON=""
 .else
-CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MREDIS}
+LIB_DEPENDS+=	credis:${PORTSDIR}/databases/credis
+CONFIGURE_ARGS+=--with-libcredis=${LOCALBASE} \
+		--enable-redis \
+		--enable-write_redis
+PLIST_SUB+=	REDIS=""
+.else
+PLIST_SUB+=	REDIS="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MROUTEROS}
-LIB_DEPENDS+=	routeros:${PORTSDIR}/net/librouteros
-CONFIGURE_ARGS+=--enable-routeros --with-librouteros=${LOCALBASE}
+LIB_DEPENDS+=	routeros:${PORTSDIR}/net/routeros
+CONFIGURE_ARGS+=--with-librouteros=${LOCALBASE} --enable-routeros
 PLIST_SUB+=	ROUTEROS=""
 .else
-CONFIGURE_ARGS+=--disable-routeros --without-librouteros
 PLIST_SUB+=	ROUTEROS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRRDTOOL}
 LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
-CONFIGURE_ARGS+=--enable-rrdtool
-PLIST_SUB+=	RRD=""
+CONFIGURE_ARGS+=--with-librrd=${LOCALBASE} \
+		--enable-rrdcached \
+		--enable-rrdtool
+PLIST_SUB+=	RRDTOOL=""
 .else
-CONFIGURE_ARGS+=--disable-rrdtool
-PLIST_SUB+=	RRD="@comment "
+PLIST_SUB+=	RRDTOOL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MRRDCACHED} && ${PORT_OPTIONS:MRRDTOOL}
-CONFIGURE_ARGS+=--enable-rrdcached
-PLIST_SUB+=	RRDCACHED=""
+.if ${PORT_OPTIONS:MSTATGRAB}
+USE_PKGCONFIG=	yes
+LIB_DEPENDS+=	statgrab:${PORTSDIR}/devel/libstatgrab
+CONFIGURE_ENV+= LIBS="`pkg-config --libs libstatgrab`"
+CONFIGURE_ARGS+=--with-libstatgrab=${LOCALBASE} \
+		--enable-disk \
+		--enable-interface
+PLIST_SUB+=	STATGRAB=""
 .else
-CONFIGURE_ARGS+=--disable-rrdcached
-PLIST_SUB+=	RRDCACHED="@comment "
+PLIST_SUB+=	STATGRAB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-CONFIGURE_ARGS+=--enable-snmp
+CONFIGURE_ARGS+=--with-libnetsnmp --enable-snmp
 PLIST_SUB+=	SNMP=""
 .else
-CONFIGURE_ARGS+=--disable-snmp
 PLIST_SUB+=	SNMP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTABLE}
-CONFIGURE_ARGS+=--enable-table
-PLIST_SUB+=	TABLE=""
-.else
-CONFIGURE_ARGS+=--disable-table
-PLIST_SUB+=	TABLE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTOKYOTYRANT}
 LIB_DEPENDS+=	tokyotyrant:${PORTSDIR}/databases/tokyotyrant
-CONFIGURE_ARGS+=--enable-tokyotyrant
-CONFIGURE_ARGS+=--with-libtokyotyrant=${LOCALBASE}
+CONFIGURE_ARGS+=--with-libtokyotyrant=${LOCALBASE} --enable-tokyotyrant
 PLIST_SUB+=	TOKYOTYRANT=""
 .else
-CONFIGURE_ARGS+=--disable-tokyotyrant --without-libtokyotyrant
 PLIST_SUB+=	TOKYOTYRANT="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MVARNISH}
-LIB_DEPENDS+=	varnishapi:${PORTSDIR}/www/varnish
-CONFIGURE_ARGS+=--enable-varnish
-CONFIGURE_ARGS+=--with-libvarnish=${PREFIX}
-PLIST_SUB+=	VARNISH=""
-.else
-CONFIGURE_ARGS+=--disable-varnish
-PLIST_SUB+=	VARNISH="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MVIRT}
+LIB_DEPENDS+=	virt:${PORTSDIR}/devel/libvirt
 CONFIGURE_ARGS+=--enable-libvirt
-LIB_DEPENDS+=	virt.1000:${PORTSDIR}/devel/libvirt
+.if empty(PORT_OPTIONS:MXML)
+IGNORE=		VIRT requires XML. Either select XML or deselect VIRT.
+.endif
 PLIST_SUB+=	VIRT=""
 .else
-CONFIGURE_ARGS+=--disable-libvirt
 PLIST_SUB+=	VIRT="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MWRITE_GRAPHITE}
-CONFIGURE_ARGS+=--enable-write_graphite
-PLIST_SUB+=	WRITE_GRAPHITE=""
-.else
-CONFIGURE_ARGS+=--disable-write_graphite
-PLIST_SUB+=	WRITE_GRAPHITE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWRITE_HTTP}
-CONFIGURE_ARGS+=--enable-write_http
-PLIST_SUB+=	WRITE_HTTP=""
-.else
-CONFIGURE_ARGS+=--disable-write_http
-PLIST_SUB+=	WRITE_HTTP="@comment "
+.if ${PORT_OPTIONS:MXML}
+LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=--with-libxml2=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MXMMS}
 LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
-CONFIGURE_ARGS+=--enable-xmms
+CONFIGURE_ARGS+=--with-libxmms=${LOCALBASE} --enable-xmms
 CFLAGS+=	`xmms-config --cflags`
 PLIST_SUB+=	XMMS=""
 .else
-CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
@@ -487,6 +370,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
+		-e 's;@localstatedir@/lib/;/var/db/;' \
 		${WRKSRC}/src/collectd.conf.in
 	@${REINPLACE_CMD} -e '/$$[(]mkinstalldirs)/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} \

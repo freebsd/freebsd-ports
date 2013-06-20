@@ -1,8 +1,6 @@
-diff --git configure.in configure.in
-index d50e802..4660787 100644
---- configure.in
-+++ configure.in
-@@ -67,6 +67,9 @@ case $host_os in
+--- ./configure.in.orig	2013-05-21 21:43:30.000000000 +0000
++++ ./configure.in	2013-05-21 21:43:14.000000000 +0000
+@@ -74,6 +74,9 @@
  	*openbsd*)
  	ac_system="OpenBSD"
  	;;
@@ -12,7 +10,7 @@ index d50e802..4660787 100644
  	*aix*)
  	AC_DEFINE([KERNEL_AIX], 1, [True if program is to be compiled for a AIX kernel])
  	ac_system="AIX"
-@@ -99,7 +102,7 @@ then
+@@ -106,7 +109,7 @@
  fi
  
  # Where to install .pc files.
@@ -21,7 +19,7 @@ index d50e802..4660787 100644
  AC_SUBST(pkgconfigdir)
  
  # Check for standards compliance mode
-@@ -1386,6 +1389,7 @@ if test "x$with_kstat" = "xyes"
+@@ -1413,6 +1416,7 @@
  then
  	AC_CHECK_LIB(kstat, kstat_open, [with_kstat="yes"], [with_kstat="no (libkstat not found)"], [])
  fi
@@ -29,26 +27,29 @@ index d50e802..4660787 100644
  if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(devinfo, di_init, [with_devinfo="yes"], [with_devinfo="no (not found)"], [])
-@@ -1395,6 +1399,8 @@ if test "x$with_kstat" = "xyes"
+@@ -1422,6 +1426,8 @@
  then
  	AC_DEFINE(HAVE_LIBKSTAT, 1,
  		  [Define to 1 if you have the 'kstat' library (-lkstat)])
-+        BUILD_WITH_LIBKSTAT_LIBS="-lkstat"
-+        AC_SUBST(BUILD_WITH_LIBKSTAT_LIBS)
++	BUILD_WITH_LIBKSTAT_LIBS="-lkstat"
++	AC_SUBST(BUILD_WITH_LIBKSTAT_LIBS)
  fi
  AM_CONDITIONAL(BUILD_WITH_LIBKSTAT, test "x$with_kstat" = "xyes")
  AM_CONDITIONAL(BUILD_WITH_LIBDEVINFO, test "x$with_devinfo" = "xyes")
-@@ -1815,9 +1821,6 @@ then
+@@ -1841,12 +1847,6 @@
+ 	AC_CHECK_LIB(gcrypt, gcry_md_hash_buffer,
  		[with_libgcrypt="yes"],
  		[with_libgcrypt="no (symbol gcry_md_hash_buffer not found)"])
- 
+-
 -	if test "$with_libgcrypt" != "no"; then
 -		AM_PATH_LIBGCRYPT(1:1.2.0,,with_libgcrypt="no (version 1.2.0+ required)")
+-		GCRYPT_CPPFLAGS="$LIBGCRYPT_CPPFLAGS $LIBGCRYPT_CFLAGS"
+-		GCRYPT_LIBS="$LIBGCRYPT_LIBS"
 -	fi
  fi
  
  CPPFLAGS="$SAVE_CPPFLAGS"
-@@ -3376,7 +3379,7 @@ fi
+@@ -3408,7 +3408,7 @@
  if test "x$with_python" = "xyes"
  then
  	AC_MSG_CHECKING([for Python LIBS])
@@ -57,7 +58,7 @@ index d50e802..4660787 100644
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
-@@ -3391,7 +3394,7 @@ fi
+@@ -3423,7 +3423,7 @@
  if test "x$with_python" = "xyes"
  then
  	LDFLAGS="-L$python_library_path $LDFLAGS"
@@ -66,7 +67,7 @@ index d50e802..4660787 100644
  
  	AC_CHECK_FUNC(PyObject_CallFunction,
  		      [with_python="yes"],
-@@ -4136,7 +4139,7 @@ AC_ARG_WITH(libvarnish, [AS_HELP_STRING([--with-libvarnish@<:@=PREFIX@:>@], [Pat
+@@ -4168,7 +4168,7 @@
  	then
  		AC_MSG_NOTICE([Not checking for libvarnish: Manually configured])
  		with_libvarnish_cflags="-I$withval/include"
@@ -75,12 +76,12 @@ index d50e802..4660787 100644
  		with_libvarnish="yes"
  	fi; fi; fi
  ],
-@@ -4661,6 +4664,12 @@ then
+@@ -4693,6 +4693,12 @@
  	plugin_zfs_arc="yes"
  fi
  
 +# FreeBSD
-+if test "x$ac_system" = "xFreeBSD"
++if test "x$have_struct_kinfo_proc_freebsd" = "xyes"
 +then
 +	plugin_zfs_arc="yes"
 +fi
@@ -88,3 +89,15 @@ index d50e802..4660787 100644
  if test "x$with_devinfo$with_kstat" = "xyesyes"
  then
  	plugin_cpu="yes"
+@@ -4866,6 +4872,12 @@
+ 	plugin_users="yes"
+ fi
+ 
++# FreeBSD
++if test "x$have_struct_kinfo_proc_freebsd" = "xyes"
++then
++	plugin_zfs_arc="yes"
++fi
++
+ m4_divert_once([HELP_ENABLE], [
+ collectd plugins:])
