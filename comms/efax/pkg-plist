@@ -8,3 +8,4 @@ var/spool/fax/outgoing/lock
 @dirrmtry var/spool/fax/incoming
 @dirrmtry var/spool/fax/outgoing
 @dirrmtry var/spool/fax
+@cwd
