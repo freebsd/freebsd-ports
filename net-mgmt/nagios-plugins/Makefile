@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.16
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
@@ -11,6 +11,8 @@ MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
 MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Plugins for Nagios
 
+USES=		charsetfix
+CHARSETFIX_MAKEFILEIN=Makefile.am
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
