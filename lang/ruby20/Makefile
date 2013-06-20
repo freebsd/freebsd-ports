@@ -136,7 +136,7 @@ post-patch:
 #
 # Prepare modules we are wanting to build via external ports
 #
-.for d in gdbm iconv tk
+.for d in gdbm tk
 	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
