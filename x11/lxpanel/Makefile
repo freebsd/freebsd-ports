@@ -5,15 +5,18 @@ PORTNAME=	lxpanel
 PORTVERSION=	0.5.12
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
+MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}/
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
 
+LICENSE=	GPLv2 MIT
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	menu-cache:${PORTSDIR}/x11/menu-cache
 RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
-OPTIONS_DEFINE=	ALSA NLS
+OPTIONS_DEFINE=	DOCS ALSA NLS
 OPTIONS_DEFAULT=NLS
 
 USE_XORG=	x11 xmu
@@ -22,7 +25,7 @@ USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-plugins=volume,deskno,kbled,xkb,batt\
+		--with-plugins=volume,deskno,kbled,xkb,batt \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC} -Wno-return-type
@@ -30,6 +33,8 @@ USE_CSTD=	gnu89
 USE_GMAKE=	yes
 
 MAN1=		lxpanel.1 lxpanelctl.1
+
+PORTDOCS=	AUTHORS README TODO
 
 .include <bsd.port.options.mk>
 
@@ -43,14 +48,24 @@ CONFIGURE_ARGS+=--disable-alsa
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's,linux,sys,' \
 		${WRKSRC}/src/plugins/volume/volume-impl.c
 	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' \
 		${WRKSRC}/po/Makefile.in.in
+
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's,po man,man,' \
+		${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
