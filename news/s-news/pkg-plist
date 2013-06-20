@@ -19,3 +19,5 @@ sbin/rmfeed
 sbin/rmgroup
 sbin/rnews
 @dirrm etc/s-news
+@exec install -d -o news -g news -m 755 /var/spool/s-news
+@unexec rmdir /var/spool/s-news 2>/dev/null || true
