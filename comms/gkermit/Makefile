@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkermit
-# Date created:		8 Jan 2000
-# Whom:			dom@happygiraffe.net
-#
+# Created by: dom@happygiraffe.net
 # $FreeBSD$
-#
 
 PORTNAME=	gkermit
 PORTVERSION=	1.0
@@ -16,18 +12,18 @@ COMMENT=	File transfer utility using the kermit protocol
 
 NO_WRKSUBDIR=	yes
 MAN1=		gkermit.1
+PORTDOCS=	gkermit.txt
+PLIST_FILES=	bin/gkermit
 
 ALL_TARGET=	posix
-
-GKERMIT_DOCDIR=	${PREFIX}/share/doc/gkermit
 
 post-extract:
 	cd ${WRKSRC} && ${MV} makefile Makefile
 
 do-install:
-	${MKDIR} ${GKERMIT_DOCDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gkermit ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/gkermit.nr ${PREFIX}/man/man1/gkermit.1
-	${INSTALL_DATA} ${WRKSRC}/README ${GKERMIT_DOCDIR}/gkermit.txt
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/gkermit.txt
 
 .include <bsd.port.mk>
