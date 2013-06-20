@@ -1,6 +1,15 @@
---- src/Makefile.am.orig	2012-04-02 08:04:58.000000000 +0000
-+++ src/Makefile.am	2012-11-23 22:01:15.169498221 +0000
-@@ -63,7 +63,7 @@
+--- ./src/Makefile.am.orig	2013-04-10 15:34:36.000000000 +0000
++++ ./src/Makefile.am	2013-05-21 23:57:02.000000000 +0000
+@@ -10,7 +10,7 @@
+ AM_CPPFLAGS = -DPREFIX='"${prefix}"'
+ AM_CPPFLAGS += -DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"'
+ AM_CPPFLAGS += -DLOCALSTATEDIR='"${localstatedir}"'
+-AM_CPPFLAGS += -DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"'
++AM_CPPFLAGS += -DPKGLOCALSTATEDIR='"${localstatedir}/db/${PACKAGE_NAME}"'
+ if BUILD_FEATURE_DAEMON
+ AM_CPPFLAGS += -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
+ endif
+@@ -64,7 +64,7 @@
  collectd_LDADD += -lpthread
  endif
  if BUILD_WITH_LIBKSTAT
@@ -9,7 +18,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  collectd_LDADD += -ldevinfo
-@@ -224,7 +224,7 @@
+@@ -257,7 +257,7 @@
  cpu_la_LDFLAGS = -module -avoid-version
  cpu_la_LIBADD = 
  if BUILD_WITH_LIBKSTAT
@@ -18,7 +27,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  cpu_la_LIBADD += -ldevinfo
-@@ -322,7 +322,7 @@
+@@ -355,7 +355,7 @@
  disk_la_LDFLAGS = -module -avoid-version
  disk_la_LIBADD = 
  if BUILD_WITH_LIBKSTAT
@@ -27,7 +36,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  disk_la_LIBADD += -ldevinfo
-@@ -429,7 +429,7 @@
+@@ -462,7 +462,7 @@
  interface_la_LIBADD += $(BUILD_WITH_LIBSTATGRAB_LDFLAGS)
  else
  if BUILD_WITH_LIBKSTAT
@@ -36,7 +45,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  interface_la_LIBADD += -ldevinfo
-@@ -634,7 +634,7 @@
+@@ -667,7 +667,7 @@
  collectd_LDADD += "-dlopen" memory.la
  collectd_DEPENDENCIES += memory.la
  if BUILD_WITH_LIBKSTAT
@@ -45,7 +54,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  memory_la_LIBADD += -ldevinfo
-@@ -763,7 +763,7 @@
+@@ -796,7 +796,7 @@
  pkglib_LTLIBRARIES += notify_email.la
  notify_email_la_SOURCES = notify_email.c
  notify_email_la_LDFLAGS = -module -avoid-version
@@ -54,7 +63,7 @@
  collectd_LDADD += "-dlopen" notify_email.la
  collectd_DEPENDENCIES += notify_email.la
  endif
-@@ -1021,7 +1021,7 @@
+@@ -1061,7 +1061,7 @@
  collectd_LDADD += "-dlopen" swap.la
  collectd_DEPENDENCIES += swap.la
  if BUILD_WITH_LIBKSTAT
@@ -63,7 +72,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  swap_la_LIBADD += -ldevinfo
-@@ -1067,7 +1067,7 @@
+@@ -1115,7 +1115,7 @@
  pkglib_LTLIBRARIES += tape.la
  tape_la_SOURCES = tape.c
  tape_la_LDFLAGS = -module -avoid-version
@@ -72,16 +81,16 @@
  collectd_LDADD += "-dlopen" tape.la
  collectd_DEPENDENCIES += tape.la
  endif
-@@ -1190,7 +1190,7 @@
+@@ -1238,7 +1238,7 @@
  uptime_la_LDFLAGS = -module -avoid-version
  uptime_la_LIBADD =
  if BUILD_WITH_LIBKSTAT
 -uptime_la_LIBADD += -lkstat
 +uptime_la_LIBADD += $(BUILD_WITH_LIBKSTAT_LIBS)
  endif
- collectd_LDADD += "-dlopen" uptime.la
- collectd_DEPENDENCIES += uptime.la
-@@ -1313,7 +1313,7 @@
+ if BUILD_WITH_PERFSTAT
+ uptime_la_LIBADD += -lperfstat
+@@ -1375,7 +1375,7 @@
  zfs_arc_la_SOURCES = zfs_arc.c
  zfs_arc_la_CFLAGS = $(AM_CFLAGS)
  zfs_arc_la_LDFLAGS = -module -avoid-version
@@ -90,7 +99,7 @@
  collectd_LDADD += "-dlopen" zfs_arc.la
  collectd_DEPENDENCIES += zfs_arc.la
  endif
-@@ -1374,12 +1374,7 @@
+@@ -1458,12 +1458,7 @@
  
  install-exec-hook:
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)

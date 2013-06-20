@@ -1,20 +1,3 @@
-diff --git configure.in configure.in
-index 4660787..54fd9d8 100644
---- configure.in
-+++ configure.in
-@@ -4843,6 +4843,12 @@ then
- 	plugin_users="yes"
- fi
- 
-+# FreeBSD
-+if test "x$have_struct_kinfo_proc_freebsd" = "xyes"
-+then
-+	plugin_zfs_arc="yes"
-+fi
-+
- m4_divert_once([HELP_ENABLE], [
- collectd plugins:])
- 
 diff --git src/zfs_arc.c src/zfs_arc.c
 index aa90019..17e8513 100644
 --- src/zfs_arc.c
