@@ -10,8 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130620:
+AUTHOR:
+ * New USES: fmake
+
+  This uses will allow to build ports using the legacy FreeBSD make, for ports
+  not compatible with bmake
+
 20130614:
-AUTHOR:	bapt@FreeBSD.org
+AUTHOR: bapt@FreeBSD.org
 
   * New macros to help dealing with ports that have options:
 
