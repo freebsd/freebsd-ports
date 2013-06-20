@@ -1,12 +1,7 @@
-# New ports collection makefile for:	shared-desktop-ontologies
-# Date created:		2009-11-27
-# Whom:			Thomas Abthorpe <tabthorpe@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	shared-desktop-ontologies
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/oscaf/${PORTNAME}/${PORTVERSION}
 
