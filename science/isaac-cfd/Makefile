@@ -1,22 +1,12 @@
-# New ports collection makefile for:	isaac-cfd
-# Date created:		19 October 2004
-# Whom:			Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	isaac
 PORTVERSION=	4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}-cfd/${PORTNAME}-cfd/ISAAC%20Version%20${PORTVERSION}
 DISTFILES=	${PORTNAME}src.4_2${EXTRACT_SUFX} ${PORTNAME}mk.4_2${EXTRACT_SUFX}
-.ifndef NOPORTDOCS
-DISTFILES+=	man.4_2.ps.gz
-.endif
-.ifdef WITH_EXAMPLES
-DISTFILES+=	example_cases${EXTRACT_SUFX}
-.endif
 DIST_SUBDIR=	isaac-cfd
 EXTRACT_ONLY=	${PORTNAME}src.4_2${EXTRACT_SUFX} ${PORTNAME}mk.4_2${EXTRACT_SUFX}
 
@@ -29,15 +19,15 @@ MAKEFILE=	makefile
 MAKE_FLAGS+=	CPPFLAGS=-I.
 USE_FORTRAN=	yes
 
-.if !defined(WITH_EXAMPLES)
-PLIST_SUB=	WITH_EXAMPLES="@comment "
-.else
-PLIST_SUB=	WITH_EXAMPLES=""
-.endif
+PLIST_FILES+=	bin/isaac
+PORTDOCS=	man.4_2.ps.gz
+PORTEXAMPLES=	*
 
-.if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=	-O2 -ffast-math
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES OPTIMIZED_FFLAGS
+OPTIMIZED_FFLAGS_DESC=	Use extra compiler (fortran) optimizations
+
+DOCS_DISTFILES+=	man.4_2.ps.gz
+EXAMPLES_DISTFILES+=	example_cases${EXTRACT_SUFX}
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+;' \
@@ -46,15 +36,21 @@ pre-configure:
 		${REINPLACE_CMD} -e 's|SRC= $$(HOME)/ISAAC/src|SRC= ${WRKSRC}|; \
 			s|$$(FFLAGS)|${FFLAGS} -I.|' {} \;
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/isaac ${PREFIX}/bin/isaac
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/man.4_2.ps.gz ${DOCSDIR}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPTIMIZED_FFLAGS}
+FFLAGS+=	-O2 -ffast-math
 .endif
-.ifdef WITH_EXAMPLES
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/isaac ${PREFIX}/bin/isaac
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTDOCS} ${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/example_cases${EXTRACT_SUFX} \
+	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/example_cases${EXTRACT_SUFX} \
 		-C ${EXAMPLESDIR}/
 .endif
 
