@@ -243,42 +243,6 @@ bin/vtk_doc.py
 %%PYTHON_SITELIBDIR%%/vtkPipeline/vtkPipeline.py
 %%PYTHON_SITELIBDIR%%/vtkPipeline/vtkPipeline.pyc
 %%PYTHON_SITELIBDIR%%/vtkPipeline/vtkPipeline.pyo
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
-%%PORTDOCS%%%%DOCSDIR%%/guide/figures/basic_anot.jpg
-%%PORTDOCS%%%%DOCSDIR%%/guide/figures/cmd_line_sc_shot.jpg
-%%PORTDOCS%%%%DOCSDIR%%/guide/figures/control_panel_anot.jpg
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch02s02.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch02s03.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s02.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s03.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s04.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s05.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s06.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s07.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s08.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch03s09.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch04.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch04s02.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch05.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/ch05s02.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/test_vtk.py
-%%PORTDOCS%%%%DOCSDIR%%/vtk_doc.py
-%%EXAMPLESDIR%%/custom16.lut
-%%EXAMPLESDIR%%/heart.mv
-%%EXAMPLESDIR%%/heart.vtk
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/figures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/vtkPipeline/Icons
 @dirrm %%PYTHON_SITELIBDIR%%/vtkPipeline
 @dirrm %%PYTHON_SITELIBDIR%%/mayavi/tools
