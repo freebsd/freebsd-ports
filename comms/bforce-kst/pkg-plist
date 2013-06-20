@@ -27,12 +27,6 @@ etc/fido/bforce/freq.dirs.sample
 %%DATADIR%%/u-srif/u-srif-index.py
 %%DATADIR%%/u-srif/u-srif-lookup.py
 %%DATADIR%%/u-srif/u-srif.py
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.kst
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.kst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/fido/bforce
 @dirrm etc/fido
 @dirrm %%DATADIR%%/u-srif/lib
