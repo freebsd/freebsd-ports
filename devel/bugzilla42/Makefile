@@ -49,7 +49,7 @@ USE_APACHE_RUN=	22+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
+USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=4.0001:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
@@ -149,7 +149,7 @@ post-patch:
 	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
 
-.if ${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
+.if ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMYSQL}
 	@${PERL} -pi -e 's/(default =>.+|Default is )mysql/$$1Pg/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
 .endif

@@ -1,15 +1,14 @@
-#
 # $FreeBSD$
-#
 
 DIST_SUBDIR=	${PORTNAME}
 
-CONFLICTS=	bugzilla-3.* \
-		bugzilla-4.[0|4].*
+CONFLICTS_INSTALL=	\
+		bugzilla-3.* \
+		bugzilla-4.[^2].*
 
 PORTSCOUT=	limitw:1,even
 
-WWWDIR=	${PREFIX}/www/bugzilla
+WWWDIR=		${PREFIX}/www/bugzilla
 
 NO_BUILD=	yes
 
