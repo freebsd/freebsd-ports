@@ -18,6 +18,7 @@ USE_GMAKE=	true
 MAN1=		yaps.1
 PLIST_FILES=	bin/yaps etc/yaps.rc.sample
 PORTDOCS=	yaps.doc yaps.html
+PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
