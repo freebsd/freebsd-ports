@@ -143,7 +143,7 @@ post-patch:
 	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
 
-.if ${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
+.if ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMYSQL}
 	@${PERL} -pi -e 's/(default =>.+|Default is )mysql/$$1Pg/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
 .endif
