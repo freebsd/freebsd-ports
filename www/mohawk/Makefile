@@ -6,6 +6,7 @@ PORTVERSION=	2.0.7
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.etoilebsd.net/mohawk/tarball/ \
 		http://fossil.bsdsx.fr/mohawk/tarball/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${PORTVERSION}
 
 MAINTAINER=	mohawk@bsdsx.fr
 COMMENT=	Simple and lightweight HTTP daemon
