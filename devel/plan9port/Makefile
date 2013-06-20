@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Plan 9 from User Space
-# Date created:				Wed Mar 31 17:11:24 EST 2004
-# Whom:					Serge Gagnon <serge.gagnon@b2b2c.ca>
-#
+# Created by: Serge Gagnon <serge.gagnon@b2b2c.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	plan9port
 PORTVERSION=	20130320
@@ -103,6 +99,7 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PLAN9}|'
 	@${REINPLACE_CMD} -e 's|X11=/usr/X11R6|X11=${LOCALBASE}|' \
 		${WRKSRC}/bin/9l ${WRKSRC}/src/cmd/devdraw/mkwsysrules.sh
+	@${REINPLACE_CMD} -e 's|\[5-9\]\.||' ${WRKSRC}/bin/9l
 	@${REINPLACE_CMD} -e 's|/lib/font/bit|${PLAN9}/font|' \
 		${WRKSRC}/src/cmd/acme/acme.c
 
@@ -121,7 +118,7 @@ post-build:
 	) > ${PLIST}
 
 do-install:
-	${CP} -Rp ${WRKSRC} ${PREFIX}
+	${CP} -a ${WRKSRC} ${PREFIX}
 
 post-install:
 	cd ${PLAN9} && ${SETENV} PLAN9=${PLAN9} PATH=${PATH}:${PLAN9}/bin \
