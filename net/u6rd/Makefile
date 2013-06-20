@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	u6rd
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 #PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://ftp.scythe.jp/pub/u6rd/release/
