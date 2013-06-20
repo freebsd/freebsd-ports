@@ -1,9 +1,5 @@
-# New ports collection makefile for:    paje
-# Date created:         26 Sep 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	paje
 PORTVERSION=	1.97
@@ -28,6 +24,6 @@ MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \
-                ${WRKSRC}/GNUmakefile
+		${WRKSRC}/GNUmakefile
 
 .include <bsd.port.mk>
