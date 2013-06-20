@@ -22,10 +22,12 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	data images misc manual
 CLASSFILES=	devisor2 devisorgrid.class
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 PLIST_FILES=	bin/devisorgrid
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/devisorgrid.sh ${PREFIX}/bin/devisorgrid
@@ -35,7 +37,7 @@ do-install:
 	cd ${WRKSRC} \
 	  && ${FIND} ${CLASSFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
 	  && ${FIND} ${CLASSFILES} -name '*.class' -type f -print -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/manual \
 	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -name '*.pdf' -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
