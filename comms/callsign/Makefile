@@ -1,18 +1,13 @@
-# New ports collection makefile for:	callsign-bin
-# Date created:        31 July 2009
-# Whom:                Rick Elrod <codeblock@eighthbit.net>
-#
+# Created by: Rick Elrod <codeblock@eighthbit.net>
 # $FreeBSD$
-#
 
 PORTNAME=	callsign
 PORTVERSION=	1.0.2
 CATEGORIES=	comms net hamradio
 MASTER_SITES=	RF
-DISTNAME=	callsign-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An amateur radio callsign lookup command
+COMMENT=	Amateur radio callsign lookup command
 
 RUN_DEPENDS=	rubygem-callsign>=0:${PORTSDIR}/comms/rubygem-callsign
 
