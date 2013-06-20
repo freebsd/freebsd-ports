@@ -13,14 +13,14 @@ LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		fftw3:${PORTSDIR}/math/fftw3 \
-		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 OPTIONS_DEFINE=	PERL PYTHON RUBY UNIQUE
 OPTIONS_DEFAULT=PERL PYTHON UNIQUE
 UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
-USES=        pathfix gettext
+USES=		pathfix gettext
 USE_GNOME=	desktopfileutils gconf2 gtk20 libxml2
 USE_GL=		glu
 USE_GMAKE=	yes
