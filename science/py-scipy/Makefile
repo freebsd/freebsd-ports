@@ -29,7 +29,7 @@ USE_FORTRAN=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
-OPTIONS_DEFINE=	ATLAS SUITESPARSE
+OPTIONS_DEFINE=	ATLAS DOCS SUITESPARSE
 OPTIONS_DEFAULT=SUITESPARSE
 ATLAS_DESC=	Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
@@ -66,7 +66,7 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/scipy-ref.pdf ${DOCSDIR}
 	@${ECHO_CMD} ${DOCSDIR}/scipy-ref.pdf | \
