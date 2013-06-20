@@ -1,7 +1,0 @@
-bin/yaps
-@exec mkdir -p %D/share/yaps
-etc/yaps.rc.sample
-%%PORTDOCS%%%%DOCSDIR%%/yaps.doc
-%%PORTDOCS%%%%DOCSDIR%%/yaps.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/yaps
