@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nokryptia
-# Date created:				1 July 2004
-# Whom:					Aleksander Fafula <alex@fafula.com>
-#
+# Created by: Aleksander Fafula <alex@fafula.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nokryptia
 PORTVERSION=	1.3
@@ -12,9 +8,9 @@ MASTER_SITES=	http://tuxmobil.org/software/nokryptia/ \
 		http://www.bsdguru.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for fast loading mp3s into Nokia 5510
+COMMENT=	Tool for fast loading mp3s into Nokia 5510
 
-LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
