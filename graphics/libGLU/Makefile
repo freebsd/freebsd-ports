@@ -2,21 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libGLU
-PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
+PORTVERSION=	9.0.0
 CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/glu/
+DISTNAME=	glu-${PORTVERSION}
 
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility library
 
+USE_BZIP2=	yes
+USES=		pathfix
 USE_GL=		gl
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
+USE_LDCONFIG=	yes
 
-INSTALL_WRKSRC=	${WRKSRC}/src/glu
-BUILD_WRKSRC=	${WRKSRC}/src/glu
-
-pre-install:
-	@${MKDIR} ${PREFIX}/include/GL/
-	${INSTALL_DATA} ${WRKSRC}/include/GL/glu*.h ${PREFIX}/include/GL/
-
-.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 .include <bsd.port.mk>
