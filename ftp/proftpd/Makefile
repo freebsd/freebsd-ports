@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	proftpd
-PORTVERSION?=	1.3.4c
-PORTREVISION?=	1
+PORTVERSION?=	1.3.4d
+PORTREVISION?=	0
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
