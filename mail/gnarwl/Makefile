@@ -18,7 +18,7 @@ USE_GMAKE=	yes
 USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 
 MAN8=		damnit.8 gnarwl.8
 MANCOMPRESSED=	yes
