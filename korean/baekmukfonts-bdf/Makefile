@@ -55,7 +55,7 @@ do-build:
 .endfor
 
 do-install:
-	-mkdir -p ${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${PREFIX}/${FONTSDIR}
 .for FONTNAME in ${FONTLIST}
 	${INSTALL_DATA} ${WRKDIR}/${FONTNAME}.pcf.gz \
 			${PREFIX}/${FONTSDIR}
