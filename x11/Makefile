@@ -9,6 +9,7 @@
     SUBDIR += alltray
     SUBDIR += appres
     SUBDIR += apwal
+    SUBDIR += arandr
     SUBDIR += aterm
     SUBDIR += avant-window-navigator
     SUBDIR += avant-window-navigator-gnome
