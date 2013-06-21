@@ -488,6 +488,7 @@
     SUBDIR += ruby-vpim
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-ohcount
+    SUBDIR += rubygem-vpim
     SUBDIR += saaghar
     SUBDIR += salias
     SUBDIR += seq2
