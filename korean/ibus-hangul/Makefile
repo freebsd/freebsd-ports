@@ -1,15 +1,9 @@
-# New ports collection makefile for:	ibus-hangul
-# Date created:				August 8, 2011
-# Whom:					Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ibus-hangul
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTVERSION=	1.4.2
 CATEGORIES=	korean
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Hangul input engine for IBus
@@ -25,19 +19,19 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intltool pkgconfig
+USE_GNOME=	intltool pygobject3
 USE_PYTHON=	yes
+USES=		pathfix pkgconfig
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB+=	NLS=""
+CONFIGURE_ARGS=	--enable-nls
+PLIST_SUB=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB=	NLS="@comment "
 .endif
 
 post-install:
