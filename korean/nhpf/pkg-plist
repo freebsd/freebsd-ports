@@ -1,3 +1,0 @@
-bin/nhpf
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

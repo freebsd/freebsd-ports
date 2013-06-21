@@ -10,11 +10,18 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul Printing Filter for Netscape with embedded font
 
+PLIST_FILES=	bin/nhpf
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
-	${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nhpf ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
