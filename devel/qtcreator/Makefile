@@ -4,8 +4,10 @@
 PORTNAME=	qtcreator
 DISTVERSION=	2.6.1
 CATEGORIES=	devel
-MASTER_SITES=	http://releases.qt-project.org/${PORTNAME}/${DISTVERSION}/:qtcreator \
+MASTER_SITES=	${MASTER_SITE_QT:S/$/:qtcreator/} \
 		${MASTER_SITE_QT}
+MASTER_SITE_SUBDIR=	official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}/:qtcreator \
+			official_releases/qt/${QT4_VERSION:R}/${QT4_VERSION}
 DISTNAME=	qt-creator-${DISTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qtcreator \
 		${QT_DISTNAME}.tar.gz
