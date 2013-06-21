@@ -8,4 +8,4 @@ about persons and contents.  The library is used in KNewStuff3 as
 content provider.  In order to integrate with KDE's Plasma Desktop,
 a platform plugin exists in kdebase.
 
-WWW:	http://www.kde.org/
+WWW: http://www.kde.org/
