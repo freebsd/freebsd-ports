@@ -35,7 +35,7 @@ do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/doc/html && \
 		${COPYTREE_SHARE} \. ${DOCSDIR}
 .endif

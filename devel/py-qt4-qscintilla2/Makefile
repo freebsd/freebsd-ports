@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 DISTINFO_FILE=	${QSCI2_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
-USE_QT4=	gui
+USE_QT4=	gui qmake_build
 
 OPTIONS_DEFINE=	API
 OPTIONS_DEFAULT=API
@@ -30,7 +30,8 @@ API_DESC=	Install binding API for QScintilla2
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
-ARGS=		-p 4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${SIPDIR}
+ARGS=		--pyqt PyQt4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${SIPDIR} \
+		--qmake ${QMAKE} --pyqt-sipdir ${SIPDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 

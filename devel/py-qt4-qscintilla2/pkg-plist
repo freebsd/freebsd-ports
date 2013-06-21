@@ -42,6 +42,7 @@ share/py-sip/Qsci/qscilexeryaml.sip
 share/py-sip/Qsci/qscimacro.sip
 share/py-sip/Qsci/qscimod3.sip
 share/py-sip/Qsci/qscimod4.sip
+share/py-sip/Qsci/qscimod5.sip
 share/py-sip/Qsci/qscimodcommon.sip
 share/py-sip/Qsci/qsciprinter.sip
 share/py-sip/Qsci/qsciscintilla.sip
