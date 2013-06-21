@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	LXDE Session Manager
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
@@ -27,14 +27,21 @@ MAN1=		lxsession.1 lxsession-logout.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	NLS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's|po man|man|' \
+		${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>

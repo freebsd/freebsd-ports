@@ -46,9 +46,9 @@ bin/lxsession-logout
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lxsession.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/si/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/lxsession.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lxsession.mo
@@ -70,31 +70,13 @@ bin/lxsession-logout
 %%DATADIR%%/images/system-shutdown.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/es_VE/LC_MESSAGES
-@dirrmtry share/locale/es_VE
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/frp/LC_MESSAGES
-@dirrmtry share/locale/frp
-@dirrmtry share/locale/lg/LC_MESSAGES
-@dirrmtry share/locale/lg
-@dirrmtry share/locale/ps/LC_MESSAGES
-@dirrmtry share/locale/ps
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/tt_RU/LC_MESSAGES
-@dirrmtry share/locale/tt_RU
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/vi/LC_MESSAGES
-@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tt_RU
+%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lg
+%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_VE
