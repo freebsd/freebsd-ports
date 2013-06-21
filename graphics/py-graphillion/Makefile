@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fast, lightweight graphset operation library in Python
 
+LICENSE=	MIT
+
 USE_GITHUB=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
