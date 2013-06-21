@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
