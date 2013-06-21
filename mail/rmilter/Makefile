@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.41
+PORTVERSION=		1.5.42
 CATEGORIES=		mail
 MASTER_SITES=		http://cdn.bitbucket.org/vstakhov/rmilter/downloads/
 
@@ -22,10 +22,6 @@ WITH_SENDMAIL_BASE=	yes
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.ifdef WITH_SENDMAIL
-CONFIGURE_ARGS+=	--enable-sendmail
 .endif
 
 LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre \
