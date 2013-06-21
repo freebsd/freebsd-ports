@@ -1,0 +1,21 @@
+A Twitter client for the console. The goal of the project is to build a
+full-featured, lightweight, and extremely configurable Twitter client.
+
+Features:
+
+ - Multiple timelines (buffers)
+ - Multi-column
+ - Tweet, Reply, Retweet, Delete tweet
+ - Follow/Unfollow
+ - Favorite/Unfavorite
+ - Direct Messages
+ - Open URLs in browser
+ - Thread view
+ - Unread count
+ - Search
+ - View users tweets
+ - Fully customizable
+ - Multiple accounts
+ - View user profile
+
+WWW: https://github.com/alejandrogomez/turses
