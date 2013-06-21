@@ -1,0 +1,88 @@
+bin/arandr
+bin/unxrandr
+%%PYTHON_SITELIBDIR%%/screenlayout/__init__.py
+%%PYTHON_SITELIBDIR%%/screenlayout/__init__.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/__init__.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/auxiliary.py
+%%PYTHON_SITELIBDIR%%/screenlayout/auxiliary.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/auxiliary.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/data/gpl-3.txt
+%%PYTHON_SITELIBDIR%%/screenlayout/demo.py
+%%PYTHON_SITELIBDIR%%/screenlayout/demo.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/demo.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/gui.py
+%%PYTHON_SITELIBDIR%%/screenlayout/gui.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/gui.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/meta.py
+%%PYTHON_SITELIBDIR%%/screenlayout/meta.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/meta.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/metacity.py
+%%PYTHON_SITELIBDIR%%/screenlayout/metacity.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/metacity.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/snap.py
+%%PYTHON_SITELIBDIR%%/screenlayout/snap.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/snap.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/widget.py
+%%PYTHON_SITELIBDIR%%/screenlayout/widget.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/widget.pyo
+%%PYTHON_SITELIBDIR%%/screenlayout/xrandr.py
+%%PYTHON_SITELIBDIR%%/screenlayout/xrandr.pyc
+%%PYTHON_SITELIBDIR%%/screenlayout/xrandr.pyo
+share/applications/arandr.desktop
+share/locale/ar/LC_MESSAGES/arandr.mo
+share/locale/br/LC_MESSAGES/arandr.mo
+share/locale/bs/LC_MESSAGES/arandr.mo
+share/locale/ca/LC_MESSAGES/arandr.mo
+share/locale/da/LC_MESSAGES/arandr.mo
+share/locale/de/LC_MESSAGES/arandr.mo
+share/locale/el/LC_MESSAGES/arandr.mo
+share/locale/es/LC_MESSAGES/arandr.mo
+share/locale/fa/LC_MESSAGES/arandr.mo
+share/locale/fr/LC_MESSAGES/arandr.mo
+share/locale/gl/LC_MESSAGES/arandr.mo
+share/locale/hu/LC_MESSAGES/arandr.mo
+share/locale/it/LC_MESSAGES/arandr.mo
+share/locale/ja/LC_MESSAGES/arandr.mo
+share/locale/kn/LC_MESSAGES/arandr.mo
+share/locale/ko_KR/LC_MESSAGES/arandr.mo
+share/locale/lt/LC_MESSAGES/arandr.mo
+share/locale/nl/LC_MESSAGES/arandr.mo
+share/locale/pl/LC_MESSAGES/arandr.mo
+share/locale/pt_BR/LC_MESSAGES/arandr.mo
+share/locale/ro/LC_MESSAGES/arandr.mo
+share/locale/ru/LC_MESSAGES/arandr.mo
+share/locale/sk/LC_MESSAGES/arandr.mo
+share/locale/sv/LC_MESSAGES/arandr.mo
+share/locale/tr/LC_MESSAGES/arandr.mo
+share/locale/uk/LC_MESSAGES/arandr.mo
+share/locale/zh_CN/LC_MESSAGES/arandr.mo
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/lt/LC_MESSAGES
+@dirrmtry share/locale/ko_KR/LC_MESSAGES
+@dirrmtry share/locale/ko_KR
+@dirrmtry share/locale/kn/LC_MESSAGES
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fa/LC_MESSAGES
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/bs/LC_MESSAGES
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/screenlayout/data
+@dirrm %%PYTHON_SITELIBDIR%%/screenlayout
