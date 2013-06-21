@@ -26,7 +26,7 @@ SVN_BUILD_BINDINGS=yes
 
 .include "${MASTERDIR}/Makefile.common"
 
-CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME}
+CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} --with-jikes=no
 
 do-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
