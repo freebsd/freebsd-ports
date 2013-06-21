@@ -2,31 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	nabi
-PORTVERSION=	0.99.11
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	korean gnome
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USES=		pathfix pkgconfig
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB+=	NLS=""
+LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB=	NLS=""
 .else
-PLIST_SUB+=	NLS="@comment "
+PLIST_SUB=	NLS="@comment "
 .endif
 
 .if defined(WITH_LAYOUT_390)

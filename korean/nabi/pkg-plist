@@ -34,6 +34,10 @@ bin/nabi
 %%DATADIR%%/themes/keyboard/english.png
 %%DATADIR%%/themes/keyboard/hangul.png
 %%DATADIR%%/themes/keyboard/none.png
+%%DATADIR%%/themes/malys/README
+%%DATADIR%%/themes/malys/english.png
+%%DATADIR%%/themes/malys/hangul.png
+%%DATADIR%%/themes/malys/none.png
 %%DATADIR%%/themes/ubuntu-mono-dark/README
 %%DATADIR%%/themes/ubuntu-mono-dark/english.png
 %%DATADIR%%/themes/ubuntu-mono-dark/hangul.png
@@ -46,6 +50,7 @@ bin/nabi
 %%NLS%%share/locale/ko/LC_MESSAGES/nabi.mo
 @dirrm %%DATADIR%%/themes/ubuntu-mono-light
 @dirrm %%DATADIR%%/themes/ubuntu-mono-dark
+@dirrm %%DATADIR%%/themes/malys
 @dirrm %%DATADIR%%/themes/keyboard
 @dirrm %%DATADIR%%/themes/Tux
 @dirrm %%DATADIR%%/themes/SimplyRed
