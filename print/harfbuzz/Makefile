@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	0.9.16
-PORTREVISION=	1
+PORTVERSION=	0.9.18
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -20,6 +19,7 @@ USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
 USE_GNOME=	cairo glib20 ltverhack
 USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--with-graphite2
 
 .include <bsd.port.pre.mk>
 
