@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmnetload
-# Date created:		6 February 2003
-# Whom:		Hendrik Scholz <hendrik@scholz.net>
-#
+# Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	wmnetload
 PORTVERSION=	1.3
@@ -16,14 +12,19 @@ MASTER_SITES=	ftp://truffula.com/pub/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Network load monitor dockapp
 
+DEPRECATED=	Depends on expired x11-wm/libdockapp
+EXPIRATION_DATE=2013-08-04
+
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_BZIP2=	yes
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/wmnetload
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmnetload/
 .endif
