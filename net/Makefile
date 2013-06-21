@@ -1074,6 +1074,7 @@
     SUBDIR += scnc
     SUBDIR += scr_ipfm
     SUBDIR += scribe
+    SUBDIR += sdl2_net
     SUBDIR += sdl_net
     SUBDIR += seda
     SUBDIR += sendemail

@@ -703,6 +703,7 @@
     SUBDIR += schism
     SUBDIR += scmpc
     SUBDIR += scrobbler
+    SUBDIR += sdl2_mixer
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
     SUBDIR += sfront
