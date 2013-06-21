@@ -205,26 +205,18 @@ share/icons/hicolor/32x32/apps/darktable.png
 share/icons/hicolor/48x48/apps/darktable.png
 share/icons/hicolor/64x64/apps/darktable.png
 share/icons/hicolor/scalable/apps/darktable.svg
-share/locale/ca/LC_MESSAGES/darktable.mo
-share/locale/cs/LC_MESSAGES/darktable.mo
+share/locale/da/LC_MESSAGES/darktable.mo
 share/locale/de/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
-share/locale/fi/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
-share/locale/gl/LC_MESSAGES/darktable.mo
-share/locale/it/LC_MESSAGES/darktable.mo
 share/locale/ja/LC_MESSAGES/darktable.mo
 share/locale/nl/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
 share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/pt_PT/LC_MESSAGES/darktable.mo
-share/locale/ro/LC_MESSAGES/darktable.mo
-share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
-share/locale/th/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
-share/locale/zh_CN/LC_MESSAGES/darktable.mo
 @dirrmtry share/applications
 @dirrm lib/darktable/views
 @dirrm lib/darktable/plugins/lighttable
