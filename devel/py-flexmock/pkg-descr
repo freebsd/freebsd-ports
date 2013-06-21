@@ -15,4 +15,4 @@ sentences than API calls, and it is possible to chain them
 together in any order to achieve high degree of expressiveness
 in a single line of code.
 
-WWW:	http://has207.github.com/flexmock/
+WWW: http://has207.github.com/flexmock/
