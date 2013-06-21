@@ -8,7 +8,6 @@ CATEGORIES=	korean
 MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/incoming/ \
 		ftp://ftp.kaist.ac.kr/hangul/incoming/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
-
 DISTNAME=	hcode2.1-mailpatch3
 
 MAINTAINER=	ports@FreeBSD.org
