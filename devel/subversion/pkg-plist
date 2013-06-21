@@ -202,7 +202,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/hook-scripts/validate-files.conf.example
 %%DATADIR%%/hook-scripts/validate-files.py
 %%DATADIR%%/server-side/fsfs-stats.c
-%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.la
 %%DATADIR%%/server-side/svnauthz.c
 %%DATADIR%%/server-side/svnpredumpfilter.py
 %%DATADIR%%/server-side/svnpubsub/README.txt

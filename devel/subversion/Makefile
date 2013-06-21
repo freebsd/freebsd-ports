@@ -256,7 +256,7 @@ post-install:	${MKREPOS_TARGET}
 .endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
-	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
+	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude '*.la' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
 # ugly hack to remove libtool scripts ...
 	@${GREP} -R ${WRKSRC} ${DATADIR} | ${CUT} -d\: -f 1 | ${XARGS} ${RM} -f
 	@${CHMOD} -R a-st,o+rX ${DATADIR}
