@@ -1,5 +1,0 @@
-bin/fceu-server
-@unexec if cmp -s %D/%%ETCDIR%%/fceu-standard.conf %D/%%ETCDIR%%/fceu-server.conf.sample; then rm %D/%%ETCDIR%%/fceu-standard.conf; fi
-%%ETCDIR%%/fceu-server.conf.sample
-@exec [ -f %D/%%ETCDIR%%/fceu-standard.conf ] || install -m 644 %D/%%ETCDIR%%/fceu-server.conf.sample %D/%%ETCDIR%%/fceu-standard.conf
-@dirrmtry etc/fceu-server
