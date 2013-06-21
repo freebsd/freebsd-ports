@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	20130531
+PORTVERSION=	20130621
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -28,6 +28,18 @@ STDERR_DESC=	Print logs to stderr instead of stdout
 
 OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS
 
+ARC_RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc
+ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
+LHA_RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+UNZOO_RUN_DEPENDS=	unzoo:${PORTSDIR}/archivers/unzoo
+UNRAR_CONFIGURE_ENABLE=	unrar
+MILTER_CONFIGURE_ENABLE=milter
+TESTS_CONFIGURE_ENABLE=	check
+TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+ICONV_CONFIGURE_ON=	--with-iconv
+ICONV_CONFIGURE_OFF=	--without-iconv
+ICONV_USES=		iconv
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
@@ -44,6 +56,7 @@ RUNDIR=		/var/run/clamav
 PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
 USE_AUTOTOOLS=	libltdl
+OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dbdir=${DBDIR} \
@@ -118,31 +131,6 @@ PORTSCOUT=	ignore:1
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MARC}
-RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
-.endif
-.if ${PORT_OPTIONS:MARJ}
-RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
-.endif
-.if ${PORT_OPTIONS:MLHA}
-RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
-.endif
-.if ${PORT_OPTIONS:MUNZOO}
-RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
-.endif
-.if ${PORT_OPTIONS:MUNRAR}
-PLIST_SUB+=	UNRAR=""
-.else
-PLIST_SUB+=	UNRAR="@comment "
-CONFIGURE_ARGS+=--disable-unrar
-.endif
-.if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=--with-iconv
-USES+=		iconv
-.else
-CONFIGURE_ARGS+=--without-iconv
-.endif
-
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
 . if defined(WITH_TESTS)
@@ -166,11 +154,6 @@ CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}/sbin/sendmail
 . else
 CONFIGURE_ARGS+=--with-sendmail=/usr/sbin/sendmail
 . endif
-
-CONFIGURE_ARGS+=--enable-milter
-PLIST_SUB+=	CLAMAV-MILTER=""
-.else
-PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTDERR}
@@ -181,13 +164,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
 
 .if ${ARCH} == "i386"
 CFLAGS+=	-march=i486
-.endif
-
-.if ${PORT_OPTIONS:MTESTS} && ${OSVERSION} >= 700000
-BUILD_DEPENDS+=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
-CONFIGURE_ARGS+=--enable-check
-.else
-CONFIGURE_ARGS+=--disable-check
 .endif
 
 post-patch:
