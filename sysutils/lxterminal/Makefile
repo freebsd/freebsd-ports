@@ -5,20 +5,27 @@ PORTNAME=	lxterminal
 PORTVERSION=	0.1.11
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}
+MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight terminal emulator from the LXDE project
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Lightweight terminal emulator from the LXDE project
 
-LIB_DEPENDS=	vte.9:${PORTSDIR}/x11-toolkits/vte
+LICENSE=	GPLv2
 
-USE_GNOME=	gtk20 intlhack
-USE_GMAKE=	yes
+LIB_DEPENDS=	vte:${PORTSDIR}/x11-toolkits/vte
+
 USES=		iconv
+USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+
 MAN1=		lxterminal.1
+
+PORTDOCS=	AUTHORS README
+
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
@@ -28,8 +35,19 @@ PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's|src po|src|' \
+		${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
