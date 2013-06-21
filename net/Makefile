@@ -1196,6 +1196,7 @@
     SUBDIR += ttbudget
     SUBDIR += ttlscan
     SUBDIR += tucan
+    SUBDIR += turses
     SUBDIR += turnserver
     SUBDIR += twinkle
     SUBDIR += twitux
