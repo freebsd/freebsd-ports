@@ -104,6 +104,7 @@ share/py-sip/QtCore/qabstractanimation.sip
 share/py-sip/QtCore/qabstracteventdispatcher.sip
 share/py-sip/QtCore/qabstractfileengine.sip
 share/py-sip/QtCore/qabstractitemmodel.sip
+share/py-sip/QtCore/qabstractnativeeventfilter.sip
 share/py-sip/QtCore/qabstractstate.sip
 share/py-sip/QtCore/qabstracttransition.sip
 share/py-sip/QtCore/qanimationgroup.sip
@@ -194,6 +195,7 @@ share/py-sip/QtCore/qvariant.sip
 share/py-sip/QtCore/qvariantanimation.sip
 share/py-sip/QtCore/qvector.sip
 share/py-sip/QtCore/qwaitcondition.sip
+share/py-sip/QtCore/qwineventnotifier.sip
 share/py-sip/QtCore/qxmlstream.sip
 %%API%%share/qt4/qsci/api/python/QtCore.api
 @dirrm share/py-sip/QtCore
