@@ -6,4 +6,4 @@ In that sense, it is similar to the standard lapply function, but
 doesn't require the evaluation of a function. Using foreach without
 side effects also facilitates executing the loop in parallel.
 
-WWW:    http://cran.r-project.org/web/packages/foreach/
+WWW: http://cran.r-project.org/web/packages/foreach/
