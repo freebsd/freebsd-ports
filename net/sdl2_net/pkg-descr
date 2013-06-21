@@ -1,0 +1,5 @@
+This is a small sample cross-platform networking library, with a sample chat
+client and server application. The chat client uses the GUIlib GUI framework
+library.
+
+WWW: http://www.libsdl.org/projects/SDL_net/

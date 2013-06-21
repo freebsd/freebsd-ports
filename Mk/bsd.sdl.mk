@@ -32,89 +32,99 @@
 # $FreeBSD$
 #
 
-SDL_Include_MAINTAINER=		edwin@FreeBSD.org
+SDL_Include_MAINTAINER=		mva@FreeBSD.org
 
 #
-# These are the current supported SDL modules
+# These are the current supported SDL1.2 modules
 #
-_USE_SDL_ALL=	console gfx gui image mixer mm net pango sdl sound ttf
+_USE_SDL_ALL=	console gfx image mixer mm net pango sdl sound ttf
+#
+# These are the current supported SDL2 modules
+#
+_USE_SDL_ALL+=	image2 mixer2 net2 sdl2 ttf2
 
 #
 # Variables used to determine what is needed:
-# _VERSION_xxx	version of the shared library (required)
 # _SUBDIR_xxx	subdirectory below ${PORTSDIR} (required)
 # _PORTDIR_xxx	subdirectory below ${PORTSDIR}/${_SUBDIR_xxx}, default sdl_xxx
 # _LIB_xxx		name of the shared lib, default SDL_xxx
 # _REQUIRES_xxx	also needs these SDL libraries
 #
 
-_VERSION_console=	0
 _SUBDIR_console=	devel
+_PORTDIR_console=	sdl_console
 _LIB_console=		SDL_console-2.1
 _REQUIRES_console=	sdl
 
-_VERSION_gfx=	22
 _SUBDIR_gfx=	graphics
+_PORTDIR_gfx=	sdl_gfx
+_LIB_gfx=	SDL_gfx
 _REQUIRES_gfx=	sdl
 
-_VERSION_gui=	0
-_SUBDIR_gui=	x11-toolkits
-_REQUIRES_gui=	sdl image ttf
-
-_VERSION_image=	8
 _SUBDIR_image=	graphics
+_PORTDIR_image=	sdl_image
 _LIB_image=	SDL_image-1.2
 _REQUIRES_image=sdl
 
-_VERSION_mixer=	12
 _SUBDIR_mixer=	audio
+_PORTDIR_mixer=	sdl_mixer
 _LIB_mixer=	SDL_mixer-1.2
 _REQUIRES_mixer=sdl
 
-_VERSION_mm=	8
 _SUBDIR_mm=	devel
-_LIB_mm=	SDLmm
 _PORTDIR_mm=	sdlmm
+_LIB_mm=	SDLmm
 _REQUIRES_mm=	sdl
 
-_VERSION_net=	8
 _SUBDIR_net=	net
+_PORTDIR_net=	sdl_net
 _LIB_net=	SDL_net-1.2
 _REQUIRES_net=	sdl
 
-_VERSION_pango=	2
 _SUBDIR_pango=	x11-toolkits
+_PORTDIR_pango=	sdl_pango
 _LIB_pango=	SDL_Pango
 _REQUIRES_pango=sdl
 
-_VERSION_sdl=	11
 _SUBDIR_sdl=	devel
-_LIB_sdl=	SDL-1.2
 _PORTDIR_sdl=	sdl12
+_LIB_sdl=	SDL-1.2
+_REQUIRES_sdl=
 
-_VERSION_sound=	1
 _SUBDIR_sound=	audio
+_PORTDIR_sound=	sdl_sound
+_LIB_sound=	SDL_sound
 _REQUIRES_sound=sdl
 
-_VERSION_ttf=	10
 _SUBDIR_ttf=	graphics
+_PORTDIR_ttf=	sdl_ttf
 _LIB_ttf=	SDL_ttf-2.0
 _REQUIRES_ttf=	sdl
 
-#
-# Update the variables if they need the default values.
-#
-.for component in ${_USE_SDL_ALL}
-. if !defined(_LIB_${component})
-_LIB_${component}=SDL_${component}
-. endif
-. if !defined(_PORTDIR_${component})
-_PORTDIR_${component}=sdl_${component}
-. endif
-. if !defined(_REQUIRES_${component})
-_REQUIRES_${component}=
-. endif
-.endfor
+_SUBDIR_image2=		graphics
+_PORTDIR_image2=	sdl2_image
+_LIB_image2=		SDL2_image
+_REQUIRES_image2=	sdl2
+
+_SUBDIR_mixer2=		audio
+_PORTDIR_mixer2=	sdl2_mixer
+_LIB_mixer2=		SDL2_mixer
+_REQUIRES_mixer2=	sdl2
+
+_SUBDIR_net2=	net
+_PORTDIR_net2=	sdl2_net
+_LIB_net2=	SDL2_net
+_REQUIRES_net2=	sdl2
+
+_SUBDIR_sdl2=	devel
+_PORTDIR_sdl2=	sdl20
+_LIB_sdl2=	SDL2
+_REQUIRES_sdl2=
+
+_SUBDIR_ttf2=	graphics
+_PORTDIR_ttf2=	sdl2_ttf
+_LIB_ttf2=	SDL2_ttf
+_REQUIRES_ttf2=	sdl2
 
 #
 # If WANT_SDL is defined, check for the available libraries
@@ -127,7 +137,7 @@ SDL_Include_pre=	bsd.sdl.mk
 HAVE_SDL?=
 .if defined(WANT_SDL)
 .for component in ${_USE_SDL_ALL}
-.if exists(${LOCALBASE}/lib/lib${_LIB_${component}}.so.${_VERSION_${component}})
+.if exists(${LOCALBASE}/lib/lib${_LIB_${component}}.so)
 HAVE_SDL+=	${component}
 .endif
 .endfor
@@ -177,16 +187,24 @@ __USE_SDL+= ${component}
 # Finally make the list of libs required
 #
 .for component in ${__USE_SDL}
-LIB_DEPENDS+=	${_LIB_${component}}.${_VERSION_${component}}:${PORTSDIR}/${_SUBDIR_${component}}/${_PORTDIR_${component}}
+LIB_DEPENDS+=	${_LIB_${component}}:${PORTSDIR}/${_SUBDIR_${component}}/${_PORTDIR_${component}}
 .endfor
 
 #
 # "Normal" dependencies and variables
 #
+.if ${__USE_SDL:Msdl} != ""
 BUILD_DEPENDS+=	${SDL_CONFIG}:${PORTSDIR}/${_SUBDIR_sdl}/${_PORTDIR_sdl}
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 MAKE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
+.endif
+.if ${__USE_SDL:Msdl2} != ""
+BUILD_DEPENDS+=	${SDL2_CONFIG}:${PORTSDIR}/${_SUBDIR_sdl2}/${_PORTDIR_sdl2}
+SDL2_CONFIG?=	${LOCALBASE}/bin/sdl2-config
+CONFIGURE_ENV+=	SDL2_CONFIG=${SDL2_CONFIG}
+MAKE_ENV+=		SDL2_CONFIG=${SDL2_CONFIG}
+.endif
 
 .endif
 .endif
