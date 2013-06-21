@@ -94,6 +94,11 @@ share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
 share/polkit-1/actions/org.freedesktop.color.policy
 share/vala/vapi/colord.vapi
+@exec mkdir -p %D/var/lib/colord/icc
+@dirrmtry var/lib/colord/icc
+@dirrmtry var/lib/colord
+@dirrmtry var/lib
+@dirrmtry var
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
