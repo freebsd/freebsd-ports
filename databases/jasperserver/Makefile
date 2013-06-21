@@ -34,12 +34,13 @@ JSUPDATE=	5.0.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
 USE_ZIP=	yes
 
 # use own DOS2UNIX in pre-patch, not the one from bsd.port.mk!
 DOS2UNIX_REGEX=	.*(css|dtd|java|js|txt|wsdd|xml|xsl)$$
 
+OPTIONS_DEFINE=	HEADLESS
+HEADLESS_DESC=	Optimize for Headless Systems
 OPTIONS_SINGLE=	AS DB
 OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_SINGLE_DB=	MYSQL PGSQL
@@ -68,6 +69,12 @@ PLIST_SUB=	DATABASE=${DATABASE} \
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MHEADLESS}
+JAVA_VERSION=	1.7
+.else
+JAVA_VERSION=	1.6
+.endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 WANT_MYSQL_VER=	55
