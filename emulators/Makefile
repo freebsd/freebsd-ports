@@ -35,7 +35,6 @@
     SUBDIR += dynamips-devel
     SUBDIR += e-uae
     SUBDIR += extract-xiso
-    SUBDIR += fceu-server
     SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
