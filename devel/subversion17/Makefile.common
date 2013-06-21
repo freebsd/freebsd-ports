@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--with-ssl \
 
 .if defined(SVN_BUILD_BINDINGS)
 CONFLICTS_BUILD+=	${PORTNAME}-1.[6|8].[0-9]*
-LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion
+LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion17
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
 .endif
@@ -126,7 +126,7 @@ PLIST_SUB+=	SERF="@comment "
 .endif
 
 .if defined(SVN_BUILD_BINDINGS)
-LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion17
 .endif
 
 # KWallet requires NLS to be enabled.
