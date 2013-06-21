@@ -463,11 +463,8 @@ llvm33/lib/libclangStaticAnalyzerCheckers.a
 llvm33/lib/libclangStaticAnalyzerCore.a
 llvm33/lib/libclangStaticAnalyzerFrontend.a
 llvm33/lib/libclangTooling.a
-%%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
-%%PORTDOCS%%%%DOCSDIR%%/html/LibASTMatchersReference.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
-%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
 @dirrm llvm33/lib/clang/3.3/include
 @dirrm llvm33/lib/clang/3.3
@@ -506,7 +503,6 @@ llvm33/lib/libclangTooling.a
 @dirrm llvm33/include/clang-c
 @dirrm llvm33/include/clang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,23 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.3rc3
+PORTVERSION=	3.3
 CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/pre-releases/3.3/rc3/
-DISTNAME=	llvm-source-${DISTVERSION}
+MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
-.endif
 
-LLVM_SUFFIX=	33
+LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 LATEST_LINK=	${PORTNAME}${LLVM_SUFFIX}
@@ -29,8 +23,6 @@ USE_LDCONFIG=	${LLVM_PREFIX}/lib
 USE_PERL5=	yes
 USE_PYTHON_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
-
-WRKSRC=		${WRKDIR}/llvm.src
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
