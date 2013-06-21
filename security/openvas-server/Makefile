@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openvas-server
-# Date created:		2008-04-26
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvas-server
 PORTVERSION=	2.0.2
@@ -12,13 +8,13 @@ CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/593/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A security scanner: a fork of Nessus
+COMMENT=	Security scanner: a fork of Nessus
 
 LIB_DEPENDS=	openvas.2:${PORTSDIR}/security/openvas-libraries \
 		openvasnasl.2:${PORTSDIR}/security/openvas-libnasl
 
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_RC_SUBR=	openvasd
 
 MAN1=		openvas-mkrand.1 openvas-mkcert-client.1 openvasd-config.1
