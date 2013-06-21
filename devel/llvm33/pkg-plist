@@ -603,8 +603,8 @@ llvm33/include/llvm/Transforms/Utils/ValueMapper.h
 llvm33/include/llvm/Transforms/Vectorize.h
 llvm33/lib/BugpointPasses.so
 llvm33/lib/LLVMHello.so
-llvm33/lib/libLLVM-3.3.so
-llvm33/lib/libLLVM-3.3.so.0
+llvm33/lib/libLLVM-%%PORTVERSION%%.so
+llvm33/lib/libLLVM-%%PORTVERSION%%.so.0
 llvm33/lib/libLLVMAArch64AsmParser.a
 llvm33/lib/libLLVMAArch64AsmPrinter.a
 llvm33/lib/libLLVMAArch64CodeGen.a
