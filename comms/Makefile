@@ -26,6 +26,7 @@
     SUBDIR += cutecom
     SUBDIR += cwdaemon
     SUBDIR += dabstick-radio
+    SUBDIR += dcf77pi
     SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
