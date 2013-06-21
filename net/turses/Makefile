@@ -17,7 +17,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
-LICENCE=	GPLv3
+LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools for unit tests
