@@ -418,6 +418,7 @@
     SUBDIR += ivan
     SUBDIR += jag
     SUBDIR += jaggedalliance2
+    SUBDIR += java-games-suite
     SUBDIR += jchessboard
     SUBDIR += jfk
     SUBDIR += jfsw
