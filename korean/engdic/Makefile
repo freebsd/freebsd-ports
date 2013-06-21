@@ -1,9 +1,5 @@
-# New ports collection makefile for:    engdic-0.2
-# Date created:         3 Jun 1999
-# Whom:                 Oh Junseon <hollywar@mail.holywar.net>
-#
+# Created by: Oh Junseon <hollywar@mail.holywar.net>
 # $FreeBSD$
-#
 
 PORTNAME=	engdic
 PORTVERSION=	0.2
@@ -12,7 +8,7 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/engdic/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An English dictionary utility for Korean
+COMMENT=	English dictionary utility for Korean
 
 ALL_TARGET=	clean all
 
