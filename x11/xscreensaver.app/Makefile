@@ -1,9 +1,5 @@
-# New ports collection makefile for:   XScreenSaver.App
-# Date created:        26 September 2004
-# Whom:                hemi@puresimplicity.net
-#
+# Created by: hemi@puresimplicity.net
 # $FreeBSD$
-#
 
 PORTNAME=	XScreenSaver.App
 PORTVERSION=	2.3
@@ -13,6 +9,9 @@ MASTER_SITES=	SF/xscreensaverapp/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	WindowMaker dockapp to control XScreenSaver
+
+DEPRECATED=	Depends on expired x11-wm/libdockapp
+EXPIRATION_DATE=2013-08-04
 
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
