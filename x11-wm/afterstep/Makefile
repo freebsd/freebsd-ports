@@ -35,7 +35,6 @@ post-patch:
 			-e 's|%%PREFIX%%|${PREFIX}|g' \
 			${WRKSRC}/configure.h \
 			${WRKSRC}/sample.steprc
-			${WRKSRC}/configure.h
 		@ for i in ${SRCDIRS}; do \
 			cd ${WRKSRC}/$$i; \
 			${MV} Imakefile Imakefile.orig; \
