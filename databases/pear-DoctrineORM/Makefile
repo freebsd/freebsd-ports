@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DoctrineORM
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.3
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pear.doctrine-project.org/get/
 
