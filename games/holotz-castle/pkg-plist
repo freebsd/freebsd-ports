@@ -1,5 +1,6 @@
 bin/holotz-castle
 bin/holotz-castle-editor
+%%SOLUTIONS%%bin/holotz-castle-solutions
 %%DATADIR%%/editor/EnemyMenu/0.tga
 %%DATADIR%%/editor/EnemyMenu/0_hi.tga
 %%DATADIR%%/editor/EnemyMenu/1.tga
@@ -1324,6 +1325,28 @@ bin/holotz-castle-editor
 %%DATADIR%%/game/theme/dungeons/rope/2/edge.tga
 %%DATADIR%%/game/theme/dungeons/rope/2/middle.tga
 %%DATADIR%%/game/theme/dungeons/rope/2/top.tga
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_03.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_04.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_05.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_06.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_08.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_09.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_10.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_11.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_12.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_13.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_15.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_17.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_18.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_21.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_22.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_23.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_24.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_26.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_27.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_28.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_29.avi
+%%SOLUTIONS%%%%DATADIR%%/solutions/holotz_castle_high_31.avi
 share/icons/hicolor/128x128/apps/holotz-castle.png
 share/icons/hicolor/32x32/apps/holotz-castle.png
 share/icons/hicolor/48x48/apps/holotz-castle.png
@@ -1331,6 +1354,7 @@ share/icons/hicolor/64x64/apps/holotz-castle.png
 share/icons/hicolor/72x72/apps/holotz-castle.png
 share/icons/hicolor/96x96/apps/holotz-castle.png
 share/pixmaps/holotz-castle.png
+%%SOLUTIONS%%@dirrm %%DATADIR%%/solutions
 @dirrm %%DATADIR%%/game/theme/dungeons/rope/2
 @dirrm %%DATADIR%%/game/theme/dungeons/rope/1
 @dirrm %%DATADIR%%/game/theme/dungeons/rope
