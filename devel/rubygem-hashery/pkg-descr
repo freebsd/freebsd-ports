@@ -1,0 +1,7 @@
+The Hashery is a tight collection of Hash-like classes. Included among its many
+offerings are the auto-sorting Dictionary class, the efficient LRUHash, the
+flexible OpenHash and the convenient KeyHash. Nearly every class is a subclass
+of the CRUDHash which defines a CRUD model on top of Ruby's standard Hash
+making it a snap to subclass and augment to fit any specific use case.
+
+WWW: http://rubyworks.github.com/hashery

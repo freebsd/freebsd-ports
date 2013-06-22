@@ -4069,6 +4069,7 @@
     SUBDIR += rubygem-glib2
     SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-grit
+    SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hike
