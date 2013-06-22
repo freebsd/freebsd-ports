@@ -1,6 +1,11 @@
---- rblocale.c.orig	Fri Apr 14 08:20:58 2000
-+++ rblocale.c	Mon Jun 21 20:36:37 2004
-@@ -31,6 +31,16 @@
+--- rblocale.c.orig	2000-04-14 06:20:58.000000000 +0200
++++ rblocale.c	2013-06-21 12:52:36.000000000 +0200
+@@ -27,10 +27,20 @@
+ {
+     char *ret;
+ 
+-    ret = setlocale(NUM2INT(category), locale == Qnil ? "" : STR2CSTR(locale));
++    ret = setlocale(NUM2INT(category), locale == Qnil ? "" : StringValuePtr(locale));
      return ret == NULL ? Qnil : rb_str_new2(ret);
  }
  
