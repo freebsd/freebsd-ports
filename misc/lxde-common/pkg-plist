@@ -1,9 +1,13 @@
 bin/lxde-logout
 bin/openbox-lxde
 bin/startlxde
-etc/xdg/pcmanfm/LXDE/pcmanfm.conf
 etc/xdg/lxsession/LXDE/autostart
-etc/xdg/lxsession/LXDE/desktop.conf
+@unexec if cmp -s %D/etc/xdg/lxsession/LXDE/desktop.conf %D/etc/xdg/lxsession/LXDE/desktop.conf.sample; then rm -f %D/etc/xdg/lxsession/LXDE/desktop.conf; fi
+etc/xdg/lxsession/LXDE/desktop.conf.sample
+@exec if [ ! -f %D/etc/xdg/lxsession/LXDE/desktop.conf ] ; then cp -p %D/%F %B/desktop.conf; fi
+@unexec if cmp -s %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample; then rm -f %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf; fi
+etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
+@exec if [ ! -f %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf ] ; then cp -p %D/%F %B/pcmanfm.conf; fi
 share/applications/lxde-logout.desktop
 share/lxde/images/logout-banner.png
 share/lxde/images/lxde-icon.png
@@ -15,11 +19,7 @@ share/lxde/wallpapers/lxde_red.jpg
 share/lxpanel/profile/LXDE/config
 share/lxpanel/profile/LXDE/panels/panel
 share/xsessions/LXDE.desktop
-@dirrm etc/xdg/lxsession/LXDE
-@dirrm etc/xdg/lxsession
-@dirrmtry etc/xdg/pcmanfm/LXDE
-@dirrmtry etc/xdg/pcmanfm
-@dirrmtry share/applications
+@dirrmtry share/xsessions
 @dirrmtry share/lxpanel/profile/LXDE/panels
 @dirrmtry share/lxpanel/profile/LXDE
 @dirrmtry share/lxpanel/profile
@@ -28,5 +28,8 @@ share/xsessions/LXDE.desktop
 @dirrm share/lxde/openbox
 @dirrm share/lxde/images
 @dirrm share/lxde
-@dirrmtry share/xsessions
-@dirrmtry etc/xdg
+@dirrmtry share/applications
+@dirrmtry etc/xdg/pcmanfm/LXDE
+@dirrmtry etc/xdg/pcmanfm
+@dirrmtry etc/xdg/lxsession/LXDE
+@dirrmtry etc/xdg/lxsession
