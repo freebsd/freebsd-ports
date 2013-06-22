@@ -863,6 +863,7 @@
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-razorback-scriptNugget
+    SUBDIR += rubygem-rc4
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += safesh
