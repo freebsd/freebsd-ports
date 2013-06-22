@@ -2,3 +2,5 @@ SHA256 (holotz-castle-1.3.14-src.tar.gz) = 42903559a9821b39eac6eba7730be0fcba12c
 SIZE (holotz-castle-1.3.14-src.tar.gz) = 3691364
 SHA256 (holotz-castle_icons.tar.gz) = 5ca3aee3d7abddbb8baff9961460497c0a2ec8418570c755f2df581f5605960b
 SIZE (holotz-castle_icons.tar.gz) = 35328
+SHA256 (holotz-castle_solutions.tar.gz) = c4fd9c02c82fde1d0c63c94495ce2b47142ab2741b81742527a02c76edc70cc4
+SIZE (holotz-castle_solutions.tar.gz) = 129568789

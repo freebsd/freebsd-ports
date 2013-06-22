@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+echo ""
+echo -n  "Which Solution for Holotz's Castle would You see?"
+cd %%DATADIR%%/solutions
+echo ""
+echo ""
+ls
+echo ""
+read SOLUTIONS
+
+mplayer "%%DATADIR%%/solutions/$SOLUTIONS"
+
