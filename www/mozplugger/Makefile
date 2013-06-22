@@ -4,7 +4,7 @@
 PORTNAME=	mozplugger
 PORTVERSION=	2.1.3
 CATEGORIES=	www
-MASTER_SITES=	http://mozplugger.mozdev.org/files/
+MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Framework for loading web content in external viewers
