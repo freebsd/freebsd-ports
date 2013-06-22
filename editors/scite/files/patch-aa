@@ -1,12 +1,12 @@
---- makefile.orig	2013-02-18 02:21:10.000000000 -0500
-+++ makefile	2013-02-26 18:30:59.000000000 -0500
+--- makefile.orig	2013-06-22 15:49:44.000000000 -0400
++++ makefile	2013-06-22 15:53:14.000000000 -0400
 @@ -5,13 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
  .SUFFIXES: .cxx .o .h .a .c
 -ifdef CLANG
--CC = clang --std=c++0x
--CCOMP = clang -Wno-empty-body
+-CC = clang -fsanitize=address --std=c++0x
+-CCOMP = clang -fsanitize=address -Wno-empty-body
 -else
 -CC = g++
 -CCOMP = gcc
@@ -23,7 +23,7 @@
  ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-@@ -109,8 +102,9 @@
+@@ -113,8 +106,9 @@
  $(PROG): SciTEGTK.o GUIGTK.o Widget.o \
  FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o StringHelpers.o \
  PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
