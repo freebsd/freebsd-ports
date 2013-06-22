@@ -5,6 +5,30 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130623:
+  AFFECTS: users of www/magento
+  AUTHOR: melvyn@magemana.nl
+
+  Magento has been updated to 1.7.0.2 on 2013-06-03. With it a stricter file
+  system policy is enforced on the port. If you (or your customer) rely heavily
+  on Magento Connect via the backend to install extensions, your quickfix is:
+
+  # chown -R www: ${PREFIX}/www/magento
+  # chmod -R u+w ${PREFIX}/www/magento
+
+  The more conservative approach:
+  # chown -R www: ${PREFIX}/www/magento/app/code/{local,community} \
+    ${PREFIX}/www/magento/app/{design,locale} \
+    ${PREFIX}/www/magento/{downloader,skin}
+
+  # chmod -R u+w ${PREFIX}/www/magento/app/code/{local,community} \
+    ${PREFIX}/www/magento/app/{design,locale} \
+    ${PREFIX}/www/magento/{downloader,skin}
+
+  The conservative aproach will alert you to extensions that try to write in
+  Magento core, while allowing clean extensions to install properly (corner
+  cases may exist).
+
 20130619:
   AFFECTS: users of devel/subversion
   AUTHOR: ohauer@FreeBSD.org
