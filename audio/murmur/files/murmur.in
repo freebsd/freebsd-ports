@@ -17,17 +17,16 @@
 
 . /etc/rc.subr
 
-# Set some defaults
-: ${murmur_enable="NO"}
-: ${murmur_user="murmur"}
-
 name=murmur
 rcvar=murmur_enable
+load_rc_config $name
+
+# Set some defaults
+: ${murmur_enable:=NO}
+: ${murmur_user=murmur}
 
 command="%%PREFIX%%/sbin/murmurd"
 command_args="-ini %%PREFIX%%/etc/murmur.ini"
-pidfile="/var/run/murmur/murmur.pid"
-
-load_rc_config $name
+pidfile=/var/run/murmur/murmur.pid
 
 run_rc_command "$1"
