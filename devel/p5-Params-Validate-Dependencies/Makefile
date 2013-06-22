@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Params-Validate-Dependencies
-PORTVERSION=	1.13
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
