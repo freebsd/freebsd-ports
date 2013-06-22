@@ -2985,6 +2985,7 @@
     SUBDIR += p5-doxygenfilter
     SUBDIR += p5-enum
     SUBDIR += p5-ex-lib
+    SUBDIR += p5-experimental
     SUBDIR += p5-forks
     SUBDIR += p5-github_creator
     SUBDIR += p5-iCal-Parser
