@@ -3634,6 +3634,7 @@
     SUBDIR += py-pyechonest
     SUBDIR += py-pyev
     SUBDIR += py-pygithub
+    SUBDIR += py-pygit2
     SUBDIR += py-pygpx
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
