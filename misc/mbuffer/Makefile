@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	2011.07.24
-PORTREVISION=	1
+PORTVERSION=	2013.02.20
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool for buffering data streams
 
 LICENSE=	GPLv3
