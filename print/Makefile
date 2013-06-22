@@ -266,6 +266,7 @@
     SUBDIR += rtf2latex
     SUBDIR += rtf2latex2e
     SUBDIR += ruby-panda
+    SUBDIR += rubygem-afm
     SUBDIR += rubygem-color
     SUBDIR += rubygem-colortools
     SUBDIR += rubygem-pdfwriter
