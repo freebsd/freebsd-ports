@@ -6,7 +6,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/README
 %%DATADIR%%/lua/website/101greatgoals.lua
 %%DATADIR%%/lua/website/1tvru.lua
-%%DATADIR%%/lua/website/academicearth.lua
 %%DATADIR%%/lua/website/ardmediathek.lua
 %%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/audioboo.lua
