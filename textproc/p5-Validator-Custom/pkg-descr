@@ -1,5 +1,12 @@
-Validator::Custom
+Validator::Custom validate HTML form data easy and flexibly. The features are
+the following ones.
+- Many constraint functions are available by default, such as not_blank, int,
+  defined, in_array, length.
+- Several filter functions are available by default, such as trim,
+  datetime_to_timepiece, date_to_timepiece.
+- You can register your constraint function.
+- You can set error messages for invalid parameter value. The order of messages
+  is keeped.
+- Support OR condtion constraint and negativate constraint.
 
-Simple Data Validation
-
-WWW:	http://search.cpan.org/dist/Validator-Custom/
+WWW: http://search.cpan.org/dist/Validator-Custom/
