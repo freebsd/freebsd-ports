@@ -1,5 +1,5 @@
 --- cmd_commit.in.orig	2009-09-10 04:59:59.000000000 +0900
-+++ cmd_commit.in	2012-12-31 21:42:13.000000000 +0900
++++ cmd_commit.in	2013-04-27 07:26:46.000000000 +0900
 @@ -1,6 +1,6 @@
  # cmd_commit
  # Module for port(1)
@@ -8,13 +8,16 @@
  #
  # $Id: cmd_commit.in,v 1.2 2009/09/09 19:58:30 skolobov Exp $
  #
-@@ -59,13 +59,14 @@
+@@ -59,13 +59,17 @@
  
  # Determine if this is a new port
  MODE="update"
 -[ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
 +svn status Makefile 2>&1 1>/dev/null | grep -qs 'svn: warning: W155007:'
-+[ $? -eq 0 ] || [ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
++if [ $? -eq 0 ]
++then
++	MODE="new"
++fi
  
  # Run portlint(1) to validate port's sanity
  echo "===> Pre-commit portlint check"
@@ -25,13 +28,30 @@
  portlint ${FLAGS}
  if [ $? -ne 0 ]
  then
-@@ -79,15 +80,12 @@
+@@ -74,21 +78,25 @@
+ fi
+ 
+ 
+-PORTSDIR="`make -V PORTSDIR`"
++# See if SVN message already exists, and use that for commit log
++MSG="svn-msg"
++FLAGS=""
++
+ if [ "${MODE}" = "new" ]
  then
- 	${PORTSDIR}/Tools/scripts/addport -d `pwd` -u ${FREEFALL_USERNAME}
- else
+-	${PORTSDIR}/Tools/scripts/addport -d `pwd` -u ${FREEFALL_USERNAME}
+-else
 -	# Initialize CVS environment
 -	PCVS="cvs -d ${FREEFALL_USERNAME}@pcvs.FreeBSD.org:/home/pcvs"
--
++	PORTSDIR="`make -V PORTSDIR`"
+ 
++	if [ -e ${MSG} ]
++	then
++		FLAGS="-c ${MSG}"
++	fi
++
++	${PORTSDIR}/Tools/scripts/addport -d `pwd` -u ${FREEFALL_USERNAME} ${FLAGS}
++else
  	# Make sure we are working with up-to-date version
 -	echo "===> Pre-commit CVS update"
 -	${PCVS} update
@@ -40,12 +60,11 @@
  
 -	# See if CVS message already exists, and use that for commit log
 -	MSG="cvs-msg"
-+	# See if SVN message already exists, and use that for commit log
-+	MSG="svn-msg"
- 	FLAGS=""
+-	FLAGS=""
  	if [ -e ${MSG} ]
  	then
-@@ -99,16 +97,16 @@
+ 		FLAGS="-F ${MSG}"
+@@ -99,18 +107,18 @@
  			echo '============================================='
  			cat ${MSG}
  			echo '============================================='
@@ -61,7 +80,10 @@
 +	svn commit ${FLAGS}
  	
 -	# Remove CVS message file only if commit was successful
-+	# Remove SVN message file only if commit was successful
- 	[ $? -eq 0 -a -e ${MSG} ] && rm ${MSG}
+-	[ $? -eq 0 -a -e ${MSG} ] && rm ${MSG}
  fi
++# Remove SVN message file only if commit was successful
++[ $? -eq 0 -a -e ${MSG} ] && rm ${MSG}
  
+ echo "===> Done"
+ exit 0
