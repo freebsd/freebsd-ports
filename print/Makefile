@@ -269,6 +269,7 @@
     SUBDIR += rubygem-afm
     SUBDIR += rubygem-color
     SUBDIR += rubygem-colortools
+    SUBDIR += rubygem-pdf-reader
     SUBDIR += rubygem-pdfwriter
     SUBDIR += rubygem-prawn
     SUBDIR += rubygem-prawn-core
