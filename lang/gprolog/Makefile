@@ -4,7 +4,8 @@
 PORTNAME=	gprolog
 PORTVERSION=	1.4.1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.gprolog.org/
+# MASTER_SITES=	http://www.gprolog.org/
+MASTER_SITES=	http://gprolog.univ-paris1.fr/old_versions/
 
 MAINTAINER=	nsmoot@make.sh
 COMMENT=	Free Prolog compiler
