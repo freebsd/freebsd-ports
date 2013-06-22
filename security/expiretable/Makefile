@@ -1,12 +1,9 @@
-# New ports collection makefile for: expiretable
-# Date created:		7 January 2006
-# Whom:			Cristiano Deana <cris@gufi.org>
-#
+# Created by: Cristiano Deana <cris@gufi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	expiretable
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://expiretable.fnord.se/
 
