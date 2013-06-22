@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkwave
-PORTVERSION=	3.3.46
+PORTVERSION=	3.3.47
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
@@ -43,7 +43,7 @@ MAN1=	ghwdump.1 gtkwave.1 evcd2vcd.1 fst2vcd.1 fstminer.1 lxt2miner.1 \
 MAN5=	gtkwaverc.5
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
