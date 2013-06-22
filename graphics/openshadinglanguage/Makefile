@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openshadinglanguage
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -22,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenShadingLanguage
 GH_TAGNAME=	Release-${PORTVERSION}
-GH_COMMIT=	d722707
+GH_COMMIT=	0ae2fe3
 
 WRKSRC=		${WRKDIR}/imageworks-OpenShadingLanguage-${GH_COMMIT}/src
 
