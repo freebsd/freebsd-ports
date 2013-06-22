@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90020
+PORTVERSION=	5.90040
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -14,8 +14,15 @@ COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-# Do not add p5-Catalyst-Engine-PSGI and p5-CatalystX-LeakChecker to TEST_DEPENDS to avoid cyclic dependencies in tinderbox
+# Do not add the following ports to TEST_DEPENDS to avoid cyclic dependencies in tinderbox:
+# - devel/p5-Test-WWW-Mechanize-Catalyst
+# - www/p5-Catalyst-Engine-PSGI
+# - www/p5-Catalyst-Plugin-Params-Nested
+# - www/p5-CatalystX-LeakChecker
+#
+# DEPENDS: Devel::InnerPackage was first released with perl v5.8.9 and removed from v5.19.0
 BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
+		p5-Catalyst-DispatchType-Regex>=5.90.021:${PORTSDIR}/www/p5-Catalyst-DispatchType-Regex \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
 		p5-Class-Load>=0.12:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
@@ -46,14 +53,16 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Tree-Simple>=1.15:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=1.36:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=5.837:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.23:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module
+		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes
 
@@ -75,9 +84,9 @@ MAN3=	Catalyst.3 \
 	Catalyst::DispatchType::Default.3 \
 	Catalyst::DispatchType::Index.3 \
 	Catalyst::DispatchType::Path.3 \
-	Catalyst::DispatchType::Regex.3 \
 	Catalyst::Dispatcher.3 \
 	Catalyst::Engine.3 \
+	Catalyst::Engine::HTTP.3 \
 	Catalyst::EngineLoader.3 \
 	Catalyst::Exception.3 \
 	Catalyst::Exception::Basic.3 \
@@ -87,6 +96,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::Log.3 \
 	Catalyst::Model.3 \
 	Catalyst::PSGI.3 \
+	Catalyst::Plugin::Unicode::Encoding.3 \
 	Catalyst::Request.3 \
 	Catalyst::Request::Upload.3 \
 	Catalyst::Response.3 \
@@ -107,4 +117,11 @@ MAN3=	Catalyst.3 \
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501800
+BUILD_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>
