@@ -45,9 +45,9 @@ bin/sstablescrub
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/util.pyc
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-1.1.11.jar
-%%DATADIR%%/lib/apache-cassandra-clientutil-1.1.11.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-1.1.11.jar
+%%DATADIR%%/lib/apache-cassandra-1.1.12.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-1.1.12.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-1.1.12.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
