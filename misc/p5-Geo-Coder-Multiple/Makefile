@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Geo-Coder-Multiple
-# Date created:				12th March, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by:Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Coder-Multiple
 PORTVERSION=	0.60
