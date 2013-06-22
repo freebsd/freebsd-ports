@@ -5,6 +5,10 @@ PORTNAME=	litecoin
 PORTVERSION=	0.6.3c
 CATEGORIES=	net-p2p finance
 
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~swills/ \
+		GH
+
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Software
 
