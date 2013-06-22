@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.flexget.com/archive/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FlexGet-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Program to automate downloading from different sources
 
 LICENSE=	MIT
