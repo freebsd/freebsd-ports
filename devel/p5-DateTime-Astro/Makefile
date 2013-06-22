@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Astro
-# Date created:		2011-11-29
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Astro
 PORTVERSION=	0.99.999
@@ -19,10 +15,7 @@ COMMENT=	Functions For Astromical Calendars
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
 LIB_DEPENDS=	mpfr:${PORTSDIR}/math/mpfr
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
-TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
@@ -32,9 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAN3=		DateTime::Astro.3 \
 		DateTime::Event::SolarTerm.3
 
-.include <bsd.port.pre.mk>
-
 post-configure:
 	@${REINPLACE_CMD} -e '/^INC = / s|$$| -I${LOCALBASE}/include|' ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
