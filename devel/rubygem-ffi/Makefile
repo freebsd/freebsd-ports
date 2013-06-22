@@ -1,22 +1,19 @@
-# New ports collection makefile for:   rubygem-ffi
-# Date created:    28 April 2010
-# Whom:	Christoph Kick
-#
+# Created by: Christoph Kick
 # $FreeBSD$
-#
 
 PORTNAME=	ffi
-PORTVERSION=	1.0.11
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension for dynamic libraries & binding functions
 
+LICENSE=	LGPL3
+
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
