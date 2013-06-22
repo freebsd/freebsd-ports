@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-pdf-poppler
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 
@@ -15,8 +15,11 @@ RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 
 USE_GNOME=	glib20 gtk20
 USE_GMAKE=	yes
+USES=		desktop-file-utils
 
-PLIST_FILES=	lib/zathura/pdf.so
-PLIST_DIRSTRY=	lib/zathura
+PLIST_FILES=	lib/zathura/pdf.so \
+		share/applications/zathura-pdf-poppler.desktop
+PLIST_DIRSTRY=	lib/zathura \
+		share/applications
 
 .include <bsd.port.mk>
