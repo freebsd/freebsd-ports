@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	murmur
-PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTVERSION=	1.2.4
 CATEGORIES=	audio net
 MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
@@ -43,7 +42,7 @@ CONFIG+=	no-dbus
 .endif
 
 .if ${PORT_OPTIONS:MBONJOUR}
-LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 .else
 CONFIG+=	no-bonjour
 .endif
