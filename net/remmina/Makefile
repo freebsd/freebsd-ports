@@ -54,7 +54,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libssh.so.4:${PORTSDIR}/security/libssh
 LDFLAGS+=	-fstack-protector
 .endif
 .else
-CMAKE_ARGS+=	-DWITH_SSH=OFF
+CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
