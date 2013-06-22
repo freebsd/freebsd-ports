@@ -27,7 +27,7 @@ load_rc_config ${name}
 command=%%PREFIX%%/sbin/sshd
 extra_commands="configtest reload keygen"
 start_precmd="${name}_checks"
-reload_precmd="${name}_configtest"
+reload_precmd="${name}_checks"
 restart_precmd="${name}_checks"
 configtest_cmd="${name}_configtest"
 keygen_cmd="${name}_keygen"
