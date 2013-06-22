@@ -739,6 +739,7 @@
     SUBDIR += p5-Catalyst-Controller-RateLimit
     SUBDIR += p5-Catalyst-Controller-RequestToken
     SUBDIR += p5-Catalyst-Devel
+    SUBDIR += p5-Catalyst-DispatchType-Regex
     SUBDIR += p5-Catalyst-Engine-Apache
     SUBDIR += p5-Catalyst-Engine-HTTP-Prefork
     SUBDIR += p5-Catalyst-Engine-PSGI

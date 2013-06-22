@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/DispatchType/LocalRegex.pm
+%%SITE_PERL%%/Catalyst/DispatchType/LocalRegexp.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Regexp.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
+@dirrmtry %%SITE_PERL%%/Catalyst
