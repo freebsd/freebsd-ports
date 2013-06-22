@@ -13,7 +13,7 @@ lib/cmake/Libkolab/LibkolabTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Libkolab/LibkolabTargets.cmake
 lib/libkolab.so
 lib/libkolab.so.0
-lib/libkolab.so.0.4.1
+lib/libkolab.so.0.4.2
 @dirrm lib/cmake/Libkolab
 @dirrmtry lib/cmake
 @dirrm include/kolab
