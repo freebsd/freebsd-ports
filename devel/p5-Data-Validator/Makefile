@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Validator
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,14 +18,22 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Data::Validator.3 \
 		Data::Validator::Role::AllowExtra.3 \
 		Data::Validator::Role::Croak.3 \
 		Data::Validator::Role::Method.3 \
+		Data::Validator::Role::NoRestricted.3 \
 		Data::Validator::Role::NoThrow.3 \
 		Data::Validator::Role::Sequenced.3 \
 		Data::Validator::Role::StrictSequenced.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-CPAN-Meta>=0:${PORTSDIR}/devel/p5-CPAN-Meta
+RUN_DEPENDS+=	p5-CPAN-Meta>=0:${PORTSDIR}/devel/p5-CPAN-Meta
+.endif
+
+.include <bsd.port.post.mk>
