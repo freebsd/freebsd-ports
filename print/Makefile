@@ -278,6 +278,7 @@
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
+    SUBDIR += rubygem-ttfunk
     SUBDIR += scribus
     SUBDIR += scribus-devel
     SUBDIR += sgf2tex
