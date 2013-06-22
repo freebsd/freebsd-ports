@@ -1962,7 +1962,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nvidia-driver</name>
-	<range><gt>304.88</gt><lt>310.44</lt></range>
+	<range><ge>310.14</ge><lt>310.44</lt></range>
 	<range><ge>195.22</ge><lt>304.88</lt></range>
       </package>
     </affects>
