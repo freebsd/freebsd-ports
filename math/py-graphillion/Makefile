@@ -3,7 +3,7 @@
 
 PORTNAME=	graphillion
 PORTVERSION=	0.93
-CATEGORIES=	graphics python
+CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
