@@ -1,5 +1,5 @@
---- Makefile.am.o	2012-03-09 15:28:13.000000000 -0500
-+++ Makefile.am	2012-03-09 15:29:20.000000000 -0500
+--- Makefile.am.orig	2011-07-29 16:04:03.000000000 +0200
++++ Makefile.am	2013-06-21 19:58:35.000000000 +0200
 @@ -6,6 +6,9 @@
  xsessiondir=$(xsesspath)
  xsession_DATA = LXDE.desktop

@@ -1,5 +1,5 @@
---- Makefile.in.o	2012-03-09 15:48:58.000000000 -0500
-+++ Makefile.in	2012-03-09 15:51:53.000000000 -0500
+--- Makefile.in.orig	2011-07-29 16:12:19.000000000 +0200
++++ Makefile.in	2013-06-21 21:33:42.000000000 +0200
 @@ -79,7 +79,7 @@
  	"$(DESTDIR)$(imagesdir)" "$(DESTDIR)$(lxpaneldir)" \
  	"$(DESTDIR)$(lxpanel_paneldir)" "$(DESTDIR)$(openboxdir)" \
@@ -18,7 +18,7 @@
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
  AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
-@@ -214,12 +214,15 @@
+@@ -214,14 +214,17 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  xsesspath = @xsesspath@
@@ -32,9 +32,22 @@
 +xdgdir = $(xdgpath)
 +xdg_DATA = lxde-logout.desktop
  defaultsdir = $(sysconfdir)/xdg/lxsession/LXDE
- defaults_DATA = autostart desktop.conf
+-defaults_DATA = autostart desktop.conf
++defaults_DATA = autostart
  wallpapersdir = $(datadir)/lxde/wallpapers
-@@ -508,6 +511,26 @@
+ wallpapers_DATA = \
+ 	wallpapers/lxde_blue.jpg \
+@@ -243,8 +246,7 @@
+ 	openbox/menu.xml
+ 
+ pcmanfmdir = $(sysconfdir)/xdg/pcmanfm/LXDE
+-pcmanfm_DATA = \
+-	pcmanfm/pcmanfm.conf
++pcmanfm_DATA =
+ 
+ EXTRA_DIST = \
+ 	autostart \
+@@ -508,6 +510,26 @@
  	test -n "$$files" || exit 0; \
  	echo " ( cd '$(DESTDIR)$(xsessiondir)' && rm -f" $$files ")"; \
  	cd "$(DESTDIR)$(xsessiondir)" && rm -f $$files
@@ -61,7 +74,7 @@
  
  # This directory's subdirectories are mostly independent; you can cd
  # into them and run `make' without going through this Makefile.
-@@ -824,7 +847,7 @@
+@@ -824,7 +846,7 @@
  all-am: Makefile $(SCRIPTS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -70,7 +83,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-recursive
-@@ -877,7 +900,7 @@
+@@ -877,7 +899,7 @@
  install-data-am: install-defaultsDATA install-imagesDATA \
  	install-lxpanelDATA install-lxpanel_panelDATA \
  	install-openboxDATA install-pcmanfmDATA install-wallpapersDATA \
@@ -79,7 +92,7 @@
  
  install-dvi: install-dvi-recursive
  
-@@ -927,7 +950,7 @@
+@@ -927,7 +949,7 @@
  	uninstall-imagesDATA uninstall-lxpanelDATA \
  	uninstall-lxpanel_panelDATA uninstall-openboxDATA \
  	uninstall-pcmanfmDATA uninstall-wallpapersDATA \
@@ -88,7 +101,7 @@
  
  .MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) ctags-recursive \
  	install-am install-strip tags-recursive
-@@ -945,7 +968,7 @@
+@@ -945,7 +967,7 @@
  	install-info-am install-lxpanelDATA install-lxpanel_panelDATA \
  	install-man install-openboxDATA install-pcmanfmDATA \
  	install-pdf install-pdf-am install-ps install-ps-am \
@@ -97,7 +110,7 @@
  	installcheck installcheck-am installdirs installdirs-am \
  	maintainer-clean maintainer-clean-generic mostlyclean \
  	mostlyclean-generic pdf pdf-am ps ps-am tags tags-recursive \
-@@ -953,7 +976,7 @@
+@@ -953,7 +975,7 @@
  	uninstall-defaultsDATA uninstall-imagesDATA \
  	uninstall-lxpanelDATA uninstall-lxpanel_panelDATA \
  	uninstall-openboxDATA uninstall-pcmanfmDATA \
