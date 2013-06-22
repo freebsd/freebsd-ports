@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -41,11 +40,14 @@ MAN8=	extlookup2hiera.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
 	puppet-resource_type.8 puppet-secret_agent.8 puppet-status.8 \
 	puppet.8
 
-OPTIONS_DEFINE=		MONGREL PACKAGE_ORIGIN PACKAGE_ROOT
+OPTIONS_DEFINE=		MONGREL
 OPTIONS_DEFAULT=	PACKAGE_ORIGIN
+OPTIONS_SINGLE=         PATCHES
+OPTIONS_SINGLE_PATCHES=	PACKAGE_ORIGIN PACKAGE_ROOT
 MONGREL_DESC=		Run puppet server as a mongrel service
 PACKAGE_ORIGIN_DESC=	Use port origin as package name
 PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
+PATCHES_DESC=           Optional exclusive patches
 
 .include <bsd.port.options.mk>
 
