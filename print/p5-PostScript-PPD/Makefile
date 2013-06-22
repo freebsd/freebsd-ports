@@ -20,9 +20,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		PostScript::PPD.3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/lj4515.ppd/d' ${WRKSRC}/t/30_difficult.t
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
