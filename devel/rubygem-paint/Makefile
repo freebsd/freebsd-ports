@@ -5,7 +5,7 @@ PORTVERSION=	0.8.6
 CATEGORIES=	devel
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Terminal painter
 
 USE_RUBY=	yes
