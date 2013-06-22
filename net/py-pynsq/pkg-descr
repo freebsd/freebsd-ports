@@ -1,0 +1,8 @@
+The official Python client library for NSQ
+
+It provides high-level nsq.Reader and nsq.Writer classes for building
+consumers and producers and two low-level modules for both sync and async
+communication over the NSQ Protocol (if you wanted to write your own
+high-level functionality).
+
+WWW: https://github.com/bitly/pynsq
