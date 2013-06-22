@@ -1,7 +1,7 @@
 **************************************************
 *                   WARNING!                     *
 *                                                *
-* Make sure you've enough socker buffer size.    *
+* Make sure you've enough socket buffer size.    *
 * Consider increasing kern.ipc.maxsockbuf adding *
 * at least the following sysctl setting to       *
 * /etc/sysctl.conf:                              *

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scannedonly
-# Date created:				20 January 2011
-# Whom:					girald@etcom.ufrgs.br
-#
+# Created by: girald@etcom.ufrgs.br
 # $FreeBSD$
-#
 
 PORTNAME=	scannedonly
 PORTVERSION=	0.21
@@ -37,39 +33,11 @@ SAMBA_VERSION?=	3.6
 
 SAMBA_PORT?=	net/samba${SAMBA_VERSION:C/([0-9]*)\.([0-9]*).*/\1\2/}
 
-# If samba34 is installed, we need the sources from samba.
-# We don't if samba3[56] is installed.
-# http://olivier.sessink.nl/scannedonly/faq.html
-.if ${SAMBA_PORT} == net/samba34
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${SAMBA_PORT}:configure
-CONFIGURE_ARGS+=\
-	--with-samba-source=${WRKDIR}/../../../${SAMBA_PORT}/work/samba-${SAMBA_VERSION}/source3
-USE_AUTOTOOLS=	autoconf
-.endif
-
 PLIST_FILES=	sbin/scannedonlyd_clamav \
 		bin/scannedonly_prescan
-.if ${SAMBA_PORT} == net/samba34
-PLIST_FILES+=	lib/samba/vfs/scannedonly.so
-PLIST_DIRS=	lib/samba/vfs \
-		lib/samba
-.endif
 MAN8=		${PORTNAME}_prescan.8 \
 		${PORTNAME}d_clamav.8
 MANCOMPRESSED=	yes
-
-# Hackery to avoid death for non-obvious reasons if detected
-# SAMBA_VERSION doesn't match the PORTVERSION of samba in ports
-pre-everything::
-.if ${SAMBA_PORT} == net/samba34
-	@if [ "$$(${MAKE} -C ${PORTSDIR}/${SAMBA_PORT} -V PORTVERSION)" \
-		!= "${SAMBA_VERSION}" ] ; \
-	    then ${ECHO_MSG} -n "==> Bailing.  Version of Samba on system is "; \
-		${ECHO_MSG} "${SAMBA_VERSION}, which does not match" ; \
-		${ECHO_MSG} "    that in ports.  Please update Samba and try again." ; \
-		${FALSE} ; \
-	    fi
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
