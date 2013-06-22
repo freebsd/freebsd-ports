@@ -286,14 +286,13 @@ SEDLIST+=	-e 's,^(DBMLIB=),\# \1,'
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
-.if ${PORT_OPTIONS:MMYSQL_VER} && ${WITH_MYSQL_VER:L} != "auto"
-WANT_MYSQL_VER=	${WITH_MYSQL_VER}
-.else
-.undef WITH_MYSQL_VER
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL}
+.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:L} == "auto"
+IGNORE=		WITH_MYSQL_VER set to "${WITH_MYSQL_VER}" is no longer supported.
+IGNORE+=	Just don't set WITH_MYSQL_VER if you want to use system-default version
+.else
 USE_MYSQL=	yes
+.endif
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include/mysql,' \
 		-e 's,^\# (LOOKUP_MYSQL=),\1,'
