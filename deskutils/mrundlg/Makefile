@@ -9,7 +9,8 @@ PORTNAME=	mrundlg
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://matt.sixxgate.com/files/
+# MASTER_SITES=	http://matt.sixxgate.com/files/
+MASTER_SITES=	${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	An application / program launcher for Motif
