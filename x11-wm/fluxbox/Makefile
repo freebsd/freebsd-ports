@@ -9,7 +9,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	beat@FreeBSD.org
-COMMENT=	A small and fast window manager based on BlackBox
+COMMENT=	Small and fast window manager based on BlackBox
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 
@@ -18,21 +20,23 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
+PORTDOCS=		AUTHORS ChangeLog NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 \
 		startfluxbox.1 fluxbox-remote.1
 MAN5=		fluxbox-apps.5 fluxbox-keys.5 fluxbox-menu.5 \
 		fluxbox-style.5
 DOCSVERSION=	20060629
 
-OPTIONS_DEFINE=	DOCS DOCHTML PDF DEBUG GNOME IMLIB2 XINERAMA \
-		XRENDER NLS SLIT REMEMBER TOOLBAR
-OPTIONS_DEFAULT=	XRENDER SLIT REMEMBER TOOLBAR
+OPTIONS_DEFINE=	DOCS DOCHTML PDFDOCS DEBUG GNOME IMLIB2 XINERAMA \
+		XRENDER NLS SLIT SYSTRAY REMEMBER TOOLBAR
+OPTIONS_DEFAULT=	XRENDER SLIT SYSTRAY REMEMBER TOOLBAR
 DOCHTML_DESC=	Install html documentation
-XRENDER_DESC=	Enable xrender support
-SLIT_DESC=	Enable slit feature
+PDFDOCS_DESC=	Build and install PDF documentation
 REMEMBER_DESC=	Enable remember feature
+SLIT_DESC=	Enable slit feature
+SYSTRAY_DESC=	Enable systray feature
 TOOLBAR_DESC=	Enable toolbar feature
+XRENDER_DESC=	Enable xrender support
 
 .include <bsd.port.options.mk>
 
@@ -46,19 +50,19 @@ MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:html \
 			http://people.freebsd.org/~mezz/distfiles/:html
 DISTFILES+=		fb-doc-mfhtml-${DOCSVERSION}.tgz:html
 EXTRACT_ONLY+=		fb-doc-mfhtml-${DOCSVERSION}.tgz
-PLIST_SUB+=		DOCHTML:=""
+PLIST_SUB+=		DOCHTML=""
 .else
-PLIST_SUB+=		DOCHTML:="@comment "
+PLIST_SUB+=		DOCHTML="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPDF}
+.if ${PORT_OPTIONS:MPDFDOCS}
 # http://fluxbox.org/docbook/en/pdf/
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:pdf \
 			http://people.freebsd.org/~mezz/distfiles/:pdf
 DISTFILES+=		fluxbook-${DOCSVERSION}.pdf:pdf
-PLIST_SUB+=		DOCPDF:=""
+PLIST_SUB+=		DOCPDF=""
 .else
-PLIST_SUB+=		DOCPDF:="@comment "
+PLIST_SUB+=		DOCPDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIMLIB2}
@@ -78,12 +82,12 @@ USES+=			iconv
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib -liconv"
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=		NLS:=""
+PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS:="@comment "
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREMEMBER}
@@ -96,6 +100,12 @@ CONFIGURE_ARGS+=	--disable-remember
 CONFIGURE_ARGS+=	--enable-slit
 .else
 CONFIGURE_ARGS+=	--disable-slit
+.endif
+
+.if ${PORT_OPTIONS:MSYSTRAY}
+CONFIGURE_ARGS+=	--enable-systray
+.else
+CONFIGURE_ARGS+=	--disable-systray
 .endif
 
 .if ${PORT_OPTIONS:MTOOLBAR}
@@ -121,10 +131,9 @@ CONFIGURE_ARGS+=	--disable-gnome
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/util/fluxbox-generate_menu.in
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/util/fbsetbg
-.if empty(PORT_OPTIONS:MNLS)
+		${WRKSRC}/util/fluxbox-generate_menu.in ${WRKSRC}/util/fbsetbg
+
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
 		${WRKSRC}/configure
 .endif
@@ -132,19 +141,20 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-.if ${PORT_OPTIONS:MPDF}
+
+.if ${PORT_OPTIONS:MPDFDOCS}
 	@${MKDIR} ${DOCSDIR}/pdf
-	@${INSTALL_DATA} ${DISTDIR}/fluxbook-${DOCSVERSION}.pdf \
+	${INSTALL_DATA} ${DISTDIR}/fluxbook-${DOCSVERSION}.pdf \
 		${DOCSDIR}/pdf/
 .endif
+
 .if ${PORT_OPTIONS:MDOCHTML}
 	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKDIR}/html/*.css ${DOCSDIR}/html/
-	@${INSTALL_DATA} ${WRKDIR}/html/*.html ${DOCSDIR}/html/
+. for h in *.css *.html
+	(cd ${WRKDIR}/html && ${INSTALL_DATA} ${h} ${DOCSDIR}/html)
+. endfor
 .endif
 
 .include <bsd.port.post.mk>
