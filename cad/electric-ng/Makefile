@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	electric
-PORTVERSION=	9.03
+PORTVERSION=	9.04
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.staticfreesoft.com/:1 \
@@ -14,7 +14,9 @@ DISTFILES+=	${PORTNAME}Binary-${PORTVERSION}.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	danilogondolfo@gmail.com
-COMMENT=	A sophisticated VLSI design system
+COMMENT=	Sophisticated VLSI design system
+
+LICENSE=	GPLv3
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
@@ -36,7 +38,7 @@ MANUAL_DESC=	Install documentation
 OPTIONS_DEFAULT=	IRSIM MANUAL 3D
 
 JARFILE=	${PORTNAME}Binary-${PORTVERSION}.jar
-J3DLIB=		${LOCALBASE}/share/java/java3d/jar/j3dcore.jar
+J3DLIB=		${JAVA_HOME}/jre/lib/ext/j3dcore.jar
 PLUGINDIR=	${PREFIX}/libexec/${PORTNAME}${PKGNAMESUFFIX}
 
 DESKTOP_ENTRIES="Electric-NG" "${COMMENT}" "${PORTNAME}${PKGNAMESUFFIX}" \
@@ -56,19 +58,19 @@ RUN_DEPENDS+=	${J3DLIB}:${PORTSDIR}/java/java3d
 
 .if ${PORT_OPTIONS:MIRSIM}
 RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:${PORTSDIR}/java/jmf
-PLUGINS+=	electricSFS-9.03
-LIBFILES+=	${PREFIX}/libexec/${PORTNAME}${PKGNAMESUFFIX}/electricSFS-9.03.jar
+PLUGINS+=	electricSFS-${PORTVERSION}
+LIBFILES+=	${PREFIX}/libexec/${PORTNAME}${PKGNAMESUFFIX}/electricSFS-${PORTVERSION}.jar
 .endif
 
 .if ${PORT_OPTIONS:MMANUAL}
-DISTFILES+=	ElectricManual-9.03.pdf:2
-PLIST_FILES+=	share/doc/${PORTNAME}${PKGNAMESUFFIX}/ElectricManual-9.03.pdf
+DISTFILES+=	ElectricManual-${PORTVERSION}.pdf:2
+PLIST_FILES+=	share/doc/${PORTNAME}${PKGNAMESUFFIX}/ElectricManual-${PORTVERSION}.pdf
 PLIST_DIRS+=	share/doc/${PORTNAME}${PKGNAMESUFFIX}
 .endif
 
 .if defined(PLUGINS)
-DISTFILES+=	electricSFS-9.03.jar:1
-PLIST_FILES+=	libexec/${PORTNAME}${PKGNAMESUFFIX}/electricSFS-9.03.jar
+DISTFILES+=	electricSFS-${PORTVERSION}.jar:1
+PLIST_FILES+=	libexec/${PORTNAME}${PKGNAMESUFFIX}/electricSFS-${PORTVERSION}.jar
 PLIST_DIRS+=	libexec/${PORTNAME}${PKGNAMESUFFIX}
 .endif
 
@@ -80,7 +82,7 @@ do-install:
 	@${MKDIR} ${JAVAJARDIR}
 .if ${PORT_OPTIONS:MMANUAL}
 	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
-	${INSTALL_DATA} ${DISTDIR}/ElectricManual-9.03.pdf ${DOCSDIR}${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${DISTDIR}/ElectricManual-${PORTVERSION}.pdf ${DOCSDIR}${PKGNAMESUFFIX}
 .endif
 	${INSTALL_DATA} ${DISTDIR}/${JARFILE} ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/electric-ng ${PREFIX}/bin
@@ -91,7 +93,7 @@ do-install:
 .if defined(PLUGINS)
 	# Install plugins
 	@${MKDIR} ${PLUGINDIR}/
-	${INSTALL_DATA} ${DISTDIR}/electricSFS-9.03.jar ${PLUGINDIR}/
+	${INSTALL_DATA} ${DISTDIR}/electricSFS-${PORTVERSION}.jar ${PLUGINDIR}/
 .endif
 
 .include <bsd.port.mk>
