@@ -1,9 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20130408
+PORTVERSION=	20130518
 CATEGORIES=	devel ruby
-MASTER_SITES=	GH
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~swills/ \
+		GH
 
 MAINTAINER=	fmb@onibox.net
 COMMENT=	Compile and install different ruby versions
@@ -29,7 +31,7 @@ RUN_DEPENDS+=	rbenv:${PORTSDIR}/devel/rbenv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson
-GH_COMMIT=	5273fb3
+GH_COMMIT=	1b170ee
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
