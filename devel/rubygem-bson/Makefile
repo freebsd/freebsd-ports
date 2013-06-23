@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=       bson
-PORTVERSION=	1.8.6
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
