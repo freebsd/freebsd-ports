@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-couchrest
-# Date created:				20 June 2011
-# Whom:						Mike Carlson (carlson39@llnl.gov)
-#
+# Created by: Mike Carlson (carlson39@llnl.gov)
 # $FreeBSD$
 
 PORTNAME=	couchrest
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
