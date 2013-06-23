@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-jdbc-mysql
-# Date created:				22 July 2008
-# Whom:					Alexander Logvinov <ports@logvinov,com>
-#
+# Created by: Alexander Logvinov <ports@logvinov,com>
 # $FreeBSD$
 
 PORTNAME=	jdbc-mysql
-PORTVERSION=	5.0.4
+PORTVERSION=	5.1.25
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
