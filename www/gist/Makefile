@@ -7,7 +7,7 @@
 
 PORTNAME=	gist
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www net
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
@@ -26,8 +26,14 @@ USE_RUBY=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/gist
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.9
+RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gist ${PREFIX}/bin/gist
 	${INSTALL_MAN} ${WRKSRC}/man/gist.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
