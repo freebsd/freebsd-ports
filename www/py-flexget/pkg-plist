@@ -80,6 +80,9 @@
 %%PYTHON_SITELIBDIR%%/flexget/plugins/download/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/download/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/download/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/download/ftp_download.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/download/ftp_download.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/download/ftp_download.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/est_released.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/est_released.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/est_released.pyo
@@ -236,6 +239,9 @@
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/find.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/find.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/find.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/ftp_list.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/ftp_list.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input/ftp_list.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/gen_series.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/gen_series.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input/gen_series.pyo
@@ -530,6 +536,9 @@
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_kat.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_kat.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_kat.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/search_newznab.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/search_newznab.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/search_newznab.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_rss.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_rss.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/search_rss.pyo
