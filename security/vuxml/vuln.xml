@@ -51,6 +51,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="01cf67b3-dc3b-11e2-a6cd-c48508086173">
+    <topic>cURL library -- heap corruption in curl_easy_unescape</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.7</ge><lt>7.31.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL developers report:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20130622.html">
+	  <p>libcurl is vulnerable to a case of bad checking of the
+	    input data which may lead to heap corruption.</p>
+	  <p>The function curl_easy_unescape() decodes URL-encoded
+	    strings to raw binary data. URL-encoded octets are
+	    represented with %HH combinations where HH is a two-digit
+	    hexadecimal number.  The decoded string is written to an
+	    allocated memory area that the function returns to the
+	    caller.</p>
+	  <p>The function takes a source string and a length
+	    parameter, and if the length provided is 0 the function will
+	    instead use strlen() to figure out how much data to
+	    parse.</p>
+	  <p>The "%HH" parser wrongly only considered the case where a
+	    zero byte would terminate the input.  If a length-limited
+	    buffer was passed in which ended with a '%' character which
+	    was followed by two hexadecimal digits outside of the buffer
+	    libcurl was allowed to parse alas without a terminating
+	    zero, libcurl would still parse that sequence as well.  The
+	    counter for remaining data to handle would then be decreased
+	    too much and wrap to become a very large integer and the
+	    copying would go on too long and the destination buffer that
+	    is allocated on the heap would get overwritten.</p>
+	  <p>We consider it unlikely that programs allow user-provided
+	    strings unfiltered into this function.  Also, only the not
+	    zero-terminated input string use case is affected by this
+	    flaw.  Exploiting this flaw for gain is probably possible for
+	    specific circumstances but we consider the general risk for
+	    this to be low.</p>
+	  <p>The curl command line tool is not affected by this
+	    problem as it doesn't use this function.</p>
+	  <p>There are no known exploits available at this time.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2174</cvename>
+      <url>http://curl.haxx.se/docs/adv_20130622.html</url>
+    </references>
+    <dates>
+      <discovery>2013-06-22</discovery>
+      <entry>2013-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b162b218-c547-4ba2-ae31-6fdcb61bc763">
     <topic>puppet -- Unauthenticated Remote Code Execution Vulnerability</topic>
     <affects>
