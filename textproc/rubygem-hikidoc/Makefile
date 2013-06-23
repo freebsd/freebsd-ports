@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hikidoc
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.6
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
