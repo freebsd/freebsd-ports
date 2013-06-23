@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	midipp
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
