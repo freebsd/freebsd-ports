@@ -5,12 +5,14 @@ PORTNAME=	minicom
 PORTVERSION=	2.6.2
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3869/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3869/ \
+		http://alioth.debian.org/frs/download.php/file/3869/ \
+		http://fossies.org/linux/misc/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
-OPTIONS_DEFINE=	LRZSZ
+OPTIONS_DEFINE=	DOCS NLS LRZSZ
 OPTIONS_DEFAULT=LRZSZ
 LRZSZ_DESC=	Install X/Y/ZMODEM protocol handlers
 
@@ -21,8 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock \
-			--enable-dfl-port=${MINICOM_DEFAULT_PORT} \
-			LDFLAGS="${LDFLAGS}"
+			--enable-dfl-port=/dev/cuau0
 MAKE_ARGS+=	LIBS+="-liconv -lcurses"
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
@@ -42,12 +43,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800045
-MINICOM_DEFAULT_PORT?=	/dev/cuad0
-.else
-MINICOM_DEFAULT_PORT?=	/dev/cuau0
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
