@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-activerecord-jdbc-adapter
-# Date created:				22 July 2008
-# Whom:					Alexander Logvinov <ports@logvinov,com>
-#
+# Created by: Alexander Logvinov <ports@logvinov,com>
 # $FreeBSD$
 
 PORTNAME=	activerecord-jdbc-adapter
-PORTVERSION=	0.9.2
+PORTVERSION=	1.2.9
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
