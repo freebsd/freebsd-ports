@@ -4398,3 +4398,4 @@ databases/py-MySQLdb41||2013-06-19|Depends on databases/mysql41-client, which wa
 databases/py-MySQLdb50||2013-06-19|Depends on databases/mysql50-client, which was removed
 emulators/fceu-server|emulators/fceux|2013-06-21|Has expired: Replaced by emulators/fceux
 graphics/py-graphillion|math/py-graphillion|2013-06-22|Correct category assignment
+net-im/mikutter003||2013-06-23|Obsolete: Use net-im/mikutter instead of this

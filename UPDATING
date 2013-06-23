@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130623:
+  AFFECTS: users of net-im/mikutter003
+  AUTHOR: tota@FreeBSD.org
+
+  net-im/mikutter003 has been removed from the ports tree because the
+  Twitter API version 1.0 was deprecated on 2013-05-07 and mikutter003,
+  which uses the API 1.0, won't work.
+  Please consider using net-im/mikutter instead of this.
+
+  1. deinstall mikutter003
+  2. upgrade Ruby to 1.9( or later) (see the entry 20130527)
+  3. install net-im/mikutter
+
+20130623:
   AFFECTS: users of www/magento
   AUTHOR: melvyn@magemana.nl
 

@@ -1,15 +1,11 @@
---- mikutter.rb.orig	2012-10-23 09:12:05.000000000 +0900
-+++ mikutter.rb	2012-12-02 09:51:43.000000000 +0900
-@@ -12,11 +12,7 @@
+--- mikutter.rb.orig	2013-06-12 02:55:23.699616516 +0000
++++ mikutter.rb	2013-06-12 02:58:14.554656063 +0000
+@@ -11,7 +11,7 @@
+ You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
  
  =end
+-mikutter_directory = File.expand_path(File.dirname(__FILE__))
++mikutter_directory = '%%RUBY_SITELIBDIR%%/mikutter'
  
--if File.symlink?($0)
--  Dir.chdir(File.join(File.dirname(File.readlink($0)), 'core'))
--else
--  Dir.chdir(File.join(File.dirname($0), 'core'))
--end
-+Dir.chdir('%%RUBY_SITELIBDIR%%/mikutter/core')
- 
- Thread.abort_on_exception = true
- ENV['LIBOVERLAY_SCROLLBAR'] = '0'
+ begin
+   ENV['BUNDLE_GEMFILE'] = File.expand_path(File.join(File.dirname($0), "Gemfile"))

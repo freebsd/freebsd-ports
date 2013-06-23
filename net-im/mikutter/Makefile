@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	0.2.0.1089
+PORTVERSION=	0.2.2.1264
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -13,33 +13,26 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Simple, powerful, and moeful Twitter client
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-INSTALL_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo \
+RUN_DEPENDS=	rubygem-gtk2>=1.5.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
+		graphics/rubygem-cairo>=1.10.0:${PORTSDIR}/graphics/rubygem-cairo \
 		rubygem-addressable>=2.2.7:${PORTSDIR}/www/rubygem-addressable \
-		${RUBY_PKGNAMEPREFIX}hmac>=0.4.0:${PORTSDIR}/security/ruby-hmac \
-		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure \
+		rubygem-hmac>=0.4.0:${PORTSDIR}/security/rubygem-hmac \
+		rubygem-json>=1.8.0:${PORTSDIR}/devel/rubygem-json \
 		${RUBY_SITELIBDIR}/memoize.rb:${PORTSDIR}/devel/ruby-memoize \
-		rubygem-oauth>=0:${PORTSDIR}/net/rubygem-oauth \
+		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
 		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch \
 		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 USE_RUBY=	yes
-RUBY_VER=	1.9
 NO_BUILD=	yes
 
-CONFLICTS=	mikutter-0.0.3.*
-
+RUBY_REQUIRE=	Ruby >= 193
 RUBY_SHEBANG_FILES=	mikutter.rb \
-			core/autotag.rb \
-			core/chi.rb \
-			core/initialize.rb \
-			core/lib/piapro.rb \
-			core/miku/miku.rb
+			core/miku/miku.rb \
+			devel/makechi.rb
 
 SUB_FILES=	mikutter.desktop
 SUB_LIST=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR}
@@ -54,8 +47,8 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
-IGNORE=	requires RUBY_DEFAULT_VER=${RUBY_VER}
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 1.9.3 or later
 .endif
 
 .if ${PORT_OPTIONS:MHTTPCLIENT}
@@ -69,29 +62,18 @@ RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" \
 		${WRKSRC}/mikutter.rb
-	@${RM} -rf ${WRKSRC}/core/lib/json*
-	@${RM} -rf ${WRKSRC}/core/lib/oauth*
-	@${RM} -rf ${WRKSRC}/core/lib/ruby-bsearch-1.5
-	@${RM} -rf ${WRKSRC}/vendor/addressable
-	@${RM} -rf ${WRKSRC}/vendor/bsearch*
-	@${RM} -rf ${WRKSRC}/vendor/hmac*
-	@${RM} -rf ${WRKSRC}/vendor/json*
-	@${RM} -rf ${WRKSRC}/vendor/memoize.rb
-	@${RM} -rf ${WRKSRC}/vendor/oauth*
-	@${RM} -rf ${WRKSRC}/vendor/ruby-bsearch-1.5
-	@${RM} -rf ${WRKSRC}/vendor/typed-array*
+	@${RM} -r ${WRKSRC}/vendor
 
 do-install:
-	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/mikutter.rb ${PREFIX}/bin/mikutter
-	@cd ${INSTALL_WRKSRC} \
+	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/mikutter.rb ${PREFIX}/bin/mikutter
+	cd ${INSTALL_WRKSRC} \
 		&& ${COPYTREE_SHARE} core ${RUBY_SITELIBDIR}/mikutter \
-		&& ${COPYTREE_SHARE} plugin ${RUBY_SITELIBDIR}/mikutter \
-		&& ${COPYTREE_SHARE} vendor ${RUBY_SITELIBDIR}/mikutter
+		&& ${COPYTREE_SHARE} plugin ${RUBY_SITELIBDIR}/mikutter
 	@${MKDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${PREFIX}/share/applications/
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${PREFIX}/share/applications/
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 x-generate-plist:

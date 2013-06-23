@@ -1,22 +1,23 @@
 bin/mikutter
-%%RUBY_SITELIBDIR%%/mikutter/core/autotag.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/check_config_permission.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/load_plugin.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/boot/mainloop.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/option.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/shell/generate.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/shell/spec.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/chi.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/config.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/configloader.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/delayer.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/entity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/environment.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/image.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/initialize.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/event.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/event_filter.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/event_listener.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/deferred.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/deferredable.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/test.deferred.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/instance_storage.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/lazy.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/api_call_support.rb
@@ -31,6 +32,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/rate_limiting.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/streaming_failed_actions.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/154380989328662530.json
+%%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/extension.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/friendship.json
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/list_member.json
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/list_member_1380555359495881433.json
@@ -48,11 +50,9 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/test_cache.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/test_query.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/test_streaming_failed_actions.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/test_unauthorized.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/test_utils.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/user.json
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test/user_timeline.json
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/unauthorized.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/utils.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/piapro.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/reserver.rb
@@ -81,6 +81,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/miku/symboltable.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/miku/yamlisp.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/miquire.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/miquire_plugin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_cell_renderer_message.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_coordinate_module.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_icon_over_button.rb
@@ -97,7 +98,9 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_timeline.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_contextmenu.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_crud.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_dark_matter_prification.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_extension.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_inneruserlist.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_intelligent_textview.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_keyconfig.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_listlist.rb
@@ -106,7 +109,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_postbox.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_pseudo_signal_handler.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_selectbox.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_skin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_timeline_utils.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_tree_view_pretty_scroll.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_userlist.rb
@@ -117,6 +119,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/gtk_webicon.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ChangeLog
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/achievement.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/activity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/alsa/alsa.rb
@@ -141,15 +145,22 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/sender.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/userlist.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/display_requirements.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/extract.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/followingcontrol/followingcontrol.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/followingcontrol/spec
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/Gemfile
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/delayer.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/gtk.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/mainloop.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/mikutter_window.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/slug_dictionary.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/tab_container.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/tab_toolbar.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/toolbar_generator.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/command.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/cuscadable.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/dsl.rb
@@ -163,6 +174,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/tab.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/tab_child_widget.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/tab_toolbar.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/tablike.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/test/test_cuscadable.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/test/test_dsl.rb
@@ -191,6 +203,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/proxy.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/spec
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/ratelimit.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/rest/rest.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/rest/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/saved_search.rb
@@ -208,9 +222,12 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/test_listener.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/shortcutkey.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/shortcutkey_listview.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/smartthread.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/spec
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/sound.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/spec
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/filter.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/parma_streamer.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/spec
@@ -224,18 +241,22 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/retriever.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/serialthread.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/service.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/skin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_followed.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_following.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_notfollowed.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_notfollowing.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/close.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/console.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/copy.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/copy_all.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/directmessage.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/etc.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/fav.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/followers.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/followings.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/icon.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/icon_alternative.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/list.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/loading.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/notfound.png
@@ -244,6 +265,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/post.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/reply.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/retweet.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/retweet_cancel.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/savedsearch.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/search.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/settings.png
@@ -271,18 +293,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/timeline.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/underconstruction.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/unfav.png
-%%RUBY_SITELIBDIR%%/mikutter/core/test/icon_test.png
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_cairo_markup_generator.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_cairo_textselector.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_entity.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_gtk_webicon.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_message.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_messageconverters.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_miquire.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_retriever.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_userlist.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_utils.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/test/test_web_image_loader.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/user.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/userconfig.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/userlist.rb
@@ -290,9 +300,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/plugin/WHATSTHIS
 share/applications/mikutter.desktop
 @dirrmtry share/applications
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/vendor
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/plugin
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/test
+@dirrmtry %%RUBY_SITELIBDIR%%/mikutter/plugin
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data/e00/d00
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data/e00
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data
@@ -302,12 +310,14 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/tco
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/rest
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg
@@ -321,7 +331,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/followingcontrol
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/directmessage
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command
@@ -329,34 +339,17 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/aspectframe
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/alsa
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/mui
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/miku
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/typed-array
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue/test
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/timelimitedqueue
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/test
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable/idna
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib/addressable
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/lib
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/boot/shell
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/boot
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/tco
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/streaming
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/settings
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/rest
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/proxy
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/openimg
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/list
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/libnotify
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/image_file_cache
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/directmessage
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/bitly
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/aspectframe
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/alsa
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon/activity
-@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/addon
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core
 @dirrm %%RUBY_SITELIBDIR%%/mikutter
