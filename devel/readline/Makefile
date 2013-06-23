@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	6.2
-PORTREVISION=	1
+PORTVERSION=	6.2.${PATCHLEVEL}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
+MASTER_SITES=	GNU \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
+
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Library for editing command lines as they are typed
 
 LICENSE=	GPLv3
@@ -23,6 +26,12 @@ USE_LDCONFIG=	yes
 
 INFO=		readline rluserman history
 MAN3=		readline.3 history.3
+
+PATCHES=	1 2 3 4
+.for p in ${PATCHES:S/^/00/}
+PATCH_FILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
+.endfor
+PATCHLEVEL=	${PATCHES:Q:S/ /./g:E}
 
 .include <bsd.port.options.mk>
 
