@@ -1722,7 +1722,6 @@
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
-    SUBDIR += rubygem-addressable22
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-async_sinatra
