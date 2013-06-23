@@ -523,6 +523,7 @@
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python3
+    SUBDIR += mod_qos
     SUBDIR += mod_remoteip
     SUBDIR += mod_reproxy
     SUBDIR += mod_rivet
