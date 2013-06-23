@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-prawn-svg
-# Date created:				December 16, 2010
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	prawn-svg
-PORTVERSION=	0.9.1.11
+PORTVERSION=	0.12.0.4
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
