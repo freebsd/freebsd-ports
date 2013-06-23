@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-snmp
-# Date created:				15 February 2006
-# Whom:					Brooks Davis <brooks@FreeBSD.org>
-#
+# Created by: Brooks Davis <brooks@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	snmp
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
