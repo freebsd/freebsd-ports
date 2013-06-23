@@ -1303,6 +1303,7 @@
     SUBDIR += rubygem-libxml-ruby
     SUBDIR += rubygem-linguistics
     SUBDIR += rubygem-liquid
+    SUBDIR += rubygem-loggability
     SUBDIR += rubygem-loofah
     SUBDIR += rubygem-ltsv
     SUBDIR += rubygem-markaby
