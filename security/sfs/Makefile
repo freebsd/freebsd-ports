@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.fs.net/sfswww/dist/
 MAINTAINER=	malus.x@gmail.com
 COMMENT=	Self-Certifying File System: A secure global network file system
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-08-23
+
 PLIST_SUB=	SFS_VERSION=${PORTVERSION}
 
 INFO=		sfs
