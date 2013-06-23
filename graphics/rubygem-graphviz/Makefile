@@ -1,12 +1,8 @@
-# New ports collection makefile for:	graphviz
-# Date created:		21 march, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	graphviz
-PORTVERSION=	0.9.21
+PORTVERSION=	1.0.9
 CATEGORIES=	graphics ruby rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -15,7 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Interface to the GraphViz Graphing Tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz \
-	rubygem-treetop>=1.4.2:${PORTSDIR}/devel/rubygem-treetop
+		rubygem-treetop>=1.4.2:${PORTSDIR}/devel/rubygem-treetop
 
 GEM_NAME=	${DISTNAME}
 
