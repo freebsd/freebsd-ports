@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_APACHE_RUN=	22+
 SLAVE_PORT_MODULES=	REWRITE
 
-CONFLICTS=	cakephp-1.[23].*
+CONFLICTS=	cakephp-1.[23].* cakephp-2.*
 NO_BUILD=	yes
 
 USE_PHP=	pcre session
