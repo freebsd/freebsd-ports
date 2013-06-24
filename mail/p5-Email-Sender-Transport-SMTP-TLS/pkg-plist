@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Email/Sender/Transport/SMTP/TLS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTP/TLS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTP/TLS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
+@dirrmtry %%SITE_PERL%%/Email/Sender/Transport
+@dirrmtry %%SITE_PERL%%/Email/Sender
+@dirrmtry %%SITE_PERL%%/Email
