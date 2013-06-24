@@ -28,6 +28,7 @@ bin/grep
 %%NLS%%share/locale/lt/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/grep.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/grep.mo

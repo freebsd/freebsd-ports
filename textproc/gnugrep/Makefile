@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	grep
-PORTVERSION=	2.12
-PORTREVISION=	1
+PORTVERSION=	2.14
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU grep
 
 LICENSE=	GPLv3
@@ -24,7 +23,7 @@ MAN1=		egrep.1 \
 		grep.1
 INFO=		grep
 
-OPTIONS_DEFINE=	PCRE
+OPTIONS_DEFINE=	PCRE NLS
 
 .include <bsd.port.options.mk>
 
