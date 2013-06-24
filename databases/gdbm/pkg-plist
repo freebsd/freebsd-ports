@@ -11,3 +11,8 @@ lib/libgdbm.so.4
 %%GDBM_COMPAT%%lib/libgdbm_compat.la
 %%GDBM_COMPAT%%lib/libgdbm_compat.so
 %%GDBM_COMPAT%%lib/libgdbm_compat.so.4
+%%NLS%%share/locale/de/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gdbm.mo

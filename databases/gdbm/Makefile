@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gdbm
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU database manager
 
 LICENSE=	GPLv3
@@ -21,16 +21,24 @@ MAKE_JOBS_UNSAFE=	yes
 INFO=		gdbm
 MAN3=		gdbm.3
 
-OPTIONS_DEFINE=	COMPAT
+OPTIONS_DEFINE=	COMPAT NLS
 COMPAT_DESC=	Enable dbm/ndbm compatibility
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPAT}
 CONFIGURE_ARGS=	--enable-libgdbm-compat
-PLIST_SUB=	GDBM_COMPAT=""
+PLIST_SUB+=	GDBM_COMPAT=""
 .else
-PLIST_SUB=	GDBM_COMPAT="@comment "
+PLIST_SUB+=	GDBM_COMPAT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
