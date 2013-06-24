@@ -46,7 +46,7 @@ post-configure:
 
 .include <bsd.port.options.mk>
 # Don't extract doc/ subdirectory - the simplest way:
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRACT_AFTER_ARGS=	--exclude doc
 EXTRA_PATCHES=	${FILESDIR}/nodoc-patch
 .endif
