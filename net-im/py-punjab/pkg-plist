@@ -42,9 +42,7 @@
 @dirrmtry %%PYTHON_SITELIBDIR%%/twisted
 @dirrmtry %%PYTHON_SITELIBDIR%%/punjab/xmpp
 @dirrmtry %%PYTHON_SITELIBDIR%%/punjab
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 libexec/punjab.tac
-@exec mkdir -p %D/%%WWWDIR%%
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/crossdomain.xml
 %%WWWDIR%%/punjab.gif
