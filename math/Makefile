@@ -522,9 +522,11 @@
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
     SUBDIR += php52-bcmath
-    SUBDIR += php53-gmp
-    SUBDIR += php53-bcmath
     SUBDIR += php52-gmp
+    SUBDIR += php53-bcmath
+    SUBDIR += php53-gmp
+    SUBDIR += php55-bcmath
+    SUBDIR += php55-gmp
     SUBDIR += physcalc
     SUBDIR += plman
     SUBDIR += ploticus

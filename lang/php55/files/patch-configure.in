@@ -1,0 +1,45 @@
+--- configure.in.orig	2011-03-04 10:10:54.000000000 +0100
++++ configure.in	2011-03-04 10:11:01.000000000 +0100
+@@ -302,7 +302,6 @@
+ dnl .
+ dnl -------------------------------------------------------------------------
+ 
+-PTHREADS_CHECK
+ PHP_HELP_SEPARATOR([SAPI modules:])
+ PHP_SHLIB_SUFFIX_NAMES
+ PHP_SAPI=default
+@@ -327,7 +326,6 @@
+ 
+ if test "$enable_maintainer_zts" = "yes"; then
+   PTHREADS_ASSIGN_VARS
+-  PTHREADS_FLAGS
+ fi
+ 
+ divert(3)
+@@ -612,7 +610,7 @@
+ )
+ 
+ dnl Some systems (like OpenSolaris) do not have nanosleep in libc
+-PHP_CHECK_FUNC_LIB(nanosleep, rt)
++PHP_CHECK_FUNC(nanosleep, rt)
+ 
+ dnl Check for getaddrinfo, should be a better way, but...
+ dnl Also check for working getaddrinfo
+@@ -1162,7 +1160,7 @@
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:${prefix}/share/pear
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir
+@@ -1373,7 +1371,7 @@
+ PHP_SUBST(all_targets)
+ PHP_SUBST(install_targets)
+ 
+-PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/])
++PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/])
+ 
+ PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c tsrm_virtual_cwd.c)
+ 

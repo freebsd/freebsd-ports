@@ -484,6 +484,7 @@
     SUBDIR += php5-imap
     SUBDIR += php52-imap
     SUBDIR += php53-imap
+    SUBDIR += php55-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer2
