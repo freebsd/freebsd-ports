@@ -1227,6 +1227,7 @@ share/gimp/dynamics/Basic/Pen-Generic.gdyn
 share/gimp/dynamics/Basic/Pencil-Generic.gdyn
 share/gimp/dynamics/Basic/Pencil-Shader.gdyn
 share/gimp/dynamics/Basic/Pressure-Opacity.gdyn
+share/gimp/dynamics/Color-From-Gradient.gdyn
 share/gimp/dynamics/Dynamics-Off.gdyn
 share/gimp/dynamics/FX/Confetti.gdyn
 share/gimp/dynamics/FX/Perspective.gdyn
@@ -1774,6 +1775,7 @@ share/gimp/tool-presets/FX/Fill-Paper.gtp
 share/gimp/tool-presets/FX/Glow-Lights.gtp
 share/gimp/tool-presets/FX/Smooth-Clone.gtp
 share/gimp/tool-presets/FX/Vignette.gtp
+share/gimp/tool-presets/Paint/Airbrush-Color-From-Gradient.gtp
 share/gimp/tool-presets/Paint/Airbrush.gtp
 share/gimp/tool-presets/Paint/Basic-Knife.gtp
 share/gimp/tool-presets/Paint/Basic-Round-Detail.gtp
@@ -1781,6 +1783,8 @@ share/gimp/tool-presets/Paint/Basic-Round.gtp
 share/gimp/tool-presets/Paint/Bristles.gtp
 share/gimp/tool-presets/Paint/Eraser-Hard.gtp
 share/gimp/tool-presets/Paint/Noise.gtp
+share/gimp/tool-presets/Paint/Paintbrush-Color-From-Gradient.gtp
+share/gimp/tool-presets/Paint/Pencil-Color-From-Gradient.gtp
 share/gimp/tool-presets/Paint/Smudge-Rough.gtp
 share/gimp/tool-presets/Paint/Smudge-Soft.gtp
 share/gimp/tool-presets/Paint/Soft-Oil.gtp
@@ -2297,6 +2301,4 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm include/gimp-2.0
 @dirrm etc/gimp/2.2
 @dirrm etc/gimp
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @exec mkdir -p %D/share/gimp/fonts
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
