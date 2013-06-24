@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.0.14
+DISTVERSION=	1.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/ \
@@ -30,16 +30,19 @@ USE_SUBMAKE=	yes
 
 MAN8=	pkg.8 \
 	pkg-add.8 \
+	pkg-annotate.8 \
 	pkg-autoremove.8 \
 	pkg-audit.8 \
 	pkg-backup.8 \
 	pkg-check.8 \
 	pkg-clean.8 \
+	pkg-convert.8 \
 	pkg-create.8 \
 	pkg-delete.8 \
 	pkg-fetch.8 \
 	pkg-info.8 \
 	pkg-install.8 \
+	pkg-lock.8 \
 	pkg-query.8 \
 	pkg-register.8 \
 	pkg-repo.8 \
@@ -54,8 +57,11 @@ MAN8=	pkg.8 \
 	pkg-upgrade.8 \
 	pkg-version.8 \
 	pkg-which.8
-MAN5=	pkg.conf.5
+MAN5=	pkg.conf.5 \
+	pkg-repository.5
+MAN3=	pkg_printf.3
 MLINKS=	pkg-delete.8 pkg-remove.8 \
+	pkg-lock.8 pkg-unlock.8 \
 	pkg.8 pkg-static.8
 
 .include <bsd.port.pre.mk>
@@ -106,34 +112,12 @@ PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
 .endif
 .endif
 
-.if ${OSVERSION} < 800505
-IGNORE=		not supported on 7.x or early 8.0
-.endif
-
 PERIODIC_DAILY=		400.status-pkg 411.pkg-backup 490.status-pkg-changes
 PERIODIC_SECURITY=	410.pkg-audit 460.pkg-checksum
 PERIODIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
 
 post-install:
-.for periodic in ${PERIODIC_ALL}
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/scripts/periodic/${periodic}
-.endfor
-	@${MKDIR} ${PREFIX}/etc/periodic/security
-	@${MKDIR} ${PREFIX}/etc/periodic/daily
-.for periodic in ${PERIODIC_DAILY}
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/${periodic} ${PREFIX}/etc/periodic/daily
-.endfor
-.for periodic in ${PERIODIC_SECURITY}
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/${periodic} ${PREFIX}/etc/periodic/security
-.endfor
-	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/libpkg/pkg.pc ${PREFIX}/libdata/pkgconfig/
-	@${MKDIR} ${PREFIX}/share/zsh/site-functions
-	@${INSTALL_DATA} ${WRKSRC}/scripts/zsh/_pkg ${PREFIX}/share/zsh/site-functions/
-	@${MKDIR} ${PREFIX}/etc/bash_completion.d
-	@${INSTALL_DATA} ${WRKSRC}/scripts/bash/_pkg.bash ${PREFIX}/etc/bash_completion.d/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
