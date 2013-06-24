@@ -1,34 +1,20 @@
-# ex:ts=8
-# Ports collection makefile for:	gambit
-# Date created:			Feb 8, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gambit
-PORTVERSION=	0.2010.09.01
-PORTREVISION=	1
+PORTVERSION=	13.0.0
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
+MASTER_SITES=	SF/gambit/${PORTNAME}13/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A library of tools for doing computation in game theory
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gtk20
-WANT_UNICODE=	yes
-USE_WX=		2.6+
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
+USE_WX=		2.8+
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.if !defined(CFLAGS) || ${CFLAGS:M-fno-strict-aliasing*} == ""
-CFLAGS+=	-O2 -fno-strict-aliasing
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 
 .include <bsd.port.mk>

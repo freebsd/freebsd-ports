@@ -23,7 +23,6 @@ include/libgambit/game.h
 include/libgambit/integer.h
 include/libgambit/libgambit.h
 include/libgambit/list.h
-include/libgambit/map.h
 include/libgambit/matrix.h
 include/libgambit/matrix.imp
 include/libgambit/mixed.h
