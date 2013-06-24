@@ -3,7 +3,7 @@ sbin/pkg
 sbin/pkg-static
 sbin/pkg2ng
 include/pkg.h
-lib/libpkg.so.0
+lib/libpkg.so.1
 lib/libpkg.so
 lib/libpkg.a
 etc/periodic/daily/400.status-pkg
