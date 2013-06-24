@@ -1,8 +1,8 @@
-# Created by:	Bernhard Froehlich <decke@bluelife.at>
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.12
+DISTVERSION=	4.2.14
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
