@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Web-based network management tool for moderate to large networks
 
-OPTIONS_DEFINE=	GRAPHVIZ MIBS
-OPTIONS_DEFAULT=GRAPHVIZ MIBS
+OPTIONS_DEFINE=	DOCS GRAPHVIZ MIBS
+OPTIONS_DEFAULT=DOCS GRAPHVIZ MIBS
 MIBS_DESC=	Depend on net-mgmt/netdisco-mibs
 GRAPHVIZ_DESC=	Install GraphViz for network map support
 
@@ -54,7 +54,7 @@ ALTER_FILES=	netdisco netdisco.conf netdisco_apache.conf \
 CONFIG_FILES=	netdisco.conf netdisco.crontab netdisco-topology.txt \
 		netdisco_apache.conf netdisco_apache_dir.conf
 
-DOCS=		doc/*.pod doc/*.html INSTALL README* UPGRADE
+DOCFILES=	ChangeLog doc/*.pod INSTALL README* UPGRADE
 
 .include <bsd.port.pre.mk>
 
@@ -86,6 +86,7 @@ pre-install:
 	${REINPLACE_CMD} -e 's#%%WWWDIR%%#${WWWDIR}#g'		\
 			-e 's#%%PREFIX%%#${PREFIX}#g'		\
 			-e 's#%%DATADIR%%#${DATADIR}#g'		\
+			-e 's#%%DOCSDIR%%#${DOCSDIR}#g'		\
 			-e 's#%%NETDISCO_RUNDIR%%#${NETDISCO_RUNDIR}#g'		\
 			-e 's#%%NETDISCO_USER%%#${USERS}#g'		\
 			-e 's#%%NETDISCO_GROUP%%#${GROUPS}#g'		\
@@ -145,6 +146,10 @@ do-install:
 .	endif
 
 post-install:
+.	if ${PORT_OPTIONS:MDOCS}
+		${MKDIR} ${DOCSDIR}
+		(cd ${WRKSRC} && ${INSTALL_MAN} ${DOCFILES} ${DOCSDIR})
+.	endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
