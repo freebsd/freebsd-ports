@@ -18,6 +18,9 @@ COMMENT=	Driver for Option HSDPA modem
 
 LICENSE=	BSD
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-08-24
+
 CONFLICTS=	uhso-kmod-[0-9]*
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
