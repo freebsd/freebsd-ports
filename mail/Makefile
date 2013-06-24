@@ -351,6 +351,7 @@
     SUBDIR += p5-Email-Reply
     SUBDIR += p5-Email-Send
     SUBDIR += p5-Email-Sender
+    SUBDIR += p5-Email-Sender-Transport-SMTP-TLS
     SUBDIR += p5-Email-Sender-Transport-SQLite
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Stuff
