@@ -596,6 +596,7 @@
     SUBDIR += p5-Net-Google-Calendar
     SUBDIR += p5-Net-Google-Code
     SUBDIR += p5-Net-Google-DataAPI
+    SUBDIR += p5-Net-Google-SafeBrowsing2
     SUBDIR += p5-Net-Google-Spreadsheets
     SUBDIR += p5-Net-Growl
     SUBDIR += p5-Net-GrowlClient

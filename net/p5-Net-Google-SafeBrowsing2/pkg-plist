@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Net/Google/SafeBrowsing2.pm
+%%SITE_PERL%%/Net/Google/SafeBrowsing2/Storage.pm
+%%SITE_PERL%%/Net/Google/SafeBrowsing2/Lookup.pm
+%%SITE_PERL%%/Net/Google/SafeBrowsing2/Postgres.pm
+%%SITE_PERL%%/Net/Google/SafeBrowsing2/DBI.pm
+%%SITE_PERL%%/Net/Google/SafeBrowsing2/Sqlite.pm
+%%SITE_PERL%%/Net/Google/SafeBrowsing2/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/SafeBrowsing2/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/SafeBrowsing2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/Google/SafeBrowsing2
+@dirrmtry %%SITE_PERL%%/Net/Google
+@dirrmtry %%SITE_PERL%%/Net
