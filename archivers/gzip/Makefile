@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gzip
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Compression utility designed to be a replacement for compress
 
 USES=		charsetfix

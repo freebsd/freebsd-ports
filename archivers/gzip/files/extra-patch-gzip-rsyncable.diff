@@ -106,17 +106,17 @@ diff -u -r ../gzip-1.3.12.orig/deflate.c ./deflate.c
  
              lookahead -= match_length;
  
-+	    RSYNC_ROLL(strstart, match_length);
- 	    /* Insert new strings in the hash table only if the match length
++            RSYNC_ROLL(strstart, match_length);
+             /* Insert new strings in the hash table only if the match length
               * is not too large. This saves time but degrades compression.
               */
-@@ -652,9 +702,14 @@
+@@ -654,9 +704,14 @@
              /* No match, output a literal byte */
              Tracevv((stderr,"%c",window[strstart]));
              flush = ct_tally (0, window[strstart]);
 +            RSYNC_ROLL(strstart, 1);
              lookahead--;
- 	    strstart++;
+             strstart++;
          }
 +        if (rsync && strstart > rsync_chunk_end) {
 +            rsync_chunk_end = 0xFFFFFFFFUL;
@@ -206,11 +206,12 @@ diff -u -r ../gzip-1.3.12.orig/gzip.c ./gzip.c
  
  struct option longopts[] =
  {
-@@ -260,6 +261,7 @@
+@@ -260,7 +261,8 @@
      {"best",       0, 0, '9'}, /* compress better */
      {"lzw",        0, 0, 'Z'}, /* make output compatible with old compress */
      {"bits",       1, 0, 'b'}, /* max number of bits per code (implies -Z) */
 +    {"rsyncable",  0, 0, 'R'}, /* make rsync-friendly archive */
+ 
      { 0, 0, 0, 0 }
  };
  
@@ -223,12 +224,12 @@ diff -u -r ../gzip-1.3.12.orig/gzip.c ./gzip.c
   "With no FILE, or when FILE is -, read standard input.",
   "",
 @@ -469,6 +472,8 @@
- 	    recursive = 1;
+             recursive = 1;
  #endif
- 	    break;
-+	case 'R':
-+	    rsync = 1; break;
- 	case 'S':
+             break;
++        case 'R':
++            rsync = 1; break;
+         case 'S':
  #ifdef NO_MULTIPLE_DOTS
              if (*optarg == '.') optarg++;
 diff -u -r ../gzip-1.3.12.orig/gzip.h ./gzip.h
@@ -244,13 +245,13 @@ diff -u -r ../gzip-1.3.12.orig/gzip.h ./gzip.h
  extern off_t bytes_out;  /* number of output bytes */
 @@ -306,7 +307,7 @@
          /* in trees.c */
- void ct_init     OF((ush *attr, int *method));
- int  ct_tally    OF((int dist, int lc));
--off_t flush_block OF((char *buf, ulg stored_len, int eof));
-+off_t flush_block OF((char *buf, ulg stored_len, int pad, int eof));
+ extern void ct_init     (ush *attr, int *method);
+ extern int  ct_tally    (int dist, int lc);
+-extern off_t flush_block (char *buf, ulg stored_len, int eof);
++extern off_t flush_block (char *buf, ulg stored_len, int pad, int eof);
  
          /* in bits.c */
- void     bi_init    OF((file_t zipfile));
+ extern void     bi_init    (file_t zipfile);
 diff -u -r ../gzip-1.3.12.orig/trees.c ./trees.c
 --- ../gzip-1.3.12.orig/trees.c	2006-11-20 02:40:33.000000000 -0600
 +++ ./trees.c	2008-09-01 20:53:37.000000000 -0500
