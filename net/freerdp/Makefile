@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
 MAN1=		xfreerdp.1
 PLIST_SUB+=	X11=""
 .else
-CMAKE_ARGS+=	-DWITH_X11=OFF
+CMAKE_ARGS+=	-DWITH_X11=OFF -DWITH_XKBFILE=OFF
 PLIST_SUB+=	X11="@comment "
 .endif
 
