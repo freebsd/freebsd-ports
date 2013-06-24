@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 .endif
 
 post-extract:
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc_Makefile.in
 .endif
 
