@@ -3,6 +3,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.17
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://cloud.github.com/downloads/jabberd2/jabberd2/
 
