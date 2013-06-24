@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compat9x
-PORTVERSION=	9.0.900000.201209
-PORTREVISION=	1
+PORTVERSION=	9.1.901000.201306
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	garga/compat
@@ -12,7 +11,7 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A convenience package to install the compat9x libraries
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
