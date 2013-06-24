@@ -6,6 +6,7 @@ bin/gsed
 %%EXAMPLESDIR%%/dc.sed
 @dirrm %%EXAMPLESDIR%%
 %%NLS%%share/locale/af/LC_MESSAGES/sed.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sed.mo
@@ -26,6 +27,7 @@ bin/gsed
 %%NLS%%share/locale/it/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/sed.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/sed.mo
@@ -41,3 +43,5 @@ bin/gsed
 %%NLS%%share/locale/vi/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sed.mo
+@dirrmtry %%NLS%%share/locale/ast/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/ast
