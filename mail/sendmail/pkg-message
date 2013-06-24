@@ -8,7 +8,8 @@ FEATURE(`msp','[mailhub.do.main]`)dnl
 
 To update your configuration look at %%PREFIX%%/share/sendmail/cf/README.
 ---------------------------------------------------
-To use the ports versions you may add to your sendmail.mc file:
+To use the binaries supplied by the port you should add the following lines
+to your sendmail.mc file before any mailer or feature definition:
 
 define(`confEBINDIR', `%%PREFIX%%/libexec')dnl
 define(`UUCP_MAILER_PATH', `%%LOCALBASE%%/bin/uux')dnl
