@@ -431,8 +431,9 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} \
 		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
-		-e "s|vendorarch|installsitearch|g" \
+		-e "s|vendorarchdir|sitearchdir|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
+		-e "s|Config::|RbConfig::|" \
 		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
