@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Server load balancing daemon for *BSD pf
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-08-24
+
 PLIST_FILES=	sbin/slbd etc/slbdcap-sample
 PORTDOCS=	configfile.txt
 
