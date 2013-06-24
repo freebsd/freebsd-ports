@@ -6,33 +6,30 @@ PORTVERSION=	0.1.0
 CATEGORIES=	korean
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	hyogeollee@gmail.com
+MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Library for Hangul processing
 
 LICENSE=	LGPL21
 
-USES=		iconv
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		iconv pkgconfig
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB+=	NLS=""
+CONFIGURE_ARGS=	--enable-nls
+PLIST_SUB=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
+.if exists(${LOCALBASE}/libdata/pkgconfig/check.pc)
 test:	build
 	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} )
-.if exists(${LOCALBASE}/libdata/pkgconfig/check.pc)
 	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} test && ./test )
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
