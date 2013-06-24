@@ -219,6 +219,7 @@
     SUBDIR += p5-Net-IP-Match-Regexp
     SUBDIR += p5-Net-IP-Match-XS
     SUBDIR += p5-Net-IP-Resolver
+    SUBDIR += p5-Net-IPAddress
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-NSCA-Client

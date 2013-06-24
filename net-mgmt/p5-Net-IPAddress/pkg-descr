@@ -1,0 +1,12 @@
+Net::IPAddr is a collection of helpful functions used to convert
+IP addresses to/from 32-bit integers, applying subnet masks to
+IP addresses, validating IP address strings, and splitting a FQDN
+into its host and domain parts.
+
+No rocket science here, but I have found these functions to very,
+very handy. For example, have you ever tried to sort a list of IP
+addresses only to find out that they don't sort the way you expected?
+Here is the solution! If you convert the IP addresses to 32-bit integer
+addresses, they will sort in correct order.
+
+WWW: http://search.cpan.org/dist/Net-IPAddress/
