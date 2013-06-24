@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synergy
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.12
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -25,6 +25,11 @@ CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 PLIST_FILES=	bin/synergys bin/synergyc
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
+
+post-extract:
+	cd ${WRKSRC}/tools/
+	mkdir ${WRKSRC}/tools/cryptopp562
+	(cd ${WRKSRC}/tools/cryptopp562 && unzip ${WRKSRC}/tools/cryptopp562.zip)
 
 do-install:
 .for f in synergys synergyc
