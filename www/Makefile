@@ -1423,6 +1423,8 @@
     SUBDIR += php52-tidy
     SUBDIR += php53-session
     SUBDIR += php53-tidy
+    SUBDIR += php55-session
+    SUBDIR += php55-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb-devel
     SUBDIR += phpbb3

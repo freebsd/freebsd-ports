@@ -53,6 +53,9 @@ PHP_EXT_DIR=	20060613
 .elif ${PHP_VER}  == 53
 PHP_EXT_DIR=	20090626
 PHP_EXT_INC=	pcre spl
+.elif ${PHP_VER}  == 55
+PHP_EXT_DIR=	20121212
+PHP_EXT_INC=	pcre spl
 .else
 PHP_EXT_DIR=	20100525
 PHP_EXT_INC=	pcre spl
@@ -268,6 +271,7 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 _USE_PHP_VER5=	${_USE_PHP_ALL} phar sqlite3
 _USE_PHP_VER52=	${_USE_PHP_ALL} dbase mhash ming ncurses oci8 sqlite
 _USE_PHP_VER53=	${_USE_PHP_ALL} phar sqlite sqlite3
+_USE_PHP_VER55=	${_USE_PHP_ALL} phar sqlite3
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
