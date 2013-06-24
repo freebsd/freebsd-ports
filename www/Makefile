@@ -76,6 +76,7 @@
     SUBDIR += cakephp13
     SUBDIR += cakephp21
     SUBDIR += cakephp22
+    SUBDIR += cakephp23
     SUBDIR += calamaris
     SUBDIR += cas
     SUBDIR += castget

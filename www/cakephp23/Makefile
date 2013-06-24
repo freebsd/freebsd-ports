@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	cakephp
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.6
 CATEGORIES=	www
 
 MAINTAINER=	pphillips@experts-exchange.com
 COMMENT=	A framework for developing PHP web applications
 
-LATEST_LINK=	cakephp22
-
 LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	1bb28d3
+GH_COMMIT=	b81c198
 
 PORTDOCS=	README.md
 
 SLAVE_PORT_MODULES=	REWRITE
 
-CONFLICTS=	cakephp-1.* cakephp-2.[13].*
+CONFLICTS=	cakephp-1.* cakephp-2.[12].*
 
 NO_BUILD=	yes
 USES=		gettext
