@@ -7,6 +7,8 @@ MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		LOCAL/portmgr
 
+PKGNAMESUFFIX=	-devel
+
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	New generation package manager
 
