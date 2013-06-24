@@ -25,13 +25,12 @@ status_cmd=${name}_status
 command="%%PREFIX%%/bin/netdisco"
 command_interpreter="/usr/bin/perl"
 netdisco_config="%%ETCDIR%%/netdisco.conf"
-pidfile=$(grep ^daemon_pid $netdisco_config | sed -E 's/.*=\s+//')
+pidfile=$(grep ^daemon_pid $netdisco_config | cut -d= -f2 | tail -1)
 flags="-p start"
 
 required_files="$netdisco_config"
 
 netdisco_prestart() {
-	test -d ${pidfile%/*} || install -d -m 0700 -o $netdisco_user -g $netdisco_group ${pidfile%/*}
 	touch $pidfile && chown $netdisco_user $pidfile
 	test -d %%NETDISCO_DBDIR%% || install -d -m 0700 -o $netdisco_user -g $netdisco_group %%NETDISCO_DBDIR%%
 }

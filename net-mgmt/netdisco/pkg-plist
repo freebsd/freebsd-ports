@@ -34,6 +34,7 @@ bin/port_control
 %%DATADIR%%/sql/upgrade-0.95-to-1.0.sql
 %%DATADIR%%/sql/upgrade-1.0-to-1.1.sql
 %%DATADIR%%/sql/upgrade-1.1-to-1.2.sql
+%%DATADIR%%/sql/upgrade-1.2-to-1.3.sql
 %%DATADIR%%/sql/user_log.sql
 %%DATADIR%%/sql/users.sql
 %%DATADIR%%/Makefile
@@ -57,7 +58,6 @@ bin/port_control
 %%WWWDIR%%/device_module_search.html
 %%WWWDIR%%/device_search.html
 %%WWWDIR%%/discoball2.gif
-%%WWWDIR%%/doc/ChangeLog.txt
 %%WWWDIR%%/doc/index.html
 %%WWWDIR%%/doc/netdisco-api-backend.html
 %%WWWDIR%%/doc/netdisco-api-shared.html
@@ -100,6 +100,18 @@ bin/port_control
 %%WWWDIR%%/traffic.png
 %%WWWDIR%%/graphs_sample.mas
 %%WWWDIR%%/port_search.html
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/DiscoveryDatabase.pod
+%%DOCSDIR%%/INSTALL.pod
+%%DOCSDIR%%/IPv6ArpNip.pod
+%%DOCSDIR%%/README.pod
+%%DOCSDIR%%/UPGRADE.pod
+%%DOCSDIR%%/WISHLIST.pod
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README-API-BACKEND
+%%DOCSDIR%%/README-API-SHARED
+%%DOCSDIR%%/UPGRADE
 @unexec d="%D/%%ETCDIR%%"; f="netdisco.conf"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 %%ETCDIR%%/netdisco.conf.sample
 @exec if [ ! -f %%ETCDIR%%/netdisco.conf ] ; then cp -p %%ETCDIR%%/netdisco.conf.sample %%ETCDIR%%/netdisco.conf; fi
@@ -123,4 +135,5 @@ bin/port_control
 @dirrm %%DATADIR%%/sql
 @dirrmtry %%DATADIR%%
 @dirrmtry %%ETCDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%WWWDIR%%/mason
