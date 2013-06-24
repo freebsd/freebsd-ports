@@ -3,7 +3,7 @@
 #   $MCom: ports/graphics/gimp/Makefile,v 1.22 2012/11/26 13:31:16 kwm Exp $
 
 PORTNAME=	gimp
-DISTVERSION?=	2.8.4
+DISTVERSION?=	2.8.6
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome

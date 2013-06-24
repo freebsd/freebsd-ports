@@ -3,8 +3,8 @@
 #   $MCom: ports/graphics/gimp-app/Makefile,v 1.65 2012/12/30 18:09:11 mezz Exp $
 
 PORTNAME=	gimp-app
-PORTVERSION=	2.8.4
-PORTREVISION?=	1
+PORTVERSION=	2.8.6
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -38,7 +38,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 ltverhack gnomehier \
 		desktopfileutils
-USES=		pathfix pkgconfig gettext
+USES=		desktop-file-utils gettext pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -196,8 +196,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng15"|' \
 	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
