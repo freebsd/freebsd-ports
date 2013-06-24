@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/HexConvert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/HexConvert/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/HexConvert
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String
