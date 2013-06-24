@@ -10,35 +10,40 @@ DISTNAME=	${PORTNAME}.v.${PORTVERSION}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Simple dynamic dns client
 
+LICENSE=	GPLv3
+
 USE_RC_SUBR=	inadyn-mt
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--disable-sound
 
-.if !defined(NO_INSTALL_MANPAGES)
 MAN8=		inadyn-mt.8
 MAN5=		inadyn-mt.conf.5
-.endif
 
-PORTDOCS=	readme.html
-PLIST_FILES=	bin/inadyn-mt
+PORTDOCS=	readme.html AUTHORS README
+PORTEXAMPLES=	*
+
+PLIST_DIRS=	etc/inadyn-mt/lang
+PLIST_DIRSTRY=	etc/inadyn-mt
+PLIST_FILES=	bin/inadyn-mt etc/inadyn-mt/lang/en.lng
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
 		${WRKSRC}/man/inadyn-mt.8 ${WRKSRC}/readme.html \
 		${WRKSRC}/src/dyndns.h
 
-.include <bsd.port.options.mk>
-
-do-install:
+post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} -p ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/freebsd/inadyn-mt ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/man/inadyn-mt.8 ${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/man/inadyn-mt.conf.5 ${MANPREFIX}/man/man5
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/inadyn-mt.conf ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
