@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- pam_duo/Makefile.in.orig
++++ pam_duo/Makefile.in
+@@ -595,17 +595,7 @@
+ 	tags uninstall uninstall-am uninstall-man uninstall-man8 \
+ 	uninstall-pam_libLTLIBRARIES
+ 
+-
+ install-data-local:
+-	$(MKDIR_P) $(DESTDIR)$(sysconfdir)
+-	-@if [ ! -f $(DESTDIR)$(sysconfdir)/pam_duo.conf ]; then \
+-		cp pam_duo.conf $(DESTDIR)$(sysconfdir)/pam_duo.conf; \
+-		echo "Created ${DESTDIR}$(sysconfdir)/pam_duo.conf"; \
+-		echo "Please edit it to add your Duo integration and secret keys"; \
+-	else \
+-		echo "Found existing ${DESTDIR}$(sysconfdir)/pam_duo.conf - updating permissions"; \
+-	fi
+-	-chmod 600 $(DESTDIR)$(sysconfdir)/pam_duo.conf
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

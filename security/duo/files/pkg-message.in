@@ -1,12 +1,12 @@
 
 =================================================================
-Configuration file %%ETCDIR%%/login_duo.conf was created.
+Configuration file %%PREFIX%%/etc/login_duo.conf was created.
 You must edit it to add your Duo integration and secret keys.
 
 If you are using the PAM module, a line similar to the following
 should be added to your service(s) of choice in /etc/pam.d:
 auth	required	%%PREFIX%%/lib/security/pam_duo.so
 
-Additionally, you must edit %%ETCDIR%%/pam_duo.conf
+Additionally, you must edit %%PREFIX%%/etc/pam_duo.conf
 =================================================================
 

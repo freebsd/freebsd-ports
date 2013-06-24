@@ -1,5 +1,9 @@
-%%ETCDIR%%/login_duo.conf
-%%ETCDIR%%/pam_duo.conf
+@unexec if cmp -s %D/etc/login_duo.conf.sample %D/etc/login_duo.conf; then rm -f %D/etc/login_duo.conf; fi
+etc/login_duo.conf.sample
+@exec if [ ! -f %D/etc/login_duo.conf ] ; then cp -p %D/%F %B/login_duo.conf; fi
+@unexec if cmp -s %D/etc/pam_duo.conf.sample %D/etc/pam_duo.conf; then rm -f %D/etc/pam_duo.conf; fi
+etc/pam_duo.conf.sample
+@exec if [ ! -f %D/etc/pam_duo.conf ] ; then cp -p %D/%F %B/pam_duo.conf; fi
 include/duo.h
 lib/libduo.so.3
 lib/libduo.so
@@ -15,4 +19,3 @@ lib/security/pam_duo.la
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 sbin/login_duo
 @dirrmtry lib/security
-@dirrmtry %%ETCDIR%%
