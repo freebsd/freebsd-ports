@@ -18,7 +18,8 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
+			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/ \
+			http://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX?=		-server
 EXTRACT_SUFX=		.tgz
