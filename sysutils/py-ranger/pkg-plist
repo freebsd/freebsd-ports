@@ -1,13 +1,11 @@
 bin/ranger
+bin/rifle
 %%PYTHON_SITELIBDIR%%/ranger/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/__init__.pyo
 %%PYTHON_SITELIBDIR%%/ranger/api/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/api/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/api/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ranger/api/apps.py
-%%PYTHON_SITELIBDIR%%/ranger/api/apps.pyc
-%%PYTHON_SITELIBDIR%%/ranger/api/apps.pyo
 %%PYTHON_SITELIBDIR%%/ranger/api/commands.py
 %%PYTHON_SITELIBDIR%%/ranger/api/commands.pyc
 %%PYTHON_SITELIBDIR%%/ranger/api/commands.pyo
@@ -20,15 +18,20 @@ bin/ranger
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/default.py
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/default.pyc
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/default.pyo
-%%PYTHON_SITELIBDIR%%/ranger/colorschemes/default88.py
-%%PYTHON_SITELIBDIR%%/ranger/colorschemes/default88.pyc
-%%PYTHON_SITELIBDIR%%/ranger/colorschemes/default88.pyo
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/jungle.py
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/jungle.pyc
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/jungle.pyo
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/snow.py
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/snow.pyc
 %%PYTHON_SITELIBDIR%%/ranger/colorschemes/snow.pyo
+%%PYTHON_SITELIBDIR%%/ranger/config/__init__.py
+%%PYTHON_SITELIBDIR%%/ranger/config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ranger/config/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ranger/config/commands.py
+%%PYTHON_SITELIBDIR%%/ranger/config/commands.pyc
+%%PYTHON_SITELIBDIR%%/ranger/config/commands.pyo
+%%PYTHON_SITELIBDIR%%/ranger/config/rc.conf
+%%PYTHON_SITELIBDIR%%/ranger/config/rifle.conf
 %%PYTHON_SITELIBDIR%%/ranger/container/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/container/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/container/__init__.pyo
@@ -56,9 +59,6 @@ bin/ranger
 %%PYTHON_SITELIBDIR%%/ranger/core/fm.py
 %%PYTHON_SITELIBDIR%%/ranger/core/fm.pyc
 %%PYTHON_SITELIBDIR%%/ranger/core/fm.pyo
-%%PYTHON_SITELIBDIR%%/ranger/core/helper.py
-%%PYTHON_SITELIBDIR%%/ranger/core/helper.pyc
-%%PYTHON_SITELIBDIR%%/ranger/core/helper.pyo
 %%PYTHON_SITELIBDIR%%/ranger/core/loader.py
 %%PYTHON_SITELIBDIR%%/ranger/core/loader.pyc
 %%PYTHON_SITELIBDIR%%/ranger/core/loader.pyo
@@ -71,22 +71,11 @@ bin/ranger
 %%PYTHON_SITELIBDIR%%/ranger/core/shared.py
 %%PYTHON_SITELIBDIR%%/ranger/core/shared.pyc
 %%PYTHON_SITELIBDIR%%/ranger/core/shared.pyo
+%%PYTHON_SITELIBDIR%%/ranger/core/tab.py
+%%PYTHON_SITELIBDIR%%/ranger/core/tab.pyc
+%%PYTHON_SITELIBDIR%%/ranger/core/tab.pyo
 %%PYTHON_SITELIBDIR%%/ranger/data/mime.types
-%%PYTHON_SITELIBDIR%%/ranger/data/ranger
 %%PYTHON_SITELIBDIR%%/ranger/data/scope.sh
-%%PYTHON_SITELIBDIR%%/ranger/defaults/__init__.py
-%%PYTHON_SITELIBDIR%%/ranger/defaults/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ranger/defaults/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ranger/defaults/apps.py
-%%PYTHON_SITELIBDIR%%/ranger/defaults/apps.pyc
-%%PYTHON_SITELIBDIR%%/ranger/defaults/apps.pyo
-%%PYTHON_SITELIBDIR%%/ranger/defaults/commands.py
-%%PYTHON_SITELIBDIR%%/ranger/defaults/commands.pyc
-%%PYTHON_SITELIBDIR%%/ranger/defaults/commands.pyo
-%%PYTHON_SITELIBDIR%%/ranger/defaults/options.py
-%%PYTHON_SITELIBDIR%%/ranger/defaults/options.pyc
-%%PYTHON_SITELIBDIR%%/ranger/defaults/options.pyo
-%%PYTHON_SITELIBDIR%%/ranger/defaults/rc.conf
 %%PYTHON_SITELIBDIR%%/ranger/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/__init__.pyo
@@ -108,6 +97,9 @@ bin/ranger
 %%PYTHON_SITELIBDIR%%/ranger/ext/human_readable.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/human_readable.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/human_readable.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/img_display.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/img_display.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/img_display.pyo
 %%PYTHON_SITELIBDIR%%/ranger/ext/iter_tools.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/iter_tools.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/iter_tools.pyo
@@ -126,12 +118,24 @@ bin/ranger
 %%PYTHON_SITELIBDIR%%/ranger/ext/openstruct.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/openstruct.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/openstruct.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/popen_forked.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/popen_forked.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/popen_forked.pyo
 %%PYTHON_SITELIBDIR%%/ranger/ext/relative_symlink.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/relative_symlink.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/relative_symlink.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/rifle.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/rifle.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/rifle.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/run_forked.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/run_forked.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/run_forked.pyo
 %%PYTHON_SITELIBDIR%%/ranger/ext/shell_escape.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/shell_escape.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/shell_escape.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/shutil_generatorized.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/shutil_generatorized.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/shutil_generatorized.pyo
 %%PYTHON_SITELIBDIR%%/ranger/ext/signals.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/signals.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/signals.pyo
@@ -211,10 +215,10 @@ bin/ranger
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/gui
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/fsobject
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/ext
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/defaults
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/data
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/core
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/container
+@dirrm %%PYTHON_SITELIBDIR%%/ranger/config
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/colorschemes
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/api
 @dirrm %%PYTHON_SITELIBDIR%%/ranger
