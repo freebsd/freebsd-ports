@@ -19,6 +19,7 @@ LIB_DEPENDS=	SDL_image:${PORTSDIR}/graphics/sdl_image \
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 
 GNU_CONFIGURE=	yes
+USE_GCC=	yes
 USE_GMAKE=	yes
 MANCOMPRESSED=	yes
 
