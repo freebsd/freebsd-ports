@@ -262,6 +262,12 @@ check-already-installed:
 
 .if !target(deinstall)
 deinstall:
+.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
+	@cd ${.CURDIR} && \
+		${SU_CMD} "${MAKE} ${.TARGET}"
+	@${ECHO_MSG} "===>  Returning to user credentials"
+.else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
 	@if ${PKG_INFO} -e ${PKGORIGIN}; then \
 		p=`${PKG_INFO} -q ${PKGORIGIN}`; \
@@ -271,6 +277,7 @@ deinstall:
 		${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+.endif
 .endif
 
 .endif # defined(_POSTMKINCLUDED)
