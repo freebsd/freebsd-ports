@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	clementine
@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@freebsd.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
 
 LICENSE=	GPLv3
