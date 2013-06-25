@@ -28,6 +28,7 @@ include/mdds/rectangle_set_def.inl
 include/mdds/segment_tree.hpp
 include/mdds/compat/unique_ptr.hpp
 include/mdds/hash_container/map.hpp
+libdata/pkgconfig/mdds.pc
 @dirrm include/mdds/hash_container
 @dirrm include/mdds/compat
 @dirrm include/mdds
