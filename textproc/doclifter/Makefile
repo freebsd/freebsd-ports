@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	doclifter
-PORTVERSION=	2.10
+PORTVERSION=	2.12
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
