@@ -1,0 +1,51 @@
+include/ck_backoff.h
+include/ck_stack.h
+include/ck_spinlock.h
+include/ck_sequence.h
+include/ck_rwlock.h
+include/ck_ring.h
+include/ck_queue.h
+include/ck_pr.h
+include/ck_pflock.h
+include/ck_md.h
+include/ck_malloc.h
+include/ck_limits.h
+include/ck_ht.h
+include/ck_hs.h
+include/ck_hp_stack.h
+include/ck_hp_fifo.h
+include/ck_hp.h
+include/ck_fifo.h
+include/ck_epoch.h
+include/ck_cohort.h
+include/ck_cc.h
+include/ck_bytelock.h
+include/ck_brlock.h
+include/gcc/ppc/ck_pr.h
+include/gcc/ppc/ck_f_pr.h
+include/gcc/x86/ck_pr.h
+include/gcc/x86/ck_f_pr.h
+include/gcc/sparcv9/ck_f_pr.h
+include/gcc/sparcv9/ck_pr.h
+include/gcc/ppc64/ck_f_pr.h
+include/gcc/ppc64/ck_pr.h
+include/gcc/x86_64/ck_f_pr.h
+include/gcc/x86_64/ck_pr.h
+include/gcc/ck_pr.h
+include/gcc/ck_f_pr.h
+include/gcc/ck_cc.h
+include/ck_bitmap.h
+include/ck_barrier.h
+include/ck_bag.h
+include/ck_stdint.h
+lib/libck.so.0.2.19
+lib/libck.so
+lib/libck.so.0
+lib/libck.a
+libdata/pkgconfig/ck.pc
+@dirrmtry include/gcc/x86_64
+@dirrmtry include/gcc/x86
+@dirrmtry include/gcc/sparcv9
+@dirrmtry include/gcc/ppc64
+@dirrmtry include/gcc/ppc
+@dirrmtry include/gcc
