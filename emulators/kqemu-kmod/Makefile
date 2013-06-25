@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kqemu-kmod
-# Date created:				2005/10/25
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
@@ -19,6 +15,9 @@ DIST_SUBDIR=	kqemu
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Kernel Accelerator for QEMU CPU Emulator
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
@@ -37,6 +36,7 @@ PLIST_FILES+=	"@dirrm include/kqemu"
 PLIST_FILES+=	"@cwd /"
 PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
 PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
+PLIST_FILES+=	"@cwd"
 
 MAKEFILE=	Makefile.freebsd
 
@@ -49,43 +49,28 @@ KMODDIR=	/boot/modules
 
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
-.if !exists(${SRC_BASE}/sys/Makefile)
+SYSDIR?=	${SRC_BASE}/sys
+MAKE_ENV+=	SYSDIR="${SYSDIR}"
+
+.if !exists(${SYSDIR}/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif
 
-.if ${OSVERSION} >= 700024 && ${OSVERSION} < 700053 && !defined(NOKSE)
-# XXX this is wrong if you have `nooption KSE' in your kernel config,
-# please define NOKSE in that case (no longer a problem after attilio's
-# Sun Jul 22 21:35:44 2007 UTC commit removing the KSE ABI incompatiblity)
-CFLAGS+=	-DKSE
-.endif
+CFLAGS+=	${DEBUG_FLAGS}
 
-CFLAGS+=       ${DEBUG_FLAGS}
-
-post-extract:
-.if ${OSVERSION} >= 700024 && ${OSVERSION} < 700053 && !defined(NOKSE)
-	@${ECHO_MSG} "Compiling with -DKSE."
-	@${ECHO_MSG} "If this is wrong (i.e. you have \`nooption KSE' in your kernel config),"
-	@${ECHO_MSG} "then please define NOKSE."
-.endif
-
-# 7.1 and head have seperate gdts also on amd64 now so the tss fixup code
-# is no longer needed there
 post-patch:
-.if ${OSVERSION} >= 701100 && (${OSVERSION} < 800000 || ${OSVERSION} >= 800046)
-	@cd ${WRKSRC} && ${PATCH} -R --quiet < ${FILESDIR}/patch-tssworkaround
-.endif
+	@${REINPLACE_CMD} -e '/CC=/s,gcc,${CC},' ${WRKSRC}/common/Makefile
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} beforedepend && ${LN} -sfh @/sys sys)
 	@(cd ${BUILD_WRKSRC}/common; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} CWARNFLAGS=-Wall ${ALL_TARGET})
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	${MKDIR} ${PREFIX}/include/kqemu
 	${INSTALL_DATA} ${WRKSRC}/kqemu.h ${PREFIX}/include/kqemu
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/kqemu-doc.html ${WRKSRC}/kqemu-tech.html \
 		${DOCSDIR}
