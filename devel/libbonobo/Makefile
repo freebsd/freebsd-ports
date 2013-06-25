@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/libbonobo/Makefile,v 1.84 2010/09/26 20:57:33 kwm Exp $
+#   $MCom: ports/trunk/devel/libbonobo/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	libbonobo
 PORTVERSION=	2.32.0
@@ -10,15 +10,15 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A component and compound document system for GNOME2
+COMMENT=	Component and compound document system for GNOME2
 
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-USES=		bison pathfix pkgconfig gettext
+USES=		bison gettext pathfix pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -31,6 +31,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 MAKE_ENV=	gnomelocaledir=${PREFIX}/share/locale
 
 MAN1=		bonobo-activation-server.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/activation-server/Makefile.in
 
 .include <bsd.port.mk>
 
