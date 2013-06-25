@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libidn
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -10,8 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Internationalized Domain Names command line tool
 
-USE_GNOME=	gnomehack pkgconfig
-USES=		iconv
+USES=		iconv pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
