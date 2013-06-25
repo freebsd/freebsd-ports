@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cuberok
-# Date created:		2010-05-09
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Veniamin Gvozdikov <vg@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cuberok
 PORTVERSION=	0.0.11
@@ -11,15 +7,15 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@freebsd.org
 COMMENT=	A music player and a collection manager based on Qt4
 
 BUILD_DEPENDS=	audiere-config:${PORTSDIR}/audio/audiere \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
-		tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		avformat:${PORTSDIR}/multimedia/ffmpeg \
+		avutil:${PORTSDIR}/multimedia/ffmpeg \
+		tag:${PORTSDIR}/audio/taglib
 
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
