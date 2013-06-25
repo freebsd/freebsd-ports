@@ -39,6 +39,13 @@ PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 .if defined(LO_I18N)
+LO_HAS_DICT=	af ar be bg bn br bs ca ca_XV cs da de el en_GB en_ZA es et \
+		fr he hi hr hu it ku lt lv nb ne nl nn oc pl pt pt_BR ro ru \
+		sh si sk sl sr sv te th uk zu
+.if (${LO_HAS_DICT:M${LO_I18N}})
+PORTREVISION=	1
+.endif
+
 NO_BUILD=	yes
 
 RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
@@ -61,7 +68,8 @@ DISTFILES+=	${LO_I18N_FILE}_helppack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
 .endif
 COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
 
-EXTRACT_AFTER_ARGS=	--strip-components 1
+EXTRACT_AFTER_ARGS=	--exclude '${PORTNAME}*-dict-*.deb' \
+			--strip-components 1
 
 post-extract:
 	@${MKDIR} ${WRKSRC}; \
