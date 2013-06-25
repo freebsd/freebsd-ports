@@ -3,6 +3,7 @@
 
 PORTNAME=	lastfm
 PORTVERSION=	2.1.30
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cdn.last.fm/client/Linux/
 PKGNAMESUFFIX=	-desktop
