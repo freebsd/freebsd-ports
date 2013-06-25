@@ -15,8 +15,7 @@ USE_XZ=		yes
 MAN1=		xearth.1
 PLIST_FILES=	bin/xearth \
 		lib/X11/xearth/freebsd.committers.markers \
-		lib/X11/xearth/freebsd.ftp.markers \
-		lib/X11/xearth/freebsd.submitters.markers
+		lib/X11/xearth/freebsd.ftp.markers
 PLIST_DIRS=	lib/X11/xearth
 
 do-install:
@@ -24,7 +23,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/xearth.man ${MANPREFIX}/man/man1/xearth.1
 	@${MKDIR} ${PREFIX}/lib/X11/xearth
 # Copy the list of FreeBSD sites & committers locations
-.for marker in freebsd.committers.markers freebsd.ftp.markers freebsd.submitters.markers
+.for marker in freebsd.committers.markers freebsd.ftp.markers
 	@${INSTALL_DATA} ${FILESDIR}/${marker} ${PREFIX}/lib/X11/xearth
 .endfor
 
