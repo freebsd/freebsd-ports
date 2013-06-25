@@ -1,3 +1,4 @@
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	freetuxtv
@@ -11,6 +12,7 @@ COMMENT=	WebTV player based on GTK2+ and LibVLC
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc \
 		dbus-glib:${PORTSDIR}/devel/dbus-glib \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
@@ -24,27 +26,39 @@ LIB_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
+USES=		iconv pathfix pkgconfig
 USE_GNOME=	glib20 gtk20
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-gtk=2.0
 USE_GMAKE=	yes
-USES=		pkgconfig iconv
+CFLAGS=		-Wno-return-type
 INSTALLS_ICONS=	yes
 
-CONFIGURE_ARGS+=--with-gtk=2.0
+PORTDOCS=	AUTHORS ChangeLog README
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${pkgdatadir}/doc|$${PREFIX}/share/doc/${PORTNAME}|' \
+		-e 's|install-data-am: install-freetuxtvdocDATA|install-data-am: |' \
+		${WRKSRC}/Makefile.in
+
+.if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

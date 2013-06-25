@@ -10,12 +10,6 @@ lib/libvlc-gtk.a
 lib/libvlc-gtk.la
 share/applications/freetuxtv.desktop
 %%DATADIR%%/channels_groups.xml
-%%DATADIR%%/doc/AUTHORS
-%%DATADIR%%/doc/COPYING
-%%DATADIR%%/doc/ChangeLog
-%%DATADIR%%/doc/INSTALL
-%%DATADIR%%/doc/NEWS
-%%DATADIR%%/doc/README
 %%DATADIR%%/images/channels/100pourcentradio.png
 %%DATADIR%%/images/channels/1onairconnect.png
 %%DATADIR%%/images/channels/2mmaroc.png
@@ -440,22 +434,9 @@ share/icons/hicolor/scalable/apps/freetuxtv.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/freetuxtv.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/freetuxtv.mo
 share/pixmaps/freetuxtv.png
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/images/channels
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry include/libvlc-gtk
