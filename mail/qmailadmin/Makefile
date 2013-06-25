@@ -3,7 +3,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	\
 
 IPAUTH_CONFIGURE_OFF=		--disable-ipauth
 USER_INDEX_CONFIGURE_OFF=	--disable-user-index
-MODIFY_QUOTA_CONFIGURE_OFF=	--enable-modify-quota
+MODIFY_QUOTA_CONFIGURE_ON=	--enable-modify-quota
 DOMAIN_AUTOFILL_CONFIGURE_ON=	--enable-domain-autofill
 IDX_SQL_CONFIGURE_OFF=		--disable-ezmlm-mysql
 HELP_CONFIGURE_ON=		--enable-help
