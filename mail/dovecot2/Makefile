@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Secure and compact IMAP and POP3 servers
+
+LICENSE=	LGPL21 MIT
+LICENSE_COMB=	dual
 
 LATEST_LINK=	dovecot2
 CONFLICTS=	dovecot-1.[0-9]*
