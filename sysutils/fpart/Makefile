@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fpart
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Sort and pack files into partitions
 
 LICENSE=	BSD
 
-MANCOMPRESSED=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-embfts
+
+MANCOMPRESSED=	no
 MAN1=		fpart.1
 PLIST_FILES=	bin/fpart
 PORTDOCS=	Changelog README TODO
