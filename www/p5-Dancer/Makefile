@@ -1,15 +1,11 @@
-# New ports collection makefile for:	Dancer
-# Date created:		16 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3110
+PORTVERSION=	1.3115
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
+MASTER_SITE_SUBDIR=	CPAN:YANICK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
