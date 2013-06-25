@@ -3,6 +3,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	3.5.r${REVDATE}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
