@@ -1,0 +1,14 @@
+Compton is a compositor for X11, which was forked from Dana Jansens' fork
+of xcompmgr, and heavily refactored.
+
+Most prominent changes from the original xcompmgr:
+
+  - OpenGL/GLX backend in addition to the old X Render backend
+  - Inactive window transparency and dimming
+  - Titlebar/frame and menu transparency
+  - Shadows for ARGB windows, e.g. terminals with transparency
+  - Colored shadows; new fade system
+  - Blur of background of transparent windows, window color inversion
+  - Configuration file support with blacklisting
+
+WWW: https://github.com/chjj/compton
