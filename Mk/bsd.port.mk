@@ -1628,6 +1628,10 @@ PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
+
 # Check the compatibility layer for amd64/ia64
 
 .if ${ARCH} == "amd64" || ${ARCH} =="ia64"
@@ -2308,9 +2312,6 @@ MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 READLINK_CMD?=	/usr/bin/readlink
 
 # Determine whether or not we can use rootly owner/group functions.
-.if !defined(UID)
-UID!=	${ID} -u
-.endif
 .if ${UID} == 0
 _BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
 _SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
