@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dosage
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	deskutils python
 MASTER_SITES=	GHC
 
