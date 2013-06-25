@@ -25,6 +25,7 @@
     SUBDIR += compiz-plugins-unsupported
     SUBDIR += compizconfig-backend-gconf
     SUBDIR += compizconfig-python
+    SUBDIR += compton
     SUBDIR += ctwm
     SUBDIR += devilspie
     SUBDIR += dwm
