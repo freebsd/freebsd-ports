@@ -202,6 +202,7 @@ sbin/exabgp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/watchdog-1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/tcp-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/syslog-1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/read-write.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp6-simple.txt
