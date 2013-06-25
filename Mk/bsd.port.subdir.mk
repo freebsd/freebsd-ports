@@ -98,7 +98,10 @@ OPSYS!=	${UNAME} -s
 
 .if ${ARCH} == "amd64" || ${ARCH} =="ia64"
 .if !defined(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi; echo
+.if empty(HAVE_COMPAT_IA32_KERN)
+.undef HAVE_COMPAT_IA32_KERN
+.endif
 .endif
 .endif
 
