@@ -1635,7 +1635,10 @@ PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 HAVE_COMPAT_IA32_LIBS?=  YES
 .endif
 .if !defined(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi; echo
+.if empty(HAVE_COMPAT_IA32_KERN)
+.undef HAVE_COMPAT_IA32_KERN
+.endif
 .endif
 .endif
 
