@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.23.1
+PORTVERSION=	2.23.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -83,7 +83,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${ARCH} == "amd64"
-ARCH=		x86_64
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 post-install:
