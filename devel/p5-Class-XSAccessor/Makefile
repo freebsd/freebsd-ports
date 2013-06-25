@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-XSAccessor
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate fast XS accessors without runtime compilation
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
