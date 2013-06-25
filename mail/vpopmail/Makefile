@@ -3,7 +3,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
@@ -138,7 +138,6 @@ DOMAIN_QUOTAS_CONFIGURE_OFF=	--enable-domainquotas=n
 PASSWD_CONFIGURE_ON=		--enable-passwd
 MD5_PASSWORDS_CONFIGURE_OFF=	--disable-md5-passwords
 VALIAS_CONFIGURE_ON=		--enable-valias
-ROAMING_CONFIGURE_ON=		--enable-roaming-users
 CLEAR_PASSWD_CONFIGURE_OFF=	--disable-clear-passwd
 LEARN_PASSWORDS_CONFIGURE_ON=	--enable-learn-passwords
 LDAP_CONFIGURE_ON=		--enable-auth-module=ldap
@@ -152,7 +151,8 @@ FILE_SYNC_CONFIGURE_ON=		--enable-file-sync
 AUTH_LOG_CONFIGURE_OFF=		--disable-auth-logging
 USERS_BIG_DIR_CONFIGURE_OFF=	--disable-users-big-dir
 SEEKABLE_CONFIGURE_OFF=		--disable-make-seekable
-ROAMING_CONFIGURE_ON=		--enable-relay-clear-minutes=${RELAYCLEAR}
+ROAMING_CONFIGURE_ON=		--enable-roaming-users \
+				--enable-relay-clear-minutes=${RELAYCLEAR}
 
 MYSQL_CONFIGURE_ON=		--enable-auth-module=mysql \
 				--enable-incdir=${LOCALBASE}/include/mysql \
