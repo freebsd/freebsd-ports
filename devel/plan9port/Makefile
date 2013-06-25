@@ -102,6 +102,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\[5-9\]\.||' ${WRKSRC}/bin/9l
 	@${REINPLACE_CMD} -e 's|/lib/font/bit|${PLAN9}/font|' \
 		${WRKSRC}/src/cmd/acme/acme.c
+	@${SED} -e 's|util\.h|lib&|' ${WRKSRC}/src/cmd/9term/OpenBSD.c \
+		> ${WRKSRC}/src/cmd/9term/FreeBSD.c
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL
