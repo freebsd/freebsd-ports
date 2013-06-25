@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.16
-PORTEPOCH=	1
+PORTVERSION=	0.1.17
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://pekwm.org/projects/3/files/
+MASTER_SITES=	https://pekwm.org/projects/3/files/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Light, Unobtrusive, and configurable windowmanager

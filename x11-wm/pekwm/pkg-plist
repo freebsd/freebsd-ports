@@ -44,6 +44,7 @@ bin/pekwm
 %%DATADIR%%/themes/default/top-left_unfocus.png
 %%DATADIR%%/themes/default/top-right.png
 %%DATADIR%%/themes/default/top-right_unfocus.png
+%%DATADIR%%/scripts/pekwm_screenshot.sh
 %%DATADIR%%/scripts/pekwm_ws_menu.sh
 %%DATADIR%%/scripts/pekwm_themeset.sh
 @dirrm %%DATADIR%%/scripts
