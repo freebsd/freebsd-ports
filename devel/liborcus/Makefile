@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	liborcus
-PORTVERSION=	0.3.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Standalone file import filter library for spreadsheet documents
@@ -18,12 +17,14 @@ LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip \
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
+USES=		pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
+		--with-boost="${LOCALBASE}" \
 		--with-boost-system=boost_system
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
