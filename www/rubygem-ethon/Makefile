@@ -10,6 +10,7 @@ COMMENT=	Very lightweight libcurl wrapper
 
 RUN_DEPENDS=	rubygem-ffi>=1.3.0:${PORTSDIR}/devel/rubygem-ffi \
 		rubygem-mime-types>=1.18:${PORTSDIR}/misc/rubygem-mime-types
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
