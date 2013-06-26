@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	21.0
-PORTREVISION=	2
+DISTVERSION=	22.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
@@ -12,7 +11,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.9.4:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9.6:${PORTSDIR}/devel/nspr \
 		nss>=3.14.3:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
@@ -50,6 +49,10 @@ OPTIONS_DEFINE=	PGO WEBRTC
 OPTIONS_DEFAULT=WEBRTC
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+# OSS is gone after bug 852401
+OPTIONS_SINGLE_AUDIO:=${OPTIONS_SINGLE_AUDIO:S/OSS//}
+
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-release

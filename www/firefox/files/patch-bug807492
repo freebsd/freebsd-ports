@@ -17,42 +17,14 @@ diff --git configure.in configure.in
 index c167461..8346c11 100644
 --- configure.in
 +++ configure.in
-@@ -1413,16 +1413,27 @@ if test "$GNU_CC"; then
-     _SAVE_CFLAGS=$CFLAGS
-     CFLAGS="$CFLAGS -mssse3"
-     AC_TRY_COMPILE([asm ("pmaddubsw %xmm2,%xmm3");],,AC_MSG_RESULT([yes])
-                      [HAVE_TOOLCHAIN_SUPPORT_MSSSE3=1],
-                      AC_MSG_RESULT([no]))
-     CFLAGS=$_SAVE_CFLAGS
-     AC_SUBST(HAVE_TOOLCHAIN_SUPPORT_MSSSE3)
- 
-+    # Check for -msse4.1 on $CC
-+    AC_MSG_CHECKING([if toolchain supports -msse4.1 option])
-+    HAVE_TOOLCHAIN_SUPPORT_MSSE4_1=
-+    _SAVE_CFLAGS=$CFLAGS
-+    CFLAGS="$CFLAGS -msse4.1"
-+    AC_TRY_COMPILE([asm ("pmulld %xmm6,%xmm0");],,AC_MSG_RESULT([yes])
-+                     [HAVE_TOOLCHAIN_SUPPORT_MSSE4_1=1],
-+                     AC_MSG_RESULT([no]))
-+    CFLAGS=$_SAVE_CFLAGS
-+    AC_SUBST(HAVE_TOOLCHAIN_SUPPORT_MSSE4_1)
-+
-     # Turn on GNU-specific warnings:
-     # -Wall - turn on a lot of warnings
-     # -Wpointer-arith - good to have
-     # -Wdeclaration-after-statement - MSVC doesn't like these
-     # -Werror=return-type - catches missing returns, zero false positives
-     # -Wtype-limits - catches overflow bugs, few false positives
-     # -Wempty-body - catches bugs, e.g. "if (c); foo();", few false positives
-     #
-@@ -5203,17 +5214,17 @@ dnl Turn off webrtc for OS's we don't ha
- dnl --enable-webrtc to override.  Can disable for everything in
- dnl the master list above.
- if test -n "$MOZ_WEBRTC"; then
-     case "$target" in
+@@ -5258,17 +5258,17 @@ if test -n "$MOZ_WEBRTC"; then
      *-android*|*-linuxandroid*)
-         dnl Make sure doesn't get matched by *-linux*
-         MOZ_WEBRTC=
+         if test -n "$MOZ_B2G"; then
+             MOZ_WEBRTC=1
+         else
+             dnl Make sure doesn't get matched by *-linux*
+             MOZ_WEBRTC=
+         fi
          ;;
 -    *-linux*|*-mingw*|*-darwin*)
 +    *-linux*|*-mingw*|*-darwin*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
@@ -64,28 +36,6 @@ index c167461..8346c11 100644
          ;;
      esac
  fi
-@@ -8997,16 +9008,21 @@ elif test "${OS_TARGET}" = "Android"; th
-    EXTRA_GYP_DEFINES="-D gtest_target_type=executable -D android_toolchain=${android_toolchain} -G os=android "
-    if test -n "$ARM_ARCH" && test "$ARM_ARCH" -lt 7; then
-       EXTRA_GYP_DEFINES+=" -D armv7=0 "
-    else
-       EXTRA_GYP_DEFINES+=" -D armv7=1 "
-    fi
- fi
- 
-+# Don't try to compile sse4.1 code if toolchain doesn't support
-+if test -z "$HAVE_TOOLCHAIN_SUPPORT_MSSE4_1"; then
-+  EXTRA_GYP_DEFINES="$EXTRA_GYP_DEFINES -D yuv_disable_asm=1"
-+fi
-+
- if test -n "$MOZ_WEBRTC"; then
-    AC_MSG_RESULT("generating WebRTC Makefiles...")
- 
- dnl Any --include files must also appear in -D FORCED_INCLUDE_FILE= entries
- dnl so that regeneration via dependencies works correctly
-    WEBRTC_CONFIG="-D build_with_mozilla=1 -D build_with_chromium=0 --include ${srcdir}/media/webrtc/webrtc_config.gypi -D FORCED_INCLUDE_FILE=${srcdir}/media/webrtc/webrtc_config.gypi"
- 
-    GYP_WEBRTC_OPTIONS="--format=mozmake ${WEBRTC_CONFIG} -D target_arch=${WEBRTC_TARGET_ARCH} ${EXTRA_GYP_DEFINES} --depth=${srcdir}/media/webrtc/trunk --toplevel-dir=${srcdir} -G OBJDIR=${_objdir}"
 diff --git js/src/config/system-headers js/src/config/system-headers
 index 9bd1efa..1095a01 100644
 --- js/src/config/system-headers
@@ -367,12 +317,12 @@ index cc260b7..66af2d7 100644
      if (!(my_locale = r_strdup(setlocale(LC_CTYPE, 0))))
          ABORT(R_NO_MEMORY);
  
-@@ -93,28 +101,28 @@ mbslen(const char *s, size_t *ncharsp)
- #else
+@@ -94,28 +102,28 @@ mbslen(const char *s, size_t *ncharsp)
      /* can't count UTF-8 characters with mbrlen if the locale isn't UTF-8 */
      /* null-checking setlocale is required because Android */
      char *locale = setlocale(LC_CTYPE, 0);
-     if (!locale || !strcasestr(locale, "UTF-8"))
+     /* some systems use "utf8" instead of "UTF-8" like Fedora 17 */
+     if (!locale || (!strcasestr(locale, "UTF-8") && !strcasestr(locale, "UTF8")))
          ABORT(R_NOT_FOUND);
  #endif
  
@@ -394,12 +344,12 @@ index cc260b7..66af2d7 100644
 +#endif /* HAVE_XLOCALE */
      {
          if (nbytes == (size_t)-1)   /* should never happen */ {
-             assert(0);
              ABORT(R_INTERNAL);
          }
          if (nbytes == (size_t)-2)   /* encoding error */ {
-             assert(0);
              ABORT(R_BAD_DATA);
+         }
+ 
 diff --git media/mtransport/third_party/nrappkit/nrappkit.gyp media/mtransport/third_party/nrappkit/nrappkit.gyp
 index 3cc8e1c..74016c6 100644
 --- media/mtransport/third_party/nrappkit/nrappkit.gyp
@@ -631,106 +581,6 @@ index a30e330..cfbd8a3 100644
  ifeq ($(OS_TARGET),Darwin)
  LIBS += \
    -framework AudioToolbox \
-diff --git media/webrtc/trunk/build/common.gypi media/webrtc/trunk/build/common.gypi
-index 6ca2f70..5d261cb 100644
---- media/webrtc/trunk/build/common.gypi
-+++ media/webrtc/trunk/build/common.gypi
-@@ -75,22 +75,31 @@
-             # ash. This rule should be removed for the future when Windows is
-             # using the aura windows without the ash interface.
-             ['use_aura==1 and OS=="win"', {
-               'use_ash%': 1,
-             }],
-             ['use_ash==1', {
-               'use_aura%': 1,
-             }],
-+
-+            # A flag for BSD platforms
-+            ['OS=="dragonfly" or OS=="freebsd" or OS=="netbsd" or \
-+              OS=="openbsd"', {
-+              'os_bsd%': 1,
-+            }, {
-+              'os_bsd%': 0,
-+            }],
-           ],
-         },
-         # Copy conditionally-set variables out one scope.
-         'chromeos%': '<(chromeos)',
-         'use_aura%': '<(use_aura)',
-         'use_ash%': '<(use_ash)',
-+        'os_bsd%': '<(os_bsd)',
-         'use_openssl%': '<(use_openssl)',
-         'use_ibus%': '<(use_ibus)',
-         'enable_viewport%': '<(enable_viewport)',
-         'enable_hidpi%': '<(enable_hidpi)',
-         'enable_touch_ui%': '<(enable_touch_ui)',
-         'android_upstream_bringup%': '<(android_upstream_bringup)',
-         'buildtype%': '<(buildtype)',
- 
-@@ -114,17 +123,17 @@
-           # Set default value of toolkit_views based on OS.
-           ['OS=="win" or chromeos==1 or use_aura==1', {
-             'toolkit_views%': 1,
-           }, {
-             'toolkit_views%': 0,
-           }],
- 
-           # Set toolkit_uses_gtk for the Chromium browser on Linux.
--          ['(OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris") and use_aura==0', {
-+          ['(OS=="linux" or OS=="solaris" or os_bsd==1) and use_aura==0', {
-             'toolkit_uses_gtk%': 1,
-           }, {
-             'toolkit_uses_gtk%': 0,
-           }],
- 
-           # Enable HiDPI on Mac OS and Chrome OS.
-           ['OS=="mac" or chromeos==1', {
-             'enable_hidpi%': 1,
-@@ -139,16 +148,17 @@
- 
-       # Copy conditionally-set variables out one scope.
-       'chromeos%': '<(chromeos)',
-       'host_arch%': '<(host_arch)',
-       'toolkit_views%': '<(toolkit_views)',
-       'toolkit_uses_gtk%': '<(toolkit_uses_gtk)',
-       'use_aura%': '<(use_aura)',
-       'use_ash%': '<(use_ash)',
-+      'os_bsd%': '<(os_bsd)',
-       'use_openssl%': '<(use_openssl)',
-       'use_ibus%': '<(use_ibus)',
-       'enable_viewport%': '<(enable_viewport)',
-       'enable_hidpi%': '<(enable_hidpi)',
-       'enable_touch_ui%': '<(enable_touch_ui)',
-       'android_upstream_bringup%': '<(android_upstream_bringup)',
-       'android_build_type%': '<(android_build_type)',
- 
-@@ -397,25 +407,18 @@
- 
-         # A flag for POSIX platforms
-         ['OS=="win"', {
-           'os_posix%': 0,
-         }, {
-           'os_posix%': 1,
-         }],
- 
--        # A flag for BSD platforms
--        ['OS=="freebsd" or OS=="openbsd"', {
--          'os_bsd%': 1,
--        }, {
--          'os_bsd%': 0,
--        }],
--
-         # NSS usage.
--        ['(OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris") and use_openssl==0', {
-+        ['(OS=="linux" or OS=="solaris" or os_bsd==1) and use_openssl==0', {
-           'use_nss%': 1,
-         }, {
-           'use_nss%': 0,
-         }],
- 
-         # Flags to use X11 on non-Mac POSIX platforms
-         ['OS=="win" or OS=="mac" or OS=="ios" or OS=="android"', {
-           'use_glib%': 0,
 diff --git media/webrtc/trunk/webrtc/build/common.gypi media/webrtc/trunk/webrtc/build/common.gypi
 index 9ca9f7c..d5c4ab9 100644
 --- media/webrtc/trunk/webrtc/build/common.gypi
@@ -758,9 +608,9 @@ index 9ca9f7c..d5c4ab9 100644
          'include_tests%': 0,
        }],
 @@ -205,16 +210,28 @@
-                 'defines': ['WEBRTC_ARCH_ARM_NEON',],
-               }, {
-                 'defines': ['WEBRTC_DETECT_ARM_NEON',],
+                 'defines': ['WEBRTC_ARCH_ARM_NEON',
+                             'WEBRTC_BUILD_NEON_LIBS',
+                             'WEBRTC_DETECT_ARM_NEON'],
                }],
              ],
            }],
@@ -1636,7 +1486,7 @@ index e367abf..e14d7af 100644
      WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
                   "Available number of cores:%d", number_of_cores_);
  
- #elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
+ #elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_GONK)
      number_of_cores_ = get_nprocs();
      WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
                   "Available number of cores:%d", number_of_cores_);
@@ -1710,7 +1560,7 @@ index 6334490..852ebaa 100644
  }
  
  uint32_t ThreadWrapper::GetThreadId() {
- #if defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX)
+ #if defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX) || defined(WEBRTC_GONK)
    return static_cast<uint32_t>(syscall(__NR_gettid));
  #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    return pthread_mach_thread_np(pthread_self());
@@ -1735,7 +1585,7 @@ index 6334490..852ebaa 100644
  
  int ThreadPosix::Construct() {
    int result = 0;
- #if !defined(WEBRTC_ANDROID)
+ #if !defined(WEBRTC_ANDROID) && !defined(WEBRTC_GONK)
 @@ -167,17 +192,17 @@ int ThreadPosix::Construct() {
  }
  
@@ -1764,9 +1614,9 @@ index 6334490..852ebaa 100644
  
  // CPU_ZERO and CPU_SET are not available in NDK r7, so disable
  // SetAffinity on Android for now.
--#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)))
+-#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)) && (!defined(WEBRTC_GONK)))
 +#if defined(__FreeBSD__) || (defined(WEBRTC_LINUX) && \
-+  (!defined(WEBRTC_ANDROID)))
++  (!defined(WEBRTC_ANDROID)) && (!defined(WEBRTC_GONK)))
  bool ThreadPosix::SetAffinity(const int* processor_numbers,
                                const unsigned int amount_of_processors) {
    if (!processor_numbers || (amount_of_processors == 0)) {
@@ -1784,12 +1634,12 @@ index 6334490..852ebaa 100644
         ++processor) {
      CPU_SET(processor_numbers[processor], &mask);
    }
--#if defined(WEBRTC_ANDROID)
+-#if defined(WEBRTC_ANDROID) || defined(WEBRTC_GONK)
 +#if defined(__FreeBSD__)
 +  const int result = pthread_setaffinity_np(thread_,
 +                             sizeof(mask),
 +                             &mask);
-+#elif defined(WEBRTC_ANDROID)
++#elif defined(WEBRTC_ANDROID) || defined(WEBRTC_GONK)
    // Android.
    const int result = syscall(__NR_sched_setaffinity,
                               pid_,
@@ -2013,58 +1863,14 @@ index 7d4c729..4104719 100644
  
  
  #endif // WEBRTC_VOICE_ENGINE_VOICE_ENGINE_DEFINES_H
-diff --git media/webrtc/trunk/third_party/libyuv/libyuv.gyp media/webrtc/trunk/third_party/libyuv/libyuv.gyp
-index 6f4eb9e..5f044ad 100644
---- media/webrtc/trunk/third_party/libyuv/libyuv.gyp
-+++ media/webrtc/trunk/third_party/libyuv/libyuv.gyp
-@@ -4,16 +4,17 @@
- # that can be found in the LICENSE file in the root of the source
- # tree. An additional intellectual property rights grant can be found
- # in the file PATENTS.  All contributing project authors may
- # be found in the AUTHORS file in the root of the source tree.
- 
- {
-   'variables': {
-      'use_system_libjpeg%': 0,
-+     'yuv_disable_asm%': 0,
-   },
-   'targets': [
-     {
-       'target_name': 'libyuv',
-       'type': 'static_library',
-       # 'type': 'shared_library',
-       'conditions': [
-          ['use_system_libjpeg==0', {
-@@ -45,16 +46,21 @@
-       ],
-       'direct_dependent_settings': {
-         'include_dirs': [
-           'include',
-           '.',
-         ],
-       },
-       'conditions': [
-+        ['yuv_disable_asm==1', {
-+          'defines': [
-+            'YUV_DISABLE_ASM',
-+          ],
-+        }],
-         ['build_with_mozilla==1', {
-           'include_dirs': [
-             '$(DEPTH)/dist/include',
-           ],
-           'direct_dependent_settings': {
-             'include_dirs': [
-               '$(DEPTH)/dist/include',
-             ],
 diff --git media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
 index 338d0b7..2241d41 100644
 --- media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
 +++ media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
-@@ -4,16 +4,17 @@
- 
- # Python 2.5 needs this for the with statement.
- from __future__ import with_statement
+@@ -1,16 +1,17 @@
+ # Copyright (c) 2012 Mozilla Foundation. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
  
  import collections
  import gyp
