@@ -10,11 +10,14 @@ MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Translates documents written in troff macros to DocBook
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 NO_BUILD=	yes
 
 MAN1=		doclifter.1 manlifter.1
 PLIST_FILES=	bin/doclifter bin/manlifter
+
+post-patch:
+	${REINPLACE_CMD} '1s/python/python2/' ${WRKSRC}/doclifter
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${PREFIX}/bin
