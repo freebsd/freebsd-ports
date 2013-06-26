@@ -2,66 +2,69 @@ bin/rwhois_deleter
 bin/rwhois_indexer
 bin/rwhois_repack
 sbin/rwhoisd
-etc/rwhoisd/a.com/attribute_defs/asn.tmpl
-etc/rwhoisd/a.com/attribute_defs/contact.tmpl
-etc/rwhoisd/a.com/attribute_defs/domain.tmpl
-etc/rwhoisd/a.com/attribute_defs/guardian.tmpl
-etc/rwhoisd/a.com/attribute_defs/host.tmpl
-etc/rwhoisd/a.com/attribute_defs/org.tmpl
-etc/rwhoisd/a.com/attribute_defs/referral.tmpl
-etc/rwhoisd/a.com/data/asn/asn.txt
-etc/rwhoisd/a.com/data/contact/contact.txt
-etc/rwhoisd/a.com/data/domain/domain.txt
-etc/rwhoisd/a.com/data/guardian/guardian.txt
-etc/rwhoisd/a.com/data/host/host.txt
-etc/rwhoisd/a.com/data/org/org.txt
-etc/rwhoisd/a.com/data/referral/referral.txt
-etc/rwhoisd/a.com/schema
-etc/rwhoisd/a.com/soa
-etc/rwhoisd/net-10.0.0.0-8/attribute_defs/contact.tmpl
-etc/rwhoisd/net-10.0.0.0-8/attribute_defs/guardian.tmpl
-etc/rwhoisd/net-10.0.0.0-8/attribute_defs/host.tmpl
-etc/rwhoisd/net-10.0.0.0-8/attribute_defs/network.tmpl
-etc/rwhoisd/net-10.0.0.0-8/attribute_defs/referral.tmpl
-etc/rwhoisd/net-10.0.0.0-8/data/network/network.txt
-etc/rwhoisd/net-10.0.0.0-8/data/referral/referral.txt
-etc/rwhoisd/net-10.0.0.0-8/schema
-etc/rwhoisd/net-10.0.0.0-8/soa
-etc/rwhoisd/net-fd00:1234::-32/attribute_defs/host.tmpl
-etc/rwhoisd/net-fd00:1234::-32/attribute_defs/referral.tmpl
-etc/rwhoisd/net-fd00:1234::-32/attribute_defs/contact.tmpl
-etc/rwhoisd/net-fd00:1234::-32/attribute_defs/guardian.tmpl
-etc/rwhoisd/net-fd00:1234::-32/attribute_defs/network.tmpl
-etc/rwhoisd/net-fd00:1234::-32/data/referral/referral.txt
-etc/rwhoisd/net-fd00:1234::-32/data/network/network.txt
-etc/rwhoisd/net-fd00:1234::-32/soa
-etc/rwhoisd/net-fd00:1234::-32/schema
-etc/rwhoisd/rwhoisd.allow
-etc/rwhoisd/rwhoisd.auth_area
-etc/rwhoisd/rwhoisd.conf
-etc/rwhoisd/rwhoisd.deny
-etc/rwhoisd/rwhoisd.dir
-etc/rwhoisd/rwhoisd.root
-etc/rwhoisd/rwhoisd.x.dir
-@dirrm etc/rwhoisd/net-10.0.0.0-8/data/referral
-@dirrm etc/rwhoisd/net-10.0.0.0-8/data/network
-@dirrm etc/rwhoisd/net-10.0.0.0-8/data
-@dirrm etc/rwhoisd/net-10.0.0.0-8/attribute_defs
-@dirrm etc/rwhoisd/net-10.0.0.0-8
-@dirrm etc/rwhoisd/net-fd00:1234::-32/attribute_defs
-@dirrm etc/rwhoisd/net-fd00:1234::-32/data/referral
-@dirrm etc/rwhoisd/net-fd00:1234::-32/data/network
-@dirrm etc/rwhoisd/net-fd00:1234::-32/data
-@dirrm etc/rwhoisd/net-fd00:1234::-32
-@dirrm etc/rwhoisd/a.com/data/referral
-@dirrm etc/rwhoisd/a.com/data/org
-@dirrm etc/rwhoisd/a.com/data/host
-@dirrm etc/rwhoisd/a.com/data/guardian
-@dirrm etc/rwhoisd/a.com/data/domain
-@dirrm etc/rwhoisd/a.com/data/contact
-@dirrm etc/rwhoisd/a.com/data/asn
-@dirrm etc/rwhoisd/a.com/data
-@dirrm etc/rwhoisd/a.com/attribute_defs
-@dirrm etc/rwhoisd/a.com
-@dirrmtry etc/rwhoisd
-@exec mkdir -p /var/log/rwhoisd /var/run/rwhoisd; chown -R nobody /var/log/rwhoisd /var/run/rwhoisd
+%%ETCDIR%%/samples/a.com/attribute_defs/asn.tmpl
+%%ETCDIR%%/samples/a.com/attribute_defs/contact.tmpl
+%%ETCDIR%%/samples/a.com/attribute_defs/domain.tmpl
+%%ETCDIR%%/samples/a.com/attribute_defs/guardian.tmpl
+%%ETCDIR%%/samples/a.com/attribute_defs/host.tmpl
+%%ETCDIR%%/samples/a.com/attribute_defs/org.tmpl
+%%ETCDIR%%/samples/a.com/attribute_defs/referral.tmpl
+%%ETCDIR%%/samples/a.com/data/asn/asn.txt
+%%ETCDIR%%/samples/a.com/data/contact/contact.txt
+%%ETCDIR%%/samples/a.com/data/domain/domain.txt
+%%ETCDIR%%/samples/a.com/data/guardian/guardian.txt
+%%ETCDIR%%/samples/a.com/data/host/host.txt
+%%ETCDIR%%/samples/a.com/data/org/org.txt
+%%ETCDIR%%/samples/a.com/data/referral/referral.txt
+%%ETCDIR%%/samples/a.com/schema
+%%ETCDIR%%/samples/a.com/soa
+%%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs/contact.tmpl
+%%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs/guardian.tmpl
+%%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs/host.tmpl
+%%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs/network.tmpl
+%%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs/referral.tmpl
+%%ETCDIR%%/samples/net-10.0.0.0-8/data/network/network.txt
+%%ETCDIR%%/samples/net-10.0.0.0-8/data/referral/referral.txt
+%%ETCDIR%%/samples/net-10.0.0.0-8/schema
+%%ETCDIR%%/samples/net-10.0.0.0-8/soa
+%%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs/host.tmpl
+%%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs/referral.tmpl
+%%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs/contact.tmpl
+%%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs/guardian.tmpl
+%%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs/network.tmpl
+%%ETCDIR%%/samples/net-fd00:1234::-32/data/referral/referral.txt
+%%ETCDIR%%/samples/net-fd00:1234::-32/data/network/network.txt
+%%ETCDIR%%/samples/net-fd00:1234::-32/soa
+%%ETCDIR%%/samples/net-fd00:1234::-32/schema
+%%ETCDIR%%/samples/rwhoisd.allow
+%%ETCDIR%%/samples/rwhoisd.auth_area
+%%ETCDIR%%/samples/rwhoisd.conf
+%%ETCDIR%%/samples/rwhoisd.deny
+%%ETCDIR%%/samples/rwhoisd.dir
+%%ETCDIR%%/samples/rwhoisd.root
+%%ETCDIR%%/samples/rwhoisd.x.dir
+@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/data/referral
+@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/data/network
+@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/data
+@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8/attribute_defs
+@dirrm %%ETCDIR%%/samples/net-10.0.0.0-8
+@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/attribute_defs
+@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/data/referral
+@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/data/network
+@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32/data
+@dirrm %%ETCDIR%%/samples/net-fd00:1234::-32
+@dirrm %%ETCDIR%%/samples/a.com/data/referral
+@dirrm %%ETCDIR%%/samples/a.com/data/org
+@dirrm %%ETCDIR%%/samples/a.com/data/host
+@dirrm %%ETCDIR%%/samples/a.com/data/guardian
+@dirrm %%ETCDIR%%/samples/a.com/data/domain
+@dirrm %%ETCDIR%%/samples/a.com/data/contact
+@dirrm %%ETCDIR%%/samples/a.com/data/asn
+@dirrm %%ETCDIR%%/samples/a.com/data
+@dirrm %%ETCDIR%%/samples/a.com/attribute_defs
+@dirrm %%ETCDIR%%/samples/a.com
+@dirrm %%ETCDIR%%/samples
+@dirrmtry %%ETCDIR%%
+@exec install -d -o nobody /var/log/rwhoisd /var/run/rwhoisd
+@exec for f in %%ETCFILES%%; do [ -f %D/%%ETCDIR%%/$f ] || cp -p %D/%%ETCDIR%%/samples/$f %D/%%ETCDIR%%/$f; done
+@unexec for f in %%ETCFILES%%; do cmp -s %D/%%ETCDIR%%/$f %D/%%ETCDIR%%/samples/$f && rm -f %D/%%ETCDIR%%/$f || true; done

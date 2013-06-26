@@ -1,5 +1,7 @@
 #!/bin/sh
-
+#
+# $FreeBSD$
+#
 # PROVIDE: rwhoisd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
@@ -15,17 +17,16 @@
 
 . /etc/rc.subr
 
-name="rwhoisd"
+name=rwhoisd
 rcvar=rwhoisd_enable
+load_rc_config $name
+
+: ${rwhoisd_enable:=NO}
+: ${rwhoisd_config="%%PREFIX%%/etc/rwhoisd/rwhoisd.conf"}
+: ${rwhoisd_pidfile="/var/run/${name}/${name}.pid"}
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=${rwhoisd_pidfile}
-
-load_rc_config $name
-
-: ${rwhoisd_enable="NO"}
-: ${rwhoisd_config="%%PREFIX%%/etc/rwhoisd/rwhoisd.conf"}
-: ${rwhoisd_pidfile="/var/run/${name}/${name}.pid"}
 
 command_args="-d -c $rwhoisd_config"
 
