@@ -1,12 +1,8 @@
-# Ports collection Makefile for:	MarkupSafe
-# Date created:				Sep 08, 2010
-# Whom:					wen@FreeBSD.org
-#
+# Created by: wen@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		MarkupSafe
-PORTVERSION=		0.15
+PORTVERSION=		0.18
 CATEGORIES=		textproc python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -20,4 +16,10 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 320
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
+.endif
+
+.include <bsd.port.post.mk>
