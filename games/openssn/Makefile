@@ -1,24 +1,25 @@
-# New ports collection makefile for:	OpenSSN
-# Date created:			30, May 2011
-# Whom:				Jesse Smith <jessefrgsmith@yahoo.ca>
-#
+# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	openssn
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
-COMMENT=	A modern submarine simulator
+COMMENT=	Modern submarine simulator
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
+MAN6=		openssn.6
+MANCOMPRESSED=	yes
+
+USES=		desktop-file-utils
 USE_SDL=	sdl gfx image mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,share/man/man6,man/man6,g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
