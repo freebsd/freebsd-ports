@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 MAKE_ARGS=	HOST=_FreeBSD
 WRKSRC_SUBDIR=	generate/unix
 
+ACPICA_TOOLS=	acpibin acpidump acpiexec acpihelp acpinames acpisrc \
+		acpixtract iasl
 .for t in ${ACPICA_TOOLS}
 PLIST_FILES+=	bin/${t}
 .endfor
@@ -29,9 +31,6 @@ YFLAGS=		-v -d
 .if !empty(YACC:M*bison*)
 YFLAGS+=	-y
 .endif
-
-ACPICA_TOOLS=	acpibin acpidump acpiexec acpihelp acpinames acpisrc \
-		acpixtract iasl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC[[:blank:]]*=.*|CC = ${CC}|' \
