@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/_compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/_compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/_compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/_constants.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/_constants.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/markupsafe/_constants.pyo
