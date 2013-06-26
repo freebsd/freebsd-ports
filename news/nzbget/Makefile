@@ -39,7 +39,10 @@ OPTIONS_DEFAULT=	PAR GNUTLS
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
- CONFIGURE_ARGS+= --with-tlslib=OpenSSL
+ USE_OPENSSL=	yes
+ CONFIGURE_ARGS+= --with-tlslib=OpenSSL \
+		--with-openssl-includes=${OPENSSLINC} \
+		--with-openssl-libraries=${OPENSSLLIB}
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
