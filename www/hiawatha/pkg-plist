@@ -25,5 +25,5 @@ sbin/wigwam
 @unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    WWW directory is empty, removing it."; rmdir %D/www/hiawatha; fi;
 lib/hiawatha/libpolarssl.so
 lib/hiawatha/libpolarssl.so.2
-lib/hiawatha/libpolarssl.so.1.2.7
+lib/hiawatha/libpolarssl.so.1.2.8
 @dirrm lib/hiawatha
