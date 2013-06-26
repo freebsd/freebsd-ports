@@ -1,0 +1,10 @@
+--- ./Makefile.orig	2013-06-19 16:47:57.000000000 -0300
++++ ./Makefile	2013-06-19 16:48:04.000000000 -0300
+@@ -1,6 +1,6 @@
+ PREFIX ?= /usr
+ SSN = openssn
+-DATADIR = $(PREFIX)/share/openssn
++DATADIR = $(PREFIX)/share/games/openssn
+ OPTDIR = /opt/openssn
+ VERSION = 1.4
+ 

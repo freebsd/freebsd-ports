@@ -1,4 +1,5 @@
 bin/openssn
+share/applications/openssn.desktop
 share/games/openssn/data/font.dat
 share/games/openssn/data/information.txt
 share/games/openssn/data/largefont.dat
@@ -6,14 +7,35 @@ share/games/openssn/data/mission0.dat
 share/games/openssn/data/mission1.dat
 share/games/openssn/data/mission2.dat
 share/games/openssn/data/mission3.dat
+share/games/openssn/data/mission4.dat
+share/games/openssn/data/mission5.dat
+share/games/openssn/data/mission6.dat
+share/games/openssn/data/mission7.dat
+share/games/openssn/data/mission8.dat
+share/games/openssn/data/mission9.dat
+share/games/openssn/data/mission10.dat
 share/games/openssn/data/orders0.txt
 share/games/openssn/data/orders1.txt
 share/games/openssn/data/orders2.txt
 share/games/openssn/data/orders3.txt
+share/games/openssn/data/orders4.txt
+share/games/openssn/data/orders5.txt
+share/games/openssn/data/orders6.txt
+share/games/openssn/data/orders7.txt
+share/games/openssn/data/orders8.txt
+share/games/openssn/data/orders9.txt
+share/games/openssn/data/orders10.txt
 share/games/openssn/data/ships0.dat
 share/games/openssn/data/ships1.dat
 share/games/openssn/data/ships2.dat
 share/games/openssn/data/ships3.dat
+share/games/openssn/data/ships4.dat
+share/games/openssn/data/ships5.dat
+share/games/openssn/data/ships6.dat
+share/games/openssn/data/ships7.dat
+share/games/openssn/data/ships8.dat
+share/games/openssn/data/ships9.dat
+share/games/openssn/data/ships10.dat
 share/games/openssn/images/A13off.png
 share/games/openssn/images/A13on.png
 share/games/openssn/images/A23off.png
@@ -186,10 +208,17 @@ share/games/openssn/ships/class3.shp
 share/games/openssn/ships/class4.shp
 share/games/openssn/ships/class5.shp
 share/games/openssn/ships/class6.shp
+share/games/openssn/ships/class7.shp
+share/games/openssn/ships/class8.shp
+share/games/openssn/ships/class9.shp
+share/games/openssn/ships/class10.shp
+share/games/openssn/ships/class11.shp
+share/games/openssn/ships/class12.shp
 share/games/openssn/ships/information.txt
 share/games/openssn/sounds/explosion.ogg
 share/games/openssn/sounds/sonar-ping.ogg
 share/games/openssn/sounds/torpedo-launch.ogg
+share/pixmaps/openssn.png
 @dirrm share/games/openssn/sounds
 @dirrm share/games/openssn/ships
 @dirrm share/games/openssn/images
