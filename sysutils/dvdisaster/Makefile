@@ -5,11 +5,10 @@ PORTNAME=	dvdisaster
 PORTVERSION=	0.72.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF \
-		http://dvdisaster.net/downloads/
+MASTER_SITES=	http://dvdisaster.net/downloads/
 
 MAINTAINER=	chalpin@cs.wisc.edu
-COMMENT=	A CD/DVD error recovery tool
+COMMENT=	CD/DVD error recovery tool
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
