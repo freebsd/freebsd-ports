@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	safe_yaml
-PORTVERSION=	0.7.0
+PORTVERSION=	0.9.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
