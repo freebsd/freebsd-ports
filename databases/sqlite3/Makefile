@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
-USES=		pkgconfig
+USES=		pathfix
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 
@@ -153,9 +153,6 @@ CONFIGURE_ARGS+=	--enable-dynamic-extensions
 .else
 CONFIGURE_ARGS+=	--disable-dynamic-extensions
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} '/^pkgconf/s,$${libdir},$${prefix}/libdata,' ${WRKSRC}/Makefile.in
 
 post-build:
 .if ${ARCH}=="i386"
