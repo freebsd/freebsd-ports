@@ -28,6 +28,8 @@
 %%WWWDIR_REL%%/wwwroot/inc/remote.php
 %%WWWDIR_REL%%/wwwroot/inc/slb-interface.php
 %%WWWDIR_REL%%/wwwroot/inc/slb.php
+%%WWWDIR_REL%%/wwwroot/inc/slb2-interface.php
+%%WWWDIR_REL%%/wwwroot/inc/slbv2.php
 %%WWWDIR_REL%%/wwwroot/inc/snmp.php
 %%WWWDIR_REL%%/wwwroot/inc/solutions.php
 %%WWWDIR_REL%%/wwwroot/inc/triggers.php
@@ -86,6 +88,7 @@
 %%WWWDIR_REL%%/wwwroot/js/net-usage.js
 %%WWWDIR_REL%%/wwwroot/js/portinfo.js
 %%WWWDIR_REL%%/wwwroot/js/racktables.js
+%%WWWDIR_REL%%/wwwroot/js/slb_editor.js
 %%WWWDIR_REL%%/wwwroot/js/tag-cb.js
 %%WWWDIR_REL%%/wwwroot/js/vst_editor.js
 %%WWWDIR_REL%%/wwwroot/pix/1x1t.gif
@@ -97,6 +100,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/bracket-16x16.png
 %%WWWDIR_REL%%/wwwroot/pix/bracket-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/checkbox_yes.png
+%%WWWDIR_REL%%/wwwroot/pix/checked.png
 %%WWWDIR_REL%%/wwwroot/pix/configuration.png
 %%WWWDIR_REL%%/wwwroot/pix/crystal-actions-unlock-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/crystal-edit-user-32x32.png
@@ -196,6 +200,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/tango-user-trash-32x32.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-view-fullscreen-22x22.png
 %%WWWDIR_REL%%/wwwroot/pix/tango-view-refresh-32x32.png
+%%WWWDIR_REL%%/wwwroot/pix/unchecked.png
 %%WWWDIR_REL%%/wwwroot/pix/virtualresources.png
 @dirrm %%WWWDIR_REL%%/wwwroot/css
 @dirrm %%WWWDIR_REL%%/wwwroot/inc
