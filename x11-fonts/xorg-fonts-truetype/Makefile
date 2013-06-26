@@ -3,6 +3,7 @@
 
 PORTNAME=	xorg-fonts-truetype
 PORTVERSION=	7.7
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	# none
 DISTFILES=	# none
