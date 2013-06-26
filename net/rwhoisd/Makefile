@@ -3,7 +3,7 @@
 
 PORTNAME=	rwhoisd
 PORTVERSION=	1.5.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://projects.arin.net/rwhois/ftp/ \
 		http://www.rwhois.net/ftp/ \
@@ -34,6 +34,10 @@ MAN8=		rwhois_indexer.8 rwhoisd.8
 PORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
 		operations_guide.txt rfc2167.txt security.html security.txt
 
+ETCFILES=	rwhoisd.allow rwhoisd.auth_area rwhoisd.conf rwhoisd.deny \
+		rwhoisd.dir rwhoisd.root rwhoisd.x.dir
+PLIST_SUB+=	ETCFILES="${ETCFILES}"
+
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MIPV6)
@@ -45,8 +49,6 @@ CONFIGURE_ARGS+=	--enable-largefile
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,rwhoisd/samples,rwhoisd,' \
-		${WRKSRC}/sample.data/Makefile.in
 	@${REINPLACE_CMD} -e 's,userid: rwhoisd,userid: nobody,' \
 			  -e 's,pid-file: rwhoisd.pid,pid-file: /var/run/rwhoisd/rwhoisd.pid,' \
 		${WRKSRC}/sample.data/rwhoisd.conf
@@ -54,8 +56,6 @@ post-patch:
 		${WRKSRC}/common/conf.h
 
 post-install:
-	@${MKDIR} /var/log/rwhoisd /var/run/rwhoisd
-	@${CHOWN} -R nobody /var/log/rwhoisd /var/run/rwhoisd
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${PREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
