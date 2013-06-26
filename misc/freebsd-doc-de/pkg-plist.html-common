@@ -2,6 +2,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/1.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/2.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/3.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/4.png
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/5.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css

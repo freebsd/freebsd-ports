@@ -28,6 +28,9 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/laptop
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing

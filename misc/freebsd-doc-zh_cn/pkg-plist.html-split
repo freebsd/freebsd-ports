@@ -37,6 +37,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/appendices.html
+%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/bi01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot-bios.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot-boot0.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/boot-boot2.html
@@ -70,6 +71,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/kernel-objects-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/kernel-objects.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/kernel.html
+%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/locking-atomic.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/locking-sx.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/locking.html
@@ -100,7 +102,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/scsi-timeout.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/scsi.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/smp-design.html
-%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/smp-glossary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/smp-implementation-notes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/smp-lock-fundamentals.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/smp-lock-strategies.html
@@ -121,7 +122,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/vm-pagetables.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/vm-tuning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/vm.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ACPI-debug.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-intro.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-mirror.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-raid3.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-striping.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-Auth.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-UUCP.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-dialup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking.html
@@ -232,11 +241,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
@@ -383,9 +387,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/shells.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/slip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/small-lan.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-auth.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-dialup.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-uucp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
@@ -394,6 +395,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
@@ -434,6 +436,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/ch06s25.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/cvsweb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
@@ -455,6 +458,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/keeping-up.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-categories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-comment.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-depend.html
@@ -533,4 +537,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5617.html

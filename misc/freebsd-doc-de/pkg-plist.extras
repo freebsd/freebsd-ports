@@ -1,1 +1,3 @@
 @comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt

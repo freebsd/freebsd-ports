@@ -31,12 +31,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/type1-fonts-groff.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/type1-fonts-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/virtual-console.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/IPsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/caveat.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/code.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/experiment.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec-install.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/trademarks.html
@@ -84,8 +84,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/serial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/troubleshoot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/x.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-Auth.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-UUCP.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-dialup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/anoncvs.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/apbs04.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/apbs05.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/apbs06.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-floppybackups.html
@@ -117,6 +123,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-start.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch11s06.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/config-tuning.html
@@ -200,9 +207,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-bittorrent.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
@@ -265,9 +270,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/skey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/slip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/small-lan.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-auth.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-dialup.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-uucp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
@@ -276,6 +278,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
@@ -286,9 +289,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-limiting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-modifying.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-superuser.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-system.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
@@ -302,10 +302,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x15606.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x35187.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x35231.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x35275.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
@@ -326,6 +322,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-workarounds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-categories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-comment.html
