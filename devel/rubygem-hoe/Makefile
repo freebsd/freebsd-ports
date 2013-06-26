@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hoe
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
