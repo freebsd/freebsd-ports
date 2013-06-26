@@ -1217,6 +1217,13 @@ WITH_PKGNG?=	yes
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+.for _CATEGORY in ${CATEGORIES}
+PKGCATEGORY?=	${_CATEGORY}
+.endfor
+_PORTDIRNAME=	${.CURDIR:T}
+PORTDIRNAME?=	${_PORTDIRNAME}
+PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
+
 MASTERDIR?=	${.CURDIR}
 
 .if ${MASTERDIR} != ${.CURDIR}
@@ -2384,14 +2391,6 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 TMPPLIST_SORT?=	${WRKDIR}/.PLIST.mktmp.sorted
 TMPGUCMD?=	${WRKDIR}/.PLIST.gucmd
-
-.for _CATEGORY in ${CATEGORIES}
-PKGCATEGORY?=	${_CATEGORY}
-.endfor
-_PORTDIRNAME=	${.CURDIR:T}
-PORTDIRNAME?=	${_PORTDIRNAME}
-PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
-
 
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
@@ -6106,13 +6105,20 @@ do-config:
 	@${ECHO_MSG} "===> No options to configure"
 .else
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
-	@optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	@optionsdir=${OPTIONS_FILE}; optionsdir=$${optionsdir%/*}; \
+	oldoptionsdir=${OPTIONSFILE}; oldoptionsdir=$${oldoptionsdir%/*}; \
 	${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
-	(${SU_CMD} "${SH} -c \"${MKDIR} $${optionsdir} 2> /dev/null\"") || \
+	(${SU_CMD} "${SH} -c \"if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then ${MV} $${oldoptionsdir} $${optionsdir}; elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then ${RM} -rf $${oldoptionsdir} ; fi ; ${MKDIR} $${optionsdir} 2> /dev/null\"") || \
 		(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
 	${ECHO_MSG} "===>  Returning to user credentials"
 .else
-	@(optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	@(optionsdir=${OPTIONS_FILE}; optionsdir=$${optionsdir%/*}; \
+	oldoptionsdir=${OPTIONSFILE}; oldoptionsdir=$${oldoptionsdir%/*}; \
+	if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then \
+		${MV} $${oldoptionsdir} $${optionsdir}; \
+	elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then \
+		${RM} -rf $${oldoptionsdir} ; \
+	fi ; \
 	${MKDIR} $${optionsdir} 2> /dev/null) || \
 	(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1)
 .endif
@@ -6144,11 +6150,11 @@ do-config:
 		fi; \
 	done; \
 	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
-		${ECHO_MSG} "===>  Switching to root credentials to write ${OPTIONSFILE}"; \
-		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}"; \
+		${ECHO_MSG} "===>  Switching to root credentials to write ${OPTIONS_FILE}"; \
+		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${OPTIONS_FILE}"; \
 		${ECHO_MSG} "===>  Returning to user credentials"; \
 	else \
-		${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}; \
+		${CAT} $${TMPOPTIONSFILE} > ${OPTIONS_FILE}; \
 	fi; \
 	${RM} -f $${TMPOPTIONSFILE}
 	@cd ${.CURDIR} && ${MAKE} sanity-config
@@ -6240,6 +6246,19 @@ rmconfig:
 		${ECHO_MSG} "===> Returning to user credentials"; \
 	else \
 		${RM} -f ${OPTIONSFILE}; \
+		${RMDIR} $${optionsdir} 2>/dev/null || return 0; \
+	fi
+.endif
+.if exists(${OPTIONS_FILE})
+	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
+	optionsdir=${OPTIONS_FILE}; optionsdir=$${optionsdir%/*}; \
+	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+		${ECHO_MSG} "===> Switching to root credentials to remove ${OPTIONS_FILE} and $${optionsdir}"; \
+		${SU_CMD} "${RM} -f ${OPTIONS_FILE} ; \
+			${RMDIR} $${optionsdir}"; \
+		${ECHO_MSG} "===> Returning to user credentials"; \
+	else \
+		${RM} -f ${OPTIONS_FILE}; \
 		${RMDIR} $${optionsdir} 2>/dev/null || return 0; \
 	fi
 .else
