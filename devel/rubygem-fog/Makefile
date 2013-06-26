@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	1.11.1
+PORTVERSION=	1.12.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,10 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby cloud services library
 
 RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-excon>=0.20:${PORTSDIR}/devel/rubygem-excon \
+		rubygem-excon>=0.23:${PORTSDIR}/devel/rubygem-excon \
 		rubygem-formatador>=0.2.3:${PORTSDIR}/devel/rubygem-formatador \
-		rubygem-json>=1.7:${PORTSDIR}/devel/rubygem-json \
 		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
+		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-net-scp>=1.1:${PORTSDIR}/security/rubygem-net-scp \
 		rubygem-net-ssh>=2.1.3:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-nokogiri>=1.5.0:${PORTSDIR}/textproc/rubygem-nokogiri \
