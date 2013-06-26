@@ -13,6 +13,14 @@ COMMENT?=	Lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
 
+# Odd arrangement here-- cli is MIT, everything else is GPL
+.if ${SLAVEPORT} == cli
+LICENSE=	MIT
+.else
+LICENSE=	GPLv2
+.endif
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
 OPTIONS_DEFINE=	LITE
@@ -52,13 +60,13 @@ EXTRA_PATCHES=	${PATCHDIR}/disable-web
 
 USE_XZ=		yes
 
-DOCS=		AUTHORS COPYING NEWS README
+DOCS=		AUTHORS NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 general-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
-.if ${SLAVEPORT} != gtk2
+.if ${SLAVEPORT} != gtk
 	@${REINPLACE_CMD} -e '/#define DISABLE_GETTEXT/s,/\* \(.*\) \*/,\1,' \
 		${WRKSRC}/libtransmission/utils.h
 .endif
