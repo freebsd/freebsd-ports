@@ -1,12 +1,9 @@
-# New ports collection makefile for:	pgpdump
-# Date created:				19 Jul 2000
-# Whom:					TAKAHASHI Kaoru
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
 #
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	security
 MASTER_SITES=	http://www.mew.org/~kazu/proj/pgpdump/
 
