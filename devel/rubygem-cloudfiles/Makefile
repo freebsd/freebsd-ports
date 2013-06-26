@@ -1,20 +1,15 @@
-# New ports collection makefile for:	rubygem-cloudfiles
-# Date created:		2011-06-21
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cloudfiles
-PORTVERSION=	1.4.18
+PORTVERSION=	1.5.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby version of the Rackspace Cloud Files API
 
-BUILD_DEPENDS=	rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types
-RUN_DEPENDS=	rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types
+RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
