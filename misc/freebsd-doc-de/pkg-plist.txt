@@ -2,6 +2,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt

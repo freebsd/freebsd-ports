@@ -1,10 +1,10 @@
 @comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/IPsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/caveat.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/code.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/experiment.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec-install.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/trademarks.html

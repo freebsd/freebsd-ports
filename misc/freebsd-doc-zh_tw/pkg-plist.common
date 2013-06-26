@@ -15,7 +15,6 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib/callouts
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/imagelib
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/faq
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books

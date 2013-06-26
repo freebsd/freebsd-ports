@@ -27,7 +27,6 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/fonts
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributors
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing

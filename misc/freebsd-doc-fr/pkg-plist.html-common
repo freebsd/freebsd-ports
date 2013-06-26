@@ -6,7 +6,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css

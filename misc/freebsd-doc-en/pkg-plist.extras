@@ -4,3 +4,5 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_2.conf.default
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_2.sh
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_3.mk
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt

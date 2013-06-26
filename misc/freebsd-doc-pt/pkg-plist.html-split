@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/b397.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/bi01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-collaboration.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/freebsd-intro.html
@@ -22,17 +22,17 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/what-a-real-unix.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/why-is-bsd-not-better-known.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s02.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s03.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s04.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s05.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s06.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s07.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s08.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x116.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x207.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x219.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x40.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x55.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x69.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x94.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/Configuration.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/build.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/configuration.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/patch.html
@@ -118,6 +118,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/support.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/troubleshoot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/x.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch07s02.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/doc-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-docbook-article.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-formatted.html
@@ -163,4 +164,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/translations.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/writing-style-word-list.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/writing-style.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/x2671.html
