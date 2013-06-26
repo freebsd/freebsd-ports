@@ -891,6 +891,7 @@
     SUBDIR += proxy-connect
     SUBDIR += proxy-suite
     SUBDIR += proxychains
+    SUBDIR += proxychains-ng
     SUBDIR += prtunnel
     SUBDIR += ptpd
     SUBDIR += ptpd2
