@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-mga
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 PORTEPOCH=	3
 CATEGORIES=	x11-drivers
 
