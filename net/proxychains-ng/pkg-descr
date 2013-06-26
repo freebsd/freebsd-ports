@@ -1,0 +1,5 @@
+ProxyChains is a UNIX program, that hooks network-related libc functions
+in dynamically linked programs via a preloaded DLL and redirects the
+connections through SOCKS4a/5 or HTTP proxies.
+
+WWW: http://sourceforge.net/projects/proxychains-ng/
