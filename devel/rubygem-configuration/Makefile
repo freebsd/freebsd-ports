@@ -1,11 +1,8 @@
-# Ports collection makefile for:	gem-configuration
-# Date created:				06 Nov 2009
-# Whom:					Ryan Steinmetz (<rpsfa@rit.edu>)
-#
+# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
 # $FreeBSD$
 
 PORTNAME=	configuration
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
