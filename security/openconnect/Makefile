@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	4.99
+PORTVERSION=	5.01
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -27,8 +27,6 @@ MAKE_JOBS_SAFE=	yes
 ACLOCAL_ARGS=	-I .
 USE_LDCONFIG=	yes
 PORTDOCS=	*
-
-PORTSCOUT=	skipv:5.00
 
 MAN8=		openconnect.8
 
