@@ -1,19 +1,15 @@
-# Ports collection Makefile for:	nspr
-# Date created:				18 December 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports-experimental/devel/nspr/Makefile,v 1.6 2008/03/12 13:06:56 ahze Exp $
 
 PORTNAME=	nspr
-DISTVERSION=	4.9.6
+DISTVERSION=	4.10
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	A platform-neutral API for system level and libc like functions
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/nsprpub/build
+WRKSRC=		${WRKDIR}/${DISTNAME}/nspr/build
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

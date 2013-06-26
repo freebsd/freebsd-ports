@@ -176,7 +176,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 21+ 17 21+
+#                         Available values: yes 17+ 22+ 17 22+
 #                         NOTE:
 #                         default value 17 is used in case of USE_FIREFOX=yes
 #
@@ -187,9 +187,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 17+ 17
+#                         Available values: yes 19+ 19
 #                         NOTE:
-#                         default value 17 is used in case of USE_SEAMONKEY=yes
+#                         default value 19 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -218,11 +218,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 21
-_FIREFOX_RANGE_VERSIONS=	17+ 21+
+_FIREFOX_VERSIONS=			17 22
+_FIREFOX_RANGE_VERSIONS=	17+ 22+
 
 # For specifying [17, ..]+
-_FIREFOX_21P=	21 ${_FIREFOX_17P}
+_FIREFOX_22P=	22 ${_FIREFOX_17P}
 _FIREFOX_17P=	17
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -269,7 +269,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-21_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+22_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -291,12 +291,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	17
-_SEAMONKEY_VERSIONS=		17
-_SEAMONKEY_RANGE_VERSIONS=	17+
+_SEAMONKEY_DEFAULT_VERSION=	19
+_SEAMONKEY_VERSIONS=		19
+_SEAMONKEY_RANGE_VERSIONS=	19+
 
-# For specifying [17, ..]+
-_SEAMONKEY_17P=	17
+# For specifying [19, ..]+
+_SEAMONKEY_19P=	19
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -338,7 +338,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-17_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+19_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
