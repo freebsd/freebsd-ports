@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	netmagis
-DISTVERSION?=	2.1.1
+DISTVERSION?=	2.2.0
+PORTREVISION?=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	http://netmagis.org/files/
 PKGNAMESUFFIX?=	-common
