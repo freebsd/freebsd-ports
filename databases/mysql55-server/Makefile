@@ -12,6 +12,8 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+LICENSE=	GPLv2
+
 SLAVEDIRS=	databases/mysql55-client
 USES=		cmake
 MAKE_JOBS_SAFE=	yes
