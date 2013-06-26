@@ -114,6 +114,7 @@ CONFIGURE_ARGS+=--with-ldap
 USE_OPENLDAP=	yes
 LDAP_SCRIPT=	${WRKSRC}/contrib/ldap/dhcpd-conf-to-ldap
 LDAP_SCHEMA=	${WRKSRC}/contrib/ldap/dhcp.schema
+LDAP_README=	${WRKSRC}/contrib/ldap/README.ldap
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 PORTDOCS+=	README.ldap
 PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}" LDAP=""
@@ -168,9 +169,9 @@ do-install:
 	${INSTALL_DATA} ${LDAP_SCHEMA} ${SCHEMA_DIR}
 	${INSTALL_SCRIPT} ${LDAP_SCRIPT} ${PREFIX}/bin
 .endif
-.if ${PORT_OPTIONS:MLDAP} && empty(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/contrib/ldap/README.ldap ${DOCSDIR}
+	${INSTALL_MAN} ${LDAP_README} ${DOCSDIR}
 .endif
 .endif
 
