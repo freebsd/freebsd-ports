@@ -69,9 +69,12 @@ include/d/druntime/import/core/thread.di
 include/d/druntime/import/core/sys/freebsd/dlfcn.d
 include/d/druntime/import/core/sys/freebsd/execinfo.d
 include/d/druntime/import/core/sys/freebsd/sys/event.d
+include/d/druntime/import/core/sys/linux/config.d
+include/d/druntime/import/core/sys/linux/dlfcn.d
 include/d/druntime/import/core/sys/linux/elf.d
 include/d/druntime/import/core/sys/linux/epoll.d
 include/d/druntime/import/core/sys/linux/execinfo.d
+include/d/druntime/import/core/sys/linux/link.d
 include/d/druntime/import/core/sys/linux/sys/signalfd.d
 include/d/druntime/import/core/sys/linux/sys/xattr.d
 include/d/druntime/import/core/sys/osx/execinfo.d
@@ -105,6 +108,7 @@ include/d/druntime/import/core/sys/posix/sys/ipc.d
 include/d/druntime/import/core/sys/posix/sys/mman.d
 include/d/druntime/import/core/sys/posix/sys/select.d
 include/d/druntime/import/core/sys/posix/sys/shm.d
+include/d/druntime/import/core/sys/posix/sys/resource.d
 include/d/druntime/import/core/sys/posix/sys/socket.d
 include/d/druntime/import/core/sys/posix/sys/statvfs.d
 include/d/druntime/import/core/sys/posix/sys/stat.d
@@ -164,10 +168,8 @@ include/d/phobos2/std/complex.d
 include/d/phobos2/std/concurrency.d
 include/d/phobos2/std/container.d
 include/d/phobos2/std/conv.d
-include/d/phobos2/std/cpuid.d
 include/d/phobos2/std/cstream.d
 include/d/phobos2/std/csv.d
-include/d/phobos2/std/ctype.d
 include/d/phobos2/std/datetime.d
 include/d/phobos2/std/demangle.d
 include/d/phobos2/std/digest/crc.d
@@ -203,12 +205,10 @@ include/d/phobos2/std/numeric.d
 include/d/phobos2/std/outbuffer.d
 include/d/phobos2/std/parallelism.d
 include/d/phobos2/std/path.d
-include/d/phobos2/std/perf.d
 include/d/phobos2/std/process.d
 include/d/phobos2/std/random.d
 include/d/phobos2/std/range.d
 include/d/phobos2/std/regex.d
-include/d/phobos2/std/regexp.d
 include/d/phobos2/std/signals.d
 include/d/phobos2/std/socket.d
 include/d/phobos2/std/socketstream.d
