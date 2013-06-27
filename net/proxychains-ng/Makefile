@@ -1,8 +1,8 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME:S/-ng//}-${PORTVERSION}
@@ -24,6 +24,8 @@ CONFLICTS=	proxychains-[0-9]*
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-configure:
@@ -40,11 +42,13 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/proxyresolv ${PREFIX}/bin
-	@[ -f ${PREFIX}/etc/proxychains.conf ] || ${CP} ${PREFIX}/etc/proxychains.conf.sample \
-		${PREFIX}/etc/proxychains.conf
+	${INSTALL_DATA} ${WRKSRC}/src/proxychains.conf ${PREFIX}/etc/proxychains.conf.sample
+.if ! exists(${PREFIX}/etc/proxychains.conf)
+	${INSTALL_DATA} ${WRKSRC}/src/proxychains.conf ${PREFIX}/etc/proxychains.conf
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 

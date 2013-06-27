@@ -1,5 +1,14 @@
-ProxyChains is a UNIX program, that hooks network-related libc functions
-in dynamically linked programs via a preloaded DLL and redirects the
-connections through SOCKS4a/5 or HTTP proxies.
+ProxyChains NG is based on ProxyChains.
+
+ProxyChains NG hooks network-related (TCP only) libc functions in dynamically
+linked programs via a preloaded DSO (dynamic shared object) and redirects the
+connections through one or more SOCKS4a/5 or HTTP proxies.
+
+Since Proxy Chains NG relies on the dynamic linker, statically linked binaries
+are not supported.
+
+Adjust proxychains.conf for your Proxy and use ProxyChains NG with
+
+    proxychains application
 
 WWW: http://sourceforge.net/projects/proxychains-ng/
