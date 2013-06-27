@@ -58,7 +58,7 @@ RUN_DEPENDS+=	rubber:${PORTSDIR}/textproc/rubber
 .endif
 
 .if ${PORT_OPTIONS:MTEXCOUNT}
-#RUN_DEPENDS+=	${LOCALBASE}/bin/texcount.${PORTVERSION}:${PORTSDIR}/texproc/p5-texcount
+RUN_DEPENDS+=	${LOCALBASE}/bin/texcount.${PORTVERSION}:${PORTSDIR}/texproc/p5-texcount
 .endif
 
 .include <bsd.port.mk>
