@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xts
-DISTVERSION=	0.9-4
+DISTVERSION=	0.9-5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Extensible Time Series
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-zoo>=1.7.2:${PORTSDIR}/math/R-cran-zoo
+RUN_DEPENDS=	R-cran-zoo>=1.7.10:${PORTSDIR}/math/R-cran-zoo
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
