@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.26
-PORTREVISION=	1
+PORTVERSION=	0.9.27
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +29,7 @@ MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 MAN3=		libmicrohttpd.3
 INFO=		libmicrohttpd libmicrohttpd-tutorial
 
-PLIST_FILES=	lib/libmicrohttpd.so.26 \
+PLIST_FILES=	lib/libmicrohttpd.so.27 \
 		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
 		lib/libmicrohttpd.a \
