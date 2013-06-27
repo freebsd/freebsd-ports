@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-faraday
-# Date created:				04 March 2011
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	faraday
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
