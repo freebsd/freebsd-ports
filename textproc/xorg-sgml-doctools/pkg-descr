@@ -1,0 +1,7 @@
+This package provides a common set of SGML entities and XML/CSS style
+sheets used in building/formatting the documentation provided in other
+X.Org packages.   It's typically only needed by people building from
+source who want to produce formatted documentation from their builds,
+or those who have installed the HTML version of the documentation,
+which refers to the included common xorg.css stylesheet.
+

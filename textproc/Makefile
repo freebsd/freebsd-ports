@@ -1540,6 +1540,7 @@
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
     SUBDIR += xom
+    SUBDIR += xorg-sgml-doctools
     SUBDIR += xp
     SUBDIR += xqilla
     SUBDIR += xslide.el
