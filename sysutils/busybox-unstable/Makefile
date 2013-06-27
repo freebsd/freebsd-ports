@@ -17,6 +17,8 @@ PATCHFILES=	busybox-1.21.0-mdev.patch \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
 
+FORBIDDEN=	Patch files on download site re-rolled and not yet investigated
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
