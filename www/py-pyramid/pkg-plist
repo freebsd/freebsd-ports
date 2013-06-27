@@ -1,4 +1,11 @@
 bin/bfg2pyramid
+bin/pcreate
+bin/prequest
+bin/proutes
+bin/pserve
+bin/pshell
+bin/ptweens
+bin/pviews
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -42,6 +49,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/i18n.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/i18n.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/predicates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/predicates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/predicates.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/rendering.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/rendering.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/rendering.pyo
@@ -69,9 +79,6 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/zca.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/zca.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/config/zca.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/configuration.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/configuration.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/configuration.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/decorator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/decorator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/decorator.pyo
@@ -132,10 +139,18 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts/initializedb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts/initializedb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts/initializedb.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static/footerbg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static/headerbg.png
@@ -145,8 +160,7 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static/pyramid-small.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static/pyramid.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static/transparent.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/templates/model.pt_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/templates/root.pt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/templates/mytemplate.pt_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/tests.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/views.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/CHANGES.txt_tmpl
@@ -156,33 +170,12 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/production.ini_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/setup.cfg_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/setup.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/__init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/models.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/favicon.ico
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/footerbg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/headerbg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/ie6.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/middlebg.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/pylons.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/pyramid-small.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/pyramid.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static/transparent.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/templates/mytemplate.pt_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/tests.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/views.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/CHANGES.txt_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/MANIFEST.in_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/README.txt_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/development.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/production.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/setup.cfg_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/setup.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/__init__.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/resources.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/resources.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/resources.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/copydir.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/copydir.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/copydir.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/static/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/static/footerbg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/static/headerbg.png
@@ -202,10 +195,15 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/production.ini_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/setup.cfg_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/setup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/template.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/template.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/template.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/tests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/models.pyo
@@ -218,7 +216,7 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/static/pyramid-small.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/static/pyramid.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/static/transparent.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/templates/mytemplate.pt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/templates/mytemplate.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/tests.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/views.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/CHANGES.txt_tmpl
@@ -231,6 +229,33 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripting.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripting.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripting.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pcreate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pcreate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pcreate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/prequest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/prequest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/prequest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/proutes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/proutes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/proutes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pserve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pserve.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pserve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pshell.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pshell.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pshell.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/ptweens.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/ptweens.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/ptweens.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pviews.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pviews.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts/pviews.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/security.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/security.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/security.pyo
@@ -249,7 +274,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/components.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/hello_inherit_pkg.mak
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/hellocompo.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/helloinherit.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/helloworld.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/helloworld.mako
@@ -260,10 +287,12 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/nonminimal.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/pp.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/.hiddenfile
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/arcs.svg.tgz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/héhé.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/héhé/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/subdir/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/withmacro.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/__init__.pyo
@@ -279,6 +308,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/defpermbugapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/defpermbugapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/defpermbugapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/eventonly/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/eventonly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/eventonly/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/exceptionviewapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/exceptionviewapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/exceptionviewapp/__init__.pyo
@@ -305,6 +337,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenview/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenview/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenview/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/hybridapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/hybridapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/hybridapp/__init__.pyo
@@ -346,6 +381,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp/locale3/de/LC_MESSAGES/deformsite.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp/locale3/en/LC_MESSAGES/deformsite.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp/locale3/en/LC_MESSAGES/deformsite.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/notfoundview/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/notfoundview/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/notfoundview/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/permbugapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/permbugapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/permbugapp/__init__.pyo
@@ -375,6 +413,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/staticpermapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/staticpermapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/staticpermapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/subrequestapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/subrequestapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/subrequestapp/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/__init__.pyo
@@ -473,6 +514,9 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_init.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_init.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_init.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_predicates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_predicates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_predicates.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_rendering.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_rendering.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_rendering.pyo
@@ -497,9 +541,6 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_views.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_views.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/test_views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_configuration.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_configuration.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_configuration.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_decorator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_decorator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_decorator.pyo
@@ -551,12 +592,76 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_router.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_router.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_router.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/.badfile
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/resources.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/resources.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/resources.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/favicon.ico
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/footerbg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/headerbg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/ie6.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/middlebg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/pylons.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/pyramid-small.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/pyramid.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static/transparent.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/templates/mytemplate.pt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/test_no_content.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/tests.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/views.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/CHANGES.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/MANIFEST.in_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/README.txt_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/development.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/production.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/setup.cfg_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/setup.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_copydir.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_copydir.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_copydir.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_init.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_init.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_init.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_template.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_template.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/test_template.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripting.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripting.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripting.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/dummy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/dummy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/dummy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pcreate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pcreate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pcreate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_prequest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_prequest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_prequest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_proutes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_proutes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_proutes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pserve.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pserve.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pserve.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pshell.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pshell.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pshell.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_ptweens.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_ptweens.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_ptweens.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pviews.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pviews.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts/test_pviews.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_security.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_security.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_security.pyo
@@ -617,6 +722,12 @@ bin/bfg2pyramid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/wsgi.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold/+package+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds/fixture_scaffold
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_scaffolds
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/pkgs/selfscan
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/pkgs/scannable/subpackage/subsubpackage
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/test_config/pkgs/scannable/subpackage
@@ -637,6 +748,7 @@ bin/bfg2pyramid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/subrequestapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/staticpermapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/static_routeprefix
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/static_assetspec
@@ -645,6 +757,7 @@ bin/bfg2pyramid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/rendererscanapp/two
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/rendererscanapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/permbugapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/notfoundview
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp/locale3/en/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp/locale3/en
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp/locale3/de/LC_MESSAGES
@@ -668,11 +781,13 @@ bin/bfg2pyramid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/localeapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/includeapp1
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/hybridapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenview
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/forbiddenapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/fixtureapp/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/fixtureapp/subpackage/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/fixtureapp/subpackage
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/fixtureapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/eventonly
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/exceptionviewapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/defpermbugapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/conflictapp
@@ -683,6 +798,7 @@ bin/bfg2pyramid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/zodb/+package+
@@ -691,12 +807,9 @@ bin/bfg2pyramid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter/+package+
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/starter
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+/static
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy/+package+
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/routesalchemy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy/+package+
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds/alchemy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/scaffolds
