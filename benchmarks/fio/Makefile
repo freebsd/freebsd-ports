@@ -6,7 +6,7 @@ PORTVERSION=	2.0.15
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
-MAINTAINER=	brucec@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FIO - flexible IO tester
 
 LICENSE=	GPLv2
