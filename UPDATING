@@ -6,6 +6,30 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130627:
+  AFFECTS: users of ports-mgmt/portmaster
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Since June 22nd, portmaster no longer relies on 'WITH_PKGNG' to be defined,
+  or ports to be checked out to enable pkgng support.
+
+  It now considers whether or not pkg is installed and registered with itself.
+
+  I.e., if this returns data, pkgng is considered in use:
+
+    # pkg info pkg
+
+  It's possible that you may have tested pkgng in the past, ran pkg2ng, and
+  never fully committed to it by setting WITH_PKGNG. If this is the case,
+  uninstall pkg with pkg_info/pkg_delete and also remove the stale database,
+  rm /var/db/pkg/local.sqlite.
+
+  This could manifest itself as portmaster -L showing the wrong versions, or
+  portmaster no longer detecting installed packages correctly.
+
+  Note that PORTS still require WITH_PKGNG=yes in make.conf if you are not
+  running CURRENT.
+
+20130627:
   AFFECTS: users of net/samba36
   AUTHOR: timur@FreeBSD.org
 
