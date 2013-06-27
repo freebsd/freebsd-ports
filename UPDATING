@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130627:
+  AFFECTS: users of net/samba36
+  AUTHOR: timur@FreeBSD.org
+
+  Samba has updated format of it's printing tdbs (ntprinting.tdb, ntforms.tdb,
+  ntdrivers.tdb) to include character encoding. When updating from Samba 3.5
+  or earlier to Samba 3.6 or 4.0 these tdbs need to be migrated to new registry
+  based printing management. This implies also character conversion.
+
+  You have to specify the correct code page for the conversion, see iconv -l.
+  The mostly used one is Windows Latin1 which is CP1252.
+
+  You can correctly view the tdb with:
+
+  # net printing dump encoding=CP1252 /path/to/ntprinters.tdb
+
+  or migrate it with e.g.:
+
+  # net printing migrate encoding=CP1252 /path/to/ntprinters.tdb
+
+  If you migrate printers it is suggest to do it in the following order:
+
+  ntforms.tdb
+  ntdrivers.tdb
+  ntprinting.tdb
+
+  Don't forget to rename, move or delete these files in /var/db/samba after
+  the migration.
+
 20130623:
   AFFECTS: users of net-im/mikutter003
   AUTHOR: tota@FreeBSD.org
