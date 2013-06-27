@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chruby
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
@@ -22,7 +22,7 @@ SUB_FILES=	pkg-message
 USE_GITHUB=	yes
 GH_ACCOUNT=	postmodern
 GH_PROJECT=	chruby
-GH_COMMIT=	872cd1b
+GH_COMMIT=	f271d06
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
