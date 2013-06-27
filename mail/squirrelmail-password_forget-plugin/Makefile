@@ -1,7 +1,4 @@
-# New ports collection makefile for:	squirrelmail-password_forget-plugin
-# Date created:		4 Dec 2006
-# Whom:			Neil Darlow <neil@darlow.co.uk>
-#
+# Created by: Neil Darlow <neil@darlow.co.uk>
 # $FreeBSD$
 
 PORTNAME=	password_forget
@@ -20,6 +17,5 @@ RUN_DEPENDS=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-
 
 USE_PERL5_RUN=	yes
 
-.include <bsd.port.pre.mk>
-.include "../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>

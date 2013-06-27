@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squirrelmail-spam-buttons-plugin
-# Date created:				2008-02-16
-# Whom:					Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	change-sqlpass
 PORTVERSION=	3.3
@@ -20,9 +16,5 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
-
-.include <bsd.port.pre.mk>
-
-.include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
-
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>

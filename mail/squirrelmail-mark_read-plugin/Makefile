@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squirrelmail-mark_read-plugin
-# Date created:				2008-02-16
-# Whom:					Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mark_read
 PORTVERSION=	1.4.2
@@ -22,8 +18,5 @@ SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 post-patch:
 	@${RM} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/mark_read.php.orig
 
-.include <bsd.port.pre.mk>
-
-.include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
-
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>

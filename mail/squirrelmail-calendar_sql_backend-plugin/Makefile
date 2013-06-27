@@ -1,4 +1,4 @@
-# Created by:		Gerrit Beine <gerrit.beine@gmx.de>
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		calendar_sql_backend
@@ -17,7 +17,5 @@ PEARDIR=		${PREFIX}/share/pear
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>

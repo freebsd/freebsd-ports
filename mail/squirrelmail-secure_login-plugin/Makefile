@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squirrelmail-secure_login-plugin
-# Date created:		2006-06-20
-# Whom:			Thomas Abthorpe <thomas@goodking.ca>
-#
+# Created by: Thomas Abthorpe <thomas@goodking.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	secure_login
 PORTVERSION=	1.4
@@ -18,6 +14,5 @@ LICENSE=	GPLv2
 
 USE_PERL5_RUN=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>

@@ -1,7 +1,4 @@
-# New ports collection makefile for:		squirrelmail-login_notes-plugin
-# Date created:		10 Feb 2006
-# Whom:		Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	login_notes
@@ -18,6 +15,5 @@ RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail
 
 USE_PERL5_RUN=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>
