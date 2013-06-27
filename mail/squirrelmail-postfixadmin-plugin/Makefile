@@ -19,10 +19,9 @@ RUN_DEPENDS=	ZendFramework>=1.9.0:${PORTSDIR}/www/zend-framework
 USE_BZIP2=	yes
 DEFAULT_PHP_VER=	53
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 pre-install:
 	${RM} -rf ${WRKSRC}/${_SMSRCDIR}/debian
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

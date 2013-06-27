@@ -1,7 +1,4 @@
-# New ports collection makefile for:	squirrelmail-compatibility-plugin
-# Date created:				3 Jul 2005
-# Whom:					Alexander Wittig <alexander@wittig.name>
-#
+# Created by: Alexander Wittig <alexander@wittig.name>
 # $FreeBSD$
 
 PORTNAME=	compatibility
@@ -20,6 +17,5 @@ USE_PERL5_RUN=	yes
 
 CONFLICTS=	squirrelmail-compatibility-plugin-1.*
 
-.include <bsd.port.pre.mk>
-.include "../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>
