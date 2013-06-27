@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	znc
 USES=		pkgconfig iconv
 USE_GMAKE=	yes
 WANT_PERL=	yes
