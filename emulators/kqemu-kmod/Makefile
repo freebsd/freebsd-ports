@@ -40,8 +40,11 @@ PLIST_FILES+=	"@cwd"
 
 MAKEFILE=	Makefile.freebsd
 
+MAKE_ARGS+=	LDFLAGS=${LDFLAGS:S/^-Wl,//}
+MAKE_ARGS+=	CWARNFLAGS=-Wall
+
 .if ${ARCH} == "amd64"
-MAKE_ARGS+=	ARCH=x86_64
+GMAKE_ARGS+=	ARCH=x86_64
 .endif
 
 # install where x11/nvidia-driver does also:
@@ -63,8 +66,8 @@ post-patch:
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} beforedepend && ${LN} -sfh @/sys sys)
-	@(cd ${BUILD_WRKSRC}/common; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} CWARNFLAGS=-Wall ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}/common; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${GMAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
