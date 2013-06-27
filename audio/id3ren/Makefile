@@ -4,12 +4,17 @@
 PORTNAME=	id3ren
 PORTVERSION=	1.1b0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
+MASTER_SITES=	GH
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Rename MP3 files, edit tags, search, etc
 
 LICENSE=	GPLv2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebcode
+GH_TAGNAME=	322ee77
+GH_COMMIT=	322ee77
 
 PLIST_FILES=	bin/id3ren
 MAN1=		id3ren.1
