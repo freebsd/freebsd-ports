@@ -52,6 +52,8 @@ sbin/netmagis-dbmaint
 @dirrmtry var/netmagis/dbdump
 @dirrmtry var/netmagis
 @dirrmtry var
+@dirrmtry lib/netmagis/sql22
+@dirrmtry lib/netmagis
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views/zones
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/upgrade/21-22
