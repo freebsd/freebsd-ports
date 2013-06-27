@@ -14,8 +14,6 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 
 LICENSE=	BSD
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
-
 USE_GMAKE=	yes
 MAKE_ARGS=	HOST=_FreeBSD
 WRKSRC_SUBDIR=	generate/unix
