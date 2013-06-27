@@ -122,6 +122,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/math/go-cspline.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-distribution.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-fft.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix3x3.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-quad.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-rangefunc.h
