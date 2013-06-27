@@ -3,7 +3,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/
@@ -15,11 +15,18 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALL_TARGET=	bsdinstall
 
+USE_RC_SUBR=	vnstat
+
+USERS=	vnstat
+GROUPS=	vnstat
+
 MAN1=	vnstat.1 vnstatd.1
 MAN5=	vnstat.conf.5
 MANCOMPRESSED=	yes
 PORTDOCS=	README INSTALL_BSD UPGRADE vnstat-cron
 SUB_FILES=	pkg-message
+SUB_LIST=	USERS=${USERS} \
+		GROUPS=${GROUPS}
 
 # will compile with image output
 OPTIONS_DEFINE=	GUI DOCS
@@ -34,7 +41,7 @@ PLIST_FILES=	bin/vnstat \
 		etc/vnstat.conf.sample
 
 .if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 PLIST_SUB+=	GUI=""
 MAN1+=	vnstati.1
 .else

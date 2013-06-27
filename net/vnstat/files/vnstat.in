@@ -1,0 +1,40 @@
+#!/bin/sh
+# Created by: Mark Felder <feld@feld.me>
+# $FreeBSD$
+
+# PROVIDE: vnstat
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable vnstat:
+#
+# vnstat_enable="YES"
+# vnstat_flags="-d -p ${vnstat_pidfile} --config %%PREFIX%%/etc/vnstat.cfg"
+# vnstat_pidfile="/var/run/vnstat/vnstat.pid"
+
+. /etc/rc.subr
+
+name=vnstat
+rcvar=vnstat_enable
+load_rc_config $name
+
+vnstat_enable=${vnstat_enable-"NO"}
+vnstat_pidfile=${vnstat_pidfile-"/var/run/vnstat/vnstat.pid"}
+vnstat_flags=${vnstat_flags-"-d -p ${vnstat_pidfile} --config %%PREFIX%%/etc/vnstat.cfg"}
+vnstat_user=${vnstat_user-"%%USERS%%"}
+vnstat_group=${vnstat_group-"%%GROUPS%%"}
+
+command="%%PREFIX%%/bin/vnstatd"
+command_args="${vnstat_flags}"
+pidfile="${vnstat_pidfile}"
+
+start_precmd=vnstat_startprecmd
+
+vnstat_startprecmd()
+{
+	if [ ! -e ${pidfile%/*} ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${pidfile%/*}
+	fi
+}
+
+run_rc_command "$1"
