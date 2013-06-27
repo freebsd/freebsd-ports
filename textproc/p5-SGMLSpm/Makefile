@@ -32,7 +32,7 @@ PORTDOCS=       *
 INSTALL_TARGET+=docs install_html HTMLDIR=${DOCSDIR}
 .endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 EXTRA_PATCHES=	${PATCHDIR}/noportexamples-patch-Makefile
 .endif
 
