@@ -3,6 +3,6 @@ bin/acpidump
 bin/acpiexec
 bin/acpihelp
 bin/acpinames
-bin/acpisrc 
+bin/acpisrc
 bin/acpixtract
 bin/iasl
