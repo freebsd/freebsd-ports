@@ -84,6 +84,7 @@
     SUBDIR += gnuserv
     SUBDIR += gobby
     SUBDIR += gphpedit
+    SUBDIR += gummi
     SUBDIR += gwrite
     SUBDIR += heme
     SUBDIR += hexcurse
