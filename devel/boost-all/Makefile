@@ -17,26 +17,14 @@ PYTHON_DESC=	Boost.Python - interfacing Python and C++
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
 .include "common.mk"
 
-.if ${PORT_OPTIONS:MLIBRARIES}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost-libs
-.endif
-
-.if ${PORT_OPTIONS:MJAM}
-RUN_DEPENDS+=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost-jam
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-RUN_DEPENDS+=	${LOCALBASE}/share/doc/boost/doc/html/index.html:${PORTSDIR}/devel/boost-docs
-.endif
+LIBRARIES_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost-libs
+JAM_RUN_DEPENDS=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost-jam
+PYTHON_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/boost/doc/html/index.html:${PORTSDIR}/devel/boost-docs
 
 do-install:
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
