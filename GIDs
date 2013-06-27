@@ -135,6 +135,7 @@ xymon:*:280:
 prelude:*:281:
 spread:*:282:
 devmon:*:283:
+vnstat:*:284:
 backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
