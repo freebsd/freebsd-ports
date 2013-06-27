@@ -1,12 +1,9 @@
-# Ports collection makefile for:	zabbix-agent
-# Date created:		Jun 18 2003
-# Whom:			Sergey Akifyev <asa@gascom.ru>
-#
+# Created by: Sergey Akifyev <asa@gascom.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	zabbix2
 PKGNAMESUFFIX=	-agent
+CATEGORIES=	net-mgmt
 
 MASTERDIR=	${.CURDIR}/../zabbix2-server
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	zabbix2
 PKGNAMESUFFIX=	-frontend
+CATEGORIES=	net-mgmt
 
 MASTERDIR=	${.CURDIR}/../zabbix2-server
 
