@@ -1,18 +1,14 @@
-# New ports collection makefile for:	Devel-Declare
-# Date created:	   16 Aug 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Declare
-PORTVERSION=	0.006011
+PORTVERSION=	0.006013
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Adding keywords to perl, in perl
+COMMENT=	Adding keywords to Perl, in Perl
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
