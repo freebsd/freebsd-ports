@@ -11,7 +11,7 @@ COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
 
 USE_PERL5_RUN=	yes
 
-.include "${.CURSIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 pre-install:
 	${RM} -Rf ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/po
