@@ -1,5 +1,5 @@
---- ./pkg_libchk.orig	2012-12-12 19:38:36.000000000 +0100
-+++ ./pkg_libchk	2012-12-12 19:40:22.000000000 +0100
+--- pkg_libchk.orig	2009-04-19 17:57:16.000000000 +0200
++++ pkg_libchk	2013-06-26 22:01:57.000000000 +0200
 @@ -23,6 +23,8 @@
  
  readonly name=pkg_libchk
@@ -9,7 +9,7 @@
  
  # Use a line break as delimiter.
  IFS='
-@@ -206,7 +208,7 @@
+@@ -206,7 +208,7 @@ dependencyMissing() {
  	# We cannot handle non-native binaries,
  	# so assume everything is in order.
  	if ! readelf -e "$1" 2>&1 | \
@@ -18,7 +18,7 @@
  		> /dev/null
  	then
  		return 2
-@@ -405,10 +407,17 @@
+@@ -405,10 +407,17 @@ statusSet 'Preparing ...'
  
  # Get the packages to work on.
  test -z "$packages" && packages="-a"
@@ -26,7 +26,7 @@
 -test -z "$recursive" -a -z "$Recursive" || packages="$packages
 -$(pkg_info -q $recursive $Recursive "$packages" 2> /dev/null | \
 -sed -E 's|^@pkgdep[[:space:]]*||1')"
-+if [ "$pkgng" = "yes" ]; then
++if [ -n "$pkgng" ]; then
 +	packages="$(pkg info -q $packages)"
 +	test -z "$recursive" -a -z "$Recursive" || packages="$packages
 +	$(pkg info -q $recursive $Recursive "$packages" 2> /dev/null | \
@@ -40,14 +40,14 @@
  
  # Create the regexp to match ldd output
  match_expr="$compat=> not found|dependency .+ not found"
-@@ -420,9 +429,15 @@
+@@ -420,9 +429,15 @@ package_num=0
  # Check each selected package.
  for package in $packages; {
  	package_num="$(($package_num + 1))"
 -	test $origin \
 -		&& package_name="$(pkg_info -qo "$package")" \
 -		|| package_name="$package"
-+	if [ "$pkgng" = "yes" ]; then
++	if [ -n "$pkgng" ]; then
 +		test $origin \
 +			&& package_name="$(pkg info -qo "$package")" \
 +			|| package_name="$package"
@@ -59,13 +59,13 @@
  
  	# Print what we're doing.
  	statusSet "Starting job $package_num of $package_amount: $package_name"
-@@ -432,7 +447,12 @@
+@@ -432,7 +447,12 @@ for package in $packages; {
  		# Remember freeing the semaphore.
  		trap 'semaphoreFree jobs' EXIT
  
 -		files="$(pkg_info -qL "$package")"
 +		files=""
-+		if [ "$pkgng" = "yes" ]; then
++		if [ -n "$pkgng" ]; then
 +			files="$(pkg info -lq "$package")"
 +		else
 +			files="$(pkg_info -qL "$package")"
