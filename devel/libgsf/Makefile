@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/libgsf/Makefile 18401 2013-04-28 12:15:27Z kwm $
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.26
+PORTVERSION=	1.14.27
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
