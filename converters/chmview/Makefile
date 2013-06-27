@@ -1,15 +1,11 @@
-# New ports collection makefile for:	chmview
-# Date created:				Apr 19 2003
-# Whom:					Alex Semenyaka <alex@rinet.ru>
-#
+# Created by: Alex Semenyaka <alex@rinet.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	chmview
-DISTVERSION=	2.0b4
+PORTVERSION=	2.0b4
+PORTREVISION=	1
 CATEGORIES=	converters textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	CHMView_${DISTVERSION}
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extractor from .chm files
