@@ -10,7 +10,7 @@ PORTVERSION=	2.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cran.org.uk/~brucec/software/
 
-MAINTAINER=	bruce@cran.org.uk
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Utility to spin down ATA drives
 
 USE_RC_SUBR=	${PORTNAME}
