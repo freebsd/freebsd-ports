@@ -1044,6 +1044,7 @@
     SUBDIR += p5-libxml
     SUBDIR += p5-pod2pdf
     SUBDIR += p5-podlators
+    SUBDIR += p5-texcount
     SUBDIR += p5-xmltv
     SUBDIR += pa-aspell
     SUBDIR += par
