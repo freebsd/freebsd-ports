@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trang
-PORTVERSION=	2008.10.28
+PORTVERSION=	2009.11.11
 CATEGORIES=	textproc java
 MASTER_SITES=	http://jing-trang.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -15,19 +15,21 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	copying.txt trang-manual.html
-.endif
 
 SUB_FILES=	trang.sh
 PLIST_FILES=	%%JAVAJARDIR%%/trang.jar bin/trang
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/trang.jar ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/trang.sh ${PREFIX}/bin/trang
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
