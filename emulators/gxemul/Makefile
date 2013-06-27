@@ -21,6 +21,10 @@ MAN1=		gxemul.1
 PORTDOCS=	*
 PLIST_FILES=	bin/gxemul
 
+# svgalib installs vga.h, which conflicts with gxemul when building with
+# a virtual VGA adaptor.
+CONFLICTS=	svgalib-[0-9]*
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
