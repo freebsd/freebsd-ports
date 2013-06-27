@@ -1,0 +1,10 @@
+--- src/porting_layer/src/Makefile.in.orig	2013-02-10 19:59:20.000000000 -0500
++++ src/porting_layer/src/Makefile.in	2013-02-10 19:59:33.000000000 -0500
+@@ -113,6 +113,7 @@
+ AM_CFLAGS = @AM_CFLAGS@
+ AM_CPPFLAGS = \
+ 	-DLIBDIR=\"@libdir@\" \
++	-DDATADIR=\"@datadir@\" \
+ 	$(NULL)
+ 
+ AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@

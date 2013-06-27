@@ -1,24 +1,25 @@
-# New ports collection makefile for:	libchewing
-# Date created:		5 Sep 2004
-# Whom:			Kuang-che Wu <kcwu@csie.org>
-#
+# Created by: Kuang-che Wu <kcwu@csie.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libchewing
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	chinese textproc
-MASTER_SITES=	http://chewing.csie.net/download/libchewing/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The Chewing intelligent phonetic input method library
 
-USE_GNOME=	gnomehack pkgconfig
+INFO=		libchewing
+
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 
 DATADIR=	${PREFIX}/share/chewing
+PROJECTHOST=	chewing
 
 .include <bsd.port.pre.mk>
 
