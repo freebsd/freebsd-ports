@@ -1,7 +1,8 @@
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 
 PORTNAME=	s3fs
-PORTVERSION=	1.61
+DISTVERSION=	1.71
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
