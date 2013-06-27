@@ -1,0 +1,11 @@
+libdata/pkgconfig/xorg-sgml-doctools.pc
+share/sgml/X11/xorg.xsl
+share/sgml/X11/xorg.css
+share/sgml/X11/xorg-xhtml.xsl
+share/sgml/X11/xorg-fo.xsl
+share/sgml/X11/xorg-chunk.xsl
+share/sgml/X11/defs.ent
+share/sgml/X11/dbs/masterdb.pdf.xml
+share/sgml/X11/dbs/masterdb.html.xml
+@dirrm share/sgml/X11/dbs
+@dirrm share/sgml/X11
