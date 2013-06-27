@@ -1,5 +1,5 @@
---- ./lib/uuid/gen_uuid.c.orig	2012-03-18 19:18:33.000000000 +0100
-+++ ./lib/uuid/gen_uuid.c	2012-04-01 17:15:49.000000000 +0200
+--- ./lib/uuid/gen_uuid.c.orig	2013-04-22 01:05:50.000000000 +0200
++++ ./lib/uuid/gen_uuid.c	2013-06-27 00:38:52.000000000 +0200
 @@ -91,6 +91,7 @@
  #ifdef HAVE_SYS_RESOURCE_H
  #include <sys/resource.h>
@@ -8,7 +8,7 @@
  
  #include "uuidP.h"
  #include "uuidd.h"
-@@ -297,6 +298,28 @@
+@@ -300,6 +301,28 @@
  		}
  	}
  	close(sd);

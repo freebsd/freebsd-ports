@@ -1,5 +1,5 @@
 ===========================================================================
 Note: this is a modified version of the e2fsprogs package, not the official
 package. Report all building and run-time trouble that originates in the
-package to the port maintainer, mandree@FreeBSD.org
+package to the port maintainer, mandree@FreeBSD.org.
 ===========================================================================
