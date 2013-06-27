@@ -1,12 +1,9 @@
-# New ports collection makefile for:	font-ricty
-# Date created:		24 April 2012
-# Whom:			masaki
-#
+# Created by: masaki
 # $FreeBSD$
-#
 
 PORTNAME=	ricty
 PORTVERSION=	3.2.1b
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
@@ -37,7 +34,7 @@ PORTDOCS=	README.md
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
-OPTIONS_DEFINE=	DISCORD
+OPTIONS_DEFINE=	DISCORD DOCS
 DISCORD_DESC=	Install Ricty-Discord
 
 OPTIONS_DEFAULT=	DISCORD
@@ -62,7 +59,7 @@ do-build:
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Ricty-*.ttf ${DATADIR}
-.if defined(WITH_DISCORD)
+.if ${PORT_OPTIONS:MDISCORD}
 	${INSTALL_DATA} ${WRKSRC}/RictyDiscord-*.ttf ${DATADIR}
 .endif
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
@@ -80,7 +77,7 @@ do-install:
 		${PREFIX}/etc/fonts/conf.d/20-unhint-ricty.conf
 	${LN} -s -f ../conf.avail/62-fonts-ricty.conf \
 		${PREFIX}/etc/fonts/conf.d/62-fonts-ricty.conf
-.if defined(WITH_DISCORD)
+.if ${PORT_OPTIONS:MDISCORD}
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-rictydiscord.conf \
 		${FILESDIR}/62-fonts-rictydiscord.conf \
 		${PREFIX}/etc/fonts/conf.avail
@@ -89,7 +86,7 @@ do-install:
 	${LN} -s -f ../conf.avail/62-fonts-rictydiscord.conf \
 		${PREFIX}/etc/fonts/conf.d/62-fonts-rictydiscord.conf
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

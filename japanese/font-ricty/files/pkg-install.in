@@ -87,14 +87,14 @@ case "$2" in
 POST-INSTALL)
 	cd ${X_FONTSDIR}
 	touch fonts.dir
-	(catfontsdir < fonts.dir; addentries) > fonts.dir.tmp
+	(sed 1d fonts.dir | catfontsdir; addentries) > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
 	cat fonts.dir.tmp >> fonts.dir
 	rm -f fonts.dir.tmp
 	;;
 POST-DEINSTALL)
 	cd ${X_FONTSDIR}
-	catfontsdir < fonts.dir > fonts.dir.tmp
+	sed 1d fonts.dir | catfontsdir > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
 	cat fonts.dir.tmp >> fonts.dir
 	rm -f fonts.dir.tmp

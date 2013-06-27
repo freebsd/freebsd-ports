@@ -9,10 +9,6 @@ MASTER_SITES=	http://ftp.netscape.com/pub/communicator/extras/fonts/windows/ \
 		http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/ \
 		ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/
 DISTFILES=	Cyberbit.ZIP
-.if !defined(NOPORTDOCS)
-DISTFILES+=	97CyberBase.Doc 97CyberBit.Doc 97CyberCJK.Doc \
-		CYBERBIT.DOC CYBERCJK.DOC READMEfirst.txt ReadMe.htm
-.endif
 DIST_SUBDIR=	cyberbit
 EXTRACT_ONLY=	Cyberbit.ZIP
 
@@ -29,6 +25,15 @@ MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 WRKSRC=		${WRKDIR}
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	97CyberBase.Doc 97CyberBit.Doc 97CyberCJK.Doc \
+		CYBERBIT.DOC CYBERCJK.DOC READMEfirst.txt ReadMe.htm
+.endif
+
 do-install:
 .if !exists(${PREFIX}/${FONTSDIR})
 	@${ECHO} "*********************************************************"
@@ -40,7 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.ttf \
 			${FILESDIR}/fonts.dir.cyberbit \
 			${PREFIX}/${FONTSDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/97CyberBase.Doc ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/97CyberBit.Doc  ${DOCSDIR}
