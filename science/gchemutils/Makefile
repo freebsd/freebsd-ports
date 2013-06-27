@@ -1,44 +1,38 @@
-# New ports collection makefile for:	gchemutils
-# Date created:			Mar 18, 2003
-# Whom:				Pav Lucistnik <pav@oook.cz>
-#
+# Created by: Pav Lucistnik <pav@oook.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.12.10
-PORTREVISION=	2
+PORTVERSION=	0.14.2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/0.12
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	C++ classes and Gtk2 widgets related to chemistry
+COMMENT=	C++ classes and Gtk3 widgets related to chemistry
 
-LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		openbabel:${PORTSDIR}/science/openbabel \
-		goffice-0.8.8:${PORTSDIR}/devel/goffice
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
+LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
+		openbabel:${PORTSDIR}/science/openbabel \
+		goffice-0.10:${PORTSDIR}/devel/goffice010
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
 PORTSCOUT=	limitw:1,even
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_XORG=	x11
-USE_GNOME=	gnomehack intlhack gnomedocutils gtk20 libgsf
+USE_GNOME=	gnomedocutils gtk30 intlhack libgsf libxml2
 USE_GMAKE=	yes
+USES=		desktop-file-utils gettext pathfix shared-mime-info
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-GCONF_SCHEMAS=	gcrystal.schemas gchempaint.schemas gchempaint-arrows.schemas \
-		gchemutils.schemas
 GLIB_SCHEMAS=	org.gnome.gchemutils.crystal.gschema.xml \
 		org.gnome.gchemutils.gschema.xml \
 		org.gnome.gchemutils.paint.gschema.xml \
@@ -47,31 +41,24 @@ GLIB_SCHEMAS=	org.gnome.gchemutils.crystal.gschema.xml \
 MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 \
 		gspectrum.1
 
-PLIST_SUB=	VER=0.12 GOFFICE=0.8.17 GNUMERIC_VER=1.10.17
+PLIST_SUB=	VER=0.14 GOFFICE=0.10
 
 OPTIONS_DEFINE=	XUL
-XUL_DESC=	Build browser plugin (requires Xulrunner)
+XUL_DESC=	Build browser plugin (requires libxul)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXUL}
-BROKEN=		Does not work with newer libxul
 USE_GECKO=	libxul
-CONFIGURE_ARGS+=--enable-mozilla-plugin
+CONFIGURE_ARGS+=--enable-mozilla-plugin \
+		--with-mozilla-libdir=${PREFIX}/lib/xulrunner
 PLIST_SUB+=	XUL=""
 .else
 CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB+=	XUL="@comment "
 .endif
 
-.if exists(${LOCALBASE}/bin/gnumeric)
-RUN_DEPENDS+=	gnumeric:${PORTSDIR}/math/gnumeric
-PLIST_SUB+=	GNUMERIC=""
-.else
-PLIST_SUB+=	GNUMERIC="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/libs/gcp/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
