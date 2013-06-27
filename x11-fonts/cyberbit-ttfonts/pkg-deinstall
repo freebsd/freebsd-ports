@@ -7,6 +7,10 @@ FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
 cd ${FONTDIR}
 sed -e "/${XFLDNAME}/d" fonts.dir > fonts.dir.tmp
 numfonts=$(echo $(cat fonts.dir.tmp | wc -l) - 1 | bc)
+if [ ${numfonts} != "0" ]; then
 echo ${numfonts} > fonts.dir
 sed -e 1d fonts.dir.tmp >> fonts.dir
 rm -f fonts.dir.tmp
+else
+rm -f fonts.dir fonts.dir.tmp
+fi
