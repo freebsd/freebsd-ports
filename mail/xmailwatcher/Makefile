@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	xmailwatcher
-# Date created:				14 II 2001
-# Whom:					Harry Newton
-#
+# Created by: Harry Newton
 # $FreeBSD$
-#
 
 PORTNAME=	xmailwatcher
 PORTVERSION=	1.6
@@ -17,7 +13,7 @@ COMMENT=	Mailbox checker which displays sender and subject lines of mails
 
 MAN1=		xmailwatcher.1
 PLIST_FILES=	bin/xmailwatcher
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 post-install:

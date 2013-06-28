@@ -1,9 +1,5 @@
-# New ports collection makefile for: xmail
-# Date created:		15 July 1997
-# Whom:			Stephen Roznowski <sjr1@flash.net>
-#
+# Created by: Stephen Roznowski <sjr1@flash.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xmail
 PORTVERSION=	1.6
@@ -14,9 +10,9 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sjroz@verizon.net
-COMMENT=	An X-based interface to the Berkeley mail program
+COMMENT=	X-based interface to the Berkeley mail program
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xbitmaps xaw
 MAN1=		xmail.1
 
