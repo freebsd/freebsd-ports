@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xtar
-# Date created:		31 Jul 1996
-# Whom:			shanee@augusta.de
-#
+# Created by: shanee@augusta.de
 # $FreeBSD$
-#
 
 PORTNAME=	xtar
 PORTVERSION=	1.4
@@ -15,8 +11,8 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and manipulate contents of a tar file
 
+USES=		imake
 USE_MOTIF=	yes
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xp xt
 MAKE_ARGS=	XMLIB="${MOTIFLIB}"
 MAN1=		xtar.1
