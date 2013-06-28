@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml-nox11
-# Date created:		2004-02-03
-# Whom:			Eugene Ossintsev
-#
+# Created by: Eugene Ossintsev
 # $FreeBSD$
-#
 
 PORTNAME=	ocaml-nox11
 CATEGORIES=	lang
@@ -15,6 +11,6 @@ MASTERDIR=	${.CURDIR}/../ocaml
 
 CONFLICTS=	metaocaml-[0-9]* ocaml-[0-9]* ocaml-notk-[0-9]*
 
-WITHOUT_X11=	yes
+OPTIONS_EXCLUDE=TK X11
 
 .include "${MASTERDIR}/Makefile"
