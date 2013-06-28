@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twm with a virtual desktop
 
 WRKSRC=		${WRKDIR}/tvtwm
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xbitmaps xpm xmu
 MAN1=		tvtwm.1
 MANCOMPRESSED=	no

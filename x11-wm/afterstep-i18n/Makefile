@@ -1,9 +1,5 @@
-# New ports collection makefile for:	afterstep-i18n
-# Date created:		23 October 1998
-# Whom:			issei@jp.FreeBSD.org
-#
+# Created by: issei@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	afterstep-i18n
 PORTVERSION=	1.0
@@ -31,7 +27,7 @@ RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 DIST_SUBDIR=	afterstep
 USE_XORG=	xpm
-USE_IMAKE=	yes
+USES=		imake
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
