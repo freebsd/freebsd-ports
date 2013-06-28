@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xipmsg
-# Date created:		29 May 1997
-# Whom:			candy@fct.kgc.co.jp
-#
+# Created by: candy@fct.kgc.co.jp
 # $FreeBSD$
-#
 
 PORTNAME=	xipmsg
 PORTVERSION=	0.8088
@@ -13,8 +9,9 @@ MASTER_SITES=	http://www.bsddiary.net/xipmsg/
 DISTNAME=	xipmsg-${PORTVERSION:E}
 
 MAINTAINER=	candy@kgc.co.jp
-COMMENT=	A popup style message communication tool for X11
+COMMENT=	Popup style message communication tool for X11
 
+USES=		imake
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xipmsg.1
