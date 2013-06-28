@@ -13,6 +13,7 @@ COMMENT=	Reference manager based on the BibTeX file format
 
 WRKSRC_SUBDIR=	src
 
+USES=		imake
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xmu xp xt xpm

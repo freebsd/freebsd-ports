@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xdvi
-# Date created:         1 October 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	xdvi
 PORTVERSION=	pl20
@@ -15,12 +11,12 @@ DISTNAME=	${PORTNAME}-20
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DVI Previewer for the X Window System
+COMMENT=	DVI Previewer for the X Window System
 
 CONFLICTS=	teTeX-*
 
 DIST_SUBDIR=	xdvi
-USE_IMAKE=	yes
+UES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 USE_GMAKE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
