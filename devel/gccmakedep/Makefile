@@ -11,8 +11,11 @@ COMMENT=	Create dependencies in makefiles using 'gcc -M'
 
 XORG_CAT=	util
 
+BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
+
 MAN1=		gccmakedep.1
 
 PLIST_FILES=	bin/gccmakedep
+CONFIGURE_ENV+=	ac_cv_path_RAWCPP=tradcpp
 
 .include <bsd.port.mk>
