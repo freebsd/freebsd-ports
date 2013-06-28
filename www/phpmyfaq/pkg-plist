@@ -806,6 +806,7 @@
 %%WWWDIR%%/assets/js/libs/jquery.min.js
 %%WWWDIR%%/assets/js/libs/modernizr.min.js
 %%WWWDIR%%/assets/js/phpmyfaq.js
+%%WWWDIR%%/assets/js/phpmyfaq.min.js
 %%WWWDIR%%/assets/js/plugins/datePicker/date.js
 %%WWWDIR%%/assets/js/plugins/datePicker/datePicker.css
 %%WWWDIR%%/assets/js/plugins/datePicker/jquery.datePicker.js
@@ -868,7 +869,9 @@
 %%WWWDIR%%/assets/template/default/catandtag.tpl
 %%WWWDIR%%/assets/template/default/contact.tpl
 %%WWWDIR%%/assets/template/default/css/style.css
+%%WWWDIR%%/assets/template/default/css/style.min.css
 %%WWWDIR%%/assets/template/default/css/style.rtl.css
+%%WWWDIR%%/assets/template/default/css/style.rtl.min.css
 %%WWWDIR%%/assets/template/default/favicon.ico
 %%WWWDIR%%/assets/template/default/glossary.tpl
 %%WWWDIR%%/assets/template/default/images/arrow.gif
