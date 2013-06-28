@@ -15,6 +15,8 @@ USES=		imake
 USE_XORG=	xpm
 MAN6=		xoids.6
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${CP} ${WRKSRC}/xoids.1x ${WRKSRC}/xoids.man
 
