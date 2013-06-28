@@ -16,6 +16,6 @@ include/echonest/Util.h
 include/echonest/echonest_export.h
 lib/libechonest.so
 lib/libechonest.so.2
-lib/libechonest.so.2.0.1
+lib/libechonest.so.%%PORTVERSION%%
 libdata/pkgconfig/libechonest.pc
 @dirrm include/echonest
