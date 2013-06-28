@@ -206,6 +206,7 @@
     SUBDIR += gupnp-ui
     SUBDIR += gutenfetch
     SUBDIR += gwhois
+    SUBDIR += hanstunnel
     SUBDIR += haproxy
     SUBDIR += haproxy-devel
     SUBDIR += hawknl
