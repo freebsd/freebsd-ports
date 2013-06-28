@@ -16,7 +16,8 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	workman:${PORTSDIR}/audio/libworkman
 
-USE_IMAKE=	yes
+USES=		imake
+
 USE_XORG=	xpm
 
 DATAFILES=	ascd-0.13pr6-themes.tgz

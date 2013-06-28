@@ -15,7 +15,7 @@ COMMENT=	Magnifying utility which updates continuously
 ALL_TARGET=	dynamag
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/dynamag
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

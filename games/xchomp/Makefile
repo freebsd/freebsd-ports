@@ -12,8 +12,8 @@ COMMENT=	Pac-man-like game under X11
 
 WRKSRC=		${WRKDIR}/xchomp
 
+USES=		imake
 USE_XORG=	x11 xext
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/xchomp

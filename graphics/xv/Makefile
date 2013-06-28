@@ -16,14 +16,14 @@ PATCH_SITES=	http://www.gregroelofs.com/code/
 PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 
 MAINTAINER?=	dinoex@FreeBSD.org
-COMMENT?=	An X11 program that displays images of various formats
+COMMENT?=	X11 program that displays images of various formats
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
 		png15:${PORTSDIR}/graphics/png \
 		jasper:${PORTSDIR}/graphics/jasper
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xext x11 xt
 .if !defined(NOMAN)
 MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1

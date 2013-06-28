@@ -15,9 +15,10 @@ COMMENT=	A Kana-to-Kanji conversion system, binary part
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
+USES=		imake
+USE_GCC=	any
 USE_RC_SUBR=	canna
 USE_BZIP2=	yes
-USE_IMAKE=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instserver instclient
 PLIST_SUB=	METAFILE="${METAFILE}" \

@@ -13,14 +13,13 @@ DISTNAME=	${PORTNAME}.20050204
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Visualization Tool for compiler graphs
+COMMENT=	Visualization Tool for compiler graphs
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
+USES=		imake:env
 USE_XORG=	x11 xext
 MAKE_JOBS_UNSAFE=	yes
 

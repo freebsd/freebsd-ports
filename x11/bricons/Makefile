@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bricons
-# Date created:		31 Jul 1996
-# Whom:			shanee@augusta.de
-#
+# Created by: shanee@augusta.de
 # $FreeBSD$
-#
 
 PORTNAME=	bricons
 PORTVERSION=	3.0
@@ -18,9 +14,9 @@ COMMENT=	Quick start up utility for applications on an X display
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		imake
 USE_PERL5_BUILD=yes
 USE_XORG=	xaw
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		bricons.1

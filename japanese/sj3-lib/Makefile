@@ -13,10 +13,10 @@ PATCHFILES=	${PORTNAME}-qq-2.0.1.21.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A Japanese input method, library part
+COMMENT=	Japanese input method, library part
 
+USES=		imake
 USE_GCC=	any
-USE_IMAKE=	yes
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=	yes
 SUB_FILES=	sj3_freebsd.tmpl

@@ -16,7 +16,7 @@ RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 NO_LATEST_LINK=	yes
 USE_XORG=	xpm xext x11
-USE_IMAKE=	yes
+USES=		imake
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
@@ -42,7 +42,7 @@ post-patch:
 		done
 
 pre-build:
-		@ cd ${WRKSRC}; ${SH} MakeMakefiles
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} MakeMakefiles
 
 post-install:
 		@ ${MKDIR} ${PREFIX}/lib/X11/afterstep/backgrounds/

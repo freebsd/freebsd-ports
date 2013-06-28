@@ -1,9 +1,5 @@
-# New ports collection makefile for:  xrolo
-# Date created:        17 January 1999
-# Whom:                Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
-#
+# Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 # $FreeBSD$
-#
 
 PORTNAME=	xrolo
 PORTVERSION=	2.6
@@ -21,7 +17,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/xrolo
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		xrolo.1
 PLIST_FILES=	bin/xrolo

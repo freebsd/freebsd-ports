@@ -1,9 +1,5 @@
-# New ports collection makefile for:	canna-lib
-# Date created:		7 September 2008
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	canna
 PORTVERSION=	3.7p3
@@ -17,9 +13,9 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, library part
 
+USES=		imake
 USE_BZIP2=	yes
 USE_GCC=	any
-USE_IMAKE=	yes
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=yes
 MAKE_JOBS_UNSAFE=	yes
@@ -28,11 +24,9 @@ PLIST_SUB=	METAFILE="${METAFILE}" \
 
 ALL_TARGET=	canna
 INSTALL_TARGET=	instsgs
+XMKMF=		xmkmf
 
 METAFILE=	${DATADIR_REL}/canna-lib-dic.meta
-
-post-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
 
 post-install:
 	${MTREE_CMD} -cdink uname,gname,mode,nochange \

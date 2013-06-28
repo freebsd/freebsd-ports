@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmcd
-# Date created:		16 February 1995
-# Whom:			Gennady Sorokopud <gena@NetVision.net.il>
-#
+# Created by: Gennady Sorokopud <gena@NetVision.net.il>
 # $FreeBSD$
-#
 
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
@@ -18,8 +14,8 @@ LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		FLAC:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
+USES=		imake
 USE_MOTIF=	yes
-USE_IMAKE=	yes
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no

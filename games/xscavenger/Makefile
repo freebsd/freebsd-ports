@@ -13,7 +13,7 @@ COMMENT=	Lode Runner clone for X11
 
 WRKSRC_SUBDIR=	src
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN6=		scavenger.6
 

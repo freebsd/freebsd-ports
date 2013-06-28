@@ -9,11 +9,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cool animated flame
+COMMENT=	cool animated flame
 
 DEPRECATED=	No more public distfiles
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 
 NO_INSTALL_MANPAGES=	yes

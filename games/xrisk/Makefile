@@ -8,9 +8,9 @@ CATEGORIES=	games
 MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A game for X11, much like the popular board game
+COMMENT=	game for X11, much like the popular board game
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xt
 MAN6=		xrisk.6
 

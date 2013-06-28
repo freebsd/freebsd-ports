@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	mph
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a dialog box and prompts user for text
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 MAN1=		xprompt.1

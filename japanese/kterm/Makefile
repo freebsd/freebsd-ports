@@ -36,7 +36,7 @@ COMMENT=	An xterm variant with Japanese support
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 CFLAGS+=	-Wno-return-type
 

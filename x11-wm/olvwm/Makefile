@@ -1,9 +1,5 @@
-# New ports collection makefile for:	olvwm
-# Date created:		21 October 1994
-# Whom:			smace
-#
+# Created by: smace
 # $FreeBSD$
-#
 
 PORTNAME=	olvwm
 PORTVERSION=	4.2
@@ -31,7 +27,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xpm
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no

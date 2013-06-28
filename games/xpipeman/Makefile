@@ -16,7 +16,7 @@ COMMENT=	Connect the pipes to stop the leaks
 # LP64 issues
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xaw xext xmu xt sm ice
 MAN6=		xpipeman.6
 MANCOMPRESSED=	no

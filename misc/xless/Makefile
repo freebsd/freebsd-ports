@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 viewer for text files.  Useful as an add-on tool for other apps
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xless.1
 MANCOMPRESSED=	yes

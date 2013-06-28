@@ -13,9 +13,8 @@ COMMENT=	Fullscreen gesture recognition
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		bison
+USES=		bison imake
 USE_XORG=	xft x11 xext xi xtst
-USE_IMAKE=	yes
 
 MAN1=		xstroke.1
 PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet

@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130628:
+AUTHOR: bapt@FreeBSD.org
+
+ * New USES: imake
+
+ This uses replaces USE_IMAKE, it handles dependency on imake. Its only argument
+ is 'env', which prevent from defining the do-configure target.
+
+ * New LATE_INSTALL_TARGET
+
+ This content of this new macro is appended to INSTALL_TARGET
+
 20130620:
 AUTHOR: bapt@FreeBSD.org
 

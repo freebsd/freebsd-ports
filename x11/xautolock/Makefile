@@ -16,13 +16,9 @@ OPTIONS_DEFINE=	XLOCK
 OPTIONS_DEFAULT=	XLOCK
 XLOCK_DESC=	Force dependency on x11/xlockmore
 
-.include <bsd.port.options.mk>
+XLOCK_RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 
-.if ${PORT_OPTIONS:MXLOCK}
-RUN_DEPENDS+=	xlock:${PORTSDIR}/x11/xlockmore
-.endif
-
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xscrnsaver
 MAN1=		xautolock.1
 PLIST_FILES=	bin/xautolock

@@ -19,8 +19,8 @@ NO_CDROM=	redistributed without fee
 
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
+USES=		imake
 USE_GCC=	any
-USE_IMAKE=	yes
 USE_XORG=	xext xt sm ice xext x11
 MAN1=		xanim.1
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines

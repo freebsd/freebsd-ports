@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwit
-# Date created:				15 June 1998
-# Whom:					Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xwit
 PORTVERSION=	3.4
@@ -16,7 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:source1 \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	X interface tool
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAKE_JOBS_SAFE=	yes
 

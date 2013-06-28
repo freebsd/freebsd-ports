@@ -1,9 +1,5 @@
-# New ports collection makefile for:	head files and libraries of Wnn7
-# Date created:		01/07/16
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Wnn7-lib
 PORTVERSION=	2001.10.17
@@ -16,8 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
 
+USES=		imake
 USE_GCC=	any
-USE_IMAKE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
 PORTDOCS=	README
@@ -29,10 +25,11 @@ post-patch:
 		${WRKSRC}/config/Project.tmpl \
 		${WRKSRC}/config/X11.tmpl \
 		${WRKSRC}/Makefile.ini
+	@${REINPLACE_CMD} -e 's/((/(/' ${WRKSRC}/config/X11.tmpl
 
 # Warning: we cannot use USE_IMAKE.
 do-build:
-	cd ${WRKSRC} && make World -f Makefile.ini
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini
 
 post-install:
 	${MKDIR} ${PREFIX}/include/wnn7/wnn

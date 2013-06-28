@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xxgdb
-# Date created:		2 May 1995
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	xxgdb
 PORTVERSION=	1.12
@@ -13,13 +9,11 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	An X window interface for gdb
+COMMENT=	X window interface for gdb
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 MAN1=		xxgdb.1
-
-.include <bsd.port.pre.mk>
 
 # This isn't included in the original Imakefile for some reason.
 #  Yes, I know this will recompile the program every time, but
@@ -31,4 +25,4 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxgdbiowin ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

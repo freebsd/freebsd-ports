@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xfpovray
-# Date created:         20 Sep 1997
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xfpovray
 PORTVERSION=	1.3.1
@@ -20,7 +16,7 @@ COMMENT=	Graphical interface to POV-Ray
 LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xpm
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes

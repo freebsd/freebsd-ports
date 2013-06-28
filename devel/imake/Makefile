@@ -3,28 +3,27 @@
 
 PORTNAME=	imake
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from X.Org
 
+BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
 RUN_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/lib/X11/config/xorg.cf:${PORTSDIR}/x11/xorg-cf-files
 
-USE_PERL5=	yes
+USES=	shebangfix
+USE_PERL5_RUN=	yes
+
+SHEBANG_FILES=	mkhtmlindex.pl
 
 XORG_CAT=	util
 USE_XORG=	xproto
 
-# clang's cpp destroys whitespace, particularly hard tabs in makefiles,
-# which is fatal for imake.
-CPPFLAGS+=	-DDEFAULT_CC=\\\"gcc\\\"
-
-.ifdef USE_IMAKE
-.error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+CONFIGURE_ENV=	ac_cv_path_RAWCPP=tradcpp
 
 MAN1=		ccmakedep.1 \
 		cleanlinks.1 \
@@ -36,16 +35,4 @@ MAN1=		ccmakedep.1 \
 		revpath.1 \
 		xmkmf.1
 
-post-patch:
-	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/mkhtmlindex.pl
-	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' ${WRKSRC}/configure
-
-.include <bsd.port.pre.mk>
-
-# Attempt to force use of GNU cpp, if it is installed as /usr/bin/gcpp.
-.if (${OSVERSION} >= 900506 && ${OSVERSION} < 1000000) || \
-	${OSVERSION} >= 1000010
-CONFIGURE_ENV+=       ac_cv_path_RAWCPP="gcpp"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

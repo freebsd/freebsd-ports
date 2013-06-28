@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
-# xmkmf is used in configure script; USE_IMAKE makes the build unhappy
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+USES=		imake:env
 
 USE_MOTIF=	yes
 USE_XORG=	x11 ice sm xext xpm xt xxf86vm

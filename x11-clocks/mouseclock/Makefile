@@ -11,10 +11,9 @@ MASTER_SITE_SUBDIR=	X11/clocks
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the current time using the X root cursor
 
+USES=		imake
 USE_GMAKE=	yes
-USE_IMAKE=	yes
 USE_XORG=	x11 xext
-XMKMF=		xmkmf
 NO_INSTALL_MANPAGES=	yes
 
 post-configure:

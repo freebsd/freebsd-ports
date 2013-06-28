@@ -12,7 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X-based rubik's cube(tm)
 
 WRKSRC=		${WRKDIR}/xrubik
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xt sm ice xext x11
 MAN1=		xrubik.1
 XFREE86_HTML_MAN=	no

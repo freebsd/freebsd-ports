@@ -15,8 +15,8 @@ LIB_DEPENDS=	xview:${PORTSDIR}/x11-toolkits/xview
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		imake
 USE_XORG=	x11
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MANCOMPRESSED=	no

@@ -1,9 +1,5 @@
-# ports collection makefile for:	xpx
-# Date created:		25 Oct 1998
-# Whom:			Seiichirou Hiraoka
-#
+# Created by: Seiichirou Hiraoka
 # $FreeBSD$
-#
 
 PORTNAME=	xpx
 PORTVERSION=	1.41
@@ -17,8 +13,8 @@ COMMENT=	Simple pixel editing tool to generate data for KISS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		imake
 USE_XORG=	x11 xext
-USE_IMAKE=	yes
 XMKMF=		xmkmf
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}

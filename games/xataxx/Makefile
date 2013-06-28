@@ -14,8 +14,8 @@ COMMENT=	Strategy game of position and movement for X Window System
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		imake
 USE_XORG=	x11 xext
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN6=		xataxx.6

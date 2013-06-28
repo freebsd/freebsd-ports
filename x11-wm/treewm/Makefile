@@ -12,7 +12,7 @@ COMMENT=	Window manager that arranges windows in a tree
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+USES=		imake:env
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

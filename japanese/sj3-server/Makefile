@@ -13,14 +13,15 @@ PATCHFILES=	${PORTNAME}-qq-2.0.1.21.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A Japanese input method, binary part
+COMMENT=	Japanese input method, binary part
 
 LIB_DEPENDS=	sj3lib:${PORTSDIR}/japanese/sj3-lib
 
+USES=		imake
 USE_RC_SUBR=	sj3
-USE_IMAKE=	yes
 SUB_FILES=	sj3_freebsd.tmpl
 SUB_LIST=	DESTDIR=${DESTDIR}
+CFLAGS+=	-Wno-return-type
 
 USERS=		_sj3
 GROUPS=		_sj3

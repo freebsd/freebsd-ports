@@ -11,8 +11,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}_en${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X version of the popular board game
 
+USES=		imake
 USE_BZIP2=	yes
-USE_IMAKE=	yes
 USE_XORG=	xaw
 NO_INSTALL_MANPAGES=	yes
 

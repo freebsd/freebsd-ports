@@ -20,7 +20,7 @@ CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 MAN1=		xfig.1
 MANCOMPRESSED=	yes

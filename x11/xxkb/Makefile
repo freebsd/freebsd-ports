@@ -12,10 +12,8 @@ COMMENT=	XKB keyboard layout indicator and switcher
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-
+USES=		iconv imake
 USE_XORG=	xpm
-USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		${PORTNAME}.1

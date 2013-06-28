@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmsmixer
-# Date created:				2 April 2001
-# Whom:					Konstantinos Konstantinidis <kkonstan@daemon.gr>
-#
+# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	wmsmixer
 PORTVERSION=	0.5.1
@@ -16,8 +12,9 @@ COMMENT=	An audio mixer for the WindowMaker dock
 
 PLIST_FILES=	bin/wmsmixer
 PORTDOCS=	README
+
+USES=		imake
 USE_XORG=	xpm
-USE_IMAKE=	YES
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 
 do-install:

@@ -10,8 +10,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Simple logout button
 
+USES=		imake
 WRKSRC=		${WRKDIR}/xlogout
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAKE_JOBS_SAFE=	yes
 MAN1=		xlogout.1
