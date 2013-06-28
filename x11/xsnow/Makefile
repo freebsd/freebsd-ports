@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xsnow
-# Date created:         12 November 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	xsnow
 PORTVERSION=	1.42
@@ -14,7 +10,7 @@ MASTER_SITES=	http://dropmix.xs4all.nl/rick/Xsnow/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xpm
 MAN6=		xsnow.6
 PLIST_FILES=	bin/xsnow

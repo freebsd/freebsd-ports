@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tycoon
-# Date created:		19 September 1997
-# Whom:			steve@farrell.org
-#
+# Created by: steve@farrell.org
 # $FreeBSD$
-#
 
 PORTNAME=	tycoon
 PORTVERSION=	1.07o
@@ -13,11 +9,11 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A nifty set of desktop apps, including floating buttons
+COMMENT=	Nifty set of desktop apps, including floating buttons
 
 LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 REINPLACE_ARGS=	-i ""
 

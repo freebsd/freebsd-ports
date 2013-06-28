@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xlupe
-# Date created:		17 Apr 1999
-# Whom:			runge@rostock.zgdv.de
-#
+# Created by: runge@rostock.zgdv.de
 # $FreeBSD$
-#
 
 PORTNAME=	xlupe
 PORTVERSION=	1.1
@@ -14,7 +10,7 @@ MASTER_SITES=	http://coto.marsrakete.de/projects/xlupe/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying glass for X. like xmag but with continously updates
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 
 PLIST_FILES=	bin/xlupe

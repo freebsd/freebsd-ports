@@ -1,9 +1,6 @@
-# New ports collection makefile for:    mxico
-# Date created:         25 October 2003
-# Whom:                 NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
+
 # NB: Do not delete or wrap post-install section, since we have to provide
 #     READMEj and README
 
@@ -16,7 +13,7 @@ MASTER_SITES=	http://people.freebsd.org/~maho/mxico/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		mxico.1

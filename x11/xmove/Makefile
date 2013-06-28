@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xmove
-# Date created:        16 Jan 1997
-# Whom:                Stefan Zehl <sec@42.org>
-#
+# Created by: Stefan Zehl <sec@42.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmove
 PORTVERSION=	2.0b2
@@ -17,7 +13,7 @@ COMMENT=	Pseudoserver to support mobile X11 clients
 
 WRKSRC=		${WRKDIR}/xmove
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 
 MAN1=		xmove.1 xmovectrl.1

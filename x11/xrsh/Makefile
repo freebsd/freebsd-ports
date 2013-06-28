@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xrsh
-# Date created: 	30 May 2004
-# Whom:			KIMURA Yasuhiro <yasu@utahime.org>
-#
+# Created by: KIMURA Yasuhiro <yasu@utahime.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xrsh
 PORTVERSION=	5.92
@@ -16,7 +12,7 @@ EXTRACT_SUFX=	.shar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Launcher which starts an X program on a remote machine
 
-USE_IMAKE=	yes
+USES=		imake
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=
