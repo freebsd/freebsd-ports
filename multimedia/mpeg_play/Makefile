@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpeg_play
-# Date created:		17 December 1994
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	mpeg_play
 PORTVERSION=	2.4
@@ -14,10 +10,10 @@ MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/ \
 EXTRACT_SUFX=	-patched-src.tar.gz
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A program to play mpeg movies on X displays
+COMMENT=	Program to play mpeg movies on X displays
 
 WRKSRC=		${WRKDIR}/mpeg_play
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		mpeg_play.1
 PLIST_FILES=	bin/mpeg_play
