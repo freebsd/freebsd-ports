@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebTest
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://www.c-s.li/ports/
