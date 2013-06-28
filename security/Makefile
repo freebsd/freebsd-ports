@@ -545,6 +545,7 @@
     SUBDIR += p5-Digest-Tiger
     SUBDIR += p5-Digest-Whirlpool
     SUBDIR += p5-File-KeePass
+    SUBDIR += p5-File-KeePass-Agent
     SUBDIR += p5-File-Scan
     SUBDIR += p5-File-Scan-ClamAV
     SUBDIR += p5-Filter-CBC
