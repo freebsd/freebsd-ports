@@ -1,9 +1,5 @@
-# Ports collection makefile for:  xspy
-# Date created:			  Jan 11 2003
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xspy
 PORTVERSION=	1.0c
@@ -15,7 +11,7 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	A utility for monitoring keystrokes on remote X servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 XMKMF=		xmkmf
 
