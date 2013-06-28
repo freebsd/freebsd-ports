@@ -988,7 +988,7 @@ lib/ocaml/weak.mli
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_labltk
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk/images
 %%TK%%@dirrm %%EXAMPLESDIR%%/examples_camltk
-@dirrmtry %%EXAMPLESDIR%%
+%%TK%%@dirrmtry %%EXAMPLESDIR%%
 @dirrm lib/ocaml/vmthreads
 %%THREADS%%@dirrm lib/ocaml/threads
 @dirrmtry lib/ocaml/stublibs
