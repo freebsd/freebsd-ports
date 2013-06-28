@@ -1,0 +1,23 @@
+------------------------------------------------------------
+
+Hans runs on Linux as a client and a server.
+It runs on FreeBSD client only.
+
+NOTE: that Hans can not receive echo requests on BSD systems.
+Therefore the server only works on Linux.
+
+------------------------------------------------------------
+
+### Running as a server ###
+
+% hans -s 10.1.2.0 -r -p password -u nobody
+
+### Running as a client ###
+
+% hans -c server_address -p password -u nobody
+
+### Help ###
+
+% hans
+
+------------------------------------------------------------
