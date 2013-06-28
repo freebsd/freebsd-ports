@@ -1,0 +1,11 @@
+--- ./ssl/Config.in.orig	2011-06-25 06:12:07.000000000 +0900
++++ ./ssl/Config.in	2013-04-11 08:38:38.000000000 +0900
+@@ -318,7 +318,7 @@
+ config CONFIG_PERFORMANCE_TESTING
+     bool "Build the bigint performance test tool"
+     default n
+-    depends on CONFIG_SSL_CERT_VERIFICATION
++    depends on CONFIG_SSL_CERT_VERIFICATION || CONFIG_SSL_ENABLE_CLIENT || CONFIG_SSL_FULL_MODE
+     help
+         Used for performance testing of bigint.
+ 

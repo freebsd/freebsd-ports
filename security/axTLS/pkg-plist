@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+%%HTTPD%%bin/axhtpasswd
+%%HTTPD%%bin/axhttpd
+bin/axssl
+%%PERL%%bin/axssl.pl
+%%TLSWRAP%%bin/axtlswrap
+include/axTLS/bigint.h
+include/axTLS/bigint_impl.h
+include/axTLS/config.h
+include/axTLS/crypto.h
+include/axTLS/crypto_misc.h
+include/axTLS/os_int.h
+include/axTLS/ssl.h
+include/axTLS/tls1.h
+include/axTLS/version.h
+lib/libaxtls.a
+lib/libaxtls.so
+lib/libaxtls.so.1
+lib/libaxtls.so.1.2
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/libaxtlsp.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/axtlsp.pm
+@dirrm include/axTLS
