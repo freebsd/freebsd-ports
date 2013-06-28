@@ -2201,6 +2201,7 @@
     SUBDIR += zend-framework
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
+    SUBDIR += zikula
     SUBDIR += zope213
 
 .include <bsd.port.subdir.mk>
