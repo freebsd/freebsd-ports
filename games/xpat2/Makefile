@@ -1,9 +1,5 @@
-# New ports collection makefile for: xpat2
-# Date created:		5 March 1997
-# Whom:			Matthew Hunt <mph@pobox.com>
-#
+# Created by: Matthew Hunt <mph@pobox.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xpat2
 PORTVERSION=	1.07
@@ -15,9 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X11 solitaire game with 14 variations
+COMMENT=	X11 solitaire game with 14 variations
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 MAN6=		xpat2.6
 MANCOMPRESSED=	no

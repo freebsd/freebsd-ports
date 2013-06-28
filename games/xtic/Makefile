@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xtic
-# Date created:         22 June 1995
-# Whom:                 asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	xtic
 PORTVERSION=	1.12
@@ -14,9 +10,9 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X version of a simple but tricky board game
+COMMENT=	X version of a simple but tricky board game
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 MAN1=		xtic.1
 PLIST_FILES=	bin/xtic

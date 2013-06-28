@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xrobots
-# Date created:         2 Jan 1995
-# Whom:                 swallace
-#
+# Created by: swallace
 # $FreeBSD$
-#
 
 PORTNAME=	xrobots
 PORTVERSION=	1.0
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-10.20
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Fight off villainous robots (X version)
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xaw xext xmu xt sm ice
 WRKSRC=		${WRKDIR}/xrobots-1.0
 MAN6=		xrobots.6

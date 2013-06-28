@@ -1,7 +1,4 @@
-# New ports collection makefile for:    xmris
-# Date created:         21 September 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
 
 PORTNAME=	xmris
@@ -16,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A version of the Mr Do video arcade game for X11
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xaw xmu xt sm ice
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris xmred

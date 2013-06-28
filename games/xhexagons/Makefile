@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xhexagons
-# Date created:				20 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xhexagons
 PORTVERSION=	5.5.2
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System
 
 WRKSRC=		${WRKDIR}/xhexagons
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xt sm ice
 MAN1=		xhexagons.1
 XFREE86_HTML_MAN=	no

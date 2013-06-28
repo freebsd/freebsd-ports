@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xoct
-# Date created:				28 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xoct
 PORTVERSION=	5.5.2
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oct puzzle for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xt sm ice
 MAN1=		xoct.1
 MANCOMPRESSED=	no

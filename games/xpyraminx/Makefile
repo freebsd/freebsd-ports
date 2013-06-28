@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpyraminx
-# Date created:				26 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xpyraminx
 PORTVERSION=	5.5.2
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pyraminx puzzle for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xt sm ice
 MAN1=		xpyraminx.1
 MANCOMPRESSED=	no

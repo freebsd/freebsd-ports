@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xlaby
-# Date created:				3 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xlaby
 PORTVERSION=	2.0.1
@@ -18,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemonic X Labyrinth played directly with the mouse pointer
 
 NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 MAN6=		xlaby.6
 PLIST_FILES=	bin/xlaby

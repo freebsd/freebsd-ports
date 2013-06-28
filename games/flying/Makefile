@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flying
-# Date created:				12 Jul 1996
-# Whom:					searle
-#
+# Created by: searle
 # $FreeBSD$
-#
 
 PORTNAME=	flying
 PORTVERSION=	6.20
@@ -16,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pool/snooker/billiards/carrom/etc game
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 MAN1=		flying.1
 PLIST_FILES=	bin/flying

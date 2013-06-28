@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xkoules
-# Date created:				11 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xkoules
 PORTVERSION=	1.4
@@ -17,16 +13,18 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN6=		xkoules.6
 MAKE_JOBS_UNSAFE=	yes
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${CP} ${WRKSRC}/xkoules.6 ${WRKSRC}/xkoules.man
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ANNOUNCE BUGS Card ChangeLog Koules.FAQ TODO
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

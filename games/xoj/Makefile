@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xoj
-# Date created:				30 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xoj
 PORTVERSION=	1.0
@@ -16,8 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	O. J. Simpson Simulator root window demo
 
+USES=		imake
 USE_XORG=	xaw
-USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xoj
 

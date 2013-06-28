@@ -1,9 +1,5 @@
-# New ports collection makefile for:   actx
-# Date created:        19 Feb 1999
-# Whom:                Shinya Esu <esu@yk.rim.or.jp>
-#
+# Created by: Shinya Esu <esu@yk.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	actx
 PORTVERSION=	1.23
@@ -16,12 +12,14 @@ COMMENT=	Window sitter for X11
 
 NO_CDROM=	'contains commercial character data'
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 MAN1=		actx.1
 MANLANG=	"" ja
 
 ACTXDIR=	${PREFIX}/share/examples/actx
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@ ${CP} ${WRKSRC}/samples/Imakefile ${WRKSRC}
@@ -45,7 +43,7 @@ post-install:
 .for i in sample.Xdefaults sample.actxrc
 	@ ${INSTALL_DATA} ${WRKSRC}/samples/$i ${ACTXDIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTONS:MDOCS}
 .for i in doc/ForDevelloper.jis doc/ManualInstall.jis README.jis
 	@ ${MKDIR} ${PREFIX}/share/doc/ja/actx
 	@ ${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/actx

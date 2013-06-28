@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xspacewarp
-# Date created:				16 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xspacewarp
 PORTVERSION=	1.2
@@ -15,7 +11,7 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time Trek - like game for X Window System
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 NO_INSTALL_MANPAGES=	yes
 
