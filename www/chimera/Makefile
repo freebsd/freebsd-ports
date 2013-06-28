@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chimera
-# Date created:		26 December 1994
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	chimera
 PORTVERSION=	1.70p0
@@ -17,7 +13,7 @@ COMMENT=	X/Athena World-Wide Web client
 RUN_DEPENDS= 	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 NO_LATEST_LINK=	yes
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 MAN1=		chimera.1
