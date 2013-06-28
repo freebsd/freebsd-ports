@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.11-rc60.3
+DISTVERSION=	5.6.12-rc60.4
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/LATEST/source/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	Percona-Server-5.6.11-rc60.3
+DISTNAME=	Percona-Server-5.6.12-rc60.4
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -38,7 +38,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
-		-DWITH_LIBEDIT=0 \
+		-DWITH_EDITLINE=system \
 		-DWITH_LIBWRAP=1 \
 		-DHAVE_PAM=0
 

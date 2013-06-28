@@ -130,3 +130,5 @@ libexec/mysqld
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
 @dirrm %%DATADIR%%
+@cwd /var
+@dirrmtry db/mysql
