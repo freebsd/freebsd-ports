@@ -4,7 +4,8 @@
 PORTNAME=	liblnk
 PORTVERSION=	20130413
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSQmluVC1YeDVvZWM/ \
+		LOCAL/antoine
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
