@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-security-c
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=santuario/c-library
