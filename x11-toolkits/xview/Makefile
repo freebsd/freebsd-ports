@@ -20,7 +20,7 @@ BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i ""
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 IMAKEINCLUDE=	"-I${WRKSRC}/config -I${LOCALBASE}/lib/X11/config"

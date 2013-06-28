@@ -14,7 +14,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The classic cat-and-mouse
 
 NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 MAN6=		xneko.6
 PLIST_FILES=	bin/xneko

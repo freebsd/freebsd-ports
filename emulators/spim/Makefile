@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  spim
-# Date created:			  Mon Oct 28, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	spim
 PORTVERSION=	8.0
@@ -31,14 +26,14 @@ PLIST_DIRS=	%%DATADIR%%
 
 .if ${PORT_OPTIONS:MGUI}
 USE_XORG=	x11 xaw
-BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
+USES+=		imake:env
 PLIST_FILES+=	bin/xspim
 MAN1+=		xspim.1
 .endif
 
 post-build:
 .if ${PORT_OPTIONS:MGUI}
-	@(cd ${WRKSRC}/xspim && ${XMKMF} && \
+	@(cd ${WRKSRC}/xspim && ${SETENV} ${MAKE_ENV} ${XMKMF} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE})
 .endif
 

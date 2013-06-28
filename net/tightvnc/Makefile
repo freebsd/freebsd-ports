@@ -22,10 +22,11 @@ CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 
+USES=		imake
+CFLAGS+=	-Wno-return-type
 USE_GCC=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_IMAKE=	yes
 USE_XORG=	xaw
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes

@@ -13,7 +13,6 @@ COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
 		xterm:${PORTSDIR}/x11/xterm
@@ -21,6 +20,7 @@ RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
 OPTIONS_DEFINE=	ULTRAFTP DOCS
 ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
 
+USES=		imake:env
 USE_XORG=	xi xmu xt xaw ice xpm xext sm
 USE_TK_WRAPPER=	yes
 USE_PERL5_RUN=	yes
@@ -55,7 +55,7 @@ post-patch:
 .endif
 
 do-configure:
-	@cd ${WRKSRC} && ${GMAKE} config
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} config
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}

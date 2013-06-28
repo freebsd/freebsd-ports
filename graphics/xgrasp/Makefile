@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xgrasp
-# Date created:		23 July 1995
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	xgrasp
 PORTVERSION=	1.7d
@@ -18,8 +14,8 @@ COMMENT=	Display GL animations on X screen
 
 NO_WRKSUBDIR=	yes
 
+USES=		imake
 USE_XORG=	x11 xext
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		glib.1 xgrasp.1

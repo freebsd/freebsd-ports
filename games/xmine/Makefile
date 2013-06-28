@@ -1,7 +1,5 @@
 # Created by: joerg
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmine
 PORTVERSION=	1.0.3
@@ -17,7 +15,7 @@ COMMENT=	The `Athena' port of the xminesweeper game
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 MAN6=		xmine.6
 MANCOMPRESSED=	no

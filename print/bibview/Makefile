@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bibview
-# Date created:		21 July 1997
-# Whom:			dbader@eece.unm.edu
-#
+# Created by: dbader@eece.unm.edu
 # $FreeBSD$
-#
 
 PORTNAME=	bibview
 PORTVERSION=	2.2
@@ -17,7 +13,7 @@ COMMENT=	Graphical interface for manipulating BibTeX bibliography databases
 
 MAKE_JOBS_SAFE=	yes
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 WRKSRC=		${WRKDIR}/bibview-${PORTVERSION}
 MAN1=		bibview.1

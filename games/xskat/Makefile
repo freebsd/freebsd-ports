@@ -16,7 +16,7 @@ DISTFILES+=	xskat-cards.tar.gz
 RESTRICTED=	The altenburger card file is NOT freely redistributable!
 .endif
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 MAN1=		xskat.1 xskat-de.1
 PLIST_FILES=	bin/xskat

@@ -13,10 +13,9 @@ COMMENT=	The fvwm window manager
 NO_LATEST_LINK=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
 # must overwrite the default from bsd.port.mk
-XMKMF=		xmkmf
 ALL_TARGET=	Makefiles all
 MAN1=		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmClean.1 \
 		FvwmDebug.1 FvwmIconBox.1 FvwmIdent.1 FvwmPager.1 FvwmSave.1 \

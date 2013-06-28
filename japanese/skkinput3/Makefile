@@ -11,7 +11,8 @@ DISTNAME=	skkinput-${PORTVERSION}
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
 
-USE_IMAKE=	yes
+USES=		imake
+USE_GCC=	any
 USE_XORG=	ice sm x11 xext xmu xt
 
 OPTIONS_DEFINE=	SKK10
@@ -21,6 +22,7 @@ RG1_DESC=	Skkserver Selection
 DBSKKD_DESC=	Use ja-dbskkd-cdb as skkserver
 RSKKSERV_DESC=	Use ja-rskkserv as skkserver
 SKK10_DESC=	Use SKK10 elisps
+USE_CSTD=	gnu89
 
 NO_INSTALL_MANPAGES=	yes
 

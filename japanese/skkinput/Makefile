@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	skkinput2/6273
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xext xt xmu
 
 OPTIONS_RADIO=	RG1

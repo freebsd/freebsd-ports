@@ -14,7 +14,7 @@ COMMENT=	X window mille bourne game
 
 WRKSRC=		${WRKDIR}/Mille
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		xmille.1
 MANCOMPRESSED=	no

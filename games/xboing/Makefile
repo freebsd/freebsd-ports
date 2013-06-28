@@ -14,7 +14,7 @@ COMMENT=	X11 arcade game
 
 LICENSE=	MIT
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xpm xext x11
 WRKSRC=		${WRKDIR}/xboing
 MAN1=		xboing.1

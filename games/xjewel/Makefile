@@ -15,8 +15,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+USES=		imake
 USE_XORG=	x11 xext
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN6=		xjewel.6

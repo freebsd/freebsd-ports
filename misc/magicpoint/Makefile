@@ -14,7 +14,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
-USE_IMAKE=	yes
+USES=		imake:env
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -81,6 +81,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-configure:
+	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF})
 	cd ${WRKSRC}/contrib/xmindpath && \
 		${SH} ${CONFIGURE_SCRIPT} --prefix=${PREFIX}
 

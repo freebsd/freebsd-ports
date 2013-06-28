@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD player for X
 
+USES=		imake
 USE_XORG=	xbitmaps xaw
-USE_IMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		xcdplayer.1

@@ -10,7 +10,7 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Xerox Lisp machine clock clone
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAKE_JOBS_SAFE=	yes
 

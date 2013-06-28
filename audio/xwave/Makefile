@@ -13,7 +13,7 @@ MAINTAINER=	a0516@marimga.de
 COMMENT=	Audio player/recorder/editor for the X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-981109
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 MAKE_JOBS_UNSAFE=	yes
 

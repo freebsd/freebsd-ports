@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nas (formerly netaudio)
-# Date created:		03 Nov 1994
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	nas
 PORTVERSION=	1.9.3
@@ -14,8 +10,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
+USES=		imake
 USE_GCC=	any
-USE_IMAKE=	yes
 USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
 USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"

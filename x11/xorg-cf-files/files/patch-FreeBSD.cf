@@ -1,5 +1,5 @@
---- FreeBSD.cf.orig	Sat Aug 14 17:03:36 2004
-+++ FreeBSD.cf	Fri Sep 10 19:52:31 2004
+--- ./FreeBSD.cf.orig	2009-10-16 23:45:42.000000000 +0200
++++ ./FreeBSD.cf	2013-06-27 17:14:30.661790922 +0200
 @@ -78,6 +78,7 @@
  #define HasIssetugid		YES
  #define HasPoll			YES
@@ -25,7 +25,17 @@
  #endif
  
  /* This fixes linking C programs against libGLU on FreeBSD 3.x */
-@@ -338,7 +333,7 @@
+@@ -178,7 +173,9 @@
+ #ifndef CplusplusCmd
+ #define CplusplusCmd		c++
+ #endif
++#ifndef CppCmd
+ #define CppCmd			/usr/bin/cpp
++#endif
+ #define PreProcessCmd		CppCmd
+ #define StandardCppOptions	-traditional
+ #define StandardCppDefines	/**/
+@@ -338,7 +335,7 @@
  #ifndef LibraryRpathLoadFlags
  # if UseRpath
  #  if UseElfFormat
@@ -34,7 +44,7 @@
  #  else
  #   define LibraryRpathLoadFlags	-R $(USRLIBDIRPATH)
  #  endif
-@@ -466,14 +461,14 @@
+@@ -470,14 +467,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
@@ -51,7 +61,7 @@
  #endif
  
  #ifndef PreIncDir
-@@ -493,6 +493,10 @@
+@@ -498,6 +495,10 @@
  #define SystemManDirectory	/usr/share/man
  #endif
  

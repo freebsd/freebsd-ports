@@ -19,7 +19,7 @@ CONFIGURE_WRKSRC=	${PATCH_WRKSRC}
 BUILD_WRKSRC=	${PATCH_WRKSRC}
 CFLAGS+=	-Wno-return-type
 
-USE_IMAKE=	true
+USES=		imake
 USE_XORG=	xbitmaps xaw
 
 XFREE86_HTML_MAN=	no

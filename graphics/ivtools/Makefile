@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ivtools
-# Date created:        13 March 2002
-# Whom:                scott
-#
+# Created by: scott
 # $FreeBSD$
-#
 
 PORTNAME=	ivtools
 PORTVERSION=	1.2.9
@@ -15,14 +11,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
+USES=		imake:env
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--with-tiff=${PREFIX}
+CONFIGURE_ENV=	IMAKECPP=${CPP}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 MAKE_ARGS=	ARCH=FREEBSD
 USE_XORG=	x11 xaw ice xext

@@ -18,8 +18,8 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 OPTIONS_DEFINE=	NLS A4SIZE DOCS
 A4SIZE_DESC=	Set default paper size to A4
 
+USES=		imake
 USE_GCC=	any
-USE_IMAKE=	yes
 PORTDOCS=	HISTORY README
 USE_XORG=	x11 xext xt sm ice
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"

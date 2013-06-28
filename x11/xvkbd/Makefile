@@ -16,8 +16,8 @@ OPTIONS_DEFAULT=	XTEST
 XAW3D_DESC=	Xaw3d widget library support
 XTEST_DESC=	XTEST extensions support
 
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-USE_IMAKE=	yes
 
 MAN1=		xvkbd.1
 

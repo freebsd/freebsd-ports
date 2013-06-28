@@ -13,7 +13,7 @@ COMMENT=	X11 front-end for ghostscript, the GNU postscript previewer
 
 LICENSE=	GPLv2 # (or later)
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xbitmaps xaw
 USE_GHOSTSCRIPT_RUN=	yes
 MAKE_JOBS_SAFE=	yes

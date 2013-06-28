@@ -12,7 +12,7 @@ COMMENT=	Motif-based audio mixer
 
 WRKSRC=		${WRKDIR}/xmmix-1.2
 
-USE_IMAKE=	yes
+USES=		imake
 USE_MOTIF=	yes
 USE_XORG=	x11 xext sm ice xt xp
 

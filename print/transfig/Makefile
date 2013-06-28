@@ -1,9 +1,5 @@
-# New ports collection makefile for:	transfig
-# Date created:		9 August 1996
-# Whom:			chuckr@freebsd.org
-#
+# Created by: chuckr@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	transfig
 PORTVERSION=	3.2.5d
@@ -20,9 +16,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_SAFE=	yes
 
-USE_GCC=	any
+USES=		imake
+CFLAGS+=	-Wno-return-type
 USE_GHOSTSCRIPT_RUN=	yes
-USE_IMAKE=	yes
 USE_XORG=	xpm
 MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
 

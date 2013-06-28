@@ -14,7 +14,7 @@ COMMENT=	Tool for managing x11 cut-buffers
 
 LICENSE=	MIT
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 MAN1=		xcb.1

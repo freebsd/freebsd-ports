@@ -1,9 +1,5 @@
-# New ports collection makefile for:	props
-# Date created:		3 January 1998
-# Whom:			jraynard
-#
+# Created by: jraynard
 # $FreeBSD$
-#
 
 PORTNAME=	props
 PORTVERSION=	1.0
@@ -21,7 +17,7 @@ CONFLICTS=	xview-clients-3.2.1.4.19*
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/props
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAKE_ARGS=	INFOFILES=""
 

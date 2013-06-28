@@ -1623,11 +1623,7 @@ check-makevars::
 .endif
 .endif
 
-.if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
-MANCOMPRESSED?=	yes
-.else
 MANCOMPRESSED?=	no
-.endif
 
 .if defined(PATCHFILES)
 .if ${PATCHFILES:M*.zip}x != x
@@ -1908,7 +1904,6 @@ LIB_DEPENDS+=		Xm.4:${PORTSDIR}/x11-toolkits/open-motif
 .endif
 .endif
 
-X_IMAKE_PORT=		${PORTSDIR}/devel/imake
 X_FONTSERVER_PORT=	${PORTSDIR}/x11-fonts/xfs
 X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-vfbserver
 X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/encodings
@@ -1919,19 +1914,6 @@ X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
 X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
-
-.if defined(USE_IMAKE)
-.if (${OSVERSION} >= 900506 && ${OSVERSION} < 1000000) || \
-	${OSVERSION} >= 1000010
-CONFIGURE_ENV+=		IMAKECPP="gcpp"
-MAKE_ENV+=		IMAKECPP="gcpp"
-.else
-CONFIGURE_ENV+=		IMAKECPP="${CPP}"
-MAKE_ENV+=		IMAKECPP="${CPP}"
-.endif
-MAKE_FLAGS?=		CC="${CC}" CXX="${CXX}"
-BUILD_DEPENDS+=		imake:${X_IMAKE_PORT}
-.endif
 
 .if defined(USE_DISPLAY) && !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
@@ -2423,6 +2405,7 @@ MOTIFLIB?=	-L${LOCALBASE}/lib -lXm -lXp
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
+INSTALL_TARGET+=	${LATE_INSTALL_ARGS}
 
 # Integrate with the license auditing framework
 .if !defined (DISABLE_LICENSES)
@@ -3716,9 +3699,6 @@ do-configure:
 			 ${FALSE}; \
 		fi)
 .endif
-.if defined(USE_IMAKE)
-	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
-.endif
 .endif
 
 # Build
@@ -3864,14 +3844,8 @@ check-install-conflicts:
 do-install:
 .if defined(USE_GMAKE)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
-.endif
 .else # !defined(USE_GMAKE)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
-.endif
 .endif
 .endif
 
