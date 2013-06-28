@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Communications package for the X Window system
 
 WRKSRC=		${WRKDIR}/seyon
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xpm xmu xaw xt sm ice
 MAKE_JOBS_UNSAFE=	yes
 
