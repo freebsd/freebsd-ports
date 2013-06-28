@@ -43,7 +43,7 @@ post-install:
 .for i in sample.Xdefaults sample.actxrc
 	@ ${INSTALL_DATA} ${WRKSRC}/samples/$i ${ACTXDIR}
 .endfor
-.if ${PORT_OPTONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 .for i in doc/ForDevelloper.jis doc/ManualInstall.jis README.jis
 	@ ${MKDIR} ${PREFIX}/share/doc/ja/actx
 	@ ${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/actx
