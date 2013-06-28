@@ -14,7 +14,7 @@ COMMENT=	Simple to use text editor for X
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 ALL_TARGET=	Xaw3d all
 MAN1=		axe.1 axinfo.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xed
-# Date created:		28 Jul 1996
-# Whom:			shanee
-#
+# Created by: shanee
 # $FreeBSD$
-#
 
 PORTNAME=	xed
 PORTVERSION=	1.3
@@ -15,9 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A text editor for X
+COMMENT=	Text editor for X
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 MAN1=		xed.1
 
