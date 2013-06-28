@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	sxpc
-# Date created:		22nd March 1995
-# Whom:			jkh@FreeBSD.org
-#
+# Created by: jkh@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	sxpc
 PORTVERSION=	1.4
@@ -16,7 +12,7 @@ EXTRACT_SUFX=	.shar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Simple X Protocol Compressor
 
-USE_IMAKE=	yes
+USES=		imake
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc

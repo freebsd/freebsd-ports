@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xkbctrl
-# Date created:		9 January 2000
-# Whom:			Yoshiro MIHIRA <sanpei@sanpei.org>
-#
+# Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xkbctrl
 PORTVERSION=	1.0
@@ -18,7 +14,7 @@ COMMENT=	Display and manipulate XKB keyboard controls from the commandline
 
 DIST_SUBDIR=	xkbctrl
 PLIST_FILES=	bin/xkbctrl
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xkbfile
 NO_WRKSUBDIR=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xantfarm
-# Date created:		13 February 1997
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xantfarm
 PORTVERSION=	1.16
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ant hill simulation on X11 root window
 
 WRKSRC=		${WRKDIR}/xantfarm
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xt
 MAN1=		xantfarm.1
 PLIST_FILES=	bin/xantfarm

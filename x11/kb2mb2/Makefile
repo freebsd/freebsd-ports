@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kb2mb2
-# Date created:		24 December 1997
-# Whom:			Tatsumi Hosokawa
-#
+# Created by: Tatsumi Hosokawa
 # $FreeBSD$
-#
 
 PORTNAME=	kb2mb2
 PORTVERSION=	1.0
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirect any key to second mouse button
 
 PLIST_FILES=	bin/kb2mb2
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xtst
 
 .include <bsd.port.mk>

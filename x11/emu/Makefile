@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emu
-# Date created:		13 September 1994
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	emu
 PORTVERSION=	1.31
@@ -13,14 +9,13 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A terminal emulator for the X Window System
+COMMENT=	Terminal emulator for the X Window System
 
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
-USE_IMAKE=	yes
+USES=		imake display
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-USE_DISPLAY=	yes
 
 WRKSRC=		${WRKDIR}/emu
 
@@ -28,10 +23,6 @@ WRKSRC=		${WRKDIR}/emu
 
 .if ${OSVERSION} > 900007
 BROKEN=		fails to build with new utmpx
-.endif
-
-.if (!defined(DISPLAY) || ${DISPLAY} == "") && !defined(PACKAGE_BUILDING)
-IGNORE=		requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X
 .endif
 
 MAN1=		emu.1

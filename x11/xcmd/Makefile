@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xcmd
-# Date created:        30 Jul 2001
-# Whom:                Oliver Breuninger <ob@breuninger.org>
-#
+# Created by: Oliver Breuninger <ob@breuninger.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xcmd
 PORTVERSION=	1.8
@@ -16,7 +12,7 @@ MASTER_SITE_SUBDIR=	X11/xutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xcmd is a front-end for starting programs under X11
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xext xmu xt
 
 MANCOMPRESSED=	yes

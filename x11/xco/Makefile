@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xco
-# Date created:		6 Jun 1997
-# Whom:			Satoshi TAOKA
-#
+# Created by: Satoshi TAOKA
 # $FreeBSD$
-#
 
 PORTNAME=	xco
 PORTVERSION=	1.3
@@ -14,7 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X11 color names and colors
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		xco.1
 MANCOMPRESSED=	yes

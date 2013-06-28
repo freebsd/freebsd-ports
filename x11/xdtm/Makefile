@@ -13,7 +13,7 @@ COMMENT=	Graphical shell for the X Window System
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	xaw
-USE_IMAKE=	yes
+USES=		imake
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		xdtm.1

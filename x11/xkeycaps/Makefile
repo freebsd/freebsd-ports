@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xkeycaps
-# Date created:         12 February 1995
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	xkeycaps
 PORTVERSION=	2.46
@@ -15,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically display and edit the keyboard mapping
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xbitmaps xaw
 MAN1=		xkeycaps.1
 PLIST_FILES=	bin/xkeycaps
