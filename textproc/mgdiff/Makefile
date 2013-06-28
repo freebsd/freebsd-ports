@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mgdiff
-# Date created:         		22 October 1996
-# Whom:                 		andreas@marvin.robin.de
-#
+# Created by: andreas@marvin.robin.de
 # $FreeBSD$
-#
 
 PORTNAME=	mgdiff
 PORTVERSION=	1.0
@@ -14,10 +10,10 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical front end to the Unix diff command
+COMMENT=	Graphical front end to the Unix diff command
 
+USES=		imake
 USE_MOTIF=	yes
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xmu xp xt
 MAN1=		mgdiff.1
 

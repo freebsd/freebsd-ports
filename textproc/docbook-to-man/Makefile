@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnupg-devel
-# Date created:		5 Oct 2001
-# Whom:			Cyrille Lefevre <clefevre@citeweb.net>
-#
+# Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
-#
 
 PORTNAME=	docbook-to-man
 PORTVERSION=	1.0
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.oasis-open.org/docbook/tools/dtm/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DocBook SGML DTD into nroff/troff -man macros converter
+COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
 
 # Global variables
 #
@@ -24,7 +20,7 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
-USE_IMAKE=	yes
+USES=		imake
 XFREE86_HTML_MAN=	no
 
 MAN1=	oinstant.1
