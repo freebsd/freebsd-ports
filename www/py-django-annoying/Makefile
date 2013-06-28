@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-django-annoying
-# Date created:				2011-11-16
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-annoying
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
