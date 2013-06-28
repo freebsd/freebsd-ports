@@ -1,5 +1,5 @@
---- makefile.orig	2009-12-15 00:07:00.000000000 +0800
-+++ makefile	2010-08-16 13:53:31.000000000 +0800
+--- makefile.orig	2012-09-12 03:22:51.000000000 +0800
++++ makefile	2013-06-28 09:55:32.000000000 +0800
 @@ -38,8 +38,8 @@
  THRLIBS=
  SUFF=
@@ -19,7 +19,7 @@
 +CC = ${CXX}
  
  # DEFS macro is deprecatred, edit config.h file instead
- DEFS = -Wno-invalid-offsetof
+ DEFS = -Wno-invalid-offsetof -Wno-write-strings
  
  ifeq ($(DEBUG), 1)
 -CFLAGS = -c -Iinc -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
@@ -40,7 +40,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -433,16 +433,15 @@
+@@ -439,16 +439,15 @@
  
  install: subsql cleanupsem inspectsem installlib
  	mkdir -p $(BINSPATH)
@@ -58,11 +58,11 @@
 +	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
  	mkdir -p $(LIBSPATH)
 -	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
-+	${BSD_INSTALL_PROGRAM} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
++	${BSD_INSTALL_DATA} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
  	(cd $(LIBSPATH) && ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so \
  	 && ln -f -s $(CLI_SHARED) libcli$(SUFF).so)
  	if [ -f $(JNI_LIB) ]; then cp $(JNI_LIB) $(LIBSPATH); \
-@@ -450,7 +449,7 @@
+@@ -456,7 +455,7 @@
  
  uninstall:
  	rm -fr $(INCSPATH)
