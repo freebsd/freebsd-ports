@@ -125,7 +125,6 @@ share/postgresql/extension/moddatetime--unpackaged--1.0.sql
 share/postgresql/extension/moddatetime.control
 share/postgresql/extension/pageinspect--1.0--1.1.sql
 share/postgresql/extension/pageinspect--1.1.sql
-share/postgresql/extension/pageinspect--1.0.sql
 share/postgresql/extension/pageinspect--unpackaged--1.0.sql
 share/postgresql/extension/pageinspect.control
 share/postgresql/extension/pg_buffercache--1.0.sql

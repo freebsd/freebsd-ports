@@ -410,6 +410,7 @@ include/postgresql/server/storage/buffile.h
 include/postgresql/server/storage/bufmgr.h
 include/postgresql/server/storage/bufpage.h
 include/postgresql/server/storage/checksum.h
+include/postgresql/server/storage/checksum_impl.h
 include/postgresql/server/storage/copydir.h
 include/postgresql/server/storage/fd.h
 include/postgresql/server/storage/freespace.h
