@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nexfontsel
-# Date created:		99/09/29
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nexfontsel
 PORTVERSION=	3.0.1
@@ -15,11 +11,11 @@ MASTER_SITE_SUBDIR=	pav
 DISTNAME=	NeXFontSel-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A neXtaw based replacement for xfontsel
+COMMENT=	NeXtaw based replacement for xfontsel
 
 LIB_DEPENDS=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xaw
 
 MAN1=		nexfontsel.1
