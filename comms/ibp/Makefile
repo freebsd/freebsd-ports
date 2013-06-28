@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ibp
-# Date created:				3 August 2008
-# Whom:					Diane Bruce <db@db.net>
-#
+# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ibp
 PORTVERSION=	0.21
@@ -17,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	A little program for monitoring amateur radio beacons
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11
 
 PLIST_FILES=	bin/ibp
