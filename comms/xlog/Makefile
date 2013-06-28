@@ -2,41 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+MASTER_SITES=	SAVANNAH \
 		http://www.chronos.org.uk/download/
 MASTER_SITE_SUBDIR=	xlog
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Amateur Radio logging application
 
 LICENSE=	GPLv3
 
-USES=		gettext
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mime-update \
-		CFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ARGS=	--enable-mime-update
+
+PORTDOCS=	*
 
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 
 MAN1=		xlog.1
 
+OPTIONS_DEFINE=	NLS DOCS
+
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-D.*_DISABLE_DEPRECATED||g'
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|desktop doc dxcc|desktop dxcc|g' \
 	${WRKSRC}/data/Makefile.in

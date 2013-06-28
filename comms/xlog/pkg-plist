@@ -1,86 +1,16 @@
 bin/xlog
-share/applications/xlog.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/KEYS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/glabels/qsllabels.glabels
-%%PORTDOCS%%%%DOCSDIR%%/manual/img1.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/index.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
-%%PORTDOCS%%%%DOCSDIR%%/manual/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/next.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/next_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/node1.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node10.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node11.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node12.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node13.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node14.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node15.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node16.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node17.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node18.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node19.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node2.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node20.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node21.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node22.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node23.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node24.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node25.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node26.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node27.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node28.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node29.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node3.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node30.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node31.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node32.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node33.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node34.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node35.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node4.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node5.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node6.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node7.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node8.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node9.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/prev.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/prev_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/up.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/up_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-defaultsdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-dupecheckdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-exportsettings.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-importdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-keyerwindow.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-logeditor.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-mainwindow.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-mergelogdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-newlogdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-pagesetupdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-preferencesdialog-general.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-preferencesdialog-hamlib.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-preferencesdialog-info.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-preferencesdialog-logs.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-printdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-scorewindow.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-searchdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/xlog-workedwindow.png
-share/icons/gnome-mime-text-x-xlog.png
-share/icons/xlog-icon.png
-share/mime/packages/xlog.xml
-share/pixmaps/xlog/countrymap.png
-share/pixmaps/xlog/cwdaemon.png
+share/pixmaps/xlog/xlog.svg
+share/pixmaps/xlog/xlog-icon.png
+share/pixmaps/xlog/xlog.png
+share/pixmaps/xlog/xlog-keyer.png
+share/pixmaps/xlog/xlog-b4.png
+share/pixmaps/xlog/xlog-map.png
+share/pixmaps/xlog/xlog-scoring.png
 share/pixmaps/xlog/gnome-mime-text-x-xlog.png
-share/pixmaps/xlog/jigsaw.png
+share/pixmaps/xlog/xlog.xpm
 share/pixmaps/xlog/mini-clock.xpm
 share/pixmaps/xlog/mini-trx.xpm
 share/pixmaps/xlog/mini-xlog.xpm
-share/pixmaps/xlog/s-meter.xpm
-share/pixmaps/xlog/s.xpm
 share/pixmaps/xlog/s0.xpm
 share/pixmaps/xlog/s1.xpm
 share/pixmaps/xlog/s2.xpm
@@ -91,14 +21,12 @@ share/pixmaps/xlog/s6.xpm
 share/pixmaps/xlog/s7.xpm
 share/pixmaps/xlog/s8.xpm
 share/pixmaps/xlog/s9.xpm
-share/pixmaps/xlog/xlog-b4.png
-share/pixmaps/xlog/xlog-icon.png
-share/pixmaps/xlog/xlog-keyer.png
-share/pixmaps/xlog/xlog-map.png
-share/pixmaps/xlog/xlog-scoring.png
-share/pixmaps/xlog/xlog.png
-share/pixmaps/xlog/xlog.xpm
-share/pixmaps/xlog/xlog.svg
+share/pixmaps/xlog/s-meter.xpm
+share/pixmaps/xlog/s.xpm
+share/pixmaps/xlog/cwdaemon.png
+share/pixmaps/xlog/jigsaw.png
+share/pixmaps/xlog/countrymap.png
+share/applications/xlog.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/xlog.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xlog.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xlog.mo
@@ -109,8 +37,33 @@ share/pixmaps/xlog/xlog.svg
 %%NLS%%share/locale/pt/LC_MESSAGES/xlog.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xlog.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xlog.mo
-%%DATADIR%%/dxcc/area.dat
 %%DATADIR%%/dxcc/cty.dat
+%%DATADIR%%/dxcc/area.dat
+%%DATADIR%%/maps/3D2/c.png
+%%DATADIR%%/maps/3D2/r.png
+%%DATADIR%%/maps/3Y/b.png
+%%DATADIR%%/maps/3Y/p.png
+%%DATADIR%%/maps/E5/n.png
+%%DATADIR%%/maps/E5/s.png
+%%DATADIR%%/maps/FO/a.png
+%%DATADIR%%/maps/FO/c.png
+%%DATADIR%%/maps/FO/m.png
+%%DATADIR%%/maps/FK/c.png
+%%DATADIR%%/maps/FR/g.png
+%%DATADIR%%/maps/FR/j.png
+%%DATADIR%%/maps/FR/t.png
+%%DATADIR%%/maps/HK0/a.png
+%%DATADIR%%/maps/HK0/m.png
+%%DATADIR%%/maps/JD/m.png
+%%DATADIR%%/maps/JD/o.png
+%%DATADIR%%/maps/KH8/s.png
+%%DATADIR%%/maps/SV/a.png
+%%DATADIR%%/maps/VP6/d.png
+%%DATADIR%%/maps/VP8/g.png
+%%DATADIR%%/maps/VP8/h.png
+%%DATADIR%%/maps/VP8/o.png
+%%DATADIR%%/maps/VP8/s.png
+%%DATADIR%%/maps/worldmap.jpg
 %%DATADIR%%/maps/1S.png
 %%DATADIR%%/maps/3A.png
 %%DATADIR%%/maps/3B6.png
@@ -119,14 +72,10 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/3C.png
 %%DATADIR%%/maps/3C0.png
 %%DATADIR%%/maps/3D2.png
-%%DATADIR%%/maps/3D2/c.png
-%%DATADIR%%/maps/3D2/r.png
 %%DATADIR%%/maps/3DA.png
 %%DATADIR%%/maps/3V.png
 %%DATADIR%%/maps/3W.png
 %%DATADIR%%/maps/3X.png
-%%DATADIR%%/maps/3Y/b.png
-%%DATADIR%%/maps/3Y/p.png
 %%DATADIR%%/maps/4J.png
 %%DATADIR%%/maps/4L.png
 %%DATADIR%%/maps/4O.png
@@ -198,8 +147,8 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/CT3.png
 %%DATADIR%%/maps/CU.png
 %%DATADIR%%/maps/CX.png
-%%DATADIR%%/maps/CY0.png
 %%DATADIR%%/maps/CY9.png
+%%DATADIR%%/maps/CY0.png
 %%DATADIR%%/maps/D2.png
 %%DATADIR%%/maps/D4.png
 %%DATADIR%%/maps/D6.png
@@ -207,8 +156,6 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/DU.png
 %%DATADIR%%/maps/E3.png
 %%DATADIR%%/maps/E4.png
-%%DATADIR%%/maps/E5/n.png
-%%DATADIR%%/maps/E5/s.png
 %%DATADIR%%/maps/E7.png
 %%DATADIR%%/maps/EA.png
 %%DATADIR%%/maps/EA6.png
@@ -225,22 +172,15 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/EX.png
 %%DATADIR%%/maps/EY.png
 %%DATADIR%%/maps/EZ.png
-%%DATADIR%%/maps/F.png
 %%DATADIR%%/maps/FG.png
 %%DATADIR%%/maps/FH.png
 %%DATADIR%%/maps/FJ.png
 %%DATADIR%%/maps/FK.png
-%%DATADIR%%/maps/FK/c.png
 %%DATADIR%%/maps/FM.png
 %%DATADIR%%/maps/FO.png
-%%DATADIR%%/maps/FO/a.png
-%%DATADIR%%/maps/FO/c.png
-%%DATADIR%%/maps/FO/m.png
+%%DATADIR%%/maps/F.png
 %%DATADIR%%/maps/FP.png
 %%DATADIR%%/maps/FR.png
-%%DATADIR%%/maps/FR/g.png
-%%DATADIR%%/maps/FR/j.png
-%%DATADIR%%/maps/FR/t.png
 %%DATADIR%%/maps/FS.png
 %%DATADIR%%/maps/FT5W.png
 %%DATADIR%%/maps/FT5X.png
@@ -257,15 +197,13 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/H4.png
 %%DATADIR%%/maps/H40.png
 %%DATADIR%%/maps/HA.png
-%%DATADIR%%/maps/HB.png
 %%DATADIR%%/maps/HB0.png
+%%DATADIR%%/maps/HB.png
 %%DATADIR%%/maps/HC.png
 %%DATADIR%%/maps/HC8.png
 %%DATADIR%%/maps/HH.png
 %%DATADIR%%/maps/HI.png
 %%DATADIR%%/maps/HK.png
-%%DATADIR%%/maps/HK0/a.png
-%%DATADIR%%/maps/HK0/m.png
 %%DATADIR%%/maps/HL.png
 %%DATADIR%%/maps/HM.png
 %%DATADIR%%/maps/HP.png
@@ -282,13 +220,10 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/J7.png
 %%DATADIR%%/maps/J8.png
 %%DATADIR%%/maps/JA.png
-%%DATADIR%%/maps/JD/m.png
-%%DATADIR%%/maps/JD/o.png
 %%DATADIR%%/maps/JT.png
 %%DATADIR%%/maps/JW.png
 %%DATADIR%%/maps/JX.png
 %%DATADIR%%/maps/JY.png
-%%DATADIR%%/maps/K.png
 %%DATADIR%%/maps/KG4.png
 %%DATADIR%%/maps/KH0.png
 %%DATADIR%%/maps/KH1.png
@@ -300,13 +235,13 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/KH6.png
 %%DATADIR%%/maps/KH7K.png
 %%DATADIR%%/maps/KH8.png
-%%DATADIR%%/maps/KH8/s.png
 %%DATADIR%%/maps/KH9.png
 %%DATADIR%%/maps/KL.png
 %%DATADIR%%/maps/KP1.png
 %%DATADIR%%/maps/KP2.png
 %%DATADIR%%/maps/KP4.png
 %%DATADIR%%/maps/KP5.png
+%%DATADIR%%/maps/K.png
 %%DATADIR%%/maps/LA.png
 %%DATADIR%%/maps/LU.png
 %%DATADIR%%/maps/LX.png
@@ -335,8 +270,8 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/PY0T.png
 %%DATADIR%%/maps/PZ.png
 %%DATADIR%%/maps/R1FJ.png
-%%DATADIR%%/maps/R1MV.png
 %%DATADIR%%/maps/S0.png
+%%DATADIR%%/maps/R1MV.png
 %%DATADIR%%/maps/S2.png
 %%DATADIR%%/maps/S5.png
 %%DATADIR%%/maps/S7.png
@@ -346,7 +281,6 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/ST.png
 %%DATADIR%%/maps/SU.png
 %%DATADIR%%/maps/SV.png
-%%DATADIR%%/maps/SV/a.png
 %%DATADIR%%/maps/SV5.png
 %%DATADIR%%/maps/SV9.png
 %%DATADIR%%/maps/T2.png
@@ -371,9 +305,9 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/TU.png
 %%DATADIR%%/maps/TY.png
 %%DATADIR%%/maps/TZ.png
-%%DATADIR%%/maps/UA.png
 %%DATADIR%%/maps/UA2.png
 %%DATADIR%%/maps/UA9.png
+%%DATADIR%%/maps/UA.png
 %%DATADIR%%/maps/UK.png
 %%DATADIR%%/maps/UN.png
 %%DATADIR%%/maps/UR.png
@@ -385,7 +319,6 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/V7.png
 %%DATADIR%%/maps/V8.png
 %%DATADIR%%/maps/VE.png
-%%DATADIR%%/maps/VK.png
 %%DATADIR%%/maps/VK0H.png
 %%DATADIR%%/maps/VK0M.png
 %%DATADIR%%/maps/VK9C.png
@@ -394,17 +327,13 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/VK9N.png
 %%DATADIR%%/maps/VK9W.png
 %%DATADIR%%/maps/VK9X.png
+%%DATADIR%%/maps/VK.png
 %%DATADIR%%/maps/VP2E.png
 %%DATADIR%%/maps/VP2M.png
 %%DATADIR%%/maps/VP2V.png
 %%DATADIR%%/maps/VP5.png
 %%DATADIR%%/maps/VP6.png
-%%DATADIR%%/maps/VP6/d.png
 %%DATADIR%%/maps/VP8.png
-%%DATADIR%%/maps/VP8/g.png
-%%DATADIR%%/maps/VP8/h.png
-%%DATADIR%%/maps/VP8/o.png
-%%DATADIR%%/maps/VP8/s.png
 %%DATADIR%%/maps/VP9.png
 %%DATADIR%%/maps/VQ9.png
 %%DATADIR%%/maps/VR.png
@@ -448,29 +377,28 @@ share/pixmaps/xlog/xlog.svg
 %%DATADIR%%/maps/ZP.png
 %%DATADIR%%/maps/ZS.png
 %%DATADIR%%/maps/ZS8.png
-%%DATADIR%%/maps/worldmap.jpg
-@dirrm %%DATADIR%%/maps/VP8
-@dirrm %%DATADIR%%/maps/VP6
-@dirrm %%DATADIR%%/maps/SV
-@dirrm %%DATADIR%%/maps/KH8
-@dirrm %%DATADIR%%/maps/JD
-@dirrm %%DATADIR%%/maps/HK0
-@dirrm %%DATADIR%%/maps/FR
-@dirrm %%DATADIR%%/maps/FO
-@dirrm %%DATADIR%%/maps/FK
-@dirrm %%DATADIR%%/maps/E5
-@dirrm %%DATADIR%%/maps/3Y
-@dirrm %%DATADIR%%/maps/3D2
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/dxcc
-@dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+share/mime/packages/xlog.xml
+share/mime/text/x-xlog.xml
+share/icons/gnome-mime-text-x-xlog.png
+share/icons/xlog-icon.png
 @dirrm share/pixmaps/xlog
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/glabels
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrmtry share/icons
+@dirrmtry share/mime/packages
+@dirrmtry share/mime/text
+@dirrmtry share/mime
+@dirrmtry %%DATADIR%%/maps/VP8
+@dirrmtry %%DATADIR%%/maps/VP6
+@dirrmtry %%DATADIR%%/maps/SV
+@dirrmtry %%DATADIR%%/maps/KH8
+@dirrmtry %%DATADIR%%/maps/JD
+@dirrmtry %%DATADIR%%/maps/HK0
+@dirrmtry %%DATADIR%%/maps/FR
+@dirrmtry %%DATADIR%%/maps/FO
+@dirrmtry %%DATADIR%%/maps/FK
+@dirrmtry %%DATADIR%%/maps/E5
+@dirrmtry %%DATADIR%%/maps/3Y
+@dirrmtry %%DATADIR%%/maps/3D2
+@dirrmtry %%DATADIR%%/maps
+@dirrmtry %%DATADIR%%/dxcc
+@dirrmtry %%DATADIR%%
