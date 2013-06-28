@@ -17,6 +17,8 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	ignore
+
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_XZ=		yes
