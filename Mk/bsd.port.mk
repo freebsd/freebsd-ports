@@ -1504,6 +1504,10 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
+.if defined(USE_IMAKE)
+USES+=	imake
+.endif
+
 # Loading features
 .for f in ${USES}
 _f=${f:C/\:.*//g}
