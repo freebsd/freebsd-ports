@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81da673e-dfe1-11e2-9389-08002798f6ff">
+    <topic>apache-xml-security-c -- heap overflow during XPointer evaluation</topic>
+    <affects>
+      <package>
+	<name>apache-xml-security-c</name>
+	<range><lt>1.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation reports:</p>
+	<blockquote cite="http://santuario.apache.org/secadv.data/CVE-2013-2210.txt">
+	  <p>The attempted fix to address CVE-2013-2154 introduced the
+	  possibility of a heap overflow, possibly leading to arbitrary code
+	  execution, in the processing of malformed XPointer expressions in the
+	  XML Signature Reference processing code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2210</cvename>
+      <url>http://santuario.apache.org/secadv.data/CVE-2013-2210.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-06-27</discovery>
+      <entry>2013-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3fcb387-de4b-11e2-b1c6-0025905a4771">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
