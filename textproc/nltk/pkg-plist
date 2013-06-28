@@ -576,6 +576,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/all.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/ccg.doctest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/chat80.doctest
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/childes.doctest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/chunk.doctest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/classify.doctest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nltk/test/collocations.doctest
