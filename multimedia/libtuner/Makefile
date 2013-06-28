@@ -1,12 +1,8 @@
-# New ports collection makefile for:   libtuner
-# Date created:        7 September 2008
-# Whom:                jah
-#
+# Created by: Jason Harmening <jason.harmening@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtuner
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/libtuner/
 
@@ -15,7 +11,7 @@ COMMENT=	Userspace drivers for various TV/radio tuner ICs
 
 LICENSE=	BSD
 
-MAKE_ARGS+=	LIBTUNER_MAJOR=1 LIBTUNER_MINOR=0 LIBTUNER_REV=9 INSTALLDIR=${PREFIX}
+MAKE_ARGS+=	INSTALLDIR=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/libtuner
 
 .include <bsd.port.mk>

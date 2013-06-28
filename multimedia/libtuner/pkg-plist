@@ -1,3 +1,4 @@
+lib/libtuner/libtuner_static.a
 lib/libtuner/libtuner.so
 lib/libtuner/libtuner.so.1
 include/libtuner/avb_driver.h
@@ -26,6 +27,7 @@ include/libtuner/tuner_firmware.h
 include/libtuner/tuv1236d.h
 include/libtuner/xc3028.h
 include/libtuner/xc5000.h
+%%DATADIR%%/xc3028-v27.fw
 %%DATADIR%%/license.txt
 %%DATADIR%%/xc5000-1.6.114.fw
 %%DATADIR%%/or51132_vsb.fw
