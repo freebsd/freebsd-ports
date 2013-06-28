@@ -8,6 +8,7 @@ share/icons/hicolor/48x48/apps/yad.png
 share/icons/hicolor/96x96/apps/yad.png
 %%NLS%%share/locale/de/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/yad.mo
+%%NLS%%share/locale/it/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/yad.mo
