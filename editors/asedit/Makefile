@@ -1,10 +1,5 @@
-# New ports collection makefile for:	asedit
-# Date created:				28 Jul 1996
-#
-# Whom:	Andreas Kohout <shanee@augusta.de>
-#
+# Created by: Andreas Kohout <shanee@augusta.de>
 # $FreeBSD$
-#
 
 PORTNAME=	asedit
 PORTVERSION=	1.3.2
@@ -17,8 +12,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor for X/Motif
 
+USES=		imake
 USE_MOTIF=	yes
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xmu xp xt
 XMKMF=		xmkmf
 
