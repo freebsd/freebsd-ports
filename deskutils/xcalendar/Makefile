@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xcalendar-4.0
-# Date created:		25 June 1996
-# Whom:			MITA Yoshio <mita@iis.u-tokyo.ac.jp>
-#
+# Created by: MITA Yoshio <mita@iis.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xcalendar
 PORTVERSION=	4.0.2008
@@ -17,7 +13,7 @@ COMMENT=	A calendar with a notebook for X11 (internationalized version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 USE_GMAKE=	yes
 MAKE_ENV=	FILESDIR=${FILESDIR}
