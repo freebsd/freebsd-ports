@@ -1,9 +1,5 @@
-# New ports collection makefile for:	head files and libraries of Wnn6
-# Date created:		11 July 1997
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Wnn6-lib
 PORTVERSION=	2000.9.1
@@ -15,7 +11,7 @@ DISTNAME=	Wnn6-SDK
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn6 client library
 
-USE_IMAKE=	yes
+USES=		imake
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
 PORTDOCS=	README
@@ -27,7 +23,7 @@ post-patch:
 		${WRKSRC}/Makefile.ini
 
 do-build:
-	cd ${WRKSRC} && make World -f Makefile.ini
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV}  make World -f Makefile.ini
 
 post-install:
 	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn6.a

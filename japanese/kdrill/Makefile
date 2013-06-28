@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kdrill
-# Date created:		14 November 2000
-# Whom:			Seth Kingsley <sethk@osd.bsdi.com>
-#
+# Created by: Seth Kingsley <sethk@osd.bsdi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kdrill
 PORTVERSION=	6.4
@@ -13,15 +9,15 @@ MASTER_SITES=	http://www.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	sethk@meowfishies.com
-COMMENT=	A program to quiz you on the meanings of Kanji
+COMMENT=	Program to quiz you on the meanings of Kanji
 
 # Explictly state HTML'ized man pages in packing list since not all are
 # generated from imake.
 XFREE86_HTML_MAN=no
 MAN1=		kdrill.1 makedic.1 makeedict.1
 
+USES=		imake
 MANCOMPRESSED=	yes
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 RUN_DEPENDS+=	xjdic:${PORTSDIR}/japanese/edict
