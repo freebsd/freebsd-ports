@@ -1,13 +1,8 @@
-# New ports collection makefile for:	dbacl
-# Date created:		2003-10-30
-# Whom:			Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dbacl
-PORTVERSION=	1.12
-PORTREVISION=	2
+PORTVERSION=	1.14.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
