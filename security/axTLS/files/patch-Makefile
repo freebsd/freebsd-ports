@@ -1,0 +1,13 @@
+--- ./Makefile.orig	2011-01-07 22:16:40.000000000 +0900
++++ ./Makefile	2013-04-11 08:38:38.000000000 +0900
+@@ -118,7 +118,9 @@
+ 	-@rm `perl -e 'use Config; print $$Config{installarchlib};'`/axtlsp.pm > /dev/null 2>&1
+ 
+ test:
+-	cd $(STAGE); ssltest; ../ssl/test/test_axssl.sh; cd -;
++	cd $(STAGE); [ -e ./ssltest ] && LD_LIBRARY_PATH=".:$${LD_LIBRARY_PATH}" ./ssltest ;\
++		[ -e ./perf_bigint ] && LD_LIBRARY_PATH=".:$${LD_LIBRARY_PATH}" ./perf_bigint ;\
++		../ssl/test/test_axssl.sh; cd -;
+ 
+ # tidy up things
+ clean::
