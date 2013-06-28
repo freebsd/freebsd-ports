@@ -1,65 +1,64 @@
 bin/cairo-dock
-bin/cairo-dock-package-theme
-bin/launch-cairo-dock-with-delay
 include/cairo-dock/cairo-dock.h
-include/cairo-dock/cairo-dock/cairo-dock-X-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-X-utilities.h
-include/cairo-dock/cairo-dock/cairo-dock-animations.h
-include/cairo-dock/cairo-dock/cairo-dock-applet-canvas.h
-include/cairo-dock/cairo-dock/cairo-dock-applet-facility.h
-include/cairo-dock/cairo-dock/cairo-dock-applet-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-applet-multi-instance.h
-include/cairo-dock/cairo-dock/cairo-dock-applet-single-instance.h
-include/cairo-dock/cairo-dock/cairo-dock-application-facility.h
-include/cairo-dock/cairo-dock/cairo-dock-applications-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-backends-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-callbacks.h
-include/cairo-dock/cairo-dock/cairo-dock-class-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-config.h
-include/cairo-dock/cairo-dock/cairo-dock-container.h
-include/cairo-dock/cairo-dock/cairo-dock-core.h
-include/cairo-dock/cairo-dock/cairo-dock-data-renderer.h
-include/cairo-dock/cairo-dock/cairo-dock-data-renderer-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-dbus.h
-include/cairo-dock/cairo-dock/cairo-dock-desklet-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-desklet-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-dialog-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-dialog-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-dock-facility.h
-include/cairo-dock/cairo-dock/cairo-dock-dock-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-dock-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-draw-opengl.h
-include/cairo-dock/cairo-dock/cairo-dock-draw.h
-include/cairo-dock/cairo-dock/cairo-dock-emblem.h
-include/cairo-dock/cairo-dock/cairo-dock-file-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-flying-container.h
-include/cairo-dock/cairo-dock/cairo-dock-global-variables.h
-include/cairo-dock/cairo-dock/cairo-dock-gui-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-gui-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-icon-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-icon-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-icon-facility.h
-include/cairo-dock/cairo-dock/cairo-dock-image-buffer.h
-include/cairo-dock/cairo-dock/cairo-dock-indicator-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-keybinder.h
-include/cairo-dock/cairo-dock/cairo-dock-keyfile-utilities.h
-include/cairo-dock/cairo-dock/cairo-dock-launcher-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-log.h
-include/cairo-dock/cairo-dock/cairo-dock-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-module-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-module-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-notifications.h
-include/cairo-dock/cairo-dock/cairo-dock-opengl-font.h
-include/cairo-dock/cairo-dock/cairo-dock-opengl-path.h
-include/cairo-dock/cairo-dock/cairo-dock-opengl.h
-include/cairo-dock/cairo-dock/cairo-dock-packages.h
-include/cairo-dock/cairo-dock/cairo-dock-particle-system.h
-include/cairo-dock/cairo-dock/cairo-dock-separator-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-struct.h
-include/cairo-dock/cairo-dock/cairo-dock-surface-factory.h
-include/cairo-dock/cairo-dock/cairo-dock-task.h
-include/cairo-dock/cairo-dock/cairo-dock-themes-manager.h
-include/cairo-dock/cairo-dock/gldi-config.h
+include/cairo-dock/gldit/cairo-dock-X-manager.h
+include/cairo-dock/gldit/cairo-dock-X-utilities.h
+include/cairo-dock/gldit/cairo-dock-animations.h
+include/cairo-dock/gldit/cairo-dock-applet-canvas.h
+include/cairo-dock/gldit/cairo-dock-applet-facility.h
+include/cairo-dock/gldit/cairo-dock-applet-manager.h
+include/cairo-dock/gldit/cairo-dock-applet-multi-instance.h
+include/cairo-dock/gldit/cairo-dock-applet-single-instance.h
+include/cairo-dock/gldit/cairo-dock-application-facility.h
+include/cairo-dock/gldit/cairo-dock-applications-manager.h
+include/cairo-dock/gldit/cairo-dock-backends-manager.h
+include/cairo-dock/gldit/cairo-dock-callbacks.h
+include/cairo-dock/gldit/cairo-dock-class-manager.h
+include/cairo-dock/gldit/cairo-dock-config.h
+include/cairo-dock/gldit/cairo-dock-container.h
+include/cairo-dock/gldit/cairo-dock-core.h
+include/cairo-dock/gldit/cairo-dock-data-renderer-manager.h
+include/cairo-dock/gldit/cairo-dock-data-renderer.h
+include/cairo-dock/gldit/cairo-dock-dbus.h
+include/cairo-dock/gldit/cairo-dock-desklet-factory.h
+include/cairo-dock/gldit/cairo-dock-desklet-manager.h
+include/cairo-dock/gldit/cairo-dock-dialog-factory.h
+include/cairo-dock/gldit/cairo-dock-dialog-manager.h
+include/cairo-dock/gldit/cairo-dock-dock-facility.h
+include/cairo-dock/gldit/cairo-dock-dock-factory.h
+include/cairo-dock/gldit/cairo-dock-dock-manager.h
+include/cairo-dock/gldit/cairo-dock-draw-opengl.h
+include/cairo-dock/gldit/cairo-dock-draw.h
+include/cairo-dock/gldit/cairo-dock-file-manager.h
+include/cairo-dock/gldit/cairo-dock-flying-container.h
+include/cairo-dock/gldit/cairo-dock-global-variables.h
+include/cairo-dock/gldit/cairo-dock-gui-factory.h
+include/cairo-dock/gldit/cairo-dock-gui-manager.h
+include/cairo-dock/gldit/cairo-dock-icon-facility.h
+include/cairo-dock/gldit/cairo-dock-icon-factory.h
+include/cairo-dock/gldit/cairo-dock-icon-manager.h
+include/cairo-dock/gldit/cairo-dock-image-buffer.h
+include/cairo-dock/gldit/cairo-dock-indicator-manager.h
+include/cairo-dock/gldit/cairo-dock-keybinder.h
+include/cairo-dock/gldit/cairo-dock-keyfile-utilities.h
+include/cairo-dock/gldit/cairo-dock-launcher-manager.h
+include/cairo-dock/gldit/cairo-dock-log.h
+include/cairo-dock/gldit/cairo-dock-manager.h
+include/cairo-dock/gldit/cairo-dock-module-factory.h
+include/cairo-dock/gldit/cairo-dock-module-manager.h
+include/cairo-dock/gldit/cairo-dock-notifications.h
+include/cairo-dock/gldit/cairo-dock-object.h
+include/cairo-dock/gldit/cairo-dock-opengl-font.h
+include/cairo-dock/gldit/cairo-dock-opengl-path.h
+include/cairo-dock/gldit/cairo-dock-opengl.h
+include/cairo-dock/gldit/cairo-dock-overlay.h
+include/cairo-dock/gldit/cairo-dock-packages.h
+include/cairo-dock/gldit/cairo-dock-particle-system.h
+include/cairo-dock/gldit/cairo-dock-separator-manager.h
+include/cairo-dock/gldit/cairo-dock-struct.h
+include/cairo-dock/gldit/cairo-dock-surface-factory.h
+include/cairo-dock/gldit/cairo-dock-task.h
+include/cairo-dock/gldit/cairo-dock-themes-manager.h
+include/cairo-dock/gldit/gldi-config.h
 include/cairo-dock/icon-factory/cairo-dock-applet-factory.h
 include/cairo-dock/icon-factory/cairo-dock-application-factory.h
 include/cairo-dock/icon-factory/cairo-dock-desktop-file-factory.h
@@ -67,146 +66,184 @@ include/cairo-dock/icon-factory/cairo-dock-launcher-factory.h
 include/cairo-dock/icon-factory/cairo-dock-separator-factory.h
 include/cairo-dock/implementations/cairo-dock-gauge.h
 include/cairo-dock/implementations/cairo-dock-graph.h
+include/cairo-dock/implementations/cairo-dock-progressbar.h
 lib/libgldi.so
-lib/libgldi.so.2
-lib/libgldi.so.2.3.0~3
+lib/libgldi.so.3
+lib/libgldi.so.3.2.1
+lib/cairo-dock/libcd-Help.so
 libdata/pkgconfig/cairo-dock.pc
 libdata/pkgconfig/gldi.pc
 share/applications/cairo-dock-cairo.desktop
 share/applications/cairo-dock.desktop
 %%DATADIR%%/ChangeLog.txt
-%%DATADIR%%/box-back.png
-%%DATADIR%%/box-front.png
-%%DATADIR%%/cairo-dock-animated.xpm
-%%DATADIR%%/cairo-dock-cancel.svg
-%%DATADIR%%/cairo-dock-logo.png
-%%DATADIR%%/cairo-dock-ok.svg
 %%DATADIR%%/cairo-dock-simple.conf
 %%DATADIR%%/cairo-dock.conf
 %%DATADIR%%/cairo-dock.svg
 %%DATADIR%%/container.desktop
-%%DATADIR%%/default-class-indicator.svg
-%%DATADIR%%/default-icon-appli.svg
-%%DATADIR%%/default-icon.svg
-%%DATADIR%%/default-indicator.png
-%%DATADIR%%/depth-rotate-desklet.svg
 %%DATADIR%%/explosion/explosion.png
-%%DATADIR%%/gauges/Battery/background.svg
-%%DATADIR%%/gauges/Battery/battery0.svg
-%%DATADIR%%/gauges/Battery/battery1.svg
-%%DATADIR%%/gauges/Battery/battery2.svg
-%%DATADIR%%/gauges/Battery/battery3.svg
-%%DATADIR%%/gauges/Battery/battery4.svg
-%%DATADIR%%/gauges/Battery/battery5.svg
-%%DATADIR%%/gauges/Battery/battery6.svg
-%%DATADIR%%/gauges/Battery/battery7.svg
-%%DATADIR%%/gauges/Battery/foreground.svg
-%%DATADIR%%/gauges/Battery/readme
-%%DATADIR%%/gauges/Battery/theme.xml
 %%DATADIR%%/gauges/Turbo-night-fuel/background.svg
 %%DATADIR%%/gauges/Turbo-night-fuel/foreground.svg
 %%DATADIR%%/gauges/Turbo-night-fuel/needle.svg
 %%DATADIR%%/gauges/Turbo-night-fuel/readme
 %%DATADIR%%/gauges/Turbo-night-fuel/theme.xml
-%%DATADIR%%/hand.svg
-%%DATADIR%%/help.conf
-%%DATADIR%%/help_scripts.sh
-%%DATADIR%%/icon-accessories.svg
-%%DATADIR%%/icon-all.svg
-%%DATADIR%%/icon-appearance.svg
-%%DATADIR%%/icon-background.svg
-%%DATADIR%%/icon-behavior.svg
-%%DATADIR%%/icon-bubble.png
-%%DATADIR%%/icon-buttons.png
-%%DATADIR%%/icon-close.png
-%%DATADIR%%/icon-connection.svg
-%%DATADIR%%/icon-controler.svg
-%%DATADIR%%/icon-desklets.png
-%%DATADIR%%/icon-desktop.svg
-%%DATADIR%%/icon-dialogs.svg
-%%DATADIR%%/icon-extensions.svg
-%%DATADIR%%/icon-files.svg
-%%DATADIR%%/icon-frame.png
-%%DATADIR%%/icon-fun.svg
-%%DATADIR%%/icon-gradation.png
-%%DATADIR%%/icon-help.svg
-%%DATADIR%%/icon-hidden-dock.svg
-%%DATADIR%%/icon-icons.svg
-%%DATADIR%%/icon-indicators.svg
-%%DATADIR%%/icon-internet.svg
-%%DATADIR%%/icon-labels.svg
-%%DATADIR%%/icon-lock-icons.svg
-%%DATADIR%%/icon-maximize.png
-%%DATADIR%%/icon-minimize.png
-%%DATADIR%%/icon-mouse.svg
-%%DATADIR%%/icon-movment.png
-%%DATADIR%%/icon-plug-ins.svg
-%%DATADIR%%/icon-position.svg
-%%DATADIR%%/icon-restore.png
-%%DATADIR%%/icon-subdock.png
-%%DATADIR%%/icon-system.svg
-%%DATADIR%%/icon-taskbar.png
-%%DATADIR%%/icon-views.svg
-%%DATADIR%%/icon-visibility.svg
-%%DATADIR%%/icon-wave.png
+%%DATADIR%%/icons/balloons.png
+%%DATADIR%%/icons/box-back.png
+%%DATADIR%%/icons/box-front.png
+%%DATADIR%%/icons/cairo-dock-animated.xpm
+%%DATADIR%%/icons/cairo-dock-cancel.svg
+%%DATADIR%%/icons/cairo-dock-ok.svg
+%%DATADIR%%/icons/default-class-indicator.svg
+%%DATADIR%%/icons/default-icon-appli.svg
+%%DATADIR%%/icons/default-icon.svg
+%%DATADIR%%/icons/default-indicator.png
+%%DATADIR%%/icons/depth-rotate-desklet.svg
+%%DATADIR%%/icons/icon-accessories.svg
+%%DATADIR%%/icons/icon-all.svg
+%%DATADIR%%/icons/icon-appearance.svg
+%%DATADIR%%/icons/icon-background.svg
+%%DATADIR%%/icons/icon-behavior.svg
+%%DATADIR%%/icons/icon-bubble.png
+%%DATADIR%%/icons/icon-buttons.png
+%%DATADIR%%/icons/icon-close.svg
+%%DATADIR%%/icons/icon-connection.svg
+%%DATADIR%%/icons/icon-controler.svg
+%%DATADIR%%/icons/icon-desklets.png
+%%DATADIR%%/icons/icon-desktop.svg
+%%DATADIR%%/icons/icon-dialogs.svg
+%%DATADIR%%/icons/icon-extensions.svg
+%%DATADIR%%/icons/icon-files.svg
+%%DATADIR%%/icons/icon-frame.png
+%%DATADIR%%/icons/icon-fun.svg
+%%DATADIR%%/icons/icon-gradation.png
+%%DATADIR%%/icons/icon-hidden-dock.svg
+%%DATADIR%%/icons/icon-icons.svg
+%%DATADIR%%/icons/icon-indicators.svg
+%%DATADIR%%/icons/icon-internet.svg
+%%DATADIR%%/icons/icon-labels.svg
+%%DATADIR%%/icons/icon-lock-icons.svg
+%%DATADIR%%/icons/icon-lower.svg
+%%DATADIR%%/icons/icon-maximize.svg
+%%DATADIR%%/icons/icon-minimize.svg
+%%DATADIR%%/icons/icon-mouse.svg
+%%DATADIR%%/icons/icon-movment.png
+%%DATADIR%%/icons/icon-plug-ins.svg
+%%DATADIR%%/icons/icon-position.svg
+%%DATADIR%%/icons/icon-restore.svg
+%%DATADIR%%/icons/icon-subdock.png
+%%DATADIR%%/icons/icon-system.svg
+%%DATADIR%%/icons/icon-taskbar.png
+%%DATADIR%%/icons/icon-views.svg
+%%DATADIR%%/icons/icon-visibility.svg
+%%DATADIR%%/icons/icon-wave.png
+%%DATADIR%%/icons/no-input-desklet.png
+%%DATADIR%%/icons/retach-desklet.svg
+%%DATADIR%%/icons/rotate-desklet.svg
+%%DATADIR%%/icons/theme-distant.svg
+%%DATADIR%%/icons/theme-local.svg
+%%DATADIR%%/icons/theme-new.svg
+%%DATADIR%%/icons/theme-updated.svg
+%%DATADIR%%/icons/theme-user.svg
+%%DATADIR%%/images/cairo-dock-logo.png
+%%DATADIR%%/images/help-preview.jpg
+%%DATADIR%%/images/preview-default.png
 %%DATADIR%%/launcher.desktop
 %%DATADIR%%/main-dock.conf
-%%DATADIR%%/no-input-desklet.png
-%%DATADIR%%/preview-default.png
 %%DATADIR%%/readme-default-view
-%%DATADIR%%/retach-desklet.svg
-%%DATADIR%%/rotate-desklet.svg
+%%DATADIR%%/scripts/cairo-dock-package-theme.sh
+%%DATADIR%%/scripts/help_scripts.sh
+%%DATADIR%%/scripts/initial-setup.sh
 %%DATADIR%%/separator.desktop
 %%DATADIR%%/themes.conf
-%%DATADIR%%/themes/_default_/preview
-%%DATADIR%%/themes/_default_/readme
-%%DATADIR%%/themes/_default_/active.png
-%%DATADIR%%/themes/_default_/bg.svg
-%%DATADIR%%/themes/_default_/cairo-dock.conf
-%%DATADIR%%/themes/_default_/indicator.png
-%%DATADIR%%/themes/_default_/launchers/01container.desktop
-%%DATADIR%%/themes/_default_/launchers/01empathy.desktop
-%%DATADIR%%/themes/_default_/launchers/01f-spot.desktop
-%%DATADIR%%/themes/_default_/launchers/01firefox.desktop
-%%DATADIR%%/themes/_default_/launchers/01gcalctool.desktop
-%%DATADIR%%/themes/_default_/launchers/01gimp.desktop
-%%DATADIR%%/themes/_default_/launchers/01gnome-terminal.desktop
-%%DATADIR%%/themes/_default_/launchers/01inkscape.desktop
-%%DATADIR%%/themes/_default_/launchers/01separator.desktop
-%%DATADIR%%/themes/_default_/launchers/01thunderbird.desktop
-%%DATADIR%%/themes/_default_/launchers/02separator.desktop
-%%DATADIR%%/themes/_default_/launchers/03separator.desktop
-%%DATADIR%%/themes/_default_/plug-ins/Animated-icons/Animated-icons.conf
-%%DATADIR%%/themes/_default_/plug-ins/Clipper/Clipper.conf
-%%DATADIR%%/themes/_default_/plug-ins/Dbus/Dbus.conf
-%%DATADIR%%/themes/_default_/plug-ins/GMenu/GMenu.conf
-%%DATADIR%%/themes/_default_/plug-ins/dialog-rendering/dialog-rendering.conf
-%%DATADIR%%/themes/_default_/plug-ins/dnd2share/dnd2share.conf
-%%DATADIR%%/themes/_default_/plug-ins/icon-effect/icon-effect.conf
-%%DATADIR%%/themes/_default_/plug-ins/illusion/illusion.conf
-%%DATADIR%%/themes/_default_/plug-ins/logout/logout.conf
-%%DATADIR%%/themes/_default_/plug-ins/musicPlayer/musicPlayer.conf
-%%DATADIR%%/themes/_default_/plug-ins/quick-browser/quick-browser.conf
-%%DATADIR%%/themes/_default_/plug-ins/rendering/rendering.conf
-%%DATADIR%%/themes/_default_/plug-ins/Recent-Events/Recent-Events.conf
-%%DATADIR%%/themes/_default_/plug-ins/shortcuts/shortcuts.conf
-%%DATADIR%%/themes/_default_/plug-ins/showDesktop/showDesktop.conf
-%%DATADIR%%/themes/_default_/plug-ins/stack/stack.conf
-%%DATADIR%%/themes/_default_/plug-ins/switcher/switcher.conf
-share/cairo-dock/icons/theme-distant.svg
-share/cairo-dock/icons/theme-local.svg
-share/cairo-dock/icons/theme-new.svg
-share/cairo-dock/icons/theme-updated.svg
-share/cairo-dock/icons/theme-user.svg
-share/cairo-dock/icons/balloons.png
+%%DATADIR%%/themes/Default-Panel/_MainDock_-2.conf
+%%DATADIR%%/themes/Default-Panel/cairo-dock.conf
+%%DATADIR%%/themes/Default-Panel/images/active.png
+%%DATADIR%%/themes/Default-Panel/images/bg.svg
+%%DATADIR%%/themes/Default-Panel/images/indicator.png
+%%DATADIR%%/themes/Default-Panel/launchers/01container.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01firefox.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01gcalctool.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-calc.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-impress.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-writer.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01pidgin.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01separator.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01thunderbird.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01ubuntu-software-center.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/02separator.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/03separator.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/04separator.desktop
+%%DATADIR%%/themes/Default-Panel/plug-ins/AlsaMixer/AlsaMixer.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Animated-icons/Animated-icons.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Calendar/Calendar.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Clipper/Clipper.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/GMenu/GMenu.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Help/Help.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Indicator-Generic/Indicator-Generic.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Messaging-Menu/Messaging-Menu.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Recent-Events/Recent-Events.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/Status-Notifier/Status-Notifier.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/clock/clock.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/dialog-rendering/dialog-rendering.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/dnd2share/dnd2share.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/drop_indicator/drop_indicator.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/icon-effect/icon-effect.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/illusion/illusion.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/logout/logout.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/musicPlayer/musicPlayer.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/netspeed/netspeed.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/powermanager/powermanager.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/quick-browser/quick-browser.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/rendering/rendering.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/shortcuts/shortcuts.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/showDesktop/showDesktop.conf
+%%DATADIR%%/themes/Default-Panel/plug-ins/switcher/switcher.conf
+%%DATADIR%%/themes/Default-Panel/preview
+%%DATADIR%%/themes/Default-Panel/readme
+%%DATADIR%%/themes/Default-Single/cairo-dock.conf
+%%DATADIR%%/themes/Default-Single/images/active.png
+%%DATADIR%%/themes/Default-Single/images/bg.svg
+%%DATADIR%%/themes/Default-Single/images/indicator.png
+%%DATADIR%%/themes/Default-Single/launchers/01firefox.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01gcalctool.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01gimp.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01gnome-terminal.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01ooo-writer.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01pidgin.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01separator.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01thunderbird.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01ubuntu-software-center.desktop
+%%DATADIR%%/themes/Default-Single/launchers/02separator.desktop
+%%DATADIR%%/themes/Default-Single/launchers/03separator.desktop
+%%DATADIR%%/themes/Default-Single/plug-ins/Animated-icons/Animated-icons.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/Clipper/Clipper.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/Dbus/Dbus.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/GMenu/GMenu.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/Recent-Events/Recent-Events.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/dialog-rendering/dialog-rendering.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/dnd2share/dnd2share.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/icon-effect/icon-effect.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/illusion/illusion.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/logout/logout.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/musicPlayer/musicPlayer.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/quick-browser/quick-browser.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/rendering/rendering.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/shortcuts/shortcuts.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/showDesktop/showDesktop.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/stack/stack.conf
+%%DATADIR%%/themes/Default-Single/plug-ins/switcher/switcher.conf
+%%DATADIR%%/themes/Default-Single/preview
+%%DATADIR%%/themes/Default-Single/readme
 share/locale/ar/LC_MESSAGES/cairo-dock.mo
 share/locale/be/LC_MESSAGES/cairo-dock.mo
+share/locale/bg/LC_MESSAGES/cairo-dock.mo
 share/locale/bn/LC_MESSAGES/cairo-dock.mo
 share/locale/ca/LC_MESSAGES/cairo-dock.mo
 share/locale/cs/LC_MESSAGES/cairo-dock.mo
+share/locale/cy/LC_MESSAGES/cairo-dock.mo
 share/locale/de/LC_MESSAGES/cairo-dock.mo
 share/locale/el/LC_MESSAGES/cairo-dock.mo
 share/locale/en/LC_MESSAGES/cairo-dock.mo
+share/locale/eo/LC_MESSAGES/cairo-dock.mo
 share/locale/es/LC_MESSAGES/cairo-dock.mo
 share/locale/et/LC_MESSAGES/cairo-dock.mo
 share/locale/eu/LC_MESSAGES/cairo-dock.mo
@@ -214,12 +251,16 @@ share/locale/fi/LC_MESSAGES/cairo-dock.mo
 share/locale/fo/LC_MESSAGES/cairo-dock.mo
 share/locale/fr/LC_MESSAGES/cairo-dock.mo
 share/locale/gl/LC_MESSAGES/cairo-dock.mo
+share/locale/he/LC_MESSAGES/cairo-dock.mo
 share/locale/hu/LC_MESSAGES/cairo-dock.mo
+share/locale/id/LC_MESSAGES/cairo-dock.mo
 share/locale/it/LC_MESSAGES/cairo-dock.mo
 share/locale/ja/LC_MESSAGES/cairo-dock.mo
 share/locale/ko/LC_MESSAGES/cairo-dock.mo
+share/locale/lt/LC_MESSAGES/cairo-dock.mo
 share/locale/nb/LC_MESSAGES/cairo-dock.mo
 share/locale/nl/LC_MESSAGES/cairo-dock.mo
+share/locale/nn/LC_MESSAGES/cairo-dock.mo
 share/locale/oc/LC_MESSAGES/cairo-dock.mo
 share/locale/pl/LC_MESSAGES/cairo-dock.mo
 share/locale/pt/LC_MESSAGES/cairo-dock.mo
@@ -229,44 +270,84 @@ share/locale/ru/LC_MESSAGES/cairo-dock.mo
 share/locale/sk/LC_MESSAGES/cairo-dock.mo
 share/locale/sl/LC_MESSAGES/cairo-dock.mo
 share/locale/sr/LC_MESSAGES/cairo-dock.mo
+share/locale/sr@latin/LC_MESSAGES/cairo-dock.mo
 share/locale/sv/LC_MESSAGES/cairo-dock.mo
 share/locale/tr/LC_MESSAGES/cairo-dock.mo
 share/locale/uk/LC_MESSAGES/cairo-dock.mo
 share/locale/vi/LC_MESSAGES/cairo-dock.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-dock.mo
 share/locale/zh_TW/LC_MESSAGES/cairo-dock.mo
+share/cairo-dock/plug-ins/Help/Help.conf
+share/cairo-dock/plug-ins/Help/icon.svg
 share/pixmaps/cairo-dock.svg
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/switcher
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/stack
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/showDesktop
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/shortcuts
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/rendering
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/quick-browser
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/musicPlayer
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/logout
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/illusion
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/icon-effect
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/dnd2share
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/dialog-rendering
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/GMenu
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/Dbus
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/Recent-Events
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/Clipper
-@dirrm %%DATADIR%%/themes/_default_/plug-ins/Animated-icons
-@dirrm %%DATADIR%%/themes/_default_/plug-ins
-@dirrm %%DATADIR%%/themes/_default_/launchers
-@dirrm %%DATADIR%%/themes/_default_
+@dirrm share/locale/oc/LC_MESSAGES
+@dirrm share/locale/oc
+@dirrm share/locale/fo/LC_MESSAGES
+@dirrm share/locale/fo
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/switcher
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/stack
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/showDesktop
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/shortcuts
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/rendering
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/quick-browser
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/musicPlayer
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/logout
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/illusion
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/icon-effect
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/dnd2share
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/dialog-rendering
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Recent-Events
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/GMenu
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Dbus
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Clipper
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Animated-icons
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins
+@dirrm %%DATADIR%%/themes/Default-Single/launchers
+@dirrm %%DATADIR%%/themes/Default-Single/images
+@dirrm %%DATADIR%%/themes/Default-Single
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/switcher
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/showDesktop
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/shortcuts
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/rendering
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/quick-browser
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/powermanager
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/netspeed
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/musicPlayer
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/logout
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/illusion
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/icon-effect
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/drop_indicator
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/dnd2share
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/dialog-rendering
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/clock
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Status-Notifier
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Recent-Events
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Messaging-Menu
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/GMenu
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Help
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Indicator-Generic
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Clipper
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Calendar
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Animated-icons
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/AlsaMixer
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins
+@dirrm %%DATADIR%%/themes/Default-Panel/launchers
+@dirrm %%DATADIR%%/themes/Default-Panel/images
+@dirrm %%DATADIR%%/themes/Default-Panel
 @dirrm %%DATADIR%%/themes
-@dirrm share/cairo-dock/icons
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/gauges/Turbo-night-fuel
-@dirrm %%DATADIR%%/gauges/Battery
 @dirrm %%DATADIR%%/gauges
 @dirrm %%DATADIR%%/explosion
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
+@dirrm share/applications
+@dirrm share/cairo-dock/plug-ins/Help
+@dirrm share/cairo-dock/plug-ins
+@dirrm share/cairo-dock
 @dirrm include/cairo-dock/implementations
 @dirrm include/cairo-dock/icon-factory
-@dirrm include/cairo-dock/cairo-dock
+@dirrm include/cairo-dock/gldit
 @dirrm include/cairo-dock
+@dirrm lib/cairo-dock
