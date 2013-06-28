@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-introspection=yes --with-x11
+MAKE_ENV+=	GI_SCANNER_DISABLE_CACHE=yes
 
 MAN1=		gdk-pixbuf-csource.1 gdk-pixbuf-query-loaders.1
 

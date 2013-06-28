@@ -20,8 +20,8 @@ BUILD_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		imake
 USE_XORG=	xpm xbitmaps x11 xaw xmu xt sm ice xext
-USE_IMAKE=	yes
 
 CFLAGS+=	-D_X_SENTINEL\(x\)= -D_X_ATTRIBUTE_PRINTF\(x,y\)= \
 		-D_X_DEPRECATED= -DUSG

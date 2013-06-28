@@ -1,9 +1,5 @@
-# ports collection makefile for:	lfview
-# Date created:		24 February 1999
-# Whom:			Yuu Yashiki
-#
+# Created by: Yuu Yashiki
 # $FreeBSD$
-#
 
 PORTNAME=	lfview
 PORTVERSION=	1.1a
@@ -15,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic viewer for Leaf products
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=	yes
@@ -31,7 +27,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lfview ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/plugins/liblfv_leaf.so.1 ${PREFIX}/lib
 	${LN} -s ${PREFIX}/lib/liblfv_leaf.so.1 ${PREFIX}/lib/liblfv_leaf.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/ja/lfview
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/lfview
 .endif

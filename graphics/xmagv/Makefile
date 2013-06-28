@@ -1,9 +1,5 @@
-# ports collection makefile for:	xmagv
-# Date created:		25 Oct 1998
-# Whom:			Seiichirou Hiraoka
-#
+# Created by: Seiichirou Hiraoka
 # $FreeBSD$
-#
 
 PORTNAME=	xmagv
 PORTVERSION=	1.11
@@ -15,9 +11,10 @@ DISTFILES=	xmagv111.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for X Window System
 
+BROKEN=		Does not build
+USES=		imake:env
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-USE_IMAKE=	yes
 USE_XORG=	x11 xext
 XMKMF=		xmkmf
 MANLANG=	. ja

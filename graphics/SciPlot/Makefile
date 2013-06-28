@@ -1,6 +1,4 @@
-# New ports collection makefile for:	SciPlot
-# Date created:		Mon June 8 2004
-# Whom:			thierry@pompo.net
+# Created by: thierry@pompo.net
 #
 # $FreeBSD$
 #
@@ -13,10 +11,10 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	widgets
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A full-featured Xt widget to display 2D data in a graph
+COMMENT=	Full-featured Xt widget to display 2D data in a graph
 
+USES=		imake
 USE_MOTIF=	yes
-USE_IMAKE=	yes
 USE_XORG=	xp
 MAKE_ENV=	EXTRA_DEFINES="-fPIC" LIBNAME=${LIBNAME}
 USE_LDCONFIG=	yes
