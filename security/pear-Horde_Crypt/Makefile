@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_Crypt
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	security www pear
 PKGNAMEPREFIX=	pear-
 
