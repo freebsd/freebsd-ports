@@ -1,0 +1,7 @@
+CLooG is a free software and library generating loops for scanning
+Z-polyhedra. That is, it finds a code (e.g. in C, FORTRAN...) that
+reaches each integral point of one or more parameterized polyhedra.
+CLooG has been originally written to solve the code generation problem
+for optimizing compilers based on the polytope model.
+
+WWW: http://www.cloog.org/
