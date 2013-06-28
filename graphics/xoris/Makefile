@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xoris
-# Date created:				02 April 2006
-# Whom:					Alexander Gromnitsky
-#
+# Created by: Alexander Gromnitsky
 # $FreeBSD$
-#
 
 PORTNAME=	xoris
 PORTVERSION=	0.1e
@@ -12,18 +8,21 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	alexander.gromnitsky@gmail.com
-COMMENT=	An X11 pixel color grabber
+COMMENT=	X11 pixel color grabber
 
+USES=		imake
 USE_IMAKE=	yes
 USE_XORG=	x11
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 SUB_FILES=	pkg-message
 .endif
 
 post-install:
 	@ ${INSTALL_SCRIPT} ${FILESDIR}/xoris-run.sh ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${ECHO_MSG} "===>   Installing documentation for ${PORTNAME}"
 	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/

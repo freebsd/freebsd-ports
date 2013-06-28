@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Plotmtv
-# Date created:		19 October 1996
-# Whom:			pgs
-#
+# Created by: pgs
 # $FreeBSD$
-#
 
 PORTNAME=	plotmtv
 PORTVERSION=	1.4.1
@@ -16,19 +12,21 @@ MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multipurpose X11 plotting program
+COMMENT=	Multipurpose X11 plotting program
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext xt
 ALL_TARGET=	World
 MAN1=		plotmtv.1
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.c | ${XARGS} ${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/'
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR}  ${PREFIX}/share/doc/plotmtv/Tests
 	@${INSTALL_DATA} ${WRKSRC}/Docs/DataFormat.ps.Z \
 		${PREFIX}/share/doc/plotmtv
@@ -49,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include	<bsd.port.mk>
+.include <bsd.port.mk>

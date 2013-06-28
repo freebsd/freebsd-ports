@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwpick
-# Date created:				24 June 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xwpick
 PORTVERSION=	2.20
@@ -15,11 +11,14 @@ MASTER_SITE_SUBDIR=applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image pick up utility for X Window System
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		xwpick.1
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/xwpick
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/share/doc/xwpick
