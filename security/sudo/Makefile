@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.6p8
+DISTVERSION=	1.8.7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -101,7 +101,7 @@ CONFIGURE_ARGS+=	--with-opie
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-MAN5+=		sudoers.5
+MAN5+=		sudoers.5 sudo.conf.5
 MAN8=		sudo.8 visudo.8 sudoreplay.8 sudo_plugin.8
 MLINKS=		sudo.8 sudoedit.8
 
