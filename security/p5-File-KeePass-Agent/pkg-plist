@@ -1,0 +1,10 @@
+bin/fkp-agent
+%%SITE_PERL%%/File/KeePass/Agent.pm
+%%SITE_PERL%%/File/KeePass/Agent/linux.pm
+%%SITE_PERL%%/File/KeePass/Agent/unix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/KeePass/Agent/.packlist
+@dirrm %%SITE_PERL%%/File/KeePass/Agent
+@dirrm %%SITE_PERL%%/File/KeePass
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/KeePass/Agent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File
