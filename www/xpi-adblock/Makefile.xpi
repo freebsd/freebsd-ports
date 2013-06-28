@@ -1,12 +1,5 @@
-#-*- mode: makefile; tab-width: 4; -*
-# ex:ts=4
-#
-# New ports collection makefile for:	xpi infrastructure
-# Date created:		28 March 2006
-# Whom:				Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 # XPI_ID		- Extension id, might be in {12345-...} or dev@org format
 # XPI_NUM		- Extension number, as in addons.mozilla.org URL
@@ -87,9 +80,8 @@ EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 XPI_DISTNAME?=	${PORTNAME}
 XPI_APPS_ALL_WC=	*firefox* *thunderbird* *seamonkey*
 
-XPI_APPS_ALL=	firefox firefox3 linux-firefox linux-firefox-devel \
-		thunderbird thunderbird3 linux-thunderbird \
-		seamonkey seamonkey2 linux-seamonkey
+XPI_APPS_ALL=	firefox linux-firefox thunderbird linux-thunderbird \
+		seamonkey linux-seamonkey
 # kompozer linux-kompozer
 # Other apps: mango
 
@@ -131,7 +123,17 @@ USE_XPI=	${WITH_XPI_APPS}
 USE_XPI=	${XPI_APPS_ALL_WC}
 .endif
 
-XPI_APPS?=	${USE_XPI:S.^.${LOCALBASE}/lib/.:S.$./extensions.}
+.if !defined(XPI_APPS)
+.for xpi in ${USE_XPI}
+_xpi:=	${xpi}
+.if ${_xpi:M*firefox*}
+XPI_APPS+=	${LOCALBASE}/lib/${xpi}/browser/extensions
+.else
+XPI_APPS+=	${LOCALBASE}/lib/${xpi}/extensions
+.endif
+.endfor
+.endif
+
 XPI_SLDIRS_ALL=	${XPI_APPS_ALL:S.^.${XPI_SLDIR}/.}
 XPI_SLDIRS=		${USE_XPI:S.^.${XPI_SLDIR}/.}
 XPI_LINKFARMS=	${XPI_APPS} ${XPI_SLDIRS}
