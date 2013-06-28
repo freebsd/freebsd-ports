@@ -1,9 +1,5 @@
-# New ports collection makefile for:    workman
-# Date created:         25 Now 1995
-# Whom:                 Donald Burr <d_burr@ix.netcom.com>
-#
+# Created by: Donald Burr <d_burr@ix.netcom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	workman
 PORTVERSION=	1.3a
@@ -19,15 +15,13 @@ COMMENT=	Open Look-based CD player tool
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		workman.1
 MAN5=		workmandb.5
 PLIST_FILES=	bin/workman lib/help/workman.info
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	${GZIP_CMD} ${PREFIX}/man/man5/workmandb.5
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
