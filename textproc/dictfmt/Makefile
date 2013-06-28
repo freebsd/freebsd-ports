@@ -1,13 +1,8 @@
-# New ports collection makefile for:   dictfmt
-# Date created:                19 July 2002
-# Whom:                        Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTVERSION=	1.12.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/dict/dictd/dictd-${PORTVERSION}
 DISTNAME=	dictd-${PORTVERSION}
