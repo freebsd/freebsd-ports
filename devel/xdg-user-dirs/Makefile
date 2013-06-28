@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xdg-user-dirs
-# Date created:		2008-07-01
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xdg-user-dirs
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	http://user-dirs.freedesktop.org/releases/
 
@@ -16,7 +11,11 @@ COMMENT=	Tool to help manage personal user directories
 GNU_CONFIGURE=	yes
 USES=		gettext iconv
 USE_GMAKE=	yes
+USE_GNOME=	libxslt:build
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
+
+MAN1=		xdg-user-dir.1 xdg-user-dirs-update.1
+MAN5=		user-dirs.conf.5 user-dirs.defaults.5 user-dirs.dirs.5
 
 .include <bsd.port.mk>
