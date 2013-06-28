@@ -275,6 +275,7 @@ bin/pviews
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/components.mak
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/hello .world.mako
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/hello_inherit_pkg.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/hellocompo.mak
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/helloinherit.mak
@@ -288,8 +289,6 @@ bin/pviews
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/pp.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/.hiddenfile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/arcs.svg.tgz
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/héhé.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/héhé/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/subdir/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/withmacro.pt
@@ -422,7 +421,7 @@ bin/pviews
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/templates/foo.mak
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/templates/foo.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/views.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/views.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/viewdecoratorapp/views/views.pyo
@@ -794,7 +793,6 @@ bin/pviews
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs/ccbugapp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/pkgs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static/héhé
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests/fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyramid/tests
