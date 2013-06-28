@@ -1,0 +1,14 @@
+OpenDMARC is an open source implementation of Domain-based Message
+Authentication, Reporting & Conformance, or DMARC. It builds on the
+successes of technologies such as DomainKeys Identified Mail (DKIM)
+and the Sender Policy Framework (SPF) to create an infrastructure
+that enforces policy on domain names that are visible to end users,
+and creates a feedback framework for identifying and tracking
+fraudulent use of domain names in email.
+
+It includes a library for handling DMARC record parsing,
+a database schema and tools for aggregating and processing transaction
+history to produce DMARC reports, and a filter that ties it all together
+with an MTA using the milter protocol.
+
+WWW: http://www.trusteddomain.org/opendmarc.html

@@ -1,0 +1,15 @@
+etc/mail/opendmarc.conf.sample
+include/opendmarc/dmarc.h
+lib/libopendmarc.a
+lib/libopendmarc.la
+lib/libopendmarc.so.1
+lib/libopendmarc.so
+sbin/opendmarc
+sbin/opendmarc-check
+sbin/opendmarc-expire
+sbin/opendmarc-import
+sbin/opendmarc-importstats
+sbin/opendmarc-params
+sbin/opendmarc-reports
+@dirrm include/opendmarc
+@dirrmtry etc/mail
