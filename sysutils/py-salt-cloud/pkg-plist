@@ -14,6 +14,9 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/botocore_aws.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/cloudstack.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/cloudstack.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/cloudstack.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/digital_ocean.py
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/digital_ocean.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/clouds/digital_ocean.pyo
@@ -81,12 +84,18 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/loader.py
 %%PYTHON_SITELIBDIR%%/saltcloud/loader.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/loader.pyo
-%%PYTHON_SITELIBDIR%%/saltcloud/output.py
-%%PYTHON_SITELIBDIR%%/saltcloud/output.pyc
-%%PYTHON_SITELIBDIR%%/saltcloud/output.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/output/__init__.py
+%%PYTHON_SITELIBDIR%%/saltcloud/output/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/output/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/output/double_layer.py
+%%PYTHON_SITELIBDIR%%/saltcloud/output/double_layer.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/output/double_layer.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/saltcloud/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/utils/nb_popen.py
+%%PYTHON_SITELIBDIR%%/saltcloud/utils/nb_popen.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/utils/nb_popen.pyo
 %%PYTHON_SITELIBDIR%%/saltcloud/utils/parsers.py
 %%PYTHON_SITELIBDIR%%/saltcloud/utils/parsers.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/utils/parsers.pyo
@@ -94,6 +103,7 @@ bin/salt-cloud
 %%PYTHON_SITELIBDIR%%/saltcloud/version.pyc
 %%PYTHON_SITELIBDIR%%/saltcloud/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/saltcloud/clouds
+@dirrm %%PYTHON_SITELIBDIR%%/saltcloud/output
 @dirrm %%PYTHON_SITELIBDIR%%/saltcloud/deploy
 @dirrm %%PYTHON_SITELIBDIR%%/saltcloud/utils
 @dirrm %%PYTHON_SITELIBDIR%%/saltcloud
