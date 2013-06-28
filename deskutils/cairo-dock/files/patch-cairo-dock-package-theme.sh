@@ -1,11 +1,5 @@
---- cairo-dock-package-theme.orig	2011-06-19 02:27:14.000000000 +0300
-+++ cairo-dock-package-theme	2012-03-10 13:56:42.504012481 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- # Packager for Cairo-Dock
- #
+--- ./data/scripts/cairo-dock-package-theme.sh.orig	2013-03-23 17:55:12.000000000 +0200
++++ ./data/scripts/cairo-dock-package-theme.sh	2013-06-27 18:03:18.000000000 +0300
 @@ -125,7 +125,7 @@
  	if test "x${theme}" != "x"; then
  		#\__________ On cherche si ce theme est un theme officiel ou non.

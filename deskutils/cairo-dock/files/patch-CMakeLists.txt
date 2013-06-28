@@ -1,0 +1,33 @@
+--- ./CMakeLists.txt.orig	2013-04-05 00:40:07.000000000 +0300
++++ ./CMakeLists.txt	2013-05-04 16:34:01.000000000 +0300
+@@ -69,7 +69,7 @@
+ set (exec_prefix ${prefix})
+ set (datadir "${prefix}/${CMAKE_INSTALL_DATAROOTDIR}")  # (...)/share
+ set (pkgdatadir "${datadir}/${CMAKE_PROJECT_NAME}")  # (...)/cairo-dock
+-set (mandir "${prefix}/${CMAKE_INSTALL_MANDIR}")  # (...)/man
++set (mandir "${prefix}/man")  # (...)/man
+ 
+ if( CMAKE_SIZEOF_VOID_P EQUAL 8 AND (force-lib64 OR "${FORCE_LIB64}" STREQUAL "yes"))  # 64bits and force install in lib64
+ 	set (libdir "${prefix}/lib64")
+@@ -90,7 +90,8 @@
+ 
+ ########### dependencies ###############
+ 
+-set (packages_required "glib-2.0 gthread-2.0 cairo librsvg-2.0 dbus-1 dbus-glib-1 libxml-2.0 xrender gl glu libcurl")  # for the .pc and to have details
++set (packages_required "glib-2.0 cairo librsvg-2.0 dbus-1 dbus-glib-1 libxml-2.0 xrender gl glu libcurl")  # for the .pc and to have details
++find_library (GTHREAD "gthread-2.0")
+ STRING (REGEX REPLACE " " ";" packages_required_semicolon ${packages_required})  # replace blank space by semicolon => to have more details if a package is missing
+ pkg_check_modules ("PACKAGE" REQUIRED "${packages_required_semicolon}")
+ 
+@@ -143,9 +144,9 @@
+ endif()
+ 
+ check_include_files ("dlfcn.h" HAVE_DLFCN_H)
+-check_library_exists (dl dlopen "" HAVE_LIBDL)
++check_library_exists (c dlopen "" HAVE_LIBDL)
+ if (HAVE_LIBDL)  # dlopen might be in libc directly as in FreeBSD
+-	set (LIBDL_LIBRARIES "dl")
++	set (LIBDL_LIBRARIES "c")
+ endif()
+ if (NOT HAVE_DLFCN_H)
+ 	message(FATAL_ERROR "Cairo-Dock requires dlfcn.h")
