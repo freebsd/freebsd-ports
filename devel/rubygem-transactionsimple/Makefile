@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	transactionsimple
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	transaction-simple-${PORTVERSION}
