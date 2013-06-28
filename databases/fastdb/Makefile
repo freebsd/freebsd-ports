@@ -1,13 +1,8 @@
-# ex:ts=8
-# New ports collection makefile for:	fastdb
-# Date created:			Mar 2, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fastdb
-PORTVERSION=	3.70
+PORTVERSION=	3.73
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -22,14 +17,11 @@ MAKE_ENV=	OSTYPE="${OPSYS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	${MAKEFILE}
 
 PORTDOCS=	FastDB.htm
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
