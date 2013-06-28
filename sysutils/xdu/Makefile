@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically display output of du
 
 NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 PLIST_FILES=	bin/xdu lib/X11/app-defaults/XDu
 MAN1=		xdu.1
