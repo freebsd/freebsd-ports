@@ -82,6 +82,7 @@
     SUBDIR += clarence
     SUBDIR += clipper
     SUBDIR += cln
+    SUBDIR += cloog
     SUBDIR += clp
     SUBDIR += coinmp
     SUBDIR += concorde
