@@ -30,7 +30,9 @@ share/locale/gl/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gu/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/he/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/hi/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/hr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/hu/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ia/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/id/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/is/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/it/LC_MESSAGES/xdg-user-dirs.mo
@@ -39,9 +41,11 @@ share/locale/kk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/kn/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ko/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ku/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ky/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/lt/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/lv/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/mk/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ml/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/mr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/nb/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/nds/LC_MESSAGES/xdg-user-dirs.mo
@@ -80,10 +84,14 @@ share/locale/zh_TW/LC_MESSAGES/xdg-user-dirs.mo
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
