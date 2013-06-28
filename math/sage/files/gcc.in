@@ -10,5 +10,5 @@
 if [ "x$*" = "x-v" ]; then
   exec %%CC%% "$@"
 else
-  exec %%CC%% %%LDFLAGS%% "$@"
+  exec %%CC%% %%LDFLAGS%% -Wl,--copy-dt-needed-entries "$@"
 fi
