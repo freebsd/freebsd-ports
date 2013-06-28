@@ -4197,6 +4197,7 @@
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-shoulda
+    SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-soap4r
