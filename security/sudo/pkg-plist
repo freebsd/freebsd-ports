@@ -8,8 +8,10 @@ etc/sudoers.sample
 etc/pam.d/sudo.default
 @exec if [ ! -f %D/etc/pam.d/sudo ] ; then cp -p %D/%F %B/sudo; fi
 include/sudo_plugin.h
-libexec/sudo_noexec.so
-libexec/sudoers.so
+libexec/sudo/group_file.so
+libexec/sudo/sudo_noexec.so
+libexec/sudo/sudoers.so
+libexec/sudo/system_group.so
 sbin/visudo
 %%LDAP%%bin/sudoers2ldif
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
@@ -31,6 +33,7 @@ sbin/visudo
 %%NLS%%share/locale/da/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/es/LC_MESSAGES/sudo.mo
@@ -46,6 +49,8 @@ sbin/visudo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudo.mo
@@ -54,6 +59,8 @@ sbin/visudo
 %%NLS%%share/locale/sr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/sudo.mo
@@ -62,4 +69,5 @@ sbin/visudo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/sudoers.d/.keep-me
+@dirrm libexec/sudo
 @dirrmtry etc/sudoers.d
