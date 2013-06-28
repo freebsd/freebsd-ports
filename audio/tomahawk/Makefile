@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomahawk
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 #PORTREVISION=	0
 CATEGORIES=	audio
 
@@ -11,8 +11,8 @@ COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	clucene>=2.3.3.4:${PORTSDIR}/textproc/clucene
 LIB_DEPENDS=	attica:${PORTSDIR}/x11-toolkits/attica \
+		clucene-core:${PORTSDIR}/textproc/clucene \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		echonest:${PORTSDIR}/audio/libechonest \
 		jreen:${PORTSDIR}/net-im/libjreen \
@@ -30,8 +30,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING="Release" \
 
 GH_ACCOUNT=	tomahawk-player
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${DISTVERSION}
-GH_COMMIT=	ccb976a
+GH_COMMIT=	7a869ef
 
 INSTALLS_ICONS=	yes
 
@@ -42,7 +41,8 @@ OPTIONS_RADIO_PHONON=	GSTREAMER VLC XINE
 QTWEETLIB_DESC=	Enable Twitter SIP plugin
 VLC_DESC=	Multimedia support for VLC
 
-PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
+PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,} \
+		PORTVERSION=${PORTVERSION}
 
 USES=		cmake pkgconfig
 USE_GITHUB=	yes
