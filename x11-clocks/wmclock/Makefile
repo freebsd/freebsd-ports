@@ -9,9 +9,9 @@ MASTER_SITES=	http://www.bluestop.org/wmclock/ \
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockable clock applet for Window Maker
+COMMENT=	Dockable clock applet for Window Maker
 
-USE_IMAKE=	yes
+USES=		imake
 MAKE_JOBS_SAFE=	yes
 USE_XORG=	xpm
 MAN1=		wmclock.1

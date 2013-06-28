@@ -1,9 +1,5 @@
-# New ports collection makefile for:   astzclock
-# Date created:        3 August 2004
-# Whom:                Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	astzclock
 PORTVERSION=	1.0
@@ -14,7 +10,7 @@ MASTER_SITES=	http://www.eyesbeyond.com/freebsddom/astzclock/
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Afterstep clock with some timezone extensions
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xpm
 MAN1=		astzclock.1
 PLIST_FILES=	bin/astzclock
