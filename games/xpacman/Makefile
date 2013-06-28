@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xpacman
-# Date created:         19 Aug 1995
-# Whom:                 joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	xpacman
 PORTVERSION=	1.0
@@ -13,11 +9,11 @@ MASTER_SITES=	ftp://ftp.nvg.unit.no/pub/pacman/
 DISTNAME=	pacman10
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	An old action game
+COMMENT=	Old action game
 
 NO_WRKSUBDIR=	Does not unpack into subdir.
 USE_ZIP=	yes
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN1=		pacman.1
 PLIST_FILES=	bin/pacman

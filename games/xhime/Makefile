@@ -1,9 +1,5 @@
-# ports collection makefile for:   xhime
-# Date created:        25 August 1998
-# Whom:                Seiichirou Hiraoka
-#
+# Created by: Seiichirou Hiraoka
 # $FreeBSD$
-#
 
 PORTNAME=	xhime
 PORTVERSION=	1.51
@@ -16,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resident Himechan for X Window System
 
 WRKSRC=		${WRKDIR}/xhime1.51
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MANCOMPRESSED=	yes
 MANLANG=	. ja
@@ -24,7 +20,7 @@ MAN6=		xhime.6
 
 NO_CDROM=	'contains commercial character data'
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xhime
@@ -32,7 +28,7 @@ post-install:
 		${PREFIX}/man/ja/man6
 	${MV} ${PREFIX}/man/ja/man6/xhime-man.euc ${PREFIX}/man/ja/man6/xhime.6
 	${GZIP_CMD} ${PREFIX}/man/ja/man6/xhime.6
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/ja/xhime
 	@(cd ${WRKSRC};\
 	${INSTALL_DATA} xhime-doc.euc xhime.doc rh110-doc.euc \
@@ -40,4 +36,4 @@ post-install:
 	)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mindfocus
-# Date created:        3 December 1998
-# Whom:                Sugimoto Sadahiro <ixtl@utmc.or.jp>
-#
+# Created by: Sugimoto Sadahiro <ixtl@utmc.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mindfocus
 PORTVERSION=	0.88
@@ -15,11 +11,13 @@ DISTFILES=	mindfocus-0.88.tar.gz mindfocus-data1.tar.gz
 MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Lovely characters stay on top of active window
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xpm
 RESTRICTED=	'contains commercial character data'
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
+
+.include <bsd.port.options.mk>
 
 post-install:
 .for i in mayu.mfc mio.mfc misaki2.mfc mizuka.mfc myu.mfc ryoko.mfc
@@ -34,7 +32,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/pixmaps/$i ${EXAMPLESDIR}/pixmaps
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/HISTORY.euc ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/MFC.euc ${DOCSDIR}

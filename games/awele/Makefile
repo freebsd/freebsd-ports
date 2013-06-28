@@ -1,9 +1,5 @@
-# New ports collection makefile for:	awele
-# Date created:		01 May 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	awele
 PORTVERSION=	1.0
@@ -14,12 +10,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An african board game
+COMMENT=	African board game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		imake
 USE_XORG=	x11
-USE_IMAKE=	yes
 USE_TCL_BUILD=	yes
 USE_TK_BUILD=	yes
 USE_TCL=	yes

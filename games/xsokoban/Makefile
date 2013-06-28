@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xsokoban
-# Date created:		16 November 1996
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xsokoban
 PORTVERSION=	3.3c
@@ -13,17 +9,16 @@ MASTER_SITES=	http://www.cs.cornell.edu/andru/release/ \
 		ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A puzzle of pushing objects to the goals
+COMMENT=	Puzzle of pushing objects to the goals
 
-USE_IMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		imake
 USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban
 MAN1=		xsokoban.1
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/xsokoban/scores \

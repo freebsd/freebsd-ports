@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cosmo
-# Date created:		28 December 1996
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	cosmo
 PORTVERSION=	2.0.4
@@ -26,7 +22,7 @@ NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/cosmo2
 DIST_SUBDIR=	cosmo
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 XMKMF=		xmkmf
 NO_INSTALL_MANPAGES=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xvier
-# Date created:				17 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xvier
 PORTVERSION=	1.0
@@ -18,12 +14,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw stones into free columns
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xext
 MAN6=		xvier.6
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

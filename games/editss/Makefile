@@ -1,9 +1,5 @@
-# New ports collection makefile for:	editss
-# Date created:		14 November 2001
-# Whom:			Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	editss
 PORTVERSION=	2.2
@@ -13,9 +9,9 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An editor for XPilot shipshapes
+COMMENT=	Editor for XPilot shipshapes
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	x11 xaw xmu xt
 ALL_TARGET=	editss
 MAN6=		editss.6

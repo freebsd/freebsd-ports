@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdemineur
-# Date created:		13 Feb 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xdemineur
 PORTVERSION=	2.1.1
@@ -16,7 +12,7 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another minesweeper game for the X Window System
 
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	xpm
 MAN1=		xdemineur.1
 PLIST_FILES=	bin/xdemineur
