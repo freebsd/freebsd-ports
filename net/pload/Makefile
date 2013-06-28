@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pload
-# Date created:				22 Septemper 2004
-# Whom:					J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pload
 PORTVERSION=	0.9.5
@@ -14,9 +10,10 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	fbsd@opal.com
-COMMENT=	An X11 program to display network traffic graphs
+COMMENT=	X11 program to display network traffic graphs
 
-USE_IMAKE=	yes
+BROKEN=		does not build: Could not find osdefs.mk
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 HAS_CONFIGURE=	yes
 

@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
-USE_IMAKE=	yes
+USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
