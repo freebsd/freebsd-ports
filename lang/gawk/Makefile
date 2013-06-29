@@ -11,6 +11,9 @@ COMMENT=	The GNU version of Awk
 
 LIB_DEPENDS=	sigsegv:${PORTSDIR}/devel/libsigsegv
 
+OPTIONS_DEFINE=	MPFR
+MPFR_DESC?=	Support multiple-precision floating-point computation
+
 INFO=		gawk gawkinet
 
 USE_XZ=		true
@@ -33,6 +36,12 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMPFR}
+LIB_DEPENDS=	mpfr:${PORTSDIR}/math/mpfr
+.else
+CONFIGURE_ARGS+=--without-gmp --without-mpfr
 .endif
 
 post-patch:
