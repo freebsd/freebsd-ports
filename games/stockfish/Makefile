@@ -27,8 +27,6 @@ PORTDATA=	Book.bin
 FETCH_ARGS=	-Fpr
 
 PLIST_FILES=	bin/stockfish
-PLIST_DIRSTRY=	share/data/${PORTNAME} \
-		share/docs/${PORTNAME}
 
 TGTBLD=		build
 MYCC=		gcc
