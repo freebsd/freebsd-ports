@@ -9,6 +9,9 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/Chinese_simplified.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/Dutch.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/Spanish.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax/apache.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax/asp.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax/assembler.json
@@ -61,6 +64,9 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/linux.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/linux.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/linux.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/openbsd.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/openbsd.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/openbsd.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/windows.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/windows.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core/filesystem_notifications/windows.pyo
@@ -170,15 +176,24 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/highlighter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/highlighter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/highlighter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/migration_2to3.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/migration_2to3.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/migration_2to3.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/minimap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/minimap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/minimap.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/pep8_checker.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/pep8_checker.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/pep8_checker.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/python_syntax.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/python_syntax.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/python_syntax.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/sidebar_widget.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/sidebar_widget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/sidebar_widget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/syntax_highlighter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/syntax_highlighter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor/syntax_highlighter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/__init__.pyo
@@ -188,6 +203,9 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/explorer_container.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/explorer_container.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/explorer_container.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/migration_lists.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/migration_lists.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/migration_lists.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/tree_projects_widget.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/tree_projects_widget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer/tree_projects_widget.pyo
@@ -348,6 +366,7 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/indent-less.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/indent-more.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/insert_import.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/loading.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/locate-attributes.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/locate-class.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/locate-file.png
@@ -372,6 +391,7 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/qtdesigner.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/reload-file.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/separator.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/splash.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/split-horizontal.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/split-vertical.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/stop.png
@@ -444,6 +464,36 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples/file_for_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples/file_for_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples/file_for_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_file_manager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_file_manager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_file_manager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_plugin_interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_plugin_interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_plugin_interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_plugin_manager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_plugin_manager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/test_plugin_manager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/test_preferences.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/test_preferences.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/test_preferences.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/test_status_bar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/test_status_bar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/test_status_bar.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/__init__.pyo
@@ -465,8 +515,29 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/completion/test_model.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/completion/test_model.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/completion/test_model.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/samples/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/samples/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/samples/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/test_ninja_project.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/test_ninja_project.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/test_ninja_project.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/test_syntax_loader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/test_syntax_loader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/test_syntax_loader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/test_locator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/test_locator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/test_locator.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager/samples
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/completion
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/tools/completion
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/tools
@@ -491,6 +562,7 @@ bin/ninja-ide
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/theme
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO

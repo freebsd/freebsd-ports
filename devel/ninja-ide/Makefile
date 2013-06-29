@@ -1,17 +1,13 @@
-# New ports collection makefile for:	ninja-ide
-# Date created:		2011-12-11
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ninja-ide
-DISTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.2-dev
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A cross-platform integrated development environment (IDE)
+COMMENT=	Cross-platform integrated development environment (IDE)
 
 LICENSE=	GPLv3
 
@@ -22,13 +18,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5,1:${PORTSDIR}/net/py-qt4-
 
 #PYDISTUTILS_PKGNAME=	${PORTNAME:tu:S,-,_,}
 PYDISTUTILS_PKGNAME=	${PORTNAME:U:S,-,_,}
+PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}_dev
 
 USE_GITHUB=	yes
 USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=	easy_install
 
 GH_ACCOUNT=	ninja-ide
-GH_COMMIT=	c42161b
-GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	5ab6252
+GH_TAGNAME=	v${PORTVERSION:R}
 
 .include <bsd.port.mk>
