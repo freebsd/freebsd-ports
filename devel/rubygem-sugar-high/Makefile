@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sugar-high
-PORTVERSION=	0.2.12
+PORTVERSION=	0.7.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
