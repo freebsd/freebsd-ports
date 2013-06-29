@@ -67,7 +67,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/fityk.1 ${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv.1 ${MANPREFIX}/man/man1
-.if defined(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR})
 .endif
