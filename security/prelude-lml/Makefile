@@ -3,7 +3,7 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/242/
 
@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-lml
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
-USES=		pkgconfig gettext iconv
+USES=		charsetfix gettext iconv pkgconfig
 
 OPTIONS_DEFINE=	FAM
 
