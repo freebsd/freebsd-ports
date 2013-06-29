@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-warbler
-# Date created:				23 July 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	warbler
-PORTVERSION=	0.9.14
-PORTREVISION=	2
+PORTVERSION=	1.3.8
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
@@ -14,7 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A constructor of .war files of Rails applications
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
-		rubygem-jruby-jars>=1.3.1:${PORTSDIR}/devel/rubygem-jruby-jars
+		rubygem-jruby-jars>=1.5.6:${PORTSDIR}/devel/rubygem-jruby-jars \
+		rubygem-jruby-rack>=1.0.0:${PORTSDIR}/www/rubygem-jruby-rack \
+		rubygem-rubyzip>=0.9.8:${PORTSDIR}/archivers/rubygem-rubyzip
 
 USE_RUBY=	yes
 USE_RAKE=	yes
