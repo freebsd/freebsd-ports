@@ -15,6 +15,7 @@ OPTIONS_DEFINE=	NLS DOCS
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USES=		charsetfix
 
 INFO=		${PORTNAME}
 MAN1=		csv2rec.1 rec2csv.1 recdel.1 recfix.1 recfmt.1 recinf.1 \
