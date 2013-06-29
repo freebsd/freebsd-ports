@@ -171,7 +171,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # PYEASYINSTALL_OSARCH
 #					- Platform identifier for easy_install.
-#					  default: -${OPSYS:L}-${_OSRELEASE}-${ARCH}
+#					  default: -${OPSYS:L}-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}-${ARCH}
 #							   if PYEASYINSTALL_ARCHDEP is defined.
 #
 # PYEASYINSTALL_CMD - Full file path to easy_install command.
@@ -476,10 +476,8 @@ MAKE_ENV+=						PYTHONPATH=${PYEASYINSTALL_SITELIBDIR}
 .endif
 
 .if defined(PYEASYINSTALL_ARCHDEP)
-.if !defined(_OSRELEASE)
-_OSRELEASE!=					${UNAME} -r
-.endif
-PYEASYINSTALL_OSARCH?=			-${OPSYS:L}-${_OSRELEASE}-${ARCH}
+PYEASYINSTALL_OSARCH?=			-${OPSYS:L}-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}-${ARCH}
+MAKE_ENV+=						_PYTHON_HOST_PLATFORM=${PYEASYINSTALL_OSARCH}
 .endif
 PYEASYINSTALL_EGG?=				${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
 PYEASYINSTALL_CMD?=				${LOCALBASE}/bin/easy_install-${PYTHON_VER}
@@ -502,13 +500,13 @@ pre-install-easyinstall:
 
 add-plist-post: add-plist-easyinstall
 add-plist-easyinstall:
-	@# @unexec line must be located before any other line while @exec must not.
-	@${CAT} ${TMPPLIST} > ${TMPPLIST}.pei_tmp
-	@${ECHO_CMD} "@unexec ${PYEASYINSTALL_CMD} ${PYEASYINSTALL_UNINSTALLARGS}" \
-		> ${TMPPLIST}
-	@${CAT} ${TMPPLIST}.pei_tmp >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${SETENV} PYTHONPATH=${PYEASYINSTALL_SITELIBDIR} \
-		${PYEASYINSTALL_CMD} ${PYEASYINSTALL_INSTALLARGS}" \
+	@# Easiest to fake pyeasyinstall, or it complains about paths
+	@${ECHO_CMD} "@unexec ${REINPLACE_CMD} -i '' \
+			-e '\,^\./${PYEASYINSTALL_EGG}$$,d' \
+			${PYEASYINSTALL_SITELIBDIR}/easy-install.pth" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${PRINTF} '1a\n./${PYEASYINSTALL_EGG}\n.\nw\nq\n' | \
+			/bin/ed ${PYEASYINSTALL_SITELIBDIR}/easy-install.pth" \
 		>> ${TMPPLIST}
 .endif		# defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
 
