@@ -614,6 +614,7 @@
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer
+    SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mailfactory
