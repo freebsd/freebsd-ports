@@ -1,8 +1,0 @@
---- System-Monitor/data/nvidia-config.orig	2012-03-09 17:41:19.754859912 +0200
-+++ System-Monitor/data/nvidia-config	2012-03-09 17:41:43.364873894 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- # nVidia parameters script for Cairo-Dock
- #

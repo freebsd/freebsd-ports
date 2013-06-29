@@ -2,14 +2,18 @@
 lib/cairo-dock/libcd-Animated-icons.so
 lib/cairo-dock/libcd-Cairo-Penguin.so
 lib/cairo-dock/libcd-Clipper.so
+lib/cairo-dock/libcd-Composite-Manager.so
+lib/cairo-dock/libcd-clock.so
 lib/cairo-dock/libcd-Dbus.so
 lib/cairo-dock/libcd-Folders.so
+%%IMPULSE%%lib/cairo-dock/libcd-Impulse.so
 lib/cairo-dock/libcd-rssreader.so
 lib/cairo-dock/libcd-system-monitor.so
+lib/cairo-dock/libcd-Screenshot.so
+%%SOUND_EFFECTS%%lib/cairo-dock/libcd-Sound-Effects.so
 %%GMENU%%lib/cairo-dock/libcd-GMenu.so
 lib/cairo-dock/libcd-Toons.so
 lib/cairo-dock/libcd-Xgamma.so
-lib/cairo-dock/libcd-compiz-icon.so
 lib/cairo-dock/libcd-desklet-rendering.so
 lib/cairo-dock/libcd-dialog-rendering.so
 lib/cairo-dock/libcd-dnd2share.so
@@ -35,12 +39,13 @@ lib/cairo-dock/libcd-slider.so
 lib/cairo-dock/libcd-stack.so
 lib/cairo-dock/libcd-switcher.so
 lib/cairo-dock/libcd-systray.so
-%%TERMINAL%%lib/cairo-dock/libcd-terminal.so
 lib/cairo-dock/libcd-tomboy.so
 lib/cairo-dock/libcd-weather.so
 %%WEBLETS%%lib/cairo-dock/libcd-weblets.so
 lib/cairo-dock/libcd-wifi.so
 lib/cairo-dock/libcd_gnome-integration.so
+lib/libCDApplet.so
+lib/pkgconfig/CDApplet.pc
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.so
 %%PYTHON_SITELIBDIR%%/CDApplet.py
 %%PYTHON_SITELIBDIR%%/CDApplet.pyc
@@ -48,15 +53,21 @@ lib/cairo-dock/libcd_gnome-integration.so
 %%PYTHON_SITELIBDIR%%/CDBashApplet.py
 %%PYTHON_SITELIBDIR%%/CDBashApplet.pyc
 %%PYTHON_SITELIBDIR%%/CDBashApplet-1.0-%%PYVER%%.egg-info
+%%PYTHON_SITELIBDIR%%/CairoDock.py
+%%PYTHON_SITELIBDIR%%/CairoDock.pyc
+share/locale/he/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/hr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/fr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/id/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/it/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ja/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/lt/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/nl/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/pl/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/pt/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ru/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/sr@latin/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sv/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/cs/LC_MESSAGES/cairo-dock-plugins.mo
@@ -73,13 +84,70 @@ share/locale/eu/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sk/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/tr/LC_MESSAGES/cairo-dock-plugins.mo
+share/cairo-dock/gauges/Battery/background.svg
+share/cairo-dock/gauges/Battery/battery0.svg
+share/cairo-dock/gauges/Battery/battery1.svg
+share/cairo-dock/gauges/Battery/battery2.svg
+share/cairo-dock/gauges/Battery/battery3.svg
+share/cairo-dock/gauges/Battery/battery4.svg
+share/cairo-dock/gauges/Battery/battery5.svg
+share/cairo-dock/gauges/Battery/battery6.svg
+share/cairo-dock/gauges/Battery/battery7.svg
+share/cairo-dock/gauges/Battery/foreground.svg
+share/cairo-dock/gauges/Battery/readme
+share/cairo-dock/gauges/Battery/theme.xml
+share/cairo-dock/gauges/Battery-Mono/0.svg
+share/cairo-dock/gauges/Battery-Mono/1.svg
+share/cairo-dock/gauges/Battery-Mono/2.svg
+share/cairo-dock/gauges/Battery-Mono/3.svg
+share/cairo-dock/gauges/Battery-Mono/4.svg
+share/cairo-dock/gauges/Battery-Mono/5.svg
+share/cairo-dock/gauges/Battery-Mono/preview
+share/cairo-dock/gauges/Battery-Mono/readme
+share/cairo-dock/gauges/Battery-Mono/theme.xml
+share/cairo-dock/gauges/Battery-Mono/version
+share/cairo-dock/gauges/Wifi_default/link-0.svg
+share/cairo-dock/gauges/Wifi_default/link-1.svg
+share/cairo-dock/gauges/Wifi_default/link-2.svg
+share/cairo-dock/gauges/Wifi_default/link-3.svg
+share/cairo-dock/gauges/Wifi_default/link-4.svg
+share/cairo-dock/gauges/Wifi_default/link-5.svg
+share/cairo-dock/gauges/Wifi_default/preview
+share/cairo-dock/gauges/Wifi_default/readme
+share/cairo-dock/gauges/Wifi_default/theme.xml
+share/cairo-dock/gauges/Wifi_default/version
+share/cairo-dock/plug-ins/clock/digital/default/config
+share/cairo-dock/plug-ins/clock/digital/default/frame_0.svg
+share/cairo-dock/plug-ins/clock/digital/default/frame_1.svg
+share/cairo-dock/plug-ins/clock/digital/default/frame_2.svg
+share/cairo-dock/plug-ins/clock/digital/default/frame_3.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-drop-shadow.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-face-shadow.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-face.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-frame.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-glass.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-hour-hand-shadow.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-hour-hand.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-marks.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-minute-hand-shadow.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-minute-hand.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-second-hand-shadow.svg
+share/cairo-dock/plug-ins/clock/themes/default/clock-second-hand.svg
+share/cairo-dock/plug-ins/clock/themes/default/readme
+share/cairo-dock/plug-ins/clock/themes/default/theme.conf
+share/cairo-dock/plug-ins/clock/clock.conf
+share/cairo-dock/plug-ins/clock/dates.svg
+share/cairo-dock/plug-ins/clock/icon-alarm.png
+share/cairo-dock/plug-ins/clock/icon-task.png
+share/cairo-dock/plug-ins/clock/icon.png
+share/cairo-dock/plug-ins/clock/preview.jpg
 share/cairo-dock/plug-ins/dnd2share/icon.svg
 share/cairo-dock/plug-ins/rendering/preview-panel.jpg
+share/cairo-dock/plug-ins/rendering/preview-slide.jpg
 share/cairo-dock/plug-ins/rendering/readme-panel-view
+share/cairo-dock/plug-ins/rendering/readme-slide-view
 share/cairo-dock/plug-ins/Folders/Folders.conf
 share/cairo-dock/plug-ins/Folders/preview.jpg
-share/cairo-dock/plug-ins/Folders/icon.svg
-share/cairo-dock/plug-ins/logout/icon-lock.png
 %%XFCE_INTEGRATION%%share/cairo-dock/plug-ins/xfce-integration/icon.png
 %%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/AlsaMixer.conf
 %%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/broken.svg
@@ -89,14 +157,21 @@ share/cairo-dock/plug-ins/logout/icon-lock.png
 %%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/mute.svg
 %%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/preview.jpg
 share/cairo-dock/plug-ins/Animated-icons/Animated-icons.conf
+share/cairo-dock/plug-ins/Animated-icons/busy.svg
 share/cairo-dock/plug-ins/Animated-icons/preview.jpg
 share/cairo-dock/plug-ins/Animated-icons/icon.svg
+share/cairo-dock/plug-ins/Animated-icons/icon-busy.png
 share/cairo-dock/plug-ins/Animated-icons/texture-chrome.png
 share/cairo-dock/plug-ins/Animated-icons/icon-rotation.png
 share/cairo-dock/plug-ins/Animated-icons/spot.png
 share/cairo-dock/plug-ins/Animated-icons/halo.png
 share/cairo-dock/plug-ins/Animated-icons/ray.png
 share/cairo-dock/plug-ins/Animated-icons/icon-wave.png
+share/cairo-dock/plug-ins/Composite-Manager/Composite-Manager.conf
+share/cairo-dock/plug-ins/Composite-Manager/composite-off.png
+share/cairo-dock/plug-ins/Composite-Manager/composite-on.png
+share/cairo-dock/plug-ins/Composite-Manager/icon.png
+share/cairo-dock/plug-ins/Composite-Manager/preview.jpg
 share/cairo-dock/plug-ins/Cairo-Penguin/Cairo-Penguin.conf
 share/cairo-dock/plug-ins/Cairo-Penguin/icon.png
 share/cairo-dock/plug-ins/Cairo-Penguin/preview.jpg
@@ -129,45 +204,37 @@ share/cairo-dock/plug-ins/Clipper/preview.jpg
 share/cairo-dock/plug-ins/Clipper/Clipper-actions-gnome.conf
 share/cairo-dock/plug-ins/Clipper/Clipper-actions-xfce.conf
 share/cairo-dock/plug-ins/Clipper/Clipper-actions-kde.conf
-share/cairo-dock/plug-ins/compiz-icon/compiz
-share/cairo-dock/plug-ins/compiz-icon/compiz-kill
-share/cairo-dock/plug-ins/compiz-icon/compiz-icon.conf
-share/cairo-dock/plug-ins/compiz-icon/default.svg
-share/cairo-dock/plug-ins/compiz-icon/broken.svg
-share/cairo-dock/plug-ins/compiz-icon/other.svg
-share/cairo-dock/plug-ins/compiz-icon/0.svg
-share/cairo-dock/plug-ins/compiz-icon/1.svg
-share/cairo-dock/plug-ins/compiz-icon/2.svg
-share/cairo-dock/plug-ins/compiz-icon/3.svg
-share/cairo-dock/plug-ins/compiz-icon/4.svg
-share/cairo-dock/plug-ins/compiz-icon/icon.png
-share/cairo-dock/plug-ins/compiz-icon/preview.jpg
 share/cairo-dock/plug-ins/Dbus/Dbus.conf
+share/cairo-dock/plug-ins/Dbus/CDApplet.h
 share/cairo-dock/plug-ins/Dbus/CDBashApplet.sh
 share/cairo-dock/plug-ins/Dbus/icon.svg
-share/cairo-dock/plug-ins/desklet-rendering/icon.svg
+share/cairo-dock/plug-ins/desklet-rendering/board.png
 share/cairo-dock/plug-ins/desklet-rendering/branche1.svg
 share/cairo-dock/plug-ins/desklet-rendering/branche2.svg
-share/cairo-dock/plug-ins/desklet-rendering/scotch.svg
-share/cairo-dock/plug-ins/desklet-rendering/scotch+frame.svg
-share/cairo-dock/plug-ins/desklet-rendering/frame.svg
-share/cairo-dock/plug-ins/desklet-rendering/reflect.svg
 share/cairo-dock/plug-ins/desklet-rendering/cd_box_cover.svg
 share/cairo-dock/plug-ins/desklet-rendering/cd_box.svg
-share/cairo-dock/plug-ins/desklet-rendering/starcraft2.png
-share/cairo-dock/plug-ins/desklet-rendering/dark-bg.png
 share/cairo-dock/plug-ins/desklet-rendering/clear-bg.svg
-share/cairo-dock/plug-ins/desklet-rendering/board.png
 share/cairo-dock/plug-ins/dialog-rendering/dialog-rendering.conf
+share/cairo-dock/plug-ins/desklet-rendering/dark-bg.svg
+share/cairo-dock/plug-ins/desklet-rendering/frame.svg
+share/cairo-dock/plug-ins/desklet-rendering/icon.svg
+share/cairo-dock/plug-ins/desklet-rendering/light-bg.svg
+share/cairo-dock/plug-ins/desklet-rendering/scotch.svg
+share/cairo-dock/plug-ins/desklet-rendering/scotch+frame.svg
+share/cairo-dock/plug-ins/desklet-rendering/reflect.svg
+share/cairo-dock/plug-ins/desklet-rendering/starcraft2.png
+share/cairo-dock/plug-ins/desklet-rendering/water-dark-bg.png
+share/cairo-dock/plug-ins/desklet-rendering/water-drop-bg.png
 share/cairo-dock/plug-ins/dialog-rendering/icon.svg
 share/cairo-dock/plug-ins/dnd2share/upload2free.sh
 share/cairo-dock/plug-ins/dnd2share/dnd2share.conf
 share/cairo-dock/plug-ins/dnd2share/readme
 share/cairo-dock/plug-ins/dnd2share/preview.jpg
 %%GMENU%%share/cairo-dock/plug-ins/GMenu/GMenu.conf
-%%GMENU%%share/cairo-dock/plug-ins/GMenu/icon-recent.png
 %%GMENU%%share/cairo-dock/plug-ins/GMenu/icon.svg
 %%GMENU%%share/cairo-dock/plug-ins/GMenu/preview.jpg
+%%GMENU%%share/cairo-dock/plug-ins/GMenu/system-log-out.svg
+%%GMENU%%share/cairo-dock/plug-ins/GMenu/system-shutdown.svg
 share/cairo-dock/plug-ins/drop-indicator/drop_indicator.conf
 share/cairo-dock/plug-ins/drop-indicator/icon.svg
 share/cairo-dock/plug-ins/drop-indicator/preview.jpg
@@ -180,6 +247,7 @@ share/cairo-dock/plug-ins/dustbin/themes/default/preview
 share/cairo-dock/plug-ins/dustbin/themes/default/trashcan_full.svg
 share/cairo-dock/plug-ins/dustbin/themes/default/trashcan_empty.svg
 share/cairo-dock/plug-ins/gnome-integration/icon.png
+share/cairo-dock/plug-ins/Folders/icon.png
 share/cairo-dock/plug-ins/icon-effect/icon-effect.conf
 share/cairo-dock/plug-ins/icon-effect/icon.png
 share/cairo-dock/plug-ins/icon-effect/icon-firework.png
@@ -197,14 +265,28 @@ share/cairo-dock/plug-ins/illusion/icon-break.svg
 share/cairo-dock/plug-ins/illusion/icon-evaporate.svg
 share/cairo-dock/plug-ins/illusion/icon-explode.svg
 share/cairo-dock/plug-ins/illusion/icon-fade-out.svg
+%%IMPULSE%%share/cairo-dock/plug-ins/Impulse/Impulse.conf
+%%IMPULSE%%share/cairo-dock/plug-ins/Impulse/icon.png
+%%IMPULSE%%share/cairo-dock/plug-ins/Impulse/impulse-error.svg
+%%IMPULSE%%share/cairo-dock/plug-ins/Impulse/impulse-running.svg
+%%IMPULSE%%share/cairo-dock/plug-ins/Impulse/impulse-stopped.svg
+%%IMPULSE%%share/cairo-dock/plug-ins/Impulse/preview.jpg
 share/cairo-dock/plug-ins/kde-integration/icon.png
 %%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/keyboard-indicator.conf
 %%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/icon.png
 %%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/preview.jpg
-share/cairo-dock/plug-ins/logout/emblem-reboot.png
-share/cairo-dock/plug-ins/logout/logout.conf
 share/cairo-dock/plug-ins/logout/icon.svg
-share/cairo-dock/plug-ins/logout/icon-scheduling.png
+share/cairo-dock/plug-ins/logout/icon-scheduling.svg
+share/cairo-dock/plug-ins/logout/locked.svg
+share/cairo-dock/plug-ins/logout/logout.conf
+share/cairo-dock/plug-ins/logout/logout.sh
+share/cairo-dock/plug-ins/logout/preview.jpg
+share/cairo-dock/plug-ins/logout/system-guest.svg
+share/cairo-dock/plug-ins/logout/system-hibernate.svg
+share/cairo-dock/plug-ins/logout/system-log-out.svg
+share/cairo-dock/plug-ins/logout/system-restart.svg
+share/cairo-dock/plug-ins/logout/system-shutdown.svg
+share/cairo-dock/plug-ins/logout/system-suspend.svg
 share/cairo-dock/plug-ins/mail/preview.jpg
 share/cairo-dock/plug-ins/mail/cd_mail_icon.png
 share/cairo-dock/plug-ins/mail/cd_mail_newmail.svg
@@ -265,17 +347,25 @@ share/cairo-dock/plug-ins/rendering/preview-caroussel.jpg
 share/cairo-dock/plug-ins/rendering/preview-parabolic.jpg
 share/cairo-dock/plug-ins/rendering/preview-3D-plane.jpg
 share/cairo-dock/plug-ins/rendering/preview-rainbow.jpg
-share/cairo-dock/plug-ins/rendering/preview-diapo-simple.jpg
 share/cairo-dock/plug-ins/rendering/preview-curve.jpg
 share/cairo-dock/plug-ins/rendering/readme-3D-plane-view
 share/cairo-dock/plug-ins/rendering/readme-caroussel-view
 share/cairo-dock/plug-ins/rendering/readme-curve-view
-share/cairo-dock/plug-ins/rendering/readme-diapo-simple-view
 share/cairo-dock/plug-ins/rendering/readme-parabolic-view
 share/cairo-dock/plug-ins/rendering/readme-rainbow-view
 share/cairo-dock/plug-ins/RSSreader/icon.svg
 share/cairo-dock/plug-ins/RSSreader/preview.jpg
 share/cairo-dock/plug-ins/RSSreader/RSSreader.conf
+share/cairo-dock/plug-ins/Screenshot/Screenshot.conf
+share/cairo-dock/plug-ins/Screenshot/icon.svg
+share/cairo-dock/plug-ins/Screenshot/preview.jpg
+share/cairo-dock/plug-ins/shared-files/images/expose-desktops.svg
+share/cairo-dock/plug-ins/shared-files/images/expose-windows.svg
+share/cairo-dock/plug-ins/shared-files/images/icon-gauge.png
+share/cairo-dock/plug-ins/shared-files/images/icon-graph.png
+share/cairo-dock/plug-ins/shared-files/images/show-desktop.svg
+share/cairo-dock/plug-ins/shared-files/images/widget-layer.svg
+share/cairo-dock/plug-ins/shared-files/scripts/lock-screen.sh
 share/cairo-dock/plug-ins/shortcuts/shortcuts.conf
 share/cairo-dock/plug-ins/shortcuts/icon.png
 share/cairo-dock/plug-ins/shortcuts/preview.jpg
@@ -288,6 +378,12 @@ share/cairo-dock/plug-ins/show_mouse/preview.jpg
 share/cairo-dock/plug-ins/slider/slider.conf
 share/cairo-dock/plug-ins/slider/icon.png
 share/cairo-dock/plug-ins/slider/preview.jpg
+%%SOUND_EFFECTS%%share/cairo-dock/plug-ins/Sound-Effects/Sound-Effects.conf
+%%SOUND_EFFECTS%%share/cairo-dock/plug-ins/Sound-Effects/icon.svg
+%%SOUND_EFFECTS%%share/cairo-dock/plug-ins/Sound-Effects/on-click.wav
+%%SOUND_EFFECTS%%share/cairo-dock/plug-ins/Sound-Effects/on-hover.wav
+%%SOUND_EFFECTS%%share/cairo-dock/plug-ins/Sound-Effects/on-middle-click.wav
+%%SOUND_EFFECTS%%share/cairo-dock/plug-ins/Sound-Effects/preview.png
 share/cairo-dock/plug-ins/stack/stack.conf
 share/cairo-dock/plug-ins/stack/icon.png
 share/cairo-dock/plug-ins/stack/preview.jpg
@@ -307,15 +403,10 @@ share/cairo-dock/plug-ins/System-monitor/preview.jpg
 share/cairo-dock/plug-ins/systray/systray.conf
 share/cairo-dock/plug-ins/systray/icon.png
 share/cairo-dock/plug-ins/systray/preview.jpg
-%%TERMINAL%%share/cairo-dock/plug-ins/terminal/icon.png
-%%TERMINAL%%share/cairo-dock/plug-ins/terminal/preview.jpg
-%%TERMINAL%%share/cairo-dock/plug-ins/terminal/terminal.conf
-share/cairo-dock/plug-ins/tomboy/default.svg
 share/cairo-dock/plug-ins/tomboy/close.svg
-share/cairo-dock/plug-ins/tomboy/broken.svg
+share/cairo-dock/plug-ins/tomboy/icon.svg
 share/cairo-dock/plug-ins/tomboy/note.svg
 share/cairo-dock/plug-ins/tomboy/tomboy.conf
-share/cairo-dock/plug-ins/tomboy/icon.png
 share/cairo-dock/plug-ins/tomboy/preview.jpg
 share/cairo-dock/plug-ins/Toons/Toons.conf
 share/cairo-dock/plug-ins/Toons/icon.png
@@ -383,24 +474,33 @@ share/cairo-dock/plug-ins/weather/themes/Classic/readme
 %%WEBLETS%%share/cairo-dock/plug-ins/weblets/icon.png
 %%WEBLETS%%share/cairo-dock/plug-ins/weblets/preview.jpg
 %%WEBLETS%%share/cairo-dock/plug-ins/weblets/weblets.conf
-share/cairo-dock/plug-ins/wifi/wifi
-share/cairo-dock/plug-ins/wifi/wifi.conf
-share/cairo-dock/plug-ins/wifi/link-0.svg
-share/cairo-dock/plug-ins/wifi/link-1.svg
-share/cairo-dock/plug-ins/wifi/link-2.svg
-share/cairo-dock/plug-ins/wifi/link-3.svg
-share/cairo-dock/plug-ins/wifi/link-4.svg
-share/cairo-dock/plug-ins/wifi/link-5.svg
+share/cairo-dock/plug-ins/wifi/default.svg
 share/cairo-dock/plug-ins/wifi/icon.png
+share/cairo-dock/plug-ins/wifi/no-signal.svg
 share/cairo-dock/plug-ins/wifi/preview.jpg
+share/cairo-dock/plug-ins/wifi/wifi.conf
+%%XFCE_INTEGRATION%%share/cairo-dock/plug-ins/xfce-integration/icon.png
 share/cairo-dock/plug-ins/Xgamma/Xgamma.conf
 share/cairo-dock/plug-ins/Xgamma/icon.png
 share/cairo-dock/plug-ins/Xgamma/preview.jpg
+share/vala/vapi/CDApplet.vapi
+share/vala/vapi/CDApplet.deps
+@dirrmtry lib/pkgconfig
+@dirrm share/cairo-dock/plug-ins/clock/digital/default
+@dirrm share/cairo-dock/plug-ins/clock/digital
+@dirrm share/cairo-dock/plug-ins/clock/themes/default
+@dirrm share/cairo-dock/plug-ins/clock/themes
+@dirrm share/cairo-dock/plug-ins/clock
+@dirrm share/cairo-dock/gauges/Battery
+@dirrm share/cairo-dock/gauges/Battery-Mono
+@dirrm share/cairo-dock/gauges/Wifi_default
+@dirrm share/cairo-dock/gauges
 %%ALSA_MIXER%%@dirrm share/cairo-dock/plug-ins/AlsaMixer
 @dirrm share/cairo-dock/plug-ins/Animated-icons
 @dirrm share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic
 @dirrm share/cairo-dock/plug-ins/Cairo-Penguin/themes
 @dirrm share/cairo-dock/plug-ins/Cairo-Penguin
+@dirrm share/cairo-dock/plug-ins/Composite-Manager
 @dirrm share/cairo-dock/plug-ins/Clipper
 @dirrm share/cairo-dock/plug-ins/Dbus
 @dirrm share/cairo-dock/plug-ins/Folders
@@ -410,7 +510,6 @@ share/cairo-dock/plug-ins/Xgamma/preview.jpg
 @dirrm share/cairo-dock/plug-ins/Toons/themes
 @dirrm share/cairo-dock/plug-ins/Toons
 @dirrm share/cairo-dock/plug-ins/Xgamma
-@dirrm share/cairo-dock/plug-ins/compiz-icon
 @dirrm share/cairo-dock/plug-ins/desklet-rendering
 @dirrm share/cairo-dock/plug-ins/dialog-rendering
 @dirrm share/cairo-dock/plug-ins/dnd2share
@@ -421,6 +520,7 @@ share/cairo-dock/plug-ins/Xgamma/preview.jpg
 @dirrm share/cairo-dock/plug-ins/gnome-integration
 @dirrm share/cairo-dock/plug-ins/icon-effect
 @dirrm share/cairo-dock/plug-ins/illusion
+%%IMPULSE%%@dirrm share/cairo-dock/plug-ins/Impulse
 @dirrm share/cairo-dock/plug-ins/kde-integration
 %%KEYBOARD_INDICATOR%%@dirrm share/cairo-dock/plug-ins/keyboard-indicator
 @dirrm share/cairo-dock/plug-ins/logout
@@ -437,14 +537,18 @@ share/cairo-dock/plug-ins/Xgamma/preview.jpg
 @dirrm share/cairo-dock/plug-ins/Remote-Control
 @dirrm share/cairo-dock/plug-ins/RSSreader
 @dirrm share/cairo-dock/plug-ins/rendering
+@dirrm share/cairo-dock/plug-ins/Screenshot
+@dirrm share/cairo-dock/plug-ins/shared-files/images
+@dirrm share/cairo-dock/plug-ins/shared-files/scripts
+@dirrm share/cairo-dock/plug-ins/shared-files
 @dirrm share/cairo-dock/plug-ins/shortcuts
 @dirrm share/cairo-dock/plug-ins/showDesktop
 @dirrm share/cairo-dock/plug-ins/show_mouse
 @dirrm share/cairo-dock/plug-ins/slider
+%%SOUND_EFFECTS%%@dirrm share/cairo-dock/plug-ins/Sound-Effects
 @dirrm share/cairo-dock/plug-ins/stack
 @dirrm share/cairo-dock/plug-ins/switcher
 @dirrm share/cairo-dock/plug-ins/systray
-%%TERMINAL%%@dirrm share/cairo-dock/plug-ins/terminal
 @dirrm share/cairo-dock/plug-ins/tomboy
 @dirrm share/cairo-dock/plug-ins/weather/themes/Classic
 @dirrm share/cairo-dock/plug-ins/weather/themes
