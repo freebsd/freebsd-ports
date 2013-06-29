@@ -1,11 +1,9 @@
-# Created by: Ivan Klymenko <fidaj@ukr.net>
 # $FreeBSD$
 
 PORTNAME=	cairo-dock-plugins
-DISTVERSION=	2.3.0~3
-PORTREVISION=	5
+DISTVERSION=	3.2.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/73753265/ \
+MASTER_SITES=	https://launchpadlibrarian.net/137290159/ \
 		http://pazzle.otdux.com.ua/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}
 
@@ -14,95 +12,109 @@ COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
-		gldi.2:${PORTSDIR}/deskutils/cairo-dock
+		gldi.3:${PORTSDIR}/deskutils/cairo-dock
 
 DATADIR=	${PREFIX}/share/cairo-dock
 
 ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
+USE_GNOME=	gnomehack glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xrender
 USE_DOS2UNIX=	YES
-USES=		cmake gettext pathfix
-USE_GCC=	4.6+
+USES=		cmake gettext pkgconfig
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	YES
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
+CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
 
+OPTIONS_DEFINE=		XFCE_INTEGRATION ALSA_MIXER GMENU \
+			KEYBOARD_INDICATOR IMPULSE \
+			SOUND_EFFECTS WEBLETS
+OPTIONS_DEFAULT=	GMENU WEBLETS
+XFCE_INTEGRATION_DESC=	XFCE integration support
+ALSA_MIXER_DESC=	Alsa-Mixer applet
+GMENU_DESC=		GMenu applet
+KEYBOARD_INDICATOR_DESC=	 Keyboard-indicator applet
+IMPULSE_DESC=		Impulse applet
+SOUND_EFFECTS_DESC=	Sound Effects applet
+TERMINAL_DESC=		Terminal applet
+WEBLETS_DESC=		Weblets applet
 
-
-OPTIONS_DEFINE=		GMENU KEYBOARD_INDICATOR TERMINAL WEBLETS \
-			XFCE_INTEGRATION ALSA_MIXER
-OPTIONS_DEFAULT=	GMENU TERMINAL WEBLETS
-GMENU_DESC=		Common Applications menu
-KEYBOARD_INDICATOR_DESC=	 Control the keyboard layout
-TERMINAL_DESC=		 Add a terminal to your dock
-WEBLETS_DESC=		 To show an interactive web page
-XFCE_INTEGRATION_DESC=	For XFCE environnement
-ALSA_MIXER_DESC=	For ALSA compatibility utils
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${CP} -R ${WRKDIR}/${ICONS_PACKAGE}/* ${WRKSRC}
-
-.if ${PORT_OPTIONS:MGMENU}
-LIB_DEPENDS+=	gnome-menu.2:${PORTSDIR}/x11/gnome-menus
-CMAKE_ARGS+=	-Denable_gmenu:STRING=yes
-PLIST_SUB+=	GMENU=""
-.else
-CMAKE_ARGS+=	-Denable_gmenu:STRING=no
-PLIST_SUB+=	GMENU="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MKEYBOARD_INDICATOR}
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif \
-		xklavier.12:${PORTSDIR}/x11/libxklavier
-CMAKE_ARGS+=	-Denable_keyboard_indicator:STRING=yes
-PLIST_SUB+=	KEYBOARD_INDICATOR=""
-.else
-CMAKE_ARGS+=	-Denable_keyboard_indicator:STRING=no
-PLIST_SUB+=	KEYBOARD_INDICATOR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTERMINAL}
-LIB_DEPENDS+=	vte.9:${PORTSDIR}/x11-toolkits/vte
-CMAKE_ARGS+=	-Denable_terminal:STRING=yes
-PLIST_SUB+=	TERMINAL=""
-.else
-CMAKE_ARGS+=	-Denable_terminal:STRING=no
-PLIST_SUB+=	TERMINAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWEBLETS}
-LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
-CMAKE_ARGS+=	-Denable_weblets:STRING=yes
-PLIST_SUB+=	WEBLETS=""
-.else
-CMAKE_ARGS+=	-Denable_weblets:STRING=no
-PLIST_SUB+=	WEBLETS="@comment "
-.endif
+	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -i.orig -e \
+	    's|/bin/bash|${LOCALBASE}/bin/bash|g; \
+	     s|/usr/bin/python|${LOCALBASE}/bin/python|g; \
+	     s|/usr/bin/ruby|${LOCALBASE}/bin/ruby|g; \
+	     s|/usr/share/applications|${LOCALBASE}/share/applications|g; \
+	     s|/usr/share/cairo-dock|${LOCALBASE}/share/cairo-dock|g'
 
 .if ${PORT_OPTIONS:MXFCE_INTEGRATION}
-LIB_DEPENDS+=	thunar-vfs-1.5:${PORTSDIR}/x11-fm/thunar \
-		exif.12:${PORTSDIR}/graphics/libexif
-CMAKE_ARGS+=	-Denable_xfce_integration:STRING=yes
-PLIST_SUB+=	XFCE_INTEGRATION=""
+LIB_DEPENDS+=	thunar-vfs-1:${PORTSDIR}/x11-fm/thunar-vfs \
+		exif:${PORTSDIR}/graphics/libexif
+CMAKE_ARGS+=	-Denable-xfce-integration:BOOL=TRUE
 .else
-CMAKE_ARGS+=	-Denable_xfce_integration:STRING=no
-PLIST_SUB+=	XFCE_INTEGRATION="@comment "
+CMAKE_ARGS+=	-Denable-xfce-integration:BOOL=FALSE
 .endif
 
 .if ${PORT_OPTIONS:MALSA_MIXER}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-CMAKE_ARGS+=	-Denable_alsa_mixer:STRING=yes
-PLIST_SUB+=	ALSA_MIXER=""
+CMAKE_ARGS+=	-Denable-alsa-mixer:BOOL=TRUE
 .else
-CMAKE_ARGS+=	-Denable_alsa_mixer:STRING=no
-PLIST_SUB+=	ALSA_MIXER="@comment "
+CMAKE_ARGS+=	-Denable-alsa-mixer:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MGMENU}
+LIB_DEPENDS+=	gnome-menu:${PORTSDIR}/x11/gnome-menus
+CMAKE_ARGS+=	-Denable-gmenu:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-Denable-gmenu:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MKEYBOARD_INDICATOR}
+LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif \
+		xklavier:${PORTSDIR}/x11/libxklavier
+CMAKE_ARGS+=	-Denable-keyboard-indicator:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-Denable-keyboard-indicator:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MIMPULSE}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+CMAKE_ARGS+=	-Denable-impulse:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-Denable-impulse:BOOL=FALSE
+.endif
+
+.if ${PORT_OPTIONS:MSOUND_EFFECTS}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+CMAKE_ARGS+=	-Denable-sound-effects:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-Denable-sound-effects:BOOL=FALSE
+.endif
+
+# Needs newer vte
+#.if ${PORT_OPTIONS:MTERMINAL}
+#LIB_DEPENDS+=	vte:${PORTSDIR}/x11-toolkits/vte
+#CMAKE_ARGS+=	-Denable-terminal:BOOL=TRUE
+#.else
+#CMAKE_ARGS+=	-Denable-terminal:BOOL=FALSE
+#.endif
+
+.if ${PORT_OPTIONS:MWEBLETS}
+LIB_DEPENDS+=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+CMAKE_ARGS+=	-Denable-weblets:BOOL=TRUE
+.else
+CMAKE_ARGS+=	-Denable-weblets:BOOL=FALSE
 .endif
 
 .include <bsd.port.mk>

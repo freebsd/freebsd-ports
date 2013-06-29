@@ -1,8 +1,0 @@
---- Doncky/data/nvidia-config.orig	2012-03-09 17:35:57.094857454 +0200
-+++ Doncky/data/nvidia-config	2012-03-09 17:36:09.384875249 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- # Compiz check for Cairo-Dock
- #
