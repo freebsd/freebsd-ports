@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	ACH
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/Burton/Analysis-of-Competing-Hypotheses/
 EXTRACT_SUFX=	-alpha.tar
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free, open source tool for complex research problems
+MAINTAINER=	danilogondolfo@gmail.com
+COMMENT=	Free, open source tool for complex research problems
 
 LICENSE=	GPLv3
 
