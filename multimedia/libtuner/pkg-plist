@@ -1,6 +1,6 @@
-lib/libtuner/libtuner_static.a
 lib/libtuner/libtuner.so
 lib/libtuner/libtuner.so.1
+lib/libtuner/libtuner_static.a
 include/libtuner/avb_driver.h
 include/libtuner/cx22702.h
 include/libtuner/cx24227.h
