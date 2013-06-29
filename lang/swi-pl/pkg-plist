@@ -1744,4 +1744,3 @@ libdata/pkgconfig/swipl.pc
 @dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/bin
 @dirrm lib/%%DISTNAME%%
-@dirrmtry lib/pkgconfig
