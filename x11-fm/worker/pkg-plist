@@ -89,3 +89,7 @@ share/applications/worker.desktop
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/catalogs
 @dirrm %%DATADIR%%
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
