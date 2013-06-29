@@ -219,13 +219,13 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%WITH_JAVA%%%%PORTDOCS%%%%DOCSDIR%%/java/html/rtab_r.gif
 %%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/examples
 %%WITH_RUBY%%@dirrmtry share/ruby
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
+%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/html
+%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
+%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/html
+%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
 %%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
+%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/html
+%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java/html
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/java
 %%WITH_JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/xqj/html
