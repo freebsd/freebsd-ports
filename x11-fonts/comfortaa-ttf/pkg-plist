@@ -1,0 +1,8 @@
+%%FONTDIR%%/Comfortaa-Bold.ttf
+%%FONTDIR%%/Comfortaa-Light.ttf
+%%FONTDIR%%/Comfortaa-Regular.ttf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
