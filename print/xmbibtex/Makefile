@@ -15,7 +15,6 @@ WRKSRC_SUBDIR=	src
 
 USES=		imake
 USE_MOTIF=	yes
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xmu xp xt xpm
 NO_INSTALL_MANPAGES=	yes
 
