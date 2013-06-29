@@ -39,7 +39,4 @@ libdata/pkgconfig/zbar.pc
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrmtry share/zbar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry lib/%%PYTHON_VERSION%%
-@dirrmtry lib/pkgconfig
 @dirrm include/zbar
