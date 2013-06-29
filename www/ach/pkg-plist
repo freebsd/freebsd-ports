@@ -1,5 +1,6 @@
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README
+%%WWWDIR%%/RELEASE NOTES
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/action.php
 %%WWWDIR%%/add_comment_action.php
@@ -111,6 +112,9 @@
 %%WWWDIR%%/images/icons/zoom.png
 %%WWWDIR%%/images/icons/zoom_in.png
 %%WWWDIR%%/images/icons/zoom_out.png
+%%WWWDIR%%/images/icons/bullet_add.png
+%%WWWDIR%%/images/icons/help_red.png
+%%WWWDIR%%/images/icons/lock.png
 %%WWWDIR%%/images/monkey.jpg
 %%WWWDIR%%/images/no_photo.gif
 %%WWWDIR%%/images/shadow-grid.gif
