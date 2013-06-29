@@ -7,3 +7,7 @@ lib/softhsm/libsofthsm.so
 etc/softhsm.conf.sample
 @exec if [ ! -f %D/etc/softhsm.conf ]; then cp %D/etc/softhsm.conf.sample %D/etc/softhsm.conf; fi
 @dirrm lib/softhsm
+@exec install -d -o root -g wheel -m 700 %D/var/lib/softhsm
+@dirrm var/lib/softhsm
+@dirrmtry var/lib
+@dirrmtry var
