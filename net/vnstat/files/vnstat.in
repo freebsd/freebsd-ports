@@ -24,7 +24,7 @@ vnstat_flags=${vnstat_flags-"-d -p ${vnstat_pidfile} --config %%PREFIX%%/etc/vns
 vnstat_user=${vnstat_user-"%%USERS%%"}
 vnstat_group=${vnstat_group-"%%GROUPS%%"}
 
-command="%%PREFIX%%/bin/vnstatd"
+command="%%PREFIX%%/sbin/vnstatd"
 command_args="${vnstat_flags}"
 pidfile="${vnstat_pidfile}"
 
