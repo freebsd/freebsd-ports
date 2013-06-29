@@ -1760,6 +1760,7 @@
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jwt
+    SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
