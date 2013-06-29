@@ -11,7 +11,6 @@ MAINTAINER=	alexander.gromnitsky@gmail.com
 COMMENT=	X11 pixel color grabber
 
 USES=		imake
-USE_IMAKE=	yes
 USE_XORG=	x11
 
 .include <bsd.port.options.mk>
