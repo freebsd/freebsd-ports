@@ -146,6 +146,7 @@
     SUBDIR += rbllookup-ng
     SUBDIR += rubygem-dnsruby
     SUBDIR += rubygem-net-dns
+    SUBDIR += rubygem-public_suffix
     SUBDIR += rubygem-public_suffix_service
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge

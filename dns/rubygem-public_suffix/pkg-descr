@@ -1,0 +1,4 @@
+PublicSuffix can parse and decompose a domain name into top level domain,
+domain and subdomains.
+
+WWW: http://www.simonecarletti.com/code/publicsuffix
