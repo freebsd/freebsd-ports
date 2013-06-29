@@ -345,9 +345,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  this is for users, not for port maintainers.  This
 #				  should not be used in Makefile.
 ##
-# USE_IMAKE		- If set, this port uses imake.
-# XMKMF			- Set to path of `xmkmf' if not in $PATH
-#				  Default: xmkmf -a
 # USE_DISPLAY	- If set, this ports requires a (virtual) X11 environment
 #				  setup. If the environment variable DISPLAY Is not set,
 #				  then an extra build dependency on Xvfb is added. Further,
@@ -645,7 +642,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  "maybe".  "yes" means manpages are installed
 #				  compressed; "no" means they are not; "maybe" means
 #				  it changes depending on the value of NO_MANCOMPRESS.
-#				  Default: "yes" if USE_IMAKE is set and NO_INSTALL_MANPAGES
+#				  Default: "yes" if USES=imake is set and NO_INSTALL_MANPAGES
 #				  is not set, and "no" otherwise.
 #
 # Set the following to specify all .info files your port installs.
@@ -1503,10 +1500,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
-
-.if defined(USE_IMAKE)
-USES+=	imake
-.endif
 
 # Loading features
 .for f in ${USES}
