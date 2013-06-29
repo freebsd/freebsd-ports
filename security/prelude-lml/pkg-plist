@@ -79,4 +79,6 @@ lib/prelude-lml/pcre.so
 @dirrm include/prelude-lml
 @dirrm etc/prelude-lml/ruleset
 @dirrmtry etc/prelude-lml
+@exec install -d -o root -g wheel -m 700 /var/spool/prelude-lml
+@unexec rmdir /var/spool/prelude-lml 2>/dev/null || true
 @unexec echo "If you are permanently removing this port, you should remove ${PKG_PREFIX}/etc/prelude-lml and /var/spool/prelude-lml directories to clean up any configuration and logfile metadata files left." | fmt
