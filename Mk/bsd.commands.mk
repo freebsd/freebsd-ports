@@ -98,6 +98,7 @@ UNZIP_CMD?=	${LOCALBASE}/bin/unzip
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
 XMKMF?=		${LOCALBASE}/bin/xmkmf -a
+YACC?=		/usr/bin/yacc
 
 XZ?=	-Mmax
 .if exists(/usr/bin/xz)
