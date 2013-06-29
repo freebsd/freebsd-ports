@@ -12,7 +12,6 @@ MAINTAINER=	candy@kgc.co.jp
 COMMENT=	Popup style message communication tool for X11
 
 USES=		imake
-USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xipmsg.1
 MANCOMPRESSED=	yes
