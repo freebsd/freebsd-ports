@@ -1,12 +1,8 @@
-# New ports collection makefile for: pwd_unmkdb
-# Date created:			20 July 2003
-# Whom:				Matthew Fuller <fullermd@over-yonder.net>
-#
+# Created by: Matthew Fuller <fullermd@over-yonder.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pwd_unmkdb
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/pwd_unmkdb/ \
 		http://distfiles.over-yonder.net/pwd_unmkdb/
