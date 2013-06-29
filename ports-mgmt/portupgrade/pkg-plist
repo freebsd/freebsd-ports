@@ -9,6 +9,7 @@ sbin/pkg_which
 sbin/pkgdb
 sbin/pkgdu
 sbin/portcvsweb
+sbin/portsvnweb
 sbin/portinstall
 sbin/ports_glob
 sbin/portsclean
