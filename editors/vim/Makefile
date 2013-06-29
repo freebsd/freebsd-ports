@@ -1,4 +1,6 @@
-# Created by:  David O'Brien <obrien@cs.ucdavis.edu>
+# ex:ts=8
+# Created by:	David O'Brien <obrien@cs.ucdavis.edu>
+# Created:	Sat June 29, 1996
 # $FreeBSD$
 
 PORTNAME?=	vim
@@ -36,23 +38,19 @@ COMMENT?=	Vi "workalike", with many additional features
 
 SLAVEDIRS=	editors/vim-lite
 
-.if !defined(LITE)
-OPTIONS_DEFINE=	PERL PYTHON TCL LUA CSCOPE EXUBERANT_CTAGS \
-		XTERM_SAVE RUBY NLS X11
-OPTIONS_RADIO=	UI
-OPTIONS_RADIO_UI=	ATHENA GTK2 GNOME MOTIF
-
-UI_DESC=	Graphical toolkit to use
-ATHENA_DESC=	Athena GUI toolkit
-XTERM_SAVE_DESC=	Restore xterm screen after exit
-CSCOPE_DESC=	cscope support
-EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
-.if defined(PACKAGE_BUILDING)
+.if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS) || !defined(LITE) && defined(PACKAGE_BUILDING)
+.include "${.CURDIR}/../vim/options"
+. if !defined(LITE) && defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	CSCOPE EXUBERANT_CTAGS PERL PYTHON RUBY \
 			TCL LUA X11 GTK2
-.endif
-.endif
+. endif
 .include <bsd.port.options.mk>
+.else
+VIM_PORT_SCRIPT_LANGS?=	LUA PERL PYTHON RUBY TCL
+VIM_PORT_OPTIONS=	CSCOPE DOCS EXAMPLES EXUBERANT_CTAGS \
+			${VIM_PORT_SCRIPT_LANGS}
+PORT_OPTIONS?=	${VIM_PORT_OPTIONS}
+.endif
 
 CONFLICTS=	vim6* vim*-gnome libsysinfo
 .if defined(LITE)
@@ -139,7 +137,6 @@ CTAGS_CMD=	exctags -R .
 .else
 CTAGS_CMD=	${FIND} . -type f \\|${XARGS} ctags
 .endif
-
 
 .if ${PORT_OPTIONS:MX11}
 CONF_OPT_GUI="--enable-gui=no --with-x"
@@ -235,6 +232,9 @@ post-install:
 	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-share-vim
 	cd ${WRKDIR} ; ex < ex.script
+
+show-options:
+	@${MAKE} -DWITH_OPTIONS showconfig
 
 .if defined(ONT_CHECKSUM)
 checksum:
