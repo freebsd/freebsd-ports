@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.10.5
-PORTREVISION=	1
+PORTVERSION=	2.4.10.6
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
@@ -41,6 +40,7 @@ MAN1=		pkg_deinstall.1 \
 MAN5=		pkgtools.conf.5
 MLINKS=		pkgdb.1 pkg_which.1 \
 		portupgrade.1 portinstall.1 \
+		portcvsweb.1 portsvnweb.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
 
