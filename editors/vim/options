@@ -1,0 +1,24 @@
+OPTIONS_DEFINE=	\
+		PERL \
+		PYTHON \
+		RUBY \
+		TCL \
+		LUA \
+		CSCOPE \
+		EXUBERANT_CTAGS \
+		XTERM_SAVE \
+		NLS \
+		X11
+OPTIONS_RADIO=	\
+		UI
+OPTIONS_RADIO_UI=\
+		ATHENA \
+		GTK2 \
+		GNOME \
+		MOTIF
+
+CSCOPE_DESC=		cscope support
+EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
+ATHENA_DESC=		Athena GUI toolkit
+XTERM_SAVE_DESC=	Restore xterm screen after exit
+UI_DESC=		Graphical toolkit to use
