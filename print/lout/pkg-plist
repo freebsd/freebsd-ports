@@ -118,7 +118,6 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/slides/all
 %%PORTDOCS%%%%DOCSDIR%%/slides/mydefs
 %%PORTDOCS%%%%DOCSDIR%%/slides/outfile.ps
-%%PORTDOCS%%%%DOCSDIR%%/user/.README.swp
 %%PORTDOCS%%%%DOCSDIR%%/user/README
 %%PORTDOCS%%%%DOCSDIR%%/user/all
 %%PORTDOCS%%%%DOCSDIR%%/user/ap_byp
@@ -585,6 +584,12 @@ bin/prg2lout
 %%DATADIR%%/include/tblf
 %%DATADIR%%/include/ts
 %%DATADIR%%/include/xrgb
+%%DATADIR%%/include/tclf
+%%DATADIR%%/include/tcl
+%%DATADIR%%/include/old_graphf
+%%DATADIR%%/include/old_graph
+%%DATADIR%%/include/javascriptf
+%%DATADIR%%/include/javascript
 %%DATADIR%%/locale/.place_holder
 %%DATADIR%%/maps/00README
 %%DATADIR%%/maps/Ding.LCM
