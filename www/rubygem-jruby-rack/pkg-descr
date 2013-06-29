@@ -1,0 +1,4 @@
+JRuby-Rack is a combined Java and Ruby library that adapts the Java Servlet API
+to Rack.
+
+WWW: http://jruby.org/
