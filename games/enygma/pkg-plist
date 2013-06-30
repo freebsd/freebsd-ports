@@ -17,3 +17,4 @@ bin/enygma
 @exec chgrp games %D/var/enygma
 @exec chmod 2770 %D/var/enygma
 @dirrm var/enygma
+@dirrmtry var
