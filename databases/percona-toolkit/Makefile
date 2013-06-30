@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	percona-toolkit
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/percona-toolkit/${PORTVERSION}/
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 PERL_CONFIGURE=	yes
 
 MAN1=	percona-toolkit.1 \
+	pt-agent.1 \
 	pt-align.1 \
 	pt-archiver.1 \
 	pt-config-diff.1 \
