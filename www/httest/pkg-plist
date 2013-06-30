@@ -1,0 +1,8 @@
+bin/htntlm
+bin/htproxy
+bin/htremote
+bin/httest
+lib/libhello.a
+lib/libhello.la
+lib/libhello.so
+lib/libhello.so.0
