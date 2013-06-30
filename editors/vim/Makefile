@@ -7,10 +7,15 @@ PORTNAME?=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
+#
+#		! DO NOT increase PATCHLEVEL to a patch listed in BADPATCHES.
+#		! Doing so is dis-genuine.  It implies we're at a level we are
+#		! not.  The "PATCHLEVEL" patch needs to apply before bumping
+#		! PATCHLEVEL to that level.
 PATCHLEVEL=	1014
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -20,14 +25,14 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434 487 491 527 569 578 579 580 581 583 584 \
-		603 611 629 640 650 654 655 656 657 658 659 660 670 671 672 674 683 684 688 693 694 709 711 748 \
-		749 750 751 769 771 780 786 791 793 796 798 803 805 808 810 816 817 819 824 825 827 829 831 \
-		838 853 861 873 881 887 890 893 895 896 897 898 904 906 907 908 909 910 911 914 922 924 \
+BADPATCHES=	225 235 246 247 252 253 336 386 387 400 434 487 491 527 569 578 579 580 581 583 584 \
+		611 640 650 654 655 656 657 658 659 660 670 671 672 683 684 688 711 748 \
+		749 751 780 786 791 793 796 798 803 808 810 816 817 819 825 827 831 \
+		838 861 873 881 887 890 893 895 896 898 904 906 907 908 909 910 911 914 922 924 \
 		925 926 928 929 932 937 938 939 940 941 942 943 945 947 948 949 950 951 952 954 955 956 \
 		957 958 959 960 961 962 963 964 965 966 967 969 970 973 975 976 977 978 979 980 981 982 \
 		983 986 987 988 989 990 991 992 993 994 995 996 997 998 999 1001 1002 1003 1004 1005 1006 \
-		1007 1008 1009 1010 1011 1012 1013 1014
+		1008 1009 1010 1011 1012 1013 1014
 
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.3.${p}}
@@ -176,6 +181,9 @@ USES+=	iconv
 .endif
 
 
+pre-patch:
+	@${REINPLACE_CMD} -e 's/newwin/new_wp/g' ${WRKSRC}/window.c
+
 post-patch:
 	@(${FIND} ${WRKSRC}/../runtime/ -name menu\*.vim -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's,ctags -R \.,${CTAGS_CMD},g')
@@ -184,6 +192,7 @@ post-patch:
 .endif
 
 pre-configure:
+	@${CP} -pv ${WRKSRC}/config.mk.dist ${WRKSRC}/auto/config.mk
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
 	@${REINPLACE_CMD} -e ' \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \

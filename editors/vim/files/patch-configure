@@ -9,7 +9,7 @@
      LUA_SRC="if_lua.c"
 @@ -4725,3 +4726,4 @@ $as_echo "no" >&6; }
        LUA_LIBS=""
--      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua${vi_cv_version_lua}.so$LUA_SONAME\\\" $LUA_CFLAGS"
+-      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"${vi_cv_dll_name_lua}\\\" $LUA_CFLAGS"
 +      vi_cv_version_lua=${LUA_VER}
 +      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua-${vi_cv_version_lua}.so.$LUA_VER_SH\\\" $LUA_CFLAGS"
      fi
