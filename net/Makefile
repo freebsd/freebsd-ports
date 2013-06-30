@@ -1049,6 +1049,7 @@
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
+    SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-rightflexiscale
