@@ -829,5 +829,3 @@ share/thumbnailers/gwyddion.thumbnailer
 @dirrm include/gwyddion/libdraw
 @dirrm include/gwyddion/app
 @dirrm include/gwyddion
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

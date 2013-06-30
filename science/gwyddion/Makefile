@@ -20,8 +20,8 @@ OPTIONS_DEFAULT=PERL PYTHON UNIQUE
 UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
-USES=		pathfix gettext
-USE_GNOME=	desktopfileutils gconf2 gtk20 libxml2
+USES=		desktop-file-utils gettext pathfix shared-mime-info
+USE_GNOME=	gconf2 gtk20 libxml2
 USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
