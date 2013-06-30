@@ -2,8 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	net-p2p finance
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~swills/ \
+		GH
 
 MAINTAINER=	robbak@robbak.com
 COMMENT=	Virtual Peer-to-Peer Currency Client
@@ -20,7 +23,7 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitcoin
 GH_PROJECT=	bitcoin
-GH_COMMIT=	94933c3
+GH_COMMIT=	6a0ba5c
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_GMAKE=	yes
