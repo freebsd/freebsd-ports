@@ -1,8 +1,0 @@
-===============================================================================
-To enable your new dictionary add to your
-%%LOCALBASE%%/etc/dictd/conf the lines
-database romdict { data "%%PREFIX%%/lib/dict/eng-rom.dict.dz"
-		   index "%%PREFIX%%/lib/dict/eng-rom.index" }
-and run:
-%%LOCALBASE%%/etc/rc.d/dictd.sh restart
-===============================================================================

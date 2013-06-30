@@ -4401,3 +4401,8 @@ graphics/py-graphillion|math/py-graphillion|2013-06-22|Correct category assignme
 net-im/mikutter003||2013-06-23|Obsolete: Use net-im/mikutter instead of this
 www/rubygem-addressable22||2013-06-23|Removed
 textproc/freegrep||2013-06-27|Has expired: included in base
+www/siteatschool||2013-06-30|Has expired: Unmaintained upstream
+textproc/romdict||2013-06-30|Has expired: Upstream the project seems dead for years
+www/dillo-i18n||2013-06-30|Has expired: dillo1 is no longer actively maintained. Please consider using www/dillo2 which has full UTF-8 support
+www/dillo||2013-06-30|Has expired: dillo1 is no longer actively maintained. Please consider using www/dillo2 instead
+comms/qfaxreader||2013-06-30|Has expired: No activity upstream since 2006; uses QT3
