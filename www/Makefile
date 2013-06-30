@@ -1629,6 +1629,7 @@
     SUBDIR += py-plonetheme.sunburst
     SUBDIR += py-poster
     SUBDIR += py-postmarkup
+    SUBDIR += py-praw
     SUBDIR += py-prewikka
     SUBDIR += py-py-restclient
     SUBDIR += py-pylons
