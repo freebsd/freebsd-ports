@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitest
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
