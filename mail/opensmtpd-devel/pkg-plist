@@ -1,0 +1,24 @@
+bin/mailq
+bin/newaliases
+etc/mail/smtpd.conf.sample
+libexec/mail.local
+libexec/opensmtpd/makemap
+libexec/opensmtpd/backend-queue-null
+libexec/opensmtpd/backend-queue-ram
+libexec/opensmtpd/backend-queue-stub
+libexec/opensmtpd/backend-table-stub
+%%MYSQL%%libexec/opensmtpd/backend-table-mysql
+%%SQLITE%%libexec/opensmtpd/backend-table-sqlite
+%%LDAP%%libexec/opensmtpd/backend-table-ldap
+%%PGSQL%%libexec/opensmtpd/backend-table-postgres
+libexec/opensmtpd/backend-scheduler-ram
+libexec/opensmtpd/backend-scheduler-stub
+libexec/opensmtpd/filter-dnsbl
+libexec/opensmtpd/filter-monkey
+libexec/opensmtpd/filter-stub
+libexec/opensmtpd/filter-trace
+sbin/makemap
+sbin/smtpctl
+sbin/smtpd
+@dirrm libexec/opensmtpd
+@dirrmtry etc/mail
