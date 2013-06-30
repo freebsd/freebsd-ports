@@ -1251,7 +1251,6 @@
     SUBDIR += ro-hyphen
     SUBDIR += ro-mythes
     SUBDIR += roap
-    SUBDIR += romdict
     SUBDIR += rot
     SUBDIR += rotix
     SUBDIR += rss2html

@@ -134,8 +134,6 @@
     SUBDIR += dfileserver
     SUBDIR += dhttpd
     SUBDIR += diamanda
-    SUBDIR += dillo
-    SUBDIR += dillo-i18n
     SUBDIR += dillo2
     SUBDIR += docebo
     SUBDIR += dojo
@@ -1843,7 +1841,6 @@
     SUBDIR += shttpd
     SUBDIR += simplog
     SUBDIR += sit
-    SUBDIR += siteatschool
     SUBDIR += sitebar
     SUBDIR += sitecopy
     SUBDIR += siteframe

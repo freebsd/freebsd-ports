@@ -1,7 +1,0 @@
-bin/qfaxreader
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-@dirrm %%DOCSDIR%%
