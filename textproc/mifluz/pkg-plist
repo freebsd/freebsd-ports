@@ -98,3 +98,4 @@ lib/libmifluz.so.0
 @exec mkdir -p %D/var/cache/mifluz
 @dirrm var/cache/mifluz
 @dirrm var/cache
+@dirrmtry var
