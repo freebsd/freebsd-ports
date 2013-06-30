@@ -1,0 +1,10 @@
+OleFileIO_PL is a Python module to read Microsoft OLE2 files (also called
+Structured Storage, Compound File Binary Format or Compound Document File
+Format), such as Microsoft Office documents, Image Composer and FlashPix
+files, Outlook messages, ...
+This is an improved version of the OleFileIO module from PIL, the excellent
+Python Imaging Library, created and maintained by Fredrik Lundh.  The API is
+still compatible with PIL, but the internal implementation has been improved
+significantly, with new features, bugfixes and a more robust design.
+
+WWW: http://www.decalage.info/python/olefileio
