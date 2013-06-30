@@ -1,13 +1,9 @@
-# New ports collection makefile for:	eclipse-pydev
-# Date created:		2007-11-16
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pydev
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.7.5
+PORTREVISION=	0
 CATEGORIES=	java devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/PyDev%20${PORTVERSION}/
 PKGNAMEPREFIX=	eclipse-
@@ -34,7 +30,7 @@ RUN_DEPENDS+=	jython:${PORTSDIR}/lang/jython
 USE_PYTHON=	yes
 USE_ZIP=	yes
 
-DISTDATE=	2012062818
+DISTDATE=	2013052819
 
 SUB_FILES=	pkg-install
 SUB_LIST=	BUNDLES_INFO=${BUNDLES_INFO} PLUGINDIR=${PLUGINDIR}
