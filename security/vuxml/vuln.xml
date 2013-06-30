@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1b93f6fe-e1c1-11e2-948d-6805ca0b3d42">
+    <topic>phpMyAdmin -- Global variable scope injection</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.0</ge><lt>4.0.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-7.php">
+	  <p>The import.php script was vulnerable to GLOBALS variable
+	  injection. Therefore, an attacker could manipulate any
+	  configuration parameter.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	  logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users from accessing the required
+	  form.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-7.php</url>
+      <cvename>CVE-2013-4729</cvename>
+    </references>
+    <dates>
+      <discovery>2013-06-30</discovery>
+      <entry>2013-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81da673e-dfe1-11e2-9389-08002798f6ff">
     <topic>apache-xml-security-c -- heap overflow during XPointer evaluation</topic>
     <affects>
