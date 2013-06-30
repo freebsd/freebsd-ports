@@ -276,6 +276,7 @@ libexec/logwatch/defaults/shared/removeservice
 sbin/logwatch.pl
 @exec mkdir -p %D/var/logwatch
 @dirrm var/logwatch
+@dirrmtry var
 @dirrm libexec/logwatch/defaults/shared
 @dirrm libexec/logwatch/defaults/services
 @dirrm libexec/logwatch/defaults/logfiles/yum
