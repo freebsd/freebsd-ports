@@ -23,7 +23,7 @@ MLINKS=		fasta.1 tfasta.1 fasta.1 lfasta.1 fasta.1 plfasta.1 \
 		fasta.1 fastx.1  fasta.1 tfastx.1 \
 		align.1 align0.1 lalign.1 plalign.1
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 do-extract:
 	@ ${RM} -rf ${WRKDIR}

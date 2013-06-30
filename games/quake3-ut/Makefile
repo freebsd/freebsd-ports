@@ -22,7 +22,7 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}
 
-PORT_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.options.mk>
