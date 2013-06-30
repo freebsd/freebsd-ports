@@ -2,16 +2,19 @@ bin/nomacs
 share/applications/nomacs.desktop
 %%DATADIR%%/translations/nomacs_als.qm
 %%DATADIR%%/translations/nomacs_az.qm
+%%DATADIR%%/translations/nomacs_cs.qm
 %%DATADIR%%/translations/nomacs_de.qm
 %%DATADIR%%/translations/nomacs_en.qm
 %%DATADIR%%/translations/nomacs_es.qm
+%%DATADIR%%/translations/nomacs_it.qm
 %%DATADIR%%/translations/nomacs_pl.qm
+%%DATADIR%%/translations/nomacs_pt.qm
 %%DATADIR%%/translations/nomacs_ru.qm
+%%DATADIR%%/translations/nomacs_sl.qm
 %%DATADIR%%/translations/nomacs_sk.qm
+%%DATADIR%%/translations/nomacs_sr.qm
 %%DATADIR%%/translations/nomacs_zh.qm
 share/pixmaps/nomacs.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
