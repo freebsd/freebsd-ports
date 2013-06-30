@@ -317,6 +317,7 @@
     SUBDIR += opendkim
     SUBDIR += opendmarc
     SUBDIR += opensmtpd
+    SUBDIR += opensmtpd-devel
     SUBDIR += openwebmail
     SUBDIR += osbf-lua
     SUBDIR += ovs

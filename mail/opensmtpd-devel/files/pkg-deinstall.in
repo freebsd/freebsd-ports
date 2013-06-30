@@ -1,0 +1,14 @@
+#!/bin/sh
+
+PKGNAME=$1
+TARGET=$2
+
+PREFIX=$(echo %%PREFIX%% |sed -e 's,/,\\/,g')
+
+if [ "$TARGET" = POST-DEINSTALL ]; then
+	sed -e '/[[:space:]]'$PREFIX'\/sbin\/smtpctl/d' \
+	    -e '/[[:space:]]'$PREFIX'\/libexec\/opensmtpd\/makemap/d' \
+	    -e 's/^### smtpd: //g' -i '' /etc/mail/mailer.conf
+fi
+
+exit 0

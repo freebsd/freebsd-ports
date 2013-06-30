@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: smtpd mail
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable smtpd:
+# smtpd_enable (bool):        Set it to "YES" to enable postfix.
+#                             Default is "NO".
+# smtpd_config (string):      Path to OpenSMTPD configuration file.
+#                             Default is "%%PREFIX%%/etc/mail/smtpd.conf"
+# smtpd_flags (string):       Additional flags to be passed to smtpd.
+#                             Default is "".
+#
+#
+
+. /etc/rc.subr
+
+name="smtpd"
+rcvar=smtpd_enable
+
+load_rc_config $name
+
+: ${smtpd_enable:="NO"}
+: ${smtpd_config:="%%PREFIX%%/etc/mail/smtpd.conf"}
+: ${smtpd_procname:="%%PREFIX%%/sbin/smtpd"}
+: ${smtpd_flags:=""}
+
+command=${smtpd_procname}
+
+procname=${smtpd_procname}
+
+run_rc_command "$1"
