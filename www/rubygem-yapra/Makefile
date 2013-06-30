@@ -1,21 +1,17 @@
-# New ports collection makefile for:	rubygem-yapra
-# Date created:		2008-07-30
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	yapra
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Yet Another Pragger implementation
 
-RUN_DEPENDS=	rubygem-mechanize>=0.7.6:${PORTSDIR}/www/rubygem-mechanize
-
 LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-mechanize>0:${PORTSDIR}/www/rubygem-mechanize
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
