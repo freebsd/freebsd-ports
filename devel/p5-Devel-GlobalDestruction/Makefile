@@ -3,6 +3,7 @@
 
 PORTNAME=	Devel-GlobalDestruction
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,9 +24,8 @@ MAN3=		Devel::GlobalDestruction.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
-PLIST_SUB+=	PP="@comment " XS=""
-.else
-PLIST_SUB+=	PP="" XS="@comment "
+BUILD_DEPENDS+=	p5-Devel-GlobalDestruction-XS>0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction
+RUN_DEPENDS+=	p5-Devel-GlobalDestruction-XS>0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction
 .endif
 
 .include <bsd.port.post.mk>
