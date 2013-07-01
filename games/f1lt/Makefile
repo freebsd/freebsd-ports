@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	f1lt
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/jgh/games/${PORTNAME}/
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	DOCS
 
 USE_QT4=	gui network moc_build qmake_build rcc_build uic_build
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=	${WRKDIR}/${DISTNAME:S|-src||}
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
