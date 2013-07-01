@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -128,8 +128,8 @@ LDFLAGS+=	-lstdc++
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,const gint,gint,' \
-		${WRKSRC}/src/external/osm-gps-map/src/osm-gps-map-image.*
+	@${REINPLACE_CMD} -e '/stats_/s,uint64_t,unsigned long,' \
+		${WRKSRC}/src/common/mipmap_cache.h
 # Do not install useless (to end-user) documentation; adjust manpages path
 	@${REINPLACE_CMD} -e '/DOC_FILES/d ; s,share/man/man1,man/man1,' \
 		${WRKSRC}/doc/CMakeLists.txt
