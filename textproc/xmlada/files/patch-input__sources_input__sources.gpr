@@ -1,11 +1,9 @@
-$NetBSD: patch-ae,v 1.2 2012/07/08 20:03:08 marino Exp $
-
---- input_sources/input_sources.gpr.orig	2011-10-08 19:18:37.000000000 +0000
+--- input_sources/input_sources.gpr.orig	2013-06-30 18:36:28.000000000 +0000
 +++ input_sources/input_sources.gpr
-@@ -8,6 +8,7 @@ project Input_Sources is
-    for Object_Dir  use "obj/" & Project'Library_Kind;
+@@ -9,6 +9,7 @@ project Input_Sources is
     for Library_Dir use "lib/" & Project'Library_Kind;
-    for Library_Version use "lib" & Project'Library_Name & ".so." & Shared.Version;
+    for Library_Version use "lib" & Project'Library_Name
+       & Shared.So_Ext & "." & Shared.Version;
 +   for Library_Options use ("-R", "-Wl,-R,@ADDITIONAL_RPATH@");
  
     package Builder  renames Shared.Builder;
