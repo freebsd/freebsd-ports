@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fio
-PORTVERSION=	2.0.15
+PORTVERSION=	2.1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
