@@ -28,7 +28,11 @@ MAKE_JOBS_SAFE=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
-OPTIONS_DEFINE=	PYTHON
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--mandir=${MANPREFIX}/man \
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+
+OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
 .include <bsd.port.options.mk>
@@ -38,13 +42,9 @@ PLIST_FILES=		include/tevent.h \
 			lib/libtevent.so.0 \
 			%%PKGCONFIGDIR%%/tevent.pc
 
-#			include/tevent_internal.h \
-
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
-
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
 RUN_DEPENDS:=		${BUILD_DEPENDS}
@@ -100,11 +100,13 @@ do-build:
 			${FALSE}; \
 			fi)
 
+post-build:
+.if ${PORT_OPTIONS:MPYTHON}
+			${PYTHON_CMD} -m py_compile ${BUILD_WRKSRC}/tevent.py
+			${PYTHON_CMD} -O -m py_compile ${BUILD_WRKSRC}/tevent.py
+.endif
+
 do-install:
 			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
-.if ${PORT_OPTIONS:MPYTHON}
-			${PYTHON_CMD} -m py_compile ${PYTHON_SITELIBDIR}/tevent.py
-			${PYTHON_CMD} -O -m py_compile ${PYTHON_SITELIBDIR}/tevent.py
-.endif
 
 .include <bsd.port.post.mk>
