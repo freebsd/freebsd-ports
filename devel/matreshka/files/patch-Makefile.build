@@ -1,0 +1,15 @@
+--- Makefile.build.orig	2013-03-26 10:11:24.640151000 +0000
++++ Makefile.build
+@@ -2,7 +2,11 @@ include Makefile.config
+ 
+ GPRBUILD_FLAGS = -p $(SMP_MFLAGS)
+ 
+-ALL_TARGETS = league xml fastcgi soap wsse wsdl2ada sql amf dd uml mofext ocl utp
++ALL_TARGETS = league xml fastcgi soap wsse wsdl2ada sql 
++
++ifdef WANT_AMF
++ALL_TARGETS += amf dd uml mofext ocl utp
++endif
+ 
+ ifdef HAS_FIREBIRD
+ ALL_TARGETS += firebird
