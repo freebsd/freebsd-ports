@@ -1,0 +1,36 @@
+--- Makefile.orig	2013-06-26 21:03:13.000000000 +0000
++++ Makefile
+@@ -154,21 +154,22 @@ $(OUTPUT_DIR)/proof/libsparkcrypto.idx:
+ install: $(INSTALL_DEPS)
+ 
+ install_files: build
+-	install -d -m 755 $(DESTDIR)/adalib $(DESTDIR)/adainclude $(DESTDIR)/sharedinclude
+-	install -p -m 755 $(OUTPUT_DIR)/build/adalib/libsparkcrypto.a $(DESTDIR)/adalib/libsparkcrypto.a
+-	install -p -m 644 build/libsparkcrypto.gpr $(DESTDIR)/libsparkcrypto.gpr
+-	install -p -m 644 src/shared/$(ENDIANESS)/*.ad? $(DESTDIR)/sharedinclude/
+-	install -p -m 644 src/shared/generic/*.ad? $(DESTDIR)/sharedinclude/
+-	install -p -m 644 src/ada/generic/*.ad? $(DESTDIR)/adainclude/
+-	install -p -m 644 src/ada/$(IO)/*.ad? $(DESTDIR)/adainclude/
++	install -d -m 755 $(DESTDIR)/lib/libsparkcrypto $(DESTDIR)/include/libsparkcrypto/adainclude
++	install -d -m 755 $(DESTDIR)/lib/gnat $(DESTDIR)/include/libsparkcrypto/sharedinclude
++	install -p -m 755 $(OUTPUT_DIR)/build/adalib/libsparkcrypto.a $(DESTDIR)/lib/libsparkcrypto/libsparkcrypto.a
++	install -p -m 644 build/libsparkcrypto.gpr $(DESTDIR)/lib/gnat/libsparkcrypto.gpr
++	install -p -m 644 src/shared/$(ENDIANESS)/*.ad? $(DESTDIR)/include/libsparkcrypto/sharedinclude/
++	install -p -m 644 src/shared/generic/*.ad? $(DESTDIR)/include/libsparkcrypto/sharedinclude/
++	install -p -m 644 src/ada/generic/*.ad? $(DESTDIR)/include/libsparkcrypto/adainclude/
++	install -p -m 644 src/ada/$(IO)/*.ad? $(DESTDIR)/include/libsparkcrypto/adainclude/
+ ifneq ($(strip $(ARCH_FILES)),)
+-	install -p -m 644 $(ARCH_FILES) $(DESTDIR)/adainclude/
++	install -p -m 644 $(ARCH_FILES) $(DESTDIR)/include/libsparkcrypto/adainclude/
+ endif
+-	install -p -m 444 $(OUTPUT_DIR)/build/adalib/*.ali $(DESTDIR)/adalib/
++	install -p -m 444 $(OUTPUT_DIR)/build/adalib/*.ali $(DESTDIR)/lib/libsparkcrypto/
+ 
+ install_proof: install_files proof
+-	install -D -p -m 444 $(OUTPUT_DIR)/proof/libsparkcrypto.sum $(DESTDIR)/libsparkcrypto.sum
+-	(cd $(OUTPUT_DIR)/empty && sparkmake -include=*\.ads -dir=$(DESTDIR)/sharedinclude -nometa -index=$(DESTDIR)/libsparkcrypto.idx)
++	install -D -p -m 444 $(OUTPUT_DIR)/proof/libsparkcrypto.sum $(DESTDIR)/include/libsparkcrypto/libsparkcrypto.sum
++	(cd $(OUTPUT_DIR)/empty && sparkmake -include=*\.ads -dir=$(DESTDIR)/include/libsparkcrypto/sharedinclude -nometa -index=$(DESTDIR)/include/libsparkcrypto/libsparkcrypto.idx)
+ 
+ install_local: DESTDIR = $(OUTPUT_DIR)/libsparkcrypto
+ install_local: install

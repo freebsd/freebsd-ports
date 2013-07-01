@@ -282,6 +282,7 @@
     SUBDIR += libpwstor
     SUBDIR += libsectok
     SUBDIR += libsodium
+    SUBDIR += libsparkcrypto
     SUBDIR += libssh
     SUBDIR += libssh2
     SUBDIR += libtasn1
