@@ -4412,5 +4412,5 @@ net/openldap23-client||2013-07-01|Has expired: Unmaintained by upstream
 www/py-django13||2013-07-01|Has expired: Unsupported version
 devel/libtifiles|devel/libtifiles2|2013-07-01|Has expired: Superseded by devel/libtifiles2
 comms/libticables|comms/libticables2|2013-07-01|Has expired: Superseded by comms/libticables2
-devel/libticalcs|devel/libticalcs2|2013-07-01|Has expired: Superseded by comms/libticalcs2
+devel/libticalcs|comms/libticalcs2|2013-07-01|Has expired: Superseded by comms/libticalcs2
 emulators/tiemu2|emulators/tiemu3|2013-07-01|Has expired: Superseded by emulators/tiemu3
