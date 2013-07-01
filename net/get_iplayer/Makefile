@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	2.82
-PORTREVISION=	1
+PORTVERSION=	2.83
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -34,7 +33,7 @@ DATADIR=	${WWWDIR}
 PORTDATA=	html plugins
 
 PORTDOCS=	CHANGELOG-get_iplayer.cgi.txt CHANGELOG.txt \
-		README-get_iplayer.cgi.txt README.txt web.sh
+		README-get_iplayer.cgi.txt README.md web.sh
 
 .include <bsd.port.options.mk>
 
