@@ -108,9 +108,11 @@ CONFIGURE_ARGS+=	--disable-dependency-tracking \
 CONFIGURE_ARGS+=	--disable-epm \
 			--disable-gnome-vfs \
 			--disable-gstreamer \
+			--disable-gtk3 \
 			--disable-kde \
 			--disable-kdeab \
 			--disable-linkoo \
+			--disable-mergelibs \
 			--disable-zenity \
 			--enable-cairo-canvas \
 			--enable-graphite \
@@ -176,12 +178,11 @@ MAN1=	libreoffice.1 \
 
 MANCOMPRESSED=	yes
 
-OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MERGELIBS MMEDIA PGSQL \
-		SDK SYSTRAY TEST WEBDAV
+OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
+		TEST WEBDAV
 OPTIONS_DEFAULT=CUPS GTK2
 
 JAVA_DESC=	Add java support (XML Filters, macros)
-MERGELIBS_DESC=	Enable linking of big merged library
 MMEDIA_DESC=	Enable multimedia backend for impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 SDK_DESC=	Build with SDK
@@ -224,15 +225,6 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=	--enable-gtk
 .else
 CONFIGURE_ARGS+=	--disable-gtk
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-BROKEN=		requires GTK+ 3.2 and later
-USE_GNOME+=	gtk30 desktopfileutils
-INSTALLS_ICONS=	yes
-CONFIGURE_ARGS+=	--enable-gtk3
-.else
-CONFIGURE_ARGS+=	--disable-gtk3
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
@@ -289,13 +281,6 @@ CONFIGURE_ENV+=		QT4DIR="${QT_PREFIX}" QT4LIB="${QT_LIBDIR}" QT4INC="${QT_INCDIR
 CONFIGURE_ARGS+=	--enable-kde4
 .else
 CONFIGURE_ARGS+=	--disable-kde4
-.endif
-
-.if ${PORT_OPTIONS:MMERGELIBS}
-BROKEN=		mergelibs causes runtime problems
-CONFIGURE_ARGS+=	--enable-mergelibs
-.else
-CONFIGURE_ARGS+=	--disable-mergelibs
 .endif
 
 .if ${PORT_OPTIONS:MMMEDIA}
@@ -413,7 +398,7 @@ post-install:
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 .endfor
 
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK3}
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database >/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database >/dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
