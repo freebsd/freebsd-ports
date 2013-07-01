@@ -1,13 +1,8 @@
-# New ports collection makefile for:	scummvm
-# Date created:				Tue Sep  2 23:34:32 BST 2003
-# Whom:				Alex Trull <freebsd.alex@trull.org>
-#
+# Created by: Alex Trull <freebsd.alex@trull.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scummvm
-DISTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -45,8 +40,8 @@ ENGINEDATA=	drascula.dat \
 		lure.dat \
 		queen.tbl \
 		sky.cpt \
-		toon.dat \
-		teenagent.dat
+		teenagent.dat \
+		toon.dat
 
 DESKTOP_ENTRIES="ScummVM" \
 		"ScummVM - Run classic adventure games" \
@@ -59,10 +54,14 @@ PLIST_FILES=	bin/scummvm \
 		%%DATADIR%%/scummvm.svg \
 		%%DATADIR%%/scummmodern.zip \
 		%%DATADIR%%/translations.dat \
-		$(ENGINEDATA:S/^/%%DATADIR%%\/$$/)
+		$(ENGINEDATA:S/^/%%DATADIR%%\//)
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
 
 .if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
@@ -115,10 +114,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
