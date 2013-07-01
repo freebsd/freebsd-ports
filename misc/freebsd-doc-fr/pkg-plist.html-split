@@ -102,12 +102,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pam/ln-idp61431552.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-appl-prog.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-config.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-essentials.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-freebsd-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-further.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-module-prog.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-appl.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-conv.html
@@ -413,7 +413,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch12s04.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch12s05.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/index.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ln-idp61438592.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/pr01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/pr01s02.html
