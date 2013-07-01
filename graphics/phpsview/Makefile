@@ -19,6 +19,9 @@ PATCH_DIST_STRIP=       -p1
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Philips USB Cameras Utilities for NetBSD/FreeBSD
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 REALNAME=	pwc
 
 USE_BZIP2=	yes

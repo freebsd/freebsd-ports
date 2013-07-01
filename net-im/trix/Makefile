@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	pascalamsg@gmail.com
 COMMENT=	TriX is a chat compatible with 2.0 protocol of the Vypress Chat
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_PERL5=	yes

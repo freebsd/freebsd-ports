@@ -13,6 +13,9 @@ MASTER_SITES=	SF
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Packet examination / sniffer utility
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 MAN1=		ipex.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/ipex

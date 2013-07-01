@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dxi@mail.ru
 COMMENT=	A FreeBSD Driver for TUSB3410 uart-to-usb converter
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386
