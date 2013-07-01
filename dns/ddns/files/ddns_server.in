@@ -1,0 +1,29 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: ddns_server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable ddns_server:
+#
+# ddns_server_enable (bool):    Set it to "YES" to enable ddns server
+#                               Default is "NO".
+# ddns_server_conf (path):      Set full path to config file.
+#                               Default is "%%PREFIX%%/etc/ddns_server.conf".
+
+. /etc/rc.subr
+
+name=ddns_server
+rcvar=ddns_server_enable
+
+load_rc_config $name
+
+: ${ddns_server_enable:=NO}
+: ${ddns_server_conf="%%PREFIX%%/etc/ddns_server.conf"}
+
+command=%%PREFIX%%/sbin/ddns-server
+command_args="-d -c ${ddns_server_conf}"
+required_files=${ddns_server_conf}
+
+run_rc_command "$1"

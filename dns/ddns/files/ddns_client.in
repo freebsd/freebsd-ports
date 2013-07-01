@@ -1,0 +1,29 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: ddns_client
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable ddns_client:
+#
+# ddns_client_enable (bool):    Set it to "YES" to enable ddns client
+#                               Default is "NO".
+# ddns_client_conf (path):      Set full path to config file.
+#                               Default is "%%PREFIX%%/etc/ddns_client.conf".
+
+. /etc/rc.subr
+
+name=ddns_client
+rcvar=ddns_client_enable
+
+load_rc_config $name
+
+: ${ddns_client_enable:=NO}
+: ${ddns_client_conf="%%PREFIX%%/etc/ddns_client.conf"}
+
+command=%%PREFIX%%/sbin/ddns-client
+command_args="-d -c ${ddns_client_conf}"
+required_files=${ddns_client_conf}
+
+run_rc_command "$1"
