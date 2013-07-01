@@ -3475,6 +3475,7 @@
     SUBDIR += py-colorama
     SUBDIR += py-configobj
     SUBDIR += py-construct
+    SUBDIR += py-country
     SUBDIR += py-coverage
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
