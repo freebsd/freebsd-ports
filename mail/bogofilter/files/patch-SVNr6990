@@ -1,0 +1,14 @@
+--- src/bogotune.c	(Revision 6989)
++++ src/bogotune.c	(Revision 6990)
+@@ -1852,6 +1852,11 @@
+ 	if (ds_path == NULL)
+ 	    ds_path = get_directory(PR_ENV_HOME);
+ 
++	if (ds_path == NULL) {
++	    fprintf(stderr, "Cannot derive bogofilter directory from environment, aborting.\n");
++	    exit(EX_ERROR);
++	}
++
+ 	set_bogohome(ds_path);
+ 	bfp = bfpath_create(ds_path);
+ 
