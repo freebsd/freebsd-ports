@@ -1,9 +1,0 @@
---- docs/Makefile.in.orig	2011-10-08 21:18:36.000000000 +0200
-+++ docs/Makefile.in	2011-10-09 00:48:58.000000000 +0200
-@@ -1,5 +1,5 @@
- 
--FORMATS=${addprefix xml.,pdf html info txt}
-+FORMATS=${addprefix xml.,html info}
- 
- DVIPS= @DVIPS@
- MAKEINFO= @MAKEINFO@

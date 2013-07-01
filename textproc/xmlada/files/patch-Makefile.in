@@ -1,57 +1,63 @@
-$NetBSD: patch-aa,v 1.4 2011/12/03 07:30:48 marino Exp $
-
---- Makefile.in.orig	2011-10-08 19:19:00.000000000 +0000
+--- Makefile.in.orig	2013-06-30 18:36:28.000000000 +0000
 +++ Makefile.in
-@@ -52,10 +52,10 @@ MAKE_ARGS=-XMODE=${MODE} -XLIBRARY_TYPE=
- .PHONY: all obj clean install install_dirs build_library_type install_library_type
+@@ -83,72 +83,65 @@ run_test_valgrind: test
+ 	cd dom/test; valgrind --tool=memcheck --leak-check=full ./testxml -auto
  
- ifeq (${BUILDS_SHARED},yes)
--all: static relocatable
-+all: static relocatable docs
- install: install_static install_relocatable
- else
--all: static
-+all: static docs
- install: install_static
- endif
- 
-@@ -91,53 +91,50 @@ docs: force
+ docs: force
+-	-${MAKE} -e -C docs html latexpdf
++	-${MAKE} -e -C docs html
  
  # Rule for installing the modules
  %_inst: force
 -	${CP} $*/*.ad[bs]        ${includedir}/xmlada
--	cd $*; ls *.ad[bs] > ${libdir}/gnat/xmlada/xmlada_$*.lgpr
+-	cd $*; ls *.ad[bs] > ${prefix}/lib/gnat/xmlada/xmlada_$*.lgpr
 -	-cd ${xmllib}; ${CHMOD} ugo+w *.ali
 -	-${CP} $*/lib/${LIBRARY_TYPE}/*.ali   ${xmllib}
 -	${RM} ${libdir}/libxmlada_$**
 -	${RM} ${xmllib}libxmlada_$**
-+	${CP} $*/*.ad[bs]        ${DESTDIR}${includedir}/xmlada
-+	cd $*; ls *.ad[bs] > ${DESTDIR}${libdir}/gnat/xmlada/xmlada_$*.lgpr
++	${CP} $*/*.ad[bs] ${DESTDIR}${includedir}/xmlada
++	cd $*; ls *.ad[bs] > ${DESTDIR}${prefix}/lib/gnat/xmlada/xmlada_$*.lgpr
 +	-cd ${DESTDIR}${xmllib}; ${CHMOD} ugo+w *.ali
-+	-${CP} $*/lib/${LIBRARY_TYPE}/*.ali   ${DESTDIR}${xmllib}
++	-${CP} $*/lib/${LIBRARY_TYPE}/*.ali ${DESTDIR}${xmllib}
 +	${RM} ${DESTDIR}${libdir}/libxmlada_$**
 +	${RM} ${DESTDIR}${xmllib}libxmlada_$**
  ifeq (${LIBRARY_TYPE},static)
 -	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*.a ${xmllib}
-+	${INSTALL} -m 644 $*/lib/${LIBRARY_TYPE}/libxmlada_$*.a ${DESTDIR}${xmllib}
++	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*.a ${DESTDIR}${xmllib}
  else
- ifeq (${OS},Windows_NT)
--	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT} ${xmllib}
--	cd ${bindir}; ${CP} ${libdir}/xmlada/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT} libxmlada_$*.${LIBEXT}
-+	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT} ${DESTDIR}${xmllib}
-+	cd ${DESTDIR}${bindir}; ${CP} ${libdir}/xmlada/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT} libxmlada_$*.${LIBEXT}
- else
--	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT}.${VERSION} ${xmllib}
--	cd ${xmllib}; ${LN_S} libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}
--	cd ${xmllib}; ${LN_S} libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}.${basename ${VERSION}}
--	cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}.${basename ${VERSION}}
--	cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}.${VERSION}
-+	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT}.${VERSION} ${DESTDIR}${xmllib}
-+	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}
-+	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}.${basename ${VERSION}}
-+	cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}.${basename ${VERSION}}
-+	cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*.${LIBEXT}.${VERSION} libxmlada_$*.${LIBEXT}.${VERSION}
+-ifeq (${LIBEXT},.dll)
+-	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT} ${xmllib}
+-	cd ${bindir}; ${CP} ${libdir}/xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT} libxmlada_$*${LIBEXT}
+-else
+-	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} ${xmllib}
++	${INSTALL} $*/lib/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} ${DESTDIR}${xmllib}
+ 
+ 	@# prefix/lib/xmlada/relocatable/libxmlada.so -> libxmlada.so.4.4.0w
+-	cd ${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}
++	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}
+ 
+ 	@# prefix/lib/xmlada/relocatable/libxmlada.so.4.4 -> libxmlada.so.4.4.0w
+-	-cd ${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
++	-cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
+ 
+ 	@# prefix/lib/xmlada/relocatable/libxmlada.so.4 -> libxmlada.so.4.4.0w
+ ifneq (${basename ${basename ${VERSION}}},${basename ${VERSION}})
+-	cd ${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
++	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
+ 
+ 	@# prefix/lib/libxmlada.so.4 -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
+-	cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
++	cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
  endif
+ 
+ 	@# prefix/lib/libxmlada.so.4.4 -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
+-	-cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
++	-cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
+ 
+ 	@# prefix/lib/libxmlada.so.4.4.0w -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
+-	-cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${VERSION}
+-endif
++	-cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${VERSION}
  endif
 -	cd ${xmllib}; ${CHMOD} ugo-w *.ali
 +	cd ${DESTDIR}${xmllib}; ${CHMOD} ugo-w *.ali
@@ -59,13 +65,15 @@ $NetBSD: patch-aa,v 1.4 2011/12/03 07:30:48 marino Exp $
  install_dirs: force
 -	@${MKDIR} ${bindir}
 -	@${MKDIR} ${xmllib}
--	@${MKDIR} ${libdir}/gnat/xmlada
+-	@${MKDIR} ${prefix}/lib/gnat/xmlada
+-	@${MKDIR} ${libdir}
 -	@${MKDIR} ${datadir}/doc/xmlada
 -	@${MKDIR} ${includedir}/xmlada
 -	@${MKDIR} ${datadir}/gps/plug-ins/
 +	@${MKDIR} ${DESTDIR}${bindir}
 +	@${MKDIR} ${DESTDIR}${xmllib}
-+	@${MKDIR} ${DESTDIR}${libdir}/gnat/xmlada
++	@${MKDIR} ${DESTDIR}${prefix}/lib/gnat/xmlada
++	@${MKDIR} ${DESTDIR}${libdir}
 +	@${MKDIR} ${DESTDIR}${datadir}/doc/xmlada
 +	@${MKDIR} ${DESTDIR}${includedir}/xmlada
 +	@${MKDIR} ${DESTDIR}${datadir}/gps/plug-ins/
@@ -73,31 +81,28 @@ $NetBSD: patch-aa,v 1.4 2011/12/03 07:30:48 marino Exp $
  ## Do the installation for either shared or static, depending on
  ## $LIBRARY_TYPE
  install_library_type: install_dirs ${MODULE_INSTALL}
--	${INSTALL} distrib/xmlada_shared.gpr         ${libdir}/gnat
--	${INSTALL} distrib/xmlada.gpr                ${libdir}/gnat/
--	${INSTALL} distrib/xmlada_dom.gpr            ${libdir}/gnat/
--	${INSTALL} distrib/xmlada_sax.gpr            ${libdir}/gnat/
--	${INSTALL} distrib/xmlada_input.gpr          ${libdir}/gnat/
--	${INSTALL} distrib/xmlada_schema.gpr         ${libdir}/gnat/
--	${INSTALL} distrib/xmlada_unicode.gpr        ${libdir}/gnat/
+-	${INSTALL} distrib/xmlada_shared.gpr         ${prefix}/lib/gnat/
+-	${INSTALL} distrib/xmlada.gpr                ${prefix}/lib/gnat/
+-	${INSTALL} distrib/xmlada_dom.gpr            ${prefix}/lib/gnat/
+-	${INSTALL} distrib/xmlada_sax.gpr            ${prefix}/lib/gnat/
+-	${INSTALL} distrib/xmlada_input.gpr          ${prefix}/lib/gnat/
+-	${INSTALL} distrib/xmlada_schema.gpr         ${prefix}/lib/gnat/
+-	${INSTALL} distrib/xmlada_unicode.gpr        ${prefix}/lib/gnat/
 -	${INSTALL} xmlada-config  ${bindir}
--	-${INSTALL} docs/xml.ps   ${datadir}/doc/xmlada 2>/dev/null
--	-${INSTALL} docs/xml.pdf  ${datadir}/doc/xmlada
--	-${INSTALL} docs/xml.html ${datadir}/doc/xmlada
--	-${INSTALL} docs/xml.info ${datadir}/doc/xmlada
+-	-$(CP) -r docs/_build/html/* $(datadir)/doc/xmlada/ 2>/dev/null
+-	-$(CP) -r docs/_build/latex/XMLAda.pdf $(datadir)/doc/xmlada/ 2>/dev/null
 -	${CHMOD} +x ${bindir}/xmlada-config
 -	${INSTALL} distrib/xmlada_gps.py ${datadir}/gps/plug-ins/
-+	${INSTALL} -m 644 distrib/xmlada_shared.gpr  ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} -m 644 distrib/xmlada.gpr         ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} -m 644 distrib/xmlada_dom.gpr     ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} -m 644 distrib/xmlada_sax.gpr     ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} -m 644 distrib/xmlada_input.gpr   ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} -m 644 distrib/xmlada_schema.gpr  ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} -m 644 distrib/xmlada_unicode.gpr ${DESTDIR}${libdir}/gnat/
-+	${INSTALL} xmlada-config  ${DESTDIR}${bindir}
-+	${INSTALL} -m 644 docs/xml.html ${DESTDIR}${datadir}/doc/xmlada
-+	${INSTALL} -m 644 docs/xml.info ${DESTDIR}${datadir}/doc/xmlada
-+	${INSTALL} -m 644 distrib/xmlada_gps.py ${DESTDIR}${datadir}/gps/plug-ins/
++	${BSD_INSTALL_DATA} distrib/xmlada_shared.gpr  ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_DATA} distrib/xmlada.gpr         ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_DATA} distrib/xmlada_dom.gpr     ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_DATA} distrib/xmlada_sax.gpr     ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_DATA} distrib/xmlada_input.gpr   ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_DATA} distrib/xmlada_schema.gpr  ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_DATA} distrib/xmlada_unicode.gpr ${DESTDIR}${prefix}/lib/gnat/
++	${BSD_INSTALL_SCRIPT} xmlada-config  ${DESTDIR}${bindir}
++	-$(CP) -r docs/_build/html/* ${DESTDIR}$(datadir)/doc/xmlada/ 2>/dev/null
++	${BSD_INSTALL_DATA} distrib/xmlada_gps.py ${DESTDIR}${datadir}/gps/plug-ins/
  
  ## Do the installation for an explicit target
  install_static: 
