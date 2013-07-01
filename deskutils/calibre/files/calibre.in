@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: calibre
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable calibre_server:
+#
+# calibre_enable (bool):        Set it to "YES" to enable calibre
+#                               Default is "NO".
+# calibre_port (int):		port that calibre_server listens on
+#				Default is 8080
+# calibre_user (string):	user that calibre_server runs as
+#				Default is calibre
+# calibre_username (string):	username for calibre authentication
+#				Default is calibre
+# calibre_password (string):	If set then access is restricted
+#				default is unrestricted
+# calibre_url_prefix (string):  prefix to append to all URLs
+#				default is unset
+# calibre_library (string):	path to library folder to serve content from
+#
+#
+##########################################################
+
+. /etc/rc.subr
+
+name=calibre
+rcvar=calibre_enable
+
+load_rc_config $name
+
+: ${calibre_enable:=NO}
+: ${calibre_user:=calibre}
+: ${calibre_library:=/nonexistent}
+
+pidfile=/var/run/${name}/${name}.pid
+command=/usr/local/bin/calibre-server
+command_interpreter=python2.7
+required_dirs=${calibre_library}
+
+start_cmd=${name}_start
+
+start_precmd="install -d -o ${calibre_user} -m755 /var/run/${name}"
+
+calibre_start()
+{
+	if [ ! -z "${calibre_port}" ]; then
+		command_args="${command_args} --port=${calibre_port}"
+	fi
+	if [ ! -z "${calibre_username}" ]; then
+		command_args="${command_args} --username=${calibre_username}"
+	fi
+	if [ ! -z "${calibre_password}" ]; then
+		command_args="${command_args} --password=${calibre_password}"
+	fi
+	if [ ! -z "${calibre_url_prefix}" ]; then
+		command_args="${command_args} --url_prefx=${calibre_url_prefix}"
+	fi
+
+	/usr/sbin/daemon -f -u ${calibre_user} -p ${pidfile} ${command} ${command_args} --with-library ${calibre_library}
+}
+
+run_rc_command "$1"

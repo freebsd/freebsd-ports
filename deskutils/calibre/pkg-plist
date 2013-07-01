@@ -82,6 +82,9 @@ lib/calibre/calibre/devices/hanlin/__init__.py
 lib/calibre/calibre/devices/hanlin/driver.py
 lib/calibre/calibre/devices/hanvon/__init__.py
 lib/calibre/calibre/devices/hanvon/driver.py
+lib/calibre/calibre/devices/idevice/libimobiledevice.py
+lib/calibre/calibre/devices/idevice/parse_xml.py
+lib/calibre/calibre/devices/idevice/__init__.py
 lib/calibre/calibre/devices/iliad/__init__.py
 lib/calibre/calibre/devices/iliad/driver.py
 lib/calibre/calibre/devices/interface.py
@@ -166,6 +169,7 @@ lib/calibre/calibre/ebooks/conversion/plugins/azw4_input.py
 lib/calibre/calibre/ebooks/conversion/plugins/chm_input.py
 lib/calibre/calibre/ebooks/conversion/plugins/comic_input.py
 lib/calibre/calibre/ebooks/conversion/plugins/djvu_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/docx_input.py
 lib/calibre/calibre/ebooks/conversion/plugins/epub_input.py
 lib/calibre/calibre/ebooks/conversion/plugins/epub_output.py
 lib/calibre/calibre/ebooks/conversion/plugins/fb2_input.py
@@ -209,8 +213,17 @@ lib/calibre/calibre/ebooks/docx/names.py
 lib/calibre/calibre/ebooks/docx/styles.py
 lib/calibre/calibre/ebooks/docx/__init__.py
 lib/calibre/calibre/ebooks/docx/char_styles.py
+lib/calibre/calibre/ebooks/docx/cleanup.py
 lib/calibre/calibre/ebooks/docx/container.py
+lib/calibre/calibre/ebooks/docx/dump.py
+lib/calibre/calibre/ebooks/docx/fonts.py
+lib/calibre/calibre/ebooks/docx/footnotes.py
+lib/calibre/calibre/ebooks/docx/images.py
+lib/calibre/calibre/ebooks/docx/numbering.py
+lib/calibre/calibre/ebooks/docx/tables.py
+lib/calibre/calibre/ebooks/docx/theme.py
 lib/calibre/calibre/ebooks/docx/to_html.py
+lib/calibre/calibre/ebooks/docx/toc.py
 lib/calibre/calibre/ebooks/docx/block_styles.py
 lib/calibre/calibre/ebooks/docx/lcid.py
 lib/calibre/calibre/ebooks/epub/__init__.py
@@ -396,6 +409,7 @@ lib/calibre/calibre/ebooks/oeb/reader.py
 lib/calibre/calibre/ebooks/oeb/stylizer.py
 lib/calibre/calibre/ebooks/oeb/transforms/__init__.py
 lib/calibre/calibre/ebooks/oeb/transforms/cover.py
+lib/calibre/calibre/ebooks/oeb/transforms/embed_fonts.py
 lib/calibre/calibre/ebooks/oeb/transforms/filenames.py
 lib/calibre/calibre/ebooks/oeb/transforms/flatcss.py
 lib/calibre/calibre/ebooks/oeb/transforms/guide.py
@@ -451,6 +465,7 @@ lib/calibre/calibre/ebooks/pdf/render/graphics.py
 lib/calibre/calibre/ebooks/pdf/render/links.py
 lib/calibre/calibre/ebooks/pdf/render/serialize.py
 lib/calibre/calibre/ebooks/pdf/render/test.py
+lib/calibre/calibre/ebooks/pdf/render/toc.py
 lib/calibre/calibre/ebooks/pdf/writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
@@ -604,6 +619,8 @@ lib/calibre/calibre/gui2/convert/comic_input.py
 lib/calibre/calibre/gui2/convert/comic_input_ui.py
 lib/calibre/calibre/gui2/convert/debug.py
 lib/calibre/calibre/gui2/convert/debug_ui.py
+lib/calibre/calibre/gui2/convert/docx_input_ui.py
+lib/calibre/calibre/gui2/convert/docx_input.py
 lib/calibre/calibre/gui2/convert/djvu_input.py
 lib/calibre/calibre/gui2/convert/djvu_input_ui.py
 lib/calibre/calibre/gui2/convert/epub_output.py
@@ -873,7 +890,6 @@ lib/calibre/calibre/gui2/store/stores/ebookshoppe_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/eharlequin_plugin.py
 lib/calibre/calibre/gui2/store/stores/eknigi_plugin.py
 lib/calibre/calibre/gui2/store/stores/empik_plugin.py
-lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
 lib/calibre/calibre/gui2/store/stores/foyles_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
@@ -904,6 +920,7 @@ lib/calibre/calibre/gui2/store/stores/publio_plugin.py
 lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
 lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
 lib/calibre/calibre/gui2/store/stores/sony_plugin.py
+lib/calibre/calibre/gui2/store/stores/sony_au_plugin.py
 lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
 lib/calibre/calibre/gui2/store/stores/waterstones_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
@@ -943,6 +960,7 @@ lib/calibre/calibre/gui2/viewer/printing.py
 lib/calibre/calibre/gui2/viewer/table_popup.py
 lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/widgets.py
+lib/calibre/calibre/gui2/widgets2.py
 lib/calibre/calibre/gui2/wizard/__init__.py
 lib/calibre/calibre/gui2/wizard/device_ui.py
 lib/calibre/calibre/gui2/wizard/finish_ui.py
@@ -1008,8 +1026,6 @@ lib/calibre/calibre/plugins/woff.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/startup.py
 lib/calibre/calibre/test_build.py
-lib/calibre/calibre/trac/__init__.py
-lib/calibre/calibre/trac/bzr_commit_plugin.py
 lib/calibre/calibre/translations/__init__.py
 lib/calibre/calibre/translations/dynamic.py
 lib/calibre/calibre/translations/msgfmt.py
@@ -1120,12 +1136,14 @@ lib/calibre/calibre/utils/zipfile.py
 lib/calibre/calibre/web/__init__.py
 lib/calibre/calibre/web/feeds/__init__.py
 lib/calibre/calibre/web/feeds/feedparser.py
+lib/calibre/calibre/web/feeds/jsnews.py
 lib/calibre/calibre/web/feeds/news.py
 lib/calibre/calibre/web/feeds/recipes/__init__.py
 lib/calibre/calibre/web/feeds/recipes/collection.py
 lib/calibre/calibre/web/feeds/recipes/model.py
 lib/calibre/calibre/web/feeds/templates.py
 lib/calibre/calibre/web/fetch/__init__.py
+lib/calibre/calibre/web/fetch/javascript.py
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/jsbrowser/__init__.py
 lib/calibre/calibre/web/jsbrowser/browser.py
@@ -1932,7 +1950,6 @@ share/zsh/site-functions/_calibre
 @dirrm lib/calibre/calibre/utils/chm
 @dirrm lib/calibre/calibre/utils
 @dirrm lib/calibre/calibre/translations
-@dirrm lib/calibre/calibre/trac
 @dirrm lib/calibre/calibre/plugins
 @dirrm lib/calibre/calibre/library/server
 @dirrm lib/calibre/calibre/library/catalogs
@@ -2039,6 +2056,7 @@ share/zsh/site-functions/_calibre
 @dirrm lib/calibre/calibre/devices/iriver
 @dirrm lib/calibre/calibre/devices/irexdr
 @dirrm lib/calibre/calibre/devices/iliad
+@dirrm lib/calibre/calibre/devices/idevice
 @dirrm lib/calibre/calibre/devices/hanvon
 @dirrm lib/calibre/calibre/devices/hanlin
 @dirrm lib/calibre/calibre/devices/folder_device

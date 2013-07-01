@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	0.9.30
+PORTVERSION=	0.9.37
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -46,12 +46,15 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		pdftohtml:${PORTSDIR}/graphics/poppler-utils \
 		lshal:${PORTSDIR}/sysutils/hal
 
+USE_RC_SUBR=	calibre
+EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
+
 USES=		shared-mime-info
 USE_XZ=		yes
 USE_PYTHON=	2.7
 USE_QT4=	qmake_build moc_build
 INSTALLS_ICONS=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-src
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
