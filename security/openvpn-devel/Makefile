@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	201321
+DISTVERSION=	201326
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -30,7 +30,7 @@ SNAPPY_DESC=	Enable the Snappy compression library
 LZO_DESC=		Enable the LZO compression library
 PKCS11_DESC=	Use security/pkcs11-helper
 POLARSSL_DESC=	Build with PolarSSL instead of OpenSSL
-OPTIONS_DEFAULT= LZO SNAPPY
+OPTIONS_DEFAULT=	LZO SNAPPY
 
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
