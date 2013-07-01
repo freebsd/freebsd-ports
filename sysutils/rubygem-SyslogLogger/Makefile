@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SyslogLogger
-PORTVERSION=	1.4.1
+PORTVERSION=	2.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
