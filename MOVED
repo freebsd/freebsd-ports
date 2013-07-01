@@ -4406,3 +4406,11 @@ textproc/romdict||2013-06-30|Has expired: Upstream the project seems dead for ye
 www/dillo-i18n||2013-06-30|Has expired: dillo1 is no longer actively maintained. Please consider using www/dillo2 which has full UTF-8 support
 www/dillo||2013-06-30|Has expired: dillo1 is no longer actively maintained. Please consider using www/dillo2 instead
 comms/qfaxreader||2013-06-30|Has expired: No activity upstream since 2006; uses QT3
+net/openldap23-sasl-client||2013-07-01|Has expired: Unmaintained by upstream
+net/openldap23-server||2013-07-01|Has expired: Unmaintained by upstream
+net/openldap23-client||2013-07-01|Has expired: Unmaintained by upstream
+www/py-django13||2013-07-01|Has expired: Unsupported version
+devel/libtifiles|devel/libtifiles2|2013-07-01|Has expired: Superseded by devel/libtifiles2
+comms/libticables|comms/libticables2|2013-07-01|Has expired: Superseded by comms/libticables2
+devel/libticalcs|devel/libticalcs2|2013-07-01|Has expired: Superseded by comms/libticalcs2
+emulators/tiemu2|emulators/tiemu3|2013-07-01|Has expired: Superseded by emulators/tiemu3

@@ -1118,8 +1118,6 @@
     SUBDIR += libtar
     SUBDIR += libtecla
     SUBDIR += libthai
-    SUBDIR += libticalcs
-    SUBDIR += libtifiles
     SUBDIR += libtifiles2
     SUBDIR += libtool
     SUBDIR += libtpl
