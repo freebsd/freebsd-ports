@@ -5,7 +5,7 @@ PORTNAME=	xps
 PORTVERSION=	0.4.1
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	anastasiadis@datalive.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that searches the ports tree by various criteria
 
 LICENSE=	MIT
