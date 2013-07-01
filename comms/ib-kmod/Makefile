@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	tofig@freebsd.az
 COMMENT=	Driver for the Kyocera UTU Iburst modem
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 MODULES_WITH_WORLD?=	yes
 ONLY_FOR_ARCHS=	i386
 SUB_FILES=	pkg-install pkg-deinstall pkg-message

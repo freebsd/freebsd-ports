@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	harti/atm
 MAINTAINER=	harti@FreeBSD.org
 COMMENT=	Tools for testing the ATM subsystem
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_AUTOTOOLS=	libtool

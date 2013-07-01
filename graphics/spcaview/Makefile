@@ -21,6 +21,9 @@ PATCH_DIST_STRIP=	-p3
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	USB Cameras based SPCA5xx Utilities
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/drivers/usb
 
 .if defined(WITHOUT_X11)

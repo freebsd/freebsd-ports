@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	sanpei
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Reads temperatures and humidity from a Strawberry Linux USB-RH
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 MAN1=		usbrh.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/usbrh

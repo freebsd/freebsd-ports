@@ -13,6 +13,9 @@ DIST_SUBDIR=	CACHEBOY_1.5.2
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative) - Development Release
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 CONFLICTS=	squid-[0-9]* cacheboy*
 LATEST_LINK=	cacheboy15-devel
 GNU_CONFIGURE=	yes

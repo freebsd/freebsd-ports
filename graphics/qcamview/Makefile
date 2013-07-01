@@ -21,6 +21,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Logitech Quickcam Express USB Utilities for NetBSD/FreeBSD
 
+DEPRECATED=	Broken on FreeBSD 8 and newer
+EXPIRATION_DATE=2013-09-01
+
 REALNAME=	qce-ga
 WRKSRC=		${WRKDIR}/${REALNAME}-${PORTVERSION}
 
