@@ -43,19 +43,20 @@ COMMENT?=	Vi "workalike", with many additional features
 
 SLAVEDIRS=	editors/vim-lite
 
-.if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS) || !defined(LITE) && defined(PACKAGE_BUILDING)
+.if !defined(LITE)
+.if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)
 .include "${.CURDIR}/../vim/options"
-. if !defined(LITE) && defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	CSCOPE EXUBERANT_CTAGS PERL PYTHON RUBY \
 			TCL LUA X11 GTK2
-. endif
-.include <bsd.port.options.mk>
 .else
 VIM_PORT_SCRIPT_LANGS?=	LUA PERL PYTHON RUBY TCL
 VIM_PORT_OPTIONS=	CSCOPE DOCS EXAMPLES EXUBERANT_CTAGS \
 			${VIM_PORT_SCRIPT_LANGS}
 PORT_OPTIONS?=	${VIM_PORT_OPTIONS}
 .endif
+.endif
+
+.include <bsd.port.options.mk>
 
 CONFLICTS=	vim6* vim*-gnome libsysinfo
 .if defined(LITE)
