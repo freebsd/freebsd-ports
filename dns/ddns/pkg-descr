@@ -1,0 +1,6 @@
+ddns is a lightweight UDP-based dynamic DNS updater.
+It consists of a client that regularly sends UDP packets and a
+server that updates a bind zone file or runs a command using the
+peer IPv4 address of recieved UDP packets.
+
+WWW: http://fossil.instinctive.eu/ddns/home

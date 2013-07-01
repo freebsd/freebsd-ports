@@ -1,0 +1,41 @@
+========================================================================
+ddns configuration files were installed in the following directory:
+
+	%%ETCDIR%%
+
+Before starting the server or the client you need to perform the
+following steps:
+
+1) Copy the appropriate sample configuration file as follows:
+
+	cp %%ETCDIR%%/ddns_server.conf.sample %%ETCDIR%%/ddns_server.conf
+
+   or
+
+	cp %%ETCDIR%%/ddns_client.conf.sample %%ETCDIR%%/ddns_client.conf
+
+2) Edit ddns's configuration file to suit your needs:
+
+	$EDITOR %%ETCDIR%%/ddns_server.conf
+
+   or
+
+	$EDITOR %%ETCDIR%%/ddns_client.conf
+
+3) Add the following line to your rc.conf:
+
+	ddns_server_enable="YES" 
+
+   or
+
+	ddns_client_enable="YES" 
+
+
+Then you can start a ddns daemon by issuing the following command:
+
+	%%PREFIX%%/etc/rc.d/ddns_server start
+
+    or
+
+	%%PREFIX%%/etc/rc.d/ddns_client start
+========================================================================
