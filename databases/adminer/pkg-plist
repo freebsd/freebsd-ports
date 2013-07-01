@@ -42,6 +42,7 @@
 %%WWWDIR%%/adminer/lang/id.inc.php
 %%WWWDIR%%/adminer/lang/it.inc.php
 %%WWWDIR%%/adminer/lang/ja.inc.php
+%%WWWDIR%%/adminer/lang/ko.inc.php
 %%WWWDIR%%/adminer/lang/lt.inc.php
 %%WWWDIR%%/adminer/lang/nl.inc.php
 %%WWWDIR%%/adminer/lang/pl.inc.php
@@ -95,6 +96,7 @@
 %%WWWDIR%%/designs/konya/adminer.css
 %%WWWDIR%%/designs/nette/adminer.css
 %%WWWDIR%%/designs/ng9/adminer.css
+%%WWWDIR%%/designs/pappu687/adminer.css
 %%WWWDIR%%/designs/paranoiq/adminer.css
 %%WWWDIR%%/designs/pilot/adminer.css
 %%WWWDIR%%/designs/pokorny/adminer.css
@@ -114,6 +116,7 @@
 %%WWWDIR%%/lang.php
 %%WWWDIR%%/plugins/database-hide.php
 %%WWWDIR%%/plugins/dump-alter.php
+%%WWWDIR%%/plugins/dump-bz2.php
 %%WWWDIR%%/plugins/dump-date.php
 %%WWWDIR%%/plugins/dump-json.php
 %%WWWDIR%%/plugins/dump-xml.php
@@ -186,6 +189,7 @@
 @dirrm %%WWWDIR%%/designs/konya
 @dirrm %%WWWDIR%%/designs/nette
 @dirrm %%WWWDIR%%/designs/ng9
+@dirrm %%WWWDIR%%/designs/pappu687
 @dirrm %%WWWDIR%%/designs/paranoiq
 @dirrm %%WWWDIR%%/designs/price
 @dirrm %%WWWDIR%%/designs/pilot
