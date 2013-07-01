@@ -1210,6 +1210,7 @@
     SUBDIR += magit
     SUBDIR += make++
     SUBDIR += makedepend
+    SUBDIR += matreshka
     SUBDIR += maven-ant-tasks
     SUBDIR += maven-wrapper
     SUBDIR += maven2

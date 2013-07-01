@@ -1,0 +1,15 @@
+--- Makefile.install.orig	2012-12-05 19:49:10.977713000 +0000
++++ Makefile.install
+@@ -22,7 +22,11 @@ LIBEXT = dll
+ EXEEXT = .exe
+ endif
+ 
+-INSTALL_TARGETS = league xml fastcgi soap wsse wsdl2ada sql amf dd uml mofext ocl utp
++INSTALL_TARGETS = league xml fastcgi soap wsse wsdl2ada sql 
++
++ifdef WANT_AMF
++INSTALL_TARGETS += amf dd uml mofext ocl utp
++endif
+ 
+ ifdef HAS_FIREBIRD
+ INSTALL_TARGETS += firebird
