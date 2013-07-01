@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tdb
-PORTVERSION=		1.2.11
+PORTVERSION=		1.2.12
 PORTREVISION=		0
 PORTEPOCH=		1
 CATEGORIES=		databases
@@ -27,6 +27,10 @@ MAKE_JOBS_SAFE=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--mandir=${MANPREFIX}/man \
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
@@ -49,8 +53,6 @@ PLIST_FILES=		bin/tdbbackup \
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
-
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 .if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
@@ -90,8 +92,8 @@ pre-configure:
 
 pre-build:
 .for man in ${MAN8}
-			@${MKDIR} ${BUILD_WRKSRC}/bin/default/manpages
-			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default/manpages
+			@${MKDIR} ${BUILD_WRKSRC}/bin/default/man
+			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default/man
 .endfor
 
 do-build:

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.1.15
+PORTVERSION=		1.1.16
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -28,6 +28,10 @@ MAKE_JOBS_SAFE=		yes
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
+
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--mandir=${MANPREFIX}/man \
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
 
 .include <bsd.port.options.mk>
 
@@ -82,8 +86,6 @@ PLIST_FILES=		bin/ldbedit \
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
-
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 .if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)

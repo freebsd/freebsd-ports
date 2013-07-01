@@ -1,8 +1,11 @@
---- lib/replace/wscript.orig
-+++ lib/replace/wscript
-@@ -55,6 +55,7 @@
+--- lib/replace/wscript.orig	2013-06-30 21:48:11.959883882 +0000
++++ lib/replace/wscript	2013-06-30 21:48:25.639903597 +0000
+@@ -53,8 +53,9 @@
+                 conf.ADD_CFLAGS(f)
+             break
  
-     if conf.CHECK_CFLAGS(['-fstack-protector']):
+-    if conf.CHECK_CFLAGS(['-fstack-protector']):
++    if conf.CHECK_CFLAGS(['-fstack-protector']) and conf.CHECK_LDFLAGS(['-fstack-protector']):
          conf.ADD_CFLAGS('-fstack-protector')
 +        conf.ADD_LDFLAGS('-fstack-protector')
  
