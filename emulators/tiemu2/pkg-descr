@@ -1,9 +1,0 @@
-This project aims to develop a fast emulator for the TI89 (Titanium), 92(+),
-and V200PLT calculators.  This emulator started on the Jonas Minnberg's
-(X)Tiger emulator which is based on UAE (the Universal Amiga Emulator).  It
-was deeply reworked and improved, thus it's very different now.
-
-TiEmu uses the GDK library (GTK component) for display.  The GUI has been
-written with GTK+ (the Gimp ToolKit).
-
-WWW: http://lpg.ticalc.org/prj_tiemu/

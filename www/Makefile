@@ -1519,7 +1519,6 @@
     SUBDIR += py-django-tagging
     SUBDIR += py-django-tastypie
     SUBDIR += py-django-threaded-multihost
-    SUBDIR += py-django13
     SUBDIR += py-django14
     SUBDIR += py-django_compressor
     SUBDIR += py-djangotoolbox
