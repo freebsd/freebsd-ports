@@ -198,6 +198,7 @@
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
     SUBDIR += py-gui
+    SUBDIR += py-kivy
     SUBDIR += py-kiwi
     SUBDIR += py-pyqwt
     SUBDIR += py-qt
