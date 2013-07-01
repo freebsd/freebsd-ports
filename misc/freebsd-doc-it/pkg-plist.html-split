@@ -42,7 +42,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/freeing-pages.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/ln-idp70850304.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/page-coloring-optimizations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/page-table-optimizations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/prefault-optimizations.html
@@ -349,7 +349,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/go01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/index.html
-%%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/ln-idp60487168.html
+%%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/preface.html
 %%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/shell-programming-control-comm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/shell-programming-functions.html

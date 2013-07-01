@@ -145,12 +145,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/your-working-environment.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pam/ln-idp60522240.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-appl-prog.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-config.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-essentials.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-freebsd-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-further.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-module-prog.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-appl.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-conv.html
@@ -207,7 +207,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/freeing-pages.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/ln-idp60513280.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/page-coloring-optimizations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/pre-table-optimizations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/prefault-optimizations.html

@@ -43,7 +43,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-security.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-support.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/ln-idp60511616.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/commands.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/conclusion.html
@@ -108,7 +108,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/kernelconfig.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/ln-idp61496064.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/misc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ppp.html
@@ -226,6 +226,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
@@ -233,7 +234,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-matlab.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ln-idp70379264.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-biba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-ifoff.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-implementing.html

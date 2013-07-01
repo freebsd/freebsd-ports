@@ -126,7 +126,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/kernelconfig.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/ln-idp60507008.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/misc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ppp.html
@@ -292,6 +292,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
@@ -299,7 +300,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-matlab.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ln-idp60570624.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-biba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-bsdextended.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-ifoff.html
