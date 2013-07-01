@@ -16,6 +16,7 @@ etc/xdg/herbstluftwm/restartpanels.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpbeautify.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exec_on_tag.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/execwith.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/floatmon.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/herbstcommander.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keychain.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout.sh
