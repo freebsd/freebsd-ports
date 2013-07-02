@@ -1,0 +1,16 @@
+Bunny is an AMQP (Advanced Message Queuing Protocol) client, written in Ruby,
+that is intended to allow you to interact with AMQP-compliant message
+brokers/servers such as RabbitMQ in a synchronous fashion.
+
+It is based on a great deal of useful code from amqp by Aman Gupta and Carrot
+by Amos Elliston.
+
+You can use Bunny to :
+* Create and delete exchanges
+* Create and delete queues
+* Publish and consume messages
+
+Bunny is known to work with RabbitMQ versions 1.5.4 and above with version 0-8
+of the AMQP specification.
+
+WWW: https://github.com/ruby-amqp/bunny
