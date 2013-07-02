@@ -33,10 +33,6 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
-.if defined(WITH_QT_PHONON)
-IGNORE=		conflicts with Qt 4 Phonon. Please, deinstall qt4-phonon-gst and unset WITH_QT_PHONON to continue
-.endif
-
 OPTIONS_DEFINE=	GST_PLUGINS
 
 GST_PLUGINS_DESC=	Install GStreamer plugins
