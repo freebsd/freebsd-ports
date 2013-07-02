@@ -3,6 +3,7 @@
 
 PORTNAME=	Sys-Virt
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +12,7 @@ MAINTAINER=	fw@moov.de
 COMMENT=	Perl bindings for libvirt
 
 BUILD_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
-LIB_DEPENDS=	virt.1000:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 TEST_DEPENDS=	p5-CPAN-Changes>=0:${PORTSDIR}/devel/p5-CPAN-Changes \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \

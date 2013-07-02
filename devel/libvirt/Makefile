@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -19,8 +18,17 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gnutls:${PORTSDIR}/security/gnutls \
 		ssh2:${PORTSDIR}/security/libssh2
 
-OPTIONS_DEFINE=	QEMU DOCS
+OPTIONS_DEFINE=	QEMU DOCS NLS
 QEMU_DESC=	QEMU bindings
+
+OPTIONS_SUB=	yes
+
+QEMU_CONFIGURE_ON=	--with-qemu
+QEMU_CONFIGURE_OFF=	--without-qemu
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
@@ -33,7 +41,7 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-netcf \
 		--without-network \
 		--without-sysctl \
-		--with-libssh2
+		--with-ssh2
 
 #limit to non-stable release x.x.x
 PORTSCOUT=	limit:\d+\.\d+\.\d+$$
@@ -44,31 +52,12 @@ USES=		charsetfix pathfix
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
-SHLIB_VER=	1000
+SHLIB_VER=	1001
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQEMU}
-CONFIGURE_ARGS+=	--with-qemu
-PLIST_SUB+=	QEMU=""
-QEMU_CONFIG=	qemu
-.else
-CONFIGURE_ARGS+=	--without-qemu
-PLIST_SUB+=	QEMU="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-CONFIGURE_ARGS+=	--enable-nls \
-			--with-libintl-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1
 MAN8=		libvirtd.8
