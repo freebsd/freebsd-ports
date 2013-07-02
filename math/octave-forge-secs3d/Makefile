@@ -23,7 +23,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:${PORTSDIR}/math/octave-forge-bim
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 do-build:
-	${DO_NADA}
+	@${DO_NADA}
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
