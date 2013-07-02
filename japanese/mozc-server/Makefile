@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.10.1390.102
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -124,15 +124,15 @@ GYP_DEFINES+=	use_libibus=0 \
 
 MASTER_SITES+=	LOCAL/kuriyama:zipcode
 DISTFILES+= \
-	ken_all-20130228.lzh:zipcode \
-	jigyosyo-20130228.lzh:zipcode
+	ken_all-20130628.lzh:zipcode \
+	jigyosyo-20130628.lzh:zipcode
 
 EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
 PLIST_FILES+=	bin/mozc_server
 
 post-extract-mozc_server:
-	@for F in jigyosyo-20130228.lzh ken_all-20130228.lzh; do \
+	@for F in jigyosyo-20130628.lzh ken_all-20130628.lzh; do \
 		${LHA_CMD} xfq2w=${WRKSRC}/data/dictionary_oss ${DISTDIR}/$$F; \
 	done
 	@cd ${WRKSRC}/data/dictionary_oss && \
