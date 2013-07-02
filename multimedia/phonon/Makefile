@@ -43,10 +43,6 @@ CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
-.ifdef(WITH_QT_PHONON)
-IGNORE=		conflicts with Qt 4 phonon. Please, deinstall qt4-phonon and unset WITH_QT_PHONON to continue
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e '/phonon.pc/s|pkgconfig|../libdata/pkgconfig|' \
 		-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
