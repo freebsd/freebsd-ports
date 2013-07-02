@@ -108,7 +108,6 @@ CONFIGURE_ARGS+=	--disable-dependency-tracking \
 CONFIGURE_ARGS+=	--disable-epm \
 			--disable-gnome-vfs \
 			--disable-gstreamer \
-			--disable-gtk3 \
 			--disable-kde \
 			--disable-kdeab \
 			--disable-linkoo \
@@ -178,9 +177,9 @@ MAN1=	libreoffice.1 \
 
 MANCOMPRESSED=	yes
 
-OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
-		TEST WEBDAV
-OPTIONS_DEFAULT=CUPS GTK2
+OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK \
+		SYSTRAY TEST WEBDAV
+OPTIONS_DEFAULT=CUPS GTK3
 
 JAVA_DESC=	Add java support (XML Filters, macros)
 MMEDIA_DESC=	Enable multimedia backend for impress
@@ -219,12 +218,23 @@ CONFIGURE_ARGS+=	--disable-dbus --disable-gconf --disable-gio \
 			--disable-lockdown
 .endif
 
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gtk20 desktopfileutils
-INSTALLS_ICONS=	yes
+.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK2}
+USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk
 .else
 CONFIGURE_ARGS+=	--disable-gtk
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=	--enable-gtk3
+.else
+CONFIGURE_ARGS+=	--disable-gtk3
+.endif
+
+.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
+USES+=		desktop-file-utils
+INSTALLS_ICONS=	yes
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
@@ -398,11 +408,6 @@ post-install:
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 .endfor
 
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database >/dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database >/dev/null || ${TRUE}" >> ${TMPPLIST}
-.endif
-
 .if ${PORT_OPTIONS:MSDK}
 .for subdir in include share share/doc share/idl
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s ${subdir}/libreoffice \
@@ -423,9 +428,5 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/bash_completion.d
 	@${INSTALL_SCRIPT} ${LODESTDIR}/etc/bash_completion.d/libreoffice.sh \
 	    ${PREFIX}/etc/bash_completion.d
-
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
-	@${LOCALBASE}/bin/update-desktop-database 2>/dev/null || ${TRUE}
-.endif
 
 .include <bsd.port.post.mk>
