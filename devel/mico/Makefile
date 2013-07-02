@@ -23,10 +23,9 @@ USE_GMAKE=		yes
 USE_AUTOTOOLS=		autoconf
 CONFIGURE_ENV+=		EGREP=`which egrep`
 
-OPTIONS_DEFINE=	SERVICES SSL X11 QT3 GTK1 DEBUG TCL DOCS
+OPTIONS_DEFINE=	SERVICES SSL X11 GTK1 DEBUG TCL DOCS
 OPTIONS_DEFAULT=	SSL SERVICES
 SERVICES_DESC=	With services, plain ORB
-QT3_DESC=	Build with QT3 support
 GTK1_DESC=	Build with GTK1 support
 TCL_DESC=	Build with TCL support
 
@@ -55,13 +54,7 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--without-x
 MICO_X11=		"@comment "
 .endif
-.if ${PORT_OPTIONS:MQT3}
-USE_QT_VER=			3
-CONFIGURE_ARGS+=	--with-qt=${LOCALBASE}
-QTCPPFLAGS+=		${CPPFLAGS}
-.else
 MICO_QT=		"@comment "
-.endif
 .if ${PORT_OPTIONS:MGTK1}
 USE_GNOME=		gtk12
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
