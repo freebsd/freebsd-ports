@@ -1417,6 +1417,7 @@
     SUBDIR += p5-AnyEvent-Graphite
     SUBDIR += p5-AnyEvent-I3
     SUBDIR += p5-AnyEvent-MessagePack
+    SUBDIR += p5-AnyEvent-RPC
     SUBDIR += p5-AnyEvent-Run
     SUBDIR += p5-AnyEvent-Subprocess
     SUBDIR += p5-AnyMQ
@@ -4398,7 +4399,7 @@
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += uatraits
-    SUBDIR += uboot-mkimage 
+    SUBDIR += uboot-mkimage
     SUBDIR += uclmmbase
     SUBDIR += ucommon
     SUBDIR += ucpp
