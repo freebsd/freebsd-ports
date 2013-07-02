@@ -19,7 +19,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 USE_KDE4=	kdehier kdelibs kdeprefix sharedmime workspace automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake sharedmime
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
