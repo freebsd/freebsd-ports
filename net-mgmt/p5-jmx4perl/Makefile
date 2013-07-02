@@ -2,6 +2,7 @@
 
 PORTNAME=	jmx4perl
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/R/RO/ROLAND
@@ -24,6 +25,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Sys-SigAction>=0:${PORTSDIR}/devel/p5-Sys-SigAction \
 		p5-Term-Clui>=0:${PORTSDIR}/devel/p5-Term-Clui \
 		p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar \
 		p5-Term-ShellUI>=0:${PORTSDIR}/shells/p5-Term-ShellUI \
