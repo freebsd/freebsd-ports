@@ -181,3 +181,13 @@ bin/strace.py
 @dirrm %%PYTHON_SITELIBDIR%%/ptrace/debugger
 @dirrm %%PYTHON_SITELIBDIR%%/ptrace/binding
 @dirrm %%PYTHON_SITELIBDIR%%/ptrace
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.cptrace
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/itrace.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_dbg.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
