@@ -146,6 +146,8 @@ post-patch:
 		${PATCH_WRKSRC}/kdm/backend/client.c \
 		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c \
 		${PATCH_WRKSRC}/CMakeLists.txt
+	${RM} ${WRKSRC}/plasma/generic/applets/batterymonitor/contents/code/logic.js.orig
+	${RM} ${WRKSRC}/plasma/generic/applets/batterymonitor/contents/ui/batterymonitor.qml.orig
 
 pre-configure:
 	${REINPLACE_CMD} -e '/ksysguardd/ d' \

@@ -193,6 +193,3 @@ share/icons/hicolor/scalable/apps/ktouch.svgz
 @dirrm share/apps/ktouch
 @dirrm lib/kde4/imports/org/kde/ktouch/graph
 @dirrm lib/kde4/imports/org/kde/ktouch
-@dirrmtry lib/kde4/imports/org/kde
-@dirrmtry lib/kde4/imports/org
-@dirrmtry lib/kde4/imports

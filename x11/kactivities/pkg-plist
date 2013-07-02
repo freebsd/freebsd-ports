@@ -36,9 +36,6 @@ share/ontology/kde/kao.trig
 @dirrmtry share/ontology
 @dirrm lib/kde4/imports/org/kde/activities/models
 @dirrm lib/kde4/imports/org/kde/activities
-@dirrmtry lib/kde4/imports/org/kde
-@dirrmtry lib/kde4/imports/org
-@dirrmtry lib/kde4/imports
 @dirrm lib/cmake/KActivities-Models
 @dirrm lib/cmake/KActivities
 @dirrmtry lib/cmake

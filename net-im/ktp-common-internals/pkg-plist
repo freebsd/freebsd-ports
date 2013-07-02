@@ -143,9 +143,6 @@ share/locale/zh_TW/LC_MESSAGES/ktp-common-internals.mo
 @dirrmtry share/locale/ia
 @dirrmtry share/apps/ktelepathy
 @dirrmtry lib/kde4/imports/org/kde/telepathy
-@dirrmtry lib/kde4/imports/org/kde
-@dirrmtry lib/kde4/imports/org
-@dirrmtry lib/kde4/imports
 @dirrm include/KTp/Widgets
 @dirrm include/KTp/Models
 @dirrmtry include/KTp

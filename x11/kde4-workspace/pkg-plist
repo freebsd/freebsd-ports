@@ -2175,7 +2175,6 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/plasmoids/battery/contents/code
 @dirrm share/apps/plasma/plasmoids/battery/contents
 @dirrm share/apps/plasma/plasmoids/battery
-@dirrm share/apps/plasma/plasmoids
 @dirrm share/apps/plasma/packages/org.kde.systemtray/contents/ui
 @dirrm share/apps/plasma/packages/org.kde.systemtray/contents/code
 @dirrm share/apps/plasma/packages/org.kde.systemtray/contents
@@ -2355,9 +2354,6 @@ share/wallpapers/stripes.png.desktop
 @dirrm lib/kde4/imports/org/kde/kwin/decorations
 @dirrm lib/kde4/imports/org/kde/kwin/decoration
 @dirrm lib/kde4/imports/org/kde/kwin
-@dirrmtry lib/kde4/imports/org/kde
-@dirrmtry lib/kde4/imports/org
-@dirrmtry lib/kde4/imports
 @dirrm lib/cmake/KDE4Workspace
 @dirrmtry lib/cmake
 @dirrm include/taskmanager

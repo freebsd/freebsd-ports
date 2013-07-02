@@ -53,6 +53,7 @@ USE_QT4=	corelib dbus declarative designer_build gui \
 USE_XORG=	sm x11 xcursor xext xfixes xrender xtst
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
 		-DWITH_FAM:BOOL=On \

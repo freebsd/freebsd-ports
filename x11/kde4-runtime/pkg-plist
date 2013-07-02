@@ -2249,8 +2249,5 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm lib/kde4/imports/org/kde/plasma
 @dirrm lib/kde4/imports/org/kde/locale
 @dirrm lib/kde4/imports/org/kde/draganddrop
-@dirrmtry lib/kde4/imports/org/kde
-@dirrmtry lib/kde4/imports/org
-@dirrmtry lib/kde4/imports
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg

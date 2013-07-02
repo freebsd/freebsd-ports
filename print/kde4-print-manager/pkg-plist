@@ -29,4 +29,3 @@ share/kde4/services/plasma-engine-printjobs.desktop
 @dirrm share/apps/plasma/plasmoids/printmanager/contents/config
 @dirrm share/apps/plasma/plasmoids/printmanager/contents
 @dirrm share/apps/plasma/plasmoids/printmanager
-@dirrmtry share/apps/plasma/plasmoids
