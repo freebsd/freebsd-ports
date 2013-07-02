@@ -30,6 +30,7 @@ lib/kde4/skrooge_bank.so
 lib/kde4/skrooge_budget.so
 lib/kde4/skrooge_calculator.so
 lib/kde4/skrooge_categories.so
+lib/kde4/skrooge_import_afb120.so
 lib/kde4/skrooge_import_backend.so
 lib/kde4/skrooge_import_csv.so
 lib/kde4/skrooge_import_gnc.so
@@ -141,13 +142,13 @@ share/apps/skrooge/images/logo/investec__580105.png
 share/apps/skrooge/images/logo/jeju_bank.png
 share/apps/skrooge/images/logo/kookmin_bank.png
 share/apps/skrooge/images/logo/korea_exchange_bank.png
+share/apps/skrooge/images/logo/l10n/au/list_bank.txt
 share/apps/skrooge/images/logo/l10n/en/list_bank.txt
-share/apps/skrooge/images/logo/l10n/en_AU/list_bank.txt
-share/apps/skrooge/images/logo/l10n/en_US/list_bank.txt
-share/apps/skrooge/images/logo/l10n/en_ZA/list_bank.txt
 share/apps/skrooge/images/logo/l10n/fr/list_bank.txt
 share/apps/skrooge/images/logo/l10n/ko/list_bank.txt
 share/apps/skrooge/images/logo/l10n/lt/list_bank.txt
+share/apps/skrooge/images/logo/l10n/us/list_bank.txt
+share/apps/skrooge/images/logo/l10n/za/list_bank.txt
 share/apps/skrooge/images/logo/la_nef.png
 share/apps/skrooge/images/logo/lcl__30002.png
 share/apps/skrooge/images/logo/list_bank.txt
@@ -176,6 +177,8 @@ share/apps/skrooge/images/logo/unicredit_bank.png
 share/apps/skrooge/images/logo/westpac.png
 share/apps/skrooge/images/logo/woori_bank.png
 share/apps/skrooge/images/splash.png
+share/apps/skrooge/quotes/BitcoinCharts.txt
+share/apps/skrooge/quotes/Skrooge.txt
 share/apps/skrooge/quotes/Stooq monthly history.txt
 share/apps/skrooge/quotes/Stooq.txt
 share/apps/skrooge/skrooge.notifyrc
@@ -504,6 +507,7 @@ share/kde4/services/skg-plugin-selectall.desktop
 share/kde4/services/skg-plugin-undoredo.desktop
 share/kde4/services/skgadvicedataengine.desktop
 share/kde4/services/skgdataengine.desktop
+share/kde4/services/skrooge-import-afb120.desktop
 share/kde4/services/skrooge-import-backend.desktop
 share/kde4/services/skrooge-import-csv.desktop
 share/kde4/services/skrooge-import-gnc.desktop
@@ -554,6 +558,7 @@ share/locale/it/LC_MESSAGES/skrooge.mo
 share/locale/ja/LC_MESSAGES/skrooge.mo
 share/locale/ko/LC_MESSAGES/skrooge.mo
 share/locale/lt/LC_MESSAGES/skrooge.mo
+share/locale/mr/LC_MESSAGES/skrooge.mo
 share/locale/ms/LC_MESSAGES/skrooge.mo
 share/locale/nb/LC_MESSAGES/skrooge.mo
 share/locale/nds/LC_MESSAGES/skrooge.mo
@@ -593,13 +598,13 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skrooge_budget
 @dirrm share/apps/skrooge_bank
 @dirrm share/apps/skrooge/quotes
+@dirrm share/apps/skrooge/images/logo/l10n/za
+@dirrm share/apps/skrooge/images/logo/l10n/us
 @dirrm share/apps/skrooge/images/logo/l10n/lt
 @dirrm share/apps/skrooge/images/logo/l10n/ko
 @dirrm share/apps/skrooge/images/logo/l10n/fr
-@dirrm share/apps/skrooge/images/logo/l10n/en_ZA
-@dirrm share/apps/skrooge/images/logo/l10n/en_US
-@dirrm share/apps/skrooge/images/logo/l10n/en_AU
 @dirrm share/apps/skrooge/images/logo/l10n/en
+@dirrm share/apps/skrooge/images/logo/l10n/au
 @dirrm share/apps/skrooge/images/logo/l10n
 @dirrm share/apps/skrooge/images/logo
 @dirrm share/apps/skrooge/images
@@ -638,8 +643,5 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/plasma/plasmoids/account-qml/contents/ui
 @dirrm share/apps/plasma/plasmoids/account-qml/contents
 @dirrm share/apps/plasma/plasmoids/account-qml
-@dirrmtry share/apps/plasma/plasmoids
 @dirrmtry share/akonadi/agents
 @dirrmtry share/akonadi
-@dirrmtry lib/kde4/plugins/grantlee/0.3
-@dirrmtry lib/kde4/plugins/grantlee
