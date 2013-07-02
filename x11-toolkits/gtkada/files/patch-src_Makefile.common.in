@@ -1,15 +1,11 @@
-$NetBSD: patch-ad,v 1.1.1.1 2011/02/03 18:57:15 drochner Exp $
-
---- src/Makefile.common.in.orig	2011-01-19 22:48:51.000000000 +0100
+--- src/Makefile.common.in.orig	2013-07-01 09:42:47.000000000 +0000
 +++ src/Makefile.common.in
-@@ -12,9 +12,9 @@
+@@ -14,8 +14,8 @@ MAJOR    = @GTKADA_MAJOR_VERSION@
  MINOR    = @GTKADA_MINOR_VERSION@
  MICRO    = @GTKADA_MICRO_VERSION@
- GTK_LIBS = @GTK_LIBS@
--HAVE_LIBGLADE = @HAVE_LIBGLADE@
+ GTK_LIBS = @GTK_LIBS_FOR_GNATMAKE@
 -HAVE_OPENGL   = @HAVE_OPENGL@
 -HAVE_GNOME    = @HAVE_GNOME@
-+HAVE_LIBGLADE = False
 +HAVE_OPENGL   = False
 +HAVE_GNOME    = False
  BUILD_TYPE      = @BUILD_TYPE@
