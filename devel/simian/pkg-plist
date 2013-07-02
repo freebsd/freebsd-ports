@@ -1,7 +1,10 @@
 bin/simian
 %%JAVA%%simian/bin/simian-%%VERSION%%.jar
 %%MONO%%simian/bin/simian-%%VERSION%%.exe
-%%MONO%%simian/bin/IKVM.GNU.Classpath.dll
+%%MONO%%simian/bin/IKVM.OpenJDK.Core.dll
+%%MONO%%simian/bin/IKVM.OpenJDK.Security.dll
+%%MONO%%simian/bin/IKVM.OpenJDK.Text.dll
+%%MONO%%simian/bin/IKVM.OpenJDK.Util.dll
 %%MONO%%simian/bin/IKVM.Runtime.dll
 share/xsl/simian/simian.xsl
 @dirrm simian/bin
