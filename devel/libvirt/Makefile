@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -37,7 +38,7 @@ CONFIGURE_ARGS=	--without-sasl \
 #limit to non-stable release x.x.x
 PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
 USES=		charsetfix pathfix
 USE_GMAKE=	yes
