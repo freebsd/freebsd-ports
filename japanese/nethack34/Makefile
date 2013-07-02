@@ -42,14 +42,10 @@ USE_GNOME=	gnomelibs
 GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
-.elif ${PKGNAMESUFFIX} == "-qt"
-USE_QT_VER=	3
-MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
-		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
-		MOC="${MOC}" LIBQT="-lqt-mt"
-GRAPHICS=	QT_GRAPHICS
 .endif
 .endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top
@@ -67,14 +63,14 @@ pre-configure:
 post-install:
 # Makefile.top digs bin/lib somehow
 	${RMDIR} ${PREFIX}/bin/lib
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/${HACKDOCSDIR}
 .for i in README.j ChangeLog.j INSTALL.j
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${HACKDOCSDIR}
 .endfor
 .endif
 	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/${HACKDOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/${HACKDOCSDIR}
 .endif
