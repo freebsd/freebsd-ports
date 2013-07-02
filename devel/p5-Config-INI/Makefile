@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Config-INI
-# Date created:		2009-03-10
-# Whom:			bapt <baptiste.daroussin@gmail.com>
-#
+# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-INI
-PORTVERSION=	0.019
+PORTVERSION=	0.020
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
