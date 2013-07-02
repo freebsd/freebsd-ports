@@ -25,37 +25,7 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	527 \
-		\
-		780 796 \
-		873 890 \
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		1104 \
-		1111 \
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-		\
-
-
+BADPATCHES=	527 780 796 873 890 1104 1111
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.3.${p}}
 .endfor
