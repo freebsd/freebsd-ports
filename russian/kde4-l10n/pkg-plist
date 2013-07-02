@@ -974,6 +974,7 @@ share/locale/ru/LC_MESSAGES/accountwizard_kolab.mo
 share/locale/ru/LC_MESSAGES/accountwizard_mailbox.mo
 share/locale/ru/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/ru/LC_MESSAGES/accountwizard_pop3.mo
+share/locale/ru/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/ru/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/ru/LC_MESSAGES/activitymanager_uihandler_declarative.mo
 share/locale/ru/LC_MESSAGES/adblock.mo
@@ -982,10 +983,13 @@ share/locale/ru/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_google_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/ru/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_kdeaccounts_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_knut_resource.mo
@@ -1010,6 +1014,7 @@ share/locale/ru/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/ru/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ru/LC_MESSAGES/akonadicontact.mo
+share/locale/ru/LC_MESSAGES/akonadinotes.mo
 share/locale/ru/LC_MESSAGES/akonaditray.mo
 share/locale/ru/LC_MESSAGES/akregator.mo
 share/locale/ru/LC_MESSAGES/akregator_konqplugin.mo
@@ -1354,6 +1359,7 @@ share/locale/ru/LC_MESSAGES/kscreenlocker.mo
 share/locale/ru/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/ru/LC_MESSAGES/kscreensaver.mo
 share/locale/ru/LC_MESSAGES/ksendemail.mo
+share/locale/ru/LC_MESSAGES/ksgrd.mo
 share/locale/ru/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ru/LC_MESSAGES/kshisen.mo
 share/locale/ru/LC_MESSAGES/kshorturifilter.mo
@@ -1483,6 +1489,7 @@ share/locale/ru/LC_MESSAGES/nepomukbackup.mo
 share/locale/ru/LC_MESSAGES/nepomukcleaner.mo
 share/locale/ru/LC_MESSAGES/nepomukcontroller.mo
 share/locale/ru/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/ru/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/ru/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/ru/LC_MESSAGES/nepomukserver.mo
 share/locale/ru/LC_MESSAGES/nepomukservicestub.mo
@@ -1675,6 +1682,7 @@ share/locale/ru/LC_MESSAGES/plasma_wallpaper_wallpaper-qml.mo
 share/locale/ru/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/ru/LC_MESSAGES/plasmagenericshell.mo
 share/locale/ru/LC_MESSAGES/plasmapkg.mo
+share/locale/ru/LC_MESSAGES/pothumbnail.mo
 share/locale/ru/LC_MESSAGES/powerdevil.mo
 share/locale/ru/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/ru/LC_MESSAGES/powerdevilglobalconfig.mo

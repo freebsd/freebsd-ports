@@ -26,4 +26,3 @@ share/kde4/services/kalgebraplasmoid.desktop
 @dirrm share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui
 @dirrm share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents
 @dirrm share/apps/plasma/plasmoids/org.kde.graphsplasmoid
-@dirrmtry share/apps/plasma/plasmoids

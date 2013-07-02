@@ -164,9 +164,6 @@ share/kde4/servicetypes/okularGenerator.desktop
 @dirrm share/apps/okular/icons
 @dirrm share/apps/okular
 @dirrmtry lib/kde4/imports/org/kde/okular
-@dirrmtry lib/kde4/imports/org/kde
-@dirrmtry lib/kde4/imports/org
-@dirrmtry lib/kde4/imports
 @dirrm lib/cmake/Okular
 @dirrmtry lib/cmake
 @dirrm include/okular/interfaces

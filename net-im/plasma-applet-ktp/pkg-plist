@@ -124,6 +124,5 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.ktp-presence.mo
 @dirrm share/apps/plasma/plasmoids/org.kde.ktp-chat/contents/config
 @dirrm share/apps/plasma/plasmoids/org.kde.ktp-chat/contents
 @dirrm share/apps/plasma/plasmoids/org.kde.ktp-chat
-@dirrmtry share/apps/plasma/plasmoids
 @dirrmtry share/apps/plasma-desktop/updates
 @dirrmtry share/apps/plasma-desktop

@@ -4,9 +4,15 @@ etc/dbus-1/system.d
 include/KDE
 lib/kconf_update_bin
 lib/kde4
+lib/kde4/imports
+lib/kde4/imports/org
+lib/kde4/imports/org/kde
 lib/kde4/libexec
 lib/kde4/plugins
 lib/kde4/plugins/designer
+@comment One must remember to update this when Grantlee changes its version number.
+lib/kde4/plugins/grantlee
+lib/kde4/plugins/grantlee/0.3
 lib/kde4/plugins/styles
 lib/strigi
 share/applications
@@ -45,6 +51,7 @@ share/apps/kwin
 share/apps/nepomuk
 share/apps/nepomuk/ontologies
 share/apps/plasma
+share/apps/plasma/plasmoids
 share/apps/plasma/services
 share/apps/profiles
 share/apps/remoteview

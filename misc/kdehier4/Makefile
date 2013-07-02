@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none

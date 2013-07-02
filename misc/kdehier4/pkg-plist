@@ -485,9 +485,14 @@
 @exec mkdir -p %%KDE4_PREFIX%%/include/KDE
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kconf_update_bin
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4
+@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/imports
+@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/imports/org
+@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/imports/org/kde
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/libexec
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/designer
+@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/grantlee
+@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/grantlee/0.3
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/styles
 @exec mkdir -p %%KDE4_PREFIX%%/lib/strigi
 @exec mkdir -p %%KDE4_PREFIX%%/share/applications
@@ -526,6 +531,7 @@
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/nepomuk
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/nepomuk/ontologies
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/plasma
+@exec mkdir -p %%KDE4_PREFIX%%/share/apps/plasma/plasmoids
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/plasma/services
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/profiles
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/remoteview
@@ -1786,6 +1792,7 @@
 @dirrmtry share/apps/remoteview
 @dirrmtry share/apps/profiles
 @dirrmtry share/apps/plasma/services
+@dirrmtry share/apps/plasma/plasmoids
 @dirrmtry share/apps/plasma
 @dirrmtry share/apps/nepomuk/ontologies
 @dirrmtry share/apps/nepomuk
@@ -1824,9 +1831,14 @@
 @dirrmtry share/applications
 @dirrmtry lib/strigi
 @dirrmtry lib/kde4/plugins/styles
+@dirrmtry lib/kde4/plugins/grantlee/0.3
+@dirrmtry lib/kde4/plugins/grantlee
 @dirrmtry lib/kde4/plugins/designer
 @dirrmtry lib/kde4/plugins
 @dirrmtry lib/kde4/libexec
+@dirrmtry lib/kde4/imports/org/kde
+@dirrmtry lib/kde4/imports/org
+@dirrmtry lib/kde4/imports
 @dirrmtry lib/kde4
 @dirrmtry lib/kconf_update_bin
 @dirrmtry include/KDE

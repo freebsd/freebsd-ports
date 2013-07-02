@@ -224,6 +224,7 @@ share/locale/is/LC_MESSAGES/kio_trash.mo
 share/locale/is/LC_MESSAGES/kio_zeroconf.mo
 share/locale/is/LC_MESSAGES/kioclient.mo
 share/locale/is/LC_MESSAGES/kioexec.mo
+share/locale/is/LC_MESSAGES/kipiplugin_kxmlhelloworld.mo
 share/locale/is/LC_MESSAGES/kiriki.mo
 share/locale/is/LC_MESSAGES/kiten.mo
 share/locale/is/LC_MESSAGES/kjots.mo
