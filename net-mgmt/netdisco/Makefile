@@ -63,11 +63,8 @@ MIBSDIR=	${PREFIX}/share/netdisco-mibs
 RUN_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
 BUILD_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
 . include 	"${.CURDIR}/../netdisco-mibs/bsd.port.netdisco.mk"
-MIBINCLUDES=
-. for mib in ${MIBDIRS}
-MIBINCLUDES+=	${MIBSDIR}/${mib},
-. endfor
-MIBINCLUDES:=${MIBINCLUDES:S/,$//}
+MIBINCLUDES!=${ECHO} \"${MIBDIRS:S/^/${MIBSDIR}\//}\"
+MIBINCLUDES:=${MIBINCLUDES:S/ /:/g:S/"//g}
 .else
 MIBINCLUDES="#please add here mibs dirs list (at least snmp and rfc ones)"
 .endif
