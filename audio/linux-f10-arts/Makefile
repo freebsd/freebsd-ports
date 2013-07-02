@@ -23,6 +23,5 @@ LINUX_DIST_VER=		10
 RPMVERSION=		1.fc10
 BRANDELF_DIRS=		usr/bin
 USE_LDCONFIG=		yes
-DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
