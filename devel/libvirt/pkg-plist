@@ -164,6 +164,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/relatedlinks.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html
+%%DOCSDIR%%%%PORTVERSION%%/html/securityprocess.html
 %%DOCSDIR%%%%PORTVERSION%%/html/sitemap.html
 %%DOCSDIR%%%%PORTVERSION%%/html/storage.html
 %%DOCSDIR%%%%PORTVERSION%%/html/testapi.html
@@ -206,6 +207,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/nwfilter.rng
 %%DATADIR%%/schemas/secret.rng
 %%DATADIR%%/schemas/storageencryption.rng
+%%DATADIR%%/schemas/storagefilefeatures.rng
 %%DATADIR%%/schemas/storagepool.rng
 %%DATADIR%%/schemas/storagevol.rng
 %%NLS%%share/locale/af/LC_MESSAGES/libvirt.mo
