@@ -1420,6 +1420,7 @@
     SUBDIR += p5-AnyEvent-RPC
     SUBDIR += p5-AnyEvent-Run
     SUBDIR += p5-AnyEvent-Subprocess
+    SUBDIR += p5-AnyEvent-Worker
     SUBDIR += p5-AnyMQ
     SUBDIR += p5-App-Build
     SUBDIR += p5-App-CLI
