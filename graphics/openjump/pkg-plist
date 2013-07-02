@@ -1,7 +1,7 @@
 OpenJUMP/bin/default-plugins.xml
 OpenJUMP/bin/log4j.xml
 OpenJUMP/bin/openjump
-OpenJUMP/lib/OpenJUMP-1.6.2-r3528-nosrc.jar
+OpenJUMP/lib/OpenJUMP-1.6.3-r3576-nosrc.jar
 OpenJUMP/lib/batik-awt-util-1.6.jar
 OpenJUMP/lib/batik-bridge-1.6.jar
 OpenJUMP/lib/batik-css-1.6.jar
