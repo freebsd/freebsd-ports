@@ -89,6 +89,7 @@
     SUBDIR += ocaml-bz2
     SUBDIR += ocaml-zip
     SUBDIR += p5-Archive-Any
+    SUBDIR += p5-Archive-Any-Plugin-Rar
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Extract-Libarchive
     SUBDIR += p5-Archive-Peek
