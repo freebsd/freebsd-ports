@@ -1,0 +1,49 @@
+--- docs/Makefile.in.orig	2012-05-31 13:21:06.000000000 +0000
++++ docs/Makefile.in
+@@ -15,29 +15,29 @@ gps_pg:
+ 	make -C programers_guide html
+ 
+ ug:
+-	make -C users_guide html latexpdf
++	make -C users_guide html 
+ 
+ .PHONY: tutorial
+ tutorial:
+ 	make -C tutorial html
+ 
+ install:
+-	$(MKDIR) $(docdir)
+-	$(MKDIR) $(docdir)/html
+-	$(MKDIR) $(docdir)/pdf
+-	-$(INSTALL_DATA) gps-welcome.html $(docdir)/html
+-	-$(CP) users_guide/GPS.py $(sharedir)/library/GPS_doc.py
+-
+-	${MKDIR} $(docdir)/html/users_guide/
+-	-${CP} -r users_guide/_build/html/* $(docdir)/html/users_guide/
+-	-${CP} users_guide/_build/latex/GPS.pdf $(docdir)/pdf/gps.pdf
+-
+-	${MKDIR} $(docdir)/html/tutorial/
+-	-${CP} -r tutorial/_build/html/* $(docdir)/html/tutorial/
+-
+-	-$(INSTALL_DATA) gps-splash.png $(sharedir)
+-	-${INSTALL_DATA} gps_index.xml ${docdir}/html
+-	-${INSTALL_DATA} help_index.html ${docdir}/html
++	$(MKDIR) $(DESTDIR)$(docdir)
++	$(MKDIR) $(DESTDIR)$(docdir)/html
++	$(MKDIR) $(DESTDIR)$(docdir)/pdf
++	-$(INSTALL_DATA) gps-welcome.html $(DESTDIR)$(docdir)/html
++	-$(CP) users_guide/GPS.py $(DESTDIR)$(sharedir)/library/GPS_doc.py
++
++	${MKDIR} $(DESTDIR)$(docdir)/html/users_guide/
++	-${CP} -r users_guide/_build/html/* $(DESTDIR)$(docdir)/html/users_guide/
++	-${CP} users_guide/_build/latex/GPS.pdf $(DESTDIR)$(docdir)/pdf/gps.pdf
++
++	${MKDIR} $(DESTDIR)$(docdir)/html/tutorial/
++	-${CP} -r tutorial/_build/html/* $(DESTDIR)$(docdir)/html/tutorial/
++
++	-$(INSTALL_DATA) gps-splash.png $(DESTDIR)$(sharedir)
++	-${INSTALL_DATA} gps_index.xml $(DESTDIR)${docdir}/html
++	-${INSTALL_DATA} help_index.html $(DESTDIR)${docdir}/html
+ 
+ clean:
+ 	-${RM} -rf */_build/
