@@ -3,6 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -337,7 +338,7 @@ PLIST_SUB+=	TOKYOTYRANT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVIRT}
-LIB_DEPENDS+=	virt:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS+=	virt.1001:${PORTSDIR}/devel/libvirt
 CONFIGURE_ARGS+=--enable-libvirt
 .if empty(PORT_OPTIONS:MXML)
 IGNORE=		VIRT requires XML. Either select XML or deselect VIRT.

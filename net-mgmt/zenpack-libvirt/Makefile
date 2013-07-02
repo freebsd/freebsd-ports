@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=    1.96
-PORTREVISION=	2
+PORTVERSION=	1.96
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
 DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
@@ -21,7 +21,7 @@ USES=		zenoss
 
 ZPACKPREFIX=	ZenPacks.community.
 ZPACKGROUP=	community
-WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
-TAG=  4113cfe
+WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+TAG=	4113cfe
 
 .include <bsd.port.mk>

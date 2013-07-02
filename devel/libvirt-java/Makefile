@@ -3,17 +3,17 @@
 
 PORTNAME=	libvirt-java
 PORTVERSION=	0.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://libvirt.org/sources/java/ \
 		ftp://libvirt.org/libvirt/java/
 
 MAINTAINER=	jgh@FreeBSD.org
-COMMENT=	Java bindings for the libvirt virtualization API
+COMMENT=	Java bindings for Libvirt virtualization API
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	virt.1000:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
 BUILD_DEPENDS=	jna>=3.2.7:${PORTSDIR}/devel/jna \
 		junit>=4.8.2:${PORTSDIR}/java/junit
 
