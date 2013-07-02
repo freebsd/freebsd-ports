@@ -18,9 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_GCC=	4.6+
 USE_BZIP2=	yes
-USES=		bison
+USES=		bison cmake:outsource
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
-USES+=		cmake:outsource
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 
