@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-qt33
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	${LINUX_NAME}3
 PORTVERSION=	3.3.8b
@@ -25,7 +21,5 @@ LINUX_DIST_VER=	10
 RPMVERSION=	17.fc10
 USE_LDCONFIG=	yes
 PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
