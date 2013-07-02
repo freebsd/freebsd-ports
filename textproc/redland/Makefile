@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		rdfproc.1 redland-config.1 \
