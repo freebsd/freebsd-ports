@@ -9,28 +9,20 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt/Gtk+/ncurses rc.conf editor/management tool
+COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
 WANT_GNOME=	yes
 
-OPTIONS_SINGLE=		X11
-OPTIONS_SINGLE_X11=	GTK2 QT3
-OPTIONS_DEFAULT=	GTK2
-
-QT3_DESC=	Use Qt3 for the X11 interface
+#OPTIONS_SINGLE=		X11
+#OPTIONS_SINGLE_X11=	GTK2
+#OPTIONS_DEFAULT=	GTK2
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK2}
+#.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 MAKE_ENV+=	WITH_GTK=yes
-.endif
-
-.if ${PORT_OPTIONS:MQT3}
-USE_QT_VER=	3
-MAKE_ENV+=	WITH_QT=yes
-CXXFLAGS+=	-Wall -DWITH_QT -I${LOCALBASE}/include
-.endif
+#.endif
 
 MAN1=		thefish.1
 PLIST_FILES=	bin/thefish
