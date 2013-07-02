@@ -154,7 +154,7 @@ pre-configure:
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include/OpenCASCADE
-	${RM} ${OCCROOT}/src/OS/*.orig ${OCCROOT}/src/DrawResources/*.orig	\
+	${RM} -f ${OCCROOT}/src/OS/*.orig ${OCCROOT}/src/DrawResources/*.orig	\
 		${PREFIX}/include/OpenCASCADE/Standard_CLocaleSentry.hxx.orig
 	cd ${WRKSRC}/src && ${COPYTREE_SHARE} UnitsAPI ${OCCROOT}/src
 .if ${PORT_OPTIONS:MDATA}
