@@ -1,13 +1,9 @@
-# New ports collection makefile for:	qimageblitz
-# Date created:		2008-01-15
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qimageblitz
 PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}
@@ -17,7 +13,7 @@ COMMENT=	Graphical effects and filters library for KDE4
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_QT4=	gui qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
 USES=		cmake
 
 post-patch:
