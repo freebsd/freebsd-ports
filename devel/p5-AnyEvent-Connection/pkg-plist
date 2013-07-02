@@ -1,0 +1,9 @@
+%%SITE_PERL%%/AnyEvent/Connection/Util.pm
+%%SITE_PERL%%/AnyEvent/Connection/Raw.pm
+%%SITE_PERL%%/AnyEvent/Connection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Connection/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Connection
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrmtry %%SITE_PERL%%/AnyEvent/Connection
+@dirrmtry %%SITE_PERL%%/AnyEvent
+@dirrmtry %%SITE_PERL%%
