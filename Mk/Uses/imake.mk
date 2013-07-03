@@ -38,15 +38,16 @@ MAKE_ENV+=		IMAKECPP=${IMAKECPP} IMAKECPPFLAGS="${IMAKECPPFLAGS}"
 CONFIGURE_ENV+=		IMAKECPP=${IMAKECPP} IMAKECPPFLAGS="${IMAKECPPFLAGS}"
 MAKE_ARGS+=		IMAKE_DEFINES="${IMAKECPPFLAGS}"
 
-.if !defined(NO_INSTALL_MANPAGES)
-LATE_INSTALL_ARGS=	install.man
-.endif
-
 .if !defined(IMAKE_ENV_ONLY)
 .if !target(do-configure)
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
 .endif
+
+.if !defined(NO_INSTALL_MANPAGES)
+LATE_INSTALL_ARGS=	install.man
+.endif
+
 .endif
 
 .endif
