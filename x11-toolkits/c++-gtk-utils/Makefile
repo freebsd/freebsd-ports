@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -23,6 +23,8 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DEBUG DOCS
 
 .include <bsd.port.options.mk>
 
