@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
 MAN8=		pftop.8

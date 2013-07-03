@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility to render graphical statistics for pf
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
