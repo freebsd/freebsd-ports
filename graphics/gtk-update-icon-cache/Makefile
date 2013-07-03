@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/gtk-update-icon-cache/Makefile,v 1.18 2013/03/04 17:44:37 kwm Exp $
+#   $MCom: ports/trunk/graphics/gtk-update-icon-cache/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtk-update-icon-cache
 PORTVERSION=	2.24.19
@@ -34,6 +34,8 @@ PATCHDIR=	${.CURDIR}/../../x11-toolkits/gtk20/files
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+BUILD_WRKSRC=	${WRKSRC}/gtk
+ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/gtk-update-icon-cache
 
 MAN1=		gtk-update-icon-cache.1
@@ -45,9 +47,6 @@ pre-configure:
 	@${ECHO_CMD} "${PKGNAME}: Needs cairo with X11 support enabled."
 	@${FALSE}
 .endif
-
-do-build:
-	@cd ${WRKSRC}/gtk && ${GMAKE} gtk-update-icon-cache
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gtk/gtk-update-icon-cache \
