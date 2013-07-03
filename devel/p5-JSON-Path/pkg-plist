@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/JSON/Path.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/Path/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/Path
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JSON
+@dirrmtry %%SITE_PERL%%/JSON

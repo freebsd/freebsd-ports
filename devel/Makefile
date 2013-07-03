@@ -2172,6 +2172,7 @@
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-JIRA-Client
     SUBDIR += p5-JQuery
+    SUBDIR += p5-JSON-Path
     SUBDIR += p5-JSON-RPC
     SUBDIR += p5-JSON-RPC-Common
     SUBDIR += p5-JSON-RPC-Dispatcher
