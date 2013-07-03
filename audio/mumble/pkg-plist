@@ -1,7 +1,10 @@
 bin/mumble
-%%BUNDLECELT%%lib/libcelt-mumble.so.0.7.0
-%%BUNDLECELT%%lib/libcelt-mumble.so.0.11.0
-%%MUMBLE11X%%bin/mumble11x
+lib/libcelt-mumble.so.0.11.0
+lib/libcelt-mumble.so.0.7.0
+lib/libmumble.so
+lib/libmumble.so.1
+lib/libmumble.so.1.2
+lib/libmumble.so.1.2.4
 share/applications/mumble.desktop
 share/services/mumble.protocol
 share/icons/hicolor/128x128/apps/mumble.png
