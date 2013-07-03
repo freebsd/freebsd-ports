@@ -36,6 +36,11 @@ ACTUAL-PACKAGE-DEPENDS?= \
 		${PKG_QUERY} "%dn: {origin: %do, version: \"%dv\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
 	fi
 
+# Redifine pkg2ng calls durectly bsd.pkgng.mk and needs it
+
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
 
 .if !target(fake-pkg)
 fake-pkg:
