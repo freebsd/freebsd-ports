@@ -18,7 +18,7 @@ PORTVERSION=	1.0
 # added to the global section by someone (with the intent of bumping
 # the revisions of the slave ports) and it cannot be removed without
 # causing a version downgrade or using PORTEPOCH.
-PORTREVISION=	5
+PORTREVISION=	6
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
@@ -27,7 +27,6 @@ EXTRACT_ONLY=	# empty
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/icons/Bluecurve/cursors/X_cursor:${PORTSDIR}/x11-themes/cursor-bluecurve-theme \
 		${LOCALBASE}/share/themes/Bluecurve/index.theme:${PORTSDIR}/x11-themes/gnome-bluecurve-theme \
 		${LINUXBASE}/usr/share/themes/Bluecurve/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/linux-gtk-bluecurve-theme \
-		${LOCALBASE}/lib/plugins/styles/bluecurve.so:${PORTSDIR}/x11-themes/qt-bluecurve-theme \
 		${LOCALBASE}/share/xmms/Skins/Bluecurve-xmms.zip:${PORTSDIR}/x11-themes/xmms-bluecurve-theme
 
 NO_BUILD=	yes
