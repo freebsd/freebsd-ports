@@ -34,7 +34,7 @@ post-configure:
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|$$(DESTDIR)/$$(sysconfdir)/|$$(DESTDIR)/$$(sysconfdir)/proxychains.conf.sample|' \
+		-e 's|$$(DESTDIR)$$(sysconfdir)/|$$(DESTDIR)$$(sysconfdir)/proxychains.conf.sample|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
 		-e 's|libproxychains4.so|libproxychains-4.so|' \
@@ -42,10 +42,8 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/proxyresolv ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/src/proxychains.conf ${PREFIX}/etc/proxychains.conf.sample
-.if ! exists(${PREFIX}/etc/proxychains.conf)
-	${INSTALL_DATA} ${WRKSRC}/src/proxychains.conf ${PREFIX}/etc/proxychains.conf
-.endif
+	@[ -f ${PREFIX}/etc/proxychains.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/src/proxychains.conf ${PREFIX}/etc/proxychains.conf
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
