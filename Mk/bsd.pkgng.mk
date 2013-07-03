@@ -36,7 +36,7 @@ ACTUAL-PACKAGE-DEPENDS?= \
 		${PKG_QUERY} "%dn: {origin: %do, version: \"%dv\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
 	fi
 
-# Redifine pkg2ng calls durectly bsd.pkgng.mk and needs it
+# Redefine. pkg2ng calls directly 'make -f bsd.pkgng.mk' which needs UID to be defined
 
 .if !defined(UID)
 UID!=	${ID} -u
