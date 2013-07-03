@@ -44,7 +44,7 @@ LICENSE_FILE_NAISTL=	${WRKSRC}/data/dictionary_oss/README.txt
 LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
 USE_GNOME=	glib20 gtk20
-USE_QT4=	corelib gui
+USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 USE_GNOME=	glib20 gtk20
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
