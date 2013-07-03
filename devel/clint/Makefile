@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Static source code checker for C++
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	yes
 USE_GMAKE=	yes
