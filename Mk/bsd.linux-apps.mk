@@ -141,7 +141,7 @@ dbuslibs_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-dbus-libs
 
 dri_f10_FILE=		${LINUXBASE}/usr/lib/libGL.so.1.2
 dri_DETECT=		${dri${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-dri_PORT=		${PORTSDIR}/graphics/linux-dri74
+dri_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-dri
 dri_DEPENDS=		xorglibs
 
 esound_f10_FILE=	${LINUXBASE}/usr/lib/libesd.so.0.2.39

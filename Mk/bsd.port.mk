@@ -352,7 +352,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  MAKE_ENV are extended with a DISPLAY variable.
 #
 # USE_GL		- A list of Mesa or GL related dependencies needed by the port.
-#				  Supported components are: glut, glu, glw, gl and linux.
+#				  Supported components are: glut, glu, glw, and gl.
 #				  If set to "yes", this is equivalent to "glu". Note that
 #				  glew and glut depend on glu, glw and glu depend on gl.
 # USE_MOTIF		- If set, this port uses a Motif toolkit. Implies USE_XORG+= xpm
@@ -1933,7 +1933,6 @@ _GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
 _GL_glu_USE_XORG=		glproto dri2proto
 _GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
 _GL_glut_LIB_DEPENDS=		glut.12:${PORTSDIR}/graphics/freeglut
-_GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux-dri74
 
 .if defined(USE_GL)
 . if ${USE_GL:L} == "yes"
