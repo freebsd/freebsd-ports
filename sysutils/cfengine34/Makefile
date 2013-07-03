@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
@@ -18,7 +18,7 @@ LATEST_LINK=	cfengine34
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-2* cfengine-3.[23]* cfengine-devel-*
+CONFLICTS=	cfengine-2* cfengine-3.[235]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
