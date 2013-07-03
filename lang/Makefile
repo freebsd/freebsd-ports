@@ -375,6 +375,7 @@
     SUBDIR += xds-c
     SUBDIR += xotcl
     SUBDIR += yabasic
+    SUBDIR += yap
     SUBDIR += yorick
     SUBDIR += ypsilon
 
