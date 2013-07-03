@@ -49,6 +49,6 @@ share/librarian/rarian-sk-cl.xml
 @dirrm share/librarian
 @dirrm %%DOCSDIR%%
 @dirrm include/rarian
-@unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
+@unexec rm -rf /var/db/rarian 2>/dev/null || true
 @exec mkdir -p /var/db/rarian
 @exec %%PREFIX%%/bin/rarian-sk-update || true
