@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pfstat
-# Date created:		10 October 2003
-# Whom:			Max Laier <max@love2party.net>
-#
+# Created by: Max Laier <max@love2party.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pfstat
 PORTVERSION=	2.4
@@ -11,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 
-MAINTAINER=	mlaier@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to render graphical statistics for pf
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pfflowd
-# Date created:		23 June 2003
-# Whom:			Max Laier <max@love2party.net>
-#
+# Created by: Max Laier <max@love2party.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
-MAINTAINER=	mlaier@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
 MAN8=		pftop.8
@@ -20,10 +16,7 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700049
-MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=37
-CFLAGS+=	-DHAVE_ALTQ=1
-.elif ${OSVERSION} < 900039
+.if ${OSVERSION} < 900039
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
 CFLAGS+=	-DHAVE_ALTQ=1
 .else
