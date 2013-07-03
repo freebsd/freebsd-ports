@@ -91,7 +91,7 @@ post-build:
 
 post-install:
 	cd ${WRKSRC}/contrib/xmindpath && \
-		${MAKE} ${INSTALL_TARGET}
+		${MAKE} install
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && \
