@@ -16,7 +16,7 @@ COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine32
 FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-[2]* cfengine-3.[34]* cfengine-devel-*
+CONFLICTS=	cfengine-[2]* cfengine-3.[345]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
