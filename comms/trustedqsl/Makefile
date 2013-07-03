@@ -1,38 +1,26 @@
-# New ports collection makefile for:   TrustedQSL
-# Date created:                20th July 2004
-# Whom:                        Diane Bruce <db@db.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	trustedqsl
-PORTVERSION=	1.13
+PORTVERSION=	1.14.2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/V1.13/
-DISTFILES=	TrustedQSL-1.13.tar.gz
+MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v1.14.2/
+DISTNAME=	tqsl-1.14.2
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LIB_DEPENDS=	tqsllib:${PORTSDIR}/comms/tqsllib
+LIB_DEPENDS=	db-5:${PORTSDIR}/databases/db5 \
+		curl:${PORTSDIR}/ftp/curl
 
-GNU_CONFIGURE=	yes
+USES=		cmake
 USE_WX=		2.8+
 WX_UNICODE=	yes
-CONFIGURE_ARGS=	--with-wxwindows=${WX_CONFIG}
-USE_PERL5=	yes
-USE_LDCONFIG=	yes
-MAKE_ENV=	INCDIR="-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
 
-WRKSRC=		${WRKDIR}/TrustedQSL-1.13
+MAN5=		trustedqsl.5
+
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|%%WX_CONFIG%%|${WX_CONFIG}|g' \
-		 ${WRKSRC}/configure
 
 post-install:
 	@${ECHO_MSG}
