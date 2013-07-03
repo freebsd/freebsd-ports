@@ -1,0 +1,7 @@
+Lvalue takes an object produced by some other package and wraps it
+with lvalue functionality implemented with the object's original
+getter and setter routines. Lvalue assumes its object uses the
+relatively standard getter / setter idiom where any arguments is a
+setter, and no arguments is a getter.
+
+WWW: http://search.cpan.org/dist/Lvalue/

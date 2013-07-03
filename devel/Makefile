@@ -2242,6 +2242,7 @@
     SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages
     SUBDIR += p5-Logfile-Rotate
+    SUBDIR += p5-Lvalue
     SUBDIR += p5-Luka
     SUBDIR += p5-MRO-Compat
     SUBDIR += p5-MRO-Define
