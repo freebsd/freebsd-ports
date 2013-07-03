@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130703:
+  AFFECTS: users of comms/trustedqsl and comms/tqsllib
+  AUTHOR: db@FreeBSD.org
+
+  Upstream have removed the need for a separate port for the library
+  formerly found in comms/tqsllib. Please remove tqsllib before installing
+  trustedqsl
+
 20130627:
   AFFECTS: users of ports-mgmt/portmaster
   AUTHOR: bdrewery@FreeBSD.org
