@@ -1,8 +1,8 @@
-phpipam is an open-source web IP address management application. 
-Its goal is to provide light and simple IP address management 
-application. It is ajax-based using jQuery libraries, it uses php 
-scripts and javascript and some HTML5/CSS3 features, so some modern 
-browser is preferred to be able to display javascript quickly and 
+phpipam is an open-source web IP address management application.
+Its goal is to provide light and simple IP address management
+application. It is ajax-based using jQuery libraries, it uses php
+scripts and javascript and some HTML5/CSS3 features, so some modern
+browser is preferred to be able to display javascript quickly and
 correctly...
 
 Features and tools:
@@ -19,3 +19,5 @@ Features and tools:
 - Search IP database
 - IP request module
 - Custom IP address fields
+
+WWW: http://phpipam.net/
