@@ -1,19 +1,15 @@
-# New ports collection makefile for: 	phpipam
-# Date created:				10 June 2012
-# Whom:					Jake Smith <jake@xz.cx>
-#
+# Created by: Jake Smith <jake@xz.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	phpipam
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jake@xz.cx
-COMMENT=	PHPIPAM: PHP IP Address Management IPv4/IPv6
+COMMENT=	PHP IP Address Management IPv4/IPv6
 
 LICENSE=	GPLv3
 
@@ -58,6 +54,6 @@ do-install:
 	done
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

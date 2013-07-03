@@ -1,6 +1,6 @@
 @unexec if cmp -s %%WWWDIR%%/config.php.sample %%WWWDIR%%/config.php; then rm -f %%WWWDIR%%/config.php; fi
 %%WWWDIR%%/.htaccess
-%%WWWDIR%%/INSTALL
+%%WWWDIR%%/INSTALL.txt
 %%WWWDIR%%/README
 %%WWWDIR%%/UPDATE
 %%WWWDIR%%/config.php.sample
@@ -18,6 +18,7 @@
 %%WWWDIR%%/css/images/info.png
 %%WWWDIR%%/css/images/lan.png
 %%WWWDIR%%/css/images/li-bg.png
+%%WWWDIR%%/css/images/loading_dash.gif
 %%WWWDIR%%/css/images/note.png
 %%WWWDIR%%/css/images/phpipam-favicon.pxm
 %%WWWDIR%%/css/images/slaveBG.png
@@ -43,8 +44,16 @@
 %%WWWDIR%%/css/img/glyphicons-halflings-white.png
 %%WWWDIR%%/css/img/glyphicons-halflings.png
 %%WWWDIR%%/db/SCHEMA.sql
-%%WWWDIR%%/db/UPDATE-v0.5.sql
 %%WWWDIR%%/db/UPDATE-v0.6.sql
+%%WWWDIR%%/db/UPDATE-v0.7.sql
+%%WWWDIR%%/functions/locale/changes.txt
+%%WWWDIR%%/functions/locale/template.tar
+%%WWWDIR%%/functions/locale/en/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/en/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/locale/template/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/template/LC_MESSAGES/phpipam.po
 %%WWWDIR%%/functions/PEAR/Net/IPv4.php
 %%WWWDIR%%/functions/PEAR/Net/IPv6.php
 %%WWWDIR%%/functions/PEAR/OLE/ChainedBlockStream.php
@@ -92,18 +101,87 @@
 %%WWWDIR%%/functions/scripts/pingCheck.php
 %%WWWDIR%%/functions/scripts/resolveIPaddresses.php
 %%WWWDIR%%/index.php
+%%WWWDIR%%/install/index.php
 %%WWWDIR%%/js/bootstrap.min.js
+%%WWWDIR%%/js/ckeditor/build-config.js
+%%WWWDIR%%/js/ckeditor/ckeditor.js
+%%WWWDIR%%/js/ckeditor/config.js
+%%WWWDIR%%/js/ckeditor/contents.css
+%%WWWDIR%%/js/ckeditor/lang/en.js
+%%WWWDIR%%/js/ckeditor/lang/sl.js
+%%WWWDIR%%/js/ckeditor/plugins/about2/dialogs/about.js
+%%WWWDIR%%/js/ckeditor/plugins/about2/dialogs/logo_ckeditor.png
+%%WWWDIR%%/js/ckeditor/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/js/ckeditor/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/js/ckeditor/plugins/fakeobjects/images/spacer.gif
+%%WWWDIR%%/js/ckeditor/plugins/icons.png
+%%WWWDIR%%/js/ckeditor/plugins/image/dialogs/image.js
+%%WWWDIR%%/js/ckeditor/plugins/image/images/noimage.png
+%%WWWDIR%%/js/ckeditor/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/js/ckeditor/plugins/link/dialogs/link.js
+%%WWWDIR%%/js/ckeditor/plugins/link/images/anchor.png
+%%WWWDIR%%/js/ckeditor/plugins/magicline/images/icon.png
+%%WWWDIR%%/js/ckeditor/plugins/preview/preview.html
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/ca.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/cs.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/cy.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/de.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/el.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/en.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/eo.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/et.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/fa.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/fi.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/fr.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/he.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/hr.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/it.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/ku.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/lv.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/nb.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/nl.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/no.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/sk.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/sv.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/tr.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/ug.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js
+%%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/js/ckeditor/plugins/table/dialogs/table.js
+%%WWWDIR%%/js/ckeditor/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/js/ckeditor/skins/moono/dialog.css
+%%WWWDIR%%/js/ckeditor/skins/moono/dialog_ie.css
+%%WWWDIR%%/js/ckeditor/skins/moono/dialog_ie7.css
+%%WWWDIR%%/js/ckeditor/skins/moono/dialog_ie8.css
+%%WWWDIR%%/js/ckeditor/skins/moono/dialog_iequirks.css
+%%WWWDIR%%/js/ckeditor/skins/moono/dialog_opera.css
+%%WWWDIR%%/js/ckeditor/skins/moono/editor.css
+%%WWWDIR%%/js/ckeditor/skins/moono/editor_gecko.css
+%%WWWDIR%%/js/ckeditor/skins/moono/editor_ie.css
+%%WWWDIR%%/js/ckeditor/skins/moono/editor_ie7.css
+%%WWWDIR%%/js/ckeditor/skins/moono/editor_ie8.css
+%%WWWDIR%%/js/ckeditor/skins/moono/editor_iequirks.css
+%%WWWDIR%%/js/ckeditor/skins/moono/icons.png
+%%WWWDIR%%/js/ckeditor/skins/moono/images/arrow.png
+%%WWWDIR%%/js/ckeditor/skins/moono/images/close.png
+%%WWWDIR%%/js/ckeditor/skins/moono/images/mini.png
+%%WWWDIR%%/js/ckeditor/skins/moono/readme.md
+%%WWWDIR%%/js/ckeditor/styles.js
 %%WWWDIR%%/js/dieIE.js
 %%WWWDIR%%/js/flot/excanvas.min.js
 %%WWWDIR%%/js/flot/jquery.flot.categories.js
 %%WWWDIR%%/js/flot/jquery.flot.js
 %%WWWDIR%%/js/flot/jquery.flot.pie.js
 %%WWWDIR%%/js/jclock.jquery.js
-%%WWWDIR%%/js/jquery-1.7.1.min.js
-%%WWWDIR%%/js/jquery.fileUploader.js
+%%WWWDIR%%/js/jquery-1.9.1.min.js
 %%WWWDIR%%/js/login.js
 %%WWWDIR%%/js/magic.js
 %%WWWDIR%%/js/magic.min.js
+%%WWWDIR%%/js/uploader/jquery.fileupload.js
+%%WWWDIR%%/js/uploader/jquery.iframe-transport.js
+%%WWWDIR%%/js/uploader/jquery.ui.widget.js
 %%WWWDIR%%/misc/CHANGELOG
 %%WWWDIR%%/misc/Roadmap
 %%WWWDIR%%/misc/gpl-3.0.txt
@@ -119,20 +197,34 @@
 %%WWWDIR%%/site/admin/customSubnetFieldsEdit.php
 %%WWWDIR%%/site/admin/customSubnetFieldsEditResult.php
 %%WWWDIR%%/site/admin/customSubnetFieldsOrder.php
+%%WWWDIR%%/site/admin/customUserFieldsEdit.php
+%%WWWDIR%%/site/admin/customUserFieldsEditResult.php
+%%WWWDIR%%/site/admin/customUserFieldsOrder.php
 %%WWWDIR%%/site/admin/customVLANFieldsEdit.php
 %%WWWDIR%%/site/admin/customVLANFieldsEditResult.php
 %%WWWDIR%%/site/admin/customVLANFieldsOrder.php
 %%WWWDIR%%/site/admin/databaseInstall.php
 %%WWWDIR%%/site/admin/databaseUpgrade.php
 %%WWWDIR%%/site/admin/export.php
+%%WWWDIR%%/site/admin/exportGenerateHostDump.php
 %%WWWDIR%%/site/admin/exportGenerateMySQL.php
 %%WWWDIR%%/site/admin/exportGenerateXLS.php
 %%WWWDIR%%/site/admin/exportSubnet.php
 %%WWWDIR%%/site/admin/filterIPFields.php
 %%WWWDIR%%/site/admin/filterIPFieldsResult.php
+%%WWWDIR%%/site/admin/groupAddUsers.php
+%%WWWDIR%%/site/admin/groupAddUsersResult.php
+%%WWWDIR%%/site/admin/groupEditPrint.php
+%%WWWDIR%%/site/admin/groupEditResult.php
+%%WWWDIR%%/site/admin/groupRemoveUsers.php
+%%WWWDIR%%/site/admin/groupRemoveUsersResult.php
+%%WWWDIR%%/site/admin/groups.php
 %%WWWDIR%%/site/admin/instructions.php
 %%WWWDIR%%/site/admin/instructionsPreview.php
 %%WWWDIR%%/site/admin/instructionsResult.php
+%%WWWDIR%%/site/admin/languageEdit.php
+%%WWWDIR%%/site/admin/languageEditResult.php
+%%WWWDIR%%/site/admin/languages.php
 %%WWWDIR%%/site/admin/logClear.php
 %%WWWDIR%%/site/admin/logDetail.php
 %%WWWDIR%%/site/admin/logResult.php
@@ -143,6 +235,9 @@
 %%WWWDIR%%/site/admin/manageAD_LDAP.php
 %%WWWDIR%%/site/admin/manageADcheck.php
 %%WWWDIR%%/site/admin/manageADresult.php
+%%WWWDIR%%/site/admin/manageDevices.php
+%%WWWDIR%%/site/admin/manageDevicesEdit.php
+%%WWWDIR%%/site/admin/manageDevicesEditResult.php
 %%WWWDIR%%/site/admin/manageRequestEdit.php
 %%WWWDIR%%/site/admin/manageRequestResult.php
 %%WWWDIR%%/site/admin/manageRequestResultMail.php
@@ -153,9 +248,15 @@
 %%WWWDIR%%/site/admin/manageSubnet.php
 %%WWWDIR%%/site/admin/manageSubnetEdit.php
 %%WWWDIR%%/site/admin/manageSubnetEditResult.php
-%%WWWDIR%%/site/admin/manageSwitches.php
-%%WWWDIR%%/site/admin/manageSwitchesEdit.php
-%%WWWDIR%%/site/admin/manageSwitchesEditResult.php
+%%WWWDIR%%/site/admin/manageSubnetEditRipeQuery.php
+%%WWWDIR%%/site/admin/manageSubnetPermissionsSubmit.php
+%%WWWDIR%%/site/admin/manageSubnetResizeSave.php
+%%WWWDIR%%/site/admin/manageSubnetShowPermissions.php
+%%WWWDIR%%/site/admin/manageSubnetSplitSave.php
+%%WWWDIR%%/site/admin/manageSubnetTruncateSave.php
+%%WWWDIR%%/site/admin/manageSubnetresize.php
+%%WWWDIR%%/site/admin/manageSubnetsplit.php
+%%WWWDIR%%/site/admin/manageSubnettruncate.php
 %%WWWDIR%%/site/admin/manageVLANEdit.php
 %%WWWDIR%%/site/admin/manageVLANEditResult.php
 %%WWWDIR%%/site/admin/manageVLANdropdownReload.php
@@ -171,10 +272,10 @@
 %%WWWDIR%%/site/admin/settings.php
 %%WWWDIR%%/site/admin/settingsEdit.php
 %%WWWDIR%%/site/admin/showAll.php
-%%WWWDIR%%/site/admin/userMod.php
-%%WWWDIR%%/site/admin/userModEmailNotif.php
-%%WWWDIR%%/site/admin/userModPrint.php
-%%WWWDIR%%/site/admin/userModResult.php
+%%WWWDIR%%/site/admin/users.php
+%%WWWDIR%%/site/admin/usersEditEmailNotif.php
+%%WWWDIR%%/site/admin/usersEditPrint.php
+%%WWWDIR%%/site/admin/usersEditResult.php
 %%WWWDIR%%/site/admin/verifyDatabase.php
 %%WWWDIR%%/site/admin/versionCheck.php
 %%WWWDIR%%/site/dashboard/access_logs.php
@@ -190,6 +291,7 @@
 %%WWWDIR%%/site/ipaddr/ipAddressPrintTable.php
 %%WWWDIR%%/site/ipaddr/ipAddressPrintTableOrphaned.php
 %%WWWDIR%%/site/ipaddr/ipAddressPrintTableSlaves.php
+%%WWWDIR%%/site/ipaddr/ipAddressPrintVisual.php
 %%WWWDIR%%/site/ipaddr/ipAddressSwitch.php
 %%WWWDIR%%/site/ipaddr/mailNotifyCheck.php
 %%WWWDIR%%/site/ipaddr/mailNotifyIP.php
@@ -210,6 +312,7 @@
 %%WWWDIR%%/site/tools/instructions.php
 %%WWWDIR%%/site/tools/ipCalc.php
 %%WWWDIR%%/site/tools/ipCalcResult.php
+%%WWWDIR%%/site/tools/devices.php
 %%WWWDIR%%/site/tools/requestIPform.php
 %%WWWDIR%%/site/tools/resolveDNS.php
 %%WWWDIR%%/site/tools/search.php
@@ -218,7 +321,6 @@
 %%WWWDIR%%/site/tools/searchTips.php
 %%WWWDIR%%/site/tools/showAll.php
 %%WWWDIR%%/site/tools/subnets.php
-%%WWWDIR%%/site/tools/switches.php
 %%WWWDIR%%/site/tools/toolsMenu.php
 %%WWWDIR%%/site/tools/userMenu.php
 %%WWWDIR%%/site/tools/userMenuSelfMod.php
@@ -226,6 +328,8 @@
 %%WWWDIR%%/site/tools/vrf.php
 %%WWWDIR%%/site/upgrade/index.php
 %%WWWDIR%%/site/userMenu.php
+%%WWWDIR%%/upgrade/index.php
+@dirrm %%WWWDIR%%/upgrade
 @dirrm %%WWWDIR%%/site/upgrade
 @dirrm %%WWWDIR%%/site/tools
 @dirrm %%WWWDIR%%/site/login
@@ -236,8 +340,39 @@
 @dirrm %%WWWDIR%%/site/admin
 @dirrm %%WWWDIR%%/site
 @dirrmtry %%WWWDIR%%/misc
+@dirrm %%WWWDIR%%/js/ckeditor/skins/moono/images
+@dirrm %%WWWDIR%%/js/ckeditor/skins/moono
+@dirrm %%WWWDIR%%/js/ckeditor/skins
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/tabletools
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/table/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/table
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs/lang
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/specialchar
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/preview
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/magicline/images
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/magicline
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/link/images
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/link/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/link
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/image/images
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/image/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/image
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/fakeobjects/images
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/fakeobjects
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/dialog
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/clipboard
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/about2/dialogs
+@dirrm %%WWWDIR%%/js/ckeditor/plugins/about2
+@dirrm %%WWWDIR%%/js/ckeditor/plugins
+@dirrm %%WWWDIR%%/js/ckeditor/lang
+@dirrm %%WWWDIR%%/js/ckeditor
 @dirrmtry %%WWWDIR%%/js/flot
+@dirrm %%WWWDIR%%/js/uploader
 @dirrmtry %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/functions/scripts
 @dirrm %%WWWDIR%%/functions/adLDAP/src/collections
 @dirrm %%WWWDIR%%/functions/adLDAP/src/classes
@@ -250,6 +385,13 @@
 @dirrmtry %%WWWDIR%%/functions/PEAR/OLE
 @dirrmtry %%WWWDIR%%/functions/PEAR/Net
 @dirrmtry %%WWWDIR%%/functions/PEAR
+@dirrm %%WWWDIR%%/functions/locale/template/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/template
+@dirrm %%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/sl_SI
+@dirrm %%WWWDIR%%/functions/locale/en/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/en
+@dirrmtry %%WWWDIR%%/functions/locale
 @dirrmtry %%WWWDIR%%/functions
 @dirrm %%WWWDIR%%/db/bkp
 @dirrm %%WWWDIR%%/db
