@@ -1689,6 +1689,7 @@
     SUBDIR += quixote
     SUBDIR += qupzilla
     SUBDIR += red5
+    SUBDIR += redaxo
     SUBDIR += redmine
     SUBDIR += redmine-backlogs
     SUBDIR += redmine-basecamp

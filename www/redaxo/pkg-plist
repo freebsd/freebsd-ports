@@ -1,0 +1,1255 @@
+%%WWWDIR%%/_htaccess
+%%WWWDIR%%/_lastchanges.txt
+%%WWWDIR%%/_lizenz.txt
+%%WWWDIR%%/files/.redaxo
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/action.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/action_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/addon.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/addon_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/back.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/body.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/button.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/clang.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/clang_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/cronjob.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/cronjob_add.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/css_main.css
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/document.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/document_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/down.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_add.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_add_inactive.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_bottom.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_del.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_del_inactive.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_down.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_open.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_open_inactive.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_top.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_up.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_view.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/file_view_inactive.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/folder.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/folder_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/footer.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/generic.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/generic_add.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/generic_close.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/generic_del.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/generic_open.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/left.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/list.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/logo.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/media.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/media_add.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/metainfo.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/metainfo_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/module.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/module_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/navi_main_dt.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/navi_sub.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/pipe_grey.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/popup.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/refresh.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/refresh_ani.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/refresh_err.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/right.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/slice.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/startpage.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/template.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/template_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/togglesettings.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/togglesettings_off.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/toggleview.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/toggleview_off.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/up.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/user.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/user_plus.gif
+%%WWWDIR%%/files/addons/be_style/plugins/agk_skin/website.gif
+%%WWWDIR%%/index.php
+%%WWWDIR%%/redaxo/include/.htaccess
+%%WWWDIR%%/redaxo/include/addons.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/cache/class.rex_cache_file.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/cache/class.rex_cache_function.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/class.component.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/class.component_base.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/class.component_config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/class.notification.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/class.notification_component.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/class.rex_cache.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/files/be_dashboard.css
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/files/be_dashboard.js
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/functions/function_dashboard.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/classes/class.dashboard.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/classes/class.rss_reader.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/functions/function_reader.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/vendor/simplepie.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/classes/class.dashboard.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/functions/function_userinfo.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/classes/class.dashboard.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/functions/function_version_check.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/settings/.readme.txt
+%%WWWDIR%%/redaxo/include/addons/be_dashboard/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/extensions/extension_search_mpool.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/extensions/extension_search_structure.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/files/be_search.css
+%%WWWDIR%%/redaxo/include/addons/be_search/files/be_search_ie_lte_7.css
+%%WWWDIR%%/redaxo/include/addons/be_search/functions/functions.search.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_search/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/be_search/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/be_search/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/extensions/function_extensions.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/action.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/action_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/addon.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/addon_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/back.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/body.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/button.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/clang.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/clang_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/cronjob.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/cronjob_add.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/css_main.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/document.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/document_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/down.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_add.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_add_inactive.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_bottom.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_del.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_del_inactive.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_down.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_open.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_open_inactive.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_top.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_up.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_view.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/file_view_inactive.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/folder.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/folder_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/footer.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/generic.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/generic_add.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/generic_close.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/generic_del.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/generic_open.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/left.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/list.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/logo.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/media.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/media_add.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/metainfo.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/metainfo_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/module.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/module_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/navi_main_dt.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/navi_sub.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/pipe_grey.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/popup.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/refresh.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/refresh_ani.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/refresh_err.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/right.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/slice.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/startpage.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/template.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/template_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/togglesettings.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/togglesettings_off.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/toggleview.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/toggleview_off.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/up.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/user.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/user_plus.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files/website.gif
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/LICENSE
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/codemirror-compressed.js
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/codemirror.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/rex-init.js
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/ambiance-mobile.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/ambiance.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/blackboard.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/cobalt.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/eclipse.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/elegant.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/erlang-dark.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/lesser-dark.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/monokai.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/neat.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/night.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/rubyblue.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/solarized.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/twilight.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/vibrant-ink.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme/xq-dark.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/customizer.css
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/pages/specials.customizer.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/be_style/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/class.cronjob.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/class.dashboard.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/class.form.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/class.log.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/class.manager.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/types/class.phpcallback.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/types/class.phpcode.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/classes/types/class.urlrequest.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/install.sql
+%%WWWDIR%%/redaxo/include/addons/cronjob/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/cronjob/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/cronjob/logs/.redaxo
+%%WWWDIR%%/redaxo/include/addons/cronjob/nexttime
+%%WWWDIR%%/redaxo/include/addons/cronjob/pages/cronjobs.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/pages/log.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/classes/class.cronjob.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/classes/class.cronjob.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/cronjob/uninstall.sql
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/class.rex_effect_abstract.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/class.rex_image.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/class.rex_image_cacher.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/class.rex_image_manager.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_crop.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_filter_blur.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_filter_greyscale.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_filter_sepia.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_filter_sharpen.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_flip.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_insert_image.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_mirror.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_resize.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects/class.rex_effect_workspace.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/functions/function_rex_effects.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/functions/function_rex_extensions.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/install.sql
+%%WWWDIR%%/redaxo/include/addons/image_manager/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/image_manager/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/image_manager/media/brand.gif
+%%WWWDIR%%/redaxo/include/addons/image_manager/media/warning.jpg
+%%WWWDIR%%/redaxo/include/addons/image_manager/pages/effects.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/pages/overview.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/pages/settings.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/pages/types.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/image_manager/uninstall.sql
+%%WWWDIR%%/redaxo/include/addons/import_export/backup/rex_4.5_demo.php
+%%WWWDIR%%/redaxo/include/addons/import_export/backup/rex_4.5_demo.sql
+%%WWWDIR%%/redaxo/include/addons/import_export/backup/rex_4.5_demo.tar.gz
+%%WWWDIR%%/redaxo/include/addons/import_export/classes/class.cronjob.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/classes/class.rex_tar.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/classes/class.tar.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/functions/function_folder.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/functions/function_import_export.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/functions/function_import_folder.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/functions/function_string.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/import_export/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/import_export/pages/export.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/pages/import.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/import_export/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/_install.sql
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/class.rex_input.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/class.rex_restrictions_element.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/class.rex_table_expander.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/class.rex_table_manager.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_date.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_datetime.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_linkbutton.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_linklistbutton.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_mediabutton.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_medialistbutton.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_select.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_text.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_textarea.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/classes/input/class.rex_input_time.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/extensions/extension_art_metainfo.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/extensions/extension_cat_metainfo.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/extensions/extension_cleanup.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/extensions/extension_common.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/extensions/extension_med_metainfo.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/files/metainfo.js
+%%WWWDIR%%/redaxo/include/addons/metainfo/functions/function_metainfo.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/metainfo/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/metainfo/pages/field.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/metainfo/uninstall.sql
+%%WWWDIR%%/redaxo/include/addons/phpmailer/classes/class.phpmailer.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/classes/class.pop3.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/classes/class.rex_mailer.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/classes/class.smtp.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/classes/language/phpmailer.lang-de.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/classes/language/phpmailer.lang-en.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/phpmailer/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/phpmailer/pages/example.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/pages/settings.inc.php
+%%WWWDIR%%/redaxo/include/addons/phpmailer/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/_changelog.txt
+%%WWWDIR%%/redaxo/include/addons/textile/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/extensions/function_extensions.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/files/textile.css
+%%WWWDIR%%/redaxo/include/addons/textile/functions/function_help.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/functions/function_textile.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/textile/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/textile/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/textile/vendor/CHANGELOG.textile
+%%WWWDIR%%/redaxo/include/addons/textile/vendor/README.textile
+%%WWWDIR%%/redaxo/include/addons/textile/vendor/classTextile.php
+%%WWWDIR%%/redaxo/include/addons/textile/vendor/composer.json
+%%WWWDIR%%/redaxo/include/addons/tinymce/README
+%%WWWDIR%%/redaxo/include/addons/tinymce/_changelog.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/classes/class.form.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/embed.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/rex.linkmap.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/rex.mediapool.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/rex.tiny.filebrowser.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/jquery.tinymce.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/langs/de.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/langs/en.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/license.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/css/advhr.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/js/rule.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/rule.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/css/advimage.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/image.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/img/sample.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/js/image.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/css/advlink.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/js/advlink.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlist/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/autolink/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/autoresize/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/autosave/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/bbcode/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/directionality/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/emotions.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-cool.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-cry.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-frown.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-innocent.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-kiss.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-laughing.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-sealed.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-smile.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-surprised.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-undecided.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-wink.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img/smiley-yell.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/js/emotions.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/dialog.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/img/example.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/js/dialog.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/langs/en.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example_dependency/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/js/fullpage.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/iespell/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/old-buttons.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/old-corners.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/template.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/layer/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/legacyoutput/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/lists/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/css/media.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/js/embed.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/js/media.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/moxieplayer.swf
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/nonbreaking/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/noneditable/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/pagebreak/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/js/pastetext.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/js/pasteword.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/pastetext.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/pasteword.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/preview/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/preview/example.html
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/preview/jscripts/embed.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/preview/preview.html
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/print/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/css/redaxo.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/editor_plugin_src.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/img/redaxoEmail.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/img/redaxoMedia.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/js/redaxoEmail.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/js/redaxoMedia.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/langs/de.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/langs/en.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/redaxoEmail.html
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/redaxoMedia.html
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/save/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/css/searchreplace.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/js/searchreplace.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/spellchecker/css/content.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/spellchecker/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/css/props.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/js/props.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/readme.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/cell.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/css/cell.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/css/row.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/css/table.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/js/cell.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/js/merge_cells.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/js/row.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/js/table.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/merge_cells.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/row.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/table.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/blank.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/css/template.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/js/template.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/template.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/visualblocks/css/visualblocks.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/visualblocks/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/visualchars/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/wordcount/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/abbr.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/acronym.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/attributes.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/cite.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/css/attributes.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/css/popup.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/del.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/ins.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/abbr.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/acronym.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/attributes.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/cite.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/del.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/element_common.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js/ins.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/about.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/anchor.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/charmap.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/color_picker.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/editor_template.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/image.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/flash.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/icons.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/iframe.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/pagebreak.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/quicktime.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/realmedia.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/shockwave.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/trans.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/video.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img/windowsmedia.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/about.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/anchor.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/charmap.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/color_picker.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/image.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/link.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js/source_editor.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/langs/de.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/langs/de_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/langs/en.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/langs/en_dlg.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/link.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/shortcuts.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/content.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/dialog.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img/buttons.png
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img/items.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img/progress.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/source_editor.htm
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/editor_template.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/img/icons.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/langs/de.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/langs/en.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/skins/default/content.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/skins/default/ui.css
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/tiny_mce.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/tiny_mce_popup.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/utils/editable_selects.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/utils/form_utils.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/utils/mctabs.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/utils/validate.js
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tinymce.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/files/tinymce_plus.gif
+%%WWWDIR%%/redaxo/include/addons/tinymce/functions/functions.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/install.sql
+%%WWWDIR%%/redaxo/include/addons/tinymce/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/tinymce/lang/de_de_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/tinymce/modul_input.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/modul_output.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/pages/css.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/pages/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/pages/profiles.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/pages/settings.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/profil-default.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/profil-simple.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/profil-table.txt
+%%WWWDIR%%/redaxo/include/addons/tinymce/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/tinymce/uninstall.sql
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/_changelog.txt
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/_readme.txt
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/classes/class.rewrite_fullnames.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/classes/class.rewrite_mod_rewrite.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/classes/class.rewrite_simple.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/classes/class.urlrewriter.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/url_rewrite/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/version/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/version/functions/function_rex_copyrevisioncontent.inc.php
+%%WWWDIR%%/redaxo/include/addons/version/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/version/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/version/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/version/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/addons/version/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/version/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/README.md
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_callback.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_copy_value.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_createdb.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_db.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_db_query.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_email.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_encrypt_value.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_fulltext_value.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_html.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_readtable.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_redirect.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_showtext.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/action/class.xform.action_wrapper_value.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/basic/class.rex_radio.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/basic/class.rex_xform.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/basic/class.rex_xform_list.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/basic/class.xform.action.abstract.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/basic/class.xform.validate.abstract.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/basic/class.xform.value.abstract.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_compare.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_compare_value.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_customfunction.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_email.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_empty.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_existintable.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_intfromto.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_labelexist.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_preg_match.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_size.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_size_range.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_type.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/validate/class.xform.validate_unique.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.article.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.captcha.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.captcha_calc.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.checkbox.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.date.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.datestamp.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.datetime.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.emptylabel.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.fieldset.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.formsign.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.generate_key.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.generate_password.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.hashvalue.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.hidden.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.html.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.index.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.ip.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.jquery.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.lang_textarea.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.mediafile.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.objparams.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.password.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.php.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.radio.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.radio_sql.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.readtable.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.remembervalues.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.resetbutton.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.select.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.select_sql.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.showvalue.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.submit.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.text.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.textarea.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.time.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/classes/value/class.xform.uniqueform.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha/captcha_x.ini
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha/class.captcha_x.php
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha/fonts/arena_condensed.ttf
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha/fonts/ecceb.ttf
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha_calc/captcha_calc_x.ini
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha_calc/class.captcha_calc_x.php
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha_calc/fonts/arena_condensed.ttf
+%%WWWDIR%%/redaxo/include/addons/xform/ext/captcha_calc/fonts/ecceb.ttf
+%%WWWDIR%%/redaxo/include/addons/xform/ext/formsign/COPYING.LESSER
+%%WWWDIR%%/redaxo/include/addons/xform/ext/formsign/changelog.txt
+%%WWWDIR%%/redaxo/include/addons/xform/ext/formsign/class.formsign.php
+%%WWWDIR%%/redaxo/include/addons/xform/files/manager.css
+%%WWWDIR%%/redaxo/include/addons/xform/files/manager.js
+%%WWWDIR%%/redaxo/include/addons/xform/files/popup.css
+%%WWWDIR%%/redaxo/include/addons/xform/files/xform.css
+%%WWWDIR%%/redaxo/include/addons/xform/help.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/lang/de_de_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/lang/en_gb_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/pages/description.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/classes/action/class.xform.action_db2email.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/classes/basic/class.rex_xform_emailtemplate.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/lang/de_de_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/lang/en_gb_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/email/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/bg.png
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/bg_search.png
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/geo.css
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/geo.js
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/icon_active.png
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/icon_active_jump.gif
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/icon_normal.png
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files/loading.gif
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/module/rex_geo.in.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/module/rex_geo.out.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/pages/ep_geotagging.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/xform/value/class.xform.google_geocode.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/action/class.xform.action_manage_db.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/basic/class.rex_xform_manager.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/basic/class.rex_xform_manager_table.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/value/class.xform.be_link.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/value/class.xform.be_manager_relation.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/value/class.xform.be_medialist.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/value/class.xform.be_mediapool.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/value/class.xform.be_table.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/inc/data_edit.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/inc/table_field.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/lang/de_de_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/lang/en_gb_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages/data_edit.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages/data_import.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages/table_edit.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages/table_field.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages/table_import.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/config.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/install.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/lang/de_de_utf8.lang
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/module/module_in.inc
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/module/module_out.inc
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/pages/index.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/addons/xform/uninstall.inc.php
+%%WWWDIR%%/redaxo/include/clang.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.compat.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.i18n.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.ooaddon.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.ooarticle.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.ooarticleslice.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.oocategory.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.oomedia.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.oomediacategory.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.ooplugin.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.ooredaxo.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_addon.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_article.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_article_base.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_article_editor.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_form.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_formatter.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_list.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_login.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_manager.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_navigation.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_select.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_sql.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_template.inc.php
+%%WWWDIR%%/redaxo/include/classes/class.rex_var.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_article.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_category.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_config.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_globals.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_link.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_media.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_template.inc.php
+%%WWWDIR%%/redaxo/include/classes/variables/class.rex_var_value.inc.php
+%%WWWDIR%%/redaxo/include/functions.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_addons.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_ajax.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_category.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_client_cache.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_content.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_extension.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_generate.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_globals.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_languages.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_linkmap.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_mediapool.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_mquotes.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_other.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_plugins.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_structure.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_time.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_title.inc.php
+%%WWWDIR%%/redaxo/include/functions/function_rex_url.inc.php
+%%WWWDIR%%/redaxo/include/generated/articles/.redaxo
+%%WWWDIR%%/redaxo/include/generated/files/.redaxo
+%%WWWDIR%%/redaxo/include/generated/templates/.redaxo
+%%WWWDIR%%/redaxo/include/install/redaxo4_5.sql
+%%WWWDIR%%/redaxo/include/install/update4_x_to_4_5.php
+%%WWWDIR%%/redaxo/include/install/update4_x_to_4_5.sql
+%%WWWDIR%%/redaxo/include/lang/de_de.lang
+%%WWWDIR%%/redaxo/include/lang/en_gb.lang
+%%WWWDIR%%/redaxo/include/layout/bottom.php
+%%WWWDIR%%/redaxo/include/layout/top.php
+%%WWWDIR%%/redaxo/include/master.inc.php
+%%WWWDIR%%/redaxo/include/pages/addon.inc.php
+%%WWWDIR%%/redaxo/include/pages/content.inc.php
+%%WWWDIR%%/redaxo/include/pages/credits.inc.php
+%%WWWDIR%%/redaxo/include/pages/linkmap.inc.php
+%%WWWDIR%%/redaxo/include/pages/login.inc.php
+%%WWWDIR%%/redaxo/include/pages/mediapool.inc.php
+%%WWWDIR%%/redaxo/include/pages/mediapool.media.inc.php
+%%WWWDIR%%/redaxo/include/pages/mediapool.structure.inc.php
+%%WWWDIR%%/redaxo/include/pages/mediapool.sync.inc.php
+%%WWWDIR%%/redaxo/include/pages/mediapool.upload.inc.php
+%%WWWDIR%%/redaxo/include/pages/module.action.inc.php
+%%WWWDIR%%/redaxo/include/pages/module.inc.php
+%%WWWDIR%%/redaxo/include/pages/module.modules.inc.php
+%%WWWDIR%%/redaxo/include/pages/profile.inc.php
+%%WWWDIR%%/redaxo/include/pages/setup.inc.php
+%%WWWDIR%%/redaxo/include/pages/specials.clangs.inc.php
+%%WWWDIR%%/redaxo/include/pages/specials.inc.php
+%%WWWDIR%%/redaxo/include/pages/specials.settings.inc.php
+%%WWWDIR%%/redaxo/include/pages/structure.inc.php
+%%WWWDIR%%/redaxo/include/pages/template.inc.php
+%%WWWDIR%%/redaxo/include/pages/user.inc.php
+%%WWWDIR%%/redaxo/include/plugins.inc.php
+%%WWWDIR%%/redaxo/index.php
+%%WWWDIR%%/redaxo/media/1w.gif
+%%WWWDIR%%/redaxo/media/action.gif
+%%WWWDIR%%/redaxo/media/action_plus.gif
+%%WWWDIR%%/redaxo/media/add.gif
+%%WWWDIR%%/redaxo/media/addon.gif
+%%WWWDIR%%/redaxo/media/back.gif
+%%WWWDIR%%/redaxo/media/corner.gif
+%%WWWDIR%%/redaxo/media/css_aural.css
+%%WWWDIR%%/redaxo/media/css_backend.css
+%%WWWDIR%%/redaxo/media/css_basic.css
+%%WWWDIR%%/redaxo/media/css_component.css
+%%WWWDIR%%/redaxo/media/css_form.css
+%%WWWDIR%%/redaxo/media/css_ie_7.css
+%%WWWDIR%%/redaxo/media/css_ie_lte_6.css
+%%WWWDIR%%/redaxo/media/css_ie_lte_7.css
+%%WWWDIR%%/redaxo/media/css_import.css
+%%WWWDIR%%/redaxo/media/css_navigation.css
+%%WWWDIR%%/redaxo/media/css_table_old.css
+%%WWWDIR%%/redaxo/media/document.gif
+%%WWWDIR%%/redaxo/media/document_plus.gif
+%%WWWDIR%%/redaxo/media/email.gif
+%%WWWDIR%%/redaxo/media/email_plus.gif
+%%WWWDIR%%/redaxo/media/excla_mark_green.gif
+%%WWWDIR%%/redaxo/media/favicon.ico
+%%WWWDIR%%/redaxo/media/file.gif
+%%WWWDIR%%/redaxo/media/file_add.gif
+%%WWWDIR%%/redaxo/media/file_bottom.gif
+%%WWWDIR%%/redaxo/media/file_del.gif
+%%WWWDIR%%/redaxo/media/file_down.gif
+%%WWWDIR%%/redaxo/media/file_dummy.gif
+%%WWWDIR%%/redaxo/media/file_empty.gif
+%%WWWDIR%%/redaxo/media/file_last.gif
+%%WWWDIR%%/redaxo/media/file_last_2.gif
+%%WWWDIR%%/redaxo/media/file_open.gif
+%%WWWDIR%%/redaxo/media/file_show.gif
+%%WWWDIR%%/redaxo/media/file_top.gif
+%%WWWDIR%%/redaxo/media/file_up.gif
+%%WWWDIR%%/redaxo/media/file_vert.gif
+%%WWWDIR%%/redaxo/media/file_view.gif
+%%WWWDIR%%/redaxo/media/first.gif
+%%WWWDIR%%/redaxo/media/flag.gif
+%%WWWDIR%%/redaxo/media/flag_plus.gif
+%%WWWDIR%%/redaxo/media/folder.gif
+%%WWWDIR%%/redaxo/media/folder_off.gif
+%%WWWDIR%%/redaxo/media/folder_off_empty.gif
+%%WWWDIR%%/redaxo/media/folder_on.gif
+%%WWWDIR%%/redaxo/media/folder_on_empty.gif
+%%WWWDIR%%/redaxo/media/folder_plus.gif
+%%WWWDIR%%/redaxo/media/forward.gif
+%%WWWDIR%%/redaxo/media/jquery-image-ondemand.min.js
+%%WWWDIR%%/redaxo/media/jquery.min.js
+%%WWWDIR%%/redaxo/media/last.gif
+%%WWWDIR%%/redaxo/media/leer.gif
+%%WWWDIR%%/redaxo/media/list_pages.gif
+%%WWWDIR%%/redaxo/media/liste.gif
+%%WWWDIR%%/redaxo/media/loading.gif
+%%WWWDIR%%/redaxo/media/logo.gif
+%%WWWDIR%%/redaxo/media/logo.jpg
+%%WWWDIR%%/redaxo/media/metainfo.gif
+%%WWWDIR%%/redaxo/media/metainfo_plus.gif
+%%WWWDIR%%/redaxo/media/mime-bmp.gif
+%%WWWDIR%%/redaxo/media/mime-css.gif
+%%WWWDIR%%/redaxo/media/mime-default.gif
+%%WWWDIR%%/redaxo/media/mime-doc.gif
+%%WWWDIR%%/redaxo/media/mime-docx.gif
+%%WWWDIR%%/redaxo/media/mime-eps.gif
+%%WWWDIR%%/redaxo/media/mime-error.gif
+%%WWWDIR%%/redaxo/media/mime-exe.gif
+%%WWWDIR%%/redaxo/media/mime-flv.gif
+%%WWWDIR%%/redaxo/media/mime-gif.gif
+%%WWWDIR%%/redaxo/media/mime-gz.gif
+%%WWWDIR%%/redaxo/media/mime-java.gif
+%%WWWDIR%%/redaxo/media/mime-jpeg.gif
+%%WWWDIR%%/redaxo/media/mime-jpg.gif
+%%WWWDIR%%/redaxo/media/mime-mov.gif
+%%WWWDIR%%/redaxo/media/mime-mp3.gif
+%%WWWDIR%%/redaxo/media/mime-ogg.gif
+%%WWWDIR%%/redaxo/media/mime-pdf.gif
+%%WWWDIR%%/redaxo/media/mime-png.gif
+%%WWWDIR%%/redaxo/media/mime-ppt.gif
+%%WWWDIR%%/redaxo/media/mime-pptx.gif
+%%WWWDIR%%/redaxo/media/mime-rar.gif
+%%WWWDIR%%/redaxo/media/mime-rtf.gif
+%%WWWDIR%%/redaxo/media/mime-swf.gif
+%%WWWDIR%%/redaxo/media/mime-tar.gif
+%%WWWDIR%%/redaxo/media/mime-tif.gif
+%%WWWDIR%%/redaxo/media/mime-tiff.gif
+%%WWWDIR%%/redaxo/media/mime-txt.gif
+%%WWWDIR%%/redaxo/media/mime-wma.gif
+%%WWWDIR%%/redaxo/media/mime-xls.gif
+%%WWWDIR%%/redaxo/media/mime-xlsx.gif
+%%WWWDIR%%/redaxo/media/mime-zip.gif
+%%WWWDIR%%/redaxo/media/modul.gif
+%%WWWDIR%%/redaxo/media/modul_plus.gif
+%%WWWDIR%%/redaxo/media/pfeil_bottom.gif
+%%WWWDIR%%/redaxo/media/pfeil_down.gif
+%%WWWDIR%%/redaxo/media/pfeil_left.gif
+%%WWWDIR%%/redaxo/media/pfeil_right.gif
+%%WWWDIR%%/redaxo/media/pfeil_top.gif
+%%WWWDIR%%/redaxo/media/pfeil_up.gif
+%%WWWDIR%%/redaxo/media/pipe_c1.gif
+%%WWWDIR%%/redaxo/media/pipe_c2.gif
+%%WWWDIR%%/redaxo/media/refresh.gif
+%%WWWDIR%%/redaxo/media/scale.gif
+%%WWWDIR%%/redaxo/media/slice.gif
+%%WWWDIR%%/redaxo/media/standard.js
+%%WWWDIR%%/redaxo/media/template.gif
+%%WWWDIR%%/redaxo/media/template_plus.gif
+%%WWWDIR%%/redaxo/media/user.gif
+%%WWWDIR%%/redaxo/media/user_plus.gif
+%%WWWDIR%%/redaxo/media/warning.gif
+%%WWWDIR%%/redaxo/media/white.gif
+@dirrm %%WWWDIR%%/redaxo/media
+@dirrm %%WWWDIR%%/redaxo/include/pages
+@dirrm %%WWWDIR%%/redaxo/include/layout
+@dirrm %%WWWDIR%%/redaxo/include/lang
+@dirrm %%WWWDIR%%/redaxo/include/install
+@dirrm %%WWWDIR%%/redaxo/include/generated/templates
+@dirrm %%WWWDIR%%/redaxo/include/generated/files
+@dirrm %%WWWDIR%%/redaxo/include/generated/articles
+@dirrm %%WWWDIR%%/redaxo/include/generated
+@dirrm %%WWWDIR%%/redaxo/include/functions
+@dirrm %%WWWDIR%%/redaxo/include/classes/variables
+@dirrm %%WWWDIR%%/redaxo/include/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/module
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/setup/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/setup
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/inc
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/value
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/basic
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes/action
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/manager
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/xform/value
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/xform
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/module
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/geo/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/geo
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/email/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/email/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/email/classes/basic
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/email/classes/action
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/email/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins/email
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/plugins
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/ext/formsign
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/ext/captcha_calc/fonts
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/ext/captcha_calc
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/ext/captcha/fonts
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/ext/captcha
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/ext
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/classes/value
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/classes/validate
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/classes/basic
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/classes/action
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/xform
+@dirrm %%WWWDIR%%/redaxo/include/addons/version/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/version/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/version/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/version
+@dirrm %%WWWDIR%%/redaxo/include/addons/url_rewrite/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/url_rewrite
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/utils
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/skins/default
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/skins
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/simple
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/skins
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes/advanced
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/themes
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/xhtmlxtras
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/wordcount
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/visualchars
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/visualblocks/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/visualblocks
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/template
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/table
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/tabfocus
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/spellchecker/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/spellchecker
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/searchreplace
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/save
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/redaxo
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/print
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/preview/jscripts
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/preview
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/paste
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/pagebreak
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/noneditable
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/nonbreaking
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/media
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/lists
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/legacyoutput
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/layer
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/insertdatetime
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups/skins
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/inlinepopups
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/iespell
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullscreen
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/fullpage
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example_dependency
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/example
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/emotions
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/directionality
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/contextmenu
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/bbcode
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/autosave
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/autoresize
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/autolink
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlist
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advlink
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/img
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advimage
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/js
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr/css
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins/advhr
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/plugins
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce/langs
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files/tiny_mce
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/tinymce
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile/vendor
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile/extensions
+@dirrm %%WWWDIR%%/redaxo/include/addons/textile
+@dirrm %%WWWDIR%%/redaxo/include/addons/phpmailer/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/phpmailer/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/phpmailer/classes/language
+@dirrm %%WWWDIR%%/redaxo/include/addons/phpmailer/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/phpmailer
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/extensions
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/classes/input
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/metainfo
+@dirrm %%WWWDIR%%/redaxo/include/addons/import_export/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/import_export/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/import_export/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/import_export/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/import_export/backup
+@dirrm %%WWWDIR%%/redaxo/include/addons/import_export
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager/media
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager/classes/effects
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/image_manager
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins/optimize_tables
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins/article_status
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/plugins
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/logs
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/classes/types
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/cronjob
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror/theme
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files/codemirror
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/customizer
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins/agk_skin
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/plugins
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style/extensions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_style
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_search/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_search/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_search/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_search/extensions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_search
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/settings
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/version_checker
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/userinfo
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/vendor
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins/rss_reader
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/plugins
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/pages
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/lang
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/functions
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/files
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/classes/cache
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard/classes
+@dirrm %%WWWDIR%%/redaxo/include/addons/be_dashboard
+@dirrm %%WWWDIR%%/redaxo/include/addons
+@dirrm %%WWWDIR%%/redaxo/include
+@dirrm %%WWWDIR%%/redaxo
+@dirrm %%WWWDIR%%/files/addons/be_style/plugins/agk_skin
+@dirrm %%WWWDIR%%/files/addons/be_style/plugins
+@dirrm %%WWWDIR%%/files/addons/be_style
+@dirrm %%WWWDIR%%/files/addons
+@dirrm %%WWWDIR%%/files
+@dirrmtry %%WWWDIR%%
