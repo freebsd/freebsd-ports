@@ -7,8 +7,10 @@ PORTREVISION=	1
 CATEGORIES=	devel sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A portable process tracer
+MAINTAINER=	sbz@FreeBSD.org
+COMMENT=	System call tracer
+
+LICENSE=	BSD
 
 USES=		shebangfix
 USE_BZIP2=	yes
@@ -29,11 +31,11 @@ PORTDOCS=	AUTHORS COPYRIGHT CREDITS ChangeLog NEWS PORTING \
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/strace ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/strace-graph ${PREFIX}/bin
-	@${MKDIR} ${MANPREFIX}/man/man1
+
 	${INSTALL_MAN} ${WRKSRC}/strace.1 ${MANPREFIX}/man/man1
+
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
