@@ -6,6 +6,7 @@ PORTVERSION=	${MESAVERSION}
 PORTREVISION=	4
 CATEGORIES=	graphics
 
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL library that renders using GLX or DRI
 
 LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm \
