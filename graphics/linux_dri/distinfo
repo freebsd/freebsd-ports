@@ -1,6 +1,0 @@
-SHA256 (Mesa-linux-bin-7.0.tar.bz2) = 9133f5dffe6b7fe1d590df2e6a865e677b87cd45edb4c45ec75ee47471a06ad4
-SIZE (Mesa-linux-bin-7.0.tar.bz2) = 10137014
-SHA256 (linux-libglide.tar.gz) = 0fc6d3d3e99bb9ad7a6b314e1b883a6a9421d4f6fd3bf0ee541d055f4ffca237
-SIZE (linux-libglide.tar.gz) = 286591
-SHA256 (linux-dri-tools.tar.gz) = 7c6262959c8f08d4a47f0cb9a77d2761e5ac24fe9dca8949b9fe07b963962a83
-SIZE (linux-dri-tools.tar.gz) = 124318
