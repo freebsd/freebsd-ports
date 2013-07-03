@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Converts HTML documents into plain text
 
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 
 MANCOMPRESSED=	yes
