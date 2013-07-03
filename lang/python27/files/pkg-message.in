@@ -13,6 +13,6 @@ Install them as needed.
 %%SEM%%This package was built with the experimental POSIX
 %%SEM%%semaphore support. Please ensure that the kernel on the
 %%SEM%%system where you deploy this package is either compiled
-%%SEM%%with 'option P1003_1B_SEMAPHORES', or has the sem.ko
+%%SEM%%with 'options P1003_1B_SEMAPHORES', or has the sem.ko
 %%SEM%%kernel module loaded.
 %%SEM%%--------------------------------------------------------
