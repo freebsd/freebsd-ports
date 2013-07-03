@@ -579,7 +579,6 @@
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
-    SUBDIR += linux-dri74
     SUBDIR += linux-f10-cairo
     SUBDIR += linux-f10-dri
     SUBDIR += linux-f10-gdk-pixbuf
@@ -595,7 +594,6 @@
     SUBDIR += linux-f10-ungif
     SUBDIR += linux-panorama-tools
     SUBDIR += linux-sdl_ttf
-    SUBDIR += linux_dri
     SUBDIR += linux_glide
     SUBDIR += lprof-devel
     SUBDIR += lua-gd

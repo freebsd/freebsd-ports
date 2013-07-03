@@ -1,6 +1,0 @@
-linux_dri installs binary linux DRI modules, libraries and basic programs to 
-support and test 3d hardware acceleration of linux binaries with the DRI.
-
-Compiled by anholt@FreeBSD.org on a debian unstable system, patched to
-disable the new Damage protocol call for rotated rendering due to it being
-unavailable in our linux base ports.
