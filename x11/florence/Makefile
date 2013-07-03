@@ -4,7 +4,7 @@
 PORTNAME=	florence
 PORTVERSION=	0.6.0
 CATEGORIES=	x11
-MASTER_SITES=	SF/florence/florence/${PORTVERSION}
+MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Extensible scalable virtual keyboard
@@ -14,9 +14,10 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at-spi2-core
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils gettext iconv pathfix
+USES=		desktop-file-utils iconv pathfix
 USE_XORG=	xtst xext
 USE_GNOME=	gtk30 cairo intlhack gnomedocutils librsvg2
 USE_GSTREAMER=	yes
@@ -31,16 +32,12 @@ MAN1=		${PORTNAME}.1 ${PORTNAME}_applet.1
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Application;Accessibility;System;|' \
