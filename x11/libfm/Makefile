@@ -12,8 +12,8 @@ COMMENT=	The libFM backend library to PCManFM
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
-		menu-cache:${PORTSDIR}/x11/menu-cache
+BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
+LIB_DEPENDS=	menu-cache:${PORTSDIR}/x11/menu-cache
 
 USES=		pkgconfig
 USE_GNOME=	gnomehack gtk20
@@ -36,8 +36,6 @@ NLS_USES=	gettext
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^VALAC.*|VALAC=""|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
@@ -54,14 +52,11 @@ pre-install:
 	@(cd ${WRKDIR}/libfm-${PORTVERSION} && ${CHMOD} 755 install-sh)
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/xdg/libfm
+	@${MKDIR} ${PREFIX}/etc/xdg/libfm
 	${INSTALL_DATA} ${WRKSRC}/data/libfm.conf ${PREFIX}/etc/xdg/libfm/libfm.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/data/pref-apps.conf ${PREFIX}/etc/xdg/libfm/pref-apps.conf.sample
-.if ! exists(${PREFIX}/etc/xdg/libfm/libfm.conf)
-	${INSTALL_DATA} ${WRKSRC}/data/libfm.conf ${PREFIX}/etc/xdg/libfm/libfm.conf
-.endif
-.if ! exists(${PREFIX}/etc/xdg/libfm/pref-apps.conf)
-	${INSTALL_DATA} ${WRKSRC}/data/pref-apps.conf ${PREFIX}/etc/xdg/libfm/pref-apps.conf
-.endif
-
+	@[ -f ${PREFIX}/etc/xdg/libfm/libfm.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/data/libfm.conf ${PREFIX}/etc/xdg/libfm/libfm.conf
+	@[ -f ${PREFIX}/etc/xdg/libfm/pref-apps.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/data/pref-apps.conf ${PREFIX}/etc/xdg/libfm/pref-apps.conf
 .include <bsd.port.mk>
