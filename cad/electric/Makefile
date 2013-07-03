@@ -1,9 +1,5 @@
-# New ports collection makefile for:	electric
-# Date created:		4 May 2000
-# Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
 # $FreeBSD$
-#
 
 PORTNAME=	electric
 PORTVERSION=	7.0.0
@@ -14,24 +10,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^(...)\./\1/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sophisticated electrical CAD system
+COMMENT=	Sophisticated electrical CAD system
 
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	QT3 T1LIB NLS OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	T1LIB NLS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	T1LIB
-QT3_DESC=	Use QT gui (instead of Motif)
 T1LIB_DESC=	Use T1lib Type1 font library
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MQT3}
-LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
-FEATURES+=	QT
-.else
 USE_MOTIF=	yes
 FEATURES+=	MOTIF
-.endif
 
 .if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
