@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
 MAINTAINER=	frase@frase.id.au
-COMMENT=	A lightweight GTK+ CD ripper
+COMMENT=	Lightweight GTK+ CD ripper
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -16,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	cddb:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 
-OPTIONS_DEFINE=	LAME OGG FLAC WAVPACK APE WINDOWS_CHARS NLS DOCS
+OPTIONS_DEFINE=	LAME OGG FLAC OPUS WAVPACK APE WINDOWS_CHARS NLS DOCS
+OPUS_DESC=	OPUS support
 OPTIONS_DEFAULT=	LAME OGG FLAC
 
 WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
@@ -41,6 +41,10 @@ RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 
 .if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
+.endif
+
+.if ${PORT_OPTIONS:MOPUS}
+RUN_DEPENDS+=	opusenc:${PORTSDIR}/audio/opus-tools
 .endif
 
 .if ${PORT_OPTIONS:MWAVPACK}
