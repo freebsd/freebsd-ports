@@ -25,6 +25,8 @@ include/ffmpeg%%SUFF%%/libavfilter/version.h
 include/ffmpeg%%SUFF%%/libavformat/avformat.h
 include/ffmpeg%%SUFF%%/libavformat/avio.h
 include/ffmpeg%%SUFF%%/libavformat/version.h
+include/ffmpeg%%SUFF%%/libavresample/avresample.h
+include/ffmpeg%%SUFF%%/libavresample/version.h
 include/ffmpeg%%SUFF%%/libavutil/adler32.h
 include/ffmpeg%%SUFF%%/libavutil/aes.h
 include/ffmpeg%%SUFF%%/libavutil/attributes.h
@@ -94,6 +96,10 @@ lib/ffmpeg%%SUFF%%/libavformat%%SUFF%%.a
 lib/ffmpeg%%SUFF%%/libavformat%%SUFF%%.so
 lib/ffmpeg%%SUFF%%/libavformat%%SUFF%%.so.54
 lib/ffmpeg%%SUFF%%/libavformat%%SUFF%%.so.54.63.104
+lib/ffmpeg%%SUFF%%/libavresample%%SUFF%%.a
+lib/ffmpeg%%SUFF%%/libavresample%%SUFF%%.so
+lib/ffmpeg%%SUFF%%/libavresample%%SUFF%%.so.1
+lib/ffmpeg%%SUFF%%/libavresample%%SUFF%%.so.1.1.0
 lib/ffmpeg%%SUFF%%/libavutil%%SUFF%%.a
 lib/ffmpeg%%SUFF%%/libavutil%%SUFF%%.so
 lib/ffmpeg%%SUFF%%/libavutil%%SUFF%%.so.52
@@ -114,6 +120,7 @@ libdata/pkgconfig/libavcodec%%SUFF%%.pc
 libdata/pkgconfig/libavdevice%%SUFF%%.pc
 libdata/pkgconfig/libavfilter%%SUFF%%.pc
 libdata/pkgconfig/libavformat%%SUFF%%.pc
+libdata/pkgconfig/libavresample%%SUFF%%.pc
 libdata/pkgconfig/libavutil%%SUFF%%.pc
 libdata/pkgconfig/libpostproc%%SUFF%%.pc
 libdata/pkgconfig/libswresample%%SUFF%%.pc
@@ -143,6 +150,7 @@ libdata/pkgconfig/libswscale%%SUFF%%.pc
 @dirrm include/ffmpeg%%SUFF%%/libswresample
 @dirrm include/ffmpeg%%SUFF%%/libpostproc
 @dirrm include/ffmpeg%%SUFF%%/libavutil
+@dirrm include/ffmpeg%%SUFF%%/libavresample
 @dirrm include/ffmpeg%%SUFF%%/libavformat
 @dirrm include/ffmpeg%%SUFF%%/libavfilter
 @dirrm include/ffmpeg%%SUFF%%/libavdevice
