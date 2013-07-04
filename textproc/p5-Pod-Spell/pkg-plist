@@ -1,7 +1,6 @@
 bin/podspell
 %%SITE_PERL%%/Pod/Spell.pm
 %%SITE_PERL%%/Pod/Wordlist.pm
-%%SITE_PERL%%/Pod/Wordlist.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Spell/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Spell
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
