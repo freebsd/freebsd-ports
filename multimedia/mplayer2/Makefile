@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -29,9 +29,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--cc=${CC} \
 		--extra-cflags='-I${LOCALBASE}/include/ffmpeg1 \
 		-I${LOCALBASE}/include/portaudio2' \
-		--extra-ldflags='-L${LOCALBASE}/lib/ffmpeg1 \
+		--extra-ldflags='-L${LOCALBASE}/lib/ffmpeg1 -lavresample1 \
 		-L${LOCALBASE}/lib/portaudio2' \
 		--mandir=${PREFIX}/man \
+		--enable-libavresample \
 		--disable-alsa \
 		--disable-liba52 \
 		--disable-directfb \
