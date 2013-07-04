@@ -22,10 +22,6 @@ lib/fbpanel/tray.so
 lib/fbpanel/volume.so
 lib/fbpanel/wincmd.so
 libexec/fbpanel/make_profile
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/NOTES
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/default
 %%DATADIR%%/images/battery_0.png
 %%DATADIR%%/images/battery_1.png
@@ -55,6 +51,5 @@ libexec/fbpanel/make_profile
 share/pixmaps/fbpanel.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/fbpanel
 @dirrm lib/fbpanel
