@@ -1,6 +1,6 @@
---- docs/makefile.orig	2010-12-21 00:43:52.000000000 +0100
-+++ docs/makefile	2010-12-21 00:45:25.000000000 +0100
-@@ -122,10 +122,9 @@
+--- docs/makefile.orig	2013-07-03 01:11:54.000000000 +0000
++++ docs/makefile
+@@ -116,10 +116,9 @@ build_doc: $(APIFILES) aws_docs sg_docs
  	echo AWS Documentation built with success.
  	${MAKE} -C ../templates_parser doc
  
@@ -13,15 +13,3 @@
  
  setup:
  
-@@ -209,11 +208,9 @@
- aws.texi: gen_texi check_texi
- 
- install:
--	-$(CP) aws.pdf $(I_DOC)
- 	-$(CP) aws.html $(I_DOC)
- 	-$(CP) aws.txt $(I_DOC)
- 	-$(CP) aws*.info* $(I_DOC)
--	-$(CP) ../templates_parser/docs/templates_parser.pdf $(I_DOC)
- 	-$(CP) ../templates_parser/docs/templates_parser.html $(I_DOC)
- 	-$(CP) ../templates_parser/docs/templates_parser.txt $(I_DOC)
- 	-$(CP) ../templates_parser/docs/templates_parser.info* $(I_DOC)

@@ -1,12 +1,12 @@
 Prevent empty ${EXAMPLESDIR}/bin directory from being created
 
---- makefile.orig	2011-01-09 14:48:05.000000000 +0000
+--- makefile.orig	2013-07-03 01:11:54.000000000 +0000
 +++ makefile
-@@ -437,7 +437,6 @@ endif
- 	$(MKDIR) -p $(I_AGP)
- 	$(MKDIR) -p $(I_TPL)
- 	$(MKDIR) -p $(I_IMG)
--	$(MKDIR) -p $(I_SBN)
- 	$(MKDIR) -p $(I_PLG)
- 	$(MKDIR) -p $(I_WEL)
+@@ -390,7 +390,6 @@ endif
+ 	$(MKDIR) -p $(DESTDIR)$(I_AGP)
+ 	$(MKDIR) -p $(DESTDIR)$(I_TPL)
+ 	$(MKDIR) -p $(DESTDIR)$(I_IMG)
+-	$(MKDIR) -p $(DESTDIR)$(I_SBN)
+ 	$(MKDIR) -p $(DESTDIR)$(I_PLG)
+ 	$(MKDIR) -p $(DESTDIR)$(I_WEL)
  

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	2.10.0
-PORTREVISION=	3
+PORTVERSION=	3.1.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -18,19 +17,25 @@ USE_PYTHON=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES+=		ada
+USES=		ada
 MAKE_JOBS_SAFE=	yes
 DOTBUILD=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
 
-OPTIONS_DEFINE=		SSL IP6 DEBUG LDAP DSRT RELOC
+OPTIONS_RADIO=		Secure-Socket-Layer
+OPTIONS_DEFINE=		IP6 DEBUG LDAP DSRT RELOC
 OPTIONS_DEFAULT=	SSL
 NO_OPTIONS_SORT=	yes
+OPTIONS_RADIO_Secure-Socket-Layer= SSL GNUTLS NOSSL
 
-SSL_DESC=		Enable HTTPS/SSL support
+NOSSL_DESC=		Disable SSL support
 DSRT_DESC=		Disable shared runtime
 RELOC_DESC=		Build shared libraries (default is static)
 IP6_DESC=		Support IPv6 instead of IPv4
+
+DESTINY=	${WRKDIR}/destino
+MAKE_ENV+=	DESTDIR=${DESTINY} AWK=${AWK}
+MAKEFILE=	makefile
 
 CONF_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 CONF_ARGS+=	GCC=ada
@@ -38,6 +43,8 @@ CONF_ARGS+=	PYTHON=python${PYTHON_VER}
 CONF_ARGS+=	XMLADA=true
 CONF_ARGS+=	PRJ_BUILD=${DOTBUILD}
 CONF_ARGS+=	prefix=${PREFIX}
+CONF_ARGS+=	LPATH=${PREFIX}/lib
+CONF_ARGS+=	ZPATH=/usr/lib
 
 .include <bsd.port.options.mk>
 
@@ -46,13 +53,14 @@ CONF_ARGS+=	prefix=${PREFIX}
 ###################
 
 .if ${PORT_OPTIONS:MSSL}
+WITH_OPENSSL_PORT= yes
 USE_OPENSSL=	yes
 CONF_ARGS+=	SOCKET=openssl
-PLIST_SUB+=	YSSL=""
-PLIST_SUB+=	NSSL="@comment "
-.else
-PLIST_SUB+=	YSSL="@comment "
-PLIST_SUB+=	NSSL=""
+.elif ${PORT_OPTIONS:MGNUTLS}
+CONF_ARGS+=	SOCKET=gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	crypto:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .endif
 
 ####################
@@ -62,9 +70,6 @@ PLIST_SUB+=	NSSL=""
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONF_ARGS+=	LDAP=true
-PLIST_SUB+=	LDAP=""
-.else
-PLIST_SUB+=	LDAP="@comment "
 .endif
 
 ####################
@@ -73,11 +78,6 @@ PLIST_SUB+=	LDAP="@comment "
 
 .if ${PORT_OPTIONS:MIP6}
 CONF_ARGS+=	IPv6=true
-PLIST_SUB+=	NIP6="@comment "
-PLIST_SUB+=	YIP6=""
-.else
-PLIST_SUB+=	YIP6="@comment "
-PLIST_SUB+=	NIP6=""
 .endif
 
 #####################
@@ -104,14 +104,6 @@ CONF_ARGS+=	ENABLE_SHARED=false
 CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=relocatable
 .endif
 
-#####################
-##  DEMOS Support  ##
-#####################
-
-# Option removed.
-# Demos require an installed AWS to build.
-# These demos must be moved to a separate port, e.g. www/aws-demos
-
 post-patch:
 	@${REINPLACE_CMD} \
 	   -e 's|@ADDITIONAL_RPATH@|${ADDL_RPATH}|' \
@@ -120,19 +112,34 @@ post-patch:
 		${WRKSRC}/include/include.gpr
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${GMAKE} setup ${CONF_ARGS}
 
 do-build:
-	# docs are built, but the .pdf format is intentionally disabled
-	# The taTeX dependency brings in ~100MB so it's not worth it.
+	# We cannot use a redefined ALL_TARGET because MAKE_JOBS_SAFE is set
+	# for PROCESSORS, but that also sets -j for gmake which breaks build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${GMAKE} build build_doc
 
 test: install
-	cd ${WRKSRC}/regtests && python${PYTHON_VER} testsuite.py
+	@cd ${WRKSRC}/regtests && ${SETENV} ${MAKE_ENV} \
+		python${PYTHON_VER} testsuite.py
 
-do-install:
-	cd ${WRKSRC} && ${GMAKE} install
+post-install:
+	# AWS plist changes due to options are complex, and are not simply
+	# additive.  Trying to capture every permutation is error prone and
+	# tedious, so a generated PLIST is the way to go.
+	@${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
+	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+	   ${SORT} > ${WRKDIR}/PLIST.all
+	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
+	   ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' -e '/share\/gps/d' \
+	   -e '/share\/examples$$/d' -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
+	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
+	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
+	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
+	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
+	@echo "@unexec rmdir %D/share/examples 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
+	@${CAT} ${WRKDIR}/PLIST.all >> ${TMPPLIST}
 
 .include <bsd.port.mk>
