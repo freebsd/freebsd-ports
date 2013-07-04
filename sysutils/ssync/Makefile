@@ -1,16 +1,11 @@
-# New ports collection makefile for:	ssync
-# Date created:		23 March 2002
-# Whom:			Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
-#
+# Created by: Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
 # $FreeBSD$
-#
 
 PORTNAME=	ssync
 PORTVERSION=	2.3
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mnmconsulting.org/ssync/ \
-		ftp://ftp.netsw.org/system/tools/fileutils/install/ssync/
+MASTER_SITES=	http://linuxfocus.org/~guido/
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	A minimalistic tool for keeping filesystems in synchronization
@@ -26,7 +21,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \
 		${WRKSRC}/ssyncd.init ${WRKSRC}/ssyncd.conf ${WRKSRC}/daemon.c \
 		${WRKSRC}/ssync.man
-	@${REINPLACE_CMD} -e "s@FLAGS=@FLAGS+=@g" ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e "s@FLAGS=@FLAGS+=@g" -e "/CC=gcc/d" -e "/LD=gcc/d" \
+		-e 's@$$(LD)@$$(CC)@' ${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ssync ${PREFIX}/bin/ssync
