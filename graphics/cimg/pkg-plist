@@ -6,7 +6,6 @@
 %%PORTDOCS%%bin/fade_images
 %%PORTDOCS%%bin/gaussian_fit1d
 %%PORTDOCS%%bin/generate_loop_macros
-%%PORTDOCS%%bin/gmic
 %%PORTDOCS%%bin/hough_transform2d
 %%PORTDOCS%%bin/image2ascii
 %%PORTDOCS%%bin/image_registration2d
@@ -43,7 +42,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/header.html
 %%PORTDOCS%%%%DOCSDIR%%/header_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/CImg_flyer.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/curve_editor.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/item_authors.jpg
@@ -122,13 +120,15 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard42.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard43.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard44.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard45.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard46.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard47.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard6.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard7.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard8.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard9.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
-%%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_atan2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_box3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_colormap_cool.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_colormap_cube.jpg
@@ -155,7 +155,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_isosurface3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_label_regions.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_map.jpg
-%%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_mul.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_noise.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_norm.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/reference/ref_normalize.jpg
@@ -454,11 +453,6 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fade_images.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gaussian_fit1d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate_loop_macros.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic_def.gmic
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic_def.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmic_gimp.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hough_transform2d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image2ascii.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image_registration2d.cpp

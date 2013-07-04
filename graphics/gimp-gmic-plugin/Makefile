@@ -20,8 +20,6 @@ LIB_DEPENDS=	GraphicsMagick++.9:${PORTSDIR}/graphics/GraphicsMagick13 \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
-CONFLICTS=	cimg-[0-9]*
-
 OPTIONS_DEFINE=	BASH
 BASH_DESC=	Install programmable completions for Bash
 OPTIONS_EXCLUDE=NLS DOCS
