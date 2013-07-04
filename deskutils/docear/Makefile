@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	docear
-PORTVERSION=	1.0.0.b09
+PORTVERSION=	1.0.0.r1
 CATEGORIES=	deskutils java
-MASTER_SITES=	http://downloads.docear.org/${PORTVERSION:S/.b/_beta/}/ \
-		SF/docear/1.x/${PORTVERSION:S/.b/_beta/} \
+MASTER_SITES=	http://downloads.docear.org/${PORTVERSION:S/.r/_rc/}/ \
 		LOCAL/mandree/${DIST_SUBDIR}/
+#		SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
 DISTNAME=	docear_linux
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +26,7 @@ NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
 icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-WRKSRC=		${WRKDIR}/docear-1.0.0.9_beta_build147
+WRKSRC=		${WRKDIR}/docear-1.0.0.12_rc_build183
 SUB_FILES=	docear.desktop
 
 post-patch:
@@ -38,9 +38,9 @@ do-install:
 		@${RM} -f ${WRKSRC}/docear.bat \
 			${WRKSRC}/docear.exe \
 			${WRKSRC}/*.bak
-# We can't install into $DOCSDIR or support NOPORTDOCS
-# since the documentation is an integral part of the
-# installation, as online help via the program menus.
+# We can't install into $DOCSDIR or support disabling a DOCS option
+# since the documentation is an integral part of the installation,
+# such as online help via the program menus.
 		${MKDIR} ${JDATADIR}
 		(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${JDATADIR})
 		${PRINTF} '#!/bin/sh\nset -eu\nexport JAVA_HOME="%s"\ncd "%s"\nexec "%s" "$$@"\n' \
