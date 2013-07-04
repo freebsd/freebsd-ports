@@ -22,11 +22,11 @@ MAKE_JOBS_SAFE=	yes
 DOTBUILD=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
 
-OPTIONS_RADIO=		Secure-Socket-Layer
+OPTIONS_SINGLE=		Secure-Socket-Layer
 OPTIONS_DEFINE=		IP6 DEBUG LDAP DSRT RELOC
 OPTIONS_DEFAULT=	SSL
 NO_OPTIONS_SORT=	yes
-OPTIONS_RADIO_Secure-Socket-Layer= SSL GNUTLS NOSSL
+OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS NOSSL
 
 NOSSL_DESC=		Disable SSL support
 DSRT_DESC=		Disable shared runtime
