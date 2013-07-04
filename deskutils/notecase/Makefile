@@ -1,13 +1,9 @@
-# New ports collection makefile for:	notecase
-# Date created:				19 July 2007
-# Whom:					Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	notecase
 PORTVERSION=	1.9.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -18,8 +14,11 @@ COMMENT=	A hierarchical text notes manager
 LICENSE=	BSD
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gtksourceview2 gnomevfs2 desktopfileutils pkgconfig
-USES=		gettext
+USE_GNOME=	gtk20 gtksourceview2 gnomevfs2 desktopfileutils
+USES=		gettext pkgconfig
+
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
