@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk30
 
+# XXX: it would be nice if one day this option would be passed automatically
+# to configure scripts that support it :)
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS=	--disable-silent-rules
 .endif
@@ -33,13 +35,8 @@ MAN1=		${PORTNAME}.1
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
+NLS_USES=	gettext	
 NLS_CONFIGURE_OFF=	--disable-nls
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext		# XXX: replace with NLS_USES once available
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/checking for GUDEV/,+93d' ${WRKSRC}/configure
