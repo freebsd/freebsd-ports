@@ -1,6 +1,6 @@
---- ./include/platform.h.orig	2012-07-02 14:08:25.000000000 +0000
-+++ ./include/platform.h	2012-07-17 02:08:37.000000000 +0000
-@@ -423,6 +423,15 @@
+--- ./include/platform.h.orig	2013-01-14 05:19:43.000000000 +0100
++++ ./include/platform.h	2013-01-21 21:26:34.000000000 +0100
+@@ -433,6 +433,15 @@
  
  #if defined(__FreeBSD__)
  # undef HAVE_STRCHRNUL

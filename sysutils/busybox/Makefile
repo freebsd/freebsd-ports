@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	busybox
-PORTVERSION=	1.20.2
-PORTREVISION=	3
+PORTVERSION=	1.21.1
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=	busybox-1.20.2-kernel_ver.patch \
-		busybox-1.20.2-ntpd.patch \
-		busybox-1.20.2-sys-resource.patch
+PATCHFILES=
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
@@ -21,8 +18,6 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-unstable-*
-
-PORTSCOUT=	limitw:1,EVEN
 
 MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
