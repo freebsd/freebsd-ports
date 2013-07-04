@@ -656,6 +656,52 @@ share/config/kopeterc
 share/dbus-1/interfaces/org.kde.Kopete.xml
 share/dbus-1/interfaces/org.kde.kopete.Client.xml
 share/dbus-1/interfaces/org.kde.kopete.Statistics.xml
+share/doc/HTML/en/kopete/Kopete_icq_account_preferences.png
+share/doc/HTML/en/kopete/Kopete_icq_account_setup.png
+share/doc/HTML/en/kopete/Kopete_icq_activate_new_account1.png
+share/doc/HTML/en/kopete/Kopete_icq_add_contact.png
+share/doc/HTML/en/kopete/Kopete_icq_added.png
+share/doc/HTML/en/kopete/Kopete_icq_chat_window.png
+share/doc/HTML/en/kopete/Kopete_icq_create_new_account.png
+share/doc/HTML/en/kopete/Kopete_icq_first_start.png
+share/doc/HTML/en/kopete/Kopete_icq_go_to_profile.png
+share/doc/HTML/en/kopete/Kopete_icq_information.png
+share/doc/HTML/en/kopete/Kopete_icq_log_in.png
+share/doc/HTML/en/kopete/Kopete_icq_logged_in.png
+share/doc/HTML/en/kopete/Kopete_icq_new_account.png
+share/doc/HTML/en/kopete/Kopete_icq_search_contact.png
+share/doc/HTML/en/kopete/Kopete_icq_uin.png
+share/doc/HTML/en/kopete/Kopete_snap021_groupchat.png
+share/doc/HTML/en/kopete/Kopeteicon.png
+share/doc/HTML/en/kopete/Kopetetutoial_snap003_selectserver.png
+share/doc/HTML/en/kopete/Kopetetutorial_jabbernetwork.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap001_emptykopete.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap002_configacc.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap004_createacc.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap005_enterjid.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap006_connection.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap007_conf-ready.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap008_goonline.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap009_addfriend.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap010_exlamationmarkfriend.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap011_addedbyfriend.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap012_fullauthorized.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap013_firstchat.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap014_setidentity.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap015_otrgenerate.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap016_otrfirstuse.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap017_seqretquestion.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap018_otrsuccess.png
+share/doc/HTML/en/kopete/Kopetetutorial_snap019_otrauth.png
+share/doc/HTML/en/kopete/chatstyle.docbook
+share/doc/HTML/en/kopete/common
+share/doc/HTML/en/kopete/icq.docbook
+share/doc/HTML/en/kopete/index.cache.bz2
+share/doc/HTML/en/kopete/index.docbook
+share/doc/HTML/en/kopete/jabber.docbook
+share/doc/HTML/en/kopete/menus.docbook
+share/doc/HTML/en/kopete/otr-auth-1.png
+share/doc/HTML/en/kopete/pipes.docbook
 share/icons/hicolor/128x128/apps/kopete-offline.png
 share/icons/hicolor/128x128/apps/kopete.png
 share/icons/hicolor/16x16/apps/kopete-offline.png
@@ -790,6 +836,7 @@ share/sounds/Kopete_Received.ogg
 share/sounds/Kopete_Sent.ogg
 share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/kde4/services/kconfiguredialog
+@dirrm share/doc/HTML/en/kopete
 @dirrm share/apps/kopeterichtexteditpart
 @dirrm share/apps/kopete_yahoo
 @dirrm share/apps/kopete_wlm

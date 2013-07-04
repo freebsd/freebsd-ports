@@ -26,11 +26,4 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	lib/kde4/krossruby.so
 
-.include <bsd.port.pre.mk>
-
-# Kross Ruby is broken with Ruby 1.9, see http://bugs.kde.org/243565
-.if ${RUBY_VER} == 1.9
-BROKEN=		does not build with Ruby 1.9
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

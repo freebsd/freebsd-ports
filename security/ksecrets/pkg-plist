@@ -1,0 +1,30 @@
+bin/ksecrets
+bin/ksecretsserviced
+bin/ksecretsync
+bin/kwl2kss
+include/ksecretsservice/daemonsecret.h
+include/ksecretsservice/dbustypes.h
+include/ksecretsservice/ksecretsservicecodec.h
+include/ksecretsservice/ksecretsservicecollection.h
+include/ksecretsservice/ksecretsservicecollectionjobs.h
+include/ksecretsservice/ksecretsservicedbustypes.h
+include/ksecretsservice/ksecretsserviceitem.h
+include/ksecretsservice/ksecretsserviceitemjobs.h
+include/ksecretsservice/ksecretsservicesecret.h
+include/ksecretsservice/private/ksecretsservicecodec.h
+include/ksecretsservice/private/ksecretsservicedbustypes.h
+lib/kde4/kcm_ksecretsync.so
+lib/kde4/kio_ksecretsservice.so
+lib/libksecretsservice.so
+lib/libksecretsservice.so.5
+lib/libksecretsservice.so.5.0.1
+share/applications/kde4/ksecrets.desktop
+share/apps/ksecretsync/ksecretsync.rc
+share/config.kcfg/kcm_ksecretsync.kcfg
+share/dbus-1/services/org.kde.ksecretsserviced.service
+share/kde4/services/kcm_ksecretsync.desktop
+share/kde4/services/ksecretsserviced.desktop
+share/kde4/services/secrets.protocol
+@dirrm share/apps/ksecretsync
+@dirrm include/ksecretsservice/private
+@dirrm include/ksecretsservice

@@ -74,7 +74,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 #			  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=		4.10.4
+KDE4_VERSION?=		4.10.5
 KDE4_BRANCH?=		stable
 KTP_VERSION?=		0.6.1
 KTP_BRANCH?=		stable

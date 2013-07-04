@@ -153,12 +153,17 @@ share/config/kmail-migratorrc
 share/config/kres-migratorrc
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
+share/icons/hicolor/128x128/apps/akonaditray.png
 share/icons/hicolor/128x128/apps/ox.png
 share/icons/hicolor/16x16/apps/ox.png
+share/icons/hicolor/22x22/apps/akonaditray.png
+share/icons/hicolor/32x32/apps/akonaditray.png
 share/icons/hicolor/32x32/apps/ox.png
 share/icons/hicolor/48x48/apps/ox.png
+share/icons/hicolor/64x64/apps/akonaditray.png
 share/icons/hicolor/64x64/apps/kolab.png
 share/icons/hicolor/64x64/apps/ox.png
+share/icons/hicolor/scalable/apps/akonaditray.svgz
 share/kde4/services/akonadi.protocol
 share/kde4/services/akonadi/davgroupware-providers/citadel.desktop
 share/kde4/services/akonadi/davgroupware-providers/davical.desktop

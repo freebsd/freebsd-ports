@@ -639,6 +639,7 @@ share/apps/umbrello/layouts/class-export.desktop
 share/apps/umbrello/layouts/class-horizontal.desktop
 share/apps/umbrello/layouts/class-vertical.desktop
 share/apps/umbrello/layouts/state-export.desktop
+share/apps/umbrello/layouts/state-vertical.desktop
 share/apps/umbrello/layouts/usecase-default.desktop
 share/apps/umbrello/pics/CVglobal_meth.png
 share/apps/umbrello/pics/CVglobal_var.png
