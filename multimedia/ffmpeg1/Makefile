@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 PKGNAMESUFFIX=	1
@@ -92,6 +93,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-gpl \
 		--enable-postproc \
 		--enable-avfilter \
+		--enable-avresample \
 		--enable-pthreads \
 		--enable-memalign-hack \
 		--disable-libstagefright-h264 \
