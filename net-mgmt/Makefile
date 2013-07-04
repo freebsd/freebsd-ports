@@ -286,6 +286,7 @@
     SUBDIR += routers2-extras
     SUBDIR += rrdbot
     SUBDIR += rubygem-blimpy
+    SUBDIR += rubygem-nagiosplugin
     SUBDIR += rubygem-snmp
     SUBDIR += rubygem-visage-app
     SUBDIR += satellite
