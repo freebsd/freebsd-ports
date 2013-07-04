@@ -1,12 +1,8 @@
-# New ports collection makefile for:	devel/p5-CPAN-Uploader
-# Date created:				2011-09-19
-# Whom:					Geraud CONTINSOUZAS <geraud@gcu.info>
-#
+# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-Uploader
-PORTVERSION=	0.103001
+PORTVERSION=	0.103004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
