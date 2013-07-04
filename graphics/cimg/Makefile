@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTVERSION=	1.5.6
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -41,8 +40,6 @@ LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 
 USE_FORTRAN=	yes
 
-CONFLICTS=	gimp-gmic-plugin-1.*
-
 . if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png		\
 		jpeg:${PORTSDIR}/graphics/jpeg		\
@@ -52,9 +49,9 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png		\
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app	\
 		fftw3:${PORTSDIR}/math/fftw3		\
 		GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
-ALL_TARGET=	oFreeBSD
+ALL_TARGET=	Mlinux
 . else
-ALL_TARGET=	dFreeBSD
+ALL_TARGET=	dlinux
 WITHOUT_MEDCON=	yes
 WITHOUT_FFMPEG=	yes
 WITHOUT_LAPACK=	yes
@@ -69,7 +66,7 @@ LIB_DEPENDS+=	avformat1:${PORTSDIR}/multimedia/ffmpeg1
 
 DOCBASE=	README.txt
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
-	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros gmic	\
+	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
 	hough_transform2d image2ascii image_registration2d image_surface3d	\
 	jawbreaker mcf_levelsets2d mcf_levelsets3d odykill			\
 	pde_TschumperleDeriche2d pde_heatflow2d plotter1d radon_transform2d	\
