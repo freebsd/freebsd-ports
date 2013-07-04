@@ -1,0 +1,12 @@
+Entangle is an application which uses GTK+3 and libgphoto2 to provide a
+graphical interface for tethered photography with digital cameras.
+
+It includes control over camera shooting and configuration settings and
+"hands off" shooting directly from the controlling computer:
+
+  - Trigger the shutter from the computer
+  - Live preview of scene before shooting
+  - Automatic download and display of photos as they are shot
+  - Control of all camera settings from computer
+
+WWW: http://entangle-photo.org/
