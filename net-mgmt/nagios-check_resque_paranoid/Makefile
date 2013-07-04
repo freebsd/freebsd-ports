@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ochkoo@gmail.com
 COMMENT=	Nagios plugin for checking Resque
 
-RUN_DEPENDS=	rubygem-redis>=3.0.4:${PORTSDIR}/databases/rubygem-redis \
+RUN_DEPENDS=	rubygem-redis>=3.0.2:${PORTSDIR}/databases/rubygem-redis \
   rubygem-nagiosplugin>=1.3.0:${PORTSDIR}/net-mgmt/rubygem-nagiosplugin
 
 USE_RUBY=	yes
