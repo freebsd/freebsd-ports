@@ -9,7 +9,7 @@ Double Commander was installed
    # doublecmd
 
 3) Plugins are currently not available for FreeBSD. For more information see:
-   http://sourceforge.net/apps/mediawiki/doublecmd/index.php?title=Issues_with_FPC,_Lazarus
+   http://doublecmd.sourceforge.net/mediawiki/index.php/Issues_with_FPC,_Lazarus
    in "Loading shared libraries on FreeBSD doesn't work" section
 
 4) Enjoy it ;)
