@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	2.10.0
+PORTVERSION=	3.1.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-demos
@@ -12,11 +12,11 @@ COMMENT=	Adacore Ada Web Server demos
 
 BUILD_DEPENDS+=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 		xmlada>=3.2:${PORTSDIR}/textproc/xmlada \
-		aws>=2.10:${PORTSDIR}/www/aws
+		aws>=3.1:${PORTSDIR}/www/aws
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES+=		ada
+USES=		ada
 
 CONF_ARGS=	PROCESSORS=1
 CONF_ARGS+=	GCC=ada
@@ -26,8 +26,11 @@ OPTIONS_DEFINE=		SSL LDAP
 OPTIONS_DEFAULT=	SSL
 
 DEMO_DIRS+=	auth
+DEMO_DIRS+=	autobahn
+DEMO_DIRS+=	cert
 DEMO_DIRS+=	com
 DEMO_DIRS+=	dispatch
+DEMO_DIRS+=	dowload_manager
 DEMO_DIRS+=	hello_world
 DEMO_DIRS+=	hotplug
 DEMO_DIRS+=	jabber_demo
@@ -39,12 +42,14 @@ DEMO_DIRS+=	soap_vs
 DEMO_DIRS+=	split
 DEMO_DIRS+=	test_mail
 DEMO_DIRS+=	text_input
+DEMO_DIRS+=	upload
 DEMO_DIRS+=	vh_demo
 DEMO_DIRS+=	web_block
 DEMO_DIRS+=	web_block_ajax
 DEMO_DIRS+=	web_block_ajax_templates
 DEMO_DIRS+=	web_elements
 DEMO_DIRS+=	web_mail
+DEMO_DIRS+=	websockets
 DEMO_DIRS+=	wps
 DEMO_DIRS+=	ws
 DEMO_DIRS+=	zdemo
@@ -90,7 +95,7 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/share/examples/aws-demos
+	@${MKDIR} ${PREFIX}/share/examples/aws-demos
 .for dd in ${DEMO_DIRS}
 	${FIND} ${WRKSRC}/demos/${dd} -type f -perm -0001 \
 	   -exec ${INSTALL} {} ${PREFIX}/share/examples/aws-demos/ \;

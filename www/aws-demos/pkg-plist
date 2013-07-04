@@ -1,8 +1,11 @@
 %%OSSL%%%%EXAMPLESDIR%%/agent
 %%EXAMPLESDIR%%/auth
+%%EXAMPLESDIR%%/autobahn
+%%EXAMPLESDIR%%/cert
 %%EXAMPLESDIR%%/com_1
 %%EXAMPLESDIR%%/com_2
 %%EXAMPLESDIR%%/dispatch
+%%EXAMPLESDIR%%/download_manager
 %%EXAMPLESDIR%%/hello_world
 %%EXAMPLESDIR%%/hotplug
 @comment broken %%EXAMPLESDIR%%/interoplab_main
@@ -11,6 +14,7 @@
 %%EXAMPLESDIR%%/multiple_sessions
 %%EXAMPLESDIR%%/res_demo
 %%OSSL%%%%EXAMPLESDIR%%/runme
+%%EXAMPLESDIR%%/run.sh
 %%EXAMPLESDIR%%/soap_client
 %%EXAMPLESDIR%%/soap_cvs
 %%EXAMPLESDIR%%/soap_server
@@ -20,15 +24,18 @@
 %%LDAP%%%%EXAMPLESDIR%%/test_ldap
 %%EXAMPLESDIR%%/test_mail
 %%EXAMPLESDIR%%/text_input
+%%EXAMPLESDIR%%/upload
 %%EXAMPLESDIR%%/vh_demo
 %%EXAMPLESDIR%%/web_block
 %%EXAMPLESDIR%%/web_block_ajax
 %%EXAMPLESDIR%%/web_block_ajax_templates
 %%EXAMPLESDIR%%/web_elements
 %%EXAMPLESDIR%%/web_mail
+%%EXAMPLESDIR%%/websock
 %%EXAMPLESDIR%%/wps
 %%EXAMPLESDIR%%/ws
 @comment broken %%EXAMPLESDIR%%/wsdl_demo_client
 @comment broken %%EXAMPLESDIR%%/wsdl_demo_server
 %%EXAMPLESDIR%%/zdemo
 @dirrmtry %%EXAMPLESDIR%%
+@dirrmtry share/examples
