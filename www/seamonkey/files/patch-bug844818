@@ -21,10 +21,10 @@ index 7cd6e17..a1dbdf7 100644
  # Don't try to compile sse4.1 code if toolchain doesn't support
  if test -z "$HAVE_TOOLCHAIN_SUPPORT_MSSE4_1"; then
    EXTRA_GYP_DEFINES="$EXTRA_GYP_DEFINES -D yuv_disable_asm=1"
-diff --git media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
+diff --git media/webrtc/trunk/webrtc/modules/audio_device/audio_device.gypi media/webrtc/trunk/webrtc/modules/audio_device/audio_device.gypi
 index 8457737..dfc83ff 100644
---- mozilla/media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
-+++ mozilla/media/webrtc/trunk/src/modules/audio_device/main/source/audio_device.gypi
+--- mozilla/media/webrtc/trunk/webrtc/modules/audio_device/audio_device.gypi
++++ mozilla/media/webrtc/trunk/webrtc/modules/audio_device/audio_device.gypi
 @@ -45,11 +45,15 @@
          'dummy/audio_device_utility_dummy.h',
        ],
@@ -40,9 +40,9 @@ index 8457737..dfc83ff 100644
 +            'WEBRTC_LINUX',
 +          ],
 +        }], # include_alsa_audio==1 or include_pulse_audio==1
-         ['OS=="mac"', {
-             'include_dirs': [
-               'mac',
+         ['OS=="ios"', {
+           'include_dirs': [
+             'ios',
 @@ -74,14 +78,8 @@
          }],
          ['include_internal_audio_device==1', {
