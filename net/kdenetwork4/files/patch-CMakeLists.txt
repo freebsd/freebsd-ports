@@ -1,0 +1,10 @@
+--- CMakeLists.txt~	2013-07-03 17:37:37.959108794 +0300
++++ CMakeLists.txt	2013-07-03 17:37:44.152442094 +0300
+@@ -19,7 +19,6 @@
+ 
+ macro_optional_add_subdirectory( kdenetwork-strigi-analyzers )
+ macro_optional_add_subdirectory( kdenetwork-filesharing )
+-macro_optional_add_subdirectory( kppp )
+ macro_optional_add_subdirectory( kdnssd )
+ macro_optional_add_subdirectory( krdc )
+ macro_optional_add_subdirectory( krfb )

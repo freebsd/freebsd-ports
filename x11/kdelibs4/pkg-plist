@@ -1217,6 +1217,7 @@ include/kdatetime.h
 include/kdatetimeedit.h
 include/kdatetimewidget.h
 include/kdatewidget.h
+include/kdbusconnectionpool.h
 include/kdbusservicestarter.h
 include/kde3support_export.h
 include/kde_file.h

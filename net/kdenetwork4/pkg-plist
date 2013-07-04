@@ -23,6 +23,7 @@ lib/kde4/sambausershareplugin.so
 lib/libkgetcore.so
 lib/libkgetcore.so.5
 lib/libkgetcore.so.5.0.1
+lib/strigi/strigita_torrent_analyzer.so
 share/applications/kde4/kget.desktop
 share/apps/dolphinpart/kpartplugins/kget_plug_in.desktop
 share/apps/dolphinpart/kpartplugins/kget_plug_in.rc

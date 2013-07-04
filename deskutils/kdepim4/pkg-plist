@@ -400,13 +400,6 @@ share/apps/ktimetracker/icons/hicolor/32x32/actions/subtask-new-ktimetracker.png
 share/apps/ktimetracker/icons/hicolor/48x48/actions/subtask-new-ktimetracker.png
 share/apps/ktimetracker/icons/hicolor/64x64/actions/subtask-new-ktimetracker.png
 share/apps/ktimetracker/icons/hicolor/scalable/actions/subtask-new-ktimetracker.svgz
-share/apps/ktimetracker/icons/oxygen/128x128/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/16x16/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/22x22/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/32x32/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/48x48/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/64x64/actions/subtask-new-ktimetracker.png
-share/apps/ktimetracker/icons/oxygen/scalable/actions/subtask-new-ktimetracker.svgz
 share/apps/ktimetracker/ktimetrackerui.rc
 share/apps/ktimetracker/pics/active-icon-0.xpm
 share/apps/ktimetracker/pics/active-icon-1.xpm
@@ -1015,21 +1008,6 @@ share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @dirrm share/apps/kwatchgnupg
 @dirrm share/apps/ktnef
 @dirrm share/apps/ktimetracker/pics
-@dirrm share/apps/ktimetracker/icons/oxygen/scalable/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/scalable
-@dirrm share/apps/ktimetracker/icons/oxygen/64x64/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/64x64
-@dirrm share/apps/ktimetracker/icons/oxygen/48x48/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/48x48
-@dirrm share/apps/ktimetracker/icons/oxygen/32x32/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/32x32
-@dirrm share/apps/ktimetracker/icons/oxygen/22x22/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/22x22
-@dirrm share/apps/ktimetracker/icons/oxygen/16x16/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/16x16
-@dirrm share/apps/ktimetracker/icons/oxygen/128x128/actions
-@dirrm share/apps/ktimetracker/icons/oxygen/128x128
-@dirrm share/apps/ktimetracker/icons/oxygen
 @dirrm share/apps/ktimetracker/icons/hicolor/scalable/actions
 @dirrm share/apps/ktimetracker/icons/hicolor/scalable
 @dirrm share/apps/ktimetracker/icons/hicolor/64x64/actions
