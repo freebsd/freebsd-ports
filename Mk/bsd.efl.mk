@@ -130,7 +130,7 @@ _${LIB}_PREFIX=${LOCALBASE}
 
 # All components that are currently supported
 _EFL_EVAS_ENGINES_ALL=	buffer opengl sdl x11
-_EFL_EVAS_LOADERS_ALL=	bmp edb eet generic gif ico jpeg \
+_EFL_EVAS_LOADERS_ALL=	bmp eet generic gif ico jpeg \
 			png pmaps psd svg tga tiff wbmp xpm
 
 #
