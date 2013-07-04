@@ -337,7 +337,6 @@
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
     SUBDIR += gnomekiss
-    SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind
     SUBDIR += gnomesudoku
     SUBDIR += gnono
