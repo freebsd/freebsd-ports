@@ -26,6 +26,6 @@
 +fi
 +AC_SUBST(INSTALL_KAUTH)
 +
- AC_CHECK_FUNCS(snprintf strlcat strlcpy flock getrlimit strnlen tsearch)
- AC_CHECK_FUNCS(setprogname getprogname sigaction mkstemp vsnprintf strerror strcasestr)
- AC_CHECK_FUNCS(setvbuf vsyslog getcwd)
+ AC_CHECK_FUNCS([ \
+	daemon \
+	flock \

@@ -21,7 +21,7 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
 
-AFS_DISTVERSION=	1.6.2
+AFS_DISTVERSION=	1.6.4
 DBVERSION=	2013-01-28
 
 OPTIONS_DEFINE=	FUSE
@@ -44,10 +44,6 @@ PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 1000000
-BROKEN=		Does not build
-.endif
-
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
 KMODDIR=	/boot/modules
@@ -64,6 +60,9 @@ IGNORE=	requires kernel configuration file ${_KERNCONF} to build
 
 .if ${OSVERSION} < 800000
 IGNORE=	supports FreeBSD 8.0 and later
+.endif
+.if ${OSVERSION} > 1000000
+IGNORE=	Does not build
 .endif
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

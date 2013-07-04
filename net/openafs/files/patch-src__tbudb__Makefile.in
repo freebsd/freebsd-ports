@@ -1,14 +1,11 @@
---- openafs-1.6.1/src/tbudb/Makefile.in.orig	2012-03-27 08:03:34.000000000 +0900
-+++ openafs-1.6.1/src/tbudb/Makefile.in	2012-06-24 06:44:51.000000000 +0900
-@@ -62,8 +62,9 @@
- #
- budb_errs.o: budb_errs.c budb_client.h budb_errs.h
-
--budb_errs.c budb_client.h: ${BUDB}/budb_errs.et ${BUDB}/budb_client.p.h
--	$(RM) -f budb_client.h budb_errs.c; ${COMPILE_ET} -p ${srcdir}/${BUDB} budb_errs -h budb_client
-+budb_errs.c budb_client.h: budb_errs.h ${BUDB}/budb_errs.et ${BUDB}/budb_client.p.h
-+	$(RM) -f budb_client.h budb_errs.c
-+	${COMPILE_ET} -p ${srcdir}/${BUDB} budb_errs -h budb_client
-
- budb_errs.h: ${BUDB}/budb_errs.et
- 	${COMPILE_ET} -p ${srcdir}/${BUDB} budb_errs
+--- a/src/tbudb/Makefile.in	2013-06-19 16:52:31.000000000 -0400
++++ b/src/tbudb/Makefile.in	2013-06-19 16:54:02.000000000 -0400
+@@ -122,7 +122,7 @@
+ db_alloc.o: ${BUDB}/db_alloc.c budb_errs.h ${INCLS}
+ 	${CCRULE} ${srcdir}/${BUDB}/db_alloc.c
+ 
+-db_dump.o: ${BUDB}/db_dump.c
++db_dump.o: ${BUDB}/db_dump.c budb_errs.h ${INCLS}
+ 	${CCRULE} ${srcdir}/${BUDB}/db_dump.c
+ 
+ dbs_dump.o: ${BUDB}/dbs_dump.c budb_errs.h ${INCLS}
