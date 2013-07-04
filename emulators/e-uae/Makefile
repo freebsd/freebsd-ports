@@ -33,8 +33,9 @@ PLIST_FILES=	bin/readdisk bin/uae
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/X11\/xkb\/rules/s|/usr/X11R6/lib|${LOCALBASE}/share|' \
+	@${REINPLACE_CMD} \
+		-e '\,X11/xkb/rules,s,/usr/X11R6/lib,${LOCALBASE}/share,' \
+		-e 's,-W ,&-Wno-unused-parameter ,' \
 		${WRKSRC}/configure
 
 do-install:
