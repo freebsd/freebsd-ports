@@ -1,11 +1,12 @@
---- demos/test_ldap/test_ldap.gpr.orig	2013-04-25 23:03:26.000000000 +0200
-+++ demos/test_ldap/test_ldap.gpr	2013-04-25 23:03:52.000000000 +0200
-@@ -42,7 +42,7 @@
+--- demos/test_ldap/test_ldap.gpr.orig	2013-07-03 01:11:54.000000000 +0000
++++ demos/test_ldap/test_ldap.gpr
+@@ -35,7 +35,8 @@ project Test_LDAP is
           when "Windows_NT" =>
              for Default_Switches ("Ada") use ("-lwldap32");
           when others =>
--            for Default_Switches ("Ada") use ("-lldap");
-+            for Default_Switches ("Ada") use ("-L@PREFIX@/lib", "-lldap");
+-            for Default_Switches ("Ada") use ("-lldap", "-llber");
++            for Default_Switches ("Ada") use ("-L@PREFIX@/lib",
++               "-lldap", "-llber");
        end case;
     end Linker;
  
