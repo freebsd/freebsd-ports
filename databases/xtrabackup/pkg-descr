@@ -1,6 +1,6 @@
 Percona XtraBackup is OpenSource online (non-blockable) backup solution for
 InnoDB and XtraDB engines. It can back up data from InnoDB, XtraDB, and MyISAM
-tables on unmodified MySQL 5.0, 5.1 and 5.5 servers, as well as Percona Server
+tables on unmodified MySQL 5.1, 5.5 and 5.6 servers, as well as Percona Server
 with XtraDB.
 
 WWW: http://www.percona.com/doc/percona-xtrabackup/
