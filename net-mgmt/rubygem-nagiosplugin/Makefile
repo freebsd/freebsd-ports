@@ -6,7 +6,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	bjoernalbers@googlemail.com
+MAINTAINER=	ochkoo@gmail.com
 COMMENT=	Ruby library for creating Nagios plugin
 
 USE_RUBY=	yes

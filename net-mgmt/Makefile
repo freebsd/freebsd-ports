@@ -133,7 +133,6 @@
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-portaudit
-    SUBDIR += nagios-rubygem-nagiosplugin
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
@@ -287,6 +286,7 @@
     SUBDIR += routers2-extras
     SUBDIR += rrdbot
     SUBDIR += rubygem-blimpy
+    SUBDIR += rubygem-nagiosplugin
     SUBDIR += rubygem-snmp
     SUBDIR += rubygem-visage-app
     SUBDIR += satellite
