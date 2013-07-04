@@ -21,6 +21,8 @@ CONFLICTS_INSTALL=	openvpn-devel-[0-9]* openvpn-2.[!2]* openvpn-beta-[0-9]*
 DEPRECATED=		Please migrate to a newer OpenVPN version
 EXPIRATION_DATE=	2013-09-01
 
+PORTSCOUT=	limit:^2\.2\.
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_XZ=		yes
