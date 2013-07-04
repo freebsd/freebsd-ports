@@ -25,7 +25,7 @@ CONFLICTS_INSTALL=	busybox-[1-9]*
 
 IGNORE=		is older than stable version. Use sysutils/busybox
 
-PORTSCOUT=	limitw:1,ODD
+PORTSCOUT=	skipv:1.21.1
 
 MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
