@@ -1245,8 +1245,8 @@ spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @dirrm spool/asterisk/voicemail
 @dirrm spool/asterisk/tmp
 @dirrm spool/asterisk
-@dirrm log/asterisk/cdr-csv
-@dirrm log/asterisk/cdr-custom
-@dirrm log/asterisk/cel-custom
-@dirrm log/asterisk
+@dirrmtry log/asterisk/cdr-csv
+@dirrmtry log/asterisk/cdr-custom
+@dirrmtry log/asterisk/cel-custom
+@dirrmtry log/asterisk
 @dirrmtry db/asterisk
