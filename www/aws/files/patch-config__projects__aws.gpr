@@ -1,6 +1,6 @@
---- config/projects/aws.gpr.orig	2010-12-20 12:38:25 +0000
+--- config/projects/aws.gpr.orig	2013-07-03 01:11:54.000000000 +0000
 +++ config/projects/aws.gpr
-@@ -31,7 +31,6 @@ with "aws/aws_crypto_lib";
+@@ -22,7 +22,6 @@ with "aws/aws_crypto_lib";
  with "aws/aws_ssl_support";
  with "aws/aws_ssl_lib";
  with "aws/aws_ssl_error_lib";

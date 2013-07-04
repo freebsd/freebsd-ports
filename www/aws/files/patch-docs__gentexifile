@@ -1,6 +1,6 @@
---- docs/gentexifile.orig	2011-01-09 15:48:05.000000000 +0100
-+++ docs/gentexifile	2011-07-17 16:15:21.000000000 +0200
-@@ -32,14 +32,7 @@
+--- docs/gentexifile.orig	2013-07-03 01:11:54.000000000 +0000
++++ docs/gentexifile
+@@ -32,12 +32,7 @@ SOURCE=$1
  TARGET=`basename ${SOURCE}`.texi
  TMPTAR=${TARGET}.tmp
  
@@ -10,13 +10,11 @@
 -else
 -   awk="gawk"
 -fi
--
--$awk 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
-+${AWK} 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
++awk=${AWK}
  
- rm -f ${TMPTAR}
+ $awk 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
  
-@@ -51,7 +44,7 @@
+@@ -51,7 +46,7 @@ if [ $# = 1 ]; then
  echo "@group"            >>${TMPTAR}
  fi
  echo ""                  >>${TMPTAR}
