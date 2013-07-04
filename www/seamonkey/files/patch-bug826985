@@ -6,9 +6,9 @@ Date:   Fri Jan 4 13:49:22 2013 +0100
 ---
  configure.in                                            |  7 +++++++
  media/webrtc/signaling/test/Makefile.in                 |  1 +
- .../modules/video_capture/main/source/Linux/device_info_linux.cc    | 17 +++++++++++++++++
- .../modules/video_capture/main/source/Linux/video_capture_linux.cc  | 16 +++++++++++++++-
- .../webrtc/modules/video_capture/main/source/video_capture.gypi     | 11 +++++++++++
+ .../modules/video_capture/linux/device_info_linux.cc    | 17 +++++++++++++++++
+ .../modules/video_capture/linux/video_capture_linux.cc  | 16 +++++++++++++++-
+ .../webrtc/modules/video_capture/video_capture.gypi     | 11 +++++++++++
  toolkit/library/Makefile.in                             |  1 +
  6 files changed, 52 insertions(+), 1 deletion(-)
 
@@ -16,16 +16,16 @@ diff --git configure.in configure.in
 index 55e4cd1..76567b3 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5238,6 +5238,9 @@ if test -n "$MOZ_WEBRTC"; then
+@@ -5294,6 +5294,9 @@ if test -n "$MOZ_WEBRTC"; then
      MOZ_VP8_ENCODER=1
      MOZ_VP8_ERROR_CONCEALMENT=1
  
 +    dnl with libv4l2 we can support more cameras
 +    PKG_CHECK_MODULES(MOZ_LIBV4L2, libv4l2)
 +
-     dnl OpenSLES is only available in Android 2.3 and later; we'll change this
-     dnl hard dependency to a dynamic load with graceful runtime failure before
-     dnl we make --enable-webrtc on by default in Android (bug 815905)
+     if test "$MOZ_WIDGET_TOOLKIT" != "gonk"; then
+        dnl OpenSLES is only available in Android 2.3 and later; we'll change this
+        dnl hard dependency to a dynamic load with graceful runtime failure before
 @@ -8981,6 +8984,10 @@ elif test "${OS_TARGET}" = "Android"; then
     fi
  fi
@@ -49,10 +49,10 @@ index b483cd1..f1dd1f0 100644
    $(DEPTH)/xpcom/glue/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
    $(DEPTH)/media/mtransport/standalone/$(LIB_PREFIX)mtransport_s.$(LIB_SUFFIX) \
    $(DEPTH)/media/webrtc/signalingtest/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
-diff --git media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
+diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 index 239a292..bab496c 100644
---- mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
-+++ mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/Linux/device_info_linux.cc
+--- mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
++++ mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 @@ -26,11 +26,23 @@
  #else
  #include <linux/videodev2.h>
@@ -89,10 +89,10 @@ index 239a292..bab496c 100644
      if (deviceNameLength >= strlen(cameraName))
      {
          memcpy(deviceNameUTF8, cameraName, strlen(cameraName));
-diff --git media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
+diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc
 index 12df1b3..e9863ba 100644
---- mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
-+++ mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/Linux/video_capture_linux.cc
+--- mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc
++++ mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc
 @@ -25,6 +25,9 @@
  #else
  #include <linux/videodev2.h>
@@ -119,10 +119,10 @@ index 12df1b3..e9863ba 100644
  namespace webrtc
  {
  namespace videocapturemodule
-diff --git media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
+diff --git media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
 index d46b5aa..e452223 100644
---- mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
-+++ mozilla/media/webrtc/trunk/src/modules/video_capture/main/source/video_capture.gypi
+--- mozilla/media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
++++ mozilla/media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
 @@ -7,6 +7,9 @@
  # be found in the AUTHORS file in the root of the source tree.
  
