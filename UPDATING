@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130705:
+  AFFECTS: users of x11/kdelibs4
+  AUTHOR: kde@FreeBSD.org
+
+  The KDE Software Compilation 4.10.4 was committed a few days ago, and
+  version 4.10.5 was committed today.
+
+  They include better support for using clang as the compiler, but that
+  requires recompiling all KDE ports which depend on x11/kdelibs4. Most
+  ports which fall into this category are already part of the KDE Software
+  Compilation and have been updated to version 4.10.5, but those released
+  separately need to be rebuilt manually.
+
+  If you are building your KDE ports with clang, doing the following is
+  recommended:
+
+  # portmaster -r kdelibs-4\*
+    or
+  # portupgrade -fr x11/kdelibs4
+    or
+  # pkg install -fR x11/kdelibs4
+
+  Alternatively, to avoid rebuilding the ports which are part of the 4.10.5
+  update:
+
+  # portmaster -x \*-4.10.5\* -r kdelibs-4\*
+    or
+  # portupgrade -x \*-4.10.5\* -fr x11/kdelibs4
+
 20130703:
   AFFECTS: users of comms/trustedqsl and comms/tqsllib
   AUTHOR: db@FreeBSD.org
