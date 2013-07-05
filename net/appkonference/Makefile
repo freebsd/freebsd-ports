@@ -16,6 +16,7 @@ COMMENT=	High-performance Asterisk voice/video conferencing plugin
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
+USE_CSTD=	gnu89
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/konference
 

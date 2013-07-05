@@ -27,3 +27,30 @@
  
  # module release
  RELEASE = 2.1
+@@ -86,7 +86,7 @@
+ # compiler flags
+ #
+ 
+-CFLAGS = -pipe -Wall -Wmissing-prototypes -Wmissing-declarations -MD -MP $(DEBUG)
++CFLAGS += -pipe -Wall -Wmissing-prototypes -Wmissing-declarations -MD -MP $(DEBUG)
+ #CFLAGS += -O3 -march=pentium3 -msse -mfpmath=sse,387 -ffast-math
+ # PERF: below is 10% faster than -O2 or -O3 alone.
+ #CFLAGS += -O3 -ffast-math -funroll-loops
+@@ -103,7 +103,7 @@
+ # preprocessor flags
+ #
+ 
+-CPPFLAGS = $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
++CPPFLAGS += $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
+ CPPFLAGS += -DRELEASE=\"$(RELEASE)\"
+ CPPFLAGS += -DASTERISK=$(ASTERISK)
+ CPPFLAGS += -DCHANNEL_TABLE_SIZE=$(CHANNEL_TABLE_SIZE)
+@@ -182,7 +182,7 @@
+ $(OBJS): $(INCS)
+ 
+ $(TARGET): $(OBJS)
+-	$(CC) $(SOLINK) -o $@ $(OBJS)
++	$(CC) $(LDFLAGS) $(SOLINK) -o $@ $(OBJS)
+ 
+ install:
+ 	$(INSTALL) -m 755 $(TARGET) $(INSTALL_MODULES_DIR)
