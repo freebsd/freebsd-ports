@@ -3,6 +3,7 @@
 
 PORTNAME=	xtrabackup
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.skysql.com/archives/%SUBDIR%/:mysql51,mysql55,mysql56 \
 		http://downloads.mysql.com/archives/%SUBDIR%/:mysql51,mysql55,mysql56 \
@@ -27,6 +28,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error
+RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 # autotool is in use for 5.1 builds
 MAKE_JOBS_SAFE=	yes
