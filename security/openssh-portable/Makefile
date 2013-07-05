@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	OpenSSH/portable
-PKGNAMESUFFIX=	-portable
+PKGNAMESUFFIX?=	-portable
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
