@@ -15,6 +15,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	xmmsclient.6:${PORTSDIR}/audio/xmms2 \
 		curl.6:${PORTSDIR}/ftp/curl
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}
 
