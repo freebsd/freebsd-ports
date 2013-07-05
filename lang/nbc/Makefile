@@ -22,15 +22,13 @@ OPTIONS_DEFINE=	DOCS ROBOCTL
 
 ROBOCTL_DESC=	Include roboctl to communicate with the NXT
 
-OPTIONS_DEFAULT=
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MROBOCTL}
 RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/roboctl
 .endif
 
-USE_GMAKE=		yes
+USES=			gmake
 USE_DOS2UNIX=		yes
 USE_FPC=		fcl-base fcl-image
 
