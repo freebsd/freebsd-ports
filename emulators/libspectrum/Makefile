@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 
 MAN3=		libspectrum.3
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		vorbis:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		shebangfix
+USES=		gmake shebangfix
 SHEBANG_FILES=	src/linux/torcs.in src/tools/accc/accc.in \
 		src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
@@ -30,7 +30,6 @@ USE_GL=		glut
 USE_OPENAL=	al alut
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
