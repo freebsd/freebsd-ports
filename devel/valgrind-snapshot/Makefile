@@ -40,8 +40,7 @@ MPI_LIB_DEPENDS=	mpich:${PORTSDIR}/net/mpich2
 
 OPTIONS_SUB=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
