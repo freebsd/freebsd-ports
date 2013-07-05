@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	quantis
-DISTVERSION=	v12.09.12
+DISTVERSION=	v13.04.29
 CATEGORIES=	security devel java
-MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
+MASTER_SITES=	http://www.idquantique.com/~download/Quantis/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+DISTNAME=	Quantis-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access Quantis devices
@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=PCI USB JAVA TOOL GUI
 NO_OPTIONS_SORT=yes
 
 PCI_DESC=	Enable Quantis PCI support
-USB_DESC=	Enable Quantis USB support (FreeBSD >= 8.1)
+USB_DESC=	Enable Quantis USB support
 JAVA_DESC=	Enable Java support
 COMPAT_DESC=	Build API v1 compatibility libraries
 TOOL_DESC=	Build EasyQuantis application
@@ -42,17 +42,13 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-IGNORE=		requires FreeBSD >= 7
-.endif
-
 .if ${PORT_OPTIONS:MPCI}
 RUN_DEPENDS+=	${KMODDIR}/quantis.ko:${PORTSDIR}/security/quantis-kmod
 .else
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_PCI=1
 .endif
 
-.if empty(PORT_OPTIONS:MUSB) || ${OSVERSION} < 801000
+.if ! ${PORT_OPTIONS:MUSB}
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_USB=1
 .endif
 
