@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lua50-dfui
-# Date created:        18 April 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	dfui
 PORTVERSION=	0.1.20050901
@@ -15,6 +11,8 @@ DISTNAME=	lua-dfui-0.1.20050901
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DFUI binding for Lua 5.0.x
+
+BROKEN=		Does not build
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
 LIB_DEPENDS=	dfui4.4:${PORTSDIR}/devel/libdfui
