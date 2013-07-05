@@ -22,6 +22,8 @@ RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
 SUB_FILES=	pkg-message
 
+BROKEN=		Does not fetch
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
