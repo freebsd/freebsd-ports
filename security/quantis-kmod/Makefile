@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	quantis
-DISTVERSION=	v12.09.12
+DISTVERSION=	v13.04.29
 CATEGORIES=	security kld
-MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
+MASTER_SITES=	http://www.idquantique.com/~download/Quantis/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+DISTNAME=	Quantis-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Kernel driver for Quantis PCI/PCIe random number generator
@@ -32,10 +32,6 @@ PLIST_FILES=	"@cwd ${KMODDIR}" \
 		"@cwd ${PREFIX}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=		requires FreeBSD >= 7
-.endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
