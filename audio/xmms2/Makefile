@@ -13,12 +13,12 @@ COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
+USES+=		pkgconfig
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
 USE_SQLITE=	3
 
-USES+=		pkgconfig
 USE_LDCONFIG=	yes
 
 MAN1=		xmms2.1 xmms2d.1 xmms2-launcher.1
