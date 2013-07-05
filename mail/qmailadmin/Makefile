@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
-USES=		qmail:vars
+USES=		qmail:vars gmake
 
 CONFLICTS=	qmailadmin-devel-1.*
 
@@ -95,7 +95,6 @@ CONFIGURE_ARGS+=	--enable-spam-command="${SPAM_COMMAND}"
 VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
 
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
 
 # Notes and comments:
 #

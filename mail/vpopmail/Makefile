@@ -19,12 +19,11 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 PATCH_STRIP=	-p1
 
-USES=		qmail
+USES=		qmail gmake
 
 CONFLICTS=	vpopmail-devel-5.*
 
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
 OPTIONS_SUB=	yes
 
 USERS=		vpopmail
