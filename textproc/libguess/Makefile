@@ -11,8 +11,7 @@ COMMENT=	High-speed character set detection library
 
 LIB_DEPENDS=	mowgli:${PORTSDIR}/devel/libmowgli
 
-USES=		gmake
-USE_GNOME=	gnomehack pkgconfig
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
