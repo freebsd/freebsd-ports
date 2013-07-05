@@ -40,8 +40,4 @@ share/mime/packages/notecase.xml
 share/pixmaps/notecase.xpm
 @dirrmtry share/locale/fr_CA/LC_MESSAGES
 @dirrmtry share/locale/fr_CA
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/applications
