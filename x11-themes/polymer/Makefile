@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Polymer (Qt3 port of Plastik)
-# Date Created:				30 Oct 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	polymer
 PORTVERSION=	0.3.1
@@ -16,6 +12,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Pure Qt3 port of Plastik KDE theme
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Qt 3.x is unsupported upstream; its port scheduled for removal
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
