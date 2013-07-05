@@ -3,9 +3,10 @@
 
 PORTNAME=	openct
 PORTVERSION=	0.6.20
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
-		http://www.opensc-project.org/files/${PORTNAME}/testing/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	opensc/${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Middleware framework for smart card terminals
