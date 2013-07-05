@@ -1,9 +1,5 @@
-# New ports collection makefile for:   uppaal
-# Date created:        16 August 2005
-# Whom:                Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	uppaal
 PORTVERSION=	4.0.10
@@ -13,6 +9,8 @@ DISTNAME=	uppaal-${PORTVERSION}-aca
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool environment for modeling and verifying timed automata
+
+BROKEN=		Does not fetch
 
 USE_ZIP=	yes
 USE_LINUX=	yes
