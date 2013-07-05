@@ -12,7 +12,6 @@
     SUBDIR += celestia
     SUBDIR += celestia-gnome
     SUBDIR += celestia-gtk
-    SUBDIR += celestia-kde
     SUBDIR += cfitsio
     SUBDIR += dgpsip
     SUBDIR += ephem

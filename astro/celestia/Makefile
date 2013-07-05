@@ -9,16 +9,15 @@ MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Scriptable space flight simulator for X
+COMMENT=	Scriptable space flight simulator for X11
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
+USES=		gettext gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-USES=		gettext
 USE_GL=		gl
 USE_LUA=	5.0+	# should be optional, but the build fails without it
 WANT_GNOME=	yes
@@ -27,7 +26,7 @@ CXXFLAGS+=	-fsigned-char	# fix text rendering (see Gentoo bug 316573)
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-UI_LIST=	glut gtk gnome kde
+UI_LIST=	glut gtk gnome
 CELESTIA_UI?=	glut
 CONFLICTS=	${UI_LIST:S|${CELESTIA_UI}||:S|^|celestia-|:S|$|-[0-9]*|}
 
@@ -38,11 +37,9 @@ CONFLICTS=	${UI_LIST:S|${CELESTIA_UI}||:S|^|celestia-|:S|$|-[0-9]*|}
 #	the default one);
 # gtk	Full interface with minimal dependencies: adds menu, configuration
 #	dialog, some other utilities;
-# gnome	Full GTK interface plus a few Gnome integration goodies, such as
+# gnome	Full GTK interface plus a few GNOME integration goodies, such as
 #	preference saving in GConf (this looks and works very much like
-#	the Windows interface);
-# kde	Probably the richest of all: brings contextual menus, toolbars,
-#	KDE integration, internationalization, bookmarks, etc.
+#	the Windows interface).
 #
 .if ${CELESTIA_UI} == "glut"
 CONFIGURE_ARGS+=	--with-glut
@@ -55,11 +52,6 @@ CATEGORIES+=	gnome
 CONFIGURE_ARGS+=	--with-gnome
 USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	celestia.schemas
-.elif ${CELESTIA_UI} == "kde"
-CATEGORIES+=	kde
-CONFIGURE_ARGS+=	--with-kde
-USE_KDELIBS_VER=	3
-INSTALLS_ICONS=	yes
 .else
 IGNORE=		requires one of the <${UI_LIST}> values for CELESTIA_UI
 .endif
@@ -73,18 +65,16 @@ PLIST_FILES+=	share/celestia/celestia-logo.png share/celestia/celestiaui.xml
 .else
 STARTUP_NOTIFY=	false
 .endif
-.if ${CELESTIA_UI} == "kde"
-LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
-PLIST_SUB+=	KDE=""
-.else
-PLIST_SUB+=	KDE="@comment "
-.endif
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Celestia" "Explore space" \
+DESKTOP_ENTRIES="Celestia" "Explore the space" \
 		"${PREFIX}/share/pixmaps/celestia.png" "celestia" \
 		"Astronomy;Education;Science;" ${STARTUP_NOTIFY}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 # Fix Lua discovery pkg-config(1) calls
@@ -110,7 +100,7 @@ post-install:
 # does not hurt and simplifies PLIST handling
 	${INSTALL_DATA} ${WRKSRC}/src/celestia/gtk/data/celestia.png \
 		${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
