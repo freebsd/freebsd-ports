@@ -3,7 +3,7 @@
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://launchpad.net/flowgrind/trunk/${PORTNAME}-0.6/+download/
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.so:${PORTSDIR}/net/libpcap
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-debug
 FETCH_ARGS=	-pRr
 
 MAN1=		flowgrind-stop.1 \
