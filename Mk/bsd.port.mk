@@ -1212,13 +1212,6 @@ WITH_PKGNG?=	yes
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
-.for _CATEGORY in ${CATEGORIES}
-PKGCATEGORY?=	${_CATEGORY}
-.endfor
-_PORTDIRNAME=	${.CURDIR:T}
-PORTDIRNAME?=	${_PORTDIRNAME}
-PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
-
 MASTERDIR?=	${.CURDIR}
 
 .if ${MASTERDIR} != ${.CURDIR}
@@ -1257,6 +1250,13 @@ USE_SUBMAKE=	yes
 .include "${MASTERDIR}/Makefile.local"
 USE_SUBMAKE=	yes
 .endif
+
+.for _CATEGORY in ${CATEGORIES}
+PKGCATEGORY?=	${_CATEGORY}
+.endfor
+_PORTDIRNAME=	${.CURDIR:T}
+PORTDIRNAME?=	${_PORTDIRNAME}
+PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
