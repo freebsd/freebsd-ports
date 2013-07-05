@@ -320,9 +320,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
 # USE_BINUTILS	- Use binutils suite from port instead of the version in base.
-# USE_GMAKE		- If set, this port uses gmake.
-# GMAKE			- Set to path of GNU make if not in $PATH.
-#				  Default: gmake
 ##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
@@ -1501,6 +1498,10 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
+.if defined(USE_GMAKE)
+USES+=	gmake
+.endif
+
 # Loading features
 .for f in ${USES}
 _f=${f:C/\:.*//g}
@@ -1545,7 +1546,7 @@ _POSTMKINCLUDED=	yes
 .for f in ${_USES_POST}
 _f=${f:C/\:.*//g}
 .if ${_f} != ${f}
-${_f}_ARGS:=   ${f:C/^[^\:]*\://g}
+${_f}_ARGS:=	${f:C/^[^\:]*\://g}
 .endif
 .include "${USESDIR}/${_f}.mk"
 .endfor
@@ -1695,10 +1696,6 @@ EXTRACT_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 .if defined(USE_MAKESELF)
 EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
-.endif
-.if defined(USE_GMAKE)
-BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
-CONFIGURE_ENV+=	MAKE=${GMAKE}
 .endif
 
 .if defined(USE_GCC) || defined(USE_FORTRAN)
@@ -3710,23 +3707,13 @@ do-configure:
 
 .if !target(do-build)
 do-build:
-.if defined(USE_GMAKE)
-	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
-		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
-			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-			fi; \
-		${FALSE}; \
-		fi)
-.else
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
-		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
 			fi; \
 		${FALSE}; \
 		fi)
-.endif
 .endif
 
 # Check conflicts
@@ -3847,11 +3834,7 @@ check-install-conflicts:
 
 .if !target(do-install)
 do-install:
-.if defined(USE_GMAKE)
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.else # !defined(USE_GMAKE)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.endif
 .endif
 
 # Package
