@@ -36,12 +36,6 @@ ACTUAL-PACKAGE-DEPENDS?= \
 		${PKG_QUERY} "%dn: {origin: %do, version: \"%dv\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
 	fi
 
-# Redefine. pkg2ng calls directly 'make -f bsd.pkgng.mk' which needs UID to be defined
-
-.if !defined(UID)
-UID!=	${ID} -u
-.endif
-
 .if !target(fake-pkg)
 fake-pkg:
 .if !defined(NO_PKG_REGISTER)
@@ -267,7 +261,7 @@ check-already-installed:
 
 .if !target(deinstall)
 deinstall:
-.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+.if defined(UID) && ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"
