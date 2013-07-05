@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=NLS
 
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk20 libwnck
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC} -Wno-return-type
 USE_CSTD=	gnu89
-USE_GMAKE=	yes
 
 MAN1=		lxpanel.1 lxpanelctl.1
 
