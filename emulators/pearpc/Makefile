@@ -29,17 +29,6 @@ SDL_DESC=	Use SDL for user interface
 BROKEN=		Internal compiler error on ia64
 .endif
 
-# GTK and QT interfaces are broken in this version
-#
-#.if ${PORT_OPTIONS:MQT}
-#CONFIGURE_ARGS+=	--enable-ui=qt
-#USE_QT_VER=	3
-#QTDIR?=		${QT_PREFIX}
-#CONFIGURE_ENV+=	QTDIR="${QTDIR}"
-#.else
-#CONFIGURE_ARGS+=	--enable-ui=nogui
-#.endif
-
 .if ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=	--enable-ui=sdl
 USE_SDL=	sdl
