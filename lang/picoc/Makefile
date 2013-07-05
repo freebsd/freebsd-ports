@@ -1,9 +1,5 @@
-# New ports collection makefile for:	picoc
-# Date created:		2010-09-03
-# Whom:			Bapt <bapt@FreeBSD.org>
-#
+# Created by: Bapt <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	picoc
 PORTVERSION=	2.1
@@ -15,8 +11,8 @@ COMMENT=	Very small C interpreter for scripting
 
 LICENSE=	BSD
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/picoc
 

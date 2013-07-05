@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	keenerd
 GH_COMMIT=	b21bc98

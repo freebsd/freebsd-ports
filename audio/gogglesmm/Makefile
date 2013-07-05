@@ -32,8 +32,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_XZ=		yes
 INSTALLS_ICONS=	yes
 MAN1=		gogglesmm.1

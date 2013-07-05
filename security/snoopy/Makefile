@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PLIST_FILES=	lib/snoopy.so bin/detect
 PORTDOCS=	README
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.options.mk>
 
