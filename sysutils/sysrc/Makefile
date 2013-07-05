@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysrc
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
