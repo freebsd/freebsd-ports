@@ -9,13 +9,13 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A hierarchical text notes manager
+COMMENT=	Hierarchical text notes manager
 
 LICENSE=	BSD
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gtksourceview2 gnomevfs2 desktopfileutils
-USES=		gettext pkgconfig
+USE_GNOME=	gtk20 gtksourceview2 gnomevfs2
+USES=		desktop-file-utils gettext pkgconfig shared-mime-info
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)
@@ -34,9 +34,5 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|^docsdir=.*|docsdir=${DOCSDIR}|' \
 		${WRKSRC}/Makefile
-
-post-install:
-	@-update-mime-database ${PREFIX}/share/mime
-	@-update-desktop-database
 
 .include <bsd.port.mk>
