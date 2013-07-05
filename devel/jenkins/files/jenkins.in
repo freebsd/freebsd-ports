@@ -64,6 +64,7 @@ command_args="-p ${pidfile} ${java_cmd} -DJENKINS_HOME=${jenkins_home} ${jenkins
 required_files="${java_cmd}"
 
 start_precmd="jenkins_prestart"
+start_cmd="jenkins_command start"
 
 jenkins_prestart() {
 	if [ ! -f "${jenkins_log_file}" ]; then
@@ -78,5 +79,14 @@ jenkins_prestart() {
 		install -d -o "${jenkins_user}" -g "${jenkins_group}" -m 750 "/var/run/jenkins"
 	fi
 }
+
+jenkins_command()
+{
+	check_startmsgs && echo "Starting ${name}."
+	su -l ${jenkins_user} -c "exec ${command} ${command_args} ${rc_arg}"
+}
+
+export HOME=${jenkins_home}
+cd ${HOME}
 
 run_rc_command "$1"
