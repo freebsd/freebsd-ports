@@ -4,7 +4,8 @@
 PORTNAME=	ssamtfe
 PORTVERSION=	1.05b3
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.0wnitsch.de/files/final/
+MASTER_SITES=	http://home.coc-ag.de/dressler-ro/liflg/files/final/ \
+		http://bsd-geek.de/FreeBSD/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.run
 
@@ -13,8 +14,6 @@ COMMENT=	Serious Sam: The First Encounter
 
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
-
-BROKEN=		Does not fetch
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
