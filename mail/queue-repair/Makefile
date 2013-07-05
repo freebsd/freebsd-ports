@@ -10,6 +10,8 @@ MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Qmail queue diagnostic and repair tool
 
+LICENSE=	GPLv2
+
 USE_PYTHON=	yes
 
 OPTIONS_DEFINE=		DOCS QMAIL_PORT

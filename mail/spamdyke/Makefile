@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Qmail filter for monitoring and intercepting SMTP connections
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
