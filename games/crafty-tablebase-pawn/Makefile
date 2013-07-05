@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crafty-tablebase-pawn
-# Date created:			10 Sep 2007
-# Whom:				Jonathan Shoemaker <shoemaker@bluebottle.com>
-#
+# Created by: Jonathan Shoemaker <shoemaker@bluebottle.com>
 # $FreeBSD$
-#
 
 PORTNAME=	crafty-tablebase-pawn
 PORTVERSION=	20070910
@@ -39,6 +35,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	conrads@cox.net
 COMMENT=	These are the pawn tablebases (3,4,5 man) for crafty
+
+BROKEN=		Does not fetch
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
