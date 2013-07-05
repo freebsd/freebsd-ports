@@ -22,6 +22,7 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
 USE_FORTRAN=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -56,7 +57,6 @@ BROKEN=		Does not link on sparc64
 .endif
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_MT_2.0
 WRKSRC_SHARED=	${WRKDIR}/SuperLU_MT_2.0_shared
 ALL_TARGET=	lib
