@@ -4,7 +4,8 @@
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.0wnitsch.de/files/final/
+MASTER_SITES=	http://home.coc-ag.de/dressler-ro/liflg/files/final/ \
+		http://bsd-geek.de/FreeBSD/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.run
 
@@ -21,8 +22,6 @@ NO_PACKAGE=	Distribution is 352MB; set FORCE_PACKAGE if you really want to build
 RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
 SUB_FILES=	pkg-message
-
-BROKEN=		Does not fetch
 
 .include <bsd.port.options.mk>
 
