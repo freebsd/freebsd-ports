@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	A seen-module for the eggdrop IRC bot
 
+LICENSE=	GPLv2
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop

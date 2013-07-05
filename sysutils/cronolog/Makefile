@@ -10,6 +10,8 @@ MASTER_SITES=	http://cronolog.org/download/
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Web log rotation utility that provides datestamp filenames
 
+LICENSE=	GPLv2
+
 CONFLICTS_INSTALL=      cronolog-devel-[0-9]*
 
 INFO=		cronolog

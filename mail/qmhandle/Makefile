@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.3/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		qmail:run
