@@ -16,6 +16,7 @@ OPTIONS_DEFINE=	GNUTLS GSASL NLS
 GNUTLS_DESC=	GNUTLS Enable gnuTLS support
 GSASL_DESC=	GSASL GNU SASL authentication support
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libidn
