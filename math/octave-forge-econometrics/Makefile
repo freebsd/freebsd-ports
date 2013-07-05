@@ -16,11 +16,10 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

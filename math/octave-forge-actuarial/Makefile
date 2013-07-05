@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-actuarial
-# Date created:		2 June 2010
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-actuarial
 PORTVERSION=	1.1.0
@@ -17,8 +13,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 do-build:
 	@${DO_NADA}
 
@@ -26,4 +22,4 @@ post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

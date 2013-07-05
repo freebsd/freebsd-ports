@@ -17,10 +17,10 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:${PORTSDIR}/math/octave-forge-general
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

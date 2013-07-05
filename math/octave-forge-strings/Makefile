@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-strings
-# Date created:		8 September 2008
-# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-strings
 PORTVERSION=	1.1.0
@@ -19,10 +15,10 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

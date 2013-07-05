@@ -20,12 +20,12 @@ CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 MAKE_ENV+=	MKOCTFILE=mkoctfile
 
-BROKEN=		does not work with openjdk ,and will soon be part of octave base
+BROKEN=		does not work with openjdk, and will soon be part of octave base
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 post-patch:
 	${REINPLACE_CMD} 's+/client/libjvm.so+/server/libjvm.so+' ${WRKSRC}/__java__.cc
 	${REINPLACE_CMD} 's|getenv ("JAVA_HOME")|"${JAVA_HOME}"|' ${WRKDIR}/java/pre_install.m
@@ -34,4 +34,4 @@ post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

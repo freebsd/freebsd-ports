@@ -14,12 +14,12 @@ OCTSRC=		${DISTNAME}
 
 RUN_DEPENDS+=	dx:${PORTSDIR}/graphics/opendx
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 do-build:
 	@${DO_NADA}
 
 post-build:
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
