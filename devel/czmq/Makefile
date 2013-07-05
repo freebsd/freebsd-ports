@@ -13,8 +13,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	zmq:${PORTSDIR}/devel/zmq
 
-USES=	pathfix
-USE_GMAKE=	yes
+USES=	pathfix gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_czmq_have_asciidoc=no
 CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE}

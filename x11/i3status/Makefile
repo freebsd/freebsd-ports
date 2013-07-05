@@ -15,8 +15,7 @@ LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/i3status \
 		etc/i3status.conf.sample
