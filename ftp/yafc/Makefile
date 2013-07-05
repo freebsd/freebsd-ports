@@ -14,9 +14,9 @@ LICENSE=	GPLv2 # (or later)
 OPTIONS_DEFINE=	BASH EXAMPLES NLS SSH READLINE
 OPTIONS_DEFAULT=BASH NLS SSH
 
+USES=		gmake
 USE_XZ=		yes
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_ipv6=yes
 CONFIGURE_ARGS=	--with-socks=no --with-socks5=no --with-krb4=no \
