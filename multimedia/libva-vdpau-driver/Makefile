@@ -2,7 +2,7 @@
 
 PORTNAME=	libva-vdpau-driver
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/li
 
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GL=		gl
 
 GNU_CONFIGURE=	yes
