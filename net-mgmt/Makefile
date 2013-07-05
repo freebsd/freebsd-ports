@@ -125,6 +125,7 @@
     SUBDIR += nagios-check_netsnmp
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_puppet
+    SUBDIR += nagios-check_resque_paranoid
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
     SUBDIR += nagios-devel
