@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-dicom
-# Date created:		26 December 2011
-# Whom:			Stephen Montgomery-Smith <stephen@FreeBSD.org>
-#
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-dicom
 PORTVERSION=	0.1.1
@@ -28,11 +24,10 @@ post-patch:
 		${WRKSRC}/dicomread.cpp ${WRKSRC}/dicomlookup.cpp \
 		${WRKSRC}/_gendicomdict.cpp ${WRKSRC}/dicomwrite.cpp
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

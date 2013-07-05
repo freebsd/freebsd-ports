@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-secs3d
-# Date created:		12 September 2011
-# Whom:			Stephen Montgomery-Smith <stephen@FreeBSD.org>
-#
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-secs3d
 PORTVERSION=	0.0.1
@@ -20,8 +16,8 @@ OCTSRC=		${DISTNAME}
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
 RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:${PORTSDIR}/math/octave-forge-bim
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 do-build:
 	@${DO_NADA}
 
@@ -29,4 +25,4 @@ post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	octave-forge-dataframe
-# Date created:		26 August 2010
-# Whom:			Stephen Montgomery-Smith <stephen@missouri.edu>
-#
+# Created by: Stephen Montgomery-Smith <stephen@missouri.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	octave-forge-dataframe
 PORTVERSION=	0.9.1
@@ -17,8 +13,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
 do-build:
 	@${DO_NADA}
 
@@ -26,4 +22,4 @@ post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
