@@ -41,7 +41,7 @@ IGNORE=	LDAP and AUTHNZ_LDAP requires APR-util to have LDAP support built in.\
 .  endif
 
 .  if ${PORT_OPTIONS:MSESSION_CRYPTO}
-.    if !exists(${APU_CRYPTO_OPENSSL})
+.    if !exists(${APU_CRYPTO_OPENSSL}) && !exists(${APU_CRYPTO_NSS})
 IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support build in.\
 	Please rebuild APR with crypto openssl support
 .    endif

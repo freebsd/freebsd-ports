@@ -1,6 +1,14 @@
 --- ./support/apachectl.in.orig	2012-02-01 04:47:28.000000000 +0100
 +++ ./support/apachectl.in	2013-03-22 18:55:53.000000000 +0100
-@@ -66,6 +66,7 @@
+@@ -43,6 +43,7 @@
+ # 
+ # the path to your httpd binary, including options if necessary
+ HTTPD='@exp_sbindir@/@progname@'
++SERVICE='/usr/sbin/service apache24'
+ #
+ # pick up any necessary environment variables
+ if test -f @exp_sbindir@/envvars; then
+@@ -66,19 +67,21 @@
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
  
@@ -8,3 +16,37 @@
  # Set the maximum number of file descriptors allowed per child process.
  if [ "x$ULIMIT_MAX_FILES" != "x" ] ; then
      $ULIMIT_MAX_FILES
+ fi
+ 
+ ERROR=0
+-if [ "x$ARGV" = "x" ] ; then 
+-    ARGV="-h"
++if [ "x$ACMD" = "x" ] ; then 
++    ACMD="-h"
+ fi
+ 
+ case $ACMD in
+-start|stop|restart|graceful|graceful-stop)
+-    $HTTPD -k $ARGV
++start|stop|restart|rcvar|reload|graceful|gracefulstop|graceful-stop)
++#    $HTTPD -k $ARGV
++    $SERVICE $( echo $ACMD | tr -d '-' )
+     ERROR=$?
+     ;;
+ startssl|sslstart|start-SSL)
+@@ -88,11 +91,13 @@
+     ERROR=2
+     ;;
+ configtest)
+-    $HTTPD -t
++#    $HTTPD -t
++    $SERVICE $ACMD
+     ERROR=$?
+     ;;
+ status)
+-    $LYNX $STATUSURL | awk ' /process$/ { print; exit } { print } '
++#    $LYNX $STATUSURL | awk ' /process$/ { print; exit } { print } '
++    $SERVICE $ACMD
+     ;;
+ fullstatus)
+     $LYNX $STATUSURL
