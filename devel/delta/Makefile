@@ -12,7 +12,7 @@ LICENSE=	BSD
 
 PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
 
-USE_GMAKE=	yes
+USES=	gmake
 MAKE_JOBS_SAFE=	yes
 
 do-install:

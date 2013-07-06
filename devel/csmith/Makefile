@@ -11,12 +11,13 @@ COMMENT=	Generates random C programs that conform to the C99 standard
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+USES=	gmake
 
 MAKE_JOBS_SAFE=	yes
 

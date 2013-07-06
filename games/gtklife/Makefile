@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
+USES=	gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" docdir="${DOCSDIR}"
 
 PLIST=		${WRKDIR}/pkg-plist
