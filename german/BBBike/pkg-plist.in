@@ -1121,7 +1121,7 @@ BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.so
 @dirrm BBBike/data/sehenswuerdigkeit_img
 @dirrm BBBike/ext/StrassenNetz-CNetFile
 @dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%
-@dirrmtry BBBike/lib/%%PERL_VER%%
+@dirrmtry BBBike/lib/%%PERL_VERSION%%
 @dirrm BBBike/ext/VectorUtil-Inline/t
 @dirrm BBBike/ext/Strassen-Inline2/t
 @dirrm BBBike/ext/VectorUtil-Inline
