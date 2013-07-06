@@ -12,7 +12,7 @@ COMMENT=	Generate Allegro dialogs in a very simple way
 
 LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro
 
-USE_GMAKE=	yes
+USES=	gmake
 
 .include "Makefile.man"
 

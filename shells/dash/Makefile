@@ -9,8 +9,9 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	POSIX-compliant implementation of /bin/sh
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CFLAGS+=	-DUNUSABLE_RT_SIGNALS
+
+USES=	gmake
 
 MAKE_JOBS_SAFE=	yes
 

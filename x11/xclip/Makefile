@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env
 USE_XORG=	x11 xmu
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
