@@ -1,13 +1,8 @@
-# New ports collection makefile for:	flood
-# Date created:		8 Jan 2003
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	flood
 PORTVERSION=	0.20041105
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://dist.bsdlab.org/
 DISTNAME=	httpd-test_20041105052051
@@ -24,8 +19,7 @@ CONFIGURE_ARGS=	--disable-shared \
 	--with-apr=${LOCALBASE}/bin/apr-1-config \
 	--with-apr-util=${LOCALBASE}/bin/apu-1-config
 LDFLAGS+=	-L${PREFIX}/lib
-USE_GMAKE=	yes
-USES=		iconv
+USES=		gmake iconv
 
 EX_SCRIPTS=	analyze-relative analyze-relative-ramp
 EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \
