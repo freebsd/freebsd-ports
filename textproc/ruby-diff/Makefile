@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	ports/ruby-diff
 PKGNAMEPREFIX=		${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=		ruby
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby implementation of Perl's Algorithm::Diff
 
 USE_RUBY=		YES
