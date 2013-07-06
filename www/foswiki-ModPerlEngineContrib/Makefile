@@ -14,7 +14,7 @@ RUN_DEPENDS=	foswiki>=0:${PORTSDIR}/www/foswiki \
 
 SVNREV=		8600
 
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 
 .include "${.CURDIR}/../foswiki/bsd.foswiki.mk"
 .include <bsd.port.mk>
