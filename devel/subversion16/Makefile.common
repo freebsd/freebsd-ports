@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -67,7 +67,7 @@ PLIST_SUB+=	BDB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
-WITH_APACHE=	yes
+USE_APACHE=   22+
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
@@ -87,21 +87,9 @@ SVNGROUP?=	svn
 SVNUSER?=	svn
 .endif
 
-.if defined(WITH_APACHE)
-USE_APACHE=   22+
-.include "${PORTSDIR}/Mk/bsd.apache.mk"
-.if ${APACHE_VERSION} > 20
 LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1
 APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
 APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
-.else
-IGNORE=	please update to apache22
-.endif
-.else
-LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1
-APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
-APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
-.endif
 
 CONFIGURE_ARGS+=  --with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
 

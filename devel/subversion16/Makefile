@@ -60,7 +60,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3way-conflict-markers
 .if ${PORT_OPTIONS:MENHANCED_KEYWORD}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-enhanced-keyword
 .endif
-.if ${PORT_OPTIONS:MFREEBSD_TEMPLATe}
+.if ${PORT_OPTIONS:MFREEBSD_TEMPLATE}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fbsd-template
 .endif
 
