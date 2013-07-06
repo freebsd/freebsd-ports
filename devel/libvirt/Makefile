@@ -48,8 +48,7 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix pathfix
-USE_GMAKE=	yes
+USES=		charsetfix pathfix gmake
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 SHLIB_VER=	1001

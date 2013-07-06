@@ -21,9 +21,8 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 
 MAKE_JOBS_SAFE=	yes
 
-USE_GMAKE=	yes
 USE_GNOME=	intltool
-USES=		gettext
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

@@ -35,7 +35,7 @@ INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	virt-manager.schemas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-tui
-USE_GMAKE=	yes
+USES=		gmake
 USE_PYTHON=	yes
 
 MAN1=		virt-manager.1

@@ -18,10 +18,9 @@ CONFLICTS_INSTALL=	xpad-current-[0-9]*
 
 FETCH_ARGS=	"-pRr"
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 gnomehier intltool
-USES=	pkgconfig
+USES=	pkgconfig gmake
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 

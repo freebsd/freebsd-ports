@@ -19,7 +19,7 @@ USE_QT4=	gui network moc_build qmake_build rcc_build uic_build
 WRKSRC=	${WRKDIR}/${DISTNAME:S|-src||}
 
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/F1LT \
