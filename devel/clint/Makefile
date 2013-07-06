@@ -13,17 +13,18 @@ COMMENT=	Static source code checker for C++
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
-USE_PYTHON=	yes
-USE_GMAKE=	yes
+USE_PYTHON=	-2.7
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--enable-python=${LOCALBASE}/bin/python2
 USE_LDCONFIG=	yes
+
+USES=	gmake
 
 INFO=		clint
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-pedantic||g ; \
-		 s|-ldl||g'
+		's|-ldl||g'
 
 .include <bsd.port.mk>
