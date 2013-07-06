@@ -9,7 +9,7 @@ PORTNAME=	uftp
 PORTVERSION=	4.0
 PORTEPOCH=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.tcnj.edu/~bush/downloads/
+MASTER_SITES=	http://uftp-multicast.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	demon@FreeBSD.org

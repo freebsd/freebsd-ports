@@ -5,4 +5,4 @@ and is especially useful for data distribution over a satellite link
 (with two way communication), where the inherent delay makes any TCP based
 communication highly inefficient.
 
-WWW: http://www.tcnj.edu/~bush/uftp.html
+WWW: http://uftp-multicast.sourceforge.net
