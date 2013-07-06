@@ -1,13 +1,8 @@
-# New ports collection makefile for:	rast
-# Date created:		Jan 2 2006
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rast
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://projects.netlab.jp/rast/archives/ \
 		http://dist.bsdlab.org/

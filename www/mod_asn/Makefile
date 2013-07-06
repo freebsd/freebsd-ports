@@ -1,8 +1,8 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mod_asn
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://mirrorbrain.org/files/releases/
