@@ -4,8 +4,8 @@
 #   I've made the FreeTDS-driver work again -- and submitted the patch to Apache:
 #   https://issues.apache.org/bugzilla/show_bug.cgi?id=53666
 ===================================================================================
---- ./apr-util-1.4.1/dbd/apr_dbd_freetds.c.orig	2009-02-13 07:04:00.000000000 +0100
-+++ ./apr-util-1.4.1/dbd/apr_dbd_freetds.c	2013-01-13 22:17:09.000000000 +0100
+--- ./apr-util-1.5.2/dbd/apr_dbd_freetds.c.orig	2012-08-05 23:09:15.000000000 +0200
++++ ./apr-util-1.5.2/dbd/apr_dbd_freetds.c	2013-07-04 22:55:08.000000000 +0200
 @@ -40,12 +40,12 @@
  #include <freetds/sybdb.h>
  #endif
@@ -196,7 +196,6 @@
      case SUCCEED: return 0;
      case REG_ROW: return 0;
      case NO_MORE_ROWS:
--        apr_pool_cleanup_run(pool, res->proc, clear_result);
 +	if (dbisopt(res->proc, DBBUFFER, NULL) || sequential) {
 +	    sql->lasterror = apr_pstrcat(sql->pool,
 +		"NO_MORE_ROWS (count: ", apr_itoa(sql->pool, DBCOUNT(res->proc)),
@@ -208,7 +207,7 @@
 +	    sql->lasterror = "NO_MORE_ROWS (DBBUFFER option must be on "
 +		"for dbgetrow() to work)";
 +	}
-+        apr_pool_cleanup_run(res->pool, res->proc, clear_result);
+         apr_pool_cleanup_run(res->pool, res->proc, clear_result);
          *rowp = NULL;
          return -1;
 -    case FAIL: return 1;
@@ -429,12 +428,7 @@
              --key;
              ++klen;
          }
-@@ -627,10 +568,11 @@
-     if (process == NULL) {
-         return NULL;
-     }
--    sql = apr_palloc (pool, sizeof (apr_dbd_t));
-+    sql = apr_pcalloc(pool, sizeof (apr_dbd_t));
+@@ -631,6 +572,7 @@
      sql->pool = pool;
      sql->proc = process;
      sql->params = params;

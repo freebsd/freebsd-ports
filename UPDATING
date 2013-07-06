@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130706:
+  AFFECTS: users of devel/apr1
+  AUTHOR: ohauer@FreeBSD.org
+
+  APR was updated to 1.4.8 and APR-util was updated to 1.5.2.
+
+  Please rebuild all ports which are using functions from
+  APR/APR-util such as apache, subversion ...
+
+  # portmaster -r apr
+  or
+  # portupgrade -r devel/apr1
+  or
+  # pkg install -fR devel/apr1
+
 20130705:
   AFFECTS: users of x11/kdelibs4
   AUTHOR: kde@FreeBSD.org

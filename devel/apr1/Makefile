@@ -3,7 +3,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -16,12 +15,11 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 MAKE_JOBS_SAFE=	yes
 
-NO_OPTIONS_SORT=yes
 OPTIONS_GROUP=		APR APU
 OPTIONS_GROUP_APR=	THREADS IPV6 DEVRANDOM
 OPTIONS_GROUP_APU=	BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE FREETDS
 OPTIONS_RADIO=		CRYPTO
-OPTIONS_RADIO_CRYPTO=	SSL
+OPTIONS_RADIO_CRYPTO=	SSL NSS
 OPTIONS_DEFAULT=	THREADS IPV6 DEVRANDOM BDB GDBM SSL
 
 DEVRANDOM_DESC=	Use /dev/random or compatible
@@ -29,18 +27,12 @@ NDBM_DESC=	NDBM support
 SSL_DESC=	OpenSSL crypto driver
 NSS_DESC=	NSS crypto driver
 
-.include <bsd.port.options.mk>
+APR_VERSION=	1.4.8
+APU_VERSION=	1.5.2
 
-APR_VERSION=	1.4.6
-APU_VERSION=	1.4.1
-
-USES=		iconv
-USE_AUTOTOOLS=	automake autoconf libtool:env
-USE_PYTHON_BUILD=	-2.7
-USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
-
-CONFIGURE_ENV=	CC="${CC}"
+USES=		iconv pathfix
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 NO_WRKSUBDIR=	yes
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
@@ -48,12 +40,14 @@ APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
 PLIST_SUB=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
 SHLIB_APR_MAJOR=	4
-SHLIB_APU_MAJOR=	4
+SHLIB_APU_MAJOR=	5
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE}
+
+.include <bsd.port.options.mk>
 
 ########## APR Options
 .if ${PORT_OPTIONS:MTHREADS}
@@ -131,7 +125,7 @@ PLIST_SUB+=	MYSQL=""
 USE_MYSQL=	YES
 APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_ENV+=	LIBS="${LIBS}"
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 .else
 PLIST_SUB+=	MYSQL="@comment "
@@ -168,7 +162,7 @@ APU_CONF_ARGS+=	--with-crypto
 APU_EXTRAS=	yes
 USE_OPENSSL=	yes
 PLIST_SUB+=	SSL=""
-CFLAGS+=	-I${OPENSSLINC}
+CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 APU_CONF_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
@@ -176,18 +170,19 @@ PLIST_SUB+=	SSL="@comment "
 APU_CONF_ARGS+=	--without-openssl
 .endif
 
-# TODO figure out why nss flag is ignored if ssl is set
-# this works on other OS as expected
 .if ${PORT_OPTIONS:MNSS}
 APU_EXTRAS=	yes
 PLIST_SUB+=	NSS=""
 LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
-CFLAGS+=	-I${LOCALBASE}/include/nss
+CPPFLAGS+=	-I${LOCALBASE}/include/nss
 LDFLAGS+=	-L${LOCALBASE}/lib/nss
 APU_CONF_ARGS+=	--with-nss=${LOCALBASE}
 .else
 PLIST_SUB+=	NSS="@comment "
 .endif
+
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 .if defined(APU_EXTRAS)
 PLIST_SUB+=	APU_EXTRAS=""
@@ -195,66 +190,35 @@ PLIST_SUB+=	APU_EXTRAS=""
 PLIST_SUB+=	APU_EXTRAS="@comment "
 .endif
 
-post-patch: .SILENT
-	${REINPLACE_CMD} -e 's/OSVERSION/${OSVERSION}/g' \
-		${APR_WRKDIR}/build/apr_hints.m4
-	${FIND} ${APR_WRKDIR} ${APU_WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
-		${APR_WRKDIR}/build/gen-build.py
-	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4
-# Fix pthread: Please do not remove, else apr-1-config returns wrong values
-	${REINPLACE_CMD} -e 's/-lpthread/-pthread/g' \
-		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
-		${APU_WRKDIR}/build/apu-conf.m4
-
-run-autotools::
-	cd ${APR_WRKDIR} ; \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf
-	cd ${APU_WRKDIR} ; \
-		${RM} -fr xml/expat
-	cd ${APU_WRKDIR} ; \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf \
-		--with-apr=${APR_WRKDIR}
-	${REINPLACE_CMD} -e 's/ gsed//g' \
-		${APR_WRKDIR}/build/libtool.m4 \
+post-patch:
+	@${REINPLACE_CMD} -e 's/OSVERSION/${OSVERSION}/g' \
 		${APR_WRKDIR}/configure
-	cd ${APR_WRKDIR}; \
-		${SETENV} ${CONFIGURE_ENV} ${SH} \
-		./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS}
-	cd ${APU_WRKDIR}; \
-		${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" ${SH} \
-		./configure ${CONFIGURE_ARGS} ${APU_CONF_ARGS}
+	@${REINPLACE_CMD} -e '/recursive:/s/$$/ .MAKE/' \
+		${APR_WRKDIR}/build/apr_rules.mk.in
+# Fix pthread: Please do not remove, else apr-1-config returns wrong values
+	@${REINPLACE_CMD} -e 's/-lpthread/-pthread/g' \
+		${APR_WRKDIR}/configure
 
 do-configure:
-	${DO_NADA}
+	@(cd ${APR_WRKDIR} && \
+		${SETENV} ${CONFIGURE_ENV} \
+		./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS})
+	@(cd ${APU_WRKDIR} && \
+		${SETENV} ${CONFIGURE_ENV} \
+		./configure ${CONFIGURE_ARGS} ${APU_CONF_ARGS})
 
 do-build:
-	cd ${APR_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE}
-	cd ${APU_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE}
+	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS})
+	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS})
 
 do-install:
-	cd ${APR_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
-	cd ${APU_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET})
+	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET})
 
 test: build
-	-@(cd ${APR_WRKDIR}; ${MAKE} test)
-	-@(cd ${APU_WRKDIR}; ${MAKE} test)
+	-@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} test)
+	-@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} test)
 
 #regression-test: test
-
-debug_autoconf:
-	@${ECHO} "LIBTOOL: ${LIBTOOL_VERSION}"
-	@${ECHO} "AUTOCONF: dev ${dev_acver} cur ${cur_acver} use ${use_acver}"
-	@${ECHO} "AUTOMAKE: dev ${dev_amver} cur ${cur_amver} use ${use_amver}"
-	@${ECHO} "AUTOCONF_DIR: ${AUTOCONF_DIR}"
-	@${ECHO} "BUILD_DEPENDS: ${BUILD_DEPENDS}"
-	@${ECHO} "ACLOCAL_DIR: ${ACLOCAL_DIR}"
-	@${ECHO} "LIBTOOLFILES: ${LIBTOOLFILES}"
-	@${ECHO} "LIBTOOL_SHAREDIR: ${LIBTOOL_SHAREDIR}"
-	@${ECHO} "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}"
-	@${ECHO} "LIBTOOL_M4: ${LIBTOOL_M4}"
-	@${ECHO} "${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS}"
-	@${ECHO} "${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" ${SH} ./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}"
 
 .include <bsd.port.mk>
