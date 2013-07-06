@@ -1,2 +1,4 @@
 SHA256 (teamspeak3-server_freebsd-amd64-3.0.7.2.tar.gz) = 967fccbd2fa5d1ddd964455ea82dfeae052f1309bc26c646ca90c21016be5c66
 SIZE (teamspeak3-server_freebsd-amd64-3.0.7.2.tar.gz) = 4429373
+SHA256 (teamspeak3-server_freebsd-x86-3.0.7.2.tar.gz) = d360d5014b166412fbaea9b914cd582d8568cd369898d73a367515c7d4a26a37
+SIZE (teamspeak3-server_freebsd-x86-3.0.7.2.tar.gz) = 4927457
