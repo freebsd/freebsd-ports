@@ -1,7 +1,6 @@
 bin/gnash
 %%GTK%%bin/gnash-gtk-launcher
 %%GTK%%bin/gtk-gnash
-%%KDE%%bin/kde3-gnash
 %%KDE4%%bin/gnash-qt-launcher
 %%KDE4%%bin/kde4-gnash
 bin/gprocessor
@@ -191,11 +190,6 @@ include/gnash/vm/SafeStack.h
 include/gnash/vm/VM.h
 include/gnash/vm/fn_call.h
 include/gnash/zlib_adapter.h
-%%KPARTS3%%share/apps/klash/pluginsinfo
-%%KPARTS3%%share/apps/klash/klashpartui.rc
-%%KPARTS3%%share/services/klash_part.desktop
-%%KPARTS3%%lib/kde3/libklashpart.la
-%%KPARTS3%%lib/kde3/libklashpart.so
 %%KPARTS4%%kde4/share/apps/klash/pluginsinfo
 %%KPARTS4%%kde4/share/apps/klash/klashpartui.rc
 %%KPARTS4%%kde4/share/kde4/services/klash_part.desktop
@@ -261,6 +255,5 @@ share/locale/zh_TW/LC_MESSAGES/gnash.mo
 @dirrm include/gnash/parser
 @dirrm include/gnash/asobj
 @dirrm include/gnash
-%%KPARTS3%%@dirrm share/apps/klash
 %%KPARTS4%%@dirrm kde4/share/apps/klash
 %%NPAPI%%@dirrmtry %%WEBPLUGINS_DIR%%

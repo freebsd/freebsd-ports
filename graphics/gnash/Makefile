@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--disable-testsuite \
 		--with-plugins-install=prefix \
 		--sysconfdir="${WRKDIR}/etc" \
+		--disable-kparts3 \
 		--disable-jemalloc \
 		--disable-silent-rules
 
@@ -56,7 +57,7 @@ MAN1=		cygnal.1 findmicrophones.1 findwebcams.1 \
 
 OPTIONS_DEFINE=	PLUGIN CYGNAL VAAPI FFMPEG GSTREAMER
 OPTIONS_SINGLE=	GUI RENDERER
-OPTIONS_SINGLE_GUI=	GTK2 KDE3 KDE4
+OPTIONS_SINGLE_GUI=	GTK2 KDE4
 OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
 #OPTIONS_SINGLE_MEDIA=	FFMPEG GSTREAMER
 OPTIONS_DEFAULT=GTK2 PLUGIN AGG FFMPEG VAAPI
@@ -108,14 +109,6 @@ PLIST_SUB+=	NPAPI="@comment "
 CONFIGURE_ARGS+=	--disable-npapi
 .endif
 
-.if ${PORT_OPTIONS:MKDE3} && ${PORT_OPTIONS:MPLUGIN}
-PLIST_SUB+=	KPARTS3=""
-USE_LDCONFIG+=	${PREFIX}/lib/kde3
-.else
-PLIST_SUB+=	KPARTS3="@comment "
-CONFIGURE_ARGS+=	--disable-kparts3
-.endif
-
 .if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MPLUGIN}
 PLIST_SUB+=	KPARTS4=""
 USE_LDCONFIG+=	${KDE4_PREFIX}/lib/kde4
@@ -139,14 +132,6 @@ MAN1+=		gnash-gtk-launcher.1 gtk-gnash.1
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MKDE3} 
-GNASH_GUIS+=	kde3
-PLIST_SUB+=	KDE=""
-USE_KDELIBS_VER=3
-.else
-PLIST_SUB+=	KDE="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MKDE4}
 GNASH_GUIS+=	kde4
 PLIST_SUB+=	KDE4=""
@@ -154,20 +139,13 @@ USE_QT4=	moc_build
 QT_NONSTANDARD=	yes
 USE_KDE4=	kdehier kdelibs
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
-.if exists(${LOCALBASE}/lib/libkdeui.so)
-IGNORE=		KDE4 GUI can't be built when KDE3 is installed. Please rerun 'make config' and disable KDE4 GUI or deinstall kdelibs-3
-.endif
 MAN1+=		gnash-qt-launcher.1 kde4-gnash.1
 .else
 PLIST_SUB+=	KDE4="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MKDE3} && ${PORT_OPTIONS:MKDE4}
-IGNORE=		KDE3 and KDE4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
-.endif
-
 .if ${GNASH_GUIS} == ""
-IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK, KDE or KDE4
+IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK or KDE4
 .endif
 
 CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
@@ -177,12 +155,12 @@ CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 #
 GNASH_RENDERERS=
 
-.if ${PORT_OPTIONS:MAGG} 
+.if ${PORT_OPTIONS:MAGG}
 LIB_DEPENDS+=		agg:${PORTSDIR}/graphics/agg
 GNASH_RENDERERS+=	agg
 .endif
 
-.if ${PORT_OPTIONS:MOPENGL} 
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=			yes
 GNASH_RENDERERS+=	ogl
 .if ${PORT_OPTIONS:MGTK2}
@@ -191,8 +169,8 @@ LIB_DEPENDS+=		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
-.if ${PORT_OPTIONS:MKDE3} || ${PORT_OPTIONS:MKDE4}
-IGNORE=			doesn't support Cairo renderer with KDE/KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE/KDE4 GUIs
+.if ${PORT_OPTIONS:MKDE4}
+IGNORE=			doesn't support Cairo renderer with KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE4 GUI
 .endif
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 GNASH_RENDERERS+=	cairo
@@ -209,7 +187,7 @@ CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
 #
 .if ${PORT_OPTIONS:MVAAPI}
 .if empty(PORT_OPTIONS:MFFMPEG)
-IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG.
+IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
 .endif
 LIB_DEPENDS+=		va:${PORTSDIR}/multimedia/libva
 PLIST_SUB+=		VAAPI=""
@@ -221,7 +199,7 @@ PLIST_SUB+=		VAAPI="@comment "
 #
 # Media handler options processing
 #
-.if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER) 
+.if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER)
 LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg
 USE_SDL+=		sdl
@@ -272,10 +250,6 @@ post-install:
 .if ${PORT_OPTIONS:MGTK2}
 	${MKDIR} ${WEBPLUGINS_DIR}
 	@cd ${INSTALL_WRKSRC}/plugin && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
-.endif
-.if ${PORT_OPTIONS:MKDE3}
-	@cd ${INSTALL_WRKSRC}/plugin/klash && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
 .if ${PORT_OPTIONS:MKDE4}
