@@ -1,11 +1,68 @@
 --- ./support/apachectl.in.orig	2006-07-11 23:38:44.000000000 -0400
 +++ ./support/apachectl.in	2010-05-06 19:37:54.265730461 -0400
-@@ -64,7 +64,7 @@
- ULIMIT_MAX_FILES="@APACHECTL_ULIMIT@"
+@@ -35,6 +35,7 @@
+ # When multiple arguments are given, only the error from the _last_
+ # one is reported.  Run "apachectl help" for usage info
+ #
++ACMD="$1"
+ ARGV="$@"
+ #
+ # |||||||||||||||||||| START CONFIGURATION SECTION  ||||||||||||||||||||
+@@ -42,6 +43,7 @@
+ # 
+ # the path to your httpd binary, including options if necessary
+ HTTPD='@exp_sbindir@/@progname@'
++SERVICE='/usr/sbin/service apache22'
+ #
+ # pick up any necessary environment variables
+ if test -f @exp_sbindir@/envvars; then
+@@ -65,19 +67,21 @@
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
--
+ 
 +eval `limits -e -C daemon` >/dev/null 2>&1
  # Set the maximum number of file descriptors allowed per child process.
  if [ "x$ULIMIT_MAX_FILES" != "x" ] ; then
      $ULIMIT_MAX_FILES
+ fi
+ 
+ ERROR=0
+-if [ "x$ARGV" = "x" ] ; then 
+-    ARGV="-h"
++if [ "x$ACMD" = "x" ] ; then 
++    ACMD="-h"
+ fi
+ 
+-case $ARGV in
+-start|stop|restart|graceful|graceful-stop)
+-    $HTTPD -k $ARGV
++case $ACMD in
++start|stop|restart|rcvar|reload|graceful|gracefulstop|graceful-stop)
++#    $HTTPD -k $ARGV
++    $SERVICE $( echo $ACMD | tr -d '-' )
+     ERROR=$?
+     ;;
+ startssl|sslstart|start-SSL)
+@@ -87,17 +91,19 @@
+     ERROR=2
+     ;;
+ configtest)
+-    $HTTPD -t
++#    $HTTPD -t
++    $SERVICE $ACMD
+     ERROR=$?
+     ;;
+ status)
+-    $LYNX $STATUSURL | awk ' /process$/ { print; exit } { print } '
++#    $LYNX $STATUSURL | awk ' /process$/ { print; exit } { print } '
++    $SERVICE $ACMD
+     ;;
+ fullstatus)
+     $LYNX $STATUSURL
+     ;;
+ *)
+-    $HTTPD $ARGV
++    $HTTPD "$@"
+     ERROR=$?
+ esac
+ 
