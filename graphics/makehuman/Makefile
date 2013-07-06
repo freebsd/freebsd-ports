@@ -13,9 +13,8 @@ COMMENT=	Application for parametrical modeling of 3D humanoid characters
 LIB_DEPENDS=	animorph:${PORTSDIR}/graphics/animorph \
 		mhgui:${PORTSDIR}/graphics/mhgui
 
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PKGCONFIG=	build
 USE_GL=		glut
 
 CPPFLAGS+=	-I${LOCALBASE}/include

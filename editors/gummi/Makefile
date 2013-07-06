@@ -15,12 +15,10 @@ BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS+=	poppler-glib:${PORTSDIR}/graphics/poppler-glib \
 		gtkspell:${PORTSDIR}/textproc/gtkspell
 
-USE_GMAKE=	yes
+USES=		iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 USE_XORG=	xdamage xft xcursor xcomposite
 USE_GNOME=	desktopfileutils gtksourceview2 glib20 intlhack
-USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 

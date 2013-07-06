@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image editor
 
+USES=		pkgconfig
 USE_GNOME=	glib20 gtk20
-USE_PKGCONFIG=	build
 ALL_TARGET=	default
 
 post-patch:
