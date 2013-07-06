@@ -10,11 +10,10 @@ MASTER_SITES=	http://collectd.org/files/
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf autoheader automake libltdl
-WANT_GNOME=	yes
 
 LATEST_LINK=	collectd5
 
@@ -310,7 +309,7 @@ PLIST_SUB+=	RRDTOOL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTATGRAB}
-USE_PKGCONFIG=	yes
+USES+=		pkgconfig
 LIB_DEPENDS+=	statgrab:${PORTSDIR}/devel/libstatgrab
 CONFIGURE_ENV+= LIBS="`pkg-config --libs libstatgrab`"
 CONFIGURE_ARGS+=--with-libstatgrab=${LOCALBASE} \

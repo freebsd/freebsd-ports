@@ -15,8 +15,7 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Data files for the m17n library
 
-USE_PKGCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 

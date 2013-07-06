@@ -13,9 +13,8 @@ COMMENT=	A free program for creating and solving Su Doku puzzles
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 MAKE_ENV=	CXXLAGS="${CXXFLAGS}"
-USE_PKGCONFIG=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|' ${WRKSRC}/Makefile

@@ -11,9 +11,7 @@ COMMENT=	The Chewing intelligent phonetic input method library
 
 INFO=		libchewing
 
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack
-USE_PKGCONFIG=	yes
+USES=		gmake pkgconfig pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
