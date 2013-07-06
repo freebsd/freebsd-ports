@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 
-USE_ICONV=	yes
-USE_GMAKE=	yes
+USES=		iconv gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
