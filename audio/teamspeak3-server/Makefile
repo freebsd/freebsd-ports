@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.7.2
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/ \
@@ -45,9 +45,9 @@ PLIST_SUB+=	DBDIR=${DBDIR} \
 SUB_LIST+=	DBDIR=${DBDIR} \
 		LOGDIR=${LOGDIR}
 
-.include <bsd.port.options.mk>
-
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} ==	"i386"
 TEAMSPEAK_ARCH=	x86
