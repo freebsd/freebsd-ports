@@ -1,12 +1,12 @@
 #!/bin/sh
+
 # $FreeBSD$
 #
-
 # PROVIDE: postgrey
 # REQUIRE: LOGIN
 # BEFORE: mail
 # KEYWORD: shutdown
-
+#
 # Add the following lines to /etc/rc.conf to enable postgrey:
 #
 # postgrey_enable (bool)        Set to 'YES' to enable
@@ -25,6 +25,7 @@
 . /etc/rc.subr
 
 name=postgrey
+rcvar=postgrey_enable
 
 load_rc_config $name
 
