@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -13,12 +13,11 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
-LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	yes
 USE_GNOME+=	glib20
@@ -30,8 +29,8 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?
 CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	SAMBA X11 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP \
-		USBREDIR GNS3 X86_TARGETS BSD_USER \
+OPTIONS_DEFINE=	SAMBA X11 GTK OPENGL GNUTLS SASL JPEG PNG CURL \
+		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS BSD_USER \
 		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
@@ -46,7 +45,7 @@ GNS3_DESC=		gns3 patches (promiscuous multicast)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
-OPTIONS_DEFAULT=X11 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA PCAP
+OPTIONS_DEFAULT=X11 GTK OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
 
 .include <bsd.port.options.mk>
 
@@ -109,11 +108,16 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
 .if empty(PORT_OPTIONS:MX11)
-CONFIGURE_ARGS+=	--disable-gtk
 CONFIGURE_ARGS+=	--disable-sdl
+.else
+CONFIGURE_ARGS+=	--enable-sdl
+USE_SDL=	sdl
+.endif
+
+.if empty(PORT_OPTIONS:MGTK)
+CONFIGURE_ARGS+=	--disable-gtk
 PLIST_SUB+=	GTK="@comment "
 .else
-USE_SDL=	sdl
 USE_GNOME+=	gtk20 vte
 USES+=		gettext
 PLIST_SUB+=	GTK=""
@@ -143,6 +147,12 @@ CONFIGURE_ARGS+=	--disable-vnc-png
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
+.if empty(PORT_OPTIONS:MCURL)
+CONFIGURE_ARGS+=	--disable-curl
+.else
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+.endif
+
 .if empty(PORT_OPTIONS:MOPENGL)
 CONFIGURE_ARGS+=	--disable-glx
 .else
@@ -161,6 +171,9 @@ CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_LINK}
+.if ${PORT_OPTIONS:MGTK} || ${PORT_OPTIONS:MX11}
+IGNORE=		X11 ui cannot be built static
+.endif
 CONFIGURE_ARGS+=	--static
 .endif
 
@@ -196,14 +209,21 @@ CONFIGURE_ARGS+= --sparc_cpu=v9
 
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	LD=${LOCALBASE}/bin/ld
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
+# -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
+# but it shouldn't matter much
 post-patch:
 .if ${OSVERSION} < 900000
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat||' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
+		${WRKSRC}/configure
 .endif
+	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MPCAP}
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 .endif
