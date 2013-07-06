@@ -27,6 +27,7 @@ WANT_SDL=	yes
 USES=		cmake:outsource pkgconfig iconv
 CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
+CFLAGS+=	-Wno-return-type
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
@@ -223,6 +224,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/*/*/Makefile
+	@${REINPLACE_CMD} '/--enable-shared/s,,& --cc=${CC},' ${WRKSRC}/cmake/admFFmpegBuild.cmake
+	@${REINPLACE_CMD} '/sub $$1/s,sub,subl,' ${WRKSRC}/plugins/ADM_videoFilters/FluxSmooth/ADM_vidFlux.cpp
 	@${CP} ${FILESDIR}/execinfo.cpp ${WRKSRC}/cmake_compile_check/
 	@${CP} ${FILESDIR}/*.patch ${WRKSRC}/cmake/patches/
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
