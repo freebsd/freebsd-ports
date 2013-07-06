@@ -10,7 +10,6 @@ PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
 		ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
 MASTER_SITE_SUBDIR=	motoyuki
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
