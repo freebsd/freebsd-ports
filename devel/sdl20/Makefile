@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2
-PORTVERSION=	2.0.p7291
+PORTVERSION=	2.0.p7353
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/tmp/
-DISTNAME=	SDL-2.0.0-7291
+DISTNAME=	SDL-2.0.0-7353
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
