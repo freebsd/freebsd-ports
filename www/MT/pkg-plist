@@ -421,6 +421,7 @@
 %%CGIDIR%%/extlib/Data/ObjectDriver/ResultSet.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver.pm
 %%CGIDIR%%/extlib/version.pod
+%%CGIDIR%%/extlib/Locale/Maketext/Cookbook.pod
 %%CGIDIR%%/extlib/Locale/Maketext/GutsLoader.pm
 %%CGIDIR%%/extlib/Locale/Maketext/TPJ13.pod
 %%CGIDIR%%/extlib/Locale/Maketext/Guts.pm
@@ -526,6 +527,7 @@
 %%CGIDIR%%/extlib/JSON.pm
 %%CGIDIR%%/extlib/Net/OAuth.pm
 %%CGIDIR%%/extlib/Net/HTTPS.pm
+%%CGIDIR%%/extlib/Net/SMTP/TLS.pm
 %%CGIDIR%%/extlib/Net/OpenID/VerifiedIdentity.pm
 %%CGIDIR%%/extlib/Net/OpenID/Yadis.pm
 %%CGIDIR%%/extlib/Net/OpenID/Consumer.pm
@@ -647,20 +649,6 @@
 %%CGIDIR%%/extlib/HTML/Form.pm
 %%CGIDIR%%/extlib/HTML/Template.pm
 %%CGIDIR%%/extlib/HTML/Diff.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/ja.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/es.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/de.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/en_us.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/fr.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/nl.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/lib/MT/TypePadAntiSpam.pm
-%%CGIDIR%%/plugins/TypePadAntiSpam/tmpl/config.tmpl
-%%CGIDIR%%/plugins/TypePadAntiSpam/tmpl/stats_widget.tmpl
-%%CGIDIR%%/plugins/TypePadAntiSpam/tmpl/system.tmpl
-%%CGIDIR%%/plugins/TypePadAntiSpam/config.yaml
-%%CGIDIR%%/plugins/TypePadAntiSpam/php/function.mttypepadantispamcounter.php
 %%LANG_RU%%%%CGIDIR%%/plugins/UpdatePingsRU/config.yaml
 %%CGIDIR%%/plugins/spamlookup/lib/spamlookup.pm
 %%CGIDIR%%/plugins/spamlookup/lib/spamlookup/L10N.pm
@@ -684,6 +672,7 @@
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/Library.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/Util.pm
+%%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/Upgrade.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/ja.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/es.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/de.pm
@@ -2095,6 +2084,10 @@
 %%CGIDIR%%/php/lib/block.mtsethashvar.php
 %%CGIDIR%%/php/lib/function.mtassettype.php
 %%CGIDIR%%/php/lib/block.mtifrequirecommentemails.php
+%%CGIDIR%%/php/lib/function.mtwebsitedatelanguage.php
+%%CGIDIR%%/php/lib/function.mtblogdatelanguage.php
+%%CGIDIR%%/php/lib/function.mtcanonicalurl.php
+%%CGIDIR%%/php/lib/function.mtcanonicallink.php
 %%CGIDIR%%/php/mt.php
 %%CGIDIR%%/php/tmpl/header-popup.tpl
 %%CGIDIR%%/php/tmpl/missing.tpl
@@ -3404,6 +3397,7 @@
 @dirrm %%CGIDIR%%/extlib/Net/OAuth/SignatureMethod
 @dirrm %%CGIDIR%%/extlib/Net/OAuth
 @dirrm %%CGIDIR%%/extlib/Net/HTTP
+@dirrm %%CGIDIR%%/extlib/Net/SMTP
 @dirrm %%CGIDIR%%/extlib/Net
 @dirrm %%CGIDIR%%/extlib/LWP/Protocol
 @dirrm %%CGIDIR%%/extlib/LWP/Authen
@@ -3433,13 +3427,6 @@
 @dirrm %%CGIDIR%%/extlib/Apache
 @dirrm %%CGIDIR%%/extlib/HTML
 @dirrm %%CGIDIR%%/extlib
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib/MT
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/tmpl
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/php
-@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam
 %%LANG_RU%%@dirrm %%CGIDIR%%/plugins/UpdatePingsRU
 @dirrm %%CGIDIR%%/plugins/spamlookup/lib/spamlookup/L10N
 @dirrm %%CGIDIR%%/plugins/spamlookup/lib/spamlookup

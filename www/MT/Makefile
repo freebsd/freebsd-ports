@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	MT
-PORTVERSION=	5.2.3
+PORTVERSION=	5.2.7
 PORTEPOCH=	1
 CATEGORIES?=	www
-MASTER_SITES?=	http://www.movabletype.org/downloads/stable/
+MASTER_SITES?=	http://www.movabletype.org/downloads/stable/\
+		http://www.movabletype.org/downloads/archives/5.x/
 DISTNAME?=	MTOS-${PORTVERSION}
 
 MAINTAINER?=	takefu@airport.fm
@@ -19,12 +20,15 @@ RUN_DEPENDS+=	p5-DBI>=1.21:${PORTSDIR}/databases/p5-DBI \
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		APACHE MYSQL SSL TLS\
 			OPTIONAL_MODULES ADDITIONAL_MODULES\
-			PGSQL ORACLE ODBC SQLITE2 PSGI
+			PGSQL ORACLE ODBC SQLITE2 SQLITE PSGI
 OPTIONS_DEFAULT=	MYSQL OPTIONAL_MODULES
 OPTIONAL_MODULES_DESC=	Optional Perl Modules
 ADDITIONAL_MODULES_DESC=Additional Perl modules
-SQLITE2_DESC=		SQLite 2 database
 PSGI_DESC=		Perl Web Server Gateway Interface
+
+PGSQL_DESC=		PostgreSQL database support[obsolete]
+SQLITE_DESC=		SQLite3 database support[obsolete]
+SQLITE2_DESC=		SQLite2 database support[obsolete]
 
 .include <bsd.port.options.mk>
 
@@ -41,7 +45,7 @@ SUB_LIST+=	DATADIR=${DATADIR}\
 		WWWOWN=${WWWOWN}\
 		WWWGRP=${WWWGRP}
 
-USE_PERL5_RUN=	5.8.1+
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 MT_DOCS_URL?=	http://www.movabletype.org/documentation/
 MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html
@@ -100,8 +104,13 @@ RUN_DEPENDS+=	p5-DBD-Pg>=1.32:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 .if empty${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
-RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite\
-		sqlite3>=3:${PORTSDIR}/databases/sqlite3
+. if ${PORT_OPTIONS:MSQLITE} && empty(PORT_OPTIONS:MSQLITE2)
+USE_SQLITE=	yes
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+. elif ${PORT_OPTIONS:MSQLITE2} && empty(PORT_OPTIONS:MSQLITE)
+USE_SQLITE=	2
+RUN_DEPENDS+=	p5-DBD-SQLite2>=0:${PORTSDIR}/databases/p5-DBD-SQLite2
+. endif
 WITH_DEFAULTDB=	yes
 .endif
 .if ${PORT_OPTIONS:MORACLE}
@@ -109,9 +118,6 @@ RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 .if ${PORT_OPTIONS:MODBC}
 RUN_DEPENDS+=	p5-DBD-ODBC>=1.13:${PORTSDIR}/databases/p5-DBD-ODBC
-.endif
-.if ${PORT_OPTIONS:MSQLITE2}
-RUN_DEPENDS+=	p5-DBD-SQLite2>=0:${PORTSDIR}/databases/p5-DBD-SQLite2
 .endif
 .if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
