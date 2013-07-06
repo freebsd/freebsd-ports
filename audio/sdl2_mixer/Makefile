@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_mixer
-PORTVERSION=	2.0.p1
+PORTVERSION=	2.0.p2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/tmp/SDL_mixer/release/
 DISTNAME=	SDL2_mixer-2.0.0
