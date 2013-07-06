@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ansibleworks.com/releases/
 
@@ -50,10 +50,8 @@ pre-install-script:
 
 post-install:
 	@${MKDIR} ${MAN1PREFIX}/man/man1
-.for man in ansible-doc ansible-playbook ansible-pull ansible
-	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/${man}.1 \
+	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/docs/man/man1/,} \
 		${MAN1PREFIX}/man/man1
-.endfor
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
