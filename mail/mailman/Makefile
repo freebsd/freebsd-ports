@@ -73,7 +73,7 @@ COURIER_DESC=	fr use with courier
 HTDIG_DESC=	htdig integration patches
 INTEGRATION_DESC=	integrating postfix and mailman
 NAMAZU2_DESC=	make private archives searchable with namazu2
-MTA_DESC=	integrate with a MTA
+MTA_DESC=	integrate with an MTA
 
 .include <bsd.port.options.mk>
 
