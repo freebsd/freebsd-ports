@@ -10,7 +10,6 @@ MASTER_SITES=	GNU
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A character set conversion library
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure libcharset/configure preload/configure
 CONFIGURE_ARGS=	--enable-static \
