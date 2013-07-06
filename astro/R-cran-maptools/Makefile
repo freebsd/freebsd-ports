@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maptools
-DISTVERSION=	0.8-24
+DISTVERSION=	0.8-25
 CATEGORIES=	astro
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Tools for reading and handling spatial objects
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-sp>=0.9.47:${PORTSDIR}/math/R-cran-sp
+RUN_DEPENDS=	R-cran-sp>=1.0.11:${PORTSDIR}/math/R-cran-sp
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
