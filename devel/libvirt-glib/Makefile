@@ -14,11 +14,10 @@ BUILD_DEPENDS=	gobject-introspection>=1.34.2:${PORTSDIR}/devel/gobject-introspec
 LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
 
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gmake
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20
-USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 CONFIGURE_ARGS+=	--enable-introspection
