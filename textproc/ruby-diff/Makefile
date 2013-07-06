@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-diff
-# Date created:		13 June 2003
-# Whom:			Makoto Matsushita <matusita@FreeBSD.org>
-#
+# Created by: Makoto Matsushita <matusita@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		diff
 PORTVERSION=		0.4
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	ports/ruby-diff
 PKGNAMEPREFIX=		${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=		ruby
 
-MAINTAINER=		matusita@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Ruby implementation of Perl's Algorithm::Diff
 
 USE_RUBY=		YES
