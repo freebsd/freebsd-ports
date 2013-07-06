@@ -49,5 +49,4 @@ post-patch:
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
 
-
 .include <bsd.port.mk>
