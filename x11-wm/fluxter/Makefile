@@ -11,7 +11,7 @@ COMMENT=	Desktop pager for the Fluxbox Slit
 
 USE_XORG=	x11 ice xproto xt xaw xext
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/fluxbox|/${PORTNAME}|g" \

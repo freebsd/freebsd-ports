@@ -10,7 +10,7 @@ MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments
 
 USE_PYTHON=	yes
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 
 INFO=		mmaker

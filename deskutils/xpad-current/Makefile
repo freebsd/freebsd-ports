@@ -20,12 +20,11 @@ FETCH_ARGS=	-p
 USE_BZIP2=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 gnomehier intltool
-USES=	pkgconfig
+USES=	pkgconfig gmake
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.options.mk>
 
