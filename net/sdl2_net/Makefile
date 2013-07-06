@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_net
-PORTVERSION=	2.0.p1
+PORTVERSION=	2.0.p2
 CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/tmp/SDL_net/release/
 DISTNAME=	SDL2_net-2.0.0
