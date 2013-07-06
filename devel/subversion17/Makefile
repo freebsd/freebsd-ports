@@ -27,21 +27,21 @@ OPTIONS_DEFINE=	P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE \
 
 OPTIONS_DEFAULT=P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE NEON
 
-P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
+BOOK_DESC=		Install the Subversion Book
 ENHANCED_KEYWORD_DESC=	Enhanced svn:keyword support
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
+GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
+KDE_KWALLET_DESC=	Build with KDE KWallet auth support
+MAINTAINER_DEBUG_DESC=	Build debug version
 MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
 MOD_DONTDOTHAT_DESC=	mod_dontdothat for Apache 2.X
 NEON_DESC=		WebDAV/Delta-V repo access module (neon)
+P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
 SERF_DESC=		WebDAV/Delta-V repo access module (serf)
-MAINTAINER_DEBUG_DESC=	Build debug version
-SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper
-SVNMUCC_DESC=		Install Multiple URL Command Client
-SVNAUTHZ_VALIDATE_DESC=	install svnauthz-validate
 STATIC_DESC=		Build static version (no shared libs)
-GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
-KDE_KWALLET_DESC=	Build with KDE KWallet auth support
-BOOK_DESC=		Install the Subversion Book
+SVNAUTHZ_VALIDATE_DESC=	install svnauthz-validate
+SVNMUCC_DESC=		Install Multiple URL Command Client
+SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
 
 .include "Makefile.common"
@@ -54,7 +54,7 @@ SVNFSTYPE?=	fsfs
 SUB_FILES=	pkg-install \
 		pkg-deinstall
 		
-BOOK_VERSION=	4304
+BOOK_VERSION=	4515
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -133,42 +133,6 @@ LIB_DEPENDS=
 
 pre-everything::
 	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MNEON}
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
-.else
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MBDB}
-	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend enabled."
-.else
-	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend disabled."
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
-	@${ECHO_MSG} "Build debug version."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${ECHO_MSG} "svnserve wrapper enabled."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	@${ECHO_MSG} "svnauthz-validate enabled."
-	@${ECHO_MSG} ""
-.endif
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) '${SVNUSER}' user and '${SVNGROUP}' group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
@@ -191,10 +155,6 @@ pre-everything::
 	@${ECHO_MSG} "Subversion Book will be installed."
 	@${ECHO_MSG} ""
 .endif
-#.if ${PORT_OPTIONS:MASVN}
-#	@${ECHO_MSG} "asvn will be installed"
-#	@${ECHO_MSG} ""
-#.endif
 .if ${PORT_OPTIONS:MSTATIC}
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -264,16 +224,16 @@ post-install:	${MKREPOS_TARGET}
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
+. if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
-.endif
+. endif
 .endif
 .if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
 	${LIBTOOL} --mode=install ${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/tools/server-side/svnauthz-validate ${PREFIX}/bin
 .endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
-	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
+	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude '*.la' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
 # ugly hack to remove libtool scripts ...
 	@${GREP} -R ${WRKSRC} ${DATADIR} | ${CUT} -d\: -f 1 | ${XARGS} ${RM} -f
 	@${CHMOD} -R a-st,o+rX ${DATADIR}
@@ -282,10 +242,10 @@ post-install:	${MKREPOS_TARGET}
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
-.if ${PORT_OPTIONS:MBOOK}
+. if ${PORT_OPTIONS:MBOOK}
 	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${DOCSDIR}
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${DOCSDIR}/svn-book.pdf
-.endif
+. endif
 .endif
 .if ${PORT_OPTIONS:MASVN}
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/client-side/asvn ${PREFIX}/bin
