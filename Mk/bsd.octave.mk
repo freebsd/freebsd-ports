@@ -22,7 +22,7 @@ RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 USE_FORTRAN=	yes
-USE_GMAKE=	yes
+USES+=		gmake
 
 DIST_SUBDIR=	octave-forge
 OCTAVE_PKGNAME=	${PORTNAME:S/octave-forge-//}
