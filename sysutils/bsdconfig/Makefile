@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconfig
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/bsdconfig/
-DISTNAME=	${PORTNAME}.130511
+DISTNAME=	${PORTNAME}.130705
 EXTRACT_SUFX=	.txz
 
 PATCH_SITES=	${MASTER_SITES}
@@ -28,6 +28,7 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	\
 	sbin/${PORTNAME}                                                     \
+	share/examples/${PORTNAME}/browse_packages.sh                        \
 	share/examples/${PORTNAME}/bsdconfigrc                               \
 	${BSDCFG_LIBE}/020.docsinstall/INDEX                                 \
 	${BSDCFG_LIBE}/020.docsinstall/USAGE                                 \
@@ -131,6 +132,7 @@ PLIST_FILES=	\
 	${BSDCFG_SHARE}/media/dos.subr                                       \
 	${BSDCFG_SHARE}/media/floppy.subr                                    \
 	${BSDCFG_SHARE}/media/ftp.subr                                       \
+	${BSDCFG_SHARE}/media/http.subr                                      \
 	${BSDCFG_SHARE}/media/httpproxy.subr                                 \
 	${BSDCFG_SHARE}/media/network.subr                                   \
 	${BSDCFG_SHARE}/media/nfs.subr                                       \
@@ -147,6 +149,7 @@ PLIST_FILES=	\
 	${BSDCFG_SHARE}/networking/netmask.subr                              \
 	${BSDCFG_SHARE}/networking/resolv.subr                               \
 	${BSDCFG_SHARE}/networking/routing.subr                              \
+	${BSDCFG_SHARE}/networking/services.subr                             \
 	${BSDCFG_SHARE}/packages/categories.subr                             \
 	${BSDCFG_SHARE}/packages/index.subr                                  \
 	${BSDCFG_SHARE}/packages/packages.subr                               \
@@ -214,6 +217,8 @@ IGNORE=		requires FreeBSD 9.0 or later
 post-patch:
 	@${GREP} -Ilrs '^BSDCFG_LIBE=' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^\(BSDCFG_LIBE="\)[^"]*\(.*\)|\1${PREFIX}/libexec/${PORTNAME}\2|'
+	@${GREP} -Ilrs '^BSDCFG_LIBE=' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|^\(BSDCFG_LOCAL_LIBE="\)[^"]*\(.*\)|\1${PREFIX}/libexec/${PORTNAME}\2|'
 	@${GREP} -Ilrs '^BSDCFG_SHARE=' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^\(BSDCFG_SHARE=\).*|\1"${PREFIX}/share/${PORTNAME}"|'
 	@${REINPLACE_CMD} \
