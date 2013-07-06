@@ -2406,20 +2406,3 @@ index d99584d..6d17c97 100755
  fi
  
  if test "$pie" = ""; then
-diff --git a/util/aes.c b/util/aes.c
-index 1da7bff..30a6608 100644
---- a/util/aes.c
-+++ b/util/aes.c
-@@ -877,6 +877,7 @@ int AES_set_decrypt_key(const unsigned char *userKey, const int bits,
- 	return 0;
- }
- 
-+#if defined(CONFIG_STATIC) && ! defined(__FreeBSD__)
- #ifndef AES_ASM
- /*
-  * Encrypt a single block
-@@ -1312,3 +1313,4 @@ void AES_cbc_encrypt(const unsigned char *in, unsigned char *out,
- 		}
- 	}
- }
-+#endif /* CONFIG_STATIC &&  ! __FreeBSD__ */

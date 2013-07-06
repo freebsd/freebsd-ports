@@ -37,7 +37,7 @@
 +  else
 +    libpcap=-lwpcap
 +  fi
-+  if compile_prog "$libpcap" ; then
++  if compile_prog "" "$libpcap" ; then
 +    :
 +  else
 +    echo
@@ -54,7 +54,7 @@
 +  return (pcap_create("foo", errbuf) == (pcap_t *)0 ? 1 : 0);
 +}
 +EOF
-+  if compile_prog "$libpcap" ; then
++  if compile_prog "" "$libpcap" ; then
 +    pcap_create="yes"
 +  fi
 +  cat > $TMPC << EOF
@@ -376,3 +376,13 @@ Index: net/net.c
      'socket':   'NetdevSocketOptions',
      'vde':      'NetdevVdeOptions',
      'dump':     'NetdevDumpOptions',
+--- net/hub.c.orig
++++ net/hub.c
+@@ -322,6 +322,7 @@ void net_hub_check_clients(void)
+             case NET_CLIENT_OPTIONS_KIND_TAP:
+             case NET_CLIENT_OPTIONS_KIND_SOCKET:
+             case NET_CLIENT_OPTIONS_KIND_VDE:
++            case NET_CLIENT_OPTIONS_KIND_PCAP:
+                 has_host_dev = 1;
+                 break;
+             default:
