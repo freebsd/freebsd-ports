@@ -7,6 +7,8 @@ DISTNAME=	MTOS-${PORTVERSION}-${PKGNAMEPREFIX:S,-,,}
 
 COMMENT=	Russian localization of the MovableType publishing system
 
+IGNORE=		source file not found
+
 MASTERDIR=	${.CURDIR}/../../www/MT
 MT_LANG=	${PKGNAMEPREFIX:S,-,,U}
 CONFLICTS=	MT-[2-5].* de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].*
