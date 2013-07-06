@@ -13,6 +13,7 @@ COMMENT=	GNU GDB of newer version than comes with the system
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
+USE_CSTD=	gnu89
 USE_GMAKE=	yes
 USES=		iconv
 GNU_CONFIGURE=	yes
