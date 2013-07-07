@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.1.12
+PORTVERSION=	3.1.13
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://mirrors.rit.edu/zi/

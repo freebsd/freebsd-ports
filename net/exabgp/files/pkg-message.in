@@ -1,3 +1,4 @@
+===========================================================================
 Sample configurations are located in %%EXAMPLESDIR%%.
 
 Please create %%ETCDIR%%/exabgp.conf based on one of the above examples and
@@ -5,3 +6,4 @@ add exabgp_enable="YES" to /etc/rc.conf
 
 For information on using MD5 signatures, please visit the examples page at:
 https://code.google.com/p/exabgp/wiki/examples
+===========================================================================
