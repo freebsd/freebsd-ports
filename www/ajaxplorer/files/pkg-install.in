@@ -1,0 +1,38 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+if [ -d %%WWWDIR%%/data/cache -a -d %%WWWDIR%%/data/cache/i18n ]; then
+	show_warn=no
+	wf=`( find %%WWWDIR%%/data/cache/i18n -not -type d ; find %%WWWDIR%%/data/cache -name 'plugins_*.ser' ) | wc -l`
+
+	if [ $wf -ne 0 ]; then
+		rm -f %%WWWDIR%%/data/cache/i18n/*.ser
+		rm -f %%WWWDIR%%/data/cache/plugins_*.ser
+		show_warn=yes
+	fi
+
+	if [ -f %%WWWDIR%%/data/cache/admin_counted ]; then
+		cp %%WWWDIR%%/data/cache/admin_counted %%WWWDIR%%/data/cache/first_run_passed
+		show_warn=yes
+	fi
+
+	if [ "$show_warn" = "yes" ]; then
+		echo "************************************************************************"
+		echo
+		echo "WARNING: If you are upgrading from version 4.2.3 and using a database"
+		echo "backend, please update your database using the sql script installed in"
+		echo "%%WWWDIR%%/conf/4.2.3-5.0.0-db-upgrade.sql"
+		echo
+		echo "Please also read the upgrading notes at:"
+		echo "http://ajaxplorer.info/ajaxplorer-5-0-0:/#Upgrade_from_4X_to_500"
+		echo
+		echo "************************************************************************"
+		sleep 3
+	fi
+fi
+
+exit 0

@@ -4,31 +4,35 @@
 %%WWWDIR%%/conf/.htaccess
 %%WWWDIR%%/conf/RELEASE_NOTE
 %%WWWDIR%%/conf/VERSION
-%%WWWDIR%%/conf/bootstrap_conf.php
-%%WWWDIR%%/conf/bootstrap_context.php
-%%WWWDIR%%/conf/bootstrap_plugins.php
-%%WWWDIR%%/conf/bootstrap_repositories.php
+@unexec if cmp -s %B/bootstrap_conf.php.sample %B/bootstrap_conf.php; then rm -f %B/bootstrap_conf.php; fi
+%%WWWDIR%%/conf/bootstrap_conf.php.sample
+@exec if [ ! -f %b/bootstrap_conf.php ] ; then cp -p %B/%f %B/bootstrap_conf.php; fi
+@unexec if cmp -s %B/bootstrap_context.php.sample %B/bootstrap_context.php; then rm -f %B/bootstrap_context.php; fi
+%%WWWDIR%%/conf/bootstrap_context.php.sample
+@exec if [ ! -f %b/bootstrap_context.php ] ; then cp -p %B/%f %B/bootstrap_context.php; fi
+@unexec if cmp -s %B/bootstrap_repositories.php.sample %B/bootstrap_repositories.php; then rm -f %B/bootstrap_repositories.php; fi
+%%WWWDIR%%/conf/bootstrap_repositories.php.sample
+@exec if [ ! -f %b/bootstrap_repositories.php ] ; then cp -p %B/%f %B/bootstrap_repositories.php; fi
+%%WWWDIR%%/conf/4.2.3-5.0.0-db-upgrade.sql
 %%WWWDIR%%/conf/extensions.conf.php
 %%WWWDIR%%/conf/index.html
+%%WWWDIR%%/conf/mime.types
 %%WWWDIR%%/conf/templates/bootstrap_plugins.bridges.php
 %%WWWDIR%%/conf/templates/bootstrap_plugins.multi.php
 %%WWWDIR%%/conf/templates/bootstrap_plugins.sql.php
-%%WWWDIR%%/conf/templates/bootstrap_plugins.webftp.php
 %%WWWDIR%%/content.php
 %%WWWDIR%%/core/classes/class.AJXP_Cache.php
 %%WWWDIR%%/core/classes/class.AJXP_Controller.php
 %%WWWDIR%%/core/classes/class.AJXP_Exception.php
 %%WWWDIR%%/core/classes/class.AJXP_JSPacker.php
-%%WWWDIR%%/core/classes/class.AJXP_Logger.php
 %%WWWDIR%%/core/classes/class.AJXP_Node.php
 %%WWWDIR%%/core/classes/class.AJXP_Plugin.php
 %%WWWDIR%%/core/classes/class.AJXP_PluginsService.php
+%%WWWDIR%%/core/classes/class.AJXP_Role.php
 %%WWWDIR%%/core/classes/class.AJXP_Safe.php
 %%WWWDIR%%/core/classes/class.AJXP_ShutdownScheduler.php
 %%WWWDIR%%/core/classes/class.AJXP_Utils.php
 %%WWWDIR%%/core/classes/class.AJXP_VarsFilter.php
-%%WWWDIR%%/core/classes/class.AJXP_WebdavAuth.php
-%%WWWDIR%%/core/classes/class.AJXP_WebdavBackend.php
 %%WWWDIR%%/core/classes/class.AJXP_XMLWriter.php
 %%WWWDIR%%/core/classes/class.AbstractTest.php
 %%WWWDIR%%/core/classes/class.AjxpRole.php
@@ -44,254 +48,272 @@
 %%WWWDIR%%/core/classes/class.UserSelection.php
 %%WWWDIR%%/core/classes/compat.php
 %%WWWDIR%%/core/classes/dibi.compact.php
-%%WWWDIR%%/core/classes/ezc/Base/base.php
-%%WWWDIR%%/core/classes/ezc/Base/base_autoload.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/autoload.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/double_class_repository_prefix.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/exception.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/extension_not_found.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/file_exception.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/file_io.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/file_not_found.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/file_permission.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/functionality_not_supported.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/init_callback_configured.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/invalid_callback_class.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/invalid_parent_class.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/property_not_found.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/property_permission.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/setting_not_found.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/setting_value.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/value.php
-%%WWWDIR%%/core/classes/ezc/Base/exceptions/whatever.php
-%%WWWDIR%%/core/classes/ezc/Base/ezc_bootstrap.php
-%%WWWDIR%%/core/classes/ezc/Base/features.php
-%%WWWDIR%%/core/classes/ezc/Base/file.php
-%%WWWDIR%%/core/classes/ezc/Base/init.php
-%%WWWDIR%%/core/classes/ezc/Base/interfaces/configuration_initializer.php
-%%WWWDIR%%/core/classes/ezc/Base/interfaces/exportable.php
-%%WWWDIR%%/core/classes/ezc/Base/interfaces/persistable.php
-%%WWWDIR%%/core/classes/ezc/Base/metadata.php
-%%WWWDIR%%/core/classes/ezc/Base/metadata/pear.php
-%%WWWDIR%%/core/classes/ezc/Base/metadata/tarball.php
-%%WWWDIR%%/core/classes/ezc/Base/options.php
-%%WWWDIR%%/core/classes/ezc/Base/options/autoload.php
-%%WWWDIR%%/core/classes/ezc/Base/struct.php
-%%WWWDIR%%/core/classes/ezc/Base/structs/file_find_context.php
-%%WWWDIR%%/core/classes/ezc/Base/structs/repository_directory.php
-%%WWWDIR%%/core/classes/ezc/EZC_LICENCE
-%%WWWDIR%%/core/classes/ezc/Webdav/auth/digest_base.php
-%%WWWDIR%%/core/classes/ezc/Webdav/backends/file.php
-%%WWWDIR%%/core/classes/ezc/Webdav/backends/memory.php
-%%WWWDIR%%/core/classes/ezc/Webdav/backends/simple.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/bad_request.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/broken_base_uri.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/broken_request_uri.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/broken_storage_exception.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/exception.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/headers_not_validated.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/inconsistency.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/invalid_callback.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/invalid_header.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/invalid_hook.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/invalid_request_body.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/invalid_request_method.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/invalid_xml.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/missing_header.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/missing_transport_configuration.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/misssing_server_variable.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/no_transport_handler.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/plugin_precondition_failed.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/request_not_supported.php
-%%WWWDIR%%/core/classes/ezc/Webdav/exceptions/unknown_header.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/anonymous_authenticator.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/authorizer.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/backend.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/backend/change.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/backend/make_collection.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/backend/put.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/basic_authenticator.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/digest_authenticator.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/infrastructure_base.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/path_factory.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/property.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/property_live.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/property_storage.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/request.php
-%%WWWDIR%%/core/classes/ezc/Webdav/interfaces/response.php
-%%WWWDIR%%/core/classes/ezc/Webdav/namespace_registry.php
-%%WWWDIR%%/core/classes/ezc/Webdav/options/backend_file_options.php
-%%WWWDIR%%/core/classes/ezc/Webdav/options/backend_memory_options.php
-%%WWWDIR%%/core/classes/ezc/Webdav/options/server.php
-%%WWWDIR%%/core/classes/ezc/Webdav/path_factories/automatic.php
-%%WWWDIR%%/core/classes/ezc/Webdav/path_factories/basic.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugin_configuration.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugin_parameters.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugin_registry.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/administration/purger.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/administrator.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/check_observers/lock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/check_observers/lock_refresh.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/check_observers/multiple.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/check_observers/path_collector.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/check_observers/property_collector.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/config.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/exceptions/access_denied.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/exceptions/administration.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/copy.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/delete.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/lock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/mkcol.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/move.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/options.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/propfind.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/proppatch.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/put.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers/unlock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/header/if_header_condition.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/header/if_header_list_item.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/header/if_header_no_tag_list.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/header/if_header_tagged_list.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/header_handler.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/interfaces/check_observer.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/interfaces/handler.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/interfaces/if_header_list.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/interfaces/lock_authorizer.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/interfaces/lock_backend.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/main.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/options.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/properties/lockdiscovery.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/properties/lockdiscovery_activelock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/properties/supportedlock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/properties/supportedlock_lockentry.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/property_handler.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/requests/content/lock_info.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/requests/lock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/requests/unlock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/responses/lock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/responses/unlock.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/structs/lock_check_info.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/tools.php
-%%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/transport.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/creationdate.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/dead.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/displayname.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/getcontentlanguage.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/getcontentlength.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/getcontenttype.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/getetag.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/getlastmodified.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/resourcetype.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/source.php
-%%WWWDIR%%/core/classes/ezc/Webdav/properties/source_link.php
-%%WWWDIR%%/core/classes/ezc/Webdav/property_storages/basic.php
-%%WWWDIR%%/core/classes/ezc/Webdav/property_storages/flagged.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/content/property_behaviour.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/copy.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/delete.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/get.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/head.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/mkcol.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/move.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/options.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/propfind.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/proppatch.php
-%%WWWDIR%%/core/classes/ezc/Webdav/requests/put.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/copy.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/delete.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/error.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/get_collection.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/get_resource.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/head.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/mkcol.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/move.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/multistatus.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/options.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/propfind.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/proppatch.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/propstat.php
-%%WWWDIR%%/core/classes/ezc/Webdav/responses/put.php
-%%WWWDIR%%/core/classes/ezc/Webdav/server.php
-%%WWWDIR%%/core/classes/ezc/Webdav/server_configuration.php
-%%WWWDIR%%/core/classes/ezc/Webdav/server_configuration_manager.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/anonymous_auth.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/auth.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/basic_auth.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/collection.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/digest_auth.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/display_information.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/display_information_empty.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/display_information_string.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/display_information_xml.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/output_result.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/potential_uri_content.php
-%%WWWDIR%%/core/classes/ezc/Webdav/structs/resource.php
-%%WWWDIR%%/core/classes/ezc/Webdav/tools/date_time.php
-%%WWWDIR%%/core/classes/ezc/Webdav/tools/xml.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transport.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transports/header_handler.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transports/konqueror.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transports/microsoft.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transports/nautilus.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transports/property_handler.php
-%%WWWDIR%%/core/classes/ezc/Webdav/transports/property_handlers/nautilus.php
-%%WWWDIR%%/core/classes/ezc/Webdav/webdav_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/archive_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/authentication_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/authentication_database_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/authentication_openid_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/base_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/cache_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/configuration_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/console_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/db_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/db_schema_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/debug_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/document_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/execution_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/feed_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/file_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/graph_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/graph_database_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/image_analyzer_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/image_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/input_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/log_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/log_database_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/mail_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/mvc_authentication_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/mvc_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/mvc_feed_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/mvc_mail_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/mvc_template_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/persistent_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/persistent_object_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/php_generator_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/query_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/search_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/signal_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/system_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/template_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/template_translation_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/translation_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/translation_cache_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/tree_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/tree_db_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/tree_persistent_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/url_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/webdav_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/workflow_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/workflow_database_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/workflow_event_autoload.php
-%%WWWDIR%%/core/classes/ezc/autoload/workflow_signal_autoload.php
 %%WWWDIR%%/core/classes/http_class/LICENSE.txt
 %%WWWDIR%%/core/classes/http_class/http_class.php
 %%WWWDIR%%/core/classes/index.html
-%%WWWDIR%%/core/classes/interface.AjxpWebdavProvider.php
+%%WWWDIR%%/core/classes/interface.AjxpGroupPathProvider.php
 %%WWWDIR%%/core/classes/interface.AjxpWrapper.php
+%%WWWDIR%%/core/classes/interface.AjxpWrapperProvider.php
 %%WWWDIR%%/core/classes/packer/class.JavaScriptPacker.php
 %%WWWDIR%%/core/classes/packer/index.html
 %%WWWDIR%%/core/classes/pclzip.lib.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_AuthBackendBasic.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_AuthBackendDigest.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_BrowserPlugin.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_Collection.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_Node.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_NodeLeaf.php
+%%WWWDIR%%/core/classes/sabredav/ajaxplorer/class.AJXP_Sabre_RootCollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend/AbstractBackend.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend/BackendInterface.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend/NotificationSupport.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend/PDO.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend/SharingSupport.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Calendar.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/CalendarObject.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/CalendarQueryParser.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/CalendarQueryValidator.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/CalendarRootNode.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Exception/InvalidComponentType.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/ICSExportPlugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/ICalendar.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/ICalendarObject.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/IShareableCalendar.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/ISharedCalendar.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Collection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/ICollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/INode.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/INotificationType.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Node.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Notification/Invite.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Notification/InviteReply.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Notification/SystemStatus.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal/Collection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal/IProxyRead.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal/IProxyWrite.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal/ProxyRead.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal/ProxyWrite.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal/User.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property/AllowedSharingModes.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property/Invite.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property/ScheduleCalendarTransp.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property/SupportedCalendarComponentSet.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property/SupportedCalendarData.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property/SupportedCollationSet.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Schedule/IMip.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Schedule/IOutbox.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Schedule/Outbox.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/ShareableCalendar.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/SharedCalendar.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/SharingPlugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/UserCalendars.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Version.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/AddressBook.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/AddressBookQueryParser.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/AddressBookRoot.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Backend/AbstractBackend.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Backend/BackendInterface.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Backend/PDO.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Card.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/IAddressBook.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/ICard.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/IDirectory.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Property/SupportedAddressData.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/UserAddressBooks.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/VCFExportPlugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Version.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend/AbstractBasic.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend/AbstractDigest.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend/Apache.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend/BackendInterface.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend/File.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend/PDO.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/GuessContentType.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/MapGetToPropFind.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/favicon.ico
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/addressbook.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/calendar.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/card.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/collection.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/file.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/parent.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons/principal.png
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Client.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Collection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/BadRequest.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/Conflict.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/ConflictingLock.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/FileNotFound.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/Forbidden.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/InsufficientStorage.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/InvalidResourceType.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/LockTokenMatchesRequestUri.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/Locked.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/MethodNotAllowed.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/NotAuthenticated.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/NotFound.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/NotImplemented.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/PaymentRequired.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/PreconditionFailed.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/ReportNotSupported.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/RequestedRangeNotSatisfiable.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/ServiceUnavailable.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception/UnsupportedMediaType.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FS/Directory.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FS/File.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FS/Node.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FSExt/Directory.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FSExt/File.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FSExt/Node.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/File.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/ICollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/IExtendedCollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/IFile.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/INode.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/IProperties.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/IQuota.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend/AbstractBackend.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend/BackendInterface.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend/FS.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend/File.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend/PDO.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/LockInfo.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Mount/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Node.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/ObjectTree.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/PartialUpdate/IFile.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/PartialUpdate/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/GetLastModified.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/Href.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/HrefList.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/IHref.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/LockDiscovery.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/ResourceType.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/Response.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/ResponseList.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/SupportedLock.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property/SupportedReportSet.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/PropertyInterface.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Server.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/ServerPlugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/SimpleCollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/SimpleFile.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/StringUtil.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/TemporaryFileFilterPlugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Tree.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Tree/Filesystem.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/URLUtil.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/UUIDUtil.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Version.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/XMLUtil.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/AbstractPrincipalCollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception/AceConflict.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception/NeedPrivileges.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception/NoAbstract.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception/NotRecognizedPrincipal.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception/NotSupportedPrivilege.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/IACL.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/IPrincipal.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/IPrincipalCollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Plugin.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Principal.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalBackend/AbstractBackend.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalBackend/BackendInterface.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalBackend/PDO.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalCollection.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property/Acl.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property/AclRestrictions.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property/CurrentUserPrivilegeSet.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property/Principal.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property/SupportedPrivilegeSet.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Version.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/AWSAuth.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/AbstractAuth.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/BasicAuth.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/DigestAuth.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/Request.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/Response.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/Util.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP/Version.php
+%%WWWDIR%%/core/classes/sabredav/lib/Sabre/autoload.php
+%%WWWDIR%%/core/classes/sabredav/vendor/autoload.php
+%%WWWDIR%%/core/classes/sabredav/vendor/composer/ClassLoader.php
+%%WWWDIR%%/core/classes/sabredav/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/core/classes/sabredav/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/core/classes/sabredav/vendor/composer/autoload_real.php
+%%WWWDIR%%/core/classes/sabredav/vendor/composer/installed.json
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/.travis.yml
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/ChangeLog
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/LICENSE
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/README.md
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/bin/vobjectvalidate.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/composer.json
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VAlarm.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCalendar.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCard.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VEvent.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VFreeBusy.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VJournal.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VTodo.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/DateTimeParser.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/ElementList.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/FreeBusyGenerator.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Node.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Parameter.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/ParseException.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Compound.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/DateTime.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/MultiDateTime.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Reader.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/RecurrenceIterator.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/ICalendar.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/SplitterInterface.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/VCard.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/StringUtil.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/TimeZoneUtil.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Version.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/includes.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VAlarmTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCalendarTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCardTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VEventTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VFreeBusyTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VJournalTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VTodoTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ComponentTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/DateTimeParserTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ElementListTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/EmClientTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/FreeBusyGeneratorTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue153Test.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue154Test.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ParameterTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/CompoundTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/DateTimeTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/MultiDateTimeTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/PropertyTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ReaderTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorFifthTuesdayProblemTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorInfiniteLoopProblemTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorMinusOneProblemTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/ICalendarTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/VCardTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/StringUtilTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/TimeZoneUtilTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/VersionTest.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/issue153.vcf
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/bootstrap.php
+%%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/phpunit.xml
 %%WWWDIR%%/core/classes/securimage/AHGBold.ttf
 %%WWWDIR%%/core/classes/securimage/LICENSE.txt
 %%WWWDIR%%/core/classes/securimage/README.FONT.txt
@@ -310,6 +332,7 @@
 %%WWWDIR%%/core/doc/LICENSE_until3.2.4.txt
 %%WWWDIR%%/core/doc/TROUBLESHOOTING.txt
 %%WWWDIR%%/core/doc/ajaxplorer-manual-2.37-dist.html
+%%WWWDIR%%/core/doc/hooks.json
 %%WWWDIR%%/core/tests/index.html
 %%WWWDIR%%/core/tests/startup.phtml
 %%WWWDIR%%/core/tests/test.AJXPVersion.php
@@ -323,6 +346,8 @@
 %%WWWDIR%%/core/tests/test.PHPOS.php
 %%WWWDIR%%/core/tests/test.PHPSession.php
 %%WWWDIR%%/core/tests/test.PHPVersion.php
+%%WWWDIR%%/core/tests/test.PHP_APC.php
+%%WWWDIR%%/core/tests/test.PHP_OB.php
 %%WWWDIR%%/core/tests/test.SSLEncryption.php
 %%WWWDIR%%/core/tests/test.ServerEncoding.php
 %%WWWDIR%%/core/tests/test.Upload.php
@@ -330,6 +355,7 @@
 %%WWWDIR%%/core/tests/test.Writeability.php
 %%WWWDIR%%/core/tests/test.Zlib.php
 %%WWWDIR%%/data/cache/.htaccess
+%%WWWDIR%%/data/cache/index.html
 %%WWWDIR%%/data/files/.htaccess
 %%WWWDIR%%/data/files/AjaXplorer-QuickStart.txt
 %%WWWDIR%%/data/logs/.htaccess
@@ -342,6 +368,16 @@
 %%WWWDIR%%/data/tmp/.htaccess
 %%WWWDIR%%/dav.php
 %%WWWDIR%%/index.php
+%%WWWDIR%%/index_shared.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Atomics/FiltersTest.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Atomics/MemStoresTest.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Atomics/RolesTest.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Atomics/UtilsTest.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Core/StoragesTest.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Core/UsersTests.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Suite/Atomics.php
+%%WWWDIR%%/phpunit/AJXP/Tests/Suite/CoreStorages.php
+%%WWWDIR%%/phpunit/HOWTO
 %%WWWDIR%%/plugins/access.ajxp_conf/admin.png
 %%WWWDIR%%/plugins/access.ajxp_conf/ajxp_confActions.xml
 %%WWWDIR%%/plugins/access.ajxp_conf/class.ConfigEditor.js
@@ -381,6 +417,7 @@
 %%WWWDIR%%/plugins/access.dropbox/dropbox-php/OAuth/Zend.php
 %%WWWDIR%%/plugins/access.dropbox/dropbox-php/autoload.php
 %%WWWDIR%%/plugins/access.dropbox/dropboxLogo.png
+%%WWWDIR%%/plugins/access.dropbox/i18n/conf/de.php
 %%WWWDIR%%/plugins/access.dropbox/i18n/conf/en.php
 %%WWWDIR%%/plugins/access.dropbox/i18n/conf/fr.php
 %%WWWDIR%%/plugins/access.dropbox/manifest.xml
@@ -388,6 +425,7 @@
 %%WWWDIR%%/plugins/access.fs/class.fsAccessDriver.php
 %%WWWDIR%%/plugins/access.fs/class.fsAccessWrapper.php
 %%WWWDIR%%/plugins/access.fs/fsActions.xml
+%%WWWDIR%%/plugins/access.fs/i18n/conf/de.php
 %%WWWDIR%%/plugins/access.fs/i18n/conf/en.php
 %%WWWDIR%%/plugins/access.fs/i18n/conf/fr.php
 %%WWWDIR%%/plugins/access.fs/icon.png
@@ -396,12 +434,22 @@
 %%WWWDIR%%/plugins/access.fs/test.fsAccess.php
 %%WWWDIR%%/plugins/access.ftp/class.ftpAccessDriver.php
 %%WWWDIR%%/plugins/access.ftp/class.ftpAccessWrapper.php
+%%WWWDIR%%/plugins/access.ftp/i18n/conf/de.php
 %%WWWDIR%%/plugins/access.ftp/i18n/conf/en.php
 %%WWWDIR%%/plugins/access.ftp/i18n/conf/fr.php
 %%WWWDIR%%/plugins/access.ftp/icon.png
 %%WWWDIR%%/plugins/access.ftp/manifest.xml
 %%WWWDIR%%/plugins/access.ftp/plugin_doc.html
 %%WWWDIR%%/plugins/access.ftp/test.ftpAccess.php
+%%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage/ObjectStorage/StreamWrapper.php
+%%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Transport/CURLTransport.php
+%%WWWDIR%%/plugins/access.hpcloud/class.hpcAccessDriver.php
+%%WWWDIR%%/plugins/access.hpcloud/class.hpcAccessWrapper.php
+%%WWWDIR%%/plugins/access.hpcloud/i18n/conf/en.php
+%%WWWDIR%%/plugins/access.hpcloud/i18n/conf/fr.php
+%%WWWDIR%%/plugins/access.hpcloud/libraryLoader.php
+%%WWWDIR%%/plugins/access.hpcloud/manifest.xml
+%%WWWDIR%%/plugins/access.hpcloud/plugin_doc.html
 %%WWWDIR%%/plugins/access.imap/class.imapAccessDriver.php
 %%WWWDIR%%/plugins/access.imap/class.imapAccessWrapper.php
 %%WWWDIR%%/plugins/access.imap/manifest.xml
@@ -540,13 +588,16 @@
 %%WWWDIR%%/plugins/action.share/plugin_doc.html
 %%WWWDIR%%/plugins/action.share/res/404.html
 %%WWWDIR%%/plugins/action.share/res/button_cancel.png
-%%WWWDIR%%/plugins/action.share/res/down.png
-%%WWWDIR%%/plugins/action.share/res/drive_harddisk.png
+%%WWWDIR%%/plugins/action.share/res/dl.png
+%%WWWDIR%%/plugins/action.share/res/grid_t.png
+%%WWWDIR%%/plugins/action.share/res/i18n/ca.php
 %%WWWDIR%%/plugins/action.share/res/i18n/conf/en.php
 %%WWWDIR%%/plugins/action.share/res/i18n/conf/fr.php
 %%WWWDIR%%/plugins/action.share/res/i18n/de.php
 %%WWWDIR%%/plugins/action.share/res/i18n/en.php
+%%WWWDIR%%/plugins/action.share/res/i18n/es.php
 %%WWWDIR%%/plugins/action.share/res/i18n/fr.php
+%%WWWDIR%%/plugins/action.share/res/minisite.php
 %%WWWDIR%%/plugins/action.share/res/public_links.php
 %%WWWDIR%%/plugins/action.skeleton/class.PluginSkeleton.php
 %%WWWDIR%%/plugins/action.skeleton/manifest.xml
@@ -579,6 +630,7 @@
 %%WWWDIR%%/plugins/auth.ftp/i18n/conf/en.php
 %%WWWDIR%%/plugins/auth.ftp/i18n/conf/fr.php
 %%WWWDIR%%/plugins/auth.ftp/i18n/en.php
+%%WWWDIR%%/plugins/auth.ftp/i18n/et.php
 %%WWWDIR%%/plugins/auth.ftp/i18n/fr.php
 %%WWWDIR%%/plugins/auth.ftp/manifest.xml
 %%WWWDIR%%/plugins/auth.ftp/plugin_doc.html
@@ -620,26 +672,34 @@
 %%WWWDIR%%/plugins/auth.smb/plugin_doc.html
 %%WWWDIR%%/plugins/auth.sql/class.sqlAuthDriver.php
 %%WWWDIR%%/plugins/auth.sql/create.sql
+%%WWWDIR%%/plugins/auth.sql/create.sqlite
 %%WWWDIR%%/plugins/auth.sql/i18n/conf/en.php
 %%WWWDIR%%/plugins/auth.sql/i18n/conf/fr.php
 %%WWWDIR%%/plugins/auth.sql/manifest.xml
 %%WWWDIR%%/plugins/auth.sql/plugin_doc.html
-%%WWWDIR%%/plugins/conf.serial/class.AJXP_User.php
+%%WWWDIR%%/plugins/boot.conf/class.AjxpInstaller.js
+%%WWWDIR%%/plugins/boot.conf/class.BootConfLoader.php
+%%WWWDIR%%/plugins/boot.conf/i18n/en.php
+%%WWWDIR%%/plugins/boot.conf/manifest.xml
+%%WWWDIR%%/plugins/conf.serial/class.AJXP_SerialUser.php
 %%WWWDIR%%/plugins/conf.serial/class.serialConfDriver.php
 %%WWWDIR%%/plugins/conf.serial/i18n/conf/en.php
 %%WWWDIR%%/plugins/conf.serial/i18n/conf/fr.php
 %%WWWDIR%%/plugins/conf.serial/manifest.xml
 %%WWWDIR%%/plugins/conf.serial/plugin_doc.html
 %%WWWDIR%%/plugins/conf.sql/README.txt
-%%WWWDIR%%/plugins/conf.sql/class.AJXP_User.php
+%%WWWDIR%%/plugins/conf.sql/class.AJXP_SqlUser.php
 %%WWWDIR%%/plugins/conf.sql/class.sqlConfDriver.php
 %%WWWDIR%%/plugins/conf.sql/create.sql
+%%WWWDIR%%/plugins/conf.sql/create.sqlite
 %%WWWDIR%%/plugins/conf.sql/i18n/conf/en.php
 %%WWWDIR%%/plugins/conf.sql/i18n/conf/fr.php
 %%WWWDIR%%/plugins/conf.sql/manifest.xml
 %%WWWDIR%%/plugins/conf.sql/plugin_doc.html
+%%WWWDIR%%/plugins/conf.sql/update4.2.3-5.0.sql
 %%WWWDIR%%/plugins/conf.sql/update_3.0.3_up.sql
 %%WWWDIR%%/plugins/core.access/class.AbstractAccessDriver.php
+%%WWWDIR%%/plugins/core.access/manifest.xml
 %%WWWDIR%%/plugins/core.ajaxplorer/ajxp_mixins.xml
 %%WWWDIR%%/plugins/core.ajaxplorer/ajxp_registry.xsd
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n-template.php
@@ -651,6 +711,7 @@
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n/de.php
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n/en.php
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n/es.php
+%%WWWDIR%%/plugins/core.ajaxplorer/i18n/et.php
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n/eus.php
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n/fi.php
 %%WWWDIR%%/plugins/core.ajaxplorer/i18n/fr.php
@@ -674,6 +735,7 @@
 %%WWWDIR%%/plugins/core.ajaxplorer/plugin_doc.html
 %%WWWDIR%%/plugins/core.auth/class.AbstractAuthDriver.php
 %%WWWDIR%%/plugins/core.auth/class.CoreAuthLoader.php
+%%WWWDIR%%/plugins/core.auth/i18n/conf/de.php
 %%WWWDIR%%/plugins/core.auth/i18n/conf/en.php
 %%WWWDIR%%/plugins/core.auth/i18n/conf/fr.php
 %%WWWDIR%%/plugins/core.auth/manifest.xml
@@ -681,16 +743,80 @@
 %%WWWDIR%%/plugins/core.auth/standard_auth_actions.xml
 %%WWWDIR%%/plugins/core.conf/class.AbstractAjxpUser.php
 %%WWWDIR%%/plugins/core.conf/class.AbstractConfDriver.php
+%%WWWDIR%%/plugins/core.conf/class.CoreConfLoader.php
+%%WWWDIR%%/plugins/core.conf/default_avatar.png
 %%WWWDIR%%/plugins/core.conf/default_template_logo-16.png
 %%WWWDIR%%/plugins/core.conf/default_template_logo-22.png
+%%WWWDIR%%/plugins/core.conf/i18n/conf/de.php
 %%WWWDIR%%/plugins/core.conf/i18n/conf/en.php
 %%WWWDIR%%/plugins/core.conf/i18n/conf/fr.php
 %%WWWDIR%%/plugins/core.conf/manifest.xml
 %%WWWDIR%%/plugins/core.conf/plugin_doc.html
 %%WWWDIR%%/plugins/core.conf/standard_conf_actions.xml
+%%WWWDIR%%/plugins/core.index/manifest.xml
+%%WWWDIR%%/plugins/core.log/class.AJXP_Logger.php
 %%WWWDIR%%/plugins/core.log/class.AbstractLogDriver.php
+%%WWWDIR%%/plugins/core.log/manifest.xml
+%%WWWDIR%%/plugins/core.mailer/AjxpMailer.css
+%%WWWDIR%%/plugins/core.mailer/class.AjxpMailer.js
+%%WWWDIR%%/plugins/core.mailer/class.AjxpMailer.php
+%%WWWDIR%%/plugins/core.mailer/i18n/en.php
+%%WWWDIR%%/plugins/core.mailer/i18n/fr.php
+%%WWWDIR%%/plugins/core.mailer/manifest.xml
+%%WWWDIR%%/plugins/core.meta/manifest.xml
 %%WWWDIR%%/plugins/core.metastore/interface.MetaStoreProvider.php
+%%WWWDIR%%/plugins/core.metastore/manifest.xml
+%%WWWDIR%%/plugins/core.mq/class.AjxpMqObserver.js
+%%WWWDIR%%/plugins/core.mq/class.MqManager.php
+%%WWWDIR%%/plugins/core.mq/manifest.xml
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/.buildpath
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/.project
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/client.html
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/demo.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/demo_ssl.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/democert.pem
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/tests/framing.test.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/tests/server.test.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.admin.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.client.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.exceptions.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.framing.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.functions.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.message.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.protocol.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.resources.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.server.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.socket.php
+%%WWWDIR%%/plugins/core.mq/vendor/phpws/websocket.users.php
+%%WWWDIR%%/plugins/core.mq/ws-server.php
+%%WWWDIR%%/plugins/core.notifications/class.AJXP_Notification.php
+%%WWWDIR%%/plugins/core.notifications/class.AJXP_NotificationCenter.php
+%%WWWDIR%%/plugins/core.notifications/class.NotificationLoader.js
+%%WWWDIR%%/plugins/core.notifications/interface.AJXP_FeedStore.php
+%%WWWDIR%%/plugins/core.notifications/interface.AJXP_MessageExchanger.php
+%%WWWDIR%%/plugins/core.notifications/manifest.xml
+%%WWWDIR%%/plugins/core.notifications/res/css/notification_center.css
+%%WWWDIR%%/plugins/core.notifications/res/i18n/de.php
+%%WWWDIR%%/plugins/core.notifications/res/i18n/en.php
+%%WWWDIR%%/plugins/core.notifications/res/i18n/es.php
+%%WWWDIR%%/plugins/core.notifications/res/i18n/fr.php
+%%WWWDIR%%/plugins/core.notifications/res/img/16/feed.png
+%%WWWDIR%%/plugins/core.notifications/res/img/22/feed.png
+%%WWWDIR%%/plugins/core.notifications/res/img/32/feed.png
+%%WWWDIR%%/plugins/core.notifications/templates/block/de.php
+%%WWWDIR%%/plugins/core.notifications/templates/block/en.php
+%%WWWDIR%%/plugins/core.notifications/templates/block/fr.php
+%%WWWDIR%%/plugins/core.notifications/templates/group/de.php
+%%WWWDIR%%/plugins/core.notifications/templates/group/en.php
+%%WWWDIR%%/plugins/core.notifications/templates/group/fr.php
+%%WWWDIR%%/plugins/core.notifications/templates/long/de.php
+%%WWWDIR%%/plugins/core.notifications/templates/long/en.php
+%%WWWDIR%%/plugins/core.notifications/templates/long/fr.php
+%%WWWDIR%%/plugins/core.notifications/templates/short/de.php
+%%WWWDIR%%/plugins/core.notifications/templates/short/en.php
+%%WWWDIR%%/plugins/core.notifications/templates/short/fr.php
 %%WWWDIR%%/plugins/core.uploader/class.CoreUploaderLoader.php
+%%WWWDIR%%/plugins/core.uploader/i18n/conf/de.php
 %%WWWDIR%%/plugins/core.uploader/i18n/conf/en.php
 %%WWWDIR%%/plugins/core.uploader/i18n/conf/fr.php
 %%WWWDIR%%/plugins/core.uploader/manifest.xml
@@ -701,8 +827,12 @@
 %%WWWDIR%%/plugins/downloader.http/manifest.xml
 %%WWWDIR%%/plugins/downloader.http/plugin_doc.html
 %%WWWDIR%%/plugins/downloader.http/resources/downloader.css
+%%WWWDIR%%/plugins/downloader.http/resources/i18n/ca.php
+%%WWWDIR%%/plugins/downloader.http/resources/i18n/cs.php
 %%WWWDIR%%/plugins/downloader.http/resources/i18n/de.php
 %%WWWDIR%%/plugins/downloader.http/resources/i18n/en.php
+%%WWWDIR%%/plugins/downloader.http/resources/i18n/es.php
+%%WWWDIR%%/plugins/downloader.http/resources/i18n/et.php
 %%WWWDIR%%/plugins/downloader.http/resources/i18n/fr.php
 %%WWWDIR%%/plugins/downloader.http/resources/images/16/add_bookmarklet.png
 %%WWWDIR%%/plugins/downloader.http/resources/images/16/bookmarklet.png
@@ -722,6 +852,29 @@
 %%WWWDIR%%/plugins/downloader.http/resources/images/32/make.png
 %%WWWDIR%%/plugins/downloader.http/resources/images/64/kget_list.png
 %%WWWDIR%%/plugins/downloader.http/resources/images/64/make.png
+%%WWWDIR%%/plugins/editor.ajxp_plugin/class.PluginEditor.js
+%%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/conf/en.php
+%%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/conf/fr.php
+%%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/en.php
+%%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/fr.php
+%%WWWDIR%%/plugins/editor.ajxp_plugin/manifest.xml
+%%WWWDIR%%/plugins/editor.ajxp_plugin/plugin_doc.html
+%%WWWDIR%%/plugins/editor.ajxp_repository/class.RepositoryEditor.js
+%%WWWDIR%%/plugins/editor.ajxp_repository/i18n/conf/en.php
+%%WWWDIR%%/plugins/editor.ajxp_repository/i18n/conf/fr.php
+%%WWWDIR%%/plugins/editor.ajxp_repository/i18n/en.php
+%%WWWDIR%%/plugins/editor.ajxp_repository/i18n/fr.php
+%%WWWDIR%%/plugins/editor.ajxp_repository/manifest.xml
+%%WWWDIR%%/plugins/editor.ajxp_repository/plugin_doc.html
+%%WWWDIR%%/plugins/editor.ajxp_role/class.RoleEditor.js
+%%WWWDIR%%/plugins/editor.ajxp_role/i18n/conf/en.php
+%%WWWDIR%%/plugins/editor.ajxp_role/i18n/conf/fr.php
+%%WWWDIR%%/plugins/editor.ajxp_role/i18n/de.php
+%%WWWDIR%%/plugins/editor.ajxp_role/i18n/en.php
+%%WWWDIR%%/plugins/editor.ajxp_role/i18n/fr.php
+%%WWWDIR%%/plugins/editor.ajxp_role/manifest.xml
+%%WWWDIR%%/plugins/editor.ajxp_role/plugin_doc.html
+%%WWWDIR%%/plugins/editor.ajxp_role/rolesEditor.css
 %%WWWDIR%%/plugins/editor.audio/class.AudioPreviewer.js
 %%WWWDIR%%/plugins/editor.audio/class.AudioPreviewer.php
 %%WWWDIR%%/plugins/editor.audio/dewplayer-bubble.swf
@@ -737,6 +890,8 @@
 %%WWWDIR%%/plugins/editor.browser/plugin_doc.html
 %%WWWDIR%%/plugins/editor.browser/resources/i18n/de.php
 %%WWWDIR%%/plugins/editor.browser/resources/i18n/en.php
+%%WWWDIR%%/plugins/editor.browser/resources/i18n/es.php
+%%WWWDIR%%/plugins/editor.browser/resources/i18n/et.php
 %%WWWDIR%%/plugins/editor.browser/resources/i18n/fr.php
 %%WWWDIR%%/plugins/editor.browser/resources/images/actions/16/.directory
 %%WWWDIR%%/plugins/editor.browser/resources/images/actions/16/emblem-symbolic-link.png
@@ -844,6 +999,7 @@
 %%WWWDIR%%/plugins/editor.codemirror/i18n/conf/fr.php
 %%WWWDIR%%/plugins/editor.codemirror/i18n/de.php
 %%WWWDIR%%/plugins/editor.codemirror/i18n/en.php
+%%WWWDIR%%/plugins/editor.codemirror/i18n/et.php
 %%WWWDIR%%/plugins/editor.codemirror/i18n/fr.php
 %%WWWDIR%%/plugins/editor.codemirror/i18n/si.php
 %%WWWDIR%%/plugins/editor.codemirror/img/format_indent_more.png
@@ -873,6 +1029,7 @@
 %%WWWDIR%%/plugins/editor.eml/i18n/conf/fr.php
 %%WWWDIR%%/plugins/editor.eml/i18n/de.php
 %%WWWDIR%%/plugins/editor.eml/i18n/en.php
+%%WWWDIR%%/plugins/editor.eml/i18n/et.php
 %%WWWDIR%%/plugins/editor.eml/i18n/fr.php
 %%WWWDIR%%/plugins/editor.eml/i18n/si.php
 %%WWWDIR%%/plugins/editor.eml/img/16/mail_mime.png
@@ -886,6 +1043,7 @@
 %%WWWDIR%%/plugins/editor.exif/i18n/de.php
 %%WWWDIR%%/plugins/editor.exif/i18n/en.php
 %%WWWDIR%%/plugins/editor.exif/i18n/es.php
+%%WWWDIR%%/plugins/editor.exif/i18n/et.php
 %%WWWDIR%%/plugins/editor.exif/i18n/fr.php
 %%WWWDIR%%/plugins/editor.exif/i18n/si.php
 %%WWWDIR%%/plugins/editor.exif/images/actions/16/camera_photo.png
@@ -899,6 +1057,7 @@
 %%WWWDIR%%/plugins/editor.imagick/i18n/conf/fr.php
 %%WWWDIR%%/plugins/editor.imagick/manifest.xml
 %%WWWDIR%%/plugins/editor.imagick/plugin_doc.html
+%%WWWDIR%%/plugins/editor.infopanel/manifest.xml
 %%WWWDIR%%/plugins/editor.openlayer/class.OLViewer.js
 %%WWWDIR%%/plugins/editor.openlayer/editor-openlayer.png
 %%WWWDIR%%/plugins/editor.openlayer/i18n/conf/en.php
@@ -906,6 +1065,7 @@
 %%WWWDIR%%/plugins/editor.openlayer/i18n/de.php
 %%WWWDIR%%/plugins/editor.openlayer/i18n/en.php
 %%WWWDIR%%/plugins/editor.openlayer/i18n/es.php
+%%WWWDIR%%/plugins/editor.openlayer/i18n/et.php
 %%WWWDIR%%/plugins/editor.openlayer/i18n/fr.php
 %%WWWDIR%%/plugins/editor.openlayer/i18n/si.php
 %%WWWDIR%%/plugins/editor.openlayer/manifest.xml
@@ -976,10 +1136,13 @@
 %%WWWDIR%%/plugins/editor.other/class.OtherEditorChooser.js
 %%WWWDIR%%/plugins/editor.other/manifest.xml
 %%WWWDIR%%/plugins/editor.other/plugin_doc.html
+%%WWWDIR%%/plugins/editor.other/resources/i18n/ca.php
 %%WWWDIR%%/plugins/editor.other/resources/i18n/conf/en.php
 %%WWWDIR%%/plugins/editor.other/resources/i18n/conf/fr.php
 %%WWWDIR%%/plugins/editor.other/resources/i18n/de.php
 %%WWWDIR%%/plugins/editor.other/resources/i18n/en.php
+%%WWWDIR%%/plugins/editor.other/resources/i18n/es.php
+%%WWWDIR%%/plugins/editor.other/resources/i18n/et.php
 %%WWWDIR%%/plugins/editor.other/resources/i18n/fr.php
 %%WWWDIR%%/plugins/editor.other/resources/images/actions/16/unknown.png
 %%WWWDIR%%/plugins/editor.other/resources/images/actions/22/unknown.png
@@ -1001,6 +1164,7 @@
 %%WWWDIR%%/plugins/editor.soundmanager/class.SMPlayer.js
 %%WWWDIR%%/plugins/editor.soundmanager/i18n/conf/en.php
 %%WWWDIR%%/plugins/editor.soundmanager/i18n/en.php
+%%WWWDIR%%/plugins/editor.soundmanager/i18n/et.php
 %%WWWDIR%%/plugins/editor.soundmanager/kmixdocked-muted.png
 %%WWWDIR%%/plugins/editor.soundmanager/kmixdocked.png
 %%WWWDIR%%/plugins/editor.soundmanager/manifest.xml
@@ -1031,6 +1195,9 @@
 %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player/script/berniecode-animator.js
 %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player/script/excanvas.js
 %%WWWDIR%%/plugins/editor.soundmanager/sm/script/soundmanager2-nodebug-jsmin.js
+%%WWWDIR%%/plugins/editor.soundmanager/sm/shared/mp3-player-button.css
+%%WWWDIR%%/plugins/editor.soundmanager/sm/shared/mp3-player-button.js
+%%WWWDIR%%/plugins/editor.soundmanager/sm/shared/soundmanager2.js
 %%WWWDIR%%/plugins/editor.soundmanager/sm/swf/soundmanager2.swf
 %%WWWDIR%%/plugins/editor.soundmanager/sm/swf/soundmanager2_flash9.swf
 %%WWWDIR%%/plugins/editor.soundmanager/sm_preview_player.css
@@ -1046,6 +1213,7 @@
 %%WWWDIR%%/plugins/editor.video/editor-video.png
 %%WWWDIR%%/plugins/editor.video/i18n/conf/en.php
 %%WWWDIR%%/plugins/editor.video/i18n/conf/fr.php
+%%WWWDIR%%/plugins/editor.video/i18n/en.php
 %%WWWDIR%%/plugins/editor.video/manifest.xml
 %%WWWDIR%%/plugins/editor.video/player_flv_maxi.swf
 %%WWWDIR%%/plugins/editor.video/plugin_doc.html
@@ -1060,6 +1228,7 @@
 %%WWWDIR%%/plugins/editor.zoho/i18n/conf/en.php
 %%WWWDIR%%/plugins/editor.zoho/i18n/conf/fr.php
 %%WWWDIR%%/plugins/editor.zoho/i18n/en.php
+%%WWWDIR%%/plugins/editor.zoho/i18n/et.php
 %%WWWDIR%%/plugins/editor.zoho/images/mimes/16/presentation.png
 %%WWWDIR%%/plugins/editor.zoho/images/mimes/16/spreadsheet.png
 %%WWWDIR%%/plugins/editor.zoho/images/mimes/16/word.png
@@ -1069,6 +1238,11 @@
 %%WWWDIR%%/plugins/editor.zoho/images/zoho.png
 %%WWWDIR%%/plugins/editor.zoho/manifest.xml
 %%WWWDIR%%/plugins/editor.zoho/plugin_doc.html
+%%WWWDIR%%/plugins/feed.sql/class.AJXP_SqlFeedStore.php
+%%WWWDIR%%/plugins/feed.sql/create.sql
+%%WWWDIR%%/plugins/feed.sql/create.sqlite
+%%WWWDIR%%/plugins/feed.sql/manifest.xml
+%%WWWDIR%%/plugins/gui.ajax/AjaXplorerOrange.png
 %%WWWDIR%%/plugins/gui.ajax/AjxpLogo250.png
 %%WWWDIR%%/plugins/gui.ajax/ajxpclient_actions.xml
 %%WWWDIR%%/plugins/gui.ajax/class.AJXP_ClientDriver.php
@@ -1093,23 +1267,30 @@
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpDraggable.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpNode.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpPane.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpSimpleTabs.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpSortable.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpTabulator.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.AjxpUsersCompleter.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.BackgroundManager.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.BookmarksBar.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.Breadcrumb.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.Connexion.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.FetchedResultPane.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.FilesList.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.FoldersTree.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.FormManager.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.HeaderResizer.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.InfoPanel.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.LocationBar.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.LogoWidget.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.Modal.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.MultiDownloader.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.PreviewFactory.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.PropertyPanel.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.RemoteNodeProvider.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.Repository.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.RepositorySelect.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.RepositorySimpleLabel.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.ResourcesManager.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.SearchEngine.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/class.SliderInput.js
@@ -1142,7 +1323,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/prototype.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/prototype.livepipe.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/prototype.oo.js
-%%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/shadower.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/resizable.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/splitter.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/webfx.selectable.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/webfx.sortable.js
@@ -1203,6 +1384,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/drive_remote.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/edit.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/edit_user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/editcopy.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/editdelete.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/editpaste.png
@@ -1255,6 +1437,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/view_text.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/view_tree.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/viewmag1.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/wallet_open.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/window_close.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/window_fullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16/window_nofullscreen.png
@@ -1288,6 +1471,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/drive_remote.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/edit.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/edit_user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/editcopy.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/editdelete.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/editpaste.png
@@ -1337,6 +1521,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/view_pim_news.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/view_text.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/wallet_open.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/window_fullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/window_nofullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22/yast_backup.png
@@ -1364,6 +1549,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/drive_remote.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/edit_clear_history.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/edit_rename.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/edit_user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/editcopy.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/editdelete.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/editpaste.png
@@ -1420,6 +1606,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/view_list_tree.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/view_pim_news.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/wallet_open.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/window_fullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/window_nofullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32/xmag.png
@@ -1498,12 +1685,14 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/trashcan.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/trashcan_full.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/txt2.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user-acl.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user_admin.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user_child.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user_group_new.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user_guest.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/user_shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/users-folder.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/video.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/word.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16/x-office-calendar.png
@@ -1542,12 +1731,14 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/trashcan.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/trashcan_full.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/txt2.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user-acl.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user_admin.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user_child.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user_group_new.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user_guest.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/user_shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/users-folder.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/video.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/word.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64/x-office-calendar.png
@@ -1626,6 +1817,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/drive_remote.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/edit.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/edit_user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/editcopy.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/editdelete.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/editpaste.png
@@ -1679,10 +1871,12 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_icon.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_left_close.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_left_right.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_list_details.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_list_tree.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_text.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/view_tree.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/viewmag1.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/wallet_open.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/window_close.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/window_fullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/window_nofullscreen.png
@@ -1719,6 +1913,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/drive_remote.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/edit.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/edit_user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/editcopy.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/editdelete.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/editpaste.png
@@ -1736,6 +1931,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/folder_new.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/folder_red.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/folder_red_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/forward.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/forward_22.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/frame_image.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/go_back.png
@@ -1769,6 +1965,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/view_pim_news.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/view_text.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/wallet_open.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/window_fullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/window_nofullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/yast_backup.png
@@ -1798,6 +1995,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/drive_remote.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/edit_clear_history.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/edit_rename.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/edit_user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/editcopy.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/editdelete.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/editpaste.png
@@ -1854,6 +2052,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/view_list_tree.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/view_pim_news.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/wallet_open.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/window_fullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/window_nofullscreen.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/xmag.png
@@ -1898,7 +2097,9 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/loadingImage.gif
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/locationBg.gif
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/applications_engineering.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/archive.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/book.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/css.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/document.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/document_open_remote.png
@@ -1911,6 +2112,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/folder_red.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/hdd_external_mount.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/horo.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/html.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/image.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/java_src.png
@@ -1932,19 +2134,23 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/trashcan.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/trashcan_full.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/txt2.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user-acl.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user_admin.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user_child.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user_group_new.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user_guest.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/user_shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/users-folder.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/video.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/word.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/x-office-calendar.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/yast_kuser.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16/zip.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/applications_engineering.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/archive.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/book.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/css.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/document.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/document_open_remote.png
@@ -1956,6 +2162,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/folder_red.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/hdd_external_mount.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/horo.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/html.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/image.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/javascript.png
@@ -1976,12 +2183,14 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/trashcan.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/trashcan_full.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/txt2.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user-acl.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user_admin.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user_child.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user_group_new.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user_guest.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/user_shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/users-folder.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/video.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/word.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64/x-office-calendar.png
@@ -2009,6 +2218,472 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/tree-odd-even-bg.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/vgrabber.gif
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/yellowled.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/ajaxplorer.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/allz.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/allz_list.txt
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/font-awesome.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/media.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/modal.jpg
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pie/PIE.htc
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pie/PIE.js
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pnghack/pngHack.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pnghack/pngHack.htc
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pnghack/transparent.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/screen.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/tabs.jpg
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/xtree.css
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/html/gui.html
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/html/gui_debug.html
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/0.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/1.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/2.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/I.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/ICON.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/L.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/Lminus.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/Lplus.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/T.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/Tminus.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/Toolbar.psd
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/ToolbarBg.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/ToolbarBgReverse.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/Tplus.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/1leftarrow.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/1uparrow.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/accessories-archiver.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/ajxp-link.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/applix.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/archive_insert.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/ark_extract.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/arrow_down_margin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/back.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/bookmark.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/bookmark_add.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/bookmark_menu.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/button_cancel.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/button_ok.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/column-visible.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/configure.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/database.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/decrypted.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/delete_bookmark.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/documentinfo_koffice.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/download_manager.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/drive_remote.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/edit.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/edit_user.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/editcopy.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/editdelete.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/editpaste.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/encrypted.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/eraser.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/favorite-folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/file_info.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/fileclose.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/filenew.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/fileopen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/filesave.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/fileview_icon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/flag.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/folder1_important.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/folder_grey.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/folder_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/folder_parent.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/folder_red.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/folder_red_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/forward.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/frame_image.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/go_back.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/goto_parent.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/hdd_external_mount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/help-about.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/info.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/ksysv.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/mail_generic.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/media-playback-start.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/network-wired.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/network_server_database.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/panel_horizontal_hide.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/panel_horizontal_show.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/panel_vertical_hide.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/panel_vertical_show.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/player_play copy.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/player_play.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/player_stop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/public_url.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/reload.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/search.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/share.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/toggle_log.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/transp.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/trashcan_empty.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/up.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/user-create-repository.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/user_group_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_choose.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_icon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_left_close.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_left_right.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_list_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_text.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/viewmag1.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/wallet_open.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/window_close.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/window_fullscreen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/window_nofullscreen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/xmag.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/yast_backup.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/yast_kuser.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/yast_security.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/yast_user_add.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/zoom-fit-best.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/zoom-in.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/zoom-original.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16/zoom-out.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/1leftarrow.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/1uparrow.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/accessories-archiver.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/ajxp-link.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/applix.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/archive_insert.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/ark_extract.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/back_22.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/bookmark.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/bookmark_f.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/button_cancel.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/button_ok.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/cancel.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/configure.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/database.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/decrypted.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/dialog_close.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/dialog_ok_apply.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/documentinfo_koffice.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/download_manager.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/drive_remote.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/edit.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/edit_user.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/editcopy.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/editdelete.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/editpaste.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/encrypted.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/eraser.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/favorite-folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/file_info.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/fileclose.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/filenew.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/fileopen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/filesave.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/fileview_icon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/folder1_important.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/folder_grey.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/folder_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/folder_red.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/folder_red_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/forward.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/forward_22.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/frame_image.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/go_back.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/hdd_external_mount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/info.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/ksysv.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/mail_generic.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/media-playback-start.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/network-wired.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/network_server.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/network_server_database.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/player_play.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/player_stop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/printer1.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/public_url.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/reload.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/share.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/system_search.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/trashcan_empty.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/unshare.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/up.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/user-create-repository.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/user_group_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_choose.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_icon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_left_close.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_left_right.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_list_details.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_list_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_pim_news.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_text.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/wallet_open.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/window_fullscreen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/window_nofullscreen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/yast_backup.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/yast_security.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/yast_user_add.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/zoom-fit-best.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/zoom-fit-restore.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/zoom-in.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/zoom-original.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22/zoom-out.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/1leftarrow.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/1uparrow.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/accessories-archiver.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/ajxp-link.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/archive_insert.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/ark_extract.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/back.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/bookmark.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/bookmark_add.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/bottom.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/button_cancel.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/button_ok.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/configure.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/database.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/documentinfo_koffice.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/download_manager.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/drive_remote.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/edit_clear_history.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/edit_rename.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/edit_user.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/editcopy.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/editdelete.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/editpaste.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/eraser.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/favorite-folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/file_info.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/fileclose.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/filenew.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/fileopen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/filesave.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/fileview_icon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/fileview_preview.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder1_important.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder_grey.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder_network.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder_parent.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder_red.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/folder_red_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/forward.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/hdd_external_mount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/info.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/ksysv.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/mail_generic.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/media_playback_start.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/network_server.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/network_server_database.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/object_edit.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/player_stop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/preferences_system.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/preferences_system_login.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/reload.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/share.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/system_log_out.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/system_search.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/toggle_log.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/top.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/trashcan_empty.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/up.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/user-create-repository.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/user_create.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/user_group_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/user_guest.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/user_normal.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/user_sysadmin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/utilities_file_archiver.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_choose.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_left_close.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_left_right.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_list_details.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_list_icons.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_list_text.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_list_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_pim_news.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/view_tree.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/wallet_open.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/window_fullscreen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/window_nofullscreen.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/xmag.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/yast_backup.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/yast_user_add.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/zoom-fit-best.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/zoom-in.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/zoom-original.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32/zoom-out.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/ajxp-connexion-loader.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/arrow_down.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/arrow_down_margin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/arrow_left.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/arrow_right.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/arrow_up.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/arrow_up_margin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/autocompleter-loader.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome/FontAwesome.otf
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome/fontawesome-webfont.eot
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome/fontawesome-webfont.svg
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome/fontawesome-webfont.ttf
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome/fontawesome-webfont.woff
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/blank.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/dl_bg.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/fakeFlashButtonBg.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/foldericon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/greenled.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/grid_t.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/grid_tl.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/header_bg.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/header_bg_down.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/header_bg_on.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/header_bg_plain.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/header_bg_up.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/hgrabber.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/html-folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_cn.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_de.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_ee.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_en.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_fr.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_hun.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_it.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_lt.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_pl.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_rs.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_si.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n/lang_sk.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/loadingImage.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/locationBg.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/applications_engineering.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/archive.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/book.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/css.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/desktop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/document.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/document_open_remote.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/exe.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/flash.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/folder_development.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/folder_grey.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/folder_open.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/folder_red.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/hdd_external_mount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/html.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/image.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/java_src.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/javascript.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/midi.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/mime_empty.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/pdf.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/php.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/preferences_desktop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/preferences_plugin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/presentation.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/repo_child.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/search.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/sound.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/source_pl.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/spreadsheet.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/susehelpcenter.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/toggle_log.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/trashcan.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/trashcan_full.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/txt2.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user-acl.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user_admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user_child.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user_group_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user_guest.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/user_shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/users-folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/video.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/word.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/x-office-calendar.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/yast_kuser.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16/zip.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/applications_engineering.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/archive.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/book.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/css.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/desktop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/document.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/document_open_remote.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/exe.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/flash.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/folder_development.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/folder_grey.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/folder_red.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/hdd_external_mount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/hdd_external_unmount.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/html.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/image.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/javascript.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/midi.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/mime_empty.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/pdf.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/php.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/preferences_desktop.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/preferences_plugin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/presentation.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/repo_child.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/sound.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/source_java.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/source_pl.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/spreadsheet.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/susehelpcenter.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/toggle_log.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/trashcan.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/trashcan_full.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/txt2.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user-acl.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user_admin.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user_child.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user_group_new.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user_guest.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/user_shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/users-folder.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/video.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/word.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/x-office-calendar.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/yast_kuser.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64/zip.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/openfoldericon.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/12/bookmark.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/12/shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/8/bookmark.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/8/shared.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/share128.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/progress_bar.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/progress_bar_80.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/progress_box.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/progress_box_80.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/redled.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/resize_handle.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/slider-handle-vert.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/slider-handle.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/slider-track-bottom.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/slider-track-left.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/slider-track-right.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/slider-track-top.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/strip.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/tree-even-odd-bg.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/tree-odd-even-bg.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/vgrabber.gif
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/white_by.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/white_logo.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/yellowled.png
 %%WWWDIR%%/plugins/gui.ajax/widget_sample.html
 %%WWWDIR%%/plugins/gui.ios/ajxp-ios.js
 %%WWWDIR%%/plugins/gui.ios/class.IOSGuiPlugin.php
@@ -2131,6 +2806,7 @@
 %%WWWDIR%%/plugins/index.lucene/resources/i18n/conf/fr.php
 %%WWWDIR%%/plugins/index.lucene/resources/i18n/de.php
 %%WWWDIR%%/plugins/index.lucene/resources/i18n/en.php
+%%WWWDIR%%/plugins/index.lucene/resources/i18n/es.php
 %%WWWDIR%%/plugins/index.lucene/resources/i18n/fr.php
 %%WWWDIR%%/plugins/index.lucene/resources/images/16/ark_view.png
 %%WWWDIR%%/plugins/index.lucene/resources/images/22/ark_view.png
@@ -2139,6 +2815,7 @@
 %%WWWDIR%%/plugins/log.sql/arrow_down_margin.png
 %%WWWDIR%%/plugins/log.sql/class.sqlLogDriver.php
 %%WWWDIR%%/plugins/log.sql/create.sql
+%%WWWDIR%%/plugins/log.sql/create.sqlite
 %%WWWDIR%%/plugins/log.sql/i18n/conf/en.php
 %%WWWDIR%%/plugins/log.sql/i18n/conf/fr.php
 %%WWWDIR%%/plugins/log.sql/manifest.xml
@@ -2153,6 +2830,9 @@
 %%WWWDIR%%/plugins/log.text/i18n/conf/fr.php
 %%WWWDIR%%/plugins/log.text/manifest.xml
 %%WWWDIR%%/plugins/log.text/plugin_doc.html
+%%WWWDIR%%/plugins/mailer.phpmailer-lite/class.PhpMailLiteMailer.php
+%%WWWDIR%%/plugins/mailer.phpmailer-lite/lib/class.phpmailer-lite.php
+%%WWWDIR%%/plugins/mailer.phpmailer-lite/manifest.xml
 %%WWWDIR%%/plugins/meta.exif/class.ExifCellRenderer.js
 %%WWWDIR%%/plugins/meta.exif/class.ExifMetaManager.php
 %%WWWDIR%%/plugins/meta.exif/class.GeoConversion.php
@@ -2187,6 +2867,7 @@
 %%WWWDIR%%/plugins/meta.quota/class.QuotaComputer.php
 %%WWWDIR%%/plugins/meta.quota/i18n/conf/en.php
 %%WWWDIR%%/plugins/meta.quota/i18n/en.php
+%%WWWDIR%%/plugins/meta.quota/i18n/fr.php
 %%WWWDIR%%/plugins/meta.quota/img/16/progressbar.png
 %%WWWDIR%%/plugins/meta.quota/img/22/progressbar.png
 %%WWWDIR%%/plugins/meta.quota/img/32/progressbar.png
@@ -2236,6 +2917,7 @@
 %%WWWDIR%%/plugins/meta.user/css/red.png
 %%WWWDIR%%/plugins/meta.user/i18n/conf/en.php
 %%WWWDIR%%/plugins/meta.user/i18n/conf/fr.php
+%%WWWDIR%%/plugins/meta.user/i18n/cs.php
 %%WWWDIR%%/plugins/meta.user/i18n/de.php
 %%WWWDIR%%/plugins/meta.user/i18n/en.php
 %%WWWDIR%%/plugins/meta.user/i18n/es.php
@@ -2252,6 +2934,20 @@
 %%WWWDIR%%/plugins/meta.user/rating.png
 %%WWWDIR%%/plugins/meta.user/rating_off.png
 %%WWWDIR%%/plugins/meta.user/rating_remove.png
+%%WWWDIR%%/plugins/meta.watch/class.MetaWatchRegister.php
+%%WWWDIR%%/plugins/meta.watch/i18n/de.php
+%%WWWDIR%%/plugins/meta.watch/i18n/en.php
+%%WWWDIR%%/plugins/meta.watch/i18n/fr.php
+%%WWWDIR%%/plugins/meta.watch/icons/12/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/128/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/16/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/22/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/22/watch_faded.png
+%%WWWDIR%%/plugins/meta.watch/icons/32/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/64/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/8/watch.png
+%%WWWDIR%%/plugins/meta.watch/icons/watch.pxm
+%%WWWDIR%%/plugins/meta.watch/manifest.xml
 %%WWWDIR%%/plugins/metastore.s3/class.s3MetaStore.php
 %%WWWDIR%%/plugins/metastore.s3/i18n/conf/en.php
 %%WWWDIR%%/plugins/metastore.s3/i18n/conf/fr.php
@@ -2262,19 +2958,33 @@
 %%WWWDIR%%/plugins/metastore.serial/i18n/conf/fr.php
 %%WWWDIR%%/plugins/metastore.serial/manifest.xml
 %%WWWDIR%%/plugins/metastore.serial/plugin_doc.html
+%%WWWDIR%%/plugins/metastore.xattr/class.xAttrMetaStore.php
+%%WWWDIR%%/plugins/metastore.xattr/manifest.xml
+%%WWWDIR%%/plugins/metastore.xattr/plugin_doc.html
+%%WWWDIR%%/plugins/mq.serial/class.AJXP_SerialMessageExchanger.php
+%%WWWDIR%%/plugins/mq.serial/manifest.xml
+%%WWWDIR%%/plugins/mq.sql/class.AJXP_SqlMessageExchanger.php
+%%WWWDIR%%/plugins/mq.sql/create.sql
+%%WWWDIR%%/plugins/mq.sql/create.sqlite
+%%WWWDIR%%/plugins/mq.sql/manifest.xml
 %%WWWDIR%%/plugins/notify.phpmail-lite/class.NotifierFormEnricher.js
 %%WWWDIR%%/plugins/notify.phpmail-lite/class.PhpMailLiteNotifier.php
 %%WWWDIR%%/plugins/notify.phpmail-lite/conf.notify.phpmail-lite.inc
 %%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf/en.php
 %%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf/fr.php
-%%WWWDIR%%/plugins/notify.phpmail-lite/lib/class.phpmailer-lite.php
-%%WWWDIR%%/plugins/notify.phpmail-lite/manifest.xml
+%%WWWDIR%%/plugins/notify.phpmail-lite/manifest.xml.deprecated
 %%WWWDIR%%/plugins/notify.phpmail-lite/plugin_doc.html
 %%WWWDIR%%/plugins/shorten.bitly/class.BitlyShortener.php
 %%WWWDIR%%/plugins/shorten.bitly/i18n/conf/en.php
 %%WWWDIR%%/plugins/shorten.bitly/i18n/conf/fr.php
 %%WWWDIR%%/plugins/shorten.bitly/manifest.xml
 %%WWWDIR%%/plugins/shorten.bitly/plugin_doc.html
+%%WWWDIR%%/plugins/shorten.multi/class.multiShortener.php
+%%WWWDIR%%/plugins/shorten.multi/i18n/conf/en.php
+%%WWWDIR%%/plugins/shorten.multi/i18n/conf/es.php
+%%WWWDIR%%/plugins/shorten.multi/i18n/conf/fr.php
+%%WWWDIR%%/plugins/shorten.multi/manifest.xml
+%%WWWDIR%%/plugins/shorten.multi/plugin_doc.html
 %%WWWDIR%%/plugins/uploader.flex/FlashFileUpload.swf
 %%WWWDIR%%/plugins/uploader.flex/class.FlexUploadProcessor.php
 %%WWWDIR%%/plugins/uploader.flex/flash_tpl.html
@@ -2301,8 +3011,14 @@
 %%WWWDIR%%/plugins/uploader.jumploader/jumploader_tpl.html
 %%WWWDIR%%/plugins/uploader.jumploader/manifest.xml
 %%WWWDIR%%/plugins/uploader.jumploader/plugin_doc.html
+%%WWWDIR%%/plugins/uploader.plupload/class.PluploadProcessor.php
+%%WWWDIR%%/plugins/uploader.plupload/manifest.xml
+%%WWWDIR%%/plugins/uploader.plupload/plugin_doc.html
+%%WWWDIR%%/plugins/uploader.plupload/pluploader_tpl.html
 %%WWWDIR%%/publicLet.inc.php
+%%WWWDIR%%/rest.php
 %%WWWDIR%%/runTests.php
+@dirrm %%WWWDIR%%/plugins/uploader.plupload
 @dirrm %%WWWDIR%%/plugins/uploader.jumploader/i18n/conf
 @dirrm %%WWWDIR%%/plugins/uploader.jumploader/i18n
 @dirrm %%WWWDIR%%/plugins/uploader.jumploader
@@ -2312,19 +3028,34 @@
 @dirrm %%WWWDIR%%/plugins/uploader.flex/i18n/conf
 @dirrm %%WWWDIR%%/plugins/uploader.flex/i18n
 @dirrm %%WWWDIR%%/plugins/uploader.flex
+@dirrm %%WWWDIR%%/plugins/shorten.multi/i18n/conf
+@dirrm %%WWWDIR%%/plugins/shorten.multi/i18n
+@dirrm %%WWWDIR%%/plugins/shorten.multi
 @dirrm %%WWWDIR%%/plugins/shorten.bitly/i18n/conf
 @dirrm %%WWWDIR%%/plugins/shorten.bitly/i18n
 @dirrm %%WWWDIR%%/plugins/shorten.bitly
-@dirrm %%WWWDIR%%/plugins/notify.phpmail-lite/lib
 @dirrm %%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf
 @dirrm %%WWWDIR%%/plugins/notify.phpmail-lite/i18n
 @dirrm %%WWWDIR%%/plugins/notify.phpmail-lite
+@dirrm %%WWWDIR%%/plugins/mq.sql
+@dirrm %%WWWDIR%%/plugins/mq.serial
+@dirrm %%WWWDIR%%/plugins/metastore.xattr
 @dirrm %%WWWDIR%%/plugins/metastore.serial/i18n/conf
 @dirrm %%WWWDIR%%/plugins/metastore.serial/i18n
 @dirrm %%WWWDIR%%/plugins/metastore.serial
 @dirrm %%WWWDIR%%/plugins/metastore.s3/i18n/conf
 @dirrm %%WWWDIR%%/plugins/metastore.s3/i18n
 @dirrm %%WWWDIR%%/plugins/metastore.s3
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/8
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/64
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/32
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/22
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/16
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/128
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/12
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons
+@dirrm %%WWWDIR%%/plugins/meta.watch/i18n
+@dirrm %%WWWDIR%%/plugins/meta.watch
 @dirrm %%WWWDIR%%/plugins/meta.user/img/64
 @dirrm %%WWWDIR%%/plugins/meta.user/img/48
 @dirrm %%WWWDIR%%/plugins/meta.user/img/32
@@ -2376,6 +3107,8 @@
 @dirrm %%WWWDIR%%/plugins/meta.exif/i18n/conf
 @dirrm %%WWWDIR%%/plugins/meta.exif/i18n
 @dirrm %%WWWDIR%%/plugins/meta.exif
+@dirrm %%WWWDIR%%/plugins/mailer.phpmailer-lite/lib
+@dirrm %%WWWDIR%%/plugins/mailer.phpmailer-lite
 @dirrm %%WWWDIR%%/plugins/log.text/i18n/conf
 @dirrm %%WWWDIR%%/plugins/log.text/i18n
 @dirrm %%WWWDIR%%/plugins/log.text
@@ -2427,6 +3160,24 @@
 @dirrm %%WWWDIR%%/plugins/gui.ios/i18n/conf
 @dirrm %%WWWDIR%%/plugins/gui.ios/i18n
 @dirrm %%WWWDIR%%/plugins/gui.ios
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/8
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/12
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/html
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pnghack
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pie
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision
 @dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays/8
 @dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays/12
 @dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays
@@ -2477,6 +3228,7 @@
 @dirrm %%WWWDIR%%/plugins/gui.ajax/res/html
 @dirrm %%WWWDIR%%/plugins/gui.ajax/res
 @dirrm %%WWWDIR%%/plugins/gui.ajax
+@dirrm %%WWWDIR%%/plugins/feed.sql
 @dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes/64
 @dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes/16
 @dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes
@@ -2494,6 +3246,7 @@
 @dirrm %%WWWDIR%%/plugins/editor.text/i18n
 @dirrm %%WWWDIR%%/plugins/editor.text
 @dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/swf
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/shared
 @dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/script
 @dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player/script
 @dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player
@@ -2526,6 +3279,7 @@
 @dirrm %%WWWDIR%%/plugins/editor.openlayer/i18n/conf
 @dirrm %%WWWDIR%%/plugins/editor.openlayer/i18n
 @dirrm %%WWWDIR%%/plugins/editor.openlayer
+@dirrm %%WWWDIR%%/plugins/editor.infopanel
 @dirrm %%WWWDIR%%/plugins/editor.imagick/i18n/conf
 @dirrm %%WWWDIR%%/plugins/editor.imagick/i18n
 @dirrm %%WWWDIR%%/plugins/editor.imagick
@@ -2604,6 +3358,15 @@
 @dirrm %%WWWDIR%%/plugins/editor.audio/i18n/conf
 @dirrm %%WWWDIR%%/plugins/editor.audio/i18n
 @dirrm %%WWWDIR%%/plugins/editor.audio
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_role/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_role/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_role
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin
 @dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/64
 @dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/32
 @dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/22
@@ -2616,8 +3379,29 @@
 @dirrm %%WWWDIR%%/plugins/core.uploader/i18n/conf
 @dirrm %%WWWDIR%%/plugins/core.uploader/i18n
 @dirrm %%WWWDIR%%/plugins/core.uploader
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/short
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/long
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/group
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/block
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/32
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/22
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/16
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/i18n
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/css
+@dirrm %%WWWDIR%%/plugins/core.notifications/res
+@dirrm %%WWWDIR%%/plugins/core.notifications
+@dirrm %%WWWDIR%%/plugins/core.mq/vendor/phpws/tests
+@dirrm %%WWWDIR%%/plugins/core.mq/vendor/phpws
+@dirrm %%WWWDIR%%/plugins/core.mq/vendor
+@dirrm %%WWWDIR%%/plugins/core.mq
 @dirrm %%WWWDIR%%/plugins/core.metastore
+@dirrm %%WWWDIR%%/plugins/core.meta
+@dirrm %%WWWDIR%%/plugins/core.mailer/i18n
+@dirrm %%WWWDIR%%/plugins/core.mailer
 @dirrm %%WWWDIR%%/plugins/core.log
+@dirrm %%WWWDIR%%/plugins/core.index
 @dirrm %%WWWDIR%%/plugins/core.conf/i18n/conf
 @dirrm %%WWWDIR%%/plugins/core.conf/i18n
 @dirrm %%WWWDIR%%/plugins/core.conf
@@ -2634,6 +3418,8 @@
 @dirrm %%WWWDIR%%/plugins/conf.serial/i18n/conf
 @dirrm %%WWWDIR%%/plugins/conf.serial/i18n
 @dirrm %%WWWDIR%%/plugins/conf.serial
+@dirrm %%WWWDIR%%/plugins/boot.conf/i18n
+@dirrm %%WWWDIR%%/plugins/boot.conf
 @dirrm %%WWWDIR%%/plugins/auth.sql/i18n/conf
 @dirrm %%WWWDIR%%/plugins/auth.sql/i18n
 @dirrm %%WWWDIR%%/plugins/auth.sql
@@ -2696,8 +3482,6 @@
 @dirrm %%WWWDIR%%/plugins/access.s3/i18n/conf
 @dirrm %%WWWDIR%%/plugins/access.s3/i18n
 @dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib/wrapper
-@exec mkdir -p %B/plugins/access.s3/aS3StreamWrapper/lib/vendor
-@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib/vendor
 @dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib
 @dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper
 @dirrm %%WWWDIR%%/plugins/access.s3
@@ -2705,8 +3489,6 @@
 @dirrm %%WWWDIR%%/plugins/access.remote_fs/i18n
 @dirrm %%WWWDIR%%/plugins/access.remote_fs
 @dirrm %%WWWDIR%%/plugins/access.mysql/resources/js
-@exec mkdir -p %B/plugins/access.mysql/resources/images/mimes/64
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes/64
 @dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes/16
 @dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes
 @dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions/22
@@ -2727,6 +3509,13 @@
 @dirrm %%WWWDIR%%/plugins/access.imap/resources/i18n
 @dirrm %%WWWDIR%%/plugins/access.imap/resources
 @dirrm %%WWWDIR%%/plugins/access.imap
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/i18n
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Transport
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage/ObjectStorage
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch
+@dirrm %%WWWDIR%%/plugins/access.hpcloud
 @dirrm %%WWWDIR%%/plugins/access.ftp/i18n/conf
 @dirrm %%WWWDIR%%/plugins/access.ftp/i18n
 @dirrm %%WWWDIR%%/plugins/access.ftp
@@ -2744,6 +3533,14 @@
 @dirrm %%WWWDIR%%/plugins/access.ajxp_conf/i18n
 @dirrm %%WWWDIR%%/plugins/access.ajxp_conf
 @dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Suite
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Core
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Atomics
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests
+@dirrm %%WWWDIR%%/phpunit/AJXP
+@dirrm %%WWWDIR%%/phpunit
+@dirrm %%WWWDIR%%/core/tests
+@dirrm %%WWWDIR%%/core/doc
 @dirrmtry %%WWWDIR%%/data/tmp
 @dirrmtry %%WWWDIR%%/data/public
 @dirrmtry %%WWWDIR%%/data/plugins/conf.serial
@@ -2751,57 +3548,67 @@
 @dirrmtry %%WWWDIR%%/data/plugins
 @dirrmtry %%WWWDIR%%/data/personal
 @dirrmtry %%WWWDIR%%/data/logs
-@exec mkdir -p %B/data/files/recycle_bin
-@dirrmtry %%WWWDIR%%/data/files/recycle_bin
 @dirrmtry %%WWWDIR%%/data/files
 @dirrmtry %%WWWDIR%%/data/cache
 @dirrmtry %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/core/tests
-@dirrm %%WWWDIR%%/core/doc
 @dirrm %%WWWDIR%%/core/classes/securimage/words
 @dirrm %%WWWDIR%%/core/classes/securimage/images
 @dirrm %%WWWDIR%%/core/classes/securimage/gdfonts
 @dirrm %%WWWDIR%%/core/classes/securimage
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/bin
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/composer
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalBackend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Tree
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/PartialUpdate
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Mount
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FSExt
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FS
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Schedule
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Notification
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Exception
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib
+@dirrm %%WWWDIR%%/core/classes/sabredav/ajaxplorer
+@dirrm %%WWWDIR%%/core/classes/sabredav
 @dirrm %%WWWDIR%%/core/classes/packer
 @dirrm %%WWWDIR%%/core/classes/http_class
-@dirrm %%WWWDIR%%/core/classes/ezc/autoload
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/transports/property_handlers
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/transports
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/tools
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/structs
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/responses
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/requests/content
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/requests
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/property_storages
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/properties
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/structs
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/responses
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/requests/content
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/requests
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/properties
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/interfaces
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/header
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/handlers
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/exceptions
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/check_observers
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock/administration
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins/lock
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/plugins
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/path_factories
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/options
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/interfaces/backend
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/interfaces
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/exceptions
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/backends
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav/auth
-@dirrm %%WWWDIR%%/core/classes/ezc/Webdav
-@dirrm %%WWWDIR%%/core/classes/ezc/Base/structs
-@dirrm %%WWWDIR%%/core/classes/ezc/Base/options
-@dirrm %%WWWDIR%%/core/classes/ezc/Base/metadata
-@dirrm %%WWWDIR%%/core/classes/ezc/Base/interfaces
-@dirrm %%WWWDIR%%/core/classes/ezc/Base/exceptions
-@dirrm %%WWWDIR%%/core/classes/ezc/Base
-@dirrm %%WWWDIR%%/core/classes/ezc
 @dirrm %%WWWDIR%%/core/classes
 @dirrm %%WWWDIR%%/core
 @dirrm %%WWWDIR%%/conf/templates
