@@ -20,8 +20,6 @@ close-pr  - a slightly hacked version of edit-pr(1) to quickly close PR.
 convert-makefile-header.pl - converts old style headers to modern one-line version
 de-pkg-comment - converts pkg-comment to COMMENT (will be obsoleted when
                  the mass conversion is finished)
-dialogwrapper.sh - a wrapper for dialog(1) which provides extra features
-			and compatability
 distclean - compare md5 sums of distfiles in ports/distfiles with currently
             installed ports collection in ports/* and prompt to remove
             unmatched entries
