@@ -1,15 +1,10 @@
-# New ports collection makefile for:	sslscan
-# Date created:				21/6/2011
-# Whom:					Matthieu BOUTHORS
-#
+# Created by: Matthieu BOUTHORS <matthieu@labs.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	sslscan
 PORTVERSION=	1.8.2
 CATEGORIES=	security
-MASTER_SITES=	http://downloads.sourceforge.net/project/sslscan/sslscan/ \
-		http://mirror.labs.fr/pub/FreeBSD/distfiles/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	matthieu@labs.fr
