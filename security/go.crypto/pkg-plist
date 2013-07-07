@@ -21,6 +21,7 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20/salsa.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/scrypt.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/sha3.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/ssh.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/twofish.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/xtea.a
@@ -83,6 +84,8 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/ocfb.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/ocfb_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/one_pass_signature.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/opaque.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/opaque_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/packet.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/packet_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/private_key.go
@@ -129,6 +132,9 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa20_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt/scrypt.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt/scrypt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/keccakf.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/sha3.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/sha3_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/buffer.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/buffer_test.go
@@ -139,7 +145,6 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_auth.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_auth_test.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_func_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/common.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/common_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/doc.go
@@ -153,10 +158,17 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/tcpip.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/tcpip_func_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/terminal.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/terminal_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_bsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/forward_unix_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/keys_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/session_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/tcpip_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/test_unix_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish/twofish.go
@@ -175,8 +187,10 @@
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/xts
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20

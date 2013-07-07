@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go.crypto
-PORTVERSION=	20121001
+PORTVERSION=	20130706
 CATEGORIES=	security devel
 MASTER_SITES=	http://jlaffaye.net/ LOCAL/jlaffaye
 
@@ -25,6 +25,7 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/ripemd160		\
 		${GO_PKGNAME}/salsa20		\
 		${GO_PKGNAME}/scrypt		\
+		${GO_PKGNAME}/sha3		\
 		${GO_PKGNAME}/ssh		\
 		${GO_PKGNAME}/twofish		\
 		${GO_PKGNAME}/xtea		\
@@ -35,8 +36,6 @@ do-install:
 	(cd ${GO_WRKDIR_PKG}/ && ${COPYTREE_SHARE} \* \
 		${GO_LOCAL_LIBDIR})
 .for t in ${GO_TARGET}
-	#${INSTALL_DATA} ${GO_WRKDIR_PKG}/${t}.a \
-	#	${GO_LOCAL_LIBDIR}/${GO_PKGNAME}
 	${MKDIR} ${GO_LOCAL_SRCDIR}/${t}
 	(cd ${GO_WRKDIR_SRC}/${t}/ && ${COPYTREE_SHARE} \* \
 		${GO_LOCAL_SRCDIR}/${t})
