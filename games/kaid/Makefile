@@ -10,10 +10,12 @@ MASTER_SITE_SUBDIR=
 DISTNAME=		${PORTNAME}_tree_${PORTVERSION}
 EXTRACT_SUFX=		.zip
 
-MAINTAINER=		sebster-kaid@sebster.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		XLink Kai tunneling server
 
 BROKEN=			Does not fetch
+DEPRECATED=		Does not fetch
+EXPIRATION_DATE=	2013-08-07
 
 NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
