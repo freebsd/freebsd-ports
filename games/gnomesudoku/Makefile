@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
-USES=		pathfix display:install
+USES=		pathfix display
 USE_GNOME=	gnomeprefix pygnome2 pygnomedesktop
 
 PYDISTUTILS_PKGNAME=	gnome-sudoku
