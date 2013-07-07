@@ -15,13 +15,12 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
 BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
+		python3:${PORTSDIR}/lang/python33 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_PYTHON=	3.1+
-USES=		iconv ncurses
+USES=		gmake iconv ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -317,9 +316,6 @@ post-patch:
 			-e 's|[[:space:]]gcc| ${CC}|' \
 			-e 's|\$$\(CC\)|${CC}|' \
 			-e 's|/usr/X11R6|${LOCALBASE}|'
-	@${FIND} -E ${WRKSRC}/TOOLS -type f -name '*.py' -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} \
-		-e 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|'
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${WITH_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g ; \
