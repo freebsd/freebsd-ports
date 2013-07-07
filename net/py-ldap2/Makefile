@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.4.12
+PORTVERSION=	2.4.13
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,24 +25,19 @@ REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
 		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,' \
 		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,'
 
-.if defined(WITH_SASL)
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONS_DEFINE=	SASL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSASL}
 WANT_OPENLDAP_SASL=	yes
 CONFLICTS+=	openldap2[34]-client-2.*
 .endif
 
-pre-everything::
-	@${ECHO} "============================================================="
-	@${ECHO}
-	@${ECHO} "You can build ${PKGNAME} with the following options:"
-	@${ECHO}
-	@${ECHO} "WITH_SASL                with (Cyrus) SASL2 support"
-	@${ECHO}
-	@${ECHO} "============================================================="
-	@${ECHO}
-
 do-configure:
 	@${REINPLACE_CMD} ${REPLACE_ARGS} ${WRKSRC}/setup.cfg
-.if !defined(WITH_SASL)
+.if ! ${PORT_OPTIONS:MSASL}
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q setopt -c _ldap -s HAVE_TLS -o defines
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q saveopts
 .endif
