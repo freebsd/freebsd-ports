@@ -5,12 +5,18 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/_version.py
 %%PYTHON_SITELIBDIR%%/zim/_version.pyc
 %%PYTHON_SITELIBDIR%%/zim/_version.pyo
+%%PYTHON_SITELIBDIR%%/zim/actions.py
+%%PYTHON_SITELIBDIR%%/zim/actions.pyc
+%%PYTHON_SITELIBDIR%%/zim/actions.pyo
 %%PYTHON_SITELIBDIR%%/zim/applications.py
 %%PYTHON_SITELIBDIR%%/zim/applications.pyc
 %%PYTHON_SITELIBDIR%%/zim/applications.pyo
 %%PYTHON_SITELIBDIR%%/zim/async.py
 %%PYTHON_SITELIBDIR%%/zim/async.pyc
 %%PYTHON_SITELIBDIR%%/zim/async.pyo
+%%PYTHON_SITELIBDIR%%/zim/base.py
+%%PYTHON_SITELIBDIR%%/zim/base.pyc
+%%PYTHON_SITELIBDIR%%/zim/base.pyo
 %%PYTHON_SITELIBDIR%%/zim/config.py
 %%PYTHON_SITELIBDIR%%/zim/config.pyc
 %%PYTHON_SITELIBDIR%%/zim/config.pyo
@@ -89,6 +95,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/gui/propertiesdialog.py
 %%PYTHON_SITELIBDIR%%/zim/gui/propertiesdialog.pyc
 %%PYTHON_SITELIBDIR%%/zim/gui/propertiesdialog.pyo
+%%PYTHON_SITELIBDIR%%/zim/gui/recentchangesdialog.py
+%%PYTHON_SITELIBDIR%%/zim/gui/recentchangesdialog.pyc
+%%PYTHON_SITELIBDIR%%/zim/gui/recentchangesdialog.pyo
 %%PYTHON_SITELIBDIR%%/zim/gui/searchdialog.py
 %%PYTHON_SITELIBDIR%%/zim/gui/searchdialog.pyc
 %%PYTHON_SITELIBDIR%%/zim/gui/searchdialog.pyo
@@ -146,6 +155,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/distractionfree.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/distractionfree.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/distractionfree.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/ditaaeditor.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/ditaaeditor.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/ditaaeditor.pyo
@@ -278,6 +290,7 @@ share/locale/hu/LC_MESSAGES/zim.mo
 share/locale/it/LC_MESSAGES/zim.mo
 share/locale/ja/LC_MESSAGES/zim.mo
 share/locale/ko/LC_MESSAGES/zim.mo
+share/locale/nb/LC_MESSAGES/zim.mo
 share/locale/nl/LC_MESSAGES/zim.mo
 share/locale/pl/LC_MESSAGES/zim.mo
 share/locale/pt_BR/LC_MESSAGES/zim.mo
@@ -307,6 +320,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Help/Attachments.txt
 %%DATADIR%%/manual/Help/Auto_Formatting.txt
 %%DATADIR%%/manual/Help/Check_Boxes.txt
+%%DATADIR%%/manual/Help/Commandline_Options.txt
 %%DATADIR%%/manual/Help/Config_Files.txt
 %%DATADIR%%/manual/Help/Custom_Tools.txt
 %%DATADIR%%/manual/Help/Default_Applications.txt
@@ -329,9 +343,10 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Plugins/Arithmetic.txt
 %%DATADIR%%/manual/Plugins/Attachment_Browser.txt
 %%DATADIR%%/manual/Plugins/Automount.txt
-%%DATADIR%%/manual/Plugins/Calendar.txt
+%%DATADIR%%/manual/Plugins/BackLinks_Pane.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor/diagram.png
+%%DATADIR%%/manual/Plugins/Distraction_Free_Editing.txt
 %%DATADIR%%/manual/Plugins/Ditaa_Editor.txt
 %%DATADIR%%/manual/Plugins/Ditaa_Editor/ditaa.dia
 %%DATADIR%%/manual/Plugins/Ditaa_Editor/ditaa.png
@@ -348,8 +363,11 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Plugins/Inline_Calculator.txt
 %%DATADIR%%/manual/Plugins/Insert_Screenshot.txt
 %%DATADIR%%/manual/Plugins/Insert_Symbol.txt
+%%DATADIR%%/manual/Plugins/Journal.txt
+%%DATADIR%%/manual/Plugins/Line_Sorter.txt
 %%DATADIR%%/manual/Plugins/Link_Map.txt
 %%DATADIR%%/manual/Plugins/Log_events_with_Zeitgeist.txt
+%%DATADIR%%/manual/Plugins/Print_to_Browser.txt
 %%DATADIR%%/manual/Plugins/Quick_Note.txt
 %%DATADIR%%/manual/Plugins/Score_Editor.txt
 %%DATADIR%%/manual/Plugins/Score_Editor/score.ly
@@ -369,6 +387,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Start.txt
 %%DATADIR%%/manual/Usage.txt
 %%DATADIR%%/manual/Usage/Collaboration.txt
+%%DATADIR%%/manual/Usage/Creative_Writing.txt
 %%DATADIR%%/manual/Usage/Daily_Journal.txt
 %%DATADIR%%/manual/Usage/GTD_flowchart.png
 %%DATADIR%%/manual/Usage/GTD_flowchart.svg
@@ -396,6 +415,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/templates/html/Presentation.html
 %%DATADIR%%/templates/html/Print.html
 %%DATADIR%%/templates/html/SlideShow_(S5).html
+%%DATADIR%%/templates/html/ZeroFiveEight.html
 %%DATADIR%%/templates/latex/Article.tex
 %%DATADIR%%/templates/latex/Part.tex
 %%DATADIR%%/templates/latex/Report.tex
@@ -406,8 +426,8 @@ share/pixmaps/zim.png
 %%DATADIR%%/templates/plugins/quicknote.txt
 %%DATADIR%%/templates/plugins/scoreeditor.ly
 %%DATADIR%%/templates/rst/Default.rst
-%%DATADIR%%/templates/wiki/Calendar.txt
 %%DATADIR%%/templates/wiki/Default.txt
+%%DATADIR%%/templates/wiki/Journal.txt
 %%DATADIR%%/urls.list
 %%DATADIR%%/zim.png
 @dirrm %%DATADIR%%/templates/wiki
@@ -449,7 +469,3 @@ share/pixmaps/zim.png
 @dirrm %%PYTHON_SITELIBDIR%%/zim/gui
 @dirrm %%PYTHON_SITELIBDIR%%/zim/formats
 @dirrm %%PYTHON_SITELIBDIR%%/zim
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
