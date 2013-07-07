@@ -18,6 +18,14 @@ PYEASYINSTALL_ARCHDEP=	no
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_VERSION} == python3.2
+PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
+PY2TO3_ARGS=	--no-diffs --fix=all --nobackups --verbose --write
+
+pre-build:
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/markupsafe
+.endif
+
 .if ${PYTHON_REL} >= 320
 .include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
