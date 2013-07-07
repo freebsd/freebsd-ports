@@ -114,12 +114,18 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/compatibility/ipaddress.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/__init__.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/configuration/check.py
-%%PYTHON_SITELIBDIR%%/exabgp/configuration/check.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/json.py
+%%PYTHON_SITELIBDIR%%/exabgp/configuration/json.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/validation.py
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/validation.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/loader.py
 %%PYTHON_SITELIBDIR%%/exabgp/configuration/loader.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/coroutine.py
+%%PYTHON_SITELIBDIR%%/exabgp/coroutine.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/data/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/data/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/data/check.py
+%%PYTHON_SITELIBDIR%%/exabgp/data/check.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/debug.py
 %%PYTHON_SITELIBDIR%%/exabgp/memory/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/memory/gcdump.py
@@ -255,7 +261,7 @@ sbin/exabgp
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/bgp/message
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/compatibility
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/configuration
-@dirrm %%PYTHON_SITELIBDIR%%/exabgp/leak
+@dirrm %%PYTHON_SITELIBDIR%%/exabgp/data
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/memory
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/structure
 @dirrm %%PYTHON_SITELIBDIR%%/exabgp/rib
