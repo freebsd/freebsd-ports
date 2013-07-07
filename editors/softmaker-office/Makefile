@@ -11,7 +11,7 @@ DISTFILES=	ofb06trial.tgz
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Microsoft Word/Excel OpenDocument and OpenOffice.org editor
 
-RUN_DEPENDS=	${LOCALBASE}/bin/xfs:${X_FONTSERVER_PORT}
+RUN_DEPENDS=	${LOCALBASE}/bin/xfs:${PORTSDIR}/x11-fonts/xfs
 
 USE_XORG=	x11
 
@@ -29,11 +29,7 @@ NO_PACKAGE=	distribution with other products of any kind forbiden
 
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MALL_DICTS}
-DISTFILES+=	sml06dict.tgz
-.endif
+ALL_DICTS_DISTFILES=	sml06dict.tgz
 
 post-extract:
 	cd ${WRKSRC} && ${FIND} . -type f -execdir ${CHMOD} ${SHAREMODE} \{\} \; && \
