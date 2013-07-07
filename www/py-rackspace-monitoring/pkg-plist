@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/rackspace_monitoring/__init__.py
 %%PYTHON_SITELIBDIR%%/rackspace_monitoring/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rackspace_monitoring/__init__.pyo
