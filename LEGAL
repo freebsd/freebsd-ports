@@ -233,7 +233,6 @@ ski-*.i386.rpm		emulators/ski		Restrictive license
 skype*			net-im/skype		Not for redistribution
 SnowIsh-*		x11-themes/gnome-icons-snowish Author rights unclear
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
-speakinghangmanfree*	games/speakinghangman	Licence does not allow redistribution
 speedmgmt*		net/pppoa		Not for redistribution -- see http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 srd-fpw*		japanese/srd-fpw	The original dictionary is not free
