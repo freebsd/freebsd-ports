@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL Pgaccess
-# Date created:		December 1st, 2002
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libpq++
 PORTVERSION=	4.0
@@ -18,7 +14,7 @@ MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	C++ interface for  PostgreSQL
 
 USE_PGSQL=	YES
-USE_GMAKE=	YES
+USES=		gmake
 USE_LDCONFIG=	YES
 
 post-patch:

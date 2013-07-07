@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL library pgeasy
-# Date created:		October 24st, 2004
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	postgresql-
 PORTNAME=	libpgeasy
@@ -19,7 +15,7 @@ COMMENT=	An easy-to-use C interface to PostgreSQL
 
 USE_AUTOTOOLS=	libtool
 USE_PGSQL=	YES
-USE_GMAKE=	YES
+USES=		gmake
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}

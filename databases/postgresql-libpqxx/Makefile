@@ -15,7 +15,7 @@ CONFLICTS=	postgresql-libpqxx-3.*
 PORTSCOUT=	limit:^2\.
 
 USE_PGSQL=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SOVERSION=	4

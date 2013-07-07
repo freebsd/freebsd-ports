@@ -27,11 +27,9 @@ LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+.if !defined(NO_BUILD)
+USES+=	gmake
 GNU_CONFIGURE=	yes
-.if defined(NO_BUILD)
-.undef USE_GMAKE
-.undef GNU_CONFIGURE
 .endif
 
 PG_USER=	pgsql
