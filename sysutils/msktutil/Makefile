@@ -1,11 +1,8 @@
-# New ports collection makefile for:    zi
-# Date created:         2012-08-29
-# Whom:                 zi@FreeBSD.org
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	msktutil
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
     		http://mirrors.rit.edu/zi/
