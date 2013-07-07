@@ -34,6 +34,7 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
+USES=		iconv
 USE_AUTOTOOLS=	libltdl
 USE_BZIP2=	yes
 USE_GMAKE=	yes
