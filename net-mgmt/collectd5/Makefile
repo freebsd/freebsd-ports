@@ -27,9 +27,9 @@ GCRYPT_DESC=		Build with libgcrypt
 JSON_DESC=		Enable JSON plugins
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
-MYSQL_DESC=		Enable mysql-basd plugins
+MYSQL_DESC=		Enable mysql-based plugins
 NUTUPS_DESC=		Enable nut (ups) plugin
-PGSQL_DESC=		Enable postgresql-basd plugins
+PGSQL_DESC=		Enable postgresql-based plugins
 PING_DESC=		Enable ping plugin
 PYTHON_DESC=		Enable python-based plugins
 REDIS_DESC=		Enable redis-based plugins
@@ -206,6 +206,7 @@ PLIST_SUB+=	DBI="@comment "
 .if ${PORT_OPTIONS:MGCRYPT}
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt=${LOCALBASE}
+LDFLAGS+=	-lgcrypt
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
@@ -258,7 +259,7 @@ PLIST_SUB+=	NUTUPS="@comment "
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE} --enable-postgresql
+CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE} --enable-postgresql --with-libpq
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
