@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	turses
-PORTVERSION=	0.2.14
+PORTVERSION=	0.2.15
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python Twitter client for the console
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2 \
 		${PYTHON_PKGNAMEPREFIX}urwid>0:${PORTSDIR}/devel/py-urwid \
@@ -16,8 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2 \
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
-
-LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools for unit tests
