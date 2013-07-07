@@ -1,47 +1,43 @@
-# New ports collection makefile for:	afterstep-stable
-# Date created:		1 May 1998
-# Whom:			Brett Taylor <brett@peloton.physics.montana.edu>
-#
+# Created by: Brett Taylor <brett@peloton.physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	afterstep
-PORTVERSION=	2.2.11
-PORTREVISION=	1
+PORTVERSION=	2.2.12
 CATEGORIES=	x11-wm afterstep
-MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
-		SF/${PORTNAME}/AfterStep/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
+MASTER_SITE_SUBDIR=	stable
 DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A stable version of the AfterStep window manager
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2 \
+		gif:${PORTSDIR}/graphics/giflib \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		rplay.1:${PORTSDIR}/audio/rplay \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gif.5:${PORTSDIR}/graphics/giflib
+		tiff:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
-USE_GNOME=	glib20 gtk20 pango
-USES=		iconv
-USE_XORG+=	ice sm x11 xcursor xext xfixes xi xinerama xrandr xrender
+USE_GMAKE=	yes
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
+USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
+		xrandr xrender
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=--disable-ascp \
 		--enable-i18n \
 		--disable-send-postcard-to-developer \
 		--with-helpcommand="xterm -e man" \
+		--x-includes="${LOCALBASE}/include" \
 		--with-jpeg-includes="${LOCALBASE}/include" \
-		--with-jpeg-libs="${LOCALBASE}/lib" \
 		--with-png-includes="${LOCALBASE}/include" \
-		--with-png-libs="${LOCALBASE}/lib" \
-		--with-ungif
+		--with-gif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
 
 MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
 		Animate.1x AnimateTypes.1x Arrange.1x AutoExec.1x \
@@ -74,25 +70,25 @@ post-extract:
 		${WRKSRC}/afterstep/desktop/icons/xml/monitor-bsd.xpm
 
 post-patch:
-.for file in afterstep/database
+.for f in afterstep/database
 	@${REINPLACE_CMD} -e 's,linux-penguin,monitor-bsd,' \
-		${WRKSRC}/${file}
+		${WRKSRC}/${f}
 .endfor
-.for file in libAfterBase/Makefile.in libAfterImage/Makefile.in
+.for f in libAfterBase/Makefile.in libAfterImage/Makefile.in
 	@${REINPLACE_CMD} -e 's,^install\.,noinstall.,g ; \
-		 s,^install:,install:#,g' ${WRKSRC}/${file}
+		 s,^install:,install:#,g' ${WRKSRC}/${f}
 .endfor
-.for file in libAfterBase/configure libAfterImage/configure
+.for f in libAfterBase/configure libAfterImage/configure
 	@${REINPLACE_CMD} -e 's,="-O3",="$$CFLAGS",g' \
-		${WRKSRC}/${file}
+		${WRKSRC}/${f}
 .endfor
-.for file in libAfterStep/afterstep-config.in
+.for f in libAfterStep/afterstep-config.in
 	@${REINPLACE_CMD} -e 's,ft_version,libafterstep_version,g' \
-		${WRKSRC}/${file}
+		${WRKSRC}/${f}
 .endfor
-.for file in configure libAfterBase/configure libAfterConf/Makefile.in libAfterImage/configure
+.for f in configure libAfterBase/configure libAfterConf/Makefile.in libAfterImage/configure
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		${WRKSRC}/${file}
+		${WRKSRC}/${f}
 .endfor
 
 .include <bsd.port.post.mk>
