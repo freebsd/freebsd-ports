@@ -4419,3 +4419,4 @@ graphics/linux_dri||2013-07-03|Removed
 graphics/linux-dri74||2013-07-03|Removed
 games/gnomememoryblocks||2013-07-04|Has expired: Unsupported upstream
 devel/py-reddit||2013-07-07|Has been removed from PyPI, Use www/py-praw
+games/speakinghangman||2013-07-07|Has expired: No more public distfiles

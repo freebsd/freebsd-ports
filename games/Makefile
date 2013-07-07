@@ -901,7 +901,6 @@
     SUBDIR += spacehulk
     SUBDIR += spacejunk
     SUBDIR += speak
-    SUBDIR += speakinghangman
     SUBDIR += species
     SUBDIR += spellathon
     SUBDIR += spellcast
