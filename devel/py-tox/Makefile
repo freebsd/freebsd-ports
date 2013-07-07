@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tox
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,17 +10,16 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python virtualenv-based automation of test activities
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=1.8.4:${PORTSDIR}/devel/py-virtualenv \
-		${PYTHON_PKGNAMEPREFIX}pylib>=1.4.12:${PORTSDIR}/devel/py-pylib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=1.9.1:${PORTSDIR}/devel/py-virtualenv \
+		${PYTHON_PKGNAMEPREFIX}pylib>=1.4.15:${PORTSDIR}/devel/py-pylib
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 OPTIONS_DEFINE=	PYTEST
-PYTEST_DESC=	Include the Pytest test runner
+PYTEST_DESC=	Include the pytest test runner
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
