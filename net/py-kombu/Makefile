@@ -27,7 +27,7 @@ ZMQ_DESC=	Include ZMQ transport support
 # Ports infrastructure bug
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_PYTHON=	2.7-
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.pre.mk>
