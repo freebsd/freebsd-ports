@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130707:
+  AFFECTS: users of www/ajaxplorer
+  AUTHOR: madpilot@FreeBSD.org
+
+  Ajaxplorer was updated to 5.0.1. This is a major update and some
+  manual intervention may be needed.
+
+  Before upgrading you should preserve the folowing files in WWWDIR
+  (defaults to PREFIX/www/ajaxplorer) if you have customized them:
+
+  conf/bootstrap_conf.php
+  conf/bootstrap_context.php
+  conf/bootstrap_plugins.php
+  conf/bootstrap_repositories.php
+
+  and put them back after the upgrade.
+
+  If you are using a database backend you will need to manually
+  update your database table using the sql script the port will
+  install at WWWDIR/conf/conf/4.2.3-5.0.0-db-upgrade.sql
+
+  Don't forget to check the documentation about upgrading from
+  version 4.x at:
+  http://ajaxplorer.info/ajaxplorer-5-0-0:/#Upgrade_from_4X_to_500
+
 20130706:
   AFFECTS: users of devel/apr1
   AUTHOR: ohauer@FreeBSD.org
