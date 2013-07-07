@@ -5,7 +5,7 @@ PORTNAME=	jai
 PORTVERSION=	1.1.3
 PORTREVISION=	1
 CATEGORIES=	java graphics
-MASTER_SITES=	#
+MASTER_SITES=	http://download.java.net/media/${PORTNAME}/builds/release/${PORTVERSION:S/./_/g}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-lib
 
 MAINTAINER=	java@FreeBSD.org
@@ -35,10 +35,6 @@ PORTDOCS=	\
 		THIRDPARTYLICENSEREADME-jai.txt
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		you must manually fetch from the "Java Advanced Imaging API 1.1.3 Download Page", the "Java (no native acceleration)" distribution (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
-.endif
 
 do-install:
 # documentation
