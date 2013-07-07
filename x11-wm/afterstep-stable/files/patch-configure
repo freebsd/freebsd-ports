@@ -2,15 +2,6 @@ $FreeBSD$
 
 --- configure	Sat Jun 24 21:55:24 2006
 +++ configure.orig	Sat Jun 24 21:54:41 2006
-@@ -1811,7 +1811,7 @@
- # Check whether --enable-reuse-font or --disable-reuse-font was given.
- if test "${enable_reuse_font+set}" = set; then
-   enableval="$enable_reuse_font"
--  if test x$enableval == "xyes"; then
-+  if test x$enableval = "xyes"; then
- cat >>confdefs.h <<\_ACEOF
- #define MODULE_REUSE_LOADED_FONT 1
- _ACEOF
 @@ -7955,7 +7955,7 @@
  fi
  
@@ -38,3 +29,12 @@ $FreeBSD$
  AFTERIMAGE_STATIC_LIB="../../libAfterImage/libAfterImage.a"
  AFTERSTEP_STATIC_LIB="../../libAfterStep/libAfterStep.a"
  AFTERCONF_STATIC_LIB="../../libAfterConf/libAfterConf.a"
+@@ -7660,7 +7660,7 @@
+ 
+ fi
+ 
+-			export CFLAGS=$gio_saved_cflags
++			export CFLAGS="$gio_saved_cflags"
+ 
+ 			present_libs="$LDFLAGS $LIBS $x_libs $AFTERIMAGE_LIBS";
+ 			for l in `echo "$GIOLIB_LIBS"`; do
