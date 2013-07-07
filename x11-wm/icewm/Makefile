@@ -15,10 +15,10 @@ LICENSE=	GPLv2
 WANT_GNOME=	yes
 USE_XORG=	x11 ice xinerama xext xrandr sm
 USE_GNOME=	gtk20 # gdkpixbuf really :-)
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gmake
 CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--enable-guievents \
 		--with-cfgdir=${DATADIR} \
