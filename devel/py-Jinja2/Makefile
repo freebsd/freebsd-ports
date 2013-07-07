@@ -30,6 +30,7 @@ SPEEDUPS_DESC=	Enable speedups
 BABEL_DESC=	Enable Babel extension
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
+PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
 
 .include <bsd.port.options.mk>
 
@@ -50,10 +51,16 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
 .endif
 
+# no problem with Python > 3.2
+.if ${PYTHON_VERSION} == python3.2
+pre-build:
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/jinja2
+.endif
+
 .if ${PKGNAMESUFFIX} == "-doc"
 do-build:
 .	if ${PYTHON_REL} >= 300
-	@${PY2TO3_CMD} --no-diffs --fix=all --verbose --write ${WRKSRC}/docs
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/docs
 .	endif
 	@cd ${WRKSRC}/docs && ${MAKE} html
 
@@ -65,7 +72,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 post-build:
 .	if ${PYTHON_REL} >= 300
-	${PY2TO3_CMD} --no-diffs --fix=all --verbose --write ${WRKSRC}/examples
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
 .	endif
 	${PYTHON_CMD} -m compileall ${WRKSRC}/examples ; \
 	${PYTHON_CMD} -O -m compileall ${WRKSRC}/examples
