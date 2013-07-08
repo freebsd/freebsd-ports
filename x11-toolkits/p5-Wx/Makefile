@@ -24,7 +24,6 @@ UNICODE_DESC=	Build with Unicode support
 
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-USE_DISPLAY=	yes
 PERL_CONFIGURE=	yes
 CC=		${CXX}
 CFLAGS+=	-pthread -Wno-write-strings
