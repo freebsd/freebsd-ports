@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.39
+PORTVERSION=	2.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		Log::Dispatch.3 \
 		Log::Dispatch::ApacheLog.3 \
 		Log::Dispatch::Base.3 \
 		Log::Dispatch::Code.3 \
+		Log::Dispatch::Conflicts.3 \
 		Log::Dispatch::Email.3 \
 		Log::Dispatch::Email::MIMELite.3 \
 		Log::Dispatch::Email::MailSend.3 \
