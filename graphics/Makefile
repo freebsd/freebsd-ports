@@ -121,6 +121,7 @@
     SUBDIR += deegree-wms
     SUBDIR += deegree-wps
     SUBDIR += deegree-wpvs
+    SUBDIR += delaboratory
     SUBDIR += devil
     SUBDIR += dia
     SUBDIR += diacanvas2

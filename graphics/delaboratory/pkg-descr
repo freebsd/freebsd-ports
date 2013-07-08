@@ -1,0 +1,23 @@
+Delaboratory is a color correction utility for digital images.  It features:
+
+  - Floating point precision (not 8-bit like Gimp, not 16-bit like most raw
+    processors)
+  - Native support for multiple colorspaces (sRGB, ProPhoto RGB, LAB, CMYK,
+    LCH, HSL, HSV, BW)
+  - Non-destructive editing (adjustment layers)
+  - KISS design, realtime preview
+  - basic operations: CMYK curves, CMYK levels, RGB curves, RGB levels,
+    white balance in LAB, saturation in LAB, LAB curves, BW curve, HSV
+    equalizer, LCH equalizer, recover shadows/highlights, vignette, local
+    contrast, LAB/BW/RGB/CMYK gradients
+  - expert operations: levels, curves, equalizer, exposure, saturation,
+    white balance, fill, tone, local contrast, auto_dodge/auto_burn, sharpen,
+    vignette, gradient, gaussian blur, recover highlights, recover shadows,
+    channel mixer, high pass, c2g, copy
+  - many blend modes (multiply, screen, overlay, inverted overlay, dodge,
+    burn, add, grain extract, grain merge, sub, difference, darken, lighten),
+    color/luminosity blending for RGB and CMYK
+  - RAW support (via dcraw), up to 5 color samplers, histograms and color
+    matrices, etc.
+
+WWW: http://code.google.com/p/delaboratory/
