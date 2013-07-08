@@ -2,7 +2,7 @@
 +++ Makefile	2012-08-16 22:36:47.000000000 +0800
 @@ -3,17 +3,9 @@
  CFLAGS+=-Wall -DPREFIX='"${PREFIX}"' -DBSDCONV_PATH='"${BSDCONV_PATH}"'
- SHLIBVER=7
+ SHLIBVER=10
  
 -UNAME_S=$(shell uname -s)
 -ifeq (${UNAME_S}, Darwin)
@@ -16,5 +16,37 @@
 -LIBS+=-ldl
 -endif
  
- TODO_CODECS_BASIC_TABLE=
- TODO_CODECS_BASIC_TABLE+=from/3F
+ TODO_CODECS_BASIC=
+ TODO_CODECS_BASIC+=from/00
+@@ -184,27 +176,27 @@
+ bsdconv-man: builddir libbsdconv meta src/bsdconv.h src/bsdconv.c
+ 	$(CC) ${CFLAGS} src/bsdconv-man.c -L./build/lib/ -o build/bin/bsdconv-man -lbsdconv ${LIBS}
+ 
+-bsdconv-completion: builddir libbsdconv src/bsdconv.h src/bsdconv-completion.c
++bsdconv-completion: builddir libbsdconv meta src/bsdconv.h src/bsdconv-completion.c
+ 	$(CC) ${CFLAGS} src/bsdconv-completion.c -L./build/lib -o build/bin/bsdconv-completion -lbsdconv ${LIBS}
+ 
+ bsdconv_dbg: builddir libbsdconv src/libbsdconv.c src/bsdconv.h src/bsdconv_dbg.c
+ 	$(CC) ${CFLAGS} src/libbsdconv.c src/bsdconv_dbg.c -o build/bin/bsdconv_dbg ${LIBS}
+ 
+-codecs_basic: builddir bsdconv-mktable
++codecs_basic: builddir bsdconv-mktable libbsdconv meta
+ 	for item in ${TODO_CODECS_BASIC} ; do \
+ 		./build/bin/bsdconv-mktable codecs/$${item}.txt ./build/share/bsdconv/$${item} ; \
+ 		if [ -e codecs/$${item}.man ]; then cp codecs/$${item}.man ./build/share/bsdconv/$${item}.man ; fi ; \
+ 		if [ -e codecs/$${item}.c ]; then $(CC) ${CFLAGS} codecs/$${item}.c -L./build/lib/ -fPIC -shared -o ./build/share/bsdconv/$${item}.so -lbsdconv ${LIBS} ; fi ; \
+ 	done
+ 
+-codecs_chinese: builddir bsdconv-mktable
++codecs_chinese: builddir bsdconv-mktable libbsdconv meta
+ 	for item in ${TODO_CODECS_CHINESE} ; do \
+ 		./build/bin/bsdconv-mktable codecs/$${item}.txt ./build/share/bsdconv/$${item} ; \
+ 		if [ -e codecs/$${item}.man ]; then cp codecs/$${item}.man ./build/share/bsdconv/$${item}.man ; fi ; \
+ 		if [ -e codecs/$${item}.c ]; then $(CC) ${CFLAGS} codecs/$${item}.c -L./build/lib/ -fPIC -shared -o ./build/share/bsdconv/$${item}.so -lbsdconv ${LIBS} ; fi ; \
+ 	done
+ 
+-codecs_ebcdic: builddir bsdconv-mktable
++codecs_ebcdic: builddir bsdconv-mktable libbsdconv meta
+ 	for item in ${TODO_CODECS_EBCDIC} ; do \
+ 		./build/bin/bsdconv-mktable codecs/$${item}.txt ./build/share/bsdconv/$${item} ; \
+ 		if [ -e codecs/$${item}.man ]; then cp codecs/$${item}.man ./build/share/bsdconv/$${item}.man ; fi ; \
