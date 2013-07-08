@@ -1245,6 +1245,7 @@
     SUBDIR += ml-doc
     SUBDIR += mm
     SUBDIR += mm-common
+    SUBDIR += mongo-c-driver
     SUBDIR += mono-addins
     SUBDIR += mono-tools
     SUBDIR += monodevelop
