@@ -27,10 +27,10 @@ extra_commands=reload
 
 nfsen_start_precmd()
 {
-	# This replications functionality provided by
+	# This replicates functionality provided by
 	# the perl install script that we're bypassing.
 	# It also is better because you don't have to reinstall
-	# to get thise file back
+	# to get this file back
 	if [ ! -e %%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat ]; then
 		time=$(/bin/date +%s);
 		timeu=$(/bin/expr $time - 300);
