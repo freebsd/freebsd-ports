@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpillust
-# Date created:		14 April 2000
-# Whom:			nishida@sfc.wide.ad.jp
-#
+# Created by: nishida@sfc.wide.ad.jp
 # $FreeBSD$
-#
 
 PORTNAME=	tcpillust
 PORTVERSION=	2.01
