@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pure
-# Date created:		2011-03-17
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pure
 PORTVERSION=	0.55
@@ -24,6 +20,7 @@ RUN_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
 MAN1=		pure.1
 SUB_FILES=	pkg-message
 
+USES=		iconv
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
