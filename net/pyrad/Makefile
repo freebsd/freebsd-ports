@@ -1,28 +1,33 @@
-# New ports collection makefile for:	py-pyrad
-# Date created:				13 August 2007
-# Whom:					Blaz Zupan <blaz@si.FreeBSD.org>
-#
+# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyrad
-PORTVERSION=	0.9
+PORTVERSION=	2.0
 CATEGORIES=	net python
-MASTER_SITES=	http://www.wiggy.net/files/ \
-		http://www.sourcefiles.org/Networking/Tools/Authentication/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	steve@energistic.com
 COMMENT=	Python implementation of RADIUS client
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pyrad
 
-.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|zip_safe=True|zip_safe=False|' \
+		${WRKSRC}/setup.py
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/example -cf- . | ${TAR} -C ${EXAMPLESDIR} -xpf-
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
