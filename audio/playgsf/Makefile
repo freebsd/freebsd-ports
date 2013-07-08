@@ -13,7 +13,7 @@ COMMENT=	Command-line player for gsf audio files
 
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

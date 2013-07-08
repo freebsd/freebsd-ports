@@ -1,9 +1,5 @@
-# New ports collection makefile for:	recvnet
-# Date created:				27 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	recvnet
 PORTVERSION=	0.0.1

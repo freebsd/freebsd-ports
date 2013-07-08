@@ -1,9 +1,5 @@
-# New ports collection makefile for:	talkfilters
-# Date created:				03 July 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	talkfilters
 PORTVERSION=	2.3.8

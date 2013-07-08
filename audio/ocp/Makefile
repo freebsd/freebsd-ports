@@ -22,8 +22,7 @@ LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		ncurses
+USES=		ncurses gmake
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes

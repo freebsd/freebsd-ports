@@ -12,7 +12,7 @@ COMMENT=	Command-line utility for stalking users
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/wuzzah

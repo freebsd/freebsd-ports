@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uni2ascii
-# Date created:				12 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	uni2ascii
 PORTVERSION=	4.18

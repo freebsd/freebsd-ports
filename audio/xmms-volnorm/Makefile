@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-volnorm
-# Date created:				Fri Aug 17 12:17:23 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	volnorm
 PORTVERSION=	0.8.3

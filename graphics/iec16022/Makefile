@@ -16,7 +16,7 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig:build
+USES=		pkgconfig
 
 MAKE_JOBS_SAFE=	yes
 

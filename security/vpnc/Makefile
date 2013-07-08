@@ -14,8 +14,7 @@ COMMENT=	Client for Cisco 3000 VPN Concentrator
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
-USES=		shebangfix
-USE_GMAKE=	yes
+USES=		shebangfix gmake
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	vpnc
 MAKE_JOBS_SAFE=	yes

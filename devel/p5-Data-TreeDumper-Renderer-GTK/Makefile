@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-TreeDumper-Renderer-GTK
-# Date Created:				21 Apr 2008
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-TreeDumper-Renderer-GTK
 PORTVERSION=	0.02

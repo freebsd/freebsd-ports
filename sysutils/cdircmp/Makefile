@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cdircmp
-# Date created:				21 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	cdircmp
 PORTVERSION=	0.3

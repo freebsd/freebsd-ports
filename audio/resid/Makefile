@@ -1,9 +1,5 @@
-# New ports collection makefile for:	resid
-# Date created:				6 October 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	resid
 PORTVERSION=	0.16

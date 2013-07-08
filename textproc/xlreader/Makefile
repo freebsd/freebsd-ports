@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xlreader
-# Date created:				25 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	xlreader
 PORTVERSION=	0.9.0

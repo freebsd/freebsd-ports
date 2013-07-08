@@ -1,9 +1,5 @@
-# New ports collection makefile for:	createtorrent
-# Date created:				7 Jan 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	createtorrent
 PORTVERSION=	1.1.4

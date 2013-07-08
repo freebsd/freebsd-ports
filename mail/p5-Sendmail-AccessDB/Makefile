@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sendmail-AccessDB
-# Date created:				29 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	Sendmail-AccessDB
 PORTVERSION=	1.03

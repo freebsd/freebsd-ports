@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nslint
-# Date created:		27 October 1997
-# Whom:			dglo@ssec.wisc.edu
-#
+# Created by: dglo@ssec.wisc.edu
 # $FreeBSD$
-#
 
 PORTNAME=	nslint
 PORTVERSION=	3.1

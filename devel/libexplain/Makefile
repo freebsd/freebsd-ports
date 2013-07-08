@@ -16,8 +16,7 @@ BUILD_DEPENDS=	pdfopt:${PORTSDIR}/print/ghostscript9 \
 		gsed:${PORTSDIR}/textproc/gsed
 
 USE_AUTOTOOLS=	libtool
-USES=		bison gettext
-USE_GMAKE=	yes
+USES=		bison gettext gmake
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_SAFE=	yes

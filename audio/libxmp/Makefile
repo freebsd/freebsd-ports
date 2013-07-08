@@ -9,7 +9,7 @@ MASTER_SITES=	SF/xmp/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module rendering library for xmp
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

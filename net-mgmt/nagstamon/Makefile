@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagstamon
-# Date created:				26 May 2011
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nagstamon
 PORTVERSION=	0.9.9

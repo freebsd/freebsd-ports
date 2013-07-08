@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bestfit-0.2.0
-# Date created:				09 Oct 2001
-# Whom:					Steven Enderle <enderle@mdn.de>
-#
+# Created by: Steven Enderle <enderle@mdn.de>
 # $FreeBSD$
-#
 
 PORTNAME=	bestfit
 PORTVERSION=	0.2.0

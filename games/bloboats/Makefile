@@ -11,14 +11,11 @@ MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	mixer image net sdl
 USE_GL=		yes
 MAKE_JOBS_SAFE=	yes
 
 MAKE_ENV+=	DATADIR="${DATADIR}"
-
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

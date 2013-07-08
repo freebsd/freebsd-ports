@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

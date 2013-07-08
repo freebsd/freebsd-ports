@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/p5-Dir-Purge
-# Date created:				4 July 2006
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dir-Purge
 PORTVERSION=	1.02

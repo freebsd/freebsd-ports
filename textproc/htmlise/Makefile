@@ -1,9 +1,5 @@
-# New ports collection makefile for:	htmlise
-# Date created:				2 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlise
 PORTVERSION=	0.2

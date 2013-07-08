@@ -22,9 +22,9 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+USES=		gmake
 USE_BZIP2=	yes
 USE_GNOME=	librsvg2
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil libgui
 MAKE_JOBS_SAFE=	yes

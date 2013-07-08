@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnu-watch
-# Date created:				3 June 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	watch
 DISTVERSION=	3.2.8

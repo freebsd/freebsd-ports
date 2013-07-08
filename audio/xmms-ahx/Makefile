@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-ahx
-# Date created:				2 June 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-ahx
 PORTVERSION=	0.6
@@ -25,7 +21,7 @@ PLIST_FILES=	lib/xmms/Input/libahx.la \
 		lib/xmms/Input/libahx.so
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

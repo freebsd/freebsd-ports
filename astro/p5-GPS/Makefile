@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-GPS
-# Date created:			5 December 2000
-# Whom:				Jeremy Shaffner <jeremy@external.org>
-#
+# Created by: Jeremy Shaffner <jeremy@external.org>
 # $FreeBSD$
 
 PORTNAME=	GPS
