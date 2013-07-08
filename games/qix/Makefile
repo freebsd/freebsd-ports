@@ -1,6 +1,4 @@
-# New ports collection makefile for:    qix
-# Date created:         6 June 2000
-# Whom:                 jmz
+# Created by: jmz
 #
 # $FreeBSD$
 #
@@ -20,17 +18,13 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 		xset:${PORTSDIR}/x11/xset
 
-USE_DISPLAY=	yes
+USES=		display:install
 
 .if defined(WITHOUT_X11)
 MAKE_ARGS=	NO_X11=yes
 .else
 USE_XORG=	x11
 PLIST=		pkg-plist.x11
-.endif
-
-.if (!defined(DISPLAY) || ${DISPLAY} == "") && !defined(PACKAGE_BUILDING)
-IGNORE=		requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X
 .endif
 
 MAN1=		qix.1
