@@ -27,8 +27,8 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS=	kdehier>0:${PORTSDIR}/misc/kdehier \
-		${FONTSCALE}:${X_FONTS_TTF_PORT} \
-		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT} \
+		${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
+		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		iceauth:${PORTSDIR}/x11/iceauth
 

@@ -74,8 +74,8 @@ CONFIGURE_ARGS+=-no-gtkstyle
 .endif
 
 .if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
-		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
+RUN_DEPENDS+=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
+		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 .endif
 
 .include <bsd.port.pre.mk>
