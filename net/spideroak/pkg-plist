@@ -4,6 +4,7 @@ bin/spideroak
 etc/dbus-1/system.d/SpiderOak.dbus.conf
 etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DESKTOPDIR%%/SpiderOak.desktop
+%%PORTDOCS%%%%DOCSDIR%%/globalsync-linux.pdf
 %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeItemsTemplate.c
 %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeModuleTemplate.c
 %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees/BTreeTemplate.c
@@ -2214,6 +2215,7 @@ etc/xdg/menus/applications-merged/SpiderOak.menu
 %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests/test_verify.pyc
 %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/verify.pyc
 share/pixmaps/SpiderOak.png
+share/pixmaps/SpiderOakGlobalSync.png
 @dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/tests
 @dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common/tests
 @dirrm %%DATADIR%%/zope.interface-4.0.5-py2.7-linux-%%LINARCH%%.egg/zope/interface/common
@@ -2406,6 +2408,7 @@ share/pixmaps/SpiderOak.png
 @dirrm %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg/BTrees
 @dirrm %%DATADIR%%/BTrees-4.0.5-py2.7-linux-%%LINARCH%%.egg
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/xdg/menus/applications-merged
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg

@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	spideroak
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 #PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	https://spideroak.com/getbuild?platform=slackware&arch=${ARCH:S,amd,x86_,}&dummy=/
+MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/ \
+		https://spideroak.com/getbuild?platform=slackware&arch=${ARCH:S,amd,x86_,}&dummy=/
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${LINARCH}-1
 
@@ -23,7 +24,7 @@ NO_WRKSUBDIR=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	binary distribution
-OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
@@ -63,10 +64,14 @@ do-install:
 		--mode=${SHAREMODE} --dir=${DESKTOPDIR} \
 		--rebuild-mime-info-cache \
 		${WRKDIR}/usr/share/applications/SpiderOak.desktop
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/usr/share/doc/SpiderOak/globalsync-linux.pdf ${DOCSDIR}
+.endif
 .if ${PORT_OPTIONS:MMANPAGES}
 	${INSTALL_MAN} ${WRKDIR}/usr/share/man/man1/SpiderOak.1.gz ${MANPREFIX}/man/man1/
 .endif
-	${INSTALL_DATA} ${WRKDIR}/usr/share/pixmaps/SpiderOak.png ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKDIR}/usr/share/pixmaps/*.png ${PREFIX}/share/pixmaps/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
