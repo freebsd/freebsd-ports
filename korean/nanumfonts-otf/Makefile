@@ -3,7 +3,9 @@
 PORTNAME=	nanumfonts
 PORTVERSION=	3.1
 CATEGORIES=	korean
-MASTER_SITES=	http://cdn.naver.com/naver/NanumFont/fontfiles/
+MASTER_SITES=	http://cdn.naver.com/naver/NanumFont/fontfiles/ \
+		LOCAL
+MASTER_SITE_SUBDIR=	jkim
 PKGNAMESUFFIX=	-${FONTTYPE}
 DISTFILES=	NanumFont_${FONTTYPE:U}_ALL${EXTRACT_SUFX} \
 		NanumFontSetup_${FONTTYPE:U}_GOTHICECO${EXTRACT_SUFX} \
