@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ufspace
-# Date created:		4 July 2006
-# Whom:			Maho Nakata <maho@FreeBSD.org>
-#
+# Created by: Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	suitesparse
 PORTVERSION=	4.0.2
@@ -17,6 +13,8 @@ COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+USES=		gmake
 
 .if defined (WITH_METIS)
 LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis4
@@ -68,7 +66,6 @@ PICFLAG?=	-fpic
 .endif
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_FORTRAN=	yes
 WRKSRC=${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=${WRKSRC}_shared
