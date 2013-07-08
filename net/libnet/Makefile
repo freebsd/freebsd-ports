@@ -36,7 +36,7 @@ EXAMPLES=	sample/*.c
 
 OPTIONS_DEFINE=	EXAMPLES DOCS BPF
 OPTIONS_DEFAULT=	BPF
-PF_DESC=	link layer pf
+BPF_DESC=	link layer bpf
 
 .include <bsd.port.options.mk>
 
