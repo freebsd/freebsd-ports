@@ -1,41 +1,40 @@
---- src/vm/jit/x86_64/freebsd/md-os.c.orig	2012-09-03 12:10:00.000000000 -0400
-+++ src/vm/jit/x86_64/freebsd/md-os.c	2012-10-04 17:04:18.000000000 -0400
+--- src/vm/jit/x86_64/freebsd/md-os.cpp.orig	2013-06-28 09:22:27.000000000 -0400
++++ src/vm/jit/x86_64/freebsd/md-os.cpp	2013-07-08 16:05:56.000000000 -0400
 @@ -2,7 +2,6 @@
  
-    Copyright (C) 2007, 2008
+    Copyright (C) 1996-2013
     CACAOVM - Verein zur Foerderung der freien virtuellen Maschine CACAO
 -   Copyright (C) 2009 Theobroma Systems Ltd.
  
     This file is part of CACAO.
  
-@@ -27,80 +26,67 @@
- #include "config.h"
+@@ -28,79 +27,65 @@
  
- #include <assert.h>
+ #include <cassert>
+ #include <cstdlib>
 +#include <stdint.h>
- #include <stdlib.h>
  #include <ucontext.h>
  
-+#include "vm/types.h"
-+
-+#include "vm/jit/x86_64/codegen.h"
-+#include "vm/jit/x86_64/md.h"
-+
- #include "threads/thread.hpp"
+-#include "threads/thread.hpp"
+-
+-#include "vm/signallocal.hpp"
++#include "vm/types.hpp"
  
- #include "vm/signallocal.hpp"
- 
- #include "vm/jit/asmpart.h"
+-#include "vm/jit/asmpart.hpp"
 -#include "vm/jit/stacktrace.hpp"
--
--
++#include "vm/jit/x86_64/codegen.hpp"
++#include "vm/jit/x86_64/md.hpp"
+ 
++#include "threads/thread.hpp"
+ 
 -/* md_signal_handler_sigsegv ***************************************************
-+#include "vm/jit/executionstate.h"
-+#include "vm/jit/trap.hpp"
++#include "vm/signallocal.hpp"
  
 -   NullPointerException signal handler for hardware null pointer
 -   check.
--
++#include "vm/jit/executionstate.hpp"
++#include "vm/jit/trap.hpp"
+ 
 -*******************************************************************************/
  
 +/**
@@ -126,7 +125,7 @@
  }
  
  
-@@ -130,6 +116,88 @@
+@@ -130,6 +115,88 @@
  #endif
  
  

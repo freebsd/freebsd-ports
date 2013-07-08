@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacao
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.complang.tuwien.ac.at/cacaojvm/download/cacao-${PORTVERSION}/
 
@@ -20,7 +20,8 @@ USE_XZ=		yes
 
 MAN1=		cacao.1
 
-CONFIGURE_ARGS=	--with-java-runtime-library=gnuclasspath \
+CONFIGURE_ARGS=	--disable-test-dependency-checks \
+		--with-java-runtime-library=gnuclasspath \
 		--with-java-runtime-library-prefix=${PREFIX} \
 		--with-build-java-runtime-library-classes=${LOCALBASE}/share/classpath/glibj.zip
 CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
@@ -34,9 +35,9 @@ JDK_DESC=	Build with native JDK
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJDK}
-USE_JAVA=	yes
-JAVA_BUILD=	jdk
-JAVA_VERSION=	1.6+
+BUILD_DEPENDS+=	${LOCALBASE}/bootstrap-openjdk/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
+JAR=		${LOCALBASE}/bootstrap-openjdk/bin/jar
+JAVAC=		${LOCALBASE}/bootstrap-openjdk/bin/javac
 .else
 .if defined(WITH_GCC)
 GCC_SUFX=	${WITH_GCC:S/.//}
