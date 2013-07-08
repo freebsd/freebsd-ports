@@ -10,8 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
-USE_GMAKE=	yes
-USES=		pkgconfig:build
+USES=		pkgconfig gmake
 MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}

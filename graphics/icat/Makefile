@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Displays images in 256-color capable terminals
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_DOS2UNIX=	Makefile
 USE_EFL=	imlib2
 USE_GITHUB=	yes

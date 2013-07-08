@@ -18,8 +18,7 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig:build
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

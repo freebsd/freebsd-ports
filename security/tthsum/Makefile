@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 CONFLICTS=	microdc2-[0-9]*
 
-USE_GMAKE=	yes
+USES=		gmake
 MANCOMPRESSED=	yes
 
 MAKE_JOBS_SAFE=	yes

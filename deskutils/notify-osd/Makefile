@@ -20,8 +20,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
+USES=		gmake
 USE_GNOME=	libwnck gconf2
-USE_GMAKE=	yes
 USE_GCC=	4.4+
 MAKE_JOBS_SAFE=	yes
 

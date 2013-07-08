@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-xymms
-# Date created:				27 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	xymms
 DISTVERSION=	0.9.1

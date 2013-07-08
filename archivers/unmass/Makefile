@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unmass
-# Date created:				14 Aug 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unmass
 PORTVERSION=	0.9
@@ -16,8 +12,8 @@ COMMENT=	Extract game archives such as wad, dar, mea exe's, and many more
 
 LICENSE=	GPLv2
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 

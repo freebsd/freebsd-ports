@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_EFL=	imlib2
 MAKE_JOBS_SAFE=	yes
 

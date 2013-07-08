@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		enchant:${PORTSDIR}/textproc/enchant \
 		pcre:${PORTSDIR}/devel/pcre
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good
 INSTALLS_ICONS=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audacious-dumb
-# Date created:				27 May 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	audacious-dumb
 PORTVERSION=	0.82
@@ -20,7 +16,7 @@ RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

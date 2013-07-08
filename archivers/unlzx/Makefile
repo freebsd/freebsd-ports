@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unlzx
-# Date created:				Sat 3 June 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	unlzx
 PORTVERSION=	1.1

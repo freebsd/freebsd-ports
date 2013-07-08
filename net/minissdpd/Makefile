@@ -10,7 +10,7 @@ MASTER_SITES=	http://miniupnp.free.fr/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	UPnP IGD discovery speed enhancer
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	minissdpd
 MAKE_JOBS_SAFE=	yes
 

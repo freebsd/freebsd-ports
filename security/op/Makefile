@@ -1,9 +1,5 @@
-# New ports collection makefile for:	op
-# Date created:				30 Sep 2008
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
+# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	op
 PORTVERSION=	1.32

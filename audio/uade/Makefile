@@ -1,4 +1,4 @@
-# Created by: Martin Blapp <mbr@freebsd.org>
+# Created by: Martin Blapp <mbr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	uade
@@ -13,9 +13,9 @@ COMMENT=	Unix Amiga Delitracker Emulator
 
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
+USES=		gmake
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/uade2

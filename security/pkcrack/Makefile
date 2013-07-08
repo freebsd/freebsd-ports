@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for breaking pkzip encryption
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

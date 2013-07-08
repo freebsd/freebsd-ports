@@ -12,7 +12,7 @@ COMMENT=	Cleans up files in directories based on their age
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	sbin/tmpreaper

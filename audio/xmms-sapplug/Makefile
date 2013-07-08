@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

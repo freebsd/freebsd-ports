@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wav2cdr
-# Date created:				9 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	wav2cdr
 PORTVERSION=	2.3.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for: nload
-# Date created:		24 April 2002
-# Whom:			Olivier Tharan <olive@oban.frmug.org>
-#
+# Created by: Olivier Tharan <olive@oban.frmug.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nload
 PORTVERSION=	0.7.4

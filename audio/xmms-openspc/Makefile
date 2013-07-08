@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-openspc
-# Date created:				11 June 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
+# Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	openspc
 PORTVERSION=	0.0.3
