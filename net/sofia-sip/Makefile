@@ -5,13 +5,14 @@ PORTVERSION=	1.12.11
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source SIP User-Agent library
 
 USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	glib20
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	sip-date.1 \
 	sip-options.1 \
