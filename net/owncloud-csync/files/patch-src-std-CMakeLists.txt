@@ -1,0 +1,10 @@
+--- src/std/_CMakeLists.txt	2013-02-20 20:39:16.000000000 +0400
++++ src/std/CMakeLists.txt	2013-03-16 14:16:52.896920438 +0400
+@@ -31,6 +31,7 @@
+ include_directories(
+   ${CSTDLIB_PUBLIC_INCLUDE_DIRS}
+   ${CSTDLIB_PRIVATE_INCLUDE_DIRS}
++  ${ICONV_INCLUDE_DIR}
+ )
+ 
+ add_library(${CSTDLIB_LIBRARY} STATIC ${cstdlib_SRCS})

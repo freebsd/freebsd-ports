@@ -1,0 +1,27 @@
+From 199d6a1b07f8ce5d8009518b61b57768061d65b5 Mon Sep 17 00:00:00 2001
+From: arrowdodger <6yearold@gmail.com>
+Date: Tue, 19 Feb 2013 11:37:10 +0400
+Subject: [PATCH] Fix build for FreeBSD.
+
+---
+ src/std/c_private.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git src/std/c_private.h src/std/c_private.h
+index 2b1c6a3..bacd179 100644
+--- src/std/c_private.h
++++ src/std/c_private.h
+@@ -32,6 +32,10 @@
+ #endif
+ 
+ 
++#ifdef __FreeBSD__
++#define ENODATA 0
++#endif
++
+ #ifdef _WIN32
+ #define EDQUOT 0
+ #define ENODATA 0
+-- 
+1.8.1.3
+
