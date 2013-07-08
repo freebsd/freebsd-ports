@@ -22,8 +22,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 SUB_FILES=	pkg-message
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
-USES=		iconv
-USE_GMAKE=	yes
+USES=		iconv pkgconfig gmake
 USE_LUA=	5.1+
 MAKE_JOBS_SAFE=	yes
 
