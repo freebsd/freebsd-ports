@@ -1,9 +1,5 @@
-# New ports collection makefile for:	postfix-gps
-# Date created:				2 September 2004
-# Whom:					Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gps
 PORTVERSION=	1.005
@@ -13,10 +9,10 @@ MASTER_SITES=	SF/greylist/greylist/${PORTVERSION}-bugfix
 PKGNAMEPREFIX=	postfix-
 DISTNAME=	gps-${PORTVERSION}-bugfix
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylist Policy Service for postfix
 
-LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	dbi:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
