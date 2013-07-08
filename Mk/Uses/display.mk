@@ -4,7 +4,7 @@
 #
 # Feature:	display
 # Usage:	USES=display or USES=display:ARGS
-# Valid ARGS:	install (default, implicit), build
+# Valid ARGS:	install (default, implicit), any target
 # 
 # Except the target where the DISPLAY is needed
 #
@@ -13,9 +13,6 @@
 _INCLUDE_USES_DISPLAY_MK=	yes
 
 display_ARGS?=	install
-.if ${display_ARGS} != build && ${display_ARGS} != install
-IGNORE=	USES=display can only take 'build', 'install' and none
-.endif
 
 .if !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
