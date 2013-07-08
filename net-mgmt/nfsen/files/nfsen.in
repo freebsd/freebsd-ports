@@ -1,25 +1,54 @@
-#! /bin/sh
-
+#!/bin/sh
+#
 # $FreeBSD$
 #
 # PROVIDE: nfsen
-# REQUIRE: sshd
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-nfsen_enable=${nfsen_enable-"NO"}
-#nfsen_flags=${nfsen_flags-""}
 
 . /etc/rc.subr
 
-name="nfsen"
+name=nfsen
 rcvar=nfsen_enable
 load_rc_config $name
+
+nfsen_enable=${nfsen_enable-"NO"}
+#nfsen_flags=${nfsen_flags-""}
+
 command="%%PREFIX%%/bin/nfsen"
 start_cmd="%%PREFIX%%/bin/nfsen start"
 stop_cmd="%%PREFIX%%/bin/nfsen stop"
 reload_cmd="%%PREFIX%%/bin/nfsen reconfig"
 status_cmd="%%PREFIX%%/bin/nfsen status"
+start_precmd=nfsen_start_precmd
 
-extra_commands="reload"
+extra_commands=reload
+
+nfsen_start_precmd()
+{
+	# This replications functionality provided by
+	# the perl install script that we're bypassing.
+	# It also is better because you don't have to reinstall
+	# to get thise file back
+	if [ ! -e %%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat ]; then
+		time=$(/bin/date +%s);
+		timeu=$(/bin/expr $time - 300);
+		/usr/bin/printf "name = live
+		group = .
+		tbegin = $time
+		tcreate = $time
+		tstart = $time
+		tend = $time
+		updated = $timeu
+		expire = 0
+		maxsize = 0
+		size = 0
+		type = 0
+		locked = 0
+		status = OK
+		version = 130" | /usr/bin/tr -d '\011' > %%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat;
+	fi
+}
 
 run_rc_command "$1"
