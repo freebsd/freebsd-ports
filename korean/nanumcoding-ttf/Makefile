@@ -1,14 +1,11 @@
-# New ports collection makefile for:	Nanum Gothic Coding Hangul font
-# Date created:		August 4, 2011
-# Whom:			Jung-uk Kim <jkim@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nanumcoding
 PORTVERSION=	2.0
 CATEGORIES=	korean
-MASTER_SITES=	http://dev.naver.com/frs/download.php/441/
+MASTER_SITES=	http://dev.naver.com/frs/download.php/441/ \
+		LOCAL
+MASTER_SITE_SUBDIR=	jkim
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	NanumGothicCoding-${PORTVERSION}
 
