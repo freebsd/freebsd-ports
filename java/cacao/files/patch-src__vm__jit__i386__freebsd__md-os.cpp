@@ -1,8 +1,8 @@
---- src/vm/jit/i386/freebsd/md-os.c.orig	2012-09-03 12:10:00.000000000 -0400
-+++ src/vm/jit/i386/freebsd/md-os.c	2012-10-04 17:01:47.000000000 -0400
+--- src/vm/jit/i386/freebsd/md-os.cpp.orig	2013-06-28 09:22:26.000000000 -0400
++++ src/vm/jit/i386/freebsd/md-os.cpp	2013-07-08 16:02:06.000000000 -0400
 @@ -2,6 +2,7 @@
  
-    Copyright (C) 1996-2005, 2006, 2007, 2008
+    Copyright (C) 1996-2013
     CACAOVM - Verein zur Foerderung der freien virtuellen Maschine CACAO
 +   Copyright (C) 2009 Theobroma Systems Ltd.
  
@@ -15,8 +15,8 @@
 -#include "vm/jit/builtin.hpp"
  #include "vm/signallocal.hpp"
  
--#include "vm/jit/asmpart.h"
- #include "vm/jit/executionstate.h"
+-#include "vm/jit/asmpart.hpp"
+ #include "vm/jit/executionstate.hpp"
 -#include "vm/jit/stacktrace.hpp"
  #include "vm/jit/trap.hpp"
  
@@ -323,3 +323,12 @@
  }
  
  
+@@ -341,7 +186,7 @@
+  * Emacs will automagically detect them.
+  * ---------------------------------------------------------------------
+  * Local variables:
+- * mode: c
++ * mode: c++
+  * indent-tabs-mode: t
+  * c-basic-offset: 4
+  * tab-width: 4
