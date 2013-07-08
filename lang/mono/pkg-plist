@@ -26,6 +26,7 @@ bin/makecert
 bin/mconfig
 bin/mcs
 bin/mdassembler
+bin/mdbrebase
 bin/mdoc
 bin/mdoc-assemble
 bin/mdoc-export-html
@@ -332,6 +333,7 @@ lib/mono/4.0/Microsoft.CSharp.dll
 lib/mono/4.0/Microsoft.CSharp.targets
 lib/mono/4.0/Microsoft.Common.targets
 lib/mono/4.0/Microsoft.Common.tasks
+lib/mono/4.0/Microsoft.Portable.CSharp.targets
 lib/mono/4.0/Microsoft.VisualBasic.targets
 lib/mono/4.0/Microsoft.VisualC.dll
 lib/mono/4.0/Microsoft.Web.Infrastructure.dll
@@ -414,12 +416,97 @@ lib/mono/4.0/System.dll
 lib/mono/4.0/WebMatrix.Data.dll
 lib/mono/4.0/WindowsBase.dll
 lib/mono/4.0/cscompmgd.dll
+lib/mono/4.0/monodoc.dll
 lib/mono/4.0/mscorlib.dll
 lib/mono/4.5/Accessibility.dll
 lib/mono/4.5/Commons.Xml.Relaxng.dll
 lib/mono/4.5/CustomMarshalers.dll
 lib/mono/4.5/EntityFramework.SqlServer.dll
 lib/mono/4.5/EntityFramework.dll
+lib/mono/4.5/Facades/System.Collections.Concurrent.dll
+lib/mono/4.5/Facades/System.Collections.Concurrent.dll.mdb
+lib/mono/4.5/Facades/System.Collections.dll
+lib/mono/4.5/Facades/System.Collections.dll.mdb
+lib/mono/4.5/Facades/System.ComponentModel.Annotations.dll
+lib/mono/4.5/Facades/System.ComponentModel.Annotations.dll.mdb
+lib/mono/4.5/Facades/System.ComponentModel.EventBasedAsync.dll
+lib/mono/4.5/Facades/System.ComponentModel.EventBasedAsync.dll.mdb
+lib/mono/4.5/Facades/System.ComponentModel.dll
+lib/mono/4.5/Facades/System.ComponentModel.dll.mdb
+lib/mono/4.5/Facades/System.Diagnostics.Contracts.dll
+lib/mono/4.5/Facades/System.Diagnostics.Contracts.dll.mdb
+lib/mono/4.5/Facades/System.Diagnostics.Debug.dll
+lib/mono/4.5/Facades/System.Diagnostics.Debug.dll.mdb
+lib/mono/4.5/Facades/System.Diagnostics.Tools.dll
+lib/mono/4.5/Facades/System.Diagnostics.Tools.dll.mdb
+lib/mono/4.5/Facades/System.Dynamic.Runtime.dll
+lib/mono/4.5/Facades/System.Dynamic.Runtime.dll.mdb
+lib/mono/4.5/Facades/System.Globalization.dll
+lib/mono/4.5/Facades/System.Globalization.dll.mdb
+lib/mono/4.5/Facades/System.IO.dll
+lib/mono/4.5/Facades/System.IO.dll.mdb
+lib/mono/4.5/Facades/System.Linq.Expressions.dll
+lib/mono/4.5/Facades/System.Linq.Expressions.dll.mdb
+lib/mono/4.5/Facades/System.Linq.Parallel.dll
+lib/mono/4.5/Facades/System.Linq.Parallel.dll.mdb
+lib/mono/4.5/Facades/System.Linq.Queryable.dll
+lib/mono/4.5/Facades/System.Linq.Queryable.dll.mdb
+lib/mono/4.5/Facades/System.Linq.dll
+lib/mono/4.5/Facades/System.Linq.dll.mdb
+lib/mono/4.5/Facades/System.Net.NetworkInformation.dll
+lib/mono/4.5/Facades/System.Net.NetworkInformation.dll.mdb
+lib/mono/4.5/Facades/System.Net.Primitives.dll
+lib/mono/4.5/Facades/System.Net.Primitives.dll.mdb
+lib/mono/4.5/Facades/System.Net.Requests.dll
+lib/mono/4.5/Facades/System.Net.Requests.dll.mdb
+lib/mono/4.5/Facades/System.ObjectModel.dll
+lib/mono/4.5/Facades/System.ObjectModel.dll.mdb
+lib/mono/4.5/Facades/System.Reflection.Extensions.dll
+lib/mono/4.5/Facades/System.Reflection.Extensions.dll.mdb
+lib/mono/4.5/Facades/System.Reflection.Primitives.dll
+lib/mono/4.5/Facades/System.Reflection.Primitives.dll.mdb
+lib/mono/4.5/Facades/System.Reflection.dll
+lib/mono/4.5/Facades/System.Reflection.dll.mdb
+lib/mono/4.5/Facades/System.Resources.ResourceManager.dll
+lib/mono/4.5/Facades/System.Resources.ResourceManager.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.Extensions.dll
+lib/mono/4.5/Facades/System.Runtime.Extensions.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.InteropServices.dll
+lib/mono/4.5/Facades/System.Runtime.InteropServices.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.Numerics.dll
+lib/mono/4.5/Facades/System.Runtime.Numerics.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.Serialization.Json.dll
+lib/mono/4.5/Facades/System.Runtime.Serialization.Json.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.Serialization.Primitives.dll
+lib/mono/4.5/Facades/System.Runtime.Serialization.Primitives.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.dll
+lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.dll.mdb
+lib/mono/4.5/Facades/System.Runtime.dll
+lib/mono/4.5/Facades/System.Runtime.dll.mdb
+lib/mono/4.5/Facades/System.Security.Principal.dll
+lib/mono/4.5/Facades/System.Security.Principal.dll.mdb
+lib/mono/4.5/Facades/System.ServiceModel.Http.dll
+lib/mono/4.5/Facades/System.ServiceModel.Http.dll.mdb
+lib/mono/4.5/Facades/System.ServiceModel.Primitives.dll
+lib/mono/4.5/Facades/System.ServiceModel.Primitives.dll.mdb
+lib/mono/4.5/Facades/System.Text.Encoding.Extensions.dll
+lib/mono/4.5/Facades/System.Text.Encoding.Extensions.dll.mdb
+lib/mono/4.5/Facades/System.Text.Encoding.dll
+lib/mono/4.5/Facades/System.Text.Encoding.dll.mdb
+lib/mono/4.5/Facades/System.Text.RegularExpressions.dll
+lib/mono/4.5/Facades/System.Text.RegularExpressions.dll.mdb
+lib/mono/4.5/Facades/System.Threading.Tasks.Parallel.dll
+lib/mono/4.5/Facades/System.Threading.Tasks.Parallel.dll.mdb
+lib/mono/4.5/Facades/System.Threading.Tasks.dll
+lib/mono/4.5/Facades/System.Threading.Tasks.dll.mdb
+lib/mono/4.5/Facades/System.Threading.dll
+lib/mono/4.5/Facades/System.Threading.dll.mdb
+lib/mono/4.5/Facades/System.Xml.ReaderWriter.dll
+lib/mono/4.5/Facades/System.Xml.ReaderWriter.dll.mdb
+lib/mono/4.5/Facades/System.Xml.XDocument.dll
+lib/mono/4.5/Facades/System.Xml.XDocument.dll.mdb
+lib/mono/4.5/Facades/System.Xml.XmlSerializer.dll
+lib/mono/4.5/Facades/System.Xml.XmlSerializer.dll.mdb
 lib/mono/4.5/I18N.CJK.dll
 lib/mono/4.5/I18N.MidEast.dll
 lib/mono/4.5/I18N.Other.dll
@@ -480,6 +567,8 @@ lib/mono/4.5/System.Drawing.Design.dll
 lib/mono/4.5/System.Drawing.dll
 lib/mono/4.5/System.Dynamic.dll
 lib/mono/4.5/System.EnterpriseServices.dll
+lib/mono/4.5/System.IO.Compression.FileSystem.dll
+lib/mono/4.5/System.IO.Compression.dll
 lib/mono/4.5/System.IdentityModel.Selectors.dll
 lib/mono/4.5/System.IdentityModel.dll
 lib/mono/4.5/System.Json.dll
@@ -519,6 +608,7 @@ lib/mono/4.5/System.Web.DynamicData.dll
 lib/mono/4.5/System.Web.Extensions.Design.dll
 lib/mono/4.5/System.Web.Extensions.dll
 lib/mono/4.5/System.Web.Http.SelfHost.dll
+lib/mono/4.5/System.Web.Http.WebHost.dll
 lib/mono/4.5/System.Web.Http.dll
 lib/mono/4.5/System.Web.Mvc.dll
 lib/mono/4.5/System.Web.Razor.dll
@@ -530,8 +620,10 @@ lib/mono/4.5/System.Web.WebPages.dll
 lib/mono/4.5/System.Web.dll
 lib/mono/4.5/System.Windows.Forms.DataVisualization.dll
 lib/mono/4.5/System.Windows.Forms.dll
+lib/mono/4.5/System.Windows.dll
 lib/mono/4.5/System.Xaml.dll
 lib/mono/4.5/System.Xml.Linq.dll
+lib/mono/4.5/System.Xml.Serialization.dll
 lib/mono/4.5/System.Xml.dll
 lib/mono/4.5/System.dll
 lib/mono/4.5/WebMatrix.Data.dll
@@ -589,6 +681,8 @@ lib/mono/4.5/mconfig.exe
 lib/mono/4.5/mconfig.exe.mdb
 lib/mono/4.5/mcs.exe
 lib/mono/4.5/mcs.exe.mdb
+lib/mono/4.5/mdbrebase.exe
+lib/mono/4.5/mdbrebase.exe.mdb
 lib/mono/4.5/mdoc.exe
 lib/mono/4.5/mdoc.exe.mdb
 lib/mono/4.5/mkbundle.exe
@@ -904,6 +998,10 @@ lib/mono/gac/System.EnterpriseServices/2.0.0.0__b03f5f7f11d50a3a/System.Enterpri
 lib/mono/gac/System.EnterpriseServices/2.0.0.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll.mdb
 lib/mono/gac/System.EnterpriseServices/4.0.0.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll
 lib/mono/gac/System.EnterpriseServices/4.0.0.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll.mdb
+lib/mono/gac/System.IO.Compression.FileSystem/4.0.0.0__b77a5c561934e089/System.IO.Compression.FileSystem.dll
+lib/mono/gac/System.IO.Compression.FileSystem/4.0.0.0__b77a5c561934e089/System.IO.Compression.FileSystem.dll.mdb
+lib/mono/gac/System.IO.Compression/4.0.0.0__b77a5c561934e089/System.IO.Compression.dll
+lib/mono/gac/System.IO.Compression/4.0.0.0__b77a5c561934e089/System.IO.Compression.dll.mdb
 lib/mono/gac/System.IdentityModel.Selectors/3.0.0.0__b77a5c561934e089/System.IdentityModel.Selectors.dll
 lib/mono/gac/System.IdentityModel.Selectors/3.0.0.0__b77a5c561934e089/System.IdentityModel.Selectors.dll.mdb
 lib/mono/gac/System.IdentityModel.Selectors/4.0.0.0__b77a5c561934e089/System.IdentityModel.Selectors.dll
@@ -930,32 +1028,32 @@ lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35/System.Net.Htt
 lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35/System.Net.Http.Formatting.dll.mdb
 lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a/System.Net.Http.dll
 lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a/System.Net.Http.dll.mdb
-lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e/System.Net.dll
-lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e/System.Net.dll.mdb
-lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e/System.Net.dll
-lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e/System.Net.dll.mdb
+lib/mono/gac/System.Net/3.5.0.0__b77a5c561934e089/System.Net.dll
+lib/mono/gac/System.Net/3.5.0.0__b77a5c561934e089/System.Net.dll.mdb
+lib/mono/gac/System.Net/4.0.0.0__b77a5c561934e089/System.Net.dll
+lib/mono/gac/System.Net/4.0.0.0__b77a5c561934e089/System.Net.dll.mdb
 lib/mono/gac/System.Numerics/4.0.0.0__b77a5c561934e089/System.Numerics.dll
 lib/mono/gac/System.Numerics/4.0.0.0__b77a5c561934e089/System.Numerics.dll.mdb
-lib/mono/gac/System.Reactive.Core/0.0.0.0__31bf3856ad364e35/System.Reactive.Core.dll
-lib/mono/gac/System.Reactive.Core/0.0.0.0__31bf3856ad364e35/System.Reactive.Core.dll.mdb
-lib/mono/gac/System.Reactive.Debugger/0.0.0.0__31bf3856ad364e35/System.Reactive.Debugger.dll
-lib/mono/gac/System.Reactive.Debugger/0.0.0.0__31bf3856ad364e35/System.Reactive.Debugger.dll.mdb
-lib/mono/gac/System.Reactive.Experimental/0.0.0.0__31bf3856ad364e35/System.Reactive.Experimental.dll
-lib/mono/gac/System.Reactive.Experimental/0.0.0.0__31bf3856ad364e35/System.Reactive.Experimental.dll.mdb
-lib/mono/gac/System.Reactive.Interfaces/0.0.0.0__31bf3856ad364e35/System.Reactive.Interfaces.dll
-lib/mono/gac/System.Reactive.Interfaces/0.0.0.0__31bf3856ad364e35/System.Reactive.Interfaces.dll.mdb
-lib/mono/gac/System.Reactive.Linq/0.0.0.0__31bf3856ad364e35/System.Reactive.Linq.dll
-lib/mono/gac/System.Reactive.Linq/0.0.0.0__31bf3856ad364e35/System.Reactive.Linq.dll.mdb
-lib/mono/gac/System.Reactive.PlatformServices/0.0.0.0__31bf3856ad364e35/System.Reactive.PlatformServices.dll
-lib/mono/gac/System.Reactive.PlatformServices/0.0.0.0__31bf3856ad364e35/System.Reactive.PlatformServices.dll.mdb
-lib/mono/gac/System.Reactive.Providers/0.0.0.0__31bf3856ad364e35/System.Reactive.Providers.dll
-lib/mono/gac/System.Reactive.Providers/0.0.0.0__31bf3856ad364e35/System.Reactive.Providers.dll.mdb
-lib/mono/gac/System.Reactive.Runtime.Remoting/0.0.0.0__31bf3856ad364e35/System.Reactive.Runtime.Remoting.dll
-lib/mono/gac/System.Reactive.Runtime.Remoting/0.0.0.0__31bf3856ad364e35/System.Reactive.Runtime.Remoting.dll.mdb
-lib/mono/gac/System.Reactive.Windows.Forms/0.0.0.0__31bf3856ad364e35/System.Reactive.Windows.Forms.dll
-lib/mono/gac/System.Reactive.Windows.Forms/0.0.0.0__31bf3856ad364e35/System.Reactive.Windows.Forms.dll.mdb
-lib/mono/gac/System.Reactive.Windows.Threading/0.0.0.0__31bf3856ad364e35/System.Reactive.Windows.Threading.dll
-lib/mono/gac/System.Reactive.Windows.Threading/0.0.0.0__31bf3856ad364e35/System.Reactive.Windows.Threading.dll.mdb
+lib/mono/gac/System.Reactive.Core/2.1.30214.0__31bf3856ad364e35/System.Reactive.Core.dll
+lib/mono/gac/System.Reactive.Core/2.1.30214.0__31bf3856ad364e35/System.Reactive.Core.dll.mdb
+lib/mono/gac/System.Reactive.Debugger/2.1.30214.0__31bf3856ad364e35/System.Reactive.Debugger.dll
+lib/mono/gac/System.Reactive.Debugger/2.1.30214.0__31bf3856ad364e35/System.Reactive.Debugger.dll.mdb
+lib/mono/gac/System.Reactive.Experimental/2.1.30214.0__31bf3856ad364e35/System.Reactive.Experimental.dll
+lib/mono/gac/System.Reactive.Experimental/2.1.30214.0__31bf3856ad364e35/System.Reactive.Experimental.dll.mdb
+lib/mono/gac/System.Reactive.Interfaces/2.1.30214.0__31bf3856ad364e35/System.Reactive.Interfaces.dll
+lib/mono/gac/System.Reactive.Interfaces/2.1.30214.0__31bf3856ad364e35/System.Reactive.Interfaces.dll.mdb
+lib/mono/gac/System.Reactive.Linq/2.1.30214.0__31bf3856ad364e35/System.Reactive.Linq.dll
+lib/mono/gac/System.Reactive.Linq/2.1.30214.0__31bf3856ad364e35/System.Reactive.Linq.dll.mdb
+lib/mono/gac/System.Reactive.PlatformServices/2.1.30214.0__31bf3856ad364e35/System.Reactive.PlatformServices.dll
+lib/mono/gac/System.Reactive.PlatformServices/2.1.30214.0__31bf3856ad364e35/System.Reactive.PlatformServices.dll.mdb
+lib/mono/gac/System.Reactive.Providers/2.1.30214.0__31bf3856ad364e35/System.Reactive.Providers.dll
+lib/mono/gac/System.Reactive.Providers/2.1.30214.0__31bf3856ad364e35/System.Reactive.Providers.dll.mdb
+lib/mono/gac/System.Reactive.Runtime.Remoting/2.1.30214.0__31bf3856ad364e35/System.Reactive.Runtime.Remoting.dll
+lib/mono/gac/System.Reactive.Runtime.Remoting/2.1.30214.0__31bf3856ad364e35/System.Reactive.Runtime.Remoting.dll.mdb
+lib/mono/gac/System.Reactive.Windows.Forms/2.1.30214.0__31bf3856ad364e35/System.Reactive.Windows.Forms.dll
+lib/mono/gac/System.Reactive.Windows.Forms/2.1.30214.0__31bf3856ad364e35/System.Reactive.Windows.Forms.dll.mdb
+lib/mono/gac/System.Reactive.Windows.Threading/2.1.30214.0__31bf3856ad364e35/System.Reactive.Windows.Threading.dll
+lib/mono/gac/System.Reactive.Windows.Threading/2.1.30214.0__31bf3856ad364e35/System.Reactive.Windows.Threading.dll.mdb
 lib/mono/gac/System.Runtime.Caching/4.0.0.0__b03f5f7f11d50a3a/System.Runtime.Caching.dll
 lib/mono/gac/System.Runtime.Caching/4.0.0.0__b03f5f7f11d50a3a/System.Runtime.Caching.dll.mdb
 lib/mono/gac/System.Runtime.DurableInstancing/4.0.0.0__31bf3856ad364e35/System.Runtime.DurableInstancing.dll
@@ -1022,6 +1120,8 @@ lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensio
 lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
 lib/mono/gac/System.Web.Http.SelfHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.SelfHost.dll
 lib/mono/gac/System.Web.Http.SelfHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.SelfHost.dll.mdb
+lib/mono/gac/System.Web.Http.WebHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.WebHost.dll
+lib/mono/gac/System.Web.Http.WebHost/4.0.0.0__31bf3856ad364e35/System.Web.Http.WebHost.dll.mdb
 lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35/System.Web.Http.dll
 lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35/System.Web.Http.dll.mdb
 lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll
@@ -1056,12 +1156,16 @@ lib/mono/gac/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms
 lib/mono/gac/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll.mdb
 lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
 lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll.mdb
+lib/mono/gac/System.Windows/4.0.0.0__b03f5f7f11d50a3a/System.Windows.dll
+lib/mono/gac/System.Windows/4.0.0.0__b03f5f7f11d50a3a/System.Windows.dll.mdb
 lib/mono/gac/System.Xaml/4.0.0.0__b77a5c561934e089/System.Xaml.dll
 lib/mono/gac/System.Xaml/4.0.0.0__b77a5c561934e089/System.Xaml.dll.mdb
 lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089/System.Xml.Linq.dll
 lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089/System.Xml.Linq.dll.mdb
 lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089/System.Xml.Linq.dll
 lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089/System.Xml.Linq.dll.mdb
+lib/mono/gac/System.Xml.Serialization/4.0.0.0__b03f5f7f11d50a3a/System.Xml.Serialization.dll
+lib/mono/gac/System.Xml.Serialization/4.0.0.0__b03f5f7f11d50a3a/System.Xml.Serialization.dll.mdb
 lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll
 lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll.mdb
 lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
@@ -1114,6 +1218,7 @@ lib/mono/xbuild-frameworks/.NETFramework/v3.5/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.0/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.5/RedistList/FrameworkList.xml
 lib/mono/xbuild/Microsoft/Portable/v4.0/Microsoft.Portable.CSharp.targets
+lib/mono/xbuild/Microsoft/Portable/v4.5/Microsoft.Portable.CSharp.targets
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.CSharp.targets
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.Common.targets
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.VisualBasic.targets
@@ -1216,6 +1321,7 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/xbuild/Microsoft/Silverlight/v3.0
 @dirrm lib/mono/xbuild/Microsoft/Silverlight/v2.0
 @dirrm lib/mono/xbuild/Microsoft/Silverlight
+@dirrm lib/mono/xbuild/Microsoft/Portable/v4.5
 @dirrm lib/mono/xbuild/Microsoft/Portable/v4.0
 @dirrm lib/mono/xbuild/Microsoft/Portable
 @dirrm lib/mono/xbuild/Microsoft
@@ -1268,17 +1374,21 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System/2.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.Xml.Serialization/4.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/System.Xml.Serialization
 @dirrm lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml.Linq
 @dirrm lib/mono/gac/System.Xml
 @dirrm lib/mono/gac/System.Xaml/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xaml
+@dirrm lib/mono/gac/System.Windows/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Windows.Forms/2.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Windows.Forms.DataVisualization/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Windows.Forms.DataVisualization
 @dirrm lib/mono/gac/System.Windows.Forms
+@dirrm lib/mono/gac/System.Windows
 @dirrm lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Web/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Web.WebPages/2.0.0.0__31bf3856ad364e35
@@ -1300,6 +1410,8 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Mvc
 @dirrm lib/mono/gac/System.Web.Http/4.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Http.WebHost/4.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Web.Http.WebHost
 @dirrm lib/mono/gac/System.Web.Http.SelfHost/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Http.SelfHost
 @dirrm lib/mono/gac/System.Web.Http
@@ -1354,30 +1466,30 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Runtime.DurableInstancing
 @dirrm lib/mono/gac/System.Runtime.Caching/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Runtime.Caching
-@dirrm lib/mono/gac/System.Reactive.Windows.Threading/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Windows.Threading/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Windows.Threading
-@dirrm lib/mono/gac/System.Reactive.Windows.Forms/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Windows.Forms/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Windows.Forms
-@dirrm lib/mono/gac/System.Reactive.Runtime.Remoting/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Runtime.Remoting/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Runtime.Remoting
-@dirrm lib/mono/gac/System.Reactive.Providers/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Providers/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Providers
-@dirrm lib/mono/gac/System.Reactive.PlatformServices/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.PlatformServices/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.PlatformServices
-@dirrm lib/mono/gac/System.Reactive.Linq/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Linq/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Linq
-@dirrm lib/mono/gac/System.Reactive.Interfaces/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Interfaces/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Interfaces
-@dirrm lib/mono/gac/System.Reactive.Experimental/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Experimental/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Experimental
-@dirrm lib/mono/gac/System.Reactive.Debugger/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Debugger/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Debugger
-@dirrm lib/mono/gac/System.Reactive.Core/0.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.Reactive.Core/2.1.30214.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Reactive.Core
 @dirrm lib/mono/gac/System.Numerics/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Numerics
-@dirrm lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e
-@dirrm lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e
+@dirrm lib/mono/gac/System.Net/4.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.Net/3.5.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Net.Http.Formatting
@@ -1400,6 +1512,10 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.IdentityModel.Selectors/3.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.IdentityModel.Selectors
 @dirrm lib/mono/gac/System.IdentityModel
+@dirrm lib/mono/gac/System.IO.Compression/4.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.IO.Compression.FileSystem/4.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.IO.Compression.FileSystem
+@dirrm lib/mono/gac/System.IO.Compression
 @dirrm lib/mono/gac/System.EnterpriseServices/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.EnterpriseServices/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.EnterpriseServices
@@ -1594,6 +1710,7 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/Accessibility
 @dirrmtry lib/mono/gac
 @dirrm lib/mono/compat-2.0
+@dirrm lib/mono/4.5/Facades
 @dirrm lib/mono/4.5
 @dirrm lib/mono/4.0/MSBuild
 @dirrmtry lib/mono/4.0

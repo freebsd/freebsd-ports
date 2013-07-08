@@ -3,16 +3,12 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -3993,12 +3993,6 @@
- 
- 		libdl=
- 		libgc_threads=pthreads
--		# This doesn't seem to work as of 7.0 on amd64
--		with_sigaltstack=no
--# TLS is only partially implemented on -CURRENT (compiler support
--# but NOT library support)
--#
--		with_tls=pthread
- 		use_sigposix=yes
- 		;;
- 	*-*-*openbsd*)
+@@ -25136,7 +25136,7 @@
+ 	INTL="libintl.so.0"
+ 	;;
+     *-*-*freebsd*)
+-    	LIBC="libc.so"
++    	LIBC="libc.so.7"
+ 	INTL="libintl.so"
+ 	SQLITE="libsqlite.so"
+ 	SQLITE3="libsqlite3.so"
