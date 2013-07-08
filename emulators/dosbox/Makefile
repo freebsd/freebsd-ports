@@ -27,7 +27,18 @@ DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
 		"" "dosbox" \
 		"System;Emulator;" "true"
 
+OPTIONS_RADIO=	DEBUGGER
+OPTIONS_RADIO_DEBUGGER=DEBUGGER_ENABLE DEBUGGER_HEAVY
+DEBUGGER_ENABLE_DESC=Enable internal debugger
+DEBUGGER_HEAVY_DESC=Enable internal debugger with extra features
+
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUGGER_ENABLE}
+CONFIGURE_ARGS+=	--enable-debug=yes
+.elif ${PORT_OPTIONS:MDEBUGGER_HEAVY}
+CONFIGURE_ARGS+=	--enable-debug=heavy
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#\/usr\/share\/doc\/dosbox#${DOCSDIR}#g' \
