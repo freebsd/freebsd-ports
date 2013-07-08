@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -292,7 +292,7 @@ PLIST_SUB+=	REDIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MROUTEROS}
-LIB_DEPENDS+=	routeros:${PORTSDIR}/net/routeros
+LIB_DEPENDS+=	routeros:${PORTSDIR}/net/librouteros
 CONFIGURE_ARGS+=--with-librouteros=${LOCALBASE} --enable-routeros
 PLIST_SUB+=	ROUTEROS=""
 .else
