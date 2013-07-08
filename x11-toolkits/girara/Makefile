@@ -10,7 +10,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK2 Interface Library for Zathura PDF Viewer
 
 USE_GNOME=	glib20 gtk20
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

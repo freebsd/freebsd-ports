@@ -26,12 +26,12 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
 LICENSE=	GPLv3
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USES=		iconv shebangfix
+.if defined(.PARSEDIR)
+USES+=		gmake
+.endif
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
