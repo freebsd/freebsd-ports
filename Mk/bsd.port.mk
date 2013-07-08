@@ -1543,15 +1543,6 @@ check-makefile::
 
 _POSTMKINCLUDED=	yes
 
-# Loading features
-.for f in ${_USES_POST}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
-.endif
-.include "${USESDIR}/${_f}.mk"
-.endfor
-
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
 WRKSRC?=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
@@ -2050,6 +2041,15 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .include "${PORTSDIR}/Makefile.inc"
 USE_SUBMAKE=	yes
 .endif
+
+# Loading features
+.for f in ${_USES_POST}
+_f=${f:C/\:.*//g}
+.if ${_f} != ${f}
+${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+.endif
+.include "${USESDIR}/${_f}.mk"
+.endfor
 
 .if defined(USE_XORG)
 # Add explicit X options to avoid problems with false positives in configure
