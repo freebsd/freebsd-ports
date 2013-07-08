@@ -1,95 +1,95 @@
-bin/nfsen
-bin/nfsend
-bin/RebuildHierarchy.pl
+%%WWWDIR%%/rrdgraph.php
+%%WWWDIR%%/profileadmin.php
+%%WWWDIR%%/process.php
+%%WWWDIR%%/plugins/demoplugin.php
+%%WWWDIR%%/pic.php
+%%WWWDIR%%/overview.php
+%%WWWDIR%%/nfsenutil.php
+%%WWWDIR%%/nfsen.php
+%%WWWDIR%%/navigator.php
+%%WWWDIR%%/lookup.php
+%%WWWDIR%%/js/profileadmin.js
+%%WWWDIR%%/js/menu.js
+%%WWWDIR%%/js/global.js
+%%WWWDIR%%/js/detail.js
+%%WWWDIR%%/js/alerting.js
+%%WWWDIR%%/js/ColorPicker2.js
+%%WWWDIR%%/icons/trigger.png
+%%WWWDIR%%/icons/trash.png
+%%WWWDIR%%/icons/spyglas.png
+%%WWWDIR%%/icons/space.png
+%%WWWDIR%%/icons/shadeactive.png
+%%WWWDIR%%/icons/shade.png
+%%WWWDIR%%/icons/shade.gif
+%%WWWDIR%%/icons/save.png
+%%WWWDIR%%/icons/progress.png
+%%WWWDIR%%/icons/plus.png
+%%WWWDIR%%/icons/ok.png
+%%WWWDIR%%/icons/minus.png
+%%WWWDIR%%/icons/invisible.png
+%%WWWDIR%%/icons/help.png
+%%WWWDIR%%/icons/edit.png
+%%WWWDIR%%/icons/cursor-stop.png
+%%WWWDIR%%/icons/cursor-start.png
+%%WWWDIR%%/icons/cursor-line.png
+%%WWWDIR%%/icons/close.png
+%%WWWDIR%%/icons/cancel.png
+%%WWWDIR%%/icons/arrow.yellow.right.png
+%%WWWDIR%%/icons/arrow.yellow.down.png
+%%WWWDIR%%/icons/arrow.blue.right.png
+%%WWWDIR%%/icons/arrow.blue.down.png
+%%WWWDIR%%/icons/ErrorGraph.png
+%%WWWDIR%%/icons/Error.png
+%%WWWDIR%%/icons/EmptyGraph.png
+%%WWWDIR%%/details.php
+%%WWWDIR%%/css/profileadmin.css
+%%WWWDIR%%/css/nfsen.css
+%%WWWDIR%%/css/lookup.css
+%%WWWDIR%%/css/detail.css
+%%WWWDIR%%/css/alerting.css
+%%WWWDIR%%/conf.php
+%%WWWDIR%%/colour_picker.html
+%%WWWDIR%%/colour_palette.html
+%%WWWDIR%%/alerting.php
+libexec/%%PORTNAME%%/plugins/smily.jpg
+libexec/%%PORTNAME%%/plugins/demoplugin.pm
+libexec/%%PORTNAME%%/RRDconvertv1.pm
+libexec/%%PORTNAME%%/Notification.pm
+libexec/%%PORTNAME%%/Nfsync.pm
+libexec/%%PORTNAME%%/Nfsources.pm
+libexec/%%PORTNAME%%/Nfcomm.pm
+libexec/%%PORTNAME%%/NfSenSim.pm
+libexec/%%PORTNAME%%/NfSenRRD.pm
+libexec/%%PORTNAME%%/NfSenRC.pm
+libexec/%%PORTNAME%%/NfSen.pm
+libexec/%%PORTNAME%%/NfProfile.pm
+libexec/%%PORTNAME%%/NfConf.pm
+libexec/%%PORTNAME%%/NfAlert.pm
+libexec/%%PORTNAME%%/Lookup.pm
+libexec/%%PORTNAME%%/Log.pm
+libexec/%%PORTNAME%%/CopyRecursive.pm
+libexec/%%PORTNAME%%/AbuseWhois.pm
+etc/nfsen-dist.conf
 bin/testPlugin
+bin/nfsend
+bin/nfsen
+bin/RebuildHierarchy.pl
 @unexec if cmp -s %D/etc/nfsen.conf %D/etc/nfsen-dist.conf; then rm -f %D/etc/nfsen.conf; fi
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
-etc/nfsen-dist.conf
-libexec/%%PORTNAME%%/CopyRecursive.pm
-libexec/%%PORTNAME%%/Log.pm
-libexec/%%PORTNAME%%/Lookup.pm
-libexec/%%PORTNAME%%/NfAlert.pm
-libexec/%%PORTNAME%%/NfConf.pm
-libexec/%%PORTNAME%%/NfProfile.pm
-libexec/%%PORTNAME%%/NfSen.pm
-libexec/%%PORTNAME%%/NfSenRC.pm
-libexec/%%PORTNAME%%/NfSenRRD.pm
-libexec/%%PORTNAME%%/NfSenSim.pm
-libexec/%%PORTNAME%%/Nfcomm.pm
-libexec/%%PORTNAME%%/Nfsources.pm
-libexec/%%PORTNAME%%/Notification.pm
-libexec/%%PORTNAME%%/RRDconvertv1.pm
-libexec/%%PORTNAME%%/plugins/demoplugin.pm
-libexec/%%PORTNAME%%/plugins/smily.jpg
-www/%%PORTNAME%%/alerting.php
-www/%%PORTNAME%%/colour_palette.html
-www/%%PORTNAME%%/colour_picker.html
-www/%%PORTNAME%%/css/alerting.css
-www/%%PORTNAME%%/css/detail.css
-www/%%PORTNAME%%/css/lookup.css
-www/%%PORTNAME%%/css/nfsen.css
-www/%%PORTNAME%%/css/profileadmin.css
-www/%%PORTNAME%%/details.php
-www/%%PORTNAME%%/icons/arrow.blue.down.png
-www/%%PORTNAME%%/icons/arrow.blue.right.png
-www/%%PORTNAME%%/icons/arrow.yellow.down.png
-www/%%PORTNAME%%/icons/arrow.yellow.right.png
-www/%%PORTNAME%%/icons/cancel.png
-www/%%PORTNAME%%/icons/close.png
-www/%%PORTNAME%%/icons/cursor-line.png
-www/%%PORTNAME%%/icons/cursor-start.png
-www/%%PORTNAME%%/icons/cursor-stop.png
-www/%%PORTNAME%%/icons/edit.png
-www/%%PORTNAME%%/icons/EmptyGraph.png
-www/%%PORTNAME%%/icons/Error.png
-www/%%PORTNAME%%/icons/ErrorGraph.png
-www/%%PORTNAME%%/icons/help.png
-www/%%PORTNAME%%/icons/invisible.png
-www/%%PORTNAME%%/icons/minus.png
-www/%%PORTNAME%%/icons/ok.png
-www/%%PORTNAME%%/icons/plus.png
-www/%%PORTNAME%%/icons/progress.png
-www/%%PORTNAME%%/icons/save.png
-www/%%PORTNAME%%/icons/shade.gif
-www/%%PORTNAME%%/icons/shade.png
-www/%%PORTNAME%%/icons/shadeactive.png
-www/%%PORTNAME%%/icons/space.png
-www/%%PORTNAME%%/icons/spyglas.png
-www/%%PORTNAME%%/icons/trash.png
-www/%%PORTNAME%%/icons/trigger.png
-www/%%PORTNAME%%/js/alerting.js
-www/%%PORTNAME%%/js/ColorPicker2.js
-www/%%PORTNAME%%/js/detail.js
-www/%%PORTNAME%%/js/global.js
-www/%%PORTNAME%%/js/menu.js
-www/%%PORTNAME%%/js/profileadmin.js
-www/%%PORTNAME%%/lookup.php
-www/%%PORTNAME%%/navigator.php
-www/%%PORTNAME%%/nfsen.php
-www/%%PORTNAME%%/nfsenutil.php
-www/%%PORTNAME%%/overview.php
-www/%%PORTNAME%%/pic.php
-www/%%PORTNAME%%/process.php
-www/%%PORTNAME%%/profileadmin.php
-www/%%PORTNAME%%/rrdgraph.php
-www/%%PORTNAME%%/conf.php
-www/%%PORTNAME%%/plugins/demoplugin.php
-@dirrm www/%%PORTNAME%%/css
-@dirrm www/%%PORTNAME%%/icons
-@dirrm www/%%PORTNAME%%/js
-@dirrm www/%%PORTNAME%%/plugins
-@dirrm www/%%PORTNAME%%
-@exec mkdir -p %D/var/%%PORTNAME%%/profiles-stat/live/
-var/%%PORTNAME%%/profiles-stat/hints
-var/%%PORTNAME%%/profiles-stat/live/upstream1.rrd
-var/%%PORTNAME%%/profiles-stat/live/profile.dat
-@exec mkdir -p %D/var/%%PORTNAME%%/run
-@exec mkdir -p %D/var/%%PORTNAME%%/filters
-@dirrm var/%%PORTNAME%%/run
-@dirrm var/%%PORTNAME%%/filters
+@dirrmtry var/%%PORTNAME%%/run
 @dirrmtry var/%%PORTNAME%%/profiles-stat/live
 @dirrmtry var/%%PORTNAME%%/profiles-stat
+@dirrmtry var/%%PORTNAME%%/profiles-data/live
 @dirrmtry var/%%PORTNAME%%/profiles-data
+@dirrmtry var/%%PORTNAME%%/profiles/live
+@dirrmtry var/%%PORTNAME%%/profiles
+@dirrmtry var/%%PORTNAME%%/filters
 @dirrmtry var/%%PORTNAME%%
-@dirrm libexec/%%PORTNAME%%/plugins
-@dirrm libexec/%%PORTNAME%%
+@dirrmtry var
+@dirrmtry %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/icons
+@dirrm %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%
+@dirrmtry libexec/%%PORTNAME%%/plugins
+@dirrmtry libexec/%%PORTNAME%%
