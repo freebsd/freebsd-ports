@@ -16,7 +16,7 @@ COMMENT?=	User-level file synchronization tool
 LICENSE=	GPLv3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake
 WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS?=	unison-devel-[0-9]* unison-nox11-[0-9]*
