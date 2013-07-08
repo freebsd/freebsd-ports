@@ -24,8 +24,7 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		gnucap:${PORTSDIR}/cad/gnucap
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake display:configure
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 USE_PYTHON=	-2.7
@@ -45,21 +44,5 @@ post-patch:
 		's|-DGTK_DISABLE_DEPRECATED||g' -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
 	@${FIND} ${WRKSRC} -type f -name "*.bak" -delete
-
-.if !defined(DISPLAY)
-pre-configure:
-	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
-		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
-		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
-	fi
-	${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-
-post-configure:
-	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
-		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
-		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
-	fi
-.endif
 
 .include <bsd.port.mk>
