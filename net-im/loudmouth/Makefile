@@ -13,8 +13,7 @@ COMMENT=	Lightweight Jabber client library
 LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
