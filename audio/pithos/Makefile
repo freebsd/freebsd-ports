@@ -1,9 +1,5 @@
-# New ports collection makefile for: pithos
-# Date created: 14 July 2011
-# Whom: John Hixson <john@pcbsd.org>
-#
+# Created by: John Hixson <john@pcbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pithos
 PORTVERSION=	0.3.17
@@ -12,7 +8,7 @@ MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	john@pcbsd.org
-COMMENT=	A Pandora client for the GNOME desktop
+COMMENT=	Pandora client for the GNOME desktop
 
 LICENSE=	GPLv3
 
@@ -27,10 +23,7 @@ USE_PYTHON=	2.6+
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
 USE_GSTREAMER=	good bad python
-USE_DISPLAY=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e "s,../data/,${DATADIR}/," ${WRKSRC}/pithos/pithosconfig.py
@@ -42,4 +35,4 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/data/ && ${COPYTREE_SHARE} \* ${DATADIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
