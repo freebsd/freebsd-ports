@@ -28,5 +28,7 @@ sbin/imspector
 @dirrmtry %%ETCDIR%%
 @dirrm lib/imspector
 @cwd /var
-@dirrmtry %D/lib/imspector
-@dirrmtry %D/log/imspector
+@dirrmtry lib/imspector
+@dirrmtry lib
+@dirrmtry log/imspector
+@cwd 
