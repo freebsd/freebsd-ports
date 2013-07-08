@@ -3,7 +3,7 @@
 
 PORTNAME=	freeimage
 PORTVERSION=	3.15.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Source%20Distribution/${PORTVERSION}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
@@ -45,7 +45,7 @@ post-build:
 
 post-install:
 	cd ${WRKSRC} && ${GMAKE} -f Makefile.fip ${INSTALL_TARGET}
-	${LN} -s libfreeimageplus-${PORTVERSION} ${PREFIX}/lib/libfreeimageplus.so.3
-	${LN} -s libfreeimageplus-${PORTVERSION} ${PREFIX}/lib/libfreeimageplus.so
+	${LN} -s libfreeimageplus-${PORTVERSION}.so.3 ${PREFIX}/lib/libfreeimageplus.so
+	${LN} -s libfreeimageplus-${PORTVERSION}.so ${PREFIX}/lib/libfreeimageplus.so.3
 
 .include <bsd.port.post.mk>
