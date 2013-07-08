@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Workflow
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,30 +13,30 @@ COMMENT=	Simple, flexible system to implement workflows
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Class-Observable>=0:${PORTSDIR}/devel/p5-Class-Observable \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock \
-		p5-Class-Factory>=0:${PORTSDIR}/devel/p5-Class-Factory \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+RUN_DEPENDS=	p5-Class-Observable>=1.04:${PORTSDIR}/devel/p5-Class-Observable \
+		p5-Class-Accessor>=0.18:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-DBD-Mock>=0.1:${PORTSDIR}/databases/p5-DBD-Mock \
+		p5-Class-Factory>=1:${PORTSDIR}/devel/p5-Class-Factory \
+		p5-DateTime>=0.15:${PORTSDIR}/devel/p5-DateTime \
+		p5-Exception-Class>=1.1:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-DateTime-Format-Strptime>=1:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-XML-Simple>=2:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Log-Dispatch>=2:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0.34:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
-BUILD_DEPENDS=	p5-Class-Observable>=0:${PORTSDIR}/devel/p5-Class-Observable \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock \
-		p5-Class-Factory>=0:${PORTSDIR}/devel/p5-Class-Factory \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+BUILD_DEPENDS=	p5-Class-Observable>=1.04:${PORTSDIR}/devel/p5-Class-Observable \
+		p5-Class-Accessor>=0.18:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-DBD-Mock>=0.1:${PORTSDIR}/databases/p5-DBD-Mock \
+		p5-Class-Factory>=1:${PORTSDIR}/devel/p5-Class-Factory \
+		p5-DateTime>=0.15:${PORTSDIR}/devel/p5-DateTime \
+		p5-Exception-Class>=1.1:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-DateTime-Format-Strptime>=1:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-XML-Simple>=2:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Log-Dispatch>=2:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0.34:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
@@ -80,28 +80,30 @@ MAN3=	Workflow.3 \
 	Workflow::Validator::InEnumeratedType.3 \
 	Workflow::Validator::MatchesDateFormat.3
 
-.if !defined(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 .endif
-.if !defined(NOPORTDATA)
+.if ${PORT_OPTIONS:MDATA}
 PORTDATA=	*
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/eg && ${COPYTREE_SHARE} ticket/\* ${EXAMPLESDIR}/)
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
-.if !defined(NOPORTDATA)
+.if ${PORT_OPTIONS:MDATA}
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} struct/\* ${DATADIR}/)
 	@${ECHO_MSG} "===> SQL data structures installed in ${DATADIR}."
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/ && ${CP} -R README Changes TODO doc ${DOCSDIR}/)
 	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
