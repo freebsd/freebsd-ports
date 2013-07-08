@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Log/Dispatch/ApacheLog.pm
 %%SITE_PERL%%/Log/Dispatch/Base.pm
 %%SITE_PERL%%/Log/Dispatch/Code.pm
+%%SITE_PERL%%/Log/Dispatch/Conflicts.pm
 %%SITE_PERL%%/Log/Dispatch/Email.pm
 %%SITE_PERL%%/Log/Dispatch/Email/MIMELite.pm
 %%SITE_PERL%%/Log/Dispatch/Email/MailSend.pm
