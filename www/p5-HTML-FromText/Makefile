@@ -1,23 +1,20 @@
-# New ports collection makefile for:	HTML::FromText
-# Date created:				04 November 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		HTML-FromText
-PORTVERSION=		2.05
-PORTREVISION=		1
+PORTVERSION=		2.06
 CATEGORIES=		www perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		danilogondolfo@gmail.com
 COMMENT=	Mark up text as HTML
 
-BUILD_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
-		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Email-Find>=0.09:${PORTSDIR}/mail/p5-Email-Find \
+		p5-HTML-Parser>=1.26:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
