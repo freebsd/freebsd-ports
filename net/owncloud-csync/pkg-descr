@@ -1,0 +1,9 @@
+Csync is a lightweight utility to synchronize files between two directories on
+a system or between multiple systems.
+
+It synchronizes bidirectionally and allows the user to keep two copies of files
+and directories in sync. csync uses widely adopted protocols, such as smb or
+sftp, so that there is no need for a server component. It is a user-level
+program which means you do not to be a superuser or administrator.
+
+WWW: http://owncloud.org/sync-clients/

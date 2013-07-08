@@ -1,0 +1,50 @@
+bin/ocsync
+%%ETCDIR%%/ocsync.conf
+%%ETCDIR%%/ocsync_exclude.conf
+%%DOCSDIR%%/userguide/csync.html
+%%DOCSDIR%%/userguide/images/icons/README
+%%DOCSDIR%%/userguide/images/icons/callouts/1.png
+%%DOCSDIR%%/userguide/images/icons/callouts/10.png
+%%DOCSDIR%%/userguide/images/icons/callouts/11.png
+%%DOCSDIR%%/userguide/images/icons/callouts/12.png
+%%DOCSDIR%%/userguide/images/icons/callouts/13.png
+%%DOCSDIR%%/userguide/images/icons/callouts/14.png
+%%DOCSDIR%%/userguide/images/icons/callouts/15.png
+%%DOCSDIR%%/userguide/images/icons/callouts/2.png
+%%DOCSDIR%%/userguide/images/icons/callouts/3.png
+%%DOCSDIR%%/userguide/images/icons/callouts/4.png
+%%DOCSDIR%%/userguide/images/icons/callouts/5.png
+%%DOCSDIR%%/userguide/images/icons/callouts/6.png
+%%DOCSDIR%%/userguide/images/icons/callouts/7.png
+%%DOCSDIR%%/userguide/images/icons/callouts/8.png
+%%DOCSDIR%%/userguide/images/icons/callouts/9.png
+%%DOCSDIR%%/userguide/images/icons/caution.png
+%%DOCSDIR%%/userguide/images/icons/example.png
+%%DOCSDIR%%/userguide/images/icons/home.png
+%%DOCSDIR%%/userguide/images/icons/important.png
+%%DOCSDIR%%/userguide/images/icons/next.png
+%%DOCSDIR%%/userguide/images/icons/note.png
+%%DOCSDIR%%/userguide/images/icons/prev.png
+%%DOCSDIR%%/userguide/images/icons/tip.png
+%%DOCSDIR%%/userguide/images/icons/up.png
+%%DOCSDIR%%/userguide/images/icons/warning.png
+include/ocsync/csync.h
+include/ocsync/csync_vio.h
+include/ocsync/csync_vio_file_stat.h
+include/ocsync/csync_vio_handle.h
+include/ocsync/csync_vio_method.h
+include/ocsync/csync_vio_module.h
+lib/libocsync.so
+lib/libocsync.so.0
+lib/libocsync.so.0.2.0
+lib/ocsync-0/ocsync_owncloud.so
+lib/ocsync-0/ocsync_sftp.so
+lib/ocsync-0/ocsync_smb.so
+@dirrm lib/ocsync-0
+@dirrm include/ocsync
+@dirrmtry %%ETCDIR%%
+@dirrm %%DOCSDIR%%/userguide/images/icons/callouts
+@dirrm %%DOCSDIR%%/userguide/images/icons
+@dirrm %%DOCSDIR%%/userguide/images
+@dirrm %%DOCSDIR%%/userguide
+@dirrmtry %%DOCSDIR%%
