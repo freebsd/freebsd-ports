@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmorse
-# Date created:				24 Novermber 2007
-# Whom:					Sunry Chen <sunrychen@gmail.com>
-#
+# Created by: Sunry Chen <sunrychen@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmorse
 PORTVERSION=	20041125
@@ -17,11 +13,10 @@ DISTNAME=	m${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunrychen@gmail.com
-COMMENT=	A fully automatic Morse code teaching machine
+COMMENT=	Fully automatic Morse code teaching machine
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_DISPLAY=	yes
 USE_SDL=	sdl
 
 PLIST_FILES=	bin/xmorse
