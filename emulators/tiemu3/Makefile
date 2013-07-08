@@ -37,11 +37,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-.if !defined(WITH_KDE)
 CONFIGURE_ARGS+=	--without-kde
-.else
-USE_KDELIBS_VER=	3
-.endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,(install-data-am:).*$$,\1,' ${WRKSRC}/Makefile.in
