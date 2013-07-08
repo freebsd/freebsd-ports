@@ -3,6 +3,7 @@
 
 PORTNAME=	kdesvn
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 
