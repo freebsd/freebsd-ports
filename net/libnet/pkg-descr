@@ -14,7 +14,6 @@ Using libnet, quick and simple packet assembly applications can be whipped up
 with little effort.  With a bit more time, more complex programs can be written
 (Traceroute and ping were easily rewritten using libnet and libpcap).
 
-Libnet is distrubuted under the BSD license.
+Libnet is distributed under the BSD license.
 
-Author: Mike D. Schiffman <mike at infonexus dot com>
 WWW: http://www.packetfactory.net/projects/libnet/
