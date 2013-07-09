@@ -2,6 +2,7 @@
 
 PORTNAME=	kpcli
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/kpcli/
 EXTRACT_SUFX=	.pl
@@ -17,11 +18,12 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:${PORTSDIR}/security/p5-Crypt-Rijndael \
 		p5-Sort-Naturally>=1.02:${PORTSDIR}/textproc/p5-Sort-Naturally \
 		p5-File-KeePass>=2.03:${PORTSDIR}/security/p5-File-KeePass \
 		p5-Term-ShellUI>=0.9:${PORTSDIR}/shells/p5-Term-ShellUI \
-		p5-ReadLine-Gnu>=1.19:${PORTSDIR}/devel/p5-ReadLine-Gnu
+		p5-ReadLine-Gnu>=1.19:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-Data-Password>=0:${PORTSDIR}/security/p5-Data-Password
+
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PERL5=	yes
-
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/kpcli
