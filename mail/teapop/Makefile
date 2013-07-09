@@ -11,7 +11,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 		http://www.toontown.org/pub/teapop/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another RFC1939 compliant POP3 server
 
 GNU_CONFIGURE=		yes

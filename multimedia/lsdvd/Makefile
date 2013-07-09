@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20I%20hate%20James%20Blunt
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread

@@ -9,7 +9,7 @@ PORTVERSION=	9
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry data like element and isotope properties, atomic radii, etc
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt

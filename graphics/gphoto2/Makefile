@@ -6,7 +6,7 @@ PORTVERSION=	2.4.14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line frontend to libgphoto2
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \

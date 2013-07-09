@@ -15,7 +15,7 @@ MASTER_SITES=	http://njhurst.org/programming/cross-stitch/ \
 MASTER_SITE_SUBDIR=	pav
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Stitch software
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging

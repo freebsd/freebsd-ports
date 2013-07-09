@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	SF/chemical-mime/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of chemical MIME types for UNIX desktops
 
 BUILD_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \

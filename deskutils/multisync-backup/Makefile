@@ -6,7 +6,7 @@
 
 PORTNAME=	multisync-backup
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multisync backup plugin
 
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync

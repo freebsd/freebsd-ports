@@ -13,7 +13,7 @@ MASTER_SITES=	http://gdesklets.zencomputer.ca/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	${PORTNAME}-desklet-${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays the GNOME tasklist and floats above the other windows
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets

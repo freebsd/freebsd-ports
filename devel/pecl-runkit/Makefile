@@ -14,7 +14,7 @@ DISTNAME=	runkit-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension to modify constants, user-defined functions, and classes
 
 USE_PHP=	yes

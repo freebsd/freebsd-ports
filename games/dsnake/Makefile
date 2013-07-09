@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deluxe Snake - snake clone with frogs and mushrooms
 
 RESTRICTED=	Licence forbids any repacking and reselling

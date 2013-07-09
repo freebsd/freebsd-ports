@@ -6,7 +6,7 @@
 
 PORTNAME=	multisync-syncml
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multisync plugin for SyncML targets
 
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync

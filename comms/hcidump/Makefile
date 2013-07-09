@@ -10,7 +10,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	comms sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluetooth traffic dumper, similar to tcpdump
 
 LICENSE=	GPLv2

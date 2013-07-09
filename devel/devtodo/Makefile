@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://swapoff.org/files/devtodo/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to effectively maintain todo lists aimed at developers
 
 CONFLICTS=	tdl-[0-9]* todo-[0-9]*

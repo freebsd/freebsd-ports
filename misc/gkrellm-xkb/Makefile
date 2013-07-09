@@ -11,7 +11,7 @@ PORTREVISION=	10
 CATEGORIES=	misc x11
 MASTER_SITES=	http://www.sweb.cz/tripie/gkrellm/xkb/dist/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X keyboard layout plugin for GKrellM
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

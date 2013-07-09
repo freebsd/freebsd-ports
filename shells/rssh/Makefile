@@ -10,7 +10,7 @@ PORTVERSION=	2.3.4
 CATEGORIES=	shells security
 MASTER_SITES=	SF
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Restricted Secure SHell only for sftp or/and scp
 
 GNU_CONFIGURE=	yes

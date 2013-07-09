@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.jochen-baier.de/istream/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet radio player applet for GNOME Panel
 
 USE_GMAKE=	yes

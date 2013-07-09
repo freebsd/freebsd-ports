@@ -5,7 +5,7 @@ PORTNAME=	Spreadsheet_Excel_Writer
 PORTVERSION=	0.9.2
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for writing Microsoft Excel files
 
 BUILD_DEPENDS=	${PEARDIR}/OLE.php:${PORTSDIR}/devel/pear-OLE \

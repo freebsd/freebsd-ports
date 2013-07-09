@@ -9,7 +9,7 @@ PORTVERSION=	2.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rzip.samba.org/ftp/rzip/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compression program similar to gzip or bzip2
 
 GNU_CONFIGURE=	yes

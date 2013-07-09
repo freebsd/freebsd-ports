@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/Stable%20Branch/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slick yet powerful text editor for GNOME
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus

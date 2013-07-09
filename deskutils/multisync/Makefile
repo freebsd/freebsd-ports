@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/multisync/OldFiles
 DISTNAME=	multisync-${PORTVERSION}
 
-MAINTAINER?=	pav@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Synchronize calendars, addressbooks, and other PIM data
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
