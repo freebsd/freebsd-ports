@@ -57,30 +57,30 @@
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_lex
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_smlbas
-+	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats
-+	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats_lex
-+	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats_smlbas
++	$(ATSLIB) $(ATS_PROOFCHECK) $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) $(CFLAGS) --libats_lex
++	$(ATSLIB) $(ATS_PROOFCHECK) $(CFLAGS) --libats_smlbas
  
  lib32files: .libfiles_local
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats_lex
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats_smlbas
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats_lex
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats_smlbas
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 $(CFLAGS) --libats_lex
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 $(CFLAGS) --libats_smlbas
  
  lib64files: .libfiles_local
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats_lex
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats_smlbas
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats_lex
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats_smlbas
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 $(CFLAGS) --libats_lex
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 $(CFLAGS) --libats_smlbas
  
  .libfiles_mt_local: .libfiles_mt ; $(CC) -E -P -x c -o $@ $<
  libfiles_mt: .libfiles_mt_local
 -	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD -O2 --libats_mt
-+	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD -O2 $(CFLAGS) --libats_mt
++	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD $(CFLAGS) --libats_mt
  
  libatsdoca: ; $(MAKE) -C libatsdoc
  
