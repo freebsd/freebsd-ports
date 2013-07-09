@@ -20,7 +20,7 @@ HAS_CONFIGURE=	yes
 
 QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4
+WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4Qt5
 
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
