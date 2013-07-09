@@ -16,11 +16,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
 USE_BZIP2=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake
 USE_GNOME=	gnomeprefix pygnomedesktop intlhack
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-USE_DISPLAY=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
