@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
+PORTREVISION=	3
 
-COMMENT=	QT4 version of the gnupg password dialog
+COMMENT=	Qt 4 version of the gnupg password dialog
 
 CONFLICTS_INSTALL=	pinentry-[0-9]* pinentry-curses-* pinentry-gtk-* \
 		pinentry-gtk2-* pinentry-qt-*
