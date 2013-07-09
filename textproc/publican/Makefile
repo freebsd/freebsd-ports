@@ -1,9 +1,5 @@
-# New ports collection makefile for:	publican
-# Date created:		2012-08-16
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	publican
 PORTVERSION=	2.8
@@ -12,13 +8,12 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/publican/Publican-${PORTVE
 DISTNAME=	Publican-${PORTVERSION}
 
 MAINTAINER=	doceng@FreeBSD.org
-COMMENT=	A single source publishing tool based on DocBook XML.
+COMMENT=	Single source publishing tool based on DocBook XML.
 
 USE_JAVA=	yes
 PERL_MODBUILD=	yes
 
 MAKE_JOBS_UNSAFE=	yes
-USE_DISPLAY=	yes
 
 BUILD_DEPENDS=	\
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
@@ -78,8 +73,6 @@ MAN3=	Publican.3 Publican::Builder.3 Publican::CreateBook.3 \
 	Publican::CreateBrand.3 Publican::Localise.3 Publican::Translate.3 \
 	Publican::TreeView.3 Publican::WebSite.3 Publican::XmlClean.3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%DATADIR%%,${DATADIR},g' \
@@ -99,4 +92,4 @@ post-patch:
 			${WRKSRC}/lib/Publican/Builder.pm \
 			${WRKSRC}/lib/Publican/WebSite.pm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
