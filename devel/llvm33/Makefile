@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -95,7 +96,7 @@ CONFIGURE_ARGS+=	--disable-docs
 BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
 CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
-PLIST_FILES+=		lib/LLVMgold.so
+PLIST_FILES+=		llvm${LLVM_SUFFIX}/lib/LLVMgold.so
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
