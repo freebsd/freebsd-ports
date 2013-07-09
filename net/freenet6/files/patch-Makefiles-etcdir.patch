@@ -15,6 +15,42 @@
  clean: 
 --- Makefile.orig	2009-11-15 19:50:40.000000000 +0100
 +++ Makefile	2009-11-15 19:50:57.000000000 +0100
+@@ -74,7 +74,7 @@
+ #
+ .PHONY: all platform-check check-gw6c-pal check-gw6c-config check-gw6c-messaging build-gw6c check-gw6c-install install clean cleanall
+ 
+-all: platform-check check-gw6c-pal check-gw6c-config check-gw6c-messaging build-gw6c
++all: platform-check check-gw6c-config check-gw6c-messaging build-gw6c
+ 
+ 
+ # This makefile target will check the platform.
+@@ -117,7 +117,7 @@
+ # This makefile target will check and build the Gateway6 Client Configuration
+ # Subsystem if it is not built.
+ #
+-check-gw6c-config:
++check-gw6c-config:	check-gw6c-pal
+ 	@[ -d ${GW6CCFG_DIR} ] || { \
+ 	    echo "Gateway6 Client Configuration Subsystem module is not found. (${GW6CCFG_DIR})"; \
+ 	    exit 1 ; \
+@@ -131,7 +131,7 @@
+ # This makefile target will check and build the Gateway6 Client Messaging
+ # Subsystem if it is not built.
+ #
+-check-gw6c-messaging:
++check-gw6c-messaging:	check-gw6c-pal
+ 	@[ -d ${GW6CMSG_DIR} ] || { \
+ 	    echo "Gateway6 Client Messaging Subsystem module is not found. (${GW6CMSG_DIR})"; \
+ 	    exit 1 ; \
+@@ -144,7 +144,7 @@
+ 
+ # This makefile target will build the Gateway6 Client.
+ #
+-build-gw6c:
++build-gw6c:	check-gw6c-pal
+ 	mkdir -p $(OBJS_DIR)
+ 	mkdir -p $(BIN_DIR)
+ 	@for dir in ${SUBDIRS}; do \
 @@ -167,17 +167,14 @@
  	@mkdir -p $(INSTALL_DIR)
  	@mkdir -p $(INSTALL_BIN)
