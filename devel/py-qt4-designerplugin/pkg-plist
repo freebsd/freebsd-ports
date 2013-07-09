@@ -1,5 +1,1 @@
 %%QT_PLUGINDIR_REL%%/designer/libpyqt4.so
-%%QT_PLUGINDIR_REL%%/designer/libpythonplugin.so
-@exec mkdir -p %D/%%QT_PLUGINDIR_REL%%/designer/python
-@dirrmtry %%QT_PLUGINDIR_REL%%/designer/python
-@dirrmtry %%QT_PLUGINDIR_REL%%/designer
