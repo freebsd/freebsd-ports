@@ -13,7 +13,7 @@ COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
 OPTIONS_DEFINE=	DOCS
 
-USE_MOTIF=	yes
+USES=		motif
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message

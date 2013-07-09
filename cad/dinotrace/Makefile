@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dinotrace
-# Date created:		July 05, 2004
-# Whom:			Joachim Strombergson <watchman@ludd.ltu.se>
-#
+# Created by: Joachim Strombergson <watchman@ludd.ltu.se>
 # $FreeBSD$
-#
 
 PORTNAME=	dinotrace
 PORTVERSION=	9.4c
@@ -13,16 +9,15 @@ MASTER_SITES=	http://www.veripool.org/ftp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical signal trace waveform viewer
+COMMENT=	Graphical signal trace waveform viewer
 
 OPTIONS_DEFINE=	EMACS
 OPTIONS_DEFAULT=	EMACS
 EMACS_DESC=	Install Emacs supplimentary files
 
 USE_XORG=	x11 sm ice xmu xt
-USE_MOTIF=	yes
+USES=		gmake motif
 USE_PERL5_BUILD=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
