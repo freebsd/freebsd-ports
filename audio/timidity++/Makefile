@@ -58,13 +58,6 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME=	esound
-CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
-.else
-CONFIGURE_ARGS+=--enable-audio=oss,vorbis
-.endif
-
 pre-su-install:
 	@${MKDIR} ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
 
@@ -76,6 +69,15 @@ post-install::
 .else # defined(PKGNAMESUFFIX)
 .include "${MASTERDIR}/Makefile.interface"
 .endif # !defined(PKGNAMESUFFIX)
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME=	esound
+CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
+.else
+CONFIGURE_ARGS+=--enable-audio=oss,vorbis
+.endif
 
 post-install::
 .if !defined(NOPORTDOCS) && defined(DOCFILES)
@@ -89,4 +91,4 @@ post-install::
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
