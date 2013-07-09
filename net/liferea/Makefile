@@ -1,26 +1,24 @@
-# Ports collection Makefile for:	liferea
-# Date created:		28 August 2003
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liferea
 PORTVERSION=	1.8.7
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
+LICENSE=	GPLv2
 
-USE_GNOME=	gnomeprefix gnomehack gconf2
-USE_GMAKE=	yes
+LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
+		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
+		json-glib-1.0:${PORTSDIR}/devel/json-glib
+
+USES=		gmake pathfix
+USE_GNOME=	gnomeprefix gconf2
 USE_AUTOTOOLS=	libtool
+USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,7 +29,5 @@ MAN1=		liferea.1
 MANLANG=	"" pl
 GCONF_SCHEMAS=	liferea.schemas
 INSTALLS_ICONS=	yes
-
-LICENSE=	GPLv2
 
 .include <bsd.port.mk>
