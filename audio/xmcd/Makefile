@@ -14,8 +14,7 @@ LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		FLAC:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
-USES=		imake
-USE_MOTIF=	yes
+USES=		imake motif
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no

@@ -19,9 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
 CONFLICTS=	timidity-0.*
 .endif
 
+USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 MAKE_JOBS_SAFE=	yes
 
@@ -43,7 +43,7 @@ LDFLAGS+=	-export-dynamic
 DOCFILES=	README.alsaseq README.dl README.m2m README.mts README.sf
 DOCLANG=	C ja_JP.eucJP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 MANLANG=	"" ja
 MAN1=		timidity.1
@@ -89,4 +89,4 @@ post-install::
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

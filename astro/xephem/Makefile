@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xephem
-# Date created:         Thu Aug  1 09:10:22 CDT 1996
-# Whom:                 erich@FreeBSD.org
-#
+# Created by: erich@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.5
@@ -17,8 +13,7 @@ COMMENT=	An interactive astronomical ephemeris program
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_MOTIF=	yes
-USE_GMAKE=	yes
+USES=		gmake motif
 USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes
 
