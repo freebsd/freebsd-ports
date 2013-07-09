@@ -3,6 +3,7 @@
 
 PORTNAME=	Moose
 PORTVERSION=	2.0802
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -34,19 +35,8 @@ BUILD_DEPENDS=	\
 	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	\
-	p5-DBM-Deep>=0:${PORTSDIR}/databases/p5-DBM-Deep \
-	p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
-	p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Constraints-Simple \
-	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
-	p5-Module-Refresh>=0.01:${PORTSDIR}/devel/p5-Module-Refresh \
-	p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
-	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
-	p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
-	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Test-DependentModules>=0.13:${PORTSDIR}/devel/p5-Test-DependentModules \
 	p5-Test-CheckDeps>=0:${PORTSDIR}/devel/p5-Test-CheckDeps
 
 CFLAGS+=	-I.	# mop.h
