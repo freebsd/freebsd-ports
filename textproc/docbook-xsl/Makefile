@@ -2,6 +2,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.76.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
 		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -27,6 +28,7 @@ SUB_LIST+=	INSTDIR="${INSTDIR}" \
 		CATALOG_PORTS="${LOCALBASE}/share/xml/catalog.ports"
 
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
+CATALOG_XSL=	${WRKSRC}/catalog
 
 MODULES=	common fo html images lib manpages params xhtml
 
@@ -51,6 +53,14 @@ TESTS_DESC=		Test tools
 TOOLS_DESC=		Tools
 WEBSITE_DESC=		Website modules
 XHTML11_DESC=		XHTML 1.1 modules
+
+DXVERSIONS=	1.36 1.37 1.38 1.39 1.40 1.41 1.42 1.43 1.44 1.45 1.46 1.47 \
+		1.48 1.49 1.50.0 1.51.0 1.51.1 1.52.0 1.52.1 1.52.2 1.53.0 \
+		1.54.0 1.54.1 1.55.0 1.56.0 1.56.1 1.57.0 1.58.0 1.58.1 \
+		1.59.0 1.59.1 1.59.2 1.60.0 1.60.1 1.61.0 1.61.1 1.61.2 \
+		1.61.3 1.62.0 1.62.1 1.62.2 1.62.3 1.62.4 1.63.0 1.64.0 \
+		1.64.1 1.65.0 1.65.1 1.66.0 1.66.1 1.67.0 1.67.2 1.68.0 \
+		1.68.1 1.69.0 1.69.1 1.70.0 1.70.1 1.71.0 1.71.1 current
 
 .include <bsd.port.options.mk>
 
@@ -168,6 +178,15 @@ do-install:
 		for i in $${files}; do \
 			${INSTALL_DATA} $${i} ${PREFIX}/${INSTDIR}/${m}; \
 		done
+.endfor
+		${XMLCATMGR} -c ${CATALOG_XSL} create
+.for dxversion in ${DXVERSIONS}
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+		http://docbook.sourceforge.net/release/xsl/${dxversion} \
+		"file://${PREFIX}/${INSTDIR}"
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+		http://docbook.sourceforge.net/release/xsl/${dxversion} \
+		"file://${PREFIX}/${INSTDIR}"
 .endfor
 		files=$$(${FIND} ${WRKSRC} -type f -depth 1); \
 		for i in $${files}; do \
