@@ -39,9 +39,10 @@ samba4_piddir=$(${testparm_command} --parameter-name='pid directory' 2>/dev/null
 # Runtime options
 start_precmd="samba4_prestart"
 restart_precmd="samba4_checkconfig"
-command="%%PREFIX%%/sbin/${name}"
+command_name="samba"
+command="%%PREFIX%%/sbin/${command_name}"
 command_args=${samba4_configfile_arg}
-pidfile="%%SAMBA4_RUNDIR%%/samba.pid"
+pidfile="%%SAMBA4_RUNDIR%%/${command_name}.pid"
 # Requirements
 required_files="${samba4_config}"
 required_dirs="${samba4_lockdir}"
@@ -58,12 +59,12 @@ samba4_checkconfig() {
 
 samba4_prestart() {
     # Make sure we have our RUNDIR, even if it's on a tmpfs
-    if [ ! -d "%%SAMBA4_RUNDIR%%" -a ! -e "%%SAMBA4_RUNDIR%%" ]; then
-	install -m 0755 -d "%%SAMBA4_RUNDIR%%"
+    if [ ! -d "${samba4_piddir}" -a ! -e "${samba4_piddir}" ]; then
+	install -m 0755 -d "${samba4_piddir}"
     fi
     # Remove smbd.pid before starting up samba(needed for s3fs)
-    if [ -e "%%SAMBA4_RUNDIR%%/smbd.pid" ] ; then
-	rm -f "%%SAMBA4_RUNDIR%%/smbd.pid"
+    if [ -e "${samba4_piddir}/smbd.pid" ] ; then
+	rm -f "${samba4_piddir}/smbd.pid"
     fi
 }
 
