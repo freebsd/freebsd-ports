@@ -14,9 +14,8 @@ COMMENT=	Motif based FM tuner (for use with bt848 driver)
 # useful if you are into digital audio recording and playback.
 #RUN_DEPENDS=   sox:${PORTSDIR}/audio/sox
 
-USES=		imake
+USES=		imake motif
 USE_XORG=	xpm
-USE_MOTIF=	yes
 ONLY_FOR_ARCHS=	i386 ia64
 
 PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio

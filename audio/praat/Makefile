@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	praat
-# Date created:		21-Feb-2006
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	praat
 PORTVERSION=	4.6.39
@@ -17,7 +13,7 @@ COMMENT=	Phonetics by Computer
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*Makefile
-USE_MOTIF=	yes
+USES=		motif
 WRKSRC=		${WRKDIR}/sources_4639
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat

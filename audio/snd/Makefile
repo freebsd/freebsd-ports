@@ -29,7 +29,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
@@ -65,7 +65,7 @@ USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
 .endif
 .if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES+=		motif
 CONFIGURE_ARGS+=	--with-motif
 .endif
 
@@ -108,4 +108,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

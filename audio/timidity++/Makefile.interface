@@ -47,7 +47,7 @@ USE_GNOME=	gtk12
 .if ${INTERFACE} == "motif"
 LINK=		xmmidi
 
-USE_MOTIF=	yes
+USES+=		motif
 
 CONFIGURE_ENV+=	MOTIFLIB="${MOTIFLIB}"
 .endif
