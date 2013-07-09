@@ -10,7 +10,7 @@ PORTVERSION=	0.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
 
 GNU_CONFIGURE=	yes

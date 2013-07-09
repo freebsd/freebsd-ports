@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ppa.launchpad.net/teknoraver/ppa/ubuntu/pool/main/a/aacplusenc/
 DISTFILES=	${DISTNAME:S,-,_,}${EXTRACT_SUFX}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An aacPlus v2 command-line encoder
 
 USE_GMAKE=	yes

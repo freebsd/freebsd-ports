@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.remote.org/jochen/mail/popular/download/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of programs for setting up large POP3 server systems
 
 BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM

@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://makovick.googlepages.com/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin reading data from helium thermometer at Strahov, Prague
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJ mixing software suitable for live performances
 
 DEPRECATED=	Broken for a while

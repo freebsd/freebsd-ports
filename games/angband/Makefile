@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
 
 USE_GMAKE=	yes

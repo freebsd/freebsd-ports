@@ -10,7 +10,7 @@ PORTVERSION=	0.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://arthurdejong.org/rl/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Randomizes lines from a specified input file
 
 GNU_CONFIGURE=	yes

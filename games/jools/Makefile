@@ -10,7 +10,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://pessimization.com/software/jools/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive jewel-swapping puzzle game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game

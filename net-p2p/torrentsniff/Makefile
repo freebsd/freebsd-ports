@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	net-p2p perl5
 MASTER_SITES=	http://www.highprogrammer.com/alan/perl/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline tool for getting status of torrent
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \

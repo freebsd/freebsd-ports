@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://homepage.ntlworld.com/jfe1205/OggVorbis/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Split multiplexed (grouped or chained) Ogg files into separate streams
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg

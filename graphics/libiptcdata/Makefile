@@ -10,7 +10,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files
 
 USE_AUTOTOOLS=	libtool

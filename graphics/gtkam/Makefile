@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
 LIB_DEPENDS=	exif-gtk:${PORTSDIR}/graphics/libexif-gtk \

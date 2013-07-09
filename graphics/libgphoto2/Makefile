@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal digital camera picture control tool
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
