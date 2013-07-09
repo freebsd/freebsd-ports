@@ -51,11 +51,6 @@ ${KDE4_L10N}_${i}_PORT_SUFFIX?=	#
 ${KDE4_L10N}_${i}_PORT?=	${${KDE4_L10N}_CATEGORY}/${${KDE4_L10N}_${i}_PORT_PREFIX}${i}${${KDE4_L10N}_${i}_PORT_SUFFIX}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-OPTIONS_DEFINE=		#
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-
 .if exists(${PORTSDIR}/${${KDE4_L10N}_aspell_PORT}/Makefile)
 OPTIONS_DEFINE+=	ASPELL
 ASPELL_DESC=		Install aspell dictionary
@@ -66,12 +61,5 @@ OPTIONS_DEFINE+=	HUNSPELL
 HUNSPELL_DESC=		Install hunspell dictionary
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${OPTIONS_DEFINE:MASPELL} && ${PORT_OPTIONS:MASPELL}
-RUN_DEPENDS+=	${${KDE4_L10N}_aspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_aspell_PORT}
-.endif
-
-.if ${OPTIONS_DEFINE:MHUNSPELL} && ${PORT_OPTIONS:MHUNSPELL}
-RUN_DEPENDS+=	${${KDE4_L10N}_hunspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_hunspell_PORT}
-.endif
+ASPELL_RUN_DEPENDS+=	${${KDE4_L10N}_aspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_aspell_PORT}
+HUNSPELL_RUN_DEPENDS+=	${${KDE4_L10N}_hunspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_hunspell_PORT}

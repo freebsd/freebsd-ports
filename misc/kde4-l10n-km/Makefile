@@ -10,5 +10,4 @@ COMMENT=	Khmer messages and documentation for KDE SC 4
 
 KDE4_L10N=	km
 
-.include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
