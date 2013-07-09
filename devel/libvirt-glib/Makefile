@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-glib
-PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTVERSION=	0.1.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Glib bindings for Libvirt virtualization API
 
-BUILD_DEPENDS=	gobject-introspection>=1.34.2:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS=	gobject-introspection>=1.34.2:${PORTSDIR}/devel/gobject-introspection \
+		intltool-update:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
 
 GNU_CONFIGURE=	yes
