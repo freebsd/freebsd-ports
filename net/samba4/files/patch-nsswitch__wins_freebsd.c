@@ -1,6 +1,6 @@
---- ./nsswitch/wins_freebsd.c.orig	2010-04-23 01:08:35.000000000 +0200
-+++ ./nsswitch/wins_freebsd.c	2010-04-23 01:08:35.000000000 +0200
-@@ -0,0 +1,79 @@
+--- ./nsswitch/wins_freebsd.c.orig	2013-07-03 01:06:20.689871582 +0000
++++ ./nsswitch/wins_freebsd.c	2013-07-03 01:33:02.779873084 +0000
+@@ -0,0 +1,81 @@
 +/* 
 +   Unix SMB/CIFS implementation.
 +
@@ -24,8 +24,10 @@
 +
 +#include "winbind_client.h"
 +
-+NSS_STATUS _nss_wins_gethostbyname2_r(const char *name, int af, struct hostent *he,
++extern enum nss_status _nss_wins_gethostbyname2_r(const char *name, int af, struct hostent *he,
 +			   char *buffer, size_t buflen, int *h_errnop);
++
++ns_mtab *nss_module_register(const char *source, unsigned int *, nss_module_unregister_fn *);
 +
 +NSS_METHOD_PROTOTYPE(__nss_wins_freebsd_gethostbyname2_r);
 +

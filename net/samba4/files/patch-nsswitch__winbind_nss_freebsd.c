@@ -1,5 +1,5 @@
 --- ./nsswitch/winbind_nss_freebsd.c.orig	2012-10-02 08:24:41.000000000 +0000
-+++ ./nsswitch/winbind_nss_freebsd.c	2013-03-13 09:40:37.285778609 +0000
++++ ./nsswitch/winbind_nss_freebsd.c	2013-07-03 01:27:00.339935089 +0000
 @@ -5,6 +5,7 @@
     routines against Samba winbind/Windows NT Domain
  
@@ -8,7 +8,32 @@
  
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
-@@ -53,6 +54,9 @@
+@@ -23,7 +24,6 @@
+ #include "winbind_client.h"
+ 
+ /* Make sure that the module gets registered needed by freebsd 5.1 */
+-
+ extern enum nss_status _nss_winbind_getgrent_r(struct group *, char *, size_t,
+     int *);
+ extern enum nss_status _nss_winbind_getgrnam_r(const char *, struct group *,
+@@ -32,6 +32,8 @@
+     size_t, int *);
+ extern enum nss_status _nss_winbind_setgrent(void);
+ extern enum nss_status _nss_winbind_endgrent(void);
++extern enum nss_status _nss_winbind_initgroups_dyn(char *, gid_t, long int *,
++    long int *, gid_t **, long int , int *);
+ 
+ extern enum nss_status _nss_winbind_getpwent_r(struct passwd *, char *, size_t,
+     int *);
+@@ -41,6 +43,7 @@
+     size_t, int *);
+ extern enum nss_status _nss_winbind_setpwent(void);
+ extern enum nss_status _nss_winbind_endpwent(void);
++ns_mtab *nss_module_register(const char *, unsigned int *, nss_module_unregister_fn *);
+ 
+ NSS_METHOD_PROTOTYPE(__nss_compat_getgrnam_r);
+ NSS_METHOD_PROTOTYPE(__nss_compat_getgrgid_r);
+@@ -53,6 +56,9 @@
  NSS_METHOD_PROTOTYPE(__nss_compat_getpwent_r);
  NSS_METHOD_PROTOTYPE(__nss_compat_setpwent);
  NSS_METHOD_PROTOTYPE(__nss_compat_endpwent);
@@ -18,7 +43,7 @@
  
  static ns_mtab methods[] = {
  { NSDB_GROUP, "getgrnam_r", __nss_compat_getgrnam_r, _nss_winbind_getgrnam_r },
-@@ -60,6 +64,7 @@
+@@ -60,6 +66,7 @@
  { NSDB_GROUP, "getgrent_r", __nss_compat_getgrent_r, _nss_winbind_getgrent_r },
  { NSDB_GROUP, "setgrent",   __nss_compat_setgrent,   _nss_winbind_setgrent },
  { NSDB_GROUP, "endgrent",   __nss_compat_endgrent,   _nss_winbind_endgrent },
@@ -26,7 +51,7 @@
  
  { NSDB_PASSWD, "getpwnam_r", __nss_compat_getpwnam_r, _nss_winbind_getpwnam_r },
  { NSDB_PASSWD, "getpwuid_r", __nss_compat_getpwuid_r, _nss_winbind_getpwuid_r },
-@@ -69,6 +74,71 @@
+@@ -69,6 +76,71 @@
  
  };
  

@@ -30,16 +30,16 @@ bin/smbspool
 bin/smbstatus
 bin/smbta-util
 bin/smbtorture
+bin/smbtar
 bin/smbtree
 bin/testparm
 bin/wbinfo
 sbin/nmbd
-sbin/samba4
+sbin/samba
 sbin/samba_dnsupdate
 sbin/samba_kcc
 sbin/samba_spnupdate
 sbin/samba_upgradedns
-sbin/samba_upgradeprovision
 sbin/smbd
 %%SWAT%%sbin/swat
 %%WINBIND%%sbin/winbindd
@@ -403,6 +403,7 @@ lib/shared-modules/vfs/full_audit.so
 lib/shared-modules/vfs/linux_xfs_sgid.so
 lib/shared-modules/vfs/media_harmony.so
 lib/shared-modules/vfs/netatalk.so
+@comment vfs_notify_fam lib/shared-modules/vfs/notify_fam.so
 lib/shared-modules/vfs/posix_eadb.so
 lib/shared-modules/vfs/preopen.so
 lib/shared-modules/vfs/readahead.so
@@ -478,6 +479,7 @@ libdata/pkgconfig/smbclient-raw.pc
 libdata/pkgconfig/smbsharemodes.pc
 libdata/pkgconfig/torture.pc
 libdata/pkgconfig/wbclient.pc
+%%DEVELOPER%%%%PYTHON_SITELIBDIR%%/samba/socket_wrapper.so
 %%PYTHON_SITELIBDIR%%/samba/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/_glue.so
 %%PYTHON_SITELIBDIR%%/samba/_ldb.so
@@ -519,6 +521,7 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/wkssvc.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/xattr.so
 %%PYTHON_SITELIBDIR%%/samba/dckeytab.so
+%%PYTHON_SITELIBDIR%%/samba/descriptor.py
 %%PYTHON_SITELIBDIR%%/samba/drs_utils.py
 %%PYTHON_SITELIBDIR%%/samba/dsdb.so
 %%PYTHON_SITELIBDIR%%/samba/external/__init__.py
@@ -702,7 +705,6 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/provision/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/provision/backend.py
 %%PYTHON_SITELIBDIR%%/samba/provision/common.py
-%%PYTHON_SITELIBDIR%%/samba/provision/descriptor.py
 %%PYTHON_SITELIBDIR%%/samba/provision/sambadns.py
 %%PYTHON_SITELIBDIR%%/samba/registry.so
 %%PYTHON_SITELIBDIR%%/samba/samba3/__init__.py
@@ -716,7 +718,7 @@ libdata/pkgconfig/wbclient.pc
 %%PYTHON_SITELIBDIR%%/samba/security.so
 %%PYTHON_SITELIBDIR%%/samba/sites.py
 %%PYTHON_SITELIBDIR%%/samba/smb.so
-%%DEVELOPER%%%%PYTHON_SITELIBDIR%%/samba/socket_wrapper.so
+%%PYTHON_SITELIBDIR%%/samba/tdb_util.py
 %%PYTHON_SITELIBDIR%%/samba/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/__init__.py
