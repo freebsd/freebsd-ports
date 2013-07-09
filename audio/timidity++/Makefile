@@ -30,6 +30,8 @@ PLIST_SUB+=	TIMID_LIBDIR=${TIMID_LIBDIR} EUCJP_LOCALE=${EUCJP_LOCALE}
 EUCJP_LOCALE=	ja_JP.eucJP
 TIMID_LIBDIR=	lib/timidity
 
+.include <bsd.port.options.mk>
+
 .if !defined(PKGNAMESUFFIX)
 WANT_GNOME=	yes
 EXTRACT_AFTER_ARGS=	--exclude '*/libarc/*'	\
@@ -42,8 +44,6 @@ LDFLAGS+=	-export-dynamic
 
 DOCFILES=	README.alsaseq README.dl README.m2m README.mts README.sf
 DOCLANG=	C ja_JP.eucJP
-
-.include <bsd.port.options.mk>
 
 MANLANG=	"" ja
 MAN1=		timidity.1
@@ -58,6 +58,15 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME=	esound
+CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
+.else
+CONFIGURE_ARGS+=--enable-audio=oss,vorbis
+.endif
+
 pre-su-install:
 	@${MKDIR} ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
 
@@ -69,15 +78,6 @@ post-install::
 .else # defined(PKGNAMESUFFIX)
 .include "${MASTERDIR}/Makefile.interface"
 .endif # !defined(PKGNAMESUFFIX)
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME=	esound
-CONFIGURE_ARGS+=--enable-audio=oss,esd,vorbis
-.else
-CONFIGURE_ARGS+=--enable-audio=oss,vorbis
-.endif
 
 post-install::
 .if !defined(NOPORTDOCS) && defined(DOCFILES)
