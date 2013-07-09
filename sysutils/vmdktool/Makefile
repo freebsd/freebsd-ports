@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vmdktool
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.Awfulhak.org/vmdktool/ \
 		ftp://ftp.Awfulhak.org/pub/vmdktool/ \
