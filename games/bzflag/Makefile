@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
-COMMENT=	A multiplayer 3D tank battle game
+COMMENT=	Multiplayer 3D tank battle game
 
 LICENSE=	LGPL21
 
