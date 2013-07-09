@@ -1,4 +1,3 @@
-%%GNOME%%bin/gtv
 bin/plaympeg
 bin/smpeg-config
 include/smpeg/MPEG.h
