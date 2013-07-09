@@ -1,9 +1,5 @@
-# New ports collection makefile for:	boinc
-# Date created:				01 October 2004
-# Whom:					J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.0.28
@@ -12,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 USE_XZ=		yes
