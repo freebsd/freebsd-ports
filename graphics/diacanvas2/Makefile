@@ -9,17 +9,15 @@ MASTER_SITES=	SF/diacanvas/DiaCanvas2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A general drawing canvas from dia dialog editor
+COMMENT=	General drawing canvas from dia dialog editor
 
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	pygnome2
 USE_PYTHON=	2.2+
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USE_DISPLAY=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
