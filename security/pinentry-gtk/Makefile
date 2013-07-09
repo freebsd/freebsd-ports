@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
+PORTREVISION=	3
 
 COMMENT=	GTK version of the gnupg password dialog
 
