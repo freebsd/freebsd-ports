@@ -1,0 +1,8 @@
+--- src/llvm/unittests/ExecutionEngine/JIT/JITTests.def.orig	2013-07-09 08:30:41.112596275 +0800
++++ src/llvm/unittests/ExecutionEngine/JIT/JITTests.def	2013-07-09 09:57:30.773783840 +0800
+@@ -2,3 +2,5 @@
+ getPointerToNamedFunction
+ JITTest_AvailableExternallyFunction
+ JITTest_AvailableExternallyGlobal
++__progname
++environ

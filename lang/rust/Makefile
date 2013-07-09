@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:boot
@@ -15,14 +15,13 @@ COMMENT=	A language with a focus on memory safety and concurrency
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2013-03-28-f7a2371-freebsd-x86_64-01f1e4b94504045e763eecb71c7e0852f6e85036
+RUST_BOOT_SIG=	2013-06-23-f827561-freebsd-x86_64-a05bdda2d9ec0e66336d81b98bee8a95442a501f
 RUST_TARGET=	x86_64-unknown-freebsd
 
 ONLY_FOR_ARCHS=	amd64
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.6-2.7
 
@@ -35,7 +34,8 @@ OPTIONS_DEFAULT=	RUSTPKG
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900044
-EXTRA_PATCHES+=	${FILESDIR}/log2.patch
+EXTRA_PATCHES+=	${FILESDIR}/log2.patch \
+		${FILESDIR}/llvm.patch
 .endif
 
 .if ${OSVERSION} >= 900044
@@ -48,8 +48,7 @@ USE_GCC=	yes
 .endif
 
 .if ${PORT_OPTIONS:MRUSTPKG}
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
-		git:${PORTSDIR}/devel/git
+RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
 PLIST_SUB+=	RUSTPKG=""
 .else
 PLIST_SUB+=	RUSTPKG="@comment "

@@ -3,24 +3,26 @@ bin/rustc
 bin/rustdoc
 bin/rusti
 %%RUSTPKG%%bin/rustpkg
-lib/libcore-c3ca5d77d81b46c1-0.6.so
-lib/librust-39583f72884834e3-0.6.so
-lib/librustc-c84825241471686d-0.6.so
-lib/librusti-5047c7f210c7cac8-0.6.so
+lib/libextra-a7c050cfd46b2c9a-0.7.so
+lib/librust-8d2fe0c0fe8188b-0.7.so
+lib/librustc-d3cb8c2ccd84a7a7-0.7.so
+lib/librustdoc-6b49af4948607d84-0.7.so
+lib/librusti-53e0ef2ae196aaff-0.7.so
 lib/librustllvm.so
+lib/librustpkg-38a86178bd95e7e1-0.7.so
 lib/librustrt.so
-lib/libstd-4782a756585a81-0.6.so
-lib/libsyntax-84efebcb12c867a2-0.6.so
-lib/rustc/x86_64-unknown-freebsd/lib/libcore-c3ca5d77d81b46c1-0.6.so
+lib/libstd-6c65cf4b443341b1-0.7.so
+lib/libsyntax-64629f7f0c6a9bc-0.7.so
+lib/rustc/x86_64-unknown-freebsd/lib/libextra-a7c050cfd46b2c9a-0.7.so
 lib/rustc/x86_64-unknown-freebsd/lib/libmorestack.a
-lib/rustc/x86_64-unknown-freebsd/lib/librust-39583f72884834e3-0.6.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustc-c84825241471686d-0.6.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustdoc-1ac3c0763957e4b0-0.6.so
-lib/rustc/x86_64-unknown-freebsd/lib/librusti-5047c7f210c7cac8-0.6.so
-lib/rustc/x86_64-unknown-freebsd/lib/librustpkg-795073e423d025b-0.6.so
+lib/rustc/x86_64-unknown-freebsd/lib/librust-8d2fe0c0fe8188b-0.7.so
+lib/rustc/x86_64-unknown-freebsd/lib/librustc-d3cb8c2ccd84a7a7-0.7.so
+lib/rustc/x86_64-unknown-freebsd/lib/librustdoc-6b49af4948607d84-0.7.so
+lib/rustc/x86_64-unknown-freebsd/lib/librusti-53e0ef2ae196aaff-0.7.so
+lib/rustc/x86_64-unknown-freebsd/lib/librustpkg-38a86178bd95e7e1-0.7.so
 lib/rustc/x86_64-unknown-freebsd/lib/librustrt.so
-lib/rustc/x86_64-unknown-freebsd/lib/libstd-4782a756585a81-0.6.so
-lib/rustc/x86_64-unknown-freebsd/lib/libsyntax-84efebcb12c867a2-0.6.so
+lib/rustc/x86_64-unknown-freebsd/lib/libstd-6c65cf4b443341b1-0.7.so
+lib/rustc/x86_64-unknown-freebsd/lib/libsyntax-64629f7f0c6a9bc-0.7.so
 @dirrm lib/rustc/x86_64-unknown-freebsd/lib
 @dirrm lib/rustc/x86_64-unknown-freebsd
 @dirrm lib/rustc
