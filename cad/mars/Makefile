@@ -1,6 +1,4 @@
-# Ports collection makefile for:  MaRS
-# Date created:			  Mon Nov 18, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
+# Created by: David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
 #
@@ -28,7 +26,7 @@ NO_WRKSUBDIR=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-USE_MOTIF=	yes
+USES+=		motif
 MAKEFILE=	Makefile.XMotif
 .else
 MAKEFILE=	Makefile.NoX

@@ -22,12 +22,11 @@ CONFLICTS=	qmail-ldap-[0-9]* digest-[0-9]*
 
 PREFIX?=	${LOCALBASE}/emboss
 NO_MTREE=	yes
+USES=		gmake
 USE_SUBMAKE=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_MOTIF=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 
@@ -38,7 +37,7 @@ CONFIGURE_ARGS+= --with-docroot=${DOCSDIR}
 
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
-USE_MOTIF=	yes
+USES+=		motif
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
 		png15:${PORTSDIR}/graphics/png
 .else

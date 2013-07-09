@@ -18,9 +18,10 @@ OPTIONS_DEFINE=	T1LIB NLS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	T1LIB
 T1LIB_DESC=	Use T1lib Type1 font library
 
+USES=		motif
+
 .include <bsd.port.options.mk>
 
-USE_MOTIF=	yes
 FEATURES+=	MOTIF
 
 .if ${PORT_OPTIONS:MT1LIB}

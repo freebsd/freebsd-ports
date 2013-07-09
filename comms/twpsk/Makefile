@@ -1,9 +1,5 @@
-# New ports collection makefile for:    twpsk
-# Date created:         2005-05-27
-# Whom:                 Søren Straarup <xride@x12.dk>
-#
+# Created by: Søren Straarup <xride@x12.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	twpsk
 PORTVERSION=	2.1
@@ -12,10 +8,10 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A openmotif X psk31 client
+COMMENT=	Openmotif X psk31 client
 
 USE_XORG=	xpm
-USE_MOTIF=	yes
+USES=		motif
 
 MAN1=		psk31.1
 
