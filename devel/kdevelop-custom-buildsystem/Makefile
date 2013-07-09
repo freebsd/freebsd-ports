@@ -10,6 +10,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDevelop custom build system plugin
 
+DEPRECATED=		part of devel/kdevelop-kde4 now
+EXPIRATION_DATE=	2013-07-17
+
 LIB_DEPENDS=	kdevplatforminterfaces:${PORTSDIR}/devel/kdevplatform
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
