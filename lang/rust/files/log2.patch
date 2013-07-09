@@ -1,66 +1,62 @@
---- src/libcore/num/cmath.rs.orig	2013-04-06 12:52:09.596039132 +0800
-+++ src/libcore/num/cmath.rs	2013-04-06 12:53:24.474452681 +0800
-@@ -64,7 +64,6 @@
+--- src/libstd/num/cmath.rs.orig	2013-07-09 10:33:09.079593770 +0800
++++ src/libstd/num/cmath.rs	2013-07-09 10:33:30.174857926 +0800
+@@ -66,7 +66,6 @@
          // renamed: to be consitent with log as ln
-         #[link_name="log1p"] unsafe fn ln1p(n: c_double) -> c_double;
+         #[link_name="log1p"] unsafe fn ln_1p(n: c_double) -> c_double;
          unsafe fn log10(n: c_double) -> c_double;
 -        unsafe fn log2(n: c_double) -> c_double;
          #[link_name="ilogb"] unsafe fn ilog_radix(n: c_double) -> c_int;
          unsafe fn modf(n: c_double, iptr: &mut c_double) -> c_double;
          unsafe fn pow(n: c_double, e: c_double) -> c_double;
-@@ -148,7 +147,6 @@
+@@ -150,7 +149,6 @@
          #[link_name="logf"] unsafe fn ln(n: c_float) -> c_float;
          #[link_name="logbf"] unsafe fn log_radix(n: c_float) -> c_float;
-         #[link_name="log1pf"] unsafe fn ln1p(n: c_float) -> c_float;
+         #[link_name="log1pf"] unsafe fn ln_1p(n: c_float) -> c_float;
 -        #[link_name="log2f"] unsafe fn log2(n: c_float) -> c_float;
          #[link_name="log10f"] unsafe fn log10(n: c_float) -> c_float;
          #[link_name="ilogbf"] unsafe fn ilog_radix(n: c_float) -> c_int;
          #[link_name="modff"] unsafe fn modf(n: c_float,
---- src/libcore/num/f32.rs.orig	2013-04-06 12:52:15.395037527 +0800
-+++ src/libcore/num/f32.rs	2013-04-06 13:00:55.623679761 +0800
-@@ -81,7 +81,6 @@
-     cmath::c_float_utils::log_radix)
- delegate!(fn ln1p(n: c_float) -> c_float = cmath::c_float_utils::ln1p)
- delegate!(fn log10(n: c_float) -> c_float = cmath::c_float_utils::log10)
--delegate!(fn log2(n: c_float) -> c_float = cmath::c_float_utils::log2)
- delegate!(fn ilog_radix(n: c_float) -> c_int =
-     cmath::c_float_utils::ilog_radix)
- delegate!(fn modf(n: c_float, iptr: &mut c_float) -> c_float =
-@@ -254,7 +253,12 @@
+--- src/libstd/num/f32.rs.orig	2013-07-09 10:33:13.385594163 +0800
++++ src/libstd/num/f32.rs	2013-07-09 10:43:27.147593687 +0800
+@@ -60,7 +60,6 @@
+     fn floor(x: f32) -> f32 = intrinsics::floorf32,
+     fn ln(n: f32) -> f32 = intrinsics::logf32,
+     fn log10(n: f32) -> f32 = intrinsics::log10f32,
+-    fn log2(n: f32) -> f32 = intrinsics::log2f32,
+     fn mul_add(a: f32, b: f32, c: f32) -> f32 = intrinsics::fmaf32,
+     fn pow(n: f32, e: f32) -> f32 = intrinsics::powf32,
+     fn powi(n: f32, e: c_int) -> f32 = intrinsics::powif32,
+@@ -158,6 +157,11 @@
+     if x <= y || y.is_NaN() { x } else { y }
+ }
  
- #[inline(always)]
- pub fn logarithm(n: f32, b: f32) -> f32 {
--    return log2(n) / log2(b);
-+    return ln(n) / ln(b);
-+}
-+
-+#[inline(always)]
++#[inline]
 +pub fn log2(n: f32) -> f32 {
-+    return ln(n) / consts::ln_2;
- }
- 
- #[cfg(notest)]
---- src/libcore/num/f64.rs.orig	2013-04-06 12:52:25.866037307 +0800
-+++ src/libcore/num/f64.rs	2013-04-06 13:02:33.051357016 +0800
-@@ -82,7 +82,6 @@
-     cmath::c_double_utils::log_radix)
- delegate!(fn ln1p(n: c_double) -> c_double = cmath::c_double_utils::ln1p)
- delegate!(fn log10(n: c_double) -> c_double = cmath::c_double_utils::log10)
--delegate!(fn log2(n: c_double) -> c_double = cmath::c_double_utils::log2)
- delegate!(fn ilog_radix(n: c_double) -> c_int =
-     cmath::c_double_utils::ilog_radix)
- delegate!(fn modf(n: c_double, iptr: &mut c_double) -> c_double =
-@@ -276,7 +275,12 @@
- 
- #[inline(always)]
- pub fn logarithm(n: f64, b: f64) -> f64 {
--    return log2(n) / log2(b);
-+    return ln(n) / ln(b);
++    ln(n) / consts::ln_2
 +}
 +
-+#[inline(always)]
-+pub fn log2(n: f64) -> f64 {
-+    return ln(n) / consts::ln_2;
+ 
+ // FIXME (#1999): replace the predicates below with llvm intrinsics or
+ // calls to the libmath macros in the rust runtime for performance.
+--- src/libstd/num/f64.rs.orig	2013-07-09 10:33:18.415594640 +0800
++++ src/libstd/num/f64.rs	2013-07-09 10:41:42.289594525 +0800
+@@ -62,7 +62,6 @@
+     fn floor(x: f64) -> f64 = intrinsics::floorf64,
+     fn ln(n: f64) -> f64 = intrinsics::logf64,
+     fn log10(n: f64) -> f64 = intrinsics::log10f64,
+-    fn log2(n: f64) -> f64 = intrinsics::log2f64,
+     fn mul_add(a: f64, b: f64, c: f64) -> f64 = intrinsics::fmaf64,
+     fn pow(n: f64, e: f64) -> f64 = intrinsics::powf64,
+     fn powi(n: f64, e: c_int) -> f64 = intrinsics::powif64,
+@@ -184,6 +183,11 @@
+     if x <= y || y.is_NaN() { x } else { y }
  }
  
- #[cfg(notest)]
++#[inline]
++pub fn log2(n: f64) -> f64 {
++    ln(n) / consts::ln_2
++}
++
+ // FIXME (#1999): add is_normal, is_subnormal, and fpclassify
+ 
+ /* Module: consts */
