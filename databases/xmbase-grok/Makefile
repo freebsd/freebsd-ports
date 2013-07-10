@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmbase-grok
-# Date created:		Sat Aug 30 13:29:42 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmbase-grok
 PORTVERSION=	1.5
@@ -19,8 +15,8 @@ COMMENT=	Graphical Resource Organizer Kit
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+USES=		motif
 USE_XORG=	x11 xt
-USE_MOTIF=	yes
 MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \
 		GBIN="${PREFIX}/bin" GLIB="${DATADIR}" \
 		CF="-I${LOCALBASE}/include" LF="${MOTIFLIB} -lXt -lX11 -lm"

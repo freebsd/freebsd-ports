@@ -120,7 +120,7 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs-devel-mule
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900000
 BROKEN=		does not build on FreeBSD 9.X
@@ -145,7 +145,7 @@ CONFIGURE_ARGS+=	--with-x11=no
 	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
 CONFIGURE_ARGS+=--with-jpeg=yes --with-png=yes --with-tiff=yes --with-xface=yes
-USE_MOTIF=	yes
+USES=		motif
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
@@ -259,4 +259,4 @@ post-install:
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

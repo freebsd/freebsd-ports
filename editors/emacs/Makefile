@@ -22,8 +22,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 
 EMACS_VER=	24.3
 GNU_CONFIGURE=	yes
-USES=		ncurses
-USE_GMAKE=	yes
+USES=		ncurses gmake
 USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -113,7 +112,7 @@ CONFIGURE_ARGS+=	--with-x-toolkit=athena
 USE_XORG=	xaw
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-xaw3d
 .elif ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES+=		motif
 CONFIGURE_ARGS+=	--with-x-toolkit=motif
 .endif
 

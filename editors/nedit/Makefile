@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nedit
-# Date created:				7 April 1996
-# Whom:	Daniel Eischen <deischen@freebsd.org>
-#
+# Created by: Daniel Eischen <deischen@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nedit
 PORTVERSION=	5.5
@@ -23,11 +19,11 @@ DISTFILES=	nedit-5.5-src.tar.bz2 nedit.app-defaults
 EXTRACT_ONLY=	nedit-5.5-src.tar.bz2
 
 MAINTAINER=	deischen@FreeBSD.org
-COMMENT=	An X11/Motif GUI text editor for programs and plain text files
+COMMENT=	X11/Motif GUI text editor for programs and plain text files
 LICENSE=	GPLv1
 
+USES=		motif
 USE_BZIP2=	yes
-USE_MOTIF=	yes
 USE_XORG=	xpm
 MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd

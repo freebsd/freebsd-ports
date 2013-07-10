@@ -60,7 +60,7 @@ ALL_TARGET=	all dist
 
 PLIST_SUB+=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == amd64
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--with-png --with-jpeg --with-tiff
 USE_XORG=	xpm x11 xbitmaps xaw
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .if !defined(WITHOUT_MOTIF) && !defined(MOTIF_STATIC)
-USE_MOTIF=	yes
+USES+=		motif
 WITH_SCROLLBARS=	--with-scrollbars=motif
 WITH_DIALOGS=	--with-dialogs=motif
 WITH_WIDGETS=	--with-widgets=motif
@@ -112,6 +112,8 @@ CONFIGURE_ARGS+=	--with-athena=3d
 .else
 CONFIGURE_ARGS+=	--without-x11
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11) && ${HAVE_GNOME:Mgnomehier}!=""
 USE_GNOME+=	gnomehier

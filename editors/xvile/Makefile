@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--with-screen=x11
 .endif
 
 .if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES+=		motif
 CONFIGURE_ARGS+=	--with-screen=motif
 .endif
 

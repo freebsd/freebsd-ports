@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=	--with-x-toolkit=athena
 USE_XORG=	xaw
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-xaw3d
 .elif ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES+=		motif
 CONFIGURE_ARGS+=	--with-x-toolkit=motif
 .endif
 
