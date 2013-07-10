@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nullmailer
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.13
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -43,7 +42,7 @@ MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7
 MAN8=	nullmailer-queue.8 nullmailer-send.8
 
- 
+
 OPTIONS_DEFINE=	GNUTLS
 
 .include <bsd.port.options.mk>
@@ -62,7 +61,7 @@ post-install:
 	@cd ${WRKSRC} && ${MAKE} install-root
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${ETCDIR}
+	${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${ETCDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
