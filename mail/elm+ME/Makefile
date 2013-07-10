@@ -22,6 +22,8 @@ COMMENT=	Modern branch of an old mail user agent
 # BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 # BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Global variables
 #
 

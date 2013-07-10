@@ -20,6 +20,7 @@ XLOCK_RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 
 USES=		imake
 USE_XORG=	x11 xext xscrnsaver
+MAKE_JOBS_UNSAFE=	yes
 MAN1=		xautolock.1
 PLIST_FILES=	bin/xautolock
 

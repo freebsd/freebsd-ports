@@ -14,6 +14,7 @@ COMMENT=	High Performance Computing Linpack Benchmark
 LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
 		mpich:${PORTSDIR}/net/mpich2
 
+MAKE_JOBS_UNSAFE=	yes
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 HPL_ARCH?=	FreeBSD_PIV_CBLAS
