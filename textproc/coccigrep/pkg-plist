@@ -19,9 +19,6 @@ bin/coccigrep
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%DATADIR%%/cocci-grep.el
 %%DATADIR%%/cocci-grep.vim
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep

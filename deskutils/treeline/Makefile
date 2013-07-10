@@ -39,16 +39,12 @@ ISPELL_DESC=	Install with ispell support
 PYXML_DESC=	Use pythons py-xml instead of textproc/expat2
 
 OPTIONS_DEFAULT=	ASPELL PYXML
+OPTIONS_SUB=		yes
+
+ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MASPELL}
-BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-.endif
-
-.if ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-.endif
 
 .if !${PORT_OPTIONS:MPYXML}
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
@@ -56,9 +52,6 @@ LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 
 .if ${PORT_OPTIONS:MHTTPLOAD}
 DISTFILES+=	httpload2.py:plugins
-PLIST_SUB+=	HTTPLOAD=""
-.else
-PLIST_SUB+=	HTTPLOAD="@comment "
 .endif
 
 do-install:

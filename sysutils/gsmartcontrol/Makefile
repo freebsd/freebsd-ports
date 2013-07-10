@@ -38,6 +38,8 @@ MAN1=		gsmartcontrol.1
 
 CONFIGURE_ARGS=	--disable-libglade
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

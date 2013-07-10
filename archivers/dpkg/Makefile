@@ -16,10 +16,9 @@ BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch
 
-USES=		iconv
+USES=		gmake iconv
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
@@ -35,15 +34,16 @@ CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--disable-compiler-warnings
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES=		gettext
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 MANLANG=	"" de fr hu ja pl sv
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include "Makefile.man"

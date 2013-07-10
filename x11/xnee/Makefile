@@ -12,9 +12,8 @@ COMMENT=	X events recorder and player
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_XORG=	xtst
-USES=		pathfix
+USES=		gmake pathfix
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
@@ -23,34 +22,29 @@ MAN1=		cnee.1 xnee.1
 INFO=		xnee
 
 OPTIONS_DEFINE=	GNEE PNEE
+OPTIONS_SUB=	yes
 GNEE_DESC=	GUI frontend
 PNEE_DESC=	GNOME panel frontend
+
+GNEE_CONFIGURE_ENABLE=	gui
+PNEE_CONFIGURE_ENABLE=	gnome-applet
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNEE}
-CONFIGURE_ARGS+=--enable-gui
 USE_GNOME+=	gtk20
 MAN1+=		gnee.1
-PLIST_SUB+=	GNEE=""
 DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PORTNAME}.png" \
 			"gnee" "Development;" true
-.else
-CONFIGURE_ARGS+=--disable-gui
-PLIST_SUB+=	GNEE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPNEE}
 BROKEN=		Does not build, needs newer gnomepanel
-CONFIGURE_ARGS+=-enable-gnome-applet
 USE_GNOME+=	gnomepanel
 MAN1+=		pnee.1
-PLIST_SUB+=	PNEE=""
 .else
-CONFIGURE_ARGS+=	--disable-gnome-applet
 CONFIGURE_ENV+=	libgnomeui_CFLAGS="${TRUE}" \
 		libgnomeui_LIBS="${TRUE}"
-PLIST_SUB+=	PNEE="@comment "
 .endif
 
 post-patch:

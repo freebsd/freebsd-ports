@@ -32,6 +32,8 @@ MAN1=		qnapi.1
 MANCOMPRESSED=	yes
 PORTDOCS=	ChangeLog README.pl COPYRIGHT
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

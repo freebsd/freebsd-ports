@@ -29,6 +29,8 @@ MAN1=		yaz-asncomp.1 yaz-client.1 yaz-config.1 yaz-iconv.1 \
 MAN7=		bib1-attr.7 yaz-log.7 yaz.7
 MAN8=		yaz-ztest.8
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MDOCS}

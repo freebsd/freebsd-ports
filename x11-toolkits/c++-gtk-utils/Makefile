@@ -26,11 +26,9 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DEBUG DOCS
 
-.include <bsd.port.options.mk>
+DEBUG_CONFIGURE_ON=	--enable-debug
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
+.include <bsd.port.options.mk>
 
 post-configure:
 .if ! ${PORT_OPTIONS:MDOCS}

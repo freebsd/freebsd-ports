@@ -5,12 +5,12 @@ lib/ekg2/plugins/feed.so
 lib/ekg2/plugins/feed.la
 lib/ekg2/plugins/gg.so
 lib/ekg2/plugins/gg.la
-%%GPG_PLUGIN%%lib/ekg2/plugins/gpg.la
-%%GPG_PLUGIN%%lib/ekg2/plugins/gpg.so
-%%GSM_PLUGIN%%lib/ekg2/plugins/gsm.so
-%%GSM_PLUGIN%%lib/ekg2/plugins/gsm.la
-%%GTK2_PLUGIN%%lib/ekg2/plugins/gtk.so
-%%GTK2_PLUGIN%%lib/ekg2/plugins/gtk.la
+%%GPG%%lib/ekg2/plugins/gpg.la
+%%GPG%%lib/ekg2/plugins/gpg.so
+%%GSM%%lib/ekg2/plugins/gsm.so
+%%GSM%%lib/ekg2/plugins/gsm.la
+%%GTK2%%lib/ekg2/plugins/gtk.so
+%%GTK2%%lib/ekg2/plugins/gtk.la
 lib/ekg2/plugins/httprc_xajax.la
 lib/ekg2/plugins/httprc_xajax.so
 lib/ekg2/plugins/icq.la
@@ -25,20 +25,20 @@ lib/ekg2/plugins/jogger.la
 lib/ekg2/plugins/jogger.so
 lib/ekg2/plugins/logs.la
 lib/ekg2/plugins/logs.so
-%%SQLITE_PLUGIN%%lib/ekg2/plugins/logsqlite.so
-%%SQLITE_PLUGIN%%lib/ekg2/plugins/logsqlite.la
+%%SQLITE%%lib/ekg2/plugins/logsqlite.so
+%%SQLITE%%lib/ekg2/plugins/logsqlite.la
 lib/ekg2/plugins/mail.la
 lib/ekg2/plugins/mail.so
 lib/ekg2/plugins/ncurses.la
 lib/ekg2/plugins/ncurses.so
-%%PERL_PLUGIN%%lib/ekg2/plugins/perl.so
-%%PERL_PLUGIN%%lib/ekg2/plugins/perl.la
+%%PERL%%lib/ekg2/plugins/perl.so
+%%PERL%%lib/ekg2/plugins/perl.la
 lib/ekg2/plugins/pcm.la
 lib/ekg2/plugins/pcm.so
 lib/ekg2/plugins/polchat.la
 lib/ekg2/plugins/polchat.so
-%%PYTHON_PLUGIN%%lib/ekg2/plugins/python.so
-%%PYTHON_PLUGIN%%lib/ekg2/plugins/python.la
+%%PYTHON%%lib/ekg2/plugins/python.so
+%%PYTHON%%lib/ekg2/plugins/python.la
 lib/ekg2/plugins/rc.la
 lib/ekg2/plugins/rc.so
 lib/ekg2/plugins/readline.la
@@ -55,17 +55,17 @@ lib/ekg2/plugins/sms.la
 lib/ekg2/plugins/sms.so
 lib/ekg2/plugins/xmsg.la
 lib/ekg2/plugins/xmsg.so
-%%XOSD_PLUGIN%%lib/ekg2/plugins/xosd.so
-%%XOSD_PLUGIN%%lib/ekg2/plugins/xosd.la
-%%PERL_PLUGIN%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Ekg2.bs
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Ekg2.so
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/.packlist
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/Irc.bs
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/Irc.so
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/.packlist
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2.pm
-%%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2/Irc.pm
+%%XOSD%%lib/ekg2/plugins/xosd.so
+%%XOSD%%lib/ekg2/plugins/xosd.la
+%%PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Ekg2.bs
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Ekg2.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/Irc.bs
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/Irc.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2/Irc.pm
 libexec/ioctld
 %%DATADIR%%/commands-pl.txt
 %%DATADIR%%/plugins/autoresponder/vars-en.txt
@@ -76,8 +76,8 @@ libexec/ioctld
 %%DATADIR%%/plugins/gg/session-pl.txt
 %%DATADIR%%/plugins/gg/vars-en.txt
 %%DATADIR%%/plugins/gg/vars-pl.txt
-%%GPG_PLUGIN%%%%DATADIR%%/plugins/gpg/commands-en.txt
-%%GPG_PLUGIN%%%%DATADIR%%/plugins/gpg/commands-pl.txt
+%%GPG%%%%DATADIR%%/plugins/gpg/commands-en.txt
+%%GPG%%%%DATADIR%%/plugins/gpg/commands-pl.txt
 %%DATADIR%%/plugins/httprc_xajax/ekg2.css
 %%DATADIR%%/plugins/httprc_xajax/ekg2.js
 %%DATADIR%%/plugins/httprc_xajax/xajax_0.2.4.js
@@ -89,16 +89,16 @@ libexec/ioctld
 %%DATADIR%%/plugins/jabber/session-en.txt
 %%DATADIR%%/plugins/jabber/session-pl.txt
 %%DATADIR%%/plugins/logs/vars-pl.txt
-%%SQLITE_PLUGIN%%%%DATADIR%%/plugins/logsqlite/vars-en.txt
-%%SQLITE_PLUGIN%%%%DATADIR%%/plugins/logsqlite/vars-pl.txt
-%%SQLITE_PLUGIN%%%%DATADIR%%/plugins/logsqlite/commands-en.txt
-%%SQLITE_PLUGIN%%%%DATADIR%%/plugins/logsqlite/commands-pl.txt
+%%SQLITE%%%%DATADIR%%/plugins/logsqlite/vars-en.txt
+%%SQLITE%%%%DATADIR%%/plugins/logsqlite/vars-pl.txt
+%%SQLITE%%%%DATADIR%%/plugins/logsqlite/commands-en.txt
+%%SQLITE%%%%DATADIR%%/plugins/logsqlite/commands-pl.txt
 %%DATADIR%%/plugins/mail/vars-pl.txt
 %%DATADIR%%/plugins/ncurses/commands-pl.txt
 %%DATADIR%%/plugins/ncurses/vars-en.txt
 %%DATADIR%%/plugins/ncurses/vars-pl.txt
-%%PYTHON_PLUGIN%%%%DATADIR%%/plugins/python/commands-en.txt
-%%PYTHON_PLUGIN%%%%DATADIR%%/plugins/python/commands-pl.txt
+%%PYTHON%%%%DATADIR%%/plugins/python/commands-en.txt
+%%PYTHON%%%%DATADIR%%/plugins/python/commands-pl.txt
 %%DATADIR%%/plugins/rc/vars-pl.txt
 %%DATADIR%%/plugins/readline/vars-en.txt
 %%DATADIR%%/plugins/readline/vars-pl.txt
@@ -110,14 +110,14 @@ libexec/ioctld
 %%DATADIR%%/plugins/xmsg/session-pl.txt
 %%DATADIR%%/plugins/xmsg/vars-en.txt
 %%DATADIR%%/plugins/xmsg/vars-pl.txt
-%%XOSD_PLUGIN%%%%DATADIR%%/plugins/xosd/commands-pl.txt
-%%XOSD_PLUGIN%%%%DATADIR%%/plugins/xosd/vars-pl.txt
-%%PERL_PLUGIN%%%%DATADIR%%/scripts/audioscrobbler_bot.pl
-%%PERL_PLUGIN%%%%DATADIR%%/scripts/dns.pl
-%%PERL_PLUGIN%%%%DATADIR%%/scripts/ggbe.pl
-%%PYTHON_PLUGIN%%%%DATADIR%%/scripts/notify-bubble.py
-%%PERL_PLUGIN%%%%DATADIR%%/scripts/slownik.pl
-%%PERL_PLUGIN%%%%DATADIR%%/scripts/xmms.pl
+%%XOSD%%%%DATADIR%%/plugins/xosd/commands-pl.txt
+%%XOSD%%%%DATADIR%%/plugins/xosd/vars-pl.txt
+%%PERL%%%%DATADIR%%/scripts/audioscrobbler_bot.pl
+%%PERL%%%%DATADIR%%/scripts/dns.pl
+%%PERL%%%%DATADIR%%/scripts/ggbe.pl
+%%PYTHON%%%%DATADIR%%/scripts/notify-bubble.py
+%%PERL%%%%DATADIR%%/scripts/slownik.pl
+%%PERL%%%%DATADIR%%/scripts/xmms.pl
 %%DATADIR%%/session-en.txt
 %%DATADIR%%/session-pl.txt
 %%DATADIR%%/themes/blue_sea_dragon.theme
@@ -129,29 +129,29 @@ libexec/ioctld
 %%NLS%%share/locale/de/LC_MESSAGES/ekg2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ekg2.mo
 @dirrm %%DATADIR%%/themes
-%%PERL_PLUGIN%%@dirrmtry %%DATADIR%%/scripts
+%%PERL%%@dirrmtry %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/plugins/autoresponder
 @dirrm %%DATADIR%%/plugins/gg
-%%GPG_PLUGIN%%@dirrm %%DATADIR%%/plugins/gpg
+%%GPG%%@dirrm %%DATADIR%%/plugins/gpg
 @dirrm %%DATADIR%%/plugins/httprc_xajax
 @dirrm %%DATADIR%%/plugins/ioctld
 @dirrm %%DATADIR%%/plugins/irc
 @dirrm %%DATADIR%%/plugins/jabber
 @dirrm %%DATADIR%%/plugins/logs
-%%SQLITE_PLUGIN%%@dirrm %%DATADIR%%/plugins/logsqlite
+%%SQLITE%%@dirrm %%DATADIR%%/plugins/logsqlite
 @dirrm %%DATADIR%%/plugins/mail
 @dirrm %%DATADIR%%/plugins/ncurses
-%%PYTHON_PLUGIN%%@dirrm %%DATADIR%%/plugins/python
+%%PYTHON%%@dirrm %%DATADIR%%/plugins/python
 @dirrm %%DATADIR%%/plugins/rc
 @dirrm %%DATADIR%%/plugins/readline
 @dirrm %%DATADIR%%/plugins/sim
 @dirrm %%DATADIR%%/plugins/sms
 @dirrm %%DATADIR%%/plugins/xmsg
-%%XOSD_PLUGIN%%@dirrm %%DATADIR%%/plugins/xosd
+%%XOSD%%@dirrm %%DATADIR%%/plugins/xosd
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
-%%PERL_PLUGIN%%@dirrm %%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc
-%%PERL_PLUGIN%%@dirrm %%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2
-%%PERL_PLUGIN%%@dirrm %%PERL_PLUGIN%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2
+%%PERL%%@dirrm %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc
+%%PERL%%@dirrm %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2
+%%PERL%%@dirrm %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2
 @dirrm lib/ekg2/plugins
 @dirrm lib/ekg2

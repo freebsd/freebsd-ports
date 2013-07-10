@@ -11,9 +11,11 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		lookat.1
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

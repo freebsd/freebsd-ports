@@ -13,24 +13,19 @@ LICENSE=	GPLv2
 
 USE_XZ=		yes
 USE_GNOME=	pygnome2
-USES=		desktop-file-utils
+USES=		gmake desktop-file-utils
 USE_PYTHON=	-2.7
-USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
-OPTIONS_DEFINE=		PYGNOMEDESKTOP
+OPTIONS_DEFINE=		NLS PYGNOMEDESKTOP
+OPTIONS_SUB=		yes
 PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
 
-.include <bsd.port.options.mk>
+NLS_USES=	gettext
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} '/docdir_/d' ${WRKSRC}/Makefile

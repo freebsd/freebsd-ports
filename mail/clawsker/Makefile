@@ -22,14 +22,12 @@ USE_PERL5=	yes
 MAN1=		clawsker.1
 PORTDOCS=	NEWS README
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} '/^DATADIR/s|/share||' ${WRKSRC}/Makefile

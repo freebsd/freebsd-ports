@@ -32,14 +32,12 @@ DESKTOP_ENTRIES="NetSurf" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
 OPTIONS_DEFINE=	GSTREAMER WEBP
 
+WEBP_LIB_DEPENDS=	webp:${PORTSDIR}/graphics/webp
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
-.endif
-
-.if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
 .endif
 
 post-patch:

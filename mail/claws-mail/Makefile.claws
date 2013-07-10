@@ -9,7 +9,7 @@ MAINTAINER=	pawel@FreeBSD.org
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES+=		gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

@@ -20,6 +20,7 @@ MAN1=		claws-mail.1
 
 OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 JPILOT LDAP \
 		MANUAL NLS STARTUP THEMES
+OPTIONS_SUB=	yes
 
 COMPFACE_DESC=		X-Face support
 ENCHANT_DESC=		Spell checking support
@@ -30,74 +31,39 @@ THEMES_DESC=		Additional themes
 
 OPTIONS_DEFAULT=	COMPFACE ENCHANT MANUAL STARTUP THEMES
 
+COMPFACE_CONFIGURE_ENABLE=	compface
+COMPFACE_LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
+
+DEBUG_CONFIGURE_ON=	--enable-maintainer-mode
+
+ENCHANT_CONFIGURE_ENABLE=	enchant
+ENCHANT_LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+JPILOT_CONFIGURE_ENABLE=	jpilot
+JPILOT_LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link
+JPILOT_RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
+
+LDAP_CONFIGURE_ENABLE=	ldap
+
+MANUAL_CONFIGURE_ON=	--enable-manual --with-manualdir=${DOCSDIR}/manual
+MANUAL_CONFIGURE_OFF=	--disable-manual
+MANUAL_BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2html:${PORTSDIR}/textproc/docbook-utils
+
+NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES=		gettext
+
+STARTUP_CONFIGURE_ENABLE=	startup-notification
+STARTUP_LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
+
+THEMES_RUN_DEPENDS=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${PORTSDIR}/x11-themes/claws-mail-themes
+
 .include "Makefile.claws"
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCOMPFACE}
-LIB_DEPENDS+=		compface:${PORTSDIR}/mail/faces
-CONFIGURE_ARGS+=	--enable-compface
-.else
-CONFIGURE_ARGS+=	--disable-compface
-.endif
-
-.if ${PORT_OPTIONS:MENCHANT}
-LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
-CONFIGURE_ARGS+=	--enable-enchant
-.else
-CONFIGURE_ARGS+=	--disable-enchant
-.endif
-
-.if ${PORT_OPTIONS:MJPILOT}
-LIB_DEPENDS+=		pisock:${PORTSDIR}/palm/pilot-link
-RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
-CONFIGURE_ARGS+=	--enable-jpilot
-.else
-CONFIGURE_ARGS+=	--disable-jpilot
-.endif
-
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--enable-ldap
-.else
-CONFIGURE_ARGS+=	--disable-ldap
-.endif
-
-.if ${PORT_OPTIONS:MMANUAL}
-BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2html:${PORTSDIR}/textproc/docbook-utils
-CONFIGURE_ARGS+=	--enable-manual --with-manualdir=${DOCSDIR}/manual
-PLIST_SUB+=		MANUAL=""
-.else
-CONFIGURE_ARGS+=	--disable-manual
-PLIST_SUB+=		MANUAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@Comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-maintainer-mode
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MSTARTUP}
-LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification
-CONFIGURE_ARGS+=	--enable-startup-notification
-.else
-CONFIGURE_ARGS+=	--disable-startup-notification
-.endif
-
-.if ${PORT_OPTIONS:MTHEMES}
-RUN_DEPENDS+=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${PORTSDIR}/x11-themes/claws-mail-themes
 .endif
 
 post-patch:

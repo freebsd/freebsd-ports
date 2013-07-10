@@ -57,16 +57,14 @@ WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GG_EMOTS
+OPTIONS_SUB=	yes
 GG_EMOTS_DESC=	Install GG-compatible emoticons
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGG_EMOTS}
-PLIST_SUB+=	GG_EMOTS=""
 DISTFILES+=	${GG6_EMOTS_DISTFILE}:additions \
 		${GG7_EMOTS_DISTFILE}:additions
-.else
-PLIST_SUB+=	GG_EMOTS="@comment "
 .endif
 
 post-patch:
