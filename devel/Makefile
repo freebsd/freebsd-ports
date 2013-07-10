@@ -4041,6 +4041,7 @@
     SUBDIR += rubygem-climate_control
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cloudfiles
+    SUBDIR += rubygem-cocaine
     SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-script
     SUBDIR += rubygem-coffee-script-source
