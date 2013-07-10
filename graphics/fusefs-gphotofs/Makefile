@@ -11,9 +11,11 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount PTP camera as a file system
 
-LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+LICENSE=	GPLv2
 
-USES=		fuse
+LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2
+
+USES=		fuse pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
