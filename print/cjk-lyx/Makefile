@@ -32,11 +32,11 @@ OPTIONS_DEFAULT+=	JATETEX
 JATETEX_DESC=	pLaTeX (Japanese LaTeX)
 
 ALL_TARGET=	all check
+MAKE_JOBS_UNSAFE=	yes
 USE_GNOME=	lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include" \
