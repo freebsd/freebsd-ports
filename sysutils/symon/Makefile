@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/symon
-# Date created:				17.02.2005
-# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	symon
 PORTVERSION=	2.85
@@ -19,6 +15,8 @@ COMMENT=	Performance and information monitoring tool
 SUB_FILES=	pkg-message
 
 USE_PERL5_BUILD=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 # Synonym for WITHOUT_SYMUX
 .if defined(WITHOUT_RRD)
