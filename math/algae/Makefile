@@ -1,9 +1,5 @@
-# New ports collection makefile for:    algae
-# Date created:         18 May 2003
-# Whom:                 Michael Neumann <mneumann@ntecs.de>
-#
+# Created by: Michael Neumann <mneumann@ntecs.de>
 # $FreeBSD$
-#
 
 PORTNAME=	algae
 PORTVERSION=	4.3.6
@@ -12,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A programming language for numerical analysis
+COMMENT=	Programming language for numerical analysis
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
@@ -23,6 +19,7 @@ PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}
 MAN1=	algae.1
 INFO=	algae
 
+MAKE_JOBS_UNSAFE=	yes
 USE_FORTRAN=	yes
 LDFLAGS+=	-L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -L`${CAT} ${WRKSRC}/LIBDIR` -L${LOCALBASE}/lib
 FORTRANLIBS=	gfortranbegin gfortran
