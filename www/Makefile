@@ -1808,6 +1808,7 @@
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom
+    SUBDIR += rubygem-tinymce-rails
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
     SUBDIR += rubygem-unicorn
