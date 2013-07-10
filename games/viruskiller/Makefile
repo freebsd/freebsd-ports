@@ -16,7 +16,9 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS
 
 USE_SDL=	mixer image ttf net
-USE_GMAKE=	yes
+USES=		gmake
+
+BROKEN=		Does not build
 
 INSTALLS_ICONS=	yes
 
