@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Vector graphics space shoot'em up game
 
 USE_XORG=	x11
