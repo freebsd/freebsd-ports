@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DCL
-# Date created:		30 January 2005
-# Whom:			Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-#
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	dcl
 PORTVERSION=	5.4.7
@@ -15,6 +11,7 @@ MASTER_SITES=	http://www.gfd-dennou.org/library/dcl/ \
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
+MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	x11 xext
 USE_FORTRAN=	yes
 USE_GNOME=	gtk20 gdkpixbuf2
