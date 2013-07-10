@@ -8,17 +8,14 @@ MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fbsd-ports@opsec.eu
-COMMENT=	A Cego DBI driver for Perl 5
+COMMENT=	Cego DBI driver for Perl 5
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	cego.1:${PORTSDIR}/databases/cego
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
+MAKE_JOBS_UNSAFE=	yes
 
 PERL_CONFIGURE=	yes
 CC:=		${CXX}
