@@ -25,6 +25,5 @@ post-patch:
  		-e "s|-ltk\$$(tclvers)|-ltk${SHORT_TCL_VER}|" \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/pure/bsd.pure.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pure-rational
-# Date created:		2011-10-09
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pure-rational
 PORTVERSION=	0.1
@@ -21,6 +17,5 @@ NO_PURE_EXAMPLES=	yes
 PLIST_FILES=	lib/pure/rational.pure \
 		lib/pure/rat_interval.pure
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/pure/bsd.pure.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
