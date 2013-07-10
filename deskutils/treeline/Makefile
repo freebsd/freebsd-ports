@@ -42,16 +42,13 @@ OPTIONS_DEFAULT=	ASPELL PYXML
 OPTIONS_SUB=		yes
 
 ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+HTTPLOAD_DISTFILES=	httpload2.py:plugins
 ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MPYXML}
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
-.endif
-
-.if ${PORT_OPTIONS:MHTTPLOAD}
-DISTFILES+=	httpload2.py:plugins
 .endif
 
 do-install:
