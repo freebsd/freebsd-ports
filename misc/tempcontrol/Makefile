@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tempcontrol
-# Date created:		20 June 2004
-# Whom:			grog@
-#
+# Created by: grog@
 # $FreeBSD$
-#
 
 PORTNAME=	tempcontrol
 PORTVERSION=	1.2
@@ -17,6 +13,7 @@ PLIST_FILES=	bin/tempcontrol share/tempcontrol/temperaturecontrolrc.sample \
 		etc/rc.d/temperaturecontrol.sh.sample
 PLIST_DIRS=	share/tempcontrol
 
+MAKE_JOBS_UNSAFE=	yes
 NO_WRKSUBDIR=	YES
 
 do-install:
