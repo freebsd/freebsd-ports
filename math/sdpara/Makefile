@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sdpara
-# Date created:                         March 17 2003
-# Whom:                                 NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdpara
 PORTVERSION=	7.2.1
@@ -21,15 +17,13 @@ LIB_DEPENDS=	scalapack:${PORTSDIR}/math/scalapack \
 		blacs:${PORTSDIR}/math/blacs \
 		mpich:${PORTSDIR}/net/mpich2
 
-.include <bsd.port.pre.mk>
-
 SRCDATE=	20090109
 MANDATE=	20080618
 MANUALVER=	7.1.1
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 #MANUALFILE=	${PORTNAME}.${MANUALVER}.manual.${MANDATE}.pdf
 USE_FORTRAN=	yes
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)
@@ -101,4 +95,4 @@ do-install:
 #	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${MANUALFILE} ${DOCSDIR}
 #.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
