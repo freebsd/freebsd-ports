@@ -76,5 +76,5 @@
 -	pod2man --center=" " --release="moreutils" $< > $@;
 +mans: ${PERLSCRIPTS}
 +.for i in ${PERLSCRIPTS}
-+	pod2man --center=" " --release="moreutils" ${i} > ${i:S@$@.1$@};
++	pod2man --center=" " --release="moreutils" ${i} > ${i}.1
 +.endfor
