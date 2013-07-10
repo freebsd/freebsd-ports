@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bugs
-# Date created:		20 June 1998
-# Whom:			Stephane Legrand
-#
+# Created by: Stephane Legrand
 # $FreeBSD$
-#
 
 PORTNAME=	bugs
 PORTVERSION=	4.1.1
@@ -18,7 +14,9 @@ COMMENT=	Great cryptography library and sample programs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
+
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
