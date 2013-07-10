@@ -14,8 +14,9 @@ COMMENT=	Tool to manipulate some FPS games demo recordings
 
 LICENSE=	GPLv2
 
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 PORTSCOUT=	limit:.*[0-9]$$		# letter-suffixed files are binaries
