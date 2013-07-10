@@ -1,12 +1,8 @@
-# New ports collection makefile for:	EV
-# Date created:		06 Jun 2008
-# Whom:			Vladimir Timofeev <vovkasm@gmail.com>
-#
+# Created by: Vladimir Timofeev <vovkasm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	EV
-PORTVERSION=	4.11
+PORTVERSION=	4.15
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
