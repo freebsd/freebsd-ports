@@ -13,8 +13,8 @@ COMMENT=	Drawing editors derived from idraw
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-USES=		imake:env
-USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
+USES=		imake:env gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
