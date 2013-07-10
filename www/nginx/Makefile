@@ -658,8 +658,8 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	4.0.5
-MASTER_SITES+=	http://phusion-passenger.googlecode.com/files/:passenger
+PASSENGER_VERSION=	4.0.8
+MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
@@ -706,8 +706,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.0.0
-GIT_RTMP_VERSION=	0-g613234b
+NGINX_RTMP_VERSION=	1.0.1
+GIT_RTMP_VERSION=	0-g421d9ff
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
