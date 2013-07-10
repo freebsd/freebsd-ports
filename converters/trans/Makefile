@@ -1,9 +1,5 @@
-# New ports collection makefile for:    trans
-# Date created:         6 May 1996
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	trans
 PORTVERSION=	1.20
@@ -13,6 +9,8 @@ DISTNAME=	trans120
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character Encoding Converter Generator Package
+
+MAKE_JOBS_UNSAFE=	yes
 
 LIBDIR=		${PREFIX}/lib/trans
 ALL=		transhtm transiso transce8 transtab checkiso checkuni
