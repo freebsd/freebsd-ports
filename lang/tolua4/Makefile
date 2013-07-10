@@ -1,10 +1,5 @@
-#
-# New ports collection makefile for:	tolua
-# Date created:				21 November 2004
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tolua
 PORTVERSION=	4.0a
@@ -17,7 +12,8 @@ DISTNAME=	tolua-4.0a
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	toLua: accessing C/C++ code from Lua
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 USE_LUA=	4.0
 WRKSRC=		${WRKDIR}/tolua
 
