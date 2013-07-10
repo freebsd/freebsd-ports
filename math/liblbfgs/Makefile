@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env
 
-OPTIONS_DEFINE=	OPTIMIZED
+OPTIONS_DEFINE=	OPTIMIZED DOCS
 OPTIMIZED_DESC=	SSE2 optimization routines
 
 .include <bsd.port.options.mk>
@@ -31,7 +31,7 @@ PLIST_FILES=	lib/liblbfgs-1.10.so.0.0 lib/liblbfgs.a lib//liblbfgs.la \
 PORTDOCS=	README INSTALL COPYING AUTHORS ChangeLog NEWS
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
 
