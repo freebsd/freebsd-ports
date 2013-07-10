@@ -15,6 +15,7 @@ LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
 USES=		qmail
 USE_BZIP2=	yes
 USE_GCC=	any
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}

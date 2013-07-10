@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bamg
-# Date created:        16 December 2003
-# Whom:                thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	bamg
 PORTVERSION=	1.01
@@ -23,7 +19,8 @@ RESTRICTED=	No resale, contact author for commercial usage
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	world
 INSTALL_TARGET=	install-world

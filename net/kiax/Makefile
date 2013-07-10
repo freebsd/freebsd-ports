@@ -1,9 +1,5 @@
-# New ports collection makefile for:   kiax
-# Date created:        Sat Jun 25 16:31:30 UTC 2005
-# Whom:                Eric Kjeldergaard <kjelderg@gmail.com>
-#
+# Created by: Eric Kjeldergaard <kjelderg@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kiax
 PORTVERSION=	0.8.51
@@ -13,12 +9,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src_bin.tar.gz/${PORTVERSION}%20%28Aria
 DISTNAME=	kiax-${PORTVERSION}-src
 
 MAINTAINER=	kjelderg@gmail.com
-COMMENT=	An Asterisk (IAX) client written in QT for KDE
+COMMENT=	Asterisk (IAX) client written in QT for KDE
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		lrelease:${PORTSDIR}/x11-toolkits/qt33
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 USE_QT_VER=	3

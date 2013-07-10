@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezfm
-# Date created:				27 July 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	ezfm
 PORTVERSION=	0.4.3
@@ -20,7 +16,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		EZ.1:${PORTSDIR}/graphics/EZWGL
 
 WRKSRC=		${WRKDIR}/EZFM-${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ezfm.1
 
