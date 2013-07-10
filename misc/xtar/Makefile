@@ -11,8 +11,7 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and manipulate contents of a tar file
 
-USES=		imake
-USE_MOTIF=	yes
+USES=		imake motif
 USE_XORG=	ice sm x11 xext xp xt
 MAKE_ARGS=	XMLIB="${MOTIFLIB}"
 MAN1=		xtar.1

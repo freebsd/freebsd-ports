@@ -9,10 +9,9 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A Motif-based TCP/IP protocol analyzer
+COMMENT=	Motif-based TCP/IP protocol analyzer
 
-USES=		bison
-USE_MOTIF=	yes
+USES=		bison motif
 
 MAN1=		tcpview.1
 

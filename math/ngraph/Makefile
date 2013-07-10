@@ -1,9 +1,5 @@
-# New ports collection makefile for: ngraph
-# Date created:         18 Aug 1999
-# Whom:                 nobu@rd.isac.co.jp
-#
+# Created by: nobu@rd.isac.co.jp
 # $FreeBSD$
-#
 
 PORTNAME=	ngraph
 PORTVERSION=	6.3.51
@@ -16,7 +12,6 @@ DISTNAME=	Ngraph-${PORTVERSION}-src
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	XY plotting tool for students, scientists, and engineers
 
-USE_MOTIF=	yes
-USE_GMAKE=	yes
+USES=		make motif
 
 .include <bsd.port.mk>

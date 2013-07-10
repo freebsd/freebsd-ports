@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphicboot
-# Date created:		8 July 2005
-# Whom:			Matthew Holder <sixxgate@hotmail.com>
-#
+# Created by: Matthew Holder <sixxgate@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	graphicboot
 PORTVERSION=	1.1
@@ -19,10 +15,9 @@ BUILD_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetroot:${PORTSDIR}/x11/xsetroot
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_MOTIF=	yes
+USES=		motif gmake
 USE_BZIP2=	yes
 USE_XORG=	x11
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN8=		graphicboot.8 sendgbmsg.8

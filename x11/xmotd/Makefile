@@ -21,7 +21,6 @@ PLIST_FILES=	bin/xmotd
 OPTIONS_DEFINE=	HTML MOTIF XPM
 HTML_DESC=	Use HTML widget instead of ASCII text
 
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTML}
@@ -31,7 +30,7 @@ BROKEN=		Does not compile when WITH_HTML is set
 
 .if ${PORT_OPTIONS:MMOTIF}
 MAKE_ARGS+=	-DMOTIF
-USE_MOTIF=	yes
+USES+=		motif
 .endif
 
 .if ${PORT_OPTIONS:MXPM}

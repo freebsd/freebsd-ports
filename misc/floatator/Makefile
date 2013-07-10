@@ -13,7 +13,7 @@ COMMENT=	Interactive fluid dynamics simulation
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTCOUT=	skipv:0.9.1
-USE_MOTIF=	yes
+USES=		motif
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG" \
 		X11INCLUDE="-I${LOCALBASE}/include" X11LIB="-L${LOCALBASE}/lib"
 PLIST_FILES=	bin/floatator bin/floatator_X_interface

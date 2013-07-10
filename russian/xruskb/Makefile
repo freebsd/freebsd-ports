@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xruskb
-# Date created:		14 Jan 1998
-# Whom:			Igor Vinokurov <igor@zynaps.ru>
-#
+# Created by: Igor Vinokurov <igor@zynaps.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xruskb
 PORTVERSION=	1.15.4
@@ -12,7 +8,7 @@ CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A keyboard layout switcher and indicator
+COMMENT=	Keyboard layout switcher and indicator
 
 USE_XORG=	x11 ice xt xmu
 USE_BZIP2=	YES
@@ -25,14 +21,11 @@ DOCS=		FAQ NEWS README* TODO xrus.doc-*
 OPTIONS_DEFINE=	MOTIF DOCS
 MOTIF_DESC=	Support for pixmaps in indicator icon
 
-.include <bsd.port.options.mk>
+MOTIF_USES=	motif
+MOTIF_CONFIGURE_ON=	--with-toolkit=motif
+MOTIF_CONFIGURE_OFF=	--with-toolkit=none
 
-.if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
-CONFIGURE_ARGS+=	--with-toolkit=motif
-.else
-CONFIGURE_ARGS+=	--with-toolkit=none
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${PREFIX}/lib/X11/app-defaults/Xrus

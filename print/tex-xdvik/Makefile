@@ -14,12 +14,10 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		paper:${PORTSDIR}/print/libpaper
 
+USES=		iconv gmake motif
 USE_TEX=	texlive web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDIR}
-USE_MOTIF=	yes
-USE_GMAKE=	yes
 USE_XORG=	ice sm x11 xmu xpm xt
-USES=		iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/xdvik
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \

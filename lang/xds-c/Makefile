@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xds-c
-# Date created:		29 January 2007
-# Whom:			coumarin@gmail.com
-#
+# Created by: coumarin@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	xds-c
 PORTVERSION=	2.51
@@ -20,9 +16,8 @@ RESTRICTED=	Excelsior forbids any redistribution
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code
+USES=		gmake motif
 USE_LINUX=	yes
-USE_GMAKE=	yes
-USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/lib/C
 

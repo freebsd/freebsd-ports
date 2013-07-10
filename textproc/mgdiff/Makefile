@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end to the Unix diff command
 
-USES=		imake
-USE_MOTIF=	yes
+USES=		imake motif
 USE_XORG=	ice sm x11 xext xmu xp xt
 MAN1=		mgdiff.1
 
