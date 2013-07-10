@@ -29,13 +29,7 @@ MAN1=		markad.1
 
 RESTRICTED=	installs station logos
 
-.include <bsd.port.pre.mk>
-
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
-
-.if ${OSVERSION} < 800000
-IGNORE=		needs getline(3)
-.endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
 # of the stack)
@@ -53,4 +47,4 @@ post-install: post-install-pluginlocales
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

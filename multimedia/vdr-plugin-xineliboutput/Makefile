@@ -29,9 +29,9 @@ PORTEXAMPLES=	xine
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
 
-.include	"${.CURDIR}/../vdr/Makefile.plugins"
-
 OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR
+
+.include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 .include <bsd.port.pre.mk>
 
