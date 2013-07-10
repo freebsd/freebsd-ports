@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nethack
-# Date created:		27 March 1995
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	nethack
 PORTVERSION=	3.4.3
@@ -18,8 +14,8 @@ COMMENT=	A dungeon explorin', slashin', hackin' game
 
 LICENSE=	nethack
 LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/dat/license
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -75,12 +71,6 @@ PATCH_SITES+=	http://www.netsonic.fi/~walker/nh/ \
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DHPMON
 .endif
-.elif ${PKGNAMESUFFIX} == "-qt"
-USE_QT_VER=	3
-MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
-		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
-		MOC="${MOC}" LIBQT="-lqt-mt"
-GRAPHICS=	QT_GRAPHICS
 .endif
 .endif
 
@@ -95,6 +85,8 @@ pre-everything::
 	${ECHO_MSG} " important for you                                       " ; \
 	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
 	fi
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top
@@ -113,7 +105,7 @@ pre-configure:
 
 post-install:
 	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/${HACKDOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/${HACKDOCSDIR}
 .endif
