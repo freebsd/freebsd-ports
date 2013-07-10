@@ -1,7 +1,8 @@
+# Created by: Doug Barton <dougb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.0.9
+PORTVERSION=	3.0.10
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -34,7 +35,9 @@ CONFIGURE_ARGS+=	--disable-gui
 
 PORTDOCS=	AUTHORS Changelog README TODO
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS DBUS
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
 USE_QT4+=	dbus
@@ -43,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-qt-dbus
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,qputenv,!&,' ${WRKSRC}/src/main.cpp
+	@${REINPLACE_CMD} -e 's|qputenv|!&|' ${WRKSRC}/src/main.cpp
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
@@ -58,4 +61,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 ${MAN1PREFIX}/man/man1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
