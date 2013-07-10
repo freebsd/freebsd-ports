@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.10.2
+PORTVERSION=	2.8.11.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v2.8/
 PKGNAMESUFFIX=	-gui
