@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   Ajaxplorer was updated to 5.0.1. This is a major update and some
   manual intervention may be needed.
 
-  Before upgrading you should preserve the folowing files in WWWDIR
+  Before upgrading you should preserve the following files in WWWDIR
   (defaults to PREFIX/www/ajaxplorer) if you have customized them:
 
   conf/bootstrap_conf.php
@@ -168,7 +168,7 @@ you update your ports collection, before attempting any port upgrades.
     ${PREFIX}/www/magento/app/{design,locale} \
     ${PREFIX}/www/magento/{downloader,skin}
 
-  The conservative aproach will alert you to extensions that try to write in
+  The conservative approach will alert you to extensions that try to write in
   Magento core, while allowing clean extensions to install properly (corner
   cases may exist).
 
@@ -181,7 +181,7 @@ you update your ports collection, before attempting any port upgrades.
   If you want to upgrade, and use http/https access to repositories,
   please check, that the SERF option is enabled, as NEON support
   is gone. Also, mod_dontdothat and svnauthz_validate are
-  now eanbled with one option TOOLS, among other new tools
+  now enabled with one option TOOLS, among other new tools
   and SVNMUCC is enabled always.
 
   subversion-1.7.x is available as devel/subversion17
@@ -359,7 +359,7 @@ you update your ports collection, before attempting any port upgrades.
 
   xorg, including libraries and some drivers, was updated.
   If you are running the default xorg distribution, no special upgrade procedure
-  should be neccessary.
+  should be necessary.
   If you are running with WITH_NEW_XORG= make sure to update and rebuild all
   installed drivers since xorg-server has been updated.
 
@@ -772,7 +772,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/apache-solr
   AUTHOR: vanilla@FreeBSD.org
 
-  textproc/apache-solr has beed repocopied to textproc/apache-solr3.
+  textproc/apache-solr has been repocopied to textproc/apache-solr3.
   If you need to continue with the old stable version please run
 
   # portmaster -o textproc/apache-solr3 textproc/apache-solr
@@ -908,7 +908,7 @@ you update your ports collection, before attempting any port upgrades.
 
   LibreOffice has been updated to 3.6.5 with a bundle version of libcmis. The
   build will fail if you sill have net/libcmis 0.1 installed. Before upgrading
-  LibreOffice you should either first remove libcmis from your system or uprade
+  LibreOffice you should either first remove libcmis from your system or upgrade
   it to version 0.3.
 
 20130205:
@@ -1487,7 +1487,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: tj@FreeBSD.org
 
   After reinstalling the port if you wish to use the datastore used before
-  or have any undelivered persistant messages add the following to rc.conf
+  or have any undelivered persistent messages add the following to rc.conf
     activemq_data=/usr/local/activemq
 
 20121022:
@@ -1501,7 +1501,7 @@ you update your ports collection, before attempting any port upgrades.
   samba_enable=YES
 
   to get the script working. You can still control each of the daemons
-  individualy, by disabling/enabling them with:
+  individually, by disabling/enabling them with:
 
   nmbd_enable=NO
   smbd_enable=NO
@@ -2190,7 +2190,7 @@ you update your ports collection, before attempting any port upgrades.
   The lighttpd startup script has been changed and is now compatible to the
   apache startup script. The "reload" subcommand now sends a SIGHUP to the
   process and triggers cycling of log files. The new command "graceful"
-  performs a graceful restart (similiar to former "reload") and "gracefulstop"
+  performs a graceful restart (similar to former "reload") and "gracefulstop"
   performs a graceful stop. The "check" command has been replaced with
   the "configtest" command.
 
@@ -2476,9 +2476,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of editors/libreoffice
   AUTHORS: bapt@FreeBSD.org
 
-  LOCALIZED_LANG option has gone, localised packages are now available
+  LOCALIZED_LANG option has gone, localized packages are now available
   separately, you can also use editors/libreoffice-i18n to pick the
-  localisation you want.
+  localization you want.
 
 20120425:
   AFFECTS: users of mail/postfix, mail/postfix2[6-8]
