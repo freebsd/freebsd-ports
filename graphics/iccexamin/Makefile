@@ -20,6 +20,7 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		oyranos:${PORTSDIR}/graphics/oyranos
 
+MAKE_JOBS_UNSAFE=	yes
 USES=		gettext iconv pkgconfig
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
