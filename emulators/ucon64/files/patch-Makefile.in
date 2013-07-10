@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-02-24 19:04:22.959942880 -0800
++++ Makefile.in	2013-02-24 19:04:55.927943650 -0800
+@@ -68,7 +68,7 @@
+ ifneq ($(OSTYPE),beos)
+ ifeq ($(findstring freebsd,$(OSTYPE)),) # false if OSTYPE contains "freebsd"
+ ifeq ($(findstring openbsd,$(OSTYPE)),) # false if OSTYPE contains "openbsd"
+-LDFLAGS+=-ldl
++#LDFLAGS+=-ldl
+ endif
+ endif
+ endif
