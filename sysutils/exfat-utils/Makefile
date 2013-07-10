@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	exfat-utils
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Utilities to create, check, label and dump exFAT filesystem
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 
