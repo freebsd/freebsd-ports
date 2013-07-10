@@ -17,14 +17,13 @@ BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		mng:${PORTSDIR}/graphics/libmng
 
-USE_GMAKE=	yes
 ALL_TARGET=	#empty
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
-USES=		bison
+USES=		bison gmake
 USE_GNOME=	librsvg2
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 NSFB_VERSION=	0.1.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-full-${PORTVERSION}
