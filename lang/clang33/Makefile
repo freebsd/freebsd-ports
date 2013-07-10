@@ -2,6 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${CLANG_NAME}
@@ -93,6 +94,8 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
+	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
+	    ${WRKSRC}/tools/clang/lib/Frontend/InitHeaderSearch.cpp
 
 pre-build:
 	${LN} -sf ${LLVM_PREFIX}/include/llvm/IR/Intrinsics.gen \
