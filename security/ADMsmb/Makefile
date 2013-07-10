@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ADMsmb
-# Date created:			23 Jun 2003
-# Whom:				tutus@trynet.eu.org
-#
+# Created by: tutus@trynet.eu.org
 # $FreeBSD$
-#
 
 PORTNAME=	ADMsmb
 PORTVERSION=	0.3
@@ -14,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security scanner for Samba
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.o" -delete
