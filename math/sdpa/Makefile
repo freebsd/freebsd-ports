@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sdpa
-# Date created:                         October 4 2003
-# Whom:                                 NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdpa
 PORTVERSION=	7.3.1
@@ -16,13 +12,14 @@ DIST_SUBDIR=	sdpa
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficient SDP Solver
 
+USES=		gmake
+
 .include <bsd.port.pre.mk>
 
 SRCDATE=	20090729
 MANUALFILE=	sdpa7-manual.pdf
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}.src
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)
