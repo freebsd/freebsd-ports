@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gale
-# Date created:         14 July 2000
-# Whom:                 Peter Haight <peterh@sapros.com>
-#
+# Created by: Peter Haight <peterh@sapros.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gale
 PORTVERSION=	0.99f
@@ -13,7 +9,7 @@ MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 
 MAINTAINER=	jason-fbsd-ports-gale@shalott.net
-COMMENT=	A secure instant messaging system
+COMMENT=	Secure instant messaging system
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 		wwwcore.1:${PORTSDIR}/www/libwww \
@@ -25,6 +21,7 @@ USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure liboop/configure
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \

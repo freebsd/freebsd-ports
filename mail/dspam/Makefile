@@ -1,10 +1,6 @@
-# New ports collection makefile for:	dspam
-# Date created:				3 August 2003
-# Whom:					Dominic Marks <dom@wirespeed.org.uk>
-#
+# Created by: Dominic Marks <dom@wirespeed.org.uk>
 # $Tecnik: ports/mail/dspam/Makefile,v 1.18 2006/06/07 23:40:55 itetcu Exp $
 # $FreeBSD$
-#
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING
@@ -76,6 +72,7 @@ WEBUI_DESC=	Install WebUI, pulls in Apache or see below
 OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
 		PGSQL SQLITE3 HASH
 
+MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

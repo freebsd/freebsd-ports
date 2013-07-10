@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webstone-ssl
-# Date created:				2 Nov 2000
-# Whom:					Kazumasa Nishizawa <k_nishizawa@anet.ne.jp>
-#
+# Created by: Kazumasa Nishizawa <k_nishizawa@anet.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	webstone
 PORTVERSION=	2.5
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 ALL_TARGET=	install
 NO_INSTALL_MANPAGES=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ENV=	LIBS=-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}

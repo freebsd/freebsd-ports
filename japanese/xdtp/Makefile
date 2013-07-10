@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	libxml2 libxslt
 USES=	pkgconfig
 GNU_CONFIGURE=	yes
+MAKE_JOB_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GDK DEBUG INCLUDE
 GDK_DESC=	Build with Gdk-Pixbuf
