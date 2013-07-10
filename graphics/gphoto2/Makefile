@@ -7,53 +7,45 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command-line frontend to libgphoto2
+COMMENT=	Command-line frontend to libgphoto2
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		gphoto2:${PORTSDIR}/graphics/libgphoto2
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-cdk
-MAKE_JOBS_SAFE=	yes
 
-MAN1=		gphoto2.1
-
+# XXX: do we still need to pass PTHREAD_* stuff here?
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+MAN1=		${PORTNAME}.1
+
 OPTIONS_DEFINE=	AALIB DOCS NLS
 OPTIONS_DEFAULT=	AALIB
-AALIB_DESC=	Command line capture preview (aalib)
+OPTIONS_SUB=	yes
+
+AALIB_DESC=	Text mode capture preview support
+
+AALIB_LIB_DEPENDS=	aa:${PORTSDIR}/graphics/aalib
+AALIB_CONFIGURE_ARGS=	--without-aalib
+
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib \
-		jpeg:${PORTSDIR}/graphics/jpeg
-.else
-CONFIGURE_ARGS+=--without-aalib --without-jpeg
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREADS_LIBS:S/"//g}|g ; \
-		 s|-g -Wall||g' ${WRKSRC}/configure
+		s|-g -Wall||g' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-.for file in NEWS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
