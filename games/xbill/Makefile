@@ -35,7 +35,7 @@ ATHENA_DESC=	Athena widget set
 GTK_DESC=	GTK widget set
 MOTIF_DESC=	Motif widget set
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATHENA}
 CONFIGURE_ARGS+=	--disable-gtk --disable-motif
@@ -43,7 +43,7 @@ USE_XORG=	xaw xmu xt x11 sm ice
 .elif ${PORT_OPTIONS:MMOTIF}
 CONFIGURE_ARGS+=	--disable-athena --disable-gtk
 USE_XORG=	xt x11 sm ice xpm
-USE_MOTIF=	yes
+USES=		motif
 .else # ${PORT_OPTIONS:MGTK}
 CONFIGURE_ARGS+=	--disable-athena --disable-motif
 USE_GNOME=	gtk12
@@ -54,4 +54,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/WIDGET_LIBS=/ s|-lXm"$$|-lXm -lXpm"|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	thot
-# Date created:		1 Aug 1997
-# Whom:			Pedro Giffuni (orig)
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	thoteditor
 PORTVERSION=	2.1e
@@ -15,20 +11,19 @@ MASTER_SITE_SUBDIR=	apps/editors/X/thot
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An structured document editor, offering a graphical WYSIWYG interface
-
-.include <bsd.port.pre.mk>
+COMMENT=	Structured document editor, offering a graphical WYSIWYG interface
 
 THOT_SUBDIR=	Target
-USE_MOTIF=	yes
+USES=		gmake motif
 WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
-USE_GMAKE=	yes
 ALL_TARGET=	all schemas
 MAKE_JOBS_UNSAFE=	yes
 MAN1=		cextract.1
 MAN5=		cextrc.5
+
+.include <bsd.port.pre.mk>
 
 do-configure:
 	$(CP) $(WRKSRC)/../thot/Makefile.in $(WRKSRC)/../thot/Makefile.in.patched

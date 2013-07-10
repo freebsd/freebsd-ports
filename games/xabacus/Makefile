@@ -26,7 +26,7 @@ MAN6=		xabacus.6
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES=		motif
 .else
 CONFIGURE_ARGS+=	--without-motif
 .endif

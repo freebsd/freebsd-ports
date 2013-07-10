@@ -1,9 +1,5 @@
-# New ports collection makefile for:	znibbles
-# Date created:		21 Aug 1999
-# Whom:			Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
-#
+# Created by: Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	znibbles
 PORTVERSION=	0.0.7
@@ -21,7 +17,7 @@ LICENSE_COMB=	dual
 OPTIONS_DEFINE=	GTK1
 OPTIONS_DEFAULT=	GTK1
 
-USE_MOTIF=	yes
+USES=		motif
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

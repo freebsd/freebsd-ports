@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	white_dune
-# Date created:			Apr 12, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	white_dune
 PORTVERSION=	${DISTVERSION:S/pl/./}
@@ -23,8 +18,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		motif
 USE_XORG=	xft
-USE_MOTIF=	yes
 USE_GL=		gl glu glut
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes

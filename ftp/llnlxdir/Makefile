@@ -16,8 +16,7 @@ PLIST_FILES=	bin/xdir lib/X11/app-defaults/XDir
 MAN1=		xdir.1
 
 WRKSRC=		${WRKDIR}/llnlxdir2_1_2/sources
-USES=		imake
-USE_MOTIF=	yes
+USES=		imake motif
 USE_XORG=	ice sm x11 xext xp xt
 
 .include <bsd.port.mk>

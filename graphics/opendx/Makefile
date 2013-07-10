@@ -16,16 +16,14 @@ LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick	\
 		cdf.0:${PORTSDIR}/science/cdf
 
 USE_XORG=	xinerama xext xpm xmu sm ice 
-USES=		bison
+USES=		bison motif gmake
 USE_GCC=	any
 USE_GL=		yes
-USE_MOTIF=	yes
 USE_AUTOTOOLS=	libtool
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	ARCH="${OPSYS:L}"
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
 PKGMESSAGE=	${WRKDIR}/pkg-message

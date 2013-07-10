@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geomview
-# Date created:				5 November 1996
-# Whom:					fenner
-#
+# Created by: fenner
 # $FreeBSD$
-#
 
 PORTNAME=	geomview
 PORTVERSION=	1.9.4
@@ -20,8 +16,8 @@ NOT_FOR_ARCHS_REASON=	Segfaults on amd64
 OPTIONS_DEFINE=	MOTION_AVG DOCS EXAMPLES
 MOTION_AVG_DESC=	Use experimental motion averaging code
 
+USES=		motif
 USE_BZIP2=	yes
-USE_MOTIF=	yes
 USE_GL=		glu
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-motif=${LOCALBASE} --with-opengl=${LOCALBASE}
