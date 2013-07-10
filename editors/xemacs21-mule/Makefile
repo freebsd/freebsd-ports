@@ -90,7 +90,7 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs21-mule
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
@@ -112,7 +112,7 @@ pre-fetch:
 	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
 	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
-USE_MOTIF=	yes
+USES+=		motif
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
@@ -215,4 +215,4 @@ post-install::
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

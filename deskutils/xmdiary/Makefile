@@ -14,8 +14,7 @@ COMMENT=	Personal and group calendar utility
 
 NO_CDROM=	Don't sell for profit
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
-USE_MOTIF=	yes
-USES=		imake
+USES=		imake motif
 USE_GCC=	any
 USE_XORG=	x11 xext xp xpm xt
 MAN1=		xdaclunix.1 xdalarm.1 xdcustom.1 xddump.1 xdiary.1 xdinitdb.1 \

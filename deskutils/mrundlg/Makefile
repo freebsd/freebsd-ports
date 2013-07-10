@@ -9,10 +9,9 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	sixxgate@hotmail.com
-COMMENT=	An application / program launcher for Motif
+COMMENT=	Application / program launcher for Motif
 
-USES=		imake
-USE_MOTIF=	yes
+USES=		imake motif
 USE_BZIP2=	yes
 USE_XORG=	x11 xmu xt
 MAN1=		mrundlg.1

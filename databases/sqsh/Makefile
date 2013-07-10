@@ -29,7 +29,7 @@ PLIST_FILES=	bin/sqsh etc/sqshrc.default
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-USE_MOTIF=	yes
+USES=		motif
 CONFIGURE_ARGS+=	--with-motif --with-x
 .else
 PKGNAMESUFFIX=	-nox11

@@ -160,7 +160,7 @@ USE_XORG+=	xt glproto
 . endif
 
 . if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES+=		motif
 CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\""
 MAKE_ARGS+=	MOTIFHOME=${LOCALBASE}
 . endif

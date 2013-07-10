@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  ddd
-# Date created:			  Tue Jan 28, 1997
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien <obrien@NUXI.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ddd
 PORTVERSION=	3.3.12
@@ -16,9 +11,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergio@softshark.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
-USE_GMAKE=	yes
+USES=		gmake motif
 USE_XORG=	xpm
-USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-Wno-deprecated

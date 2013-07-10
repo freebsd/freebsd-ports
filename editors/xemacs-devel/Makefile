@@ -1,9 +1,5 @@
-# New ports collection makefile for:	X-Emacs
-# Date created:		25 Oct 2001
-# Whom:			Gary Jennejohn (gj@FreeBSD.org)
-#
+# Created by: Gary Jennejohn <gj@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
@@ -79,10 +75,10 @@ ALL_TARGET=	all dist
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libXm.so)
-USE_MOTIF=	yes
+USES+=		motif
 HAVE_MOTIF=	yes
 .endif
 
@@ -157,4 +153,4 @@ post-install::
 #	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
 #.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

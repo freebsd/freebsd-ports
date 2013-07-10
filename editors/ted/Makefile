@@ -50,7 +50,7 @@ INDDIR=		${DATADIR}/dfa
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--with-GTK
 .else
-USE_MOTIF=	yes
+USES+=		motif
 CONFIGURE_ARGS+=--with-MOTIF
 .endif
 
