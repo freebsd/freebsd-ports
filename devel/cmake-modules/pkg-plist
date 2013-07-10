@@ -95,6 +95,7 @@
 %%DATADIR%%/Modules/CMakeUnixFindMake.cmake
 %%DATADIR%%/Modules/CMakeVS10FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS11FindMake.cmake
+%%DATADIR%%/Modules/CMakeVS12FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS6BackwardCompatibility.cmake
 %%DATADIR%%/Modules/CMakeVS6FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS71FindMake.cmake
@@ -124,6 +125,7 @@
 %%DATADIR%%/Modules/CPackNSIS.cmake
 %%DATADIR%%/Modules/CPackPackageMaker.cmake
 %%DATADIR%%/Modules/CPackRPM.cmake
+%%DATADIR%%/Modules/CPackWIX.cmake
 %%DATADIR%%/Modules/CPackZIP.cmake
 %%DATADIR%%/Modules/CTest.cmake
 %%DATADIR%%/Modules/CTestScriptMode.cmake
@@ -199,6 +201,9 @@
 %%DATADIR%%/Modules/Compiler/SunPro-C.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/TI-ASM.cmake
+%%DATADIR%%/Modules/Compiler/TI-C.cmake
+%%DATADIR%%/Modules/Compiler/TI-CXX.cmake
 %%DATADIR%%/Modules/Compiler/TinyCC-C.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-C.cmake
 %%DATADIR%%/Modules/Compiler/VisualAge-CXX.cmake
@@ -219,6 +224,8 @@
 %%DATADIR%%/Modules/DeployQt4.cmake
 %%DATADIR%%/Modules/Documentation.cmake
 %%DATADIR%%/Modules/DummyCXXFile.cxx
+%%DATADIR%%/Modules/ExternalData.cmake
+%%DATADIR%%/Modules/ExternalData_config.cmake.in
 %%DATADIR%%/Modules/ExternalProject.cmake
 %%DATADIR%%/Modules/FLTKCompatibility.cmake
 %%DATADIR%%/Modules/FeatureSummary.cmake
@@ -270,6 +277,7 @@
 %%DATADIR%%/Modules/FindHTMLHelp.cmake
 %%DATADIR%%/Modules/FindHg.cmake
 %%DATADIR%%/Modules/FindITK.cmake
+%%DATADIR%%/Modules/FindIcotool.cmake
 %%DATADIR%%/Modules/FindImageMagick.cmake
 %%DATADIR%%/Modules/FindJNI.cmake
 %%DATADIR%%/Modules/FindJPEG.cmake
@@ -569,6 +577,8 @@
 %%DATADIR%%/Modules/Qt4Macros.cmake
 %%DATADIR%%/Modules/RepositoryInfo.txt.in
 %%DATADIR%%/Modules/SelectLibraryConfigurations.cmake
+%%DATADIR%%/Modules/Squish4RunTestCase.bat
+%%DATADIR%%/Modules/Squish4RunTestCase.sh
 %%DATADIR%%/Modules/SquishRunTestCase.bat
 %%DATADIR%%/Modules/SquishRunTestCase.sh
 %%DATADIR%%/Modules/SquishTestScript.cmake
@@ -598,6 +608,7 @@
 %%DATADIR%%/Modules/Use_wxWindows.cmake
 %%DATADIR%%/Modules/UsewxWidgets.cmake
 %%DATADIR%%/Modules/VTKCompatibility.cmake
+%%DATADIR%%/Modules/WIX.template.in
 %%DATADIR%%/Modules/WriteBasicConfigVersionFile.cmake
 %%DATADIR%%/Modules/ecos_clean.cmake
 %%DATADIR%%/Modules/exportheader.cmake.in

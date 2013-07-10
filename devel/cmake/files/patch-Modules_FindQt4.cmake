@@ -1,15 +1,15 @@
---- Modules/FindQt4.cmake.orig	2012-11-06 21:41:36.000000000 +0200
-+++ Modules/FindQt4.cmake	2012-11-27 22:31:37.000000000 +0200
-@@ -497,7 +497,7 @@
- # check for qmake
- # Debian uses qmake-qt4
- # macports' Qt uses qmake-mac
--find_program(QT_QMAKE_EXECUTABLE NAMES qmake qmake4 qmake-qt4 qmake-mac
-+find_program(QT_QMAKE_EXECUTABLE NAMES qmake-qt4 qmake qmake4 qmake-mac
-   PATHS
-     ENV QTDIR
-     "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]"
-@@ -690,13 +690,7 @@
+--- Modules/FindQt4.cmake.orig	2013-06-22 14:07:09.000000000 +0300
++++ Modules/FindQt4.cmake	2013-06-22 14:07:22.000000000 +0300
+@@ -569,7 +569,7 @@
+ 
+ set(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
+ 
+-set(_QT4_QMAKE_NAMES qmake qmake4 qmake-qt4 qmake-mac)
++set(_QT4_QMAKE_NAMES qmake-qt4 qmake qmake4 qmake-mac)
+ _qt4_find_qmake("${_QT4_QMAKE_NAMES}" QT_QMAKE_EXECUTABLE QTVERSION)
+ 
+ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -739,13 +739,7 @@
    # ask qmake for the plugins directory
    if (QT_LIBRARY_DIR AND NOT QT_PLUGINS_DIR  OR  QT_QMAKE_CHANGED)
      _qt4_query_qmake(QT_INSTALL_PLUGINS qt_plugins_dir)
@@ -24,7 +24,7 @@
    endif ()
  
    # ask qmake for the translations directory
-@@ -709,15 +703,7 @@
+@@ -758,15 +752,7 @@
    if (QT_LIBRARY_DIR AND NOT QT_IMPORTS_DIR OR QT_QMAKE_CHANGED)
      _qt4_query_qmake(QT_INSTALL_IMPORTS qt_imports_dir)
      if(qt_imports_dir)
