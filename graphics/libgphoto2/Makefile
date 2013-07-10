@@ -10,6 +10,8 @@ MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal digital camera control library
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
