@@ -9,7 +9,9 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A Japanese text input server for X11 applications
+COMMENT=	Japanese text input server for X11 applications
+
+MAKE_JOBS_UNSAFE=	yes
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
