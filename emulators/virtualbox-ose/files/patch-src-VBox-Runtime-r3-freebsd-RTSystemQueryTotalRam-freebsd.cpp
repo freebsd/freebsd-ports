@@ -55,7 +55,7 @@
 +				   includes non-main memory as well */
 +    *pcb = 0;
 +    if (sysctl(mib, 2, pcb, &pcblen, NULL, 0) == 0) {
-+	if (pcblen == sizeof(*pcb))
++	if (pcblen == sizeof(*pcb) || pcblen == sizeof(uint32_t))
 +	    return VINF_SUCCESS;
 +	else
 +	    return VERR_NO_MEMORY;	/* XXX */
@@ -74,7 +74,7 @@
 +    mib[1] = HW_USERMEM;
 +    *pcb = 0;
 +    if (sysctl(mib, 2, pcb, &pcblen, NULL, 0) == 0) {
-+	if (pcblen == sizeof(*pcb))
++	if (pcblen == sizeof(*pcb) || pcblen == sizeof(uint32_t))
 +	    return VINF_SUCCESS;
 +	else
 +	    return VERR_NO_MEMORY;	/* XXX */
