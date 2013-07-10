@@ -1,9 +1,5 @@
-# New ports collection makefile for:	frickin
-# Date created:				2 December 2006
-# Whom:					Alex Miller <asm@asm.kiev.ua>
-#
+# Created by: Alex Miller <asm@asm.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	frickin
 DISTVERSION=	2.0BETA2
@@ -15,6 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	asm@asm.kiev.ua
 COMMENT=	Frickin PPTP Proxy
 
+MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	frickin
 SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL LICENSE
