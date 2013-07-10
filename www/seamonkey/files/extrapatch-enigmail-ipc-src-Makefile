@@ -1,0 +1,39 @@
+--- mailnews/extensions/enigmail/ipc/src/Makefile.enig.orig	2013-07-08 16:36:56.488828884 +0200
++++ mailnews/extensions/enigmail/ipc/src/Makefile.enig	2013-07-08 16:38:38.044988437 +0200
+@@ -19,13 +19,13 @@
+ 
+ ifeq ($(OS_ARCH),NetBSD)
+ ifeq ($(DLL_SUFFIX),.so.1.0)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ 
+@@ -36,7 +36,7 @@
+ 
+ ifeq ($(OS_ARCH),HP-UX)
+ ifeq ($(GNU_CC)$(GNU_CXX),)
+-LDFLAGS += -Wl,-Bsymbolic
++LDFLAGS += -shared -Wl,-Bsymbolic
+ CFLAGS += -fPIC
+ endif
+ endif
+@@ -67,7 +67,11 @@
+ 	$(CC) $(LDFLAGS) -o $(libname) $(objfiles)
+ 
+ source: $(source)
++ifneq (,$(filter 4.2.%, $(CC_VERSION)))
++	$(CC) $(CFLAGS) -c -o $(objfiles) $^
++else
+ 	$(CC) $(CFLAGS) -Wno-return-type-c-linkage -c -o $(objfiles) $^
++endif
+ 
+ 
+ clean:
