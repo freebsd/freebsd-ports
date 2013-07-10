@@ -14,8 +14,7 @@ COMMENT=	Motif FTP client
 
 PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
-USES=		imake
-USE_MOTIF=	yes
+USES=		imake motif
 USE_XORG=	ice sm x11 xext xp xt
 
 CFLAGS+=	-Wno-implicit-int \

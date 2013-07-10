@@ -14,7 +14,7 @@ COMMENT=	Display PDF files and convert them to other formats
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -57,7 +57,7 @@ MAN5=		xpdfrc.5
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
-USE_MOTIF=		yes
+USES+=			motif
 MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""
 .else

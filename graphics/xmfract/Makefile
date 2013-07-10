@@ -13,7 +13,7 @@ COMMENT=	The dos based 'fractint' with an X/Motif front end
 
 LICENSE=	GPLv2
 
-USE_MOTIF=	yes
+USES=		motif
 USE_AUTOTOOLS=	aclocal autoconf
 ACLOCAL_ARGS=	# none
 CONFIGURE_ARGS=	--with-editres	\
@@ -23,7 +23,7 @@ MAKE_JOBS_SAFE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-IGNORE=		fails to run with: XCreateImage failed
+BROKEN=		fails to run with: XCreateImage failed
 .endif
 
 .include <bsd.port.post.mk>

@@ -49,7 +49,7 @@ TOOLKIT=	athena
 .endif
 
 .if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=	yes
+USES+=		motif
 TOOLKIT=	motif
 .endif
 

@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pixel@hugbox.org
-COMMENT=	A portable Amstrad 464&/664/6128 emulator
+COMMENT=	Portable Amstrad 464&/664/6128 emulator
 
 HAS_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -29,7 +29,7 @@ MOTIF_DESC=	With Motif widget set
 ATHENA_DESC=	With Athen widget set
 XSHM_DESC=	With XShm support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--disable-xshm
 .endif
 
 .if ${PORT_OPTIONS:MMOTIF}
-USE_MOTIF=yes
+USES+=	motif
 CONFIGURE_ARGS+=--with-motif1
 .else
 CONFIGURE_ARGS+=--without-motif1
@@ -57,4 +57,4 @@ CONFIGURE_ARGS+=--with-athena
 CONFIGURE_ARGS+=--without-athena
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

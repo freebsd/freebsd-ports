@@ -1,9 +1,5 @@
-# New ports collection makefile for:   OpenInventor
-# Date created: 	14 December 2002
-# Whom: 		Christian Gusenbauer
-#
+# Created by: Christian Gusenbauer
 # $FreeBSD$
-#
 
 PORTNAME=	inventor
 PORTVERSION=	2.1.5.p10
@@ -24,9 +20,7 @@ CONFLICTS=	Coin-* SoXt-*
 
 USE_XORG=	x11 xi
 USE_GL=		glw
-USE_GMAKE=	yes
-USES=		iconv
-USE_MOTIF=	yes
+USES=		iconv gmake motif
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 

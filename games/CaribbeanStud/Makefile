@@ -1,6 +1,4 @@
-# New ports collection makefile for:	CaribbeanStud
-# Date created:				4 July 1998
-# Whom:					Andrey Zakhvatov
+# Created by: Andrey Zakhvatov
 #
 # $FreeBSD$
 #
@@ -17,7 +15,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Caribbean Stud gambling game for X Window System
 
 MAKEFILE=		Xmakefile
-USE_MOTIF=		yes
+USES=			motif
 CFLAGS+=		-Wno-deprecated
 
 do-install:

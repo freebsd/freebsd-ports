@@ -24,9 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-release=yes \
 		--with-sharepath=${PREFIX}/share/d2x-xl
 USE_SDL=	sdl mixer image
-USE_GMAKE=	yes
+USES=		gmake motif
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-USE_MOTIF=	yes
 MAKE_JOBS_SAFE=	yes
 AUTOMAKE_ARGS=	--add-missing --copy
 

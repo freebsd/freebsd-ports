@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xshisen
-# Date created:               9 Oct 1996
-# Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xshisen
 PORTVERSION=	1.51
@@ -24,7 +20,7 @@ MANLANG=	"" ja
 MAN6=		xshisen.6
 
 .if !defined(WITHOUT_MOTIF)
-USE_MOTIF=	yes
+USES=		motif
 CONFIGURE_ARGS+=	--with-motif
 .endif
 
