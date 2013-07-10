@@ -19,10 +19,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-cdk
 
-# XXX: do we still need to pass PTHREAD_* stuff here?
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
 MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	AALIB DOCS NLS
@@ -32,16 +28,12 @@ OPTIONS_SUB=	yes
 AALIB_DESC=	Text mode capture preview support
 
 AALIB_LIB_DEPENDS=	aa:${PORTSDIR}/graphics/aalib
-AALIB_CONFIGURE_ARGS=	--without-aalib
+AALIB_CONFIGURE_OFF=	--without-aalib
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREADS_LIBS:S/"//g}|g ; \
-		s|-g -Wall||g' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
