@@ -13,5 +13,5 @@ USE_PURE=	yes
 PLIST_FILES=	lib/pure/sockets.pure \
 		lib/pure/sockets.so
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

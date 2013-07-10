@@ -16,5 +16,5 @@ USE_GL=	glut
 
 MAKE_ARGS+=	LinkGL="-lglut -lGLU -lGL"
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

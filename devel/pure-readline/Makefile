@@ -14,5 +14,5 @@ NO_PURE_EXAMPLES=	yes
 PLIST_FILES=	lib/pure/readline.pure \
 		lib/pure/readline.so
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

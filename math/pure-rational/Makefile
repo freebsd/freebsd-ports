@@ -17,5 +17,5 @@ NO_PURE_EXAMPLES=	yes
 PLIST_FILES=	lib/pure/rational.pure \
 		lib/pure/rat_interval.pure
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

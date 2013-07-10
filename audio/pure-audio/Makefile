@@ -21,5 +21,5 @@ post-patch:
 		-e "s|portaudio.h|portaudio2/portaudio.h|g" \
 	   	${WRKSRC}/Makefile
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>
