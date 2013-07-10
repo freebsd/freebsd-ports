@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lcms2
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/
