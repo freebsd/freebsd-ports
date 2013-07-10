@@ -17,6 +17,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
 HAS_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GTK2
 
