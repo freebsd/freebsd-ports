@@ -13,6 +13,8 @@ COMMENT=	Small, Lisp-like interpreted language
 
 WRKSRC=		${WRKDIR}/Klone
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
