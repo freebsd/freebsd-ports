@@ -11,4 +11,5 @@ KDE4_L10N=	mai
 
 IGNORE=		is not included in KDE SC ${KDE4_VERSION}
 
+.include "${.CURDIR}/../kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>
