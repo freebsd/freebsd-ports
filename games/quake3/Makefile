@@ -16,13 +16,14 @@ DISTNAME=	${PORTNAME}-${REALVERSION}-source
 MAINTAINER=	shirshegsm@gmail.com
 COMMENT=	Quake III Arena -- first person shooter (native build)
 
+USES=		gmake
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${REALVERSION}
 BUILD_WRKSRC=	${WRKSRC}/code/unix
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GAMELIBS OPTIMIZED_CFLAGS
 OPTIONS_MULTI=	FLAVOR
