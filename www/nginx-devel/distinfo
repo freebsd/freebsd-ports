@@ -1,5 +1,5 @@
-SHA256 (nginx-1.5.1.tar.gz) = 6e02dc28919ea3c8cf58d5076c1ff884e29bfe2197f27f829899ffd97e0939a6
-SIZE (nginx-1.5.1.tar.gz) = 768299
+SHA256 (nginx-1.5.2.tar.gz) = 90c2296920e52d56f3c6ba0f46f8ab33d2a78161001407c542c268db66078324
+SIZE (nginx-1.5.2.tar.gz) = 769040
 SHA256 (giom-nginx_accept_language_module-02262ce.tar.gz) = 3191f4caa70d9a8942c4f10b6abaaa96af451991d4b5e1e3d7b991376b00bf0c
 SIZE (giom-nginx_accept_language_module-02262ce.tar.gz) = 3398
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
