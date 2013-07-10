@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Scheme-to-C
-# Date created:		28 Dec 1994
-# Whom:			jmacd@uclink.berkeley.edu
-#
+# Created by: jmacd@uclink.berkeley.edu
 # $FreeBSD$
-#
 
 PORTNAME=	schemetoc
 PORTVERSION=	93.3.15
@@ -18,7 +14,7 @@ COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
 ONLY_FOR_ARCHS=	i386
 
-USE_XORG=	x11 xi
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		scc.1 sci.1
