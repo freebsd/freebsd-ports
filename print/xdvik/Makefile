@@ -14,9 +14,8 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
-USE_GMAKE=	yes
+USES=		gmake motif
 USE_TEX=	base texmf
-USE_MOTIF=	yes
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-t1lib \
