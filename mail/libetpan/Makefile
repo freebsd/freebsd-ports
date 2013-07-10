@@ -18,8 +18,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 USE_AUTOTOOLS=	libtool autoconf
 AUTOTOOLSFILES=	aclocal.m4
-USE_GMAKE=	yes
-USES=		iconv
+USES=		gmake iconv
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -31,23 +30,18 @@ OPTIONS_SINGLE=		CRYPTO
 OPTIONS_SINGLE_CRYPTO=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
-.include <bsd.port.options.mk>
+GNUTLS_CONFIGURE_ON=	--without-openssl --with-gnutls
+GNUTLS_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
+			gcrypt:${PORTSDIR}/security/libgcrypt
 
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=	--without-openssl --with-gnutls
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+OPENSSL_CONFIGURE_ON=	--without-gnutls
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--without-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-patch:

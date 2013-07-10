@@ -18,7 +18,7 @@ LICENSE_COMB=	dual
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/quacker
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GCC=	any
 USE_QT4=	gui moc_build qmake_build
 MAKE_JOBS_SAFE=	yes

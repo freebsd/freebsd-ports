@@ -16,9 +16,8 @@ LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig iconv
+USES=		gmake iconv pathfix pkgconfig
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=	--enable-shared \
@@ -37,6 +36,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -lintl -pthread
 CFLAGS+=		-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	ASPELL GPG GSM GTK2 PERL PYTHON SQLITE UNICODE XOSD
+OPTIONS_SUB=	yes
 
 ASPELL_DESC=	Enable spell checking support
 GPG_DESC=	Enable gpg plugin
@@ -50,92 +50,55 @@ XOSD_DESC=	Enable xosd plugin
 
 OPTIONS_DEFAULT=ASPELL
 
+ASPELL_CONFIGURE_ON=	--with-aspell
+ASPELL_CONFIGURE_OFF=	--without-aspell
+ASPELL_LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+ASPELL_RUN_DEPENDS=	${LOCALBASE}/share/aspell/pl.rws:${PORTSDIR}/polish/aspell
+
+GPG_CONFIGURE_ON=	--with-gpg
+GPG_CONFIGURE_OFF=	--without-gpg
+GPG_LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
+			gpg-error:${PORTSDIR}/security/libgpg-error
+GPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+
+GSM_CONFIGURE_ON=	--with-libgsm
+GSM_CONFIGURE_OFF=	--without-libgsm
+GSM_LIB_DEPENDS=	gsm:${PORTSDIR}/audio/gsm
+
+GTK2_CONFIGURE_ON=	--with-gtk
+GTK2_CONFIGURE_OFF=	--without-gtk
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+
+PERL_CONFIGURE_ON=	--with-perl
+PERL_CONFIGURE_OFF=	--without-perl
+
+PYTHON_CONFIGURE_ON=	--with-python
+PYTHON_CONFIGURE_OFF=	--without-python
+
+SQLITE_CONFIGURE_ON=	--with-sqlite3
+SQLITE_CONFIGURE_OFF=	--without-sqlite3
+SQLITE_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+
+UNICODE_CONFIGURE_ON=	--enable-unicode
+
+XOSD_CONFIGURE_ON=	--with-libxosd
+XOSD_CONFIGURE_OFF=	--without-libxosd
+XOSD_LIB_DEPENDS=	xosd:${PORTSDIR}/misc/xosd
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS+=		${LOCALBASE}/share/aspell/pl.rws:${PORTSDIR}/polish/aspell
-CONFIGURE_ARGS+=	--with-aspell
-.else
-CONFIGURE_ARGS+=	--without-aspell
-.endif
-
-.if ${PORT_OPTIONS:MGPG}
-LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme \
-			gpg-error:${PORTSDIR}/security/libgpg-error
-RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
-CONFIGURE_ARGS+=	--with-gpg
-PLIST_SUB+=		GPG_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-gpg
-PLIST_SUB+=		GPG_PLUGIN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGSM}
-LIB_DEPENDS+=		gsm:${PORTSDIR}/audio/gsm
-CONFIGURE_ARGS+=	--with-libgsm
-PLIST_SUB+=		GSM_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-libgsm
-PLIST_SUB+=		GSM_PLUGIN="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=		gtk20
-CONFIGURE_ARGS+=	--with-gtk
-PLIST_SUB+=		GTK2_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-gtk
-PLIST_SUB+=		GTK2_PLUGIN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+USE_GNOME+=	gtk20
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=		yes
-CONFIGURE_ARGS+=	--with-perl
-PLIST_SUB+=		PERL_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-perl
-PLIST_SUB+=		PERL_PLUGIN="@comment "
+USE_PERL5=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		yes
-CONFIGURE_ARGS+=	--with-python
-PLIST_SUB+=		PYTHON_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-python
-PLIST_SUB+=		PYTHON_PLUGIN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
-CONFIGURE_ARGS+=	--with-sqlite3
-PLIST_SUB+=		SQLITE_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-sqlite3
-PLIST_SUB+=		SQLITE_PLUGIN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUNICODE}
-CONFIGURE_ARGS+=	--enable-unicode
-.endif
-
-.if ${PORT_OPTIONS:MXOSD}
-LIB_DEPENDS+=		xosd:${PORTSDIR}/misc/xosd
-CONFIGURE_ARGS+=	--with-libxosd
-PLIST_SUB+=		XOSD_PLUGIN=""
-.else
-CONFIGURE_ARGS+=	--without-libxosd
-PLIST_SUB+=		XOSD_PLUGIN="@comment "
+USE_PYTHON=	yes
 .endif
 
 post-patch:

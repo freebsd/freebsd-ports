@@ -15,6 +15,8 @@ USE_SDL=	image mixer sdl
 
 PORTDOCS=	readme.html
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -21,11 +21,10 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
-USE_GMAKE=	yes
 USE_QT4=	gui network xml rcc_build moc_build uic_build linguist_build
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes

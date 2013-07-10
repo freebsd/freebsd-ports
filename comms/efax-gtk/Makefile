@@ -32,15 +32,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread -lintl
 
 CONFIGURE_ARGS+=--with-gtk-version=gtk2
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES=		gettext
+
+.include <bsd.port.options.mk>
 
 post-install:
 	@${ECHO}

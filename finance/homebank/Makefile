@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	osp:${PORTSDIR}/textproc/opensp
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		desktop-file-utils
+USES=		desktop-file-utils gmake shared-mime-info
 USE_GNOME=	gnomehier gtk20
 INSTALLS_ICONS=	yes
 

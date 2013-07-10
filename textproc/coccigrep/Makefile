@@ -22,6 +22,9 @@ USE_PYDISTUTILS=easy_install
 MANCOMPRESSED=	no
 
 MAN1=		coccigrep.1
+PORTDOCS=	ChangeLog README.rst
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

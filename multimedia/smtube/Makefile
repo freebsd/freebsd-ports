@@ -12,13 +12,15 @@ COMMENT=	SMPlayer YouTube browser
 RUN_DEPENDS=	${LOCALBASE}/bin/smplayer:${PORTSDIR}/multimedia/smplayer
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	#empty
 USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
 QMAKEFLAGS+=	QMAKE_CXXFLAGS_RELEASE=""
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

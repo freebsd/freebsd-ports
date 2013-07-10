@@ -12,10 +12,4 @@ lib/X11/fonts/freefont-ttf/FreeSerifBoldItalic.ttf
 lib/X11/fonts/freefont-ttf/FreeSerifItalic.ttf
 lib/X11/fonts/freefont-ttf/fonts.dir
 lib/X11/fonts/freefont-ttf/fonts.scale
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/X11/fonts/freefont-ttf
