@@ -1,9 +1,5 @@
-# New ports collection makefile for:	njplot
-# Date created:		5 December 2007
-# Whom:			Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-#
+# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	njplot
 PORTVERSION=	2.1
@@ -17,7 +13,7 @@ COMMENT=	Phylogenetic tree drawing program capable of interactive manipulation
 .ifndef (WITHOUT_X11)
 BUILD_DEPENDS=	${LOCALBASE}/lib/ncbi/libvibrant.a:${PORTSDIR}/biology/ncbi-toolkit
 USE_XORG=	x11 xt xmu xp
-USE_MOTIF=	yes
+USES=		motif
 .endif
 
 MAKEFILE=	makefile
