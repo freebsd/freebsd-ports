@@ -51,6 +51,75 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b80104f-e96c-11e2-8bac-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>28.0.1500.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>A special reward for Andrey Labunets for his combination of
+	    CVE-2013-2879 and CVE-2013-2868 along with some (since fixed)
+	    server-side bugs.</p>
+	  <p>[252216] Low CVE-2013-2867: Block pop-unders in various
+	    scenarios.</p>
+	  <p>[252062] High CVE-2013-2879: Confusion setting up sign-in and sync.
+	    Credit to Andrey Labunets.</p>
+	  <p>[252034] Medium CVE-2013-2868: Incorrect sync of NPAPI extension
+	    component. Credit to Andrey Labunets.</p>
+	  <p>[245153] Medium CVE-2013-2869: Out-of-bounds read in JPEG2000
+	    handling. Credit to Felix Groebert of Google Security Team.</p>
+	  <p>[244746] [242762] Critical CVE-2013-2870: Use-after-free with
+	    network sockets. Credit to Collin Payne.</p>
+	  <p>[244260] Medium CVE-2013-2853: Man-in-the-middle attack against
+	    HTTP in SSL. Credit to Antoine Delignat-Lavaud and Karthikeyan
+	    Bhargavan from Prosecco at INRIA Paris.</p>
+	  <p>[243991] [243818] High CVE-2013-2871: Use-after-free in input
+	    handling. Credit to miaubiz.</p>
+	  <p>[Mac only] [242702] Low CVE-2013-2872: Possible lack of entropy in
+	    renderers. Credit to Eric Rescorla.</p>
+	  <p>[241139] High CVE-2013-2873: Use-after-free in resource loading.
+	    Credit to miaubiz.</p>
+	  <p>[233848] Medium CVE-2013-2875: Out-of-bounds-read in SVG. Credit
+	    to miaubiz.</p>
+	  <p>[229504] Medium CVE-2013-2876: Extensions permissions confusion
+	    with interstitials. Credit to Dev Akhawe.</p>
+	  <p>[229019] Low CVE-2013-2877: Out-of-bounds read in XML parsing.
+	    Credit to Aki Helin of OUSPG.</p>
+	  <p>[196636] None: Remove the "viewsource" attribute on iframes.
+	    Credit to Collin Jackson.</p>
+	  <p>[177197] Medium CVE-2013-2878: Out-of-bounds read in text
+	    handling. Credit to Atte Kettunen of OUSPG.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2853</cvename>
+      <cvename>CVE-2013-2867</cvename>
+      <cvename>CVE-2013-2868</cvename>
+      <cvename>CVE-2013-2869</cvename>
+      <cvename>CVE-2013-2870</cvename>
+      <cvename>CVE-2013-2871</cvename>
+      <cvename>CVE-2013-2872</cvename>
+      <cvename>CVE-2013-2873</cvename>
+      <cvename>CVE-2013-2875</cvename>
+      <cvename>CVE-2013-2876</cvename>
+      <cvename>CVE-2013-2877</cvename>
+      <cvename>CVE-2013-2878</cvename>
+      <cvename>CVE-2013-2879</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-07-09</discovery>
+      <entry>2013-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3d24aee-e5ad-11e2-b183-20cf30e32f6d">
     <topic>apache22 -- mod_rewrite vulnerability</topic>
     <affects>
