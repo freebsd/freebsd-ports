@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ukr-ispell
-# Date created:         5 Dec 2000
-# Whom:                 mi
-#
+# Created by: mi
 # $FreeBSD$
-#
 
 PORTNAME=	ispell-uk
 PORTVERSION=	0.7
@@ -15,9 +11,11 @@ COMMENT=	Ukrainian (KOI8-U) dictionary for ISPELL
 
 BUILD_DEPENDS=  buildhash:${PORTSDIR}/textproc/ispell
 
+MAKE_JOBS_UNSAFE=	yes
+
+USES=		gmake
 USE_BZIP2=	YES
 ALL_TARGET=	koi
-USE_GMAKE=	YES
 USE_PERL5=	yes
 
 # Still need gmake for other reasons :-\
