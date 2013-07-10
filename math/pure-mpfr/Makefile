@@ -15,5 +15,5 @@ PLIST_FILES=	lib/pure/mpfr.pure \
 
 MAKE_ARGS+=	libdir="${PREFIX}/lib"
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

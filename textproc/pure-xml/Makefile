@@ -15,5 +15,5 @@ USE_GNOME=	libxml2 libxslt
 PLIST_FILES=	lib/pure/xml.pure \
 		lib/pure/xml.so
 
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>
