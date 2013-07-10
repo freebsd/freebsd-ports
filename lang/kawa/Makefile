@@ -12,10 +12,11 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
+USES=		gmake
 USE_JAVA=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION} \
 		--with-libtool
