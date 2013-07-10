@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SlingShot
-# Date created:		5 March 1997
-# Whom:			Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	slingshot
 PORTVERSION=	2.1
@@ -24,7 +20,8 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	OPENWINHOME=${LOCALBASE}
 
 post-install:

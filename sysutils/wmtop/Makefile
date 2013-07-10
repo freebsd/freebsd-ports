@@ -1,7 +1,4 @@
-# New ports collection makefile for:	wmtop
-# Date created:		07 May 2000
-# Whom:			Dan Piponi <wmtop@tanelorn.demon.co.uk>
-#
+# Created by: Dan Piponi <wmtop@tanelorn.demon.co.uk>
 # $FreeBSD$
 
 PORTNAME=	wmtop
@@ -16,6 +13,7 @@ COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 
 USE_XORG=	xpm x11
 ALL_TARGET=	freebsd
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		wmtop.1
 PLIST_FILES=	bin/wmtop

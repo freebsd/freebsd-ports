@@ -25,6 +25,7 @@ USE_XORG=	xft xmu xpm
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GHOSTSCRIPT_RUN=yes
+MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib

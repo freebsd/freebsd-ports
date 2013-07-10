@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	ocs
-# Date created:				8 July 2007
-# Whom:	      				Björn König <bkoenig@cs.tu-berlin.de>
-#
+# Created by: Björn König <bkoenig@cs.tu-berlin.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ocs
 PORTVERSION=	2.3k
@@ -29,12 +24,13 @@ PLIST=		${WRKDIR}/pkg-plist
 ALL_TARGET=	install
 
 USE_BZIP2=	yes
+USES=		gmake
 USE_TCL=	yes
 USE_TK=		yes
-USE_GMAKE=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_XORG=	xt
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${OCS}/lib/freebsd${OSREL}-${ARCH}
 
 NOT_FOR_ARCHS=	amd64 ia64 sparc64

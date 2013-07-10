@@ -1,7 +1,4 @@
-# New ports collection makefile for:	chemtool-devel
-# Date created:                 Mar 5, 2003
-# Whom:				NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	chemtool
@@ -23,11 +20,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
 #USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAN1=	chemtool.1 cht.1
+MAKE_JOBS_UNSAFE=	yes
 #to include emf
 CFLAGS+=	-I${LOCALBASE}/include/libEMF
 CXXFLAGS+=	-I${LOCALBASE}/include/libEMF

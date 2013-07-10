@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	thttpd
-# Date created:				24 May 1999
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	thttpd
 PORTVERSION=	2.25b
@@ -21,6 +17,7 @@ COMMENT=	Tiny/turbo/throttling HTTP server
 IGNOREFILES=	notes.html
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	thttpd
 SUB_FILES=	pkg-message thttpd.conf.sample

@@ -19,6 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 CPPFLAGS+=	-I${LOCALBASE}/include
 REINPLACE_ARGS=	-i ''
 USES=		cmake
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 

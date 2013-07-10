@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-python=${LOCALBASE}/bin/python2
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 USES=	gmake
 
