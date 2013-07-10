@@ -22,7 +22,7 @@ PURE_include=	bsd.pure.mk
 MASTER_SITES?=	http://pure-lang.googlecode.com/files/
 DIST_SUBDIR=	pure
 
-USE_GMAKE=	yes
+USES+=		gmake
 
 _PURE_audio_cat=	audio
 _PURE_csv_cat=		textproc

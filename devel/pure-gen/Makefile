@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pure-sql3
-# Date created:		2011-03-18
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pure-gen
 PORTVERSION=	0.15
@@ -21,6 +17,5 @@ MAN1=		pure-gen.1
 
 CC= 		gcc
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/pure/bsd.pure.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
