@@ -206,7 +206,6 @@
     SUBDIR += funktrackergold
     SUBDIR += gbemol
     SUBDIR += gbsplay
-    SUBDIR += gdam
     SUBDIR += gervill
     SUBDIR += ghostess
     SUBDIR += gigedit
