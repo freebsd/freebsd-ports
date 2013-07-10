@@ -771,6 +771,7 @@
     SUBDIR += p5-Text-Brew
     SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV-Encoded
+    SUBDIR += p5-Text-CSV-Hashify
     SUBDIR += p5-Text-CSV-Simple
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-Capitalize
