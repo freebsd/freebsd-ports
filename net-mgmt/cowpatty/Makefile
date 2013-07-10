@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cowpatty
-# Date created:		March 20, 2008
-# Whom:		Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cowpatty
 PORTVERSION=	4.6
@@ -17,6 +13,7 @@ COMMENT=	Brute-force dictionary attack against WPA-PSK
 
 PORTDOCS=	FAQ README
 SUB_FILES=	pkg-message
+MAKE_JOBS_UNSAFE=	yes
 
 USE_OPENSSL=	yes
 
