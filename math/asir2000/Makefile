@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asir
-# Date created:		30 Aug 2001
-# Whom:			Tomokatsu SAITO <saito@asir.org>
-#
+# Created by: Tomokatsu SAITO <saito@asir.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asir
 PORTVERSION=	20110810
@@ -19,6 +15,7 @@ COMMENT=	The system Risa/Asir is a general computer algebra system
 
 LIB_DEPENDS=	pari-gmp.2:${PORTSDIR}/math/pari
 
+MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
