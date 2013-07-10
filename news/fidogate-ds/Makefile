@@ -1,8 +1,5 @@
-# New ports collection makefile for: fidogateds
-# Whom:                 Andrey Slusar <anray@FreeBSD.org>
-# Date created:         9 Feb 2004
+# Created by: Andrey Slusar <anray@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		fidogate
 PORTVERSION=		5.1.7
@@ -25,6 +22,7 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_PERL5=		yes
+MAKE_JOBS_UNSAFE=	yes
 
 SPOOLDIR?=/var/spool/fido/gate
 BTBASEDIR?=/var/spool/fido/bt
