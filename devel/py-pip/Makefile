@@ -16,8 +16,6 @@ LICENSE=	MIT
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-REINPLACE_ARGS=	-i.bak -e "s/env python$$/&${PYTHON_VER}/"
-
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
@@ -30,7 +28,7 @@ USE_PYDISTUTILS=	easy_install
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} ${WRKSRC}/pip/__init__.py
+	${REINPLACE_CMD} -i.bak -e "s/env python$$/&${PYTHON_VER}/" ${WRKSRC}/pip/__init__.py
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
