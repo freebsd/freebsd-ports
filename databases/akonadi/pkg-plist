@@ -4,11 +4,13 @@ bin/akonadi_control
 bin/akonadi_rds
 bin/akonadictl
 bin/akonadiserver
+bin/asapcat
 include/akonadi/private/akonadiprotocolinternals_export.h
 include/akonadi/private/capabilities_p.h
 include/akonadi/private/imapparser_p.h
 include/akonadi/private/imapset_p.h
 include/akonadi/private/notificationmessage_p.h
+include/akonadi/private/notificationmessagev2_p.h
 include/akonadi/private/protocol_p.h
 include/akonadi/private/xdgbasedirs_p.h
 lib/cmake/Akonadi/AkonadiConfig.cmake
@@ -17,7 +19,7 @@ lib/cmake/Akonadi/AkonadiTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Akonadi/AkonadiTargetsWithPrefix.cmake
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.9.2
+lib/libakonadiprotocolinternals.so.1.10.0
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global-mobile.conf
 share/config/akonadi/mysql-global.conf
