@@ -7,6 +7,7 @@ include/luajit-2.0/lualib.h
 include/luajit-2.0/lauxlib.h
 include/luajit-2.0/lua.hpp
 lib/libluajit-5.1.a
+lib/libluajit-5.1.so
 lib/libluajit-5.1.so.2
 lib/libluajit-5.1.so.%%VERSION%%
 libdata/pkgconfig/luajit.pc
