@@ -1,28 +1,28 @@
+# Created by: Doug Barton <dougb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.7
-PORTREVISION?=	2
+PORTVERSION=	0.16.10
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT?=	C++ library implementing a BitTorrent client
 
-MAKE_JOBS_SAFE=	yes
-
-CONFLICTS+=	libtorrent-rasterbar-0.1[45789].*
-
-NO_LATEST_LINK=	yes
+LICENSE=	BSD
 
 LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 		GeoIP:${PORTSDIR}/net/GeoIP
 
-GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig iconv
-USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CONFLICTS+=	libtorrent-rasterbar-0.1[45789].*
+NO_LATEST_LINK=	yes
 
 CONFIGURE_ARGS+=	--disable-debug \
 		--disable-static \
@@ -39,7 +39,16 @@ CONFIGURE_ARGS+=	--disable-debug \
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	AUTHORS README
+
+DOCSRCDIR2=	 ${WRKSRC}/docs
+DOCSDIR2=	${DOCSDIR}/docs
+DOC_FILES2=	*.png *.jpg *.gif *.html *.rst *.css
+
+PORTEXAMPLES=	*.cpp
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +62,7 @@ CONFIGURE_ARGS+=	--disable-python-binding
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes"
 post-patch:	slave-post-patch
 .else
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<include>/usr/local/include|<include>${PREFIX}/include|' \
 		${WRKSRC}/Jamfile
@@ -65,11 +75,13 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.gif ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.png ${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
