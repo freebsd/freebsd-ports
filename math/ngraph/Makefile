@@ -12,6 +12,6 @@ DISTNAME=	Ngraph-${PORTVERSION}-src
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	XY plotting tool for students, scientists, and engineers
 
-USES=		make motif
+USES=		gmake motif
 
 .include <bsd.port.mk>
