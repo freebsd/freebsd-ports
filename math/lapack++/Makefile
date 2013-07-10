@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lapack++
-# Date created:         5 May 2002
-# Whom:                 NAKATA Maho <chat95@mbox.kyoto-inet.or.jp>
-#
+# Created by: NAKATA Maho <chat95@mbox.kyoto-inet.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.3
@@ -24,7 +20,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
 WANT_GNOME=	yes
-USES=	pathfix
+USES=	pathfix gmake
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +36,6 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 .if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas
 LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas
