@@ -1,5 +1,5 @@
---- ../coreconf/ruleset.mk~
-+++ ../coreconf/ruleset.mk
+--- coreconf/ruleset.mk~
++++ coreconf/ruleset.mk
 @@ -85,7 +85,7 @@
  #
  

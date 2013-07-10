@@ -1,5 +1,5 @@
---- ../../security/coreconf/FreeBSD.mk.orig	2009-08-22 07:33:09.000000000 +0200
-+++ ../../security/coreconf/FreeBSD.mk	2010-03-28 23:01:33.000000000 +0200
+--- coreconf/FreeBSD.mk.orig	2009-08-22 07:33:09.000000000 +0200
++++ coreconf/FreeBSD.mk	2010-03-28 23:01:33.000000000 +0200
 @@ -37,9 +37,9 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
