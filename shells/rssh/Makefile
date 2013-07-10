@@ -1,16 +1,12 @@
-# New ports collection makefile for:	rssh
-# Date created:				Fri Apr 16 02:04:33 CEST 2004
-# Whom:					enigmatyc
-#
+# Created by: enigmatyc
 # $FreeBSD$
-#
 
 PORTNAME=	rssh
 PORTVERSION=	2.3.4
 CATEGORIES=	shells security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	Restricted Secure SHell only for sftp or/and scp
 
 GNU_CONFIGURE=	yes
