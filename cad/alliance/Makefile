@@ -22,6 +22,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		bison gmake motif
 
+MAKE_JOBS_UNSAFE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}
 CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
