@@ -4421,3 +4421,4 @@ games/gnomememoryblocks||2013-07-04|Has expired: Unsupported upstream
 devel/py-reddit||2013-07-07|Has been removed from PyPI, Use www/py-praw
 games/speakinghangman||2013-07-07|Has expired: No more public distfiles
 security/pinentry-qt||2013-07-09|Removed: Qt3 ports have expired
+games/nethack34-qt|games/nethack34-gnome|2013-07-09|Uses unsupported QT version
