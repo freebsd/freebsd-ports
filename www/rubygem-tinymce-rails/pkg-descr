@@ -1,0 +1,4 @@
+Seamlessly integrates TinyMCE into the Rails asset pipeline introduced
+in Rails 3.1.
+
+WWW: https://rubygems.org/gems/tinymce-rails
