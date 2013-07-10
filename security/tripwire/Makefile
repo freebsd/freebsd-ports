@@ -17,9 +17,10 @@ LATEST_LINK=	${PORTNAME}
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
 MAN8=		siggen.8 tripwire.8 twadmin.8 twintro.8 twprint.8
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+MAKE_JOBS_UNSAFE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd
 IS_INTERACTIVE=	yes
 M4=		/usr/bin/m4
