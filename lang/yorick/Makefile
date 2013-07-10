@@ -25,6 +25,12 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+# Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds
+post-patch:
+	@${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|' \
+		${WRKSRC}/gist/Makefile ${WRKSRC}/play/Makefile \
+		${WRKSRC}/yorick/Makefile ${WRKSRC}/Makefile
+
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ysite config)
