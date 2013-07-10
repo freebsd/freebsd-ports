@@ -8,11 +8,12 @@ MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/13.5/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	An ANSI Common Lisp implementation
+COMMENT=	ANSI Common Lisp implementation
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
-USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
+USES=		gmake
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-gmp --with-gmp-prefix=${LOCALBASE} --enable-boehm=system
