@@ -2,6 +2,7 @@
 
 PORTNAME=	acoustid-fingerprinter
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/lalinsky/${PORTNAME}/
 
@@ -12,13 +13,16 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	chromaprint:${PORTSDIR}/audio/chromaprint \
 		tag:${PORTSDIR}/audio/taglib \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg
+		avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
 
 USES=		cmake
 USE_QT4=	gui network \
 		qmake_build moc_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
+
+CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING=${FFMPEG_SUFFIX}
+FFMPEG_SUFFIX?=	1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
