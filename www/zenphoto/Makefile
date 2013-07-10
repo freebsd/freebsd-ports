@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.4.8
+PORTVERSION=	1.4.5
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A simpler web photo gallery
+COMMENT=	Simpler web photo gallery
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 FETCH_ARGS=	-Fpr
 NO_BUILD=	yes
@@ -40,6 +41,7 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
 	cd ${WRKSRC}/ && \
+		${MKDIR} ${MS_DIRRMTRY} && \
 		${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' > ${MS_PLIST} && \
 		${FIND} -s * -type d | ${TAIL} -r | ${SED} 's|^|@dirrm %%WWWDIR%%/|' >> ${MS_PLIST} && \
 		${ECHO} '@dirrmtry %%WWWDIR%%' >> ${MS_PLIST}
