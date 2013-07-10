@@ -49,7 +49,7 @@ post-patch::
 .include <bsd.port.options.mk>
 
 .for m in nas esd
-.	ifdef ${PORT_OPTIONS:M${m:U}}
+.	if ${PORT_OPTIONS:M${m:U}}
 LIB_DEPENDS+=	${m:nas=audio}:${PORTSDIR}/audio/${m:esd=esound}
 post-patch::
 	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:U}_AUDIO,INCLUDE_MODULES += ${m:U}_AUDIO,' \
