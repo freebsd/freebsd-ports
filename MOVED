@@ -4424,3 +4424,4 @@ security/pinentry-qt||2013-07-09|Removed: Qt3 ports have expired
 games/nethack34-qt|games/nethack34-gnome|2013-07-09|Uses unsupported QT version
 audio/gdam||2013-07-10|Has expired: Broken for a while
 devel/gnome-vfs1||2013-07-10|Has expired: No more depend on, No more supported upstream
+textproc/ua-ispell|ukrainian/ispell|2013-07-10|Removed because it has been moved to ukrainian/ispell 12 years ago

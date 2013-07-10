@@ -1461,7 +1461,6 @@
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags
-    SUBDIR += ua-ispell
     SUBDIR += uim
     SUBDIR += uim-el
     SUBDIR += uim-el-emacs21
