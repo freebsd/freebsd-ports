@@ -947,6 +947,7 @@
     SUBDIR += libbonobo-reference
     SUBDIR += libbonobomm
     SUBDIR += libburn
+    SUBDIR += libc++
     SUBDIR += libccid
     SUBDIR += libcfg
     SUBDIR += libcfu
