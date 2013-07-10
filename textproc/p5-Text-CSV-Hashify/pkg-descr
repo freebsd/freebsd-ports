@@ -1,0 +1,12 @@
+Text::CSV::Hashify is designed for the case where you simply want to turn a CSV
+file into a Perl hash. In particular, it is designed for the case where (a) the
+CSV file's first record is a list of fields in the ancestral database table and
+(b) one field (column) of which functions as a primary key, i.e., each record's
+entry in that field is distinct from every other record's entry therein.
+
+Text::CSV::Hashify turns that kind of CSV file into one big hash of hashes.
+Elements of this hash are keyed on the entries in the designated primary key
+field and the value for each element is a hash reference of all the data in a
+particular database record (including the primary key field and its value).
+
+WWW: http://search.cpan.org/dist/Text-CSV-Hashify/
