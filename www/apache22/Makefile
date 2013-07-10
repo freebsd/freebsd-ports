@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache22
-PORTVERSION=	2.2.24
-PORTREVISION?=	1
+PORTVERSION=	2.2.25
+#PORTREVISION?=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -98,7 +98,7 @@ IGNORE=		suEXEC resource limit patch requires mod_suexec.\
 .endif
 
 .if ${PORT_OPTIONS:MSUEXEC_USERDIR}
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-suexec_userdir
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-suexec_userdir
 .  if empty(PORT_OPTIONS:MSUEXEC)
 IGNORE=		suEXEC UserDir patch requires mod_suexec.\
 		Please (re)run 'make config' and choose SUEXEC option also

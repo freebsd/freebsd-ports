@@ -121,27 +121,27 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="f3d24aee-e5ad-11e2-b183-20cf30e32f6d">
-    <topic>apache22 -- mod_rewrite vulnerability</topic>
+    <topic>apache22 -- several vulnerabilities</topic>
     <affects>
       <package>
 	<name>apache22</name>
-	<range><gt>2.2.0</gt><lt>2.2.24_1</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.25</lt></range>
       </package>
       <package>
 	<name>apache22-event-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.24_1</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.25</lt></range>
       </package>
       <package>
 	<name>apache22-itk-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.24_1</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.25</lt></range>
       </package>
       <package>
 	<name>apache22-peruser-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.24_1</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.25</lt></range>
       </package>
       <package>
 	<name>apache22-worker-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.24_1</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.25</lt></range>
       </package>
     </affects>
     <description>
@@ -153,16 +153,21 @@ Note:  Please add new entries to the beginning of this file.
 	    non-printable characters, which might allow remote attackers to
 	    execute arbitrary commands via an HTTP request containing an
 	    escape sequence for a terminal emulator.</p>
+	  <p>mod_dav: Sending a MERGE request against a URI handled by
+	    mod_dav_svn with the source href (sent as part of the request
+	    body as XML) pointing to a URI that is not configured for DAV
+	    will trigger a segfault.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2013-1862</cvename>
+      <cvename>CVE-2013-1896</cvename>
     </references>
     <dates>
       <discovery>2013-06-21</discovery>
       <entry>2013-07-05</entry>
-      <modified>2013-07-06</modified>
+      <modified>2013-07-10</modified>
     </dates>
   </vuln>
 
