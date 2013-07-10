@@ -1,5 +1,5 @@
---- ../coreconf/UNIX.mk~
-+++ ../coreconf/UNIX.mk
+--- coreconf/UNIX.mk~
++++ coreconf/UNIX.mk
 @@ -42,10 +42,8 @@ AR          = ar cr $@
  LDOPTS     += -L$(SOURCE_LIB_DIR)
  

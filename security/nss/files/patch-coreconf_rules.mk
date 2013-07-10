@@ -1,5 +1,5 @@
---- ../coreconf/rules.mk.orig	Sat Jan  6 00:48:54 2007
-+++ ../coreconf/rules.mk	Fri Mar 23 10:15:46 2007
+--- coreconf/rules.mk.orig	Sat Jan  6 00:48:54 2007
++++ coreconf/rules.mk	Fri Mar 23 10:15:46 2007
 @@ -114,6 +114,9 @@
  endif
  ifdef SHARED_LIBRARY
