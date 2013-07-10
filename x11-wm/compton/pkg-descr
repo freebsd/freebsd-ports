@@ -3,7 +3,7 @@ of xcompmgr, and heavily refactored.
 
 Most prominent changes from the original xcompmgr:
 
-  - OpenGL/GLX backend in addition to the old X Render backend
+  - OpenGL/GLX backend in addition to the old XRender backend
   - Inactive window transparency and dimming
   - Titlebar/frame and menu transparency
   - Shadows for ARGB windows, e.g. terminals with transparency
