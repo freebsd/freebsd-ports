@@ -1,9 +1,5 @@
-# New ports collection makefile for:	samba4wins
-# Date created:				11th Apr 2006
-# Whom:					Timur I. Bakeyev <timur@gnu.org>
-#
+# Created by: Timur I. Bakeyev <timur@gnu.org>
 # $FreeBSD$
-#
 
 PORTNAME=		samba4wins
 PORTVERSION=		1.0.8
@@ -13,10 +9,11 @@ MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
 DISTNAME=		${PORTNAME}_${PORTVERSION}-2
 
 MAINTAINER=		timur@FreeBSD.org
-COMMENT=		A full featured replicating WINS server for UNIX
+COMMENT=		Full featured replicating WINS server for UNIX
 
 CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*
 
+MAKE_JOBS_UNSAFE=	yes
 USES=			iconv
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
