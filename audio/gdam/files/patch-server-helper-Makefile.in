@@ -1,7 +1,0 @@
---- server/helper/Makefile.in.orig	Sat Jun 22 08:17:50 2002
-+++ server/helper/Makefile.in	Sun Jan 22 15:51:29 2006
-@@ -143,3 +143,3 @@
- # it should be with the rest of dsppreload defs
--gdamdsppreload_la_LDFLAGS = -module -ldl
-+gdamdsppreload_la_LDFLAGS = -module
- 
