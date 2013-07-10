@@ -23,9 +23,8 @@ CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
-USES=		iconv
+USES=		iconv gmake
 USE_AUTOTOOLS=	libtool autoconf:env automake:env
-USE_GMAKE=	yes
 USE_XORG=	xaw xbitmaps xft
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -34,10 +33,6 @@ CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/includ
 USE_CSTD=	gnu89
 
 DEMOS_SRC=	${WRKSRC}/demos/programs
-
-.ifdef USE_MOTIF
-.error You have `USE_MOTIF' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
 
 .if defined(WITH_JDK_PATCH)
 

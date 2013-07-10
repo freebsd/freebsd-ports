@@ -23,14 +23,15 @@ EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Advanced Functional Neuro Imaging
 
-LIB_DEPENDS=	Xm:${PORTSDIR}/x11-toolkits/open-motif \
-		R:${PORTSDIR}/math/R \
+LIB_DEPENDS=	R:${PORTSDIR}/math/R \
 		gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		endian:${PORTSDIR}/sysutils/endian
+
+USES=		gettext iconv gmake motif
 
 .include <bsd.port.pre.mk>
 
@@ -40,9 +41,6 @@ BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
-USE_GMAKE=	yes
-USES=		gettext iconv
-USE_MOTIF=	yes
 MAKE_ENV=	CC="${CC}"
 MAKE_JOBS_UNSAFE=yes
 

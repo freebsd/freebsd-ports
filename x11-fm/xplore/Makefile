@@ -12,9 +12,8 @@ COMMENT=	Yet another Motif file manager
 
 LICENSE=	GPLv2
 
-USES=		imake
+USES=		imake motif
 USE_GCC=	any
-USE_MOTIF=	yes
 USE_XORG=	xpm
 MAKE_JOBS_UNSAFE=yes
 CFLAGS+=	-Wno-return-type

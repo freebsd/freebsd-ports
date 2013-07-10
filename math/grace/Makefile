@@ -26,9 +26,8 @@ OPTIONS_DEFAULT=FFTW NETCDF PDF XMHTML
 PDF_DESC=	PDF output
 XMHTML_DESC=	Use XmHTML widget for on-line help
 
-USE_MOTIF=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
+USES=		gmake motif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
 		--with-extra-incpath=${LOCALBASE}/include \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SoXt
-# Date created:				24 April 2003
-# Whom:					roland.jesse@gmx.net
-#
+# Created by: roland.jesse@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0
@@ -16,14 +12,13 @@ COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
+USES=		motif pathfix
 USE_GL=		yes
-USE_MOTIF=	yes
 USE_PERL5_BUILD=	yes
 USE_XORG=	xi
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
-USES=	pathfix
 # avoid renaming of soxt-config and soxt-config.1
 USE_LDCONFIG=	yes
 MAN1=		soxt-config.1

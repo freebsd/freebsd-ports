@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	MOTIF NLS
 LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
 		Xbae:${PORTSDIR}/x11-toolkits/xbae \
 		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
-USE_MOTIF=	yes
+USES+=		motif
 CONFIGURE_ARGS+=	--with-motif
 .else
 USE_XORG=	xt ice sm

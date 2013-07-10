@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xforward
-# Date created:			27 April 2012
-# Whom:				Cy Schubert <cy@FreeBSD.org>
-#
+# Created by: Cy Schubert <cy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xforward
 PORTVERSION=	1.0
@@ -21,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/NOTICE
 
 MAKE_ARGS+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 USE_XORG=	x11 xt xaw
-USE_MOTIF=	yes
+USES=		motif
 MAN1=		xforward.1
 PLIST_FILES=	bin/xforward
 

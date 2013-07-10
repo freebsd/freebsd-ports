@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmhtml
-# Date created:		18 Feb 1999
-# Whom:			Peter Hawkins <thepish@freebsd.org>
-#
+# Created by: Peter Hawkins <thepish@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.7
@@ -12,14 +8,13 @@ CATEGORIES=	x11-toolkits www
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Motif widget set for displaying HTML 3.2 documents
+COMMENT=	Motif widget set for displaying HTML 3.2 documents
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
+USES=		gmake motif
 USE_AUTOTOOLS=	libtool:env
-USE_MOTIF=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xmu
 CFLAGS+=	-I${LOCALBASE}/include/libpng15

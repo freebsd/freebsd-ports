@@ -11,9 +11,8 @@ MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	X11 IMAP client
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USES=		imake
+USES=		imake motif
 USE_XORG=	ice sm x11 xext xmu xp xt
-USE_MOTIF=	yes
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building c-client"

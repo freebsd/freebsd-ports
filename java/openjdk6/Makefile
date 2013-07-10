@@ -131,13 +131,13 @@ FASTDEBUG_DESC=	Include fastdebug build
 TEST_DESC=	Add support for running regression test
 .endif
 
+USES=		gmake motif
+
 .include <bsd.port.options.mk>
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
 
-USE_GMAKE=	yes
-USE_MOTIF=	yes
 USE_XORG=	x11 xext xi xt xtst
 
 JAXP_BUILD=	144_05

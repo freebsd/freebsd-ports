@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elk
-# Date created:		08 March 1995
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elk
 PORTVERSION=	3.99.8
@@ -11,13 +7,13 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://sam.zoy.org/elk/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An embeddable Scheme interpreter
+COMMENT=	Embeddable Scheme interpreter
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		elf.0:${PORTSDIR}/devel/libelf
 
+USES=		motif
 USE_BZIP2=	yes
-USE_MOTIF=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
