@@ -3,6 +3,7 @@ bin/ecattominc
 bin/invert_raw_image
 bin/minc_modify_header
 bin/mincaverage
+bin/mincblob
 bin/minccalc
 bin/mincconcat
 bin/mincconvert
@@ -20,9 +21,11 @@ bin/minclookup
 bin/mincmakescalar
 bin/mincmakevector
 bin/mincmath
+bin/mincmorph
 bin/mincpik
 bin/mincresample
 bin/mincreshape
+bin/mincsample
 bin/mincstats
 bin/minctoecat
 bin/minctoraw
@@ -33,11 +36,9 @@ bin/nii2mnc
 bin/rawtominc
 bin/transformtags
 bin/upet2mnc
-bin/vff2mnc
 bin/voxeltoworld
 bin/worldtovoxel
 bin/xfmconcat
-bin/xfmflip
 bin/xfminvert
 include/ParseArgv.h
 include/minc.h
@@ -64,12 +65,12 @@ include/volume_io/vol_io_prototypes.h
 include/volume_io/volume.h
 include/volume_io/volume_cache.h
 include/voxel_loop.h
-lib/libminc2.a
-lib/libminc2.la
+lib/MINC2Config.cmake
+lib/UseMINC2.cmake
 lib/libminc2.so
 lib/libminc2.so.2
-lib/libvolume_io2.a
-lib/libvolume_io2.la
+lib/libminc2.so.2.2.00
 lib/libvolume_io2.so
 lib/libvolume_io2.so.2
+lib/libvolume_io2.so.2.2.00
 @dirrm include/volume_io
