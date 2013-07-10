@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nethack
-# Date created:		27 March 1995
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	nethack
 PORTVERSION=	3.3.1
@@ -47,15 +43,12 @@ USE_GNOME=	gnomelibs
 GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
-.elif ${PKGNAMESUFFIX} == "-qt"
-USE_QT_VER=	2
-MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" \
-		MOC="${MOC}" LIBQT="-l${QTNAME}"
-GRAPHICS=	QT_GRAPHICS
 .endif
 .endif
 
 .include <bsd.port.pre.mk>
+
+.include <bsd.port.options.mk>
 
 .if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
 PLIST_SUB+=	HACKLINK=""
@@ -64,7 +57,7 @@ PLIST_SUB+=	HACKLINK="@comment "
 .endif
 
 pre-everything::
-.if defined(WITH_GNOME_GRAPHICS) || defined(WITH_QT_GRAPHICS) \
+.if defined(WITH_GNOME_GRAPHICS) \
 		|| defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   "
@@ -76,7 +69,6 @@ pre-everything::
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} " You may use the following build options:                "
 	@${ECHO_MSG} " WITH_GNOME_GRAPHICS=yes            build with GNOME GUI "
-	@${ECHO_MSG} " WITH_QT_GRAPHICS=yes               build with Qt GUI    "
 	@${ECHO_MSG} " WITH_TTY_GRAPHICS=yes              build with no GUI    "
 	@${ECHO_MSG} " WITHOUT_X11=yes                    same as above        "
 	@${ECHO_MSG} "                                                         "
@@ -114,7 +106,7 @@ post-install:
 	@${LN} -s -f ${PREFIX}/bin/${HACKNAME} ${PREFIX}/bin/${HACKLINK}
 .endif
 	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
 .endif
