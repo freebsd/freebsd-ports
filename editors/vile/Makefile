@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8j
+PORTVERSION=	9.8k
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/
@@ -19,7 +19,8 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	FILTERS ICONV PERL DOCS
 FILTERS_DESC=	Loadable filters
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	perl/vileget
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
@@ -58,7 +59,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^DOCDIR|#DOCDIR|' ${WRKSRC}/makefile.in
 	@${REINPLACE_CMD} -e \
-		's|^#!.*|#!${PERL}|' ${WRKSRC}/perl/vileget
+		's|defined(FLEX_BETA)|0|' ${WRKSRC}/filters/filters.h
 
 post-install:
 	@${MKDIR} ${DATADIR}/macros
