@@ -222,7 +222,7 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-plist::
+plist:
 	truncate -s0 pkg-plist
 .for FILE in ${INSTALLED_SCRIPTS}
 	@${ECHO_CMD} "bin/${FILE}%%RUBY_SUFFIX%%" >> pkg-plist
