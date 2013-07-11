@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drupal6-imce
-# Date created:		10 feb 2010
-# Whom:			Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
-#
+# Created by: Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
 # $FreeBSD$
-#
 
 PORTNAME=	imce
 DISTVERSION=	6.x-1.4
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	anderson@cnpm.embrapa.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x image/file uploader module
 
 USE_DRUPAL=	yes

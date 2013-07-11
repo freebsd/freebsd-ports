@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drupal6-panels
-# Date created:		09 Feb 2010
-# Whom:			anderson@cnpm.embrapa.br
-#
+# Created by: anderson@cnpm.embrapa.br
 # $FreeBSD$
-#
 
 PORTNAME=	panels
 DISTVERSION=	6.x-3.5
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	anderson@cnpm.embrapa.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x panels module
 
 USE_DRUPAL=	yes

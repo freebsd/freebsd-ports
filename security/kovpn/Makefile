@@ -1,6 +1,5 @@
 # Created by: anderson@cnpm.embrapa.br
 # $FreeBSD$
-#
 
 PORTNAME=	kovpn
 PORTVERSION=	0.3
@@ -9,7 +8,7 @@ CATEGORIES=	security kde
 MASTER_SITES=	https://projects.fslab.de/projects/kovpn/chrome/site/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pre7
 
-MAINTAINER=	anderson@cnpm.embrapa.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GUI for OpenVPN clients
 
 RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
@@ -19,9 +18,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
-USES=		gettext
+USES=		gettext gmake
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool
