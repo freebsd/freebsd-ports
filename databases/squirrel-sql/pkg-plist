@@ -129,6 +129,8 @@ share/java/squirrel-sql/lib/hibernate-entitymanager.jar
 share/java/squirrel-sql/lib/hibernate.jar
 share/java/squirrel-sql/lib/icu4j.jar
 share/java/squirrel-sql/lib/javahelp.jar
+share/java/squirrel-sql/lib/jcommon.jar
+share/java/squirrel-sql/lib/jfreechart.jar
 share/java/squirrel-sql/lib/jide-oss.jar
 share/java/squirrel-sql/lib/jmeld.jar
 share/java/squirrel-sql/lib/jxl.jar
@@ -332,6 +334,7 @@ share/java/squirrel-sql/plugins/laf/jgoodies-looks-licence.txt
 share/java/squirrel-sql/plugins/laf/kunststoff_Licence.txt
 share/java/squirrel-sql/plugins/laf/laf-plugin-licence.txt
 share/java/squirrel-sql/plugins/laf/laf-sources.jar
+share/java/squirrel-sql/plugins/laf/lafs/JTattoo.jar
 share/java/squirrel-sql/plugins/laf/lafs/ilf-gpl.jar
 share/java/squirrel-sql/plugins/laf/lafs/kunstoff-laf.jar
 share/java/squirrel-sql/plugins/laf/lafs/looks.jar
