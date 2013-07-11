@@ -1911,6 +1911,7 @@
     SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
     SUBDIR += trac-announcer
+    SUBDIR += trac-attachmentpolicy
     SUBDIR += trac-autocomplete
     SUBDIR += trac-batchmodify
     SUBDIR += trac-bzr
