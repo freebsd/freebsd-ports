@@ -14,7 +14,8 @@ LICENSE=	LGPL21
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/flake include/flake.h lib/libflake.a
 

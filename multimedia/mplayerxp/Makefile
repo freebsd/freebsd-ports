@@ -23,10 +23,11 @@ WIN32_DESC=	Enable win32 codec set
 OPTIONS_DEFAULT=	WIN32
 ONLY_FOR_ARCHS=	i386
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_BZIP2=	yes
 USE_XORG=	xinerama xv xxf86dga xxf86vm
-USES=		iconv
-USE_GMAKE=	yes
+USES=		iconv gmake
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes
 USE_LDCONFIG=	yes

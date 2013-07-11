@@ -13,6 +13,7 @@ COMMENT=	Mailutils offers utilities and daemons for processing e-mail
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS+=--disable-build-comsat
+MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}

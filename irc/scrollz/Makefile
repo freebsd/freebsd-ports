@@ -12,12 +12,12 @@ DISTNAME=	ScrollZ-${PORTVERSION}
 MAINTAINER=	mdv@unsavoury.net
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
-USES=		iconv ncurses
-USE_GMAKE=	yes
+USES=		gmake iconv ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --enable-regexp --enable-iconv
 
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
 PORTDATA=	*

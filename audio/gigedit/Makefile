@@ -19,9 +19,9 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_LDCONFIG=	yes
 USE_GNOME=	intltool
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
