@@ -13,4 +13,8 @@ etc/xpdfrc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/hello.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/xpdf/man/man5
+@dirrm share/xpdf/man/man1
+@dirrm share/xpdf/man
+@dirrm share/xpdf
 @dirrm libexec/xpdf
