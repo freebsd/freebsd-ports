@@ -1939,6 +1939,7 @@ share/xsl/docbook-ns/catalog
 @dirrm share/xsl/docbook-ns/assembly/schema
 @dirrm share/xsl/docbook-ns/assembly
 @dirrmtry share/xsl/docbook-ns
+@dirrmtry share/xsl
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/utility/reference.css
 %%PORTDOCS%%%%DOCSDIR%%/reference.txt.gz
