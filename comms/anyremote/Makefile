@@ -1,12 +1,8 @@
-# New ports collection makefile for:	anyremote
-# Date created:		2008-11-05
-# Whom:			Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	anyremote
-PORTVERSION=	6.1.1
+PORTVERSION=	6.3.1
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -20,22 +16,23 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DBUS X11
+OPTIONS_DEFINE=	DOCS DBUS X11
 OPTIONS_DEFAULT=	DBUS X11
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MDBUS)
+.if ! ${PORT_OPTIONS:MDBUS}
 CONFIGURE_ARGS+=--disable-dbus
 .else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.if empty(PORT_OPTIONS:MX11)
+.if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=--disable-xtest
 .else
 USE_XORG=	x11 xtst
 .endif
+
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		anyremote.1
@@ -48,4 +45,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/doc\/${PORTNAME}/d' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
