@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -27,7 +27,7 @@ MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
 		SYSCONFDIR="${PREFIX}/etc" ARCH="${OPSYS}" \
 		CC_FLAGS="${CFLAGS}" CXX_FLAGS="${CXXFLAGS}" \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}"
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="QMC2 (MAME)" "MAME frontend" "${DATADIR}/img/mame.png" \
 		"${PORTNAME}-sdlmame" "Game;Emulator;Qt;" "true" \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mame
-PORTVERSION=	0.148${PATCHSUFFIX}
-PORTREVISION=	1
+PORTVERSION=	0.149${PATCHSUFFIX}
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}.mirror/${PORTNAME:U}%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \
@@ -23,17 +22,25 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
-OPTIONS_DEFINE=	BUILTIN_DEBUGGER DEBUG DOCS EXAMPLES
-BUILTIN_DEBUGGER_DESC=	Enable builtin debugger support
+OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES
+OPTIONS_RADIO=	BUILTIN_DEBUGGER
+OPTIONS_RADIO_BUILTIN_DEBUGGER=	GTK2 QT4
+BUILTIN_DEBUGGER_DESC=	Builtin debugger support
 
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	src/emu/cpu/m6502/m6502make.py \
+		src/emu/cpu/m6809/m6809make.py \
+		src/emu/cpu/mcs96/mcs96make.py \
+		src/emu/cpu/tms57002/tmsmake.py
+USE_DOS2UNIX=	${SHEBANG_FILES}
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl ttf
+USE_PYTHON_BUILD=yes
 USE_GMAKE=	yes
-USE_PYTHON=	yes
 MAKE_ENV=	NOWERROR=1 OPTIMIZE=0 USE_NETWORK=1 \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
 		TARGET="${PORTNAME}"
@@ -53,20 +60,29 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
+.if ${PORT_OPTIONS:MDEBUG}
+MAKE_ENV+=	DEBUG=1
+.endif
+
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20 gconf2
 MAKE_ENV+=	GTK_INCPATH="$$(pkg-config --cflags-only-I gtk+-2.0 gconf-2.0)" \
 		GTK_CCOMFLAGS="$$(pkg-config --cflags-only-other gtk+-2.0 gconf-2.0)" \
 		GTK_LIBS="$$(pkg-config --libs gtk+-2.0 gconf-2.0)"
 .else
-MAKE_ENV+=	NO_DEBUGGER=1 \
-		GTK_INCPATH="" \
+MAKE_ENV+=	GTK_INCPATH="" \
 		GTK_CCOMFLAGS="" \
 		GTK_LIBS=""
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_ENV+=	DEBUG=1
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4=	gui moc_build qmake_build
+.else
+MAKE_ENV+=	NO_USE_QTDEBUG=1
+.endif
+
+.if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MQT4)
+MAKE_ENV+=	NO_DEBUGGER=1
 .endif
 
 .include <bsd.port.pre.mk>
@@ -105,9 +121,12 @@ post-patch:
 		 s| = @g++| := $$(CXX)| ; \
 		 s|^FULLNAME =.*|FULLNAME = $$(NAME)| ; \
 		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
-		 /LDFLAGS/s|-s||' ${WRKSRC}/makefile
+		 /LDFLAGS/s|-s|| ; \
+		 /LIBS/s|-lstdc++|| ; \
+		 /LIBS/s|-lpthread|-pthread|' ${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e \
-		'/-system/s|/usr/local/|${LOCALBASE}/| ; \
+		'/LIBS/s|-lpthread|-pthread| ; \
+		 /-system/s|/usr/local/|${LOCALBASE}/| ; \
 		 /--cflags-only-I gtk+-2.0/s|=.*|= $$(GTK_INCPATH)| ; \
 		 /--cflags-only-other gtk+-2.0/s|=.*|= $$(GTK_CCOMFLAGS)| ; \
 		 /--libs gtk+-2.0/s|=.*|= $$(GTK_LIBS)| ; \
