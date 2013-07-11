@@ -1,19 +1,16 @@
-# New ports collection makefile for:	ZeroMQ
-# Date created:		2011-10-26
-# Whom:			Andrej Zverev <az@FreeBSD.org>
-#
+# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ZeroMQ
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
-COMMENT=	A ZeroMQ2 wrapper for Perl
+COMMENT=	ZeroMQ2 wrapper for Perl
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -29,7 +26,8 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-JSON>=2.00:${PORTSDIR}/converters/p5-JSON
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
+MAKE_JOBS_UNSAFE=	yes
 
 PERL_CONFIGURE=	yes
 
