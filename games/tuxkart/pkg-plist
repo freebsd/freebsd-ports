@@ -181,4 +181,4 @@ share/pixmaps/tuxkart.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%
+@dirrm %%DATADIR%%
