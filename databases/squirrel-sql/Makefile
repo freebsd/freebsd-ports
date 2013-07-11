@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
@@ -30,7 +30,7 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"${COMMENT}" \
 		"${DATADIR}/icons/acorn.png" \
 		"squirrel-sql" \
-		"Office;Database;Java;" \
+		"Development;Database;Java;" \
 		false
 
 post-extract:
