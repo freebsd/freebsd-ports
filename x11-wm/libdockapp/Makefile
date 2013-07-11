@@ -8,13 +8,11 @@
 PORTNAME=	libdockapp
 PORTVERSION=	0.6.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/libdockapp/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	xride
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Standard library for Window Maker dock apps
-
-DEPRECATED=	Abandonware, upstream disappeared
-EXPIRATION_DATE=	2012-10-20
 
 USE_BZIP2=	yes
 USE_XORG=	xext xpm
