@@ -9,8 +9,7 @@ PORTNAME=	daemontools
 PORTVERSION=	0.76
 PORTREVISION=	16
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cr.yp.to/daemontools/ \
-		ftp://cr.yp.to/daemontools/
+MASTER_SITES=	http://cr.yp.to/daemontools/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jgh@FreeBSD.org
