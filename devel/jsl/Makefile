@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pylint
-# Date created:		28 May 2004
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	jsl
 PORTVERSION=	0.3.0
@@ -18,10 +14,11 @@ COMMENT=	Analyzes JavaScript code looking for bugs and signs of poor quality
 
 PLIST_FILES=	bin/jsl
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	Makefile.ref
 MAKE_ARGS=	OS_CFLAGS="-DXP_UNIX -DHAVE_VA_COPY -DVA_COPY=va_copy"
 CFLAGS+=	-fPIC
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
