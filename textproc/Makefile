@@ -1342,6 +1342,7 @@
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-xslt
     SUBDIR += rubygem-yard
+    SUBDIR += rubygem-zmq
     SUBDIR += rw-aspell
     SUBDIR += rxp
     SUBDIR += s5
