@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/_ldns.so.1
+%%PYTHON_SITELIBDIR%%/ldns.py
+%%PYTHON_SITELIBDIR%%/_ldns.so
+%%PYTHON_SITELIBDIR%%/_ldns.la
+%%PYTHON_SITELIBDIR%%/_ldns.a
+@dirrm %%PYTHON_SITELIBDIR%%/ldns

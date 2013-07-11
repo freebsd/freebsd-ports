@@ -3,6 +3,8 @@
 
 MASTERDIR=	${.CURDIR}/../../dns/ldns
 
-OPTIONS_SET=	PYLDNS
+BUILD_PYLDNS=yes
+
+PLIST=	${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"
