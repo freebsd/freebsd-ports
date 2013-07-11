@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xvile
-PORTVERSION=	9.8j
+PORTVERSION=	9.8k
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/
@@ -26,7 +26,8 @@ MENUS_DESC=	Support for menus
 XAW_DESC=	X Athena Widgets
 XAW3D_DESC=	X Athena Widgets with 3D effect
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	perl/vileget
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-imake \
@@ -94,7 +95,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^DOCDIR|#DOCDIR|' ${WRKSRC}/makefile.in
 	@${REINPLACE_CMD} -e \
-		's|^#!.*|#!${PERL}|' ${WRKSRC}/perl/vileget
+		's|defined(FLEX_BETA)|0|' ${WRKSRC}/filters/filters.h
 
 post-install:
 	@${MKDIR} ${DATADIR}/macros

@@ -32,6 +32,7 @@ lib/vile/vile-imake-filt%%SO_EXT%%
 lib/vile/vile-info-filt%%SO_EXT%%
 lib/vile/vile-ini-filt%%SO_EXT%%
 lib/vile/vile-iss-filt%%SO_EXT%%
+lib/vile/vile-json-filt%%SO_EXT%%
 lib/vile/vile-key-filt%%SO_EXT%%
 lib/vile/vile-latex-filt%%SO_EXT%%
 lib/vile/vile-lex-filt%%SO_EXT%%
@@ -51,6 +52,7 @@ lib/vile/vile-perl-filt%%SO_EXT%%
 lib/vile/vile-php-filt%%SO_EXT%%
 lib/vile/vile-pot-filt%%SO_EXT%%
 lib/vile/vile-ps-filt%%SO_EXT%%
+lib/vile/vile-ps1-filt%%SO_EXT%%
 lib/vile/vile-py-filt%%SO_EXT%%
 lib/vile/vile-rc-filt%%SO_EXT%%
 lib/vile/vile-rcs-filt%%SO_EXT%%
@@ -130,6 +132,7 @@ lib/vile/vile-yacc-filt%%SO_EXT%%
 %%DATADIR%%/iss.keywords
 %%DATADIR%%/java.keywords
 %%DATADIR%%/js.keywords
+%%DATADIR%%/json.keywords
 %%DATADIR%%/ksh.keywords
 %%DATADIR%%/latex.keywords
 %%DATADIR%%/lex.keywords
@@ -197,6 +200,7 @@ lib/vile/vile-yacc-filt%%SO_EXT%%
 %%DATADIR%%/pot.keywords
 %%DATADIR%%/prolog.keywords
 %%DATADIR%%/ps.keywords
+%%DATADIR%%/ps1.keywords
 %%DATADIR%%/py.keywords
 %%DATADIR%%/rb.keywords
 %%DATADIR%%/rc.keywords
