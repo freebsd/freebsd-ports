@@ -14,7 +14,7 @@ lib/libpng.a
 lib/libpng.so
 libdata/pkgconfig/libpng15.pc
 libdata/pkgconfig/libpng.pc
-lib/libpng/libpng15-release.cmake
+lib/libpng/libpng15-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libpng/libpng15.cmake
 lib/libpng15.a
 lib/libpng15.so
