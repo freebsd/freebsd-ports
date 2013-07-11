@@ -39,7 +39,7 @@ SCILAB_ARGS=	-nogui
 PLIST_SUB+=	HELP="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-etc__swt.start
 .else
-USES=		display:build
+USES+=		display:build
 MAKE_ENV=	LC_ALL="C"
 PLIST_SUB+=	HELP=""
 TOOLBOX_SUBDIRS+=	jar
