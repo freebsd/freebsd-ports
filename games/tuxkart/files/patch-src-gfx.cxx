@@ -1,18 +1,18 @@
---- src/gfx.cxx.orig	Sat Nov 10 08:32:52 2001
-+++ src/gfx.cxx	Wed Jul  3 04:03:27 2002
-@@ -4,9 +4,11 @@
+--- src/gfx.cxx.orig	2004-03-18 17:21:44.000000000 +0100
++++ src/gfx.cxx	2013-06-27 01:40:14.000000000 +0200
+@@ -4,8 +4,10 @@
  #ifndef WIN32
  #include <unistd.h>
  #include <string.h>
 +#if 0
  #include <sys/io.h>
- #include <sys/perm.h>                                                           
- #endif
+-#include <sys/perm.h>                                                           
++#include <sys/perm.h>
 +#endif
+ #endif
  
- static unsigned int lastGLUTKeystroke = 0 ;
- 
-@@ -185,6 +187,7 @@
+ static unsigned int lastKeystroke = 0 ;
+@@ -137,6 +139,7 @@
    glEnd () ;
    glFlush () ;
  
@@ -20,7 +20,7 @@
    static int firsttime = TRUE ;
  
    if ( firsttime )
-@@ -219,6 +222,8 @@
+@@ -171,6 +174,8 @@
      outb ( (stereo==-1) ? ~3 : ~2, LPBASE+2 ) ;
      stereo = -stereo ;
    }
