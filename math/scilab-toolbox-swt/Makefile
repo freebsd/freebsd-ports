@@ -55,7 +55,6 @@ post-patch:
 
 pre-build:
 	${FIND} -d ${WRKSRC} \( -name '*.orig' -or -name '*.bak' \) -delete
-.endif
 
 do-build:
 	cd ${WRKSRC} && \
