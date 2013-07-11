@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -15,6 +15,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
+DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 LATEST_LINK=	${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
@@ -36,12 +37,13 @@ LIBNAME=		libLLVM-${DISTVERSION:C/\rc[0-9]//}.so
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
 
-OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN MANPAGES
+OPTIONS_DEFINE=	ASSERTS CMAKE DOCS LTOPLUGIN MANPAGES
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
+CMAKE_DESC=	Build cmake support files
 LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
-OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_DEFAULT=	CMAKE MANPAGES
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
@@ -80,6 +82,11 @@ FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 CONFIGURE_ARGS+=	--enable-assertions
 .else
 CONFIGURE_ARGS+=	--disable-assertions
+.endif
+
+.if ${PORT_OPTIONS:MCMAKE}
+BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
+PORTDATA+=	cmake
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
@@ -131,6 +138,15 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
+.if ${PORT_OPTIONS:MCMAKE}
+post-configure:
+	${MKDIR} ${WRKDIR}/cmake
+	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
+	${REINPLACE_CMD} -e 's|${WRKDIR}/cmake|${LLVM_PREFIX}|' \
+	    -e 's|${WRKSRC}/cmake/modules|${DATADIR}/cmake|' \
+	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
+.endif
+
 post-build:
 .if ${PORT_OPTIONS:MMANPAGES}
 	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
@@ -148,6 +164,12 @@ post-install:
 	${LN} -f ${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
+.if ${PORT_OPTIONS:MCMAKE}
+	${MKDIR} ${DATADIR}/cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake ${DATADIR}/cmake/
+	${INSTALL_DATA} ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
+	    ${DATADIR}/cmake/
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/html
 	${FIND} ${WRKSRC}/docs/_build/html -type f | \
