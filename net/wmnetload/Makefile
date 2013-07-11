@@ -12,9 +12,6 @@ MASTER_SITES=	ftp://truffula.com/pub/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Network load monitor dockapp
 
-DEPRECATED=	Depends on expired x11-wm/libdockapp
-EXPIRATION_DATE=2013-08-04
-
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_BZIP2=	yes
