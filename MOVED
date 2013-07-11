@@ -4426,3 +4426,6 @@ audio/gdam||2013-07-10|Has expired: Broken for a while
 devel/gnome-vfs1||2013-07-10|Has expired: No more depend on, No more supported upstream
 textproc/ua-ispell|ukrainian/ispell|2013-07-10|Removed because it has been moved to ukrainian/ispell 12 years ago
 security/openvpn20|security/openvpn|2013-07-11|Has expired: Superseded by security/openvpn
+databases/embedded_innodb||2013-07-11|Has expired: The Embedded InnoDB project was terminated a few years ago
+print/lyx16|print/lyx|2013-07-11|Has expired: Unmaintained upstream, upgrading to the 2.x series is advised
+security/py-crack|security/py-cracklib|2013-07-11|Has expired: Superseded by security/py-cracklib

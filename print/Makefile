@@ -180,7 +180,6 @@
     SUBDIR += lpr-wrapper
     SUBDIR += lprps
     SUBDIR += lyx
-    SUBDIR += lyx16
     SUBDIR += magicfilter
     SUBDIR += makeindex
     SUBDIR += mapagi
