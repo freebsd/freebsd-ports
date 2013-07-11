@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jailadmin
-DISTVERSION=	7.x-0.6.1
+DISTVERSION=	7.x-0.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://0xfeedface.org/~shawn/projects/jailadmin/ \
     		http://mirrors.rit.edu/zi/
