@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmt
-# Date created:		10 May 2001
-# Whom:			sec@42.org
-#
+# Created by: sec@42.org
 # $FreeBSD$
-#
 
 PORTNAME=	gmt
 PORTVERSION=	4.5.8
@@ -21,12 +17,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Generic Mapping Tools data processing and display software package
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}${DISTVERSION}
-USE_BZIP2=	yes
+USES=		gmake
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--datadir=${DATADIR}
-USE_GMAKE=	yes
 USE_XORG=	x11 xaw xmu xt
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -41,51 +37,28 @@ NETCDF_DESC=	With netCDF (7) support
 OCTAVE_DESC=	With OCTAVE support
 
 .include "Makefile.man"
+
+NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf4
+NETCDF_CONFIGURE_ON=	--enable-netcdf
+DEBUG_CONFIGURE_ON=	--enable-debug --enable-devdebug
+SHARED_CONFIGURE_ON=	--enable-shared
+IMPERIAL_CONFIGURE_ON=	--enable-US
+EPS_CONFNIGURE_ON=	--enable-eps
+GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_CONFIGURE_ON=	--enable-gdal
+OCTAVE_RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
+OCTAVE_CONFIGURE_ON=	--enable-octave --enable-mex
+OCTAVE_CONFIGURE_OFF=	--disable-mex
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=		netcdf:${PORTSDIR}/science/netcdf4
-CONFIGURE_ARGS+=	--enable-netcdf
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug --enable-devdebug
-.endif
-
-.if ${PORT_OPTIONS:MDEVDEBUG}
-CONFIGURE_ARGS+=	--enable-devdebug
-.endif
-
 .if ${PORT_OPTIONS:MSHARED}
-USE_LDCONFIG=		yes
-CONFIGURE_ARGS+=	--enable-shared
-.endif
-
-.if ${PORT_OPTIONS:MIMPERIAL}
-CONFIGURE_ARGS+=	--enable-US
-.endif
-
-.if ${PORT_OPTIONS:MEPS}
-CONFIGURE_ARGS+=	--enable-eps
-.endif
-
-.if ${PORT_OPTIONS:MGDAL}
-LIB_DEPENDS+=		gdal.17:${PORTSDIR}/graphics/gdal
-CONFIGURE_ARGS+=	--enable-gdal
-.endif
-
-.if ${PORT_OPTIONS:MOCTAVE}
-RUN_DEPENDS+=		octave:${PORTSDIR}/math/octave
-CONFIGURE_ARGS+=	--enable-octave
-CONFIGURE_ARGS+=	--enable-mex
-.else
-CONFIGURE_ARGS+=	--disable-mex
+USE_LDCONFIG=	yes
 .endif
 
 INSTALL_TARGET=		install-gmt install-data install-man install-doc
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || \
-    ${ARCH} == "alpha" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--enable-64
 .else
 CONFIGURE_ARGS+=	--disable-64
