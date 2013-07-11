@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="04320e7d-ea66-11e2-a96e-60a44c524f57">
+    <topic>libzrtpcpp -- multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libzrtpcpp</name>
+	<range><lt>2.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mark Dowd reports:</p>
+	<blockquote cite="http://blog.azimuthsecurity.com/2013/06/attacking-crypto-phones-weaknesses-in.html">
+	  <p>Vulnerability 1. Remote Heap Overflow: If an attacker sends a packet larger than 1024 bytes that gets stored temporarily (which occurs many times - such as when sending a ZRTP Hello packet), a heap overflow will occur, leading to potential arbitrary code execution on the vulnerable host.</p>
+	  <p>Vulnerability 2. Multiple Stack Overflows: ZRTPCPP contains multiple stack overflows that arise when preparing a response to a client's ZRTP Hello packet.</p>
+	  <p>Vulnerability 3. Information Leaking / Out of Bounds Reads: The ZRTPCPP library performs very little validation regarding the expected size of a packet versus the actual amount of data received. This can lead to both information leaking and out of bounds data reads (usually resulting in a crash). Information leaking can be performed for example by sending a malformed ZRTP Ping packet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2221</cvename>
+      <cvename>CVE-2013-2222</cvename>
+      <cvename>CVE-2013-2223</cvename>
+    </references>
+    <dates>
+      <discovery>2013-06-27</discovery>
+      <entry>2013-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ebd877b9-7ef4-4375-b1fd-c67780581898">
     <topic>ruby -- Hostname check bypassing vulnerability in SSL client</topic>
     <affects>
