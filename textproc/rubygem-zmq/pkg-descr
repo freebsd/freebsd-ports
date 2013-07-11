@@ -1,0 +1,3 @@
+The Ruby binding (C extension) to the ZeroMQ library.
+
+WWW: http://www.zeromq.org/bindings:ruby
