@@ -2,6 +2,7 @@
 
 PORTNAME=	Net-SAML
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	http://zxid.org/ \
 		CPAN

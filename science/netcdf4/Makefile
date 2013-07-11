@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -41,7 +41,7 @@ MAN3=		netcdf.3
 .if ${PORT_OPTIONS:MDAP}
 CONFIGURE_ARGS+=--enable-dap --with-curl=${LOCALBASE} \
 		--with-curl-config=${LOCALBASE}/bin/curl-config
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=--disable-dap
 .endif

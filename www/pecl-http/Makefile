@@ -3,6 +3,7 @@
 
 PORTNAME=	http
 PORTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -12,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Extended HTTP Support
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

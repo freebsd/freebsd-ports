@@ -8,14 +8,14 @@
 
 PORTNAME=	mm-common
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common build infrastructure for the GNOME C++ binding libraries
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USES=	pathfix
 USE_BZIP2=	yes

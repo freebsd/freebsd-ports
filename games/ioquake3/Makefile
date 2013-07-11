@@ -3,7 +3,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.
@@ -117,7 +117,7 @@ IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP}
 # cURL
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 MAKE_ARGS+=	USE_CURL=1 USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0

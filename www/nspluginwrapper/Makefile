@@ -7,6 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://nspluginwrapper.org/download/ \
 		LOCAL/jkim \
@@ -16,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}:binfile
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A compatibility plugin for Mozilla NPAPI plugins
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	nspluginwrapper-1.3.*
 

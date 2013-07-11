@@ -3,6 +3,7 @@
 
 PORTNAME=	scmpc
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/cmende/${PORTNAME}/
 
@@ -12,7 +13,7 @@ COMMENT=	An Audioscrobbler client for MPD
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 
 USES=		pkgconfig
 USE_BZIP2=	yes

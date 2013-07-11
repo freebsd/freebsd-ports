@@ -3,7 +3,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.42
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
 		gsm.1:${PORTSDIR}/audio/gsm \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc

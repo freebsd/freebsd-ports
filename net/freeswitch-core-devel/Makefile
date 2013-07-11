@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/ \

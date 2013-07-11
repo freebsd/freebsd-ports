@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--enable-ctype
 .endif
 
 .if ${PHP_MODNAME} == "curl"
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .endif

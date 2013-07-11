@@ -3,7 +3,7 @@
 
 PORTNAME=	mediatomb
 PORTVERSION=	0.12.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 
@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--disable-ffmpegthumbnailer
 .if ${PORT_OPTIONS:MCURL} && ${PORT_OPTIONS:MEXTERNAL_TRANSCODING}
 CONFIGURE_ARGS+=	--enable-curl \
 			--with-curl-cfg="${LOCALBASE}/bin/curl-config"
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-curl
 .endif

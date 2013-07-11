@@ -3,6 +3,7 @@
 
 PORTNAME=		wmweather+
 PORTVERSION=		2.13
+PORTREVISION=	1
 CATEGORIES=		misc windowmaker geography
 MASTER_SITES=		SF/wmweatherplus/wmweather%2B/
 DISTNAME=		wmweather%2B-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2011.753
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -51,7 +51,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .if ${PORT_OPTIONS:MCLIENT}
 USES+=		pkgconfig
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \

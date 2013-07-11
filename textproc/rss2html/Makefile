@@ -7,14 +7,14 @@
 
 PORTNAME=	rss2html
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	RSS to HTML converter
 
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	"-I${LOCALBASE}/include" "-L${LOCALBASE}/lib"

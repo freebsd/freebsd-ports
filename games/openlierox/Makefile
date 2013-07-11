@@ -3,6 +3,7 @@
 
 PORTNAME=	openlierox
 DISTVERSION=	0.59_beta10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/OpenLieroX%20${DISTVERSION:C/_/%20/}
 DISTNAME=	OpenLieroX_${DISTVERSION}.src
@@ -12,7 +13,7 @@ COMMENT=	Extremely addictive realtime worms shoot-em-up
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		boost_signals:${PORTSDIR}/devel/boost-libs \
-		curl.6:${PORTSDIR}/ftp/curl \
+		curl:${PORTSDIR}/ftp/curl \
    		alut.1:${PORTSDIR}/audio/freealut
 
 USE_BZIP2=	yes

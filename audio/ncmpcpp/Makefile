@@ -3,6 +3,7 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -44,7 +45,7 @@ PLIST_FILES=	bin/ncmpcpp \
 PLIST_DIRS=	%%DOCSDIR%%
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 .else
 CONFIGURE_ARGS+=	--with-curl=no

@@ -3,6 +3,7 @@
 
 PORTNAME=	solr
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

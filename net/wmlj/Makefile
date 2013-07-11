@@ -7,14 +7,14 @@
 
 PORTNAME=	wmlj
 PORTVERSION=	0.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that monitors your friends list at LiveJournal.com
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

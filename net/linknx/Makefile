@@ -3,7 +3,7 @@
 
 PORTNAME=	linknx
 PORTVERSION=	0.0.1.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 .if ${PORT_OPTIONS:MLIBCURL}
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libcurl

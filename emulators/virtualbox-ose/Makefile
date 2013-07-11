@@ -27,7 +27,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 

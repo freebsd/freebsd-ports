@@ -8,7 +8,7 @@
 
 PORTNAME=	gtorrentviewer
 PORTVERSION=	0.2b
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/GTorrentViewer/${PORTVERSION}
 DISTNAME=	GTorrentViewer-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
 
 PORTSCOUT=	skipv:0.2	# older than current version
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 gnomehier intlhack
 USE_GMAKE=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
@@ -14,7 +14,7 @@ COMMENT=	An image viewer that utilizes Imlib2
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		giblib.1:${PORTSDIR}/graphics/giblib
 
 USE_XORG=	x11 xt xinerama

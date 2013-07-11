@@ -7,13 +7,14 @@
 
 PORTNAME=	aegis
 PORTVERSION=	4.24.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Transaction-based software configuration management system
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
 USES=		gettext

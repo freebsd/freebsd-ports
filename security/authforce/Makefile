@@ -3,7 +3,7 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://cloud.github.com/downloads/zlandau/authforce/
 

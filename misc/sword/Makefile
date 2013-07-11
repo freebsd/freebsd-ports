@@ -3,7 +3,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \

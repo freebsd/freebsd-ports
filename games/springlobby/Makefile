@@ -3,7 +3,7 @@
 
 PORTNAME=	springlobby
 PORTVERSION=	0.143
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform lobby client for the Spring RTS project
 
 RUN_DEPENDS=	spring:${PORTSDIR}/games/spring
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USES=		cmake

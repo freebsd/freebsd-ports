@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	4.0.${SVNREVISION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -112,7 +113,7 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		curl.6:${PORTSDIR}/ftp/curl \
+		curl:${PORTSDIR}/ftp/curl \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
 		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		rdf.0:${PORTSDIR}/textproc/redland \

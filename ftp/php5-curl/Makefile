@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	ftp
+PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../../lang/php5
 

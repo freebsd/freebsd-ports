@@ -3,6 +3,7 @@
 
 PORTNAME=	mpdscribble
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
@@ -29,7 +30,7 @@ SOUP_DESC=	Use libsoup instead of libcurl
 LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 CONFIGURE_ARGS+=	--with-http-client=soup
 .else
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-http-client=curl
 .endif
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	libkolabxml
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 
