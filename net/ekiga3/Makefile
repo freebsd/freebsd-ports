@@ -3,7 +3,7 @@
 
 PORTNAME=	ekiga3
 PORTVERSION=	3.2.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
 DISTNAME=	ekiga-${PORTVERSION}
@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=	--disable-eds
 
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
-BUILD_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/avahi-client.pc:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
