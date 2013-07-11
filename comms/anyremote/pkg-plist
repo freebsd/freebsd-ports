@@ -1,11 +1,14 @@
-@comment $FreeBSD$
 bin/anyremote
+%%DATADIR%%/cfg-data/Utils/weather.sh
+%%DATADIR%%/cfg-data/Utils/imdb-mf.sh
+%%DATADIR%%/cfg-data/Utils/generate_cover.sh
+%%DATADIR%%/cfg-data/Utils/registry.sh
+%%DATADIR%%/cfg-data/Utils/generate_poster.sh
 %%DATADIR%%/cfg-data/Utils/aliases-bemused.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-iviewer.cfg
 %%DATADIR%%/cfg-data/Utils/getPlayList.sh
 %%DATADIR%%/cfg-data/Utils/aliases-server-presentation.cfg
-%%DATADIR%%/cfg-data/Utils/xmms_is_playing
 %%DATADIR%%/cfg-data/Utils/aliases-server-pix-viewer.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-player.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-at.cfg
@@ -15,7 +18,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
 %%DATADIR%%/cfg-data/Utils/aliases-server-video-player.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-fbrowser-v3i.cfg
-%%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/run-or-switch-to.sh
 %%DATADIR%%/cfg-data/Utils/anyremote.gui
 %%DATADIR%%/cfg-data/Utils/iViewer/next-active.png
@@ -42,6 +44,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Utils/iViewer/next.png
 %%DATADIR%%/cfg-data/Utils/iViewer/stop.png
 %%DATADIR%%/cfg-data/Utils/iViewer/pause-active.png
+%%DATADIR%%/cfg-data/Icons/128/transparent.png
 %%DATADIR%%/cfg-data/Icons/128/favorites.png
 %%DATADIR%%/cfg-data/Icons/128/minus.png
 %%DATADIR%%/cfg-data/Icons/128/right.png
@@ -79,6 +82,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/128/file.png
 %%DATADIR%%/cfg-data/Icons/128/last.png
 %%DATADIR%%/cfg-data/Icons/16/record.png
+%%DATADIR%%/cfg-data/Icons/16/transparent.png
 %%DATADIR%%/cfg-data/Icons/16/first.png
 %%DATADIR%%/cfg-data/Icons/16/eject.png
 %%DATADIR%%/cfg-data/Icons/16/favorites.png
@@ -117,6 +121,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/16/vol_up.png
 %%DATADIR%%/cfg-data/Icons/anyRemote.png
 %%DATADIR%%/cfg-data/Icons/48/bottom.png
+%%DATADIR%%/cfg-data/Icons/48/transparent.png
 %%DATADIR%%/cfg-data/Icons/48/vol_up.png
 %%DATADIR%%/cfg-data/Icons/48/prev.png
 %%DATADIR%%/cfg-data/Icons/48/vol_down.png
@@ -152,6 +157,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/48/favorites.png
 %%DATADIR%%/cfg-data/Icons/48/up.png
 %%DATADIR%%/cfg-data/Icons/48/record.png
+%%DATADIR%%/cfg-data/Icons/32/transparent.png
 %%DATADIR%%/cfg-data/Icons/32/plus.png
 %%DATADIR%%/cfg-data/Icons/32/down.png
 %%DATADIR%%/cfg-data/Icons/32/mute.png
@@ -190,6 +196,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/32/minus.png
 %%DATADIR%%/cfg-data/Icons/32/none.png
 %%DATADIR%%/cfg-data/Icons/64/first.png
+%%DATADIR%%/cfg-data/Icons/64/transparent.png
 %%DATADIR%%/cfg-data/Icons/64/folder.png
 %%DATADIR%%/cfg-data/Icons/64/up.png
 %%DATADIR%%/cfg-data/Icons/64/vol_down.png
@@ -225,6 +232,14 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/64/left.png
 %%DATADIR%%/cfg-data/Icons/64/launch.png
 %%DATADIR%%/cfg-data/Icons/64/click_icon.png
+%%DATADIR%%/cfg-data/Icons/common/cover-video.png
+%%DATADIR%%/cfg-data/Icons/common/cover-weather.png
+%%DATADIR%%/cfg-data/Icons/common/cover-pix.png
+%%DATADIR%%/cfg-data/Icons/common/cover-setup.png
+%%DATADIR%%/cfg-data/Icons/common/cover-computer.png
+%%DATADIR%%/cfg-data/Icons/common/cover-files.png
+%%DATADIR%%/cfg-data/Icons/common/cover-presentation.png
+%%DATADIR%%/cfg-data/Icons/common/cover-audio.png
 %%DATADIR%%/cfg-data/Bemused-emulation/rhythmbox.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/quodlibet.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/exaile.cfg
@@ -269,6 +284,11 @@ bin/anyremote
 %%DATADIR%%/cfg-data/AT-mode/audacious.cfg
 %%DATADIR%%/cfg-data/AT-mode/totem.cfg
 %%DATADIR%%/cfg-data/AT-mode/example-lirc.cfg
+%%DATADIR%%/cfg-data/Server-mode/djview.cfg
+%%DATADIR%%/cfg-data/Server-mode/mediacenter.cfg
+%%DATADIR%%/cfg-data/Server-mode/noise.cfg
+%%DATADIR%%/cfg-data/Server-mode/tomahawk.cfg
+%%DATADIR%%/cfg-data/Server-mode/foobnix.cfg
 %%DATADIR%%/cfg-data/Server-mode/qwerty-device-test.cfg
 %%DATADIR%%/cfg-data/Server-mode/mpd.cfg
 %%DATADIR%%/cfg-data/Server-mode/xbmc.cfg
@@ -282,7 +302,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/nokia-e70.cfg
 %%DATADIR%%/cfg-data/Server-mode/xine.cfg
 %%DATADIR%%/cfg-data/Server-mode/exampleFont.cfg
-%%DATADIR%%/cfg-data/Server-mode/amarok-v3.cfg
 %%DATADIR%%/cfg-data/Server-mode/totem.cfg
 %%DATADIR%%/cfg-data/Server-mode/nokia-e61.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager3.cfg
@@ -309,7 +328,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/gpicview.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager2.cfg
 %%DATADIR%%/cfg-data/Server-mode/evince.cfg
-%%DATADIR%%/cfg-data/Server-mode/amarok-v2.cfg
 %%DATADIR%%/cfg-data/Server-mode/autoUpload.cfg
 %%DATADIR%%/cfg-data/Server-mode/winManager.cfg
 %%DATADIR%%/cfg-data/Server-mode/imageViewer.cfg
@@ -351,7 +369,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/deadbeef.cfg
 %%DATADIR%%/cfg-data/Server-mode/mplayer.cfg
 %%DATADIR%%/cfg-data/Server-mode/wmctrl.cfg
-%%DATADIR%%/cfg-data/Server-mode/banshee-v2.cfg
 %%DATADIR%%/cfg-data/Server-mode/template-presentation.cfg
 %%DATADIR%%/cfg-data/Server-mode/exampleEditField.cfg
 %%DATADIR%%/cfg-data/Server-mode/gnomeShortcuts.cfg
@@ -365,6 +382,7 @@ bin/anyremote
 @dirrm %%DATADIR%%/cfg-data/Icons/48
 @dirrm %%DATADIR%%/cfg-data/Icons/64
 @dirrm %%DATADIR%%/cfg-data/Icons/128
+@dirrm %%DATADIR%%/cfg-data/Icons/common
 @dirrm %%DATADIR%%/cfg-data/Icons
 @dirrm %%DATADIR%%/cfg-data/iViewer
 @dirrm %%DATADIR%%/cfg-data/Server-mode
@@ -372,6 +390,7 @@ bin/anyremote
 @dirrm %%DATADIR%%/cfg-data/Utils
 @dirrm %%DATADIR%%/cfg-data
 @dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/doc-html/data/aac-cf2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/jc/themes/echo-player.png
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/jc/themes/human-player.png
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/jc/themes/bluecurve-arrows.png
@@ -513,7 +532,6 @@ bin/anyremote
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/aac-cf.jpg
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/data/aac-search.jpg
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/man.html
-%%PORTDOCS%%%%DOCSDIR%%/doc-html/dcop.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/cfg-howto.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/conf-server-ex.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/conf-server.html
@@ -564,6 +582,7 @@ bin/anyremote
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/dbus.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/android-client.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/cm-xml.html
+%%PORTDOCS%%%%DOCSDIR%%/doc-html/cfg-server-status.html
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
