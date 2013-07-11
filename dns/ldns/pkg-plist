@@ -60,10 +60,4 @@ lib/libldns.a
 lib/libldns.la
 lib/libldns.so
 lib/libldns.so.1
-%%PYLDNS%%%%PYTHON_SITELIBDIR%%/_ldns.so.1
-%%PYLDNS%%%%PYTHON_SITELIBDIR%%/ldns.py
-%%PYLDNS%%%%PYTHON_SITELIBDIR%%/_ldns.so
-%%PYLDNS%%%%PYTHON_SITELIBDIR%%/_ldns.la
-%%PYLDNS%%%%PYTHON_SITELIBDIR%%/_ldns.a
-%%PYLDNS%%@dirrm %%PYTHON_SITELIBDIR%%/ldns
 @dirrm include/ldns

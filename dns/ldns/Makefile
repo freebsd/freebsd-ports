@@ -3,6 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.16
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -17,23 +18,32 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL GOST PYLDNS
+.if !defined(BUILD_PYLDNS)
+OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL
 OPTIONS_DEFAULT=	EXAMPLES DRILL
 
 DRILL_DESC=	With drill program
+.endif
+
+OPTIONS_DEFINE+=	GOST
+
 GOST_DESC=	GOST signatures enabled, requires openssl >= 1.0.0
-PYLDNS_DESC=	${PYTHON_DESC}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPYLDNS}
+.if defined(BUILD_PYLDNS)
 USE_PYTHON=	yes
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-CONFLICTS=	ldns-[0-9]*
-.else
-CONFLICTS=	py*-ldns-[0-9]*
-.endif
+ALL_TARGET=	pyldns
+INSTALL_TARGET=	install-pyldns
 
+CONFIGURE_ARGS+=--with-pyldns
+LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns
+BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+
+post-patch:
+	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
+.else
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
 
@@ -233,13 +243,6 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 MAN1+=	ldns-config.1
 .endif
 
-.if ${PORT_OPTIONS:MGOST}
-BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
-.else
-NO_GOST=	--disable-gost
-CONFIGURE_ARGS+=${NO_GOST}
-.endif
-
 .if ${PORT_OPTIONS:MDRILL}
 PLIST_SUB+=	DRILLPROG=""
 MAN1+=	drill.1
@@ -262,14 +265,16 @@ MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 \
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPYLDNS}
-CONFIGURE_ARGS+=--with-pyldns
-BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-INSTALL_TARGET+=install-pyldns
-PLIST_SUB+=	PYLDNS=""
+.endif # BUILD_PYLDNS
+
+.if ${PORT_OPTIONS:MGOST}
+BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
 .else
-PLIST_SUB+=	PYLDNS="@comment "
+NO_GOST=	--disable-gost
+CONFIGURE_ARGS+=${NO_GOST}
 .endif
+
+.if !defined(BUILD_PYLDNS)
 
 post-configure:
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -298,5 +303,7 @@ post-install:
 .if ${PORT_OPTIONS:MDRILL}
 	@(cd ${WRKSRC}/drill; ${GMAKE} install)
 .endif
+
+.endif # BUILD_PYLDNS
 
 .include <bsd.port.mk>
