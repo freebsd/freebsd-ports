@@ -1,0 +1,7 @@
+Adds permission TICKET_ATTACHMENT_DELETE for exclusive right
+to delete and replace attachments, regardless who added/changed it.
+
+Everybody who has permission TICKET_ATTACHMENT_DELETE can delete
+or replace attachments, regardless who added / changed it.
+
+WWW: http://trac-hacks.org/wiki/AttachmentPolicyPlugin
