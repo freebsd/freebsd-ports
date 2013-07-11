@@ -11,9 +11,15 @@
 %%PYTHON_SITELIBDIR%%/psycopg2/extras.py
 %%PYTHON_SITELIBDIR%%/psycopg2/extras.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/extras.pyo
+%%PYTHON_SITELIBDIR%%/psycopg2/_json.py
+%%PYTHON_SITELIBDIR%%/psycopg2/_json.pyc
+%%PYTHON_SITELIBDIR%%/psycopg2/_json.pyo
 %%PYTHON_SITELIBDIR%%/psycopg2/pool.py
 %%PYTHON_SITELIBDIR%%/psycopg2/pool.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/pool.pyo
+%%PYTHON_SITELIBDIR%%/psycopg2/_range.py
+%%PYTHON_SITELIBDIR%%/psycopg2/_range.pyc
+%%PYTHON_SITELIBDIR%%/psycopg2/_range.pyo
 %%PYTHON_SITELIBDIR%%/psycopg2/psycopg1.py
 %%PYTHON_SITELIBDIR%%/psycopg2/psycopg1.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/psycopg1.pyo
@@ -80,6 +86,9 @@
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/test_types_extras.py
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/test_types_extras.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/test_types_extras.pyo
+%%PYTHON_SITELIBDIR%%/psycopg2/tests/test_with.py
+%%PYTHON_SITELIBDIR%%/psycopg2/tests/test_with.pyc
+%%PYTHON_SITELIBDIR%%/psycopg2/tests/test_with.pyo
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/testconfig.py
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/testconfig.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/testconfig.pyo
@@ -90,7 +99,6 @@
 %%PYTHON_SITELIBDIR%%/psycopg2/tz.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/tz.pyo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/PKG-INFO

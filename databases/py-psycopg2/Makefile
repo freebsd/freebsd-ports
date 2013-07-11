@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.4.6
+PORTVERSION=	2.5.1
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-4/ \
+MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-5/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +24,7 @@ EXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
 		mogrify.py myfirstrecipe.py notify.py simple.py somehackers.jpg \
 		threads.py typecast.py tz.py usercast.py whereareyou.jpg
 
-DOCS=		AUTHORS ChangeLog INSTALL README NEWS PKG-INFO
+DOCS=		AUTHORS INSTALL README NEWS PKG-INFO
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
