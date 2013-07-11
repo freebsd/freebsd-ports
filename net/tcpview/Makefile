@@ -13,6 +13,8 @@ COMMENT=	Motif-based TCP/IP protocol analyzer
 
 USES=		bison motif
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		tcpview.1
 
 .include <bsd.port.pre.mk>

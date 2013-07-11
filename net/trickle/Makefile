@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trickle
-# Date created:				04.06.2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	trickle
 PORTVERSION=	1.07
@@ -19,6 +15,8 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE} \
 		--sysconfdir=${PREFIX}/etc
