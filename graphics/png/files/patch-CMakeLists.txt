@@ -1,0 +1,12 @@
+--- CMakeLists.txt~	2013-07-07 13:31:51.000000000 +0300
++++ CMakeLists.txt	2013-07-07 13:32:01.000000000 +0300
+@@ -59,9 +59,6 @@
+ # SET LIBNAME
+ set(PNG_LIB_NAME png${PNGLIB_MAJOR}${PNGLIB_MINOR})
+ 
+-# to distinguish between debug and release lib
+-set(CMAKE_DEBUG_POSTFIX "d")
+-
+ # Use the prebuilt pnglibconf.h file from the scripts folder
+ # TODO: fix this by building with awk; without this no cmake build can be
+ # configured directly (to do so indirectly use your local awk to build a
