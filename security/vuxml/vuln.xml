@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ebd877b9-7ef4-4375-b1fd-c67780581898">
+    <topic>ruby -- Hostname check bypassing vulnerability in SSL client</topic>
+    <affects>
+      <package>
+	<name>ruby19</name>
+	<range><lt>1.9.3.448,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby Developers report:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2013/06/27/hostname-check-bypassing-vulnerability-in-openssl-client-cve-2013-4073/">
+	  <p>Ruby's SSL client implements hostname identity check but it does
+	     not properly handle hostnames in the certificate that contain null
+	     bytes.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4073</cvename>
+      <url>http://www.ruby-lang.org/en/news/2013/06/27/hostname-check-bypassing-vulnerability-in-openssl-client-cve-2013-4073/</url>
+    </references>
+    <dates>
+      <discovery>2013-06-27</discovery>
+      <entry>2013-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3e788aa-e9fd-11e2-a96e-60a44c524f57">
     <topic>otrs -- Sql Injection + Xss Issue</topic>
     <affects>
