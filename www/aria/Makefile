@@ -20,6 +20,7 @@ USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+NO_PACKAGE=	hangs on pointyhat
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
