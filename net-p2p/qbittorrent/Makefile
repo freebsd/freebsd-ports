@@ -3,7 +3,7 @@
 
 PORTNAME=	qbittorrent
 PORTVERSION=	3.0.10
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
@@ -44,9 +44,6 @@ USE_QT4+=	dbus
 .else
 CONFIGURE_ARGS+=	--disable-qt-dbus
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|qputenv|!&|' ${WRKSRC}/src/main.cpp
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
