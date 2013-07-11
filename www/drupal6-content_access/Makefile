@@ -1,16 +1,12 @@
-# New ports collection makefile for:	drupal6-content_access
-# Date created:		02 jun	2010
-# Whom:			Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
-#
+# Created by: Anderson Soares Ferreira <anderson@cnpm.embrapa.br>
 # $FreeBSD$
-#
 
 PORTNAME=	content_access
 DISTVERSION=	6.x-1.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	anderson@cnpm.embrapa.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x Content Access module
 
 USE_DRUPAL=	yes

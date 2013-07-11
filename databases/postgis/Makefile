@@ -8,7 +8,7 @@ CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/ \
  		http://www.postgis.org/download/
 
-MAINTAINER=	anderson@cnpm.embrapa.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
@@ -17,10 +17,9 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 CONFLICTS=	postgis-2.*
 
-USES=		bison iconv
+USES=		bison iconv gmake
 USE_GNOME=	libxml2
 USE_PGSQL=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
