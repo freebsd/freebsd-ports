@@ -63,9 +63,21 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mark Dowd reports:</p>
 	<blockquote cite="http://blog.azimuthsecurity.com/2013/06/attacking-crypto-phones-weaknesses-in.html">
-	  <p>Vulnerability 1. Remote Heap Overflow: If an attacker sends a packet larger than 1024 bytes that gets stored temporarily (which occurs many times - such as when sending a ZRTP Hello packet), a heap overflow will occur, leading to potential arbitrary code execution on the vulnerable host.</p>
-	  <p>Vulnerability 2. Multiple Stack Overflows: ZRTPCPP contains multiple stack overflows that arise when preparing a response to a client's ZRTP Hello packet.</p>
-	  <p>Vulnerability 3. Information Leaking / Out of Bounds Reads: The ZRTPCPP library performs very little validation regarding the expected size of a packet versus the actual amount of data received. This can lead to both information leaking and out of bounds data reads (usually resulting in a crash). Information leaking can be performed for example by sending a malformed ZRTP Ping packet.</p>
+	  <p>Vulnerability 1. Remote Heap Overflow: If an attacker sends a
+	    packet larger than 1024 bytes that gets stored temporarily (which
+	    occurs many times - such as when sending a ZRTP Hello packet), a
+	    heap overflow will occur, leading to potential arbitrary code
+	    execution on the vulnerable host.</p>
+	  <p>Vulnerability 2. Multiple Stack Overflows: ZRTPCPP contains
+	    multiple stack overflows that arise when preparing a response
+	    to a client's ZRTP Hello packet.</p>
+	  <p>Vulnerability 3. Information Leaking / Out of Bounds Reads:
+	    The ZRTPCPP library performs very little validation regarding the
+	    expected size of a packet versus the actual amount of data
+	    received. This can lead to both information leaking and out
+	    of bounds data reads (usually resulting in a crash).
+	    Information leaking can be performed for example by sending
+	    a malformed ZRTP Ping packet.</p>
 	</blockquote>
       </body>
     </description>
