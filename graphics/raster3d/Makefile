@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Raster3D
-# Date Created:				2006-04-28
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	raster3d
 PORTVERSION=	3.0.2
@@ -13,7 +9,7 @@ MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of tools for generating raster images of proteins and molecules
+COMMENT=	Set of tools for generating raster images of proteins and molecules
 
 LICENSE=	ART20
 
@@ -28,7 +24,7 @@ MAKE_ARGS=	INCDIRS="-I${LOCALBASE}/include" LIBDIRS="-L${LOCALBASE}/lib" \
 		CC="${CC}" CFLAGS="${CFLAGS}" FC="${FC}" FFLAGS="${FFLAGS}" \
 		RM="${RM}" OS="${OPSYS}"
 ALL_TARGET=	linux all
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MANL=		avs2ps.l balls.l label3d.l r3d_objects.l r3dtops.l rastep.l \
 		raster3d.l render.l ribbon.l rods.l normal3d.l stereo3d.l
@@ -36,18 +32,14 @@ MANL=		avs2ps.l balls.l label3d.l r3d_objects.l r3dtops.l rastep.l \
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
 FFLAGS+=	-fno-range-check -ffixed-line-length-132
 
+MAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+MAGICK_CFLAGS=		-DIMAGEPIPE
+OPTIONS_SUB=		yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2: internal compiler error
-.endif
-
-.if ${PORT_OPTIONS:MMAGiCK}
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-CFLAGS+=	-DIMAGEPIPE
-PLIST_SUB+=	IMAGEMAGICK=""
-.else
-PLIST_SUB+=	IMAGEMAGICK="@comment "
 .endif
 
 do-install:
