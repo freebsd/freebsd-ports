@@ -1,9 +1,5 @@
-## New ports collection makefile for:	swt
-# Date created:				2006-03-28
-# Whom:					Max Brazhnikov makc@issp.ac.ru
-#
+# Created by: Max Brazhnikov makc@issp.ac.ru
 # $FreeBSD$
-#
 
 PORTNAME=	swt
 PORTVERSION=	0.1.11
@@ -43,7 +39,7 @@ SCILAB_ARGS=	-nogui
 PLIST_SUB+=	HELP="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-etc__swt.start
 .else
-USE_DISPLAY=	yes
+USES=		display:build
 MAKE_ENV=	LC_ALL="C"
 PLIST_SUB+=	HELP=""
 TOOLBOX_SUBDIRS+=	jar
@@ -59,26 +55,11 @@ post-patch:
 
 pre-build:
 	${FIND} -d ${WRKSRC} \( -name '*.orig' -or -name '*.bak' \) -delete
-.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
-	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
-		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
-		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
-	fi
-	${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 -fp ${LOCALBASE}/lib/X11/fonts/misc > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
 .endif
 
 do-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
-
-post-build:
-.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
-	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
-		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
-		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
-	fi
-.endif
 
 do-install:
 	${MKDIR} ${TOOLBOXDIR}/sci_gateway/c
