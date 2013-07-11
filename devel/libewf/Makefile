@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libewf
-PORTVERSION=	20130303
+PORTVERSION=	20130416
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSMTdoaVExWWNsRjg/ \
+		LOCAL/antoine
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A library for support of the Expert Witness Compression Format (EWF)
