@@ -1,7 +1,7 @@
 # Created by: Douglas Carmichael <dcarmich@mcs.com>
 # $FreeBSD$
 
-zsh:1: command not found: :w
+PORTNAME=	amiwm
 PORTVERSION=	0.21.pl2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
