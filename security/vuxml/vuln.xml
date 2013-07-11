@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e3e788aa-e9fd-11e2-a96e-60a44c524f57">
+    <topic>otrs -- Sql Injection + Xss Issue</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-05/">
+	  <p>An attacker with a valid agent login could manipulate URLs leading to SQL injection. An attacker with a valid agent login could manipulate URLs in the ITSM ConfigItem search, leading to a JavaScript code injection (XSS) problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4717</cvename>
+      <cvename>CVE-2013-4718</cvename>
+      <url>http://www.otrs.com/en/open-source/community-news/security-advisories/security-advisory-2013-05/</url>
+    </references>
+    <dates>
+      <discovery>2013-07-09</discovery>
+      <entry>2013-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b80104f-e96c-11e2-8bac-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
