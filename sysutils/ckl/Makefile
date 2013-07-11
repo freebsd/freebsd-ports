@@ -7,7 +7,7 @@
 
 PORTNAME=	ckl
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://packages.cloudkick.com/releases/ckl/
 DISTNAME=	ckl-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 
@@ -15,7 +15,7 @@ MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	A c++ implementation of an OpenID decentralized identity system
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		tidy:${PORTSDIR}/www/tidy-lib \

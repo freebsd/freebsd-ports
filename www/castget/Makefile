@@ -7,7 +7,7 @@
 
 PORTNAME=	castget
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SAVANNAH CENKES
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line podcast downloader
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxml2

@@ -3,7 +3,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -56,7 +56,7 @@ FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweig
 # options that affect FIND_PACKAGE
 .if ${PORT_OPTIONS:MCURL}
 FORCE_REQUIRE+=	CURL
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 FORCE_IGNORE+=	CURL

@@ -2,6 +2,7 @@
 
 PORTNAME=	linnya
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ghw@7axu.com

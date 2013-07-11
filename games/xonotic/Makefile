@@ -3,6 +3,7 @@
 
 PORTNAME=	xonotic
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -10,7 +11,7 @@ MASTER_SITES=	http://nl.dl.xonotic.org/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 

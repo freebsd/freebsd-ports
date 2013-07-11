@@ -7,6 +7,7 @@
 
 PORTNAME=	msn
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://mor-pah.net/code/
 PKGNAMEPREFIX=	cli-
@@ -15,7 +16,7 @@ DISTNAME=	CLI-MSN-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Command line msn messenger
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

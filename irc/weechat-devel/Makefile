@@ -2,6 +2,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	20130514
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}

@@ -7,14 +7,14 @@
 
 PORTNAME=	libbt
 PORTVERSION=	1.05
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p devel
 MASTER_SITES=	SF
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

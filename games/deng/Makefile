@@ -3,7 +3,7 @@
 
 PORTNAME=	deng
 PORTVERSION=	1.9.0b6.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.9
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 

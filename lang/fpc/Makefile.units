@@ -167,7 +167,7 @@ USE_OPENLDAP=	yes
 
 .if ${PKGNAMESUFFIX} == "-libcurl"
 .	if defined(WITH_LIBCURL)
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 .	endif
 .endif
 

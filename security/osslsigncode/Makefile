@@ -7,7 +7,7 @@
 
 PORTNAME=	osslsigncode
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .include <bsd.port.mk>

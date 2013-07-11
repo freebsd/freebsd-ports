@@ -6,22 +6,9 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-19
 
---- configure.orig	2012-02-26 17:52:21.904908587 +0800
-+++ configure	2012-02-26 17:52:21.929909948 +0800
-@@ -15049,10 +15049,10 @@
-     flags_dbg_all="$flags_dbg_all -gdwarf-2"
-     flags_dbg_all="$flags_dbg_all -gvms"
-     flags_dbg_yes="-g"
--    flags_dbg_off="-g0"
-+    flags_dbg_off=""
-     flags_opt_all="-O -O0 -O1 -O2 -O3 -Os"
-     flags_opt_yes="-O2"
--    flags_opt_off="-O0"
-+    flags_opt_off=""
-   else
-     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
-@@ -15892,6 +15892,9 @@
+--- configure.orig	2013-02-06 17:47:26.000000000 +0800
++++ configure	2013-02-18 18:25:16.000000000 +0800
+@@ -16651,6 +16651,9 @@
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
  
@@ -31,7 +18,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -15922,6 +15925,7 @@
+@@ -16681,6 +16684,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -39,7 +26,7 @@ Last-Update: 2010-12-19
  
      #
      if test "$want_debug" = "yes"; then
-@@ -16139,6 +16143,9 @@
+@@ -16898,6 +16902,9 @@
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -49,7 +36,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -16169,6 +16176,7 @@
+@@ -16928,6 +16935,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -57,17 +44,17 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -20137,7 +20145,8 @@
+@@ -21379,7 +21387,8 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
  
 -                OPENSSL_PCDIR="$OPT_SSL/lib/pkgconfig"
-+                # Use the FreeBSD location of the pkg-config libdir
++                # Use the FreeBSD location of the pkgconf libdir
 +                OPENSSL_PCDIR="$LOCALBASE/libdata/pkgconfig"
      { $as_echo "$as_me:${as_lineno-$LINENO}: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&5
  $as_echo "$as_me: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&6;}
      if test -f "$OPENSSL_PCDIR/openssl.pc"; then
-@@ -23231,29 +23240,30 @@
+@@ -24725,29 +24734,30 @@
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -78,9 +65,9 @@ Last-Update: 2010-12-19
    *)
          PREFIX_RTMP=$OPT_LIBRTMP
 +        LIB_RTMP="-lrtmp"
-+        LD_RTMP=-L${PREFIX_RTMP}/lib$libsuff
-+        CPP_RTMP=-I${PREFIX_RTMP}/include
-+        DIR_RTMP=${PREFIX_RTMP}/lib$libsuff
++        LD_RTMP="-L${PREFIX_RTMP}/lib$libsuff"
++        CPP_RTMP="-I${PREFIX_RTMP}/include"
++        DIR_RTMP="${PREFIX_RTMP}/lib$libsuff"
      ;;
    esac
  
@@ -92,13 +79,13 @@ Last-Update: 2010-12-19
 -
    LDFLAGS="$LDFLAGS $LD_RTMP"
    CPPFLAGS="$CPPFLAGS $CPP_RTMP"
-   LIBS="$LIBS $LIB_RTMP"
+   LIBS="$LIB_RTMP $LIBS"
  
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in -lrtmp" >&5
 -$as_echo_n "checking for RTMP_Init in -lrtmp... " >&6; }
 +  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in $LIB_RTMP" >&5
 +$as_echo_n "checking for RTMP_Init in $LIB_RTMP... " >&6; }
- if test "${ac_cv_lib_rtmp_RTMP_Init+set}" = set; then :
+ if ${ac_cv_lib_rtmp_RTMP_Init+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

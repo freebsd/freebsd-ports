@@ -14,7 +14,7 @@ share/aclocal/libcurl.m4
 lib/libcurl.a
 lib/libcurl.la
 lib/libcurl.so
-lib/libcurl.so.%%SHLIB_VER%%
+lib/libcurl.so.7
 libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -117,6 +117,8 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_timeout.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_timeout.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_wait.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_wait.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_init.html
@@ -157,6 +159,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anyauthput.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asiohiper.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacertinmem.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certinfo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkspeed.c
@@ -172,14 +175,16 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpget.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetinfo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetresp.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpsget.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpupload.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpuploadresume.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getinfo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getinmemory.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ghiper.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiperfifo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/href_extractor.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmltidy.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmltitle.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmltitle.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/http-post.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpcustomheader.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpput.c
@@ -191,6 +196,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-double.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-post.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-single.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-uv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multithread.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opensslthreadlock.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/persistant.c
@@ -204,6 +210,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleconv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sepheaders.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendrecv.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sftpget.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplepost.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplesmtp.c
@@ -214,4 +221,6 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synctime.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threaded-ssl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/url2file.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usercertinmem.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlstream.c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

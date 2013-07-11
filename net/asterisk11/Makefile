@@ -211,7 +211,7 @@ CONFIGURE_ARGS+=	--without-gsm
 .if ${PORT_OPTIONS:MCURL}
 PLIST_SUB+=	WITH_CURL=""
 CONFIGURE_ARGS+=	--with-libcurl
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .else
 PLIST_SUB+=	WITH_CURL="@comment "
 CONFIGURE_ARGS+=	--with-libcurl=no

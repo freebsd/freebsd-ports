@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	ftp
+PORTREVISION=	15
 
 MASTERDIR=	${.CURDIR}/../../lang/php52
 

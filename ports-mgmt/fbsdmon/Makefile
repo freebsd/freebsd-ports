@@ -3,6 +3,7 @@
 
 PORTNAME=	fbsdmon
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	LOCAL/gblach/
 

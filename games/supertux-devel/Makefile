@@ -2,6 +2,7 @@
 
 PORTNAME=	supertux
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-devel
@@ -11,7 +12,7 @@ COMMENT=	SuperTux is a side-scroller similar to Super Mario Brothers
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
-		curl.6:${PORTSDIR}/ftp/curl \
+		curl:${PORTSDIR}/ftp/curl \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes

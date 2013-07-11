@@ -6,7 +6,7 @@
 
 PORTNAME=	apt
 PORTVERSION=	0.6.46.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	apt_0.6.46.4-0.1
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		dpkg:${PORTSDIR}/archivers/dpkg \
 		gpg:${PORTSDIR}/security/gnupg1
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

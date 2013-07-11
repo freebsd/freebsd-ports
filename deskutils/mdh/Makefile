@@ -7,7 +7,7 @@
 
 PORTNAME=	mdh
 PORTVERSION=	1.9.60
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gozer.org/programs/gtk/files/
 
@@ -31,7 +31,7 @@ LIB_DEPENDS+=	gtop-2.0:${PORTSDIR}/devel/libgtop
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 post-patch:

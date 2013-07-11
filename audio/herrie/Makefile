@@ -3,7 +3,7 @@
 
 PORTNAME=	herrie
 PORTVERSION=	2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/

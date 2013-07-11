@@ -3,7 +3,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.18.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey17			\
 		jpeg.11:${PORTSDIR}/graphics/jpeg			\
 		png15:${PORTSDIR}/graphics/png				\
-		curl.6:${PORTSDIR}/ftp/curl				\
+		curl:${PORTSDIR}/ftp/curl				\
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes

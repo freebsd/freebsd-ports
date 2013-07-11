@@ -7,7 +7,7 @@
 
 PORTNAME=	kuklomenos
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
 
@@ -16,7 +16,7 @@ COMMENT=	Simple but challenging abstract shoot-em-up game
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	VORBIS
 OPTIONS_DEFAULT=	VORBIS

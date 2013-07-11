@@ -3,7 +3,7 @@
 
 PORTNAME=	curlftpfs
 PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
@@ -13,7 +13,7 @@ COMMENT=	Mount remote ftp directories
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig

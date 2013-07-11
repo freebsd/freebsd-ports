@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 LIB_DEPENDS=	icutu:${PORTSDIR}/devel/icu \
 		langtag:${PORTSDIR}/devel/liblangtag \
 		orcus-0.6:${PORTSDIR}/devel/liborcus \
-		curl.6:${PORTSDIR}/ftp/curl \
+		curl:${PORTSDIR}/ftp/curl \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		graphite2:${PORTSDIR}/graphics/graphite2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

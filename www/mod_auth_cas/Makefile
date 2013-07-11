@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_cas
 PORTVERSION=	1.0.9.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://source.jasig.org/cas-clients/mod_auth_cas/tags/mod_auth_cas-${PORTVERSION}/src/
 # SVN tags only, *sigh*

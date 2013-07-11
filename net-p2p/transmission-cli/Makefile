@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.80
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 MASTER_SITES=	http://transmission.cachefly.net/
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	LITE
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=curl.6:${PORTSDIR}/ftp/curl \
+GEN_LIB_DEPENDS=curl:${PORTSDIR}/ftp/curl \
 		event-2.0.6:${PORTSDIR}/devel/libevent2
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 

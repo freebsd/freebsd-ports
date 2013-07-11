@@ -3,6 +3,7 @@
 
 PORTNAME=	con
 PORTVERSION=	1.7.7
+PORTREVISION=	1
 CATEGORIES=	net enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/

@@ -3,7 +3,7 @@
 
 PORTNAME=	daimonin
 PORTVERSION=	0.10.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://daimonin.svn.sourceforge.net/viewvc/daimonin/main/client/?view=tar&pathrev=${SVN_REVISION}&file=
 DIST_SUBDIR=	${PORTNAME}
@@ -12,7 +12,7 @@ MAINTAINER=	fbsd@opal.com
 COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORPG)
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 
 SVN_REVISION=	6021
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}

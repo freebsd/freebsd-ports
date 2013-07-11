@@ -3,7 +3,7 @@
 
 PORTNAME=	ede
 PORTVERSION=	2.0
-PORTREVSION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}lib/${PORTVERSION}:edelib
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
 		jam:${PORTSDIR}/devel/jam \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		curl.6:${PORTSDIR}/ftp/curl \
+		curl:${PORTSDIR}/ftp/curl \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info

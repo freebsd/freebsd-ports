@@ -1,6 +1,6 @@
---- src/tool_operate.c.orig	2012-01-23 23:31:30.000000000 +0800
-+++ src/tool_operate.c	2012-02-26 17:40:00.117907281 +0800
-@@ -580,22 +580,10 @@
+--- src/tool_operate.c.orig	2012-07-24 01:59:20.000000000 +0800
++++ src/tool_operate.c	2012-09-22 20:54:44.439408357 +0800
+@@ -653,22 +653,10 @@
              DEBUGASSERT(!outs.filename);
            }
  
@@ -26,7 +26,7 @@
              if(!file) {
                helpf(config->errors, "Can't open '%s'!\n", outfile);
                res = CURLE_WRITE_ERROR;
-@@ -603,6 +591,19 @@
+@@ -676,6 +664,19 @@
              }
              outs.fopened = TRUE;
              outs.stream = file;

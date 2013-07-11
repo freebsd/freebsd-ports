@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.1.24
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -27,7 +28,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-legacy \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
