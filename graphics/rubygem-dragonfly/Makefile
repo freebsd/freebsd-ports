@@ -1,4 +1,4 @@
-# Created by: Jason Helfman <jhelfman@experts-exchange.com>
+# Created by: Jason Helfman <jgh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	dragonfly
