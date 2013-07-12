@@ -1224,7 +1224,6 @@
     SUBDIR += urelay
     SUBDIR += uriparser
     SUBDIR += urlendec
-    SUBDIR += urtwn-firmware-kmod
     SUBDIR += usbredir
     SUBDIR += userfw
     SUBDIR += ushare
