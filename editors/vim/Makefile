@@ -188,7 +188,8 @@ pre-configure:
 	@${REINPLACE_CMD} -e ' \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
-		s|/usr/local|${LOCALBASE}|g' \
+		s|/usr/local|${LOCALBASE}|g; \
+		s|set dummy lua;|set dummy lua-${LUA_VER};|g' \
 		${WRKSRC}/auto/configure
 .if ${PORT_OPTIONS:MXTERM_SAVE}
 	@${REINPLACE_CMD} -e ' \
