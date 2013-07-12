@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino.st>
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gtkada
@@ -8,7 +8,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gtkada-rm-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada graphical toolkit based on Gtk2+
 
 LICENSE=	GPLv2

@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino.st>
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libsparkcrypto
@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://senier.net/libsparkcrypto/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Cryptographic library implemented in SPARK
 
 LICENSE=	BSD

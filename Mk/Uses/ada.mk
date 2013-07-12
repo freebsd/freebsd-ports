@@ -2,7 +2,7 @@
 #
 # Establish Ada-capable compiler as a build dependency
 #
-# MAINTAINER: draco@marino.st
+# MAINTAINER: marino@FreeBSD.org
 #
 # Feature:      ada
 # Usage:        USES=ada

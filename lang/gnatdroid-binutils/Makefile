@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnatdroid-binutils
-# Date created:				2011-07-20
-# Whom:					John Marino <draco@marino>
-#
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		binutils
 PORTVERSION=		2.21.1
@@ -12,7 +8,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=		gnatdroid-
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada Android cross-compiler
 
 BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
