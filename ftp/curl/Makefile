@@ -23,7 +23,7 @@ COOKIES_DESC=	Cookies support
 CURL_DEBUG_DESC=cURL debug memory tracking
 LIBSSH2_DESC=	SCP/SFTP support via libssh2
 RESOLV_DESC=	DNS resolving options
-SPNEGO=		SPNEGO (RFC 4178) support
+SPNEGO_DESC=	SPNEGO (RFC 4178) support
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=	TLS-SRP (Secure Remote Password) support
 
