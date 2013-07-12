@@ -10,6 +10,7 @@ MASTER_SITES=	http://matt.sixxgate.com/files/
 MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Motif/X file/stream viewer
 
+BROKEN=		unfetchable, MASTER_SITES is parked
 USES=		imake motif
 USE_BZIP2=	yes
 USE_XORG=	x11 xmu xt
