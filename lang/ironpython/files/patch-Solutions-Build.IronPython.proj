@@ -1,0 +1,88 @@
+--- Solutions/Build.IronPython.proj.orig	2012-07-04 09:16:08.000000000 +0200
++++ Solutions/Build.IronPython.proj	2013-07-12 10:09:24.000000000 +0200
+@@ -37,9 +37,11 @@
+     <BuildProject Include="$(Solution)" Condition=" '$(Mono)' != 'true' ">
+       <Properties>Configuration=Silverlight5$(BaseConfiguration)</Properties>
+     </BuildProject>
++<!--
+     <BuildProject Include="$(Solution)">
+       <Properties>Configuration=Android$(BaseConfiguration)</Properties>
+     </BuildProject>
++-->
+     <!-- Removed because it doesn't currently work. -->
+     <!--<BuildProject Include="$(Solution)" Condition=" '$(Mono)' != 'true' ">
+       <Properties>Configuration=WP7$(BaseConfiguration)</Properties>
+@@ -94,7 +96,7 @@
+     <SilverlightScriptTemplates Include="$(BaseDir)\Hosts\Silverlight\Public\script\templates\python\**\*.*" />
+ 
+     <MiscFiles Include="$(BaseDir)\Languages\IronPython\Public\License.html" />
+-    <MiscFiles Include="$(BaseDir)\Languages\IronPython\Public\License.rtf" />
++    <MiscFiles Include="$(BaseDir)\Languages\IronPython\Public\License.Rtf" />
+     <MiscFiles Include="$(BaseDir)\Languages\IronPython\Public\License.txt" />
+     <MiscFiles Include="$(BaseDir)\Languages\IronPython\Public\Readme.html" />
+ 
+@@ -162,6 +164,7 @@
+     <Copy SourceFiles="@(TutorialFiles)" DestinationFiles="@(TutorialFiles->'$(StageDir)\Tutorial\%(RecursiveDir)%(Filename)%(Extension)')" />
+ 
+     <!-- Continue to copy the Silverlight files here for compatibility with previous releases. -->
++<!--
+     <Copy SourceFiles="@(DlrLibs->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Silverlight\bin" />
+     <Copy SourceFiles="@(SilverlightDlrLibs->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Silverlight\bin" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Silverlight\bin" />
+@@ -169,21 +172,24 @@
+ 
+     <Copy SourceFiles="@(SilverlightScriptFiles)" DestinationFiles="@(SilverlightScriptFiles->'$(StageDir)\Silverlight\script\%(RecursiveDir)%(Filename)%(Extension)')" />
+     <Copy SourceFiles="@(SilverlightScriptTemplates)" DestinationFiles="@(SilverlightScriptTemplates->'$(StageDir)\Silverlight\script\templates\python\%(RecursiveDir)%(Filename)%(Extension)')" />
++-->
+ 
+     <!-- .NET 4 -->
++<!--
+     <Copy SourceFiles="@(DlrLibs->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net40" />
+     <Copy SourceFiles="@(ClrDlrLibs->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net40" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net40" />
+     <Copy SourceFiles="@(v4IronPythonModules->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net40" />
+     <Copy SourceFiles="@(IronPythonModules->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net40" />
+-
++-->
+     <!-- .NET 3.5 -->
++<!--
+     <Copy SourceFiles="@(DlrLibs->'$(v2BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net35" />
+     <Copy SourceFiles="@(ClrDlrLibs->'$(v2BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net35" />
+     <Copy SourceFiles="@(v2DlrLibs->'$(v2BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net35" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(v2BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net35" />
+     <Copy SourceFiles="@(IronPythonModules->'$(v2BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Net35" />
+-
++-->
+     <!-- Windows Phone 7.5 -->
+     <!--
+     <Copy SourceFiles="@(DlrLibs->'$(WP7BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl4-WP71" />
+@@ -193,23 +199,26 @@
+     -->
+ 
+     <!-- Mono for Android -->
++<!--
+     <Copy SourceFiles="@(DlrLibs->'$(AndroidBuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Android" />
+     <Copy SourceFiles="@(v2DlrLibs->'$(AndroidBuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Android" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(AndroidBuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Android" />
+     <Copy SourceFiles="@(IronPythonModules->'$(AndroidBuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Android" />
+-
++-->
+     <!-- Silverlight 4 -->
++<!--
+     <Copy SourceFiles="@(DlrLibs->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl4" />
+     <Copy SourceFiles="@(SilverlightDlrLibs->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl4" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl4" />
+     <Copy SourceFiles="@(IronPythonModules->'$(Silverlight4BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl4" />
+-
++-->
+     <!-- Silverlight 5 -->
++<!--
+     <Copy SourceFiles="@(DlrLibs->'$(Silverlight5BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl5" />
+     <Copy SourceFiles="@(SilverlightDlrLibs->'$(Silverlight5BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl5" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(Silverlight5BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl5" />
+     <Copy SourceFiles="@(IronPythonModules->'$(Silverlight5BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Sl5" />
+-
++-->
+     <!-- Windows 8 "Metro" -->
+     <!--<Copy SourceFiles="@(DlrLibs->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Metro" />
+     <Copy SourceFiles="@(IronPythonLibs->'$(BuildDir)\%(Identity)')" DestinationFolder="$(StageDir)\Platforms\Metro" />-->

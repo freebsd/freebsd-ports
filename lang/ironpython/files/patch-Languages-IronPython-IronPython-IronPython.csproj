@@ -1,0 +1,47 @@
+--- ./Languages/IronPython/IronPython/IronPython.csproj.orig	2013-05-01 13:31:53.000000000 +0200
++++ ./Languages/IronPython/IronPython/IronPython.csproj	2013-05-01 13:32:28.000000000 +0200
+@@ -13,35 +13,35 @@
+     <DocumentationFile>$(SolutionDir)..\bin\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FxCop|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Win8Debug|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Win8Release|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'v2Debug|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'v2Release|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'WP7Debug|AnyCPU' ">
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'WP7Release|AnyCPU' ">
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Silverlight4Debug|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Silverlight4Release|AnyCPU' ">
+-    <NoWarn>1591;0429</NoWarn>
++    <NoWarn>1591</NoWarn>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Silverlight5Debug|AnyCPU' ">
+   </PropertyGroup>
