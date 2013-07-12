@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scotch
-# Date created:		Thu 2 feb 2006
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	scotch
 DISTVERSION=	5.1.12b_esmumps
@@ -21,7 +17,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	gbase-0.* gmap-2006.*
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
+
 .if defined(MAINTAINER_MODE)
 USE_FORTRAN=	yes
 .endif
