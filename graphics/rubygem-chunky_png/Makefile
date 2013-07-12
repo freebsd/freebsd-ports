@@ -1,13 +1,8 @@
-# Ports collection makefile for:	rubygem-chunky_png
-# Date created:				7 October 2011
-# Whom:					Phil Phillips <pphillips@experts-exchange.com>
-#
+# Created by: Phil Phillips <pphillips@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chunky_png
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
