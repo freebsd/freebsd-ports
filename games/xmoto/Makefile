@@ -13,14 +13,14 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenging 2D motocross platform game
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		curl:${PORTSDIR}/ftp/curl \
 		xdg-basedir:${PORTSDIR}/x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig libxml2
+USE_GNOME=	libxml2
 USE_LUA=	5.1
 USE_SQLITE=	3
 USE_SDL=	sdl mixer ttf net
@@ -57,11 +57,11 @@ CONFIGURE_ARGS+=--without-asian-ttf-file
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 CONFIGURE_ENV+=	LIBS="-lintl"
 .else
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 

@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Height field generator and editor
 
-LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
+LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		png15:${PORTSDIR}/graphics/png
 
 USE_GL=		yes

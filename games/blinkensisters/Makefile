@@ -63,7 +63,7 @@ PLIST_SUB+=	SDL_NET="@comment "
 .if ${PORT_OPTIONS:MTHEORA}
 CMAKE_ARGS+=	-DUSE_THEORA:BOOL=ON
 .else
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
 .endif
 
 post-patch:

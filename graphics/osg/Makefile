@@ -12,9 +12,9 @@ DISTNAME=	OpenSceneGraph-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	osg-devel-[0-9]*
 
@@ -66,7 +66,7 @@ PLIST_SUB+=	CURL="@comment "
 
 .if ${PORT_OPTIONS:MFREETYPE}
 FORCE_REQUIRE+=	FreeType
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	FREETYPE=""
 .else
 FORCE_IGNORE+=	FreeType
@@ -75,7 +75,7 @@ PLIST_SUB+=	FREETYPE="@comment "
 
 .if ${PORT_OPTIONS:MGDAL}
 FORCE_REQUIRE+=	GDAL
-LIB_DEPENDS+=	gdal.17:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	GDAL=""
 .else
 FORCE_IGNORE+=	GDAL
@@ -84,7 +84,7 @@ PLIST_SUB+=	GDAL="@comment "
 
 .if ${PORT_OPTIONS:MGIF}
 FORCE_REQUIRE+=	GIFLIB
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
 PLIST_SUB+=	GIF=""
 .else
 FORCE_IGNORE+=	GIFLIB
@@ -103,7 +103,7 @@ PLIST_SUB+=	INVENTOR="@comment "
 
 .if ${PORT_OPTIONS:MJASPER}
 FORCE_REQUIRE+=	Jasper
-LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
 PLIST_SUB+=	JASPER=""
 .else
 FORCE_IGNORE+=	Jasper
@@ -112,7 +112,7 @@ PLIST_SUB+=	JASPER="@comment "
 
 #.if ${PORT_OPTIONS:MOPENVRML}
 #FORCE_REQUIRE+=	OpenVRML
-#LIB_DEPENDS+=	openvrml.8:${PORTSDIR}/www/openvrml
+#LIB_DEPENDS+=	openvrml:${PORTSDIR}/www/openvrml
 #PLIST_SUB+=	OPENVRML=""
 #.else
 FORCE_IGNORE+=	OpenVRML
@@ -121,7 +121,7 @@ PLIST_SUB+=	OPENVRML="@comment "
 
 .if ${PORT_OPTIONS:MXINE}
 FORCE_REQUIRE+=	Xine
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
 .else
 FORCE_IGNORE+=	Xine
@@ -141,7 +141,7 @@ PLIST_SUB+=	ITK="@comment "
 
 .if ${PORT_OPTIONS:MVNC}
 FORCE_REQUIRE+=	LibVNCServer
-LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
+LIB_DEPENDS+=	vncserver:${PORTSDIR}/net/libvncserver
 PLIST_SUB+=	VNC=""
 .else
 FORCE_IGNORE+=	LibVNCServer
@@ -150,7 +150,7 @@ PLIST_SUB+=	VNC="@comment "
 
 .if ${PORT_OPTIONS:MOPENEXR}
 FORCE_REQUIRE+=	OpenEXR
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
 FORCE_IGNORE+=	OpenEXR
@@ -159,7 +159,7 @@ PLIST_SUB+=	OPENEXR="@comment "
 
 .if ${PORT_OPTIONS:MFFMPEG}
 FORCE_REQUIRE+=	FFmpeg
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
 FORCE_IGNORE+=	FFmpeg
@@ -185,7 +185,7 @@ PLIST_SUB+=	SVG="@comment "
 
 .if ${PORT_OPTIONS:MPDF}
 FORCE_REQUIRE+=	Poppler-glib
-LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS+=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
 PLIST_SUB+=	PDF=""
 .else
 FORCE_IGNORE+=	Poppler-glib
@@ -193,7 +193,7 @@ PLIST_SUB+=	PDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSVG} || ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 .endif
 
 # other options

@@ -10,9 +10,9 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
 
-LIB_DEPENDS=	proj.7:${PORTSDIR}/graphics/proj \
-		geos.0:${PORTSDIR}/graphics/geos \
-		protobuf-c.0:${PORTSDIR}/devel/protobuf-c
+LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
+		geos:${PORTSDIR}/graphics/geos \
+		protobuf-c:${PORTSDIR}/devel/protobuf-c
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

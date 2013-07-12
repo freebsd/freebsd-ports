@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wop
-# Date created:		26 Dec 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wop
 PORTVERSION=	0.4.3
@@ -34,6 +30,8 @@ DESKTOP_ENTRIES="Worms of Prey" \
 		"Game;ActionGame;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|__va_copy|va_copy|g' ${WRKSRC}/src/string.cpp
 	@${REINPLACE_CMD} -e 's|; make|; ${GMAKE}|g' ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
@@ -55,7 +53,7 @@ do-install:
 		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; ; \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog README README-COMMAND-LINE-OPTIONS.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

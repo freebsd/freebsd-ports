@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Polygon-Tree
-# Date created:		03 Mar 2011
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Polygon-Tree
 PORTVERSION=	0.05

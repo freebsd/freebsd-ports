@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bennugd
-# Date created:		06 Nov 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	core
 PORTVERSION=	r20091106
@@ -20,6 +16,7 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
 USE_LDCONFIG=	yes
+USE_DOS2UNIX=	*.c *.h
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Segfaults on !i386

@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	BACKTRACE OPENGL VORBIS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBACKTRACE}
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 CONFIGURE_ARGS+=--enable-backtrace
 STRIP=		#
 .else
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--disable-opengl
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=--enable-vorbis
 .else

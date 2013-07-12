@@ -12,11 +12,12 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:C/\.//}-linux
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A sequel to Transball and Transball 2 THRUST-type games
 
-LIB_DEPENDS=	SGE.0:${PORTSDIR}/devel/sdl_sge
+LIB_DEPENDS=	SGE:${PORTSDIR}/devel/sdl_sge
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer sound
+USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/sources

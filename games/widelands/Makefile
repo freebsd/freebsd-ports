@@ -13,7 +13,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		GLEW.1:${PORTSDIR}/graphics/glew \
+		GLEW:${PORTSDIR}/graphics/glew \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 

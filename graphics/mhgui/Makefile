@@ -12,7 +12,7 @@ COMMENT=	GUI widget library for MakeHuman
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	animorph.0:${PORTSDIR}/graphics/animorph \
+LIB_DEPENDS=	animorph:${PORTSDIR}/graphics/animorph \
 		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes

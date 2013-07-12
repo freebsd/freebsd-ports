@@ -1,9 +1,5 @@
-# New ports collection makefile for:	powermanga
-# Date created:			26 Jan 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	powermanga
 PORTVERSION=	0.90
@@ -42,7 +38,7 @@ post-patch:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${INSTALL_DATA} ${WRKSRC}/texts/config.ini ${DATADIR}/texts
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

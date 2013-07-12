@@ -18,7 +18,7 @@ ALLEGRO_DESC=	Enable allegro support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
 PKGNAMESUFFIX=	-allegro

@@ -46,10 +46,6 @@ USE_GCC=	4.6+
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800000
-IGNORE=		does not build on < 8.x
-.endif
-
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""

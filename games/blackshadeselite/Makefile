@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

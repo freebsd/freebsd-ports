@@ -13,6 +13,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Original logic game with arcade and tactics modes
 
 USE_SDL=	sdl mixer image
+USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
 
 post-patch:

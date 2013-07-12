@@ -13,7 +13,7 @@ COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 MANUAL_PACKAGE_BUILD=	huge
 
@@ -39,9 +39,9 @@ DEDICATED_DESC=	Build dedicated server
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug \
+		theora:${PORTSDIR}/multimedia/libtheora \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release

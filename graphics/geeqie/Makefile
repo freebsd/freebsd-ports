@@ -38,21 +38,21 @@ GPS_DESC=	GPS map support (libchamplain) EXPERIMENTAL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 .else
 CONFIGURE_ARGS+=--disable-exiv2
 .endif
 
 .if ${PORT_OPTIONS:MLCMS}
-LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS+=	lcms:${PORTSDIR}/graphics/lcms
 CONFIGURE_ARGS+=--enable-lcms
 .else
 CONFIGURE_ARGS+=--disable-lcms
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 .else
 CONFIGURE_ARGS+=--disable-lirc
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--disable-lirc
 
 # Support for libchamplain is marked as experimental!
 .if ${PORT_OPTIONS:MGPS}
-LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain
+LIB_DEPENDS+=	champlain-0.8:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-gps
 .else
 CONFIGURE_ARGS+=--disable-gps

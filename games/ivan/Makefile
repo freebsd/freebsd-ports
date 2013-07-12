@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ivan
-# Date created:		11 Nov 2005
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ivan
 PORTVERSION=	0.50

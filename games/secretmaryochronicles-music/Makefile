@@ -1,9 +1,5 @@
-# New ports collection makefile for:	secretmaryochronicles-music
-# Date created:		5 Aug 2008
-# Whom:			Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	secretmaryochronicles-music
 PORTVERSION=	5.0

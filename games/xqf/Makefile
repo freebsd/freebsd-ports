@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	GTK2 GEOIP BZIP2
 OPTIONS_DEFAULT=	GTK2 GEOIP BZIP2
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
@@ -36,7 +35,7 @@ USE_GNOME+=	gdkpixbuf
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
@@ -51,4 +50,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/xqfdocs.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

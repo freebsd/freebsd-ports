@@ -27,6 +27,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
 MAKE_JOBS_SAFE=	yes
 
+USE_DOS2UNIX=	*.c
+
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
 post-extract:

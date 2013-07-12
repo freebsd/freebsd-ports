@@ -1,9 +1,5 @@
-# New ports collection makefile for:	powder
-# Date created:		29 Dec 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	powder
 PORTVERSION=	115
@@ -26,6 +22,8 @@ PLIST_FILES=	bin/powder
 
 PORTDOCS=	README.TXT LICENSE.TXT CREDITS.TXT
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' \
 		${WRKSRC}/rooms/buildrooms.bash \
@@ -35,7 +33,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

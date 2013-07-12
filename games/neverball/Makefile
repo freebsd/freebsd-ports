@@ -12,9 +12,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		physfs.1:${PORTSDIR}/devel/physfs
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		physfs:${PORTSDIR}/devel/physfs
 
 USE_GL=		gl
 USE_SDL=	sdl ttf

@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A puzzle game where the player has to arrange balls in triplets
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ftgl.2:${PORTSDIR}/graphics/ftgl
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		theora:${PORTSDIR}/multimedia/libtheora \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		ftgl:${PORTSDIR}/graphics/ftgl
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

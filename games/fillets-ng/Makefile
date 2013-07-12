@@ -44,7 +44,7 @@ OPTIONS_DEFINE=	FRIBIDI
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
 .endif
 
 post-patch:

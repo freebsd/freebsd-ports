@@ -1,11 +1,12 @@
 --- sources/main.cpp.orig	2005-04-16 21:16:54.000000000 +0400
 +++ sources/main.cpp	2008-04-07 01:37:52.000000000 +0400
-@@ -6,6 +6,8 @@
+@@ -6,6 +6,9 @@
  #include <time.h>
  #endif
  
 +#include <sys/types.h>
 +#include <sys/stat.h>
++#include <unistd.h>
  #include <stdio.h>
  #include <stdlib.h>
  #include "SDL/SDL.h"

@@ -2,4 +2,4 @@ Math::Polygon::Tree creates a B-tree of polygon parts for fast check
 if object is inside this polygon. This method is effective if polygon
 has hundreds or more segments.
 
-WWW:	http://search.cpan.org/dist/Math-Polygon-Tree/
+WWW: http://search.cpan.org/dist/Math-Polygon-Tree/

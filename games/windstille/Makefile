@@ -10,12 +10,12 @@ MASTER_SITES=	BERLIOS CENKES
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classic 2D jump-n-shoot game
 
-LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
 		ogg:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		png15:${PORTSDIR}/graphics/png \
-		squirrel.0:${PORTSDIR}/lang/squirrel \
-		freetype.9:${PORTSDIR}/print/freetype2
+		squirrel:${PORTSDIR}/lang/squirrel \
+		freetype:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes

@@ -12,8 +12,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR
 
 USES=		cmake

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	intensityengine
-# Date created:		27 Jan 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	intensityengine
 DISTVERSION=	r20100129
@@ -15,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Engine that forms the basis of Syntensity, 3D games world
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer image
@@ -30,6 +26,11 @@ ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*
+PORTDATA=	*
+
+PLIST_FILES=	bin/intensityengine_client libexec/intensityengine_client
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/set.*CMAKE_CXX_FLAGS/ d' ${WRKSRC}/CMakeLists.txt
@@ -46,12 +47,13 @@ pre-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/intensity_client ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/client/Intensity_CClient ${PREFIX}/libexec/intensity_client
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"data src/python src/javascript packages intensity_client.py mybrushes.cfg" \
 		${DATADIR}/
-
-.if !defined(NOPORTDOCS)
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} '*' ${DOCSDIR}/
