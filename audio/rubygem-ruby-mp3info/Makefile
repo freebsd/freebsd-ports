@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-mp3info
-# Date created:		11 May 2006
-# Whom:			Brad Walker <tha_walka@hotmail.com>
-#
+# Created by: Brad Walker <tha_walka@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-mp3info
-PORTVERSION=	0.6.16
+PORTVERSION=	0.8
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RG
 
