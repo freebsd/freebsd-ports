@@ -17,8 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/api/libsphinxclient
 USE_LDCONFIG=	yes
 
 USE_AUTOTOOLS=	libtool
-
-.include <bsd.port.options.mk>
+MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CC=${CC}
