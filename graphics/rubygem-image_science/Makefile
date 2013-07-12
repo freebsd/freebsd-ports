@@ -1,21 +1,15 @@
-# Ports collection makefile for:	rubygem-image_science
-# Date created:				5 Dec 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	image_science
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Ruby library that generates thumbnails
 
-RUN_DEPENDS=	rubygem-hoe>=2.3.3:${PORTSDIR}/devel/rubygem-hoe \
-		freeimage>=3.12.0:${PORTSDIR}/graphics/freeimage \
- 		rubygem-inline>=3.8.5:${PORTSDIR}/devel/rubygem-inline
+RUN_DEPENDS=	rubygem-inline>=3.8.5:${PORTSDIR}/devel/rubygem-inline
 
 LICENSE=		MIT
 
