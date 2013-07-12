@@ -1,15 +1,11 @@
-# New ports collection makefile for:	DMitry
-# Date created:		5 Feb 2005
-# Whom:			Vaida Bogdan
-#
+# Created by: Vaida Bogdan
 # $FreeBSD$
-#
 
 PORTNAME=	dmitry
 PORTVERSION=	1.3a
 CATEGORIES=	security
-MASTER_SITES=	http://www.mor-pah.net/code/ \
-		http://www.deepmagic.org.uk/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/misc
 DISTNAME=	DMitry-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
