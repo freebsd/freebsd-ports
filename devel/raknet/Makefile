@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RakNet
-# Date created:				11 October 2005
-# Whom:					Andrew Baznikin <dikiy@scn.ru>
-#
+# Created by: Andrew Baznikin <dikiy@scn.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
@@ -32,6 +28,7 @@ USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
+USE_GCC=	4.6+
 USE_GMAKE=	yes
 USES=		cmake
 
@@ -44,10 +41,6 @@ USES=		cmake
 # - no install target is provided, which prevents us to determine what files
 #   have to be provided by the port to have working extensions
 CMAKE_ARGS+=	-DDISABLEDEPENDENCIES:BOOL=ON
-
-.if ${CC} == "clang" || ${CXX} == "clang++"
-BROKEN=	does not build with clang
-.endif
 
 .include <bsd.port.pre.mk>
 
