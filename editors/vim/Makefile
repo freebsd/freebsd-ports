@@ -50,12 +50,13 @@ PORT_OPTIONS?=	${VIM_PORT_OPTIONS}
 
 .include <bsd.port.options.mk>
 
-CONFLICTS=	vim6* vim*-gnome libsysinfo
+CONFLICTS=	vim6* vim*-gnome
 .if defined(LITE)
 CONFLICTS+=	vim*
 .else
 CONFLICTS+=	vim*-lite
 .endif
+
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
