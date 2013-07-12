@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	domc
-# Date created:			Oct 8, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	domc
 PORTVERSION=	0.8.0
@@ -30,6 +25,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	SHLIB_MAJOR="${SHLIB_MAJOR}" INSTDIR=${PREFIX}
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
