@@ -20,6 +20,8 @@ PORTDOCS=	AUTHORS CHANGES
 
 MAN6=		powermanga.6
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS="-O3.*|CFLAGS="$$CFLAGS -std=c99"|' \
 		${WRKSRC}/configure
