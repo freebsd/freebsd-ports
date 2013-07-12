@@ -1,6 +1,5 @@
 # Created by: Foxfair Hu <foxfair@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		cryptlib
 PORTVERSION=		3.4.1
@@ -16,10 +15,11 @@ ONLY_FOR_ARCHS=		i386 amd64
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
-USE_GMAKE=		yes
+USES=			gmake
 MAKEFILE=		makefile
 ALL_TARGET=		default FreeBSD shared
 USE_LDCONFIG=		yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=		include/cryptlib.h \
 			lib/libcl.a lib/libcl.so \
