@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-pony
-# Date created:				30 Aug 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pony
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
