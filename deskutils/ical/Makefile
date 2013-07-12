@@ -18,7 +18,7 @@ PATCHFILES=	ical-2.3.1-upvar.patch
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	A calendar application
 
-USE_TK=		yes
+USE_TK?=	85
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
