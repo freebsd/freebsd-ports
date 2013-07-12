@@ -58,7 +58,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri esound
 					freealut gdkpixbuf gnutls gtk gtk2 hicontheme imlib jpeg libaudiofile \
 					libg2c libgcrypt libglade libglade2 libglu libgpg-error libmng libogg \
 					libsigcpp20 libtasn1 libtheora 	libvorbis libxml libxml2 mikmod naslibs \
-					ncurses-base openal openmotif openssl pango png png10 qt33 scimgtk \
+					ncurses-base openal openmotif openssl pango png png10 scimgtk \
 					scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
 
 # 2.6.16 components
@@ -334,11 +334,6 @@ png10_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-png10
 pulseaudio-libs_f10_FILE=	${LINUXBASE}/usr/lib/libpulse.so.0
 pulseaudio-libs_DETECT=		${pulseaudio-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 pulseaudio-libs_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-pulseaudio-libs
-
-qt33_f10_FILE=		${LINUXBASE}/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.8
-qt33_DETECT=		${qt33${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-qt33_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-qt33
-qt33_DEPENDS=		fontconfig libmng png
 
 qt45_f10_FILE=		${LINUXBASE}/usr/lib/libQtCore.so.4.5.3
 qt45_DETECT=		${qt45${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
