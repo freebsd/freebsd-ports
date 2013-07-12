@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Crypt-UnixCrypt_XS
-# Date created:				01 Jun 2008
-# Whom:					brix@FreeBSD.org
-#
+# Created by: brix@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-UnixCrypt_XS
 PORTVERSION=	0.09
@@ -15,6 +11,7 @@ MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Perl XS interface for a portable traditional crypt function
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=	Crypt::UnixCrypt_XS.3
 
