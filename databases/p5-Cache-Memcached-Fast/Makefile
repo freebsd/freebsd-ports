@@ -12,6 +12,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fast Perl client for memcached, a distributed memory cache daemon
 
 PERL_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=	Cache::Memcached::Fast.3
 

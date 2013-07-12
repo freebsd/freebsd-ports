@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pyqwt
-# Date created:		2009-01-20
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pyqwt
 PORTVERSION=	5.2.0
@@ -27,9 +23,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/qmake-qt4:${PORTSDIR}/devel/qmake4 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
+USES=		gmake
 USE_PYTHON=	2.5+
-USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 		${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \

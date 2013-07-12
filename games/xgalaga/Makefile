@@ -1,5 +1,4 @@
-# Created by:	asami
-#
+# Created by: asami
 # $FreeBSD$
 
 PORTNAME=	xgalaga
@@ -10,7 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Galaga resurrected on X
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	xpm xmu
 HAS_CONFIGURE=	yes
 MAN6=		xgalaga.6x
