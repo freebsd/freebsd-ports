@@ -1,9 +1,5 @@
-# New ports collection makefile for:	husky-smapi-devel
-# Date created:				2005-10-26
-# Whom:					Oleg Sharoiko <os@rsu.ru>
-#
+# Created by: Oleg Sharoiko <os@rsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	smapi
 DISTVERSION=	2.4-rc5
@@ -17,6 +13,5 @@ CONFLICTS=	husky-smapi-[0-9]*
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../news/husky-base-devel/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base-devel/Makefile.inc"
+.include <bsd.port.mk>

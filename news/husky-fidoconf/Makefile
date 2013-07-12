@@ -1,9 +1,5 @@
-# New ports collection makefile for:    husky-fidoconf
-# Date created:                         6 January 2003
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	fidoconf
 PORTVERSION=	0.14.4
@@ -40,6 +36,5 @@ post-patch:
 		${WRKSRC}/man/fconf2.1 \
 		${WRKSRC}/man/tparser.1
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base/Makefile.inc"
+.include <bsd.port.mk>

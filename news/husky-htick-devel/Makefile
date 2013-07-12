@@ -1,9 +1,5 @@
-# New ports collection makefile for:	husky-htick-devel
-# Date created:				2008-10-25
-# Whom:					Andrew Clarke <mail@ozzmosis.com>
-#
+# Created by: Andrew Clarke <mail@ozzmosis.com>
 # $FreeBSD$
-#
 
 PORTNAME=	htick
 DISTVERSION=	1.4-rc5
@@ -35,6 +31,5 @@ post-build:
 post-install:
 	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base-devel/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base-devel/Makefile.inc"
+.include <bsd.port.mk>

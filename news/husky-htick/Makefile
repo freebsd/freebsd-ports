@@ -1,9 +1,5 @@
-# New ports collection makefile for:    husky-htick
-# Date created:                         6 January 2003
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	htick
 PORTVERSION=	1.0.4
@@ -32,6 +28,5 @@ post-build:
 post-install:
 	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base/Makefile.inc"
+.include <bsd.port.mk>

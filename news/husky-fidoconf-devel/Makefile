@@ -1,9 +1,5 @@
-# New ports collection makefile for:	husky-fidoconf-devel
-# Date created:				2005-10-26
-# Whom:					Oleg Sharoiko <os@rsu.ru>
-#
+# Created by: Oleg Sharoiko <os@rsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fidoconf
 DISTVERSION=	1.4-rc5
@@ -42,6 +38,5 @@ post-patch:
 		${WRKSRC}/man/fconf2.1 \
 		${WRKSRC}/man/tparser.1
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../news/husky-base-devel/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base-devel/Makefile.inc"
+.include <bsd.port.mk>
