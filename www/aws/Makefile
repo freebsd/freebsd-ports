@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino.st>
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	aws
@@ -6,7 +6,7 @@ PORTVERSION=	3.1.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore Ada Web Server and framework
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \

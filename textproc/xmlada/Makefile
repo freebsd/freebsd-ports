@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino.st>
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xmlada
@@ -6,7 +6,7 @@ PORTVERSION=	4.4.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore XML suite for the Ada language
 
 LICENSE=	GPLv2

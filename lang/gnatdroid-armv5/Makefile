@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino>
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	armv5
@@ -12,7 +12,7 @@ DISTFILES=	gcc-core-${GCC_VERSION}.tar.bz2 \
 		gcc-ada-${GCC_VERSION}.tar.bz2 \
 		gcc-testsuite-${GCC_VERSION}.tar.bz2
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: Android ARMv5
 
 BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \

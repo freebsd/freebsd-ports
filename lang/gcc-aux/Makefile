@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino.st> 
+# Created by: John Marino <marino@FreeBSD.org> 
 # $FreeBSD$
 
 PORTNAME=	gcc-aux
@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
 DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
 .include "${.CURDIR}/Makefile.common"

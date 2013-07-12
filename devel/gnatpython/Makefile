@@ -1,17 +1,12 @@
-# New ports collection makefile for:  gnatpython
-# Date created:                       12 December 2010
-# Whom:                               John Marino <draco@marino.st>
-#
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnatpython
 PORTVERSION=	${SNAPSHOT}
 CATEGORIES=	devel
-MASTER_SITES=	http://downloads.dragonlace.net/src/ \
-		http://dragonlace.mirrors.ada.cx/src/
+MASTER_SITES=	http://downloads.dragonlace.net/src/
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Python package used in Ada testsuites
 
 SNAPSHOT=	20110912

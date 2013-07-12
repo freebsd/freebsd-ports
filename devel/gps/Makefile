@@ -1,4 +1,4 @@
-# Created by: John Marino <draco@marino.st>
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gps
@@ -8,7 +8,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gps-5.2.1-1-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	GNAT Programming Studio - IDE for Ada and many other languages
 
 BUILD_DEPENDS=	gtkada>=2.24:${PORTSDIR}/x11-toolkits/gtkada \
