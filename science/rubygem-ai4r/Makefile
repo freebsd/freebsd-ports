@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ai4r
-PORTVERSION=	1.9
+PORTVERSION=	1.12
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
