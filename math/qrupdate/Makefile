@@ -14,6 +14,8 @@ LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas lapack.4:${PORTSDIR}/math/lapack
 
 FETCH_ARGS=	-p
 
+USES=		gmake
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -24,7 +26,6 @@ PICFLAG?=	-fpic
 .endif
 
 USE_FORTRAN=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 pre-build:
