@@ -15,6 +15,7 @@ DISTNAME=	ckl-${PORTVERSION}
 MAINTAINER=	kami@k5-storitve.net
 COMMENT=	A command line tool for noting when something was changed on a machine
 
+BROKEN=		unfetchable, MASTER_SITES redirects to Rackspace
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_SCONS=	yes
