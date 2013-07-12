@@ -34,6 +34,7 @@ CFLAGS+=	-DHAVE_FINE_GRAINED_LOCKING=1
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-engine.c
 
+MAKE_ARGS+=	CSTD=gnu89
 MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 PLIST_FILES=	sbin/pftop
@@ -43,7 +44,6 @@ post-patch:
 	    ${WRKSRC}/engine.c
 	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.h
 	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.c
-	@${REINPLACE_CMD} -e 's|__inline__|static __inline__|g' ${WRKSRC}/pftop.c
 	@${REINPLACE_CMD} -e 's|#include <net/if_pflog.h>||g' \
 	    ${WRKSRC}/sf-gencode.c
 
