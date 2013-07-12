@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grsync
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		bash:${PORTSDIR}/shells/bash
 
-USE_GNOME=	gtk20 desktopfileutils
+USE_GNOME=	gtk20
+USES=	desktop-file-utils shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-unity
 USE_GMAKE=	yes
@@ -43,8 +44,5 @@ post-patch:
 	@${REINPLACE_CMD} 's/^ALL_LINGUAS=.*/ALL_LINGUAS=""/' \
 		${WRKSRC}/configure
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

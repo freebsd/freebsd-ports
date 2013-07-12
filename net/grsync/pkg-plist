@@ -22,6 +22,7 @@ share/pixmaps/grsync.png
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/grsync.mo
 %%NLS%%@dirrmtry share/locale/tr_TR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tr_TR
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
@@ -54,7 +55,3 @@ share/pixmaps/grsync.png
 @dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
