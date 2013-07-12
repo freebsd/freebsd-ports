@@ -198,8 +198,10 @@ CONFIGURE_ARGS+=--disable-ntlm
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=--without-ssl
 .endif
@@ -239,9 +241,9 @@ CONFIGURE_ARGS+=--disable-threaded-resolver
 .endif
 
 .if ${PORT_OPTIONS:MTLS_SRP}
-CONFIGURE_ARGS+= --enable-tls-srp
+CONFIGURE_ARGS+=--enable-tls-srp
 .else
-CONFIGURE_ARGS+= --disable-tls-srp
+CONFIGURE_ARGS+=--disable-tls-srp
 .endif
 
 post-patch:
