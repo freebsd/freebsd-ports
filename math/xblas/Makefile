@@ -13,6 +13,7 @@ COMMENT=	Extra Precise Basic Linear Algebra Subroutines (BLAS)
 LICENSE=	BSD
 
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	${MANGLING}
 HDIR=		include/xblas
