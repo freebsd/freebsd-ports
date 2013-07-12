@@ -9,8 +9,6 @@
 # Add the following line to /etc/rc.conf to enable vnstat:
 #
 # vnstat_enable="YES"
-# vnstat_flags="-d -p ${vnstat_pidfile} --config %%PREFIX%%/etc/vnstat.cfg"
-# vnstat_pidfile="/var/run/vnstat/vnstat.pid"
 
 . /etc/rc.subr
 
@@ -18,14 +16,15 @@ name=vnstat
 rcvar=vnstat_enable
 load_rc_config $name
 
-vnstat_enable=${vnstat_enable-"NO"}
-vnstat_pidfile=${vnstat_pidfile-"/var/run/vnstat/vnstat.pid"}
-vnstat_flags=${vnstat_flags-"-d -p ${vnstat_pidfile} --config %%PREFIX%%/etc/vnstat.cfg"}
-vnstat_user=${vnstat_user-"%%USERS%%"}
-vnstat_group=${vnstat_group-"%%GROUPS%%"}
+: ${vnstat_enable:=NO}
+: ${vnstat_pidfile:=/var/run/vnstat/vnstat.pid}
+: ${vnstat_config:=%%PREFIX%%/etc/vnstat.conf}
+: ${vnstat_flags:="-d --noadd"}
+: ${vnstat_user:=%%USERS%%}
+: ${vnstat_group:=%%GROUPS%%}
 
 command="%%PREFIX%%/sbin/vnstatd"
-command_args="${vnstat_flags}"
+command_args="-p ${vnstat_pidfile} --config ${vnstat_config}"
 pidfile="${vnstat_pidfile}"
 
 start_precmd=vnstat_startprecmd
@@ -33,7 +32,16 @@ start_precmd=vnstat_startprecmd
 vnstat_startprecmd()
 {
 	if [ ! -e ${pidfile%/*} ]; then
-		install -d -o ${vnstat_user} -g ${vnstat_group} ${pidfile%/*}
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${pidfile%/*};
+	fi
+
+	dbdir=$(grep "^DatabaseDir" ${vnstat_config} | awk 'BEGIN{FS="\042"}{print $2}')
+	if [ ! -d ${dbdir} ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${dbdir};
+	fi
+
+	if [ ! -d "/var/run/vnstat" ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} /var/run/vnstat;
 	fi
 }
 
