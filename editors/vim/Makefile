@@ -12,10 +12,10 @@ PORTNAME?=	vim
 #		! Doing so is dis-genuine.  It implies we're at a level we are
 #		! not.  The "PATCHLEVEL" patch needs to apply before bumping
 #		! PATCHLEVEL to that level.
-PATCHLEVEL=	1276
+PATCHLEVEL=	1314
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
