@@ -3,7 +3,6 @@ lib/libkdeinit4_rekonq.so
 share/applications/kde4/rekonq.desktop
 share/apps/rekonq/adblockrc
 share/apps/rekonq/defaultbookmarks.xbel
-share/apps/rekonq/fonts/Nunito-Regular.ttf
 share/apps/rekonq/htmls/home.html
 share/apps/rekonq/htmls/jquery-1.7.2.min.js
 share/apps/rekonq/htmls/jquery-ui-1.8.20.custom.min.js
@@ -38,7 +37,10 @@ share/config.kcfg/rekonq.kcfg
 share/doc/HTML/de/rekonq/common
 share/doc/HTML/de/rekonq/index.cache.bz2
 share/doc/HTML/de/rekonq/index.docbook
+share/doc/HTML/el/rekonq/Rekonq-akregator.png
+share/doc/HTML/el/rekonq/Rekonq-kget.png
 share/doc/HTML/el/rekonq/Rekonq-manualplugins.png
+share/doc/HTML/el/rekonq/Rekonq-newtab.png
 share/doc/HTML/el/rekonq/Rekonq-notabs.png
 share/doc/HTML/el/rekonq/Systemsettings-enablewindowtabbing.png
 share/doc/HTML/el/rekonq/common
@@ -68,7 +70,6 @@ share/doc/HTML/en/rekonq/Rekonq-tabpreview.png
 share/doc/HTML/en/rekonq/Rekonq-toolbar.png
 share/doc/HTML/en/rekonq/Rekonq-urlbar.png
 share/doc/HTML/en/rekonq/Rekonq-windowtabbing.png
-share/doc/HTML/en/rekonq/Rekonq-zoom.png
 share/doc/HTML/en/rekonq/Systemsettings-enablewindowtabbing.png
 share/doc/HTML/en/rekonq/advanced.png
 share/doc/HTML/en/rekonq/appearance.png
@@ -183,5 +184,4 @@ share/locale/zh_TW/LC_MESSAGES/rekonq.mo
 @dirrm share/apps/rekonq/pics
 @dirrm share/apps/rekonq/opensearch
 @dirrm share/apps/rekonq/htmls
-@dirrm share/apps/rekonq/fonts
 @dirrm share/apps/rekonq
