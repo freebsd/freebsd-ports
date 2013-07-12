@@ -4,8 +4,7 @@
 PORTNAME=	m17n-docs
 PORTVERSION=	1.5.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://anthesphoria.net/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	m17n library documentation
