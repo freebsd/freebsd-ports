@@ -64,7 +64,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri esound
 # 2.6.16 components
 _LINUX_26_APPS=		alsa-plugins-oss blt cyrus-sasl2 dbusglib dbuslibs \
 			libasyncns libidn libssh2 libv4l nspr nss openal-soft \
-			openldap pulseaudio-libs sqlite3 tcl84 tk84
+			openldap pulseaudio-libs qt45 sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 
@@ -339,6 +339,10 @@ qt33_f10_FILE=		${LINUXBASE}/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.8
 qt33_DETECT=		${qt33${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 qt33_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-qt33
 qt33_DEPENDS=		fontconfig libmng png
+
+qt45_f10_FILE=		${LINUXBASE}/usr/lib/libQtCore.so.4.5.3
+qt45_DETECT=		${qt45${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+qt45_DEPENDS=		fontconfig libmng png
 
 sdl12_f10_FILE=		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.11.2
 sdl12_DETECT=		${sdl12${LINUX_DIST_SUFFIX:S/-/_/}_FILE}

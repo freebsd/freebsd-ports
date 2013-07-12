@@ -126,6 +126,7 @@
     SUBDIR += linux-f10-openmotif
     SUBDIR += linux-f10-pango
     SUBDIR += linux-f10-qt33
+    SUBDIR += linux-f10-qt45
     SUBDIR += linux-f10-tk85
     SUBDIR += movingmotif
     SUBDIR += mowitz
