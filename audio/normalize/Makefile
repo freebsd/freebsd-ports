@@ -17,6 +17,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-helper-search
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		normalize.1 normalize-mp3.1
 
