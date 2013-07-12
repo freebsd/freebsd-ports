@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-memchache
-# Date created:				2010-12-25
-# Whom:					Mikhail T. <michael@fun-box.ru>
-#
+# Created by: Mikhail T. <michael@fun-box.ru>
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	1.2.13
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
