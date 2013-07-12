@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pfstat
-PORTVERSION=	2.4
-PORTREVISION=	5
+PORTVERSION=	2.5
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 
