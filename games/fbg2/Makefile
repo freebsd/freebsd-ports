@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	Falling Block Game
-# Date created:		2012-05-18
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	fbg2
 PORTVERSION=	0.4
@@ -21,32 +17,36 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/radius.h:${PORTSDIR}/graphics/radius-engine
+BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:${PORTSDIR}/graphics/radius-engine
 LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua \
 		png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-GNU_CONFIGURE=	yes
-ALL_TARGET=	${PORTNAME}
+USES=		pkgconfig
 USE_SDL=	sdl sound
 USE_GL=		glu
+GNU_CONFIGURE=	yes
+ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.png
+		share/pixmaps/${PORTNAME}.png \
+		%%DATADIR%%/${PORTNAME}.zip
+PLIST_DIRS=	%%DATADIR%%
 PLIST_DIRSTRY=	share/applications
 
-PORTDATA=	*
 PORTDOCS=	ChangeLog
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
