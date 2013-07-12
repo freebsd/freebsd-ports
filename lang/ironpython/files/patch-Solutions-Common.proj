@@ -1,0 +1,18 @@
+--- Solutions/Common.proj.orig	2013-05-01 13:37:45.000000000 +0200
++++ Solutions/Common.proj	2013-05-01 13:37:50.000000000 +0200
+@@ -147,7 +147,7 @@
+     <OutputPath>$(SolutionDir)..\bin\$(Configuration)</OutputPath>
+     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+     <WarningsNotAsErrors>618;429;219;1717;162;414</WarningsNotAsErrors>
+-    <NoWarn>1591;1584;1574;444;1685;1573</NoWarn>
++    <NoWarn>1591;1584;1574;1685;1573;436</NoWarn>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+     <PlatformTarget>AnyCPU</PlatformTarget>
+@@ -467,4 +467,4 @@
+       <Private>False</Private>
+     </Reference>
+   </ItemGroup>
+-</Project>
+\ No newline at end of file
++</Project>

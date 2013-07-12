@@ -131,6 +131,7 @@
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
+    SUBDIR += ironpython
     SUBDIR += itcl
     SUBDIR += jakarta-commons-jelly
     SUBDIR += jruby
