@@ -22,6 +22,8 @@ PORTDOCS=	*
 
 MAN1=		avinfo.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/ d; /^CFLAGS=/ d; /^PREFIX=/ d' \
 		${WRKSRC}/config.mk
@@ -31,7 +33,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/avinfo ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/src/avinfo.1 ${MANPREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README \
 		${WRKSRC}/copying ${WRKSRC}/doc/* ${DOCSDIR}/

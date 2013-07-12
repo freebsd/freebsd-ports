@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gondola
-# Date created:		03 Apr 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gondola
 PORTVERSION=	1.1

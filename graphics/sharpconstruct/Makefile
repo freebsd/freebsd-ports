@@ -14,8 +14,8 @@ MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D modeller for organic shapes
 
-LIB_DEPENDS=	gtkglextmm-x11-1.2.0:${PORTSDIR}/x11-toolkits/gtkglextmm \
-		glademm-2.4.1:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS=	gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm \
+		glademm-2.4:${PORTSDIR}/devel/libglademm24
 
 USE_BZIP2=	yes
 USE_GL=		yes

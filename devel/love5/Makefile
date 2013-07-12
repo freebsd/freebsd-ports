@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
-LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
-		physfs.1:${PORTSDIR}/devel/physfs \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
+		physfs:${PORTSDIR}/devel/physfs \
+		freetype:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 LATEST_LINK=	love5
@@ -27,6 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib \
 		--program-suffix=5
+USE_DOS2UNIX=	yes
 
 PLIST_FILES=	bin/love5
 

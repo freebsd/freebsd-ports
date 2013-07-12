@@ -1,9 +1,5 @@
-# New ports collection makefile for:	motogt
-# Date created:		23 Sep 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	motogt
 PORTVERSION=	20110505
@@ -15,7 +11,7 @@ DISTNAME=	MotoGT-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
 
-LIB_DEPENDS=	sfml-system.1:${PORTSDIR}/devel/sfml \
+LIB_DEPENDS=	sfml-system:${PORTSDIR}/devel/sfml \
 		png15:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2 CCbySA

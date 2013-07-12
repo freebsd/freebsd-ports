@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.nickg.me.uk/files/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
@@ -35,12 +35,14 @@ DESKTOP_ENTRIES="Lunar Lander" \
 		"Game;ArcadeGame;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
 		${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

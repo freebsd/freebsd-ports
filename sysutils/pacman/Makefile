@@ -47,10 +47,6 @@ GPGME_DESC=	Use GPGME for PGP signature verification
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800000
-IGNORE=		does not build on < 8.x
-.endif
-
 .if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl

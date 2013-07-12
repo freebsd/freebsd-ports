@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plutocracy
-# Date created:		29 Dec 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plutocracy
 PORTVERSION=	0.0.20081229
@@ -32,6 +28,8 @@ SUB_FILES=	plutocracy_
 
 PORTDOCS=	AUTHORS README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|span font|span font_desc|' \
 		${WRKSRC}/src/render/r_assets.c
@@ -41,7 +39,7 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pluto.py ${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/plutocracy_ ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

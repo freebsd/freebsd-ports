@@ -1,9 +1,5 @@
-# New ports collection makefile for:	twms
-# Date created:		01 Sep 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	twms
 PORTVERSION=	0.02w
@@ -13,12 +9,12 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tiny WMS server
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyproj \
 		${PYTHON_SITELIBDIR}/web/__init__.py:${PORTSDIR}/www/webpy \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.6+

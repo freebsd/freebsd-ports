@@ -8,7 +8,7 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An Infiniminer/Minecraft inspired game
 
-LIB_DEPENDS=	Irrlicht.1:${PORTSDIR}/x11-toolkits/irrlicht \
+LIB_DEPENDS=	Irrlicht:${PORTSDIR}/x11-toolkits/irrlicht \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 LICENSE=	LGPL21
@@ -48,7 +48,7 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		gl
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 CMAKE_ARGS+=	-DBUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
@@ -67,7 +67,7 @@ PLIST_SUB+=	SERVER="@comment "
 
 .if ${PORT_OPTIONS:MSOUND}
 USE_OPENAL=	yes
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .else
 CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
 .endif

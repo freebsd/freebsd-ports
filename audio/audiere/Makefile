@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	DUMB CDAUDIO VORBIS SPEEX
 DUMB_DESC=	DUMB support
 CDAUDIO_DESC=	libcdaudio support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Broken with recent FLAC
 #.if !defined(WITHOUT_FLAC)
@@ -75,12 +75,12 @@ post-patch:
 		-e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure.in
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -6,20 +6,21 @@ PORTVERSION=	20080514
 PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}
+		LOCAL/amdmi3
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source color profiler
 
-LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		vigraimpex.4:${PORTSDIR}/graphics/vigra
+LIB_DEPENDS=	lcms:${PORTSDIR}/graphics/lcms \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		vigraimpex:${PORTSDIR}/graphics/vigra
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext sm ice xxf86vm
-USE_QT4=	corelib gui qt3support assistantclient linguist_build qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib gui qt3support assistantclient \
+		linguist_build qmake_build moc_build uic_build rcc_build
 USES=		cmake
 MAKE_JOBS_SAFE=	yes
 

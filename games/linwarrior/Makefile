@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linwarrior
-# Date created:		31 Dec 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linwarrior
 PORTVERSION=	20100320

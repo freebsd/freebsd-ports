@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in
 
 LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
-		lqr-1.3:${PORTSDIR}/graphics/liblqr-1
+		lqr-1:${PORTSDIR}/graphics/liblqr-1
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

@@ -15,6 +15,7 @@ COMMENT=	Clone of the famous PuyoPuyo
 USES=		bison
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
+USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="FloboPuyo" \

@@ -14,7 +14,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	GPLv2
 
@@ -52,9 +52,9 @@ PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT} || defined{WITH_SDL_CLIENT}
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug \
 		png15:${PORTSDIR}/graphics/png \
-		theora.0:${PORTSDIR}/multimedia/libtheora
+		theora:${PORTSDIR}/multimedia/libtheora
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}

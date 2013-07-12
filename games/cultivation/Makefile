@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cultivation
-# Date created:		06 Feb 2007
-# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cultivation
 PORTVERSION=	8
@@ -27,6 +23,8 @@ MAKE_ARGS=	CXX=${CXX}
 
 PORTDOCS=	changeLog.txt how_to_play.txt
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@cd ${WRKSRC} && ${CAT} Makefile.GnuLinux Makefile.common \
 		../minorGems/build/Makefile.minorGems gameSource/Makefile.all \
@@ -46,8 +44,8 @@ do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/language.txt ${DATADIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/languages/* ${DATADIR}/languages
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/documentation/${f} ${DOCSDIR}

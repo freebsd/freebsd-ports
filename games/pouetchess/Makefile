@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pouetChess
-# Date created:				18 Jan 2006
-# Whom:					Dmitry Marakasov <amdmi3@amdmi3.ru>
-#
+# Creted by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pouetchess
 PORTVERSION=	0.1.1

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
+LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2 \
 		png15:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 

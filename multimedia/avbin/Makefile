@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	FFmpeg wrapper
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
 LIBNAME=	libavbin.so.${PORTVERSION}
 PLIST_FILES=	lib/${LIBNAME} include/avbin.h

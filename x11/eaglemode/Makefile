@@ -9,10 +9,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic zoomable user environment
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.9:${PORTSDIR}/print/freetype2
+		tiff:${PORTSDIR}/graphics/tiff \
+		freetype:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
@@ -34,7 +34,7 @@ PDF_DESC=	PDF support through poppler-glib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 		xine-lib-dir="${LOCALBASE}/lib"
 PLIST_SUB+=	EMAV=""

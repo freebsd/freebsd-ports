@@ -11,10 +11,10 @@ DISTNAME=	OpenLieroX_${DISTVERSION}.src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extremely addictive realtime worms shoot-em-up
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		boost_signals:${PORTSDIR}/devel/boost-libs \
 		curl:${PORTSDIR}/ftp/curl \
-   		alut.1:${PORTSDIR}/audio/freealut
+   		alut:${PORTSDIR}/audio/freealut
 
 USE_BZIP2=	yes
 USE_SDL=	sdl image
@@ -48,10 +48,6 @@ OPTIONS_DEFINE=	DEDICATED_ONLY DOCS
 DEDICATED_ONLY_DESC=Build dedicated server only
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=		does not build on 7.x
-.endif
 
 .if ${PORT_OPTIONS:MDEDICATED_ONLY}
 BROKEN=		does not build

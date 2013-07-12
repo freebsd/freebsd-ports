@@ -1,9 +1,5 @@
-# New ports collection makefile for:	numptyphysics-npcomplete
-# Date created:		04 Jan 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	npcomplete
 PORTVERSION=	0.0.r20090116

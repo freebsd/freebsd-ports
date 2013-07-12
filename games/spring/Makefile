@@ -13,12 +13,12 @@ COMMENT=	A project aiming to create a new and versatile RTS Engine
 
 BROKEN=		Does not build with recent boost
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		IL.2:${PORTSDIR}/graphics/devil \
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
+		IL:${PORTSDIR}/graphics/devil \
 		ogg:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -66,7 +66,7 @@ post-patch:
 		${WRKSRC}/rts/System/Platform/Misc.cpp
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "userdocs DevGuide.html HowTo* \
 		SelectionKeys.txt StartScriptFormat.txt changelog.txt" ${DOCSDIR}/

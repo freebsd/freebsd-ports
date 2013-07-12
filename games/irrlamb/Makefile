@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irrlamb
-# Date created:		15 Jan 2010
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	irrlamb
 PORTVERSION=	0.1.0
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D physics-based puzzle game
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 
@@ -29,8 +25,13 @@ LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	readme.txt changelog.txt
+PORTDATA=	*
+
+PLIST_FILES=	bin/${PORTNAME}
 
 DATA_DIRS=	art campaigns collision fonts levels meshes scenes scripts textures
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .for dir in ${DATA_DIRS}
@@ -43,9 +44,11 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/irrlamb ${PREFIX}/bin
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${DATADIR}
-.if !defined(NOPORTDOCS)
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif

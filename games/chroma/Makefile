@@ -37,7 +37,7 @@ PLIST_SUB+=	CURSES="@comment "
 
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl image
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	SDL=""
 .else
 CONFIGURE_ARGS+=--disable-sdl
