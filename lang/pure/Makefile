@@ -76,6 +76,8 @@ SUB_LIST+=	NOCLANG=""
 SUB_LIST+=	NOCLANG="@comment "
 .endif
 
+.include "${.CURDIR}/bsd.pure.mk"
+
 .include <bsd.port.pre.mk>
 
 post-install:
@@ -97,5 +99,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include "bsd.pure.mk"
 .include <bsd.port.post.mk>
