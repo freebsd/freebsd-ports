@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-curb
-# Date created:				29 May 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	curb
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.4
 CATEGORIES=	ftp rubygems
 MASTER_SITES=	RG
 
