@@ -1,9 +1,5 @@
-# New ports collection makefile for:    husky-msged
-# Date created:                         6 January 2003
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	msged
 PORTVERSION=	6.2RC1
@@ -25,6 +21,5 @@ INFO=		msged
 post-patch:
 	@${REINPLACE_CMD} -e 's,html info,info,' -e 's,install-html install-info,install-info,' ${WRKSRC}/doc/manual/makefile.husky
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base/Makefile.inc"
+.include <bsd.port.mk>

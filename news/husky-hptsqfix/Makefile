@@ -1,9 +1,5 @@
-# New ports collection makefile for:    husky-hptsqfix
-# Date created:                         6 January 2003
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	hptsqfix
 PORTVERSION=	1.2.4
@@ -21,6 +17,5 @@ MAN1=		hptsqfix.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/hptsqfix
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base/Makefile.inc"
+.include <bsd.port.mk>

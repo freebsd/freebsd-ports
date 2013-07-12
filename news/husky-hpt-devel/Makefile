@@ -1,9 +1,5 @@
-# New ports collection makefile for:	husky-hpt-devel
-# Date created:				2005-10-26
-# Whom:					Oleg Sharoiko <os@rsu.ru>
-#
+# Created by: Oleg Sharoiko <os@rsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	hpt
 DISTVERSION=	1.4-rc5
@@ -49,6 +45,5 @@ post-install:
 	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../news/husky-base-devel/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base-devel/Makefile.inc"
+.include <bsd.port.mk>

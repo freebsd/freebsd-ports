@@ -1,9 +1,5 @@
-# New ports collection makefile for:    husky-sqpack
-# Date created:                         6 January 2003
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	sqpack
 PORTVERSION=	1.2.4
@@ -25,6 +21,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's^/etc/fido/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/sqpack.1
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base/Makefile.inc"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../husky-base/Makefile.inc"
+.include <bsd.port.mk>

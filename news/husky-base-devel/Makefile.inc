@@ -12,7 +12,7 @@ ONLY_FOR_ARCHS=	i386
 .if ${PORTNAME} != "base"
 BUILD_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base-devel
 
-USE_GMAKE=	yes
+USES+=		gmake
 
 MAKE_ARGS+=	PREFIX="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" GPP="${CXX}" MKSHARED="${CC}" \
