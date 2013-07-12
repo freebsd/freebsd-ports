@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vmail
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.6
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
