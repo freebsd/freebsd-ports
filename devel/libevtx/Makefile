@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20130421
+DISTVERSION=	alpha-20130712
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSRnQ0SExzX3JjdFE/ \
+		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library and tooling to access the Windows XML Event Log (EVTX) format
@@ -22,6 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
 MAN1=		evtxinfo.1
 MAN3=		libevtx.3
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	AUTHORS ChangeLog
 PORTEXAMPLES=	*
