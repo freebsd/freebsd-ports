@@ -27,6 +27,9 @@
 %%PYTHON_SITELIBDIR%%/psutil/_psposix.py
 %%PYTHON_SITELIBDIR%%/psutil/_psposix.pyc
 %%PYTHON_SITELIBDIR%%/psutil/_psposix.pyo
+%%PYTHON_SITELIBDIR%%/psutil/_pssunos.py
+%%PYTHON_SITELIBDIR%%/psutil/_pssunos.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_pssunos.pyo
 %%PYTHON_SITELIBDIR%%/psutil/error.py
 %%PYTHON_SITELIBDIR%%/psutil/error.pyc
 %%PYTHON_SITELIBDIR%%/psutil/error.pyo
