@@ -119,6 +119,7 @@ gsview*			print/gsview		Can only be distributed for free
 hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM distribution coming with the TV card
 hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM distribution coming with the TV card
 homard-*		french/homard		Only free for use in conjunction with french/aster.  For any other purpose, you have to acquire a license
+hplip-*-plugin.run	print/hplip-plugin	License agreement is required
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
 huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed, not for commercial use, export controlled
 HyperSpec-*		devel/clisp-hyperspec	Commercial redistribution prohibited
