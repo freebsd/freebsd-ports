@@ -17,6 +17,7 @@ ALL_TARGET=	parallel
 
 LIB_DEPENDS+=	mpi.1:${PORTSDIR}/net/openmpi
 USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 #respect CFLAGS
