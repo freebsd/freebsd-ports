@@ -1,7 +1,7 @@
 String eval is often used for dynamic code generation. For instance, Moose uses
 it heavily, to generate inlined versions of accessors and constructors, which
 speeds code up at runtime by a significant amount. String eval is not without
-its issues however - it's difficult to control the scope it's used in (which 
+its issues however - it's difficult to control the scope it's used in (which
 determines which variables are in scope inside the eval), and it can be quite
 slow, especially if doing a large number of evals.
 
@@ -13,4 +13,4 @@ environment, will be much faster (but note that the description is part of the
 string to be evaled, so it must also be the same (or non-existent) if caching
 is to work properly).
 
-WWW:	http://search.cpan.org/dist/Eval-Closure/
+WWW: http://search.cpan.org/dist/Eval-Closure/
