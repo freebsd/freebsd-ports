@@ -16,7 +16,7 @@ CONFLICTS=	glpk-*
 USE_GCC=	any
 NO_CCACHE=	yes
 USE_TK=		yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
@@ -25,6 +25,8 @@ MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		prefix=${PREFIX}
 ALL_TARGET=	all shared
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
+
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/ \
 		-I${LOCALBASE}/include/tk${TK_VER} ${PTHREAD_CFLAGS}
