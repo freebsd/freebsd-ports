@@ -1,12 +1,8 @@
-# New ports collection makefile for: rubygem-data_objects
-# Date created:		18 April 2009
-# Whom:		Espen Volden aka voldern <voldern@hoeggen.net>
-#
+# Created by: Espen Volden aka voldern <voldern@hoeggen.net>
 # $FreeBSD$
-#
 
 PORTNAME=	data_objects
-PORTVERSION=	0.10.8
+PORTVERSION=	0.10.13
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
