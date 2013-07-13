@@ -1,10 +1,8 @@
 # Created by: Harry Newton
-#
-# Called this port 'filtermail' because there is already a 'mailfilter'
-#  in the ports tree.
-#
 # $FreeBSD$
-#
+
+# Called this port 'filtermail' because there is already a 'mailfilter'
+# in the ports tree.
 
 PORTNAME=	filtermail
 PORTVERSION=	0.8.2
@@ -30,9 +28,9 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		filtermail.1
 MAN5=		filtermailex.5 filtermailrc.5
