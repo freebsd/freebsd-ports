@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	psutil
-PORTVERSION=	0.7.1
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A process utilities module for Python
+COMMENT=	Process utilities module for Python
+
+LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
