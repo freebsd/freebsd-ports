@@ -1,9 +1,5 @@
-# New ports collection makefile for:	middleman
-# Date created:				Sun Apr 27 15:48:16 CEST 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	middleman
 PORTVERSION=	1.9.1
@@ -12,11 +8,12 @@ CATEGORIES=	www
 MASTER_SITES=	SF/middle-man/Source/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A robust proxy server
+COMMENT=	Robust proxy server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
