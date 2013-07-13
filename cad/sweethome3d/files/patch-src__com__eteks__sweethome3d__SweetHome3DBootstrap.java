@@ -1,6 +1,6 @@
---- ./src/com/eteks/sweethome3d/SweetHome3DBootstrap.java.orig	2013-04-26 00:01:12.000000000 +0200
-+++ ./src/com/eteks/sweethome3d/SweetHome3DBootstrap.java	2013-04-26 00:03:56.000000000 +0200
-@@ -55,13 +55,8 @@
+--- ./src/com/eteks/sweethome3d/SweetHome3DBootstrap.java.orig	2013-05-31 16:51:26.000000000 +0200
++++ ./src/com/eteks/sweethome3d/SweetHome3DBootstrap.java	2013-07-11 21:24:10.000000000 +0200
+@@ -56,13 +56,8 @@
        extensionJarsAndDlls.addAll(Arrays.asList(new String [] {
            "j3dcore.jar", // Main Java 3D jars
            "vecmath.jar",
@@ -16,13 +16,13 @@
      } else {
        String message = Locale.getDefault().getLanguage().equals(Locale.FRENCH.getLanguage())
            ? "Sweet Home 3D ne peut pas encore fonctionner avec Java %c sous Mac OS X.\n" 
-@@ -76,16 +71,9 @@
+@@ -77,16 +72,9 @@
        System.exit(1);
      }
      if ("64".equals(System.getProperty("sun.arch.data.model"))) {
 -      extensionJarsAndDlls.add("linux/x64/libj3dcore-ogl.so"); // Linux 64 bits DLLs
 -      extensionJarsAndDlls.add("windows/x64/j3dcore-ogl.dll"); // Windows 64 bits DLLs
-+	  extensionJarsAndDlls.add("/usr/local/openjdk6/jre/lib/amd64/libj3dcore-ogl.so");
++      extensionJarsAndDlls.add("/usr/local/openjdk6/jre/lib/amd64/libj3dcore-ogl.so");
      } else {
 -      extensionJarsAndDlls.addAll(Arrays.asList(new String [] {
 -          "linux/i386/libj3dcore-ogl.so", // Linux 32 bits DLLs
@@ -35,7 +35,10 @@
      }
      
      String [] applicationPackages = {
-@@ -117,4 +105,4 @@
+@@ -125,4 +113,4 @@
      // Call application class main method with reflection
      applicationClassMain.invoke(null, new Object [] {args});
    }
+-}
+\ No newline at end of file
++}
