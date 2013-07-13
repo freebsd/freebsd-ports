@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-sys-uptime
-# Date created:				30 July 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sys-uptime
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
