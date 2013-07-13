@@ -3,7 +3,7 @@
 
 PORTNAME=	sooperlooper
 PORTVERSION=	1.6.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	fftw3.6:${PORTSDIR}/math/fftw3 \
 		jack.0:${PORTSDIR}/audio/jack \
-		lo.7:${PORTSDIR}/audio/liblo \
+		lo:${PORTSDIR}/audio/liblo \
 		rubberband.2:${PORTSDIR}/audio/rubberband \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \

@@ -3,7 +3,7 @@
 
 PORTNAME=	timemachine
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/timemachine/
 
@@ -13,7 +13,7 @@ COMMENT=	JACK audio capture tool
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		lo.7:${PORTSDIR}/audio/liblo \
+		lo:${PORTSDIR}/audio/liblo \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
 OPTIONS_DEFINE=	LASH

@@ -7,7 +7,7 @@
 
 PORTNAME=	xsynth-dssi
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	Classic analog style software synthesizer
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
 		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.7:${PORTSDIR}/audio/liblo \
+		lo:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack
 
 LICENSE=	GPLv2 LGPL21
