@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-god
-# Date created:				23 July 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	god
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
