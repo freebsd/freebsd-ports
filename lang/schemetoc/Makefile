@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
+BROKEN=		Does not build
+
 ONLY_FOR_ARCHS=	i386
 
 MAKE_JOBS_UNSAFE=	yes
