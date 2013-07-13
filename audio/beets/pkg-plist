@@ -26,6 +26,9 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mpdupdate.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mpdupdate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mpdupdate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/missing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/missing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/missing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mbcollection.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mbcollection.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/mbcollection.py
@@ -58,6 +61,12 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/echonest_tempo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/echonest_tempo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/echonest_tempo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/duplicates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/duplicates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/duplicates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/discogs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/discogs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/discogs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/convert.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/convert.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/convert.py
@@ -73,6 +82,9 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/bench.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/bench.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/bench.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/beatport.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/beatport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/beatport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/__init__.py
