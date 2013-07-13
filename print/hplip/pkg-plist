@@ -517,6 +517,7 @@ libexec/cups/filter/pstotiff
 %%DATADIR%%/faxsetup.py
 %%DATADIR%%/firmware.py
 %%DATADIR%%/hpdio.py
+%%DATADIR%%/hplip_clean.sh
 %%DATADIR%%/hpssd.py
 %%DATADIR%%/info.py
 %%DATADIR%%/installer/__init__.py
@@ -791,6 +792,7 @@ share/ppd/HP/hp-designjet_t1120ps_24in-ps.ppd.gz
 share/ppd/HP/hp-designjet_t1120ps_44in-ps.ppd.gz
 share/ppd/HP/hp-designjet_t1200_postscript-ps.ppd.gz
 share/ppd/HP/hp-designjet_t1300_postscript-ps.ppd.gz
+share/ppd/HP/hp-designjet_t1500-postscript.ppd.gz
 share/ppd/HP/hp-designjet_t2300_postscript-ps.ppd.gz
 share/ppd/HP/hp-designjet_t7100ps-ps.ppd.gz
 share/ppd/HP/hp-designjet_t7100ps_monochrome-ps.ppd.gz
@@ -798,6 +800,8 @@ share/ppd/HP/hp-designjet_t770_postscript-ps.ppd.gz
 share/ppd/HP/hp-designjet_t770ps_24in-ps.ppd.gz
 share/ppd/HP/hp-designjet_t790ps_24in-ps.ppd.gz
 share/ppd/HP/hp-designjet_t790ps_44in-ps.ppd.gz
+share/ppd/HP/hp-designjet_t920-postscript.ppd.gz
+share/ppd/HP/hp-designjet_z5200_postscript-ps.ppd.gz
 share/ppd/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
 share/ppd/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
 share/ppd/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
@@ -977,6 +981,7 @@ share/ppd/HP/hp-dj450-hpijs.ppd.gz
 share/ppd/HP/hp-envy_100_d410_series-hpijs.ppd.gz
 share/ppd/HP/hp-envy_110_series-hpijs.ppd.gz
 share/ppd/HP/hp-envy_120_series-hpijs.ppd.gz
+share/ppd/HP/hp-envy_4500_series-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_1000-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_1005_series-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_100_color_mfp_m175-ps.ppd.gz
@@ -1213,6 +1218,8 @@ share/ppd/HP/hp-laserjet_m9050_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m9050_mfp-ps.ppd.gz
 share/ppd/HP/hp-laserjet_m9059_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m9059_mfp-ps.ppd.gz
+share/ppd/HP/hp-laserjet_mfp_m521-ps.ppd.gz
+share/ppd/HP/hp-laserjet_mfp_m725-ps.ppd.gz
 share/ppd/HP/hp-laserjet_p1005-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p1006-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p1007-hpijs.ppd.gz
@@ -1368,6 +1375,10 @@ share/ppd/HP/hp-officejet_k80xi-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_lx-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_pro_1150c-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_pro_1170c_series-hpijs.ppd.gz
+share/ppd/HP/hp-officejet_pro_251dw_printer-ps.ppd.gz
+share/ppd/HP/hp-officejet_pro_276dw_mfp-ps.ppd.gz
+share/ppd/HP/hp-officejet_pro_3610-hpijs.ppd.gz
+share/ppd/HP/hp-officejet_pro_3620-hpijs.ppd.gz
 share/ppd/HP/hp-officejet_pro_451_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_476_576_series-ps.ppd.gz
 share/ppd/HP/hp-officejet_pro_551_series-ps.ppd.gz
