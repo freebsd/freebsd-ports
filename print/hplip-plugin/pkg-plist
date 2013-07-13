@@ -1,0 +1,30 @@
+share/hplip/data/firmware/hp_laserjet_1000.fw.gz
+share/hplip/data/firmware/hp_laserjet_1005_series.fw.gz
+share/hplip/data/firmware/hp_laserjet_1018.fw.gz
+share/hplip/data/firmware/hp_laserjet_1020.fw.gz
+share/hplip/data/firmware/hp_laserjet_p1005.fw.gz
+share/hplip/data/firmware/hp_laserjet_p1006.fw.gz
+share/hplip/data/firmware/hp_laserjet_p1007.fw.gz
+share/hplip/data/firmware/hp_laserjet_p1008.fw.gz
+share/hplip/data/firmware/hp_laserjet_p1009.fw.gz
+share/hplip/data/firmware/hp_laserjet_p1505.fw.gz
+share/hplip/data/firmware/hp_laserjet_professional_p1102.fw.gz
+share/hplip/data/firmware/hp_laserjet_professional_p1102w.fw.gz
+share/hplip/data/firmware/hp_laserjet_professional_p1566.fw.gz
+share/hplip/data/plugins/license.txt
+share/hplip/fax/plugins/fax_marvell-%%LINARCH%%.so
+share/hplip/fax/plugins/fax_marvell.so
+share/hplip/plugin.spec
+share/hplip/prnt/plugins/lj-%%LINARCH%%.so
+share/hplip/prnt/plugins/lj.so
+share/hplip/scan/plugins/bb_marvell-%%LINARCH%%.so
+share/hplip/scan/plugins/bb_marvell.so
+share/hplip/scan/plugins/bb_soap-%%LINARCH%%.so
+share/hplip/scan/plugins/bb_soap.so
+share/hplip/scan/plugins/bb_soapht-%%LINARCH%%.so
+share/hplip/scan/plugins/bb_soapht.so
+@dirrm share/hplip/scan/plugins
+@dirrm share/hplip/prnt/plugins
+@dirrm share/hplip/fax/plugins
+@dirrm share/hplip/data/plugins
+@dirrm share/hplip/data/firmware

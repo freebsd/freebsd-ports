@@ -111,6 +111,7 @@
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
+    SUBDIR += hplip-plugin
     SUBDIR += hs-hscolour
     SUBDIR += html2latex
     SUBDIR += html2ps
