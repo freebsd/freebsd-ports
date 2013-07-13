@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostess
 PORTVERSION=	20120105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.smbolton.com/linux/
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
 # However, the library version number was not changed.  The line above
 # is supposed to work around that.
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo.7:${PORTSDIR}/audio/liblo \
+		lo:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
