@@ -1,9 +1,5 @@
-# New ports collection makefile for:	f4l
-# Date Created:				2006-05-29
-# Whom:					Shaun Amott <shaun@inerd.com>
-#
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	f4l
 PORTVERSION=	0.2.1
@@ -23,6 +19,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
