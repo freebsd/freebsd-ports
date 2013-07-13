@@ -9,18 +9,15 @@ MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl binding interface for curl
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Perl extension interface for libcurl
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Curl.3
-
-post-patch:
-		${FIND} ${WRKSRC} -type f -name \*.orig -delete
 
 .include <bsd.port.mk>

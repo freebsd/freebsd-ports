@@ -1,6 +1,4 @@
-WWW-Curl is the Perl binding interface to libcurl (ports/ftp/curl)
+The Perl module WWW::Curl provides an interface to the cURL library "libcurl".
 
-WWW-Curl has formerly been known as Curl-easy
-
-Author: Cris Bailiff
+WWW: http://search.cpan.org/dist/WWW-Curl/
 WWW: http://curl.haxx.se/libcurl/perl/
