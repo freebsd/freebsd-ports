@@ -12,6 +12,8 @@ COMMENT=	Software modem that connects to IAX channel
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
+BROKEN=		Does not build
+
 MAN1=		iaxmodem.1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
