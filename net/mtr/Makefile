@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mtr
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		http://launchpadlibrarian.net/130869615/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,21 +12,25 @@ COMMENT=	Traceroute and ping in a single network diagnostic tool
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	IPV6 X11
+OPTIONS_DEFINE=	GLIB IPV6 X11
 OPTIONS_DEFAULT=X11
+GLIB_DESC=	Build with glib library
 X11_DESC=	Build X11-enabled mtr
 
-CPPFLAGS+=	-I${LOCALBASE}/include/glib-2.0
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -lglib-2.0
-USE_GMAKE=	yes
-USE_GNOME=	_glib20
 USES=		pkgconfig
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGLIB}
+CONFIGURE_ARGS+=--with-glib
+USE_GNOME=	_glib20
+.else
+CONFIGURE_ARGS+=--without-glib
+.endif
 
 .if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--enable-ipv6
