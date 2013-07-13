@@ -98,6 +98,7 @@ share/texmaker/qt_pt.qm
 share/texmaker/qt_ru.qm
 share/texmaker/qt_zh_CN.qm
 share/texmaker/qt_zh_TW.qm
+share/texmaker/texmaker_ar.qm
 share/texmaker/texmaker_cs.qm
 share/texmaker/texmaker_de.qm
 share/texmaker/texmaker_el.qm
@@ -107,6 +108,7 @@ share/texmaker/texmaker_fr.qm
 share/texmaker/texmaker_gl.qm
 share/texmaker/texmaker_hu.qm
 share/texmaker/texmaker_it.qm
+share/texmaker/texmaker_lv.qm
 share/texmaker/texmaker_nl.qm
 share/texmaker/texmaker_pl.qm
 share/texmaker/texmaker_pt.qm

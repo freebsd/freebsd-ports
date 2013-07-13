@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texmaker
-PORTVERSION=	3.5.2
+PORTVERSION=	4.0.2
 PORTEPOCH=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
