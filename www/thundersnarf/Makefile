@@ -42,7 +42,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/datab
 USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
 .endif
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
 SUB_FILES=	pkg-message
 
