@@ -1,13 +1,18 @@
 # Created by: Wen Heping<wenheping@gmail.com>
 # $FreeBSD$
 
+# legacy for rubygem-larch
+
 PORTNAME=	sequel
-PORTVERSION=	4.0.0
+PORTVERSION=	3.48.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	The Database Toolkit for Ruby
+
+PORTSCOUT=	limit:^3
+NO_LATEST_LINK=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
