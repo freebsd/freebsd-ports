@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-domainatrix
-# Date created:				22 July 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	domainatrix
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.11
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
