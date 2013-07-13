@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wrk
-PORTVERSION=	2.0.0
+PORTVERSION=	2.2.2
 CATEGORIES=	benchmarks www
-MASTER_SITES=	http://github.com/wg/${PORTNAME}/tarball/master/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${GITVERSION}
+MASTER_SITES=	https://github.com/wg/wrk/archive/
+DISTNAME=	${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	The modern HTTP benchmarking tool
@@ -13,8 +14,7 @@ COMMENT=	The modern HTTP benchmarking tool
 LICENSE=	AL2
 
 FETCH_ARGS=	-pRr
-GITVERSION=	0-gd058222
-WRKSRC=		${WRKDIR}/wg-${PORTNAME}-${GITVERSION:S/^0-g//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
 
