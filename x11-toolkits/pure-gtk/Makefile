@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pure-gtk
-# Date created:		2011-03-18
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pure-gtk
 PORTVERSION=	0.11
@@ -17,6 +13,5 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 USE_PURE=	ffi
 USE_GNOME=	glib20 gtk20 atk pango
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
+.include <bsd.port.mk>
