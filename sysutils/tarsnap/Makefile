@@ -1,9 +1,5 @@
-# New ports collection makefile for:		Tarsnap backup client
-# Date created:					2009-07-04
-# Whom:						Colin Percival
-#
+# Created by: Colin Percival
 # $FreeBSD$
-#
 
 PORTNAME=	tarsnap
 PORTVERSION=	1.0.34
@@ -18,7 +14,7 @@ COMMENT=	Online encrypted backup service (client)
 RESTRICTED=	license restricts redistribution of source and binaries
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		tarsnap.1 tarsnap-keygen.1 tarsnap-keymgmt.1	\
 		tarsnap-keyregen.1 tarsnap-recrypt.1
@@ -27,14 +23,8 @@ MAN5=		tarsnap.conf.5
 OPTIONS_DEFINE=	SSE2
 SSE2_DESC=	Use SSE2-optimized code
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSE2}
-CONFIGURE_ARGS+=	--enable-sse2
-CFLAGS+=		-msse2
-.else
-CONFIGURE_ARGS+=	--disable-sse2
-.endif
+SSE2_CONFIGURE_ENABLE=	sse2
+SSE2_CFLAGS=	-msse2
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/tarsnap.conf ]; then \
