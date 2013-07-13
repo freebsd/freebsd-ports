@@ -1,17 +1,15 @@
-# Ports collection makefile for:	rubygem-linguistics
-# Date created:				19 Mar 2011
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	linguistics
-PORTVERSION=	1.0.9
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Framework for extending Ruby objects with linguistic methods
+
+RUN_DEPENDS=	rubygem-loggability>=0.5:${PORTSDIR}/textproc/rubygem-loggability
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
