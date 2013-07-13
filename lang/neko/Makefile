@@ -1,9 +1,5 @@
-# New ports collection makefile for:	The Neko Programming Language
-# Date created:		08 August 2007
-# Whom:			Masanori OZAWA (ozawa@ongs.co.jp)
-#
+# Created by: Masanori OZAWA (ozawa@ongs.co.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	neko
 PORTVERSION=	1.8.2
@@ -18,9 +14,10 @@ LIB_DEPENDS=	gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool:env
-USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
+MAKE_JOBS_UNSAFE=	yes
 DOS2UNIX_REGEX= .*(Makefile|\.(c|h|neko|nml))$$
 
 OPTIONS_DEFINE=		APACHE MYSQL SQLITE PCRE GTK2
