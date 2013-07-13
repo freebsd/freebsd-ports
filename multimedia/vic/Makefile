@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vic
-# Date created:		14 December 1994
-# Whom:			wollman
-#
+# Created by: wollman
 # $FreeBSD$
-#
 
 PORTNAME=	vic
 PORTVERSION=	2.8.1.1.6
@@ -20,6 +16,8 @@ LIB_DEPENDS=	uclmmbase:${PORTSDIR}/devel/uclmmbase
 
 USE_TK=		84
 USE_TK_BUILD=	84
+
+MAKE_JOBS_UNSAFE=	yes
 
 USE_AUTOTOOLS=	autoconf213
 USE_XORG=	xext
