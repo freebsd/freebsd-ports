@@ -15,9 +15,10 @@ MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
-OPTIONS_DEFINE=	BDB BOOK GNOME_KEYRING KDE_KWALLET MAINTAINER_DEBUG \
-		MOD_DAV_SVN P4_STYLE_MARKERS FREEBSD_TEMPLATE SASL \
-		SERF STATIC SVNSERVE_WRAPPER TEST TOOLS \
+OPTIONS_DEFINE=	BDB BOOK DOCS GNOME_KEYRING KDE_KWALLET \
+		MAINTAINER_DEBUG MOD_DAV_SVN NLS P4_STYLE_MARKERS \
+		FREEBSD_TEMPLATE SASL SERF STATIC SVNSERVE_WRAPPER \
+		TEST TOOLS
 
 OPTIONS_DEFAULT=P4_STYLE_MARKERS FREEBSD_TEMPLATE SERF
 
@@ -212,8 +213,8 @@ pre-configure:
 	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
 	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"${APR_PORT}' with Berkeley DB (4 or 5) support to use subversion with it." ; \
-		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4 or 5) support to use subversion with it." ; \
+		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
 		${ECHO_MSG} "" ; \
