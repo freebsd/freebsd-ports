@@ -11,7 +11,17 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/Chinese_simplified.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/Dutch.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/French.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang/Spanish.qm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/Button.qml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/ProjectList.qml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/StartPage.qml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img/delete-project.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img/favorite-project.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img/ninja-ide.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img/powered_py.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img/powered_qt.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img/unfavorite-project.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax/apache.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax/asp.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax/assembler.json
@@ -112,16 +122,6 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/dependencies/pyflakes_mod/scripts/pyflakes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/dependencies/pyflakes_mod/scripts/pyflakes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/dependencies/pyflakes_mod/scripts/pyflakes.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/css/style.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/img/background.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/img/background_2.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/img/ninja-ide.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/img/powered_py.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/img/powered_qt.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/js/libs/jquery-1.6.2.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/js/libs/jquery-1.6.2.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/js/libs/modernizr-2.0.6.min.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/startPage.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/__init__.pyo
@@ -152,6 +152,9 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/project_properties_widget.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/project_properties_widget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/project_properties_widget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/python_detect_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/python_detect_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/python_detect_dialog.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/themes_manager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/themes_manager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs/themes_manager.pyo
@@ -233,9 +236,9 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/main_container.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/main_container.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/main_container.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/recent_project_item.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/recent_project_item.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/recent_project_item.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/start_page.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/start_page.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/start_page.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/tab_group.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/tab_group.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel/tab_group.pyo
@@ -245,33 +248,6 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/aboutdialog.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/aboutdialog.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/aboutdialog.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/enum.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/enum.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/enum.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/highscores.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/highscores.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/highscores.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/highscoresdialog.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/highscoresdialog.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/highscoresdialog.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/images.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/images.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/images.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/tetrisgame.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/tetrisgame.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/tetrisgame.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/tetrismodel.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/tetrismodel.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/tetrismodel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/version.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/version.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib/version.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/menu_about.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/menu_about.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/menu_about.pyo
@@ -339,7 +315,6 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/console.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/deactivate_profile.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/debug.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/delete-project.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/delete.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/document-new.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/document-open.png
@@ -353,7 +328,6 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/edit-redo.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/edit-undo.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/exit.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/favorite-project.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/file-run.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/find-replace.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/find.png
@@ -403,7 +377,6 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/tree-image.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/tree-python.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/uncomment-code.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/unfavorite-project.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/web.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/zoom_in.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img/zoom_out.png
@@ -491,6 +464,12 @@ bin/ninja-ide
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/test_preferences.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/test_preferences.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs/test_preferences.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc/test_console_widget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc/test_console_widget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc/test_console_widget.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/test_status_bar.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/test_status_bar.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/test_status_bar.pyo
@@ -534,6 +513,7 @@ bin/ninja-ide
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/jsonmanager
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools/completion
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/tools
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/misc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui/dialogs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/gui
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_tests/core/examples
@@ -543,18 +523,12 @@ bin/ninja-ide
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/img
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/misc
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/menus
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/main_panel
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/explorer
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/editor
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui/dialogs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/gui
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/js/libs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/img
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/doc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/dependencies/pyflakes_mod/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/dependencies/pyflakes_mod
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/dependencies
@@ -562,6 +536,8 @@ bin/ninja-ide
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/core
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/theme
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/syntax
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/qml
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins/lang
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide/addins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ninja_ide
