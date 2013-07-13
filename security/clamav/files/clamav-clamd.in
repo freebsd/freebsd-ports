@@ -36,7 +36,7 @@ start_precmd=clamav_clamd_precmd
 #clamav .93 won't start without a valid main.c[vl]d file
 clamav_clamd_precmd() {
 	if [ ! -f %%DBDIR%%/main.cvd -a ! -f %%DBDIR%%/main.cld ];then
-		echo "Missing %%DBDIR%%/clamav/*.cvd or *.cld files.  You must run freshclam first"
+		echo "Missing %%DBDIR%%/*.cvd or *.cld files.  You must run freshclam first"
 		exit 1
 	fi
 }
