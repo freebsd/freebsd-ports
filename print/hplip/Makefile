@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.13.2
-PORTREVISION=	2
+PORTVERSION=	3.13.6
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -149,6 +148,7 @@ post-patch:
 		-e '/[[:space:]]install-dist_halpreDATA/ s,install-dist_halpreDATA,,' \
 		-e '/[[:space:]]install-dist_hplip_stateDATA/ s,install-dist_hplip_stateDATA,,' \
 		-e '/[[:space:]]install-dist_hplip_tmpDATA/ s,install-dist_hplip_tmpDATA,,' \
+		-e '/[[:space:]]install-dist_rulessystemDATA/ s,install-dist_rulessystemDATA,,' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
 		-e 's,/etc/cups,${LOCALBASE}&,g' \
