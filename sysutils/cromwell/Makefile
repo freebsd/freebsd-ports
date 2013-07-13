@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cromwell
-# Date created:				8 March 2006
-# Whom:					Rink Springer <rink@FreeBSD.org>
-#
+# Created by: Rink Springer <rink@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cromwell
 PORTVERSION=	20060308
@@ -40,7 +36,8 @@ ONLY_FOR_ARCHS=		i386
 
 WRKSRC=			${WRKDIR}/cromwell
 USE_BZIP2=		yes
-USE_GMAKE=		yes
+USES=			gmake
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,perl,${PERL},g' \
