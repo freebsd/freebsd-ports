@@ -4210,6 +4210,7 @@
     SUBDIR += rubygem-safe_yaml
     SUBDIR += rubygem-sdl
     SUBDIR += rubygem-sequel
+    SUBDIR += rubygem-sequel3
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-shoulda-context
