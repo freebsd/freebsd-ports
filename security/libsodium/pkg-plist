@@ -50,7 +50,7 @@ include/sodium/randombytes_sysrandom.h
 include/sodium/utils.h
 include/sodium/version.h
 include/sodium.h
-lib/libsodium.so.5
+lib/libsodium.so.6
 lib/libsodium.so
 lib/libsodium.la
 lib/libsodium.a

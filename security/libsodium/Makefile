@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 
