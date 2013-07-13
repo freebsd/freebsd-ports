@@ -4431,3 +4431,4 @@ print/lyx16|print/lyx|2013-07-11|Has expired: Unmaintained upstream, upgrading t
 security/py-crack|security/py-cracklib|2013-07-11|Has expired: Superseded by security/py-cracklib
 x11-toolkits/linux-f10-qt33||2013-07-12|Removed
 net/urtwn-firmware-kmod||2013-07-12|Removed, part of base as of r253139
+benchmarks/polygraph31||2013-07-13|Has expired: Broken since March 2010

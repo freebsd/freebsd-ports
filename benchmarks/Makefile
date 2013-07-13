@@ -53,7 +53,6 @@
     SUBDIR += pipebench
     SUBDIR += pnetmark
     SUBDIR += polygraph
-    SUBDIR += polygraph31
     SUBDIR += postal
     SUBDIR += postmark
     SUBDIR += pybench
