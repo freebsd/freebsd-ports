@@ -13,7 +13,7 @@ COMMENT=	Asynchronous task queue/job queue
 LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqplib>=0:${PORTSDIR}/net/py-amqplib \
-		${PYTHON_PKGNAMEPREFIX}billiard>=2.7.3.30:${PORTSDIR}/devel/py-billiard \
+		${PYTHON_PKGNAMEPREFIX}billiard>=2.7.3.31:${PORTSDIR}/devel/py-billiard \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}kombu>=2.5.12:${PORTSDIR}/net/py-kombu \
 		${PYTHON_PKGNAMEPREFIX}memcached>=0:${PORTSDIR}/databases/py-memcached
