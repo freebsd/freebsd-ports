@@ -33,7 +33,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:${PORTSDIR}/textproc/py-fe
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.0:${PORTSDIR}/devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}tvrage>0:${PORTSDIR}/devel/py-tvrage
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+TEST_DEPENDS:=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
 USE_PYTHON=		-2.7
