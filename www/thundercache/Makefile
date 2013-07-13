@@ -62,7 +62,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pgsql.so:${PORTSDIR}/databases
 USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session
 .endif
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
 SUB_FILES=	pkg-message log.sh test-deps.sh
 SUB_LIST=	"GREP=${GREP}"
