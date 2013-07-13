@@ -1,9 +1,5 @@
-# New ports collection makefile for:    v
-# Date created:         8 Feb 1998
-# Whom:                 Donald Burr <dburr@FreeBSD.org>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	v
 PORTVERSION=	1.90
@@ -14,12 +10,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}a-patch${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ GUI development framework for X11 and Microsoft Windows
+COMMENT=	C++ GUI development framework for X11 and Microsoft Windows
 
 WRKSRC=		${WRKDIR}/home/vgui
 
 USE_XORG=	x11 xt xmu xaw
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	INSTALLDIR=${PREFIX} HOMEV=${WRKSRC}
 USE_DOS2UNIX=	yes
 
