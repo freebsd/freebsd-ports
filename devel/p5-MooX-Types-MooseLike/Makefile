@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooX-Types-MooseLike
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,9 +23,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		MooX::Types::MooseLike.3 \
 		MooX::Types::MooseLike::Base.3
-
-post-patch:
-	@${REINPLACE_CMD} -e '/NAME/ s|MooX-Types-MooseLike|MooX::Types::MooseLike|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
