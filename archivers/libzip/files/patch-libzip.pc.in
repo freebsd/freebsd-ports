@@ -4,7 +4,7 @@
  exec_prefix=@exec_prefix@
  libdir=@libdir@
  includedir=@includedir@
--libincludedir=@libdir@/libzip/include
+-libincludedir=@libdir@/@PACKAGE@/include
  
  zipcmp=@prefix@/bin/zipcmp
  
