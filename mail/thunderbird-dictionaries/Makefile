@@ -56,7 +56,7 @@ PLIST_SUB+=	${f}="@comment "
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${ALLDICTS}
-.if  ${PORT_OPTIONS:M$${f}}
+.if  ${PORT_OPTIONS:M${f}}
 	@${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/${${f}_FILE} -d ${WRKSRC}/${${f}_FILE}
 .endif
 .endfor
