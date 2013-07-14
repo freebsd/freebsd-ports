@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	qwt
-PORTVERSION=	6.0.2
+PORTVERSION=	6.1.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
-USE_QT4=	gui svg xml moc_build qmake_build
+USE_QT4=	gui opengl svg xml moc_build qmake_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 QMAKE_ARGS+=	-recursive PREFIX=${PREFIX}
@@ -35,7 +35,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e 's,qwtAddLibrary(qwt),qwtAddLibrary(qwt6),g' \
-		qwt.prf textengines/textengines.pri
+		qwt.prf textengines/textengines.pri && \
+	${REINPLACE_CMD} -e '/INSTALLS.*doc/d' doc/doc.pro
 
 do-configure:
 	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})
