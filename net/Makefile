@@ -38,6 +38,7 @@
     SUBDIR += avahi-app
     SUBDIR += avahi-autoipd
     SUBDIR += avahi-gtk
+    SUBDIR += avahi-header
     SUBDIR += avahi-libdns
     SUBDIR += avahi-qt4
     SUBDIR += avahi-sharp
