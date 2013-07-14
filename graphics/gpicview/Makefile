@@ -2,28 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	gpicview
-PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GPicView%20${PORTVERSION}
+MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GpicView%20${PORTVERSION}/
 
 MAINTAINER=	jmohacsi@bsd.hu
-COMMENT=	A Simple and Fast Image Viewer for X
+COMMENT=	Simple and Fast Image Viewer for X
 
+LICENSE=	GPLv2
+
+USES=		desktop-file-utils gmake
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+PORTDOCS=	AUTHORS
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+post-patch:
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's|src po|src|' \
+		${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
