@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.274 2013/04/28 23:15:04 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.282 2013/07/14 16:08:12 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -197,7 +197,8 @@ my @varlist =  qw(
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
 	USE_GNOME INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
-	PLIST_FILES OPTIONS OPTIONS_DEFINE INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
+	PLIST_FILES OPTIONS OPTIONS_DEFINE OPTIONS_RADIO OPTIONS_SINGLE
+	OPTIONS_MULTI OPTIONS_GROUP INSTALLS_OMF USE_RC_SUBR USES
 	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
 	GNU_CONFIGURE CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB
 );
@@ -523,7 +524,7 @@ sub checkdescr {
 			}
 			if ($wwwurl =~ m|^http://search.cpan.org/~|) {
 				&perror("WARN", $file, -1, "consider changing WWW URL to ".
-					"http://search.cpan.org/dist/$makevar{PORTNAME}");
+					"http://search.cpan.org/dist/$makevar{PORTNAME}/");
 			}
 		}
 		$linecnt++;
@@ -718,7 +719,7 @@ sub checkplist {
 
 		if ($_ =~ /charset\.alias$/ || $_ =~ /locale\.alias$/) {
 			&perror("WARN", $file, $., "installing charset.alias or locale.alias, ".
-				"please add USE_GETTEXT=yes and use libintl from devel/gettext ".
+				"please add USES[+]=gettext and use libintl from devel/gettext ".
 				"instead of from outdated bundled one if possible. ".
 				"See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/71531 ".
 				"for more details.");
@@ -758,9 +759,9 @@ sub checkplist {
 				"for more details)");
 		}
 
-		if ($_ =~ m|\.mo$| && $makevar{USE_GETTEXT} eq '') {
+		if ($_ =~ m|\.mo$| && $makevar{USES} !~ /\bgettext\b/) {
 			&perror("WARN", $file, $., "installing gettext translation files, ".
-				"please define USE_GETTEXT as appropriate");
+				"please define USES[+]=gettext  as appropriate");
 		}
 
 		if ($_ =~ m|\.core$| && $_ !~ /^\@/) {
@@ -1134,6 +1135,14 @@ sub check_depends_syntax {
 					"USE_PERL5.");
 			}
 
+			# Check for ${SITE_PERL} in depends
+			if ($m{'dep'} =~ m|^(\${SITE_PERL}/.*)$|) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j. consider using p5-Example-Package-Name>=0.  See ".
+					"http://www.freebsd.org/doc/en/books/porters-handbook/using-perl.html".
+					" for more details.");
+			}
+
 			# check USE_ICONV
 			if ($m{'dep'} =~ /^(iconv\.\d+)$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
@@ -1141,11 +1150,11 @@ sub check_depends_syntax {
 					"USE_ICONV.");
 			}
 
-			# check USE_GETTEXT
+			# check USES=gettext
 			if ($m{'dep'} =~ /^(intl\.\d+)$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j.  consider using ".
-					"USE_GETTEXT.");
+					"USES[+]=gettext.");
 			}
 
 			# check USE_GMAKE
@@ -1167,13 +1176,6 @@ sub check_depends_syntax {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j.  consider using ".
 					"USE_LIBLTDL.");
-			}
-
-			# check CDRTOOLS
-			if ($m{'dir'} =~ /(cdrtools|cdrtools-cjk)$/) {
-				&perror("WARN", $file, -1, "dependency to $1 ".
-					"listed in $j.  consider using ".
-					"USE_CDRTOOLS.");
 			}
 
 			# check GHOSTSCRIPT
@@ -1258,7 +1260,7 @@ sub checkmakefile {
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
 	my(@mopt, @oopt);
-	my(@nmopt, @noopt);
+	my(@nmopt, @noopt, @aoopt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
 	my %deprecated = ();
@@ -1269,6 +1271,7 @@ sub checkmakefile {
 	my $docsused = 0;
 	my $nlsused = 0;
 	my $newoptused = 0;
+	my $desktop_entries = '';
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1355,6 +1358,9 @@ sub checkmakefile {
 		#&perror("FATAL", $file, 3, "do not add extra ".
 		#		"empty comments after header.");
 		}
+	# special case for $rcsidsrt\n$MCom: portlint/portlint.pl,v 1.282 2013/07/14 16:08:12 marcus Exp $
+	} elsif ($lines[1] =~ /^# \$$rcsidstr[:\$]/ and $lines[2] =~ /^#\s+\$MCom[:\$]/ and $lines[3] =~ /^$/) {
+		# DO NOTHING
 	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
 		&perror("FATAL", $file, 1, "incorrect header; ".
 			"use Created by: with a single space, then \$$rcsidstr\$.");
@@ -1521,6 +1527,24 @@ sub checkmakefile {
 		&perror("WARN", $file, -1, "Use of OPTIONS is obsolete. Use the ".
 			"new options framework.");
 	}
+	foreach my $i ("OPTIONS_RADIO","OPTIONS_SINGLE",
+		"OPTIONS_MULTI","OPTIONS_GROUP") {
+		@aoopt = split(/\s+/, $makevar{$i});
+		if (scalar(@aoopt)) {
+			foreach my $j (@aoopt) {
+				my $ocmd = "make -V $makeenv ${i}_${j}";
+				my @ocount;
+				for (split(/\n/, qx($ocmd))) {
+					$makevar{"${i}_${j}"} = $_;
+					@ocount = split(/\s+/, $makevar{"${i}_${j}"});
+				}
+				if (!scalar(@ocount)) {
+					&perror("FATAL", $file, -1, "Description for ${i}_${j} does not exist");
+				}
+			}
+		}
+	}
+
 	pos($whole) = 0;
 	while ($whole =~ /\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg) {
 		push @mopt, $1;
@@ -1562,6 +1586,16 @@ sub checkmakefile {
 			#	"consider using OPTIONS macro.");
 		}
 	}
+
+	#
+	# whole file: check DESKTOP_ENTRIES for ${TRUE}/${FALSE}
+	#
+	print "OK: checking DESKTOP_ENTRIES for \${TRUE}/\${FALSE}.\n" if ($verbose);
+	$desktop_entries = &get_makevar_raw('DESKTOP_ENTRIES');
+	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/) {
+		&perror("FATAL", $file, -1, "Use true/false instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
+	}
+
 
 	#
 	# whole file: USE_* as a user-settable option
@@ -1654,16 +1688,6 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: USE_REINPLACE
-	#
-	print "OK: checking for USE_REINPLACE.\n" if ($verbose);
-	if ($whole =~ /\nUSE_REINPLACE.?=/) {
-			my $lineno = &linenumber($`);
-			&perror("WARN", $file, $lineno, "USE_REINPLACE is now obsolete. ".
-				"You can safely use REINPLACE_CMD without it.");
-	}
-
-	#
 	# whole file: MAKE_JOBS_[UN]SAFE
 	#
 	print "OK: checking for MAKE_JOBS_SAFE in combination with NO_BUILD.\n" if ($verbose);
@@ -1678,22 +1702,12 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: USE_GETOPT_LONG
-	#
-	print "OK: checking for USE_GETOPT_LONG.\n" if ($verbose);
-	if ($whole =~ /\nUSE_GETOPT_LONG.?=/) {
-		my $lineno = &linenumber($`);
-		&perror("WARN", $file, $lineno, "USE_GETOPT_LONG is now obsolete. ".
-			"You can safely remove this macro from your Makefile.");
-	}
-
-	#
 	# whole file: USE_GNOME=pkgconfig
 	#
 	print "OK: checking for USE_GNOME=pkgconfig.\n" if ($verbose);
 	if ($makevar{USE_GNOME} =~ /pkgconfig/) {
 		&perror("WARN", $file, -1, "USE_GNOME=pkgconfig is now obsolete. ".
-			"Use USE_PKGCONFIG instead.");
+			"Use USES[+]=pkgconfig instead.");
 	}
 
 	#
@@ -1753,28 +1767,16 @@ sub checkmakefile {
 	if ($whole =~ /NOPORTDOCS/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "NOPORTDOCS found.  Consider ".
-			"using PORT_OPTIONS:MDOCS");
+			"using PORT_OPTIONS:MDOCS.");
 	}
 
 	#
-	# whole file: check for USE_GETTEXT
+	# whole file: check for USES[+]=gettext
 	#
-	print "OK: checking for USE_GETTEXT without PORT_OPTIONS:MNLS.\n" if ($verbose);
-	if ($whole =~ /\nUSE_GETTEXT/ && $whole =~ /PORT_OPTIONS:MNLS/) {
-		$nlsused++;
-	}
-	print "OK: checking for USE_GETTEXT without WITHOUT_NLS.\n" if ($verbose);
-	if ($whole =~ /\nUSE_GETTEXT/ && $whole !~ /def(?:ined)?\s*\(?WITHOUT_NLS\)?/) {
-		if ($nlsused == 0) {
-			&perror("WARN", $file, -1, "Consider adding support for a WITHOUT_NLS ".
-					"knob to conditionally disable gettext support.");
-		}
-	} else {
-		$nlsused++;
-	}
-	if ($nlsused > 1) {
-		&perror("FATAL", $file, -1, "Both WITHOUT_NLS and PORT_OPTIONS:MNLS are found. ".
-			"Remove one or another.");
+	print "OK: checking for USES=gettext without PORT_OPTIONS:MNLS.\n" if ($verbose);
+	if ($makevar{USES} =~ /\bgettext\b/ && $whole !~ /PORT_OPTIONS:MNLS/) {
+		&perror("WARN", $file, -1, "Consider adding support for a NLS ".
+			"knob to conditionally disable gettext support.");
 	}
 
 	#
@@ -2253,9 +2255,9 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	# break the makefile into sections.
 	#
 	$tmp = $rawwhole;
+	$tmp =~ s/\\\n/ /g;
 	# keep comment, blank line, comment in the same section
 	$tmp =~ s/(#.*\n)\n+(#.*)/$1$2/g;
-	$tmp =~ s/\\\n\n/\n/g;
 	@sections = split(/\n\n+/, $tmp);
 	for ($i = 0; $i <= $#sections; $i++) {
 		if ($sections[$i] !~ /\n$/) {
@@ -2328,7 +2330,6 @@ EOF
 		$sections[$i] = "\n" . $sections[$i];
 		$sections[$i] =~ s/\n#[^\n]*//g;
 		$sections[$i] =~ s/\n\n+/\n/g;
-		$sections[$i] =~ s/\\\n/ /g;
 		$sections[$i] =~ s/^\n//;
 	}
 
@@ -2496,30 +2497,28 @@ DIST_SUBDIR EXTRACT_ONLY
 	 && $1 !~ /^[ \t]*$/) || ($makevar{MASTER_SITES} ne '')) {
 		print "OK: seen MASTER_SITES, sanity checking URLs.\n"
 			if ($verbose);
+		my $urlseen = 0;
 		my @sites = split(/\s+/, $1 // '');
 		my $ftphttp = 0;
-		my $skipnext = 0;
 		foreach my $i (@sites) {
-			if ($skipnext) {
-				$skipnext = 0;
-				next;
-			}
-			$skipnext++ if ($i =~ /^#/);
+			last if ($i =~ /^#/);
 			if ($i =~ m#^\w+://#) {
+				$urlseen = 1;
+				$ftphttp = 1 if ($i =~ /^(ftp|http):/);
 				&urlcheck($i, $file);
 				unless (&is_predefined($i, $file)) {
 					print "OK: URL \"$i\" ok.\n"
 						if ($verbose);
-					$ftphttp++ if ($i =~ /^(ftp|http):/);
 				}
 			} else {
 				print "OK: non-URL \"$i\" ok.\n"
 					if ($verbose);
-				$ftphttp++;
+				# Assume variables contain an ftp/http site.
+				$ftphttp = 1;
 			}
 		}
-		&perror("WARN", $file, -1, "no ftp/http mirror in MASTER_SITES.  ".
-			"This may break fetch through proxies.") unless ($ftphttp);
+		&perror("WARN", $file, -1, "no ftp/http mirror in MASTER_SITES ".
+			"for users behind a proxy.") if ($urlseen && ! $ftphttp);
 	} else {
 		&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
 	}
@@ -3385,6 +3384,17 @@ sub get_makevar {
 		$result = `$cmd`;
 
 		return chomp $result;
+}
+
+sub get_makevar_raw {
+	my ($mvar) = @_;
+	my($cmd, $result);
+
+	$cmd = join(' -XV ', "make $makeenv MASTER_SITE_BACKUP=''", $mvar);
+	$result = `$cmd`;
+	chomp $result;
+
+	return $result;
 }
 
 sub is_predefined {
