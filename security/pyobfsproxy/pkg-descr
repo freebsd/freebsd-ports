@@ -1,4 +1,3 @@
-Pyobfsproxy is a pluggable transport proxy written in Python. Its architecture
-is similar to the architecture of Obfsproxy.
+Obfsproxy is a pluggable transport proxy written in Python.
 
-WWW: https://gitweb.torproject.org/pluggable-transports/pyobfsproxy.git
+WWW: https://gitweb.torproject.org/pluggable-transports/obfsproxy.git
