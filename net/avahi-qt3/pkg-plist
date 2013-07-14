@@ -1,7 +1,0 @@
-include/avahi-qt3/qt-watch.h
-lib/libavahi-qt3.a
-lib/libavahi-qt3.la
-lib/libavahi-qt3.so
-lib/libavahi-qt3.so.1
-libdata/pkgconfig/avahi-qt3.pc
-@dirrm include/avahi-qt3
