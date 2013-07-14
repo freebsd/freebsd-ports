@@ -47,19 +47,19 @@ include/rpm/rpmspec.h
 lib/librpm.a
 lib/librpm.la
 lib/librpm.so
-lib/librpm.so.4
+lib/librpm.so.5
 lib/librpmbuild.a
 lib/librpmbuild.la
 lib/librpmbuild.so
-lib/librpmbuild.so.4
+lib/librpmbuild.so.5
 lib/librpmio.a
 lib/librpmio.la
 lib/librpmio.so
-lib/librpmio.so.4
+lib/librpmio.so.5
 lib/librpmsign.a
 lib/librpmsign.la
 lib/librpmsign.so
-lib/librpmsign.so.2
+lib/librpmsign.so.3
 lib/rpm/rpm.daily
 lib/rpm/rpm.log
 lib/rpm/macros.perl
@@ -118,6 +118,7 @@ lib/rpm/find-requires
 lib/rpm/mkinstalldirs
 lib/rpm/config.guess
 lib/rpm/config.sub
+lib/rpm/platform/aarch64-freebsd/macros
 lib/rpm/platform/noarch-freebsd/macros
 lib/rpm/platform/athlon-freebsd/macros
 lib/rpm/platform/geode-freebsd/macros
@@ -210,6 +211,7 @@ lib/rpm-plugins/exec.la
 libdata/pkgconfig/rpm.pc
 @dirrm lib/rpm/fileattrs
 @dirrm lib/rpm-plugins
+@dirrm lib/rpm/platform/aarch64-freebsd
 @dirrm lib/rpm/platform/noarch-freebsd
 @dirrm lib/rpm/platform/athlon-freebsd
 @dirrm lib/rpm/platform/geode-freebsd

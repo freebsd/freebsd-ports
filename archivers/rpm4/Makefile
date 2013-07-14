@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.11.0.1
+PORTVERSION=	4.11.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/ \
+MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
 
 MAINTAINER=	johans@FreeBSD.org
@@ -44,10 +44,6 @@ CONFIGURE_ARGS+=--with-external-db \
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-.endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--enable-python
