@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.21.4
+PORTVERSION=	0.21.5
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -11,8 +11,7 @@ COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
 LICENSE=	GPLv3
 
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
