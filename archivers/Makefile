@@ -159,6 +159,7 @@
     SUBDIR += py-liblzma
     SUBDIR += py-librtfcomp
     SUBDIR += py-lzma
+    SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += rar
     SUBDIR += rox-archive
