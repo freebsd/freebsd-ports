@@ -6,7 +6,7 @@ DISTVERSION=	2.7.1
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
-		http://hselasky.homeunix.org:8192/distfiles/
+		http://home.selasky.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
