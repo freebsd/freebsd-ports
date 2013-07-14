@@ -1,11 +1,12 @@
 .\" $FreeBSD$
-.\"  $MCom: portlint/portlint.1,v 1.12 2013/03/24 20:45:05 marcus Exp $
+.\"  $MCom: portlint/portlint.1,v 1.13 2013/07/07 22:34:01 marcus Exp $
 .\"
 .\" Copyright (c) 1997 by Jun-ichiro Hagino <itojun@itojun.org>.
 .\" All Rights Reserved.  Absolutely no warranty.
 .\"
 .Dd April 1, 2010
 .Dt PORTLINT 1
+.Os
 .Sh NAME
 .Nm portlint
 .Nd a verifier for port directories
@@ -97,36 +98,6 @@ is 1)
 The port directory to be checked.
 If omitted, check will be performed over the current directory.
 .El
-.Sh DIAGNOSTICS
-Messages will be sent to standard output, not standard error output.
-.Bl -tag -width "WARN: foobaa"
-.It FATAL: ...
-This type of error message suggests that there is some fatal error
-in the port directory.
-For example, if some files need a rewrite, or if
-some inevitable files are missing, this message will show up.
-This kind of errors should be avoided BEFORE submitting
-a port via send-pr to the committers.
-.\"If a submitter submits it without update, committers will need to rewrite
-.\"on behalf of the submitters, which may result in delay of
-.\"the development of operating system itself.
-.It WARN: ...
-This type of error message suggests that some files may (or may not)
-need some fix.
-Basically, warnings are produced when
-.Nm
-is not completely sure about the result.
-For example, complex
-.Pa Makefile Ns No s
-may need some statements that can match the regular expression
-.Nm
-uses for sanity checks.
-In those cases, the user should evaluate the result manually,
-and obey/ignore the result.
-.It OK: ...
-This types of message is used in verbose mode
-.Pq Fl v .
-.El
 .Sh ENVIRONMENT
 The following environment variables affect the execution of
 .Nm :
@@ -164,6 +135,36 @@ on
 can be overriden by setting the
 .Va PORTSDIR
 environment variable.
+.El
+.Sh DIAGNOSTICS
+Messages will be sent to standard output, not standard error output.
+.Bl -tag -width "WARN: foobaa"
+.It FATAL: ...
+This type of error message suggests that there is some fatal error
+in the port directory.
+For example, if some files need a rewrite, or if
+some inevitable files are missing, this message will show up.
+This kind of errors should be avoided BEFORE submitting
+a port via send-pr to the committers.
+.\"If a submitter submits it without update, committers will need to rewrite
+.\"on behalf of the submitters, which may result in delay of
+.\"the development of operating system itself.
+.It WARN: ...
+This type of error message suggests that some files may (or may not)
+need some fix.
+Basically, warnings are produced when
+.Nm
+is not completely sure about the result.
+For example, complex
+.Pa Makefile Ns No s
+may need some statements that can match the regular expression
+.Nm
+uses for sanity checks.
+In those cases, the user should evaluate the result manually,
+and obey/ignore the result.
+.It OK: ...
+This types of message is used in verbose mode
+.Pq Fl v .
 .El
 .Sh AUTHORS
 .An Joe Marcus Clarke Aq marcus@FreeBSD.org
