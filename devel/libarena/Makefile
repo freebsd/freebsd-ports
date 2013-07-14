@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarena
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
@@ -12,8 +12,7 @@ COMMENT=	Custom Memory Allocator Interface
 
 LICENSE=	MIT
 
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=		gmake
 
 PLIST_FILES=	include/arena/align.h \
 		include/arena/arena.h \
