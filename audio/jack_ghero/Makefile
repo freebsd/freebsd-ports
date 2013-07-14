@@ -5,7 +5,7 @@ PORTNAME=	jack_ghero
 PORTVERSION=	1.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
-		http://hselasky.homeunix.org:8192/distfiles/
+		http://home.selasky.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Daemon that converts a GuitarHero device into a JACK MIDI device
