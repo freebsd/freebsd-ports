@@ -1,14 +1,10 @@
-# New ports collection makefile for:	avahi
-# Date created:		18 November 2005
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/avahi-app/Makefile,v 1.17 2011/03/13 17:23:19 kwm Exp $
-#
+#   $MCom: ports/net/avahi-app/Makefile,v 1.25 2012/09/01 23:02:11 mezz Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.29
-PORTREVISION?=	3
+PORTVERSION=	0.6.31
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -16,36 +12,36 @@ PKGNAMESUFFIX?=	-app
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Service discovery on a local network
 
+AVAHI_SLAVE?=	no
+
+.if ${AVAHI_SLAVE} != header
 BUILD_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS?=	expat:${PORTSDIR}/textproc/expat2 \
 		daemon.0:${PORTSDIR}/devel/libdaemon \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gdbm.4:${PORTSDIR}/databases/gdbm
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		gdbm:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USE_GNOME?=	gnomehack ltverhack glib20 intltool
-USES=		gettext
+USE_GNOME=	ltverhack glib20 intltool
+USES=		gettext gmake pathfix
 USE_GNOME_SUBR=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-AVAHI_SLAVE?=	no
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-socket=unix:path=/var/run/dbus/system_bus_socket \
 		--disable-monodoc \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
+		--disable-qt3 \
 		--localstatedir=/var \
 		--enable-compat-howl
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_KQUEUE
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${AVAHI_SLAVE}=="no"
+.if ${AVAHI_SLAVE} == no
 CONFLICTS=	howl-[0-9]*
 
 MAN1=	avahi-browse.1 avahi-publish.1 avahi-resolve.1 avahi-set-host-name.1
@@ -62,47 +58,44 @@ DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 .endif
 
 USE_RC_SUBR=yes
+.endif # !avahi-header
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${AVAHI_SLAVE}=="autoipd"
+.if ${AVAHI_SLAVE} != header
+.if ${AVAHI_SLAVE} == autoipd
 CONFIGURE_ARGS+=--enable-autoipd
 .else
 CONFIGURE_ARGS+=--disable-autoipd
 .endif
-.if ${AVAHI_SLAVE}=="gtk"
+.if ${AVAHI_SLAVE} == gtk
 CONFIGURE_ARGS+=--enable-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif
-.if ${AVAHI_SLAVE}=="gtk3"
+.if ${AVAHI_SLAVE} == gtk3
 CONFIGURE_ARGS+=--enable-gtk3
 .else
 CONFIGURE_ARGS+=--disable-gtk3
 .endif
-.if ${AVAHI_SLAVE}=="libdns"
+.if ${AVAHI_SLAVE} == libdns
 CONFIGURE_ARGS+=--enable-compat-libdns_sd
 .else
 CONFIGURE_ARGS+=--disable-compat-libdns_sd
 .endif
-.if ${AVAHI_SLAVE}=="python"
+.if ${AVAHI_SLAVE} == python
 CONFIGURE_ARGS+=--enable-python
 .else
 CONFIGURE_ARGS+=--disable-python
 .endif
-.if ${AVAHI_SLAVE}=="qt3"
-CONFIGURE_ARGS+=--enable-qt3
-.else
-CONFIGURE_ARGS+=--disable-qt3
-.endif
-.if ${AVAHI_SLAVE}=="qt4"
+.if ${AVAHI_SLAVE} == qt4
 CONFIGURE_ARGS+=--enable-qt4 \
 		--disable-expat \
 		--disable-gdbm
 .else
 CONFIGURE_ARGS+=--disable-qt4
 .endif
-.if ${AVAHI_SLAVE}=="sharp"
+.if ${AVAHI_SLAVE} == sharp
 CONFIGURE_ARGS+=--enable-mono
 .else
 CONFIGURE_ARGS+=--disable-mono
@@ -132,6 +125,8 @@ avahi-post-patch:
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
 	@${REINPLACE_CMD} -e 's|^_||g' \
 		${WRKSRC}/avahi-ui/*.desktop.in.in
+	@${REINPLACE_CMD} -e 's|am: install-avahiincludeHEADERS|am:|g' \
+			${WRKSRC}/avahi-ui/Makefile.in
 
 post-build: avahi-post-build
 
@@ -173,5 +168,6 @@ avahi-post-install:
 	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
 		${LOCALBASE}/share/dbus-1/system-services
 .endif
+.endif # avahi-header
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

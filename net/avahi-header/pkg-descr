@@ -1,0 +1,5 @@
+The net/avahi-gtk and net/avahi-gtk3 install same header, avahi-ui.h. To
+avoid both ports to get conflict with the each others. Avoid both ports
+to install avahi-ui.h then have both ports to depend on here.
+
+WWW: http://www.avahi.org/

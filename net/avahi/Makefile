@@ -3,8 +3,8 @@
 #   $MCom: ports/net/avahi/Makefile,v 1.30 2011/03/13 17:23:19 kwm Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.29
-PORTREVISION?=	1
+PORTVERSION=	0.6.31
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,14 +14,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for the Avahi service discovery suite
 
 RUN_DEPENDS=	avahi-resolve:${PORTSDIR}/net/avahi-app \
-		avahi-app>=0.6.20_2:${PORTSDIR}/net/avahi-app
+		avahi-app>=0.6.31:${PORTSDIR}/net/avahi-app
 
-OPTIONS_DEFINE=	AUTOIPD GTK LIBDNS MONO QT3 QT4 PYTHON
+OPTIONS_DEFINE=	AUTOIPD GTK LIBDNS MONO QT4 PYTHON
 OPTIONS_DEFAULT=AUTOIPD GTK LIBDNS
 AUTOIPD_DESC=	IPv4LL network address configuration daemon
 GTK_DESC=	Gtk+ tools and bindings
 LIBDNS_DESC=	Apple's mDNSResponder compatibility library
-QT3_DESC=	Qt 3 toolkit
 
 NO_BUILD=	yes
 
@@ -41,10 +40,6 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-compat-libdns_sd.pc:${PORTSDI
 
 .if ${PORT_OPTIONS:MMONO}
 RUN_DEPENDS+=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:${PORTSDIR}/net/avahi-sharp
-.endif
-
-.if ${PORT_OPTIONS:MQT3}
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt3.pc:${PORTSDIR}/net/avahi-qt3
 .endif
 
 .if ${PORT_OPTIONS:MQT4}

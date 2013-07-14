@@ -1,10 +1,6 @@
-# New ports collection makefile for:	avahi-sharp
-# Date Created:				20041011
-# Whom:					Tom McLaughlin <tmclaugh@FreeBSD.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@FreeBSD.org>
 # $FreeBSD$
 #   $Id: Makefile,v 1.2 2006/02/15 19:15:40 tmclau02 Exp $
-#
 
 PORTREVISION=	0
 CATEGORIES=	net dns

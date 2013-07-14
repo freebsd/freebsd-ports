@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130714:
+  AFFECTS: users of net/avahi-gtk
+  AUTHOR: kwm@FreeBSD.org
+
+  Avahi was updated to 0.6.31, due to changes in the avahi-gtk port it will
+  be necessary to remove the avahi-gtk port before updating. 
+  Users of pkg packages can skip this step.
+
+   pkg_delete -f avahi-gtk
+  or
+   pkg delete -f avahi-gtk
+  followed by
+   portmaster net/avahi-gtk
+  or
+   portupgrade net/avahi-gtk
+
 20130711:
   AFFECTS: users of dns/py-ldns
   AUTHOR: mat@FreeBSD.org
