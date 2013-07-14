@@ -39,7 +39,6 @@
     SUBDIR += avahi-autoipd
     SUBDIR += avahi-gtk
     SUBDIR += avahi-libdns
-    SUBDIR += avahi-qt3
     SUBDIR += avahi-qt4
     SUBDIR += avahi-sharp
     SUBDIR += babeld

@@ -1,5 +1,5 @@
---- avahi-daemon/Makefile.in.orig	2013-01-01 13:29:10.000000000 -0600
-+++ avahi-daemon/Makefile.in	2013-01-01 13:31:10.000000000 -0600
+--- avahi-daemon/Makefile.in.orig	2013-01-01 13:45:35.000000000 -0600
++++ avahi-daemon/Makefile.in	2013-01-01 13:47:30.000000000 -0600
 @@ -69,7 +69,7 @@
  @ENABLE_CHROOT_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	caps.c caps.h
  
@@ -9,18 +9,18 @@
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_5 = \
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-protocol.c dbus-protocol.h \
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-util.c dbus-util.h \
-@@ -682,7 +682,7 @@
+@@ -688,7 +688,7 @@
  	rm -f $$list
- avahi-daemon$(EXEEXT): $(avahi_daemon_OBJECTS) $(avahi_daemon_DEPENDENCIES) 
+ avahi-daemon$(EXEEXT): $(avahi_daemon_OBJECTS) $(avahi_daemon_DEPENDENCIES) $(EXTRA_avahi_daemon_DEPENDENCIES) 
  	@rm -f avahi-daemon$(EXEEXT)
 -	$(AM_V_CCLD)$(avahi_daemon_LINK) $(avahi_daemon_OBJECTS) $(avahi_daemon_LDADD) $(LIBS)
 +	$(AM_V_CCLD)$(avahi_daemon_LINK) $(avahi_daemon_OBJECTS) $(avahi_daemon_LDADD) $(LIBS) $(INTLLIBS)
- ini-file-parser-test$(EXEEXT): $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_DEPENDENCIES) 
+ ini-file-parser-test$(EXEEXT): $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_DEPENDENCIES) $(EXTRA_ini_file_parser_test_DEPENDENCIES) 
  	@rm -f ini-file-parser-test$(EXEEXT)
  	$(AM_V_CCLD)$(ini_file_parser_test_LINK) $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_LDADD) $(LIBS)
-@@ -1283,17 +1283,17 @@
- 	echo " ( cd '$(DESTDIR)$(servicedir)' && rm -f" $$files ")"; \
- 	cd "$(DESTDIR)$(servicedir)" && rm -f $$files
+@@ -1222,17 +1222,17 @@
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(servicedir)'; $(am__uninstall_files_from_dir)
  install-pkgsysconfDATA: $(pkgsysconf_DATA)
 -	@$(NORMAL_INSTALL)
 -	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"
