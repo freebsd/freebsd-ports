@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendylan
-DISTVERSION=	2012.1
+DISTVERSION=	2013.1
 CATEGORIES=	lang
 MASTER_SITES=	http://opendylan.org/downloads/opendylan/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-x86-freebsd
