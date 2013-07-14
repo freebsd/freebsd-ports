@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.27
+PORTVERSION=	0.1.28
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
-		http://hselasky.homeunix.org:8192/distfiles/
+		http://home.selasky.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Cuse4BSD character device loopback driver for userspace
