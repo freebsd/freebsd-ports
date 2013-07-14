@@ -28,9 +28,10 @@ receiver {
 	}
 }
 
-5. Update permissions on the auditdistd configuration file:
+5. Update permissions on the auditdistd configuration file and create directory:
 # chmod 600 /etc/security/auditdistd.conf
 # chown root:wheel /etc/security/auditdistd.conf
+# mkdir -m 700 /var/audit/remote ; chown auditdistd:wheel /var/audit/remote
 
 6. Add the following to /etc/rc.conf:
 auditdistd_enable="YES"
@@ -56,13 +57,16 @@ dist:on
 4. Create /etc/security/auditdistd.conf configuration file:
 sender {
 	host "<enter hostname of receiver here>" {
-	remote "tls://<enter IP of the receiver here>"
-	fingerprint "SHA256=8F:0A:FC:8A:3D:09:80:AF:D9:AA:38:CC:8A:86:..."
-	password "<enter password generated above here>"
+		remote "tls://<enter IP of the receiver here>"
+		fingerprint "SHA256=8F:0A:FC:8A:3D:09:80:AF:D9:AA:38:CC:8A:86:..."
+		password "<enter password generated above here>"
 	}
 }
 
-4. Start the required daemons:
+5. Create the required directories:
+# mkdir -m 0770 /var/audit/dist ; chown auditdistd:audit /var/audit/dist
+
+6. Start the required daemons:
 service auditd start && service auditdistd start
 
 Additional information regarding auditdistd may be found on the OpenBSM wiki:
