@@ -1,17 +1,30 @@
 bin/gpicview
 share/applications/gpicview.desktop
+%%DATADIR%%/pixmaps/object-flip-horizontal.png
+%%DATADIR%%/pixmaps/object-flip-vertical.png
+%%DATADIR%%/pixmaps/object-rotate-left.png
+%%DATADIR%%/pixmaps/object-rotate-right.png
+%%DATADIR%%/ui/pref-dlg.ui
 %%NLS%%share/locale/af/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/el/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/es_VE/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/et/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/frp/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gpicview.mo
@@ -31,7 +44,9 @@ share/applications/gpicview.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/th/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/gpicview.mo
@@ -39,15 +54,14 @@ share/applications/gpicview.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gpicview.mo
-%%DATADIR%%/pixmaps/object-rotate-right.png
-%%DATADIR%%/pixmaps/object-rotate-left.png
-%%DATADIR%%/pixmaps/object-flip-horizontal.png
-%%DATADIR%%/pixmaps/object-flip-vertical.png
-%%DATADIR%%/ui/pref-dlg.ui
 share/pixmaps/gpicview.png
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/ui
-@dirrmtry share/applications
-@dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_VE
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
