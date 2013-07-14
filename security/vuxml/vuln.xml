@@ -27286,7 +27286,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2010-04-21</discovery>
       <entry>2010-04-24</entry>
-      <modified>2010-05-12</modified>
+      <modified>2013-06-16</modified>
     </dates>
   </vuln>
 
@@ -27725,6 +27725,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2010-02-16</discovery>
       <entry>2010-04-19</entry>
+      <modified>2013-06-16</modified>
     </dates>
   </vuln>
 
@@ -34602,6 +34603,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2009-02-07</discovery>
       <entry>2009-02-09</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -68846,6 +68848,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <dates>
       <discovery>2004-10-18</discovery>
       <entry>2005-01-21</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -74572,7 +74575,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-07-07</discovery>
       <entry>2004-09-27</entry>
-      <modified>2004-10-02</modified>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
@@ -76381,6 +76384,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-08-18</discovery>
       <entry>2004-08-22</entry>
+      <modified>2013-06-19</modified>
     </dates>
   </vuln>
 
