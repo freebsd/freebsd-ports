@@ -4432,3 +4432,4 @@ security/py-crack|security/py-cracklib|2013-07-11|Has expired: Superseded by sec
 x11-toolkits/linux-f10-qt33||2013-07-12|Removed
 net/urtwn-firmware-kmod||2013-07-12|Removed, part of base as of r253139
 benchmarks/polygraph31||2013-07-13|Has expired: Broken since March 2010
+net/avahi-qt3||2013-07-13|Depends on the expired Qt3 port
