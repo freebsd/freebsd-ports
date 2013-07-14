@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.4.14-alpha
+DISTVERSION=	0.2.4.15-rc
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -87,7 +87,7 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGMAKE}
-USE_GMAKE=		yes
+USES+=			gmake
 .else
 MAKE_JOBS_UNSAFE=	yes
 .endif
