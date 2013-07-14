@@ -112,7 +112,7 @@ easyinstall-setopt:
 .endif
 
 .if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/p3k-fix-pkg-plist.inc"
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 regression-test: build
