@@ -5,6 +5,7 @@ PORTNAME=	ninja-ide
 PORTVERSION=	2.3
 PORTREVISION=	0
 CATEGORIES=	devel
+MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Cross-platform integrated development environment (IDE)
