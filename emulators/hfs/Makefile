@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	hfsutils-[0-9]*
 
-DEPRECATED=	No upstream, no public distfiles; consider using `sysutils/hfsutils'
+DEPRECATED=	No upstream, no public distfiles; consider using 'sysutils/hfsutils'
 
 USE_GMAKE=	yes
 MAKE_ARGS=	CCPLUSPLUS="${CXX} -c" LD="${CXX}" DEBUG="${CFLAGS}" \
