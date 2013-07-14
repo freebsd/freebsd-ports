@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdisk
-# Date created:		12 July 2010
-# Whom:			Dmitry N Fomin <fdn@okbire.ru>
-#
+# Created by: Dmitry N Fomin <fdn@okbire.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gdisk
 PORTVERSION=	0.8.5
@@ -12,14 +8,14 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
 
-MAINTAINER=	fdn@okbire.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPT fdisk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		popt:${PORTSDIR}/devel/popt
 
 WRKSRC=		${WRKDIR}/gptfdisk-${PORTVERSION}
 
@@ -44,11 +40,11 @@ PLIST_FILES=	${PROGRAM_LIST:C,^,sbin/,}
 
 .if ${PORT_OPTIONS:MCGDISK}
 PROGRAM_LIST+=	cgdisk
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
 .endif
 
 .if ${PORT_OPTIONS:MUTF16}
-LIB_DEPENDS+=	icuuc.48:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
 .endif
 
 MAN8=
