@@ -93,6 +93,7 @@ bin/parser-compiler
 %%DATADIR%%/databases/user-projects.ddb
 %%DATADIR%%/databases/variable-search.ddb
 %%DATADIR%%/databases/walker.ddb
+%%DATADIR%%/lib/arm-linux-build.jam
 %%DATADIR%%/lib/big-integers.mkf
 %%DATADIR%%/lib/binary-builder.mkf
 %%DATADIR%%/lib/binary-manager.mkf
@@ -280,6 +281,7 @@ bin/parser-compiler
 %%DATADIR%%/lib/x86-freebsd-build.jam
 %%DATADIR%%/lib/x86-linux-build.jam
 %%DATADIR%%/lib/x86_64-darwin-build.jam
+%%DATADIR%%/lib/x86_64-freebsd-build.jam
 %%DATADIR%%/lib/x86_64-linux-build.jam
 %%DATADIR%%/sources/Library-Packs/CORBA/corba.dlp
 %%DATADIR%%/sources/Library-Packs/Compiler/compiler.dlp
@@ -305,7 +307,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/app/ddeclient/ddeclient.dylan
 %%DATADIR%%/sources/app/ddeclient/ddeclient.lid
 %%DATADIR%%/sources/app/ddeclient/ddeclient.txt
-%%DATADIR%%/sources/app/ddeclient/library_module.dylan
+%%DATADIR%%/sources/app/ddeclient/library.dylan
 %%DATADIR%%/sources/app/djam/djam.dylan
 %%DATADIR%%/sources/app/djam/djam.lid
 %%DATADIR%%/sources/app/djam/library.dylan
@@ -493,7 +495,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/collections/collectors.dylan
 %%DATADIR%%/sources/collections/library.dylan
 %%DATADIR%%/sources/collections/plists.dylan
-%%DATADIR%%/sources/collections/table-macros.dylan
+%%DATADIR%%/sources/collections/table-extensions.dylan
 %%DATADIR%%/sources/collections/tests/bit-count.dylan
 %%DATADIR%%/sources/collections/tests/bit-set-tests.dylan
 %%DATADIR%%/sources/collections/tests/bit-vector-and.dylan
@@ -1485,13 +1487,13 @@ bin/parser-compiler
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-back-end-types.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-back-end.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-back-end.lid
-%%DATADIR%%/sources/dfmc/llvm-back-end/llvm-back-end.lid~
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit-code.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit-computation.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit-debug.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit-object.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit-type-check.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit.dylan
+%%DATADIR%%/sources/dfmc/llvm-back-end/llvm-entry-points.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-ops.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-alloc.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-basic.dylan
@@ -2431,7 +2433,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/environment/editor/editors.dylan
 %%DATADIR%%/sources/environment/editor/library.dylan
 %%DATADIR%%/sources/environment/editor/module.dylan
-%%DATADIR%%/sources/environment/editor/tests/library_module.dylan
+%%DATADIR%%/sources/environment/editor/tests/library.dylan
 %%DATADIR%%/sources/environment/editor/tests/setup-tests.dylan
 %%DATADIR%%/sources/environment/editor/tests/test-backends.dylan
 %%DATADIR%%/sources/environment/editor/tests/test-callout.dylan
@@ -2576,17 +2578,17 @@ bin/parser-compiler
 %%DATADIR%%/sources/environment/reports/warnings-report.dylan
 %%DATADIR%%/sources/environment/server/dde/dde-server.dylan
 %%DATADIR%%/sources/environment/server/dde/dde-server.lid
-%%DATADIR%%/sources/environment/server/dde/library_module.dylan
+%%DATADIR%%/sources/environment/server/dde/library.dylan
 %%DATADIR%%/sources/environment/server/dummy/environment-server.dylan
 %%DATADIR%%/sources/environment/server/dummy/environment-server.lid
-%%DATADIR%%/sources/environment/server/dummy/library_module.dylan
+%%DATADIR%%/sources/environment/server/dummy/library.dylan
 %%DATADIR%%/sources/environment/server/parsers/environment-server-parsers.lid
-%%DATADIR%%/sources/environment/server/parsers/library_module.dylan
+%%DATADIR%%/sources/environment/server/parsers/library.dylan
 %%DATADIR%%/sources/environment/server/parsers/parser-interface.dylan
 %%DATADIR%%/sources/environment/server/parsers/string-parser.dylan
 %%DATADIR%%/sources/environment/server/win32/environment-server.dylan
 %%DATADIR%%/sources/environment/server/win32/environment-server.lid
-%%DATADIR%%/sources/environment/server/win32/library_module.dylan
+%%DATADIR%%/sources/environment/server/win32/library.dylan
 %%DATADIR%%/sources/environment/source-control/backends/generic/generic-backend.dylan
 %%DATADIR%%/sources/environment/source-control/backends/generic/generic-backend.lid
 %%DATADIR%%/sources/environment/source-control/backends/generic/library.dylan
@@ -3215,6 +3217,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/io/win32-io.lid
 %%DATADIR%%/sources/io/win32-standard-io.dylan
 %%DATADIR%%/sources/jamfiles/Makefile.in
+%%DATADIR%%/sources/jamfiles/arm-linux-build.jam
 %%DATADIR%%/sources/jamfiles/config.jam.in
 %%DATADIR%%/sources/jamfiles/mini-jambase.jam
 %%DATADIR%%/sources/jamfiles/posix-build.jam
@@ -3227,6 +3230,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/jamfiles/x86-win32-vc7-build.jam
 %%DATADIR%%/sources/jamfiles/x86-win32-vc8-build.jam
 %%DATADIR%%/sources/jamfiles/x86_64-darwin-build.jam
+%%DATADIR%%/sources/jamfiles/x86_64-freebsd-build.jam
 %%DATADIR%%/sources/jamfiles/x86_64-linux-build.jam
 %%DATADIR%%/sources/lib/big-integers/big-integers-win32.lid
 %%DATADIR%%/sources/lib/big-integers/big-integers.lid
@@ -3501,9 +3505,11 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/release-info/release-info.lid
 %%DATADIR%%/sources/lib/run-time/Makefile.in
 %%DATADIR%%/sources/lib/run-time/Makefile.win32
+%%DATADIR%%/sources/lib/run-time/boehm-collector.c
 %%DATADIR%%/sources/lib/run-time/boehm.h
 %%DATADIR%%/sources/lib/run-time/break.c
 %%DATADIR%%/sources/lib/run-time/collector.c
+%%DATADIR%%/sources/lib/run-time/exceptions.c
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-elf-dll.script
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-elf-exe.script
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-support.harp
@@ -3529,13 +3535,9 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/run-time/heap-utils.h
 %%DATADIR%%/sources/lib/run-time/minvcrt.def
 %%DATADIR%%/sources/lib/run-time/mm.h
+%%DATADIR%%/sources/lib/run-time/mps-collector.c
 %%DATADIR%%/sources/lib/run-time/mps-dylan.c
 %%DATADIR%%/sources/lib/run-time/mpsiowin32.c
-%%DATADIR%%/sources/lib/run-time/pentium-win32/dylan-plinth.lib
-%%DATADIR%%/sources/lib/run-time/pentium-win32/dylan-support.lib
-%%DATADIR%%/sources/lib/run-time/pentium-win32/minvcrt.exp
-%%DATADIR%%/sources/lib/run-time/pentium-win32/minvcrt.lib
-%%DATADIR%%/sources/lib/run-time/pentium-win32/pentium-run-time.lib
 %%DATADIR%%/sources/lib/run-time/plinth.c
 %%DATADIR%%/sources/lib/run-time/rtsyms.obj
 %%DATADIR%%/sources/lib/run-time/rtsyms.s
@@ -4204,7 +4206,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks-specs/testworks-specs.lid
 %%DATADIR%%/sources/qa/testworks-specs/variable-specs.dylan
 %%DATADIR%%/sources/qa/testworks-specs/win32-testworks-specs.lid
-%%DATADIR%%/sources/qa/testworks/Makegen
 %%DATADIR%%/sources/qa/testworks/benchmarks.dylan
 %%DATADIR%%/sources/qa/testworks/checks.dylan
 %%DATADIR%%/sources/qa/testworks/command-line.dylan
@@ -4216,10 +4217,18 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks/documentation/users-guide/source/index.rst
 %%DATADIR%%/sources/qa/testworks/documentation/users-guide/source/reference.rst
 %%DATADIR%%/sources/qa/testworks/documentation/users-guide/source/usage.rst
-%%DATADIR%%/sources/qa/testworks/gui/gui-testworks-lib.dylan
-%%DATADIR%%/sources/qa/testworks/gui/gui-testworks.lid
+%%DATADIR%%/sources/qa/testworks/gui/library.dylan
 %%DATADIR%%/sources/qa/testworks/gui/progress-window.dylan
-%%DATADIR%%/sources/qa/testworks/gui/win32-gui-testworks.lid
+%%DATADIR%%/sources/qa/testworks/gui/testworks-gui.lid
+%%DATADIR%%/sources/qa/testworks/gui/win32-testworks-gui.lid
+%%DATADIR%%/sources/qa/testworks/library.dylan
+%%DATADIR%%/sources/qa/testworks/registry/generic/testworks
+%%DATADIR%%/sources/qa/testworks/registry/generic/testworks-gui
+%%DATADIR%%/sources/qa/testworks/registry/generic/testworks-report
+%%DATADIR%%/sources/qa/testworks/registry/generic/testworks-specs
+%%DATADIR%%/sources/qa/testworks/registry/generic/testworks-test-suite
+%%DATADIR%%/sources/qa/testworks/registry/generic/testworks-test-suite-app
+%%DATADIR%%/sources/qa/testworks/registry/x86-win32/testworks-gui
 %%DATADIR%%/sources/qa/testworks/report/initialize.dylan
 %%DATADIR%%/sources/qa/testworks/report/library.dylan
 %%DATADIR%%/sources/qa/testworks/report/log-reader.dylan
@@ -4228,7 +4237,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks/report/test-diff.dylan
 %%DATADIR%%/sources/qa/testworks/report/testworks-report.lid
 %%DATADIR%%/sources/qa/testworks/reports.dylan
-%%DATADIR%%/sources/qa/testworks/specs/Makegen
 %%DATADIR%%/sources/qa/testworks/specs/class-specs.dylan
 %%DATADIR%%/sources/qa/testworks/specs/function-specs.dylan
 %%DATADIR%%/sources/qa/testworks/specs/library.dylan
@@ -4241,12 +4249,13 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks/specs/win32-testworks-specs.lid
 %%DATADIR%%/sources/qa/testworks/suites.dylan
 %%DATADIR%%/sources/qa/testworks/tests.dylan
-%%DATADIR%%/sources/qa/testworks/tests/Makegen
 %%DATADIR%%/sources/qa/testworks/tests/test-command-line.dylan
-%%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-lib.dylan
+%%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-app-library.dylan
+%%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-app.dylan
+%%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-app.lid
+%%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-library.dylan
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite.dylan
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite.lid
-%%DATADIR%%/sources/qa/testworks/testworks-lib.dylan
 %%DATADIR%%/sources/qa/testworks/testworks.dylan
 %%DATADIR%%/sources/qa/testworks/testworks.lid
 %%DATADIR%%/sources/qa/testworks/to-do.txt
@@ -4260,18 +4269,19 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/warnings-test-suite/types.dylan
 %%DATADIR%%/sources/qa/warnings-test-suite/undefined-module.dylan
 %%DATADIR%%/sources/qa/warnings-test-suite/warnings-test-suite.lid
-%%DATADIR%%/sources/registry/amd64-freebsd/c-ffi
-%%DATADIR%%/sources/registry/amd64-freebsd/common-dylan
-%%DATADIR%%/sources/registry/amd64-freebsd/dood
-%%DATADIR%%/sources/registry/amd64-freebsd/duim
-%%DATADIR%%/sources/registry/amd64-freebsd/gtk
-%%DATADIR%%/sources/registry/amd64-freebsd/gtk-c-ffi
-%%DATADIR%%/sources/registry/amd64-freebsd/io
-%%DATADIR%%/sources/registry/amd64-freebsd/jam
-%%DATADIR%%/sources/registry/amd64-freebsd/network
-%%DATADIR%%/sources/registry/amd64-freebsd/ssl-network
-%%DATADIR%%/sources/registry/amd64-freebsd/system
-%%DATADIR%%/sources/registry/amd64-freebsd/variable-search
+%%DATADIR%%/sources/registry/arm-linux/c-ffi
+%%DATADIR%%/sources/registry/arm-linux/common-dylan
+%%DATADIR%%/sources/registry/arm-linux/dood
+%%DATADIR%%/sources/registry/arm-linux/duim
+%%DATADIR%%/sources/registry/arm-linux/gtk
+%%DATADIR%%/sources/registry/arm-linux/gtk-c-ffi
+%%DATADIR%%/sources/registry/arm-linux/io
+%%DATADIR%%/sources/registry/arm-linux/jam
+%%DATADIR%%/sources/registry/arm-linux/network
+%%DATADIR%%/sources/registry/arm-linux/ssl-network
+%%DATADIR%%/sources/registry/arm-linux/stack-walker
+%%DATADIR%%/sources/registry/arm-linux/system
+%%DATADIR%%/sources/registry/arm-linux/variable-search
 %%DATADIR%%/sources/registry/generic/access-path
 %%DATADIR%%/sources/registry/generic/apple-dylan-test-suite
 %%DATADIR%%/sources/registry/generic/apple-dylan-test-suite-app
@@ -4423,7 +4433,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/gtk-duim
 %%DATADIR%%/sources/registry/generic/gtk-duim-gadget-panes
 %%DATADIR%%/sources/registry/generic/gui-dylan-playground
-%%DATADIR%%/sources/registry/generic/gui-testworks
 %%DATADIR%%/sources/registry/generic/harp
 %%DATADIR%%/sources/registry/generic/harp-cg-back-end
 %%DATADIR%%/sources/registry/generic/harp-coff
@@ -4530,6 +4539,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/test-editor-manager-common
 %%DATADIR%%/sources/registry/generic/test-profiler
 %%DATADIR%%/sources/registry/generic/testworks
+%%DATADIR%%/sources/registry/generic/testworks-gui
 %%DATADIR%%/sources/registry/generic/testworks-report
 %%DATADIR%%/sources/registry/generic/testworks-specs
 %%DATADIR%%/sources/registry/generic/testworks-test-suite
@@ -4639,7 +4649,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/x86-win32/gtk
 %%DATADIR%%/sources/registry/x86-win32/gtk-c-ffi
 %%DATADIR%%/sources/registry/x86-win32/gtk-duim-gui-test-suite
-%%DATADIR%%/sources/registry/x86-win32/gui-testworks
 %%DATADIR%%/sources/registry/x86-win32/inproc-dual
 %%DATADIR%%/sources/registry/x86-win32/io
 %%DATADIR%%/sources/registry/x86-win32/jam
@@ -4676,6 +4685,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/x86-win32/source-control-vss-backend
 %%DATADIR%%/sources/registry/x86-win32/standalone-deuce
 %%DATADIR%%/sources/registry/x86-win32/system
+%%DATADIR%%/sources/registry/x86-win32/testworks-gui
 %%DATADIR%%/sources/registry/x86-win32/tetris
 %%DATADIR%%/sources/registry/x86-win32/tic-tac-toe
 %%DATADIR%%/sources/registry/x86-win32/variable-search
@@ -4723,6 +4733,18 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/x86_64-darwin/ssl-network
 %%DATADIR%%/sources/registry/x86_64-darwin/system
 %%DATADIR%%/sources/registry/x86_64-darwin/variable-search
+%%DATADIR%%/sources/registry/x86_64-freebsd/c-ffi
+%%DATADIR%%/sources/registry/x86_64-freebsd/common-dylan
+%%DATADIR%%/sources/registry/x86_64-freebsd/dood
+%%DATADIR%%/sources/registry/x86_64-freebsd/duim
+%%DATADIR%%/sources/registry/x86_64-freebsd/gtk
+%%DATADIR%%/sources/registry/x86_64-freebsd/gtk-c-ffi
+%%DATADIR%%/sources/registry/x86_64-freebsd/io
+%%DATADIR%%/sources/registry/x86_64-freebsd/jam
+%%DATADIR%%/sources/registry/x86_64-freebsd/network
+%%DATADIR%%/sources/registry/x86_64-freebsd/ssl-network
+%%DATADIR%%/sources/registry/x86_64-freebsd/system
+%%DATADIR%%/sources/registry/x86_64-freebsd/variable-search
 %%DATADIR%%/sources/registry/x86_64-linux/c-ffi
 %%DATADIR%%/sources/registry/x86_64-linux/common-dylan
 %%DATADIR%%/sources/registry/x86_64-linux/dood
@@ -4987,13 +5009,12 @@ bin/parser-compiler
 %%DATADIR%%/sources/runtime-manager/tether-downloader/experimental-downloader.lid
 %%DATADIR%%/sources/runtime-manager/tether-downloader/library.dylan
 %%DATADIR%%/sources/runtime-manager/tether-downloader/static-block.dylan
-%%DATADIR%%/sources/system/amd64-freebsd-magic-numbers.dylan
-%%DATADIR%%/sources/system/amd64-freebsd-operating-system.dylan
-%%DATADIR%%/sources/system/amd64-freebsd-system.lid
+%%DATADIR%%/sources/system/arm-linux-magic-numbers.dylan
+%%DATADIR%%/sources/system/arm-linux-operating-system.dylan
+%%DATADIR%%/sources/system/arm-linux-system.lid
 %%DATADIR%%/sources/system/date.dylan
 %%DATADIR%%/sources/system/dump-magic-numbers.c
 %%DATADIR%%/sources/system/durations.dylan
-%%DATADIR%%/sources/system/file-system/MoreFiles.lib
 %%DATADIR%%/sources/system/file-system/file-stream.dylan
 %%DATADIR%%/sources/system/file-system/file-system.dylan
 %%DATADIR%%/sources/system/file-system/microsoft-locators.dylan
@@ -5053,6 +5074,9 @@ bin/parser-compiler
 %%DATADIR%%/sources/system/x86_64-darwin-magic-numbers.dylan
 %%DATADIR%%/sources/system/x86_64-darwin-operating-system.dylan
 %%DATADIR%%/sources/system/x86_64-darwin-system.lid
+%%DATADIR%%/sources/system/x86_64-freebsd-magic-numbers.dylan
+%%DATADIR%%/sources/system/x86_64-freebsd-operating-system.dylan
+%%DATADIR%%/sources/system/x86_64-freebsd-system.lid
 %%DATADIR%%/sources/system/x86_64-linux-magic-numbers.dylan
 %%DATADIR%%/sources/system/x86_64-linux-operating-system.dylan
 %%DATADIR%%/sources/system/x86_64-linux-system.lid
@@ -5284,6 +5308,7 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/runtime-manager/access-path
 @dirrm %%DATADIR%%/sources/runtime-manager
 @dirrm %%DATADIR%%/sources/registry/x86_64-linux
+@dirrm %%DATADIR%%/sources/registry/x86_64-freebsd
 @dirrm %%DATADIR%%/sources/registry/x86_64-darwin
 @dirrm %%DATADIR%%/sources/registry/x86-win32
 @dirrm %%DATADIR%%/sources/registry/x86-linux
@@ -5291,12 +5316,15 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/registry/x86-darwin
 @dirrm %%DATADIR%%/sources/registry/ppc-darwin
 @dirrm %%DATADIR%%/sources/registry/generic
-@dirrm %%DATADIR%%/sources/registry/amd64-freebsd
+@dirrm %%DATADIR%%/sources/registry/arm-linux
 @dirrm %%DATADIR%%/sources/registry
 @dirrm %%DATADIR%%/sources/qa/warnings-test-suite
 @dirrm %%DATADIR%%/sources/qa/testworks/tests
 @dirrm %%DATADIR%%/sources/qa/testworks/specs
 @dirrm %%DATADIR%%/sources/qa/testworks/report
+@dirrm %%DATADIR%%/sources/qa/testworks/registry/x86-win32
+@dirrm %%DATADIR%%/sources/qa/testworks/registry/generic
+@dirrm %%DATADIR%%/sources/qa/testworks/registry
 @dirrm %%DATADIR%%/sources/qa/testworks/gui
 @dirrm %%DATADIR%%/sources/qa/testworks/documentation/users-guide/source
 @dirrm %%DATADIR%%/sources/qa/testworks/documentation/users-guide
