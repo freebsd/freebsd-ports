@@ -1,0 +1,5 @@
+qpress is a portable file archiver using QuickLZ and designed to utilize fast
+storage systems to their max. It's often faster than file copy because the
+destination is smaller than the source.
+
+WWW: http://www.quicklz.com/
