@@ -1,4 +1,3 @@
-%%WWWDIR%%/package.xml
 %%WWWDIR%%/Changelog
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/LICENSE
@@ -13,6 +12,7 @@
 %%WWWDIR%%/SQL/sqlite.update.sql
 %%WWWDIR%%/automatic_addressbook.php
 %%WWWDIR%%/automatic_addressbook_backend.php
+%%WWWDIR%%/composer.json
 %%WWWDIR%%/config/config.inc.php.dist
 %%WWWDIR%%/localization/bg_BG.inc
 %%WWWDIR%%/localization/de_DE.inc
@@ -24,11 +24,15 @@
 %%WWWDIR%%/localization/gl_ES.inc
 %%WWWDIR%%/localization/hu_HU.inc
 %%WWWDIR%%/localization/it_IT.inc
+%%WWWDIR%%/localization/lt_LT.inc
 %%WWWDIR%%/localization/nl_NL.inc
+%%WWWDIR%%/localization/pl_PL.inc
+%%WWWDIR%%/localization/pt_BR.php
 %%WWWDIR%%/localization/ru_RU.inc
 %%WWWDIR%%/localization/vi_VN.inc
 %%WWWDIR%%/localization/zh_CN.inc
+%%WWWDIR%%/package.xml
 @dirrm %%WWWDIR%%/localization
+@dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/SQL
-@dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
