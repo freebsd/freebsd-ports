@@ -107,6 +107,7 @@ lib/libcyrus.a
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
 %%EXAMPLESDIR%%/imapd.conf
+%%MANCONF%%etc/man.d/cyrus-imapd.conf
 @dirrm cyrus/bin
 @dirrm include/cyrus
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP

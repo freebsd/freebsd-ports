@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.3.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
@@ -171,6 +171,12 @@ PLIST_SUB+=	LDAP_PTLOADER=""
 PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .endif
 
+.if ${OSVERSION} >= 900022
+PLIST_SUB+=	MANCONF=""
+.else
+PLIST_SUB+=	MANCONF="@comment "
+.endif
+
 .if !exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
@@ -230,6 +236,9 @@ post-patch:
 			${WRKSRC}/tools/masssievec
 		@${REINPLACE_CMD} -e "s|-lpthread|\$$(PTHREAD_LIBS)|g" \
 			${WRKSRC}/imap/Makefile.in
+		@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;" \
+			${FILESDIR}/cyrus-imapd-man.conf \
+			> ${WRKDIR}/cyrus-imapd-man.conf
 .if ${PORT_OPTIONS:MDRAC}
 		@${RM} -rf ${WRKSRC}/autom4te.cache
 .endif
@@ -237,8 +246,7 @@ post-patch:
 post-install:
 .for f in ${CYRUS_MAN3}
 		@${GZIP_CMD} ${PREFIX}/${PERLMAN}/man/man3/${f}
-		@${ECHO_CMD} ${PERLMAN}/man/man3/${f}.gz \
-			>>${TMPPLIST}
+		@${ECHO_CMD} ${PERLMAN}/man/man3/${f}.gz >>${TMPPLIST}
 .endfor
 .for f in ${CYRUS_MAN8}
 		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${f}
@@ -286,6 +294,10 @@ post-install:
 			${PREFIX}/cyrus/bin/mkimap
 		@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
 			${PREFIX}/cyrus/bin/masssievec
+.if ${OSVERSION} >= 900022
+		@${INSTALL_DATA} ${WRKDIR}/cyrus-imapd-man.conf \
+			${PREFIX}/etc/man.d/cyrus-imapd.conf
+.endif
 		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 			POST-INSTALL
 		@${CAT} ${PKGMESSAGE}
