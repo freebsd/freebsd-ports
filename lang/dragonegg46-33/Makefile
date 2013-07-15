@@ -12,9 +12,9 @@ COMMENT=	GCC plugin to use the LLVM backend
 
 CONFLICTS=	dragonegg46-devel-3.3*
 
-BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
-		llvm-config33:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
+		llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
 LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 
