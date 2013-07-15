@@ -1,4 +1,2 @@
-SHA256 (ftplib-3.1-src.tar.gz) = be524e1086cfe9d86afa832e1413dde79a4e88ee8ea5325a87ffaaf6620a0a2b
-SIZE (ftplib-3.1-src.tar.gz) = 90243
-SHA256 (ftplib-3.1-1.patch) = 374c278c5aecfc957600ae0cadc4ed0ca49a132920e84adf2b76215531c3c273
-SIZE (ftplib-3.1-1.patch) = 6741
+SHA256 (ftplib-4.0.tar.gz) = a9fabf1fdb2d6cc3713fd5413724ecc266f438a53a24595619080db9e51426a1
+SIZE (ftplib-4.0.tar.gz) = 66680
