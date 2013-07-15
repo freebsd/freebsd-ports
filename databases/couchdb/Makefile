@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchdb
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -31,7 +30,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--localstatedir=/var \
 		--disable-init \
-		--with-js-include=${LOCALBASE}/include \
+		--with-js-include=${LOCALBASE}/include/js \
 		--with-js-lib=${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -62,17 +61,19 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
 
 post-configure:
-	@${REINPLACE_CMD} -e '179s|install  -s|install|' ${WRKSRC}/src/couchdb/priv/Makefile
-	@${REINPLACE_CMD} -e '480,482d' ${WRKSRC}/etc/couchdb/Makefile
+# Cater for parallel Spidermonkey v1.7 and v1.8.5 installs by ensuring that
+# jsapi.h gets pulled from /usr/local/include/js/ instead of /usr/local/include 
+
+	@${FIND} ${WRKSRC} -name Makefile|${XARGS} ${REINPLACE_CMD} -e 's|include -I/usr/local/include/js|include/js -I/usr/local/include|'
 
 pre-install:
-	@${REINPLACE_CMD} -e '6s|database_dir = /var/lib/couchdb|database_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
-	@${REINPLACE_CMD} -e '7s|view_index_dir = /var/lib/couchdb|view_index_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
+	@${REINPLACE_CMD} -e '9s|database_dir = /var/lib/couchdb|database_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
+	@${REINPLACE_CMD} -e '10s|view_index_dir = /var/lib/couchdb|view_index_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
 
 post-install:
 .ifndef PACKAGE_BUILDING
