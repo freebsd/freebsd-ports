@@ -126,7 +126,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>otrs</name>
-	<range><lt>3.1.10</lt></range>
+	<range><lt>3.2.9</lt></range>
       </package>
     </affects>
     <description>
@@ -518,7 +518,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>otrs</name>
-	<range><lt>3.1.17</lt></range>
+	<range><lt>3.2.8</lt></range>
       </package>
     </affects>
     <description>
@@ -1481,7 +1481,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>otrs</name>
-	<range><lt>3.1.16</lt></range>
+	<range><lt>3.2.7</lt></range>
       </package>
     </affects>
     <description>
