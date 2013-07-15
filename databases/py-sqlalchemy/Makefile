@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Python SQL toolkit and Object Relational Mapper
+COMMENT=	Python SQL toolkit and Object Relational Mapper
 
 LICENSE=	MIT
 
@@ -19,6 +19,16 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 # Python3 ready
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
+PY2TO3_CMD=		${LOCALBASE}/bin/2to3-${PYTHON_VER}
+PY2TO3_ARGS=		--no-diffs --nobackups --verbose --write
+PYDISTUTILS_INSTALLARGS=	--always-unzip \
+				--install-dir ${PYEASYINSTALL_SITELIBDIR} \
+				--no-deps \
+				--optimize 2 \
+				--quiet \
+				--script-dir ${PYEASYINSTALL_BINDIR} \
+				--site-dir ${PYEASYINSTALL_SITELIBDIR} \
+				${WRKSRC}/dist/${PYEASYINSTALL_EGG}
 PYDISTUTILS_PKGNAME=	SQLAlchemy
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 PYDISTUTILS_NOEGGINFO=	yes
@@ -27,7 +37,7 @@ PYEASYINSTALL_ARCHDEP=	yes
 OPTIONS_DEFINE=		DOCS EXAMPLES TESTS
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	FIREBIRD MSSQL MYSQL PGSQL SQLITE SYBASE
-OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
 
 FIREBIRD_DESC=	Firebird backend
 MSSQL_DESC=	MS SQL Server backend
@@ -83,21 +93,35 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's/import logging/&.handlers/1' -i.bak ${WRKSRC}/test/engine/test_execute.py
+
+pre-build:
+.if ${PYTHON_REL} >= 300
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/lib
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+.if ${PYTHON_REL} >= 300
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
+.endif
+	@${MKDIR} ${DOCSDIR}
 .for i in ${AL_PORTDOCS}
-	    ${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .for i in ${AL_PORTDOCS_SUBDIR}
-	    ${MKDIR} ${DOCSDIR}/${i}
-	    @cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+	${MKDIR} ${DOCSDIR}/${i}
+	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
 .endfor
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+.if ${PYTHON_REL} >= 300
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
+.endif
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
 .if ${PYTHON_REL} < 300
@@ -116,6 +140,9 @@ easyinstall-setopt:
 .endif
 
 regression-test: build
+.if ${PYTHON_REL} >= 300
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/test
+.endif
 	@cd ${WRKSRC} && ${PYTHON_CMD} sqla_nose.py
 
 .include <bsd.port.post.mk>
