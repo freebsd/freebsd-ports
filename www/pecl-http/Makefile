@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http
-PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTVERSION=	1.7.6
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
