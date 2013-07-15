@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	extjs
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://cdn.sencha.io/ \
-		http://extjs.cachefly.net/ \
+MASTER_SITES=	http://cdn.sencha.com/ext/gpl/ \
+		http://extjs.cachefly.net/ext/gpl/ \
 		http://mirror.joehorn.idv.tw/extjs/
 DISTNAME=	ext-${PORTVERSION}-gpl
 
@@ -15,19 +15,23 @@ COMMENT=	A JavaScript platform for rapid development of cross-browser web apps
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-WRKSRC=		${WRKDIR}/extjs-${PORTVERSION}
+WRKSRC=		${WRKDIR}/ext-${PORTVERSION}.883
 
 USE_ZIP=	yes
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
-		 ext-all-debug.js ext-all-dev.js ext-all.js \
+WWW_SUB=	"bootstrap.js build.xml builds cmd ext-all-debug-w-comments.js \
+		 ext-all-debug.js ext-all-dev.js \
+		 ext-all-rtl-debug-w-comments.js ext-all-rtl-debug.js \
+		 ext-all-rtl-dev.js ext-all-rtl.js ext-all.js \
 		 ext-debug-w-comments.js ext-debug.js ext-dev.js \
-		 ext-neptune-debug-w-comments.js ext-neptune-debug.js \
-		 ext-neptune.js	ext.js index.html license.txt locale \
-		 pkgs release-notes.html resources src welcome"
+		 ext-theme-access.js ext-theme-classic-sandbox.js \
+		 ext-theme-classic.js ext-theme-gray.js ext-theme-neptune.js \
+		 ext.js file-header.js index.html license.txt locale \
+		 packages plugins release-notes.html resources src \
+		 welcome"
 
 .include <bsd.port.options.mk>
 
@@ -46,7 +50,6 @@ SUB_LIST+=	COMMENTEXAMPLES="\# "
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${RM} -rf resources/sass/.sass-cache/*
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${WWW_SUB} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 .if ${PORT_OPTIONS:MDOCS}
