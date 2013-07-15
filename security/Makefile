@@ -806,7 +806,6 @@
     SUBDIR += py-zope.security
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
-    SUBDIR += pyobfsproxy
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl

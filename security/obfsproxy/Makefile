@@ -1,42 +1,33 @@
-# ports collection makefile for:	obfsproxy
-# Date created:				20120220
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
 #
 
 PORTNAME=	obfsproxy
-DISTVERSION=	0.1.4
+PORTVERSION=	0.2.2
 PORTEPOCH=	1
-CATEGORIES=	security net
-MASTER_SITES=	https://archive.torproject.org/tor-package-archive/obfsproxy/ \
-		https://www.c-s.li/ports/
+CATEGORIES=	security net python
+MASTER_SITES=	http://www.c-s.li/ports/ \
+		http://schema.filez.com/distfiles/
+DISTNAME=	obfsproxy-${PORTVERSION}-${GIT_COMMIT}
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	Tool to obfuscate Tor traffic
+COMMENT=	Pluggable transport proxy
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	tor:${PORTSDIR}/security/tor-devel
-RUN_DEPENDS=	tor:${PORTSDIR}/security/tor-devel
-LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0:${PORTSDIR}/security/py-pyptlib \
+		${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.1:${PORTSDIR}/security/py-pycrypto
 
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
+GIT_COMMIT=	ba6098
+USE_PYTHON=	yes
+USE_TWISTED=	yes
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_PKGNAME=obfsproxy
 
-ACLOCAL_ARGS=	-I m4
-AUTOCONF_ARGS=	--include=m4
-AUTOHEADER_ARGS=	--include=m4
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing
-MAN1=		obfsproxy.1
-SUB_FILES=	pkg-message
-PLIST_FILES=	bin/obfsproxy
-USE_GNOME=	pkgconfig
+post-extract:
+	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/obfsproxy-${PORTVERSION}
 
-MAKE_JOBS_SAFE=	yes
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+WRKSRC=${WRKDIR}/obfsproxy-${PORTVERSION}
 
 .include <bsd.port.mk>
