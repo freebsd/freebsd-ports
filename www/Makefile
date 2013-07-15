@@ -2129,7 +2129,6 @@
     SUBDIR += xpi-google_shortcuts
     SUBDIR += xpi-grab_and_drag
     SUBDIR += xpi-greasemonkey
-    SUBDIR += xpi-gwt-dev-plugin
     SUBDIR += xpi-httpfox
     SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
