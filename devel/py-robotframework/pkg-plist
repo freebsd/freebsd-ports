@@ -9,27 +9,12 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/api/logger.py
 %%PYTHON_SITELIBDIR%%/robot/api/logger.pyc
 %%PYTHON_SITELIBDIR%%/robot/api/logger.pyo
-%%PYTHON_SITELIBDIR%%/robot/common/__init__.py
-%%PYTHON_SITELIBDIR%%/robot/common/__init__.pyc
-%%PYTHON_SITELIBDIR%%/robot/common/__init__.pyo
-%%PYTHON_SITELIBDIR%%/robot/common/handlers.py
-%%PYTHON_SITELIBDIR%%/robot/common/handlers.pyc
-%%PYTHON_SITELIBDIR%%/robot/common/handlers.pyo
-%%PYTHON_SITELIBDIR%%/robot/common/keyword.py
-%%PYTHON_SITELIBDIR%%/robot/common/keyword.pyc
-%%PYTHON_SITELIBDIR%%/robot/common/keyword.pyo
-%%PYTHON_SITELIBDIR%%/robot/common/libraries.py
-%%PYTHON_SITELIBDIR%%/robot/common/libraries.pyc
-%%PYTHON_SITELIBDIR%%/robot/common/libraries.pyo
-%%PYTHON_SITELIBDIR%%/robot/common/model.py
-%%PYTHON_SITELIBDIR%%/robot/common/model.pyc
-%%PYTHON_SITELIBDIR%%/robot/common/model.pyo
-%%PYTHON_SITELIBDIR%%/robot/common/statistics.py
-%%PYTHON_SITELIBDIR%%/robot/common/statistics.pyc
-%%PYTHON_SITELIBDIR%%/robot/common/statistics.pyo
 %%PYTHON_SITELIBDIR%%/robot/conf/__init__.py
 %%PYTHON_SITELIBDIR%%/robot/conf/__init__.pyc
 %%PYTHON_SITELIBDIR%%/robot/conf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/robot/conf/gatherfailed.py
+%%PYTHON_SITELIBDIR%%/robot/conf/gatherfailed.pyc
+%%PYTHON_SITELIBDIR%%/robot/conf/gatherfailed.pyo
 %%PYTHON_SITELIBDIR%%/robot/conf/settings.py
 %%PYTHON_SITELIBDIR%%/robot/conf/settings.pyc
 %%PYTHON_SITELIBDIR%%/robot/conf/settings.pyo
@@ -141,6 +126,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/libraries/OperatingSystem.py
 %%PYTHON_SITELIBDIR%%/robot/libraries/OperatingSystem.pyc
 %%PYTHON_SITELIBDIR%%/robot/libraries/OperatingSystem.pyo
+%%PYTHON_SITELIBDIR%%/robot/libraries/Process.py
+%%PYTHON_SITELIBDIR%%/robot/libraries/Process.pyc
+%%PYTHON_SITELIBDIR%%/robot/libraries/Process.pyo
 %%PYTHON_SITELIBDIR%%/robot/libraries/Remote.py
 %%PYTHON_SITELIBDIR%%/robot/libraries/Remote.pyc
 %%PYTHON_SITELIBDIR%%/robot/libraries/Remote.pyo
@@ -174,12 +162,18 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/model/__init__.py
 %%PYTHON_SITELIBDIR%%/robot/model/__init__.pyc
 %%PYTHON_SITELIBDIR%%/robot/model/__init__.pyo
+%%PYTHON_SITELIBDIR%%/robot/model/configurer.py
+%%PYTHON_SITELIBDIR%%/robot/model/configurer.pyc
+%%PYTHON_SITELIBDIR%%/robot/model/configurer.pyo
 %%PYTHON_SITELIBDIR%%/robot/model/criticality.py
 %%PYTHON_SITELIBDIR%%/robot/model/criticality.pyc
 %%PYTHON_SITELIBDIR%%/robot/model/criticality.pyo
 %%PYTHON_SITELIBDIR%%/robot/model/filter.py
 %%PYTHON_SITELIBDIR%%/robot/model/filter.pyc
 %%PYTHON_SITELIBDIR%%/robot/model/filter.pyo
+%%PYTHON_SITELIBDIR%%/robot/model/imports.py
+%%PYTHON_SITELIBDIR%%/robot/model/imports.pyc
+%%PYTHON_SITELIBDIR%%/robot/model/imports.pyo
 %%PYTHON_SITELIBDIR%%/robot/model/itemlist.py
 %%PYTHON_SITELIBDIR%%/robot/model/itemlist.pyc
 %%PYTHON_SITELIBDIR%%/robot/model/itemlist.pyo
@@ -240,6 +234,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/output/highlighting.py
 %%PYTHON_SITELIBDIR%%/robot/output/highlighting.pyc
 %%PYTHON_SITELIBDIR%%/robot/output/highlighting.pyo
+%%PYTHON_SITELIBDIR%%/robot/output/librarylogger.py
+%%PYTHON_SITELIBDIR%%/robot/output/librarylogger.pyc
+%%PYTHON_SITELIBDIR%%/robot/output/librarylogger.pyo
 %%PYTHON_SITELIBDIR%%/robot/output/listeners.py
 %%PYTHON_SITELIBDIR%%/robot/output/listeners.pyc
 %%PYTHON_SITELIBDIR%%/robot/output/listeners.pyo
@@ -378,33 +375,51 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/run.py
 %%PYTHON_SITELIBDIR%%/robot/run.pyc
 %%PYTHON_SITELIBDIR%%/robot/run.pyo
-%%PYTHON_SITELIBDIR%%/robot/runner.py
-%%PYTHON_SITELIBDIR%%/robot/runner.pyc
-%%PYTHON_SITELIBDIR%%/robot/runner.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/__init__.py
 %%PYTHON_SITELIBDIR%%/robot/running/__init__.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/__init__.pyo
-%%PYTHON_SITELIBDIR%%/robot/running/arguments.py
-%%PYTHON_SITELIBDIR%%/robot/running/arguments.pyc
-%%PYTHON_SITELIBDIR%%/robot/running/arguments.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/__init__.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/__init__.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentmapper.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentmapper.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentmapper.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentparser.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentparser.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentparser.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentresolver.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentresolver.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentresolver.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentspec.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentspec.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentspec.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentvalidator.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentvalidator.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/argumentvalidator.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/javaargumentcoercer.py
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/javaargumentcoercer.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/arguments/javaargumentcoercer.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/baselibrary.py
+%%PYTHON_SITELIBDIR%%/robot/running/baselibrary.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/baselibrary.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/builder.py
+%%PYTHON_SITELIBDIR%%/robot/running/builder.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/builder.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/context.py
 %%PYTHON_SITELIBDIR%%/robot/running/context.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/context.pyo
-%%PYTHON_SITELIBDIR%%/robot/running/defaultvalues.py
-%%PYTHON_SITELIBDIR%%/robot/running/defaultvalues.pyc
-%%PYTHON_SITELIBDIR%%/robot/running/defaultvalues.pyo
-%%PYTHON_SITELIBDIR%%/robot/running/fixture.py
-%%PYTHON_SITELIBDIR%%/robot/running/fixture.pyc
-%%PYTHON_SITELIBDIR%%/robot/running/fixture.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/defaults.py
+%%PYTHON_SITELIBDIR%%/robot/running/defaults.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/defaults.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/dynamicmethods.py
+%%PYTHON_SITELIBDIR%%/robot/running/dynamicmethods.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/dynamicmethods.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/handlers.py
 %%PYTHON_SITELIBDIR%%/robot/running/handlers.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/handlers.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/importer.py
 %%PYTHON_SITELIBDIR%%/robot/running/importer.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/importer.pyo
-%%PYTHON_SITELIBDIR%%/robot/running/javaargcoercer.py
-%%PYTHON_SITELIBDIR%%/robot/running/javaargcoercer.pyc
-%%PYTHON_SITELIBDIR%%/robot/running/javaargcoercer.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/keywords.py
 %%PYTHON_SITELIBDIR%%/robot/running/keywords.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/keywords.pyo
@@ -417,15 +432,21 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/running/outputcapture.py
 %%PYTHON_SITELIBDIR%%/robot/running/outputcapture.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/outputcapture.pyo
-%%PYTHON_SITELIBDIR%%/robot/running/runerrors.py
-%%PYTHON_SITELIBDIR%%/robot/running/runerrors.pyc
-%%PYTHON_SITELIBDIR%%/robot/running/runerrors.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/randomizer.py
+%%PYTHON_SITELIBDIR%%/robot/running/randomizer.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/randomizer.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/runkwregister.py
 %%PYTHON_SITELIBDIR%%/robot/running/runkwregister.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/runkwregister.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/runner.py
+%%PYTHON_SITELIBDIR%%/robot/running/runner.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/runner.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/signalhandler.py
 %%PYTHON_SITELIBDIR%%/robot/running/signalhandler.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/signalhandler.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/status.py
+%%PYTHON_SITELIBDIR%%/robot/running/status.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/status.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/testlibraries.py
 %%PYTHON_SITELIBDIR%%/robot/running/testlibraries.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/testlibraries.pyo
@@ -444,6 +465,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/running/timeouts/timeoutwin.py
 %%PYTHON_SITELIBDIR%%/robot/running/timeouts/timeoutwin.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/timeouts/timeoutwin.pyo
+%%PYTHON_SITELIBDIR%%/robot/running/usererrorhandler.py
+%%PYTHON_SITELIBDIR%%/robot/running/usererrorhandler.pyc
+%%PYTHON_SITELIBDIR%%/robot/running/usererrorhandler.pyo
 %%PYTHON_SITELIBDIR%%/robot/running/userkeyword.py
 %%PYTHON_SITELIBDIR%%/robot/running/userkeyword.pyc
 %%PYTHON_SITELIBDIR%%/robot/running/userkeyword.pyo
@@ -573,25 +597,25 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/writer/rowsplitter.py
 %%PYTHON_SITELIBDIR%%/robot/writer/rowsplitter.pyc
 %%PYTHON_SITELIBDIR%%/robot/writer/rowsplitter.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/robot/api
-@dirrm %%PYTHON_SITELIBDIR%%/robot/common
-@dirrm %%PYTHON_SITELIBDIR%%/robot/conf
-@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/common
-@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/lib
-@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/libdoc
-@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/rebot
-@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/testdoc
-@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata
-@dirrm %%PYTHON_SITELIBDIR%%/robot/libdocpkg
-@dirrm %%PYTHON_SITELIBDIR%%/robot/libraries
-@dirrm %%PYTHON_SITELIBDIR%%/robot/model
-@dirrm %%PYTHON_SITELIBDIR%%/robot/output
-@dirrm %%PYTHON_SITELIBDIR%%/robot/parsing
-@dirrm %%PYTHON_SITELIBDIR%%/robot/reporting
-@dirrm %%PYTHON_SITELIBDIR%%/robot/result
-@dirrm %%PYTHON_SITELIBDIR%%/robot/running/timeouts
-@dirrm %%PYTHON_SITELIBDIR%%/robot/running
-@dirrm %%PYTHON_SITELIBDIR%%/robot/utils
-@dirrm %%PYTHON_SITELIBDIR%%/robot/variables
 @dirrm %%PYTHON_SITELIBDIR%%/robot/writer
+@dirrm %%PYTHON_SITELIBDIR%%/robot/variables
+@dirrm %%PYTHON_SITELIBDIR%%/robot/utils
+@dirrm %%PYTHON_SITELIBDIR%%/robot/running/timeouts
+@dirrm %%PYTHON_SITELIBDIR%%/robot/running/arguments
+@dirrm %%PYTHON_SITELIBDIR%%/robot/running
+@dirrm %%PYTHON_SITELIBDIR%%/robot/result
+@dirrm %%PYTHON_SITELIBDIR%%/robot/reporting
+@dirrm %%PYTHON_SITELIBDIR%%/robot/parsing
+@dirrm %%PYTHON_SITELIBDIR%%/robot/output
+@dirrm %%PYTHON_SITELIBDIR%%/robot/model
+@dirrm %%PYTHON_SITELIBDIR%%/robot/libraries
+@dirrm %%PYTHON_SITELIBDIR%%/robot/libdocpkg
+@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/testdoc
+@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/rebot
+@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/libdoc
+@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/lib
+@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata/common
+@dirrm %%PYTHON_SITELIBDIR%%/robot/htmldata
+@dirrm %%PYTHON_SITELIBDIR%%/robot/conf
+@dirrm %%PYTHON_SITELIBDIR%%/robot/api
 @dirrmtry %%PYTHON_SITELIBDIR%%/robot
