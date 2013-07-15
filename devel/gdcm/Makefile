@@ -44,7 +44,7 @@ PLIST_SUB+=	VTK="@comment "
 
 GDCM_SO=	2
 GDCM_MAJ=	2.2
-GDCM_MIN=	2
+GDCM_MIN=	3
 
 PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
 		GDCM_MIN="${GDCM_MIN}" \
@@ -70,7 +70,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|share/man|man|g;' ${WRKSRC}/CMakeLists.txt
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/Utilities/doxygen && ${LOCALBASE}/bin/doxygen -u doxyfile.in 
+	cd ${WRKSRC}/Utilities/doxygen && ${LOCALBASE}/bin/doxygen -u doxyfile.in
 .endif
 
 .include <bsd.port.mk>
