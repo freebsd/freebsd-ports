@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="df428c01-ed91-11e2-9466-98fc11cdc4f5">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.297</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb13-17.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-3344</cvename>
+      <cvename>CVE-2013-3345</cvename>
+      <cvename>CVE-2013-3347</cvename>
+    </references>
+    <dates>
+      <discovery>2013-07-09</discovery>
+      <entry>2013-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30a04ab4-ed7b-11e2-8643-8c705af55518">
     <topic>squid -- denial of service</topic>
     <affects>
