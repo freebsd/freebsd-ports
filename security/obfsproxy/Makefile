@@ -23,11 +23,15 @@ GIT_COMMIT=	ba6098
 USE_PYTHON=	yes
 USE_TWISTED=	yes
 USE_PYDISTUTILS=easy_install
+SUB_FILES=	pkg-message
 PYDISTUTILS_PKGNAME=obfsproxy
 
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/obfsproxy-${PORTVERSION}
 
 WRKSRC=${WRKDIR}/obfsproxy-${PORTVERSION}
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
