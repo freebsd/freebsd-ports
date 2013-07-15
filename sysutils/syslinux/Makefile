@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	syslinux
-PORTVERSION=	5.01
+PORTVERSION=	6.01
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boot loader for the Linux operating system
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
-
-LICENSE=	GPLv2
 
 USE_XZ=		yes
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}"
+ALL_TARGET=	bios
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		syslinux.1
@@ -28,7 +29,12 @@ MAN1=		syslinux.1
 _A =	mbr/mbr.bin mbr/gptmbr.bin \
 	core/pxelinux.0 core/isolinux.bin gpxe/gpxelinux.0 \
 	memdisk/memdisk \
-	com32/menu/*.c32 com32/modules/*.c32
+	com32/chain/*.c32 com32/cmenu/libmenu/libmenu.c32 \
+	com32/elflink/ldlinux/*.c32 com32/gfxboot/*.c32 \
+	com32/hdt/*.c32 com32/lib/*.c32 \
+	com32/lua/src/*.c32 com32/mboot/*.c32 \
+	com32/menu/*.c32 com32/modules/*.c32 \
+	com32/rosh/*.c32 com32/sysdump/*.c32
 
 # convert elf_i386 to elf_i386_fbsd
 pre-patch:
@@ -47,9 +53,9 @@ build_pkg-plist:
 	  ${ECHO_CMD} "@dirrm share/syslinux" )
 
 do-install:
-	${MKDIR} ${DATADIR}
-	( cd ${WRKSRC}; ${INSTALL_DATA} ${_A} ${DATADIR} )
-	${INSTALL_PROGRAM} ${WRKSRC}/mtools/syslinux ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${MANPREFIX}/man/man1
+	(cd ${WRKSRC}/bios/mtools && ${INSTALL_PROGRAM} syslinux ${PREFIX}/bin)
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} syslinux.1 ${MANPREFIX}/man/man1)
+	@${MKDIR} ${DATADIR}
+	(cd ${WRKSRC}/bios && ${INSTALL_DATA} ${_A} ${DATADIR})
 
 .include <bsd.port.post.mk>
