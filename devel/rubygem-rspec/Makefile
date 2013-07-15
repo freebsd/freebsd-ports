@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	rspec
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	romanbsd@yahoo.com
 COMMENT=	Behaviour Driven Development in Ruby
 
-BUILD_DEPENDS=	rubygem-rspec-core>=2.13.0:${PORTSDIR}/devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=2.13.0:${PORTSDIR}/devel/rubygem-rspec-expectations \
-		rubygem-rspec-mocks>=2.13.0:${PORTSDIR}/devel/rubygem-rspec-mocks
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-rspec-core>=2.14.0:${PORTSDIR}/devel/rubygem-rspec-core \
+		rubygem-rspec-expectations>=2.14.0:${PORTSDIR}/devel/rubygem-rspec-expectations \
+		rubygem-rspec-mocks>=2.14.0:${PORTSDIR}/devel/rubygem-rspec-mocks
 
 USE_RUBY=	yes
 USE_RAKE=	yes
