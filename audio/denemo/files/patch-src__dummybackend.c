@@ -17,51 +17,53 @@
  
  
 +#if 0
- static gpointer process_thread_func(gpointer data) {
-   GMutex *mutex = g_mutex_new();
- 
-@@ -102,12 +105,15 @@
-     process_thread = NULL;
-   }
+ static gpointer
+ process_thread_func (gpointer data)
+ {
+@@ -118,6 +121,7 @@
+       process_thread = NULL;
+     }
  }
 +#endif
  
  
- static int dummy_audio_initialize(DenemoPrefs *config) {
-   g_print("initializing dummy audio backend\n");
+ static int
+@@ -125,7 +129,9 @@
+ {
+   g_print ("initializing dummy audio backend\n");
  
 +#if 0
-   start_process_thread();
+   start_process_thread ();
 +#endif
  
-   g_atomic_int_set(&dummy_audio, TRUE);
+   g_atomic_int_set (&dummy_audio, TRUE);
  
-@@ -117,7 +123,9 @@
- static int dummy_midi_initialize(DenemoPrefs *config) {
-   g_print("initializing dummy MIDI backend\n");
+@@ -137,7 +143,9 @@
+ {
+   g_print ("initializing dummy MIDI backend\n");
  
 +#if 0
-   start_process_thread();
+   start_process_thread ();
 +#endif
  
-   g_atomic_int_set(&dummy_midi, TRUE);
+   g_atomic_int_set (&dummy_midi, TRUE);
  
-@@ -130,7 +138,9 @@
+@@ -152,7 +160,9 @@
  
-   g_atomic_int_set(&dummy_audio, FALSE);
+   g_atomic_int_set (&dummy_audio, FALSE);
  
 +#if 0
-   stop_process_thread();
+   stop_process_thread ();
 +#endif
  
    return 0;
  }
-@@ -140,7 +150,9 @@
+@@ -164,7 +174,9 @@
  
-   g_atomic_int_set(&dummy_midi, FALSE);
+   g_atomic_int_set (&dummy_midi, FALSE);
  
 +#if 0
-   stop_process_thread();
+   stop_process_thread ();
 +#endif
  
    return 0;
