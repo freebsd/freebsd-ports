@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A medical image conversion utility and library
+COMMENT=	Medical image conversion utility and library
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -44,6 +44,7 @@ MAN4=		m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 USE_GNOME+=	gtk20
 PLIST_SUB+=	X11=""
 MAN1+=		xmedcon.1
+DESKTOP_ENTRIES="XMedCon" "" "${PREFIX}/etc/xmedcon.png" "${PORTNAME}" "" ""
 .else
 CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB+=	X11="@comment "
