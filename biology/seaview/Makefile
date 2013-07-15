@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://pbil.univ-lyon1.fr/software/seaview_data/archive/
