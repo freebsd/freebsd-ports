@@ -1,21 +1,19 @@
-# New ports collection makefile for:	py-fonttools
-# Date created:				2 January 2001
-# Whom:                 		Joseph Koshy <jkoshy@FreeBSD.org>
-#
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fonttools
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	print python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open source library for manipulating fonts, written in Python
+COMMENT=	Open source library for manipulating fonts, written in Python
 
 BUILD_DEPENDS=	${PYNUMPY} ${PYXML}
 RUN_DEPENDS=	${PYNUMPY} ${PYXML}
+
+OPTIONS_DEFINE=	DOCS
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -25,11 +23,13 @@ MAN1=		ttx.1
 
 DOCSDIR=	${PREFIX}/share/doc/py-fonttools
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${DOCSDIR}
