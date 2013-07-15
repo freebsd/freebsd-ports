@@ -26,7 +26,6 @@ include/git2/oid.h
 include/git2/pack.h
 include/git2/push.h
 include/git2/refdb.h
-include/git2/refdb_backend.h
 include/git2/reflog.h
 include/git2/refs.h
 include/git2/refspec.h
@@ -48,8 +47,16 @@ include/git2/transport.h
 include/git2/tree.h
 include/git2/types.h
 include/git2/version.h
+include/git2/sys/commit.h
+include/git2/sys/config.h
+include/git2/sys/index.h
+include/git2/sys/odb_backend.h
+include/git2/sys/refdb_backend.h
+include/git2/sys/refs.h
+include/git2/sys/repository.h
 lib/libgit2.so
 lib/libgit2.so.0
 lib/libgit2.so.%%SHLIB_VER%%
 libdata/pkgconfig/libgit2.pc
+@dirrm include/git2/sys
 @dirrm include/git2
