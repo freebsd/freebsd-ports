@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	print
 MASTER_SITES=	SF/ghostscript/gnu-gs/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -85,7 +85,9 @@ USE_GNOME=	gtk12
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/Makefile.drivers_post"
 
-.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
+	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
+	${OPTIONS_GROUP_SVGALIB:MGS_*:S/^GS_//}
 .if ${PORT_OPTIONS:MGS_${D}}
 PLIST_SUB+=	GS_${D}=""
 .else
@@ -128,7 +130,9 @@ pre-build-drivers.mak:
 .for N in ${DEVS_LIST}
 	@${ECHO_CMD} 'DEVICE_${N}=' >> ${WRKSRC}/src/drivers.mak
 .endfor
-.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
+	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
+	${OPTIONS_GROUP_SVGALIB:MGS_*:S/^GS_//}
 .for N in ${DEVS_LIST}
 .if ${PORT_OPTIONS:MGS_${D}}
 .if !defined(OPTIONS_UNSET) || !${OPTIONS_UNSET:MGS_${D}}

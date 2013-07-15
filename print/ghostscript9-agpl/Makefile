@@ -2,7 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -98,7 +98,10 @@ EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper lcms libpng tiff zlib
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/Makefile.drivers_post"
 
-.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
+	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
+	${OPTIONS_GROUP_ICONV:MGS_*:S/^GS_//} \
+	${OPTIONS_GROUP_SVGALIB:MGS_*:S/^GS_//}
 .if ${PORT_OPTIONS:MGS_${D}}
 PLIST_SUB+=	GS_${D}=""
 .else
@@ -148,7 +151,10 @@ pre-build-drivers.mak:
 .for N in ${DEVS_LIST}
 	@${ECHO_CMD} '${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}=' >> ${WRKSRC}/base/drivers.mak
 .endfor
-.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
+	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
+	${OPTIONS_GROUP_ICONV:MGS_*:S/^GS_//} \
+	${OPTIONS_GROUP_SVGALIB:MGS_*:S/^GS_//}
 .for N in ${DEVS_LIST}
 .if ${PORT_OPTIONS:MGS_${D}}
 .if !defined(OPTIONS_UNSET) || !${OPTIONS_UNSET:MGS_${D}}
