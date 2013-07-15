@@ -18,10 +18,10 @@ lib/rxmathfn.rxlib
 %%PORTDOCS%%%%DOCSDIR%%/rexx.ref
 %%PORTDOCS%%%%DOCSDIR%%/rexx.summary
 %%PORTDOCS%%%%DOCSDIR%%/rexx.tech
-%%PORTDOCS%%share/examples/rexx-imc/box
-%%PORTDOCS%%share/examples/rexx-imc/rexxcps.rexx
-%%PORTDOCS%%share/examples/rexx-imc/rexxtest.rexx
-%%PORTDOCS%%share/examples/rexx-imc/rxmathfn.rexx
-%%PORTDOCS%%share/examples/rexx-imc/shell.rexx
-%%PORTDOCS%%@dirrm share/examples/rexx-imc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rexxcps.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rexxtest.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rxmathfn.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shell.rexx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

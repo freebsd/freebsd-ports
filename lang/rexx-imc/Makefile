@@ -5,11 +5,13 @@ PORTNAME=	rexx-imc
 PORTVERSION=	1.76
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
+MASTER_SITES=	http://www.cs.ox.ac.uk/people/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A procedural programming language designed by IBM's UK Laboratories
+COMMENT=	Procedural programming language designed by IBM's UK Laboratories
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CONFLICTS=	rexx-regina-* oorexx-[0-9]*
 
@@ -29,11 +31,7 @@ DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
 RMEFILES=	README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 # CFLAGS safeness for ARCHs other than i386
@@ -44,30 +42,31 @@ post-patch:
 do-install:
 # install interpreter and daemon helpers
 .for prog in rexx rxque rxstack
-	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${prog} ${PREFIX}/bin)
 .endfor
 # install shared libraries, include file, and rxlib
+	(cd ${WRKSRC} && ${INSTALL_DATA} rexxsaa.h ${PREFIX}/include)
 # DO NOT delete rxlib or you will lose ability to call mathlib!!
-.for lib in librexx.so.2 rxmathfn.rxfn
-	@${INSTALL_PROGRAM} ${WRKSRC}/${lib} ${PREFIX}/lib
+.for lib in librexx.so.2 rxmathfn.rxfn rxmathfn.rxlib
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${lib} ${PREFIX}/lib)
 .endfor
-	@${LN} -sf ${PREFIX}/lib/librexx.so.2 ${PREFIX}/lib/librexx.so
-	@${INSTALL_DATA} ${WRKSRC}/rexxsaa.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/rxmathfn.rxlib ${PREFIX}/lib
+	@${LN} -sf librexx.so.2 ${PREFIX}/lib/librexx.so
 # install man pages
 .for man in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/${man} ${PREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${man} ${MANPREFIX}/man/man1)
 .endfor
 # install documenation and examples
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCFILES} ${RMEFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for doc in ${DOCFILES} ${RMEFILES}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})
 .endfor
-	@${MKDIR} ${PREFIX}/share/examples/rexx-imc
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
 .for ex in box rexxcps.rexx rexxtest.rexx rxmathfn.rexx shell.rexx
-	@${INSTALL_SCRIPT} ${WRKSRC}/${ex} ${PREFIX}/share/examples/rexx-imc
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${ex} ${EXAMPLESDIR})
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
