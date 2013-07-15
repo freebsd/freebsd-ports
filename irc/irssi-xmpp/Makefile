@@ -1,6 +1,4 @@
-# New ports collection makefile for:   irssi-xmpp
-# Date created:                11 September 2007
-# Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	irssi-xmpp
@@ -15,6 +13,7 @@ BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/irssi/modules/libfe_xmpp.so \
