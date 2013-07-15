@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30a04ab4-ed7b-11e2-8643-8c705af55518">
+    <topic>squid -- denial of service</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.2</ge><lt>3.2.12</lt></range>
+	<range><ge>3.3</ge><lt>3.3.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid project reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2013_3.txt">
+	  <p>Due to incorrect data validation Squid is vulnerable to a
+	    denial of service attack when processing specially crafted
+	    HTTP requests</p>
+	  <p>This problem allows any client who can generate HTTP requests
+	    to perform a denial of service attack on the Squid service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4123</cvename>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2013_3.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-07-13</discovery>
+      <entry>2013-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04320e7d-ea66-11e2-a96e-60a44c524f57">
     <topic>libzrtpcpp -- multiple security vulnerabilities</topic>
     <affects>
