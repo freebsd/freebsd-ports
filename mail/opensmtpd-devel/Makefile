@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201306271531
+PORTVERSION=	201307121003
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
