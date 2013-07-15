@@ -2,108 +2,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/DomainKeys_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/Note_for_SMTP_debugging.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog.md
 %%PORTDOCS%%%%DOCSDIR%%/extending.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/makedocs2.sh
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/classes.svg
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/classes/PHPMailer.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/classes/POP3.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/classes/SMTP.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/classes/phpmailerException.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/bootstrap-responsive.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/bootstrap-responsive.min.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/bootstrap.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/bootstrap.min.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/jquery.iviewer.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/prettify.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/css/template.css
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/deprecated.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/errors.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/graph_class.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/apple-touch-icon-114x114.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/apple-touch-icon-72x72.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/apple-touch-icon.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/glyphicons-halflings-white.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/glyphicons-halflings.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/arrow_down.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/arrow_right.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/class.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/constant.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/file-php.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/file.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/folder.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/function.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/icon-folder-open-big.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/icon-th-big.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/icon_template.svg
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/interface.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/method.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/ok.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/property.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/search.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/variable.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/view_source.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/visibility_private.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/visibility_protected.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/icons/visibility_public.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/grab.cur
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/hand.cur
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.rotate_left.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.rotate_right.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_fit.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_fit2.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_in.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_in2.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_out.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_out2.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_zero.png
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/iviewer/iviewer.zoom_zero2.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/img/loader.gif
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/index.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/SVGPan.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/bootstrap.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/bootstrap.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery-1.4.2.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery-1.7.1.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery-ui-1.8.2.custom.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.cookie.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.iviewer.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.iviewer.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.mousewheel.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.panzoom.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.splitter.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.tools.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/jquery.treeview.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/menu.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-apollo.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-clj.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-css.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-go.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-hs.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-lisp.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-lua.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-ml.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-n.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-proto.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-scala.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-sql.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-tex.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-vb.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-vhdl.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-wiki.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-xq.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/lang-yaml.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/prettify/prettify.min.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/sidebar.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/js/template.js
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/markers.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/namespaces/global.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/packages/PHPMailer.html
-%%PORTDOCS%%%%DOCSDIR%%/phpdoc/structure.xml
+%%PORTDOCS%%%%DOCSDIR%%/generatedocs.sh
 %%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
 %%PORTDOCS%%%%DOCSDIR%%/use_gmail.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contents.html
@@ -126,7 +29,8 @@
 %%DATADIR%%/class.phpmailer.php
 %%DATADIR%%/class.pop3.php
 %%DATADIR%%/class.smtp.php
-%%DATADIR%%/extras/class.html2text.inc
+%%DATADIR%%/composer.json
+%%DATADIR%%/extras/class.html2text.php
 %%DATADIR%%/extras/htmlfilter.php
 %%DATADIR%%/extras/ntlm_sasl_client.php
 %%DATADIR%%/language/phpmailer.lang-ar.php
@@ -136,11 +40,13 @@
 %%DATADIR%%/language/phpmailer.lang-cz.php
 %%DATADIR%%/language/phpmailer.lang-de.php
 %%DATADIR%%/language/phpmailer.lang-dk.php
+%%DATADIR%%/language/phpmailer.lang-eo.php
 %%DATADIR%%/language/phpmailer.lang-es.php
 %%DATADIR%%/language/phpmailer.lang-et.php
 %%DATADIR%%/language/phpmailer.lang-fi.php
 %%DATADIR%%/language/phpmailer.lang-fo.php
 %%DATADIR%%/language/phpmailer.lang-fr.php
+%%DATADIR%%/language/phpmailer.lang-he.php
 %%DATADIR%%/language/phpmailer.lang-hu.php
 %%DATADIR%%/language/phpmailer.lang-it.php
 %%DATADIR%%/language/phpmailer.lang-ja.php
@@ -155,9 +61,12 @@
 %%DATADIR%%/language/phpmailer.lang-zh.php
 %%DATADIR%%/language/phpmailer.lang-zh_cn.php
 %%DATADIR%%/test/contents.html
+%%DATADIR%%/test/fakesendmail.sh
+%%DATADIR%%/test/phpmailerLangTest.php
 %%DATADIR%%/test/phpmailerTest.php
 %%DATADIR%%/test/test.png
 %%DATADIR%%/test/test_callback.php
+%%DATADIR%%/test/testbootstrap-dist.php
 %%DATADIR%%/test/testemail.php
 %%DATADIR%%/test_script/LGPLv3.txt
 %%DATADIR%%/test_script/contents.html
@@ -213,14 +122,4 @@
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/packages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/namespaces
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/js/prettify
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/js
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/img/iviewer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/img/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc/classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/phpdoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

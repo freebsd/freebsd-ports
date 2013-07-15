@@ -2,28 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	phpmailer
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.6
 CATEGORIES=	mail
-MASTER_SITES=	http://${PORTNAME}.apache-extras.org.codespot.com/files/
-DISTNAME=	PHPMailer_${PORTVERSION}
+MASTER_SITES=	https://github.com/Synchro/PHPMailer/archive/
+DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 LICENSE=	LGPL3
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/PHPMailer-${PORTVERSION}
 
-USE_ZIP=	yes
+FETCH_ARGS=	-Fpr
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
-USE_PHP=	pcre
+USE_PHP=	yes
 
 SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${DATADIR}
-.for f in class.phpmailer.php class.pop3.php class.smtp.php
+.for f in class.phpmailer.php class.pop3.php class.smtp.php composer.json
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
 .endfor
 .for d in extras language test
@@ -34,7 +34,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in changelog.txt README LICENSE
+.for f in changelog.md README.md LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
