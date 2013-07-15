@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -22,7 +22,9 @@ GSL_DESC=	Extra analysis using math/gsl
 MPICH_DESC=	MPI support using net/mpich2
 OMPI_DESC=	MPI support using net/openmpi
 
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig shebangfix
+SHEBANG_FILES=	admin/*.pl scripts/*.pl scripts/*.sh src/gmxlib/selection/*.sh
+bash_CMD=	${SH}
 USE_FORTRAN=	yes
 USE_PERL5=	yes
 CMAKE_ARGS=	-DBLAS_LIBRARIES:FILEPATH="${BLAS_LIBS}" \
@@ -131,9 +133,5 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LDLIB/pkgconfig|LDLIB/../libdata/pkgconfig| ; \
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
-	@${FIND} ${WRKSRC} -name "*.pl" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/bin/perl|${PERL}|'
-	@${FIND} ${WRKSRC} -name "*.sh" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/bin/bash|/bin/sh|'
 
 .include <bsd.port.mk>
