@@ -1,39 +1,42 @@
-# New ports collection makefile for:	lwm
-# Date created:		17 March 1998
-# Whom:			J Han <hjh@photino.com>
-#
+# Created by: J Han <hjh@photino.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lwm
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight window manager
+COMMENT=	Lightweight window manager
 
+LICENSE=	GPLv2 # (or later)
+
+OPTIONS_DEFINE=	DOCS
+
+USES=		pkgconfig
 USE_XORG=	sm x11 xext
 MAKEFILE=	no_xmkmf_makefile
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
+
+CFLAGS+=	`pkg-config --cflags sm x11 xext` -DSHAPE
+LDFLAGS+=	`pkg-config --libs sm x11 xext`
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
 PLIST_FILES=	bin/${PORTNAME}
 
-CFLAGS+=	`pkg-config --cflags sm x11 xext` -DSHAPE
-LDFLAGS+=	`pkg-config --libs sm x11 xext`
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 ${MANPREFIX}/man/man1)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
 .endfor
 .endif
 
