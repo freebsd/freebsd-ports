@@ -221,6 +221,7 @@ include/gdcm-%%GDCM_MAJ%%/gdcmSequenceOfItems.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSequenceOfItems.txx
 include/gdcm-%%GDCM_MAJ%%/gdcmSerieHelper.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSeries.h
+include/gdcm-%%GDCM_MAJ%%/gdcmServiceClassApplicationInformation.h
 include/gdcm-%%GDCM_MAJ%%/gdcmServiceClassUser.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSimpleSubjectWatcher.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSmartPointer.h
