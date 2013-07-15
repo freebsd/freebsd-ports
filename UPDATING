@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   be necessary to remove the avahi-gtk port before updating. 
   Users of pkg packages can skip this step.
 
-   pkg_delete -f avahi-gtk
+   pkg_delete -f avahi-gtk\*
   or
    pkg delete -f avahi-gtk
   followed by
