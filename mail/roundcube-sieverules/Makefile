@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sieverules
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
@@ -12,13 +12,14 @@ COMMENT=	Roundcube webmail sieve plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.9.0:${PORTSDIR}/mail/roundcube
+BUILD_DEPENDS=	roundcube>=0.9.2:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.9.2:${PORTSDIR}/mail/roundcube
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-SieveRules-Managesieve
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	430d810
+GH_COMMIT=	6eda4de
 
 NO_BUILD=	yes
 
@@ -28,10 +29,10 @@ WWWDIR=		${PREFIX}/www/roundcube/plugins/sieverules
 x-generate-plist: build
 	cd ${WRKSRC}; \
 	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${.CURDIR}/pkg-plist.tmp ; \
+		${SED} -e "s,^\.,%%WWWDIR%%," >${WRKDIR}/pkg-plist.tmp ; \
 	${FIND} . -type d | ${SORT} -r | ${SED} \
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
+		-e "s,^\.,@dirrm %%WWWDIR%%," >>${WRKDIR}/pkg-plist.tmp
 
 do-install:
 	${MKDIR} ${WWWDIR}
