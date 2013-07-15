@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	LILYPOND DOCS EXAMPLES
 LILYPOND_DESC=	Install LilyPond (Printing)
 
 USE_GNOME=	gtk20 gtksourceview2 librsvg2 libxml2
-USES=		bison
+USES=		bison gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk2 \
 		--enable-jack \
