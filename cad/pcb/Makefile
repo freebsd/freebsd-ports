@@ -48,7 +48,7 @@ CONFIGURE_ARGS+= \
 	--enable-nls \
 	--with-libiconv-prefix=${LOCALBASE} \
 	--with-libintl-prefix=${LOCALBASE}
-USES=		gettext iconv
+USES+=		gettext iconv
 .for L in fr nl ru
 PLIST_FILES+=	share/locale/${L}/LC_MESSAGES/pcb.mo
 .endfor
