@@ -539,8 +539,8 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		Must use a tag or commit hash so the upstream does\
 		not "reroll" as soon as the branch is updated
 .endif
-MASTER_SITE_GITHUB+=		https://nodeload.github.com/%SUBDIR% \
-				http://nodeload.github.com/%SUBDIR%
+MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR% \
+				http://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
 .if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
 MASTER_SITES+=	GH GHC
