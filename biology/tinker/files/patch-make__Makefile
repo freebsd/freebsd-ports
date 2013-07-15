@@ -53,18 +53,18 @@
  
  ##
  ##  Machine:  Macintosh
-@@ -595,6 +609,8 @@
+@@ -597,14 +611,13 @@
             xyzpdb.x \
             xyzsybyl.x
  
+-%.o: %.f
+-	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
 +.SUFFIXES: .x
-+
- .f.o:
- 	${F77} ${F77FLAGS} ${OPTFLAGS} $*.f 
  
-@@ -604,8 +620,8 @@
- server.o:
- 	${F77} ${F77FLAGS} ${OPTFLAGS} server.f
+-%.o: %.c
+-	${CC} ${CFLAGS} ${INCLUDEDIR} ${OPTFLAGS} $<
++.f.o:
++	${F77} ${F77FLAGS} ${OPTFLAGS} $< -o $@ 
  
 -%.x: %.o libtinker.a
 -	${F77} ${LINKFLAGS} -o $@ $^ ${LIBS}; strip $@
@@ -73,14 +73,19 @@
  
  all:	${EXEFILES}
  
-@@ -616,66 +632,66 @@
- 	cat *.i *.f *.c > tinker.txt
+@@ -612,70 +625,70 @@
+ 	rm -f *.o *.a *.x
+ 
+ listing:
+-	cat *.i *.f *.c > tinker.txt
++	cat *.i *.f > tinker.txt
  
  rename:
 -	mv  alchemy.x    $(BINDIR)/alchemy
 -	mv  analyze.x    $(BINDIR)/analyze
 -	mv  anneal.x     $(BINDIR)/anneal
 -	mv  archive.x    $(BINDIR)/archive
+-	mv  bar.x        $(BINDIR)/bar
 -	mv  correlate.x  $(BINDIR)/correlate
 -	mv  crystal.x    $(BINDIR)/crystal
 -	mv  diffuse.x    $(BINDIR)/diffuse
@@ -141,6 +146,7 @@
 +	${BSD_INSTALL_PROGRAM}  analyze.x    $(BINDIR)/analyze
 +	${BSD_INSTALL_PROGRAM}  anneal.x     $(BINDIR)/anneal
 +	${BSD_INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive
++	${BSD_INSTALL_PROGRAM}  bar.x        $(BINDIR)/bar
 +	${BSD_INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate
 +	${BSD_INSTALL_PROGRAM}  crystal.x    $(BINDIR)/crystal
 +	${BSD_INSTALL_PROGRAM}  diffuse.x    $(BINDIR)/diffuse
