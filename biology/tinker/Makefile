@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-PORTVERSION=	6.2.05
+PORTVERSION=	6.2.06
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
@@ -38,6 +38,9 @@ FFLAGS+=	-mfancy-math-387 -malign-double
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
+
+pre-build:
+	@${RM} -f ${BUILD_WRKSRC}/*.c 
 
 post-install:
 	@${MKDIR} ${DATADIR}

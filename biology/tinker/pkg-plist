@@ -2,6 +2,7 @@ bin/alchemy
 bin/analyze
 bin/anneal
 bin/archive
+bin/bar
 bin/correlate
 bin/crystal
 bin/diffuse
@@ -156,6 +157,7 @@ bin/xyzsybyl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/copper.xyz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpentene.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpentene.xyz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crambin.dyn
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crambin.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crambin.pdb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crambin.seq
@@ -279,7 +281,6 @@ bin/xyzsybyl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/melittin.xyz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/membrane.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/membrane.xyz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/meohbox.dyn
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/meohbox.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/meohbox.xyz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/methane.int
