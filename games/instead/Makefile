@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	instead
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE \
+MASTER_SITES=	SF/instead/instead/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	instead_${PORTVERSION}
 
