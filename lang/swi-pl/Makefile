@@ -35,6 +35,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
 CONFIGURE_TARGET=	${ARCH}-${OPSYS:L}
 CONFIGURE_ARGS=	--with-world --without-jpl
+MAKE_ARGS=	DISABLE_PKGS="jpl"
 
 PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:L}
 
@@ -43,7 +44,7 @@ PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:L}
 .if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 .else
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 .endif
 
 .include <bsd.port.pre.mk>
