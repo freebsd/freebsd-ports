@@ -1,43 +1,39 @@
-# ex:ts=8
-# Ports collection makefile for:	ftplib
-# Date created:			Feb 11, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ftplib
-PORTVERSION=	3.1.1
+PORTVERSION=	4.0
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.nbpfaus.net/~pfau/ftplib/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-src
-
-PATCH_SITES=	http://www.nbpfaus.net/~pfau/ftplib/
-PATCHFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.patch
-PATCH_DIST_STRIP=	-p3
+MASTER_SITES=	http://nbpfaus.net/~pfau/ftplib/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of routines that implement the FTP protocol
+COMMENT=	Set of routines that implement the FTP protocol
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/linux
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=	yes
-MAKE_ARGS+=	DEBUG="${CFLAGS}" LDFLAGS="${LDFLAGS} -L."
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	lib/libftp.so lib/libftp.so.3 lib/libftp.a \
-		include/ftplib.h bin/qftp bin/ftpdir bin/ftpget \
-		bin/ftplist bin/ftprm bin/ftpsend
+PLIST_FILES=	bin/ftpdir bin/ftpget bin/ftplist bin/ftprm bin/ftpsend \
+		bin/qftp include/ftplib.h \
+		lib/libftp.a lib/libftp.so lib/libftp.so.4
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^SOVERSION/s|=.*|= $$(SONAME)| ; \
+		 s|CFLAGS =|CFLAGS +=| ; \
+		 s|LDFLAGS =|LDFLAGS +=| ; \
+		 s|$$(SOVERSION)|$$(SONAME)| ; \
+		 s|-lc -o|-o| ; \
+		 /libftp.so/s|ln -sf|${TRUE}|' ${WRKSRC}/Makefile
 
 do-install:
-	@(cd ${WRKSRC} ; \
-		${INSTALL_PROGRAM} qftp ${PREFIX}/bin ; \
-		${INSTALL_DATA} libftp.so.3 ${PREFIX}/lib ; \
-		${INSTALL_DATA} libftp.a ${PREFIX}/lib ; \
-		${LN} -fs ${PREFIX}/lib/libftp.so.3 ${PREFIX}/lib/libftp.so ; \
-		${INSTALL_DATA} ftplib.h ${PREFIX}/include ; \
-		for i in ftpdir ftpget ftplist ftprm ftpsend; do \
-  		  ${LN} -s qftp ${PREFIX}/bin/$$i ; done \
-	)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qftp ${PREFIX}/bin)
+.for i in ftpdir ftpget ftplist ftprm ftpsend
+	(cd ${PREFIX}/bin && ${LN} -sf qftp ${i})
+.endfor
+	(cd ${WRKSRC} && ${INSTALL_DATA} ftplib.h ${PREFIX}/include)
+	(cd ${WRKSRC} && ${INSTALL_DATA} libftp.a libftp.so.4 ${PREFIX}/lib)
+	(cd ${PREFIX}/lib && ${LN} -sf libftp.so.4 libftp.so)
 
 .include <bsd.port.mk>
