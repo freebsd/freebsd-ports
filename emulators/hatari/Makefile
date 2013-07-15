@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hatari
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -19,9 +19,9 @@ RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
+USES=		cmake readline
 USE_GNOME=	pygtk2
 USE_SDL=	sdl
-USES=		cmake readline
 CMAKE_ARGS=	-DPORTAUDIO_INCLUDE_DIR:STRING="${PA2_INCLUDE_DIR}" \
 		-DPORTAUDIO_LIBRARY:STRING="${PA2_LIBRARY}" \
 		-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \
@@ -32,7 +32,8 @@ MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	yes
 MANLANG=	"" fr
 MAN1=		${PORTNAME}.1
-MAN1_EN=	atari-hd-image.1 hatariui.1 hconsole.1 hmsa.1 zip2st.1
+MAN1_EN=	atari-hd-image.1 gst2ascii.1 hatari_profile.1 hatariui.1 \
+		hconsole.1 hmsa.1 zip2st.1
 
 CFLAGS+=	-I${LOCALBASE}/include/portaudio2
 PA2_INCLUDE_DIR=-I${LOCALBASE}/include/portaudio2
@@ -56,18 +57,19 @@ post-build:
 	@cd ${WRKSRC}/doc/fr && ${GZIP_CMD} -c ${PORTNAME}.1 > ${PORTNAME}.1.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1.gz ${MANPREFIX}/man/man1
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${PORTNAME}.1.gz \
+		${MANPREFIX}/man/man1)
 	@${MKDIR} ${MANPREFIX}/man/fr/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/fr/${PORTNAME}.1.gz ${MANPREFIX}/man/fr/man1
+	(cd ${WRKSRC}/doc/fr && ${INSTALL_MAN} ${PORTNAME}.1.gz \
+		${MANPREFIX}/man/fr/man1)
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/[a-z]*.txt ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.txt ${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html [a-z]*.txt ${DOCSDIR})
 	@${MKDIR} ${DOCSDIR}/fr
-	${INSTALL_DATA} ${WRKSRC}/doc/fr/*.txt ${DOCSDIR}/fr
+	(cd ${WRKSRC}/doc/fr && ${INSTALL_DATA} *.txt ${DOCSDIR}/fr)
 	@${MKDIR} ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/images
+	(cd ${WRKSRC}/doc/images && ${INSTALL_DATA} *.png ${DOCSDIR}/images)
 .endif
 
 .include <bsd.port.mk>

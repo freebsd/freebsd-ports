@@ -1,5 +1,7 @@
 bin/atari-hd-image
+bin/gst2ascii
 bin/hatari
+bin/hatari_profile.py
 bin/hatariui
 bin/hmsa
 bin/zip2st
@@ -10,11 +12,13 @@ share/applications/hatariui.desktop
 %%PORTDOCS%%%%DOCSDIR%%/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/emutos.txt
 %%PORTDOCS%%%%DOCSDIR%%/fr/clavier-exemple.txt
+%%PORTDOCS%%%%DOCSDIR%%/images/callgraph.png
 %%PORTDOCS%%%%DOCSDIR%%/images/devices.png
 %%PORTDOCS%%%%DOCSDIR%%/images/fileselector.png
 %%PORTDOCS%%%%DOCSDIR%%/images/floppydisks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/harddisks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/joystick.png
+%%PORTDOCS%%%%DOCSDIR%%/images/kcachegrind.png
 %%PORTDOCS%%%%DOCSDIR%%/images/keyboard.png
 %%PORTDOCS%%%%DOCSDIR%%/images/main.png
 %%PORTDOCS%%%%DOCSDIR%%/images/memory.png
