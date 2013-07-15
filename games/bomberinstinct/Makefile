@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bomberinstinct
-# Date created:				28 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bomberinstinct
 PORTVERSION=	0.8.9
@@ -13,20 +9,19 @@ MASTER_SITES=	SF/${PORTNAME}/Bomber%20Instinct/BomberInstinct-${PORTVERSION}
 DISTNAME=	BomberInstinct-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A nice Bomberman-like multiplayer game
+COMMENT=	Bomberman-like multiplayer game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+USES=		gettext gmake
 USE_SDL=	mixer sdl
-USES=		gettext
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
 
-pre-patch:
-	@${FIND} ${WRKSRC} -name "*.[ch]" | \
-		${XARGS} ${PERL} -pi -e 's|<SDL/|<|g'
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl -pthread
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<SDL/|<|g'
 
 .include <bsd.port.mk>
