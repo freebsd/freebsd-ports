@@ -1,7 +1,3 @@
-lib/libpbc.a
-lib/libpbc.la
-lib/libpbc.so
-lib/libpbc.so.1
 include/pbc/pbc.h
 include/pbc/pbc_a1_param.h
 include/pbc/pbc_a_param.h
@@ -14,6 +10,7 @@ include/pbc/pbc_fieldquadratic.h
 include/pbc/pbc_fp.h
 include/pbc/pbc_g_param.h
 include/pbc/pbc_hilbert.h
+include/pbc/pbc_i_param.h
 include/pbc/pbc_memory.h
 include/pbc/pbc_mnt.h
 include/pbc/pbc_multiz.h
@@ -22,7 +19,12 @@ include/pbc/pbc_param.h
 include/pbc/pbc_poly.h
 include/pbc/pbc_random.h
 include/pbc/pbc_singular.h
+include/pbc/pbc_ternary_extension_field.h
 include/pbc/pbc_test.h
 include/pbc/pbc_utils.h
 include/pbc/pbc_z.h
+lib/libpbc.a
+lib/libpbc.la
+lib/libpbc.so
+lib/libpbc.so.1
 @dirrm include/pbc

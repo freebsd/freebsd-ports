@@ -2,18 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	pbc
-PORTVERSION=	0.5.13
+PORTVERSION=	0.5.14
 CATEGORIES=	security
 MASTER_SITES=	http://crypto.stanford.edu/pbc/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of pairing-based cryptosystems
 
+LICENSE=	LGPL3
+
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
+USES=		bison
 GNU_CONFIGURE=	yes
-USE_GCC=	4.6+
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS=$$|| ; \
+		 s|-O3||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
