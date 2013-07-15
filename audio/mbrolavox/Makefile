@@ -44,8 +44,7 @@ do-extract:
 .endfor
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} * ${DATADIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
 
 # Generates OPTIONS file from voices.conf -- really for maintainer use
 # Only included for compatibility with anyone who wants to modify voices.conf
