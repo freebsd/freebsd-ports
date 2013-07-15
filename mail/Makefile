@@ -726,6 +726,7 @@
     SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += tpop3d
+    SUBDIR += trojita
     SUBDIR += tumgreyspf
     SUBDIR += uebimiau
     SUBDIR += up-imapproxy

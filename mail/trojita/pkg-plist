@@ -1,0 +1,31 @@
+bin/trojita
+share/applications/trojita.desktop
+share/icons/hicolor/32x32/apps/trojita.png
+share/icons/hicolor/scalable/apps/trojita.svg
+%%DATADIR%%/locale/trojita_common_bs.qm
+%%DATADIR%%/locale/trojita_common_cs.qm
+%%DATADIR%%/locale/trojita_common_da.qm
+%%DATADIR%%/locale/trojita_common_de.qm
+%%DATADIR%%/locale/trojita_common_el.qm
+%%DATADIR%%/locale/trojita_common_es.qm
+%%DATADIR%%/locale/trojita_common_et.qm
+%%DATADIR%%/locale/trojita_common_fr.qm
+%%DATADIR%%/locale/trojita_common_ga.qm
+%%DATADIR%%/locale/trojita_common_gl.qm
+%%DATADIR%%/locale/trojita_common_hu.qm
+%%DATADIR%%/locale/trojita_common_ia.qm
+%%DATADIR%%/locale/trojita_common_lt.qm
+%%DATADIR%%/locale/trojita_common_mr.qm
+%%DATADIR%%/locale/trojita_common_nl.qm
+%%DATADIR%%/locale/trojita_common_pl.qm
+%%DATADIR%%/locale/trojita_common_pt.qm
+%%DATADIR%%/locale/trojita_common_pt_BR.qm
+%%DATADIR%%/locale/trojita_common_sk.qm
+%%DATADIR%%/locale/trojita_common_sv.qm
+%%DATADIR%%/locale/trojita_common_tr.qm
+%%DATADIR%%/locale/trojita_common_uk.qm
+%%DATADIR%%/locale/trojita_common_x-test.qm
+%%DATADIR%%/locale/trojita_common_zh_CN.qm
+%%DATADIR%%/locale/trojita_common_zh_TW.qm
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%

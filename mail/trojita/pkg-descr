@@ -1,0 +1,20 @@
+Trojita is a fast cross-platform Qt IMAP e-mail client.
+
+Some highlights are:
+
+* It is a pure Qt application with no additional dependencies
+* Robust IMAP core implemented using Qt's Model-View framework
+* Standards compliance, resources efficiency, interoperability and high
+  productivity are primary design goals
+* Integrates well into any reasonable desktop environment
+* On-demand message list and body part loading
+* Offline IMAP support
+* Support for bandwidth-saving mode aimed at mobile users with expensive
+  connection
+* IMAP over SSH -- in addition to usual SSL/TLS connections, the server could
+  be accessed via SSH
+* Safe and robust dealing with HTML mail
+
+Trojita is neither a full PIM suite nor a POP3 client.
+
+WWW: http://trojita.flaska.net/
