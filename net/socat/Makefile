@@ -3,6 +3,7 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.7.2.2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		CRITICAL
@@ -27,6 +28,11 @@ PORTDOCS=	EXAMPLES README SECURITY FAQ
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_OPENSSL_PORT)
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
 
 .if(${OSVERSION} >= 1000024)
 CCISCLANG!=	${CC} --version | ${HEAD} -1 | ${GREP} 'clang'
