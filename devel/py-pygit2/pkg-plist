@@ -5,9 +5,6 @@
 %%PYTHON_SITELIBDIR%%/pygit2/repository.py
 %%PYTHON_SITELIBDIR%%/pygit2/repository.pyc
 %%PYTHON_SITELIBDIR%%/pygit2/repository.pyo
-%%PYTHON_SITELIBDIR%%/pygit2/utils.py
-%%PYTHON_SITELIBDIR%%/pygit2/utils.pyc
-%%PYTHON_SITELIBDIR%%/pygit2/utils.pyo
 %%PYTHON_SITELIBDIR%%/pygit2/version.py
 %%PYTHON_SITELIBDIR%%/pygit2/version.pyc
 %%PYTHON_SITELIBDIR%%/pygit2/version.pyo
