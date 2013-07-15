@@ -2,43 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	gpredict
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/gpredict/Gpredict/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Gpredict/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
+		curl:${PORTSDIR}/ftp/curl \
 		goocanvas:${PORTSDIR}/graphics/goocanvas
-BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+USES=		gettext pathfix
 USE_GNOME=	gtk20
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --localedir=${PREFIX}/share/locale
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		gpredict.1
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-DESKTOP_ENTRIES="GPREDICT" \
-		"Predict satellite passage times" \
-		"${PREFIX}/share/pixmaps/gpredict/icons/gpredict-icon.png" \
-		"gpredict" \
-		"" \
-		true
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/gpredict-icon.png|' \
+		${WRKSRC}/data/desktop/gpredict.desktop.in
 
 .include <bsd.port.mk>

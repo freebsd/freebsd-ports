@@ -1,7 +1,7 @@
-Gpredict is a satellite tracking and prediction application.
+Gpredict is a real time satellite tracking and orbit prediction program
+written using the Gtk+ widgets. Gpredict is targetted mainly towards ham
+radio operators but others interested in satellite tracking may find it
+useful as well. Gpredict uses the SGP4/SDP4 algorithms, which are
+compatible with the NORAD Keplerian elements.
 
-Originally part of the groundstation suite, its purpose is 
-to track the various amateur, weather and military satellites 
-that are of interest to radio amateurs.
-
-WWW: http://gpredict.sourceforge.net/
+WWW: http://gpredict.oz9aec.net/

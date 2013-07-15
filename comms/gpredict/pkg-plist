@@ -1,14 +1,14 @@
 bin/gpredict
+share/applications/gpredict.desktop
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/NEWS
 %%DATADIR%%/README
 %%DATADIR%%/TODO
-%%DATADIR%%/data/sample.qth
-%%DATADIR%%/data/locations.dat
 %%DATADIR%%/data/Amateur.mod
-%%DATADIR%%/data/satdata/satellites.dat
+%%DATADIR%%/data/locations.dat
+%%DATADIR%%/data/sample.qth
 %%DATADIR%%/data/satdata/amateur.cat
 %%DATADIR%%/data/satdata/cubesat.cat
 %%DATADIR%%/data/satdata/dmc.cat
@@ -36,6 +36,7 @@ bin/gpredict
 %%DATADIR%%/data/satdata/raduga.cat
 %%DATADIR%%/data/satdata/resource.cat
 %%DATADIR%%/data/satdata/sarsat.cat
+%%DATADIR%%/data/satdata/satellites.dat
 %%DATADIR%%/data/satdata/sbas.cat
 %%DATADIR%%/data/satdata/science.cat
 %%DATADIR%%/data/satdata/tdrss.cat
@@ -82,6 +83,20 @@ bin/gpredict
 %%DATADIR%%/data/trsp/35935.trsp
 %%DATADIR%%/data/trsp/36122.trsp
 %%DATADIR%%/data/trsp/7530.trsp
+share/locale/cs/LC_MESSAGES/gpredict.mo
+share/locale/da/LC_MESSAGES/gpredict.mo
+share/locale/de/LC_MESSAGES/gpredict.mo
+share/locale/en_GB/LC_MESSAGES/gpredict.mo
+share/locale/en_US/LC_MESSAGES/gpredict.mo
+share/locale/es/LC_MESSAGES/gpredict.mo
+share/locale/fi/LC_MESSAGES/gpredict.mo
+share/locale/fr/LC_MESSAGES/gpredict.mo
+share/locale/it/LC_MESSAGES/gpredict.mo
+share/locale/lt/LC_MESSAGES/gpredict.mo
+share/locale/ru/LC_MESSAGES/gpredict.mo
+share/locale/th/LC_MESSAGES/gpredict.mo
+share/pixmaps/gpredict-icon.png
+share/pixmaps/gpredict/icons/gpredict-antenna-small.png
 share/pixmaps/gpredict/icons/gpredict-antenna.png
 share/pixmaps/gpredict/icons/gpredict-azel-small.png
 share/pixmaps/gpredict/icons/gpredict-calendar.png
@@ -106,48 +121,37 @@ share/pixmaps/gpredict/icons/gpredict-mod-config.png
 share/pixmaps/gpredict/icons/gpredict-mod-detach.png
 share/pixmaps/gpredict/icons/gpredict-mod-popup.png
 share/pixmaps/gpredict/icons/gpredict-notebook.png
+share/pixmaps/gpredict/icons/gpredict-oscilloscope-small.png
 share/pixmaps/gpredict/icons/gpredict-oscilloscope.png
 share/pixmaps/gpredict/icons/gpredict-planner-small.png
 share/pixmaps/gpredict/icons/gpredict-planner.png
 share/pixmaps/gpredict/icons/gpredict-polar-small.png
 share/pixmaps/gpredict/icons/gpredict-sat-list.png
 share/pixmaps/gpredict/icons/gpredict-sat-pref.png
+share/pixmaps/gpredict/icons/gpredict-shuttle-small.png
+share/pixmaps/gpredict/icons/gpredict-shuttle.png
 share/pixmaps/gpredict/maps/earth_800.png
+share/pixmaps/gpredict/maps/nasa-bmng-01_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-01_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-03_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-03_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-05_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-05_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-07_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-07_2048.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-08_1024.jpg
+share/pixmaps/gpredict/maps/nasa-bmng-08_2048.jpg
 share/pixmaps/gpredict/maps/nasa-topo_1024.jpg
 share/pixmaps/gpredict/maps/nasa-topo_1600.jpg
 share/pixmaps/gpredict/maps/nasa-topo_2048.jpg
 share/pixmaps/gpredict/maps/nasa-topo_800.png
-share/pixmaps/gpredict/maps/nasa-bmng-01_1024.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-03_1024.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-05_1024.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-07_1024.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-08_1024.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-01_2048.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-03_2048.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-05_2048.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-07_2048.jpg
-share/pixmaps/gpredict/maps/nasa-bmng-08_2048.jpg
-share/pixmaps/gpredict/icons/gpredict-antenna-small.png
-share/pixmaps/gpredict/icons/gpredict-oscilloscope-small.png
-share/pixmaps/gpredict/icons/gpredict-shuttle.png
-share/pixmaps/gpredict/icons/gpredict-shuttle-small.png
-%%NLS%%share/locale/cs/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gpredict.mo
-%%NLS%%share/locale/th/LC_MESSAGES/gpredict.mo
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
 @dirrm share/pixmaps/gpredict/maps
 @dirrm share/pixmaps/gpredict/icons
 @dirrm share/pixmaps/gpredict
-@dirrm %%DATADIR%%/data/satdata
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 @dirrm %%DATADIR%%/data/trsp
+@dirrm %%DATADIR%%/data/satdata
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
