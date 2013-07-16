@@ -247,6 +247,7 @@
     SUBDIR += mplayer2
     SUBDIR += mplayerxp
     SUBDIR += mplex
+    SUBDIR += mpv
     SUBDIR += msdl
     SUBDIR += mxflib
     SUBDIR += mythtv
