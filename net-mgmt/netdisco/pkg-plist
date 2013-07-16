@@ -28,6 +28,7 @@ bin/port_control
 %%DATADIR%%/sql/process.sql
 %%DATADIR%%/sql/sessions.sql
 %%DATADIR%%/sql/subnets.sql
+%%DATADIR%%/sql/topology.sql
 %%DATADIR%%/sql/upgrade-0.92-to-0.93.sql
 %%DATADIR%%/sql/upgrade-0.93-to-0.94.sql
 %%DATADIR%%/sql/upgrade-0.94-to-0.95.sql

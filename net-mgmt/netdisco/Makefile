@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 
