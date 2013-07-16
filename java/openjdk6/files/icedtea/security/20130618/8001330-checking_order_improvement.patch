@@ -1,0 +1,407 @@
+# HG changeset patch
+# User chrisphi
+# Date 1373378000 -3600
+# Node ID d913c85a5297ea80a71b2f6a1174237cb2fbbbad
+# Parent  2df643057b3d5f75d287a352cadf6fc0501a1682
+8001330: Improve on checking order
+8011896: Add check for invalid offset for new AccessControlContext isAuthorized field
+
+diff --git a/src/share/vm/classfile/javaClasses.cpp b/src/share/vm/classfile/javaClasses.cpp
+--- hotspot/src/share/vm/classfile/javaClasses.cpp
++++ hotspot/src/share/vm/classfile/javaClasses.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -2559,6 +2559,7 @@
+ int java_security_AccessControlContext::_context_offset = 0;
+ int java_security_AccessControlContext::_privilegedContext_offset = 0;
+ int java_security_AccessControlContext::_isPrivileged_offset = 0;
++int java_security_AccessControlContext::_isAuthorized_offset = -1;
+ 
+ void java_security_AccessControlContext::compute_offsets() {
+   assert(_isPrivileged_offset == 0, "offsets should be initialized only once");
+@@ -2579,9 +2580,20 @@
+     fatal("Invalid layout of java.security.AccessControlContext");
+   }
+   _isPrivileged_offset = fd.offset();
++
++  // The offset may not be present for bootstrapping with older JDK.
++  if (ik->find_local_field(vmSymbols::isAuthorized_name(), vmSymbols::bool_signature(), &fd)) {
++    _isAuthorized_offset = fd.offset();
++  }
+ }
+ 
+ 
++bool java_security_AccessControlContext::is_authorized(Handle context) {
++  assert(context.not_null() && context->klass() == SystemDictionary::AccessControlContext_klass(), "Invalid type");
++  assert(_isAuthorized_offset != -1, "should be set");
++  return context->bool_field(_isAuthorized_offset) != 0;
++}
++
+ oop java_security_AccessControlContext::create(objArrayHandle context, bool isPrivileged, Handle privileged_context, TRAPS) {
+   assert(_isPrivileged_offset != 0, "offsets should have been initialized");
+   // Ensure klass is initialized
+@@ -2592,6 +2604,8 @@
+   result->obj_field_put(_context_offset, context());
+   result->obj_field_put(_privilegedContext_offset, privileged_context());
+   result->bool_field_put(_isPrivileged_offset, isPrivileged);
++  // whitelist AccessControlContexts created by the JVM.
++  result->bool_field_put(_isAuthorized_offset, true);
+   return result;
+ }
+ 
+@@ -2656,6 +2670,15 @@
+ }
+ 
+ 
++bool java_lang_System::has_security_manager() {
++  instanceKlass* ik = instanceKlass::cast(SystemDictionary::System_klass());
++  address addr = ik->static_field_addr(static_security_offset);
++  if (UseCompressedOops) {
++    return oopDesc::load_decode_heap_oop((narrowOop *)addr) != NULL;
++  } else {
++    return oopDesc::load_decode_heap_oop((oop*)addr) != NULL;
++  }
++}
+ 
+ int java_lang_String::value_offset;
+ int java_lang_String::offset_offset;
+@@ -2712,6 +2735,7 @@
+ int java_lang_System::static_in_offset;
+ int java_lang_System::static_out_offset;
+ int java_lang_System::static_err_offset;
++int java_lang_System::static_security_offset;
+ int java_lang_StackTraceElement::declaringClass_offset;
+ int java_lang_StackTraceElement::methodName_offset;
+ int java_lang_StackTraceElement::fileName_offset;
+@@ -2866,6 +2890,7 @@
+   java_lang_System::static_in_offset  = java_lang_System::hc_static_in_offset  * x;
+   java_lang_System::static_out_offset = java_lang_System::hc_static_out_offset * x;
+   java_lang_System::static_err_offset = java_lang_System::hc_static_err_offset * x;
++  java_lang_System::static_security_offset = java_lang_System::hc_static_security_offset * x;
+ 
+   // java_lang_StackTraceElement
+   java_lang_StackTraceElement::declaringClass_offset = java_lang_StackTraceElement::hc_declaringClass_offset  * x + header;
+@@ -3067,6 +3092,7 @@
+   CHECK_STATIC_OFFSET("java/lang/System", java_lang_System,  in, "Ljava/io/InputStream;");
+   CHECK_STATIC_OFFSET("java/lang/System", java_lang_System, out, "Ljava/io/PrintStream;");
+   CHECK_STATIC_OFFSET("java/lang/System", java_lang_System, err, "Ljava/io/PrintStream;");
++  CHECK_STATIC_OFFSET("java/lang/System", java_lang_System, security, "Ljava/lang/SecurityManager;");
+ 
+   // java.lang.StackTraceElement
+ 
+diff --git a/src/share/vm/classfile/javaClasses.hpp b/src/share/vm/classfile/javaClasses.hpp
+--- hotspot/src/share/vm/classfile/javaClasses.hpp
++++ hotspot/src/share/vm/classfile/javaClasses.hpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -1146,11 +1146,14 @@
+   static int _context_offset;
+   static int _privilegedContext_offset;
+   static int _isPrivileged_offset;
++  static int _isAuthorized_offset;
+ 
+   static void compute_offsets();
+  public:
+   static oop create(objArrayHandle context, bool isPrivileged, Handle privileged_context, TRAPS);
+ 
++  static bool is_authorized(Handle context);
++
+   // Debugging/initialization
+   friend class JavaClasses;
+ };
+@@ -1186,13 +1189,15 @@
+   enum {
+    hc_static_in_offset  = 0,
+    hc_static_out_offset = 1,
+-   hc_static_err_offset = 2
++   hc_static_err_offset = 2,
++   hc_static_security_offset = 3
+   };
+ 
+   static int offset_of_static_fields;
+   static int  static_in_offset;
+   static int static_out_offset;
+   static int static_err_offset;
++  static int static_security_offset;
+ 
+   static void compute_offsets();
+ 
+@@ -1201,6 +1206,8 @@
+   static int out_offset_in_bytes();
+   static int err_offset_in_bytes();
+ 
++  static bool has_security_manager();
++
+   // Debugging
+   friend class JavaClasses;
+ };
+diff --git a/src/share/vm/classfile/vmSymbols.hpp b/src/share/vm/classfile/vmSymbols.hpp
+--- hotspot/src/share/vm/classfile/vmSymbols.hpp
++++ hotspot/src/share/vm/classfile/vmSymbols.hpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -93,6 +93,7 @@
+   template(java_lang_CharSequence,                    "java/lang/CharSequence")                   \
+   template(java_security_AccessControlContext,        "java/security/AccessControlContext")       \
+   template(java_security_ProtectionDomain,            "java/security/ProtectionDomain")           \
++  template(impliesCreateAccessControlContext_name,    "impliesCreateAccessControlContext")        \
+   template(java_io_OutputStream,                      "java/io/OutputStream")                     \
+   template(java_io_Reader,                            "java/io/Reader")                           \
+   template(java_io_BufferedReader,                    "java/io/BufferedReader")                   \
+@@ -315,6 +316,7 @@
+   template(contextClassLoader_name,                   "contextClassLoader")                       \
+   template(inheritedAccessControlContext_name,        "inheritedAccessControlContext")            \
+   template(isPrivileged_name,                         "isPrivileged")                             \
++  template(isAuthorized_name,                         "isAuthorized")                             \
+   template(wait_name,                                 "wait")                                     \
+   template(checkPackageAccess_name,                   "checkPackageAccess")                       \
+   template(stackSize_name,                            "stackSize")                                \
+diff --git a/src/share/vm/memory/universe.cpp b/src/share/vm/memory/universe.cpp
+--- hotspot/src/share/vm/memory/universe.cpp
++++ hotspot/src/share/vm/memory/universe.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -143,6 +143,7 @@
+ oop Universe::_the_min_jint_string                   = NULL;
+ LatestMethodOopCache* Universe::_finalizer_register_cache = NULL;
+ LatestMethodOopCache* Universe::_loader_addClass_cache    = NULL;
++LatestMethodOopCache* Universe::_pd_implies_cache         = NULL;
+ ActiveMethodOopsCache* Universe::_reflect_invoke_cache    = NULL;
+ oop Universe::_out_of_memory_error_java_heap          = NULL;
+ oop Universe::_out_of_memory_error_perm_gen           = NULL;
+@@ -265,6 +266,7 @@
+   f->do_oop((oop*)&_the_min_jint_string);
+   _finalizer_register_cache->oops_do(f);
+   _loader_addClass_cache->oops_do(f);
++  _pd_implies_cache->oops_do(f);
+   _reflect_invoke_cache->oops_do(f);
+   f->do_oop((oop*)&_out_of_memory_error_java_heap);
+   f->do_oop((oop*)&_out_of_memory_error_perm_gen);
+@@ -787,6 +789,7 @@
+   // CompactingPermGenGen::initialize_oops() tries to populate them.
+   Universe::_finalizer_register_cache = new LatestMethodOopCache();
+   Universe::_loader_addClass_cache    = new LatestMethodOopCache();
++  Universe::_pd_implies_cache         = new LatestMethodOopCache();
+   Universe::_reflect_invoke_cache     = new ActiveMethodOopsCache();
+ 
+   if (UseSharedSpaces) {
+@@ -1137,6 +1140,23 @@
+   Universe::_loader_addClass_cache->init(
+     SystemDictionary::ClassLoader_klass(), m, CHECK_false);
+ 
++  // Setup method for checking protection domain
++  instanceKlass::cast(SystemDictionary::ProtectionDomain_klass())->link_class(CHECK_false);
++  m = instanceKlass::cast(SystemDictionary::ProtectionDomain_klass())->
++            find_method(vmSymbols::impliesCreateAccessControlContext_name(),
++                        vmSymbols::void_boolean_signature());
++  // Allow NULL which should only happen with bootstrapping.
++  if (m != NULL) {
++    if (m->is_static()) {
++      // NoSuchMethodException doesn't actually work because it tries to run the
++      // <init> function before java_lang_Class is linked. Print error and exit.
++      tty->print_cr("ProtectionDomain.impliesCreateAccessControlContext() has the wrong linkage");
++      return false; // initialization failed
++    }
++    Universe::_pd_implies_cache->init(
++      SystemDictionary::ProtectionDomain_klass(), m, CHECK_false);;
++  }
++
+   // The folowing is initializing converter functions for serialization in
+   // JVM.cpp. If we clean up the StrictMath code above we may want to find
+   // a better solution for this as well.
+@@ -1570,6 +1590,7 @@
+ 
+ 
+ methodOop LatestMethodOopCache::get_methodOop() {
++  if (klass() == NULL) return NULL;
+   instanceKlass* ik = instanceKlass::cast(klass());
+   methodOop m = ik->method_with_idnum(method_idnum());
+   assert(m != NULL, "sanity check");
+diff --git a/src/share/vm/memory/universe.hpp b/src/share/vm/memory/universe.hpp
+--- hotspot/src/share/vm/memory/universe.hpp
++++ hotspot/src/share/vm/memory/universe.hpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -179,6 +179,7 @@
+   static oop          _the_min_jint_string;          // A cache of "-2147483648" as a Java string
+   static LatestMethodOopCache* _finalizer_register_cache; // static method for registering finalizable objects
+   static LatestMethodOopCache* _loader_addClass_cache;    // method for registering loaded classes in class loader vector
++  static LatestMethodOopCache* _pd_implies_cache;         // method for checking protection domain attributes
+   static ActiveMethodOopsCache* _reflect_invoke_cache;    // method for security checks
+   static oop          _out_of_memory_error_java_heap; // preallocated error object (no backtrace)
+   static oop          _out_of_memory_error_perm_gen;  // preallocated error object (no backtrace)
+@@ -322,6 +323,7 @@
+   static oop          the_min_jint_string()          { return _the_min_jint_string;          }
+   static methodOop    finalizer_register_method()     { return _finalizer_register_cache->get_methodOop(); }
+   static methodOop    loader_addClass_method()        { return _loader_addClass_cache->get_methodOop(); }
++  static methodOop protection_domain_implies_method() { return _pd_implies_cache->get_methodOop(); }
+   static ActiveMethodOopsCache* reflect_invoke_cache() { return _reflect_invoke_cache; }
+   static oop          null_ptr_exception_instance()   { return _null_ptr_exception_instance;   }
+   static oop          arithmetic_exception_instance() { return _arithmetic_exception_instance; }
+diff --git a/src/share/vm/oops/instanceKlass.cpp b/src/share/vm/oops/instanceKlass.cpp
+--- hotspot/src/share/vm/oops/instanceKlass.cpp
++++ hotspot/src/share/vm/oops/instanceKlass.cpp
+@@ -1992,6 +1992,11 @@
+   }
+ }
+ 
++address instanceKlass::static_field_addr(int offset) {
++  return (address)(offset + instanceKlass::offset_of_static_fields() + (intptr_t)java_mirror());
++}
++
++
+ const char* instanceKlass::signature_name() const {
+   const char* src = (const char*) (name()->as_C_string());
+   const int src_length = (int)strlen(src);
+diff --git a/src/share/vm/oops/instanceKlass.hpp b/src/share/vm/oops/instanceKlass.hpp
+--- hotspot/src/share/vm/oops/instanceKlass.hpp
++++ hotspot/src/share/vm/oops/instanceKlass.hpp
+@@ -675,6 +675,8 @@
+ 
+   intptr_t* end_of_itable() const          { return start_of_itable() + itable_length(); }
+ 
++  address static_field_addr(int offset);
++
+   int offset_of_static_fields() const {
+     return (intptr_t)start_of_static_fields() - (intptr_t)as_klassOop();
+   }
+diff --git a/src/share/vm/prims/jvm.cpp b/src/share/vm/prims/jvm.cpp
+--- hotspot/src/share/vm/prims/jvm.cpp
++++ hotspot/src/share/vm/prims/jvm.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -1101,6 +1101,56 @@
+   }
+ JVM_END
+ 
++static bool is_authorized(Handle context, instanceKlassHandle klass, TRAPS) {
++  // If there is a security manager and protection domain, check the access
++  // in the protection domain, otherwise it is authorized.
++  if (java_lang_System::has_security_manager()) {
++
++    // For bootstrapping, if pd implies method isn't in the JDK, allow
++    // this context to revert to older behavior.
++    // In this case the isAuthorized field in AccessControlContext is also not
++    // present.
++    if (Universe::protection_domain_implies_method() == NULL) {
++      return true;
++    }
++
++    // Whitelist certain access control contexts
++    if (java_security_AccessControlContext::is_authorized(context)) {
++      return true;
++    }
++
++    oop prot = klass->protection_domain();
++    if (prot != NULL) {
++      // Call pd.implies(new SecurityPermission("createAccessControlContext"))
++      // in the new wrapper.
++      methodHandle m(THREAD, Universe::protection_domain_implies_method());
++      Handle h_prot(THREAD, prot);
++      JavaValue result(T_BOOLEAN);
++      JavaCallArguments args(h_prot);
++      JavaCalls::call(&result, m, &args, CHECK_false);
++      return (result.get_jboolean() != 0);
++    }
++  }
++  return true;
++}
++
++// Create an AccessControlContext with a protection domain with null codesource
++// and null permissions - which gives no permissions.
++oop create_dummy_access_control_context(TRAPS) {
++  instanceKlassHandle pd_klass (THREAD, SystemDictionary::ProtectionDomain_klass());
++  // new ProtectionDomain(null,null);
++  oop null_protection_domain = pd_klass->allocate_instance(CHECK_NULL);
++  Handle null_pd(THREAD, null_protection_domain);
++
++  // new ProtectionDomain[] {pd};
++  objArrayOop context = oopFactory::new_objArray(pd_klass(), 1, CHECK_NULL);
++  context->obj_at_put(0, null_pd());
++
++  // new AccessControlContext(new ProtectionDomain[] {pd})
++  objArrayHandle h_context(THREAD, context);
++  oop result = java_security_AccessControlContext::create(h_context, false, Handle(), CHECK_NULL);
++  return result;
++}
+ 
+ JVM_ENTRY(jobject, JVM_DoPrivileged(JNIEnv *env, jclass cls, jobject action, jobject context, jboolean wrapException))
+   JVMWrapper("JVM_DoPrivileged");
+@@ -1109,8 +1159,29 @@
+     THROW_MSG_0(vmSymbols::java_lang_NullPointerException(), "Null action");
+   }
+ 
+-  // Stack allocated list of privileged stack elements
+-  PrivilegedElement pi;
++  // Compute the frame initiating the do privileged operation and setup the privileged stack
++  vframeStream vfst(thread);
++  vfst.security_get_caller_frame(1);
++
++  if (vfst.at_end()) {
++    THROW_MSG_0(vmSymbols::java_lang_InternalError(), "no caller?");
++  }
++
++  methodOop method      = vfst.method();
++  instanceKlassHandle klass (THREAD, method->method_holder());
++
++  // Check that action object understands "Object run()"
++  Handle h_context;
++  if (context != NULL) {
++    h_context = Handle(THREAD, JNIHandles::resolve(context));
++    bool authorized = is_authorized(h_context, klass, CHECK_NULL);
++    if (!authorized) {
++      // Create an unprivileged access control object and call it's run function
++      // instead.
++      oop noprivs = create_dummy_access_control_context(CHECK_NULL);
++      h_context = Handle(THREAD, noprivs);
++    }
++  }
+ 
+   // Check that action object understands "Object run()"
+   Handle object (THREAD, JNIHandles::resolve(action));
+@@ -1124,12 +1195,10 @@
+     THROW_MSG_0(vmSymbols::java_lang_InternalError(), "No run method");
+   }
+ 
+-  // Compute the frame initiating the do privileged operation and setup the privileged stack
+-  vframeStream vfst(thread);
+-  vfst.security_get_caller_frame(1);
+-
++  // Stack allocated list of privileged stack elements
++  PrivilegedElement pi;
+   if (!vfst.at_end()) {
+-    pi.initialize(&vfst, JNIHandles::resolve(context), thread->privileged_stack_top(), CHECK_NULL);
++    pi.initialize(&vfst, h_context(), thread->privileged_stack_top(), CHECK_NULL);
+     thread->set_privileged_stack_top(&pi);
+   }
+ 

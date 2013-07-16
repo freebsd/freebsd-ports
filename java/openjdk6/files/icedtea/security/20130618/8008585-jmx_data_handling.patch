@@ -1,0 +1,69 @@
+# HG changeset patch
+# User Severin Gehwolf <sgehwolf@redhat.com>
+# Date 1371477101 -7200
+# Node ID 1fd002800d60c1c6291d49f3a2d27ccc02b296ec
+# Parent  5dd7618fd14c647d21d765fcc2431c9ee6289ae4
+8008585: Better JMX data handling
+Reviewed-by: alanb, dfuchs, jfdenise, skoivu, sjiang
+
+diff --git a/src/share/classes/javax/management/remote/JMXConnectorFactory.java b/src/share/classes/javax/management/remote/JMXConnectorFactory.java
+--- jdk/src/share/classes/javax/management/remote/JMXConnectorFactory.java
++++ jdk/src/share/classes/javax/management/remote/JMXConnectorFactory.java
+@@ -39,6 +39,7 @@
+ 
+ import com.sun.jmx.remote.util.ClassLogger;
+ import com.sun.jmx.remote.util.EnvHelp;
++import sun.reflect.misc.ReflectUtil;
+ 
+ 
+ /**
+@@ -397,10 +398,10 @@
+     }
+ 
+     static <T> T getProvider(JMXServiceURL serviceURL,
+-                             Map<String, Object> environment,
++                             final Map<String, Object> environment,
+                              String providerClassName,
+                              Class<T> targetInterface,
+-                             ClassLoader loader)
++                             final ClassLoader loader)
+             throws IOException {
+ 
+         final String protocol = serviceURL.getProtocol();
+@@ -410,11 +411,14 @@
+         T instance = null;
+ 
+         if (pkgs != null) {
+-            environment.put(PROTOCOL_PROVIDER_CLASS_LOADER, loader);
+-
+             instance =
+                 getProvider(protocol, pkgs, loader, providerClassName,
+                             targetInterface);
++
++            if (instance != null) {
++                boolean needsWrap = (loader != instance.getClass().getClassLoader());
++                environment.put(PROTOCOL_PROVIDER_CLASS_LOADER, needsWrap ? wrap(loader) : loader);
++            }
+         }
+ 
+         return instance;
+@@ -428,6 +432,19 @@
+        return serviceLoader.iterator();
+     }
+ 
++    private static ClassLoader wrap(final ClassLoader parent) {
++        return parent != null ? AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {
++            public ClassLoader run() {
++                return new ClassLoader(parent) {
++                    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
++                        ReflectUtil.checkPackageAccess(name);
++                        return super.loadClass(name, resolve);
++                    }
++                };
++            }
++        }) : null;
++    }
++
+     private static JMXConnector getConnectorAsService(ClassLoader loader,
+                                                       JMXServiceURL url,
+                                                       Map<String, ?> map)

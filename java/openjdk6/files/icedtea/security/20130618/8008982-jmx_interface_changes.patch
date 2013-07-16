@@ -1,0 +1,168 @@
+# HG changeset patch
+# User andrew
+# Date 1371487600 18000
+# Node ID a844309d9f0a490f8ac56d21f1323e8deb65ffd1
+# Parent  ebb30aed90ea44ffadd97b3c462b14e328b5dfd2
+8008982: Adjust JMX for underlying interface changes
+Reviewed-by: mchung, dholmes, dfuchs, skoivu
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java b/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+@@ -215,6 +215,11 @@
+         MXBeanIntrospector.getInstance().getAnalyzer(interfaceClass);
+     }
+ 
++    public static void testComplianceMBeanInterface(Class<?> interfaceClass)
++            throws NotCompliantMBeanException{
++        StandardMBeanIntrospector.getInstance().getAnalyzer(interfaceClass);
++    }
++
+     /**
+      * Basic method for testing if a given class is a JMX compliant
+      * Standard MBean.  This method is only called by the legacy code
+diff --git a/src/share/classes/javax/management/JMX.java b/src/share/classes/javax/management/JMX.java
+--- jdk/src/share/classes/javax/management/JMX.java
++++ jdk/src/share/classes/javax/management/JMX.java
+@@ -27,7 +27,9 @@
+ 
+ import com.sun.jmx.mbeanserver.Introspector;
+ import java.lang.reflect.InvocationHandler;
++import java.lang.reflect.Modifier;
+ import java.lang.reflect.Proxy;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * Static methods from the JMX API.  There are no instances of this class.
+@@ -203,11 +205,7 @@
+                                       ObjectName objectName,
+                                       Class<T> interfaceClass,
+                                       boolean notificationBroadcaster) {
+-        return MBeanServerInvocationHandler.newProxyInstance(
+-                connection,
+-                objectName,
+-                interfaceClass,
+-                notificationBroadcaster);
++        return createProxy(connection, objectName, interfaceClass, notificationBroadcaster, false);
+     }
+ 
+     /**
+@@ -345,26 +343,7 @@
+                                        ObjectName objectName,
+                                        Class<T> interfaceClass,
+                                        boolean notificationBroadcaster) {
+-        // Check interface for MXBean compliance
+-        //
+-        try {
+-            Introspector.testComplianceMXBeanInterface(interfaceClass);
+-        } catch (NotCompliantMBeanException e) {
+-            throw new IllegalArgumentException(e);
+-        }
+-        InvocationHandler handler = new MBeanServerInvocationHandler(
+-                connection, objectName, true);
+-        final Class[] interfaces;
+-        if (notificationBroadcaster) {
+-            interfaces =
+-                new Class<?>[] {interfaceClass, NotificationEmitter.class};
+-        } else
+-            interfaces = new Class[] {interfaceClass};
+-        Object proxy = Proxy.newProxyInstance(
+-                interfaceClass.getClassLoader(),
+-                interfaces,
+-                handler);
+-        return interfaceClass.cast(proxy);
++        return createProxy(connection, objectName, interfaceClass, notificationBroadcaster, true);
+     }
+ 
+     /**
+@@ -392,4 +371,65 @@
+         // exactly the string "MXBean" since that would mean there
+         // was no package name, which is pretty unlikely in practice.
+     }
++
++    /**
++     * Centralised M(X)Bean proxy creation code
++     * @param connection {@linkplain MBeanServerConnection} to use
++     * @param objectName M(X)Bean object name
++     * @param interfaceClass M(X)Bean interface class
++     * @param notificationEmitter Is a notification emitter?
++     * @param isMXBean Is an MXBean?
++     * @return Returns an M(X)Bean proxy generated for the provided interface class
++     * @throws SecurityException
++     * @throws IllegalArgumentException
++     */
++    private static <T> T createProxy(MBeanServerConnection connection,
++                                     ObjectName objectName,
++                                     Class<T> interfaceClass,
++                                     boolean notificationEmitter,
++                                     boolean isMXBean) {
++
++        if (System.getSecurityManager() != null) {
++            checkProxyInterface(interfaceClass);
++        }
++        try {
++            if (isMXBean) {
++                // Check interface for MXBean compliance
++                Introspector.testComplianceMXBeanInterface(interfaceClass);
++            } else {
++                // Check interface for MBean compliance
++                Introspector.testComplianceMBeanInterface(interfaceClass);
++            }
++        } catch (NotCompliantMBeanException e) {
++            throw new IllegalArgumentException(e);
++        }
++
++        InvocationHandler handler = new MBeanServerInvocationHandler(
++                connection, objectName, isMXBean);
++        final Class<?>[] interfaces;
++        if (notificationEmitter) {
++            interfaces =
++                new Class<?>[] {interfaceClass, NotificationEmitter.class};
++        } else
++            interfaces = new Class<?>[] {interfaceClass};
++
++        Object proxy = Proxy.newProxyInstance(
++                interfaceClass.getClassLoader(),
++                interfaces,
++                handler);
++        return interfaceClass.cast(proxy);
++    }
++
++    /**
++     * Checks for the M(X)Bean proxy interface being public and not restricted
++     * @param interfaceClass MBean proxy interface
++     * @throws SecurityException when the proxy interface comes from a restricted
++     *                           package or is not public
++     */
++    private static void checkProxyInterface(Class<?> interfaceClass) {
++        if (!Modifier.isPublic(interfaceClass.getModifiers())) {
++            throw new SecurityException("mbean proxy interface non-public");
++        }
++        ReflectUtil.checkPackageAccess(interfaceClass);
++    }
+ }
+diff --git a/src/share/classes/javax/management/MBeanServerInvocationHandler.java b/src/share/classes/javax/management/MBeanServerInvocationHandler.java
+--- jdk/src/share/classes/javax/management/MBeanServerInvocationHandler.java
++++ jdk/src/share/classes/javax/management/MBeanServerInvocationHandler.java
+@@ -231,20 +231,7 @@
+                                          ObjectName objectName,
+                                          Class<T> interfaceClass,
+                                          boolean notificationBroadcaster) {
+-        final InvocationHandler handler =
+-            new MBeanServerInvocationHandler(connection, objectName);
+-        final Class[] interfaces;
+-        if (notificationBroadcaster) {
+-            interfaces =
+-                new Class[] {interfaceClass, NotificationEmitter.class};
+-        } else
+-            interfaces = new Class[] {interfaceClass};
+-
+-        Object proxy =
+-            Proxy.newProxyInstance(interfaceClass.getClassLoader(),
+-                                   interfaces,
+-                                   handler);
+-        return interfaceClass.cast(proxy);
++        return JMX.newMBeanProxy(connection, objectName, interfaceClass, notificationBroadcaster);
+     }
+ 
+     public Object invoke(Object proxy, Method method, Object[] args)

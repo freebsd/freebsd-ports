@@ -1,0 +1,121 @@
+# HG changeset patch
+# User andrew
+# Date 1371486568 18000
+# Node ID 299b73e94d28adb15d73b943104ac2562ed8b189
+# Parent  9d9e6637b14441f87a7561fe23981abb4beaf5c4
+8008623: Better handling of MBeanServers
+
+diff --git a/src/share/classes/com/sun/jmx/interceptor/DefaultMBeanServerInterceptor.java b/src/share/classes/com/sun/jmx/interceptor/DefaultMBeanServerInterceptor.java
+--- jdk/src/share/classes/com/sun/jmx/interceptor/DefaultMBeanServerInterceptor.java
++++ jdk/src/share/classes/com/sun/jmx/interceptor/DefaultMBeanServerInterceptor.java
+@@ -449,8 +449,7 @@
+         Object resource = getResource(instance);
+         if (resource instanceof ClassLoader
+             && resource != server.getClass().getClassLoader()) {
+-            final ModifiableClassLoaderRepository clr =
+-                instantiator.getClassLoaderRepository();
++	    final ModifiableClassLoaderRepository clr = getInstantiatorCLR();
+             if (clr != null) clr.removeClassLoader(name);
+         }
+ 
+@@ -1008,7 +1007,7 @@
+         final Object resource = getResource(mbean);
+         if (resource instanceof ClassLoader) {
+             final ModifiableClassLoaderRepository clr =
+-                instantiator.getClassLoaderRepository();
++                getInstantiatorCLR();
+             if (clr == null) {
+                 final RuntimeException wrapped =
+                     new IllegalArgumentException(
+@@ -1869,4 +1868,12 @@
+         }
+     }
+ 
++    private ModifiableClassLoaderRepository getInstantiatorCLR() {
++        return AccessController.doPrivileged(new PrivilegedAction<ModifiableClassLoaderRepository>() {
++            @Override
++            public ModifiableClassLoaderRepository run() {
++                return instantiator != null ? instantiator.getClassLoaderRepository() : null;
++            }
++        });
++    }
+ }
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/JmxMBeanServer.java b/src/share/classes/com/sun/jmx/mbeanserver/JmxMBeanServer.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/JmxMBeanServer.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/JmxMBeanServer.java
+@@ -31,6 +31,7 @@
+ import java.io.ObjectInputStream;
+ import java.security.AccessController;
+ import java.security.Permission;
++import java.security.PrivilegedAction;
+ import java.security.PrivilegedExceptionAction;
+ 
+ // RI import
+@@ -231,8 +232,16 @@
+                 clr = new ClassLoaderRepositorySupport();
+             instantiator = new MBeanInstantiator(clr);
+         }
++
++        final MBeanInstantiator fInstantiator = instantiator;
+         this.secureClr = new
+-          SecureClassLoaderRepository(instantiator.getClassLoaderRepository());
++            SecureClassLoaderRepository(AccessController.doPrivileged(new PrivilegedAction<ClassLoaderRepository>() {
++                @Override
++                public ClassLoaderRepository run() {
++                    return fInstantiator.getClassLoaderRepository();
++                }
++            })
++        );
+         if (delegate == null)
+             delegate = new MBeanServerDelegateImpl();
+         if (outer == null)
+@@ -1246,8 +1255,14 @@
+            class loader.  The ClassLoaderRepository knows how
+            to handle that case.  */
+         ClassLoader myLoader = outerShell.getClass().getClassLoader();
+-        final ModifiableClassLoaderRepository loaders =
+-            instantiator.getClassLoaderRepository();
++        final ModifiableClassLoaderRepository loaders = AccessController.doPrivileged(new PrivilegedAction<ModifiableClassLoaderRepository>() {
++
++            @Override
++            public ModifiableClassLoaderRepository run() {
++                return instantiator.getClassLoaderRepository();
++            }
++        });
++
+         if (loaders != null) {
+             loaders.addClassLoader(myLoader);
+ 
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java b/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java
+@@ -625,6 +625,7 @@
+      * Return the Default Loader Repository used by this instantiator object.
+      **/
+     public ModifiableClassLoaderRepository getClassLoaderRepository() {
++        checkMBeanPermission((String)null, null, null, "getClassLoaderRepository");
+         return clr;
+     }
+ 
+@@ -736,9 +737,19 @@
+                                              String member,
+                                              ObjectName objectName,
+                                              String actions) {
++        if (clazz != null) {
++            checkMBeanPermission(clazz.getName(), member, objectName, actions);
++        }
++    }
++
++    private static void checkMBeanPermission(String classname,
++                                             String member,
++                                             ObjectName objectName,
++                                             String actions)
++        throws SecurityException {
+         SecurityManager sm = System.getSecurityManager();
+-        if (clazz != null && sm != null) {
+-            Permission perm = new MBeanPermission(clazz.getName(),
++        if (sm != null) {
++            Permission perm = new MBeanPermission(classname,
+                                                   member,
+                                                   objectName,
+                                                   actions);

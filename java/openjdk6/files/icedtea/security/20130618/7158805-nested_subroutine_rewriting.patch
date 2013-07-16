@@ -1,0 +1,467 @@
+# HG changeset patch
+# User chrisphi
+# Date 1373377939 -3600
+# Node ID 2df643057b3d5f75d287a352cadf6fc0501a1682
+# Parent  694e7185c7d959055f6edd878a0e8ff16c5461ba
+7158805: Better rewriting of nested subroutine calls
+
+diff --git a/src/share/vm/memory/allocation.cpp b/src/share/vm/memory/allocation.cpp
+--- hotspot/src/share/vm/memory/allocation.cpp
++++ hotspot/src/share/vm/memory/allocation.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -199,7 +199,7 @@
+    ChunkPool(size_t size) : _size(size) { _first = NULL; _num_chunks = _num_used = 0; }
+ 
+   // Allocate a new chunk from the pool (might expand the pool)
+-  void* allocate(size_t bytes) {
++  void* allocate(size_t bytes, AllocFailType alloc_failmode) {
+     assert(bytes == _size, "bad size");
+     void* p = NULL;
+     { ThreadCritical tc;
+@@ -207,9 +207,9 @@
+       p = get_first();
+       if (p == NULL) p = os::malloc(bytes);
+     }
+-    if (p == NULL)
++    if (p == NULL && alloc_failmode == AllocFailStrategy::EXIT_OOM) {
+       vm_exit_out_of_memory(bytes, "ChunkPool::allocate");
+-
++    }
+     return p;
+   }
+ 
+@@ -300,7 +300,7 @@
+ //--------------------------------------------------------------------------------------
+ // Chunk implementation
+ 
+-void* Chunk::operator new(size_t requested_size, size_t length) {
++void* Chunk::operator new(size_t requested_size, AllocFailType alloc_failmode, size_t length) {
+   // requested_size is equal to sizeof(Chunk) but in order for the arena
+   // allocations to come out aligned as expected the size must be aligned
+   // to expected arean alignment.
+@@ -308,13 +308,14 @@
+   assert(ARENA_ALIGN(requested_size) == aligned_overhead_size(), "Bad alignment");
+   size_t bytes = ARENA_ALIGN(requested_size) + length;
+   switch (length) {
+-   case Chunk::size:        return ChunkPool::large_pool()->allocate(bytes);
+-   case Chunk::medium_size: return ChunkPool::medium_pool()->allocate(bytes);
+-   case Chunk::init_size:   return ChunkPool::small_pool()->allocate(bytes);
++   case Chunk::size:        return ChunkPool::large_pool()->allocate(bytes, alloc_failmode);
++   case Chunk::medium_size: return ChunkPool::medium_pool()->allocate(bytes, alloc_failmode);
++   case Chunk::init_size:   return ChunkPool::small_pool()->allocate(bytes, alloc_failmode);
+    default: {
+-     void *p =  os::malloc(bytes);
+-     if (p == NULL)
++     void* p = os::malloc(bytes);
++     if (p == NULL && alloc_failmode == AllocFailStrategy::EXIT_OOM) {
+        vm_exit_out_of_memory(bytes, "Chunk::new");
++     }
+      return p;
+    }
+   }
+@@ -367,14 +368,14 @@
+ Arena::Arena(size_t init_size) {
+   size_t round_size = (sizeof (char *)) - 1;
+   init_size = (init_size+round_size) & ~round_size;
+-  _first = _chunk = new (init_size) Chunk(init_size);
++  _first = _chunk = new (AllocFailStrategy::EXIT_OOM, init_size) Chunk(init_size);
+   _hwm = _chunk->bottom();      // Save the cached hwm, max
+   _max = _chunk->top();
+   set_size_in_bytes(init_size);
+ }
+ 
+ Arena::Arena() {
+-  _first = _chunk = new (Chunk::init_size) Chunk(Chunk::init_size);
++  _first = _chunk = new (AllocFailStrategy::EXIT_OOM, Chunk::init_size) Chunk(Chunk::init_size);
+   _hwm = _chunk->bottom();      // Save the cached hwm, max
+   _max = _chunk->top();
+   set_size_in_bytes(Chunk::init_size);
+@@ -427,15 +428,15 @@
+ }
+ 
+ // Grow a new Chunk
+-void* Arena::grow( size_t x ) {
++void* Arena::grow(size_t x, AllocFailType alloc_failmode) {
+   // Get minimal required size.  Either real big, or even bigger for giant objs
+   size_t len = MAX2(x, (size_t) Chunk::size);
+ 
+   Chunk *k = _chunk;            // Get filled-up chunk address
+-  _chunk = new (len) Chunk(len);
++  _chunk = new (alloc_failmode, len) Chunk(len);
+ 
+   if (_chunk == NULL) {
+-    signal_out_of_memory(len * Chunk::aligned_overhead_size(), "Arena::grow");
++    return NULL;
+   }
+ 
+   if (k) k->set_next(_chunk);   // Append new chunk to end of linked list
+@@ -451,13 +452,16 @@
+ 
+ 
+ // Reallocate storage in Arena.
+-void *Arena::Arealloc(void* old_ptr, size_t old_size, size_t new_size) {
++void *Arena::Arealloc(void* old_ptr, size_t old_size, size_t new_size, AllocFailType alloc_failmode) {
+   assert(new_size >= 0, "bad size");
+   if (new_size == 0) return NULL;
+ #ifdef ASSERT
+   if (UseMallocOnly) {
+     // always allocate a new object  (otherwise we'll free this one twice)
+-    char* copy = (char*)Amalloc(new_size);
++    char* copy = (char*)Amalloc(new_size, alloc_failmode);
++    if (copy == NULL) {
++      return NULL;
++    }
+     size_t n = MIN2(old_size, new_size);
+     if (n > 0) memcpy(copy, old_ptr, n);
+     Afree(old_ptr,old_size);    // Mostly done to keep stats accurate
+@@ -483,7 +487,10 @@
+   }
+ 
+   // Oops, got to relocate guts
+-  void *new_ptr = Amalloc(new_size);
++  void *new_ptr = Amalloc(new_size, alloc_failmode);
++  if (new_ptr == NULL) {
++    return NULL;
++  }
+   memcpy( new_ptr, c_old, old_size );
+   Afree(c_old,old_size);        // Mostly done to keep stats accurate
+   return new_ptr;
+diff --git a/src/share/vm/memory/allocation.hpp b/src/share/vm/memory/allocation.hpp
+--- hotspot/src/share/vm/memory/allocation.hpp
++++ hotspot/src/share/vm/memory/allocation.hpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -34,10 +34,18 @@
+ #include "opto/c2_globals.hpp"
+ #endif
+ 
++#include <new>
++
+ #define ARENA_ALIGN_M1 (((size_t)(ARENA_AMALLOC_ALIGNMENT)) - 1)
+ #define ARENA_ALIGN_MASK (~((size_t)ARENA_ALIGN_M1))
+ #define ARENA_ALIGN(x) ((((size_t)(x)) + ARENA_ALIGN_M1) & ARENA_ALIGN_MASK)
+ 
++class AllocFailStrategy {
++public:
++  enum AllocFailEnum { EXIT_OOM, RETURN_NULL };
++};
++typedef AllocFailStrategy::AllocFailEnum AllocFailType;
++
+ // All classes in the virtual machine must be subclassed
+ // by one of the following allocation classes:
+ //
+@@ -152,7 +160,7 @@
+   Chunk*       _next;     // Next Chunk in list
+   const size_t _len;      // Size of this Chunk
+  public:
+-  void* operator new(size_t size, size_t length);
++  void* operator new(size_t size, AllocFailType alloc_failmode, size_t length);
+   void  operator delete(void* p);
+   Chunk(size_t length);
+ 
+@@ -200,7 +208,8 @@
+   Chunk *_first;                // First chunk
+   Chunk *_chunk;                // current chunk
+   char *_hwm, *_max;            // High water mark and max in current chunk
+-  void* grow(size_t x);         // Get a new Chunk of at least size x
++  // Get a new Chunk of at least size x
++  void* grow(size_t x, AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM);
+   NOT_PRODUCT(size_t _size_in_bytes;) // Size of arena (used for memory usage tracing)
+   NOT_PRODUCT(static size_t _bytes_allocated;) // total #bytes allocated since start
+   friend class AllocStats;
+@@ -209,10 +218,15 @@
+ 
+   void signal_out_of_memory(size_t request, const char* whence) const;
+ 
+-  void check_for_overflow(size_t request, const char* whence) const {
++  bool check_for_overflow(size_t request, const char* whence,
++      AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) const {
+     if (UINTPTR_MAX - request < (uintptr_t)_hwm) {
++      if (alloc_failmode == AllocFailStrategy::RETURN_NULL) {
++        return false;
++      }
+       signal_out_of_memory(request, whence);
+     }
++    return true;
+   }
+ 
+  public:
+@@ -224,14 +238,15 @@
+   char* hwm() const             { return _hwm; }
+ 
+   // Fast allocate in the arena.  Common case is: pointer test + increment.
+-  void* Amalloc(size_t x) {
++  void* Amalloc(size_t x, AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) {
+     assert(is_power_of_2(ARENA_AMALLOC_ALIGNMENT) , "should be a power of 2");
+     x = ARENA_ALIGN(x);
+     debug_only(if (UseMallocOnly) return malloc(x);)
+-    check_for_overflow(x, "Arena::Amalloc");
++    if (!check_for_overflow(x, "Arena::Amalloc", alloc_failmode))
++      return NULL;
+     NOT_PRODUCT(_bytes_allocated += x);
+     if (_hwm + x > _max) {
+-      return grow(x);
++      return grow(x, alloc_failmode);
+     } else {
+       char *old = _hwm;
+       _hwm += x;
+@@ -239,13 +254,14 @@
+     }
+   }
+   // Further assume size is padded out to words
+-  void *Amalloc_4(size_t x) {
++  void *Amalloc_4(size_t x, AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) {
+     assert( (x&(sizeof(char*)-1)) == 0, "misaligned size" );
+     debug_only(if (UseMallocOnly) return malloc(x);)
+-    check_for_overflow(x, "Arena::Amalloc_4");
++    if (!check_for_overflow(x, "Arena::Amalloc_4", alloc_failmode))
++      return NULL;
+     NOT_PRODUCT(_bytes_allocated += x);
+     if (_hwm + x > _max) {
+-      return grow(x);
++      return grow(x, alloc_failmode);
+     } else {
+       char *old = _hwm;
+       _hwm += x;
+@@ -255,7 +271,7 @@
+ 
+   // Allocate with 'double' alignment. It is 8 bytes on sparc.
+   // In other cases Amalloc_D() should be the same as Amalloc_4().
+-  void* Amalloc_D(size_t x) {
++  void* Amalloc_D(size_t x, AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) {
+     assert( (x&(sizeof(char*)-1)) == 0, "misaligned size" );
+     debug_only(if (UseMallocOnly) return malloc(x);)
+ #if defined(SPARC) && !defined(_LP64)
+@@ -263,10 +279,11 @@
+     size_t delta = (((size_t)_hwm + DALIGN_M1) & ~DALIGN_M1) - (size_t)_hwm;
+     x += delta;
+ #endif
+-    check_for_overflow(x, "Arena::Amalloc_D");
++    if (!check_for_overflow(x, "Arena::Amalloc_D", alloc_failmode))
++      return NULL;
+     NOT_PRODUCT(_bytes_allocated += x);
+     if (_hwm + x > _max) {
+-      return grow(x); // grow() returns a result aligned >= 8 bytes.
++      return grow(x, alloc_failmode); // grow() returns a result aligned >= 8 bytes.
+     } else {
+       char *old = _hwm;
+       _hwm += x;
+@@ -286,7 +303,8 @@
+     if (((char*)ptr) + size == _hwm) _hwm = (char*)ptr;
+   }
+ 
+-  void *Arealloc( void *old_ptr, size_t old_size, size_t new_size );
++  void *Arealloc( void *old_ptr, size_t old_size, size_t new_size,
++     AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM);
+ 
+   // Move contents of this arena into an empty arena
+   Arena *move_contents(Arena *empty_arena);
+@@ -328,9 +346,12 @@
+ 
+ 
+ //%note allocation_1
+-extern char* resource_allocate_bytes(size_t size);
+-extern char* resource_allocate_bytes(Thread* thread, size_t size);
+-extern char* resource_reallocate_bytes( char *old, size_t old_size, size_t new_size);
++extern char* resource_allocate_bytes(size_t size,
++    AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM);
++extern char* resource_allocate_bytes(Thread* thread, size_t size,
++    AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM);
++extern char* resource_reallocate_bytes( char *old, size_t old_size, size_t new_size,
++    AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM);
+ extern void resource_free_bytes( char *old, size_t size );
+ 
+ //----------------------------------------------------------------------
+@@ -376,6 +397,13 @@
+       DEBUG_ONLY(set_allocation_type(res, RESOURCE_AREA);)
+       return res;
+   }
++
++  void* operator new(size_t size, const std::nothrow_t& nothrow_constant) {
++    address res = (address)resource_allocate_bytes(size, AllocFailStrategy::RETURN_NULL);
++    DEBUG_ONLY(if (res != NULL) set_allocation_type(res, RESOURCE_AREA);)
++    return res;
++  }
++
+   void  operator delete(void* p);
+ };
+ 
+@@ -386,6 +414,9 @@
+ #define NEW_RESOURCE_ARRAY(type, size)\
+   (type*) resource_allocate_bytes((size) * sizeof(type))
+ 
++#define NEW_RESOURCE_ARRAY_RETURN_NULL(type, size)\
++  (type*) resource_allocate_bytes((size) * sizeof(type), AllocFailStrategy::RETURN_NULL)
++
+ #define NEW_RESOURCE_ARRAY_IN_THREAD(thread, type, size)\
+   (type*) resource_allocate_bytes(thread, (size) * sizeof(type))
+ 
+diff --git a/src/share/vm/memory/allocation.inline.hpp b/src/share/vm/memory/allocation.inline.hpp
+--- hotspot/src/share/vm/memory/allocation.inline.hpp
++++ hotspot/src/share/vm/memory/allocation.inline.hpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -34,25 +34,29 @@
+ 
+ 
+ // allocate using malloc; will fail if no memory available
+-inline char* AllocateHeap(size_t size, const char* name = NULL) {
++inline char* AllocateHeap(size_t size, const char* name = NULL,
++     AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) {
+   char* p = (char*) os::malloc(size);
+   #ifdef ASSERT
+   if (PrintMallocFree) trace_heap_malloc(size, name, p);
+   #else
+   Unused_Variable(name);
+   #endif
+-  if (p == NULL) vm_exit_out_of_memory(size, name);
++  if (p == NULL && alloc_failmode == AllocFailStrategy::EXIT_OOM)
++    vm_exit_out_of_memory(size, "AllocateHeap");
+   return p;
+ }
+ 
+-inline char* ReallocateHeap(char *old, size_t size, const char* name = NULL) {
++inline char* ReallocateHeap(char *old, size_t size, const char* name = NULL,
++    AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) {
+   char* p = (char*) os::realloc(old,size);
+   #ifdef ASSERT
+   if (PrintMallocFree) trace_heap_malloc(size, name, p);
+   #else
+   Unused_Variable(name);
+   #endif
+-  if (p == NULL) vm_exit_out_of_memory(size, name);
++  if (p == NULL && alloc_failmode == AllocFailStrategy::EXIT_OOM)
++    vm_exit_out_of_memory(size, "ReallocateHeap");
+   return p;
+ }
+ 
+diff --git a/src/share/vm/memory/resourceArea.cpp b/src/share/vm/memory/resourceArea.cpp
+--- hotspot/src/share/vm/memory/resourceArea.cpp
++++ hotspot/src/share/vm/memory/resourceArea.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -42,15 +42,16 @@
+ // The following routines are declared in allocation.hpp and used everywhere:
+ 
+ // Allocation in thread-local resource area
+-extern char* resource_allocate_bytes(size_t size) {
+-  return Thread::current()->resource_area()->allocate_bytes(size);
++extern char* resource_allocate_bytes(size_t size, AllocFailType alloc_failmode) {
++  return Thread::current()->resource_area()->allocate_bytes(size, alloc_failmode);
+ }
+-extern char* resource_allocate_bytes(Thread* thread, size_t size) {
+-  return thread->resource_area()->allocate_bytes(size);
++extern char* resource_allocate_bytes(Thread* thread, size_t size, AllocFailType alloc_failmode) {
++  return thread->resource_area()->allocate_bytes(size, alloc_failmode);
+ }
+ 
+-extern char* resource_reallocate_bytes( char *old, size_t old_size, size_t new_size){
+-  return (char*)Thread::current()->resource_area()->Arealloc(old, old_size, new_size);
++extern char* resource_reallocate_bytes( char *old, size_t old_size, size_t new_size,
++    AllocFailType alloc_failmode){
++  return (char*)Thread::current()->resource_area()->Arealloc(old, old_size, new_size, alloc_failmode);
+ }
+ 
+ extern void resource_free_bytes( char *old, size_t size ) {
+diff --git a/src/share/vm/memory/resourceArea.hpp b/src/share/vm/memory/resourceArea.hpp
+--- hotspot/src/share/vm/memory/resourceArea.hpp
++++ hotspot/src/share/vm/memory/resourceArea.hpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -64,7 +64,7 @@
+     debug_only(_nesting = 0;);
+   }
+ 
+-  char* allocate_bytes(size_t size) {
++  char* allocate_bytes(size_t size, AllocFailType alloc_failmode = AllocFailStrategy::EXIT_OOM) {
+ #ifdef ASSERT
+     if (_nesting < 1 && !_warned++)
+       fatal("memory leak: allocating without ResourceMark");
+@@ -74,7 +74,7 @@
+       return (*save = (char*)os::malloc(size));
+     }
+ #endif
+-    return (char*)Amalloc(size);
++    return (char*)Amalloc(size, alloc_failmode);
+   }
+ 
+   debug_only(int nesting() const { return _nesting; });
+diff --git a/src/share/vm/oops/generateOopMap.cpp b/src/share/vm/oops/generateOopMap.cpp
+--- hotspot/src/share/vm/oops/generateOopMap.cpp
++++ hotspot/src/share/vm/oops/generateOopMap.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -643,11 +643,20 @@
+ // CellType handling methods
+ //
+ 
++// Allocate memory and throw LinkageError if failure.
++#define ALLOC_RESOURCE_ARRAY(var, type, count) \
++  var = NEW_RESOURCE_ARRAY_RETURN_NULL(type, count);              \
++  if (var == NULL) {                                              \
++    report_error("Cannot reserve enough memory to analyze this method"); \
++    return;                                                       \
++  }
++
+ void GenerateOopMap::init_state() {
+   _state_len     = _max_locals + _max_stack + _max_monitors;
+-  _state         = NEW_RESOURCE_ARRAY(CellTypeState, _state_len);
++  ALLOC_RESOURCE_ARRAY(_state, CellTypeState, _state_len);
+   memset(_state, 0, _state_len * sizeof(CellTypeState));
+-  _state_vec_buf = NEW_RESOURCE_ARRAY(char, MAX3(_max_locals, _max_stack, _max_monitors) + 1/*for null terminator char */);
++  int count = MAX3(_max_locals, _max_stack, _max_monitors) + 1/*for null terminator char */;
++  ALLOC_RESOURCE_ARRAY(_state_vec_buf, char, count)
+ }
+ 
+ void GenerateOopMap::make_context_uninitialized() {
+@@ -905,7 +914,7 @@
+   // But cumbersome since we don't know the stack heights yet.  (Nor the
+   // monitor stack heights...)
+ 
+-  _basic_blocks = NEW_RESOURCE_ARRAY(BasicBlock, _bb_count);
++  ALLOC_RESOURCE_ARRAY(_basic_blocks, BasicBlock, _bb_count);
+ 
+   // Make a pass through the bytecodes.  Count the number of monitorenters.
+   // This can be used an upper bound on the monitor stack depth in programs
+@@ -976,8 +985,8 @@
+     return;
+   }
+ 
+-  CellTypeState *basicBlockState =
+-      NEW_RESOURCE_ARRAY(CellTypeState, bbNo * _state_len);
++  CellTypeState *basicBlockState;
++  ALLOC_RESOURCE_ARRAY(basicBlockState, CellTypeState, bbNo * _state_len);
+   memset(basicBlockState, 0, bbNo * _state_len * sizeof(CellTypeState));
+ 
+   // Make a pass over the basicblocks and assign their state vectors.

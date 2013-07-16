@@ -1,0 +1,18 @@
+# HG changeset patch
+# User andrew
+# Date 1371838665 18000
+# Node ID 41f5d151d8477b8450ecea825143c608c312291e
+# Parent  a5c99fd80b4c9f5049351bf5bff8517dd6d3b613
+Remove leftover tag
+
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml b/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+@@ -141,7 +141,6 @@
+                 <ConstantMembers/>
+             </ClassConstantSummary>
+         </ConstantSummaries>    
+-        <Footer/>
+     </ConstantSummary>
+     
+     <SerializedForm>

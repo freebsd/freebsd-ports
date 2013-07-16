@@ -1,0 +1,121 @@
+# HG changeset patch
+# User Severin Gehwolf <sgehwolf@redhat.com>
+# Date 1371476865 -7200
+# Node ID 5dd7618fd14c647d21d765fcc2431c9ee6289ae4
+# Parent  60c57caf0348c7eed93900e4395607af759e6ba9
+8008132: Better serialization support
+Reviewed-by: alanb, hawtin
+
+diff --git a/src/share/classes/java/io/ObjectOutputStream.java b/src/share/classes/java/io/ObjectOutputStream.java
+--- jdk/src/share/classes/java/io/ObjectOutputStream.java
++++ jdk/src/share/classes/java/io/ObjectOutputStream.java
+@@ -36,6 +36,7 @@
+ import java.util.concurrent.ConcurrentMap;
+ import static java.io.ObjectStreamClass.processQueue;
+ import java.io.SerialCallbackContext;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * An ObjectOutputStream writes primitive data types and graphs of Java objects
+@@ -1228,6 +1229,12 @@
+         }
+     }
+ 
++    private boolean isCustomSubclass() {
++        // Return true if this class is a custom subclass of ObjectOutputStream
++        return getClass().getClassLoader()
++                   != ObjectOutputStream.class.getClassLoader();
++    }
++
+     /**
+      * Writes class descriptor representing a dynamic proxy class to stream.
+      */
+@@ -1245,6 +1252,9 @@
+         }
+ 
+         bout.setBlockDataMode(true);
++        if (isCustomSubclass()) {
++            ReflectUtil.checkPackageAccess(cl);
++        }
+         annotateProxyClass(cl);
+         bout.setBlockDataMode(false);
+         bout.writeByte(TC_ENDBLOCKDATA);
+@@ -1271,6 +1281,9 @@
+ 
+         Class cl = desc.forClass();
+         bout.setBlockDataMode(true);
++        if (isCustomSubclass()) {
++            ReflectUtil.checkPackageAccess(cl);
++        }
+         annotateClass(cl);
+         bout.setBlockDataMode(false);
+         bout.writeByte(TC_ENDBLOCKDATA);
+diff --git a/src/share/classes/java/io/ObjectStreamClass.java b/src/share/classes/java/io/ObjectStreamClass.java
+--- jdk/src/share/classes/java/io/ObjectStreamClass.java
++++ jdk/src/share/classes/java/io/ObjectStreamClass.java
+@@ -50,6 +50,7 @@
+ import java.util.concurrent.ConcurrentMap;
+ import sun.misc.Unsafe;
+ import sun.reflect.ReflectionFactory;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * Serialization's descriptor for classes.  It contains the name and
+@@ -234,6 +235,13 @@
+      * @return  the <code>Class</code> instance that this descriptor represents
+      */
+     public Class<?> forClass() {
++        if (cl == null) {
++            return null;
++        }
++        ClassLoader ccl = ObjectStreamField.getCallerClassLoader();
++        if (ReflectUtil.needsPackageAccessCheck(ccl, cl.getClassLoader())) {
++            ReflectUtil.checkPackageAccess(cl);
++        }
+         return cl;
+     }
+ 
+diff --git a/src/share/classes/java/io/ObjectStreamField.java b/src/share/classes/java/io/ObjectStreamField.java
+--- jdk/src/share/classes/java/io/ObjectStreamField.java
++++ jdk/src/share/classes/java/io/ObjectStreamField.java
+@@ -26,6 +26,8 @@
+ package java.io;
+ 
+ import java.lang.reflect.Field;
++import sun.reflect.Reflection;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * A description of a Serializable field from a Serializable class.  An array
+@@ -158,9 +160,31 @@
+      *          serializable field
+      */
+     public Class<?> getType() {
++        ClassLoader ccl = getCallerClassLoader();
++        if (ReflectUtil.needsPackageAccessCheck(ccl, type.getClassLoader())) {
++            ReflectUtil.checkPackageAccess(type);
++        }
+         return type;
+     }
+ 
++    // Returns the invoker's class loader.
++    // This is package private because it is accessed from ObjectStreamClass.
++    // NOTE: This must always be invoked when there is exactly one intervening
++    // frame from the core libraries on the stack between this method's
++    // invocation and the desired invoker. The frame count of 3 is determined
++    // as follows:
++    //
++    // 0: Reflection.getCallerClass
++    // 1: getCallerClassLoader()
++    // 2: ObjectStreamField.getType() or ObjectStreamClass.forClass()
++    // 3: the caller we want to check
++    //
++    // NOTE: copied from java.lang.ClassLoader and modified.
++    static ClassLoader getCallerClassLoader() {
++        Class caller = Reflection.getCallerClass(3);
++        return caller.getClassLoader();
++    }
++
+     /**
+      * Returns character encoding of field type.  The encoding is as follows:
+      * <blockquote><pre>

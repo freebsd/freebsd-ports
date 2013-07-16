@@ -1,0 +1,51 @@
+# HG changeset patch
+# User prr
+# Date 1365450069 25200
+# Node ID 7024e2f3b69c998420d5d765c056048b8b6b5c2b
+# Parent  8d4760ec16ecfc5abb647dfb1a28d5b3c01f6a12
+8011248: Better Component Rasters
+Reviewed-by: bae, vadim, mschoene
+
+diff --git a/src/share/classes/sun/awt/image/IntegerComponentRaster.java b/src/share/classes/sun/awt/image/IntegerComponentRaster.java
+--- jdk/src/share/classes/sun/awt/image/IntegerComponentRaster.java
++++ jdk/src/share/classes/sun/awt/image/IntegerComponentRaster.java
+@@ -654,9 +654,6 @@
+                                             ") must be >= 0");
+         }
+ 
+-        int maxSize = 0;
+-        int size;
+-
+         // we can be sure that width and height are greater than 0
+         if (scanlineStride < 0 ||
+             scanlineStride > (Integer.MAX_VALUE / height))
+@@ -682,21 +679,23 @@
+         }
+         lastPixelOffset += lastScanOffset;
+ 
++        int index;
++        int maxIndex = 0;
+         for (int i = 0; i < numDataElements; i++) {
+             if (dataOffsets[i] > (Integer.MAX_VALUE - lastPixelOffset)) {
+                 throw new RasterFormatException("Incorrect band offset: "
+                             + dataOffsets[i]);
+             }
+ 
+-            size = lastPixelOffset + dataOffsets[i];
++            index = lastPixelOffset + dataOffsets[i];
+ 
+-            if (size > maxSize) {
+-                maxSize = size;
++            if (index > maxIndex) {
++                maxIndex = index;
+             }
+         }
+-        if (data.length < maxSize) {
+-            throw new RasterFormatException("Data array too small (should be "
+-                    + maxSize + " )");
++        if (data.length <= maxIndex) {
++            throw new RasterFormatException("Data array too small (should be > "
++                    + maxIndex + " )");
+         }
+     }
+ 

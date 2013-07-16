@@ -1,0 +1,283 @@
+# HG changeset patch
+# User bae
+# Date 1366802624 -14400
+# Node ID 63028eef41bcd0e7ea49d333dc25ad27cd5e33a4
+# Parent  92ad159889b19b66a64cd3c89b628132fe089354
+8012438: Better image validation
+Reviewed-by: mschoene, prr, vadim
+
+diff --git a/src/share/classes/java/awt/image/ComponentSampleModel.java b/src/share/classes/java/awt/image/ComponentSampleModel.java
+--- jdk/src/share/classes/java/awt/image/ComponentSampleModel.java
++++ jdk/src/share/classes/java/awt/image/ComponentSampleModel.java
+@@ -148,7 +148,7 @@
+         this.pixelStride = pixelStride;
+         this.scanlineStride  = scanlineStride;
+         this.bandOffsets = (int[])bandOffsets.clone();
+-        numBands = bandOffsets.length;
++        numBands = this.bandOffsets.length;
+         if (pixelStride < 0) {
+             throw new IllegalArgumentException("Pixel stride must be >= 0");
+         }
+@@ -223,24 +223,24 @@
+             (dataType > DataBuffer.TYPE_DOUBLE)) {
+             throw new IllegalArgumentException("Unsupported dataType.");
+         }
+-        int maxBank = bankIndices[0];
++        int maxBank = this.bankIndices[0];
+         if (maxBank < 0) {
+             throw new IllegalArgumentException("Index of bank 0 is less than "+
+                                                "0 ("+maxBank+")");
+         }
+-        for (int i=1; i < bankIndices.length; i++) {
+-            if (bankIndices[i] > maxBank) {
+-                maxBank = bankIndices[i];
++        for (int i=1; i < this.bankIndices.length; i++) {
++            if (this.bankIndices[i] > maxBank) {
++                maxBank = this.bankIndices[i];
+             }
+-            else if (bankIndices[i] < 0) {
++            else if (this.bankIndices[i] < 0) {
+                 throw new IllegalArgumentException("Index of bank "+i+
+                                                    " is less than 0 ("+
+                                                    maxBank+")");
+             }
+         }
+         numBanks         = maxBank+1;
+-        numBands         = bandOffsets.length;
+-        if (bandOffsets.length != bankIndices.length) {
++        numBands         = this.bandOffsets.length;
++        if (this.bandOffsets.length != this.bankIndices.length) {
+             throw new IllegalArgumentException("Length of bandOffsets must "+
+                                                "equal length of bankIndices.");
+         }
+diff --git a/src/share/classes/java/awt/image/PixelInterleavedSampleModel.java b/src/share/classes/java/awt/image/PixelInterleavedSampleModel.java
+--- jdk/src/share/classes/java/awt/image/PixelInterleavedSampleModel.java
++++ jdk/src/share/classes/java/awt/image/PixelInterleavedSampleModel.java
+@@ -85,11 +85,11 @@
+                                        int scanlineStride,
+                                        int bandOffsets[]) {
+         super(dataType, w, h, pixelStride, scanlineStride, bandOffsets);
+-        int minBandOff=bandOffsets[0];
+-        int maxBandOff=bandOffsets[0];
+-        for (int i=1; i<bandOffsets.length; i++) {
+-            minBandOff = Math.min(minBandOff,bandOffsets[i]);
+-            maxBandOff = Math.max(maxBandOff,bandOffsets[i]);
++        int minBandOff=this.bandOffsets[0];
++        int maxBandOff=this.bandOffsets[0];
++        for (int i=1; i<this.bandOffsets.length; i++) {
++            minBandOff = Math.min(minBandOff,this.bandOffsets[i]);
++            maxBandOff = Math.max(maxBandOff,this.bandOffsets[i]);
+         }
+         maxBandOff -= minBandOff;
+         if (maxBandOff > scanlineStride) {
+diff --git a/src/share/classes/java/awt/image/Raster.java b/src/share/classes/java/awt/image/Raster.java
+--- jdk/src/share/classes/java/awt/image/Raster.java
++++ jdk/src/share/classes/java/awt/image/Raster.java
+@@ -257,15 +257,10 @@
+                                                          int bandOffsets[],
+                                                          Point location) {
+         DataBuffer d;
+-        int bands = bandOffsets.length;
+ 
+-        int maxBandOff = bandOffsets[0];
+-        for (int i=1; i < bands; i++) {
+-            if (bandOffsets[i] > maxBandOff) {
+-                maxBandOff = bandOffsets[i];
+-            }
+-        }
+-        int size = maxBandOff + scanlineStride*(h-1) + pixelStride*(w-1) + 1;
++        int size = scanlineStride * (h - 1) + // fisrt (h - 1) scans
++            pixelStride * w; // last scan
++
+         switch(dataType) {
+         case DataBuffer.TYPE_BYTE:
+             d = new DataBufferByte(size);
+@@ -397,7 +392,8 @@
+             }
+         }
+         int banks = maxBank + 1;
+-        int size = maxBandOff + scanlineStride*(h-1) + (w-1) + 1;
++        int size = scanlineStride * (h - 1) + // fisrt (h - 1) scans
++            w; // last scan
+ 
+         switch(dataType) {
+         case DataBuffer.TYPE_BYTE:
+diff --git a/src/share/classes/sun/awt/image/ByteBandedRaster.java b/src/share/classes/sun/awt/image/ByteBandedRaster.java
+--- jdk/src/share/classes/sun/awt/image/ByteBandedRaster.java
++++ jdk/src/share/classes/sun/awt/image/ByteBandedRaster.java
+@@ -755,6 +755,13 @@
+                     + scanlineStride);
+         }
+ 
++        for (int i = 0; i < data.length; i++) {
++            if (scanlineStride > data[i].length) {
++                throw new RasterFormatException("Incorrect scanline stride: "
++                    + scanlineStride);
++            }
++        }
++
+         // Make sure data for Raster is in a legal range
+         for (int i=0; i < dataOffsets.length; i++) {
+             if (dataOffsets[i] < 0) {
+@@ -765,19 +772,20 @@
+         }
+ 
+         int lastScanOffset = (height - 1) * scanlineStride;
+-        int lastPixelOffset = lastScanOffset + (width-1);
+-        if (lastPixelOffset < lastScanOffset) {
++
++        if ((width - 1) > (Integer.MAX_VALUE - lastScanOffset)) {
+             throw new RasterFormatException("Invalid raster dimension");
+         }
++        int lastPixelOffset = lastScanOffset + (width-1);
+ 
+         int maxIndex = 0;
+         int index;
+ 
+         for (int i=0; i < numDataElements; i++) {
+-            index = lastPixelOffset + dataOffsets[i];
+-            if (index < lastPixelOffset) {
++            if (dataOffsets[i] > (Integer.MAX_VALUE - lastPixelOffset)) {
+                 throw new RasterFormatException("Invalid raster dimension");
+             }
++            index = lastPixelOffset + dataOffsets[i];
+             if (index > maxIndex) {
+                 maxIndex = index;
+             }
+diff --git a/src/share/classes/sun/awt/image/ByteComponentRaster.java b/src/share/classes/sun/awt/image/ByteComponentRaster.java
+--- jdk/src/share/classes/sun/awt/image/ByteComponentRaster.java
++++ jdk/src/share/classes/sun/awt/image/ByteComponentRaster.java
+@@ -887,7 +887,8 @@
+ 
+         // we can be sure that width and height are greater than 0
+         if (scanlineStride < 0 ||
+-            scanlineStride > (Integer.MAX_VALUE / height))
++            scanlineStride > (Integer.MAX_VALUE / height) ||
++            scanlineStride > data.length)
+         {
+             // integer overflow
+             throw new RasterFormatException("Incorrect scanline stride: "
+@@ -896,7 +897,8 @@
+         int lastScanOffset = (height - 1) * scanlineStride;
+ 
+         if (pixelStride < 0 ||
+-            pixelStride > (Integer.MAX_VALUE / width))
++            pixelStride > (Integer.MAX_VALUE / width) ||
++            pixelStride > data.length)
+         {
+             // integer overflow
+             throw new RasterFormatException("Incorrect pixel stride: "
+diff --git a/src/share/classes/sun/awt/image/BytePackedRaster.java b/src/share/classes/sun/awt/image/BytePackedRaster.java
+--- jdk/src/share/classes/sun/awt/image/BytePackedRaster.java
++++ jdk/src/share/classes/sun/awt/image/BytePackedRaster.java
+@@ -1387,7 +1387,8 @@
+         }
+ 
+         if (scanlineStride < 0 ||
+-            scanlineStride > (Integer.MAX_VALUE / height))
++            scanlineStride > (Integer.MAX_VALUE / height) ||
++            scanlineStride > data.length)
+         {
+             throw new RasterFormatException("Invalid scanline stride");
+         }
+diff --git a/src/share/classes/sun/awt/image/IntegerComponentRaster.java b/src/share/classes/sun/awt/image/IntegerComponentRaster.java
+--- jdk/src/share/classes/sun/awt/image/IntegerComponentRaster.java
++++ jdk/src/share/classes/sun/awt/image/IntegerComponentRaster.java
+@@ -656,7 +656,8 @@
+ 
+         // we can be sure that width and height are greater than 0
+         if (scanlineStride < 0 ||
+-            scanlineStride > (Integer.MAX_VALUE / height))
++            scanlineStride > (Integer.MAX_VALUE / height) ||
++            scanlineStride > data.length)
+         {
+             // integer overflow
+             throw new RasterFormatException("Incorrect scanline stride: "
+@@ -665,7 +666,8 @@
+         int lastScanOffset = (height - 1) * scanlineStride;
+ 
+         if (pixelStride < 0 ||
+-            pixelStride > (Integer.MAX_VALUE / width))
++            pixelStride > (Integer.MAX_VALUE / width) ||
++            pixelStride > data.length)
+         {
+             // integer overflow
+             throw new RasterFormatException("Incorrect pixel stride: "
+diff --git a/src/share/classes/sun/awt/image/ShortBandedRaster.java b/src/share/classes/sun/awt/image/ShortBandedRaster.java
+--- jdk/src/share/classes/sun/awt/image/ShortBandedRaster.java
++++ jdk/src/share/classes/sun/awt/image/ShortBandedRaster.java
+@@ -754,6 +754,13 @@
+                     + scanlineStride);
+         }
+ 
++        for (int i = 0; i < data.length; i++) {
++            if (scanlineStride > data[i].length) {
++                throw new RasterFormatException("Incorrect scanline stride: "
++                    + scanlineStride);
++            }
++        }
++
+         // Make sure data for Raster is in a legal range
+         for (int i=0; i < dataOffsets.length; i++) {
+             if (dataOffsets[i] < 0) {
+@@ -764,19 +771,19 @@
+         }
+ 
+         int lastScanOffset = (height - 1) * scanlineStride;
+-        int lastPixelOffset = lastScanOffset + (width-1);
+-        if (lastPixelOffset < lastScanOffset) {
++        if ((width - 1) > (Integer.MAX_VALUE - lastScanOffset)) {
+             throw new RasterFormatException("Invalid raster dimension");
+         }
++        int lastPixelOffset = lastScanOffset + (width - 1);
+ 
+         int maxIndex = 0;
+         int index;
+ 
+         for (int i=0; i < numDataElements; i++) {
+-            index = lastPixelOffset + dataOffsets[i];
+-            if (index < lastPixelOffset) {
++            if (dataOffsets[i] > (Integer.MAX_VALUE - lastPixelOffset)) {
+                 throw new RasterFormatException("Invalid raster dimension");
+             }
++            index = lastPixelOffset + dataOffsets[i];
+             if (index > maxIndex) {
+                 maxIndex = index;
+             }
+diff --git a/src/share/classes/sun/awt/image/ShortComponentRaster.java b/src/share/classes/sun/awt/image/ShortComponentRaster.java
+--- jdk/src/share/classes/sun/awt/image/ShortComponentRaster.java
++++ jdk/src/share/classes/sun/awt/image/ShortComponentRaster.java
+@@ -821,7 +821,8 @@
+ 
+         // we can be sure that width and height are greater than 0
+         if (scanlineStride < 0 ||
+-            scanlineStride > (Integer.MAX_VALUE / height))
++            scanlineStride > (Integer.MAX_VALUE / height) ||
++            scanlineStride > data.length)
+         {
+             // integer overflow
+             throw new RasterFormatException("Incorrect scanline stride: "
+@@ -830,7 +831,8 @@
+         int lastScanOffset = (height - 1) * scanlineStride;
+ 
+         if (pixelStride < 0 ||
+-            pixelStride > (Integer.MAX_VALUE / width))
++            pixelStride > (Integer.MAX_VALUE / width) ||
++            pixelStride > data.length)
+         {
+             // integer overflow
+             throw new RasterFormatException("Incorrect pixel stride: "
+diff --git a/src/share/native/sun/awt/medialib/awt_ImagingLib.c b/src/share/native/sun/awt/medialib/awt_ImagingLib.c
+--- jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c
++++ jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c
+@@ -1177,6 +1177,10 @@
+ 
+     static int indexes[NLUT] = INDEXES;
+ 
++    if (src->width != dst->width || src->height != dst->height) {
++        return 0;
++    }
++
+     for (y=0; y < src->height; y++) {
+         int nloop, nx;
+         int npix = src->width;

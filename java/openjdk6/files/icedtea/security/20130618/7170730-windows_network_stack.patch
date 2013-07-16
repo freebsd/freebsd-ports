@@ -1,0 +1,1057 @@
+# HG changeset patch
+# User andrew
+# Date 1371235188 -3600
+# Node ID 8664ebe88635d671ed0134e9348d5e6caea81d0d
+# Parent  7ecadad337414327d0d0ca6a8efcc40b7e8a9d29
+7170730: Improve Windows network stack support.
+Summary: Enable exclusive binding of ports on Windows
+Contributed-by: Severin Gehwolf <sgehwolf@redhat.com>
+
+diff --git a/make/java/nio/mapfile-linux b/make/java/nio/mapfile-linux
+--- jdk/make/java/nio/mapfile-linux
++++ jdk/make/java/nio/mapfile-linux
+@@ -61,7 +61,8 @@
+ 		Java_sun_nio_ch_NativeThread_init;
+ 		Java_sun_nio_ch_NativeThread_signal;
+ 		Java_sun_nio_ch_Net_socket0;
+-		Java_sun_nio_ch_Net_bind;
++		Java_sun_nio_ch_Net_bind0;
++		Java_sun_nio_ch_Net_isExclusiveBindAvailable;
+ 		Java_sun_nio_ch_Net_connect;
+ 		Java_sun_nio_ch_Net_localPort;
+ 		Java_sun_nio_ch_Net_localInetAddress;
+diff --git a/make/java/nio/mapfile-solaris b/make/java/nio/mapfile-solaris
+--- jdk/make/java/nio/mapfile-solaris
++++ jdk/make/java/nio/mapfile-solaris
+@@ -59,7 +59,8 @@
+ 		Java_sun_nio_ch_NativeThread_init;
+ 		Java_sun_nio_ch_NativeThread_signal;
+ 		Java_sun_nio_ch_Net_socket0;
+-		Java_sun_nio_ch_Net_bind;
++		Java_sun_nio_ch_Net_bind0;
++		Java_sun_nio_ch_Net_isExclusiveBindAvailable;
+ 		Java_sun_nio_ch_Net_connect;
+ 		Java_sun_nio_ch_Net_localPort;
+ 		Java_sun_nio_ch_Net_localInetAddress;
+diff --git a/src/share/classes/sun/nio/ch/DatagramChannelImpl.java b/src/share/classes/sun/nio/ch/DatagramChannelImpl.java
+--- jdk/src/share/classes/sun/nio/ch/DatagramChannelImpl.java
++++ jdk/src/share/classes/sun/nio/ch/DatagramChannelImpl.java
+@@ -473,6 +473,10 @@
+                             {
+                                 Net.setIntOption(fd, opt, arg);
+                             }
++                            boolean getIsBoundCondition()
++                            {
++                                return localAddress != null;
++                            }
+                         };
+                 options = new SocketOptsImpl.IP(d);
+             }
+diff --git a/src/share/classes/sun/nio/ch/Net.java b/src/share/classes/sun/nio/ch/Net.java
+--- jdk/src/share/classes/sun/nio/ch/Net.java
++++ jdk/src/share/classes/sun/nio/ch/Net.java
+@@ -36,8 +36,42 @@
+     private Net() { }
+ 
+ 
++    // set to true if exclusive binding is on for Windows
++    private static final boolean exclusiveBind;
++
++    static {
++        int availLevel = isExclusiveBindAvailable();
++        if (availLevel >= 0) {
++            String exclBindProp =
++                java.security.AccessController.doPrivileged(
++                    new java.security.PrivilegedAction<String>() {
++                        public String run() {
++                            return System.getProperty(
++                                    "sun.net.useExclusiveBind");
++                        }
++                    });
++            if (exclBindProp != null) {
++                exclusiveBind = exclBindProp.length() == 0 ?
++                        true : Boolean.parseBoolean(exclBindProp);
++            } else if (availLevel == 1) {
++                exclusiveBind = true;
++            } else {
++                exclusiveBind = false;
++            }
++        } else {
++            exclusiveBind = false;
++        }
++    }
++
+     // -- Miscellaneous utilities --
+ 
++    /**
++     * Returns true if exclusive binding is on
++     */
++    static boolean useExclusiveBind() {
++        return exclusiveBind;
++    }
++
+     static InetSocketAddress checkAddress(SocketAddress sa) {
+         if (sa == null)
+             throw new IllegalArgumentException();
+@@ -119,10 +153,21 @@
+         return IOUtil.newFD(socket0(stream, true));
+     }
+ 
++    /*
++     * Returns 1 for Windows versions that support exclusive binding by default, 0
++     * for those that do not, and -1 for Solaris/Linux/Mac OS
++     */
++    private static native int isExclusiveBindAvailable();
++
+     // Due to oddities SO_REUSEADDR on windows reuse is ignored
+     private static native int socket0(boolean stream, boolean reuse);
+ 
+-    static native void bind(FileDescriptor fd, InetAddress addr, int port)
++    static void bind(FileDescriptor fd, InetAddress addr, int port)
++        throws IOException {
++        bind0(fd, exclusiveBind, addr, port);
++    }
++
++    private static native void bind0(FileDescriptor fd, boolean useExclBind, InetAddress addr, int port)
+         throws IOException;
+ 
+     static native int connect(FileDescriptor fd,
+diff --git a/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java b/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java
+--- jdk/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java
++++ jdk/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java
+@@ -207,6 +207,10 @@
+                             void setInt(int opt, int arg) throws IOException {
+                                 Net.setIntOption(fd, opt, arg);
+                             }
++                            boolean getIsBoundCondition() {
++                                // always return true
++                                return true;
++                            }
+                         };
+                 options = new SocketOptsImpl.IP.TCP(d);
+             }
+diff --git a/src/share/classes/sun/nio/ch/SocketChannelImpl.java b/src/share/classes/sun/nio/ch/SocketChannelImpl.java
+--- jdk/src/share/classes/sun/nio/ch/SocketChannelImpl.java
++++ jdk/src/share/classes/sun/nio/ch/SocketChannelImpl.java
+@@ -423,6 +423,11 @@
+                             {
+                                 Net.setIntOption(fd, opt, arg);
+                             }
++                            boolean getIsBoundCondition()
++                            {
++                                // always return true
++                                return true;
++                            }
+                         };
+                 options = new SocketOptsImpl.IP.TCP(d);
+             }
+diff --git a/src/share/classes/sun/nio/ch/SocketOptsImpl.java b/src/share/classes/sun/nio/ch/SocketOptsImpl.java
+--- jdk/src/share/classes/sun/nio/ch/SocketOptsImpl.java
++++ jdk/src/share/classes/sun/nio/ch/SocketOptsImpl.java
+@@ -35,10 +35,17 @@
+ class SocketOptsImpl
+     implements SocketOpts
+ {
++    // set true when socket is bound and SO_REUSEADDRESS is emulated
++    private boolean reuseAddressEmulated;
++
++    // set true/false when socket is already bound and SO_REUSEADDR is emulated
++    private boolean isReuseAddress;
+ 
+     static abstract class Dispatcher {
+         abstract int getInt(int opt) throws IOException;
+         abstract void setInt(int opt, int arg) throws IOException;
++        // Only used meaningfully by DatagramChannelImpl
++        abstract boolean getIsBoundCondition();
+         // Others that pass addresses, etc., will come later
+     }
+ 
+@@ -167,11 +174,21 @@
+     // SO_REUSEADDR
+ 
+     public boolean reuseAddress() throws IOException {
++        if (reuseAddressEmulated) {
++            return isReuseAddress;
++        }
++        // no special handling
+         return getBoolean(SocketOptions.SO_REUSEADDR);
+     }
+ 
+     public SocketOpts reuseAddress(boolean b) throws IOException {
+-        setBoolean(SocketOptions.SO_REUSEADDR, b);
++        if ( Net.useExclusiveBind() && d.getIsBoundCondition() ) {
++            reuseAddressEmulated = true;
++            this.isReuseAddress = b;
++        } else {
++            // no special handling
++            setBoolean(SocketOptions.SO_REUSEADDR, b);
++        }
+         return this;
+     }
+ 
+diff --git a/src/solaris/native/sun/nio/ch/Net.c b/src/solaris/native/sun/nio/ch/Net.c
+--- jdk/src/solaris/native/sun/nio/ch/Net.c
++++ jdk/src/solaris/native/sun/nio/ch/Net.c
+@@ -55,6 +55,11 @@
+     /* Here because Windows native code does need to init IDs */
+ }
+ 
++JNIEXPORT jint JNICALL
++Java_sun_nio_ch_Net_isExclusiveBindAvailable(JNIEnv *env, jclass clazz) {
++    return -1;
++}
++
+ JNIEXPORT int JNICALL
+ Java_sun_nio_ch_Net_socket0(JNIEnv *env, jclass cl, jboolean stream,
+                             jboolean reuse)
+@@ -84,8 +89,8 @@
+ }
+ 
+ JNIEXPORT void JNICALL
+-Java_sun_nio_ch_Net_bind(JNIEnv *env, jclass clazz, /* ## Needs rest of PSI gunk */
+-                         jobject fdo, jobject ia, int port)
++Java_sun_nio_ch_Net_bind0(JNIEnv *env, jclass clazz, /* ## Needs rest of PSI gunk */
++                         jobject fdo, jboolean exclBind, jobject ia, int port)
+ {
+     SOCKADDR sa;
+     int sa_len = SOCKADDR_LEN;
+diff --git a/src/windows/classes/java/net/DefaultDatagramSocketImplFactory.java b/src/windows/classes/java/net/DefaultDatagramSocketImplFactory.java
+--- jdk/src/windows/classes/java/net/DefaultDatagramSocketImplFactory.java
++++ jdk/src/windows/classes/java/net/DefaultDatagramSocketImplFactory.java
+@@ -56,24 +56,45 @@
+     /* If the version supports a dual stack TCP implementation */
+     private static boolean useDualStackImpl = false;
+ 
++    /* sun.net.useExclusiveBind */
++    private static String exclBindProp;
++
++    /* True if exclusive binding is on for Windows */
++    private static boolean exclusiveBind = true;
++
++
+     static {
+         // Determine Windows Version.
+-        java.security.AccessController.doPrivileged( new PrivilegedAction<Object>() {
+-                public Object run() {
+-                    version = 0;
+-                    try {
+-                        version = Float.parseFloat(System.getProperties().getProperty("os.version"));
+-                        preferIPv4Stack = Boolean.parseBoolean(
+-                                          System.getProperties().getProperty("java.net.preferIPv4Stack"));
+-                    } catch (NumberFormatException e ) {
+-                        assert false : e;
++        java.security.AccessController.doPrivileged(
++                new PrivilegedAction<Object>() {
++                    public Object run() {
++                        version = 0;
++                        try {
++                            version = Float.parseFloat(System.getProperties()
++                                    .getProperty("os.version"));
++                            preferIPv4Stack = Boolean.parseBoolean(
++                                              System.getProperties()
++                                              .getProperty(
++                                                   "java.net.preferIPv4Stack"));
++                            exclBindProp = System.getProperty(
++                                    "sun.net.useExclusiveBind");
++                        } catch (NumberFormatException e ) {
++                            assert false : e;
++                        }
++                        return null; // nothing to return
+                     }
+-                    return null; // nothing to return
+-                } });
++                });
+ 
+         // (version >= 6.0) implies Vista or greater.
+         if (version >= 6.0 && !preferIPv4Stack) {
+-            useDualStackImpl = true;
++                useDualStackImpl = true;
++        }
++        if (exclBindProp != null) {
++            // sun.net.useExclusiveBind is true
++            exclusiveBind = exclBindProp.length() == 0 ? true
++                    : Boolean.parseBoolean(exclBindProp);
++        } else if (version < 6.0) {
++            exclusiveBind = false;
+         }
+ 
+         // impl.prefix
+@@ -105,10 +126,12 @@
+                 throw new SocketException("can't instantiate DatagramSocketImpl");
+             }
+         } else {
++            if (isMulticast)
++                exclusiveBind = false;
+             if (useDualStackImpl && !isMulticast)
+-                return new DualStackPlainDatagramSocketImpl();
++                return new DualStackPlainDatagramSocketImpl(exclusiveBind);
+             else
+-                return new TwoStacksPlainDatagramSocketImpl();
++                return new TwoStacksPlainDatagramSocketImpl(exclusiveBind);
+         }
+     }
+ }
+diff --git a/src/windows/classes/java/net/DualStackPlainDatagramSocketImpl.java b/src/windows/classes/java/net/DualStackPlainDatagramSocketImpl.java
+--- jdk/src/windows/classes/java/net/DualStackPlainDatagramSocketImpl.java
++++ jdk/src/windows/classes/java/net/DualStackPlainDatagramSocketImpl.java
+@@ -46,6 +46,22 @@
+ {
+     static JavaIOFileDescriptorAccess fdAccess = SharedSecrets.getJavaIOFileDescriptorAccess();
+ 
++    // true if this socket is exclusively bound
++    private final boolean exclusiveBind;
++
++    /*
++     * Set to true if SO_REUSEADDR is set after the socket is bound to
++     * indicate SO_REUSEADDR is being emulated
++     */
++    private boolean reuseAddressEmulated;
++
++    // emulates SO_REUSEADDR when exclusiveBind is true and socket is bound
++    private boolean isReuseAddress;
++
++    DualStackPlainDatagramSocketImpl(boolean exclBind) {
++        exclusiveBind = exclBind;
++    }
++
+     protected void datagramSocketCreate() throws SocketException {
+         if (fd == null)
+             throw new SocketException("Socket closed");
+@@ -62,7 +78,7 @@
+         if (laddr == null)
+             throw new NullPointerException("argument address");
+ 
+-        socketBind(nativefd, laddr, lport);
++        socketBind(nativefd, laddr, lport, exclusiveBind);
+         if (lport == 0) {
+             localPort = socketLocalPort(nativefd);
+         } else {
+@@ -142,6 +158,7 @@
+         fdAccess.set(fd, -1);
+     }
+ 
++    @SuppressWarnings("fallthrough")
+     protected void socketSetOption(int opt, Object val) throws SocketException {
+         int nativefd = checkAndReturnNativeFD();
+ 
+@@ -154,6 +171,13 @@
+                 optionValue = ((Integer)val).intValue();
+                 break;
+             case SO_REUSEADDR :
++                if (exclusiveBind && localPort != 0)  {
++                    // socket already bound, emulate SO_REUSEADDR
++                    reuseAddressEmulated = true;
++                    isReuseAddress = (Boolean)val;
++                    return;
++                }
++                //Intentional fallthrough
+             case SO_BROADCAST :
+                 optionValue = ((Boolean)val).booleanValue() ? 1 : 0;
+                 break;
+@@ -171,6 +195,8 @@
+         if (opt == SO_BINDADDR) {
+             return socketLocalAddress(nativefd);
+         }
++        if (opt == SO_REUSEADDR && reuseAddressEmulated)
++            return isReuseAddress;
+ 
+         int value = socketGetIntOption(nativefd, opt);
+         Object returnValue = null;
+@@ -238,8 +264,8 @@
+ 
+     private static native int socketCreate(boolean v6Only);
+ 
+-    private static native void socketBind(int fd, InetAddress localAddress, int localport)
+-        throws SocketException;
++    private static native void socketBind(int fd, InetAddress localAddress,
++            int localport, boolean exclBind) throws SocketException;
+ 
+     private static native void socketConnect(int fd, InetAddress address, int port)
+         throws SocketException;
+diff --git a/src/windows/classes/java/net/DualStackPlainSocketImpl.java b/src/windows/classes/java/net/DualStackPlainSocketImpl.java
+--- jdk/src/windows/classes/java/net/DualStackPlainSocketImpl.java
++++ jdk/src/windows/classes/java/net/DualStackPlainSocketImpl.java
+@@ -42,10 +42,20 @@
+ {
+     static JavaIOFileDescriptorAccess fdAccess = SharedSecrets.getJavaIOFileDescriptorAccess();
+ 
+-    public DualStackPlainSocketImpl() {}
+ 
+-    public DualStackPlainSocketImpl(FileDescriptor fd) {
++    // true if this socket is exclusively bound
++    private final boolean exclusiveBind;
++
++    // emulates SO_REUSEADDR when exclusiveBind is true
++    private boolean isReuseAddress;
++
++    public DualStackPlainSocketImpl(boolean exclBind) {
++        exclusiveBind = exclBind;
++    }
++
++    public DualStackPlainSocketImpl(FileDescriptor fd, boolean exclBind) {
+         this.fd = fd;
++        exclusiveBind = exclBind;
+     }
+ 
+     void socketCreate(boolean stream) throws IOException {
+@@ -93,7 +103,7 @@
+         if (address == null)
+             throw new NullPointerException("inet address argument is null.");
+ 
+-        bind0(nativefd, address, port);
++        bind0(nativefd, address, port, exclusiveBind);
+         if (port == 0) {
+             localport = localPort0(nativefd);
+         } else {
+@@ -161,6 +171,8 @@
+         shutdown0(nativefd, howto);
+     }
+ 
++    // Intentional fallthrough after SO_REUSEADDR
++    @SuppressWarnings("fallthrough")
+     void socketSetOption(int opt, boolean on, Object value)
+         throws SocketException {
+         int nativefd = checkAndReturnNativeFD();
+@@ -174,8 +186,13 @@
+         switch(opt) {
+             case TCP_NODELAY :
+             case SO_OOBINLINE :
++            case SO_REUSEADDR :
++                if (exclusiveBind) {
++                    // SO_REUSEADDR emulated when using exclusive bind
++                    isReuseAddress = on;
++                    return;
++                }
+             case SO_KEEPALIVE :
+-            case SO_REUSEADDR :
+                 optionValue = on ? 1 : 0;
+                 break;
+             case SO_SNDBUF :
+@@ -206,6 +223,10 @@
+             return 0;  // return value doesn't matter.
+         }
+ 
++        // SO_REUSEADDR emulated when using exclusive bind
++        if (opt == SO_REUSEADDR && exclusiveBind)
++            return isReuseAddress? 1 : -1;
++
+         int value = getIntOption(nativefd, opt);
+ 
+         switch (opt) {
+@@ -245,7 +266,8 @@
+ 
+     static native int socket0(boolean stream, boolean v6Only) throws IOException;
+ 
+-    static native void bind0(int fd, InetAddress localAddress, int localport)
++    static native void bind0(int fd, InetAddress localAddress, int localport,
++                             boolean exclBind)
+         throws IOException;
+ 
+     static native int connect0(int fd, InetAddress remote, int remotePort)
+diff --git a/src/windows/classes/java/net/PlainSocketImpl.java b/src/windows/classes/java/net/PlainSocketImpl.java
+--- jdk/src/windows/classes/java/net/PlainSocketImpl.java
++++ jdk/src/windows/classes/java/net/PlainSocketImpl.java
+@@ -54,6 +54,12 @@
+     /* If the version supports a dual stack TCP implementation */
+     private static boolean useDualStackImpl = false;
+ 
++    /* sun.net.useExclusiveBind */
++    private static String exclBindProp;
++
++    /* True if exclusive binding is on for Windows */
++    private static boolean exclusiveBind = true;
++
+     static {
+         java.security.AccessController.doPrivileged( new PrivilegedAction<Object>() {
+                 public Object run() {
+@@ -62,6 +68,7 @@
+                         version = Float.parseFloat(System.getProperties().getProperty("os.version"));
+                         preferIPv4Stack = Boolean.parseBoolean(
+                                           System.getProperties().getProperty("java.net.preferIPv4Stack"));
++                        exclBindProp = System.getProperty("sun.net.useExclusiveBind");
+                     } catch (NumberFormatException e ) {
+                         assert false : e;
+                     }
+@@ -70,7 +77,15 @@
+ 
+         // (version >= 6.0) implies Vista or greater.
+         if (version >= 6.0 && !preferIPv4Stack) {
+-            useDualStackImpl = true;
++                useDualStackImpl = true;
++        }
++
++        if (exclBindProp != null) {
++            // sun.net.useExclusiveBind is true
++            exclusiveBind = exclBindProp.length() == 0 ? true
++                    : Boolean.parseBoolean(exclBindProp);
++        } else if (version < 6.0) {
++            exclusiveBind = false;
+         }
+     }
+ 
+@@ -79,9 +94,9 @@
+      */
+     PlainSocketImpl() {
+         if (useDualStackImpl) {
+-            impl = new DualStackPlainSocketImpl();
++            impl = new DualStackPlainSocketImpl(exclusiveBind);
+         } else {
+-            impl = new TwoStacksPlainSocketImpl();
++            impl = new TwoStacksPlainSocketImpl(exclusiveBind);
+         }
+     }
+ 
+@@ -90,9 +105,9 @@
+      */
+     PlainSocketImpl(FileDescriptor fd) {
+         if (useDualStackImpl) {
+-            impl = new DualStackPlainSocketImpl(fd);
++            impl = new DualStackPlainSocketImpl(fd, exclusiveBind);
+         } else {
+-            impl = new TwoStacksPlainSocketImpl(fd);
++            impl = new TwoStacksPlainSocketImpl(fd, exclusiveBind);
+         }
+     }
+ 
+diff --git a/src/windows/classes/java/net/TwoStacksPlainDatagramSocketImpl.java b/src/windows/classes/java/net/TwoStacksPlainDatagramSocketImpl.java
+--- jdk/src/windows/classes/java/net/TwoStacksPlainDatagramSocketImpl.java
++++ jdk/src/windows/classes/java/net/TwoStacksPlainDatagramSocketImpl.java
+@@ -66,6 +66,22 @@
+         init();
+     }
+ 
++    // true if this socket is exclusively bound
++    private final boolean exclusiveBind;
++
++    /*
++     * Set to true if SO_REUSEADDR is set after the socket is bound to
++     * indicate SO_REUSEADDR is being emulated
++     */
++    private boolean reuseAddressEmulated;
++
++    // emulates SO_REUSEADDR when exclusiveBind is true and socket is bound
++    private boolean isReuseAddress;
++
++    TwoStacksPlainDatagramSocketImpl(boolean exclBind) {
++        exclusiveBind = exclBind;
++    }
++
+     protected synchronized void create() throws SocketException {
+         fd1 = new FileDescriptor();
+         super.create();
+@@ -79,6 +95,14 @@
+         }
+     }
+ 
++    @Override
++    protected synchronized void bind0(int lport, InetAddress laddr)
++        throws SocketException
++    {
++        bind0(lport, laddr, exclusiveBind);
++
++    }
++
+     protected synchronized void receive(DatagramPacket p)
+         throws IOException {
+         try {
+@@ -98,8 +122,24 @@
+                 return anyLocalBoundAddr;
+             }
+             return socketGetOption(optID);
+-        } else
++        } else if (optID == SO_REUSEADDR && reuseAddressEmulated) {
++            return isReuseAddress;
++        } else {
+             return super.getOption(optID);
++        }
++    }
++
++    protected void socketSetOption(int opt, Object val)
++        throws SocketException
++    {
++        if (opt == SO_REUSEADDR && exclusiveBind && localPort != 0)  {
++            // socket already bound, emulate
++            reuseAddressEmulated = true;
++            isReuseAddress = (Boolean)val;
++        } else {
++            socketNativeSetOption(opt, val);
++        }
++
+     }
+ 
+     protected boolean isClosed() {
+@@ -117,7 +157,8 @@
+ 
+     /* Native methods */
+ 
+-    protected synchronized native void bind0(int lport, InetAddress laddr)
++    protected synchronized native void bind0(int lport, InetAddress laddr,
++                                             boolean exclBind)
+         throws SocketException;
+ 
+     protected native void send(DatagramPacket p) throws IOException;
+@@ -147,7 +188,7 @@
+ 
+     protected native void datagramSocketClose();
+ 
+-    protected native void socketSetOption(int opt, Object val)
++    protected native void socketNativeSetOption(int opt, Object val)
+         throws SocketException;
+ 
+     protected native Object socketGetOption(int opt) throws SocketException;
+diff --git a/src/windows/classes/java/net/TwoStacksPlainSocketImpl.java b/src/windows/classes/java/net/TwoStacksPlainSocketImpl.java
+--- jdk/src/windows/classes/java/net/TwoStacksPlainSocketImpl.java
++++ jdk/src/windows/classes/java/net/TwoStacksPlainSocketImpl.java
+@@ -65,14 +65,23 @@
+      */
+     private int lastfd = -1;
+ 
++    // true if this socket is exclusively bound
++    private final boolean exclusiveBind;
++
++    // emulates SO_REUSEADDR when exclusiveBind is true
++    private boolean isReuseAddress;
++
+     static {
+         initProto();
+     }
+ 
+-    public TwoStacksPlainSocketImpl() {}
++    public TwoStacksPlainSocketImpl(boolean exclBind) {
++        exclusiveBind = exclBind;
++    }
+ 
+-    public TwoStacksPlainSocketImpl(FileDescriptor fd) {
++    public TwoStacksPlainSocketImpl(FileDescriptor fd, boolean exclBind) {
+         this.fd = fd;
++        exclusiveBind = exclBind;
+     }
+ 
+     /**
+@@ -110,13 +119,33 @@
+             InetAddressContainer in = new InetAddressContainer();
+             socketGetOption(opt, in);
+             return in.addr;
++        } else if (opt == SO_REUSEADDR && exclusiveBind) {
++            // SO_REUSEADDR emulated when using exclusive bind
++            return isReuseAddress;
+         } else
+             return super.getOption(opt);
+     }
+ 
++    @Override
++    void socketBind(InetAddress address, int port) throws IOException {
++        socketBind(address, port, exclusiveBind);
++    }
++
++    @Override
++    void socketSetOption(int opt, boolean on, Object value)
++        throws SocketException
++    {
++        // SO_REUSEADDR emulated when using exclusive bind
++        if (opt == SO_REUSEADDR && exclusiveBind)
++            isReuseAddress = on;
++        else
++            socketNativeSetOption(opt, on, value);
++    }
++
+     /**
+      * Closes the socket.
+      */
++    @Override
+     protected void close() throws IOException {
+         synchronized(fdLock) {
+             if (fd != null || fd1 != null) {
+@@ -146,6 +175,7 @@
+         }
+     }
+ 
++    @Override
+     void reset() throws IOException {
+         if (fd != null || fd1 != null) {
+             socketClose();
+@@ -158,6 +188,7 @@
+     /*
+      * Return true if already closed or close is pending
+      */
++    @Override
+     public boolean isClosedOrPending() {
+         /*
+          * Lock on fdLock to ensure that we wait if a
+@@ -181,7 +212,7 @@
+     native void socketConnect(InetAddress address, int port, int timeout)
+         throws IOException;
+ 
+-    native void socketBind(InetAddress address, int port)
++    native void socketBind(InetAddress address, int port, boolean exclBind)
+         throws IOException;
+ 
+     native void socketListen(int count) throws IOException;
+@@ -194,7 +225,7 @@
+ 
+     native void socketShutdown(int howto) throws IOException;
+ 
+-    native void socketSetOption(int cmd, boolean on, Object value)
++    native void socketNativeSetOption(int cmd, boolean on, Object value)
+         throws SocketException;
+ 
+     native int socketGetOption(int opt, Object iaContainerObj) throws SocketException;
+diff --git a/src/windows/native/java/net/DualStackPlainDatagramSocketImpl.c b/src/windows/native/java/net/DualStackPlainDatagramSocketImpl.c
+--- jdk/src/windows/native/java/net/DualStackPlainDatagramSocketImpl.c
++++ jdk/src/windows/native/java/net/DualStackPlainDatagramSocketImpl.c
+@@ -112,7 +112,7 @@
+  * Signature: (ILjava/net/InetAddress;I)V
+  */
+ JNIEXPORT void JNICALL Java_java_net_DualStackPlainDatagramSocketImpl_socketBind
+-  (JNIEnv *env, jclass clazz, jint fd, jobject iaObj, jint port) {
++  (JNIEnv *env, jclass clazz, jint fd, jobject iaObj, jint port, jboolean exclBind) {
+     SOCKETADDRESS sa;
+     int rv;
+     int sa_len = sizeof(sa);
+@@ -121,8 +121,7 @@
+                                  &sa_len, JNI_TRUE) != 0) {
+         return;
+     }
+-
+-    rv = bind(fd, (struct sockaddr *)&sa, sa_len);
++    rv = NET_WinBind(fd, (struct sockaddr *)&sa, sa_len, exclBind);
+ 
+     if (rv == SOCKET_ERROR) {
+         if (WSAGetLastError() == WSAEACCES) {
+diff --git a/src/windows/native/java/net/DualStackPlainSocketImpl.c b/src/windows/native/java/net/DualStackPlainSocketImpl.c
+--- jdk/src/windows/native/java/net/DualStackPlainSocketImpl.c
++++ jdk/src/windows/native/java/net/DualStackPlainSocketImpl.c
+@@ -82,7 +82,9 @@
+  * Signature: (ILjava/net/InetAddress;I)V
+  */
+ JNIEXPORT void JNICALL Java_java_net_DualStackPlainSocketImpl_bind0
+-  (JNIEnv *env, jclass clazz, jint fd, jobject iaObj, jint port) {
++  (JNIEnv *env, jclass clazz, jint fd, jobject iaObj, jint port,
++   jboolean exclBind)
++{
+     SOCKETADDRESS sa;
+     int rv;
+     int sa_len = sizeof(sa);
+@@ -92,7 +94,7 @@
+       return;
+     }
+ 
+-    rv = NET_Bind(fd, (struct sockaddr *)&sa, sa_len);
++    rv = NET_WinBind(fd, (struct sockaddr *)&sa, sa_len, exclBind);
+ 
+     if (rv == SOCKET_ERROR)
+         NET_ThrowNew(env, WSAGetLastError(), "JVM_Bind");
+diff --git a/src/windows/native/java/net/TwoStacksPlainDatagramSocketImpl.c b/src/windows/native/java/net/TwoStacksPlainDatagramSocketImpl.c
+--- jdk/src/windows/native/java/net/TwoStacksPlainDatagramSocketImpl.c
++++ jdk/src/windows/native/java/net/TwoStacksPlainDatagramSocketImpl.c
+@@ -421,7 +421,8 @@
+ 
+ JNIEXPORT void JNICALL
+ Java_java_net_TwoStacksPlainDatagramSocketImpl_bind0(JNIEnv *env, jobject this,
+-                                           jint port, jobject addressObj) {
++                                           jint port, jobject addressObj,
++                                           jboolean exclBind) {
+     jobject fdObj = (*env)->GetObjectField(env, this, pdsi_fdID);
+     jobject fd1Obj = (*env)->GetObjectField(env, this, pdsi_fd1ID);
+ 
+@@ -464,7 +465,7 @@
+         v6bind.addr = &lcladdr;
+         v6bind.ipv4_fd = fd;
+         v6bind.ipv6_fd = fd1;
+-        if (NET_BindV6(&v6bind) != -1) {
++        if (NET_BindV6(&v6bind, exclBind) != -1) {
+             /* check if the fds have changed */
+             if (v6bind.ipv4_fd != fd) {
+                 fd = v6bind.ipv4_fd;
+@@ -491,7 +492,7 @@
+             return;
+         }
+     } else {
+-        if (bind(fd, (struct sockaddr *)&lcladdr, lcladdrlen) == -1) {
++        if (NET_WinBind(fd, (struct sockaddr *)&lcladdr, lcladdrlen, exclBind) == -1) {
+             if (WSAGetLastError() == WSAEACCES) {
+                 WSASetLastError(WSAEADDRINUSE);
+             }
+@@ -1780,11 +1781,11 @@
+ 
+ /*
+  * Class:     java_net_TwoStacksPlainDatagramSocketImpl
+- * Method:    socketSetOption
++ * Method:    socketNativeSetOption
+  * Signature: (ILjava/lang/Object;)V
+  */
+ JNIEXPORT void JNICALL
+-Java_java_net_TwoStacksPlainDatagramSocketImpl_socketSetOption(JNIEnv *env,jobject this,
++Java_java_net_TwoStacksPlainDatagramSocketImpl_socketNativeSetOption(JNIEnv *env,jobject this,
+                                                       jint opt,jobject value) {
+ 
+     int fd=-1, fd1=-1;
+diff --git a/src/windows/native/java/net/TwoStacksPlainSocketImpl.c b/src/windows/native/java/net/TwoStacksPlainSocketImpl.c
+--- jdk/src/windows/native/java/net/TwoStacksPlainSocketImpl.c
++++ jdk/src/windows/native/java/net/TwoStacksPlainSocketImpl.c
+@@ -393,7 +393,8 @@
+  */
+ JNIEXPORT void JNICALL
+ Java_java_net_TwoStacksPlainSocketImpl_socketBind(JNIEnv *env, jobject this,
+-                                         jobject iaObj, jint localport) {
++                                         jobject iaObj, jint localport,
++                                         jboolean exclBind) {
+ 
+     /* fdObj is the FileDescriptor field on this */
+     jobject fdObj, fd1Obj;
+@@ -437,13 +438,12 @@
+                           (struct sockaddr *)&him, &len, JNI_FALSE) != 0) {
+       return;
+     }
+-
+     if (ipv6_supported) {
+         struct ipv6bind v6bind;
+         v6bind.addr = &him;
+         v6bind.ipv4_fd = fd;
+         v6bind.ipv6_fd = fd1;
+-        rv = NET_BindV6(&v6bind);
++        rv = NET_BindV6(&v6bind, exclBind);
+         if (rv != -1) {
+             /* check if the fds have changed */
+             if (v6bind.ipv4_fd != fd) {
+@@ -468,7 +468,7 @@
+             }
+         }
+     } else {
+-        rv = NET_Bind(fd, (struct sockaddr *)&him, len);
++        rv = NET_WinBind(fd, (struct sockaddr *)&him, len, exclBind);
+     }
+ 
+     if (rv == -1) {
+@@ -829,11 +829,12 @@
+  *
+  *
+  * Class:     java_net_TwoStacksPlainSocketImpl
+- * Method:    socketSetOption
++ * Method:    socketNativeSetOption
+  * Signature: (IZLjava/lang/Object;)V
+  */
+ JNIEXPORT void JNICALL
+-Java_java_net_TwoStacksPlainSocketImpl_socketSetOption(JNIEnv *env, jobject this,
++Java_java_net_TwoStacksPlainSocketImpl_socketNativeSetOption(JNIEnv *env,
++                                              jobject this,
+                                               jint cmd, jboolean on,
+                                               jobject value) {
+     int fd, fd1;
+diff --git a/src/windows/native/java/net/net_util_md.c b/src/windows/native/java/net/net_util_md.c
+--- jdk/src/windows/native/java/net/net_util_md.c
++++ jdk/src/windows/native/java/net/net_util_md.c
+@@ -415,12 +415,24 @@
+                int optlen)
+ {
+     int rv;
++    int parg;
++    int plen = sizeof(parg);
+ 
+     if (level == IPPROTO_IP && optname == IP_TOS) {
+         int *tos = (int *)optval;
+         *tos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
+     }
+ 
++    if (optname == SO_REUSEADDR) {
++        /*
++         * Do not set SO_REUSEADDE if SO_EXCLUSIVEADDUSE is already set
++         */
++        rv = NET_GetSockOpt(s, SOL_SOCKET, SO_EXCLUSIVEADDRUSE, (char *)&parg, &plen);
++        if (rv == 0 && parg == 1) {
++            return rv;
++        }
++    }
++
+     rv = setsockopt(s, level, optname, optval, optlen);
+ 
+     if (rv == SOCKET_ERROR) {
+@@ -484,15 +496,32 @@
+ }
+ 
+ /*
++ * Sets SO_ECLUSIVEADDRUSE if SO_REUSEADDR is not already set.
++ */
++void setExclusiveBind(int fd) {
++    int parg;
++    int plen = sizeof(parg);
++    int rv = 0;
++    rv = NET_GetSockOpt(fd, SOL_SOCKET, SO_REUSEADDR, (char *)&parg, &plen);
++    if (rv == 0 && parg == 0) {
++        parg = 1;
++        rv = NET_SetSockOpt(fd, SOL_SOCKET, SO_EXCLUSIVEADDRUSE, (char*)&parg, plen);
++    }
++}
++
++/*
+  * Wrapper for bind winsock call - transparent converts an
+  * error related to binding to a port that has exclusive access
+  * into an error indicating the port is in use (facilitates
+  * better error reporting).
++ *
++ * Should be only called by the wrapper method NET_WinBind
+  */
+ JNIEXPORT int JNICALL
+ NET_Bind(int s, struct sockaddr *him, int len)
+ {
+-    int rv = bind(s, him, len);
++    int rv;
++    rv = bind(s, him, len);
+ 
+     if (rv == SOCKET_ERROR) {
+         /*
+@@ -507,6 +536,18 @@
+     return rv;
+ }
+ 
++/*
++ * Wrapper for NET_Bind call. Sets SO_EXCLUSIVEADDRUSE
++ * if required, and then calls NET_BIND
++ */
++JNIEXPORT int JNICALL
++NET_WinBind(int s, struct sockaddr *him, int len, jboolean exclBind)
++{
++    if (exclBind == JNI_TRUE)
++        setExclusiveBind(s);
++    return NET_Bind(s, him, len);
++}
++
+ JNIEXPORT int JNICALL
+ NET_SocketClose(int fd) {
+     struct linger l;
+@@ -653,7 +694,7 @@
+  */
+ 
+ JNIEXPORT int JNICALL
+-NET_BindV6(struct ipv6bind* b) {
++NET_BindV6(struct ipv6bind* b, jboolean exclBind) {
+     int fd=-1, ofd=-1, rv, len;
+     /* need to defer close until new sockets created */
+     int close_fd=-1, close_ofd=-1;
+@@ -666,8 +707,8 @@
+     if (family == AF_INET && (b->addr->him4.sin_addr.s_addr != INADDR_ANY)) {
+         /* bind to v4 only */
+         int ret;
+-        ret = NET_Bind (b->ipv4_fd, (struct sockaddr *)b->addr,
+-                                sizeof (struct sockaddr_in));
++        ret = NET_WinBind (b->ipv4_fd, (struct sockaddr *)b->addr,
++                                sizeof (struct sockaddr_in), exclBind);
+         if (ret == SOCKET_ERROR) {
+             CLOSE_SOCKETS_AND_RETURN;
+         }
+@@ -678,8 +719,8 @@
+     if (family == AF_INET6 && (!IN6_IS_ADDR_ANY(&b->addr->him6.sin6_addr))) {
+         /* bind to v6 only */
+         int ret;
+-        ret = NET_Bind (b->ipv6_fd, (struct sockaddr *)b->addr,
+-                                sizeof (struct SOCKADDR_IN6));
++        ret = NET_WinBind (b->ipv6_fd, (struct sockaddr *)b->addr,
++                                sizeof (struct SOCKADDR_IN6), exclBind);
+         if (ret == SOCKET_ERROR) {
+             CLOSE_SOCKETS_AND_RETURN;
+         }
+@@ -708,7 +749,7 @@
+         oaddr.him4.sin_addr.s_addr = INADDR_ANY;
+     }
+ 
+-    rv = NET_Bind (fd, (struct sockaddr *)b->addr, SOCKETADDRESS_LEN(b->addr));
++    rv = NET_WinBind(fd, (struct sockaddr *)b->addr, SOCKETADDRESS_LEN(b->addr), exclBind);
+     if (rv == SOCKET_ERROR) {
+         CLOSE_SOCKETS_AND_RETURN;
+     }
+@@ -720,8 +761,8 @@
+     }
+     bound_port = GET_PORT (b->addr);
+     SET_PORT (&oaddr, bound_port);
+-    if ((rv=NET_Bind (ofd, (struct sockaddr *) &oaddr,
+-                                SOCKETADDRESS_LEN (&oaddr))) == SOCKET_ERROR) {
++    if ((rv=NET_WinBind (ofd, (struct sockaddr *) &oaddr,
++                         SOCKETADDRESS_LEN (&oaddr), exclBind)) == SOCKET_ERROR) {
+         int retries;
+         int sotype, arglen=sizeof(sotype);
+ 
+@@ -757,7 +798,8 @@
+ 
+             /* bind random port on first socket */
+             SET_PORT (&oaddr, 0);
+-            rv = NET_Bind (ofd, (struct sockaddr *)&oaddr, SOCKETADDRESS_LEN(&oaddr));
++            rv = NET_WinBind (ofd, (struct sockaddr *)&oaddr, SOCKETADDRESS_LEN(&oaddr),
++                              exclBind);
+             if (rv == SOCKET_ERROR) {
+                 CLOSE_SOCKETS_AND_RETURN;
+             }
+@@ -773,7 +815,8 @@
+             }
+             bound_port = GET_PORT (&oaddr);
+             SET_PORT (b->addr, bound_port);
+-            rv = NET_Bind (fd, (struct sockaddr *)b->addr, SOCKETADDRESS_LEN(b->addr));
++            rv = NET_WinBind (fd, (struct sockaddr *)b->addr, SOCKETADDRESS_LEN(b->addr),
++                              exclBind);
+ 
+             if (rv != SOCKET_ERROR) {
+                 if (family == AF_INET) {
+diff --git a/src/windows/native/java/net/net_util_md.h b/src/windows/native/java/net/net_util_md.h
+--- jdk/src/windows/native/java/net/net_util_md.h
++++ jdk/src/windows/native/java/net/net_util_md.h
+@@ -307,7 +307,7 @@
+  */
+ JNIEXPORT int JNICALL NET_Timeout2(int fd, int fd1, long timeout, int *fdret);
+ 
+-JNIEXPORT int JNICALL NET_BindV6(struct ipv6bind* b);
++JNIEXPORT int JNICALL NET_BindV6(struct ipv6bind* b, jboolean exclBind);
+ 
+ #define NET_WAIT_READ   0x01
+ #define NET_WAIT_WRITE  0x02
+@@ -315,6 +315,9 @@
+ 
+ extern jint NET_Wait(JNIEnv *env, jint fd, jint flags, jint timeout);
+ 
++JNIEXPORT int JNICALL NET_WinBind(int s, struct sockaddr *him, int len,
++                                   jboolean exclBind);
++
+ /* XP versions of the native routines */
+ 
+ JNIEXPORT jobject JNICALL Java_java_net_NetworkInterface_getByName0_XP
+diff --git a/src/windows/native/sun/nio/ch/Net.c b/src/windows/native/sun/nio/ch/Net.c
+--- jdk/src/windows/native/sun/nio/ch/Net.c
++++ jdk/src/windows/native/sun/nio/ch/Net.c
+@@ -72,9 +72,20 @@
+     return (jint)s;
+ }
+ 
++JNIEXPORT jint JNICALL
++Java_sun_nio_ch_Net_isExclusiveBindAvailable(JNIEnv *env, jclass clazz) {
++    OSVERSIONINFO ver;
++    int version;
++    ver.dwOSVersionInfoSize = sizeof(ver);
++    GetVersionEx(&ver);
++    version = ver.dwMajorVersion * 10 + ver.dwMinorVersion;
++    //if os <= xp exclusive binding is off by default
++    return version >= 60 ? 1 : 0;
++}
++
+ JNIEXPORT void JNICALL
+-Java_sun_nio_ch_Net_bind(JNIEnv *env, jclass clazz,
+-                         jobject fdo, jobject iao, jint port)
++Java_sun_nio_ch_Net_bind0(JNIEnv *env, jclass clazz,
++                         jobject fdo, jboolean exclBind, jobject iao, jint port)
+ {
+     SOCKETADDRESS sa;
+     int rv;
+@@ -84,7 +95,7 @@
+       return;
+     }
+ 
+-    rv = NET_Bind(fdval(env, fdo), (struct sockaddr *)&sa, sa_len);
++    rv = NET_WinBind(fdval(env, fdo), (struct sockaddr *)&sa, sa_len, isExclBind);
+     if (rv == SOCKET_ERROR)
+         NET_ThrowNew(env, WSAGetLastError(), "bind");
+ }
+@@ -152,7 +163,6 @@
+     return iao;
+ }
+ 
+-
+ JNIEXPORT jint JNICALL
+ Java_sun_nio_ch_Net_getIntOption0(JNIEnv *env, jclass clazz,
+                                   jobject fdo, jint opt)

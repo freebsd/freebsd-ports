@@ -1,0 +1,54 @@
+# HG changeset patch
+# User andrew
+# Date 1371555603 18000
+# Node ID 546df033118c15bdfb5cc08f73db87805bc56277
+# Parent  60c57caf0348c7eed93900e4395607af759e6ba9
+8009004: Better implementation of RMI connections
+Summary: Better class handling.
+Reviewed-by: alanb, dfuchs, skoivu, jbachorik
+Contributed-by: jean-francois.denise@oracle.com
+
+diff --git a/src/share/classes/com/sun/jmx/remote/util/OrderClassLoaders.java b/src/share/classes/com/sun/jmx/remote/util/OrderClassLoaders.java
+--- jdk/src/share/classes/com/sun/jmx/remote/util/OrderClassLoaders.java
++++ jdk/src/share/classes/com/sun/jmx/remote/util/OrderClassLoaders.java
+@@ -25,6 +25,8 @@
+ 
+ package com.sun.jmx.remote.util;
+ 
++import sun.reflect.misc.ReflectUtil;
++
+ public class OrderClassLoaders extends ClassLoader {
+     public OrderClassLoaders(ClassLoader cl1, ClassLoader cl2) {
+         super(cl1);
+@@ -32,9 +34,10 @@
+         this.cl2 = cl2;
+     }
+ 
+-    protected Class findClass(String name) throws ClassNotFoundException {
++    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
++        ReflectUtil.checkPackageAccess(name);
+         try {
+-            return super.findClass(name);
++            return super.loadClass(name, resolve);
+         } catch (ClassNotFoundException cne) {
+             if (cl2 != null) {
+                 return cl2.loadClass(name);
+diff --git a/src/share/classes/javax/management/remote/rmi/RMIConnectionImpl.java b/src/share/classes/javax/management/remote/rmi/RMIConnectionImpl.java
+--- jdk/src/share/classes/javax/management/remote/rmi/RMIConnectionImpl.java
++++ jdk/src/share/classes/javax/management/remote/rmi/RMIConnectionImpl.java
+@@ -80,6 +80,7 @@
+ import javax.management.remote.NotificationResult;
+ import javax.management.remote.TargetedNotification;
+ import javax.security.auth.Subject;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * <p>Implementation of the {@link RMIConnection} interface.  User
+@@ -1804,6 +1805,7 @@
+         @Override
+         protected Class<?> loadClass(String name, boolean resolve)
+         throws ClassNotFoundException {
++            ReflectUtil.checkPackageAccess(name);
+             try {
+                 super.loadClass(name, resolve);
+             } catch(Exception e) {

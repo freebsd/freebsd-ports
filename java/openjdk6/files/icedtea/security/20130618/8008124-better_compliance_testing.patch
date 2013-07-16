@@ -1,0 +1,20 @@
+# HG changeset patch
+# User dsamersoff
+# Date 1364499568 -14400
+# Node ID f880d5294bdd9d8d555fe3fbf06e39a5b80ad125
+# Parent  100c93da24f90ae93063fdd0affbc29c691424e8
+8008124: Better compliance testing
+Summary: Better compliance testing
+Reviewed-by: dfuchs, jfdenise, skoivu, alanb
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java b/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+@@ -235,6 +235,7 @@
+             throws NotCompliantMBeanException {
+         if (mbeanInterface == null)
+             mbeanInterface = getStandardMBeanInterface(baseClass);
++        ReflectUtil.checkPackageAccess(mbeanInterface);
+         MBeanIntrospector<?> introspector = StandardMBeanIntrospector.getInstance();
+         return getClassMBeanInfo(introspector, baseClass, mbeanInterface);
+     }

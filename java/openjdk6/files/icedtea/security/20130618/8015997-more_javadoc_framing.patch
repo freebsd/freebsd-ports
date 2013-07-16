@@ -1,0 +1,21 @@
+# HG changeset patch
+# User bpatel
+# Date 1370467914 25200
+# Node ID f422c843b477501acc2526c69609fd94204cdce1
+# Parent  b4954380fa25058f1a6cfb9cb96f78d90cf0fc5c
+8015997: Additional improvement in Javadoc framing
+Reviewed-by: jjg
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+@@ -312,7 +312,8 @@
+                 "    if (targetPage.indexOf(\":\") != -1 || (targetPage != \"\" && !validURL(targetPage)))" + DocletConstants.NL +
+                 "        targetPage = \"undefined\";" + DocletConstants.NL +
+                 "    function validURL(url) {" + DocletConstants.NL +
+-                "        if (!(url.indexOf(\".html\") == url.length - 5))" + DocletConstants.NL +
++                "        var pos = url.indexOf(\".html\");" + DocletConstants.NL +
++                "        if (pos == -1 || pos != url.length - 5)" + DocletConstants.NL +
+                 "            return false;" + DocletConstants.NL +
+                 "        var allowNumber = false;" + DocletConstants.NL +
+                 "        var allowSep = false;" + DocletConstants.NL +

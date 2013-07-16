@@ -1,0 +1,80 @@
+# HG changeset patch
+# User andrew
+# Date 1371556240 18000
+# Node ID 97f318cdfb834385beb7370348582daebccc8987
+# Parent  3bb3933b9704ad855b64933be52c6aa252a04d83
+8009235: Improve handling of TSA data
+Reviewed-by: ahgross, mullan
+
+diff --git a/src/share/classes/sun/security/timestamp/TimestampToken.java b/src/share/classes/sun/security/timestamp/TimestampToken.java
+--- jdk/src/share/classes/sun/security/timestamp/TimestampToken.java
++++ jdk/src/share/classes/sun/security/timestamp/TimestampToken.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -115,6 +115,10 @@
+         return nonce;
+     }
+ 
++    public BigInteger getSerialNumber() {
++        return serialNumber;
++    }
++
+     /*
+      * Parses the timestamp token info.
+      *
+diff --git a/src/share/classes/sun/security/util/SignatureFileVerifier.java b/src/share/classes/sun/security/util/SignatureFileVerifier.java
+--- jdk/src/share/classes/sun/security/util/SignatureFileVerifier.java
++++ jdk/src/share/classes/sun/security/util/SignatureFileVerifier.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -541,6 +541,8 @@
+                 // Create a timestamp token info object
+                 TimestampToken timestampTokenInfo =
+                     new TimestampToken(encodedTimestampTokenInfo);
++                // Check that the signature timestamp applies to this signature
++                verifyTimestamp(timestampTokenInfo, info.getEncryptedDigest());
+                 // Create a timestamp object
+                 timestamp =
+                     new Timestamp(timestampTokenInfo.getDate(), tsaChain);
+@@ -549,6 +551,31 @@
+         return timestamp;
+     }
+ 
++    /*
++     * Check that the signature timestamp applies to this signature.
++     * Match the hash present in the signature timestamp token against the hash
++     * of this signature.
++     */
++    private void verifyTimestamp(TimestampToken token, byte[] signature)
++        throws NoSuchAlgorithmException, SignatureException {
++
++        MessageDigest md =
++            MessageDigest.getInstance(token.getHashAlgorithm().getName());
++
++        if (!Arrays.equals(token.getHashedMessage(), md.digest(signature))) {
++            throw new SignatureException("Signature timestamp (#" +
++                token.getSerialNumber() + ") generated on " + token.getDate() +
++                " is inapplicable");
++        }
++
++        if (debug != null) {
++            debug.println();
++            debug.println("Detected signature timestamp (#" +
++                token.getSerialNumber() + ") generated on " + token.getDate());
++            debug.println();
++        }
++    }
++
+     // for the toHex function
+     private static final char[] hexc =
+             {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};

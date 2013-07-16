@@ -1,0 +1,89 @@
+# HG changeset patch
+# User andrew
+# Date 1371404993 18000
+# Node ID a9d86a9899a5ecfdb22e5ca279a834771684b0fe
+# Parent  5c4ab66b87e3b640978d71e1af2952f00e721ada
+8007812: (reflect) Class.getEnclosingMethod problematic for some classes
+Summary: Better checking in getEnclosing(Method|Constructor|Class)
+Reviewed-by: darcy, ahgross, mchung
+
+diff --git a/src/share/classes/java/lang/Class.java b/src/share/classes/java/lang/Class.java
+--- jdk/src/share/classes/java/lang/Class.java
++++ jdk/src/share/classes/java/lang/Class.java
+@@ -912,13 +912,22 @@
+             for(int i = 0; i < parameterClasses.length; i++)
+                 parameterClasses[i] = toClass(parameterTypes[i]);
+ 
++            // Perform access check
++            Class<?> enclosingCandidate = enclosingInfo.getEnclosingClass();
++            // be very careful not to change the stack depth of this
++            // checkMemberAccess call for security reasons
++            // see java.lang.SecurityManager.checkMemberAccess
++            //
++            // Note that we need to do this on the enclosing class
++            enclosingCandidate.checkMemberAccess(Member.DECLARED,
++                        ClassLoader.getCallerClassLoader(), true);
+             /*
+              * Loop over all declared methods; match method name,
+              * number of and type of parameters, *and* return
+              * type.  Matching return type is also necessary
+              * because of covariant returns, etc.
+              */
+-            for(Method m: enclosingInfo.getEnclosingClass().getDeclaredMethods()) {
++            for(Method m: enclosingCandidate.getDeclaredMethods()) {
+                 if (m.getName().equals(enclosingInfo.getName()) ) {
+                     Class<?>[] candidateParamClasses = m.getParameterTypes();
+                     if (candidateParamClasses.length == parameterClasses.length) {
+@@ -1039,11 +1048,20 @@
+             for(int i = 0; i < parameterClasses.length; i++)
+                 parameterClasses[i] = toClass(parameterTypes[i]);
+ 
++            // Perform access check
++            Class<?> enclosingCandidate = enclosingInfo.getEnclosingClass();
++            // be very careful not to change the stack depth of this
++            // checkMemberAccess call for security reasons
++            // see java.lang.SecurityManager.checkMemberAccess
++            //
++            // Note that we need to do this on the enclosing class
++            enclosingCandidate.checkMemberAccess(Member.DECLARED,
++                        ClassLoader.getCallerClassLoader(), true);
+             /*
+              * Loop over all declared constructors; match number
+              * of and type of parameters.
+              */
+-            for(Constructor c: enclosingInfo.getEnclosingClass().getDeclaredConstructors()) {
++            for(Constructor<?> c: enclosingCandidate.getDeclaredConstructors()) {
+                 Class<?>[] candidateParamClasses = c.getParameterTypes();
+                 if (candidateParamClasses.length == parameterClasses.length) {
+                     boolean matches = true;
+@@ -1098,18 +1116,28 @@
+         // attribute if and only if it is a local class or an
+         // anonymous class.
+         EnclosingMethodInfo enclosingInfo = getEnclosingMethodInfo();
++        Class<?> enclosingCandidate;
+ 
+         if (enclosingInfo == null) {
+             // This is a top level or a nested class or an inner class (a, b, or c)
+-            return getDeclaringClass();
++            enclosingCandidate = getDeclaringClass();
+         } else {
+             Class<?> enclosingClass = enclosingInfo.getEnclosingClass();
+             // This is a local class or an anonymous class (d or e)
+             if (enclosingClass == this || enclosingClass == null)
+                 throw new InternalError("Malformed enclosing method information");
+             else
+-                return enclosingClass;
++                enclosingCandidate = enclosingClass;
+         }
++
++        // be very careful not to change the stack depth of this
++        // checkMemberAccess call for security reasons
++        // see java.lang.SecurityManager.checkMemberAccess
++        if (enclosingCandidate != null) {
++            enclosingCandidate.checkMemberAccess(Member.DECLARED,
++                    ClassLoader.getCallerClassLoader(), true);
++        }
++        return enclosingCandidate;
+     }
+ 
+     /**

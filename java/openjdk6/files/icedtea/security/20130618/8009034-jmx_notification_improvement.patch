@@ -1,0 +1,30 @@
+# HG changeset patch
+# User jbachorik
+# Date 1363082977 -3600
+# Node ID 4b57646ef873f1b5db05907da8e410e8a937957c
+# Parent  7311e449c298f769d7e9761678d28741f6cd1537
+8009034: Improve resulting notifications in JMX
+Summary: Disallowing access to mutable shared arrays
+Reviewed-by: dfuchs, mchung, skoivu
+
+diff --git a/src/share/classes/javax/management/remote/NotificationResult.java b/src/share/classes/javax/management/remote/NotificationResult.java
+--- jdk/src/share/classes/javax/management/remote/NotificationResult.java
++++ jdk/src/share/classes/javax/management/remote/NotificationResult.java
+@@ -89,7 +89,7 @@
+ 
+         this.earliestSequenceNumber = earliestSequenceNumber;
+         this.nextSequenceNumber = nextSequenceNumber;
+-        this.targetedNotifications = targetedNotifications;
++        this.targetedNotifications = (targetedNotifications.length == 0 ? targetedNotifications : targetedNotifications.clone());
+     }
+ 
+     /**
+@@ -122,7 +122,7 @@
+      * listeners they correspond to.  This array can be empty.
+      */
+     public TargetedNotification[] getTargetedNotifications() {
+-        return targetedNotifications;
++        return targetedNotifications.length == 0 ? targetedNotifications : targetedNotifications.clone();
+     }
+ 
+     /**

@@ -1,0 +1,270 @@
+# HG changeset patch
+# User andrew
+# Date 1371485843 18000
+# Node ID 56bbd9db0a4965701dc64b41dac04507fa74f934
+# Parent  9bfe1c4dabb13428827ab592c4ee120593407603
+8008593: Better URLClassLoader resource management
+
+diff --git a/make/java/zip/mapfile-vers b/make/java/zip/mapfile-vers
+--- jdk/make/java/zip/mapfile-vers
++++ jdk/make/java/zip/mapfile-vers
+@@ -64,6 +64,7 @@
+ 		Java_java_util_zip_ZipFile_initIDs;
+ 		Java_java_util_zip_ZipFile_open;
+ 		Java_java_util_zip_ZipFile_read;
++		Java_java_util_zip_ZipFile_startsWithLOC;
+ 
+ 		ZIP_Close;
+ 		ZIP_CRC32;
+diff --git a/make/java/zip/reorder-i586 b/make/java/zip/reorder-i586
+--- jdk/make/java/zip/reorder-i586
++++ jdk/make/java/zip/reorder-i586
+@@ -19,6 +19,7 @@
+ text: .text%Java_java_util_zip_ZipFile_initIDs;
+ text: .text%Java_java_util_zip_ZipFile_open;
+ text: .text%Java_java_util_zip_ZipFile_getTotal;
++text: .text%Java_java_util_zip_ZipFile_startsWithLOC;
+ text: .text%Java_java_util_zip_ZipFile_getEntry;
+ text: .text%Java_java_util_zip_ZipEntry_initIDs;
+ text: .text%Java_java_util_zip_ZipEntry_initFields;
+diff --git a/make/java/zip/reorder-sparc b/make/java/zip/reorder-sparc
+--- jdk/make/java/zip/reorder-sparc
++++ jdk/make/java/zip/reorder-sparc
+@@ -18,6 +18,7 @@
+ text: .text%Java_java_util_zip_ZipFile_initIDs;
+ text: .text%Java_java_util_zip_ZipFile_open;
+ text: .text%Java_java_util_zip_ZipFile_getTotal;
++text: .text%Java_java_util_zip_ZipFile_startsWithLOC;
+ text: .text%Java_java_util_zip_ZipFile_getEntry;
+ text: .text%Java_java_util_zip_ZipEntry_initIDs;
+ text: .text%Java_java_util_zip_ZipEntry_initFields;
+diff --git a/make/java/zip/reorder-sparcv9 b/make/java/zip/reorder-sparcv9
+--- jdk/make/java/zip/reorder-sparcv9
++++ jdk/make/java/zip/reorder-sparcv9
+@@ -19,6 +19,7 @@
+ text: .text%Java_java_util_zip_ZipFile_initIDs;
+ text: .text%Java_java_util_zip_ZipFile_open;
+ text: .text%Java_java_util_zip_ZipFile_getTotal;
++text: .text%Java_java_util_zip_ZipFile_startsWithLOC;
+ text: .text%Java_java_util_zip_ZipFile_getEntry;
+ text: .text%Java_java_util_zip_ZipEntry_initIDs;
+ text: .text%Java_java_util_zip_ZipEntry_initFields;
+diff --git a/src/share/classes/java/util/zip/ZipFile.java b/src/share/classes/java/util/zip/ZipFile.java
+--- jdk/src/share/classes/java/util/zip/ZipFile.java
++++ jdk/src/share/classes/java/util/zip/ZipFile.java
+@@ -44,9 +44,10 @@
+  */
+ public
+ class ZipFile implements ZipConstants {
+-    private long jzfile;  // address of jzfile data
+-    private String name;  // zip file name
+-    private int total;    // total number of entries
++    private long jzfile;           // address of jzfile data
++    private final String name;     // zip file name
++    private final int total;       // total number of entries
++    private final boolean locsig;  // if zip file starts with LOCSIG (usually true)
+     private boolean closeRequested;
+ 
+     private static final int STORED = ZipEntry.STORED;
+@@ -132,10 +133,30 @@
+ 
+         this.name = name;
+         this.total = getTotal(jzfile);
++        this.locsig = startsWithLOC(jzfile);
++    }
++
++    static {
++        sun.misc.SharedSecrets.setJavaUtilZipFileAccess(
++            new sun.misc.JavaUtilZipFileAccess() {
++                public boolean startsWithLocHeader(ZipFile zip) {
++                    return zip.startsWithLocHeader();
++                }
++             }
++        );
++    }
++
++    /**
++     * Returns {@code true} if, and only if, the zip file begins with {@code
++     * LOCSIG}.
++     */
++    private boolean startsWithLocHeader() {
++        return locsig;
+     }
+ 
+     private static native long open(String name, int mode, long lastModified);
+     private static native int getTotal(long jzfile);
++    private static native boolean startsWithLOC(long jzfile);
+ 
+ 
+     /**
+diff --git a/src/share/classes/sun/misc/JavaUtilZipFileAccess.java b/src/share/classes/sun/misc/JavaUtilZipFileAccess.java
+new file mode 100644
+--- /dev/null
++++ jdk/src/share/classes/sun/misc/JavaUtilZipFileAccess.java
+@@ -0,0 +1,32 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.misc;
++
++import java.util.zip.ZipFile;
++
++public interface JavaUtilZipFileAccess {
++    public boolean startsWithLocHeader(ZipFile zip);
++}
+diff --git a/src/share/classes/sun/misc/SharedSecrets.java b/src/share/classes/sun/misc/SharedSecrets.java
+--- jdk/src/share/classes/sun/misc/SharedSecrets.java
++++ jdk/src/share/classes/sun/misc/SharedSecrets.java
+@@ -52,6 +52,7 @@
+     private static JavaIOFileDescriptorAccess javaIOFileDescriptorAccess;
+     private static JavaSecurityProtectionDomainAccess javaSecurityProtectionDomainAccess;
+     private static JavaSecurityAccess javaSecurityAccess;
++    private static JavaUtilZipFileAccess javaUtilZipFileAccess;
+     private static JavaAWTAccess javaAWTAccess;
+     private static JavaIOFileAccess javaIOFileAccess;
+ 
+@@ -141,6 +142,16 @@
+         return javaSecurityAccess;
+     }
+ 
++    public static JavaUtilZipFileAccess getJavaUtilZipFileAccess() {
++        if (javaUtilZipFileAccess == null)
++            unsafe.ensureClassInitialized(java.util.zip.ZipFile.class);
++        return javaUtilZipFileAccess;
++    }
++
++    public static void setJavaUtilZipFileAccess(JavaUtilZipFileAccess access) {
++        javaUtilZipFileAccess = access;
++    }
++
+     public static void setJavaAWTAccess(JavaAWTAccess jaa) {
+         javaAWTAccess = jaa;
+     }
+diff --git a/src/share/classes/sun/misc/URLClassPath.java b/src/share/classes/sun/misc/URLClassPath.java
+--- jdk/src/share/classes/sun/misc/URLClassPath.java
++++ jdk/src/share/classes/sun/misc/URLClassPath.java
+@@ -77,12 +77,16 @@
+     final static String USER_AGENT_JAVA_VERSION = "UA-Java-Version";
+     final static String JAVA_VERSION;
+     private static final boolean DEBUG;
++    private static final boolean DISABLE_JAR_CHECKING;
+ 
+     static {
+         JAVA_VERSION = java.security.AccessController.doPrivileged(
+             new sun.security.action.GetPropertyAction("java.version"));
+         DEBUG        = (java.security.AccessController.doPrivileged(
+             new sun.security.action.GetPropertyAction("sun.misc.URLClassPath.debug")) != null);
++        String p = java.security.AccessController.doPrivileged(
++            new sun.security.action.GetPropertyAction("sun.misc.URLClassPath.disableJarChecking"));
++        DISABLE_JAR_CHECKING = p != null ? p.equals("true") || p.equals("") : false;
+     }
+ 
+     /* The original search path of URLs. */
+@@ -559,6 +563,8 @@
+         private MetaIndex metaIndex;
+         private URLStreamHandler handler;
+         private HashMap lmap;
++        private static final sun.misc.JavaUtilZipFileAccess zipAccess =
++                sun.misc.SharedSecrets.getJavaUtilZipFileAccess();
+ 
+         /*
+          * Creates a new JarLoader for the specified URL referring to
+@@ -650,6 +656,14 @@
+             }
+         }
+ 
++        /* Throws if the given jar file is does not start with the correct LOC */
++        static JarFile checkJar(JarFile jar) throws IOException {
++            if (System.getSecurityManager() != null && !DISABLE_JAR_CHECKING
++                && !zipAccess.startsWithLocHeader(jar))
++                throw new IOException("Invalid Jar file");
++            return jar;
++        }
++
+         private JarFile getJarFile(URL url) throws IOException {
+             // Optimize case where url refers to a local jar file
+             if (isOptimizable(url)) {
+@@ -657,11 +671,12 @@
+                 if (!p.exists()) {
+                     throw new FileNotFoundException(p.getPath());
+                 }
+-                return new JarFile (p.getPath());
++                return checkJar(new JarFile(p.getPath()));
+             }
+             URLConnection uc = getBaseURL().openConnection();
+             uc.setRequestProperty(USER_AGENT_JAVA_VERSION, JAVA_VERSION);
+-            return ((JarURLConnection)uc).getJarFile();
++            JarFile jarFile = ((JarURLConnection)uc).getJarFile();
++            return checkJar(jarFile);
+         }
+ 
+         /*
+diff --git a/src/share/native/java/util/zip/ZipFile.c b/src/share/native/java/util/zip/ZipFile.c
+--- jdk/src/share/native/java/util/zip/ZipFile.c
++++ jdk/src/share/native/java/util/zip/ZipFile.c
+@@ -133,6 +133,14 @@
+     return zip->total;
+ }
+ 
++JNIEXPORT jboolean JNICALL
++Java_java_util_zip_ZipFile_startsWithLOC(JNIEnv *env, jclass cls, jlong zfile)
++{
++    jzfile *zip = jlong_to_ptr(zfile);
++
++    return zip->locsig;
++}
++
+ JNIEXPORT void JNICALL
+ Java_java_util_zip_ZipFile_close(JNIEnv *env, jclass cls, jlong zfile)
+ {
+diff --git a/src/share/native/java/util/zip/zip_util.c b/src/share/native/java/util/zip/zip_util.c
+--- jdk/src/share/native/java/util/zip/zip_util.c
++++ jdk/src/share/native/java/util/zip/zip_util.c
+@@ -721,6 +721,14 @@
+         return NULL;
+     }
+ 
++    // Assumption, zfd refers to start of file. Trivially, reuse errbuf.
++    if (readFully(zfd, errbuf, 4) != -1) {  // errors will be handled later
++        if (GETSIG(errbuf) == LOCSIG)
++            zip->locsig = JNI_TRUE;
++        else
++            zip->locsig = JNI_FALSE;
++    }
++
+     len = zip->len = ZFILE_Lseek(zfd, 0, SEEK_END);
+     if (len == -1) {
+         if (pmsg && JVM_GetLastErrorString(errbuf, sizeof(errbuf)) > 0)
+diff --git a/src/share/native/java/util/zip/zip_util.h b/src/share/native/java/util/zip/zip_util.h
+--- jdk/src/share/native/java/util/zip/zip_util.h
++++ jdk/src/share/native/java/util/zip/zip_util.h
+@@ -179,6 +179,7 @@
+ #else
+     cencache cencache;    /* CEN header cache */
+ #endif
++    jboolean locsig;      /* if zip file starts with LOCSIG */
+     ZFILE zfd;            /* open file descriptor */
+     void *lock;           /* read lock */
+     char *comment;        /* zip file comment */

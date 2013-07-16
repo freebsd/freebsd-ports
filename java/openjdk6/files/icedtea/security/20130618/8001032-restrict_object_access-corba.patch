@@ -1,0 +1,544 @@
+# HG changeset patch
+# User Severin Gehwolf <sgehwolf@redhat.com>
+# Date 1371473490 -7200
+# Node ID 7a0a1f984e7fdd43bd9502b6f77ae890d158ccd1
+# Parent  bec83758f55670cdb7865e8103f8100dc6f4f0fb
+8001032: Restrict object access
+Summary: Restrict object access; fix reviewed also by Alexander Fomin
+Reviewed-by: alanb, ahgross
+
+diff --git a/make/com/sun/corba/minclude/com_sun_corba_se_impl_orbutil.jmk b/make/com/sun/corba/minclude/com_sun_corba_se_impl_orbutil.jmk
+--- corba/make/com/sun/corba/minclude/com_sun_corba_se_impl_orbutil.jmk
++++ corba/make/com/sun/corba/minclude/com_sun_corba_se_impl_orbutil.jmk
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -39,7 +39,6 @@
+ 	com/sun/corba/se/impl/orbutil/ObjectStreamClassUtil_1_3.java \
+ 	com/sun/corba/se/impl/orbutil/ORBConstants.java \
+ 	com/sun/corba/se/impl/orbutil/ORBUtility.java \
+-	com/sun/corba/se/impl/orbutil/ORBClassLoader.java \
+ 	com/sun/corba/se/impl/orbutil/RepIdDelegator.java \
+ 	com/sun/corba/se/impl/orbutil/RepositoryIdFactory.java \
+ 	com/sun/corba/se/impl/orbutil/RepositoryIdStrings.java \
+diff --git a/src/share/classes/com/sun/corba/se/impl/activation/ServerManagerImpl.java b/src/share/classes/com/sun/corba/se/impl/activation/ServerManagerImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/activation/ServerManagerImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/activation/ServerManagerImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -81,7 +81,6 @@
+ 
+ import com.sun.corba.se.impl.oa.poa.BadServerIdHandler;
+ import com.sun.corba.se.impl.orbutil.ORBConstants;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+ import com.sun.corba.se.impl.util.Utility;
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/interceptors/PIHandlerImpl.java b/src/share/classes/com/sun/corba/se/impl/interceptors/PIHandlerImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/PIHandlerImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/PIHandlerImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -76,7 +76,6 @@
+ import com.sun.corba.se.impl.logging.ORBUtilSystemException;
+ import com.sun.corba.se.impl.logging.OMGSystemException;
+ import com.sun.corba.se.impl.corba.RequestImpl;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.impl.orbutil.ORBConstants;
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+ import com.sun.corba.se.impl.orbutil.StackImpl;
+diff --git a/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java b/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -86,13 +86,14 @@
+ import com.sun.corba.se.impl.encoding.EncapsOutputStream;
+ 
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ 
+ import com.sun.corba.se.impl.util.RepositoryId;
+ 
+ import com.sun.corba.se.impl.logging.InterceptorsSystemException;
+ import com.sun.corba.se.impl.logging.OMGSystemException;
+ 
++import sun.corba.SharedSecrets;
++
+ /**
+  * Implementation of the RequestInfo interface as specified in
+  * orbos/99-12-02 section 5.4.1.
+@@ -451,7 +452,8 @@
+ 
+             // Find the read method on the helper class:
+             String helperClassName = className + "Helper";
+-            Class helperClass = ORBClassLoader.loadClass( helperClassName );
++            Class<?> helperClass =
++                SharedSecrets.getJavaCorbaAccess().loadClass( helperClassName );
+             Class[] readParams = new Class[1];
+             readParams[0] = org.omg.CORBA.portable.InputStream.class;
+             Method readMethod = helperClass.getMethod( "read", readParams );
+@@ -511,7 +513,8 @@
+                 Class exceptionClass = userException.getClass();
+                 String className = exceptionClass.getName();
+                 String helperClassName = className + "Helper";
+-                Class helperClass = ORBClassLoader.loadClass( helperClassName );
++                Class<?> helperClass =
++                    SharedSecrets.getJavaCorbaAccess().loadClass( helperClassName );
+ 
+                 // Find insert( Any, class ) method
+                 Class[] insertMethodParams = new Class[2];
+diff --git a/src/share/classes/com/sun/corba/se/impl/io/ValueUtility.java b/src/share/classes/com/sun/corba/se/impl/io/ValueUtility.java
+--- corba/src/share/classes/com/sun/corba/se/impl/io/ValueUtility.java
++++ corba/src/share/classes/com/sun/corba/se/impl/io/ValueUtility.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -98,6 +98,14 @@
+             public ValueHandlerImpl newValueHandlerImpl() {
+                 return ValueHandlerImpl.getInstance();
+             }
++            public Class<?> loadClass(String className) throws ClassNotFoundException {
++                if (Thread.currentThread().getContextClassLoader() != null) {
++                    return Thread.currentThread().getContextClassLoader().
++                        loadClass(className);
++                } else {
++                    return ClassLoader.getSystemClassLoader().loadClass(className);
++                }
++            }
+         });
+     }
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java b/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java
+--- corba/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java
++++ corba/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -109,12 +109,9 @@
+ import com.sun.corba.se.impl.util.Utility;
+ import com.sun.corba.se.impl.util.IdentityHashtable;
+ import com.sun.corba.se.impl.util.JDKBridge;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.impl.logging.UtilSystemException;
+ import com.sun.corba.se.spi.logging.CORBALogDomains;
+ import sun.corba.SharedSecrets;
+-import sun.corba.JavaCorbaAccess;
+-
+ 
+ /**
+  * Provides utility methods that can be used by stubs and ties to
+@@ -263,7 +260,7 @@
+             return new MarshalException(message,inner);
+         } else if (ex instanceof ACTIVITY_REQUIRED) {
+             try {
+-                Class cl = ORBClassLoader.loadClass(
++                Class<?> cl = SharedSecrets.getJavaCorbaAccess().loadClass(
+                                "javax.activity.ActivityRequiredException");
+                 Class[] params = new Class[2];
+                 params[0] = java.lang.String.class;
+@@ -279,7 +276,7 @@
+             }
+         } else if (ex instanceof ACTIVITY_COMPLETED) {
+             try {
+-                Class cl = ORBClassLoader.loadClass(
++                Class<?> cl = SharedSecrets.getJavaCorbaAccess().loadClass(
+                                "javax.activity.ActivityCompletedException");
+                 Class[] params = new Class[2];
+                 params[0] = java.lang.String.class;
+@@ -295,7 +292,7 @@
+               }
+         } else if (ex instanceof INVALID_ACTIVITY) {
+             try {
+-                Class cl = ORBClassLoader.loadClass(
++                Class<?> cl = SharedSecrets.getJavaCorbaAccess().loadClass(
+                                "javax.activity.InvalidActivityException");
+                 Class[] params = new Class[2];
+                 params[0] = java.lang.String.class;
+diff --git a/src/share/classes/com/sun/corba/se/impl/orb/ORBDataParserImpl.java b/src/share/classes/com/sun/corba/se/impl/orb/ORBDataParserImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ORBDataParserImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ORBDataParserImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -48,7 +48,6 @@
+ 
+ import com.sun.corba.se.impl.encoding.CodeSetComponentInfo ;
+ import com.sun.corba.se.impl.legacy.connection.USLPort;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader ;
+ import com.sun.corba.se.impl.orbutil.ORBConstants ;
+ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java b/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -149,7 +149,6 @@
+ import com.sun.corba.se.impl.oa.poa.BadServerIdHandler;
+ import com.sun.corba.se.impl.oa.poa.DelegateImpl;
+ import com.sun.corba.se.impl.oa.poa.POAFactory;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.impl.orbutil.ORBConstants;
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+ import com.sun.corba.se.impl.orbutil.StackImpl;
+diff --git a/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java b/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -78,7 +78,6 @@
+ import com.sun.corba.se.impl.legacy.connection.USLPort ;
+ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
+ import com.sun.corba.se.impl.oa.poa.BadServerIdHandler ;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader ;
+ import com.sun.corba.se.impl.orbutil.ORBConstants ;
+ import com.sun.corba.se.impl.protocol.giopmsgheaders.KeyAddr ;
+ import com.sun.corba.se.impl.protocol.giopmsgheaders.ProfileAddr ;
+@@ -86,6 +85,8 @@
+ import com.sun.corba.se.impl.transport.DefaultIORToSocketInfoImpl;
+ import com.sun.corba.se.impl.transport.DefaultSocketFactoryImpl;
+ 
++import sun.corba.SharedSecrets;
++
+ /** Initialize the parser data for the standard ORB parser.  This is used both
+  * to implement ORBDataParserImpl and to provide the basic testing framework
+  * for ORBDataParserImpl.
+@@ -640,8 +641,8 @@
+                 String param = (String)value ;
+ 
+                 try {
+-                    Class legacySocketFactoryClass =
+-                        ORBClassLoader.loadClass(param);
++                    Class<?> legacySocketFactoryClass =
++                        SharedSecrets.getJavaCorbaAccess().loadClass(param);
+                     // For security reasons avoid creating an instance if
+                     // this socket factory class is not one that would fail
+                     // the class cast anyway.
+@@ -670,7 +671,8 @@
+                 String param = (String)value ;
+ 
+                 try {
+-                    Class socketFactoryClass = ORBClassLoader.loadClass(param);
++                    Class<?> socketFactoryClass =
++                        SharedSecrets.getJavaCorbaAccess().loadClass(param);
+                     // For security reasons avoid creating an instance if
+                     // this socket factory class is not one that would fail
+                     // the class cast anyway.
+@@ -699,7 +701,8 @@
+                 String param = (String)value ;
+ 
+                 try {
+-                    Class iorToSocketInfoClass = ORBClassLoader.loadClass(param);
++                    Class<?> iorToSocketInfoClass =
++                        SharedSecrets.getJavaCorbaAccess().loadClass(param);
+                     // For security reasons avoid creating an instance if
+                     // this socket factory class is not one that would fail
+                     // the class cast anyway.
+@@ -728,7 +731,8 @@
+                 String param = (String)value ;
+ 
+                 try {
+-                    Class iiopPrimaryToContactInfoClass = ORBClassLoader.loadClass(param);
++                    Class<?> iiopPrimaryToContactInfoClass =
++                        SharedSecrets.getJavaCorbaAccess().loadClass(param);
+                     // For security reasons avoid creating an instance if
+                     // this socket factory class is not one that would fail
+                     // the class cast anyway.
+@@ -757,8 +761,8 @@
+                 String param = (String)value ;
+ 
+                 try {
+-                    Class contactInfoListFactoryClass =
+-                        ORBClassLoader.loadClass(param);
++                    Class<?> contactInfoListFactoryClass =
++                        SharedSecrets.getJavaCorbaAccess().loadClass(param);
+                     // For security reasons avoid creating an instance if
+                     // this socket factory class is not one that would fail
+                     // the class cast anyway.
+diff --git a/src/share/classes/com/sun/corba/se/impl/orbutil/ORBClassLoader.java b/src/share/classes/com/sun/corba/se/impl/orbutil/ORBClassLoader.java
+deleted file mode 100644
+--- corba/src/share/classes/com/sun/corba/se/impl/orbutil/ORBClassLoader.java
++++ /dev/null
+@@ -1,47 +0,0 @@
+-/*
+- * Copyright (c) 2001, 2002, Oracle and/or its affiliates. All rights reserved.
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+- *
+- * This code is free software; you can redistribute it and/or modify it
+- * under the terms of the GNU General Public License version 2 only, as
+- * published by the Free Software Foundation.  Oracle designates this
+- * particular file as subject to the "Classpath" exception as provided
+- * by Oracle in the LICENSE file that accompanied this code.
+- *
+- * This code is distributed in the hope that it will be useful, but WITHOUT
+- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+- * version 2 for more details (a copy is included in the LICENSE file that
+- * accompanied this code).
+- *
+- * You should have received a copy of the GNU General Public License version
+- * 2 along with this work; if not, write to the Free Software Foundation,
+- * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+- *
+- * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+- * or visit www.oracle.com if you need additional information or have any
+- * questions.
+- */
+-package com.sun.corba.se.impl.orbutil;
+-
+-/**
+- * Based on feedback from bug report 4452016, all class loading
+- * in the ORB is isolated here.  It is acceptable to use
+- * Class.forName only when one is certain that the desired class
+- * should come from the core JDK.
+- */
+-public class ORBClassLoader
+-{
+-    public static Class loadClass(String className)
+-        throws ClassNotFoundException
+-    {
+-        return ORBClassLoader.getClassLoader().loadClass(className);
+-    }
+-
+-    public static ClassLoader getClassLoader() {
+-        if (Thread.currentThread().getContextClassLoader() != null)
+-            return Thread.currentThread().getContextClassLoader();
+-        else
+-            return ClassLoader.getSystemClassLoader();
+-    }
+-}
+diff --git a/src/share/classes/com/sun/corba/se/impl/orbutil/ORBUtility.java b/src/share/classes/com/sun/corba/se/impl/orbutil/ORBUtility.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orbutil/ORBUtility.java
++++ corba/src/share/classes/com/sun/corba/se/impl/orbutil/ORBUtility.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -90,6 +90,8 @@
+ import com.sun.corba.se.impl.logging.OMGSystemException ;
+ import com.sun.corba.se.impl.ior.iiop.JavaSerializationComponent;
+ 
++import sun.corba.SharedSecrets;
++
+ /**
+  *  Handy class full of static functions that don't belong in util.Utility for pure ORB reasons.
+  */
+@@ -262,8 +264,8 @@
+     {
+         try {
+             String name = classNameOf(strm.read_string());
+-            SystemException ex
+-                = (SystemException)ORBClassLoader.loadClass(name).newInstance();
++            SystemException ex = (SystemException)SharedSecrets.
++                getJavaCorbaAccess().loadClass(name).newInstance();
+             ex.minor = strm.read_long();
+             ex.completed = CompletionStatus.from_int(strm.read_long());
+             return ex;
+diff --git a/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/LocateReplyMessage_1_2.java b/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/LocateReplyMessage_1_2.java
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/LocateReplyMessage_1_2.java
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/LocateReplyMessage_1_2.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -41,7 +41,6 @@
+ 
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+ import com.sun.corba.se.impl.orbutil.ORBConstants;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ 
+ import com.sun.corba.se.spi.logging.CORBALogDomains ;
+ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
+diff --git a/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/MessageBase.java b/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/MessageBase.java
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/MessageBase.java
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/MessageBase.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -60,9 +60,10 @@
+ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+ import com.sun.corba.se.impl.orbutil.ORBConstants;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.impl.protocol.AddressingDispositionException;
+ 
++import sun.corba.SharedSecrets;
++
+ /**
+  * This class acts as the base class for the various GIOP message types. This
+  * also serves as a factory to create various message types. We currently
+@@ -909,7 +910,8 @@
+         SystemException sysEx = null;
+ 
+         try {
+-            Class clazz = ORBClassLoader.loadClass(exClassName);
++            Class<?> clazz =
++                SharedSecrets.getJavaCorbaAccess().loadClass(exClassName);
+             if (message == null) {
+                 sysEx = (SystemException) clazz.newInstance();
+             } else {
+diff --git a/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_0.java b/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_0.java
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_0.java
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_0.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -37,7 +37,6 @@
+ import com.sun.corba.se.spi.servicecontext.ServiceContexts;
+ import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.spi.ior.IOR;
+ import com.sun.corba.se.impl.encoding.CDRInputStream;
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_1.java b/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_1.java
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_1.java
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/giopmsgheaders/ReplyMessage_1_1.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -37,7 +37,6 @@
+ import com.sun.corba.se.spi.servicecontext.ServiceContexts;
+ import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
+ import com.sun.corba.se.impl.orbutil.ORBUtility;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader;
+ import com.sun.corba.se.spi.ior.IOR;
+ import com.sun.corba.se.impl.encoding.CDRInputStream;
+ 
+diff --git a/src/share/classes/com/sun/corba/se/spi/orb/ORB.java b/src/share/classes/com/sun/corba/se/spi/orb/ORB.java
+--- corba/src/share/classes/com/sun/corba/se/spi/orb/ORB.java
++++ corba/src/share/classes/com/sun/corba/se/spi/orb/ORB.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -97,8 +97,8 @@
+ 
+ import com.sun.corba.se.impl.presentation.rmi.PresentationManagerImpl ;
+ 
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader ;
+ import sun.awt.AppContext;
++import sun.corba.SharedSecrets;
+ 
+ public abstract class ORB extends com.sun.corba.se.org.omg.CORBA.ORB
+     implements Broker, TypeCodeFactory
+@@ -201,7 +201,7 @@
+ 
+                         try {
+                             // First try the configured class name, if any
+-                            Class cls = ORBClassLoader.loadClass( className ) ;
++                            Class<?> cls = SharedSecrets.getJavaCorbaAccess().loadClass( className ) ;
+                             sff = (PresentationManager.StubFactoryFactory)cls.newInstance() ;
+                         } catch (Exception exc) {
+                             // Use the default. Log the error as a warning.
+diff --git a/src/share/classes/com/sun/corba/se/spi/orb/OperationFactory.java b/src/share/classes/com/sun/corba/se/spi/orb/OperationFactory.java
+--- corba/src/share/classes/com/sun/corba/se/spi/orb/OperationFactory.java
++++ corba/src/share/classes/com/sun/corba/se/spi/orb/OperationFactory.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -35,9 +35,10 @@
+ import com.sun.corba.se.spi.logging.CORBALogDomains ;
+ 
+ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
+-import com.sun.corba.se.impl.orbutil.ORBClassLoader ;
+ import com.sun.corba.se.impl.orbutil.ObjectUtility ;
+ 
++import sun.corba.SharedSecrets;
++
+ /** This is a static factory class for commonly used operations
+ * for property parsing.  The following operations are supported:
+ * <ul>
+@@ -247,7 +248,8 @@
+             String className = getString( value ) ;
+ 
+             try {
+-                Class result = ORBClassLoader.loadClass( className ) ;
++                Class<?> result =
++                    SharedSecrets.getJavaCorbaAccess().loadClass( className ) ;
+                 return result ;
+             } catch (Exception exc) {
+                 ORBUtilSystemException wrapper = ORBUtilSystemException.get(
+diff --git a/src/share/classes/sun/corba/JavaCorbaAccess.java b/src/share/classes/sun/corba/JavaCorbaAccess.java
+--- corba/src/share/classes/sun/corba/JavaCorbaAccess.java
++++ corba/src/share/classes/sun/corba/JavaCorbaAccess.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -29,4 +29,5 @@
+ 
+ public interface JavaCorbaAccess {
+     public ValueHandlerImpl newValueHandlerImpl();
++    public Class<?> loadClass(String className) throws ClassNotFoundException;
+ }

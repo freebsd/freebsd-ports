@@ -1,0 +1,32 @@
+# HG changeset patch
+# User egahlin
+# Date 1363870588 -3600
+# Node ID 0ffc0656881cac6747ac1a62895e855750d1a04e
+# Parent  cd93c29052e6930c24a0350b8fe607ac1f1be068
+8008611: Better handling of annotations in JMX
+Reviewed-by: skoivu, dholmes, jfdenise
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java b/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+@@ -359,13 +359,19 @@
+         for (Annotation a : annots) {
+             Class<? extends Annotation> c = a.annotationType();
+             Method[] elements = c.getMethods();
++            boolean packageAccess = false;
+             for (Method element : elements) {
+                 DescriptorKey key = element.getAnnotation(DescriptorKey.class);
+                 if (key != null) {
+                     String name = key.value();
+                     Object value;
+                     try {
+-                        value = element.invoke(a);
++                        // Avoid checking access more than once per annotation
++                        if (!packageAccess) {
++                            ReflectUtil.checkPackageAccess(c);
++                            packageAccess = true;
++                        }
++                        value = MethodUtil.invoke(element, a, null);
+                     } catch (RuntimeException e) {
+                         // we don't expect this - except for possibly
+                         // security exceptions?

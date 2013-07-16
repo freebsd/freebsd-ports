@@ -1,0 +1,29 @@
+# HG changeset patch
+# User andrew
+# Date 1371485992 18000
+# Node ID cd93c29052e6930c24a0350b8fe607ac1f1be068
+# Parent  56bbd9db0a4965701dc64b41dac04507fa74f934
+8008603: Improve provision of JMX providers
+Reviewed-by: alanb, dfuchs, jfdenise, skoivu
+
+diff --git a/src/share/classes/javax/management/remote/JMXConnectorFactory.java b/src/share/classes/javax/management/remote/JMXConnectorFactory.java
+--- jdk/src/share/classes/javax/management/remote/JMXConnectorFactory.java
++++ jdk/src/share/classes/javax/management/remote/JMXConnectorFactory.java
+@@ -527,14 +527,9 @@
+             }
+         }
+ 
+-        if (loader == null)
+-            loader =
+-                AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {
+-                        public ClassLoader run() {
+-                            return
+-                                Thread.currentThread().getContextClassLoader();
+-                        }
+-                    });
++        if (loader == null) {
++            loader = Thread.currentThread().getContextClassLoader();
++        }
+ 
+         return loader;
+     }

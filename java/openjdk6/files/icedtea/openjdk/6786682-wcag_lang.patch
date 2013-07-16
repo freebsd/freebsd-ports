@@ -1,0 +1,274 @@
+# HG changeset patch
+# User bpatel
+# Date 1232068871 28800
+# Node ID 92a90d8c955b6cc619d16975e02d9143715dedaa
+# Parent  a50f3556d6954decf0897aa984c8ba43def77b9e
+6786682: Javadoc HTML WCAG 2.0 accessibility issues in standard doclet - HTML tag should have lang attribute
+Reviewed-by: jjg
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ConfigurationImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ConfigurationImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConfigurationImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConfigurationImpl.java
+@@ -493,4 +493,14 @@
+     public Comparator getMemberComparator() {
+         return null;
+     }
++
++    /**
++     * {@inheritDoc}
++     */
++    public Locale getLocale() {
++        if (root instanceof com.sun.tools.javadoc.RootDocImpl)
++            return ((com.sun.tools.javadoc.RootDocImpl)root).getLocale();
++        else
++            return Locale.getDefault();
++    }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+@@ -85,7 +85,7 @@
+      * Print &lt;HTML&gt; tag. Add a newline character at the end.
+      */
+     public void html() {
+-        println("<HTML>");
++        println("<HTML lang=\"" + configuration.getLocale().getLanguage() + "\">");
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/Configuration.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/Configuration.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/Configuration.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/Configuration.java
+@@ -707,6 +707,11 @@
+     }
+ 
+     /**
++     * Return the Locale for this document.
++     */
++    public abstract Locale getLocale();
++
++    /**
+      * Return the comparator that will be used to sort member documentation.
+      * To no do any sorting, return null.
+      *
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/SourceToHTMLConverter.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/SourceToHTMLConverter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/SourceToHTMLConverter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/SourceToHTMLConverter.java
+@@ -155,7 +155,7 @@
+                 reader.close();
+             }
+             output = addLineNumbers(output.toString());
+-            output.insert(0, getHeader());
++            output.insert(0, getHeader(configuration));
+             output.append(getFooter());
+             writeToFile(output.toString(), outputdir, cd.name(), configuration);
+         } catch (Exception e){
+@@ -205,10 +205,11 @@
+ 
+     /**
+      * Get the header.
++     * @param configuration the Doclet configuration
+      * @return the header to the output file
+      */
+-    protected static String getHeader() {
+-        StringBuffer result = new StringBuffer("<HTML>" + DocletConstants.NL);
++    protected static String getHeader(Configuration configuration) {
++        StringBuffer result = new StringBuffer("<HTML lang=\"" + configuration.getLocale().getLanguage() + "\">" + DocletConstants.NL);
+         result.append("<BODY BGCOLOR=\""+ BGCOLOR + "\">" + DocletConstants.NL);
+         result.append("<PRE>" + DocletConstants.NL);
+         return result.toString();
+diff --git a/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java b/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java
+--- langtools/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java
++++ langtools/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java
+@@ -36,6 +36,7 @@
+ import com.sun.tools.javac.util.List;
+ import com.sun.tools.javac.util.ListBuffer;
+ import com.sun.tools.javac.util.Position;
++import java.util.Locale;
+ 
+ /**
+  * This class holds the information from one run of javadoc.
+@@ -361,4 +362,11 @@
+     public Locale getLocale() {
+         return env.doclocale.locale;
+     }
++
++    /**
++     * Return the locale provided by the user or the default locale value.
++     */
++    public Locale getLocale() {
++        return env.doclocale.locale;
++    }
+ }
+diff --git a/test/com/sun/javadoc/testHtmlTag/TestHtmlTag.java b/test/com/sun/javadoc/testHtmlTag/TestHtmlTag.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlTag/TestHtmlTag.java
+@@ -0,0 +1,93 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++/*
++ * @test
++ * @bug 6786682
++ * @summary This test verifies the use of lang attribute by <HTML>.
++ * @author Bhavesh Patel
++ * @library ../lib/
++ * @build JavadocTester
++ * @build TestHtmlTag
++ * @run main TestHtmlTag
++ */
++
++import java.util.Locale;
++
++public class TestHtmlTag extends JavadocTester {
++
++    private static final String BUG_ID = "6786682";
++    private static final String[][] TEST1 = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<HTML lang=\"" + Locale.getDefault().getLanguage() + "\">"},
++        {BUG_ID + FS + "pkg1" + FS + "package-summary.html", "<HTML lang=\"" + Locale.getDefault().getLanguage() + "\">"}};
++    private static final String[][] NEGATED_TEST1 = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<HTML>"}};
++    private static final String[][] TEST2 = {
++        {BUG_ID + FS + "pkg2" + FS + "C2.html", "<HTML lang=\"ja\">"},
++        {BUG_ID + FS + "pkg2" + FS + "package-summary.html", "<HTML lang=\"ja\">"}};
++    private static final String[][] NEGATED_TEST2 = {
++        {BUG_ID + FS + "pkg2" + FS + "C2.html", "<HTML>"}};
++    private static final String[][] TEST3 = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<HTML lang=\"en\">"},
++        {BUG_ID + FS + "pkg1" + FS + "package-summary.html", "<HTML lang=\"en\">"}};
++    private static final String[][] NEGATED_TEST3 = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<HTML>"}};
++
++    private static final String[] ARGS1 =
++        new String[] {
++            "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg1"};
++    private static final String[] ARGS2 =
++        new String[] {
++            "-locale", "ja", "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg2"};
++    private static final String[] ARGS3 =
++        new String[] {
++            "-locale", "en_US", "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg1"};
++
++    /**
++     * The entry point of the test.
++     * @param args the array of command line arguments.
++     */
++    public static void main(String[] args) {
++        TestHtmlTag tester = new TestHtmlTag();
++        run(tester, ARGS1, TEST1, NEGATED_TEST1);
++        run(tester, ARGS2, TEST2, NEGATED_TEST2);
++        run(tester, ARGS3, TEST3, NEGATED_TEST3);
++        tester.printSummary();
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugId() {
++        return BUG_ID;
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugName() {
++        return getClass().getName();
++    }
++}
+diff --git a/test/com/sun/javadoc/testHtmlTag/pkg1/C1.java b/test/com/sun/javadoc/testHtmlTag/pkg1/C1.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlTag/pkg1/C1.java
+@@ -0,0 +1,33 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++public class C1 {
++
++    public void method(int param1, int param2) {
++
++    }
++}
+diff --git a/test/com/sun/javadoc/testHtmlTag/pkg2/C2.java b/test/com/sun/javadoc/testHtmlTag/pkg2/C2.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlTag/pkg2/C2.java
+@@ -0,0 +1,31 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg2;
++
++/**
++ * <B>Comments:</B> Class 2
++ */
++public class C2 {}

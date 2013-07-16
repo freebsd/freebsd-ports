@@ -1,0 +1,39 @@
+# HG changeset patch
+# User bae
+# Date 1364284560 -14400
+# Node ID 7311e449c298f769d7e9761678d28741f6cd1537
+# Parent  546df033118c15bdfb5cc08f73db87805bc56277
+8009013: Better handling of T2K glyphs
+Reviewed-by: bae, prr
+Contributed-by: jia-hong.chen@oracle.com
+
+diff --git a/src/share/native/sun/font/freetypeScaler.c b/src/share/native/sun/font/freetypeScaler.c
+--- jdk/src/share/native/sun/font/freetypeScaler.c
++++ jdk/src/share/native/sun/font/freetypeScaler.c
+@@ -1350,17 +1350,22 @@
+     FTScalerInfo *scalerInfo =
+              (FTScalerInfo*) jlong_to_ptr(pScaler);
+ 
+-    glyphs = (jint*) malloc(numGlyphs*sizeof(jint));
++    glyphs = NULL;
++    if (numGlyphs > 0 && 0xffffffffu / sizeof(jint) >= numGlyphs) {
++        glyphs = (jint*) malloc(numGlyphs*sizeof(jint));
++    }
+     if (glyphs == NULL) {
++        // We reach here if:
++        // 1. numGlyphs <= 0,
++        // 2. overflow check failed, or
++        // 3. malloc failed.
+         gp = (*env)->NewObject(env, sunFontIDs.gpClass, sunFontIDs.gpCtrEmpty);
+-        if (!isNullScalerContext(context) && scalerInfo != NULL) {
+-            invalidateJavaScaler(env, scaler, scalerInfo);
+-        }
+         return gp;
+     }
+ 
+     (*env)->GetIntArrayRegion(env, glyphArray, 0, numGlyphs, glyphs);
+ 
++    gpdata.numCoords = 0;
+     for (i=0; i<numGlyphs;i++) {
+         if (glyphs[i] >= INVISIBLE_GLYPHS) {
+             continue;

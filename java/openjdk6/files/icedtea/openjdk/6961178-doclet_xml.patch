@@ -1,0 +1,1989 @@
+# HG changeset patch
+# User andrew
+# Date 1371665441 18000
+# Node ID c9c59391b86f45e4af2a89d95e1ba83ffdaf1d66
+# Parent  694e895f2b866d36ed7f8d4ea08ec64677d3fba1
+6961178: Allow doclet.xml to contain XML attributes
+Reviewed-by: bpatel
+
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java
+@@ -92,44 +92,42 @@
+     public abstract void build() throws IOException;
+ 
+     /**
+-     * Build the documentation, as specified by the given XML elements.
++     * Build the documentation, as specified by the given XML element.
+      *
+-     * @param elements the XML elements that specify which components to
+-     *                 document.
++     * @param node the XML element that specifies which component to document.
+      */
+-    protected void build(List elements) {
+-        for (int i = 0; i < elements.size(); i++ ) {
+-            Object element = elements.get(i);
+-            String component = (String)
+-                ((element instanceof String) ?
+-                     element :
+-                    ((List) element).get(0));
+-            try {
+-                invokeMethod("build" + component,
+-                    element instanceof String ?
+-                        new Class[] {} :
+-                        new Class[] {List.class},
+-                    element instanceof String ?
+-                        new Object[] {} :
+-                        new Object[] {((List) element).subList(1,
+-                            ((List) element).size())});
+-            } catch (NoSuchMethodException e) {
+-                e.printStackTrace();
+-                configuration.root.printError("Unknown element: " + component);
+-                throw new DocletAbortException();
+-            } catch (InvocationTargetException e) {
+-                e.getCause().printStackTrace();
+-            } catch (Exception e) {
+-                e.printStackTrace();
+-                configuration.root.printError("Exception " +
+-                    e.getClass().getName() +
+-                    " thrown while processing element: " + component);
+-                throw new DocletAbortException();
+-            }
++    protected void build(XMLNode node) {
++        String component = node.name;
++        try {
++            invokeMethod("build" + component,
++                    new Class<?>[] { XMLNode.class },
++                    new Object[] { node });
++        } catch (NoSuchMethodException e) {
++            e.printStackTrace();
++            configuration.root.printError("Unknown element: " + component);
++            throw new DocletAbortException();
++        } catch (InvocationTargetException e) {
++            e.getCause().printStackTrace();
++        } catch (Exception e) {
++            e.printStackTrace();
++            configuration.root.printError("Exception " +
++                e.getClass().getName() +
++                " thrown while processing element: " + component);
++            throw new DocletAbortException();
+         }
+     }
+ 
+     /**
++     * Build the documentation, as specified by the children of the given XML element.
++     *
++     * @param node the XML element that specifies which components to document.
++     */
++    protected void buildChildren(XMLNode node) {
++        for (XMLNode child: node.children)
++            build(child);
++    }
++
++    /**
+      * Given the name and parameters, invoke the method in the builder.  This
+      * method is required to invoke the appropriate build method as instructed
+      * by the builder XML file.
+@@ -138,7 +136,14 @@
+      * @param paramClasses the types for each parameter.
+      * @param params       the parameters of the method.
+      */
+-    protected abstract void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception;
++    protected void invokeMethod(String methodName, Class<?>[] paramClasses,
++             Object[] params)
++    throws Exception {
++        if (DEBUG) {
++            configuration.root.printError("DEBUG: " + this.getClass().getName()
++                + "." + methodName);
++        }
++        Method method = this.getClass().getMethod(methodName, paramClasses);
++        method.invoke(this, params);
++    }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractMemberBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractMemberBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractMemberBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractMemberBuilder.java
+@@ -27,7 +27,6 @@
+ 
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import java.util.*;
+ 
+ /**
+  * The superclass for all member builders.  Member builders are only executed
+@@ -69,9 +68,10 @@
+      *
+      * @param elements {@inheritDoc}
+      */
+-    public void build(List elements) {
++    @Override
++    public void build(XMLNode node) {
+         if (hasMembersToDocument()) {
+-            super.build(elements);
++            super.build(node);
+         }
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeBuilder.java
+@@ -30,7 +30,6 @@
+ import com.sun.javadoc.*;
+ import java.io.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds the summary for a given annotation type.
+@@ -92,20 +91,6 @@
+     /**
+      * {@inheritDoc}
+      */
+-    public void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception {
+-        if (DEBUG) {
+-            configuration.root.printError("DEBUG: " + this.getClass().getName()
+-                + "." + methodName);
+-        }
+-        Method method = this.getClass().getMethod(methodName, paramClasses);
+-        method.invoke(this, params);
+-    }
+-
+-    /**
+-     * {@inheritDoc}
+-     */
+     public void build() throws IOException {
+         build(LayoutParser.getInstance(configuration).parseXML(ROOT));
+     }
+@@ -122,8 +107,8 @@
+       *
+       * @param elements the XML elements that specify how to document a class.
+       */
+-     public void buildAnnotationTypeDoc(List elements) throws Exception {
+-        build(elements);
++     public void buildAnnotationTypeDoc(XMLNode node) throws Exception {
++        buildChildren(node);
+         writer.close();
+         copyDocFiles();
+      }
+@@ -154,7 +139,7 @@
+     /**
+      * Build the header of the page.
+      */
+-    public void buildAnnotationTypeHeader() {
++    public void buildAnnotationTypeHeader(XMLNode node) {
+         writer.writeHeader(configuration.getText("doclet.AnnotationType") +
+             " " + annotationTypeDoc.name());
+     }
+@@ -162,14 +147,14 @@
+     /**
+      * If this class is deprecated, print the appropriate information.
+      */
+-    public void buildDeprecationInfo () {
++    public void buildDeprecationInfo (XMLNode node) {
+         writer.writeAnnotationTypeDeprecationInfo();
+     }
+ 
+     /**
+      * Build the signature of the current annotation type.
+      */
+-    public void buildAnnotationTypeSignature() {
++    public void buildAnnotationTypeSignature(XMLNode node) {
+         StringBuffer modifiers = new StringBuffer(
+             annotationTypeDoc.modifiers() + " ");
+         writer.writeAnnotationTypeSignature(
+@@ -180,14 +165,14 @@
+     /**
+      * Build the class description.
+      */
+-    public void buildAnnotationTypeDescription() {
++    public void buildAnnotationTypeDescription(XMLNode node) {
+        writer.writeAnnotationTypeDescription();
+     }
+ 
+     /**
+      * Build the tag information for the current class.
+      */
+-    public void buildAnnotationTypeTagInfo() {
++    public void buildAnnotationTypeTagInfo(XMLNode node) {
+        writer.writeAnnotationTypeTagInfo();
+     }
+ 
+@@ -197,9 +182,9 @@
+      * @param elements the XML elements that specify how a member summary is
+      *                 documented.
+      */
+-    public void buildMemberSummary(List elements) throws Exception {
++    public void buildMemberSummary(XMLNode node) throws Exception {
+         configuration.getBuilderFactory().
+-            getMemberSummaryBuilder(writer).build(elements);
++            getMemberSummaryBuilder(writer).buildChildren(node);
+         writer.completeMemberSummaryBuild();
+     }
+ 
+@@ -209,10 +194,10 @@
+      * @param elements the XML elements that specify how a annotation type
+      *                 members are documented.
+      */
+-    public void buildAnnotationTypeOptionalMemberDetails(List elements)
++    public void buildAnnotationTypeOptionalMemberDetails(XMLNode node)
+     throws Exception {
+         configuration.getBuilderFactory().
+-            getAnnotationTypeOptionalMemberBuilder(writer).build(elements);
++            getAnnotationTypeOptionalMemberBuilder(writer).buildChildren(node);
+     }
+ 
+     /**
+@@ -221,17 +206,17 @@
+      * @param elements the XML elements that specify how a annotation type
+      *                 members are documented.
+      */
+-    public void buildAnnotationTypeRequiredMemberDetails(List elements)
++    public void buildAnnotationTypeRequiredMemberDetails(XMLNode node)
+     throws Exception {
+         configuration.getBuilderFactory().
+-            getAnnotationTypeRequiredMemberBuilder(writer).build(elements);
++            getAnnotationTypeRequiredMemberBuilder(writer).buildChildren(node);
+     }
+ 
+ 
+     /**
+      * Build the footer of the page.
+      */
+-    public void buildAnnotationTypeFooter() {
++    public void buildAnnotationTypeFooter(XMLNode node) {
+         writer.writeFooter();
+     }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeOptionalMemberBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeOptionalMemberBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeOptionalMemberBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeOptionalMemberBuilder.java
+@@ -30,7 +30,6 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds documentation for optional annotation type members.
+@@ -85,6 +84,7 @@
+     /**
+      * {@inheritDoc}
+      */
++    @Override
+     public String getName() {
+         return "AnnotationTypeOptionalMemberDetails";
+     }
+@@ -95,34 +95,20 @@
+      * @param elements the XML elements that specify how to construct this
+      *                documentation.
+      */
+-    public void buildAnnotationTypeOptionalMember(List elements) {
++    public void buildAnnotationTypeOptionalMember(XMLNode node) {
+         if (writer == null) {
+             return;
+         }
+         for (currentMemberIndex = 0; currentMemberIndex < members.size();
+             currentMemberIndex++) {
+-            build(elements);
++            buildChildren(node);
+         }
+     }
+ 
+     /**
+-     * {@inheritDoc}
+-     */
+-    public void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception {
+-        if (DEBUG) {
+-            configuration.root.printError("DEBUG: " + this.getClass().getName()
+-                + "." + methodName);
+-        }
+-        Method method = this.getClass().getMethod(methodName, paramClasses);
+-        method.invoke(this, params);
+-    }
+-
+-    /**
+      * Document the default value for this optional member.
+      */
+-    public void buildDefaultValueInfo() {
++    public void buildDefaultValueInfo(XMLNode node) {
+         ((AnnotationTypeOptionalMemberWriter) writer).writeDefaultValueInfo(
+             (MemberDoc) members.get(currentMemberIndex));
+     }
+@@ -130,6 +116,7 @@
+     /**
+      * {@inheritDoc}
+      */
++    @Override
+     public AnnotationTypeRequiredMemberWriter getWriter() {
+         return writer;
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeRequiredMemberBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeRequiredMemberBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeRequiredMemberBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AnnotationTypeRequiredMemberBuilder.java
+@@ -30,7 +30,6 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds documentation for required annotation type members.
+@@ -114,20 +113,6 @@
+     }
+ 
+     /**
+-     * {@inheritDoc}
+-     */
+-    public void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception {
+-        if (DEBUG) {
+-            configuration.root.printError("DEBUG: " + this.getClass().getName()
+-                + "." + methodName);
+-        }
+-        Method method = this.getClass().getMethod(methodName, paramClasses);
+-        method.invoke(this, params);
+-    }
+-
+-    /**
+      * Returns a list of members that will be documented for the given class.
+      * This information can be used for doclet specific documentation
+      * generation.
+@@ -161,20 +146,20 @@
+      * @param elements the XML elements that specify how to construct this
+      *                documentation.
+      */
+-    public void buildAnnotationTypeRequiredMember(List elements) {
++    public void buildAnnotationTypeRequiredMember(XMLNode node) {
+         if (writer == null) {
+             return;
+         }
+         for (currentMemberIndex = 0; currentMemberIndex < members.size();
+             currentMemberIndex++) {
+-            build(elements);
++            buildChildren(node);
+         }
+     }
+ 
+     /**
+      * Build the overall header.
+      */
+-    public void buildHeader() {
++    public void buildHeader(XMLNode node) {
+         writer.writeHeader(classDoc,
+             configuration.getText("doclet.Annotation_Type_Member_Detail"));
+     }
+@@ -182,7 +167,7 @@
+     /**
+      * Build the header for the individual members.
+      */
+-    public void buildMemberHeader() {
++    public void buildMemberHeader(XMLNode node) {
+         writer.writeMemberHeader((MemberDoc) members.get(
+                 currentMemberIndex),
+             currentMemberIndex == 0);
+@@ -191,14 +176,14 @@
+     /**
+      * Build the signature.
+      */
+-    public void buildSignature() {
++    public void buildSignature(XMLNode node) {
+         writer.writeSignature((MemberDoc) members.get(currentMemberIndex));
+     }
+ 
+     /**
+      * Build the deprecation information.
+      */
+-    public void buildDeprecationInfo() {
++    public void buildDeprecationInfo(XMLNode node) {
+         writer.writeDeprecated((MemberDoc) members.get(currentMemberIndex));
+     }
+ 
+@@ -206,7 +191,7 @@
+      * Build the comments for the member.  Do nothing if
+      * {@link Configuration#nocomment} is set to true.
+      */
+-    public void buildMemberComments() {
++    public void buildMemberComments(XMLNode node) {
+         if(! configuration.nocomment){
+             writer.writeComments((MemberDoc) members.get(currentMemberIndex));
+         }
+@@ -215,21 +200,21 @@
+     /**
+      * Build the tag information.
+      */
+-    public void buildTagInfo() {
++    public void buildTagInfo(XMLNode node) {
+         writer.writeTags((MemberDoc) members.get(currentMemberIndex));
+     }
+ 
+     /**
+      * Build the footer for the individual member.
+      */
+-    public void buildMemberFooter() {
++    public void buildMemberFooter(XMLNode node) {
+         writer.writeMemberFooter();
+     }
+ 
+     /**
+      * Build the overall footer.
+      */
+-    public void buildFooter() {
++    public void buildFooter(XMLNode node) {
+         writer.writeFooter(classDoc);
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ClassBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ClassBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ClassBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ClassBuilder.java
+@@ -30,7 +30,6 @@
+ import com.sun.javadoc.*;
+ import java.io.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds the summary for a given class.
+@@ -108,20 +107,6 @@
+     /**
+      * {@inheritDoc}
+      */
+-    public void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception {
+-        if (DEBUG) {
+-            configuration.root.printError("DEBUG: " + this.getClass().getName()
+-                + "." + methodName);
+-        }
+-        Method method = this.getClass().getMethod(methodName, paramClasses);
+-        method.invoke(this, params);
+-    }
+-
+-    /**
+-     * {@inheritDoc}
+-     */
+     public void build() throws IOException {
+         build(LayoutParser.getInstance(configuration).parseXML(ROOT));
+     }
+@@ -138,8 +123,8 @@
+       *
+       * @param elements the XML elements that specify how to document a class.
+       */
+-     public void buildClassDoc(List elements) throws Exception {
+-        build(elements);
++     public void buildClassDoc(XMLNode node) throws Exception {
++        buildChildren(node);
+         writer.close();
+         copyDocFiles();
+      }
+@@ -169,7 +154,7 @@
+     /**
+      * Build the header of the page.
+      */
+-    public void buildClassHeader() {
++    public void buildClassHeader(XMLNode node) {
+         String key;
+         if (isInterface) {
+             key =  "doclet.Interface";
+@@ -185,7 +170,7 @@
+     /**
+      * Build the class tree documentation.
+      */
+-    public void buildClassTree() {
++    public void buildClassTree(XMLNode node) {
+         writer.writeClassTree();
+     }
+ 
+@@ -193,42 +178,42 @@
+      * If this is a class, list all interfaces
+      * implemented by this class.
+      */
+-    public void buildImplementedInterfacesInfo() {
++    public void buildImplementedInterfacesInfo(XMLNode node) {
+         writer.writeImplementedInterfacesInfo();
+     }
+ 
+     /**
+      * If this is an interface, list all super interfaces.
+      */
+-    public void buildSuperInterfacesInfo() {
++    public void buildSuperInterfacesInfo(XMLNode node) {
+         writer.writeSuperInterfacesInfo();
+     }
+ 
+     /**
+      * List the parameters of this class.
+      */
+-    public void buildTypeParamInfo() {
++    public void buildTypeParamInfo(XMLNode node) {
+         writer.writeTypeParamInfo();
+     }
+ 
+     /**
+      * List all the classes extend this one.
+      */
+-    public void buildSubClassInfo() {
++    public void buildSubClassInfo(XMLNode node) {
+         writer.writeSubClassInfo();
+     }
+ 
+     /**
+      * List all the interfaces that extend this one.
+      */
+-    public void buildSubInterfacesInfo() {
++    public void buildSubInterfacesInfo(XMLNode node) {
+         writer.writeSubInterfacesInfo();
+     }
+ 
+     /**
+      * If this is an interface, list all classes that implement this interface.
+      */
+-    public void buildInterfaceUsageInfo () {
++    public void buildInterfaceUsageInfo (XMLNode node) {
+         writer.writeInterfaceUsageInfo();
+     }
+ 
+@@ -236,21 +221,21 @@
+      * If this is an inner class or interface, list the enclosing class or
+      * interface.
+      */
+-    public void buildNestedClassInfo () {
++    public void buildNestedClassInfo (XMLNode node) {
+         writer.writeNestedClassInfo();
+     }
+ 
+     /**
+      * If this class is deprecated, print the appropriate information.
+      */
+-    public void buildDeprecationInfo () {
++    public void buildDeprecationInfo (XMLNode node) {
+         writer.writeClassDeprecationInfo();
+     }
+ 
+     /**
+      * Build the signature of the current class.
+      */
+-    public void buildClassSignature() {
++    public void buildClassSignature(XMLNode node) {
+         StringBuffer modifiers = new StringBuffer(classDoc.modifiers() + " ");
+         if (isEnum) {
+             modifiers.append("enum ");
+@@ -276,14 +261,14 @@
+     /**
+      * Build the class description.
+      */
+-    public void buildClassDescription() {
++    public void buildClassDescription(XMLNode node) {
+        writer.writeClassDescription();
+     }
+ 
+     /**
+      * Build the tag information for the current class.
+      */
+-    public void buildClassTagInfo() {
++    public void buildClassTagInfo(XMLNode node) {
+        writer.writeClassTagInfo();
+     }
+ 
+@@ -295,7 +280,7 @@
+      */
+     public void buildMemberSummary(List elements) throws Exception {
+         configuration.getBuilderFactory().
+-            getMemberSummaryBuilder(writer).build(elements);
++            getMemberSummaryBuilder(writer).buildChildren(node);
+         writer.completeMemberSummaryBuild();
+     }
+ 
+@@ -305,9 +290,9 @@
+      * @param elements the XML elements that specify how a enum constants are
+      *                 documented.
+      */
+-    public void buildEnumConstantsDetails(List elements) throws Exception {
++    public void buildEnumConstantsDetails(XMLNode node) throws Exception {
+         configuration.getBuilderFactory().
+-            getEnumConstantsBuilder(writer).build(elements);
++            getEnumConstantsBuilder(writer).buildChildren(node);
+     }
+ 
+     /**
+@@ -315,9 +300,9 @@
+      *
+      * @param elements the XML elements that specify how a field is documented.
+      */
+-    public void buildFieldDetails(List elements) throws Exception {
++    public void buildFieldDetails(XMLNode node) throws Exception {
+         configuration.getBuilderFactory().
+-            getFieldBuilder(writer).build(elements);
++            getFieldBuilder(writer).buildChildren(node);
+     }
+ 
+     /**
+@@ -326,9 +311,9 @@
+      * @param elements the XML elements that specify how to document a
+      * constructor.
+      */
+-    public void buildConstructorDetails(List elements) throws Exception {
++    public void buildConstructorDetails(XMLNode node) throws Exception {
+         configuration.getBuilderFactory().
+-            getConstructorBuilder(writer).build(elements);
++            getConstructorBuilder(writer).buildChildren(node);
+     }
+ 
+     /**
+@@ -336,15 +321,15 @@
+      *
+      * @param elements the XML elements that specify how a method is documented.
+      */
+-    public void buildMethodDetails(List elements) throws Exception {
++    public void buildMethodDetails(XMLNode node) throws Exception {
+         configuration.getBuilderFactory().
+-                getMethodBuilder(writer).build(elements);
++                getMethodBuilder(writer).buildChildren(node);
+     }
+ 
+     /**
+      * Build the footer of the page.
+      */
+-    public void buildClassFooter() {
++    public void buildClassFooter(XMLNode node) {
+         writer.writeFooter();
+     }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstantsSummaryBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstantsSummaryBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstantsSummaryBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstantsSummaryBuilder.java
+@@ -30,7 +30,6 @@
+ import com.sun.javadoc.*;
+ import java.io.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds the Constants Summary Page.
+@@ -109,20 +108,6 @@
+     /**
+      * {@inheritDoc}
+      */
+-    public void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception {
+-        if (DEBUG) {
+-            configuration.root.printError("DEBUG: " + this.getClass().getName()
+-                + "." + methodName);
+-        }
+-        Method method = this.getClass().getMethod(methodName, paramClasses);
+-        method.invoke(this, params);
+-    }
+-
+-    /**
+-     * {@inheritDoc}
+-     */
+     public void build() throws IOException {
+         if (writer == null) {
+             //Doclet does not support this output.
+@@ -144,29 +129,29 @@
+      * @param elements the list of elements describing constant summary
+      *                 documentation.
+      */
+-    public void buildConstantSummary(List elements) throws Exception {
+-        build(elements);
++    public void buildConstantSummary(XMLNode node) throws Exception {
++        buildChildren(node);
+         writer.close();
+     }
+ 
+     /**
+      * Build the header.
+      */
+-    public void buildHeader() {
++    public void buildHeader(XMLNode node) {
+         writer.writeHeader();
+     }
+ 
+     /**
+      * Build the footer.
+      */
+-    public void buildFooter() {
++    public void buildFooter(XMLNode node) {
+         writer.writeFooter();
+     }
+ 
+     /**
+      * Build the table of contents.
+      */
+-    public void buildContents() {
++    public void buildContents(XMLNode node) {
+         writer.writeContentsHeader();
+         PackageDoc[] packages = configuration.packages;
+         printedPackageHeaders = new HashSet();
+@@ -186,14 +171,14 @@
+      * @param elements the XML elements that represent the components
+      *                 of documentation for each package.
+      */
+-    public void buildConstantSummaries(List elements) {
++    public void buildConstantSummaries(XMLNode node) {
+         PackageDoc[] packages = configuration.packages;
+         printedPackageHeaders = new HashSet();
+         for (int i = 0; i < packages.length; i++) {
+             if (hasConstantField(packages[i])) {
+                 currentPackage = packages[i];
+                 //Build the documentation for the current package.
+-                build(elements);
++                buildChildren(node);
+             }
+         }
+     }
+@@ -204,8 +189,8 @@
+      * @param elements the list of XML elements that make up package
+      *                 documentation.
+      */
+-    public void buildPackageConstantSummary(List elements) {
+-        build(elements);
++    public void buildPackageConstantSummary(XMLNode node) {
++        buildChildren(node);
+     }
+ 
+     /**
+@@ -214,7 +199,7 @@
+      * @param elements the list of XML elements that make up the class
+      *                 constant summary.
+      */
+-    public void buildClassConstantSummary(List elements) {
++    public void buildClassConstantSummary(XMLNode node) {
+         ClassDoc[] classes = currentPackage.name().length() > 0 ?
+             currentPackage.allClasses() :
+             configuration.classDocCatalog.allClasses(
+@@ -227,14 +212,14 @@
+             }
+             currentClass = classes[i];
+             //Build the documentation for the current class.
+-            build(elements);
++            buildChildren(node);
+         }
+     }
+ 
+     /**
+      * Build the header for the given class.
+      */
+-    public void buildPackageHeader() {
++    public void buildPackageHeader(XMLNode node) {
+         String parsedPackageName = parsePackageName(currentPackage.name());
+         if (! printedPackageHeaders.contains(parsedPackageName)) {
+             writer.writePackageName(currentPackage,
+@@ -246,7 +231,7 @@
+     /**
+      * Build the header for the given class.
+      */
+-    public void buildClassHeader() {
++    public void buildClassHeader(XMLNode node) {
+         writer.writeConstantMembersHeader(currentClass);
+     }
+ 
+@@ -254,14 +239,14 @@
+      * Print summary of constant members in the
+      * class.
+      */
+-    public void buildConstantMembers() {
+-        new ConstantFieldBuilder(currentClass).buildMembersSummary();
++    public void buildConstantMembers(XMLNode node) {
++        new ConstantFieldBuilder(currentClass).buildMembersSummary(node);
+     }
+ 
+     /**
+      * Build the footer for the given class.
+      */
+-    public void buildClassFooter() {
++    public void buildClassFooter(XMLNode node) {
+         writer.writeConstantMembersFooter(currentClass);
+     }
+ 
+@@ -362,7 +347,7 @@
+         /**
+          * Builds the table of constants for a given class.
+          */
+-        protected void buildMembersSummary() {
++        protected void buildMembersSummary(XMLNode node) {
+             List members = new ArrayList(members());
+             if (members.size() > 0) {
+                 Collections.sort(members);
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstructorBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstructorBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstructorBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/ConstructorBuilder.java
+@@ -28,7 +28,6 @@
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+-import java.lang.reflect.*;
+ import java.util.*;
+ 
+ /**
+@@ -136,22 +135,6 @@
+         }
+ 
+         /**
+-         * {@inheritDoc}
+-         */
+-        public void invokeMethod(
+-                String methodName,
+-                Class[] paramClasses,
+-                Object[] params)
+-                throws Exception {
+-                if (DEBUG) {
+-                        configuration.root.printError(
+-                                "DEBUG: " + this.getClass().getName() + "." + methodName);
+-                }
+-                Method method = this.getClass().getMethod(methodName, paramClasses);
+-                method.invoke(this, params);
+-        }
+-
+-        /**
+          * Returns a list of constructors that will be documented for the given class.
+          * This information can be used for doclet specific documentation
+          * generation.
+@@ -177,21 +160,21 @@
+          * @param elements the XML elements that specify how to construct this
+          *                documentation.
+          */
+-        public void buildConstructorDoc(List elements) {
++        public void buildConstructorDoc(XMLNode node) {
+                 if (writer == null) {
+                         return;
+                 }
+                 for (currentMethodIndex = 0;
+                         currentMethodIndex < constructors.size();
+                         currentMethodIndex++) {
+-                        build(elements);
++                        buildChildren(node);
+                 }
+         }
+ 
+         /**
+          * Build the overall header.
+          */
+-        public void buildHeader() {
++        public void buildHeader(XMLNode node) {
+                 writer.writeHeader(
+                         classDoc,
+                         configuration.getText("doclet.Constructor_Detail"));
+@@ -200,7 +183,7 @@
+         /**
+          * Build the header for the individual constructor.
+          */
+-        public void buildConstructorHeader() {
++        public void buildConstructorHeader(XMLNode node) {
+                 writer.writeConstructorHeader(
+                         (ConstructorDoc) constructors.get(currentMethodIndex),
+                         currentMethodIndex == 0);
+@@ -209,7 +192,7 @@
+         /**
+          * Build the signature.
+          */
+-        public void buildSignature() {
++        public void buildSignature(XMLNode node) {
+                 writer.writeSignature(
+                         (ConstructorDoc) constructors.get(currentMethodIndex));
+         }
+@@ -217,7 +200,7 @@
+         /**
+          * Build the deprecation information.
+          */
+-        public void buildDeprecationInfo() {
++        public void buildDeprecationInfo(XMLNode node) {
+                 writer.writeDeprecated(
+                         (ConstructorDoc) constructors.get(currentMethodIndex));
+         }
+@@ -226,7 +209,7 @@
+          * Build the comments for the constructor.  Do nothing if
+          * {@link Configuration#nocomment} is set to true.
+          */
+-        public void buildConstructorComments() {
++        public void buildConstructorComments(XMLNode node) {
+                 if (!configuration.nocomment) {
+                         writer.writeComments(
+                                 (ConstructorDoc) constructors.get(currentMethodIndex));
+@@ -236,21 +219,21 @@
+         /**
+          * Build the tag information.
+          */
+-        public void buildTagInfo() {
++        public void buildTagInfo(XMLNode node) {
+                 writer.writeTags((ConstructorDoc) constructors.get(currentMethodIndex));
+         }
+ 
+         /**
+          * Build the footer for the individual constructor.
+          */
+-        public void buildConstructorFooter() {
++        public void buildConstructorFooter(XMLNode node) {
+                 writer.writeConstructorFooter();
+         }
+ 
+         /**
+          * Build the overall footer.
+          */
+-        public void buildFooter() {
++        public void buildFooter(XMLNode node) {
+                 writer.writeFooter(classDoc);
+         }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/EnumConstantBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/EnumConstantBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/EnumConstantBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/EnumConstantBuilder.java
+@@ -29,7 +29,6 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds documentation for a enum constants.
+@@ -116,22 +115,6 @@
+         }
+ 
+         /**
+-         * {@inheritDoc}
+-         */
+-        public void invokeMethod(
+-                String methodName,
+-                Class[] paramClasses,
+-                Object[] params)
+-                throws Exception {
+-                if (DEBUG) {
+-                        configuration.root.printError(
+-                                "DEBUG: " + this.getClass().getName() + "." + methodName);
+-                }
+-                Method method = this.getClass().getMethod(methodName, paramClasses);
+-                method.invoke(this, params);
+-        }
+-
+-        /**
+          * Returns a list of enum constants that will be documented for the given class.
+          * This information can be used for doclet specific documentation
+          * generation.
+@@ -165,21 +148,21 @@
+          * @param elements the XML elements that specify how to construct this
+          *                documentation.
+          */
+-        public void buildEnumConstant(List elements) {
++        public void buildEnumConstant(XMLNode node) {
+                 if (writer == null) {
+                         return;
+                 }
+                 for (currentEnumConstantsIndex = 0;
+                         currentEnumConstantsIndex < enumConstants.size();
+                         currentEnumConstantsIndex++) {
+-                        build(elements);
++                        buildChildren(node);
+                 }
+         }
+ 
+         /**
+          * Build the overall header.
+          */
+-        public void buildHeader() {
++        public void buildHeader(XMLNode node) {
+                 writer.writeHeader(
+                         classDoc,
+                         configuration.getText("doclet.Enum_Constant_Detail"));
+@@ -188,7 +171,7 @@
+         /**
+          * Build the header for the individual enum constants.
+          */
+-        public void buildEnumConstantHeader() {
++        public void buildEnumConstantHeader(XMLNode node) {
+                 writer.writeEnumConstantHeader(
+                         (FieldDoc) enumConstants.get(currentEnumConstantsIndex),
+                         currentEnumConstantsIndex == 0);
+@@ -197,7 +180,7 @@
+         /**
+          * Build the signature.
+          */
+-        public void buildSignature() {
++        public void buildSignature(XMLNode node) {
+                 writer.writeSignature(
+                         (FieldDoc) enumConstants.get(currentEnumConstantsIndex));
+         }
+@@ -205,7 +188,7 @@
+         /**
+          * Build the deprecation information.
+          */
+-        public void buildDeprecationInfo() {
++        public void buildDeprecationInfo(XMLNode node) {
+                 writer.writeDeprecated(
+                         (FieldDoc) enumConstants.get(currentEnumConstantsIndex));
+         }
+@@ -214,7 +197,7 @@
+          * Build the comments for the enum constant.  Do nothing if
+          * {@link Configuration#nocomment} is set to true.
+          */
+-        public void buildEnumConstantComments() {
++        public void buildEnumConstantComments(XMLNode node) {
+                 if (!configuration.nocomment) {
+                         writer.writeComments(
+                                 (FieldDoc) enumConstants.get(currentEnumConstantsIndex));
+@@ -224,7 +207,7 @@
+         /**
+          * Build the tag information.
+          */
+-        public void buildTagInfo() {
++        public void buildTagInfo(XMLNode node) {
+                 writer.writeTags(
+                         (FieldDoc) enumConstants.get(currentEnumConstantsIndex));
+         }
+@@ -232,14 +215,14 @@
+         /**
+          * Build the footer for the individual enum constants.
+          */
+-        public void buildEnumConstantFooter() {
++        public void buildEnumConstantFooter(XMLNode node) {
+                 writer.writeEnumConstantFooter();
+         }
+ 
+         /**
+          * Build the overall footer.
+          */
+-        public void buildFooter() {
++        public void buildFooter(XMLNode node) {
+                 writer.writeFooter(classDoc);
+         }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/FieldBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/FieldBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/FieldBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/FieldBuilder.java
+@@ -29,7 +29,6 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds documentation for a field.
+@@ -117,22 +116,6 @@
+         }
+ 
+         /**
+-         * {@inheritDoc}
+-         */
+-        public void invokeMethod(
+-                String methodName,
+-                Class[] paramClasses,
+-                Object[] params)
+-                throws Exception {
+-                if (DEBUG) {
+-                        configuration.root.printError(
+-                                "DEBUG: " + this.getClass().getName() + "." + methodName);
+-                }
+-                Method method = this.getClass().getMethod(methodName, paramClasses);
+-                method.invoke(this, params);
+-        }
+-
+-        /**
+          * Returns a list of fields that will be documented for the given class.
+          * This information can be used for doclet specific documentation
+          * generation.
+@@ -166,21 +149,21 @@
+          * @param elements the XML elements that specify how to construct this
+          *                documentation.
+          */
+-        public void buildFieldDoc(List elements) {
++        public void buildFieldDoc(XMLNode node) {
+                 if (writer == null) {
+                         return;
+                 }
+                 for (currentFieldIndex = 0;
+                         currentFieldIndex < fields.size();
+                         currentFieldIndex++) {
+-                        build(elements);
++                        buildChildren(node);
+                 }
+         }
+ 
+         /**
+          * Build the overall header.
+          */
+-        public void buildHeader() {
++        public void buildHeader(XMLNode node) {
+                 writer.writeHeader(
+                         classDoc,
+                         configuration.getText("doclet.Field_Detail"));
+@@ -189,7 +172,7 @@
+         /**
+          * Build the header for the individual field.
+          */
+-        public void buildFieldHeader() {
++        public void buildFieldHeader(XMLNode node) {
+                 writer.writeFieldHeader(
+                         (FieldDoc) fields.get(currentFieldIndex),
+                         currentFieldIndex == 0);
+@@ -198,14 +181,14 @@
+         /**
+          * Build the signature.
+          */
+-        public void buildSignature() {
++        public void buildSignature(XMLNode node) {
+                 writer.writeSignature((FieldDoc) fields.get(currentFieldIndex));
+         }
+ 
+         /**
+          * Build the deprecation information.
+          */
+-        public void buildDeprecationInfo() {
++        public void buildDeprecationInfo(XMLNode node) {
+                 writer.writeDeprecated((FieldDoc) fields.get(currentFieldIndex));
+         }
+ 
+@@ -213,7 +196,7 @@
+          * Build the comments for the field.  Do nothing if
+          * {@link Configuration#nocomment} is set to true.
+          */
+-        public void buildFieldComments() {
++        public void buildFieldComments(XMLNode node) {
+                 if (!configuration.nocomment) {
+                         writer.writeComments((FieldDoc) fields.get(currentFieldIndex));
+                 }
+@@ -222,21 +205,21 @@
+         /**
+          * Build the tag information.
+          */
+-        public void buildTagInfo() {
++        public void buildTagInfo(XMLNode node) {
+                 writer.writeTags((FieldDoc) fields.get(currentFieldIndex));
+         }
+ 
+         /**
+          * Build the footer for the individual field.
+          */
+-        public void buildFieldFooter() {
++        public void buildFieldFooter(XMLNode node) {
+                 writer.writeFieldFooter();
+         }
+ 
+         /**
+          * Build the overall footer.
+          */
+-        public void buildFooter() {
++        public void buildFooter(XMLNode node) {
+                 writer.writeFooter(classDoc);
+         }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java
+@@ -45,8 +45,8 @@
+     /**
+      * The map of XML elements that have been parsed.
+      */
+-    private Map xmlElementsMap;
+-
++    private Map<String,XMLNode> xmlElementsMap;
++    private XMLNode currentNode;
+     private Configuration configuration;
+     private static LayoutParser instance;
+     private String currentRoot;
+@@ -56,7 +56,7 @@
+      * This class is a singleton.
+      */
+     private LayoutParser(Configuration configuration) {
+-        xmlElementsMap = new HashMap();
++        xmlElementsMap = new HashMap<String,XMLNode>();
+         this.configuration = configuration;
+     }
+ 
+@@ -78,20 +78,18 @@
+      *
+      * @return List the list of XML elements parsed.
+      */
+-    public List parseXML(String root) {
++    public XMLNode parseXML(String root) {
+         if (xmlElementsMap.containsKey(root)) {
+             return (List) xmlElementsMap.get(root);
+         }
+         try {
+-            List xmlElements = new ArrayList();
+-            xmlElementsMap.put(root, xmlElements);
+             currentRoot = root;
+             isParsing = false;
+             SAXParserFactory factory = SAXParserFactory.newInstance();
+             SAXParser saxParser = factory.newSAXParser();
+             InputStream in = configuration.getBuilderXML();
+             saxParser.parse(in, this);
+-            return xmlElements;
++            return xmlElementsMap.get(root);
+         } catch (Throwable t) {
+             t.printStackTrace();
+             throw new DocletAbortException();
+@@ -106,8 +104,11 @@
+     throws SAXException {
+         if (isParsing || qName.equals(currentRoot)) {
+             isParsing = true;
+-            List xmlElements = (List) xmlElementsMap.get(currentRoot);
+-            xmlElements.add(qName);
++            currentNode = new XMLNode(currentNode, qName);
++            for (int i = 0; i < attrs.getLength(); i++)
++                currentNode.attrs.put(attrs.getLocalName(i), attrs.getValue(i));
++            if (qName.equals(currentRoot))
++                xmlElementsMap.put(qName, currentNode);
+         }
+     }
+ 
+@@ -117,23 +118,9 @@
+     public void endElement(String namespaceURI, String sName, String qName)
+     throws SAXException {
+         if (! isParsing) {
+-            isParsing = false;
+             return;
+         }
+-        List xmlElements = (List) xmlElementsMap.get(currentRoot);
+-        if (xmlElements.get(xmlElements.size()-1).equals(qName)) {
+-            return;
+-        } else {
+-            List subElements = new ArrayList();
+-            int targetIndex = xmlElements.indexOf(qName);
+-            int size = xmlElements.size();
+-            for (int i = targetIndex; i < size; i++) {
+-                subElements.add(xmlElements.get(targetIndex));
+-                xmlElements.remove(targetIndex);
+-            }
+-            //Save the sub elements as a list.
+-            xmlElements.add(subElements);
+-        }
++        currentNode = currentNode.parent;
+         isParsing = ! qName.equals(currentRoot);
+     }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MemberSummaryBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MemberSummaryBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MemberSummaryBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MemberSummaryBuilder.java
+@@ -29,7 +29,6 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds the member summary.
+@@ -175,22 +174,6 @@
+         }
+ 
+         /**
+-         * {@inheritDoc}
+-         */
+-        public void invokeMethod(
+-                String methodName,
+-                Class[] paramClasses,
+-                Object[] params)
+-                throws Exception {
+-                if (DEBUG) {
+-                        configuration.root.printError(
+-                                "DEBUG: " + this.getClass().getName() + "." + methodName);
+-                }
+-                Method method = this.getClass().getMethod(methodName, paramClasses);
+-                method.invoke(this, params);
+-        }
+-
+-        /**
+          * Return true it there are any members to summarize.
+          *
+          * @return true if there are any members to summarize.
+@@ -211,7 +194,7 @@
+         /**
+          * Build the summary for the enum constants.
+          */
+-        public void buildEnumConstantsSummary() {
++        public void buildEnumConstantsSummary(XMLNode node) {
+                 buildSummary(
+                         memberSummaryWriters[VisibleMemberMap.ENUM_CONSTANTS],
+                         visibleMemberMaps[VisibleMemberMap.ENUM_CONSTANTS]);
+@@ -220,7 +203,7 @@
+     /**
+      * Build the summary for the optional members.
+      */
+-    public void buildAnnotationTypeOptionalMemberSummary() {
++    public void buildAnnotationTypeOptionalMemberSummary(XMLNode node) {
+         buildSummary(
+             memberSummaryWriters[VisibleMemberMap.ANNOTATION_TYPE_MEMBER_OPTIONAL],
+                 visibleMemberMaps[VisibleMemberMap.ANNOTATION_TYPE_MEMBER_OPTIONAL]);
+@@ -229,7 +212,7 @@
+     /**
+      * Build the summary for the optional members.
+      */
+-    public void buildAnnotationTypeRequiredMemberSummary() {
++    public void buildAnnotationTypeRequiredMemberSummary(XMLNode node) {
+         buildSummary(
+             memberSummaryWriters[VisibleMemberMap.ANNOTATION_TYPE_MEMBER_REQUIRED],
+                 visibleMemberMaps[VisibleMemberMap.ANNOTATION_TYPE_MEMBER_REQUIRED]);
+@@ -238,7 +221,7 @@
+         /**
+          * Build the summary for the fields.
+          */
+-        public void buildFieldsSummary() {
++        public void buildFieldsSummary(XMLNode node) {
+                 buildSummary(
+                         memberSummaryWriters[VisibleMemberMap.FIELDS],
+                         visibleMemberMaps[VisibleMemberMap.FIELDS]);
+@@ -247,7 +230,7 @@
+         /**
+          * Build the inherited summary for the fields.
+          */
+-        public void buildFieldsInheritedSummary() {
++        public void buildFieldsInheritedSummary(XMLNode node) {
+                 buildInheritedSummary(
+                         memberSummaryWriters[VisibleMemberMap.FIELDS],
+                         visibleMemberMaps[VisibleMemberMap.FIELDS]);
+@@ -256,7 +239,7 @@
+         /**
+          * Build the summary for the nested classes.
+          */
+-        public void buildNestedClassesSummary() {
++        public void buildNestedClassesSummary(XMLNode node) {
+                 buildSummary(
+                         memberSummaryWriters[VisibleMemberMap.INNERCLASSES],
+                         visibleMemberMaps[VisibleMemberMap.INNERCLASSES]);
+@@ -265,7 +248,7 @@
+         /**
+          * Build the inherited summary for the nested classes.
+          */
+-        public void buildNestedClassesInheritedSummary() {
++        public void buildNestedClassesInheritedSummary(XMLNode node) {
+                 buildInheritedSummary(
+                         memberSummaryWriters[VisibleMemberMap.INNERCLASSES],
+                         visibleMemberMaps[VisibleMemberMap.INNERCLASSES]);
+@@ -274,7 +257,7 @@
+         /**
+          * Build the method summary.
+          */
+-        public void buildMethodsSummary() {
++        public void buildMethodsSummary(XMLNode node) {
+                 buildSummary(
+                         memberSummaryWriters[VisibleMemberMap.METHODS],
+                         visibleMemberMaps[VisibleMemberMap.METHODS]);
+@@ -283,7 +266,7 @@
+         /**
+          * Build the inherited method summary.
+          */
+-        public void buildMethodsInheritedSummary() {
++        public void buildMethodsInheritedSummary(XMLNode node) {
+                 buildInheritedSummary(
+                         memberSummaryWriters[VisibleMemberMap.METHODS],
+                         visibleMemberMaps[VisibleMemberMap.METHODS]);
+@@ -292,7 +275,7 @@
+         /**
+          * Build the constructor summary.
+          */
+-        public void buildConstructorsSummary() {
++        public void buildConstructorsSummary(XMLNode node) {
+                 buildSummary(
+                         memberSummaryWriters[VisibleMemberMap.CONSTRUCTORS],
+                         visibleMemberMaps[VisibleMemberMap.CONSTRUCTORS]);
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java
+@@ -29,7 +29,7 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.util.*;
+-import java.lang.reflect.*;
++
+ /**
+  * Builds documentation for a method.
+  *
+@@ -112,22 +112,6 @@
+         }
+ 
+         /**
+-         * {@inheritDoc}
+-         */
+-        public void invokeMethod(
+-                String methodName,
+-                Class[] paramClasses,
+-                Object[] params)
+-                throws Exception {
+-                if (DEBUG) {
+-                        configuration.root.printError(
+-                                "DEBUG: " + this.getClass().getName() + "." + methodName);
+-                }
+-                Method method = this.getClass().getMethod(methodName, paramClasses);
+-                method.invoke(this, params);
+-        }
+-
+-        /**
+          * Returns a list of methods that will be documented for the given class.
+          * This information can be used for doclet specific documentation
+          * generation.
+@@ -158,21 +142,21 @@
+         /**
+          * Build the method documentation.
+          */
+-        public void buildMethodDoc(List elements) {
++        public void buildMethodDoc(XMLNode node) {
+                 if (writer == null) {
+                         return;
+                 }
+                 for (currentMethodIndex = 0;
+                         currentMethodIndex < methods.size();
+                         currentMethodIndex++) {
+-                        build(elements);
++                        buildChildren(node);
+                 }
+         }
+ 
+         /**
+          * Build the overall header.
+          */
+-        public void buildHeader() {
++        public void buildHeader(XMLNode node) {
+                 writer.writeHeader(
+                         classDoc,
+                         configuration.getText("doclet.Method_Detail"));
+@@ -181,7 +165,7 @@
+         /**
+          * Build the header for the individual method.
+          */
+-        public void buildMethodHeader() {
++        public void buildMethodHeader(XMLNode node) {
+                 writer.writeMethodHeader(
+                         (MethodDoc) methods.get(currentMethodIndex),
+                         currentMethodIndex == 0);
+@@ -190,14 +174,14 @@
+         /**
+          * Build the signature.
+          */
+-        public void buildSignature() {
++        public void buildSignature(XMLNode node) {
+                 writer.writeSignature((MethodDoc) methods.get(currentMethodIndex));
+         }
+ 
+         /**
+          * Build the deprecation information.
+          */
+-        public void buildDeprecationInfo() {
++        public void buildDeprecationInfo(XMLNode node) {
+                 writer.writeDeprecated((MethodDoc) methods.get(currentMethodIndex));
+         }
+ 
+@@ -205,7 +189,7 @@
+          * Build the comments for the method.  Do nothing if
+          * {@link Configuration#nocomment} is set to true.  If this method
+          */
+-        public void buildMethodComments() {
++        public void buildMethodComments(XMLNode node) {
+                 if (!configuration.nocomment) {
+             MethodDoc method = (MethodDoc) methods.get(currentMethodIndex);
+ 
+@@ -228,21 +212,21 @@
+         /**
+          * Build the tag information.
+          */
+-        public void buildTagInfo() {
++        public void buildTagInfo(XMLNode node) {
+                 writer.writeTags((MethodDoc) methods.get(currentMethodIndex));
+         }
+ 
+         /**
+          * Build the footer of the method.
+          */
+-        public void buildMethodFooter() {
++        public void buildMethodFooter(XMLNode node) {
+                 writer.writeMethodFooter();
+         }
+ 
+         /**
+          * Build the overall footer.
+          */
+-        public void buildFooter() {
++        public void buildFooter(XMLNode node) {
+                 writer.writeFooter(classDoc);
+         }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java
+@@ -29,8 +29,6 @@
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.javadoc.*;
+ import java.io.*;
+-import java.util.*;
+-import java.lang.reflect.*;
+ 
+ /**
+  * Builds the summary for a given package.
+@@ -85,22 +83,6 @@
+         }
+ 
+         /**
+-         * {@inheritDoc}
+-         */
+-        public void invokeMethod(
+-                String methodName,
+-                Class[] paramClasses,
+-                Object[] params)
+-                throws Exception {
+-                if (DEBUG) {
+-                        configuration.root.printError(
+-                                "DEBUG: " + this.getClass().getName() + "." + methodName);
+-                }
+-                Method method = this.getClass().getMethod(methodName, paramClasses);
+-                method.invoke(this, params);
+-        }
+-
+-        /**
+          * Build the package summary.
+          */
+         public void build() throws IOException {
+@@ -121,8 +103,8 @@
+         /**
+          * Build the package documentation.
+          */
+-        public void buildPackageDoc(List elements) throws Exception {
+-                build(elements);
++        public void buildPackageDoc(XMLNode node) throws Exception {
++                buildChildren(node);
+                 packageWriter.close();
+                 Util.copyDocFiles(
+                         configuration,
+@@ -136,14 +118,14 @@
+         /**
+          * Build the header of the summary.
+          */
+-        public void buildPackageHeader() {
++        public void buildPackageHeader(XMLNode node) {
+                 packageWriter.writePackageHeader(Util.getPackageName(packageDoc));
+         }
+ 
+         /**
+          * Build the description of the summary.
+          */
+-        public void buildPackageDescription() {
++        public void buildPackageDescription(XMLNode node) {
+                 if (configuration.nocomment) {
+                         return;
+                 }
+@@ -153,7 +135,7 @@
+         /**
+          * Build the tags of the summary.
+          */
+-        public void buildPackageTags() {
++        public void buildPackageTags(XMLNode node) {
+                 if (configuration.nocomment) {
+                         return;
+                 }
+@@ -163,28 +145,28 @@
+         /**
+          * Build the package summary.
+          */
+-        public void buildSummary(List elements) {
+-                build(elements);
++        public void buildSummary(XMLNode node) {
++                buildChildren(node);
+         }
+ 
+         /**
+          * Build the overall header.
+          */
+-        public void buildSummaryHeader() {
++        public void buildSummaryHeader(XMLNode node) {
+                 packageWriter.writeSummaryHeader();
+         }
+ 
+         /**
+          * Build the overall footer.
+          */
+-        public void buildSummaryFooter() {
++        public void buildSummaryFooter(XMLNode node) {
+                 packageWriter.writeSummaryFooter();
+         }
+ 
+         /**
+          * Build the summary for the classes in this package.
+          */
+-        public void buildClassSummary() {
++        public void buildClassSummary(XMLNode node) {
+             String classTableSummary =
+                     configuration.getText("doclet.Member_Table_Summary",
+                     configuration.getText("doclet.Class_Summary"),
+@@ -209,7 +191,7 @@
+         /**
+          * Build the summary for the interfaces in this package.
+          */
+-        public void buildInterfaceSummary() {
++        public void buildInterfaceSummary(XMLNode node) {
+             String interfaceTableSummary =
+                     configuration.getText("doclet.Member_Table_Summary",
+                     configuration.getText("doclet.Interface_Summary"),
+@@ -234,7 +216,7 @@
+         /**
+          * Build the summary for the enums in this package.
+          */
+-        public void buildAnnotationTypeSummary() {
++        public void buildAnnotationTypeSummary(XMLNode node) {
+             String annotationtypeTableSummary =
+                     configuration.getText("doclet.Member_Table_Summary",
+                     configuration.getText("doclet.Annotation_Types_Summary"),
+@@ -259,7 +241,7 @@
+         /**
+          * Build the summary for the enums in this package.
+          */
+-        public void buildEnumSummary() {
++        public void buildEnumSummary(XMLNode node) {
+             String enumTableSummary =
+                     configuration.getText("doclet.Member_Table_Summary",
+                     configuration.getText("doclet.Enum_Summary"),
+@@ -284,7 +266,7 @@
+         /**
+          * Build the summary for the exceptions in this package.
+          */
+-        public void buildExceptionSummary() {
++        public void buildExceptionSummary(XMLNode node) {
+             String exceptionTableSummary =
+                     configuration.getText("doclet.Member_Table_Summary",
+                     configuration.getText("doclet.Exception_Summary"),
+@@ -309,7 +291,7 @@
+         /**
+          * Build the summary for the errors in this package.
+          */
+-        public void buildErrorSummary() {
++        public void buildErrorSummary(XMLNode node) {
+             String errorTableSummary =
+                     configuration.getText("doclet.Member_Table_Summary",
+                     configuration.getText("doclet.Error_Summary"),
+@@ -334,7 +316,7 @@
+         /**
+          * Build the footer of the summary.
+          */
+-        public void buildPackageFooter() {
++        public void buildPackageFooter(XMLNode node) {
+                 packageWriter.writePackageFooter();
+         }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+@@ -26,7 +26,6 @@
+ package com.sun.tools.doclets.internal.toolkit.builders;
+ 
+ import java.io.*;
+-import java.lang.reflect.*;
+ import java.util.*;
+ 
+ import com.sun.javadoc.*;
+@@ -132,47 +131,33 @@
+     /**
+      * Build the serialized form.
+      */
+-    public void buildSerializedForm(List elements) throws Exception {
+-        build(elements);
++    public void buildSerializedForm(XMLNode node) throws Exception {
++        buildChildren(node);
+         writer.close();
+     }
+ 
+     /**
+-     * {@inheritDoc}
+-     */
+-    public void invokeMethod(String methodName, Class[] paramClasses,
+-            Object[] params)
+-    throws Exception {
+-        if (DEBUG) {
+-            configuration.root.printError("DEBUG: " + this.getClass().getName()
+-                + "." + methodName);
+-        }
+-        Method method = this.getClass().getMethod(methodName, paramClasses);
+-        method.invoke(this, params);
+-    }
+-
+-    /**
+      * Build the header.
+      */
+-    public void buildHeader() {
++    public void buildHeader(XMLNode node) {
+         writer.writeHeader(configuration.getText("doclet.Serialized_Form"));
+     }
+ 
+     /**
+      * Build the contents.
+      */
+-    public void buildSerializedFormSummaries(List elements) {
++    public void buildSerializedFormSummaries(XMLNode node) {
+         PackageDoc[] packages = configuration.packages;
+         for (int i = 0; i < packages.length; i++) {
+             currentPackage = packages[i];
+-            build(elements);
++            buildChildren(node);
+         }
+     }
+ 
+     /**
+      * Build the package serialized for for the current package being processed.
+      */
+-    public void buildPackageSerializedForm(List elements) {
++    public void buildPackageSerializedForm(XMLNode node) {
+         String foo = currentPackage.name();
+         ClassDoc[] classes = currentPackage.allClasses(false);
+         if (classes == null || classes.length == 0) {
+@@ -184,14 +169,14 @@
+         if (!serialClassFoundToDocument(classes)) {
+             return;
+         }
+-        build(elements);
++        buildChildren(node);
+     }
+ 
+-    public void buildPackageHeader() {
++    public void buildPackageHeader(XMLNode node) {
+         writer.writePackageHeader(Util.getPackageName(currentPackage));
+     }
+ 
+-    public void buildClassSerializedForm(List elements) {
++    public void buildClassSerializedForm(XMLNode node) {
+         ClassDoc[] classes = currentPackage.allClasses(false);
+         Arrays.sort(classes);
+         for (int j = 0; j < classes.length; j++) {
+@@ -202,19 +187,19 @@
+                 if(!serialClassInclude(currentClass)) {
+                     continue;
+                 }
+-                build(elements);
++                buildChildren(node);
+             }
+         }
+     }
+ 
+-    public void buildClassHeader() {
++    public void buildClassHeader(XMLNode node) {
+         writer.writeClassHeader(currentClass);
+     }
+ 
+     /**
+      * Build the serial UID information for the given class.
+      */
+-    public void buildSerialUIDInfo() {
++    public void buildSerialUIDInfo(XMLNode node) {
+         FieldDoc[] fields = currentClass.fields(false);
+         for (int i = 0; i < fields.length; i++) {
+             if (fields[i].name().equals("serialVersionUID") &&
+@@ -229,7 +214,7 @@
+     /**
+      * Build the footer.
+      */
+-    public void buildFooter() {
++    public void buildFooter(XMLNode node) {
+         writer.writeFooter();
+     }
+ 
+@@ -316,7 +301,7 @@
+     /**
+      * Build the method header.
+      */
+-    public void buildMethodHeader() {
++    public void buildMethodHeader(XMLNode node) {
+         if (currentClass.serializationMethods().length > 0) {
+             methodWriter.writeHeader(
+                 configuration.getText("doclet.Serialized_Form_methods"));
+@@ -333,28 +318,28 @@
+     /**
+      * Build the method sub header.
+      */
+-    public void buildMethodSubHeader()  {
++    public void buildMethodSubHeader(XMLNode node)  {
+         methodWriter.writeMemberHeader((MethodDoc) currentMember);
+     }
+ 
+     /**
+      * Build the deprecated method description.
+      */
+-    public void buildDeprecatedMethodInfo() {
++    public void buildDeprecatedMethodInfo(XMLNode node) {
+         methodWriter.writeDeprecatedMemberInfo((MethodDoc) currentMember);
+     }
+ 
+     /**
+      * Build method tags.
+      */
+-    public void buildMethodDescription() {
++    public void buildMethodDescription(XMLNode node) {
+         methodWriter.writeMemberDescription((MethodDoc) currentMember);
+     }
+ 
+     /**
+      * Build the method tags.
+      */
+-    public void buildMethodTags() {
++    public void buildMethodTags(XMLNode node) {
+         methodWriter.writeMemberTags((MethodDoc) currentMember);
+         MethodDoc method = (MethodDoc)currentMember;
+         if (method.name().compareTo("writeExternal") == 0
+@@ -370,24 +355,24 @@
+     /**
+      * build the information for the method.
+      */
+-    public void buildMethodInfo(List elements)  {
++    public void buildMethodInfo(XMLNode node)  {
+         if(configuration.nocomment){
+             return;
+         }
+-        build(elements);
++        buildChildren(node);
+     }
+ 
+     /**
+      * Build the method footer.
+      */
+-    public void buildMethodFooter() {
++    public void buildMethodFooter(XMLNode node) {
+         methodWriter.writeMemberFooter();
+     }
+ 
+     /**
+      * Build the field header.
+      */
+-    public void buildFieldHeader() {
++    public void buildFieldHeader(XMLNode node) {
+         if (currentClass.serializableFields().length > 0) {
+             buildFieldSerializationOverview(currentClass);
+             fieldWriter.writeHeader(configuration.getText(
+@@ -427,7 +412,7 @@
+     /**
+      * Build the field sub header.
+      */
+-    public void buildFieldSubHeader() {
++    public void buildFieldSubHeader(XMLNode node) {
+         if (! currentClass.definesSerializableFields() ){
+             FieldDoc field = (FieldDoc) currentMember;
+             fieldWriter.writeMemberHeader(field.type().asClassDoc(),
+@@ -438,7 +423,7 @@
+     /**
+      * Build the field deprecation information.
+      */
+-    public void buildFieldDeprecationInfo() {
++    public void buildFieldDeprecationInfo(XMLNode node) {
+         if (!currentClass.definesSerializableFields()) {
+             FieldDoc field = (FieldDoc)currentMember;
+             fieldWriter.writeMemberDeprecatedInfo(field);
+@@ -448,7 +433,7 @@
+     /**
+      * Build the field information.
+      */
+-    public void buildFieldInfo() {
++    public void buildFieldInfo(XMLNode node) {
+         if(configuration.nocomment){
+             return;
+         }
+@@ -484,7 +469,7 @@
+     /**
+      * Build the field sub footer.
+      */
+-    public void buildFieldSubFooter() {
++    public void buildFieldSubFooter(XMLNode node) {
+         if (! currentClass.definesSerializableFields()) {
+             fieldWriter.writeMemberFooter();
+         }
+@@ -494,12 +479,12 @@
+      * Build the summaries for the methods that belong to the given
+      * class.
+      */
+-    public void buildSerializableMethods(List elements) {
++    public void buildSerializableMethods(XMLNode node) {
+         MemberDoc[] members = currentClass.serializationMethods();
+         if (members.length > 0) {
+             for (int i = 0; i < members.length; i++) {
+                 currentMember = members[i];
+-                build(elements);
++                buildChildren(node);
+             }
+         }
+     }
+@@ -508,12 +493,12 @@
+      * Build the summaries for the fields that belong to the given
+      * class.
+      */
+-    public void buildSerializableFields(List elements) {
++    public void buildSerializableFields(XMLNode node) {
+         MemberDoc[] members = currentClass.serializableFields();
+         if (members.length > 0) {
+             for (int i = 0; i < members.length; i++) {
+                 currentMember = members[i];
+-                build(elements);
++                buildChildren(node);
+             }
+         }
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/XMLNode.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/XMLNode.java
+new file mode 100644
+--- /dev/null
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/XMLNode.java
+@@ -0,0 +1,69 @@
++/*
++ * Copyright (c) 2010, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package com.sun.tools.doclets.internal.toolkit.builders;
++
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++/**
++ * Simple class to represent the attribute and elements of an XML node.
++ */
++public class XMLNode {
++    XMLNode(XMLNode parent, String qname) {
++        this.parent = parent;
++        name = qname;
++        attrs = new HashMap<String,String>();
++        children = new ArrayList<XMLNode>();
++
++        if (parent != null)
++            parent.children.add(this);
++    }
++
++    @Override
++    public String toString() {
++        StringBuilder sb = new StringBuilder();
++        sb.append("<");
++        sb.append(name);
++        for (Map.Entry<String,String> e: attrs.entrySet())
++            sb.append(" " + e.getKey() + "=\"" + e.getValue() + "\"");
++        if (children.size() == 0)
++            sb.append("/>");
++        else {
++            sb.append(">");
++            for (XMLNode c: children)
++                sb.append(c.toString());
++            sb.append("</" + name + ">");
++        }
++        return sb.toString();
++    }
++
++    final XMLNode parent;
++    final String name;
++    final Map<String,String> attrs;
++    final List<XMLNode> children;
++}

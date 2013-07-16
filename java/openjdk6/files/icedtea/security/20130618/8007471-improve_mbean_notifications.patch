@@ -1,0 +1,89 @@
+# HG changeset patch
+# User andrew
+# Date 1371404736 18000
+# Node ID 5c4ab66b87e3b640978d71e1af2952f00e721ada
+# Parent  65ed365feeae0a68d89dd63143b6be3c0be11c81
+8007471: Improve MBean notifications
+Summary: Improve MBean notifications
+
+diff --git a/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java b/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java
+--- jdk/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java
++++ jdk/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -397,6 +397,20 @@
+ 
+                 if (nextSeq < nextSequenceNumber()) {
+                     candidate = notificationAt(nextSeq);
++                    // Skip security check if NotificationBufferFilter is not overloaded
++                    if (!(filter instanceof ServerNotifForwarder.NotifForwarderBufferFilter)) {
++                        try {
++                            ServerNotifForwarder.checkMBeanPermission(this.mBeanServer,
++                                                      candidate.getObjectName(),"addNotificationListener");
++                        } catch (InstanceNotFoundException | SecurityException e) {
++                            if (logger.debugOn()) {
++                                logger.debug("fetchNotifications", "candidate: " + candidate + " skipped. exception " + e);
++                            }
++                            ++nextSeq;
++                            continue;
++                        }
++                    }
++
+                     if (logger.debugOn()) {
+                         logger.debug("fetchNotifications", "candidate: " +
+                                      candidate);
+diff --git a/src/share/classes/com/sun/jmx/remote/internal/ServerNotifForwarder.java b/src/share/classes/com/sun/jmx/remote/internal/ServerNotifForwarder.java
+--- jdk/src/share/classes/com/sun/jmx/remote/internal/ServerNotifForwarder.java
++++ jdk/src/share/classes/com/sun/jmx/remote/internal/ServerNotifForwarder.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -228,8 +228,9 @@
+      * why we add the found notifications to a supplied List rather than
+      * just returning a boolean.
+      */
+-    private final NotificationBufferFilter bufferFilter =
+-            new NotificationBufferFilter() {
++    private final NotifForwarderBufferFilter bufferFilter = new NotifForwarderBufferFilter();
++
++    final class NotifForwarderBufferFilter implements NotificationBufferFilter {
+         public void apply(List<TargetedNotification> targetedNotifs,
+                           ObjectName source, Notification notif) {
+             // We proceed in two stages here, to avoid holding the listenerMap
+@@ -330,9 +331,16 @@
+      * Explicitly check the MBeanPermission for
+      * the current access control context.
+      */
+-    private void checkMBeanPermission(final ObjectName name,
+-        final String actions)
++    public final void checkMBeanPermission(
++             final ObjectName name, final String actions)
+         throws InstanceNotFoundException, SecurityException {
++        checkMBeanPermission(mbeanServer,name,actions);
++    }
++
++    static void checkMBeanPermission(
++            final MBeanServer mbs, final ObjectName name, final String actions)
++            throws InstanceNotFoundException, SecurityException {
++
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+             AccessControlContext acc = AccessController.getContext();
+@@ -342,7 +350,7 @@
+                     new PrivilegedExceptionAction<ObjectInstance>() {
+                         public ObjectInstance run()
+                         throws InstanceNotFoundException {
+-                            return mbeanServer.getObjectInstance(name);
++                            return mbs.getObjectInstance(name);
+                         }
+                 });
+             } catch (PrivilegedActionException e) {

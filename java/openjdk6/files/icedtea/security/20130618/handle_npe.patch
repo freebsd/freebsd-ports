@@ -1,0 +1,21 @@
+# HG changeset patch
+# User andrew
+# Date 1371200704 -3600
+# Node ID 662fbd43808413b2bd7ae4ae95683da98999023e
+# Parent  0e01465ca15f49a2b5ebfca89d85c2f0575b96e4
+Handle NullPointerException in getNotificationInfo
+
+diff --git a/src/share/classes/javax/management/StandardEmitterMBean.java b/src/share/classes/javax/management/StandardEmitterMBean.java
+--- jdk/src/share/classes/javax/management/StandardEmitterMBean.java
++++ jdk/src/share/classes/javax/management/StandardEmitterMBean.java
+@@ -258,8 +258,8 @@
+     }
+ 
+     public MBeanNotificationInfo[] getNotificationInfo() {
+-        if (notificationInfo.length == 0) {
+-            return notificationInfo;
++        if (notificationInfo == null || notificationInfo.length == 0) {
++            return NO_NOTIFICATION_INFO;
+         } else {
+             return notificationInfo.clone();
+         }

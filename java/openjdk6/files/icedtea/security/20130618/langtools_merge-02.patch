@@ -1,0 +1,30 @@
+# HG changeset patch
+# User andrew
+# Date 1371735102 18000
+# Node ID 335cdc9887c56f560991275fe8d32e6edb6b3f1e
+# Parent  9aefba5680d55a2e3f718c03cd27cf027c7fc1f9
+Fix more merge issues
+
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/MethodBuilder.java
+@@ -102,6 +102,8 @@
+                     builder.methods,
+                     configuration.getMemberComparator());
+         }
++	return builder;
++    }
+ 
+     /**
+      * {@inheritDoc}
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/PackageSummaryBuilder.java
+@@ -179,6 +179,7 @@
+                     configuration.getText("doclet.Interface_Summary"),
+                     interfaceTableSummary, interfaceTableHeader, summaryContentTree);
+         }
++    }
+ 
+     /**
+      * Build the summary for the classes in this package.

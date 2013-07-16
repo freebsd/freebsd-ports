@@ -1,0 +1,808 @@
+# HG changeset patch
+# User Severin Gehwolf <sgehwolf@redhat.com>
+# Date 1371488468 -7200
+# Node ID bec83758f55670cdb7865e8103f8100dc6f4f0fb
+# Parent  1260b4e54a2373aac77afdcdeb3f7ac8e6319c9e
+8000642: Better handling of objects for transportation
+Summary: Also reviewed by alexander.fomin
+Reviewed-by: alanb, mchung, skoivu
+
+diff --git a/src/share/classes/com/sun/corba/se/impl/corba/AnyImpl.java b/src/share/classes/com/sun/corba/se/impl/corba/AnyImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/corba/AnyImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/corba/AnyImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -33,6 +33,8 @@
+ 
+ import java.io.Serializable;
+ import java.math.BigDecimal;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import java.util.List ;
+ import java.util.ArrayList ;
+ 
+@@ -504,7 +506,12 @@
+     public org.omg.CORBA.portable.OutputStream create_output_stream()
+     {
+         //debug.log ("create_output_stream");
+-        return new AnyOutputStream(orb);
++        final ORB finalorb = this.orb;
++        return AccessController.doPrivileged(new PrivilegedAction<AnyOutputStream>() {
++            public AnyOutputStream run() {
++                return new AnyOutputStream(finalorb);
++            }
++        });
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/corba/se/impl/corba/TypeCodeImpl.java b/src/share/classes/com/sun/corba/se/impl/corba/TypeCodeImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/corba/TypeCodeImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/corba/TypeCodeImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -600,7 +600,8 @@
+     }
+ 
+     public static CDROutputStream newOutputStream(ORB orb) {
+-        TypeCodeOutputStream tcos = new TypeCodeOutputStream((ORB)orb);
++        TypeCodeOutputStream tcos =
++            sun.corba.OutputStreamFactory.newTypeCodeOutputStream(orb);
+         //if (debug) System.out.println("Created TypeCodeOutputStream " + tcos +
+         // " with no parent");
+         return tcos;
+diff --git a/src/share/classes/com/sun/corba/se/impl/encoding/IDLJavaSerializationOutputStream.java b/src/share/classes/com/sun/corba/se/impl/encoding/IDLJavaSerializationOutputStream.java
+--- corba/src/share/classes/com/sun/corba/se/impl/encoding/IDLJavaSerializationOutputStream.java
++++ corba/src/share/classes/com/sun/corba/se/impl/encoding/IDLJavaSerializationOutputStream.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -66,7 +66,7 @@
+  *
+  * @author Ram Jeyaraman
+  */
+-public class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
++final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
+ 
+     private ORB orb;
+     private byte encodingVersion;
+diff --git a/src/share/classes/com/sun/corba/se/impl/encoding/TypeCodeOutputStream.java b/src/share/classes/com/sun/corba/se/impl/encoding/TypeCodeOutputStream.java
+--- corba/src/share/classes/com/sun/corba/se/impl/encoding/TypeCodeOutputStream.java
++++ corba/src/share/classes/com/sun/corba/se/impl/encoding/TypeCodeOutputStream.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -196,7 +196,8 @@
+     }
+ 
+     public TypeCodeOutputStream createEncapsulation(org.omg.CORBA.ORB _orb) {
+-        TypeCodeOutputStream encap = new TypeCodeOutputStream((ORB)_orb, isLittleEndian());
++        TypeCodeOutputStream encap =
++            sun.corba.OutputStreamFactory.newTypeCodeOutputStream((ORB)_orb, isLittleEndian());
+         encap.setEnclosingOutputStream(this);
+         encap.makeEncapsulation();
+         //if (TypeCodeImpl.debug) System.out.println("Created TypeCodeOutputStream " + encap + " with parent " + this);
+@@ -211,7 +212,8 @@
+ 
+     public static TypeCodeOutputStream wrapOutputStream(OutputStream os) {
+         boolean littleEndian = ((os instanceof CDROutputStream) ? ((CDROutputStream)os).isLittleEndian() : false);
+-        TypeCodeOutputStream tos = new TypeCodeOutputStream((ORB)os.orb(), littleEndian);
++        TypeCodeOutputStream tos =
++            sun.corba.OutputStreamFactory.newTypeCodeOutputStream((ORB)os.orb(), littleEndian);
+         tos.setEnclosingOutputStream(os);
+         //if (TypeCodeImpl.debug) System.out.println("Created TypeCodeOutputStream " + tos + " with parent " + os);
+         return tos;
+diff --git a/src/share/classes/com/sun/corba/se/impl/interceptors/CDREncapsCodec.java b/src/share/classes/com/sun/corba/se/impl/interceptors/CDREncapsCodec.java
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/CDREncapsCodec.java
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/CDREncapsCodec.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -155,7 +155,8 @@
+         // be versioned.  This can be handled once this work is complete.
+ 
+         // Create output stream with default endianness.
+-        EncapsOutputStream cdrOut = new EncapsOutputStream(
++        EncapsOutputStream cdrOut =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream(
+             (com.sun.corba.se.spi.orb.ORB)orb, giopVersion );
+ 
+         // This is an encapsulation, so put out the endian:
+diff --git a/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java b/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/RequestInfoImpl.java
+@@ -655,7 +655,8 @@
+             // Convert the "core" service context to an
+             // "IOP" ServiceContext by writing it to a
+             // CDROutputStream and reading it back.
+-            EncapsOutputStream out = new EncapsOutputStream(myORB);
++            EncapsOutputStream out =
++                sun.corba.OutputStreamFactory.newEncapsOutputStream(myORB);
+ 
+             context.write( out, GIOPVersion.V1_2 );
+             InputStream inputStream = out.create_input_stream();
+@@ -691,8 +692,8 @@
+     {
+         int id = 0 ;
+         // Convert IOP.service_context to core.ServiceContext:
+-        EncapsOutputStream outputStream = new EncapsOutputStream(
+-            myORB );
++        EncapsOutputStream outputStream =
++           sun.corba.OutputStreamFactory.newEncapsOutputStream(myORB);
+         InputStream inputStream = null;
+         UnknownServiceContext coreServiceContext = null;
+         ServiceContextHelper.write( outputStream, service_context );
+diff --git a/src/share/classes/com/sun/corba/se/impl/io/IIOPInputStream.java b/src/share/classes/com/sun/corba/se/impl/io/IIOPInputStream.java
+--- corba/src/share/classes/com/sun/corba/se/impl/io/IIOPInputStream.java
++++ corba/src/share/classes/com/sun/corba/se/impl/io/IIOPInputStream.java
+@@ -300,11 +300,11 @@
+         resetStream();
+     }
+ 
+-    public final void setOrbStream(org.omg.CORBA_2_3.portable.InputStream os) {
++    final void setOrbStream(org.omg.CORBA_2_3.portable.InputStream os) {
+         orbStream = os;
+     }
+ 
+-    public final org.omg.CORBA_2_3.portable.InputStream getOrbStream() {
++    final org.omg.CORBA_2_3.portable.InputStream getOrbStream() {
+         return orbStream;
+     }
+ 
+@@ -327,11 +327,11 @@
+         return (javax.rmi.CORBA.ValueHandler) vhandler;
+     }
+ 
+-    public final void increaseRecursionDepth(){
++    final void increaseRecursionDepth(){
+         recursionDepth++;
+     }
+ 
+-    public final int decreaseRecursionDepth(){
++    final int decreaseRecursionDepth(){
+         return --recursionDepth;
+     }
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/io/IIOPOutputStream.java b/src/share/classes/com/sun/corba/se/impl/io/IIOPOutputStream.java
+--- corba/src/share/classes/com/sun/corba/se/impl/io/IIOPOutputStream.java
++++ corba/src/share/classes/com/sun/corba/se/impl/io/IIOPOutputStream.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -124,19 +124,19 @@
+         }
+     }
+ 
+-    public final void setOrbStream(org.omg.CORBA_2_3.portable.OutputStream os) {
++    final void setOrbStream(org.omg.CORBA_2_3.portable.OutputStream os) {
+         orbStream = os;
+     }
+ 
+-    public final org.omg.CORBA_2_3.portable.OutputStream getOrbStream() {
++    final org.omg.CORBA_2_3.portable.OutputStream getOrbStream() {
+         return orbStream;
+     }
+ 
+-    public final void increaseRecursionDepth(){
++    final void increaseRecursionDepth(){
+         recursionDepth++;
+     }
+ 
+-    public final int decreaseRecursionDepth(){
++    final int decreaseRecursionDepth(){
+         return --recursionDepth;
+     }
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/io/InputStreamHook.java b/src/share/classes/com/sun/corba/se/impl/io/InputStreamHook.java
+--- corba/src/share/classes/com/sun/corba/se/impl/io/InputStreamHook.java
++++ corba/src/share/classes/com/sun/corba/se/impl/io/InputStreamHook.java
+@@ -251,7 +251,7 @@
+     }
+ 
+     protected abstract byte getStreamFormatVersion();
+-    protected abstract org.omg.CORBA_2_3.portable.InputStream getOrbStream();
++    abstract org.omg.CORBA_2_3.portable.InputStream getOrbStream();
+ 
+     // Description of possible actions
+     protected static class ReadObjectState {
+diff --git a/src/share/classes/com/sun/corba/se/impl/io/OutputStreamHook.java b/src/share/classes/com/sun/corba/se/impl/io/OutputStreamHook.java
+--- corba/src/share/classes/com/sun/corba/se/impl/io/OutputStreamHook.java
++++ corba/src/share/classes/com/sun/corba/se/impl/io/OutputStreamHook.java
+@@ -179,7 +179,7 @@
+         putFields.write(this);
+     }
+ 
+-    public abstract org.omg.CORBA_2_3.portable.OutputStream getOrbStream();
++    abstract org.omg.CORBA_2_3.portable.OutputStream getOrbStream();
+ 
+     protected abstract void beginOptionalCustomData();
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/EncapsulationUtility.java b/src/share/classes/com/sun/corba/se/impl/ior/EncapsulationUtility.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/EncapsulationUtility.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/EncapsulationUtility.java
+@@ -128,7 +128,8 @@
+     static public void writeEncapsulation( WriteContents obj,
+         OutputStream os )
+     {
+-        EncapsOutputStream out = new EncapsOutputStream( (ORB)os.orb() ) ;
++        EncapsOutputStream out =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)os.orb());
+ 
+         out.putEndian() ;
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/GenericTaggedProfile.java b/src/share/classes/com/sun/corba/se/impl/ior/GenericTaggedProfile.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/GenericTaggedProfile.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/GenericTaggedProfile.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -95,7 +95,8 @@
+ 
+     public org.omg.IOP.TaggedProfile getIOPProfile()
+     {
+-        EncapsOutputStream os = new EncapsOutputStream( orb ) ;
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream(orb);
+         write( os ) ;
+         InputStream is = (InputStream)(os.create_input_stream()) ;
+         return org.omg.IOP.TaggedProfileHelper.read( is ) ;
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/IORImpl.java b/src/share/classes/com/sun/corba/se/impl/ior/IORImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/IORImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/IORImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -213,7 +213,8 @@
+     {
+         StringWriter bs;
+ 
+-        MarshalOutputStream s = new EncapsOutputStream(factory);
++        MarshalOutputStream s =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream(factory);
+         s.putEndian();
+         write( (OutputStream)s );
+         bs = new StringWriter();
+@@ -237,7 +238,8 @@
+     }
+ 
+     public org.omg.IOP.IOR getIOPIOR() {
+-        EncapsOutputStream os = new EncapsOutputStream(factory);
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream(factory);
+         write(os);
+         InputStream is = (InputStream) (os.create_input_stream());
+         return org.omg.IOP.IORHelper.read(is);
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/ObjectKeyImpl.java b/src/share/classes/com/sun/corba/se/impl/ior/ObjectKeyImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/ObjectKeyImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/ObjectKeyImpl.java
+@@ -87,7 +87,8 @@
+ 
+     public byte[] getBytes( org.omg.CORBA.ORB orb )
+     {
+-        EncapsOutputStream os = new EncapsOutputStream( (ORB)orb ) ;
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)orb);
+         write( os ) ;
+         return os.toByteArray() ;
+     }
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/TaggedComponentFactoryFinderImpl.java b/src/share/classes/com/sun/corba/se/impl/ior/TaggedComponentFactoryFinderImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/TaggedComponentFactoryFinderImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/TaggedComponentFactoryFinderImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -61,7 +61,8 @@
+     public TaggedComponent create( org.omg.CORBA.ORB orb,
+         org.omg.IOP.TaggedComponent comp )
+     {
+-        EncapsOutputStream os = new EncapsOutputStream( (ORB)orb ) ;
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)orb);
+         org.omg.IOP.TaggedComponentHelper.write( os, comp ) ;
+         InputStream is = (InputStream)(os.create_input_stream() ) ;
+         // Skip the component ID: we just wrote it out above
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileImpl.java b/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -247,7 +247,8 @@
+ 
+     public org.omg.IOP.TaggedProfile getIOPProfile()
+     {
+-        EncapsOutputStream os = new EncapsOutputStream( orb ) ;
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream(orb);
+         os.write_long( getId() ) ;
+         write( os ) ;
+         InputStream is = (InputStream)(os.create_input_stream()) ;
+diff --git a/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileTemplateImpl.java b/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileTemplateImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileTemplateImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/ior/iiop/IIOPProfileTemplateImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -132,8 +132,9 @@
+         // Note that this cannot be accomplished with a codec!
+ 
+         // Use the byte order of the given stream
+-        OutputStream encapsulatedOS = new EncapsOutputStream( (ORB)os.orb(),
+-            ((CDROutputStream)os).isLittleEndian() ) ;
++        OutputStream encapsulatedOS =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream(
++                (ORB)os.orb(), ((CDROutputStream)os).isLittleEndian() ) ;
+ 
+         okeyTemplate.write( id, encapsulatedOS ) ;
+         EncapsulationUtility.writeOutputStream( encapsulatedOS, os ) ;
+diff --git a/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java b/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ORBImpl.java
+@@ -564,7 +564,7 @@
+     public synchronized org.omg.CORBA.portable.OutputStream create_output_stream()
+     {
+         checkShutdownState();
+-        return new EncapsOutputStream(this);
++        return sun.corba.OutputStreamFactory.newEncapsOutputStream(this);
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/corba/se/impl/orb/ORBSingleton.java b/src/share/classes/com/sun/corba/se/impl/orb/ORBSingleton.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ORBSingleton.java
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ORBSingleton.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -149,7 +149,7 @@
+     }
+ 
+     public OutputStream create_output_stream() {
+-        return new EncapsOutputStream(this);
++        return sun.corba.OutputStreamFactory.newEncapsOutputStream(this);
+     }
+ 
+     public TypeCode create_struct_tc(String id,
+diff --git a/src/share/classes/com/sun/corba/se/impl/protocol/CorbaMessageMediatorImpl.java b/src/share/classes/com/sun/corba/se/impl/protocol/CorbaMessageMediatorImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/CorbaMessageMediatorImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/CorbaMessageMediatorImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -1792,8 +1792,7 @@
+ 
+         if (msg.getGIOPVersion().lessThan(GIOPVersion.V1_2)) {
+             // locate msgs 1.0 & 1.1 :=> grow,
+-            // REVISIT - build from factory
+-            outputObject = new CDROutputObject(
++            outputObject = sun.corba.OutputStreamFactory.newCDROutputObject(
+                              (ORB) messageMediator.getBroker(),
+                              this,
+                              GIOPVersion.V1_0,
+@@ -1802,8 +1801,7 @@
+                              ORBConstants.STREAM_FORMAT_VERSION_1);
+         } else {
+             // 1.2 :=> stream
+-            // REVISIT - build from factory
+-            outputObject = new CDROutputObject(
++            outputObject = sun.corba.OutputStreamFactory.newCDROutputObject(
+                              (ORB) messageMediator.getBroker(),
+                              messageMediator,
+                              reply,
+@@ -1957,7 +1955,8 @@
+                           ReplyMessage.NEEDS_ADDRESSING_MODE,
+                           null, null);
+             // REVISIT: via acceptor factory.
+-            CDROutputObject outputObject = new CDROutputObject(
++            CDROutputObject outputObject =
++                sun.corba.OutputStreamFactory.newCDROutputObject(
+                 (ORB)messageMediator.getBroker(),
+                 this,
+                 messageMediator.getGIOPVersion(),
+@@ -2124,7 +2123,7 @@
+         ex.printStackTrace(pw);
+         pw.flush(); // NOTE: you must flush or baos will be empty.
+         EncapsOutputStream encapsOutputStream =
+-            new EncapsOutputStream((ORB)mediator.getBroker());
++            sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)mediator.getBroker());
+         encapsOutputStream.putEndian();
+         encapsOutputStream.write_wstring(baos.toString());
+         UnknownServiceContext serviceContext =
+@@ -2201,12 +2200,11 @@
+         // REVISIT = do not use null.
+         //
+         if (messageMediator.getConnection() == null) {
+-            // REVISIT - needs factory
+             replyOutputObject =
+-                new CDROutputObject(orb, messageMediator,
+-                                    messageMediator.getReplyHeader(),
+-                                    messageMediator.getStreamFormatVersion(),
+-                                    BufferManagerFactory.GROW);
++                sun.corba.OutputStreamFactory.newCDROutputObject(orb,
++                            messageMediator, messageMediator.getReplyHeader(),
++                            messageMediator.getStreamFormatVersion(),
++                            BufferManagerFactory.GROW);
+         } else {
+             replyOutputObject = messageMediator.getConnection().getAcceptor()
+              .createOutputObject(messageMediator.getBroker(), messageMediator);
+diff --git a/src/share/classes/com/sun/corba/se/impl/transport/CorbaContactInfoBase.java b/src/share/classes/com/sun/corba/se/impl/transport/CorbaContactInfoBase.java
+--- corba/src/share/classes/com/sun/corba/se/impl/transport/CorbaContactInfoBase.java
++++ corba/src/share/classes/com/sun/corba/se/impl/transport/CorbaContactInfoBase.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -214,7 +214,7 @@
+             messageMediator;
+ 
+         OutputObject outputObject =
+-            new CDROutputObject(orb, messageMediator,
++            sun.corba.OutputStreamFactory.newCDROutputObject(orb, messageMediator,
+                                 corbaMessageMediator.getRequestHeader(),
+                                 corbaMessageMediator.getStreamFormatVersion());
+ 
+diff --git a/src/share/classes/com/sun/corba/se/impl/transport/SharedCDRContactInfoImpl.java b/src/share/classes/com/sun/corba/se/impl/transport/SharedCDRContactInfoImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/transport/SharedCDRContactInfoImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/transport/SharedCDRContactInfoImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -134,7 +134,7 @@
+             messageMediator;
+         // NOTE: GROW.
+         OutputObject outputObject =
+-            new CDROutputObject(orb, messageMediator,
++            sun.corba.OutputStreamFactory.newCDROutputObject(orb, messageMediator,
+                                 corbaMessageMediator.getRequestHeader(),
+                                 corbaMessageMediator.getStreamFormatVersion(),
+                                 BufferManagerFactory.GROW);
+diff --git a/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelAcceptorImpl.java b/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelAcceptorImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelAcceptorImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelAcceptorImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -534,9 +534,9 @@
+     {
+         CorbaMessageMediator corbaMessageMediator = (CorbaMessageMediator)
+             messageMediator;
+-        return new CDROutputObject((ORB) broker, corbaMessageMediator,
+-                                   corbaMessageMediator.getReplyHeader(),
+-                                   corbaMessageMediator.getStreamFormatVersion());
++        return sun.corba.OutputStreamFactory.newCDROutputObject((ORB) broker,
++                       corbaMessageMediator, corbaMessageMediator.getReplyHeader(),
++                       corbaMessageMediator.getStreamFormatVersion());
+     }
+ 
+     ////////////////////////////////////////////////////
+diff --git a/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelConnectionImpl.java b/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelConnectionImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelConnectionImpl.java
++++ corba/src/share/classes/com/sun/corba/se/impl/transport/SocketOrChannelConnectionImpl.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -1565,8 +1565,8 @@
+     {
+         // REVISIT: See comments in CDROutputObject constructor.
+         CDROutputObject outputObject =
+-            new CDROutputObject((ORB)orb, null, giopVersion, this, msg,
+-                                ORBConstants.STREAM_FORMAT_VERSION_1);
++            sun.corba.OutputStreamFactory.newCDROutputObject((ORB)orb, null, giopVersion,
++                                this, msg, ORBConstants.STREAM_FORMAT_VERSION_1);
+         msg.write(outputObject);
+ 
+         outputObject.writeTo(this);
+diff --git a/src/share/classes/com/sun/corba/se/spi/ior/TaggedComponentBase.java b/src/share/classes/com/sun/corba/se/spi/ior/TaggedComponentBase.java
+--- corba/src/share/classes/com/sun/corba/se/spi/ior/TaggedComponentBase.java
++++ corba/src/share/classes/com/sun/corba/se/spi/ior/TaggedComponentBase.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -42,7 +42,8 @@
+     public org.omg.IOP.TaggedComponent getIOPComponent(
+         org.omg.CORBA.ORB orb )
+     {
+-        EncapsOutputStream os = new EncapsOutputStream( (ORB)orb ) ;
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)orb);
+         write( os ) ;
+         InputStream is = (InputStream)(os.create_input_stream() ) ;
+         return org.omg.IOP.TaggedComponentHelper.read( is ) ;
+diff --git a/src/share/classes/com/sun/corba/se/spi/servicecontext/ServiceContext.java b/src/share/classes/com/sun/corba/se/spi/servicecontext/ServiceContext.java
+--- corba/src/share/classes/com/sun/corba/se/spi/servicecontext/ServiceContext.java
++++ corba/src/share/classes/com/sun/corba/se/spi/servicecontext/ServiceContext.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -92,7 +92,8 @@
+      */
+     public void write(OutputStream s, GIOPVersion gv) throws SystemException
+     {
+-        EncapsOutputStream os = new EncapsOutputStream( (ORB)(s.orb()), gv ) ;
++        EncapsOutputStream os =
++            sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)(s.orb()), gv);
+         os.putEndian() ;
+         writeData( os ) ;
+         byte[] data = os.toByteArray() ;
+diff --git a/src/share/classes/org/omg/CORBA_2_3/portable/OutputStream.java b/src/share/classes/org/omg/CORBA_2_3/portable/OutputStream.java
+--- corba/src/share/classes/org/omg/CORBA_2_3/portable/OutputStream.java
++++ corba/src/share/classes/org/omg/CORBA_2_3/portable/OutputStream.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2000, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -31,6 +31,10 @@
+ 
+ package org.omg.CORBA_2_3.portable;
+ 
++import java.io.SerializablePermission;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
++
+ /**
+  * OutputStream provides interface for writing of all of the mapped IDL type
+  * to the stream. It extends org.omg.CORBA.portable.OutputStream, and defines
+@@ -43,6 +47,39 @@
+ 
+ public abstract class OutputStream extends org.omg.CORBA.portable.OutputStream {
+ 
++    private static final String ALLOW_SUBCLASS_PROP = "jdk.corba.allowOutputStreamSubclass";
++    private static final boolean allowSubclass = AccessController.doPrivileged(
++        new PrivilegedAction<Boolean>() {
++            public Boolean run() {
++            String prop = System.getProperty(ALLOW_SUBCLASS_PROP);
++                return prop == null ? false :
++                           (prop.equalsIgnoreCase("false") ? false : true);
++            }
++        });
++
++    private static Void checkPermission() {
++        SecurityManager sm = System.getSecurityManager();
++        if (sm != null) {
++            if (!allowSubclass)
++                sm.checkPermission(new
++                    SerializablePermission("enableSubclassImplementation"));
++        }
++        return null;
++    }
++    private OutputStream(Void ignore) { }
++
++    /**
++     * Create a new instance of this class.
++     *
++     * throw SecurityException if SecurityManager is installed and
++     * enableSubclassImplementation SerializablePermission
++     * is not granted or jdk.corba.allowOutputStreamSubclass system
++     * property is either not set or is set to 'false'
++     */
++    public OutputStream() {
++        this(checkPermission());
++    }
++
+     /**
+      * Marshals a value type to the output stream.
+      * @param value is the acutal value to write
+diff --git a/src/share/classes/sun/corba/OutputStreamFactory.java b/src/share/classes/sun/corba/OutputStreamFactory.java
+new file mode 100644
+--- /dev/null
++++ corba/src/share/classes/sun/corba/OutputStreamFactory.java
+@@ -0,0 +1,141 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.corba;
++
++import com.sun.corba.se.impl.corba.AnyImpl;
++import com.sun.corba.se.impl.encoding.BufferManagerWrite;
++import com.sun.corba.se.impl.encoding.CDROutputObject;
++import com.sun.corba.se.impl.encoding.EncapsOutputStream;
++import com.sun.corba.se.impl.encoding.TypeCodeOutputStream;
++import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
++
++import com.sun.corba.se.pept.protocol.MessageMediator;
++
++import com.sun.corba.se.spi.orb.ORB;
++import com.sun.corba.se.spi.transport.CorbaConnection;
++import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
++import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
++
++import java.security.AccessController;
++import java.security.PrivilegedAction;
++
++public final class OutputStreamFactory {
++
++    private OutputStreamFactory() {
++    }
++
++    public static TypeCodeOutputStream newTypeCodeOutputStream(
++            final ORB orb) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<TypeCodeOutputStream>() {
++                public TypeCodeOutputStream run() {
++                    return new TypeCodeOutputStream(orb);
++                }
++        });
++    }
++
++    public static TypeCodeOutputStream newTypeCodeOutputStream(
++            final ORB orb, final boolean littleEndian) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<TypeCodeOutputStream>() {
++                public TypeCodeOutputStream run() {
++                    return new TypeCodeOutputStream(orb, littleEndian);
++                }
++        });
++    }
++
++    public static EncapsOutputStream newEncapsOutputStream(
++            final ORB orb) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<EncapsOutputStream>() {
++                public EncapsOutputStream run() {
++                    return new EncapsOutputStream(
++                        (com.sun.corba.se.spi.orb.ORB)orb);
++                }
++        });
++    }
++
++    public static EncapsOutputStream newEncapsOutputStream(
++            final ORB orb, final GIOPVersion giopVersion) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<EncapsOutputStream>() {
++                public EncapsOutputStream run() {
++                    return new EncapsOutputStream(
++                        (com.sun.corba.se.spi.orb.ORB)orb, giopVersion);
++                }
++        });
++    }
++
++    public static EncapsOutputStream newEncapsOutputStream(
++            final ORB orb, final boolean isLittleEndian) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<EncapsOutputStream>() {
++                public EncapsOutputStream run() {
++                    return new EncapsOutputStream(
++                        (com.sun.corba.se.spi.orb.ORB)orb, isLittleEndian);
++                }
++        });
++    }
++
++    public static CDROutputObject newCDROutputObject(
++            final ORB orb, final MessageMediator messageMediator,
++            final Message header, final byte streamFormatVersion) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<CDROutputObject>() {
++                public CDROutputObject run() {
++                    return new CDROutputObject(orb, messageMediator,
++                        header, streamFormatVersion);
++                }
++        });
++    }
++
++    public static CDROutputObject newCDROutputObject(
++            final ORB orb, final MessageMediator messageMediator,
++            final Message header, final byte streamFormatVersion,
++            final int strategy) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<CDROutputObject>() {
++                public CDROutputObject run() {
++                    return new CDROutputObject(orb, messageMediator,
++                        header, streamFormatVersion, strategy);
++                }
++        });
++    }
++
++    public static CDROutputObject newCDROutputObject(
++            final ORB orb, final CorbaMessageMediator mediator,
++            final GIOPVersion giopVersion, final CorbaConnection connection,
++            final Message header, final byte streamFormatVersion) {
++        return AccessController.doPrivileged(
++            new PrivilegedAction<CDROutputObject>() {
++                public CDROutputObject run() {
++                    return new CDROutputObject(orb, mediator,
++                        giopVersion, connection, header, streamFormatVersion);
++                }
++        });
++    }
++
++}

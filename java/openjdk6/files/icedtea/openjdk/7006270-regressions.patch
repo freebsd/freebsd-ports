@@ -1,0 +1,299 @@
+# HG changeset patch
+# User bpatel
+# Date 1292276687 28800
+# Node ID 445134ee98c84b6d139fab0f9a9d8718c686c63b
+# Parent  5761891cfee48bc9382dd68e5e1bf164cff9bfbf
+7006270: Several javadoc regression tests are failing on windows
+Reviewed-by: jjg
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
+@@ -239,7 +239,7 @@
+             Type superclass = Util.getFirstVisibleSuperClass(classDoc,
+                     configuration());
+             if (superclass != null) {
+-                pre.addContent("\n");
++                pre.addContent(DocletConstants.NL);
+                 pre.addContent("extends ");
+                 Content link = new RawHtml(getLink(new LinkInfoImpl(
+                         LinkInfoImpl.CONTEXT_CLASS_SIGNATURE_PARENT_NAME,
+@@ -257,7 +257,7 @@
+                     continue;
+                 }
+                 if (counter == 0) {
+-                    pre.addContent("\n");
++                    pre.addContent(DocletConstants.NL);
+                     pre.addContent(isInterface? "extends " : "implements ");
+                 } else {
+                     pre.addContent(", ");
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDoclet.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDoclet.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDoclet.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDoclet.java
+@@ -144,11 +144,12 @@
+             !configuration.nohelp) {
+             HelpWriter.generate(configuration);
+         }
+-        // If a stylesheet file is not specified, copy the default stylesheet.
++        // If a stylesheet file is not specified, copy the default stylesheet
++        // and replace newline with platform-specific newline.
+         if (configuration.stylesheetfile.length() == 0) {
+             Util.copyFile(configuration, "stylesheet.css", Util.RESOURCESDIR,
+                     (configdestdir.isEmpty()) ?
+-                        System.getProperty("user.dir") : configdestdir, false);
++                        System.getProperty("user.dir") : configdestdir, false, true);
+         }
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+@@ -216,15 +216,15 @@
+     public Content getAllClassesLinkScript(String id) {
+         HtmlTree script = new HtmlTree(HtmlTag.SCRIPT);
+         script.addAttr(HtmlAttr.TYPE, "text/javascript");
+-        String scriptCode = "<!--\n" +
+-                "  allClassesLink = document.getElementById(\"" + id + "\");\n" +
+-                "  if(window==top) {\n" +
+-                "    allClassesLink.style.display = \"block\";\n" +
+-                "  }\n" +
+-                "  else {\n" +
+-                "    allClassesLink.style.display = \"none\";\n" +
+-                "  }\n" +
+-                "  //-->\n";
++        String scriptCode = "<!--" + DocletConstants.NL +
++                "  allClassesLink = document.getElementById(\"" + id + "\");" + DocletConstants.NL +
++                "  if(window==top) {" + DocletConstants.NL +
++                "    allClassesLink.style.display = \"block\";" + DocletConstants.NL +
++                "  }" + DocletConstants.NL +
++                "  else {" + DocletConstants.NL +
++                "    allClassesLink.style.display = \"none\";" + DocletConstants.NL +
++                "  }" + DocletConstants.NL +
++                "  //-->" + DocletConstants.NL;
+         Content scriptContent = new RawHtml(scriptCode);
+         script.addContent(scriptContent);
+         Content div = HtmlTree.DIV(script);
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/Comment.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/Comment.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/Comment.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/Comment.java
+@@ -82,9 +82,9 @@
+      */
+     public void write(StringBuilder contentBuilder) {
+         if (!endsWithNewLine(contentBuilder))
+-            contentBuilder.append("\n");
++            contentBuilder.append(DocletConstants.NL);
+         contentBuilder.append("<!-- ");
+         contentBuilder.append(commentText);
+-        contentBuilder.append(" -->\n");
++        contentBuilder.append(" -->" + DocletConstants.NL);
+     }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/DocType.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/DocType.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/DocType.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/DocType.java
+@@ -48,7 +48,7 @@
+      */
+     private DocType(String type, String dtd) {
+         docType = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 " + type +
+-                "//EN\" \"" + dtd + "\">\n";
++                "//EN\" \"" + dtd + "\">" + DocletConstants.NL;
+     }
+ 
+      /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlTree.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlTree.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlTree.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlTree.java
+@@ -753,7 +753,7 @@
+      */
+     public void write(StringBuilder contentBuilder) {
+         if (!isInline() && !endsWithNewLine(contentBuilder))
+-            contentBuilder.append("\n");
++            contentBuilder.append(DocletConstants.NL);
+         String tagString = htmlTag.toString();
+         contentBuilder.append("<" + tagString);
+         Iterator<HtmlAttr> iterator = attrs.keySet().iterator();
+@@ -772,6 +772,6 @@
+         if (htmlTag.endTagRequired())
+             contentBuilder.append("</" + tagString + ">");
+         if (!isInline())
+-            contentBuilder.append("\n");
++            contentBuilder.append(DocletConstants.NL);
+     }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+@@ -287,11 +287,11 @@
+         HtmlTree script = new HtmlTree(HtmlTag.SCRIPT);
+         if(winTitle != null && winTitle.length() > 0) {
+             script.addAttr(HtmlAttr.TYPE, "text/javascript");
+-            String scriptCode = "<!--\n" +
+-                    "    if (location.href.indexOf('is-external=true') == -1) {\n" +
+-                    "        parent.document.title=\"" + winTitle + "\";\n" +
+-                    "    }\n" +
+-                    "//-->\n";
++            String scriptCode = "<!--" + DocletConstants.NL +
++                    "    if (location.href.indexOf('is-external=true') == -1) {" + DocletConstants.NL +
++                    "        parent.document.title=\"" + winTitle + "\";" + DocletConstants.NL +
++                    "    }" + DocletConstants.NL +
++                    "//-->" + DocletConstants.NL;
+             RawHtml scriptContent = new RawHtml(scriptCode);
+             script.addContent(scriptContent);
+         }
+@@ -306,15 +306,15 @@
+     protected Content getFramesetJavaScript(){
+         HtmlTree script = new HtmlTree(HtmlTag.SCRIPT);
+         script.addAttr(HtmlAttr.TYPE, "text/javascript");
+-        String scriptCode = "\n    targetPage = \"\" + window.location.search;\n" +
+-                "    if (targetPage != \"\" && targetPage != \"undefined\")\n" +
+-                "        targetPage = targetPage.substring(1);\n" +
+-                "    if (targetPage.indexOf(\":\") != -1)\n" +
+-                "        targetPage = \"undefined\";\n" +
+-                "    function loadFrames() {\n" +
+-                "        if (targetPage != \"\" && targetPage != \"undefined\")\n" +
+-                "             top.classFrame.location = top.targetPage;\n" +
+-                "    }\n";
++        String scriptCode = DocletConstants.NL + "    targetPage = \"\" + window.location.search;" + DocletConstants.NL +
++                "    if (targetPage != \"\" && targetPage != \"undefined\")" + DocletConstants.NL +
++                "        targetPage = targetPage.substring(1);" + DocletConstants.NL +
++                "    if (targetPage.indexOf(\":\") != -1)" + DocletConstants.NL +
++                "        targetPage = \"undefined\";" + DocletConstants.NL +
++                "    function loadFrames() {" + DocletConstants.NL +
++                "        if (targetPage != \"\" && targetPage != \"undefined\")" + DocletConstants.NL +
++                "             top.classFrame.location = top.targetPage;" + DocletConstants.NL +
++                "    }" + DocletConstants.NL;
+         RawHtml scriptContent = new RawHtml(scriptCode);
+         script.addContent(scriptContent);
+         return script;
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/Content.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/Content.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/Content.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/Content.java
+@@ -101,6 +101,6 @@
+      */
+     public boolean endsWithNewLine(StringBuilder contentBuilder) {
+         return ((contentBuilder.length() == 0) ||
+-                (contentBuilder.substring(contentBuilder.length() - 1).equals("\n")));
++                (contentBuilder.toString().endsWith(DocletConstants.NL)));
+     }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/Util.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/Util.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/Util.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/Util.java
+@@ -211,14 +211,14 @@
+         try {
+             while ((len = input.read(bytearr)) != -1) {
+                 output.write(bytearr, 0, len);
+-            }
++                }
+         } catch (FileNotFoundException exc) {
+         } catch (SecurityException exc) {
+-        } finally {
++            } finally {
+             input.close();
+             output.close();
++            }
+         }
+-    }
+ 
+     /**
+      * Copy the given directory contents from the source package directory
+@@ -330,7 +330,7 @@
+             String resourcefile, boolean overwrite) {
+         String destresourcesdir = configuration.destDirName + RESOURCESDIR;
+         copyFile(configuration, resourcefile, RESOURCESDIR, destresourcesdir,
+-                overwrite);
++                overwrite, false);
+     }
+ 
+     /**
+@@ -345,23 +345,46 @@
+      * @param overwrite A flag to indicate whether the file in the
+      *                  destination directory will be overwritten if
+      *                  it already exists.
++     * @param replaceNewLine true if the newline needs to be replaced with platform-
++     *                  specific newline.
+      */
+     public static void copyFile(Configuration configuration, String file, String source,
+-            String destination, boolean overwrite) {
++            String destination, boolean overwrite, boolean replaceNewLine) {
+         DirectoryManager.createDirectory(configuration, destination);
+         File destfile = new File(destination, file);
+         if(destfile.exists() && (! overwrite)) return;
+         try {
+             InputStream in = Configuration.class.getResourceAsStream(
+-                source + DirectoryManager.URL_FILE_SEPARATOR + file);
++                    source + DirectoryManager.URL_FILE_SEPARATOR + file);
+             if(in==null) return;
+             OutputStream out = new FileOutputStream(destfile);
+-            byte[] buf = new byte[2048];
+-            int n;
+-            while((n = in.read(buf))>0) out.write(buf,0,n);
+-            in.close();
+-            out.close();
+-        } catch(Throwable t) {}
++            try {
++                if (!replaceNewLine) {
++                    byte[] buf = new byte[2048];
++                    int n;
++                    while((n = in.read(buf))>0) out.write(buf,0,n);
++                } else {
++                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
++                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out));
++                    try {
++                        String line;
++                        while ((line = reader.readLine()) != null) {
++                            writer.write(line);
++                            writer.write(DocletConstants.NL);
++                        }
++                    } finally {
++                        reader.close();
++                        writer.close();
++                    }
++                }
++            } finally {
++                in.close();
++                out.close();
++            }
++        } catch (IOException ie) {
++            ie.printStackTrace();
++            throw new DocletAbortException();
++        }
+     }
+ 
+     /**
+diff --git a/test/com/sun/javadoc/testHtmlDocument/TestHtmlDocument.java b/test/com/sun/javadoc/testHtmlDocument/TestHtmlDocument.java
+--- langtools/test/com/sun/javadoc/testHtmlDocument/TestHtmlDocument.java
++++ langtools/test/com/sun/javadoc/testHtmlDocument/TestHtmlDocument.java
+@@ -44,6 +44,7 @@
+     private static final String BUGID = "6851834";
+     private static final String BUGNAME = "TestHtmlDocument";
+     private static final String FS = System.getProperty("file.separator");
++    private static final String LS = System.getProperty("line.separator");
+     private static String srcdir = System.getProperty("test.src", ".");
+ 
+     // Entry point
+@@ -143,13 +144,17 @@
+             System.out.println("\nFILE DOES NOT EXIST: " + filename);
+         }
+         BufferedReader in = new BufferedReader(new FileReader(file));
++        StringBuilder fileString = new StringBuilder();
+         // Create an array of characters the size of the file
+-        char[] allChars = new char[(int)file.length()];
+-        // Read the characters into the allChars array
+-        in.read(allChars, 0, (int)file.length());
+-        in.close();
+-        // Convert to a string
+-        String allCharsString = new String(allChars);
+-        return allCharsString;
++        try {
++            String line;
++            while ((line = in.readLine()) != null) {
++                fileString.append(line);
++                fileString.append(LS);
++            }
++        } finally {
++            in.close();
++        }
++        return fileString.toString();
+     }
+ }
