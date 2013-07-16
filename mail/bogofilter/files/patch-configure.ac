@@ -1,0 +1,10 @@
+--- configure.ac.orig	2012-12-02 20:49:51.000000000 +0000
++++ configure.ac	2013-07-03 19:57:19.000000000 +0000
+@@ -21,2 +21,3 @@
+ AC_INIT([bogofilter],[1.2.3])
++AM_INIT_AUTOMAKE([foreign 1.10 dist-bzip2 no-installinfo])
+ dnl
+@@ -26,3 +27,2 @@
+ AC_CANONICAL_HOST
+-AM_INIT_AUTOMAKE([foreign 1.10 dist-bzip2 no-installinfo])
+ AC_CONFIG_HEADERS([src/config.h:config.in])

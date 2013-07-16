@@ -1,0 +1,7 @@
+--- configure.in.orig	2006-06-18 12:30:59.000000000 +0000
++++ configure.in	2013-06-18 18:48:55.000000000 +0000
+@@ -68,3 +68,3 @@
+ 
+-AC_OUTPUT(Makefile src/Makefile src/cal3d/Makefile docs/Makefile docs/api/Makefile docs/shared/Makefile tests/Makefile tests/run cal3d.pc src/cal3d_converter.1 fileformats.txt)
++AC_OUTPUT(Makefile src/Makefile src/cal3d/Makefile docs/Makefile docs/api/Makefile docs/shared/Makefile cal3d.pc src/cal3d_converter.1 fileformats.txt)
+ 
