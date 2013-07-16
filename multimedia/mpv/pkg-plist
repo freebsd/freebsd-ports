@@ -1,0 +1,5 @@
+bin/mpv
+etc/mpv/encoding-example-profiles.conf.sample
+etc/mpv/input.conf.sample
+etc/mpv/mpv.conf.sample
+@dirrmtry etc/mpv
