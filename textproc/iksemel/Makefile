@@ -14,6 +14,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
