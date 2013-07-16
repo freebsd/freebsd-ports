@@ -53,6 +53,7 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
 USE_AUTOTOOLS=	automake autoconf
+AUTOMAKE_ARGS=	--add-missing
 USE_OPENSSL=	yes
 
 .if defined (MUTT_LITE)
