@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=	VORBIS
 AACPLUS_DESC=	AAC HEv2 and libsamplerate support
 
 USE_AUTOTOOLS=	aclocal autoconf
+AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_acx_pthread_config=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}
