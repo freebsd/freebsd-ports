@@ -3,6 +3,7 @@
 
 PORTNAME=	openxcom
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
