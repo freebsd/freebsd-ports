@@ -1956,6 +1956,7 @@
     SUBDIR += trac-scrumburndown
     SUBDIR += trac-simpleticket
     SUBDIR += trac-spam-filter
+    SUBDIR += trac-subtickets
     SUBDIR += trac-tags
     SUBDIR += trac-themeengine
     SUBDIR += trac-ticketimport
