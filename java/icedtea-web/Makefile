@@ -2,6 +2,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -16,14 +17,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5_BUILD=yes
 USE_XORG=	x11
-USES=		pkgconfig shebangfix
+USES=		gmake pkgconfig shebangfix
 SHEBANG_FILES=	javac.in jrunscript.in
 
 WANT_GNOME=	yes
