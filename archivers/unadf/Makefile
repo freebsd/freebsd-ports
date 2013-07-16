@@ -48,6 +48,11 @@ FAQSIMGS=	FAQ/image/adf_dir.gif FAQ/image/adf_file.gif
 
 PORTDOCS=	*
 
+# XXX: work around an issue with automake-1.13 erroring out on a
+#      non-existent m4 directory before libtoolize creates it
+pre-configure::
+	@${MKDIR} ${WRKSRC}/m4
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/unadf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

@@ -4,14 +4,13 @@ share/aclocal-%%BUILD_VERSION%%/amversion.m4
 share/aclocal-%%BUILD_VERSION%%/ar-lib.m4
 share/aclocal-%%BUILD_VERSION%%/as.m4
 share/aclocal-%%BUILD_VERSION%%/auxdir.m4
-share/aclocal-%%BUILD_VERSION%%/ccstdc.m4
 share/aclocal-%%BUILD_VERSION%%/cond.m4
 share/aclocal-%%BUILD_VERSION%%/cond-if.m4
 share/aclocal-%%BUILD_VERSION%%/depend.m4
 share/aclocal-%%BUILD_VERSION%%/depout.m4
 share/aclocal-%%BUILD_VERSION%%/dmalloc.m4
+share/aclocal-%%BUILD_VERSION%%/extra-recurs.m4
 share/aclocal-%%BUILD_VERSION%%/gcj.m4
-share/aclocal-%%BUILD_VERSION%%/header.m4
 share/aclocal-%%BUILD_VERSION%%/init.m4
 share/aclocal-%%BUILD_VERSION%%/install-sh.m4
 share/aclocal-%%BUILD_VERSION%%/lead-dot.m4
@@ -19,14 +18,11 @@ share/aclocal-%%BUILD_VERSION%%/lex.m4
 share/aclocal-%%BUILD_VERSION%%/lispdir.m4
 share/aclocal-%%BUILD_VERSION%%/maintainer.m4
 share/aclocal-%%BUILD_VERSION%%/make.m4
-share/aclocal-%%BUILD_VERSION%%/minuso.m4
 share/aclocal-%%BUILD_VERSION%%/missing.m4
 share/aclocal-%%BUILD_VERSION%%/mkdirp.m4
-share/aclocal-%%BUILD_VERSION%%/obsol-gt.m4
-share/aclocal-%%BUILD_VERSION%%/obsol-lt.m4
 share/aclocal-%%BUILD_VERSION%%/obsolete.m4
 share/aclocal-%%BUILD_VERSION%%/options.m4
-share/aclocal-%%BUILD_VERSION%%/protos.m4
+share/aclocal-%%BUILD_VERSION%%/prog-cc-c-o.m4
 share/aclocal-%%BUILD_VERSION%%/python.m4
 share/aclocal-%%BUILD_VERSION%%/runlog.m4
 share/aclocal-%%BUILD_VERSION%%/sanity.m4
@@ -36,6 +32,7 @@ share/aclocal-%%BUILD_VERSION%%/substnot.m4
 share/aclocal-%%BUILD_VERSION%%/tar.m4
 share/aclocal-%%BUILD_VERSION%%/upc.m4
 share/aclocal-%%BUILD_VERSION%%/vala.m4
+share/aclocal-%%BUILD_VERSION%%/internal/ac-config-macro-dirs.m4
 share/automake-%%BUILD_VERSION%%/Automake/ChannelDefs.pm
 share/automake-%%BUILD_VERSION%%/Automake/Channels.pm
 share/automake-%%BUILD_VERSION%%/Automake/Condition.pm
@@ -47,6 +44,7 @@ share/automake-%%BUILD_VERSION%%/Automake/General.pm
 share/automake-%%BUILD_VERSION%%/Automake/Getopt.pm
 share/automake-%%BUILD_VERSION%%/Automake/Item.pm
 share/automake-%%BUILD_VERSION%%/Automake/ItemDef.pm
+share/automake-%%BUILD_VERSION%%/Automake/Language.pm
 share/automake-%%BUILD_VERSION%%/Automake/Location.pm
 share/automake-%%BUILD_VERSION%%/Automake/Options.pm
 share/automake-%%BUILD_VERSION%%/Automake/Rule.pm
@@ -102,7 +100,6 @@ share/automake-%%BUILD_VERSION%%/compile
 share/automake-%%BUILD_VERSION%%/config.guess
 share/automake-%%BUILD_VERSION%%/config.sub
 share/automake-%%BUILD_VERSION%%/depcomp
-share/automake-%%BUILD_VERSION%%/elisp-comp
 share/automake-%%BUILD_VERSION%%/install-sh
 share/automake-%%BUILD_VERSION%%/mdate-sh
 share/automake-%%BUILD_VERSION%%/missing
@@ -113,6 +110,7 @@ share/automake-%%BUILD_VERSION%%/tap-driver.sh
 share/automake-%%BUILD_VERSION%%/test-driver
 share/automake-%%BUILD_VERSION%%/texinfo.tex
 share/automake-%%BUILD_VERSION%%/ylwrap
+@dirrm share/aclocal-%%BUILD_VERSION%%/internal
 @dirrm share/aclocal-%%BUILD_VERSION%%
 @dirrm share/automake-%%BUILD_VERSION%%/Automake
 @dirrm share/automake-%%BUILD_VERSION%%/am

@@ -1,73 +1,48 @@
---- configure.in	2009-03-06 13:27:05.000000000 -0500
-+++ configure.in	2010-12-18 18:01:10.000000000 -0500
-@@ -72,6 +72,7 @@
-     PLATFORM=FREEBSD
-     AC_DEFINE(FREEBSD, 1, [Define this if OS is FreeBSD])
+--- configure.in.orig	2012-02-24 07:43:53.000000000 +0000
++++ configure.in	2013-06-18 18:20:54.000000000 +0000
+@@ -74,3 +74,3 @@
+ 
+-  amd64-*-freebsd*)
++  x86_64-*-freebsd*)
+     MAKEFILE_PREFIX=freebsd
+@@ -79,2 +79,3 @@
      AC_DEFINE(AMD64, 1, [Define this if CPU is amd64])
 +	XE_APPEND(-lreadline,LIBS)
      LOCK_MANAGER_FLG=Y
-     EDITLINE_FLG=Y
-     SHRLIB_EXT=so
-@@ -90,6 +91,7 @@
-     MAKEFILE_PREFIX=freebsd 
-     PLATFORM=FREEBSD
+@@ -97,2 +98,3 @@
      AC_DEFINE(FREEBSD, 1, [Define this if OS is FreeBSD])
 +	XE_APPEND(-lreadline,LIBS)
      LOCK_MANAGER_FLG=Y
-     EDITLINE_FLG=Y
-     SHRLIB_EXT=so
-@@ -473,6 +475,7 @@
- AC_CHECK_HEADERS(socket.h sys/socket.h sys/sockio.h winsock2.h)
- AC_CHECK_HEADERS(sys/sem.h)
+@@ -480,2 +482,3 @@
  AC_CHECK_HEADERS(semaphore.h)
 +AC_CHECK_HEADERS(sys/resource.h)
  
- dnl Check for libraries
- AC_CHECK_LIB(dl, main)
-@@ -484,10 +487,11 @@
- 			AC_CHECK_LIB(termcap, tgetent, TERMLIB=termcap, \
- 				AC_CHECK_LIB(tinfo, tgetent, TERMLIB=tinfo, \
+@@ -491,3 +494,3 @@
  					AC_MSG_ERROR(termcap support not found)))))  
 -	AC_SUBST(EDITLINE_A, -leditline)
 +	AC_SUBST(EDITLINE_A, -ledit -leditline)
  	AC_SUBST(TERMLIB)
- 	XE_APPEND(-l$TERMLIB, LIBS)
+@@ -495,2 +498,3 @@
  fi
 +AM_PATH_ICU(3, 6)
  
- dnl check for va_copy() in stdarg.h
- dnl _ISOC99_SOURCE is defined to emulate C++ compilation in plain-C conftest.c
-@@ -776,7 +780,7 @@
- rm -f conftest*])
- 
+@@ -783,3 +787,3 @@
  if test "$firebird_cv_gcc___thread" = yes; then
 -  AC_DEFINE(HAVE___THREAD, 1, [Define it if compiler supports ISO syntax for thread-local storage])
 +  dnl AC_DEFINE(HAVE___THREAD, 1, [Define it if compiler supports ISO syntax for thread-local storage])
  fi
- 				  
- dnl ##################### DO NOT ADD ANY TESTS BELOW ###########################
-@@ -802,6 +806,10 @@
- AC_SUBST(NEW_FIREBIRD_DIR)
- 
+@@ -809,2 +813,6 @@
  AC_DEFINE_UNQUOTED(FB_PREFIX, $(if test "x$prefix" = "xNONE" ; then echo \"$ac_default_prefix\"; else echo \"$prefix\"; fi), [Installation path prefix])
 +AC_DEFINE_UNQUOTED(FB_EXEC_PREFIX, "$exec_prefix", [Executables path prefix])
 +AC_DEFINE_UNQUOTED(FB_CONF_PREFIX, "$sysconfdir", [Single-machine data path prefix])
 +AC_DEFINE_UNQUOTED(FB_MSG_PREFIX, "$datadir", [Architecture-independent data path prefix])
 +AC_DEFINE_UNQUOTED(FB_LIBEXEC_PREFIX, "$libexecdir", [Program executables path prefix])
  
- AC_CONFIG_COMMANDS(,,[
- dnl # rebuild version header if needed
-@@ -1161,7 +1169,6 @@
- gen/Makefile.install:builds/install/arch-specific/${INSTALL_PREFIX}/Makefile.in
- Makefile:Makefile.in
+@@ -1168,3 +1176,2 @@
  gen/Makefile.extern.editline:${MAKE_SRC_DIR}/Makefile.in.extern.editline
 -gen/Makefile.extern.icu:${MAKE_SRC_DIR}/Makefile.in.extern.icu
  )
- 
- case "$PLATFORM" in
-@@ -1172,15 +1179,7 @@
- ;;
- esac
+@@ -1179,11 +1186,3 @@
  
 -if test "$PROD_BUILD_FLG" = N; then
 -  DEBUG_ICU=--enable-debug
@@ -79,5 +54,3 @@
 -./runConfigureICU "$ICU_PLATFORM" "$DEBUG_ICU" --prefix=`pwd`/..)
 -
  
- dnl Print out the build configuration (the most interesting thing)
- echo

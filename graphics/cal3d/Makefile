@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoheader libtool
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
+# AUTOMAKE_ARGS=	--add-missing
 
 MAN1=	cal3d_converter.1
 
@@ -34,6 +35,7 @@ post-patch:
 		${WRKSRC}/src/cal3d/loader.h \
 		${WRKSRC}/src/cal3d/streamsource.h
 	@${REINPLACE_CMD} -e '/^all_libraries/d' ${WRKSRC}/src/cal3d/Makefile.am
+	@${REINPLACE_CMD} -e 's| tests||' ${WRKSRC}/Makefile.am
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print | \

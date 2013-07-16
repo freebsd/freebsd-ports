@@ -12,6 +12,7 @@ COMMENT=	GTK+ based screen capture
 
 USES=		pkgconfig
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
+AUTOMAKE_ARGS=	--add-missing
 USE_GNOME=	gtk20 libwnck libxml2
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes

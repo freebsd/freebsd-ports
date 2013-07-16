@@ -20,7 +20,7 @@ USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
 AUTOMAKE_ARGS=	-c -a
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libargp.la lib/libargp.a \

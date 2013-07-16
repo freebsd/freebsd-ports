@@ -24,7 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		README data/gpasman4.sample
 PLIST_FILES=	bin/gtkpasman share/applications/gtkpasman.desktop
-ACLOCAL_ARGS?=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS?=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README gpasman4.sample

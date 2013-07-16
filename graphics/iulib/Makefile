@@ -23,7 +23,7 @@ MAKE_JOBS_SAFE=	yes
 USE_GCC=	any
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool aclocal automake autoconf
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -1,12 +1,8 @@
---- gettext-tools/config.h.in.orig	Sat Aug 28 11:50:21 2004
-+++ gettext-tools/config.h.in	Sat Aug 28 11:51:26 2004
-@@ -45,6 +45,9 @@
- /* Define to 1 if you have the `atexit' function. */
- #undef HAVE_ATEXIT
+--- gettext-tools/config.h.in.orig	2013-03-05 08:43:50.000000000 +0000
++++ gettext-tools/config.h.in	2013-05-23 19:14:44.000000000 +0000
+@@ -524,2 +524,5 @@
  
-+/* Define if the expat library is bsdxml. */
++/* Define to 1 if the expat library is bsdxml. */
 +#undef HAVE_BSDXML
 +
- /* Define to 1 if you have the `btowc' function. */
- #undef HAVE_BTOWC
- 
+ /* Define to 1 if you have the 'btowc' function. */

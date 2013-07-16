@@ -66,6 +66,11 @@ post-patch:	.SILENT
 		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
 
+# XXX: work around an issue with automake-1.13 erroring out on a
+#      non-existent m4 directory before libtoolize creates it
+pre-configure::
+	@${MKDIR} ${WRKSRC}/m4
+
 post-configure:	.SILENT
 	${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/' \
 		${WRKSRC}/test/putsurface/Makefile
