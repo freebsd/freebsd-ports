@@ -376,6 +376,7 @@
     SUBDIR += openvpn22
     SUBDIR += ophcrack
     SUBDIR += opieprint
+    SUBDIR += orthrus
     SUBDIR += osiris
     SUBDIR += ossec-hids-client
     SUBDIR += ossec-hids-local
