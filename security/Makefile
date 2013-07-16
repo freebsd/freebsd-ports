@@ -716,6 +716,7 @@
     SUBDIR += pkcs11-helper
     SUBDIR += pks
     SUBDIR += pktsuckers
+    SUBDIR += please
     SUBDIR += polarssl
     SUBDIR += poly1305aes
     SUBDIR += portsentry
