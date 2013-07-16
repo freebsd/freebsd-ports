@@ -95,6 +95,7 @@ DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
+AUTOMAKE_ARGS=	--add-missing
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \
