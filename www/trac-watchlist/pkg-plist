@@ -1,0 +1,86 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/plugin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/translation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/wiki.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/api.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manual.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/ticket.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/nav.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/db.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/plugin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/translation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/wiki.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/api.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manual.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/ticket.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/nav.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/db.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/render/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/render/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/render/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/watchlist_manual.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/watchlist_prefs.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/watchlist.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/wl-ticket.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/wl-wiki.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/orderadd.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates/watchlist_prefs_main.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/prev.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/next.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/desc.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/history.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/last.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/asc.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/first.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/diff.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico/unwatch.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/css/jquery.autocomplete.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/css/dataTable.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/css/watchlist.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/css/anytime.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/css/tablesorter.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/jquery.dataTables.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/orderadd.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/anytime.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/dynamictables.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/jquery.autocomplete.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/jookie.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/autocomplete.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js/watchlist.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals/en-US.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals/de.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals/en-GB.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals/attachments/de/screenshot.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/plugin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/wiki.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/translation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manual.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/ticket.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/nav.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/db.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/render
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/js
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/ico
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/htdocs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals/attachments/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals/attachments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist/manuals
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tracwatchlist
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
