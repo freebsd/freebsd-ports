@@ -893,20 +893,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # MAKE_ARGS		- Any extra arguments to sub-make in build and install stages.
 #				  Default: none
 ##
-# MAKE_JOBS_SAFE
-#				- This port can safely be built on multiple cpus in parallel.
-#				  The make will be invoked with -jX parameter where X equals
-#				  number of cores present in the system.
 # MAKE_JOBS_UNSAFE
 #				- Disallow multiple jobs even when user set a global override.
 #				  To be used with known bad ports.
 # DISABLE_MAKE_JOBS
 #				- Set to disable the multiple jobs feature.  User settable.
-# FORCE_MAKE_JOBS
-#				- Force all ports to be built with multiple jobs, except ports
-#				  that are explicitly marked MAKE_JOBS_UNSAFE.  User settable.
 # MAKE_JOBS_NUMBER
 #				- Override the number of make jobs to be used.  User settable.
+# MAKE_JOBS_NUMBER_LIMIT
+#				- Set a limit for maximum number of make jobs allowed to be
+#				  used.
 ## cacche
 #
 # WITH_CCACHE_BUILD
@@ -2144,18 +2140,20 @@ CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
 # Multiple make jobs support
 .if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
 _MAKE_JOBS=		#
-.else
-.if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
-MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
-_MAKE_JOBS?=		-j${MAKE_JOBS_NUMBER}
-.if defined(FORCE_MAKE_JOBS) && !defined(MAKE_JOBS_SAFE)
-BUILD_FAIL_MESSAGE+=	You have chosen to use multiple make jobs (parallelization) for all ports.  This port was not tested for this setting.  Please remove FORCE_MAKE_JOBS and retry the build before reporting the failure to the maintainer.
-.endif
-.endif
-.endif
-
-.if empty(MAKE_JOBS_NUMBER)
 MAKE_JOBS_NUMBER=	1
+.else
+.if defined(MAKE_JOBS_NUMBER)
+_MAKE_JOBS_NUMBER=	${MAKE_JOBS_NUMBER}
+.else
+_MAKE_JOBS_NUMBER!=	${SYSCTL} -n kern.smp.cpus
+.endif
+.if defined(MAKE_JOBS_NUMBER_LIMIT) && ( ${MAKE_JOBS_NUMBER_LIMIT} < ${_MAKE_JOBS_NUMBER} )
+MAKE_JOBS_NUMBER=	${MAKE_JOBS_NUMBER_LIMIT}
+.else
+MAKE_JOBS_NUMBER=	${_MAKE_JOBS_NUMBER}
+.endif
+_MAKE_JOBS?=		-j${MAKE_JOBS_NUMBER}
+BUILD_FAIL_MESSAGE+=	Try to set MAKE_JOBS_UNSAFE=yes and rebuild before reporting the failure to the maintainer.
 .endif
 
 # ccache support
