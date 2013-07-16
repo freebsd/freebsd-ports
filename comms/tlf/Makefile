@@ -19,6 +19,7 @@ COMMENT=	Amateur Radio curses based logging program
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf libtool aclocal automake
+AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"

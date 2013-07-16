@@ -1,30 +1,8 @@
 --- gettext-tools/configure.orig	Mon Nov 27 09:34:40 2006
 +++ gettext-tools/configure	Sun Dec  3 17:54:35 2006
-@@ -3962,7 +3962,3 @@
- 
--if test -n "$HAVE_GCJ" && test "$JAVA_CHOICE" = yes; then
--  BUILDJAVAEXE=yes
--else
-   BUILDJAVAEXE=no
--fi
- 
-@@ -5110,13 +5106,5 @@
- 
--if test -n "$HAVE_JAVACOMP" && test -n "$JAR" && test "$JAVA_CHOICE" != no; then
--  BUILDJAVA=yes
--else
-   BUILDJAVA=no
--fi
- 
--if test -n "$HAVE_JAVAEXEC" && test $BUILDJAVA = yes; then
--  TESTJAVA=yes
--else
-   TESTJAVA=no
--fi
- 
 @@ -50083,2 +50071,13 @@
  case "$host_os" in
-+  freebsd[5-9]*)
++  freebsd*)
 +
 +cat >>confdefs.h <<\_ACEOF
 +#define HAVE_BSDXML 1

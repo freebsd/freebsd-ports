@@ -11,7 +11,7 @@ COMMENT=	A GTK+-based quake-like terminal emulator
 
 USE_AUTOTOOLS=	aclocal autoheader automake
 AUTOMAKE_ARGS=	--add-missing
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} \
 		-I${LOCALBASE}/share/aclocal
 USE_GNOME=	vte gtk20
 GNU_CONFIGURE=	yes

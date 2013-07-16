@@ -20,6 +20,7 @@ USES=		pkgconfig
 USE_PYTHON=	2.5-2.7
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
 ACLOCAL_ARGS=	-I config
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	PYTHON=""
 MAKE_JOBS_SAFE=	yes
 

@@ -69,6 +69,11 @@ MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
 		irxevent.1 lircrcd.1 mode2.1 smode2.1 xmode2.1
 MAN8=		lircd.8 lircmd.8
 
+# XXX: work around an issue with automake-1.13 erroring out on a
+#      non-existent m4 directory before libtoolize creates it
+pre-configure::
+	@${MKDIR} ${WRKSRC}/m4
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}/)

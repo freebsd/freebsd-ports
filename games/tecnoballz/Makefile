@@ -18,6 +18,7 @@ LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod \
 		smpeg:${PORTSDIR}/multimedia/smpeg
 
 USE_AUTOTOOLS=	automake aclocal
+AUTOMAKE_ARGS=	--add-missing
 USE_SDL=	sdl mixer image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -16,6 +16,7 @@ USE_GMAKE=	yes
 PORTDOCS=	README ChangeLog
 PLIST_FILES=	bin/gqlplus
 USE_AUTOTOOLS=	autoconf automake aclocal
+AUTOMAKE_ARGS=	--add-missing
 
 .include <bsd.port.options.mk>
 

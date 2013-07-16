@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	autoconf-wrapper
-PORTVERSION=	20101119
+PORTVERSION=	20130530
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -14,7 +14,7 @@ NO_BUILD=	YES
 
 TOOL?=		AUTOCONF
 WRAPPED_TOOLS?=	autoconf autoheader autom4te autoreconf autoscan \
-		autoupdates ifnames
+		autoupdate ifnames
 .include <bsd.port.pre.mk>
 
 TOOLS_CASE!=	${ECHO_CMD} ${WRAPPED_TOOLS} | ${TR} ' ' '|'

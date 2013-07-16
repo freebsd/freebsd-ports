@@ -18,6 +18,7 @@ LATEST_LINK=	${PORTNAME}-dev
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
+AUTOMAKE_ARGS=	--add-missing
 USES=	pathfix
 LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
 

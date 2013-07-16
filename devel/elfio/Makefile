@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 AUTOMAKE_ARGS=	-c -a
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 
 OPTIONE_DEFINE=	EXAMPLES DOCS
 

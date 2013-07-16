@@ -17,6 +17,7 @@ LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 
 USES=		bison
 USE_AUTOTOOLS=	aclocal autoheader automake
+AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

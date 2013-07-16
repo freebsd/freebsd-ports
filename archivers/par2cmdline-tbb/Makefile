@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_AUTOTOOLS=	aclocal automake autoconf
+AUTOMAKE_ARGS=	--add-missing
 USE_GCC=	4.2+
 
 PORTDOCS=	README

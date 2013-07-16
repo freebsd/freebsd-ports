@@ -142,8 +142,8 @@ GNU_CONFIGURE=				yes
 .endif
 
 .if defined(_AUTOTOOL_automake)
-AUTOMAKE_VERSION=	1.12
-AUTOMAKE_APIVER=	1.12.6
+AUTOMAKE_VERSION=	1.14
+AUTOMAKE_APIVER=	1.14
 AUTOMAKE_PORT=		devel/automake
 
 . if ${_AUTOTOOL_automake} == "yes"
@@ -176,7 +176,10 @@ AUTOMAKE_DIR=		${LOCALBASE}/share/automake-${AUTOMAKE_VERSION}
 ACLOCAL=			${LOCALBASE}/bin/aclocal-${AUTOMAKE_VERSION}
 ACLOCAL_DIR=		${LOCALBASE}/share/aclocal-${AUTOMAKE_VERSION}
 
-. if defined(_AUTOTOOL_aclocal) || defined(_AUTOTOOL_aclocal14)
+. if defined(_AUTOTOOL_aclocal)
+ACLOCAL_ARGS?=		--automake-acdir=${ACLOCAL_DIR}
+. endif
+. if defined(_AUTOTOOL_aclocal14)
 ACLOCAL_ARGS?=		--acdir=${ACLOCAL_DIR}
 . endif
 

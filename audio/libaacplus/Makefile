@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 AUTOMAKE_ARGS=	--add-missing
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} \
 		-I ${LOCALBASE}/share/aclocal -I ${WRKSRC}/m4
 LIBTOOLIZE_ARGS=--automake
 

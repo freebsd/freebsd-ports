@@ -19,7 +19,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	automake aclocal libtool
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
