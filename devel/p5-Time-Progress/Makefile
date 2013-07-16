@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Time-Progress
-# Date created:				19 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Time-Progress
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
