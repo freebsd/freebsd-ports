@@ -49,6 +49,39 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/textutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/textutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/textutils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/guessittest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect_all.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_episode.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_language.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_matchtree.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_movie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/autodetect.yaml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/dummy.srt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/episodes.yaml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/movies.yaml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/opensubtitles_languages_2012_05_09.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/guessittest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect_all.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_episode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_language.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_matchtree.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_movie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/guessittest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect_all.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_episode.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_language.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_matchtree.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_movie.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/__init__.pyo
@@ -108,6 +141,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/split_path_components.pyo
 bin/guessit
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
