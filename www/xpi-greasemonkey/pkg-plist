@@ -240,6 +240,7 @@
 %%XPI_XPIDIR%%/locale/zh-TW/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/greasemonkey.properties
 %%XPI_XPIDIR%%/modules/GM_notification.js
+%%XPI_XPIDIR%%/modules/GM_setClipboard.js
 %%XPI_XPIDIR%%/modules/addons4.js
 %%XPI_XPIDIR%%/modules/constants.js
 %%XPI_XPIDIR%%/modules/parseScript.js
