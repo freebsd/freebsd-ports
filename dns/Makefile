@@ -55,6 +55,7 @@
     SUBDIR += geta
     SUBDIR += ghtool
     SUBDIR += hesiod
+    SUBDIR += hostdb
     SUBDIR += idnkit
     SUBDIR += idnkit2
     SUBDIR += inadyn
