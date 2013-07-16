@@ -31,6 +31,7 @@ USE_GNOME=	gnomehier gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--disable-alsamidi \
 		--disable-scheduler
 INSTALLS_OMF=	yes

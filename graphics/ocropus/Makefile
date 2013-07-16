@@ -25,6 +25,7 @@ LEPTONICA_DESC=	Enable Leptonica image analysis
 MAKE_JOBS_UNSAFE=	yes
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
+AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include

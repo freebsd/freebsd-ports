@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_AUTOTOOLS=	aclocal autoconf libtool
+AUTOMAKE_ARGS=	--add-missing
 USES=	pathfix pkgconfig
 USE_GMAKE=	yes
 USE_OPENSSL=	yes

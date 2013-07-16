@@ -20,5 +20,6 @@ USE_GMAKE=	yes
 USES=		pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 
 .include <bsd.port.mk>

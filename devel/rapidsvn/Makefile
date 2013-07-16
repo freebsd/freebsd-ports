@@ -24,6 +24,7 @@ WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 USES=		gettext
 USE_AUTOTOOLS=	autoconf libtool automake
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \

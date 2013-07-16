@@ -20,6 +20,7 @@ CONFLICTS=	cal3d-devel-[0-9]*
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoheader libtool
+AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
 # AUTOMAKE_ARGS=	--add-missing
