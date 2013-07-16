@@ -67,13 +67,6 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
-PATCHFILES=		squid-3.3-12566.patch \
-			squid-3.3-12567.patch \
-			squid-3.3-12568.patch \
-			squid-3.3-12569.patch \
-			squid-3.3-12570.patch \
-			squid-3.3-12571.patch \
-			squid-3.3-12572.patch
 
 MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
@@ -83,7 +76,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid33
 
-SQUID_STABLE_VER=	5
+SQUID_STABLE_VER=	8
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!3].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
