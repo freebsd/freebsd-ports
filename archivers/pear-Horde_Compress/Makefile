@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Compress
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Compress
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	archivers www pear
 PKGNAMEPREFIX=	pear-
 

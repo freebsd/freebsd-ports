@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Mail
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Mail
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org

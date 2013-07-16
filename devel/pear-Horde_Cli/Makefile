@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Cli
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Cli
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

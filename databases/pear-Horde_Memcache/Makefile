@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Memcache
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Memcache
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org

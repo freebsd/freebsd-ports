@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Image
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Image
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	graphics www pear
 PKGNAMEPREFIX=	pear-
 
