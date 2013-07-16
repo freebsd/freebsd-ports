@@ -56,7 +56,7 @@ TEST_DESC=	Add support for running regression test
 USES=		gmake motif
 
 .include <bsd.port.options.mk>
-.include "${.CURDIR}/Makefile.icedtea"
+.include "${PORTSDIR}/java/openjdk6/Makefile.icedtea"
 
 EXTRA_PATCHES=	${ICEDTEA_PATCHES}
 
