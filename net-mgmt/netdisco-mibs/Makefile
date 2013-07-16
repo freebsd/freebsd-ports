@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco-mibs
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/netdisco/netdisco-mibs/${PORTVERSION}
 
@@ -16,7 +16,6 @@ NO_BUILD=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
-	${INSTALL_SCRIPT} ${FILESDIR}/mkindex ${DATADIR}
 .	for mibdir in ${MIBDIRS}
 		(cd ${DATADIR}/${mibdir} && ${GREP} 'DEFINITIONS ::= BEGIN' *.* | ${SED} 's/\(.*\..*\):[[:space:]]*\(.*\) DEFINITIONS.*$$/\2 \1/' > .index)
 .	endfor

@@ -204,6 +204,98 @@
 %%DATADIR%%/allied/atswtch2.mib
 %%DATADIR%%/allied/ati-mib.mib
 %%DATADIR%%/allied/.index
+%%DATADIR%%/alcatel
+%%DATADIR%%/alcatel/alcatelind1igmp.mib
+%%DATADIR%%/alcatel/alcatelind1eoam.mib
+%%DATADIR%%/alcatel/alcatelind1vrrp.mib
+%%DATADIR%%/alcatel/alcatelind1bfd.mib
+%%DATADIR%%/alcatel/alcatelind1ns.mib
+%%DATADIR%%/alcatel/alcatelind1ntp.mib
+%%DATADIR%%/alcatel/timetra-sap-mib.mib
+%%DATADIR%%/alcatel/alcatelind1tpdevices.mib
+%%DATADIR%%/alcatel/alcatelind1policy.mib
+%%DATADIR%%/alcatel/alcatelind1sessionmgr.mib
+%%DATADIR%%/alcatel/alcatelind1vlanstacking.mib
+%%DATADIR%%/alcatel/timetra-qos-mib.mib
+%%DATADIR%%/alcatel/alcatel-ind1-dhcp-srv-mib.mib
+%%DATADIR%%/alcatel/alcatelind1lps.mib
+%%DATADIR%%/alcatel/alcatelind1health.mib
+%%DATADIR%%/alcatel/defs
+%%DATADIR%%/alcatel/alcatelind1ospf.mib
+%%DATADIR%%/alcatel/alcatel-static-frr-mib.mib
+%%DATADIR%%/alcatel/alcatelind1servicemgr.mib
+%%DATADIR%%/alcatel/timetra-global-mib.mib
+%%DATADIR%%/alcatel/alcatelind1macserver.mib
+%%DATADIR%%/alcatel/alcatelind1vlanmanager.mib
+%%DATADIR%%/alcatel/alcatelind1partitionedmgr.mib
+%%DATADIR%%/alcatel/alcatelind1vlanstp.mib
+%%DATADIR%%/alcatel/alcatelind1ssh.mib
+%%DATADIR%%/alcatel/alcatelind1portmapping.mib
+%%DATADIR%%/alcatel/alcatelind1dot1x.mib
+%%DATADIR%%/alcatel/alcatelind1rip.mib
+%%DATADIR%%/alcatel/alcatelind1interswitchprotocol.mib
+%%DATADIR%%/alcatel/alcatelind1wccp.mib
+%%DATADIR%%/alcatel/timetra-chassis-mib.mib
+%%DATADIR%%/alcatel/alcatelind1ip.mib
+%%DATADIR%%/alcatel/alcatelind1slb.mib
+%%DATADIR%%/alcatel/alcatelind1pim.mib
+%%DATADIR%%/alcatel/alcatelind1gvrp.mib
+%%DATADIR%%/alcatel/alcatelind1groupmobility.mib
+%%DATADIR%%/alcatel/alcatelind1ipms.mib
+%%DATADIR%%/alcatel/timetra-sdp-mib.mib
+%%DATADIR%%/alcatel/alcatelind1qos.mib
+%%DATADIR%%/alcatel/alcatel-ind1-lbd-mib.mib
+%%DATADIR%%/alcatel/alcatel-ind1-dot3-oam-mib.mib
+%%DATADIR%%/alcatel/alcatelind1lag.mib
+%%DATADIR%%/alcatel/timetra-tc-mib.mib
+%%DATADIR%%/alcatel/alcatelind1inlinepowerethernet.mib
+%%DATADIR%%/alcatel/alcatelind1port.mib
+%%DATADIR%%/alcatel/alcatelind1chassis.mib
+%%DATADIR%%/alcatel/alcatelind1bgp.mib
+%%DATADIR%%/alcatel/timetra-ldp-mib.mib
+%%DATADIR%%/alcatel/alcatelind1iprm.mib
+%%DATADIR%%/alcatel/alcatelind1mld.mib
+%%DATADIR%%/alcatel/alcatelind1lldp.mib
+%%DATADIR%%/alcatel/alcatelind1erp.mib
+%%DATADIR%%/alcatel/alcatelind1virtualrouter.mib
+%%DATADIR%%/alcatel/alcatel-ind1-lldp-med-mib.mib
+%%DATADIR%%/alcatel/alcatelind1trapmgr.mib
+%%DATADIR%%/alcatel/timetra-serv-mib.mib
+%%DATADIR%%/alcatel/alcatel-ind1-dhl-mib.mib
+%%DATADIR%%/alcatel/timetra-filter-mib.mib
+%%DATADIR%%/alcatel/alcatelind1base.mib
+%%DATADIR%%/alcatel/alcatelind1ipv6.mib
+%%DATADIR%%/alcatel/alcatelind1drctm.mib
+%%DATADIR%%/alcatel/alcatel-ind1-mvrp-mib.mib
+%%DATADIR%%/alcatel/alcatelind1ospf3.mib
+%%DATADIR%%/alcatel/alcatelind1eservice.mib
+%%DATADIR%%/alcatel/alcatelind1iprmv6.mib
+%%DATADIR%%/alcatel/timetra-vrtr-mib.mib
+%%DATADIR%%/alcatel/timetra-mpls-mib.mib
+%%DATADIR%%/alcatel/alcatelind1macaddress.mib
+%%DATADIR%%/alcatel/alcatelind1configmgr.mib
+%%DATADIR%%/alcatel/alcatelind1aaa.mib
+%%DATADIR%%/alcatel/alcatelind1devices.mib
+%%DATADIR%%/alcatel/alcatelind1ripng.mib
+%%DATADIR%%/alcatel/alcatelind1ipsec.mib
+%%DATADIR%%/alcatel/alcatelind1ipmrm.mib
+%%DATADIR%%/alcatel/alcatelind1udprelay.mib
+%%DATADIR%%/alcatel/alcatelind1snmpagent.mib
+%%DATADIR%%/alcatel/alcatelind1webmgt.mib
+%%DATADIR%%/alcatel/alcatelind1ipmv.mib
+%%DATADIR%%/alcatel/alcatelind1udld.mib
+%%DATADIR%%/alcatel/alcatelind1stackmanager.mib
+%%DATADIR%%/alcatel/alcatel-ind1-saa-mib.mib
+%%DATADIR%%/alcatel/alcatelind1vrrp3.mib
+%%DATADIR%%/alcatel/alcatelind1rdp.mib
+%%DATADIR%%/alcatel/alcatelind1system.mib
+%%DATADIR%%/alcatel/alcatelind1routemap.mib
+%%DATADIR%%/alcatel/alcatelind1licensemanager.mib
+%%DATADIR%%/alcatel/alcatelind1dot1q.mib
+%%DATADIR%%/alcatel/timetra-oam-test-mib.mib
+%%DATADIR%%/alcatel/alcatelind1ipx.mib
+%%DATADIR%%/alcatel/timetra-port-mib.mib
+%%DATADIR%%/alcatel/.index
 %%DATADIR%%/apc/powernet.mib
 %%DATADIR%%/arista/ARISTA-MAU-MIB.txt
 %%DATADIR%%/arista/ARISTA-SW-IP-FORWARDING-MIB.txt
@@ -1438,6 +1530,48 @@
 %%DATADIR%%/d-link/syslog.mib
 %%DATADIR%%/d-link/time.mib
 %%DATADIR%%/d-link/timerange.mib
+%%DATADIR%%/d-link/nlb.mib
+%%DATADIR%%/d-link/protocolvlan.mib
+%%DATADIR%%/d-link/equipment.mib
+%%DATADIR%%/d-link/portsecurity.mib
+%%DATADIR%%/d-link/staticmacbasedvlan.mib
+%%DATADIR%%/d-link/filter.mib
+%%DATADIR%%/d-link/des3200-28f-l3mgmt.mib
+%%DATADIR%%/d-link/arpspoofingprevention.mib
+%%DATADIR%%/d-link/cfmextension.mib
+%%DATADIR%%/d-link/bpduprotection.mib
+%%DATADIR%%/d-link/ipv6staticroute.mib
+%%DATADIR%%/d-link/zonedefense.mib
+%%DATADIR%%/d-link/duld.mib
+%%DATADIR%%/d-link/qos.mib
+%%DATADIR%%/d-link/des3200me-28-led.mib
+%%DATADIR%%/d-link/l2protocoltunnel.mib
+%%DATADIR%%/d-link/des3200-18-l2mgmt.mib
+%%DATADIR%%/d-link/mcastfilter.mib
+%%DATADIR%%/d-link/mba.mib
+%%DATADIR%%/d-link/des3200-28-l3mgmt.mib
+%%DATADIR%%/d-link/mcastvlan.mib
+%%DATADIR%%/d-link/des3200-28f-l2mgmt.mib
+%%DATADIR%%/d-link/des3200-26-l2mgmt.mib
+%%DATADIR%%/d-link/des3200-28-l2mgmt.mib
+%%DATADIR%%/d-link/des3200-10-l2mgmt.mib
+%%DATADIR%%/d-link/sred.mib
+%%DATADIR%%/d-link/swprimgmt-des3200-mib.mib
+%%DATADIR%%/d-link/pppoemgmt.mib
+%%DATADIR%%/d-link/des3200-26-l3mgmt.mib
+%%DATADIR%%/d-link/mcastsnooping.mib
+%%DATADIR%%/d-link/des3200-10-l3mgmt.mib
+%%DATADIR%%/d-link/fs.mib
+%%DATADIR%%/d-link/des3200-18-l3mgmt.mib
+%%DATADIR%%/d-link/srcipif.mib
+%%DATADIR%%/d-link/ddm.mib
+%%DATADIR%%/d-link/erps.mib
+%%DATADIR%%/d-link/radiusaccounting.mib
+%%DATADIR%%/d-link/bpdutunnel.mib
+%%DATADIR%%/d-link/des3200me-28-l2mgmt.mib
+%%DATADIR%%/d-link/des3200me-28-l3mgmt.mib
+%%DATADIR%%/d-link/lbd.mib
+%%DATADIR%%/d-link/staticfdb.mib
 %%DATADIR%%/dell/trunk.mib
 %%DATADIR%%/dell/dell_ita.mib
 %%DATADIR%%/dell/rlaaa.mib
@@ -2904,44 +3038,45 @@
 %%DATADIR%%/xirrus/XIRRUS-MIB.txt
 %%DATADIR%%/mkindex
 %%DATADIR%%/mib_index.txt
-@dirrm %%DATADIR%%/3com
-@dirrm %%DATADIR%%/allied
-@dirrm %%DATADIR%%/apc
-@dirrm %%DATADIR%%/arista
-@dirrm %%DATADIR%%/aruba
-@dirrm %%DATADIR%%/asante
-@dirrm %%DATADIR%%/bluecoat
-@dirrm %%DATADIR%%/bluesocket
-@dirrm %%DATADIR%%/cabletron
-@dirrm %%DATADIR%%/checkpoint
-@dirrm %%DATADIR%%/cisco
-@dirrm %%DATADIR%%/citrix
-@dirrm %%DATADIR%%/colubris
-@dirrm %%DATADIR%%/cyclades
-@dirrm %%DATADIR%%/d-link
-@dirrm %%DATADIR%%/dell
-@dirrm %%DATADIR%%/enterasys
-@dirrm %%DATADIR%%/extreme
-@dirrm %%DATADIR%%/extricom
-@dirrm %%DATADIR%%/f5
-@dirrm %%DATADIR%%/force10
-@dirrm %%DATADIR%%/foundry
-@dirrm %%DATADIR%%/huawei
-@dirrm %%DATADIR%%/h3c
-@dirrm %%DATADIR%%/hp
-@dirrm %%DATADIR%%/juniper
-@dirrm %%DATADIR%%/lantronix
-@dirrm %%DATADIR%%/mikrotik
-@dirrm %%DATADIR%%/net-snmp
-@dirrm %%DATADIR%%/netgear
-@dirrm %%DATADIR%%/netscreen
-@dirrm %%DATADIR%%/nortel
-@dirrm %%DATADIR%%/packetfront
-@dirrm %%DATADIR%%/rad
-@dirrm %%DATADIR%%/rfc
-@dirrm %%DATADIR%%/riverbed
-@dirrm %%DATADIR%%/ruckus
-@dirrm %%DATADIR%%/sonicwall
-@dirrm %%DATADIR%%/trapeze
-@dirrm %%DATADIR%%/xirrus
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/3com
+@dirrmtry %%DATADIR%%/allied
+@dirrmtry %%DATADIR%%/alcatel
+@dirrmtry %%DATADIR%%/apc
+@dirrmtry %%DATADIR%%/arista
+@dirrmtry %%DATADIR%%/aruba
+@dirrmtry %%DATADIR%%/asante
+@dirrmtry %%DATADIR%%/bluecoat
+@dirrmtry %%DATADIR%%/bluesocket
+@dirrmtry %%DATADIR%%/cabletron
+@dirrmtry %%DATADIR%%/checkpoint
+@dirrmtry %%DATADIR%%/cisco
+@dirrmtry %%DATADIR%%/citrix
+@dirrmtry %%DATADIR%%/colubris
+@dirrmtry %%DATADIR%%/cyclades
+@dirrmtry %%DATADIR%%/d-link
+@dirrmtry %%DATADIR%%/dell
+@dirrmtry %%DATADIR%%/enterasys
+@dirrmtry %%DATADIR%%/extreme
+@dirrmtry %%DATADIR%%/extricom
+@dirrmtry %%DATADIR%%/f5
+@dirrmtry %%DATADIR%%/force10
+@dirrmtry %%DATADIR%%/foundry
+@dirrmtry %%DATADIR%%/huawei
+@dirrmtry %%DATADIR%%/h3c
+@dirrmtry %%DATADIR%%/hp
+@dirrmtry %%DATADIR%%/juniper
+@dirrmtry %%DATADIR%%/lantronix
+@dirrmtry %%DATADIR%%/mikrotik
+@dirrmtry %%DATADIR%%/net-snmp
+@dirrmtry %%DATADIR%%/netgear
+@dirrmtry %%DATADIR%%/netscreen
+@dirrmtry %%DATADIR%%/nortel
+@dirrmtry %%DATADIR%%/packetfront
+@dirrmtry %%DATADIR%%/rad
+@dirrmtry %%DATADIR%%/rfc
+@dirrmtry %%DATADIR%%/riverbed
+@dirrmtry %%DATADIR%%/ruckus
+@dirrmtry %%DATADIR%%/sonicwall
+@dirrmtry %%DATADIR%%/trapeze
+@dirrmtry %%DATADIR%%/xirrus
+@dirrmtry %%DATADIR%%
