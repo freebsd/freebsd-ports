@@ -2,6 +2,7 @@
 
 PORTNAME=	Dancer-Plugin-Email
 PORTVERSION=	1.0100
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IRONCAMEL
@@ -14,13 +15,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Dancer>=1.2:${PORTSDIR}/www/p5-Dancer \
-		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-Email-Stuff>=2.102:${PORTSDIR}/mail/p5-Email-Stuff \
-		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge \
-		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
-		p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
+		p5-Email-Sender>=0:${PORTSDIR}/mail/p5-Email-Sender \
+		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
