@@ -9,7 +9,15 @@
  
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
-@@ -196,7 +196,7 @@
+@@ -198,14 +198,14 @@
+     }
+     
+     strcpy(path, "/var/tmp/rpa.XXXXXX");
+-    mktemp(path);
++    mkstemp(path);
+     if (!path[0])
+     {
+ 	syslog(LOG_ERR, "rpa_unix_open: unable to create local socket name");
  	goto Fail;
      }
      
@@ -18,7 +26,7 @@
      usb.sun_family = AF_UNIX;
      strcpy(usb.sun_path, path);
      
-@@ -210,7 +210,7 @@
+@@ -219,7 +219,7 @@
      
      s_snprintf(path, sizeof(path), "%s/%s/unix", PATH_RPAD_DIR, rp->service);
  
@@ -27,7 +35,7 @@
      usb.sun_family = AF_UNIX;
      strcpy(usb.sun_path, path);
      
-@@ -399,8 +399,6 @@
+@@ -408,8 +408,6 @@
      msg.msg_iov = iov;
      msg.msg_iovlen = 1;
      msg.msg_name = NULL;
