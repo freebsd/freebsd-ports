@@ -7,7 +7,7 @@ CATEGORIES=	astro geography
 MASTER_SITES=	http://seis.bris.ac.uk/~mexas/ \
 		LOCAL/madpilot/xearth
 
-MAINTAINER=	mexas@bristol.ac.uk
+MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Set the root window to the image of earth
 
 USE_XORG=	x11 xext sm ice xt
