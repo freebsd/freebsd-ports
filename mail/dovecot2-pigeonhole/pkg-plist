@@ -1,63 +1,66 @@
+%%DOCSDIR%%/example-config/conf.d/20-managesieve.conf
+%%DOCSDIR%%/example-config/conf.d/90-sieve-extprograms.conf
+%%DOCSDIR%%/example-config/conf.d/90-sieve.conf
 bin/sieve-dump
 bin/sieve-filter
 bin/sieve-test
 bin/sievec
-include/dovecot/sieve/edit-mail.h
-include/dovecot/sieve/pigeonhole-config.h
-include/dovecot/sieve/rfc2822.h
-include/dovecot/sieve/sieve-actions.h
-include/dovecot/sieve/sieve-address-parts.h
-include/dovecot/sieve/sieve-address.h
-include/dovecot/sieve/sieve-ast.h
-include/dovecot/sieve/sieve-binary-dumper.h
-include/dovecot/sieve/sieve-binary-private.h
-include/dovecot/sieve/sieve-binary.h
-include/dovecot/sieve/sieve-code-dumper.h
-include/dovecot/sieve/sieve-code.h
-include/dovecot/sieve/sieve-commands.h
-include/dovecot/sieve/sieve-common.h
-include/dovecot/sieve/sieve-comparators.h
-include/dovecot/sieve/sieve-config.h
-include/dovecot/sieve/sieve-dump.h
-include/dovecot/sieve/sieve-error-private.h
-include/dovecot/sieve/sieve-error.h
-include/dovecot/sieve/sieve-ext-copy.h
-include/dovecot/sieve/sieve-ext-enotify.h
-include/dovecot/sieve/sieve-ext-environment.h
-include/dovecot/sieve/sieve-ext-variables.h
-include/dovecot/sieve/sieve-extensions.h
-include/dovecot/sieve/sieve-generator.h
-include/dovecot/sieve/sieve-interpreter.h
-include/dovecot/sieve/sieve-lexer.h
-include/dovecot/sieve/sieve-limits.h
-include/dovecot/sieve/sieve-match-types.h
-include/dovecot/sieve/sieve-match.h
-include/dovecot/sieve/sieve-message.h
-include/dovecot/sieve/sieve-objects.h
-include/dovecot/sieve/sieve-parser.h
-include/dovecot/sieve/sieve-plugins.h
-include/dovecot/sieve/sieve-result.h
-include/dovecot/sieve/sieve-runtime-trace.h
-include/dovecot/sieve/sieve-runtime.h
-include/dovecot/sieve/sieve-script-private.h
-include/dovecot/sieve/sieve-script.h
-include/dovecot/sieve/sieve-script-file.h
-include/dovecot/sieve/sieve-settings.h
-include/dovecot/sieve/sieve-smtp.h
-include/dovecot/sieve/sieve-stringlist.h
-include/dovecot/sieve/sieve-types.h
-include/dovecot/sieve/sieve-validator.h
-include/dovecot/sieve/sieve.h
-lib/dovecot/lib90_sieve_plugin.a
-lib/dovecot/lib90_sieve_plugin.la
-lib/dovecot/lib90_sieve_plugin.so
-lib/dovecot/libdovecot-sieve.a
-lib/dovecot/libdovecot-sieve.la
-lib/dovecot/libdovecot-sieve.so
-lib/dovecot/libdovecot-sieve.so.0
+include/dovecot-2.2-pigeonhole/sieve/edit-mail.h
+include/dovecot-2.2-pigeonhole/sieve/pigeonhole-config.h
+include/dovecot-2.2-pigeonhole/sieve/rfc2822.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-actions.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-address-parts.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-address.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-ast.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-binary-dumper.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-binary-private.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-binary.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-code-dumper.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-code.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-commands.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-common.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-comparators.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-config.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-dump.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-error-private.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-error.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-ext-copy.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-ext-enotify.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-ext-environment.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-ext-variables.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-extensions.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-generator.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-interpreter.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-lexer.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-limits.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-match-types.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-match.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-message.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-objects.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-parser.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-plugins.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-result.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-runtime-trace.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-runtime.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-script-file.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-script-private.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-script.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-settings.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-smtp.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-stringlist.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-types.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-validator.h
+include/dovecot-2.2-pigeonhole/sieve/sieve.h
+lib/dovecot-2.2-pigeonhole/libdovecot-sieve.a
+lib/dovecot-2.2-pigeonhole/libdovecot-sieve.la
+lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so
+lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so.0
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.la
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.so
+lib/dovecot/lib90_sieve_plugin.a
+lib/dovecot/lib90_sieve_plugin.la
+lib/dovecot/lib90_sieve_plugin.so
 lib/dovecot/settings/libmanagesieve_login_settings.a
 lib/dovecot/settings/libmanagesieve_login_settings.la
 lib/dovecot/settings/libmanagesieve_login_settings.so
@@ -69,15 +72,14 @@ lib/dovecot/sieve/lib90_sieve_extprograms_plugin.la
 lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
 libexec/dovecot/managesieve
 libexec/dovecot/managesieve-login
-share/doc/dovecot/example-config/conf.d/20-managesieve.conf
-share/doc/dovecot/example-config/conf.d/90-sieve.conf
-share/doc/dovecot/example-config/conf.d/90-sieve-extprograms.conf
-@dirrmtry share/doc/dovecot/example-config/conf.d
-@dirrmtry share/doc/dovecot/example-config
-@dirrmtry share/doc/dovecot
 @dirrmtry libexec/dovecot
-@dirrm lib/dovecot/sieve
-@dirrm lib/dovecot/settings
+@dirrmtry lib/dovecot/sieve
+@dirrmtry lib/dovecot/settings
+@dirrmtry lib/dovecot/doveadm
+@dirrmtry lib/dovecot-2.2-pigeonhole
 @dirrmtry lib/dovecot
-@dirrm include/dovecot/sieve
-@dirrmtry include/dovecot
+@dirrm include/dovecot-2.2-pigeonhole/sieve
+@dirrm include/dovecot-2.2-pigeonhole
+@dirrm %%DOCSDIR%%/example-config/conf.d
+@dirrm %%DOCSDIR%%/example-config
+@dirrm %%DOCSDIR%%
