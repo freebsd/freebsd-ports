@@ -1,0 +1,4 @@
+Orthrus is a C library and user interfaces for RFC 2289,
+"A One-Time Password System (OTP)", also known as OPIE or S/Key.
+
+WWW: http://code.google.com/p/orthrus

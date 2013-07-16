@@ -1,0 +1,9 @@
+Manually edit pam.d/* files as needed and add in the required auth line and
+remove any undesired fallback lines. Also ensure you arent already using opie!"
+
+example in pam.d/system :
+
+auth            sufficient      pam_orthrus.so
+
+Please remember to delete any such entry BEFORE deinstalling this port or you
+could lock yourself out !!
