@@ -20,7 +20,6 @@ USE_GCC=	any
 USES=	gmake pkgconfig
 ALL_TARGET=	x86info lsmsr
 USE_PYTHON_BUILD=yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		x86info.1
 MAN8=		lsmsr.8

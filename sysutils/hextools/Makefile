@@ -17,8 +17,6 @@ ALL_TARGET=	build
 #not strictly true - it uses a self-styled license
 #LICENSE=	BSD
 
-MAKE_JOBS_SAFE=	yes
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex2bin ${PREFIX}/bin/hex2bin
 	${INSTALL_PROGRAM} ${WRKSRC}/hexdump ${PREFIX}/bin/bin2hex

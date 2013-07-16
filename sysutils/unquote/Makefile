@@ -14,8 +14,6 @@ MAN1=		unquote.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/unquote
 
-MAKE_JOBS_SAFE=	yes
-
 .if		!defined(NO_RELEASE)
 MAKE_ENV+=	RELEASE=yes
 .endif

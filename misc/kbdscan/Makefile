@@ -12,8 +12,6 @@ LICENSE=	ISCL
 
 USE_BZIP2=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

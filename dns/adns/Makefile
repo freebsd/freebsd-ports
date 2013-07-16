@@ -12,7 +12,6 @@ COMMENT=	Easy to use asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 USES=	gmake
 

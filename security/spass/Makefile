@@ -25,6 +25,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/spass
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.mk>

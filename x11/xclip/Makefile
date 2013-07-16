@@ -16,7 +16,6 @@ USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env
 USE_XORG=	x11 xmu
 USES=	gmake
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xclip.1 xclip-copyfile.1
 PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile

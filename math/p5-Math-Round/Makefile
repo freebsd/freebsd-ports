@@ -12,8 +12,6 @@ COMMENT=	Perl extension for rounding numbers
 
 PERL_CONFIGURE=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAN3=		Math::Round.3
 
 .include <bsd.port.mk>

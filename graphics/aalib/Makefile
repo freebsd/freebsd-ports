@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		aalib
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

@@ -21,6 +21,4 @@ MAN1=		bogosort.1
 INFO=		bogosort
 PLIST_FILES=	bin/bogosort
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.mk>

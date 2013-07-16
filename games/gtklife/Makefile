@@ -35,8 +35,6 @@ DESKTOP_ENTRIES="GtkLife" \
 OPTIONS_DEFINE=	GTK2
 GTK2_DESC=	GTK2 gui toolkit support (beta)
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

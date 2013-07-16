@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 MAN1=		newfile.1
 PORTDOCS=	newfile.html
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.options.mk>
 
 post-install:

@@ -21,8 +21,6 @@ MAN5=		html2textrc.5
 PORTDOCS=	CHANGES CREDITS KNOWN_BUGS README TODO
 PLIST_FILES=	bin/html2text
 
-MAKE_JOBS_SAFE=	yes
-
 CONFLICTS=	py27-html2text-[0-9]*
 
 PORTSCOUT=	skipb:0 skipv:1.3.2
