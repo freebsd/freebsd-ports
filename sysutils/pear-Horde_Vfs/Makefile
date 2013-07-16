@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Vfs
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Vfs
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 

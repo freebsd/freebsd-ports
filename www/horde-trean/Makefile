@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-trean
-# Date created:			  Dec 18, 2012
-# Whom:				  Martin Matuska (mm@FreeBSD.org)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	trean
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 

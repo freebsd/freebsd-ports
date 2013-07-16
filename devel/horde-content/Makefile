@@ -1,12 +1,7 @@
-# Ports collection makefile for:  horde-content
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	content
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 

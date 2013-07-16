@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Dav
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
