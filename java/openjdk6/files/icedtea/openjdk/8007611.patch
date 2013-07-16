@@ -1,0 +1,24 @@
+
+# HG changeset patch
+# User coffeys
+# Date 1360861865 0
+# Node ID 25e83b78298b71abb46eb5a337ed7bddef418ca4
+# Parent 828b93329939ec20530ed98f42b2966b2ea53048
+8007611: logging behavior in applet changed
+Reviewed-by: mchung
+
+--- jdk/src/share/classes/java/util/logging/LogManager.java	Thu Feb 14 16:50:59 2013 +0000
++++ jdk/src/share/classes/java/util/logging/LogManager.java	Thu Feb 14 17:11:05 2013 +0000
+@@ -351,7 +351,10 @@ public class LogManager {
+                         context = userContext;
+                     } else {
+                         context = new LoggerContext();
+-                        context.addLocalLogger(manager.rootLogger);
++                        // during initialization, rootLogger is null when
++                        // instantiating itself RootLogger
++                        if (manager.rootLogger != null)
++                            context.addLocalLogger(manager.rootLogger);
+                     }
+                     javaAwtAccess.put(ecx, LoggerContext.class, context);
+                 }
+

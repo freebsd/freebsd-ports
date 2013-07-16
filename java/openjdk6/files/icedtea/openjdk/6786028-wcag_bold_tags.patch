@@ -1,0 +1,2914 @@
+# HG changeset patch
+# User bpatel
+# Date 1231460819 28800
+# Node ID a50f3556d6954decf0897aa984c8ba43def77b9e
+# Parent  4ab5d66aaf2b9e5c09ab54748f6e2615b7818b12
+6786028: Javadoc HTML WCAG 2.0 accessibility issues in standard doclet - Bold tags should be strong
+Reviewed-by: jjg
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractExecutableMemberWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractExecutableMemberWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractExecutableMemberWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractExecutableMemberWriter.java
+@@ -71,7 +71,7 @@
+             member.position().line() != classdoc.position().line()) {
+             writer.printSrcLink(member, member.name());
+         } else {
+-            bold(member.name());
++            strong(member.name());
+         }
+         writeParameters(member);
+         writeExceptions(member);
+@@ -87,10 +87,10 @@
+     protected void writeSummaryLink(int context, ClassDoc cd, ProgramElementDoc member) {
+         ExecutableMemberDoc emd = (ExecutableMemberDoc)member;
+         String name = emd.name();
+-        writer.bold();
++        writer.strong();
+         writer.printDocLink(context, cd, (MemberDoc) emd,
+             name, false);
+-        writer.boldEnd();
++        writer.strongEnd();
+         writer.displayLength = name.length();
+         writeParameters(emd, false);
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java
+@@ -78,12 +78,12 @@
+     }
+ 
+     /**
+-     * Print the text "Index" in bold format in the navigation bar.
++     * Print the text "Index" in strong format in the navigation bar.
+      */
+     protected void navLinkIndex() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Index");
++        strongText("doclet.Index");
+         fontEnd();
+         navCellEnd();
+     }
+@@ -98,7 +98,7 @@
+     protected void generateContents(Character unicode, List memberlist) {
+         anchor("_" + unicode + "_");
+         h2();
+-        bold(unicode.toString());
++        strong(unicode.toString());
+         h2End();
+         dl();
+         for (int i = 0; i < memberlist.size(); i++) {
+@@ -195,14 +195,14 @@
+     protected void printComment(ProgramElementDoc element) {
+         Tag[] tags;
+         if (Util.isDeprecated(element)) {
+-            boldText("doclet.Deprecated"); space();
++            strongText("doclet.Deprecated"); space();
+             if ((tags = element.tags("deprecated")).length > 0)
+                 printInlineDeprecatedComment(element, tags[0]);
+         } else {
+             ClassDoc cont = element.containingClass();
+             while (cont != null) {
+                 if (Util.isDeprecated(cont)) {
+-                    boldText("doclet.Deprecated"); space();
++                    strongText("doclet.Deprecated"); space();
+                     break;
+                 }
+                 cont = cont.containingClass();
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java
+@@ -98,8 +98,8 @@
+         writer.displayLength++;
+     }
+ 
+-    protected void bold(String str) {
+-        writer.bold(str);
++    protected void strong(String str) {
++        writer.strong(str);
+         writer.displayLength += str.length();
+     }
+ 
+@@ -321,7 +321,7 @@
+         if (deprmembers.size() > 0) {
+             writer.tableIndexSummary();
+             writer.tableHeaderStart("#CCCCFF");
+-            writer.boldText(headingKey);
++            writer.strongText(headingKey);
+             writer.tableHeaderEnd();
+             for (int i = 0; i < deprmembers.size(); i++) {
+                 ProgramElementDoc member =(ProgramElementDoc)deprmembers.get(i);
+@@ -363,7 +363,7 @@
+                 if (cd != null && !(pgmdoc instanceof ConstructorDoc)
+                                && !(pgmdoc instanceof ClassDoc)) {
+                     // Add class context
+-                    writer.bold(cd.name() + ".");
++                    writer.strong(cd.name() + ".");
+                 }
+                 writeSummaryLink(
+                     pgmdoc instanceof ClassDoc ?
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractPackageIndexWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractPackageIndexWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractPackageIndexWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractPackageIndexWriter.java
+@@ -137,13 +137,13 @@
+     }
+ 
+     /**
+-     * Highlight "Overview" in the bold format, in the navigation bar as this
++     * Highlight "Overview" in the strong format, in the navigation bar as this
+      * is the overview page.
+      */
+     protected void navLinkContents() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Overview");
++        strongText("doclet.Overview");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractTreeWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractTreeWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractTreeWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractTreeWriter.java
+@@ -173,7 +173,7 @@
+      */
+     protected void printPartialInfo(ClassDoc cd) {
+         li("circle");
+-        printPreQualifiedBoldClassLink(LinkInfoImpl.CONTEXT_TREE, cd);
++        printPreQualifiedStrongClassLink(LinkInfoImpl.CONTEXT_TREE, cd);
+     }
+ 
+     /**
+@@ -193,7 +193,7 @@
+     protected void navLinkTree() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Tree");
++        strongText("doclet.Tree");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AllClassesFrameWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AllClassesFrameWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AllClassesFrameWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AllClassesFrameWriter.java
+@@ -160,7 +160,7 @@
+      */
+     protected void printAllClassesTableHeader() {
+         fontSizeStyle("+1", "FrameHeadingFont");
+-        boldText("doclet.All_Classes");
++        strongText("doclet.All_Classes");
+         fontEnd();
+         br();
+         table();
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java
+@@ -65,7 +65,7 @@
+     public void writeDefaultValueInfo(MemberDoc member) {
+         writer.dl();
+         writer.dt();
+-        writer.bold(ConfigurationImpl.getInstance().
++        writer.strong(ConfigurationImpl.getInstance().
+             getText("doclet.Default"));
+         writer.dd();
+         writer.print(((AnnotationTypeElementDoc) member).defaultValue());
+@@ -84,7 +84,7 @@
+      * {@inheritDoc}
+      */
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Annotation_Type_Optional_Member_Summary");
++        writer.strongText("doclet.Annotation_Type_Optional_Member_Summary");
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java
+@@ -131,7 +131,7 @@
+         if (configuration().linksource) {
+             writer.printSrcLink(member, member.name());
+         } else {
+-            bold(member.name());
++            strong(member.name());
+         }
+         writer.preEnd();
+         writer.dl();
+@@ -183,7 +183,7 @@
+      * {@inheritDoc}
+      */
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Annotation_Type_Required_Member_Summary");
++        writer.strongText("doclet.Annotation_Type_Required_Member_Summary");
+     }
+ 
+     /**
+@@ -210,9 +210,9 @@
+      * {@inheritDoc}
+      */
+     protected void writeSummaryLink(int context, ClassDoc cd, ProgramElementDoc member) {
+-        writer.bold();
++        writer.strong();
+         writer.printDocLink(context, (MemberDoc) member, member.name(), false);
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java
+@@ -84,7 +84,7 @@
+     protected void navLinkClass() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Class");
++        strongText("doclet.Class");
+         fontEnd();
+         navCellEnd();
+     }
+@@ -176,7 +176,7 @@
+         if (configuration().linksource) {
+             printSrcLink(annotationType, name);
+         } else {
+-            bold(name);
++            strong(name);
+         }
+         dlEnd();
+         preEnd();
+@@ -220,7 +220,7 @@
+         hr();
+         Tag[] deprs = annotationType.tags("deprecated");
+         if (Util.isDeprecated(annotationType)) {
+-            boldText("doclet.Deprecated");
++            strongText("doclet.Deprecated");
+             if (deprs.length > 0) {
+                 Tag[] commentTags = deprs[0].inlineTags();
+                 if (commentTags.length > 0) {
+@@ -330,9 +330,9 @@
+             dl();
+             dt();
+             if (annotationType.isInterface()) {
+-                boldText("doclet.Enclosing_Interface");
++                strongText("doclet.Enclosing_Interface");
+             } else {
+-                boldText("doclet.Enclosing_Class");
++                strongText("doclet.Enclosing_Class");
+             }
+             dd();
+             printLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_CLASS, outerClass,
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java
+@@ -394,7 +394,7 @@
+         hr();
+         center();
+         h2();
+-        boldText("doclet.ClassUse_Title", cltype, clname);
++        strongText("doclet.ClassUse_Title", cltype, clname);
+         h2End();
+         centerEnd();
+     }
+@@ -436,7 +436,7 @@
+     protected void navLinkClassUse() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.navClassUse");
++        strongText("doclet.navClassUse");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
+@@ -91,7 +91,7 @@
+     protected void navLinkClass() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Class");
++        strongText("doclet.Class");
+         fontEnd();
+         navCellEnd();
+     }
+@@ -185,7 +185,7 @@
+         if (configuration().linksource) {
+             printSrcLink(classDoc, name);
+         } else {
+-            bold(name);
++            strong(name);
+         }
+         if (!isInterface) {
+             Type superclass = Util.getFirstVisibleSuperClass(classDoc,
+@@ -258,7 +258,7 @@
+         hr();
+         Tag[] deprs = classDoc.tags("deprecated");
+         if (Util.isDeprecated(classDoc)) {
+-            boldText("doclet.Deprecated");
++            strongText("doclet.Deprecated");
+             if (deprs.length > 0) {
+                 Tag[] commentTags = deprs[0].inlineTags();
+                 if (commentTags.length > 0) {
+@@ -307,9 +307,9 @@
+                     classDoc, false));
+             if (configuration.shouldExcludeQualifier(
+                     classDoc.containingPackage().name())) {
+-                bold(type.asClassDoc().name() + typeParameters);
++                strong(type.asClassDoc().name() + typeParameters);
+             } else {
+-                bold(type.asClassDoc().qualifiedName() + typeParameters);
++                strong(type.asClassDoc().qualifiedName() + typeParameters);
+             }
+         } else {
+             print(getLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_CLASS_TREE_PARENT,
+@@ -359,7 +359,7 @@
+             if (subclasses.size() > 0) {
+                 dl();
+                 dt();
+-                boldText("doclet.Subclasses");
++                strongText("doclet.Subclasses");
+                 writeClassLinks(LinkInfoImpl.CONTEXT_SUBCLASSES,
+                     subclasses);
+             }
+@@ -375,7 +375,7 @@
+             if (subInterfaces.size() > 0) {
+                 dl();
+                 dt();
+-                boldText("doclet.Subinterfaces");
++                strongText("doclet.Subinterfaces");
+                 writeClassLinks(LinkInfoImpl.CONTEXT_SUBINTERFACES,
+                     subInterfaces);
+             }
+@@ -397,7 +397,7 @@
+         if (implcl.size() > 0) {
+             dl();
+             dt();
+-            boldText("doclet.Implementing_Classes");
++            strongText("doclet.Implementing_Classes");
+             writeClassLinks(LinkInfoImpl.CONTEXT_IMPLEMENTED_CLASSES,
+                 implcl);
+         }
+@@ -413,7 +413,7 @@
+         if (classDoc.isClass() && interfaceArray.size() > 0) {
+             dl();
+             dt();
+-            boldText("doclet.All_Implemented_Interfaces");
++            strongText("doclet.All_Implemented_Interfaces");
+             writeClassLinks(LinkInfoImpl.CONTEXT_IMPLEMENTED_INTERFACES,
+                 interfaceArray);
+         }
+@@ -429,7 +429,7 @@
+         if (classDoc.isInterface() && interfaceArray.size() > 0) {
+             dl();
+             dt();
+-            boldText("doclet.All_Superinterfaces");
++            strongText("doclet.All_Superinterfaces");
+             writeClassLinks(LinkInfoImpl.CONTEXT_SUPER_INTERFACES,
+                 interfaceArray);
+         }
+@@ -570,9 +570,9 @@
+             dl();
+             dt();
+             if (outerClass.isInterface()) {
+-                boldText("doclet.Enclosing_Interface");
++                strongText("doclet.Enclosing_Interface");
+             } else {
+-                boldText("doclet.Enclosing_Class");
++                strongText("doclet.Enclosing_Class");
+             }
+             dd();
+             printLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_CLASS, outerClass,
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ConstantsSummaryWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ConstantsSummaryWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConstantsSummaryWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConstantsSummaryWriterImpl.java
+@@ -92,7 +92,7 @@
+      * {@inheritDoc}
+      */
+     public void writeContentsHeader() {
+-        bold(configuration.getText("doclet.Contents"));
++        strong(configuration.getText("doclet.Contents"));
+         ul();
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java
+@@ -144,7 +144,7 @@
+         if (configuration().linksource) {
+             writer.printSrcLink(constructor, constructor.name());
+         } else {
+-            bold(constructor.name());
++            strong(constructor.name());
+         }
+         writeParameters(constructor);
+         writeExceptions(constructor);
+@@ -220,7 +220,7 @@
+     }
+ 
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Constructor_Summary");
++        writer.strongText("doclet.Constructor_Summary");
+     }
+ 
+     public void printSummaryAnchor(ClassDoc cd) {
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/DeprecatedListWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/DeprecatedListWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/DeprecatedListWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/DeprecatedListWriter.java
+@@ -111,7 +111,7 @@
+              throws IOException {
+         writeHeader();
+ 
+-        bold(configuration.getText("doclet.Contents"));
++        strong(configuration.getText("doclet.Contents"));
+         ul();
+         for (int i = 0; i < DeprecatedAPIListBuilder.NUM_TYPES; i++) {
+             writeIndexLink(deprapi, i);
+@@ -156,7 +156,7 @@
+         hr();
+         center();
+         h2();
+-        boldText("doclet.Deprecated_API");
++        strongText("doclet.Deprecated_API");
+         h2End();
+         centerEnd();
+ 
+@@ -180,7 +180,7 @@
+     protected void navLinkDeprecated() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.navDeprecated");
++        strongText("doclet.navDeprecated");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java
+@@ -143,7 +143,7 @@
+         if (configuration().linksource) {
+             writer.printSrcLink(enumConstant, enumConstant.name());
+         } else {
+-            bold(enumConstant.name());
++            strong(enumConstant.name());
+         }
+         writer.preEnd();
+         writer.dl();
+@@ -201,7 +201,7 @@
+     }
+ 
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Enum_Constant_Summary");
++        writer.strongText("doclet.Enum_Constant_Summary");
+     }
+ 
+     public void printSummaryAnchor(ClassDoc cd) {
+@@ -216,9 +216,9 @@
+     }
+ 
+     protected void writeSummaryLink(int context, ClassDoc cd, ProgramElementDoc member) {
+-        writer.bold();
++        writer.strong();
+         writer.printDocLink(context, (MemberDoc) member, member.name(), false);
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     protected void writeInheritedSummaryLink(ClassDoc cd,
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java
+@@ -153,7 +153,7 @@
+         if (configuration().linksource) {
+             writer.printSrcLink(field, field.name());
+         } else {
+-            bold(field.name());
++            strong(field.name());
+         }
+         writer.preEnd();
+         writer.dl();
+@@ -190,7 +190,7 @@
+                             holder.typeName() : holder.qualifiedTypeName(),
+                         false));
+                 writer.dd();
+-                writer.bold(configuration().getText(holder.isClass()?
++                writer.strong(configuration().getText(holder.isClass()?
+                    "doclet.Description_From_Class" :
+                     "doclet.Description_From_Interface", classlink));
+                 writer.ddEnd();
+@@ -237,7 +237,7 @@
+     }
+ 
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Field_Summary");
++        writer.strongText("doclet.Field_Summary");
+     }
+ 
+     public void printSummaryAnchor(ClassDoc cd) {
+@@ -251,18 +251,18 @@
+     public void printInheritedSummaryLabel(ClassDoc cd) {
+         String classlink = writer.getPreQualifiedClassLink(
+             LinkInfoImpl.CONTEXT_MEMBER, cd, false);
+-        writer.bold();
++        writer.strong();
+         String key = cd.isClass()?
+             "doclet.Fields_Inherited_From_Class" :
+             "doclet.Fields_Inherited_From_Interface";
+         writer.printText(key, classlink);
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     protected void writeSummaryLink(int context, ClassDoc cd, ProgramElementDoc member) {
+-        writer.bold();
++        writer.strong();
+         writer.printDocLink(context, cd , (MemberDoc) member, member.name(), false);
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     protected void writeInheritedSummaryLink(ClassDoc cd,
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HelpWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HelpWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HelpWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HelpWriter.java
+@@ -223,7 +223,7 @@
+     protected void navLinkHelp() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Help");
++        strongText("doclet.Help");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+@@ -183,21 +183,21 @@
+      * @param where Position in the file
+      * @param target Name of the target frame.
+      * @param label Tag for the link.
+-     * @param bold Whether the label should be bold or not?
++     * @param strong Whether the label should be strong or not?
+      */
+     public void printNoFramesTargetHyperLink(String link, String where,
+                                                String target, String label,
+-                                               boolean bold) {
++                                               boolean strong) {
+         script();
+         println("  <!--");
+         println("  if(window==top) {");
+         println("    document.writeln('"
+-            + getHyperLink(link, where, label, bold, "", "", target) + "');");
++            + getHyperLink(link, where, label, strong, "", "", target) + "');");
+         println("  }");
+         println("  //-->");
+         scriptEnd();
+         noScript();
+-        println("  " + getHyperLink(link, where, label, bold, "", "", target));
++        println("  " + getHyperLink(link, where, label, strong, "", "", target));
+         noScriptEnd();
+         println(DocletConstants.NL);
+     }
+@@ -958,10 +958,10 @@
+      *
+      * @param pkg the package to link to.
+      * @param label the label for the link.
+-     * @param isBold true if the label should be bold.
++     * @param isStrong true if the label should be strong.
+      */
+-    public void printPackageLink(PackageDoc pkg, String label, boolean isBold) {
+-        print(getPackageLink(pkg, label, isBold));
++    public void printPackageLink(PackageDoc pkg, String label, boolean isStrong) {
++        print(getPackageLink(pkg, label, isStrong));
+     }
+ 
+     /**
+@@ -969,12 +969,12 @@
+      *
+      * @param pkg the package to link to.
+      * @param label the label for the link.
+-     * @param isBold true if the label should be bold.
++     * @param isStrong true if the label should be strong.
+      * @param style  the font of the package link label.
+      */
+-    public void printPackageLink(PackageDoc pkg, String label, boolean isBold,
++    public void printPackageLink(PackageDoc pkg, String label, boolean isStrong,
+             String style) {
+-        print(getPackageLink(pkg, label, isBold, style));
++        print(getPackageLink(pkg, label, isStrong, style));
+     }
+ 
+     /**
+@@ -982,12 +982,12 @@
+      *
+      * @param pkg the package to link to.
+      * @param label the label for the link.
+-     * @param isBold true if the label should be bold.
++     * @param isStrong true if the label should be strong.
+      * @return the link to the given package.
+      */
+     public String getPackageLink(PackageDoc pkg, String label,
+-                                 boolean isBold) {
+-        return getPackageLink(pkg, label, isBold, "");
++                                 boolean isStrong) {
++        return getPackageLink(pkg, label, isStrong, "");
+     }
+ 
+     /**
+@@ -995,11 +995,11 @@
+      *
+      * @param pkg the package to link to.
+      * @param label the label for the link.
+-     * @param isBold true if the label should be bold.
++     * @param isStrong true if the label should be strong.
+      * @param style  the font of the package link label.
+      * @return the link to the given package.
+      */
+-    public String getPackageLink(PackageDoc pkg, String label, boolean isBold,
++    public String getPackageLink(PackageDoc pkg, String label, boolean isStrong,
+             String style) {
+         boolean included = pkg != null && pkg.isIncluded();
+         if (! included) {
+@@ -1013,11 +1013,11 @@
+         }
+         if (included || pkg == null) {
+             return getHyperLink(pathString(pkg, "package-summary.html"),
+-                                "", label, isBold, style);
++                                "", label, isStrong, style);
+         } else {
+             String crossPkgLink = getCrossPackageLink(Util.getPackageName(pkg));
+             if (crossPkgLink != null) {
+-                return getHyperLink(crossPkgLink, "", label, isBold, style);
++                return getHyperLink(crossPkgLink, "", label, isStrong, style);
+             } else {
+                 return label;
+             }
+@@ -1087,12 +1087,12 @@
+      * @param refMemName the name of the member being referenced.  This should
+      * be null or empty string if no member is being referenced.
+      * @param label the label for the external link.
+-     * @param bold true if the link should be bold.
++     * @param strong true if the link should be strong.
+      * @param style the style of the link.
+      * @param code true if the label should be code font.
+      */
+     public String getCrossClassLink(String qualifiedClassName, String refMemName,
+-                                    String label, boolean bold, String style,
++                                    String label, boolean strong, String style,
+                                     boolean code) {
+         String className = "",
+             packageName = qualifiedClassName == null ? "" : qualifiedClassName;
+@@ -1113,7 +1113,7 @@
+                                 className + ".html?is-external=true"),
+                     refMemName == null ? "" : refMemName,
+                     label == null || label.length() == 0 ? defaultLabel : label,
+-                    bold, style,
++                    strong, style,
+                     configuration.getText("doclet.Href_Class_Or_Interface_Title", packageName),
+                     "");
+             }
+@@ -1152,26 +1152,26 @@
+      * link label.
+      *
+      * @param cd the class to link to.
+-     * @param isBold true if the link should be bold.
++     * @param isStrong true if the link should be strong.
+      * @return the link with the package portion of the label in plain text.
+      */
+     public String getPreQualifiedClassLink(int context,
+-            ClassDoc cd, boolean isBold) {
++            ClassDoc cd, boolean isStrong) {
+         String classlink = "";
+         PackageDoc pd = cd.containingPackage();
+         if(pd != null && ! configuration.shouldExcludeQualifier(pd.name())) {
+             classlink = getPkgName(cd);
+         }
+-        classlink += getLink(new LinkInfoImpl(context, cd, cd.name(), isBold));
++        classlink += getLink(new LinkInfoImpl(context, cd, cd.name(), isStrong));
+         return classlink;
+     }
+ 
+ 
+     /**
+-     * Print Class link, with only class name as the bold link and prefixing
++     * Print Class link, with only class name as the strong link and prefixing
+      * plain package name.
+      */
+-    public void printPreQualifiedBoldClassLink(int context, ClassDoc cd) {
++    public void printPreQualifiedStrongClassLink(int context, ClassDoc cd) {
+         print(getPreQualifiedClassLink(context, cd, true));
+     }
+ 
+@@ -1187,16 +1187,16 @@
+         print(configuration.getText(key, a1, a2));
+     }
+ 
+-    public void boldText(String key) {
+-        bold(configuration.getText(key));
++    public void strongText(String key) {
++        strong(configuration.getText(key));
+     }
+ 
+-    public void boldText(String key, String a1) {
+-        bold(configuration.getText(key, a1));
++    public void strongText(String key, String a1) {
++        strong(configuration.getText(key, a1));
+     }
+ 
+-    public void boldText(String key, String a1, String a2) {
+-        bold(configuration.getText(key, a1, a2));
++    public void strongText(String key, String a1, String a2) {
++        strong(configuration.getText(key, a1, a2));
+     }
+ 
+     /**
+@@ -1205,11 +1205,11 @@
+      * @param context the id of the context where the link will be printed.
+      * @param doc the member being linked to.
+      * @param label the label for the link.
+-     * @param bold true if the link should be bold.
++     * @param strong true if the link should be strong.
+      */
+     public void printDocLink(int context, MemberDoc doc, String label,
+-            boolean bold) {
+-        print(getDocLink(context, doc, label, bold));
++            boolean strong) {
++        print(getDocLink(context, doc, label, strong));
+     }
+ 
+     /**
+@@ -1221,11 +1221,11 @@
+      *                 inheriting comments.
+      * @param doc the member being linked to.
+      * @param label the label for the link.
+-     * @param bold true if the link should be bold.
++     * @param strong true if the link should be strong.
+      */
+     public void printDocLink(int context, ClassDoc classDoc, MemberDoc doc,
+-            String label, boolean bold) {
+-        print(getDocLink(context, classDoc, doc, label, bold));
++            String label, boolean strong) {
++        print(getDocLink(context, classDoc, doc, label, strong));
+     }
+ 
+     /**
+@@ -1234,12 +1234,12 @@
+      * @param context the id of the context where the link will be printed.
+      * @param doc the member being linked to.
+      * @param label the label for the link.
+-     * @param bold true if the link should be bold.
++     * @param strong true if the link should be strong.
+      * @return the link for the given member.
+      */
+     public String getDocLink(int context, MemberDoc doc, String label,
+-                boolean bold) {
+-        return getDocLink(context, doc.containingClass(), doc, label, bold);
++                boolean strong) {
++        return getDocLink(context, doc.containingClass(), doc, label, strong);
+     }
+ 
+     /**
+@@ -1251,21 +1251,21 @@
+      *                 inheriting comments.
+      * @param doc the member being linked to.
+      * @param label the label for the link.
+-     * @param bold true if the link should be bold.
++     * @param strong true if the link should be strong.
+      * @return the link for the given member.
+      */
+     public String getDocLink(int context, ClassDoc classDoc, MemberDoc doc,
+-        String label, boolean bold) {
++        String label, boolean strong) {
+         if (! (doc.isIncluded() ||
+             Util.isLinkable(classDoc, configuration()))) {
+             return label;
+         } else if (doc instanceof ExecutableMemberDoc) {
+             ExecutableMemberDoc emd = (ExecutableMemberDoc)doc;
+             return getLink(new LinkInfoImpl(context, classDoc,
+-                getAnchor(emd), label, bold));
++                getAnchor(emd), label, strong));
+         } else if (doc instanceof MemberDoc) {
+             return getLink(new LinkInfoImpl(context, classDoc,
+-                doc.name(), label, bold));
++                doc.name(), label, strong));
+         } else {
+             return label;
+         }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
+@@ -100,7 +100,7 @@
+                 fieldType));
+         }
+         print(fieldDimensions + ' ');
+-        bold(fieldName);
++        strong(fieldName);
+         writer.preEnd();
+         writer.dl();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/LinkFactoryImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/LinkFactoryImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/LinkFactoryImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/LinkFactoryImpl.java
+@@ -81,7 +81,7 @@
+                                 !(linkInfo.classDoc.name() + ".html").equals(m_writer.filename)) {
+                         linkOutput.append(m_writer.getHyperLink(filename,
+                             classLinkInfo.where, label.toString(),
+-                            classLinkInfo.isBold, classLinkInfo.styleName,
++                            classLinkInfo.isStrong, classLinkInfo.styleName,
+                             title, classLinkInfo.target));
+                         if (noLabel && !classLinkInfo.excludeTypeParameterLinks) {
+                             linkOutput.append(getTypeParameterLinks(linkInfo).toString());
+@@ -92,7 +92,7 @@
+         } else {
+             String crossLink = m_writer.getCrossClassLink(
+                 classDoc.qualifiedName(), classLinkInfo.where,
+-                label.toString(), classLinkInfo.isBold, classLinkInfo.styleName,
++                label.toString(), classLinkInfo.isStrong, classLinkInfo.styleName,
+                 true);
+             if (crossLink != null) {
+                 linkOutput.append(crossLink);
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/LinkInfoImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/LinkInfoImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/LinkInfoImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/LinkInfoImpl.java
+@@ -235,15 +235,15 @@
+      * @param classDoc   the class to link to.
+      * @param where      the value of the marker #.
+      * @param label      the label for the link.
+-     * @param isBold       true if the link should be bold.
++     * @param isStrong       true if the link should be strong.
+      * @param styleName  String style of text defined in style sheet.
+      */
+     public LinkInfoImpl (int context, ClassDoc classDoc, String where, String label,
+-            boolean isBold, String styleName){
++            boolean isStrong, String styleName){
+         this.classDoc = classDoc;
+         this.where = where;
+         this.label = label;
+-        this.isBold = isBold;
++        this.isStrong = isStrong;
+         this.styleName = styleName;
+         setContext(context);
+     }
+@@ -255,14 +255,14 @@
+      * @param classDoc   the class to link to.
+      * @param where      the value of the marker #.
+      * @param label      the label for the link.
+-     * @param isBold       true if the link should be bold.
++     * @param isStrong       true if the link should be strong.
+      */
+     public LinkInfoImpl (int context, ClassDoc classDoc, String where, String label,
+-            boolean isBold){
++            boolean isStrong){
+         this.classDoc = classDoc;
+         this.where = where;
+         this.label = label;
+-        this.isBold = isBold;
++        this.isStrong = isStrong;
+         setContext(context);
+     }
+ 
+@@ -283,12 +283,12 @@
+      *
+      * @param context               the context of the link.
+      * @param executableMemberDoc   the member to link to.
+-     * @param isBold                true if the link should be bold.
++     * @param isStrong                true if the link should be strong.
+      */
+     public LinkInfoImpl (int context, ExecutableMemberDoc executableMemberDoc,
+-            boolean isBold){
++            boolean isStrong){
+         this.executableMemberDoc = executableMemberDoc;
+-        this.isBold = isBold;
++        this.isStrong = isStrong;
+         setContext(context);
+     }
+ 
+@@ -297,11 +297,11 @@
+      *
+      * @param context    the context of the link.
+      * @param classDoc   the class to link to.
+-     * @param isBold       true if the link should be bold.
++     * @param isStrong       true if the link should be strong.
+      */
+-    public LinkInfoImpl (int context, ClassDoc classDoc,  boolean isBold){
++    public LinkInfoImpl (int context, ClassDoc classDoc,  boolean isStrong){
+         this.classDoc = classDoc;
+-        this.isBold = isBold;
++        this.isStrong = isStrong;
+         setContext(context);
+     }
+ 
+@@ -335,13 +335,13 @@
+      * @param context    the context of the link.
+      * @param type       the class to link to.
+      * @param label      the label for the link.
+-     * @param isBold     true if the link should be bold.
++     * @param isStrong     true if the link should be strong.
+      */
+     public LinkInfoImpl (int context, Type type, String label,
+-            boolean isBold){
++            boolean isStrong){
+         this.type = type;
+         this.label = label;
+-        this.isBold = isBold;
++        this.isStrong = isStrong;
+         setContext(context);
+     }
+ 
+@@ -351,13 +351,13 @@
+      * @param context    the context of the link.
+      * @param classDoc   the class to link to.
+      * @param label      the label for the link.
+-     * @param isBold       true if the link should be bold.
++     * @param isStrong       true if the link should be strong.
+      */
+     public LinkInfoImpl (int context, ClassDoc classDoc, String label,
+-            boolean isBold){
++            boolean isStrong){
+         this.classDoc = classDoc;
+         this.label = label;
+-        this.isBold = isBold;
++        this.isStrong = isStrong;
+         setContext(context);
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java
+@@ -167,7 +167,7 @@
+         if (configuration().linksource) {
+             writer.printSrcLink(method, method.name());
+         } else {
+-            bold(method.name());
++            strong(method.name());
+         }
+         writeParameters(method);
+         writeExceptions(method);
+@@ -210,7 +210,7 @@
+                             holder.typeName() : holder.qualifiedTypeName(),
+                         false));
+                 writer.dd();
+-                writer.boldText(holder.asClassDoc().isClass()?
++                writer.strongText(holder.asClassDoc().isClass()?
+                         "doclet.Description_From_Class":
+                         "doclet.Description_From_Interface",
+                     classlink);
+@@ -259,7 +259,7 @@
+     }
+ 
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Method_Summary");
++        writer.strongText("doclet.Method_Summary");
+     }
+ 
+     public void printSummaryAnchor(ClassDoc cd) {
+@@ -274,12 +274,12 @@
+     public void printInheritedSummaryLabel(ClassDoc cd) {
+         String classlink = writer.getPreQualifiedClassLink(
+             LinkInfoImpl.CONTEXT_MEMBER, cd, false);
+-        writer.bold();
++        writer.strong();
+         String key = cd.isClass()?
+             "doclet.Methods_Inherited_From_Class" :
+             "doclet.Methods_Inherited_From_Interface";
+         writer.printText(key, classlink);
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     protected void printSummaryType(ProgramElementDoc member) {
+@@ -317,7 +317,7 @@
+                 writer.getLink(new LinkInfoImpl(context, overriddenType)));
+             String name = method.name();
+             writer.dt();
+-            writer.boldText(label);
++            writer.strongText(label);
+             writer.dd();
+             String methLink = writer.codeText(
+                 writer.getLink(
+@@ -363,7 +363,7 @@
+                 writer.getLink(new LinkInfoImpl(
+                     LinkInfoImpl.CONTEXT_METHOD_SPECIFIED_BY, intfac)));
+             writer.dt();
+-            writer.boldText("doclet.Specified_By");
++            writer.strongText("doclet.Specified_By");
+             writer.dd();
+             methlink = writer.codeText(writer.getDocLink(
+                 LinkInfoImpl.CONTEXT_MEMBER, implementedMeth,
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java
+@@ -149,7 +149,7 @@
+     }
+ 
+     public void printSummaryLabel(ClassDoc cd) {
+-        writer.boldText("doclet.Nested_Class_Summary");
++        writer.strongText("doclet.Nested_Class_Summary");
+     }
+ 
+     public void printSummaryAnchor(ClassDoc cd) {
+@@ -164,18 +164,18 @@
+     public void printInheritedSummaryLabel(ClassDoc cd) {
+         String clslink = writer.getPreQualifiedClassLink(
+             LinkInfoImpl.CONTEXT_MEMBER, cd, false);
+-        writer.bold();
++        writer.strong();
+         writer.printText(cd.isInterface() ?
+             "doclet.Nested_Classes_Interface_Inherited_From_Interface" :
+             "doclet.Nested_Classes_Interfaces_Inherited_From_Class",
+             clslink);
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     protected void writeSummaryLink(int context, ClassDoc cd, ProgramElementDoc member) {
+-        writer.bold();
++        writer.strong();
+         writer.printLink(new LinkInfoImpl(context, (ClassDoc)member, false));
+-        writer.boldEnd();
++        writer.strongEnd();
+     }
+ 
+     protected void writeInheritedSummaryLink(ClassDoc cd,
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexFrameWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexFrameWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexFrameWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexFrameWriter.java
+@@ -87,7 +87,7 @@
+     }
+ 
+     /**
+-     * Print the "-packagesheader" string in bold format, at top of the page,
++     * Print the "-packagesheader" string in strong format, at top of the page,
+      * if it is not the empty string.  Otherwise print the "-header" string.
+      * Despite the name, there is actually no navigation bar for this page.
+      */
+@@ -95,9 +95,9 @@
+         printTableHeader(true);
+         fontSizeStyle("+1", "FrameTitleFont");
+         if (configuration.packagesheader.length() > 0) {
+-            bold(replaceDocRootDir(configuration.packagesheader));
++            strong(replaceDocRootDir(configuration.packagesheader));
+         } else {
+-            bold(replaceDocRootDir(configuration.header));
++            strong(replaceDocRootDir(configuration.header));
+         }
+         fontEnd();
+         printTableFooter(true);
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java
+@@ -102,9 +102,9 @@
+         if(pkg != null && pkg.name().length() > 0) {
+             trBgcolorStyle("white", "TableRowColor");
+             summaryRow(20);
+-            bold();
++            strong();
+             printPackageLink(pkg, Util.getPackageName(pkg), false);
+-            boldEnd();
++            strongEnd();
+             summaryRowEnd();
+             summaryRow(0);
+             printSummaryComment(pkg);
+@@ -138,7 +138,7 @@
+         if (root.inlineTags().length > 0) {
+             printSummaryComment(root);
+             p();
+-            bold(configuration.getText("doclet.See"));
++            strong(configuration.getText("doclet.See"));
+             br();
+             printNbsps();
+             printHyperLink("", "overview_description",
+@@ -153,7 +153,7 @@
+     protected void printIndexHeader(String text) {
+         tableIndexSummary();
+         tableHeaderStart("#CCCCFF");
+-        bold(text);
++        strong(text);
+         tableHeaderEnd();
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java
+@@ -144,7 +144,7 @@
+     protected void printLinkToMainTree() {
+         dl();
+         dt();
+-        boldText("doclet.Package_Hierarchies");
++        strongText("doclet.Package_Hierarchies");
+         dd();
+         navLinkMainTree(configuration.getText("doclet.All_Packages"));
+         dlEnd();
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java
+@@ -178,9 +178,9 @@
+ 
+         trBgcolorStyle("white", "TableRowColor");
+         summaryRow(0);
+-        bold();
++        strong();
+         printHyperLink(path, packageName, usedClass.name(), true);
+-        boldEnd();
++        strongEnd();
+         println(); br();
+         printNbsps();
+         printIndexComment(usedClass);
+@@ -219,7 +219,7 @@
+         hr();
+         center();
+         h2();
+-        boldText("doclet.ClassUse_Title", packageLabel, name);
++        strongText("doclet.ClassUse_Title", packageLabel, name);
+         h2End();
+         centerEnd();
+     }
+@@ -251,7 +251,7 @@
+     protected void navLinkClassUse() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.navClassUse");
++        strongText("doclet.navClassUse");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageWriterImpl.java
+@@ -123,14 +123,14 @@
+                 }
+                 trBgcolorStyle("white", "TableRowColor");
+                 summaryRow(15);
+-                bold();
++                strong();
+                 printLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_PACKAGE,
+                     classes[i], false));
+-                boldEnd();
++                strongEnd();
+                 summaryRowEnd();
+                 summaryRow(0);
+                 if (Util.isDeprecated(classes[i])) {
+-                    boldText("doclet.Deprecated");
++                    strongText("doclet.Deprecated");
+                     if (classes[i].tags("deprecated").length > 0) {
+                         space();
+                         printSummaryDeprecatedComment(classes[i],
+@@ -155,7 +155,7 @@
+      */
+     protected void printFirstRow(String label) {
+         tableHeaderStart("#CCCCFF");
+-        bold(label);
++        strong(label);
+         tableHeaderEnd();
+     }
+ 
+@@ -194,7 +194,7 @@
+         if (packageDoc.inlineTags().length > 0 && ! configuration.nocomment) {
+             printSummaryComment(packageDoc);
+             p();
+-            bold(configuration.getText("doclet.See"));
++            strong(configuration.getText("doclet.See"));
+             br();
+             printNbsps();
+             printHyperLink("", "package_description",
+@@ -268,7 +268,7 @@
+     protected void navLinkPackage() {
+         navCellRevStart();
+         fontStyle("NavBarFont1Rev");
+-        boldText("doclet.Package");
++        strongText("doclet.Package");
+         fontEnd();
+         navCellEnd();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/SerializedFormWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/SerializedFormWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/SerializedFormWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/SerializedFormWriterImpl.java
+@@ -73,9 +73,9 @@
+         tableHeader();
+         thAlign("center");
+         font("+2");
+-        boldText("doclet.Package");
++        strongText("doclet.Package");
+         print(' ');
+-        bold(packageName);
++        strong(packageName);
+         tableFooter();
+     }
+ 
+@@ -86,7 +86,7 @@
+      * @param serialUID the serial UID to print.
+      */
+     public void writeSerialUIDInfo(String header, String serialUID) {
+-        bold(header + "&nbsp;");
++        strong(header + "&nbsp;");
+         println(serialUID);
+         p();
+     }
+@@ -131,7 +131,7 @@
+         tableHeader();
+         thAlignColspan("left", 2);
+         font("+2");
+-        bold(className);
++        strong(className);
+         tableFooter();
+         p();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/SubWriterHolderWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/SubWriterHolderWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/SubWriterHolderWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/SubWriterHolderWriter.java
+@@ -81,7 +81,7 @@
+     public void printTableHeadingBackground(String str) {
+         tableIndexDetail();
+         tableHeaderStart("#CCCCFF", 1);
+-        bold(str);
++        strong(str);
+         tableHeaderEnd();
+         tableEnd();
+     }
+@@ -117,7 +117,7 @@
+     protected void printIndexComment(Doc member, Tag[] firstSentenceTags) {
+         Tag[] deprs = member.tags("deprecated");
+         if (Util.isDeprecated((ProgramElementDoc) member)) {
+-            boldText("doclet.Deprecated");
++            strongText("doclet.Deprecated");
+             space();
+             if (deprs.length > 0) {
+                 printInlineDeprecatedComment(member, deprs[0]);
+@@ -126,7 +126,7 @@
+         } else {
+             ClassDoc cd = ((ProgramElementDoc)member).containingClass();
+             if (cd != null && Util.isDeprecated(cd)) {
+-                boldText("doclet.Deprecated"); space();
++                strongText("doclet.Deprecated"); space();
+             }
+         }
+         printSummaryComment(member, firstSentenceTags);
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java
+@@ -69,9 +69,9 @@
+         Tag[] deprs = doc.tags("deprecated");
+         if (doc instanceof ClassDoc) {
+             if (Util.isDeprecated((ProgramElementDoc) doc)) {
+-                output.append("<B>" +
++                output.append("<STRONG>" +
+                     ConfigurationImpl.getInstance().
+-                        getText("doclet.Deprecated") + "</B>&nbsp;");
++                        getText("doclet.Deprecated") + "</STRONG>&nbsp;");
+                 if (deprs.length > 0) {
+                     Tag[] commentTags = deprs[0].inlineTags();
+                     if (commentTags.length > 0) {
+@@ -86,9 +86,9 @@
+         } else {
+             MemberDoc member = (MemberDoc) doc;
+             if (Util.isDeprecated((ProgramElementDoc) doc)) {
+-                output.append("<DD><B>" +
++                output.append("<DD><STRONG>" +
+                     ConfigurationImpl.getInstance().
+-                            getText("doclet.Deprecated") + "</B>&nbsp;");
++                            getText("doclet.Deprecated") + "</STRONG>&nbsp;");
+                 if (deprs.length > 0) {
+                     output.append("<I>");
+                     output.append(commentTagsToOutput(null, doc,
+@@ -101,9 +101,9 @@
+                 }
+             } else {
+                 if (Util.isDeprecated(member.containingClass())) {
+-                    output.append("<DD><B>" +
++                    output.append("<DD><STRONG>" +
+                     ConfigurationImpl.getInstance().
+-                            getText("doclet.Deprecated") + "</B>&nbsp;");
++                            getText("doclet.Deprecated") + "</STRONG>&nbsp;");
+                 }
+             }
+         }
+@@ -123,7 +123,7 @@
+     public TagletOutput getParamHeader(String header) {
+         StringBuffer result = new StringBuffer();
+         result.append("<DT>");
+-        result.append("<B>" +  header + "</B>");
++        result.append("<STRONG>" +  header + "</STRONG>");
+         return new TagletOutputImpl(result.toString());
+     }
+ 
+@@ -141,8 +141,8 @@
+      */
+     public TagletOutput returnTagOutput(Tag returnTag) {
+         TagletOutput result = new TagletOutputImpl(DocletConstants.NL + "<DT>" +
+-            "<B>" + htmlWriter.configuration.getText("doclet.Returns") +
+-            "</B>" + "<DD>" +
++            "<STRONG>" + htmlWriter.configuration.getText("doclet.Returns") +
++            "</STRONG>" + "<DD>" +
+             htmlWriter.commentTagsToString(returnTag, null, returnTag.inlineTags(),
+             false));
+         return result;
+@@ -189,7 +189,7 @@
+         if (result != null && result.length() > 0) {
+             return result + ", " + DocletConstants.NL;
+         } else {
+-            return "<DT><B>" + htmlWriter.configuration().getText("doclet.See_Also") + "</B><DD>";
++            return "<DT><STRONG>" + htmlWriter.configuration().getText("doclet.See_Also") + "</STRONG><DD>";
+         }
+      }
+ 
+@@ -197,7 +197,7 @@
+      * {@inheritDoc}
+      */
+     public TagletOutput simpleTagOutput(Tag[] simpleTags, String header) {
+-        String result = "<DT><B>" + header + "</B></DT>" + DocletConstants.NL +
++        String result = "<DT><STRONG>" + header + "</STRONG></DT>" + DocletConstants.NL +
+             "  <DD>";
+         for (int i = 0; i < simpleTags.length; i++) {
+             if (i > 0) {
+@@ -212,7 +212,7 @@
+      * {@inheritDoc}
+      */
+     public TagletOutput simpleTagOutput(Tag simpleTag, String header) {
+-        return new TagletOutputImpl("<DT><B>" + header + "</B></DT>" + "  <DD>"
++        return new TagletOutputImpl("<DT><STRONG>" + header + "</STRONG></DT>" + "  <DD>"
+             + htmlWriter.commentTagsToString(simpleTag, null, simpleTag.inlineTags(), false)
+             + "</DD>" + DocletConstants.NL);
+     }
+@@ -221,8 +221,8 @@
+      * {@inheritDoc}
+      */
+     public TagletOutput getThrowsHeader() {
+-        return new TagletOutputImpl(DocletConstants.NL + "<DT>" + "<B>" +
+-            htmlWriter.configuration().getText("doclet.Throws") + "</B>");
++        return new TagletOutputImpl(DocletConstants.NL + "<DT>" + "<STRONG>" +
++            htmlWriter.configuration().getText("doclet.Throws") + "</STRONG>");
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java
+@@ -119,7 +119,7 @@
+         if (!classesonly) {
+             dl();
+             dt();
+-            boldText("doclet.Package_Hierarchies");
++            strongText("doclet.Package_Hierarchies");
+             dd();
+             for (int i = 0; i < packages.length; i++) {
+                 if (packages[i].name().length() == 0) {
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java
+@@ -83,11 +83,11 @@
+      * @param where Position of the link in the file. Character '#' is not
+      * needed.
+      * @param label Tag for the link.
+-     * @param bold  Boolean that sets label to bold.
++     * @param strong  Boolean that sets label to strong.
+      */
+     public void printHyperLink(String link, String where,
+-                               String label, boolean bold) {
+-        print(getHyperLink(link, where, label, bold, "", "", ""));
++                               String label, boolean strong) {
++        print(getHyperLink(link, where, label, strong, "", "", ""));
+     }
+ 
+     /**
+@@ -109,13 +109,13 @@
+      * @param where      Position of the link in the file. Character '#' is not
+      * needed.
+      * @param label      Tag for the link.
+-     * @param bold       Boolean that sets label to bold.
++     * @param strong       Boolean that sets label to strong.
+      * @param stylename  String style of text defined in style sheet.
+      */
+     public void printHyperLink(String link, String where,
+-                               String label, boolean bold,
++                               String label, boolean strong,
+                                String stylename) {
+-        print(getHyperLink(link, where, label, bold, stylename, "", ""));
++        print(getHyperLink(link, where, label, strong, stylename, "", ""));
+     }
+ 
+     /**
+@@ -125,12 +125,12 @@
+      * @param where      Position of the link in the file. Character '#' is not
+      * needed.
+      * @param label      Tag for the link.
+-     * @param bold       Boolean that sets label to bold.
++     * @param strong       Boolean that sets label to strong.
+      * @return String    Hyper Link.
+      */
+     public String getHyperLink(String link, String where,
+-                               String label, boolean bold) {
+-        return getHyperLink(link, where, label, bold, "", "", "");
++                               String label, boolean strong) {
++        return getHyperLink(link, where, label, strong, "", "", "");
+     }
+ 
+     /**
+@@ -140,14 +140,14 @@
+      * @param where      Position of the link in the file. Character '#' is not
+      *                   needed.
+      * @param label      Tag for the link.
+-     * @param bold       Boolean that sets label to bold.
++     * @param strong       Boolean that sets label to strong.
+      * @param stylename  String style of text defined in style sheet.
+      * @return String    Hyper Link.
+      */
+     public String getHyperLink(String link, String where,
+-                               String label, boolean bold,
++                               String label, boolean strong,
+                                String stylename) {
+-        return getHyperLink(link, where, label, bold, stylename, "", "");
++        return getHyperLink(link, where, label, strong, stylename, "", "");
+     }
+ 
+     /**
+@@ -157,14 +157,14 @@
+      * @param where      Position of the link in the file. Character '#' is not
+      *                   needed.
+      * @param label      Tag for the link.
+-     * @param bold       Boolean that sets label to bold.
++     * @param strong       Boolean that sets label to strong.
+      * @param stylename  String style of text defined in style sheet.
+      * @param title      String that describes the link's content for accessibility.
+      * @param target     Target frame.
+      * @return String    Hyper Link.
+      */
+     public String getHyperLink(String link, String where,
+-                               String label, boolean bold,
++                               String label, boolean strong,
+                                String stylename, String title, String target) {
+         StringBuffer retlink = new StringBuffer();
+         retlink.append("<A HREF=\"");
+@@ -186,12 +186,12 @@
+             retlink.append(stylename);
+             retlink.append("\">");
+         }
+-        if (bold) {
+-            retlink.append("<B>");
++        if (strong) {
++            retlink.append("<STRONG>");
+         }
+         retlink.append(label);
+-        if (bold) {
+-            retlink.append("</B>");
++        if (strong) {
++            retlink.append("</STRONG>");
+         }
+         if (stylename != null && stylename.length() != 0) {
+             retlink.append("</FONT>");
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+@@ -433,46 +433,46 @@
+     }
+ 
+     /**
+-     * Get the "&lt;B&gt;" string.
++     * Get the "&lt;STRONG&gt;" string.
+      *
+-     * @return String Return String "&lt;B&gt;";
++     * @return String Return String "&lt;STRONG&gt;";
+      */
+-    public String getBold() {
+-        return "<B>";
++    public String getStrong() {
++        return "<STRONG>";
+     }
+ 
+     /**
+-     * Get the "&lt;/B&gt;" string.
++     * Get the "&lt;/STRONG&gt;" string.
+      *
+-     * @return String Return String "&lt;/B&gt;";
++     * @return String Return String "&lt;/STRONG&gt;";
+      */
+-    public String getBoldEnd() {
+-        return "</B>";
++    public String getStrongEnd() {
++        return "</STRONG>";
+     }
+ 
+     /**
+-     * Print &lt;B&gt; tag.
++     * Print &lt;STRONG&gt; tag.
+      */
+-    public void bold() {
+-        print("<B>");
++    public void strong() {
++        print("<STRONG>");
+     }
+ 
+     /**
+-     * Print &lt;/B&gt; tag.
++     * Print &lt;/STRONG&gt; tag.
+      */
+-    public void boldEnd() {
+-        print("</B>");
++    public void strongEnd() {
++        print("</STRONG>");
+     }
+ 
+     /**
+-     * Print text passed, in bold format using &lt;B&gt; and &lt;/B&gt; tags.
++     * Print text passed, in strong format using &lt;STRONG&gt; and &lt;/STRONG&gt; tags.
+      *
+-     * @param text String to be printed in between &lt;B&gt; and &lt;/B&gt; tags.
++     * @param text String to be printed in between &lt;STRONG&gt; and &lt;/STRONG&gt; tags.
+      */
+-    public void bold(String text) {
+-        bold();
++    public void strong(String text) {
++        strong();
+         print(text);
+-        boldEnd();
++        strongEnd();
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/LinkInfo.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/LinkInfo.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/LinkInfo.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/links/LinkInfo.java
+@@ -69,9 +69,9 @@
+     public String label;
+ 
+     /**
+-     * True if the link should be bolded.
++     * True if the link should be strong.
+      */
+-    public boolean isBold = false;
++    public boolean isStrong = false;
+ 
+     /**
+      * True if we should include the type in the link label.  False otherwise.
+diff --git a/test/com/sun/javadoc/AccessAsciiArt/AccessAsciiArt.java b/test/com/sun/javadoc/AccessAsciiArt/AccessAsciiArt.java
+--- langtools/test/com/sun/javadoc/AccessAsciiArt/AccessAsciiArt.java
++++ langtools/test/com/sun/javadoc/AccessAsciiArt/AccessAsciiArt.java
+@@ -94,7 +94,7 @@
+ 
+             // Test the third line of the class tree
+             {
+-"          <IMG SRC=\"../../resources/inherit.gif\" ALT=\"extended by \"><B>p1.subpkg.SSC</B>",
++"          <IMG SRC=\"../../resources/inherit.gif\" ALT=\"extended by \"><STRONG>p1.subpkg.SSC</STRONG>",
+                      TMPDEST_DIR1 + "p1" + FS + "subpkg" + FS +"SSC.html" },
+ 
+         };
+diff --git a/test/com/sun/javadoc/AuthorDD/AuthorDD.java b/test/com/sun/javadoc/AuthorDD/AuthorDD.java
+--- langtools/test/com/sun/javadoc/AuthorDD/AuthorDD.java
++++ langtools/test/com/sun/javadoc/AuthorDD/AuthorDD.java
+@@ -86,12 +86,12 @@
+ 
+              // Test single @since tag:
+ 
+-            { "<DT><B>Since:</B></DT>"+NL+"  <DD>JDK 1.0</DD>",
++            { "<DT><STRONG>Since:</STRONG></DT>"+NL+"  <DD>JDK 1.0</DD>",
+                                   BUGID + FS + "p1" + FS + "C1.html" },
+ 
+             // Test multiple @author tags:
+ 
+-            { "<DT><B>Author:</B></DT>"+NL+"  <DD>Doug Kramer, Jamie, Neal</DD>"+NL,
++            { "<DT><STRONG>Author:</STRONG></DT>"+NL+"  <DD>Doug Kramer, Jamie, Neal</DD>"+NL,
+                                   BUGID + FS + "p1" + FS + "C1.html" },
+ 
+         };
+diff --git a/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java b/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java
+--- langtools/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java
++++ langtools/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java
+@@ -48,7 +48,7 @@
+             "<A HREF=\"http://java.sun.com/j2se/1.4/docs/api/java/math/BigInteger.html?is-external=true#gcd(java.math.BigInteger)\" " +
+                 "title=\"class or interface in java.math\"><CODE>Link to external member gcd</CODE></A>"},
+         {BUG_ID + FS + "C.html",
+-            "<B>Overrides:</B><DD><CODE>toString</CODE> in class <CODE>java.lang.Object</CODE>"}
++            "<STRONG>Overrides:</STRONG><DD><CODE>toString</CODE> in class <CODE>java.lang.Object</CODE>"}
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+     private static final String[] ARGS =
+diff --git a/test/com/sun/javadoc/testClassTree/TestClassTree.java b/test/com/sun/javadoc/testClassTree/TestClassTree.java
+--- langtools/test/com/sun/javadoc/testClassTree/TestClassTree.java
++++ langtools/test/com/sun/javadoc/testClassTree/TestClassTree.java
+@@ -49,12 +49,12 @@
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "package-tree.html",
+             "<LI TYPE=\"circle\">pkg.<A HREF=\"../pkg/ParentClass.html\" " +
+-            "title=\"class in pkg\"><B>ParentClass</B></A><UL>"},
++            "title=\"class in pkg\"><STRONG>ParentClass</STRONG></A><UL>"},
+ 
+         {BUG_ID + FS + "pkg" + FS + "package-tree.html",
+             "Annotation Type Hierarchy" + NL + "</H2>" + NL + "<UL>" + NL +
+             "<LI TYPE=\"circle\">pkg.<A HREF=\"../pkg/AnnotationType.html\" " +
+-            "title=\"annotation in pkg\"><B>AnnotationType</B></A> " +
++            "title=\"annotation in pkg\"><STRONG>AnnotationType</STRONG></A> " +
+             "(implements java.lang.annotation.Annotation)" + NL + "</UL>"},
+ 
+         {BUG_ID + FS + "pkg" + FS + "package-tree.html",
+@@ -65,7 +65,7 @@
+             "<LI TYPE=\"circle\">java.lang.Object<UL>" + NL +
+             "<LI TYPE=\"circle\">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)" + NL +
+             "<UL>" + NL +
+-            "<LI TYPE=\"circle\">pkg.<A HREF=\"../pkg/Coin.html\" title=\"enum in pkg\"><B>Coin</B></A></UL>" + NL +
++            "<LI TYPE=\"circle\">pkg.<A HREF=\"../pkg/Coin.html\" title=\"enum in pkg\"><STRONG>Coin</STRONG></A></UL>" + NL +
+             "</UL>" + NL +
+             "</UL>"
+         },
+@@ -73,7 +73,7 @@
+     private static final String[][] NEGATED_TEST = {
+         {BUG_ID + FS + "pkg" + FS + "package-tree.html",
+             "<LI TYPE=\"circle\">class pkg.<A HREF=\"../pkg/ParentClass.html\" " +
+-            "title=\"class in pkg\"><B>ParentClass</B></A><UL>"}
++            "title=\"class in pkg\"><STRONG>ParentClass</STRONG></A><UL>"}
+         };
+ 
+     /**
+diff --git a/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java b/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java
+--- langtools/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java
++++ langtools/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java
+@@ -46,7 +46,7 @@
+     //Input for string search tests.
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "C.html", "<DL>"+NL+"<DD>This is just a simple constructor."+ NL +
+-            "<P>"+NL+"<DL>"+NL+"<DT><B>Parameters:</B><DD><CODE>i</CODE> - a param.</DL>"+NL +
++            "<P>"+NL+"<DL>"+NL+"<DT><STRONG>Parameters:</STRONG><DD><CODE>i</CODE> - a param.</DL>"+NL +
+             "</DL>"
+         }
+     };
+diff --git a/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java b/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java
+--- langtools/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java
++++ langtools/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java
+@@ -76,25 +76,25 @@
+         {TARGET_FILE, "pkg.DeprecatedClassByAnnotation.method()"},
+         {TARGET_FILE, "pkg.DeprecatedClassByAnnotation.field"},
+ 
+-        {TARGET_FILE2, "<B>Deprecated.</B>" + NL +
++        {TARGET_FILE2, "<STRONG>Deprecated.</STRONG>" + NL +
+                 "<P>" + NL +
+             "<DL>" + NL +
+             "<DT><PRE><FONT SIZE=\"-1\">@Deprecated" + NL +
+-            "</FONT>public class <B>DeprecatedClassByAnnotation</B>"},
++            "</FONT>public class <STRONG>DeprecatedClassByAnnotation</STRONG>"},
+ 
+-        {TARGET_FILE2, "public int <B>field</B></PRE>" + NL +
++        {TARGET_FILE2, "public int <STRONG>field</STRONG></PRE>" + NL +
+             "<DL>" + NL +
+-            "<DD><B>Deprecated.</B>&nbsp;<DL>"},
++            "<DD><STRONG>Deprecated.</STRONG>&nbsp;<DL>"},
+ 
+         {TARGET_FILE2, "<FONT SIZE=\"-1\">@Deprecated" + NL +
+-            "</FONT>public <B>DeprecatedClassByAnnotation</B>()</PRE>" + NL +
++            "</FONT>public <STRONG>DeprecatedClassByAnnotation</STRONG>()</PRE>" + NL +
+             "<DL>" + NL +
+-            "<DD><B>Deprecated.</B>"},
++            "<DD><STRONG>Deprecated.</STRONG>"},
+ 
+         {TARGET_FILE2, "<FONT SIZE=\"-1\">@Deprecated" + NL +
+-            "</FONT>public void <B>method</B>()</PRE>" + NL +
++            "</FONT>public void <STRONG>method</STRONG>()</PRE>" + NL +
+             "<DL>" + NL +
+-            "<DD><B>Deprecated.</B>"},
++            "<DD><STRONG>Deprecated.</STRONG>"},
+     };
+ 
+     private static final String[][] NEGATED_TEST = NO_TEST;
+diff --git a/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java b/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java
+--- langtools/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java
++++ langtools/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java
+@@ -39,13 +39,13 @@
+     private static final String BUG_ID = "4857717";
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "XReader.html",
+-            "<B>Overrides:</B><DD><CODE><A HREF=\"" +
++            "<STRONG>Overrides:</STRONG><DD><CODE><A HREF=\"" +
+             "http://java.sun.com/j2se/1.4.1/docs/api/java/io/FilterReader.html?is-external=true#read()\"" +
+                 " title=\"class or interface in java.io\">read</A></CODE> in class " +
+                 "<CODE><A HREF=\"http://java.sun.com/j2se/1.4.1/docs/api/java/io/FilterReader.html?is-external=true\"" +
+                 " title=\"class or interface in java.io\">FilterReader</A>"},
+         {BUG_ID + FS + "pkg" + FS + "XReader.html",
+-            "<B>Specified by:</B><DD><CODE><A HREF=\"" +
++            "<STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"" +
+             "http://java.sun.com/j2se/1.4.1/docs/api/java/io/DataInput.html?is-external=true#readInt()\"" +
+             " title=\"class or interface in java.io\">readInt</A></CODE> in interface " +
+             "<CODE><A HREF=\"http://java.sun.com/j2se/1.4.1/docs/api/java/io/DataInput.html?is-external=true\"" +
+diff --git a/test/com/sun/javadoc/testHeadings/TestHeadings.java b/test/com/sun/javadoc/testHeadings/TestHeadings.java
+--- langtools/test/com/sun/javadoc/testHeadings/TestHeadings.java
++++ langtools/test/com/sun/javadoc/testHeadings/TestHeadings.java
+@@ -48,16 +48,16 @@
+         //Package summary
+         {BUG_ID + FS + "pkg1" + FS + "package-summary.html",
+             "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">" + NL +
+-            "<B>Class Summary</B></FONT></TH>"
++            "<STRONG>Class Summary</STRONG></FONT></TH>"
+         },
+ 
+         // Class documentation
+         {BUG_ID + FS + "pkg1" + FS + "C1.html",
+             "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">" + NL +
+-            "<B>Field Summary</B></FONT></TH>"
++            "<STRONG>Field Summary</STRONG></FONT></TH>"
+         },
+         {BUG_ID + FS + "pkg1" + FS + "C1.html",
+-            "<TH ALIGN=\"left\"><B>Methods inherited from class " +            "java.lang.Object</B></TH>"
++            "<TH ALIGN=\"left\"><STRONG>Methods inherited from class " +            "java.lang.Object</STRONG></TH>"
+         },
+ 
+         // Class use documentation
+@@ -76,7 +76,7 @@
+         // Deprecated
+         {BUG_ID + FS + "deprecated-list.html",
+             "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">" + NL +
+-            "<B>Deprecated Methods</B></FONT></TH>"
++            "<STRONG>Deprecated Methods</STRONG></FONT></TH>"
+         },
+ 
+         // Constant values
+@@ -90,20 +90,20 @@
+         // Serialized Form
+         {BUG_ID + FS + "serialized-form.html",
+             "<TH ALIGN=\"center\"><FONT SIZE=\"+2\">" + NL +
+-            "<B>Package</B> <B>pkg1</B></FONT></TH>"
++            "<STRONG>Package</STRONG> <STRONG>pkg1</STRONG></FONT></TH>"
+         },
+         {BUG_ID + FS + "serialized-form.html",
+             "<TH ALIGN=\"left\" COLSPAN=\"2\"><FONT SIZE=\"+2\">" + NL +
+-            "<B>Class <A HREF=\"pkg1/C1.html\" " +            "title=\"class in pkg1\">pkg1.C1</A> extends java.lang.Object " +            "implements Serializable</B></FONT></TH>"
++            "<STRONG>Class <A HREF=\"pkg1/C1.html\" " +            "title=\"class in pkg1\">pkg1.C1</A> extends java.lang.Object " +            "implements Serializable</STRONG></FONT></TH>"
+         },
+         {BUG_ID + FS + "serialized-form.html",
+             "<TH ALIGN=\"left\" COLSPAN=\"1\"><FONT SIZE=\"+2\">" + NL +
+-            "<B>Serialized Fields</B></FONT></TH>"
++            "<STRONG>Serialized Fields</STRONG></FONT></TH>"
+         },
+ 
+         // Overview Frame
+         {BUG_ID + FS + "overview-frame.html",
+-            "<TH ALIGN=\"left\" NOWRAP><FONT size=\"+1\" " +            "CLASS=\"FrameTitleFont\">" + NL + "<B>Test Files</B></FONT></TH>"
++            "<TH ALIGN=\"left\" NOWRAP><FONT size=\"+1\" " +            "CLASS=\"FrameTitleFont\">" + NL + "<STRONG>Test Files</STRONG></FONT></TH>"
+         },
+         {BUG_ID + FS + "overview-frame.html",
+             "<TITLE>" + NL +
+diff --git a/test/com/sun/javadoc/testHelpOption/TestHelpOption.java b/test/com/sun/javadoc/testHelpOption/TestHelpOption.java
+--- langtools/test/com/sun/javadoc/testHelpOption/TestHelpOption.java
++++ langtools/test/com/sun/javadoc/testHelpOption/TestHelpOption.java
+@@ -91,7 +91,8 @@
+ 
+     private static final String[][] TEST2 = {
+         {BUG_ID + FS + "TestHelpOption.html",
+-            "<A HREF=\"help-doc.html\"><FONT CLASS=\"NavBarFont1\">" +            "<B>Help</B></FONT></A>"
++            "<A HREF=\"help-doc.html\"><FONT CLASS=\"NavBarFont1\">" +
++            "<STRONG>Help</STRONG></FONT></A>"
+         },
+     };
+     private static final String[][] NEGATED_TEST2 = NO_TEST;
+diff --git a/test/com/sun/javadoc/testHref/TestHref.java b/test/com/sun/javadoc/testHref/TestHref.java
+--- langtools/test/com/sun/javadoc/testHref/TestHref.java
++++ langtools/test/com/sun/javadoc/testHref/TestHref.java
+@@ -67,7 +67,7 @@
+         },
+         //@see test.
+         {BUG_ID + FS + "pkg" + FS + "C2.html",
+-            "See Also:</B><DD><A HREF=\"../pkg/C1.html#method(int, int, java.util.ArrayList)\">"
++            "See Also:</STRONG><DD><A HREF=\"../pkg/C1.html#method(int, int, java.util.ArrayList)\">"
+         },
+ 
+         //Header does not link to the page itself.
+@@ -77,7 +77,7 @@
+ 
+         //Signature does not link to the page itself.
+         {BUG_ID + FS + "pkg" + FS + "C4.html",
+-            "public abstract class <B>C4&lt;E extends C4&lt;E&gt;&gt;</B>"
++            "public abstract class <STRONG>C4&lt;E extends C4&lt;E&gt;&gt;</STRONG>"
+         },
+     };
+     private static final String[][] NEGATED_TEST =
+diff --git a/test/com/sun/javadoc/testHtmlStrongTag/TestHtmlStrongTag.java b/test/com/sun/javadoc/testHtmlStrongTag/TestHtmlStrongTag.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlStrongTag/TestHtmlStrongTag.java
+@@ -0,0 +1,82 @@
++/*
++ * Copyright 1999-2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++/*
++ * @test
++ * @bug 6786028
++ * @summary This test verifys the use of <strong> HTML tag instead of <B> by Javadoc std doclet.
++ * @author Bhavesh Patel
++ * @library ../lib/
++ * @build JavadocTester
++ * @build TestHtmlStrongTag
++ * @run main TestHtmlStrongTag
++ */
++
++public class TestHtmlStrongTag extends JavadocTester {
++
++    private static final String BUG_ID = "6786028";
++    private static final String[][] TEST1 = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<STRONG>Method Summary</STRONG>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<STRONG>See Also:</STRONG>"},
++        {BUG_ID + FS + "pkg1" + FS + "package-summary.html", "<STRONG>Class Summary</STRONG>"}};
++    private static final String[][] NEGATED_TEST1 = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<B>"}};
++    private static final String[][] TEST2 = {
++        {BUG_ID + FS + "pkg2" + FS + "C2.html", "<STRONG>Method Summary</STRONG>"},
++        {BUG_ID + FS + "pkg2" + FS + "C2.html", "<B>Comments:</B>"},
++        {BUG_ID + FS + "pkg1" + FS + "package-summary.html", "<STRONG>Class Summary</STRONG>"}};
++
++    private static final String[] ARGS1 =
++        new String[] {
++            "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg1"};
++    private static final String[] ARGS2 =
++        new String[] {
++            "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg2"};
++
++    /**
++     * The entry point of the test.
++     * @param args the array of command line arguments.
++     */
++    public static void main(String[] args) {
++        TestHtmlStrongTag tester = new TestHtmlStrongTag();
++        run(tester, ARGS1, TEST1, NEGATED_TEST1);
++        run(tester, ARGS2, TEST2, NO_TEST);
++        tester.printSummary();
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugId() {
++        return BUG_ID;
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugName() {
++        return getClass().getName();
++    }
++}
+diff --git a/test/com/sun/javadoc/testHtmlStrongTag/pkg1/C1.java b/test/com/sun/javadoc/testHtmlStrongTag/pkg1/C1.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlStrongTag/pkg1/C1.java
+@@ -0,0 +1,36 @@
++/*
++ * Copyright 1999-2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++/**
++ * @see java.lang.Object#wait(long, int)
++ */
++public class C1 {
++
++    public void method(int param1, int param2) {
++
++    }
++}
+diff --git a/test/com/sun/javadoc/testHtmlStrongTag/pkg2/C2.java b/test/com/sun/javadoc/testHtmlStrongTag/pkg2/C2.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlStrongTag/pkg2/C2.java
+@@ -0,0 +1,31 @@
++/*
++ * Copyright 1999-2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg2;
++
++/**
++ * <B>Comments:</B> Class 2
++ */
++public class C2 {}
+diff --git a/test/com/sun/javadoc/testIndex/TestIndex.java b/test/com/sun/javadoc/testIndex/TestIndex.java
+--- langtools/test/com/sun/javadoc/testIndex/TestIndex.java
++++ langtools/test/com/sun/javadoc/testIndex/TestIndex.java
+@@ -54,27 +54,27 @@
+ 
+         //Test index-all.html
+         {BUG_ID + FS + "index-all.html",
+-            "<A HREF=\"./pkg/C.html\" title=\"class in pkg\"><B>C</B></A>" +
++            "<A HREF=\"./pkg/C.html\" title=\"class in pkg\"><STRONG>C</STRONG></A>" +
+             " - Class in <A HREF=\"./pkg/package-summary.html\">pkg</A>"},
+         {BUG_ID + FS + "index-all.html",
+             "<A HREF=\"./pkg/Interface.html\" title=\"interface in pkg\">" +
+-            "<B>Interface</B></A> - Interface in " +
++            "<STRONG>Interface</STRONG></A> - Interface in " +
+             "<A HREF=\"./pkg/package-summary.html\">pkg</A>"},
+         {BUG_ID + FS + "index-all.html",
+             "<A HREF=\"./pkg/AnnotationType.html\" title=\"annotation in pkg\">" +
+-            "<B>AnnotationType</B></A> - Annotation Type in " +
++            "<STRONG>AnnotationType</STRONG></A> - Annotation Type in " +
+             "<A HREF=\"./pkg/package-summary.html\">pkg</A>"},
+         {BUG_ID + FS + "index-all.html",
+             "<A HREF=\"./pkg/Coin.html\" title=\"enum in pkg\">" +
+-            "<B>Coin</B></A> - Enum in " +
++            "<STRONG>Coin</STRONG></A> - Enum in " +
+             "<A HREF=\"./pkg/package-summary.html\">pkg</A>"},
+         {BUG_ID + FS + "index-all.html",
+             "Class in <A HREF=\"./package-summary.html\">&lt;Unnamed&gt;</A>"},
+         {BUG_ID + FS + "index-all.html",
+-            "<DT><A HREF=\"./pkg/C.html#Java\"><B>Java</B></A> - " + NL +
++            "<DT><A HREF=\"./pkg/C.html#Java\"><STRONG>Java</STRONG></A> - " + NL +
+             "Static variable in class pkg.<A HREF=\"./pkg/C.html\" title=\"class in pkg\">C</A>" + NL +
+             "<DD>&nbsp;" + NL +
+-            "<DT><A HREF=\"./pkg/C.html#JDK\"><B>JDK</B></A> - " + NL +
++            "<DT><A HREF=\"./pkg/C.html#JDK\"><STRONG>JDK</STRONG></A> - " + NL +
+             "Static variable in class pkg.<A HREF=\"./pkg/C.html\" title=\"class in pkg\">C</A>" + NL +
+             "<DD>&nbsp;"},
+     };
+diff --git a/test/com/sun/javadoc/testInterface/TestInterface.java b/test/com/sun/javadoc/testInterface/TestInterface.java
+--- langtools/test/com/sun/javadoc/testInterface/TestInterface.java
++++ langtools/test/com/sun/javadoc/testInterface/TestInterface.java
+@@ -48,14 +48,14 @@
+     //Input for string search tests.
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "Interface.html",
+-            "int <B>method</B>()"},
++            "int <STRONG>method</STRONG>()"},
+         {BUG_ID + FS + "pkg" + FS + "Interface.html",
+-            "static final int <B>field</B>"},
++            "static final int <STRONG>field</STRONG>"},
+ 
+ 
+         // Make sure known implementing class list is correct and omits type parameters.
+         {BUG_ID + FS + "pkg" + FS + "Interface.html",
+-            "<DT><B>All Known Implementing Classes:</B> " +
++            "<DT><STRONG>All Known Implementing Classes:</STRONG> " +
+             "<DD><A HREF=\"../pkg/Child.html\" " +
+             "title=\"class in pkg\">Child</A>, " +
+             "<A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">" +
+@@ -63,34 +63,34 @@
+ 
+          // Make sure "All Implemented Interfaces": has substituted type parameters
+          {BUG_ID + FS + "pkg" + FS + "Child.html",
+-            "<B>All Implemented Interfaces:</B> <DD><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;T&gt;"
++            "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;T&gt;"
+          },
+          //Make sure Class Tree has substituted type parameters.
+          {BUG_ID + FS + "pkg" + FS + "Child.html",
+             "<PRE>" + NL +
+             "java.lang.Object" + NL +
+             "  <IMG SRC=\"../resources/inherit.gif\" ALT=\"extended by \"><A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">pkg.Parent</A>&lt;T&gt;" + NL +
+-            "      <IMG SRC=\"../resources/inherit.gif\" ALT=\"extended by \"><B>pkg.Child&lt;T&gt;</B>" + NL +
++            "      <IMG SRC=\"../resources/inherit.gif\" ALT=\"extended by \"><STRONG>pkg.Child&lt;T&gt;</STRONG>" + NL +
+             "</PRE>"
+          },
+          //Make sure "Direct Know Subclasses" omits type parameters
+         {BUG_ID + FS + "pkg" + FS + "Parent.html",
+-            "<B>Direct Known Subclasses:</B> <DD><A HREF=\"../pkg/Child.html\" title=\"class in pkg\">Child</A>"
++            "<STRONG>Direct Known Subclasses:</STRONG> <DD><A HREF=\"../pkg/Child.html\" title=\"class in pkg\">Child</A>"
+         },
+         //Make sure "Specified By" has substituted type parameters.
+         {BUG_ID + FS + "pkg" + FS + "Child.html",
+-            "<B>Specified by:</B><DD><CODE><A HREF=\"../pkg/Interface.html#method()\">method</A></CODE> in interface <CODE><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
++            "<STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"../pkg/Interface.html#method()\">method</A></CODE> in interface <CODE><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
+          },
+         //Make sure "Overrides" has substituted type parameters.
+         {BUG_ID + FS + "pkg" + FS + "Child.html",
+-            "<B>Overrides:</B><DD><CODE><A HREF=\"../pkg/Parent.html#method()\">method</A></CODE> in class <CODE><A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">Parent</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
++            "<STRONG>Overrides:</STRONG><DD><CODE><A HREF=\"../pkg/Parent.html#method()\">method</A></CODE> in class <CODE><A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">Parent</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
+          },
+     };
+     private static final String[][] NEGATED_TEST = {
+         {BUG_ID + FS + "pkg" + FS + "Interface.html",
+-            "public int <B>method</B>()"},
++            "public int <STRONG>method</STRONG>()"},
+         {BUG_ID + FS + "pkg" + FS + "Interface.html",
+-            "public static final int <B>field</B>"},
++            "public static final int <STRONG>field</STRONG>"},
+     };
+ 
+     /**
+diff --git a/test/com/sun/javadoc/testJavascript/TestJavascript.java b/test/com/sun/javadoc/testJavascript/TestJavascript.java
+--- langtools/test/com/sun/javadoc/testJavascript/TestJavascript.java
++++ langtools/test/com/sun/javadoc/testJavascript/TestJavascript.java
+@@ -45,9 +45,9 @@
+     //Input for string search tests.
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<A HREF=\"../index.html?pkg/C.html\" target=\"_top\"><B>FRAMES</B></A>"},
++            "<A HREF=\"../index.html?pkg/C.html\" target=\"_top\"><STRONG>FRAMES</STRONG></A>"},
+         {BUG_ID + FS + "TestJavascript.html",
+-            "<A HREF=\"index.html?TestJavascript.html\" target=\"_top\"><B>FRAMES</B></A>"},
++            "<A HREF=\"index.html?TestJavascript.html\" target=\"_top\"><STRONG>FRAMES</STRONG></A>"},
+         {BUG_ID + FS + "index.html",
+             "<SCRIPT type=\"text/javascript\">" + NL +
+                         "    targetPage = \"\" + window.location.search;" + NL +
+diff --git a/test/com/sun/javadoc/testLinkOption/TestLinkOption.java b/test/com/sun/javadoc/testLinkOption/TestLinkOption.java
+--- langtools/test/com/sun/javadoc/testLinkOption/TestLinkOption.java
++++ langtools/test/com/sun/javadoc/testLinkOption/TestLinkOption.java
+@@ -63,7 +63,7 @@
+             "title=\"class or interface in java.lang\">Object</A>&nbsp;p3)"
+         },
+         {BUG_ID + "-1" + FS + "java" + FS + "lang" + FS + "StringBuilderChild.html",
+-                "public abstract class <B>StringBuilderChild</B><DT>extends <A HREF=\"http://java.sun.com/j2se/1.4/docs/api/java/lang/Object.html?is-external=true\" title=\"class or interface in java.lang\">Object</A>"
++                "public abstract class <STRONG>StringBuilderChild</STRONG><DT>extends <A HREF=\"http://java.sun.com/j2se/1.4/docs/api/java/lang/Object.html?is-external=true\" title=\"class or interface in java.lang\">Object</A>"
+         },
+ 
+     };
+diff --git a/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java b/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java
+--- langtools/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java
++++ langtools/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java
+@@ -59,7 +59,7 @@
+             " Link to another inner class: <A HREF=\"../pkg/C.InnerC2.html\" title=\"class in pkg\"><CODE>C.InnerC2</CODE></A>"
+         },
+         {BUG_ID + FS + "pkg" + FS + "C.InnerC2.html",
+-            "Enclosing class:</B><DD><A HREF=\"../pkg/C.html\" title=\"class in pkg\">C</A>"
++            "Enclosing class:</STRONG><DD><A HREF=\"../pkg/C.html\" title=\"class in pkg\">C</A>"
+         },
+     };
+     private static final String[][] NEGATED_TEST = {
+diff --git a/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java b/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java
+--- langtools/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java
++++ langtools/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java
+@@ -64,13 +64,17 @@
+ 
+         // New labels as of 1.5.0
+         {BUG_ID + FS + "pkg" + FS + "SubClass.html",
+-         "<B>Nested classes/interfaces inherited from class pkg." +         "<A HREF=\"../pkg/BaseClass.html\" title=\"class in pkg\">" +         "BaseClass</A></B>"},
++         "<STRONG>Nested classes/interfaces inherited from class pkg." +
++         "<A HREF=\"../pkg/BaseClass.html\" title=\"class in pkg\">" +
++         "BaseClass</A></STRONG>"},
+         {BUG_ID + FS + "pkg" + FS + "SubClass.html",
+-         "<B>Nested classes/interfaces inherited from interface pkg." +         "<A HREF=\"../pkg/BaseInterface.html\" title=\"interface in pkg\">" +         "BaseInterface</A></B>"},
++         "<STRONG>Nested classes/interfaces inherited from interface pkg." +
++         "<A HREF=\"../pkg/BaseInterface.html\" title=\"interface in pkg\">" +
++         "BaseInterface</A></STRONG>"},
+ 
+          // Test overriding/implementing methods with generic parameters.
+                  {BUG_ID + FS + "pkg" + FS + "BaseClass.html",
+-         "<DT><B>Specified by:</B><DD><CODE><A HREF=\"../pkg/BaseInterface.html#getAnnotation(java.lang.Class)\">getAnnotation</A></CODE> in interface <CODE><A HREF=\"../pkg/BaseInterface.html\" title=\"interface in pkg\">BaseInterface</A></CODE></DL>"},
++         "<DT><STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"../pkg/BaseInterface.html#getAnnotation(java.lang.Class)\">getAnnotation</A></CODE> in interface <CODE><A HREF=\"../pkg/BaseInterface.html\" title=\"interface in pkg\">BaseInterface</A></CODE></DL>"},
+ 
+          // Test diamond inheritence member summary (6256068)
+                  {BUG_ID + FS + "diamond" + FS + "Z.html",
+diff --git a/test/com/sun/javadoc/testMemberSummary/TestMemberSummary.java b/test/com/sun/javadoc/testMemberSummary/TestMemberSummary.java
+--- langtools/test/com/sun/javadoc/testMemberSummary/TestMemberSummary.java
++++ langtools/test/com/sun/javadoc/testMemberSummary/TestMemberSummary.java
+@@ -50,14 +50,14 @@
+         {BUG_ID + FS + "pkg" + FS + "PublicChild.html",
+             "<CODE>&nbsp;<A HREF=\"../pkg/PublicChild.html\" " +
+             "title=\"class in pkg\">PublicChild</A></CODE></FONT></TD>" + NL +
+-            "<TD><CODE><B><A HREF=\"../pkg/PublicChild.html#" +
+-            "returnTypeTest()\">returnTypeTest</A></B>()</CODE>"
++            "<TD><CODE><STRONG><A HREF=\"../pkg/PublicChild.html#" +
++            "returnTypeTest()\">returnTypeTest</A></STRONG>()</CODE>"
+         },
+         // Check return type in member detail.
+         {BUG_ID + FS + "pkg" + FS + "PublicChild.html",
+             "public <A HREF=\"../pkg/PublicChild.html\" " +
+             "title=\"class in pkg\">PublicChild</A> " +
+-            "<B>returnTypeTest</B>()"
++            "<STRONG>returnTypeTest</STRONG>()"
+         },
+ 
+          // Legacy anchor dimensions (6290760)
+diff --git a/test/com/sun/javadoc/testNavagation/TestNavagation.java b/test/com/sun/javadoc/testNavagation/TestNavagation.java
+--- langtools/test/com/sun/javadoc/testNavagation/TestNavagation.java
++++ langtools/test/com/sun/javadoc/testNavagation/TestNavagation.java
+@@ -47,17 +47,17 @@
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "A.html", "&nbsp;PREV CLASS&nbsp;"},
+         {BUG_ID + FS + "pkg" + FS + "A.html",
+-            "<A HREF=\"../pkg/C.html\" title=\"class in pkg\"><B>NEXT CLASS</B></A>"},
++            "<A HREF=\"../pkg/C.html\" title=\"class in pkg\"><STRONG>NEXT CLASS</STRONG></A>"},
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<A HREF=\"../pkg/A.html\" title=\"annotation in pkg\"><B>PREV CLASS</B></A>"},
++            "<A HREF=\"../pkg/A.html\" title=\"annotation in pkg\"><STRONG>PREV CLASS</STRONG></A>"},
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<A HREF=\"../pkg/E.html\" title=\"enum in pkg\"><B>NEXT CLASS</B></A>"},
++            "<A HREF=\"../pkg/E.html\" title=\"enum in pkg\"><STRONG>NEXT CLASS</STRONG></A>"},
+         {BUG_ID + FS + "pkg" + FS + "E.html",
+-            "<A HREF=\"../pkg/C.html\" title=\"class in pkg\"><B>PREV CLASS</B></A>"},
++            "<A HREF=\"../pkg/C.html\" title=\"class in pkg\"><STRONG>PREV CLASS</STRONG></A>"},
+         {BUG_ID + FS + "pkg" + FS + "E.html",
+-            "<A HREF=\"../pkg/I.html\" title=\"interface in pkg\"><B>NEXT CLASS</B></A>"},
++            "<A HREF=\"../pkg/I.html\" title=\"interface in pkg\"><STRONG>NEXT CLASS</STRONG></A>"},
+         {BUG_ID + FS + "pkg" + FS + "I.html",
+-            "<A HREF=\"../pkg/E.html\" title=\"enum in pkg\"><B>PREV CLASS</B></A>"},
++            "<A HREF=\"../pkg/E.html\" title=\"enum in pkg\"><STRONG>PREV CLASS</STRONG></A>"},
+         {BUG_ID + FS + "pkg" + FS + "I.html", "&nbsp;NEXT CLASS"},
+         // Test for 4664607
+         {BUG_ID + FS + "pkg" + FS + "I.html",
+diff --git a/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java b/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java
+--- langtools/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java
++++ langtools/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java
+@@ -54,14 +54,14 @@
+             {BUG_ID + FS + "pkg" + FS + "Coin.html", "Enum Coin</H2>"},
+             //Make sure enum signature is correct.
+             {BUG_ID + FS + "pkg" + FS + "Coin.html", "public enum "+
+-                "<B>Coin</B><DT>extends java.lang.Enum&lt;" +
++                "<STRONG>Coin</STRONG><DT>extends java.lang.Enum&lt;" +
+                 "<A HREF=\"../pkg/Coin.html\" title=\"enum in pkg\">Coin</A>&gt;"
+             },
+             //Check for enum constant section
+-            {BUG_ID + FS + "pkg" + FS + "Coin.html", "<B>Enum Constant Summary</B>"},
++            {BUG_ID + FS + "pkg" + FS + "Coin.html", "<STRONG>Enum Constant Summary</STRONG>"},
+             //Detail for enum constant
+             {BUG_ID + FS + "pkg" + FS + "Coin.html",
+-                "<B><A HREF=\"../pkg/Coin.html#Dime\">Dime</A></B>"},
++                "<STRONG><A HREF=\"../pkg/Coin.html#Dime\">Dime</A></STRONG>"},
+             //Automatically insert documentation for values() and valueOf().
+             {BUG_ID + FS + "pkg" + FS + "Coin.html",
+                 "Returns an array containing the constants of this enum type,"},
+@@ -79,11 +79,11 @@
+                 "Class TypeParameters&lt;E&gt;</H2>"},
+             //Check class type parameters section.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<DT><B>Type Parameters:</B><DD><CODE>E</CODE> - " +
++                "<DT><STRONG>Type Parameters:</STRONG><DD><CODE>E</CODE> - " +
+                 "the type parameter for this class."},
+             //Type parameters in @see/@link
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<DT><B>See Also:</B><DD><A HREF=\"../pkg/TypeParameters.html\" " +
++                "<DT><STRONG>See Also:</STRONG><DD><A HREF=\"../pkg/TypeParameters.html\" " +
+                     "title=\"class in pkg\"><CODE>TypeParameters</CODE></A></DL>"},
+             //Method that uses class type parameter.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+@@ -91,13 +91,13 @@
+                     "parameter in TypeParameters\">E</A>&nbsp;param)"},
+             //Method type parameter section.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<B>Type Parameters:</B><DD><CODE>T</CODE> - This is the first " +
++                "<STRONG>Type Parameters:</STRONG><DD><CODE>T</CODE> - This is the first " +
+                     "type parameter.<DD><CODE>V</CODE> - This is the second type " +
+                     "parameter."},
+             //Signature of method with type parameters
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+                 "public &lt;T extends java.util.List,V&gt; " +
+-                    "java.lang.String[] <B>methodThatHasTypeParameters</B>"},
++                    "java.lang.String[] <STRONG>methodThatHasTypeParameters</STRONG>"},
+             //Wildcard testing.
+             {BUG_ID + FS + "pkg" + FS + "Wildcards.html",
+                 "<A HREF=\"../pkg/TypeParameters.html\" title=\"class in pkg\">" +
+@@ -116,18 +116,18 @@
+ 
+             //Signature of subclass that has type parameters.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameterSubClass.html",
+-                "public class <B>TypeParameterSubClass&lt;T extends java.lang.String&gt;" +
+-                "</B><DT>extends <A HREF=\"../pkg/TypeParameterSuperClass.html\" " +
++                "public class <STRONG>TypeParameterSubClass&lt;T extends java.lang.String&gt;" +
++                "</STRONG><DT>extends <A HREF=\"../pkg/TypeParameterSuperClass.html\" " +
+                 "title=\"class in pkg\">TypeParameterSuperClass</A>&lt;T&gt;"},
+ 
+             //Interface generic parameter substitution
+             //Signature of subclass that has type parameters.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<B>All Implemented Interfaces:</B> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;E&gt;, <A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;E&gt;</DD>"},
++                "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;E&gt;, <A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;E&gt;</DD>"},
+             {BUG_ID + FS + "pkg" + FS + "SuperInterface.html",
+-                "<B>All Known Subinterfaces:</B> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;V&gt;</DD>"},
++                "<STRONG>All Known Subinterfaces:</STRONG> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;V&gt;</DD>"},
+             {BUG_ID + FS + "pkg" + FS + "SubInterface.html",
+-                "<B>All Superinterfaces:</B> <DD><A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;V&gt;</DD>"},
++                "<STRONG>All Superinterfaces:</STRONG> <DD><A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;V&gt;</DD>"},
+ 
+             //=================================
+             // VAR ARG TESTING
+@@ -155,18 +155,18 @@
+                 "Annotation Type AnnotationType</H2>"},
+             //Make sure the signature is correct.
+             {BUG_ID + FS + "pkg" + FS + "AnnotationType.html",
+-                "public @interface <B>AnnotationType</B>"},
++                "public @interface <STRONG>AnnotationType</STRONG>"},
+             //Make sure member summary headings are correct.
+             {BUG_ID + FS + "pkg" + FS + "AnnotationType.html",
+-                "<B>Required Element Summary</B>"},
++                "<STRONG>Required Element Summary</STRONG>"},
+             {BUG_ID + FS + "pkg" + FS + "AnnotationType.html",
+-                "<B>Optional Element Summary</B>"},
++                "<STRONG>Optional Element Summary</STRONG>"},
+             //Make sure element detail heading is correct
+             {BUG_ID + FS + "pkg" + FS + "AnnotationType.html",
+                 "Element Detail"},
+             //Make sure default annotation type value is printed when necessary.
+             {BUG_ID + FS + "pkg" + FS + "AnnotationType.html",
+-                "<B>Default:</B><DD>\"unknown\"</DD>"},
++                "<STRONG>Default:</STRONG><DD>\"unknown\"</DD>"},
+ 
+             //=================================
+             // ANNOTATION TYPE USAGE TESTING
+@@ -182,40 +182,40 @@
+                 "<FONT SIZE=\"-1\">" +
+                 "<A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Class Annotation\","+NL +
+                 "                <A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)"+NL +
+-                "</FONT>public class <B>AnnotationTypeUsage</B><DT>extends java.lang.Object</DL>"},
++                "</FONT>public class <STRONG>AnnotationTypeUsage</STRONG><DT>extends java.lang.Object</DL>"},
+ 
+             //FIELD
+             {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+                 "<FONT SIZE=\"-1\">" +
+                 "<A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Field Annotation\","+NL +
+                 "                <A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)"+NL +
+-                "</FONT>public int <B>field</B>"},
++                "</FONT>public int <STRONG>field</STRONG>"},
+ 
+             //CONSTRUCTOR
+             {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+                 "<FONT SIZE=\"-1\">" +
+                 "<A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Constructor Annotation\","+NL +
+                 "                <A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)"+NL +
+-                "</FONT>public <B>AnnotationTypeUsage</B>()"},
++                "</FONT>public <STRONG>AnnotationTypeUsage</STRONG>()"},
+ 
+             //METHOD
+             {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+                 "<FONT SIZE=\"-1\">" +
+                 "<A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Method Annotation\","+NL +
+                 "                <A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)"+NL +
+-                "</FONT>public void <B>method</B>()"},
++                "</FONT>public void <STRONG>method</STRONG>()"},
+ 
+             //METHOD PARAMS
+             {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+                 "<PRE>" + NL +
+-                "public void <B>methodWithParams</B>(<FONT SIZE=\"-1\"><A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Parameter Annotation\",<A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)</FONT>" + NL +
++                "public void <STRONG>methodWithParams</STRONG>(<FONT SIZE=\"-1\"><A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Parameter Annotation\",<A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)</FONT>" + NL +
+                 "                             int&nbsp;documented," + NL +
+                 "                             int&nbsp;undocmented)</PRE>"},
+ 
+             //CONSTRUCTOR PARAMS
+             {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+                 "<PRE>" + NL +
+-                                "public <B>AnnotationTypeUsage</B>(<FONT SIZE=\"-1\"><A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Constructor Param Annotation\",<A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)</FONT>" + NL +
++                                "public <STRONG>AnnotationTypeUsage</STRONG>(<FONT SIZE=\"-1\"><A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Constructor Param Annotation\",<A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)</FONT>" + NL +
+                                 "                           int&nbsp;documented," + NL +
+                 "                           int&nbsp;undocmented)</PRE>"},
+ 
+@@ -270,7 +270,7 @@
+             {BUG_ID + FS + "pkg1" + FS + "B.html",
+                 "<PRE><FONT SIZE=\"-1\"><A HREF=\"../pkg1/A.html\" title=\"annotation in pkg1\">@A</A>"},
+             {BUG_ID + FS + "pkg1" + FS + "B.html",
+-                "</FONT>public interface <B>B</B></DL>" + NL +
++                "</FONT>public interface <STRONG>B</STRONG></DL>" + NL +
+                     "</PRE>"},
+ 
+ 
+@@ -278,7 +278,7 @@
+             // Handle multiple bounds.
+             //==============================================================
+             {BUG_ID + FS + "pkg" + FS + "MultiTypeParameters.html",
+-                "public &lt;T extends java.lang.Number & java.lang.Runnable&gt; T <B>foo</B>(T&nbsp;t)"},
++                "public &lt;T extends java.lang.Number & java.lang.Runnable&gt; T <STRONG>foo</STRONG>(T&nbsp;t)"},
+ 
+             //==============================================================
+             // Test Class-Use Documenation for Type Parameters.
+@@ -289,13 +289,13 @@
+                  "<TH ALIGN=\"left\" COLSPAN=\"2\">Classes in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo.html\" title=\"class in pkg2\">Foo</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo.html",
+-                "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest1.html\" title=\"class in pkg2\">ClassUseTest1&lt;T extends Foo & Foo2&gt;</A></B></CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest1.html\" title=\"class in pkg2\">ClassUseTest1&lt;T extends Foo & Foo2&gt;</A></STRONG></CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo.html\" title=\"class in pkg2\">Foo</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo.html",
+-                "<TD><CODE><B>ClassUseTest1.</B><B><A HREF=\"../../pkg2/ClassUseTest1.html#method(T)\">method</A></B>(T&nbsp;t)</CODE>"
++                "<TD><CODE><STRONG>ClassUseTest1.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest1.html#method(T)\">method</A></STRONG>(T&nbsp;t)</CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Fields in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo.html\" title=\"class in pkg2\">Foo</A></FONT></TH>"
+@@ -315,13 +315,13 @@
+             "<TH ALIGN=\"left\" COLSPAN=\"2\">Classes in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo2.html\" title=\"interface in pkg2\">Foo2</A></FONT></TH>"
+            },
+            {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo2.html",
+-            "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest1.html\" title=\"class in pkg2\">ClassUseTest1&lt;T extends Foo & Foo2&gt;</A></B></CODE>"
++            "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest1.html\" title=\"class in pkg2\">ClassUseTest1&lt;T extends Foo & Foo2&gt;</A></STRONG></CODE>"
+            },
+            {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo2.html",
+                "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo2.html\" title=\"interface in pkg2\">Foo2</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo2.html",
+-               "<TD><CODE><B>ClassUseTest1.</B><B><A HREF=\"../../pkg2/ClassUseTest1.html#method(T)\">method</A></B>(T&nbsp;t)</CODE>"
++               "<TD><CODE><STRONG>ClassUseTest1.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest1.html#method(T)\">method</A></STRONG>(T&nbsp;t)</CODE>"
+             },
+ 
+             //ClassUseTest2: <T extends ParamTest<Foo3>>
+@@ -329,13 +329,13 @@
+               "<TH ALIGN=\"left\" COLSPAN=\"2\">Classes in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/ParamTest.html\" title=\"class in pkg2\">ParamTest</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest.html",
+-              "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest2.html\" title=\"class in pkg2\">ClassUseTest2&lt;T extends ParamTest&lt;<A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A>&gt;&gt;</A></B></CODE>"
++              "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest2.html\" title=\"class in pkg2\">ClassUseTest2&lt;T extends ParamTest&lt;<A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A>&gt;&gt;</A></STRONG></CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest.html",
+               "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/ParamTest.html\" title=\"class in pkg2\">ParamTest</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest.html",
+-              "<TD><CODE><B>ClassUseTest2.</B><B><A HREF=\"../../pkg2/ClassUseTest2.html#method(T)\">method</A></B>(T&nbsp;t)</CODE>"
++              "<TD><CODE><STRONG>ClassUseTest2.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest2.html#method(T)\">method</A></STRONG>(T&nbsp;t)</CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest.html",
+               "<TH ALIGN=\"left\" COLSPAN=\"2\">Fields in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> declared as <A HREF=\"../../pkg2/ParamTest.html\" title=\"class in pkg2\">ParamTest</A></FONT></TH>"
+@@ -354,13 +354,13 @@
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Classes in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo3.html",
+-                "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest2.html\" title=\"class in pkg2\">ClassUseTest2&lt;T extends ParamTest&lt;<A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A>&gt;&gt;</A></B></CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest2.html\" title=\"class in pkg2\">ClassUseTest2&lt;T extends ParamTest&lt;<A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A>&gt;&gt;</A></STRONG></CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo3.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo3.html",
+-                "<TD><CODE><B>ClassUseTest2.</B><B><A HREF=\"../../pkg2/ClassUseTest2.html#method(T)\">method</A></B>(T&nbsp;t)</CODE>"
++                "<TD><CODE><STRONG>ClassUseTest2.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest2.html#method(T)\">method</A></STRONG>(T&nbsp;t)</CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo3.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> that return types with arguments of type <A HREF=\"../../pkg2/Foo3.html\" title=\"class in pkg2\">Foo3</A></FONT></TH>"
+@@ -374,13 +374,13 @@
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Classes in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/ParamTest2.html\" title=\"class in pkg2\">ParamTest2</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest2.html",
+-                "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest3.html\" title=\"class in pkg2\">ClassUseTest3&lt;T extends ParamTest2&lt;java.util.List&lt;? extends Foo4&gt;&gt;&gt;</A></B></CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest3.html\" title=\"class in pkg2\">ClassUseTest3&lt;T extends ParamTest2&lt;java.util.List&lt;? extends Foo4&gt;&gt;&gt;</A></STRONG></CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest2.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/ParamTest2.html\" title=\"class in pkg2\">ParamTest2</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest2.html",
+-                "<TD><CODE><B>ClassUseTest3.</B><B><A HREF=\"../../pkg2/ClassUseTest3.html#method(T)\">method</A></B>(T&nbsp;t)</CODE>"
++                "<TD><CODE><STRONG>ClassUseTest3.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest3.html#method(T)\">method</A></STRONG>(T&nbsp;t)</CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "ParamTest2.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/ParamTest2.html\" title=\"class in pkg2\">ParamTest2</A></FONT></TH>"
+@@ -393,13 +393,13 @@
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Classes in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo4.html",
+-                "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest3.html\" title=\"class in pkg2\">ClassUseTest3&lt;T extends ParamTest2&lt;java.util.List&lt;? extends Foo4&gt;&gt;&gt;</A></B></CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest3.html\" title=\"class in pkg2\">ClassUseTest3&lt;T extends ParamTest2&lt;java.util.List&lt;? extends Foo4&gt;&gt;&gt;</A></STRONG></CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo4.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type parameters of type <A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A></FONT></TH>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo4.html",
+-                "<TD><CODE><B>ClassUseTest3.</B><B><A HREF=\"../../pkg2/ClassUseTest3.html#method(T)\">method</A></B>(T&nbsp;t)</CODE>"
++                "<TD><CODE><STRONG>ClassUseTest3.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest3.html#method(T)\">method</A></STRONG>(T&nbsp;t)</CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo4.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Methods in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> that return types with arguments of type <A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A></FONT></TH>"
+@@ -415,13 +415,13 @@
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+                 "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">" + NL +
+                 "<CODE>&nbsp;void</CODE></FONT></TD>" + NL +
+-                "<TD><CODE><B>ClassUseTest3.</B><B><A HREF=\"../../pkg2/ClassUseTest3.html#method(java.util.Set)\">method</A></B>(java.util.Set&lt;<A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A>&gt;&nbsp;p)</CODE>"
++                "<TD><CODE><STRONG>ClassUseTest3.</STRONG><STRONG><A HREF=\"../../pkg2/ClassUseTest3.html#method(java.util.Set)\">method</A></STRONG>(java.util.Set&lt;<A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A>&gt;&nbsp;p)</CODE>"
+             },
+             {BUG_ID + FS + "pkg2" + FS + "class-use" + FS + "Foo4.html",
+                 "<TH ALIGN=\"left\" COLSPAN=\"2\">Constructor parameters in <A HREF=\"../../pkg2/package-summary.html\">pkg2</A> with type arguments of type <A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A></FONT></TH>" + NL +
+                 "</TR>" + NL +
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+-                "<TD><CODE><B><A HREF=\"../../pkg2/ClassUseTest3.html#ClassUseTest3(java.util.Set)\">ClassUseTest3</A></B>(java.util.Set&lt;<A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A>&gt;&nbsp;p)</CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg2/ClassUseTest3.html#ClassUseTest3(java.util.Set)\">ClassUseTest3</A></STRONG>(java.util.Set&lt;<A HREF=\"../../pkg2/Foo4.html\" title=\"class in pkg2\">Foo4</A>&gt;&nbsp;p)</CODE>"
+             },
+ 
+             //=================================
+@@ -432,7 +432,7 @@
+                 "Packages with annotations of type <A HREF=\"../../pkg/AnnotationType.html\" title=\"annotation in pkg\">AnnotationType</A></FONT></TH>" + NL +
+                 "</TR>" + NL +
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+-                "<TD><A HREF=\"../../pkg/package-summary.html\"><B>pkg</B></A></TD>"
++                "<TD><A HREF=\"../../pkg/package-summary.html\"><STRONG>pkg</STRONG></A></TD>"
+             },
+ 
+             {BUG_ID + FS + "pkg" + FS + "class-use" + FS + "AnnotationType.html",
+@@ -441,7 +441,7 @@
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+                 "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">" + NL +
+                 "<CODE>&nbsp;class</CODE></FONT></TD>" + NL +
+-                "<TD><CODE><B><A HREF=\"../../pkg/AnnotationTypeUsage.html\" title=\"class in pkg\">AnnotationTypeUsage</A></B></CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg/AnnotationTypeUsage.html\" title=\"class in pkg\">AnnotationTypeUsage</A></STRONG></CODE>"
+             },
+ 
+             {BUG_ID + FS + "pkg" + FS + "class-use" + FS + "AnnotationType.html",
+@@ -450,7 +450,7 @@
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+                 "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">" + NL +
+                 "<CODE>&nbsp;int</CODE></FONT></TD>" + NL +
+-                "<TD><CODE><B>AnnotationTypeUsage.</B><B><A HREF=\"../../pkg/AnnotationTypeUsage.html#field\">field</A></B></CODE>"
++                "<TD><CODE><STRONG>AnnotationTypeUsage.</STRONG><STRONG><A HREF=\"../../pkg/AnnotationTypeUsage.html#field\">field</A></STRONG></CODE>"
+             },
+ 
+             {BUG_ID + FS + "pkg" + FS + "class-use" + FS + "AnnotationType.html",
+@@ -459,7 +459,7 @@
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+                 "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">" + NL +
+                 "<CODE>&nbsp;void</CODE></FONT></TD>" + NL +
+-                "<TD><CODE><B>AnnotationTypeUsage.</B><B><A HREF=\"../../pkg/AnnotationTypeUsage.html#method()\">method</A></B>()</CODE>"
++                "<TD><CODE><STRONG>AnnotationTypeUsage.</STRONG><STRONG><A HREF=\"../../pkg/AnnotationTypeUsage.html#method()\">method</A></STRONG>()</CODE>"
+             },
+ 
+             {BUG_ID + FS + "pkg" + FS + "class-use" + FS + "AnnotationType.html",
+@@ -468,7 +468,7 @@
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+                 "<TD ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"><FONT SIZE=\"-1\">" + NL +
+                 "<CODE>&nbsp;void</CODE></FONT></TD>" + NL +
+-                "<TD><CODE><B>AnnotationTypeUsage.</B><B><A HREF=\"../../pkg/AnnotationTypeUsage.html#methodWithParams(int, int)\">methodWithParams</A></B>(int&nbsp;documented," + NL +
++                "<TD><CODE><STRONG>AnnotationTypeUsage.</STRONG><STRONG><A HREF=\"../../pkg/AnnotationTypeUsage.html#methodWithParams(int, int)\">methodWithParams</A></STRONG>(int&nbsp;documented," + NL +
+                 "                 int&nbsp;undocmented)</CODE>"
+             },
+ 
+@@ -476,14 +476,14 @@
+                 "Constructors in <A HREF=\"../../pkg/package-summary.html\">pkg</A> with annotations of type <A HREF=\"../../pkg/AnnotationType.html\" title=\"annotation in pkg\">AnnotationType</A></FONT></TH>" + NL +
+                 "</TR>" + NL +
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+-                "<TD><CODE><B><A HREF=\"../../pkg/AnnotationTypeUsage.html#AnnotationTypeUsage()\">AnnotationTypeUsage</A></B>()</CODE>"
++                "<TD><CODE><STRONG><A HREF=\"../../pkg/AnnotationTypeUsage.html#AnnotationTypeUsage()\">AnnotationTypeUsage</A></STRONG>()</CODE>"
+             },
+ 
+             {BUG_ID + FS + "pkg" + FS + "class-use" + FS + "AnnotationType.html",
+                 "Constructor parameters in <A HREF=\"../../pkg/package-summary.html\">pkg</A> with annotations of type <A HREF=\"../../pkg/AnnotationType.html\" title=\"annotation in pkg\">AnnotationType</A></FONT></TH>" + NL +
+                 "</TR>" + NL +
+                 "<TR BGCOLOR=\"white\" CLASS=\"TableRowColor\">" + NL +
+-                "<TD><CODE><B><A HREF=\"../../pkg/AnnotationTypeUsage.html#AnnotationTypeUsage(int, int)\">AnnotationTypeUsage</A></B>(int&nbsp;documented," + NL +
++                "<TD><CODE><STRONG><A HREF=\"../../pkg/AnnotationTypeUsage.html#AnnotationTypeUsage(int, int)\">AnnotationTypeUsage</A></STRONG>(int&nbsp;documented," + NL +
+                 "                    int&nbsp;undocmented)</CODE>"
+             },
+ 
+@@ -491,13 +491,13 @@
+             // TYPE PARAMETER IN INDEX
+             //=================================
+             {BUG_ID + FS + "index-all.html",
+-                "<A HREF=\"./pkg2/Foo.html#method(java.util.Vector)\"><B>method(Vector&lt;Object&gt;)</B></A>"
++                "<A HREF=\"./pkg2/Foo.html#method(java.util.Vector)\"><STRONG>method(Vector&lt;Object&gt;)</STRONG></A>"
+             },
+             //=================================
+             // TYPE PARAMETER IN INDEX
+             //=================================
+             {BUG_ID + FS + "index-all.html",
+-                "<A HREF=\"./pkg2/Foo.html#method(java.util.Vector)\"><B>method(Vector&lt;Object&gt;)</B></A>"
++                "<A HREF=\"./pkg2/Foo.html#method(java.util.Vector)\"><STRONG>method(Vector&lt;Object&gt;)</STRONG></A>"
+             },
+         };
+     private static final String[][] NEGATED_TEST = {
+@@ -505,7 +505,7 @@
+         // ENUM TESTING
+         //=================================
+         //NO constructor section
+-        {BUG_ID + FS + "pkg" + FS + "Coin.html", "<B>Constructor Summary</B>"},
++        {BUG_ID + FS + "pkg" + FS + "Coin.html", "<STRONG>Constructor Summary</STRONG>"},
+         //=================================
+         // TYPE PARAMETER TESTING
+         //=================================
+@@ -525,28 +525,28 @@
+             "<FONT SIZE=\"-1\">" + NL +
+             "<A HREF=\"../pkg/AnnotationTypeUndocumented.html\" title=\"annotation in pkg\">@AnnotationTypeUndocumented</A>(<A HREF=\"../pkg/AnnotationType.html#optional\">optional</A>=\"Class Annotation\"," + NL +
+             "                <A HREF=\"../pkg/AnnotationType.html#required\">required</A>=1994)" + NL +
+-            "</FONT>public class <B>AnnotationTypeUsage</B><DT>extends java.lang.Object</DL>"},
++            "</FONT>public class <STRONG>AnnotationTypeUsage</STRONG><DT>extends java.lang.Object</DL>"},
+ 
+         //FIELD
+         {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+             "<FONT SIZE=\"-1\">" + NL +
+             "<A HREF=\"../pkg/AnnotationTypeUndocumented.html\" title=\"annotation in pkg\">@AnnotationTypeUndocumented</A>(<A HREF=\"../pkg/AnnotationType.html#optional\">optional</A>=\"Field Annotation\"," + NL +
+             "                <A HREF=\"../pkg/AnnotationType.html#required\">required</A>=1994)" + NL +
+-            "</FONT>public int <B>field</B>"},
++            "</FONT>public int <STRONG>field</STRONG>"},
+ 
+         //CONSTRUCTOR
+         {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+             "<FONT SIZE=\"-1\">" + NL +
+             "<A HREF=\"../pkg/AnnotationTypeUndocumented.html\" title=\"annotation in pkg\">@AnnotationTypeUndocumented</A>(<A HREF=\"../pkg/AnnotationType.html#optional\">optional</A>=\"Constructor Annotation\"," + NL +
+             "                <A HREF=\"../pkg/AnnotationType.html#required\">required</A>=1994)" + NL +
+-            "</FONT>public <B>AnnotationTypeUsage</B>()"},
++            "</FONT>public <STRONG>AnnotationTypeUsage</STRONG>()"},
+ 
+         //METHOD
+         {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+             "<FONT SIZE=\"-1\">" + NL +
+             "<A HREF=\"../pkg/AnnotationTypeUndocumented.html\" title=\"annotation in pkg\">@AnnotationTypeUndocumented</A>(<A HREF=\"../pkg/AnnotationType.html#optional\">optional</A>=\"Method Annotation\"," + NL +
+             "                <A HREF=\"../pkg/AnnotationType.html#required\">required</A>=1994)" + NL +
+-            "</FONT>public void <B>method</B>()"},
++            "</FONT>public void <STRONG>method</STRONG>()"},
+ 
+         //=================================
+         // Make sure annotation types do not
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenMethodDocCopy.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenMethodDocCopy.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenMethodDocCopy.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenMethodDocCopy.java
+@@ -46,9 +46,9 @@
+     //Input for string search tests.
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-            "<B>Description copied from class: <CODE>" +
++            "<STRONG>Description copied from class: <CODE>" +
+             "<A HREF=\"../pkg1/BaseClass.html#overridenMethodWithDocsToCopy()\">" +
+-            "BaseClass</A></CODE></B>"
++            "BaseClass</A></CODE></STRONG>"
+         }
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java
+@@ -40,11 +40,11 @@
+     private static final String[][] TEST = {
+         //The public method should be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The public method in different package should be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"}
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"}
+     };
+ 
+     private static final String[][] NEGATED_TEST = {
+@@ -52,20 +52,20 @@
+         //The package private method should be overriden since the base and sub class are in the same
+         //package.  However, the link should not show up because the package private methods are not documented.
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
+ 
+         //The private method in should not be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The private method in different package should not be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The package private method should not be overriden since the base and sub class are in
+         //different packages.
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
+     };
+ 
+     private static final String[] ARGS =
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java
+@@ -40,32 +40,32 @@
+     private static final String[][] TEST = {
+         //The public method should be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The public method in different package should be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The package private method should be overriden since the base and sub class are in the same
+         //package.
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
+     };
+ 
+     private static final String[][] NEGATED_TEST = {
+ 
+         //The private method in should not be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The private method in different package should not be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The package private method should not be overriden since the base and sub class are in
+         //different packages.
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
+     };
+ 
+     private static final String[] ARGS =
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java
+@@ -40,32 +40,32 @@
+     private static final String[][] TEST = {
+         //The public method should be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The package private method should be overriden since the base and sub class are in the same
+         //package.
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
+ 
+         //The public method in different package should be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+     };
+ 
+     private static final String[][] NEGATED_TEST = {
+ 
+         //The private method in should not be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The private method in different package should not be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The package private method should not be overriden since the base and sub class are in
+         //different packages.
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</B><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
++         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
+ 
+ 
+     };
+diff --git a/test/com/sun/javadoc/testPackagePage/TestPackagePage.java b/test/com/sun/javadoc/testPackagePage/TestPackagePage.java
+--- langtools/test/com/sun/javadoc/testPackagePage/TestPackagePage.java
++++ langtools/test/com/sun/javadoc/testPackagePage/TestPackagePage.java
+@@ -43,23 +43,24 @@
+         },
+         //With just one package, all general pages link to the single package page.
+         {BUG_ID + "-1" + FS + "com" + FS + "pkg" + FS + "C.html",
+-            "<A HREF=\"../../com/pkg/package-summary.html\">" +            "<FONT CLASS=\"NavBarFont1\"><B>Package</B></FONT></A>"
++            "<A HREF=\"../../com/pkg/package-summary.html\">" +
++            "<FONT CLASS=\"NavBarFont1\"><STRONG>Package</STRONG></FONT></A>"
+         },
+         {BUG_ID + "-1" + FS + "com" + FS + "pkg" + FS + "package-tree.html",
+             "<A HREF=\"../../com/pkg/package-summary.html\">" +
+-            "<FONT CLASS=\"NavBarFont1\"><B>Package</B></FONT></A>"
++            "<FONT CLASS=\"NavBarFont1\"><STRONG>Package</STRONG></FONT></A>"
+         },
+         {BUG_ID + "-1" + FS + "deprecated-list.html",
+             "<A HREF=\"com/pkg/package-summary.html\">" +
+-            "<FONT CLASS=\"NavBarFont1\"><B>Package</B></FONT></A>"
++            "<FONT CLASS=\"NavBarFont1\"><STRONG>Package</STRONG></FONT></A>"
+         },
+         {BUG_ID + "-1" + FS + "index-all.html",
+             "<A HREF=\"./com/pkg/package-summary.html\">" +
+-            "<FONT CLASS=\"NavBarFont1\"><B>Package</B></FONT></A>"
++            "<FONT CLASS=\"NavBarFont1\"><STRONG>Package</STRONG></FONT></A>"
+         },
+         {BUG_ID + "-1" + FS + "help-doc.html",
+             "<A HREF=\"com/pkg/package-summary.html\">" +
+-            "<FONT CLASS=\"NavBarFont1\"><B>Package</B></FONT></A>"
++            "<FONT CLASS=\"NavBarFont1\"><STRONG>Package</STRONG></FONT></A>"
+         },
+     };
+ 
+diff --git a/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java b/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java
+--- langtools/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java
++++ langtools/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java
+@@ -48,12 +48,12 @@
+     private static final String[][] TEST = {
+         //Regular param tags.
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<B>Parameters:</B><DD><CODE>param1</CODE> - testing 1 2 3." +
++            "<STRONG>Parameters:</STRONG><DD><CODE>param1</CODE> - testing 1 2 3." +
+                 "<DD><CODE>param2</CODE> - testing 1 2 3."
+         },
+         //Param tags that don't match with any real parameters.
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<B>Parameters:</B><DD><CODE><I>p1</I></CODE> - testing 1 2 3." +
++            "<STRONG>Parameters:</STRONG><DD><CODE><I>p1</I></CODE> - testing 1 2 3." +
+                 "<DD><CODE><I>p2</I></CODE> - testing 1 2 3."
+         },
+         //{@inherit} doc misuse does not cause doclet to throw exception.
+diff --git a/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java b/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java
+--- langtools/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java
++++ langtools/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java
+@@ -85,22 +85,22 @@
+             "<PRE>" + NL +
+                 "java.lang.Object" + NL +
+                 "  <IMG SRC=\"../resources/inherit.gif\" " +
+-                "ALT=\"extended by \"><B>pkg.PublicChild</B>" + NL +
++                "ALT=\"extended by \"><STRONG>pkg.PublicChild</STRONG>" + NL +
+             "</PRE>"
+         },
+ 
+         // Method is documented as though it is declared in the inheriting method.
+         {BUG_ID + "-1" + FS + "pkg" + FS + "PublicChild.html",
+-            "public void <B>methodInheritedFromParent</B>(int&nbsp;p1)"
++            "public void <STRONG>methodInheritedFromParent</STRONG>(int&nbsp;p1)"
+         },
+ 
+         //Make sure implemented interfaces from private superclass are inherited
+         {BUG_ID + "-1" + FS + "pkg" + FS + "PublicInterface.html",
+-            "<B>All Known Implementing Classes:</B> <DD><A HREF=\"../pkg/PublicChild.html\" " +
++            "<STRONG>All Known Implementing Classes:</STRONG> <DD><A HREF=\"../pkg/PublicChild.html\" " +
+             "title=\"class in pkg\">PublicChild</A>"},
+ 
+         {BUG_ID + "-1" + FS + "pkg" + FS + "PublicChild.html",
+-            "<B>All Implemented Interfaces:</B> <DD><A HREF=\"../pkg/PublicInterface.html\" " +
++            "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/PublicInterface.html\" " +
+             "title=\"interface in pkg\">PublicInterface</A>"},
+ 
+         //Generic interface method test.
+@@ -110,12 +110,12 @@
+     private static final String[][] NEGATED_TEST1 = {
+        // Should not document that a method overrides method from private class.
+       {BUG_ID + "-1" + FS + "pkg" + FS + "PublicChild.html",
+-        "<B>Overrides:</B>"},
++        "<STRONG>Overrides:</STRONG>"},
+       // Should not document that a method specified by private interface.
+       {BUG_ID + "-1" + FS + "pkg" + FS + "PublicChild.html",
+-        "<B>Specified by:</B>"},
++        "<STRONG>Specified by:</STRONG>"},
+       {BUG_ID + "-1" + FS + "pkg" + FS + "PublicInterface.html",
+-        "<B>Specified by:</B>"},
++        "<STRONG>Specified by:</STRONG>"},
+       // Should not mention that any documentation was copied.
+       {BUG_ID + "-1" + FS + "pkg" + FS + "PublicChild.html",
+         "Description copied from"},
+@@ -137,7 +137,7 @@
+         //Do not inherit private interface method with generic parameters.
+         //This method has been implemented.
+         {BUG_ID + "-1" + FS + "pkg2" + FS + "C.html",
+-            "<B><A HREF=\"../pkg2/I.html#hello(T)\">hello</A></B>"},
++            "<STRONG><A HREF=\"../pkg2/I.html#hello(T)\">hello</A></STRONG>"},
+     };
+ 
+     // Test output when -private flag is used.
+@@ -174,14 +174,14 @@
+         },
+         // Should document that a method overrides method from private class.
+        {BUG_ID + "-2" + FS + "pkg" + FS + "PublicChild.html",
+-            "<B>Overrides:</B><DD><CODE>" +
++            "<STRONG>Overrides:</STRONG><DD><CODE>" +
+             "<A HREF=\"../pkg/PrivateParent.html#methodOverridenFromParent(char[], int, T, V, java.util.List)\">" +
+             "methodOverridenFromParent</A></CODE> in class <CODE>" +
+             "<A HREF=\"../pkg/PrivateParent.html\" title=\"class in pkg\">" +
+             "PrivateParent</A></CODE></DL>"},
+        // Should document that a method is specified by private interface.
+        {BUG_ID + "-2" + FS + "pkg" + FS + "PublicChild.html",
+-            "<B>Specified by:</B><DD><CODE>" +
++            "<STRONG>Specified by:</STRONG><DD><CODE>" +
+             "<A HREF=\"../pkg/PrivateInterface.html#methodInterface(int)\">" +
+             "methodInterface</A></CODE> in interface <CODE>" +
+             "<A HREF=\"../pkg/PrivateInterface.html\" title=\"interface in pkg\">" +
+@@ -209,12 +209,12 @@
+ 
+       //Make sure implemented interfaces from private superclass are inherited
+       {BUG_ID + "-2" + FS + "pkg" + FS + "PublicInterface.html",
+-        "<B>All Known Implementing Classes:</B> <DD><A HREF=\"../pkg/PrivateParent.html\" " +
++        "<STRONG>All Known Implementing Classes:</STRONG> <DD><A HREF=\"../pkg/PrivateParent.html\" " +
+         "title=\"class in pkg\">PrivateParent</A>, " +
+         "<A HREF=\"../pkg/PublicChild.html\" title=\"class in pkg\">PublicChild</A>"},
+ 
+       {BUG_ID + "-2" + FS + "pkg" + FS + "PublicChild.html",
+-        "<B>All Implemented Interfaces:</B> <DD><A HREF=\"../pkg/PrivateInterface.html\" " +
++        "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/PrivateInterface.html\" " +
+         "title=\"interface in pkg\">PrivateInterface</A>, " +
+         "<A HREF=\"../pkg/PublicInterface.html\" title=\"interface in pkg\">" +
+         "PublicInterface</A>"},
+@@ -222,10 +222,13 @@
+       //Since private flag is used, we can document that private interface method
+       //with generic parameters has been implemented.
+       {BUG_ID + "-2" + FS + "pkg2" + FS + "C.html",
+-            "<B>Description copied from interface: " +            "<CODE><A HREF=\"../pkg2/I.html#hello(T)\">I</A></CODE></B>"},
++            "<STRONG>Description copied from interface: " +
++            "<CODE><A HREF=\"../pkg2/I.html#hello(T)\">I</A></CODE></STRONG>"},
+ 
+       {BUG_ID + "-2" + FS + "pkg2" + FS + "C.html",
+-            "<B>Specified by:</B><DD><CODE><A HREF=\"../pkg2/I.html#hello(T)\">" +            "hello</A></CODE> in interface <CODE><A HREF=\"../pkg2/I.html\" " +            "title=\"interface in pkg2\">I</A>"},
++            "<STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"../pkg2/I.html#hello(T)\">" +
++            "hello</A></CODE> in interface <CODE><A HREF=\"../pkg2/I.html\" " +
++            "title=\"interface in pkg2\">I</A>"},
+     };
+     private static final String[][] NEGATED_TEST2 = NO_TEST;
+ 
+diff --git a/test/com/sun/javadoc/testSerializedForm/TestSerializedForm.java b/test/com/sun/javadoc/testSerializedForm/TestSerializedForm.java
+--- langtools/test/com/sun/javadoc/testSerializedForm/TestSerializedForm.java
++++ langtools/test/com/sun/javadoc/testSerializedForm/TestSerializedForm.java
+@@ -47,11 +47,11 @@
+ 
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "serialized-form.html",
+-            "protected java.lang.Object <B>readResolve</B>()"},
++            "protected java.lang.Object <STRONG>readResolve</STRONG>()"},
+         {BUG_ID + FS + "serialized-form.html",
+-            "protected java.lang.Object <B>writeReplace</B>()"},
++            "protected java.lang.Object <STRONG>writeReplace</STRONG>()"},
+         {BUG_ID + FS + "serialized-form.html",
+-            "protected java.lang.Object <B>readObjectNoData</B>()"},
++            "protected java.lang.Object <STRONG>readObjectNoData</STRONG>()"},
+         {BUG_ID + FS + "serialized-form.html",
+             "See Also"},
+     };
+diff --git a/test/com/sun/javadoc/testSimpleTag/TestSimpleTag.java b/test/com/sun/javadoc/testSimpleTag/TestSimpleTag.java
+--- langtools/test/com/sun/javadoc/testSimpleTag/TestSimpleTag.java
++++ langtools/test/com/sun/javadoc/testSimpleTag/TestSimpleTag.java
+@@ -42,13 +42,13 @@
+     private static final String[][] TEST =
+         new String[][] {
+             {"./" + BUG_ID + "/C.html",
+-                "<B>Todo:</B>"},
++                "<STRONG>Todo:</STRONG>"},
+             {"./" + BUG_ID + "/C.html",
+-                "<B>EJB Beans:</B>"},
++                "<STRONG>EJB Beans:</STRONG>"},
+             {"./" + BUG_ID + "/C.html",
+-                "<B>Regular Tag:</B>"},
++                "<STRONG>Regular Tag:</STRONG>"},
+             {"./" + BUG_ID + "/C.html",
+-                "<B>Back-Slash-Tag:</B>"},
++                "<STRONG>Back-Slash-Tag:</STRONG>"},
+         };
+ 
+     private static final String[] ARGS = new String[] {
+diff --git a/test/com/sun/javadoc/testSummaryHeading/TestSummaryHeading.java b/test/com/sun/javadoc/testSummaryHeading/TestSummaryHeading.java
+--- langtools/test/com/sun/javadoc/testSummaryHeading/TestSummaryHeading.java
++++ langtools/test/com/sun/javadoc/testSummaryHeading/TestSummaryHeading.java
+@@ -46,7 +46,7 @@
+ 
+     //Input for string search tests.
+     private static final String[][] TEST = {
+-        {BUG_ID + FS + "C.html",  "<B>Method Summary</B>"}
++        {BUG_ID + FS + "C.html",  "<STRONG>Method Summary</STRONG>"}
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+ 
+diff --git a/test/com/sun/javadoc/testThrowsHead/TestThrowsHead.java b/test/com/sun/javadoc/testThrowsHead/TestThrowsHead.java
+--- langtools/test/com/sun/javadoc/testThrowsHead/TestThrowsHead.java
++++ langtools/test/com/sun/javadoc/testThrowsHead/TestThrowsHead.java
+@@ -38,7 +38,7 @@
+ 
+     private static final String BUG_ID = "4530727";
+     private static final String[][] TEST = {
+-        {BUG_ID + FS + "C.html", "<DT><B>Throws:</B>"}
++        {BUG_ID + FS + "C.html", "<DT><STRONG>Throws:</STRONG>"}
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+     private static final String[] ARGS = new String[] {
+diff --git a/test/com/sun/javadoc/testValueTag/TestValueTag.java b/test/com/sun/javadoc/testValueTag/TestValueTag.java
+--- langtools/test/com/sun/javadoc/testValueTag/TestValueTag.java
++++ langtools/test/com/sun/javadoc/testValueTag/TestValueTag.java
+@@ -88,7 +88,7 @@
+             "Result: <A HREF=\"../pkg2/Class3.html#TEST_17_PASSES\">\"Test 17 passes\"</A>"},
+         //Test @value tag used with custom tag.
+         {BUG_ID + FS + "pkg1" + FS + "CustomTagUsage.html",
+-            "<DT><B>Todo:</B></DT>" + NL +
++            "<DT><STRONG>Todo:</STRONG></DT>" + NL +
+                 "  <DD>the value of this constant is 55.</DD>"},
+         //Test @value warning printed when used with non-constant.
+         {WARNING_OUTPUT,"warning - @value tag (which references nonConstant) " +

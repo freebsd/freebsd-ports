@@ -1,0 +1,20 @@
+# HG changeset patch
+# User vinnie
+# Date 1363862556 0
+# Node ID 3bb3933b9704ad855b64933be52c6aa252a04d83
+# Parent  ae61ba2bcdfa02807ead8b20311953a52f5ae96e
+8009067: Improve storing keys in KeyStore
+Reviewed-by: mullan, skoivu
+
+diff --git a/src/share/classes/java/security/KeyStore.java b/src/share/classes/java/security/KeyStore.java
+--- jdk/src/share/classes/java/security/KeyStore.java
++++ jdk/src/share/classes/java/security/KeyStore.java
+@@ -1716,7 +1716,7 @@
+                              oldException);
+                     }
+                     try {
+-                        return AccessController.doPrivileged(action);
++                        return AccessController.doPrivileged(action, context);
+                     } catch (PrivilegedActionException e) {
+                         Throwable cause = e.getCause();
+                         throw new KeyStoreException

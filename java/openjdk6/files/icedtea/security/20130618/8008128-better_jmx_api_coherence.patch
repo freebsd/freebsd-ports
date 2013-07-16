@@ -1,0 +1,110 @@
+# HG changeset patch
+# User andrew
+# Date 1370952792 -3600
+# Node ID 9bfe1c4dabb13428827ab592c4ee120593407603
+# Parent  f880d5294bdd9d8d555fe3fbf06e39a5b80ad125
+8008128: Better API coherence for JMX
+Summary: Permission for getting classloader
+Reviewed-by: alanb, dfuchs, skoivu
+Contributed-by: jean-francois.denise@oracle.com
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport.java b/src/share/classes/com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport.java
+@@ -27,12 +27,14 @@
+ 
+ 
+ import static com.sun.jmx.defaults.JmxProperties.MBEANSERVER_LOGGER;
++import java.security.Permission;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Hashtable;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.logging.Level;
++import javax.management.MBeanPermission;
+ 
+ import javax.management.ObjectName;
+ import javax.management.loading.PrivateClassLoader;
+@@ -300,7 +302,19 @@
+     }
+ 
+     public final ClassLoader getClassLoader(ObjectName name) {
+-        return loadersWithNames.get(name);
++        ClassLoader instance = loadersWithNames.get(name);
++        if (instance != null) {
++            SecurityManager sm = System.getSecurityManager();
++            if (sm != null) {
++                Permission perm =
++                        new MBeanPermission(instance.getClass().getName(),
++                        null,
++                        name,
++                        "getClassLoader");
++                sm.checkPermission(perm);
++            }
++        }
++        return instance;
+     }
+ 
+ }
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java b/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/MBeanInstantiator.java
+@@ -32,7 +32,12 @@
+ import java.io.ObjectInputStream;
+ import java.lang.reflect.Constructor;
+ import java.lang.reflect.InvocationTargetException;
++import java.security.AccessControlContext;
++import java.security.AccessController;
+ import java.security.Permission;
++import java.security.Permissions;
++import java.security.PrivilegedAction;
++import java.security.ProtectionDomain;
+ import java.util.Map;
+ import java.util.logging.Level;
+ 
+@@ -126,9 +131,8 @@
+ 
+         // Retrieve the class loader from the repository
+         ClassLoader loader = null;
+-        synchronized(this) {
+-            if (clr!=null)
+-                loader = clr.getClassLoader(aLoader);
++        synchronized (this) {
++            loader = getClassLoader(aLoader);
+         }
+         if (loader == null) {
+             throw new InstanceNotFoundException("The loader named " +
+@@ -429,8 +433,7 @@
+             try {
+                 ClassLoader instance = null;
+ 
+-                if (clr!=null)
+-                    instance = clr.getClassLoader(loaderName);
++                instance = getClassLoader(loaderName);
+                 if (instance == null)
+                     throw new ClassNotFoundException(className);
+                 theClass = Class.forName(className, false, instance);
+@@ -742,4 +745,22 @@
+             sm.checkPermission(perm);
+         }
+     }
++
++    private ClassLoader getClassLoader(final ObjectName name) {
++        if(clr == null){
++            return null;
++        }
++        // Restrict to getClassLoader permission only
++        Permissions permissions = new Permissions();
++        permissions.add(new MBeanPermission("*", null, name, "getClassLoader"));
++        ProtectionDomain protectionDomain = new ProtectionDomain(null, permissions);
++        ProtectionDomain[] domains = {protectionDomain};
++        AccessControlContext ctx = new AccessControlContext(domains);
++        ClassLoader loader = AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {
++            public ClassLoader run() {
++                return clr.getClassLoader(name);
++            }
++        }, ctx);
++        return loader;
++    }
+ }

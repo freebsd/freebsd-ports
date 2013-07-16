@@ -1,0 +1,55 @@
+# HG changeset patch
+# User andrew
+# Date 1371488944 18000
+# Node ID 60c57caf0348c7eed93900e4395607af759e6ba9
+# Parent  a844309d9f0a490f8ac56d21f1323e8deb65ffd1
+Fix introduction of diamond operator in some classes.
+
+diff --git a/src/share/classes/com/sun/media/sound/AbstractLine.java b/src/share/classes/com/sun/media/sound/AbstractLine.java
+--- jdk/src/share/classes/com/sun/media/sound/AbstractLine.java
++++ jdk/src/share/classes/com/sun/media/sound/AbstractLine.java
+@@ -54,7 +54,7 @@
+      * Contains event dispatcher per thread group.
+      */
+     private static final Map<ThreadGroup, EventDispatcher> dispatchers =
+-            new WeakHashMap<>();
++      new WeakHashMap<ThreadGroup, EventDispatcher>();
+ 
+     /**
+      * Constructs a new AbstractLine.
+diff --git a/src/share/classes/com/sun/media/sound/RealTimeSequencer.java b/src/share/classes/com/sun/media/sound/RealTimeSequencer.java
+--- jdk/src/share/classes/com/sun/media/sound/RealTimeSequencer.java
++++ jdk/src/share/classes/com/sun/media/sound/RealTimeSequencer.java
+@@ -59,7 +59,7 @@
+      * dispatcher instance with a factory in EventDispatcher
+      */
+     private static final Map<ThreadGroup, EventDispatcher> dispatchers =
+-            new WeakHashMap<>();
++      new WeakHashMap<ThreadGroup, EventDispatcher>();
+ 
+     /**
+      * All RealTimeSequencers share this info object.
+diff --git a/src/share/classes/java/io/ObjectStreamClass.java b/src/share/classes/java/io/ObjectStreamClass.java
+--- jdk/src/share/classes/java/io/ObjectStreamClass.java
++++ jdk/src/share/classes/java/io/ObjectStreamClass.java
+@@ -1135,7 +1135,7 @@
+             end = end.getSuperclass();
+         }
+ 
+-        HashSet<String> oscNames = new HashSet<>(3);
++        HashSet<String> oscNames = new HashSet<String>(3);
+ 
+         for (ObjectStreamClass d = this; d != null; d = d.superDesc) {
+             if (oscNames.contains(d.name)) {
+diff --git a/src/share/classes/sun/font/CreatedFontTracker.java b/src/share/classes/sun/font/CreatedFontTracker.java
+--- jdk/src/share/classes/sun/font/CreatedFontTracker.java
++++ jdk/src/share/classes/sun/font/CreatedFontTracker.java
+@@ -106,7 +106,7 @@
+      * Note that this only applies to createFont() from an InputStream object.
+      */
+     private static class TempFileDeletionHook {
+-        private static HashMap<File, OutputStream> files = new HashMap<>();
++        private static HashMap<File, OutputStream> files = new HashMap<File, OutputStream>();
+ 
+         private static Thread t = null;
+         static void init() {

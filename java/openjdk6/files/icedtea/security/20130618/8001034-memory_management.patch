@@ -1,0 +1,78 @@
+# HG changeset patch
+# User bae
+# Date 1361951590 -14400
+# Node ID 5b6f070ddeab14b2d7a731c5f4c61eea406638da
+# Parent  ae6fc01dd3d4d1a7f662ace7ce787c071767c28a
+8001034: Memory management improvements
+Reviewed-by: prr, jgodinez
+
+diff --git a/src/solaris/native/sun/awt/awt_GraphicsEnv.c b/src/solaris/native/sun/awt/awt_GraphicsEnv.c
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c
+@@ -924,6 +924,8 @@
+ static jint canUseShmExtPixmaps = UNSET_MITSHM;
+ static jboolean xshmAttachFailed = JNI_FALSE;
+ 
++extern int mitShmPermissionMask;
++
+ int J2DXErrHandler(Display *display, XErrorEvent *xerr) {
+     int ret = 0;
+     if (xerr->minor_code == X_ShmAttach) {
+@@ -962,7 +964,8 @@
+      * we need to test that we can actually do XShmAttach.
+      */
+     if (XShmQueryExtension(awt_display)) {
+-        shminfo.shmid = shmget(IPC_PRIVATE, 0x10000, IPC_CREAT|0777);
++        shminfo.shmid = shmget(IPC_PRIVATE, 0x10000,
++                               IPC_CREAT|mitShmPermissionMask);
+         if (shminfo.shmid < 0) {
+             AWT_UNLOCK();
+             J2dRlsTraceLn1(J2D_TRACE_ERROR,
+diff --git a/src/solaris/native/sun/awt/awt_GraphicsEnv.h b/src/solaris/native/sun/awt/awt_GraphicsEnv.h
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h
+@@ -47,6 +47,9 @@
+ #include <X11/extensions/shmproto.h>
+ #endif
+ 
++#define MITSHM_PERM_COMMON (0666)
++#define MITSHM_PERM_OWNER  (0600)
++
+ extern int XShmQueryExtension();
+ 
+ void TryInitMITShm(JNIEnv *env, jint *shmExt, jint *shmPixmaps);
+diff --git a/src/solaris/native/sun/java2d/x11/X11SurfaceData.c b/src/solaris/native/sun/java2d/x11/X11SurfaceData.c
+--- jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c
++++ jdk/src/solaris/native/sun/java2d/x11/X11SurfaceData.c
+@@ -91,6 +91,7 @@
+ jint useMitShmExt = CANT_USE_MITSHM;
+ jint useMitShmPixmaps = CANT_USE_MITSHM;
+ jint forceSharedPixmaps = JNI_FALSE;
++int mitShmPermissionMask = MITSHM_PERM_OWNER;
+ 
+ /* Cached shared image, one for all surface datas. */
+ static XImage * cachedXImage;
+@@ -154,6 +155,13 @@
+     if (getenv("NO_AWT_MITSHM") == NULL &&
+         getenv("NO_J2D_MITSHM") == NULL) {
+         char * force;
++        char * permission = getenv("J2D_MITSHM_PERMISSION");
++        if (permission != NULL) {
++            if (strcmp(permission, "common") == 0) {
++                mitShmPermissionMask = MITSHM_PERM_COMMON;
++            }
++        }
++
+         TryInitMITShm(env, &useMitShmExt, &useMitShmPixmaps);
+         useMitShmPixmaps = (useMitShmPixmaps == CAN_USE_MITSHM);
+         force = getenv("J2D_PIXMAPS");
+@@ -492,7 +500,8 @@
+         return NULL;
+     }
+     shminfo->shmid =
+-        shmget(IPC_PRIVATE, height * img->bytes_per_line, IPC_CREAT|0777);
++        shmget(IPC_PRIVATE, height * img->bytes_per_line,
++               IPC_CREAT|mitShmPermissionMask);
+     if (shminfo->shmid < 0) {
+         J2dRlsTraceLn1(J2D_TRACE_ERROR,
+                        "X11SD_SetupSharedSegment shmget has failed: %s",

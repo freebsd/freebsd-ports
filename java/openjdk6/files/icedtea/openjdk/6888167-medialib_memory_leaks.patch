@@ -1,0 +1,134 @@
+# HG changeset patch
+# User bae
+# Date 1256300510 -14400
+# Node ID 0f5e355fe68c0ff29e28a962199185e4bd3d7e04
+# Parent  55257a533c9553d99e90e7b82affab14d5d6b056
+6888167: memory leaks in the medialib glue code
+Reviewed-by: igor, prr
+
+diff --git a/src/share/native/sun/awt/medialib/awt_ImagingLib.c b/src/share/native/sun/awt/medialib/awt_ImagingLib.c
+--- jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c
++++ jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c
+@@ -961,21 +961,15 @@
+     mlib_filter filter;
+     unsigned int *dP;
+ 
+-    if ((srcRasterP = (RasterS_t *) calloc(1, sizeof(RasterS_t))) == NULL) {
+-        JNU_ThrowOutOfMemoryError(env, "Out of memory");
+-        return -1;
+-    }
+-
+-    if ((dstRasterP = (RasterS_t *) calloc(1, sizeof(RasterS_t))) == NULL) {
+-        JNU_ThrowOutOfMemoryError(env, "Out of memory");
+-        free(srcRasterP);
+-        return -1;
+-    }
+-
+     /* This function requires a lot of local refs ??? Is 64 enough ??? */
+     if ((*env)->EnsureLocalCapacity(env, 64) < 0)
+         return 0;
+ 
++    if (s_nomlib) return 0;
++    if (s_timeIt) {
++        (*start_timer)(3600);
++    }
++
+     switch(interpType) {
+     case java_awt_image_AffineTransformOp_TYPE_BILINEAR:
+         filter = MLIB_BILINEAR;
+@@ -991,9 +985,15 @@
+         return -1;
+     }
+ 
+-    if (s_nomlib) return 0;
+-    if (s_timeIt) {
+-        (*start_timer)(3600);
++    if ((srcRasterP = (RasterS_t *) calloc(1, sizeof(RasterS_t))) == NULL) {
++        JNU_ThrowOutOfMemoryError(env, "Out of memory");
++        return -1;
++    }
++
++    if ((dstRasterP = (RasterS_t *) calloc(1, sizeof(RasterS_t))) == NULL) {
++        JNU_ThrowOutOfMemoryError(env, "Out of memory");
++        free(srcRasterP);
++        return -1;
+     }
+ 
+     if ((*env)->GetArrayLength(env, jmatrix) < 6) {
+@@ -1216,6 +1216,9 @@
+     }
+ 
+     if (tbl == NULL || table == NULL || jtable == NULL) {
++        if (tbl != NULL) free(tbl);
++        if (table != NULL) free(table);
++        if (jtable != NULL) free(jtable);
+         awt_freeParsedImage(srcImageP, TRUE);
+         awt_freeParsedImage(dstImageP, TRUE);
+         JNU_ThrowNullPointerException(env, "NULL LUT");
+@@ -1225,6 +1228,11 @@
+     for (i=0; i < jlen; i++) {
+         jtable[i] = (*env)->GetObjectArrayElement(env, jtableArrays, i);
+         if (jtable[i] == NULL) {
++            free(tbl);
++            free(table);
++            free(jtable);
++            awt_freeParsedImage(srcImageP, TRUE);
++            awt_freeParsedImage(dstImageP, TRUE);
+             return 0;
+         }
+     }
+@@ -1233,6 +1241,9 @@
+                         FALSE, &hint);
+     if (nbands < 1) {
+         /* Can't handle any custom images */
++        free(tbl);
++        free(table);
++        free(jtable);
+         awt_freeParsedImage(srcImageP, TRUE);
+         awt_freeParsedImage(dstImageP, TRUE);
+         return 0;
+@@ -1241,12 +1252,18 @@
+     /* Allocate the arrays */
+     if (allocateArray(env, srcImageP, &src, &sdata, TRUE, FALSE, FALSE) < 0) {
+         /* Must be some problem */
++        free(tbl);
++        free(table);
++        free(jtable);
+         awt_freeParsedImage(srcImageP, TRUE);
+         awt_freeParsedImage(dstImageP, TRUE);
+         return 0;
+     }
+     if (allocateArray(env, dstImageP, &dst, &ddata, FALSE, FALSE, FALSE) < 0) {
+         /* Must be some problem */
++        free(tbl);
++        free(table);
++        free(jtable);
+         freeArray(env, srcImageP, src, sdata, NULL, NULL, NULL);
+         awt_freeParsedImage(srcImageP, TRUE);
+         awt_freeParsedImage(dstImageP, TRUE);
+@@ -1285,6 +1302,9 @@
+                                                       (jbyte *) table[j],
+                                                       JNI_ABORT);
+             }
++            free(tbl);
++            free(table);
++            free(jtable);
+             freeArray(env, srcImageP, src, sdata, NULL, NULL, NULL);
+             awt_freeParsedImage(srcImageP, TRUE);
+             awt_freeParsedImage(dstImageP, TRUE);
+@@ -1414,12 +1434,15 @@
+ 
+     /* Parse the source raster - reject custom images */
+     if ((status = awt_parseRaster(env, jsrc, srcRasterP)) <= 0) {
++        free(srcRasterP);
++        free(dstRasterP);
+         return 0;
+     }
+ 
+     /* Parse the destination image - reject custom images */
+     if ((status = awt_parseRaster(env, jdst, dstRasterP)) <= 0) {
+         awt_freeParsedRaster(srcRasterP, TRUE);
++        free(dstRasterP);
+         return 0;
+     }
+ 

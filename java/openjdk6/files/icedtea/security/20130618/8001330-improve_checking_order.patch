@@ -1,0 +1,97 @@
+# HG changeset patch
+# User andrew
+# Date 1371238187 -3600
+# Node ID 66880d810dc10655031bfbbb1e4ea6ff66061f08
+# Parent  f2c674e184e04dcd8e39b6ba6f784c75a3553ef5
+8001330: Improve on checking order
+Reviewed-by: acorn, hawtin
+
+diff --git a/src/share/classes/java/security/AccessControlContext.java b/src/share/classes/java/security/AccessControlContext.java
+--- jdk/src/share/classes/java/security/AccessControlContext.java
++++ jdk/src/share/classes/java/security/AccessControlContext.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -79,7 +79,10 @@
+ public final class AccessControlContext {
+ 
+     private ProtectionDomain context[];
++    // isPrivileged and isAuthorized are referenced by the VM - do not remove
++    // or change their names
+     private boolean isPrivileged;
++    private boolean isAuthorized = false;
+ 
+     // Note: This field is directly used by the virtual machine
+     // native codes. Don't touch it.
+@@ -192,6 +195,7 @@
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+             sm.checkPermission(SecurityConstants.CREATE_ACC_PERMISSION);
++            this.isAuthorized = true;
+         }
+ 
+         this.context = acc.context;
+@@ -213,6 +217,7 @@
+             this.context = context.clone();
+         }
+         this.combiner = combiner;
++        this.isAuthorized = true;
+     }
+ 
+     /**
+@@ -220,10 +225,11 @@
+      */
+ 
+     AccessControlContext(ProtectionDomain context[],
+-                                 boolean isPrivileged)
++                         boolean isPrivileged)
+     {
+         this.context = context;
+         this.isPrivileged = isPrivileged;
++        this.isAuthorized = true;
+     }
+ 
+     /**
+@@ -504,7 +510,7 @@
+     }
+ 
+     private AccessControlContext goCombiner(ProtectionDomain[] current,
+-                                        AccessControlContext assigned) {
++                                            AccessControlContext assigned) {
+ 
+         // the assigned ACC's combiner is not null --
+         // let the combiner do its thing
+@@ -526,6 +532,7 @@
+         this.context = combinedPds;
+         this.combiner = assigned.combiner;
+         this.isPrivileged = false;
++        this.isAuthorized = assigned.isAuthorized;
+ 
+         return this;
+     }
+diff --git a/src/share/classes/java/security/ProtectionDomain.java b/src/share/classes/java/security/ProtectionDomain.java
+--- jdk/src/share/classes/java/security/ProtectionDomain.java
++++ jdk/src/share/classes/java/security/ProtectionDomain.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2009, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -246,6 +246,11 @@
+         return false;
+     }
+ 
++    // called by the VM -- do not remove
++    boolean impliesCreateAccessControlContext() {
++        return implies(SecurityConstants.CREATE_ACC_PERMISSION);
++    }
++
+     /**
+      * Convert a ProtectionDomain to a String.
+      */

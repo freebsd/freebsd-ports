@@ -1,0 +1,157 @@
+# HG changeset patch
+# User prr
+# Date 1365450499 25200
+# Node ID b606e9565b5d9deed95c621829673ae930e7d596
+# Parent  02f545e014b0b73094bd295643f8b33965fe8bcf
+8011257: Better Byte Component Rasters
+Reviewed-by: bae, vadim, mschoene
+
+diff --git a/src/share/classes/sun/awt/image/ByteBandedRaster.java b/src/share/classes/sun/awt/image/ByteBandedRaster.java
+--- jdk/src/share/classes/sun/awt/image/ByteBandedRaster.java
++++ jdk/src/share/classes/sun/awt/image/ByteBandedRaster.java
+@@ -159,7 +159,7 @@
+             throw new RasterFormatException("ByteBandedRasters must have"+
+                 "BandedSampleModels");
+         }
+-        verify(false);
++        verify();
+     }
+ 
+ 
+@@ -731,16 +731,30 @@
+     }
+ 
+     /**
+-     * Verify that the layout parameters are consistent with
+-     * the data.  If strictCheck
+-     * is false, this method will check for ArrayIndexOutOfBounds conditions.  If
+-     * strictCheck is true, this method will check for additional error
+-     * conditions such as line wraparound (width of a line greater than
+-     * the scanline stride).
+-     * @return   String   Error string, if the layout is incompatible with
+-     *                    the data.  Otherwise returns null.
++     * Verify that the layout parameters are consistent with the data.
++     * Verifies whether the data buffer has enough data for the raster,
++     * taking into account offsets, after ensuring all offsets are >=0.
++     * @throws RasterFormatException if a problem is detected.
+      */
+-    private void verify (boolean strictCheck) {
++    private void verify() {
++
++        /* Need to re-verify the dimensions since a sample model may be
++         * specified to the constructor
++         */
++        if (width <= 0 || height <= 0 ||
++            height > (Integer.MAX_VALUE / width))
++        {
++            throw new RasterFormatException("Invalid raster dimension");
++        }
++
++        if (scanlineStride < 0 ||
++            scanlineStride > (Integer.MAX_VALUE / height))
++        {
++            // integer overflow
++            throw new RasterFormatException("Incorrect scanline stride: "
++                    + scanlineStride);
++        }
++
+         // Make sure data for Raster is in a legal range
+         for (int i=0; i < dataOffsets.length; i++) {
+             if (dataOffsets[i] < 0) {
+@@ -750,32 +764,41 @@
+             }
+         }
+ 
+-        int maxSize = 0;
+-        int size;
++        int lastScanOffset = (height - 1) * scanlineStride;
++        int lastPixelOffset = lastScanOffset + (width-1);
++        if (lastPixelOffset < lastScanOffset) {
++            throw new RasterFormatException("Invalid raster dimension");
++        }
++
++        int maxIndex = 0;
++        int index;
+ 
+         for (int i=0; i < numDataElements; i++) {
+-            size = (height-1)*scanlineStride + (width-1) + dataOffsets[i];
+-            if (size > maxSize) {
+-                maxSize = size;
++            index = lastPixelOffset + dataOffsets[i];
++            if (index < lastPixelOffset) {
++                throw new RasterFormatException("Invalid raster dimension");
++            }
++            if (index > maxIndex) {
++                maxIndex = index;
+             }
+         }
+ 
+         if (data.length == 1) {
+-            if (data[0].length < maxSize*numDataElements) {
++            if (data[0].length <= maxIndex*numDataElements) {
+                 throw new RasterFormatException("Data array too small "+
+                                                 "(it is "+data[0].length+
+-                                                " and should be "+
+-                                                (maxSize*numDataElements)+
++                                                " and should be > "+
++                                                (maxIndex*numDataElements)+
+                                                 " )");
+             }
+         }
+         else {
+             for (int i=0; i < numDataElements; i++) {
+-                if (data[i].length < maxSize) {
++                if (data[i].length <= maxIndex) {
+                     throw new RasterFormatException("Data array too small "+
+                                                     "(it is "+data[i].length+
+-                                                    " and should be "+
+-                                                    maxSize+" )");
++                                                    " and should be > "+
++                                                    maxIndex+" )");
+                 }
+             }
+         }
+diff --git a/src/share/classes/sun/awt/image/ByteComponentRaster.java b/src/share/classes/sun/awt/image/ByteComponentRaster.java
+--- jdk/src/share/classes/sun/awt/image/ByteComponentRaster.java
++++ jdk/src/share/classes/sun/awt/image/ByteComponentRaster.java
+@@ -885,9 +885,6 @@
+             }
+         }
+ 
+-        int maxSize = 0;
+-        int size;
+-
+         // we can be sure that width and height are greater than 0
+         if (scanlineStride < 0 ||
+             scanlineStride > (Integer.MAX_VALUE / height))
+@@ -913,6 +910,8 @@
+         }
+         lastPixelOffset += lastScanOffset;
+ 
++        int index;
++        int maxIndex = 0;
+         for (int i = 0; i < numDataElements; i++) {
+             if (dataOffsets[i] > (Integer.MAX_VALUE - lastPixelOffset)) {
+                 throw new RasterFormatException("Incorrect band offset: "
+@@ -920,15 +919,15 @@
+ 
+             }
+ 
+-            size = lastPixelOffset + dataOffsets[i];
++            index = lastPixelOffset + dataOffsets[i];
+ 
+-            if (size > maxSize) {
+-                maxSize = size;
++            if (index > maxIndex) {
++                maxIndex = index;
+             }
+         }
+-        if (data.length < maxSize) {
+-            throw new RasterFormatException("Data array too small (should be "
+-                    + maxSize + " )");
++        if (data.length <= maxIndex) {
++            throw new RasterFormatException("Data array too small (should be > "
++                    + maxIndex + " )");
+         }
+     }
+ 

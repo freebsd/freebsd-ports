@@ -1,0 +1,601 @@
+# HG changeset patch
+# User andrew
+# Date 1371571658 18000
+# Node ID 9b884c583c41a545352b035d11d1ccacb96fbb2f
+# Parent  92a90d8c955b6cc619d16975e02d9143715dedaa
+6802694: Javadoc doclet does not display deprecated information with -nocomment option for serialized form
+Reviewed-by: jjg
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+@@ -245,6 +245,29 @@
+     }
+ 
+     /**
++     * Check whether there are any tags to be printed.
++     *
++     * @param doc the Doc object to check for tags.
++     * @return true if there are tags to be printed else return false.
++     */
++    protected boolean hasTagsToPrint(Doc doc) {
++        if (doc instanceof MethodDoc) {
++            ClassDoc[] intfacs = ((MethodDoc)doc).containingClass().interfaces();
++            MethodDoc overriddenMethod = ((MethodDoc)doc).overriddenMethod();
++            if ((intfacs.length > 0 &&
++                new ImplementedMethods((MethodDoc)doc, this.configuration).build().length > 0) ||
++                overriddenMethod != null) {
++                return true;
++            }
++        }
++        TagletOutputImpl output = new TagletOutputImpl("");
++        TagletWriter.genTagOuput(configuration.tagletManager, doc,
++            configuration.tagletManager.getCustomTags(doc),
++                getTagletWriterInstance(false), output);
++        return (output.toString().trim().isEmpty());
++    }
++
++    /**
+      * Returns a TagletWriter that knows how to write HTML.
+      *
+      * @return a TagletWriter that knows how to write HTML.
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
+@@ -164,4 +164,20 @@
+     public void writeMemberFooter(FieldDoc member) {
+         writer.dlEnd();
+     }
++
++    /**
++     * Check to see if member details should be printed. If
++     * nocomment option set or if there is no text to be printed
++     * for deprecation info, inline comment, no serial tag or inline tags,
++     * do not print member details.
++     */
++    public boolean shouldPrintMemberDetails(FieldDoc field) {
++        if (!configuration().nocomment)
++            if((field.inlineTags().length > 0) ||
++                (field.tags("serial").length > 0) || (writer.hasTagsToPrint(field)))
++                return true;
++        if (!Util.isDeprecated(field))
++            return true;
++        return false;
++    }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/TagletOutputImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/TagletOutputImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/TagletOutputImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/TagletOutputImpl.java
+@@ -67,4 +67,10 @@
+         return output.toString();
+     }
+ 
++    /**
++     * Check whether the taglet output is empty.
++     */
++    public boolean isEmpty() {
++        return (toString().trim().isEmpty());
++    }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java
+@@ -152,6 +152,17 @@
+          * @param member the member to write the header for.
+          */
+         public void writeMemberFooter(FieldDoc member);
++
++        /**
++         * Check to see if member details should be printed. If
++         * nocomment option set or if there is no text to be printed
++         * for deprecation info, inline comment, no serial tag or inline tags,
++         * do not print member details.
++         *
++         * @param member the member to check details for.
++         * @return true if details need to be printed
++         */
++        public boolean shouldPrintMemberDetails(FieldDoc member);
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+@@ -403,16 +403,17 @@
+         if (classDoc.definesSerializableFields()) {
+             FieldDoc serialPersistentField =
+                 (FieldDoc)((Util.asList(classDoc.serializableFields()).get(0)));
+-            String comment = serialPersistentField.commentText();
+-            if (comment.length() > 0) {
++            // Check to see if there are inline comments, tags or deprecation
++            // information to be printed.
++            if (fieldWriter.shouldPrintMemberDetails(serialPersistentField)) {
+                 fieldWriter.writeHeader(
+                     configuration.getText("doclet.Serialized_Form_class"));
++                fieldWriter.writeMemberDeprecatedInfo(serialPersistentField);
+                 if (!configuration.nocomment) {
+-                    fieldWriter.writeMemberDeprecatedInfo(serialPersistentField);
+                     fieldWriter.writeMemberDescription(serialPersistentField);
+                     fieldWriter.writeMemberTags(serialPersistentField);
+-                    fieldWriter.writeMemberFooter(serialPersistentField);
+                 }
++                fieldWriter.writeMemberFooter(serialPersistentField);
+             }
+         }
+     }
+@@ -429,6 +430,16 @@
+     }
+ 
+     /**
++     * Build the field deprecation information.
++     */
++    public void buildFieldDeprecationInfo() {
++        if (!currentClass.definesSerializableFields()) {
++            FieldDoc field = (FieldDoc)currentMember;
++            fieldWriter.writeMemberDeprecatedInfo(field);
++        }
++    }
++
++    /**
+      * Build the field information.
+      */
+     public void buildFieldInfo() {
+@@ -459,7 +470,6 @@
+                         "doclet.MissingSerialTag", cd.qualifiedName(),
+                         field.name());
+             }
+-            fieldWriter.writeMemberDeprecatedInfo(field);
+             fieldWriter.writeMemberDescription(field);
+             fieldWriter.writeMemberTags(field);
+         }
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml b/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+@@ -183,8 +183,8 @@
+                     <MethodHeader/>
+                     <SerializableMethods>
+                         <MethodSubHeader/>
++                        <DeprecatedMethodInfo/>
+                         <MethodInfo>
+-                            <DeprecatedMethodInfo/>
+                             <MethodDescription/>
+                             <MethodTags/>
+                         </MethodInfo>
+@@ -193,6 +193,7 @@
+                     <FieldHeader/>
+                     <SerializableFields>
+                         <FieldSubHeader/>
++                        <FieldDeprecationInfo/>
+                         <FieldInfo/>
+                         <FieldFooter/>
+                     </SerializableFields>                  
+diff --git a/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java b/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java
+@@ -0,0 +1,151 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++/*
++ * @test
++ * @bug 6802694
++ * @summary This test verifies deprecation info in serialized-form.html.
++ * @author Bhavesh Patel
++ * @library ../lib/
++ * @build JavadocTester
++ * @build TestSerializedFormDeprecationInfo
++ * @run main TestSerializedFormDeprecationInfo
++ */
++
++public class TestSerializedFormDeprecationInfo extends JavadocTester {
++
++    private static final String BUG_ID = "6802694";
++
++    // Test for normal run of javadoc. The serialized-form.html should
++    // display the inline comments, tags and deprecation information if any.
++    private static final String[][] TEST_CMNT_DEPR = {
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><DL>" + NL + NL +
++                 "<DT><STRONG>Throws:</STRONG>" + NL + "<DD><CODE>" +
++                 "java.io.IOException</CODE><DT><STRONG>See Also:</STRONG>" +
++                 "<DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD>" + NL +
++                 "</DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" +
++                 "<DD>This field indicates whether the C1 is undecorated." + NL +
++                 "<P>" + NL + "<DT><DD>&nbsp;<DL>" + NL +
++                 "<DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>1.4</DD>" + NL + "<DT><STRONG>See Also:</STRONG>" +
++                 "<DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DL>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "<DD>Reads the object stream." + NL + "<P>" + NL +
++                 "<DD><DL>" + NL + NL + "<DT><STRONG>Throws:" +
++                 "</STRONG>" + NL + "<DD><CODE><code>" +
++                 "IOException</code></CODE>" + NL +
++                 "<DD><CODE>java.io.IOException</CODE></DD>" + NL +
++                 "</DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<DD>" +
++                 "The name for this class." + NL + "<P>" + NL +
++                 "<DT><DD>&nbsp;<DL>" + NL + "</DL>" + NL + "</DL>"}};
++
++    // Test with -nocomment option. The serialized-form.html should
++    // not display the inline comments and tags but should display deprecation
++    // information if any.
++    private static final String[][] TEST_NOCMNT = {
++        {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "boolean <STRONG>" +
++                 "undecorated</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\"><CODE>" +
++                 "setUndecorated(boolean)</CODE></A>.</I></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "int <STRONG>" +
++                 "publicKey</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;</DL>"}};
++
++    // Test with -nodeprecated option. The serialized-form.html should
++    // ignore the -nodeprecated tag and display the deprecation info. This
++    // test is similar to the normal run of javadoc in which inline comment, tags
++    // and deprecation information will be displayed.
++    private static final String[][] TEST_NODEPR = TEST_CMNT_DEPR;
++
++    // Test with -nodeprecated and -nocomment options. The serialized-form.html should
++    // ignore the -nodeprecated tag and display the deprecation info but should not
++    // display the inline comments and tags. This test is similar to the test with
++    // -nocomment option.
++    private static final String[][] TEST_NOCMNT_NODEPR = TEST_NOCMNT;
++
++    private static final String[] ARGS1 =
++        new String[] {
++            "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg1"};
++
++    private static final String[] ARGS2 =
++        new String[] {
++            "-d", BUG_ID, "-nocomment", "-sourcepath", SRC_DIR, "pkg1"};
++
++    private static final String[] ARGS3 =
++        new String[] {
++            "-d", BUG_ID, "-nodeprecated", "-sourcepath", SRC_DIR, "pkg1"};
++
++    private static final String[] ARGS4 =
++        new String[] {
++            "-d", BUG_ID, "-nocomment", "-nodeprecated", "-sourcepath", SRC_DIR, "pkg1"};
++
++    /**
++     * The entry point of the test.
++     * @param args the array of command line arguments.
++     */
++    public static void main(String[] args) {
++        TestSerializedFormDeprecationInfo tester = new TestSerializedFormDeprecationInfo();
++        run(tester, ARGS1, TEST_CMNT_DEPR, TEST_NOCMNT);
++        run(tester, ARGS2, TEST_NOCMNT, TEST_CMNT_DEPR);
++        run(tester, ARGS3, TEST_NODEPR, TEST_NOCMNT_NODEPR);
++        run(tester, ARGS4, TEST_NOCMNT_NODEPR, TEST_NODEPR);
++        tester.printSummary();
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugId() {
++        return BUG_ID;
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugName() {
++        return getClass().getName();
++    }
++}
+diff --git a/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C1.java b/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C1.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C1.java
+@@ -0,0 +1,108 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.io.IOException;
++import java.io.Serializable;
++
++/**
++ * A class comment for testing.
++ *
++ * @author      Bhavesh Patel
++ * @see C2
++ * @since       JDK1.0
++ */
++
++public class C1 implements Serializable {
++
++    /**
++     * This field indicates whether the C1 is undecorated.
++     *
++     * @see #setUndecorated(boolean)
++     * @since 1.4
++     * @serial
++     * @deprecated As of JDK version 1.5, replaced by
++     * {@link C1#setUndecorated(boolean) setUndecorated(boolean)}.
++     */
++     @Deprecated
++    public boolean undecorated = false;
++
++    private String title;
++
++    /**
++     * This enum specifies the possible modal exclusion types.
++     *
++     * @since 1.6
++     */
++    public static enum ModalExclusionType {
++        /**
++         * No modal exclusion.
++         */
++        NO_EXCLUDE,
++        /**
++         * <code>APPLICATION_EXCLUDE</code> indicates that a top-level window
++         * won't be blocked by any application-modal dialogs. Also, it isn't
++         * blocked by document-modal dialogs from outside of its child hierarchy.
++         */
++        APPLICATION_EXCLUDE
++    };
++
++    /**
++     * Constructor.
++     *
++     * @param title the title
++     * @param test boolean value
++     * @exception IllegalArgumentException if the <code>owner</code>'s
++     *     <code>GraphicsConfiguration</code> is not from a screen device
++     * @exception HeadlessException
++     */
++     public C1(String title, boolean test) {
++
++     }
++
++     public C1(String title) {
++
++     }
++
++    /**
++     * Method comments.
++     * @param  undecorated <code>true</code> if no decorations are
++     *         to be enabled;
++     *         <code>false</code> if decorations are to be enabled.
++     * @see    #readObject()
++     * @since 1.4
++     */
++    public void setUndecorated(boolean undecorated) {
++        /* Make sure we don't run in the middle of peer creation.*/
++    }
++
++    /**
++     * @see #setUndecorated(boolean)
++     */
++    public void readObject() throws IOException {
++
++    }
++}
+diff --git a/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C2.java b/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C2.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C2.java
+@@ -0,0 +1,86 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.io.ObjectInputStream;
++import java.io.IOException;
++import java.io.Serializable;
++
++/**
++ * A class comment for testing.
++ *
++ * @author      Bhavesh Patel
++ * @see C1
++ * @since       JDK1.0
++ */
++
++public class C2 implements Serializable {
++
++    /**
++     * This field indicates title.
++     */
++    String title;
++
++    public static enum ModalType {
++        NO_EXCLUDE
++    };
++
++    /**
++     * Constructor.
++     *
++     */
++     public C2() {
++
++     }
++
++     public C2(String title) {
++
++     }
++
++     /**
++     * Set visible.
++     *
++     * @param set boolean
++     * @since 1.4
++     * @deprecated As of JDK version 1.5, replaced by
++     * {@link C1#setUndecorated(boolean) setUndecorated(boolean)}.
++     */
++     @Deprecated
++     public void setVisible(boolean set) {
++     }
++
++     /**
++     * Reads the object stream.
++     *
++     * @param s ObjectInputStream
++     * @throws <code>IOException</code>
++     * @deprecated As of JDK version 1.5, replaced by
++     * {@link C1#setUndecorated(boolean) setUndecorated(boolean)}.
++     */
++     @Deprecated
++     public void readObject(ObjectInputStream s) throws IOException {
++     }
++}
+diff --git a/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C3.java b/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C3.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testSerializedFormDeprecationInfo/pkg1/C3.java
+@@ -0,0 +1,65 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.io.Serializable;
++
++/**
++ * Test for Serializable
++ *
++ * @author Bhavesh Patel
++ * @deprecated This class is no longer used.
++ */
++@Deprecated
++public abstract class C3 implements Serializable {
++
++    /**
++     * The name for this class.
++     *
++     * @serial
++     */
++    private String name;
++
++    /**
++     * @serial
++     */
++    private int publicKey;
++
++    /**
++     * Constructor for serialization only.
++     */
++    protected C3() {
++
++    }
++
++    /**
++     * Prints general information.
++     *
++     */
++    public void printInfo() {
++
++    }
++}

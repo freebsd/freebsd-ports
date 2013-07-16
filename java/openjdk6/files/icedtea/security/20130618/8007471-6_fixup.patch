@@ -1,0 +1,25 @@
+# HG changeset patch
+# User andrew
+# Date 1371827420 18000
+# Node ID ae1f55ff0e864d754b3dd7f2ad86fd93062e9744
+# Parent  ccd06d9c7258aea155d7053d399431bcd1af4405
+Fix up 8007471
+
+diff --git a/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java b/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java
+--- jdk/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java
++++ jdk/src/share/classes/com/sun/jmx/remote/internal/ArrayNotificationBuffer.java
+@@ -402,7 +402,13 @@
+                         try {
+                             ServerNotifForwarder.checkMBeanPermission(this.mBeanServer,
+                                                       candidate.getObjectName(),"addNotificationListener");
+-                        } catch (InstanceNotFoundException | SecurityException e) {
++                        } catch (InstanceNotFoundException e) {
++                            if (logger.debugOn()) {
++                                logger.debug("fetchNotifications", "candidate: " + candidate + " skipped. exception " + e);
++                            }
++                            ++nextSeq;
++                            continue;
++                        } catch (SecurityException e) {
+                             if (logger.debugOn()) {
+                                 logger.debug("fetchNotifications", "candidate: " + candidate + " skipped. exception " + e);
+                             }

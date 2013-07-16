@@ -1,0 +1,70 @@
+# HG changeset patch
+# User andrew
+# Date 1371486356 18000
+# Node ID 9d9e6637b14441f87a7561fe23981abb4beaf5c4
+# Parent  0ffc0656881cac6747ac1a62895e855750d1a04e
+8008615: Improve robustness of JMX internal APIs
+Reviewed-by: dfuchs, skoivu, dholmes
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/ObjectInputStreamWithLoader.java b/src/share/classes/com/sun/jmx/mbeanserver/ObjectInputStreamWithLoader.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/ObjectInputStreamWithLoader.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/ObjectInputStreamWithLoader.java
+@@ -30,7 +30,7 @@
+ import java.io.InputStream;
+ import java.io.ObjectInputStream;
+ import java.io.ObjectStreamClass;
+-import java.io.StreamCorruptedException;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * This class deserializes an object in the context of a specific class loader.
+@@ -60,6 +60,7 @@
+             return super.resolveClass(aClass);
+         } else {
+             String name = aClass.getName();
++            ReflectUtil.checkPackageAccess(name);
+             // Query the class loader ...
+             return Class.forName(name, false, loader);
+         }
+diff --git a/src/share/classes/javax/management/MBeanServerFactory.java b/src/share/classes/javax/management/MBeanServerFactory.java
+--- jdk/src/share/classes/javax/management/MBeanServerFactory.java
++++ jdk/src/share/classes/javax/management/MBeanServerFactory.java
+@@ -34,6 +34,7 @@
+ import java.util.ArrayList;
+ import java.util.logging.Level;
+ import javax.management.loading.ClassLoaderRepository;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * <p>Provides MBean server references.  There are no instances of
+@@ -442,7 +443,7 @@
+         }
+ 
+         // No context class loader? Try with Class.forName()
+-        return Class.forName(builderClassName);
++        return ReflectUtil.forName(builderClassName);
+     }
+ 
+     /**
+diff --git a/src/share/classes/javax/management/remote/rmi/RMIConnector.java b/src/share/classes/javax/management/remote/rmi/RMIConnector.java
+--- jdk/src/share/classes/javax/management/remote/rmi/RMIConnector.java
++++ jdk/src/share/classes/javax/management/remote/rmi/RMIConnector.java
+@@ -104,6 +104,7 @@
+ import javax.rmi.PortableRemoteObject;
+ import javax.rmi.ssl.SslRMIClientSocketFactory;
+ import javax.security.auth.Subject;
++import sun.reflect.misc.ReflectUtil;
+ import org.omg.CORBA.BAD_OPERATION;
+ import org.omg.CORBA.ORB;
+ import sun.rmi.server.UnicastRef2;
+@@ -1970,7 +1971,9 @@
+ 
+         protected Class resolveClass(ObjectStreamClass classDesc)
+                 throws IOException, ClassNotFoundException {
+-            return Class.forName(classDesc.getName(), false, loader);
++            String name = classDesc.getName();
++            ReflectUtil.checkPackageAccess(name);
++            return Class.forName(name, false, loader);
+         }
+ 
+         private final ClassLoader loader;

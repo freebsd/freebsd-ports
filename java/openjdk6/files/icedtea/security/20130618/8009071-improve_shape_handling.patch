@@ -1,0 +1,364 @@
+
+# HG changeset patch
+# User anthony
+# Date 1363871041 -14400
+# Node ID c98afec1bf864430f7a63a018f0e93c36fa66d6b
+# Parent 8ebdc80ffbc738897297ad274c5f5728f6c4ac69
+8009071: Improve shape handling
+Reviewed-by: art, mschoene
+
+--- jdk/src/share/native/sun/awt/splashscreen/java_awt_SplashScreen.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/share/native/sun/awt/splashscreen/java_awt_SplashScreen.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -26,6 +26,7 @@
+ #include "splashscreen_impl.h"
+ #include <jni.h>
+ #include <jlong_md.h>
++#include <sizecalc.h>
+ 
+ JNIEXPORT jint JNICALL
+ JNI_OnLoad(JavaVM * vm, void *reserved)
+@@ -57,7 +58,7 @@ Java_java_awt_SplashScreen__1update(JNIE
+     if (splash->overlayData) {
+         free(splash->overlayData);
+     }
+-    splash->overlayData = malloc(dataSize * sizeof(rgbquad_t));
++    splash->overlayData = SAFE_SIZE_ARRAY_ALLOC(malloc, dataSize, sizeof(rgbquad_t));
+     if (splash->overlayData) {
+         /* we need a copy anyway, so we'll be using GetIntArrayRegion */
+         (*env)->GetIntArrayRegion(env, data, 0, dataSize,
+--- jdk/src/share/native/sun/awt/splashscreen/splashscreen_gif.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/share/native/sun/awt/splashscreen/splashscreen_gif.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -27,6 +27,8 @@
+ #include "splashscreen_gfx.h"
+ 
+ #include "../giflib/gif_lib.h"
++
++#include "sizecalc.h"
+ 
+ #define GIF_TRANSPARENT     0x01
+ #define GIF_USER_INPUT      0x02
+@@ -120,7 +122,7 @@ SplashDecodeGif(Splash * splash, GifFile
+     splash->height = gif->SHeight;
+     splash->frameCount = gif->ImageCount;
+     splash->frames = (SplashImage *)
+-        malloc(sizeof(SplashImage) * gif->ImageCount);
++        SAFE_SIZE_ARRAY_ALLOC(malloc, sizeof(SplashImage), gif->ImageCount);
+     if (!splash->frames) {
+       free(pBitmapBits);
+       free(pOldBitmapBits);
+--- jdk/src/share/native/sun/java2d/pipe/Region.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/share/native/sun/java2d/pipe/Region.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -28,6 +28,7 @@
+ #include "jni_util.h"
+ 
+ #include "Region.h"
++#include "sizecalc.h"
+ 
+ static jfieldID endIndexID;
+ static jfieldID bandsID;
+@@ -260,8 +261,8 @@ RegionToYXBandedRectangles(JNIEnv *env,
+         }
+         Region_StartIteration(env, &clipInfo);
+         numrects = Region_CountIterationRects(&clipInfo);
+-        if (numrects > initialBufferSize) {
+-            *pRect = (RECT_T *) malloc(numrects * sizeof(RECT_T));
++        if ((unsigned long)numrects > initialBufferSize) {
++            *pRect = (RECT_T *) SAFE_SIZE_ARRAY_ALLOC(malloc, numrects, sizeof(RECT_T));
+             if (*pRect == NULL) {
+                 Region_EndIteration(env, &clipInfo);
+                 JNU_ThrowOutOfMemoryError(env,
+--- jdk/src/solaris/native/sun/awt/awt_Robot.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/solaris/native/sun/awt/awt_Robot.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -40,6 +40,7 @@
+ #include <X11/extensions/XInput.h>
+ #include <X11/extensions/XI.h>
+ #include <jni.h>
++#include <sizecalc.h>
+ #include "robot_common.h"
+ #include "canvas.h"
+ #include "wsutils.h"
+@@ -232,8 +233,9 @@ Java_sun_awt_X11_XRobotPeer_getRGBPixels
+     image = getWindowImage(awt_display, rootWindow, x, y, width, height);
+ 
+     /* Array to use to crunch around the pixel values */
+-    ary = (jint *) malloc(width * height * sizeof (jint));
+-    if (ary == NULL) {
++    if (!IS_SAFE_SIZE_MUL(width, height) ||
++        !(ary = (jint *) SAFE_SIZE_ARRAY_ALLOC(malloc, width * height, sizeof (jint))))
++    {
+         JNU_ThrowOutOfMemoryError(env, "OutOfMemoryError");
+         XDestroyImage(image);
+         AWT_UNLOCK();
+--- jdk/src/solaris/native/sun/awt/awt_UNIXToolkit.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/solaris/native/sun/awt/awt_UNIXToolkit.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -29,6 +29,7 @@
+ #include <dlfcn.h>
+ 
+ #include <jni.h>
++#include <sizecalc.h>
+ #include "sun_awt_UNIXToolkit.h"
+ 
+ #ifndef HEADLESS
+@@ -148,7 +149,8 @@ Java_sun_awt_UNIXToolkit_load_1gtk_1icon
+     }
+ 
+     len = (*env)->GetStringUTFLength(env, filename);
+-    filename_str = (char *)malloc(sizeof(char) * (len + 1));
++    filename_str = (char *)SAFE_SIZE_ARRAY_ALLOC(malloc,
++            sizeof(char), len + 1);
+     if (filename_str == NULL) {
+         JNU_ThrowOutOfMemoryError(env, "OutOfMemoryError");
+         return JNI_FALSE;
+@@ -189,7 +191,8 @@ Java_sun_awt_UNIXToolkit_load_1stock_1ic
+     }
+ 
+     len = (*env)->GetStringUTFLength(env, stock_id);
+-    stock_id_str = (char *)malloc(sizeof(char) * (len + 1));
++    stock_id_str = (char *)SAFE_SIZE_ARRAY_ALLOC(malloc,
++            sizeof(char), len + 1);
+     if (stock_id_str == NULL) {
+         JNU_ThrowOutOfMemoryError(env, "OutOfMemoryError");
+         return JNI_FALSE;
+@@ -200,7 +203,8 @@ Java_sun_awt_UNIXToolkit_load_1stock_1ic
+     if (detail != NULL)
+     {
+         len = (*env)->GetStringUTFLength(env, detail);
+-        detail_str = (char *)malloc(sizeof(char) * (len + 1));
++        detail_str = (char *)SAFE_SIZE_ARRAY_ALLOC(malloc,
++                sizeof(char), len + 1);
+         if (detail_str == NULL) {
+             JNU_ThrowOutOfMemoryError(env, "OutOfMemoryError");
+             return JNI_FALSE;
+--- jdk/src/solaris/native/sun/awt/fontpath.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/solaris/native/sun/awt/fontpath.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -37,6 +37,7 @@
+ #ifdef __solaris__
+ #include <sys/systeminfo.h>
+ #endif
++#include <sizecalc.h>
+ 
+ #include <jni.h>
+ #include <jni_util.h>
+@@ -182,7 +183,7 @@
+ 
+     if ( fDirP->num == 0 ) return;
+ 
+-    appendDirList = malloc ( fDirP->num * sizeof ( int ));
++    appendDirList = SAFE_SIZE_ARRAY_ALLOC(malloc, fDirP->num, sizeof ( int ));
+     if ( appendDirList == NULL ) {
+       return;  /* if it fails we cannot do much */
+     }
+@@ -239,7 +240,7 @@
+     }
+ 
+ 
+-    newFontPath = malloc ( totalDirCount * sizeof ( char **) );
++    newFontPath = SAFE_SIZE_ARRAY_ALLOC(malloc, totalDirCount, sizeof ( char **) );
+     /* if it fails free things and get out */
+     if ( newFontPath == NULL ) {
+       free ( ( void *) appendDirList );
+@@ -260,7 +261,12 @@
+ 
+         /* printf ( "Appending %s\n", fDirP->name[index] ); */
+ 
+-        onePath = malloc ( ( strlen (fDirP->name[index]) + 2 )* sizeof( char ) );
++        onePath = SAFE_SIZE_ARRAY_ALLOC(malloc, strlen (fDirP->name[index]) + 2, sizeof( char ) );
++        if (onePath == NULL) {
++            free ( ( void *) appendDirList );
++            XFreeFontPath ( origFontPath );
++            return;
++        }
+         strcpy ( onePath, fDirP->name[index] );
+         strcat ( onePath, "/" );
+         newFontPath[nPaths++] = onePath;
+--- jdk/src/solaris/native/sun/awt/gtk2_interface.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/solaris/native/sun/awt/gtk2_interface.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -28,6 +28,7 @@
+ #include <limits.h>
+ #include <stdio.h>
+ #include <string.h>
++#include "sizecalc.h"
+ #include "gtk2_interface.h"
+ #include "java_awt_Transparency.h"
+ 
+@@ -637,7 +638,8 @@
+     {
+         gchar *tmp_env = strdup (gtk_modules_env);
+         /* the new env will be smaller than the old one */
+-        gchar *s, *new_env = malloc (sizeof(ENV_PREFIX)+strlen (gtk_modules_env));
++        gchar *s, *new_env = SAFE_SIZE_STRUCT_ALLOC(malloc,
++                sizeof(ENV_PREFIX), 1, strlen (gtk_modules_env));
+ 
+         if (new_env != NULL )
+         {
+--- jdk/src/solaris/native/sun/awt/splashscreen/splashscreen_sys.c	Thu Mar 21 10:42:36 2013 +0000
++++ jdk/src/solaris/native/sun/awt/splashscreen/splashscreen_sys.c	Thu Mar 21 17:04:01 2013 +0400
+@@ -40,6 +40,7 @@
+ #include <langinfo.h>
+ #include <locale.h>
+ #include <fcntl.h>
++#include <sizecalc.h>
+ 
+ static Bool shapeSupported;
+ static int shapeEventBase, shapeErrorBase;
+@@ -75,9 +76,12 @@
+         goto done;
+     }
+     inSize = strlen(in);
++    buf = SAFE_SIZE_ARRAY_ALLOC(malloc, inSize, 2);
++    if (!buf) {
++        return NULL;
++    }
+     bufSize = inSize*2; // need 2 bytes per char for UCS-2, this is
+                         // 2 bytes per source byte max
+-    buf = malloc(bufSize);
+     out = buf; outSize = bufSize;
+     /* linux iconv wants char** source and solaris wants const char**...
+        cast to void* */
+@@ -113,12 +117,20 @@
+     initRect(&maskRect, 0, 0, splash->width, splash->height, 1,
+             splash->width * splash->imageFormat.depthBytes,
+             splash->frames[imageIndex].bitmapBits, &splash->imageFormat);
+-    rects =
+-        malloc(sizeof(XRectangle) * (splash->width / 2 + 1) * splash->height);
++    if (!IS_SAFE_SIZE_MUL(splash->width / 2 + 1, splash->height)) {
++        return;
++    }
++    rects = SAFE_SIZE_ARRAY_ALLOC(malloc,
++            sizeof(XRectangle), (splash->width / 2 + 1) * splash->height);
++    if (!rects) {
++        return;
++    }
+ 
+     frame->numRects = BitmapToYXBandedRectangles(&maskRect, rects);
+-    frame->rects = malloc(frame->numRects * sizeof(XRectangle));
+-    memcpy(frame->rects, rects, frame->numRects * sizeof(XRectangle));
++    frame->rects = SAFE_SIZE_ARRAY_ALLOC(malloc, frame->numRects, sizeof(XRectangle));
++    if (frame->rects) { // handle the error after the if(){}
++        memcpy(frame->rects, rects, frame->numRects * sizeof(XRectangle));
++    }
+     free(rects);
+ }
+ 
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/src/share/native/common/sizecalc.h	Thu Mar 21 17:04:01 2013 +0400
+@@ -0,0 +1,118 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++#ifndef SIZECALC_H
++#define SIZECALC_H
++
++/*
++ * A machinery for safe calculation of sizes used when allocating memory.
++ *
++ * All size checks are performed against the SIZE_MAX (the maximum value for
++ * size_t). All numerical arguments as well as the result of calculation must
++ * be non-negative integers less than or equal to SIZE_MAX, otherwise the
++ * calculated size is considered unsafe.
++ *
++ * If the SIZECALC_ALLOC_THROWING_BAD_ALLOC macro is defined, then _ALLOC_
++ * helper macros throw the std::bad_alloc instead of returning NULL.
++ */
++
++#include <stdint.h> /* SIZE_MAX for C99+ */
++/* http://stackoverflow.com/questions/3472311/what-is-a-portable-method-to-find-the-maximum-value-of-size-t */
++#ifndef SIZE_MAX
++#define SIZE_MAX ((size_t)-1)
++#endif
++
++#define IS_SAFE_SIZE_T(x) ((x) >= 0 && (unsigned long long)(x) <= SIZE_MAX)
++
++#define IS_SAFE_SIZE_MUL(m, n) \
++    (IS_SAFE_SIZE_T(m) && IS_SAFE_SIZE_T(n) && ((m) == 0 || (n) == 0 || (size_t)(n) <= (SIZE_MAX / (size_t)(m))))
++
++#define IS_SAFE_SIZE_ADD(a, b) \
++    (IS_SAFE_SIZE_T(a) && IS_SAFE_SIZE_T(b) && (size_t)(b) <= (SIZE_MAX - (size_t)(a)))
++
++
++
++/* Helper macros */
++
++#ifdef SIZECALC_ALLOC_THROWING_BAD_ALLOC
++#define FAILURE_RESULT throw std::bad_alloc()
++#else
++#define FAILURE_RESULT NULL
++#endif
++
++/*
++ * A helper macro to safely allocate an array of size m*n.
++ * Example usage:
++ *    int* p = (int*)SAFE_SIZE_ARRAY_ALLOC(malloc, sizeof(int), n);
++ *    if (!p) throw OutOfMemory;
++ *    // Use the allocated array...
++ */
++#define SAFE_SIZE_ARRAY_ALLOC(func, m, n) \
++    (IS_SAFE_SIZE_MUL((m), (n)) ? ((func)((m) * (n))) : FAILURE_RESULT)
++
++#define SAFE_SIZE_ARRAY_REALLOC(func, p, m, n) \
++    (IS_SAFE_SIZE_MUL((m), (n)) ? ((func)((p), (m) * (n))) : FAILURE_RESULT)
++
++/*
++ * A helper macro to safely allocate an array of type 'type' with 'n' items
++ * using the C++ new[] operator.
++ * Example usage:
++ *    MyClass* p = SAFE_SIZE_NEW_ARRAY(MyClass, n);
++ *    // Use the pointer.
++ * This macro throws the std::bad_alloc C++ exception to indicate
++ * a failure.
++ * NOTE: if 'n' is calculated, the calling code is responsible for using the
++ * IS_SAFE_... macros to check if the calculations are safe.
++ */
++#define SAFE_SIZE_NEW_ARRAY(type, n) \
++    (IS_SAFE_SIZE_MUL(sizeof(type), (n)) ? (new type[(n)]) : throw std::bad_alloc())
++
++#define SAFE_SIZE_NEW_ARRAY2(type, n, m) \
++    (IS_SAFE_SIZE_MUL((m), (n)) && IS_SAFE_SIZE_MUL(sizeof(type), (n) * (m)) ? \
++     (new type[(n) * (m)]) : throw std::bad_alloc())
++
++/*
++ * Checks if a data structure of size (a + m*n) can be safely allocated
++ * w/o producing an integer overflow when calculating its size.
++ */
++#define IS_SAFE_STRUCT_SIZE(a, m, n) \
++    ( \
++      IS_SAFE_SIZE_MUL((m), (n)) && IS_SAFE_SIZE_ADD((m) * (n), (a)) \
++    )
++
++/*
++ * A helper macro for implementing safe memory allocation for a data structure
++ * of size (a + m * n).
++ * Example usage:
++ *    void * p = SAFE_SIZE_ALLOC(malloc, header, num, itemSize);
++ *    if (!p) throw OutOfMemory;
++ *    // Use the allocated memory...
++ */
++#define SAFE_SIZE_STRUCT_ALLOC(func, a, m, n) \
++    (IS_SAFE_STRUCT_SIZE((a), (m), (n)) ? ((func)((a) + (m) * (n))) : FAILURE_RESULT)
++
++
++#endif /* SIZECALC_H */
++
+

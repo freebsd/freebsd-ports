@@ -1,0 +1,20 @@
+# HG changeset patch
+# User andrew
+# Date 1371827429 18000
+# Node ID 059ac6834c32c540ad86b99c0e5339554398def2
+# Parent  ae1f55ff0e864d754b3dd7f2ad86fd93062e9744
+Fix up 8008611
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java b/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/Introspector.java
+@@ -44,6 +44,9 @@
+ 
+ import com.sun.jmx.mbeanserver.Util;
+ 
++import sun.reflect.misc.MethodUtil;
++import sun.reflect.misc.ReflectUtil;
++
+ /**
+  * This class contains the methods for performing all the tests needed to verify
+  * that a class represents a JMX compliant MBean.

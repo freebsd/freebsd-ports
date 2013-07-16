@@ -1,0 +1,36 @@
+# HG changeset patch
+# User andrew
+# Date 1371236018 -3600
+# Node ID 1226e37bd53ebb2c4fbb9d71dd60ee5e226c9f1b
+# Parent  6bf007b78f5c5f9e9bf4721dd4e4bc956f6f343f
+8001309: Better handling of annotation interfaces
+Reviewed-by: darcy
+
+diff --git a/src/share/classes/sun/reflect/annotation/AnnotationInvocationHandler.java b/src/share/classes/sun/reflect/annotation/AnnotationInvocationHandler.java
+--- jdk/src/share/classes/sun/reflect/annotation/AnnotationInvocationHandler.java
++++ jdk/src/share/classes/sun/reflect/annotation/AnnotationInvocationHandler.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -337,12 +337,15 @@
+         try {
+             annotationType = AnnotationType.getInstance(type);
+         } catch(IllegalArgumentException e) {
+-            // Class is no longer an annotation type; all bets are off
+-            return;
++            // Class is no longer an annotation type; time to punch out
++            throw new java.io.InvalidObjectException("Non-annotation type in annotation serial stream");
+         }
+ 
+         Map<String, Class> memberTypes = annotationType.memberTypes();
+ 
++
++        // If there are annotation members without values, that
++        // situation is handled by the invoke method.
+         for (Map.Entry<String, Object> memberValue : memberValues.entrySet()) {
+             String name = memberValue.getKey();
+             Class memberType = memberTypes.get(name);

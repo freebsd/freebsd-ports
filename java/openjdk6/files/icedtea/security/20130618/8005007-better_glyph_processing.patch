@@ -1,0 +1,118 @@
+# HG changeset patch
+# User prr
+# Date 1364745958 25200
+# Node ID ff15c4e83482223b179baee18be068908c7e2dce
+# Parent  148e0adac8e895f2cee0d121f0699bb9d4923044
+8005007: Better glyph processing
+Reviewed-by: srl, mschoene, bae
+
+diff --git a/src/share/classes/sun/font/ExtendedTextSourceLabel.java b/src/share/classes/sun/font/ExtendedTextSourceLabel.java
+--- jdk/src/share/classes/sun/font/ExtendedTextSourceLabel.java
++++ jdk/src/share/classes/sun/font/ExtendedTextSourceLabel.java
+@@ -366,6 +366,9 @@
+     validate(index);
+     float[] charinfo = getCharinfo();
+     index = l2v(index) * numvals;
++    if ((index+vish) >= charinfo.length) {
++        return new Rectangle2D.Float();
++    }
+     return new Rectangle2D.Float(
+                                  charinfo[index + visx],
+                                  charinfo[index + visy],
+@@ -455,6 +458,10 @@
+     int length = source.getLength();
+     --start;
+     while (width >= 0 && ++start < length) {
++      int cidx = l2v(start) * numvals + advx;
++      if (cidx >= charinfo.length) {
++          break; // layout bailed for some reason
++      }
+       float adv = charinfo[l2v(start) * numvals + advx];
+       width -= adv;
+     }
+@@ -468,7 +475,11 @@
+     float[] charinfo = getCharinfo();
+     --start;
+     while (++start < limit) {
+-      a += charinfo[l2v(start) * numvals + advx];
++      int cidx = l2v(start) * numvals + advx;
++      if (cidx >= charinfo.length) {
++          break; // layout bailed for some reason
++      }
++      a += charinfo[cidx];
+     }
+ 
+     return a;
+diff --git a/src/share/native/sun/font/layout/LEGlyphStorage.cpp b/src/share/native/sun/font/layout/LEGlyphStorage.cpp
+--- jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp
++++ jdk/src/share/native/sun/font/layout/LEGlyphStorage.cpp
+@@ -584,7 +584,7 @@
+ {
+     le_int32 growAmount = fInsertionList->getGrowAmount();
+ 
+-    if (growAmount == 0) {
++    if (growAmount <= 0) {
+         return fGlyphCount;
+     }
+ 
+@@ -613,7 +613,9 @@
+         fAuxData = (le_uint32 *)newAuxData;
+     }
+ 
+-    fSrcIndex  = fGlyphCount - 1;
++    if (fGlyphCount > 0) {
++       fSrcIndex  = fGlyphCount - 1;
++    }
+     fDestIndex = newGlyphCount - 1;
+ 
+ #if 0
+@@ -653,6 +655,10 @@
+     }
+ #endif
+ 
++    if (atPosition < 0 || fSrcIndex < 0 || fDestIndex < 0) {
++        return FALSE;
++    }
++
+     if (fAuxData != NULL) {
+         le_int32 src = fSrcIndex, dest = fDestIndex;
+ 
+@@ -665,7 +671,7 @@
+         }
+     }
+ 
+-    while (fSrcIndex > atPosition) {
++    while (fSrcIndex > atPosition && fSrcIndex >= 0 && fDestIndex >= 0) {
+         fGlyphs[fDestIndex]      = fGlyphs[fSrcIndex];
+         fCharIndices[fDestIndex] = fCharIndices[fSrcIndex];
+ 
+@@ -673,7 +679,7 @@
+         fSrcIndex  -= 1;
+     }
+ 
+-    for (le_int32 i = count - 1; i >= 0; i -= 1) {
++    for (le_int32 i = count - 1; i >= 0 && fDestIndex >= 0; i -= 1) {
+         fGlyphs[fDestIndex]      = newGlyphs[i];
+         fCharIndices[fDestIndex] = fCharIndices[atPosition];
+ 
+@@ -682,7 +688,7 @@
+ 
+     // the source glyph we're pointing at
+     // just got replaced by the insertion
+-    fSrcIndex -= 1;
++        fSrcIndex -= 1;
+ 
+     return FALSE;
+ }
+diff --git a/src/share/native/sun/font/layout/LookupProcessor.cpp b/src/share/native/sun/font/layout/LookupProcessor.cpp
+--- jdk/src/share/native/sun/font/layout/LookupProcessor.cpp
++++ jdk/src/share/native/sun/font/layout/LookupProcessor.cpp
+@@ -61,7 +61,7 @@
+ 
+         delta = applySubtable(lookupSubtable, lookupType, glyphIterator, fontInstance, success);
+ 
+-        if (delta > 0 && LE_FAILURE(success)) {
++        if (delta > 0 || LE_FAILURE(success)) {
+             return 1;
+         }
+ 

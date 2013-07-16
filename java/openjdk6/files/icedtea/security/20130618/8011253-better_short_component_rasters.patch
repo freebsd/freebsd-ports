@@ -1,0 +1,140 @@
+# HG changeset patch
+# User prr
+# Date 1365450380 25200
+# Node ID 02f545e014b0b73094bd295643f8b33965fe8bcf
+# Parent  7024e2f3b69c998420d5d765c056048b8b6b5c2b
+8011253: Better Short Component Rasters
+Reviewed-by: bae, vadim, mschoene
+
+diff --git a/src/share/classes/sun/awt/image/ShortBandedRaster.java b/src/share/classes/sun/awt/image/ShortBandedRaster.java
+--- jdk/src/share/classes/sun/awt/image/ShortBandedRaster.java
++++ jdk/src/share/classes/sun/awt/image/ShortBandedRaster.java
+@@ -156,7 +156,7 @@
+             throw new RasterFormatException("ShortBandedRasters must have "+
+                 "BandedSampleModels");
+         }
+-        verify(false);
++        verify();
+     }
+ 
+     /**
+@@ -730,16 +730,30 @@
+     }
+ 
+     /**
+-     * Verify that the layout parameters are consistent with
+-     * the data.  If strictCheck
+-     * is false, this method will check for ArrayIndexOutOfBounds conditions.  If
+-     * strictCheck is true, this method will check for additional error
+-     * conditions such as line wraparound (width of a line greater than
+-     * the scanline stride).
+-     * @return   String   Error string, if the layout is incompatible with
+-     *                    the data.  Otherwise returns null.
++     * Verify that the layout parameters are consistent with the data.
++     * Verifies whether the data buffer has enough data for the raster,
++     * taking into account offsets, after ensuring all offsets are >=0.
++     * @throws RasterFormatException if a problem is detected.
+      */
+-    private void verify (boolean strictCheck) {
++    private void verify() {
++
++        /* Need to re-verify the dimensions since a sample model may be
++         * specified to the constructor
++         */
++        if (width <= 0 || height <= 0 ||
++            height > (Integer.MAX_VALUE / width))
++        {
++            throw new RasterFormatException("Invalid raster dimension");
++        }
++
++        if (scanlineStride < 0 ||
++            scanlineStride > (Integer.MAX_VALUE / height))
++        {
++            // integer overflow
++            throw new RasterFormatException("Incorrect scanline stride: "
++                    + scanlineStride);
++        }
++
+         // Make sure data for Raster is in a legal range
+         for (int i=0; i < dataOffsets.length; i++) {
+             if (dataOffsets[i] < 0) {
+@@ -749,19 +763,28 @@
+             }
+         }
+ 
+-        int maxSize = 0;
+-        int size;
++        int lastScanOffset = (height - 1) * scanlineStride;
++        int lastPixelOffset = lastScanOffset + (width-1);
++        if (lastPixelOffset < lastScanOffset) {
++            throw new RasterFormatException("Invalid raster dimension");
++        }
++
++        int maxIndex = 0;
++        int index;
+ 
+         for (int i=0; i < numDataElements; i++) {
+-            size = (height-1)*scanlineStride + (width-1) + dataOffsets[i];
+-            if (size > maxSize) {
+-                maxSize = size;
++            index = lastPixelOffset + dataOffsets[i];
++            if (index < lastPixelOffset) {
++                throw new RasterFormatException("Invalid raster dimension");
++            }
++            if (index > maxIndex) {
++                maxIndex = index;
+             }
+         }
+         for (int i=0; i < numDataElements; i++) {
+-            if (data[i].length < maxSize) {
+-                throw new RasterFormatException("Data array too small (should be "+
+-                                                maxSize+" )");
++            if (data[i].length <= maxIndex) {
++                throw new RasterFormatException("Data array too small " +
++                      "(should be > "+ maxIndex+" )");
+             }
+         }
+     }
+diff --git a/src/share/classes/sun/awt/image/ShortComponentRaster.java b/src/share/classes/sun/awt/image/ShortComponentRaster.java
+--- jdk/src/share/classes/sun/awt/image/ShortComponentRaster.java
++++ jdk/src/share/classes/sun/awt/image/ShortComponentRaster.java
+@@ -819,9 +819,6 @@
+             }
+         }
+ 
+-        int maxSize = 0;
+-        int size;
+-
+         // we can be sure that width and height are greater than 0
+         if (scanlineStride < 0 ||
+             scanlineStride > (Integer.MAX_VALUE / height))
+@@ -847,21 +844,23 @@
+         }
+         lastPixelOffset += lastScanOffset;
+ 
++        int index;
++        int maxIndex = 0;
+         for (int i = 0; i < numDataElements; i++) {
+             if (dataOffsets[i] > (Integer.MAX_VALUE - lastPixelOffset)) {
+                 throw new RasterFormatException("Incorrect band offset: "
+                             + dataOffsets[i]);
+             }
+ 
+-            size = lastPixelOffset + dataOffsets[i];
++            index = lastPixelOffset + dataOffsets[i];
+ 
+-            if (size > maxSize) {
+-                maxSize = size;
++            if (index > maxIndex) {
++                maxIndex = index;
+             }
+         }
+-        if (data.length < maxSize) {
+-            throw new RasterFormatException("Data array too small (should be "
+-                    + maxSize + " )");
++        if (data.length <= maxIndex) {
++            throw new RasterFormatException("Data array too small (should be > "
++                    + maxIndex + " )");
+         }
+     }
+ 

@@ -1,0 +1,236 @@
+# HG changeset patch
+# User bae
+# Date 1364494624 -14400
+# Node ID d514062cbfff28dc38f4b429df12f0d174f960e6
+# Parent  5b6f070ddeab14b2d7a731c5f4c61eea406638da
+8001038: Resourcefully handle resources
+Reviewed-by: mschoene, prr, bae
+Contributed-by: jia-hong.chen@oracle.com
+
+diff --git a/src/share/classes/java/awt/Font.java b/src/share/classes/java/awt/Font.java
+--- jdk/src/share/classes/java/awt/Font.java
++++ jdk/src/share/classes/java/awt/Font.java
+@@ -850,6 +850,33 @@
+     public static Font createFont(int fontFormat, InputStream fontStream)
+         throws java.awt.FontFormatException, java.io.IOException {
+ 
++        if (hasTempPermission()) {
++            return createFont0(fontFormat, fontStream, null);
++        }
++
++        // Otherwise, be extra conscious of pending temp file creation and
++        // resourcefully handle the temp file resources, among other things.
++        CreatedFontTracker tracker = CreatedFontTracker.getTracker();
++        boolean acquired = false;
++        try {
++            acquired = tracker.acquirePermit();
++            if (!acquired) {
++                throw new IOException("Timed out waiting for resources.");
++            }
++            return createFont0(fontFormat, fontStream, tracker);
++        } catch (InterruptedException e) {
++            throw new IOException("Problem reading font data.");
++        } finally {
++            if (acquired) {
++                tracker.releasePermit();
++            }
++        }
++    }
++
++    private static Font createFont0(int fontFormat, InputStream fontStream,
++                                    CreatedFontTracker tracker)
++        throws java.awt.FontFormatException, java.io.IOException {
++
+         if (fontFormat != Font.TRUETYPE_FONT &&
+             fontFormat != Font.TYPE1_FONT) {
+             throw new IllegalArgumentException ("font format not recognized");
+@@ -864,9 +891,11 @@
+                     }
+                 }
+             );
++            if (tracker != null) {
++                tracker.add(tFile);
++            }
+ 
+             int totalSize = 0;
+-            CreatedFontTracker tracker = null;
+             try {
+                 final OutputStream outStream =
+                     AccessController.doPrivileged(
+@@ -876,8 +905,8 @@
+                             }
+                         }
+                     );
+-                if (!hasTempPermission()) {
+-                    tracker = CreatedFontTracker.getTracker();
++                if (tracker != null) {
++                    tracker.set(tFile, outStream);
+                 }
+                 try {
+                     byte[] buf = new byte[8192]; 
+@@ -892,7 +921,7 @@
+                             }
+                             if (totalSize+tracker.getNumBytes() >
+                                 tracker.MAX_TOTAL_BYTES)
+-                              {
++                            {
+                                 throw new IOException("Total files too big.");
+                             }
+                             totalSize += bytesRead;
+@@ -918,6 +947,9 @@
+                 Font font = new Font(tFile, fontFormat, true, tracker);
+                 return font;
+             } finally {
++                if (tracker != null) {
++                    tracker.remove(tFile);
++                }
+                 if (!copiedFontData) {
+                     if (tracker != null) {
+                         tracker.subBytes(totalSize);
+diff --git a/src/share/classes/sun/font/CreatedFontTracker.java b/src/share/classes/sun/font/CreatedFontTracker.java
+--- jdk/src/share/classes/sun/font/CreatedFontTracker.java
++++ jdk/src/share/classes/sun/font/CreatedFontTracker.java
+@@ -25,13 +25,22 @@
+ 
+ package sun.font;
+ 
++import java.io.File;
++import java.io.OutputStream;
++import java.util.HashMap;
++import java.util.Map;
++import java.util.concurrent.Semaphore;
++import java.util.concurrent.TimeUnit;
++
++import sun.awt.AppContext;
++
+ public class CreatedFontTracker {
+ 
+     public static final int MAX_FILE_SIZE = 32 * 1024 * 1024;
+     public static final int MAX_TOTAL_BYTES = 10 * MAX_FILE_SIZE;
+ 
+-    static int numBytes;
+     static CreatedFontTracker tracker;
++    int numBytes;
+ 
+     public static synchronized CreatedFontTracker getTracker() {
+         if (tracker == null) {
+@@ -40,6 +49,10 @@
+         return tracker;
+     }
+ 
++    private CreatedFontTracker() {
++        numBytes = 0;
++    }
++
+     public synchronized int getNumBytes() {
+         return numBytes;
+     }
+@@ -51,4 +64,108 @@
+     public synchronized void subBytes(int sz) {
+         numBytes -= sz;
+     }
++
++    /**
++     * Returns an AppContext-specific counting semaphore.
++     */
++    private static synchronized Semaphore getCS() {
++        final AppContext appContext = AppContext.getAppContext();
++        Semaphore cs = (Semaphore) appContext.get(CreatedFontTracker.class);
++        if (cs == null) {
++            // Make a semaphore with 5 permits that obeys the first-in first-out
++            // granting of permits.
++            cs = new Semaphore(5, true);
++            appContext.put(CreatedFontTracker.class, cs);
++        }
++        return cs;
++    }
++
++    public boolean acquirePermit() throws InterruptedException {
++        // This does a timed-out wait.
++        return getCS().tryAcquire(120, TimeUnit.SECONDS);
++    }
++
++    public void releasePermit() {
++        getCS().release();
++    }
++
++    public void add(File file) {
++        TempFileDeletionHook.add(file);
++    }
++
++    public void set(File file, OutputStream os) {
++        TempFileDeletionHook.set(file, os);
++    }
++
++    public void remove(File file) {
++        TempFileDeletionHook.remove(file);
++    }
++
++    /**
++     * Helper class for cleanup of temp files created while processing fonts.
++     * Note that this only applies to createFont() from an InputStream object.
++     */
++    private static class TempFileDeletionHook {
++        private static HashMap<File, OutputStream> files = new HashMap<>();
++
++        private static Thread t = null;
++        static void init() {
++            if (t == null) {
++                // Add a shutdown hook to remove the temp file.
++                java.security.AccessController.doPrivileged(
++                   new java.security.PrivilegedAction() {
++                      public Object run() {
++                          /* The thread must be a member of a thread group
++                           * which will not get GCed before VM exit.
++                           * Make its parent the top-level thread group.
++                           */
++                          ThreadGroup tg =
++                              Thread.currentThread().getThreadGroup();
++                          for (ThreadGroup tgn = tg;
++                               tgn != null;
++                               tg = tgn, tgn = tg.getParent());
++                          t = new Thread(tg, new Runnable() {
++                              public void run() {
++                                  runHooks();
++                              }
++                          });
++                          t.setContextClassLoader(null);
++                          Runtime.getRuntime().addShutdownHook(t);
++                          return null;
++                      }
++                   });
++            }
++        }
++
++        private TempFileDeletionHook() {}
++
++        static synchronized void add(File file) {
++            init();
++            files.put(file, null);
++        }
++
++        static synchronized void set(File file, OutputStream os) {
++            files.put(file, os);
++        }
++
++        static synchronized void remove(File file) {
++            files.remove(file);
++        }
++
++        static synchronized void runHooks() {
++            if (files.isEmpty()) {
++                return;
++            }
++
++            for (Map.Entry<File, OutputStream> entry : files.entrySet()) {
++                // Close the associated output stream, and then delete the file.
++                try {
++                    if (entry.getValue() != null) {
++                        entry.getValue().close();
++                    }
++                } catch (Exception e) {}
++                entry.getKey().delete();
++            }
++        }
++    }
+ }

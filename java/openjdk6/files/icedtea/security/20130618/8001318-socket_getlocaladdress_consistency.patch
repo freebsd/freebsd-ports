@@ -1,0 +1,470 @@
+# HG changeset patch
+# User andrew
+# Date 1371237878 -3600
+# Node ID f2c674e184e04dcd8e39b6ba6f784c75a3553ef5
+# Parent  1226e37bd53ebb2c4fbb9d71dd60ee5e226c9f1b
+8001318: Socket.getLocalAddress not consistent with InetAddress.getLocalHost
+
+diff --git a/src/share/classes/java/net/NetUtil.java b/src/share/classes/java/net/NetUtil.java
+new file mode 100644
+--- /dev/null
++++ jdk/src/share/classes/java/net/NetUtil.java
+@@ -0,0 +1,73 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package java.net;
++
++import java.security.AccessController;
++import java.security.PrivilegedExceptionAction;
++
++class NetUtil {
++
++    // Value of jdk.net.revealLocalAddress
++    private static boolean revealLocalAddress;
++
++    // True if jdk.net.revealLocalAddress had been read
++    private static volatile boolean propRevealLocalAddr;
++
++    /*
++     * Returns true if security check on localAddress is disabled
++     */
++    static boolean doRevealLocalAddress() {
++        return propRevealLocalAddr ? revealLocalAddress
++                                     : readRevealLocalAddr();
++
++    }
++
++    private static boolean readRevealLocalAddr() {
++        SecurityManager sm = System.getSecurityManager();
++        if (sm != null) {
++            try {
++                revealLocalAddress = Boolean.parseBoolean(
++                      AccessController.doPrivileged(
++                          new PrivilegedExceptionAction<String>() {
++                              public String run() {
++                                  return System.getProperty(
++                                      "jdk.net.revealLocalAddress");
++                              }
++                          }));
++
++            } catch (Exception e) {
++                //revealLocalAddress is false
++            }
++            propRevealLocalAddr = true;
++        }
++        /*
++         * No security manager, or security check passed or
++         * jdk.net.revealLocalAddress set to true
++         */
++        return revealLocalAddress;
++    }
++
++}
+diff --git a/src/share/classes/java/net/ServerSocket.java b/src/share/classes/java/net/ServerSocket.java
+--- jdk/src/share/classes/java/net/ServerSocket.java
++++ jdk/src/share/classes/java/net/ServerSocket.java
+@@ -355,7 +355,15 @@
+         if (!isBound())
+             return null;
+         try {
+-            return getImpl().getInetAddress();
++            InetAddress in = getImpl().getInetAddress();
++            if (!NetUtil.doRevealLocalAddress()) {
++                SecurityManager sm = System.getSecurityManager();
++                if (sm != null)
++                    sm.checkConnect(in.getHostAddress(), -1);
++            }
++            return in;
++        } catch (SecurityException e) {
++            return InetAddress.getLoopbackAddress();
+         } catch (SocketException e) {
+             // nothing
+             // If we're bound, the impl has been created
+@@ -660,13 +668,20 @@
+      *
+      * @return  a string representation of this socket.
+      */
+-    public String toString() {
++   public String toString() {
+         if (!isBound())
+             return "ServerSocket[unbound]";
+-        return "ServerSocket[addr=" + impl.getInetAddress() +
+-                ",port=" + impl.getPort() +
++        InetAddress in;
++        if (!NetUtil.doRevealLocalAddress() &&
++                System.getSecurityManager() != null)
++        {
++            in = InetAddress.getLoopbackAddress();
++        } else {
++            in = impl.getInetAddress();
++        }
++        return "ServerSocket[addr=" + in +
+                 ",localport=" + impl.getLocalPort()  + "]";
+-    }
++   }
+ 
+     void setBound() {
+         bound = true;
+diff --git a/src/share/classes/java/net/Socket.java b/src/share/classes/java/net/Socket.java
+--- jdk/src/share/classes/java/net/Socket.java
++++ jdk/src/share/classes/java/net/Socket.java
+@@ -656,9 +656,17 @@
+         InetAddress in = null;
+         try {
+             in = (InetAddress) getImpl().getOption(SocketOptions.SO_BINDADDR);
++
++            if (!NetUtil.doRevealLocalAddress()) {
++                SecurityManager sm = System.getSecurityManager();
++                if (sm != null)
++                    sm.checkConnect(in.getHostAddress(), -1);
++            }
+             if (in.isAnyLocalAddress()) {
+                 in = InetAddress.anyLocalAddress();
+             }
++        } catch (SecurityException e) {
++            in = InetAddress.getLoopbackAddress();
+         } catch (Exception e) {
+             in = InetAddress.anyLocalAddress(); // "0.0.0.0"
+         }
+diff --git a/src/share/classes/java/net/SocksSocketImpl.java b/src/share/classes/java/net/SocksSocketImpl.java
+--- jdk/src/share/classes/java/net/SocksSocketImpl.java
++++ jdk/src/share/classes/java/net/SocksSocketImpl.java
+@@ -28,6 +28,7 @@
+ import java.io.OutputStream;
+ import java.io.BufferedOutputStream;
+ import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import java.security.PrivilegedExceptionAction;
+ import java.util.prefs.Preferences;
+ import sun.net.www.ParseUtil;
+@@ -584,7 +585,13 @@
+         /* Test for AnyLocal */
+         InetAddress naddr = baddr;
+         if (naddr.isAnyLocalAddress()) {
+-            naddr = cmdsock.getLocalAddress();
++            naddr = AccessController.doPrivileged(
++                        new PrivilegedAction<InetAddress>() {
++                            public InetAddress run() {
++                                return cmdsock.getLocalAddress();
++
++                            }
++                        });
+             addr1 = naddr.getAddress();
+         }
+         out.write(PROTO_VERS4);
+diff --git a/src/share/classes/sun/net/NetworkClient.java b/src/share/classes/sun/net/NetworkClient.java
+--- jdk/src/share/classes/sun/net/NetworkClient.java
++++ jdk/src/share/classes/sun/net/NetworkClient.java
+@@ -198,7 +198,13 @@
+     protected InetAddress getLocalAddress() throws IOException {
+         if (serverSocket == null)
+             throw new IOException("not connected");
+-        return serverSocket.getLocalAddress();
++        return  AccessController.doPrivileged(
++                        new PrivilegedAction<InetAddress>() {
++                            public InetAddress run() {
++                                return serverSocket.getLocalAddress();
++
++                            }
++                        });
+     }
+ 
+     /** Close an open connection to the server. */
+diff --git a/src/share/classes/sun/net/httpserver/ServerImpl.java b/src/share/classes/sun/net/httpserver/ServerImpl.java
+--- jdk/src/share/classes/sun/net/httpserver/ServerImpl.java
++++ jdk/src/share/classes/sun/net/httpserver/ServerImpl.java
+@@ -30,6 +30,8 @@
+ import java.nio.*;
+ import java.security.*;
+ import java.nio.channels.*;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import java.util.*;
+ import java.util.concurrent.*;
+ import java.util.logging.Logger;
+@@ -222,7 +224,14 @@
+     }
+ 
+     public InetSocketAddress getAddress() {
+-        return (InetSocketAddress)schan.socket().getLocalSocketAddress();
++        return AccessController.doPrivileged(
++                new PrivilegedAction<InetSocketAddress>() {
++                    public InetSocketAddress run() {
++                        return
++                            (InetSocketAddress)schan.socket()
++                                .getLocalSocketAddress();
++                    }
++                });
+     }
+ 
+     Selector getSelector () {
+diff --git a/src/share/classes/sun/nio/ch/DatagramChannelImpl.java b/src/share/classes/sun/nio/ch/DatagramChannelImpl.java
+--- jdk/src/share/classes/sun/nio/ch/DatagramChannelImpl.java
++++ jdk/src/share/classes/sun/nio/ch/DatagramChannelImpl.java
+@@ -83,8 +83,8 @@
+     private int state = ST_UNINITIALIZED;
+ 
+     // Binding
+-    private SocketAddress localAddress = null;
+-    SocketAddress remoteAddress = null;
++    private InetSocketAddress localAddress = null;
++    InetSocketAddress remoteAddress = null;
+ 
+     // Options
+     private SocketOpts.IP options = null;
+@@ -500,7 +500,7 @@
+                 InetSocketAddress isa = (InetSocketAddress)localAddress;
+                 sm.checkConnect(isa.getAddress().getHostAddress(), -1);
+             }
+-            return localAddress;
++            return Net.getRevealedLocalAddress(localAddress);
+         }
+     }
+ 
+@@ -543,6 +543,7 @@
+         }
+     }
+ 
++    @Override
+     public DatagramChannel connect(SocketAddress sa) throws IOException {
+         int trafficClass = 0;
+         int localPort = 0;
+@@ -565,7 +566,7 @@
+ 
+                     // Connection succeeded; disallow further invocation
+                     state = ST_CONNECTED;
+-                    remoteAddress = sa;
++                    remoteAddress = isa;
+                     sender = isa;
+                     cachedSenderInetAddress = isa.getAddress();
+                     cachedSenderPort = isa.getPort();
+@@ -581,7 +582,7 @@
+                 synchronized (stateLock) {
+                     if (!isConnected() || !isOpen())
+                         return this;
+-                    InetSocketAddress isa = (InetSocketAddress)remoteAddress;
++                    InetSocketAddress isa = remoteAddress;
+                     SecurityManager sm = System.getSecurityManager();
+                     if (sm != null)
+                         sm.checkConnect(isa.getAddress().getHostAddress(),
+diff --git a/src/share/classes/sun/nio/ch/Net.java b/src/share/classes/sun/nio/ch/Net.java
+--- jdk/src/share/classes/sun/nio/ch/Net.java
++++ jdk/src/share/classes/sun/nio/ch/Net.java
+@@ -36,6 +36,12 @@
+     private Net() { }
+ 
+ 
++    // Value of jdk.net.revealLocalAddress
++    private static boolean revealLocalAddress;
++
++    // True if jdk.net.revealLocalAddress had been read
++    private static volatile boolean propRevealLocalAddress;
++
+     // set to true if exclusive binding is on for Windows
+     private static final boolean exclusiveBind;
+ 
+diff --git a/src/share/classes/sun/nio/ch/ServerSocketAdaptor.java b/src/share/classes/sun/nio/ch/ServerSocketAdaptor.java
+--- jdk/src/share/classes/sun/nio/ch/ServerSocketAdaptor.java
++++ jdk/src/share/classes/sun/nio/ch/ServerSocketAdaptor.java
+@@ -83,7 +83,8 @@
+     public InetAddress getInetAddress() {
+         if (!ssc.isBound())
+             return null;
+-        return Net.asInetSocketAddress(ssc.localAddress()).getAddress();
++        return Net.getRevealedLocalAddress(ssc.localAddress()).getAddress();
++
+     }
+ 
+     public int getLocalPort() {
+diff --git a/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java b/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java
+--- jdk/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java
++++ jdk/src/share/classes/sun/nio/ch/ServerSocketChannelImpl.java
+@@ -75,7 +75,7 @@
+     private int state = ST_UNINITIALIZED;
+ 
+     // Binding
+-    private SocketAddress localAddress = null; // null => unbound
++    private InetSocketAddress localAddress; // null => unbound
+ 
+     // Options, created on demand
+     private SocketOpts.IP.TCP options = null;
+@@ -118,9 +118,11 @@
+         }
+     }
+ 
+-    public SocketAddress localAddress() {
++    public InetSocketAddress localAddress() {
+         synchronized (stateLock) {
+-            return localAddress;
++            return localAddress == null? localAddress
++                    : Net.getRevealedLocalAddress(
++                          Net.asInetSocketAddress(localAddress));
+         }
+     }
+ 
+@@ -307,14 +309,15 @@
+         StringBuffer sb = new StringBuffer();
+         sb.append(this.getClass().getName());
+         sb.append('[');
+-        if (!isOpen())
++        if (!isOpen()) {
+             sb.append("closed");
+-        else {
++        } else {
+             synchronized (stateLock) {
+-                if (localAddress() == null) {
++                InetSocketAddress addr = localAddress();
++                if (addr == null) {
+                     sb.append("unbound");
+                 } else {
+-                    sb.append(localAddress().toString());
++                    sb.append(Net.getRevealedLocalAddressAsString(addr));
+                 }
+             }
+         }
+diff --git a/src/share/classes/sun/nio/ch/SocketAdaptor.java b/src/share/classes/sun/nio/ch/SocketAdaptor.java
+--- jdk/src/share/classes/sun/nio/ch/SocketAdaptor.java
++++ jdk/src/share/classes/sun/nio/ch/SocketAdaptor.java
+@@ -162,7 +162,7 @@
+     public InetAddress getLocalAddress() {
+         if (!sc.isBound())
+             return new InetSocketAddress(0).getAddress();
+-        return Net.asInetSocketAddress(sc.localAddress()).getAddress();
++        return Net.getRevealedLocalAddress(sc.localAddress()).getAddress();
+     }
+ 
+     public int getPort() {
+diff --git a/src/share/classes/sun/nio/ch/SocketChannelImpl.java b/src/share/classes/sun/nio/ch/SocketChannelImpl.java
+--- jdk/src/share/classes/sun/nio/ch/SocketChannelImpl.java
++++ jdk/src/share/classes/sun/nio/ch/SocketChannelImpl.java
+@@ -78,8 +78,8 @@
+     private int state = ST_UNINITIALIZED;
+ 
+     // Binding
+-    private SocketAddress localAddress = null;
+-    private SocketAddress remoteAddress = null;
++    private InetSocketAddress localAddress;
++    private InetSocketAddress remoteAddress;
+ 
+     // Input/Output open
+     private boolean isInputOpen = true;
+@@ -443,7 +443,7 @@
+         }
+     }
+ 
+-    public SocketAddress localAddress() {
++    public InetSocketAddress localAddress() {
+         synchronized (stateLock) {
+             if (state == ST_CONNECTED &&
+                 (localAddress == null ||
+@@ -452,7 +452,7 @@
+                     // Socket was bound with an "anyLocalAddress"
+                     localAddress = Net.localAddress(fd);
+             }
+-            return localAddress;
++            return  Net.getRevealedLocalAddress(localAddress);
+         }
+     }
+ 
+@@ -830,6 +830,7 @@
+         return fdVal;
+     }
+ 
++    @Override
+     public String toString() {
+         StringBuffer sb = new StringBuffer();
+         sb.append(this.getClass().getSuperclass().getName());
+@@ -853,9 +854,10 @@
+                         sb.append(" oshut");
+                     break;
+                 }
+-                if (localAddress() != null) {
++                InetSocketAddress addr = localAddress();
++                if (addr != null) {
+                     sb.append(" local=");
+-                    sb.append(localAddress().toString());
++                    sb.append(Net.getRevealedLocalAddressAsString(addr));
+                 }
+                 if (remoteAddress() != null) {
+                     sb.append(" remote=");
+diff --git a/src/share/classes/sun/rmi/server/Activation.java b/src/share/classes/sun/rmi/server/Activation.java
+--- jdk/src/share/classes/sun/rmi/server/Activation.java
++++ jdk/src/share/classes/sun/rmi/server/Activation.java
+@@ -2202,7 +2202,12 @@
+         }
+ 
+         public InetAddress getInetAddress() {
+-            return serverSocket.getInetAddress();
++            return AccessController.doPrivileged(
++                new PrivilegedAction<InetAddress>() {
++                    public InetAddress run() {
++                        return serverSocket.getInetAddress();
++                    }
++                });
+         }
+ 
+         public int getLocalPort() {
+@@ -2210,7 +2215,12 @@
+         }
+ 
+         public SocketAddress getLocalSocketAddress() {
+-            return serverSocket.getLocalSocketAddress();
++            return AccessController.doPrivileged(
++                new PrivilegedAction<SocketAddress>() {
++                    public SocketAddress run() {
++                        return serverSocket.getLocalSocketAddress();
++                    }
++                });
+         }
+ 
+         /**
+diff --git a/src/share/classes/sun/rmi/transport/proxy/WrappedSocket.java b/src/share/classes/sun/rmi/transport/proxy/WrappedSocket.java
+--- jdk/src/share/classes/sun/rmi/transport/proxy/WrappedSocket.java
++++ jdk/src/share/classes/sun/rmi/transport/proxy/WrappedSocket.java
+@@ -28,6 +28,8 @@
+ import java.net.InetAddress;
+ import java.net.Socket;
+ import java.net.SocketException;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ 
+ /**
+  * The WrappedSocket class provides a general wrapper for providing an
+@@ -78,7 +80,13 @@
+      * Get the local address to which the socket is bound.
+      */
+     public InetAddress getLocalAddress() {
+-        return socket.getLocalAddress();
++        return  AccessController.doPrivileged(
++                        new PrivilegedAction<InetAddress>() {
++                            public InetAddress run() {
++                                return socket.getLocalAddress();
++
++                            }
++                        });
+     }
+ 
+     /**

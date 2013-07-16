@@ -1,0 +1,89 @@
+# HG changeset patch
+# User jbachorik
+# Date 1363077266 -3600
+# Node ID ae61ba2bcdfa02807ead8b20311953a52f5ae96e
+# Parent  4b57646ef873f1b5db05907da8e410e8a937957c
+8009038: Improve JMX notification support
+Summary: Disallowing access to mutable shared arrays
+Reviewed-by: dfuchs, mchung, skoivu
+
+diff --git a/src/share/classes/javax/management/StandardEmitterMBean.java b/src/share/classes/javax/management/StandardEmitterMBean.java
+--- jdk/src/share/classes/javax/management/StandardEmitterMBean.java
++++ jdk/src/share/classes/javax/management/StandardEmitterMBean.java
+@@ -64,6 +64,9 @@
+ public class StandardEmitterMBean extends StandardMBean
+         implements NotificationEmitter {
+ 
++    private static final MBeanNotificationInfo[] NO_NOTIFICATION_INFO =
++        new MBeanNotificationInfo[0];
++
+     private final NotificationEmitter emitter;
+     private final MBeanNotificationInfo[] notificationInfo;
+ 
+@@ -99,11 +102,7 @@
+      */
+     public <T> StandardEmitterMBean(T implementation, Class<T> mbeanInterface,
+                                     NotificationEmitter emitter) {
+-        super(implementation, mbeanInterface, false);
+-        if (emitter == null)
+-            throw new IllegalArgumentException("Null emitter");
+-        this.emitter = emitter;
+-        this.notificationInfo = emitter.getNotificationInfo();
++        this(implementation, mbeanInterface, false, emitter);
+     }
+ 
+     /**
+@@ -148,7 +147,12 @@
+         if (emitter == null)
+             throw new IllegalArgumentException("Null emitter");
+         this.emitter = emitter;
+-        this.notificationInfo = emitter.getNotificationInfo();
++        MBeanNotificationInfo[] infos = emitter.getNotificationInfo();
++        if (infos == null || infos.length == 0) {
++            this.notificationInfo = NO_NOTIFICATION_INFO;
++        } else {
++            this.notificationInfo = infos.clone();
++        }
+     }
+ 
+     /**
+@@ -184,11 +188,7 @@
+      */
+     protected StandardEmitterMBean(Class<?> mbeanInterface,
+                                    NotificationEmitter emitter) {
+-        super(mbeanInterface, false);
+-        if (emitter == null)
+-            throw new IllegalArgumentException("Null emitter");
+-        this.emitter = emitter;
+-        this.notificationInfo = emitter.getNotificationInfo();
++        this(mbeanInterface, false, emitter);
+     }
+ 
+     /**
+@@ -231,7 +231,12 @@
+         if (emitter == null)
+             throw new IllegalArgumentException("Null emitter");
+         this.emitter = emitter;
+-        this.notificationInfo = emitter.getNotificationInfo();
++        MBeanNotificationInfo[] infos = emitter.getNotificationInfo();
++        if (infos == null || infos.length == 0) {
++            this.notificationInfo = NO_NOTIFICATION_INFO;
++        } else {
++            this.notificationInfo = infos.clone();
++        }
+     }
+ 
+     public void removeNotificationListener(NotificationListener listener)
+@@ -253,7 +258,11 @@
+     }
+ 
+     public MBeanNotificationInfo[] getNotificationInfo() {
+-        return notificationInfo;
++        if (notificationInfo.length == 0) {
++            return notificationInfo;
++        } else {
++            return notificationInfo.clone();
++        }
+     }
+ 
+     /**

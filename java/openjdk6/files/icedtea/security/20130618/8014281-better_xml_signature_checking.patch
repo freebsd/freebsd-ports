@@ -1,0 +1,49 @@
+# HG changeset patch
+# User xuelei
+# Date 1368495045 25200
+# Node ID 0e01465ca15f49a2b5ebfca89d85c2f0575b96e4
+# Parent  81cfa2275a01fdc479901031e089c76c892d1c03
+8014281: Better checking of XML signature
+Summary: also reviewed by Andrew Gross and Christophe Ravel
+Reviewed-by: mullan
+
+diff --git a/src/share/classes/org/jcp/xml/dsig/internal/dom/DOMCanonicalizationMethod.java b/src/share/classes/org/jcp/xml/dsig/internal/dom/DOMCanonicalizationMethod.java
+--- jdk/src/share/classes/org/jcp/xml/dsig/internal/dom/DOMCanonicalizationMethod.java
++++ jdk/src/share/classes/org/jcp/xml/dsig/internal/dom/DOMCanonicalizationMethod.java
+@@ -51,6 +51,11 @@
+     public DOMCanonicalizationMethod(TransformService spi)
+         throws InvalidAlgorithmParameterException {
+         super(spi);
++        if (!(spi instanceof ApacheCanonicalizer) &&
++                !isC14Nalg(spi.getAlgorithm())) {
++            throw new InvalidAlgorithmParameterException(
++                "Illegal CanonicalizationMethod");
++        }
+     }
+ 
+     /**
+@@ -63,6 +68,10 @@
+     public DOMCanonicalizationMethod(Element cmElem, XMLCryptoContext context,
+         Provider provider) throws MarshalException {
+         super(cmElem, context, provider);
++        if (!(spi instanceof ApacheCanonicalizer) &&
++                !isC14Nalg(spi.getAlgorithm())) {
++            throw new MarshalException("Illegal CanonicalizationMethod");
++        }
+     }
+ 
+     /**
+@@ -101,4 +110,13 @@
+         return (getAlgorithm().equals(ocm.getAlgorithm()) &&
+             DOMUtils.paramsEqual(getParameterSpec(), ocm.getParameterSpec()));
+     }
++
++    private static boolean isC14Nalg(String alg) {
++        return (alg.equals(CanonicalizationMethod.INCLUSIVE) ||
++                alg.equals(CanonicalizationMethod.INCLUSIVE_WITH_COMMENTS) ||
++                alg.equals(CanonicalizationMethod.EXCLUSIVE) ||
++                alg.equals(CanonicalizationMethod.EXCLUSIVE_WITH_COMMENTS) ||
++                alg.equals(DOMCanonicalXMLC14N11Method.C14N_11) ||
++                alg.equals(DOMCanonicalXMLC14N11Method.C14N_11_WITH_COMMENTS));
++     }
+ }

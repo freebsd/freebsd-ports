@@ -1,0 +1,108 @@
+# HG changeset patch
+# User andrew
+# Date 1371404383 18000
+# Node ID 65ed365feeae0a68d89dd63143b6be3c0be11c81
+# Parent  1d5eff0bd9b504b7191279bfc6a417f6a2e2251f
+8007467: Improve robustness of JMX internal APIs
+Reviewed-by: dfuchs, mchung, skoivu
+
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/ConvertingMethod.java b/src/share/classes/com/sun/jmx/mbeanserver/ConvertingMethod.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/ConvertingMethod.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/ConvertingMethod.java
+@@ -33,6 +33,7 @@
+ import javax.management.MBeanException;
+ import javax.management.openmbean.OpenDataException;
+ import javax.management.openmbean.OpenType;
++import sun.reflect.misc.MethodUtil;
+ 
+ final class ConvertingMethod {
+     static ConvertingMethod from(Method m) {
+@@ -177,7 +178,7 @@
+                 "from open values: " + e;
+             throw new MBeanException(e, msg);
+         }
+-        final Object javaReturn = method.invoke(obj, javaParams);
++        final Object javaReturn = MethodUtil.invoke(method, obj, javaParams);
+         try {
+             return returnConverter.toOpenValue(lookup, javaReturn);
+         } catch (OpenDataException e) {
+diff --git a/src/share/classes/com/sun/jmx/mbeanserver/StandardMBeanIntrospector.java b/src/share/classes/com/sun/jmx/mbeanserver/StandardMBeanIntrospector.java
+--- jdk/src/share/classes/com/sun/jmx/mbeanserver/StandardMBeanIntrospector.java
++++ jdk/src/share/classes/com/sun/jmx/mbeanserver/StandardMBeanIntrospector.java
+@@ -38,6 +38,7 @@
+ import javax.management.NotCompliantMBeanException;
+ import javax.management.NotificationBroadcaster;
+ import javax.management.NotificationBroadcasterSupport;
++import sun.reflect.misc.MethodUtil;
+ 
+ /**
+  * @since 1.6
+@@ -108,7 +109,7 @@
+     Object invokeM2(Method m, Object target, Object[] args, Object cookie)
+             throws InvocationTargetException, IllegalAccessException,
+                    MBeanException {
+-        return m.invoke(target, args);
++        return MethodUtil.invoke(m, target, args);
+     }
+ 
+     @Override
+diff --git a/src/share/classes/javax/management/openmbean/CompositeDataInvocationHandler.java b/src/share/classes/javax/management/openmbean/CompositeDataInvocationHandler.java
+--- jdk/src/share/classes/javax/management/openmbean/CompositeDataInvocationHandler.java
++++ jdk/src/share/classes/javax/management/openmbean/CompositeDataInvocationHandler.java
+@@ -172,6 +172,8 @@
+                    the only non-final methods in Object that are not
+                    handled above are finalize and clone, and these
+                    are not overridden in generated proxies.  */
++                // this plain Method.invoke is called only if the declaring class
++                // is Object and so it's safe.
+                 return method.invoke(this, args);
+             }
+         }
+diff --git a/src/share/classes/javax/management/openmbean/OpenMBeanAttributeInfoSupport.java b/src/share/classes/javax/management/openmbean/OpenMBeanAttributeInfoSupport.java
+--- jdk/src/share/classes/javax/management/openmbean/OpenMBeanAttributeInfoSupport.java
++++ jdk/src/share/classes/javax/management/openmbean/OpenMBeanAttributeInfoSupport.java
+@@ -45,6 +45,9 @@
+ import javax.management.ImmutableDescriptor;
+ import javax.management.MBeanAttributeInfo;
+ import com.sun.jmx.remote.util.EnvHelp;
++import sun.reflect.misc.ConstructorUtil;
++import sun.reflect.misc.MethodUtil;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * Describes an attribute of an open MBean.
+@@ -690,6 +693,7 @@
+     private static <T> T convertFromString(String s, OpenType<T> openType) {
+         Class<T> c;
+         try {
++            ReflectUtil.checkPackageAccess(openType.safeGetClassName());
+             c = cast(Class.forName(openType.safeGetClassName()));
+         } catch (ClassNotFoundException e) {
+             throw new NoClassDefFoundError(e.toString());  // can't happen
+@@ -698,6 +702,8 @@
+         // Look for: public static T valueOf(String)
+         Method valueOf;
+         try {
++            // It is safe to call this plain Class.getMethod because the class "c"
++            // was checked before by ReflectUtil.checkPackageAccess(openType.safeGetClassName());
+             valueOf = c.getMethod("valueOf", String.class);
+             if (!Modifier.isStatic(valueOf.getModifiers()) ||
+                     valueOf.getReturnType() != c)
+@@ -707,7 +713,7 @@
+         }
+         if (valueOf != null) {
+             try {
+-                return c.cast(valueOf.invoke(null, s));
++                return c.cast(MethodUtil.invoke(valueOf, null, new Object[] {s}));
+             } catch (Exception e) {
+                 final String msg =
+                     "Could not convert \"" + s + "\" using method: " + valueOf;
+@@ -718,6 +724,8 @@
+         // Look for: public T(String)
+         Constructor<T> con;
+         try {
++            // It is safe to call this plain Class.getConstructor because the class "c"
++            // was checked before by ReflectUtil.checkPackageAccess(openType.safeGetClassName());
+             con = c.getConstructor(String.class);
+         } catch (NoSuchMethodException e) {
+             con = null;

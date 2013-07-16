@@ -1,0 +1,131 @@
+# HG changeset patch
+# User andrew
+# Date 1371238398 -3600
+# Node ID 672b00f8dd800d0b494cde9eb219bd82179c5ff5
+# Parent  66880d810dc10655031bfbbb1e4ea6ff66061f08
+8003703: Update RMI connection dialog box
+Reviewed-by: skoivu, ahgross, mchung, jbachorik
+
+diff --git a/src/share/classes/sun/tools/jconsole/ProxyClient.java b/src/share/classes/sun/tools/jconsole/ProxyClient.java
+--- jdk/src/share/classes/sun/tools/jconsole/ProxyClient.java
++++ jdk/src/share/classes/sun/tools/jconsole/ProxyClient.java
+@@ -309,11 +309,11 @@
+         }
+     }
+ 
+-    void connect() {
++    void connect(boolean requireSSL) {
+         setConnectionState(ConnectionState.CONNECTING);
+         Exception exception = null;
+         try {
+-            tryConnect();
++            tryConnect(requireSSL);
+         } catch (IOException ex) {
+             if (JConsole.isDebug()) {
+                 ex.printStackTrace();
+@@ -333,7 +333,7 @@
+         }
+     }
+ 
+-    private void tryConnect() throws IOException {
++    private void tryConnect(boolean requireRemoteSSL) throws IOException {
+         if (jmxUrl == null && "localhost".equals(hostName) && port == 0) {
+             // Monitor self
+             this.jmxc = null;
+@@ -353,6 +353,10 @@
+                     this.jmxUrl = new JMXServiceURL(lvm.connectorAddress());
+                 }
+             }
++            Map<String, Object> env = new HashMap<String, Object>();
++            if (requireRemoteSSL) {
++                env.put("jmx.remote.x.check.stub", "true");
++            }
+             // Need to pass in credentials ?
+             if (userName == null && password == null) {
+                 if (isVmConnector()) {
+@@ -361,12 +365,11 @@
+                         checkSslConfig();
+                     }
+                     this.jmxc = new RMIConnector(stub, null);
+-                    jmxc.connect();
++                    jmxc.connect(env);
+                 } else {
+-                    this.jmxc = JMXConnectorFactory.connect(jmxUrl);
++                    this.jmxc = JMXConnectorFactory.connect(jmxUrl, env);
+                 }
+             } else {
+-                Map<String, String[]> env = new HashMap<String, String[]>();
+                 env.put(JMXConnector.CREDENTIALS,
+                         new String[] {userName, password});
+                 if (isVmConnector()) {
+diff --git a/src/share/classes/sun/tools/jconsole/VMPanel.java b/src/share/classes/sun/tools/jconsole/VMPanel.java
+--- jdk/src/share/classes/sun/tools/jconsole/VMPanel.java
++++ jdk/src/share/classes/sun/tools/jconsole/VMPanel.java
+@@ -62,6 +62,7 @@
+     private static ArrayList<TabInfo> tabInfos = new ArrayList<TabInfo>();
+ 
+     private boolean wasConnected = false;
++    private boolean shouldUseSSL = true;
+ 
+     // The everConnected flag keeps track of whether the window can be
+     // closed if the user clicks Cancel after a failed connection attempt.
+@@ -295,7 +296,7 @@
+         } else {
+             new Thread("VMPanel.connect") {
+                 public void run() {
+-                    proxyClient.connect();
++                    proxyClient.connect(shouldUseSSL);
+                 }
+             }.start();
+         }
+@@ -472,6 +473,7 @@
+ 
+         final String connectStr   = getText("Connect");
+         final String reconnectStr = getText("Reconnect");
++        final String insecureStr = getText("Insecure");
+         final String cancelStr    = getText("Cancel");
+ 
+         String msgTitle, msgExplanation, buttonStr;
+@@ -481,6 +483,10 @@
+             msgTitle = getText("connectionLost1");
+             msgExplanation = getText("connectionLost2", getConnectionName());
+             buttonStr = reconnectStr;
++        } else if (shouldUseSSL) {
++            msgTitle = getText("connectionFailedSSL1");
++            msgExplanation = getText("connectionFailedSSL2", getConnectionName());
++            buttonStr = insecureStr;
+         } else {
+             msgTitle = getText("connectionFailed1");
+             msgExplanation = getText("connectionFailed2", getConnectionName());
+@@ -503,6 +509,9 @@
+ 
+                     if (value == reconnectStr || value == connectStr) {
+                         connect();
++                    } else if (value == insecureStr) {
++                        shouldUseSSL = false;
++                        connect();
+                     } else if (!everConnected) {
+                         try {
+                             getFrame().setClosed(true);
+diff --git a/src/share/classes/sun/tools/jconsole/resources/JConsoleResources.java b/src/share/classes/sun/tools/jconsole/resources/JConsoleResources.java
+--- jdk/src/share/classes/sun/tools/jconsole/resources/JConsoleResources.java
++++ jdk/src/share/classes/sun/tools/jconsole/resources/JConsoleResources.java
+@@ -212,6 +212,7 @@
+         {"Impact","Impact"},
+         {"Info","Info"},
+         {"INFO","INFO"},
++        {"Insecure", "Insecure connection"},
+         {"Invalid plugin path", "Warning: Invalid plugin path: {0}"},
+         {"Invalid URL", "Invalid URL: {0}"},
+         {"Is","Is"},
+@@ -417,6 +418,10 @@
+         {"connectionFailed1","Connection Failed: Retry?"},
+         {"connectionFailed2","The connection to {0} did not succeed.<br>" +
+                              "Would you like to try again?"},
++        {"connectionFailedSSL1","Secure connection failed. Retry insecurely?"},
++        {"connectionFailedSSL2","The connection to {0} could not be made using SSL.<br>" +
++                             "Would you like to try without SSL?<br>" +
++                             "(Username and password will be sent in plain text.)"},
+         {"connectionLost1","Connection Lost: Reconnect?"},
+         {"connectionLost2","The connection to {0} has been lost " +
+                            "because the remote process has been terminated.<br>" +

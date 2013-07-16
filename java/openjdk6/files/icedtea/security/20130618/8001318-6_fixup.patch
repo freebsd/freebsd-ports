@@ -1,0 +1,114 @@
+# HG changeset patch
+# User andrew
+# Date 1371826938 18000
+# Node ID ccd06d9c7258aea155d7053d399431bcd1af4405
+# Parent  662fbd43808413b2bd7ae4ae95683da98999023e
+Fix up 8001318
+
+diff --git a/src/share/classes/java/net/ServerSocket.java b/src/share/classes/java/net/ServerSocket.java
+--- jdk/src/share/classes/java/net/ServerSocket.java
++++ jdk/src/share/classes/java/net/ServerSocket.java
+@@ -363,7 +363,7 @@
+             }
+             return in;
+         } catch (SecurityException e) {
+-            return InetAddress.getLoopbackAddress();
++            return InetAddress.impl.loopbackAddress();
+         } catch (SocketException e) {
+             // nothing
+             // If we're bound, the impl has been created
+@@ -675,7 +675,7 @@
+         if (!NetUtil.doRevealLocalAddress() &&
+                 System.getSecurityManager() != null)
+         {
+-            in = InetAddress.getLoopbackAddress();
++            in = InetAddress.impl.loopbackAddress();
+         } else {
+             in = impl.getInetAddress();
+         }
+diff --git a/src/share/classes/java/net/Socket.java b/src/share/classes/java/net/Socket.java
+--- jdk/src/share/classes/java/net/Socket.java
++++ jdk/src/share/classes/java/net/Socket.java
+@@ -666,7 +666,7 @@
+                 in = InetAddress.anyLocalAddress();
+             }
+         } catch (SecurityException e) {
+-            in = InetAddress.getLoopbackAddress();
++            in = InetAddress.impl.loopbackAddress();
+         } catch (Exception e) {
+             in = InetAddress.anyLocalAddress(); // "0.0.0.0"
+         }
+diff --git a/src/share/classes/sun/nio/ch/Net.java b/src/share/classes/sun/nio/ch/Net.java
+--- jdk/src/share/classes/sun/nio/ch/Net.java
++++ jdk/src/share/classes/sun/nio/ch/Net.java
+@@ -29,7 +29,8 @@
+ import java.lang.reflect.*;
+ import java.net.*;
+ import java.nio.channels.*;
+-
++import java.security.AccessController;
++import java.security.PrivilegedExceptionAction;
+ 
+ class Net {                                             // package-private
+ 
+@@ -233,4 +234,60 @@
+         initIDs();
+     }
+ 
++     /**
++     * Returns the local address after performing a SecurityManager#checkConnect.
++     */
++    static InetSocketAddress getRevealedLocalAddress(InetSocketAddress addr) {
++        SecurityManager sm = System.getSecurityManager();
++        if (addr == null || sm == null)
++            return addr;
++
++        if (!getRevealLocalAddress()) {
++            // Return loopback address only if security check fails
++            try{
++                sm.checkConnect(addr.getAddress().getHostAddress(), -1);
++                //Security check passed
++            } catch (SecurityException e) {
++                //Return loopback address
++                addr = getLoopbackAddress(addr.getPort());
++            }
++        }
++        return addr;
++    }
++
++    static String getRevealedLocalAddressAsString(InetSocketAddress addr) {
++        if (!getRevealLocalAddress() && System.getSecurityManager() != null)
++            addr = getLoopbackAddress(addr.getPort());
++        return addr.toString();
++    }
++
++    private static boolean getRevealLocalAddress() {
++        if (!propRevealLocalAddress) {
++            try {
++                revealLocalAddress = Boolean.parseBoolean(
++                      AccessController.doPrivileged(
++                          new PrivilegedExceptionAction<String>() {
++                              public String run() {
++                                  return System.getProperty(
++                                      "jdk.net.revealLocalAddress");
++                              }
++                          }));
++
++            } catch (Exception e) {
++                // revealLocalAddress is false
++            }
++            propRevealLocalAddress = true;
++        }
++        return revealLocalAddress;
++    }
++
++    private static InetSocketAddress getLoopbackAddress(int port) {
++	try {
++	    return new InetSocketAddress(InetAddress.getByName(null),
++					 port);
++	} catch (UnknownHostException e) { 
++	    throw new InternalError("Shouldn't reach here.");
++	}
++    }
++
+ }

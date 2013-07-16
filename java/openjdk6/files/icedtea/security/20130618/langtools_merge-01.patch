@@ -1,0 +1,30 @@
+# HG changeset patch
+# User andrew
+# Date 1371734829 18000
+# Node ID 9aefba5680d55a2e3f718c03cd27cf027c7fc1f9
+# Parent  f422c843b477501acc2526c69609fd94204cdce1
+Fix merge error
+
+diff --git a/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java b/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java
+--- langtools/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java
++++ langtools/src/share/classes/com/sun/tools/javadoc/RootDocImpl.java
+@@ -36,7 +36,6 @@
+ import com.sun.tools.javac.util.List;
+ import com.sun.tools.javac.util.ListBuffer;
+ import com.sun.tools.javac.util.Position;
+-import java.util.Locale;
+ 
+ /**
+  * This class holds the information from one run of javadoc.
+@@ -362,11 +361,4 @@
+     public Locale getLocale() {
+         return env.doclocale.locale;
+     }
+-
+-    /**
+-     * Return the locale provided by the user or the default locale value.
+-     */
+-    public Locale getLocale() {
+-        return env.doclocale.locale;
+-    }
+ }

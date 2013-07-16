@@ -1,0 +1,31 @@
+# HG changeset patch
+# User andrew
+# Date 1371827929 18000
+# Node ID 9892a997b49abd5ae9a5e1ec8fef1f93631f87ae
+# Parent  059ac6834c32c540ad86b99c0e5339554398def2
+Fix up 8006328
+
+diff --git a/src/share/classes/com/sun/media/sound/AbstractMidiDevice.java b/src/share/classes/com/sun/media/sound/AbstractMidiDevice.java
+--- jdk/src/share/classes/com/sun/media/sound/AbstractMidiDevice.java
++++ jdk/src/share/classes/com/sun/media/sound/AbstractMidiDevice.java
+@@ -531,7 +531,7 @@
+      * Also, it has some optimizations regarding sending to the Receivers,
+      * for known Receivers, and managing itself in the TransmitterList.
+      */
+-    class BasicTransmitter implements MidiDeviceTransmitter {
++    class BasicTransmitter implements Transmitter {
+ 
+         private Receiver receiver = null;
+         TransmitterList tlist = null;
+diff --git a/src/share/classes/com/sun/media/sound/AudioFloatFormatConverter.java b/src/share/classes/com/sun/media/sound/AudioFloatFormatConverter.java
+--- jdk/src/share/classes/com/sun/media/sound/AudioFloatFormatConverter.java
++++ jdk/src/share/classes/com/sun/media/sound/AudioFloatFormatConverter.java
+@@ -470,7 +470,7 @@
+ 
+     private final Encoding[] formats = {Encoding.PCM_SIGNED,
+                                         Encoding.PCM_UNSIGNED,
+-                                        Encoding.PCM_FLOAT};
++                                        AudioFloatConverter.PCM_FLOAT};
+ 
+     public AudioInputStream getAudioInputStream(Encoding targetEncoding,
+             AudioInputStream sourceStream) {

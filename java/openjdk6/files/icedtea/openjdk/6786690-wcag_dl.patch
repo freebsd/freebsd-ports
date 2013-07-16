@@ -1,0 +1,3230 @@
+# HG changeset patch
+# User andrew
+# Date 1371571959 18000
+# Node ID 9cad0410f52a47fdd3b294a10f076e7456a47e9a
+# Parent  9b884c583c41a545352b035d11d1ccacb96fbb2f
+6786690: Javadoc HTML WCAG 2.0 accessibility issues in standard doclet - DL tag and nesting issue
+Reviewed-by: jjg
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractIndexWriter.java
+@@ -25,11 +25,11 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
+-import com.sun.tools.doclets.internal.toolkit.util.*;
++import java.io.*;
++import java.util.*;
+ 
+ import com.sun.javadoc.*;
+-import java.io.*;
+-import java.util.*;
++import com.sun.tools.doclets.internal.toolkit.util.*;
+ 
+ /**
+  * Generate Index for all the Member Names with Indexing in
+@@ -100,18 +100,22 @@
+         h2();
+         strong(unicode.toString());
+         h2End();
+-        dl();
+-        for (int i = 0; i < memberlist.size(); i++) {
+-            Doc element = (Doc)memberlist.get(i);
+-            if (element instanceof MemberDoc) {
+-                printDescription((MemberDoc)element);
+-            } else if (element instanceof ClassDoc) {
+-                printDescription((ClassDoc)element);
+-            } else if (element instanceof PackageDoc) {
+-                printDescription((PackageDoc)element);
++        int memberListSize = memberlist.size();
++        // Display the list only if there are elements to be displayed.
++        if (memberListSize > 0) {
++            dl();
++            for (int i = 0; i < memberListSize; i++) {
++                Doc element = memberlist.get(i);
++                if (element instanceof MemberDoc) {
++                    printDescription((MemberDoc)element);
++                } else if (element instanceof ClassDoc) {
++                    printDescription((ClassDoc)element);
++                } else if (element instanceof PackageDoc) {
++                    printDescription((PackageDoc)element);
++                }
+             }
++            dlEnd();
+         }
+-        dlEnd();
+         hr();
+     }
+ 
+@@ -126,8 +130,10 @@
+         printPackageLink(pkg, Util.getPackageName(pkg), true);
+         print(" - ");
+         print(configuration.getText("doclet.package") + " " + pkg.name());
++        dtEnd();
+         dd();
+         printSummaryComment(pkg);
++        ddEnd();
+     }
+ 
+     /**
+@@ -140,8 +146,10 @@
+         printLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_INDEX, cd, true));
+         print(" - ");
+         printClassInfo(cd);
++        dtEnd();
+         dd();
+         printComment(cd);
++        ddEnd();
+     }
+ 
+     /**
+@@ -178,8 +186,10 @@
+         println(" - ");
+         printMemberDesc(member);
+         println();
++        dtEnd();
+         dd();
+         printComment(member);
++        ddEnd();
+         println();
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AbstractMemberWriter.java
+@@ -25,19 +25,20 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.lang.reflect.Modifier;
++import java.util.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+ import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ 
+-import com.sun.javadoc.*;
+-import java.util.*;
+-import java.lang.reflect.Modifier;
+-
+ /**
+  * The base class for member writers.
+  *
+  * @author Robert Field
+  * @author Atul M Dambalkar
+  * @author Jamie Ho (Re-write)
++ * @author Bhavesh Patel (Modified)
+  */
+ public abstract class AbstractMemberWriter {
+ 
+@@ -232,10 +233,26 @@
+         }
+     }
+ 
++    /**
++     * Print the deprecated output for the given member.
++     *
++     * @param member the member being documented.
++     */
++    protected void printDeprecated(ProgramElementDoc member) {
++        String output = (new DeprecatedTaglet()).getTagletOutput(member,
++            writer.getTagletWriterInstance(false)).toString().trim();
++        if (!output.isEmpty()) {
++            writer.printMemberDetailsListStartTag();
++            writer.print(output);
++        }
++    }
++
+     protected void printComment(ProgramElementDoc member) {
+         if (member.inlineTags().length > 0) {
++            writer.printMemberDetailsListStartTag();
+             writer.dd();
+             writer.printInlineComment(member);
++            writer.ddEnd();
+         }
+     }
+ 
+@@ -267,6 +284,14 @@
+     }
+ 
+     /**
++     * Write the member footer.
++     */
++    protected void printMemberFooter() {
++        writer.printMemberDetailsListEndTag();
++        assert !writer.getMemberDetailsListPrinted();
++    }
++
++    /**
+      * Forward to containing writer
+      */
+     public void printSummaryHeader(ClassDoc cd) {
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeOptionalMemberWriterImpl.java
+@@ -25,10 +25,10 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+-import com.sun.javadoc.*;
+-
+-import java.io.*;
+ 
+ /**
+  * Writes annotation type optional member documentation in HTML format.
+@@ -63,14 +63,20 @@
+      * {@inheritDoc}
+      */
+     public void writeDefaultValueInfo(MemberDoc member) {
+-        writer.dl();
+-        writer.dt();
+-        writer.strong(ConfigurationImpl.getInstance().
+-            getText("doclet.Default"));
+-        writer.dd();
+-        writer.print(((AnnotationTypeElementDoc) member).defaultValue());
+-        writer.ddEnd();
+-        writer.dlEnd();
++        if (((AnnotationTypeElementDoc) member).defaultValue() != null) {
++            writer.printMemberDetailsListStartTag();
++            writer.dd();
++            writer.dl();
++            writer.dt();
++            writer.strong(ConfigurationImpl.getInstance().
++                getText("doclet.Default"));
++            writer.dtEnd();
++            writer.dd();
++            writer.print(((AnnotationTypeElementDoc) member).defaultValue());
++            writer.ddEnd();
++            writer.dlEnd();
++            writer.ddEnd();
++        }
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeRequiredMemberWriterImpl.java
+@@ -25,11 +25,10 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+-import com.sun.tools.doclets.internal.toolkit.taglets.*;
+-import com.sun.javadoc.*;
+-
+-import java.io.*;
+ 
+ /**
+  * Writes annotation type required member documentation in HTML format.
+@@ -134,17 +133,14 @@
+             strong(member.name());
+         }
+         writer.preEnd();
+-        writer.dl();
++        assert !writer.getMemberDetailsListPrinted();
+     }
+ 
+     /**
+      * {@inheritDoc}
+      */
+     public void writeComments(MemberDoc member) {
+-        if (member.inlineTags().length > 0) {
+-            writer.dd();
+-            writer.printInlineComment(member);
+-        }
++        printComment(member);
+     }
+ 
+     /**
+@@ -160,7 +156,7 @@
+      * Write the annotation type member footer.
+      */
+     public void writeMemberFooter() {
+-        writer.dlEnd();
++        printMemberFooter();
+     }
+ 
+     /**
+@@ -267,9 +263,7 @@
+      * {@inheritDoc}
+      */
+     public void writeDeprecated(MemberDoc member) {
+-        print(((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(member,
+-            writer.getTagletWriterInstance(false))).toString());
++        printDeprecated(member);
+     }
+ 
+     private Type getType(MemberDoc member) {
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/AnnotationTypeWriterImpl.java
+@@ -25,10 +25,10 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+ import com.sun.tools.doclets.internal.toolkit.builders.*;
+-import com.sun.javadoc.*;
+ 
+ /**
+  * Generate the Class Information Page.
+@@ -165,8 +165,6 @@
+      * {@inheritDoc}
+      */
+     public void writeAnnotationTypeSignature(String modifiers) {
+-        dl();
+-        dt();
+         preNoNewLine();
+         writeAnnotationInfo(annotationType);
+         print(modifiers);
+@@ -178,7 +176,6 @@
+         } else {
+             strong(name);
+         }
+-        dlEnd();
+         preEnd();
+         p();
+     }
+@@ -334,6 +331,7 @@
+             } else {
+                 strongText("doclet.Enclosing_Class");
+             }
++            dtEnd();
+             dd();
+             printLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_CLASS, outerClass,
+                 false));
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassWriterImpl.java
+@@ -25,12 +25,12 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.util.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+ import com.sun.tools.doclets.internal.toolkit.builders.*;
+-import com.sun.javadoc.*;
+-
+-import java.util.*;
+ import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ 
+ /**
+@@ -171,8 +171,6 @@
+      */
+     public void writeClassSignature(String modifiers) {
+         boolean isInterface = classDoc.isInterface();
+-        dl();
+-        dt();
+         preNoNewLine();
+         writeAnnotationInfo(classDoc);
+         print(modifiers);
+@@ -191,7 +189,7 @@
+             Type superclass = Util.getFirstVisibleSuperClass(classDoc,
+                 configuration());
+             if (superclass != null) {
+-                dt();
++                println();
+                 print("extends ");
+                 printLink(new LinkInfoImpl(
+                     LinkInfoImpl.CONTEXT_CLASS_SIGNATURE_PARENT_NAME,
+@@ -208,7 +206,7 @@
+                     continue;
+                 }
+                 if (counter == 0) {
+-                    dt();
++                    println();
+                     print(isInterface? "extends " : "implements ");
+                 } else {
+                     print(", ");
+@@ -219,7 +217,6 @@
+                 counter++;
+             }
+         }
+-        dlEnd();
+         preEnd();
+         p();
+     }
+@@ -342,6 +339,7 @@
+             TagletOutput output = (new ParamTaglet()).getTagletOutput(classDoc,
+                 getTagletWriterInstance(false));
+             print(output.toString());
++            dtEnd();
+             dlEnd();
+         }
+     }
+@@ -360,8 +358,10 @@
+                 dl();
+                 dt();
+                 strongText("doclet.Subclasses");
++                dtEnd();
+                 writeClassLinks(LinkInfoImpl.CONTEXT_SUBCLASSES,
+                     subclasses);
++                dlEnd();
+             }
+         }
+     }
+@@ -376,8 +376,10 @@
+                 dl();
+                 dt();
+                 strongText("doclet.Subinterfaces");
++                dtEnd();
+                 writeClassLinks(LinkInfoImpl.CONTEXT_SUBINTERFACES,
+                     subInterfaces);
++                dlEnd();
+             }
+         }
+     }
+@@ -398,8 +400,10 @@
+             dl();
+             dt();
+             strongText("doclet.Implementing_Classes");
++            dtEnd();
+             writeClassLinks(LinkInfoImpl.CONTEXT_IMPLEMENTED_CLASSES,
+                 implcl);
++            dlEnd();
+         }
+     }
+ 
+@@ -414,8 +418,10 @@
+             dl();
+             dt();
+             strongText("doclet.All_Implemented_Interfaces");
++            dtEnd();
+             writeClassLinks(LinkInfoImpl.CONTEXT_IMPLEMENTED_INTERFACES,
+                 interfaceArray);
++            dlEnd();
+         }
+     }
+ 
+@@ -430,8 +436,10 @@
+             dl();
+             dt();
+             strongText("doclet.All_Superinterfaces");
++            dtEnd();
+             writeClassLinks(LinkInfoImpl.CONTEXT_SUPER_INTERFACES,
+                 interfaceArray);
++            dlEnd();
+         }
+     }
+ 
+@@ -455,7 +463,6 @@
+             }
+         }
+         ddEnd();
+-        dlEnd();
+     }
+ 
+     protected void navLinkTree() {
+@@ -574,6 +581,7 @@
+             } else {
+                 strongText("doclet.Enclosing_Class");
+             }
++            dtEnd();
+             dd();
+             printLink(new LinkInfoImpl(LinkInfoImpl.CONTEXT_CLASS, outerClass,
+                 false));
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ConstructorWriterImpl.java
+@@ -25,12 +25,12 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++import java.util.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.tools.doclets.internal.toolkit.taglets.*;
+-import com.sun.javadoc.*;
+-import java.util.*;
+-import java.io.*;
+ 
+ /**
+  * Writes constructor documentation.
+@@ -149,7 +149,7 @@
+         writeParameters(constructor);
+         writeExceptions(constructor);
+         writer.preEnd();
+-        writer.dl();
++        assert !writer.getMemberDetailsListPrinted();
+     }
+ 
+     /**
+@@ -158,12 +158,7 @@
+      * @param constructor the constructor being documented.
+      */
+     public void writeDeprecated(ConstructorDoc constructor) {
+-        String output = ((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(constructor,
+-            writer.getTagletWriterInstance(false))).toString();
+-        if (output != null && output.trim().length() > 0) {
+-            writer.print(output);
+-        }
++        printDeprecated(constructor);
+     }
+ 
+     /**
+@@ -172,10 +167,7 @@
+      * @param constructor the constructor being documented.
+      */
+     public void writeComments(ConstructorDoc constructor) {
+-        if (constructor.inlineTags().length > 0) {
+-            writer.dd();
+-            writer.printInlineComment(constructor);
+-        }
++        printComment(constructor);
+     }
+ 
+     /**
+@@ -191,7 +183,7 @@
+      * Write the constructor footer.
+      */
+     public void writeConstructorFooter() {
+-        writer.dlEnd();
++        printMemberFooter();
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/EnumConstantWriterImpl.java
+@@ -25,12 +25,11 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+-import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+-
+-import java.io.*;
+ 
+ /**
+  * Writes enum constant documentation in HTML format.
+@@ -146,26 +145,21 @@
+             strong(enumConstant.name());
+         }
+         writer.preEnd();
+-        writer.dl();
++        assert !writer.getMemberDetailsListPrinted();
+     }
+ 
+     /**
+      * {@inheritDoc}
+      */
+     public void writeDeprecated(FieldDoc enumConstant) {
+-        print(((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(enumConstant,
+-            writer.getTagletWriterInstance(false))).toString());
++        printDeprecated(enumConstant);
+     }
+ 
+     /**
+      * {@inheritDoc}
+      */
+     public void writeComments(FieldDoc enumConstant) {
+-        if (enumConstant.inlineTags().length > 0) {
+-            writer.dd();
+-            writer.printInlineComment(enumConstant);
+-        }
++        printComment(enumConstant);
+     }
+ 
+     /**
+@@ -179,7 +173,7 @@
+      * {@inheritDoc}
+      */
+     public void writeEnumConstantFooter() {
+-        writer.dlEnd();
++        printMemberFooter();
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/FieldWriterImpl.java
+@@ -25,12 +25,11 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+-import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+-
+-import java.io.*;
+ 
+ /**
+  * Writes field documentation in HTML format.
+@@ -156,7 +155,7 @@
+             strong(field.name());
+         }
+         writer.preEnd();
+-        writer.dl();
++        assert !writer.getMemberDetailsListPrinted();
+     }
+ 
+     /**
+@@ -165,9 +164,7 @@
+      * @param field the field being documented.
+      */
+     public void writeDeprecated(FieldDoc field) {
+-        print(((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(field,
+-            writer.getTagletWriterInstance(false))).toString());
++        printDeprecated(field);
+     }
+ 
+     /**
+@@ -178,10 +175,12 @@
+     public void writeComments(FieldDoc field) {
+         ClassDoc holder = field.containingClass();
+         if (field.inlineTags().length > 0) {
++            writer.printMemberDetailsListStartTag();
+             if (holder.equals(classdoc) ||
+                 (! (holder.isPublic() || Util.isLinkable(holder, configuration())))) {
+                 writer.dd();
+                 writer.printInlineComment(field);
++                writer.ddEnd();
+             } else {
+                 String classlink = writer.codeText(
+                     writer.getDocLink(LinkInfoImpl.CONTEXT_FIELD_DOC_COPY,
+@@ -196,6 +195,7 @@
+                 writer.ddEnd();
+                 writer.dd();
+                 writer.printInlineComment(field);
++                writer.ddEnd();
+             }
+         }
+     }
+@@ -213,7 +213,7 @@
+      * Write the field footer.
+      */
+     public void writeFieldFooter() {
+-        writer.dlEnd();
++        printMemberFooter();
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlDocletWriter.java
+@@ -24,17 +24,16 @@
+  */
+ 
+ package com.sun.tools.doclets.formats.html;
+-import com.sun.tools.doclets.formats.html.markup.*;
+ 
+-import com.sun.tools.doclets.internal.toolkit.*;
+-import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.tools.doclets.internal.toolkit.taglets.*;
+-
+-import com.sun.javadoc.*;
+ import java.io.*;
+ import java.text.SimpleDateFormat;
+ import java.util.*;
+ 
++import com.sun.javadoc.*;
++import com.sun.tools.doclets.formats.html.markup.*;
++import com.sun.tools.doclets.internal.toolkit.*;
++import com.sun.tools.doclets.internal.toolkit.util.*;
++import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ 
+ /**
+  * Class for the Html Format Code Generation specific to JavaDoc.
+@@ -44,6 +43,7 @@
+  * @since 1.2
+  * @author Atul M Dambalkar
+  * @author Robert Field
++ * @author Bhavesh Patel (Modified)
+  */
+ public class HtmlDocletWriter extends HtmlDocWriter {
+ 
+@@ -205,7 +205,13 @@
+     private void printMethodInfo(MethodDoc method) {
+         ClassDoc[] intfacs = method.containingClass().interfaces();
+         MethodDoc overriddenMethod = method.overriddenMethod();
+-        if (intfacs.length > 0 || overriddenMethod != null) {
++        // Check whether there is any implementation or overridden info to be
++        // printed. If no overridden or implementation info needs to be
++        // printed, do not print this section.
++        if ((intfacs.length > 0 &&
++                new ImplementedMethods(method, this.configuration).build().length > 0) ||
++                overriddenMethod != null) {
++            printMemberDetailsListStartTag();
+             dd();
+             printTagsInfoHeader();
+             MethodWriterImpl.printImplementsInfo(this, method);
+@@ -216,7 +222,6 @@
+             printTagsInfoFooter();
+             ddEnd();
+         }
+-        dd();
+     }
+ 
+     protected void printTags(Doc doc) {
+@@ -230,41 +235,35 @@
+         TagletWriter.genTagOuput(configuration.tagletManager, doc,
+             configuration.tagletManager.getCustomTags(doc),
+                 getTagletWriterInstance(false), output);
+-        if (output.toString().trim().length() > 0) {
++        String outputString = output.toString().trim();
++        // For RootDoc and ClassDoc, this section is not the definition description
++        // but the start of definition list.
++        if (!outputString.isEmpty()) {
++            if (!(doc instanceof RootDoc || doc instanceof ClassDoc)) {
++                printMemberDetailsListStartTag();
++                dd();
++            }
+             printTagsInfoHeader();
+-            print(output.toString());
++            print(outputString);
+             printTagsInfoFooter();
+-        } else if (! (doc instanceof ConstructorDoc ||
+-            doc instanceof RootDoc || doc instanceof ClassDoc)) {
+-            //To be consistent with 1.4.2 output.
+-            //I hate to do this but we have to pass the diff test to prove
+-            //nothing has broken.
+-            printTagsInfoHeader();
+-            printTagsInfoFooter();
++            if (!(doc instanceof RootDoc || doc instanceof ClassDoc))
++                ddEnd();
+         }
+     }
+ 
+     /**
+-     * Check whether there are any tags to be printed.
++     * Check whether there are any tags for Serialization Overview
++     * section to be printed.
+      *
+-     * @param doc the Doc object to check for tags.
++     * @param field the FieldDoc object to check for tags.
+      * @return true if there are tags to be printed else return false.
+      */
+-    protected boolean hasTagsToPrint(Doc doc) {
+-        if (doc instanceof MethodDoc) {
+-            ClassDoc[] intfacs = ((MethodDoc)doc).containingClass().interfaces();
+-            MethodDoc overriddenMethod = ((MethodDoc)doc).overriddenMethod();
+-            if ((intfacs.length > 0 &&
+-                new ImplementedMethods((MethodDoc)doc, this.configuration).build().length > 0) ||
+-                overriddenMethod != null) {
+-                return true;
+-            }
+-        }
++    protected boolean hasSerializationOverviewTags(FieldDoc field) {
+         TagletOutputImpl output = new TagletOutputImpl("");
+-        TagletWriter.genTagOuput(configuration.tagletManager, doc,
+-            configuration.tagletManager.getCustomTags(doc),
++        TagletWriter.genTagOuput(configuration.tagletManager, field,
++            configuration.tagletManager.getCustomTags(field),
+                 getTagletWriterInstance(false), output);
+-        return (output.toString().trim().isEmpty());
++        return (!output.toString().trim().isEmpty());
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialFieldWriter.java
+@@ -25,11 +25,12 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.util.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+-import java.util.*;
+ 
+ /**
+  * Generate serialized form for serializable fields.
+@@ -37,6 +38,7 @@
+  * <code>serialField</code> is processed.
+  *
+  * @author Joe Fialli
++ * @author Bhavesh Patel (Modified)
+  */
+ public class HtmlSerialFieldWriter extends FieldWriterImpl
+     implements SerializedFormWriter.SerialFieldWriter {
+@@ -75,7 +77,7 @@
+             writer.println();
+             if (heading.equals(
+                    configuration().getText("doclet.Serialized_Form_class"))) {
+-                writer.dl();
++                assert !writer.getMemberDetailsListPrinted();
+             }
+         } else {
+             writer.printTableHeadingBackground(heading);
+@@ -102,7 +104,7 @@
+         print(fieldDimensions + ' ');
+         strong(fieldName);
+         writer.preEnd();
+-        writer.dl();
++        assert !writer.getMemberDetailsListPrinted();
+     }
+ 
+     /**
+@@ -111,9 +113,7 @@
+      * @param field the field to document.
+      */
+     public void writeMemberDeprecatedInfo(FieldDoc field) {
+-        print(((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(field,
+-            writer.getTagletWriterInstance(false))).toString());
++        printDeprecated(field);
+     }
+ 
+     /**
+@@ -123,14 +123,17 @@
+      */
+     public void writeMemberDescription(FieldDoc field) {
+         if (field.inlineTags().length > 0) {
++            writer.printMemberDetailsListStartTag();
+             writer.dd();
+             writer.printInlineComment(field);
++            writer.ddEnd();
+         }
+         Tag[] tags = field.tags("serial");
+         if (tags.length > 0) {
+-            writer.dt();
++            writer.printMemberDetailsListStartTag();
+             writer.dd();
+             writer.printInlineComment(field, tags[0]);
++            writer.ddEnd();
+         }
+     }
+ 
+@@ -140,9 +143,14 @@
+      * @param serialFieldTag the field to document (represented by tag).
+      */
+     public void writeMemberDescription(SerialFieldTag serialFieldTag) {
+-        writer.dd();
+-        writer.print(serialFieldTag.description());
+-        writer.dlEnd();
++        String serialFieldTagDesc = serialFieldTag.description().trim();
++        if (!serialFieldTagDesc.isEmpty()) {
++            writer.dl();
++            writer.dd();
++            writer.print(serialFieldTagDesc);
++            writer.ddEnd();
++            writer.dlEnd();
++        }
+     }
+ 
+     /**
+@@ -151,33 +159,57 @@
+      * @param field the field to document.
+      */
+     public void writeMemberTags(FieldDoc field) {
+-        writer.dl();
+         TagletOutputImpl output = new TagletOutputImpl("");
+         TagletWriter.genTagOuput(configuration().tagletManager, field,
+             configuration().tagletManager.getCustomTags(field),
+                 writer.getTagletWriterInstance(false), output);
+-        if (output.toString().length() > 0) {
+-            print(output.toString());
++        String outputString = output.toString().trim();
++        if (!outputString.isEmpty()) {
++            writer.printMemberDetailsListStartTag();
++            writer.dd();
++            writer.dl();
++            print(outputString);
++            writer.dlEnd();
++            writer.ddEnd();
+         }
+-        writer.dlEnd();
+-    }
+-    public void writeMemberFooter(FieldDoc member) {
+-        writer.dlEnd();
+     }
+ 
+     /**
+-     * Check to see if member details should be printed. If
++     * Check to see if overview details should be printed. If
+      * nocomment option set or if there is no text to be printed
+-     * for deprecation info, inline comment, no serial tag or inline tags,
+-     * do not print member details.
++     * for deprecation info, comment or tags, do not print overview details.
++     *
++     * @param field the field to check overview details for.
++     * @return true if overview details need to be printed
+      */
+-    public boolean shouldPrintMemberDetails(FieldDoc field) {
+-        if (!configuration().nocomment)
+-            if((field.inlineTags().length > 0) ||
+-                (field.tags("serial").length > 0) || (writer.hasTagsToPrint(field)))
++    public boolean shouldPrintOverview(FieldDoc field) {
++        if (!configuration().nocomment) {
++            if(!field.commentText().isEmpty() ||
++                    writer.hasSerializationOverviewTags(field))
+                 return true;
+-        if (!Util.isDeprecated(field))
++        }
++        if (field.tags("deprecated").length > 0)
+             return true;
+         return false;
+     }
++
++    public void writeMemberFooter() {
++        printMemberFooter();
++    }
++
++    /**
++     * Write the footer information. If the serilization overview section was
++     * printed, check for definition list and close list tag.
++     *
++     * @param heading the heading that was written.
++     */
++    public void writeFooter(String heading) {
++        if (printedOverallAnchor) {
++            if (heading.equals(
++                   configuration().getText("doclet.Serialized_Form_class"))) {
++                writer.printMemberDetailsListEndTag();
++                assert !writer.getMemberDetailsListPrinted();
++            }
++        }
++    }
+ }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialMethodWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialMethodWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialMethodWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/HtmlSerialMethodWriter.java
+@@ -25,9 +25,9 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.taglets.*;
+-import com.sun.javadoc.*;
+ 
+ /**
+  * Generate serialized form for Serializable/Externalizable methods.
+@@ -66,14 +66,12 @@
+         writeSignature(member);
+     }
+ 
+-    public void writeMemberFooter(MethodDoc member) {
+-        writer.dlEnd();
++    public void writeMemberFooter() {
++        printMemberFooter();
+     }
+ 
+     public void writeDeprecatedMemberInfo(MethodDoc member) {
+-        print(((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(member,
+-            writer.getTagletWriterInstance(false))).toString());
++        printDeprecated(member);
+     }
+ 
+     public void writeMemberDescription(MethodDoc member) {
+@@ -81,23 +79,27 @@
+     }
+ 
+     public void writeMemberTags(MethodDoc member) {
+-        writer.dd();
+-        writer.dl();
+         TagletOutputImpl output = new TagletOutputImpl("");
+         TagletManager tagletManager =
+             ConfigurationImpl.getInstance().tagletManager;
+         TagletWriter.genTagOuput(tagletManager, member,
+             tagletManager.getSerializedFormTags(),
+             writer.getTagletWriterInstance(false), output);
+-        print(output.toString());
++        String outputString = output.toString().trim();
++        if (!outputString.isEmpty()) {
++            writer.printMemberDetailsListStartTag();
++            writer.dd();
++            writer.dl();
++            print(outputString);
++            writer.dlEnd();
++            writer.ddEnd();
++        }
+         MethodDoc method = (MethodDoc)member;
+         if (method.name().compareTo("writeExternal") == 0
+                 && method.tags("serialData").length == 0) {
+             serialWarning(member.position(), "doclet.MissingSerialDataTag",
+                 method.containingClass().qualifiedName(), method.name());
+         }
+-        writer.ddEnd();
+-        writer.dlEnd();
+     }
+ 
+     protected void printTypeLinkNoDimension(Type type) {
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/MethodWriterImpl.java
+@@ -25,13 +25,13 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+ import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ 
+-import java.io.*;
+-import com.sun.javadoc.*;
+-
+ /**
+  * Writes method documentation in HTML format.
+  *
+@@ -172,7 +172,7 @@
+         writeParameters(method);
+         writeExceptions(method);
+         writer.preEnd();
+-        writer.dl();
++        assert !writer.getMemberDetailsListPrinted();
+     }
+ 
+     /**
+@@ -181,12 +181,7 @@
+      * @param method the method being documented.
+      */
+     public void writeDeprecated(MethodDoc method) {
+-        String output = ((TagletOutputImpl)
+-            (new DeprecatedTaglet()).getTagletOutput(method,
+-            writer.getTagletWriterInstance(false))).toString();
+-        if (output != null && output.trim().length() > 0) {
+-            writer.print(output);
+-        }
++        printDeprecated(method);
+     }
+ 
+     /**
+@@ -197,11 +192,13 @@
+     public void writeComments(Type holder, MethodDoc method) {
+         ClassDoc holderClassDoc = holder.asClassDoc();
+         if (method.inlineTags().length > 0) {
++            writer.printMemberDetailsListStartTag();
+             if (holder.asClassDoc().equals(classdoc) ||
+                 (! (holderClassDoc.isPublic() ||
+                     Util.isLinkable(holderClassDoc, configuration())))) {
+                 writer.dd();
+                 writer.printInlineComment(method);
++                writer.ddEnd();
+             } else {
+                 String classlink = writer.codeText(
+                     writer.getDocLink(LinkInfoImpl.CONTEXT_METHOD_DOC_COPY,
+@@ -217,6 +214,7 @@
+                 writer.ddEnd();
+                 writer.dd();
+                 writer.printInlineComment(method);
++                writer.ddEnd();
+             }
+         }
+     }
+@@ -234,8 +232,7 @@
+      * Write the method footer.
+      */
+     public void writeMethodFooter() {
+-        writer.ddEnd();
+-        writer.dlEnd();
++        printMemberFooter();
+     }
+ 
+     /**
+@@ -318,6 +315,7 @@
+             String name = method.name();
+             writer.dt();
+             writer.strongText(label);
++            writer.dtEnd();
+             writer.dd();
+             String methLink = writer.codeText(
+                 writer.getLink(
+@@ -326,6 +324,7 @@
+                         writer.getAnchor(method), name, false)
+                 ));
+             writer.printText("doclet.in_class", methLink, overriddenTypeLink);
++            writer.ddEnd();
+         }
+     }
+ 
+@@ -364,11 +363,13 @@
+                     LinkInfoImpl.CONTEXT_METHOD_SPECIFIED_BY, intfac)));
+             writer.dt();
+             writer.strongText("doclet.Specified_By");
++            writer.dtEnd();
+             writer.dd();
+             methlink = writer.codeText(writer.getDocLink(
+                 LinkInfoImpl.CONTEXT_MEMBER, implementedMeth,
+                 implementedMeth.name(), false));
+             writer.printText("doclet.in_interface", methlink, intfaclink);
++            writer.ddEnd();
+         }
+ 
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/NestedClassWriterImpl.java
+@@ -25,11 +25,11 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+-
+-import java.io.*;
+ 
+ /**
+  * Writes nested class documentation in HTML format.
+@@ -129,7 +129,6 @@
+             writer.println("");
+         }
+         writer.anchor(nestedClass.name());
+-        writer.dl();
+         writer.h3();
+         writer.print(nestedClass.name());
+         writer.h3End();
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageTreeWriter.java
+@@ -25,9 +25,10 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+-import java.io.*;
+ 
+ /**
+  * Class to generate Tree page for a package. The name of the file generated is
+@@ -145,8 +146,10 @@
+         dl();
+         dt();
+         strongText("doclet.Package_Hierarchies");
++        dtEnd();
+         dd();
+         navLinkMainTree(configuration.getText("doclet.All_Packages"));
++        ddEnd();
+         dlEnd();
+         hr();
+     }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java b/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/TagletWriterImpl.java
+@@ -25,17 +25,18 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.builders.SerializedFormBuilder;
+ import com.sun.tools.doclets.internal.toolkit.taglets.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+ 
+ /**
+  * The taglet writer that writes HTML.
+  *
+  * @since 1.5
+  * @author Jamie Ho
++ * @author Bhavesh Patel (Modified)
+  */
+ 
+ public class TagletWriterImpl extends TagletWriter {
+@@ -99,11 +100,12 @@
+                     output.append(DocletConstants.NL + "<P>" +
+                         DocletConstants.NL);
+                 }
++                output.append("</DD>");
+             } else {
+                 if (Util.isDeprecated(member.containingClass())) {
+                     output.append("<DD><STRONG>" +
+                     ConfigurationImpl.getInstance().
+-                            getText("doclet.Deprecated") + "</STRONG>&nbsp;");
++                            getText("doclet.Deprecated") + "</STRONG>&nbsp;</DD>");
+                 }
+             }
+         }
+@@ -123,7 +125,7 @@
+     public TagletOutput getParamHeader(String header) {
+         StringBuffer result = new StringBuffer();
+         result.append("<DT>");
+-        result.append("<STRONG>" +  header + "</STRONG>");
++        result.append("<STRONG>" +  header + "</STRONG></DT>");
+         return new TagletOutputImpl(result.toString());
+     }
+ 
+@@ -132,7 +134,7 @@
+      */
+     public TagletOutput paramTagOutput(ParamTag paramTag, String paramName) {
+         TagletOutput result = new TagletOutputImpl("<DD><CODE>" + paramName + "</CODE>"
+-         + " - " + htmlWriter.commentTagsToString(paramTag, null, paramTag.inlineTags(), false));
++         + " - " + htmlWriter.commentTagsToString(paramTag, null, paramTag.inlineTags(), false) + "</DD>");
+         return result;
+     }
+ 
+@@ -142,9 +144,9 @@
+     public TagletOutput returnTagOutput(Tag returnTag) {
+         TagletOutput result = new TagletOutputImpl(DocletConstants.NL + "<DT>" +
+             "<STRONG>" + htmlWriter.configuration.getText("doclet.Returns") +
+-            "</STRONG>" + "<DD>" +
++            "</STRONG>" + "</DT>" + "<DD>" +
+             htmlWriter.commentTagsToString(returnTag, null, returnTag.inlineTags(),
+-            false));
++            false) + "</DD>");
+         return result;
+     }
+ 
+@@ -174,22 +176,21 @@
+         }
+         if (holder.isClass() && ((ClassDoc)holder).isSerializable()) {
+             //Automatically add link to serialized form page for serializable classes.
+-            if (!(SerializedFormBuilder.serialInclude(holder) &&
++            if ((SerializedFormBuilder.serialInclude(holder) &&
+                       SerializedFormBuilder.serialInclude(((ClassDoc)holder).containingPackage()))) {
+-                return result.equals("") ? null : new TagletOutputImpl(result);
++                result = addSeeHeader(result);
++                result += htmlWriter.getHyperLink(htmlWriter.relativePath + "serialized-form.html",
++                        ((ClassDoc)holder).qualifiedName(), htmlWriter.configuration.getText("doclet.Serialized_Form"), false);
+             }
+-            result = addSeeHeader(result);
+-            result += htmlWriter.getHyperLink(htmlWriter.relativePath + "serialized-form.html",
+-                ((ClassDoc)holder).qualifiedName(), htmlWriter.configuration.getText("doclet.Serialized_Form"), false);
+         }
+-        return result.equals("") ? null : new TagletOutputImpl(result);
++        return result.equals("") ? null : new TagletOutputImpl(result + "</DD>");
+     }
+ 
+     private String addSeeHeader(String result) {
+         if (result != null && result.length() > 0) {
+             return result + ", " + DocletConstants.NL;
+         } else {
+-            return "<DT><STRONG>" + htmlWriter.configuration().getText("doclet.See_Also") + "</STRONG><DD>";
++            return "<DT><STRONG>" + htmlWriter.configuration().getText("doclet.See_Also") + "</STRONG></DT><DD>";
+         }
+      }
+ 
+@@ -205,7 +206,8 @@
+             }
+             result += htmlWriter.commentTagsToString(simpleTags[i], null, simpleTags[i].inlineTags(), false);
+         }
+-         return new TagletOutputImpl(result + "</DD>" + DocletConstants.NL);
++        result += "</DD>" + DocletConstants.NL;
++        return new TagletOutputImpl(result);
+     }
+ 
+     /**
+@@ -222,7 +224,7 @@
+      */
+     public TagletOutput getThrowsHeader() {
+         return new TagletOutputImpl(DocletConstants.NL + "<DT>" + "<STRONG>" +
+-            htmlWriter.configuration().getText("doclet.Throws") + "</STRONG>");
++            htmlWriter.configuration().getText("doclet.Throws") + "</STRONG></DT>");
+     }
+ 
+     /**
+@@ -241,6 +243,7 @@
+         if (text != null && text.toString().length() > 0) {
+             result += " - " + text;
+         }
++        result += "</DD>";
+         return new TagletOutputImpl(result);
+     }
+ 
+@@ -250,7 +253,7 @@
+     public TagletOutput throwsTagOutput(Type throwsType) {
+         return new TagletOutputImpl(DocletConstants.NL + "<DD>" +
+             htmlWriter.codeText(htmlWriter.getLink(
+-                new LinkInfoImpl(LinkInfoImpl.CONTEXT_MEMBER, throwsType))));
++                new LinkInfoImpl(LinkInfoImpl.CONTEXT_MEMBER, throwsType))) + "</DD>");
+     }
+ 
+     /**
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/TreeWriter.java
+@@ -25,9 +25,11 @@
+ 
+ package com.sun.tools.doclets.formats.html;
+ 
++import java.io.*;
++
++import com.sun.javadoc.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.javadoc.*;
+-import java.io.*;
++
+ /**
+  * Generate Class Hierarchy page for all the Classes in this run.  Use
+  * ClassTree for building the Tree. The name of
+@@ -120,6 +122,7 @@
+             dl();
+             dt();
+             strongText("doclet.Package_Hierarchies");
++            dtEnd();
+             dd();
+             for (int i = 0; i < packages.length; i++) {
+                 if (packages[i].name().length() == 0) {
+@@ -131,6 +134,7 @@
+                     print(", ");
+                 }
+             }
++            ddEnd();
+             dlEnd();
+             hr();
+         }
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlDocWriter.java
+@@ -245,6 +245,31 @@
+     }
+ 
+     /**
++     * Keep track of member details list. Print the definition list start tag
++     * if it is not printed yet.
++     */
++    public void printMemberDetailsListStartTag () {
++        if (!getMemberDetailsListPrinted()) {
++            dl();
++            memberDetailsListPrinted = true;
++        }
++    }
++
++    /**
++     * Print the definition list end tag if the list start tag was printed.
++     */
++    public void printMemberDetailsListEndTag () {
++        if (getMemberDetailsListPrinted()) {
++            dlEnd();
++            memberDetailsListPrinted = false;
++        }
++    }
++
++    public boolean getMemberDetailsListPrinted() {
++        return memberDetailsListPrinted;
++    }
++
++    /**
+      * Print the frameset version of the Html file header.
+      * Called only when generating an HTML frameset file.
+      *
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/markup/HtmlWriter.java
+@@ -25,9 +25,10 @@
+ 
+ package com.sun.tools.doclets.formats.html.markup;
+ 
++import java.io.*;
++
+ import com.sun.tools.doclets.internal.toolkit.*;
+ import com.sun.tools.doclets.internal.toolkit.util.*;
+-import java.io.*;
+ 
+ /**
+  * Class for the Html format code generation.
+@@ -61,6 +62,11 @@
+     protected Configuration configuration;
+ 
+     /**
++     * The flag to indicate whether a member details list is printed or not.
++     */
++    protected boolean memberDetailsListPrinted;
++
++    /**
+      * Constructor.
+      *
+      * @param path The directory path to be created for this file
+@@ -79,6 +85,7 @@
+         super(Util.genWriter(configuration, path, filename, docencoding));
+         this.configuration = configuration;
+         htmlFilename = filename;
++        this.memberDetailsListPrinted = false;
+     }
+ 
+     /**
+@@ -529,7 +536,14 @@
+     }
+ 
+     /**
+-     * Print &lt;DT&gt; tag.
++     * Print &lt;/DT&gt; tag.
++     */
++    public void dtEnd() {
++        print("</DT>");
++    }
++
++    /**
++     * Print &lt;DD&gt; tag.
+      */
+     public void dd() {
+         print("<DD>");
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/SerializedFormWriter.java
+@@ -25,8 +25,9 @@
+ 
+ package com.sun.tools.doclets.internal.toolkit;
+ 
++import java.io.*;
++
+ import com.sun.javadoc.*;
+-import java.io.*;
+ 
+ /**
+  * The interface for writing serialized form output.
+@@ -147,22 +148,27 @@
+             String fieldDimensions, String fieldName);
+ 
+         /**
++         * Write the member footer.
++         */
++        public void writeMemberFooter();
++
++        /**
++         * Check to see if overview details should be printed. If
++         * nocomment option set or if there is no text to be printed
++         * for deprecation info, inline comment or tags,
++         * do not print overview details.
++         *
++         * @param field the field to check overview details for.
++         * @return true if overview details need to be printed
++         */
++        public boolean shouldPrintOverview(FieldDoc field);
++
++        /**
+          * Write the footer.
+          *
+-         * @param member the member to write the header for.
++         * @param heading the heading that was written.
+          */
+-        public void writeMemberFooter(FieldDoc member);
+-
+-        /**
+-         * Check to see if member details should be printed. If
+-         * nocomment option set or if there is no text to be printed
+-         * for deprecation info, inline comment, no serial tag or inline tags,
+-         * do not print member details.
+-         *
+-         * @param member the member to check details for.
+-         * @return true if details need to be printed
+-         */
+-        public boolean shouldPrintMemberDetails(FieldDoc member);
++        public void writeFooter (String heading);
+     }
+ 
+     /**
+@@ -193,10 +199,8 @@
+ 
+         /**
+          * Write the footer.
+-         *
+-         * @param member the member to write the header for.
+          */
+-        public void writeMemberFooter(MethodDoc member);
++        public void writeMemberFooter();
+ 
+         /**
+          * Write the deprecated information for this member.
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+@@ -25,13 +25,14 @@
+ 
+ package com.sun.tools.doclets.internal.toolkit.builders;
+ 
+-import com.sun.tools.doclets.internal.toolkit.util.*;
+-import com.sun.tools.doclets.internal.toolkit.*;
+-import com.sun.javadoc.*;
+ import java.io.*;
+ import java.lang.reflect.*;
+ import java.util.*;
+ 
++import com.sun.javadoc.*;
++import com.sun.tools.doclets.internal.toolkit.util.*;
++import com.sun.tools.doclets.internal.toolkit.*;
++
+ /**
+  * Builds the serialized form.
+  *
+@@ -40,6 +41,7 @@
+  * Do not use it as an API
+  *
+  * @author Jamie Ho
++ * @author Bhavesh Patel (Modified)
+  * @since 1.5
+  */
+ public class SerializedFormBuilder extends AbstractBuilder {
+@@ -379,7 +381,7 @@
+      * Build the method footer.
+      */
+     public void buildMethodFooter() {
+-        methodWriter.writeMemberFooter((MethodDoc) currentMember);
++        methodWriter.writeMemberFooter();
+     }
+ 
+     /**
+@@ -407,13 +409,17 @@
+             // information to be printed.
+             if (fieldWriter.shouldPrintMemberDetails(serialPersistentField)) {
+                 fieldWriter.writeHeader(
+-                    configuration.getText("doclet.Serialized_Form_class"));
++                        configuration.getText("doclet.Serialized_Form_class"));
+                 fieldWriter.writeMemberDeprecatedInfo(serialPersistentField);
+                 if (!configuration.nocomment) {
+                     fieldWriter.writeMemberDescription(serialPersistentField);
+                     fieldWriter.writeMemberTags(serialPersistentField);
+                 }
+                 fieldWriter.writeMemberFooter(serialPersistentField);
++                // Footer required to close the definition list tag
++                // for serialization overview.
++                fieldWriter.writeFooter(
++                        configuration.getText("doclet.Serialized_Form_class"));
+             }
+         }
+     }
+@@ -476,11 +482,11 @@
+     }
+ 
+     /**
+-     * Build the field footer.
++     * Build the field sub footer.
+      */
+-    public void buildFieldFooter() {
++    public void buildFieldSubFooter() {
+         if (! currentClass.definesSerializableFields()) {
+-            fieldWriter.writeMemberFooter((FieldDoc) currentMember);
++            fieldWriter.writeMemberFooter();
+         }
+     }
+ 
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml b/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/resources/doclet.xml
+@@ -26,180 +26,180 @@
+ -->
+ 
+ 
+-<Doclet>
+-
+-    <PackageDoc>
+-        <PackageHeader/>
+-        <Summary>
+-            <SummaryHeader/>
+-            <InterfaceSummary/>
+-            <ClassSummary/>
+-            <EnumSummary/>
+-            <ExceptionSummary/>
+-            <ErrorSummary/>
+-            <AnnotationTypeSummary/>
+-            <SummaryFooter/>
+-        </Summary>
+-        <PackageDescription/>
+-        <PackageTags/>
+-        <PackageFooter/>
+-    </PackageDoc>
+-    
+-    <AnnotationTypeDoc>
+-        <AnnotationTypeHeader/>
+-        <DeprecationInfo/>
+-        <AnnotationTypeSignature/>
+-        <AnnotationTypeDescription/>
+-        <AnnotationTypeTagInfo/>
+-        <MemberSummary>
+-        	<AnnotationTypeRequiredMemberSummary/>
+-            <AnnotationTypeOptionalMemberSummary/>
+-        </MemberSummary>
+-        <AnnotationTypeRequiredMemberDetails>
+-            <Header/>
+-            <AnnotationTypeRequiredMember>
+-                <MemberHeader/>
+-                <Signature/>
+-                <DeprecationInfo/>
+-                <MemberComments/>
+-                <TagInfo/>
+-                <MemberFooter/>
+-            </AnnotationTypeRequiredMember>
+-        </AnnotationTypeRequiredMemberDetails>
+-        <AnnotationTypeOptionalMemberDetails>
+-            <AnnotationTypeOptionalMember>
+-                <MemberHeader/>
+-                <Signature/>
+-                <DeprecationInfo/>
+-                <MemberComments/>
+-                <TagInfo/>
+-                <DefaultValueInfo/>
+-                <MemberFooter/>
+-            </AnnotationTypeOptionalMember>
+-            <Footer/>
+-        </AnnotationTypeOptionalMemberDetails>        
+-        <AnnotationTypeFooter/>
+-    </AnnotationTypeDoc>
+-    
+-    <ClassDoc>
+-        <ClassHeader/>
+-        <ClassTree/>
+-        <TypeParamInfo/>
+-        <SuperInterfacesInfo/>
+-        <ImplementedInterfacesInfo/>        
+-        <SubClassInfo/>
+-        <SubInterfacesInfo/>
+-        <InterfaceUsageInfo/>
+-        <NestedClassInfo/>
+-        <DeprecationInfo/>
+-        <ClassSignature/>
+-        <ClassDescription/>
+-        <ClassTagInfo/>
+-        <MemberSummary>
+-            <NestedClassesSummary/>
+-            <NestedClassesInheritedSummary/>
+-            <EnumConstantsSummary/>
+-            <FieldsSummary/>
+-            <FieldsInheritedSummary/>  
+-            <ConstructorsSummary/>
+-            <MethodsSummary/>
+-            <MethodsInheritedSummary/>
+-        </MemberSummary>
+-        <EnumConstantsDetails>
+-            <Header/>
+-            <EnumConstant>
+-                <EnumConstantHeader/>
+-                <Signature/>
+-                <DeprecationInfo/>
+-                <EnumConstantComments/>
+-                <TagInfo/>
+-                <EnumConstantFooter/>
+-            </EnumConstant>
+-            <Footer/>
+-        </EnumConstantsDetails>
+-        <FieldDetails>
+-            <Header/>
+-            <FieldDoc>
+-                <FieldHeader/>
+-                <Signature/>
+-                <DeprecationInfo/>
+-                <FieldComments/>
+-                <TagInfo/>
+-                <FieldFooter/>
+-            </FieldDoc>
+-            <Footer/>
+-        </FieldDetails>
+-        <ConstructorDetails>
+-            <Header/>
+-            <ConstructorDoc>
+-                <ConstructorHeader/>
+-                <Signature/>
+-                <DeprecationInfo/>
+-                <ConstructorComments/>
+-                <TagInfo/>
+-                <ConstructorFooter/>
+-            </ConstructorDoc>
+-            <Footer/>
+-        </ConstructorDetails>
+-        <MethodDetails>
+-            <Header/>
+-            <MethodDoc>
+-                <MethodHeader/>
+-                <Signature/>
+-                <DeprecationInfo/>
+-                <MethodComments/>
+-                <TagInfo/>
+-                <MethodFooter/>
+-            </MethodDoc>
+-            <Footer/>
+-        </MethodDetails>
+-        <ClassFooter/>
+-    </ClassDoc>
+-    
+-    <ConstantSummary>
+-        <Header/>
+-        <Contents/>
+-        <ConstantSummaries>
+-            <PackageConstantSummary>
+-                <PackageHeader/>
+-                <ClassConstantSummary>
+-                    <ClassHeader/>
+-                    <ConstantMembers/>
+-                    <ClassFooter/>
+-                </ClassConstantSummary>     
+-            </PackageConstantSummary>
+-        </ConstantSummaries>    
+-        <Footer/>
+-    </ConstantSummary>
+-    
+-    <SerializedForm>
+-        <Header/>
+-        <SerializedFormSummaries>
+-            <PackageSerializedForm>
+-                <PackageHeader/>
+-                <ClassSerializedForm>
+-                    <ClassHeader/>
+-                    <SerialUIDInfo/>
+-                    <MethodHeader/>
+-                    <SerializableMethods>
+-                        <MethodSubHeader/>
+-                        <DeprecatedMethodInfo/>
+-                        <MethodInfo>
+-                            <MethodDescription/>
+-                            <MethodTags/>
+-                        </MethodInfo>
+-                        <MethodFooter/>
+-                    </SerializableMethods>
+-                    <FieldHeader/>
+-                    <SerializableFields>
+-                        <FieldSubHeader/>
+-                        <FieldDeprecationInfo/>
+-                        <FieldInfo/>
+-                        <FieldFooter/>
+-                    </SerializableFields>                  
+-                </ClassSerializedForm>
+-            </PackageSerializedForm>
+-        </SerializedFormSummaries>
+-        <Footer/>
+-    </SerializedForm>
+-</Doclet>
++<Doclet>
++
++    <PackageDoc>
++        <PackageHeader/>
++        <Summary>
++            <SummaryHeader/>
++            <InterfaceSummary/>
++            <ClassSummary/>
++            <EnumSummary/>
++            <ExceptionSummary/>
++            <ErrorSummary/>
++            <AnnotationTypeSummary/>
++            <SummaryFooter/>
++        </Summary>
++        <PackageDescription/>
++        <PackageTags/>
++        <PackageFooter/>
++    </PackageDoc>
++    
++    <AnnotationTypeDoc>
++        <AnnotationTypeHeader/>
++        <DeprecationInfo/>
++        <AnnotationTypeSignature/>
++        <AnnotationTypeDescription/>
++        <AnnotationTypeTagInfo/>
++        <MemberSummary>
++        	<AnnotationTypeRequiredMemberSummary/>
++            <AnnotationTypeOptionalMemberSummary/>
++        </MemberSummary>
++        <AnnotationTypeRequiredMemberDetails>
++            <Header/>
++           <AnnotationTypeRequiredMember>
++                <MemberHeader/>
++                <Signature/>
++                <DeprecationInfo/>
++                <MemberComments/>
++                <TagInfo/>
++                <MemberFooter/>
++            </AnnotationTypeRequiredMember>
++        </AnnotationTypeRequiredMemberDetails>
++        <AnnotationTypeOptionalMemberDetails>
++            <AnnotationTypeOptionalMember>
++                <MemberHeader/>
++                <Signature/>
++                <DeprecationInfo/>
++                <MemberComments/>
++                <TagInfo/>
++                <DefaultValueInfo/>
++                <MemberFooter/>
++            </AnnotationTypeOptionalMember>
++            <Footer/>
++        </AnnotationTypeOptionalMemberDetails>        
++        <AnnotationTypeFooter/>
++    </AnnotationTypeDoc>
++    
++    <ClassDoc>
++        <ClassHeader/>
++        <ClassTree/>
++        <TypeParamInfo/>
++        <SuperInterfacesInfo/>
++        <ImplementedInterfacesInfo/>        
++        <SubClassInfo/>
++        <SubInterfacesInfo/>
++        <InterfaceUsageInfo/>
++        <NestedClassInfo/>
++        <DeprecationInfo/>
++        <ClassSignature/>
++        <ClassDescription/>
++        <ClassTagInfo/>
++        <MemberSummary>
++            <NestedClassesSummary/>
++            <NestedClassesInheritedSummary/>
++            <EnumConstantsSummary/>
++            <FieldsSummary/>
++            <FieldsInheritedSummary/>  
++            <ConstructorsSummary/>
++            <MethodsSummary/>
++            <MethodsInheritedSummary/>
++        </MemberSummary>
++        <EnumConstantsDetails>
++           <Header/>
++            <EnumConstant>
++                <EnumConstantHeader/>
++                <Signature/>
++                <DeprecationInfo/>
++                <EnumConstantComments/>
++                <TagInfo/>
++                <EnumConstantFooter/>
++            </EnumConstant>
++            <Footer/>
++        </EnumConstantsDetails>
++        <FieldDetails>
++            <Header/>
++            <FieldDoc>
++                <FieldHeader/>
++                <Signature/>
++                <DeprecationInfo/>
++                <FieldComments/>
++                <TagInfo/>
++                <FieldFooter/>
++            </FieldDoc>
++            <Footer/>
++        </FieldDetails>
++        <ConstructorDetails>
++            <Header/>
++            <ConstructorDoc>
++                <ConstructorHeader/>
++                <Signature/>
++                <DeprecationInfo/>
++                <ConstructorComments/>
++                <TagInfo/>
++                <ConstructorFooter/>
++            </ConstructorDoc>
++            <Footer/>
++        </ConstructorDetails>
++        <MethodDetails>
++            <Header/>
++            <MethodDoc>
++                <MethodHeader/>
++                <Signature/>
++                <DeprecationInfo/>
++                <MethodComments/>
++                <TagInfo/>
++                <MethodFooter/>
++            </MethodDoc>
++            <Footer/>
++        </MethodDetails>
++        <ClassFooter/>
++    </ClassDoc>
++    
++    <ConstantSummary>
++        <Header/>
++        <Contents/>
++        <ConstantSummaries>
++            <PackageConstantSummary>
++                <PackageHeader/>
++                <ClassConstantSummary>
++                    <ClassHeader/>
++                    <ConstantMembers/>
++                    <ClassFooter/>
++                </ClassConstantSummary>     
++            </PackageConstantSummary>
++        </ConstantSummaries>    
++        <Footer/>
++    </ConstantSummary>
++    
++    <SerializedForm>
++        <Header/>
++        <SerializedFormSummaries>
++            <PackageSerializedForm>
++                <PackageHeader/>
++                <ClassSerializedForm>
++                    <ClassHeader/>
++                    <SerialUIDInfo/>
++                    <MethodHeader/>
++                    <SerializableMethods>
++                        <MethodSubHeader/>
++                        <DeprecatedMethodInfo/>
++                        <MethodInfo>
++                            <MethodDescription/>
++                            <MethodTags/>
++                        </MethodInfo>
++                        <MethodFooter/>
++                    </SerializableMethods>
++                    <FieldHeader/>
++                    <SerializableFields>
++                        <FieldSubHeader/>
++                        <FieldDeprecationInfo/>
++                        <FieldInfo/>
++                        <FieldSubFooter/>
++                    </SerializableFields>
++                </ClassSerializedForm>
++            </PackageSerializedForm>
++        </SerializedFormSummaries>
++        <Footer/>
++    </SerializedForm>
++</Doclet>
+diff --git a/test/com/sun/javadoc/AuthorDD/AuthorDD.java b/test/com/sun/javadoc/AuthorDD/AuthorDD.java
+--- langtools/test/com/sun/javadoc/AuthorDD/AuthorDD.java
++++ langtools/test/com/sun/javadoc/AuthorDD/AuthorDD.java
+@@ -91,7 +91,7 @@
+ 
+             // Test multiple @author tags:
+ 
+-            { "<DT><STRONG>Author:</STRONG></DT>"+NL+"  <DD>Doug Kramer, Jamie, Neal</DD>"+NL,
++            { "<DT><STRONG>Author:</STRONG></DT>"+NL+"  <DD>Doug Kramer, Jamie, Neal</DD>",
+                                   BUGID + FS + "p1" + FS + "C1.html" },
+ 
+         };
+diff --git a/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java b/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java
+--- langtools/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java
++++ langtools/test/com/sun/javadoc/testClassCrossReferences/TestClassCrossReferences.java
+@@ -48,7 +48,7 @@
+             "<A HREF=\"http://java.sun.com/j2se/1.4/docs/api/java/math/BigInteger.html?is-external=true#gcd(java.math.BigInteger)\" " +
+                 "title=\"class or interface in java.math\"><CODE>Link to external member gcd</CODE></A>"},
+         {BUG_ID + FS + "C.html",
+-            "<STRONG>Overrides:</STRONG><DD><CODE>toString</CODE> in class <CODE>java.lang.Object</CODE>"}
++            "<STRONG>Overrides:</STRONG></DT><DD><CODE>toString</CODE> in class <CODE>java.lang.Object</CODE>"}
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+     private static final String[] ARGS =
+diff --git a/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java b/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java
+--- langtools/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java
++++ langtools/test/com/sun/javadoc/testConstructorIndent/TestConstructorIndent.java
+@@ -45,9 +45,10 @@
+ 
+     //Input for string search tests.
+     private static final String[][] TEST = {
+-        {BUG_ID + FS + "C.html", "<DL>"+NL+"<DD>This is just a simple constructor."+ NL +
+-            "<P>"+NL+"<DL>"+NL+"<DT><STRONG>Parameters:</STRONG><DD><CODE>i</CODE> - a param.</DL>"+NL +
+-            "</DL>"
++        {BUG_ID + FS + "C.html", "<DL>" + NL + "<DD>This is just a simple constructor." + NL +
++            "<P>" + NL + "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>Parameters:</STRONG>" +
++            "</DT><DD><CODE>i</CODE> - a param.</DD></DL>" + NL +
++            "</DD>" + NL + "</DL>"
+         }
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+diff --git a/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java b/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java
+--- langtools/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java
++++ langtools/test/com/sun/javadoc/testDeprecatedDocs/TestDeprecatedDocs.java
+@@ -78,13 +78,12 @@
+ 
+         {TARGET_FILE2, "<STRONG>Deprecated.</STRONG>" + NL +
+                 "<P>" + NL +
+-            "<DL>" + NL +
+-            "<DT><PRE><FONT SIZE=\"-1\">@Deprecated" + NL +
++            "<PRE><FONT SIZE=\"-1\">@Deprecated" + NL +
+             "</FONT>public class <STRONG>DeprecatedClassByAnnotation</STRONG>"},
+ 
+         {TARGET_FILE2, "public int <STRONG>field</STRONG></PRE>" + NL +
+             "<DL>" + NL +
+-            "<DD><STRONG>Deprecated.</STRONG>&nbsp;<DL>"},
++            "<DD><STRONG>Deprecated.</STRONG>&nbsp;</DD></DL>"},
+ 
+         {TARGET_FILE2, "<FONT SIZE=\"-1\">@Deprecated" + NL +
+             "</FONT>public <STRONG>DeprecatedClassByAnnotation</STRONG>()</PRE>" + NL +
+diff --git a/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java b/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java
+--- langtools/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java
++++ langtools/test/com/sun/javadoc/testExternalOverridenMethod/TestExternalOverridenMethod.java
+@@ -39,13 +39,13 @@
+     private static final String BUG_ID = "4857717";
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "XReader.html",
+-            "<STRONG>Overrides:</STRONG><DD><CODE><A HREF=\"" +
++            "<STRONG>Overrides:</STRONG></DT><DD><CODE><A HREF=\"" +
+             "http://java.sun.com/j2se/1.4.1/docs/api/java/io/FilterReader.html?is-external=true#read()\"" +
+                 " title=\"class or interface in java.io\">read</A></CODE> in class " +
+                 "<CODE><A HREF=\"http://java.sun.com/j2se/1.4.1/docs/api/java/io/FilterReader.html?is-external=true\"" +
+                 " title=\"class or interface in java.io\">FilterReader</A>"},
+         {BUG_ID + FS + "pkg" + FS + "XReader.html",
+-            "<STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"" +
++            "<STRONG>Specified by:</STRONG></DT><DD><CODE><A HREF=\"" +
+             "http://java.sun.com/j2se/1.4.1/docs/api/java/io/DataInput.html?is-external=true#readInt()\"" +
+             " title=\"class or interface in java.io\">readInt</A></CODE> in interface " +
+             "<CODE><A HREF=\"http://java.sun.com/j2se/1.4.1/docs/api/java/io/DataInput.html?is-external=true\"" +
+diff --git a/test/com/sun/javadoc/testHref/TestHref.java b/test/com/sun/javadoc/testHref/TestHref.java
+--- langtools/test/com/sun/javadoc/testHref/TestHref.java
++++ langtools/test/com/sun/javadoc/testHref/TestHref.java
+@@ -67,7 +67,7 @@
+         },
+         //@see test.
+         {BUG_ID + FS + "pkg" + FS + "C2.html",
+-            "See Also:</STRONG><DD><A HREF=\"../pkg/C1.html#method(int, int, java.util.ArrayList)\">"
++            "See Also:</STRONG></DT><DD><A HREF=\"../pkg/C1.html#method(int, int, java.util.ArrayList)\">"
+         },
+ 
+         //Header does not link to the page itself.
+diff --git a/test/com/sun/javadoc/testHtmlDefinitionListTag/TestHtmlDefinitionListTag.java b/test/com/sun/javadoc/testHtmlDefinitionListTag/TestHtmlDefinitionListTag.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlDefinitionListTag/TestHtmlDefinitionListTag.java
+@@ -0,0 +1,370 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++/*
++ * @test
++ * @bug 6786690
++ * @summary This test verifies the nesting of definition list tags.
++ * @author Bhavesh Patel
++ * @library ../lib/
++ * @build JavadocTester
++ * @build TestHtmlDefinitionListTag
++ * @run main TestHtmlDefinitionListTag
++ */
++
++public class TestHtmlDefinitionListTag extends JavadocTester {
++
++    private static final String BUG_ID = "6786690";
++
++    // Test common to all runs of javadoc. The class signature should print
++    // properly enclosed definition list tags and the Annotation Type
++    // Optional Element should print properly nested definition list tags
++    // for default value.
++    private static final String[][] TEST_ALL = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<PRE>public class " +
++                 "<STRONG>C1</STRONG>" + NL + "extends " +
++                 "java.lang.Object" + NL + "implements " +
++                 "java.io.Serializable</PRE>"},
++        {BUG_ID + FS + "pkg1" + FS + "C4.html", "<DL>" + NL + "<DD><DL>" + NL +
++                 "<DT><STRONG>Default:</STRONG></DT><DD>true</DD>" + NL +
++                 "</DL>" + NL + "</DD>" + NL + "</DL>"}};
++
++    // Test for normal run of javadoc in which various ClassDocs and
++    // serialized form should have properly nested definition list tags
++    // enclosing comments, tags and deprecated information.
++    private static final String[][] TEST_CMNT_DEPR = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>JDK1.0</DD>" + NL + "<DT><STRONG>See Also:</STRONG></DT><DD>" +
++                 "<A HREF=\"../pkg1/C2.html\" title=\"class in pkg1\">" +
++                 "<CODE>C2</CODE></A>, " + NL +
++                 "<A HREF=\"../serialized-form.html#pkg1.C1\">" +
++                 "Serialized Form</A></DD></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I></DD>" +
++                 "<DD>This field indicates whether the C1 is undecorated." + NL +
++                 "<P>" + NL + "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>" +
++                 "Since:</STRONG></DT>" + NL + "  <DD>1.4</DD>" + NL + "<DT>" +
++                 "<STRONG>See Also:</STRONG></DT><DD>" +
++                 "<A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\"><CODE>" +
++                 "setUndecorated(boolean)</CODE></A></DD></DL>" + NL +"</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DD>Constructor." + NL + "<P>" + NL + "</DD>" + NL +
++                 "<DD><DL>" + NL + "<DT><STRONG>Parameters:</STRONG></DT><DD>" +
++                 "<CODE>title</CODE> - the title</DD><DD><CODE>test</CODE>" +
++                 " - boolean value</DD>" + NL + "<DT><STRONG>Throws:</STRONG></DT>" + NL +
++                 "<DD><CODE>java.lang.IllegalArgumentException</CODE>" +
++                 " - if the <code>owner</code>'s" + NL + "     <code>GraphicsConfiguration" +
++                 "</code> is not from a screen device</DD>" + NL +"<DD><CODE>" +
++                 "HeadlessException</CODE></DD></DL>" + NL + "</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DD>Method comments." + NL + "<P>" + NL +
++                 "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>Parameters:" +
++                 "</STRONG></DT><DD><CODE>undecorated</CODE> - <code>true</code>" +
++                 " if no decorations are" + NL + "         to be enabled;" + NL +
++                 "         <code>false</code> if decorations are to be enabled." +
++                 "</DD><DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>1.4</DD>" + NL + "<DT><STRONG>See Also:</STRONG></DT>" +
++                 "<DD><A HREF=\"../pkg1/C1.html#readObject()\"><CODE>" +
++                 "readObject()</CODE></A></DD></DL>" + NL + "</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL + "<DD><DL>" + NL +
++                 "<DT><STRONG>Throws:</STRONG></DT>" + NL + "<DD><CODE>" +
++                 "java.io.IOException</CODE></DD><DT><STRONG>See Also:" +
++                 "</STRONG></DT><DD>" +
++                 "<A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.ModalExclusionType.html", "<DL>" + NL +
++                 "<DD>No modal exclusion." + NL + "<P>" + NL +"</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<DL>" + NL + "<DD>Constructor." + NL +
++                 "<P>" + NL +"</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version 1.5, replaced " +
++                 "by" + NL + " <A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DD><DD>Set visible." + NL + "<P>" + NL + "</DD>" +NL +
++                 "<DD><DL>" + NL + "<DT><STRONG>Parameters:</STRONG></DT><DD>" +
++                 "<CODE>set</CODE> - boolean</DD><DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>1.4</DD></DL>" + NL + "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C3.html", "<DL>" + NL + "<DD>Comment." + NL +
++                 "<P>" + NL + "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><DL>" + NL +
++                 "<DT><STRONG>Throws:</STRONG></DT>" + NL + "<DD><CODE>" +
++                 "java.io.IOException</CODE></DD><DT><STRONG>See Also:</STRONG>" +
++                 "</DT><DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version " +
++                 "1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I></DD>" +
++                 "<DD>This field indicates whether the C1 is undecorated." + NL +
++                 "<P>" + NL + "</DD>" + NL + "<DD>&nbsp;</DD>" + NL +
++                 "<DD><DL>" + NL + "<DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>1.4</DD>" + NL + "<DT><STRONG>See Also:</STRONG>" +
++                 "</DT><DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DD><DD>Reads the object stream." + NL + "<P>" + NL +
++                 "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>Throws:" +
++                 "</STRONG></DT>" + NL + "<DD><CODE><code>" +
++                 "IOException</code></CODE></DD>" + NL +
++                 "<DD><CODE>java.io.IOException</CODE></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;</DD><DD>" +
++                 "The name for this class." + NL + "<P>" + NL + "</DD>" + NL +
++                 "<DD>&nbsp;</DD>" + NL + "</DL>"}};
++
++    // Test with -nocomment option. The ClassDocs and serialized form should
++    // have properly nested definition list tags enclosing deprecated
++    // information and should not display definition lists for comments
++    // and tags.
++    private static final String[][] TEST_NOCMNT = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version 1.5, replaced by" + NL +
++                 " <A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\"><CODE>" +
++                 "setUndecorated(boolean)</CODE></A>.</I></DD></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DD></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C5.html", "<PRE>" + NL +
++                 "protected <STRONG>C5</STRONG>()</PRE>" + NL + "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;</DD></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C5.html", "<PRE>" + NL +
++                 "public void <STRONG>printInfo</STRONG>()</PRE>" + NL + "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;</DD></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "boolean <STRONG>" +
++                 "undecorated</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\"><CODE>" +
++                 "setUndecorated(boolean)</CODE></A>.</I></DD></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DD></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "int <STRONG>" +
++                 "publicKey</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;</DD></DL>"}};
++
++    // Test with -nodeprecated option. The ClassDocs should have properly nested
++    // definition list tags enclosing comments and tags. The ClassDocs should not
++    // display definition list for deprecated information. The serialized form
++    // should display properly nested definition list tags for comments, tags
++    // and deprecated information.
++    private static final String[][] TEST_NODEPR = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>JDK1.0</DD>" + NL + "<DT><STRONG>See Also:</STRONG></DT><DD>" +
++                 "<A HREF=\"../pkg1/C2.html\" title=\"class in pkg1\">" +
++                 "<CODE>C2</CODE></A>, " + NL +
++                 "<A HREF=\"../serialized-form.html#pkg1.C1\">" +
++                 "Serialized Form</A></DD></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DD>Constructor." + NL + "<P>" + NL + "</DD>" + NL +
++                 "<DD><DL>" + NL + "<DT><STRONG>Parameters:</STRONG></DT><DD>" +
++                 "<CODE>title</CODE> - the title</DD><DD><CODE>test</CODE>" +
++                 " - boolean value</DD>" + NL + "<DT><STRONG>Throws:</STRONG></DT>" + NL +
++                 "<DD><CODE>java.lang.IllegalArgumentException</CODE>" +
++                 " - if the <code>owner</code>'s" + NL + "     <code>GraphicsConfiguration" +
++                 "</code> is not from a screen device</DD>" + NL +"<DD><CODE>" +
++                 "HeadlessException</CODE></DD></DL>" + NL + "</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL +
++                 "<DD>Method comments." + NL + "<P>" + NL +
++                 "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>Parameters:" +
++                 "</STRONG></DT><DD><CODE>undecorated</CODE> - <code>true</code>" +
++                 " if no decorations are" + NL + "         to be enabled;" + NL +
++                 "         <code>false</code> if decorations are to be enabled." +
++                 "</DD><DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>1.4</DD>" + NL + "<DT><STRONG>See Also:</STRONG></DT>" +
++                 "<DD><A HREF=\"../pkg1/C1.html#readObject()\"><CODE>" +
++                 "readObject()</CODE></A></DD></DL>" + NL + "</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL + "<DD><DL>" + NL +
++                 "<DT><STRONG>Throws:</STRONG></DT>" + NL + "<DD><CODE>" +
++                 "java.io.IOException</CODE></DD><DT><STRONG>See Also:" +
++                 "</STRONG></DT><DD>" +
++                 "<A HREF=\"../pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.ModalExclusionType.html", "<DL>" + NL +
++                 "<DD>No modal exclusion." + NL + "<P>" + NL +"</DD>" + NL +
++                 "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<DL>" + NL + "<DD>Constructor." + NL +
++                 "<P>" + NL +"</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C3.html", "<DL>" + NL + "<DD>Comment." + NL +
++                 "<P>" + NL + "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><DL>" + NL +
++                 "<DT><STRONG>Throws:</STRONG></DT>" + NL + "<DD><CODE>" +
++                 "java.io.IOException</CODE></DD><DT><STRONG>See Also:</STRONG>" +
++                 "</DT><DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version " +
++                 "1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I></DD>" +
++                 "<DD>This field indicates whether the C1 is undecorated." + NL +
++                 "<P>" + NL + "</DD>" + NL + "<DD>&nbsp;</DD>" + NL +
++                 "<DD><DL>" + NL + "<DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "  <DD>1.4</DD>" + NL + "<DT><STRONG>See Also:</STRONG>" +
++                 "</DT><DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DD><DD>Reads the object stream." + NL + "<P>" + NL +
++                 "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>Throws:" +
++                 "</STRONG></DT>" + NL + "<DD><CODE><code>" +
++                 "IOException</code></CODE></DD>" + NL +
++                 "<DD><CODE>java.io.IOException</CODE></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;</DD><DD>" +
++                 "The name for this class." + NL + "<P>" + NL + "</DD>" + NL +
++                 "<DD>&nbsp;</DD>" + NL + "</DL>"}};
++
++    // Test with -nocomment and -nodeprecated options. The ClassDocs whould
++    // not display definition lists for any member details. The serialized
++    // form should display properly nested definition list tags for
++    // deprecated information only.
++    private static final String[][] TEST_NOCMNT_NODEPR = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<PRE>" + NL + "public void " +
++                 "<STRONG>readObject</STRONG>()" + NL + "                throws" +
++                 " java.io.IOException</PRE>" + NL + "<HR>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<PRE>" +NL + "public <STRONG>" +
++                 "C2</STRONG>()</PRE>" + NL + "<HR>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.ModalExclusionType.html", "<PRE>" + NL +
++                 "public static final " +
++                 "<A HREF=\"../pkg1/C1.ModalExclusionType.html\" " +
++                 "title=\"enum in pkg1\">C1.ModalExclusionType</A> <STRONG>" +
++                 "APPLICATION_EXCLUDE</STRONG></PRE>" + NL + "<HR>"},
++        {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "boolean <STRONG>" +
++                 "undecorated</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\"><CODE>" +
++                 "setUndecorated(boolean)</CODE></A>.</I></DD></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
++                 " 1.5, replaced by" + NL +
++                 " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
++                 "</DD></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "int <STRONG>" +
++                 "publicKey</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
++                 "Deprecated.</STRONG>&nbsp;</DD></DL>"}};
++
++    // Test for valid HTML generation which should not comprise of empty
++    // definition list tags.
++    private static final String[][] NEGATED_TEST = {
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.ModalExclusionType.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C1.ModalExclusionType.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.ModalType.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C2.ModalType.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C3.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C3.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C4.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C4.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C5.html", "<DL></DL>"},
++        {BUG_ID + FS + "pkg1" + FS + "C5.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "overview-tree.html", "<DL></DL>"},
++        {BUG_ID + FS + "overview-tree.html", "<DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL></DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "</DL>"}};
++
++    private static final String[] ARGS1 =
++        new String[] {
++            "-d", BUG_ID, "-sourcepath", SRC_DIR, "pkg1"};
++
++    private static final String[] ARGS2 =
++        new String[] {
++            "-d", BUG_ID, "-nocomment", "-sourcepath", SRC_DIR, "pkg1"};
++
++    private static final String[] ARGS3 =
++        new String[] {
++            "-d", BUG_ID, "-nodeprecated", "-sourcepath", SRC_DIR, "pkg1"};
++
++    private static final String[] ARGS4 =
++        new String[] {
++            "-d", BUG_ID, "-nocomment", "-nodeprecated", "-sourcepath", SRC_DIR, "pkg1"};
++
++    /**
++     * The entry point of the test.
++     * @param args the array of command line arguments.
++     */
++    public static void main(String[] args) {
++        TestHtmlDefinitionListTag tester = new TestHtmlDefinitionListTag();
++        run(tester, ARGS1, TEST_ALL, NEGATED_TEST);
++        run(tester, ARGS1, TEST_CMNT_DEPR, NEGATED_TEST);
++        run(tester, ARGS2, TEST_ALL, NEGATED_TEST);
++        run(tester, ARGS2, TEST_NOCMNT, TEST_CMNT_DEPR);
++        run(tester, ARGS3, TEST_ALL, NEGATED_TEST);
++        run(tester, ARGS3, TEST_NODEPR, TEST_NOCMNT_NODEPR);
++        run(tester, ARGS4, TEST_ALL, NEGATED_TEST);
++        run(tester, ARGS4, TEST_NOCMNT_NODEPR, TEST_CMNT_DEPR);
++        tester.printSummary();
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugId() {
++        return BUG_ID;
++    }
++
++    /**
++     * {@inheritDoc}
++     */
++    public String getBugName() {
++        return getClass().getName();
++    }
++}
+diff --git a/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C1.java b/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C1.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C1.java
+@@ -0,0 +1,108 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.io.IOException;
++import java.io.Serializable;
++
++/**
++ * A class comment for testing.
++ *
++ * @author      Bhavesh Patel
++ * @see C2
++ * @since       JDK1.0
++ */
++
++public class C1 implements Serializable {
++
++    /**
++     * This field indicates whether the C1 is undecorated.
++     *
++     * @see #setUndecorated(boolean)
++     * @since 1.4
++     * @serial
++     * @deprecated As of JDK version 1.5, replaced by
++     * {@link C1#setUndecorated(boolean) setUndecorated(boolean)}.
++     */
++     @Deprecated
++    public boolean undecorated = false;
++
++    private String title;
++
++    /**
++     * This enum specifies the possible modal exclusion types.
++     *
++     * @since 1.6
++     */
++    public static enum ModalExclusionType {
++        /**
++         * No modal exclusion.
++         */
++        NO_EXCLUDE,
++        /**
++         * <code>APPLICATION_EXCLUDE</code> indicates that a top-level window
++         * won't be blocked by any application-modal dialogs. Also, it isn't
++         * blocked by document-modal dialogs from outside of its child hierarchy.
++         */
++        APPLICATION_EXCLUDE
++    };
++
++    /**
++     * Constructor.
++     *
++     * @param title the title
++     * @param test boolean value
++     * @exception IllegalArgumentException if the <code>owner</code>'s
++     *     <code>GraphicsConfiguration</code> is not from a screen device
++     * @exception HeadlessException
++     */
++     public C1(String title, boolean test) {
++
++     }
++
++     public C1(String title) {
++
++     }
++
++    /**
++     * Method comments.
++     * @param  undecorated <code>true</code> if no decorations are
++     *         to be enabled;
++     *         <code>false</code> if decorations are to be enabled.
++     * @see    #readObject()
++     * @since 1.4
++     */
++    public void setUndecorated(boolean undecorated) {
++        /* Make sure we don't run in the middle of peer creation.*/
++    }
++
++    /**
++     * @see #setUndecorated(boolean)
++     */
++    public void readObject() throws IOException {
++
++    }
++}
+diff --git a/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C2.java b/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C2.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C2.java
+@@ -0,0 +1,86 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.io.ObjectInputStream;
++import java.io.IOException;
++import java.io.Serializable;
++
++/**
++ * A class comment for testing.
++ *
++ * @author      Bhavesh Patel
++ * @see C1
++ * @since       JDK1.0
++ */
++
++public class C2 implements Serializable {
++
++    /**
++     * This field indicates title.
++     */
++    String title;
++
++    public static enum ModalType {
++        NO_EXCLUDE
++    };
++
++    /**
++     * Constructor.
++     *
++     */
++     public C2() {
++
++     }
++
++     public C2(String title) {
++
++     }
++
++     /**
++     * Set visible.
++     *
++     * @param set boolean
++     * @since 1.4
++     * @deprecated As of JDK version 1.5, replaced by
++     * {@link C1#setUndecorated(boolean) setUndecorated(boolean)}.
++     */
++     @Deprecated
++     public void setVisible(boolean set) {
++     }
++
++     /**
++     * Reads the object stream.
++     *
++     * @param s ObjectInputStream
++     * @throws <code>IOException</code>
++     * @deprecated As of JDK version 1.5, replaced by
++     * {@link C1#setUndecorated(boolean) setUndecorated(boolean)}.
++     */
++     @Deprecated
++     public void readObject(ObjectInputStream s) throws IOException {
++     }
++}
+diff --git a/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C3.java b/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C3.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C3.java
+@@ -0,0 +1,42 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.lang.annotation.*;
++
++/**
++ * Test Annotation class.
++ *
++ * @author Bhavesh Patel
++ * @since 1.5
++ */
++@Retention(RetentionPolicy.SOURCE)
++public @interface C3 {
++    /**
++     * Comment.
++     */
++    String[] value();
++}
+diff --git a/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C4.java b/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C4.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C4.java
+@@ -0,0 +1,39 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.lang.annotation.*;
++
++/*
++ * The @Inherited annotation has no effect when applied to an interface.
++ */
++@Documented
++@Retention(RetentionPolicy.RUNTIME)
++@Target(ElementType.TYPE)
++@Inherited
++public @interface C4 {
++    boolean value() default true;
++}
+diff --git a/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C5.java b/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C5.java
+new file mode 100644
+--- /dev/null
++++ langtools/test/com/sun/javadoc/testHtmlDefinitionListTag/pkg1/C5.java
+@@ -0,0 +1,65 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package pkg1;
++
++import java.io.Serializable;
++
++/**
++ * Test for Serializable
++ *
++ * @author Bhavesh Patel
++ * @deprecated This class is no longer used.
++ */
++@Deprecated
++public abstract class C5 implements Serializable {
++
++    /**
++     * The name for this class.
++     *
++     * @serial
++     */
++    private String name;
++
++    /**
++     * @serial
++     */
++    private int publicKey;
++
++    /**
++     * Constructor for serialization only.
++     */
++    protected C5() {
++
++    }
++
++    /**
++     * Prints general information.
++     *
++     */
++    public void printInfo() {
++
++    }
++}
+diff --git a/test/com/sun/javadoc/testIndex/TestIndex.java b/test/com/sun/javadoc/testIndex/TestIndex.java
+--- langtools/test/com/sun/javadoc/testIndex/TestIndex.java
++++ langtools/test/com/sun/javadoc/testIndex/TestIndex.java
+@@ -73,10 +73,10 @@
+         {BUG_ID + FS + "index-all.html",
+             "<DT><A HREF=\"./pkg/C.html#Java\"><STRONG>Java</STRONG></A> - " + NL +
+             "Static variable in class pkg.<A HREF=\"./pkg/C.html\" title=\"class in pkg\">C</A>" + NL +
+-            "<DD>&nbsp;" + NL +
++            "</DT><DD>&nbsp;</DD>" + NL + NL +
+             "<DT><A HREF=\"./pkg/C.html#JDK\"><STRONG>JDK</STRONG></A> - " + NL +
+             "Static variable in class pkg.<A HREF=\"./pkg/C.html\" title=\"class in pkg\">C</A>" + NL +
+-            "<DD>&nbsp;"},
++            "</DT><DD>&nbsp;</DD>"},
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;
+ 
+diff --git a/test/com/sun/javadoc/testInterface/TestInterface.java b/test/com/sun/javadoc/testInterface/TestInterface.java
+--- langtools/test/com/sun/javadoc/testInterface/TestInterface.java
++++ langtools/test/com/sun/javadoc/testInterface/TestInterface.java
+@@ -55,7 +55,7 @@
+ 
+         // Make sure known implementing class list is correct and omits type parameters.
+         {BUG_ID + FS + "pkg" + FS + "Interface.html",
+-            "<DT><STRONG>All Known Implementing Classes:</STRONG> " +
++            "<DT><STRONG>All Known Implementing Classes:</STRONG></DT> " +
+             "<DD><A HREF=\"../pkg/Child.html\" " +
+             "title=\"class in pkg\">Child</A>, " +
+             "<A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">" +
+@@ -63,7 +63,9 @@
+ 
+          // Make sure "All Implemented Interfaces": has substituted type parameters
+          {BUG_ID + FS + "pkg" + FS + "Child.html",
+-            "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;T&gt;"
++            "<STRONG>All Implemented Interfaces:</STRONG></DT> <DD>" +
++            "<A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">" +
++            "Interface</A>&lt;T&gt;"
+          },
+          //Make sure Class Tree has substituted type parameters.
+          {BUG_ID + FS + "pkg" + FS + "Child.html",
+@@ -75,15 +77,15 @@
+          },
+          //Make sure "Direct Know Subclasses" omits type parameters
+         {BUG_ID + FS + "pkg" + FS + "Parent.html",
+-            "<STRONG>Direct Known Subclasses:</STRONG> <DD><A HREF=\"../pkg/Child.html\" title=\"class in pkg\">Child</A>"
++            "<STRONG>Direct Known Subclasses:</STRONG></DT> <DD><A HREF=\"../pkg/Child.html\" title=\"class in pkg\">Child</A>"
+         },
+         //Make sure "Specified By" has substituted type parameters.
+         {BUG_ID + FS + "pkg" + FS + "Child.html",
+-            "<STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"../pkg/Interface.html#method()\">method</A></CODE> in interface <CODE><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
++            "<STRONG>Specified by:</STRONG></DT><DD><CODE><A HREF=\"../pkg/Interface.html#method()\">method</A></CODE> in interface <CODE><A HREF=\"../pkg/Interface.html\" title=\"interface in pkg\">Interface</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
+          },
+         //Make sure "Overrides" has substituted type parameters.
+         {BUG_ID + FS + "pkg" + FS + "Child.html",
+-            "<STRONG>Overrides:</STRONG><DD><CODE><A HREF=\"../pkg/Parent.html#method()\">method</A></CODE> in class <CODE><A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">Parent</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
++            "<STRONG>Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg/Parent.html#method()\">method</A></CODE> in class <CODE><A HREF=\"../pkg/Parent.html\" title=\"class in pkg\">Parent</A>&lt;<A HREF=\"../pkg/Child.html\" title=\"type parameter in Child\">T</A>&gt;</CODE>"
+          },
+     };
+     private static final String[][] NEGATED_TEST = {
+diff --git a/test/com/sun/javadoc/testLinkOption/TestLinkOption.java b/test/com/sun/javadoc/testLinkOption/TestLinkOption.java
+--- langtools/test/com/sun/javadoc/testLinkOption/TestLinkOption.java
++++ langtools/test/com/sun/javadoc/testLinkOption/TestLinkOption.java
+@@ -63,7 +63,8 @@
+             "title=\"class or interface in java.lang\">Object</A>&nbsp;p3)"
+         },
+         {BUG_ID + "-1" + FS + "java" + FS + "lang" + FS + "StringBuilderChild.html",
+-                "public abstract class <STRONG>StringBuilderChild</STRONG><DT>extends <A HREF=\"http://java.sun.com/j2se/1.4/docs/api/java/lang/Object.html?is-external=true\" title=\"class or interface in java.lang\">Object</A>"
++                "public abstract class <STRONG>StringBuilderChild</STRONG>" + NL +
++                "extends <A HREF=\"http://java.sun.com/j2se/1.4/docs/api/java/lang/Object.html?is-external=true\" title=\"class or interface in java.lang\">Object</A>"
+         },
+ 
+     };
+diff --git a/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java b/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java
+--- langtools/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java
++++ langtools/test/com/sun/javadoc/testLinkTaglet/TestLinkTaglet.java
+@@ -59,7 +59,7 @@
+             " Link to another inner class: <A HREF=\"../pkg/C.InnerC2.html\" title=\"class in pkg\"><CODE>C.InnerC2</CODE></A>"
+         },
+         {BUG_ID + FS + "pkg" + FS + "C.InnerC2.html",
+-            "Enclosing class:</STRONG><DD><A HREF=\"../pkg/C.html\" title=\"class in pkg\">C</A>"
++            "Enclosing class:</STRONG></DT><DD><A HREF=\"../pkg/C.html\" title=\"class in pkg\">C</A>"
+         },
+     };
+     private static final String[][] NEGATED_TEST = {
+diff --git a/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java b/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java
+--- langtools/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java
++++ langtools/test/com/sun/javadoc/testMemberInheritence/TestMemberInheritence.java
+@@ -74,7 +74,7 @@
+ 
+          // Test overriding/implementing methods with generic parameters.
+                  {BUG_ID + FS + "pkg" + FS + "BaseClass.html",
+-         "<DT><STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"../pkg/BaseInterface.html#getAnnotation(java.lang.Class)\">getAnnotation</A></CODE> in interface <CODE><A HREF=\"../pkg/BaseInterface.html\" title=\"interface in pkg\">BaseInterface</A></CODE></DL>"},
++         "<DT><STRONG>Specified by:</STRONG></DT><DD><CODE><A HREF=\"../pkg/BaseInterface.html#getAnnotation(java.lang.Class)\">getAnnotation</A></CODE> in interface <CODE><A HREF=\"../pkg/BaseInterface.html\" title=\"interface in pkg\">BaseInterface</A></CODE></DD>"+NL+"</DL>"},
+ 
+          // Test diamond inheritence member summary (6256068)
+                  {BUG_ID + FS + "diamond" + FS + "Z.html",
+diff --git a/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java b/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java
+--- langtools/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java
++++ langtools/test/com/sun/javadoc/testNewLanguageFeatures/TestNewLanguageFeatures.java
+@@ -54,7 +54,7 @@
+             {BUG_ID + FS + "pkg" + FS + "Coin.html", "Enum Coin</H2>"},
+             //Make sure enum signature is correct.
+             {BUG_ID + FS + "pkg" + FS + "Coin.html", "public enum "+
+-                "<STRONG>Coin</STRONG><DT>extends java.lang.Enum&lt;" +
++                "<STRONG>Coin</STRONG>" + NL + "extends java.lang.Enum&lt;" +
+                 "<A HREF=\"../pkg/Coin.html\" title=\"enum in pkg\">Coin</A>&gt;"
+             },
+             //Check for enum constant section
+@@ -79,20 +79,20 @@
+                 "Class TypeParameters&lt;E&gt;</H2>"},
+             //Check class type parameters section.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<DT><STRONG>Type Parameters:</STRONG><DD><CODE>E</CODE> - " +
++                "<DT><STRONG>Type Parameters:</STRONG></DT><DD><CODE>E</CODE> - " +
+                 "the type parameter for this class."},
+             //Type parameters in @see/@link
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<DT><STRONG>See Also:</STRONG><DD><A HREF=\"../pkg/TypeParameters.html\" " +
+-                    "title=\"class in pkg\"><CODE>TypeParameters</CODE></A></DL>"},
++                "<DT><STRONG>See Also:</STRONG></DT><DD><A HREF=\"../pkg/TypeParameters.html\" " +
++                    "title=\"class in pkg\"><CODE>TypeParameters</CODE></A></DD></DL>"},
+             //Method that uses class type parameter.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+                 "(<A HREF=\"../pkg/TypeParameters.html\" title=\"type " +
+                     "parameter in TypeParameters\">E</A>&nbsp;param)"},
+             //Method type parameter section.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<STRONG>Type Parameters:</STRONG><DD><CODE>T</CODE> - This is the first " +
+-                    "type parameter.<DD><CODE>V</CODE> - This is the second type " +
++                "<STRONG>Type Parameters:</STRONG></DT><DD><CODE>T</CODE> - This is the first " +
++                    "type parameter.</DD><DD><CODE>V</CODE> - This is the second type " +
+                     "parameter."},
+             //Signature of method with type parameters
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+@@ -117,17 +117,17 @@
+             //Signature of subclass that has type parameters.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameterSubClass.html",
+                 "public class <STRONG>TypeParameterSubClass&lt;T extends java.lang.String&gt;" +
+-                "</STRONG><DT>extends <A HREF=\"../pkg/TypeParameterSuperClass.html\" " +
++                "</STRONG>" + NL + "extends <A HREF=\"../pkg/TypeParameterSuperClass.html\" " +
+                 "title=\"class in pkg\">TypeParameterSuperClass</A>&lt;T&gt;"},
+ 
+             //Interface generic parameter substitution
+             //Signature of subclass that has type parameters.
+             {BUG_ID + FS + "pkg" + FS + "TypeParameters.html",
+-                "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;E&gt;, <A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;E&gt;</DD>"},
++                "<STRONG>All Implemented Interfaces:</STRONG></DT> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;E&gt;, <A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;E&gt;</DD>"},
+             {BUG_ID + FS + "pkg" + FS + "SuperInterface.html",
+-                "<STRONG>All Known Subinterfaces:</STRONG> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;V&gt;</DD>"},
++                "<STRONG>All Known Subinterfaces:</STRONG></DT> <DD><A HREF=\"../pkg/SubInterface.html\" title=\"interface in pkg\">SubInterface</A>&lt;V&gt;</DD>"},
+             {BUG_ID + FS + "pkg" + FS + "SubInterface.html",
+-                "<STRONG>All Superinterfaces:</STRONG> <DD><A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;V&gt;</DD>"},
++                "<STRONG>All Superinterfaces:</STRONG></DT> <DD><A HREF=\"../pkg/SuperInterface.html\" title=\"interface in pkg\">SuperInterface</A>&lt;V&gt;</DD>"},
+ 
+             //=================================
+             // VAR ARG TESTING
+@@ -166,7 +166,7 @@
+                 "Element Detail"},
+             //Make sure default annotation type value is printed when necessary.
+             {BUG_ID + FS + "pkg" + FS + "AnnotationType.html",
+-                "<STRONG>Default:</STRONG><DD>\"unknown\"</DD>"},
++                "<STRONG>Default:</STRONG></DT><DD>\"unknown\"</DD>"},
+ 
+             //=================================
+             // ANNOTATION TYPE USAGE TESTING
+@@ -182,7 +182,8 @@
+                 "<FONT SIZE=\"-1\">" +
+                 "<A HREF=\"../pkg/AnnotationType.html\" title=\"annotation in pkg\">@AnnotationType</A>(<A HREF=\"../pkg/AnnotationType.html#optional()\">optional</A>=\"Class Annotation\","+NL +
+                 "                <A HREF=\"../pkg/AnnotationType.html#required()\">required</A>=1994)"+NL +
+-                "</FONT>public class <STRONG>AnnotationTypeUsage</STRONG><DT>extends java.lang.Object</DL>"},
++                "</FONT>public class <STRONG>AnnotationTypeUsage</STRONG>" + NL +
++                "extends java.lang.Object"},
+ 
+             //FIELD
+             {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+@@ -270,8 +271,7 @@
+             {BUG_ID + FS + "pkg1" + FS + "B.html",
+                 "<PRE><FONT SIZE=\"-1\"><A HREF=\"../pkg1/A.html\" title=\"annotation in pkg1\">@A</A>"},
+             {BUG_ID + FS + "pkg1" + FS + "B.html",
+-                "</FONT>public interface <STRONG>B</STRONG></DL>" + NL +
+-                    "</PRE>"},
++                "</FONT>public interface <STRONG>B</STRONG></PRE>"},
+ 
+ 
+             //==============================================================
+@@ -525,7 +525,7 @@
+             "<FONT SIZE=\"-1\">" + NL +
+             "<A HREF=\"../pkg/AnnotationTypeUndocumented.html\" title=\"annotation in pkg\">@AnnotationTypeUndocumented</A>(<A HREF=\"../pkg/AnnotationType.html#optional\">optional</A>=\"Class Annotation\"," + NL +
+             "                <A HREF=\"../pkg/AnnotationType.html#required\">required</A>=1994)" + NL +
+-            "</FONT>public class <STRONG>AnnotationTypeUsage</STRONG><DT>extends java.lang.Object</DL>"},
++            "</FONT>public class <STRONG>AnnotationTypeUsage</STRONG></DT><DT>extends java.lang.Object</DT></DL>"},
+ 
+         //FIELD
+         {BUG_ID + FS + "pkg" + FS + "AnnotationTypeUsage.html",
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethods.java
+@@ -40,11 +40,11 @@
+     private static final String[][] TEST = {
+         //The public method should be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The public method in different package should be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"}
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"}
+     };
+ 
+     private static final String[][] NEGATED_TEST = {
+@@ -52,20 +52,20 @@
+         //The package private method should be overriden since the base and sub class are in the same
+         //package.  However, the link should not show up because the package private methods are not documented.
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
+ 
+         //The private method in should not be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The private method in different package should not be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The package private method should not be overriden since the base and sub class are in
+         //different packages.
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
+     };
+ 
+     private static final String[] ARGS =
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPackageFlag.java
+@@ -40,32 +40,32 @@
+     private static final String[][] TEST = {
+         //The public method should be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The public method in different package should be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The package private method should be overriden since the base and sub class are in the same
+         //package.
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
+     };
+ 
+     private static final String[][] NEGATED_TEST = {
+ 
+         //The private method in should not be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The private method in different package should not be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The package private method should not be overriden since the base and sub class are in
+         //different packages.
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
+     };
+ 
+     private static final String[] ARGS =
+diff --git a/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java b/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java
+--- langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java
++++ langtools/test/com/sun/javadoc/testOverridenMethods/TestOverridenPrivateMethodsWithPrivateFlag.java
+@@ -40,32 +40,32 @@
+     private static final String[][] TEST = {
+         //The public method should be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+ 
+         //The package private method should be overriden since the base and sub class are in the same
+         //package.
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"},
+ 
+         //The public method in different package should be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#publicMethod"},
+     };
+ 
+     private static final String[][] NEGATED_TEST = {
+ 
+         //The private method in should not be overriden
+         {BUG_ID + FS + "pkg1" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The private method in different package should not be overriden
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#privateMethod"},
+ 
+         //The package private method should not be overriden since the base and sub class are in
+         //different packages.
+         {BUG_ID + FS + "pkg2" + FS + "SubClass.html",
+-         "Overrides:</STRONG><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
++         "Overrides:</STRONG></DT><DD><CODE><A HREF=\"../pkg1/BaseClass.html#packagePrivateMethod"}
+ 
+ 
+     };
+diff --git a/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java b/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java
+--- langtools/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java
++++ langtools/test/com/sun/javadoc/testParamTaglet/TestParamTaglet.java
+@@ -48,12 +48,12 @@
+     private static final String[][] TEST = {
+         //Regular param tags.
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<STRONG>Parameters:</STRONG><DD><CODE>param1</CODE> - testing 1 2 3." +
++            "<STRONG>Parameters:</STRONG></DT><DD><CODE>param1</CODE> - testing 1 2 3.</DD>" +
+                 "<DD><CODE>param2</CODE> - testing 1 2 3."
+         },
+         //Param tags that don't match with any real parameters.
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<STRONG>Parameters:</STRONG><DD><CODE><I>p1</I></CODE> - testing 1 2 3." +
++            "<STRONG>Parameters:</STRONG></DT><DD><CODE><I>p1</I></CODE> - testing 1 2 3.</DD>" +
+                 "<DD><CODE><I>p2</I></CODE> - testing 1 2 3."
+         },
+         //{@inherit} doc misuse does not cause doclet to throw exception.
+diff --git a/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java b/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java
+--- langtools/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java
++++ langtools/test/com/sun/javadoc/testPrivateClasses/TestPrivateClasses.java
+@@ -96,11 +96,11 @@
+ 
+         //Make sure implemented interfaces from private superclass are inherited
+         {BUG_ID + "-1" + FS + "pkg" + FS + "PublicInterface.html",
+-            "<STRONG>All Known Implementing Classes:</STRONG> <DD><A HREF=\"../pkg/PublicChild.html\" " +
++            "<STRONG>All Known Implementing Classes:</STRONG></DT> <DD><A HREF=\"../pkg/PublicChild.html\" " +
+             "title=\"class in pkg\">PublicChild</A>"},
+ 
+         {BUG_ID + "-1" + FS + "pkg" + FS + "PublicChild.html",
+-            "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/PublicInterface.html\" " +
++            "<STRONG>All Implemented Interfaces:</STRONG></DT> <DD><A HREF=\"../pkg/PublicInterface.html\" " +
+             "title=\"interface in pkg\">PublicInterface</A>"},
+ 
+         //Generic interface method test.
+@@ -174,18 +174,18 @@
+         },
+         // Should document that a method overrides method from private class.
+        {BUG_ID + "-2" + FS + "pkg" + FS + "PublicChild.html",
+-            "<STRONG>Overrides:</STRONG><DD><CODE>" +
++            "<STRONG>Overrides:</STRONG></DT><DD><CODE>" +
+             "<A HREF=\"../pkg/PrivateParent.html#methodOverridenFromParent(char[], int, T, V, java.util.List)\">" +
+             "methodOverridenFromParent</A></CODE> in class <CODE>" +
+             "<A HREF=\"../pkg/PrivateParent.html\" title=\"class in pkg\">" +
+-            "PrivateParent</A></CODE></DL>"},
++            "PrivateParent</A></CODE></DD>" + NL + "</DL>"},
+        // Should document that a method is specified by private interface.
+        {BUG_ID + "-2" + FS + "pkg" + FS + "PublicChild.html",
+-            "<STRONG>Specified by:</STRONG><DD><CODE>" +
++            "<STRONG>Specified by:</STRONG></DT><DD><CODE>" +
+             "<A HREF=\"../pkg/PrivateInterface.html#methodInterface(int)\">" +
+             "methodInterface</A></CODE> in interface <CODE>" +
+             "<A HREF=\"../pkg/PrivateInterface.html\" title=\"interface in pkg\">" +
+-            "PrivateInterface</A></CODE></DL>" + NL + "</DD>"},
++            "PrivateInterface</A></CODE></DD>" + NL + "</DL>" + NL + "</DD>"},
+        // Method inheritence from non-public superinterface.
+        {BUG_ID + "-2" + FS + "pkg" + FS + "PublicInterface.html",
+             "Methods inherited from interface " +
+@@ -209,12 +209,12 @@
+ 
+       //Make sure implemented interfaces from private superclass are inherited
+       {BUG_ID + "-2" + FS + "pkg" + FS + "PublicInterface.html",
+-        "<STRONG>All Known Implementing Classes:</STRONG> <DD><A HREF=\"../pkg/PrivateParent.html\" " +
++        "<STRONG>All Known Implementing Classes:</STRONG></DT> <DD><A HREF=\"../pkg/PrivateParent.html\" " +
+         "title=\"class in pkg\">PrivateParent</A>, " +
+         "<A HREF=\"../pkg/PublicChild.html\" title=\"class in pkg\">PublicChild</A>"},
+ 
+       {BUG_ID + "-2" + FS + "pkg" + FS + "PublicChild.html",
+-        "<STRONG>All Implemented Interfaces:</STRONG> <DD><A HREF=\"../pkg/PrivateInterface.html\" " +
++        "<STRONG>All Implemented Interfaces:</STRONG></DT> <DD><A HREF=\"../pkg/PrivateInterface.html\" " +
+         "title=\"interface in pkg\">PrivateInterface</A>, " +
+         "<A HREF=\"../pkg/PublicInterface.html\" title=\"interface in pkg\">" +
+         "PublicInterface</A>"},
+@@ -226,7 +226,7 @@
+             "<CODE><A HREF=\"../pkg2/I.html#hello(T)\">I</A></CODE></STRONG>"},
+ 
+       {BUG_ID + "-2" + FS + "pkg2" + FS + "C.html",
+-            "<STRONG>Specified by:</STRONG><DD><CODE><A HREF=\"../pkg2/I.html#hello(T)\">" +
++            "<STRONG>Specified by:</STRONG></DT><DD><CODE><A HREF=\"../pkg2/I.html#hello(T)\">" +
+             "hello</A></CODE> in interface <CODE><A HREF=\"../pkg2/I.html\" " +
+             "title=\"interface in pkg2\">I</A>"},
+     };
+diff --git a/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java b/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java
+--- langtools/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java
++++ langtools/test/com/sun/javadoc/testSerializedFormDeprecationInfo/TestSerializedFormDeprecationInfo.java
+@@ -41,39 +41,39 @@
+     // Test for normal run of javadoc. The serialized-form.html should
+     // display the inline comments, tags and deprecation information if any.
+     private static final String[][] TEST_CMNT_DEPR = {
+-        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><DL>" + NL + NL +
+-                 "<DT><STRONG>Throws:</STRONG>" + NL + "<DD><CODE>" +
+-                 "java.io.IOException</CODE><DT><STRONG>See Also:</STRONG>" +
+-                 "<DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
+-                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD>" + NL +
+-                 "</DL>" + NL + "</DL>"},
++        {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><DL>" + NL +
++                 "<DT><STRONG>Throws:</STRONG></DT>" + NL + "<DD><CODE>" +
++                 "java.io.IOException</CODE></DD><DT><STRONG>See Also:</STRONG>" +
++                 "</DT><DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
+         {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
+-                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
+-                 " 1.5, replaced by" + NL +
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version " +
++                 "1.5, replaced by" + NL +
+                  " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
+-                 "<CODE>setUndecorated(boolean)</CODE></A>.</I>" +
++                 "<CODE>setUndecorated(boolean)</CODE></A>.</I></DD>" +
+                  "<DD>This field indicates whether the C1 is undecorated." + NL +
+-                 "<P>" + NL + "<DT><DD>&nbsp;<DL>" + NL +
+-                 "<DT><STRONG>Since:</STRONG></DT>" + NL +
++                 "<P>" + NL + "</DD>" + NL + "<DD>&nbsp;</DD>" + NL +
++                 "<DD><DL>" + NL + "<DT><STRONG>Since:</STRONG></DT>" + NL +
+                  "  <DD>1.4</DD>" + NL + "<DT><STRONG>See Also:</STRONG>" +
+-                 "<DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
+-                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DL>" + NL +
+-                 "</DL>"},
++                 "</DT><DD><A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
++                 "<CODE>C1.setUndecorated(boolean)</CODE></A></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
+         {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
+                  "<DD><STRONG>Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
+                  " 1.5, replaced by" + NL +
+                  " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
+                  "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
+-                 "<DD>Reads the object stream." + NL + "<P>" + NL +
+-                 "<DD><DL>" + NL + NL + "<DT><STRONG>Throws:" +
+-                 "</STRONG>" + NL + "<DD><CODE><code>" +
+-                 "IOException</code></CODE>" + NL +
+-                 "<DD><CODE>java.io.IOException</CODE></DD>" + NL +
+-                 "</DL>" + NL + "</DL>"},
++                 "</DD><DD>Reads the object stream." + NL + "<P>" + NL +
++                 "</DD>" + NL + "<DD><DL>" + NL + "<DT><STRONG>Throws:" +
++                 "</STRONG></DT>" + NL + "<DD><CODE><code>" +
++                 "IOException</code></CODE></DD>" + NL +
++                 "<DD><CODE>java.io.IOException</CODE></DD></DL>" + NL +
++                 "</DD>" + NL + "</DL>"},
+         {BUG_ID + FS + "serialized-form.html", "<DL>" + NL +
+-                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;<DD>" +
+-                 "The name for this class." + NL + "<P>" + NL +
+-                 "<DT><DD>&nbsp;<DL>" + NL + "</DL>" + NL + "</DL>"}};
++                 "<DD><STRONG>Deprecated.</STRONG>&nbsp;</DD><DD>" +
++                 "The name for this class." + NL + "<P>" + NL + "</DD>" + NL +
++                 "<DD>&nbsp;</DD>" + NL + "</DL>"}};
+ 
+     // Test with -nocomment option. The serialized-form.html should
+     // not display the inline comments and tags but should display deprecation
+@@ -83,16 +83,16 @@
+                  "undecorated</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
+                  "Deprecated.</STRONG>&nbsp;<I>As of JDK version 1.5, replaced by" + NL +
+                  " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\"><CODE>" +
+-                 "setUndecorated(boolean)</CODE></A>.</I></DL>"},
++                 "setUndecorated(boolean)</CODE></A>.</I></DD></DL>"},
+         {BUG_ID + FS + "serialized-form.html", "<DL>" + NL + "<DD><STRONG>" +
+                  "Deprecated.</STRONG>&nbsp;<I>As of JDK version" +
+                  " 1.5, replaced by" + NL +
+                  " <A HREF=\"pkg1/C1.html#setUndecorated(boolean)\">" +
+                  "<CODE>setUndecorated(boolean)</CODE></A>.</I>" + NL + "<P>" + NL +
+-                 "</DL>"},
++                 "</DD></DL>"},
+         {BUG_ID + FS + "serialized-form.html", "<PRE>" + NL + "int <STRONG>" +
+                  "publicKey</STRONG></PRE>" + NL + "<DL>" + NL + "<DD><STRONG>" +
+-                 "Deprecated.</STRONG>&nbsp;</DL>"}};
++                 "Deprecated.</STRONG>&nbsp;</DD></DL>"}};
+ 
+     // Test with -nodeprecated option. The serialized-form.html should
+     // ignore the -nodeprecated tag and display the deprecation info. This
+diff --git a/test/com/sun/javadoc/testThrowsTag/TestThrowsTag.java b/test/com/sun/javadoc/testThrowsTag/TestThrowsTag.java
+--- langtools/test/com/sun/javadoc/testThrowsTag/TestThrowsTag.java
++++ langtools/test/com/sun/javadoc/testThrowsTag/TestThrowsTag.java
+@@ -46,14 +46,14 @@
+     //Input for string search tests.
+     private static final String[][] TEST = {
+         {BUG_ID + FS + "pkg" + FS + "C.html",
+-            "<DD><CODE><A HREF=\"../pkg/T1.html\" title=\"class in pkg\">T1</A></CODE> - the first throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T2.html\" title=\"class in pkg\">T2</A></CODE> - the second throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T3.html\" title=\"class in pkg\">T3</A></CODE> - the third throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T4.html\" title=\"class in pkg\">T4</A></CODE> - the fourth throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T5.html\" title=\"class in pkg\">T5</A></CODE> - the first inherited throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T6.html\" title=\"class in pkg\">T6</A></CODE> - the second inherited throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T7.html\" title=\"class in pkg\">T7</A></CODE> - the third inherited throws tag." + NL +
+-            "<DD><CODE><A HREF=\"../pkg/T8.html\" title=\"class in pkg\">T8</A></CODE> - the fourth inherited throws tag."
++            "<DD><CODE><A HREF=\"../pkg/T1.html\" title=\"class in pkg\">T1</A></CODE> - the first throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T2.html\" title=\"class in pkg\">T2</A></CODE> - the second throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T3.html\" title=\"class in pkg\">T3</A></CODE> - the third throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T4.html\" title=\"class in pkg\">T4</A></CODE> - the fourth throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T5.html\" title=\"class in pkg\">T5</A></CODE> - the first inherited throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T6.html\" title=\"class in pkg\">T6</A></CODE> - the second inherited throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T7.html\" title=\"class in pkg\">T7</A></CODE> - the third inherited throws tag.</DD>" + NL +
++            "<DD><CODE><A HREF=\"../pkg/T8.html\" title=\"class in pkg\">T8</A></CODE> - the fourth inherited throws tag.</DD>"
+         },
+     };
+     private static final String[][] NEGATED_TEST = NO_TEST;

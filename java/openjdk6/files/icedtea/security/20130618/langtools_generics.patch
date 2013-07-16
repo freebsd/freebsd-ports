@@ -1,0 +1,600 @@
+# HG changeset patch
+# User andrew
+# Date 1371740021 18000
+# Node ID a5c99fd80b4c9f5049351bf5bff8517dd6d3b613
+# Parent  335cdc9887c56f560991275fe8d32e6edb6b3f1e
+Add generics
+
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/ClassUseWriter.java
+@@ -41,29 +41,29 @@
+ public class ClassUseWriter extends SubWriterHolderWriter {
+ 
+     final ClassDoc classdoc;
+-    Set pkgToPackageAnnotations = null;
+-    final Map pkgToClassTypeParameter;
+-    final Map pkgToClassAnnotations;
+-    final Map pkgToMethodTypeParameter;
+-    final Map pkgToMethodArgTypeParameter;
+-    final Map pkgToMethodReturnTypeParameter;
+-    final Map pkgToMethodAnnotations;
+-    final Map pkgToMethodParameterAnnotations;
+-    final Map pkgToFieldTypeParameter;
+-    final Map pkgToFieldAnnotations;
+-    final Map pkgToSubclass;
+-    final Map pkgToSubinterface;
+-    final Map pkgToImplementingClass;
+-    final Map pkgToField;
+-    final Map pkgToMethodReturn;
+-    final Map pkgToMethodArgs;
+-    final Map pkgToMethodThrows;
+-    final Map pkgToConstructorAnnotations;
+-    final Map pkgToConstructorParameterAnnotations;
+-    final Map pkgToConstructorArgs;
+-    final Map pkgToConstructorArgTypeParameter;
+-    final Map pkgToConstructorThrows;
+-    final SortedSet pkgSet;
++    Set<PackageDoc> pkgToPackageAnnotations = null;
++    final Map<String,List<ProgramElementDoc>> pkgToClassTypeParameter;
++    final Map<String,List<ProgramElementDoc>> pkgToClassAnnotations;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodTypeParameter;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodArgTypeParameter;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodReturnTypeParameter;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodAnnotations;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodParameterAnnotations;
++    final Map<String,List<ProgramElementDoc>> pkgToFieldTypeParameter;
++    final Map<String,List<ProgramElementDoc>> pkgToFieldAnnotations;
++    final Map<String,List<ProgramElementDoc>> pkgToSubclass;
++    final Map<String,List<ProgramElementDoc>> pkgToSubinterface;
++    final Map<String,List<ProgramElementDoc>> pkgToImplementingClass;
++    final Map<String,List<ProgramElementDoc>> pkgToField;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodReturn;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodArgs;
++    final Map<String,List<ProgramElementDoc>> pkgToMethodThrows;
++    final Map<String,List<ProgramElementDoc>> pkgToConstructorAnnotations;
++    final Map<String,List<ProgramElementDoc>> pkgToConstructorParameterAnnotations;
++    final Map<String,List<ProgramElementDoc>> pkgToConstructorArgs;
++    final Map<String,List<ProgramElementDoc>> pkgToConstructorArgTypeParameter;
++    final Map<String,List<ProgramElementDoc>> pkgToConstructorThrows;
++    final SortedSet<PackageDoc> pkgSet;
+     final MethodWriterImpl methodSubWriter;
+     final ConstructorWriterImpl constrSubWriter;
+     final FieldWriterImpl fieldSubWriter;
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageIndexWriter.java
+@@ -52,12 +52,12 @@
+      *
+      * @see Group
+      */
+-    private Map groupPackageMap;
++    private Map<String,List<PackageDoc>> groupPackageMap;
+ 
+     /**
+      * List to store the order groups as specified on the command line.
+      */
+-    private List groupList;
++    private List<String> groupList;
+ 
+     /**
+      * Construct the PackageIndexWriter. Also constructs the grouping
+@@ -103,8 +103,8 @@
+      */
+     protected void addIndex(Content body) {
+         for (int i = 0; i < groupList.size(); i++) {
+-        String groupname = (String)groupList.get(i);
+-        List list = (List)groupPackageMap.get(groupname);
++        String groupname = groupList.get(i);
++        List<PackageDoc> list = groupPackageMap.get(groupname);
+             if (list != null && list.size() > 0) {
+                 addIndexContents(list.toArray(new PackageDoc[list.size()]),
+                         groupname, configuration.getText("doclet.Member_Table_Summary",
+diff --git a/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java b/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java
+--- langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java
++++ langtools/src/share/classes/com/sun/tools/doclets/formats/html/PackageUseWriter.java
+@@ -41,7 +41,7 @@
+ public class PackageUseWriter extends SubWriterHolderWriter {
+ 
+     final PackageDoc pkgdoc;
+-    final SortedMap usingPackageToUsedClasses = new TreeMap();
++    final SortedMap<String,Set<ClassDoc>> usingPackageToUsedClasses = new TreeMap<String,Set<ClassDoc>>();
+ 
+     /**
+      * Constructor.
+@@ -64,15 +64,15 @@
+         ClassDoc[] content = pkgdoc.allClasses();
+         for (int i = 0; i < content.length; ++i) {
+             ClassDoc usedClass = content[i];
+-            Set usingClasses = (Set)mapper.classToClass.get(usedClass.qualifiedName());
++            Set<ClassDoc> usingClasses = mapper.classToClass.get(usedClass.qualifiedName());
+             if (usingClasses != null) {
+-                for (Iterator it = usingClasses.iterator(); it.hasNext(); ) {
+-                    ClassDoc usingClass = (ClassDoc)it.next();
++                for (Iterator<ClassDoc> it = usingClasses.iterator(); it.hasNext(); ) {
++                    ClassDoc usingClass = it.next();
+                     PackageDoc usingPackage = usingClass.containingPackage();
+-                    Set usedClasses = (Set)usingPackageToUsedClasses
++                    Set<ClassDoc> usedClasses = (Set)usingPackageToUsedClasses
+                         .get(usingPackage.name());
+                     if (usedClasses == null) {
+-                        usedClasses = new TreeSet();
++                        usedClasses = new TreeSet<ClassDoc>();
+                         usingPackageToUsedClasses.put(Util.getPackageName(usingPackage),
+                                                       usedClasses);
+                     }
+@@ -153,9 +153,9 @@
+                 getPackageLinkString(pkgdoc, Util.getPackageName(pkgdoc), false))));
+         table.addContent(getSummaryTableHeader(packageTableHeader, "col"));
+         Content tbody = new HtmlTree(HtmlTag.TBODY);
+-        Iterator it = usingPackageToUsedClasses.keySet().iterator();
++        Iterator<String> it = usingPackageToUsedClasses.keySet().iterator();
+         for (int i = 0; it.hasNext(); i++) {
+-            PackageDoc pkg = configuration.root.packageNamed((String)it.next());
++            PackageDoc pkg = configuration.root.packageNamed(it.next());
+             HtmlTree tr = new HtmlTree(HtmlTag.TR);
+             if (i % 2 == 0) {
+                 tr.addStyle(HtmlStyle.altColor);
+@@ -181,9 +181,9 @@
+                     configuration.getText("doclet.Class"),
+                     configuration.getText("doclet.Description"))
+         };
+-        Iterator itp = usingPackageToUsedClasses.keySet().iterator();
++        Iterator<String> itp = usingPackageToUsedClasses.keySet().iterator();
+         while (itp.hasNext()) {
+-            String packageName = (String)itp.next();
++            String packageName = itp.next();
+             PackageDoc usingPackage = configuration.root.packageNamed(packageName);
+             HtmlTree li = new HtmlTree(HtmlTag.LI);
+             li.addStyle(HtmlStyle.blockList);
+@@ -199,9 +199,8 @@
+                     getPackageLinkString(usingPackage,Util.getPackageName(usingPackage), false))));
+             table.addContent(getSummaryTableHeader(classTableHeader, "col"));
+             Content tbody = new HtmlTree(HtmlTag.TBODY);
+-            Iterator itc =
+-                ((Collection)usingPackageToUsedClasses.get(packageName))
+-                .iterator();
++            Iterator<ClassDoc> itc =
++		usingPackageToUsedClasses.get(packageName).iterator();
+             for (int i = 0; itc.hasNext(); i++) {
+                 HtmlTree tr = new HtmlTree(HtmlTag.TR);
+                 if (i % 2 == 0) {
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/AbstractBuilder.java
+@@ -97,7 +97,7 @@
+      * @param node the XML element that specifies which component to document.
+      * @param contentTree content tree to which the documentation will be added
+      */
+-    protected void build(XMLNode node) {
++    protected void build(XMLNode node, Content contentTree) {
+         String component = node.name;
+         try {
+             invokeMethod("build" + component,
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/LayoutParser.java
+@@ -80,7 +80,7 @@
+      */
+     public XMLNode parseXML(String root) {
+         if (xmlElementsMap.containsKey(root)) {
+-            return (List) xmlElementsMap.get(root);
++            return xmlElementsMap.get(root);
+         }
+         try {
+             currentRoot = root;
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/builders/SerializedFormBuilder.java
+@@ -375,8 +375,7 @@
+      */
+     public void buildFieldSerializationOverview(ClassDoc classDoc, Content classContentTree) {
+         if (classDoc.definesSerializableFields()) {
+-            FieldDoc serialPersistentField =
+-                Util.asList(classDoc.serializableFields()).get(0);
++            FieldDoc serialPersistentField = classDoc.serializableFields()[0];
+             // Check to see if there are inline comments, tags or deprecation
+             // information to be printed.
+             if (fieldWriter.shouldPrintOverview(serialPersistentField)) {
+diff --git a/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/ClassUseMapper.java b/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/ClassUseMapper.java
+--- langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/ClassUseMapper.java
++++ langtools/src/share/classes/com/sun/tools/doclets/internal/toolkit/util/ClassUseMapper.java
+@@ -46,150 +46,150 @@
+      * Mapping of ClassDocs to set of PackageDoc used by that class.
+      * Entries may be null.
+      */
+-    public Map classToPackage = new HashMap();
++    public Map<String,Set<PackageDoc>> classToPackage = new HashMap<String,Set<PackageDoc>>();
+ 
+     /**
+      * Mapping of Annotations to set of PackageDoc that use the annotation.
+      */
+-    public Map classToPackageAnnotations = new HashMap();
++    public Map<String,List<PackageDoc>> classToPackageAnnotations = new HashMap<String,List<PackageDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to set of ClassDoc used by that class.
+      * Entries may be null.
+      */
+-    public Map classToClass = new HashMap();
++    public Map<String,Set<ClassDoc>> classToClass = new HashMap<String,Set<ClassDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of ClassDoc which are direct or
+      * indirect subclasses of that class.
+      * Entries may be null.
+      */
+-    public Map classToSubclass = new HashMap();
++    public Map<String,List<ClassDoc>> classToSubclass = new HashMap<String,List<ClassDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of ClassDoc which are direct or
+      * indirect subinterfaces of that interface.
+      * Entries may be null.
+      */
+-    public Map classToSubinterface = new HashMap();
++    public Map<String,List<ClassDoc>> classToSubinterface = new HashMap<String,List<ClassDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of ClassDoc which implement
+      * this interface.
+      * Entries may be null.
+      */
+-    public Map classToImplementingClass = new HashMap();
++    public Map<String,List<ClassDoc>> classToImplementingClass = new HashMap<String,List<ClassDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of FieldDoc declared as that class.
+      * Entries may be null.
+      */
+-    public Map classToField = new HashMap();
++    public Map<String,List<FieldDoc>> classToField = new HashMap<String,List<FieldDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of MethodDoc returning that class.
+      * Entries may be null.
+      */
+-    public Map classToMethodReturn = new HashMap();
++    public Map<String,List<MethodDoc>> classToMethodReturn = new HashMap<String,List<MethodDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of MethodDoc having that class
+      * as an arg.
+      * Entries may be null.
+      */
+-    public Map classToMethodArgs = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToMethodArgs = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of MethodDoc which throws that class.
+      * Entries may be null.
+      */
+-    public Map classToMethodThrows = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToMethodThrows = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of ConstructorDoc having that class
+      * as an arg.
+      * Entries may be null.
+      */
+-    public Map classToConstructorArgs = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToConstructorArgs = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * Mapping of ClassDocs to list of ConstructorDoc which throws that class.
+      * Entries may be null.
+      */
+-    public Map classToConstructorThrows = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToConstructorThrows = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * The mapping of AnnotationTypeDocs to constructors that use them.
+      */
+-    public Map classToConstructorAnnotations = new HashMap();
+-
+-    /**
+-     * The mapping of AnnotationTypeDocs to Constructor parameters that use them.
+-     */
+-    public Map classToConstructorParamAnnotation = new HashMap();
++    public Map<String,List<ConstructorDoc>> classToConstructorAnnotations = new HashMap<String,List<ConstructorDoc>>();
++ 
++     /**
++      * The mapping of AnnotationTypeDocs to Constructor parameters that use them.
++      */
++    public Map<String,List<ExecutableMemberDoc>> classToConstructorParamAnnotation = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * The mapping of ClassDocs to Constructor arguments that use them as type parameters.
+      */
+-    public Map classToConstructorDocArgTypeParam = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToConstructorDocArgTypeParam = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * The mapping of ClassDocs to ClassDocs that use them as type parameters.
+      */
+-    public Map classToClassTypeParam = new HashMap();
++    public Map<String,List<ClassDoc>> classToClassTypeParam = new HashMap<String,List<ClassDoc>>();
+ 
+     /**
+      * The mapping of AnnotationTypeDocs to ClassDocs that use them.
+      */
+-    public Map classToClassAnnotations = new HashMap();
++    public Map<String,List<ClassDoc>> classToClassAnnotations = new HashMap<String,List<ClassDoc>>();
+ 
+     /**
+      * The mapping of ClassDocs to ExecutableMemberDocs that use them as type parameters.
+      */
+-    public Map classToExecMemberDocTypeParam = new HashMap();
++    public Map<String,List<MethodDoc>> classToExecMemberDocTypeParam = new HashMap<String,List<MethodDoc>>();
+ 
+     /**
+      * The mapping of ClassDocs to ExecutableMemberDocs arguments that use them as type parameters.
+      */
+-    public Map classToExecMemberDocArgTypeParam = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToExecMemberDocArgTypeParam = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * The mapping of AnnotationTypeDocs to ExecutableMemberDocs that use them.
+      */
+-    public Map classToExecMemberDocAnnotations = new HashMap();
++    public Map<String,List<MethodDoc>> classToExecMemberDocAnnotations = new HashMap<String,List<MethodDoc>>();
+ 
+     /**
+      * The mapping of ClassDocs to ExecutableMemberDocs that have return type
+      * with type parameters of that class.
+      */
+-    public Map classToExecMemberDocReturnTypeParam = new HashMap();
++    public Map<String,List<MethodDoc>> classToExecMemberDocReturnTypeParam = new HashMap<String,List<MethodDoc>>();
+ 
+     /**
+      * The mapping of AnnotationTypeDocs to MethodDoc parameters that use them.
+      */
+-    public Map classToExecMemberDocParamAnnotation = new HashMap();
++    public Map<String,List<ExecutableMemberDoc>> classToExecMemberDocParamAnnotation = new HashMap<String,List<ExecutableMemberDoc>>();
+ 
+     /**
+      * The mapping of ClassDocs to FieldDocs that use them as type parameters.
+      */
+-    public Map classToFieldDocTypeParam = new HashMap();
++    public Map<String,List<FieldDoc>> classToFieldDocTypeParam = new HashMap<String,List<FieldDoc>>();
+ 
+     /**
+      * The mapping of AnnotationTypeDocs to FieldDocs that use them.
+      */
+-    public Map annotationToFieldDoc = new HashMap();
++    public Map<String,List<FieldDoc>> annotationToFieldDoc = new HashMap<String,List<FieldDoc>>();
+ 
+ 
+     public ClassUseMapper(RootDoc root, ClassTree classtree) {
+         this.classtree = classtree;
+ 
+         // Map subclassing, subinterfacing implementing, ...
+-        for (Iterator it = classtree.baseclasses().iterator(); it.hasNext();) {
+-            subclasses((ClassDoc)it.next());
++        for (Iterator<ClassDoc> it = classtree.baseclasses().iterator(); it.hasNext();) {
++            subclasses(it.next());
+         }
+-        for (Iterator it = classtree.baseinterfaces().iterator(); it.hasNext();) {
++        for (Iterator<ClassDoc> it = classtree.baseinterfaces().iterator(); it.hasNext();) {
+             // does subinterfacing as side-effect
+-            implementingClasses((ClassDoc)it.next());
++            implementingClasses(it.next());
+         }
+         // Map methods, fields, constructors using a class.
+         ClassDoc[] classes = root.classes();
+@@ -231,15 +231,15 @@
+     /**
+      * Return all subclasses of a class AND fill-in classToSubclass map.
+      */
+-    private Collection subclasses(ClassDoc cd) {
+-        Collection ret = (Collection)classToSubclass.get(cd.qualifiedName());
++    private Collection<ClassDoc> subclasses(ClassDoc cd) {
++        Collection<ClassDoc> ret = classToSubclass.get(cd.qualifiedName());
+         if (ret == null) {
+-            ret = new TreeSet();
+-            List subs = classtree.subclasses(cd);
++            ret = new TreeSet<ClassDoc>();
++            List<ClassDoc> subs = classtree.subclasses(cd);
+             if (subs != null) {
+                 ret.addAll(subs);
+-                for (Iterator it = subs.iterator(); it.hasNext();) {
+-                    ret.addAll(subclasses((ClassDoc)it.next()));
++                for (Iterator<ClassDoc> it = subs.iterator(); it.hasNext();) {
++                    ret.addAll(subclasses(it.next()));
+                 }
+             }
+             addAll(classToSubclass, cd, ret);
+@@ -250,15 +250,15 @@
+     /**
+      * Return all subinterfaces of an interface AND fill-in classToSubinterface map.
+      */
+-    private Collection subinterfaces(ClassDoc cd) {
+-        Collection ret = (Collection)classToSubinterface.get(cd.qualifiedName());
++    private Collection<ClassDoc> subinterfaces(ClassDoc cd) {
++        Collection<ClassDoc> ret = classToSubinterface.get(cd.qualifiedName());
+         if (ret == null) {
+-            ret = new TreeSet();
+-            List subs = classtree.subinterfaces(cd);
++            ret = new TreeSet<ClassDoc>();
++            List<ClassDoc> subs = classtree.subinterfaces(cd);
+             if (subs != null) {
+                 ret.addAll(subs);
+-                for (Iterator it = subs.iterator(); it.hasNext();) {
+-                    ret.addAll(subinterfaces((ClassDoc)it.next()));
++                for (Iterator<ClassDoc> it = subs.iterator(); it.hasNext();) {
++                    ret.addAll(subinterfaces(it.next()));
+                 }
+             }
+             addAll(classToSubinterface, cd, ret);
+@@ -272,19 +272,19 @@
+      * implementing subinterfaces) AND fill-in both classToImplementingClass
+      * and classToSubinterface maps.
+      */
+-    private Collection implementingClasses(ClassDoc cd) {
+-        Collection ret = (List)classToImplementingClass.get(cd.qualifiedName());
++    private Collection<ClassDoc> implementingClasses(ClassDoc cd) {
++        Collection<ClassDoc> ret = classToImplementingClass.get(cd.qualifiedName());
+         if (ret == null) {
+-            ret = new TreeSet();
+-            List impl = classtree.implementingclasses(cd);
++            ret = new TreeSet<ClassDoc>();
++            List<ClassDoc> impl = classtree.implementingclasses(cd);
+             if (impl != null) {
+                 ret.addAll(impl);
+-                for (Iterator it = impl.iterator(); it.hasNext();) {
+-                    ret.addAll(subclasses((ClassDoc)it.next()));
++                for (Iterator<ClassDoc> it = impl.iterator(); it.hasNext();) {
++                    ret.addAll(subclasses(it.next()));
+                 }
+             }
+-            for (Iterator it = subinterfaces(cd).iterator(); it.hasNext();) {
+-                ret.addAll(implementingClasses((ClassDoc)it.next()));
++            for (Iterator<ClassDoc> it = subinterfaces(cd).iterator(); it.hasNext();) {
++                ret.addAll(implementingClasses(it.next()));
+             }
+             addAll(classToImplementingClass, cd, ret);
+         }
+@@ -298,7 +298,7 @@
+     private void mapExecutable(ExecutableMemberDoc em) {
+         Parameter[] params = em.parameters();
+         boolean isConstructor = em.isConstructor();
+-        List classArgs = new ArrayList();
++        List<Type> classArgs = new ArrayList();
+         for (int k = 0; k < params.length; k++) {
+             Type pcd = params[k].type();
+             // primitives don't get mapped, also avoid dups
+@@ -325,34 +325,36 @@
+         }
+     }
+ 
+-    private List refList(Map map, ClassDoc cd) {
+-        List list = (List)map.get(cd.qualifiedName());
++    private <T> List<T> refList(Map<String,List<T>> map, ClassDoc cd) {
++        List<T> list = map.get(cd.qualifiedName());
+         if (list == null) {
+-            list = new ArrayList();
++            List<T> l = new ArrayList<T>();
++            list = l;
+             map.put(cd.qualifiedName(), list);
+         }
+         return list;
+     }
+ 
+-    private Set packageSet(ClassDoc cd) {
+-        Set pkgSet = (Set)classToPackage.get(cd.qualifiedName());
++    private Set<PackageDoc> packageSet(ClassDoc cd) {
++        Set<PackageDoc> pkgSet = classToPackage.get(cd.qualifiedName());
+         if (pkgSet == null) {
+-            pkgSet = new TreeSet();
++            pkgSet = new TreeSet<PackageDoc>();
+             classToPackage.put(cd.qualifiedName(), pkgSet);
+         }
+         return pkgSet;
+     }
+ 
+-    private Set classSet(ClassDoc cd) {
+-        Set clsSet = (Set)classToClass.get(cd.qualifiedName());
++    private Set<ClassDoc> classSet(ClassDoc cd) {
++        Set<ClassDoc> clsSet = classToClass.get(cd.qualifiedName());
+         if (clsSet == null) {
+-            clsSet = new TreeSet();
++            Set<ClassDoc> s = new TreeSet<ClassDoc>();
++            clsSet = s;
+             classToClass.put(cd.qualifiedName(), clsSet);
+         }
+         return clsSet;
+     }
+ 
+-    private void add(Map map, ClassDoc cd, ProgramElementDoc ref) {
++    private <T extends ProgramElementDoc> void add(Map<String,List<T>> map, ClassDoc cd, T ref) {
+         // add to specified map
+         refList(map, cd).add(ref);
+ 
+@@ -361,7 +363,7 @@
+ 
+         classSet(cd).add(ref instanceof MemberDoc?
+                 ((MemberDoc)ref).containingClass() :
+-                    ref);
++                    (ClassDoc)ref);
+     }
+ 
+     private void addAll(Map map, ClassDoc cd, Collection refs) {
+@@ -371,15 +373,13 @@
+         // add to specified map
+         refList(map, cd).addAll(refs);
+ 
+-        Set pkgSet = packageSet(cd);
+-        Set clsSet = classSet(cd);
++        Set<PackageDoc> pkgSet = packageSet(cd);
++        Set<ClassDoc> clsSet = classSet(cd);
+         // add ref's package to package map and class map
+-        for (Iterator it = refs.iterator(); it.hasNext();) {
+-            ProgramElementDoc pedoc = (ProgramElementDoc)it.next();
+-            pkgSet.add(pedoc.containingPackage());
+-            clsSet.add(pedoc instanceof MemberDoc?
+-                    ((MemberDoc)pedoc).containingClass() :
+-                        pedoc);
++        for (Iterator<ClassDoc> it = refs.iterator(); it.hasNext();) {
++	    ClassDoc cls = it.next();
++            pkgSet.add(cls.containingPackage());
++            clsSet.add(cls);
+ 
+         }
+     }
+@@ -392,8 +392,8 @@
+      * @param doc the doc whose type parameters are being checked.
+      * @param holder the holder that owns the type parameters.
+      */
+-    private void mapTypeParameters(Map map, Object doc,
+-            ProgramElementDoc holder) {
++    private <T extends ProgramElementDoc> void mapTypeParameters(Map<String,List<T>> map, Object doc,
++            T holder) {
+         TypeVariable[] typeVariables;
+         if (doc instanceof ClassDoc) {
+             typeVariables = ((ClassDoc) doc).typeParameters();
+@@ -438,8 +438,8 @@
+      * @param doc the doc whose type parameters are being checked.
+      * @param holder the holder that owns the type parameters.
+      */
+-    private void mapAnnotations(Map map, Object doc,
+-            Object holder) {
++    private <T extends ProgramElementDoc> void mapAnnotations(Map<String,List<T>> map, Object doc,
++            T holder) {
+         TypeVariable[] typeVariables;
+         AnnotationDesc[] annotations;
+         boolean isPackage = false;
+@@ -458,12 +458,31 @@
+             if (isPackage)
+                 refList(map, annotationDoc).add(holder);
+             else
+-                add(map, annotationDoc, (ProgramElementDoc) holder);
++                add(map, annotationDoc, holder);
+         }
+     }
+ 
+-    private void addTypeParameterToMap(Map map, Type type,
+-            ProgramElementDoc holder) {
++
++    /**
++     * Map the AnnotationType to the ProgramElementDocs that use them as
++     * type parameters.
++     *
++     * @param map the map the insert the information into.
++     * @param doc the doc whose type parameters are being checked.
++     * @param holder the holder that owns the type parameters.
++     */
++    private <T extends PackageDoc> void mapAnnotations(Map<String,List<T>> map, PackageDoc doc,
++            T holder) {
++        AnnotationDesc[] annotations;
++        annotations = doc.annotations();
++        for (int i = 0; i < annotations.length; i++) {
++            AnnotationTypeDoc annotationDoc = annotations[i].annotationType();
++            refList(map, annotationDoc).add(holder);
++	}
++    }
++
++    private <T extends ProgramElementDoc> void addTypeParameterToMap(Map<String,List<T>> map, Type type,
++            T holder) {
+         if (type instanceof ClassDoc) {
+             add(map, (ClassDoc) type, holder);
+         } else if (type instanceof ParameterizedType) {
