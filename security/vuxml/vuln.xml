@@ -51,6 +51,71 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31b145f2-d9d3-49a9-8023-11cf742205dc">
+    <topic>PHP5 -- Heap corruption in XML parser</topic>
+    <affects>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP development team reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4113">
+	  <p>ext/xml/xml.c in PHP before 5.3.27 does not properly
+	    consider parsing depth, which allows remote attackers to
+	    cause a denial of service (heap memory corruption) or
+	    possibly have unspecified other impact via a crafted
+	    document that is processed by the xml_parse_into_struct
+	    function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4113</cvename>
+      <url>https://bugs.php.net/bug.php?id=65236</url>
+    </references>
+    <dates>
+      <discovery>2013-07-10</discovery>
+      <entry>2013-07-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5def3175-f3f9-4476-ba40-b46627cc638c">
+    <topic>PHP5 -- Integer overflow in Calendar module</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><ge>5.4.0</ge><lt>5.4.16</lt></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP development team reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4635">
+	  <p>Integer overflow in the SdnToJewish function in jewish.c
+	    in the Calendar component in PHP before 5.3.26 and 5.4.x
+	    before 5.4.16 allows context-dependent attackers to cause a
+	    denial of service (application hang) via a large argument to
+	    the jdtojewish function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4635</cvename>
+      <url>https://bugs.php.net/bug.php?id=64895</url>
+    </references>
+    <dates>
+      <discovery>2013-05-22</discovery>
+      <entry>2013-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df428c01-ed91-11e2-9466-98fc11cdc4f5">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
