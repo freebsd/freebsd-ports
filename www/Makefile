@@ -1967,6 +1967,7 @@
     SUBDIR += trac-tweakui
     SUBDIR += trac-vote
     SUBDIR += trac-wantedpages
+    SUBDIR += trac-watchlist
     SUBDIR += trac-wikigoodies
     SUBDIR += trac-wikinegotiator
     SUBDIR += trac-wikinotification
