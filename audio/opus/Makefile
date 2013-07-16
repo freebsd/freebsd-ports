@@ -28,4 +28,4 @@ regression-test: build
 CONFIGURE_ARGS+=--enable-fixed-point
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
