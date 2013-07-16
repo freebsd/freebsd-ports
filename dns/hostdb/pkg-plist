@@ -1,0 +1,90 @@
+bin/Example_comparezones
+bin/NIdhcpupdate
+bin/canonzone
+bin/catif
+bin/checkrootcache
+bin/copy-if-change
+bin/genrange
+bin/mergeiplists
+bin/mkdestinations
+bin/mknamedconf
+bin/mkzones
+bin/sortbyip
+bin/zone2hostdb
+bin/zone2hostdbhelper
+%%PORTDOCS%%%%DOCSDIR%%/hostdb-options.txt
+%%PORTDOCS%%%%DOCSDIR%%/lisa2005-paper.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/zoneconf.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/dhcpd.conf-tail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/hostdb-ranges2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/stage1.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/INTERNAL.named.conf-tail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/EXTERNAL.named.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/destinations.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/serial
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/INTERNAL.example.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/EXTERNAL.example.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/EXTERNAL.named.root.new
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/INTERNAL.179.32.64.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/dhcpd.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/EXTERNAL.named.root
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/x
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/INTERNAL.named.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/INTERNAL.1.1.10.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/SLAVE.named.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/out/EXTERNAL.179.32.64.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/hostdb-original.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/destinations.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/hostdb.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/dhcpd.conf-head
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/hostdb-ranges.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/INTERNAL.named.conf-head
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/hostdb.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/localhost.zone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/dhcpd.conf-head
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/named.local
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/dhcpd.conf-tail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/zoneconf.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/goodstart/destinations.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/stage1.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/hostdb.txt-enum
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/hostdb.txt-base
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/240.1.10.in-addr.arpa.originalzone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/cibernet.com-originalzone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/hostdb.txt-draft
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.16.113.212.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.151.80.66.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/INTERNAL.example.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.example.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.6.113.212.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.100.134.66.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/INTERNAL.240.1.10.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/INTERNAL.87.195.193.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/INTERNAL.cibernet.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/serial
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.cibernet.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.87.195.193.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/INTERNAL.1.168.192.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/INTERNAL.201.1.10.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/out/EXTERNAL.166.155.66.in-addr.arpa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/hostdb.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailserverexample/zoneconf.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/EXTERNAL.named.root.new
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/zoneconf.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/EXTERNAL.named.root
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiddenmaster/hostdb.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example1/out
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/goodstart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hiddenmaster
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mailserverexample/out
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mailserverexample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

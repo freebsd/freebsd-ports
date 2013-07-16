@@ -1,0 +1,33 @@
+--- bin/NIdhcpupdate.orig	2006-07-09 19:11:52.000000000 -0700
++++ bin/NIdhcpupdate	2013-07-15 23:39:08.368673247 -0700
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#!/bin/sh
+ 
+ 
+ # Copyright 2005 Thomas A. Limoncelli
+@@ -18,7 +18,7 @@
+ #     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+ 
+ 
+-function usage
++usage
+ {
+         echo "
+ Usage:
+--- bin/sortbyip.orig	2013-07-15 23:40:10.298670968 -0700
++++ bin/sortbyip	2013-07-15 23:40:23.308670176 -0700
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Sort by IP address.  Assume IP address is at front of line.
+ # Options:
+--- bin/zone2hostdb.orig	2013-07-15 23:40:14.308673854 -0700
++++ bin/zone2hostdb	2013-07-15 23:40:27.638673094 -0700
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Takes a zonefile and converts it to a rough estimate
+ # of what hostdb.txt should be.
