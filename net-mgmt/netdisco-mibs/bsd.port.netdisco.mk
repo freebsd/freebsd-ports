@@ -1,4 +1,5 @@
 MIBDIRS=	allied \
+		alcatel \
 		arista \
 		aruba \
 		asante \
