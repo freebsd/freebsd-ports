@@ -16,8 +16,6 @@ BUILD_DEPENDS=	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
 
 PERL_CONFIGURE=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAN3=		Benchmark::Timer.3 Benchmark::delta.3
 
 .include <bsd.port.mk>

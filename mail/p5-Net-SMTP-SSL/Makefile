@@ -16,6 +16,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::SMTP::SSL.3
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.mk>

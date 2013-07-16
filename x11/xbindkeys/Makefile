@@ -24,8 +24,6 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 
 WISH=		${LOCALBASE}/bin/wish8.4
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUILE}

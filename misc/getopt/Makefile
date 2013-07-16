@@ -18,8 +18,6 @@ MAKE_ENV+=	LIBCGETOPT=0
 MAN1=		getopt.1
 DOCS=		Changelog README
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.options.mk>
 
 post-patch:

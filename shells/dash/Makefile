@@ -13,8 +13,6 @@ CFLAGS+=	-DUNUSABLE_RT_SIGNALS
 
 USES=	gmake
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	bin/dash
 MAN1=		dash.1
 

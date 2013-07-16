@@ -30,6 +30,4 @@ USE_PERL5=	yes
 
 USES=	gmake
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.mk>

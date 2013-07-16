@@ -19,8 +19,6 @@ MAN1=		${PORTNAME}.1
 
 PLIST_FILES=		bin/${PORTNAME}
 
-MAKE_JOBS_SAFE=	yes
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1

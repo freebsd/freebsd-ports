@@ -20,8 +20,6 @@ MAKEFILE=	makefile
 INSTALL_TARGET=	install install-man
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 pre-build:
 	@(cd ${WRKSRC} && ${SH} fix.sh unix)
 

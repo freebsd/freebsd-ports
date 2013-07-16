@@ -20,8 +20,6 @@ USE_BZIP2=	yes
 USES=	gmake
 MAKE_ARGS=	INS_BASE=${PREFIX} DEFMANBASE=.
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		smake.1
 MAN5=		makefiles.5 makerules.5
 

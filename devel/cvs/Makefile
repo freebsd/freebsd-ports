@@ -12,8 +12,6 @@ LICENSE=	GPLv2
 
 WRKSRC=	${WRKDIR}/call/cvs-build
 
-MAKE_JOBS_SAFE=	yes
-
 USE_XZ=	yes
 
 MAN1=	cvs.1

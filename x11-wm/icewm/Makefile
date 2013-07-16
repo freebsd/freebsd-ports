@@ -32,8 +32,6 @@ OPTIONS_DEFAULT=	XFT XINERAMA ASM BEASTIE NLS MENUFIX
 BEASTIE_DESC=	Use Beastie'fied startup button
 MENUFIX_DESC=	MenuIconSize fix
 
-MAKE_JOBS_SAFE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

@@ -12,8 +12,6 @@ COMMENT=	Perl extension for manipulating IPv4/IPv6 addresses
 
 PERL_CONFIGURE=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAN3=		Net::IP.3
 
 post-configure:

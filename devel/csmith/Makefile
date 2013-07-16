@@ -19,8 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USES=	gmake
 
-MAKE_JOBS_SAFE=	yes
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.mk>

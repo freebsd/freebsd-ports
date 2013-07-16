@@ -16,8 +16,6 @@ CONFLICTS=	netpipes-[0-9]*
 MAN1=		timelimit.1
 PLIST_FILES=	bin/timelimit
 
-MAKE_JOBS_SAFE=	yes
-
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/timelimit ${PREFIX}/bin
 		${INSTALL_DATA} ${WRKSRC}/timelimit.1 ${PREFIX}/man/man1/
