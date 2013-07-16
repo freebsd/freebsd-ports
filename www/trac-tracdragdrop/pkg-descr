@@ -1,0 +1,11 @@
+This plugin extends attachments list in Trac.
+
+Drag-and-drop to attach files using HTML5 drag-and-drop, 
+XMLHttpRequest Level 2 and File API.
+Progress bar while uploading the files using XMLHttpRequest
+Level 2.
+More than one file for selecting attachment files.
+Attach an image from clipboard.
+Auto-submit on select a file to attach.
+
+WWW: http://trac-hacks.org/wiki/TracDragDropPlugin
