@@ -3,6 +3,7 @@
 
 PORTNAME=	Lvalue
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ASG
@@ -18,5 +19,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Lvalue.3
+
+post-patch::
+	@${REINPLACE_CMD} -e 's|qw(can isa DOES VERSION)|(qw(can isa DOES VERSION))|g' \
+		${WRKSRC}/lib/Lvalue.pm
+	@${RM} ${WRKSRC}/lib/Lvalue.pm.bak
 
 .include <bsd.port.mk>
