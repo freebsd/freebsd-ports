@@ -1,0 +1,38 @@
+input {
+  file {
+    type => "system logs"
+
+  #  # Wildcards work, here :)
+  #  path => [ "/var/log/*.log", "/var/log/messages", "/var/log/syslog" ]
+    path => [ "/var/log/messages" ]
+  }
+
+  #file {
+  #  type => "Hudson-access"
+  #  path => "/var/log/www/hudson.ish.com.au-access_log"
+  #}
+
+  #file {
+  #          type => "Syslog"
+  #  path => "/var/log/messages"
+  #}
+}
+
+output {
+  # Emit events to stdout for easy debugging of what is going through
+  # logstash.
+  #stdout { }
+
+  # This will use elasticsearch to store your logs.
+  # The 'embedded' option will cause logstash to run the elasticsearch
+  # server in the same process, so you don't have to worry about
+  # how to download, configure, or run elasticsearch!
+  elasticsearch { 
+     embedded => true
+     #embedded_http_port => 9200
+     #cluster => elasticsearch
+     #host => host
+     #port => port
+      
+  }
+}

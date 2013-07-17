@@ -1,0 +1,81 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: logstash
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+#
+# Configuration settings for logstash in /etc/rc.conf:
+#
+# logstash_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable logstash
+#
+# logstash_mode :
+#   Set to "standalone" by default.
+#   Valid options:
+#     "standalone": agent, web & elasticsearch
+#     "web": Starts logstash as a web ui
+#     "agent": Justs works as a log shipper 
+#
+# logstash_logging (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable logstash logging to file
+#   Default output to /var/log/logstash.log
+#
+
+. /etc/rc.subr
+
+name=logstash
+rcvar=logstash_enable
+
+load_rc_config ${name}
+
+: ${logstash_enable="NO"}
+: ${logstash_home="%%LOGSTASH_HOME%%"}
+: ${logstash_config="%%PREFIX%%/etc/${name}/${name}.conf"}
+: ${logstash_jar="%%LOGSTASH_HOME%%/%%LOGSTASH_JAR%%"}
+: ${logstash_java_home="%%JAVA_HOME%%"}
+: ${logstash_log="NO"}
+: ${logstash_mode="standalone"}
+: ${logstash_port="9292"}
+: ${logstash_elastic_backend=""}
+: ${logstash_log_file="${logdir}/${name}.log"}
+: ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
+
+piddir=/var/run/${name}
+pidfile=${piddir}/${name}.pid
+
+if [ -d $piddir ]; then
+	mkdir -p $piddir
+fi
+
+logdir="/var/log"
+command="/usr/sbin/daemon"
+
+java_cmd="${logstash_java_home}/bin/java"
+procname="${java_cmd}"
+
+logstash_chdir=${logstash_home}
+logstash_log_options=""
+logstash_elastic_options=""
+
+if checkyesno logstash_log; then
+	logstash_log_options=" --log ${logstash_log_file}" 
+fi
+
+if [ ${logstash_mode} = "standalone" ]; then
+	logstash_args="agent -f ${logstash_config} -- web --port ${logstash_port} --backend elasticsearch:///?local ${logstash_log_options}"
+	logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
+elif [ ${logstash_mode} = "agent" ]; then
+	logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
+elif [ ${logstash_mode} = "web" ]; then
+	logstash_args="web --port ${logstash_port} --backend elasticsearch://${logstash_elastic_backend}/ ${logstash_log_options}"
+fi
+
+command_args="-f -p ${pidfile} ${java_cmd} ${logstash_elastic_options} -jar ${logstash_jar} ${logstash_args}"
+required_files="${java_cmd} ${logstash_config}"
+
+run_rc_command "$1"
