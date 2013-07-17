@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-PORTVERSION=	36.0.1
+PORTVERSION=	36.0.2
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
@@ -34,7 +34,7 @@ QMAKEFLAGS+=	USE_ASPELL=false
 .endif
 
 .if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS+=	hunspell:${PORTSDIR}/textproc/hunspell
 QMAKEFLAGS+=	USE_HUNSPELL=true
 .else
 QMAKEFLAGS+=	USE_HUNSPELL=false
