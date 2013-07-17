@@ -41,6 +41,7 @@ lib/libocsync.so.0
 lib/libocsync.so.0.2.0
 lib/ocsync-0/ocsync_owncloud.so
 lib/ocsync-0/ocsync_smb.so
+lib/ocsync-0/ocsync_sftp.so
 @dirrm lib/ocsync-0
 @dirrm include/ocsync
 @dirrmtry %%ETCDIR%%
