@@ -1,9 +1,5 @@
-# New ports collection makefile for: Sun fortran preprocessor fpp
-# Date created:		30 January 1996
-# Whom:		 	vazquez@iqm.unicamp.br
-#
+# Created by: vazquez@iqm.unicamp.br
 # $FreeBSD$
-#
 
 PORTNAME=	fpp
 PORTVERSION=	1.1
@@ -17,17 +13,23 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
-USE_GMAKE=	yes
 ALL_TARGET=	bsd44
-INSTALL_TARGET=	bsd44-install
 MAN1=		fpp.1
 
-post-install:
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	README fpp_spec fpp_license.ps
+
+PLIST_FILES=	bin/fpp
+
+.include <bsd.port.options.mk>
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bsd44/fpp ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/fpp.1 ${MANPREFIX}/man/man1
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/fpp_spec ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/fpp_license.ps ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
