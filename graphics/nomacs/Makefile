@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nomacs
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/nomacs/nomacs-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -24,9 +24,10 @@ WRKSUBDIR=	${DISTNAME:S,-source,,}
 WRKSRC=		${WRKTOP}/${WRKSUBDIR}
 MAN1=		nomacs.1
 
-OPTIONS_DEFINE=	RAW
-OPTIONS_DEFAULT=	RAW
+OPTIONS_DEFINE=	RAW TIFF
+OPTIONS_DEFAULT=	RAW TIFF
 RAW_DESC=	RAW images support
+TIFF_DESC=	Support multi-page TIFF images
 
 .include <bsd.port.options.mk>
 
@@ -35,6 +36,12 @@ LIB_DEPENDS+=	raw:${PORTSDIR}/graphics/libraw \
 	opencv_legacy:${PORTSDIR}/graphics/opencv
 .else
 CMAKE_ARGS+=	-DENABLE_RAW=0
+.endif
+
+.if ${PORT_OPTIONS:MTIFF}
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+.else
+CMAKE_ARGS+=	-DENABLE_TIFF=0
 .endif
 
 post-extract:
