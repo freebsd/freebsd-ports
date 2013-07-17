@@ -33,6 +33,6 @@
 %%WWWDIR%%/localization/zh_CN.inc
 %%WWWDIR%%/package.xml
 @dirrm %%WWWDIR%%/localization
-@dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/SQL
+@dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
