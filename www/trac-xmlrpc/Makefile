@@ -4,7 +4,7 @@
 PORTNAME=	xmlrpc
 PORTVERSION=	1.1.2.r${SVN_REV}
 CATEGORIES=	www devel python
-MASTER_SITES=	http://trac-hacks.org/changeset/latest/xmlrpcplugin?old_path=/&format=zip&filename=
+MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 
@@ -13,9 +13,7 @@ COMMENT=	Provides an XML-RPC interface to Trac
 
 LICENSE=	BSD
 
-BROKEN=		checksum mismatch
-
-SVN_REV=	12168
+SVN_REV=	13203
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
