@@ -44,6 +44,8 @@ INSTDIR=	${PREFIX}/share/games/${PORTNAME}
 
 PORTDOCS=	faq.html
 
+BASH2FIX=	src/linux/torcs.in Make-default.mk
+
 DESKTOP_ENTRIES=	"TORCS" \
 			"The Open Racing Car Simulator" \
 			"${INSTDIR}/Ticon.png" \
@@ -56,6 +58,13 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
+
+# shebangfix does not catch these two (not at top of file):
+post-patch:
+.for FILE in ${BASH2FIX}
+	@${REINPLACE_CMD} -E -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
+	    ${WRKSRC}/${FILE}
+.endfor
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/games
