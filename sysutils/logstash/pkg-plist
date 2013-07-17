@@ -1,0 +1,13 @@
+%%LOGSTASH_HOME%%/%%LOGSTASH_JAR%%
+@exec mkdir -p %%LOGSTASH_RUN%%
+@exec mkdir -p %%LOGSTASH_DATA_DIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/logstash.conf.sample %D/%%ETCDIR%%/logstash.conf; then rm -f %D/%%ETCDIR%%/logstash.conf; fi
+%%ETCDIR%%/logstash.conf.sample
+@exec if [ ! -f  %D/%%ETCDIR%%/logstash.conf ] ; then cp -p %D/%F %B/logstash.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/elasticsearch.yml.sample %D/%%ETCDIR%%/elasticsearch.yml; then rm -f %D/%%ETCDIR%%/elasticsearch.yml; fi
+%%ETCDIR%%/elasticsearch.yml.sample
+@exec if [ ! -f  %D/%%ETCDIR%%/elasticsearch.yml ] ; then cp -p %D/%F %B/elasticsearch.yml; fi
+@dirrmtry %%LOGSTASH_DATA_DIR%%
+@dirrmtry %%LOGSTASH_HOME%%
+@dirrmtry %%ETCDIR%%
+@dirrmtry %%LOGSTASH_RUN%%
