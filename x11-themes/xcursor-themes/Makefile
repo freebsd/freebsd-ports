@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcursor-themes
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	x11-themes
 

@@ -1,4 +1,6 @@
+lib/X11/icons/handhelds/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
 lib/X11/icons/handhelds/cursors/X_cursor
+lib/X11/icons/handhelds/cursors/arrow
 lib/X11/icons/handhelds/cursors/based_arrow_down
 lib/X11/icons/handhelds/cursors/based_arrow_up
 lib/X11/icons/handhelds/cursors/bottom_left_corner
@@ -8,9 +10,13 @@ lib/X11/icons/handhelds/cursors/bottom_tee
 lib/X11/icons/handhelds/cursors/center_ptr
 lib/X11/icons/handhelds/cursors/circle
 lib/X11/icons/handhelds/cursors/cross
+lib/X11/icons/handhelds/cursors/cross_reverse
+lib/X11/icons/handhelds/cursors/crosshair
 lib/X11/icons/handhelds/cursors/dot
 lib/X11/icons/handhelds/cursors/dotbox
 lib/X11/icons/handhelds/cursors/double_arrow
+lib/X11/icons/handhelds/cursors/draft_large
+lib/X11/icons/handhelds/cursors/draft_small
 lib/X11/icons/handhelds/cursors/draped_box
 lib/X11/icons/handhelds/cursors/fleur
 lib/X11/icons/handhelds/cursors/gumby
@@ -21,6 +27,7 @@ lib/X11/icons/handhelds/cursors/left_side
 lib/X11/icons/handhelds/cursors/left_tee
 lib/X11/icons/handhelds/cursors/ll_angle
 lib/X11/icons/handhelds/cursors/pencil
+lib/X11/icons/handhelds/cursors/plus
 lib/X11/icons/handhelds/cursors/right_ptr
 lib/X11/icons/handhelds/cursors/right_side
 lib/X11/icons/handhelds/cursors/right_tee
@@ -29,13 +36,17 @@ lib/X11/icons/handhelds/cursors/sb_right_arrow
 lib/X11/icons/handhelds/cursors/sb_up_arrow
 lib/X11/icons/handhelds/cursors/sb_v_double_arrow
 lib/X11/icons/handhelds/cursors/shuttle
+lib/X11/icons/handhelds/cursors/tcross
+lib/X11/icons/handhelds/cursors/top_left_arrow
 lib/X11/icons/handhelds/cursors/top_left_corner
 lib/X11/icons/handhelds/cursors/top_right_corner
 lib/X11/icons/handhelds/cursors/top_side
 lib/X11/icons/handhelds/cursors/top_tee
 lib/X11/icons/handhelds/cursors/watch
 lib/X11/icons/handhelds/cursors/xterm
+lib/X11/icons/redglass/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
 lib/X11/icons/redglass/cursors/X_cursor
+lib/X11/icons/redglass/cursors/arrow
 lib/X11/icons/redglass/cursors/based_arrow_down
 lib/X11/icons/redglass/cursors/based_arrow_up
 lib/X11/icons/redglass/cursors/bottom_left_corner
@@ -45,9 +56,13 @@ lib/X11/icons/redglass/cursors/bottom_tee
 lib/X11/icons/redglass/cursors/center_ptr
 lib/X11/icons/redglass/cursors/circle
 lib/X11/icons/redglass/cursors/cross
+lib/X11/icons/redglass/cursors/cross_reverse
+lib/X11/icons/redglass/cursors/crosshair
 lib/X11/icons/redglass/cursors/dot
 lib/X11/icons/redglass/cursors/dotbox
 lib/X11/icons/redglass/cursors/double_arrow
+lib/X11/icons/redglass/cursors/draft_large
+lib/X11/icons/redglass/cursors/draft_small
 lib/X11/icons/redglass/cursors/draped_box
 lib/X11/icons/redglass/cursors/fleur
 lib/X11/icons/redglass/cursors/gumby
@@ -58,6 +73,7 @@ lib/X11/icons/redglass/cursors/left_side
 lib/X11/icons/redglass/cursors/left_tee
 lib/X11/icons/redglass/cursors/ll_angle
 lib/X11/icons/redglass/cursors/pencil
+lib/X11/icons/redglass/cursors/plus
 lib/X11/icons/redglass/cursors/right_ptr
 lib/X11/icons/redglass/cursors/right_side
 lib/X11/icons/redglass/cursors/right_tee
@@ -66,13 +82,17 @@ lib/X11/icons/redglass/cursors/sb_right_arrow
 lib/X11/icons/redglass/cursors/sb_up_arrow
 lib/X11/icons/redglass/cursors/sb_v_double_arrow
 lib/X11/icons/redglass/cursors/shuttle
+lib/X11/icons/redglass/cursors/tcross
+lib/X11/icons/redglass/cursors/top_left_arrow
 lib/X11/icons/redglass/cursors/top_left_corner
 lib/X11/icons/redglass/cursors/top_right_corner
 lib/X11/icons/redglass/cursors/top_side
 lib/X11/icons/redglass/cursors/top_tee
-lib/X11/icons/redglass/cursors/xterm
 lib/X11/icons/redglass/cursors/watch
+lib/X11/icons/redglass/cursors/xterm
+lib/X11/icons/whiteglass/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
 lib/X11/icons/whiteglass/cursors/X_cursor
+lib/X11/icons/whiteglass/cursors/arrow
 lib/X11/icons/whiteglass/cursors/base_arrow_down
 lib/X11/icons/whiteglass/cursors/base_arrow_up
 lib/X11/icons/whiteglass/cursors/boat
@@ -83,9 +103,13 @@ lib/X11/icons/whiteglass/cursors/bottom_tee
 lib/X11/icons/whiteglass/cursors/center_ptr
 lib/X11/icons/whiteglass/cursors/circle
 lib/X11/icons/whiteglass/cursors/cross
+lib/X11/icons/whiteglass/cursors/cross_reverse
+lib/X11/icons/whiteglass/cursors/crosshair
 lib/X11/icons/whiteglass/cursors/dot
 lib/X11/icons/whiteglass/cursors/dot_box_mask
 lib/X11/icons/whiteglass/cursors/double_arrow
+lib/X11/icons/whiteglass/cursors/draft_large
+lib/X11/icons/whiteglass/cursors/draft_small
 lib/X11/icons/whiteglass/cursors/draped_box
 lib/X11/icons/whiteglass/cursors/exchange
 lib/X11/icons/whiteglass/cursors/fleur
@@ -100,6 +124,7 @@ lib/X11/icons/whiteglass/cursors/ll_angle
 lib/X11/icons/whiteglass/cursors/lr_angle
 lib/X11/icons/whiteglass/cursors/pencil
 lib/X11/icons/whiteglass/cursors/pirate
+lib/X11/icons/whiteglass/cursors/plus
 lib/X11/icons/whiteglass/cursors/question_arrow
 lib/X11/icons/whiteglass/cursors/right_ptr
 lib/X11/icons/whiteglass/cursors/right_side
@@ -114,19 +139,21 @@ lib/X11/icons/whiteglass/cursors/sb_v_double_arrow
 lib/X11/icons/whiteglass/cursors/shuttle
 lib/X11/icons/whiteglass/cursors/sizing
 lib/X11/icons/whiteglass/cursors/target
+lib/X11/icons/whiteglass/cursors/tcross
+lib/X11/icons/whiteglass/cursors/top_left_arrow
 lib/X11/icons/whiteglass/cursors/top_left_corner
 lib/X11/icons/whiteglass/cursors/top_right_corner
 lib/X11/icons/whiteglass/cursors/top_side
 lib/X11/icons/whiteglass/cursors/top_tee
 lib/X11/icons/whiteglass/cursors/trek
 lib/X11/icons/whiteglass/cursors/ul_angle
-lib/X11/icons/whiteglass/cursors/watch
 lib/X11/icons/whiteglass/cursors/ur_angle
+lib/X11/icons/whiteglass/cursors/watch
 lib/X11/icons/whiteglass/cursors/xterm
-@dirrm lib/X11/icons/handhelds/cursors
-@dirrm lib/X11/icons/handhelds
-@dirrm lib/X11/icons/redglass/cursors
-@dirrm lib/X11/icons/redglass
 @dirrm lib/X11/icons/whiteglass/cursors
 @dirrm lib/X11/icons/whiteglass
+@dirrm lib/X11/icons/redglass/cursors
+@dirrm lib/X11/icons/redglass
+@dirrm lib/X11/icons/handhelds/cursors
+@dirrm lib/X11/icons/handhelds
 @dirrm lib/X11/icons
