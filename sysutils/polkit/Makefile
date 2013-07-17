@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-i
 
 USE_GNOME=	gnomehack glib20 intlhack gnomehier
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gettext
 USE_LDCONFIG=	yes
