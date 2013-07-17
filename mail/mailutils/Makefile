@@ -10,6 +10,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailutils offers utilities and daemons for processing e-mail
 
+DEPRECATED=	This port needs to be taken care of, it suffers from bit rot. \
+Especially with options other than GUILE, uninstall may leave files behind
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS+=--disable-build-comsat
