@@ -1,5 +1,7 @@
 bin/codelite
 %%CLANG%%bin/codelite-clang
+bin/clg++
+bin/clgcc
 bin/codelite_cppcheck
 bin/codelite_exec
 bin/codelite_fix_files
@@ -123,6 +125,10 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/gizmos/wxmain.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject-fb.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject.project.wizard
+%%DATADIR%%/templates/projects/ConsoleClang/ConsoleClang.project
+%%DATADIR%%/templates/projects/ConsoleClang/main.c
+%%DATADIR%%/templates/projects/ConsoleClang++/ConsoleClang++.project
+%%DATADIR%%/templates/projects/ConsoleClang++/main.cpp
 %%DATADIR%%/templates/projects/UnitTest++/UnitTest++.project
 %%DATADIR%%/templates/projects/UnitTest++/icon.png
 %%DATADIR%%/templates/projects/UnitTest++/main.cpp
@@ -254,6 +260,8 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/cobra-staticU
 @dirrm %%DATADIR%%/templates/projects/cobra-libraryU
 @dirrm %%DATADIR%%/templates/projects/cobra-executableU
+@dirrm %%DATADIR%%/templates/projects/ConsoleClang++
+@dirrm %%DATADIR%%/templates/projects/ConsoleClang
 @dirrm %%DATADIR%%/templates/projects/c_gtk3_template
 @dirrm %%DATADIR%%/templates/projects/c_gtk24_template
 @dirrm %%DATADIR%%/templates/projects/UnitTest++
