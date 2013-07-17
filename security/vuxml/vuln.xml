@@ -137,10 +137,12 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2013-3344</cvename>
       <cvename>CVE-2013-3345</cvename>
       <cvename>CVE-2013-3347</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb13-17.html</url>
     </references>
     <dates>
       <discovery>2013-07-09</discovery>
       <entry>2013-07-15</entry>
+      <modified>2013-07-18</modified>
     </dates>
   </vuln>
 
