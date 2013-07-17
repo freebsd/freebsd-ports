@@ -1,0 +1,5 @@
+This module provides a Perl interface to libcurl. It is not intended to be
+a standalone module and because of this, the main libcurl documentation
+should be consulted for API details at http://curl.haxx.se/.
+
+WWW: http://search.cpan.org/dist/WWW-Curl/
