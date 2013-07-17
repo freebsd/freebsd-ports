@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud-csync
-PORTVERSION=	0.70.7
+PORTVERSION=	0.80.0
 CATEGORIES=	net kde
 MASTER_SITES=	http://download.owncloud.com/download/
 DISTNAME=	ocsync-${PORTVERSION}
@@ -18,11 +18,12 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		ssh:${PORTSDIR}/security/libssh \
 		neon:${PORTSDIR}/www/neon29
 
-USES=	cmake:outsource
+USES=		cmake:outsource
 USE_BZIP2=	yes
 USE_PKGCONFIG=	build
 USE_SQLITE=	yes
 CMAKE_ARGS+=	-DWITH_LOG4C=NO \
+		-DUNIT_TESTING=NO \
 		-DMAN_INSTALL_DIR=${MANPREFIX}/man
 
 MAN1=		ocsync.1
