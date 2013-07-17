@@ -6,8 +6,8 @@ PORTVERSION=	4.8.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}/
 
-MAINTAINER=	bsd@tuxproject.de
-COMMENT=	A fast, small and powerful file manager
+MAINTAINER=	rodrigo@bebik.net
+COMMENT=	Fast, small and powerful file manager
 
 LICENSE=	GPLv3
 
@@ -21,9 +21,9 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		gtk-x11-2:${PORTSDIR}/x11-toolkits/gtk20 \
 		magic:${PORTSDIR}/sysutils/file
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
