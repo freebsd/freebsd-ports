@@ -38,6 +38,10 @@ PGSQL_DESC=		Enable Postgres support
 LDAP_DESC=		Enable LDAP support
 PYTHON_DESC=		Enable Python support
 
+GUILE_CONFIGURE_ON=	--with-guile
+GUILE_CONFIGURE_OFF=	--without-guile
+GUILE_LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
@@ -107,10 +111,6 @@ PLIST_SUB+=		NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
-
-GUILE_CONFIGURE_ON=	--with-guile
-GUILE_CONFIGURE_OFF=	--without-guile
-GUILE_LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 post-patch:
 	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|g' ${WRKSRC}/lib/Makefile.in
