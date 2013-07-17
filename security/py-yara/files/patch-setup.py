@@ -1,17 +1,12 @@
---- ./setup.py.orig	2011-03-08 15:18:51.000000000 -0500
-+++ ./setup.py	2011-05-22 21:27:25.075485034 -0400
-@@ -10,9 +10,10 @@
-         ext_modules = [ Extension(
+--- ./setup.py.orig	2013-07-17 12:52:04.000000000 -0400
++++ ./setup.py	2013-07-17 12:51:52.000000000 -0400
+@@ -10,7 +10,8 @@
                                      name='yara', 
                                      sources=['yara-python.c'],
--                                    libraries=['yara','pcre'],
+                                     libraries=['yara','pcre'],
 -                                    include_dirs=['/usr/local/include']
-+                                    libraries=['yara','re2'],
 +                                    include_dirs=['%%LOCALBASE%%/include'],
 +                                    library_dirs=['%%LOCALBASE%%/lib']
                                      )])
       
   
--                                  
-\ No newline at end of file
-+                                  
