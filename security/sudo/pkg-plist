@@ -71,3 +71,6 @@ sbin/visudo
 etc/sudoers.d/.keep-me
 @dirrm libexec/sudo
 @dirrmtry etc/sudoers.d
+@cwd /
+@dirrmtry /var/db/sudo
+@cwd
