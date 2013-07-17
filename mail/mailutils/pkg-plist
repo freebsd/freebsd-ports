@@ -276,6 +276,24 @@ sbin/imap4d
 sbin/maidag
 sbin/pop3d
 share/aclocal/mailutils.m4
+%%GUILE%%bin/sieve.scm
+%%GUILE%%bin/guimb
+%%GUILE%%lib/libmu_scm.so.3
+%%GUILE%%lib/libmu_scm.so
+%%GUILE%%lib/libmu_scm.la
+%%GUILE%%lib/libmu_scm.a
+%%GUILE%%lib/libguile-mailutils-v-2.2.so
+%%GUILE%%share/guile/site/mailutils/mailutils.scm
+%%GUILE%%share/guile/site/mailutils/guile-procedures.txt
+%%GUILE%%share/guile/site/mailutils/sieve-modules/mimeheader.scm
+%%GUILE%%share/guile/site/mailutils/sieve-modules/numaddr.scm
+%%GUILE%%share/guile/site/mailutils/sieve-modules/redirect.scm
+%%GUILE%%share/guile/site/mailutils/sieve-modules/reject.scm
+%%GUILE%%share/guile/site/mailutils/sieve-modules/vacation.scm
+%%GUILE%%share/guile/site/mailutils/sieve-core.scm
+%%GUILE%%@dirrmtry share/guile/site/mailutils/sieve-modules
+%%GUILE%%@dirrmtry share/guile/site/mailutils
+%%GUILE%%@dirrmtry share/guile/site%%NLS%%share/locale/ca/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mailutils.mo

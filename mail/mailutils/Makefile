@@ -3,11 +3,11 @@
 
 PORTNAME=	mailutils
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
-MAINTAINER=	bra@fsn.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailutils offers utilities and daemons for processing e-mail
 
 GNU_CONFIGURE=	yes
@@ -15,14 +15,16 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS+=--disable-build-comsat
 MAKE_JOBS_UNSAFE=	yes
 
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 INFO=		${PORTNAME}
 MAN1=		imap4d.1 mail.1 pop3d.1 popauth.1
 
 OPTIONS_DEFINE=		GDBM BDB TOKYOCABINET GNUTLS MYSQL PGSQL LDAP PYTHON
-OPTIONS_DEFAULT=	
+OPTIONS_DEFINE+=	GUILE
+OPTIONS_DEFAULT=
+OPTIONS_SUB=		yes
 
 GDBM_DESC=		Use GNU DBM
 BDB_DESC=		Use Berkeley DB
@@ -37,7 +39,7 @@ PYTHON_DESC=		Enable Python support
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=	--with-gdbm
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
@@ -51,7 +53,7 @@ CONFIGURE_ARGS+=	--without-berkeley-db
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet
-LIB_DEPENDS+=		tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 PLIST_SUB+=		TOKYOCABINET=""
 .else
 CONFIGURE_ARGS+=	--without-tokyocabinet
@@ -102,6 +104,10 @@ PLIST_SUB+=		NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
+
+GUILE_CONFIGURE_ON=	--with-guile
+GUILE_CONFIGURE_ON=	--without-guile
+GUILE_LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 post-patch:
 	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|g' ${WRKSRC}/lib/Makefile.in
