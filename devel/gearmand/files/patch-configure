@@ -1,6 +1,6 @@
---- ./configure.orig	2012-10-03 15:37:17.000000000 -0400
-+++ ./configure	2012-10-03 15:37:17.000000000 -0400
-@@ -19021,7 +19021,7 @@
+--- ./configure.orig	2013-07-17 10:46:57.000000000 -0400
++++ ./configure	2013-07-17 10:46:57.000000000 -0400
+@@ -17972,7 +17972,7 @@
  
  else
  
@@ -9,7 +9,7 @@
  
  	CURL_CFLAGS="`$CURL_CONFIG $curl_config_args --cflags`"
  
-@@ -19031,7 +19031,7 @@
+@@ -17982,7 +17982,7 @@
  
  fi
  
@@ -18,7 +18,7 @@
  
  	CURL_LIBS="`$CURL_CONFIG $curl_config_args --libs`"
  
-@@ -19842,6 +19842,7 @@
+@@ -18667,6 +18667,7 @@
                          | sed -e 's/"//'`
                  if test $ac_sqlite3_version != ""; then
                      SQLITE3_VERSION=$ac_sqlite3_version
@@ -26,3 +26,14 @@
                  else
                      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Cannot find SQLITE_VERSION macro in sqlite3.h header to retrieve SQLite version!" >&5
  $as_echo "$as_me: WARNING: Cannot find SQLITE_VERSION macro in sqlite3.h header to retrieve SQLite version!" >&2;}
+@@ -23849,8 +23850,8 @@
+       LIBS="$PTHREAD_LIBS"
+       ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+-ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compile='$CC -c $CFLAGS $CPPFLAGS -Werror conftest.$ac_ext >&5'
++ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS -Werror $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	gearmand
-# Date created:		2009-01-29
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gearmand
-PORTVERSION=	0.41
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
@@ -20,7 +16,7 @@ LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
-CONFLICTS=	p5-Gearman-Server-1.*
+CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 
 .if defined(MAINTAINER_MODE) && ${MAINTAINER_MODE:Myes}
 UID_FILES=	../../UIDs
@@ -198,6 +194,7 @@ MAN3=	gearman_actions_t.3 \
 	gearman_worker_remove_options.3 \
 	gearman_worker_remove_servers.3 \
 	gearman_worker_set_context.3 \
+	gearman_worker_set_identifier.3 \
 	gearman_worker_set_log_fn.3 \
 	gearman_worker_set_memory_allocators.3 \
 	gearman_worker_set_namespace.3 \
