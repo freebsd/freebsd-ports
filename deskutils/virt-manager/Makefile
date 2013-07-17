@@ -5,7 +5,8 @@ PORTNAME=	virt-manager
 PORTVERSION=	0.9.5
 PORTREVISION=	1
 CATEGORIES=	deskutils net-mgmt
-MASTER_SITES=	http://virt-manager.et.redhat.com/download/sources/${PORTNAME}/
+MASTER_SITES=	http://virt-manager.et.redhat.com/download/sources/${PORTNAME}/ \
+		LOCAL/jgh/deskutils/${PORTNAME}/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
@@ -19,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2:${PORTSDIR}/x11-toolkits/py-vte \
 		gtk-vnc>=0.3.10:${PORTSDIR}/net/gtk-vnc \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2
+
+FETCH_ARGS?=	-Fpr
 
 .include <bsd.port.options.mk>
 
