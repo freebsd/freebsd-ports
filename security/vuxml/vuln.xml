@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9b037a0d-ef2c-11e2-b4a0-8c705af55518">
+    <topic>gallery -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gallery3</name>
+	<range><lt>3.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat Security Response Team reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2013/07/04/7">
+	  <p>Gallery upstream has released 3.0.9 version, correcting two
+	    security flaws:</p>
+	  <p>Issue #1 - Improper stripping of URL fragments in flowplayer
+	    SWF file might lead to reply attacks (a different flaw than
+	    CVE-2013-2138).</p>
+	  <p>Issue #2 - gallery3: Multiple information exposure flaws in
+	    data rest core module.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2240</cvename>
+      <cvename>CVE-2013-2241</cvename>
+      <url>http://sourceforge.net/apps/trac/gallery/ticket/2073</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=981197</url>
+      <url>http://sourceforge.net/apps/trac/gallery/ticket/2074</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=981198</url>
+      <url>http://galleryproject.org/gallery_3_0_9</url>
+    </references>
+    <dates>
+      <discovery>2013-06-28</discovery>
+      <entry>2013-07-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31b145f2-d9d3-49a9-8023-11cf742205dc">
     <topic>PHP5 -- Heap corruption in XML parser</topic>
     <affects>
