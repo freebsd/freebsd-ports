@@ -20,11 +20,10 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gmake shebangfix
-SHEBANG_FILES=	src/linux/torcs.in src/tools/accc/accc.in \
-		src/tools/nfsperf/nfsperf.in \
+SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
 		src/tools/trackgen/trackgen.in \
-		src/modules/telemetry/telemetry.sh robotgen Make-default.mk
+		src/modules/telemetry/telemetry.sh robotgen
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
 USE_GL=		glut
 USE_OPENAL=	al alut
