@@ -1011,8 +1011,6 @@ bin/obspy-xseed2dataless
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/evalresp/resp_fctns.obj
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/evalresp/string_fctns.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/evalresp/string_fctns.obj
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/fft/fftpack_litemodule.obj
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/fft/fftpack.obj
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/filt_util.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/filt_util.obj
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/libevresp.def
@@ -1428,7 +1426,6 @@ bin/obspy-xseed2dataless
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/taup
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/fft
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src/evalresp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/src
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/data
