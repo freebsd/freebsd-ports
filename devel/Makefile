@@ -534,6 +534,7 @@
     SUBDIR += geany-plugins
     SUBDIR += geany-plugins-l10n
     SUBDIR += gearmand
+    SUBDIR += gearmand-devel
     SUBDIR += gecode
     SUBDIR += generate
     SUBDIR += generatorrunner

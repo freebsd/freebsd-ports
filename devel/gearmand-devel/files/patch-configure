@@ -1,0 +1,40 @@
+--- ./configure.orig	2013-06-06 19:06:29.000000000 -0400
++++ ./configure	2013-07-17 14:33:54.000000000 -0400
+@@ -17976,7 +17976,7 @@
+ done
+ test -n "$CURL_CONFIG" || CURL_CONFIG="no"
+ 
+-    if test "$CURL_CONFIG" == "no"; then :
++    if test "$CURL_CONFIG" = "no"; then :
+ 
+       :
+ 
+@@ -17986,7 +17986,7 @@
+ 
+ else
+ 
+-            if test x"" == x; then :
++            if test x"" = x; then :
+ 
+ 	CURL_CFLAGS="`$CURL_CONFIG $curl_config_args --cflags`"
+ 
+@@ -17996,7 +17996,7 @@
+ 
+ fi
+ 
+-            if test x"" == x; then :
++            if test x"" = x; then :
+ 
+ 	CURL_LIBS="`$CURL_CONFIG $curl_config_args --libs`"
+ 
+@@ -23954,8 +23954,8 @@
+       LIBS="$PTHREAD_LIBS"
+       ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+-ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compile='$CC -c $CFLAGS $CPPFLAGS -Werror conftest.$ac_ext >&5'
++ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS -Werror $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
