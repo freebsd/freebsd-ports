@@ -2,6 +2,7 @@
 
 PORTNAME=	automatic_addressbook
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://code.crapouillou.net/attachments/download/19/
 PKGNAMEPREFIX=	roundcube-
