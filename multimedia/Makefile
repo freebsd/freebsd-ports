@@ -352,6 +352,7 @@
     SUBDIR += transkode
     SUBDIR += tstools
     SUBDIR += tunapie
+    SUBDIR += tvheadend
     SUBDIR += umph
     SUBDIR += umplayer
     SUBDIR += umr
