@@ -59,6 +59,7 @@ NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USES=		iconv
 USE_AUTOTOOLS=	automake autoconf
+AUTOMAKE_ARGS=  --add-missing
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
