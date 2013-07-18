@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amavisd-milter
-# Date created:		2005-06-08
-# Whom:			Petr Rehor <prehor@gmail.com>
-#
+# Created by: Petr Rehor <prehor@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.5.0
@@ -15,6 +11,8 @@ MAINTAINER=	prehor@gmail.com
 COMMENT=	Milter for amavisd-new
 
 RUN_DEPENDS=	amavisd:${PORTSDIR}/security/amavisd-new
+
+BROKEN=	Does not build
 
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
