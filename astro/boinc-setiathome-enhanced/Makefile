@@ -18,11 +18,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_XZ=		yes
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GCC=	any
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
