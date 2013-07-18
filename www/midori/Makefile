@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	midori
-PORTVERSION=	0.5.2
-CATEGORIES=	www xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
+PORTVERSION=	0.5.4
+CATEGORIES=	www
+MASTER_SITES=	http://www.midori-browser.org/downloads/
+DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_ro
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--enable-libnotify \
-		--enable-addons \
+CONFIGURE_ARGS+=--enable-addons \
 		--enable-docs \
 		--disable-gtk3 \
 		--jobs=${MAKE_JOBS_NUMBER}
