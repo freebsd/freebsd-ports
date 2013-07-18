@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv pathfix pkgconfig
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
@@ -35,7 +34,7 @@ CONFIGURE_ARGS+=	--enable-shared \
 LDFLAGS+=		-L${LOCALBASE}/lib -lintl -pthread
 CFLAGS+=		-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	ASPELL GPG GSM GTK2 PERL PYTHON SQLITE UNICODE XOSD
+OPTIONS_DEFINE=	ASPELL GPG GSM GTK2 NLS PERL PYTHON SQLITE UNICODE XOSD
 OPTIONS_SUB=	yes
 
 ASPELL_DESC=	Enable spell checking support
