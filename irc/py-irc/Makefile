@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irc
-PORTVERSION=	8.3.1
+PORTVERSION=	8.3.2
 CATEGORIES=	irc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,9 +32,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-                's|use_2to3=True,|use_2to3=True, zip_safe=False,|' ${WRKSRC}/setup.py
+		's|use_2to3=True,|use_2to3=True, zip_safe=False,|' ${WRKSRC}/setup.py
 	${CHMOD} -R o-w ${WRKSRC}/irc.egg-info
-
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
