@@ -25,6 +25,7 @@ PRE-INSTALL)
 	fi
 ;;
 POST-INSTALL)
+    if [ "%%CRON%%" = "CRON" ]; then
 	if [ -f %%EXAMPLESDIR%%/crontab.in ] ; then
 		if /usr/bin/crontab -u "${user}" -l >/tmp/logchecktab$$ 2>&1 ; then
 			if test -s /tmp/logchecktab$$; then
@@ -48,6 +49,13 @@ POST-INSTALL)
 		fi
 		rm -f /tmp/logchecktab$$
         fi
+    else
+        echo "---> Crontab file was not installed for user \"${user}\""
+        if [ -f %%EXAMPLESDIR%%/crontab.in ]; then
+            echo "---> A sample crontab file can be found in %%EXAMPLESDIR%%/crontab.in"
+            echo "---> for manual installation."
+        fi
+    fi
 
 	for f in ${configfiles}; do
 		if [ ! -e %%PREFIX%%/etc/logcheck/${f} ]; then
