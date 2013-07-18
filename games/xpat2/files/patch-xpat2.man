@@ -1,0 +1,54 @@
+--- xpat2.man.orig
++++ xpat2.man
+@@ -136,7 +136,7 @@
+ nice cardbacks.
+ 
+ If the directory name \fIxpmdir\fP does not start with a dot or a slash,
+-it is interpreted as a subdirectory of \fB/usr/games/lib/xpat\fP.
++it is interpreted as a subdirectory of \fB%%PREFIX%%/lib/xpat\fP.
+ .TP 4
+ .B \-xpmcls \fIxpmcls\fP
+ (Resource: \fBTableau.xpmcls\fP)
+@@ -193,22 +193,19 @@
+ a format supported by your X-server (pcf, snf, ...)
+ 
+ .SH FILES
+-(Directories may differ on your system, especially the library subdirectory
+- may be \fB/usr/games/lib/xpat\fP instead of \fB/usr/lib/games/xpat\fP.)
+ 
+- \fB/usr/games/xpat2\fP
+- \fB/var/lib/games/xpat2/xpat.log\fP
+- \fB/usr/doc/copyright/xpat2\fP
+- \fB/usr/lib/games/xpat/small.cards\fP
+- \fB/usr/lib/games/xpat/french.cards\fP
+- \fB/usr/lib/games/xpat/audio/success.au\fP
+- \fB/usr/lib/games/xpat/audio/giveup.au\fP
+- \fB/usr/lib/games/xpat/audio/goodbye.au\fP
+- \fB/usr/lib/games/xpat/audio/cannotsave.au\fP
+- \fB/usr/lib/games/xpat/help.*\fP
+- \fB/usr/lib/games/xpat/hlp*\fP
++ \fB%%PREFIX%%/bin/xpat2\fP
++ \fB/var/games/xpat.log\fP
++ \fB%%PREFIX%%/lib/xpat/small.cards\fP
++ \fB%%PREFIX%%/lib/xpat/french.cards\fP
++ \fB%%PREFIX%%/lib/xpat/audio/success.au\fP
++ \fB%%PREFIX%%/lib/xpat/audio/giveup.au\fP
++ \fB%%PREFIX%%/lib/xpat/audio/goodbye.au\fP
++ \fB%%PREFIX%%/lib/xpat/audio/cannotsave.au\fP
++ \fB%%PREFIX%%/lib/xpat/help.*\fP
++ \fB%%PREFIX%%/lib/xpat/hlp*\fP
+ 
+-and a number of subdirs of \fB/usr/lib/games/xpat\fP, containing sets of colour
++and a number of subdirs of \fB%%PREFIX%%/lib/xpat\fP, containing sets of colour
+ cards.
+ 
+ .SH DIAGNOSTICS
+@@ -238,7 +235,7 @@
+ Please mail bug reports to \fBMichael.Bischoff@gmx.net\fP.
+ Fixes are especially welcome.
+ .SH SEE ALSO
+-\fBxpat(6x)\fP, \fBspider(1)\fP, \fBxsol(1)\fP
++\fBxpat(6)\fP, \fBspider(1)\fP, \fBxsol(1)\fP
+ 
+ .SH AUTHORS
+ Heiko Eissfeldt and Michael Bischoff
