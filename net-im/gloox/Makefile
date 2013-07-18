@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gloox
-# Date created:			24 April 2006
-# Whom:				trasz
-#
+# Created by: trasz
 # $FreeBSD$
-#
 
 PORTNAME=	gloox
 PORTVERSION=	1.0
@@ -19,7 +15,7 @@ LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
