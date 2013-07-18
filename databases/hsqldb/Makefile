@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hsqldb
-PORTVERSION=	2.2.9
+PORTVERSION=	2.3.0
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_2_2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_2_3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable SQL database written in Java
@@ -20,9 +20,6 @@ BUILD_WRKSRC=	${WRKSRC}/build
 ALL_TARGET=	hsqldb hsqljdbc
 
 .include <bsd.port.options.mk>
-
-pre-build:
-	${MKDIR} ${WRKSRC}/doc-src
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files to ${JAVAJARDIR}..."
