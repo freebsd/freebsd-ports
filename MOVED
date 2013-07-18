@@ -4436,3 +4436,5 @@ net/avahi-qt3||2013-07-13|Depends on the expired Qt3 port
 www/xpi-gwt-dev-plugin||2013-07-15|Has expired: Requires an ancient version of Firefox to build
 security/pyobfsproxy|security/obfsproxy|2013-07-15|Rename
 devel/kdevelop-custom-buildsystem||2013-07-17|Has expired: part of devel/kdevelop-kde4 now
+editors/code-browser||2013-07-18|Removed
+lang/copper||2013-07-18|Removed

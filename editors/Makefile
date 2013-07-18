@@ -43,7 +43,6 @@
     SUBDIR += calligra-l10n-sv
     SUBDIR += calligra-l10n-tr
     SUBDIR += chexedit
-    SUBDIR += code-browser
     SUBDIR += codeeditor
     SUBDIR += codelite
     SUBDIR += color-mate

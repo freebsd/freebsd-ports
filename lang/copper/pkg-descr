@@ -1,7 +1,0 @@
-Copper an experimental programming language used to develop Code Browser 4.
-It is based on Zinc [http://tibleiz.net/zinc/] with some improvements such
-as genericity, multiple return values or variadic arguments. It does not
-generate intermediary C code anymore, it has two backends: a x86 COFF
-generator and LLVM (version 2.9). 
-
-WWW: http://tibleiz.net/copper/
