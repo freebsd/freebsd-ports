@@ -1,5 +1,5 @@
---- Xpat.tmpl.orig	Sun Nov  5 12:03:10 2000
-+++ Xpat.tmpl		Sun Jul 28 17:38:32 2002
+--- Xpat.tmpl.orig
++++ Xpat.tmpl
 @@ -40,9 +40,9 @@
  
  XCOMM 1. Specify User Interface (_exactly_ one of the interfaces below)
@@ -41,7 +41,8 @@
  
  XPATLIBDIR	= $(XPATROOT)
  APPDEFSDIR	= $(LIBDIR)
- XPATMANDIR	= $(XPATROOT)/man/man6
+-XPATMANDIR	= $(XPATROOT)/man/man6
++XPATMANDIR	= $(PREFIX)/man/man6
 +MANSUFFIX	= 6
  
  XCOMM This is the name of the log-file, where solved games are stored:

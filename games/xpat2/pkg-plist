@@ -176,5 +176,4 @@ lib/xpat/it_IT
 @dirrm lib/xpat/italian
 @dirrm lib/xpat/russian
 @dirrm lib/xpat
-@cwd /
-var/games/xpat.log
+@unexec if [ ! -s /var/games/xpat.log ]; then rm -f /var/games/xpat.log; fi
