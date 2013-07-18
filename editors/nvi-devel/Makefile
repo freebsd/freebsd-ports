@@ -1,15 +1,12 @@
-# New ports collection makefile for:	nvi-devel
-# Date created:			6 July 2001
-# Whom:				dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
 PORTREVISION=	5
 CATEGORIES=	editors
-MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
+MASTER_SITES=	http://garage.linux.student.kuleuven.be/~skimo/nvi/devel/ \
+		http://www.kotnet.org/~skimo/nvi/devel/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
