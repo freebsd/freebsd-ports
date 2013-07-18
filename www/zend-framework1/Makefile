@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zend-framework
-# Date created:		31 October 2006
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ZendFramework
 PORTVERSION=	1.12.0
@@ -12,14 +8,14 @@ CATEGORIES=	www
 MASTER_SITES=	http://packages.zendframework.com/releases/${DISTNAME}/
 
 MAINTAINER=	wg@FreeBSD.org
-COMMENT=	A framework for developing PHP web applications
+COMMENT=	Framework for developing PHP web applications
+
+LICENSE=	BSD
 
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
 USES=		gettext
-
-LICENSE=	BSD
 
 CONFLICTS=	ZendFramework-2.*
 
