@@ -30,11 +30,11 @@
 # red5_java_opts (str):
 #   Set to "" by default.
 #   Java VM args to use.
-#   Eg: red5_java_opts="-Xrs -Xms512M -Xmx1024M -Xss128K -XX:NewSize=256m -XX:SurvivorRatio=16 \
-#			-XX:MinHeapFreeRatio=20 -XX:+AggressiveHeap -XX:+ExplicitGCInvokesConcurrent \
-#			-XX:+UseConcMarkSweepGC -Dsun.rmi.dgc.client.gcInterval=990000 \
-#			-Dsun.rmi.dgc.server.gcInterval=990000 
-#			-Djava.net.preferIPv4Stack=true -Xverify:none"
+#   Eg: red5_java_opts="-Xmx768m -Xms256 -Xmn512m -Xss256k -XX:+AggressiveOpts \
+#	-XX:+DisableExpl    icitGC -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC \
+#	-XX:+UseParNewGC -XX:SurvivorRa    tio=16 -XX:TargetSurvivorRatio=90 \
+#	-XX:MaxTenuringThreshold=31 -Djava.net.preferIPv4Sta    ck=true
+#
 #
 # red5_user (str)
 #   Set to %%RED5_USER%% by default.
@@ -76,7 +76,7 @@ red5_stop_timeout="${red5_stop_timeout:-"10"}"
 red5_opts="${red5_logging_opts} ${red5_security_opts} ${red5_java_opts}"
 red5_stop_opts="-Djavax.net.ssl.keyStore=${red5_home}/conf/keystore.jmx \
 		-Djavax.net.ssl.keyStorePassword=password"
-red5_classpath="${red5_home}/boot.jar:${red5_home}/conf:${CLASSPATH}"
+red5_classpath="${red5_home}/red5-server-1.0-bootstrap.jar:${red5_home}/conf:${CLASSPATH}"
 
 red5_start_cmd="${java_command} ${red5_jython_opt} -Dred5.root=${red5_home} \
 		${red5_opts} -cp ${red5_classpath} ${red5_mainclass}"
