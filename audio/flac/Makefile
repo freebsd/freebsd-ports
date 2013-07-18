@@ -3,6 +3,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 
@@ -20,7 +21,6 @@ CONFIGURE_ARGS=	--enable-sse \
 		--disable-silent-rules \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	DOCS ICONV
 OPTIONS_DEFAULT=ICONV
