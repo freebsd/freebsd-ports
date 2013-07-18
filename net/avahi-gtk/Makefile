@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/net/avahi-gtk/Makefile,v 1.9 2012/07/09 18:22:19 kwm Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-gtk
 
