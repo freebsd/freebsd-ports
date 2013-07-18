@@ -3,19 +3,20 @@
 
 PORTNAME=	obspy
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-#DISTNAME=	${PORTNAME:S,-,.,}-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	Core Classes of Python for Seismological Observatories
+COMMENT=	Python framework for seismological observatories
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:${PORTSDIR}/science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:${PORTSDIR}/net/py-suds
+		${PYTHON_PKGNAMEPREFIX}suds>=0.4.0:${PORTSDIR}/net/py-suds \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_FORTRAN=		yes
