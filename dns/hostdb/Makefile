@@ -17,6 +17,9 @@ HOSTDB_EXAMPLES_DIRS+=	mailserverexample/out mailserverexample
 
 .include <bsd.port.options.mk>
 
+pre-install:
+	${FIND} ${WRKSRC} -name "*\.orig" -delete
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${PREFIX}/bin
 .if ${PORT_OPTIONS:MEXAMPLES}
