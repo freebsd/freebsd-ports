@@ -1,9 +1,5 @@
-# New ports collection makefile for:	inplace(1)
-# Date created:		2 May 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	inplace
 PORTVERSION=	1.2.3
@@ -27,12 +23,7 @@ MAN1=		inplace.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/inplace
 
-RUBY_REQUIRE=	Ruby > 182
+test: build
+	cd ${WRKSRC}; ${MAKE} test
 
-.include <bsd.port.pre.mk>
-
-.if !defined(RUBY_PROVIDED)
-IGNORE=		only works with Ruby 1.8.0 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
