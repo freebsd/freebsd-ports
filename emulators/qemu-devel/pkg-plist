@@ -120,12 +120,12 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
-%%GTK%%share/locale/de_DE/LC_MESSAGES/qemu.mo
-%%GTK%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
-%%GTK%%share/locale/it/LC_MESSAGES/qemu.mo
-%%GTK%%share/locale/tr/LC_MESSAGES/qemu.mo
+%%GTK2%%share/locale/de_DE/LC_MESSAGES/qemu.mo
+%%GTK2%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
+%%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo
+%%GTK2%%share/locale/tr/LC_MESSAGES/qemu.mo
 @dirrm %%DATADIR%%/keymaps
-%%GTK%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%GTK%%@dirrmtry share/locale/de_DE
+%%GTK2%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%GTK2%%@dirrmtry share/locale/de_DE
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DOCSDIR%%
