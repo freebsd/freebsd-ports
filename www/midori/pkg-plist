@@ -28,7 +28,6 @@ lib/midori/libtab-panel.so
 lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libtransfers.so
-lib/midori/libweb-cache.so
 share/applications/midori.desktop
 share/applications/midori-private.desktop
 %%DOCSDIR%%/AUTHORS
@@ -67,7 +66,6 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriBrowser.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriExtension.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriPreferences.html
-%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-gtkiconentry.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-app.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-array.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-bookmarks.html
@@ -114,8 +112,10 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/be/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/da/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/de/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/el/LC_MESSAGES/midori.mo
@@ -124,19 +124,27 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 %%NLS%%share/locale/es/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/et/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/gd/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/he/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/ia/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/id/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/it/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/ky/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/no/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/midori.mo
@@ -145,12 +153,15 @@ share/icons/hicolor/scalable/status/internet-news-reader.svg
 %%NLS%%share/locale/ro/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/th/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/midori.mo
 %%DATADIR%%/res/about.css
@@ -181,8 +192,14 @@ share/vala/vapi/transfers.vapi
 %%NLS%%@dirrmtry share/locale/ug
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ia
+%%NLS%%@dirrmtry share/locale/gd/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gd
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
 %%APIDOCS%%@dirrm %%DOCSDIR%%/api/midori/html
