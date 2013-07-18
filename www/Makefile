@@ -2205,6 +2205,7 @@
     SUBDIR += yuicompressor
     SUBDIR += zen-cart
     SUBDIR += zend-framework
+    SUBDIR += zend-framework1
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
     SUBDIR += zikula
