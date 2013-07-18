@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
+F=%%BOINC_CLIENT_HOME%%/projects/%%SETI_SITE%%/app_info.xml
+
+if [ ! -f $F ]; then
+    echo Creating new $F
+    echo "<app_info>" > $F
+    echo "</app_info>" >> $F
+    chown %%BOINC_CLIENT_USER%%:%%BOINC_CLIENT_GROUP%% $F
+fi
+
+echo Adding setiathome_v7 lines to $F
+ed - $F <<EOF
+1a
+<app>
+<name>setiathome_v7</name>
+</app>
+<file_info>
+<name>%%SETI_BINARY%%</name>
+<executable/>
+</file_info>
+<app_version>
+<app_name>setiathome_v7</app_name>
+<version_num>%%SETI_VERSION%%</version_num>
+<file_ref>
+<file_name>%%SETI_BINARY%%</file_name>
+<main_program/>
+</file_ref>
+</app_version>
+.
+w
+q
+EOF
