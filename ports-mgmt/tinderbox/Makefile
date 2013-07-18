@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -46,7 +45,6 @@ WEBUI=		yes
 .endif
 
 .if defined(WEBUI)
-EXTRA_PATCHES+=	${PATCHDIR}/fail-reasons-patch
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
