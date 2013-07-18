@@ -13,10 +13,10 @@ you update your ports collection, before attempting any port upgrades.
   installation of the crontab file. When installing the port interactively,
   the port option is enabled by default to mimic previous behavior.
 
-  When the port is installed non-interactively (BATCH=yes or
-  PACKAGE_BUILDING=yes), the crontab file *will not* be installed
-  automatically. If the EXAMPLES port option is enabled, the crontab file
-  can be installed manually at a later time from EXAMPLESDIR/crontab.in.
+  When the port is installed non-interactively (BATCH=yes) the crontab
+  file *will not* be installed automatically. If the EXAMPLES port option
+  is enabled, the crontab file can be installed manually at a later time
+  from EXAMPLESDIR/crontab.in.
 
 20130718:
   AFFECTS: users of www/zend-framework
