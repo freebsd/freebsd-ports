@@ -1,0 +1,15 @@
+--- Makefile.orig
++++ Makefile
+@@ -25,10 +25,10 @@ MFILES= dev/pccard/card_if.m dev/pccard/
+ 	dev/ofw/ofw_bus_if.m isa/isa_if.m kern/bus_if.m \
+ 	kern/device_if.m kern/serdev_if.m
+ 
+-uartlirc_if.h: uartlirc_if.m
++uartlirc_if.h: uartlirc_if.m @
+ 	${AWK} -f @/tools/makeobjops.awk uartlirc_if.m -h
+ 
+-uartlirc_if.c: uartlirc_if.m
++uartlirc_if.c: uartlirc_if.m @
+ 	${AWK} -f @/tools/makeobjops.awk uartlirc_if.m -c
+ 
+ devuart:
