@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inplace
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,7 @@ USE_RUBY=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"
 MAKEFILE=	BSDmakefile
 
-RUBY_SHEBANG_FILES=	inplace.rb
+RUBY_SHEBANG_FILES=	lib/inplace.rb
 
 MAN1=		inplace.1
 MANCOMPRESSED=	maybe
