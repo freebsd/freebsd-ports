@@ -14,7 +14,7 @@ MAINTAINER=	regis.despres@gmail.com
 COMMENT=	Tool for managing events and logs
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 
