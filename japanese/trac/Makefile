@@ -26,6 +26,8 @@ SVN_DESC=	Support for subversion RCS
 
 OPTIONS_DEFAULT=	SILVERCITY DOCUTILS PYGMENTS TZ SVN
 
+BROKEN=		fails to build
+
 CONFLICTS=	trac-0.*
 
 USE_ZIP=	yes
