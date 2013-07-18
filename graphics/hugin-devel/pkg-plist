@@ -644,6 +644,10 @@ share/mime/packages/hugin.xml
 %%DATADIR%%/xrc/data/help_it_IT/Hugin_Images_tab.html
 %%DATADIR%%/xrc/data/help_it_IT/PPI.html
 %%DATADIR%%/xrc/data/help_it_IT/Autopano.html
+@dirrmtry share/locale/ca_ES/LC_MESSAGES
+@dirrmtry share/locale/ca_ES
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
 @dirrm lib/hugin
 @dirrmtry share/applications
 @dirrmtry share/icons/gnome/48x48/mimetypes
