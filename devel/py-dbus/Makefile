@@ -39,7 +39,7 @@ PLIST_SUB+=	HTML="@comment "
 .endif
 
 post-patch:
-.if ! ${PORT_OPTIONS:MHTMLDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|HEADERS install-dist_docDATA|HEADERS|g ; \
 		s|PYTHON install-nodist_docDATA|PYTHON|g' \
 			${WRKSRC}/Makefile.in
