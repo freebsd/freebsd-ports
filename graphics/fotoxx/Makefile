@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fotoxx-11.03
-# Date created:		2011-03-28
-# Whom:			Rod Person <rodperson@rodperson.com>
-#
+# Created by: Rod Person <rodperson@rodperson.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fotoxx
 PORTVERSION=	11.03
@@ -14,6 +10,8 @@ MASTER_SITES=	http://kornelix.squarespace.com/downloads/ \
 
 MAINTAINER=	rodperson@rodperson.com
 COMMENT=	Application to organize and edit image collections
+
+BROKEN=		Does not fetch
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
