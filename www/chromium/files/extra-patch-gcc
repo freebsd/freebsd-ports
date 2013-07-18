@@ -1,5 +1,5 @@
---- base/shared_memory.h.orig	2011-04-01 21:54:26.066717848 +0300
-+++ base/shared_memory.h	2011-04-01 21:55:14.292717813 +0300
+--- base/memory/shared_memory.h.orig	2011-04-01 21:54:26.066717848 +0300
++++ base/memory/shared_memory.h	2011-04-01 21:55:14.292717813 +0300
 @@ -10,6 +10,7 @@
  
  #if defined(OS_POSIX)
