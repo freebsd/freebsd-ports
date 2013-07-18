@@ -4438,3 +4438,4 @@ security/pyobfsproxy|security/obfsproxy|2013-07-15|Rename
 devel/kdevelop-custom-buildsystem||2013-07-17|Has expired: part of devel/kdevelop-kde4 now
 editors/code-browser||2013-07-18|Removed
 lang/copper||2013-07-18|Removed
+x11-themes/linux-gtk-bluecurve-theme||2013-07-18|Removed, requires Linux FC3
