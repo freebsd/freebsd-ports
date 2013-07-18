@@ -3,9 +3,9 @@
 
 PORTNAME=	pear
 PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://bsdcrew.de/distfiles/
+MASTER_SITES=	http://miwibox.org/distfiles/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework for PHP
