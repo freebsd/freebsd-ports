@@ -13,7 +13,7 @@ COMMENT=	Python library to search and download subtitles
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:${PORTSDIR}/www/py-beautifulsoup \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0.1:${PORTSDIR}/multimedia/py-enzyme \
 		${PYTHON_PKGNAMEPREFIX}guessit>=0.4.1:${PORTSDIR}/multimedia/py-guessit \
 		${PYTHON_PKGNAMEPREFIX}requests>=1.1:${PORTSDIR}/www/py-requests \
