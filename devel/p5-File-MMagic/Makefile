@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-File-MMagic
-# Date created:		25 February 2000
-# Whom:	      		Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-MMagic
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
