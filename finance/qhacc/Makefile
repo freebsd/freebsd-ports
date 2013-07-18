@@ -16,6 +16,8 @@ LIB_DEPENDS=	qwt6:${PORTSDIR}/x11-toolkits/qwt6
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN=		Does not build
+
 USE_QT4=	corelib gui sql moc_build qmake_build rcc_build uic_build
 USE_GCC=	4.6+
 USE_LDCONFIG=	yes
