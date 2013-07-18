@@ -66,7 +66,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/JDBCSQLXML.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/JDBCSavepoint.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/JDBCStatement.html
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/JDBCUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCArray.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCArrayBasic.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCBlob.html
@@ -95,7 +95,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCSQLXML.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCSavepoint.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCStatement.html
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/class-use/JDBCUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/org/hsqldb/jdbc/package-tree.html
