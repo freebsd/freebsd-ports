@@ -1,6 +1,6 @@
---- chrome/chrome_browser.gypi.orig	2013-04-30 10:22:08.000000000 +0300
-+++ chrome/chrome_browser.gypi	2013-05-07 23:55:10.000000000 +0300
-@@ -2479,7 +2479,7 @@
+--- chrome/chrome_browser.gypi.orig	2013-07-04 06:39:58.000000000 +0300
++++ chrome/chrome_browser.gypi	2013-07-15 18:45:11.000000000 +0300
+@@ -2470,7 +2470,7 @@
              '../device/device.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -9,7 +9,7 @@
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -2782,6 +2782,21 @@
+@@ -2803,6 +2803,25 @@
              ['exclude', '^browser/usb/'],
            ],
          }],
@@ -26,6 +26,10 @@
 +            ['exclude', '^browser/storage_monitor/storage_monitor_linux.h'],
 +            ['exclude', '^browser/storage_monitor/udev_util_linux.cc'],
 +            ['exclude', '^browser/storage_monitor/udev_util_linux.h'],
++            ['exclude', '^browser/storage_monitor/test_media_transfer_protocol_manager_linux.cc'],
++            ['exclude', '^browser/storage_monitor/test_media_transfer_protocol_manager_linux.h'],
++            ['exclude', '^browser/storage_monitor/mtab_watcher_linux.cc'],
++            ['exclude', '^browser/storage_monitor/mtab_watcher_linux.h'],
 +          ],
 +        }],
          ['OS=="mac"', {

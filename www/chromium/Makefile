@@ -1,9 +1,11 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
+#TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
+
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	27.0.1453.116
+DISTVERSION=	28.0.1500.71
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -34,7 +36,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		cups:${PORTSDIR}/print/cups-client \
 		event-1:${PORTSDIR}/devel/libevent \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
-		speechd:${PORTSDIR}/accessibility/speech-dispatcher \
 		pci:${PORTSDIR}/devel/libpci
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
@@ -42,10 +43,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USES=		bison pkgconfig desktop-file-utils
-USE_GMAKE=	yes
+USES=		bison gmake desktop-file-utils pkgconfig
 USE_PERL5_BUILD=	yes
-USE_PYTHON_BUILD=	2.6+
+USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 MAN1=		chrome.1
@@ -64,10 +64,10 @@ GYP_DEFINES+=	use_cups=1 \
 		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
-		linux_link_libspeechd=1 \
+		test_isolation_mode=noop \
 		clang_use_chrome_plugins=0 \
 		disable_nacl=1 \
-		enable_webrtc=0 \
+		enable_webrtc=1 \
 		enable_openmax=1 \
 		enable_one_click_signin=1 \
 		no_gc_sections=1 \
@@ -92,7 +92,7 @@ OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO CLANG DEBUG
 CODECS_DESC=	Compile and enable patented codecs like H.264
 CLANG_DESC=	Build Chromium with Clang instead of GCC 4.6+
 
-OPTIONS_DEFAULT=	CODECS GCONF CLANG
+OPTIONS_DEFAULT=	CODECS GCONF
 
 .include <bsd.port.options.mk>
 
@@ -145,6 +145,7 @@ MAKE_ENV+=	V=1
 BUILDTYPE=	Debug
 .else
 BUILDTYPE=	Release
+GYP_DEFINES+=	buildtype=Official
 .endif
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
@@ -168,7 +169,6 @@ post-patch:
 		${WRKSRC}/base/base.gypi \
 		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
 		${WRKSRC}/crypto/crypto.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/v8/build/common.gypi
@@ -200,7 +200,7 @@ do-install:
 .for p in chrome chrome_100_percent content_resources resources
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${DATADIR}
 .endfor
-.for f in chrome libffmpegsumo.so mksnapshot protoc
+.for f in chrome libffmpegsumo.so protoc
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${f} ${DATADIR}
 .endfor
 	cd ${WRKSRC}/out/${BUILDTYPE} && \

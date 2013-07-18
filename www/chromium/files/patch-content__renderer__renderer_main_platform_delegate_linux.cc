@@ -1,11 +1,11 @@
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	2012-11-27 10:01:25.000000000 +0200
-+++ content/renderer/renderer_main_platform_delegate_linux.cc	2012-12-10 22:47:50.000000000 +0200
-@@ -42,11 +42,14 @@
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	2013-05-13 01:33:56.000000000 +0000
++++ content/renderer/renderer_main_platform_delegate_linux.cc	2013-05-16 23:29:28.000000000 +0000
+@@ -41,11 +41,14 @@
+   // http://code.google.com/p/chromium/wiki/LinuxSUIDSandbox
    //
-   // The seccomp sandbox mode 1 (sandbox/linux/seccomp-legacy) and mode 2
-   // (sandbox/linux/seccomp-bpf) are started in InitializeSandbox().
+   // Anything else is started in InitializeSandbox().
 +#if !defined(OS_BSD)
-   InitializeSandbox();
+   LinuxSandbox::InitializeSandbox();
 +#endif
    return true;
  }
@@ -15,7 +15,7 @@
    // The LinuxSandbox class requires going through initialization before
    // GetStatus() and others can be used.  When we are not launched through the
    // Zygote, this initialization will only happen in the renderer process if
-@@ -81,6 +84,7 @@
+@@ -80,6 +83,7 @@
      CHECK_EQ(errno, EPERM);
    }
  #endif  // __x86_64__
