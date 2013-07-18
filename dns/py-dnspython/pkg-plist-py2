@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/dnspython-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/dns/__init__.py
 %%PYTHON_SITELIBDIR%%/dns/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dns/__init__.pyo
@@ -20,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/dns/flags.py
 %%PYTHON_SITELIBDIR%%/dns/flags.pyc
 %%PYTHON_SITELIBDIR%%/dns/flags.pyo
+%%PYTHON_SITELIBDIR%%/dns/grange.py
+%%PYTHON_SITELIBDIR%%/dns/grange.pyc
+%%PYTHON_SITELIBDIR%%/dns/grange.pyo
 %%PYTHON_SITELIBDIR%%/dns/hash.py
 %%PYTHON_SITELIBDIR%%/dns/hash.pyc
 %%PYTHON_SITELIBDIR%%/dns/hash.pyo
@@ -137,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TLSA.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TLSA.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TLSA.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TXT.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TXT.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TXT.pyo
@@ -239,6 +244,7 @@
 %%PYTHON_SITELIBDIR%%/dns/zone.py
 %%PYTHON_SITELIBDIR%%/dns/zone.pyc
 %%PYTHON_SITELIBDIR%%/dns/zone.pyo
+%%PYTHON_SITELIBDIR%%/dnspython-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ddns.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e164.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx.py

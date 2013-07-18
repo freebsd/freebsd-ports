@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/dnspython3-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/dns/__init__.py
 %%PYTHON_SITELIBDIR%%/dns/dnssec.py
 %%PYTHON_SITELIBDIR%%/dns/e164.py
@@ -6,6 +5,7 @@
 %%PYTHON_SITELIBDIR%%/dns/entropy.py
 %%PYTHON_SITELIBDIR%%/dns/exception.py
 %%PYTHON_SITELIBDIR%%/dns/flags.py
+%%PYTHON_SITELIBDIR%%/dns/grange.py
 %%PYTHON_SITELIBDIR%%/dns/hash.py
 %%PYTHON_SITELIBDIR%%/dns/inet.py
 %%PYTHON_SITELIBDIR%%/dns/ipv4.py
@@ -35,6 +35,7 @@
 %%PYTHON_SITELIBDIR%%/dns/version.py
 %%PYTHON_SITELIBDIR%%/dns/wiredata.py
 %%PYTHON_SITELIBDIR%%/dns/zone.py
+%%PYTHON_SITELIBDIR%%/dnspython-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/__init__.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/dsbase.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/mxbase.py
@@ -78,6 +79,7 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SOA.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SPF.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TLSA.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/TXT.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/X25.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ddns.py
