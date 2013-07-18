@@ -974,6 +974,7 @@
     SUBDIR += libdlna
     SUBDIR += libdnsres
     SUBDIR += libdombey
+    SUBDIR += libdouble-conversion
     SUBDIR += libds
     SUBDIR += libdsp
     SUBDIR += libdwarf
