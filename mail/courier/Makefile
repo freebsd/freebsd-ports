@@ -58,6 +58,7 @@ MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
 USE_AUTOTOOLS=	libtool aclocal
+AUTOMAKE_ARGS=	--add-missing
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_FAM=	yes
