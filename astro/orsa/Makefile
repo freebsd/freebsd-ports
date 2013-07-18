@@ -28,6 +28,7 @@ USE_GL=		gl
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I macros -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	ac_cv_c_inline=no
 USE_LDCONFIG=	yes
 
