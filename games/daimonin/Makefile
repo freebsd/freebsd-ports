@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://daimonin.svn.sourceforge.net/viewvc/daimonin/main/client/?view=tar&pathrev=${SVN_REVISION}&file=
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORPG)
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
