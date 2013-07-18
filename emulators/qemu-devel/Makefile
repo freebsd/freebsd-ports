@@ -18,7 +18,7 @@ LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	yes
 USE_GNOME+=	glib20
@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?
 CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	SAMBA X11 GTK OPENGL GNUTLS SASL JPEG PNG CURL \
+OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS BSD_USER \
 		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
@@ -46,7 +46,7 @@ GNS3_DESC=		gns3 patches (promiscuous multicast)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
-OPTIONS_DEFAULT=X11 GTK OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
+OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
 
 .include <bsd.port.options.mk>
 
@@ -115,13 +115,13 @@ CONFIGURE_ARGS+=	--enable-sdl
 USE_SDL=	sdl
 .endif
 
-.if empty(PORT_OPTIONS:MGTK)
+.if empty(PORT_OPTIONS:MGTK2)
 CONFIGURE_ARGS+=	--disable-gtk
-PLIST_SUB+=	GTK="@comment "
+PLIST_SUB+=	GTK2="@comment "
 .else
 USE_GNOME+=	gtk20 vte
 USES+=		gettext
-PLIST_SUB+=	GTK=""
+PLIST_SUB+=	GTK2=""
 .endif
 
 .if empty(PORT_OPTIONS:MGNUTLS)
@@ -172,7 +172,7 @@ CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_LINK}
-.if ${PORT_OPTIONS:MGTK} || ${PORT_OPTIONS:MX11}
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MX11}
 IGNORE=		X11 ui cannot be built static
 .endif
 CONFIGURE_ARGS+=	--static
