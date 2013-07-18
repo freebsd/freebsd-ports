@@ -2,9 +2,9 @@ bin/lynx
 @unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
-%%WITH_COLOR_STYLE%%@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
-%%WITH_COLOR_STYLE%%etc/lynx.lss.default
-%%WITH_COLOR_STYLE%%@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
+%%COLOR_STYLE%%@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
+%%COLOR_STYLE%%etc/lynx.lss.default
+%%COLOR_STYLE%%@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
 @exec mkdir -p %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER

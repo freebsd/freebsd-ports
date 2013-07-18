@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-lynx
-# Date created:         10 August 1998
-# Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
@@ -13,64 +9,61 @@ MASTER_SITES=	http://lynx.isc.org/current/ \
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
+COMMENT=	Console WWW client (browser) with multi-byte encoding support
+
+LICENSE=	GPLv2
 
 VERSION=	2.8.7
 MINOR_VERSION=	rel.1
 
 CONFLICTS=	lynx-2.* ja-lynx-2.8.8.*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-ipv6 \
 		--enable-cjk --enable-internal-links \
 		--with-bzlib
-
-.if !defined(WITHOUT_JAPANESE_UTF8)
-USES+=		iconv
-CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
-		--enable-japanese-utf8
-.else
-CONFIGURE_ARGS+=--disable-japanese-utf8
-.endif
-
-.if defined(WITH_COLOR_STYLE)
-CONFIGURE_ARGS+=--enable-color-style
-PLIST_SUB+=	WITH_COLOR_STYLE=""
-.else
-CONFIGURE_ARGS+=--disable-color-style
-PLIST_SUB+=	WITH_COLOR_STYLE="@comment "
-.endif
-
-.if defined(WITH_DEFAULT_COLORS)
-CONFIGURE_ARGS+=--enable-default-colors
-.else
-CONFIGURE_ARGS+=--disable-default-colors
-.endif
-
 MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
 MAKEFILE=	makefile
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
+L_LIB=		${PREFIX}/etc
+L_HELP=		${PREFIX}/share/lynx_help
+
 MAN1=		lynx.1
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	JAPANESE_UTF8 COLOR_STYLE DEFAULT_COLORS DOCS
+OPTIONS_SUB=	yes
+
+JAPANESE_UTF8_DESC=	Enable experimental Japanese UTF-8 logic
+COLOR_STYLE_DESC=	Enable color style (ncurses/curses)
+DEFAULT_COLORS_DESC=	Enable default colors (ncurses/slang)
+
+JAPANESE_UTF8_USES=		iconv
+JAPANESE_UTF8_CONFIGURE_ON=	--with-libiconv-prefix=${LOCALBASE}
+JAPANESE_UTF8_CONFIGURE_ENABLE=	japanese-utf8
+COLOR_STYLE_CONFIGURE_ENABLE=	color-style
+DEFAULT_COLORS_CONFIGURE_ENABLE=default-colors
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install-full
 .else
 INSTALL_TARGET=	install install-help
 .endif
 
-L_LIB=		${PREFIX}/etc
-L_HELP=		${PREFIX}/share/lynx_help
-
+# Change "cd foo; $(MAKE_RECUR)" into "$(MAKE_RECUR) -C foo" to unbreak
+# parallel builds
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lssl -lcrypto|-L${OPENSSLLIB} &|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -E 's|cd (.+) && (\$$\(MAKE_RECUR\))|\2 -C \1|' \
+		${WRKSRC}/${MAKEFILE}.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
 
 .include <bsd.port.mk>
