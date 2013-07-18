@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130718:
+  AFFECTS: users of www/zend-framework
+  AUTHOR: wg@FreeBSD.org
+
+  zend-framework has been updated to 2.2.1 and old 1.12.0 has been copied
+  to www/zend-framework1. If you wish to stay with the older version run:
+
+  # portmaster -o www/zend-framework1 www/zend-framework
+    or
+  # portupgrade -fo www/zend-framework1 www/zend-framework
+    or
+  # pkg set -o www/zend-framework:www/zend-framework1
+
 20130714:
   AFFECTS: users of net/avahi-gtk
   AUTHOR: kwm@FreeBSD.org
