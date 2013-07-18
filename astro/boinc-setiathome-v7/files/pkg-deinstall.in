@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+F=%%BOINC_CLIENT_HOME%%/projects/%%SETI_SITE%%/app_info.xml
+echo Removing setiathome_v7 lines from $F
+
+l=`grep -n "<name>setiathome_v7</name>" $F | cut -f 1 -d :`
+if [ $? -ne 0 ]; then
+    echo $F is corrupt
+    exit 1
+fi
+l1=$(($l-1))
+l2=$(($l+13))
+sed -i.bak "${l1},${l2}d" $F # sed wants the braces
+rm $F.bak
+
+l=`wc -l $F | cut -f 1 -d / | sed 's/ //g'`
+if [ $l -eq 2 ]; then
+    echo Removing empty $F
+    rm $F
+fi

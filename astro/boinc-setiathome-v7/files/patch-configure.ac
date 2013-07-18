@@ -1,0 +1,32 @@
+--- configure.ac.orig	2013-07-02 22:51:54.000000000 +0200
++++ configure.ac	2013-07-11 21:40:55.000000000 +0200
+@@ -5,17 +5,10 @@
+ 
+ AC_PREREQ(2.57)
+ AC_INIT(setiathome_v7, 7.00, korpela@ssl.berkeley.edu)
+-svnrev="`svn info | grep Revision:`"
+ 
+-if test -n "${svnrev}" ; then
+-  AC_REVISION("${svnrev}") 
+-  AC_DEFINE_UNQUOTED(SVN_REV,"${svnrev}",
+-    [Define to be the subversion revision number])
+-else
+-  AC_REVISION([$Revision: 1146 $])
+-  AC_DEFINE(SVN_REV,"$Revision: 1146 $",
+-    [Define to be the subversion revision number])
+-fi
++AC_REVISION([$Revision: 1924 $])
++AC_DEFINE(SVN_REV,"$Revision: 1924 $",
++  [Define to be the subversion revision number])
+ 
+ AC_CANONICAL_TARGET
+ AM_INIT_AUTOMAKE(dist-zip)
+@@ -55,8 +48,6 @@
+ fi
+ 
+ # set posix source on linux
+-CFLAGS="-D_POSIX_C_SOURCE=1 ${CFLAGS}"
+-CXXFLAGS="-D_POSIX_C_SOURCE=1 ${CXXFLAGS}"
+ 
+ AC_ARG_ENABLE(intrinsics, 
+     AS_HELP_STRING([--disable-intrinsics],
