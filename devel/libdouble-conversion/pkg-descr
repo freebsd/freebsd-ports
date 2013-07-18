@@ -1,0 +1,8 @@
+This project (double-conversion) provides binary-decimal and decimal-binary
+routines for IEEE doubles.
+
+The library consists of efficient conversion routines that have been extracted
+from the V8 JavaScript engine. The code has been refactored and improved so that
+it can be used more easily in other projects.
+
+WWW: http://code.google.com/p/double-conversion
