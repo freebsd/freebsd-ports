@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xbiso
-# Date created:			Jan 28, 2004
-# Whom:				ijliao	ij
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xbiso
 PORTVERSION=	0.6.1
@@ -15,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XBox xdvdfs iso extraction utility
 
 LIB_DEPENDS=	ftp.3:${PORTSDIR}/ftp/ftplib
+
+BROKEN=		Does not compile with ftplib>=4.0
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
