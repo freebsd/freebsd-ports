@@ -9,6 +9,7 @@
 %%XPI_XPIDIR%%/chrome/content/contents.rdf
 %%XPI_XPIDIR%%/chrome/content/contribute.png
 %%XPI_XPIDIR%%/chrome/content/ctbg.gif
+%%XPI_XPIDIR%%/chrome/content/developer.png
 %%XPI_XPIDIR%%/chrome/content/hi-left.png
 %%XPI_XPIDIR%%/chrome/content/hi-right.png
 %%XPI_XPIDIR%%/chrome/content/star.png
