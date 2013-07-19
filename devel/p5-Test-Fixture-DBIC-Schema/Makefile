@@ -1,13 +1,8 @@
-# New ports collection makefile for:	devel/p5-Test-Fixture-DBIC-Schema
-# Date created:				23 Oct 2008
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Fixture-DBIC-Schema
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
