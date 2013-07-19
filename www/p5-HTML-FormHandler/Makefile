@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.35005
+PORTVERSION=	0.40026
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -29,129 +29,168 @@ BUILD_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-File-ShareDir-Install>=0.3:${PORTSDIR}/devel/p5-File-ShareDir-Install
-
+		p5-File-ShareDir-Install>=0.3:${PORTSDIR}/devel/p5-File-ShareDir-Install \
+		p5-Data-Clone>=0:${PORTSDIR}/devel/p5-Data-Clone \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+		p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
 
 PERL_CONFIGURE=	yes
 
-MAN3=	HTML::FormHandler.3 \
-	HTML::FormHandler::Base.3 \
-	HTML::FormHandler::BuildFields.3 \
-	HTML::FormHandler::BuildPages.3 \
-	HTML::FormHandler::Field.3 \
-	HTML::FormHandler::Field::Boolean.3 \
-	HTML::FormHandler::Field::Button.3 \
-	HTML::FormHandler::Field::Captcha.3 \
-	HTML::FormHandler::Field::Checkbox.3 \
-	HTML::FormHandler::Field::Compound.3 \
-	HTML::FormHandler::Field::Date.3 \
-	HTML::FormHandler::Field::DateMDY.3 \
-	HTML::FormHandler::Field::DateTime.3 \
-	HTML::FormHandler::Field::Display.3 \
-	HTML::FormHandler::Field::Duration.3 \
-	HTML::FormHandler::Field::Email.3 \
-	HTML::FormHandler::Field::Hidden.3 \
-	HTML::FormHandler::Field::Hour.3 \
-	HTML::FormHandler::Field::HtmlArea.3 \
-	HTML::FormHandler::Field::IntRange.3 \
-	HTML::FormHandler::Field::Integer.3 \
-	HTML::FormHandler::Field::Minute.3 \
-	HTML::FormHandler::Field::Money.3 \
-	HTML::FormHandler::Field::Month.3 \
-	HTML::FormHandler::Field::MonthDay.3 \
-	HTML::FormHandler::Field::MonthName.3 \
-	HTML::FormHandler::Field::Multiple.3 \
-	HTML::FormHandler::Field::Nested.3 \
-	HTML::FormHandler::Field::NoValue.3 \
-	HTML::FormHandler::Field::Password.3 \
-	HTML::FormHandler::Field::PasswordConf.3 \
-	HTML::FormHandler::Field::PosInteger.3 \
-	HTML::FormHandler::Field::PrimaryKey.3 \
-	HTML::FormHandler::Field::Repeatable.3 \
-	HTML::FormHandler::Field::Repeatable::Instance.3 \
-	HTML::FormHandler::Field::Reset.3 \
-	HTML::FormHandler::Field::Result.3 \
-	HTML::FormHandler::Field::Second.3 \
-	HTML::FormHandler::Field::Select.3 \
-	HTML::FormHandler::Field::Submit.3 \
-	HTML::FormHandler::Field::Text.3 \
-	HTML::FormHandler::Field::TextArea.3 \
-	HTML::FormHandler::Field::Upload.3 \
-	HTML::FormHandler::Field::Weekday.3 \
-	HTML::FormHandler::Field::Year.3 \
-	HTML::FormHandler::Fields.3 \
-	HTML::FormHandler::I18N.3 \
-	HTML::FormHandler::I18N::de_de.3 \
-	HTML::FormHandler::I18N::en_us.3 \
-	HTML::FormHandler::I18N::hu_hu.3 \
-	HTML::FormHandler::I18N::ja_jp.3 \
-	HTML::FormHandler::I18N::ru_ru.3 \
-	HTML::FormHandler::I18N::sv_se.3 \
-	HTML::FormHandler::I18N::tr_tr.3 \
-	HTML::FormHandler::I18N::ua_ua.3 \
-	HTML::FormHandler::InitResult.3 \
-	HTML::FormHandler::Manual.3 \
-	HTML::FormHandler::Manual::Catalyst.3 \
-	HTML::FormHandler::Manual::Cookbook.3 \
-	HTML::FormHandler::Manual::Intro.3 \
-	HTML::FormHandler::Manual::Reference.3 \
-	HTML::FormHandler::Manual::Rendering.3 \
-	HTML::FormHandler::Manual::Templates.3 \
-	HTML::FormHandler::Manual::Tutorial.3 \
-	HTML::FormHandler::Meta::Role.3 \
-	HTML::FormHandler::Model.3 \
-	HTML::FormHandler::Model::CDBI.3 \
-	HTML::FormHandler::Model::Object.3 \
-	HTML::FormHandler::Moose.3 \
-	HTML::FormHandler::Moose::Role.3 \
-	HTML::FormHandler::Page.3 \
-	HTML::FormHandler::Page::Simple.3 \
-	HTML::FormHandler::Pages.3 \
-	HTML::FormHandler::Params.3 \
-	HTML::FormHandler::Render::Simple.3 \
-	HTML::FormHandler::Render::Table.3 \
-	HTML::FormHandler::Render::WithTT.3 \
-	HTML::FormHandler::Result.3 \
-	HTML::FormHandler::Result::Role.3 \
-	HTML::FormHandler::TraitFor::Captcha.3 \
-	HTML::FormHandler::TraitFor::I18N.3 \
-	HTML::FormHandler::TraitFor::Types.3 \
-	HTML::FormHandler::Traits.3 \
-	HTML::FormHandler::Types.3 \
-	HTML::FormHandler::Validate.3 \
-	HTML::FormHandler::Widget::ApplyRole.3 \
-	HTML::FormHandler::Widget::Field::Button.3 \
-	HTML::FormHandler::Widget::Field::Checkbox.3 \
-	HTML::FormHandler::Widget::Field::CheckboxGroup.3 \
-	HTML::FormHandler::Widget::Field::Compound.3 \
-	HTML::FormHandler::Widget::Field::Hidden.3 \
-	HTML::FormHandler::Widget::Field::NoRender.3 \
-	HTML::FormHandler::Widget::Field::Password.3 \
-	HTML::FormHandler::Widget::Field::RadioGroup.3 \
-	HTML::FormHandler::Widget::Field::Repeatable.3 \
-	HTML::FormHandler::Widget::Field::Reset.3 \
+MAN3=	\
 	HTML::FormHandler::Widget::Field::Role::HTMLAttributes.3 \
-	HTML::FormHandler::Widget::Field::Role::SelectedOption.3 \
-	HTML::FormHandler::Widget::Field::Select.3 \
-	HTML::FormHandler::Widget::Field::Submit.3 \
-	HTML::FormHandler::Widget::Field::Text.3 \
-	HTML::FormHandler::Widget::Field::Textarea.3 \
-	HTML::FormHandler::Widget::Field::Upload.3 \
-	HTML::FormHandler::Widget::Form::Role::HTMLAttributes.3 \
-	HTML::FormHandler::Widget::Form::Simple.3 \
-	HTML::FormHandler::Widget::Form::Table.3 \
-	HTML::FormHandler::Widget::Wrapper::Base.3 \
-	HTML::FormHandler::Widget::Wrapper::Fieldset.3 \
-	HTML::FormHandler::Widget::Wrapper::None.3 \
-	HTML::FormHandler::Widget::Wrapper::Simple.3 \
-	HTML::FormHandler::Widget::Wrapper::SimpleInline.3 \
 	HTML::FormHandler::Widget::Wrapper::Table.3 \
+	HTML::FormHandler::Field::Weekday.3 \
+	HTML::FormHandler::Manual::FromFF.3 \
+	HTML::FormHandler::I18N::ru_ru.3 \
+	HTML::FormHandler::Field::Compound.3 \
+	HTML::FormHandler::Widget::Field::NoRender.3 \
+	HTML::FormHandler::Field::BoolSelect.3 \
+	HTML::FormHandler::Field::TextCSV.3 \
+	HTML::FormHandler::Field::Duration.3 \
+	HTML::FormHandler::Page.3 \
+	HTML::FormHandler::Field::Minute.3 \
+	HTML::FormHandler::Model::CDBI.3 \
+	HTML::FormHandler::Field::Money.3 \
+	HTML::FormHandler::Widget::Form::Simple.3 \
+	HTML::FormHandler::Manual::Tutorial.3 \
+	HTML::FormHandler::Field::Date.3 \
+	HTML::FormHandler::Widget::Theme::BootstrapFormMessages.3 \
+	HTML::FormHandler::TraitFor::I18N.3 \
+	HTML::FormHandler::Field::Checkbox.3 \
+	HTML::FormHandler::Manual::Database.3 \
+	HTML::FormHandler::Field::MonthName.3 \
+	HTML::FormHandler::Field::File.3 \
+	HTML::FormHandler::Widget::Field::Textarea.3 \
 	HTML::FormHandler::Widget::Wrapper::TableInline.3 \
-	HTML::FormHandler::Wizard.3
+	HTML::FormHandler::I18N::ja_jp.3 \
+	HTML::FormHandler::Test.3 \
+	HTML::FormHandler::Widget::Form::Table.3 \
+	HTML::FormHandler::Field::Submit.3 \
+	HTML::FormHandler::Model.3 \
+	HTML::FormHandler::I18N::sv_se.3 \
+	HTML::FormHandler::Field::NoValue.3 \
+	HTML::FormHandler::BuildPages.3 \
+	HTML::FormHandler::Validate.3 \
+	HTML::FormHandler::Traits.3 \
+	HTML::FormHandler::Field::DateTime.3 \
+	HTML::FormHandler::Manual::Fields.3 \
+	HTML::FormHandler::BuildFields.3 \
+	HTML::FormHandler::Merge.3 \
+	HTML::FormHandler::Widget::Field::Submit.3 \
+	HTML::FormHandler::Widget::Field::Captcha.3 \
+	HTML::FormHandler::Widget::Field::RadioGroup.3 \
+	HTML::FormHandler::Field::Integer.3 \
+	HTML::FormHandler::Widget::Field::Span.3 \
+	HTML::FormHandler::Manual::Reference.3 \
+	HTML::FormHandler::Widget::Field::ButtonTag.3 \
+	HTML::FormHandler::Field::TextArea.3 \
+	HTML::FormHandler::Fields.3 \
+	HTML::FormHandler::Render::Table.3 \
+	HTML::FormHandler::Field::Hour.3 \
+	HTML::FormHandler::Widget::Field::CheckboxGroup.3 \
+	HTML::FormHandler::Widget::Field::Password.3 \
+	HTML::FormHandler::Manual::Templates.3 \
+	HTML::FormHandler::Field::MonthDay.3 \
+	HTML::FormHandler::Wizard.3 \
+	HTML::FormHandler::Widget::Wrapper::Base.3 \
+	HTML::FormHandler::Manual::Validation.3 \
+	HTML::FormHandler::Manual::FromDFV.3 \
+	HTML::FormHandler::Widget::Wrapper::Fieldset.3 \
+	HTML::FormHandler::Field::Repeatable.3 \
+	HTML::FormHandler::TraitFor::Types.3 \
+	HTML::FormHandler::Render::RepeatableJs.3 \
+	HTML::FormHandler::Field::PrimaryKey.3 \
+	HTML::FormHandler::Result::Role.3 \
+	HTML::FormHandler::I18N::en_us.3 \
+	HTML::FormHandler::I18N::tr_tr.3 \
+	HTML::FormHandler::Field::Email.3 \
+	HTML::FormHandler::Field::Upload.3 \
+	HTML::FormHandler::Widget::ApplyRole.3 \
+	HTML::FormHandler::Manual::RenderingCookbook.3 \
+	HTML::FormHandler::Render::Simple.3 \
+	HTML::FormHandler::Meta::Role.3 \
+	HTML::FormHandler::Widget::Field::Text.3 \
+	HTML::FormHandler::Field::PasswordConf.3 \
+	HTML::FormHandler::Widget::Field::Hidden.3 \
+	HTML::FormHandler::Field::PosInteger.3 \
+	HTML::FormHandler::Pages.3 \
+	HTML::FormHandler::Widget::Field::Button.3 \
+	HTML::FormHandler::Field::Boolean.3 \
+	HTML::FormHandler::Widget::Wrapper::None.3 \
+	HTML::FormHandler::Field::Repeatable::Instance.3 \
+	HTML::FormHandler::Field::Display.3 \
+	HTML::FormHandler::Field::Month.3 \
+	HTML::FormHandler::Field::Multiple.3 \
+	HTML::FormHandler::Manual::Defaults.3 \
+	HTML::FormHandler::Field::DateMDY.3 \
+	HTML::FormHandler::I18N::it_it.3 \
+	HTML::FormHandler::Widget::Field::Select.3 \
+	HTML::FormHandler::Widget::Field::Role::SelectedOption.3 \
+	HTML::FormHandler::Model::Object.3 \
+	HTML::FormHandler::Field::SelectCSV.3 \
+	HTML::FormHandler::Field::Password.3 \
+	HTML::FormHandler::Widget::Form::Role::HTMLAttributes.3 \
+	HTML::FormHandler::Field::Year.3 \
+	HTML::FormHandler::TraitFor::Captcha.3 \
+	HTML::FormHandler::Manual::Testing.3 \
+	HTML::FormHandler::Blocks.3 \
+	HTML::FormHandler::Base.3 \
+	HTML::FormHandler::Widget::Wrapper::Simple.3 \
+	HTML::FormHandler::Field::IntRange.3 \
+	HTML::FormHandler::Widget::Block::Bootstrap.3 \
+	HTML::FormHandler::InitResult.3 \
+	HTML::FormHandler::Widget::Wrapper::Bootstrap.3 \
+	HTML::FormHandler::Result.3 \
+	HTML::FormHandler::Render::WithTT.3 \
+	HTML::FormHandler::Widget::Theme::Bootstrap.3 \
+	HTML::FormHandler::I18N::hu_hu.3 \
+	HTML::FormHandler::Types.3 \
+	HTML::FormHandler::Field.3 \
+	HTML::FormHandler::Manual::Errors.3 \
+	HTML::FormHandler.3 \
+	HTML::FormHandler::Widget::Wrapper::SimpleInline.3 \
+	HTML::FormHandler::Moose::Role.3 \
+	HTML::FormHandler::Field::Nested.3 \
+	HTML::FormHandler::Moose.3 \
+	HTML::FormHandler::Field::Text.3 \
+	HTML::FormHandler::I18N::de_de.3 \
+	HTML::FormHandler::Field::Select.3 \
+	HTML::FormHandler::Foo.3 \
+	HTML::FormHandler::Field::Float.3 \
+	HTML::FormHandler::I18N::ua_ua.3 \
+	HTML::FormHandler::Field::NonEditable.3 \
+	HTML::FormHandler::Widget::Field::Compound.3 \
+	HTML::FormHandler::I18N::pt_br.3 \
+	HTML::FormHandler::Field::Result.3 \
+	HTML::FormHandler::Manual::InflationDeflation.3 \
+	HTML::FormHandler::Field::RmElement.3 \
+	HTML::FormHandler::Params.3 \
+	HTML::FormHandler::Render::Util.3 \
+	HTML::FormHandler::Widget::Field::Repeatable.3 \
+	HTML::FormHandler::Field::Hidden.3 \
+	HTML::FormHandler::Field::Button.3 \
+	HTML::FormHandler::Widget::Field::Reset.3 \
+	HTML::FormHandler::I18N.3 \
+	HTML::FormHandler::I18N::bg_bg.3 \
+	HTML::FormHandler::Manual::Rendering.3 \
+	HTML::FormHandler::Page::Simple.3 \
+	HTML::FormHandler::Manual::Intro.3 \
+	HTML::FormHandler::Manual::Catalyst.3 \
+	HTML::FormHandler::Field::Reset.3 \
+	HTML::FormHandler::Manual::Cookbook.3 \
+	HTML::FormHandler::Field::AddElement.3 \
+	HTML::FormHandler::Widget::Field::Upload.3 \
+	HTML::FormHandler::Widget::Field::Checkbox.3 \
+	HTML::FormHandler::Widget::Block.3 \
+	HTML::FormHandler::Field::Second.3 \
+	HTML::FormHandler::Field::Captcha.3 \
+	HTML::FormHandler::Manual.3
 
 .include <bsd.port.mk>
