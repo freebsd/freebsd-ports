@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jeweler
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
