@@ -17,6 +17,8 @@ USE_PHP=	spl
 WANT_PHP_WEB=	yes
 USES=		gettext
 
+LATEST_LINK=	${PORTNAME}1
+
 CONFLICTS=	ZendFramework-2.*
 
 SUB_FILES=	pkg-message
