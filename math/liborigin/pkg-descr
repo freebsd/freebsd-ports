@@ -1,11 +1,7 @@
-liborigin and opj2dat - library and tool for reading
-OriginLab OPJ project files
+Library and cli utility for reading data from OriginLab OPJ project files.
+Supported OPJ versions: 6.0 - 8.1
 
-Usage :
-	$ ./opj2dat <project.opj>
-
-FEATURES :
-	* reads any worksheets with all columns
-	* supports 4.1, 5.0, 6.0, 6.1, 7.0, 7.5 projects
+Usage:
+	opj2dat <project.opj>
 
 WWW: http://sourceforge.net/projects/liborigin/

@@ -1,43 +1,33 @@
-# New ports collection makefile for:	liborigin
-# Date created:		2006-08-26
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	liborigin
-PORTVERSION=	20070926
-PORTREVISION=	1
+PORTVERSION=	2.0.0
+PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2007
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.0
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Tools for importing OriginLab .OPJ files
+COMMENT=	Library and utility for reading OriginLab project files
 
-CONFLICTS=	LabPlot-1.5.*
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
 
-PLIST_FILES=	bin/opj2dat \
-		include/${PORTNAME}/OPJFile.h \
-		include/${PORTNAME}/tree.hh \
-		lib/liborigin.so \
-		lib/liborigin.so.0
-PLIST_DIRS=	include/${PORTNAME}
+CONFLICTS_INSTALL=	labplot-2.*
 
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOXYGEN
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOXYGEN}
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|g++|${CXX}|; \
-		s|^\(CFLAGS.*=\)|\1${CXXFLAGS} |' \
-		${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/opj2dat ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/OPJFile.h ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/tree.hh ${PREFIX}/include/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/liborigin.so.0.0.3 ${PREFIX}/lib/liborigin.so.0
-	${LN} -fs ${PREFIX}/lib/liborigin.so.0 ${PREFIX}/lib/liborigin.so
+	${REINPLACE_CMD} -e '/find_package(Doxygen)/d' ${WRKSRC}/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>
