@@ -17,6 +17,9 @@ MAN1=		trn.1 Pnews.1 Rnmail.1
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/pipe[12]/z&/g' ${WRKSRC}/filter.c
+
 pre-configure:
 	@${ECHO_MSG} "===>  Running pre-configure target for ${DISTNAME}"
 	@${SED} -e "s:__CC__:${CC}:" -e "s:__CFLAGS__:${CFLAGS}:" \
