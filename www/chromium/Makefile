@@ -92,7 +92,7 @@ OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO CLANG DEBUG
 CODECS_DESC=	Compile and enable patented codecs like H.264
 CLANG_DESC=	Build Chromium with Clang instead of GCC 4.6+
 
-OPTIONS_DEFAULT=	CODECS GCONF
+OPTIONS_DEFAULT=	CODECS GCONF CLANG
 
 .include <bsd.port.options.mk>
 
