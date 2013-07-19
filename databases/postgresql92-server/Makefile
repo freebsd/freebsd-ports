@@ -183,7 +183,7 @@ CONFIGURE_ARGS+=--disable-integer-datetimes
 .  if ( defined(WITH_GETTEXT) || ${PORT_OPTIONS:MNLS} )
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
-USE_GETTEXT=	yes
+USES+=	gettext
 .  else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "

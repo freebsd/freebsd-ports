@@ -689,6 +689,14 @@
     SUBDIR += postgresql92-plpython
     SUBDIR += postgresql92-pltcl
     SUBDIR += postgresql92-server
+    SUBDIR += postgresql93-client
+    SUBDIR += postgresql93-contrib
+    SUBDIR += postgresql93-docs
+    SUBDIR += postgresql93-pgtcl
+    SUBDIR += postgresql93-plperl
+    SUBDIR += postgresql93-plpython
+    SUBDIR += postgresql93-pltcl
+    SUBDIR += postgresql93-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql

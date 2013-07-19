@@ -1,0 +1,11 @@
+--- src/pl/plpython/Makefile.orig	2013-05-06 22:57:06.000000000 +0200
++++ src/pl/plpython/Makefile	2013-05-10 19:50:09.000000000 +0200
+@@ -15,7 +15,7 @@
+ ifeq (1,$(python_enable_shared))
+ shared_libpython = yes
+ else
+-ifneq (,$(wildcard $(python_libdir)/libpython*$(DLSUFFIX)*))
++ifneq (,$(wildcard $(python_libdir)/../../libpython*$(DLSUFFIX)*))
+ shared_libpython = yes
+ endif
+ endif
