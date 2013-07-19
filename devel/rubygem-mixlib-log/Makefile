@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-mixlib-log
-# Date created:				18 Mar 2010
-# Whom:					renchap@cocoa-x.com
-#
+# Created by: renchap@cocoa-x.com
 # $FreeBSD$
-#
 
 PORTNAME=	mixlib-log
-PORTVERSION=	1.4.1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
