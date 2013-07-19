@@ -1,4 +1,4 @@
-UNIX domain socket client and server programs that conform to UCSPI,
-the UNIX Client-Server Program Interface.
+Unix domain socket client and server programs that conform to UCSPI, the
+Unix Client-Server Program Interface.
 
 WWW: http://untroubled.org/ucspi-unix/

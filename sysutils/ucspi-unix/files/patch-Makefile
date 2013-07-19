@@ -1,0 +1,56 @@
+--- Makefile.orig	2002-06-11 05:12:06.000000000 +0800
++++ Makefile	2013-07-19 22:55:35.000000000 +0800
+@@ -19,8 +19,7 @@
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+ 	  echo exec `head -1 conf-cc` '-I. -o $${base}.o -c $$source $${1+"$$@"}'; \
+-	) >compile
+-	chmod 755 compile
++	) >compile && chmod 755 compile
+ 
+ conf_bin.c: conf-bin
+ 	head -1 conf-bin | \
+@@ -38,37 +37,31 @@
+ 	./compile env.c
+ 
+ installer: load insthier.o
+-	./load insthier -linstaller
+-	mv insthier installer
++	./load insthier -linstaller && mv insthier installer
+ 
+ instcheck: load insthier.o
+-	./load insthier -linstcheck
+-	mv insthier instcheck
++	./load insthier -linstcheck && mv insthier instcheck
+ 
+ insthier.o: compile insthier.c conf_bin.c conf_man.c
+ 	./compile insthier.c
+ 
+ instshow: load insthier.o
+-	./load insthier -linstshow
+-	mv insthier instshow
++	./load insthier -linstshow && mv insthier instshow
+ 
+ load: conf-ld
+ 	( echo '#!/bin/sh';\
+ 	  echo 'main="$$1"; shift';\
+ 	  echo exec `head -1 conf-ld` '-o "$$main" "$$main.o" $${1+"$$@"}' -lsysdeps;\
+-	) >load
+-	chmod 755 load
++	) >load && chmod 755 load
+ 
+ programs: unixclient unixserver unixcat
+ 
+ socket.lib: compile load trylib.c
+ 	( ( ./compile trylib.c && ./load trylib -lsocket -lnsl ) >/dev/null 2>&1 \
+-	  && echo -lsocket -lnsl || exit 0 ) >socket.lib
+-	rm -f trylib.o trylib
++	  && echo -lsocket -lnsl || exit 0 ) >socket.lib && rm -f trylib.o trylib
+ 
+ unixcat: warn-auto.sh unixcat.sh
+-	cat warn-auto.sh unixcat.sh >unixcat
+-	chmod 755 unixcat
++	cat warn-auto.sh unixcat.sh >unixcat && chmod 755 unixcat
+ 
+ unixclient: load unixclient.o env.o utoa.o socket.lib
+ 	./load unixclient env.o utoa.o `cat socket.lib` 
