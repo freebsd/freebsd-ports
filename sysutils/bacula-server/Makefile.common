@@ -48,7 +48,7 @@ pre-install:
 do-install:
 .if ${PKGNAMESUFFIX} == "-bat"
 # Install config files and preserve existing ones
-	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bat.conf.sample
+	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bacula/bat.conf.sample
 	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${PREFIX}/man/man1/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin
 .endif

@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	5.2.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -25,13 +25,18 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX NLS OPENSSL
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS OPENSSL
 OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
 
 .include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=		yes
+CONFIGURE_ARGS+=	--with-python=yes
+.endif
 
 .if !defined(WITH_CLIENT_ONLY)
 LIB_DEPENDS+=	bac:${PORTSDIR}/sysutils/bacula-client
@@ -47,6 +52,7 @@ SUB_FILES+=	pkg-install.server pkg-deinstall.server pkg-message.server
 MANCOMPRESSED=	yes
 CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
+		--sysconfdir=${ETCDIR} \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
 		--with-readline=yes \
@@ -154,6 +160,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
+	@${ECHO_MSG} "  WITH_PYTHON=yes		Enable Python scripting in the director."
 	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SQLite-3 as the database (not recommended)."
 .if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL as the database."
@@ -173,8 +180,8 @@ post-patch:
 #	Change $(ECHO) to echo in some Makefile.in files
 	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g' ${WRKSRC}/src/filed/Makefile.in \
 		${WRKSRC}/src/console/Makefile.in
-#	Default bconsole.conf is ${PREFIX}/etc
-	@${REINPLACE_CMD} -e 's|./bconsole.conf|${PREFIX}/etc/bconsole.conf|g' ${WRKSRC}/src/console/console.c
+#	Default bconsole.conf is in ${ETCDIR}
+	@${REINPLACE_CMD} -e 's|./bconsole.conf|${ETCDIR}/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
 .if defined(WITH_CLIENT_ONLY)
 # 	In client port only install startup script out of script dir (see below post-install)
@@ -212,13 +219,13 @@ post-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
 # 	Console stuff
-	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
+	if [ -f ${ETCDIR}/bconsole.conf.new ]; then \
 		${ECHO_CMD} "etc/bconsole.conf.new" >> ${TMPPLIST}; \
-		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.new; \
-	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
-		${MV} ${PREFIX}/etc/bconsole.conf ${PREFIX}/etc/bconsole.conf.sample; \
-		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.sample; \
-		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
+		${CHGRP} bacula ${ETCDIR}/bconsole.conf.new; \
+	elif [ -f ${ETCDIR}/bconsole.conf ]; then \
+		${MV} ${ETCDIR}/bconsole.conf ${ETCDIR}/bconsole.conf.sample; \
+		${CHGRP} bacula ${ETCDIR}/bconsole.conf.sample; \
+		${ECHO_CMD} "etc/bacula/bconsole.conf.sample" >> ${TMPPLIST}; \
 	fi
 
 #	ensure that users in the bacula group can run bconsole
@@ -226,22 +233,24 @@ post-install:
 .else
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
-	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \
-		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.new ; \
-		${ECHO_CMD} "etc/bacula-barcodes.new" >> ${TMPPLIST}; \
+	if [ -f ${ETCDIR}/bacula-barcodes ]; then \
+		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${ETCDIR}/bacula-barcodes.new ; \
+		${ECHO_CMD} "etc/bacula/bacula-barcodes.new" >> ${TMPPLIST}; \
 	else \
-		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.samples ; \
-		${ECHO_CMD} "etc/bacula-barcodes.samples" >> ${TMPPLIST}; \
+		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${ETCDIR}/bacula-barcodes.samples ; \
+		${ECHO_CMD} "etc/bacula/bacula-barcodes.samples" >> ${TMPPLIST}; \
 	fi
+#	Add configuration files directory to packing list
+	${ECHO_CMD} "@unexec rmdir %D/etc/bacula 2>/dev/null || true" >> ${TMPPLIST}
 # 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
 
 #	on a fresh install, the .new suffix is not used
-	if [ -f ${PREFIX}/etc/bacula-dir.conf.new ]; then \
-		${CHGRP} bacula ${PREFIX}/etc/bacula-dir.conf.new; \
+	if [ -f ${ETCDIR}/bacula-dir.conf.new ]; then \
+		${CHGRP} bacula ${ETCDIR}/bacula-dir.conf.new; \
 	else \
-		${CHGRP} bacula ${PREFIX}/etc/bacula-dir.conf; \
+		${CHGRP} bacula ${ETCDIR}/bacula-dir.conf; \
 	fi
 
 	${CHGRP} bacula ${PREFIX}/sbin/dbcheck
@@ -249,13 +258,16 @@ post-install:
 .endif
 # 	Install leaves existing conf files untouched. Respect this here!
 	for na in ${CONFFILES}; do \
-		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
-			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
-		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
-			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.conf.sample; \
-			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
+		if [ -f ${ETCDIR}/bacula-$$na.conf.new ]; then \
+			${ECHO_CMD} "etc/bacula/bacula-$$na.conf.new" >> ${TMPPLIST}; \
+		elif [ -f ${ETCDIR}/bacula-$$na.conf ]; then \
+			${MV} ${ETCDIR}/bacula-$$na.conf ${ETCDIR}/bacula-$$na.conf.sample; \
+			${ECHO_CMD} "etc/bacula/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
 		fi; \
 	done
+
+#	Add configuration files directory to packing list
+	${ECHO_CMD} "@unexec rmdir %D/etc/bacula 2>/dev/null || true" >> ${TMPPLIST}
 
 	${CHGRP} wheel ${PREFIX}/etc
 

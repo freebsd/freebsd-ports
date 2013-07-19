@@ -39,7 +39,7 @@ logger -p user.err "$me $@"
 # This simulates a barcode reader in the changer.
 # The labes of the virtual barcode reader are located in the BARCODE_FILE
 SIMULATE_BARCODE=true
-BARCODE_FILE=/usr/local/etc/bacula-barcodes
+BARCODE_FILE=/usr/local/etc/bacula/bacula-barcodes
 MTX=/bin/chio
 # Set default values (see case statement below for
 # free mapping of drive index and tape device

@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130719:
+  AFFECTS: users of sysutils/bacula-server, sysutils/bacula-client, sysutils/bat
+  AUTHOR: dvl@FreeBSD.org
+
+  The configuration files for bacula have been moved to PREFIX/bacula.
+  Moveyour existing configuration files to this directory after
+  upgrading.
+
 20130718:
   AFFECTS: users of security/logcheck
   AUTHOR: glarkin@FreeBSD.org
