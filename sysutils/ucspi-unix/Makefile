@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucspi-unix
-# Date created:         23.Sep.2003
-# Whom:                 patrick@rinke-bochum.de
-#
+# Created by: Patrick Rinke <patrick@rinke-bochum.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ucspi-unix
 PORTVERSION=	0.36
@@ -12,7 +8,9 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	UNIX-domain socket client-server command-line tools
+COMMENT=	Unix-domain socket client-server command-line tools
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs
 
@@ -25,7 +23,11 @@ PLIST_FILES=	bin/unixcat bin/unixclient bin/unixserver
 MAN1=		unixclient.1 unixserver.1
 PORTDOCS=	NEWS PROTOCOL README TODO
 
-post-patch:
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+post-patch: .SILENT
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"	> ${WRKSRC}/conf-man
@@ -36,11 +38,9 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ./installer
-
-.if !defined(NOPORTDOCS)
-post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
