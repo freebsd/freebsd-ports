@@ -88,6 +88,9 @@ VORBIS_DESC=	Ogg Vorbis audio encoder
 
 OPTIONS_DEFAULT=	AIRPLAY AVAHI CEC LAME LIBBLURAY HAL MYSQL \
 			RTMP SFTP SMB VORBIS WEBSERVER
+
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 900000
 OPTIONS_DEFAULT+=	EXTERNAL_FFMPEG
 .endif
@@ -272,4 +275,4 @@ run-autotools:
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
