@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	fasta3
-PORTVERSION=	36.3.2
+PORTVERSION=	36.3.6
 CATEGORIES=	biology
 MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta36/
 DISTNAME=	fasta-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A collection of programs for searching DNA and protein databases
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Collection of programs for searching DNA and protein databases
 
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -23,8 +23,8 @@ FASTA_HOST!=	/usr/bin/uname -n
 MAKE_ENV+=	THR_LIBS=${PTHREAD_LIBS} XDIR=${XDIR} \
 		FASTA_HOST='"${FASTA_HOST}"'
 
-FASTA3_DOCS=	README.versions fasta3x.me fasta3x.doc \
-		fasta20.doc fasta_func.doc readme.* fasta.defaults \
+FASTA3_DOCS=	README.versions \
+		fasta_func.doc readme.* fasta.defaults \
 		fasta.options fasta_versions.html changes*.html
 DATA=		data/*.mat
 EXAMPLES=	seq/*.aa seq/*.lc seq/*.seq seq/*.lib
