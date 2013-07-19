@@ -1,0 +1,11 @@
+bin/opj2dat
+include/liborigin/OriginFile.h
+include/liborigin/OriginObj.h
+include/liborigin/OriginParser.h
+include/liborigin/config.h
+include/liborigin/tree.hh
+lib/liborigin.a
+lib/liborigin.so
+lib/liborigin.so.2
+lib/liborigin.so.2.0.0
+@dirrm include/liborigin
