@@ -1,0 +1,23 @@
+--- Makefile.FreeBSD.orig	2013-07-19 16:44:02.000000000 +0200
++++ Makefile.FreeBSD	2013-07-19 16:44:28.000000000 +0200
+@@ -56,7 +56,10 @@ CFLAGS += $(GTK_CFLAGS) -O2 -Wall \
+           -DPREFIX=\"$(PREFIX)\" \
+           -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
+ 
+-CPPFLAGS = -D__cplusplus -Dc_plusplus
++CPPFLAGS = $(CXXFLAGS) $(GTK_CFLAGS) -O2 -Wall \
++          -DPREFIX=\"$(PREFIX)\" \
++          -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\" \
++          -D__cplusplus -Dc_plusplus
+ 
+ 
+ # ########################################################################
+@@ -109,7 +112,7 @@ OBJ_CPP = $(SRC_CPP:.cpp=.o)
+ .c.o:
+ 	$(CC) -c $*.c $(INC) $(CFLAGS)
+ .cpp.o:
+-	$(CPP) -c $*.cpp $(INC) $(CFLAGS) $(CPPFLAGS)
++	$(CPP) -c $*.cpp $(INC) $(CPPFLAGS)
+ 
+ 
+ # ########################################################################
