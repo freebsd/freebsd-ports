@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-rest-client
-# Date created:				10 Dec 2010
-# Whom:					Renaud Chaput <renchap@cocoa-x.com>
-#
+# Created by: Renaud Chaput <renchap@cocoa-x.com>
 # $FreeBSD$
 
 PORTNAME=	rest-client
-PORTVERSION=	1.6.2.a
+PORTVERSION=	1.6.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
