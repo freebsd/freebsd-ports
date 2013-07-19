@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twitter_oauth
-PORTVERSION=	0.4.93
+PORTVERSION=	0.4.94
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
