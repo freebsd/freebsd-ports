@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	supertux
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-devel
@@ -16,15 +15,13 @@ LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
-USE_SDL=	image mixer
+USE_SDL=	image
 USE_OPENAL=	al
 USE_GL=		glew
-USES=		cmake
+USES=		cmake:outsource
 MAKE_JOBS_SAFE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e '/^#.*<curl\/types.h>/d' \
-		${WRKSRC}/src/addon/addon_manager.cpp
 	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2.png,' \
 		${WRKSRC}/supertux2.desktop
 
