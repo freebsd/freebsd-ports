@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-ohai
-# Date created:				18 Mar 2010
-# Whom:					Renaud Chaput <renchap@cocoa-x.com>
-#
+# Created by: Renaud Chaput <renchap@cocoa-x.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ohai
-PORTVERSION=	6.14.0
+PORTVERSION=	6.16.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +13,7 @@ RUN_DEPENDS=	rubygem-ipaddress>=0:${PORTSDIR}/net/rubygem-ipaddress \
 		rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=0:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=0:${PORTSDIR}/devel/rubygem-mixlib-cli \
+		rubygem-mixlib-shellout>=0:${PORTSDIR}/devel/rubygem-mixlib-shellout \
 		rubygem-systemu>=0:${PORTSDIR}/devel/rubygem-systemu \
 		rubygem-yajl-ruby>=0:${PORTSDIR}/devel/rubygem-yajl-ruby
 
