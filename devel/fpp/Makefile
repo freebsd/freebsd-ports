@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	fortran
 DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
 ALL_TARGET=	bsd44
