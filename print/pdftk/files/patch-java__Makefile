@@ -1,0 +1,21 @@
+--- ./java/Makefile.orig	2013-07-18 14:58:41.000000000 -0400
++++ ./java/Makefile	2013-07-18 14:59:08.000000000 -0400
+@@ -21,9 +21,9 @@
+ # preprocess this file so it might include our local copies of library objects: libgcj_local
+ com/lowagie/text/pdf/PdfEncryption.java : com/lowagie/text/pdf/PdfEncryption.java.c
+ ifdef USE_LOCAL_LIBGCJ
+-	cpp -C -P -DPDFTK_JAVA_LOCAL com/lowagie/text/pdf/PdfEncryption.java.c com/lowagie/text/pdf/PdfEncryption.java
++	${GCPP} -C -P -DPDFTK_JAVA_LOCAL com/lowagie/text/pdf/PdfEncryption.java.c com/lowagie/text/pdf/PdfEncryption.java
+ else
+-	cpp -C -P com/lowagie/text/pdf/PdfEncryption.java.c com/lowagie/text/pdf/PdfEncryption.java
++	${GCPP} -C -P com/lowagie/text/pdf/PdfEncryption.java.c com/lowagie/text/pdf/PdfEncryption.java
+ endif
+ 
+ #
+@@ -102,4 +102,4 @@
+ libgcj_local_clean :
+ 	$(MAKE) -iC "$(JAVALIBPATH)/gnu_local/java/security" clean;
+ 	$(MAKE) -iC "$(JAVALIBPATH)/gnu_local/java/security/provider" clean;
+-	$(MAKE) -iC "$(JAVALIBPATH)/java_local/security" clean;
+\ No newline at end of file
++	$(MAKE) -iC "$(JAVALIBPATH)/java_local/security" clean;
