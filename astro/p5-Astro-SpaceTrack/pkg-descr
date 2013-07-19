@@ -19,4 +19,4 @@ method document for details. Methods which return orbital data on
 success add a 'Pragma: spacetrack-type = orbit' header to the
 HTTP::Response object if the request succeeds.
 
-WWW:	http://search.cpan.org/dist/Astro-SpaceTrack/
+WWW: http://search.cpan.org/dist/Astro-SpaceTrack/
