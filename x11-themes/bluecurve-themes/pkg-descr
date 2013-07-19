@@ -3,7 +3,7 @@ It attempts to provide an unified look for the open source desktop.
 
 This meta-port installs all the Bluecurve ports, namely:
 
-    - the GTK+ themes (native and Linux versions)
+    - the GTK+ themes
     - the Metacity themes
     - the icon set
     - the X cursor themes

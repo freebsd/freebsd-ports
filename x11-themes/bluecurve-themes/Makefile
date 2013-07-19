@@ -18,7 +18,7 @@ PORTVERSION=	1.0
 # added to the global section by someone (with the intent of bumping
 # the revisions of the slave ports) and it cannot be removed without
 # causing a version downgrade or using PORTEPOCH.
-PORTREVISION=	6
+PORTREVISION=	7
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
