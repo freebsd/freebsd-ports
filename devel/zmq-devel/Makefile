@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	zmq
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	zeromq-${DISTVERSION}
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source message queue optimised for performance
 
 MAKE_JOBS_SAFE=	yes
@@ -66,7 +65,7 @@ MAN3=	\
 	zmq_version.3
 
 regression-test:
-	cd ${WRKSRC} && ${MAKE} check
+	cd ${WRKSRC} && ${MAKE}	check
 
 .include <bsd.port.pre.mk>
 
