@@ -1,7 +1,4 @@
-# Ports collection makefile for:        rubygem-amqp-utils
-# Date created:                         11 July 2011
-# Whom:                                 Loic Pefferkorn <loic-freebsd@loicp.eu>
-#
+# Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
 # $FreeBSD$
 
 PORTNAME=	amqp-utils
@@ -19,8 +16,6 @@ RUN_DEPENDS=	rubygem-amqp>=0.7.1:${PORTSDIR}/net/rubygem-amqp \
 		rubygem-json>=1.5:${PORTSDIR}/devel/rubygem-json \
 		rubygem-msgpack>=0.4.5:${PORTSDIR}/devel/rubygem-msgpack \
 		rubygem-trollop>=1.16.2:${PORTSDIR}/devel/rubygem-trollop
-
-BROKEN=		bad dependencies
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
