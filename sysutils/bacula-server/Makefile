@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	5.2.12
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -11,6 +11,8 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	dan@langille.org
 COMMENT?=	Network backup solution (server)
+
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 
 UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -241,7 +243,7 @@ post-install:
 		${ECHO_CMD} "etc/bacula/bacula-barcodes.samples" >> ${TMPPLIST}; \
 	fi
 #	Add configuration files directory to packing list
-	${ECHO_CMD} "@unexec rmdir %D/etc/bacula 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/etc/bacula 2>/dev/null || true" >> ${TMPPLIST}
 # 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
@@ -267,7 +269,7 @@ post-install:
 	done
 
 #	Add configuration files directory to packing list
-	${ECHO_CMD} "@unexec rmdir %D/etc/bacula 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/etc/bacula 2>/dev/null || true" >> ${TMPPLIST}
 
 	${CHGRP} wheel ${PREFIX}/etc
 
