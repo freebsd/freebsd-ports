@@ -31,7 +31,10 @@ share/games/supertux2/images/background/arcticskies4.png
 share/games/supertux2/images/background/arctis.jpg
 share/games/supertux2/images/background/arctis2.png
 share/games/supertux2/images/background/arctis_bottom.jpg
+share/games/supertux2/images/background/arctis_bottom_para3.png
 share/games/supertux2/images/background/arctis_dark.jpg
+share/games/supertux2/images/background/arctis_para2.png
+share/games/supertux2/images/background/arctis_para3.png
 share/games/supertux2/images/background/arctis_top.jpg
 share/games/supertux2/images/background/black_800px.png
 share/games/supertux2/images/background/bluemountain-bottom.png
@@ -42,26 +45,31 @@ share/games/supertux2/images/background/bridgecloud-light.png
 share/games/supertux2/images/background/bridgeocean-fade.png
 share/games/supertux2/images/background/bridgeocean-nofade.png
 share/games/supertux2/images/background/bridgeocean-original.png
+share/games/supertux2/images/background/castle_foreground.png
 share/games/supertux2/images/background/cave2.jpg
 share/games/supertux2/images/background/extro.jpg
 share/games/supertux2/images/background/fog.png
 share/games/supertux2/images/background/forest1.jpg
 share/games/supertux2/images/background/forest2.jpg
+share/games/supertux2/images/background/forest_para2.png
+share/games/supertux2/images/background/forest_para3.png
+share/games/supertux2/images/background/forest_para3_bottom.png
 share/games/supertux2/images/background/ghostforest.jpg
 share/games/supertux2/images/background/leaves.png
 share/games/supertux2/images/background/nightsky.png
 share/games/supertux2/images/background/nightsky_bottom.png
 share/games/supertux2/images/background/nightsky_middle.png
+share/games/supertux2/images/background/nightsky_para.png
 share/games/supertux2/images/background/nightsky_top.png
 share/games/supertux2/images/background/ocean.jpg
 share/games/supertux2/images/background/oiltux.jpg
 share/games/supertux2/images/background/semi_arctic.jpg
 share/games/supertux2/images/background/snowcastle.png
+share/games/supertux2/images/background/transparent_up.png
 share/games/supertux2/images/creatures/angrystone/angrystone.sprite
 share/games/supertux2/images/creatures/angrystone/attacking-0.png
 share/games/supertux2/images/creatures/angrystone/charging-0.png
 share/games/supertux2/images/creatures/angrystone/idle-0.png
-share/games/supertux2/images/creatures/bombfish/bombfish.png
 share/games/supertux2/images/creatures/bouncing_snowball/bouncing_snowball.sprite
 share/games/supertux2/images/creatures/bouncing_snowball/left-0.png
 share/games/supertux2/images/creatures/bouncing_snowball/left-1.png
@@ -69,6 +77,7 @@ share/games/supertux2/images/creatures/bouncing_snowball/left-2.png
 share/games/supertux2/images/creatures/bouncing_snowball/left-3.png
 share/games/supertux2/images/creatures/bouncing_snowball/left-4.png
 share/games/supertux2/images/creatures/bouncing_snowball/left-5.png
+share/games/supertux2/images/creatures/crystallo/crystallo-editor.png
 share/games/supertux2/images/creatures/crystallo/crystallo-left-0.png
 share/games/supertux2/images/creatures/crystallo/crystallo-left-1.png
 share/games/supertux2/images/creatures/crystallo/crystallo-left-2.png
@@ -105,11 +114,13 @@ share/games/supertux2/images/creatures/fish/left-0.png
 share/games/supertux2/images/creatures/fish/left-1.png
 share/games/supertux2/images/creatures/flame/flame-0.png
 share/games/supertux2/images/creatures/flame/flame-1.png
+share/games/supertux2/images/creatures/flame/flame-editor.png
 share/games/supertux2/images/creatures/flame/flame.sprite
 share/games/supertux2/images/creatures/flame_fish/down.png
 share/games/supertux2/images/creatures/flame_fish/flame_fish.sprite
 share/games/supertux2/images/creatures/flame_fish/left-0.png
 share/games/supertux2/images/creatures/flame_fish/left-1.png
+share/games/supertux2/images/creatures/flying_snowball/editor.png
 share/games/supertux2/images/creatures/flying_snowball/flying_snowball.sprite
 share/games/supertux2/images/creatures/flying_snowball/left-0.png
 share/games/supertux2/images/creatures/flying_snowball/left-1.png
@@ -144,6 +155,8 @@ share/games/supertux2/images/creatures/haywire/ticking-4.png
 share/games/supertux2/images/creatures/haywire/ticking-5.png
 share/games/supertux2/images/creatures/icecrusher/iceblock.png
 share/games/supertux2/images/creatures/icecrusher/icecrusher.sprite
+share/games/supertux2/images/creatures/icecrusher/krosh.png
+share/games/supertux2/images/creatures/icecrusher/krosh.sprite
 share/games/supertux2/images/creatures/igel/igel.sprite
 share/games/supertux2/images/creatures/igel/walk-0.png
 share/games/supertux2/images/creatures/igel/walk-1.png
@@ -270,6 +283,13 @@ share/games/supertux2/images/creatures/nolok/walk-1.png
 share/games/supertux2/images/creatures/nolok/walk-2.png
 share/games/supertux2/images/creatures/nolok/walk-3.png
 share/games/supertux2/images/creatures/nolok/walk-4.png
+share/games/supertux2/images/creatures/owl/left-0.png
+share/games/supertux2/images/creatures/owl/left-1.png
+share/games/supertux2/images/creatures/owl/left-2.png
+share/games/supertux2/images/creatures/owl/left-3.png
+share/games/supertux2/images/creatures/owl/left-4.png
+share/games/supertux2/images/creatures/owl/left-5.png
+share/games/supertux2/images/creatures/owl/owl.sprite
 share/games/supertux2/images/creatures/penny/penny.png
 share/games/supertux2/images/creatures/penny/penny.sprite
 share/games/supertux2/images/creatures/plant/iced-left.png
@@ -288,12 +308,18 @@ share/games/supertux2/images/creatures/poison_ivy/left-1.png
 share/games/supertux2/images/creatures/poison_ivy/left-2.png
 share/games/supertux2/images/creatures/poison_ivy/poison_ivy.sprite
 share/games/supertux2/images/creatures/poison_ivy/squished.png
+share/games/supertux2/images/creatures/short_fuse/center.png
+share/games/supertux2/images/creatures/short_fuse/left.png
+share/games/supertux2/images/creatures/short_fuse/right.png
+share/games/supertux2/images/creatures/short_fuse/short_fuse.sprite
 share/games/supertux2/images/creatures/skullyhop/charging-0.png
 share/games/supertux2/images/creatures/skullyhop/charging-1.png
 share/games/supertux2/images/creatures/skullyhop/jumping-0.png
 share/games/supertux2/images/creatures/skullyhop/skullyhop.sprite
 share/games/supertux2/images/creatures/skullyhop/squished-0.png
 share/games/supertux2/images/creatures/skullyhop/standing-0.png
+share/games/supertux2/images/creatures/skydive/skydive.png
+share/games/supertux2/images/creatures/skydive/skydive.sprite
 share/games/supertux2/images/creatures/snail/snail.sprite
 share/games/supertux2/images/creatures/snail/snowsnail.png
 share/games/supertux2/images/creatures/snail/snowsnail1.png
@@ -329,10 +355,19 @@ share/games/supertux2/images/creatures/snowball/sport-left-0.png
 share/games/supertux2/images/creatures/snowball/sport-left-1.png
 share/games/supertux2/images/creatures/snowball/sport-left-2.png
 share/games/supertux2/images/creatures/snowball/squished-left.png
+share/games/supertux2/images/creatures/snowjumpy/iced-left-up.png
 share/games/supertux2/images/creatures/snowjumpy/left-down.png
 share/games/supertux2/images/creatures/snowjumpy/left-middle.png
 share/games/supertux2/images/creatures/snowjumpy/left-up.png
 share/games/supertux2/images/creatures/snowjumpy/snowjumpy.sprite
+share/games/supertux2/images/creatures/snowman/headless1.png
+share/games/supertux2/images/creatures/snowman/headless2.png
+share/games/supertux2/images/creatures/snowman/headless3.png
+share/games/supertux2/images/creatures/snowman/headless4.png
+share/games/supertux2/images/creatures/snowman/headless5.png
+share/games/supertux2/images/creatures/snowman/headless6.png
+share/games/supertux2/images/creatures/snowman/headless7.png
+share/games/supertux2/images/creatures/snowman/headless8.png
 share/games/supertux2/images/creatures/snowman/snowman.sprite
 share/games/supertux2/images/creatures/snowman/walk1.png
 share/games/supertux2/images/creatures/snowman/walk2.png
@@ -386,12 +421,20 @@ share/games/supertux2/images/creatures/tux/big/backflip-1.png
 share/games/supertux2/images/creatures/tux/big/backflip-2.png
 share/games/supertux2/images/creatures/tux/big/backflip-3.png
 share/games/supertux2/images/creatures/tux/big/backflip-4.png
+share/games/supertux2/images/creatures/tux/big/backflip-5.png
+share/games/supertux2/images/creatures/tux/big/backflip-6.png
+share/games/supertux2/images/creatures/tux/big/backflip-7.png
+share/games/supertux2/images/creatures/tux/big/backflip-8.png
 share/games/supertux2/images/creatures/tux/big/buttjump-0.png
 share/games/supertux2/images/creatures/tux/big/duck-0.png
 share/games/supertux2/images/creatures/tux/big/idle-0.png
 share/games/supertux2/images/creatures/tux/big/idle-1.png
 share/games/supertux2/images/creatures/tux/big/jump-0.png
 share/games/supertux2/images/creatures/tux/big/kick-0.png
+share/games/supertux2/images/creatures/tux/big/ladder-0.png
+share/games/supertux2/images/creatures/tux/big/ladder-1.png
+share/games/supertux2/images/creatures/tux/big/ladder-2.png
+share/games/supertux2/images/creatures/tux/big/ladder-3.png
 share/games/supertux2/images/creatures/tux/big/skid-0.png
 share/games/supertux2/images/creatures/tux/big/stand-0.png
 share/games/supertux2/images/creatures/tux/big/walk-0.png
@@ -405,12 +448,20 @@ share/games/supertux2/images/creatures/tux/fire/backflip-1.png
 share/games/supertux2/images/creatures/tux/fire/backflip-2.png
 share/games/supertux2/images/creatures/tux/fire/backflip-3.png
 share/games/supertux2/images/creatures/tux/fire/backflip-4.png
+share/games/supertux2/images/creatures/tux/fire/backflip-5.png
+share/games/supertux2/images/creatures/tux/fire/backflip-6.png
+share/games/supertux2/images/creatures/tux/fire/backflip-7.png
+share/games/supertux2/images/creatures/tux/fire/backflip-8.png
 share/games/supertux2/images/creatures/tux/fire/buttjump-0.png
 share/games/supertux2/images/creatures/tux/fire/duck-0.png
 share/games/supertux2/images/creatures/tux/fire/idle-0.png
 share/games/supertux2/images/creatures/tux/fire/idle-1.png
 share/games/supertux2/images/creatures/tux/fire/jump-0.png
 share/games/supertux2/images/creatures/tux/fire/kick-0.png
+share/games/supertux2/images/creatures/tux/fire/ladder-0.png
+share/games/supertux2/images/creatures/tux/fire/ladder-1.png
+share/games/supertux2/images/creatures/tux/fire/ladder-2.png
+share/games/supertux2/images/creatures/tux/fire/ladder-3.png
 share/games/supertux2/images/creatures/tux/fire/skid-0.png
 share/games/supertux2/images/creatures/tux/fire/stand-0.png
 share/games/supertux2/images/creatures/tux/fire/walk-0.png
@@ -424,12 +475,20 @@ share/games/supertux2/images/creatures/tux/ice/backflip-1.png
 share/games/supertux2/images/creatures/tux/ice/backflip-2.png
 share/games/supertux2/images/creatures/tux/ice/backflip-3.png
 share/games/supertux2/images/creatures/tux/ice/backflip-4.png
+share/games/supertux2/images/creatures/tux/ice/backflip-5.png
+share/games/supertux2/images/creatures/tux/ice/backflip-6.png
+share/games/supertux2/images/creatures/tux/ice/backflip-7.png
+share/games/supertux2/images/creatures/tux/ice/backflip-8.png
 share/games/supertux2/images/creatures/tux/ice/buttjump-0.png
 share/games/supertux2/images/creatures/tux/ice/duck-0.png
 share/games/supertux2/images/creatures/tux/ice/idle-0.png
 share/games/supertux2/images/creatures/tux/ice/idle-1.png
 share/games/supertux2/images/creatures/tux/ice/jump-0.png
 share/games/supertux2/images/creatures/tux/ice/kick-0.png
+share/games/supertux2/images/creatures/tux/ice/ladder-0.png
+share/games/supertux2/images/creatures/tux/ice/ladder-1.png
+share/games/supertux2/images/creatures/tux/ice/ladder-2.png
+share/games/supertux2/images/creatures/tux/ice/ladder-3.png
 share/games/supertux2/images/creatures/tux/ice/skid-0.png
 share/games/supertux2/images/creatures/tux/ice/stand-0.png
 share/games/supertux2/images/creatures/tux/ice/walk-0.png
@@ -451,6 +510,10 @@ share/games/supertux2/images/creatures/tux/small/idle-0.png
 share/games/supertux2/images/creatures/tux/small/idle-1.png
 share/games/supertux2/images/creatures/tux/small/jump-0.png
 share/games/supertux2/images/creatures/tux/small/kick-0.png
+share/games/supertux2/images/creatures/tux/small/ladder-0.png
+share/games/supertux2/images/creatures/tux/small/ladder-1.png
+share/games/supertux2/images/creatures/tux/small/ladder-2.png
+share/games/supertux2/images/creatures/tux/small/ladder-3.png
 share/games/supertux2/images/creatures/tux/small/skid-0.png
 share/games/supertux2/images/creatures/tux/small/stand-0.png
 share/games/supertux2/images/creatures/tux/small/walk-0.png
@@ -542,6 +605,15 @@ share/games/supertux2/images/credits/ondra.jpg
 share/games/supertux2/images/credits/paroneayea.jpg
 share/games/supertux2/images/credits/wansti.jpg
 share/games/supertux2/images/credits/wolfgang.jpg
+share/games/supertux2/images/decal/explanations/billboard-backflip.png
+share/games/supertux2/images/decal/explanations/billboard-bigtux.png
+share/games/supertux2/images/decal/explanations/billboard-buttjump.png
+share/games/supertux2/images/decal/explanations/billboard-fireflower.png
+share/games/supertux2/images/decal/explanations/billboard-resetpoint.png
+share/games/supertux2/images/decal/explanations/billboard-runjump.png
+share/games/supertux2/images/decal/explanations/billboard-star.png
+share/games/supertux2/images/decal/explanations/billboard-switch.png
+share/games/supertux2/images/decal/explanations/billboard-trampoline.png
 share/games/supertux2/images/decal/nightcave/lightflower1.png
 share/games/supertux2/images/decal/nightcave/lightflower2.png
 share/games/supertux2/images/decal/nightcave/lightflower3.png
@@ -553,6 +625,7 @@ share/games/supertux2/images/engine/editor/README
 share/games/supertux2/images/engine/editor/ambientsound.png
 share/games/supertux2/images/engine/editor/arrow.png
 share/games/supertux2/images/engine/editor/background.png
+share/games/supertux2/images/engine/editor/bicycleplatform.png
 share/games/supertux2/images/engine/editor/camera.png
 share/games/supertux2/images/engine/editor/clock.png
 share/games/supertux2/images/engine/editor/clouds.png
@@ -561,6 +634,7 @@ share/games/supertux2/images/engine/editor/ghostparticles.png
 share/games/supertux2/images/engine/editor/gradient.png
 share/games/supertux2/images/engine/editor/infoblock.png
 share/games/supertux2/images/engine/editor/invisible_wall.png
+share/games/supertux2/images/engine/editor/pneumaticplatform.png
 share/games/supertux2/images/engine/editor/point.png
 share/games/supertux2/images/engine/editor/powerup.png
 share/games/supertux2/images/engine/editor/rain.png
@@ -628,11 +702,15 @@ share/games/supertux2/images/help/rockhowto1.png
 share/games/supertux2/images/help/rockhowto2-zh.png
 share/games/supertux2/images/help/rockhowto2.png
 share/games/supertux2/images/help/rockhowto3.png
+share/games/supertux2/images/ice_world.strf
 share/games/supertux2/images/objects/bonus_block/bonus-1up.png
 share/games/supertux2/images/objects/bonus_block/bonus-fire_flower.png
 share/games/supertux2/images/objects/bonus_block/bonus-herring.png
 share/games/supertux2/images/objects/bonus_block/bonus-ice_flower.png
 share/games/supertux2/images/objects/bonus_block/bonus-invisible.png
+share/games/supertux2/images/objects/bonus_block/bonus-porttramp.png
+share/games/supertux2/images/objects/bonus_block/bonus-rock.png
+share/games/supertux2/images/objects/bonus_block/bonus-tramp.png
 share/games/supertux2/images/objects/bonus_block/bonusblock.sprite
 share/games/supertux2/images/objects/bonus_block/brick.sprite
 share/games/supertux2/images/objects/bonus_block/empty.png
@@ -641,11 +719,23 @@ share/games/supertux2/images/objects/bonus_block/full-1.png
 share/games/supertux2/images/objects/bonus_block/full-2.png
 share/games/supertux2/images/objects/bonus_block/full-3.png
 share/games/supertux2/images/objects/bonus_block/full-4.png
+share/games/supertux2/images/objects/bonus_block/hiddenbonus.sprite
 share/games/supertux2/images/objects/bonus_block/icedbrick.sprite
 share/games/supertux2/images/objects/bonus_block/info_block.png
 share/games/supertux2/images/objects/bonus_block/infoblock.png
 share/games/supertux2/images/objects/bonus_block/infoblock.sprite
+share/games/supertux2/images/objects/bonus_block/invisible.png
 share/games/supertux2/images/objects/bonus_block/invisibleblock.sprite
+share/games/supertux2/images/objects/bonus_block/light.xcf
+share/games/supertux2/images/objects/bonus_block/off.png
+share/games/supertux2/images/objects/bonus_block/on.png
+share/games/supertux2/images/objects/bonus_block/purple_0.png
+share/games/supertux2/images/objects/bonus_block/purple_1.png
+share/games/supertux2/images/objects/bonus_block/purple_2.png
+share/games/supertux2/images/objects/bonus_block/purple_3.png
+share/games/supertux2/images/objects/bonus_block/purple_4.png
+share/games/supertux2/images/objects/bonus_block/purple_empty.png
+share/games/supertux2/images/objects/bonus_block/purpleblock.sprite
 share/games/supertux2/images/objects/bullets/fire_bullet-0.png
 share/games/supertux2/images/objects/bullets/fire_bullet-1.png
 share/games/supertux2/images/objects/bullets/fire_bullet-2.png
@@ -775,6 +865,7 @@ share/games/supertux2/images/objects/lantern/lantern-4.png
 share/games/supertux2/images/objects/lantern/lantern-off-open.png
 share/games/supertux2/images/objects/lantern/lantern-off.png
 share/games/supertux2/images/objects/lantern/lantern.sprite
+share/games/supertux2/images/objects/lightmap_light/bonusblock_light.png
 share/games/supertux2/images/objects/lightmap_light/lightmap_light.png
 share/games/supertux2/images/objects/lightmap_light/lightmap_light.sprite
 share/games/supertux2/images/objects/logo/logo.sprite
@@ -898,6 +989,18 @@ share/games/supertux2/images/objects/resetpoints/vbell-r_0.png
 share/games/supertux2/images/objects/resetpoints/vbell.sprite
 share/games/supertux2/images/objects/rock/rock.png
 share/games/supertux2/images/objects/rock/rock.sprite
+share/games/supertux2/images/objects/rusty-trampoline/half-bottom.png
+share/games/supertux2/images/objects/rusty-trampoline/half-top.png
+share/games/supertux2/images/objects/rusty-trampoline/rusty-trampoline.sprite
+share/games/supertux2/images/objects/rusty-trampoline/trampoline1-0.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline1-1.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline1-2.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline1-3.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline2-1.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline2-2.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline2-3.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline2-4.png
+share/games/supertux2/images/objects/rusty-trampoline/trampoline2-5.png
 share/games/supertux2/images/objects/sawblade/default-0.png
 share/games/supertux2/images/objects/sawblade/default-1.png
 share/games/supertux2/images/objects/sawblade/default-2.png
@@ -915,20 +1018,6 @@ share/games/supertux2/images/objects/spotlight/spotlight_center.png
 share/games/supertux2/images/objects/spotlight/spotlight_center.sprite
 share/games/supertux2/images/objects/spotlight/spotlight_lights.png
 share/games/supertux2/images/objects/spotlight/spotlight_lights.sprite
-share/games/supertux2/images/objects/strawbox/straw.png
-share/games/supertux2/images/objects/strawbox/straw_01.png
-share/games/supertux2/images/objects/strawbox/straw_02.png
-share/games/supertux2/images/objects/strawbox/straw_03.png
-share/games/supertux2/images/objects/strawbox/straw_04.png
-share/games/supertux2/images/objects/strawbox/straw_05.png
-share/games/supertux2/images/objects/strawbox/straw_06.png
-share/games/supertux2/images/objects/strawbox/straw_07.png
-share/games/supertux2/images/objects/strawbox/straw_08.png
-share/games/supertux2/images/objects/strawbox/straw_09.png
-share/games/supertux2/images/objects/strawbox/straw_10.png
-share/games/supertux2/images/objects/strawbox/straw_11.png
-share/games/supertux2/images/objects/strawbox/straw_12.png
-share/games/supertux2/images/objects/strawbox/strawbox.sprite
 share/games/supertux2/images/objects/switch/left-0.png
 share/games/supertux2/images/objects/switch/left-1.png
 share/games/supertux2/images/objects/switch/left-2.png
@@ -958,6 +1047,8 @@ share/games/supertux2/images/objects/unstable_tile/castleblock-3.png
 share/games/supertux2/images/objects/unstable_tile/castleblock.sprite
 share/games/supertux2/images/objects/unstable_tile/crumbling-0.png
 share/games/supertux2/images/objects/unstable_tile/crumbling-1.png
+share/games/supertux2/images/objects/unstable_tile/iceplatform.png
+share/games/supertux2/images/objects/unstable_tile/iceplatform.sprite
 share/games/supertux2/images/objects/unstable_tile/normal.png
 share/games/supertux2/images/objects/unstable_tile/snow-0.png
 share/games/supertux2/images/objects/unstable_tile/snow-1.png
@@ -971,6 +1062,34 @@ share/games/supertux2/images/objects/unstable_tile/snow-8.png
 share/games/supertux2/images/objects/unstable_tile/snow-9.png
 share/games/supertux2/images/objects/unstable_tile/snow.sprite
 share/games/supertux2/images/objects/unstable_tile/unstable_tile.sprite
+share/games/supertux2/images/objects/weak_block/melt_01.png
+share/games/supertux2/images/objects/weak_block/melt_02.png
+share/games/supertux2/images/objects/weak_block/melt_03.png
+share/games/supertux2/images/objects/weak_block/melt_04.png
+share/games/supertux2/images/objects/weak_block/melt_05.png
+share/games/supertux2/images/objects/weak_block/melt_06.png
+share/games/supertux2/images/objects/weak_block/melt_07.png
+share/games/supertux2/images/objects/weak_block/melt_08.png
+share/games/supertux2/images/objects/weak_block/melt_09.png
+share/games/supertux2/images/objects/weak_block/melt_10.png
+share/games/supertux2/images/objects/weak_block/melt_11.png
+share/games/supertux2/images/objects/weak_block/meltbox.png
+share/games/supertux2/images/objects/weak_block/meltbox.sprite
+share/games/supertux2/images/objects/weak_block/meltbox.xcf
+share/games/supertux2/images/objects/weak_block/straw.png
+share/games/supertux2/images/objects/weak_block/straw_01.png
+share/games/supertux2/images/objects/weak_block/straw_02.png
+share/games/supertux2/images/objects/weak_block/straw_03.png
+share/games/supertux2/images/objects/weak_block/straw_04.png
+share/games/supertux2/images/objects/weak_block/straw_05.png
+share/games/supertux2/images/objects/weak_block/straw_06.png
+share/games/supertux2/images/objects/weak_block/straw_07.png
+share/games/supertux2/images/objects/weak_block/straw_08.png
+share/games/supertux2/images/objects/weak_block/straw_09.png
+share/games/supertux2/images/objects/weak_block/straw_10.png
+share/games/supertux2/images/objects/weak_block/straw_11.png
+share/games/supertux2/images/objects/weak_block/straw_12.png
+share/games/supertux2/images/objects/weak_block/strawbox.sprite
 share/games/supertux2/images/powerups/1up/1up.png
 share/games/supertux2/images/powerups/1up/1up.sprite
 share/games/supertux2/images/powerups/egg/egg.png
@@ -1003,6 +1122,7 @@ share/games/supertux2/images/tiles/auxiliary/endseq.png
 share/games/supertux2/images/tiles/auxiliary/finalgoal.png
 share/games/supertux2/images/tiles/auxiliary/invisible-editor.png
 share/games/supertux2/images/tiles/auxiliary/invisible-unisolid-editor.png
+share/games/supertux2/images/tiles/auxiliary/invisible-unisolid-slopes.png
 share/games/supertux2/images/tiles/auxiliary/notile.png
 share/games/supertux2/images/tiles/background/background.png
 share/games/supertux2/images/tiles/background/backgroundtile1.png
@@ -1235,9 +1355,9 @@ share/games/supertux2/images/tiles/lava/zone/template.xcf
 share/games/supertux2/images/tiles/lightmap/lightmap-bw.png
 share/games/supertux2/images/tiles/nightcave/ground.png
 share/games/supertux2/images/tiles/pipe/blue.png
-share/games/supertux2/images/tiles/pipe/blueh.png
-share/games/supertux2/images/tiles/pipe/pipeh.png
-share/games/supertux2/images/tiles/pipe/pipev.png
+share/games/supertux2/images/tiles/pipe/colors.xcf
+share/games/supertux2/images/tiles/pipe/green.png
+share/games/supertux2/images/tiles/pipe/mask.png
 share/games/supertux2/images/tiles/pole/bend.png
 share/games/supertux2/images/tiles/pole/cross.png
 share/games/supertux2/images/tiles/pole/horz.png
@@ -1264,6 +1384,8 @@ share/games/supertux2/images/tiles/snow/concave.png
 share/games/supertux2/images/tiles/snow/convex.png
 share/games/supertux2/images/tiles/snow/crack.png
 share/games/supertux2/images/tiles/snow/platform.png
+share/games/supertux2/images/tiles/snow/slope-upper.png
+share/games/supertux2/images/tiles/snow/slope_transitions.png
 share/games/supertux2/images/tiles/snow/special.png
 share/games/supertux2/images/tiles/snow/spike.png
 share/games/supertux2/images/tiles/snow/unisolid.png
@@ -1340,16 +1462,22 @@ share/games/supertux2/images/worldmap/antarctica/water.png
 share/games/supertux2/images/worldmap/antarctica/woodconcave.png
 share/games/supertux2/images/worldmap/antarctica/woodconvex.png
 share/games/supertux2/images/worldmap/common/boat/boat.sprite
+share/games/supertux2/images/worldmap/common/boat/boat.xcf
 share/games/supertux2/images/worldmap/common/boat/boat_0.png
 share/games/supertux2/images/worldmap/common/boat/boat_0_fire.png
+share/games/supertux2/images/worldmap/common/boat/boat_0_ice.png
 share/games/supertux2/images/worldmap/common/boat/boat_1.png
 share/games/supertux2/images/worldmap/common/boat/boat_1_fire.png
+share/games/supertux2/images/worldmap/common/boat/boat_1_ice.png
 share/games/supertux2/images/worldmap/common/boat/boat_empty.png
 share/games/supertux2/images/worldmap/common/boat/left_boat_0.png
 share/games/supertux2/images/worldmap/common/boat/left_boat_0_fire.png
 share/games/supertux2/images/worldmap/common/boat/left_boat_1.png
 share/games/supertux2/images/worldmap/common/boat/left_boat_1_fire.png
+share/games/supertux2/images/worldmap/common/bonusdot.sprite
 share/games/supertux2/images/worldmap/common/firetux.png
+share/games/supertux2/images/worldmap/common/hiddendot.sprite
+share/games/supertux2/images/worldmap/common/invisible.png
 share/games/supertux2/images/worldmap/common/laddertux.sprite
 share/games/supertux2/images/worldmap/common/laddertux1.png
 share/games/supertux2/images/worldmap/common/laddertux2.png
@@ -1366,6 +1494,10 @@ share/games/supertux2/images/worldmap/common/level_star3.png
 share/games/supertux2/images/worldmap/common/level_star4.png
 share/games/supertux2/images/worldmap/common/level_star5.png
 share/games/supertux2/images/worldmap/common/leveldot.sprite
+share/games/supertux2/images/worldmap/common/leveldot_blue-01.png
+share/games/supertux2/images/worldmap/common/leveldot_blue-02.png
+share/games/supertux2/images/worldmap/common/leveldot_blue-03.png
+share/games/supertux2/images/worldmap/common/leveldot_blue.xcf
 share/games/supertux2/images/worldmap/common/leveldot_green.png
 share/games/supertux2/images/worldmap/common/leveldot_red.png
 share/games/supertux2/images/worldmap/common/messagedot.png
@@ -1383,22 +1515,31 @@ share/games/supertux2/images/worldmap/common/shroom6.png
 share/games/supertux2/images/worldmap/common/smalltux.png
 share/games/supertux2/images/worldmap/common/smalltux1.png
 share/games/supertux2/images/worldmap/common/smalltux1_fire.png
+share/games/supertux2/images/worldmap/common/smalltux1_ice.png
 share/games/supertux2/images/worldmap/common/smalltux2.png
 share/games/supertux2/images/worldmap/common/smalltux2_fire.png
+share/games/supertux2/images/worldmap/common/smalltux2_ice.png
 share/games/supertux2/images/worldmap/common/smalltux3.png
 share/games/supertux2/images/worldmap/common/smalltux3_fire.png
+share/games/supertux2/images/worldmap/common/smalltux3_ice.png
 share/games/supertux2/images/worldmap/common/smalltux4.png
 share/games/supertux2/images/worldmap/common/smalltux4_fire.png
+share/games/supertux2/images/worldmap/common/smalltux4_ice.png
 share/games/supertux2/images/worldmap/common/smalltux5.png
 share/games/supertux2/images/worldmap/common/smalltux5_fire.png
+share/games/supertux2/images/worldmap/common/smalltux5_ice.png
 share/games/supertux2/images/worldmap/common/smalltux6.png
 share/games/supertux2/images/worldmap/common/smalltux6_fire.png
+share/games/supertux2/images/worldmap/common/smalltux6_ice.png
 share/games/supertux2/images/worldmap/common/smalltux7.png
 share/games/supertux2/images/worldmap/common/smalltux7_fire.png
+share/games/supertux2/images/worldmap/common/smalltux7_ice.png
 share/games/supertux2/images/worldmap/common/smalltux8.png
 share/games/supertux2/images/worldmap/common/smalltux8_fire.png
+share/games/supertux2/images/worldmap/common/smalltux8_ice.png
 share/games/supertux2/images/worldmap/common/smalltux9.png
 share/games/supertux2/images/worldmap/common/smalltux_fire.png
+share/games/supertux2/images/worldmap/common/smalltux_ice.png
 share/games/supertux2/images/worldmap/common/smoke1.png
 share/games/supertux2/images/worldmap/common/smoke2.png
 share/games/supertux2/images/worldmap/common/smoke3.png
@@ -1421,6 +1562,7 @@ share/games/supertux2/images/worldmap/common/tux.sprite
 share/games/supertux2/images/worldmap/common/yeti.sprite
 share/games/supertux2/images/worldmap/forest/castlemap.png
 share/games/supertux2/images/worldmap/forest/castlemap_overlay.png
+share/games/supertux2/images/worldmap/forest/castlemap_overlay_full.png
 share/games/supertux2/images/worldmap/forest/cropcircle.png
 share/games/supertux2/images/worldmap/forest/darker_forest.png
 share/games/supertux2/images/worldmap/forest/forest.png
@@ -1446,6 +1588,54 @@ share/games/supertux2/images/worldmap/forest/small_water.sprite
 share/games/supertux2/images/worldmap/forest/small_wood.png
 share/games/supertux2/images/worldmap/forest/small_wood.sprite
 share/games/supertux2/images/worldmap/forest/stream.png
+share/games/supertux2/images/worldmap/ice/cave_cracks.png
+share/games/supertux2/images/worldmap/ice/crystal.png
+share/games/supertux2/images/worldmap/ice/gimp/cracks.xcf
+share/games/supertux2/images/worldmap/ice/gimp/crystals.xcf
+share/games/supertux2/images/worldmap/ice/gimp/icecave.xcf
+share/games/supertux2/images/worldmap/ice/gimp/land.xcf
+share/games/supertux2/images/worldmap/ice/gimp/mountain.xcf
+share/games/supertux2/images/worldmap/ice/gimp/thin_ice.xcf
+share/games/supertux2/images/worldmap/ice/icecave.png
+share/games/supertux2/images/worldmap/ice/land.png
+share/games/supertux2/images/worldmap/ice/mountain.png
+share/games/supertux2/images/worldmap/ice/thin_ice.png
+share/games/supertux2/images/worldmap/ice/woodconcave.png
+share/games/supertux2/images/worldmap/ice/woodconvex.png
+share/games/supertux2/images/worldmap/shared/bridge.png
+share/games/supertux2/images/worldmap/shared/castle.png
+share/games/supertux2/images/worldmap/shared/gimp/bridge.xcf
+share/games/supertux2/images/worldmap/shared/gimp/castle.xcf
+share/games/supertux2/images/worldmap/shared/gimp/paths.xcf
+share/games/supertux2/images/worldmap/shared/gimp/pier.xcf
+share/games/supertux2/images/worldmap/shared/gimp/shalow_water.xcf
+share/games/supertux2/images/worldmap/shared/gimp/surf-test.xcf
+share/games/supertux2/images/worldmap/shared/gimp/surf.xcf
+share/games/supertux2/images/worldmap/shared/gimp/water.xcf
+share/games/supertux2/images/worldmap/shared/invisible_paths-editor.png
+share/games/supertux2/images/worldmap/shared/pier.png
+share/games/supertux2/images/worldmap/shared/roads.png
+share/games/supertux2/images/worldmap/shared/shallow_water.png
+share/games/supertux2/images/worldmap/shared/surf-01.png
+share/games/supertux2/images/worldmap/shared/surf-02.png
+share/games/supertux2/images/worldmap/shared/surf-03.png
+share/games/supertux2/images/worldmap/shared/surf-04.png
+share/games/supertux2/images/worldmap/shared/water_01.png
+share/games/supertux2/images/worldmap/shared/water_02.png
+share/games/supertux2/images/worldmap/shared/water_03.png
+share/games/supertux2/images/worldmap/shared/water_04.png
+share/games/supertux2/images/worldmap/shared/water_05.png
+share/games/supertux2/images/worldmap/shared/water_06.png
+share/games/supertux2/images/worldmap/shared/water_07.png
+share/games/supertux2/images/worldmap/shared/water_08.png
+share/games/supertux2/images/worldmap/shared/water_09.png
+share/games/supertux2/images/worldmap/shared/water_10.png
+share/games/supertux2/images/worldmap/shared/water_11.png
+share/games/supertux2/images/worldmap/shared/water_12.png
+share/games/supertux2/images/worldmap/shared/water_13.png
+share/games/supertux2/images/worldmap/shared/water_14.png
+share/games/supertux2/images/worldmap/shared/water_15.png
+share/games/supertux2/images/worldmap/shared/water_16.png
 share/games/supertux2/levels/bonus1/abednego-level1.stl
 share/games/supertux2/levels/bonus1/abednego-level2.stl
 share/games/supertux2/levels/bonus1/abednego-level3.stl
@@ -1462,6 +1652,7 @@ share/games/supertux2/levels/bonus1/de.po
 share/games/supertux2/levels/bonus1/es.po
 share/games/supertux2/levels/bonus1/extro.txt
 share/games/supertux2/levels/bonus1/fi.po
+share/games/supertux2/levels/bonus1/fr.po
 share/games/supertux2/levels/bonus1/hu.po
 share/games/supertux2/levels/bonus1/info
 share/games/supertux2/levels/bonus1/it.po
@@ -1471,6 +1662,7 @@ share/games/supertux2/levels/bonus1/matr1x-level2.stl
 share/games/supertux2/levels/bonus1/matr1x-level3.stl
 share/games/supertux2/levels/bonus1/nb.po
 share/games/supertux2/levels/bonus1/nn.po
+share/games/supertux2/levels/bonus1/pt.po
 share/games/supertux2/levels/bonus1/pt_BR.po
 share/games/supertux2/levels/bonus1/ro.po
 share/games/supertux2/levels/bonus1/ru.po
@@ -1495,6 +1687,7 @@ share/games/supertux2/levels/bonus2/de.po
 share/games/supertux2/levels/bonus2/es.po
 share/games/supertux2/levels/bonus2/extro.txt
 share/games/supertux2/levels/bonus2/fi.po
+share/games/supertux2/levels/bonus2/fr.po
 share/games/supertux2/levels/bonus2/hu.po
 share/games/supertux2/levels/bonus2/info
 share/games/supertux2/levels/bonus2/it.po
@@ -1529,6 +1722,7 @@ share/games/supertux2/levels/bonus2/level9.stl
 share/games/supertux2/levels/bonus2/lt.po
 share/games/supertux2/levels/bonus2/nb.po
 share/games/supertux2/levels/bonus2/nn.po
+share/games/supertux2/levels/bonus2/pt.po
 share/games/supertux2/levels/bonus2/pt_BR.po
 share/games/supertux2/levels/bonus2/ro.po
 share/games/supertux2/levels/bonus2/ru.po
@@ -1536,14 +1730,34 @@ share/games/supertux2/levels/bonus2/sl.po
 share/games/supertux2/levels/bonus2/sv.po
 share/games/supertux2/levels/bonus2/worldmap.stwm
 share/games/supertux2/levels/bonus2/zh_CN.po
+share/games/supertux2/levels/incubator/cave_run.stl
+share/games/supertux2/levels/incubator/cherry_frosting.stl
+share/games/supertux2/levels/incubator/crystal_beauty.stl
+share/games/supertux2/levels/incubator/crystal_cataclysm.stl
+share/games/supertux2/levels/incubator/cube_garden.stl
+share/games/supertux2/levels/incubator/fr.po
+share/games/supertux2/levels/incubator/info
+share/games/supertux2/levels/incubator/jagged_path.stl
+share/games/supertux2/levels/incubator/nb.po
+share/games/supertux2/levels/incubator/nn.po
+share/games/supertux2/levels/incubator/not_so_long.stl
+share/games/supertux2/levels/incubator/over_the_ocean.stl
+share/games/supertux2/levels/incubator/pinksnow.stl
+share/games/supertux2/levels/incubator/pt.po
+share/games/supertux2/levels/incubator/pt_BR.po
+share/games/supertux2/levels/incubator/snowy_hill.stl
+share/games/supertux2/levels/incubator/worldmap.stwm
 share/games/supertux2/levels/misc/da.po
+share/games/supertux2/levels/misc/hu.po
 share/games/supertux2/levels/misc/menu.stl
 share/games/supertux2/levels/misc/nb.po
 share/games/supertux2/levels/misc/nn.po
+share/games/supertux2/levels/misc/pt.po
 share/games/supertux2/levels/misc/pt_BR.po
 share/games/supertux2/levels/misc/sl.po
 share/games/supertux2/levels/test/BackGround.stl
 share/games/supertux2/levels/test/bicycle_platform.stl
+share/games/supertux2/levels/test/bonusblock.stl
 share/games/supertux2/levels/test/candle.stl
 share/games/supertux2/levels/test/captainsnowball.stl
 share/games/supertux2/levels/test/castletiles.stl
@@ -1569,8 +1783,11 @@ share/games/supertux2/levels/test/newice.stl
 share/games/supertux2/levels/test/nightcave.stl
 share/games/supertux2/levels/test/nn.po
 share/games/supertux2/levels/test/oddbug.stl
+share/games/supertux2/levels/test/owl.stl
 share/games/supertux2/levels/test/pneumatic_platform.stl
+share/games/supertux2/levels/test/rusty_trampoline.stl
 share/games/supertux2/levels/test/scripttrigger.stl
+share/games/supertux2/levels/test/short_fuse.stl
 share/games/supertux2/levels/test/snowair.stl
 share/games/supertux2/levels/test/snowmountain.stl
 share/games/supertux2/levels/test/snowslope.stl
@@ -1582,6 +1799,8 @@ share/games/supertux2/levels/test/transition.nut
 share/games/supertux2/levels/test/transition.stl
 share/games/supertux2/levels/test/treeboss.stl
 share/games/supertux2/levels/test/unisolid.stl
+share/games/supertux2/levels/test/unstable_tile.stl
+share/games/supertux2/levels/test/weakblock.stl
 share/games/supertux2/levels/test_old/1holes.stl
 share/games/supertux2/levels/test_old/ambient_sound.stl
 share/games/supertux2/levels/test_old/animtiles.stl
@@ -1667,6 +1886,7 @@ share/games/supertux2/levels/world1/24 - The Shattered Bridge.stl
 share/games/supertux2/levels/world1/25 - Arctic Ruins.stl
 share/games/supertux2/levels/world1/26 - The Castle of Nolok.stl
 share/games/supertux2/levels/world1/27 - No More Mr Ice Guy.stl
+share/games/supertux2/levels/world1/Fork_in_the_Road.stl
 share/games/supertux2/levels/world1/bonus.stl
 share/games/supertux2/levels/world1/ca.po
 share/games/supertux2/levels/world1/cs.po
@@ -1675,6 +1895,7 @@ share/games/supertux2/levels/world1/de.po
 share/games/supertux2/levels/world1/es.po
 share/games/supertux2/levels/world1/extro.txt
 share/games/supertux2/levels/world1/fi.po
+share/games/supertux2/levels/world1/fr.po
 share/games/supertux2/levels/world1/hu.po
 share/games/supertux2/levels/world1/info
 share/games/supertux2/levels/world1/intro.nut
@@ -1683,11 +1904,13 @@ share/games/supertux2/levels/world1/intro.txt
 share/games/supertux2/levels/world1/lt.po
 share/games/supertux2/levels/world1/nb.po
 share/games/supertux2/levels/world1/nn.po
+share/games/supertux2/levels/world1/pt.po
 share/games/supertux2/levels/world1/pt_BR.po
 share/games/supertux2/levels/world1/ro.po
 share/games/supertux2/levels/world1/ru.po
 share/games/supertux2/levels/world1/sl.po
 share/games/supertux2/levels/world1/sv.po
+share/games/supertux2/levels/world1/underground.nut
 share/games/supertux2/levels/world1/world.nut
 share/games/supertux2/levels/world1/worldmap.stwm
 share/games/supertux2/levels/world1/zh_CN.po
@@ -1724,6 +1947,7 @@ share/games/supertux2/levels/world2/es.po
 share/games/supertux2/levels/world2/fi.po
 share/games/supertux2/levels/world2/fish.stl
 share/games/supertux2/levels/world2/forest1-grumbel.stl
+share/games/supertux2/levels/world2/fr.po
 share/games/supertux2/levels/world2/ghostly.stl
 share/games/supertux2/levels/world2/hu.po
 share/games/supertux2/levels/world2/info
@@ -1745,6 +1969,7 @@ share/games/supertux2/levels/world2/lt.po
 share/games/supertux2/levels/world2/nb.po
 share/games/supertux2/levels/world2/nn.po
 share/games/supertux2/levels/world2/owls_revenge.stl
+share/games/supertux2/levels/world2/pt.po
 share/games/supertux2/levels/world2/pt_BR.po
 share/games/supertux2/levels/world2/ro.po
 share/games/supertux2/levels/world2/ru.po
@@ -1781,12 +2006,18 @@ share/games/supertux2/locale/sv.po
 share/games/supertux2/locale/tr.po
 share/games/supertux2/locale/uk.po
 share/games/supertux2/locale/zh_CN.po
+share/games/supertux2/music/airship_remix.music
+share/games/supertux2/music/airship_remix.ogg
+share/games/supertux2/music/battle_theme.music
+share/games/supertux2/music/battle_theme.ogg
 share/games/supertux2/music/bonuscave.ogg
 share/games/supertux2/music/bossattack.music
 share/games/supertux2/music/bossattack.ogg
 share/games/supertux2/music/cave.music
 share/games/supertux2/music/cave.ogg
 share/games/supertux2/music/chipdisko.ogg
+share/games/supertux2/music/clavelian_march.music
+share/games/supertux2/music/clavelian_march.ogg
 share/games/supertux2/music/credits.ogg
 share/games/supertux2/music/darkforestkeep.ogg
 share/games/supertux2/music/forest.music
@@ -1809,6 +2040,16 @@ share/games/supertux2/music/theme.music
 share/games/supertux2/music/theme.ogg
 share/games/supertux2/music/treeboss.music
 share/games/supertux2/music/treeboss.ogg
+share/games/supertux2/music/voc-boss.music
+share/games/supertux2/music/voc-boss.ogg
+share/games/supertux2/music/voc-dark.music
+share/games/supertux2/music/voc-dark.ogg
+share/games/supertux2/music/voc-daytime.music
+share/games/supertux2/music/voc-daytime.ogg
+share/games/supertux2/music/voc-daytime2.music
+share/games/supertux2/music/voc-daytime2.ogg
+share/games/supertux2/music/voc-night.music
+share/games/supertux2/music/voc-night.ogg
 share/games/supertux2/music/wisphunt.music
 share/games/supertux2/music/wisphunt.ogg
 share/games/supertux2/scripts/console.nut
@@ -1841,8 +2082,10 @@ share/games/supertux2/sounds/lightning.wav
 share/games/supertux2/sounds/locked.ogg
 share/games/supertux2/sounds/mr_tree.ogg
 share/games/supertux2/sounds/mr_treehit.ogg
+share/games/supertux2/sounds/normalize.sh
 share/games/supertux2/sounds/phone.wav
 share/games/supertux2/sounds/rain.wav
+share/games/supertux2/sounds/savebell2.wav
 share/games/supertux2/sounds/saw.wav
 share/games/supertux2/sounds/shoot.wav
 share/games/supertux2/sounds/skid.wav
@@ -1884,9 +2127,14 @@ share/pixmaps/supertux2.xpm
 @dirrm share/games/supertux2/levels/test_old
 @dirrm share/games/supertux2/levels/test
 @dirrm share/games/supertux2/levels/misc
+@dirrm share/games/supertux2/levels/incubator
 @dirrm share/games/supertux2/levels/bonus2
 @dirrm share/games/supertux2/levels/bonus1
 @dirrm share/games/supertux2/levels
+@dirrm share/games/supertux2/images/worldmap/shared/gimp
+@dirrm share/games/supertux2/images/worldmap/shared
+@dirrm share/games/supertux2/images/worldmap/ice/gimp
+@dirrm share/games/supertux2/images/worldmap/ice
 @dirrm share/games/supertux2/images/worldmap/forest/leveldots
 @dirrm share/games/supertux2/images/worldmap/forest
 @dirrm share/games/supertux2/images/worldmap/common/boat
@@ -1931,14 +2179,15 @@ share/pixmaps/supertux2.xpm
 @dirrm share/games/supertux2/images/powerups/egg
 @dirrm share/games/supertux2/images/powerups/1up
 @dirrm share/games/supertux2/images/powerups
+@dirrm share/games/supertux2/images/objects/weak_block
 @dirrm share/games/supertux2/images/objects/unstable_tile
 @dirrm share/games/supertux2/images/objects/trampoline
 @dirrm share/games/supertux2/images/objects/switch
-@dirrm share/games/supertux2/images/objects/strawbox
 @dirrm share/games/supertux2/images/objects/spotlight
 @dirrm share/games/supertux2/images/objects/skulls
 @dirrm share/games/supertux2/images/objects/skull_tile
 @dirrm share/games/supertux2/images/objects/sawblade
+@dirrm share/games/supertux2/images/objects/rusty-trampoline
 @dirrm share/games/supertux2/images/objects/rock
 @dirrm share/games/supertux2/images/objects/resetpoints
 @dirrm share/games/supertux2/images/objects/radio
@@ -1975,6 +2224,7 @@ share/pixmaps/supertux2.xpm
 @dirrm share/games/supertux2/images/engine
 @dirrm share/games/supertux2/images/effects
 @dirrm share/games/supertux2/images/decal/nightcave
+@dirrm share/games/supertux2/images/decal/explanations
 @dirrm share/games/supertux2/images/decal
 @dirrm share/games/supertux2/images/credits
 @dirrm share/games/supertux2/images/creatures/zeekling
@@ -1997,10 +2247,13 @@ share/pixmaps/supertux2.xpm
 @dirrm share/games/supertux2/images/creatures/snowjumpy
 @dirrm share/games/supertux2/images/creatures/snowball
 @dirrm share/games/supertux2/images/creatures/snail
+@dirrm share/games/supertux2/images/creatures/skydive
 @dirrm share/games/supertux2/images/creatures/skullyhop
+@dirrm share/games/supertux2/images/creatures/short_fuse
 @dirrm share/games/supertux2/images/creatures/poison_ivy
 @dirrm share/games/supertux2/images/creatures/plant
 @dirrm share/games/supertux2/images/creatures/penny
+@dirrm share/games/supertux2/images/creatures/owl
 @dirrm share/games/supertux2/images/creatures/nolok
 @dirrm share/games/supertux2/images/creatures/mr_tree
 @dirrm share/games/supertux2/images/creatures/mr_iceblock
@@ -2024,7 +2277,6 @@ share/pixmaps/supertux2.xpm
 @dirrm share/games/supertux2/images/creatures/dart
 @dirrm share/games/supertux2/images/creatures/crystallo
 @dirrm share/games/supertux2/images/creatures/bouncing_snowball
-@dirrm share/games/supertux2/images/creatures/bombfish
 @dirrm share/games/supertux2/images/creatures/angrystone
 @dirrm share/games/supertux2/images/creatures
 @dirrm share/games/supertux2/images/background/BlueRock_Forest
