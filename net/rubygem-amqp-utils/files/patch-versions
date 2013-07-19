@@ -1,0 +1,27 @@
+--- amqp-utils-0.5.1.gemspec.orig	2013-07-01 00:25:29.435452053 +0000
++++ amqp-utils-0.5.1.gemspec	2013-07-01 00:25:54.044449653 +0000
+@@ -28,10 +28,9 @@
+       - !ruby/object:Gem::Version 
+         hash: 1
+         segments: 
+-        - 0
+-        - 7
+         - 1
+-        version: 0.7.1
++        - 0
++        version: 1.0.0
+   type: :runtime
+   version_requirements: *id001
+ - !ruby/object:Gem::Dependency 
+@@ -123,9 +122,9 @@
+         hash: 5
+         segments: 
+         - 0
+-        - 4
+         - 5
+-        version: 0.4.5
++        - 5
++        version: 0.5.5
+   type: :runtime
+   version_requirements: *id007
+ description: |-
