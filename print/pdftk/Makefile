@@ -9,9 +9,13 @@ MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	glarkin@FreeBSD.org
-COMMENT=	A simple tool for doing everyday things with PDF documents
+COMMENT=	Simple tool for doing everyday things with PDF documents
 
 USE_ZIP=	yes
+
+BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF} \
+		gcjh${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF} \
+		cpp${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
 
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
@@ -29,7 +33,8 @@ PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-dist
 WRKSRC=		${PATCH_WRKSRC}/${PORTNAME}
 
 MAKEFILE=	Makefile.FreeBSD
-MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} OBJCOPY=${OBJCOPY} LANG=C
+MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} GCPP=cpp${CSUFF} \
+		OBJCOPY=${OBJCOPY} LANG=C LC_CTYPE=C
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/pdftk
