@@ -17,7 +17,7 @@ chio command is included and installed at
 Please have a look at it if you want to use an
 autochanger. You have to configure the usage in
 
-  %%PREFIX%%/etc/bacula-dir.conf
+  %%PREFIX%%/etc/bacula/bacula-dir.conf
 
 Take care of correct permissions for changer and
 tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e.
