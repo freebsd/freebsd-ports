@@ -28,9 +28,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|= @mixer_flag@|= @INTLLIBS@ @mixer_flag@|g ; \
-		 s|--mode=666||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's/\/icons/\/pixmaps/g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/= @mixer_flag@/= @INTLLIBS@ @mixer_flag@/g ; \
+		 s/--mode=666//g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's/^inline //' \
 		${WRKSRC}/src/sdl.h ${WRKSRC}/src/tools.h
 
