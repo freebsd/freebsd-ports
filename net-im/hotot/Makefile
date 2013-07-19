@@ -62,8 +62,8 @@ post-patch:
 # Remove `sourceid' parameter from Google search string
 	@${REINPLACE_CMD} -e 's,sourceid=chrome&,,' \
 		${WRKSRC}/data/js/ui.context_menu.js
-# Sanitize font selection list and correct version
-	@${REINPLACE_CMD} -e "/font_list/s/\[.*/['DejaVu Sans', 'Bitstream Vera Sans', 'Droid Sans', 'Verdana', 'Arial', 'Helvetica']/ ; /version/s,11,${PORTVERSION:E}," \
+# Sanitize font selection list
+	@${REINPLACE_CMD} -e "/font_list/s/\[.*/['DejaVu Sans', 'Bitstream Vera Sans', 'Droid Sans', 'Verdana', 'Arial', 'Helvetica']/" \
 		${WRKSRC}/data/js/conf.js
 # Remove stale backup files (prevent pkg-plist pollution)
 	@${FIND} ${WRKSRC} -type f -name '*.bak' -delete

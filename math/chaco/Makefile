@@ -15,7 +15,6 @@ COMMENT=	Software for partitioning graphs
 
 USES=		gmake
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-ALL_TARGET=	#
 WRKSRC=		${WRKDIR}/${DISTNAME}/code
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
