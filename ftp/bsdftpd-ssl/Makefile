@@ -19,7 +19,7 @@ COMMENT=	FTP command-line client utility with the TLS/SSL support
 
 USE_OPENSSL=	yes
 
-MAKE_ENV+=	OBJFORMAT=	elf
+MAKE_ENV+=	OBJFORMAT=elf
 
 .include <bsd.port.pre.mk>
 
@@ -61,10 +61,10 @@ pre-build:
 
 do-build:
 # Client part
-	(cd ${WRKSRC}/port && make && cd ${WRKSRC}/ftp && make) || exit
+	(cd ${WRKSRC}/port && ${SETENV} ${MAKE_ENV} make && cd ${WRKSRC}/ftp && ${SETENV} ${MAKE_ENV} make) || exit
 # Server part
 .if !defined(CLIENT_ONLY)
-	(cd ${WRKSRC}/ftpd && make) || exit
+	(cd ${WRKSRC}/ftpd && ${SETENV} ${MAKE_ENV} make) || exit
 .endif
 
 do-install:
