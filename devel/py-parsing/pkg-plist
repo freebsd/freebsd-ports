@@ -71,13 +71,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SingleForm.dfm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/TAP.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adventureEngine.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/antlr_grammar.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/antlr_grammar_tests.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apicheck.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/btpyparse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/builtin_parse_action_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cLibHeader.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chemicalFormulas.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/commasep.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configParse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp_enum_parser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datetimeParseActions.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deltaTime.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dfmparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dhcpd_leases_parser.py
@@ -105,6 +109,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/linenoExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/list1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listAllMatches.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lucene_grammar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macroExpander.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/makeHTMLTagExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/matchPreviousDemo.py
@@ -117,9 +122,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parseResultsSumExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial_gene_match.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgn.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/position.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/protobuf_parser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pymicko.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pythonGrammarParser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rangeCheck.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readJson.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/removeLineBreaks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/romanNumerals.py
@@ -129,6 +136,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchparser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/select_parser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sexpParser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shapes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleArith.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleBool.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleSQL.py
@@ -141,6 +149,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_bibparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractorNew.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/verilogParse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/withAttribute.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wordsToNum.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
