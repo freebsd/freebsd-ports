@@ -8,12 +8,11 @@ CATEGORIES=	editors
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	GTK+ based simple text editor
 
 USE_GNOME=	gtk20 intlhack
-USES=		desktop-file-utils
-USE_GMAKE=	yes
+USES=		desktop-file-utils gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
 INSTALLS_ICONS=	yes
@@ -23,19 +22,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-post-extract:
-	@${CHMOD} a+x ${WRKSRC}/install-sh
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=			gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
+post-extract:
+	@${CHMOD} a+x ${WRKSRC}/install-sh
 
 post-patch:
 .if ! ${PORT_OPTIONS:MNLS}
