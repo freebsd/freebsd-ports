@@ -1,0 +1,11 @@
+--- make/Makefile.pcom_s.orig	2013-07-19 16:13:59.000000000 +0800
++++ make/Makefile.pcom_s	2013-07-19 16:14:57.000000000 +0800
+@@ -46,7 +46,7 @@
+ 	rm -f *.o $(PROGS); 	rm -rf $(BIN)/*
+ 
+ install: $(PROGS)
+-	pushd $(BIN); cp $(PROGS)  $(XDIR); popd
++	cd $(BIN); cp $(PROGS) $(XDIR); cd ../src
+ 
+ uinstall: $(PROGS)
+ 	pushd $(BIN); cp $(PROGS)  $(UDIR); popd
