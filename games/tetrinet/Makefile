@@ -22,6 +22,10 @@ PLIST_FILES=	bin/tetrinet bin/tetrinet-server
 PORTDOCS=	README tetrinet.txt
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e '/-log/n; s/[[:<:]]log[[:>:]]/dolog/g' \
+		${WRKSRC}/tetrinet.h ${WRKSRC}/tetrinet.c ${WRKSRC}/sockets.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetrinet ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tetrinet-server ${PREFIX}/bin
