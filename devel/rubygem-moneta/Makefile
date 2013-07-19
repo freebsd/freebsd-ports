@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moneta
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.19
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
