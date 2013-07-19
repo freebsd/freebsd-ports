@@ -7,10 +7,10 @@ lib/libchaco.a
 %%PORTDOCS%%%%DOCSDIR%%/Term_Prop.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/Users_Guide.ps.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/film.coords
-%%PORTDOCS%%%%EXAMPLESDIR%%/film.graph
-%%PORTDOCS%%%%EXAMPLESDIR%%/grid20x20.coords
-%%PORTDOCS%%%%EXAMPLESDIR%%/grid20x20.graph
-%%PORTDOCS%%%%EXAMPLESDIR%%/hammond.coords
-%%PORTDOCS%%%%EXAMPLESDIR%%/hammond.graph
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/film.coords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/film.graph
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid20x20.coords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid20x20.graph
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hammond.coords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hammond.graph
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
