@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	2.36
+PORTVERSION=	2.37
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +15,12 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Log-Report>=0.90:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile>=1.33:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-XML-Compile>=1.35:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-XML-Compile-Cache>=0.99.3:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
 		p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Log-Report>=0.90:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile>=1.33:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-XML-Compile>=1.35:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-XML-Compile-Cache>=0.99.3:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
 		p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
 TEST_DEPENDS=	p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
