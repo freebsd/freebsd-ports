@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	claroline
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.7
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Claroline/claroline%20${PORTVERSION}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source eLearning and eWorking platform
