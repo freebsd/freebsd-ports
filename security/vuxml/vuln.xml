@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca4d63fb-f15c-11e2-b183-20cf30e32f6d">
+    <topic>apache24 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache HTTP SERVER PROJECT reports:</p>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.4.html">
+	  <p>mod_dav: Sending a MERGE request against a URI handled by mod_dav_svn
+	    with the source href (sent as part of the request body as XML) pointing
+	    to a URI that is not configured for DAV will trigger a segfault.</p>
+	  <p>mod_session_dbd: Make sure that dirty flag is respected when saving
+	    sessions, and ensure the session ID is changed each time the session
+	    changes. This changes the format of the updatesession SQL statement.
+	    Existing configurations must be changed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1896</cvename>
+      <cvename>CVE-2013-2249</cvename>
+    </references>
+    <dates>
+      <discovery>2013-07-11</discovery>
+      <entry>2013-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b037a0d-ef2c-11e2-b4a0-8c705af55518">
     <topic>gallery -- multiple vulnerabilities</topic>
     <affects>

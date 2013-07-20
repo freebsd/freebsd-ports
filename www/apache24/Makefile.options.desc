@@ -66,6 +66,7 @@ BUFFER_DESC=			Filter Buffering
 
 CACHE_DESC=			Dynamic file caching
 CACHE_DISK_DESC=		Disk caching module
+CACHE_SOCACHE_DESC=		Shared object cache (socache) based storage module for the HTTP caching filter
 CASE_FILTER_DESC=		(dev) example uppercase conversion filter
 CASE_FILTER_IN_DESC=		(dev) example uppercase conversion input filter
 CERN_META_DESC=			CERN-type meta files
@@ -113,6 +114,7 @@ LOG_DEBUG_DESC=			Configurable debug logging
 LOG_FORENSIC_DESC=		Forensic logging
 LUA_DESC=			Apache Lua Framework
 
+MACRO_DESC=			Provides usage of macros within apache runtime configuration files
 MIME_DESC=			Mapp file-ext. to MIME (recommended)
 MIME_MAGIC_DESC=		Automagically determining MIME type
 
@@ -134,6 +136,7 @@ PROXY_FTP_DESC=			FTP support module for mod_proxy
 PROXY_HTML_DESC=		Fix HTML Links in a Reverse Proxy
 PROXY_HTTP_DESC=		HTTP support module for mod_proxy
 PROXY_SCGI_DESC=		SCGI gateway module for mod_proxy
+PROXY_WSTUNNEL_DESC=		Websockets support module for mod_proxy
 
 RATELIMIT_DESC=			Output Bandwidth Limiting
 REFLECTOR_DESC=			Reflect request through the output filter stack
