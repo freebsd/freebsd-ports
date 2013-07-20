@@ -2,6 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION}/${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	germzilla-${PORTVERSION}-1.utf-8
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	German localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
+RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44
 
 LATEST_LINK=	${PKGNAMEPREFIX}bugzilla44
 
