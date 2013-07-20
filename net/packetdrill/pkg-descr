@@ -1,0 +1,8 @@
+The packetdrill scripting tool enables quick, precise tests for entire
+TCP/UDP/IPv4/IPv6 network stacks, from the system call layer down to
+the NIC hardware. packetdrill currently works on Linux, FreeBSD,
+OpenBSD, and NetBSD. It can test network stack behavior over physical
+NICs on a LAN, or on a single machine using a tun virtual network
+device.
+
+WWW: https://code.google.com/p/packetdrill/
