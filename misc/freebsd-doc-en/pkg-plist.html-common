@@ -288,13 +288,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security/ipsec-encap-pkt.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security/ipsec-network.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security/ipsec-out-pkt.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-concat.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-mirrored-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-raid10-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-raid5-org.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-simple-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-striped-vol.png
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum/vinum-striped.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/parallels-freebsd1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/parallels-freebsd10.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/parallels-freebsd11.png

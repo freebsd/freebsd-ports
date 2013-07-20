@@ -1,5 +1,13 @@
 @comment $FreeBSD$
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-debug.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ACPI-debug.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-intro.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-mirror.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-raid3.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-striping.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-Auth.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-UUCP.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-dialup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking.html
@@ -112,11 +120,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
@@ -263,9 +266,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/shells.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/slip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/small-lan.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-auth.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-dialup.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/smtp-uucp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
@@ -276,6 +276,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
