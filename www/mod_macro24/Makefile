@@ -15,6 +15,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_SAFE=	yes
 
+IGNORE=		apache24-2.4.6 and newer delivers this module by default
+EXPIRATION_DATE=2013-08-03
+
 USE_APACHE=	24
 LATEST_LINK=	mod_macro24
 AP_FAST_BUILD=	yes
