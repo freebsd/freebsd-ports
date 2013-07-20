@@ -67,26 +67,6 @@
 %%MONO_OR_CLIENT%%share/icons/hicolor/64x64/apps/quassel.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/64x64/status/quassel-inactive.png
 %%MONO_OR_CLIENT%%share/icons/hicolor/64x64/status/quassel-message.png
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/64x64/status
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/64x64/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/64x64
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/48x48/status
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/48x48/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/48x48
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/32x32/status
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/32x32/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/32x32
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/22x22/status
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/22x22/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/22x22
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/16x16/status
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/16x16/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/16x16
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/128x128/status
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/128x128/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor/128x128
-%%MONO_OR_CLIENT%%@dirrmtry share/icons/hicolor
-%%MONO_OR_CLIENT%%@dirrmtry share/icons
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel/translations
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel/stylesheets
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel/scripts
@@ -97,6 +77,3 @@
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons/oxygen
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel/icons
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel
-%%MONO_OR_CLIENT%%@dirrmtry share/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/applications/kde4
-%%MONO_OR_CLIENT%%@dirrmtry share/applications
