@@ -53,6 +53,7 @@ share/icons/hicolor/64x64/apps/soundkonverter.png
 %%NLS%%share/locale/pt/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/soundkonverter.mo
 share/kde4/services/soundkonverter_codec_aften.desktop
 share/kde4/services/soundkonverter_codec_faac.desktop
 share/kde4/services/soundkonverter_codec_ffmpeg.desktop
