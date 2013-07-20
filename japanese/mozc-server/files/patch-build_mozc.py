@@ -1,6 +1,6 @@
---- build_mozc.py.orig	2013-03-29 13:33:25.000000000 +0900
-+++ build_mozc.py	2013-05-02 00:54:37.000000000 +0900
-@@ -332,6 +332,14 @@
+--- build_mozc.py.orig	2013-07-17 11:37:50.000000000 +0900
++++ build_mozc.py	2013-07-19 22:27:55.000000000 +0900
+@@ -332,6 +332,13 @@
                      help='use rsync to copy files instead of builtin function')
    AddTargetPlatformOption(parser)
  
@@ -11,11 +11,10 @@
 +  parser.add_option('--openssl_ldflags', dest='openssl_ldflags')
 +  parser.add_option('--openssl_lib', dest='openssl_lib')
 +  parser.add_option('--openssl_inc', dest='openssl_inc')
-+
-   parser.add_option('--mac_dir', dest='mac_dir',
-                     help='A path to the root directory of third party '
-                     'libraries for Mac build which will be passed to gyp '
-@@ -506,7 +514,7 @@
+ 
+   # Mac and Linux
+   warn_as_error_default = False
+@@ -518,7 +525,7 @@
    parser = optparse.OptionParser(usage='Usage: %prog build [options]')
    AddCommonOptions(parser)
    if IsLinux():
@@ -24,13 +23,23 @@
      parser.add_option('--jobs', '-j', dest='jobs',
                        default=('%d' % default_build_concurrency),
                        metavar='N', help='run build jobs in parallel')
-@@ -709,7 +717,22 @@
-         command_line.extend(['-D', 'enable_unittest=0'])
-         break
+@@ -566,9 +573,6 @@
+ 
+   return parser.parse_args(args, values)
+ 
+-
+-
+-
+ def AddPythonPathToEnvironmentFilesForWindows(out_dir):
+   """Add PYTHONPATH to environment files for Ninja."""
+   mozc_root = os.path.abspath(GetTopLevelSourceDirectoryName())
+@@ -746,6 +750,22 @@
+   else:
+     command_line.extend(['-D', 'warn_as_error=0'])
  
 +  localbase = options.localbase or '/usr'
 +  command_line.extend(['-D', 'localbase=%s' % localbase])
- 
++
 +  ldflags = options.ldflags or ''
 +  command_line.extend(['-D', 'ldflags=%s' % ldflags])
 +  include_dirs = options.include_dirs or ''
@@ -45,5 +54,5 @@
 +  openssl_lib = options.openssl_lib or ''
 +  command_line.extend(['-D', 'openssl_lib=%s' % openssl_lib])
  
-   mac_dir = options.mac_dir or '../mac'
-   if not os.path.isabs(mac_dir):
+   # mac_dir should be started with '<(DEPTH)', otherwise some
+   # operations in XCode fails.  So if the mac_dir option is an

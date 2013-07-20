@@ -1,0 +1,20 @@
+#!/bin/sh
+# $FreeBSD$
+
+case $# in
+0)
+	echo "Specify one of the following keyword in --mode= option:"
+	cat <<EOT
+ config_dialog
+ dictionary_tool
+ word_register_dialog
+ about_dialog
+ character_palette
+ hand_writing
+EOT
+	exit 1
+;;
+*)
+	exec %%PREFIX%%/libexec/mozc_tool "$@"
+;;
+esac

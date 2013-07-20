@@ -1,4 +1,4 @@
-# Created by: Daichi GOTO <daichi@freebsd.org>
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
 PKGNAMEPREFIX=	ja-fcitx-
@@ -9,8 +9,8 @@ DATADIR=	${PREFIX}/share/fcitx/${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-BROKEN=		fails to build
-
 BUILD_MOZC_LIST=	fcitx_mozc
+
+IGNORE=	not compatible with mozc 1.11.1502.102
 
 .include "${MASTERDIR}/Makefile"
