@@ -1,11 +1,12 @@
 # Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	Wnn7-lib
+PORTNAME=	Wnn7
 PORTVERSION=	2001.10.17
 PORTREVISION=	2
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/sdk_source/
+MASTER_SITES=	http://www.omronsoft.co.jp/SP/pcunix/sdk/wnn/
+PKGNAMESUFFIX=	-lib
 DISTNAME=	Wnn7SDK
 EXTRACT_SUFX=	.tgz
 
@@ -18,7 +19,8 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
@@ -31,12 +33,14 @@ post-patch:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini
 
+.include <bsd.port.options.mk>
+
 post-install:
 	${MKDIR} ${PREFIX}/include/wnn7/wnn
 	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
