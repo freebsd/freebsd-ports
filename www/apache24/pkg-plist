@@ -93,6 +93,7 @@ libexec/apache24/httpd.exp
 %%MOD_BUFFER%%libexec/apache24/mod_buffer.so
 %%MOD_CACHE%%libexec/apache24/mod_cache.so
 %%MOD_CACHE_DISK%%libexec/apache24/mod_cache_disk.so
+%%MOD_CACHE_SOCACHE%%libexec/apache24/mod_cache_socache.so
 %%MOD_CASE_FILTER%%libexec/apache24/mod_case_filter.so
 %%MOD_CASE_FILTER_IN%%libexec/apache24/mod_case_filter_in.so
 %%MOD_CERN_META%%libexec/apache24/mod_cern_meta.so
@@ -133,6 +134,7 @@ libexec/apache24/mod_log_config.so
 %%MOD_LOG_DEBUG%%libexec/apache24/mod_log_debug.so
 %%MOD_LOG_FORENSIC%%libexec/apache24/mod_log_forensic.so
 %%MOD_LUA%%libexec/apache24/mod_lua.so
+%%MOD_MACRO%%libexec/apache24/mod_macro.so
 %%MOD_MIME%%libexec/apache24/mod_mime.so
 %%MOD_MIME_MAGIC%%libexec/apache24/mod_mime_magic.so
 %%MPM_SHARED%%libexec/apache24/mod_mpm_event.so
@@ -154,6 +156,7 @@ libexec/apache24/mod_log_config.so
 %%MOD_PROXY_HTML%%libexec/apache24/mod_proxy_html.so
 %%MOD_PROXY_HTTP%%libexec/apache24/mod_proxy_http.so
 %%MOD_PROXY_SCGI%%libexec/apache24/mod_proxy_scgi.so
+%%MOD_PROXY_WSTUNNEL%%libexec/apache24/mod_proxy_wstunnel.so
 %%MOD_RATELIMIT%%libexec/apache24/mod_ratelimit.so
 %%MOD_REFLECTOR%%libexec/apache24/mod_reflector.so
 %%MOD_REMOTEIP%%libexec/apache24/mod_remoteip.so
