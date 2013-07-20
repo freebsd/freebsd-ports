@@ -22,10 +22,13 @@
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Continuous.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Custom.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Dna.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Illumina.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Mixed.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Protein.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Restriction.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Rna.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Sanger.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Solexa.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype/Standard.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datum.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/DatumRole.pm
@@ -53,6 +56,7 @@
 %%SITE_PERL%%/Bio/Phylo/Parsers/Abstract.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Adjacency.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Fasta.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Fastq.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Figtree.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Json.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm

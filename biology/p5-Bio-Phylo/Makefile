@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.52
+PORTVERSION=	0.56
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -52,10 +52,13 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Matrices::Datatype::Continuous.3 \
 		Bio::Phylo::Matrices::Datatype::Custom.3 \
 		Bio::Phylo::Matrices::Datatype::Dna.3 \
+		Bio::Phylo::Matrices::Datatype::Illumina.3 \
 		Bio::Phylo::Matrices::Datatype::Mixed.3 \
 		Bio::Phylo::Matrices::Datatype::Protein.3 \
 		Bio::Phylo::Matrices::Datatype::Restriction.3 \
 		Bio::Phylo::Matrices::Datatype::Rna.3 \
+		Bio::Phylo::Matrices::Datatype::Sanger.3 \
+		Bio::Phylo::Matrices::Datatype::Solexa.3 \
 		Bio::Phylo::Matrices::Datatype::Standard.3 \
 		Bio::Phylo::Matrices::Datum.3 \
 		Bio::Phylo::Matrices::DatumRole.3 \
@@ -77,6 +80,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Parsers::Abstract.3 \
 		Bio::Phylo::Parsers::Adjacency.3 \
 		Bio::Phylo::Parsers::Fasta.3 \
+		Bio::Phylo::Parsers::Fastq.3 \
 		Bio::Phylo::Parsers::Figtree.3 \
 		Bio::Phylo::Parsers::Json.3 \
 		Bio::Phylo::Parsers::Newick.3 \
@@ -133,10 +137,12 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Unparsers::Rss1.3 \
 		Bio::Phylo::Unparsers::Taxlist.3 \
 		Bio::Phylo::Util::CONSTANT.3 \
+		Bio::Phylo::Util::CONSTANT::Int.3 \
 		Bio::Phylo::Util::Dependency.3 \
 		Bio::Phylo::Util::Exceptions.3 \
 		Bio::Phylo::Util::IDPool.3 \
 		Bio::Phylo::Util::Logger.3 \
+		Bio::Phylo::Util::MOP.3 \
 		Bio::Phylo::Util::OptionalInterface.3 \
 		Bio::Phylo::Util::StackTrace.3 \
 		Bio::PhyloRole.3
