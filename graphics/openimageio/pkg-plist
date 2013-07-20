@@ -16,6 +16,7 @@ include/OpenImageIO/fmath.h
 include/OpenImageIO/hash.h
 include/OpenImageIO/imagebuf.h
 include/OpenImageIO/imagebufalgo.h
+include/OpenImageIO/imagebufalgo_util.h
 include/OpenImageIO/imagecache.h
 include/OpenImageIO/imageio.h
 include/OpenImageIO/optparser.h
@@ -37,8 +38,8 @@ include/OpenImageIO/pugiconfig.hpp
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
-lib/libOpenImageIO.so.1.1
-lib/libOpenImageIO.so.1.1.11
+lib/libOpenImageIO.so.1.2
+lib/libOpenImageIO.so.1.2.0
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf
