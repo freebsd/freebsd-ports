@@ -19,6 +19,8 @@ USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	icinga
 
+MAKE_JOBS_UNSAFE=yes
+
 GNU_CONFIGURE=	yes
 
 ICINGAUSER?=	icinga
