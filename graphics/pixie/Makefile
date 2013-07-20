@@ -3,21 +3,22 @@
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pixie%20${PORTVERSION}
 DISTNAME=	Pixie-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A photorealistic renderer with Pixar's RenderMan-like interface
+COMMENT=	Photorealistic renderer with Pixar's RenderMan-like interface
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+LICENSE=	LGPL21 # (or later)
+
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		fltk_gl.1:${PORTSDIR}/x11-toolkits/fltk
+		tiff:${PORTSDIR}/graphics/tiff \
+		fltk_gl:${PORTSDIR}/x11-toolkits/fltk
 
-NOT_FOR_ARCHS=	amd64
+OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/Pixie
 
@@ -40,8 +41,8 @@ MAN1=		rndr.1 sdrc.1 sdrinfo.1 texmake.1
 PORTDOCS=	*
 
 CFLAGS+=	-fPIC
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -49,8 +50,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV+=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex"
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
+		 s|-lpthread|-pthread|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
 		 /^install-data-am:/s|install-nobase_docDATA||g' ${WRKSRC}/Makefile.in
 .for file in src/ri/Makefile.in src/sdr/Makefile.in
@@ -58,9 +65,9 @@ post-patch:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog DEVNOTES LICENSE NEWS README
+.for file in AUTHORS ChangeLog DEVNOTES NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	@(cd ${WRKSRC}/doc && ${FIND} . ! -name "*Makefile*" | \
