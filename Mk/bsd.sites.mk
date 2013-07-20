@@ -68,17 +68,17 @@ MASTER_SITE_APACHE+= \
 	http://www.apache.org/dist/%SUBDIR%/ \
 	http://archive.apache.org/dist/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Web/apache/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
+	http://apache.mirror.uber.com.au/%SUBDIR%/ \
+	http://apache.spd.co.il/%SUBDIR%/ \
+	http://ftp.mirrorservice.org/sites/ftp.apache.org/%SUBDIR/ \
+	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://mir1.ovh.net/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/%SUBDIR%/ \
 	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.rhnet.is/pub/apache/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/&,} \
-	ftp://ftp.task.gda.pl/pub/www/apache/dist/%SUBDIR%/ \
-	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/%SUBDIR%/ \
-	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/
+	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/ \
+	http://mirrors.ircam.fr/pub/apache/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_APACHE_COMMONS_BINARIES)
