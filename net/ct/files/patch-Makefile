@@ -1,5 +1,5 @@
 --- Makefile.orig	2005-02-16 17:41:53.000000000 +0900
-+++ Makefile	2013-06-17 01:31:29.000000000 +0900
++++ Makefile	2013-07-21 02:43:37.000000000 +0900
 @@ -4,22 +4,20 @@
  # $TAHI: ct/Makefile,v 1.22.8.1 2005/02/16 08:41:53 akisada Exp $
  #
@@ -22,8 +22,8 @@
 -	install -c -o bin -g bin -m 444 index.html $(INSTALL_DIR)
 -	install -c -o bin -g bin -m 444 Makefile.inc $(INSTALL_DIR)
 -	install -c -o bin -g bin -m 444 Makefile.test $(INSTALL_DIR)/Makefile
-+	install -d -m 555 $(INSTALL_DIR)
-+	install -d -m 555 $(DOC_DIR)
++	install -d -m 755 $(INSTALL_DIR)
++	install -d -m 755 $(DOC_DIR)
 +	${BSD_INSTALL_DATA} $(DOCFILES) $(INSTALL_DIR)
 +	${BSD_INSTALL_DATA} $(DOCFILES) $(DOC_DIR)
 +	${BSD_INSTALL_DATA} index.html $(INSTALL_DIR)
