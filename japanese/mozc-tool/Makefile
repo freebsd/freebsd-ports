@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mozc-tool
-# Date created:				26 June 2010
-# Whom:					Daichi GOTO <daichi@freebsd.org>
-#
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-tool
 

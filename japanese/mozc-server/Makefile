@@ -1,15 +1,14 @@
-# Created by: Daichi GOTO <daichi@freebsd.org>
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	1.10.1390.102
-PORTREVISION=	5
+PORTVERSION=	1.11.1502.102
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	daichi@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Mozc Japanese Input Method, Server
 
 LICENSE=	BSD
@@ -46,6 +45,7 @@ LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 USE_GNOME=	glib20 gtk20
 USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
+USE_XORG=	xcb
 USE_GNOME=	glib20 gtk20
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 USE_EMACS=	yes
@@ -63,7 +63,8 @@ BROKEN=		Does not compile: segfault
 
 GYP_DEFINES=	use_libprotobuf=1 \
 		channel_dev=0 \
-		enable_unittest=0
+		enable_unittest=0 \
+		zinnia_model_file="${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model"
 BUILD_MODE=	Release
 BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
@@ -129,7 +130,8 @@ DISTFILES+= \
 
 EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
-PLIST_FILES+=	bin/mozc_server
+PLIST_FILES+=	bin/mozc_server \
+		bin/mozc_emacs_helper
 
 post-extract-mozc_server:
 	@for F in jigyosyo-20130628.lzh ken_all-20130628.lzh; do \
@@ -144,10 +146,12 @@ post-extract: post-extract-mozc_server
 
 do-build-mozc_server:
 	${BUILD_MOZC_CMD_BUILD} server/server.gyp:mozc_server
+	${BUILD_MOZC_CMD_BUILD} unix/emacs/emacs.gyp:mozc_emacs_helper
 
 do-install-mozc_server:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_server \
+		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
 		${PREFIX}/bin
 .endif
 
@@ -158,18 +162,21 @@ GYP_DEFINES+=	use_libibus=0 \
 
 RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:${PORTSDIR}/japanese/tegaki-zinnia-japanese
 
-PLIST_FILES+=	bin/mozc_tool \
+PLIST_FILES+=	libexec/mozc_tool \
+		bin/mozc_tool \
 		%%DATADIR%%/icons/product_logo.png \
 		%%DATADIR%%/icons/update_uptodate.png
 PLIST_DIRS+=	%%DATADIR%%/icons ${DATADIR_REL}
+SUB_FILES+=	mozc_tool
 
 do-build-mozc_tool:
 	${BUILD_MOZC_CMD_BUILD} gui/gui.gyp:mozc_tool
 
 do-install-mozc_tool:
 	${INSTALL_PROGRAM} \
-	       ${WRKSRC}/out_linux/${BUILD_MODE}/mozc_tool \
-	       ${PREFIX}/bin
+		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_tool \
+		${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/mozc_tool ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
@@ -181,7 +188,6 @@ do-install-mozc_tool:
 
 # ibus_mozc
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-USE_XORG=	xcb
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=1 \
 		enable_gtk_renderer=1
@@ -235,7 +241,7 @@ do-install-ibus_mozc:
 .endif
 
 # fcitx_mozc
-.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc" || make(makesum)
+.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc" # || make(makesum)
 PATCH_SITES=	http://fcitx.googlecode.com/files/
 PATCHFILES=	fcitx-${DISTNAME}.2.patch
 .endif
@@ -305,38 +311,25 @@ do-install-fcitx_mozc:
 
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
-GYP_OPTIONS+=	--noqt
-GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=0
-
 CATEGORIES+=	elisp
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
 
-PLIST_FILES+=	bin/mozc_emacs_helper \
-		${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el \
+PLIST_FILES+=	${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.elc \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/leim-list.el
 PLIST_DIRS+=	${EMACS_VERSION_SITE_LISPDIR}/mozc
 
 do-build-mozc_el:
-	${BUILD_MOZC_CMD_BUILD} unix/emacs/emacs.gyp:mozc_emacs_helper
 	cd ${WRKSRC}/unix/emacs && \
 		${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 				-f batch-byte-compile mozc.el
 
 do-install-mozc_el:
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
-		${PREFIX}/bin/
 	@${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc
 	${INSTALL_DATA} \
 		${WRKSRC}/unix/emacs/mozc.el \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc/
-	${INSTALL_DATA} \
 		${WRKSRC}/unix/emacs/mozc.elc \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc/
-	${INSTALL_DATA} \
 		${FILESDIR}/leim-list.el \
 		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc/
 .endif

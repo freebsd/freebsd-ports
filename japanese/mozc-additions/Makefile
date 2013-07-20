@@ -1,28 +1,30 @@
-# New ports collection makefile for:	mozc-additions
-# Date created:				26 June 2010
-# Whom:					Daichi GOTO <daichi@freebsd.org>
-#
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mozc-additions
-PORTVERSION=	1.3.911.102
-PORTREVISION=	1
+PORTVERSION=	1.11.1502.102
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	daichi
+MASTER_SITES=	# empty
 PKGNAMEPREFIX?=	ja-
+DISTFILES=	# empty
 
-MAINTAINER=	daichi@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Additional tools and images for Mozc Japanese Input Method
 
 NO_BUILD=	yes
-LOCALBASE_REPLACE_FILES= \
-		Makefile
+PLIST_FILES=	bin/ibus-daemon_restart \
+		bin/ibus-daemon_start \
+		bin/ibus-daemon_stop \
+		bin/mozc_server_restart \
+		bin/mozc_server_start \
+		bin/mozc_server_stop \
+		bin/mozc_tool_character_palette \
+		bin/mozc_tool_config \
+		bin/mozc_tool_dictionary \
+		bin/mozc_tool_hand_writing \
+		bin/mozc_tool_word_register
 
-post-patch:
-	cd ${WRKSRC} && \
-		${REINPLACE_CMD} "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
-		${LOCALBASE_REPLACE_FILES}
+do-install:
+	${INSTALL_SCRIPT} ${PLIST_FILES:S,bin/,${FILESDIR}/,} ${PREFIX}/bin
 
 .include <bsd.port.mk>

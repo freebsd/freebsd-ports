@@ -1,4 +1,4 @@
-# Created by: Daichi GOTO <daichi@freebsd.org>
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
 PKGNAMEPREFIX=	ja-ibus-
