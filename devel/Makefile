@@ -3630,6 +3630,7 @@
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-pathtools
+    SUBDIR += py-pbr
     SUBDIR += py-pefile
     SUBDIR += py-period
     SUBDIR += py-phpserialize
