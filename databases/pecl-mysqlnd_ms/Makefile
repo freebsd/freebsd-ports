@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlnd_ms
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
