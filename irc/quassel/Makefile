@@ -40,7 +40,7 @@ USE_QT4+=	linguist_build
 
 .if ${PORT_OPTIONS:MMONO} || ${PORT_OPTIONS:MCLIENT}
 . if ${PORT_OPTIONS:MKDE}
-USE_KDE4=	automoc4 kdelibs
+USE_KDE4=	automoc4 kdelibs kdeprefix
 CMAKE_ARGS+=	-DWITH_KDE=ON
 PLIST=		${PKGDIR}/pkg-plist.kde
 . else
