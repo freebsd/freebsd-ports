@@ -1,10 +1,15 @@
 %%PYTHON_SITELIBDIR%%/rpy2/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rpy2/images/rpy2_logo.png
 %%PYTHON_SITELIBDIR%%/rpy2/interactive/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/interactive/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/interactive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/ipython.py
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/ipython.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/ipython.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/packages.py
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/packages.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/interactive/packages.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/interactive/process_revents.py
 %%PYTHON_SITELIBDIR%%/rpy2/interactive/process_revents.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/interactive/process_revents.pyo
@@ -15,7 +20,7 @@
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/__init__.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/_rinterface.so
-%%PYTHON_SITELIBDIR%%/rpy2/rinterface/rpy_device.so
+%%PYTHON_SITELIBDIR%%/rpy2/rinterface/_rpy_device.so
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests/__init__.pyo
@@ -97,6 +102,12 @@
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/grid.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/grid.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/grid.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests/test_ggplot2.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests/test_ggplot2.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests/test_ggplot2.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/methods.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/methods.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/methods.pyo
@@ -106,6 +117,9 @@
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/packages.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/packages.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/packages.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/pandas2ri.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/pandas2ri.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/pandas2ri.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/robject.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/robject.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/robject.pyo
@@ -142,6 +156,9 @@
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testPackages.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testPackages.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testPackages.pyo
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testPandasConversions.py
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testPandasConversions.pyc
+%%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testPandasConversions.pyo
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testRObject.py
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testRObject.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests/testRObject.pyo
@@ -163,13 +180,13 @@
 %%PYTHON_SITELIBDIR%%/rpy2/tests_rpy_classic.py
 %%PYTHON_SITELIBDIR%%/rpy2/tests_rpy_classic.pyc
 %%PYTHON_SITELIBDIR%%/rpy2/tests_rpy_classic.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/rpy2/images
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/interactive/tests
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/interactive
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rinterface/tests
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rinterface
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rlike/tests
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/rlike
+@dirrm %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib/tests
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/robjects/lib
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/robjects/tests
 @dirrm %%PYTHON_SITELIBDIR%%/rpy2/robjects
