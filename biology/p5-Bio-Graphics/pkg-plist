@@ -25,6 +25,8 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Glyph/cross.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/crossbox.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/dashed_line.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/decorated_gene.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/decorated_transcript.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/diamond.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/dna.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/dot.pm

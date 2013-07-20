@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	2.33
+PORTVERSION=	2.37
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -47,6 +47,8 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Glyph::christmas_arrow.3 \
 		Bio::Graphics::Glyph::crossbox.3 \
 		Bio::Graphics::Glyph::dashed_line.3 \
+		Bio::Graphics::Glyph::decorated_gene.3 \
+		Bio::Graphics::Glyph::decorated_transcript.3 \
 		Bio::Graphics::Glyph::diamond.3 \
 		Bio::Graphics::Glyph::dna.3 \
 		Bio::Graphics::Glyph::dot.3 \
