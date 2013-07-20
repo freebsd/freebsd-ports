@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130720:
+  AFFECTS: users of japanese/mozc-server and japanese/mozc-el
+  AUTHOR: hrs@FreeBSD.org
+
+  The bin/mozc_emacs_helper program is now built and installed by
+  japanese/mozc-server because the build processes are heavily
+  overlapped with each other and the helper program does not depend on
+  most of what mozc-server does actually.  To upgrade them, please remove
+  mozc-el first to prevent a conflict with the installed bin/mozc_emacs_helper.
+
 20130719:
   AFFECTS: users of sysutils/bacula-server, sysutils/bacula-client, sysutils/bacula-bat
   AUTHOR: dvl@FreeBSD.org
