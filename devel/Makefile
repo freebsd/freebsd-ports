@@ -996,6 +996,7 @@
     SUBDIR += libexplain
     SUBDIR += libffi
     SUBDIR += libfirm
+    SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libftdi
     SUBDIR += libg19
