@@ -9,7 +9,6 @@ Known issues:
 - no libav support
 - no libdvbcsa support
 - no rc.d script
-- does not compile on FreeBSD 8.x
 
 Patches, feedback and help are always welcome!
 

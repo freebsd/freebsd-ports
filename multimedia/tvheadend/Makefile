@@ -3,6 +3,7 @@
 
 PORTNAME=	tvheadend
 PORTVERSION=	3.4.0.20130714.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} dvb-scan-tables-20130714.tar.gz
@@ -40,7 +41,11 @@ CFLAGS+=	-Wno-conversion -Wno-int-to-pointer-cast
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
-BROKEN=		Does not compile on FreeBSD < 9.0
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "mips64"
+CFLAGS+=	-D__WORDSIZE=64
+.else
+CFLAGS+=	-D__WORDSIZE=32
+.endif
 .endif
 
 .if ( !empty(CC:M*clang*) || ${OSVERSION} >= 1000024 )
