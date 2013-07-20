@@ -1,18 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	librecad
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	cad
-MASTER_SITES=	LOCAL/makc
+MASTER_SITES=	GITHUB
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	2D CAD system
 
-USE_XZ=	yes
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
+
 USE_QT4=	help qt3support help-tools_build moc_build qmake_build \
 		rcc_build uic_build uic3_build
 MAKE_JOBS_SAFE=	yes
+MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	LibreCAD
+GH_PROJECT=	LibreCAD
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	c1f2eb6
 
 OPTIONS_DEFINE=	NLS
 
@@ -37,11 +44,13 @@ do-configure:
 
 post-build:
 .if ${PORT_OPTIONS:MNLS}
-	@(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 -compress librecad.pro)
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${LOCALBASE}/bin/lrelease-qt4 -compress librecad.pro
 	${MKDIR} ${WRKSRC}/unix/resources/qm
 	${INSTALL_DATA} ${WRKSRC}/ts/*.qm ${WRKSRC}/unix/resources/qm
 .endif
-	cd ${WRKSRC} && ${SH} scripts/postprocess-unix.sh
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${SH} scripts/postprocess-unix.sh
 
 do-install:
 	${MKDIR} ${PREFIX}/bin && \
