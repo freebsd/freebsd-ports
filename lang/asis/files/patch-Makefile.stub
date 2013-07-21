@@ -1,0 +1,12 @@
+--- Makefile.stub.orig	2013-07-16 23:01:45.000000000 +0000
++++ Makefile.stub
+@@ -3,8 +3,7 @@ host := $(shell gcc -dumpmachine)
+ 
+ # Where Asis library should be installed
+ # Default is into current GNAT directory
+-INSTALL_DIR = $(dir $(shell which gnatls))..
+-prefix=$(INSTALL_DIR)
++prefix=$(PREFIX)
+ 
+ # Asis specific directories
+ GNAT_DIR=../gnat

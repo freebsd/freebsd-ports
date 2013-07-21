@@ -11,6 +11,7 @@
     SUBDIR += algol68g
     SUBDIR += alisp
     SUBDIR += arena
+    SUBDIR += asis
     SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += ats
