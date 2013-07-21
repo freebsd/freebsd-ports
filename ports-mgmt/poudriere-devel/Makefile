@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20130629
+PORTVERSION=	3.0.99.20130721
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -14,7 +14,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	5b2608fcc7
+FSL_CHKIN=	6abae2a52c
 
 MANCOMPRESSED=	yes
 MAN8=	poudriere.8
@@ -24,9 +24,11 @@ OPTIONS_DEFINE=	ZSH
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
 PLIST_FILES=	etc/poudriere.conf.sample \
+		etc/poudriere.d/hooks/bulk.sh.sample \
 		etc/poudriere.d/hooks/pkgbuild.sh.sample \
 		etc/rc.d/poudriere \
 		bin/poudriere \
+		libexec/poudriere/cpdup \
 		libexec/poudriere/dirwatch \
 		libexec/poudriere/dirempty \
 		libexec/poudriere/make_index \
@@ -47,6 +49,7 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/jail.sh \
 		share/poudriere/options.sh \
 		share/poudriere/ports.sh \
+		share/poudriere/processonelog.sh \
 		share/poudriere/queue.sh \
 		share/poudriere/status.sh \
 		share/poudriere/testport.sh
@@ -65,12 +68,8 @@ PLIST_DIRS=	libexec/poudriere \
 PLIST_FILES+=	share/zsh/site-functions/_poudriere
 PLIST_DIRSTRY+=	share/zsh/site-functions
 PLIST_DIRSTRY+=	share/zsh/
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MZSH}
-	@${MKDIR} ${PREFIX}/share/zsh/site-functions/
-	@${INSTALL_DATA} ${WRKSRC}/zsh-completions ${PREFIX}/share/zsh/site-functions/_poudriere
+.else
+MAKE_ENV+=	NO_ZSH=yes
 .endif
 
 .include <bsd.port.mk>
