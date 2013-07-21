@@ -21,10 +21,8 @@ USE_BZIP2=		yes
 USE_DOS2UNIX=		yes
 USES=			cmake
 
-OPTIONS_DEFINE=	MYSQL FIREBIRD DOCS
-MYSQL_DESC=	With MySQL support
-FIREBIRD_DESC=	With Firebird support
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFINE=	FIREBIRD DOCS #MYSQL
+OPTIONS_DEFAULT=	FIREBIRD
 
 .include <bsd.port.pre.mk>
 
@@ -32,17 +30,18 @@ OPTIONS_DEFAULT=	MYSQL
 CMAKE_ARGS+=		-DCMAKE_NOT_INSTALL_DOC:BOOL=ON
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL}
-WANT_MYSQL_VER=		50
-USE_MYSQL=		yes
-.endif
+# ${WRKSRC}/include/adicpp/myapi appears to be hardcoded for MySQL 5.0
+# Disable option completely until support for later versions added
+# Firebird 2.0 support doesn't build on amd64, so version 2.5 is required
+#.if ${PORT_OPTIONS:MMYSQL}
+#WANT_MYSQL_VER=	50
+#USE_MYSQL=		yes
+#.endif
 
 .if ${PORT_OPTIONS:MFIREBIRD}
-WITH_FIREBIRD_VER=	2
+WITH_FIREBIRD_VER=	25
 USE_FIREBIRD=		yes
 .endif
-
-.include "${PORTSDIR}/Mk/bsd.database.mk"
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=	Does not compile on this architecture
