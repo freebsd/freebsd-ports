@@ -79,7 +79,6 @@ otrs/Kernel/Language/sv.pm
 otrs/Kernel/Language/tr.pm
 otrs/Kernel/Language/uk.pm
 otrs/Kernel/Language/vi_VN.pm
-otrs/Kernel/Language/xx_AgentZoom.pm
 otrs/Kernel/Language/xx_Custom.pm
 otrs/Kernel/Language/zh_CN.pm
 otrs/Kernel/Language/zh_TW.pm
@@ -1502,7 +1501,7 @@ otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5/jquery.tablesorter.
 otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.21/jquery-ui.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.10/jquery.validate.js
 otrs/var/httpd/htdocs/js/thirdparty/json/json2.js
-otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.3.16/jsplumb.js
+otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.4.2/jsplumb.js
 otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0/qunit-1.11.0.css
 otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0/qunit-1.11.0.js
 otrs/var/httpd/htdocs/js/thirdparty/stacktrace-0.4/stacktrace.js
@@ -1877,7 +1876,7 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrmtry otrs/var/httpd/htdocs/js/js-cache
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/stacktrace-0.4
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.3.16
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.4.2
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/json
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.10
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.21

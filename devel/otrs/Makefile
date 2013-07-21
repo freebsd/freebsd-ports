@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.9
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -52,8 +52,6 @@ SMTP_DESC=		Send email via SMTP
 REPORTS_MODULES_DESC=	Reports support
 
 USE_BZIP2=	yes
-USES=		shebangfix
-SHEBANG_FILES=	bin/*.pl
 
 OTRSDIR=	${PREFIX}/otrs
 USERS=		${PORTNAME}
@@ -123,6 +121,9 @@ RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 .if ${PORT_OPTIONS:MPDF}
 RUN_DEPENDS+=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2
+. if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MISPELL}
