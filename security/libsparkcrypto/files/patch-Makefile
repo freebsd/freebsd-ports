@@ -1,6 +1,47 @@
---- Makefile.orig	2013-06-26 21:03:13.000000000 +0000
+--- Makefile.orig	2013-07-20 13:54:32.000000000 +0000
 +++ Makefile
-@@ -154,21 +154,22 @@ $(OUTPUT_DIR)/proof/libsparkcrypto.idx:
+@@ -5,7 +5,6 @@ UNAME_M   := $(shell uname -m)
+ ARCH        ?= $(UNAME_M)
+ RUNTIME     ?= native
+ TESTS       ?= test_aes test_hmac test_ripemd160 test_sha2 test_shadow benchmark
+-DESTDIR     ?= /usr/local
+ TARGET_CFG  ?= $(OUTPUT_DIR)/target.cfg
+ 
+ VERSION     ?= 0.1.1
+@@ -33,7 +32,7 @@ SHARED_DIRS = src/shared/$(ENDIANESS) sr
+ ARCH_FILES  = $(wildcard src/ada/$(ARCH)/*.ad?)
+ ADT_FILES   = $(addprefix $(OUTPUT_DIR)/tree/,$(notdir $(patsubst %.ads,%.adt,$(wildcard src/shared/generic/*.ads))))
+ 
+-ALL_GOALS      = install_local
++ALL_GOALS      = 
+ INSTALL_DEPS   = install_files
+ 
+ # SPARK_DIR must be set
+@@ -78,6 +77,7 @@ endif
+ # Feature: NO_APIDOC
+ ifeq ($(NO_APIDOC),)
+ ALL_GOALS += apidoc
++INSTALL_DEPS += install_docs
+ endif
+ 
+ ###############################################################################
+@@ -119,9 +119,12 @@ proof: $(OUTPUT_DIR)/proof/libsparkcrypt
+ apidoc: $(ADT_FILES)
+ 	echo $^ | xargs -n1 > $(OUTPUT_DIR)/tree.lst
+ 	adabrowse -T $(OUTPUT_DIR)/tree -f @$(OUTPUT_DIR)/tree.lst -w1 -c doc/adabrowse.conf -o $(OUTPUT_DIR)/doc/
+-	install -m 644 doc/libsparkcrypto.css $(OUTPUT_DIR)/doc/libsparkcrypto.css
+-	install -m 644 doc/apidoc.css $(OUTPUT_DIR)/doc/apidoc.css
+-	install -m 644 doc/lsc_logo.png $(OUTPUT_DIR)/doc/lsc_logo.png
++
++install_docs:
++	install -d -m 755 $(DESTDIR)$(PREFIX)/share/doc/libsparkcrypto
++	install -m 644 doc/libsparkcrypto.css doc/apidoc.css \
++		doc/lsc_logo.png $(DESTDIR)$(PREFIX)/share/doc/libsparkcrypto
++	install -m 644 $(OUTPUT_DIR)/doc/* $(DESTDIR)$(PREFIX)/share/doc/libsparkcrypto/
+ 
+ archive: $(OUTPUT_DIR)/doc/libsparkcrypto-$(VERSION).tgz
+ 
+@@ -154,21 +157,33 @@ $(OUTPUT_DIR)/proof/libsparkcrypto.idx:
  install: $(INSTALL_DEPS)
  
  install_files: build
@@ -11,26 +52,37 @@
 -	install -p -m 644 src/shared/generic/*.ad? $(DESTDIR)/sharedinclude/
 -	install -p -m 644 src/ada/generic/*.ad? $(DESTDIR)/adainclude/
 -	install -p -m 644 src/ada/$(IO)/*.ad? $(DESTDIR)/adainclude/
-+	install -d -m 755 $(DESTDIR)/lib/libsparkcrypto $(DESTDIR)/include/libsparkcrypto/adainclude
-+	install -d -m 755 $(DESTDIR)/lib/gnat $(DESTDIR)/include/libsparkcrypto/sharedinclude
-+	install -p -m 755 $(OUTPUT_DIR)/build/adalib/libsparkcrypto.a $(DESTDIR)/lib/libsparkcrypto/libsparkcrypto.a
-+	install -p -m 644 build/libsparkcrypto.gpr $(DESTDIR)/lib/gnat/libsparkcrypto.gpr
-+	install -p -m 644 src/shared/$(ENDIANESS)/*.ad? $(DESTDIR)/include/libsparkcrypto/sharedinclude/
-+	install -p -m 644 src/shared/generic/*.ad? $(DESTDIR)/include/libsparkcrypto/sharedinclude/
-+	install -p -m 644 src/ada/generic/*.ad? $(DESTDIR)/include/libsparkcrypto/adainclude/
-+	install -p -m 644 src/ada/$(IO)/*.ad? $(DESTDIR)/include/libsparkcrypto/adainclude/
++	install -d -m 755 $(DESTDIR)$(PREFIX)/lib/libsparkcrypto \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/adainclude \
++		$(DESTDIR)$(PREFIX)/lib/gnat \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/sharedinclude
++	install -p -m 755 $(OUTPUT_DIR)/build/adalib/libsparkcrypto.a \
++		$(DESTDIR)$(PREFIX)/lib/libsparkcrypto
++	install -p -m 644 build/libsparkcrypto.gpr \
++		$(DESTDIR)$(PREFIX)/lib/gnat
++	install -p -m 644 src/shared/$(ENDIANESS)/*.ad? \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/sharedinclude/
++	install -p -m 644 src/shared/generic/*.ad? \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/sharedinclude/
++	install -p -m 644 src/ada/generic/*.ad? \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/adainclude/
++	install -p -m 644 src/ada/$(IO)/*.ad? \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/adainclude/
  ifneq ($(strip $(ARCH_FILES)),)
 -	install -p -m 644 $(ARCH_FILES) $(DESTDIR)/adainclude/
-+	install -p -m 644 $(ARCH_FILES) $(DESTDIR)/include/libsparkcrypto/adainclude/
++	install -p -m 644 $(ARCH_FILES) \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto/adainclude/
  endif
 -	install -p -m 444 $(OUTPUT_DIR)/build/adalib/*.ali $(DESTDIR)/adalib/
-+	install -p -m 444 $(OUTPUT_DIR)/build/adalib/*.ali $(DESTDIR)/lib/libsparkcrypto/
++	install -p -m 444 $(OUTPUT_DIR)/build/adalib/*.ali \
++		$(DESTDIR)$(PREFIX)/lib/libsparkcrypto/
  
  install_proof: install_files proof
 -	install -D -p -m 444 $(OUTPUT_DIR)/proof/libsparkcrypto.sum $(DESTDIR)/libsparkcrypto.sum
 -	(cd $(OUTPUT_DIR)/empty && sparkmake -include=*\.ads -dir=$(DESTDIR)/sharedinclude -nometa -index=$(DESTDIR)/libsparkcrypto.idx)
-+	install -D -p -m 444 $(OUTPUT_DIR)/proof/libsparkcrypto.sum $(DESTDIR)/include/libsparkcrypto/libsparkcrypto.sum
-+	(cd $(OUTPUT_DIR)/empty && sparkmake -include=*\.ads -dir=$(DESTDIR)/include/libsparkcrypto/sharedinclude -nometa -index=$(DESTDIR)/include/libsparkcrypto/libsparkcrypto.idx)
++	install -D -p -m 444 $(OUTPUT_DIR)/proof/libsparkcrypto.sum \
++		$(DESTDIR)$(PREFIX)/include/libsparkcrypto
++	(cd $(OUTPUT_DIR)/empty && sparkmake -include=*\.ads -dir=$(DESTDIR)$(PREFIX)/include/libsparkcrypto/sharedinclude -nometa -index=$(DESTDIR)$(PREFIX)/include/libsparkcrypto/libsparkcrypto.idx)
  
  install_local: DESTDIR = $(OUTPUT_DIR)/libsparkcrypto
  install_local: install
