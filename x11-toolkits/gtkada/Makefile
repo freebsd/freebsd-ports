@@ -14,37 +14,18 @@ COMMENT=	Ada graphical toolkit based on Gtk2+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
-USES=		ada
+USES=		ada gmake
 
 DESTINY=	${WRKDIR}/destino
-MAKE_ENV+=	DESTDIR=${DESTINY}
+MAKE_ENV+=	DESTDIR=${DESTINY} \
+		PROCESSORS=${MAKE_JOBS_NUMBER}
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-# Setting MAKE_JOBS_SAFE=yes will break the build because -j is passed
-# to gmake.  So we need to roll our own parallel-job support here.
-# We can check MAKE_JOBS_NUMBER because /etc/make.conf is loaded
-# before this makefile and bsd.port.mk isn't.
-.if !defined(DISABLE_MAKE_JOBS)
-.  if defined(MAKE_JOBS_NUMBER)
-MAKE_ENV+=	PROCESSORS=${MAKE_JOBS_NUMBER}
-.  else
-.    if ${OPSYS} == FreeBSD
-NCPU!=		${SYSCTL} -n kern.smp.cpus
-.    elif ${OPSYS} == DragonFly
-NCPU!=		${SYSCTL} -n hw.ncpu
-.    else
-NCPU=		1
-.    endif
-MAKE_ENV+=	PROCESSORS=${NCPU}
-.  endif
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
@@ -62,6 +43,11 @@ post-patch:
 .if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/^all: \(.*\)/all: \1 docs/g' ${WRKSRC}/Makefile.in
 .endif
+
+do-build:
+	# This target is recreated because -j cannot be set, but
+	# MAKE_JOBS_SAFE=yes is needed for PROCESSORS value
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gmake all
 
 post-install:
 	@${MKDIR} ${DESTINY}${PREFIX}/libdata
