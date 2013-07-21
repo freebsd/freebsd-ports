@@ -177,7 +177,6 @@ share/xsl/website/xsl/website-common.xsl
 share/xsl/website/xsl/website-targets.xsl
 share/xsl/website/xsl/website.xsl
 share/xsl/website/xsl/xbel.xsl
-@unexec rm -f %D/share/xsl/website/catalog 2>&1 >/dev/null || true
 @dirrm share/xsl/website/xsl
 @dirrm share/xsl/website/tests
 @dirrm share/xsl/website/schema/relaxng
@@ -193,7 +192,7 @@ share/xsl/website/xsl/xbel.xsl
 @dirrm share/xsl/website/extensions/saxon64
 @dirrm share/xsl/website/extensions
 @dirrm share/xsl/website
-@dirrm share/xsl
+@dirrmtry share/xsl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/subdir
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle/other
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle/current
