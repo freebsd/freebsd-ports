@@ -1,6 +1,0 @@
-#!/bin/sh
-[ -z "$CC" ] && export CC=%%CC%%
-[ -z "$CPP" ] && export CPP=%%CPP%%
-[ -z "$CXX" ] && export CXX=%%CXX%%
-export HPHP_HOME=%%HPHP_HOME%%
-%%HPHP%% $@
