@@ -5,7 +5,9 @@ PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.8
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/3862/
+#MASTER_SITES=	https://alioth.debian.org/frs/download.php/3862/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
