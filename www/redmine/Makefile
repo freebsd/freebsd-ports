@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -11,23 +10,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A flexible project management web application
 
-RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
-		rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
+RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick \
 		rubygem-rails>=3.2.13:${PORTSDIR}/www/rubygem-rails \
-		rubygem-capybara>=2.0.0:${PORTSDIR}/devel/rubygem-capybara \
 		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
-		rubygem-coderay>=1.0.6:${PORTSDIR}/textproc/rubygem-coderay \
+		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
 		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap \
-		rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql \
-		rubygem-yard>=0:${PORTSDIR}/textproc/rubygem-yard \
-		rubygem-shoulda>=2.11.3:${PORTSDIR}/devel/rubygem-shoulda \
-		rubygem-mocha>=0.9.12:${PORTSDIR}/devel/rubygem-mocha
+		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -48,7 +40,7 @@ NO_OPTIONS_SORT=yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mysql.so:${PORTSDIR}/databases/ruby-mysql
+RUN_DEPENDS+=	rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGRESQL}
@@ -56,7 +48,7 @@ RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 .endif
 
 .if ${PORT_OPTIONS:MRMAGIC}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/RMagick2.so:${PORTSDIR}/graphics/ruby-rmagick
+RUN_DEPENDS+=	rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick
 .endif
 
 .if ${PORT_OPTIONS:MWWWSERVER}
