@@ -1,10 +1,9 @@
-# Created by: Nik Clayton <nik@freebsd.org>
+# Created by: Nik Clayton <nik@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -33,7 +32,6 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450 \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
-		w3m:${PORTSDIR}/www/w3m \
 		zip:${PORTSDIR}/archivers/zip
 
 OPTIONS_DEFINE=		X11 JADETEX OPENJADE CJK SVN IGOR
