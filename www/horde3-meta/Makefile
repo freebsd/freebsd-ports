@@ -39,7 +39,7 @@ KLUTZ_DESC=	Comic Strip Viewer
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde3-base
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/base/rpc.php:${PORTSDIR}/www/horde3-base
 
 .if ${PORT_OPTIONS:MIMP}
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/imp/index.php:${PORTSDIR}/mail/horde3-imp
