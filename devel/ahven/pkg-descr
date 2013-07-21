@@ -1,0 +1,13 @@
+Ahven is a simple unit test library and framework for the Ada programming
+lanugage.  It is loosely modelled after JUnit and some ideas from AUnit.
+
+Features:
+   Simple API
+   Small size
+   JUnit-compatible test results in XML format
+   Strict coding style enforced by AdaControl
+      This allows integration with tools like Jenkins and CruiseControl
+   Limited to Ada95 language features
+   Permissions open source license (ISC)
+
+WWW: http://ahven.stronglytyped.org

@@ -44,6 +44,7 @@
     SUBDIR += adime
     SUBDIR += aegis
     SUBDIR += afay
+    SUBDIR += ahven
     SUBDIR += aifad
     SUBDIR += alabastra
     SUBDIR += ald
