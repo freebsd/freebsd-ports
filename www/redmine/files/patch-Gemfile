@@ -1,5 +1,5 @@
---- Gemfile.orig	2013-06-01 13:45:53.232402408 +0000
-+++ Gemfile	2013-06-01 13:45:56.413919051 +0000
+--- Gemfile.orig	2013-07-14 16:51:09.000000000 +0000
++++ Gemfile	2013-07-21 12:56:04.025404096 +0000
 @@ -1,11 +1,11 @@
  source 'https://rubygems.org'
  
@@ -7,7 +7,7 @@
 -gem "jquery-rails", "~> 2.0.2"
 +gem "jquery-rails", "~> 3.0"
  gem "i18n", "~> 0.6.0"
- gem "coderay", "~> 1.0.6"
+ gem "coderay", "~> 1.0.9"
  gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 -gem "builder", "3.0.0"
 +gem "builder", "~> 3.0.0"
@@ -32,14 +32,22 @@
          gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
        when /postgresql/
          gem "pg", ">= 0.11.0", :platforms => [:mri, :mingw]
-@@ -77,8 +77,8 @@
+@@ -71,18 +71,6 @@
+   warn("Please configure your config/database.yml first")
  end
  
- group :test do
+-group :development do
+-  gem "rdoc", ">= 2.4.2"
+-  gem "yard"
+-end
+-
+-group :test do
 -  gem "shoulda", "~> 3.3.2"
 -  gem "mocha", "~> 0.13.3"
-+  gem "shoulda", "~> 2.11"
-+  gem "mocha", "~> 0.9"
-   gem 'capybara', '~> 2.0.0'
- end
- 
+-  gem 'capybara', '~> 2.0.0'
+-  gem 'nokogiri', '< 1.6.0'
+-end
+-
+ local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
+ if File.exists?(local_gemfile)
+   puts "Loading Gemfile.local ..." if $DEBUG # `ruby -d` or `bundle -v`
