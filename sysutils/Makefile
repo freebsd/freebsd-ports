@@ -866,6 +866,7 @@
     SUBDIR += schedutils
     SUBDIR += scprotect
     SUBDIR += screen
+    SUBDIR += screenfetch
     SUBDIR += screenie
     SUBDIR += sdd
     SUBDIR += sdparm
