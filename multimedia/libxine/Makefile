@@ -83,6 +83,20 @@ PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
 .include <bsd.port.options.mk>
 
+# clang/i386 doesn't like
+#	src/post/deinterlace/plugins/greedy2frame_template_sse2.c :
+# [...]
+# ./greedy2frame_template_sse2.c:175:38: error: register %rax is only available in 64-bit mode
+#            "movdqa  (%3), %%xmm0               \n\t" /* xmm0 = T0 */
+#                                                  ^
+#<inline asm>:3:11: note: instantiated into assembly here
+#        movdqa  (%rax,%esi), %xmm3
+#                 ^~~~
+# [...]
+.if ${ARCH} == "i386"
+USE_GCC=	any
+.endif
+
 # Fix build WITH_DEBUG
 .if defined(WITH_DEBUG)
 DEBUG_FLAGS=	-g -O1
