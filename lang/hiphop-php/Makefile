@@ -3,6 +3,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/archive/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -44,6 +45,8 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		c-client4:${PORTSDIR}/mail/cclient \
 		unwind:${PORTSDIR}/devel/libunwind \
 		glog:${PORTSDIR}/devel/glog
+
+OPTIONS_DEFINE=	DEBUG
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	This program is developed for amd64 only
@@ -96,6 +99,13 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:main \
 		8859-14.TXT:mappings \
 		8859-15.TXT:mappings \
 		8859-16.TXT:mappings
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_BUILD_TYPE=	Debug
+CONFIGURE_ARGS+=	-DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+.endif
 
 .include <bsd.port.pre.mk>
 
