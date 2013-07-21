@@ -1,0 +1,29 @@
+--- Makefile.orig	2013-01-23 19:59:16.000000000 +0000
++++ Makefile
+@@ -91,17 +91,17 @@ distclean:
+ install: install_lib install_docs
+ 
+ install_lib: build_lib
+-	mkdir -p $(PREFIX)/include/ahven
+-	mkdir -p $(LIBDIR)/ahven
+-	mkdir -p $(PREFIX)/lib/gnat
+-	$(INSTALL) -m 644 $(SOURCES) $(PREFIX)/include/ahven
+-	$(INSTALL) -m 444 $(ALI_FILES) $(LIBDIR)/ahven
+-	$(INSTALL) -m 644 lib/$(STATIC_LIBRARY) $(LIBDIR)/ahven
+-	$(INSTALL) -m 644 $(GPR_FILE) $(PREFIX)/lib/gnat
++	mkdir -p $(DESTDIR)$(PREFIX)/include/ahven
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/ahven
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/gnat
++	$(INSTALL) -m 644 $(SOURCES) $(DESTDIR)$(PREFIX)/include/ahven
++	$(INSTALL) -m 444 $(ALI_FILES) $(DESTDIR)$(PREFIX)/lib/ahven
++	$(INSTALL) -m 644 lib/$(STATIC_LIBRARY) $(DESTDIR)$(PREFIX)/lib/ahven
++	$(INSTALL) -m 644 $(GPR_FILE) $(DESTDIR)$(PREFIX)/lib/gnat
+ 
+ install_docs: userguide
+-	mkdir -p $(PREFIX)/share/doc/ahven
+-	cp -r doc/manual/en/build/html $(PREFIX)/share/doc/ahven
++	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/ahven
++	cp -r doc/manual/en/build/html $(DESTDIR)$(PREFIX)/share/doc/ahven
+ 
+ check: build_tests
+ 	./tester -c
