@@ -39,7 +39,6 @@ lib/%%DISTNAME%%/doc/Manual/Bibliography.html
 lib/%%DISTNAME%%/doc/Manual/Contents.html
 lib/%%DISTNAME%%/doc/Manual/DCG.html
 lib/%%DISTNAME%%/doc/Manual/DDE.html
-lib/%%DISTNAME%%/doc/Manual/DLL.html
 lib/%%DISTNAME%%/doc/Manual/DocIndex.html
 lib/%%DISTNAME%%/doc/Manual/IDE.html
 lib/%%DISTNAME%%/doc/Manual/IO.html
@@ -49,12 +48,10 @@ lib/%%DISTNAME%%/doc/Manual/aggregate.html
 lib/%%DISTNAME%%/doc/Manual/allsolutions.html
 lib/%%DISTNAME%%/doc/Manual/altmoduleapi.html
 lib/%%DISTNAME%%/doc/Manual/apply.html
-lib/%%DISTNAME%%/doc/Manual/applylist.html
 lib/%%DISTNAME%%/doc/Manual/arith.html
 lib/%%DISTNAME%%/doc/Manual/assoc.html
 lib/%%DISTNAME%%/doc/Manual/attvar.html
 lib/%%DISTNAME%%/doc/Manual/autoload.html
-lib/%%DISTNAME%%/doc/Manual/block3.html
 lib/%%DISTNAME%%/doc/Manual/broadcast.gif
 lib/%%DISTNAME%%/doc/Manual/broadcast.html
 lib/%%DISTNAME%%/doc/Manual/builtin.html
@@ -68,7 +65,6 @@ lib/%%DISTNAME%%/doc/Manual/check.html
 lib/%%DISTNAME%%/doc/Manual/chr.html
 lib/%%DISTNAME%%/doc/Manual/chrintro.html
 lib/%%DISTNAME%%/doc/Manual/clicense.html
-lib/%%DISTNAME%%/doc/Manual/clpclp_distinct.html
 lib/%%DISTNAME%%/doc/Manual/clpfd.html
 lib/%%DISTNAME%%/doc/Manual/clpqr.html
 lib/%%DISTNAME%%/doc/Manual/cmdline.html
@@ -90,7 +86,6 @@ lib/%%DISTNAME%%/doc/Manual/defmodule.html
 lib/%%DISTNAME%%/doc/Manual/dialect.html
 lib/%%DISTNAME%%/doc/Manual/dynamic-modules.html
 lib/%%DISTNAME%%/doc/Manual/dynamic.html
-lib/%%DISTNAME%%/doc/Manual/dynstatic.html
 lib/%%DISTNAME%%/doc/Manual/edit.html
 lib/%%DISTNAME%%/doc/Manual/editreload.html
 lib/%%DISTNAME%%/doc/Manual/errors.html
@@ -99,7 +94,6 @@ lib/%%DISTNAME%%/doc/Manual/examples.html
 lib/%%DISTNAME%%/doc/Manual/excepthook.html
 lib/%%DISTNAME%%/doc/Manual/exception.html
 lib/%%DISTNAME%%/doc/Manual/exception3.html
-lib/%%DISTNAME%%/doc/Manual/extendarith.html
 lib/%%DISTNAME%%/doc/Manual/extvar.html
 lib/%%DISTNAME%%/doc/Manual/files.html
 lib/%%DISTNAME%%/doc/Manual/findappfile.html
@@ -141,7 +135,6 @@ lib/%%DISTNAME%%/doc/Manual/initfile.html
 lib/%%DISTNAME%%/doc/Manual/initgoal.html
 lib/%%DISTNAME%%/doc/Manual/intlibs.html
 lib/%%DISTNAME%%/doc/Manual/intro.html
-lib/%%DISTNAME%%/doc/Manual/iso.html
 lib/%%DISTNAME%%/doc/Manual/jitindex.html
 lib/%%DISTNAME%%/doc/Manual/libpl.html
 lib/%%DISTNAME%%/doc/Manual/library.html
@@ -150,13 +143,13 @@ lib/%%DISTNAME%%/doc/Manual/limits.html
 lib/%%DISTNAME%%/doc/Manual/listing.html
 lib/%%DISTNAME%%/doc/Manual/lists.html
 lib/%%DISTNAME%%/doc/Manual/loadfilehook.html
+lib/%%DISTNAME%%/doc/Manual/locale.html
 lib/%%DISTNAME%%/doc/Manual/manipatom.html
 lib/%%DISTNAME%%/doc/Manual/manipmodule.html
 lib/%%DISTNAME%%/doc/Manual/manipstack.html
 lib/%%DISTNAME%%/doc/Manual/manipterm.html
 lib/%%DISTNAME%%/doc/Manual/memory.html
 lib/%%DISTNAME%%/doc/Manual/metacall.html
-lib/%%DISTNAME%%/doc/Manual/metainmodule.html
 lib/%%DISTNAME%%/doc/Manual/metapred.html
 lib/%%DISTNAME%%/doc/Manual/miscarith.html
 lib/%%DISTNAME%%/doc/Manual/miscpreds.html
@@ -168,7 +161,6 @@ lib/%%DISTNAME%%/doc/Manual/mtoplevel.html
 lib/%%DISTNAME%%/doc/Manual/mtunbound.html
 lib/%%DISTNAME%%/doc/Manual/navigator.html
 lib/%%DISTNAME%%/doc/Manual/nb_set.html
-lib/%%DISTNAME%%/doc/Manual/nbset.html
 lib/%%DISTNAME%%/doc/Manual/next.gif
 lib/%%DISTNAME%%/doc/Manual/operators.html
 lib/%%DISTNAME%%/doc/Manual/opsummary.html
@@ -193,10 +185,10 @@ lib/%%DISTNAME%%/doc/Manual/profnode.gif
 lib/%%DISTNAME%%/doc/Manual/projectfiles.html
 lib/%%DISTNAME%%/doc/Manual/prolog_xref.html
 lib/%%DISTNAME%%/doc/Manual/prologpack.html
-lib/%%DISTNAME%%/doc/Manual/prologxref.html
 lib/%%DISTNAME%%/doc/Manual/protocol.html
 lib/%%DISTNAME%%/doc/Manual/qsaveforeign.html
 lib/%%DISTNAME%%/doc/Manual/qsavelimits.html
+lib/%%DISTNAME%%/doc/Manual/quasiquotations.html
 lib/%%DISTNAME%%/doc/Manual/quickstart.html
 lib/%%DISTNAME%%/doc/Manual/random.html
 lib/%%DISTNAME%%/doc/Manual/readline.html
@@ -204,12 +196,8 @@ lib/%%DISTNAME%%/doc/Manual/readutil.html
 lib/%%DISTNAME%%/doc/Manual/record.html
 lib/%%DISTNAME%%/doc/Manual/reexport.html
 lib/%%DISTNAME%%/doc/Manual/registry.html
-lib/%%DISTNAME%%/doc/Manual/relnotes.html
 lib/%%DISTNAME%%/doc/Manual/resmodules.html
-lib/%%DISTNAME%%/doc/Manual/runenv.html
 lib/%%DISTNAME%%/doc/Manual/runtime.html
-lib/%%DISTNAME%%/doc/Manual/sec-5.11.html
-lib/%%DISTNAME%%/doc/Manual/sec-E.4.html
 lib/%%DISTNAME%%/doc/Manual/sicstus-chr.html
 lib/%%DISTNAME%%/doc/Manual/signal.html
 lib/%%DISTNAME%%/doc/Manual/simplex.html
@@ -223,6 +211,7 @@ lib/%%DISTNAME%%/doc/Manual/summary.html
 lib/%%DISTNAME%%/doc/Manual/swiorother.html
 lib/%%DISTNAME%%/doc/Manual/swiprolog.html
 lib/%%DISTNAME%%/doc/Manual/syntax.html
+lib/%%DISTNAME%%/doc/Manual/syntaxext.html
 lib/%%DISTNAME%%/doc/Manual/system.html
 lib/%%DISTNAME%%/doc/Manual/termrw.html
 lib/%%DISTNAME%%/doc/Manual/thmonitor.html
@@ -240,15 +229,12 @@ lib/%%DISTNAME%%/doc/Manual/typetest.html
 lib/%%DISTNAME%%/doc/Manual/ugraphs.html
 lib/%%DISTNAME%%/doc/Manual/up.gif
 lib/%%DISTNAME%%/doc/Manual/url.html
-lib/%%DISTNAME%%/doc/Manual/usemodules.html
 lib/%%DISTNAME%%/doc/Manual/useresource.html
 lib/%%DISTNAME%%/doc/Manual/usingmodules.html
 lib/%%DISTNAME%%/doc/Manual/varnumbers.html
-lib/%%DISTNAME%%/doc/Manual/whichmodules.html
 lib/%%DISTNAME%%/doc/Manual/whymodules.html
 lib/%%DISTNAME%%/doc/Manual/widechars.html
 lib/%%DISTNAME%%/doc/Manual/www_browser.html
-lib/%%DISTNAME%%/doc/Manual/xpce.html
 lib/%%DISTNAME%%/doc/Manual/xref.html
 lib/%%DISTNAME%%/doc/Manual/xrefchatdep.gif
 lib/%%DISTNAME%%/doc/Manual/xrefchatfile.gif
@@ -268,8 +254,10 @@ lib/%%DISTNAME%%/doc/packages/examples/chr/leq.chr
 lib/%%DISTNAME%%/doc/packages/examples/chr/listdom.chr
 lib/%%DISTNAME%%/doc/packages/examples/chr/primes.chr
 lib/%%DISTNAME%%/doc/packages/examples/http/calc.pl
+lib/%%DISTNAME%%/doc/packages/examples/http/debian-init-script
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_body.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_client.pl
+lib/%%DISTNAME%%/doc/packages/examples/http/demo_daemon.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_files.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_inetd
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_openid.pl
@@ -346,6 +334,7 @@ lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/json.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.a
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/memfile.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/mime.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/ntriples.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/odbc4pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pdt_console.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pl2xpce.so
@@ -361,6 +350,7 @@ lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/snowball.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/socket.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/ssl4pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/streaminfo.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/syslog.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/table.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/time.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/turtle.so
@@ -372,6 +362,7 @@ lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/zlib4pl.so
 lib/%%DISTNAME%%/library/DTD/HTML4.dcl
 lib/%%DISTNAME%%/library/DTD/HTML4.dtd
 lib/%%DISTNAME%%/library/DTD/HTML4.soc
+lib/%%DISTNAME%%/library/DTD/HTML5.dtd
 lib/%%DISTNAME%%/library/DTD/HTMLlat1.ent
 lib/%%DISTNAME%%/library/DTD/HTMLspec.ent
 lib/%%DISTNAME%%/library/DTD/HTMLsym.ent
@@ -453,25 +444,50 @@ lib/%%DISTNAME%%/library/date.pl
 lib/%%DISTNAME%%/library/dcg/basics.pl
 lib/%%DISTNAME%%/library/debug.pl
 lib/%%DISTNAME%%/library/dialect/bim.pl
+lib/%%DISTNAME%%/library/dialect/ciao.pl
 lib/%%DISTNAME%%/library/dialect/ciao/aggregates.pl
 lib/%%DISTNAME%%/library/dialect/ciao/assertions.pl
+lib/%%DISTNAME%%/library/dialect/ciao/basicmodes.pl
 lib/%%DISTNAME%%/library/dialect/ciao/classic.pl
+lib/%%DISTNAME%%/library/dialect/ciao/dcg.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/attributes.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/basic_props.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/basiccontrol.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/exceptions.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/exceptions_db.pl
 lib/%%DISTNAME%%/library/dialect/ciao/engine/hiord_rt.pl
 lib/%%DISTNAME%%/library/dialect/ciao/engine/internals.pl
+lib/%%DISTNAME%%/library/dialect/ciao/engine/io_aux.pl
+lib/%%DISTNAME%%/library/dialect/ciao/file_utils.pl
 lib/%%DISTNAME%%/library/dialect/ciao/format.pl
+lib/%%DISTNAME%%/library/dialect/ciao/freeze.pl
+lib/%%DISTNAME%%/library/dialect/ciao/hiord.pl
+lib/%%DISTNAME%%/library/dialect/ciao/hiordlib.pl
 lib/%%DISTNAME%%/library/dialect/ciao/iso_misc.pl
 lib/%%DISTNAME%%/library/dialect/ciao/isomodes.pl
 lib/%%DISTNAME%%/library/dialect/ciao/lists.pl
+lib/%%DISTNAME%%/library/dialect/ciao/llists.pl
+lib/%%DISTNAME%%/library/dialect/ciao/nativeprops.pl
+lib/%%DISTNAME%%/library/dialect/ciao/nortchecks.pl
+lib/%%DISTNAME%%/library/dialect/ciao/odd.pl
+lib/%%DISTNAME%%/library/dialect/ciao/prolog_flags.pl
 lib/%%DISTNAME%%/library/dialect/ciao/read.pl
 lib/%%DISTNAME%%/library/dialect/ciao/regtypes.pl
+lib/%%DISTNAME%%/library/dialect/ciao/regtypes/regtypes_tr.pl
 lib/%%DISTNAME%%/library/dialect/ciao/sockets.pl
+lib/%%DISTNAME%%/library/dialect/ciao/sort.pl
+lib/%%DISTNAME%%/library/dialect/ciao/streams.pl
 lib/%%DISTNAME%%/library/dialect/ciao/strings.pl
 lib/%%DISTNAME%%/library/dialect/ciao/system.pl
 lib/%%DISTNAME%%/library/dialect/ciao/terms.pl
+lib/%%DISTNAME%%/library/dialect/ciao/terms_check.pl
+lib/%%DISTNAME%%/library/dialect/ciao/terms_vars.pl
+lib/%%DISTNAME%%/library/dialect/ciao/unittestdecls.pl
+lib/%%DISTNAME%%/library/dialect/ciao/unittestprops.pl
 lib/%%DISTNAME%%/library/dialect/ciao/write.pl
-lib/%%DISTNAME%%/library/dialect/ciao.pl
 lib/%%DISTNAME%%/library/dialect/commons.pl
 lib/%%DISTNAME%%/library/dialect/hprolog.pl
+lib/%%DISTNAME%%/library/dialect/hprolog/format.pl
 lib/%%DISTNAME%%/library/dialect/ifprolog.pl
 lib/%%DISTNAME%%/library/dialect/iso/iso_predicates.pl
 lib/%%DISTNAME%%/library/dialect/sicstus/arrays.pl
@@ -507,8 +523,20 @@ lib/%%DISTNAME%%/library/helpidx.pl
 lib/%%DISTNAME%%/library/hotfix.pl
 lib/%%DISTNAME%%/library/http/INDEX.pl
 lib/%%DISTNAME%%/library/http/README
+lib/%%DISTNAME%%/library/http/ax.pl
 lib/%%DISTNAME%%/library/http/dcg_basics.pl
 lib/%%DISTNAME%%/library/http/html_head.pl
+lib/%%DISTNAME%%/library/http/html_quasiquotations.pl
+lib/%%DISTNAME%%/library/http/http_load.pl
+lib/%%DISTNAME%%/library/http/http_unix_daemon.pl
+lib/%%DISTNAME%%/library/http/js_grammar.pl
+lib/%%DISTNAME%%/library/http/yadis.pl
+lib/%%DISTNAME%%/library/quasi_quotations.pl
+lib/%%DISTNAME%%/library/sandbox.pl
+lib/%%DISTNAME%%/library/semweb/rdf_ntriples.pl
+lib/%%DISTNAME%%/library/semweb/turtle.pl
+lib/%%DISTNAME%%/library/syslog.pl
+lib/%%DISTNAME%%/library/win_menu.pl
 lib/%%DISTNAME%%/library/http/html_write.pl
 lib/%%DISTNAME%%/library/http/http_authenticate.pl
 lib/%%DISTNAME%%/library/http/http_client.pl
@@ -664,7 +692,6 @@ lib/%%DISTNAME%%/library/semweb/rdf_zlib_plugin.pl
 lib/%%DISTNAME%%/library/semweb/rdfs.pl
 lib/%%DISTNAME%%/library/semweb/rdfs.rdfs
 lib/%%DISTNAME%%/library/semweb/sparql_client.pl
-lib/%%DISTNAME%%/library/semweb/turtle_base.pl
 lib/%%DISTNAME%%/library/settings.pl
 lib/%%DISTNAME%%/library/sgml.pl
 lib/%%DISTNAME%%/library/sgml_write.pl
@@ -1441,7 +1468,7 @@ lib/%%DISTNAME%%/xpce/prolog/lib/emacs/history.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/hit_list.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/html_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/java_mode.pl
-lib/%%DISTNAME%%/xpce/prolog/lib/emacs/java_script_mode.pl
+lib/%%DISTNAME%%/xpce/prolog/lib/emacs/javascript_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/language_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/latex_mode.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/emacs/logtalk_mode.pl
@@ -1643,6 +1670,7 @@ lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/foreign.xpm
 lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/get.xpm
 lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/grammar.xpm
 lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/import.xpm
+lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/interactor.xpm
 lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/interrupt.xpm
 lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/into.xpm
 lib/%%DISTNAME%%/xpce/prolog/lib/trace/icons/ivar.xpm
@@ -1696,6 +1724,7 @@ lib/%%DISTNAME%%/xpce/prolog/lib/xref/common.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/xref/mkcommon.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/xref/quintus.pl
 lib/%%DISTNAME%%/xpce/prolog/lib/xref/sicstus.pl
+lib/%%DISTNAME%%/swipl-win.rc
 libdata/pkgconfig/swipl.pc
 @dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/bin
@@ -1710,11 +1739,13 @@ libdata/pkgconfig/swipl.pc
 @dirrm lib/%%DISTNAME%%/library/unicode
 @dirrm lib/%%DISTNAME%%/library/dialect/yap
 @dirrm lib/%%DISTNAME%%/library/dialect/iso
+@dirrm lib/%%DISTNAME%%/library/dialect/ciao/regtypes
 @dirrm lib/%%DISTNAME%%/library/dialect/ciao/engine
 @dirrm lib/%%DISTNAME%%/library/dialect/ciao
 @dirrm lib/%%DISTNAME%%/library/dialect/sicstus
 @dirrm lib/%%DISTNAME%%/library/dialect/swi
 @dirrm lib/%%DISTNAME%%/library/dialect/ifprolog
+@dirrm lib/%%DISTNAME%%/library/dialect/hprolog
 @dirrm lib/%%DISTNAME%%/library/dialect
 @dirrm lib/%%DISTNAME%%/library/dcg
 @dirrm lib/%%DISTNAME%%/library/DTD
