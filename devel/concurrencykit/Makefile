@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrencykit
-PORTVERSION=	0.2.19
+PORTVERSION=	0.2.20
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
@@ -17,6 +17,7 @@ USES=		pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include "${.CURDIR}/Makefile.man"
 

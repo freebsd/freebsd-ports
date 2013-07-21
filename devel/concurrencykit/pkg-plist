@@ -1,9 +1,11 @@
 include/ck_backoff.h
+include/ck_elide.h
 include/ck_stack.h
 include/ck_spinlock.h
 include/ck_sequence.h
 include/ck_rwlock.h
 include/ck_ring.h
+include/ck_rwcohort.h
 include/ck_queue.h
 include/ck_pr.h
 include/ck_pflock.h
@@ -31,6 +33,7 @@ include/gcc/ppc64/ck_f_pr.h
 include/gcc/ppc64/ck_pr.h
 include/gcc/x86_64/ck_f_pr.h
 include/gcc/x86_64/ck_pr.h
+include/gcc/x86_64/ck_pr_rtm.h
 include/gcc/ck_pr.h
 include/gcc/ck_f_pr.h
 include/gcc/ck_cc.h
@@ -38,7 +41,7 @@ include/ck_bitmap.h
 include/ck_barrier.h
 include/ck_bag.h
 include/ck_stdint.h
-lib/libck.so.0.2.19
+lib/libck.so.%%VERSION%%
 lib/libck.so
 lib/libck.so.0
 lib/libck.a
