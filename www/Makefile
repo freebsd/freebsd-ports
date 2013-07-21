@@ -1750,6 +1750,7 @@
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-haml
+    SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-http-cookie
     SUBDIR += rubygem-httparty
