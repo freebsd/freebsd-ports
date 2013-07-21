@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all build_openssl
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GNUTLS
 #		MATRIXSSL	"Enable matrixssl support" off \
@@ -25,7 +26,7 @@ OPTIONS_DEFINE=	GNUTLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMATRIXSSL}
-BUILD_DEPENDS=	${PREFIX}/lib/libmatrixsslstatic.a:${PORTSDIR}/security/matrixssl
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmatrixsslstatic.a:${PORTSDIR}/security/matrixssl
 ALL_TARGET+=	build_matrixssl
 PLIST_SUB+=	WITH_MATRIXSSL=""
 .else
@@ -41,7 +42,7 @@ PLIST_SUB+=	WITH_GNUTLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXYSSL}
-BUILD_DEPENDS=	${PREFIX}/lib/libxyssl.a:${PORTSDIR}/security/xyssl
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxyssl.a:${PORTSDIR}/security/xyssl
 ALL_TARGET+=	build_xyssl
 PLIST_SUB+=	WITH_XYSSL=""
 .else
