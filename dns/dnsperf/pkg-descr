@@ -1,0 +1,18 @@
+DNSPerf and ResPerf Provide Communication Providers with Predictive
+Planning Tools to Scale Networks.
+
+Two tools, DNSPerf and ResPerf deliver accurate performance metrics
+of Domain Name Services (DNS).  These tools are easy-to-use and
+simulate real Internet workloads to provide the necessary insight
+that carriers need to plan and deploy network services.
+
+DNSPerf measures Authoritative Domain Name services and is designed
+to simulate network conditions by self-pacing the query load.
+
+Caching services performance and workload profile differ significantly
+from Authoritative Domain services; therefore a different tool is
+needed. ResPerf is designed specifically to simulate Caching Domain
+Name services. To test a caching server, ResPerf systematically
+increases the query rate and monitors the response rate.
+
+WWW: http://www.nominum.com/support/measurement-tools/

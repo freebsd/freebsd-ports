@@ -1,0 +1,26 @@
+--- Makefile.in.orig	2012-03-02 11:25:22.000000000 +0900
++++ Makefile.in	2013-07-19 11:50:57.000000000 +0900
+@@ -7,8 +7,8 @@
+ datarootdir = @datarootdir@
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
+-INSTALL_DATA = @INSTALL_DATA@ 
++#INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
++#INSTALL_DATA = @INSTALL_DATA@ 
+ RANLIB = @RANLIB@
+ 
+ CC = @PTHREAD_CC@
+@@ -41,9 +41,9 @@
+ install: all installdirs
+ 	${INSTALL_PROGRAM} dnsperf ${DESTDIR}${bindir}
+ 	${INSTALL_PROGRAM} resperf ${DESTDIR}${bindir}
+-	${INSTALL_PROGRAM} resperf-report ${DESTDIR}${bindir}
+-	${INSTALL_DATA} dnsperf.1 ${DESTDIR}${mandir}/man1
+-	${INSTALL_DATA} resperf.1 ${DESTDIR}${mandir}/man1
++	${INSTALL_SCRIPT} resperf-report ${DESTDIR}${bindir}
++	${INSTALL_MAN} dnsperf.1 ${DESTDIR}${mandir}/man1
++	${INSTALL_MAN} resperf.1 ${DESTDIR}${mandir}/man1
+ 
+ clean:
+ 	rm -f *.o dnsperf resperf libperf.a
