@@ -14,11 +14,11 @@ COMMENT=	PostgreSQL master to multiple replicas replication system
 BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
-USES=		bison
+USES=		bison gmake
 USE_PGSQL=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_RC_SUBR=	slon
+WANT_PGSQL_VER=	91-
 
 SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon
