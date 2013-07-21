@@ -8,13 +8,15 @@ MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	grosser@fim.uni-passau.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Parma Polyhedra Library
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
-BROKEN=	fails to build
+BROKEN=		fails to build
+DEPRECATED=	obsolete version; fails to build
+EXPIRATION_DATE=	2013-09-21
 
 PWL_DOC_PREFIX=	share/doc/pwl
 
