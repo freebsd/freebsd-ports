@@ -81,8 +81,40 @@ lib/libsparkcrypto/lsc-sha512.ali
 lib/libsparkcrypto/lsc-test.ali
 lib/libsparkcrypto/lsc-types.ali
 lib/libsparkcrypto/lsc.ali
+%%PORTDOCS%%%%DOCSDIR%%/apidoc.css
+%%PORTDOCS%%%%DOCSDIR%%/libsparkcrypto.css
+%%PORTDOCS%%%%DOCSDIR%%/lsc-aes-cbc.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-aes-print.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-aes-tables.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-aes.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-byteorder32.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-byteorder64.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-byteswap32.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-byteswap64.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-debug.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-hmac_ripemd160.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-hmac_sha256.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-hmac_sha384.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-hmac_sha512.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-io.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-ops32.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-ops64.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-pad32.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-pad64.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-ripemd160-print.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-ripemd160.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-sha256-tables.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-sha256.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-sha512-tables.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-sha512.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-test.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc-types.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc.html
+%%PORTDOCS%%%%DOCSDIR%%/lsc_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/subprograms.html
 @dirrm include/libsparkcrypto/sharedinclude
 @dirrm include/libsparkcrypto/adainclude
 @dirrm include/libsparkcrypto
 @dirrm lib/libsparkcrypto
+@dirrmtry %%DOCSDIR%%
 @dirrmtry lib/gnat
