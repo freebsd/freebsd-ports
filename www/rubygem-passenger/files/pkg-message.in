@@ -2,7 +2,7 @@
 
 Please edit your Apache configuration file, and add these lines:
 
-   LoadModule passenger_module %%PREFIX%%/%%GEM_LIB_DIR%%/libout/apache2/mod_passenger.so
+   LoadModule passenger_module %%PREFIX%%/%%GEM_LIB_DIR%%/buildout/apache2/mod_passenger.so
    PassengerRoot %%PREFIX%%/%%GEM_LIB_DIR%%
    PassengerRuby %%RUBY%%
 
