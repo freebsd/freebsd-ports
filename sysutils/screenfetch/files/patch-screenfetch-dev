@@ -1,0 +1,20 @@
+--- ./screenfetch-dev.orig	2013-07-19 23:33:57.000000000 -0700
++++ ./screenfetch-dev	2013-07-19 23:35:46.000000000 -0700
+@@ -686,13 +686,16 @@
+ 				pkgs=$((${pkgs} + ${brew_pkgs}))
+ 			fi
+ 		;;
+-		'FreeBSD'|'OpenBSD') 
++		'OpenBSD') 
+ 			pkgs=$(pkg_info | wc -l | awk '{sub(" ", "");print $1}')
+ 			if type -p portmaster >/dev/null 2>&1; then
+ 				ports=$(portmaster -l | grep -Eo '[0-9]+ total installed' | sed 's/ total installed//')
+ 				pkgs=$((${pkgs} + ${ports}))
+ 			fi
+ 		;;
++		'FreeBSD') 
++			pkgs=$(pkg info |wc -l|awk '{print $1}' || pkg_info | wc -l | awk '{sub(" ", "");print $1}')
++		;;
+ 		'Cygwin') cygfix=2; pkgs=$(($(cygcheck -cd | wc -l)-$cygfix)) ;;
+ 	esac
+ 	[[ "$verbosity" -eq "1" ]] && verboseOut "Finding current package count...found as '$pkgs'"
