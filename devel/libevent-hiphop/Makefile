@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-hiphop
+PORTREVISION=	3
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Static libevent with custom patches for HipHop
