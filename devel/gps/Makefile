@@ -29,7 +29,8 @@ WRKSRC=			${WRKDIR}/gps-release-ide-${PORTVERSION}-src
 
 CONFIGURE_ENV+=		AWK=/usr/bin/awk
 DESTINY=		${WRKDIR}/destino
-MAKE_ENV+=		DESTDIR=${DESTINY}
+MAKE_ENV+=		DESTDIR=${DESTINY} \
+			PROCESSORS=${MAKE_JOBS_NUMBER}
 
 OPTIONS_DEFINE=		SYSLOG SQLITE PGSQL PYTHON READLINE
 OPTIONS_DEFAULT=	SYSLOG SQLITE PYTHON READLINE
@@ -101,6 +102,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|@PREFIX@|${PREFIX}|g" \
 	    ${WRKSRC}/gnatlib/src/gnatcoll_readline.gpr.in
 
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} default
+
 pre-install:
 .if ${PORT_OPTIONS:MPYTHON}
 	${PYTHON_CMD} ${PYCOMPILE} ${WRKSRC}/share/plug-ins
@@ -110,7 +114,7 @@ pre-install:
 post-install:
 	${RM} -rf ${DESTINY}${PREFIX}/share/doc/gps/html/users_guide/_sources
 	${RM} -rf ${DESTINY}${PREFIX}/share/doc/gps/html/tutorial/_sources
-	cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | xargs rmdir
+	cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
 	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
 	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 	   ${SORT} > ${WRKDIR}/PLIST.all
