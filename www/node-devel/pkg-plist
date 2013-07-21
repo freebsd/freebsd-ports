@@ -1,5 +1,8 @@
 bin/node
 lib/dtrace/node.d
 lib/node_modules/.keepme
-@dirrm lib/node_modules
-@dirrm lib/dtrace
+share/systemtap/tapset/node.stp
+@dirrmtry share/systemtap/tapset
+@dirrmtry share/systemtap
+@dirrmtry lib/node_modules
+@dirrmtry lib/dtrace

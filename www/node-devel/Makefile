@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.4
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -26,6 +26,17 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)
+CC=	clang
+CXX=	clang++
+GYP_DEFINES+=	clang=1
+.else
+USE_GCC?=	4.6+
+GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
