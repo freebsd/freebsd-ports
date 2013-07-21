@@ -1,13 +1,12 @@
---- src/qt/qtipcserver.cpp.orig	2012-07-26 17:55:22.000000000 +1000
-+++ src/qt/qtipcserver.cpp	2013-05-28 16:10:27.000000000 +1000
-@@ -55,6 +55,10 @@
-     // problems.
-     return;
- #endif
-+#ifdef __FreeBSD__
-+    // TODO: Fix it for FreeBSD too - ipcinit causes a spinlock
-+    return;
-+#endif    
+--- src/qt/qtipcserver.cpp.orig	2013-06-25 15:29:02.000000000 +0000
++++ src/qt/qtipcserver.cpp	2013-07-21 18:28:00.542020938 +0000
+@@ -27,7 +27,8 @@
  
-     message_queue* mq;
-     char strBuf[257];
+ static void ipcThread2(void* pArg);
+ 
+-#ifdef MAC_OSX
++// TODO: Fix it for FreeBSD too - ipcinit causes a spinlock
++#ifdef MAC_OSX || defined __FreeBSD__
+ // URI handling not implemented on OSX yet
+ 
+ void ipcInit() { }
