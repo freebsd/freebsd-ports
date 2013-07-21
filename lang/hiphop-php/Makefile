@@ -31,8 +31,6 @@ LICENSE_DISTFILES_UNICODE= EastAsianWidth.txt \
 	8859-11.TXT 8859-13.TXT 8859-14.TXT 8859-15.TXT 8859-16.TXT
 LICENSE_DISTFILES_ZEND200=	${DISTNAME}${EXTRACT_SUFX}
 
-#BROKEN=		Does not build with recent boost
-
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
@@ -46,6 +44,9 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		c-client4:${PORTSDIR}/mail/cclient \
 		unwind:${PORTSDIR}/devel/libunwind \
 		glog:${PORTSDIR}/devel/glog
+
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	This program is developed for amd64 only
 
 _EXTDIR=	share/hiphop-php/ext
 
