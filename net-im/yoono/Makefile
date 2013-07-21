@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoono
-PORTVERSION=	1.8.40
+PORTVERSION=	1.8.42
 #PORTREVISION=	0
 CATEGORIES=	net-im
 MASTER_SITES=	http://cdn.yoono.com/desktop/
