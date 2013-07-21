@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>apache24</name>
-	<range><lt>2.4.5</lt></range>
+	<range><lt>2.4.6</lt></range>
       </package>
     </affects>
     <description>
@@ -76,10 +76,12 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2013-1896</cvename>
       <cvename>CVE-2013-2249</cvename>
+      <url>http://www.apache.org/dist/httpd/Announcement2.4.html</url>
     </references>
     <dates>
       <discovery>2013-07-11</discovery>
       <entry>2013-07-20</entry>
+      <modified>2013-07-21</modified>
     </dates>
   </vuln>
 
