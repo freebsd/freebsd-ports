@@ -9,6 +9,7 @@
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
     SUBDIR += ack
+    SUBDIR += adabrowse
     SUBDIR += add-css-links
     SUBDIR += af-aspell
     SUBDIR += aft
