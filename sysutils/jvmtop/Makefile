@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jvmtop
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	GOOGLE_CODE
 
@@ -24,5 +24,12 @@ do-install:
 	@${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+
+post-install:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "It is recommended to install and use jvmtop under a terminal"
+	@${ECHO_MSG} "emulation software such as sysutils/tmux, or sysutils/screen,"
+	@${ECHO_MSG} "until remote top-like session behavior is in place."
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
