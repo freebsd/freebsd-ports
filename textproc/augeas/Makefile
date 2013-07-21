@@ -12,13 +12,12 @@ COMMENT=	A configuration editing tool
 TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtool
 ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	yes
 
 MAN1=		augparse.1 augtool.1
 MANCOMPRESSED=	no
