@@ -1,0 +1,6 @@
+AdaBrowse is a javadoc-like HTML generator for Ada 95 library unit
+specifications.  It can also generate XML output; a DTD is included in
+the distribution.  AdaBrowse produces a fully cross-referenced HTML
+rendering of Ada 95 specs without bodies.  It is a command-line utility.
+
+WWW: http://home.datacomm.ch/t_wolf/tw/ada95/adabrowse
