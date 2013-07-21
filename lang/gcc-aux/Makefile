@@ -1,9 +1,9 @@
-# Created by: John Marino <marino@FreeBSD.org> 
+# Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}
@@ -96,6 +96,9 @@ INTENDED_COMPILER=BOOTSTRAP
 FULL_GNATGCC=${BOOTSTRAP_PREFIX}/bin/gnatgcc
 FULL_PATH=${BOOTSTRAP_PREFIX}/bin:/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/bin
 DISTFILES+=	${BOOTSTRAP_COMPILER}:boot
+.if ${OPSYS} == DragonFly && ${DFLYVERSION} > 300500
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.7:${PORTSDIR}/misc/compat34x
+.endif
 .endif
 
 # for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
@@ -290,7 +293,7 @@ test-c:
 
 do-install:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTINY}
-	cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | xargs rmdir
+	cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
 	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
 
 post-install:
