@@ -1,0 +1,15 @@
+AdaControl is a free (GMGPL) tool that detects the use of various kinds of
+constructs in Ada programs. Its first goal is to control proper usage of
+style or programming rules, but it can also be used as a powerful tool to
+search for use (or non-use) of various forms of programming styles or design
+patterns. Searched elements range from very simple, like the occurrence of
+certaine entities, declarations, or statements, to very sophisticated, like
+verifying that certain programming patterns are being obeyed..
+
+Which elements or constructs are searched is defined by a set of rules; the
+following table gives a short summary of rules currently checked by
+AdaControl. The number in parentheses after the rule name gives the number
+of subrules, if any. Considering all possible rules and subrules, this makes
+452 tests that can be performed currently by AdaControl!
+
+WWW: http://www.adalog.fr
