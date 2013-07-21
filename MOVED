@@ -4198,7 +4198,6 @@ devel/goffice1||2013-04-16|Removed: Only one port user which has no user itself.
 devel/present||2013-04-16|Removed: No users, blocking libgsf update
 audio/icecast|audio/icecast2|2013-04-18|Has expired: Unmaintained upstream since 2004. Use audio/icecast2 instead
 net-im/gajim-devel|net-im/gajim|2013-04-18|Has expired: This port is outdated for two years, no distfile available. Please use net-im/gajim instead
-dns/dnsperf||2013-04-20|Removed
 dns/bind97||2013-04-20|Has expired: No longer supported by ISC, use Bind 9.8 or 9.9
 dns/bind97-sdb||2013-04-20|Has expired: No longer supported by ISC, use Bind 9.8 or 9.9
 sysutils/grub||2013-04-22|Unmaintained and broken
