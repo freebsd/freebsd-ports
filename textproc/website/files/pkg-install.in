@@ -18,34 +18,6 @@ if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 fi
 
-VERSIONS='current 2.2 2.3 2.4.0 2.4.1 2.5.0'
-
-if [ ! -f ${CATALOG_XSL} ]; then
-	 ${XMLCATMGR} -c "${CATALOG_XSL}" create
-fi
-
-for version in ${VERSIONS}
-do
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/website/$version/xsl \
-		"file://${XSL_DIR}/xsl"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/website/$version/xsl \
-		"file://${XSL_DIR}/xsl"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/website/$version/schema/dtd \
-		"file://${XSL_DIR}/schema/dtd"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/website/$version/schema/dtd \
-		"file://${XSL_DIR}/schema/dtd"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/website/$version \
-		"file://${XSL_DIR}/schema/dtd"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/website/$version \
-		"file://${XSL_DIR}/schema/dtd"
-done
-
 ${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateSystem \
 	http://docbook.sourceforge.net/release/website/ \
 	"file://${CATALOG_XSL}"
