@@ -1,0 +1,15 @@
+--- twitter-stream-0.1.16.gemspec.orig	2013-07-15 23:54:24.000000000 +0900
++++ twitter-stream-0.1.16.gemspec	2013-07-15 23:57:27.000000000 +0900
+@@ -40,9 +40,9 @@
+       - !ruby/object:Gem::Version 
+         segments: 
+         - 0
+-        - 1
+-        - 4
+-        version: 0.1.4
++        - 2
++        - 0
++        version: 0.2.0
+   type: :runtime
+   version_requirements: *id002
+ - !ruby/object:Gem::Dependency 
