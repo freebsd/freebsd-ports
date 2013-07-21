@@ -101,6 +101,7 @@
     SUBDIR += gjs
     SUBDIR += gnat
     SUBDIR += gnat-aux
+    SUBDIR += gnat_util
     SUBDIR += gnatdroid-armv5
     SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils

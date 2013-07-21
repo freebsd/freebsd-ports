@@ -1,0 +1,59 @@
+------------------------------------------------------------------------------
+--                                                                          --
+--                         GNAT COMPILER COMPONENTS                         --
+--                                                                          --
+--                              S D E F A U L T                             --
+--                                                                          --
+--                                 B o d y                                  --
+--                                                                          --
+--          Copyright (C) 1992-2007, Free Software Foundation, Inc.         --
+--                                                                          --
+-- GNAT is free software;  you can  redistribute it  and/or modify it under --
+-- terms of the  GNU General Public License as published  by the Free Soft- --
+-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
+-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
+-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
+-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
+--                                                                          --
+-- As a special exception under Section 7 of GPL version 3, you are granted --
+-- additional permissions described in the GCC Runtime Library Exception,   --
+-- version 3.1, as published by the Free Software Foundation.               --
+--                                                                          --
+-- You should have received a copy of the GNU General Public License and    --
+-- a copy of the GCC Runtime Library Exception along with this program;     --
+-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
+-- <http://www.gnu.org/licenses/>.                                          --
+--                                                                          --
+-- GNAT was originally developed  by the GNAT team at  New York University. --
+-- Extensive contributions were provided by Ada Core Technologies Inc.      --
+--                                                                          --
+------------------------------------------------------------------------------
+
+--  This is a dummy version of the body of Sdefault, used by gnat_util. It gets
+--  copied to sdefault.adb by Makefile.gnat_util.
+
+package body Sdefault is
+
+   Target : constant String_Ptr := new String'("no target");
+
+   function Include_Dir_Default_Name return String_Ptr is
+   begin
+      return null;
+   end Include_Dir_Default_Name;
+
+   function Object_Dir_Default_Name return String_Ptr is
+   begin
+      return null;
+   end Object_Dir_Default_Name;
+
+   function Target_Name return String_Ptr is
+   begin
+      return Target;
+   end Target_Name;
+
+   function Search_Dir_Prefix return String_Ptr is
+   begin
+      return null;
+   end Search_Dir_Prefix;
+
+end Sdefault;

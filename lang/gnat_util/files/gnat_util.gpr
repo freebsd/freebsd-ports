@@ -1,0 +1,7 @@
+project Gnat_Util is
+   for Languages use ("ada", "C");
+   for Library_Name use "gnat_util";
+   for Library_Dir use "../gnat_util";
+   for Source_Dirs use ("../../include/gnat_util");
+   for Externally_Built use "true";
+end Gnat_Util;

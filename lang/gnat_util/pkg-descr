@@ -1,0 +1,9 @@
+Gnat_Util is a library uniting a number of GNAT sources that are used by
+different tools. At the moment Gnat_Util provides GNAT sources needed by ASIS,
+GNATCOLL and Gprbuild. Its main purpose is allowing to simultaneously use
+tools like ASIS and GNATCOLL (and other ones based on GNAT sources, if they
+are to come), which would normally cause name conflicts between the same GNAT
+sources that they use. Building both of them using same set of sources that
+is Gnat_Util solves this problem.
+
+WWW: http://libre.adacore.com
