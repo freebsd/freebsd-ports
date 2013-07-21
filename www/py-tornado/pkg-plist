@@ -162,6 +162,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/stack_context_test.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/stack_context_test.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/stack_context_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/static/dir/index.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/static/robots.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/template_test.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/template_test.pyc
@@ -205,10 +206,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/wsgi.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/static/dir
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/platform
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/platform
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
