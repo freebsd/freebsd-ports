@@ -1,0 +1,15 @@
+QtAda is an Ada 2005 language binding to the Qt libraries and a set of
+useful tools.  Qt versions 4.6 and later are supported.
+
+QtAda easily enables powerful cross-platform graphical user interfaces
+completely on Ada 2005. QtAda applications work on all popular platforms
+without any changes or platform-specific coding.  QtAda applications have
+the platforms' native look and feel.
+
+It is possible to develop custom widgets and integrate them into the Qt
+designer for rapid GUI development.
+
+QtAda has excellent support for localization and internationalization, and
+usings native safe threading for transparent integration with Ada tasks.
+
+WWW: http://www.qtada.com
