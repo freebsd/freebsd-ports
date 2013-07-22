@@ -183,7 +183,12 @@ CONFIGURE_ARGS+=--disable-integer-datetimes
 .  if ( defined(WITH_GETTEXT) || ${PORT_OPTIONS:MNLS} )
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
+# XXX branch reallyenglish has not imported "USES" feature
+.    if defined(USESDIR)
 USES+=	gettext
+.    else
+USE_GETTEXT=	yes
+.    endif
 .  else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
