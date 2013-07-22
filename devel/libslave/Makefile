@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libslave
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel databases
 MASTER_SITES=	GH GHC
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Mysql replication client library, embeddable into your C++ application
 
 LICENSE=	GPLv3

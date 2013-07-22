@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libe
@@ -6,7 +6,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	High-performance datastructures and utilities for C++
 
 LICENSE=	BSD

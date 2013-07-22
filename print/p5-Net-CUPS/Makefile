@@ -12,7 +12,7 @@ CATEGORIES=	print perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Interface to the CUPS API
 
 BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client

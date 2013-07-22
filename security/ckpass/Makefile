@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ckpass
@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Ncurses based password database client
 
 LICENSE=	GPLv3

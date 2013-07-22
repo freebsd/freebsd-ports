@@ -14,7 +14,7 @@ MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
 PKGNAMEPREFIX=	font-
 DISTNAME=	TTF_FON
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	GOST TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

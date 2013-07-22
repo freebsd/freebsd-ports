@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lastfm
@@ -9,7 +9,7 @@ MASTER_SITES=	http://cdn.last.fm/client/Linux/
 PKGNAMESUFFIX=	-desktop
 DISTNAME=	Last.fm-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Official Last.fm desktop application suite
 
 LICENSE=	GPLv3

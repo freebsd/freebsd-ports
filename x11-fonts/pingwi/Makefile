@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.pingwinsoft.ru/system/uploads/16/original/ \
 PKGNAMEPREFIX=	font-
 DISTNAME=	fonts_test
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	PingWi Typography fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

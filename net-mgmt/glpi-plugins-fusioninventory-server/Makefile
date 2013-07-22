@@ -13,7 +13,7 @@ MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/668/
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
 DISTNAME=	fusioninventory-for-glpi-metapackage_${GLPI_VER}+${FUNV_VER}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Plugin of glpi to get information of networking devices
 
 RUN_DEPENDS=	glpi>=0.80:${PORTSDIR}/www/glpi

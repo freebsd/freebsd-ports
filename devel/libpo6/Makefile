@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libpo6
@@ -6,7 +6,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	POSIX wrappers for C++
 
 LICENSE=	BSD

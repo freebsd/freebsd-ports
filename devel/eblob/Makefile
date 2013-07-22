@@ -1,11 +1,11 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	eblob
 PORTVERSION=	0.18.2
 CATEGORIES=	devel
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2

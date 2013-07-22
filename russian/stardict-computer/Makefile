@@ -11,7 +11,7 @@ CATEGORIES=	russian
 MASTER_SITES=	http://yeelou.com/huzheng/stardict-dic/ru/
 DISTNAME=	${PORTNAME}-ru-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	English-Russian Computer dictionary
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"

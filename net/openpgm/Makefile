@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 # Do not forget fix version openpgm in devel/libxs
 
@@ -8,7 +8,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	libpgm-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Implementation of the PGM reliable multicast protocol
 
 LICENSE=	LGPL3

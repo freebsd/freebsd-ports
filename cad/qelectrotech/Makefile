@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20100313/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	QElectroTech is application to design electric diagrams
 
 USE_QT4=	gui network svg xml \

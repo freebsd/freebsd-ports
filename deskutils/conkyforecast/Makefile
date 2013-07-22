@@ -12,7 +12,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/70673352/ \
 		http://fbsd.zlonet.ru/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Weather forecast script for conky
 
 LICENSE=	GPLv3

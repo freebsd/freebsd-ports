@@ -12,7 +12,7 @@ CATEGORIES=	multimedia www
 MASTER_SITES=	SF/googleimagedown/project/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Search, watch, and download from Google Image and YouTube
 
 LICENSE=	GPLv3

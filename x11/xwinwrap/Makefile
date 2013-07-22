@@ -13,7 +13,7 @@ MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
 		http://tourservice.kz/zloidemon/distfiles/ \
 		http://z-up.ru/zloidemon/distfiles/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	XWinWrap replace a desktop background with a movie or screensaver
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

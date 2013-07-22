@@ -12,7 +12,7 @@ MASTER_SITES=	http://utils.kaspersky.com/updater/retranslator_5.0.0.7/FreeBSD_6.
 		http://fbsd.zlonet.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-7
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	The update utility for Kaspersky applications
 
 NO_BUILD=	yes

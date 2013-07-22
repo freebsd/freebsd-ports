@@ -6,7 +6,7 @@ PORTVERSION=	2.8.3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://ctpp.havoc.ru/download/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects, version 2
 
 USES=		cmake gettext iconv

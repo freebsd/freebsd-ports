@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	smack
@@ -6,7 +6,7 @@ PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Low-level I/O storage library which packs data
 
 LICENSE=	GPLv2

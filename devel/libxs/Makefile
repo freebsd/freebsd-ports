@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libxs
@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.crossroads.io/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Open source lightweight messaging layer
 
 GNU_CONFIGURE=	yes

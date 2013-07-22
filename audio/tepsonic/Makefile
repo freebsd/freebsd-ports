@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.tepsonic.org/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	TepSonic is a simple and fast audio player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib

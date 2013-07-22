@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	avro
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/stable
 PKGNAMESUFFIX=	-cpp
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Data serialization system for C++
 
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
