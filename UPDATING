@@ -20,7 +20,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: dvl@FreeBSD.org
 
   The configuration files for bacula have been moved to PREFIX/etc/bacula.
-  Moveyour existing configuration files to this directory after
+  Move your existing configuration files to this directory after
   upgrading.
 
 20130718:
