@@ -14,11 +14,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin/admin_static/style.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin/templates/admin.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/static/favicon.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/static/style.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/tests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/tests.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin/admin_static
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app/admin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_frozen/test_app
