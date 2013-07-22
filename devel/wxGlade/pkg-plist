@@ -146,8 +146,6 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/test.pyc
 %%PYTHON_SITELIBDIR%%/wxglade/tree.py
 %%PYTHON_SITELIBDIR%%/wxglade/tree.pyc
-%%PYTHON_SITELIBDIR%%/wxglade/widget_builder.py
-%%PYTHON_SITELIBDIR%%/wxglade/widget_builder.pyc
 %%PYTHON_SITELIBDIR%%/wxglade/widget_properties.py
 %%PYTHON_SITELIBDIR%%/wxglade/widget_properties.pyc
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/ChoicesCodeHandler.py
@@ -506,6 +504,7 @@ bin/wxglade
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/ch02s05.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/ch02s06.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/ch02s07.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/ch02s08.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/ch03s02.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/ch03s03.html
@@ -533,7 +532,6 @@ bin/wxglade
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/pr01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/pr01s03.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/preview_window.png
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/properties_window.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/properties_window_application.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/properties_window_settings.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/properties_window_tab_1.png
