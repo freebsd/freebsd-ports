@@ -20,7 +20,6 @@ WRKSRC=	${WRKDIR}/${DISTNAME:S|-src||}
 
 HAS_CONFIGURE=	yes
 USES=	gmake
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/F1LT \
 		bin/f1lt \
