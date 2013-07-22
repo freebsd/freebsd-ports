@@ -1,0 +1,29 @@
+Fix PACKAGE_VERSION in gtk_about_dialog widget.
+https://bugs.launchpad.net/midori/+bug/1200903
+
+--- ./wscript.orig	2013-07-15 22:38:28.000000000 +0000
++++ ./wscript	2013-07-21 16:02:48.000000000 +0000
+@@ -29,7 +29,7 @@
+ 
+ APPNAME = 'midori'
+ VERSION = VERSION_FULL = '0.5.4'
+-VERSION_SUFFIX = ' (%s)' % VERSION
++#VERSION_SUFFIX = ' (%s)' % VERSION
+ 
+ try:
+     if os.path.isdir ('.git'):
+@@ -44,8 +44,12 @@
+         folder = os.getcwd ()
+         if VERSION in folder:
+             VERSION_FULL = os.path.basename (folder)
+-    if VERSION in VERSION_FULL:
+-        VERSION_SUFFIX = VERSION_FULL.replace (VERSION, '')
++    if VERSION_FULL.endswith ('_all_'):
++            VERSION_FULL = VERSION_FULL.replace('_all_', '')
++    if APPNAME in VERSION_FULL:
++            VERSION_FULL = VERSION_FULL.replace(APPNAME, '')[1:]
++
++    VERSION_SUFFIX = ' (%s)' % VERSION_FULL
+ except:
+     pass
+ 
