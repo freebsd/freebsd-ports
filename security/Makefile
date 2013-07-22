@@ -754,6 +754,7 @@
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
     SUBDIR += py-htpasswd
+    SUBDIR += py-itsdangerous
     SUBDIR += py-kerberos
     SUBDIR += py-keyczar
     SUBDIR += py-keyring
