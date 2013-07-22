@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xvkbd
-PORTVERSION=	3.4a
+PORTVERSION=	3.5
 CATEGORIES=	x11
 MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
