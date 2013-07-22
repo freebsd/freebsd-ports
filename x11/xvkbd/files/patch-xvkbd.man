@@ -388,21 +388,21 @@
  .SH "Download"
  .TP 4
  \fILatest Official Release\fP
--\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.4.tar.gz\fP
-+\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.4.tar.gz\fP
+-\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.5.tar.gz\fP
++\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.5.tar.gz\fP
  .br
- - source of version 3.4 (2013-03-31)
+ - source of version 3.5 (2013-07-15)
  .TP 4
  previous release
+-\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.4a.tar.gz\fP
++\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.4a.tar.gz\fP
+ .br
+ - source of version 3.4a (2013-04-03)
+ .sp 0.5
 -\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.3.tar.gz\fP
 +\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.3.tar.gz\fP
  .br
  - source of version 3.3 (2012-03-03)
- .sp 0.5
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.2.tar.gz
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.2.tar.gz
- .br
- - source of version 3.2 (2010-03-14)
  .PP
 @@ -651,8 +651,8 @@
  .IP "  o " 4
@@ -702,6 +702,6 @@
  .IP "    - " 6
 -New option \fB-no-resize\fP to disable resize of \fIxvkbd\fP window.
 +New option \fB\-no\-resize\fP to disable resize of \fIxvkbd\fP window.
- 
- .SH "Author"
- \fIxvkbd\fP was written by Tom Sato,
+ .TP 4
+ Version 3.5 (2013-07-15)
+ .IP "    - " 6
