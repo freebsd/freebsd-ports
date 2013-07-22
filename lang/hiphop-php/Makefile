@@ -3,7 +3,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/archive/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -46,7 +46,8 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		unwind:${PORTSDIR}/devel/libunwind \
 		glog:${PORTSDIR}/devel/glog
 
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=		DEBUG DOCS
+OPTIONS_DEFAULT=	DOCS
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	This program is developed for amd64 only
@@ -58,10 +59,6 @@ BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison \
 		re2c:${PORTSDIR}/devel/re2c \
 		bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/${_EXTDIR}/lib/libevent.a:${PORTSDIR}/devel/libevent-hiphop \
-		${LOCALBASE}/${_EXTDIR}/lib/libcurl.a:${PORTSDIR}/ftp/curl-hiphop \
-		${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
-
-RUN_DEPENDS+=	${LOCALBASE}/${_EXTDIR}/lib/libevent.a:${PORTSDIR}/devel/libevent-hiphop \
 		${LOCALBASE}/${_EXTDIR}/lib/libcurl.a:${PORTSDIR}/ftp/curl-hiphop \
 		${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
 
@@ -99,6 +96,9 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:main \
 		8859-14.TXT:mappings \
 		8859-15.TXT:mappings \
 		8859-16.TXT:mappings
+
+PLIST_FILES=	bin/hhvm
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
@@ -142,11 +142,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${_CFLAGS}|g' \
 		-e 's|%%CXXFLAGS%%|${_CXXFLAGS}|g' \
 		${WRKSRC}/CMake/HPHPSetup.cmake
+	@${REINPLACE_CMD} -e 's|../src/hhvm/hhvm|hhvm|g' \
+		${WRKSRC}/hphp/doc/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hphp/hhvm/hhvm ${LOCALBASE}/bin/
-	${MKDIR} ${DATADIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/bin/systemlib.php ${DATADIR}/bin/
-	${CP} ${WRKSRC}/bin/*.a ${DATADIR}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${CP} -rf ${WRKSRC}/hphp/doc/ ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
