@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
@@ -14,8 +14,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 OPTIONS_DEFINE=	DOCS
-
-WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
 
 USE_PYTHON=	yes
 USE_WX=		2.6+
@@ -31,8 +29,6 @@ DESKTOP_ENTRIES="wxGlade" "" "${PYTHON_SITELIBDIR}/wxglade/icons/icon.xpm" \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|docs_path, 'html'|docs_path, 'doc', 'html'|" ${WRKSRC}/wxglade.py
-	@${REINPLACE_CMD} -e \
-		"s|^XXX|# XXX|" ${WRKSRC}/widget_builder.py
 
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD} 'exec ${PYTHON_CMD} \
