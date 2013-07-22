@@ -1,4 +1,4 @@
 Provides flat static pages to a Flask application, based on text files
 as opposed to a relational database.
 
-WWW:    https://github.com/SimonSapin/Flask-FlatPages
+WWW: https://github.com/SimonSapin/Flask-FlatPages

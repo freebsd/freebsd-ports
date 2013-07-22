@@ -11,6 +11,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/42/not_a_page.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/bar.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/foo/lorem/ipsum.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/headerid.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/hello.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages/not_a_page.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask_flatpages/pages_shift_jis/hello.html
