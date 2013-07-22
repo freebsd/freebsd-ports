@@ -3,7 +3,7 @@
 
 PORTNAME=	chexedit
 PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/ \
 		http://mirror.amdmi3.ru/distfiles/
