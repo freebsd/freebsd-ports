@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2fbfd455-f2d0-11e2-8a46-000d601460a4">
+    <topic>suPHP -- Privilege escalation</topic>
+    <affects>
+      <package>
+	<name>suphp</name>
+	<range><lt>0.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>suPHP developer Sebastian Marsching reports:</p>
+	<blockquote cite="https://lists.marsching.com/pipermail/suphp/2013-May/002552.html">
+	  <p>When the suPHP_PHPPath was set, mod_suphp would use the specified PHP
+	    executable to pretty-print PHP source files (MIME type
+	    x-httpd-php-source or application/x-httpd-php-source).
+
+	    However, it would not sanitize the environment. Thus a user that was
+	    allowed to use the SetEnv directive in a .htaccess file (AllowOverride
+	    FileInfo) could make PHP load a malicious configuration file (e.g.
+	    loading malicious extensions).
+
+	    As the PHP process for highlighting the source file was run with the
+	    privileges of the user Apache HTTPd was running as, a local attacker
+	    could probably execute arbitrary code with the privileges of this user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.marsching.com/pipermail/suphp/2013-May/002552.html</url>
+    </references>
+    <dates>
+      <discovery>2013-05-20</discovery>
+      <entry>2013-07-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca4d63fb-f15c-11e2-b183-20cf30e32f6d">
     <topic>apache24 -- several vulnerabilities</topic>
     <affects>

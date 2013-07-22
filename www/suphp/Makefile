@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suphp
-PORTVERSION=	0.7.1
-PORTREVISION=	5
+PORTVERSION=	0.7.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
@@ -12,7 +11,8 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
+USE_AUTOTOOLS=	aclocal:env automake autoconf:env libtool:env
+AUTOMAKE_ARGS+=	--add-missing
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
 USE_APACHE=	22
@@ -39,11 +39,9 @@ CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
 AUTOTOOLSFILES=	aclocal.m4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' \
-			  -e 's|1.10.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|1.10|%%AUTOMAKE_VERSION%%|g' \
+	@${REINPLACE_CMD} -e 's|2.68|%%AUTOCONF_VERSION%%|g' \
+			  -e 's|1.11.3|%%AUTOMAKE_VERSION%%|g' \
 			  ${WRKSRC}/aclocal.m4
-	@${CHMOD} 755 ${WRKSRC}/config/install-sh
 
 post-install:
 .if !defined(NOPORTDOCS)
