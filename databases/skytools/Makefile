@@ -15,7 +15,7 @@ USES=		gmake
 
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	91-
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 INSTALLS_EGGINFO=	yes
 
 MAN1=	bulk_loader.1 cube_dispatcher.1 londiste.1 pgqadm.1 queue_mover.1 \
