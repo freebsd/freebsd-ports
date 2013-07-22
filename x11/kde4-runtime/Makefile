@@ -35,6 +35,7 @@ USE_XORG=	x11 xcursor
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 MAN1=		kdesu.1 plasmapkg.1
 MAN8=		nepomukserver.8 nepomukservicestub.8
