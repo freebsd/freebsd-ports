@@ -160,8 +160,11 @@ _PATCHES= \
 
 .if ${PORT_OPTIONS:MICEDTEA}
 _PATCHES+= \
-	openjdk/7032388-work_without_cmov_instruction.patch \
 	applet_hole.patch \
+	openjdk/7032388-work_without_cmov_instruction.patch \
+	openjdk/8004341-jck_dialog_failure.patch \
+	openjdk/8004341-jck_dialog_failure-02.patch \
+	openjdk/7197906-handle_32_bit_shifts.patch \
 	jpegclasses.patch
 .endif
 

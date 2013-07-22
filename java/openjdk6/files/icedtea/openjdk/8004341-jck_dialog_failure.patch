@@ -1,0 +1,19 @@
+# HG changeset patch
+# User andrew
+# Date 1360323180 0
+# Node ID ca6ee539c5f4f4dd9d5fb9b0604d94c5806c3e28
+# Parent  635d562a25becae602dc5988dae8bce84b199eb4
+8004341: Two JCK tests fails with 7u11 b06
+
+diff --git a/src/share/classes/java/awt/Dialog.java b/src/share/classes/java/awt/Dialog.java
+--- jdk/src/share/classes/java/awt/Dialog.java
++++ jdk/src/share/classes/java/awt/Dialog.java
+@@ -1636,6 +1636,8 @@
+         if (localModalityType == null) {
+             this.modal = fields.get("modal", false);
+             setModal(modal);
++        } else {
++            this.modalityType = localModalityType;
+         }
+ 
+         this.resizable = fields.get("resizable", true);

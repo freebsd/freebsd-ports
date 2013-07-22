@@ -2985,35 +2985,7 @@
  endif
 --- hotspot/make/bsd/Makefile
 +++ hotspot/make/bsd/Makefile
-@@ -39,11 +39,11 @@
- # One can set ALT_BOOTDIR or BOOTDIR to point to a jdk that runs on
- # an architecture that differs from the target architecture, as long
- # as the bootstrap jdk runs under the same flavor of OS as the target
--# (i.e., if the target is bsd, point to a jdk that runs on a bsd
-+# (i.e., if the target is linux, point to a jdk that runs on a linux
- # box).  In order to use such a bootstrap jdk, set the make variable
- # REMOTE to the desired remote command mechanism, e.g.,
- #
--#    make REMOTE="rsh -l me myotherbsdbox"
-+#    make REMOTE="rsh -l me myotherlinuxbox"
- 
- # Along with VM, Serviceability Agent (SA) is built for SA/JDI binding.
- # JDI binding on SA produces two binaries:
-@@ -94,7 +94,7 @@
- #
- # We only do this on SunOS variants, for a couple of reasons:
- #  * It is extremely rare that source trees exist on other systems
--#  * It has been claimed that the Bsd automounter is flakey, so
-+#  * It has been claimed that the Linux automounter is flakey, so
- #    changing GAMMADIR in a way that exercises the automounter could
- #    prove to be a source of unreliability in the build process.
- # Obviously, this Makefile is only relevant on SunOS boxes to begin
-@@ -226,11 +226,12 @@
- 
- checks: check_os_version check_j2se_version
- 
--# We do not want people accidentally building on old systems (e.g. Bsd 2.2.x,
-+# We do not want people accidentally building on old systems (e.g. Linux 2.2.x,
+@@ -230,7 +230,8 @@
  # Solaris 2.5.1, 2.6).
  # Disable this check by setting DISABLE_HOTSPOT_OS_VERSION_CHECK=ok.
  

@@ -1,0 +1,33 @@
+--- hotspot/src/share/vm/memory/blockOffsetTable.hpp	2012-09-13 21:22:37.897456500 +0200
++++ hotspot/src/share/vm/memory/blockOffsetTable.hpp	2012-09-13 21:22:34.345253300 +0200
+@@ -285,7 +285,7 @@
+   };
+ 
+   static size_t power_to_cards_back(uint i) {
+-    return (size_t)(1 << (LogBase * i));
++    return (size_t)1 << (LogBase * i);
+   }
+   static size_t power_to_words_back(uint i) {
+     return power_to_cards_back(i) * N_words;
+--- hotspot/src/share/vm/gc_implementation/g1/concurrentMark.cpp	2012-09-13 21:22:37.901456800 +0200
++++ hotspot/src/share/vm/gc_implementation/g1/concurrentMark.cpp	2012-09-13 21:22:34.354253900 +0200
+@@ -110,7 +110,7 @@
+ #ifndef PRODUCT
+ bool CMBitMapRO::covers(ReservedSpace rs) const {
+   // assert(_bm.map() == _virtual_space.low(), "map inconsistency");
+-  assert(((size_t)_bm.size() * (size_t)(1 << _shifter)) == _bmWordSize,
++  assert(((size_t)_bm.size() * ((size_t)1 << _shifter)) == _bmWordSize,
+          "size inconsistency");
+   return _bmStartWord == (HeapWord*)(rs.base()) &&
+          _bmWordSize  == rs.size()>>LogHeapWordSize;
+--- hotspot/src/share/vm/gc_implementation/g1/heapRegionRemSet.cpp	2012-09-13 21:22:37.898456600 +0200
++++ hotspot/src/share/vm/gc_implementation/g1/heapRegionRemSet.cpp	2012-09-13 21:22:34.346253400 +0200
+@@ -273,7 +273,7 @@
+   if (_max_fine_entries == 0) {
+     assert(_mod_max_fine_entries_mask == 0, "Both or none.");
+     size_t max_entries_log = (size_t)log2_long((jlong)G1RSetRegionEntries);
+-    _max_fine_entries = (size_t)(1 << max_entries_log);
++    _max_fine_entries = (size_t)1 << max_entries_log;
+     _mod_max_fine_entries_mask = _max_fine_entries - 1;
+ 
+     assert(_fine_eviction_sample_size == 0

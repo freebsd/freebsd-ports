@@ -1,0 +1,18 @@
+# HG changeset patch
+# User andrew
+# Date 1360590852 0
+# Node ID 892e940d9996b09c01796de27fd57225faf8be0a
+# Parent  c6058fa2a9824f71e06ca214aa8ec54400b56cc4
+8004341: Two JCK tests fails with 7u11 b06
+
+diff --git a/src/share/classes/java/awt/Dialog.java b/src/share/classes/java/awt/Dialog.java
+--- jdk/src/share/classes/java/awt/Dialog.java
++++ jdk/src/share/classes/java/awt/Dialog.java
+@@ -1643,7 +1643,6 @@
+         this.resizable = fields.get("resizable", true);
+         this.undecorated = fields.get("undecorated", false);
+         this.title = (String)fields.get("title", "");
+-        this.modalityType = localModalityType;
+ 
+         blockedWindows = new IdentityArrayList();
+ 
