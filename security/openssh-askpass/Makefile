@@ -20,7 +20,6 @@ PLIST_FILES=	bin/x11-ssh-askpass \
 		bin/ssh-askpass \
 		lib/X11/app-defaults/SshAskpass
 PORTDOCS=	README TODO ChangeLog
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		x11-ssh-askpass.1
 MLINKS=		x11-ssh-askpass.1 ssh-askpass.1
