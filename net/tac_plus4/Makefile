@@ -23,6 +23,12 @@ MAN8=		tac_plus.8 tac_pwd.8
 
 CONFLICTS=	ru-tac+ia-[0-9]* tac_plus-libradius-[0-9]*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+MAKE_JOBS_UNSAFE=	yes
+.endif
+
 # check expiration dates against 'expire' field of master.passwd file
 .if defined(TAC_EXPIRE_MASTER_PASSWD)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb
@@ -54,4 +60,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tac_convert ${PREFIX}/share/doc/tac_plus
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
