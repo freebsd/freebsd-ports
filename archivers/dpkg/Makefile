@@ -3,6 +3,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.16.10
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -13,14 +14,14 @@ COMMENT=	Debian package maintenance system
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
-RUN_DEPENDS=	gmd5sum:${PORTSDIR}/sysutils/coreutils \
-		gpatch:${PORTSDIR}/devel/patch
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
+		gpatch:${PORTSDIR}/devel/patch \
+		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 USES=		gmake iconv
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 
 DPKGDIR?=	/var/db/dpkg
@@ -51,6 +52,10 @@ MANLANG=	"" de fr hu ja pl sv
 post-patch:
 	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^#define TAR/ s|tar|g&|' \
+		${WRKSRC}/lib/dpkg/dpkg.h
+	@${REINPLACE_CMD} -E 's/(md5|sha1|sha256)sum/g&/g' \
+		${WRKSRC}/scripts/Dpkg/Checksums.pm
 
 post-install:
 	${MV} ${PREFIX}/sbin/install-info ${PREFIX}/sbin/dpkg-install-info
