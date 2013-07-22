@@ -322,6 +322,7 @@
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
     SUBDIR += libgweather
+    SUBDIR += libilbc
     SUBDIR += libkvkontakte
     SUBDIR += libmediawiki
     SUBDIR += libmms

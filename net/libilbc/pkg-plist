@@ -1,0 +1,6 @@
+include/ilbc.h
+lib/libilbc.a
+lib/libilbc.so
+lib/libilbc.so.1
+lib/libilbc.so.1.1.1
+libdata/pkgconfig/libilbc.pc
