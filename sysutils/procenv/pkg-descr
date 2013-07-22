@@ -1,6 +1,6 @@
-This package contains command-line tool that displays as much detail about
-itself and its environment as possible.  It can be used as a test tool, to
-understand the type of environment a process runs in, and for comparing
-system environments.
+This package contains a command-line tool that displays as much detail
+about itself and its environment as possible.  It can be used as a test
+tool, to understand the type of environment a process runs in, and for
+comparing system environments.
 
 WWW: https://code.launchpad.net/procenv
