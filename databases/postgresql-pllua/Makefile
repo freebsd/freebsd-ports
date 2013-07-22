@@ -1,9 +1,5 @@
-# New Ports collection makefile for:  postgresql-pllua
-# Date created:    27 Feb 2008
-# Whom:            sunghyuk
-#
+# Created by: sunghyuk
 # $FreeBSD$
-#
 
 PORTNAME=	pllua
 PORTVERSION=	0.3.2
@@ -14,8 +10,9 @@ PKGNAMEPREFIX=	postgresql-
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	PL/Lua procedural language for PostgreSQL database
 
+USES=		gmake
 USE_PGSQL=	yes
-USE_GMAKE=	yes
+WANT_PGSQL_VER=	91-
 USE_LUA=	5.1+
 
 SUB_FILES=	pkg-message
