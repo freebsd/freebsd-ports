@@ -1,18 +1,15 @@
-# New ports collection makefile for:	drivel
-# Date created:			Thu Feb 26 23:13:12 CET 2004
-# Whom:				Koop Mast <kwm@rainbow-runner.nl>
-#
+# Created by: Koop Mast <kwm@rainbow-runner.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	drivel
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog editor for GNOME
+
+LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 
@@ -20,18 +17,14 @@ OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=	GTKSPELL
 GTKSPELL_DESC=	Enable GtkSpell support
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-
 USE_BZIP2=	yes
+USES=		desktop-file-utils gettext gmake shared-mime-info
 USE_GNOME=	gconf2 gnomedocutils gnomevfs2 gtksourceview2
-USES=		gettext
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--disable-error-on-warning
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ARGS=	--disable-error-on-warning
 
 GCONF_SCHEMAS=	drivel.schemas
 
