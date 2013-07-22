@@ -1,32 +1,36 @@
-# New ports collection makefile for:	scribes
-# Date created:				24 November 2006
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scribes
-PORTVERSION=	0.3.3.3
-PORTREVISION=	7
+PORTVERSION=	0.4.b954
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/Stable%20Branch/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://launchpadlibrarian.net/66129407/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-dev-${PORTVERSION:E:S/b/build/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slick yet powerful text editor for GNOME
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450 \
+		yelp:${PORTSDIR}/x11/yelp
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pygnomedesktop pygnomeextras gnomeprefix
+USES=		gettext gmake shebangfix
+SHEBANG_FILES=	scribes.in
+USE_GNOME=	gnomeprefix pygnomeextras pygtksourceview
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	scribes.schemas
-INSTALLS_ICONS=	yes
-INSTALLS_OMF=	yes
+post-install:
+	@${PYTHON_CMD} -m compileall ${PREFIX}/lib/scribes
 
 .include <bsd.port.mk>
