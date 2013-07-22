@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.17
+PORTVERSION=	3.17.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
-  		http://mirror.shatow.net/freebsd/portmaster/ \
+  		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		GH
 DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
@@ -15,7 +15,7 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_COMMIT=	e0c7943
+GH_COMMIT=	2daa6d5
 GH_TAGNAME=	${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH
