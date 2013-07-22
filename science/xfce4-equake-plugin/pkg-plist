@@ -1,0 +1,7 @@
+lib/xfce4/panel-plugins/xfce4-equake-plugin
+share/icons/hicolor/48x48/apps/xfce4-equake-plugin-icon.png
+share/xfce4/panel-plugins/xfce4-equake-plugin.desktop
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4
