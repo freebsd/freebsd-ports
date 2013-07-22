@@ -1,7 +1,4 @@
-# New ports collection makefile for:	antiword
-# Date created:				8 June 2000
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -15,7 +12,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	An application to display Microsoft(tm) Word files
 
 USE_GMAKE=	yes
-
+MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	global_install
 
 MAN1=		antiword.1
@@ -24,15 +21,19 @@ PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 
 CFLAGS+=	-DNDEBUG
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e 's,/usr/local,${PREFIX},g' \
 		-e 's,/usr/share,${PREFIX}/share,g'
 	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d' ${WRKSRC}/${MAKEFILE}
+	@${TOUCH} ${WRKSRC}/fontinfo.h
+	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/Unix-only/fontinfo.pl
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/Docs/antiword.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/Docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
