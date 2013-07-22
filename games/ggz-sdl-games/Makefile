@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ggz-sdl-games
-# Date created:			Nov 7, 2005
-# Whom:				yinjieh
-#
+# Created by: yinjieh
 # $FreeBSD$
-#
 
 PORTNAME=	ggz-sdl-games
 PORTVERSION=	${GGZ_VERSION}
@@ -27,6 +22,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/geekgame/module.dsc ${PREFIX}/share/ggz/geekgame.dsc
 	${INSTALL_DATA} ${WRKSRC}/ttt3d/module.dsc ${PREFIX}/share/ggz/ttt3d.dsc
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../libggz/bsd.ggz.mk"
+.include <bsd.port.mk>

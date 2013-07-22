@@ -40,6 +40,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/spades/module.dsc ${PREFIX}/share/ggz/spades.dsc
 	${INSTALL_DATA} ${WRKSRC}/tictactoe/module.dsc ${PREFIX}/share/ggz/tictactoe.dsc
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../libggz/bsd.ggz.mk"
+.include <bsd.port.mk>

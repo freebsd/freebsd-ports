@@ -32,6 +32,5 @@ post-install:
 	${MKDIR} ${PREFIX}/share/ggz
 	@${INSTALL_DATA} ${WRKSRC}/tttxt/module.dsc ${PREFIX}/share/ggz/tttxt.dsc
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../libggz/bsd.ggz.mk"
+.include <bsd.port.mk>
