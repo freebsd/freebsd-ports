@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/28462213/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Email script for conky
 
 RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky

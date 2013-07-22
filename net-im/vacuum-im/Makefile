@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vacuum
@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Crossplatform Jabber client
 
 LICENSE=	GPLv3

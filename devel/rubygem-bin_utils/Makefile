@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bin_utils
@@ -6,7 +6,7 @@ PORTVERSION=	0.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Extracting binary integers from binary string and packing back
 
 RUBY_VER=	1.9

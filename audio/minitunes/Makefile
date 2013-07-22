@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://flavio.tordini.org/files/${PORTNAME}/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Minitunes is just another music player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib

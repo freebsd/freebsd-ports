@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Zint Barcode Generator
 
 LICENSE=	GPLv3

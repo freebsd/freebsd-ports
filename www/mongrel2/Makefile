@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mongrel2
@@ -6,7 +6,7 @@ PORTVERSION=	1.7.5
 CATEGORIES=	www
 MASTER_SITES=	http://mongrel2.org/static/downloads/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Is an application, language, and network arch
 
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq \

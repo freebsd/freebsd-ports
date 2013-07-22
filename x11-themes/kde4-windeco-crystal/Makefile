@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	75140-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Transparent KDE window decoration
 
 LICENSE=	GPLv2

@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nosqlbench
@@ -6,7 +6,7 @@ PORTVERSION=	0.0.${DATE}
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Micro-benchmarking NoSQL storage
 
 LIB_DEPENDS=	tarantool:${PORTSDIR}/databases/tarantool

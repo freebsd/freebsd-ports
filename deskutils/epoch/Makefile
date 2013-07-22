@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}${PORTVERSION}src
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Epoch is small and handy timeline application
 
 LINCENSE=	GPLv3

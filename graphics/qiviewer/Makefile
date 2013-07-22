@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qiviewer
@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Fast and lightweight image viewer
 
 LICENSE=	GPLv2

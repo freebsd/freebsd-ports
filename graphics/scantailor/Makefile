@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	scantailor
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Scan Tailor is an interactive post-processing tool for scanned pages
 
 LICENSE=	GPLv3

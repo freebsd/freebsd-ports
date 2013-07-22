@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/qKismet/${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	This is graphical Kismet client writtent in Qt
 
 RUN_DEPENDS=	kismet:${PORTSDIR}/net-mgmt/kismet

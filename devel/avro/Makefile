@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	avro
@@ -8,7 +8,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Data serialization system
 
 NO_BUILD=	yes

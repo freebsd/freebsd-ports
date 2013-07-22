@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	cursor-
 PKGNAMESUFFIX=	-anthracite
 DISTNAME=	Chameleon-Anthracite-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Chameleon Xcursors theme
 
 THEME=		Anthracite

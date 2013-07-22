@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tarantool
@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	High performance key/value storage server
 
 LICENSE=	BSD

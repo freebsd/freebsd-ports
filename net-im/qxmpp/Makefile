@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	QXmpp is an xmpp client library based on Qt & C++
 
 LICENSE=	LGPL21

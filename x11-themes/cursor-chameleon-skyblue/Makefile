@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	cursor-
 PKGNAMESUFFIX=	-skyblue
 DISTNAME=	Chameleon-SkyBlue-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Chameleon Xcursors theme
 
 THEME=		SkyBlue

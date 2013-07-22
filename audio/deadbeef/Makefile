@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	deadbeef
@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Ultimate music player for Unix-like systems
 
 LICENSE=	GPLv2

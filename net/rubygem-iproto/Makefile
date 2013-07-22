@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	iproto
@@ -6,7 +6,7 @@ PORTVERSION=	0.3.10
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Ruby implementation of Mail.Ru iproto protocol
 
 RUN_DEPENDS=	rubygem-bin_utils>=0.0.3:${PORTSDIR}/devel/rubygem-bin_utils

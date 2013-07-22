@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	cursor-
 PKGNAMESUFFIX=	-pearl
 DISTNAME=	Chameleon-Pearl-${PORTVERSION}
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Chameleon Xcursors theme
 
 THEME=		Pearl

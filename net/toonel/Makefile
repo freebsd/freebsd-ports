@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	toonel
@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Tunneling with data compression
 
 NO_BUILD=	yes

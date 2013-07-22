@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	A series of programs to interconvert between mac fonts
 
 HAS_CONFIGURE=	yes

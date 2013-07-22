@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qmetro
@@ -6,7 +6,7 @@ PORTVERSION=	0.6.5
 CATEGORIES=	misc graphics
 MASTER_SITES=	SF/${PORTNAME}/source/
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Map of the transport system for many city subways
 
 LICENSE=	GPLv2

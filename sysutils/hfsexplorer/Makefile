@@ -12,7 +12,7 @@ CATEGORIES=	sysutils java
 MASTER_SITES=	SF/catacombae/HFSExplorer/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-0_21-src
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant

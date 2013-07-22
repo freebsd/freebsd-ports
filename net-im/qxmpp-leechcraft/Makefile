@@ -12,7 +12,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/0xd34df00d/qxmpp-dev/
 PKGNAMESUFFIX=	-leechcraft
 DISTNAME=	qxmpp-${PORTVERSION}-extras
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	XMPP client library based on C++ and Qt
 
 LICENSE=	LGPL21
