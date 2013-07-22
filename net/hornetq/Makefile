@@ -8,7 +8,7 @@ CATEGORIES=	net java
 #MASTER_SITES=	http://downloads.jboss.org/hornetq/
 #DISTNAME=	${PORTNAME}-${PORTVERSION}.Final
 
-MAINTAINER=	hsn@sendmail.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-protocol asynchronous messaging system
 
 LICENSE=	LGPL21
@@ -16,6 +16,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${MAVEN3}:${PORTSDIR}/devel/maven3 \
 		ant:${PORTSDIR}/devel/apache-ant
 
+BROKEN=		Uses home directory during build (PR ports/178529)
 PORTDOCS=	quickstart-guide api rest-api user-manual \
 		rest-interface-manual README.html
 
