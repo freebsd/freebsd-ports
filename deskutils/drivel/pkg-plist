@@ -1,5 +1,4 @@
 bin/drivel
-etc/gconf/schemas/drivel.schemas
 share/application-registry/drivel.applications
 share/applications/gnome-drivel.desktop
 %%DATADIR%%/glade/advogato.png
@@ -74,7 +73,6 @@ share/locale/zh_HK/LC_MESSAGES/drivel.mo
 share/locale/zh_TW/LC_MESSAGES/drivel.mo
 share/mime-info/drivel.keys
 share/mime-info/drivel.mime
-share/mime/application/x-drivel.xml
 share/mime/packages/drivel.xml
 share/omf/drivel/drivel-C.omf
 share/omf/drivel/drivel-cs.omf
@@ -112,7 +110,3 @@ share/pixmaps/drivel-48.png
 @dirrmtry %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
