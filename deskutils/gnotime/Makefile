@@ -1,9 +1,8 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnotime/Makefile,v 1.24 2009/11/28 05:58:58 mezz Exp $
+
 PORTNAME=	gnotime
-PORTVERSION=	2.3.0
-PORTREVISION=	8
+PORTVERSION=	2.4.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		SF/qof/qof/${QOF_VERSION}:qof
@@ -11,19 +10,27 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${QOF_DISTNAME}${EXTRACT_SUFX}:qof
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A time tracker for gnome2
+COMMENT=	Time tracker for gnome2
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
+LICENSE=	GPLv2 # (or later)
 
+LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+
+USES=		gettext gmake pathfix
 USE_XORG=	xscrnsaver
-USES=        pathfix gettext
 USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgnomeui
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 LIBTOOLFILES=	configure ../${QOF_DISTNAME}/configure
-CONFIGURE_ENV=	LIBQOF_CFLAGS="${LIBQOF_CFLAGS}" LIBQOF_LIBS="${LIBQOF_LIBS}"
+CONFIGURE_ENV=	GUILE_CFLAGS="$$(guile-config compile)" \
+		GUILE_LIBS="$$(guile-config link)" \
+		LIBQOF_CFLAGS="${LIBQOF_CFLAGS}" \
+		LIBQOF_LIBS="${LIBQOF_LIBS}"
+CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gnotime.1 gnotime-remote.1
 GCONF_SCHEMAS=	gnotime.schemas
@@ -31,21 +38,22 @@ GCONF_SCHEMAS=	gnotime.schemas
 QOF_VERSION=	0.7.5
 QOF_DISTNAME=	qof-${QOF_VERSION}
 QOF_WRKSRC=	${WRKDIR}/${QOF_DISTNAME}
-
-CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
-LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 LIBQOF_CFLAGS=	-I${QOF_WRKSRC}/qof
 LIBQOF_LIBS=	-L${QOF_WRKSRC}/qof/.libs -lqof
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/CFLAGS=/s|-g2||g' ${QOF_WRKSRC}/configure
+		'/^AM_CFLAGS =/s|-g||' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|__isleap|qof_date_isleap|g' ${QOF_WRKSRC}/qof/qofdate.c
+		'/CFLAGS=/s|-g2||' ${QOF_WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|__isleap|qof_date_isleap|' ${QOF_WRKSRC}/qof/qofdate.c
+	@${REINPLACE_CMD} -e \
+		's|^inline|static inline|' ${QOF_WRKSRC}/qof/qofmath128.h
 	@${FIND} ${QOF_WRKSRC} -name "Makefile.in" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e \
-		'/^AM_CFLAGS =/s|-g||g ; \
-		 s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g'
+		'/^AM_CFLAGS =/s|-g|| ; \
+		 s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'
 
 pre-configure:
 	@(cd ${QOF_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
