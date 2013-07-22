@@ -15,7 +15,7 @@ COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
 LICENSE=	OFL
 LICENSE_NAME=	SIL Open Font License (OFL)
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir

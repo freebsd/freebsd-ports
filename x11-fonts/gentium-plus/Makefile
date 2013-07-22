@@ -12,7 +12,7 @@ COMMENT=	Gentium Plus TrueType font collection
 LICENSE=	OFL
 LICENSE_NAME=	SIL Open Font License (OFL)
 LICENSE_FILE=	${WRKSRC}/OFL.txt
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_ZIP=	yes
 XORG_CAT=	font
