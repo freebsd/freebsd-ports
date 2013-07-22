@@ -1,24 +1,18 @@
-# New ports collection makefile for:	pmars-sdl
-# Date created:				30 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/cw/pmars-sdl/
+MASTER_SITES=	http://corewar.co.uk/pihlaja/pmars-sdl/
 PKGNAMESUFFIX=	-sdl
 DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of pMARS using the Simple Directmedia Library
 
-USE_SDL=	sdl
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	ICWS94 OPTIMIZED_CFLAGS PERMUTATE SMALLMEM
 OPTIONS_DEFAULT=	ICWS94 OPTIMIZED_CFLAGS PERMUTATE
@@ -26,7 +20,10 @@ ICWS94_DESC=	Enable ICWS'94 support
 PERMUTATE_DESC=	Enable the -P switch
 SMALLMEM_DESC=	Use 16-bit addresses (smaller)
 
-MAKE_ARGS+=	CFLAGS+="${CFLAGS}" \
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+USE_SDL=	sdl
+MAKE_ARGS=	CFLAGS+="${CFLAGS}" \
 		CFLAGS+="-fno-builtin" \
 		CFLAGS+="`${SDL_CONFIG} --cflags`" \
 		LIB+="`${SDL_CONFIG} --libs`" \
@@ -52,8 +49,16 @@ MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
 MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CC|#CC| ; \
+		 s|^CFLAGS|#CFLAGS| ; \
+		 s|^LFLAGS|#LFLAGS| ; \
+		 s|@$$(CC)|$$(CC)| ; \
+		 /strip/d' ${WRKSRC}/${MAKEFILE}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX})
 
 .include <bsd.port.mk>
