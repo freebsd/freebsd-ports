@@ -51,7 +51,7 @@ PLIST_SUB+=	MAPPACK=""
 PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MCLIENT} || defined{WITH_SDL_CLIENT}
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSDL_CLIENT}
 LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug \
 		png15:${PORTSDIR}/graphics/png \
 		theora:${PORTSDIR}/multimedia/libtheora
