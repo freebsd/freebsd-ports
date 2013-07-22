@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tablelog
-# Date created:				11 July 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tablelog
 PORTVERSION=	0.4.4
@@ -16,11 +12,9 @@ COMMENT=	Logs changes on a table in PostgreSQL
 
 WRKSRC=		${WRKDIR}/table_log-${DISTVERSION}
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_PGSQL=	yes
-
-IGNORE_WITH_PGSQL=	73
-
+WANT_PGSQL_VER=	91-
 MAKE_ARGS=	USE_PGXS=1
 
 PORTDOCS=	README.table_log table_log.sql
