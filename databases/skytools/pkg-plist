@@ -81,11 +81,9 @@ bin/walmgr.py
 lib/postgresql/logtriga.so
 lib/postgresql/pgq_lowlevel.so
 lib/postgresql/pgq_triggers.so
-%%TXID%%lib/postgresql/txid.so
 share/doc/postgresql/contrib/README.londiste
 share/doc/postgresql/contrib/README.pgq
 share/doc/postgresql/contrib/README.pgq_ext
-%%TXID%%share/doc/postgresql/contrib/README.txid
 share/postgresql/contrib/logtriga.sql
 share/postgresql/contrib/londiste.sql
 share/postgresql/contrib/londiste.upgrade.sql
@@ -95,8 +93,6 @@ share/postgresql/contrib/pgq_ext.sql
 share/postgresql/contrib/pgq_lowlevel.sql
 share/postgresql/contrib/pgq_triggers.sql
 share/postgresql/contrib/uninstall_pgq.sql
-%%TXID%%share/postgresql/contrib/uninstall_txid.sql
-%%TXID%%share/postgresql/contrib/txid.sql
 @dirrmtry lib/postgresql
 @dirrmtry share/doc/postgresql/contrib
 @dirrmtry share/doc/postgresql
@@ -106,7 +102,6 @@ share/postgresql/contrib/uninstall_pgq.sql
 %%DATADIR%%/londiste.sql
 %%DATADIR%%/pgq.sql
 %%DATADIR%%/pgq_ext.sql
-%%TXID%%%%DATADIR%%/txid.sql
 %%DATADIR%%/upgrade/final/v2.1.5_londiste.sql
 %%DATADIR%%/upgrade/final/v2.1.5_pgq_core.sql
 %%DATADIR%%/upgrade/final/v2.1.5_pgq_ext.sql
