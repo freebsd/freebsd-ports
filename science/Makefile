@@ -187,6 +187,7 @@
     SUBDIR += vmd
     SUBDIR += voro++
     SUBDIR += x11iraf
+    SUBDIR += xfce4-equake-plugin
     SUBDIR += xmakemol
     SUBDIR += xmds
 
