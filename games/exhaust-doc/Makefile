@@ -1,14 +1,10 @@
-# New ports collection makefile for:	games/exhaust-doc
-# Date created:			7 Aug 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	exhaust
 PORTVERSION=	1.9.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/exhaust/
+MASTER_SITES=	http://corewar.co.uk/pihlaja/exhaust/
 PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	ports@FreeBSD.org
