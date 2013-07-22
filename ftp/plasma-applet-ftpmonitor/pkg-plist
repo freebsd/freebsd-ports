@@ -6,5 +6,4 @@ share/apps/plasma/plasmoids/ftpmonitor/ftpmonitor-error.png
 share/icons/hicolor/48x48/apps/ftpmonitor.png
 share/kde4/services/plasma-applet-ftpmonitor.desktop
 @dirrm share/apps/plasma/plasmoids/ftpmonitor
-@dirrm share/apps/plasma/plasmoids
 @dirrm share/apps/ftpmonitor
