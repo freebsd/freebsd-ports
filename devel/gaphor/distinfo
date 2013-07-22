@@ -4,5 +4,5 @@ SHA256 (gaphas-0.7.2.tar.gz) = 01b5cf5d6d58b353818dfb514a3d775a4a3e7d333ec107b12
 SIZE (gaphas-0.7.2.tar.gz) = 335643
 SHA256 (simplegeneric-0.8.1.zip) = dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173
 SIZE (simplegeneric-0.8.1.zip) = 12663
-SHA256 (gaphor-0.17.1.tar.gz) = 48e9ccf3bef6523778a1b9264196187ee1d349f0cae571a5711e8841cd46ecfe
-SIZE (gaphor-0.17.1.tar.gz) = 692773
+SHA256 (gaphor-0.17.2.tar.gz) = 76daad6957d4c749405ad18abd083063829ea8fff980961a40b23493f7f1d8b3
+SIZE (gaphor-0.17.2.tar.gz) = 699631
