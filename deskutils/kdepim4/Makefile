@@ -40,6 +40,7 @@ USE_GMAKE=	yes
 CXXFLAGS+=	-Wno-error=return-type
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 MAN1=		kabcclient.1
 
