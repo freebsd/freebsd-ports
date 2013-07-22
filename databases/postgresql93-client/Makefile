@@ -18,6 +18,11 @@ INSTALL_DIRS=	${BUILD_DIRS}
 
 CLIENT_ONLY=	yes
 USE_LDCONFIG=	yes
+# XXX branch reallyenglish has not imported "USES" feature
+.if defined(USESDIR)
 USES=		pkgconfig
+.else
+USE_PKGCONFIG=	yes
+.endif
 
 .include "${MASTERDIR}/Makefile"
