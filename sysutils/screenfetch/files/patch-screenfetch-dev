@@ -1,6 +1,6 @@
---- ./screenfetch-dev.orig	2013-07-19 23:33:57.000000000 -0700
-+++ ./screenfetch-dev	2013-07-19 23:35:46.000000000 -0700
-@@ -686,13 +686,16 @@
+--- ./screenfetch-dev.orig	2013-07-16 21:08:11.000000000 -0700
++++ ./screenfetch-dev	2013-07-21 17:13:42.000000000 -0700
+@@ -686,13 +686,17 @@
  				pkgs=$((${pkgs} + ${brew_pkgs}))
  			fi
  		;;
@@ -12,8 +12,9 @@
  				pkgs=$((${pkgs} + ${ports}))
  			fi
  		;;
-+		'FreeBSD') 
-+			pkgs=$(pkg info |wc -l|awk '{print $1}' || pkg_info | wc -l | awk '{sub(" ", "");print $1}')
++		'FreeBSD')
++			pkgs=$(if TMPDIR=/dev/null ASSUME_ALWAYS_YES=1 PACKAGESITE=file:///nonexistent pkg info pkg >/dev/null 2>&1; then 
++				pkg info | wc -l | awk '{print $1}'; else pkg_info | wc -l | awk '{sub(" ", "");print $1}'; fi)
 +		;;
  		'Cygwin') cygfix=2; pkgs=$(($(cygcheck -cd | wc -l)-$cygfix)) ;;
  	esac

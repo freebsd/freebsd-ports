@@ -3,6 +3,7 @@
 
 PORTNAME=	screenFetch
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:L}/ \
 		GH
