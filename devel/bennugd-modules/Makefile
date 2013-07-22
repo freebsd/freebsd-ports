@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bennugd
-# Date created:		06 Nov 2009
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	modules
 PORTVERSION=	r20091106
