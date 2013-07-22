@@ -30,6 +30,5 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../libggz/bsd.ggz.mk"
+.include <bsd.port.mk>

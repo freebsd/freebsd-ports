@@ -43,6 +43,5 @@ post-patch:
 post-install:
 	@${TOUCH} ${PREFIX}/etc/ggz.modules
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../libggz/bsd.ggz.mk"
+.include <bsd.port.mk>
