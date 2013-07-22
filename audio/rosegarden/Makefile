@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rosegarden
-PORTVERSION=	13.04
-PORTREVISION=	2
+PORTVERSION=	13.06
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -27,10 +26,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
 USE_QT4=	gui network xml rcc_build moc_build uic_build linguist_build
-MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
+CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
