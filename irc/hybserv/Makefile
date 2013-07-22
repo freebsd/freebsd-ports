@@ -1,30 +1,35 @@
-# New ports collection makefile for:	hybserv
-# Date created:				15 Jan 2003
-# Whom:					Rick Fournier <rick@help-desk.ca>
-#
+# Created by: Rick Fournier <rick@help-desk.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	hybserv
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	irc
-MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}2/Hybserv%20${PORTVERSION}
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	HybServ2 IRCD Services
+COMMENT=	Hybrid2 IRC Services
 
-USE_GMAKE=	yes
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=		DAEMONTOOLS
+DAEMONTOOLS_DESC=	Daemontools support
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dkorunic
+GH_PROJECT=	hybserv2
+GH_TAGNAME=	REL_${PORTVERSION:S/./_/g}
+GH_COMMIT=	ce15a9f
+
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-WRKSRC=		${WRKDIR}/hybserv
+DAEMONTOOLS_RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
+DAEMONTOOLS_CONFIGURE_ENABLE=	daemontools
 
-.if defined(WITH_DAEMONTOOLS)
-CONFIGURE_ARGS+=	--with-daemontools
-RUN_DEPENDS+=	supervise:${PORTSDIR}/sysutils/daemontools
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/hybserv.sh \
