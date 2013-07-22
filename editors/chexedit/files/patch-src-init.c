@@ -12,7 +12,15 @@
  extern char **environ;
  
  
-@@ -463,7 +468,7 @@
+@@ -250,6 +255,7 @@
+    if (color_term != -1)
+    {
+       start_color ();
++      use_default_colors();
+       if ((color_term = has_colors ()))
+       {
+          color_term = 1;
+@@ -463,7 +469,7 @@
        filestat.st_size = DEFAULT_BUFFER_SIZE;
     }
  
