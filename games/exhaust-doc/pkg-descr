@@ -1,18 +1,19 @@
-The `exhaust' project is a redcode simulator that is (hopefully) easy to embed
-into your applications, as an alternative to pMARS.
+The `exhaust' project is a redcode simulator that is (hopefully)
+easy to embed into your applications, as an alternative to pMARS.
 
 The documentation contains the following:
 
 README     -  Instructions to embed exhaust in a program.
-test.pl    -  Perl script to check for differences between exhaust and pMARS.
+test.pl    -  Perl script to check for differences between exhaust
+              and pMARS.
 src/       -  The C source code of exhaust (highly commented).
 warriors/  -  Test warriors.
 
-The "warriors" subdirectory contains Redcode assembly files (.red) and parsed
-Redcode assembly files (.rc). The last ones can be loaded into exhaust, the
-others have to be parsed, for example with pMARS.
+The "warriors" subdirectory contains Redcode assembly files (.red)
+and parsed Redcode assembly files (.rc). The last ones can be loaded
+into exhaust, the others have to be parsed, for example with pMARS.
 
 NOTE: this documentation is only useful for developers.
 
 Author: M Joonas Pihlaja
-WWW: http://www.cs.helsinki.fi/u/jpihlaja/exhaust/exhaust.html
+WWW: http://corewar.co.uk/pihlaja/exhaust/
