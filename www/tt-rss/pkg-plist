@@ -65,35 +65,41 @@
 %%WWWDIR%%/icons/.empty
 %%WWWDIR%%/image.php
 %%WWWDIR%%/images/alert.png
-%%WWWDIR%%/images/alert.svg
 %%WWWDIR%%/images/archive.png
 %%WWWDIR%%/images/blank_icon.gif
-%%WWWDIR%%/images/close_notify.svg
 %%WWWDIR%%/images/collapse.png
+%%WWWDIR%%/images/cross.png
+%%WWWDIR%%/images/error.png
 %%WWWDIR%%/images/favicon-72px.png
 %%WWWDIR%%/images/favicon.png
-%%WWWDIR%%/images/footer.png
+%%WWWDIR%%/images/feed.png
+%%WWWDIR%%/images/filter.png
+%%WWWDIR%%/images/folder.png
 %%WWWDIR%%/images/fresh.png
 %%WWWDIR%%/images/indicator_tiny.gif
 %%WWWDIR%%/images/indicator_white.gif
+%%WWWDIR%%/images/information.png
 %%WWWDIR%%/images/label.png
 %%WWWDIR%%/images/logo_small.png
 %%WWWDIR%%/images/logo_wide.png
-%%WWWDIR%%/images/mark_set.svg
-%%WWWDIR%%/images/mark_unset.svg
+%%WWWDIR%%/images/mark_set.png
+%%WWWDIR%%/images/mark_unset.png
 %%WWWDIR%%/images/new_version.png
-%%WWWDIR%%/images/pub_set.svg
-%%WWWDIR%%/images/pub_unset.svg
-%%WWWDIR%%/images/recently_read.png
+%%WWWDIR%%/images/page_white_go.png
+%%WWWDIR%%/images/plugin.png
+%%WWWDIR%%/images/plugin_disabled.png
+%%WWWDIR%%/images/pub_set.png
+%%WWWDIR%%/images/pub_unset.png
 %%WWWDIR%%/images/score_half_high.png
 %%WWWDIR%%/images/score_half_low.png
 %%WWWDIR%%/images/score_high.png
 %%WWWDIR%%/images/score_low.png
 %%WWWDIR%%/images/score_neutral.png
-%%WWWDIR%%/images/sign_excl.svg
-%%WWWDIR%%/images/sign_info.svg
+%%WWWDIR%%/images/star.png
 %%WWWDIR%%/images/tag.png
+%%WWWDIR%%/images/time.png
 %%WWWDIR%%/images/toolbar.png
+%%WWWDIR%%/images/user.png
 %%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/ccache.php
 %%WWWDIR%%/include/colors.php
@@ -1505,6 +1511,7 @@
 %%WWWDIR%%/lib/dojo/uacss.js
 %%WWWDIR%%/lib/dojo/when.js
 %%WWWDIR%%/lib/dojo/window.js
+%%WWWDIR%%/lib/floIcon.php
 %%WWWDIR%%/lib/gettext/README
 %%WWWDIR%%/lib/gettext/gettext.inc
 %%WWWDIR%%/lib/gettext/gettext.php
@@ -1512,6 +1519,7 @@
 %%WWWDIR%%/lib/index.html
 %%WWWDIR%%/lib/jshrink/Minifier.php
 %%WWWDIR%%/lib/jshrink/README.md
+%%WWWDIR%%/lib/jimIcon.php
 %%WWWDIR%%/lib/otphp/LICENCE
 %%WWWDIR%%/lib/otphp/lib/hotp.php
 %%WWWDIR%%/lib/otphp/lib/otp.php
@@ -2000,6 +2008,8 @@
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ko_KR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ko_KR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/lv_LV/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/lv_LV/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.mo
@@ -2020,7 +2030,9 @@
 %%WWWDIR%%/lock/.htaccess
 %%WWWDIR%%/messages.pot
 %%WWWDIR%%/opml.php
+%%WWWDIR%%/plugins/af_buni/init.php
 %%WWWDIR%%/plugins/af_buttersafe/init.php
+%%WWWDIR%%/plugins/af_dilbert/init.php
 %%WWWDIR%%/plugins/af_explosm/init.php
 %%WWWDIR%%/plugins/af_gocomics/init.php
 %%WWWDIR%%/plugins/af_pennyarcade/init.php
@@ -2057,11 +2069,15 @@
 %%WWWDIR%%/plugins/nsfw/init.js
 %%WWWDIR%%/plugins/nsfw/init.php
 %%WWWDIR%%/plugins/share/init.php
+%%WWWDIR%%/plugins/share/notshared.png
 %%WWWDIR%%/plugins/share/share.js
 %%WWWDIR%%/plugins/share/share.png
+%%WWWDIR%%/plugins/share/share_prefs.js
 %%WWWDIR%%/plugins/swap_jk/init.php
 %%WWWDIR%%/plugins/updater/init.php
 %%WWWDIR%%/plugins/updater/updater.js
+%%WWWDIR%%/plugins/vf_shared/init.php
+%%WWWDIR%%/plugins/vf_shared/share.png
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
@@ -2331,6 +2347,7 @@
 @dirrm %%WWWDIR%%/schema/versions/mysql
 @dirrm %%WWWDIR%%/schema/versions
 @dirrm %%WWWDIR%%/schema
+@dirrm %%WWWDIR%%/plugins/vf_shared
 @dirrm %%WWWDIR%%/plugins/updater
 @dirrm %%WWWDIR%%/plugins/swap_jk
 @dirrm %%WWWDIR%%/plugins/share
@@ -2354,7 +2371,9 @@
 @dirrm %%WWWDIR%%/plugins/af_pennyarcade
 @dirrm %%WWWDIR%%/plugins/af_gocomics
 @dirrm %%WWWDIR%%/plugins/af_explosm
+@dirrm %%WWWDIR%%/plugins/af_dilbert
 @dirrm %%WWWDIR%%/plugins/af_buttersafe
+@dirrm %%WWWDIR%%/plugins/af_buni
 @dirrm %%WWWDIR%%/plugins
 @dirrmtry %%WWWDIR%%/lock
 @dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
@@ -2373,6 +2392,8 @@
 @dirrm %%WWWDIR%%/locale/nb_NO
 @dirrm %%WWWDIR%%/locale/lv_LV/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/lv_LV
+@dirrm %%WWWDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ko_KR
 @dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ja_JP
 @dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES

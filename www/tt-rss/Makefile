@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	gothfox
 GH_PROJECT=	Tiny-Tiny-RSS
-GH_COMMIT=	b5a9ef5
+GH_COMMIT=	7543f05
 
 NO_BUILD=	yes
 
