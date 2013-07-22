@@ -17,6 +17,8 @@ LDADD=	-lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib
 CFLAGS+=-I${LOCALBASE}/include -DCSRG_BASED -DFUNCPROTO=15 -DNARROWPROTO
 MAN=	${PROG}.1
 
+x11-ssh-askpass.o: ${CLASS}_ad.h
+
 ${PROG}.1: x11-ssh-askpass.man.in
 	sed -e 's|@NAME@|${PROG}|' \
 		-e 's|@DATE@|September 17, 2001|'\
@@ -30,8 +32,7 @@ ${CLASS}.ad: ${CLASS}-default.ad
 	cp $? $@
 
 ${CLASS}_ad.h:	${CLASS}.ad
-	sed -n '/^[^!]/s/.*/"&",/p' < $? >$@.tmp
-	mv $@.tmp $@
+	sed -n '/^[^!]/s/.*/"&",/p' < $? > $@ || (rm -f $@; false)
 
 ${PROG}: ${CLASS}_ad.h
 CLEANFILES+=	${CLASS}_ad.h
