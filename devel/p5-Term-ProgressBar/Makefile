@@ -1,12 +1,8 @@
-# New ports collection makefile for:	Term::ProgressBar
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-ProgressBar
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,8 +26,10 @@ MAN3=		Term::ProgressBar.3
 post-patch:
 	${REINPLACE_CMD} -e 's|Term-ProgressBar|Term/ProgressBar|' ${WRKSRC}/Makefile.PL
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
 .endif
