@@ -59,25 +59,6 @@ share/config.kcfg/kget_mmsfactory.kcfg
 share/config.kcfg/kget_multisegkiofactory.kcfg
 share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/dbus-1/services/org.kde.kget.service
-share/doc/HTML/en/kget/common
-share/doc/HTML/en/kget/file.png
-share/doc/HTML/en/kget/import_link.png
-share/doc/HTML/en/kget/index.cache.bz2
-share/doc/HTML/en/kget/index.docbook
-share/doc/HTML/en/kget/kget_Advanced.png
-share/doc/HTML/en/kget/kget_Appearance.png
-share/doc/HTML/en/kget/kget_Network.png
-share/doc/HTML/en/kget/kget_Web_Interface.png
-share/doc/HTML/en/kget/kget_drop_target.png
-share/doc/HTML/en/kget/kget_group.png
-share/doc/HTML/en/kget/kget_groups.png
-share/doc/HTML/en/kget/kget_plugins.png
-share/doc/HTML/en/kget/kget_transfer_hostory.png
-share/doc/HTML/en/kget/kget_verification.png
-share/doc/HTML/en/kget/metalink0.png
-share/doc/HTML/en/kget/metalink1.png
-share/doc/HTML/en/kget/metalink2.png
-share/doc/HTML/en/kget/metalink3.png
 share/icons/hicolor/128x128/apps/kget.png
 share/icons/hicolor/16x16/apps/kget.png
 share/icons/hicolor/22x22/apps/kget.png
@@ -109,7 +90,6 @@ share/kde4/services/zeroconf.protocol
 share/kde4/servicetypes/kget_plugin.desktop
 share/ontology/kde/kget_history.ontology
 share/ontology/kde/kget_history.trig
-@dirrm share/doc/HTML/en/kget
 @dirrmtry share/apps/kwebkitpart/kpartplugins
 @dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/kget/www
