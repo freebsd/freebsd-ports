@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcf77pi
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.3.1
 CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
-GH_COMMIT=	3e51be2
+GH_COMMIT=	cea9de9
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,7 +23,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
 .endif
-	if [ ! ${ETCDIR}/hardware.txt ] ; then \
+	if [ ! -f ${ETCDIR}/hardware.txt ] ; then \
 		${CP} -p ${ETCDIR}/hardware.txt.sample ${ETCDIR}/hardware.txt ; \
 	fi
 
