@@ -4,9 +4,7 @@
 PORTNAME=	steelstorm
 DISTVERSION=	beta-r1591
 CATEGORIES=	games
-MASTER_SITES=	http://download1.steel-storm.com/ \
-		http://download2.steel-storm.com/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Old school top down arcade shooter
