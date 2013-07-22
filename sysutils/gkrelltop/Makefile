@@ -1,16 +1,11 @@
-# New ports collection makefile for:	gkrelltop
-# Date created:				12 April 2004
-# Whom:					David Gardner
-#
+# Whom: David Gardner
 # $FreeBSD$
-#
 
 PORTNAME=	gkrelltop
-PORTVERSION=	2.2.6
-PORTREVISION=	12
+PORTVERSION=	2.2.10
 CATEGORIES=	sysutils
-MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/html/gkrelltop/
-DISTNAME=	${PORTNAME}_2.2-6
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	david@pinko.net
 COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
@@ -18,7 +13,7 @@ COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
 RUN_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	INSTALLDIR=${LOCALBASE}/libexec/gkrellm2/plugins \
 		INSTALLDIRD=${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
 
@@ -30,7 +25,7 @@ PLIST_SUB+=	CLIENT="@comment "
 PLIST_SUB+=	CLIENT=""
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 post-patch:
 .if defined(GKRELLM_SERVER_ONLY)
