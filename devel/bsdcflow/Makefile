@@ -1,9 +1,4 @@
-# New ports collection makefile for:	bsdcflow
-# Date created:		2010-12-02
-# Whom:			Marcus von Appen <mva@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bsdcflow
 PORTVERSION=	0.0.6
@@ -18,6 +13,7 @@ CONFLICTS=	gnucflow-[0-9]* cflow-[0-9]*
 
 USE_GMAKE=	yes
 MAKE_ENV=	MANDIR=${PREFIX}/man
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/asmgraph	\
 		bin/cgraph	\
