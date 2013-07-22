@@ -16,6 +16,7 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
+MAKE_JOBS_UNSAFE=yes
 USES=		charsetfix gettext pathfix
 USE_BZIP2=	yes
 USE_XORG=	xpm ice x11
