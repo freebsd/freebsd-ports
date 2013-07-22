@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-05-01 02:23:03.000000000 +0000
++++ Makefile.in
+@@ -93,7 +93,7 @@ uninstall-all:
+ 	@$(MAKE) uninstall-doc
+ 
+ install:
+-	@@SETX@; for d in $(SUBDIRS) perform; do			      \
++	@@SETX@; for d in $(SUBDIRS); do			      \
+ 	   (cd $$d && $(MAKE) $@) || exit 1;				      \
+ 	done
+ 	@$(MAKE) install-examples

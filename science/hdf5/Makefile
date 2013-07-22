@@ -1,14 +1,9 @@
-# ex:ts=8
-# New ports collection makefile for:	HDF5
-# Date created:			Jul 7, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	hdf5
 PORTVERSION=	1.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/prev-releases/ \
