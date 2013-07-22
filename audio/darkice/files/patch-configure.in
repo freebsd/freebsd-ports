@@ -1,0 +1,15 @@
+--- configure.in.orig
++++ configure.in
+@@ -260,10 +260,11 @@
+ dnl-----------------------------------------------------------------------------
+ if test "x${LAME_LDFLAGS}" = "x" \
+      -a "x${VORBIS_LDFLAGS}" = "x" \
++     -a "x${OPUS_LDFLAGS}" = "x" \
+      -a "x${FAAC_LDFLAGS}" = "x" \
+      -a "x${AACPLUS_LDFLAGS}" = "x" \
+      -a "x${TWOLAME_LDFLAGS}" = "x"; then
+-    AC_MSG_ERROR([neither lame, Ogg Vorbis, faac, aac+ nor twolame configured])
++    AC_MSG_ERROR([neither lame, Ogg Vorbis, Ogg Opus, faac, aac+ nor twolame configured])
+ fi
+ 
+ 
