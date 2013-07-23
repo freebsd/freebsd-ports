@@ -46,7 +46,9 @@ LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
 PLIST_SUB+=	INSIGHT=''
-EXTRA_PATCHES=	${FILESDIR}/itcl33-patch
+EXTRA_PATCHES=	${FILESDIR}/itcl33-patch \
+		${FILESDIR}/extra-gdb-gdbtk-generic-gdbtk.c \
+		${FILESDIR}/extra-gdb-gdbtk-generic-gdbtk-hooks.c
 CONFIGURE_ARGS+=--enable-gdbtk \
 		--with-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER}/generic \
