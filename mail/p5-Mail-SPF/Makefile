@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-SPF
-PORTVERSION=	2.9.0
+PORTVERSION=	2.007
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +25,7 @@ CONFLICTS=	p5-Mail-SPF-Query-[0-9]*
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
 
-MAN1=		spfquery.1
+MAN1=		spfquery.pl.1
 MAN3=		Mail::SPF.3 Mail::SPF::Mech::PTR.3 Mail::SPF::Mech.3 \
 		Mail::SPF::SenderIPAddrMech.3 Mail::SPF::MacroString.3 \
 		Mail::SPF::Mech::IP4.3 Mail::SPF::Mech::A.3 \
@@ -42,6 +43,9 @@ OPTIONS_DEFINE=	DOCS
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Mail-SPF
 DOCS=		CHANGES INSTALL LICENSE README TODO
+
+post-extract:
+	${MV} ${WRKSRC}/bin/spfquery ${WRKSRC}/bin/spfquery.pl
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

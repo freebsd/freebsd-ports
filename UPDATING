@@ -5,13 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20130723:
-  AFFECTS: users of mail/p5-Mail-SPF
-  AUTHOR: skreuzer@FreeBSD.org
-
-  With the update to 2.9.0 of mail/p5-Mail-SPF, the executable
-  bin/spfquery.pl has been renamed to bin/spfquery
-
 20130720:
   AFFECTS: users of japanese/mozc-server and japanese/mozc-el
   AUTHOR: hrs@FreeBSD.org
