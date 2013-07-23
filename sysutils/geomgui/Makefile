@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	geomgui
-PORTVERSION=	0.12
-PORTREVISION=	9
+PORTVERSION=	0.13
 CATEGORIES=	sysutils
-MASTER_SITES=	http://geomgui.xride.dk/files/ \
+MASTER_SITES=	http://tinkering.hambrew.net/geomgui/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	xride
+USE_BZIP2=	yes
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Viewer for kernel geom layer
 
 LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
-
-BROKEN=	does not build
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 librsvg2
