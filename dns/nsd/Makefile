@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.16
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
 
 MAINTAINER=	jaap@NLnetLabs.nl
-COMMENT=	An authoritative only non-recursive name server
+COMMENT=	Authoritative only non-recursive name server
 
 CONFLICTS=	nsd-[0-2]*
 
@@ -46,7 +46,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=	ROOT_SERVER LARGEFILE IPV6 BIND8_STATS ZONE_STATS CHECKING \
-		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL
+		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL EUI_RRTYPES
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 NSEC3PREHASH MINRESPSIZE
 
 ROOT_SERVER_DESC=	Configure as a root server
@@ -60,6 +60,7 @@ MINRESPSIZE_DESC=	Minimial response sizing
 MMAP_DESC=		Use mmap instead of malloc (experimental)
 MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
+EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 
 .include <bsd.port.options.mk>
 
@@ -112,6 +113,10 @@ CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
 
 .if ${PORT_OPTIONS:MRRL}
 CONFIGURE_ARGS+=	--enable-ratelimit
+.endif
+
+.if ${PORT_OPTIONS:MEUI_RRTYPES}
+CONFIGURE_ARGS+=	--enable-draft-rrtypes
 .endif
 
 pre-patch:
