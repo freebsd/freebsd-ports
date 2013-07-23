@@ -202,6 +202,18 @@
 %%PYTHON_SITELIBDIR%%/brian/experimental/connectionmonitor.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/connectionmonitor.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/connectionmonitor.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/__init__.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/__init__.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/__init__.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/cspikequeue.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/cspikequeue.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/cspikequeue.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/setup.py
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/setup.pyc
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/setup.pyo
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/spikequeue.h
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/spikequeue.cpp
+%%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue/spikequeue_wrap.cxx
 %%PYTHON_SITELIBDIR%%/brian/experimental/cuda/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/experimental/cuda/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/experimental/cuda/__init__.pyo
@@ -352,12 +364,6 @@
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/tan_carney.py
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/tan_carney.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/tan_carney.pyo
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test.py
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test.pyc
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test.pyo
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test2.py
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test2.pyc
-%%PYTHON_SITELIBDIR%%/brian/hears/filtering/test2.pyo
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/zilany.py
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/zilany.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/filtering/zilany.pyo
@@ -376,6 +382,9 @@
 %%PYTHON_SITELIBDIR%%/brian/hears/onlinesounds.py
 %%PYTHON_SITELIBDIR%%/brian/hears/onlinesounds.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/onlinesounds.pyo
+%%PYTHON_SITELIBDIR%%/brian/hears/plotting.py
+%%PYTHON_SITELIBDIR%%/brian/hears/plotting.pyc
+%%PYTHON_SITELIBDIR%%/brian/hears/plotting.pyo
 %%PYTHON_SITELIBDIR%%/brian/hears/prefs.py
 %%PYTHON_SITELIBDIR%%/brian/hears/prefs.pyc
 %%PYTHON_SITELIBDIR%%/brian/hears/prefs.pyo
@@ -517,6 +526,9 @@
 %%PYTHON_SITELIBDIR%%/brian/tests/testfeatures/test_propagation.py
 %%PYTHON_SITELIBDIR%%/brian/tests/testfeatures/test_propagation.pyc
 %%PYTHON_SITELIBDIR%%/brian/tests/testfeatures/test_propagation.pyo
+%%PYTHON_SITELIBDIR%%/brian/tests/testfeatures/test_synapses_tomatrix.py
+%%PYTHON_SITELIBDIR%%/brian/tests/testfeatures/test_synapses_tomatrix.pyc
+%%PYTHON_SITELIBDIR%%/brian/tests/testfeatures/test_synapses_tomatrix.pyo
 %%PYTHON_SITELIBDIR%%/brian/tests/testinterface/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/tests/testinterface/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/tests/testinterface/__init__.pyo
@@ -582,6 +594,9 @@
 %%PYTHON_SITELIBDIR%%/brian/tests/testutils/__init__.pyo
 %%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_dynamicarray.py
 %%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_dynamicarray.pyc
+%%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_savesynapses.py
+%%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_savesynapses.pyc
+%%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_savesynapses.pyo
 %%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_dynamicarray.pyo
 %%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_sparse.py
 %%PYTHON_SITELIBDIR%%/brian/tests/testutils/test_sparse.pyc
@@ -646,18 +661,13 @@
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/__init__.pyo
-%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/ccircular.h
-%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/ccircular.i
+%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/_ccircular.so
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/ccircular.py
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/ccircular.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/ccircular.pyo
-%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/ccircular_wrap.cxx
-%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/circular.cpp
-%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/numpy.i
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/setup.py
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/setup.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/ccircular/setup.pyo
-%%PYTHON_SITELIBDIR%%/brian/utils/ccircular/swigcompile.bat
 %%PYTHON_SITELIBDIR%%/brian/utils/circular.py
 %%PYTHON_SITELIBDIR%%/brian/utils/circular.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/circular.pyo
@@ -670,20 +680,13 @@
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/__init__.py
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/__init__.pyo
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp.cpp
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp.h
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp.i
+%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/_fastexp.so
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp.py
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp.pyo
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fastexp_wrap.cxx
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fexp.c
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/fexp.h
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/numpy.i
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/setup.py
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/setup.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/setup.pyo
-%%PYTHON_SITELIBDIR%%/brian/utils/fastexp/swigcompile.bat
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/testfastexp.py
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/testfastexp.pyc
 %%PYTHON_SITELIBDIR%%/brian/utils/fastexp/testfastexp.pyo
@@ -714,6 +717,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/codegen2/gpu
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/codegen2
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/compensation
+@dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/cspikequeue
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/cuda
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/genn
 @dirrm %%PYTHON_SITELIBDIR%%/brian/experimental/modelfitting

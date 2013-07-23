@@ -1,12 +1,8 @@
-# Ports collection makefile for:	brian
-# Date created:			27 Feb, 2009
-# Whom:				wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	brian
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/Brian/${PORTVERSION}
