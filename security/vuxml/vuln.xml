@@ -65,14 +65,12 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="https://lists.marsching.com/pipermail/suphp/2013-May/002552.html">
 	  <p>When the suPHP_PHPPath was set, mod_suphp would use the specified PHP
 	    executable to pretty-print PHP source files (MIME type
-	    x-httpd-php-source or application/x-httpd-php-source).
-
-	    However, it would not sanitize the environment. Thus a user that was
+	    x-httpd-php-source or application/x-httpd-php-source).</p>
+	  <p>However, it would not sanitize the environment. Thus a user that was
 	    allowed to use the SetEnv directive in a .htaccess file (AllowOverride
 	    FileInfo) could make PHP load a malicious configuration file (e.g.
-	    loading malicious extensions).
-
-	    As the PHP process for highlighting the source file was run with the
+	    loading malicious extensions).</p>
+	  <p>As the PHP process for highlighting the source file was run with the
 	    privileges of the user Apache HTTPd was running as, a local attacker
 	    could probably execute arbitrary code with the privileges of this user.</p>
 	</blockquote>
