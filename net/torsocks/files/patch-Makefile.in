@@ -1,0 +1,9 @@
+--- Makefile.in.orig	2011-10-24 20:23:39.000000000 +0000
++++ Makefile.in	2013-07-23 21:02:35.000000000 +0000
+@@ -238,4 +238,4 @@
+ 	    *$$dep*) \
+-	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign'; \
+-	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign \
++	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign --add-missing'; \
++	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign --add-missing \
+ 		&& exit 0; \
