@@ -1,0 +1,5 @@
+SHA1, SHA256, SHA512, MD5 & CRC32 data types for PostgreSQL
+A fork of the shatypes extension which adds additional
+data types along with some fixes.
+
+WWW: http://pgxn.org/dist/hashtypes/
