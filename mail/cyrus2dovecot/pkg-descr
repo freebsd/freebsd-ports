@@ -1,0 +1,6 @@
+Cyrus2Dovecot is a full-featured command line tool for converting the
+e-mails of one or more users from Cyrus format to Dovecot Maildir++ folders.
+It allows for performing a server transition which is fully transparent to
+both POP and IMAP users.
+
+WWW: http://www.cyrus2dovecot.sw.fu-berlin.de/
