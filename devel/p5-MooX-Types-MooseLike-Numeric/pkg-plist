@@ -1,0 +1,6 @@
+%%SITE_PERL%%/MooX/Types/MooseLike/Numeric.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX-Types-MooseLike-Numeric/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX-Types-MooseLike-Numeric/
+@dirrm %%SITE_PERL%%/MooX/Types/MooseLike
+@dirrmtry %%SITE_PERL%%/MooX/Types
+@dirrmtry %%SITE_PERL%%/MooX
