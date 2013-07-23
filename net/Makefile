@@ -499,6 +499,7 @@
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
     SUBDIR += ostinato
+    SUBDIR += owamp
     SUBDIR += owncloud-csync
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
