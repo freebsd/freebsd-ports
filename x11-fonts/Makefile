@@ -3,6 +3,7 @@
 
     COMMENT = X11 fonts and font utilities
 
+    SUBDIR += andika
     SUBDIR += anonymous-pro
     SUBDIR += artwiz-aleczapka
     SUBDIR += artwiz-aleczapka-de
