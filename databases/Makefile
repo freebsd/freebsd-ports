@@ -105,6 +105,7 @@
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += hamsterdb
+    SUBDIR += hashtypes
     SUBDIR += hiredis
     SUBDIR += hk_classes
     SUBDIR += hs-mysql
