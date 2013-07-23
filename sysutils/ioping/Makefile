@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ioping
-# Date created:		27 December 2011
-# Whom:			Oleg Ginzburg <olevole@olevole.ru>
-#
+# Created by: Oleg Ginzburg <olevole@olevole.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ioping
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
