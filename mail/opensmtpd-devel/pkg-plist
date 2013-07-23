@@ -6,11 +6,12 @@ libexec/opensmtpd/makemap
 libexec/opensmtpd/backend-queue-null
 libexec/opensmtpd/backend-queue-ram
 libexec/opensmtpd/backend-queue-stub
-libexec/opensmtpd/backend-table-stub
-%%MYSQL%%libexec/opensmtpd/backend-table-mysql
-%%SQLITE%%libexec/opensmtpd/backend-table-sqlite
-%%LDAP%%libexec/opensmtpd/backend-table-ldap
-%%PGSQL%%libexec/opensmtpd/backend-table-postgres
+libexec/opensmtpd/table-stub
+libexec/opensmtpd/table-passwd
+%%MYSQL%%libexec/opensmtpd/table-mysql
+%%SQLITE%%libexec/opensmtpd/table-sqlite
+%%LDAP%%libexec/opensmtpd/table-ldap
+%%PGSQL%%libexec/opensmtpd/table-postgres
 libexec/opensmtpd/backend-scheduler-ram
 libexec/opensmtpd/backend-scheduler-stub
 libexec/opensmtpd/filter-dnsbl
