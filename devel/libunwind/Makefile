@@ -1,21 +1,19 @@
-# New ports collection makefile for:		libunwind
-# Date created:					04/30/2010
-# Whom:						stas
-#
+# Created by: stas@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libunwind
-PORTVERSION=	20110911	# This is actually official libunwind 1.0.1
+PORTVERSION=	20121006	# This is actually official libunwind 1.1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
-DISTNAME=	${PORTNAME}-1.0.1
+DISTNAME=	${PORTNAME}-1.1
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A generic stack unwinding library
+MAINTAINER=	danilogondolfo@gmail.com
+COMMENT=	Generic stack unwinding library
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USES=	pkgconfig pathfix
+PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize libtool
@@ -30,6 +28,7 @@ MAN3=		_U_dyn_cancel.3 \
 		libunwind-ia64.3 \
 		libunwind-ptrace.3 \
 		libunwind-setjmp.3 \
+		unw_backtrace.3 \
 		unw_create_addr_space.3 \
 		unw_destroy_addr_space.3 \
 		unw_flush_cache.3 \
@@ -52,7 +51,7 @@ MAN3=		_U_dyn_cancel.3 \
 		unw_step.3 \
 		unw_strerror.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
 PLIST_SUB=	ARCH=x86
@@ -60,17 +59,4 @@ PLIST_SUB=	ARCH=x86
 PLIST_SUB=	ARCH=x86_64
 .endif
 
-#
-# The original ltmain.sh is buggy and hangs sometimes
-#
-pre-configure:
-	@${CP} ${LTMAIN} ${WRKSRC}/aux/
-
-#
-# Get rid of .la and static library files
-#
-post-configure:
-	@${REINPLACE_CMD} -E -e \
-	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
