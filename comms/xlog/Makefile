@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SAVANNAH \
-		http://www.chronos.org.uk/download/
+MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	xlog
 
 MAINTAINER=	danilogondolfo@gmail.com
