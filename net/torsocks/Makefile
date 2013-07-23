@@ -101,6 +101,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' ${WRKSRC}/src/dead_pool.c
 	@${MV} ${WRKSRC}/doc/torsocks.conf ${WRKSRC}/doc/torsocks.conf.sample
 	@${MV} ${WRKSRC}/configure.in ${WRKSRC}/configure.ac
+	@${MKDIR} ${WRKSRC}/m4
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

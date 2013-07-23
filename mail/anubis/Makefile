@@ -30,7 +30,7 @@ SOCKS_DESC=	SOCKS proxy support
 USE_RC_SUBR=	anubis
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake
 ACLOCAL_ARGS=	-I m4 -I am
-AUTOMAKE_ARGS=	--force
+AUTOMAKE_ARGS=	--force --add-missing
 
 MAN1=		anubis.1
 INFO=		anubis
