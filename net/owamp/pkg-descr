@@ -1,0 +1,17 @@
+OWAMP is a command line client application and a policy daemon used
+to determine one way latencies between hosts. It is an implementation
+of the OWAMP protocol as defined by
+http://www.rfc-editor.org/rfc/rfc4656.txt. (When referring to the
+protocol within this document, "OWAMP" will be in italicized. In
+all other instances, "OWAMP" will be referring to this implementation.)
+
+With roundtrip-based measurements, it is hard to isolate the direction
+in which congestion is experienced. One-way measurements solve this
+problem and make the direction of congestion immediately apparent.
+Since traffic can be asymmetric at many sites that are primarily
+producers or consumers of data, this allows for more informative
+measurements. One-way measurements allow the user to better isolate
+the effects of specific parts of a network on the treatment of
+traffic.
+
+WWW: http://www.internet2.edu/performance/owamp/
