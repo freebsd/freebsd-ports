@@ -16,7 +16,7 @@ COMMENT?=	A collection of secure and reliable DNS tools
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-OPTIONS_DEFINE=	DUMPCACHE IP6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE
+OPTIONS_DEFINE=	DUMPCACHE IP6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE ADD_USERS
 OPTIONS_DEFAULT=	MAN
 DUMPCACHE_DESC=	persistent cache for dnscache
 IP6_DESC=	IPv6 support by Felix von Leitner
@@ -26,8 +26,14 @@ MAN_DESC=	manual pages by Gerritt Pape
 PERSISTENT_MMAP_DESC=	persistent mmap patch by Lennert Buytenhek
 SRV_DESC=	SRV record patch by Michael Handler
 DNSCURVE_DESC=	DNSCurve support by Matthew Dempsky
+ADD_USERS_DESC= Add dnscache, tinydns and dnslog users/groups
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MADD_USERS}
+USERS?=	dnscache tinydns dnslog
+GROUPS?=dnscache tinydns dnslog
+.endif
 
 .if ${PORT_OPTIONS:MJUMBO}
 .if ${PORT_OPTIONS:MIP6} || ${PORT_OPTIONS:MIGNOREIP} || ${PORT_OPTIONS:MSRV} || \
