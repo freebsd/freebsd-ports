@@ -17,6 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-MIME-Charset>=0:${PORTSDIR}/mail/p5-MIME-Charset
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-bundled-sombok \
