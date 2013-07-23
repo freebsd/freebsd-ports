@@ -1,0 +1,18 @@
+The Andika font is designed to work on systems and with applications that
+provide support for TrueType fonts and for Unicode character encoding.
+This includes Microsoft Windows 9x or greater, as well as recent versions
+of the Mac OS (version 9.0 and later), and also some implementations of
+Unix / Linux (TrueType font support on Unix and Linux may depend upon the
+particular applications in use). On some systems (true, at least, of
+32-bit Windows), it can also be used with older applications that use
+legacy, industry-standard, 8-bit character encodings.
+
+The preceding characterization of system requirements describes the
+minimum needed to display characters. Realizing the full capabilities of
+this font involves additional requirements. This font is designed to work
+with either of two advanced font technologies, Graphite or OpenType.
+To take advantage of the advanced typographic capabilities of this font,
+you must be using applications that provide an adequate level of support
+for Graphite and OpenType.
+
+WWW: http://scripts.sil.org/cms/scripts/page.php?item_id=Andika
