@@ -111,6 +111,7 @@
     SUBDIR += linux-f10-fontconfig
     SUBDIR += linuxlibertine
     SUBDIR += linuxlibertine-g
+    SUBDIR += lohit
     SUBDIR += manu-gothica
     SUBDIR += mgopen
     SUBDIR += mkbold

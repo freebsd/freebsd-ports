@@ -1,0 +1,13 @@
+In 2004, Red Hat has released five Indian language fonts as open source
+licensed under the GPL. In 2011 Red Hat relicensed fonts under SIL OFL 1.1
+license. The fonts named Lohit which means Red in Sanskrit. Currently, the
+font family supports 21 Indian languages: Assamese, Bengali, Devanagari
+(Hindi, Kashmiri, Konkani, Maithili, Marathi, Nepali, Sindhi, Santali,
+Bodo, Dogri), Gujarati, Kannada, Malayalam, Manipuri, Oriya, Punjabi,
+Tamil, and Telugu. Now, Fedora Project and its contributors took the
+responsibility to consolidate the further efforts and improvements of
+the Lohit fonts.
+
+Lohit Fonts are Unicode 6.0 compatible.
+
+WWW: https://fedorahosted.org/lohit/
