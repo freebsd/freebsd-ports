@@ -1,13 +1,15 @@
 Description: SpamAssassin support, build optimization
  Add SpamAssassin support.
  Drop the unneeded MAX_ENV_BUFF definition.
+ Add DELIVER_TO_STDOUT support
 Forwarded: not-needed
 Author: Alex Dupre <ale@FreeBSD.org>,
-	Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-01-05
+	Peter Pentchev <roam@FreeBSD.org>,
+	Bryan Drewery <bdrewery@FreeBSD.org>
+Last-Update: 2013-07-23
 
---- a/vdelivermail.c
-+++ b/vdelivermail.c
+--- vdelivermail.c.orig	2010-11-08 09:02:52.000000000 -0600
++++ vdelivermail.c	2013-07-23 10:44:11.392127088 -0500
 @@ -74,6 +74,7 @@
  int is_spam();
  #endif
@@ -86,7 +88,7 @@ Last-Update: 2010-01-05
  {
  #ifdef HOST_NAME_MAX
    char hostname[HOST_NAME_MAX];
-@@ -493,21 +511,25 @@
+@@ -493,21 +511,36 @@
    char local_file_tmp[FILE_SIZE];
    char local_file_new[FILE_SIZE];
    size_t headerlen;
@@ -103,6 +105,17 @@ Last-Update: 2010-01-05
      headerlen = strlen (extra_headers);
 -    msgsize += headerlen;
      
++    if ((getenv("DELIVER_TO_STDOUT")) != NULL) {
++        if (fdcopy (1, read_fd, extra_headers, headerlen,
++                maildir_to_email(maildir)) != 0) {
++            printf("echo to stdout failed\n");
++            return -2;
++        } else{
++            /* Email sent to STDOUT */
++            return 0;
++        }
++    }
++
      /* Format the email file name */
      /* we get the whole hostname, even though we only use 32 chars of it */
      gethostname(hostname, sizeof(hostname));
@@ -117,7 +130,7 @@ Last-Update: 2010-01-05
  
      read_quota_from_maildir (maildir, quota, sizeof(quota));
  
-@@ -548,6 +570,9 @@
+@@ -548,6 +581,9 @@
  #endif
          close (write_fd) == 0 ) {
  
@@ -127,7 +140,7 @@ Last-Update: 2010-01-05
  	if(DeleteMail == 1) {
  	    if (unlink(local_file_tmp) != 0) {
                  printf("unlink failed %s errno = %d\n", local_file_tmp, errno);
-@@ -556,7 +581,29 @@
+@@ -556,7 +592,29 @@
              return(0);
  	}
  
@@ -157,7 +170,7 @@ Last-Update: 2010-01-05
          if ( link( local_file_tmp, local_file_new ) == 0 ) {
              /* file was successfully delivered, remove temp file */
              if ( unlink(local_file_tmp) != 0 ) {
-@@ -616,6 +663,9 @@
+@@ -616,6 +674,9 @@
      /* rewind the message */
      lseek(0,0L,SEEK_SET);
  
@@ -167,7 +180,7 @@ Last-Update: 2010-01-05
      /* This is an command */
      if ( *address == '|' ) { 
  
-@@ -723,7 +773,7 @@
+@@ -723,7 +784,7 @@
                  email);
          }
      
@@ -176,7 +189,7 @@ Last-Update: 2010-01-05
              case -1:
                  vexiterr (EXIT_OVERQUOTA, "user is over quota");
                  break;
-@@ -898,9 +948,6 @@
+@@ -898,9 +959,6 @@
   */
  void run_command(char *prog)
  {
@@ -186,7 +199,7 @@ Last-Update: 2010-01-05
   int child;
   char *(args[4]);
   int wstat;
-@@ -1186,7 +1233,7 @@
+@@ -1186,7 +1244,7 @@
              maildir_to_email(newdir), date_header());
      }
  
@@ -195,7 +208,7 @@ Last-Update: 2010-01-05
  
      close (read_fd);
      
-@@ -1214,19 +1261,22 @@
+@@ -1214,19 +1272,22 @@
   *   * in the email headers for X-Spam-Level: which
   *    * we put in each spam email
   *     *
@@ -222,7 +235,7 @@ Last-Update: 2010-01-05
  
           /* check for blank line, end of headers */
           for(k=j,found=0;k<i;++k) {
-@@ -1249,13 +1299,19 @@
+@@ -1249,13 +1310,19 @@
           }
           if ( found == 0 ) {
             InHeaders=0;
