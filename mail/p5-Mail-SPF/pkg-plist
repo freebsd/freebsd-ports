@@ -1,4 +1,4 @@
-bin/spfquery
+bin/spfquery.pl
 sbin/spfd
 %%SITE_PERL%%/Mail/SPF.pm
 %%SITE_PERL%%/Mail/SPF/MacroString.pm
