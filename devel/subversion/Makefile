@@ -119,6 +119,14 @@ BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
 LIB_DEPENDS=
 .endif
 
+TOOLS_STATIC_BINARIES=	client-side/svn-bench/svn-bench server-side/svnauthz \
+			server-side/fsfs-stats \
+			server-side/svn-populate-node-origins-index \
+			server-side/svnauthz-validate \
+			server-side/svn-rep-sharing-stats dev/fsfs-reorg \
+			dev/svnraisetreeconflict/svnraisetreeconflict \
+			dev/fsfs-access-map diff/diff3 diff/diff diff/diff4
+
 pre-everything::
 	@${ECHO_MSG} ""
 .if ${PORT_OPTIONS:MBDB}
@@ -256,6 +264,10 @@ post-install:	${MKREPOS_TARGET}
 .endif
 .endif
 	@${MKDIR} ${DATADIR}
+.if ${PORT_OPTIONS:MSTATIC}
+	cd ${WRKSRC}/tools ; \
+	  ${RM} ${TOOLS_STATIC_BINARIES}
+.endif
 	cd ${WRKSRC}/tools ; \
 	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude '*.la' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
 # ugly hack to remove libtool scripts ...

@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2ae24334-f2e6-11e2-8346-001e8c75030d">
+    <topic>subversion -- remotely triggerable "Assertion failed" DoS vulnerability or read overflow.</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.8.0</ge><lt>1.8.1</lt></range>
+	<range><ge>1.7.0</ge><lt>1.7.11</lt></range>
+       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2013-4131-advisory.txt">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module will trigger an assertion
+	    on some requests made against a revision root.  This can lead to a DoS.
+	    If assertions are disabled it will trigger a read overflow which may cause a
+	    SEGFAULT (or equivalent) or undefined behavior.</p>
+	  <p>Commit access is required to exploit this.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4131</cvename>
+    </references>
+    <dates>
+      <discovery>2013-07-19</discovery>
+      <entry>2013-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2fbfd455-f2d0-11e2-8a46-000d601460a4">
     <topic>suPHP -- Privilege escalation</topic>
     <affects>
