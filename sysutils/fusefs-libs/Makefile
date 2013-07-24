@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	DOCS
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
 USE_LDCONFIG=	yes
-USES=		pkgconfig iconv
+USES=		iconv
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 TXT_DOCS=	how-fuse-works \
