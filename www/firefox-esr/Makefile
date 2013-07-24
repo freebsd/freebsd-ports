@@ -3,10 +3,12 @@
 
 PORTNAME=	firefox
 DISTVERSION=	17.0.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
+PKGNAMESUFFIX=	-esr
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
