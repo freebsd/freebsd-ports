@@ -7,7 +7,7 @@ bin/shptreetst
 bin/shptreevis
 bin/sortshp
 bin/tile4ms
-lib/libmapserver-6.2.0.so
+lib/libmapserver-6.2.1.so
 %%MAPSERV%%www/apache%%APA_VER%%/cgi-bin/mapserv
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
