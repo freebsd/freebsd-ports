@@ -1,10 +1,10 @@
 lib/libtogl.so
 lib/libtogl.so.1
-lib/tk%%TK_VER%%/Togl-1.7/togl.h
-lib/tk%%TK_VER%%/Togl-1.7/togl_ws.h
-lib/tk%%TK_VER%%/Togl-1.7/libTogl1.7.so
-lib/tk%%TK_VER%%/Togl-1.7/pkgIndex.tcl
-lib/tk%%TK_VER%%/Togl-1.7/libtogl.so.1
+lib/Togl-1.7/togl.h
+lib/Togl-1.7/togl_ws.h
+lib/Togl-1.7/libTogl1.7.so
+lib/Togl-1.7/pkgIndex.tcl
+lib/Togl-1.7/libtogl.so.1
 %%PORTDOCS%%%%DOCSDIR%%/Togl.html
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/ben.rgb
@@ -27,4 +27,4 @@ lib/tk%%TK_VER%%/Togl-1.7/libtogl.so.1
 %%EXAMPLESDIR%%/tree2.rgba
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/tk%%TK_VER%%/Togl-1.7
+@dirrm lib/Togl-1.7
