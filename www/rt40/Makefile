@@ -2,10 +2,10 @@
 
 PORTNAME=	rt
 PORTVERSION=	4.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
-		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
+		SF/requesttracker/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
