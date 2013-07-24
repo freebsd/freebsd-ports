@@ -6,10 +6,7 @@
 #
 
 CATEGORIES+=	linux
-.ifndef	MASTER_SITES
-MASTER_SITES=	MOZILLA
-MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${DISTVERSION}
-.endif
+MASTER_SITES?=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 PKGNAMEPREFIX?=		linux-
 
 NO_BUILD=	yes
@@ -25,7 +22,7 @@ COMMON_DIR=	${.CURDIR}/../../www/linux-seamonkey
 PLIST_SUB+=	APP_NAME=${APP_NAME}
 SUB_LIST+=	APP_NAME=${APP_NAME}
 SUB_FILES=	${APP_NAME}.desktop
-PREFS_FILE=	${WRKSRC}/defaults/pref/browser-prefs.js
+PREFS_FILE?=	${WRKSRC}/defaults/pref/browser-prefs.js
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:M*devel*}
 DESKTOP_SUFFIX?=	(Linux, devel)
 .endif
@@ -37,16 +34,20 @@ _Q=	2>/dev/null || true
 .if !target(post-extract)
 post-extract:
 	@${RM} -rf ${WRKSRC}/updates
-	@${MKDIR} ${WRKSRC}/plugins ${WRKSRC}/extensions
+	@${MKDIR} ${WRKSRC}/${APP_SUBDIR}plugins
+	@${MKDIR} ${WRKSRC}/${APP_SUBDIR}extensions
 .endif
 
 .if ${CATEGORIES:Mwww}
 .if !target(post-patch)
 post-patch:
-	@${ECHO} 'pref("general.useragent.vendor", "'${OPSYS}'");' >> ${PREFS_FILE}
-	@${ECHO} 'pref("general.useragent.vendorSub", "'${ARCH}'");' >> ${PREFS_FILE}
-	# prefer libsydneyaudio (bug780531)
+	@${MKDIR} ${PREFS_FILE:H}
+
+	# no AFMT_FLOAT support in kernel (bug 780531)
 	${ECHO} 'pref("media.use_cubeb", false);' >> ${PREFS_FILE}
+
+	# out-of-process plugins don't work with linuxulator (ports/170402)
+	${ECHO} 'pref("dom.ipc.plugins.enabled", false);' >> ${PREFS_FILE}
 .endif
 .endif
 
@@ -58,9 +59,9 @@ do-install:
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${FDIR}/
 	@${LN} -sf ${FDIR}/${BIN_NAME} ${PREFIX}/bin/${APP_NAME}
 	@${CP} -R ${LOCALBASE}/lib/npapi/symlinks/${APP_NAME}/ \
-		${FDIR}/plugins/ ${_Q}
+		${FDIR}/${APP_SUBDIR}plugins/ ${_Q}
 	@${CP} -R ${LOCALBASE}/lib/xpi/symlinks/${APP_NAME}/ \
-		${FDIR}/extensions/ ${_Q}
+		${FDIR}/${APP_SUBDIR}extensions/ ${_Q}
 .endif
 
 # Keep empty directories with pkg_* tools
@@ -90,12 +91,12 @@ create-plist: build
 	cd ${WRKSRC} && ${FIND} -s . -type f -or -type l | \
 		${SED} -e "s#^\.#lib/%%APP_NAME%%#" | ${SORT} >> ${PLIST}
 	${ECHO_CMD} '@exec ${CP} -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/ \
-		%D/lib/%%APP_NAME%%/plugins/ ${_Q}' >> ${PLIST}
+		%D/lib/%%APP_NAME%%/${APP_SUBDIR}plugins/ ${_Q}' >> ${PLIST}
 	${ECHO_CMD} '@exec ${CP} -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/ \
-		%D/lib/%%APP_NAME%%/extensions/ ${_Q}' >> ${PLIST}
-	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/plugins/ \
+		%D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ ${_Q}' >> ${PLIST}
+	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/${APP_SUBDIR}plugins/ \
 		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
-	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/extensions/ \
+	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ \
 		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
 	cd ${WRKSRC} && ${FIND} -sd . -type d | \
 		${SED} -e "s#^\.#@dirrm lib/%%APP_NAME%%#" >> ${PLIST}
