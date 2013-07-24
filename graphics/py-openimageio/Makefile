@@ -15,6 +15,8 @@ LIB_DEPENDS=	OpenImageIO:${PORTSDIR}/graphics/openimageio \
 
 MASTERDIR=	${.CURDIR}/../openimageio
 
+BROKEN=		Does not patch
+
 USE_PYTHON=	2.6+
 
 OIIO_PYBIND=	yes
