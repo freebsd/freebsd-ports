@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	slmon
-# Date created:			Nov 13, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	slmon
 PORTVERSION=	0.5.13
@@ -19,6 +14,8 @@ LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		slang.2:${PORTSDIR}/devel/libslang2
 
 MAKE_JOBS_SAFE=	yes
+
+BROKEN=		Does not build
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
