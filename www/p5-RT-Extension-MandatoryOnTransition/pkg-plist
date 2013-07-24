@@ -1,0 +1,32 @@
+lib/perl5/5.14/man/auto/RT/Extension/MandatoryOnTransition/.packlist
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Create.html/BeforeCreate
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditCustomFields/MassageCustomFields
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Update.html/AfterWorked
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Update.html/BeforeUpdate
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/create/BeforeCreate
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/reply/AfterWorked
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/reply/BeforeUpdate
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition.pm
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition/Test.pm
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition/Test.pm.in
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/reply
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/create
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Update.html
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditCustomFields
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Create.html
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html
+@dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition
+@dirrm lib/perl5/5.14/man/auto/RT/Extension/MandatoryOnTransition
+@dirrm lib/perl5/5.14/man/auto/RT/Extension
+@dirrm lib/perl5/5.14/man/auto/RT
+@dirrm lib/perl5/5.14/man/auto
