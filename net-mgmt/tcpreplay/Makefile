@@ -12,7 +12,6 @@ COMMENT=	Tool to replay saved packet capture files
 BUILD_DEPENDS=	pcapnav-config:${PORTSDIR}/net/libpcapnav
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config \

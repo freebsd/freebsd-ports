@@ -14,8 +14,6 @@ LICENSE=	GPLv2
 
 CONFLICTS=	gmp-ecm-[0-9]*
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	bin/ecm bin/unecm
 PORTDOCS=	format.txt
 

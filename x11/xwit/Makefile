@@ -14,7 +14,6 @@ COMMENT=	X interface tool
 
 USES=		imake
 USE_XORG=	x11 xext
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xwit.1
 PLIST_FILES=	bin/xwit

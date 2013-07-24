@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cyrus-IMAP to Maildir++ conversion utility
 
-MAKE_JOBS_SAFE=	yes
-
 ALL_TARGET=	build
 
 PLIST_FILES=	bin/cyrus2courier

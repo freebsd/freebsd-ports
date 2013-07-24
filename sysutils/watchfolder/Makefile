@@ -12,8 +12,6 @@ COMMENT=	Watch folders for new files and process them
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}
 USE_RC_SUBR=	watchd
 

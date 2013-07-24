@@ -18,7 +18,6 @@ CONFLICTS=	x11iraf-[0-9]*
 USE_XORG=	xaw xft
 WANT_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto

@@ -17,7 +17,6 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	lib/bmp/Input/libfc.so lib/bmp/Input/libfc.la
 

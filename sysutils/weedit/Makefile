@@ -15,8 +15,6 @@ LICENSE=	GPLv2
 
 USE_DOS2UNIX=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SRCF=		crc32 dlink weedit md5
 

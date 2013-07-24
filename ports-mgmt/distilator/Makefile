@@ -15,6 +15,5 @@ RUN_DEPENDS=	p5-URI>=1.56:${PORTSDIR}/net/p5-URI \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

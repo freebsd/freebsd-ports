@@ -12,7 +12,6 @@ COMMENT=	UPnP IGD discovery speed enhancer
 
 USES=		gmake
 USE_RC_SUBR=	minissdpd
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-D_GNU_SOURCE
 

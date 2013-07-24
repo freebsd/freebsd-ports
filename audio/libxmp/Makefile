@@ -13,8 +13,6 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	include/xmp.h lib/libxmp.so lib/libxmp.so.4 \
 		lib/libxmp.so.${PORTVERSION} libdata/pkgconfig/libxmp.pc
 

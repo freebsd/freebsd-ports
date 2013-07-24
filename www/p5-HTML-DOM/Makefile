@@ -21,7 +21,6 @@ BUILD_DEPENDS=	p5-CSS-DOM>=0:${PORTSDIR}/www/p5-CSS-DOM \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.man"

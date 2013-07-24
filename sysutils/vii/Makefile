@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/vii
 MAN1=		vii.1

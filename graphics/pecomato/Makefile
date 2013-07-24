@@ -12,7 +12,6 @@ COMMENT=	Command-line picture metadata processor
 
 USES=			gmake
 USE_PYTHON_BUILD=	yes
-MAKE_JOBS_SAFE=		yes
 
 MAKEFILE=	Makefile.unix
 

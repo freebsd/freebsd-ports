@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility to highlight anything printed to stderr
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	bin/hilite
 
 do-extract:

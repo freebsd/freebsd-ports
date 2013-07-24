@@ -15,8 +15,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ZOO archive extractor
 
-MAKE_JOBS_SAFE=	yes
-
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 
 MAN1=		unzoo.1

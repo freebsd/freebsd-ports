@@ -18,8 +18,6 @@ CONFLICTS=	microdc2-[0-9]*
 USES=		gmake
 MANCOMPRESSED=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		tthsum.1
 PLIST_FILES=	bin/tthsum
 

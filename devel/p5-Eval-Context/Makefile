@@ -29,7 +29,6 @@ BUILD_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN3=		Eval::Context.3
 

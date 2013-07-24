@@ -18,7 +18,6 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 
 USES=		gmake
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|3\.1-alpha1|3\.1|g; \

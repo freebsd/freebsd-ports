@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.morettoni.net/bsd/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	DNS notify sender written in C
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	bin/zonenotify
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

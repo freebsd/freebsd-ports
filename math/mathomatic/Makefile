@@ -15,8 +15,6 @@ LICENSE=	GPLv2
 USES=		gmake
 USE_BZIP2=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAKEFILE=	makefile
 
 PORTDOCS=	*

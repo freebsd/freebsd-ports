@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	sbin/tmpreaper
 PORTDOCS=	README

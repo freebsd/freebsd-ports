@@ -25,8 +25,6 @@ CFLAGS+=	-L/usr/local/lib -I/usr/local/include
 
 MANCOMPRESSED=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		logstalgia.1
 
 .include <bsd.port.mk>

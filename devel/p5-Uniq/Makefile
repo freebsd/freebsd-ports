@@ -12,7 +12,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl extension for managing a uniq list of values
 
 PERL_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN3=		Uniq.3
 

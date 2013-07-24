@@ -16,8 +16,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	modplug.1:${PORTSDIR}/audio/libmodplug
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		modplugplay.1
 PLIST_FILES=	bin/modplugplay
 

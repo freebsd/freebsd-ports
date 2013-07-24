@@ -11,7 +11,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Allow unsafe handling of signals in selected blocks
 
 PERL_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN3=		Perl::Unsafe::Signals.3
 

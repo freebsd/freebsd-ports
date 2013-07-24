@@ -12,8 +12,6 @@ COMMENT=	Command-line utility for wiping unallocated space on a filesystem
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		zeroer.1
 PLIST_FILES=	bin/zeroer
 PORTDOCS=	README

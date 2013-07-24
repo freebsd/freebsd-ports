@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/recoverjpeg
 MAN1=		recoverjpeg.1

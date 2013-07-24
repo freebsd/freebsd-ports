@@ -12,7 +12,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BMP to HTML converter
 
 USE_SDL=	yes
-MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 SDL_FLAGS=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include

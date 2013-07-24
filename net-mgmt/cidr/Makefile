@@ -12,8 +12,6 @@ COMMENT=	RFC 1878 subnet calculator / helper
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		cidr.1
 PLIST_FILES=	bin/cidr
 

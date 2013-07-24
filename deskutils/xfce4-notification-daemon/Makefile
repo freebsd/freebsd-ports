@@ -27,7 +27,6 @@ USE_BZIP2=	yes
 USE_GNOME=	librsvg2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil libgui
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \

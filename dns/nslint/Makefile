@@ -12,7 +12,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perform consistency checks on DNS zone files
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
 INSTALL_TARGET=	install

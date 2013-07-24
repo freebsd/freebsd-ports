@@ -17,7 +17,6 @@ RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 USES=		shebangfix gmake
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	vpnc
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	all
 SHEBANG_FILES=	makeman.pl

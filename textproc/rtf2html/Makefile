@@ -9,8 +9,6 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple rtf2html converter
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	bin/rtf2html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

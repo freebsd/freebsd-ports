@@ -23,6 +23,5 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 USE_GNOME=	libwnck gconf2
 USE_GCC=	4.4+
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

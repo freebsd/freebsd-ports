@@ -13,7 +13,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	klange
 GH_TAGNAME=	${PORTVERSION}
 GH_COMMIT=	89c5bc8
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/nyancat

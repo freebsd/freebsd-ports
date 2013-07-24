@@ -13,7 +13,6 @@ COMMENT?=	Emulates the sound hardware of the Nintendo Game Boy(TM)
 
 HAS_CONFIGURE=	yes
 USES=		gettext gmake
-MAKE_JOBS_SAFE=	yes
 USE_CSTD=	gnu89
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}

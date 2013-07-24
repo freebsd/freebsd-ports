@@ -34,7 +34,6 @@ BUILD_DEPENDS=	p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN3=		App::Asciio::setup::import_export::perl.3 \
 		App::Asciio.3 \
