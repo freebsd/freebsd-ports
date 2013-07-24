@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpxloggerd
-# Date created:		8 December 2010
-# Whom:			glebius
-#
+# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gpxloggerd
 PORTVERSION=	0.2
@@ -11,13 +7,15 @@ CATEGORIES=	astro
 MASTER_SITES=	LOCAL/glebius
 
 MAINTAINER=	glebius@FreeBSD.org
-COMMENT=	A daemon that connects to the GPSD daemon and logs GPS traces
+COMMENT=	Daemon that connects to the GPSD daemon and logs GPS traces
 
-LIB_DEPENDS=	gps.20:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS=	gps:${PORTSDIR}/astro/gpsd
 
 USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	sbin/${PORTNAME}
 MAN8=		${PORTNAME}.8
+
+LDFLAGS+=	-lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
