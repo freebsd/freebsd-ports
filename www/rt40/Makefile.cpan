@@ -32,7 +32,7 @@ CORE_DEPS=	p5-CSS-Squish>=0.06:${PORTSDIR}/textproc/p5-CSS-Squish \
 		p5-DateTime>=0.44:${PORTSDIR}/devel/p5-DateTime \
 		p5-Devel-GlobalDestruction>0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-Devel-StackTrace>=1.30:${PORTSDIR}/devel/p5-Devel-StackTrace \
-		p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address \
+		p5-Email-Address>=1.89.5:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Encode>=2.39:${PORTSDIR}/converters/p5-Encode \
 		p5-File-ShareDir>0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
