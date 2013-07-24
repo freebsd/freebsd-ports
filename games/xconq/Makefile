@@ -13,6 +13,8 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	SDL
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GMAKE=	yes
