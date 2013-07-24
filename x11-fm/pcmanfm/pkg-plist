@@ -61,8 +61,6 @@ share/applications/pcmanfm.desktop
 %%DATADIR%%/ui/pref.ui
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
 @dirrmtry share/applications
 @dirrmtry etc/xdg/pcmanfm/default
 @dirrmtry etc/xdg/pcmanfm
