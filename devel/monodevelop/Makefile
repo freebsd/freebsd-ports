@@ -17,12 +17,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 		mautil:${PORTSDIR}/devel/mono-addins
 
 USE_GNOME=	gnomehack gtksharp20 gnomesharp20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 MAN1=		mdtool.1 monodevelop.1
-USES=		gettext
+USES=		gettext gmake
 INSTALLS_ICONS=	yes
+
+BROKEN=		Does not build with recent mono
 
 OPTIONS_DEFINE=	MONOEXT GIT SVN
 OPTIONS_DEFAULT=	MONOEXT GIT SVN
