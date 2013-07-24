@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unionfs
-PORTVERSION=	0.24
+PORTVERSION=	0.26
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/unionfs-fuse/releases/
 PKGNAMEPREFIX=	fusefs-
@@ -12,17 +12,15 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	FUSE based implementation of the well-known unionfs
 
 PLIST_FILES=	bin/unionfs
+MAN8+=		unionfs-fuse.8
 
-USES=		fuse
-USE_BZIP2=	yes
+USES=		fuse cmake
+USE_XZ=		yes
 
-do-build:
-	(cd ${WRKSRC}/src && \
-	 ${CC} ${CFLAGS} -I${LOCALBASE}/include/fuse \
-	 -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=26 -U_POSIX_SYNCHRONIZED_IO \
-	 -o unionfs *.c -L${LOCALBASE}/lib -pthread -lfuse -lm)
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/unionfs ${PREFIX}/bin
+post-patch:
+	@${REINPLACE_CMD} "s,share/man,man,g" ${WRKSRC}/man/CMakeLists.txt
 
 .include <bsd.port.mk>
