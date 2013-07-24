@@ -53,7 +53,7 @@ lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window16.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window48.png
-lib/%%APP_NAME%%/components/binary.manifest
+lib/%%APP_NAME%%/components/components.manifest
 lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
@@ -101,7 +101,6 @@ lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
 lib/%%APP_NAME%%/libssl3.so
-lib/%%APP_NAME%%/libxpcom.so
 lib/%%APP_NAME%%/libxul.so
 lib/%%APP_NAME%%/license.txt
 lib/%%APP_NAME%%/mozilla-xremote-client
@@ -138,19 +137,6 @@ lib/%%APP_NAME%%/updater.ini
 @dirrm lib/%%APP_NAME%%/extensions
 @dirrm lib/%%APP_NAME%%/icons
 @dirrm lib/%%APP_NAME%%/isp
-@dirrm lib/%%APP_NAME%%/modules/services-aitc
-@dirrm lib/%%APP_NAME%%/modules/services-common
-@dirrm lib/%%APP_NAME%%/modules/services-crypto
-@dirrm lib/%%APP_NAME%%/modules/services-sync/stages
-@dirrm lib/%%APP_NAME%%/modules/services-sync/engines
-@dirrm lib/%%APP_NAME%%/modules/services-sync
-@dirrm lib/%%APP_NAME%%/modules/services/datareporting
-@dirrm lib/%%APP_NAME%%/modules/services
-@dirrm lib/%%APP_NAME%%/modules/identity
-@dirrm lib/%%APP_NAME%%/modules/commonjs/promise
-@dirrm lib/%%APP_NAME%%/modules/commonjs
-@dirrm lib/%%APP_NAME%%/modules/accessibility
-@dirrm lib/%%APP_NAME%%/modules
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%

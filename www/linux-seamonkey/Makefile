@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-PORTVERSION=	2.17.1
+PORTVERSION=	2.19
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
