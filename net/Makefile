@@ -1052,6 +1052,7 @@
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
+    SUBDIR += rubygem-rabbiter
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-rightflexiscale
     SUBDIR += rubygem-rightgogrid
