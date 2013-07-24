@@ -1,12 +1,8 @@
-# New ports collection makefile for: glew
-# Date created:		29 Dec 2003
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	glew
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -14,10 +10,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
 
+USES=		gmake
 USE_XORG=	x11 xext xi xmu
-USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
+
+OPTIONS=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
@@ -35,7 +35,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/glew.pc ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/glewmx.pc ${PREFIX}/libdata/pkgconfig
 
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in css html jpg png
 	${INSTALL_DATA} ${WRKSRC}/doc/*.${i} ${DOCSDIR}
