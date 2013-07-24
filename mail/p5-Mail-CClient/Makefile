@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-CClient
-# Date created:				01 July 2000
-# Whom:	      				Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=		Mail-CClient
 PORTVERSION=		1.12
@@ -26,6 +22,9 @@ CONFIGURE_ARGS=		--cclient_dir=${LOCALBASE} \
 			--with-cclient-includes=${LOCALBASE}/include/c-client
 
 MAN3=			Mail::Cclient.3
+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-24
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes FAQ README TODO
