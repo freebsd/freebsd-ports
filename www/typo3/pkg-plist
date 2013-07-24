@@ -3006,6 +3006,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/BaseTestCase.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/FolderTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/ResourceStorageTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Utility/File/ExtendedFileUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/FunctionalTestCase.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Integrity/IntegrityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Legacy/typo3/contrib/class.removexssTest.php
@@ -3112,7 +3113,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ClassNamingUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ClientUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ExtensionMangementUtilityTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/File/ExtendedFileUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/MathUtilityTestClassWithStringRepresentationFixture.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/RuntimeException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/clear.gif
@@ -3853,6 +3853,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/JavaScript/update.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Resources/Public/JavaScript/upload.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests/Unit/Controller/UpdateFromTerControllerTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests/Unit/Controller/UploadExtensionFileControllerTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests/Unit/Domain/Model/DownloadQueueTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests/Unit/Domain/Model/ExtensionTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extensionmanager/Tests/Unit/Domain/Repository/ConfigurationItemRepositoryTest.php
@@ -5140,6 +5141,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/InitUpdateWizard.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/InstallerProcessInterface.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/ReferenceIntegrityUpdateWizard.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/RteFileLinksUpdateWizard.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/RteMagicImagesUpdateWizard.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/TceformsUpdateWizard.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Classes/Updates/TtContentUploadsUpdateWizard.php
@@ -5208,6 +5210,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Public/Stylesheets/install_login.css
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Public/Stylesheets/reset.css
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Tests/Unit/InstallToolTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Tests/Unit/SchemaMigratorTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/ext_icon.gif
@@ -5674,6 +5677,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Classes/RecordList/DatabaseRecordList.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Classes/RecordList/RecordListHookInterface.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Migrations/Code/ClassAliasMap.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Tests/Unit/Browser/ElementBrowserTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/ext_icon.gif
@@ -9513,6 +9517,9 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recycler/Classes
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recycler
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/mod1
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Tests/Unit/Browser
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Tests/Unit
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Migrations/Code
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Migrations
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/recordlist/Classes/RecordList
@@ -10134,7 +10141,6 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cshmanual/Classes
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cshmanual
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/File
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/TypoScript/Parser
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/TypoScript/Fixtures
@@ -10182,6 +10188,8 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Legacy/typo3
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Legacy
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Integrity
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Utility/File
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Utility
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Category/Collection
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Category
