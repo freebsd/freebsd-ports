@@ -13,7 +13,6 @@ COMMENT=	Utility to test and create .sfv files
 LICENSE=	GPLv2
 
 USES=		gmake
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
 

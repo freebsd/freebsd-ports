@@ -19,7 +19,6 @@ LIB_DEPENDS=	adplug:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
-MAKE_JOBS_SAFE=	yes
 
 DBFILE=		adplug.db
 DBVERSION=	2006-07-07

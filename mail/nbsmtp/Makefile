@@ -13,7 +13,6 @@ COMMENT=	Simple program for outgoing SMTP delivery
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl --enable-ipv6
 

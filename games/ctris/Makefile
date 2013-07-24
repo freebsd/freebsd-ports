@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 MANCOMPRESSED=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		ctris.6
 PLIST_FILES=	bin/ctris

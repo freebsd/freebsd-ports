@@ -12,7 +12,6 @@ COMMENT=	Non-interactive FTP client
 
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	ChangeLog README
 MAN1=		weex.1

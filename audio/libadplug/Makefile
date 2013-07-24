@@ -20,8 +20,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 
-MAKE_JOBS_SAFE=	yes
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 INFO=		libadplug

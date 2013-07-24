@@ -9,8 +9,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Flexible SFV checksum utility
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/bsdsfv
 PORTDOCS=	MANUAL

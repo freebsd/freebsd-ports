@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 USES=		pkgconfig
 USE_XFCE=	panel libutil libgui
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`

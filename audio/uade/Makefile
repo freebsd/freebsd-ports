@@ -16,7 +16,6 @@ LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 USES=		gmake
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/uade2
 DATADIR=	${PREFIX}/share/uade2

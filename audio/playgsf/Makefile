@@ -16,7 +16,6 @@ LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 USES=		gmake
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -11,7 +11,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bridge between a TCP/IP network port and a character-oriented device
 
 USE_DOS2UNIX=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/remserial
 PORTDOCS=	README.txt

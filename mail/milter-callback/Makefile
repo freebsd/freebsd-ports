@@ -20,8 +20,6 @@ USE_GCC=	any
 SUB_FILES=	pkg-message
 MAN8=		milter-callback.8
 
-MAKE_JOBS_SAFE=	yes
-
 SRC_FILES=	cache.c commonprocs.c cpit.c dealwithmxes.c detectlamespf.c \
 		makedecision.c mcspf.c milter-callback.c pgupdate.c \
 		processdirectpart.c processmxpart.c pushhistory.c sigusr1.c

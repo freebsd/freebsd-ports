@@ -11,8 +11,6 @@ COMMENT=	Fdupes is a program for identifying or deleting duplicate files
 
 LICENSE=	MIT
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		fdupes.1
 PLIST_FILES=	bin/fdupes
 

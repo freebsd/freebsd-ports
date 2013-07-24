@@ -18,7 +18,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 USES=		gmake
 USE_EFL=	imlib2
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
 

@@ -22,8 +22,6 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		amigadepacker.1
 PLIST_FILES=	bin/amigadepacker
 
-MAKE_JOBS_SAFE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' ${WRKSRC}/Makefile.in
 

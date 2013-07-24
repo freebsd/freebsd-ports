@@ -13,7 +13,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
 
 USES=		gmake
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		httping.1
 PLIST_FILES=	bin/httping

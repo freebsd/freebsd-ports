@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_RC_SUBR=	socat
 USE_OPENSSL=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTSCOUT=	skipv:2.0.0-b2
 

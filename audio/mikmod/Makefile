@@ -17,7 +17,6 @@ LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
 
 USES=		gmake
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		mikmod.1
 PLIST_FILES=	bin/mikmod

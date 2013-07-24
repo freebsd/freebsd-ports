@@ -20,8 +20,6 @@ GH_ACCOUNT=	gerard
 GH_COMMIT=	33f57f6
 GH_TAGNAME=	v${PORTVERSION}
 
-MAKE_JOBS_SAFE=	yes
-
 # explicitly empty to fix a cross compiling related issue (PR: 165480)
 MAKE_ENV+=	TARGET_ARCH=
 

@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
-MAKE_JOBS_SAFE=	yes
-
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAN1=		iec16022.1

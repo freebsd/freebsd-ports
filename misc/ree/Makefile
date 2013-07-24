@@ -13,8 +13,6 @@ COMMENT=	Tool to dump your ROM extensions
 PLIST_FILES=	bin/rom-ree bin/fontdump
 PORTDOCS=	readme
 
-MAKE_JOBS_SAFE=	yes
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	DOCS

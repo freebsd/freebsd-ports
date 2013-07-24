@@ -11,8 +11,6 @@ COMMENT=	Compare directories and select files to copy
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=	yes
-
 LDFLAGS+=	-lncurses -lform
 
 PLIST_FILES=	bin/cdircmp

@@ -16,8 +16,6 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-MAKE_JOBS_SAFE=	yes
-
 PLIST_FILES=	lib/xmms/Input/openspc.la \
 		lib/xmms/Input/openspc.so
 

@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line IDEA encryption and decryption utility
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MANL=		idea.l

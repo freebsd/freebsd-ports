@@ -13,7 +13,6 @@ COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 
 MAN1=		cksfv.1

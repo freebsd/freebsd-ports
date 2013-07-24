@@ -14,8 +14,6 @@ COMMENT=	GNU watch command
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=	yes
-
 LDFLAGS+=	-lncurses
 
 MAN1=		gnu-watch.1

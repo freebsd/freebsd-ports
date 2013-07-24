@@ -14,7 +14,6 @@ COMMENT=	HTTP tunnelling utility for SSH
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 

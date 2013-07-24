@@ -9,8 +9,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${DIST_REL}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
-MAKE_JOBS_SAFE=	yes
-
 DIST_REL=	0.25
 BETA_REL=	beta2
 

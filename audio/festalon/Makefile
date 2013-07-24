@@ -20,8 +20,6 @@ USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	i386 amd64

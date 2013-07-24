@@ -18,7 +18,6 @@ PLIST_FILES=	bin/ddate
 
 GNU_CONFIGURE=	yes
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-libuuid --disable-libblkid --disable-libmount \
 		--disable-mount --disable-losetup --disable-fsck \

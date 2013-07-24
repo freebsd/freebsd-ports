@@ -13,8 +13,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
-MAKE_JOBS_SAFE=	yes
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod ${PTHREAD_LIBS} -lncurses -lpanel
 DEFINES=	-D_REENTRANT

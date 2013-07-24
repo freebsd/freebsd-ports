@@ -13,8 +13,6 @@ COMMENT=	Download and assemble multipart binaries from newsgroups
 RUN_DEPENDS=	uudeview:${PORTSDIR}/converters/uudeview \
 		${TCLSH}:${PORTSDIR}/lang/tcl84
 
-MAKE_JOBS_SAFE=	yes
-
 MAN1=		brag.1
 PLIST_FILES=	bin/brag
 PORTDOCS=	CHANGES README

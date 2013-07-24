@@ -11,8 +11,6 @@ COMMENT=	Command-line Atari(TM) .sap player
 
 USE_DOS2UNIX=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
 
 .if defined(WITH_OPTIMIZED_CFLAGS)

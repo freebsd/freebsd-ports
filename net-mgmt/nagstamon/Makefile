@@ -22,8 +22,6 @@ USE_GNOME=	pygtk2 librsvg2
 
 MAN1=		nagstamon.1
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/Nagstamon
 
 post-patch:

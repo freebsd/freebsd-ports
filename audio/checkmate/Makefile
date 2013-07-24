@@ -13,7 +13,6 @@ COMMENT=	Command-line utility for checking mp3 files for errors
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		mpck.1
 MLINKS=		mpck.1 checkmate.1
