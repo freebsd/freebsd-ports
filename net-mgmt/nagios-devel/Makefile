@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.downtools.com.au/~jarrod/nagios/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	jarrod@downtools.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

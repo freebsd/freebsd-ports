@@ -6,7 +6,7 @@ PORTVERSION=	3.5.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jarrod@downtools.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
 LICENSE=	GPLv2

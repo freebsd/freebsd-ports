@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
 
-MAINTAINER=	jarrod@downtools.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Nagios
 
 USES=		charsetfix
