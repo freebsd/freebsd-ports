@@ -349,6 +349,7 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.la
 %%NLS%%@dirrmtry share/locale/as
 @dirrm %%ETCDIR%%/nwfilter
 @dirrm %%ETCDIR%%
+@dirrmtry var/run/libvirt/lockd
 @dirrmtry var/run/libvirt
 @dirrmtry var/run
 @dirrmtry var/log/libvirt/uml
@@ -356,8 +357,11 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.la
 @dirrmtry var/log/libvirt/lxc
 @dirrmtry var/log/libvirt
 @dirrmtry var/log
+@dirrmtry var/lib/libvirt/lockd/files
+@dirrmtry var/lib/libvirt/lockd
 @dirrmtry var/lib/libvirt/images
 @dirrmtry var/lib/libvirt/boot
+@dirrmtry var/lib/libvirt/filesystems
 @dirrmtry var/lib/libvirt
 @dirrmtry var/lib
 @dirrmtry var/cache/libvirt
