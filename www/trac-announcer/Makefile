@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-autocomplete
-# Date created:                      December 23, 2009
-# Whom:                              Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	announcer
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ COMMENT=	A plugin for making user-customizable notifications
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
+BROKEN=		Try to access network during install phase
 USE_PYTHON=	2.5+
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
