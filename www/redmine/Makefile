@@ -18,8 +18,7 @@ RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
 		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
-		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap
+		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -27,7 +26,7 @@ USE_RAKE=	yes
 NO_BUILD=	yes
 SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
 
-OPTIONS_DEFINE=	MYSQL POSTGRESQL RMAGIC WWWSERVER
+OPTIONS_DEFINE=	MYSQL POSTGRESQL RMAGIC WWWSERVER LDAP
 OPTIONS_DEFAULT=MYSQL            RMAGIC WWWSERVER THIN
 OPTIONS_SINGLE=	WWWSERVER
 OPTIONS_SINGLE_WWWSERVER=	THIN PASSENGER
@@ -63,6 +62,10 @@ SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 .if ${PORT_OPTIONS:MPASSENGER}
 RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 .endif
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
+RUN_DEPENDS+=	rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap
 .endif
 
 post-extract:
