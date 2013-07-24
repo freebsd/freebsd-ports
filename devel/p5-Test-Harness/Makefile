@@ -70,8 +70,8 @@ MAN1=		p5prove.1
 
 pre-patch:
 	@${MV} ${WRKSRC}/bin/prove ${WRKSRC}/bin/p5prove
-	@${PERL} -pi -e "s,^bin/prove$$,bin/p5prove," ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e "s,'bin/prove','bin/p5prove'," ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} "s,^bin/prove$$,bin/p5prove," ${WRKSRC}/MANIFEST
+	@${REINPLACE_CMD} "s,'bin/prove','bin/p5prove'," ${WRKSRC}/Makefile.PL
 
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
