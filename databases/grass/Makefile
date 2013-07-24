@@ -17,9 +17,11 @@ MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	grass64/source
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open source Geographical Information System (GIS)
+COMMENT=	Open source Geographical Information System (GIS)
 
 LICENSE=	GPLv2
+
+BROKEN=		Does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
