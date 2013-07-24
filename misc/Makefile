@@ -477,7 +477,6 @@
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
-    SUBDIR += rabbit
     SUBDIR += ree
     SUBDIR += renamedlgplugins
     SUBDIR += rfc
@@ -489,6 +488,7 @@
     SUBDIR += ruby-vpim
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-ohcount
+    SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += saaghar
     SUBDIR += salias

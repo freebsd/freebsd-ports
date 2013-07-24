@@ -1,0 +1,15 @@
+Rabbiter is a tool that collects tweets related to the talk and
+sends them to Rabbit as comments.
+
+In public conference such as RubyKaigi, audiences tweet comments
+about the listening talk to Twitter. To show the comments to your
+slide showed by Rabbit, you can use Rabbiter.
+
+If you have room to breathe, you can reply to the comments to reflect
+audiences' opinions. An audience can listen your talk with some
+different points of view because an audience can know other's
+comments. Note that you have a risk that audiences are interested
+in audiences' comments rather than your talk. You should ready your
+talk to make very interesting talk rather than audiences' comments.
+
+WWW: http://rabbit-shocker.org/en/rabbiter/

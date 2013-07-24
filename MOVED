@@ -4438,3 +4438,4 @@ devel/kdevelop-custom-buildsystem||2013-07-17|Has expired: part of devel/kdevelo
 editors/code-browser||2013-07-18|Removed
 lang/copper||2013-07-18|Removed
 x11-themes/linux-gtk-bluecurve-theme||2013-07-18|Removed, requires Linux FC3
+misc/rabbit|misc/rubygem-rabbit|2013-07-24|Moved to Rubygems
