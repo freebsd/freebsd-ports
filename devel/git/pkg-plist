@@ -1002,6 +1002,9 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.2.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.4.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
