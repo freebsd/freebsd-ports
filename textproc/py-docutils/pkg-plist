@@ -48,6 +48,9 @@ bin/rstpep2html.py
 %%PYTHON_SITELIBDIR%%/docutils/languages/cs.py
 %%PYTHON_SITELIBDIR%%/docutils/languages/cs.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/cs.pyo
+%%PYTHON_SITELIBDIR%%/docutils/languages/da.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/da.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/da.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/de.py
 %%PYTHON_SITELIBDIR%%/docutils/languages/de.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/de.pyo
@@ -190,6 +193,9 @@ bin/rstpep2html.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/cs.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/cs.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/cs.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/da.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/da.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/da.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/de.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/de.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/de.pyo
