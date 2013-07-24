@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 
 USES=		iconv
 USE_LDCONFIG=	yes
-USE_TCL=	84+
+USE_TCL=	yes
 
 MAN1=		idzebra-config-2.0.1 zebraidx-2.0.1
 MAN8=		zebrasrv-2.0.8
