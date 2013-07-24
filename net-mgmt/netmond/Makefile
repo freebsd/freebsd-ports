@@ -21,6 +21,8 @@ COMMENT=	Netmond - IP network monitoring daemon
 USERS=	netmon
 GROUPS=	${USERS}
 
+BROKEN=		Does not patch
+
 #MK_IFGRAPH=	yes
 PATCHDIR=	${WRKDIR}/patches
 
