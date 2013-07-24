@@ -18,12 +18,13 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	binaries libraries doc-old
 
-USE_TCL=	84+
+USE_TCL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--exec-prefix=${PREFIX}
 
 # Too bad, n is no longer an acceptable section for bsd.man.mk
-MANN= fifo.n fifo2.n memchan.n memchanapi.n null.n random.n zero.n
+MANN=		fifo.n fifo2.n memchan.n memchanapi.n null.n random.n zero.n
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 regression-test test:

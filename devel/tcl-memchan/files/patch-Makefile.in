@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-07-24 16:30:52.000000000 +0200
++++ Makefile.in	2013-07-24 16:30:35.000000000 +0200
+@@ -237,7 +237,7 @@
+ 	@for i in $(DOC_NROFF); do \
+ 	    echo "Installing $$i"; \
+ 	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
+-	    $(INSTALL_DATA) $$i $(DESTDIR)$(mandir)/mann ; \
++	    $(INSTALL_DATA) doc/$$i $(DESTDIR)$(mandir)/mann ; \
+ 	done
+ 
+ test: binaries libraries
