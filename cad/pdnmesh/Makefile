@@ -25,6 +25,8 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 OPTIONS_DEFINE=	ATLAS DOCS EXAMPLES
 ATLAS_DESC=	Enable ATLAS support
 
+BROKEN=		Does not build
+
 USES=		pkgconfig gettext iconv
 USE_FORTRAN=	yes
 USE_GL=		glu
