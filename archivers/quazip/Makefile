@@ -12,6 +12,8 @@ COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
 
 LICENSE=	LGPL21
 
+BROKEN=		Does not build
+
 QMAKE_ARGS=	PREFIX=${PREFIX} ${QMAKE_PRO}
 QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
 
