@@ -9,6 +9,7 @@ share/applications/converseen.desktop
 %%DATADIR%%/converseen_pt_BR.qm
 %%DATADIR%%/converseen_ru_RU.qm
 %%DATADIR%%/converseen_tr_TR.qm
+%%DATADIR%%/converseen_pl_PL.qm
 share/kde4/services/ServiceMenus/converseen_import.desktop
 share/pixmaps/converseen.png
 @dirrmtry share/kde4/services/ServiceMenus
