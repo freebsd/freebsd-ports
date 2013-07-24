@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		6.2.0
-PORTREVISION=		2
+PORTVERSION=		6.2.1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -187,11 +186,11 @@ do-install:
 .for f in ${PROG_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmapserver-6.2.0.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmapserver-${PORTVERSION}.so ${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MMAPSERV}
 	${MKDIR} ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
+	${INSTALL_SCRIPT} ${WRKSRC}/.libs/mapserv ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
