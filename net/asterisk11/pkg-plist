@@ -660,7 +660,6 @@ lib/asterisk/modules/res_fax.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
 lib/asterisk/modules/res_mutestream.so
-lib/asterisk/modules/res_rtp_asterisk.so
 lib/asterisk/modules/res_rtp_multicast.so
 lib/asterisk/modules/res_security_log.so
 lib/asterisk/modules/res_stun_monitor.so
@@ -698,10 +697,10 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
-share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.23
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.23
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.23
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.23
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.24
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.24
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.24
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.24
 share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
 share/asterisk/sounds/en/conf-adminmenu-18.gsm
