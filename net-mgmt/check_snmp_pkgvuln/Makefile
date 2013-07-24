@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/nagios/
 PKGNAMEPREFIX=	nagios-
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	jarrod@downtools.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security vulnerability plugin for Nagios
 
 RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp \
