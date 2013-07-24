@@ -12,6 +12,8 @@ COMMENT=		A utility to remap USB keyboards under X11
 LIB_DEPENDS=		hid.0:${PORTSDIR}/devel/libhid \
 			Xtst.6:${PORTSDIR}/x11/libXtst
 
+BROKEN=	Does not patch
+
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=	GUI
 GUI_DESC=	Enable GUI bits (Imlib dependency)
