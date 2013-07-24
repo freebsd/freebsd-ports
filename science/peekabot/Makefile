@@ -13,14 +13,15 @@ COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 LICENSE=	BSL GPLv3
 LICENSE_COMB=	multi
 
+BROKEN=		Does not build
+
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
 
 USE_BZIP2=	yes
-USES=	pathfix
+USES=	pathfix gmake
 USE_GCC=	4.6+
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
