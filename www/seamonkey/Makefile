@@ -3,6 +3,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.19
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -47,7 +48,7 @@ MOZ_PKGCONFIG_FILES=
 NOT_FOR_ARCHS=	ia64
 
 OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS WEBRTC
-OPTIONS_DEFAULT=CHATZILLA COMPOSER LDAP LIGHTNING MAILNEWS WEBRTC
+OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS WEBRTC
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
@@ -83,7 +84,6 @@ MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}
-BROKEN=		Does not build see https://bugzilla.mozilla.org/show_bug.cgi?id=886095
 MASTER_SITES+=	http://www.enigmail.net/download/source/:enigmail
 DISTFILES+=	${EM_DISTFILE}:enigmail
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
@@ -95,7 +95,8 @@ EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/components/enigmail.js \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile \
+		${FILESDIR}/extra-bug886095
 .endif
 .endif
 
