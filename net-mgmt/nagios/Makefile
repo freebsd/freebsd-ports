@@ -6,7 +6,7 @@ PORTVERSION=	3.5.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
 LICENSE=	GPLv2
