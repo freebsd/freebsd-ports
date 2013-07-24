@@ -3,10 +3,10 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
-DISTNAME=	astropulse-svn-1280
+DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Astropulse for BOINC
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
-		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
+		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-v7:patch
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
@@ -58,7 +58,7 @@ PLIST_SUB+=	X11="@comment "
 CFLAGS+=	-mtune=native
 .endif
 
-SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-enhanced && ${MAKE} -V WRKSRC
+SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \
 		BOINC_DIR="${NONEXISTENT}" \
 		SETI_BOINC_DIR="${SETI_WORK}"
