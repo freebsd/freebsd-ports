@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-DISTVERSION=	4.6.2
+DISTVERSION=	4.7.0
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/archive/
 DISTNAME=	framework-${DISTVERSION}
