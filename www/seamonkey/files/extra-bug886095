@@ -1,0 +1,18 @@
+https://bugzilla.mozilla.org/show_bug.cgi?id=886095
+--- mailnews/extensions/enigmail/genxpi.orig	Wed Jul  3 13:21:33 2013
++++ mailnews/extensions/enigmail/genxpi	Thu Jul 11 09:33:44 2013
+@@ -78,6 +78,7 @@ fi
+ subprocessDll=${libPrefix}subprocess${dllSuffix}
+ spDllFile=platform/${platform}/lib/${libPrefix}subprocess-${xpcomAbi}${dllSuffix}
+ 
++cp ${targetDir}/chrome.manifest ${targetDir}/chrome.manifest.save
+ # Prepare chrome.manifest
+ cat  ${srcDir}/package/chrome.manifest | \
+ sed  's/##ENIGMIMEDLL-PLACEHOLDER##/binary-component platform\/'${platform}'\/components\/'`basename ${enigDllFile}`' ABI='${platform}'/' \
+@@ -151,4 +152,5 @@ zip ${xpiFile} \
+     chrome.manifest \
+     install.rdf
+ 
+-rm install.rdf chrome.manifest
++rm install.rdf
++mv chrome.manifest.save chrome.manifest
