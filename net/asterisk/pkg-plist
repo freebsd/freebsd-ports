@@ -654,9 +654,9 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.23
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.23
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.23
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.24
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.24
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.24
 share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-18.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
@@ -1158,7 +1158,7 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.23
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.24
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
