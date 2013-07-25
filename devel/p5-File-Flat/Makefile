@@ -1,9 +1,5 @@
-# New ports collection makefile for:	File-Flat
-# Date created:	   11 December 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Flat
 PORTVERSION=	1.04
@@ -12,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implements a flat filesystem
 
 RUN_DEPENDS=	p5-Test-ClassAPI>=0:${PORTSDIR}/devel/p5-Test-ClassAPI \
@@ -31,8 +27,5 @@ BUILD_DEPENDS=	p5-Test-ClassAPI>=0:${PORTSDIR}/devel/p5-Test-ClassAPI \
 PERL_CONFIGURE=	yes
 
 MAN3=		File::Flat.3
-
-post-patch:
-	@${PERL} -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

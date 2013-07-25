@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class::MakeMethods
-# Date created:				24 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-MakeMethods
 PORTVERSION=	1.010
@@ -79,6 +75,6 @@ MAN3=		Class::MakeMethods.3 \
 
 post-extract:
 		@${RM} ${WRKSRC}/benchmark.pl
-		@${PERL} -pi -e '$$_="" if m|benchmark.pl|' ${WRKSRC}/MANIFEST
+		@${REINPLACE_CMD} -i '' '/benchmark.pl/d' ${WRKSRC}/MANIFEST
 
 .include <bsd.port.mk>

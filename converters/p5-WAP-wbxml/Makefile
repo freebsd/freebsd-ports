@@ -23,7 +23,7 @@ MAN3=		WAP::wbxml.3 WAP::wbxml::WbRules.3
 
 post-patch:
 .for file in syncml.wbrules.xml wap.wbrules.xml wv.wbrules.xml
-		@${PERL} -pi -e 's#\r$$##g' ${WRKSRC}/lib/WAP/wbxml/${file}
+		@${REINPLACE_CMD} -i '' -e 's/^M$$//' ${WRKSRC}/lib/WAP/wbxml/${file}
 .endfor
 
 .include <bsd.port.mk>
