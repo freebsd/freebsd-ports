@@ -82,7 +82,8 @@ post-extract: post-extract-all
 USE_GNOME=	gtk12
 .endif
 
-.include "files/Makefile.drivers_post"
+MASTERDIR?=	${.CURDIR}
+.include "${MASTERDIR}/files/Makefile.drivers_post"
 
 .for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
 	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
