@@ -16,7 +16,6 @@ CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
 USES=	pathfix
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_MULTI=	plugin
 OPTIONS_MULTI_plugin=	MAD VORBIS
