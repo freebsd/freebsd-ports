@@ -24,11 +24,11 @@ post-install: desktop-file-post-install
 
 desktop-file-post-install:
 # run for port post-install
-	@-update-desktop-database
+	@-update-desktop-database -q
 # plist entries for packages.
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || /usr/bin/true" \
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database -q > /dev/null || /usr/bin/true" \
 		>> ${TMPPLIST}; \
-	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || /usr/bin/true" \
+	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database -q > /dev/null || /usr/bin/true" \
 		>> ${TMPPLIST}
 
 .endif
