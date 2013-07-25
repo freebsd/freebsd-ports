@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		shebangfix
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl utils/*/*.pl
-SUB_FILES=	${PORTNAME}-httpd.conf.in pkg-message.in
+SUB_FILES=	${PORTNAME}-httpd.conf pkg-message
 
 do-install:
 	@cd ${WRKDIR} ; \
