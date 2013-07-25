@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpeg2codec
-# Date created:		November 25, 1996
-# Whom:			"Philippe Charnier" <charnier@lirmm.fr>
-#
+# Created by: Philippe Charnier <charnier@lirmm.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	mpeg2codec
 PORTVERSION=	1.2
@@ -16,7 +12,7 @@ MASTER_SITES=	http://fossies.org/unix/misc/old/ \
 DISTNAME=	mpeg2vidcodec_v12
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	An MPEG-2 Encoder and Decoder
+COMMENT=	MPEG-2 Encoder and Decoder
 
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=	X11
@@ -43,7 +39,7 @@ PLIST_DIRS=	%%DATADIR%%
 USE_XORG=	xext
 MAKE_ARGS+=	USE_DISP="-DDISPLAY" \
 		USE_SHMEM="-DSH_MEM" \
-		LIBS="$$(pkg-config --libs xext)" \
+		LIBS="$$(pkg-config --libs xext) -lX11" \
 		INCLUDEDIR="$$(pkg-config --cflags xext)"
 .endif
 
