@@ -24,6 +24,7 @@
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.svg
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.ttf
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.woff
+%%WWWDIR%%/admin/assets/js/uploadcheck.js
 %%WWWDIR%%/admin/assets/js/user.js
 %%WWWDIR%%/admin/assets/less/style.less
 %%WWWDIR%%/admin/assets/less/style.rtl.less
@@ -1209,6 +1210,7 @@
 %%WWWDIR%%/lang/language_fa.php
 %%WWWDIR%%/lang/language_fi.php
 %%WWWDIR%%/lang/language_fr.php
+%%WWWDIR%%/lang/language_fr-ca.php
 %%WWWDIR%%/lang/language_he.php
 %%WWWDIR%%/lang/language_hi.php
 %%WWWDIR%%/lang/language_hu.php
