@@ -98,7 +98,6 @@ share/applications/libfm-pref-apps.desktop
 %%NLS%%share/locale/el/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libfm.mo
-%%NLS%%share/locale/es_VE/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/et/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/libfm.mo
@@ -154,8 +153,6 @@ share/mime/packages/libfm.xml
 %%NLS%%@dirrmtry share/locale/tt_RU
 %%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lg
-%%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_VE
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
