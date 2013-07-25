@@ -53,12 +53,10 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/sr/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/te/LC_MESSAGES/parole.mo
-%%NLS%%share/locale/th/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/parole.mo
-%%NLS%%share/locale/zh_HK/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/parole.mo
 %%DATADIR%%/gtk-2.0/parole.gtkrc
 %%DATADIR%%/parole-plugins-0/notify.desktop
