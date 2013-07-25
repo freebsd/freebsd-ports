@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuse-zip
-PORTVERSION=	0.2.13
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -11,6 +11,7 @@ COMMENT=	FUSE filesystem to mount ZIP archives with write support
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip
+BUILD_DEPENDS=	libzip>=0.11.1:${PORTSDIR}/archivers/libzip
 
 USE_GMAKE=	yes
 USES=		fuse pkgconfig
