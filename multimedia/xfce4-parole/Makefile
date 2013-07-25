@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parole
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -19,7 +19,6 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-notify-plugin \
 		--enable-tray-plugin \
 		--enable-taglib \
@@ -30,7 +29,7 @@ USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
-USES=		desktop-file-utils pathfix pkgconfig
+USES=		desktop-file-utils pathfix pkgconfig gmake
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SINGLE=	GSTREAMER
