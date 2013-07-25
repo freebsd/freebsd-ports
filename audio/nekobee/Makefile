@@ -22,7 +22,6 @@ GH_ACCOUNT=	gordonjcp
 GH_COMMIT=	3f4737f
 
 USE_GNOME=	gtk20
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
 
@@ -32,6 +31,7 @@ MAKE_JOBS_ARGS=	-j${MAKE_JOBS_NUMBER}
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
+		LINKFLAGS="-lm" \
 		CPPFLAGS="${CPPFLAGS}" ./waf configure --prefix=${PREFIX})
 
 do-build:
