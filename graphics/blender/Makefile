@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.67b
-PORTREVISION=	1
+PORTVERSION=	2.68
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -29,7 +28,7 @@ CMAKE_ARGS+=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 SUB_FILES=	blender blenderplayer
 MAN1=		blender.1
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.67
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.68
 
 .include "${.CURDIR}/Makefile.options"
 
@@ -95,11 +94,7 @@ CMAKE_ARGS+=	-DWITH_COMPOSITOR:BOOL=ON
 CMAKE_ARGS+=	-DWITH_COMPOSITOR:BOOL=OFF
 .endif
 
-# openimageio to enable cycles requires 8.0 or higher
 .if ${PORT_OPTIONS:MCYCLES}
-.if ${OSVERSION} < 800000
-IGNORE=	cycles render engine only works in FreeBSD 8 or later
-.endif
 CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=ON
 .if !${PORT_OPTIONS:MOPENEXR} || !${PORT_OPTIONS:MTIFF}
 BROKEN=		CYCLES requires OPENEXR and TIFF
@@ -362,8 +357,10 @@ post-install:
 	@cd ${OUTDIR} && ${COPYTREE_SHARE} datafiles/locale ${DATADIR}
 	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type f -name languages) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
 	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type f -name ${PORTNAME}.mo) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
+	@cd ${OUTDIR} && ${COPYTREE_SHARE} datafiles/fonts ${DATADIR}
+	@(cd ${OUTDIR}; ${FIND} datafiles/fonts -type f) | ${SORT} | ${SED} "s|^|${DATADIR_REL}/|" >> ${TMPPLIST}
+	@(cd ${OUTDIR}; ${FIND} datafiles/fonts -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
 	@(cd ${OUTDIR}; ${FIND} datafiles/locale -type d) | ${SORT} -r | ${SED} "s|^|@dirrm ${DATADIR_REL}/|" >> ${TMPPLIST}
-
 .endif
 	@${ECHO} @dirrm ${DATADIR_REL}/datafiles >> ${TMPPLIST}
 	@${ECHO} @dirrm ${DATADIR_REL} >> ${TMPPLIST}
