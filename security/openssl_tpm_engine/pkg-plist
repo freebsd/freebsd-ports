@@ -1,9 +1,8 @@
+@comment $FreeBSD$
 bin/create_tpm_key
 lib/openssl/engines/libtpm.a
 lib/openssl/engines/libtpm.la
 lib/openssl/engines/libtpm.so
 lib/openssl/engines/libtpm.so.0
-%%EXAMPLESDIR%%/openssl.cnf.sample
 @dirrm lib/openssl/engines
 @dirrm lib/openssl
-@dirrm %%EXAMPLESDIR%%
