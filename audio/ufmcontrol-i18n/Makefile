@@ -1,11 +1,8 @@
-# New ports collection makefile for:	ufmcontrol
-# Date created:				7 December 2002
-# Whom:					nivit@users.sourceforge.net
-#
+# Created by: Nicola Vitale <nivit@users.sourceforge.net>
 # $FreeBSD$
 
 PORTNAME=		ufmcontrol-i18n
-PORTVERSION=		0.2.3
+PORTVERSION=		0.3.1
 CATEGORIES=		audio
 MASTER_SITES=		SF/ufmcontrol/${PORTNAME}/${PORTVERSION}
 
