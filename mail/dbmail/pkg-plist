@@ -1,19 +1,15 @@
 @unexec if cmp -s %D/etc/dbmail.conf-dist %D/etc/dbmail.conf; then rm -f %D/etc/dbmail.conf; fi
 etc/dbmail.conf-dist
 @exec if [ ! -f %D/etc/dbmail.conf ] ; then cp -p %D/%F %B/dbmail.conf; fi
-%%LDAP%%lib/dbmail/libauth_ldap.a
 %%LDAP%%lib/dbmail/libauth_ldap.la
 %%LDAP%%lib/dbmail/libauth_ldap.so
 %%LDAP%%lib/dbmail/libauth_ldap.so.0
-lib/dbmail/libauth_sql.a
 lib/dbmail/libauth_sql.la
 lib/dbmail/libauth_sql.so
 lib/dbmail/libauth_sql.so.0
-lib/dbmail/libdbmail.a
 lib/dbmail/libdbmail.la
 lib/dbmail/libdbmail.so
 lib/dbmail/libdbmail.so.0
-%%SIEVE%%lib/dbmail/libsort_sieve.a
 %%SIEVE%%lib/dbmail/libsort_sieve.la
 %%SIEVE%%lib/dbmail/libsort_sieve.so
 %%SIEVE%%lib/dbmail/libsort_sieve.so.0
@@ -35,6 +31,7 @@ sbin/dbmail-util
 %%DATADIR%%/mysql/2_3_4-2_3_5.mysql
 %%DATADIR%%/mysql/2_3_5-2_3_6.mysql
 %%DATADIR%%/mysql/2_3_6-3_0_0.mysql
+%%DATADIR%%/mysql/3_0_2-3_1_0.mysql
 %%DATADIR%%/mysql/create_tables.mysql
 %%DATADIR%%/mysql/fix_foreign_keys.mysql
 %%DATADIR%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
@@ -49,6 +46,7 @@ sbin/dbmail-util
 %%DATADIR%%/postgresql/2_3_4-2_3_5.pgsql
 %%DATADIR%%/postgresql/2_3_5-2_3_6.pgsql
 %%DATADIR%%/postgresql/2_3_6-3_0_0.pgsql
+%%DATADIR%%/postgresql/3_0_2-3_1_0.psql
 %%DATADIR%%/postgresql/create_tables.pgsql
 %%DATADIR%%/postgresql/migrate_from_1.x_to_2.0.pgsql
 %%DATADIR%%/postgresql/migrate_from_2.0_to_2.2.pgsql
@@ -58,6 +56,7 @@ sbin/dbmail-util
 %%DATADIR%%/sqlite/2_3_4-2_3_5.sqlite
 %%DATADIR%%/sqlite/2_3_5-2_3_6.sqlite
 %%DATADIR%%/sqlite/2_3_6-3_0_0.sqlite
+%%DATADIR%%/sqlite/3_0_2-3_1_0.sqlite
 %%DATADIR%%/sqlite/create_tables.sqlite
 %%DATADIR%%/sqlite/trigger.tmpl.sql
 @dirrm %%DATADIR%%/sqlite

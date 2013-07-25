@@ -1,6 +1,22 @@
---- src/dbmail.h.in.orig	2012-05-31 13:06:26.000000000 +0100
-+++ src/dbmail.h.in	2012-05-31 13:07:01.000000000 +0100
-@@ -150,6 +150,10 @@
+--- src/dbmail.h.in.orig
++++ src/dbmail.h.in
+@@ -83,8 +83,14 @@
+ #include <mhash.h>
+ #include <sys/queue.h>
+ #include <event2/event.h>
++#include <event2/event_compat.h>
+ #include <event2/thread.h>
+-#include <evhttp.h>
++#include <event2/http.h>
++#include <event2/http_struct.h>
++#include <event2/http_compat.h>
++#include <event2/buffer.h>
++#include <event2/buffer_compat.h>
++#include <event2/keyvalq_struct.h>
+ #include <math.h>
+ #include <openssl/ssl.h>
+ 
+@@ -154,6 +160,11 @@
  #include <endian.h>
  #endif
  
@@ -8,6 +24,7 @@
 +#include "config.h"
 +#endif
 +
++
  #define GETCONFIGVALUE(key, sect, var) \
- 	config_get_value(key, sect, var); \
- 	if (strlen(var) > 0) \
+        config_get_value(key, sect, var); \
+        if (strlen(var) > 0) \

@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTVERSION=	3.1.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dbmail.org/download/3.0/
+MASTER_SITES=	http://www.dbmail.org/download/3.1/
 
 MAINTAINER=	ahicks@p-o.co.uk
-COMMENT=	An SQL database-based mail system (POP3 and IMAP)
+COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
+LIB_DEPENDS=	gmime-2.6:${PORTSDIR}/mail/gmime26 \
 		zdb:${PORTSDIR}/databases/libzdb \
 		mhash:${PORTSDIR}/security/mhash \
-		event:${PORTSDIR}/devel/libevent
+		event-2:${PORTSDIR}/devel/libevent2
 
 CONFLICTS=	dbmail-2.*
 
@@ -26,19 +25,20 @@ SIEVE_DESC=	Build with support for Sieve mail sorting language
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 .endif
 
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool autoheader autoconf
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_OPENSSL=	yes
 USES=	shebangfix
 SHEBANG_FILES=	man/fixsp.pl
+WITH_DEBUG=	yes
 
-CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
+CFLAGS+=	-fPIC ${PTHREAD_CFLAGS} -DDEBUG
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
@@ -87,7 +87,6 @@ PLIST_SUB+=	LDAP="@comment "
 
 .if ${PORT_OPTIONS:MTHREADS}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
