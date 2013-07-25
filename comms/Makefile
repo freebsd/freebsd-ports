@@ -70,6 +70,7 @@
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
     SUBDIR += jerm
+    SUBDIR += jsdr
     SUBDIR += kallers
     SUBDIR += kb
     SUBDIR += kermit

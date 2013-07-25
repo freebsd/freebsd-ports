@@ -1,0 +1,22 @@
+SDR-J (formerly Jsdr) is a suite of four programs provided under a
+LGPL open source license for playing around with sdr (software
+defined radio). The software can be used directly with the PM-SDR
+kit and RTL2832U based dongles, and in the 32 bits Windows version
+with other kits as well.
+
+The suite contains four programs:
+
+- a full blown "short wave" receiver, which provides tuning in the
+  range of 100K .. 165M using the PM-SDR (although above 55 M with
+  reduced performance) and from app 55 MHz to app 900 Mhz or above
+  using an RTL2832U based dongle. The receiver provides quite a number
+  of decoders for amateur modes.
+- am/fm receiver covering the same frequency bands as the sw receiver,
+  however, with am bandwidths selectable, with fm mono and stereo
+  decoding as well as with rds decoding.
+- spectrum viewer for use with the RTL2832U based dongles, showing
+  spectra of up to 3 Mhz bandwidth.
+- mini receiver, a stripped version of the fm receiver, a gadget
+  for listening to WFM using DAB sticks.
+
+WWW: http://www.sdr-j.tk/
