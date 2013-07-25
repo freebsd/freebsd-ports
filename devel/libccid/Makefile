@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	devel
-#MASTER_SITES=	https://alioth.debian.org/frs/download.php/3897/
+#MASTER_SITES=	https://alioth.debian.org/frs/download.php/3920/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
