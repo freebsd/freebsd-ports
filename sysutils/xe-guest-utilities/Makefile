@@ -1,4 +1,4 @@
-# Created by: 	Mark Felder <feld@feld.me>
+# Created by: 	Mark Felder <feld@freebsd.org>
 #
 # $FreeBSD$
 
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${GIT_ACCOUNT}/${GIT_PROJECT}/tarball/${GIT_VERSION}/
 DISTNAME=	${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	FreeBSD VM tools for Citrix XenServer and XCP
 
 RUN_DEPENDS=	xen-tools>0:${PORTSDIR}/sysutils/xen-tools

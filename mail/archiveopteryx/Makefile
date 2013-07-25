@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	download
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	An advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	BSD

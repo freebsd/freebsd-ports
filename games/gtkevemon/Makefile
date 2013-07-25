@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/BattleClinic/${PORTNAME}/get/
 DISTNAME=	Version%20${DISTVERSION}
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	A skill monitoring standalone application for EVE Online
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
