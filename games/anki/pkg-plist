@@ -573,6 +573,7 @@ bin/anki
 %%DATADIR%%/locale/ro/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/sl/LC_MESSAGES/anki.mo
+%%DATADIR%%/locale/sr/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/sv/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/th/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/tlh/LC_MESSAGES/anki.mo
@@ -759,6 +760,8 @@ share/pixmaps/anki.xpm
 @dirrm %%DATADIR%%/locale/th
 @dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/sr/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/sr
 @dirrm %%DATADIR%%/locale/sl/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/sl
 @dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
