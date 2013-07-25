@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-SubCalls
-# Date created:				08 October 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-SubCalls
 PORTVERSION=	1.09
@@ -22,8 +18,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Test::SubCalls.3
-
-post-patch:
-	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

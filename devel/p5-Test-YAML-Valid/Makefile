@@ -22,7 +22,8 @@ OPTIONS_DEFINE=	YAMLSYCK
 YAMLSYCK_DESC=	Use YAML::Syck for testing
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /auto_install/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e '/auto_install.*/d' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.options.mk>
 

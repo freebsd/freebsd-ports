@@ -1,9 +1,5 @@
-# New ports collection makefile for:	prefork
-# Date created:	   14 November 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	prefork
 PORTVERSION=	1.04
@@ -21,8 +17,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		prefork.3
-
-post-patch:
-	@${PERL} -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
