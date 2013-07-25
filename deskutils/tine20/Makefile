@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@feld.me>
+# Created by: Mark Felder <feld@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	tine20
@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.tine20.org/downloads/${DISTVERSIONSUFFIX}/
 DISTNAME=	${PORTNAME}-allinone_${DISTVERSIONSUFFIX}
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	Professional Open Source Groupware and CRM
 
 LICENSE_FILE=	${WRKSRC}/LICENSE

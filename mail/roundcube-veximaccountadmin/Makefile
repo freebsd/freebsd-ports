@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@feld.me>
+# Created by: Mark Felder <feld@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	veximaccountadmin
@@ -9,7 +9,7 @@ MASTER_SITES=	http://axel.sjostedt.no/misc/files/
 PKGNAMEPREFIX=	roundcube-
 DISTNAME=	rcube_plg_veximaccountadmin
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	Roundcube vexim account admin plugin
 
 LICENSE=	GPLv3

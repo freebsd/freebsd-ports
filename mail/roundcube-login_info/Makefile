@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@feld.me>
+# Created by: Mark Felder <feld@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	login_info
@@ -9,7 +9,7 @@ MASTER_SITES=	https://www.std-soft.de/webmail/plugins/
 PKGNAMEPREFIX=	roundcube-
 DISTNAME=	${PORTNAME}_rc0.5_v${DISTVERSION}
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	Roundcube login info plugin
 
 LICENSE=	GPLv2

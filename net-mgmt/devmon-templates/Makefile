@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@feld.me>
+# Created by: Mark Felder <feld@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	devmon-templates
@@ -6,7 +6,7 @@ DISTVERSION=	20080206
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/devmon/${PORTNAME}/templates/
 
-MAINTAINER=	feld@feld.me
+MAINTAINER=	feld@freebsd.org
 COMMENT=	Device templates for use with devmon
 
 RUN_DEPENDS=	devmon>0:${PORTSDIR}/net-mgmt/devmon
