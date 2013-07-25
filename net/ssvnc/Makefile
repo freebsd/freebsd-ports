@@ -25,7 +25,7 @@ USE_XORG=	xi xmu xt xaw ice xpm xext sm
 USE_TK_WRAPPER=	yes
 USE_PERL5_RUN=	yes
 
-MAN1=		ssvnc.1 ssvncviewer.1
+MAN1=		ssvnc.1 ssvncviewer.1 ssvnc-gui.1
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.options.mk>
@@ -61,7 +61,7 @@ post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${MAN1PREFIX}/man/man1
-.for man in ${MAN1}
+.for man in ssvnc.1 ssvncviewer.1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${man} ${MAN1PREFIX}/man/man1
 .endfor
 .endif
