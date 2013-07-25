@@ -53,6 +53,7 @@ _PATCHES= \
 	security/20130416/8000724.patch \
 	security/20130416/8004986.patch \
 	openjdk/6501644-icu_sync.patch \
+	openjdk/6636110-deoptimization_unaligned_stackpointer.patch \
 	openjdk/6886358-layout_update.patch \
 	security/20130416/8001031.patch \
 	openjdk/7017324-kerning_crash.patch \
