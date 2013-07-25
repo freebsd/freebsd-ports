@@ -15,6 +15,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Storable.3
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|INSTALLDIRS|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's|INSTALLDIRS.*||' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
