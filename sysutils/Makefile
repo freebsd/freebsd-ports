@@ -803,15 +803,6 @@
     SUBDIR += rsyslog6-relp
     SUBDIR += rsyslog6-rfc3195
     SUBDIR += rsyslog6-snmp
-    SUBDIR += rsyslog6-devel
-    SUBDIR += rsyslog6-devel-dbi
-    SUBDIR += rsyslog6-devel-gnutls
-    SUBDIR += rsyslog6-devel-gssapi
-    SUBDIR += rsyslog6-devel-mysql
-    SUBDIR += rsyslog6-devel-pgsql
-    SUBDIR += rsyslog6-devel-relp
-    SUBDIR += rsyslog6-devel-rfc3195
-    SUBDIR += rsyslog6-devel-snmp
     SUBDIR += rsyslog7
     SUBDIR += rsyslog7-devel
     SUBDIR += rtty
