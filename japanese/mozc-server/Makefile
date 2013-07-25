@@ -91,6 +91,7 @@ post-patch:
 		${WRKSRC}/unix/fcitx/mozc.conf
 .endif
 
+.if ! ${BUILD_MOZC_LIST:Mmozc_el}
 ${WRKSRC}/mozcmake:
 	${PRINTF} "%s\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} $$@' \
 		> ${WRKSRC}/mozcmake
@@ -116,6 +117,7 @@ post-configure: ${WRKSRC}/mozcmake
 
 pre-build:
 	${BUILD_MOZC_CMD} build_tools -c ${BUILD_MODE} ${_MAKE_JOBS}
+.endif
 
 # mozc_server
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server" || defined(makesum)
