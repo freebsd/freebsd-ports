@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130725:
+  AFFECTS: users of net/openafs
+  AUTHOR: bjk@FreeBSD.org
+
+  The OpenAFS 1.6.5 release is a security release which requires substantial
+  configuration changes to the AFS servers in addition to the software update,
+  in order to be fully protected.  The entry for OPENAFS-SA-2013-003 on
+  http://www.openafs.org/security/ has links to the upgrade documentation.
+  The procedure involves rekeying the cell to a non-DES krb5 key, stored in
+  a krb5 keytab named rxkad.keytab in PREFIX/etc/openafs/server/.
+
 20130720:
   AFFECTS: users of japanese/mozc-server and japanese/mozc-el
   AUTHOR: hrs@FreeBSD.org
