@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxpaint
-# Date created:				14 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxpaint
 PORTVERSION=	0.9.21
@@ -14,13 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing program designed for young children
 
-LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi \
-		paper.2:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi \
+		paper:${PORTSDIR}/print/libpaper
+
+OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	librsvg2
 USE_SDL=	image mixer sdl ttf pango
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PREFIX="${PREFIX}" \
@@ -37,7 +34,9 @@ MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 MANCOMPRESSED=	yes
 MAN1=		tp-magic-config.1 tuxpaint.1 tuxpaint-import.1
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install-bin install-data install-man install-magic-plugins \
 		install-magic-plugin-dev install-icon install-gettext \
 		install-im install-importscript install-default-config \

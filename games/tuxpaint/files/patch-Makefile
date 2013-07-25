@@ -1,5 +1,14 @@
---- Makefile.orig	2009-04-29 14:18:57.000000000 +0900
+--- Makefile.orig	2013-03-18 11:17:31.189596000 +0000
 +++ Makefile	2010-10-19 01:08:15.000000000 +0900
+@@ -157,7 +157,7 @@ CURSOR_SHAPES:=LARGE
+ 
+ 
+ # Libraries, paths, and flags:
+-SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
++SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf -lpng15 -lintl
+ 
+ # Sound support
+ SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
 @@ -303,7 +303,8 @@
  INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
  
