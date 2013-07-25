@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/tpm_sealdata
 bin/tpm_unsealdata
 bin/tpmtoken_import

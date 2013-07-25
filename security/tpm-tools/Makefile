@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tpm-tools
-# Date created:				18 Sep 2007
-# Whom:					Sebastian Schuetz <sschuetz@fhm.edu>
-#
+# Created by: Sebastian Schuetz <sschuetz@fhm.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	tpm-tools
 PORTVERSION=	1.3.5
@@ -11,26 +7,25 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/trousers/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Provides a basic set of TPM tools
-
-LIB_DEPENDS=	tspi.2:${PORTSDIR}/security/trousers
-BUILD_DEPENDS=	pkcsconf:${PORTSDIR}/security/opencryptoki
-RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:${PORTSDIR}/security/trousers
-RUN_DEPENDS+=	${LOCALBASE}/lib/pkcs11/libopencryptoki.so:${PORTSDIR}/security/opencryptoki
-
-USE_GMAKE=	YES
-USES=		gettext iconv
-USE_LDCONFIG=	YES
-USE_AUTOTOOLS=	autoconf
-GNU_CONFIGURE=	YES
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl -liconv
-MAKE_JOBS_SAFE=	YES
 
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LIB_DEPENDS=	tspi:${PORTSDIR}/security/trousers
+BUILD_DEPENDS=	pkcsconf:${PORTSDIR}/security/opencryptoki
+RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:${PORTSDIR}/security/trousers \
+		${LOCALBASE}/lib/pkcs11/libopencryptoki.so:${PORTSDIR}/security/opencryptoki
+
+USES=		gettext gmake iconv
+USE_LDCONFIG=	YES
+USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	YES
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl -liconv
+MAKE_JOBS_SAFE=	YES
 
 MAN1=		tpm_sealdata.1 tpm_version.1				\
 		tpmtoken_import.1 tpmtoken_init.1 tpmtoken_objects.1	\
