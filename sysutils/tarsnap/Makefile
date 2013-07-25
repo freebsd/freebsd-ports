@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarsnap
-PORTVERSION=	1.0.34
+PORTVERSION=	1.0.35
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tarsnap.com/download-http/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
