@@ -24,6 +24,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 USE_GNOME=	libgnomecanvas libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 
 DESKTOP_ENTRIES="Specimen" "" "${DATADIR}/pixmaps/specimen.png" \
 		"${PORTNAME}" "" ""
