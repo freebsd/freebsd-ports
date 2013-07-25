@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 @unexec cmp -s %D/etc/tcsd.conf %D/%%EXAMPLESDIR%%/tcsd.conf && rm -f %D/etc/tcsd.conf || true
 %%EXAMPLESDIR%%/tcsd.conf
 @exec [ -f %D/etc/tcsd.conf ] || cp -p %B/%f %D/etc/tcsd.conf
