@@ -22,15 +22,21 @@ USE_AUTOTOOLS=	libtool libltdl
 LIBTOOLFILES=	configure libgphoto2_port/configure
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
-		LIBLTDL="-L${LOCALBASE}/lib -lltdl" \
-		LIBUSB_CFLAGS="-I/usr/include" \
-		LIBUSB_LIBS="-lusb"
+		LIBLTDL="-L${LOCALBASE}/lib -lltdl"
 
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.8.0
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000040
+CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
+		LIBUSB_LIBS="-lusb"
+.else
+# Safe because it's never used
+CFLAGS+=	-DENODATA=0
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
