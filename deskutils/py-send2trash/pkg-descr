@@ -2,3 +2,4 @@ Send2Trash is a small package that sends files to the Trash (or Recycle Bin)
 natively and on all platforms.
 
 WWW: http://hg.hardcoded.net/send2trash/
+WWW: https://pypi.python.org/pypi/Send2Trash/
