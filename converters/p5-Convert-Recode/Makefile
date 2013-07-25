@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-Recode
-# Date created:				17 January 2000
-# Whom:					Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-Recode
 PORTVERSION=	1.04
@@ -23,7 +19,7 @@ PERL_CONFIGURE=	YES
 MAN3=		Convert::Recode.3
 
 post-patch:
-		${PERL} -pi -e 's#recode -\$$#${LOCALBASE}/bin/recode -\$$#' \
-		${WRKSRC}/Recode.pm
+		@${REINPLACE_CMD} -i '' -e 's|recode -\$$|${LOCALBASE}/bin/recode -\$$|' \
+			${WRKSRC}/Recode.pm
 
 .include <bsd.port.mk>

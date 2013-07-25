@@ -22,7 +22,8 @@ MAN3=		MooseX::Log::Log4perl.3 \
 		MooseX::Log::Log4perl::Easy.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/auto_install/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e '/auto_install;/d' \
+		${WRKSRC}/Makefile.PL
 
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test

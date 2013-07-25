@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Compress-LZO
-# Date created:		2006-09-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Compress-LZO
 PORTVERSION=	1.08
@@ -21,7 +17,7 @@ CFLAGS+=	-I${LOCALBASE}/include/lzo
 PERL_CONFIGURE=	yes
 
 post-patch:
-	${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
 
 MAN3=		Compress::LZO.3
 

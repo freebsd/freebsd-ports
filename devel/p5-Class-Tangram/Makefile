@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Tangram
-# Date created:	   08 April 2002
-# Whom:		   Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Tangram
 PORTVERSION=	1.57
@@ -25,6 +21,6 @@ MAN3=		Class::Tangram.3 Class::Tangram::Containers.3 \
 		Class::Tangram::Generator.3
 
 post-patch:
-		@${PERL} -pi -e 's/\@/\\@/' ${WRKSRC}/Makefile.PL
+		@${REINPLACE_CMD} -i '' -e 's|\@|\\@|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

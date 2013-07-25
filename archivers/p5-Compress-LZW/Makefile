@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Compress-LZW
-# Date created:		2006-07-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Compress-LZW
 PORTVERSION=	0.01
@@ -20,6 +16,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Compress::LZW.3
 
 post-patch:
-	${PERL} -pi -e 's/\@hattmoward/\\\@hattmoward/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's|\@hattmoward|\\@hattmoward|' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

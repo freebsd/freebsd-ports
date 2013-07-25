@@ -19,7 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	MooseX::Types::Path::Class.3
 
-post-extract:
-	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.mk>

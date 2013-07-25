@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	autobench
-# Date created:			Oct 20, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	autobench
 PORTVERSION=	2.1.2
@@ -32,7 +27,7 @@ MAN1=	autobench.1 autobench_admin.1 autobenchd.1 bench2graph.1 \
 
 post-patch:
 .for file in autobench autobench_admin
-	@${PERL} -pi -e "s|/etc/|${PREFIX}/etc/|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -i '' -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.mk>
