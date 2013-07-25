@@ -484,6 +484,7 @@ include/fox-%%MAJORVER%%/xincs.h
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/searchdialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/small_ctc_osx.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/small_ctc_xp.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/screenshots/sumo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/table.png
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/tmp_vision_snap.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/tux_small.jpg
