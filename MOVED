@@ -4439,3 +4439,12 @@ editors/code-browser||2013-07-18|Removed
 lang/copper||2013-07-18|Removed
 x11-themes/linux-gtk-bluecurve-theme||2013-07-18|Removed, requires Linux FC3
 misc/rabbit|misc/rubygem-rabbit|2013-07-24|Moved to Rubygems
+sysutils/rsyslog6-devel-pgsql|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-gnutls|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-snmp|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-rfc3195|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-mysql|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-relp|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-dbi|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel-gssapi|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-devel|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
