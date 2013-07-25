@@ -35,9 +35,11 @@ CORE_DEPS=	p5-CSS-Squish>=0.06:${PORTSDIR}/textproc/p5-CSS-Squish \
 		p5-Email-Address>=1.89.5:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Encode>=2.39:${PORTSDIR}/converters/p5-Encode \
 		p5-File-ShareDir>0:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-HTML-Format>0:${PORTSDIR}/textproc/p5-HTML-Format \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Quoted>0:${PORTSDIR}/textproc/p5-HTML-Quoted \
 		p5-HTML-Scrubber>=0.08:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-HTML-Tree>0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Locale-Maketext-Fuzzy>0:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
 		p5-Locale-Maketext-Lexicon>=0.32:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
@@ -71,9 +73,7 @@ PSGI_DEPS=	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI \
 		p5-Plack>=0.9971:${PORTSDIR}/www/p5-Plack \
 		p5-Starlet>0:${PORTSDIR}/www/p5-Starlet
 
-MAILGATE_DEPS=	p5-HTML-Format>0:${PORTSDIR}/textproc/p5-HTML-Format \
-		p5-HTML-Tree>0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-libwww>6.0:${PORTSDIR}/www/p5-libwww
+MAILGATE_DEPS=	p5-libwww>6.0:${PORTSDIR}/www/p5-libwww
 
 SSL_MAILGATE_DEPS=	p5-Crypt-SSLeay>0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https \
@@ -125,7 +125,8 @@ ICAL_DEPS=	p5-Data-ICal>0:${PORTSDIR}/deskutils/p5-Data-ICal
 SMTP_DEPS=	## -- only needs perl core modules
 
 DASHBOARDS_DEPS=	p5-HTML-RewriteAttributes>=0.05:${PORTSDIR}/textproc/p5-HTML-RewriteAttributes \
-		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types
+		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
+		p5-URI>=1.59:${PORTSDIR}/net/p5-URI
 
 GRAPHVIZ_DEPS=	p5-GraphViz>0:${PORTSDIR}/graphics/p5-GraphViz \
 		p5-IPC-Run>=0.90:${PORTSDIR}/devel/p5-IPC-Run
@@ -135,3 +136,6 @@ GD_DEPS=	p5-GD>0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-TextUtil>0:${PORTSDIR}/graphics/p5-GD-TextUtil
 
 USERLOGO_DEPS=	p5-Convert-Color>0:${PORTSDIR}/graphics/p5-Convert-Color
+
+HTML_DOC_DEPS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Pod-Simple>=3.24:${PORTSDIR}/textproc/p5-Pod-Simple

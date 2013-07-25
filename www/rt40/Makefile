@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.13
-PORTREVISION=	2
+PORTVERSION=	4.0.14
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		SF/requesttracker/
@@ -62,7 +61,8 @@ BUILD_DEPENDS+=	${CORE_DEPS}       \
 		${ICAL_DEPS}       \
 		${SMTP_DEPS}       \
 		${DASHBOARDS_DEPS} \
-		${USERLOGO_DEPS}
+		${USERLOGO_DEPS}   \
+		${HTML_DOC_DEPS}
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -78,6 +78,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
 .if ${PORT_OPTIONS:MAP_MODPERL}
 BUILD_DEPENDS+=	${MODPERL2_DEPS}
 RUN_DEPENDS+=	${MODPERL2_DEPS}
+CONFIGURE_ARGS+=	--with-apachectl=${LOCALBASE}/sbin/apachectl
 .endif
 
 .if ${PORT_OPTIONS:MAP_MODFASTCGI}
@@ -85,6 +86,7 @@ USE_APACHE_RUN=	22+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		${FASTCGI_DEPS}
+CONFIGURE_ARGS+=	--with-apachectl=${LOCALBASE}/sbin/apachectl
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTTPD}
@@ -156,7 +158,7 @@ CONFIGURE_ARGS+=	--enable-gpg
 .if ${PORT_OPTIONS:MGD}
 BUILD_DEPENDS+=	${GD_DEPS}
 RUN_DEPENDS+=	${GD_DEPS}
-configure_args+=	--enable-gd
+CONFIGURE_ARGS+=	--enable-gd
 .endif
 
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}40

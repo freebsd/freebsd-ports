@@ -1266,6 +1266,7 @@ share/rt40/html/Search/Elements/NewListActions
 share/rt40/html/Search/Elements/PickBasics
 share/rt40/html/Search/Elements/PickCFs
 share/rt40/html/Search/Elements/PickCriteria
+share/rt40/html/Search/Elements/PickTicketCFs
 share/rt40/html/Search/Elements/ResultsRSSView
 share/rt40/html/Search/Elements/SearchPrivacy
 share/rt40/html/Search/Elements/SearchesForObject
