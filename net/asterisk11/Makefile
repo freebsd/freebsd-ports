@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	11.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -13,15 +14,17 @@ COMMENT=	An Open Source PBX and telephony toolkit
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.52:${PORTSDIR}/devel/newt \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE} --with-uuid=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
+CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
