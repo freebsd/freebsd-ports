@@ -29,10 +29,12 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
 
-_CLANG!=	${CC} --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+_CLANG!=	${CXX} --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+ISCLANG=	${_CLANG:M[34][0-9]}
 
-.if ${CXX:T} != "clang++" && !defined(_CLANG)
-CXXFLAGS+=	--no-exceptions
+# clang can build this without -fno-exceptions
+.if empty(ISCLANG)
+CXXFLAGS+=	-fno-exceptions
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

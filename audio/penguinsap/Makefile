@@ -22,12 +22,12 @@ PLIST_FILES=	bin/sap
 
 .include <bsd.port.pre.mk>
 
-_CLANG!=	clang --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+_CLANG!=	${CXX} --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+ISCLANG=	${_CLANG:M[34][0-9]}
 
-.if ${CXX:T} != "clang++"
-.if ${_CLANG} < 33
-CXXFLAGS+=	--no-exceptions
-.endif
+# clang can build this without -fno-exceptions
+.if empty(ISCLANG)
+CXXFLAGS+=	-fno-exceptions
 .endif
 
 post-patch:
