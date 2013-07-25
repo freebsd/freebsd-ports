@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	print
 MASTER_SITES=	SF/ghostscript/gnu-gs/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -82,8 +82,7 @@ post-extract: post-extract-all
 USE_GNOME=	gtk12
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${FILESDIR}/Makefile.drivers_post"
+.include "files/Makefile.drivers_post"
 
 .for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
 	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
@@ -177,4 +176,4 @@ post-install:
 post-install: post-install-docs
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

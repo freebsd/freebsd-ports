@@ -3,17 +3,17 @@
 
 # dmprt specific
 .if ${PORT_OPTIONS:MGS_dmprt}
-.include "${FILESDIR}/Makefile.dmprt"
+.include "files/Makefile.dmprt"
 .endif
 
 # epag specific
 .if ${PORT_OPTIONS:MGS_epag}
-.include "${FILESDIR}/Makefile.epag"
+.include "files/Makefile.epag"
 .endif
 
 # pcl3 specific
 .if ${PORT_OPTIONS:MGS_pcl3}
-.include "${FILESDIR}/Makefile.pcl3"
+.include "files/Makefile.pcl3"
 .endif
 
 # vgalib specific
@@ -64,35 +64,35 @@ CONFLICTS_INSTALL+=	ghostscript7-[0-9]*
 	${PORT_OPTIONS:MGS_cdj880} || \
 	${PORT_OPTIONS:MGS_cdj890} || \
 	${PORT_OPTIONS:MGS_cdj1600}
-.include "${FILESDIR}/Makefile.cdj880"
+.include "files/Makefile.cdj880"
 .endif
 .if ${PORT_OPTIONS:MGS_cdj970}
-.include "${FILESDIR}/Makefile.cdj970"
+.include "files/Makefile.cdj970"
 .endif
 
-.include "${FILESDIR}/Makefile.gprint"
+.include "files/Makefile.gprint"
 
 .if ${PORT_OPTIONS:MGS_md2k} || \
 	${PORT_OPTIONS:MGS_md5k}
-.include "${FILESDIR}/Makefile.md2k"
+.include "files/Makefile.md2k"
 .endif
 
 .if ${PORT_OPTIONS:MGS_md50Mono} || \
 	${PORT_OPTIONS:MGS_md50Eco} || \
 	${PORT_OPTIONS:MGS_md1xMono}
-.include "${FILESDIR}/Makefile.alps"
+.include "files/Makefile.alps"
 .endif
 
 .if ${PORT_OPTIONS:MGS_bj10v} || \
 	${PORT_OPTIONS:Mbj10vh}
-.include "${FILESDIR}/Makefile.bj10v"
+.include "files/Makefile.bj10v"
 .endif
 
 .if ${PORT_OPTIONS:MGS_bjccmyk} || \
 	${PORT_OPTIONS:MGS_bjccolor} || \
 	${PORT_OPTIONS:MGS_bjcgray} || \
 	${PORT_OPTIONS:MGS_bjcmono}
-.include "${FILESDIR}/Makefile.bjc250"
+.include "files/Makefile.bjc250"
 .endif
 
 .if ${PORT_OPTIONS:MGS_lbp1310} || \
@@ -101,7 +101,7 @@ CONFLICTS_INSTALL+=	ghostscript7-[0-9]*
 	${PORT_OPTIONS:MGS_lbp1710} || \
 	${PORT_OPTIONS:MGS_lbp1810} || \
 	${PORT_OPTIONS:MGS_lbp1910}
-.include "${FILESDIR}/Makefile.cpca"
+.include "files/Makefile.cpca"
 .endif
 
 .if ${PORT_OPTIONS:MGS_lips2p} || \
@@ -113,7 +113,7 @@ CONFLICTS_INSTALL+=	ghostscript7-[0-9]*
 	${PORT_OPTIONS:MGS_lp2000} || \
 	${PORT_OPTIONS:MGS_npdl} || \
 	${PORT_OPTIONS:MGS_rpdl}
-.include "${FILESDIR}/Makefile.lips"
+.include "files/Makefile.lips"
 .endif
 
 .if ${PORT_OPTIONS:MGS_alc8600} || \
@@ -160,33 +160,33 @@ CONFLICTS_INSTALL+=	ghostscript7-[0-9]*
 	${PORT_OPTIONS:MGS_lp9600} || \
 	${PORT_OPTIONS:MGS_lp8600} || \
 	${PORT_OPTIONS:MGS_lp1800}
-.include "${FILESDIR}/Makefile.eplaser"
+.include "files/Makefile.eplaser"
 .endif
 
 .if ${PORT_OPTIONS:MGS_mjc180} || \
 	${PORT_OPTIONS:MGS_mjc360} || \
 	${PORT_OPTIONS:MGS_mjc720} || \
 	${PORT_OPTIONS:MGS_mj500c}
-.include "${FILESDIR}/Makefile.mjc"
+.include "files/Makefile.mjc"
 .endif
 
 .if ${PORT_OPTIONS:MGS_gdi}
-.include "${FILESDIR}/Makefile.gdi"
+.include "files/Makefile.gdi"
 .endif
 
 .if ${PORT_OPTIONS:MGS_lxm3200}
-.include "${FILESDIR}/Makefile.lxm3200"
+.include "files/Makefile.lxm3200"
 .endif
 
 .if ${PORT_OPTIONS:MGS_lx5000}
-.include "${FILESDIR}/Makefile.lx5000"
+.include "files/Makefile.lx5000"
 .endif
 
 .if ${PORT_OPTIONS:MGS_lex2050} || \
 	${PORT_OPTIONS:MGS_lex3200} || \
 	${PORT_OPTIONS:MGS_lex5700} || \
 	${PORT_OPTIONS:MGS_lex7000}
-.include "${FILESDIR}/Makefile.lex7000"
+.include "files/Makefile.lex7000"
 .endif
 
 # pre-defined order

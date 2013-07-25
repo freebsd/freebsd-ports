@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -93,8 +93,8 @@ CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 
 .include "Makefile.drivers"
-.include <bsd.port.pre.mk>
-.include "${FILESDIR}/Makefile.drivers_post"
+.include <bsd.port.options.mk>
+.include "files/Makefile.drivers_post"
 
 .for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//} \
 	${OPTIONS_MULTI_X11:MGS_*:S/^GS_//} \
@@ -215,4 +215,4 @@ post-install:
 post-install: post-install-docs
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
