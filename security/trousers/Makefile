@@ -7,29 +7,27 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	The open-source TCG Software Stack
-
-USE_GCC=	any
-USE_GMAKE=	YES
-USE_OPENSSL=	YES
-USE_LDCONFIG=	YES
-USES=		pkgconfig iconv
-USE_AUTOTOOLS=	autoconf automake libtool
-GNU_CONFIGURE=	YES
-MAKE_JOBS_SAFE=	YES
-
-USE_RC_SUBR=	tcsd
-SUB_FILES=	pkg-message
-SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
-
-USERS=		_tss
-GROUPS=		_tss
 
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=	gmake iconv pkgconfig
+USE_GCC=	any
+USE_OPENSSL=	YES
+USE_LDCONFIG=	YES
+USE_AUTOTOOLS=	autoconf automake libtool
+USE_RC_SUBR=	tcsd
+GNU_CONFIGURE=	YES
+MAKE_JOBS_SAFE=	YES
+SUB_FILES=	pkg-message
+SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
+
+USERS=		_tss
+GROUPS=		_tss
 
 .include "Makefile.man"
 
