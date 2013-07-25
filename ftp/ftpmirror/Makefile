@@ -18,15 +18,15 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
+USES=		shebangfix
+SHEBANG_FILES=	ftpmirror rotate
+
 CONFIGURE_ENV+=	PERL="${PERL}" INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 
 PORTDOCS=	README.jis RELEASE.jis
 
 post-configure:
-	@${PERL} -i.bak -pe 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/Fan/Fan.pm
-.for f in ftpmirror rotate
-	@${PERL} -i.bak -pe 's,^#!.*$$,#!${PERL}, if $$. == 1' ${WRKSRC}/${f}
-.endfor
+	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Fan/Fan.pm
 
 .include <bsd.port.pre.mk>
 

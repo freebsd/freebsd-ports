@@ -20,7 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Business::OnlinePayment::PaymenTech.3
 
-post-extract:
-	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.mk>

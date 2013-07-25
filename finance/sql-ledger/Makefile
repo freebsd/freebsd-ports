@@ -18,10 +18,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message sql-ledger-httpd.conf
-
-post-patch:
-	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' \
-		`${FIND} ${WRKSRC} -name \*.pl`
+USES=		shebangfix
+SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
 
 do-install:
 	@cd ${WRKDIR} ; \

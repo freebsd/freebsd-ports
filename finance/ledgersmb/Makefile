@@ -17,16 +17,9 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-patch:
-	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' \
-		`${FIND} ${WRKSRC} -name \*.pl`
-	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' \
-		${FILESDIR}/${PORTNAME}-httpd.conf.in \
-		> ${WRKDIR}/${PORTNAME}-httpd.conf
-	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' \
-		${PKGDIR}/pkg-message \
-		> ${PKGMESSAGE}
+USES=		shebangfix
+SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl utils/*/*.pl
+SUB_FILES=	${PORTNAME}-httpd.conf.in pkg-message.in
 
 do-install:
 	@cd ${WRKDIR} ; \
