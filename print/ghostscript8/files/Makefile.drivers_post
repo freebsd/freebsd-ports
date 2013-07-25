@@ -3,12 +3,12 @@
 
 # dmprt specific
 .if ${PORT_OPTIONS:MGS_dmprt}
-.include "${FILESDIR}/Makefile.dmprt"
+.include "files/Makefile.dmprt"
 .endif
 
 # epag specific
 .if ${PORT_OPTIONS:MGS_epag}
-.include "${FILESDIR}/Makefile.epag"
+.include "files/Makefile.epag"
 .endif
 
 EPAG_BASE=	epag
@@ -24,7 +24,7 @@ post-extract: post-extract-epag
 
 # pcl3 specific
 .if ${PORT_OPTIONS:MGS_pcl3}
-.include "${FILESDIR}/Makefile.pcl3"
+.include "files/Makefile.pcl3"
 .endif
 
 # cups specific
