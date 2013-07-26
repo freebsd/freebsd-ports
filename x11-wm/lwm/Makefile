@@ -18,8 +18,8 @@ USE_XORG=	sm x11 xext
 MAKEFILE=	no_xmkmf_makefile
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
-CFLAGS+=	`pkg-config --cflags sm x11 xext` -DSHAPE
-LDFLAGS+=	`pkg-config --libs sm x11 xext`
+CFLAGS+=	`pkg-config --cflags sm x11 xext ice` -DSHAPE
+LDFLAGS+=	`pkg-config --libs sm x11 xext ice`
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
