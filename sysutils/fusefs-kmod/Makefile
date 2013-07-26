@@ -65,6 +65,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fuse_module__fuse_vnops.c
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-fuse_module__fuse_vnops.c
 .endif
 
+.if exists(${SRC_BASE}/sys/fs/fuse)
+IGNORE=		Integrated into base
+.endif
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
