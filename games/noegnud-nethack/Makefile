@@ -18,7 +18,7 @@ COMMENT=	The noeGNUd UI for the vanilla Nethack
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USES=		bison
+USES=		bison gmake
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
