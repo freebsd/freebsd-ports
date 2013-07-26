@@ -1,9 +1,5 @@
-# New ports collection makefile for:	heirloom
-# Date created:				3 June 2004
-# Whom:					Cyrille.Lefevre@laposte.net
-#
+# Created by: Cyrille Lefevre <Cyrille.Lefevre@laposte.net>
 # $FreeBSD$
-#
 
 PORTNAME=	heirloom
 PORTVERSION=	070715
@@ -12,27 +8,29 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	The Heirloom Toolchest is a collection of standard Unix utilities
+COMMENT=	Collection of standard Unix utilities
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-MAKE_ARGS=	CC=${CC}
+USES=		gmake
+MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}"
 MAKEFILE=	makefile
-ALL_TARGET=
+ALL_TARGET=	#
 DATADIR=	${PREFIX}/${PORTNAME}
 REINPLACE_SUB=	DATADIR="${DATADIR}"
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900007
 EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
 .endif
 
 .if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
+BROKEN=		does not compile on ${ARCH}
 .endif
 
 _MANPREFIX=	${DATADIR}/usr/share/man/5man
@@ -87,16 +85,29 @@ DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
 #		more/NOTES nawk/NOTES oawk/EXPLAIN oawk/NOTES \
 #		oawk/README ps/NOTES shl/NOTES tar/NOTES
 
+post-patch:
+# FreeBSD does not have neither <malloc.h> nor <alloca.h> system headers
+	@${GREP} -ERl --null 'm?alloca?\.h' ${WRKSRC} | \
+		${XARGS} -0 ${REINPLACE_CMD} -E '/<m?alloca?\.h>/d'
+# Avoid a race (to unbreak parallel builds)
+	@${REINPLACE_CMD} -e 's|htemp2|$$@.temp|g' \
+		${WRKSRC}/spell/Makefile.mk
+
 pre-configure:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/build/mk.config ${WRKSRC}/su/su.dfl.in
-	@${REINPLACE_CMD} -e 's|/sbin/sh| ${SH}|' ${SH2FIX:S|^|${WRKSRC}/build/|}
+	@${REINPLACE_CMD} -e 's|/sbin/sh| ${SH}|' \
+		${SH2FIX:S|^|${WRKSRC}/build/|}
+
+# XXX: hack to avoid inner race (for -jX builds); should be fixed properly
+# one day (e.g. by factoring out special target in the top makefile)
+pre-build:
+	${MAKE} -C ${WRKSRC}/libcommon -f Makefile.mk headers
 
 post-install: compress-man install-doc
 
 install-doc:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/LICENSE
 . for f in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f}
@@ -106,4 +117,4 @@ install-doc:
 #. endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
