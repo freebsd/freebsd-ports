@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PlRPC
-# Date Created:				27 Feb 2000
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PlRPC
 PORTVERSION=	0.2020
@@ -28,6 +24,7 @@ MAN3=		Bundle::PlRPC.3 \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
-	@${PERL} -pi -e 's/perldoc -t/echo perldoc -t/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's/perldoc -t/echo perldoc -t/' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

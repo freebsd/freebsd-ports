@@ -58,7 +58,4 @@ BUILD_DEPENDS+=	p5-DBD-Pg>=2:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS+=	p5-DBD-Pg>=2:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-post-patch:
-	@${PERL} -pi -e 's/CPAN/ExtUtils/' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tridiavnc
-# Date created:		14 June 2001
-# Whom:			dwcjr
-#
+# Created by: dwcjr
 # $FreeBSD$
-#
 
 PORTNAME=	tridiavnc
 PORTVERSION=	1.4
@@ -21,7 +17,8 @@ LICENSE=	GPLv2
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
-USES=		imake
+USES=		imake shebangfix
+SHEBANG_FILES=	vncserver
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
@@ -47,10 +44,10 @@ PLIST_SUB+=	XVNC=""
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def Xvnc/config/cf/Imake.tmpl
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e "s,/usr/local/vnc/classes,${DATADIR}/classes,g ; \
-		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
+	${REINPLACE_CMD} -i '' -e 's|/usr/local/vnc/classes|${DATADIR}/classes|' \
+		${WRKSRC}/vncserver
 
 # We have to frob a few things, and we want our own permissions, so it's easier
 # to do the install ourselves.

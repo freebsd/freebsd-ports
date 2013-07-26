@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-Google
-# Date created:	   04 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Google
 PORTVERSION=	1.0.1
@@ -24,6 +20,6 @@ MAN3=		Net::Google.3 Net::Google::Cache.3 Net::Google::Response.3 \
 		Net::Google::Spelling.3 Net::Google::tool.3
 
 post-patch:
-	@${PERL} -pi -e 's/CPAN/ExtUtils/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's/CPAN/ExtUtils/g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

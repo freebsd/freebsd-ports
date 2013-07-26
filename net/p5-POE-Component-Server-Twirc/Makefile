@@ -42,6 +42,6 @@ MAN3=		App::Twirc.3 \
 		POE::Component::Server::Twirc.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/auto_install/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

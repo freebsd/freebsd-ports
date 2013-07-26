@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	sig2dot
-# Date created:			Aug 8, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sig2dot
 PORTVERSION=	0.35
@@ -25,9 +20,8 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-post-patch:
-	@${PERL} -pi -e "s|/usr/bin/perl|${PERL}|g" ${WRKSRC}/sig2dot.pl
+USES=		shebangfix
+SHEBANG_FILES=	sig2dot.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sig2dot.pl ${PREFIX}/bin/sig2dot

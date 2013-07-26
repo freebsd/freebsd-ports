@@ -22,7 +22,8 @@ CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 
-USES=		imake
+USES=		imake shebangfix
+SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
 USE_GCC=	yes
 USE_BZIP2=	yes
@@ -61,11 +62,11 @@ IGNORE=		vnc has already been installed, please uninstall it first
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${PREFIX},g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -i '' -e "s|%%LOCALBASE%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e "s,/usr/local/vnc/classes,${DATADIR}/classes,g ; \
-		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
-	@${PERL} -pi -e "s,%%CC%%,${CC},g ; \
+	@${REINPLACE_CMD} -i '' -e "s|/usr/local/vnc/classes|${DATADIR}/classes|g" \
+		${WRKSRC}/vncserver
+	@${REINPLACE_CMD} -i '' -e "s|%%CC%%|${CC}|g ; \
 		s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/Xvnc/config/cf/FreeBSD.cf
 
 do-install:

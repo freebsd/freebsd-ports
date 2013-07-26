@@ -1,9 +1,5 @@
-# New ports collection makefile for:    portcheckout
-# Date created:         1 November 1998
-# Whom:                 wosch
-#
+# Created by: wosch
 # $FreeBSD$
-#
 
 PORTNAME=	portcheckout
 PORTVERSION=	2.0
@@ -15,11 +11,10 @@ MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Checkout and build ports and all depending ports
 
 USE_PERL5=	yes
+USES=		shebangfix
+SHEBANG_FILES=	portcheckout.pl
 MAN1=		portcheckout.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/portcheckout
-
-post-patch:
-	${PERL} -pi -e 's^\#\!${PREFIX}/bin/perl^#!${PERL5}^' ${WRKSRC}/portcheckout.pl
 
 .include <bsd.port.mk>
