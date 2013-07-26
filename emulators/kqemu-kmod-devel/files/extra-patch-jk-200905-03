@@ -13,11 +13,11 @@ Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
  common/interp.c |    7 +++++--
  1 files changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/common/interp.c b/common/interp.c
+diff --git common/interp.c b/common/interp.c
 index 088d2b2..4c042e9 100644
 Index: common/interp.c
---- a/common/interp.c
-+++ b/common/interp.c
+--- common/interp.c
++++ common/interp.c
 @@ -775,9 +775,12 @@ static void load_seg_desc(struct kqemu_state *s,
  #ifdef DEBUG_SEG
      monitor_log(s, "load_seg_desc: reg=%d sel=0x%04x\n", seg_reg, selector);

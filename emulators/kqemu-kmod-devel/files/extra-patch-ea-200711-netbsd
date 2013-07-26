@@ -32,8 +32,8 @@ Regards,
 Adi
 
 Index: common/monitor.c
---- xx/kqemu-1.3.0pre11/common/monitor.c	Tue Feb  6 23:02:00 2007
-+++ kqemu-1.3.0pre11/common/monitor.c	Mon Nov  5 18:59:58 2007
+--- common/monitor.c	Tue Feb  6 23:02:00 2007
++++ common/monitor.c	Mon Nov  5 18:59:58 2007
 @@ -990,7 +990,8 @@ static void *map_vaddr(struct kqemu_state *s, unsigned
      e = &s->soft_tlb[(addr >> PAGE_SHIFT) & (SOFT_TLB_SIZE - 1)];
   redo:

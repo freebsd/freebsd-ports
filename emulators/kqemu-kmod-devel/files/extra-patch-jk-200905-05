@@ -13,11 +13,11 @@ Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
  common/interp.c |  111 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
  1 files changed, 109 insertions(+), 2 deletions(-)
 
-diff --git a/common/interp.c b/common/interp.c
+diff --git common/interp.c b/common/interp.c
 index 4f93bc3..577d666 100644
 Index: common/interp.c
---- a/common/interp.c
-+++ b/common/interp.c
+--- common/interp.c
++++ common/interp.c
 @@ -1720,6 +1720,93 @@ void helper_lldt(struct kqemu_state *s, int selector)
      env->ldt.selector = selector;
  }
