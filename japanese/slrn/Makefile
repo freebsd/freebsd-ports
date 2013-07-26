@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-slrn
-# Date created:		6 Sept 1999
-# Whom:			Takashi Mega <mega@minz.org>
-#
+# Created by: Takashi Mega <mega@minz.org>
 # $FreeBSD$
-#
 
 PORTNAME=	slrn
 PORTVERSION=	0.9.6.2
@@ -18,21 +14,32 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}jp0.pat.gz
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	koma2@lovepeers.org
-COMMENT=	A newsreader based by S-Lang
+COMMENT=	Newsreader based on the S-Lang library
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	slang:${PORTSDIR}/japanese/libslang
 
 CONFLICTS=	slrn-0.*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-JDOCSRC=	${WRKDIR}/${PORTNAME}-doc-j0.9.5.6-0
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+JDOCSRC=	${WRKDIR}/${PORTNAME}-doc-j0.9.5.6-0
+
 MANLANG=	'' ja
 MAN1=		slrn.1
 
+# Tentatively improve inner makefiles in attempt to fix parallel builds
+post-patch:
+	@${REINPLACE_CMD} -e 's|-mkdir|mkdir -p| ; \
+		/DOT_O_DEPS/s|$$| $$(OBJDIR)|' \
+			${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|' \
+		${WRKSRC}/autoconf/Makefile.in
+
 post-install:
-	${INSTALL_MAN} ${JDOCSRC}/slrn.1 ${PREFIX}/man/ja/man1
-	${CP} -r ${JDOCSRC} ${PREFIX}/share/doc/slrn/ja
+	${INSTALL_MAN} ${JDOCSRC}/slrn.1 ${MANPREFIX}/man/ja/man1
+	${CP} -a ${JDOCSRC} ${PREFIX}/share/doc/slrn/ja
 
 .include <bsd.port.mk>
