@@ -5,8 +5,8 @@ PORTNAME=	libdesktop
 PORTVERSION=	0.0.9
 CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/4011/
-DISTNAME=	libDesktop-${PORTVERSION}
 PKGNAMEPREFIX=	deforaos-
+DISTNAME=	libDesktop-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	DeforaOS desktop library
@@ -19,6 +19,8 @@ USE_GNOME=	gtk20
 USES=		pkgconfig
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
