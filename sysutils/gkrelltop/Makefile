@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	david@pinko.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
 
 RUN_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
