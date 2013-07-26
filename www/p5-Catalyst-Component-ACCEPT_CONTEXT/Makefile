@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Component-ACCEPT_CONTEXT
-# Date created:				26 April 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Component-ACCEPT_CONTEXT
 PORTVERSION=	0.07
@@ -24,6 +20,7 @@ PERL_CONFIGURE=	yes
 MAN3=	Catalyst::Component::ACCEPT_CONTEXT.3
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /auto_install|Devel::Cycle/' ${WRKSRC}/Makefile.PL
+	${REINPLACE_CMD} -i '' -e '/auto_install/d' \
+		-e '/Devel::Cycle/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

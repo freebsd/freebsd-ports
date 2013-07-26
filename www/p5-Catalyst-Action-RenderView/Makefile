@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Action-RenderView
-# Date created:				July 11, 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Action-RenderView
 PORTVERSION=	0.16
@@ -28,6 +24,6 @@ PERL_CONFIGURE=	yes
 MAN3=	Catalyst::Action::RenderView.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless /^(test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' '/test_requires/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Template-JIT
-# Date Created:				2004/04/30
-# Whom:					alex@kapranoff.ru
-#
+# Created by: alex@kapranoff.ru
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Template-JIT
 PORTVERSION=	0.05
@@ -28,8 +24,7 @@ MAN3=		HTML::Template::JIT.3 HTML::Template::JIT::Compiler.3 \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -i -pe 's/indent -kr/indent/' \
+	@${REINPLACE_CMD} -i '' -e 's/indent -kr/indent/' \
 			${WRKSRC}/JIT/Compiler.pm
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.post.mk>
