@@ -21,6 +21,9 @@ COMMENT=	Fronted (GUI) for gngeo
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		gngeo:${PORTSDIR}/emulators/gngeo
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		does not build
 
 USE_BZIP2=	yes

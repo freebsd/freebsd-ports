@@ -16,6 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 CONFLICTS=	nicotine-[0-9]*
 BROKEN=		does not build
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 USE_BZIP2=		yes
 USE_GNOME=		pygtk2
 USE_PYTHON=		yes

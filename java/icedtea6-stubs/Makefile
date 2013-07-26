@@ -13,6 +13,9 @@ COMMENT=	IcedTea6 binary plugs for openjdk
 BUILD_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		Does not build with any of the supported Java vendors
 
 WRKSRC=		${WRKDIR}/jdk-7-icedtea-plugs

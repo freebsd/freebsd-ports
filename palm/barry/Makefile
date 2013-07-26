@@ -27,6 +27,9 @@ OPENSYNC_DESC=	Build the OpenSync plugin
 
 .include <bsd.port.options.mk>
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb" LIBUSB_CFLAGS="-I/usr/include"
 BROKEN=		does not configure
 

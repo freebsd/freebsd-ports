@@ -20,6 +20,8 @@ COMMENT=	Perl interface to the Apache scoreboard structure
 BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		does not configure
 
 PERL_CONFIGURE=	yes

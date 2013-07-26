@@ -11,6 +11,8 @@ COMMENT=	A graphical sudo tool based on the EFL
 
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		Does not build
 
 DIST_SUBDIR=	e17

@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Smart MUltipleXed Irc
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		Does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/smartirc4net.pc:${PORTSDIR}/irc/smartirc4net \

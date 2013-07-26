@@ -11,6 +11,8 @@ COMMENT=	A Virtual File System
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		does not package
 
 NO_INSTALL_MANPAGES=	yes

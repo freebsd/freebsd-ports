@@ -28,6 +28,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3<1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		unsatisfyable dependency object
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-sa_sae.py

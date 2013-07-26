@@ -20,6 +20,9 @@ CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 MAKE_ENV+=	MKOCTFILE=mkoctfile
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		does not work with openjdk, and will soon be part of octave base
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal

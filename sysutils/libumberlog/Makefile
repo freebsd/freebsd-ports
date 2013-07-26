@@ -13,6 +13,8 @@ MASTER_SITES=	http://cloud.github.com/downloads/algernon/libumberlog/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	CEE-enhanced syslog API
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		fails to install umberlog.3
 
 GNU_CONFIGURE=  yes

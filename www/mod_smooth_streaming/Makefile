@@ -17,6 +17,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	bmhermansson@gmail.com
 COMMENT=	Apache smooth streaming module
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		unfetchable
 
 MAKE_JOBS_SAFE=	yes

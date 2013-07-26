@@ -18,6 +18,9 @@ COMMENT=	A port of the linux gspcav1 webcam driver
 # Requires the linux emulation layer to be built
 BUILD_DEPENDS=	/usr/share/mk/bsd.linux_kmod.mk:${PORTSDIR}/devel/linux-kmod-compat
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 NO_PACKAGE=	depends on kernel sources
 
 # This is our Makefile to be used for build/install.
