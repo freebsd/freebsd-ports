@@ -26,6 +26,6 @@ MAN1=	umlclass.pl.1
 MAN3=	UML::Class::Simple.3
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /auto_install/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

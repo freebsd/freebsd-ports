@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-ASCIITable
-# Date created:				20 April 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-ASCIITable
 PORTVERSION=	0.20
@@ -22,7 +18,7 @@ MAN3=	Text::ASCIITable.3 \
 post-extract:
 	@${MKDIR} ${WRKSRC}/example
 	@${MV} ${WRKSRC}/ansi-example.pl ${WRKSRC}/example
-	@${PERL} -pi -e '$$_="" if m|ansi-example.pl|' ${WRKSRC}/MANIFEST
+	@${REINPLACE_CMD} -i '' '/ansi-example.pl/d' ${WRKSRC}/MANIFEST
 
 post-install:
 .if !defined(NOPORTDOCS)

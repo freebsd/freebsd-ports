@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-PPI-HTML
-# Date created:				24 March 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PPI-HTML
 PORTVERSION=	1.08
@@ -25,6 +21,6 @@ PERL_CONFIGURE=	yes
 MAN3=	PPI::HTML.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' '/Test::More/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

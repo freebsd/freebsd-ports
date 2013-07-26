@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-SAXDriver-Sablotron
-# Date created:	   30 May 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SAXDriver-Sablotron
 PORTVERSION=	0.30
@@ -23,6 +19,6 @@ PERL_CONFIGURE=	yes
 MAN3=		XML::SAXDriver::Sablotron.3
 
 pre-patch:
-	@${PERL} -pi -e 's!^use warnings;!!;' ${WRKSRC}/Sablotron.pm
+	@${REINPLACE_CMD} -i '' '/use warnings/d' ${WRKSRC}/Sablotron.pm
 
 .include <bsd.port.mk>

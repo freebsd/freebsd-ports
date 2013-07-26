@@ -25,6 +25,6 @@ MAN1=	perlver.1
 MAN3=	Perl::MinimumVersion.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/Test::/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e '/Test::/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

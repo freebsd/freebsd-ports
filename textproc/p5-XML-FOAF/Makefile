@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-XML-FOAF
-# Date created:		2006-09-25
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-FOAF
 PORTVERSION=	0.04
@@ -25,8 +21,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::FOAF.3	\
 		XML::FOAF::Person.3
-
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
