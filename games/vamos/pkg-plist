@@ -70,6 +70,12 @@ lib/libvamos-world.a
 lib/libvamos-world.la
 lib/libvamos-world.so
 lib/libvamos-world.so.0
+share/icons/hicolor/32x32/apps/vamos.png
+share/icons/hicolor/48x48/apps/vamos.png
+share/icons/hicolor/64x64/apps/vamos.png
+share/icons/hicolor/72x72/apps/vamos.png
+share/icons/hicolor/96x96/apps/vamos.png
+share/pixmaps/vamos.png
 %%DATADIR%%/cars/F1-1967-arm.ac
 %%DATADIR%%/cars/F1-1967-interior.ac
 %%DATADIR%%/cars/F1-1967-stator.ac
