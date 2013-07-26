@@ -1,9 +1,5 @@
-# New ports collection makefile for:   zangband
-# Date created:        29 May 2000
-# Whom:                Makoto YAMAKURA <makoto@pinpott.spnet.ne.jp>
-#
+# Created by: Makoto YAMAKURA <makoto@pinpott.spnet.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	zangband
 PORTVERSION=	2.6.2
@@ -38,10 +34,11 @@ ANGBANDLIB?=	lib/${PORTNAME}
 ANGBANDBIN?=	bin/${PORTNAME}
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
-		s|^autoheader|${AUTOHEADER}|; \
-		s|^automake|${AUTOMAKE}|; s|^autoconf|${AUTOCONF}|' \
-		${WRKSRC}/bootstrap
+	@${REINPLACE_CMD} -i '' -e 's|^aclocal|${ACLOCAL}|' \
+		-e 's|^autoheader|${AUTOHEADER}|' \
+		-e 's|^automake|${AUTOMAKE}|' \
+		-e 's|^autoconf|${AUTOCONF}|' \
+			${WRKSRC}/bootstrap
 
 pre-configure:
 	(cd ${WRKSRC} ; ${SH} bootstrap)

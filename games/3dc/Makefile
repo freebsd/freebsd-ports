@@ -22,7 +22,8 @@ WRKSRC=		${WRKDIR}/3Dc/src
 
 post-patch:
 .for file in init.c main.c piece.c stack.c xif.c
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -i '' -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/${file}
 .endfor
 
 do-install:

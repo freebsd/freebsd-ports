@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Mail-DomainKeys
-# Date created:	   23 May 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-DomainKeys
 PORTVERSION=	1.0
@@ -25,6 +21,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Mail::DomainKeys.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if $$.>=6 && $$.<=38' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' '6,38d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

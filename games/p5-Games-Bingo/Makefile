@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Games-Bingo
-# Date created:				14. August 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Games-Bingo
 PORTVERSION=	0.15
@@ -26,6 +22,6 @@ MAN3=		Games::Bingo.3 \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m|Test::|' ${WRKSRC}/Build.PL
+	@${REINPLACE_CMD} -i '' '/Test::/d' ${WRKSRC}/Build.PL
 
 .include <bsd.port.post.mk>

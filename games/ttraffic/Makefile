@@ -1,9 +1,5 @@
-# New ports collection makefile for:	games/ttraffic
-# Date created:				14 November 2001
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ttraffic
 PORTVERSION=	0.8
@@ -20,11 +16,16 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 USE_PERL5_BUILD=yes
+USES=		shebangfix
+SHEBANG_FILES=	ttraffic.tcl
+SHEBANG_LANG=	wish
+wish_OLD_CMD=	/usr/bin/wish
+wish_CMD=		${LOCALBASE}/bin/wish8.4
 
 post-patch:
-	${PERL} -pi -e 's|/usr/local/share/ttraffic/|${DATADIR}/|g;' \
-		-e 's|#!/usr/bin/wish|#!${LOCALBASE}/bin/wish8.4|g' \
+	@${REINPLACE_CMD} -i '' -e 's|/usr/local/share/ttraffic/|${DATADIR}/|' \
 		${WRKSRC}/ttraffic.tcl
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ttraffic.tcl ${PREFIX}/bin/ttraffic
 	${MKDIR} ${DATADIR}
