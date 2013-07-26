@@ -8,14 +8,18 @@ CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A terminal emulator based on GTK and VTE
+COMMENT=	Terminal emulator based on GTK and VTE
+
+OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	vte
 USES=		cmake pkgconfig gettext
 USE_BZIP2=	yes
+LDFLAGS+=	-lintl
 
 MAN1=		sakura.1
 
+.include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
 		 /"-O2"/d ; \
@@ -23,7 +27,7 @@ post-patch:
 		 /FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
