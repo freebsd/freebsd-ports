@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.src-${SRCDATE}
 DIST_SUBDIR=	sdpa
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficient SDP Solver
+COMMENT=	Very efficient SDP (semidefinite programming) solver
 
 USES=		gmake
 
@@ -49,6 +49,11 @@ LAPACK=		-lalapack -lptcblas
 CONFIGURE_ARGS+=--with-blas="-L${LOCALBASE}/lib ${BLAS}" --with-lapack="-L${LOCALBASE}/lib ${LAPACK}"
 
 PLIST_SUB+=	MANUALFILE=${MANUALFILE}
+
+post-patch:
+# Register missing target dependency to unbreak parallel builds
+	@${REINPLACE_CMD} -e 's,^sdpa_DEPENDENCIES =,& $$(lib_LIBRARIES),' \
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdpa ${PREFIX}/bin
