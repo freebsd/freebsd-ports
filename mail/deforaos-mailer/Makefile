@@ -3,11 +3,10 @@
 
 PORTNAME=	mailer
 PORTVERSION=	0.1.6
-
 CATEGORIES=	mail
 MASTER_SITES=	http://www.defora.org/os/download/download/4029/
-DISTNAME=	Mailer-${PORTVERSION}
 PKGNAMEPREFIX=	deforaos-
+DISTNAME=	Mailer-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	DeforaOS desktop mail client
@@ -27,6 +26,8 @@ USE_OPENSSL=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
+
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		compose.1 \
 		mailer.1
