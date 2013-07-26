@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimmage
-# Date created:		10 June 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gimmage
 PORTVERSION=	0.2.3
@@ -19,5 +15,6 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 
 USES=		gettext
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lintl
 
 .include <bsd.port.mk>
