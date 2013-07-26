@@ -1,7 +1,0 @@
-The library mostly provides functions to allow you to use OpenGL alongside
-Allegro -- you use OpenGL for your rendering to the screen, and Allegro
-for miscellaneous tasks like gathering input, doing timers, getting
-cross-platform portability, loading data, playing samples and drawing your
-textures. So this library fills the same hole that things like GLUT do.
-
-WWW:	http://allegrogl.sourceforge.net/

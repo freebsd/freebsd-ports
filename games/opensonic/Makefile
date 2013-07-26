@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro \
 		alpng>=1.3:${PORTSDIR}/graphics/alpng
 RUN_DEPENDS+=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro \
 		alpng>=1.3:${PORTSDIR}/graphics/alpng
-LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
+LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro \
 		ogg:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 

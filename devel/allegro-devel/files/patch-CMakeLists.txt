@@ -1,20 +1,11 @@
---- CMakeLists.txt.orig
-+++ CMakeLists.txt
-@@ -66,7 +66,7 @@
- endif(WIN32)
- 
- set(ALLEGRO_VERSION 4.4.2)
--string(REGEX MATCH "^[0-9]+[.][0-9]+" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
-+string(REGEX MATCH "^[0-9]" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
- 
- # Mac OS X -compatibility_version.
- # XXX doesn't seem to work
-@@ -961,7 +961,7 @@
+--- CMakeLists.txt.orig	2012-06-24 08:30:11.000000000 +0200
++++ CMakeLists.txt	2012-10-05 22:02:53.000000000 +0200
+@@ -899,7 +899,7 @@
              @ONLY
              )
-         install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc
--                DESTINATION "lib${LIB_SUFFIX}/pkgconfig"
-+                DESTINATION "libdata/pkgconfig"
-                 )
+         install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${outname}
+-            DESTINATION "lib${LIB_SUFFIX}/pkgconfig"
++            DESTINATION "libdata/pkgconfig"
+             )
      endforeach(name)
- endif(UNIX)
+ endif(UNIX AND NOT WANT_FRAMEWORKS AND NOT IPHONE)

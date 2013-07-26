@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	A 2D tank game with large, cartoonish weapons
 
-LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro
 
 USE_GMAKE=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}/
