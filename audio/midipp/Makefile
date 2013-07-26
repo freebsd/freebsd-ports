@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	midipp
-PORTVERSION=	1.0.20
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
@@ -10,14 +10,14 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	A MIDI playback, recording, and live performance tool
 
-BUILD_DEPENDS=	libumidi>=2.0.2:${PORTSDIR}/audio/libumidi
+BUILD_DEPENDS=	libumidi>=2.0.7:${PORTSDIR}/audio/libumidi
 
 LIB_DEPENDS=	umidi20.1:${PORTSDIR}/audio/libumidi
 
 LICENSE=	BSD
 USE_BZIP2=	yes
 
-USE_QT4=	gui qmake_build moc_build rcc_build
+USE_QT4=	gui qmake_build moc_build rcc_build network
 
 MAKE_JOBS_SAFE=	yes
 
