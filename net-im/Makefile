@@ -22,7 +22,6 @@
     SUBDIR += ejabberd
     SUBDIR += emesene
     SUBDIR += empathy
-    SUBDIR += eva
     SUBDIR += farsight2
     SUBDIR += finch
     SUBDIR += folks
@@ -50,14 +49,9 @@
     SUBDIR += jggtrans
     SUBDIR += jitsi
     SUBDIR += kde-telepathy
-    SUBDIR += kmerlin
-    SUBDIR += kmess
     SUBDIR += kmess-kde4
     SUBDIR += komclean
-    SUBDIR += konverse
-    SUBDIR += kopete
     SUBDIR += kopete-kde4
-    SUBDIR += kpopup
     SUBDIR += ktp-accounts-kcm
     SUBDIR += ktp-approver
     SUBDIR += ktp-auth-handler
@@ -162,8 +156,6 @@
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-xmpp4r
     SUBDIR += sendxmpp
-    SUBDIR += sim-im
-    SUBDIR += sim-im-devel
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += tapioca-qt
@@ -186,7 +178,6 @@
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
     SUBDIR += tmsnc
-    SUBDIR += trix
     SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi

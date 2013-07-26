@@ -1,8 +1,0 @@
---- khacc/khacc.in.orig	Sun Oct 12 21:58:50 2003
-+++ khacc/khacc.in	Sun Dec 14 22:47:45 2003
-@@ -1,4 +1,4 @@
--#! /bin/sh
-+#!%%LOCALBASE%%/bin/bash
- ###############################################################
- # parse the command line, and call the appropriate executable #
- #                                                             #

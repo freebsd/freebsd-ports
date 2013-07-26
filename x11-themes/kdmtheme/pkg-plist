@@ -1,8 +1,0 @@
-lib/kde3/kcm_kdmtheme.a
-lib/kde3/kcm_kdmtheme.la
-lib/kde3/kcm_kdmtheme.so
-share/applications/kde/kdmtheme.desktop
-share/doc/HTML/en/kdmtheme/common
-share/doc/HTML/en/kdmtheme/index.cache.bz2
-share/doc/HTML/en/kdmtheme/index.docbook
-@dirrm share/doc/HTML/en/kdmtheme

@@ -30,8 +30,6 @@
     SUBDIR += alsa-plugins
     SUBDIR += alsa-utils
     SUBDIR += alure
-    SUBDIR += amarok
-    SUBDIR += amarok-fs
     SUBDIR += amarok-kde4
     SUBDIR += amb-plugins
     SUBDIR += amp
@@ -42,7 +40,6 @@
     SUBDIR += ardour
     SUBDIR += ario
     SUBDIR += arss
-    SUBDIR += arts
     SUBDIR += artswrapper
     SUBDIR += ascd
     SUBDIR += asmix
@@ -95,7 +92,6 @@
     SUBDIR += cdplay
     SUBDIR += celt
     SUBDIR += checkmate
-    SUBDIR += cheesetracker
     SUBDIR += chordpack
     SUBDIR += chromaprint
     SUBDIR += clementine-player
@@ -119,7 +115,6 @@
     SUBDIR += cuetools
     SUBDIR += cutmp3
     SUBDIR += cymbaline
-    SUBDIR += cynthiune
     SUBDIR += dagrab
     SUBDIR += darkice
     SUBDIR += dcd
@@ -145,7 +140,6 @@
     SUBDIR += emu10kx
     SUBDIR += enscribe
     SUBDIR += epos-devel
-    SUBDIR += ermixer
     SUBDIR += esound
     SUBDIR += espeak
     SUBDIR += esperanza
@@ -358,15 +352,11 @@
     SUBDIR += juke
     SUBDIR += julius
     SUBDIR += jxm
-    SUBDIR += k3bmonkeyaudioplugin
     SUBDIR += kaudiocreator
     SUBDIR += kexis
-    SUBDIR += kid3
     SUBDIR += kid3-kde4
     SUBDIR += kio-audiocd
-    SUBDIR += kirocker
     SUBDIR += kmix
-    SUBDIR += kmp
     SUBDIR += kscd
     SUBDIR += ksmp3play
     SUBDIR += kstreamripper
@@ -464,14 +454,12 @@
     SUBDIR += liteamp
     SUBDIR += lmms
     SUBDIR += lpac
-    SUBDIR += lplayer
     SUBDIR += lua51-mpd
     SUBDIR += lv2core
     SUBDIR += lxmusic
     SUBDIR += mac
     SUBDIR += mad
     SUBDIR += madfufw
-    SUBDIR += madman
     SUBDIR += madplay
     SUBDIR += malint
     SUBDIR += mangler
@@ -524,7 +512,6 @@
     SUBDIR += mpdbrowser
     SUBDIR += mpdcon
     SUBDIR += mpdscribble
-    SUBDIR += mpeglib_artsplug
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpg321
@@ -625,7 +612,6 @@
     SUBDIR += portaudio
     SUBDIR += portaudio2
     SUBDIR += praat
-    SUBDIR += prokyon3
     SUBDIR += puddletag
     SUBDIR += pulseaudio
     SUBDIR += pure-audio
@@ -858,7 +844,6 @@
     SUBDIR += xmms-gbsplay
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-jack
-    SUBDIR += xmms-kde
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
     SUBDIR += xmms-mac
@@ -897,7 +882,6 @@
     SUBDIR += xsynth-dssi
     SUBDIR += xvmixer
     SUBDIR += xwave
-    SUBDIR += yammi
     SUBDIR += yamt
     SUBDIR += yell
     SUBDIR += zinf

@@ -1,9 +1,0 @@
-BOUML is a free UML tool box (under development) allowing you to specify and
-generate code in C++, Java, Idl, PHP and Python.
-
-BOUML is extensible, and the external tools (named plug-outs) may be developed
-in C++ or Java, using BOUML for their definition as any other program. The code
-generators and reverses are ones of the predefined plug-outs  included in the
-BOUML distribution.
-
-WWW:	http://bouml.free.fr/

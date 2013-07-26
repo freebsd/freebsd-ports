@@ -24,7 +24,6 @@
     SUBDIR += ibus-hangul
     SUBDIR += imhangul
     SUBDIR += kaistfonts
-    SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += ko.TeX
     SUBDIR += ko.TeX-fonts-base

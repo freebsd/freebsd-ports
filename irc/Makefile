@@ -19,7 +19,6 @@
     SUBDIR += dcc
     SUBDIR += dircproxy
     SUBDIR += dxirc
-    SUBDIR += eggcreator
     SUBDIR += eggdrop
     SUBDIR += eggdrop-devel
     SUBDIR += epic4
@@ -61,12 +60,9 @@
     SUBDIR += irssistats
     SUBDIR += keitairc
     SUBDIR += keitairc2
-    SUBDIR += kmyirc
-    SUBDIR += konversation
     SUBDIR += konversation-kde4
     SUBDIR += kvirc
     SUBDIR += kvirc-qt4
-    SUBDIR += kwirc
     SUBDIR += libircclient
     SUBDIR += lostirc
     SUBDIR += miau

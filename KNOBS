@@ -110,7 +110,6 @@ JACK			Adds suppor for the JACK Audio Connection Kit
 JAVA			Adds support for Java
 JOYSTICK		Adds joystick support
 JPEG			Adds JPEG support
-KDE			Adds KDE support
 KDE4			Adds KDE4 support
 KERBEROS		Adds Kerberos support
 LAME			LAME MP3 audio encoder support
@@ -185,7 +184,6 @@ PSYCO			Adds Python Psyco optimization support
 PTHREADS		Enable pthreads support
 PULSEAUDIO		Adds support for the PulseAudio sound server
 PYTHON			Adds Python language/module support
-QT			Adds Qt support
 QT4			Adds Qt4 support
 QUOTA			Adds support for quotas
 QUICKTIME		QuickTime audio/video support

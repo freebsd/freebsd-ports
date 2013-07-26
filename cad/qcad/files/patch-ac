@@ -1,9 +1,0 @@
---- qcadlib/src/engine/rs_layer.cpp.orig	Mon Jun 18 16:46:52 2007
-+++ qcadlib/src/engine/rs_layer.cpp	Mon Jun 18 16:47:08 2007
-@@ -56,5 +56,5 @@
-     << " pen: " << l.getPen()
- 	<< " frozen: " << (int)l.isFrozen()
--	<< " address: " << (int)(&l)
-+//	<< " address: " << (int)(&l)
-     << std::endl;
-     return os;

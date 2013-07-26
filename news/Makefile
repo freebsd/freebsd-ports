@@ -38,7 +38,6 @@
     SUBDIR += husky-sqpack
     SUBDIR += ifmail
     SUBDIR += inn
-    SUBDIR += klibido
     SUBDIR += knews
     SUBDIR += leafnode
     SUBDIR += lottanzb

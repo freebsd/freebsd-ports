@@ -1,6 +1,0 @@
-A simple CPU meter for the KDE Kicker which displays percent usage,
-with support for SMP and separate user/system loads. It will show
-the CPU usage in form of one or two configurable diagrams. There are
-settings for colors and some different styles. Note that it isn't
-the real system load that's shown, but the percent used of the total
-CPU power, which is calculated from the number of CPU ticks. 

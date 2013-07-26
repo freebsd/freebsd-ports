@@ -12,7 +12,6 @@
     SUBDIR += awesome
     SUBDIR += awesome-vicious
     SUBDIR += awesome2
-    SUBDIR += bbconf
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
@@ -105,7 +104,6 @@
     SUBDIR += ion
     SUBDIR += jewel
     SUBDIR += jwm
-    SUBDIR += kompmgr
     SUBDIR += larswm
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp

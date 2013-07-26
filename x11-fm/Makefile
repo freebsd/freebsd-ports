@@ -7,7 +7,6 @@
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser
     SUBDIR += dfm
-    SUBDIR += dolphin
     SUBDIR += doublecmd
     SUBDIR += emelfm2
     SUBDIR += ezfm
@@ -15,7 +14,6 @@
     SUBDIR += gentoo
     SUBDIR += gnome-commander2
     SUBDIR += gprename
-    SUBDIR += krusader
     SUBDIR += krusader2
     SUBDIR += mtoolsfm
     SUBDIR += mucommander

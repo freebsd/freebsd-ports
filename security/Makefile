@@ -242,18 +242,13 @@
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
-    SUBDIR += kgpg
     SUBDIR += kgpg-kde4
-    SUBDIR += klamav
     SUBDIR += knock
     SUBDIR += knocker
-    SUBDIR += kopete-otr
-    SUBDIR += kovpn
     SUBDIR += kpcli
     SUBDIR += krb5
     SUBDIR += krb5-appl
     SUBDIR += kripp
-    SUBDIR += kssh
     SUBDIR += kwallet
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
@@ -813,8 +808,6 @@
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
-    SUBDIR += qca-tls
-    SUBDIR += qtfw
     SUBDIR += qtkeychain
     SUBDIR += quantis
     SUBDIR += quantis-kmod

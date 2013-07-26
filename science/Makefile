@@ -65,7 +65,6 @@
     SUBDIR += gramps
     SUBDIR += gromacs
     SUBDIR += gsmc
-    SUBDIR += gsystem
     SUBDIR += gtamsanalyzer
     SUBDIR += gwyddion
     SUBDIR += h5utils
@@ -79,8 +78,6 @@
     SUBDIR += jmol
     SUBDIR += jstrack
     SUBDIR += kalzium
-    SUBDIR += kmovisto
-    SUBDIR += kst
     SUBDIR += kst2
     SUBDIR += lamprop
     SUBDIR += libctl

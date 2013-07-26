@@ -1,7 +1,0 @@
-bin/ksig
-share/applications/kde/ksig.desktop
-share/applications/kdeaddons-ksig-%%KDE_VER%%
-share/apps/ksig/ksigui.rc
-share/icons/hicolor/16x16/apps/ksig.png
-share/icons/hicolor/32x32/apps/ksig.png
-@dirrm share/apps/ksig

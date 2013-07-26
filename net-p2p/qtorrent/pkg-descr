@@ -1,8 +1,0 @@
-QTorrent is a BitTorrent client that uses the Qt widget-set. It allows you to 
-have several torrents open at the same time from within the same program 
-window, offering you easy overview, access and management through a list-mode.
-Every torrent also has it's own page where you can control things like upload 
-speed and upload slots. A page that shows some statistics of all open torrents 
-is also available.
-
-WWW: http://thegraveyard.org/qtorrent.php

@@ -1,9 +1,0 @@
-include/libkexiv2/kexiv2.h
-include/libkexiv2/libkexiv2_export.h
-include/libkexiv2/version.h
-lib/libkexiv2.a
-lib/libkexiv2.la
-lib/libkexiv2.so
-lib/libkexiv2.so.5
-libdata/pkgconfig/libkexiv2.pc
-@dirrm include/libkexiv2

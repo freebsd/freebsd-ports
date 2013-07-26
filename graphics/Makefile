@@ -37,9 +37,7 @@
     SUBDIR += aeskulap
     SUBDIR += agave
     SUBDIR += agg
-    SUBDIR += albumshaper
     SUBDIR += alpng
-    SUBDIR += amanith
     SUBDIR += amide
     SUBDIR += ampasCTL
     SUBDIR += animorph
@@ -124,13 +122,10 @@
     SUBDIR += devil
     SUBDIR += dia
     SUBDIR += diacanvas2
-    SUBDIR += digikam
-    SUBDIR += digikam-doc
     SUBDIR += digikam-kde4
     SUBDIR += digikam-kde4-doc
     SUBDIR += digikam-kde4-l10n
     SUBDIR += ditaa
-    SUBDIR += divxcalc
     SUBDIR += djview4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
@@ -139,7 +134,6 @@
     SUBDIR += duhdraw
     SUBDIR += dynamechs
     SUBDIR += easypaint
-    SUBDIR += ecg2png
     SUBDIR += ecore-evas
     SUBDIR += ecore-sdl
     SUBDIR += edje
@@ -207,7 +201,6 @@
     SUBDIR += flam3
     SUBDIR += flasm
     SUBDIR += fli2gif
-    SUBDIR += flip
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fortytwo
@@ -230,7 +223,6 @@
     SUBDIR += fpc-rsvg
     SUBDIR += fpc-svgalib
     SUBDIR += fracplanet
-    SUBDIR += fractorama
     SUBDIR += fraqtive
     SUBDIR += freeglut
     SUBDIR += freeimage
@@ -356,7 +348,6 @@
     SUBDIR += gtkgraph
     SUBDIR += gts
     SUBDIR += guilib
-    SUBDIR += gwenview
     SUBDIR += gwenview-kde4
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
@@ -387,7 +378,6 @@
     SUBDIR += imagesort
     SUBDIR += imageviewer
     SUBDIR += imc
-    SUBDIR += imgseek
     SUBDIR += imgtops
     SUBDIR += imgv
     SUBDIR += imlib
@@ -424,14 +414,10 @@
     SUBDIR += jumpgis
     SUBDIR += jumpgis-postgis
     SUBDIR += k3d
-    SUBDIR += kalbum
-    SUBDIR += kamera
     SUBDIR += kamera-kde4
-    SUBDIR += kbarcode
     SUBDIR += kcolorchooser
     SUBDIR += kcoloredit
     SUBDIR += kdc2tiff
-    SUBDIR += kdegraphics3
     SUBDIR += kdegraphics4
     SUBDIR += kdegraphics4-mobipocket
     SUBDIR += kdegraphics4-strigi-analyzer
@@ -477,24 +463,18 @@
     SUBDIR += kipi-plugin-videoslideshow
     SUBDIR += kipi-plugin-vkontakte
     SUBDIR += kipi-plugin-yandexfotki
-    SUBDIR += kipi-plugins
     SUBDIR += kipi-plugins-kde4
-    SUBDIR += kisomandel
     SUBDIR += kix-kmod
     SUBDIR += klatexformula
     SUBDIR += kludge3d
     SUBDIR += kolourpaint
-    SUBDIR += kooka
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
-    SUBDIR += kradview
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu
-    SUBDIR += kuickshow
     SUBDIR += kuickshow-kde4
     SUBDIR += l2p
-    SUBDIR += landscape
     SUBDIR += laternamagica
     SUBDIR += lcdtest
     SUBDIR += lcms
@@ -538,13 +518,9 @@
     SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
-    SUBDIR += libkdcraw
     SUBDIR += libkdcraw-kde4
-    SUBDIR += libkexif
-    SUBDIR += libkexiv2
     SUBDIR += libkexiv2-kde4
     SUBDIR += libkface
-    SUBDIR += libkipi
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins
     SUBDIR += libksane
@@ -560,7 +536,6 @@
     SUBDIR += libpgf
     SUBDIR += libprojectm
     SUBDIR += libpuzzle
-    SUBDIR += libqglviewer
     SUBDIR += libqrencode
     SUBDIR += librasterlite
     SUBDIR += libraw
@@ -576,7 +551,6 @@
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg
     SUBDIR += libwpg01
-    SUBDIR += libx3dtk
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
@@ -827,7 +801,6 @@
     SUBDIR += poppler-utils
     SUBDIR += pornview
     SUBDIR += potrace
-    SUBDIR += potracegui
     SUBDIR += povray-meta
     SUBDIR += povray31
     SUBDIR += povray36
@@ -849,7 +822,6 @@
     SUBDIR += py-PyX
     SUBDIR += py-aafigure
     SUBDIR += py-actdiag
-    SUBDIR += py-amanith
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco
     SUBDIR += py-cairo
@@ -999,7 +971,6 @@
     SUBDIR += shotwell
     SUBDIR += show
     SUBDIR += showimage
-    SUBDIR += showimg
     SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += simpleviewer
@@ -1069,7 +1040,6 @@
     SUBDIR += xbmbrowser
     SUBDIR += xd3d
     SUBDIR += xdgagrab
-    SUBDIR += xenomorph
     SUBDIR += xface.el
     SUBDIR += xfig
     SUBDIR += xfpovray

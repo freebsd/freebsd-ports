@@ -41,10 +41,6 @@
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
-    SUBDIR += kasablanca
-    SUBDIR += kbear
-    SUBDIR += kftpgrabber
-    SUBDIR += kpum
     SUBDIR += lftp
     SUBDIR += linux-f10-curl
     SUBDIR += llnlxdir

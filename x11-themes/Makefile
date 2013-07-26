@@ -4,7 +4,6 @@
     COMMENT = X11 themes
 
     SUBDIR += audacious-skins
-    SUBDIR += baghira
     SUBDIR += beastie
     SUBDIR += bluecurve-themes
     SUBDIR += claws-mail-themes
@@ -123,15 +122,6 @@
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-vista-inspirate
-    SUBDIR += kde-style-comix
-    SUBDIR += kde-style-lipstik
-    SUBDIR += kde-style-polyester
-    SUBDIR += kde-style-tiblit
-    SUBDIR += kde-windeco-activeheart
-    SUBDIR += kde-windeco-crystal
-    SUBDIR += kde-windeco-knifty
-    SUBDIR += kde-windeco-neos
-    SUBDIR += kde-windeco-smoothblend
     SUBDIR += kde4-base-artwork
     SUBDIR += kde4-icons-oxygen
     SUBDIR += kde4-style-bespin
@@ -144,9 +134,7 @@
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kde4-windeco-nitrogen
-    SUBDIR += kdeartwork3
     SUBDIR += kdeartwork4
-    SUBDIR += kdmtheme
     SUBDIR += lila-xfwm4
     SUBDIR += linux-f10-hicolor-icon-theme
     SUBDIR += linux-f10-qtcurve-gtk2
@@ -165,20 +153,13 @@
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
-    SUBDIR += moodin
     SUBDIR += murrine-configurator
     SUBDIR += nimbus
     SUBDIR += openbox-themes
-    SUBDIR += phase
-    SUBDIR += polymer
-    SUBDIR += qinx
-    SUBDIR += qnxstyle
-    SUBDIR += qt-bluecurve-theme
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
     SUBDIR += qtcurve-gtk2
-    SUBDIR += qtcurve-kde3
     SUBDIR += qtcurve-kde4
     SUBDIR += qtcurve-qt4
     SUBDIR += rezlooks

@@ -339,7 +339,6 @@
     SUBDIR += jq
     SUBDIR += jrefentry
     SUBDIR += jshon
-    SUBDIR += kbedic
     SUBDIR += kdiff3
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
@@ -1387,7 +1386,6 @@
     SUBDIR += sk-hyphen
     SUBDIR += sk-ispell
     SUBDIR += sk-mythes
-    SUBDIR += skim
     SUBDIR += sl-aspell
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
@@ -1473,10 +1471,8 @@
     SUBDIR += uim-gnome
     SUBDIR += uim-gtk
     SUBDIR += uim-gtk3
-    SUBDIR += uim-kde
     SUBDIR += uim-kde4
     SUBDIR += uim-m17nlib
-    SUBDIR += uim-qt
     SUBDIR += uim-qt4
     SUBDIR += uml2svg
     SUBDIR += uncrustify
@@ -1550,8 +1546,6 @@
     SUBDIR += xslint
     SUBDIR += xstream
     SUBDIR += xt
-    SUBDIR += xxdiff
-    SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yamcha

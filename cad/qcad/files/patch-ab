@@ -1,9 +1,0 @@
---- qcadlib/src/engine/rs_entity.cpp.orig	Mon Jun 18 16:48:32 2007
-+++ qcadlib/src/engine/rs_entity.cpp	Mon Jun 18 16:48:51 2007
-@@ -862,5 +862,5 @@
-     } else {
-         os << " layer: " << e.layer->getName().latin1() << " ";
--        os << " layer address: " << (int)(e.layer) << " ";
-+//        os << " layer address: " << (int)(e.layer) << " ";
-     }
- 

@@ -1,9 +1,0 @@
-Kovpn is a really simple OpenVPN GUI for everyday use. It is a client only GUI, 
-meaning that you cannot administrate an OpenVPN server with it (Look for kvpnc 
-if you want such a program). You can use it to connect and disconnect without 
-needing to open a console. You can also input username and/or password that 
-might be needed.
-In Short: It can do everything an end-user want's for his everyday work with
-OpenVPN.
-
-WWW: http://www.enlighter.de/

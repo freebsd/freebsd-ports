@@ -93,7 +93,6 @@
     SUBDIR += dcdflib
     SUBDIR += diehard
     SUBDIR += dieharder
-    SUBDIR += digitizer
     SUBDIR += dislin
     SUBDIR += djbfft
     SUBDIR += drgeo
@@ -128,7 +127,6 @@
     SUBDIR += freemat
     SUBDIR += freemat-mpi
     SUBDIR += fricas
-    SUBDIR += fung-calc
     SUBDIR += fxt
     SUBDIR += galculator
     SUBDIR += gambit
@@ -201,7 +199,6 @@
     SUBDIR += jsmath-fonts-sprite
     SUBDIR += jtransforms
     SUBDIR += jts
-    SUBDIR += k3dsurf
     SUBDIR += kalgebra
     SUBDIR += kash3
     SUBDIR += kbruch
@@ -209,8 +206,6 @@
     SUBDIR += kig
     SUBDIR += kktdirect
     SUBDIR += kmplot
-    SUBDIR += koctave
-    SUBDIR += kseg
     SUBDIR += labplot
     SUBDIR += lambda
     SUBDIR += lapack
@@ -519,7 +514,6 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
     SUBDIR += petsc
-    SUBDIR += pgcalc
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
     SUBDIR += php52-bcmath
@@ -584,12 +578,10 @@
     SUBDIR += qtiplot
     SUBDIR += qtiplot-doc
     SUBDIR += qtoctave
-    SUBDIR += qwtplot3d
     SUBDIR += qwtplot3d-qt4
     SUBDIR += randlib
     SUBDIR += rapid
     SUBDIR += reed-solomon
-    SUBDIR += rkward
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
     SUBDIR += rocs
@@ -664,7 +656,6 @@
     SUBDIR += wxMaxima
     SUBDIR += x12arima
     SUBDIR += xblas
-    SUBDIR += xgfe
     SUBDIR += xgobi
     SUBDIR += xgraph
     SUBDIR += xlapack

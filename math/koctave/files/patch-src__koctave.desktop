@@ -1,7 +1,0 @@
---- ./src/koctave.desktop.orig	2006-05-18 02:22:19.000000000 +0400
-+++ ./src/koctave.desktop	2008-06-01 17:28:49.000000000 +0400
-@@ -10,3 +10,4 @@
- Terminal=false
- Name=koctave
- Name[de]=Koctave
-+Categories=KDE;Education;Science;

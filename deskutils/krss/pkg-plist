@@ -1,6 +1,0 @@
-bin/krss
-share/applnk/Applications/krss.desktop
-share/apps/krss/krssui.rc
-@dirrm share/apps/krss
-share/icons/locolor/16x16/apps/krss.png
-share/icons/locolor/32x32/apps/krss.png

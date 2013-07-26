@@ -1,7 +1,0 @@
-KKeyled is a KDE panel tray widget which displays the LED states
-of the keyboard (ie. Caps Lock, Num Lock, and Scroll Lock).
-It is particularly useful for wireless keyboards without LEDs,
-and can be used to set the LED states of the keyboard as well.
-
-Author: Dieter Landolt <dieter.landolt@secs.ch>
-WWW: http://www.truesoft.ch/dieter/kkeyled.html

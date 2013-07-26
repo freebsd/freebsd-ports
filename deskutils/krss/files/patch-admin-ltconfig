@@ -1,9 +1,0 @@
---- admin/ltconfig	2003-02-20 14:26:48.000000000 -0500
-+++ admin/ltconfig	2011-05-02 13:56:16.000000000 -0400
-@@ -635,5 +635,5 @@
-   # FIXME:  We should use a variable here
-   # Configure for a C compiler
--  . $srcdir/ltcf-c.sh
-+  . admin/ltcf-c.sh
- fi
- 

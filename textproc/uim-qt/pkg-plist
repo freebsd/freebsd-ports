@@ -1,7 +1,0 @@
-bin/uim-chardict-qt
-bin/uim-im-switcher-qt
-bin/uim-pref-qt
-bin/uim-toolbar-qt
-libexec/uim-candwin-qt
-%%DATADIR%%/helperdata/bushu.t
-@dirrmtry %%DATADIR%%/helperdata

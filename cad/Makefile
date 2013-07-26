@@ -65,7 +65,6 @@
     SUBDIR += netgen
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
-    SUBDIR += opencascade-tutorial
     SUBDIR += openscad
     SUBDIR += openvsp
     SUBDIR += p5-GDS2
@@ -73,12 +72,10 @@
     SUBDIR += pcb
     SUBDIR += pdnmesh
     SUBDIR += pythoncad
-    SUBDIR += qcad
     SUBDIR += qcad-partslib
     SUBDIR += qelectrotech
     SUBDIR += qfsm
     SUBDIR += qmls
-    SUBDIR += qucs
     SUBDIR += repsnapper
     SUBDIR += salome
     SUBDIR += salome-geom
@@ -106,7 +103,6 @@
     SUBDIR += transcalc
     SUBDIR += varkon
     SUBDIR += verilog-mode.el
-    SUBDIR += vipec
     SUBDIR += xcircuit
     SUBDIR += z88
 

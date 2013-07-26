@@ -64,7 +64,6 @@
     SUBDIR += emacs21
     SUBDIR += emacs22
     SUBDIR += emacs23
-    SUBDIR += f4l
     SUBDIR += fb
     SUBDIR += flim
     SUBDIR += flim-emacs21
@@ -101,14 +100,10 @@
     SUBDIR += jupp
     SUBDIR += kate
     SUBDIR += kate-plugin-pate
-    SUBDIR += kate-plugins
-    SUBDIR += kile
     SUBDIR += kile-kde4
-    SUBDIR += klat
     SUBDIR += klat4
     SUBDIR += komodo-edit
     SUBDIR += komodo-ide
-    SUBDIR += kxmleditor
     SUBDIR += lazarus
     SUBDIR += lazarus-lcl-gtk
     SUBDIR += lazarus-lcl-gtk2
@@ -239,13 +234,11 @@
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
-    SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += poedit
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-room
-    SUBDIR += rospell
     SUBDIR += rox-edit
     SUBDIR += scite
     SUBDIR += scribes

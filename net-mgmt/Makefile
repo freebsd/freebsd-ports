@@ -308,7 +308,6 @@
     SUBDIR += sysmon
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
-    SUBDIR += tork
     SUBDIR += torrus
     SUBDIR += vidalia
     SUBDIR += virt-viewer

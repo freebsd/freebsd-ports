@@ -1,7 +1,0 @@
-lib/kde3/kwin_smoothblend_config.a
-lib/kde3/kwin_smoothblend_config.la
-lib/kde3/kwin_smoothblend_config.so
-lib/kde3/kwin3_smoothblend.a
-lib/kde3/kwin3_smoothblend.la
-lib/kde3/kwin3_smoothblend.so
-share/apps/kwin/smoothblend.desktop

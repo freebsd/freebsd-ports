@@ -1,9 +1,0 @@
-lib/libkbirthday.a
-lib/libkbirthday.la
-lib/libkbirthday.so
-share/apps/kicker/applets/kbirthday.desktop
-share/icons/hicolor/16x16/apps/kbirthday.png
-share/icons/hicolor/32x32/apps/kbirthday.png
-share/locale/de/LC_MESSAGES/kbirthday.mo
-share/locale/es/LC_MESSAGES/kbirthday.mo
-share/locale/ru/LC_MESSAGES/kbirthday.mo

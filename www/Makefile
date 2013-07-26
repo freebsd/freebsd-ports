@@ -382,9 +382,7 @@
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
     SUBDIR += kannel
-    SUBDIR += kdewebdev
     SUBDIR += kdewebdev4
-    SUBDIR += khtml2png
     SUBDIR += kpartsplugin
     SUBDIR += kplaylist
     SUBDIR += kwebkitpart

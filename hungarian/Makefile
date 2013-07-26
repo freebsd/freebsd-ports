@@ -12,7 +12,6 @@
     SUBDIR += ispell
     SUBDIR += jdictionary-eng-hun
     SUBDIR += jdictionary-eng-hun-expr
-    SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += libreoffice
     SUBDIR += mythes

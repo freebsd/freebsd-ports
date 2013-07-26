@@ -36,9 +36,7 @@
     SUBDIR += gtorrentviewer
     SUBDIR += i2p
     SUBDIR += jigdo
-    SUBDIR += kmldonkey
     SUBDIR += ktorrent
-    SUBDIR += ktorrent2
     SUBDIR += libbt
     SUBDIR += liberator
     SUBDIR += libktorrent
@@ -82,8 +80,6 @@
     SUBDIR += py-vertex
     SUBDIR += qbittorrent
     SUBDIR += qbittorrent-nox11
-    SUBDIR += qtella
-    SUBDIR += qtorrent
     SUBDIR += retroshare
     SUBDIR += rtgui
     SUBDIR += rtorrent

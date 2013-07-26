@@ -15,7 +15,6 @@
     SUBDIR += hs-porte
     SUBDIR += jailaudit
     SUBDIR += kpackagekit
-    SUBDIR += kports
     SUBDIR += kports-qt4
     SUBDIR += lsknobs
     SUBDIR += managepkg
@@ -80,7 +79,6 @@
     SUBDIR += prhistory
     SUBDIR += psearch
     SUBDIR += pver
-    SUBDIR += qtpkg
     SUBDIR += symports
     SUBDIR += tinderbox
     SUBDIR += tinderbox-devel

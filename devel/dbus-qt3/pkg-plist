@@ -1,8 +1,0 @@
-include/dbus-%%VERSION%%/dbus/connection.h
-include/dbus-%%VERSION%%/dbus/dbus-qt.h
-include/dbus-%%VERSION%%/dbus/message.h
-include/dbus-%%VERSION%%/dbus/server.h
-lib/libdbus-qt-1.a
-lib/libdbus-qt-1.la
-lib/libdbus-qt-1.so
-lib/libdbus-qt-1.so.1

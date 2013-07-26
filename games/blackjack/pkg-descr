@@ -1,7 +1,0 @@
-Blackjack is an X-windows based version of the casino game. The
-program is used to help learn the basic strategy of the game of
-blackjack. The help level can be set from a mode that tells you
-each correct move to make, to one that only warns you by a pop up
-window if you make a "bad" play. Betting limits, number of decks,
-number of splits, and shuffle point can be set. This program uses
-the Qt toolkit.
