@@ -14,13 +14,12 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes
-USES=        pathfix gettext
+USES=		pathfix gettext gmake
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2 vte
 USE_GSTREAMER=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 INSTALLS_ICONS=	yes
 
 MAN6=		gnome-mud.6
