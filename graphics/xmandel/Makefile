@@ -25,6 +25,6 @@ MAN1=		xmandel.1
 PLIST_FILES=	bin/xmandel
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' ${WRKSRC}/mandel.c
+	@${REINPLACE_CMD} -i '' -e 's|malloc.h|stdlib.h|' ${WRKSRC}/mandel.c
 
 .include <bsd.port.mk>

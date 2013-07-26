@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pvmpov
-# Date created:         		22 March 2000
-# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pvmpov
 PORTVERSION=	3.1g.2
@@ -41,7 +37,7 @@ pre-configure:
 			 ${TAR} -c -f - povray31 ) \
 			| (cd ${WRKSRC} && ${TAR} --unlink -x -f -)
 		@ cd ${WRKSRC} && ${PATCH} -p0 -s < pvmpov.patch
-		@ ${PERL} -pi -e "s|%LOCALBASE%|${LOCALBASE}|" \
+		@${REINPLACE_CMD} -i '' -e 's|%LOCALBASE%|${LOCALBASE}|' \
 			${BUILDBASE}/Makefile.aimk
 
 do-build:

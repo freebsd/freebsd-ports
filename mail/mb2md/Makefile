@@ -21,11 +21,10 @@ EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_PERL5=	yes
+USES=		shebangfix
+SHEBANG_FILES=	mb2md
 
 PLIST_FILES=	bin/mb2md
-
-post-patch:
-	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

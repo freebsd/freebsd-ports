@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tlb
-# Date created:			01 July 2001
-# Whom:				Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	tlb
 PORTVERSION= 	0.11a
@@ -27,10 +23,13 @@ DOCS=	FAQ INSTALL README README.loglevels README.mungelist TIPS TODO \
 	complete.tlb mj.tlb simple.tlb
 FIXPREFIX=	tlb mungelist complete.tlb mj.tlb simple.tlb
 
+USES=		shebangfix
+SHEBANG_FILES=	${FIXPREFIX}
+perl_OLD_CMD=	/usr/local/bin/perl5
+
 pre-patch:
 .for f in ${FIXPREFIX}
-	${PERL} -pi -e "s@^#!/usr/local/bin/perl5@#!${PERL}@g;\
-		s@/usr/lib/sendmail@/usr/sbin/sendmail@g" ${WRKSRC}/${f}
+	@${PERL} -pi -e "s@/usr/lib/sendmail@/usr/sbin/sendmail@g" ${WRKSRC}/${f}
 .endfor
 
 do-install:

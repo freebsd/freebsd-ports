@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Array-IntSpan
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Array-IntSpan
 PORTVERSION=	2.002
@@ -19,6 +15,6 @@ PERL_CONFIGURE=	yes
 MAN3=	Array::IntSpan.3 Array::IntSpan::Fields.3
 
 post-patch:
-	@${PERL} -pi -e 's/3pm/3/g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -i '' -e 's/3pm/3/g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
