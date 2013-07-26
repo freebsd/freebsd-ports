@@ -8,7 +8,6 @@
 %%GLX%%%%LIBDIR%%/ref_q2glx.so
 %%SDLGL%%%%LIBDIR%%/ref_q2sdlgl.so
 %%ROGUE%%%%LIBDIR%%/rogue/game.so
-%%ARTS%%%%LIBDIR%%/snd_arts.so
 %%OSS%%%%LIBDIR%%/snd_oss.so
 %%SDL%%%%LIBDIR%%/snd_sdl.so
 %%XATRIX%%%%LIBDIR%%/xatrix/game.so
