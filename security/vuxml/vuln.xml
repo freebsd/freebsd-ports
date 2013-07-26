@@ -61,29 +61,30 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Yarom and Falkner paper reports:</p>
+	<p>A Yarom and Falkner paper reports:</p>
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html">
 	  <p>Flush+Reload is a cache side-channel attack that monitors access to
-  data in shared pages. In this paper we demonstrate how to use the
-  attack to extract private encryption keys from GnuPG.  The high
-  resolution and low noise of the Flush+Reload attack enables a spy
-  program to recover over 98% of the bits of the private key in a
-  single decryption or signing round. Unlike previous attacks, the
-  attack targets the last level L3 cache. Consequently, the spy
-  program and the victim do not need to share the execution core of
-  the CPU. The attack is not limited to a traditional OS and can be
-  used in a virtualised environment, where it can attack programs
-  executing in a different VM..</p>
+	    data in shared pages. In this paper we demonstrate how to use the
+	    attack to extract private encryption keys from GnuPG.  The high
+	    resolution and low noise of the Flush+Reload attack enables a spy
+	    program to recover over 98% of the bits of the private key in a
+	    single decryption or signing round. Unlike previous attacks, the
+	    attack targets the last level L3 cache.  Consequently, the spy
+	    program and the victim do not need to share the execution core of
+	    the CPU.  The attack is not limited to a traditional OS and can be
+	    used in a virtualised environment, where it can attack programs
+	    executing in a different VM.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-			<url>http://eprint.iacr.org/2013/448</url>
-			<url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html</url>
+      <url>http://eprint.iacr.org/2013/448</url>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html</url>
     </references>
     <dates>
       <discovery>2013-07-18</discovery>
       <entry>2013-07-25</entry>
+      <modified>2013-07-26</modified>
     </dates>
   </vuln>
 
