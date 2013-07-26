@@ -1,9 +1,5 @@
-# New ports collection makefile for: osmo
-# Date created:                      29 Sep 2009
-# Whom:                              Charlie Kester <corky1951#comcast.net>
-#
+# Created by: Charlie Kester <corky1951#comcast.net>
 # $FreeBSD$
-#
 
 PORTNAME=	osmo
 PORTVERSION=	0.2.10
@@ -22,14 +18,12 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		gtkhtml:${PORTSDIR}/www/libgtkhtml
 
 USE_GNOME=	gtk20
-USES=		gettext
+USES=		gettext gmake
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CFLAGS+=	-I${LOCALBASE}/include/libical
-
-USE_GMAKE=	yes
 
 MAN1=		osmo.1
 
