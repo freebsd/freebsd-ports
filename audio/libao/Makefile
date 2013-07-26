@@ -20,10 +20,11 @@ USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+CONFIGURE_ARGS=	--disable-arts
 
 MAN5=		libao.conf.5
 
-OPTIONS_DEFINE=	DOCS ARTS ESOUND NAS PULSEAUDIO
+OPTIONS_DEFINE=	DOCS ESOUND NAS PULSEAUDIO
 
 .include <bsd.port.options.mk>
 
@@ -31,14 +32,6 @@ OPTIONS_DEFINE=	DOCS ARTS ESOUND NAS PULSEAUDIO
 MAKE_ENV=	DOC=doc
 .else
 MAKE_ENV=	DOC=""
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-PLIST_SUB+=	ARTS=""
-.else
-CONFIGURE_ARGS+=--disable-arts
-PLIST_SUB+=	ARTS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MESOUND}
