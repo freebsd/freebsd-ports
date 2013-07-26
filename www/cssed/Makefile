@@ -14,7 +14,7 @@ USES=        pathfix
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lgmodule-2.0
 CONFIGURE_ARGS=	--with-plugin-headers
 
 MAN1=		cssed.1
