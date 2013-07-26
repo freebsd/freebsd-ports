@@ -51,6 +51,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7943e521-f648-11e2-8607-3c970e169bc2">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><gt>9.9.3</gt><lt>9.9.3.2</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<name>bind98-base</name>
+	<range><gt>9.8.5</gt><lt>9.8.5.2</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.0</gt><lt>9.1_5</lt></range>
+	<range><gt>8.4</gt><lt>8.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01015/0">
+	  <p>A specially crafted query that includes malformed
+	    rdata can cause named to terminate with an assertion
+	    failure while rejecting the malformed query.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4854</cvename>
+      <freebsdsa>SA-13:07.bind</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2013-07-26</discovery>
+      <entry>2013-07-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80771b89-f57b-11e2-bf21-b499baab0cbe">
     <topic>gnupg -- side channel attack on RSA secret keys</topic>
     <affects>
