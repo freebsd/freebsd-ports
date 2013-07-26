@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	#
 MAKE_JOBS_SAFE=	yes
 
@@ -44,6 +44,7 @@ USE_GL=		glu
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
 CUBE_BIN+=	client
+LDFLAGS=	-lX11
 PLIST_SUB+=	CLIENT=""
 .else
 PLIST_SUB+=	CLIENT="@comment "
