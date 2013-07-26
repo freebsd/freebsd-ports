@@ -1,4 +1,4 @@
-# Created by: johnh@isi.edu
+# Created by: John Heidemann <johnh@isi.edu>
 # $FreeBSD$
 
 PORTNAME=	lavaps
@@ -43,5 +43,9 @@ CONFIGURE_ARGS+=	--with-tcltk --disable-nls \
 			--with-tcl-ver=${TCL_VER} --with-tk-ver=${TCL_VER}
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+# Fix a race to allow parallel builds
+post-patch:
+	@${REINPLACE_CMD} -e '/rm lavaps\.pod/d' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
