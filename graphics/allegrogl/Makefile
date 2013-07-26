@@ -1,9 +1,5 @@
-# New ports collection makefile for: allegrogl
-# Date created:		22 Jan 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	allegrogl
 PORTVERSION=	0.4.3
@@ -17,6 +13,8 @@ COMMENT=	OpenGL interface for Allegro library
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 CONFLICTS=	allegro-devel-[0-9]*
+
+BROKEN=		Does not build.  Use allegro-devel if you need this functionality
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
