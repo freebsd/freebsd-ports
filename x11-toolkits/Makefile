@@ -129,6 +129,7 @@
     SUBDIR += linux-f10-tk85
     SUBDIR += movingmotif
     SUBDIR += mowitz
+    SUBDIR += mygui
     SUBDIR += neXtaw
     SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk2
