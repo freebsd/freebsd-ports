@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Mail-Audit
-# Date created:				Wed Jan  3 12:31:10 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Audit
 PORTVERSION=	2.2.27
@@ -37,7 +33,8 @@ PORTDOCS=	Changes FAQ README
 PORTEXAMPLES=	popread proc2ma
 
 post-patch:
-	@${PERL} -pi -e 's,/var/spool/mail,/var/mail,g' ${WRKSRC}/lib/Mail/Audit.pm
+	@${REINPLACE_CMD} -i '' -e 's|/var/spool/mail|/var/mail|g' \
+		${WRKSRC}/lib/Mail/Audit.pm
 
 post-install:
 .if !defined(NOPORTDOCS)

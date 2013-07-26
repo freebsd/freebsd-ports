@@ -25,8 +25,8 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 do-configure:
-	@${PERL} -pi -e \
-		's|Bin/help|Bin/../share/cadubi/help|g' ${WRKSRC}/cadubi
+	@${REINPLACE_CMD} -i '' -e 's|Bin/help|Bin/../share/cadubi/help|' \
+		${WRKSRC}/cadubi
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

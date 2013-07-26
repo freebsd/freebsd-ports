@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	profxp
-# Date created:			Jun 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	profxp
 PORTVERSION=	3p2
@@ -24,9 +19,12 @@ RUN_DEPENDS=	p5-SOCKS>=0:${PORTSDIR}/net/p5-Socks \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+USES=		shebangfix
+SHEBANG_FILES=	profxpv3.pl
+perl_OLD_CMD=	/home/tom/ActivePerl-5.6/bin/perl
 
-post-patch:
-	@${PERL} -pi -e "s,^#!.*,#!${PERL},g" ${WRKSRC}/profxpv3.pl
+post-patch1:
+	@${REINPLACE_CMD} -i '' '1s|^\#.*|#!${PERL}|' ${WRKSRC}/profxpv3.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/profxpv3.pl ${PREFIX}/bin/profxp

@@ -16,7 +16,7 @@ MAN3=		Mail::Sender.3
 
 post-patch:
 .if defined(BATCH)
-	@${PERL} -pi -e 's/res = <STDIN>;/res = "N";/' ${WRKSRC}/Config.PL
+	@${REINPLACE_CMD}  -e 's/res = <STDIN>;/res = "N";/' ${WRKSRC}/Config.PL
 .endif
 
 .include <bsd.port.mk>
