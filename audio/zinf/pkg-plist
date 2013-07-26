@@ -1,7 +1,6 @@
 bin/zinf
 etc/sdr/plugins/sdr2.plugin.S100.audio.rtp.mpa.zinf
 lib/zinf/plugins/albumart.ui
-%%LIBARTS%%lib/zinf/plugins/arts.pmo
 lib/zinf/plugins/cd.lmc
 lib/zinf/plugins/cd.pmo
 lib/zinf/plugins/cmdline.ui

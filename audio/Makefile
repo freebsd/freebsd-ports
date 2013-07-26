@@ -40,7 +40,6 @@
     SUBDIR += ardour
     SUBDIR += ario
     SUBDIR += arss
-    SUBDIR += artswrapper
     SUBDIR += ascd
     SUBDIR += asmix
     SUBDIR += asmixer

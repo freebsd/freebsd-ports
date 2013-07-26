@@ -17,13 +17,13 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-capture
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig
+CONFIGURE_ARGS=	--enable-capture \
+		--disable-arts
+USES=		pathfix pkgconfig gmake
 WANT_SDL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	ARTS ESOUND SDL VORBIS SMPEG
+OPTIONS_DEFINE=	ESOUND SDL VORBIS SMPEG
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 SMPEG_DESC=	smpeg support
@@ -32,13 +32,6 @@ SMPEG_DESC=	smpeg support
 
 .if ${PORT_OPTIONS:MSMPEG}
 WITH_SDL=	yes	# smpeg requires SDL
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=--enable-arts
-.else
-CONFIGURE_ARGS+=--disable-arts
 .endif
 
 .if ${PORT_OPTIONS:MESD}

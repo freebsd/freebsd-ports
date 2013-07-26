@@ -13,13 +13,13 @@ COMMENT=	GTK-based MP3 player
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		gdbm.4:${PORTSDIR}/databases/gdbm
 
-USES=        pathfix gettext
+USES=		pathfix gettext gmake
 USE_GNOME=	gtk20 lthack
 WANT_GNOME=	yes
 USE_PERL5=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6 \
+		--disable-arts
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -45,14 +45,6 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if defined(WITH_LIBARTS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-PLIST_SUB+=	LIBARTS=""
-.else
-CONFIGURE_ARGS+=	--disable-arts
-PLIST_SUB+=	LIBARTS="@comment "
-.endif
-
 .if !defined(WITHOUT_VORBIS) || defined(WITH_ALL_PLUGINS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
@@ -65,7 +57,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_LIBARTS=yes		build with libArts output plugin"
 	@${ECHO_MSG} "WITHOUT_GNOME=esound	do NOT build with esd support"
 	@${ECHO_MSG} "WITHOUT_VORBIS=yes	do NOT build with Ogg/Vorbis codec plugin"
 	@${ECHO_MSG}

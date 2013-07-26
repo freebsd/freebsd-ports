@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-OPTIONS_DEFINE=	ALSA ARTS AUDIOFILE JACK LO OIL PYTHON SAMPLERATE
+OPTIONS_DEFINE=	ALSA AUDIOFILE JACK LO OIL PYTHON SAMPLERATE
 OPTIONS_DEFAULT=PYTHON
 AUDIOFILE_DESC=	Enable libaudiofile support
 LO_DESC=	Enable liblo support
@@ -27,7 +27,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \
-		--enable-sys-readline
+		--enable-sys-readline \
+		--disable-arts
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -45,12 +46,6 @@ MAN5=		ecasoundrc.5
 LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--disable-alsa
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
-.else
-CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
