@@ -1,0 +1,18 @@
+--- grub-core/gnulib/Makefile.am.orig
++++ grub-core/gnulib/Makefile.am
+@@ -404,13 +404,13 @@ all-local: charset.alias ref-add.sed ref
+ 
+ charset_alias = $(DESTDIR)$(libdir)/charset.alias
+ charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
+-install-exec-local: install-exec-localcharset
++install-exec-local: 
+ install-exec-localcharset: all-local
+ 	if test $(GLIBC21) = no; then \
+ 	  case '$(host_os)' in \
+ 	    darwin[56]*) \
+ 	      need_charset_alias=true ;; \
+-	    darwin* | cygwin* | mingw* | pw32* | cegcc*) \
++	    darwin* | cygwin* | mingw* | pw32* | cegcc* | freebsd*) \
+ 	      need_charset_alias=false ;; \
+ 	    *) \
+ 	      need_charset_alias=true ;; \
