@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	morebalance
-# Date created:				Wed Oct 8
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	morebalance
 PORTVERSION=	0.4
@@ -12,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://morebalance.coolprojects.org/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modular open source user-space load balancing system
+COMMENT=	Modular open source user-space load balancing system
 
 LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre \
 		gnutls.26:${PORTSDIR}/security/gnutls \
@@ -22,8 +18,7 @@ CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USES=		gettext
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls \
-		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls -lintl ${PTHREAD_LIBS}
 
 MAN1=		morebalance.1
 MAN5=		morebalance.conf.5
