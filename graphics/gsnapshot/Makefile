@@ -10,14 +10,16 @@ MASTER_SITES=	SF/gould/${PORTNAME}/release%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based screen capture
 
-USES=		pkgconfig
+OPTIONS_DEFINE=	DOCS
+
+USES=		pkgconfig gmake
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 AUTOMAKE_ARGS=	--add-missing
 USE_GNOME=	gtk20 libwnck libxml2
 USE_XORG=	x11 xmu
-USE_GMAKE=	yes
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include/libxml2
+LDFLAGS+=	-lgmodule-2.0
 
 PORTDOCS=	AUTHORS COPYING INSTALL README TODO
 
@@ -28,13 +30,15 @@ DESKTOP_ENTRIES=	"gsnapshot" \
 			"Graphics;GTK;" \
 			"false"
 
+.include <bsd.port.options.mk>
+
 pre-configure:
 	@${LN} -sf ${AUTOMAKE_DIR}/install-sh ${WRKSRC}
 	@${LN} -sf ${AUTOMAKE_DIR}/depcomp ${WRKSRC}
 	@${LN} -sf ${AUTOMAKE_DIR}/missing ${WRKSRC}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
