@@ -19,6 +19,8 @@ LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
 		jpeg:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		does not install
 
 NO_WRKSUBDIR=	yes

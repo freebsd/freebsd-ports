@@ -15,6 +15,8 @@ COMMENT=	KDE iconset variation of the 'Noia' icons using warm colors
 WRKSRC=		"${WRKDIR}/Noia Warm KDE ${PORTVERSION}"
 PORT_SHAREDIR=	"${PORTNAME}-${PORTVERSION}"
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		does not fetch
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

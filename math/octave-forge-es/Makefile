@@ -9,6 +9,9 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		does not build
 
 # OCTSRC is the name of the directory of the package.

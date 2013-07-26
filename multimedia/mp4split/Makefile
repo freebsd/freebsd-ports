@@ -15,6 +15,8 @@ COMMENT=	Converts MP4 files to Fragmented MP4 and creates manifest files
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		does not fetch
 
 GNU_CONFIGURE=	yes

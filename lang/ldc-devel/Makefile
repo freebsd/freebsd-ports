@@ -19,6 +19,9 @@ COMMENT=	D frontend for llvm, with the Tango standard library
 BUILD_DEPENDS=	llvm>=2.8:${PORTSDIR}/devel/llvm
 LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		does not compile
 
 LICENSE_COMB=	multi

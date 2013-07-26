@@ -15,6 +15,8 @@ FASL_TARGET=	sbcl
 
 PLIST=		${.CURDIR}/pkg-plist
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN =	Changes in sbcl 1.0.55 have exposed problems in ${ASDF_PATHNAME}/depdefs.lisp
 
 .include "${MASTERDIR}/Makefile"

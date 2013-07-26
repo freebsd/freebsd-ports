@@ -22,6 +22,8 @@ RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \
 		${PYTHON_PKGNAMPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_PKGNAMPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		overwrite a file owned by misc/shared-mime-info: share/mime/application/x-nzb.xml
 
 USE_PYTHON=	yes

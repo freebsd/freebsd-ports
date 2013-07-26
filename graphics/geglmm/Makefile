@@ -17,6 +17,9 @@ COMMENT=	C++ bindings for GEGL
 LIB_DEPENDS=	gegl-0.1.107:${PORTSDIR}/graphics/gegl \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		does not compile
 
 GNU_CONFIGURE=	yes

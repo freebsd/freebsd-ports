@@ -22,6 +22,9 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Official Fortran 90 bindings for OpenGL
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
+
 BROKEN=		doesn't build with freeglut
 
 USE_GL=		glut glu

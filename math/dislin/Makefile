@@ -12,6 +12,8 @@ COMMENT=	A scientific data plotting package
 
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		size mismatch
 
 RESTRICTED=	free for non-commercial use.

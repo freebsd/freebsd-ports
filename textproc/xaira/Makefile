@@ -13,6 +13,8 @@ COMMENT=	XML Aware Indexing and Retrieval Architecture
 LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2 \
 		icuio:${PORTSDIR}/devel/icu
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-08-27
 BROKEN=		leaves files behind on deinstallation
 
 GNU_CONFIGURE=	yes
