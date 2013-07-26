@@ -1,0 +1,33 @@
+--- ./util/grub.d/10_kfreebsd.in.orig	2012-12-21 15:18:54.000000000 +0900
++++ ./util/grub.d/10_kfreebsd.in	2012-12-21 15:19:23.000000000 +0900
+@@ -54,7 +54,7 @@
+   fi
+ 
+   if [ -z "${prepare_module_dir_cache}" ]; then
+-    prepare_module_dir_cache="$(prepare_grub_to_access_device $(grub-probe -t device "${module_dir}") | sed -e "s/^/\t/")"
++    prepare_module_dir_cache="$(prepare_grub_to_access_device $(grub-probe -t device "${module_dir}") | sed -e "s/^/	/")"
+   fi
+ 
+   printf '%s\n' "${prepare_module_dir_cache}"
+@@ -91,10 +91,10 @@
+       echo "menuentry '$(echo "$OS" | grub_quote)' ${CLASS} \$menuentry_id_option 'kfreebsd-simple-$boot_device_id' {" | sed "s/^/$submenu_indentation/"
+   fi
+   if [ x$type != xrecovery ] ; then
+-      save_default_entry | sed -e "s/^/\t/" | sed "s/^/$submenu_indentation/"
++      save_default_entry | sed -e "s/^/	/" | sed "s/^/$submenu_indentation/"
+   fi
+   if [ -z "${prepare_boot_cache}" ]; then
+-    prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/\t/")"
++    prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/	/")"
+   fi
+ 
+   printf '%s\n' "${prepare_boot_cache}" | sed "s/^/$submenu_indentation/"
+@@ -213,7 +213,7 @@
+ 
+   if [ "x$is_first_entry" = xtrue ]; then
+       kfreebsd_entry "${OS}" "${version}" simple
+-      submenu_indentation="\t"
++      submenu_indentation="	"
+     
+       if [ -z "$boot_device_id" ]; then
+ 	  boot_device_id="$(grub_get_device_id "${GRUB_DEVICE}")"
