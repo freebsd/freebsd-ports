@@ -1,26 +1,24 @@
-# New ports collection makefile for:	words
-# Date created:		2 January 2004
-# Whom:			Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	words
 PORTVERSION=	1.97F
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://users.erols.com/whitaker/
+MASTER_SITES=	http://archives.nd.edu/whitaker/
 DISTNAME=	${PORTNAME}all
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	A Latin-English Dictionary Program
 
-BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
-
+USES=		ada
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
+GNATMAKE=	env ${MAKE_ENV} gnatmake
 
-GNATMAKE=	gnatmake
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -46,7 +44,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ADDONS.LAT ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/UNIQUES.LAT ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/words.sh ${PREFIX}/bin/words
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/wordsdoc.htm ${DOCSDIR}
 .endif
