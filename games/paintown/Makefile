@@ -17,7 +17,7 @@ COMMENT=	Fighting game similar to Streets of Rage and TMNT
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
+LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 

@@ -15,7 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A chryzode (http//www.chryzode.org) explorer
 
-LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile.unx

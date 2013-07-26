@@ -6,7 +6,7 @@ diff -urN ../o2em117src.old/Makefile.freebsd ./Makefile.freebsd
 +
 +CFLAGS = -O3 -Wall -fomit-frame-pointer -I${PREFIX}/include -DFREEBSD -DPREFIX=\"${PREFIX}\"
 +LFLAGS = -s ${LDFLAGS}
-+LIBALLEG = -L${PREFIX}/lib -lalleg -lalleg_unsharable
++LIBALLEG = -L${PREFIX}/lib -lalleg
 +
 +
 +all: o2em dis48
