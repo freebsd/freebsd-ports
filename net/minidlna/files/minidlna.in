@@ -23,7 +23,6 @@ minidlna_uid=${minidlna_uid-"%%USER%%"}
 command=%%PREFIX%%/sbin/minidlnad
 pidfile="/var/run/minidlna/minidlna.pid"
 command_args="-P $pidfile -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
-required_dirs="/var/run/minidlna /var/db/minidlna"
 
 start_precmd="install -d -o $minidlna_uid ${pidfile%/*} /var/db/minidlna"
 stop_postcmd="rm -f $pidfile"
