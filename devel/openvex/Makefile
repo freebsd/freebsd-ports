@@ -29,11 +29,11 @@ post-patch:
 	@${REINPLACE_CMD} -E 's/cd (.+)(;| &&) make/$$(MAKE) -C \1/' \
 		${WRKSRC}/Advanced/Makefile ${WRKSRC}/Beginner/Makefile \
 		${WRKSRC}/HiBob/Makefile ${WRKSRC}/Makefile
-# Apparently the work around for bug in pic18f8520.h is no longer needed and
+# Apparently the workaround for bug in pic18f8520.h is no longer needed and
 # breaks the build now; disable it for the time being
 	@${REINPLACE_CMD} -e 's/ifdef SDCC/if 0/' ${WRKSRC}/Lib/timer.h
 
 post-build:
-	$(MAKE) -C $(WRKSRC) clean
+	${MAKE} -C ${WRKSRC} clean
 
 .include <bsd.port.mk>
