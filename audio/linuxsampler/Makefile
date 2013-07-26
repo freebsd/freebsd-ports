@@ -17,7 +17,7 @@ RESTRICTED=	no commercial use
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported"
 
-OPTIONS_DEFINE=	JACK ALSA ARTS DSSI LV2CORE
+OPTIONS_DEFINE=	JACK ALSA DSSI LV2CORE
 OPTIONS_DEFAULT=	JACK
 DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
@@ -36,6 +36,8 @@ MAN1=		linuxsampler.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFIGURE_ARGS+=--disable-arts-driver
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJACK}
@@ -48,12 +50,6 @@ CONFIGURE_ARGS+=--disable-jack-driver
 LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=--disable-alsa-driver
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
-.else
-CONFIGURE_ARGS+=--disable-arts-driver
 .endif
 
 .if ${PORT_OPTIONS:MDSSI}

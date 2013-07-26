@@ -19,7 +19,9 @@ WANT_SDL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-optimization --without-alsalib
+CONFIGURE_ARGS=	--disable-optimization --without-alsalib \
+		--without-arts
+
 
 PLIST_FILES=	bin/mhwaveedit \
 		share/locale/de/LC_MESSAGES/mhwaveedit.mo \
@@ -38,7 +40,7 @@ PLIST_DIRS=	share/applications
 MAN1=		mhwaveedit.1
 
 OPTIONS_DEFINE=	DOUBLE_SAMPLES SNDFILE SAMPLERATE OSS \
-		PORTAUDIO SDL ARTS JACK \
+		PORTAUDIO SDL JACK \
 		ESD PULSEAUDIO LADSPA
 
 DOUBLE_SAMPLES_DESC=	increase quality for 24/32-bit samplerates
@@ -47,7 +49,6 @@ SAMPLERATE_DESC=	libsamplerate support
 OSS_DESC=		OSS sound driver
 PORTAUDIO_DESC=		PortAudio sound driver
 SDL_DESC=		SDL sound driver
-ARTS_DESC=		arts sound driver
 JACK_DESC=		JACK sound driver
 ESD_DESC=		EsounD sound driver
 PULSEAUDIO_DESC=	PULSEAUDIO support
@@ -55,13 +56,11 @@ LADSPA_DESC=		LADSPA support
 
 OPTIONS_DEFAULT=SNDFILE SAMPLERATE OSS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
-
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOUBLE_SAMPLES}
 CONFIGURE_ARGS+=	--with-double-samples
@@ -93,12 +92,6 @@ CONFIGURE_ARGS+=	--without-portaudio
 USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=	--without-sdl
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-.else
-CONFIGURE_ARGS+=	--without-arts
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
@@ -133,4 +126,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/AM_CFLAGS=/s|-g||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

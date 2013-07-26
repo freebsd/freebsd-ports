@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--without-doc-install
+CONFIGURE_ARGS=	--without-doc-install \
+		--without-aRts
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -24,10 +25,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAN1=		tse3play.1
 MAN3=		tse3.3
 
-OPTIONS_DEFINE=	ARTS DOCS
-
-ARTS_LIB_DEPENDS=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
-ARTS_CONFIGURE_OFF=	--without-aRts
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
