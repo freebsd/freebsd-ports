@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/ \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 PATCH_SITE_SUBDIR=	rafan/ncurses/:local
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output (development version)
