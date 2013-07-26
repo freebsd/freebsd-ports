@@ -1,0 +1,121 @@
+bin/egg2wheel
+bin/wheel
+bin/wininst2wheel
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/__main__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/__main__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/__main__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/archive.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/archive.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/archive.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/bdist_wheel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/bdist_wheel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/bdist_wheel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/decorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/decorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/decorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/egg2wheel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/egg2wheel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/egg2wheel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/eggnames.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/install.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/install.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/install.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/metadata.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/metadata.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/metadata.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/paths.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/paths.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/paths.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/pep425tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/pep425tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/pep425tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/pkginfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/pkginfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/pkginfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/djbec.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/djbec.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/djbec.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/ed25519py.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/ed25519py.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/ed25519py.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/keys.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/keys.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures/keys.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/complexdist/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/complexdist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/complexdist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist/headersdist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist/headersdist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist/headersdist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist/setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/simpledist/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/simpledist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/simpledist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_basic.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_basic.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_basic.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_install.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_install.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_install.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_keys.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_keys.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_keys.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_paths.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_paths.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_paths.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_ranking.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_ranking.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_ranking.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_signatures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_signatures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_signatures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_tool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_tool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_tool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_wheelfile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_wheelfile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/test_wheelfile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/tool/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/tool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/tool/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/wininst2wheel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/wininst2wheel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/wininst2wheel.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/tool
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist/simpledist
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/simple.dist
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/headers.dist
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist/complexdist
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test/complex-dist
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel/signatures
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/wheel
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
