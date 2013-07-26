@@ -54,7 +54,7 @@ INSTALL_TARGET=	install-full
 INSTALL_TARGET=	install install-help
 .endif
 
-# Change "cd foo; $(MAKE_RECUR)" into "$(MAKE_RECUR) -C foo" to unbreak
+# Change "cd foo && $(MAKE_RECUR)" into "$(MAKE_RECUR) -C foo" to unbreak
 # parallel builds
 post-patch:
 	@${REINPLACE_CMD} -E 's|cd (.+) && (\$$\(MAKE_RECUR\))|\2 -C \1|' \
