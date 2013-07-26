@@ -29,7 +29,7 @@ MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \
 		AMF::Perl::Util::RemotingService.3
 
 post-patch:
-	@${PERL} -pi -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
+	@${PERL} -pi.bak -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
 
 post-configure:
 # dirty hack to deceive irritable pod2man

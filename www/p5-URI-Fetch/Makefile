@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-URI-Fetch
-# Date created:				30 July 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-Fetch
 PORTVERSION=	0.090
@@ -36,8 +32,5 @@ MAN3=	URI::Fetch.3 \
 .if ${PORT_OPTIONS:MCACHE}
 RUN_DEPENDS+=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache
 .endif
-
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>

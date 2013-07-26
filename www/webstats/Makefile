@@ -1,9 +1,5 @@
-# New ports collection makefile for:   webstats
-# Date created:        12 February 2003
-# Whom:                Kevin Golding <kevin@caomhin.demon.co.uk>
-#
+# Created by: Kevin Golding <kevin@caomhin.demon.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	webstats
 PORTVERSION=	0.3
@@ -23,15 +19,11 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
-	   ${WRKSRC}/configfiles/serverwide/webstats.ini
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
-	   ${WRKSRC}/configfiles/vhosts/analog.cfg
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
-	   ${WRKSRC}/configfiles/vhosts/rmagic.ini
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
-	   ${WRKSRC}/scripts/perl/webstats
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' \
+	   ${WRKSRC}/configfiles/serverwide/webstats.ini \
+	   ${WRKSRC}/configfiles/vhosts/analog.cfg \
+	   ${WRKSRC}/configfiles/vhosts/rmagic.ini \
+	   ${WRKSRC}/scripts/perl/webstats \
 	   ${WRKSRC}/scripts/php/webstats.php
 
 do-install:

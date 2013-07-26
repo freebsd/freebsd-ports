@@ -1,11 +1,6 @@
-# ex:ts=8
-# Ports collection Makefile for: 	syndigator
-# Date created:			Apr 20, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#   $MCom: ports/www/syndigator/Makefile,v 1.4 2007/09/09 22:45:27 mezz Exp $
-#
+# $MCom: ports/www/syndigator/Makefile,v 1.4 2007/09/09 22:45:27 mezz Exp $
 
 PORTNAME=	syndigator
 PORTVERSION=	0.15.1
@@ -32,9 +27,9 @@ NO_BUILD=	yes
 GNOMEDIR=	${PREFIX}/share
 
 post-patch:
-	@${PERL} -pi -e 's|./lib|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}|g' \
+	@${REINPLACE_CMD} -i '' -e 's|./lib|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}|' \
 		${WRKSRC}/syndigator
-	@${PERL} -pi -e 's|./images/|${GNOMEDIR}/pixmaps/${PORTNAME}/|g' \
+	@${REINPLACE_CMD} -i '' -e 's|./images/|${GNOMEDIR}/pixmaps/${PORTNAME}/|' \
 		${WRKSRC}/lib/RSSReader/Gtk2UI/IconFactory.pm
 
 do-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	calmaris
-# Date created:				25 December 1998
-# Whom:					Dima Sivachenko <dima@Chg.RU>
-#
+# Created by: Dima Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	calamaris
 PORTVERSION=	2.59
@@ -16,10 +12,10 @@ COMMENT=	A perl script to produce statistics out of Squid log files
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-MAN1=		calamaris.1
+USES=		shebangfix
+SHEBANG_FILES=	calamaris
 
-post-patch:
-	@ ${PERL} -pi -e 's#/usr/bin/perl#${PERL}#' ${WRKSRC}/calamaris
+MAN1=		calamaris.1
 
 do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/calamaris.1 ${PREFIX}/man/man1/calamaris.1
