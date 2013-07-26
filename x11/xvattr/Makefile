@@ -38,9 +38,9 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME} \
-		`pkg-config --cflags --libs xv`
+		`pkg-config --cflags --libs xv x11`
 	cd ${WRKSRC} && ${CC} ${CFLAGS} g${PORTNAME}.c -o g${PORTNAME} \
-		`pkg-config --cflags --libs ${GTK_PC} xv`
+		`pkg-config --cflags --libs ${GTK_PC} xv x11`
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
