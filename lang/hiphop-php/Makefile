@@ -3,7 +3,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/archive/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	http://cpp.in/dev/
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Hiphop PHP to C++ code transformer
+COMMENT=	HipHop Virtual Machine for PHP
 
 LICENSE=	PHP301 ZEND200 UNICODE
 LICENSE_COMB=	multi
@@ -62,7 +62,7 @@ BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/${_EXTDIR}/lib/libcurl.a:${PORTSDIR}/ftp/curl-hiphop \
 		${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-HPHP-${PORTVERSION}
+WRKSRC=		${WRKDIR}/hiphop-php-HPHP-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USES=		cmake gettext
