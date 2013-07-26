@@ -47,6 +47,6 @@ TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s/lib => 'zmq',//" ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e "s/lib => 'zmq',//" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>

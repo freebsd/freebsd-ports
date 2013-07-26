@@ -17,7 +17,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		News::Newsrc.3
 
-pre-patch:
-	@${PERL} -pi -e '$$_ = "" if /^use 5.6/' ${WRKSRC}/Newsrc.pm
-
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	colorize
-# Date created:				12 June 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	colorize
 PORTVERSION=	0.3.4
@@ -22,13 +18,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
 USE_PERL5=	yes
 SUB_FILES=	pkg-message
+USES=		shebangfix
+SHEBANG_FILES=	colorize
 
 MAN1=		colorize.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|/etc/colorizerc|${PREFIX}/etc/colorizerc|; \
-		s|#!/usr/bin/perl|#!${PERL}|g" ${WRKSRC}/colorize
+	@${REINPLACE_CMD} -i '' -e 's|/etc/colorizerc|${PREFIX}/etc/colorizerc|' \
+		${WRKSRC}/colorize
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/colorize ${PREFIX}/bin

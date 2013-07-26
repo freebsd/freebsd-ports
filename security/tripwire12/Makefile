@@ -23,8 +23,8 @@ post-extract:
 	@ (cd ${WRKDIR}; tar xpf T1.2.tar)
 
 post-patch:
-	@${PERL} -pi -e 's|/secureplace/bin|${PREFIX}/bin|g;' \
-		-e 's|/usr/man|${PREFIX}/man|g;' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -i '' -e 's|/secureplace/bin|${PREFIX}/bin|' \
+		-e 's|/usr/man|${PREFIX}/man|' ${WRKSRC}/Makefile
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|bs_ntohl|ntohl|g;s|bs_htonl|htonl|g'
 

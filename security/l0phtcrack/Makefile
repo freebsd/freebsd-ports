@@ -18,11 +18,11 @@ NO_WRKSUBDIR=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_PERL5_BUILD=yes
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 
 post-extract:
 	${RM} ${WRKDIR}/*exe
-	${PERL} -pi -e "s:\r::g" ${WRKDIR}/*
-	${PERL} -pi -e "s:ommited:omitted:g" ${WRKDIR}/util.c
+	${REINPLACE_CMD} -i '' -e 's|ommited|omitted|' ${WRKDIR}/util.c
 
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -DMPU8086 *.c -o lc_CLI

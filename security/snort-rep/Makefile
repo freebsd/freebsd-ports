@@ -12,10 +12,8 @@ COMMENT=	A Snort reporting tool that can produce text or HTML from logs
 
 USE_PERL5=	yes
 MAN1=		snort-rep.1
-
-post-patch:
-	@${PERL} -pi -e "s|#!/usr/bin/perl|#!${PERL}|" \
-		${WRKSRC}/snort-rep ${WRKSRC}/snort-rep-mail
+USES=		shebangfix
+SHEBANG_FILES=	snort-rep snort-rep-mail
 
 do-build:
 	cd ${BUILD_WRKSRC} ; pod2man --lax snort-rep > snort-rep.1

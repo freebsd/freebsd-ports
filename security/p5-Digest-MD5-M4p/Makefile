@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Digest-MD5-M4p
-# Date created:        27 June 2004
-# Whom:                Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Digest-MD5-M4p
 PORTVERSION=	0.01
@@ -18,8 +14,5 @@ COMMENT=	Perl interface to a variant of the MD5 algorithm
 PERL_CONFIGURE=	yes
 
 MAN3=		Digest::MD5::M4p.3
-
-post-extract:
-	@${PERL} -pi -e 's/\r//g' ${WRKSRC}/M4p.xs
 
 .include <bsd.port.mk>
