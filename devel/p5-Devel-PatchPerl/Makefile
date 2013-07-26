@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-PatchPerl
-PORTVERSION=	0.96
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl module to patch perl source
+COMMENT=	Perl module to patch Perl source
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
