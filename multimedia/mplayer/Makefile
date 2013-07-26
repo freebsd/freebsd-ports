@@ -9,7 +9,7 @@ COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
 
-OPTIONS_DEFINE= AALIB AMR_NB AMR_WB ARTS BLURAY CACA DEBUG DV \
+OPTIONS_DEFINE= AALIB AMR_NB AMR_WB BLURAY CACA DEBUG DV \
 		ENCA ESOUND FRIBIDI GIF GSM GUI IPV6 JACK \
 		JOYSTICK LADSPA LIBMNG LIRC LIVEMEDIA LZO MAD \
 		NAS OCFLAGS OPENAL OPENGL OPENJPEG OTCHAIN \
@@ -50,7 +50,8 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 BROKEN=		Does not compile on sparc64
 .endif
 
-CONFIGURE_ARGS+=	--disable-directfb \
+CONFIGURE_ARGS+=	--disable-arts \
+			--disable-directfb \
 			--disable-faac \
 			--disable-faad \
 			--disable-libdca \
@@ -139,12 +140,6 @@ RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 CONFIGURE_ARGS+=	--enable-rtc
 .else
 CONFIGURE_ARGS+=	--disable-rtc
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=		artsc:${PORTSDIR}/audio/arts
-.else
-CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if ${PORT_OPTIONS:MCACA}
