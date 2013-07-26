@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	XML::Catalog
-# Date created:			Jan 24, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Catalog
 PORTVERSION=	0.02
@@ -22,10 +17,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	Catalog.pm
 
 MAN3=		XML::Catalog.3
-
-post-patch:
-	${PERL} -pi -e 's/\r//' ${WRKSRC}/Catalog.pm
 
 .include <bsd.port.mk>

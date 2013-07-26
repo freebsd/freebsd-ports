@@ -26,8 +26,9 @@ MAN1=		denature.1
 PLIST_FILES=	bin/denature
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}| ; \
-		s|%%JAVA_HOME%%|${JAVA_HOME}|" ${WRKSRC}/denature
+	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+			-e 's|%%JAVA_HOME%%|${JAVA_HOME}|' \
+		 ${WRKSRC}/denature
 
 do-build:
 	cd ${WRKSRC} && ${POD2MAN} denature > denature.1

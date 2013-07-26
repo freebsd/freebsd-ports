@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::DBMS
-# Date created:		18 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-DBMS
 PORTVERSION=	1.03
@@ -24,10 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PERL_CONFIGURE=	yes
-
-post-extract:
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} ${PERL} -pi -e 's/\x0D(?=\x0A)//g'
+USE_DOS2UNIX=	yes
 
 post-install:
 .ifndef(NOPORTDOCS)

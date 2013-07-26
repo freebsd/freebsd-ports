@@ -555,8 +555,8 @@ MAN3=		Plagger.3 \
 		Plagger::Template.3
 
 post-patch:
-	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
-	${RM} ${WRKSRC}/lib/Plagger/Plugin/Publish/Feed.pm.orig
+	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
+	@${RM} ${WRKSRC}/lib/Plagger/Plugin/Publish/Feed.pm.orig
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}

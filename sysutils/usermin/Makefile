@@ -37,7 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
 
 .for file in filter/config commands/config htaccess/config
-	@${PERL} -pi -e "s|=/etc/webmin|=${PREFIX}/etc/webmin|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -i '' -e 's|=/etc/webmin|=${PREFIX}/etc/webmin|' ${WRKSRC}/${file}
 .endfor
 
 	@${FIND} ${WRKSRC} -name config-freebsd\* \

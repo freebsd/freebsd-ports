@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::Filter::GenericChunk
-# Date created:				2.7.2003
-# Whom:					Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-#
+# Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Filter-GenericChunk
 PORTVERSION=	0.07
@@ -24,9 +20,9 @@ MAN3=		XML::Filter::CharacterChunk.3 \
 		XML::Filter::GenericChunk.3
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /use warnings/;' \
-			${WRKSRC}/t/02filter.t \
-			${WRKSRC}/CharacterChunk.pm \
-			${WRKSRC}/GenericChunk.pm
+	@${REINPLACE_CMD} -i '' '/use warnings/d' \
+		${WRKSRC}/t/02filter.t \
+		${WRKSRC}/CharacterChunk.pm \
+		${WRKSRC}/GenericChunk.pm
 
 .include <bsd.port.mk>

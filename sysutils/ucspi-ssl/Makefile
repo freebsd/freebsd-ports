@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucspi-ssl
-# Date created:		2003-07-09
-# Whom:			David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ucspi-ssl
 PORTVERSION?=	0.70
@@ -35,8 +31,7 @@ SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
 post-patch:
 .for x in ${SCRIPTS_TO_INSTALL}
-	@${PERL} -pi.orig \
-		-e 's|HOME/command/|${PREFIX}/bin/|' \
+	@${REINPLACE_CMD} -i ''	-e 's|HOME/command/|${PREFIX}/bin/|' \
 		${WRKSRC}/src/${x}.sh
 .endfor
 
