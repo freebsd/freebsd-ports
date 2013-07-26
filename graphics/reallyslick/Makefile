@@ -1,9 +1,5 @@
-# New ports collection makefile for:	reallyslick
-# Date created:				24 Nov 2002
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1
@@ -24,8 +20,7 @@ GLEW_DESC=	Enable GLEW support
 
 USE_BZIP2=	yes
 USE_GL=		glut
-USES=	pathfix
-USE_GMAKE=	yes
+USES=	pathfix gmake
 GNU_CONFIGURE=	yes
 
 MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
@@ -35,7 +30,7 @@ MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
 		solarwinds.1 spirographx.1 sundancer2.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lXext
 
 .include <bsd.port.options.mk>
 
