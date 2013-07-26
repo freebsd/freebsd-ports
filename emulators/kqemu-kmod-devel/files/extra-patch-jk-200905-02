@@ -18,11 +18,11 @@ Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
  common/kqemu_int.h        |    6 +++---
  2 files changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/common/i386/monitor_asm.S b/common/i386/monitor_asm.S
+diff --git common/i386/monitor_asm.S b/common/i386/monitor_asm.S
 index 04f4258..e996553 100644
 Index: common/i386/monitor_asm.S
---- a/common/i386/monitor_asm.S
-+++ b/common/i386/monitor_asm.S
+--- common/i386/monitor_asm.S
++++ common/i386/monitor_asm.S
 @@ -214,8 +214,8 @@ __monitor_exception:
          pushl %edx
          pushl %ecx
@@ -78,11 +78,11 @@ Index: common/i386/monitor_asm.S
          
  /* compute the address of the monitor context */
          call 1f
-diff --git a/common/kqemu_int.h b/common/kqemu_int.h
+diff --git common/kqemu_int.h common/kqemu_int.h
 index f19f7ca..4b59cb3 100644
 Index: common/kqemu_int.h
---- a/common/kqemu_int.h
-+++ b/common/kqemu_int.h
+--- common/kqemu_int.h
++++ common/kqemu_int.h
 @@ -367,10 +367,10 @@ struct kqemu_exception_regs {
  };
  #else

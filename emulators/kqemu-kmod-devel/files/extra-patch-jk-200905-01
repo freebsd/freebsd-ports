@@ -18,11 +18,11 @@ Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
  common/kernel.c |    8 ++++----
  1 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/common/kernel.c b/common/kernel.c
+diff --git common/kernel.c common/kernel.c
 index 6a88452..1d7a69e 100644
 Index: common/kernel.c
---- a/common/kernel.c
-+++ b/common/kernel.c
+--- common/kernel.c
++++ common/kernel.c
 @@ -422,8 +422,8 @@ struct kqemu_state *kqemu_init(struct kqemu_init *d,
  #ifdef __x86_64__
      s->monitor_ds_sel = 0; /* no need for a specific data segment */
