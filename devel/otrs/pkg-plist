@@ -1837,7 +1837,7 @@ otrs/var/stats/Stats.StatusActionOverview.de.xml
 otrs/var/stats/Stats.StatusActionOverview.en.xml
 otrs/var/stats/Stats.TicketOverview.de.xml
 otrs/var/stats/Stats.TicketOverview.en.xml
-%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
 @dirrmtry otrs/var/tmp
 @dirrmtry otrs/var/stats
 @dirrmtry otrs/var/spool
