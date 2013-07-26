@@ -1,25 +1,21 @@
-# New ports collection makefile for:   adasdl
-# Date created:        21 December 2002
-# Whom:                David Holm <david@realityrift.com>
-#
+# Created by: David Holm <david@realityrift.com>
 # $FreeBSD$
-#
 
-PORTNAME=      adasdl
-PORTVERSION=   20010504
-PORTREVISION=	11
-CATEGORIES=    devel
-MASTER_SITES=  SF/${PORTNAME}/AdaSDL_${PORTVERSION}/AdaSDL_${PORTVERSION}
-DISTNAME=      AdaSDL_${PORTVERSION}
+PORTNAME=	adasdl
+PORTVERSION=	20010504
+PORTREVISION=	12
+CATEGORIES=	devel
+MASTER_SITES=	SF/${PORTNAME}/AdaSDL_${PORTVERSION}/AdaSDL_${PORTVERSION}
+DISTNAME=	AdaSDL_${PORTVERSION}
 
 MAINTAINER=	david@realityrift.com
-COMMENT=	An Ada thin binding to SDL
+COMMENT=	Ada thin binding to SDL
 
-LIB_DEPENDS=	${GL_DEPENDS}
-BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
+ONLY_FOR_ARCHS=	i386
 
 USE_SDL=	mixer image sdl
-USE_GMAKE=     yes
+USES=		ada gmake
+GMAKE=		${SETENV} ${MAKE_ENV} gmake
 
 do-patch:
 	for i in `${FIND} ${WRKSRC} -name 'Makefile'`; do \
