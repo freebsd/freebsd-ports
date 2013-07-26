@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxmath
-# Date created:				14 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxmath
 PORTVERSION=	2.0.3
@@ -28,8 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 USE_GNOME=	libxml2
 USE_SDL=	image mixer net pango sdl
 USE_PERL5=	yes
-USES=		iconv
-USE_GMAKE=	yes
+USES=		iconv gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	T4K_COMMON_CFLAGS="-I${T4K_WRKSRC}/src" \
 		T4K_COMMON_LIBS="${T4K_WRKSRC}/src/.libs/libt4k_common.a" \
@@ -38,7 +33,7 @@ MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	$$(pkg-config --cflags SDL_Pango) -I${LOCALBASE}/include \
 		-DHAVE_ALPHASORT -DHAVE_SCANDIR -DHAVE_FSYNC -DICONV_CONST=""
-LDFLAGS+=	$$(pkg-config --libs SDL_Pango) -L${LOCALBASE}/lib
+LDFLAGS+=	$$(pkg-config --libs SDL_Pango) -L${LOCALBASE}/lib -liconv -lpng5
 
 T4K_NAME=	t4k_common
 T4K_VERSION=	0.1.1
@@ -50,6 +45,7 @@ T4K_WRKSRC=	${WRKDIR}/${T4K_NAME}-${T4K_VERSION}
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+LDFLAGS+=	-lintl
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
