@@ -18,8 +18,8 @@ CONFLICTS=	wmii-3.9*
 USE_XORG=	x11 xextproto xt xext
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
-		INCX11="-I${LOCALBASE}/include" LIBX11="-L${LOCALBASE}/lib" \
-		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
+		INCX11="-I${LOCALBASE}/include" LIBX11="-L${LOCALBASE}/lib -lX11 -lixp" \
+		CC="${CC} -c" LD="${CC}" LIBIXP="" STATIC="" \
 		MAN="${MANPREFIX}/man"
 
 MAN1=		wmii.1 wmiiloop.1 wmiir.1
