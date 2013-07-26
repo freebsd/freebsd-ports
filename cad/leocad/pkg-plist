@@ -1,11 +1,17 @@
 bin/leocad
 share/applications/leocad.desktop
+share/icons/hicolor/128x128/apps/leocad.png
+share/icons/hicolor/16x16/apps/leocad.png
+share/icons/hicolor/24x24/apps/leocad.png
+share/icons/hicolor/256x256/apps/leocad.png
+share/icons/hicolor/32x32/apps/leocad.png
+share/icons/hicolor/48x48/apps/leocad.png
 share/icons/hicolor/scalable/mimetypes/application-vnd.leocad.svg
 %%DATADIR%%/icon.png
 %%DATADIR%%/library.bin
-share/mime/packages/leocad-mime.xml 
-share/pixmaps/leocad.svg 
+share/mime/application/vnd.leocad.xml
+share/mime/packages/leocad-mime.xml
+share/pixmaps/leocad.png
+share/pixmaps/leocad.svg
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
