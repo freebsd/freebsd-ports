@@ -19,11 +19,9 @@
     SUBDIR += hunspell
     SUBDIR += hyphen
     SUBDIR += ircd-hybrid
-    SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += koi2koi
     SUBDIR += koi8r-ps
-    SUBDIR += ksocrat
     SUBDIR += libcyrillic
     SUBDIR += libreoffice
     SUBDIR += mueller-dic

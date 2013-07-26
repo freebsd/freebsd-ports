@@ -1,9 +1,0 @@
-Kasablanca is a graphical ftp client for KDE.
-
-Features:
-   o ftps encryption via AUTH TLS
-   o fxp (direct server to server transfer)
-   o bookmarking system
-   o concurrent connections to multiple hosts
-
-WWW: http://kasablanca.berlios.de/

@@ -1,6 +1,0 @@
-SHA256 (CJK-LyX/CJK-LyX-qt-1.4.4-1.src.tar.gz) = c24801f74c24f46c3e45d7e75c1bd3eda934938c2c5455160ddc69898135a3e0
-SIZE (CJK-LyX/CJK-LyX-qt-1.4.4-1.src.tar.gz) = 10702692
-SHA256 (CJK-LyX/lyx-platex-1.4.4.tar.gz) = 423bbc0eba0750f96bc4b756cbde37a4c34be8fd5db273643b45835be942595b
-SIZE (CJK-LyX/lyx-platex-1.4.4.tar.gz) = 2604
-SHA256 (CJK-LyX/patch-platex-1.4.4.diff) = 8ba8d7f38add0ff892cfe1b275c36f81928b4a9794336abb6b80a8a19a2f050c
-SIZE (CJK-LyX/patch-platex-1.4.4.diff) = 2316

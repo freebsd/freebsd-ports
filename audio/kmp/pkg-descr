@@ -1,7 +1,0 @@
-KMP is an MPD (audio/musicpd) client that uses the QT GUI toolkit
-so it will comfortably fit in with your KDE desktop, although only
-QT is required.
-KMP will allow you to browse the server's collection, add songs
-to the playlist, change the volume, etc.
-
-WWW:	http://www.threadbox.net/kmp.php

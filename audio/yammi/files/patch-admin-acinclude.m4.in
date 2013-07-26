@@ -1,8 +1,0 @@
---- admin/acinclude.m4.in.orig	2005-05-27 19:57:46.000000000 +0000
-+++ admin/acinclude.m4.in	2010-06-14 10:32:13.000000000 +0000
-@@ -3106,4 +3106,4 @@
-     fi
--    AM_CONDITIONAL(unsermake_enable_pch, test "$kde_use_pch" = "yes" && test "$kde_gcc_supports_pch" = "yes")
-   fi
-+  AM_CONDITIONAL(unsermake_enable_pch, test "$kde_use_pch" = "yes" && test "$kde_gcc_supports_pch" = "yes")
-   if test "$CXX" = "KCC"; then

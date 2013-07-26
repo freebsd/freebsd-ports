@@ -1,7 +1,0 @@
-Dolphin is a file manager for KDE focusing on usability. It is not intended
-to be a competitor to Konqueror, the default KDE file manager: Konqueror acts
-as universal viewer being able to show HTML pages, text documents, directories
-and a lot more, whereas Dolphin focuses on being only a file manager. This
-approach allows to optimize the user interface for the task of file management.
-
-WWW: http://dolphin.kde.org/

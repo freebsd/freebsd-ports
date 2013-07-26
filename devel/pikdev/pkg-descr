@@ -1,6 +1,0 @@
-PiKdev is a simple graphic IDE for the development of PIC-based applications.
-It currently supports assembly language. C language is also supported for PIC
-18 devices. PiKdev is developed in C++ under Linux, FreeBSD and is based on
-the KDE environment.
-
-WWW:	http://pikdev.free.fr/

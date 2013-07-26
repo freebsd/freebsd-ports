@@ -1,9 +1,0 @@
-This is the lanbrowsing utility package for KDE. It contains:
-
-- the lan:/ kioslave for Konqueror which lets you browse
-  several services on your local network like http, ftp, smb and nfs.
-- the LISa daemon, the backend for the lan:/ kioslave which scans
-  your network for hosts and services.
-- a wizard to setup the LISa daemon.
-
-WWW: http://www.kde.org/

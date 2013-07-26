@@ -1,5 +1,0 @@
-You have selected neither kdesu nor gksu during make config, but
-KPorts needs to be started as root for it to be useful.
-
-You can still install a package providing kdesu or gksu, or use
-another program to start KPorts as root, e.g. sudo or ssh -X.

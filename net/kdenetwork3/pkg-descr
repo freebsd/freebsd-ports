@@ -1,6 +1,0 @@
-KDE provides an integrated X11 based environment, much like CDE.
-This particular port installs the networking components of KDE,
-which includes applications for networking things like kppp,
-ksirc (irc-client), KDE's instant messenger kopete, and so forth.
-
-WWW: http://www.kde.org/

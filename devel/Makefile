@@ -138,7 +138,6 @@
     SUBDIR += boost-libs
     SUBDIR += boost-python-libs
     SUBDIR += boost_build
-    SUBDIR += bouml
     SUBDIR += bouml-doc
     SUBDIR += bpython
     SUBDIR += bsdbuild
@@ -275,7 +274,6 @@
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
     SUBDIR += cross-gdb
-    SUBDIR += crossvc
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
@@ -329,7 +327,6 @@
     SUBDIR += datadraw
     SUBDIR += dbus
     SUBDIR += dbus-glib
-    SUBDIR += dbus-qt3
     SUBDIR += dbus-qt4
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
@@ -410,7 +407,6 @@
     SUBDIR += eric4
     SUBDIR += eris
     SUBDIR += esdl
-    SUBDIR += esvn
     SUBDIR += etl
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
@@ -903,10 +899,8 @@
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdebindings4
-    SUBDIR += kdesdk3
     SUBDIR += kdesdk4
     SUBDIR += kdesvn-kde4
-    SUBDIR += kdevelop
     SUBDIR += kdevelop-kde4
     SUBDIR += kdevelop-pg-qt
     SUBDIR += kdevelop-php
@@ -914,9 +908,6 @@
     SUBDIR += kdevplatform
     SUBDIR += kimwitu
     SUBDIR += klee
-    SUBDIR += kodos
-    SUBDIR += kprof
-    SUBDIR += kscope
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += kyua-atf-compat
@@ -3323,7 +3314,6 @@
     SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog
-    SUBDIR += pikdev
     SUBDIR += piklab
     SUBDIR += pinba_engine
     SUBDIR += pipestatus
@@ -3895,10 +3885,8 @@
     SUBDIR += qmake4
     SUBDIR += qprog
     SUBDIR += qross
-    SUBDIR += qsa
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
-    SUBDIR += qssl
     SUBDIR += qsvn
     SUBDIR += qt4
     SUBDIR += qt4-assistant
@@ -4346,7 +4334,6 @@
     SUBDIR += stringencoders
     SUBDIR += styx
     SUBDIR += subclipse
-    SUBDIR += subcommander
     SUBDIR += subcommander2
     SUBDIR += subversion
     SUBDIR += subversion-static

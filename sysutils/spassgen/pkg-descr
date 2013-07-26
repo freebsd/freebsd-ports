@@ -1,6 +1,0 @@
-A small program that generates passwords for you so you don't have to.
-It can have 6-25 characters in length, and generate 1 to 100 passwords.
-Passwords can have numbers, lower case letters, upper case letters, and
-symbols.
-
-WWW: http://spassgen.sourceforge.net

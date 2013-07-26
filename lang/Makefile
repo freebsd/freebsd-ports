@@ -82,7 +82,6 @@
     SUBDIR += fpc-utils
     SUBDIR += fsharp
     SUBDIR += g95
-    SUBDIR += gambas
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
@@ -139,7 +138,6 @@
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += kawa
-    SUBDIR += klogoturtle
     SUBDIR += klone
     SUBDIR += kroc
     SUBDIR += kturtle

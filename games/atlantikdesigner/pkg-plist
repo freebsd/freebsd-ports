@@ -1,7 +1,0 @@
-bin/atlantikdesigner
-share/applications/kde/atlantikdesigner.desktop
-share/applications/kdeaddons-atlantikdesigner-%%KDE_VER%%
-share/apps/atlantikdesigner/atlantikdesignerui.rc
-share/icons/hicolor/16x16/apps/atlantikdesigner.png
-share/icons/hicolor/32x32/apps/atlantikdesigner.png
-@dirrm share/apps/atlantikdesigner

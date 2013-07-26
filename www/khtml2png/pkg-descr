@@ -1,5 +1,0 @@
-khtml2png is a command line program to create screenshots of webpages. It
-uses libkhtml (the library that is used in the KDE webbrowser Konqueror) and 
-Qt to do graphic conversion.
-
-WWW: http://khtml2png.sourceforge.net/

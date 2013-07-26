@@ -1,7 +1,0 @@
-bin/kbedic
-%%DATADIR%%/kbedic_bg.qm
-%%DATADIR%%/kbedic_icon_mini.xpm
-%%DATADIR%%/kbedic_icon.xpm
-%%DATADIR%%/en_bg.dat
-%%DATADIR%%/bg_en.dat
-@dirrm %%DATADIR%%

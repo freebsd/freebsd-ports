@@ -1,8 +1,0 @@
-bin/ktextdecode
-share/applnk/Applications/ktextdecode.desktop
-share/icons/hicolor/16x16/apps/ktextdecode.png
-share/icons/hicolor/32x32/apps/ktextdecode.png
-share/icons/locolor/16x16/apps/ktextdecode.png
-share/icons/locolor/32x32/apps/ktextdecode.png
-@dirrmtry share/applnk/Applications/
-@dirrmtry share/applnk

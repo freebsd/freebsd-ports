@@ -29,10 +29,7 @@
     SUBDIR += ispell-neu
     SUBDIR += jdictionary-eng-ger
     SUBDIR += jdictionary-ger-hun
-    SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
-    SUBDIR += kheisereg
-    SUBDIR += ksteak
     SUBDIR += libreoffice
     SUBDIR += manpages
     SUBDIR += mediathek

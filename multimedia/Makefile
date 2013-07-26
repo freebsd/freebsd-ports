@@ -23,7 +23,6 @@
     SUBDIR += banshee
     SUBDIR += beep-media-player
     SUBDIR += bino
-    SUBDIR += bmp-extra-plugins
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
@@ -48,7 +47,6 @@
     SUBDIR += dvbsnoop
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
-    SUBDIR += dvdauthorwizard
     SUBDIR += dvdid
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
@@ -87,7 +85,6 @@
     SUBDIR += gpac-mp4box
     SUBDIR += gpodder
     SUBDIR += grake
-    SUBDIR += grpplaylist
     SUBDIR += gst123
     SUBDIR += gstreamer
     SUBDIR += gstreamer-ffmpeg
@@ -150,23 +147,16 @@
     SUBDIR += iriverter
     SUBDIR += iso2mkv
     SUBDIR += jmref
-    SUBDIR += k9copy
     SUBDIR += k9copy-kde4
     SUBDIR += kaffeine
-    SUBDIR += kdemultimedia3
     SUBDIR += kdemultimedia4
     SUBDIR += kdemultimedia4-ffmpegthumbs
     SUBDIR += kdemultimedia4-mplayerthumbs
     SUBDIR += kdenlive
     SUBDIR += kino
     SUBDIR += kissdx
-    SUBDIR += kmenc15
-    SUBDIR += kmplayer
     SUBDIR += kmplayer-kde4
-    SUBDIR += konverter
-    SUBDIR += kplayer
     SUBDIR += kplayer-kde4
-    SUBDIR += ksubeditor
     SUBDIR += libaacs
     SUBDIR += libass
     SUBDIR += libbluray
@@ -214,7 +204,6 @@
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
-    SUBDIR += mandvd
     SUBDIR += mediadownloader
     SUBDIR += mediainfo
     SUBDIR += mencoder
@@ -252,7 +241,6 @@
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
-    SUBDIR += noatun-plugins
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
@@ -306,7 +294,6 @@
     SUBDIR += py-tvnamer
     SUBDIR += pyjama
     SUBDIR += pymp
-    SUBDIR += qdvdauthor
     SUBDIR += qmmp
     SUBDIR += qmmp-plugin-pack
     SUBDIR += qt-faststart
@@ -335,7 +322,6 @@
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += streamanalyze
-    SUBDIR += subtitlecomposer
     SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor
     SUBDIR += subtitleoffsetmodifier
@@ -349,7 +335,6 @@
     SUBDIR += totem-pl-parser
     SUBDIR += tovid
     SUBDIR += transcode
-    SUBDIR += transkode
     SUBDIR += tstools
     SUBDIR += tunapie
     SUBDIR += tvheadend
@@ -407,7 +392,6 @@
     SUBDIR += xfce4-parole
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
-    SUBDIR += xine_artsplugin
     SUBDIR += xmms
     SUBDIR += xmms-skins
     SUBDIR += xmms-skins-huge

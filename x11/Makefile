@@ -125,15 +125,10 @@
     SUBDIR += kactivitymanagerd
     SUBDIR += kb2mb2
     SUBDIR += kbproto
-    SUBDIR += kde-lite
-    SUBDIR += kde3
     SUBDIR += kde4
     SUBDIR += kde4-baseapps
     SUBDIR += kde4-runtime
     SUBDIR += kde4-workspace
-    SUBDIR += kdebase3
-    SUBDIR += kdelibs3
-    SUBDIR += kdelibs3-nocups
     SUBDIR += kdelibs4
     SUBDIR += keybinder
     SUBDIR += keyboardcast
@@ -219,7 +214,6 @@
     SUBDIR += nvidia-driver-96
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
-    SUBDIR += oooqs2
     SUBDIR += ooxcb
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest
@@ -248,7 +242,6 @@
     SUBDIR += rox-wallpaper
     SUBDIR += roxbg
     SUBDIR += roxterm
-    SUBDIR += rsibreak
     SUBDIR += rsibreak-kde4
     SUBDIR += rstart
     SUBDIR += ruby-X11
@@ -449,7 +442,6 @@
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
     SUBDIR += xscreensaver-gnome-hacks
-    SUBDIR += xscreensaver-kde
     SUBDIR += xscreensaver.app
     SUBDIR += xsel
     SUBDIR += xsel-conrad
@@ -487,7 +479,6 @@
     SUBDIR += xxkb
     SUBDIR += xzoom
     SUBDIR += yad
-    SUBDIR += yakuake
     SUBDIR += yakuake-kde4
     SUBDIR += yalias
     SUBDIR += yeahconsole

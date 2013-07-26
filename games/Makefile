@@ -50,7 +50,6 @@
     SUBDIR += asteroids3d
     SUBDIR += atanks
     SUBDIR += atitd
-    SUBDIR += atlantikdesigner
     SUBDIR += atomix
     SUBDIR += atr3d
     SUBDIR += atris
@@ -75,7 +74,6 @@
     SUBDIR += biorythm
     SUBDIR += bitefusion
     SUBDIR += black-box
-    SUBDIR += blackjack
     SUBDIR += blackjackclient
     SUBDIR += blackshadeselite
     SUBDIR += blinken
@@ -208,7 +206,6 @@
     SUBDIR += duke3d-data
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
-    SUBDIR += easysok
     SUBDIR += eboard
     SUBDIR += edge
     SUBDIR += editss
@@ -306,7 +303,6 @@
     SUBDIR += ggz-client-libs
     SUBDIR += ggz-gtk-client
     SUBDIR += ggz-gtk-games
-    SUBDIR += ggz-kde-client
     SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
     SUBDIR += gigalomania
@@ -434,25 +430,21 @@
     SUBDIR += kaid
     SUBDIR += kajaani-kombat
     SUBDIR += kajongg
-    SUBDIR += kamikaze
     SUBDIR += kanagram
     SUBDIR += kanatest
     SUBDIR += kapman
     SUBDIR += kardsgt
     SUBDIR += kartofel
     SUBDIR += katomic
-    SUBDIR += kbilliards
     SUBDIR += kblackbox
     SUBDIR += kblocks
     SUBDIR += kbounce
     SUBDIR += kbreakout
     SUBDIR += kcheckers
-    SUBDIR += kdegames3
     SUBDIR += kdegames4
     SUBDIR += kdiamond
     SUBDIR += kevedit
     SUBDIR += kfourinline
-    SUBDIR += kfreerings
     SUBDIR += kgoldrunner
     SUBDIR += khangman
     SUBDIR += kigo
@@ -465,11 +457,9 @@
     SUBDIR += klondike
     SUBDIR += kmahjongg
     SUBDIR += kmancala
-    SUBDIR += kmastermind
     SUBDIR += kmines
     SUBDIR += knavalbattle
     SUBDIR += knetwalk
-    SUBDIR += knights
     SUBDIR += knights-kde4
     SUBDIR += kobodeluxe
     SUBDIR += kolf
@@ -477,9 +467,6 @@
     SUBDIR += konquest
     SUBDIR += koth
     SUBDIR += kpat
-    SUBDIR += kpicframer
-    SUBDIR += kpictorial
-    SUBDIR += kpuzzle
     SUBDIR += krank
     SUBDIR += kreversi
     SUBDIR += kshisen
@@ -488,11 +475,9 @@
     SUBDIR += kspaceduel
     SUBDIR += ksquares
     SUBDIR += ksudoku
-    SUBDIR += ktritoc
     SUBDIR += ktuberling
     SUBDIR += kubrick
     SUBDIR += kuklomenos
-    SUBDIR += kwappen
     SUBDIR += kye
     SUBDIR += ladder
     SUBDIR += lander
@@ -727,7 +712,6 @@
     SUBDIR += phalanx
     SUBDIR += phlipple
     SUBDIR += pinball
-    SUBDIR += pinedit
     SUBDIR += pingus
     SUBDIR += pink-pony
     SUBDIR += pioneers
@@ -777,7 +761,6 @@
     SUBDIR += pysycache-lang
     SUBDIR += pysycache-themes
     SUBDIR += pythonchess
-    SUBDIR += q15
     SUBDIR += q2p
     SUBDIR += q2pro
     SUBDIR += q3cellshading
@@ -786,7 +769,6 @@
     SUBDIR += qgo
     SUBDIR += qix
     SUBDIR += qmars
-    SUBDIR += qnetchess
     SUBDIR += qnetwalk
     SUBDIR += qonk
     SUBDIR += qstat
@@ -897,7 +879,6 @@
     SUBDIR += solarconquest
     SUBDIR += solarwolf
     SUBDIR += sopwith
-    SUBDIR += spacehulk
     SUBDIR += spacejunk
     SUBDIR += speak
     SUBDIR += species
@@ -918,7 +899,6 @@
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
-    SUBDIR += stroq
     SUBDIR += sudoku
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
@@ -933,7 +913,6 @@
     SUBDIR += taipan
     SUBDIR += tanglet
     SUBDIR += tank
-    SUBDIR += taxipilot
     SUBDIR += tbclock
     SUBDIR += tbe
     SUBDIR += tecnoballz

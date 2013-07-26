@@ -1,7 +1,0 @@
-imgSeek is a photo collection manager and viewer with content-based search
-and many other features. The query is expressed either as a rough sketch
-painted by the user or as another image you supply (or an image in your
-collection). The searching algorithm makes use of multiresolution wavelet
-decomposition of the query and database images.
-
-WWW: http://www.imgseek.net/

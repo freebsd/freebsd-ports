@@ -1,2 +1,0 @@
-khtml2png requires an X window display. If you don't have it, you can
-use either VNC or X Virtual Frame Buffer server (xorg-vfbserver).

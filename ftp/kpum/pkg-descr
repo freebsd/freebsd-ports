@@ -1,5 +1,0 @@
-Kpum is a user manager for the pureftpd server. You can add, modify and delete
-users of the pureftpd server.  Currently only the pureftpd.pdb database is
-supported.
-
-WWW: http://kpum.sourceforge.net/

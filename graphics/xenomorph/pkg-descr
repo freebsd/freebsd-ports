@@ -1,9 +1,0 @@
-Xenomorph is OpenSource software running on Unix/X11 systems. It provides a
-unified concept of polynomial and morphologic image filters. It is built for
-precision, not for speed, that means it works in floating-point mode
-internally.
-
-It can read PNG, JPG and many other formats, and it writes PNG. A nice feature
-of this software is it's upgradeability by adding new filters.
-
-WWW: http://xenomorph.sourceforge.net/

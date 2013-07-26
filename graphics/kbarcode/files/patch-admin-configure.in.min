@@ -1,7 +1,0 @@
---- admin/configure.in.min.orig	2007-04-09 17:27:01.000000000 -0500
-+++ admin/configure.in.min	2010-09-05 15:33:17.000000000 -0500
-@@ -46,2 +46,4 @@
- dnl Checks for programs.
-+AC_PROG_CC
-+AC_PROG_CXX
- AC_CHECK_COMPILERS

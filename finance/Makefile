@@ -24,7 +24,6 @@
     SUBDIR += beanie
     SUBDIR += cbb
     SUBDIR += electrum
-    SUBDIR += eqonomize-kde3
     SUBDIR += eqonomize-kde4
     SUBDIR += expense
     SUBDIR += frontaccounting
@@ -34,10 +33,7 @@
     SUBDIR += grisbi
     SUBDIR += homebank
     SUBDIR += jgnash
-    SUBDIR += kexchange
-    SUBDIR += khacc
     SUBDIR += kmymoney-kde4
-    SUBDIR += kmymoney2
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
     SUBDIR += ledgersmb
@@ -100,7 +96,6 @@
     SUBDIR += prestashop
     SUBDIR += py-vatnumber
     SUBDIR += qhacc
-    SUBDIR += qtstalker
     SUBDIR += quantlib
     SUBDIR += rubygem-money
     SUBDIR += sabernetdcs-client

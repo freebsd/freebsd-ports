@@ -1,8 +1,0 @@
-Ermixer is a command-line, ncurses, and Qt-GUI OSS audio mixer that looks
-very nice in GUI mode, and can save and restore multiple named profiles. It
-also has a command-line mode that makes it useful in scripts.
-
-P.S. I have found the holy grail! Now I don't need to install kdemultimedia
-just to get a bloody mixer!  -- AlanE (KDE-FreeBSD Team)
-
-WWW: http://ermixer.sourceforge.net/

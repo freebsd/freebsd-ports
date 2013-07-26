@@ -1,6 +1,0 @@
---------------------------------------------------------------------------
-
-If you get KDE dialogues partially translated to your local language,
-then use correct kgtk wrapper 'kgtk2-wrapper' to start gtk applications.
-
---------------------------------------------------------------------------

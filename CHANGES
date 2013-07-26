@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130726:
+AUTHOR: rene@FreeBSD.org
+
+ * With the removal of QT 3/KDE 3, the following are no longer recognized:
+   - USE_KDEBASE_VER
+   - USE_KDELIBS_VER
+   - USE_QT_VER
+ 
+  Mk/bsd.kde.mk has been removed, it was only used for QT 3/KDE 3.
+ 
 20130628:
 AUTHOR: bapt@FreeBSD.org
 

@@ -1,8 +1,0 @@
-bin/kmobiletools
-share/applications/kde/kmobiletools.desktop
-share/apps/kmobiletools/eventsrc
-share/icons/hicolor/16x16/apps/kmobiletools.png
-share/icons/hicolor/32x32/apps/kmobiletools.png
-share/icons/hicolor/48x48/apps/kmobiletools.png
-share/icons/hicolor/64x64/apps/kmobiletools.png
-@dirrm share/apps/kmobiletools

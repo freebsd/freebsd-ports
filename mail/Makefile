@@ -213,7 +213,6 @@
     SUBDIR += jmba
     SUBDIR += junkfilter
     SUBDIR += kbiff
-    SUBDIR += kcheckgmail
     SUBDIR += kshowmail
     SUBDIR += lbdb
     SUBDIR += lens

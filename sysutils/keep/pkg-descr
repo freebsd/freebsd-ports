@@ -1,5 +1,0 @@
-Keep is a backup system for KDE. The behavior is quite simple: you choose the
-files you want to backup, you set up the frequency and the number of backup
-you want to have, and Keep will backup them automatically.
-
-WWW: http://kde-apps.org/content/show.php?content=32984

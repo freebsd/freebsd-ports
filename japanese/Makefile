@@ -144,7 +144,6 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kcode
-    SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += kdrill
     SUBDIR += kinput2

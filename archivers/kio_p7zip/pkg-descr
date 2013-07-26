@@ -1,5 +1,0 @@
-This is a kioslave for KDE to handle 7zip files.
-Simply, enter 'p7zip:/path_to_file/filename.7z' in konqueror to use this.
-
-Author:	Raul Fernandes <rgfbr@yahoo.com.br>
-WWW: http://www.kde-apps.org/content/show.php?content=17829

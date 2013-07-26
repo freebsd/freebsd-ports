@@ -1,9 +1,0 @@
-lib/kde3/kfile_7zip.a
-lib/kde3/kfile_7zip.la
-lib/kde3/kfile_7zip.so
-lib/kde3/kio_p7zip.a
-lib/kde3/kio_p7zip.la
-lib/kde3/kio_p7zip.so
-share/mimelnk/application/x-7z.desktop
-share/services/kfile_7zip.desktop
-share/services/p7zip.protocol

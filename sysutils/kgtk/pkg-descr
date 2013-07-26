@@ -1,7 +1,0 @@
-This is a quick-and-dirty LD_PRELOAD hack that allows *some* Gtk
-applications to use KDE's file dialogs when run under KDE.
-
-The Gtk file chooser functions have been overridden to communicate
-with this KDE module/application.
-
-WWW: http://home.freeuk.net/cpdrummomd/

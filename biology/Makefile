@@ -97,7 +97,6 @@
     SUBDIR += ugene
     SUBDIR += velvet
     SUBDIR += wise
-    SUBDIR += xdrawchem
     SUBDIR += xmolwt
 
 .include <bsd.port.subdir.mk>

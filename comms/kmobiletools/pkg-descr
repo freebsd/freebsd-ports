@@ -1,8 +1,0 @@
-KMobileTools is a nice KDE-based application that allows to control mobile
-phones with your PC. It handles full SMS control, dialing calls, phonebook, and
-phone status monitoring. It's also integrated with the KDE environment, so it
-can be embedded in Kontact, or import/export from and to KAddressBook. It has
-been tested on Motorola, Nokia, Siemens, Sony Ericsson and LG mobile phones.
-Anyway each AT Command compliant device should be well supported.
-
-WWW:	http://www.kmobiletools.org/

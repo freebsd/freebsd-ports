@@ -132,10 +132,6 @@
     SUBDIR += jrrd
     SUBDIR += kbibtex
     SUBDIR += kinterbasdb
-    SUBDIR += kmysqladmin
-    SUBDIR += knoda
-    SUBDIR += ksqlanalyzer
-    SUBDIR += ksqlshell
     SUBDIR += kumofs
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
@@ -218,7 +214,6 @@
     SUBDIR += mysql-connector-c++
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-odbc
-    SUBDIR += mysql-navigator
     SUBDIR += mysql-proxy
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
@@ -786,10 +781,6 @@
     SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
-    SUBDIR += qt-mysql-plugin
-    SUBDIR += qt-odbc-plugin
-    SUBDIR += qt-pgsql-plugin
-    SUBDIR += qt-sqlite-plugin
     SUBDIR += qt4-ibase-plugin
     SUBDIR += qt4-mysql-plugin
     SUBDIR += qt4-odbc-plugin

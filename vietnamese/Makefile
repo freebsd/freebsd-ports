@@ -5,9 +5,6 @@
 
     SUBDIR += aspell
     SUBDIR += hunspell
-.if !defined(NO_VIET_KDE)
-    SUBDIR += kde3-i18n
-.endif
     SUBDIR += kde4-l10n
     SUBDIR += libreoffice
     SUBDIR += libviet

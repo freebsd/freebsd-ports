@@ -1,6 +1,0 @@
-flip is a simple 'flipbook' for previewing TIFF animations. It requires
-large amounts of memory to be useful (a machine w/ 256MB, can load
-~500 320x240 frames without hitting swap). Frames can be scaled on load to
-use less memory.
-
-WWW: http://www.reptilelabour.com/software/flip/

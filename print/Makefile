@@ -27,7 +27,6 @@
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
-    SUBDIR += cjk-lyx
     SUBDIR += cm-super
     SUBDIR += cpp2latex
     SUBDIR += cups
@@ -120,7 +119,6 @@
     SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += jadetex
-    SUBDIR += kcdlabel
     SUBDIR += kde4-print-manager
     SUBDIR += kde_poster
     SUBDIR += kover
@@ -183,7 +181,6 @@
     SUBDIR += lyx
     SUBDIR += magicfilter
     SUBDIR += makeindex
-    SUBDIR += mapagi
     SUBDIR += mftrace
     SUBDIR += min12xxw
     SUBDIR += mp-a4
