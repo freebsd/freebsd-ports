@@ -5,7 +5,6 @@ not received a lot of testing yet. It might break for you and
 kill kenny or spill your beer so don't expect too much.
 
 Known issues:
-- scanning does not work
 - no libav support
 - no libdvbcsa support
 - no rc.d script

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tvheadend
-PORTVERSION=	3.4.0.20130714.2
-PORTREVISION=	1
+PORTVERSION=	3.4.0.20130726.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} dvb-scan-tables-20130714.tar.gz
@@ -22,7 +21,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 USE_GITHUB=	yes
 GH_ACCOUNT=	decke
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	f665ccb
+GH_COMMIT=	8a8c1a8
 
 USES=		pkgconfig gmake
 USE_PYTHON=	yes

@@ -1864,7 +1864,9 @@ bin/tvheadend
 %%DATADIR%%/src/webui/static/icons/world.png
 %%DATADIR%%/src/webui/static/icons/wrench.png
 %%DATADIR%%/src/webui/static/img/bg-header.png
+%%DATADIR%%/src/webui/static/img/error.png
 %%DATADIR%%/src/webui/static/img/logo.png
+%%DATADIR%%/src/webui/static/img/spinner_black_bg.gif
 %%DATADIR%%/src/webui/static/livegrid/livegrid-all.js
 %%DATADIR%%/src/webui/static/livegrid/resources/css/ext-ux-livegrid.css
 %%DATADIR%%/src/webui/static/livegrid/resources/images/loading.gif
@@ -1873,6 +1875,8 @@ bin/tvheadend
 %%DATADIR%%/src/webui/static/lovcombo/css/lovcombo.css
 %%DATADIR%%/src/webui/static/lovcombo/css/webpage.css
 %%DATADIR%%/src/webui/static/lovcombo/lovcombo-all.js
+%%DATADIR%%/src/webui/static/tv.css
+%%DATADIR%%/src/webui/static/tv.js
 %%DATADIR%%/src/webui/static/multiselect/ddview.js
 %%DATADIR%%/src/webui/static/multiselect/multiselect.js
 %%DATADIR%%/src/webui/static/multiselect/resources/bottom2.gif
