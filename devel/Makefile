@@ -3507,6 +3507,7 @@
     SUBDIR += py-dexml
     SUBDIR += py-dialog
     SUBDIR += py-diazo
+    SUBDIR += py-dirspec
     SUBDIR += py-distorm
     SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
