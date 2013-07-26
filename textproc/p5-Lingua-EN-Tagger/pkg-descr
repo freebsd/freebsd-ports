@@ -10,4 +10,4 @@ The tagger also recursively extracts as many nouns and noun phrases as
 it can, using a set of regular expressions.
 
 Author:	Aaron Coburn <acoburn@middlebury.edu>
-WWW:	http://search.cpan.org/dist/Lingua-EN-Tagger/
+WWW: http://search.cpan.org/dist/Lingua-EN-Tagger/
