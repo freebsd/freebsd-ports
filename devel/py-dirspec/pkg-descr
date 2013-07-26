@@ -1,0 +1,4 @@
+A Python library which provides support for handling directories as described
+in the XDG Base Directory and User Folders specifications.
+
+WWW: https://launchpad.net/dirspec
