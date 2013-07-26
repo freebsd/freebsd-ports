@@ -1,13 +1,9 @@
-# New ports collection makefile for:	Flash-FLAP
-# Date created:	   20 May 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	AMF-Perl
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SIMONF
@@ -29,7 +25,7 @@ MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \
 		AMF::Perl::Util::RemotingService.3
 
 post-patch:
-	@${PERL} -pi.bak -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
+	@${PERL} -pi -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
 
 post-configure:
 # dirty hack to deceive irritable pod2man
