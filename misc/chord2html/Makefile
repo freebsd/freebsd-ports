@@ -1,11 +1,5 @@
-# Ports collection makefile for:	chord2html
-# Date created:				Sep 11, 2002
-# Whom:					ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
-# $Tecnik: ports/misc/chord2html/Makefile,v 1.3 2005/12/14 11:41:25 itetcu Exp $
-#
 
 PORTNAME=	chord2html
 PORTVERSION=	1.3
@@ -20,6 +14,8 @@ RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+USES=		shebangfix
+SHEBANG_FILES=	chord2html
 
 MAN1=	chord2html.1
 
@@ -27,8 +23,7 @@ PLIST_FILES=	bin/chord2html share/chord2html/chord2html.css
 PLIST_DIRS=	share/chord2html
 
 post-patch:
-	@${PERL} -pi -e "s,/usr/bin/perl,${PERL},g ; \
-			 s,%%PREFIX%%,${PREFIX},g ; \
+	@${REINPLACE_CMD} -i '' -e "s,%%PREFIX%%,${PREFIX},g ; \
 			 s,chord2html.css,${PREFIX}/share/chord2html/chord2html.css," \
 		${WRKSRC}/chord2html
 

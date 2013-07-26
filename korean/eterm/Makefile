@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ko-eterm-0.8.9
-# Date created:        8 Jun 1999
-# Whom:                Oh Junseon <hollywar@mail.holywar.net>
-#
+# Created by: Oh Junseon <hollywar@mail.holywar.net>
 # $FreeBSD$
-#
 
 PORTNAME=	eterm
 PORTVERSION=	0.8.9
@@ -36,7 +32,7 @@ BROKEN=		fails to build with new utmpx
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -i '' -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/libmej/debug.c ${WRKSRC}/libmej/strings.c
 
 post-install:

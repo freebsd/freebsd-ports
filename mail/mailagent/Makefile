@@ -47,8 +47,7 @@ pre-extract:
 
 post-patch:
 	@(cd ${WRKSRC}; \
-	  ${PERL} -pi.bak \
-	    -e 's|exec perl -S|exec ${PERL} -S|' \
+	  ${REINPLACE_CMD} -i '' -e 's|exec perl -S|exec ${PERL} -S|' \
 	    agent/edusers.SH agent/magent.sh agent/maildist.SH \
 	    agent/mailhelp.SH agent/maillist.SH agent/mailpatch.SH \
 	    agent/package.SH agent/test/TEST agent/test/atail \

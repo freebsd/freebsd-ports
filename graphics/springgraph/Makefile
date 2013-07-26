@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	springgraph
-# Date created:			Aug 8, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	springgraph
 PORTVERSION=	0.88
@@ -28,9 +23,8 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-post-patch:
-	@${PERL} -pi -e "s|/usr/bin/perl|${PERL}|g" ${WRKSRC}/springgraph.pl
+USES=		shebangfix
+SHEBANG_FILES=	springgraph.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/springgraph.pl ${PREFIX}/bin/springgraph

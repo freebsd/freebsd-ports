@@ -14,9 +14,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-
-post-patch:
-	${PERL} -pi -e "s#/usr/local/bin/perl#${PERL5}#" ${WRKSRC}/torrentsniff
+USES=		shebangfix
+SHEBANG_FILES=	torrentsniff
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/torrentsniff ${LOCALBASE}/bin

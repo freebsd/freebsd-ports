@@ -19,9 +19,12 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 PORTDOCS=	QUICK README copyright
 PLIST_FILES=	bin/spamstats.pl
+USES=		shebangfix
+SHEBANG_FILES=	${PORTNAME}${PORTVERSION}.pl
 
 post-patch:
-	@${PERL} -pi.bak -e 's,/mail.log,/maillog,g' ${WRKSRC}/${PORTNAME}${PORTVERSION}.pl
+	@${REINPLACE_CMD} -i '' -e 's|mail.log|maillog|g' \
+		${WRKSRC}/${PORTNAME}${PORTVERSION}.pl
 
 .include <bsd.port.options.mk>
 

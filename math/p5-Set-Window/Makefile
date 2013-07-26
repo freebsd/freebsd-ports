@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Set-Window
-# Date created:				03 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Set-Window
 PORTVERSION=	1.01
@@ -19,6 +15,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Set::Window.3
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /use 5/;' ${WRKSRC}/Window.pm
+	@${REINPLACE_CMD} -i '' '/use 5/d' ${WRKSRC}/Window.pm
 
 .include <bsd.port.mk>

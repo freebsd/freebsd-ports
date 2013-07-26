@@ -18,10 +18,10 @@ USE_PERL5_BUILD=yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${PERL} -pi -e 's!CFLAGS=-Wall -O2!CFLAGS+=-Wall!; \
-		s!sdl-config!${SDL_CONFIG}!' \
+	@${REINPLACE_CMD} -i '' -e 's!CFLAGS=-Wall -O2!CFLAGS+=-Wall!; \
+			s!sdl-config!${SDL_CONFIG}!' \
 		${WRKSRC}/Makefile
-	@${PERL} -pi -e 's!spark%d.png!${DATADIR}/spark%d.png!' \
+	@${REINPLACE_CMD} -i '' -e 's!spark%d.png!${DATADIR}/spark%d.png!' \
 		${WRKSRC}/explosions.c
 
 do-install:

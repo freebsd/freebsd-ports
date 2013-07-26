@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xchat
-# Date created:			17 Nov 1998
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.11
@@ -66,8 +62,7 @@ CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
 .endif
 
 post-patch:
-	@${PERL} -pi \
-		-e 's|-lpthread|${PTHREAD_LIBS}|g;' \
+	@${REINPLACE_CMD} -i '' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
 post-install:

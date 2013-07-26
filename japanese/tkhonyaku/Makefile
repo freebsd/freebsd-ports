@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkhonyaku
-# Date created:		10 July 2000
-# Whom:			Daichi GOTO
-#
+# Created by: Daichi GOTO
 # $FreeBSD$
-#
 
 PORTNAME=	tkhonyaku
 PORTVERSION=	1.8
@@ -22,7 +18,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	${PERL} -i -pe 's,/usr/local/tkhonyaku,${PREFIX}/tkhonyaku,g' \
+	@${REINPLACE_CMD} -i '' -e 's|/usr/local/tkhonyaku|${PREFIX}/tkhonyaku|g' \
 		${WRKSRC}/tkhonyaku ${WRKSRC}/tkhonyaku-readme
 
 do-install:
