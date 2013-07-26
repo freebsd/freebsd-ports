@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static
 
-OPTIONS_DEFINE=	ARTS ESOUND IPV6 NAS OPTIMIZED_CFLAGS XVID DOCS
+OPTIONS_DEFINE=		ESOUND IPV6 NAS OPTIMIZED_CFLAGS XVID DOCS
 OPTIONS_DEFAULT=	IPV6 XVID
 
 DOC_FILES=	${PORTDOCS}
@@ -82,10 +82,6 @@ MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 ###
 ## Auto detect possible extensions
 ###
-# arts
-.if exists(${LOCALBASE}/lib/libartsc.so) && empty(PORT_OPTIONS:MARTS)
-PORT_OPTIONS+=	ARTS
-.endif
 # esound
 .if ${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
 PORT_OPTIONS+=	ESOUND
@@ -102,10 +98,6 @@ PORT_OPTIONS+=	XVID
 ###
 ## Enable extensions based on user choices
 ###
-# arts
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
-.endif
 # esound
 .if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
