@@ -1,0 +1,11 @@
+ed25519ll is a low-level wrapper for the Ed25519 public key signature
+system. It uses Extension() to compile a shared library that is not a
+Python extension module, and then uses ctypes to talk to the library. With
+luck it will only be necessary to compile ed25519ll once for each
+platform, reusing its shared library across Python versions.
+
+This wrapper also contains a reasonably performat pure-Python
+fallback. Unlike the reference implementation, the Python implementation
+does not contain protection against timing attacks.
+
+WWW: http://bitbucket.org/dholth/ed25519ll/
