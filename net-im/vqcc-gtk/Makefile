@@ -12,12 +12,11 @@ COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-USES=        pathfix
+USES=		pathfix gmake gettext
 USE_GNOME=	gnomeprefix gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
 
 .include <bsd.port.mk>
