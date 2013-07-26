@@ -18,7 +18,7 @@ COMMENT=	The noeGNUd UI for Nethack with DeeT's hack font patch
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USES=		bison
+USES=		bison fmake
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
