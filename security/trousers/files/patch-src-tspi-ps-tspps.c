@@ -1,5 +1,5 @@
---- src/tspi/ps/tspps.c.orig	2010-05-02 11:39:11.000000000 +0900
-+++ src/tspi/ps/tspps.c	2010-10-24 21:04:04.843557352 +0900
+--- src/tspi/ps/tspps.c.orig	2012-09-20 02:24:48.000000000 +0900
++++ src/tspi/ps/tspps.c	2013-07-27 04:03:25.000000000 +0900
 @@ -29,6 +29,11 @@
  #define LE_16 htole16
  #define LE_32 htole32
@@ -12,37 +12,21 @@
  #else
  #define LE_16(x) (x)
  #define LE_32(x) (x)
-@@ -43,11 +48,26 @@
+@@ -43,9 +48,13 @@
  #include "tspps.h"
  #include "tsplog.h"
  
-+#ifndef LE_16
-+static UINT16 htole16(UINT16 x)
-+{
-+    BYTE *b = &x;
-+    return (UINT16) (b[0] + (b[1] << 8));
-+}
-+#define LE_16 htole16
-+#endif
-+
-+#ifndef LE_32
-+static UINT32 htole32(UINT32 x)
-+{
-+    BYTE *b = &x;
-+    return (UINT32) (b[0] + (b[1] << 8) + (b[2] << 16) + (b[3] << 24));
-+}
-+#define LE_32 htole32
-+#endif
 +
  static int user_ps_fd = -1;
  static MUTEX_DECLARE_INIT(user_ps_lock);
--#if (defined (__FreeBSD__) || defined (__OpenBSD__))
--static MUTEX_DECLARE_INIT(user_ps_path);
--#endif
- #if defined (SOLARIS)
- static struct flock fl = {
-        0,
-@@ -70,9 +90,7 @@
+ #if (defined (__FreeBSD__) || defined (__OpenBSD__))
++#include <sys/endian.h>
++#define	LE_16 htole16
++#define	LE_32 htole32
+ static MUTEX_DECLARE_INIT(user_ps_path);
+ #endif
+ static struct flock fl;
+@@ -60,9 +69,7 @@
  	TSS_RESULT result;
  	char *file_name = NULL, *home_dir = NULL;
  	struct passwd *pwp;
@@ -52,7 +36,7 @@
  	struct stat stat_buf;
  	char buf[PASSWD_BUFSIZE];
  	uid_t euid;
-@@ -82,10 +100,6 @@
+@@ -72,10 +79,6 @@
  		*file = strdup(file_name);
  		return (*file) ? TSS_SUCCESS : TSPERR(TSS_E_OUTOFMEMORY);
  	}
@@ -63,7 +47,7 @@
  	euid = geteuid();
  
  #if defined (SOLARIS)
-@@ -98,32 +112,14 @@
+@@ -88,32 +91,14 @@
           */
          rc = snprintf(buf, sizeof (buf), "%s/%d", TSS_USER_PS_DIR, euid);
  #else

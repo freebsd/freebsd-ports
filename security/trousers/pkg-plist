@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 @unexec cmp -s %D/etc/tcsd.conf %D/%%EXAMPLESDIR%%/tcsd.conf && rm -f %D/etc/tcsd.conf || true
-%%EXAMPLESDIR%%/tcsd.conf
 @exec [ -f %D/etc/tcsd.conf ] || cp -p %B/%f %D/etc/tcsd.conf
 include/trousers/trousers.h
 include/trousers/tss.h
@@ -31,9 +30,8 @@ include/tss/tss_typedef.h
 lib/libtspi.a
 lib/libtspi.la
 lib/libtspi.so
-lib/libtspi.so.2
+lib/libtspi.so.3
 sbin/tcsd
-@dirrm %%EXAMPLESDIR%%
 @dirrmtry var/lib/tpm
 @dirrmtry var/lib
 @dirrmtry var

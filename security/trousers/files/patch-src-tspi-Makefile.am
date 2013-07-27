@@ -1,11 +1,11 @@
---- src/tspi/Makefile.am.orig	2010-03-12 05:41:54.000000000 +0900
-+++ src/tspi/Makefile.am	2010-10-24 21:04:04.840556827 +0900
+--- src/tspi/Makefile.am.orig	2012-09-20 02:24:48.000000000 +0900
++++ src/tspi/Makefile.am	2013-07-27 04:01:03.000000000 +0900
 @@ -17,7 +17,7 @@
  # 5. If any interfaces have been added since the last public release, then increment age.
  # 6. If any interfaces have been removed since the last public release, then set age to 0.
  
--libtspi_la_LDFLAGS=-version-info 2:3:1 -lpthread @CRYPTOLIB@
-+libtspi_la_LDFLAGS=-version-info 2:3:1 -lpthread @CRYPTOLIB@ -L@prefix@/lib -liconv
+-libtspi_la_LDFLAGS=-version-info 3:0:2 -lpthread @CRYPTOLIB@
++libtspi_la_LDFLAGS=-version-info 3:0:2 ${PTHREAD_LIB} @CRYPTOLIB@ -L@prefix@/lib -liconv
  
  libtspi_la_CFLAGS=-I$(top_srcdir)/src/include -DAPPID=\"TSPI\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\"
  
