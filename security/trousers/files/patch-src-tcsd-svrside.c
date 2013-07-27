@@ -1,5 +1,5 @@
---- src/tcsd/svrside.c.orig	2010-06-10 05:19:00.000000000 +0900
-+++ src/tcsd/svrside.c	2010-10-24 21:04:04.838555802 +0900
+--- src/tcsd/svrside.c.orig	2012-09-25 23:23:01.000000000 +0900
++++ src/tcsd/svrside.c	2013-07-27 04:04:45.000000000 +0900
 @@ -20,7 +20,6 @@
  #include <sys/stat.h>
  #include <sys/socket.h>
@@ -8,75 +8,55 @@
  #if (defined (__OpenBSD__) || defined (__FreeBSD__))
  #include <netinet/in.h>
  #endif
-@@ -41,11 +40,9 @@
- 
- struct tcsd_config tcsd_options;
- struct tpm_properties tpm_metrics;
--static volatile int hup = 0, term = 0;
--extern char *optarg;
- 
--static void
--tcsd_shutdown(void)
-+void
-+tcsd_shutdown()
- {
- 	/* order is important here:
- 	 * allow all threads to complete their current request */
-@@ -57,27 +54,44 @@
- 	EVENT_LOG_final();
+@@ -72,6 +71,32 @@
+ 	hup = 1;
  }
  
--static void
--tcsd_signal_term(int signal)
 +void
 +tcsd_signal_int(int signal)
- {
--	term = 1;
++{
 +	switch (signal) {
-+		case SIGINT:
-+			LogInfo("Caught SIGINT. Cleaning up and exiting.");
-+			break;
-+		case SIGHUP:
-+			LogInfo("Caught SIGHUP. Cleaning up and exiting.");
-+			break;
-+		default:
-+			LogError("Caught signal %d (which I didn't register for!)."
-+					" Ignoring.", signal);
-+			break;
++	case SIGINT:
++		LogInfo("Caught SIGINT. Cleaning up and exiting.");
++		break;
++	case SIGHUP:
++		LogInfo("Caught SIGHUP. Cleaning up and exiting.");
++		break;
++	default:
++		LogError("Caught signal %d (which I didn't register for!)."
++		    " Ignoring.", signal);
++		break;
 +	}
 +	tcsd_shutdown();
 +	exit(signal);
- }
- 
- void
--tcsd_signal_hup(int signal)
++}
++
++void
 +tcsd_signal_chld(int signal)
- {
--	hup = 1;
-+	/* kill zombies */
++{
++
 +	wait3(NULL, WNOHANG, NULL);
- }
- 
--static TSS_RESULT
--signals_init(void)
-+TSS_RESULT
-+signals_init()
++}
++
+ static TSS_RESULT
+ signals_init(void)
  {
- 	int rc;
- 	sigset_t sigmask;
--	struct sigaction sa;
+@@ -80,6 +105,14 @@
+ 	struct sigaction sa;
  
  	sigemptyset(&sigmask);
--	if ((rc = sigaddset(&sigmask, SIGTERM))) {
 +	if ((rc = sigaddset(&sigmask, SIGCHLD))) {
 +		LogError("sigaddset: %s", strerror(errno));
 +		return TCSERR(TSS_E_INTERNAL_ERROR);
 +	}
 +	if ((rc = sigaddset(&sigmask, SIGINT))) {
++		LogError("sigaddset: %s", strerror(errno));
++		return TCSERR(TSS_E_INTERNAL_ERROR);
++	}
+ 	if ((rc = sigaddset(&sigmask, SIGTERM))) {
  		LogError("sigaddset: %s", strerror(errno));
  		return TCSERR(TSS_E_INTERNAL_ERROR);
- 	}
-@@ -91,25 +105,30 @@
+@@ -94,25 +127,30 @@
  		return TCSERR(TSS_E_INTERNAL_ERROR);
  	}
  
@@ -116,7 +96,7 @@
  {
  	TSS_RESULT result;
  
-@@ -183,7 +202,6 @@
+@@ -186,7 +224,6 @@
  	return TSS_SUCCESS;
  }
  
@@ -124,7 +104,7 @@
  void
  usage(void)
  {
-@@ -195,19 +213,6 @@
+@@ -199,19 +236,6 @@
  	fprintf(stderr, "\n");
  }
  
@@ -144,15 +124,15 @@
  int
  main(int argc, char **argv)
  {
-@@ -216,7 +221,6 @@
- 	int sd, newsd, c, option_index = 0;
+@@ -220,7 +244,6 @@
+ 	int newsd, c, option_index = 0;
  	unsigned client_len;
  	char *hostname = NULL;
 -	struct passwd *pwd;
  	struct hostent *client_hostent = NULL;
  	struct option long_options[] = {
  		{"help", 0, NULL, 'h'},
-@@ -245,6 +249,14 @@
+@@ -256,6 +279,14 @@
  	if ((result = tcsd_startup()))
  		return (int)result;
  
@@ -167,7 +147,7 @@
  	sd = socket(AF_INET, SOCK_STREAM, 0);
  	if (sd < 0) {
  		LogError("Failed socket: %s", strerror(errno));
-@@ -268,51 +280,20 @@
+@@ -279,51 +310,20 @@
  		LogError("Failed bind: %s", strerror(errno));
  		return -1;
  	}
@@ -222,7 +202,7 @@
  
  		if ((client_hostent = gethostbyaddr((char *) &client_addr.sin_addr,
  						    sizeof(client_addr.sin_addr),
-@@ -332,12 +313,8 @@
+@@ -343,13 +343,9 @@
  
  		tcsd_thread_create(newsd, hostname);
  		hostname = NULL;
@@ -234,7 +214,8 @@
 +	} while (1);
  
 -	/* To close correctly, we must receive a SIGTERM */
--	return 0;
+-	tcsd_shutdown();
 +	/* To close correctly, we must recieve a SIGHUP */
 +	return -1;
+ 	return 0;
  }
