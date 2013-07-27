@@ -1,0 +1,32 @@
+--- src/scan_progs/Makefile.orig	2004-09-30 18:29:05.000000000 +0800
++++ src/scan_progs/Makefile	2013-07-27 21:16:15.000000000 +0800
+@@ -32,16 +32,20 @@
+ 	$(AR) $(E_LIBNAME) $(E_OBJS)
+ 	$(RANLIB) $(E_LIBNAME)
+ 
+-$(SENDERNAME): $(S_OBJS) $(G_HDRS) $(S_HDRS) $(C_OBJS) $(ENTRY)
+-	$(CC) -c $(ENTRY) $(CFLAGS) -DBUILD_IDENT_SEND=1
+-	$(CC) $(CFLAGS) -o $(SENDERNAME) $(S_OBJS) $(C_OBJS) entry.o $(G_LDADD) -lpcap -lnet $(LDADD)
+-
+-$(LISTENERNAME): $(L_OBJS) $(G_HDRS) $(L_HDRS) $(C_OBJS) $(ENTRY)
+-	$(CC) -c $(ENTRY) $(CFLAGS) -DBUILD_IDENT_RECV=1
+-	$(CC) $(CFLAGS) -o $(LISTENERNAME) $(L_OBJS) $(C_OBJS) entry.o $(G_LDADD) -lpcap $(LDADD)
++entry_send.o: $(ENTRY)
++	$(CC) -c $(ENTRY) $(CFLAGS) -DBUILD_IDENT_SEND=1 -o $@
++
++entry_recv.o: $(ENTRY)
++	$(CC) -c $(ENTRY) $(CFLAGS) -DBUILD_IDENT_RECV=1 -o $@
++
++$(SENDERNAME): $(S_OBJS) $(G_HDRS) $(S_HDRS) $(C_OBJS) entry_send.o
++	$(CC) $(CFLAGS) -o $(SENDERNAME) $(S_OBJS) $(C_OBJS) entry_send.o $(G_LDADD) -lpcap `/usr/local/bin/libnet11-config --libs` $(LDADD)
++
++$(LISTENERNAME): $(L_OBJS) $(G_HDRS) $(L_HDRS) $(C_OBJS) entry_recv.o
++	$(CC) $(CFLAGS) -o $(LISTENERNAME) $(L_OBJS) $(C_OBJS) entry_recv.o $(G_LDADD) -lpcap $(LDADD)
+ 
+ clean:
+-	rm -f $(OBJS) $(E_OBJS) $(E_LIBNAME) $(L_OBJS) $(S_OBJS) $(C_OBJS) $(SENDERNAME) $(LISTENERNAME) $(ENTRY:.c=.o)
++	rm -f $(OBJS) $(E_OBJS) $(E_LIBNAME) $(L_OBJS) $(S_OBJS) $(C_OBJS) $(SENDERNAME) $(LISTENERNAME) entry_send.o entry_recv.o
+ 
+ install:
+-	(cd ../../ && $(MAKE) install)
++	$(MAKE) -C ../.. install
