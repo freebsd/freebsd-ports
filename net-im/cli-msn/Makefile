@@ -1,9 +1,5 @@
-# New ports collection makefile for:	climsn
-# Date created:		2006-03-31
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	msn
 PORTVERSION=	2.3.2
@@ -18,7 +14,11 @@ COMMENT=	Command line msn messenger
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-USE_GMAKE=	yes
+BROKEN=		Master site no longer offers direct downlink; does not fetch
+DEPRECATED=	MSN Messenger service terminated 30 APR 2013
+EXPIRATION_DATE=2013-08-31
+
+USES=		gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib
