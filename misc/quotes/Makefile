@@ -14,15 +14,14 @@ COMMENT=	Quote, currency, and Slashdot headline fetcher based on Perl
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+USES=		shebangfix
+SHEBANG_FILES=	quotes quotesmailer QuExample.pm
 
 .include <bsd.port.options.mk>
 
 post-patch:
-	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/quotes
-	@ ${PERL} -pi -e "s:/usr/local/lib/Quotes:${PREFIX}/etc:g" ${WRKSRC}/quotes
-	@ ${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/quotes
-	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/quotesmailer
-	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/QuExample.pm
+	@${REINPLACE_CMD} -i '' -e "s:/usr/local/lib/Quotes:${PREFIX}/etc:" \
+		-e "s:/usr/local:${PREFIX}:" ${WRKSRC}/quotes
 
 do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotes ${PREFIX}/bin

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-C3-Componentised
-# Date created:	   2007-08-13
-# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-C3-Componentised
 PORTVERSION=	1.0009
@@ -31,6 +27,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Class::C3::Componentised.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e '/Test::/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

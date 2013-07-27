@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBD::InterBase
-# Date created:		15 Oct 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-InterBase
 PORTVERSION=	0.48
@@ -22,8 +18,8 @@ PERL_CONFIGURE=	yes
 USE_FIREBIRD=	yes
 
 post-patch:
-		@${PERL} -pi -e 's,%%IB_BASE%%,${LOCALBASE},g' \
-			${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's|%%IB_BASE%%|${LOCALBASE}|' \
+		${WRKSRC}/Makefile.PL
 
 MAN3=		DBD::InterBase.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gracer
-# Date created:        Fri Jul 30 20:50:16 MET DST 1999
-# Whom:                nox@jelal.kn-bremen.de
-#
+# Created by: nox@jelal.kn-bremen.de
 # $FreeBSD$
-#
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
@@ -36,7 +32,7 @@ MAN6=		gracer.6
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -i '' -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/common/gr_memory.h
 
 .include <bsd.port.post.mk>

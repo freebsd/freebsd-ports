@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class::Contract
-# Date created:		5 Nov 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Contract
 PORTVERSION=	1.14
@@ -15,13 +11,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Design-by-Contract OO in Perl
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MAN3=		Class::Contract.3 Class::Contract::Production.3
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.p[lm]" | \
-		${XARGS} ${PERL} -pi -e 's/\x0d//g;'
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples

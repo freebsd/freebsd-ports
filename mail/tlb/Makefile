@@ -29,7 +29,7 @@ perl_OLD_CMD=	/usr/local/bin/perl5
 
 pre-patch:
 .for f in ${FIXPREFIX}
-	@${PERL} -pi -e "s@/usr/lib/sendmail@/usr/sbin/sendmail@g" ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -i '' -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' ${WRKSRC}/${f}
 .endfor
 
 do-install:

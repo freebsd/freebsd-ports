@@ -45,12 +45,11 @@ post-extract:
 	done
 
 post-patch:
-	${PERL} -pi \
-		-e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!PERFORCE_USER!!,p4admin,g;' \
-		-e 's,!!PERFORCE_GROUP!!,p4admin,g;' \
-		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
-		-e 's,!!FQDN!!,${FQDN},g;' \
+	@${REINPLACE_CMD} -i '' -e 's,!!PREFIX!!,${PREFIX},' \
+		-e 's,!!PERFORCE_USER!!,p4admin,' \
+		-e 's,!!PERFORCE_GROUP!!,p4admin,' \
+		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},' \
+		-e 's,!!FQDN!!,${FQDN},' \
 		${WRKSRC}/${PORTNAME}/P4DB.conf.sample
 	${FIND} ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
 

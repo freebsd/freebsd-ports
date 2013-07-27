@@ -5,4 +5,4 @@ cvslines is a "wrapper" facility that helps out with merging changes
 between various cvs branches, where the branches represent different
 lines of development.
 
-WWW:  http://cvslines.sourceforge.net/menu.html
+WWW: http://cvslines.sourceforge.net/menu.html

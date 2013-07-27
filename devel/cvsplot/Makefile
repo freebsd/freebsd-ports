@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	cvsplot
-# Date created:			May 31, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cvsplot
 PORTVERSION=	1.7.4
@@ -22,9 +17,8 @@ RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 USE_PERL5=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsplot
-
-post-patch:
-	@${PERL} -pi -e "s,^#!/usr/bin/perl -w,#!/usr/bin/env perl -w,g" ${WRKSRC}/cvsplot.pl
+USES=		shebangfix
+SHEBANG_FILES=	cvsplot.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsplot.pl ${PREFIX}/bin/cvsplot

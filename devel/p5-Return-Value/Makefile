@@ -17,6 +17,6 @@ PERL_CONFIGURE=	yes
 MAN3=	Return::Value.3
 
 post-patch:
-	${PERL} -pi -e 's/^Carp::cluck/# Carp::cluck/' ${WRKSRC}/lib/Return/Value.pm
+	@${REINPLACE_CMD} -i '' -e 's/^Carp::cluck/# Carp::cluck/' ${WRKSRC}/lib/Return/Value.pm
 
 .include <bsd.port.mk>

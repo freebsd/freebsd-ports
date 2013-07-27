@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	hypersrc
-# Date created:			Apr 9, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hypersrc
 PORTVERSION=	5.4.21
@@ -26,13 +21,15 @@ USE_GNOME=	gnomelibs
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CC="${CC}" C_OPTIMIZE="${CFLAGS}"
+USES=		shebangfix
+SHEBANG_FILES=	Hypersrc.pl
 
 MAN1=		hypersrc.1
 PLIST_FILES=	bin/hypersrc bin/Hypersrc.pl bin/ctags.pl
 
 post-patch:
-	@${PERL} -pi -e 's|"ctags"|"${LOCALBASE}/bin/exctags"|g ; \
-		 s|"ctags.pl"|"${PREFIX}/bin/ctags.pl"|g' ${WRKSRC}/Hypersrc.pl
+	@${REINPLACE_CMD} -i '' -e 's|"ctags"|"${LOCALBASE}/bin/exctags"|' \
+		-e 's|"ctags.pl"|"${PREFIX}/bin/ctags.pl"|' ${WRKSRC}/Hypersrc.pl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/hypersrc ${PREFIX}/bin

@@ -26,7 +26,7 @@ NO_WRKSUBDIR=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s@<malloc.h>@<stdlib.h>@g" \
+	@${REINPLACE_CMD} -i '' -e "s|<malloc.h>|<stdlib.h>|" \
 	${WRKSRC}/include/jtp_gen.h ${WRKSRC}/win/jtp/jtp_dirx.c \
 	${WRKSRC}/win/jtp/jtp_keys.c ${WRKSRC}/win/jtp/jtp_sdl.c \
 	${WRKSRC}/win/Qt/qt_win.cpp
