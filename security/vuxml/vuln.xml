@@ -83,10 +83,12 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2013-4854</cvename>
       <freebsdsa>SA-13:07.bind</freebsdsa>
+      <url>https://kb.isc.org/article/AA-01015/0</url>
     </references>
     <dates>
       <discovery>2013-07-26</discovery>
       <entry>2013-07-26</entry>
+      <modified>2013-07-27</modified>
     </dates>
   </vuln>
 
