@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.73
+PORTVERSION=	2.74
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
