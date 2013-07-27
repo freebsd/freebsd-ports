@@ -9,28 +9,32 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open-source fulltext search engine and column store
 
 LICENSE=	LGPL21
+
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
-USE_GMAKE=      yes
-CONFIGURE_ARGS=	--with-munin-plugins 
-CONFIGURE_ARGS+=	--with-log-path=/var/log/groonga.log \
-			--localstatedir=/var
+CONFIGURE_ARGS=	--with-munin-plugins --localstatedir=/var \
+		--with-log-path=/var/log/groonga.log
 
-OPTIONS_DEFINE=	MECAB SUGGEST
-MECAB_DESC=	use mecab for morphological analysis
-SUGGEST_DESC=	use suggest for suggest
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--disable-silent-rules
+.endif
+
+OPTIONS_DEFINE=	MECAB SUGGEST DOCS
+MECAB_DESC=	Enable morphological analysis
+SUGGEST_DESC=	Enable suggestions
 OPTIONS_DEFAULT=MECAB SUGGEST
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
+BROKEN=		does not compile on ${ARCH}
 .endif
 
-# We cannot enable this document option until textproc/py-sphinx be upgraded to 1.2.
+# We cannot enable this option until textproc/py-sphinx be upgraded to 1.2
+# XXX: but it is enabled now as DOCS are on by default, so what's going on?
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 MAN1=	groonga.1
 .else
 CONFIGURE_ARGS+=	--disable-document
