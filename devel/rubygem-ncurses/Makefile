@@ -6,7 +6,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wrapper to the ncurses library
 
 DEPRECATED=	Does not work with Ruby 1.9

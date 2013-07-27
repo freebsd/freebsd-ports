@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Config-Wrest
-# Date created:	02 April 2010
-# Whom:		John Alden + Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: John Alden + Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Wrest
 PORTVERSION=	1.036
@@ -13,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for reading and writing configuration data
 
 BUILD_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \

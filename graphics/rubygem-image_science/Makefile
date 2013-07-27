@@ -6,7 +6,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that generates thumbnails
 
 RUN_DEPENDS=	rubygem-inline>=3.8.5:${PORTSDIR}/devel/rubygem-inline

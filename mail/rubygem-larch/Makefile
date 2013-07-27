@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Larch copies messages from one IMAP server to another
 
 RUN_DEPENDS=	rubygem-highline>=1.5:${PORTSDIR}/devel/rubygem-highline \

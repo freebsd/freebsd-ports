@@ -6,8 +6,8 @@ PORTVERSION=	1.12
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	Ruby implementations of artificial intelligence algorithms
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Various Ruby artificial intelligence algorithm implementations 
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

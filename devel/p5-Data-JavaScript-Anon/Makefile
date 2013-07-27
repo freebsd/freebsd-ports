@@ -1,9 +1,5 @@
-# Ports collection makefile for:	devel-p5-Data-JavaScript-Anon
-# Date created:				03 April 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-JavaScript-Anon
 PORTVERSION=	1.03
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dump big dumb Perl structs to anonymous JavaScript structs
 
 RUN_DEPENDS=	p5-Class-Default>=1.51:${PORTSDIR}/devel/p5-Class-Default \
