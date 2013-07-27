@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bkmrkconv
-# Date created:		18 Dec 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bkmrkconv
 PORTVERSION=	1.12
@@ -17,7 +13,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -i '' -e \
 		's|/usr/bin/perl|${PERL}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g'
 

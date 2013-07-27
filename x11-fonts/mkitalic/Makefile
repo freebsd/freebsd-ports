@@ -20,9 +20,8 @@ EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkitalic
 NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
-
-do-build:
-	${PERL} -pi.orig -e 's|^#!/usr/bin/perl|#! ${PERL}|' ${WRKSRC}/mkitalic
+USES=		shebangfix
+SHEBANG_FILES=	mkitalic
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mkitalic ${PREFIX}/bin

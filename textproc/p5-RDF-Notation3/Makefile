@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RDF::Notation3
-# Date created:		21 Nov 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	RDF-Notation3
 PORTVERSION=	0.91
@@ -32,7 +28,7 @@ MAN3=		RDF::Notation3.3 RDF::Notation3::PrefTriples.3 \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | \
-	${XARGS} ${PERL} -pi -e 's!^require 5.005_62;!!'
+	${XARGS} ${REINPLACE_CMD} -i '' -e 's!^require 5.005_62;!!'
 	${MV} ${WRKSRC}/doc/*.pod ${WRKSRC}/lib/RDF
 
 .include <bsd.port.mk>
