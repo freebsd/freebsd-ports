@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mldonkey link submitter
-# Date created:				Fri Feb 21 14:11:00 UTC 2003
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mldonkey
 PORTVERSION=	0.0.1
@@ -20,14 +16,13 @@ BUILD_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+USES=		shebangfix
+SHEBANG_FILES=	${BINARY_NAME}
 
 BINARY_NAME=	mlurlslave
 
 post-extract:
 	@${GREP} '^#' ${WRKSRC}/${BINARY_NAME} | ${GREP} -v '/usr/bin/perl' > ${WRKDIR}/README
-
-post-patch:
-	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${BINARY_NAME}
 
 do-install:
 .ifndef(NOPORTDOCS)

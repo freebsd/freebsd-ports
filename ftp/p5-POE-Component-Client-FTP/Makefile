@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Client-FTP
-# Date created:	   17 March 2002
-# Whom:		   Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Client-FTP
 PORTVERSION=	0.22
@@ -21,10 +17,6 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT=yes
 
 MAN3=		POE::Component::Client::FTP.3
-
-post-patch:
-	@${PERL} -pi -e '$$_="" if /^use warnings/; s/\x0d(?=\x0a)//;' \
-		${WRKSRC}/FTP.pm
 
 post-install:
 .ifndef(NOPORTDOCS)

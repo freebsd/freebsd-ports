@@ -30,7 +30,6 @@ PERL_CONFIGURE=	yes
 MAN3=	Config::JFDI.3
 
 post-extract:
-	@${PERL} -i -ne 'print unless /\.swp$$/' ${WRKSRC}/MANIFEST
-	@${PERL} -i.bak -ne 'print unless m,^Test::,' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' '/Test::/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

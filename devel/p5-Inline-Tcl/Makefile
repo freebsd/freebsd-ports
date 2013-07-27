@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Inline::Tcl
-# Date created:		14 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Inline-Tcl
 PORTVERSION=	0.09
@@ -25,6 +21,6 @@ CONFIGURE_ARGS=	INC="-I${PREFIX}/include/tcl8.4" \
 MAN3=		Inline::Tcl.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if $$.>1 && $$.<100' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i.bak '2,99d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsweb
-# Date created:		27 Jun 1999
-# Whom:			SADA Kenji <sada@FreeBSD.org>
-#
+# Created by: SADA Kenji <sada@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsweb
 PORTVERSION=	3.0.6
@@ -79,14 +75,12 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX="${PREFIX}" DOCSDIR="${DOCSDIR}"
 
 post-patch:
-	${PERL} -i -pe "\
-		s'!!PERL!!'${PERL}'g; \
-		s'!!PREFIX!!'${PREFIX}'g;" \
+	@${REINPLACE_CMD} -i '' -e 's,!!PERL!!,${PERL},' \
+			-e 's,!!PREFIX!!,${PREFIX},' \
 		${WRKSRC}/cvsweb.cgi
-	${PERL} -i -pe "\
-		s'!!PREFIX!!'${PREFIX}'g; \
-		s'!!CVSROOT!!'${CVSROOT}'g; \
-		s'!!TITLE!!'${TITLE}'g;" \
+	@${REINPLACE_CMD} -i '' -e 's,!!PREFIX!!,${PREFIX},' \
+			-e 's,!!CVSROOT!!,${CVSROOT},' \
+			-e 's,!!TITLE!!,${TITLE},' \
 		${WRKSRC}/cvsweb.conf
 
 do-install:

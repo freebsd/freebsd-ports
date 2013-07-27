@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mldonkey perlreactor
-# Date created:				Sat Feb 23 13:13:08 BRT 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mldonkey
 PORTVERSION=	0.2
@@ -20,13 +16,13 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+USES=		shebangfix
+SHEBANG_FILES$=${BINARY_NAME}
 
 BINARY_NAME=	perlreactor
 
 post-patch:
-	@${PERL} -pi -e 's|#!/usr/bin/perl\n||; \
-		s|/usr/local/bin/perl|${PERL}|' \
-		${WRKSRC}/${BINARY_NAME}
+	@${REINPLACE_CMD} -i '' -e '1d'	${WRKSRC}/${BINARY_NAME}
 
 do-install:
 .ifndef(NOPORTDOCS)

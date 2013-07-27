@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Shout
-# Date created:				18 April 2001
-# Whom:					leo
-#
+# Created by: leo
 # $FreeBSD$
-#
 
 PORTNAME=	Shout
 PORTVERSION=	2.1
@@ -23,7 +19,7 @@ MAN3=		Shout.3
 DOCSDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
-	@${PERL} -i -pe 's/CCFLAGS/INC/;' ${WRKSRC}/Makefile.PL
+	${REINPLACE_CMD} -i '' -e 's/CCFLAGS/INC/' ${WRKSRC}/Makefile.PL
 
 post-configure:
 	@${PERL} -i -pe '$$_ .= " ${PTHREAD_LIBS}" if /^LDDLFLAGS/;' ${WRKSRC}/Makefile

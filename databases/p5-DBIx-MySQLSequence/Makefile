@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-DBIx-MySQLSequence
-# Date created:				18 March 2006
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-MySQLSequence
 PORTVERSION=	1.04
@@ -27,6 +23,6 @@ PERL_CONFIGURE=	yes
 MAN3=	DBIx::MySQLSequence.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' '/Test::More/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

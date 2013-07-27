@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/MooseX-SimpleConfig
-# Date created:				25 February 2009
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-SimpleConfig
 PORTVERSION=	0.09
@@ -24,6 +20,7 @@ PERL_CONFIGURE=	yes
 MAN3=		MooseX::SimpleConfig.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if m/Test::More|auto_install/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/auto_install/d' -e '/Test::More/d' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
