@@ -69,7 +69,7 @@ INSTALL_TARGET=	install${PKGNAMESUFFIX}
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -E 's,cd(.+) (;|&&) make,$$(MAKE) -C\1,'
-	${REINPLACE_CMD} -E 's,cd (.+) ; (ln -s en ),\2\1/,' \
+	@${REINPLACE_CMD} -E 's,cd (.+) ; (ln -s en ),\2\1/,' \
 		${WRKSRC}/www/Makefile
 
 .if !target(post-install)
