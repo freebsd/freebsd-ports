@@ -18,6 +18,9 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python MSN-Transport for Jabber
 
+DEPRECATED=	Primary MSN Messenger service terminated 30 APR 2013
+EXPIRATION_DATE=2013-10-31
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
