@@ -11,3 +11,65 @@
  LIBDIRS=-L./unilib -L./scan_progs -L./parse -L../libs/fake/lib
  TARGETNAME=unicornscan
  
+@@ -19,42 +19,42 @@
+ 	./compiledby.sh > compile.h
+ 
+ unilib_d:
+-	(cd unilib && $(MAKE))
++	$(MAKE) -C unilib
+ 
+ parse_d:
+-	(cd parse && $(MAKE))
++	$(MAKE) -C parse
+ 
+-scan_d:
+-	(cd scan_progs && $(MAKE))
++scan_d: unilib_d parse_d
++	$(MAKE) -C scan_progs
+ 
+ p_modules:
+-	(cd payload_modules && $(MAKE))
++	$(MAKE) -C payload_modules
+ 
+ db_module:
+-	(cd output_modules/database && $(MAKE))
++	$(MAKE) -C output_modules/database
+ 
+ p0f_module:
+-	(cd report_modules/p0f && $(MAKE))
++	$(MAKE) -C report_modules/p0f
+ 
+ udpstr_module:
+-	(cd report_modules/udpstr && $(MAKE))
++	$(MAKE) -C report_modules/udpstr
+ 
+-tools_d:
+-	(cd tools && $(MAKE))
++tools_d: unilib_d
++	$(MAKE) -C tools
+ 
+ clean:
+ 	rm -f $(OBJS) $(TARGETNAME) myversion.h compile.h core core.* *.core
+-	cd unilib && $(MAKE) clean
+-	cd parse && $(MAKE) clean
+-	cd scan_progs && $(MAKE) clean
+-	cd output_modules/database && $(MAKE) clean
+-	cd report_modules/p0f && $(MAKE) clean
+-	cd report_modules/udpstr && $(MAKE) clean
+-	cd payload_modules && $(MAKE) clean
+-	cd tools && $(MAKE) clean
++	$(MAKE) -C unilib clean
++	$(MAKE) -C parse clean
++	$(MAKE) -C scan_progs clean
++	$(MAKE) -C output_modules/database clean
++	$(MAKE) -C report_modules/p0f clean
++	$(MAKE) -C report_modules/udpstr clean
++	$(MAKE) -C payload_modules clean
++	$(MAKE) -C tools clean
+ 
+ install: default
+-	(cd .. && $(MAKE) install)
++	$(MAKE) -C .. install
+ 
+ splint: myversion.h
+ 	splint -warnposix *.c -I. -I../libs/fake/include  -D__linux__ > warnings
