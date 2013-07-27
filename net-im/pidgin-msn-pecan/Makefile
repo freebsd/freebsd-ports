@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	Alternative MSN protocol plugin for libpurple
 
+DEPRECATED=	Primary MSN Messenger service terminated 30 APR 2013
+EXPIRATION_DATE=2013-10-31
+
 LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple
 
 PROJECTHOST=	msn-pecan

@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Alvano\'s MSN Messenger
 
+DEPRECATED=	Primary MSN Messenger service terminated 30 APR 2013
+EXPIRATION_DATE=2013-10-31
+
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

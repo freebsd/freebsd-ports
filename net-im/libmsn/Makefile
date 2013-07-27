@@ -11,6 +11,9 @@ COMMENT=	A library for connecting to MSN Messenger service
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Primary MSN Messenger service terminated 30 APR 2013
+EXPIRATION_DATE=2013-10-31
+
 USE_BZIP2=	yes
 USES=		cmake
 USE_OPENSSL=	yes
