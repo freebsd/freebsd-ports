@@ -1,6 +1,5 @@
-Newspost is a full-featured USEnet binary autoposter. It is meant as 
-an all-in-one posting solution. In addition to posting files, it can 
+Newspost is a full-featured Usenet binary autoposter.  It is meant as
+an all-in-one posting solution.  In addition to posting files, it can
 post text prefixes, and generate and post .SFV files and .PAR volumes.
 
-Author: Jim Faulkner <newspost@unixcab.org>
 WWW: http://newspost.unixcab.org/
