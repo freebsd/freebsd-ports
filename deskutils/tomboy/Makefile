@@ -1,9 +1,5 @@
-# New ports collection makefile for:		tomboy
-# Date created:					20041011
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomboy
 PORTVERSION=	1.12.2
@@ -14,7 +10,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Personal note taking system for the GNOME desktop
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS=	gtkspell:${PORTSDIR}/textproc/gtkspell
 BUILD_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/mail/gmime24-sharp \
 		${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
@@ -23,13 +19,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/m
 		mautil:${PORTSDIR}/devel/mono-addins
 
 USE_XZ=		yes
-USES=		gettext
+USES=		gettext gmake
 USE_GNOME=	gnomehack intlhack gnomeprefix gnomedesktopsharp20
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=--enable-evolution=yes
 
