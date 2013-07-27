@@ -23,6 +23,9 @@ USE_BZIP2=	yes
 USES=		shebangfix
 SHEBANG_FILES=	mkitalic
 
+do-build:
+	@${DO_NADA}
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mkitalic ${PREFIX}/bin
 
