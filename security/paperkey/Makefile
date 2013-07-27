@@ -14,16 +14,23 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all check
 
 PLIST_FILES=	bin/paperkey
 MAN1=		paperkey.1
 PORTDOCS=	NEWS README
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+# Setting ALL_TARGET to "all check" is racy and breaks parallel builds
+post-build:
+	${MAKE} -C ${BUILD_WRKSRC} check
+
 post-install:
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
