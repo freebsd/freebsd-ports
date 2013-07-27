@@ -6,8 +6,8 @@ PORTVERSION=	0.8.4
 CATEGORIES=	ftp rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	Ruby-language bindings for the libcurl
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Ruby bindings for libcurl
 
 RUN_DEPENDS=	curl>=0.0.0:${PORTSDIR}/ftp/curl
 

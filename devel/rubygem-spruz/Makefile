@@ -1,17 +1,13 @@
-# Ports collection makefile for:	rubygem-spruz
-# Date created:				28 May 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	spruz
 PORTVERSION=	0.2.13
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	A small Ruby library of mixed utils/extensions
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	small Ruby library of mixed utils/extensions
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

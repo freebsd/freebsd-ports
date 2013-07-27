@@ -6,7 +6,7 @@ PORTVERSION=	1.6.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Unified, cross platform replacement for the Etc module
 
 RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi

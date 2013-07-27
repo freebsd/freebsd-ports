@@ -1,16 +1,12 @@
-# Ports collection makefile for:	rubygem-sanitize
-# Date created:				26 June 2011
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sanitize
 PORTVERSION=	2.0.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Whitelist based HTML sanitizer
 
 RUN_DEPENDS=	rubygem-nokogiri>=1.4.4:${PORTSDIR}/textproc/rubygem-nokogiri

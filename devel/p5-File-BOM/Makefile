@@ -1,9 +1,5 @@
-# Ports collection makefile for:	devel-p5-File-BOM
-# Date created:			02 April 2010
-# Whom:				Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	File-BOM
 PORTVERSION=	0.14
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to handle Unicode byte order marks
 
 RUN_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \

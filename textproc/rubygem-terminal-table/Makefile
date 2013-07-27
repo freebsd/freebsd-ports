@@ -6,7 +6,7 @@ PORTVERSION=	1.4.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, feature rich ASCII table generation library
 
 USE_RUBY=		yes

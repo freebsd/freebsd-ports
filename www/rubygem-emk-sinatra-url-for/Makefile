@@ -1,16 +1,12 @@
-# Ports collection makefile for:	rubygem-emk-sinatra-url-for
-# Date created:				5 Aug 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emk-sinatra-url-for
 PORTVERSION=	0.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Construct absolute paths and full URLs for a Sinatra application
 
 RUN_DEPENDS=	rubygem-sinatra>=0.9.1.1:${PORTSDIR}/www/rubygem-sinatra

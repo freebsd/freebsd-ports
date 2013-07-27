@@ -7,8 +7,8 @@ PORTEPOCH=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	A Ruby email handler
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Ruby email handler
 
 LICENSE=	MIT
 

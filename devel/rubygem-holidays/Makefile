@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-holidays
-# Date created:				17 October 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	holidays
 PORTVERSION=	1.0.5

@@ -6,8 +6,8 @@ PORTVERSION=	0.9.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	A Ruby interface for getting system information
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Ruby interface for getting system information
 
 RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi
 

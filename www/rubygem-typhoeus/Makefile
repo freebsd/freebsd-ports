@@ -1,4 +1,4 @@
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
 
 PORTNAME=	typhoeus
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parallel HTTP request library
 
 RUN_DEPENDS=	rubygem-ethon>=0.5.11:${PORTSDIR}/www/rubygem-ethon

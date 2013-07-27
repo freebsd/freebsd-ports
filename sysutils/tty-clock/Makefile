@@ -1,9 +1,5 @@
-# Ports collection makefile for:	tty-clock
-# Date created:				15 July 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=		tty-clock
 PORTVERSION=		2.0.0
@@ -13,7 +9,7 @@ MASTER_SITES=		http://github.com/xorg62/${PORTNAME}/tarball/
 DISTNAME=		a82fd71
 EXTRACT_SUFX=		# none
 
-MAINTAINER=		freebsdports@chillibear.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Terminal based clock
 
 FETCH_ARGS=		-pRr

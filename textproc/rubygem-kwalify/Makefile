@@ -1,16 +1,12 @@
-# Ports collection makefile for:	rubygem-kwalify
-# Date created:				18 January 2010
-# Whom:					Eric Freeman <freebsdports@chillibear.com>
-#
+# Created by: Eric Freeman <freebsdports@chillibear.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kwalify
 PORTVERSION=	0.7.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	freebsdports@chillibear.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Kwalify is a parser, schema validator, and data binding tool for YAML and JSON.
 
 USE_RUBY=		yes
