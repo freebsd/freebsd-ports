@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/tpmd
 include/tddl.h
 lib/libtddl.a
