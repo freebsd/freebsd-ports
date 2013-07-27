@@ -11,7 +11,6 @@ libexec/unicornscan/modules/sip.so
 libexec/unicornscan/modules/upnp.so
 libexec/unicornscan/unilisten
 libexec/unicornscan/unisend
-share/unicornscan/LICENSE
 share/unicornscan/README
 share/unicornscan/README.database
 share/unicornscan/TODO_BUGSTOFIX
