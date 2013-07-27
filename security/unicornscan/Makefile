@@ -5,10 +5,10 @@ PORTNAME=	unicornscan
 PORTVERSION=	0.4.2
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://www.unicornscan.org/releases/
+MASTER_SITES=	SF/osace/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	cykyc@yahoo.com
-COMMENT=	Next-generation of udpscan plus a high-speed TCP scanner
+COMMENT=	Asynchronous TCP and UDP port scanner
 
 LICENSE=	GPLv2
 
