@@ -18,3 +18,16 @@
  INSTALL=./install-sh -c
  INSTALL_DATA=$(INSTALL) -m 644
  
+@@ -56,10 +56,10 @@
+ 	${GCC} ${OBJ} ${GLIB_LIBS} ${LDFLAGS} ${LIBS} -o rdup
+ 
+ ifeq (${ARCHIVE_L},no)
+-strip:	
++strip:	rdup rdup-up
+ 	strip rdup rdup-up
+ else
+-strip:	
++strip:	rdup rdup-tr rdup-up
+ 	strip rdup rdup-tr rdup-up
+ endif
+ 
