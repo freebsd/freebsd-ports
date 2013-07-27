@@ -1,4 +1,4 @@
-# Created by: corky1951@comcast.net
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
 
 PORTNAME=	rdup
@@ -8,22 +8,21 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	Tool to generate an (incremental) backup file list
+COMMENT=	Tool to generate (incremental) backup file list
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 		pcre:${PORTSDIR}/devel/pcre \
 		archive:${PORTSDIR}/archivers/libarchive \
 		nettle:${PORTSDIR}/security/nettle
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
-
 USE_AUTOTOOLS=	autoconf
-USES=		pkgconfig
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
+
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/rdup \
 		bin/rdup-simple \
