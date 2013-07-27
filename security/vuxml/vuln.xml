@@ -51,6 +51,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="049332d2-f6e1-11e2-82f3-000c29ee3065">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.5.2,1</lt></range>
+      </package>
+      <package>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<range><lt>3.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The wordpress development team reports:</p>
+	<blockquote cite="https://wordpress.org/news/2013/06/wordpress-3-5-2/">
+	  <ul>
+	    <li>Blocking server-side request forgery attacks, which could
+	      potentially enable an attacker to gain access to a site</li>
+	    <li>Disallow contributors from improperly publishing posts</li>
+	    <li>An update to the SWFUpload external library to fix cross-site
+	    scripting vulnerabilities</li>
+	    <li>Prevention of a denial of service attack, affecting sites
+	      using password-protected posts</li>
+	    <li>An update to an external TinyMCE library to fix a cross-site
+	      scripting vulnerability</li>
+	    <li>Multiple fixes for cross-site scripting</li>
+	    <li>Avoid disclosing a full file path when a upload fails</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2199</cvename>
+      <cvename>CVE-2013-2200</cvename>
+      <cvename>CVE-2013-2201</cvename>
+      <cvename>CVE-2013-2202</cvename>
+      <cvename>CVE-2013-2203</cvename>
+      <cvename>CVE-2013-2204</cvename>
+      <cvename>CVE-2013-2205</cvename>
+      <url>https://wordpress.org/news/2013/06/wordpress-3-5-2/</url>
+    </references>
+    <dates>
+      <discovery>2013-06-21</discovery>
+      <entry>2013-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7943e521-f648-11e2-8607-3c970e169bc2">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
