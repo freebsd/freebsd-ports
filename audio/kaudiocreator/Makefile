@@ -25,7 +25,6 @@ USES=		cmake
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix libkcddb libkcompactdisc
 
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	NLS

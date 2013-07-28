@@ -14,7 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 
 FETCH_ARGS?=	-Fpr
 LATEST_LINK=	${PORTNAME}-kde4
-MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USES=		cmake:outsource
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace libkdegames
