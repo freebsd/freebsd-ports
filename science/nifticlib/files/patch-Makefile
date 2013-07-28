@@ -1,0 +1,106 @@
+--- Makefile.orig	2013-07-28 02:33:14.000000000 +0800
++++ Makefile	2013-07-28 02:38:08.000000000 +0800
+@@ -115,34 +115,33 @@
+ 
+ 
+ znz:
+-	echo "arch is $(ARCH)"
+-	(cd $(ZNZ); $(MAKE) depend; $(MAKE) lib;)
++	$(MAKE) -C $(ZNZ) depend lib
+ 	@echo " ----------- $(ZNZ) build completed."
+ 	@echo ""
+ 
+ nifti:	znz
+-	(cd $(NIFTI); $(MAKE) depend; $(MAKE) lib;)
++	$(MAKE) -C $(NIFTI) depend lib
+ 	@echo " ----------- $(NIFTI) build completed."
+ 	@echo ""
+ 
+ nifticdf:nifti
+-	(cd $(NIFTICDF); $(MAKE) depend; $(MAKE) lib;)
++	$(MAKE) -C $(NIFTICDF) depend lib
+ 	@echo " ----------- $(NIFTICDF) build completed."
+ 	@echo ""
+ 
+ fslio:	nifti
+-	(cd $(FSLIO); $(MAKE) depend; $(MAKE) lib;)
++	$(MAKE) -C $(FSLIO) depend lib
+ 	@echo " ----------  $(FSLIO) build completed."
+ 	@echo ""
+ 
+ example:nifti
+-	(cd $(EXAMPLES); $(MAKE) all;)
++	$(MAKE) -C $(EXAMPLES) all
+ 	@echo Example programs built.
+ 	@echo ""
+ 
+ 
+ utils:  nifti nifticdf
+-	(cd $(UTILS); $(MAKE) all;)
++	$(MAKE) -C $(UTILS) all
+ 	@echo Utility programs built.
+ 	@echo ""
+ 
+@@ -152,7 +151,7 @@
+ 	@echo ""
+ 
+ regress_data:
+-	(cd $(TESTING); $(MAKE) regress_data 'RM=$(RM)' 'TAR=$(TAR)'; )
++	$(MAKE) -C $(TESTING) regress_data 'RM=$(RM)' 'TAR=$(TAR)'
+ 	@echo ""
+ 	@echo Regression testing data installed.
+ 	@echo See Testing/README_regress for details.
+@@ -167,25 +166,25 @@
+ $(INSTALL_LIB_DIR):
+ 	mkdir -p $@
+ 
+-znz_install: $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
++znz_install: znz $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
+ 	($(CP) $(ZNZ)/*.a $(INSTALL_LIB_DIR); $(CP) $(ZNZ)/*.h $(INSTALL_INC_DIR);)
+ 	$(RANLIB) $(INSTALL_LIB_DIR)/*.a
+ 	@echo " $(ZNZ) installed."
+ 	@echo ""
+ 
+-nifti_install: $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
++nifti_install: nifti $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
+ 	($(CP) $(NIFTI)/*.a $(INSTALL_LIB_DIR); $(CP) $(NIFTI)/*.h $(INSTALL_INC_DIR);)
+ 	$(RANLIB) $(INSTALL_LIB_DIR)/*.a
+ 	@echo " $(NIFTI) installed."
+ 	@echo ""
+ 
+-nifticdf_install: $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
++nifticdf_install: nifticdf $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
+ 	($(CP) $(NIFTICDF)/*.a $(INSTALL_LIB_DIR); $(CP) $(NIFTICDF)/*.h $(INSTALL_INC_DIR);)
+ 	$(RANLIB) $(INSTALL_LIB_DIR)/*.a
+ 	@echo " $(NIFTI) installed."
+ 	@echo ""
+ 
+-fslio_install: $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
++fslio_install: fslio $(INSTALL_INC_DIR) $(INSTALL_LIB_DIR)
+ 	($(CP) $(FSLIO)/*.a $(INSTALL_LIB_DIR); $(CP) $(FSLIO)/*.h $(INSTALL_INC_DIR);)
+ 	$(RANLIB) $(INSTALL_LIB_DIR)/*.a
+ 	@echo " $(FSLIO) installed."
+@@ -212,19 +211,19 @@
+ 	(cd $(FSLIO); $(RM) -f *.o *.a core; $(RM) -f depend.mk;)
+ 
+ examples_clean:
+-	(cd $(EXAMPLES); $(MAKE) clean;)
++	$(MAKE) -C $(EXAMPLES) clean
+ 
+ utils_clean:
+-	(cd $(UTILS); $(MAKE) clean;)
++	$(MAKE) -C $(UTILS) clean
+ 
+ doc_clean:
+ 	($(RM) -fr docs/html;)
+ 
+ regress_clean:
+-	(cd $(TESTING); $(MAKE) regress_clean; )
++	$(MAKE) -C $(TESTING) regress_clean
+ 
+ regress_clean_all:
+-	(cd $(TESTING); $(MAKE) regress_clean_all; )
++	$(MAKE) -C $(TESTING) regress_clean_all
+ 
+ tar:
+ 	(cd .. ; ln -s $(THIS_DIR) ${TARFILE_NAME} ; \
