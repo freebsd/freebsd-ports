@@ -12,6 +12,8 @@ COMMENT=	Midnight Commander, a free Norton Commander Clone
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
+
 CONFLICTS=	mc-light-4*
 
 USES=		pkgconfig
@@ -75,7 +77,7 @@ PLIST_SUB+=	EDITOR=""
 .if ! ${PORT_OPTIONS:MSLANG} && !defined(MINIMAL)
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS+=	slang:${PORTSDIR}/devel/libslang2
 CONFIGURE_ARGS+=--with-screen=slang --with-slang-includes=${LOCALBASE}/include
 .endif
 
