@@ -18,7 +18,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 PROJECTHOST=	${PORTNAME}
 USE_SDL=	sdl
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
@@ -38,7 +38,7 @@ LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
 
 .if ${OSVERSION} >= 900000
 # needs libobjc
-GCCSUFFIX=42
+GCCSUFFIX=	46
 CC=		gcc${GCCSUFFIX}
 CXX=		g++${GCCSUFFIX}
 OFC_GCC_PORT?=	lang/gcc${GCCSUFFIX}
