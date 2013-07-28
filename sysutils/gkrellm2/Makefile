@@ -95,6 +95,8 @@ post-patch:
 			  -e 's/INSTALLROOT/SINSTALLROOT/g' \
 			  -e 's/PKGCONFIGDIR/SPKGCONFIGDIR/g' \
 			  ${WRKSRC}/server/Makefile
+	@${REINPLACE_CMD} -e 's/gthread-2.0/gmodule-2.0 gthread-2.0/g' \
+			  ${WRKSRC}/src/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MGKRELLM_CLIENT}
