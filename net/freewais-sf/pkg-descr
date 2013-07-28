@@ -1,7 +1,7 @@
 FreeWAIS-sf is an extension of the freeWAIS software provided by the
-Clearinghouse for Networked Information Discovery and  Retrieval (CNIDR). 
-The SF suffix in the software name stands for  "structured fields," an 
-indexing  and search feature which  distinguishes this software from its 
+Clearinghouse for Networked Information Discovery and Retrieval (CNIDR).
+The SF suffix in the software name stands for "structured fields," an
+indexing and search feature which distinguishes this software from its
 predecessors.
 
 For Year 2000 problems, you may try the patches at
