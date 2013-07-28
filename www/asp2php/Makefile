@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asp2php
-# Date created:				Thu 29 Jun 2000
-# Whom:					will
-#
+# Created by: Will Andrews <will@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asp2php
 PORTVERSION=	0.76.26
@@ -11,19 +7,19 @@ CATEGORIES=	www
 MASTER_SITES=	http://downloads.mikekohn.net/asp2php/
 
 MAINTAINER=	erwin@FreeBSD.org
-COMMENT=	Converts ASP scripts to PHP
+COMMENT=	Program to convert ASP scripts to PHP
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src
+LICENSE=	GPLv2
 
 WANT_GNOME=	yes
-MAKE_ENV=	FLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/asp2php
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
+.if ${HAVE_GNOME:Mgtk12}
+USE_GNOME=	gtk12
 PKGNAMESUFFIX=	-gtk
 ALL_TARGET=	default gui
 PLIST_FILES+=	bin/gtkasp2php
@@ -33,9 +29,8 @@ ALL_TARGET=	default
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CC=|#CC=|g ; \
-		 s| make| \$$\{MAKE\}|g ; \
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
+		's|cd (.+) && make|$$(MAKE) -C \1| ; \
 		 s|`gtk-config|`\$$\{GTK_CONFIG\}|g'
 
 do-install:
