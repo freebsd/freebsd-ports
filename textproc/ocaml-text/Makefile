@@ -11,35 +11,27 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml library for dealing with text
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--docdir ${DOCSDIR} --prefix ${PREFIX} --mandir ${PREFIX}/man
-USE_GMAKE=		yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--docdir ${DOCSDIR} --prefix ${PREFIX} --mandir ${PREFIX}/man
+USES=		gmake
 
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
 
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
 OPTIONS_DEFINE=	PCRE
 OPTIONS_DEFAULT=	PCRE
 
-SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
-
-.include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=	--enable-pcre
-BUILD_DEPENDS+=		${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-RUN_DEPENDS+=		${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-.else
-CONFIGURE_ARGS+=	--disable-pcre
-.endif
+PCRE_CONFIGURE_ENABLE=	pcre
+PCRE_BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+PCRE_RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 
 post-extract:
-# For nonstandard prefixes
+# For non-standard prefixes
 .if !exists(${OCAMLFIND_DESTDIR})
 	${MKDIR} ${OCAMLFIND_DESTDIR}
 .endif
@@ -47,4 +39,7 @@ post-extract:
 	${TOUCH} ${OCAMLFIND_LDCONF}
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's,"make","${GMAKE}",' ${WRKSRC}/setup.ml
+
+.include <bsd.port.mk>
