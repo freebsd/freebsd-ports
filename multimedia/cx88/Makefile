@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -21,9 +21,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
 
-DEBUG_DESC= Enable debugging and verbose driver output
-LINUX_COMPAT_DESC= Support for Linux DVB and radio API
-HAL_DESC=	Register Linux DVB devices with HAL
+DEBUG_DESC=		Enable debugging and verbose driver output
+LINUX_COMPAT_DESC=	Support for Linux DVB and radio API
+HAL_DESC=		Register Linux DVB devices with HAL
 
 OPTIONS_DEFAULT=	LINUX_COMPAT
 
@@ -34,11 +34,11 @@ MAKE_ARGS+=	DIAGNOSTIC=0x7f
 .endif
 
 .if ${PORT_OPTIONS:MLINUX_COMPAT}
-LIB_DEPENDS+=	cuse4bsd.1:${PORTSDIR}/multimedia/cuse4bsd-kmod
-BUILD_DEPENDS+= v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=	cuse4bsd:${PORTSDIR}/multimedia/cuse4bsd-kmod
+BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 MAKE_ARGS+=	-D WITH_LINUX_COMPAT
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal \
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal \
 		dbus-1:${PORTSDIR}/devel/dbus
 MAKE_ARGS+=	-D WITH_HAL
 .endif
