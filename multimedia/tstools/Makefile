@@ -1,34 +1,35 @@
-# New ports collection makefile for:	tstools
-# Date created:		2009 January 12
-# Whom:			J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tstools
 DISTVERSION=	1_11
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITES=	SF/${PORTNAME}.berlios
 MASTER_SITE_SUBDIR=	tstools
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	MPEG transport, program, and elementary stream tools
 
-USE_GMAKE=	yes
+LICENSE=	MPL
+
+USES=		gmake
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
-		@${MKDIR} ${PREFIX}/bin
-		${CP} ${WRKSRC}/bin/* ${PREFIX}/bin
-		@${MKDIR} ${PREFIX}/lib
-		${CP} ${WRKSRC}/lib/* ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/docs/${PORTNAME}
-		${CP} ${WRKSRC}/docs/* ${PREFIX}/share/docs/${PORTNAME}
+	${CP} ${WRKSRC}/bin/* ${PREFIX}/bin
+	${CP} ${WRKSRC}/lib/* ${PREFIX}/lib
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

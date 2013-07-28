@@ -17,15 +17,3 @@ bin/tsplay
 bin/tsreport
 bin/tsserve
 lib/libtstools.a
-%%PORTDOCS%%share/docs/tstools/ac3.txt
-%%PORTDOCS%%share/docs/tstools/adts.txt
-%%PORTDOCS%%share/docs/tstools/build_html.py
-%%PORTDOCS%%share/docs/tstools/default.css
-%%PORTDOCS%%share/docs/tstools/get_next_access_unit.py
-%%PORTDOCS%%share/docs/tstools/get_next_access_unit.py.html
-%%PORTDOCS%%share/docs/tstools/index.txt
-%%PORTDOCS%%share/docs/tstools/library.txt
-%%PORTDOCS%%share/docs/tstools/todo.txt
-%%PORTDOCS%%share/docs/tstools/tools.txt
-%%PORTDOCS%%@dirrm share/docs/tstools
-%%PORTDOCS%%@dirrm share/docs
