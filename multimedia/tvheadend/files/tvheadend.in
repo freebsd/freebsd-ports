@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: tvheadend
+# REQUIRE: DAEMON webcamd
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable tvheadend
+#
+# tvheadend_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable tvheadend.
+# tvheadend_user (str):		User account to run with.
+# tvheadend_group (str):	Group to run with.
+# tvheadend_flags (str):	Custom flags for tvheadend.
+
+. /etc/rc.subr
+
+: ${tvheadend_enable="NO"}
+: ${tvheadend_user="%%TVHUSER%%"}
+: ${tvheadend_group="%%TVHGROUP%%"}
+
+name=tvheadend
+rcvar=tvheadend_enable
+pidfile="/var/run/${name}.pid"
+confdir="%%PREFIX%%/etc/tvheadend"
+command="%%PREFIX%%/bin/tvheadend"
+command_args="-f -p ${pidfile} -u ${tvheadend_user} -g ${tvheadend_group} -c ${confdir}"
+start_precmd="${name}_prestart"
+
+tvheadend_prestart()
+{
+	if [ ! -f "${pidfile}" ]; then
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 644 /dev/null ${pidfile}
+	fi
+	if [ ! -d "${confdir}" ]; then
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 755 -d ${confdir}
+	fi
+}
+
+load_rc_config $name
+
+run_rc_command "$1"
