@@ -22,18 +22,10 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr \
 		mpc.2:${PORTSDIR}/math/mpc
 
-#
-# Temporary hack to deal with dependencies during package builds for
-# slave ports.
-#
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
-RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
-BROKEN=		plist build broken with tinderbox/cluster
-.else
-BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
-RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
-.endif
+# If using this as a master port, override BUILD_DEPENDS and
+# RUN_DEPENDS with the appropriate specific binutils port.
+BUILD_DEPENDS?=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
+RUN_DEPENDS?=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
