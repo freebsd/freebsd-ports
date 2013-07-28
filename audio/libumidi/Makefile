@@ -3,6 +3,7 @@
 
 PORTNAME=	libumidi
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
@@ -16,6 +17,8 @@ MAN3=		umidi20.3
 MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	DEBUG JACK
+OPTIONS_DEFAULT=JACK
+
 .include <bsd.port.options.mk>
 
 MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"
