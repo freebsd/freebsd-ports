@@ -67,7 +67,7 @@ LOCALBASE_REFIX=	\
 .if ${CC:T} == cc && ( exists(/usr/bin/clang) || exists(${LOCALBASE}/clang) )
 CC=		clang
 .else
-USE_GCC=	yes+
+USE_GCC=	4.2+
 .endif
 .endif
 
