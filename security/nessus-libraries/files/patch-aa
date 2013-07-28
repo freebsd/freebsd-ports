@@ -1,18 +1,65 @@
---- Makefile.orig	Fri Apr  4 10:40:37 2003
-+++ Makefile	Thu Jul  3 08:17:18 2003
-@@ -51,7 +51,6 @@
- 	cd libhosts_gatherer && ${MAKE} install
+--- Makefile.orig	2004-01-09 00:55:13.000000000 +0800
++++ Makefile	2013-07-28 16:41:08.000000000 +0800
+@@ -3,8 +3,8 @@
+ ALLDEPS = nessus.tmpl nessus-config
+ 
+ all: $(ALLDEPS) $(PCAP_MAKE)
+-	cd libnessus && ${MAKE}
+-	cd libhosts_gatherer && ${MAKE}
++	${MAKE} -C libnessus
++	${MAKE} -C libhosts_gatherer
+ 
+ nessus-config: nessus-config.pre Makefile nessus.tmpl
+ 	@echo Creating $@ ...
+@@ -19,8 +19,8 @@
+ 	touch $@
+ 
+ win32:
+-	-cd libpcap-nessus    && ${MAKE} distclean
+-	-cd libhosts_gatherer && ${MAKE} distclean
++	-${MAKE} -C libpcap-nessus    distclean
++	-${MAKE} -C libhosts_gatherer distclean
+ 	@echo
+ 	@echo ' --------------------------------------------------------------'
+ 	@echo ' The header files necessary and some docs have been generated,'
+@@ -31,27 +31,26 @@
+ 
+ 
+ pcap-make :
+-	-cd libpcap-nessus && ${MAKE}
++	-${MAKE} -C libpcap-nessus
+ 
+ pcap-install:
+ 	test -d $(DESTDIR)${prefix} || ${INSTALL_DIR} -m 755 $(DESTDIR)${prefix}
+ 	test -d $(DESTDIR)${libdir} || ${INSTALL_DIR} -m 755 $(DESTDIR)${libdir}
+-	-cd libpcap-nessus && ${MAKE} install
++	-${MAKE} -C libpcap-nessus install
+ 
+ pcap-clean :
+-	-cd libpcap-nessus && ${MAKE} clean
++	-${MAKE} -C libpcap-nessus clean
+ 
+ pcap-distclean:
+-	-cd libpcap-nessus && ${MAKE} distclean
++	-${MAKE} -C libpcap-nessus distclean
+ 
+ install : $(PCAP_INSTALL)
+ 	test -d $(DESTDIR)${prefix} || ${INSTALL_DIR} -m 755 $(DESTDIR)${prefix}
+ 	test -d $(DESTDIR)${includedir}/nessus || ${INSTALL_DIR} -m 755 $(DESTDIR)${includedir}/nessus
+-	cd libnessus && ${MAKE} install
+-	cd libhosts_gatherer && ${MAKE} install
++	${MAKE} -C libnessus install
++	${MAKE} -C libhosts_gatherer install
  
  
 -	$(INSTALL) -m 0444 include/includes.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -m 0444 include/libnessus.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -m 0444 include/harglists.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -m 0444 include/libvers.h   $(DESTDIR)${includedir}/nessus
-@@ -63,15 +62,6 @@
- 	test -d $(DESTDIR)${mandir} || ${INSTALL_DIR} -m 755 $(DESTDIR)${mandir}
+@@ -64,22 +63,13 @@
  	test -d $(DESTDIR)${mandir}/man1 || ${INSTALL_DIR} -m 755 $(DESTDIR)${mandir}/man1
  	$(INSTALL) -m 0644 nessus-config.1 $(DESTDIR)${mandir}/man1
--
+ 
 -	@echo
 -	@echo ' --------------------------------------------------------------'
 -	@echo ' nessus-libraries has been sucessfully installed. '
@@ -21,6 +68,18 @@
 -	@if [ -f /etc/ld.so.conf ]; then echo " Be sure to add $(libdir) in /etc/ld.so.conf and type 'ldconfig'"; else echo ""; fi
 -	@echo ' --------------------------------------------------------------'
 -	@echo
- 
+-
  clean : $(PCAP_CLEAN)
- 	-cd libnessus && ${MAKE} clean
+-	-cd libnessus && ${MAKE} clean
+-	-cd libhosts_gatherer && ${MAKE} clean
++	-${MAKE} -C libnessus clean
++	-${MAKE} -C libhosts_gatherer clean
+ 
+ distclean : clean $(PCAP_DISTCLEAN)
+ 	rm -f ${rootdir}/include/config.h libtool config.cache \
+ 	config.status config.log ${rootdir}/include/libvers.h 
+-	-cd libnessus && ${MAKE} distclean
+-	-cd libhosts_gatherer && ${MAKE} distclean
++	-${MAKE} -C libnessus distclean
++	-${MAKE} -C libhosts_gatherer distclean
+ 	rm -f nessus.tmpl nessus-config nessus-config.pre uninstall-nessus
