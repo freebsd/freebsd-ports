@@ -1,16 +1,11 @@
-# New ports collection makefile for:	downtimed
-# Date created:				2010-09-06
-# Whom:					Janne Snabb <snabb@epipe.com>
-#
+# Created by: Janne Snabb <snabb@epipe.com>
 # $FreeBSD$
-#
 
 PORTNAME=	downtimed
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
-		http://launchpadlibrarian.net/65433766/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+		http://launchpadlibrarian.net/145993356/
 
 MAINTAINER=	snabb@epipe.com
 COMMENT=	System downtime monitoring and reporting tool
