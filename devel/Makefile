@@ -68,6 +68,7 @@
     SUBDIR += argp-standalone
     SUBDIR += argtable
     SUBDIR += arm-eabi-binutils
+    SUBDIR += arm-eabi-gcc
     SUBDIR += arm-elf-binutils
     SUBDIR += aros-sdk
     SUBDIR += art
