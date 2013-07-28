@@ -12,15 +12,19 @@ include/eigen3/Eigen/IterativeLinearSolvers
 include/eigen3/Eigen/Jacobi
 include/eigen3/Eigen/LU
 include/eigen3/Eigen/LeastSquares
+include/eigen3/Eigen/MetisSupport
 include/eigen3/Eigen/OrderingMethods
 include/eigen3/Eigen/PaStiXSupport
 include/eigen3/Eigen/PardisoSupport
 include/eigen3/Eigen/QR
 include/eigen3/Eigen/QtAlignedMalloc
+include/eigen3/Eigen/SPQRSupport
 include/eigen3/Eigen/SVD
 include/eigen3/Eigen/Sparse
 include/eigen3/Eigen/SparseCholesky
 include/eigen3/Eigen/SparseCore
+include/eigen3/Eigen/SparseLU
+include/eigen3/Eigen/SparseQR
 include/eigen3/Eigen/StdDeque
 include/eigen3/Eigen/StdList
 include/eigen3/Eigen/StdVector
@@ -39,6 +43,7 @@ include/eigen3/Eigen/src/Core/BandMatrix.h
 include/eigen3/Eigen/src/Core/Block.h
 include/eigen3/Eigen/src/Core/BooleanRedux.h
 include/eigen3/Eigen/src/Core/CommaInitializer.h
+include/eigen3/Eigen/src/Core/CoreIterators.h
 include/eigen3/Eigen/src/Core/CwiseBinaryOp.h
 include/eigen3/Eigen/src/Core/CwiseNullaryOp.h
 include/eigen3/Eigen/src/Core/CwiseUnaryOp.h
@@ -69,10 +74,10 @@ include/eigen3/Eigen/src/Core/NoAlias.h
 include/eigen3/Eigen/src/Core/NumTraits.h
 include/eigen3/Eigen/src/Core/PermutationMatrix.h
 include/eigen3/Eigen/src/Core/PlainObjectBase.h
-include/eigen3/Eigen/src/Core/Product.h
 include/eigen3/Eigen/src/Core/ProductBase.h
 include/eigen3/Eigen/src/Core/Random.h
 include/eigen3/Eigen/src/Core/Redux.h
+include/eigen3/Eigen/src/Core/Ref.h
 include/eigen3/Eigen/src/Core/Replicate.h
 include/eigen3/Eigen/src/Core/ReturnByValue.h
 include/eigen3/Eigen/src/Core/Reverse.h
@@ -161,9 +166,11 @@ include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h
 include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h
 include/eigen3/Eigen/src/Eigenvalues/ComplexSchur_MKL.h
 include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h
+include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h
 include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
 include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h
 include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+include/eigen3/Eigen/src/Eigenvalues/RealQZ.h
 include/eigen3/Eigen/src/Eigenvalues/RealSchur.h
 include/eigen3/Eigen/src/Eigenvalues/RealSchur_MKL.h
 include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
@@ -199,7 +206,10 @@ include/eigen3/Eigen/src/LU/Inverse.h
 include/eigen3/Eigen/src/LU/PartialPivLU.h
 include/eigen3/Eigen/src/LU/PartialPivLU_MKL.h
 include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h
+include/eigen3/Eigen/src/MetisSupport/MetisSupport.h
 include/eigen3/Eigen/src/OrderingMethods/Amd.h
+include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h
+include/eigen3/Eigen/src/OrderingMethods/Ordering.h
 include/eigen3/Eigen/src/PaStiXSupport/PaStiXSupport.h
 include/eigen3/Eigen/src/PardisoSupport/PardisoSupport.h
 include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h
@@ -207,17 +217,18 @@ include/eigen3/Eigen/src/QR/ColPivHouseholderQR_MKL.h
 include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h
 include/eigen3/Eigen/src/QR/HouseholderQR.h
 include/eigen3/Eigen/src/QR/HouseholderQR_MKL.h
+include/eigen3/Eigen/src/SPQRSupport/SuiteSparseQRSupport.h
 include/eigen3/Eigen/src/SVD/JacobiSVD.h
 include/eigen3/Eigen/src/SVD/JacobiSVD_MKL.h
 include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h
 include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h
+include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h
 include/eigen3/Eigen/src/SparseCore/AmbiVector.h
 include/eigen3/Eigen/src/SparseCore/CompressedStorage.h
 include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h
-include/eigen3/Eigen/src/SparseCore/CoreIterators.h
 include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h
-include/eigen3/Eigen/src/SparseCore/SparseAssign.h
 include/eigen3/Eigen/src/SparseCore/SparseBlock.h
+include/eigen3/Eigen/src/SparseCore/SparseColEtree.h
 include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h
 include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h
 include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h
@@ -237,6 +248,24 @@ include/eigen3/Eigen/src/SparseCore/SparseUtil.h
 include/eigen3/Eigen/src/SparseCore/SparseVector.h
 include/eigen3/Eigen/src/SparseCore/SparseView.h
 include/eigen3/Eigen/src/SparseCore/TriangularSolver.h
+include/eigen3/Eigen/src/SparseLU/SparseLU.h
+include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h
+include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h
+include/eigen3/Eigen/src/SparseQR/SparseQR.h
 include/eigen3/Eigen/src/StlSupport/StdDeque.h
 include/eigen3/Eigen/src/StlSupport/StdList.h
 include/eigen3/Eigen/src/StlSupport/StdVector.h
@@ -263,6 +292,7 @@ include/eigen3/unsupported/Eigen/BVH
 include/eigen3/unsupported/Eigen/FFT
 include/eigen3/unsupported/Eigen/IterativeSolvers
 include/eigen3/unsupported/Eigen/KroneckerProduct
+include/eigen3/unsupported/Eigen/LevenbergMarquardt
 include/eigen3/unsupported/Eigen/MPRealSupport
 include/eigen3/unsupported/Eigen/MatrixFunctions
 include/eigen3/unsupported/Eigen/MoreVectorization
@@ -281,15 +311,19 @@ include/eigen3/unsupported/Eigen/src/BVH/KdBVH.h
 include/eigen3/unsupported/Eigen/src/FFT/ei_fftw_impl.h
 include/eigen3/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h
+include/eigen3/unsupported/Eigen/src/IterativeSolvers/DGMRES.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/GMRES.h
+include/eigen3/unsupported/Eigen/src/IterativeSolvers/IncompleteCholesky.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/IncompleteLU.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/IterationController.h
+include/eigen3/unsupported/Eigen/src/IterativeSolvers/MINRES.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/Scaling.h
 include/eigen3/unsupported/Eigen/src/KroneckerProduct/KroneckerTensorProduct.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixExponential.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixFunction.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixFunctionAtomic.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixLogarithm.h
+include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixPower.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixSquareRoot.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/StemFunction.h
 include/eigen3/unsupported/Eigen/src/MoreVectorization/MathFunctions.h
@@ -344,13 +378,17 @@ libdata/pkgconfig/eigen3.pc
 @dirrm include/eigen3/Eigen/src/UmfPackSupport
 @dirrm include/eigen3/Eigen/src/SuperLUSupport
 @dirrm include/eigen3/Eigen/src/StlSupport
+@dirrm include/eigen3/Eigen/src/SparseQR
+@dirrm include/eigen3/Eigen/src/SparseLU
 @dirrm include/eigen3/Eigen/src/SparseCore
 @dirrm include/eigen3/Eigen/src/SparseCholesky
 @dirrm include/eigen3/Eigen/src/SVD
+@dirrm include/eigen3/Eigen/src/SPQRSupport
 @dirrm include/eigen3/Eigen/src/QR
 @dirrm include/eigen3/Eigen/src/PardisoSupport
 @dirrm include/eigen3/Eigen/src/PaStiXSupport
 @dirrm include/eigen3/Eigen/src/OrderingMethods
+@dirrm include/eigen3/Eigen/src/MetisSupport
 @dirrm include/eigen3/Eigen/src/LU/arch
 @dirrm include/eigen3/Eigen/src/LU
 @dirrm include/eigen3/Eigen/src/Jacobi
