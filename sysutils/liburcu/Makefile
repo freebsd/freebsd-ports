@@ -12,8 +12,7 @@ COMMENT=	Userspace read-copy-update (RCU) data synchronization library
 
 LICENSE=	LGPL21
 
-PORTDOCS=	ChangeLog CodingStyle LICENSE README \
-		cds-api.txt rcu-api.txt uatomic-api.txt
+PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
 USES=		pathfix
 USE_BZIP2=	yes
