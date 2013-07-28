@@ -1450,8 +1450,9 @@
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g178e1b25x1fd01a91.pypy-20.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g85535e98x310af836.pypy-20.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g3b3d68b9x310af836.pypy-21.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g7019d5d3xad93c709.pypy-21.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g774d129dx1fd01a91.pypy-21.so
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.py
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_hk.py
@@ -1509,6 +1510,8 @@
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_interact.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_irc_topic.py
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_irc_topic.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_pypy_testcapi.py
+%%PYPY_LIBDIR%%/lib_pypy/_pypy_testcapi.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_wait.py
 %%PYPY_LIBDIR%%/lib_pypy/_pypy_wait.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_scproxy.py
@@ -1527,6 +1530,14 @@
 %%PYPY_LIBDIR%%/lib_pypy/_subprocess.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_testcapi.py
 %%PYPY_LIBDIR%%/lib_pypy/_testcapi.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/__init__.py
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/__init__.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/app.py
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/app.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/tclobj.py
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/tclobj.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/tklib.py
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/tklib.pyc
 %%PYPY_LIBDIR%%/lib_pypy/cPickle.py
 %%PYPY_LIBDIR%%/lib_pypy/cPickle.pyc
 %%PYPY_LIBDIR%%/lib_pypy/cStringIO.py
@@ -1597,10 +1608,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_BITS%%_.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_cache.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_resource_cache.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_%%PYPY_BITS%%_.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_%%PYPY_BITS%%_.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_cache.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/_syslog_cache.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/dumpcache.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/dumpcache.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/locale.ctc.py
@@ -1609,8 +1616,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/rebuild.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/resource.ctc.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/resource.ctc.pyc
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/syslog.ctc.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/syslog.ctc.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_support.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_support.pyc
 %%PYPY_LIBDIR%%/lib_pypy/datetime.py
@@ -1621,6 +1626,7 @@
 %%PYPY_LIBDIR%%/lib_pypy/disassembler.pyc
 %%PYPY_LIBDIR%%/lib_pypy/future_builtins.py
 %%PYPY_LIBDIR%%/lib_pypy/future_builtins.pyc
+%%PYPY_LIBDIR%%/lib_pypy/greenlet.egg-info
 %%PYPY_LIBDIR%%/lib_pypy/greenlet.py
 %%PYPY_LIBDIR%%/lib_pypy/greenlet.pyc
 %%PYPY_LIBDIR%%/lib_pypy/grp.py
@@ -3788,6 +3794,7 @@
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi
+@dirrm %%PYPY_LIBDIR%%/lib_pypy/_tkinter
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/_ctypes
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/__pycache__
 @dirrm %%PYPY_LIBDIR%%/lib_pypy

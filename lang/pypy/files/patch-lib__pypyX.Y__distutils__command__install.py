@@ -1,5 +1,5 @@
---- lib/pypy2.0/distutils/command/install.py.orig	2012-07-15 10:10:18.000000000 +0200
-+++ lib/pypy2.0/distutils/command/install.py	2012-07-15 10:13:15.000000000 +0200
+--- lib/pypy2.1/distutils/command/install.py.orig	2012-07-15 10:10:18.000000000 +0200
++++ lib/pypy2.1/distutils/command/install.py	2012-07-15 10:13:15.000000000 +0200
 @@ -84,9 +84,9 @@
          'data'   : '$userbase',
          },
