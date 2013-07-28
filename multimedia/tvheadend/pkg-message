@@ -7,7 +7,12 @@ kill kenny or spill your beer so don't expect too much.
 Known issues:
 - no libav support
 - no libdvbcsa support
-- no rc.d script
+
+For the first start in your /etc/rc.conf:
+  tvheadend_enable="YES"
+  tvheadend_flags="-C"
+
+The second line can be removed after the first start.
 
 Patches, feedback and help are always welcome!
 
