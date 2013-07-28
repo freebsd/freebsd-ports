@@ -1,6 +1,6 @@
 Port for package building of 6rd patched stf(4) kernel lodable modules.
 
-This port supports only 8.1 and 8.2 releases.
+This port supports only 8.3 and 8.4 releases.
 
 This patch was developed by hrs and obtained from
 http://people.allbsd.org/~hrs/FreeBSD/stf_6rd_20100923-1.diff
