@@ -1,0 +1,6 @@
+Ruby wrapper that supports all of the GitHub API v3 methods(nearly 200). It's
+build in a modular way, that is, you can either instantiate the whole api
+wrapper Github.new or use parts of it e.i. Github::Repos.new if working solely
+with repositories is your main concern.
+
+WWW: https://github.com/peter-murach/github
