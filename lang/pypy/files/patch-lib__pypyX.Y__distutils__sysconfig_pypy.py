@@ -1,5 +1,5 @@
---- lib/pypy2.0/distutils/sysconfig_pypy.py.orig	2012-11-22 14:52:20.000000000 +0200
-+++ lib/pypy2.0/distutils/sysconfig_pypy.py	2012-11-27 17:59:44.000000000 +0200
+--- lib/pypy2.1/distutils/sysconfig_pypy.py.orig	2012-11-22 14:52:20.000000000 +0200
++++ lib/pypy2.1/distutils/sysconfig_pypy.py	2012-11-27 17:59:44.000000000 +0200
 @@ -15,7 +15,7 @@
  
  def get_python_inc(plat_specific=0, prefix=None):

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.0.2
+DISTVERSION=	2.1-beta
 CATEGORIES=	lang python java
 MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -40,7 +40,6 @@ ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
 USE_BZIP2=	yes
 USES=		gettext iconv
-MAKE_JOBS_SAFE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -58,8 +57,8 @@ PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
 MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
 
-LOCALBASE_REFIX= \
-		lib/pypy2.0/lib_pypy/_sqlite3.py
+LOCALBASE_REFIX=	\
+		lib/pypy2.1/lib_pypy/_sqlite3.py
 
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
@@ -68,7 +67,7 @@ LOCALBASE_REFIX= \
 .if ${CC:T} == cc && ( exists(/usr/bin/clang) || exists(${LOCALBASE}/clang) )
 CC=		clang
 .else
-USE_GCC=	yes
+USE_GCC=	yes+
 .endif
 .endif
 
@@ -281,7 +280,8 @@ post-build:
 	-${FIND} ${WRKSRC}/${PYPY_LIBDIR} -type d | \
 		${SETENV} PYTHON_PATH=${WRKSRC} ${XARGS} \
 		${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
-.for mod in _sqlite3 _curses
+# UPDATING: check pypy/tool/release/package.py for list of cffi modules
+.for mod in _sqlite3 _curses syslog
 	${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
 .endfor
 	${FIND} ${WRKSRC}/lib -name '*.orig' -delete -or \
