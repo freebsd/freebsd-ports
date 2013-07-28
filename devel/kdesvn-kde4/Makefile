@@ -23,7 +23,6 @@ USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg qt3support sql \
 		qmake_build moc_build rcc_build uic_build linguist_build
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
 

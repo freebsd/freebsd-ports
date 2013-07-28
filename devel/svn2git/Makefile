@@ -18,7 +18,6 @@ RUN_DEPENDS+=	git:${PORTSDIR}/devel/git \
 
 USE_XZ=		yes
 USE_QT4=	corelib qmake_build
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	FREEBSD_REPO
 FREEBSD_REPO_DESC=	FreeBSD-repo only mode

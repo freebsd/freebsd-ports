@@ -43,7 +43,6 @@ WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
-MAKE_JOBS_SAFE=	yes
 MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
 		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
 		winedump.1 winefile.1 winegcc.1 winemaker.1 winemine.1 \

@@ -13,7 +13,6 @@ COMMENT=	Weather plasma applet for KDE4
 
 LICENSE=	GPLv3
 
-MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USES=		cmake gettext
 USE_KDE4=	automoc4 kdeprefix kdelibs

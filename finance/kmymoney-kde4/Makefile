@@ -29,7 +29,6 @@ USE_QT4=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs sharedmime
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kmymoney.1
 
