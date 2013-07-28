@@ -51,6 +51,65 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f4a0212f-f797-11e2-9bb9-6805ca0b3d42">
+    <topic>phpMyAdmin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.0</ge><lt>4.0.4.2</lt></range>
+      </package>
+      <package>
+	<name>phpMyAdmin35</name>
+	<range><ge>3.5</ge><lt>3.5.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-8.php">
+	  <p>Self-XSS in "Showing rows." (phpMyAdmin35 only)</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-9.php">
+	  <p>Self-XSS in Display chart.</p>
+	  <p>Stored XSS in Server status monitor.</p>
+	  <p>Stored XSS in navigation panel logo link (phpMyAdmin35 only).</p>
+	  <p>Self-XSS in setup, trusted proxies validation.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-11.php">
+	  <p>Unencoded json object.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-12.php">
+	  <p>Full path disclosure.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-13.php">
+	  <p>Stored XSS in link transformation plugin.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-14.php">
+	  <p>Self-XSS in schema export.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-15.php">
+	  <p>Control user SQL injection in pmd_pdf.php.</p>
+	  <p>Control user SQL injection in schema_export.php.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-8.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-9.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-11.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-12.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-13.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-14.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-15.php</url>
+      <url>http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.0.4.2/phpMyAdmin-4.0.4.2-notes.html/view</url>
+      <url>http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/3.5.8.2/phpMyAdmin-3.5.8.2-notes.html/view</url>
+    </references>
+    <dates>
+      <discovery>2013-07-28</discovery>
+      <entry>2013-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="049332d2-f6e1-11e2-82f3-000c29ee3065">
     <topic>wordpress -- multiple vulnerabilities</topic>
     <affects>
