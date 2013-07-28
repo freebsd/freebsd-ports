@@ -1,12 +1,58 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/core.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/core.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/core.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_commands.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_commands.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_commands.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_core.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_core.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_core.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_hooks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_hooks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/test_hooks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/CHANGES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/MANIFEST.in
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/_setup_hooks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/_setup_hooks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/_setup_hooks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/package_data/1.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/package_data/2.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/data_files/a.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/data_files/b.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/data_files/c.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/extra-file.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/setup.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/src/testext.c
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/find_package.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/find_package.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/find_package.pyo
@@ -48,6 +94,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/hooks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/src
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/data_files
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage/package_data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage/d2to1_testpackage
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests/testpackage
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr/d2to1
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pbr
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
