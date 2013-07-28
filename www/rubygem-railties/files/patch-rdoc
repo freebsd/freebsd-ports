@@ -1,0 +1,23 @@
+--- railties-3.2.13.gemspec.orig	2013-07-27 23:22:06.930413599 +0000
++++ railties-3.2.13.gemspec	2013-07-27 23:22:33.318412226 +0000
+@@ -59,20 +59,6 @@
+       - !ruby/object:Gem::Version
+         version: '2.0'
+ - !ruby/object:Gem::Dependency
+-  name: rdoc
+-  requirement: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - ~>
+-      - !ruby/object:Gem::Version
+-        version: '3.4'
+-  type: :runtime
+-  prerelease: false
+-  version_requirements: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - ~>
+-      - !ruby/object:Gem::Version
+-        version: '3.4'
+-- !ruby/object:Gem::Dependency
+   name: activesupport
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
