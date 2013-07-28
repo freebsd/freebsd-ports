@@ -12,9 +12,8 @@ COMMENT=	Utilities from the Free Unix Spectrum Emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAKE_JOBS_SAFE=	yes
-
 USES=		pkgconfig
+
 LIB_DEPENDS=	spectrum:${PORTSDIR}/emulators/libspectrum
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
