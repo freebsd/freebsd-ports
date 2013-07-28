@@ -105,6 +105,7 @@
     SUBDIR += elmer-umfpack
     SUBDIR += emacs-calc
     SUBDIR += emc2
+    SUBDIR += ent
     SUBDIR += entropy
     SUBDIR += ess
     SUBDIR += eukleides
