@@ -12,9 +12,9 @@ from the boundary-element discretization is solved using a
 generalized conjugate residual algorithm with a fast multipole
 algorithm to efficiently compute the iterates.
 
---------------------- 
+---------------------
 This version of fastcap has been cleaned up and enhanced by Stephen R.
 Whiteley of Whitleley Research Inc.
---------------------- 
+---------------------
 
-WWW:	http://www.rle.mit.edu/cpg/research_codes.htm
+WWW: http://www.rle.mit.edu/cpg/research_codes.htm
