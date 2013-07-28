@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/downtimes
 sbin/downtimed
 @exec /bin/mkdir -p /var/db/downtimed
