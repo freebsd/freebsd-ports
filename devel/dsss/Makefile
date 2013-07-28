@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dsss
-# Date created:		14 Jun 2008
-# Whom:			Dmitry Marakasov <amdmi3@FreeBSD.org>
-#
+# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dsss
 PORTVERSION=	0.78
@@ -13,6 +9,9 @@ MASTER_SITES=	http://svn.dsource.org/projects/dsss/downloads/${PORTVERSION}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	D Shared Software System
+
+DEPRECATED=	Depends on expired lang/gdc
+EXPIRATION_DATE=2013-09-01
 
 BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc
 
@@ -26,7 +25,7 @@ PORTDOCS=	*
 
 MAN1=		dsss.1 rebuild.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900027
 BROKEN=		does not build
@@ -35,7 +34,7 @@ BROKEN=		does not build
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' \
 		${WRKSRC}/dsss.conf
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|install docs.*share/doc/dsss ;||' \
 		${WRKSRC}/dsss.conf
 .endif
@@ -44,4 +43,4 @@ post-patch:
 		${WRKSRC}/rebuild/Makefile
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
