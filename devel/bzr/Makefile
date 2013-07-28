@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bzr
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/106470036/
+MASTER_SITES=	https://launchpadlibrarian.net/145980211/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
