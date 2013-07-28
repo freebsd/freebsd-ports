@@ -43,6 +43,8 @@ GTK_DESC=	GTK+ support
 OPENEXR_DESC=	OpenEXR support
 TBB_DESC=	TBB support
 
+LDFLAGS+=	-lopencv_core
+
 OPTIONS_DEFAULT=	EIGEN2 JASPER JPEG PNG TIFF V4L
 
 .include <bsd.port.options.mk>
