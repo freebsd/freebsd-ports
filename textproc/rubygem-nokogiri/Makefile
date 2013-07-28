@@ -1,16 +1,15 @@
-# Ports collection makefile for:	rubygem-nokogiri
-# Date created:				17 May 2009
-# Whom:						Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An HTML, XML, SAX, and Reader parser
+
+GEM_ENV=	LC_CTYPE=UTF-8 NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 USE_GNOME=	libxml2 libxslt
 

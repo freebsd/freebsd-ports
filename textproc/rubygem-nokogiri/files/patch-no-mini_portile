@@ -1,0 +1,25 @@
+--- nokogiri-1.6.0.gemspec.orig	2013-07-24 21:48:33.714328575 +0000
++++ nokogiri-1.6.0.gemspec	2013-07-24 21:48:49.767620877 +0000
+@@ -15,22 +15,6 @@
+ date: 2013-06-08 00:00:00.000000000 Z
+ dependencies:
+ - !ruby/object:Gem::Dependency
+-  name: mini_portile
+-  requirement: !ruby/object:Gem::Requirement
+-    none: false
+-    requirements:
+-    - - ~>
+-      - !ruby/object:Gem::Version
+-        version: 0.5.0
+-  type: :runtime
+-  prerelease: false
+-  version_requirements: !ruby/object:Gem::Requirement
+-    none: false
+-    requirements:
+-    - - ~>
+-      - !ruby/object:Gem::Version
+-        version: 0.5.0
+-- !ruby/object:Gem::Dependency
+   name: hoe-bundler
+   requirement: !ruby/object:Gem::Requirement
+     none: false
