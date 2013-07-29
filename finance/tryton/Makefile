@@ -15,10 +15,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil 
 
 CONFLICTS=	tryton-2.[68].*
 
+USES=		gettext
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_GNOME=	gtk20 desktopfileutils pygtk2
-USE_GETTEXT=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/tryton.desktop ${PREFIX}/share/applications/tryton.desktop
