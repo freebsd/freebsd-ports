@@ -1,0 +1,11 @@
+--- doc/manpage/Makefile.in.orig	2013-07-25 11:29:28.000000000 +0200
++++ doc/manpage/Makefile.in	2013-07-25 11:31:20.000000000 +0200
+@@ -184,7 +184,7 @@ top_srcdir = @top_srcdir@
+ man_MANS = $(MAN_MANS)
+ EXTRA_DIST = $(man_MANS) $(srcdir)/rapidsvn.xml
+ MAKEMAN = @XSLTPROC@ --nonet --novalid @DOCBOOK_MANPAGES@
+-all: all-am
++all: all-am manpage
+ 
+ .SUFFIXES:
+ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
