@@ -12,3 +12,12 @@
  
    if(size == 2)
      printf("Breakpoint (on write) address %08x old:%08x new:%08x\n", 
+@@ -1389,7 +1389,7 @@
+ {
+   char buffer[10];
+   printf("Are you sure you want to quit (y/n)? ");
+-  fgets(buffer, 1024, stdin);
++  fgets(buffer, sizeof(buffer), stdin);
+   
+   if(buffer[0] == 'y' || buffer[0] == 'Y') {
+     debugger = false;
