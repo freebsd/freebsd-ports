@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--with-listen=5 \
 		--with-fd-setsize=1024 \
 		--enable-dynamic-linking
 
-OPTIONS_DEFINE=	HIB NOSPOOF ZIPLINKS SSL IPV6 PREFIXAQ REMOTE DOCS
+OPTIONS_DEFINE=	HUB NOSPOOF ZIPLINKS SSL IPV6 PREFIXAQ REMOTE DOCS
 OPTIONS_DEFAULT=	HUB
 HUB_DESC=	Configure as a hub (otherwise configure as a leaf)
 NOSPOOF_DESC=	Enable anti-spoof protection
