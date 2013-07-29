@@ -6,13 +6,12 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://files.kaworu.ch/
 
-MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	A tool to manage tags in music files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool to manage tags in music files
 
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		pkgconfig
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	DESTDIR="${PREFIX}"
 
 MAN1=		tagutil.1
