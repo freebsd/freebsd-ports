@@ -1,12 +1,5 @@
 bin/VisualBoyAdvance
 bin/VisualBoyAdvance.cfg-default
-%%INSTALL_GTK2%%bin/gvba
-%%INSTALL_GTK2%%share/VisualBoyAdvance/vba.glade
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%INSTALL_GTK2%%@dirrm share/VisualBoyAdvance
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%GTK2%%bin/gvba
+%%GTK2%%share/VisualBoyAdvance/vba.glade
+%%GTK2%%@dirrm share/VisualBoyAdvance
