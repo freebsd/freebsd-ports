@@ -351,6 +351,9 @@ PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
 .    if defined(${opt}_CONFIGURE_ENABLE)
 CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
 .    endif
+.    if defined(${opt}_CONFIGURE_WITH)
+CONFIGURE_ARGS+=	--with-${${opt}_CONFIGURE_WITH}
+.    endif
 .    if defined(${opt}_CONFIGURE_ON)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
 .    endif
@@ -370,6 +373,9 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .  else
 .    if defined(${opt}_CONFIGURE_ENABLE)
 CONFIGURE_ARGS+=	--disable-${${opt}_CONFIGURE_ENABLE}
+.    endif
+.    if defined(${opt}_CONFIGURE_WITH)
+CONFIGURE_ARGS+=	--without-${${opt}_CONFIGURE_WITH}
 .    endif
 .    if defined(${opt}_CONFIGURE_OFF)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
