@@ -933,6 +933,7 @@
     SUBDIR += ttyload
     SUBDIR += tw_cli
     SUBDIR += tzdialog
+    SUBDIR += u-boot-beaglebone-eabi
     SUBDIR += ua
     SUBDIR += ucspi-ipc
     SUBDIR += ucspi-proxy
