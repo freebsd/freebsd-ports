@@ -1,5 +1,5 @@
 #!/bin/sh
-# Created by: Mark Felder <feld@freebsd.org>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
 if [ "$2" = "POST-INSTALL" ]; then

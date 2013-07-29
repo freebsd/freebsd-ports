@@ -5,7 +5,7 @@ PORTNAME=	inspircd
 PORTVERSION=	2.0.12
 CATEGORIES=	irc
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	A modular C++ IRC daemon
 
 LICENSE=	GPLv2
