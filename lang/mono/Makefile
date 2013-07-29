@@ -61,7 +61,7 @@ post-patch:
 		${WRKSRC}/mcs/class/Mono.WebBrowser/build-csproj2k5
 	@${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^#!/bin/bash|#!/bin/sh|g'
-	@${REPLACE_CMD} 's/(1)/(1.0)/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/(1)/(1.0)/g' ${WRKSRC}/configure
 
 tests: build
 	@${ECHO_MSG} "===> Running mono regression tests"
