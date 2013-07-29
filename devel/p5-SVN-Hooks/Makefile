@@ -1,12 +1,8 @@
-# New ports collection makefile for:	SVN::Hooks
-# Date created:		2009-01-27
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Hooks
-PORTVERSION=	1.19
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
