@@ -65,6 +65,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/lang/spanish.lng
 %%DATADIR%%/lang/swedish.lng
 %%DATADIR%%/lang/tamil.lng
+%%DATADIR%%/lang/thai.lng
 %%DATADIR%%/lang/traditional_chinese.lng
 %%DATADIR%%/lang/turkish.lng
 %%DATADIR%%/lang/ukrainian.lng
