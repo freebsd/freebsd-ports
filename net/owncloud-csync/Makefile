@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.owncloud.com/download/
 DISTNAME=	ocsync-${PORTVERSION}
 
 MAINTAINER=	6yearold@gmail.com
-COMMENT=	A csync fork for Owncloud
+COMMENT=	csync fork for Owncloud
 
 LICENSE=	GPLv2
 
@@ -18,9 +18,8 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		ssh:${PORTSDIR}/security/libssh \
 		neon:${PORTSDIR}/www/neon29
 
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_BZIP2=	yes
-USE_PKGCONFIG=	build
 USE_SQLITE=	yes
 CMAKE_ARGS+=	-DWITH_LOG4C=NO \
 		-DUNIT_TESTING=NO \
@@ -29,7 +28,6 @@ CMAKE_ARGS+=	-DWITH_LOG4C=NO \
 MAN1=		ocsync.1
 
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	/usr/local/share/doc/ocsync
 ETCDIR=		/usr/local/etc/ocsync
