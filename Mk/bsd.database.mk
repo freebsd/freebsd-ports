@@ -285,16 +285,16 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 _DB_PORTS=	40 41 42 43 44 46 47 48 5 40+ 41+ 42+ 43+ 44+ 46+ 47+ 48+
 # Dependence lines for different db versions
-db40_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-db41_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-db42_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
-db43_DEPENDS=	db-4.3.0:${PORTSDIR}/databases/db43
-db44_DEPENDS=	db-4.4.0:${PORTSDIR}/databases/db44
-db46_DEPENDS=	db-4.6.0:${PORTSDIR}/databases/db46
-db47_DEPENDS=	db-4.7.0:${PORTSDIR}/databases/db47
-db48_DEPENDS=	db-4.8.0:${PORTSDIR}/databases/db48
-db5_DEPENDS=	db-5.3.0:${PORTSDIR}/databases/db5
-db6_DEPENDS=	db-6.0.0:${PORTSDIR}/databases/db6
+db40_DEPENDS=	libdb4.so:${PORTSDIR}/databases/db4
+db41_DEPENDS=	libdb41.so:${PORTSDIR}/databases/db41
+db42_DEPENDS=	libdb-4.2.so:${PORTSDIR}/databases/db42
+db43_DEPENDS=	libdb-4.3.so:${PORTSDIR}/databases/db43
+db44_DEPENDS=	libdb-4.4.so:${PORTSDIR}/databases/db44
+db46_DEPENDS=	libdb-4.6.so:${PORTSDIR}/databases/db46
+db47_DEPENDS=	libdb-4.7.so:${PORTSDIR}/databases/db47
+db48_DEPENDS=	libdb-4.8.so:${PORTSDIR}/databases/db48
+db5_DEPENDS=	libdb-5.3.so:${PORTSDIR}/databases/db5
+db6_DEPENDS=	libdb-6.0.so:${PORTSDIR}/databases/db6
 # Detect db versions by finding some files
 db40_FIND=	${LOCALBASE}/include/db4/db.h
 db41_FIND=	${LOCALBASE}/include/db41/db.h
