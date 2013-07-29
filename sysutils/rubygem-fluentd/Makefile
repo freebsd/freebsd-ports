@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluentd
-PORTVERSION=	0.10.34
+PORTVERSION=	0.10.35
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	\
 	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb
 
 USE_RUBY=	yes
-#RUBY_VER=	1.9	# Please set RUBY_DEFAULT_VER=1.9 in /etc/make.conf
 USE_RUBYGEMS=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
 		"@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 775 /var/run/fluentd" \

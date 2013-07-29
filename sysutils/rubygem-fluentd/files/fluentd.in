@@ -14,6 +14,7 @@
 # fluentd_config (path):	Set to %%PREFIX%%/etc/fluentd/fluent.conf
 # 		  		by default.
 # fluentd_db_dir (path):	Set DB dir (default: "/var/db/fluentd")
+# fluentd_flags (str):          Set to "" by default.
 
 . /etc/rc.subr
 
@@ -28,11 +29,13 @@ load_rc_config $name
 : ${fluentd_dir="%%PREFIX%%/etc/fluentd"}
 : ${fluentd_user="%%USER%%"}
 : ${fluentd_group="%%GROUP%%"}
+: ${fluentd_flags:=""}
 
 init_cmd="init_fluentd_dir"
 
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}/${name}.pid
+command_interpreter=%%RUBY%%
 
 command_args="-d $pidfile -c $fluentd_config"
 
