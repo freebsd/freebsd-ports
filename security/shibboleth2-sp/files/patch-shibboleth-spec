@@ -1,6 +1,6 @@
---- shibboleth.spec.in.orig	2012-12-04 05:49:49.000000000 +0100
-+++ shibboleth.spec.in	2013-06-03 16:19:28.000000000 +0200
-@@ -58,7 +58,7 @@
+--- shibboleth.spec.in.orig	2013-06-16 21:43:47.000000000 +0200
++++ shibboleth.spec.in	2013-07-29 14:42:22.887422969 +0200
+@@ -59,7 +59,7 @@
  %if "%{_vendor}" == "suse"
  %define pkgdocdir %{_docdir}/shibboleth
  %else
@@ -9,7 +9,7 @@
  %endif
  
  %description
-@@ -202,14 +202,6 @@
+@@ -203,14 +203,6 @@
  /sbin/ldconfig
  %endif
  
@@ -24,3 +24,12 @@
  # Fix ownership of log files (even on new installs, if they're left from an older one).
  %{__chown} %{runuser}:%{runuser} %{_localstatedir}/log/shibboleth/* 2>/dev/null || :
  
+@@ -304,7 +296,7 @@
+ %{_libdir}/shibboleth/*
+ %attr(0750,%{runuser},%{runuser}) %dir %{_localstatedir}/log/shibboleth
+ %attr(0755,%{runuser},%{runuser}) %dir %{_localstatedir}/run/shibboleth
+-%attr(0755,%{runuser},%{runuser}) %dir %{_localstatedir}/cache/shibboleth
++%attr(0755,%{runuser},%{runuser}) %dir %{_localstatedir}/db/shibboleth
+ %dir %{_datadir}/xml/shibboleth
+ %{_datadir}/xml/shibboleth/*
+ %dir %{_datadir}/shibboleth

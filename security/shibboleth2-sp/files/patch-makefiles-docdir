@@ -1,5 +1,5 @@
 --- doc/Makefile.am.orig	2012-07-23 22:08:29.000000000 +0200
-+++ doc/Makefile.am	2013-02-22 10:53:42.000000000 +0100
++++ doc/Makefile.am	2013-07-29 14:34:53.613422126 +0200
 @@ -1,7 +1,7 @@
  AUTOMAKE_OPTIONS = foreign
  
@@ -10,8 +10,8 @@
  
  install-data-hook:
  	if test -d api ; then \
---- doc/Makefile.in.orig	2012-12-04 05:50:56.000000000 +0100
-+++ doc/Makefile.in	2013-02-22 10:53:42.000000000 +0100
+--- doc/Makefile.in.orig	2013-06-17 00:06:20.000000000 +0200
++++ doc/Makefile.in	2013-07-29 14:34:53.614421971 +0200
 @@ -288,8 +288,8 @@
  top_srcdir = @top_srcdir@
  xs = @xs@
@@ -24,24 +24,30 @@
  	CREDITS.txt \
  	LICENSE.txt \
 --- configs/Makefile.am.orig	2012-12-04 05:49:50.000000000 +0100
-+++ configs/Makefile.am	2013-02-22 10:53:42.000000000 +0100
-@@ -6,7 +6,7 @@
++++ configs/Makefile.am	2013-07-29 14:43:27.307424087 +0200
+@@ -6,9 +6,9 @@
  pkglogdir = ${localstatedir}/log/@PACKAGE_NAME@
  shirelogdir = ${localstatedir}/log/httpd
  pkgxmldir = $(datadir)/xml/@PACKAGE_NAME@
 -pkgwebdir = $(datadir)/@PACKAGE_NAME@
 +pkgwebdir = $(datadir)/doc/@PACKAGE_NAME@
  pkgrundir = $(localstatedir)/run/@PACKAGE_NAME@
- pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
+-pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
++pkgcachedir = $(localstatedir)/db/@PACKAGE_NAME@
  pkgsysconfdir = $(sysconfdir)/@PACKAGE_NAME@
---- configs/Makefile.in.orig	2012-12-04 05:50:56.000000000 +0100
-+++ configs/Makefile.in	2013-02-22 10:53:42.000000000 +0100
-@@ -291,7 +291,7 @@
+ pkgsysconf_DATA = \
+ 	shibd-redhat \
+--- configs/Makefile.in.orig	2013-06-17 00:06:20.000000000 +0200
++++ configs/Makefile.in	2013-07-29 14:44:31.565419301 +0200
+@@ -291,9 +291,9 @@
  pkglogdir = ${localstatedir}/log/@PACKAGE_NAME@
  shirelogdir = ${localstatedir}/log/httpd
  pkgxmldir = $(datadir)/xml/@PACKAGE_NAME@
 -pkgwebdir = $(datadir)/@PACKAGE_NAME@
 +pkgwebdir = $(datadir)/doc/@PACKAGE_NAME@
  pkgrundir = $(localstatedir)/run/@PACKAGE_NAME@
- pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
+-pkgcachedir = $(localstatedir)/cache/@PACKAGE_NAME@
++pkgcachedir = $(localstatedir)/db/@PACKAGE_NAME@
  pkgsysconfdir = $(sysconfdir)/@PACKAGE_NAME@
+ pkgsysconf_DATA = \
+ 	shibd-redhat \
