@@ -1,0 +1,5 @@
+This gem was originally added to the Metasploit Pcaprub gem.  It's been spun
+out into its own gem for anyone who might want to programmatically get
+information on their network interfaces.
+
+WWW: https://github.com/rapid7/network_interface
