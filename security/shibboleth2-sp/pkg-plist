@@ -166,14 +166,14 @@ share/doc/shibboleth/OPENSSL.LICENSE
 share/doc/shibboleth/README.txt
 share/doc/shibboleth/RELEASE.txt
 share/doc/shibboleth/main.css
-@exec mkdir -p /var/cache/shibboleth
-@exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/cache/shibboleth
+@exec mkdir -p /var/db/shibboleth
+@exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/db/shibboleth
 @exec mkdir -p /var/log/shibboleth
 @exec chown -R %%SHIBD_USER%%:%%SHIBD_GROUP%% /var/log/shibboleth
 @exec mkdir -p /var/run/shibboleth
 @exec chown -R %%SHIBD_USER%%:%%WWWGRP%%  /var/run/shibboleth
 @exec chmod -R u=rwx,g=rx,o= /var/run/shibboleth
-@dirrmtry /var/cache/shibboleth
+@dirrmtry /var/db/shibboleth
 @dirrmtry /var/run/shibboleth
 @dirrmtry share/doc/shibboleth/api
 @dirrmtry share/doc/shibboleth

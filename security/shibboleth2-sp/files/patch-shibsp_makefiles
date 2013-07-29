@@ -1,0 +1,22 @@
+--- shibsp/Makefile.am.orig	2013-07-29 16:01:08.000000000 +0200
++++ shibsp/Makefile.am	2013-07-29 16:01:19.000000000 +0200
+@@ -244,7 +244,7 @@
+ pkgxmldir = $(datadir)/xml/@PACKAGE_NAME@
+ logdir = ${localstatedir}/log
+ rundir = $(localstatedir)/run
+-cachedir = $(localstatedir)/cache
++cachedir = $(localstatedir)/db
+ xmldir = $(datadir)/xml
+ 
+ paths.h: ${srcdir}/paths.h.in Makefile ${top_builddir}/config.status
+--- shibsp/Makefile.in.orig	2013-07-29 16:01:08.000000000 +0200
++++ shibsp/Makefile.in	2013-07-29 16:01:29.000000000 +0200
+@@ -682,7 +682,7 @@
+ pkgxmldir = $(datadir)/xml/@PACKAGE_NAME@
+ logdir = ${localstatedir}/log
+ rundir = $(localstatedir)/run
+-cachedir = $(localstatedir)/cache
++cachedir = $(localstatedir)/db
+ xmldir = $(datadir)/xml
+ EXTRA_DIST = \
+ 	shibsp.vcxproj \
