@@ -25,10 +25,6 @@ CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-t
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	aclocal automake autoconf autoheader
-ACLOCAL_ARGS=	-Im4
-AUTOMAKE_ARGS=	--add-missing
 
 .include <bsd.port.options.mk>
 
