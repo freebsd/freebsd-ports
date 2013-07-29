@@ -5,3 +5,4 @@ lib/libexpat.a
 lib/libexpat.la
 lib/libexpat.so
 lib/libexpat.so.%%SHLIB_MAJOR%%
+libdata/pkgconfig/expat.pc
