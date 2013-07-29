@@ -5017,7 +5017,7 @@ lib-depends:
 		dir=$${i#*:}  ; \
 		target="${DEPENDS_TARGET}"; \
 		depends_args="${DEPENDS_ARGS}"; \
-		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}:" ; \
+		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}" ; \
 		found=0 ; \
 		dirs="${LIB_DIRS} `${CAT} ${LOCALBASE}/libdata/ldconfig/* 2>/dev/null || : `" ; \
 		for libdir in $$dirs; do \
