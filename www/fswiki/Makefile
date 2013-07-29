@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fswiki
-# Date created:		Oct 10, 2004
-# Whom:			kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fswiki
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	fswiki/20797
