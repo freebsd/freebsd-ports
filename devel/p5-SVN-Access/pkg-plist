@@ -6,5 +6,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 @dirrm %%SITE_PERL%%/SVN/Access
 @dirrmtry %%SITE_PERL%%/SVN
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/svnaclmgr.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

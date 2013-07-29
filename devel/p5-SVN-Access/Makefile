@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-SVN-Access
-# Date created:		2008-02-11
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Access
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,13 +21,16 @@ MAN3=		SVN::Access.3 \
 		SVN::Access::Group.3 \
 		SVN::Access::Resource.3
 
-.if !defined(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+STRIP=
+PORTEXAMPLES=	svnaclmgr.pl
+
 post-install:
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} -name \*.pl -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -name \*.pl -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${INSTALL_PROGRAM} ${PORTEXAMPLES} \
+		${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
