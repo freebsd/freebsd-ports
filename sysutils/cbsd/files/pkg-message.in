@@ -1,10 +1,14 @@
 ===============================================================================
 cbsd is now installed, but it requires some additional setup.
 
-****************************************************
-Please run: env workdir="/path" %%PREFIX%%/cbsd/sudoexec/initenv
-****************************************************
+For the first time please run:
 
-Where /path is path for cbsd workdir, e.g.: /usr/jails
+ env workdir="/path" %%PREFIX%%/cbsd/sudoexec/initenv
 
-=============================================================================
+where /path is path for cbsd workdir, e.g.: /usr/jails 
+
+For upgrade an existing installation:
+
+ cbsd initenv
+
+===============================================================================
