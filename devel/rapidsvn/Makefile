@@ -17,8 +17,6 @@ WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
 USES=		gettext
-USE_AUTOTOOLS=	autoconf libtool automake aclocal
-AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \
@@ -32,7 +30,6 @@ CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 
 USE_LDCONFIG=	yes
 MAN1=		rapidsvn.1
-AUTOTOOLSFILES=	aclocal.m4
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/manpage/rapidsvn.1 ${MAN1PREFIX}/man/man1/
