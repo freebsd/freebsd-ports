@@ -3,6 +3,7 @@
 
 PORTNAME=	metasploit
 DISTVERSION=	4.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/archive/
 DISTNAME=	framework-${DISTVERSION}
@@ -16,6 +17,8 @@ RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
 		rubygem-msgpack>=0:${PORTSDIR}/devel/rubygem-msgpack \
 		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
+		rubygem-network_interface>=0.0.1:${PORTSDIR}/net/rubygem-network_interface \
+		rubygem-packetfu>=1.1.8:${PORTSDIR}/net/rubygem-packetfu \
 		rubygem-pcaprub>=0:${PORTSDIR}/net/rubygem-pcaprub \
 		rubygem-robots>=0:${PORTSDIR}/www/rubygem-robots
 
