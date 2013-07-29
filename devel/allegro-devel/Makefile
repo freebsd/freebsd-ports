@@ -23,12 +23,9 @@ LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		physfs.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	${LOCALBASE}/bin/pandoc:${PORTSDIR}/textproc/hs-pandoc
 
-USE_GMAKE=	yes
-USE_CMAKE=	yes
+USES=		gmake cmake pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes
-USE_PKGCONFIG=	build
-WANT_GNOME=	yes
 USE_OPENAL=	soft
 USE_GL=		gl glu
 USE_FREETYPE=	yes
