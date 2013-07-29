@@ -24,7 +24,7 @@ RUN_DEPENDS=	rubygem-coderay>=1.0.0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-rsvg2>0:${PORTSDIR}/graphics/rubygem-rsvg2 \
 		rubygem-rttool>0:${PORTSDIR}/textproc/rubygem-rttool
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
