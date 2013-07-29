@@ -67,29 +67,98 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The phpMyAdmin development team reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-8.php">
-	  <p>Self-XSS in "Showing rows." (phpMyAdmin35 only)</p>
+	  <p>XSS due to unescaped HTML Output when executing a SQL query.</p>
+	  <p>Using a crafted SQL query, it was possible to produce an
+	  XSS on the SQL query form.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	  logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users from accessing the required
+	  form.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-9.php">
-	  <p>Self-XSS in Display chart.</p>
-	  <p>Stored XSS in Server status monitor.</p>
-	  <p>Stored XSS in navigation panel logo link (phpMyAdmin35 only).</p>
-	  <p>Self-XSS in setup, trusted proxies validation.</p>
+	  <p>5 XSS vulnerabilities in setup, chart display, process
+	  list, and logo link.</p>
+	  <ul>
+	    <li>In the setup/index.php, using a crafted # hash with a
+	    Javascript event, untrusted JS code could be
+	    executed.</li>
+	    <li>In the Display chart view, a chart title containing
+	    HTML code was rendered unescaped, leading to possible
+	    JavaScript code execution via events.</li>
+	    <li>A malicious user with permission to create databases
+	    or users having HTML tags in their name, could trigger an
+	    XSS vulnerability by issuing a sleep query with a long
+	    delay. In the server status monitor, the query parameters
+	    were shown unescaped.</li>
+	    <li>By configuring a malicious URL for the phpMyAdmin logo
+	    link in the navigation sidebar, untrusted script code
+	    could be executed when a user clicked the logo.</li>
+	    <li>The setup field for "List of trusted proxies for IP
+	    allow/deny" Ajax validation code returned the unescaped
+	    input on errors, leading to possible JavaScript execution
+	    by entering arbitrary HTML.</li>
+	  </ul>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-11.php">
-	  <p>Unencoded json object.</p>
+	  <p>If a crafted version.json would be presented, an XSS
+	  could be introduced.</p>
+	  <p>Due to not properly validating the version.json file,
+	  which is fetched from the phpMyAdmin.net website, could lead
+	  to an XSS attack, if a crafted version.json file would be
+	  presented.</p>
+	  <p>This vulnerability can only be exploited with a
+	  combination of complicated techniques and tricking the user
+	  to visit a page.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-12.php">
-	  <p>Full path disclosure.</p>
+	  <p>Full path disclosure vulnerabilities.</p>
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	  unexpected way, it is possible to trigger phpMyAdmin to
+	  display a PHP error message which contains the full path of
+	  the directory where phpMyAdmin is installed.</p>
+	  <p>This path disclosure is possible on servers where the
+	  recommended setting of the PHP configuration directive
+	  display_errors is set to on, which is against the
+	  recommendations given in the PHP manual.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-13.php">
-	  <p>Stored XSS in link transformation plugin.</p>
+	  <p> XSS vulnerability when a text to link transformation is
+	  used.</p>
+	  <p>When the TextLinkTransformationPlugin is used to create a
+	  link to an object when displaying the contents of a table,
+	  the object name is not properly escaped, which could lead to
+	  an XSS, if the object name has a crafted value.</p>
+	  <p>The stored XSS vulnerabilities can be triggered only by
+	  someone who logged in to phpMyAdmin, as the usual token
+	  protection prevents non-logged-in users from accessing the
+	  required forms.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-14.php">
-	  <p>Self-XSS in schema export.</p>
+	  <p>Self-XSS due to unescaped HTML output in schema
+	  export.</p>
+	  <p>When calling schema_export.php with crafted parameters,
+	  it is possible to trigger an XSS.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	  logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users from accessing the required
+	  form.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-15.php">
-	  <p>Control user SQL injection in pmd_pdf.php.</p>
-	  <p>Control user SQL injection in schema_export.php.</p>
+	  <p>SQL injection vulnerabilities, producing a privilege
+	  escalation (control user).</p>
+	  <p>Due to a missing validation of parameters passed to
+	  schema_export.php and pmd_pdf.php, it was possible to inject
+	  SQL statements that would run with the privileges of the
+	  control user. This gives read and write access to the tables
+	  of the configuration storage database, and if the control
+	  user has the necessary privileges, read access to some
+	  tables of the mysql database.</p>
+	  <p>These vulnerabilities can be triggered only by someone
+	  who logged in to phpMyAdmin, as the usual token protection
+	  prevents non-logged-in users from accessing the required
+	  form. Moreover, a control user must have been created and
+	  configured as part of the phpMyAdmin configuration storage
+	  installation.</p>
 	</blockquote>
       </body>
     </description>
@@ -101,12 +170,13 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-13.php</url>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-14.php</url>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-15.php</url>
-      <url>http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.0.4.2/phpMyAdmin-4.0.4.2-notes.html/view</url>
       <url>http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/3.5.8.2/phpMyAdmin-3.5.8.2-notes.html/view</url>
+      <url>http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/4.0.4.2/phpMyAdmin-4.0.4.2-notes.html/view</url>
     </references>
     <dates>
       <discovery>2013-07-28</discovery>
       <entry>2013-07-28</entry>
+      <modified>2013-07-29</modified>
     </dates>
   </vuln>
 
