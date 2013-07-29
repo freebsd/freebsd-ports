@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gifdiff.1 gifsicle.1
 
-PORTDOCS=	NEWS README
+PORTDOCS=	NEWS README.md
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
