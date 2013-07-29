@@ -14,7 +14,6 @@ COMMENT=	Decoder implementation of the JBIG2 image compression format
 USE_XZ=		yes:src
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	PNG TESTS
 OPTIONS_DEFAULT=	PNG
@@ -23,18 +22,15 @@ TESTS_DESC=	Download and use test-images for post-build testing
 
 MAN1=		jbig2dec.1
 
-MAKE_JOBS_SAFE=	yes
 EXTRACT_AFTER_ARGS+=	--exclude sha1.h --exclude 'getopt*'
 
 LICENSE=	GPLv3
 
-.include <bsd.port.options.mk>
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ON=	--with-libpng=${LOCALBASE}
+PNG_CFLAGS=		-I${LOCALBASE}/include/libpng15
 
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=--with-libpng=${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}
 MASTER_SITES+=	http://jbig2dec.sourceforge.net/ubc/:tests
