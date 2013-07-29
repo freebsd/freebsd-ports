@@ -8,6 +8,7 @@ include/lfcbase/Chain.h
 include/lfcbase/CommandExecuter.h
 include/lfcbase/Crypt.h
 include/lfcbase/Datetime.h
+include/lfcbase/Directory.h
 include/lfcbase/Exception.h
 include/lfcbase/File.h
 include/lfcbase/GetLongOpt.h
