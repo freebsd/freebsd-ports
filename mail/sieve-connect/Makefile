@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sieve-connect
-PORTVERSION=	0.85
+PORTVERSION=	0.86
 CATEGORIES=	mail
 MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -32,7 +32,7 @@ MAN1=		sieve-connect.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	ChangeLog README TODO
+PORTDOCS=	ChangeLog README.md TODO
 .endif
 
 do-install:
@@ -40,10 +40,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/sieve-connect.1 \
 		${MANPREFIX}/man/man1/sieve-connect.1
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for _doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${_doc} ${DOCSDIR}/${_doc}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
