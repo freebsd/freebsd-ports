@@ -222,6 +222,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/python/rational.pyc
 %%DATADIR%%/%%PORTVERSION%%/python/safeeval.py
 %%DATADIR%%/%%PORTVERSION%%/python/safeeval.pyc
+%%DATADIR%%/%%PORTVERSION%%/scm/accreg.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/auto-beam.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/autochange.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/backend-library.scm
