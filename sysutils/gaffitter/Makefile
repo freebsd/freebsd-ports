@@ -1,4 +1,4 @@
-# Created by: corky1951@comcast.net
+# Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
 
 PORTNAME=	gaffitter
@@ -8,22 +8,23 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Bin packing utility that uses a genetic algorithm
+COMMENT=	Binary packing utility that uses a genetic algorithm
 
 LICENSE=	GPLv3 # or later
 
 USE_BZIP2=	yes
+USES=		gmake	# parallel builds (-jX) are broken with BSD make(1)
 
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		${PORTNAME}.1
-.endif
-
 PLIST_FILES=	bin/${PORTNAME}
+
+# Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds
+post-patch:
+	@${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.endif
 
 .include <bsd.port.mk>
