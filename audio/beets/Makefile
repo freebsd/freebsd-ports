@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@freebsd.org>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	beets
@@ -6,7 +6,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	A media library management system for obsessive-compulsive music geeks
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.21:${PORTSDIR}/audio/py-mutagen \

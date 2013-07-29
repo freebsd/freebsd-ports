@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@freebsd.org>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	musicbrainzngs
@@ -7,7 +7,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Python Musicbrainz NGS site bindings
 
 LICENSE=	BSD

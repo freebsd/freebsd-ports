@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 DISTNAME=	xen-${PORTVERSION}
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Xen tools within FreeBSD domU
 
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/

@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@freebsd.org>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	librouteros
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://verplant.org/librouteros/files/
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Library for communicating with network devices by MikroTik
 
 LICENSE=	GPLv2

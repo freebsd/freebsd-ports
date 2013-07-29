@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@freebsd.org>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -8,7 +8,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	A Perl library to access Domain Name Registries/Registrars
 
 RUN_DEPENDS=	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
