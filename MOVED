@@ -4828,3 +4828,4 @@ x11-toolkits/qwt4||2013-07-26|Has expired: Depends on QT3
 x11-wm/bbconf||2013-07-26|Has expired: Depends on QT3
 x11-wm/kompmgr||2013-07-26|Has expired: Depends on QT3
 audio/artswrapper||2013-07-27|Depend on the expired audio/arts
+net/ns2|net/ns|2013-07-29|Duplicate ports merged
