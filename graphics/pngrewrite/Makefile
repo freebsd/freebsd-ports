@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pngrewrite
-# Date created:		10 February 2004
-# Whom:			Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	pngrewrite
 PORTVERSION=	1.4.0
@@ -13,9 +9,9 @@ MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	A PNG palette optimizer
+COMMENT=	PNG palette optimizer
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
