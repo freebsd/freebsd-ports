@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
@@ -16,13 +16,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		lzo2:${PORTSDIR}/archivers/lzo2
 
+USES=		gmake
 USE_XZ=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	STRIP="${STRIP_CMD} ${STRIP}"
 CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}"
-USE_GMAKE=	yes
 MAKE_ARGS=	VERBOSE=1		# We want to see what's going on
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CXXFLAGS=	# Set to empty as OpenTTD treats it as an addition to CFLAGS
