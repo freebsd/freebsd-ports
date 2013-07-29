@@ -12,9 +12,9 @@ COMMENT=	Music collection manager and player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine \
-		tag.1:${PORTSDIR}/audio/taglib	\
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine \
+		libtag.so:${PORTSDIR}/audio/taglib	\
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 OPTIONS_DEFINE=	DBUS CURL NLS NEWREMOTE GCRYPT DOCS
 OPTIONS_SINGLE=	FOX
@@ -30,7 +30,6 @@ OPTIONS_SUB=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --prefix=${PREFIX}
-MAKE_JOBS_SAFE=	yes
 
 USES=		pkgconfig gmake
 USE_XZ=		yes
