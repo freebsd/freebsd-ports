@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--enable-unicode
 BF_LIBS+=		-liconv
 .endif
 .if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=		gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=		libgsl.so:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
