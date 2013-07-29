@@ -13,9 +13,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
     		bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
-USES=		bison pathfix gettext
+USES=		bison pathfix gettext gmake
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -62,6 +61,7 @@ post-patch:
 		${WRKSRC}/mcs/class/Mono.WebBrowser/build-csproj2k5
 	@${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^#!/bin/bash|#!/bin/sh|g'
+	@${REPLACE_CMD} 's/(1)/(1.0)/g' ${WRKSRC}/configure
 
 tests: build
 	@${ECHO_MSG} "===> Running mono regression tests"
