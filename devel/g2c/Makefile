@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Glade to C translator
 
+DEPRECATED=	Not supported upstream anymore
+EXPIRATION_DATE=	2013-08-29
+
 PLIST_FILES=	bin/g2c
 USES=        pathfix
 USE_GNOME=	gtk12 libxml orbit
