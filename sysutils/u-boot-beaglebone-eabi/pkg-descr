@@ -1,0 +1,18 @@
+U-Boot loader for BeagleBone and BeagleBone Black.
+
+This version is patched so that:
+ * ELF and API features are enabled
+ * U-Boot binary is called BB-UBOOT.IMG
+ * It loads env from BB-UENV.TXT (an empty file suffices)
+ * It loads BBONE.DTB if running on an older (white) BeagleBone,
+   or BBONEBLK.DTB if running on a BeagleBone Black
+ * By default, it loads ELF ubldr from file BBUBLDR to address 0x88000000
+
+Note: prefixing the boot files with 'BB' allows building
+images with boot bits for more than one board.
+
+For information about running FreeBSD on BeagleBone or BeagleBone Black, see
+ https://wiki.freebsd.org/FreeBSD/arm/BeagleBone
+
+For general information about U-Boot, see
+WWW: http://www.denx.de/wiki/U-Boot
