@@ -33,6 +33,7 @@ PORTDOCS=	AUTHORS NEWS README ChangeLog
 
 OPTIONS_DEFINE=	GTK2 PROFILING DOCS
 OPTIONS_SUB=	yes
+PROFILING_DESC=	Enable profiling
 
 GTK2_CONFIGURE_ON=	--enable-gtk=2.4
 PROFILING_CONFIGURE_ENABLE=	profiling
@@ -40,8 +41,7 @@ PROFILING_CONFIGURE_ENABLE=	profiling
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		glademm-2.4:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS+=	glademm-2.4:${PORTSDIR}/devel/libglademm24
 PROG_FILES+=	${WRKSRC}/src/gtk/gvba
 GTK2_DATA_FILES=	${WRKSRC}/src/gtk/vba.glade
 .endif
