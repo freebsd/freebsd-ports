@@ -16,6 +16,6 @@ _INCLUDE_USES_ICONV_MK=	yes
 IGNORE=	USES=iconv does not require args
 .endif
 
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	libiconv.so.3:${PORTSDIR}/converters/libiconv
 
 .endif
