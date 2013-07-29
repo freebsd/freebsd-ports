@@ -3,28 +3,23 @@
 PORTNAME=	cppi
 PORTVERSION=	1.18
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A tool to indent the C preprocessor directives
+COMMENT=	Tool to indent the C preprocessor directives
 
 USE_XZ=		yes
-USES=		gettext charsetfix
+USES=		charsetfix gmake	# gmake is needed for -jX builds
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		cppi.1
+MAN1=		${PORTNAME}.1
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:(libdir)/lib:(libdir):' ${WRKSRC}/Makefile.in
