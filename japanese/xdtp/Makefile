@@ -1,4 +1,4 @@
-# Created by: Masanori OZAWA (ozawa@ongs.co.jp)
+# Created by: Masanori OZAWA <ozawa@ongs.co.jp>
 # $FreeBSD$
 
 PORTNAME=	xdtp
@@ -6,19 +6,19 @@ PORTVERSION=	1.3.1
 PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES+=	http://www.ongs.co.jp/projects/xdtp/
-DISTNAME=	xdtp-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ozawa@ongs.co.jp
-COMMENT=	XDTP (XML Document Transfer Program)
+COMMENT=	XML document transfer program
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2 libxslt
-USES=	pkgconfig
 GNU_CONFIGURE=	yes
-MAKE_JOB_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GDK DEBUG INCLUDE
 GDK_DESC=	Build with Gdk-Pixbuf
@@ -49,5 +49,11 @@ PLIST_SUB+=	XDTP_INC=""
 MAKE_ARGS+=	-DWITHOUT_INCLUDE
 PLIST_SUB+=	XDTP_INC="@comment "
 .endif
+
+# Unbreak parallel builds (-jX) by calling make(1) correctly
+post-patch:
+	@${REINPLACE_CMD} -E 's/cd(.+)(;| &&) (\$${MAKE})/\3 -C\1/' \
+		${WRKSRC}/Makefile ${WRKSRC}/bin/Makefile \
+		${WRKSRC}/java/Makefile ${WRKSRC}/misc/Makefile
 
 .include <bsd.port.mk>
