@@ -18,6 +18,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	The "Sensible" Unix Password Cracker
 
+BROKEN=		Fail to package
+
 WRKSRC=		${WRKDIR}/c50a
 
 pre-configure:
