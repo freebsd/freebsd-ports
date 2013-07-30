@@ -1479,8 +1479,6 @@ share/pixmaps/anjuta/vcs-updated.png
 @dirrm include/libanjuta-1.0/libanjuta/interfaces
 @dirrm include/libanjuta-1.0/libanjuta
 @dirrm include/libanjuta-1.0
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/applications
 @dirrmtry share/icons/gnome/scalable/mimetypes
 @dirrmtry share/icons/gnome/scalable
