@@ -1,22 +1,22 @@
 *************************************************************************
 
- Enable Icinga in /etc/rc.conf with the following line:
+  Enable Icinga in /etc/rc.conf with the following line:
 
-   icinga_enable="YES"
+	icinga_enable="YES"
 
- Configuration templates are available in %%PREFIX%%/etc/icinga as
- *.cfg-sample files.  Copy them to *.cfg files where required and
- edit to suit your needs.  Documentation is available in HTML form
- in %%PREFIX%%/%%ICINGAWWWDIR%%/docs/.
+  Configuration templates are available in %%PREFIX%%/etc/icinga as
+  *.cfg-sample files.  Copy them to *.cfg files where required and
+  edit to suit your needs.  Documentation is available in HTML form
+  in %%PREFIX%%/%%ICINGAWWWDIR%%/docs/.
 
- If you don't already have a web server running, you will need to
- install and configure one to finish off your Icinga installation.
- If you selected APACHE in Icinga's OPTION screen, the configuration
- is already installed as %%LOCALBASE%%/etc/apache22/extra/icinga.conf
- and you only need to source the configuration file in Apache's config.
+  If you don't already have a web server running, you will need to
+  install and configure one to finish off your Icinga installation.
+  If you selected APACHE in Icinga's OPTION screen, the configuration
+  is already installed as %%LOCALBASE%%/etc/apache22/extra/icinga.conf
+  and you only need to source the configuration file in Apache's config.
 
- If you like to use database backend with IDOutils the SQL scripts to
- setup the database have been installed in
- %%PREFIX%%/%%EXAMPLESDIR%%/idoutils/db/.
+  If you like to use database backend with IDOutils the SQL scripts to
+  setup the database have been installed in
+  %%PREFIX%%/%%EXAMPLESDIR%%/idoutils/db/.
 
 *************************************************************************
