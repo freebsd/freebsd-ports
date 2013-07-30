@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2010-09-17 10:14:49.000000000 +0200
-+++ Makefile.PL	2013-03-29 14:42:20.000000000 +0100
-@@ -25,30 +25,22 @@
+--- Makefile.PL-orig	2013-07-09 09:44:14.000000000 +0200
++++ Makefile.PL	2013-07-09 09:48:24.000000000 +0200
+@@ -28,33 +28,23 @@
  Getopt::Long::GetOptions(
      $opt,
      "help",
@@ -16,29 +16,33 @@
 -
 -use vars qw($loadlibs);
 -$loadlibs= "-L" . $opt->{'prefix'} . " -llfc";
-+# use vars qw($loadlibs);
-+# $loadlibs= "-L/usr/local/lib";
+ my $so = $Config{so};
  
  WriteMakefile(
      'NAME'          => 'DBD::Cego',
      'VERSION_FROM'  => 'Cego.pm',
-     'PREREQ_PM'     => {DBI => 1.03},
+-    'PREREQ_PM'     => {DBI => 1.03},
++    'PREREQ_PM'     => {DBI => 1.628},
      'OBJECT'        => '$(O_FILES)',
 -    'INC'           => '-I$(DBI_INSTARCH_DIR) -I' . $opt->{'prefix'} . '/include -I' . $opt->{'prefix'} . '/include',
--    'MYEXTLIB'    => $opt->{'prefix'} . "/lib/libcego.a " 
--	      . $opt->{'prefix'} . "/lib/liblfcxml.a " 
--	      . $opt->{'prefix'} . "/lib/liblfc.a",
+-    'MYEXTLIB'    => $opt->{'prefix'} . "/lib/libcego.$so* " 
+-	      . $opt->{'prefix'} . "/lib/liblfcxml.$so* " 
+-	      . $opt->{'prefix'} . "/lib/liblfcbase.$so",
 -    "CC" => "g++",
 -    "LD" => "g++",
+-    "XSPROTOARG" => "-noprototypes",
+-    'OPTIMIZE'      => '-O6 -DNDEBUG=1',
 +    'INC'           => '-I$(DBI_INSTARCH_DIR) -I/usr/local/include',
-+    'MYEXTLIB'      => '-lcego -llfcxml -llfc',
-+    'CC' => 'g++',
-+    'CCFLAGS' => '-O2 -pipe -fno-strict-aliasing -fpermissive',
-+    "LD" => "g++ -L/usr/local/lib",
-     "XSPROTOARG" => "-noprototypes",
-     'OPTIMIZE'      => '-O6 -DNDEBUG=1',
++    'MYEXTLIB'      => '-lcego -llfcxml -llfcbase',
++    'CC'            => 'g++',
++    'CCFLAGS'       => '-O2 -pipe -fno-strict-aliasing -fpermissive',
++    'LD'            => 'g++ -L/usr/local/lib',
++    'XSPROTOARG'    => '-noprototypes',
++    'OPTIMIZE'      => '-O3 -DNDEBUG=1',
      'XSOPT'             => '-C++',
-@@ -59,12 +51,6 @@
+     'TYPEMAPS'          => ['perlobject.map' ],
+     'clean'         => { FILES => 'config.h' },
+@@ -63,12 +53,6 @@
  sub Usage {
    print STDERR <<"USAGE";
  Usage: perl $0 [options]
