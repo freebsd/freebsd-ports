@@ -13,10 +13,10 @@ you update your ports collection, before attempting any port upgrades.
   a graphical toolkit) expired on 20130701 because QT3 and KDE3 were no
   longer maintained upstream.  These ports have been removed today.
 
-  Users of KDE3 are advized to switch to another desktop environment
+  Users of KDE3 are advised to switch to another desktop environment
   provided in the Ports Collection, e.g. KDE4 or Xfce.
 
-  Users of QT3 are advized to upgrade to the QT4 counterpart(s).
+  Users of QT3 are advised to upgrade to the QT4 counterpart(s).
 
 20130725:
   AFFECTS: users of net/openafs
