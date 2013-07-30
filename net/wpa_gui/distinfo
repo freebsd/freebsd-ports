@@ -1,2 +1,4 @@
-SHA256 (wpa_supplicant-0.5.11.tar.gz) = 5b4e73dc489a118293a3d08291730c3fab82c3542e1ad1fb12267180c3478f19
-SIZE (wpa_supplicant-0.5.11.tar.gz) = 723321
+SHA256 (wpa_supplicant-0.7.3.tar.gz) = d0cd50caa85346ccc376dcda5ed3c258eef19a93b3cade39d25760118ad59443
+SIZE (wpa_supplicant-0.7.3.tar.gz) = 1638224
+SHA256 (wpa-gui-icons.tar.gz) = c0d2adb4d8d9f58c015e4862a5ab50c7a562b6bb641e1bb6a0cc841249573b42
+SIZE (wpa-gui-icons.tar.gz) = 3797
