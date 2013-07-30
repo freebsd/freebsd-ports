@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130726:
+  AFFECTS: users of QT3 and KDE3
+  AUTHOR: rene@FreeBSD.org
+
+  All ports based on QT3 (including KDE3 but also ports which used QT3 as
+  a graphical toolkit) expired on 20130701 because QT3 and KDE3 were no
+  longer maintained upstream.  These ports have been removed today.
+
+  Users of KDE3 are advized to switch to another desktop environment
+  provided in the Ports Collection, e.g. KDE4 or Xfce.
+
+  Users of QT3 are advized to upgrade to the QT4 counterpart(s).
+
 20130725:
   AFFECTS: users of net/openafs
   AUTHOR: bjk@FreeBSD.org
