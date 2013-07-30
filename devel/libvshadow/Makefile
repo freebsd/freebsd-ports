@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libvshadow
-PORTVERSION=	20130509
+PORTVERSION=	20130723
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZDZXRFVMdnZCeHc/ \
+		LOCAL/antoine
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse pathfix gettext iconv
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
