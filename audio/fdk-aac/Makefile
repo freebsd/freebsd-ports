@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fdk-aac
-# Date created:		6 Aug 2012
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by:	Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fdk-aac
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
