@@ -1,12 +1,9 @@
-# Ports collection makefile for:	py-werkzeug
-# Date created:				12 January 2010
-# Whom:					Moggie <moggie@elasticmind.net>
-#
+# Created by: Moggie <moggie@elasticmind.net>
 # $FreeBSD$
 #
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +13,8 @@ MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Python utilities collection for building WSGI applications
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Werkzeug
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
@@ -26,22 +22,18 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 .include <bsd.port.pre.mk>
 
-# Avoid to install patch files backup
-post-patch:
-	@cd ${WRKSRC} && \
-		${FIND} . -type f -name '*.orig' -exec ${RM} -f \{\} \; 
-
-.if !defined(NOPORTEXAMPLES)
-post-build:
-# Bytecode
-	${PYTHON_CMD} -m compileall ${WRKSRC}/examples ; \
-	${PYTHON_CMD} -O -m compileall ${WRKSRC}/examples
-
 post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
+
+.if ${PYTHON_REL} >= 320
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 .include <bsd.port.post.mk>
