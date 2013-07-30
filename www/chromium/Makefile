@@ -6,6 +6,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	28.0.1500.71
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -96,7 +97,7 @@ OPTIONS_DEFAULT=	CODECS GCONF CLANG
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || ! ${PORT_OPTIONS:MCLANG}
+.if ${OSVERSION} < 902000 || ! ${PORT_OPTIONS:MCLANG}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -128,7 +129,7 @@ GYP_DEFINES+=	disable_sse2=1
 .endif
 
 .if ${PORT_OPTIONS:MCLANG}
-.if ${OSVERSION} < 900033
+.if ${OSVERSION} < 902000
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
 .endif
 CC=		clang
@@ -150,7 +151,6 @@ GYP_DEFINES+=	buildtype=Official
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
