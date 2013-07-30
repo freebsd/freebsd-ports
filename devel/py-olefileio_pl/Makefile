@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olefileio_pl
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel python
 MASTER_SITES=	http://cdn.bitbucket.org/decalage/olefileio_pl/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
