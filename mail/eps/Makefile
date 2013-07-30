@@ -1,17 +1,18 @@
-# New ports collection makefile for:   eps
-# Date created:                 21 Jul 2005
-# Whom:				ismail@enderunix.org
-#
+# Created by: ismail@enderunix.org
 # $FreeBSD$
-#
 
 PORTNAME=	eps
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}inter7/${PORTNAME}inter7/${PORTVERSION}
 
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	EPS is a Email Parsing System
+
+OPTIONS_DEFINE=	DOCS
+
+USE_CSTD=	gnu89
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +34,7 @@ do-install:
 	${MKDIR} ${PREFIX}/include/eps
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/eps
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
