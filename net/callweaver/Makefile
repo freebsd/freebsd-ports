@@ -14,12 +14,14 @@ COMMENT=	Open source IP PBX
 LIB_DEPENDS=	spandsp.2:${PORTSDIR}/comms/spandsp-devel \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pic
 USE_RC_SUBR=	callweaver
+USE_CSTD=	gnu89
+CFLAGS+=	-Wno-return-type
 
 CWUSER=		callweaver
 CWGROUP=	callweaver
