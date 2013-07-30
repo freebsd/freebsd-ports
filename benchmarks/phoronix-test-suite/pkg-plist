@@ -10,6 +10,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/analyze_all_runs.php
 %%DATADIR%%/pts-core/commands/analyze_batch.php
 %%DATADIR%%/pts-core/commands/analyze_image_delta.php
+%%DATADIR%%/pts-core/commands/auto_compare.php
 %%DATADIR%%/pts-core/commands/batch_benchmark.php
 %%DATADIR%%/pts-core/commands/batch_install.php
 %%DATADIR%%/pts-core/commands/batch_run.php
@@ -20,6 +21,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/copy_run_in_result_file.php
 %%DATADIR%%/pts-core/commands/debug_install.php
 %%DATADIR%%/pts-core/commands/debug_run.php
+%%DATADIR%%/pts-core/commands/debug_self_test.php
 %%DATADIR%%/pts-core/commands/debug_test_download_links.php
 %%DATADIR%%/pts-core/commands/default_benchmark.php
 %%DATADIR%%/pts-core/commands/default_run.php
@@ -38,6 +40,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/info.php
 %%DATADIR%%/pts-core/commands/install_dependencies.php
 %%DATADIR%%/pts-core/commands/install_test.php
+%%DATADIR%%/pts-core/commands/internal_run.php
 %%DATADIR%%/pts-core/commands/interactive.php
 %%DATADIR%%/pts-core/commands/list_available_suites.php
 %%DATADIR%%/pts-core/commands/list_available_tests.php
@@ -48,6 +51,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/list_missing_dependencies.php
 %%DATADIR%%/pts-core/commands/list_modules.php
 %%DATADIR%%/pts-core/commands/list_possible_dependencies.php
+%%DATADIR%%/pts-core/commands/list_recommended_tests.php
 %%DATADIR%%/pts-core/commands/list_saved_results.php
 %%DATADIR%%/pts-core/commands/list_test_usage.php
 %%DATADIR%%/pts-core/commands/list_unsupported_tests.php
@@ -92,9 +96,11 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-angstrom-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-arch-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-debian-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-dragonfly-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-fedora-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-freebsd-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-gentoo-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-macports-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-mandrivalinux-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-netbsd-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-openindiana-packages.sh
@@ -107,10 +113,12 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-zenwalk-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/xml/angstrom-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/arch-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/dragonfly-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/fedora-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/freebsd-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/generic-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/gentoo-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/macports-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/mandrivalinux-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/netbsd-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/openindiana-packages.xml
@@ -193,6 +201,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_solaris_parser.php
 %%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_windows_parser.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_base.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_cache.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_device_interface.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_device_property.php
@@ -214,6 +223,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_temp.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_write_speed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/memory_usage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/network_usage.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/swap_usage.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_fanspeed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_iowait.php
@@ -249,6 +259,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_arrays.php
 %%DATADIR%%/pts-core/objects/pts_c.php
 %%DATADIR%%/pts-core/objects/pts_compression.php
+%%DATADIR%%/pts-core/objects/pts_exdep_generic_parser.php
+%%DATADIR%%/pts-core/objects/pts_exdep_platform_parser.php
 %%DATADIR%%/pts-core/objects/pts_file_io.php
 %%DATADIR%%/pts-core/objects/pts_flags.php
 %%DATADIR%%/pts-core/objects/pts_html_template.php
