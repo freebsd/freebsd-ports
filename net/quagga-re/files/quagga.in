@@ -2,7 +2,7 @@
 
 # $FreeBSD$
 #
-# PROVIDE: quagga
+# PROVIDE: quagga dynamicrouting
 # REQUIRE: netif routing 
 # KEYWORD: nojail
 
