@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bird
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.11
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -18,8 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_CSTD=	gnu89
 
-OPTIONS_DEFINE=	FIBS FIREWALL AGG
-FIBS_DESC=	Enable multiple fib support
+OPTIONS_DEFINE=	FIREWALL AGG
 FIREWALL_DESC=	Enable firewall protocol
 AGG_DESC=	Enable aggregation protocol (EXPERIMENTAL)
 NO_OPTIONS_SORT=	yes
@@ -29,10 +28,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	bird
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MFIBS}
-EXTRA_PATCHES+=	${FILESDIR}/fibs.diff
-.endif
 
 .if ${PORT_OPTIONS:MFIREWALL}
 EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
@@ -47,16 +42,5 @@ post-install:
 		${CP} -p ${PREFIX}/etc/bird.conf.example ${PREFIX}/etc/bird.conf ; \
 		${CHMOD} 0640 ${PREFIX}/etc/bird.conf ; \
 	fi
-.if ${PORT_OPTIONS:MFIBS}
-	@${ECHO_MSG}
-	@${ECHO_MSG} =====================================================================
-	@${ECHO_MSG}
-	@${ECHO_MSG} "        WARNING: Please take a look on kern/134931"
-	@${ECHO_MSG} "        WARNING: before using multiple fibs in production!"
-	@${ECHO_MSG} "        This PR was fixed in r225975(8.2-S) on Oct 4, 2011"
-	@${ECHO_MSG}
-	@${ECHO_MSG} =====================================================================
-	@${ECHO_MSG}
-.endif
 
 .include <bsd.port.post.mk>
