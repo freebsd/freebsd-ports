@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/${GH_USER}/${GH_PORTNAME}/tarball/${GH_VERSION}/ \
-		NL:lapack,lapack_tmg
-MASTER_SITE_SUBDIR=	lapack/:lapack lapack/timing/:lapack_tmg
-DISTFILES=	${GH_USER}-${GH_PORTNAME}-${GH_VERSION}-0-g${GH_REVISION}${EXTRACT_SUFX} \
-		lapack-${LAPACKVER}.tgz:lapack \
+MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
+		NL:lapack_tmg
+MASTER_SITE_SUBDIR=	lapack/timing/:lapack_tmg
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:${PORTNAME} \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -18,13 +17,12 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DIST_SUBDIR=	openblas
-FETCH_ARGS=	-pRr
-GH_USER=	xianyi
-GH_PORTNAME=	OpenBLAS
-GH_REVISION=	54e7b37
-GH_VERSION=	v${PORTVERSION}
-LAPACKVER=	3.4.2
-LAPACK_SRCFILE=	lapack-${LAPACKVER}.tgz
+FETCH_ARGS=	-Fpr
+GH_ACCOUNT=	xianyi
+GH_PROJECT=	OpenBLAS
+#GH_TAGNAME=	v0.2.7
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	f26b7a0
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
@@ -39,7 +37,7 @@ OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVE
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
 
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-87b4d0c
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
 OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX
 
@@ -92,8 +90,8 @@ BUILDFLAGS+=	NO_AVX=1
 .endif
 
 post-extract:
-	cd ${DISTDIR}/${DIST_SUBDIR} ; \
-	${CP} ${LAPACK_SRCFILE} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
+#	cd ${DISTDIR}/${DIST_SUBDIR} ; \
+#	${CP} ${LAPACK_SRCFILE} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
 	${MKDIR} ${WRKDIR}/lib
 
 post-patch:
@@ -103,10 +101,6 @@ post-patch:
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" \
 		${WRKSRC}/Makefile.rule
-	${REINPLACE_CMD} -e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
-		${WRKSRC}/exports/gensymbol
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
 		${WRKSRC}/Makefile.rule \
 		${WRKSRC}/Makefile.tail \
@@ -117,6 +111,11 @@ post-patch:
 		${WRKSRC}/kernel/Makefile \
 		${WRKSRC}/kernel/Makefile.L3 \
 		${WRKSRC}/lapack/laswp/Makefile \
+		${WRKSRC}/lapack-netlib/SRC/Makefile \
+		${WRKSRC}/lapack-netlib/SRC/VARIANTS/Makefile \
+		${WRKSRC}/lapack-netlib/TESTING/MATGEN/Makefile \
+		${WRKSRC}/lapack-netlib/lapacke/src/Makefile \
+		${WRKSRC}/lapack-netlib/lapacke/utils/Makefile \
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
 	-e 's+%%LOCALBASE%%+${LOCALBASE}+' \
@@ -125,7 +124,6 @@ post-patch:
 	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
 	-e 's+%%_GCC_BUILD_DEPENDS%%+${_GCC_BUILD_DEPENDS}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
-	-e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
 		${WRKSRC}/Makefile.system
 .if ${PORT_OPTIONS:MOPENMP}
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
