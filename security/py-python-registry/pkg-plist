@@ -8,16 +8,3 @@
 %%PYTHON_SITELIBDIR%%/Registry/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Registry/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Registry
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/TheWindowsNTRegistryFileFormat.pdf
-%%PORTDOCS%%%%DOCSDIR%%/WinReg.txt
-%%PORTDOCS%%%%DOCSDIR%%/registry.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/findkey.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printall.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regfetch.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regview.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shellbags.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shelltypes.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeline.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
