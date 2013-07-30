@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
 
+USE_CSTD=	gnu89
 USE_PERL5=	yes
 
 SUB_FILES=	pkg-message mgettycfg
