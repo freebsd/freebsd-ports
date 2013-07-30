@@ -174,7 +174,6 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/uri.html
 %%DOCSDIR%%%%PORTVERSION%%/html/virshcmdref.html
 %%DOCSDIR%%%%PORTVERSION%%/html/windows.html
-%%DOCSDIR%%-python%%PORTVERSION%%/TODO
 %%DOCSDIR%%-python%%PORTVERSION%%/examples/basic.py
 %%DOCSDIR%%-python%%PORTVERSION%%/examples/create.py
 %%DOCSDIR%%-python%%PORTVERSION%%/examples/error.py

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -24,8 +23,7 @@ QEMU_DESC=	QEMU bindings
 
 OPTIONS_SUB=	yes
 
-QEMU_CONFIGURE_ON=	--with-qemu
-QEMU_CONFIGURE_OFF=	--without-qemu
+QEMU_CONFIGURE_WITH=	qemu
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -44,7 +42,11 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-sysctl \
 		--with-ssh2
 
-#limit to non-stable release x.x.x
+# workaround to override pkg-config calls
+CONFIGURE_ENV=	SSH2_LIBS="-L${LOCALBASE}/lib -lssh2 -lssl" \
+		SSH2_CFLAGS="-I${LOCLABASE}/include"
+
+# limit production release x.x.x
 PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
