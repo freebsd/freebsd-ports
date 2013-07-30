@@ -139,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/hub.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/hub.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/hub.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/kqueue.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/kqueue.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/kqueue.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/poll.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/poll.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/poll.pyo
