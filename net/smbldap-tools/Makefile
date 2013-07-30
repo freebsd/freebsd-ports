@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/sources/${PORTVERSION}/
 

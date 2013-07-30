@@ -1,3 +1,4 @@
+sbin/smbldap-config
 sbin/smbldap-groupadd
 sbin/smbldap-groupdel
 sbin/smbldap-grouplist
