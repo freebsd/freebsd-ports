@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-arrayfields
-# Date created:		07, Nov 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	arrayfields
-PORTVERSION=	4.7.4
+PORTVERSION=	4.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
