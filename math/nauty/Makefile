@@ -1,9 +1,5 @@
-# New ports collection makefile for:   nauty
-# Date created:        May 24 2001
-# Whom:                bremner@unb.ca
-#
+# Created by: bremner@unb.ca
 # $FreeBSD$
-#
 
 PORTNAME=	nauty
 PORTVERSION=	2.4r2
@@ -17,8 +13,8 @@ COMMENT=	Brendan McKay's graph isomorphism tester
 
 WRKSRC=		${WRKDIR}/${PORTNAME}24r2
 MAKEFILE=	makefile
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	YES
-MAKE_JOBS_SAFE=	YES
 PORTDOCS=	nug.pdf
 
 post-patch:
