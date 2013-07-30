@@ -863,6 +863,7 @@
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
+    SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-rubyrep
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
