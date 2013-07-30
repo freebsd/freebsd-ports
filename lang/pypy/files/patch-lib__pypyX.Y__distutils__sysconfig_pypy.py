@@ -5,7 +5,7 @@
  def get_python_inc(plat_specific=0, prefix=None):
      from os.path import join as j
 -    return j(sys.prefix, 'include')
-+    return j(sys.prefix, 'include', 'pypy' + sys.version.rsplit(' ', 1)[-1][:3])
++    return j(sys.prefix, 'include', 'pypy%s.%s' % sys.pypy_version_info[:2])
  
  def get_python_version():
      """Return a string containing the major and minor Python version,
@@ -15,8 +15,8 @@
      if standard_lib:
 -        return os.path.join(prefix, "lib-python", get_python_version())
 -    return os.path.join(prefix, 'site-packages')
-+        return os.path.join(prefix, 'lib', 'pypy' + sys.version[-6:-3])
-+    return os.path.join(prefix, 'lib', 'pypy' + sys.version.rsplit(' ', 1)[-1][:3], 'site-packages')
++        return os.path.join(prefix, 'lib', 'pypy%s.%s' % sys.pypy_version_info[:2])
++    return os.path.join(prefix, 'lib', 'pypy%s.%s' % sys.pypy_version_info[:2], 'site-packages')
  
  
  _config_vars = None

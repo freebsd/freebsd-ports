@@ -23,7 +23,7 @@
                  'scripts', 'data')
  _PY_VERSION = sys.version.split()[0]
  _PY_VERSION_SHORT = sys.version[:3]
-+_PYPY_VERSION = sys.version.rsplit(' ', 1)[-1][:-1]
++_PYPY_VERSION = '%s.%s.%s' % sys.pypy_version_info[:3]
 +_PYPY_VERSION_SHORT = _PYPY_VERSION[:3]
  _PY_VERSION_SHORT_NO_DOT = _PY_VERSION[0] + _PY_VERSION[2]
  _PREFIX = os.path.normpath(sys.prefix)

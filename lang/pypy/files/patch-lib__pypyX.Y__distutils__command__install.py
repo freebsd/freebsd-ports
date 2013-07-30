@@ -17,7 +17,7 @@
          # about needing recursive variable expansion (shudder).
  
          py_version = (string.split(sys.version))[0]
-+        pypy_version = sys.version[-6:-3]
++        pypy_version = '%s.%s.%s' % sys.pypy_version_info[:3]
          (prefix, exec_prefix) = get_config_vars('prefix', 'exec_prefix')
          self.config_vars = {'dist_name': self.distribution.get_name(),
                              'dist_version': self.distribution.get_version(),
