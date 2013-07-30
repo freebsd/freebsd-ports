@@ -1,10 +1,9 @@
-# Created by: ktsin@acm.org
+# Created by: Key-Teck SIN <ktsin@acm.org>
 # $FreeBSD$
 
 PORTNAME=	grive
 PORTVERSION=	0.2.0
 CATEGORIES=	net
-MASTER_SITES=	GH
 
 MAINTAINER=	ktsin@acm.org
 COMMENT=	Open source client for Google Drive
@@ -27,35 +26,14 @@ GH_TAGNAME=	v${PORTVERSION}
 USES=		cmake
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-MAKE_JOBS_UNSAFE=	yes
-
-FETCH_ARGS=	-pRr
-
 PLIST_FILES=	bin/grive
 MAN1=		grive.1
 
-.include <bsd.port.pre.mk>
-
-# We need clang or GCC 4.6+ to build
-# Piece of code copied from bsd.gecko.mk
-.if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014)
-CC=		/usr/bin/clang
-.endif
-.if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014)
-CXX=		/usr/bin/clang++
-.endif
-.if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900045)
-CPP=		/usr/bin/clang-cpp
-.endif
-.if ${CC} != "cc" && ${CPP} == "cpp"
-CPP=		${CC} -E
-.endif
-# fallback to gcc otherwise
-.if ${CC} == "cc" || ${CXX} == "c++"
-USE_GCC=	4.6+
-.endif
+# Allow to build with GCC 4.2
+post-patch:
+	@${REINPLACE_CMD} -e 's,log::,gr::&,g' ${WRKSRC}/grive/src/main.cc
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/grive
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
