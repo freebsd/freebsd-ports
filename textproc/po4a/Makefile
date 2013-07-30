@@ -22,6 +22,8 @@ USES=		gettext
 USE_PERL5=	yes
 PERL_MODBUILD=	yes
 
+BROKEN=		Installing files in wrong place
+
 MANPREFIX=	${PREFIX}
 MAN3PREFIX=	${MANPREFIX}
 MAN3=		\
