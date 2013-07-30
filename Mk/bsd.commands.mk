@@ -58,7 +58,6 @@ LDCONFIG?=	/sbin/ldconfig
 LHA_CMD?=	${LOCALBASE}/bin/lha
 LN?=		/bin/ln
 LS?=		/bin/ls
-MAKE_CMD?=	/usr/bin/make
 MKDIR?=		/bin/mkdir -p
 MKTEMP?=	/usr/bin/mktemp
 MOUNT?=		/sbin/mount

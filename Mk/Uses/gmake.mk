@@ -17,7 +17,6 @@ IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake takes no arguments
 
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=		MAKE=${GMAKE}
-MAKE_CMD=		${GMAKE}
-_USES_POST+=		gmake
+MAKE_CMD?=		${GMAKE}
 
 .endif

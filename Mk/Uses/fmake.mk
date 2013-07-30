@@ -19,6 +19,6 @@ IGNORE=	Incorrect 'USES+= fmake:${fmake_ARGS}' fmake takes no arguments
 FMAKE=			${LOCALBASE}/bin/fmake
 BUILD_DEPENDS+=		${FMAKE}:${PORTSDIR}/devel/fmake
 CONFIGURE_ENV+=		MAKE=${FMAKE}
-MAKE_CMD=		${FMAKE}
+MAKE_CMD?=		${FMAKE}
 .endif
 .endif
