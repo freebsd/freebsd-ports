@@ -8,12 +8,13 @@ MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/ \
 		http://fossies.org/unix/privat/
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A dd tool suitable for rescuing data from a medium with errors
+COMMENT=	dd tool suitable for rescuing data from a medium with errors
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
+USE_CSTD=	gnu89
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
