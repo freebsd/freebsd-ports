@@ -6,7 +6,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	cederom@tlen.pl
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Open On-Chip Debugger
 
 GNU_CONFIGURE=	yes
