@@ -1,15 +1,6 @@
---- Makefile.system.orig	2012-10-09 21:08:28.000000000 +0900
-+++ Makefile.system	2012-10-12 21:33:31.000000000 +0900
-@@ -10,7 +10,7 @@
- endif
- 
- ifndef NETLIB_LAPACK_DIR
--NETLIB_LAPACK_DIR = $(TOPDIR)/lapack-3.4.2
-+NETLIB_LAPACK_DIR = $(TOPDIR)/lapack-%%LAPACKVER%%
- endif
- 
- # Default C compiler
-@@ -125,6 +125,9 @@
+--- Makefile.system.orig	2013-07-26 02:34:45.000000000 +0900
++++ Makefile.system	2013-07-27 01:22:51.000000000 +0900
+@@ -142,6 +142,9 @@
  endif
  
  ifeq ($(OSNAME), FreeBSD)
@@ -19,7 +10,7 @@
  MD5SUM = md5 -r
  endif
  
-@@ -753,15 +756,6 @@
+@@ -856,15 +859,6 @@
  LIBSUFFIX = a
  endif
  
@@ -35,7 +26,7 @@
  ifndef SMP
  LIBNAME		= $(LIBPREFIX)$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.$(LIBSUFFIX)
-@@ -769,7 +763,6 @@
+@@ -872,7 +866,6 @@
  LIBNAME		= $(LIBPREFIX)p$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.$(LIBSUFFIX)
  endif
@@ -43,7 +34,7 @@
  
  
  LIBDLLNAME   = $(LIBPREFIX).dll
-@@ -783,7 +776,7 @@
+@@ -886,7 +879,7 @@
  LIBS_P		= $(TOPDIR)/$(LIBNAME_P)
  
  export OSNAME
