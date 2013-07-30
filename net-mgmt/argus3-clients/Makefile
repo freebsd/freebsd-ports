@@ -19,6 +19,8 @@ OPTIONS_DEFAULT=MANPAGES MYSQL SASL
 
 USES=		bison ncurses
 
+USE_CSTD=	gnu89
+
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	true
