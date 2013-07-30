@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/_compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/_compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/_compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/app.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/app.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/app.pyo
@@ -22,9 +25,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/debughelpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/debughelpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/debughelpers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/exceptions.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/exceptions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/ext/__init__.pyo
@@ -37,15 +37,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/json.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/json.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/json.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/logging.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/logging.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/logging.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/module.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/module.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/module.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/session.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/session.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/session.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/sessions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/sessions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/sessions.pyo
@@ -58,12 +58,190 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testing.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/appctx.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/appctx.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/appctx.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/basic.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/basic.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/basic.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/blueprints.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/blueprints.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/blueprints.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/deprecations.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/deprecations.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/deprecations.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/examples.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/examples.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/examples.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/ext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/ext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/ext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/helpers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/regression.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/regression.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/regression.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/reqctx.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/reqctx.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/reqctx.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/signals.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/signals.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/signals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/static/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/subclassing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/subclassing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/subclassing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/_macro.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/context_template.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/escaping_template.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/mail.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/nested/nested.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/simple_template.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/template_filter.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/template_test.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templating.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templating.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templating.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/static/css/test.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/static/test.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/templates/admin/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend/templates/frontend/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_module_app.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_module_app.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_module_app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_package_app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_package_app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_package_app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken/b.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken/b.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken/b.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package/submodule.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package/submodule.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package/submodule.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_simple.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_simple.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_simple.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package/submodule.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package/submodule.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package/submodule.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_simple.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_simple.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_simple.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/importerror.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/importerror.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/importerror.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/SiteEgg.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_app.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_app.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_package/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_package/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_package/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/main_app.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/main_app.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/main_app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/static/css/test.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/static/test.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/templates/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/frontend/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/frontend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/frontend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/frontend/templates/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/path/installed_package/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/path/installed_package/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/path/installed_package/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/subdomaintestmodule/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/subdomaintestmodule/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/subdomaintestmodule/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/subdomaintestmodule/static/hello.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/testing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/testing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/testing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/views.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/views.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/views.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/views.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/wrappers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/wrappers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/wrappers.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/subdomaintestmodule/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/subdomaintestmodule
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/path/installed_package
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/path
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/frontend/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/frontend
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/static/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/moduleapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages/site_package
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5/site-packages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib/python2.5
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext/oldext_package
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flaskext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_newext_package
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/flask_broken
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/config_package_app
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend/templates/frontend
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/frontend
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/static/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps/blueprintapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/test_apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates/nested
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/testsuite
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask/ext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/flask
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
