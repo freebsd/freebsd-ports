@@ -19,5 +19,6 @@ CONFIGURE_ENV=	ac_cv_have_decl_facilitynames=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|sample debian||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/extern CODE/d' ${WRKSRC}/libvanessa_logger/vanessa_logger.c
 
 .include <bsd.port.mk>
