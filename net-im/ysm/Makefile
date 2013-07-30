@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ysm
-# Date created:				May 28, 2002
-# Whom:					vampiro
-#
+# Created by: vampiro
 # $FreeBSD$
-#
 
 PORTNAME=	ysm
 PORTVERSION=	7.2.9.9.1
@@ -15,13 +11,10 @@ DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
-.if ${CC} == "clang"
 USE_CSTD=	c89
-.endif
 
-USES=		iconv
+USES=		iconv gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
