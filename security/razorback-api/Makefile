@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-api
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	api
 PORTVERSION=	0.5.0
@@ -35,6 +31,7 @@ USES=	pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-Wno-cast-align
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
