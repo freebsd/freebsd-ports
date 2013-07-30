@@ -15,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 USES=	pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_have_decl_facilitynames=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|sample debian||' ${WRKSRC}/Makefile.in
