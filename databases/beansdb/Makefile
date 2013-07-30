@@ -1,9 +1,5 @@
-# New ports collection makefile for:	beansdb
-# Date created:		2010-03-27
-# Whom:			Qing Feng <qingfeng@douban.com>
-#
+# Created by: Qing Feng <qingfeng@douban.com>
 # $FreeBSD$
-#
 
 PORTNAME=	beansdb
 PORTVERSION=	0.5.3
@@ -14,6 +10,7 @@ MAINTAINER=	qingfeng@douban.com
 COMMENT=	Yet another distributed key-value storage system from Douban Inc
 
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 CFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		beansdb.1
