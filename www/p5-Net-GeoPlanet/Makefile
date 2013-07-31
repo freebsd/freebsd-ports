@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-GeoPlanet
-# Date created:				2008-08-05
-# Whom:					Steven Kreuzer <skreuzer@exit2shell.com>
-#
+# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-GeoPlanet
 PORTVERSION=	0.2
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-Test-Simple>=0.74:${PORTSDIR}/devel/p5-Test-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::GeoPlanet.3
 
