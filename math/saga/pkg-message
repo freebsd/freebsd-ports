@@ -20,16 +20,12 @@ modules.
 
 ######################################################################
 
-And don't forget, on Unix-like systems you will have to alter the
-module library name accordingly by adding "lib" to the module library
-name.
+Since version 2.1.0 it is not necessary any more, to use a leading
+"lib" for module library names on Unix-like systems. Now you will have
+to alter back your scripts by removing "lib" from the name (like it is
+on MS Windows).
 
 e.g.:
-  saga_cmd libta_morphometry    instead of    saga_cmd ta_morphometry
-
-For more information see
-
-http://sourceforge.net/apps/trac/saga-gis/wiki/\
-Executing%20Modules%20with%20SAGA%20CMD
+  saga_cmd ta_morphometry    instead of    saga_cmd libta_morphometry
 
 ######################################################################
