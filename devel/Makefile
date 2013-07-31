@@ -2995,6 +2995,7 @@
     SUBDIR += p5-github_creator
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-indirect
+    SUBDIR += p5-interface
     SUBDIR += p5-latest
     SUBDIR += p5-lexical-underscore
     SUBDIR += p5-lib-abs
