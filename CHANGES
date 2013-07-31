@@ -20,7 +20,7 @@ AUTHOR: bapt@FreeBSD.org
   Always include perl5:
   USES= perl5
 
-  If USE_PERL5 is undefined that perl5 will be a build and run dependency
+  If USE_PERL5 is undefined then perl5 will be a build and run dependency
   Migrating to new USE_PERL5:
 
   =======================================================
