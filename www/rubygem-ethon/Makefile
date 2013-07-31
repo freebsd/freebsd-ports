@@ -4,6 +4,7 @@
 PORTNAME=	ethon
 PORTVERSION=	0.5.12
 CATEGORIES=	www rubygems
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Very lightweight libcurl wrapper
