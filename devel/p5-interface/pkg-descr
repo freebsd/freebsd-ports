@@ -1,0 +1,5 @@
+Compile-time interface complaince testing. Inspects the methods defined in your
+module, and compares them against the methods defined in the modules you list.
+Requires no special or additional syntax.
+
+WWW: http://search.cpan.org/dist/interface/
