@@ -1,0 +1,183 @@
+--- src/lib/makefile.in.orig	2002-09-19 22:36:34.000000000 +0800
++++ src/lib/makefile.in	2013-07-31 14:57:28.000000000 +0800
+@@ -34,10 +34,10 @@
+ all:: compile
+ 
+ compile:
+-	for i in $(PDIRS); do cd $$i && make compile; cd ..; done
++	for i in $(PDIRS); do $(MAKE) -C $$i compile; done
+ 
+ clean:
+-	for i in $(PDIRS); do cd $$i && make clean; cd ..; done
++	for i in $(PDIRS); do $(MAKE) -C $$i clean; done
+ 
+ FORCE:
+ 
+--- src/plugins/makefile.in.orig	2002-07-08 23:21:54.000000000 +0800
++++ src/plugins/makefile.in	2013-07-31 14:59:12.000000000 +0800
+@@ -5,15 +5,11 @@
+ 
+ plugins:
+ 	@for dir in ${ALLDIRS}; do \
+-                cd $$dir; \
+-                ${MAKE} all || exit 1; \
+-                cd .. ;\
++                ${MAKE} -C $$dir all || exit 1; \
+         done
+ 
+ clean:
+ 	@for dir in ${ALLDIRS}; do \
+-                cd $$dir; \
+-                ${MAKE} clean || exit 1; \
+-                cd .. ;\
++                ${MAKE} -C $$dir clean || exit 1; \
+         done
+ 
+--- src/makefile.in.orig	2003-01-30 22:52:43.000000000 +0800
++++ src/makefile.in	2013-07-31 14:59:54.000000000 +0800
+@@ -101,16 +101,16 @@
+ all:: compile
+ 
+ compile:
+-	for i in $(PDIRS); do cd $$i && make compile; cd ..; done
+-	make $(MYBINDIR)/xnc
+-	make $(MYBINDIR)/xncloader
+-	make compile-$(PLUGINS)
++	for i in $(PDIRS); do $(MAKE) -C $$i compile; done
++	$(MAKE) $(MYBINDIR)/xnc
++	$(MAKE) $(MYBINDIR)/xncloader
++	$(MAKE) compile-$(PLUGINS)
+ 
+ compile-:
+ 	echo nothing
+ 
+ compile-gui_plugins:
+-	cd plugins && make
++	$(MAKE) -C plugins
+ 
+ config:	FORCE
+ 	./configure
+@@ -135,21 +135,21 @@
+ 
+ clean:
+ 	pwd_v=`pwd`; \
+-	for i in $(PDIRS); do cd $$i && make clean; cd $$pwd_v; done
++	for i in $(PDIRS); do $(MAKE) -C $$i clean; done
+ 	$(RMF) $(MYBINDIR)/xnc
+ 	$(RMF) $(XNCOBJS)
+ 	$(RMF) helpers/resloader.o
+-	make clean-$(PLUGINS)
++	$(MAKE) clean-$(PLUGINS)
+ 
+ clean-:
+ 	echo nothing
+ 
+ clean-gui_plugins:
+-	cd plugins && make clean
++	$(MAKE) -C plugins clean
+ 
+ fast:
+ 	$(RMF) *.o
+-	make compile
++	$(MAKE) compile
+ 
+ tags:
+ 	etags $(TAGFILES)
+--- Makefile.in.orig	2003-02-04 20:52:38.000000000 +0800
++++ Makefile.in	2013-07-31 15:00:18.000000000 +0800
+@@ -31,15 +31,15 @@
+ 
+ compile:
+ 	./newcomp $(XNCVERSION)
+-	cd intl && make
+-	for i in $(PDIRS); do cd $$i && make compile; cd $(FULLDIR); done
+-	make compile-$(PO_MAKE_DIR)
++	$(MAKE) -C intl
++	for i in $(PDIRS); do $(MAKE) -C $$i compile; done
++	$(MAKE) compile-$(PO_MAKE_DIR)
+ 
+ compile-:
+ 	@echo "Skipping..."
+ 
+ compile-po:
+-	cd po && make compile
++	$(MAKE) -C po compile
+ 
+ config:	FORCE
+ 	./configure
+@@ -77,7 +77,7 @@
+ 	$(INSTALL_DATA) ./desktop/xnc.desktop $(DESTDIR)$(INSTDESKDIR1)
+ 	$(INSTALL_DATA) ./desktop/X_Northern_Captain.desktop $(DESTDIR)$(INSTDESKDIR2)
+ 	$(INSTALL_DATA) ./desktop/xnc-gnome2.desktop $(DESTDIR)$(INSTDESKDIR3)
+-	make install-$(PO_MAKE_DIR)
++	$(MAKE) install-$(PO_MAKE_DIR)
+ 	@echo "Don't foget run 'xncsetup' before starting XNC"
+ 	@echo "And add $(DESTDIR)$(INSTDIR) into your PATH environment variable"
+ 
+@@ -91,7 +91,7 @@
+ 	@echo "Skipping..."
+ 
+ install-po:
+-	cd po && make install
++	$(MAKE) -C po install
+ 
+ uninstall:
+ 	$(RMF) $(DESTDIR)$(INSTDIR)/users.xnc
+@@ -119,13 +119,13 @@
+ 
+ clean:
+ 	pwd_v=`pwd`; \
+-	for i in $(PDIRS); do cd $$i && make clean; cd $$pwd_v; done
++	for i in $(PDIRS); do $(MAKE) -C $$i clean; done
+ 
+ fast:
+-	cd src && make fast
++	$(MAKE) -C src fast
+ 
+ tags:
+-	cd src && make tags
++	$(MAKE) -C src tags
+ 
+ FORCE:
+ 
+--- src/ives/makefile.in.orig	2003-12-25 20:43:18.000000000 +0800
++++ src/ives/makefile.in	2013-07-31 15:06:35.000000000 +0800
+@@ -54,9 +54,9 @@
+ all:: compile
+ 
+ compile:
+-	make $(MYBINDIR)/iview
+-	make $(MYBINDIR)/iedit
+-	make $(MYBINDIR)/ives
++	$(MAKE) $(MYBINDIR)/iview
++	$(MAKE) $(MYBINDIR)/iedit
++	$(MAKE) $(MYBINDIR)/ives
+ 
+ $(MYBINDIR)/ives: $(IVESOBJS) $(IVESLIBS) $(JDEP) $(PNGDEP) $(ZDEP)
+ 	$(CXX) -o $@ $(IVESOBJS) $(IVESLIBS) $(LOCAL_LIBRARIES) $(JLIB) \
+@@ -72,13 +72,13 @@
+ 
+ 
+ $(JDEP):
+-	cd $(MYSRCDIR)/lib/jpeg && make
++	$(MAKE) -C $(MYSRCDIR)/lib/jpeg
+ 
+ $(PNGDEP):
+-	cd $(MYSRCDIR)/lib/libpng && make
++	$(MAKE) -C $(MYSRCDIR)/lib/libpng
+ 
+ $(ZDEP):
+-	cd $(MYSRCDIR)/lib/zlib && make
++	$(MAKE) -C $(MYSRCDIR)/lib/zlib
+ 
+ clean:
+ 	$(RMF) *.o
+@@ -88,7 +88,7 @@
+ 
+ fast:
+ 	$(RMF) *.o
+-	make compile
++	$(MAKE) compile
+ 
+ FORCE:
+ 
