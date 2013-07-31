@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Socket-SSL
-PORTVERSION=	1.94
+PORTVERSION=	1.953
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SULLR
@@ -14,9 +14,11 @@ COMMENT=	Perl5 interface to SSL sockets
 BUILD_DEPENDS=	p5-Net-SSLeay>=1.21:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		perl5
+USE_PERL5=	configure
+
 OPTIONS_DEFINE=	EXAMPLES IDN IPV6
 
-PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
 MAN3=		IO::Socket::SSL.3 IO::Socket::SSL::Intercept.3 \
