@@ -12,6 +12,7 @@ MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 
 USE_XORG=	xpm x11
+USE_CSTD=	gnu89
 ALL_TARGET=	freebsd
 MAKE_JOBS_UNSAFE=	yes
 
