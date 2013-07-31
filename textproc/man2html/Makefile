@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	man2html
-# Date created:				29 August 1998
-# Whom:                			Dima Sivachenko <demon@gpad.ac.ru>
-#
+# Created by: Dima Sivachenko <demon@gpad.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	man2html
 PORTVERSION=	3.0.1
@@ -16,7 +12,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Convert nroff(1) man pages to HTML
 
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	run build patch
 NO_BUILD=	yes
 CGIDIR=		${PREFIX}/www/cgi-bin
 

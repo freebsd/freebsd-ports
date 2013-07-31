@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Python module for SQL Relay
-# Date created:		2 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
@@ -20,7 +16,8 @@ EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
 USE_PYTHON=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build patch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src/api/python

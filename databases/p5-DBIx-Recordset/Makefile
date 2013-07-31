@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBIx::Recordset
-# Date created:		29 Apr 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Recordset
 PORTVERSION=	0.26

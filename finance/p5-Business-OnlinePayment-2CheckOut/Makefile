@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Business-CreditCard>=0:${PORTSDIR}/finance/p5-Business-CreditC
 		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Business::OnlinePayment::2CheckOut.3
 

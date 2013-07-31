@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Maypole-Component
-# Date created:				Aug 26 2004
-# Whom:					Marc G. Fournier
-#
+# Created by: Marc G. Fournier
 # $FreeBSD$
 
 PORTNAME=	Maypole-Component
@@ -14,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run Maypole sub-requests as components
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Maypole::Component.3
 

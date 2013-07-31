@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Tmpl
-# Date created:				31 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Tmpl
 PORTVERSION=	0.33
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Templating system perl library
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		template_syntax.3 Text::Tmpl.3 template_extend.3
 

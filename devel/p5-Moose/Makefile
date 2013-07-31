@@ -41,7 +41,8 @@ TEST_DEPENDS=	\
 
 CFLAGS+=	-I.	# mop.h
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure extract
 
 MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \

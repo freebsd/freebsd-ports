@@ -39,9 +39,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexpat -liconv
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv perl5
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build patch
 
 MAN1=	sabcmd.1
 

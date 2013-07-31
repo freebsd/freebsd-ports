@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_AUTOTOOLS=	libtool
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build patch
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 

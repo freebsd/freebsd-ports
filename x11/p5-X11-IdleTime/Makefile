@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-X11-IdleTime
-# Date created:		9 July 2003
-# Whom:			Sean Farley <sean-freebsd@farley.org>
-#
+# Created by: Sean Farley <sean-freebsd@farley.org>
 # $FreeBSD$
-#
 
 PORTNAME=	X11-IdleTime
 PORTVERSION=	0.5
@@ -21,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_UNSAFE=	yes
 
 USE_XORG=	x11 xscrnsaver
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MANPREFIX=	${SITE_PERL}
 MAN3=		X11::IdleTime.3

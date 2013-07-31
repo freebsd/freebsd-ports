@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Clone - recursively copy Perl datatypes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	patch configure
 
 MAN3=		Clone.3
 
