@@ -1,4 +1,4 @@
-# Created by: swallace
+# Created by: Steven Wallace <swallace@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xpaint
@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A simple paint program
+COMMENT=	Simple paint program
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -25,7 +25,6 @@ USE_XORG=	xft xmu xpm
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GHOSTSCRIPT_RUN=yes
-MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
