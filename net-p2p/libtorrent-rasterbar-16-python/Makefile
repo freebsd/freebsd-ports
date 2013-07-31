@@ -1,39 +1,31 @@
+# Created by: Doug Barton <dougb@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
-
+PORTREVISION=	3
+CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python bindings for libtorrent-rasterbar-16
-CATEGORIES=	net-p2p python
 
-USE_PYTHON=	yes
+LIB_DEPENDS=	torrent-rasterbar:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16 \
+		boost_python:${PORTSDIR}/devel/boost-python-libs
 
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		torrent-rasterbar.7:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
+MASTERDIR=	${.CURDIR}/../libtorrent-rasterbar-16
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-PLIST=		${.CURDIR}/pkg-plist
-INSTALLS_EGGINFO=	yes
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_libtorrent
 
-NOPORTDOCS=	yes
+PLIST=		${NONEXISTENT}
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/libtorrent.so
 
-slave-post-patch:
-	@${REINPLACE_CMD} -E -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/bindings/python/setup.py.in
+OPTIONS_EXCLUDE=	DOCS EXAMPLES
 
-slave-post-install:
-# fix installation permissions
-	@${CHMOD} ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/libtorrent.so
-
-MASTERDIR=	${.CURDIR}/../libtorrent-rasterbar-16
-.include "${MASTERDIR}/Makefile"
-
-##
-# information available after <bsd.port.pre.mk>
-##
 # insure python paths are correctly identified
-CONFIGURE_ENV+=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
+CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 		PYTHON_VERSION="${PYTHON_VERSION}"
+
+.include "${MASTERDIR}/Makefile"
