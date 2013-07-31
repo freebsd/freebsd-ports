@@ -24,11 +24,10 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
 		${RUN_DEPENDS}
 
-USES=		perl5
-USE_PERL5=	run build patch
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext perl5
+USE_PERL5=	run build patch
 CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
 
