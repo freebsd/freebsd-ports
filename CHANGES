@@ -10,6 +10,39 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130831:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES: perl5
+
+  This uses replaces all the previous perl macros. Here is how to migrate:
+
+  Always include perl5:
+  USES= perl5
+
+  If USE_PERL5 is undefined that perl5 will be a build and run dependency
+  Migrating to new USE_PERL5:
+
+  =======================================================
+  | BEFORE                 | AFTER                      |
+  =======================================================
+  | PERL_CONFIGURE=yes     | USE_PERL5= configure       |
+  -------------------------------------------------------
+  | USE_PERL5_RUN=yes      | USE_PERL5=run              |
+  -------------------------------------------------------
+  | USE_PERL5_BUILD=yes    | USE_PERL5=build            |
+  -------------------------------------------------------
+  | PERL_MODBUILD=yes      | USE_PERL5=modbuild         |
+  -------------------------------------------------------
+  | USE_PERL5=yes          |                            |
+  -------------------------------------------------------
+  | USE_PERL5=5.14+        | USE_PERL5= 5.14+           |
+  -------------------------------------------------------
+  | PERL_CONFIGURE= 5.14+  | USE_PERL5=5.14+ configure  |
+  -------------------------------------------------------
+  | PERL_MODBUILD= 5.14+   | USE_PERL5=5.14+ modbuild   |
+  -------------------------------------------------------
+
 20130726:
 AUTHOR: rene@FreeBSD.org
 
