@@ -1,9 +1,5 @@
-# New ports collection makefile for:	htx
-# Date created:		2005-07-19
-# Whom:			Vsevolod Stakhov <vsevolod@highsecure.ru>
-#
+# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	htx
 DISTVERSION=	0.7.8
@@ -13,12 +9,10 @@ MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to XHTML converter
 
-USE_PERL5=	yes
+USES=		perl5 shebangfix
+SHEBANG_FILES=	htx
 NO_BUILD=	yes
 PLIST_FILES=	bin/htx
-
-post-patch:
-	@${PERL5} -pi.orig -e 's,/usr/bin/perl,${PERL5},' ${WRKSRC}/htx
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/htx ${PREFIX}/bin
