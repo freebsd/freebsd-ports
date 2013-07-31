@@ -373,6 +373,7 @@
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
+    SUBDIR += dxa65
     SUBDIR += dyncall
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
