@@ -940,7 +940,6 @@
     SUBDIR += libbobcat
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
-    SUBDIR += libbonobomm
     SUBDIR += libburn
     SUBDIR += libc++
     SUBDIR += libccid
