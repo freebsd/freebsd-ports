@@ -14,7 +14,8 @@ RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils \
 
 MAN8=			tenshi.8
 
-USE_PERL5=		yes
+USES=			perl5
+USE_PERL5=		run build patch
 NO_BUILD=		yes
 USE_RC_SUBR=		tenshi
 SUB_LIST=		PERL=${PERL}
