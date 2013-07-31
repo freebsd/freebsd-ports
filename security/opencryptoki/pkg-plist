@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/opencryptoki/apiclient.h
 include/opencryptoki/pkcs11.h
 include/opencryptoki/pkcs11types.h
