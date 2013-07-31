@@ -1,17 +1,8 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
-#
 # $FreeBSD$
 #
-# /!\ THIS FILE IS DEPRECATED PLEASE CONFIGURE USING USES=perl5 /!\
+# Provide support to use perl5
 #
-# bsd.perl.mk - Support for Perl-based ports.
-#
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-#
-# For FreeBSD committers:
-# Please send all suggested changes to the maintainer instead of committing
-# them to SVN yourself.
+# MAINTAINER: perl@FreeBSD.org
 #
 # PERL5			- Set to full path of perl5, either in the system or
 #				  installed from a port.
@@ -35,24 +26,26 @@
 # SITE_PERL		- Directory name where site specific perl packages go.
 #				  This value is added to PLIST_SUB.
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
-#				  patch, build, install or run phases.
-#
-# PERL_CONFIGURE	- Configure using Perl's MakeMaker.  Implies USE_PERL5.
-#
-# USE_PERL5_BUILD	- If set, this port uses perl5 in one or more of the
-#				  extract, patch, build or install phases.
-#
-# USE_PERL5_RUN		- If set, this port uses perl5 for running.
-#
-# PERL_MODBUILD		- Use Module::Build to configure, build and install port.
-.if !defined(USES) || !${USES:Mperl5}
+#				  patch, build, install or run phases
 
-.if !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
+.if !defined(_INCLUDE_USES_PERL5_MK)
+_INCLUDE_USES_PERL5_MK=	yes
 
-Perl_Pre_Include=			bsd.perl.mk
-PERL_Include_MAINTAINER=	perl@FreeBSD.org
+.if defined(perl5_ARGS)
+IGNORE=	Incorrect 'USES+=perl5:${perl5_ARGS}' perl5 takes no arguments
+.endif
 
+USE_PERL5?=	run build
+
+.if exists(${LOCALBASE}/bin/perl5)
+.sinclude "${LOCALBASE}/etc/perl5_version"
+.if !defined(PERL_VERSION)
+PERL_VERSION!=	perl -e 'printf "%vd\n", $$^V;'
+.endif
+.else
 PERL_VERSION?=	5.14.4
+.endif
+
 PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
@@ -89,30 +82,20 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 
-# Decide where to look for the version string
-.ifdef USE_PERL5
-USE_PERL5_STRING=	${USE_PERL5}
-.elifdef USE_PERL5_BUILD
-USE_PERL5_STRING=	${USE_PERL5_BUILD}
-.elifdef USE_PERL5_RUN
-USE_PERL5_STRING=	${USE_PERL5_RUN}
-.elifdef PERL_MODBUILD
-USE_PERL5_STRING=	${PERL_MODBUILD}
-.elifdef PERL_CONFIGURE
-USE_PERL5_STRING=	${PERL_CONFIGURE}
-.else
-USE_PERL5_STRING=	yes  # currently unreachable
-.endif
-
-.if ${USE_PERL5_STRING:L} != "yes"
-want_perl_sign=		${USE_PERL5_STRING:C|^[0-9.]+||}
-want_perl_ver=		${USE_PERL5_STRING:S|${want_perl_sign}$||}
+# Define the want perl first if defined
+.if ${USE_PERL5:M5*}
+want_perl_sign=		${USE_PERL5:M5*:C|^[0-9.]+||}
+want_perl_ver=		${USE_PERL5:M5*:S|${want_perl_sign}$||}
 want_perl_major=	${want_perl_ver:C|\..*||}
 _want_perl_minor=	${want_perl_ver:S|^${want_perl_major}||:S|^.||:C|\..*||}
 _want_perl_patch=	${want_perl_ver:S|^${want_perl_major}||:S|^.${_want_perl_minor}||:S|^.||:C|\..*||}
 want_perl_minor=	${_want_perl_minor:S|^|000|:C|.*(...)|\1|}
 want_perl_patch=	${_want_perl_patch:S|^|00|:C|.*(..)|\1|}
 USE_PERL5_LEVEL=	${want_perl_major}${want_perl_minor}${want_perl_patch}
+.endif
+
+# All but version
+_USE_PERL5=	${USE_PERL5:N5*}
 
 # Mask unspecified components. E.g. this way "5" will match any "5.x.x".
 .if empty(_want_perl_minor)
@@ -123,6 +106,7 @@ masked_PERL_LEVEL=	${PERL_LEVEL:C|(..)$|00|}
 masked_PERL_LEVEL=	${PERL_LEVEL}
 .endif
 
+.if defined(want_perl_sign)
 .if ${want_perl_sign} == "+"
 .if ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
 USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl${want_perl_major}.${want_perl_minor:C|^0||} and try again
@@ -141,21 +125,28 @@ IGNORE=	${USE_PERL5_REASON}
 .else # wrong suffix
 IGNORE=	improper use of USE_PERL5
 .endif
-.endif #${USE_PERL5_STRING:L} != "yes"
+.endif
 
-.endif # !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
+_USES_POST+=	perl5
+.endif
 
-.if defined(_POSTMKINCLUDED) && !defined(Perl_Post_Include)
-
-Perl_Post_Include=		bsd.perl.mk
+.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_PERL5_POST_MK)
+_INCLUDE_USES_PERL5_POST_MK=	yes
 
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-			PERL_VER=${PERL_VER} \
-			PERL_ARCH=${PERL_ARCH} \
-			SITE_PERL=${SITE_PERL_REL}
+		PERL_VER=${PERL_VER} \
+		PERL_ARCH=${PERL_ARCH} \
+		SITE_PERL=${SITE_PERL_REL}
 
-.if defined(PERL_MODBUILD)
-PERL_CONFIGURE=		yes
+# handle perl5 specific manpages
+.for sect in 1 2 3 4 5 6 7 8 9
+.if defined(P5MAN${sect})
+_MANPAGES+=	${P5MAN${sect}:S%^%${PREFIX}/lib/perl5/${PERL_VER}/man/man${sect}/%}
+.endif
+.endfor
+
+.if ${_USE_PERL5:Mmodbuild}
+_USE_PERL5+=		configure
 CONFIGURE_SCRIPT?=	Build.PL
 .if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
@@ -163,19 +154,19 @@ BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 ALL_TARGET?=
 PL_BUILD?=		Build
 CONFIGURE_ARGS+= \
-	create_packlist=0 \
-	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
-	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
-	install_path=script="${PREFIX}/bin" \
-	install_path=bin="${PREFIX}/bin" \
-	install_path=libdoc="${MAN3PREFIX}/man/man3" \
-	install_path=bindoc="${MAN1PREFIX}/man/man1"
-.elif defined(PERL_CONFIGURE)
+		create_packlist=0 \
+		install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
+		install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
+		install_path=script="${PREFIX}/bin" \
+		install_path=bin="${PREFIX}/bin" \
+		install_path=libdoc="${MAN3PREFIX}/man/man3" \
+		install_path=bindoc="${MAN1PREFIX}/man/man1"
+.elif ${_USE_PERL5:Mconfigure}
 CONFIGURE_ARGS+=	INSTALLDIRS="site"
-.endif # defined(PERL_MODBUILD)
+.endif # modbuild
 
-.if defined(PERL_CONFIGURE)
-USE_PERL5?=	yes
+.if ${_USE_PERL5:Mconfigure}
+_USE_PERL5+=	build run
 # Disable AutoInstall from attempting to install from CPAN directly in
 # the case of missing dependencies.  This causes the build to loop on
 # the build cluster asking for interactive input.
@@ -183,28 +174,32 @@ CONFIGURE_ENV+= PERL_EXTUTILS_AUTOINSTALL="--skipdeps"
 .if defined(BATCH) && !defined(IS_INTERACTIVE)
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
 .endif # defined(BATCH) && !defined(IS_INTERACTIVE)
-.endif # defined(PERL_CONFIGURE)
+.endif # configure
 
-.if defined(USE_PERL5) || defined(USE_PERL5_BUILD)
+.if ${_USE_PERL5:Mextract}
 EXTRACT_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
+.endif
+
+.if ${_USE_PERL5:Mpatch}
 PATCH_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
+.endif
+
+.if ${_USE_PERL5:Mbuild}
 BUILD_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
-.if defined(USE_PERL5) || defined(USE_PERL5_RUN)
+
+.if ${_USE_PERL5:Mrun}
 RUN_DEPENDS+=		${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 
-.if defined(PERL_CONFIGURE)
+.if ${_USE_PERL5:Mconfigure}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 CONFIGURE_SCRIPT?=	Makefile.PL
 MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VER}
 .undef HAS_CONFIGURE
-.endif # defined(PERL_CONFIGURE)
 
-.if defined(PERL_CONFIGURE)
 .if !target(do-configure)
-# XXX MCL had to duplicate the first block; implies more refactoring needed
 do-configure:
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
@@ -213,25 +208,24 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.if !defined(PERL_MODBUILD)
+.if !${_USE_PERL5:Mmodbuild}
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
-.endif # !defined(PERL_MODBUILD)
+.endif # ! modbuild
 .endif # !target(do-configure)
-.endif # defined(PERL_CONFIGURE)
+.endif # configure
 
-.if defined(PERL_MODBUILD)
+.if ${_USE_PERL5:Mmodbuild}
 .if !target(do-build)
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
 .endif # !target(do-build)
 
-.if !defined(USE_GMAKE)
+.if !${USES:Mgmake}
 .if !target(do-install)
 do-install:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif # !target(do-install)
-.endif # !defined(USE_GMAKE)
-.endif # defined(PERL_MODBUILD)
-.endif # defined(_POSTMKINCLUDED) && !defined(Perl_Post_Include)
-.endif
+.endif # ! USES=gmake
+.endif # modbuild
+.endif # defined(_POSTMKINCLUDED)
