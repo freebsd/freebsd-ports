@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/p5-POE-Component-ControlPort
-# Date created:				05 February 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-ControlPort
 PORTVERSION=	0.01
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure extract
 
 MAN3=	POE::Component::ControlPort.3 \
 	POE::Component::ControlPort::Command.3 \

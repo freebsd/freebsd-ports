@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Maypole-Authentication-UserSessionCookie
-# Date created:				Aug 21 2004
-# Whom:					Marc G. Fournier
-#
+# Created by: Marc G. Fournier
 # $FreeBSD$
 
 PORTNAME=	Maypole-Authentication-UserSessionCookie
@@ -15,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Track sessions and, optionally, users
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Maypole::Authentication::UserSessionCookie.3
 

@@ -18,7 +18,8 @@ LATEST_LINK=	ledgersmb12
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	run build patch
 
 SUB_FILES=	pkg-message
 

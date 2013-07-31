@@ -18,7 +18,8 @@ RUN_DEPENDS=	\
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure extract
 
 MAN3=	Catalyst::Plugin::Session::State::Cookie.3
 

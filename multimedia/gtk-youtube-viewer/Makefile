@@ -35,7 +35,8 @@ GH_COMMIT=	c26d9a7
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/WWW-YoutubeViewer
 
 CONFIGURE_ARGS+=${DATADIR}
-PERL_MODBUILD=	5.14+
+USES=		perl5
+USE_PERL5=	5.16+ patch modbuild
 
 MAN3=		WWW::YoutubeViewer::RegularExpressions.3 \
 		WWW::YoutubeViewer.3 \

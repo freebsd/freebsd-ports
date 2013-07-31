@@ -15,7 +15,8 @@ COMMENT=	Flash Remoting in Perl
 RUN_DEPENDS=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 NO_MANCOMPRESS=	no
 MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \

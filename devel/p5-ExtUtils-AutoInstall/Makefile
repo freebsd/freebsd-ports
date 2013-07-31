@@ -14,7 +14,8 @@ COMMENT=	Automatic install of dependencies via CPAN
 BUILD_DEPENDS=	p5-version>=0.28:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	extract configure
 
 MAN3=		ExtUtils::AutoInstall.3
 

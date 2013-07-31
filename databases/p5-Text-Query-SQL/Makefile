@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Text-Query-SQL
-# Date created:				31 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Query-SQL
 PORTVERSION=	0.09
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Text-Query>=0:${PORTSDIR}/textproc/p5-Text-Query
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Text::Query::BuildSQLMifluz.3 Text::Query::BuildSQLMySQL.3 \
 		Text::Query::BuildSQLFulcrum.3 Text::Query::BuildSQL.3 \

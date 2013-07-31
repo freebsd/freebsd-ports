@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		XML::STX.3 XML::STX::Base.3 XML::STX::Buffer.3 \
 		XML::STX::Functions.3 XML::STX::Parser.3 XML::STX::Runtime.3 \

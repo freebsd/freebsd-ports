@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openwebmail
-# Date created:				24 April 2001
-# Whom:	      				Yen-Ming Lee <leeym@leeym.com>
-#
+# Created by: Yen-Ming Lee <leeym@leeym.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openwebmail
 PORTVERSION=	2.53
@@ -18,7 +14,8 @@ COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
 RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	run build patch
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-SimpleObject
-# Date created:				14 November 2001
-# Whom:	      				steve
-#
+# Created by: steve
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SimpleObject
 PORTVERSION=	0.53
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure patch
 CONFIGURE_ARGS+=	DIR='Enhanced'
 
 MAN3=		XML::SimpleObject.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PerlPoint-Converters
-# Date created:		8 Jun 2004
-# Whom:	      		mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	PerlPoint-Converters
 PORTVERSION=	1.02.05
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-PerlPoint-Package>=0:${PORTSDIR}/textproc/p5-PerlPoint-Package
 		p5-Getopt-ArgvFile>=0:${PORTSDIR}/devel/p5-Getopt-ArgvFile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN1=		pp2html.1 pp2latex.1
 MAN3=		Bundle::PerlPoint.3 \

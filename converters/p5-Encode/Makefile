@@ -15,7 +15,8 @@ COMMENT=	Provides interfaces between strings and the rest of the system
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	patch configure
 
 MAN3=		Encode.3 \
 		Encode::Alias.3 \

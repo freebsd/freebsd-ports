@@ -24,7 +24,8 @@ RUN_DEPENDS=	\
 		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	patch run build
 
 BINMODE=	700
 

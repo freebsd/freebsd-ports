@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for working with IP addresses and blocks thereof
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	patch configure
 
 MAN3=		NetAddr::IP.3 \
 	NetAddr::IP::InetBase.3 \

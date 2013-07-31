@@ -43,7 +43,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	patch run build
 
 # stolen from cvsweb
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)

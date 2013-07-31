@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Math-BigInt-GMP
-# Date created:				7 February 2007
-# Whom:					Maxime Henrion <mux@FreeBSD.org>
-#
+# Created by: Maxime Henrion <mux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-BigInt-GMP
 PORTVERSION=	1.37
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Math::BigInt::GMP.3

@@ -14,7 +14,8 @@ COMMENT=	Add mro::* interface compatibility for Perls < 5.9.5
 BUILD_DEPENDS=	p5-Class-C3>=0.19:${PORTSDIR}/devel/p5-Class-C3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	extract configure
 
 MAN3=	MRO::Compat.3
 

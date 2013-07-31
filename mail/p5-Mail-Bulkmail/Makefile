@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Mail-Bulkmail
-# Date created:				Wed Jan  3 13:26:45 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Bulkmail
 PORTVERSION=	3.12
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for mailing lists
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Mail::Bulkmail.3 Mail::Bulkmail::Dynamic.3 \
 		Mail::Bulkmail::Server.3 Mail::Bulkmail::Object.3 \

@@ -33,9 +33,9 @@ OPTIONS_DEFINE=	VORBIS SUBTITLE
 OPTIONS_DEFAULT=	VORBIS SUBTITLE
 SUBTITLE_DESC=	Enable support for getting subtitles
 
-PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
-USES=		gettext
+USES=		gettext perl5
+USE_PERL5=	configure patch
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1

@@ -13,7 +13,8 @@ COMMENT=	A text pager with autoscrolling and more
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	run build patch
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configures
 

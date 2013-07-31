@@ -10,7 +10,8 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A small collection of programs that operate on patch files
 
 USE_XZ=		yes
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	run build patch
 GNU_CONFIGURE=	yes
 
 MAN1=	combinediff.1 dehtmldiff.1 editdiff.1 espdiff.1 filterdiff.1 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math::SimpleVariable
-# Date created:		5 Nov 2001
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-SimpleVariable
 PORTVERSION=	0.03
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple representation of mathematical variables
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Math::SimpleVariable.3
 

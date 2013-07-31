@@ -12,7 +12,8 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Speed up perl CGI scripts by running them persistently
 
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 OPTIONS_DEFINE=	APACHE
 OPTIONS_DEFAULT=APACHE

@@ -27,7 +27,8 @@ RUN_DEPENDS=	\
 
 LATEST_LINK=	bugzilla44
 
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	patch build run
 
 BINMODE=	700
 

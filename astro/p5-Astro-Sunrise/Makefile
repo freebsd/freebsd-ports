@@ -1,9 +1,5 @@
-# New ports collection makefile for:	astro/p5-Astro-Sunrise
-# Date created:				25 April 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-Sunrise
 PORTVERSION=	0.91
@@ -16,7 +12,8 @@ COMMENT=	Perl extension for computing the sunrise/sunset on a given day
 
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure patch
 
 MAN3=		Astro::Sunrise.3
 

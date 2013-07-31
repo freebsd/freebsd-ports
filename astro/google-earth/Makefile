@@ -1,9 +1,4 @@
-# New ports collection makefile for:	google-earth
-# Date created:				Jun 13 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	google-earth
 PORTVERSION=	6.0.3.2197
@@ -28,7 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 USE_GNOME=	desktopfileutils
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	patch build
 
 .include <bsd.port.pre.mk>
 
