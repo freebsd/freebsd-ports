@@ -101,6 +101,9 @@ lib/meld/meld/ui/notebooklabel.pyo
 lib/meld/meld/ui/statusbar.py
 lib/meld/meld/ui/statusbar.pyc
 lib/meld/meld/ui/statusbar.pyo
+lib/meld/meld/ui/vcdialogs.py
+lib/meld/meld/ui/vcdialogs.pyc
+lib/meld/meld/ui/vcdialogs.pyo
 lib/meld/meld/ui/wraplabel.py
 lib/meld/meld/ui/wraplabel.pyc
 lib/meld/meld/ui/wraplabel.pyo
@@ -131,9 +134,6 @@ lib/meld/meld/vc/_vc.pyo
 lib/meld/meld/vc/bzr.py
 lib/meld/meld/vc/bzr.pyc
 lib/meld/meld/vc/bzr.pyo
-lib/meld/meld/vc/cdv.py
-lib/meld/meld/vc/cdv.pyc
-lib/meld/meld/vc/cdv.pyo
 lib/meld/meld/vc/cvs.py
 lib/meld/meld/vc/cvs.pyc
 lib/meld/meld/vc/cvs.pyo
@@ -152,9 +152,6 @@ lib/meld/meld/vc/mercurial.pyo
 lib/meld/meld/vc/monotone.py
 lib/meld/meld/vc/monotone.pyc
 lib/meld/meld/vc/monotone.pyo
-lib/meld/meld/vc/rcs.py
-lib/meld/meld/vc/rcs.pyc
-lib/meld/meld/vc/rcs.pyo
 lib/meld/meld/vc/svk.py
 lib/meld/meld/vc/svk.pyc
 lib/meld/meld/vc/svk.pyo
@@ -164,9 +161,6 @@ lib/meld/meld/vc/svn.pyo
 lib/meld/meld/vc/svn_17.py
 lib/meld/meld/vc/svn_17.pyc
 lib/meld/meld/vc/svn_17.pyo
-lib/meld/meld/vc/tla.py
-lib/meld/meld/vc/tla.pyc
-lib/meld/meld/vc/tla.pyo
 lib/meld/meld/vcview.py
 lib/meld/meld/vcview.pyc
 lib/meld/meld/vcview.pyo
