@@ -8,14 +8,14 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	A http regression testing and benchmarking utility
+COMMENT=	HTTP regression testing and benchmarking utility
 
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-USE_PERL5=	yes
+USES=		perl5
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared
 

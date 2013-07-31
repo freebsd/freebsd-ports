@@ -8,7 +8,7 @@ MASTER_SITES=	http://stable.hypertriton.com/bsdbuild/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	BSD-licensed portable build system
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 
 LICENSE=	BSD
