@@ -1,0 +1,37 @@
+--- Makefile.in.orig	2013-07-31 11:35:58.000000000 +0800
++++ Makefile.in	2013-07-31 11:40:10.000000000 +0800
+@@ -1009,10 +1009,10 @@
+ 	echo "#define XPAINT_VERSION \"$(PACKAGE_VERSION)\"" > version.h
+ 
+ substads: substads.c
+-	$(CC) substads.c -o $@
++	$(CC) $(CFLAGS) substads.c -o $@
+ 
+ preproc: preproc.c
+-	$(CC) preproc.c -o $@
++	$(CC) $(CFLAGS) preproc.c -o $@
+ 
+ DefaultRC.txt.h: substads DefaultRC
+ 	./substads -ad2c DefaultRC $@
+@@ -1020,10 +1020,8 @@
+ messages.h: preproc
+ 	./preproc > messages.h
+ 
+-XPaint.ad: app-defaults
+-	$(CC) substads.c -o substads
+-	cd app-defaults ; \
+-	../substads -appdefs \
++XPaint.ad: substads app-defaults
++	./substads -appdefs \
+ 	            XPAINT_VERSION $(PACKAGE_VERSION) \
+ 		    XPAINT_SHAREDIR $(SHAREDIR) \
+ 		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
+@@ -1034,7 +1032,7 @@
+ XPaint.ad.h: substads XPaint.ad
+ 	./substads -ad2c XPaint.ad $@
+ 
+-xpaint.1: xpaint.1.in version.h
++xpaint.1: substads xpaint.1.in version.h
+ 	./substads -single xpaint.1.in xpaint.1 XPAINT_VERSION $(PACKAGE_VERSION)
+ 
+ install-exec-hook:
