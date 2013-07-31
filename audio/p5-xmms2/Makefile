@@ -12,7 +12,7 @@ LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
-USE_PERL5=	yes
+USES=		perl5
 
 PLIST=		${.CURDIR}/pkg-plist
 

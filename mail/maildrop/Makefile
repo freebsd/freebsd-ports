@@ -27,8 +27,7 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USES=		iconv shebangfix
+USES=		iconv shebangfix perl5
 .if defined(.PARSEDIR)
 USES+=		gmake
 .endif
