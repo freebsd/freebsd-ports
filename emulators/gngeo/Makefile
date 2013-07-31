@@ -21,6 +21,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS+=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
+USE_CSTD=	gnu89
+MAKE_ARGS+=	CC_FOR_BUILD=${CC}
 
 SUB_FILES=	pkg-message
 
