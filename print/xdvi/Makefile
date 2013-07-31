@@ -9,13 +9,13 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}-20
 EXTRACT_SUFX=	.tar.Z
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI previewer for the X Window System
 
 CONFLICTS=	teTeX-*
 
-DIST_SUBDIR=	xdvi
 USES=		gmake imake
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 PKGINSTALL=	${WRKDIR}/pkg-install

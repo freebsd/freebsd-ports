@@ -10,6 +10,8 @@ MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Simple paint program
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		openjpeg:${PORTSDIR}/graphics/openjpeg \
@@ -17,13 +19,11 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		jbig:${PORTSDIR}/graphics/jbigkit \
 		Xaw3dxft:${PORTSDIR}/x11-toolkits/libxaw3dxft
-
 RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils
 
 USE_BZIP2=	yes
 USE_XORG=	xft xmu xpm
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
 USE_GHOSTSCRIPT_RUN=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2

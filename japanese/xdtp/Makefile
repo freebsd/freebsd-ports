@@ -5,7 +5,7 @@ PORTNAME=	xdtp
 PORTVERSION=	1.3.1
 PORTREVISION=	4
 CATEGORIES=	japanese
-MASTER_SITES+=	http://www.ongs.co.jp/projects/xdtp/
+MASTER_SITES=	http://www.ongs.co.jp/projects/xdtp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ozawa@ongs.co.jp
