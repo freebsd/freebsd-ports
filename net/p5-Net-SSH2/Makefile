@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSH2
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL=	configure
 
 MAN3=		Net::SSH2.3 Net::SSH2::Channel.3 \
 		Net::SSH2::Dir.3 Net::SSH2::File.3 \
