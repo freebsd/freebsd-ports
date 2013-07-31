@@ -19,7 +19,7 @@ you update your ports collection, before attempting any port upgrades.
   Note that users of pkg packages can just run the pkg delete command after
   their next update.
 
-  # portmaster -f gio-fam-backend
+  # portmaster -r gio-fam-backend
   # pkg_delete gio-fam-backend (for pkgng: pkg delete gio-fam-backend)
   # portmaster -a
 
