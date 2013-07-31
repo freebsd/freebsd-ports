@@ -19,7 +19,6 @@ USES=		pathfix pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS+=	libtorrent-rasterbar-0.1[45789].*
 NO_LATEST_LINK=	yes
@@ -42,7 +41,7 @@ PORTDOCS=	*
 DOCSRCDIR1=	${WRKSRC}
 DOC_FILES1=	AUTHORS README
 
-DOCSRCDIR2=	 ${WRKSRC}/docs
+DOCSRCDIR2=	${WRKSRC}/docs
 DOCSDIR2=	${DOCSDIR}/docs
 DOC_FILES2=	*.png *.jpg *.gif *.html *.rst *.css
 
@@ -50,7 +49,7 @@ PORTEXAMPLES=	*.cpp
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
@@ -59,20 +58,11 @@ CONFIGURE_ARGS+=	--enable-python-binding \
 CONFIGURE_ARGS+=	--disable-python-binding
 .endif
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes"
-post-patch:	slave-post-patch
-.else
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|<include>/usr/local/include|<include>${PREFIX}/include|' \
+	@${REINPLACE_CMD} -e 's|/usr/local/include|${PREFIX}/include|' \
 		${WRKSRC}/Jamfile
-.endif
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes"
-post-install:	slave-post-install
-.else
 post-install:
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
@@ -84,4 +74,4 @@ post-install:
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
