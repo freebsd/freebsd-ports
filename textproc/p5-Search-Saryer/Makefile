@@ -17,7 +17,7 @@ COMMENT=	Perl interface to the Sary library
 
 LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
 
-PERL_CONFIGURE=	yes
+USES=		perl5 pkgconfig
 
 MAN3=		Search::Saryer.3
 
