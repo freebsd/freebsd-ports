@@ -13,7 +13,6 @@ COMMENT=	Portable software library for volume rendering
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	lib/libvolpack.a \
 		include/volpack.h

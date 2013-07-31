@@ -1,6 +1,6 @@
 --- Makefile.in.orig	1994-12-12 21:21:47.000000000 +0100
-+++ Makefile.in	2012-06-05 13:26:24.552254340 +0200
-@@ -175,7 +175,7 @@
++++ Makefile.in	2013-07-31 15:38:51.000000000 +0800
+@@ -175,25 +175,13 @@
  	cc -o makeopts makeopts.c
  
  vp_opts.c: makeopts Makefile
@@ -8,8 +8,28 @@
 +	./makeopts vp_opts.c $(CFLAGS)
  
  $(COMP_SRCS): $(COMP_IN)
- 	@for i in $(COMP_SRCS) ; \
-@@ -239,10 +239,9 @@
+-	@for i in $(COMP_SRCS) ; \
+-	    do \
+-		rm -f $$i ;\
+-		echo "$(M4) -DSourceFile=$$i $(COMP_IN) > $$i" ;\
+-		$(M4) -DSourceFile=$$i $(COMP_IN) > $$i; \
+-		chmod -w $$i; \
+-	    done
++	$(M4) -DSourceFile=$@ $(COMP_IN) > $@ && chmod -w $@
+ 
+ $(WARP_SRCS): $(WARP_IN)
+-	@for i in $(WARP_SRCS) ; \
+-	    do \
+-		rm -f $$i ;\
+-		echo "$(M4) -DSourceFile=$$i $(WARP_IN) > $$i" ;\
+-		$(M4) -DSourceFile=$$i $(WARP_IN) > $$i; \
+-		chmod -w $$i; \
+-	    done
++	$(M4) -DSourceFile=$@ $(WARP_IN) > $@ && chmod -w $@
+ 
+ examples: libvolpack.a
+ 	cd examples; make
+@@ -239,10 +227,9 @@
  	    done;
  	@cd $(SRC_DIR)/man/src; for i in *.3; \
  	    do \
