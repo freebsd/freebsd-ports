@@ -1,0 +1,13 @@
+--- ./bin/yara-editor.orig	2012-11-22 21:47:37.000000000 +0000
++++ ./bin/yara-editor	2013-07-30 23:07:31.000000000 +0000
+@@ -75,7 +75,9 @@
+             config_file.close()
+         except IOError as e:
+             make_config_file(config_path)
+-
++            config_file = open(config_path, 'r')
++            config.readfp(config_file)
++            config_file.close()
+ 
+ 
+         translator = QtCore.QTranslator()
