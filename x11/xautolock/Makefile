@@ -10,7 +10,10 @@ MASTER_SITE_SUBDIR=	X11/screensavers
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	romain@FreeBSD.org
-COMMENT=	Used to activate xlock after a user defined time of inactivity
+COMMENT=	Activate xlock after a user defined time of inactivity
+
+USES=		imake gmake		# gmake is needed for -jX builds
+USE_XORG=	x11 xext xscrnsaver
 
 OPTIONS_DEFINE=	XLOCK
 OPTIONS_DEFAULT=	XLOCK
@@ -18,9 +21,6 @@ XLOCK_DESC=	Force dependency on x11/xlockmore
 
 XLOCK_RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 
-USES=		imake
-USE_XORG=	x11 xext xscrnsaver
-MAKE_JOBS_UNSAFE=	yes
 MAN1=		xautolock.1
 PLIST_FILES=	bin/xautolock
 
