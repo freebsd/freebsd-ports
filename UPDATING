@@ -6,17 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130726:
-  AFFECTS: users of QT3 and KDE3
+  AFFECTS: users of Qt 3 and KDE 3
   AUTHOR: rene@FreeBSD.org
 
-  All ports based on QT3 (including KDE3 but also ports which used QT3 as
-  a graphical toolkit) expired on 20130701 because QT3 and KDE3 were no
-  longer maintained upstream.  These ports have been removed today.
+  All ports based on Qt 3 (including KDE 3 but also ports which used Qt 3
+  as a graphical toolkit) expired on 20130701 because Qt 3 and KDE 3 were
+  no longer maintained upstream.  These ports have been removed today.
 
-  Users of KDE3 are advised to switch to another desktop environment
-  provided in the Ports Collection, e.g. KDE4 or Xfce.
+  Users of KDE 3 are advised to switch to another desktop environment
+  provided in the Ports Collection, e.g. KDE 4 or Xfce.
 
-  Users of QT3 are advised to upgrade to the QT4 counterpart(s).
+  Users of Qt 3 are advised to upgrade to the Qt 4 counterpart(s).
 
 20130725:
   AFFECTS: users of net/openafs
@@ -78,7 +78,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: kwm@FreeBSD.org
 
   Avahi was updated to 0.6.31, due to changes in the avahi-gtk port it will
-  be necessary to remove the avahi-gtk port before updating. 
+  be necessary to remove the avahi-gtk port before updating.
   Users of pkg packages can skip this step.
 
    pkg_delete -f avahi-gtk\*
@@ -285,10 +285,10 @@ you update your ports collection, before attempting any port upgrades.
 
   subversion-1.7.x is available as devel/subversion17
 
-  To stay on subversion-1.7.x set in /etc/make.conf 
+  To stay on subversion-1.7.x set in /etc/make.conf
   WITH_SUBVERSION_VER=17
   and use the following command
-  
+
   # pkg set -o devel/subversion:devel/subversion17
 
   or
@@ -467,14 +467,14 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: tj@FreeBSD.org
 
   This is the first stable release based on Lucene 4. We recommend testing
-  the upgrade before doing it in production.  
+  the upgrade before doing it in production.
 
   Upgrading from 0.20 requires a full cluster restart.
 
-  In order to be able to downgrade, stop indexing new data, issue a flush 
-  request, do the upgrade and only enable indexing of new data once you 
-  are certain that you no longer need to downgrade.  Once new data has 
-  been indexed, downgrading is no longer possible. To be extra safe, back 
+  In order to be able to downgrade, stop indexing new data, issue a flush
+  request, do the upgrade and only enable indexing of new data once you
+  are certain that you no longer need to downgrade.  Once new data has
+  been indexed, downgrading is no longer possible. To be extra safe, back
   up your data before upgrading.
 
 20130519:
@@ -482,7 +482,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: tj@FreeBSD.org
 
   The JVM used by activemq has changed to OpenJDK 7. You will need to
-  make sure javavmwrapper is configured to use the installed 
+  make sure javavmwrapper is configured to use the installed
   java/openjdk7 JVM.
 
 20130512:
@@ -2326,9 +2326,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of graphics/djvulibre and graphics/djvulibre-nox11
   AUTHOR: bf@FreeBSD.org
 
-  DjVuLibre been updated to 3.5.25.3.  The QT3 GUI that was in
+  DjVuLibre been updated to 3.5.25.3.  The Qt 3.x GUI support that was in
   graphics/djvulibre has been removed (users of this GUI should consider
-  switching to the new QT4 GUI in graphics/djview4), and
+  switching to the new Qt 4.x GUI in graphics/djview4), and
   graphics/djvulibre-nox11 has been merged back into graphics/djvulibre.
   To update DjVuLibre, you can use:
 
@@ -5123,7 +5123,7 @@ or
   Rename nc to netcat to prevent /usr/bin/nc shadowing /usr/local/bin/nc
 
 20100902:
-  AFFECTS: users of KDE4
+  AFFECTS: users of KDE 4
   AUTHOR: kde@FreeBSD.org
 
   KDE SC ports has been updated to 4.5.1. A number of files were moved
@@ -5547,7 +5547,7 @@ or
   was moved between packages. The recommended update procedure is to delete
   kdelibs-experimental*, kdebase-4*, kdebase-workspace-4*,
   kdebase-runtime-4*, kdepim-4*, kdepim-runtime-4*, and then update ports as
-  usual and install desired KDE4 ports:
+  usual and install desired KDE 4 ports:
 
     # pkg_delete -f kdebase-\*4\* kdepim-\*4\* kdelibs-experimental-\*4\*
     # portmaster -a (or portupgrade -aR)
@@ -5574,11 +5574,11 @@ or
 
   WITH_QT_PHONON global knob has been introduced to allow selection between
   multimedia/qt4-phonon* ports (a bit outdated Phonon, which is shipped with
-  Qt4) and multimedia/phonon* ports.  Since KDE SC 4.4 requires fresh Phonon,
-  multimedia/phonon* ports are installed by default.
+  Qt 4) and multimedia/phonon* ports.  Since KDE SC 4.4 now requires fresh
+  Phonon, multimedia/phonon* ports are installed by default.
 
   If you don't use KDE, you may set WITH_QT_PHONON=yes in /etc/make.conf
-  and continue to use Qt4 Phonon implementation ports.
+  and continue to use Qt 4 Phonon implementation ports.
 
   If you want to use KDE SC 4.4 (or if you want the latest Phonon), do not
   define WITH_QT_PHONON, delete multimedia/qt4-phonon* ports, and install
@@ -6265,7 +6265,7 @@ or
   AFFECTS: users of astro/celestia and KDE
   AUTHOR: danfe@FreeBSD.org
 
-  Celestia can now be compiled with KDE3 frontend (you can enable it with
+  Celestia can now be compiled with KDE 3 frontend (you can enable it with
   CELESTIA_UI=kde when building).  It is very feature-rich, as it offers
   contextual menus, toolbars, KDE integration, internationalization,
   bookmarks, etc.  If you use Celestia and KDE as your desktop, you might
@@ -6283,13 +6283,13 @@ or
   AFFECTS: users of multimedia/phonon*, x11/kdebase4*, deskutils/kdepim4
   AUTHOR: kde@FreeBSD.org
 
-  KDE4 has been updated to version 4.3.0.  KDE now uses qt4-phonon;
+  KDE 4 has been updated to version 4.3.0.  KDE now uses qt4-phonon;
   multimedia/phonon and multimedia/phonon-gstreamer are deprecated in
   favor of their qt4 equivalents.  You can still use multimedia/phonon-xine
   however.  A number of files have been moved between packages.  The
   recommended update procedure is to delete phonon, phonon-gstreamer,
   kdebase-*4*, kdepim-4*, then update ports as usual and install desired
-  KDE4 ports:
+  KDE 4 ports:
 
     # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
     # portmaster -a (or portupgrade -a)
@@ -6299,7 +6299,7 @@ or
   AFFECTS: users of devel/dbus-qt4, devel/qt4-designer
   AUTHOR: kde@FreeBSD.org
 
-  Qt4 ports have been updated to 4.5.2.  The recommended update procedure
+  Qt 4 ports have been updated to 4.5.2.  The recommended update procedure
   is to delete qt4-dbus and qt4-designer, then update ports as usual.
   Install qt4-designer if needed.
 
@@ -6940,7 +6940,7 @@ or
   deskutils/kdepimlib4, deskutils/kdepim4, devel/automoc4
   AUTHOR: kde@FreeBSD.org
 
-  KDE4 has been updated from 4.1.4 to 4.2.0.  A number of applications
+  KDE 4 has been updated from 4.1.4 to 4.2.0.  A number of applications
   have been moved between packages.  The easiest way to avoid various
   problems during update is to delete all KDE-4.1.4 ports and install
   KDE-4.2.0:
@@ -7089,7 +7089,7 @@ or
   AFFECTS: users of x11/kdebase4-workspace, x11/kdebase4-runtime
   AUTHOR: kde@FreeBSD.org
 
-  KDE4 has been updated from 4.1.1 to 4.1.4.  A number of files have been
+  KDE 4 has been updated from 4.1.1 to 4.1.4.  A number of files have been
   moved between packages.  You should deinstall kdebase4-runtime package
   before updating:
 
@@ -7704,8 +7704,8 @@ or
   AFFECTS: users of devel/qt4
   AUTHOR: kde@FreeBSD.org
 
-  The qt4 ports has been updated to 4.4.1.  With this update several ports
-  specific problems have been fixed.  Qt4 headers and libraries have been
+  The Qt 4 ports has been updated to 4.4.1.  With this update several ports
+  specific problems have been fixed.  Qt 4 headers and libraries have been
   moved to include/qt4 and lib/qt4.  bsd.qt.mk defines QT_INCDIR and
   QT_LIBDIR now, which could be used in qt4-dependent ports if required.
   Before you start to update your ports, please force update of qmake4 and
