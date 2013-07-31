@@ -3,6 +3,7 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -15,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=	gmake iconv pkgconfig
-USE_GCC=	any
 USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf automake libtool
@@ -25,14 +25,12 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
 		--with-tssuser=${USERS} --with-tssgroup=${GROUPS}
-MAKE_JOBS_SAFE=	YES
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 USERS=		_tss
 GROUPS=		_tss
-PORTEXAMPLES=	tcsd.conf
 
-OPTIONS_DEFINE=	EMULATOR EXAMPLES DEBUG
+OPTIONS_DEFINE=	EMULATOR DEBUG
 EMULATOR_DESC=	Build for use with the tpm-emulator
 
 .include "Makefile.man"
@@ -62,29 +60,12 @@ run-autotools:	run-autotools-autoreconf
 run-autotools-autoreconf:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-post-install: install-examples
-.endif
-
-install-examples:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} -o ${USERS} -g ${GROUPS} -m 0600 \
-		${WRKSRC}/dist/tcsd.conf ${EXAMPLESDIR}/tcsd.conf
-
 post-install:
+	${INSTALL_DATA} -o ${USERS} -g ${GROUPS} -m 0600 \
+		${WRKSRC}/dist/tcsd.conf ${PREFIX}/etc/tcsd.conf.dist
 	@[ -f ${PREFIX}/etc/tcsd.conf ] || \
-		${INSTALL_DATA} ${EXAMPLESDIR}/tcsd.conf ${PREFIX}/etc/tcsd.conf
-	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 /var/run/tpm
-	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 /var/run/ima
-	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 ${PREFIX}/var/lib/tpm
+		${INSTALL_DATA} -o ${USERS} -g ${GROUPS} -m 0600 \
+		${WRKSRC}/dist/tcsd.conf ${PREFIX}/etc/tcsd.conf
 	@${CAT} ${PKGMESSAGE}
-
-add-plist-post:
-	@(${ECHO_CMD} "@cwd /"; \
-	 ${ECHO_CMD} "@unexec ${RMDIR} var/run/tpm 2>/dev/null || true"; \
-	 ${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/tpm"; \
-	 ${ECHO_CMD} "@unexec ${RMDIR} var/run/ima 2>/dev/null || true"; \
-	 ${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/ima"; \
-	 ) >> ${TMPPLIST}
 
 .include <bsd.port.mk>
