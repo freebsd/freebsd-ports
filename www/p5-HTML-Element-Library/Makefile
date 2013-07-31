@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Element-Library
-# Date created:				2007/02/14
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Element-Library
 PORTVERSION=	5.112.170
@@ -27,12 +23,13 @@ BUILD_DEPENDS=	p5-Array-Group>=0:${PORTSDIR}/devel/p5-Array-Group \
 		p5-Scalar-Listify>=0:${PORTSDIR}/devel/p5-Scalar-Listify
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	patch configure
 
 MAN3=		HTML::Element::Library::Changes.3 \
 		HTML::Element::Library.3
 
-post-extract:
+post-patch:
 	@cd ${WRKSRC} && pod2text lib/HTML/Element/Library.pm > README
 	@cd ${WRKSRC} && pod2text lib/HTML/Element/Library/Changes.pod > CHANGES
 
