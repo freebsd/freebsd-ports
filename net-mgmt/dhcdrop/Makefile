@@ -18,6 +18,7 @@ MAN8=		${PORTNAME}.8
 MANLANG=	"" ru
 
 PLIST_FILES=	sbin/dhcdrop
+PLIST_DIRSTRY=	man/ru/man8 man/ru
 
 OPTIONS_DEFINE=	STATIC
 STATIC_DESC=	Build a static version of dhcdrop
