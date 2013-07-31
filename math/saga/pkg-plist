@@ -1,25 +1,26 @@
 bin/saga_cmd
 bin/saga_gui
-lib/libsaga_api-2.0.8.so
 lib/libsaga_api.la
+lib/libsaga_api-2.1.0.so
 lib/libsaga_api.so
-lib/libsaga_gdi-2.0.8.so
+lib/libsaga_gdi-2.1.0.so
 lib/libsaga_gdi.la
 lib/libsaga_gdi.so
-lib/libsaga_odbc-2.0.8.so
 lib/libsaga_odbc.a
 lib/libsaga_odbc.la
+lib/libsaga_odbc-2.1.0.so
 lib/libsaga_odbc.so
-%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api-2.0.8.so
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api-2.1.0.so
 %%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.a
 %%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.la
 %%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.so
 %%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.py
 %%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.pyc
 %%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.pyo
+lib/saga/libclimate_tools.so
 lib/saga/libcontrib_a_perego.so
 lib/saga/libdocs_html.so
-%%HARU%%lib/saga/libdocs_pdf.so
+lib/saga/libdocs_pdf.so
 lib/saga/libgarden_3d_viewer.so
 lib/saga/libgarden_webservices.so
 lib/saga/libgeostatistics_grid.so
@@ -38,6 +39,7 @@ lib/saga/libihacres.so
 lib/saga/libimagery_classification.so
 lib/saga/libimagery_rga.so
 lib/saga/libimagery_segmentation.so
+lib/saga/libimagery_svm.so
 lib/saga/libimagery_tools.so
 lib/saga/libio_esri_e00.so
 lib/saga/libio_gdal.so
@@ -51,11 +53,11 @@ lib/saga/libio_shapes_dxf.so
 lib/saga/libio_shapes_las.so
 lib/saga/libio_table.so
 lib/saga/liblectures_introduction.so
-lib/saga/libopencv.so
 lib/saga/libpj_georeference.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
 lib/saga/libpointcloud_viewer.so
+lib/saga/libopencv.so
 lib/saga/librecreations_fractals.so
 lib/saga/librecreations_games.so
 lib/saga/libshapes_grid.so
@@ -65,6 +67,7 @@ lib/saga/libshapes_polygons.so
 lib/saga/libshapes_tools.so
 lib/saga/libsim_cellular_automata.so
 lib/saga/libsim_ecosystems_hugget.so
+lib/saga/libsim_erosion.so
 lib/saga/libsim_fire_spreading.so
 lib/saga/libsim_hydrology.so
 lib/saga/libta_channels.so
@@ -80,7 +83,7 @@ lib/saga/libtin_tools.so
 lib/saga/libtin_viewer.so
 lib/saga/libtransect.so
 %%VIGRA%%lib/saga/libvigra.so
-%%DATADIR%%/saga_icon_32.xpm
+%%DATADIR%%/saga.png
 %%DATADIR%%/saga_tip.txt
 @dirrm share/saga
 @dirrm lib/saga
