@@ -3,8 +3,6 @@ move, rename, delete, view and edit files in a Virtual File System (VFS).
 VFS consists from a normal disk space and a Archive File System (AFS).
 All file operations in AFS can be done exactly as in normal file system.
 
-The IVES - file viewer and editor for X Window included, provides a
+The IVES -- file viewer and editor for X Window included, provides a
 comprehensive way to view and edit images in many different formats: GIF,
 JPEG, PCX, BMP, XBM, XPM, TIFF, TGA, PCD, PNG.
-
-WWW: http://xnc.dubna.su/
