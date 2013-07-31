@@ -1,24 +1,26 @@
 # Created by: Ralf Meister
 # $FreeBSD$
-#
 
 PORTNAME=	opencryptoki
 PORTVERSION=	2.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open PKCS\#11 implementation library
 
-LIB_DEPENDS=	tspi.2:${PORTSDIR}/security/trousers
+LICENSE=	CPL
+LICENSE_NAME=	Common Public License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
 
 USE_BZIP2=	YES
-USE_GMAKE=	YES
+USES=		gmake
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf libtool automake
-HAS_CONFIGURE=	YES
-MAKE_JOBS_SAFE=	YES
 
 USE_RC_SUBR=	pkcsslotd
 SUB_FILES=	pkg-message
@@ -31,11 +33,6 @@ MAN8=		pkcsslotd.8
 
 USERS=		_pkcs11
 GROUPS=		_pkcs11
-
-LICENSE=	CPL
-LICENSE_NAME=	Common Public License
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--disable-crtok --disable-aeptok \
