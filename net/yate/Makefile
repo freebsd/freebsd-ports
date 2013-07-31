@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	yate
-PORTVERSION=	4.3.0.p1
+PORTVERSION=	4.3.0.p1	# XXX: please use DISTVERSION next time
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate4/
-DISTNAME=	yate-4.3.0-1
+DISTNAME=	${PORTNAME}-4.3.0-1
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Yet Another Telephony Engine
 
-LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
-		speex.1:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm \
+		libspeex.so:${PORTSDIR}/audio/speex
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 USE_AUTOTOOLS=	autoconf
-USE_GMAKE=	yes
-USES=		bison
+USES=		bison gmake
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-fdsize \
 		--without-libqt4 \
@@ -37,36 +35,19 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 MAN8=		yate-config.8 yate.8
 
-OPTIONS_DEFINE=	\
-	MYSQL \
-	PGSQL \
-	SCTP \
-	AMR_NB \
-	ILBC \
-	SPANDSP \
-	DAHDI \
-	H323 \
-	SSL \
-	ALSA
-
-MYSQL_DESC=	MySQL Database support
-PGSQL_DESC=	PostgreSQL Database support
-SCTP_DESC=	Stream Control Transmission Protocol
-AMR_NB_DESC=	AMR Narrow Band encoder (opencore)
-ILBC_DESC=	Enable iLBC codec
-SPANDSP_DESC=	Enable Spandsp faxing support
-DAHDI_DESC=	Dahdi driver
-H323_DESC=	H323 software channel/protocol support
-SSL_DESC=	Enable SSL support
-ALSA_DESC=	Enable ALSA channel support
-
-OPTIONS_DEFAULT=	SCTP
-
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	yate
+USERS=		yate
+GROUPS=		yate
 
-USERS=	yate
-GROUPS=	yate
+OPTIONS_DEFINE=	MYSQL PGSQL SCTP AMR_NB ILBC SPANDSP DAHDI H323 SSL ALSA DOCS
+OPTIONS_DEFAULT=	SCTP
+
+SCTP_DESC=	Stream Control Transmission Protocol support
+ILBC_DESC=	iLBC narrowband speech codec support
+SPANDSP_DESC=	Spandsp faxing support
+DAHDI_DESC=	Dahdi driver
+H323_DESC=	H323 software channel/protocol support
 
 .include <bsd.port.pre.mk>
 
@@ -99,7 +80,7 @@ PLIST_SUB+=	WITH_SCTP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAMR_NB}
-LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
+LIB_DEPENDS=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
 CONFIGURE_ARGS+=	--with-amrnb=${LOCALBASE}
 PLIST_SUB+=	WITH_AMR_NB=""
 .else
@@ -108,7 +89,7 @@ PLIST_SUB+=	WITH_AMR_NB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MILBC}
-LIB_DEPENDS+=	ilbc.0:${PORTSDIR}/net/ilbc
+LIB_DEPENDS+=	libilbc.so:${PORTSDIR}/net/ilbc
 CONFIGURE_ARGS+=	--enable-ilbc
 PLIST_SUB+=	WITH_ILBC=""
 .else
@@ -118,7 +99,7 @@ PLIST_SUB+=	WITH_ILBC="@comment "
 
 .if ${PORT_OPTIONS:MSPANDSP}
 CONFIGURE_ARGS+=	--with-spandsp=${LOCALBASE}/include
-LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS+=	libspandsp.so:${PORTSDIR}/comms/spandsp-devel
 MAKE_ENV+=	WITH_SPANDSP=1
 PLIST_SUB+=	WITH_SPANDSP=""
 .else
@@ -139,8 +120,8 @@ PLIST_SUB+=	WITH_DAHDI="@comment "
 .if ${PORT_OPTIONS:MH323}
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE} \
 			--with-openh323=${LOCALBASE}
-LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
-		h323_r.1:${PORTSDIR}/net/openh323
+LIB_DEPENDS+=	libpt_r.so:${PORTSDIR}/devel/pwlib \
+		libh323_r.so:${PORTSDIR}/net/openh323
 MAKE_ENV+=	WITH_H323=1
 PLIST_SUB+=	WITH_H323=""
 .else
@@ -159,7 +140,7 @@ PLIST_SUB+=	WITH_SSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 MAKE_ENV+=	WITH_ALSA=1
 PLIST_SUB+=	WITH_ALSA=""
 .else
@@ -179,6 +160,8 @@ post-install:
 	    for cfg in *.sample; do \
 		test -f $${cfg%%.sample} || ${CP} -p $${cfg} $${cfg%%.sample}; \
 	    done
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

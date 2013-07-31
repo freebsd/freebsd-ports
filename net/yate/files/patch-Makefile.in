@@ -18,6 +18,15 @@
  vardir = @localstatedir@/lib/yate
  moddir = @libdir@/yate
  shrdir = $(datadir)/yate
+@@ -126,7 +126,7 @@
+ 	-rm -f configure yate-config.in
+ 
+ .PHONY: engine libs modules clients test apidocs-build apidocs-kdoc apidocs-doxygen apidocs-everything check-topdir check-ldconfig windows
+-engine: library libyate.so $(PROGS)
++engine: libyate.so $(PROGS)
+ 
+ apidocs-kdoc: check-topdir
+ 	@if [ "x$(DOCGEN_K)" != x/bin/false ]; then \
 @@ -217,7 +217,7 @@
  	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
  	done
@@ -36,11 +45,15 @@
  	    rmdir $(DESTDIR)$(libdir)/pkgconfig
  	@-for i in $(INCS) $(GENS) ; do \
  	    rm "$(DESTDIR)$(incdir)/$$i" ; \
-@@ -320,6 +320,7 @@
+@@ -320,9 +320,9 @@
  
  libyate.so: $(YLIB)
  	ln -sf $^ $@
 +	ln -sf $^ $@\.4
  
- .PHONY: library
- library $(YLIB): yatepaths.h
+-.PHONY: library
+-library $(YLIB): yatepaths.h
++$(YLIB): yatepaths.h
+ 	$(MAKE) -C ./engine all
+ 
+ .PHONY: help
