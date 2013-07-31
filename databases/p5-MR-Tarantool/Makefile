@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-AnyEvent>=7.04:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-String-CRC32>=1.4:${PORTSDIR}/devel/p5-String-CRC32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MR::IProto.3 \
 	MR::IProto::Cluster.3 \
