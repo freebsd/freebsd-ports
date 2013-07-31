@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USE_XZ=		yes
 USE_GNOME=	pygnome2
-USES=		gmake desktop-file-utils
+USES=		desktop-file-utils gmake shared-mime-info
 USE_PYTHON=	-2.7
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
