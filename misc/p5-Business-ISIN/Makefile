@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::ISIN
-# Date created:				24 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-ISIN
 PORTVERSION=	0.20
@@ -18,7 +14,8 @@ COMMENT=	Validate International Securities Identification Numbers
 BUILD_DEPENDS=	p5-Locale-Codes>=0:${PORTSDIR}/misc/p5-Locale-Codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::ISIN.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Geo-Cache
-# Date created:				18 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Cache
 PORTVERSION=	0.11
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Geo::Cache.3
 

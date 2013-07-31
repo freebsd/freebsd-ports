@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-Data-Section>=0:${PORTSDIR}/devel/p5-Data-Section \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Software::License.3 \
 		Software::License::AGPL_3.3 \

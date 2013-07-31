@@ -13,7 +13,8 @@ COMMENT=	Convert state, province, county etc. names to/from code
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Locale::SubCountry.3 \
 	Locale::SubCountry::Data.3

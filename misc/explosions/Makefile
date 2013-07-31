@@ -13,7 +13,8 @@ COMMENT=	3D objects flying around resembling explosions with various effects
 
 USE_SDL=	sdl image
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 .include <bsd.port.options.mk>
 

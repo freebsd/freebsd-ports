@@ -13,8 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quote, currency, and Slashdot headline fetcher based on Perl
 
 NO_BUILD=	yes
-USE_PERL5=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	quotes quotesmailer QuExample.pm
 
 .include <bsd.port.options.mk>
