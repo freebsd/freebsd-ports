@@ -1,4 +1,4 @@
-# Created by: Mark Felder <feld@freebsd.org>
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
@@ -7,7 +7,7 @@ CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	feld@freebsd.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Extension to require core and ticket custom fields on status changes
 
 LICENSE=	GPLv2
@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	rt>4.0.8:${PORTSDIR}/www/rt${RT_VER}
 RUN_DEPENDS=	rt>4.0.8:${PORTSDIR}/www/rt${RT_VER}
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	RT::Extension::MandatoryOnTransition.3
 PLIST_SUB+=	RT_VER=${RT_VER}
