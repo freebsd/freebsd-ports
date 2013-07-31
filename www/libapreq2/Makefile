@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-libapreq2
-# Date created:				June 5, 2004
-# Whom:	      				Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.13
@@ -35,7 +31,7 @@ P5_APREQ_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 BUILD_DEPENDS+=	${P5_APREQ_DEPENDS}
 RUN_DEPENDS+=	${P5_APREQ_DEPENDS}
 
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=	--enable-perl-glue --with-perl=${PERL5}
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
@@ -54,7 +50,7 @@ MAN3=		APR::Request.3 \
 PLIST_SUB+=	WITH_MODPERL2=""
 
 post-patch:
-	@${PERL5} -pi -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
+	@${REINPLACE_CMD} -i '' -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
 		${WRKSRC}/glue/perl/Makefile.PL
 .else
 PLIST_SUB+=	WITH_MODPERL2="@comment "
