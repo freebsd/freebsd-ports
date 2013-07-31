@@ -70,6 +70,7 @@ share/icons/hicolor/scalable/apps/gobby.svg
 @dirrmtry share/locale/hr/LC_MESSAGES
 @dirrmtry share/locale/he/LC_MESSAGES
 @dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
 @dirrmtry share/locale/fr/LC_MESSAGES
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/eu/LC_MESSAGES
