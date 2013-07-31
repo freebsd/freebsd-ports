@@ -17,8 +17,9 @@ LICENSE_FILE=	${WRKSRC}/GNU.TXT
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+USES=		gmake
+USE_CSTD=	gnu89
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
