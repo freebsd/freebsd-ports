@@ -1,0 +1,11 @@
+--- ./scripts/rabbitmqctl.orig	2013-06-25 23:11:55.000000000 +0900
++++ ./scripts/rabbitmqctl	2013-07-31 15:53:45.000000000 +0900
+@@ -26,7 +26,7 @@
+ 
+ ##--- End of overridden <var_name> variables
+ 
+-exec ${ERL_DIR}erl \
++HOME=/var/db/rabbitmq exec ${ERL_DIR}/usr/local/bin//usr/local/bin/erl \
+     -pa "${RABBITMQ_HOME}/ebin" \
+     -noinput \
+     -hidden \

@@ -52,6 +52,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_amqplain.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_cr_demo.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_plain.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_autoheal.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_backing_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_backing_queue_qc.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_basic.beam
@@ -91,8 +92,13 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memory_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_coordinator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_master.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_misc.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_mode.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_mode_all.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_mode_exactly.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_mode_nodes.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_slave.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_slave_sup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_sync.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_misc.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mnesia.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_msg_file.beam
@@ -146,6 +152,8 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/vm_memory_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_worker.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Flot
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-APACHE2-ExplorerCanvas
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/gm_specs.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit.hrl
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/include/rabbit_framing.hrl
@@ -155,6 +163,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/amqp_client-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/cowboy-0.5.0-rmq0.0.0-git4b93c2d.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/eldap-0.0.0-gite309de4.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/mochiweb-2.3.1-rmq0.0.0-gitd541e9a.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_amqp1_0-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_backend_ldap-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_auth_mechanism_ssl-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_consistent_hash_exchange-0.0.0.ez
@@ -167,7 +176,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management_agent-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_management_visualiser-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_mqtt-0.0.0.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_old_federation-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_shovel-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_shovel_management-0.0.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_stomp-0.0.0.ez
