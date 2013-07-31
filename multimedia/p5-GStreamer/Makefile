@@ -8,7 +8,7 @@ MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	A set of Perl5 bindings for gstreamer
+COMMENT=	Set of Perl5 bindings for gstreamer
 
 BUILD_DEPENDS=	p5-Glib2>=1.101:${PORTSDIR}/devel/p5-Glib2 \
 		p5-ExtUtils-Depends>=0.205:${PORTSDIR}/devel/p5-ExtUtils-Depends \
@@ -17,9 +17,9 @@ RUN_DEPENDS=	p5-Glib2>=1.101:${PORTSDIR}/devel/p5-Glib2 \
 		p5-ExtUtils-Depends>=0.205:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1.07:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_GSTREAMER=	yes
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
 
 MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 	GStreamer::Caps.3 GStreamer::Caps::Any.3 GStreamer::Caps::Empty.3 \
@@ -57,7 +57,7 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 
 PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || ${ECHO_CMD}
 .if ${PERL_THREADED} == ""
-IGNORE=		must be built with a threaded Perl, reinstall Perl with WITH_THREADS=yes
+IGNORE=		must be built with a threaded Perl, reinstall Perl with the THREADS option on
 .endif
 
 .include <bsd.port.post.mk>
