@@ -14,11 +14,8 @@ OPTIONS_DEFINE=	SVGALIB NLS
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-.if ${CC} == "clang"
+USES=		gmake
 USE_CSTD=	c89
-.endif
-
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
