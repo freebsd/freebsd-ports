@@ -1,27 +1,28 @@
---- dbus-1/Makefile.in.orig	2012-05-28 13:31:56.000000000 +0200
-+++ dbus-1/Makefile.in	2012-05-28 13:35:25.000000000 +0200
-@@ -34,7 +34,7 @@
- NORMAL_UNINSTALL = :
- PRE_UNINSTALL = :
- POST_UNINSTALL = :
+--- dbus-1/Makefile.orig.in	2013-03-26 19:18:48.870352031 +0000
++++ dbus-1/Makefile.in	2013-03-26 19:18:57.583352154 +0000
+@@ -55,7 +55,7 @@
+ DIST_COMMON = $(dconf_dbus_1include_HEADERS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/dconf-dbus-1.pc.in \
+ 	$(top_srcdir)/Makefile.gtester
 -shlib_PROGRAMS = libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +shlib_PROGRAMS = libdconf-dbus-1.so.0$(EXEEXT)
  subdir = dbus-1
- DIST_COMMON = $(dconf_dbus_1include_HEADERS) $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/dconf-dbus-1.pc.in
-@@ -246,7 +246,7 @@
- 	../gvdb/gvdb-reader.c		\
- 	dconf-dbus-1.c
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+@@ -341,7 +341,7 @@
  
--noinst_DATA = libdconf-dbus-1.so libdconf-dbus-1.so.0
-+noinst_DATA = libdconf-dbus-1.so.0
+ libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so.0
+ libdconf_dbus_1_so_0_0_0_SOURCES = dconf-dbus-1.c
+-nodist_noinst_DATA = libdconf-dbus-1.so libdconf-dbus-1.so.0
++nodist_noinst_DATA = libdconf-dbus-1.so.0
  CLEANFILES = libdconf-dbus-1.so.0 libdconf-dbus-1.so
  all: all-am
  
-@@ -321,9 +321,10 @@
+@@ -430,13 +430,12 @@
+ 	cd "$(DESTDIR)$(shlibdir)" && rm -f $$files
  
  clean-shlibPROGRAMS:
- 	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
+-	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
 -libdconf-dbus-1.so.0.0.0$(EXEEXT): $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_dbus_1_so_0_0_0_DEPENDENCIES) 
 -	@rm -f libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +libdconf-dbus-1.so.0$(EXEEXT): $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_dbus_1_so_0_0_0_DEPENDENCIES) 
@@ -30,10 +31,13 @@
 +	$(AM_V_GEN) ln -fs libdconf-dbus-1.so.0 libdconf-dbus-1.so
  
  mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
-@@ -640,12 +641,8 @@
- 	uninstall-hook uninstall-pkgconfigDATA uninstall-shlibPROGRAMS
+-	-rm -f *.$(OBJEXT)
  
+ distclean-compile:
+ 	-rm -f *.tab.c
+@@ -821,12 +820,8 @@
+ # run tests in cwd as part of make check
+ check-local: test-nonrecursive
  
 -libdconf-dbus-1.so.0 libdconf-dbus-1.so: libdconf-dbus-1.so.0.0.0
 -	$(AM_V_GEN) ln -fs libdconf-dbus-1.so.0.0.0 $@

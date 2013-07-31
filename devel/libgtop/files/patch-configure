@@ -1,17 +1,5 @@
 --- configure.orig	2011-03-30 10:06:27.000000000 +0200
 +++ configure	2011-03-30 10:07:52.000000000 +0200
-@@ -3231,9 +3231,9 @@
-        INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
-        INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
-        INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
--       INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
-+       INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e "s|${datadir}|\\\$(datadir)|"`
-        INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
--       INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
-+       INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e "e|${libdir}|\\\$(libdir)|g"`
-        INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
-        INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
-        INTROSPECTION_MAKEFILE=`$PKG_CONFIG --variable=datadir gobject-introspection-1.0`/gobject-introspection-1.0/Makefile.introspection
 @@ -13230,6 +13230,78 @@
  		if test -n "${osreldate}" && test ${osreldate} -ge 600000 ; then
  		    EXTRA_SYSDEPS_LIBS="-lgeom -ldevstat"

@@ -182,6 +182,7 @@
     SUBDIR += pango
     SUBDIR += pango-reference
     SUBDIR += pangomm
+    SUBDIR += pangox-compat
     SUBDIR += pangoxsl
     SUBDIR += paragui-devel
     SUBDIR += phat

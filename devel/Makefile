@@ -548,7 +548,6 @@
     SUBDIR += gflags
     SUBDIR += giggle
     SUBDIR += gindent
-    SUBDIR += gio-fam-backend
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-merge-changelog

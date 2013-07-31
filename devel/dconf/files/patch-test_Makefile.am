@@ -1,0 +1,21 @@
+--- tests/Makefile.orig.am	2013-03-26 21:34:03.467621533 +0100
++++ tests/Makefile.am	2013-03-26 21:34:43.396618710 +0100
+@@ -28,8 +28,7 @@
+ shm_CFLAGS = $(glib_CFLAGS)
+ shm_LDADD = \
+ 	../shm/libdconf-shm.a			\
+-	$(glib_LIBS)				\
+-	-ldl
++	$(glib_LIBS)
+ shm_SOURCES = \
+ 	shm.c					\
+ 	tmpdir.h				\
+@@ -79,7 +78,7 @@
+ 	../common/libdconf-common.a		\
+ 	libdconf-mock.a				\
+ 	$(glib_LIBS)				\
+-	-ldl -lm
++	-lm
+ engine_SOURCES = engine.c
+ EXTRA_DIST += \
+ 	profile/broken-profile			\

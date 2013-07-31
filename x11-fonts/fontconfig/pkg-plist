@@ -5,8 +5,10 @@ bin/fc-match
 bin/fc-pattern
 bin/fc-query
 bin/fc-scan
+bin/fc-validate
 etc/fonts/conf.avail/10-autohint.conf
 etc/fonts/conf.avail/10-no-sub-pixel.conf
+etc/fonts/conf.avail/10-scale-bitmap-fonts.conf
 etc/fonts/conf.avail/10-sub-pixel-bgr.conf
 etc/fonts/conf.avail/10-sub-pixel-rgb.conf
 etc/fonts/conf.avail/10-sub-pixel-vbgr.conf
@@ -15,7 +17,6 @@ etc/fonts/conf.avail/10-unhinted.conf
 etc/fonts/conf.avail/11-lcdfilter-default.conf
 etc/fonts/conf.avail/11-lcdfilter-legacy.conf
 etc/fonts/conf.avail/11-lcdfilter-light.conf
-etc/fonts/conf.avail/20-fix-globaladvance.conf
 etc/fonts/conf.avail/20-unhint-small-vera.conf
 etc/fonts/conf.avail/25-unhint-nonlatin.conf
 etc/fonts/conf.avail/30-metric-aliases.conf
@@ -34,7 +35,7 @@ etc/fonts/conf.avail/70-no-bitmaps.conf
 etc/fonts/conf.avail/70-yes-bitmaps.conf
 etc/fonts/conf.avail/80-delicious.conf
 etc/fonts/conf.avail/90-synthetic.conf
-etc/fonts/conf.d/20-fix-globaladvance.conf
+etc/fonts/conf.d/10-scale-bitmap-fonts.conf
 etc/fonts/conf.d/20-unhint-small-vera.conf
 etc/fonts/conf.d/30-metric-aliases.conf
 etc/fonts/conf.d/30-urw-aliases.conf

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.29 2011/04/30 20:43:31 mezz Exp $
+#   $MCom: ports/trunk/x11-fonts/fontconfig/Makefile 18637 2013-07-27 09:15:21Z kwm $
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.9.0
+PORTVERSION=	2.10.93
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
@@ -12,34 +12,38 @@ MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
 
+USE_BZIP2=	yes
+
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		expat:${PORTSDIR}/textproc/expat2
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack ltverhack
-CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	ltverhack
+CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
+		--with-templatedir=${PREFIX}/etc/fonts/conf.avail \
+		--with-xmldir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
 		--with-default-fonts=${PREFIX}/share/fonts \
 		--with-add-fonts=${LOCALBASE}/lib/X11/fonts \
 		--with-cache-dir=/var/db/fontconfig \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--disable-docs
 MAKE_ENV=	LC_ALL=C
-MAKE_JOBS_SAFE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
 MAN5=		fonts-conf.5
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 .endif
@@ -61,6 +65,6 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 .endif

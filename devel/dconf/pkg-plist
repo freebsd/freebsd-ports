@@ -1,19 +1,26 @@
 bin/dconf
-etc/bash_completion.d/dconf-bash-completion.sh
-include/dconf/dconf-client.h
+include/dconf/client/dconf-client.h
+include/dconf/common/dconf-changeset.h
 include/dconf-dbus-1/dconf-dbus-1.h
-include/dconf/dconf-engine.h
-include/dconf/dconf-paths.h
+include/dconf/common/dconf-paths.h
 include/dconf/dconf.h
 lib/gio/modules/libdconfsettings.so
+lib/gio/modules/giomodule.cache
 lib/libdconf.so
-lib/libdconf.so.0
+lib/libdconf.so.1
 lib/libdconf-dbus-1.so
 lib/libdconf-dbus-1.so.0
 libdata/pkgconfig/dconf.pc
 libdata/pkgconfig/dconf-dbus-1.pc
 libexec/dconf-service
+share/bash-completion/completions/dconf
 share/dbus-1/services/ca.desrt.dconf.service
+share/gtk-doc/html/dconf/dconf-DConfChangeset.html
+share/gtk-doc/html/dconf/dconf-editor.html
+share/gtk-doc/html/dconf/dconf-overview.html
+share/gtk-doc/html/dconf/dconf-service.html
+share/gtk-doc/html/dconf/dconf-tool.html
+share/gtk-doc/html/dconf/programs.html
 share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/dconf-DConf-Paths.html
 share/gtk-doc/html/dconf/annotation-glossary.html
@@ -28,13 +35,63 @@ share/gtk-doc/html/dconf/object-tree.html
 share/gtk-doc/html/dconf/right.png
 share/gtk-doc/html/dconf/style.css
 share/gtk-doc/html/dconf/up.png
+share/locale/ar/LC_MESSAGES/dconf.mo
+share/locale/as/LC_MESSAGES/dconf.mo
+share/locale/be/LC_MESSAGES/dconf.mo
+share/locale/bg/LC_MESSAGES/dconf.mo
+share/locale/bn_IN/LC_MESSAGES/dconf.mo
+share/locale/ca/LC_MESSAGES/dconf.mo
+share/locale/ca@valencia/LC_MESSAGES/dconf.mo
+share/locale/cs/LC_MESSAGES/dconf.mo
+share/locale/da/LC_MESSAGES/dconf.mo
+share/locale/de/LC_MESSAGES/dconf.mo
+share/locale/el/LC_MESSAGES/dconf.mo
+share/locale/en_GB/LC_MESSAGES/dconf.mo
+share/locale/eo/LC_MESSAGES/dconf.mo
+share/locale/es/LC_MESSAGES/dconf.mo
+share/locale/et/LC_MESSAGES/dconf.mo
+share/locale/fa/LC_MESSAGES/dconf.mo
+share/locale/fi/LC_MESSAGES/dconf.mo
+share/locale/fr/LC_MESSAGES/dconf.mo
+share/locale/gl/LC_MESSAGES/dconf.mo
+share/locale/he/LC_MESSAGES/dconf.mo
+share/locale/hi/LC_MESSAGES/dconf.mo
+share/locale/hu/LC_MESSAGES/dconf.mo
+share/locale/id/LC_MESSAGES/dconf.mo
+share/locale/it/LC_MESSAGES/dconf.mo
+share/locale/ja/LC_MESSAGES/dconf.mo
+share/locale/ko/LC_MESSAGES/dconf.mo
+share/locale/lt/LC_MESSAGES/dconf.mo
+share/locale/lv/LC_MESSAGES/dconf.mo
+share/locale/ml/LC_MESSAGES/dconf.mo
+share/locale/mr/LC_MESSAGES/dconf.mo
+share/locale/nb/LC_MESSAGES/dconf.mo
+share/locale/pa/LC_MESSAGES/dconf.mo
+share/locale/pl/LC_MESSAGES/dconf.mo
+share/locale/pt/LC_MESSAGES/dconf.mo
+share/locale/pt_BR/LC_MESSAGES/dconf.mo
+share/locale/ru/LC_MESSAGES/dconf.mo
+share/locale/sk/LC_MESSAGES/dconf.mo
+share/locale/sl/LC_MESSAGES/dconf.mo
+share/locale/sr/LC_MESSAGES/dconf.mo
+share/locale/sr@latin/LC_MESSAGES/dconf.mo
+share/locale/sv/LC_MESSAGES/dconf.mo
+share/locale/ta/LC_MESSAGES/dconf.mo
+share/locale/te/LC_MESSAGES/dconf.mo
+share/locale/th/LC_MESSAGES/dconf.mo
+share/locale/uk/LC_MESSAGES/dconf.mo
+share/locale/vi/LC_MESSAGES/dconf.mo
+share/locale/zh_CN/LC_MESSAGES/dconf.mo
+share/locale/zh_HK/LC_MESSAGES/dconf.mo
+share/locale/zh_TW/LC_MESSAGES/dconf.mo
 share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
 @dirrm share/gtk-doc/html/dconf
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrm include/dconf-dbus-1
+@dirrm include/dconf/common
+@dirrm include/dconf/client
 @dirrm include/dconf
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
-@dirrmtry etc/bash_completion.d

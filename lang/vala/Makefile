@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/lang/vala/Makefile,v 1.65 2012/12/17 19:46:24 kwm Exp $
+#   $MCom: ports/trunk/lang/vala/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	vala
-PORTVERSION=	0.18.1
+PORTVERSION=	0.20.1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -12,17 +12,16 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-USES=		bison pathfix pkgconfig gettext
+USES=		bison gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix libxslt
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 MAN1?=		valac.1 valac-${VALA_VER}.1
-VALA_VER=	0.18
+VALA_VER=	${PORTVERSION:R}
 
 PLIST_SUB=	VERSION=${VALA_VER}
 

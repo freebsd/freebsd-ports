@@ -1,0 +1,9 @@
+Pango provides a framework to render and control the layout of
+internationalized text, and is the backend for right-to-left text.
+Pango is an integral part of the GTK+ and GNOME projects, but its
+code is platform- and toolkit-independent.
+
+This port supplies the deprecated pangox interface which was removed from
+the pango port.
+
+WWW: http://www.pango.org/

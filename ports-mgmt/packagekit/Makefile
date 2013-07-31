@@ -21,8 +21,7 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
 		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
-USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		gettext gmake iconv
 USE_GNOME=	glib20 intltool gnomehier
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
@@ -85,6 +84,7 @@ USE_QT4+=	dbus gui xml sql moc_build
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's/.*WARNINGFLAGS_CPP.*-Werror/#$$&/' \
+		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/pk-lsof.c

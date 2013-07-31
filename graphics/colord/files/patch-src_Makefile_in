@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_in,v 1.6 2013/03/31 19:41:23 ajacoutot Exp $
+--- src/Makefile.in.orig	Thu Mar 28 11:16:10 2013
++++ src/Makefile.in	Sat Mar 30 16:25:48 2013
+@@ -1774,11 +1774,6 @@ cd-resources.h: colord.gresource.xml
+ 		$(srcdir)/colord.gresource.xml
+ 
+ install-data-hook:
+-	if test -w $(DESTDIR)$(prefix)/; then \
+-		mkdir -p $(DESTDIR)$(CD_SYSTEM_PROFILES_DIR); \
+-		chown $(daemon_user) $(DESTDIR)$(localstatedir)/lib/colord; \
+-		chmod 0755 $(DESTDIR)$(localstatedir)/lib/colord; \
+-	fi
+ 
+ -include $(top_srcdir)/git.mk
+ 

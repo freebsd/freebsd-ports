@@ -3,7 +3,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.9.1
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Archive
@@ -15,20 +15,17 @@ LICENSE=	ART20 GPLv2
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
-		rep:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep:${PORTSDIR}/lang/librep
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 USE_XZ=		yes
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	ice sm x11 xft xinerama xrandr xtst
-USE_GNOME=	gnomehier gtk20
-USE_GMAKE=	yes
+USE_GNOME=	cairo gnomehier gtk20 pangox-compat
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

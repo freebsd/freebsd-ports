@@ -105,6 +105,7 @@ include/glib-2.0/gio/gmount.h
 include/glib-2.0/gio/gmountoperation.h
 include/glib-2.0/gio/gnativevolumemonitor.h
 include/glib-2.0/gio/gnetworkaddress.h
+include/glib-2.0/gio/gnetworking.h
 include/glib-2.0/gio/gnetworkmonitor.h
 include/glib-2.0/gio/gnetworkservice.h
 include/glib-2.0/gio/goutputstream.h
@@ -125,6 +126,7 @@ include/glib-2.0/gio/gsettingsbackend.h
 include/glib-2.0/gio/gsettingsschema.h
 include/glib-2.0/gio/gsimpleaction.h
 include/glib-2.0/gio/gsimpleactiongroup.h
+include/glib-2.0/gio/gsimpleproxyresolver.h
 include/glib-2.0/gio/gsimpleasyncresult.h
 include/glib-2.0/gio/gsimplepermission.h
 include/glib-2.0/gio/gsocket.h
@@ -137,6 +139,7 @@ include/glib-2.0/gio/gsocketcontrolmessage.h
 include/glib-2.0/gio/gsocketlistener.h
 include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
+include/glib-2.0/gio/gtask.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
 include/glib-2.0/gio/gtestdbus.h
@@ -258,30 +261,6 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
-lib/gdbus-2.0/codegen/__init__.py
-lib/gdbus-2.0/codegen/__init__.pyc
-lib/gdbus-2.0/codegen/__init__.pyo
-lib/gdbus-2.0/codegen/codegen.py
-lib/gdbus-2.0/codegen/codegen.pyc
-lib/gdbus-2.0/codegen/codegen.pyo
-lib/gdbus-2.0/codegen/codegen_docbook.py
-lib/gdbus-2.0/codegen/codegen_docbook.pyc
-lib/gdbus-2.0/codegen/codegen_docbook.pyo
-lib/gdbus-2.0/codegen/codegen_main.py
-lib/gdbus-2.0/codegen/codegen_main.pyc
-lib/gdbus-2.0/codegen/codegen_main.pyo
-lib/gdbus-2.0/codegen/config.py
-lib/gdbus-2.0/codegen/config.pyc
-lib/gdbus-2.0/codegen/config.pyo
-lib/gdbus-2.0/codegen/dbustypes.py
-lib/gdbus-2.0/codegen/dbustypes.pyc
-lib/gdbus-2.0/codegen/dbustypes.pyo
-lib/gdbus-2.0/codegen/parser.py
-lib/gdbus-2.0/codegen/parser.pyc
-lib/gdbus-2.0/codegen/parser.pyo
-lib/gdbus-2.0/codegen/utils.py
-lib/gdbus-2.0/codegen/utils.pyc
-lib/gdbus-2.0/codegen/utils.pyo
 lib/libgio-2.0.a
 lib/libgio-2.0.la
 lib/libgio-2.0.so
@@ -313,7 +292,30 @@ libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
-share/glib-2.0/gettext/mkinstalldirs
+share/glib-2.0/codegen/__init__.py
+share/glib-2.0/codegen/__init__.pyc
+share/glib-2.0/codegen/__init__.pyo
+share/glib-2.0/codegen/codegen.py
+share/glib-2.0/codegen/codegen.pyc
+share/glib-2.0/codegen/codegen.pyo
+share/glib-2.0/codegen/codegen_docbook.py
+share/glib-2.0/codegen/codegen_docbook.pyc
+share/glib-2.0/codegen/codegen_docbook.pyo
+share/glib-2.0/codegen/codegen_main.py
+share/glib-2.0/codegen/codegen_main.pyc
+share/glib-2.0/codegen/codegen_main.pyo
+share/glib-2.0/codegen/config.py
+share/glib-2.0/codegen/config.pyc
+share/glib-2.0/codegen/config.pyo
+share/glib-2.0/codegen/dbustypes.py
+share/glib-2.0/codegen/dbustypes.pyc
+share/glib-2.0/codegen/dbustypes.pyo
+share/glib-2.0/codegen/parser.py
+share/glib-2.0/codegen/parser.pyc
+share/glib-2.0/codegen/parser.pyo
+share/glib-2.0/codegen/utils.py
+share/glib-2.0/codegen/utils.pyc
+share/glib-2.0/codegen/utils.pyo
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/gschema.dtd
 share/locale/af/LC_MESSAGES/glib20.mo
@@ -397,6 +399,7 @@ share/locale/sr@latin/LC_MESSAGES/glib20.mo
 share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/LC_MESSAGES/glib20.mo
 share/locale/te/LC_MESSAGES/glib20.mo
+share/locale/tg/LC_MESSAGES/glib20.mo
 share/locale/th/LC_MESSAGES/glib20.mo
 share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
@@ -469,6 +472,7 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrm share/glib-2.0/schemas
 @dirrm share/glib-2.0/gettext/po
 @dirrm share/glib-2.0/gettext
+@dirrm share/glib-2.0/codegen
 @dirrm share/glib-2.0
 @dirrmtry share/bash-completion/completions
 @dirrmtry share/bash-completion
@@ -479,8 +483,6 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @dirrmtry lib/gio/modules
 @dirrmtry lib/gio
-@dirrm lib/gdbus-2.0/codegen
-@dirrm lib/gdbus-2.0
 @dirrm include/glib-2.0/gobject
 @dirrm include/glib-2.0/glib/deprecated
 @dirrm include/glib-2.0/glib

@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/accessibility/at-spi2-core/Makefile,v 1.41 2012/12/16 22:36:25 kwm Exp $
+#   $MCom: ports/trunk/accessibility/at-spi2-core/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	at-spi2-core
-PORTVERSION=	2.6.3
+PORTVERSION=	2.8.0
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,15 +13,13 @@ COMMENT=	Assistive Technology Service Provider Interface
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		pathfix pkgconfig gettext
+USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehier glib20 intlhack
+USE_GNOME=	gnomehier glib20 intlhack introspection:build
 USE_XORG=	x11 xi xtst xext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pangomm/Makefile,v 1.24 2012/09/03 16:28:30 mezz Exp $
+#   $MCom: ports/trunk/x11-toolkits/pangomm/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	pangomm
 PORTVERSION=	2.28.4
@@ -18,11 +18,10 @@ USE_XZ=		yes
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
-USE_GNOME=	pango cairomm glibmm
+USES=		gmake pathfix
+USE_GNOME=	cairomm glibmm pango
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation \

@@ -229,6 +229,7 @@ include/giomm-%%API_VERSION%%/giomm/zlibdecompressor.h
 include/glibmm-%%API_VERSION%%/glibmm.h
 include/glibmm-%%API_VERSION%%/glibmm/arrayhandle.h
 include/glibmm-%%API_VERSION%%/glibmm/balancedtree.h
+include/glibmm-%%API_VERSION%%/glibmm/bytearray.h
 include/glibmm-%%API_VERSION%%/glibmm/bytes.h
 include/glibmm-%%API_VERSION%%/glibmm/checksum.h
 include/glibmm-%%API_VERSION%%/glibmm/class.h
@@ -264,6 +265,7 @@ include/glibmm-%%API_VERSION%%/glibmm/optiongroup.h
 include/glibmm-%%API_VERSION%%/glibmm/pattern.h
 include/glibmm-%%API_VERSION%%/glibmm/priorities.h
 include/glibmm-%%API_VERSION%%/glibmm/private/balancedtree_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/bytearray_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/bytes_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/checksum_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/convert_p.h

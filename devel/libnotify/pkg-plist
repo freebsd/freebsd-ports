@@ -11,13 +11,15 @@ lib/libnotify.so.4
 libdata/pkgconfig/libnotify.pc
 share/gir-1.0/Notify-0.7.gir
 share/gtk-doc/html/libnotify/NotifyNotification.html
+share/gtk-doc/html/libnotify/annotation-glossary.html
+share/gtk-doc/html/libnotify/api-index-deprecated.html
+share/gtk-doc/html/libnotify/api-index-full.html
 share/gtk-doc/html/libnotify/ch01.html
 share/gtk-doc/html/libnotify/home.png
 share/gtk-doc/html/libnotify/index.html
 share/gtk-doc/html/libnotify/index.sgml
 share/gtk-doc/html/libnotify/left.png
 share/gtk-doc/html/libnotify/libnotify-notify.html
-share/gtk-doc/html/libnotify/libnotify.devhelp
 share/gtk-doc/html/libnotify/libnotify.devhelp2
 share/gtk-doc/html/libnotify/right.png
 share/gtk-doc/html/libnotify/style.css

@@ -1,11 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.229 2012/12/09 20:42:55 kwm Exp $
-# !! DON'T FORGET ABOUT devel/gio-fam-backend !!
+#   $MCom: ports/trunk/devel/glib20/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	glib
-PORTVERSION=	2.34.3
-PORTREVISION?=	0
+PORTVERSION=	2.36.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,10 +25,8 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pkgconfig gettext iconv
-USE_GNOME=	gnomehack ltverhack
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=		gettext gmake iconv pathfix pkgconfig shebangfix
+USE_GNOME=	ltverhack
 USE_PYTHON=	2.5+
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
@@ -37,8 +34,11 @@ CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
 		--disable-man --without-xml-catalog \
 		--with-pcre=system \
 		--disable-fam
+CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG
 COLLATION_FIX_DESC=	fix string collation
@@ -73,6 +73,7 @@ LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
 # Disable it until someone can figure why it causes net-im/pidgin crashed.
+# http://www.freebsd.org/cgi/query-pr.cgi?pr=175930 see comment by ed@
 #CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 .endif
 
@@ -91,6 +92,7 @@ post-patch:
 		${WRKSRC}/gio/gdbusaddress.c ${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
 	@${REINPLACE_CMD} -e 's|inotify_support=yes|inotify_support=no| ; \
+		s|-Werror|| ; \
 		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
 
 post-install:

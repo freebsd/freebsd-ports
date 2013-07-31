@@ -1,10 +1,9 @@
 # Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD$
-#    $MCom: ports/graphics/gdk-pixbuf2/Makefile,v 1.28 2012/12/10 12:09:15 kwm Exp $
+#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	2.26.5
-PORTREVISION=	3
+PORTVERSION=	2.28.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -13,20 +12,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graphic library for GTK+
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 LATEST_LINK=	gdk-pixbuf2
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_XORG=	xt xi x11
 USE_AUTOTOOLS=	libtool
-USE_GNOME+=	gnomehack gnomehier glib20 ltverhack
+USES=		gmake pathfix pkgconfig
+USE_GNOME+=	gnomehier glib20 ltverhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-introspection=yes --with-x11
-MAKE_ENV+=	GI_SCANNER_DISABLE_CACHE=yes
 
 MAN1=		gdk-pixbuf-csource.1 gdk-pixbuf-query-loaders.1
 

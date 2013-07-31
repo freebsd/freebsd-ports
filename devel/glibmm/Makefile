@@ -1,9 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/glibmm/Makefile,v 1.121 2012/12/09 21:00:20 kwm Exp $
+#   $MCom: ports/trunk/devel/glibmm/Makefile 18634 2013-07-26 10:42:35Z kwm $
 
 PORTNAME=	glibmm
-PORTVERSION=	2.34.1
+PORTVERSION=	2.36.2
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -21,9 +21,8 @@ PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 ltverhack libsigc++20
-USES=		pkgconfig gettext
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	glib20 ltverhack libsigc++20
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

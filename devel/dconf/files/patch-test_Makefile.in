@@ -1,0 +1,21 @@
+--- tests/Makefile.orig.in	2013-03-26 21:34:10.705623412 +0100
++++ tests/Makefile.in	2013-03-26 21:34:54.686617478 +0100
+@@ -349,8 +349,7 @@
+ shm_CFLAGS = $(glib_CFLAGS)
+ shm_LDADD = \
+ 	../shm/libdconf-shm.a			\
+-	$(glib_LIBS)				\
+-	-ldl
++	$(glib_LIBS)
+ 
+ shm_SOURCES = \
+ 	shm.c					\
+@@ -395,7 +394,7 @@
+ 	../common/libdconf-common.a		\
+ 	libdconf-mock.a				\
+ 	$(glib_LIBS)				\
+-	-ldl -lm
++	-lm
+ 
+ engine_SOURCES = engine.c
+ client_CFLAGS = $(gio_CFLAGS) -DSRCDIR=\"$(abs_srcdir)\"

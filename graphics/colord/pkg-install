@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+	/bin/mkdir -p /var/db/colord/icc
+	/bin/chmod 0755 /var/db/colord
+	/usr/sbin/chown colord:colord /var/db/colord
+	/usr/sbin/chown colord:colord /var/db/colord/icc
+	exit 0
+	;;
+esac

@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
@@ -30,8 +30,8 @@ USE_AUTOTOOLS=	libtool
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
 		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 USE_GL=		glu
-USES=		pathfix pkgconfig gettext iconv
-USE_GNOME=	gdkpixbuf2 gtk20
+USES=		gettext iconv pathfix pkgconfig
+USE_GNOME=	gdkpixbuf2 gtk20 pangox-compat
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

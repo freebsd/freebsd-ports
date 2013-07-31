@@ -31,6 +31,8 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/alsa.deps
 %%DATADIR%%-%%VERSION%%/vapi/alsa.vapi
 %%DATADIR%%-%%VERSION%%/vapi/atk.vapi
+%%DATADIR%%-%%VERSION%%/vapi/atspi-2.deps
+%%DATADIR%%-%%VERSION%%/vapi/atspi-2.vapi
 %%DATADIR%%-%%VERSION%%/vapi/avahi-client.vapi
 %%DATADIR%%-%%VERSION%%/vapi/avahi-gobject.deps
 %%DATADIR%%-%%VERSION%%/vapi/avahi-gobject.vapi
@@ -150,6 +152,8 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtsp-0.10.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtsp-1.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtsp-1.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtsp-server-1.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/gstreamer-rtsp-server-1.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-sdp-0.10.deps
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-sdp-0.10.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gstreamer-sdp-1.0.deps
