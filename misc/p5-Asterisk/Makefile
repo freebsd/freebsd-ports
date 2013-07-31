@@ -12,7 +12,8 @@ DISTNAME=	asterisk-perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asterisk perl library
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/asterisk-perl-${PORTVERSION}
 
 MAN3=		Asterisk::AGI.3 \

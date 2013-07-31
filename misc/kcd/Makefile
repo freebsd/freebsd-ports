@@ -12,8 +12,7 @@ COMMENT=	Change directory in full-screen visual mode
 
 LICENSE=	GPLv2
 
-USES=		gettext
-USE_PERL5=	yes
+USES=		gettext perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CPPFLAGS+=	-I${LOCALBASE}/include

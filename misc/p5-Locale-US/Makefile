@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Locale-US
-# Date created:		2008-07-31
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Locale-US
 PORTVERSION=	2.112.150
@@ -18,7 +14,8 @@ COMMENT=	Two letter codes for state identification in the United States
 BUILD_DEPENDS=	p5-Data-Section-Simple>=0:${PORTSDIR}/devel/p5-Data-Section-Simple
 RUN_DEPENDS=	p5-Data-Section-Simple>=0:${PORTSDIR}/devel/p5-Data-Section-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Locale::US.3
 

@@ -31,7 +31,7 @@ PLIST_DIRS=	${FONTDIR_REL}
 PLIST_DIRSTRY=	share/fonts
 SUB_FILES=	hpscat.sh pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hpscat ${PREFIX}/bin/hpscat.bin

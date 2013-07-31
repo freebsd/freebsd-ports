@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Zen-Koans
-# Date created:				21 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Zen-Koans
 PORTVERSION=	0.05
@@ -17,6 +13,7 @@ COMMENT=	Library containing over 100 Zen Koans
 
 MAN3=	Zen::Koan.3 Zen::Koans.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
