@@ -2,5 +2,3 @@ ADM smb is a security scanner for Samba
 /* based on the src of the smbclient  from the samba team */
 ADMsmb will perform a complete audit of samba for you on a host you
 provide.
-
-WWW: http://adm.freelsd.net/ADM

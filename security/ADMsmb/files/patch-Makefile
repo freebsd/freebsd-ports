@@ -1,20 +1,10 @@
 --- Makefile.orig	Tue Oct  3 19:42:32 2006
 +++ Makefile	Tue Oct  3 19:43:32 2006
-@@ -11,7 +11,7 @@
- FLAGS1 = -O2 -fno-strict-aliasing -pipe -march=pentium -static
- LIBS1 = 
+@@ -108,6 +108,7 @@
+ 	@$(SHELL) $(srcdir)checkos.sh $(FLAGSM)
+ 	@echo "Using CFLAGS = $(CFLAGS)"
+ 	@echo "Using LIBS = $(LIBS)"
++	@echo "Using CC = $(CC)"
  
--CC = gcc
-+#CC = gcc
- 
- # This may help with some versions of make
- SHELL = /bin/sh
-@@ -56,7 +56,7 @@
- CFLAGS3 = -DLOCKDIR=\"$(LOCKDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
- CFLAGS4 = -DWORKGROUP=\"$(WORKGROUP)\" -DGUEST_ACCOUNT=\"$(GUESTACCOUNT)\" -DDRIVERFILE=\"$(DRIVERFILE)\"
- CFLAGS5 = $(CFLAGS1) $(CFLAGS2) $(CFLAGS3) $(CFLAGS4) $(FLAGSM) $(AFS_FLAGS) $(KRB5_FLAGS) $(KRB4_FLAGS) $(RPM_OPT_FLAGS)
--CFLAGS  = $(CFLAGS5) $(PAM_FLAGS) $(DCE_FLAGS) $(DES_FLAGS) $(PASSWD_FLAGS) $(VTP_FLAGS)
-+CFLAGS += $(CFLAGS5) $(PAM_FLAGS) $(DCE_FLAGS) $(DES_FLAGS) $(PASSWD_FLAGS) $(VTP_FLAGS)
- LIBS = $(LIBS1) $(LIBSM) $(PAM_LIBS) $(DCE_LIBS) $(KRB5_LIBS) $(KRB4_LIBS) $(DES_LIB)
- 
- INCLUDES1 = $(srcdir)version.h $(srcdir)local.h $(srcdir)includes.h $(srcdir)smb.h 
+ .SUFFIXES:
+ .SUFFIXES: .c .o .h

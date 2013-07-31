@@ -1,4 +1,4 @@
-# Created by: tutus@trynet.eu.org
+# Created by: Jacek Serwatynski <tutus@trynet.eu.org>
 # $FreeBSD$
 
 PORTNAME=	ADMsmb
@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security scanner for Samba
 
-MAKE_JOBS_UNSAFE=	yes
+USES=		gmake
+MAKE_ARGS=	CC="${CC}" FLAGS1="${CFLAGS}"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.o" -delete
@@ -19,7 +20,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ADMsmb ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/ADMsmb
+	@${MKDIR} ${PREFIX}/share/ADMsmb
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/ADMsmb
 
 .include <bsd.port.mk>
