@@ -10,7 +10,7 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20130831:
+20130731:
 AUTHOR: bapt@FreeBSD.org
 
   * New USES: perl5
