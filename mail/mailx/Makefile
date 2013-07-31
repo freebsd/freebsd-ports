@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mailx
-# Date created:         18 Febrary 1999
-# Whom:                 Issei Suzuki <issei@jp.FreeBSD.org>
-#
+# Created by: Issei Suzuki <issei@jp.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mailx
 PORTVERSION=	0.5
@@ -23,7 +19,8 @@ CONFLICTS=	heirloom-mailx-[0-9]*
 
 EXTRACT_ONLY=	mail-2.2.8.tar.gz
 WRKSRC=		${WRKDIR}/mail-2.2.8
-USE_PERL5=	yes
+USES=		perl5
+USE_PERL5=	run build patch
 MAN1=		mailx.1
 MANCOMPRESSED=	yes
 
