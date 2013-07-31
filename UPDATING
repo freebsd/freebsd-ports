@@ -94,9 +94,9 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: mat@FreeBSD.org
 
   The dns/py-ldns port now only installs the Python bits, and depends on
-  dns/ldns. Because of that, you can't just do a regular upgrade, it'd install
-  dns/ldns overwritting existing files and removing them when removing the old
-  version of dns/py-ldns.
+  dns/ldns.  Because of that, you cannot just do a regular upgrade, it
+  would install dns/ldns overwriting existing files and removing them when
+  removing the old version of dns/py-ldns.
 
   # pkg_delete -f py-ldns-\*
   # cd /usr/ports/dns/py-ldns && make clean && make install clean
@@ -309,7 +309,7 @@ you update your ports collection, before attempting any port upgrades.
   control options see Mk/bsd.options.mk.
 
 20130612:
-  AFFECTS: users of  lang/perl* and any port that depends on it
+  AFFECTS: users of lang/perl* and any port that depends on it
   AUTHOR: az@FreeBSD.org
 
   lang/perl5.12 has been upgraded from version 5.12.4 to 5.12.5
@@ -448,19 +448,20 @@ you update your ports collection, before attempting any port upgrades.
   The RC script for postgrey has been modified. If you use the
   default value for postgrey_flags this does not affect you.
 
-  If you have postgrey listening on a unix socket or set any optional
+  If you have postgrey listening on a Unix socket or set any optional
   values, please read the comments in the RC scripts and check your
   settings in rc.conf prior to restarting postgrey.
 
 20130525:
-  AFFECTS: users of x11/xorg and all xorg ports
-  AUTHOR zeising@FreeBSD.org
+  AFFECTS: users of x11/xorg and all X.Org ports
+  AUTHOR: zeising@FreeBSD.org
 
-  xorg, including libraries and some drivers, was updated.
-  If you are running the default xorg distribution, no special upgrade procedure
+  X.Org, including libraries and some drivers, was updated.  If you are
+  running the default X.Org distribution, no special upgrade procedure
   should be necessary.
-  If you are running with WITH_NEW_XORG= make sure to update and rebuild all
-  installed drivers since xorg-server has been updated.
+
+  If you are running with WITH_NEW_XORG= make sure to update and rebuild
+  all installed drivers since xorg-server has been updated.
 
 20130520:
   AFFECTS: users of textproc/elasticsearch
@@ -1117,7 +1118,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20130128:
   AFFECTS: users of libffi
-  AUTHOR jkim@FreeBSD.org
+  AUTHOR: jkim@FreeBSD.org
 
   libffi has been updated to 3.0.11.  Please rebuild all ports that
   depends on it:
@@ -1342,9 +1343,9 @@ you update your ports collection, before attempting any port upgrades.
 
 20121218:
   AFFECTS: users of icu
-  AUTHOR bapt@FreeBSD.org
+  AUTHOR: bapt@FreeBSD.org
 
-  icu has been updated to 50.1. Please rebuild all ports that depends on it:
+  icu has been updated to 50.1. Please rebuild all ports that depend on it:
 
   If you use portmaster:
         portmaster -w -r icu
@@ -1749,7 +1750,7 @@ you update your ports collection, before attempting any port upgrades.
   bin/maidirmake -> bin/maildrop-maildirmake
 
   have been renamed to avoid colliding with files installed from
-  other ports. Man pages and html files in DOCSDIR relating to these
+  other ports. Man pages and HTML files in DOCSDIR relating to these
   files have also been renamed accordingly.
 
 20120925:
@@ -1763,7 +1764,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/aspell
   AUTHOR: bapt@FreeBSD.org
 
-  textproc/aspell no longer installs the english dictionary. If you need it
+  textproc/aspell no longer installs the English dictionary. If you need it
   please install textproc/en-aspell.
 
 20120919:
@@ -2573,7 +2574,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20120426:
   AFFECTS: users of editors/libreoffice
-  AUTHORS: bapt@FreeBSD.org
+  AUTHOR: bapt@FreeBSD.org
 
   LOCALIZED_LANG option has gone, localized packages are now available
   separately, you can also use editors/libreoffice-i18n to pick the
@@ -2969,7 +2970,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20111229:
   AFFECTS: users of ftp/proftpd{-devel,-mysql}
-  AUTHORS: delphij@FreeBSD.org,mm@FreeBSD.org
+  AUTHORS: delphij@FreeBSD.org, mm@FreeBSD.org
 
   Due to the nature of the way FreeBSD-SA-11:07.chroot is implemented,
   users have to update to latest -STABLE, -CURRENT, or supported
@@ -4419,7 +4420,7 @@ or
   AFFECTS: users of x11-drivers/xf86-video-ati
   AUTHOR: miwi@FreeBSD.org
 
-  Xorg has been updated to 7.5.1. For all ATI users the driver
+  X.Org has been updated to 7.5.1. For all ATI users the driver
   was updated to 6.14.0 but the old one is still available in
   x11-drivers/xf86-video-ati613. See radeon(5) for options
   available.
