@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	paraget
-# Date created:			Apr 18, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	paraget
 PORTVERSION=	0.3.0
@@ -20,7 +15,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	paraget.1
 

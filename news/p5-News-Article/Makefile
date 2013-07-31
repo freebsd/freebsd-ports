@@ -14,7 +14,8 @@ COMMENT=	Object for handling Usenet articles in mail or news form
 BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		News::Article.3 News::AutoReply.3 News::FormArticle.3 \
 		News::FormReply.3

@@ -11,8 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A NNTP client for Gnome
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USES=        pathfix
+USES=        pathfix perl5
 USE_GNOME=	gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

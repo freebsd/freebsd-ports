@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plor
-# Date Created:		30 Dec 1996
-# Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
-#
+# Created by: Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	plor
 PORTVERSION=	0.3.3
@@ -19,7 +15,7 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		plor.1
 

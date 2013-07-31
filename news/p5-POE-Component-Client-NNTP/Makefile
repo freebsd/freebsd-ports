@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Client-NNTP
-# Date created:	   17 October 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Client-NNTP
 PORTVERSION=	2.22
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-POE>=0.999.9:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS=	p5-POE>=0.999.9:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-Pluggable>=0.03:${PORTSDIR}/devel/p5-POE-Component-Pluggable
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Client::NNTP.3 \
 		POE::Component::Client::NNTP::Constants.3
