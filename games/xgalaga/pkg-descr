@@ -1,5 +1,4 @@
-xgalaga is a rework of the Galaga shooting game.
+XGalaga is a clone of the classic game Galaga for X11, a space-invader like
+game with additional features to produce a more interesting game.
 
-The package is built to use the sound device in /dev/dsp.  If you don't
-have a sound card and are getting core dumps, try recompiling it with
-"make -DNOSOUND".
+WWW: http://rumsey.org/xgal.html
