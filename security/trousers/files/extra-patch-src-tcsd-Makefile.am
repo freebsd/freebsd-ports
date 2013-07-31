@@ -1,0 +1,11 @@
+--- src/tcsd/Makefile.am.orig	2013-07-27 04:22:53.000000000 +0900
++++ src/tcsd/Makefile.am	2013-07-27 04:24:06.000000000 +0900
+@@ -1,7 +1,7 @@
+ sbin_PROGRAMS=tcsd
+ 
+ tcsd_CFLAGS=-DAPPID=\"TCSD\" -DVAR_PREFIX=\"@localstatedir@\" -DETC_PREFIX=\"@sysconfdir@\" -I${top_srcdir}/src/include -fPIE -DPIE
+-tcsd_LDADD=${top_builddir}/src/tcs/libtcs.a ${top_builddir}/src/tddl/libtddl.a -lpthread @CRYPTOLIB@
++tcsd_LDADD=${LOCALBASE}/lib/libtcs.a ${LOCALBASE}/lib/libtddl.a ${PTHREAD_LIB} @CRYPTOLIB@
+ tcsd_LDFLAGS=-pie -Wl,-z,relro -Wl,-z,now
+ 
+ tcsd_SOURCES=svrside.c tcsd_conf.c tcsd_threads.c platform.c

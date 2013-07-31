@@ -18,7 +18,18 @@
 name=tcsd
 rcvar=tcsd_enable
 command="%%PREFIX%%/sbin/${name}"
+start_precmd="tcsd_precmd"
 required_files="%%PREFIX%%/etc/${name}.conf"
+
+tcsd_precmd()
+{
+	/usr/bin/install -d -m 0700 -o %%USERS%% -g %%GROUPS%% \
+		/var/run/tpm /var/run/ima %%PREFIX%%/var/lib/tpm
+	/usr/sbin/chown %%USERS%%:%%GROUPS%% \
+		%%PREFIX%%/etc/tcsd.conf
+	/bin/chmod 0600 \
+		%%PREFIX%%/etc/tcsd.conf
+}
 
 load_rc_config $name
 

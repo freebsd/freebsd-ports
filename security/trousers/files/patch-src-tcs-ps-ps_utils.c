@@ -1,5 +1,5 @@
---- src/tcs/ps/ps_utils.c.orig	2010-07-01 00:15:00.000000000 +0900
-+++ src/tcs/ps/ps_utils.c	2010-10-24 21:04:04.832556427 +0900
+--- src/tcs/ps/ps_utils.c.orig	2012-09-20 02:24:48.000000000 +0900
++++ src/tcs/ps/ps_utils.c	2013-07-31 22:18:59.000000000 +0900
 @@ -16,10 +16,18 @@
  #if defined(HAVE_BYTEORDER_H)
  #include <sys/byteorder.h>
@@ -19,28 +19,27 @@
  #else
  #define LE_16(x) (x)
  #define LE_32(x) (x)
-@@ -39,6 +47,24 @@
- #include "tcs_utils.h"
- #include "tcslog.h"
- 
-+#ifndef LE_16
-+static UINT16 htole16(UINT16 x)
-+{
-+    BYTE *b = &x;
-+    return (UINT16) (b[0] + (b[1] << 8));
-+}
-+#define LE_16 htole16
-+#endif
-+
-+#ifndef LE_32
-+static UINT32 htole32(UINT32 x)
-+{
-+    BYTE *b = &x;
-+    return (UINT32) (b[0] + (b[1] << 8) + (b[2] << 16) + (b[3] << 24));
-+}
-+#define LE_32 htole32
-+#endif
-+
+@@ -42,11 +50,7 @@
  struct key_disk_cache *key_disk_cache_head = NULL;
  
  
+-#ifdef SOLARIS
+ TSS_RESULT
+-#else
+-inline TSS_RESULT
+-#endif
+ read_data(int fd, void *data, UINT32 size)
+ {
+ 	int rc;
+@@ -64,11 +68,7 @@
+ }
+ 
+ 
+-#ifdef SOLARIS
+ TSS_RESULT
+-#else
+-inline TSS_RESULT
+-#endif
+ write_data(int fd, void *data, UINT32 size)
+ {
+ 	int rc;
