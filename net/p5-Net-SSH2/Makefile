@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
 
 USES=	perl5
-USE_PERL=	configure
+USE_PERL5=	configure
 
 MAN3=		Net::SSH2.3 Net::SSH2::Channel.3 \
 		Net::SSH2::Dir.3 Net::SSH2::File.3 \
