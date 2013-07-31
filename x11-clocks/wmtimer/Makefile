@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmtimer
-# Date created:			Thu Apr 26 16:46:38 EDT 2001
-# Whom:				Patrick Li <pat@databits.net> et al
-#
+# Created by: Patrick Li <pat@databits.net> et al
 # $FreeBSD$
-#
 
 PORTNAME=	wmtimer
 PORTVERSION=	2.92
@@ -19,7 +15,8 @@ COMMENT=	Multi-Function timer dockapp for WindowMaker
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
 PORTDOCS=	README
 PLIST_FILES=	bin/wmtimer
-USE_GMAKE=	yes
+USES=		gmake
+USE_CSTD=	gnu89
 USE_XORG=	x11 xau xcomposite xcursor xdamage xdmcp xext xfixes xi \
 		xinerama xpm xrandr xrender
 USE_GNOME=	gtk20
