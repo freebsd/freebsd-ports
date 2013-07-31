@@ -13,3 +13,44 @@
  distversion = 2.1.1.0
  
  @SET_MAKE@
+@@ -74,14 +74,14 @@
+ #       chmod ${GAMEMODE} $(bindir)/$(TARGET)
+ #       chmod ${GAMEDATAMODE} $(prefix)/scores
+ 
+-subdirs:
+-	for i in $(SUBDIRS); do cd $$i ; make ; done
++$(SUBDIRS)::
++	$(MAKE) -C $@
+ 
+-$(TARGET): subdirs $(OBJS)
++$(TARGET): $(SUBDIRS) $(OBJS)
+ 	$(RM) $(TARGET)
+ 	$(CC) $(LDFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
+ 
+-$(TARGET2): subdirs $(OBJS_HYPER)
++$(TARGET2): $(SUBDIRS) $(OBJS_HYPER)
+ 	$(RM) $(TARGET2)
+ 	$(CC) $(LDFLAGS) -o $(TARGET2) $(OBJS_HYPER) $(LIBS)
+ 
+@@ -98,17 +98,17 @@
+ 	$(RM) core *.o $(OBJS) $(OBJS_HYPER) $(TARGET) $(TARGET2) $(MANPAGE)
+ 
+ dist: clean
+-	cd libsprite;make clean
++	$(MAKE) -C libsprite clean
+ 	if test -d xgalaga-$(distverson) ; then echo -n; else  mkdir xgalaga-$(distversion); fi
+ 	cp -rf $(SRCS) configure *.in *.sub *.guess images sounds xgal.sndsrv.*.c libsprite README* INSTALL CHANGES CREDITS xgalaga.6x *.h install-sh levels mkimgsrc* mkinstalldirs xgalaga-$(distversion)
+-	cd xgalaga-$(distversion); rm -f config.h
+-	cd xgalaga-$(distversion)/libsprite; make distclean ; rm -rf CVS
++	rm -f xgalaga-$(distversion)/config.h
++	$(MAKE) -C xgalaga-$(distversion)/libsprite distclean
+ 	find xgalaga-$(distversion) -name "CVS" -exec rm -rf {} \; -prune
+ 	tar czvf xgalaga-$(distversion).tar.gz xgalaga-$(distversion)
+ 
+ distclean: clean
+ 	$(RM) Makefile config.h config.status config.cache config.log
+-	cd libsprite;$(MAKE) distclean
++	$(MAKE) -C libsprite distclean
+ 
+ depend:
+ 	makedepend $(CFLAGS) $(SRCS)
