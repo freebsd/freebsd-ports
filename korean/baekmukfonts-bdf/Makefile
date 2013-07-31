@@ -37,7 +37,8 @@ CHARSETSUB=	s/ksx1001.1997/ksc5601.1987/g
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 # manually install hinted fonts
 do-configure:

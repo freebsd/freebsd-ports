@@ -13,7 +13,8 @@ COMMENT=	Implements an FTP client POE Component
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT=yes
 
 MAN3=		POE::Component::Client::FTP.3

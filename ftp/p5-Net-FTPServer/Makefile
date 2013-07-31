@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_ENV+=	NOCONF=1
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 SUB_FILES=	pkg-message
 

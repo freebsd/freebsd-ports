@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 MAN3+=		wzdftpd.3
 PLIST_SUB+=	PERL=""

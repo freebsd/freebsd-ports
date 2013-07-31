@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-Pluggable>=0.03:${PORTSDIR}/devel/p5-POE-Component-Pluggable \
 		p5-POE-Component-Client-NNTP>=1.05:${PORTSDIR}/news/p5-POE-Component-Client-NNTP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Server::NNTP.3 \
 		POE::Component::Server::NNTP::Constants.3
