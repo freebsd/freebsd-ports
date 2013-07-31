@@ -4,7 +4,7 @@
 PORTNAME=	ZendFramework
 PORTVERSION=	2.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://packages.zendframework.com/releases/${DISTNAME}/
+MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wg@FreeBSD.org
