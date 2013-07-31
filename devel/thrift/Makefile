@@ -20,9 +20,8 @@ USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake libtool
 ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
 AUTOMAKE_ARGS=	--foreign --add-missing --copy
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -33,6 +32,11 @@ CONFIGURE_ENV+=	${MAKE_ENV}
 
 OPTIONS_DEFINE=	GLIB QT4
 GLIB_DESC=	C (GLib) Library
+
+GLIB_CONFIGURE_ENABLE=	c_glib
+GLIB_LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
+QT4_CONFIGURE_ENABLE=	qt4
+OPTIONS_SUB=		yes
 
 # For Perl support, use devel/p5-Thrift.
 # For Python support, use devel/py-thrift.
@@ -53,28 +57,13 @@ CONFIGURE_ARGS+=	\
 		--without-ruby
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-.include "bsd.thrift.mk"
-
-.if ${PORT_OPTIONS:MGLIB}
-    CONFIGURE_ARGS+=	--with-c_glib
-    LIB_DEPENDS+=	glib-2.0:${PORTSDIR}/devel/glib20
-    PLIST_SUB+=		GLIB=""
-    WITH_GLIB=		true
-.else
-    CONFIGURE_ARGS+=	--without-c_glib
-    PLIST_SUB+=		GLIB="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MQT4}
-    CONFIGURE_ARGS+=	--with-qt4
     USE_QT4=		network moc_build qmake_build rcc_build uic_build
-    PLIST_SUB+=		QT=""
-    WITH_QT=		true
-.else
-    CONFIGURE_ARGS+=	--without-qt4
-    PLIST_SUB+=		QT="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
+.include "bsd.thrift.mk"
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
