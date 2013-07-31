@@ -15,7 +15,7 @@ LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	tspi:${PORTSDIR}/security/trousers
+LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
 
 USES=		gmake
 USE_BZIP2=	YES
