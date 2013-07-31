@@ -1,10 +1,10 @@
---- docs/reference/gtk/Makefile.in.orig	2012-09-25 07:07:36.000000000 +0000
-+++ docs/reference/gtk/Makefile.in	2012-09-25 07:08:14.000000000 +0000
-@@ -822,7 +822,6 @@
+--- docs/reference/gtk/Makefile.in.orig	2013-03-28 10:39:58.000000000 +0000
++++ docs/reference/gtk/Makefile.in	2013-03-28 10:43:09.000000000 +0000
+@@ -852,7 +852,6 @@
  ########################################################################
  man_MANS = \
  	gtk-query-immodules-3.0.1	\
 -	gtk-update-icon-cache.1		\
- 	gtk-launch.1
+ 	gtk-launch.1			\
+ 	broadwayd.1
  
- @ENABLE_MAN_TRUE@XSLTPROC_FLAGS = \

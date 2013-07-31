@@ -28,6 +28,7 @@ include/atk-1.0/atk/atktable.h
 include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
+include/atk-1.0/atk/atkversion.h
 include/atk-1.0/atk/atkwindow.h
 lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.a
@@ -117,6 +118,7 @@ share/locale/sr@latin/LC_MESSAGES/atk10.mo
 share/locale/sv/LC_MESSAGES/atk10.mo
 share/locale/ta/LC_MESSAGES/atk10.mo
 share/locale/te/LC_MESSAGES/atk10.mo
+share/locale/tg/LC_MESSAGES/atk10.mo
 share/locale/th/LC_MESSAGES/atk10.mo
 share/locale/tk/LC_MESSAGES/atk10.mo
 share/locale/tr/LC_MESSAGES/atk10.mo

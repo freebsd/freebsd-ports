@@ -1,5 +1,5 @@
---- configure.orig	2013-02-14 19:12:15.000000000 +0000
-+++ configure	2013-02-14 19:13:51.000000000 +0000
+--- configure.orig	2013-03-28 02:59:16.000000000 +0000
++++ configure	2013-03-28 03:00:20.000000000 +0000
 @@ -603,6 +603,9 @@
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
@@ -10,7 +10,7 @@
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
  #endif
-@@ -5602,7 +5605,7 @@
+@@ -5699,7 +5702,7 @@
  fi
  
  GLIB_RUNTIME_LIBDIR="$with_runtime_libdir"
@@ -19,7 +19,7 @@
  
  
   if test "x$with_runtime_libdir" != "x"; then
-@@ -23647,7 +23650,7 @@
+@@ -23089,7 +23092,7 @@
  fi
  done
  
@@ -28,16 +28,16 @@
  do :
    as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
-@@ -27108,10 +27111,10 @@
+@@ -26629,10 +26632,10 @@
  #  b) FreeBSD doesn't do this either.
  #
  case $host in
 -  *-*-freebsd*|*-*-linux*)
 +  *-*-linux*)
-     G_THREAD_LIBS_FOR_GTHREAD="`echo $G_THREAD_LIBS | sed s/-pthread/-pthread/`"
+     G_THREAD_LIBS_FOR_GTHREAD="`echo $G_THREAD_LIBS | sed s/-pthread/-lpthread/`"
      ;;
 -  *-*-openbsd*)
-+  *-*-freebsd*|*-*-openbsd*)
++  *-*-openbsd*|*-*-freebsd*)
      LDFLAGS="$LDFLAGS -pthread"
      ;;
    *)

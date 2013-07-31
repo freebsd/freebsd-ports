@@ -1,8 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/dconf-editor/Makefile,v 1.2 2012/12/16 22:43:23 kwm Exp $
+#   $MCom: ports/trunk/devel/dconf-editor/Makefile 18422 2013-05-06 11:04:38Z kwm $
 
 PORTNAME=	dconf
+PORTREVISION=	0
 PKGNAMESUFFIX=	-editor
 
 COMMENT=	configuration editor for dconf

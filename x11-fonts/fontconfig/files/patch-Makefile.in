@@ -1,20 +1,20 @@
---- Makefile.in.orig	2012-05-20 12:18:32.000000000 -0500
-+++ Makefile.in	2012-05-20 12:19:20.000000000 -0500
-@@ -900,28 +900,28 @@
+--- Makefile.in.orig	2012-11-01 10:55:40.000000000 +0000
++++ Makefile.in	2012-11-01 10:56:37.000000000 +0000
+@@ -932,28 +932,6 @@
  	mv $@.tmp $@
  
  install-data-local: fonts.conf
--	$(mkinstalldirs) $(DESTDIR)$(configdir) $(DESTDIR)$(fc_cachedir)
--	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
--	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
--	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
+-	$(mkinstalldirs) $(DESTDIR)$(baseconfigdir) $(DESTDIR)$(fc_cachedir)
+-	if [ -f $(DESTDIR)$(baseconfigdir)/fonts.conf ]; then \
+-	  echo "backing up existing $(DESTDIR)$(baseconfigdir)/fonts.conf"; \
+-	  mv $(DESTDIR)$(baseconfigdir)/fonts.conf $(DESTDIR)$(baseconfigdir)/fonts.conf.bak; \
 -	fi
 -	if [ -f $(srcdir)/fonts.conf ]; then \
--	  echo " $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
--	  $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
+-	  echo " $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(baseconfigdir)/fonts.conf"; \
+-	  $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(baseconfigdir)/fonts.conf; \
 -	else if [ -f fonts.conf ]; then \
--	  echo " $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
--	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
+-	  echo " $(INSTALL_DATA) fonts.conf $(DESTDIR)$(baseconfigdir)/fonts.conf"; \
+-	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(baseconfigdir)/fonts.conf; \
 -	fi; fi
 -	@(if $(RUN_FC_CACHE_TEST); then \
 -	    echo "fc-cache$(EXEEXT) -s -f -v"; \
@@ -26,28 +26,6 @@
 -	    echo "*** Generate this file manually on host system using fc-cache"; \
 -	    echo "***"; \
 -	fi)
-+#	$(mkinstalldirs) $(DESTDIR)$(configdir) $(DESTDIR)$(fc_cachedir)
-+#	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
-+#	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
-+#	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
-+#	fi
-+#	if [ -f $(srcdir)/fonts.conf ]; then \
-+#	  echo " $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
-+#	  $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
-+#	else if [ -f fonts.conf ]; then \
-+#	  echo " $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
-+#	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
-+#	fi; fi
-+#	@(if $(RUN_FC_CACHE_TEST); then \
-+#	    echo "fc-cache$(EXEEXT) -s -f -v"; \
-+#	    fc-cache/fc-cache$(EXEEXT) -s -f -v; \
-+#	else \
-+#	    echo "***"; \
-+#	    echo "*** Warning: fonts.cache not built"; \
-+#	    echo "***"; \
-+#	    echo "*** Generate this file manually on host system using fc-cache"; \
-+#	    echo "***"; \
-+#	fi)
  
  uninstall-local:
  	if [ -f $(srcdir)/fonts.conf ]; then \

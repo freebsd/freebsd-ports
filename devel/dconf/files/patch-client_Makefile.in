@@ -1,37 +1,40 @@
---- client/Makefile.in.orig	2012-05-28 13:27:17.000000000 +0200
-+++ client/Makefile.in	2012-05-28 13:31:25.000000000 +0200
-@@ -34,7 +34,7 @@
- NORMAL_UNINSTALL = :
- PRE_UNINSTALL = :
- POST_UNINSTALL = :
--shlib_PROGRAMS = libdconf.so.0.0.0$(EXEEXT)
-+shlib_PROGRAMS = libdconf.so.0$(EXEEXT)
+--- client/Makefile.orig.in	2013-03-26 19:40:26.085263743 +0000
++++ client/Makefile.in	2013-03-26 19:40:33.384265230 +0000
+@@ -55,7 +55,7 @@
+ DIST_COMMON = $(dconfclientinclude_HEADERS) $(dconfinclude_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(srcdir)/dconf.pc.in $(top_srcdir)/Makefile.gtester
+-shlib_PROGRAMS = libdconf.so.1.0.0$(EXEEXT)
++shlib_PROGRAMS = libdconf.so.1$(EXEEXT)
  subdir = client
- DIST_COMMON = $(dconfinclude_HEADERS) $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/dconf.pc.in dconf-client.c \
-@@ -332,9 +332,10 @@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+@@ -416,12 +416,12 @@
  
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
--libdconf.so.0.0.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_0_0_0_DEPENDENCIES) 
-+libdconf.so.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_0_0_0_DEPENDENCIES) 
- 	@rm -f libdconf.so.0.0.0$(EXEEXT)
- 	$(AM_V_CCLD)$(libdconf_so_0_0_0_LINK) $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_LDADD) $(LIBS)
-+	$(AM_V_GEN) ln -fs libdconf.so.0 libdconf.so
+-libdconf.so.1.0.0$(EXEEXT): $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_1_0_0_DEPENDENCIES) 
++libdconf.so.1$(EXEEXT): $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_1_0_0_DEPENDENCIES) 
+ 	@rm -f libdconf.so.1.0.0$(EXEEXT)
+ 	$(AM_V_CCLD)$(libdconf_so_1_0_0_LINK) $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_LDADD) $(LIBS)
++	$(AM_V_GEN) ln -fs libdconf.so.1 libdconf.so
  
  mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
-@@ -695,12 +696,8 @@
- 	uninstall-vapiDATA
+-	-rm -f *.$(OBJEXT)
  
+ distclean-compile:
+ 	-rm -f *.tab.c
+@@ -838,12 +838,8 @@
+ # run tests in cwd as part of make check
+ check-local: test-nonrecursive
  
--libdconf.so.0 libdconf.so: libdconf.so.0.0.0
--	$(AM_V_GEN) ln -fs libdconf.so.0.0.0 $@
+-libdconf.so.1 libdconf.so: libdconf.so.1.0.0
+-	$(AM_V_GEN) ln -fs libdconf.so.1.0.0 $@
 -
  install-data-hook:
--	ln -fs libdconf.so.0.0.0 $(DESTDIR)$(shlibdir)/libdconf.so.0
--	ln -fs libdconf.so.0.0.0 $(DESTDIR)$(shlibdir)/libdconf.so
-+	ln -fs libdconf.so.0 $(DESTDIR)$(shlibdir)/libdconf.so
+-	ln -fs libdconf.so.1.0.0 $(DESTDIR)$(shlibdir)/libdconf.so.1
+-	ln -fs libdconf.so.1.0.0 $(DESTDIR)$(shlibdir)/libdconf.so
++	ln -fs libdconf.so.1 $(DESTDIR)$(shlibdir)/libdconf.so
  
  uninstall-hook:
- 	rm -f $(DESTDIR)$(shlibdir)/libdconf.so.0
+ 	rm -f $(DESTDIR)$(shlibdir)/libdconf.so.1

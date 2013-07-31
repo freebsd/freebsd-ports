@@ -4831,3 +4831,4 @@ audio/artswrapper||2013-07-27|Depend on the expired audio/arts
 net/ns2|net/ns|2013-07-29|Duplicate ports merged
 x11-toolkits/libbonobouimm||2013-07-31|Not supported upstream anymore
 devel/libbonobomm||2013-07-31|Not supported upstream anymore
+devel/gio-fam-backend|devel/glib20|2013-07-31|Obsoleted by new functionality in glib20

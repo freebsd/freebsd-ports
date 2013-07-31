@@ -92,6 +92,7 @@
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
     SUBDIR += colord
+    SUBDIR += colord-gtk
     SUBDIR += comical
     SUBDIR += comix
     SUBDIR += commons-utilities

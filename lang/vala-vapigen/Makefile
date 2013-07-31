@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/lang/vala-vapigen/Makefile,v 1.7 2012/12/17 19:46:24 kwm Exp $
+#   $MCom: ports/trunk/lang/vala-vapigen/Makefile 18374 2013-04-15 09:25:19Z kwm $
 
 PORTREVISION=	0
 CATEGORIES=	devel gnome

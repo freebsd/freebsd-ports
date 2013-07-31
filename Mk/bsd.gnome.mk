@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.574 2012/12/18 12:15:14 kwm Exp $
+#     $MCom: ports/trunk/Mk/bsd.gnome.mk 17271 2013-04-01 15:16:27Z kwm $
 #
 # Please view me with 4 column tabs!
 
@@ -68,9 +68,9 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #
 
 # non-version specific components
-_USE_GNOME_ALL= esound intlhack intltool ltasneededhack lthack ltverhack \
-		gnomehack referencehack gnomehier gnomemimedata gnomeprefix \
-		pkgconfig
+_USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack \
+		ltverhack gnomehack referencehack gnomehier gnomemimedata \
+		gnomeprefix pkgconfig
 
 # GNOME 1 components
 _USE_GNOME_ALL+= bonobo gconf gdkpixbuf glib12 \
@@ -79,7 +79,7 @@ _USE_GNOME_ALL+= bonobo gconf gdkpixbuf glib12 \
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 \
-		gdkpixbuf2 gconf2 _glib20 glib20 gnomecontrolcenter2 gnomedesktop \
+		gdkpixbuf2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop \
 		gnomedesktopsharp20 gnomedocutils gnomemenus gnomepanel gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
@@ -87,7 +87,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt libzvt linc metacity nautilus2 nautiluscdburner \
-		orbit2 pango pygnome2 pygnomedesktop pygnomeextras pygobject pygtk2 \
+		orbit2 pango pangox-compat pygnome2 pygnomedesktop pygnomeextras pygobject pygtk2 \
 		pygtksourceview vte
 
 # GNOME 3 components
@@ -95,7 +95,7 @@ _USE_GNOME_ALL+= dconf gtk30 gtksourceview3 pygobject3
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
-		gtkmm30 gtksourcviewmm3 libgdamm \
+		gtkmm30 gtksourceviewmm3 libgdamm \
 		libgtksourceviewmm libxml++ libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
@@ -272,7 +272,7 @@ oaf_USE_GNOME_IMPL=	glib12 orbit libxml
 gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
-gnomemimedata_USE_GNOME_IMPL=gnomehier pkgconfig
+gnomemimedata_USE_GNOME_IMPL=gnomehier
 
 GCONF_CONFIG?=		${LOCALBASE}/bin/gconf-config
 gconf_LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
@@ -310,27 +310,27 @@ libglade_MAKE_ENV=	LIBGLADE_CONFIG="${LIBGLADE_CONFIG}"
 libglade_DETECT=	${LIBGLADE_CONFIG}
 libglade_USE_GNOME_IMPL=gnomedb
 
-_glib20_LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
+glib20_LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 			pcre:${PORTSDIR}/devel/pcre
-_glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
+glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 
-glib20_RUN_DEPENDS=	${LOCALBASE}/lib/gio/modules/libgiofam.so:${PORTSDIR}/devel/gio-fam-backend
-glib20_DETECT=		${LOCALBASE}/lib/gio/modules/libgiofam.so
-glib20_USE_GNOME_IMPL=	_glib20
-
-atk_LIB_DEPENDS=	atk-1.0.0:${PORTSDIR}/accessibility/atk
+atk_LIB_DEPENDS=	atk-1.0:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
 
-dconf_LIB_DEPENDS=	dconf.0:${PORTSDIR}/devel/dconf
+dconf_LIB_DEPENDS=	dconf:${PORTSDIR}/devel/dconf
 dconf_DETECT=		${LOCALBASE}/libdata/pkgconfig/dconf.pc
 dconf_USE_GNOME_IMPL=	glib20
 
-pango_LIB_DEPENDS=	pango-1.0.0:${PORTSDIR}/x11-toolkits/pango
+pango_LIB_DEPENDS=	pango-1.0:${PORTSDIR}/x11-toolkits/pango
 pango_DETECT=		${LOCALBASE}/libdata/pkgconfig/pango.pc
 pango_USE_GNOME_IMPL=	glib20
 
-gdkpixbuf2_LIB_DEPENDS=	gdk_pixbuf-2.0.0:${PORTSDIR}/graphics/gdk-pixbuf2
+pangox-compat_LIB_DEPENDS=	pangox-1.0:${PORTSDIR}/x11-toolkits/pangox-compat
+pangox-compat_DETECT=		${LOCALBASE}/libdata/pkgconfig/pangox.pc
+pangox-compat_USE_GNOME_IMPL=	glib20 pango
+
+gdkpixbuf2_LIB_DEPENDS=	gdk_pixbuf-2.0:${PORTSDIR}/graphics/gdk-pixbuf2
 gdkpixbuf2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gdk-pixbuf-2.0.pc
 gdkpixbuf2_USE_GNOME_IMPL=glib20
 
@@ -379,6 +379,12 @@ libxslt_USE_GNOME_IMPL=	libxml2
 libbonobo_LIB_DEPENDS=	bonobo-2.0:${PORTSDIR}/devel/libbonobo
 libbonobo_DETECT=	${LOCALBASE}/libdata/pkgconfig/libbonobo-2.0.pc
 libbonobo_USE_GNOME_IMPL=libxml2 orbit2
+
+introspection_BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+introspection_RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+introspection_DETECT=		${LOCALBASE}/libdata/pkgconfig/gobject-introspection-1.0.pc
+introspection_USE_GNOME_IMPL=	glib20
+introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1
 
 gconf2_LIB_DEPENDS=	gconf-2.4:${PORTSDIR}/devel/gconf2
 gconf2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gconf-2.0.pc

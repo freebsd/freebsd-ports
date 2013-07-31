@@ -16,6 +16,7 @@ CONFLICTS=	openal-soft-[0-9]*
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-capture \
 		--disable-arts

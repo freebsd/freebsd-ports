@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130731:
+  AFFECTS: users of glib20
+  AUTHOR: kwm@FreeBSD.org
+
+  The devel/gio-fam-backend port was removed in the glib 2.36 update.
+  Since the gio-fam-backend port was used in USE_GNOME=glib20, all
+  dependencies need to rebuilt. The removal of gio-fam-backend isn't critical,
+  glib20 using programs should work just fine if the port is still installed.
+  It is not clear however, if glib20 will use the new kqueue backend or the old
+  fam backend.
+
+  Note that users of pkg packages can just run the pkg delete command after
+  there next update.
+
+  # portmaster -f gio-fam-backend
+  or
+  # portupgrade -rf gio-fam-backend
+  
+  # pkg delete gio-fam-backend
+  or
+  # pkg_delete gio-fam-backend
+
+  # portmaster -a
+  or
+  # portupgrade -a
+
 20130726:
   AFFECTS: users of Qt 3 and KDE 3
   AUTHOR: rene@FreeBSD.org

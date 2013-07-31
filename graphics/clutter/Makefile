@@ -37,5 +37,7 @@ post-patch:
 		${WRKSRC}/clutter/x11/*.h \
 		${WRKSRC}/clutter/cogl/cogl/*.h \
 		${WRKSRC}/clutter/json/*.c
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/clutter/Makefile.in
 
 .include <bsd.port.mk>

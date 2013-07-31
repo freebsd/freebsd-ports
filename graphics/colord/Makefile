@@ -1,47 +1,48 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/graphics/colord/Makefile,v 1.10 2012/12/17 23:50:40 kwm Exp $
+#    $MCom: ports/trunk/graphics/colord/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	colord
-PORTVERSION=	0.1.20
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		vala-vapigen>=0.13.0:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
 		dbus-1:${PORTSDIR}/devel/dbus \
 		lcms2:${PORTSDIR}/graphics/lcms2
 
+USERS=		colord
+GROUPS=		colord
+
 USE_XZ=		yes
-USE_GNOME=	gnomehier glib20 intlhack
-USES=		pathfix gettext
-USE_GMAKE=	yes
-USE_SQLITE=	yes
+USE_GNOME=	gnomehier glib20 intlhack introspection:build
+USES=		gettext gmake pathfix pkgconfig
+USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ARGS=	--disable-gudev --enable-gtk-doc-html=no --disable-gtk
+CONFIGURE_ARGS=	--disable-gudev \
+		--enable-gtk-doc-html=no \
+		--disable-bash-completion \
+		--disable-gusb \
+		--disable-sane \
+		--with-daemon-user=colord \
+		--disable-systemd-login
+# takes ages we don't want to wait.
+CONFIGURE_ARGS+=--disable-print-profiles
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
 		USB_LIBS="-L/usr/lib -lusb"
-MAKE_ENV+=	GI_SCANNER_DISABLE_CACHE=yes
 
-OPTIONS_DEFINE=	SANE MANPAGES
+GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
+
+OPTIONS_DEFINE=	MANPAGES
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSANE}
-CONFGIURE_ARGS+=--enable-sane=yes
-LIB_DEPENDS+=	sane:${PORTSDIR}/graphics/sane-backends
-.else
-CONFIGURE_ARGS+=--disable-sane
-.endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
@@ -57,9 +58,17 @@ post-patch:
 		-e 's|-Wmissing-parameter-type||g' \
 		-e 's|LIBS="-lusb-1.0|LIBS="-lusb|g' \
 		${WRKSRC}/configure
-.if !${PORT_OPTIONS:MMANPAGES}
+	@${REINPLACE_CMD} -e 's|lib/color|db/color|g' \
+		-e 's|/usr/share/color|${PREFIX}/share/color|g' \
+		${WRKSRC}/src/cd-main.c \
+		${WRKSRC}/src/cd-profile-store.c \
+		${WRKSRC}/src/cd-profile.c
+.if ! ${PORT_OPTIONS:MMANPAGES}
 	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
 		s|2MAN_FALSE='#'|2MAN_FALSE=|g" ${WRKSRC}/configure
 .endif
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

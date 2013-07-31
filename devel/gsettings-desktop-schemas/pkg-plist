@@ -1,10 +1,55 @@
 include/gsettings-desktop-schemas/gdesktop-enums.h
+lib/girepository-1.0/GDesktopEnums-3.0.typelib
 libdata/pkgconfig/gsettings-desktop-schemas.pc
 share/GConf/gsettings/gsettings-desktop-schemas.convert
+share/GConf/gsettings/wm-schemas.convert
+share/gir-1.0/GDesktopEnums-3.0.gir
+share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ca/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ca@valencia/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/da/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/el/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/en_GB/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/eo/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/fi/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/fr/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/gl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/gu/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/hi/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/hu/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/nb/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/or/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pa/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pt/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pt_BR/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ru/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sr/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sr@latin/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
-@dirrm include/gsettings-desktop-schemas
+share/locale/ug/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/zh_HK/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/zh_TW/LC_MESSAGES/gsettings-desktop-schemas.mo
+@dirrmtry include/gsettings-desktop-schemas
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug 
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

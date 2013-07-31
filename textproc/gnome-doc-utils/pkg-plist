@@ -137,6 +137,7 @@ share/gnome/help/gnome-doc-xslt/de/utils.xml
 share/locale/ar/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/as/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ast/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/be/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/be@latin/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bg/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bn/LC_MESSAGES/gnome-doc-utils.mo
@@ -152,6 +153,7 @@ share/locale/el/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en_CA/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en_GB/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/eo/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/es/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/et/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/eu/LC_MESSAGES/gnome-doc-utils.mo
@@ -168,6 +170,7 @@ share/locale/id/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/it/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ja/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ka/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/km/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/kn/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ko/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/lt/LC_MESSAGES/gnome-doc-utils.mo
@@ -202,16 +205,14 @@ share/locale/te/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/th/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/tr/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ug/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/uz/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/uk/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/vi/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/wa/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-doc-utils.mo
-share/omf/gnome-doc-make/gnome-doc-make-C.omf
-share/omf/gnome-doc-make/gnome-doc-make-de.omf
-share/omf/gnome-doc-xslt/gnome-doc-xslt-C.omf
-share/omf/gnome-doc-xslt/gnome-doc-xslt-de.omf
 share/xml/gnome/xslt/common/utils.xsl
 share/xml/gnome/xslt/common/theme.xsl
 share/xml/gnome/xslt/docbook/common/db-chunk.xsl
@@ -282,8 +283,6 @@ share/xml/mallard/1.0/mallard.rng
 @dirrm share/xml/gnome/xslt/common
 @dirrm share/xml/gnome/xslt
 @dirrm share/xml/gnome
-@dirrm share/omf/gnome-doc-xslt
-@dirrm share/omf/gnome-doc-make
 @dirrm share/gnome/help/gnome-doc-xslt/de
 @dirrm share/gnome/help/gnome-doc-xslt/C
 @dirrm share/gnome/help/gnome-doc-xslt
@@ -303,6 +302,8 @@ share/xml/mallard/1.0/mallard.rng
 @dirrm %%PYTHON_SITELIBDIR%%/xml2po
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -319,6 +320,8 @@ share/xml/mallard/1.0/mallard.rng
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

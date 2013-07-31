@@ -36,6 +36,8 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/gmime/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

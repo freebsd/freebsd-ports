@@ -3,6 +3,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.85
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		LOCAL/sunpoet
@@ -27,7 +28,7 @@ PLIST_FILES=	sbin/mtr
 
 .if ${PORT_OPTIONS:MGLIB}
 CONFIGURE_ARGS+=--with-glib
-USE_GNOME=	_glib20
+USE_GNOME=	glib20
 .else
 CONFIGURE_ARGS+=--without-glib
 .endif

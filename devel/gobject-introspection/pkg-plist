@@ -50,9 +50,6 @@ lib/gobject-introspection/giscanner/annotationmain.pyo
 lib/gobject-introspection/giscanner/annotationparser.py
 lib/gobject-introspection/giscanner/annotationparser.pyc
 lib/gobject-introspection/giscanner/annotationparser.pyo
-lib/gobject-introspection/giscanner/annotationpatterns.py
-lib/gobject-introspection/giscanner/annotationpatterns.pyc
-lib/gobject-introspection/giscanner/annotationpatterns.pyo
 lib/gobject-introspection/giscanner/ast.py
 lib/gobject-introspection/giscanner/ast.pyc
 lib/gobject-introspection/giscanner/ast.pyo
@@ -65,6 +62,45 @@ lib/gobject-introspection/giscanner/codegen.pyo
 lib/gobject-introspection/giscanner/docmain.py
 lib/gobject-introspection/giscanner/docmain.pyc
 lib/gobject-introspection/giscanner/docmain.pyo
+lib/gobject-introspection/giscanner/doctemplates/C/class.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/constructor.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/default.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/enum.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/function.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/method.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/namespace.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/property.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/record.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/signal.tmpl
+lib/gobject-introspection/giscanner/doctemplates/C/vfunc.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/class.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/constructor.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/default.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/enum.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/function.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/method.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/namespace.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/property.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/record.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/signal.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Gjs/vfunc.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/class.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/constructor.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/default.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/enum.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/function.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/method.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/namespace.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/property.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/record.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/signal.tmpl
+lib/gobject-introspection/giscanner/doctemplates/Python/vfunc.tmpl
+lib/gobject-introspection/giscanner/doctemplates/base.tmpl
+lib/gobject-introspection/giscanner/doctemplates/class.tmpl
+lib/gobject-introspection/giscanner/doctemplates/namespace.tmpl
+lib/gobject-introspection/giscanner/docwriter.py
+lib/gobject-introspection/giscanner/docwriter.pyc
+lib/gobject-introspection/giscanner/docwriter.pyo
 lib/gobject-introspection/giscanner/dumper.py
 lib/gobject-introspection/giscanner/dumper.pyc
 lib/gobject-introspection/giscanner/dumper.pyo
@@ -86,27 +122,6 @@ lib/gobject-introspection/giscanner/libtoolimporter.pyo
 lib/gobject-introspection/giscanner/maintransformer.py
 lib/gobject-introspection/giscanner/maintransformer.pyc
 lib/gobject-introspection/giscanner/maintransformer.pyo
-lib/gobject-introspection/giscanner/mallard-C-class.tmpl
-lib/gobject-introspection/giscanner/mallard-C-default.tmpl
-lib/gobject-introspection/giscanner/mallard-C-enum.tmpl
-lib/gobject-introspection/giscanner/mallard-C-function.tmpl
-lib/gobject-introspection/giscanner/mallard-C-namespace.tmpl
-lib/gobject-introspection/giscanner/mallard-C-property.tmpl
-lib/gobject-introspection/giscanner/mallard-C-record.tmpl
-lib/gobject-introspection/giscanner/mallard-C-signal.tmpl
-lib/gobject-introspection/giscanner/mallard-C-vfunc.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-class.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-default.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-enum.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-function.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-namespace.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-property.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-record.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-signal.tmpl
-lib/gobject-introspection/giscanner/mallard-Python-vfunc.tmpl
-lib/gobject-introspection/giscanner/mallardwriter.py
-lib/gobject-introspection/giscanner/mallardwriter.pyc
-lib/gobject-introspection/giscanner/mallardwriter.pyo
 lib/gobject-introspection/giscanner/message.py
 lib/gobject-introspection/giscanner/message.pyc
 lib/gobject-introspection/giscanner/message.pyo
@@ -116,6 +131,9 @@ lib/gobject-introspection/giscanner/odict.pyo
 lib/gobject-introspection/giscanner/scannermain.py
 lib/gobject-introspection/giscanner/scannermain.pyc
 lib/gobject-introspection/giscanner/scannermain.pyo
+lib/gobject-introspection/giscanner/sectionparser.py
+lib/gobject-introspection/giscanner/sectionparser.pyc
+lib/gobject-introspection/giscanner/sectionparser.pyo
 lib/gobject-introspection/giscanner/shlibs.py
 lib/gobject-introspection/giscanner/shlibs.pyc
 lib/gobject-introspection/giscanner/shlibs.pyo
@@ -159,57 +177,28 @@ share/gir-1.0/xlib-2.0.gir
 share/gir-1.0/xrandr-1.3.gir
 share/gobject-introspection-1.0/Makefile.introspection
 share/gobject-introspection-1.0/gdump.c
+share/gobject-introspection-1.0/tests/annotation.c
+share/gobject-introspection-1.0/tests/annotation.h
+share/gobject-introspection-1.0/tests/drawable.c
+share/gobject-introspection-1.0/tests/drawable.h
 share/gobject-introspection-1.0/tests/everything.c
 share/gobject-introspection-1.0/tests/everything.h
+share/gobject-introspection-1.0/tests/foo.c
+share/gobject-introspection-1.0/tests/foo.h
 share/gobject-introspection-1.0/tests/gimarshallingtests.c
 share/gobject-introspection-1.0/tests/gimarshallingtests.h
 share/gobject-introspection-1.0/tests/regress.c
 share/gobject-introspection-1.0/tests/regress.h
-share/gtk-doc/html/gi/annotation-glossary.html
-share/gtk-doc/html/gi/gi-GIArgInfo.html
-share/gtk-doc/html/gi/gi-GIBaseInfo.html
-share/gtk-doc/html/gi/gi-GICallableInfo.html
-share/gtk-doc/html/gi/gi-GIConstantInfo.html
-share/gtk-doc/html/gi/gi-GIEnumInfo.html
-share/gtk-doc/html/gi/gi-GIFieldInfo.html
-share/gtk-doc/html/gi/gi-GIFunctionInfo.html
-share/gtk-doc/html/gi/gi-GIInterfaceInfo.html
-share/gtk-doc/html/gi/gi-GIObjectInfo.html
-share/gtk-doc/html/gi/gi-GIPropertyInfo.html
-share/gtk-doc/html/gi/gi-GIRegisteredTypeInfo.html
-share/gtk-doc/html/gi/gi-GISignalInfo.html
-share/gtk-doc/html/gi/gi-GIStructInfo.html
-share/gtk-doc/html/gi/gi-GITypeInfo.html
-share/gtk-doc/html/gi/gi-GIUnionInfo.html
-share/gtk-doc/html/gi/gi-GIVFuncInfo.html
-share/gtk-doc/html/gi/gi-ffi.html
-share/gtk-doc/html/gi/gi-gierrordomaininfo.html
-share/gtk-doc/html/gi/gi-gir-reference.html
-share/gtk-doc/html/gi/gi-gir.html
-share/gtk-doc/html/gi/gi-girepository.html
-share/gtk-doc/html/gi/gi-girffi.html
-share/gtk-doc/html/gi/gi-gtypelib.html
-share/gtk-doc/html/gi/gi-libgirepository.html
-share/gtk-doc/html/gi/gi-overview.html
-share/gtk-doc/html/gi/gi-repository-structs.html
-share/gtk-doc/html/gi/gi-struct-hierarchy.html
-share/gtk-doc/html/gi/gi-typelib.html
-share/gtk-doc/html/gi/gi.devhelp2
-share/gtk-doc/html/gi/girepository.html
-share/gtk-doc/html/gi/glib.html
-share/gtk-doc/html/gi/home.png
-share/gtk-doc/html/gi/index.html
-share/gtk-doc/html/gi/index.sgml
-share/gtk-doc/html/gi/left.png
-share/gtk-doc/html/gi/overview.png
-share/gtk-doc/html/gi/right.png
-share/gtk-doc/html/gi/style.css
-share/gtk-doc/html/gi/up.png
-@dirrm share/gtk-doc/html/gi
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
+share/gobject-introspection-1.0/tests/utility.c
+share/gobject-introspection-1.0/tests/utility.h
+share/gobject-introspection-1.0/tests/warnlib.c
+share/gobject-introspection-1.0/tests/warnlib.h
 @dirrm share/gobject-introspection-1.0/tests
 @dirrm share/gobject-introspection-1.0
+@dirrm lib/gobject-introspection/giscanner/doctemplates/Python
+@dirrm lib/gobject-introspection/giscanner/doctemplates/Gjs
+@dirrm lib/gobject-introspection/giscanner/doctemplates/C
+@dirrm lib/gobject-introspection/giscanner/doctemplates
 @dirrm lib/gobject-introspection/giscanner
 @dirrm lib/gobject-introspection
 @dirrm include/gobject-introspection-1.0

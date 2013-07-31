@@ -6,6 +6,7 @@ include/gjs-1.0/gi/closure.h
 include/gjs-1.0/gi/enumeration.h
 include/gjs-1.0/gi/foreign.h
 include/gjs-1.0/gi/function.h
+include/gjs-1.0/gi/gerror.h
 include/gjs-1.0/gi/gtype.h
 include/gjs-1.0/gi/interface.h
 include/gjs-1.0/gi/keep-alive.h
@@ -26,7 +27,7 @@ include/gjs-1.0/gjs/importer.h
 include/gjs-1.0/gjs/jsapi-util.h
 include/gjs-1.0/gjs/mem.h
 include/gjs-1.0/gjs/native.h
-lib/girepository-1.0/GjsDBus-1.0.typelib
+include/gjs-1.0/gjs/type-module.h
 lib/gjs-1.0/cairoNative.a
 lib/gjs-1.0/cairoNative.la
 lib/gjs-1.0/cairoNative.so
@@ -39,6 +40,9 @@ lib/gjs-1.0/dbusNative.so
 lib/gjs-1.0/debugger.a
 lib/gjs-1.0/debugger.la
 lib/gjs-1.0/debugger.so
+lib/gjs-1.0/formatNative.a
+lib/gjs-1.0/formatNative.la
+lib/gjs-1.0/formatNative.so
 lib/gjs-1.0/gettextNative.a
 lib/gjs-1.0/gettextNative.la
 lib/gjs-1.0/gettextNative.so
@@ -51,14 +55,11 @@ lib/gjs-1.0/mainloop.so
 lib/gjs-1.0/system.a
 lib/gjs-1.0/system.la
 lib/gjs-1.0/system.so
+lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
 lib/libgjs-dbus.a
 lib/libgjs-dbus.la
 lib/libgjs-dbus.so
 lib/libgjs-dbus.so.0
-lib/libgjs-gdbus.a
-lib/libgjs-gdbus.la
-lib/libgjs-gdbus.so
-lib/libgjs-gdbus.so.0
 lib/libgjs.a
 lib/libgjs.la
 lib/libgjs.so
@@ -66,10 +67,10 @@ lib/libgjs.so.0
 libdata/pkgconfig/gjs-1.0.pc
 libdata/pkgconfig/gjs-dbus-1.0.pc
 libdata/pkgconfig/gjs-internals-1.0.pc
-share/gir-1.0/GjsDBus-1.0.gir
 share/gjs-1.0/cairo.js
 share/gjs-1.0/dbus.js
 share/gjs-1.0/gettext.js
+share/gjs-1.0/format.js
 share/gjs-1.0/jsUnit.js
 share/gjs-1.0/lang.js
 share/gjs-1.0/overrides/GLib.js
@@ -83,7 +84,9 @@ share/gjs-1.0/tweener/tweener.js
 @dirrm share/gjs-1.0/tweener
 @dirrm share/gjs-1.0/overrides
 @dirrm share/gjs-1.0
+@dirrm lib/gjs/girepository-1.0
 @dirrm lib/gjs-1.0
+@dirrm lib/gjs
 @dirrm include/gjs-1.0/gjs
 @dirrm include/gjs-1.0/gjs-dbus
 @dirrm include/gjs-1.0/gi

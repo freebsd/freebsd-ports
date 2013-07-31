@@ -1,29 +1,11 @@
---- configure.orig	2011-09-23 11:49:54.000000000 +0200
-+++ configure	2011-09-23 11:50:31.000000000 +0200
-@@ -14400,10 +14400,10 @@
- $as_echo_n "checking for headers required to compile python extensions... " >&6; }
- py_prefix=`$PYTHON -c "import sys; print sys.prefix"`
- py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
--if test "x$PYTHON_INCLUDES" == x; then
--  PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
-+if test "x$PYTHON_INCLUDES" = x; then
-+  PYTHON_INCLUDES=`python${PYTHON_VERSION}-config --cflags`
-   if test "$py_prefix" != "$py_exec_prefix"; then
--    PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION}"
-+    PYTHON_INCLUDES=`python${PYTHON_VERSION}-config --cflags`
-   fi
- fi
- 
-@@ -14429,10 +14429,10 @@
+--- configure.orig	2013-03-29 22:15:44.000000000 +0000
++++ configure	2013-03-29 22:18:30.000000000 +0000
+@@ -14623,7 +14623,7 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libraries required to link against libpython" >&5
  $as_echo_n "checking for libraries required to link against libpython... " >&6; }
 -if test "x$PYTHON_LIBS" == x; then
 +if test "x$PYTHON_LIBS" = x; then
- 	PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION}"
- fi
--if test "x$PYTHON_LIB_LOC" == x; then
-+if test "x$PYTHON_LIB_LOC" = x; then
- 	PYTHON_LIB_LOC="${py_prefix}/lib"
+ 	PYTHON_LIBS=`$PYTHON-config --ldflags --libs`
  fi
  

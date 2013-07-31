@@ -1,11 +1,11 @@
---- Makefile.in.orig	2012-05-15 23:46:55.000000000 +0200
-+++ Makefile.in	2012-05-15 23:47:27.000000000 +0200
-@@ -329,7 +329,7 @@
- # this needs libcolord and libcolord-gtk
- 
+--- Makefile.in.orig	2013-03-29 15:05:15.000000000 +0000
++++ Makefile.in	2013-03-29 15:06:06.000000000 +0000
+@@ -387,7 +387,7 @@
  # this needs client/cd-create-profile
--SUBDIRS = etc policy man libcolord rules po $(am__append_1) client \
-+SUBDIRS = etc policy man libcolord po $(am__append_1) client \
- 	contrib doc examples src data
+ 
+ # this needs data/profiles/*.icc
+-SUBDIRS = etc policy man lib rules po client contrib doc examples data \
++SUBDIRS = etc policy man lib po client contrib doc examples data \
+ 	src
  DISTCHECK_CONFIGURE_FLAGS = \
  	--enable-introspection				\

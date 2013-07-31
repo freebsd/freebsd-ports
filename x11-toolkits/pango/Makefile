@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.167 2012/06/06 21:18:48 kwm Exp $
+#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	pango
-PORTVERSION=	1.30.1
+PORTVERSION=	1.34.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -16,23 +16,22 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/freetype2.pc:${PORTSDIR}/print/freetype2 \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+BUILD_DEPENDS=	fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
+		freetype:${PORTSDIR}/print/freetype2 \
+		harfbuzz:${PORTSDIR}/print/harfbuzz \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
-		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings \
-		${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
+		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack glib20 ltverhack referencehack
-USES=		pkgconfig gettext
+USE_GNOME=	glib20 ltverhack referencehack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	VERSION="1.6.0"
+PLIST_SUB=	VERSION="1.8.0"
 
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
@@ -45,11 +44,12 @@ OPTIONS_DEFAULT=X11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-USE_XORG+=		xft xrender
-PLIST_SUB+=		X11=""
+USE_XORG+=	xft xrender
+#CONFIGURE_ARGS=--with-xft
+PLIST_SUB+=	X11=""
 .else
-CONFIGURE_ARGS+=	--with-x=no
-PLIST_SUB+=		X11="@comment "
+CONFIGURE_ARGS+=--without-xft
+PLIST_SUB+=	X11="@comment "
 .endif
 
 pre-configure:

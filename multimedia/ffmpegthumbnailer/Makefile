@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,8 +19,8 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig --enable-gio
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GNOME=	gnomehack _glib20
+USES=		pathfix pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	GNOME

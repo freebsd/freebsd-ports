@@ -20,6 +20,8 @@ include/gtk-3.0/gdk/gdkdisplaymanager.h
 include/gtk-3.0/gdk/gdkdnd.h
 include/gtk-3.0/gdk/gdkenumtypes.h
 include/gtk-3.0/gdk/gdkevents.h
+include/gtk-3.0/gdk/gdkframeclock.h
+include/gtk-3.0/gdk/gdkframetimings.h
 include/gtk-3.0/gdk/gdkkeys.h
 include/gtk-3.0/gdk/gdkkeysyms-compat.h
 include/gtk-3.0/gdk/gdkkeysyms.h
@@ -57,9 +59,54 @@ include/gtk-3.0/gdk/x11/gdkx11selection.h
 include/gtk-3.0/gdk/x11/gdkx11utils.h
 include/gtk-3.0/gdk/x11/gdkx11visual.h
 include/gtk-3.0/gdk/x11/gdkx11window.h
+include/gtk-3.0/gtk/a11y/gtkarrowaccessible.h
+include/gtk-3.0/gtk/a11y/gtkbooleancellaccessible.h
+include/gtk-3.0/gtk/a11y/gtkbuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtkcellaccessible.h
+include/gtk-3.0/gtk/a11y/gtkcellaccessibleparent.h
+include/gtk-3.0/gtk/a11y/gtkcheckmenuitemaccessible.h
+include/gtk-3.0/gtk/a11y/gtkcomboboxaccessible.h
+include/gtk-3.0/gtk/a11y/gtkcontaineraccessible.h
+include/gtk-3.0/gtk/a11y/gtkcontainercellaccessible.h
+include/gtk-3.0/gtk/a11y/gtkentryaccessible.h
+include/gtk-3.0/gtk/a11y/gtkexpanderaccessible.h
+include/gtk-3.0/gtk/a11y/gtkframeaccessible.h
+include/gtk-3.0/gtk/a11y/gtkiconviewaccessible.h
+include/gtk-3.0/gtk/a11y/gtkimageaccessible.h
+include/gtk-3.0/gtk/a11y/gtkimagecellaccessible.h
+include/gtk-3.0/gtk/a11y/gtklabelaccessible.h
+include/gtk-3.0/gtk/a11y/gtklevelbaraccessible.h
+include/gtk-3.0/gtk/a11y/gtklinkbuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtklockbuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtkmenuaccessible.h
+include/gtk-3.0/gtk/a11y/gtkmenuitemaccessible.h
+include/gtk-3.0/gtk/a11y/gtkmenushellaccessible.h
+include/gtk-3.0/gtk/a11y/gtknotebookaccessible.h
+include/gtk-3.0/gtk/a11y/gtknotebookpageaccessible.h
+include/gtk-3.0/gtk/a11y/gtkpanedaccessible.h
+include/gtk-3.0/gtk/a11y/gtkprogressbaraccessible.h
+include/gtk-3.0/gtk/a11y/gtkradiobuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtkradiomenuitemaccessible.h
+include/gtk-3.0/gtk/a11y/gtkrangeaccessible.h
+include/gtk-3.0/gtk/a11y/gtkrenderercellaccessible.h
+include/gtk-3.0/gtk/a11y/gtkscaleaccessible.h
+include/gtk-3.0/gtk/a11y/gtkscalebuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtkscrolledwindowaccessible.h
+include/gtk-3.0/gtk/a11y/gtkspinbuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtkspinneraccessible.h
+include/gtk-3.0/gtk/a11y/gtkstatusbaraccessible.h
+include/gtk-3.0/gtk/a11y/gtkswitchaccessible.h
+include/gtk-3.0/gtk/a11y/gtktextcellaccessible.h
+include/gtk-3.0/gtk/a11y/gtktextviewaccessible.h
+include/gtk-3.0/gtk/a11y/gtktogglebuttonaccessible.h
+include/gtk-3.0/gtk/a11y/gtktoplevelaccessible.h
+include/gtk-3.0/gtk/a11y/gtktreeviewaccessible.h
+include/gtk-3.0/gtk/a11y/gtkwidgetaccessible.h
+include/gtk-3.0/gtk/a11y/gtkwindowaccessible.h
 include/gtk-3.0/gtk/deprecated/gtkcolorsel.h
 include/gtk-3.0/gtk/deprecated/gtkcolorseldialog.h
 include/gtk-3.0/gtk/deprecated/gtkfontsel.h
+include/gtk-3.0/gtk/deprecated/gtkgradient.h
 include/gtk-3.0/gtk/deprecated/gtkhandlebox.h
 include/gtk-3.0/gtk/deprecated/gtkhbbox.h
 include/gtk-3.0/gtk/deprecated/gtkhbox.h
@@ -70,6 +117,7 @@ include/gtk-3.0/gtk/deprecated/gtkhseparator.h
 include/gtk-3.0/gtk/deprecated/gtkhsv.h
 include/gtk-3.0/gtk/deprecated/gtkrc.h
 include/gtk-3.0/gtk/deprecated/gtkstyle.h
+include/gtk-3.0/gtk/deprecated/gtksymboliccolor.h
 include/gtk-3.0/gtk/deprecated/gtktable.h
 include/gtk-3.0/gtk/deprecated/gtktearoffmenuitem.h
 include/gtk-3.0/gtk/deprecated/gtkvbbox.h
@@ -78,6 +126,7 @@ include/gtk-3.0/gtk/deprecated/gtkvpaned.h
 include/gtk-3.0/gtk/deprecated/gtkvscale.h
 include/gtk-3.0/gtk/deprecated/gtkvscrollbar.h
 include/gtk-3.0/gtk/deprecated/gtkvseparator.h
+include/gtk-3.0/gtk/gtk-a11y.h
 include/gtk-3.0/gtk/gtk.h
 include/gtk-3.0/gtk/gtkaboutdialog.h
 include/gtk-3.0/gtk/gtkaccelgroup.h
@@ -158,7 +207,6 @@ include/gtk-3.0/gtk/gtkfontchooser.h
 include/gtk-3.0/gtk/gtkfontchooserdialog.h
 include/gtk-3.0/gtk/gtkfontchooserwidget.h
 include/gtk-3.0/gtk/gtkframe.h
-include/gtk-3.0/gtk/gtkgradient.h
 include/gtk-3.0/gtk/gtkgrid.h
 include/gtk-3.0/gtk/gtkiconfactory.h
 include/gtk-3.0/gtk/gtkicontheme.h
@@ -239,7 +287,6 @@ include/gtk-3.0/gtk/gtkstylecontext.h
 include/gtk-3.0/gtk/gtkstyleproperties.h
 include/gtk-3.0/gtk/gtkstyleprovider.h
 include/gtk-3.0/gtk/gtkswitch.h
-include/gtk-3.0/gtk/gtksymboliccolor.h
 include/gtk-3.0/gtk/gtktestutils.h
 include/gtk-3.0/gtk/gtktextattributes.h
 include/gtk-3.0/gtk/gtktextbuffer.h
@@ -355,87 +402,13 @@ share/aclocal/gtk-3.0.m4
 share/gir-1.0/Gdk-3.0.gir
 share/gir-1.0/GdkX11-3.0.gir
 share/gir-1.0/Gtk-3.0.gir
-share/gtk-3.0/demo/alphatest.png
-share/gtk-3.0/demo/apple-red.png
-share/gtk-3.0/demo/application.c
-share/gtk-3.0/demo/application.ui
-share/gtk-3.0/demo/appwindow.c
-share/gtk-3.0/demo/assistant.c
-share/gtk-3.0/demo/background.jpg
-share/gtk-3.0/demo/builder.c
-share/gtk-3.0/demo/button_box.c
-share/gtk-3.0/demo/changedisplay.c
-share/gtk-3.0/demo/clipboard.c
-share/gtk-3.0/demo/colorsel.c
-share/gtk-3.0/demo/combobox.c
-share/gtk-3.0/demo/css_accordion.c
-share/gtk-3.0/demo/css_accordion.css
-share/gtk-3.0/demo/css_basics.c
-share/gtk-3.0/demo/css_basics.css
-share/gtk-3.0/demo/css_multiplebgs.c
-share/gtk-3.0/demo/css_multiplebgs.css
-share/gtk-3.0/demo/css_pixbufs.c
-share/gtk-3.0/demo/css_pixbufs.css
-share/gtk-3.0/demo/css_shadows.c
-share/gtk-3.0/demo/css_shadows.css
-share/gtk-3.0/demo/cssview.css
-share/gtk-3.0/demo/demo.ui
-share/gtk-3.0/demo/dialog.c
-share/gtk-3.0/demo/drawingarea.c
-share/gtk-3.0/demo/editable_cells.c
-share/gtk-3.0/demo/entry_buffer.c
-share/gtk-3.0/demo/entry_completion.c
-share/gtk-3.0/demo/expander.c
-share/gtk-3.0/demo/fancy.css
-share/gtk-3.0/demo/floppybuddy.gif
-share/gtk-3.0/demo/gnome-applets.png
-share/gtk-3.0/demo/gnome-calendar.png
-share/gtk-3.0/demo/gnome-foot.png
-share/gtk-3.0/demo/gnome-fs-directory.png
-share/gtk-3.0/demo/gnome-fs-regular.png
-share/gtk-3.0/demo/gnome-gimp.png
-share/gtk-3.0/demo/gnome-gmush.png
-share/gtk-3.0/demo/gnome-gsame.png
-share/gtk-3.0/demo/gnu-keys.png
-share/gtk-3.0/demo/gtk-logo-24.png
-share/gtk-3.0/demo/gtk-logo-48.png
-share/gtk-3.0/demo/gtk-logo-rgb.gif
-share/gtk-3.0/demo/hypertext.c
-share/gtk-3.0/demo/iconview.c
-share/gtk-3.0/demo/iconview_edit.c
-share/gtk-3.0/demo/images.c
-share/gtk-3.0/demo/infobar.c
-share/gtk-3.0/demo/links.c
-share/gtk-3.0/demo/list_store.c
-share/gtk-3.0/demo/menus.c
-share/gtk-3.0/demo/menus.ui
-share/gtk-3.0/demo/offscreen_window.c
-share/gtk-3.0/demo/offscreen_window2.c
-share/gtk-3.0/demo/overlay.c
-share/gtk-3.0/demo/panes.c
-share/gtk-3.0/demo/pickers.c
-share/gtk-3.0/demo/pixbufs.c
-share/gtk-3.0/demo/printing.c
-share/gtk-3.0/demo/reset.css
-share/gtk-3.0/demo/rotated_text.c
-share/gtk-3.0/demo/search_entry.c
-share/gtk-3.0/demo/sizegroup.c
-share/gtk-3.0/demo/spinner.c
-share/gtk-3.0/demo/stock_browser.c
-share/gtk-3.0/demo/textscroll.c
-share/gtk-3.0/demo/textview.c
-share/gtk-3.0/demo/theming_custom_css.c
-share/gtk-3.0/demo/theming_style_classes.c
-share/gtk-3.0/demo/theming.ui
-share/gtk-3.0/demo/toolpalette.c
-share/gtk-3.0/demo/transparent.c
-share/gtk-3.0/demo/tree_store.c
-share/gtk-3.0/demo/ui_manager.c
 share/gtk-3.0/gtkbuilder.rng
 share/locale/af/LC_MESSAGES/gtk30-properties.mo
 share/locale/af/LC_MESSAGES/gtk30.mo
 share/locale/am/LC_MESSAGES/gtk30-properties.mo
 share/locale/am/LC_MESSAGES/gtk30.mo
+share/locale/an/LC_MESSAGES/gtk30-properties.mo
+share/locale/an/LC_MESSAGES/gtk30.mo
 share/locale/ang/LC_MESSAGES/gtk30-properties.mo
 share/locale/ang/LC_MESSAGES/gtk30.mo
 share/locale/ar/LC_MESSAGES/gtk30-properties.mo
@@ -741,8 +714,8 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
-@dirrm share/gtk-3.0/demo
-@dirrm share/gtk-3.0
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
 @exec /bin/mkdir -p %D/lib/gtk-3.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/loaders
@@ -757,6 +730,7 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrm include/gtk-3.0/unix-print/gtk
 @dirrm include/gtk-3.0/unix-print
 @dirrm include/gtk-3.0/gtk/deprecated
+@dirrm include/gtk-3.0/gtk/a11y
 @dirrm include/gtk-3.0/gtk
 @dirrm include/gtk-3.0/gdk/x11
 @dirrm include/gtk-3.0/gdk

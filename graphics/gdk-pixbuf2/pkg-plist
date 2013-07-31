@@ -165,6 +165,7 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/sv/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/te/LC_MESSAGES/gdk-pixbuf.mo
+%%NLS%%share/locale/tg/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/th/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/tk/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gdk-pixbuf.mo

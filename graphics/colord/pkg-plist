@@ -1,23 +1,38 @@
-etc/bash_completion.d/colormgr-completion.bash
+bin/cd-create-profile
+bin/cd-fix-profile
+bin/cd-iccdump
+bin/colormgr
 etc/colord.conf
 etc/dbus-1/system.d/org.freedesktop.ColorManager.conf
-etc/dbus-1/system.d/org.freedesktop.colord-sane.conf
-include/colord-1/colord.h
 include/colord-1/colord-private.h
+include/colord-1/colord-session/cd-session.h
+include/colord-1/colord.h
+include/colord-1/colord/cd-buffer.h
 include/colord-1/colord/cd-client-sync.h
 include/colord-1/colord/cd-client.h
 include/colord-1/colord/cd-color.h
+include/colord-1/colord/cd-deprecated.h
 include/colord-1/colord/cd-device-sync.h
 include/colord-1/colord/cd-device.h
+include/colord-1/colord/cd-dom.h
 include/colord-1/colord/cd-enum.h
-include/colord-1/colord/cd-it8.h
+include/colord-1/colord/cd-icc.h
+include/colord-1/colord/cd-interp-akima.h
+include/colord-1/colord/cd-interp-linear.h
+include/colord-1/colord/cd-interp.h
 include/colord-1/colord/cd-it8-utils.h
+include/colord-1/colord/cd-it8.h
 include/colord-1/colord/cd-math.h
 include/colord-1/colord/cd-profile-sync.h
 include/colord-1/colord/cd-profile.h
+include/colord-1/colord/cd-quirk.h
 include/colord-1/colord/cd-sensor-sync.h
 include/colord-1/colord/cd-sensor.h
+include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
+lib/colord-sensors/libcolord_sensor_argyll.a
+lib/colord-sensors/libcolord_sensor_argyll.la
+lib/colord-sensors/libcolord_sensor_argyll.so
 lib/colord-sensors/libcolord_sensor_dummy.a
 lib/colord-sensors/libcolord_sensor_dummy.la
 lib/colord-sensors/libcolord_sensor_dummy.so
@@ -26,17 +41,66 @@ lib/libcolord.a
 lib/libcolord.la
 lib/libcolord.so
 lib/libcolord.so.1
+lib/libcolordprivate.a
+lib/libcolordprivate.la
+lib/libcolordprivate.so
+lib/libcolordprivate.so.1
 libdata/pkgconfig/colord.pc
 libexec/colord
-share/color/icc/colord/crayons.icc
+libexec/colord-session
+share/color/icc/colord/AdobeRGB1998.icc
+share/color/icc/colord/AppleRGB.icc
+share/color/icc/colord/BestRGB.icc
+share/color/icc/colord/BetaRGB.icc
+share/color/icc/colord/Bluish.icc
+share/color/icc/colord/BruceRGB.icc
+share/color/icc/colord/CIE-RGB.icc
+share/color/icc/colord/ColorMatchRGB.icc
+share/color/icc/colord/Crayons.icc
+share/color/icc/colord/DonRGB4.icc
+share/color/icc/colord/ECI-RGBv1.icc
+share/color/icc/colord/ECI-RGBv2.icc
+share/color/icc/colord/EktaSpacePS5.icc
+share/color/icc/colord/Gamma5000K.icc
+share/color/icc/colord/Gamma5500K.icc
+share/color/icc/colord/Gamma6500K.icc
+share/color/icc/colord/NTSC-RGB.icc
+share/color/icc/colord/PAL-RGB.icc
+share/color/icc/colord/ProPhotoRGB.icc
+share/color/icc/colord/SMPTE-C-RGB.icc
+share/color/icc/colord/SwappedRedAndGreen.icc
+share/color/icc/colord/WideGamutRGB.icc
+share/color/icc/colord/sRGB.icc
 share/color/icc/colord/x11-colors.icc
+share/colord/icons/color-munki-photo-ambient.svg
+share/colord/icons/color-munki-photo-attach.svg
+share/colord/icons/color-munki-photo-calibrate.svg
+share/colord/icons/color-munki-photo-projector.svg
+share/colord/icons/color-munki-photo-screen.svg
+share/colord/icons/color-munki-smile-attach.svg
+share/colord/icons/colorhug-attach.svg
+share/colord/icons/dtp94-attach.svg
+share/colord/icons/hcfr-attach.svg
+share/colord/icons/huey-attach.svg
+share/colord/icons/i1-display3-attach.svg
+share/colord/icons/i1-monitor-attach.svg
+share/colord/icons/i1-pro-attach.svg
+share/colord/icons/spyder2-attach.svg
+share/colord/icons/spyder3-attach.svg
+share/colord/icons/spyder4-attach.svg
+share/colord/ti1/display-long.ti1
+share/colord/ti1/display-normal.ti1
+share/colord/ti1/display-short.ti1
+share/colord/ti1/printer-long.ti1
+share/colord/ti1/printer-normal.ti1
+share/colord/ti1/printer-short.ti1
+share/dbus-1/interfaces/org.freedesktop.ColorHelper.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.Device.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.Profile.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.Sensor.xml
 share/dbus-1/interfaces/org.freedesktop.ColorManager.xml
-share/dbus-1/interfaces/org.freedesktop.colord.sane.xml
+share/dbus-1/services/org.freedesktop.ColorHelper.service
 share/dbus-1/system-services/org.freedesktop.ColorManager.service
-share/dbus-1/system-services/org.freedesktop.colord-sane.service
 share/gir-1.0/Colord-1.0.gir
 share/locale/as/LC_MESSAGES/colord.mo
 share/locale/bg/LC_MESSAGES/colord.mo
@@ -51,6 +115,7 @@ share/locale/en_GB/LC_MESSAGES/colord.mo
 share/locale/eo/LC_MESSAGES/colord.mo
 share/locale/es/LC_MESSAGES/colord.mo
 share/locale/eu/LC_MESSAGES/colord.mo
+share/locale/fa/LC_MESSAGES/colord.mo
 share/locale/fi/LC_MESSAGES/colord.mo
 share/locale/fr/LC_MESSAGES/colord.mo
 share/locale/ga/LC_MESSAGES/colord.mo
@@ -58,11 +123,14 @@ share/locale/gl/LC_MESSAGES/colord.mo
 share/locale/gu/LC_MESSAGES/colord.mo
 share/locale/he/LC_MESSAGES/colord.mo
 share/locale/hi/LC_MESSAGES/colord.mo
+share/locale/hr/LC_MESSAGES/colord.mo
 share/locale/hu/LC_MESSAGES/colord.mo
+share/locale/ia/LC_MESSAGES/colord.mo
 share/locale/id/LC_MESSAGES/colord.mo
 share/locale/it/LC_MESSAGES/colord.mo
 share/locale/it_IT/LC_MESSAGES/colord.mo
 share/locale/ja/LC_MESSAGES/colord.mo
+share/locale/ka/LC_MESSAGES/colord.mo
 share/locale/kk/LC_MESSAGES/colord.mo
 share/locale/kn/LC_MESSAGES/colord.mo
 share/locale/ko/LC_MESSAGES/colord.mo
@@ -82,6 +150,7 @@ share/locale/ro/LC_MESSAGES/colord.mo
 share/locale/ru/LC_MESSAGES/colord.mo
 share/locale/sk/LC_MESSAGES/colord.mo
 share/locale/sl/LC_MESSAGES/colord.mo
+share/locale/sq/LC_MESSAGES/colord.mo
 share/locale/sr/LC_MESSAGES/colord.mo
 share/locale/sr@latin/LC_MESSAGES/colord.mo
 share/locale/sv/LC_MESSAGES/colord.mo
@@ -91,14 +160,11 @@ share/locale/th/LC_MESSAGES/colord.mo
 share/locale/tr/LC_MESSAGES/colord.mo
 share/locale/uk/LC_MESSAGES/colord.mo
 share/locale/zh_CN/LC_MESSAGES/colord.mo
+share/locale/zh_HK/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
 share/polkit-1/actions/org.freedesktop.color.policy
-share/vala/vapi/colord.vapi
-@exec mkdir -p %D/var/lib/colord/icc
-@dirrmtry var/lib/colord/icc
-@dirrmtry var/lib/colord
-@dirrmtry var/lib
-@dirrmtry var
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -109,16 +175,25 @@ share/vala/vapi/colord.vapi
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/bg_BG/LC_MESSAGES
 @dirrmtry share/locale/bg_BG
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/colord/ti1
+@dirrm share/colord/icons
+@dirrm share/colord
 @dirrm share/color/icc/colord
 @dirrm share/color/icc
 @dirrm share/color
 @dirrm lib/colord-sensors
+@dirrm include/colord-1/colord-session
 @dirrm include/colord-1/colord
 @dirrm include/colord-1
-@dirrmtry etc/bash_completion.d
+@cwd /
+@dirrmtry var/db/colord/icc
+@dirrmtry var/db/colord
+@cwd

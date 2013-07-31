@@ -1,6 +1,6 @@
---- configure.orig	2011-06-07 22:08:06.000000000 +0200
-+++ configure	2011-06-07 22:08:10.000000000 +0200
-@@ -646,8 +646,6 @@
+--- configure.orig	2011-08-30 23:03:20.000000000 +0200
++++ configure	2011-08-30 23:03:01.000000000 +0200
+@@ -648,8 +648,6 @@
  INTROSPECTION_COMPILER
  INTROSPECTION_SCANNER
  GLIB_GENMARSHAL
@@ -9,26 +9,26 @@
  PACKAGE_LIBS
  PACKAGE_CFLAGS
  PKG_CONFIG_LIBDIR
-@@ -804,8 +802,6 @@
+@@ -806,8 +804,6 @@
  PKG_CONFIG_LIBDIR
  PACKAGE_CFLAGS
  PACKAGE_LIBS
 -TESTS_CFLAGS
 -TESTS_LIBS
+ GTKDOC_DEPS_CFLAGS
+ GTKDOC_DEPS_LIBS
  XMLTO
- XMLTO_FLAGS'
- 
-@@ -1473,9 +1469,6 @@
+@@ -1477,9 +1473,6 @@
                C compiler flags for PACKAGE, overriding pkg-config
    PACKAGE_LIBS
                linker flags for PACKAGE, overriding pkg-config
 -  TESTS_CFLAGS
 -              C compiler flags for TESTS, overriding pkg-config
 -  TESTS_LIBS  linker flags for TESTS, overriding pkg-config
-   XMLTO       Define/override the `xmlto' location.
-   XMLTO_FLAGS Define/override `xmlto' options, like `--skip-validation'.
- 
-@@ -11656,99 +11643,6 @@
+   GTKDOC_DEPS_CFLAGS
+               C compiler flags for GTKDOC_DEPS, overriding pkg-config
+   GTKDOC_DEPS_LIBS
+@@ -11664,98 +11657,6 @@
  
  fi
  
@@ -124,7 +124,6 @@
 -$as_echo "yes" >&6; }
 -
 -fi
--
- GLIB_GENMARSHAL=`pkg-config --variable=glib_genmarshal glib-2.0`
  
+ GLIB_GENMARSHAL=`pkg-config --variable=glib_genmarshal glib-2.0`
  

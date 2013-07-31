@@ -1,9 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtk30/Makefile,v 1.53 2013/01/07 13:35:02 kwm Exp $
+#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtk
-PORTVERSION=	3.6.4
+PORTVERSION=	3.8.2
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -21,26 +21,24 @@ LATEST_LINK=	gtk30
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
-RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
+BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
 
-USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache
-USES=		gettext
+USE_GNOME=	atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache
+#		introspection:build
+USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--enable-static
-CONFIGURE_ARGS+=--enable-gtk2-dependency --disable-packagekit
+CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0` ac_cv_path_SED="${SED}"
+CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0`
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \

@@ -1,0 +1,11 @@
+--- configure.orig	2013-04-11 10:05:05.000000000 +0000
++++ configure	2013-04-11 10:06:38.000000000 +0000
+@@ -17763,7 +17763,7 @@
+ fi
+ 
+ # per-machine directory
+-CD_SYSTEM_PROFILES_DIR="\$(localstatedir)/lib/colord/icc"
++CD_SYSTEM_PROFILES_DIR="\$(localstatedir)/db/colord/icc"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile etc/Makefile contrib/Makefile contrib/session-helper/Makefile contrib/colord-sane/Makefile examples/Makefile man/Makefile doc/Makefile doc/api/Makefile doc/api/dbus/Makefile doc/api/version.xml data/Makefile data/figures/Makefile data/profiles/Makefile data/ti1/Makefile data/org.freedesktop.ColorManager.conf data/tests/Makefile policy/Makefile rules/Makefile rules/69-cd-sensors.rules po/Makefile.in src/Makefile src/plugins/Makefile src/sensors/Makefile client/Makefile lib/Makefile lib/colord/cd-version.h lib/colord/colord.pc lib/colord/Makefile lib/colorhug/Makefile lib/colorhug/colorhug.pc lib/colorhug/ch-version.h lib/dtp94/Makefile lib/huey/Makefile lib/munki/Makefile"

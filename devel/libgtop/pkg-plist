@@ -43,7 +43,6 @@ include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/libgtopconfig.h
-lib/girepository-1.0/GTop-2.0.typelib
 lib/libgtop-2.0.a
 lib/libgtop-2.0.la
 lib/libgtop-2.0.so
@@ -91,12 +90,10 @@ libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/libgtop-version.html
 %%DOCSDIR%%/libgtop-white-paper-overview.html
 %%DOCSDIR%%/libgtop-white-paper.html
-%%DOCSDIR%%/libgtop.devhelp
 %%DOCSDIR%%/libgtop.devhelp2
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-share/gir-1.0/GTop-2.0.gir
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
 share/locale/as/LC_MESSAGES/libgtop-2.0.mo
@@ -224,5 +221,3 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0

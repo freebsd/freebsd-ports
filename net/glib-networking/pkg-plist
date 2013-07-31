@@ -9,6 +9,7 @@ lib/gio/modules/libgiolibproxy.la
 lib/gio/modules/libgiolibproxy.so
 libexec/glib-pacrunner
 share/dbus-1/services/org.gtk.GLib.PACRunner.service
+share/locale/an/LC_MESSAGES/glib-networking.mo
 share/locale/ar/LC_MESSAGES/glib-networking.mo
 share/locale/as/LC_MESSAGES/glib-networking.mo
 share/locale/be/LC_MESSAGES/glib-networking.mo
@@ -29,6 +30,7 @@ share/locale/eu/LC_MESSAGES/glib-networking.mo
 share/locale/fa/LC_MESSAGES/glib-networking.mo
 share/locale/fi/LC_MESSAGES/glib-networking.mo
 share/locale/fr/LC_MESSAGES/glib-networking.mo
+share/locale/fur/LC_MESSAGES/glib-networking.mo
 share/locale/gl/LC_MESSAGES/glib-networking.mo
 share/locale/gu/LC_MESSAGES/glib-networking.mo
 share/locale/he/LC_MESSAGES/glib-networking.mo
@@ -60,6 +62,7 @@ share/locale/sr@latin/LC_MESSAGES/glib-networking.mo
 share/locale/sv/LC_MESSAGES/glib-networking.mo
 share/locale/ta/LC_MESSAGES/glib-networking.mo
 share/locale/te/LC_MESSAGES/glib-networking.mo
+share/locale/tg/LC_MESSAGES/glib-networking.mo
 share/locale/th/LC_MESSAGES/glib-networking.mo
 share/locale/tr/LC_MESSAGES/glib-networking.mo
 share/locale/ug/LC_MESSAGES/glib-networking.mo
@@ -80,11 +83,15 @@ share/locale/zh_TW/LC_MESSAGES/glib-networking.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
