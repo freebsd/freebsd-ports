@@ -26,7 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_JOBS_SAFE=	yes
 
 # XXX
 post-install:

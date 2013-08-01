@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-custom-modes \
 		--disable-maintainer-mode \
 		--disable-doc   # requires doxygen
-MAKE_JOBS_SAFE=	yes
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check

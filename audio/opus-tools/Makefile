@@ -15,7 +15,6 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/opusdec bin/opusenc bin/opusinfo
 MAN1=		opusdec.1 opusenc.1 opusinfo.1

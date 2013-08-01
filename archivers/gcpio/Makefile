@@ -13,7 +13,6 @@ COMMENT=	GNU cpio copies files to and from archives
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules \
 		--with-rmt=/etc/rmt

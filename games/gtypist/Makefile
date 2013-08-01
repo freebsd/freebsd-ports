@@ -13,7 +13,6 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS=no
 CPPFLAGS=	-I${WRKDIR}/include
-MAKE_JOBS_SAFE=	yes
 
 INFO=		gtypist gtypist.cs gtypist.es
 MAN1=		gtypist.1 typefortune.1

@@ -21,7 +21,6 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} \
 		--disable-docs		# don't rebuild
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 

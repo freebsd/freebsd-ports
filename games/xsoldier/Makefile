@@ -16,7 +16,6 @@ COMMENT=	Space-based shoot-em up game for X11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 MAKE_ARGS=	CC_OPTIMIZE="${CFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 USE_XORG=	x11 ice sm xpm
 MAN6=		xsoldier.6

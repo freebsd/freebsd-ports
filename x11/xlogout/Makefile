@@ -13,7 +13,6 @@ COMMENT=	Simple logout button
 USES=		imake
 WRKSRC=		${WRKDIR}/xlogout
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAKE_JOBS_SAFE=	yes
 MAN1=		xlogout.1
 
 PLIST_FILES=	bin/xlogout \
