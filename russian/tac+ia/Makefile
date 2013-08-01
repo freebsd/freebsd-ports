@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tas
-# Date created:        11 Jan 2001
-# Whom:                Anton Voronin <anton@urc.ac.ru>
-#
+# Created by: Anton Voronin <anton@urc.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tac+ia
 PORTVERSION=	0.96p9.3
@@ -44,6 +40,7 @@ CONFIGURE_ARGS+=	--enable-acl
 #
 CONFIGURE_ARGS+=	--disable-deny
 CONFIGURE_ARGS+=	--disable-cron
+CFLAGS+=		-Wno-return-type
 
 post-build:
 	@mv ${WRKSRC}/tac_plus/tac_plus.1 ${WRKSRC}/tac_plus/tac_plus.8
