@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  figlet
-# Date created:			  Sat July 20, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	figlet
 PORTVERSION=	2.2.5
@@ -20,6 +15,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
+MAKE_ARGS=	LD=${CC}
 
 MAN6=		chkfont.6 figlet.6 figlist.6 showfigfonts.6
 
