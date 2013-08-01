@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	xfce4-equake-plugin
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	science xfce
 MASTER_SITES=	http://www.e-quake.org/wp-uploads/2013/07/
 DIST_SUBDIR=	xfce4
