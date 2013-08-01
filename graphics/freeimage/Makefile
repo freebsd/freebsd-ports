@@ -11,11 +11,12 @@ DISTNAME=	FreeImage${PORTVERSION:S/.//g}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Simple C/C++ bitmap graphics library
 
+USES=		gmake
 USE_ZIP=	yes
 USE_DOS2UNIX=	Source/LibOpenJPEG/opj_malloc.h
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/FreeImage
+MAKE_ARGS=	CC=${CC} CPP=${CPP} CXX=${CXX}
 
 CFLAGS+=	-fexceptions -fvisibility=hidden
 
