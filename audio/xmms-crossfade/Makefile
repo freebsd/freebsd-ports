@@ -15,6 +15,7 @@ COMMENT=	Crossfading/Gapless Plugin
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 HAS_CONFIGURE=	yes
+USE_CSTD=	gnu89
 APP?=		xmms
 .if ${APP} == bmp
 PORTVERSION=	0.3.12
