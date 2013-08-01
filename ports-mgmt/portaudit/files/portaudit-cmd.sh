@@ -52,6 +52,7 @@ portaudit_confs()
 	: ${portaudit_pubkey:="%%PREFIX%%/etc/portaudit.pubkey"}
 
 	: ${portaudit_fixed=""}
+	: ${portaudit_openssl:="/usr/bin/openssl"}
 }
 
 extract_auditfile_raw()
@@ -78,10 +79,10 @@ checksignature_auditfile()
 	local TMPFILE=`mktemp -t portaudit`
 
 	extract_auditfile_raw | egrep "^#SIGNATURE: " | sed "s/^#SIGNATURE: //g" \
-		| openssl enc -d -a >$TMPFILE
+		| $portaudit_openssl enc -d -a >$TMPFILE
 	signatureresult=`extract_auditfile_raw | egrep -v "^#SIGNATURE: " \
 	    | egrep -v "^#CHECKSUM: " \
-	    | openssl dgst -sha256 -verify ${portaudit_pubkey} -signature $TMPFILE`
+	    | $portaudit_openssl dgst -sha256 -verify ${portaudit_pubkey} -signature $TMPFILE`
 	if [ -n "$TMPFILE" ]; then
 		rm "$TMPFILE"
 	fi
