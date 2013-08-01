@@ -18,7 +18,8 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-D_LSEEK_DECLARED -fPIC
 MAKE_ARGS=	CC="${CC}" CURL_ROOT="${LOCALBASE}" LD="${CC}" \
 		PREFIX="${PREFIX}" OPENSSL_ROOT="${OPENSSLBASE}"
-USE_GMAKE=	yes
+USES=		gmake
+USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
@@ -29,7 +30,7 @@ ZXID_BINS=	smime zxcall zxcot zxdecode zxencdectest zxid zxidhlo \
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/__inline//g' ${WRKSRC}/c/zx-attrs.c
+	@${REINPLACE_CMD} -e '/which gcc/d' ${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${PREFIX}/include/zxid/
