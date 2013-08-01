@@ -4,4 +4,4 @@ pretty-prints the ports that match the given criteria.
 The criteria can be the port's name, categories, maintainer, and if it is
 installed or not.
 
-WWW: https://github.com/antanst/xps
+WWW: https://github.com/serpent7776/xps

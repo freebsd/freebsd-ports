@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xps
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	serpent7776@gmail.com
@@ -11,8 +11,8 @@ COMMENT=	Tool that searches the ports tree by various criteria
 LICENSE=	MIT
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	antanst
-GH_COMMIT=	997c66f
+GH_ACCOUNT=	serpent7776
+GH_COMMIT=	719165b
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
