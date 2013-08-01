@@ -1,9 +1,5 @@
-# New ports collection makefile for:    hpack.with_encryption
-# Date created:         7 Jan 1995
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	hpack
 PORTVERSION=	0.79a
@@ -15,6 +11,7 @@ DISTNAME=	hpack79src
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
+USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
