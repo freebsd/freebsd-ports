@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 PORTREVISION?=	0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
@@ -19,8 +19,7 @@ LUA_COMPS=	lua
 
 CONFLICTS=	powerdns-devel-[2-3].[0-9]*
 
-USES=		pkgconfig
-USE_GMAKE=	YES
+USES=		pkgconfig gmake
 USE_SUBMAKE=	YES
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
@@ -39,9 +38,10 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 OPENDBX OPENLDAP OPENLDAP_LOCAL GEO DNSSEC
-OPTIONS_SINGLE=DNSSEC
-OPTIONS_SINGLE_DNSSEC=	BOTAN CRYPTOPP
+OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 \
+		OPENDBX OPENLDAP OPENLDAP_LOCAL GEO POLARSSL TOOLS
+OPTIONS_MULTI=	DNSSEC
+OPTIONS_MULTI_DNSSEC=	BOTAN110 CRYPTOPP
 
 PGSQL_DESC=		PostgreSQL backend
 PGSQL_LOCAL_DESC=	RUN_DEPEND on PostgreSQL server
@@ -53,17 +53,26 @@ OPENDBX_DESC=		OpenDBX backend
 OPENLDAP_DESC=		OpenLDAP backend
 OPENLDAP_LOCAL_DESC=	RUN_DEPEND on OpenLDAP server
 GEO_DESC=		Geo backend
-DNSSEC_DESC=		Enable extra DNSSEC algorithms (13 & 14)
-BOTAN_DESC=		Use Botan
-CRYPTOPP_DESC=		Use Crypto++
+DNSSEC_DESC=		Extra DNSSEC options
+BOTAN110_DESC=		Faster signing + ECDSA & GOST algorithms
+CRYPTOPP_DESC=		ECDSA algorithms
+POLARSSL_DESC=		Use embedded PolarSSL
+TOOLS_DESC=		Build extra tools
 
-OPTIONS_DEFAULT=	PGSQL DNSSEC CRYPTOPP
+OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR+=	pdns
+
+.if ${PORT_OPTIONS:MTOOLS}
+CONFIGURE_ARGS+=	--enable-tools
+PLIST_SUB+=		WITHTOOLS=""
+.else
+PLIST_SUB+=		WITHTOOLS="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MGEO}
 CONFIGURE_MODULES+=	"geo"
@@ -90,8 +99,6 @@ PLIST_SUB+=		WITHPGSQL="@comment "
 USE_MYSQL?=		YES
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_MODULES+=	"gmysql"
-#CXXFLAGS+=		-I${LOCALBASE}/include/mysql
-#LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 PLIST_SUB+=		WITHMYSQL=""
 .else
 CONFIGURE_ARGS+=	--without-mysql
@@ -100,8 +107,7 @@ PLIST_SUB+=		WITHMYSQL="@comment "
 
 .if ${PORT_OPTIONS:MOPENDBX} || ${PORT_OPTIONS:MPGSQL}
 .	if ${PORT_OPTIONS:MPGSQL_LOCAL}
-USE_PGSQL?=		YES
-RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+USE_PGSQL=		server
 SUB_LIST+=	PGSQL=postgresql
 .	endif
 .else
@@ -109,8 +115,7 @@ SUB_LIST+=	PGSQL=
 .endif
 .if ${PORT_OPTIONS:MOPENDBX} || ${PORT_OPTIONS:MMYSQL}
 .	if ${PORT_OPTIONS:MMYSQL_LOCAL}
-USE_MYSQL?=		YES
-RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+USE_MYSQL=	server
 SUB_LIST+=	MYSQL=mysql
 .	endif
 .else
@@ -123,7 +128,7 @@ CONFIGURE_MODULES+=	"ldap"
 CXXFLAGS+=		-L${LOCALBASE}/lib -DLDAP_DEPRECATED=1
 PLIST_SUB+=		WITHOPENLDAP=""
 .	if ${PORT_OPTIONS:MOPENLDAP_LOCAL}
-RUN_DEPENDS+=	openldap-server>=0:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-server
+RUN_DEPENDS+=	openldap-server>=0:${PORTSDIR}/net/openldap${OPENLDAP_VER}-server
 SUB_LIST+=	SLAPD=slapd
 .	else
 SUB_LIST+=	SLAPD=
@@ -158,13 +163,23 @@ CXXFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		WITHOPENDBX="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MBOTAN}
-LIB_DEPENDS+=		botan.0:${PORTSDIR}/security/botan
-CONFIGURE_ARGS+=	--enable-botan1.8
+.if ${PORT_OPTIONS:MPOLARSSL}
+CONFIGURE_ARGS+=	--without-system-polarssl
+.else
+LIB_DEPENDS+=		polarssl:${PORTSDIR}/security/polarssl
+.endif
+
+.if ${PORT_OPTIONS:MBOTAN110}
+CONFIGURE_ARGS+=	--enable-botan1.10
+LIB_DEPENDS+=		botan-1.10:${PORTSDIR}/security/botan110
 .endif
 
 .if ${PORT_OPTIONS:MCRYPTOPP}
+.if exists(${LOCALBASE}/lib/libcryptopp.so)
+LIB_DEPENDS+=		cryptopp:${PORTSDIR}/security/cryptopp
+.else
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
+.endif
 CONFIGURE_ARGS+=	--enable-cryptopp
 .endif
 
@@ -186,7 +201,7 @@ post-install:
 .if !exists(${PREFIX}/etc/pdns/pdns.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 .for i in pdns.conf
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/

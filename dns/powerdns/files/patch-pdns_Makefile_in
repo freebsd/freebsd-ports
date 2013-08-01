@@ -1,19 +1,38 @@
---- pdns/Makefile.in.orig	2011-07-22 13:26:07.000000000 +0200
-+++ pdns/Makefile.in	2013-01-17 13:23:49.892508749 +0100
-@@ -55,14 +55,14 @@
- @BOTAN110_TRUE@am__append_3 = botan110signers.cc botansigners.cc
- @BOTAN110_TRUE@am__append_4 = $(BOTAN110_LIBS) -lgmp -lrt
- @BOTAN18_TRUE@am__append_5 = botan18signers.cc botansigners.cc
--@BOTAN18_TRUE@am__append_6 = $(BOTAN18_LIBS) -lgmp
-+@BOTAN18_TRUE@am__append_6 = $(BOTAN18_LIBS)
- @CRYPTOPP_TRUE@am__append_7 = cryptoppsigners.cc
- @CRYPTOPP_TRUE@am__append_8 = -lcryptopp
- @SQLITE3_TRUE@am__append_9 = ssqlite3.cc ssqlite3.hh
- @BOTAN110_TRUE@am__append_10 = botan110signers.cc botansigners.cc
- @BOTAN110_TRUE@am__append_11 = $(BOTAN110_LIBS) -lgmp -lrt
- @BOTAN18_TRUE@am__append_12 = botan18signers.cc botansigners.cc
--@BOTAN18_TRUE@am__append_13 = $(BOTAN18_LIBS) -lgmp
-+@BOTAN18_TRUE@am__append_13 = $(BOTAN18_LIBS)
- @CRYPTOPP_TRUE@am__append_14 = cryptoppsigners.cc
- @CRYPTOPP_TRUE@am__append_15 = -lcryptopp
- @SQLITE3_TRUE@am__append_16 = ssqlite3.cc ssqlite3.hh
+--- pdns/Makefile.in.orig	2013-06-27 13:47:04.000000000 +0200
++++ pdns/Makefile.in	2013-06-28 10:28:35.191325678 +0200
+@@ -49,7 +49,7 @@
+ 	nproxy$(EXEEXT) notify$(EXEEXT) pdnssec$(EXEEXT) \
+ 	dnsbulktest$(EXEEXT) nsec3dig$(EXEEXT)
+ @BOTAN110_TRUE@am__append_4 = botan110signers.cc botansigners.cc
+-@BOTAN110_TRUE@am__append_5 = $(BOTAN110_LIBS) -lgmp -lrt
++@BOTAN110_TRUE@am__append_5 = $(BOTAN110_LIBS)
+ @BOTAN18_TRUE@am__append_6 = botan18signers.cc botansigners.cc
+ @BOTAN18_TRUE@am__append_7 = $(BOTAN18_LIBS) -lgmp
+ @CRYPTOPP_TRUE@am__append_8 = cryptoppsigners.cc
+@@ -57,7 +57,7 @@
+ @SQLITE3_TRUE@am__append_10 = ssqlite3.cc ssqlite3.hh
+ @ORACLE_TRUE@am__append_11 = $(ORACLE_LIBS)
+ @BOTAN110_TRUE@am__append_12 = botan110signers.cc botansigners.cc
+-@BOTAN110_TRUE@am__append_13 = $(BOTAN110_LIBS) -lgmp -lrt
++@BOTAN110_TRUE@am__append_13 = $(BOTAN110_LIBS)
+ @BOTAN18_TRUE@am__append_14 = botan18signers.cc botansigners.cc
+ @BOTAN18_TRUE@am__append_15 = $(BOTAN18_LIBS) -lgmp
+ @CRYPTOPP_TRUE@am__append_16 = cryptoppsigners.cc
+@@ -766,7 +766,7 @@
+ pdns_server_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@  $(BOOST_SERIALIZATION_LDFLAGS) -rdynamic 
+ pdns_server_LDADD = ext/polarssl-1.1.2/library/libpolarssl.a \
+ 	$(BOOST_SERIALIZATION_LIBS) $(LUA_LIBS) $(SQLITE3_LIBS) \
+-	$(LIBCURL_LIBS) $(MYSQL_lib) $(am__append_5) $(am__append_7) \
++	$(am__append_5) $(am__append_7) \
+ 	$(am__append_9) $(am__append_11)
+ pdnssec_SOURCES = pdnssec.cc dbdnsseckeeper.cc sstuff.hh dnsparser.cc \
+ 	dnsparser.hh dnsrecords.cc dnswriter.cc dnswriter.hh misc.cc \
+@@ -789,7 +789,7 @@
+ pdnssec_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@  $(BOOST_PROGRAM_OPTIONS_LDFLAGS) $(BOOST_SERIALIZATION_LDFLAGS) 
+ pdnssec_LDADD = ext/polarssl-1.1.2/library/libpolarssl.a \
+ 	$(BOOST_PROGRAM_OPTIONS_LIBS) $(BOOST_SERIALIZATION_LIBS) \
+-	$(SQLITE3_LIBS) $(LIBCURL_LIBS) $(MYSQL_lib) $(am__append_13) \
++	$(SQLITE3_LIBS) $(am__append_13) \
+ 	$(am__append_15) $(am__append_17) $(am__append_19)
+ sdig_SOURCES = sdig.cc sstuff.hh dnsparser.cc dnsparser.hh dnsrecords.cc dnswriter.cc dnslabeltext.cc dnswriter.hh \
+ 	misc.cc misc.hh rcpgenerator.cc rcpgenerator.hh base64.cc base64.hh unix_utility.cc \
