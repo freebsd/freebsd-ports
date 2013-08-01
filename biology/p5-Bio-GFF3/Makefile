@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bio-GFF3
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		gff3_from_fasta.1
 MAN3=		Bio::GFF3::LowLevel.3 \
