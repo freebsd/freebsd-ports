@@ -1,5 +1,5 @@
 %%WWWDIR%%/CHANGELOG
-%%WWWDIR%%/README
+%%WWWDIR%%/README.md
 %%WWWDIR%%/contextmenu.js
 %%WWWDIR%%/contextmenu.php
 %%WWWDIR%%/jquery.contextMenu.js
