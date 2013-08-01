@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DirectConnect-TigerHash
-# Date created:		2010-11-23
-# Whom:			Oleg Alexeenkov <proler@gmail.com>
-#
+# Created by: Oleg Alexeenkov <proler@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DirectConnect-TigerHash
 PORTVERSION=	0.06
@@ -15,8 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	proler@gmail.com
 COMMENT=	Perl Direct Connect TigerHash module
 
-PERL_CONFIGURE=	yes
-CC=		g++
+USES=		perl5
+USE_PERL5=	configure
+CC=		${CXX}
 
 MAN3=		Net::DirectConnect::TigerHash.3
 
