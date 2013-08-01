@@ -2,7 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -34,7 +34,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
-MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
+MAN8=		pdns_control.8 pdns_server.8 zone2sql.8 pdnssec.8 zone2ldap.8
 
 SUB_FILES=	pkg-message
 
