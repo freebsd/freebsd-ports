@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsectok
-# Date created:		29 September 2003
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libsectok
 PORTVERSION=	20030619
@@ -18,6 +14,7 @@ COMMENT=	ISO 7816 Smartcard API Library
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_OPENSSL=	YES
+MAKE_ARGS=	CC=${CC}
 
 MAN3=		sectok.3
 
