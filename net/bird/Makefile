@@ -3,6 +3,7 @@
 
 PORTNAME=	bird
 PORTVERSION=	1.3.11
+PORTREVESION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/

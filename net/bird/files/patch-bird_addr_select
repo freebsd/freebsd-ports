@@ -1,0 +1,77 @@
+diff --git a/sysdep/bsd/krt-sock.c b/sysdep/bsd/krt-sock.c
+index e970d6b..202255e 100644
+--- sysdep/bsd/krt-sock.c
++++ sysdep/bsd/krt-sock.c
+@@ -594,6 +594,45 @@ krt_read_addr(struct ks_msg *msg)
+     ifa_delete(&ifa);
+ }
+ 
++#ifndef IPV6
++struct ifa *
++kif_get_primary_ip(struct iface *i)
++{
++  struct ifreq ifr;
++  int fd, res;
++  struct sockaddr_in *sin;
++  ip_addr addr = IPA_NONE;
++  struct ifa *a = NULL;
++
++  fd = socket(AF_INET, SOCK_DGRAM, 0);
++
++  if (fd == -1)
++    return NULL;
++
++  memset(&ifr, 0, sizeof(ifr));
++
++  strcpy(ifr.ifr_name, i->name);
++
++  res = ioctl(fd, SIOCGIFADDR, (char *)&ifr);
++  close(fd);
++
++  if (res == -1)
++    return NULL;
++
++  sin = (struct sockaddr_in *)&ifr.ifr_addr;
++  memcpy(&addr, &sin->sin_addr, sizeof(ip_addr));
++  ipa_ntoh(addr);
++
++  WALK_LIST(a, i->addrs)
++    {
++      if (a->ip == addr)
++	return a;
++    }
++
++  return NULL;
++}
++#endif
++
+ 
+ void
+ krt_read_msg(struct proto *p, struct ks_msg *msg, int scan)
+diff --git a/sysdep/unix/krt.c b/sysdep/unix/krt.c
+index 3761ace..1fc4345 100644
+--- sysdep/unix/krt.c
++++ sysdep/unix/krt.c
+@@ -157,6 +157,9 @@ kif_choose_primary(struct iface *i)
+ 	  return a;
+     }
+ 
++  if (a = kif_get_primary_ip(i))
++    return a;
++
+   return find_preferred_ifa(i, IPA_NONE, IPA_NONE);
+ }
+ 
+diff --git a/sysdep/unix/krt.h b/sysdep/unix/krt.h
+index d6fbf72..3a037e3 100644
+--- sysdep/unix/krt.h
++++ sysdep/unix/krt.h
+@@ -78,6 +78,8 @@ void kif_request_scan(void);
+ void krt_got_route(struct krt_proto *p, struct rte *e);
+ void krt_got_route_async(struct krt_proto *p, struct rte *e, int new);
+ 
++struct ifa *kif_get_primary_ip(struct iface *i);
++
+ /* Values for rte->u.krt_sync.src */
+ #define KRT_SRC_UNKNOWN	-1	/* Nobody knows */
+ #define KRT_SRC_BIRD	 0	/* Our route (not passed in async mode) */
