@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmpop3lb
-# Date created:		2007-07-06
-# Whom:			Otavio Fernandes <otaviof@gmail.com>
-#
+# Created by: Otavio Fernandes <otaviof@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wmpop3lb
 PORTVERSION=	2.4.2
@@ -14,36 +10,34 @@ MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	otaviof@gmail.com
-COMMENT=	A WindowMaker dock app for multi POP3 accounts mailbox checking
+COMMENT=	WindowMaker dock app for multi POP3 accounts mailbox checking
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xext xpm
+USE_CSTD=	gnu89
 
 CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/wmpop3lb
 PORTDOCS=	CHANGE_LOG COPYING INSTALL README
 
-WRKSRC_BUILD=	${WRKSRC}/wmpop3
-
-.include <bsd.port.pre.mk>
+BUILD_WRKSRC=	${WRKSRC}/wmpop3
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,cc ,${CC} ,g" \
 			  -e "s,^FLAGS *=.*$$,FLAGS = ${CFLAGS}," \
 			  -e "s,/usr/X11R6,${LOCALBASE},g" \
-		${WRKSRC_BUILD}/Makefile
+		${BUILD_WRKSRC}/Makefile
 
-do-build:
-	@cd ${WRKSRC_BUILD} && ${GMAKE}
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC_BUILD}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
