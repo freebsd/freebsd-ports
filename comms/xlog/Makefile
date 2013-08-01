@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	xlog
@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mime-update
+CONFIGURE_ENV+=	ac_cv_c_compiler_gnu=no
 
 PORTDOCS=	*
 
