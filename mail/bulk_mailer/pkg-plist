@@ -1,0 +1,4 @@
+bin/bulk_mailer
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bulk_mailer.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
