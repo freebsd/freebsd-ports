@@ -1,6 +1,5 @@
-This is a port of wmtop which is a Windowmaker dock app which
-monitors the top 3 processes (in terms of CPU usage). You can
-configure which processes are displayed and it can be used as an
-application launcher.
+This is port of wmtop, a Windowmaker dockapp which monitors the top three
+processes (in terms of CPU usage).  You can configure which processes are
+displayed, and it can also be used as an application launcher.
 
 WWW: http://wmtop.sourceforge.net/
