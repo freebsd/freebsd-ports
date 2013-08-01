@@ -16,11 +16,10 @@ COMMENT=	GNU version of the traditional tape archiver
 
 INFO=		tar
 
-USES=	iconv
+USES=		iconv
 USE_AUTOTOOLS=	autoconf:env	# autom4te
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include

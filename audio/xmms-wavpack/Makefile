@@ -16,7 +16,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	${RM} ${PREFIX}/lib/xmms/Input/libwavpack.la

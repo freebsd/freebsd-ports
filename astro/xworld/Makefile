@@ -23,7 +23,6 @@ CONFIGURE_ENV=	CAT=${CAT} \
 		INCLUDES="-I${LOCALBASE}/include" \
 		LDLIBS="-lm -L${LOCALBASE}/lib -lX11" \
 		MORELIBS=""
-MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	bin/xworld
 STRIP=		#don't strip out image data on install
 

@@ -19,7 +19,6 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--disable-arts
 
 MAN5=		libao.conf.5

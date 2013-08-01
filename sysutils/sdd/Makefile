@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Faster and improved version of dd
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}" COPTX="${CFLAGS}"
 MAN1=		sdd.1
 PLIST_FILES=	bin/sdd

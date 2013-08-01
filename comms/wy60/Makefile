@@ -9,7 +9,6 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Curses-based emulator for the Wyse 60 terminal
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	etc_DATA=wy60.rc.sample
 
