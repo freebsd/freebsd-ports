@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-DBD-mysql>1.0:${PORTSDIR}/databases/p5-DBD-mysql \
 
 CONFLICTS=	mariadb-scripts-[0-9]*
 
-PERL_CONFIGURE=	yes
+USES+=		perl5
+USE_PERL5=	configure
 
 MAN1=		mytop.1
 

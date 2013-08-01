@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Authen-ExternalAuth
-DISTVERSION=	0.13
+DISTVERSION=	0.17
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES+=		perl5
+USE_PERL5=	configure
 
 OPTIONS_DEFINE=	RT38
 RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)
@@ -34,8 +35,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}
+MAN3=		RT::Authen::ExternalAuth.3 \
+		RT::Authen::ExternalAuth::DBI.3 \
+		RT::Authen::ExternalAuth::DBI::Cookie.3 \
+		RT::Authen::ExternalAuth::LDAP.3
 
-MAN3=		RT::Authen::ExternalAuth.3
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
