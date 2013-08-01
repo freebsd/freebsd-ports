@@ -1,12 +1,8 @@
-# New ports collection makefile for:	roundcube-contextmenu
-# Date created:				27 Oct 2011
-# Whom:					Alexander Moisseev <moiseev@mezonplus.ru>
-#
+# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	contextmenu
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-
@@ -17,7 +13,7 @@ COMMENT=	RoundCube webmail contextmenu plugin
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	roundcube>=0.6:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.9:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
