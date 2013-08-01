@@ -35,7 +35,7 @@ OBJC_DESC=      	Build Objective-C language
 STATIC_DESC=    	Build with no shared libraries other than libc
 TESTSUITE_DESC=		Activate test support
 
-USES=		perl5
+USES+=		perl5
 USE_PERL5=	extract
 
 .include <bsd.port.options.mk>
