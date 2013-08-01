@@ -12,6 +12,8 @@ COMMENT=	Digital camera downloading tool for Casio QV series
 
 WRKSRC=		${WRKDIR}/QVplay095/obj/FreeBSD
 
+CFLAGS+=	-Wno-return-type
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/qvalldel \
