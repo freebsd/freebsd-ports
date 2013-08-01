@@ -74,7 +74,7 @@ if [ -n "$ISCVS" ]; then
 File $VUXMLDIR/vuln.xml seem to come from CVS.
 
 CVS for FreeBSD ports is no longer synced with Subversion, so you will
-get outdated vulnerability list.  Please, check out your sources from
+get an outdated vulnerability list.  Please, check out your sources from
 Subversion, refer to
   http://www.freebsd.org/doc/handbook/svn.html
 for the up to date instructions on how to actually do that.
