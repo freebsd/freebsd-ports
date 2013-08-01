@@ -1,9 +1,5 @@
-# New ports collection makefile for: graphics/alpng
-# Date created:		27 Aug 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	alpng
 PORTVERSION=	1.3
@@ -20,11 +16,15 @@ LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_ARGS=	CC=${CC}
 CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	include/alpng.h \
 		lib/libalpng.a
+
+do-configure:
+	@${REINPLACE_CMD} -e "s/gcc/${CC}/g" ${WRKSRC}/makefile
 
 do-install:
 		${INSTALL_DATA} ${WRKSRC}/libalpng.a ${PREFIX}/lib/libalpng.a
