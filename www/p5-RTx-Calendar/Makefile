@@ -1,9 +1,5 @@
-# New ports collection Makefile for: RTx-Calendar
-# Date created:	        16 August 2008
-# Whom:                 Matthew Seaman <m.seaman@infracaninophile.co.uk>
-#
+# Created by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	RTx-Calendar
 PORTVERSION=	0.15
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Date-ICal>0:${PORTSDIR}/devel/p5-Date-ICal      \
 		p5-DateTime-Set>0:${PORTSDIR}/devel/p5-DateTime-Set
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES+=		perl5
+USE_PERL5=	configure
 
 OPTIONS_DEFINE=	RT38
 RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)

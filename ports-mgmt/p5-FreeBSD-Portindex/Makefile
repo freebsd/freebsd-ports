@@ -27,8 +27,9 @@ GRAPHVIS_DESCR=	Add GraphViz run-time dependency
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
+USES+=		perl5
 USE_XZ=		yes
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
 
 CACHE_DIR?=	/var/db/portindex
 CACHE_OWNER?=	root

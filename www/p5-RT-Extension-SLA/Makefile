@@ -17,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 
-PERL_CONFIGURE=	yes
+USES+=		perl5
+USE_PERL5=	configure
 
 OPTIONS_DEFINE=	RT38
 RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)
