@@ -1036,11 +1036,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>puppet</name>
-	<range><lt>3.2.2</lt></range>
-      </package>
-      <package>
-	<name>puppet27</name>
 	<range><ge>2.7</ge><lt>2.7.22</lt></range>
+	<range><ge>3.0</ge><lt>3.2.2</lt></range>
       </package>
     </affects>
     <description>
@@ -1063,6 +1060,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-06-13</discovery>
       <entry>2013-06-22</entry>
+      <modified>2013-08-01</modified>
     </dates>
   </vuln>
 
