@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libjcode
-# Date created:		8 MAY 1999
-# Whom:			Shuichi Tanaka
-#
+# Created by: Shuichi Tanaka
 # $FreeBSD$
-#
 
 PORTNAME=	libjcode
 PORTVERSION=	1.00
@@ -14,6 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	stanaka@bb.mbn.or.jp
 COMMENT=	Japanese charset conversion library
 
+MAKE_ARGS=	CC=${CC}
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 
 do-install:
