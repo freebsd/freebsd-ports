@@ -12,6 +12,8 @@ COMMENT=	Simple x86 disassembly library
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PORTDOCS=	HISTORY.txt README.txt
 PORTEXAMPLES=	README.txt das.c simple.c
 
@@ -25,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|PREFIX).*=,\1 ?=,; \
 			      s,libdasm.so.1.0,libdasm.so.1,g; \
 			      s,cp ,${INSTALL_DATA} ,g' \
-		${WRKSRC}/Makefile
+		${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
