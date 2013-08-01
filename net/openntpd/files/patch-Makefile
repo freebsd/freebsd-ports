@@ -1,12 +1,12 @@
 $FreeBSD$
---- Makefile.orig	2009-11-23 20:27:18.000000000 +0100
-+++ Makefile	2009-11-23 20:29:05.000000000 +0100
+--- Makefile.orig	2009-06-25 16:14:54.000000000 +0200
++++ Makefile	2013-08-01 17:33:37.000000000 +0200
 @@ -2,7 +2,7 @@
  
  PROG=	ntpd
  SRCS=	ntpd.c buffer.c log.c imsg.c ntp.c ntp_msg.c parse.y config.c \
 -	server.c client.c sensors.c util.c ntp_dns.c
-+	server.c client.c util.c ntp_dns.c adjfreq.c arc4random.c
++	server.c client.c util.c ntp_dns.c adjfreq.c
  CFLAGS+= -Wall -I${.CURDIR}
  CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS+= -Wmissing-declarations
