@@ -40,6 +40,7 @@
     SUBDIR += bogofilter-tc
     SUBDIR += bsfilter
     SUBDIR += bsmtp
+    SUBDIR += bulk_mailer
     SUBDIR += c-sig
     SUBDIR += c-sig-emacs21
     SUBDIR += cclient
