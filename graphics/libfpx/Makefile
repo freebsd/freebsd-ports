@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpx
-# Date created:				Jan 10 2001
-# Whom:					Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libfpx
 DISTVERSION=	1.3.1-1
@@ -26,7 +22,6 @@ PLIST_FILES=	lib/libfpx.so.2 lib/libfpx.so lib/libfpx.a include/fpxlib.h
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_JOBS_SAFE=	yes
-USE_GCC=	any
 post-patch:
 	${SED} -i '' -e '/^#include "fpxlib-config.h"/d'	\
 		${WRKSRC}/basics/filename.cpp	\
