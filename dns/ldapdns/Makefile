@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ldapdns
-# Date created:		2004-01-06
-# Whom:			Paul Dlug <paul@aps.org>
-#
+# Created by: Paul Dlug <paul@aps.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ldapdns
 PORTVERSION=	2.06
@@ -24,6 +20,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_CSTD=	gnu89
 
 ALL_TARGET=	default
 
