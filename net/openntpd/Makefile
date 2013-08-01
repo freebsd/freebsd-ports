@@ -18,20 +18,12 @@ GROUPS=		_ntp
 USE_RC_SUBR=	openntpd
 
 WRKSRC=		${WRKDIR}/ntpd
-MAKE_JOBS_SAFE=	yes
 
 MAN5=		ntpd.conf.5
 MAN8=		ntpd.8
 
-.include <bsd.port.pre.mk>
-
-# requires adjtime(NULL, &olddelta) by unprivileged user
-.if ${OSVERSION} < 700000
-IGNORE=		is unsupported prior to FreeBSD 7.0
-.endif
-
 post-extract:
-.for i in compat.h adjfreq.c arc4random.c
+.for i in compat.h adjfreq.c
 	@${CP} ${FILESDIR}/$i ${WRKSRC}
 .endfor
 
@@ -46,7 +38,7 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/ntpd.conf ${EXAMPLESDIR}
 	@if [ ! -f ${PREFIX}/etc/ntpd.conf ]; then \
-		${CP} ${EXAMPLESDIR}/ntpd.conf ${PREFIX}/etc; \
+	    ${CP} ${EXAMPLESDIR}/ntpd.conf ${PREFIX}/etc; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

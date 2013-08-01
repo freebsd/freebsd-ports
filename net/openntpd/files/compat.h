@@ -20,6 +20,3 @@
 
 /* adjfreq.c */
 int			adjfreq(const int64_t *, int64_t *);
-
-/* arc4random.c */
-u_int32_t		arc4random_uniform(u_int32_t);
