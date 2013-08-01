@@ -68,6 +68,38 @@
 #
 # WITH						- Set options from the command line
 # WITHOUT					- Unset options from the command line
+#
+#
+# The following knobs are there to simplfy the handling of OPTIONS in simple
+# cases :
+#
+# OPTIONS_SUB				When defined it will add to PLIST_SUB:
+#							Option enabled  ${opt}=""
+#							Option disabled ${opt}="@comment "
+#
+# ${opt}_CONFIGURE_ON		When option is enabled, it will add its content to
+#							the CONFIGURE_ARGS.
+# ${opt}_CONFIGURE_OFF		When option is disabled, it will add its content to
+#							the CONFIGURE_ARGS.
+# ${opt}_CONFIGURE_ENABLE	Will add to CONFIGURE_ARGS:
+#							Option enabled  --enable-${content}
+#							Option disabled --disable-${content}
+# ${opt}_CONFIGURE_WITH		Will add to CONFIGURE_ARGS:
+#							Option enabled  --with-${content}
+#							Option disabled --without-${content}
+#			
+# ${opt}_CMAKE_ON			When option is enabled, it will add its content to
+#							the CMAKE_ARGS.
+# ${opt}_CMAKE_OFF			When option is disabled, it will add its content to
+#							the CMAKE_ARGS.
+#
+# For each of CFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ENV USES DISTFILES,
+# defining ${opt}_${variable} will add it to the actual variable when the
+# option is enabled.
+#
+# For each of the depends target PKG EXTRACT PATCH FETCH BUILD LIB RUN,
+# defining ${opt}_${deptype}_DEPENDS will add it to the actual dependency when
+# the option is enabled.
 
 ##
 # Set all the options available for the ports, beginning with the
