@@ -13,7 +13,8 @@ COMMENT=	Perl module for parsing mathematical expressions into a tree structure
 
 LICENSE=	GPLv2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Expr.3 Math::Expr::FormulaDB.3 \
 		Math::Expr::MatchSet.3 Math::Expr::Node.3 \

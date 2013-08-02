@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules that provides a simple interface to reading /etc files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Unix::GroupFile.3 Unix::AliasFile.3 \
 		Unix::ConfigFile.3 \

@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		check_perldiag.1
 MAN3=		Parse::ErrorString::Perl.3 \

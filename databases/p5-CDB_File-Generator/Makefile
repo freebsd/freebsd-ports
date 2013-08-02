@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/cdbmake:${PORTSDIR}/databases/cdb \
 		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CDB_File::Generator.3
 

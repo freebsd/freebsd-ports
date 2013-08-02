@@ -16,6 +16,7 @@ COMMENT=	Calculate the Modulus 10 Double Add Double checksum
 
 MAN3=		Algorithm::LUHN.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

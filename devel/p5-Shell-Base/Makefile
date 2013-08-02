@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
 		p5-Text-Shellwords>=0:${PORTSDIR}/textproc/p5-Text-Shellwords
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Shell::Base.3
 

@@ -18,7 +18,8 @@ COMMENT=	Generate meaningless Chinese text that creates the illusion of the docu
 RUN_DEPENDS=	p5-common-sense>=2.02:${PORTSDIR}/devel/p5-common-sense
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::Greeking::zh_TW.3
 

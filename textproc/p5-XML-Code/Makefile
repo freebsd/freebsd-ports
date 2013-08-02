@@ -11,6 +11,7 @@ COMMENT=	Module for converting XML hash structures into plain text
 
 MAN3=		XML::Code.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

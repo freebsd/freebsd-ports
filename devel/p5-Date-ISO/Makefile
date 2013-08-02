@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Date-ICal>=1.54:${PORTSDIR}/devel/p5-Date-ICal \
 		p5-Date-Leapyear>=0:${PORTSDIR}/devel/p5-Date-Leapyear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Date::ISO.3
 

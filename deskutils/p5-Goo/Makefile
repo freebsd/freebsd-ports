@@ -159,6 +159,7 @@ MAN3=	Goo.3 \
 	Goo::WebDBLite.3 \
 	Goo::Zone.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

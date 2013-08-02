@@ -17,7 +17,8 @@ COMMENT=	Traceroute(1) functionality in perl via raw sockets
 BUILD_DEPENDS=	p5-Net-Traceroute>=0:${PORTSDIR}/net/p5-Net-Traceroute
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Traceroute::PurePerl.3
 

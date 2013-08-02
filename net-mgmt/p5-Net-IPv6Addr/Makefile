@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Net-IPv4Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr \
 		p5-Math-Base85>=0:${PORTSDIR}/math/p5-Math-Base85
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::IPv6Addr.3
 

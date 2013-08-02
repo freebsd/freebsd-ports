@@ -15,7 +15,8 @@ COMMENT=	Kakasi library module for Perl5
 
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Text::Kakasi.3 Text::Kakasi::JP.3
 
 .include <bsd.port.pre.mk>

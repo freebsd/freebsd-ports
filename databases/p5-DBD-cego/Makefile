@@ -20,7 +20,8 @@ LIB_DEPENDS=	cego.1:${PORTSDIR}/databases/cego
 USE_GMAKE=	yes
 .endif
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CC:=		${CXX}
 
 MAN3=		DBD::Cego.3

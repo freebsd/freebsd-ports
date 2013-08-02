@@ -16,7 +16,8 @@ COMMENT=	Module to convert between Microsoft's Caller-ID and SPF		#'
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_SCRIPT=Makefile.PL
 
 PLIST_FILES+=	bin/cid2spf %%SITE_PERL%%/LMAP/CID2SPF.pm

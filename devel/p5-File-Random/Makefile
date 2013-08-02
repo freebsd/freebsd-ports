@@ -24,7 +24,8 @@ TEST_DEPENDS=	p5-Test-Class>=0.03:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Warn>0.05:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-ManyParams>0:${PORTSDIR}/devel/p5-Test-ManyParams
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Random.3
 

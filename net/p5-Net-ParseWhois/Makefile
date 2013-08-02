@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extendable perl5 module for parsing whois information
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::ParseWhois.3
 

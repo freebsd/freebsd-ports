@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-HTML-FormatText-WithLinks>=0:${PORTSDIR}/textproc/p5-HTML-FormatText-WithLinks
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 PERL_MODBUILD=	yes
 
 MAN3=	MIME::Lite::TT::HTML.3

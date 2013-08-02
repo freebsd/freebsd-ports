@@ -18,7 +18,8 @@ COMMENT=	Perl bindings for Imlib2
 
 USE_EFL=	imlib2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Imlib2.3
 

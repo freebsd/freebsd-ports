@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-File-pushd>=1.00:${PORTSDIR}/devel/p5-File-pushd \
 		p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ORLite::Migrate.3 \
 		ORLite::Migrate::Timeline.3

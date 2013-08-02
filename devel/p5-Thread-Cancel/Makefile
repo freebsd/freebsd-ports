@@ -13,7 +13,8 @@ COMMENT=	Cancel (i.e., kill) threads
 RUN_DEPENDS=	p5-threads>=1.34:${PORTSDIR}/devel/p5-threads
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Thread::Cancel.3
 

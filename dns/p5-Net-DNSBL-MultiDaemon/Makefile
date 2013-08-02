@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 				p5-File-SafeDO>=0:${PORTSDIR}/devel/p5-File-SafeDO
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::DNSBL::MultiDaemon.3 Net::DNSBL::Utilities.3
 

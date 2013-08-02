@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Getopt-ArgvFile>=0:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-HTML-Form>=0:${PORTSDIR}/www/p5-HTML-Form
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 PLIST_FILES=	bin/spamcup.pl ${SITE_PERL_REL}/spamcup.pl \
 		${SITE_PERL_REL}/${PERL_ARCH}/auto/Spamcup/.packlist

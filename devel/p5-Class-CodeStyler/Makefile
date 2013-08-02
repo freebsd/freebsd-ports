@@ -17,6 +17,7 @@ COMMENT=	Perl extension for code generation program formatting and execution
 BUILD_DEPENDS=	p5-Class-STL-Containers>=0:${PORTSDIR}/devel/p5-Class-STL-Containers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

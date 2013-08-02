@@ -17,7 +17,8 @@ COMMENT=	Calculate windows/subsets/pages of arrays
 BUILD_DEPENDS=	p5-Params-Util>=0.12:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Array::Window.3
 

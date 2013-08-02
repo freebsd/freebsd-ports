@@ -17,7 +17,8 @@ COMMENT=	Implements OICQ messaging protocol
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-Crypt-OICQ>=0:${PORTSDIR}/security/p5-Crypt-OICQ
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::OICQ.3
 

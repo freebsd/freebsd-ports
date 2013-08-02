@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-POE>=0.12:${PORTSDIR}/devel/p5-POE \
 		p5-File-Signature>0:${PORTSDIR}/sysutils/p5-File-Signature
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
 MAN3=	POE::Component::DirWatch.3 \

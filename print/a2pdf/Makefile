@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \
 		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=	${PORTNAME}.1
 
 .include <bsd.port.mk>

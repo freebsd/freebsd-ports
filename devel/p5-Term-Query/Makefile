@@ -16,7 +16,8 @@ COMMENT=	An interactive question-response user interface module
 
 RUN_DEPENDS=	p5-Array-PrintCols>=0:${PORTSDIR}/misc/p5-Array-PrintCols
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::Query.3
 

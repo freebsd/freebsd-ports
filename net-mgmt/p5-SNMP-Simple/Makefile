@@ -17,7 +17,8 @@ COMMENT=	Shortcuts for when using p5-SNMP
 
 RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SNMP::Simple.3
 

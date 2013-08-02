@@ -13,7 +13,8 @@ COMMENT=	Shuffle a list
 
 LICENSE=	MIT
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::Numerical::Shuffle.3
 

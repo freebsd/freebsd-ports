@@ -23,7 +23,8 @@ OPTIONS_DEFAULT=	GRAPHVIZ SPRINGGRAPH VCG
 SPRINGGRAPH_DESC=	SpringGraph support
 VCG_DESC=		VCG support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		autodia.pl.1
 MAN3=		Autodia.3 autodia.3 \

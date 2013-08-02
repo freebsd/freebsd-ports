@@ -16,6 +16,7 @@ COMMENT=	Guess the letters in a word (ie Hangman)
 
 MAN3=	Games::GuessWord.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

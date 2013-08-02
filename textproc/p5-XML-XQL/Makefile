@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::XQL.3 XML::XQL::DOM.3 XML::XQL::Date.3 \
 		XML::XQL::Query.3 XML::XQL::Tutorial.3

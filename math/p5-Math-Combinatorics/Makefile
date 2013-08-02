@@ -16,6 +16,7 @@ COMMENT=	Perform combinations and permutations on lists
 
 MAN3=		Math::Combinatorics.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

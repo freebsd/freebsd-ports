@@ -15,7 +15,8 @@ DISTNAME=	Mon-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module that supports mon, a network and system monitoring daemon
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mon::SNMP.3 \
 		Mon::Client.3 \

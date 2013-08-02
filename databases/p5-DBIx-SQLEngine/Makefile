@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-DBIx-AnyDBD>=0:${PORTSDIR}/databases/p5-DBIx-AnyDBD \
 		p5-Class-MixinFactory>=0:${PORTSDIR}/devel/p5-Class-MixinFactory
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::SQLEngine.3 \
 	DBIx::SQLEngine::Cache::BasicCache.3 \

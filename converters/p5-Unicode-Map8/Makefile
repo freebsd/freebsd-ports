@@ -16,7 +16,8 @@ COMMENT=	Mapping table between 8-bit chars and Unicode
 BUILD_DEPENDS=	p5-Unicode-String>=2:${PORTSDIR}/converters/p5-Unicode-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		umap.1
 MAN3=		Unicode::Map8.3

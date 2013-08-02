@@ -16,6 +16,7 @@ COMMENT=	Compute descriptive statistics for discrete data sets
 
 MAN3=	Statistics::Descriptive::Discrete.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

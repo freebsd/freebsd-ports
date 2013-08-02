@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-File-Find-Rule>=0.20:${PORTSDIR}/devel/p5-File-Find-Rule \
 RUN_DEPENDS=	p5-File-Find-Rule>=0.20:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-Text-Glob>=0.08:${PORTSDIR}/textproc/p5-Text-Glob
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Find::Rule::VCS.3
 

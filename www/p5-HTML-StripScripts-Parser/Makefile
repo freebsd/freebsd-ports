@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.56:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-StripScripts>=1.05:${PORTSDIR}/www/p5-HTML-StripScripts
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::StripScripts::Parser.3
 

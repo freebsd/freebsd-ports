@@ -17,7 +17,8 @@ COMMENT=	Perl module implementing a cgi interface to String::Checker
 BUILD_DEPENDS=	p5-String-Checker>=0:${PORTSDIR}/devel/p5-String-Checker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::ArgChecker.3
 

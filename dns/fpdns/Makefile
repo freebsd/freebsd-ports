@@ -19,7 +19,8 @@ GH_ACCOUNT=	kirei
 GH_COMMIT=	23eb0bf
 GH_TAGNAME=	20130404
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		fpdns.1
 

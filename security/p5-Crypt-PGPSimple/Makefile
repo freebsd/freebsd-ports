@@ -12,7 +12,8 @@ COMMENT=	Crypt::PGPSimple provides a simple object-oriented interface to PGP
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pgp:${PORTSDIR}/security/pgp
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::PGPSimple.3
 

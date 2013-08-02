@@ -18,7 +18,8 @@ COMMENT=	Get the CDID of an audio CD and query the FreeDB servers
 BUILD_DEPENDS=	p5-CDDB-File>=0:${PORTSDIR}/audio/p5-CDDB-File
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::FreeDB.3
 

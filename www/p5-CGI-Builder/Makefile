@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-IO-Util>=0:${PORTSDIR}/devel/p5-IO-Util \
 		p5-OOTools>=0:${PORTSDIR}/devel/p5-OOTools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Bundle::CGI::Builder::Complete.3 \
 	CGI::Builder.3 \

@@ -18,7 +18,8 @@ COMMENT=	A simple plain-text to HTML converter
 BUILD_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::EtText.3 Text::EtText::DefaultGlossary.3 \
 		Text::EtText::LinkGlossary.3 Text::EtText::EtText2HTML.3 \

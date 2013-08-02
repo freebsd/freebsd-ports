@@ -13,7 +13,8 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl based generic WWW DB interface / frontend
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWWdb::Base.3 WWWdb::DbSession.3 WWWdb::List.3 \
 		WWWdb::Session.3 WWWdb::Plugin.3 WWWdb::Hash.3 \

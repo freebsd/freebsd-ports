@@ -13,7 +13,8 @@ COMMENT=	Perl module to use your computer beeper in fancy ways
 BUILD_DEPENDS=	beep:${PORTSDIR}/audio/beep
 RUN_DEPENDS=	beep:${PORTSDIR}/audio/beep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Audio::Beep.3 Audio::Beep::BSD::beep.3
 

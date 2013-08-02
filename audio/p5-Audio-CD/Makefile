@@ -17,7 +17,8 @@ COMMENT=	Perl interface to libcdaudio (cd + cddb)
 
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include " \
 		LIBS="-L${LOCALBASE}/lib -lcdaudio"
 

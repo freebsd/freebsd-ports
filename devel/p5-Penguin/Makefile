@@ -16,7 +16,8 @@ COMMENT=	A framework for passing digitally signed perl5 code between machines
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 		${MKDIR} ${PREFIX}/lib/perl5/site_perl/Penguin/bin ${PREFIX}/lib/perl5/site_perl/Penguin/misc ${PREFIX}/lib/perl5/site_perl/Penguin/doc

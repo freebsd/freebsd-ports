@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	scanpbnj.1p \
 	outputpbnj.1p \

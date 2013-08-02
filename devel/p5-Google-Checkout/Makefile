@@ -67,6 +67,7 @@ MAN3=	Google::Checkout::Command::AddMerchantOrderNumber.3 \
 		Google::Checkout::Notification::RefundAmount.3 \
 		Google::Checkout::Notification::RiskInformation.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

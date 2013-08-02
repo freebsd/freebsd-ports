@@ -18,7 +18,8 @@ LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
 
 PERL5=		yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		perlinfo.1
 MAN3=		HTML::Perlinfo.3 HTML::Perlinfo::HTML.3 \

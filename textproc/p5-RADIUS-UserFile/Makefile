@@ -17,7 +17,8 @@ COMMENT=	Perl extension for manipulating a RADIUS users file
 BUILD_DEPENDS=		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			RADIUS::UserFile.3
 

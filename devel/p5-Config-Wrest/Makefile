@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \
 RUN_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Config::Wrest.3 \
 	Data::Serializer::Config::Wrest.3

@@ -29,7 +29,8 @@ RUN_DEPENDS+=	kdialog:${PORTSDIR}/x11/kdebase3
 RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
 .endif
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		UI::Dialog.3 UI::Dialog::Backend::XDialog.3 \
 		UI::Dialog::Backend::KDialog.3 UI::Dialog::Backend::ASCII.3 \

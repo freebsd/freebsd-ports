@@ -17,7 +17,8 @@ COMMENT=	Converts a Texinfo file into DocBook XML
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		texi2db.1
 PLIST_FILES=	bin/texi2db \

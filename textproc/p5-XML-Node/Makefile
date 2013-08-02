@@ -16,7 +16,8 @@ COMMENT=	Perl5 module to extend and simplify XML::Parser
 
 RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Node.3
 

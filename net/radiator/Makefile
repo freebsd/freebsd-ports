@@ -15,7 +15,8 @@ COMMENT=	Radiator Radius Server by Open System Consultants
 OPTIONS_DEFINE=	MYSQL
 MYSQL_DESC=	MySQL support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 RESTRICTED=	Commercial software
 

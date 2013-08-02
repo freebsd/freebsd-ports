@@ -29,7 +29,8 @@ RUN_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gnome2-Canvas>=0:${PORTSDIR}/x11-toolkits/p5-Gnome2-Canvas
 
 USE_GNOME=	libgnomeui libgnome libbonoboui
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=	yes
 

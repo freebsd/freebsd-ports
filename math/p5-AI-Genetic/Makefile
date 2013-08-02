@@ -20,6 +20,7 @@ MAN3=	AI::Genetic.3 \
 	AI::Genetic::OpMutation.3 \
 	AI::Genetic::OpSelection.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

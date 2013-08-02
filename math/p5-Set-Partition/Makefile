@@ -16,6 +16,7 @@ COMMENT=	Enumerate all arrangements of a set in fixed subsets
 
 MAN3=	Set::Partition.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

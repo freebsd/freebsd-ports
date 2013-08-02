@@ -16,7 +16,8 @@ COMMENT=	Iterates over all IP addresses in a text similar to Email::Find
 
 RUN_DEPENDS=	p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
 MAN3=		NetAddr::IP::Find.3

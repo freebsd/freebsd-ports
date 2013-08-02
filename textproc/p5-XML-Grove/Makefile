@@ -16,7 +16,8 @@ COMMENT=	Perl-style XML objects
 
 RUN_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::DOM-ecmascript.3 \
 	XML::Grove.3 \
