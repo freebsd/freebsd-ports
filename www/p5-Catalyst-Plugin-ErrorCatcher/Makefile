@@ -40,7 +40,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-NoTabs>=0:${PORTSDIR}/devel/p5-Test-NoTabs \
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::ErrorCatcher.3 \
 		Catalyst::Plugin::ErrorCatcher::Email.3 \

@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	File::Copy::Recursive
-# Date created:			Nov 26, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	File-Copy-Recursive
 PORTVERSION=	0.38
@@ -15,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for recursively copying files and directories
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Copy::Recursive.3
 

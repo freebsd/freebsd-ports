@@ -1,9 +1,5 @@
-# New ports collection makefile for: p5-Net-Delicious
-# Date created: August 03, 2004
-# Whom: Aaron Straup Cope <ascope@cpan.org>
-#
+# Created by: Aaron Straup Cope <ascope@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Delicious
 PORTVERSION=	1.1.3
@@ -27,7 +23,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::Delicious.3 \
 		Net::Delicious::Bundle.3 \

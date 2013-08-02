@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Path-Dispatcher-Declarative
-# Date created:		2011-04-05
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Path-Dispatcher-Declarative
 PORTVERSION=	0.03
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-Path-Dispatcher>=1.02:${PORTSDIR}/devel/p5-Path-Dispatcher \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Path::Dispatcher::Declarative.3
 

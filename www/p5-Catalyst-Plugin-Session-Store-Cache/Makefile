@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Plugin-Session-Store-Cache
-# Date created:				21 Jul 2007
-# Whom:					lbr@FreeBSD.org
-#
+# Created by: lbr@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Session-Store-Cache
 PORTVERSION=	0.01
@@ -17,7 +13,8 @@ COMMENT=	Store sessions using a Catalyst::Plugin::Cache
 BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
 RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Session::Store::Cache.3
 

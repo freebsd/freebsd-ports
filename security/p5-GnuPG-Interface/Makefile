@@ -17,7 +17,8 @@ RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
 		p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	GnuPG::Fingerprint.3 \
 	GnuPG::Handles.3 \

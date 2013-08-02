@@ -13,7 +13,8 @@ COMMENT=	Perl module which is meatier versions of caller
 BUILD_DEPENDS=	p5-PadWalker>=0.08:${PORTSDIR}/devel/p5-PadWalker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::Caller.3
 

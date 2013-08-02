@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ReadLine-Gnu
-# Date created:				19 February 1998
-# Whom:	      				Matthew Hunt <mph@pobox.com>
-#
+# Created by: Matthew Hunt <mph@pobox.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ReadLine-Gnu
 PORTVERSION=	1.20
@@ -16,7 +12,8 @@ DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 module that allows Term::ReadLine to use GNU readline
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
 MAN3=		Term::ReadLine::Gnu.3

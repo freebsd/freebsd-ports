@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Class-Accessor-Fast-Contained
-# Date created:				05 May 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Accessor-Fast-Contained
 PORTVERSION=	1.01
@@ -20,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Accessor::Fast::Contained.3
 

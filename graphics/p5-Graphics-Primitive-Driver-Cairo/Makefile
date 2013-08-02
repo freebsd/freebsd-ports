@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Graphics-Primitive-Driver-Cairo
-# Date created:			2008/08/30
-# Whom:	      			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Graphics-Primitive-Driver-Cairo
 PORTVERSION=	0.44
@@ -24,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Graphics-Color>=0:${PORTSDIR}/graphics/p5-Graphics-Color
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Graphics::Primitive::Driver::Cairo.3 \
   		Graphics::Primitive::Driver::Cairo::TextLayout.3

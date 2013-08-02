@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-SSI
-# Date created:				09 November 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-SSI
 PORTVERSION=	0.92
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-HTML-SimpleParse>=0:${PORTSDIR}/www/p5-HTML-SimpleParse \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::SSI.3
 

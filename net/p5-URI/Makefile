@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-URI
-# Date created:				1999/04/07
-# Whom:					ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	URI
 PORTVERSION=	1.60
@@ -18,7 +14,8 @@ COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		URI.3 \
 		URI::Escape.3 \

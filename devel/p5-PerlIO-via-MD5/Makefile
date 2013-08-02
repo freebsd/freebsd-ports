@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-PerlIO-via-MD5
-# Date created:				22 March 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PerlIO-via-MD5
 PORTVERSION=	0.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlIO layer for creating an MD5 digest of a file
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PerlIO::via::MD5.3
 

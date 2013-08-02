@@ -20,7 +20,8 @@ LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" DEFINE="-DCRACKLIB_DICTPATH=\\\"${PREFIX}/libdata/cracklib/pw_dict\\\""
 
 MAN3=		Crypt::Cracklib.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-JSON-DWIW
-# Date created:				2007/02/14
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	JSON-DWIW
 PORTVERSION=	0.47
@@ -16,6 +12,7 @@ COMMENT=	JSON converter that Does What I Want
 
 MAN3=		JSON::DWIW.3 JSON::DWIW::Boolean.3 JSON::DWIW::Changes.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

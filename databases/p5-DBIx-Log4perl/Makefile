@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Log4perl
-# Date created:				2006-07-20
-# Whom:					Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Log4perl
 PORTVERSION=	0.26
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-DBI>=1.500:${PORTSDIR}/databases/p5-DBI \
 		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Log4perl.3
 

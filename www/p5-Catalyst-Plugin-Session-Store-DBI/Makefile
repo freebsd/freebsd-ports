@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Plugin-Session-Store-DBI
-# Date created:				2 Jan 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Session-Store-DBI
 PORTVERSION=	0.16
@@ -25,7 +21,8 @@ RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Se
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Session::Store::DBI.3
 

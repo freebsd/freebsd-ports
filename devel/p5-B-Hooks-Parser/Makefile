@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-B-Hooks-OP-Check>=0:${PORTSDIR}/devel/p5-B-Hooks-OP-Check
 TEST_DEPENDS=	p5-B-Hooks-EndOfScope>=0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		B::Hooks::Parser.3
 

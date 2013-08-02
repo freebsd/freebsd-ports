@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Petal-CodePerl
-# Date created:				26 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Petal-CodePerl
 PORTVERSION=	0.06
@@ -23,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAN3=	Petal::CodePerl.3 Petal::CodePerl::Expr.3 \
 	Petal::CodePerl::Modifiers.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

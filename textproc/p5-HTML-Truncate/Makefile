@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-HTML-Truncate
-# Date created:				23 December 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Truncate
 PORTVERSION=	0.20
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=2:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tagset>=3:${PORTSDIR}/www/p5-HTML-Tagset
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Truncate.3
 

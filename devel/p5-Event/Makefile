@@ -12,7 +12,8 @@ COMMENT=	Generic Perl Event Loop
 
 OPTIONS_DEFINE=	DOCS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Event.3 Event::MakeMaker.3 Event::generic.3
 PORTDOCS=	ANNOUNCE ChangeLog INSTALL MANIFEST README TODO Tutorial.pdf

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-Untaint
-# Date created:	   21 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Untaint
 PORTVERSION=	1.26
@@ -18,7 +14,8 @@ COMMENT=	Process CGI input parameters
 BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.01:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Untaint.3 CGI::Untaint::hex.3 CGI::Untaint::integer.3 \
        		CGI::Untaint::object.3 CGI::Untaint::printable.3

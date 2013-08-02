@@ -14,9 +14,8 @@ COMMENT=	OO interface to the 1st and 2nd Digital Sky Surveys
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Astro::DSS.3
 

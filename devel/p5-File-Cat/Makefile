@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-File-Cat
-# Date created:                19 March 2005
-# Whom:                        Jason Heiss <jheiss@aput.biz>
-#
+# Created by: Jason Heiss <jheiss@aput.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Cat
 PORTVERSION=	1.2
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of cat
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::Cat.3
 

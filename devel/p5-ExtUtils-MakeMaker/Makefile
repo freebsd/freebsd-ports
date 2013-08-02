@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Designed to write a Makefile for an extension module
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::Command::MM.3 ExtUtils::Liblist.3 ExtUtils::MM.3 \
 		ExtUtils::MM_AIX.3 ExtUtils::MM_Any.3 ExtUtils::MM_BeOS.3 \

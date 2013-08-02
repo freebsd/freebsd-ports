@@ -21,6 +21,7 @@ MAN3=	Log::Message.3 \
 	Log::Message::Handlers.3 \
 	Log::Message::Item.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

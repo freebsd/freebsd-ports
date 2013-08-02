@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Search-AltaVista
-# Date created:				24 August 2001
-# Whom:					Fanying Jen <fanying@fynet.com>
-#
+# Created by: Fanying Jen <fanying@fynet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Search-AltaVista
 PORTVERSION=	2.154
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-WWW-Search>=0:${PORTSDIR}/www/p5-WWW-Search
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Search::AltaVista.3 \
 		WWW::Search::AltaVista::Web.3 \

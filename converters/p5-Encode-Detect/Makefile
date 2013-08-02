@@ -13,7 +13,8 @@ COMMENT=	Encode::Encoding subclass that detects the encoding of data
 
 BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Encode::Detect.3 Encode::Detect::Detector.3
 

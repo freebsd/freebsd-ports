@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-self
-# Date created:		2008-02-01
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	self
 PORTVERSION=	0.34
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-B-Hooks-Parser>0:${PORTSDIR}/devel/p5-B-Hooks-Parser \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		self.3 self::implicit.3
 

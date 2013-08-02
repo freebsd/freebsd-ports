@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Digest-MD2
-# Date created:				24 May 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Digest-MD2
 PORTVERSION=	2.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the MD2 message digest algorithm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Digest::MD2.3
 

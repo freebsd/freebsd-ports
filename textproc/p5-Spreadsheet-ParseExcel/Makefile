@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Spreadsheet::ParseExcel
-# Date created:		25 Dec 2000
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Spreadsheet-ParseExcel
 PORTVERSION=	0.59
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-OLE-Storage_Lite>=0.19:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
 		p5-Digest-Perl-MD5>=0:${PORTSDIR}/security/p5-Digest-Perl-MD5
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Spreadsheet::ParseExcel.3 \
 		Spreadsheet::ParseExcel::Cell.3 \

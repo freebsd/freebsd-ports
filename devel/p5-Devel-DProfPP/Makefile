@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-DProfPP
-# Date created:	   25 June 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-DProfPP
 PORTVERSION=	1.3
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse Devel::DProf output
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::DProfPP.3
 

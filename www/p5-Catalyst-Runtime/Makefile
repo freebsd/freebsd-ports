@@ -64,7 +64,8 @@ TEST_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inher
 		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	catalyst.pl.1
 MAN3=	Catalyst.3 \

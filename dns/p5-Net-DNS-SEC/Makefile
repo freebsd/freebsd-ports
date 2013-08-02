@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0.03:${PORTSDIR}/security/p5-Crypt-OpenS
 		p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
 		Net::DNS::RR::NXT.3 Net::DNS::RR::SIG.3 \

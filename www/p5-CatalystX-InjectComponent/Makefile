@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CatalystX-InjectComponent
-# Date created:		2011-05-08
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CatalystX-InjectComponent
 PORTVERSION=	0.025
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80000:${PORTSDIR}/www/p5-Catalyst-Runtime 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CatalystX::InjectComponent.3
 

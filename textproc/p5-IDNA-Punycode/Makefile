@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IDNA-Punycode
-# Date created:				Jan 19 2004
-# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IDNA-Punycode
 PORTVERSION=	0.03
@@ -16,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to encode Unicode string in Punycode
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IDNA::Punycode.3
 

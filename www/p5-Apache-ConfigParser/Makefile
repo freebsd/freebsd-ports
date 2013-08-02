@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache-ConfigParser
-# Date created:				24 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-ConfigParser
 PORTVERSION=	1.01
@@ -17,10 +13,9 @@ COMMENT=	Load Apache configuration files
 BUILD_DEPENDS=	p5-File-FnMatch>=0:${PORTSDIR}/devel/p5-File-FnMatch \
 		p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node
 
-MAKE_JOBS_SAFE=  yes
-
 MAN3=	Apache::ConfigParser.3 Apache::ConfigParser::Directive.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CPANPLUS-Dist-Build
 PORTVERSION=	0.72
@@ -14,7 +13,8 @@ COMMENT=	CPANPLUS plug-in to use Module-Build
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CPANPLUS::Dist::Build.3 CPANPLUS::Dist::Build::Constants.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Params-Util
-# Date created:				4 July 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Params-Util
 PORTVERSION=	1.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utility functions to aid in parameter checking
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Params::Util.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-BigInt-FastCalc
-# Date created:		2010-11-26
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-BigInt-FastCalc
 PORTVERSION=	0.30
@@ -17,7 +13,8 @@ COMMENT=	Math::BigInt::Calc with some XS for more speed
 BUILD_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::BigInt::FastCalc.3
 

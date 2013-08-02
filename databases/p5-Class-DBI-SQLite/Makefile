@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-SQLite
-# Date created:	   22 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-SQLite
 PORTVERSION=	0.11
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI::SQLite.3
 

@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
 RUN_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IPC::Run.3 \
 		IPC::Run::Debug.3 \

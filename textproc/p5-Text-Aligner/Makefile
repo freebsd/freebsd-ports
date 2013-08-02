@@ -12,7 +12,8 @@ COMMENT=	Align text in columns
 
 RUN_DEPENDS=	p5-Term-ANSIColor>=2.01:${PORTSDIR}/devel/p5-Term-ANSIColor
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Aligner.3
 

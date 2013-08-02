@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules for parsing Snort configuration files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		snortconfig.1
 MAN3=		Net::Snort::Parser::File.3 Net::Snort::Parser::Rule.3

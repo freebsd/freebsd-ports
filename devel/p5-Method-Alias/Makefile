@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Method-Alias
-# Date created:				24 May 2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Method-Alias
 PORTVERSION=	1.03
@@ -17,6 +13,7 @@ COMMENT=	Create method aliases (and do it safely)
 
 MAN3=	Method::Alias.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

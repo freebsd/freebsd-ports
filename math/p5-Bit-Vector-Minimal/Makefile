@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Bit-Vector-Minimal
-# Date created:				Wed Jul 28 11:59:00 2004
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	Bit-Vector-Minimal
 PORTVERSION=	1.3
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented wrapper around Perl's vec()
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Bit::Vector::Minimal.3
 

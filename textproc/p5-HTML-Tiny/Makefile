@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Tiny
-# Date created:				2008/01/26
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Tiny
 PORTVERSION=	1.05
@@ -17,6 +13,7 @@ COMMENT=	Lightweight, dependency free HTML/XML generation
 
 MAN3=		HTML::Tiny.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

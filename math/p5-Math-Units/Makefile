@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Units
-# Date created:				25 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Units
 PORTVERSION=	1.3
@@ -16,6 +12,7 @@ COMMENT=	Unit conversion
 
 MAN3=	Math::Units.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

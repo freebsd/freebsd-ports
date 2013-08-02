@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Tangram>=0:${PORTSDIR}/databases/p5-Tangram
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Tangram.3 Class::Tangram::Containers.3 \
 		Class::Tangram::Generator.3

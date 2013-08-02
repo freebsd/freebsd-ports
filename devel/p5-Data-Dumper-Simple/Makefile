@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Dumper-Simple
-# Date created:	   			Sep 9 2004
-# Whom:		   			clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Dumper-Simple
 PORTVERSION=	0.11
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily dump variables with names
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Data::Dumper::Simple.3
 

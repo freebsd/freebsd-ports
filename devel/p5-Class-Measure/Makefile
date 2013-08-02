@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Measure
-# Date created:		2006-10-23
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Measure
 PORTVERSION=	0.05
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Sub-Exporter>=0.982:${PORTSDIR}/devel/p5-Sub-Exporter
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Measure.3 Class::Measure::Length.3
 

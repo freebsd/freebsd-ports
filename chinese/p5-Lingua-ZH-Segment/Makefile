@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Lingua-ZH-Segment
-# Date created:		2007-06-08
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-ZH-Segment
 PORTVERSION=	0.02
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Chinese Text Segmentation
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Lingua::ZH::Segment.3
 

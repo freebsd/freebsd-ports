@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	EXAMPLES
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Extension.3 \

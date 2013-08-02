@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Apache-AuthTicket
-# Date created:				Sun Dec 31 19:57:53 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-AuthTicket
 PORTVERSION=	0.93
@@ -25,7 +21,8 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract
 
 USE_APACHE=	22+
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Apache::AuthTicket.3 \
 		Apache::AuthTicket::Base.3 \

@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Carp>=1.22:${PORTSDIR}/devel/p5-Carp \
 		p5-Tree-DAG_Node>=1.02:${PORTSDIR}/devel/p5-Tree-DAG_Node
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Warn.3
 

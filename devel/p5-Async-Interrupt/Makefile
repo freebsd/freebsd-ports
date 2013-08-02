@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Async-Interrupt
-# Date created:		2010-12-29
-# Whom:			Mikhail T. <michael@fun-box.ru>
-#
+# Created by: Mikhail T. <michael@fun-box.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Async-Interrupt
 PORTVERSION=	1.10
@@ -21,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Async::Interrupt.3
 

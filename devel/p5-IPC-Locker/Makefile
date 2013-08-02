@@ -13,7 +13,8 @@ COMMENT=	Provide a server for locks and clients to access that server
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	lockerd.1 lockersh.1 pidstat.1 pidstatd.1 pidwatch.1 \
 	uriexec.1

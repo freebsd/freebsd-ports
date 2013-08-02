@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	Pugs::Compiler::Rule
-# Date created:			Aug 1, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Pugs-Compiler-Rule
 PORTVERSION=	0.37
@@ -24,7 +21,8 @@ RUN_DEPENDS=	p5-Cache-Cache>=1.05:${PORTSDIR}/devel/p5-Cache-Cache \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	compile_p6grammar.pl.1
 MAN3=	Pugs::Compiler::Regex.3 \

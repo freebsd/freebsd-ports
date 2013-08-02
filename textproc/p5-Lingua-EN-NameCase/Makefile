@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lingua::EN::NameCase
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-EN-NameCase
 PORTVERSION=	1.15
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to fix the case of people's names
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Lingua::EN::NameCase.3
 

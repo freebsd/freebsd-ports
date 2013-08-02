@@ -13,7 +13,8 @@ COMMENT=	Indents and reformats Perl scripts to make them easier to read
 
 LICENSE=	GPLv2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		perltidy.1
 MAN3=		Perl::Tidy.3

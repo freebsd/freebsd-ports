@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Image-Caa
-# Date created:		2006-08-24
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Caa
 PORTVERSION=	1.01
@@ -17,7 +13,8 @@ COMMENT=	Colored ASCII Art
 RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Image::Caa.3
 

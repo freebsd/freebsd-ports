@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Samba::LDAP.3 Samba::LDAP::Base.3 Samba::LDAP::Config.3 \
 		Samba::LDAP::Group.3 Samba::LDAP::Machine.3 \

@@ -33,6 +33,7 @@ MAN3=		Authen::PluggableCaptcha.3 \
 		Authen::PluggableCaptcha::Tutorial.3 \
 		Authen::PluggableCaptcha::ValidityObject.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

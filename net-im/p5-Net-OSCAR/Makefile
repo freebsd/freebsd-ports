@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-OSCAR
-# Date created:				26 Sep 2004
-# Whom:					Kelly Cochran <kcochran@trolans.net>
-#
+# Created by: Kelly Cochran <kcochran@trolans.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-OSCAR
 PORTVERSION=	1.928
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-SOCKS>=0:${PORTSDIR}/net/p5-Socks \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::OSCAR.3 \
 	Net::OSCAR::Buddylist.3 \

@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${PREFIX}/include/tcl8.4" \
 		LIBS="-L${PREFIX}/lib -R${PREFIX}/lib -ltcl84"
 

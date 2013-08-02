@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-POE-XS-Loop-Poll
-# Date created:				03 July 2008
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-XS-Loop-Poll
 PORTVERSION=	1.000
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-POE-Test-Loops>=1.033:${PORTSDIR}/devel/p5-POE-Test-Loops \
 		p5-POE>=1.003:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_SCRIPT+=	Makefile.PL --default
 
 MAN3=	POE::XS::Loop::Poll.3

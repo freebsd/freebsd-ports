@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Protocol-XMPP
-# Date created:		2011-03-07
-# Whom:			<ports@c0decafe.net>
-#
+# Created by: <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Protocol-XMPP
 PORTVERSION=	0.005
@@ -19,7 +15,8 @@ COMMENT=	Protocol-level support for XMPP interaction
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-XML-LibXML-SAX-ChunkParser>=0.00003:${PORTSDIR}/textproc/p5-XML-LibXML-SAX-ChunkParser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Protocol::XMPP.3 \
 		Protocol::XMPP::Base.3 \

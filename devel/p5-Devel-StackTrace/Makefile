@@ -12,7 +12,8 @@ COMMENT=	Stack trace and stack trace frame objects
 
 LICENSE=	ART20
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::StackTrace.3 Devel::StackTrace::Frame.3
 

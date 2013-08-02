@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBD::LDAP
-# Date created:				24 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-LDAP
 PORTVERSION=	0.20
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBD::LDAP.3
 

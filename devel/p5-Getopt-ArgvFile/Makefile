@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Getopt-ArgvFile
-# Date created:				03 May 2002
-# Whom:					Eric Schnoebelen <eric@cirr.com>
-#
+# Created by: Eric Schnoebelen <eric@cirr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Getopt-ArgvFile
 PORTVERSION=	1.11
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for processing argument vectors
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Getopt::ArgvFile.3
 

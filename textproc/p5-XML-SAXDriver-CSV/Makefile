@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-SAXDriver-CSV
-# Date created:	   			2006/07/19
-# Whom:					chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SAXDriver-CSV
 PORTVERSION=	0.07
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Text-CSV_XS>=0.22:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-XML-SAX>=0.14:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		XML::SAXDriver::CSV.3

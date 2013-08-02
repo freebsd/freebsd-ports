@@ -1,9 +1,6 @@
 # Ports collection makefile for: p5-Catalyst-Plugin-LogWarnings
-# Date created:			 Apr 6, 2007
-# Whom:				 lbr@freebsd.org
-#
+# Created by: lbr@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-LogWarnings
 PORTVERSION=	0.03
@@ -19,7 +16,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7001:${PORTSDIR}/www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-MRO-Compat>=0.11:${PORTSDIR}/devel/p5-MRO-Compat
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::LogWarnings.3
 

@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="yes"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		cpansign.1
 MAN3=		Module::Signature.3

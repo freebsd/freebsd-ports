@@ -21,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	gist-[0-9]*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		gist.1
 MAN3=		App::gist.3

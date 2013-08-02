@@ -13,7 +13,8 @@ COMMENT=	Run perl standard test scripts with statistics
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		App::Prove.3 \
 		App::Prove::State.3 \

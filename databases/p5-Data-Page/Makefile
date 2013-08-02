@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Page
-# Date created:	   21 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Page
 PORTVERSION=	2.02
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Data::Page.3
 

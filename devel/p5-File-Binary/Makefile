@@ -1,9 +1,5 @@
-# New ports collection makefile for:	File-Binary
-# Date created:				Mon Jan  1 11:48:35 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	File-Binary
 PORTVERSION=	1.7
@@ -17,7 +13,8 @@ COMMENT=	Perl interface to modify and read binary files
 BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Binary.3
 

@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	Regexp::Bind
-# Date created:			Jun 5, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-Bind
 PORTVERSION=	0.05
@@ -15,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Bind variables to captured buffers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Regexp::Bind.3
 

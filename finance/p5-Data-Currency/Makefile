@@ -1,9 +1,5 @@
-# New ports collection makefile for:	finance/p5-Data-Currency
-# Date created:				01 November 2007
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Currency
 PORTVERSION=	0.04002
@@ -27,7 +23,8 @@ RUN_DEPENDS=	p5-Locale-Currency-Format>=0:${PORTSDIR}/finance/p5-Locale-Currency
 		p5-Locale-Codes>=0:${PORTSDIR}/misc/p5-Locale-Codes \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Currency.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Trac
-# Date created:		2009-05-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Trac
 PORTVERSION=	0.16
@@ -28,7 +24,8 @@ BUILD_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Trac.3 \
 		Net::Trac::Connection.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-ManageSieve
-# Date created:	   11 Aug 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-ManageSieve
 PORTVERSION=	0.12
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::ManageSieve.3
 

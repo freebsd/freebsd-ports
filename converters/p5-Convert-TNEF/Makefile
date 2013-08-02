@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-MIME-Tools>=4.109:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::TNEF.3
 

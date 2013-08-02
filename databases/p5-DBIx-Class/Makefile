@@ -58,7 +58,8 @@ TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5
 OPTIONS_DEFINE=	SQLT
 SQLT_DESC=	SQL::Translator (generate DDL from schema)
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
 
 MAN1=		dbicadmin.1

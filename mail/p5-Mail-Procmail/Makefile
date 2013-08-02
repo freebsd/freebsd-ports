@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-Procmail
-# Date Created:				13 Oct 2003
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Procmail
 PORTVERSION=	1.08
@@ -18,7 +14,8 @@ COMMENT=	Perl5 module provides procmail-like tools
 RUN_DEPENDS= 	p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::Procmail.3
 

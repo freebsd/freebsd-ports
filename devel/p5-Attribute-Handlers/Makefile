@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Attribute-Handlers
-# Date created:				January 27th 2003
-# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Attribute-Handlers
 PORTVERSION=	0.93
@@ -17,7 +13,8 @@ COMMENT=	Simpler definition of attribute handlers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Attribute::Handlers.3
 

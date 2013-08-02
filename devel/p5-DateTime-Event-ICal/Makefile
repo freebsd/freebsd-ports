@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Event-Recurrence>=0.11:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Event::ICal.3
 

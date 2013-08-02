@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Object-Realize-Later
-# Date created:				05 Mar 2003
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	Object-Realize-Later
 PORTVERSION=	0.18
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Delayed creation of objects
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Object::Realize::Later.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Log::TraceMessages
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-TraceMessages
 PORTVERSION=	1.4
@@ -17,7 +13,8 @@ COMMENT=	Perl extension for trace messages used in debugging
 BUILD_DEPENDS=	p5-HTML-FromText>=0:${PORTSDIR}/www/p5-HTML-FromText
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Log::TraceMessages.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Model-DynamicAdaptor
-# Date created:		2008-06-11
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Model-DynamicAdaptor
 PORTVERSION=	0.02
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Test-Spelling>=0:${PORTSDIR}/devel/p5-Test-Spelling
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Model::DynamicAdaptor.3
 

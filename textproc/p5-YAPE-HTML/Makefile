@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-YAPE-HTML
-# Date created:	   3 juin 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	YAPE-HTML
 PORTVERSION=	1.11
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another Parser/Extractor for HTML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		YAPE::HTML.3 YAPE::HTML::Element.3
 

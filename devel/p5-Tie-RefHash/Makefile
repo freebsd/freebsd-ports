@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Tie-RefHash
-# Date created:				Jun 27, 2007
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-RefHash
 PORTVERSION=	1.39
@@ -17,7 +14,8 @@ COMMENT=	Tie::RefHash - use references as hash keys
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Tie::RefHash.3
 

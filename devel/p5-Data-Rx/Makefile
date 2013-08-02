@@ -18,7 +18,8 @@ TEST_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Rx.3 \
 		Data::Rx::CommonType.3 \

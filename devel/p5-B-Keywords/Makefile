@@ -13,7 +13,8 @@ COMMENT=	Lists of reserved barewords and symbol names
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		B::Keywords.3
 

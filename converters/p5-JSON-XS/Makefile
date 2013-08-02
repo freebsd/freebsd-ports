@@ -13,7 +13,8 @@ COMMENT=	JSON serialising/deserialising, done correctly and fast
 BUILD_DEPENDS=	p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		json_xs.1
 MAN3=		JSON::XS.3 JSON::XS::Boolean.3

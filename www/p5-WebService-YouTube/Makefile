@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	WebService::YouTube
-# Date created:			Jan 25, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-YouTube
 PORTVERSION=	1.0.3
@@ -22,7 +19,8 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-version>0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	WebService::YouTube.3 \
 	WebService::YouTube::Feeds.3 \

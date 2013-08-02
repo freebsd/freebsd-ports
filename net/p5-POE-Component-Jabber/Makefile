@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 CONFIGURE_ARGS=	</dev/null
 
 PORTEXAMPLES=	*

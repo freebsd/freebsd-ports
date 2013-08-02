@@ -30,7 +30,8 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Warn>=0.20:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Class::ResultSet::RecursiveUpdate.3
 

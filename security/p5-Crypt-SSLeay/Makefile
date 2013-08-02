@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-SSLeay
-# Date created:				December-15-2000
-# Whom:	      				Alfred Perlstein <alfred@freebsd.org>
-#
+# Created by: Alfred Perlstein <alfred@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-SSLeay
 PORTVERSION=	0.64
@@ -22,7 +18,8 @@ TEST_DEPENDS=	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
 
 CONFIGURE_ENV=	CRYPT_SSLEAY_LIVE_TEST_WANTED=0
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_OPENSSL=	yes
 
 MAN3=		Crypt::SSLeay.3 Net::SSL.3

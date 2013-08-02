@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Class-NamedParms>=0:${PORTSDIR}/devel/p5-Class-NamedParms \
 		p5-Class-ParmList>=0:${PORTSDIR}/devel/p5-Class-ParmList
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::FileLRUCache.3
 

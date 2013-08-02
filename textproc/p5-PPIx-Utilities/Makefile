@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PPIx-Utilities
-# Date created:	   30 Jul 2010
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	PPIx-Utilities
 PORTVERSION=	1.001000
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		PPIx::Utilities.3 PPIx::Utilities::Exception::Bug.3 \
 		PPIx::Utilities::Node.3 PPIx::Utilities::Statement.3

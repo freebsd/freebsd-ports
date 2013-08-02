@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=		arclog.1
 
 PLIST_FILES=	bin/arclog \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Tie-Hash-Indexed
-# Date created:				25 May 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-Hash-Indexed
 PORTVERSION=	0.05
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ordered hashes for Perl in XS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Tie::Hash::Indexed.3
 

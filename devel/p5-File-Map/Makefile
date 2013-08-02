@@ -20,7 +20,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		File::Map.3
 

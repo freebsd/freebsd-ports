@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
 		p5-HTTP-Lite>=0.22:${PORTSDIR}/www/p5-HTTP-Lite \
 		p5-Params-Classify>=0:${PORTSDIR}/devel/p5-Params-Classify
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Data::Entropy.3 \
 		Data::Entropy::Algorithms.3 \

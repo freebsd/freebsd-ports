@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-BFD
-# Date created:				May  2004
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BFD
 PORTVERSION=	0.31
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Impromptu dumping of data structures for debugging purposes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		BFD.3
 

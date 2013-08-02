@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Data-Inheritable
-# Date created:		17 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Data-Inheritable
 PORTVERSION=	0.08
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inheritable, overridable class data
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Data::Inheritable.3
 

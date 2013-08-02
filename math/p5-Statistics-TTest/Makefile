@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Statistics-TTest
-# Date created:				17 January 2008
-# Whom:					dawe <daweonline@gmail.com>
-#
+# Created by: dawe <daweonline@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Statistics-TTest
 PORTVERSION=	1.1.0
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Statistics-Descriptive>=0:${PORTSDIR}/math/p5-Statistics-Descr
 		p5-Statistics-Distributions>=0.07:${PORTSDIR}/math/p5-Statistics-Distributions
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Statistics::TTest.3 Statistics::PointEstimation.3
 

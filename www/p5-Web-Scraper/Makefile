@@ -30,7 +30,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Web::Scraper.3 Web::Scraper::Filter.3 Web::Scraper::LibXML.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Crypt-RC6
-# Date created:				2002/09/20
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-RC6
 PORTVERSION=	1.0
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the RC6 encryption algorithm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::RC6.3
 

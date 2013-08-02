@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-Pointer
-# Date created:	   19 January 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Pointer
 PORTVERSION=	1.00
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fiddle around with pointers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::Pointer.3
 

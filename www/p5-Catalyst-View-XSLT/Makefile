@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Path-Class>=0.12:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Catalyst::Helper::View::XSLT.3 Catalyst::View::XSLT.3 \
 		Catalyst::View::XSLT::XML::LibXSLT.3

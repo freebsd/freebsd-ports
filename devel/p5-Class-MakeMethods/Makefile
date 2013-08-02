@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate common types of methods
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::MakeMethods.3 \
 		Class::MakeMethods::Attribute.3 \

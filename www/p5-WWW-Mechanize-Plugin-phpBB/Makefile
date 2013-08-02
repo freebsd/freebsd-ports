@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Mechanize-Plugin-phpBB
-# Date created:				04 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Mechanize-Plugin-phpBB
 PORTVERSION=	0.02
@@ -24,6 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	WWW::Mechanize::Plugin::phpBB.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

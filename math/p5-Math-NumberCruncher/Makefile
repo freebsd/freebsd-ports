@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Math-NumberCruncher
-# Date created:				2007/03/06
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Math-NumberCruncher
 PORTVERSION=	5.00
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of useful math-related functions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::NumberCruncher.3
 

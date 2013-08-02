@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ExtUtils-Constant
-# Date created:	   03 February 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-Constant
 PORTVERSION=	0.23
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate XS code to import C header constants
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::Constant.3 ExtUtils::Constant::Base.3 \
 		ExtUtils::Constant::Utils.3 ExtUtils::Constant::XS.3

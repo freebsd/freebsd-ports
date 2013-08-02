@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Quota
-# Date created:				Wed Jan  3 09:06:26 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Quota
 PORTVERSION=	1.6.7
@@ -17,7 +13,8 @@ COMMENT=	Perl module that provides access to filesystem quotas
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Quota.3
 

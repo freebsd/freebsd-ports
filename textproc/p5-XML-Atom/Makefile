@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Atom
-# Date created:				Dec 27 2003
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Atom
 PORTVERSION=	0.41
@@ -26,7 +22,8 @@ BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inhe
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Atom.3 \
 		XML::Atom::Client.3 \

@@ -19,7 +19,8 @@ IMAGEMAGICK_DESC=	Build ImageMagick module
 
 PORTSCOUT=	skipv:1.581
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		GD::SecurityImage.3 \
 		GD::SecurityImage::GD.3 \

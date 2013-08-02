@@ -14,7 +14,8 @@ COMMENT=	Perl module that provides authentication using a tacacs+ server
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 
 MAN3=		Authen::TacacsPlus.3

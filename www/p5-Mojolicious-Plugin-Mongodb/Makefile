@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mojolicious-Plugin-Mongodb
-# Date created:		2011-04-01
-# Whom:			Henk van Oers <hvo.pm@xs4all.nl>
-#
+# Created by: Henk van Oers <hvo.pm@xs4all.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	Mojolicious-Plugin-Mongodb
 PORTVERSION=	1.12
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mojolicious::Plugin::Mongodb.3
 

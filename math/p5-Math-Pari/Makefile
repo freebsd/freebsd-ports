@@ -13,7 +13,8 @@ COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/pari:configure
 LIB_DEPENDS=	pari:${PORTSDIR}/math/pari
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 CONFIGURE_ARGS=	parilib="-L${LOCALBASE}/lib -lpari" \
 		paridir=`${MAKE} -C ${PORTSDIR}/math/pari -V WRKSRC`

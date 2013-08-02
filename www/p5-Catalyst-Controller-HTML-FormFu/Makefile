@@ -40,7 +40,8 @@ TEST_DEPENDS=	p5-Test-Simple>=0.92:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-WWW-Mechanize>=1.16:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Controller::HTML::FormFu.3 \
 		Catalyst::Helper::HTML::FormFu.3 \

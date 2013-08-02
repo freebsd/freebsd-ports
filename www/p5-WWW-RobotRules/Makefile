@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-RobotRules
-# Date created:				2011-04-14
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-RobotRules
 PORTVERSION=	6.02
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-URI>=1.10:${PORTSDIR}/net/p5-URI
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::RobotRules.3 \
 		WWW::RobotRules::AnyDBM_File.3

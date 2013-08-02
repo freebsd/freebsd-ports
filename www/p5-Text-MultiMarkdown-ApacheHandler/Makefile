@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Text-MultiMarkdown>=0:${PORTSDIR}/textproc/p5-Text-MultiMarkdo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_APACHE_RUN=	22+
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 SUB_FILES=	pkg-message
 
 MAN3=		Text::MultiMarkdown::ApacheHandler.3

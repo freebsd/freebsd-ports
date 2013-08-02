@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-File
-# Date created:				18 March 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-File
 PORTVERSION=	1.34
@@ -19,7 +15,8 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Manifest>=1.14:${PORTSDIR}/devel/p5-Test-Manifest
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::File.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Jifty
-# Date created:				27 Dec 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Jifty
 PORTVERSION=	1.10518
@@ -106,7 +102,8 @@ TEST_DEPENDS=	p5-Test-Base>=0.44:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-WWW-Mechanize-PSGI>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI \
 		p5-Test-WWW-Selenium>=0:${PORTSDIR}/devel/p5-Test-WWW-Selenium
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include "Makefile.man"
 

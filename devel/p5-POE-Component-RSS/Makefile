@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::RSS.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PDF-FromHTML
-# Date created:		2006-07-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PDF-FromHTML
 PORTVERSION=	0.31
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy \
 		p5-PDF-Writer>=0.05:${PORTSDIR}/textproc/p5-PDF-Writer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		html2pdf.pl.1
 MAN3=		PDF::FromHTML.3 PDF::FromHTML::Twig.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Cache-Cache
-# Date created:				29 April 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Cache-Cache
 PORTVERSION=	1.06
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 		p5-IPC-ShareLite>=0.09:${PORTSDIR}/devel/p5-IPC-ShareLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Cache::BaseCache.3 \
 	Cache::BaseCacheTester.3 \

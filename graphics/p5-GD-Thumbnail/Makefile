@@ -13,7 +13,8 @@ COMMENT=	Thumbnail maker for GD
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		GD::Thumbnail.3
 

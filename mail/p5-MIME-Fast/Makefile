@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MIME-Fast
-# Date created:	   08 December 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MIME-Fast
 PORTVERSION=	1.6
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CCFLAGS="${CCFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN3=		MIME::Fast.3

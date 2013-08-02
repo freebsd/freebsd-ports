@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Net-Google>=0:${PORTSDIR}/net/p5-Net-Google \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBD::Google.3 SQL::Dialects::Google.3
 

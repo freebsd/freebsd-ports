@@ -16,9 +16,8 @@ BUILD_DEPENDS=	p5-DBI>=1.622:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.622:${PORTSDIR}/databases/p5-DBI
 TEST_DEPENDS=	p5-DBD-SQLite>=1.37:${PORTSDIR}/databases/p5-DBD-SQLite
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Tree.3
 

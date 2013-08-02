@@ -15,7 +15,8 @@ COMMENT=		Perl interface to the c-client mailbox API
 
 LIB_DEPENDS=		c-client4.9:${PORTSDIR}/mail/cclient
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=		--cclient_dir=${LOCALBASE} \
 		 	--with-shared_cclient \
 			--with-pam \

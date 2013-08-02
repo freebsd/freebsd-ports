@@ -1,10 +1,6 @@
 # ex:ts=8
-# New ports collection makefile for:	p5-XPC
-# Date created:			May 30, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	XPC
 PORTVERSION=	0.2
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XPC.3 XPC::Agent.3 XPC::Daemon.3
 

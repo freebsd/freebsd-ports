@@ -1,6 +1,5 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Address
 PORTVERSION=	1.89.8
@@ -15,7 +14,8 @@ COMMENT=	RFC 2822 Address Parsing and Creation
 
 TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Address.3
 

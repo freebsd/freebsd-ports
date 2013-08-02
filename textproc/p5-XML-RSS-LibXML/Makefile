@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-RSS-LibXML
-# Date created:		2006-01-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-RSS-LibXML
 PORTVERSION=	0.31.02
@@ -26,7 +22,8 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::RSS::LibXML.3 \
 		XML::RSS::LibXML::ImplBase.3 \

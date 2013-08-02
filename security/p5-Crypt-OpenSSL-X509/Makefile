@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Crypt-OpenSSL-X509
-# Date created:				2007/06/09
-# Whom:					kftseng@iyard.org
-#
+# Created by: kftseng@iyard.org
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenSSL-X509
 PORTVERSION=	1.8.2
@@ -15,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}00.${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL X509 API
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::OpenSSL::X509.3
 

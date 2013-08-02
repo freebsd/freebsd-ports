@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Data-FormValidator-Constraints-DateTime
-# Date created:	   17 August 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-FormValidator-Constraints-DateTime
 PORTVERSION=	1.11
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidat
 		p5-DateTime-Format-Builder>=0:${PORTSDIR}/devel/p5-DateTime-Format-Builder
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Data::FormValidator::Constraints::DateTime.3
 

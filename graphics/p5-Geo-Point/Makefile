@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-Geo-Distance>=0.06:${PORTSDIR}/math/p5-Geo-Distance \
 MAN3=		Geo::Point.3 Geo::Shape.3 Geo::Surface.3 \
 		Geo::Line.3 Geo::Proj.3 Geo::Space.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

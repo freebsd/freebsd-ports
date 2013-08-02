@@ -1,6 +1,5 @@
 # Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Amazon
 PORTVERSION=	0.62
@@ -20,7 +19,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include "Makefile.man"
 

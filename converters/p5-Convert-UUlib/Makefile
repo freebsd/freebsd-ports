@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-UUlib
-# Date created:				November 19th 2000
-# Whom:					Blaz Zupan <blaz@amis.net>
-#
+# Created by: Blaz Zupan <blaz@amis.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-UUlib
 PORTVERSION=	1.40
@@ -17,7 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0,,}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::UUlib.3
 

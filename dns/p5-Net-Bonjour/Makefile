@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-Bonjour
-# Date created:		2011-04-05
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Bonjour
 PORTVERSION=	0.96
@@ -18,7 +14,8 @@ COMMENT=	Module for DNS service discovery
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 BUILD_DEPENDS=	p5-Net-DNS>=0.5:${PORTSDIR}/dns/p5-Net-DNS
 

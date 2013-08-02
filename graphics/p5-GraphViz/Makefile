@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		dot:${PORTSDIR}/graphics/graphviz
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::GraphVizProf.3 \
 		GraphViz.3 \

@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::SNPP - Perl Simple Network Pager Protocol Client
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SNPP.3 \
 		Net::SNPP::Server.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-FormatText-WithLinks-AndTables
-# Date created:		2012-08-15
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-FormatText-WithLinks-AndTables
 PORTVERSION=	0.02
@@ -20,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::FormatText::WithLinks::AndTables.3
 

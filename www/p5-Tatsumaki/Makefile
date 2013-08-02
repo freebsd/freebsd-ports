@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tatsumaki
-# Date created:		2010-12-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tatsumaki
 PORTVERSION=	0.1013
@@ -30,7 +26,8 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tatsumaki.3 \
 		Tatsumaki::MessageQueue.3

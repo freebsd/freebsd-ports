@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWord
 		p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	KinoSearch1.3 \
 	KinoSearch1::Analysis::Analyzer.3 \

@@ -19,7 +19,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Rose::DBx::Object::Renderer.3
 

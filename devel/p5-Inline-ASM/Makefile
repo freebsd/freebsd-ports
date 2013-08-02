@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Inline::ASM
-# Date created:		14 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Inline-ASM
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	Write Perl Subroutines in assembler
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
 MAN3=		Inline::ASM.3

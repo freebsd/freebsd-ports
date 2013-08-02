@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Class-Inspector>=1.12:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Params-Util>=0.07:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::ShareDir.3
 

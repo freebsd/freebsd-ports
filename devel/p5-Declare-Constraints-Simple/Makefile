@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Declare-Constraints-Simple
-# Date created:		2010-12-03
-# Whom:			Anes Muhametov <anes@anes.su>
-#
+# Created by: Anes Muhametov <anes@anes.su>
 # $FreeBSD$
-#
 
 PORTNAME=	Declare-Constraints-Simple
 PORTVERSION=	0.03
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Declare::Constraints::Simple::Library::Scalar.3 \
 	Declare::Constraints::Simple::Library::Operators.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Getopt-Compact
-# Date created:				July 16th 2010
-# Whom:	      				Evgeniy Kosov <evgeniy@kosov.su>
-#
+# Created by: Evgeniy Kosov <evgeniy@kosov.su>
 # $FreeBSD$
-#
 
 PORTNAME=	Getopt-Compact
 PORTVERSION=	0.04
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
 		p5-Env-Path>=0:${PORTSDIR}/devel/p5-Env-Path
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Getopt::Compact.3 \
 		Getopt::Compact::PodMunger.3

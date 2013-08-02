@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Devel-ArgNames
-# Date created:         2010-08-08
-# Whom:                 Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-ArgNames
 PORTVERSION=	0.03
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
 RUN_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::ArgNames.3
 

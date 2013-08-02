@@ -1,9 +1,5 @@
-# New ports collection makefile for:    devel/p5-Cvs
-# Date created:                         28 June 2007
-# Whom:                                 Philip Drapeau <pdrapeau@advanis.ca>
-#
+# Created by: Philip Drapeau <pdrapeau@advanis.ca>
 # $FreeBSD$
-#
 
 PORTNAME=       Cvs
 PORTVERSION=    0.07
@@ -17,7 +13,8 @@ MAINTAINER=     perl@FreeBSD.org
 COMMENT=        Cvs - Object oriented interface to the CVS command
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
-PERL_CONFIGURE= yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=           Cvs.3 Cvs::Command::Base.3 Cvs::Command::Checkout.3 \
 		Cvs::Command::Commit.3 Cvs::Command::Diff.3 \

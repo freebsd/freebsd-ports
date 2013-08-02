@@ -1,6 +1,5 @@
 # Created by: wen@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-Graphics
 PORTVERSION=	2.37
@@ -21,7 +20,8 @@ BUILD_DEPENDS=	p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
 		p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		contig_draw.pl.1 \
 		feature_draw.pl.1 \

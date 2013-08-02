@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:${PORTSDIR}/devel/p5-Config-AutoConf \
 		p5-ExtUtils-LibBuilder>=0.02:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder
 TEST_DEPENDS=	p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 USE_LDCONFIG=	yes
 
 MAN1=		bt_format_names.1 bt_input.1 bt_language.1 \

@@ -14,7 +14,8 @@ COMMENT=	Perl Interface to G-language
 BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Bio::Glite.3
 

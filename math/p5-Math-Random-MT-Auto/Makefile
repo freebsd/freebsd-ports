@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Random::MT::Auto.3 Math::Random::MT::Auto::Range.3
 

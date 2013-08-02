@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/p5-GSSAPI
-# Date created:				28 March 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GSSAPI
 PORTVERSION=	0.28
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension providing access to the GSSAPIv2 library
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		GSSAPI.3 \
 		GSSAPI::OID.3 \

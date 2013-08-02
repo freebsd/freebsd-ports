@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-HiRes
-# Date created:	   3 october 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-HiRes
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DateTime::HiRes.3
 

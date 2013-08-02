@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-RDFStore>=0:${PORTSDIR}/textproc/p5-RDFStore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		RDF::Notation3.3 RDF::Notation3::PrefTriples.3 \
 		RDF::Notation3::RDFCore.3 RDF::Notation3::RDFStore.3 \

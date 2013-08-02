@@ -1,6 +1,4 @@
-# New ports collection makefile for:  HTML-FormFu-Imager
-# Whom: gugu
-# Date created: 07 December 2009
+# Created by: gugu
 # $FreeBSD$
 # Generated with App::Pm2Port . Do not edit directly, please
 
@@ -18,7 +16,8 @@ BUILD_DEPENDS=	p5-HTML-FormFu>=0:${PORTSDIR}/www/p5-HTML-FormFu \
 		p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTML::FormFu::Imager.3 \
 		HTML::FormFu::Inflator::Imager.3 \

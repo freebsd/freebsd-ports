@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-FreezeThaw>=0:${PORTSDIR}/devel/p5-FreezeThaw \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::DBSchema.3 DBIx::DBSchema::ColGroup.3 \
 	DBIx::DBSchema::ColGroup::Index.3 DBIx::DBSchema::ColGroup::Unique.3 \

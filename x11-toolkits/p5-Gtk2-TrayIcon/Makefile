@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gtk2-TrayIcon
-# Date created:				Jan 11 2005
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-TrayIcon
 PORTVERSION=	0.06
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::TrayIcon.3
 

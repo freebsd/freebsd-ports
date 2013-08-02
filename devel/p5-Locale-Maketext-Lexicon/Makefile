@@ -15,7 +15,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	p5-Locale-Maketext>=1.17:${PORTSDIR}/devel/p5-Locale-Maketext
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		xgettext.pl.1
 MAN3=		Locale::Maketext::Extract.3 \

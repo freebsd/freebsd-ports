@@ -19,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-CheckDeps>=0.002:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::LazyRequire.3 \
 		MooseX::LazyRequire::Meta::Attribute::Trait::LazyRequire.3

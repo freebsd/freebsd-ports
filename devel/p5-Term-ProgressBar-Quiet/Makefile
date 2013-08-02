@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar \
 		p5-IO-Interactive>=0:${PORTSDIR}/devel/p5-IO-Interactive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::ProgressBar::Quiet.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-JSON-RPC-Common
-# Date created:				03 July, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	JSON-RPC-Common
 PORTVERSION=	0.10
@@ -25,7 +21,8 @@ BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		JSON::RPC::Common::Marshal::Text.3 \
 		JSON::RPC::Common::Message.3 \

@@ -10,9 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse text into an array of tokens or array of arrays
 
-MAKE_JOBS_SAFE=	yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::ParseWords.3
 

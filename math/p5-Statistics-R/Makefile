@@ -17,7 +17,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Statistics::R::Legacy.3 \
 		Statistics::R::Win32.3 \

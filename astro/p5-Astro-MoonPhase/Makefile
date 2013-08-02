@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Astro-MoonPhase
-# Date created:				Mon Jan  1 09:43:10 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-MoonPhase
 PORTVERSION=	0.60
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to calculate information about the phase of the moon
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Astro::MoonPhase.3
 

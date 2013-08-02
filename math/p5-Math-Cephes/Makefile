@@ -19,6 +19,7 @@ MAN3=	Math::Cephes.3 \
 	Math::Cephes::Matrix.3 \
 	Math::Cephes::Polynomial.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Std-Fast
-# Date created:		28 Feb, 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Std-Fast
 PORTVERSION=	0.0.8
@@ -22,7 +18,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-Std>=0.0.9:${PORTSDIR}/devel/p5-Class-Std
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Std::Fast.3 \
 		Class::Std::Fast::Storable.3

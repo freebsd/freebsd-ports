@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Catalyst-View-Templated
-# Date created:	   18 Jan 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-Templated
 PORTVERSION=	0.02
@@ -23,7 +19,8 @@ TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::View::Templated.3
 

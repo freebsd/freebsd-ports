@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7008:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::ConfigLoader.3 \
 	Catalyst::Plugin::ConfigLoader::Manual.3

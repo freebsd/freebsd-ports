@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Object-Signature
-# Date created:	   26 Dec 2005
-# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Object-Signature
 PORTVERSION=	1.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate cryptographic signatures for objects
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Object::Signature.3 \
 		Object::Signature::File.3

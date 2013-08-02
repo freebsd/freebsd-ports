@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sub-Current
-# Date created:				2008/08/30
-# Whom:	      				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Sub-Current
 PORTVERSION=	0.02
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get the current subroutine
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sub::Current.3
 

@@ -16,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
     		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
 		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Dump.3
 

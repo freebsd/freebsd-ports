@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-Leak-Object
-# Date created:	   31 August 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Leak-Object
 PORTVERSION=	1.01
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Detect leaks of objects
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::Leak::Object.3
 

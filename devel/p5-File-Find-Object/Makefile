@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Find::Object.3 \
 		File::Find::Object::Base.3 \

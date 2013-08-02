@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Server-HTTP
-# Date created:		03 Apr 2004
-# Whom:			Zach Thompson <lin-chi@lastamericanempire.com>
-#
+# Created by: Zach Thompson <lin-chi@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-HTTP
 PORTVERSION=	0.09
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Server::HTTP.3
 

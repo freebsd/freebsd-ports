@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Inline>=0.50:${PORTSDIR}/devel/p5-Inline \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warn>=0.24:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		InlineX::CPP2XS.3 InlineX::CPP2XS-Cookbook.3
 

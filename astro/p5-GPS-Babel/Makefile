@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Geo-Gpx>=0.25:${PORTSDIR}/graphics/p5-Geo-Gpx \
 RUN_DEPENDS=	p5-Geo-Gpx>=0.25:${PORTSDIR}/graphics/p5-Geo-Gpx \
 		p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	GPS::Babel.3
 

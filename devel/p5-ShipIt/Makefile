@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Software release tool
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		shipit.1
 MAN3=		ShipIt.3 ShipIt::Conf.3 ShipIt::ProjectType.3 \

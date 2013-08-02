@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Log4perl
-# Date created:				August 27, 2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Log4perl
 PORTVERSION=	0.1001
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Log4perl.3
 

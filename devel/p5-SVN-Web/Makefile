@@ -34,7 +34,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-HTML-Tidy>=0:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
 		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	--skip_questions
 
 MAN1=		svnweb-install.1

@@ -49,7 +49,8 @@ TEST_DEPENDS=	p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Test-Aggregate>=0:${PORTSDIR}/devel/p5-Test-Aggregate \
 		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::FormFu.3 \
 		HTML::FormFu::Attribute.3 \

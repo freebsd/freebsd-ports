@@ -13,7 +13,8 @@ COMMENT=	Utility to detect an e-mail is mobile one or not
 BUILD_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::Address::MobileJp.3
 

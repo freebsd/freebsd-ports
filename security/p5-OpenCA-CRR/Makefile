@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenCA-CRR
-# Date created:	   02 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	OpenCA-CRR
 PORTVERSION=	0.0.2
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to handle CRR objects
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		OpenCA::CRR.3
 

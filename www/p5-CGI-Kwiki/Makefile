@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-Locale-Maketext>=0:${PORTSDIR}/devel/p5-Locale-Maketext
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		kwiki-install.1
 MAN3=		CGI::Kwiki.3 \

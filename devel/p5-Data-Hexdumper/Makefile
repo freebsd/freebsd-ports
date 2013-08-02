@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for displaying binary data in a readable format
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Hexdumper.3
 

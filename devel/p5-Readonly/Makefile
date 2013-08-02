@@ -13,7 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Facility for creating read-only scalars, arrays, hashes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	DIR="${PORTNAME}-XS-${PORTVERSION_XS}"
 PORTVERSION_XS=	1.05
 

@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Custom.3 \
 		DBIx::Custom::Mapper.3 \

@@ -27,7 +27,8 @@ BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::EvolutionaryModels.3 \

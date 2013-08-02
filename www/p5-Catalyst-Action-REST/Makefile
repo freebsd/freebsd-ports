@@ -27,7 +27,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:${PORTSDIR}/www/p5-Catalyst-Runtime 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	--default
 
 MAN3=		Catalyst::Action::Deserialize.3 \

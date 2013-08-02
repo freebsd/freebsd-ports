@@ -29,7 +29,8 @@ TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PORTSCOUT=	skipv:0.6061
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Rose::HTML::Anchor.3 \
 		Rose::HTML::Form.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Text-Emoticon-GoogleTalk
-# Date created:		2006/07/21
-# Whom:			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Emoticon-GoogleTalk
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ COMMENT=	Emoticon filter of GoogleTalk
 BUILD_DEPENDS=	p5-Text-Emoticon>=0:${PORTSDIR}/textproc/p5-Text-Emoticon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Emoticon::GoogleTalk.3
 

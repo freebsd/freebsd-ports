@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-Rijndael_PP
-# Date created:		2006-07-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-Rijndael_PP
 PORTVERSION=	0.05
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of Rijndael
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::Rijndael_PP.3
 

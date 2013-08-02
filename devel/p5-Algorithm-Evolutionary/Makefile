@@ -29,7 +29,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		canonical-genetic-algorithm.pl.1 \
 		rectangle-coverage.pl.1 \

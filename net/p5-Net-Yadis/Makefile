@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Yadis
-# Date created:		2006-12-19
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Yadis
 PORTVERSION=	1.0
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Yadis.3
 

@@ -24,7 +24,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.31:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
     		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DBIx::Sunny.3 \
 		DBIx::Sunny::Schema.3

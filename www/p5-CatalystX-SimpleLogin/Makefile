@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CatalystX-SimpleLogin
-# Date created:		2011-05-09
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CatalystX-SimpleLogin
 PORTVERSION=	0.18
@@ -42,7 +38,8 @@ BUILD_DEPENDS=	p5-Catalyst-Action-REST>=0.74:${PORTSDIR}/www/p5-Catalyst-Action-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::ActionRole::NeedsLogin.3 \
 		CatalystX::SimpleLogin.3 \

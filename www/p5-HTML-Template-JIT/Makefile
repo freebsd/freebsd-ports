@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-HTML-Template>=2.8:${PORTSDIR}/www/p5-HTML-Template \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
 MAN3=		HTML::Template::JIT.3 HTML::Template::JIT::Compiler.3 \

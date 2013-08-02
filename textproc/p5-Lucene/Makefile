@@ -15,7 +15,8 @@ LIB_DEPENDS=	clucene-core:${PORTSDIR}/textproc/clucene
 
 BROKEN=		incompatible with CLucene 2.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CC=		${CXX}
 CONFIGURE_ARGS+="INC=-I${LOCALBASE}/include -I${LOCALBASE}/lib"
 

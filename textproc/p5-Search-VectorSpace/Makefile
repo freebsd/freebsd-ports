@@ -15,7 +15,8 @@ BUILD_DEPENDS=	PDL>=0:${PORTSDIR}/math/PDL \
 		p5-Lingua-Stem>=0:${PORTSDIR}/textproc/p5-Lingua-Stem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Search::VectorSpace.3
 
 .include <bsd.port.mk>

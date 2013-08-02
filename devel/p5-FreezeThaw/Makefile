@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for converting Perl structures to strings and back
 
-MAKE_JOBS_SAFE=	yes
-
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		FreezeThaw.3
 

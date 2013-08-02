@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Child
-# Date created:	   31 January 2004
-# Whom:		   Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Child
 PORTVERSION=	1.39
@@ -17,7 +13,8 @@ COMMENT=	POE child management
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Child.3
 

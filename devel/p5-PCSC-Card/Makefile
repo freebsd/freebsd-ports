@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PCSC-Card
-# Date created:		12 September 2002
-# Whom:			Bruce M Simpson
-#
+# Created by: Bruce M Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	PCSC-Card
 PORTVERSION=	1.4.13
@@ -18,7 +14,8 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_BZIP2=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_ENV=	"LOCALBASE=${LOCALBASE}"
 
 MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3

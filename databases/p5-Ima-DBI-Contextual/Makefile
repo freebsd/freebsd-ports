@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ima-DBI-Contextual
-# Date created:				8 June 2010
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Ima-DBI-Contextual
 PORTVERSION=	1.006
@@ -25,7 +21,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 DEPRECATED=	deprecated by upstream
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Ima::DBI::Contextual.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Plugin-Session-Store-FastMmap
-# Date created:				2 Jan 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Session-Store-FastMmap
 PORTVERSION=	0.16
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-Cache-FastMmap>=1.29:${PORTSDIR}/devel/p5-Cache-FastMmap \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::Session::Store::FastMmap.3
 

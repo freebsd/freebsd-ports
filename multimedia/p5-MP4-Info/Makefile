@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MP4-Info
-# Date created:		10-Dec-2005
-# Whom:			Lars Eggert <lars.eggert@gmx.net>
-#
+# Created by: Lars Eggert <lars.eggert@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	MP4-Info
 PORTVERSION=	1.13
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Encode>=2.10:${PORTSDIR}/converters/p5-Encode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MP4::Info.3
 

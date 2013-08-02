@@ -18,7 +18,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	Yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Config::JSON.3
 
 .include <bsd.port.mk>

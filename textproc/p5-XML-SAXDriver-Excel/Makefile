@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-SAXDriver-Excel
-# Date created:	   30 May 2002
-# Whom:		   chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SAXDriver-Excel
 PORTVERSION=	0.06
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	\
 	p5-XML-SAX>=0.14:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		XML::SAXDriver::Excel.3

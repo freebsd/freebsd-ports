@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Model-Xapian
-# Date created:				22 Feb 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Model-Xapian10
 PORTVERSION=	0.06
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Search-Xapian10>=0.9.2.4:${PORTSDIR}/databases/p5-Search-Xapian10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Model::Xapian.3 \
 	Catalyst::Helper::Model::Xapian.3

@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-IO-Prompt-Tiny>=0:${PORTSDIR}/devel/p5-IO-Prompt-Tiny \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		nas.1
 MAN3=		Net::Appliance::Session.3

@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-MRO-Compat>=0.11:${PORTSDIR}/devel/p5-MRO-Compat
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Exception>=0.25:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Test::Class.3 \
 		Test::Class::Load.3 \

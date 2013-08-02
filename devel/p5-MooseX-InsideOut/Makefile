@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Hash-Util-FieldHash-Compat>=0:${PORTSDIR}/devel/p5-Hash-Util-F
 		p5-namespace-clean>=0.11:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::InsideOut.3 \
 		MooseX::InsideOut::Role::Meta::Instance.3

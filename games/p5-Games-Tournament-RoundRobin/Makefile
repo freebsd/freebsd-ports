@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Games-Tournament-RoundRobin
-# Date created:				18 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Games-Tournament-RoundRobin
 PORTVERSION=	0.02
@@ -17,6 +13,7 @@ COMMENT=	Round-Robin Tournament Schedule Pairings
 MAN3=	Games::Tournament::RoundRobin.3 \
 	Games::League::Member.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -13,7 +13,8 @@ COMMENT=	Perl interface to C clustering library
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::Cluster.3
 

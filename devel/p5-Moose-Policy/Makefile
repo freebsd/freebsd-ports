@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Moose-Policy
-# Date created:	   25 February 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Moose-Policy
 PORTVERSION=	0.05
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Moose::Policy.3 Moose::Policy::FollowPBP.3 \
 		Moose::Policy::JavaAccessors.3 \

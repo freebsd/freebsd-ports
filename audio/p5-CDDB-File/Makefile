@@ -1,10 +1,6 @@
 # ex:ts=8
-# Ports collection makefile for:	CDDB-File
-# Date created:			Jun 26, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	CDDB-File
 PORTVERSION=	1.05
@@ -16,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse a CDDB/freedb data file
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CDDB::File.3
 

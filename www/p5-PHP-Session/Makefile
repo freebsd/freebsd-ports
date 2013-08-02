@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PHP-Session
-# Date created:				16 April 2003
-# Whom:	      				Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	PHP-Session
 PORTVERSION=	0.27
@@ -17,7 +13,8 @@ COMMENT=	Read / write PHP session files
 BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.03:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PHP::Session.3 PHP::Session::Serializer::PHP.3
 

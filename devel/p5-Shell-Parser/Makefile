@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Shell-Parser
-# Date created:	   08 April 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Shell-Parser
 PORTVERSION=	0.04
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple shell script parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Shell::Parser.3
 

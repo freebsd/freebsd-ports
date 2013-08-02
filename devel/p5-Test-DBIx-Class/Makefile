@@ -32,7 +32,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::DBIx::Class.3 \
 	Test::DBIx::Class::Example::Schema.3 \

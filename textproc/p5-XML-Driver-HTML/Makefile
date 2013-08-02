@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-Driver-HTML
-# Date created:	   22 October 2005
-# Whom:		   Dmitry Morozovsky <marck@FreeBSD.org>
-#
+# Created by: Dmitry Morozovsky <marck@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Driver-HTML
 PORTVERSION=	0.06
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-XML-TreeBuilder>=0:${PORTSDIR}/textproc/p5-XML-TreeBuilder \
 		p5-XML-Handler-YAWriter>=0:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		html2xhtml.1
 MAN3=		XML::Driver::HTML.3

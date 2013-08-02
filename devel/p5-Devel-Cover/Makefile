@@ -21,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		cover.1 cpancover.1 gcov2perl.1
 MAN3=		Devel::Cover.3 \

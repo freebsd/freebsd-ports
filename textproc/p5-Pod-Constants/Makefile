@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Pod-Constants
-# Date created:	   08 April 2002
-# Whom:		   Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Constants
 PORTVERSION=	0.16
@@ -16,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Include constants from POD
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Pod::Constants.3
 

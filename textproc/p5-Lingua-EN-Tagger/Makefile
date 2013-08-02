@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=3.45:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Memoize-ExpireLRU>=0.55:${PORTSDIR}/devel/p5-Memoize-ExpireLRU
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Lingua::EN::Tagger.3
 

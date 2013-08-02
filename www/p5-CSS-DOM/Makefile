@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	p5-Clone>=0.09:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CSS::DOM.3 \
 		CSS::DOM::Array.3 \

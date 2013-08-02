@@ -14,7 +14,8 @@ COMMENT=	Expand template text with embedded Perl
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Template.3 Text::Template::Preprocess.3
 

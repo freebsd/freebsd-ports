@@ -30,6 +30,7 @@ MAN3=	IRC::Bot::Hangman.3 \
 	IRC::Bot::Hangman::WordList::Default.3 \
 	IRC::Bot::Hangman::WordList::TooEasy.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

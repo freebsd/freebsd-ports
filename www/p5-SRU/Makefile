@@ -1,4 +1,4 @@
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	SRU
@@ -43,6 +43,7 @@ MAN3=	Catalyst::Controller::SRU.3 \
 	SRU::Utils::XML.3 \
 	SRU::Utils::XMLTest.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

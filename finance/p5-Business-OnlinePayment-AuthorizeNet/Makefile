@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Business-OnlinePayment>=3:${PORTSDIR}/finance/p5-Business-Online
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::OnlinePayment::AuthorizeNet.3 \
 		Business::OnlinePayment::AuthorizeNet::AIM.3 \

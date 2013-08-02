@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Catalyst-Plugin-SubRequest
-# Date created:			May 6, 2005
-# Whom:				Travis Campbell <hcoyote@ghostar.org>
-#
+# Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-SubRequest
 PORTVERSION=	0.20
@@ -20,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90000:${PORTSDIR}/www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::SubRequest.3
 

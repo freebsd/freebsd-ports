@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-XMPP
-# Date created:				2004-12-3
-# Whom:	      				Lars Eggert <lars.eggert@gmx.net>
-#
+# Created by: Lars Eggert <lars.eggert@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-XMPP
 PORTVERSION=	1.02.04
@@ -25,7 +21,8 @@ RUN_DEPENDS=	p5-Authen-SASL>=2.12:${PORTSDIR}/security/p5-Authen-SASL \
 TEST_DEPENDS=	p5-LWP-Online>=1.07:${PORTSDIR}/www/p5-LWP-Online \
 		p5-YAML-Tiny>=1.41:${PORTSDIR}/textproc/p5-YAML-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::XMPP.3 \
 		Net::XMPP::Client.3 \

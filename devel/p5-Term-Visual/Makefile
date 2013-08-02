@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Term-Visual
-# Date created:				2007/03/21
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Visual
 PORTVERSION=	0.08
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::Visual.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Parallel-Pvm
-# Date created:	   15 October 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Parallel-Pvm
 PORTVERSION=	1.4.0
@@ -18,7 +14,8 @@ COMMENT=	Perl extension for the Parallel Virtual Machine (PVM)
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 PVM_ROOT=	${LOCALBASE}/lib/pvm
 CONFIGURE_ENV=	PVM_ROOT="${PVM_ROOT}" PVM_ARCH="${PVM_ROOT}/lib/pvmgetarch"
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"

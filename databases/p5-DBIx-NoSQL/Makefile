@@ -28,7 +28,8 @@ RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-DBIx-Class>=0.08124:${PORTSDIR}/databases/p5-DBIx-Class
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::NoSQL.3 \
 		DBIx::NoSQLite.3

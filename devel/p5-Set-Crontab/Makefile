@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Set-Crontab
-# Date created:	   1 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Set-Crontab
 PORTVERSION=	1.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set::Crontab - Expand crontab(5)-style integer lists
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Set::Crontab.3
 

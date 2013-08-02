@@ -1,10 +1,6 @@
 # ex:ts=8
-# Ports collection makefile for:	Class::DBI::AutoLoader
-# Date created:			Sep 23, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-AutoLoader
 PORTVERSION=	0.12
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-Class-DBI-BaseDSN>=0:${PORTSDIR}/databases/p5-Class-DBI-BaseDSN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::DBI::AutoLoader.3
 

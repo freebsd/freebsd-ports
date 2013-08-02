@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Curses>=1.08:${PORTSDIR}/devel/p5-Curses \
 		p5-libwww>=5.79:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	--default
 
 MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \

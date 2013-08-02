@@ -14,7 +14,8 @@ COMMENT=	Creates 3D charts with GD::Graph and GD
 BUILD_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	lib/GD/Graph3d.pm # pod2man doesn't work without this
 
 MAN3=		GD::Graph3d.3

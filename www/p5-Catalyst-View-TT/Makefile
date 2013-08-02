@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Helper::View::TT.3 \
 		Catalyst::Helper::View::TTSite.3 \

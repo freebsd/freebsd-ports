@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-Mail
-# Date created:	   4 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-Mail
 PORTVERSION=	0.30.01
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DateTime::Format::Mail.3
 

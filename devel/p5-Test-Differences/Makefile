@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Test-Differences
-# Date created:				January 28th 2003
-# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Differences
 PORTVERSION=	0.610
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff
 
 PORTSCOUT=	skipv:0.4801
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Differences.3
 

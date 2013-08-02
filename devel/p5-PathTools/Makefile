@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for portably manipulating file specifications
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Cwd.3 File::Spec.3 File::Spec::Cygwin.3 File::Spec::Epoc.3 \
 		File::Spec::Functions.3 File::Spec::Mac.3 File::Spec::OS2.3 \

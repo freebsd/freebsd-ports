@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Graphics-Primitive
-# Date created:			2008/08/30
-# Whom:	      			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Graphics-Primitive
 PORTVERSION=	0.61
@@ -24,7 +21,8 @@ RUN_DEPENDS=	p5-Forest>=0.06:${PORTSDIR}/devel/p5-Forest \
 		p5-MooseX-Storage>=0.17:${PORTSDIR}/devel/p5-MooseX-Storage
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Graphics::Primitive.3 \
 		Graphics::Primitive::Aligned.3 \

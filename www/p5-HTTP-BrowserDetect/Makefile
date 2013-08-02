@@ -19,7 +19,8 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Test-FailWarnings>=0:${PORTSDIR}/devel/p5-Test-FailWarnings \
 		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::BrowserDetect.3
 

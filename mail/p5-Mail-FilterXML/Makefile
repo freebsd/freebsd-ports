@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Mail-FilterXML
-# Date created:				Wed Jan  3 14:28:38 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-FilterXML
 PORTVERSION=	0.3
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Mail-Audit>=0:${PORTSDIR}/mail/p5-Mail-Audit \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::FilterXML.3
 

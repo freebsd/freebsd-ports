@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-SAK
-# Date created:	   22 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-SAK
 PORTVERSION=	1.4
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-Class-DBI-AbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \
 		p5-Class-DBI-Pager>=0:${PORTSDIR}/databases/p5-Class-DBI-Pager
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Class::DBI::SAK.3
 

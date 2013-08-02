@@ -18,7 +18,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Finance::Currency::Convert::XE.3
 PORTDOCS=	Changes README

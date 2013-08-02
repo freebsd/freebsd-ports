@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-List-Rotation-Cycle
-# Date created:				2007/02/14
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	List-Rotation-Cycle
 PORTVERSION=	1.009
@@ -18,6 +14,7 @@ PORTSCOUT=	limitw:1,even
 
 MAN3=		List::Rotation::Cycle.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

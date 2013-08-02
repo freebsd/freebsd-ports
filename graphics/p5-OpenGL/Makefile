@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-OpenGL
-# Date created:			Jan 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	OpenGL
 PORTVERSION=	0.66
@@ -22,7 +19,8 @@ USE_DISPLAY=	requires an X server for configure stage
 MANUAL_PACKAGE_BUILD=	fails to start X server on pointyhat
 
 CONFIGURE_ARGS=	interface=GLUT
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DISPLAY=	yes
 USE_GL=		glut
 

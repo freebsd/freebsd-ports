@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-SimpleTable
-# Date created:		15 Nov 2005
-# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-SimpleTable
 PORTVERSION=	2.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Eyecandy ASCII Tables
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::SimpleTable.3
 

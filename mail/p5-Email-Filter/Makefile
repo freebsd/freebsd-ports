@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Email-Filter
-# Date created:		2003-08-31
-# Whom:			Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Filter
 PORTVERSION=	1.03.2
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Filter.3
 

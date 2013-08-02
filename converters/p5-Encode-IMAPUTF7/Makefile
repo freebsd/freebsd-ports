@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Encode-IMAPUTF7
-# Date created:				Dec 18, 2009
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-IMAPUTF7
 PORTVERSION=	1.05
@@ -17,7 +13,8 @@ COMMENT=	Modification of UTF-7 encoding for IMAP
 BUILD_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Encode::IMAPUTF7.3
 

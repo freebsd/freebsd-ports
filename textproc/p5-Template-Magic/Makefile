@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-IO-Util>=0:${PORTSDIR}/devel/p5-IO-Util \
 		p5-HTML-TableTiler>=0:${PORTSDIR}/www/p5-HTML-TableTiler
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Template::Magic.3 \
 		Bundle::Template::Magic.3 \

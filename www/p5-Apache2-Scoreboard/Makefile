@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Apache2-Scoreboard
-# Date Created:				11 June 2005
-# Whom:					Philip Paeps <philip@FreeBSD.org>
-#
+# Created by: Philip Paeps <philip@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache2-Scoreboard
 PORTVERSION=	2.09.2
@@ -24,7 +20,8 @@ DEPRECATED=	Broken for more than 6 month
 EXPIRATION_DATE=	2013-08-27
 BROKEN=		does not configure
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_APACHE=	22+
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:R}

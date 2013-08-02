@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Apache-ParseLog
-# Date created:				2002/08/02
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-ParseLog
 PORTVERSION=	1.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to parse Apache log files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Apache::ParseLog.3
 

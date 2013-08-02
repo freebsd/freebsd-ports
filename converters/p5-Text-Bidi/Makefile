@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Bidi
-# Date created:		2008-03-24
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Bidi
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	Perl interface to the libfribidi
 
 LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CFLAGS+=	-I${LOCALBASE}/include
 MAN3=	Text::Bidi.3 Text::Bidi::CapRTL.3
 

@@ -15,7 +15,8 @@ LICENSE=	ART10
 BUILD_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Subnet.3
 

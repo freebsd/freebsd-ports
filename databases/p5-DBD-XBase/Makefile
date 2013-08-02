@@ -13,7 +13,8 @@ COMMENT=	Provides access to XBase (dBase, Fox*) database files through DBI
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		dbfdump.1 indexdump.1
 MAN3=		DBD::XBase.3 \

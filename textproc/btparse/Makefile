@@ -1,9 +1,5 @@
-# New ports collection makefile for:	btparse
-# Date created:				2006-03-19
-# Whom:					Kay Lehmann <kay_lehmann@web.de>
-#
+# Created by: Kay Lehmann <kay_lehmann@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	btparse
 PORTVERSION=	0.35

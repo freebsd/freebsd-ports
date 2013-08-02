@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 
 IS_INTERACTIVE=	Asks about installing optional components
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		bigtop.1 \
 		tentmaker.1

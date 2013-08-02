@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-DES
-# Date created:				October 20th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-DES
 PORTVERSION=	2.05
@@ -17,7 +13,8 @@ COMMENT=	Perl5 interface to DES block cipher
 BUILD_DEPENDS=	p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::DES.3
 

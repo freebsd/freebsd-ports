@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-Frame
-# Date created:	   08 Jan 2007
-# Whom:		   Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Frame
 PORTVERSION=	1.09
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Frame.3 Net::Frame::Layer.3 \
 		Net::Frame::Layer::ARP.3 \

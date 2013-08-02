@@ -12,7 +12,8 @@ COMMENT=	Solicit for data from an external editor
 
 LICENSE=	ART10
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Term::CallEditor.3
 

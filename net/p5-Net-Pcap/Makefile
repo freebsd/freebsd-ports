@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-IO-Interface>=0:${PORTSDIR}/net/p5-IO-Interface
 TEST_DEPENDS=	p5-Socket>=0:${PORTSDIR}/net/p5-Socket \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		pcapinfo.1
 MAN3=		Net::Pcap.3

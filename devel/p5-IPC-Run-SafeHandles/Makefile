@@ -13,9 +13,8 @@ COMMENT=	Safe guarding for IPC::Run(3)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-MAKE_JOBS_SAFE=	yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IPC::Run::SafeHandles.3
 

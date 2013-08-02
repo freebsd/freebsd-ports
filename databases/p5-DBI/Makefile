@@ -18,7 +18,8 @@ PROXY_DESC=	Build DBI::Proxy
 
 CONFLICTS=	p5-DBI-1.3*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		dbilogstrip.1 dbiprof.1 dbiproxy.1
 MAN3=		Bundle::DBI.3 \

@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	p5-File-Remove
-# Date created:				16th March 2001
-# Whom: 				Justin Stanford <jus@security.za.net>
-#
+# Created by: Justin Stanford <jus@security.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Remove
 PORTVERSION=	1.52
@@ -18,7 +14,8 @@ COMMENT=	Perl5 module to easily removes files and directories
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Remove.3
 

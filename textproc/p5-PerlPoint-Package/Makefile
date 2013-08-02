@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PerlPoint-Package
-# Date created:		8 Jun 2004
-# Whom:	      		mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	PerlPoint-Package
 PORTVERSION=	0.45.2
@@ -19,7 +15,8 @@ COMMENT=	PerlPoint is both a presentation and a documentation toolset
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		pp2sdf.1 perlpoint.1
 MAN3=		PerlPoint::Anchors.3 \

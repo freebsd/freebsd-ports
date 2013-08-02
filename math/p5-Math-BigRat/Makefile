@@ -15,7 +15,8 @@ COMMENT=	Arbitrary big rational numbers
 BUILD_DEPENDS=	p5-Math-BigInt>=1.991:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	p5-Math-BigInt>=1.991:${PORTSDIR}/math/p5-Math-BigInt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::BigRat.3
 

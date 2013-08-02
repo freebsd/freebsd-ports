@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Unicode-String
-# Date created:				10th September 2000
-# Whom:					Ilia Chipitsine <ilia@jane.cgu.chel.su>
-#
+# Created by: Ilia Chipitsine <ilia@jane.cgu.chel.su>
 # $FreeBSD$
-#
 
 PORTNAME=	Unicode-String
 PORTVERSION=	2.09
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	These are experimental Perl5 modules to handle various Unicode issues
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Unicode::CharName.3 Unicode::String.3
 

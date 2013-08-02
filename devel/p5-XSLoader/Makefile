@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XSLoader
-# Date created:	   18 October 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XSLoader
 PORTVERSION=	0.16
@@ -18,7 +14,8 @@ COMMENT=	Dynamically load C libraries into Perl code
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XSLoader.3
 

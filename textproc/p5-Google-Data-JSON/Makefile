@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Google-Data-JSON
-# Date created:				2007/07/28
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Google-Data-JSON
 PORTVERSION=	0.1.10
@@ -29,7 +25,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Google::Data::JSON.3
 

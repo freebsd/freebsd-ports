@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WordNet-QueryData
-# Date created:				07 July 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WordNet-QueryData
 PORTVERSION=	1.49
@@ -18,7 +14,8 @@ LIB_DEPENDS=	WN.2:${PORTSDIR}/textproc/wordnet
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	WNHOME=${WNHOME}
 
 MAN3=		WordNet::QueryData.3

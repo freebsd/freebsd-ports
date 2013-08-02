@@ -18,7 +18,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Forest.3 \
 		Forest::Tree.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Email-Obfuscate
-# Date created:				2007/02/14
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Email-Obfuscate
 PORTVERSION=	1.00
@@ -17,7 +13,8 @@ COMMENT=	Obfuscates HTML email addresses that look normal
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTML::Email::Obfuscate.3
 

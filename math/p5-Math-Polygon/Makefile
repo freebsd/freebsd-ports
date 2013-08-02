@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Polygon
-# Date created:		2009-01-07
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Polygon
 PORTVERSION=	1.02
@@ -17,7 +13,8 @@ COMMENT=	Class for Maintaining Polygon Data
 BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Polygon.3 \
 		Math::Polygon::Calc.3 \

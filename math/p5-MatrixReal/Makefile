@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::MatrixReal.3 Math::Kleene.3
 

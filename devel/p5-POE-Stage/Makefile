@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Stage
-# Date created:	   09 July 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Stage
 PORTVERSION=	0.0600
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-POE>=1.351:${PORTSDIR}/devel/p5-POE \
 		p5-Attribute-Handlers>=0.93:${PORTSDIR}/devel/p5-Attribute-Handlers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Callback.3 POE::Request.3 POE::Request::Emit.3 \
 		POE::Request::Recall.3 POE::Request::Return.3 \

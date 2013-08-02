@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-OpenCA-OpenSSL
-# Date created:		2012-03-09
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	OpenCA-OpenSSL
 PORTVERSION=	2.0.29
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
 		p5-X500-DN>=0:${PORTSDIR}/net/p5-X500-DN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		OpenCA::OpenSSL.3
 

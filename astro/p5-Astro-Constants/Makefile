@@ -1,9 +1,5 @@
-# New ports collection makefile for:	astro/p5-Astro-Constants
-# Date created:				04 April 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-Constants
 PORTVERSION=	0.09
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Physical constants for use in astronomy
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Astro::Constants.3
 

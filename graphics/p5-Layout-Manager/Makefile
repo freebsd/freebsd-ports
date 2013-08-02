@@ -1,9 +1,6 @@
 # Ports collection makefile for:	Layout-Manager
-# Date created:				2008/08/30
-# Whom:	      				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Layout-Manager
 PORTVERSION=	0.34
@@ -24,7 +21,8 @@ BUILD_DEPENDS=	p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
 		p5-Graphics-Primitive>=0.34:${PORTSDIR}/graphics/p5-Graphics-Primitive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Layout::Manager.3 \
 		Layout::Manager::Absolute.3 \

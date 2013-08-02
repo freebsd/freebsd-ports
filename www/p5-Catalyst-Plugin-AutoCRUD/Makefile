@@ -31,7 +31,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::AutoCRUD.3 \
 		Catalyst::Plugin::AutoCRUD::Manual::DBICTips.3 \

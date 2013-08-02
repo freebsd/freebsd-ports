@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-BitTorrent-PeerPacket
-# Date created:		2006-08-23
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-BitTorrent-PeerPacket
 PORTVERSION=	1.2
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse/Build Peer Packets from BitTorrent
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::BitTorrent::PeerPacket.3
 

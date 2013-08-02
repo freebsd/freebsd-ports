@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-AutoXS-Header>=0.03:${PORTSDIR}/devel/p5-AutoXS-Header \
 		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Accessor::Fast::XS.3
 

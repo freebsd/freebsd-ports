@@ -1,6 +1,5 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Sysadm-Install
 PORTVERSION=	0.43
@@ -19,7 +18,8 @@ BUILD_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sysadm::Install.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Project-Gantt
-# Date created:				Thu Oct 21 16:46:26 CST 2004
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Project-Gantt
 PORTVERSION=	1.03
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
 		convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/Gantt
 
 MAN3=		Project::Gantt.3

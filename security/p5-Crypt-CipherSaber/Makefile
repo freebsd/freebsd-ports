@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CipherSaber
-# Date created:				Wed Jan  3 16:03:49 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-CipherSaber
 PORTVERSION=	1.00
@@ -16,7 +12,8 @@ COMMENT=	Perl module providing an OO interface to CipherSaber encryption
 
 BUILD_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::CipherSaber.3
 

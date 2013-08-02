@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-Method-Signatures
-# Date created:	   13 May 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Method-Signatures
 PORTVERSION=	0.44
@@ -40,7 +36,8 @@ TEST_DEPENDS=	p5-Eval-Closure>=0:${PORTSDIR}/devel/p5-Eval-Closure \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Method::Signatures.3 \
 		MooseX::Method::Signatures::Types.3 \

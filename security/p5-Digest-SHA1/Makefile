@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Digest-SHA1
-# Date created:				30 March 2001
-# Whom:					Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-#
+# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Digest-SHA1
 PORTVERSION=	2.13
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the SHA-1 Algorithm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Digest::SHA1.3
 

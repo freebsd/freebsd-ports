@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-View-HTML-Template-Compiled
-# Date created:				05 June 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-HTML-Template-Compiled
 PORTVERSION=	0.16
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-HTML-Template-Compiled>=0.74:${PORTSDIR}/www/p5-HTML-Template-
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Catalyst::Helper::View::HTML::Template::Compiled.3 \
 		Catalyst::View::HTML::Template::Compiled.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sudo
-# Date created:		2007-05-27
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sudo
 PORTVERSION=	0.32
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Term-ReadPassword>=0:${PORTSDIR}/devel/p5-Term-ReadPassword \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sudo.3
 

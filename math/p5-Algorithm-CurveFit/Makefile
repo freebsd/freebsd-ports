@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-CurveFit
-# Date created:		2006-10-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-CurveFit
 PORTVERSION=	1.05
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-MatrixReal>=0:${PORTSDIR}/math/p5-MatrixReal \
 		p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Algorithm::CurveFit.3
 

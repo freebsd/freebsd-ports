@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Compile-Tester
-# Date created:		2009-01-11
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Compile-Tester
 PORTVERSION=	0.90
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-Log-Report>=0.17:${PORTSDIR}/devel/p5-Log-Report \
 		p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Compile::Tester.3
 

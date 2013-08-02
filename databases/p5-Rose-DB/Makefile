@@ -29,7 +29,8 @@ BUILD_DEPENDS=	p5-Bit-Vector>=6.4:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Rose::DB.3 \
 		Rose::DB::Cache.3 \

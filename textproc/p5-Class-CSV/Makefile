@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	Class::CSV
-# Date created:			Dec 25, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Class-CSV
 PORTVERSION=	1.03
@@ -19,7 +16,8 @@ RUN_DEPENDS=	p5-Text-CSV_XS>=0.23:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-Class-Accessor>=0.18:${PORTSDIR}/devel/p5-Class-Accessor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::CSV.3
 

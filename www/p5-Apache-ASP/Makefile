@@ -30,7 +30,8 @@ RUN_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 #MODPERL_SUFFIX?=+mod_perl
 #.endif
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		asp-perl.1
 MAN3=		Apache::ASP.3 \

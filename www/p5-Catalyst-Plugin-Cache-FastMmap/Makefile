@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Catalyst-Plugin-Cache-FastMmap
-# Date created:				Dec 19, 2005
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Cache-FastMmap
 PORTVERSION=	0.9
@@ -23,7 +20,8 @@ BUILD_DEPENDS=	p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap \
 		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Cache::FastMmap.3
 

@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-AnyMQ>=0:${PORTSDIR}/devel/p5-AnyMQ \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
 TEST_DEPENDS=	${RUN_DEPENDS}
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AnyMQ::AMQP.3
 

@@ -17,6 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Captcha::reCAPTCHA.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

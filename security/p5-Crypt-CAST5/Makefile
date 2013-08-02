@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/p5-Crypt-CAST5
-# Date created:				05 May 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-CAST5
 PORTVERSION=	0.05
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CAST5 block cipher
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Crypt::CAST5.3
 

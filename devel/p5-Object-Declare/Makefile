@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Object-Declare
-# Date created:		2006-07-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Object-Declare
 PORTVERSION=	0.22
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declarative object constructor
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Object::Declare.3
 

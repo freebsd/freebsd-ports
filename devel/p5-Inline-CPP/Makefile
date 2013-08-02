@@ -15,7 +15,8 @@ LICENSE=	ART10
 RUN_DEPENDS=	p5-Inline>=0.53:${PORTSDIR}/devel/p5-Inline \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Inline::CPP.3 \
 		Inline::CPP::Config.3 \

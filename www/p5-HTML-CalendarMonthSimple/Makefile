@@ -13,7 +13,8 @@ COMMENT=	HTML::CalendarMonthSimple - Perl Module for Generating HTML Calendars
 BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::CalendarMonthSimple.3
 

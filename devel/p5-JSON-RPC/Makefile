@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-JSON-RPC
-# Date created:				29 Mar 2009
-# Whom:					Vadim Vatlin
-#
+# Created by: Vadim Vatlin
 # $FreeBSD$
-#
 
 PORTNAME=	JSON-RPC
 PORTVERSION=	1.03
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0:${PORTSDIR}/devel/p5-Class-Accessor-Lit
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		JSON::RPC.3 \
 		JSON::RPC::Constants.3 \

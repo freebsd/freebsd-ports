@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-JobQueue
-# Date created:		10 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-JobQueue
 PORTVERSION=	0.5710
@@ -18,7 +14,8 @@ COMMENT=	POE component to manage queues and worker pools
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::JobQueue.3
 

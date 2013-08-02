@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 
 PORTSCOUT=	skipv:31337-0.02
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Pod::Simple.3 \
 		Pod::Simple::Checker.3 \

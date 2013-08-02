@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Array::RefElem
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Array-RefElem
 PORTVERSION=	1.00

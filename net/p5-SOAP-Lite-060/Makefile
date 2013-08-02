@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SOAP-Lite
-# Date created:				2007-05-30
-# Whom:					lbr
-#
+# Created by: lbr
 # $FreeBSD$
-#
 
 PORTNAME=	SOAP-Lite
 PORTVERSION=	0.60a
@@ -27,7 +23,8 @@ CONFLICTS=	p5-SOAP-Lite-0.6[1-9]* p5-SOAP-Lite-0.[7-9]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-060
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.60
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=	--noprompt
 INSTALL_TARGET=	pure_install
 

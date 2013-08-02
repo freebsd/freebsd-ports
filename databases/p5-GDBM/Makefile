@@ -18,8 +18,8 @@ LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 EXTRACT_AFTER_ARGS=	${DISTNAME}/ext/GDBM_File ${DISTNAME}/t/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_JOBS_SAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 

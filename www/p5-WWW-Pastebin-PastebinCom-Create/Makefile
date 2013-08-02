@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Pastebin-PastebinCom-Create
-# Date created:		2009-03-10
-# Whom:			bapt <baptiste.daroussin@gmail.com>
-#
+# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Pastebin-PastebinCom-Create
 PORTVERSION=	0.004
@@ -16,7 +12,8 @@ COMMENT=	Paste to http://pastebin.com from Perl
 
 RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Pastebin::PastebinCom::Create.3
 PLIST_FILES+=	%%SITE_PERL%%/WWW/Pastebin/PastebinCom/Create.pm \

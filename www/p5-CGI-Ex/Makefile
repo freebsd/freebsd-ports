@@ -13,7 +13,8 @@ COMMENT=	CGI utility suite - makes powerful application writing fun and easy
 BUILD_DEPENDS=	p5-Template-Alloy>=1.004:${PORTSDIR}/www/p5-Template-Alloy
 RUN_DEPENDS=	p5-Template-Alloy>=1.004:${PORTSDIR}/www/p5-Template-Alloy
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::App::Constants.3 \
 		CGI::Ex::Auth.3 CGI::Ex::Conf.3 \

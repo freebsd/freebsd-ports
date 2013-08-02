@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gtk2-ImageView
-# Date created:				2008/11/27
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-ImageView
 PORTVERSION=	0.05
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 LIB_DEPENDS=	gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::ImageView.3 \
   		Gtk2::Gdk::Pixbuf::Draw::Cache.3 \

@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-Test-Class>=0.03:${PORTSDIR}/devel/p5-Test-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		${PORTNAME:S/-/::/g}.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-SimpleLinkExtor
-# Date created:			15 July 2004
-# Whom:				Andrey Chernov <ache@FreeBSD.org>
-#
+# Created by: Andrey Chernov <ache@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-SimpleLinkExtor
 PORTVERSION=	1.25
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=1.28:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		linktractor.1
 MAN3=		HTML::SimpleLinkExtor.3

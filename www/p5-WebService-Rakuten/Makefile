@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WebService-Rakuten
-# Date created:				2008/05/28
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-Rakuten
 PORTVERSION=	0.05
@@ -21,7 +17,8 @@ RUN_DEPENDS=	ja-p5-Unicode-Japanese>=0:${PORTSDIR}/japanese/p5-Unicode-Japanese 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WebService::Rakuten.3
 

@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-PostScript-Simple
-# Date created:				Feb 03, 2003
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	PostScript-Simple
 PORTVERSION=	0.07
@@ -14,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PostScript::Simple - Produce PostScript files from Perl
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PostScript::Simple.3 PostScript::Simple::EPS.3
 

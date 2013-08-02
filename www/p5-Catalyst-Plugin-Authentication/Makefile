@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Catalyst-Plugin-Authentication
-# Date created:				Dec 12, 2005
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Authentication
 PORTVERSION=	0.10019
@@ -32,7 +29,8 @@ TEST_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-S
 
 PORTSCOUT=	skipv:0.100092
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::Credential::Remote.3 \

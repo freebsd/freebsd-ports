@@ -14,7 +14,8 @@ COMMENT=	Modules to convert and parse POD (Plain Old Documentation)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 		Pod::Text::Overstrike.3 Pod::Text::Termcap.3

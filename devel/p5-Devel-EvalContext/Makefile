@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-EvalContext
-# Date created:	   			26 August 2007
-# Whom:		   			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-EvalContext
 PORTVERSION=	0.09
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::EvalContext.3
 

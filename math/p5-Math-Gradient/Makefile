@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Math-Gradient
-# Date created:				09 March 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Gradient
 PORTVERSION=	0.04
@@ -15,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculating gradients for color transitions and the like
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Math::Gradient.3
 

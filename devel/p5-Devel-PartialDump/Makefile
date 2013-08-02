@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-PartialDump
-# Date created:	   11 May 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-PartialDump
 PORTVERSION=	0.15
@@ -24,7 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::PartialDump.3
 

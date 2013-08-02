@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Sub-Override>=0:${PORTSDIR}/devel/p5-Sub-Override
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::TokeParser::Simple.3 HTML::TokeParser::Simple::Token.3 \
 		HTML::TokeParser::Simple::Token::Comment.3 \

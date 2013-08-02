@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Syntax-Highlight-Shell
-# Date created:				01 September 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Syntax-Highlight-Shell
 PORTVERSION=	0.04
@@ -17,7 +13,8 @@ COMMENT=	Syntax::Highlight::Shell - Highlight shell scripts
 BUILD_DEPENDS=	p5-Shell-Parser>=0:${PORTSDIR}/devel/p5-Shell-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Syntax::Highlight::Shell.3
 

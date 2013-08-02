@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Cookies
-# Date created:				2011-04-18
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Cookies
 PORTVERSION=	6.01
@@ -23,7 +19,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Cookies.3 \
 		HTTP::Cookies::Microsoft.3 \

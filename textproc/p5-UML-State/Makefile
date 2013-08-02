@@ -13,7 +13,8 @@ COMMENT=	Perl module that produce simple UML state diagrams
 BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		drawstatexml.pl.1 drawstate.pl.1
 MAN3=		UML::drawstate.3 \

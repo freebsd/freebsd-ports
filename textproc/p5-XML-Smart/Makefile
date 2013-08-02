@@ -19,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Devel-Cycle>=0:${PORTSDIR}/devel/p5-Devel-Cycle \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Smart.3 \
 		XML::Smart::DTD.3 \

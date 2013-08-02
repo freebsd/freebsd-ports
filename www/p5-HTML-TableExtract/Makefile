@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-TableExtract
-# Date created:				October 21th 2000
-# Whom:					Sergey Osokin aka oZZ <ports@FreeBSD.org>
-#
+# Created by: Sergey Osokin aka oZZ <ports@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-TableExtract
 PORTVERSION=	2.11
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-HTML-Element-Extended>=1.17:${PORTSDIR}/www/p5-HTML-Element-Ex
 RUN_DEPENDS=	p5-HTML-Element-Extended>=1.17:${PORTSDIR}/www/p5-HTML-Element-Extended \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::TableExtract.3
 

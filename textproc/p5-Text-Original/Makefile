@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Original
-# Date created:				15 October 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Original
 PORTVERSION=	1.5
@@ -17,7 +13,8 @@ COMMENT=	Find original, non-quoted text in a message
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::Original.3
 

@@ -13,7 +13,8 @@ COMMENT=	One shot non-blocking RFC 812 WHOIS query
 RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE \
 		p5-Net-Netmask>=1.9012:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Client::Whois.3 \
 		POE::Component::Client::Whois::IPBlks.3 \

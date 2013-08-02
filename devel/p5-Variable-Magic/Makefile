@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-Test-Kwalitee>=0:${PORTSDIR}/devel/p5-Test-Kwalitee \
 		p5-Test-Portability-Files>=0:${PORTSDIR}/devel/p5-Test-Portability-Files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Variable::Magic.3
 

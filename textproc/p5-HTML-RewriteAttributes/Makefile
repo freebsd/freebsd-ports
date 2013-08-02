@@ -15,13 +15,12 @@ BUILD_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_SAFE=  yes
-
 MAN3=	HTML::RewriteAttributes::Resources.3 \
   		HTML::RewriteAttributes::Links.3 \
 		HTML::RewriteAttributes.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/HTML/RewriteAttributes.pm \
 			%%SITE_PERL%%/HTML/RewriteAttributes/Resources.pm \

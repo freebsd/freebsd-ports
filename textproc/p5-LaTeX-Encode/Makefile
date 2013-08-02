@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode characters for LaTeX formatting
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 RUN_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
 BUILD_DEPENDS:=	${RUN_DEPENDS}

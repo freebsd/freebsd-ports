@@ -22,7 +22,8 @@ OPTIONS_DEFAULT=	ZLIB
 ZLIB_DESC=	GZIP Support
 CACHE_DESC=	Caching Support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	URI::Fetch.3 \
 	URI::Fetch::Response.3

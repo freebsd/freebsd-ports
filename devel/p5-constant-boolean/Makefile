@@ -1,9 +1,5 @@
-# New ports collection makefile for:  constant-boolean
-# Whom: 	Andrey Kostenko <andrey@kostenko.name>
-# Date created: 02 December 2009
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	constant-boolean
 PORTVERSION=	0.02
@@ -16,7 +12,8 @@ COMMENT=	Define TRUE and FALSE constants
 
 TEST_DEPENDS=	p5-Symol-Util>=0:${PORTSDIR}/devel/p5-Symbol-Util
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	constant::boolean.3
 
 .include <bsd.port.mk>

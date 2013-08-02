@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Geo::WebService::Elevation::USGS.3
 

@@ -17,7 +17,8 @@ TEST_DEPENDS=	p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		nex2text_tree.pl.1 \
 		nexplot.pl.1 \

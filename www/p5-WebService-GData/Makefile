@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-WebService-GData
-# Date created:				Oct 11, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-GData
 PORTVERSION=	0.0501
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
 		p5-Test-Mock-LWP>=0.05:${PORTSDIR}/devel/p5-Test-Mock-LWP \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	WebService::GData::Error.3 \
 	WebService::GData::ClientLogin.3 \

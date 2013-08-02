@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-RSSLite
-# Date created:		2008-07-31
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-RSSLite
 PORTVERSION=	0.15
@@ -15,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight, relaxed RSS (and XML-ish) parser
 
-PERL_CONFIGURE=	Yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	XML::RSSLite.3
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IPC-SharedCache
-# Date created:				2001/08/29
-# Whom:	      				nork@cityfujisawa.ne.jp
-#
+# Created by: nork@cityfujisawa.ne.jp
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-SharedCache
 PORTVERSION=	1.3
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IPC::SharedCache.3
 

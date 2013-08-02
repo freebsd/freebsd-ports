@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
 		HTML::Element.3 HTML::Element::traverse.3 HTML::Tree.3 \

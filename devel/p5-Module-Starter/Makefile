@@ -13,7 +13,8 @@ COMMENT=	Simple starter kit for any Perl module
 BUILD_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		module-starter.1
 MAN3=		Module::Starter.3 \

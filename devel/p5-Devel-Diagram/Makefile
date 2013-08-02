@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Discover the classes of an arbitrary suite of Perl modules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		Devel::Diagram.3 Devel::Diagram::Render::UXF20.3

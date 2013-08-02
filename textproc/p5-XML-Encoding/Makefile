@@ -13,7 +13,8 @@ COMMENT=	Perl module for parsing XML encoding maps
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		compile_encoding.1 make_encmap.1
 MAN3=		XML::Encoding.3

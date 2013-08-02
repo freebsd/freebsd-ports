@@ -27,7 +27,8 @@ SPACETRACK_DESC=	Add support for Astro::SpaceTrack
 USGS_DESC=		Add support for Geo::WebService::Elevation::USGS
 
 CONFIGURE_ARGS=	-y
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		satpass.1
 MAN3=		Astro::Coord::ECI.3 \

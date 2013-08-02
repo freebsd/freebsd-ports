@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Negotiate
-# Date created:				2011-04-15
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Negotiate
 PORTVERSION=	6.01
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Negotiate.3
 

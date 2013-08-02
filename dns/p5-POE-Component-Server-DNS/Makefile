@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.58:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-POE-Filter-DNS-TCP>=0.04:${PORTSDIR}/dns/p5-POE-Filter-DNS-TCP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Server::DNS.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-ResolveLink
-# Date created:		2006-07-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-ResolveLink
 PORTVERSION=	0.05
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::ResolveLink.3
 

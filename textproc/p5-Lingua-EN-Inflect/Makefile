@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lingua::EN::Inflect
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-EN-Inflect
 PORTVERSION=	1.89.3
@@ -15,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert singular words to their plural form
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Lingua::EN::Inflect.3
 

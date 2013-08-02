@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 OPTIONS_DEFINE=	DOCS
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DateTime.3 DateTime::Duration.3 \
 		DateTime::Infinite.3 \

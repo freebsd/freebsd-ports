@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Lingua-Han-Utils
-# Date created:		2006-09-06
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-Han-Utils
 PORTVERSION=	0.12
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Encode-Detect-CJK>=0:${PORTSDIR}/converters/p5-Encode-Detect-CJK
 RUN_DEPENDS=	p5-Encode-Detect-CJK>=0:${PORTSDIR}/converters/p5-Encode-Detect-CJK
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Lingua::Han::Utils.3
 

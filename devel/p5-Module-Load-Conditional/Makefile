@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Module-Load-Conditional
-# Date created:				15 December 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Load-Conditional
 PORTVERSION=	0.54
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Module-CoreList>=2.22:${PORTSDIR}/devel/p5-Module-CoreList
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Load::Conditional.3
 

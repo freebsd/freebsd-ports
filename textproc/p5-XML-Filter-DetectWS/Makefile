@@ -13,7 +13,8 @@ COMMENT=	PerlSAX filter that detects ignorable whitespace
 RUN_DEPENDS=	p5-XML-Filter-SAXT>=0:${PORTSDIR}/textproc/p5-XML-Filter-SAXT
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Filter::DetectWS.3
 

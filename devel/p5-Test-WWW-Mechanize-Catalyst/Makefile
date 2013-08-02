@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Test-WWW-Mechanize-Catalyst
-# Date created:				Nov 16, 2005
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-WWW-Mechanize-Catalyst
 PORTVERSION=	0.58
@@ -27,7 +24,8 @@ TEST_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-S
 		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-utf8>=0:${PORTSDIR}/devel/p5-Test-utf8
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::WWW::Mechanize::Catalyst.3
 

@@ -71,7 +71,8 @@ RUN_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionRol
 		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny \
 		p5-local-lib>=0:${PORTSDIR}/devel/p5-local-lib
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Task::Catalyst.3
 

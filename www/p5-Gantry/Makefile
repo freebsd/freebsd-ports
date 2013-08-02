@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gantry
-# Date created:		2006-09-26
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Gantry
 PORTVERSION=	3.64
@@ -52,7 +48,8 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 
 IS_INTERACTIVE=	Asks about installation paths
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 WWWDIR=		${PREFIX}/www/${PORTNAME:L}
 

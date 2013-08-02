@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Email-Abstract>=2.10:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Date.3
 

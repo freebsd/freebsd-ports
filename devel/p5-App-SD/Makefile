@@ -27,7 +27,8 @@ HIVEMINDER_DESC=	Enable huveminder sync
 TRAC_DESC=		Enable trac sync
 RT_DESC=		Enable rt sync
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	App::SD::ForeignReplica::PullEncoder.3 \
 	App::SD::Server.3 \

@@ -46,7 +46,8 @@ TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 OPTIONS_DEFINE=	MYSQL ORACLE PGSQL SQLITE
 ORACLE_DESC=	Enable Oracle backend (experimental)
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	dbicdump.1
 MAN3=	DBIx::Class::Schema::Loader.3 \

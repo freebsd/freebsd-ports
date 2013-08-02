@@ -21,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Config.3 \
 		HTTP::Headers.3 \

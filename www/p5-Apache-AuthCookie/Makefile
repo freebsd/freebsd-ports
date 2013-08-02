@@ -22,7 +22,8 @@ USE_APACHE=	22+
 CURUSER?=	`whoami`
 CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV+=	APACHE="${HTTPD}" \
 		TESTUSER="${CURUSER}" \
 		TESTGRP="${CURGRP}" \

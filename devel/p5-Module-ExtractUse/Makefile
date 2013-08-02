@@ -19,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Module::ExtractUse.3 Module::ExtractUse::Grammar.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-Role-Parameterized
-# Date created:	   18 Aug 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Role-Parameterized
 PORTVERSION=	1.00
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Moose>=2.0300:${PORTSDIR}/devel/p5-Moose
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Role::Parameterized.3 \
 		MooseX::Role::Parameterized::Extending.3 \

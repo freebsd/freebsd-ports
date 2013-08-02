@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Authen-Simple-SMB
-# Date created:				22 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Simple-SMB
 PORTVERSION=	0.1
@@ -20,6 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Authen::Simple::SMB.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

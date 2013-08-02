@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Carp-Clan
-# Date created:				02 November 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Carp-Clan
 PORTVERSION=	6.04
@@ -16,7 +12,8 @@ COMMENT=	Report errors from perspective of caller of a "clan" of modules
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Carp::Clan.3
 

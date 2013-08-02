@@ -15,7 +15,8 @@ COMMENT=	Manipulating Flash movie (SWF) files
 RUN_DEPENDS=	p5-Data-TemporaryBag>=0:${PORTSDIR}/devel/p5-Data-TemporaryBag
 BUILD_DEPENDS=	p5-Data-TemporaryBag>=0:${PORTSDIR}/devel/p5-Data-TemporaryBag
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		SWF::BinStream.3 SWF::BinStream::Codec.3 \

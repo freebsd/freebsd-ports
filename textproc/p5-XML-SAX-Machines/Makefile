@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::SAX::Machines
-# Date created:		28 Jan 2002
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SAX-Machines
 PORTVERSION=	0.42
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 		XML::Filter::Merger.3 XML::Filter::Tee.3 XML::SAX::ByRecord.3 \

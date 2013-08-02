@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Crypt-OpenSSL-Random
-# Date created:				2001/08/27
-# Whom:					nork@cityfujisawa.ne.jp
-#
+# Created by: nork@cityfujisawa.ne.jp
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenSSL-Random
 PORTVERSION=	0.04
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the OpenSSL pseudo-random number generator
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_OPENSSL=	yes
 MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 

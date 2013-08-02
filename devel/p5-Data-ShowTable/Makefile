@@ -12,7 +12,8 @@ COMMENT=	Perl5 module to pretty-print arrays of data
 
 LICENSE=	GPLv2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		showtable.1
 MAN3=		Data::ShowTable.3

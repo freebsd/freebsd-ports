@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-FromANSI
-# Date created:		2006-09-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-FromANSI
 PORTVERSION=	2.03
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		ansi2html.1
 MAN3=		HTML::FromANSI.3

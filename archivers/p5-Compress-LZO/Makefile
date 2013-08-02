@@ -14,7 +14,8 @@ COMMENT=	Interface to the LZO compression library
 LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
 
 CFLAGS+=	-I${LOCALBASE}/include/lzo
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile.PL

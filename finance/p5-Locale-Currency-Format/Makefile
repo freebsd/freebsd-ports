@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Locale-Currency-Format
-# Date Created:				27 Dec 2005
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Locale-Currency-Format
 PORTVERSION=	1.30
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl functions for formatting monetary values
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1

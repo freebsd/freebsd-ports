@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Object-Event>=0.7:${PORTSDIR}/devel/p5-Object-Event
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::XMPP.3 \
 	AnyEvent::XMPP::Connection.3 \

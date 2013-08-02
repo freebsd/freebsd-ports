@@ -18,7 +18,8 @@ LICENSE=	AL2
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		zxid:${PORTSDIR}/security/zxid
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME}/Net
 
 MAN3=		Net::SAML.3

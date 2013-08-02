@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=1.38:${PORTSDIR}/security/p5-IO-Socket-SSL
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::HTTP.3 \
 		Net::HTTPS.3 \

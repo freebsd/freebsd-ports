@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-BaseDSN
-# Date created:	   21 july 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-BaseDSN
 PORTVERSION=	1.22
@@ -18,7 +14,8 @@ COMMENT=	DSN sensitive base class
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Class::DBI::BaseDSN.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-RTP
-# Date created:		2007-03-10
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-RTP
 PORTVERSION=	0.09
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-IO-Socket-Multicast6>=0.02:${PORTSDIR}/net/p5-IO-Socket-Multicas
 		p5-IO-Socket-INET6>=1.20:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		rtpdump.pl.1 \
 		rtplosslog.pl.1 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Slurp
-# Date created:				October 17th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Slurp
 PORTVERSION=	9999.19
@@ -18,7 +14,8 @@ COMMENT=	Perl5 module for single call read & write file routines
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Slurp.3
 

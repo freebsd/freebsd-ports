@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Context-Preserve
-# Date created:	   12 May 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Context-Preserve
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ COMMENT=	Run code after a subroutine call, preserving the context the subroutine
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Context::Preserve.3
 

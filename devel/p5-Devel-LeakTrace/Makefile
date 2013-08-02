@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-LeakTrace
-# Date created:	   19 January 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-LeakTrace
 PORTVERSION=	0.05
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Indicate where leaked variables are coming from
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 USE_GNOME=	glib12
 
 MAN3=		Devel::LeakTrace.3

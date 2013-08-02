@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Component
-# Date created:	Fri Apr 11 16:34:55 2008
-# Whom:		Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Component
 PORTVERSION=	0.17
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Carp-Clan>0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	Yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Component::Component::Plaggerize.3 \
 	Class::Component.3 \

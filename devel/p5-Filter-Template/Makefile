@@ -15,6 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Filter::Template.3 Filter::Template::UseBytes.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

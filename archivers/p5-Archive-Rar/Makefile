@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Archive-Rar
-# Date created:		2009-11-02
-# Whom:			Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	Archive-Rar
 PORTVERSION=	2.02
@@ -17,7 +13,8 @@ COMMENT=	Interface with the 'rar' command
 BUILD_DEPENDS=	rar>=0:${PORTSDIR}/archivers/rar \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Archive::Rar.3 \
 		Archive::Rar::Passthrough.3
 

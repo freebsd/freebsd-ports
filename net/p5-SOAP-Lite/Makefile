@@ -28,7 +28,8 @@ CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
 CONFIGURE_ARGS=	--noprompt
 INSTALL_TARGET=	pure_install
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1 stubmaker.pl.1
 MAN3=		Apache::SOAP.3 \

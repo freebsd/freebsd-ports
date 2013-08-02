@@ -1,9 +1,5 @@
-# New ports collection makefile for:	WWW-Babelfish
-# Date created:				Wed Jan  3 08:00:30 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Babelfish
 PORTVERSION=	0.16
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Babelfish.3
 

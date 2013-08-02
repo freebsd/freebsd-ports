@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-System2
-# Date created:				12 October 2001
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	System2
 PORTVERSION=	0.84
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	System2 - like system(), but with STDERR available as well
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		System2.3
 

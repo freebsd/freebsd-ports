@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Log-Dispatch-Configurator-YAML
-# Date created:				28 May 2008
-# Whom:					Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	DBICx-TxnInsert
 PORTVERSION=	0.02
@@ -23,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Compile>=0.08:${PORTSDIR}/devel/p5-Test-Compile \
 		p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBICx::TxnInsert.3
 

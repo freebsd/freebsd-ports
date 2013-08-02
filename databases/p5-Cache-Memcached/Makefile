@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Cache-Memcached
-# Date created:		2004-04-15
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Cache-Memcached
 PORTVERSION=	1.30
@@ -21,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-String-CRC32>0:${PORTSDIR}/devel/p5-String-CRC32
 RUN_DEPENDS=	p5-String-CRC32>0:${PORTSDIR}/devel/p5-String-CRC32
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Cache::Memcached.3
 

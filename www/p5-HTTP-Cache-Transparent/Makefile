@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Cache-Transparent
-# Date created:		2005-10-14
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Cache-Transparent
 PORTVERSION=	1.1
@@ -17,7 +13,8 @@ COMMENT=	Implementation of http get that keeps a local cache of fetched pages
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		HTTP::Cache::Transparent.3
 
 .include <bsd.port.mk>

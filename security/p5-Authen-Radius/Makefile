@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Data-HexDump>=0.02:${PORTSDIR}/devel/p5-Data-HexDump
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Authen::Radius.3
 
 RADDBFILES=	dictionary \

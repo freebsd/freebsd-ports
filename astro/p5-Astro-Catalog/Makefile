@@ -28,7 +28,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::IO::ASCII.3 \

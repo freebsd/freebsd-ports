@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-Epoch
-# Date created:	   2 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-Epoch
 PORTVERSION=	0.13
@@ -21,7 +17,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PORTSCOUT=	skipv:0.801
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DateTime::Format::Epoch.3 \
 		DateTime::Format::Epoch::ActiveDirectory.3 \

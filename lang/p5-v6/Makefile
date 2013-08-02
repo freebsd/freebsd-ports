@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Data-Bind>=0.28:${PORTSDIR}/devel/p5-Data-Bind \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	v6.3 \
 	Pugs::Compiler::Perl6.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-NIS-Listgroup
-# Date created:		2006-09-01
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-NIS-Listgroup
 PORTVERSION=	1.0.0
@@ -17,7 +13,8 @@ COMMENT=	Lists hosts/users in a netgroup group
 
 RUN_DEPENDS=	p5-Net-NIS>0:${PORTSDIR}/net/p5-Net-NIS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		listgroup.1
 MAN3=		Net::NIS::Listgroup.3

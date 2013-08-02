@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MooseX-Role-WithOverloading
-# Date created:	   			09 Dec, 2009
-# Whom:		   			Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Role-WithOverloading
 PORTVERSION=	0.13
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Moose>=1.15:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Role::WithOverloading.3 \
 		MooseX::Role::WithOverloading::Meta::Role.3 \

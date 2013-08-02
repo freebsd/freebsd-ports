@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Lingua-StopWords
-# Date created:				13 October 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-StopWords
 PORTVERSION=	0.09
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stop words for several languages
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Lingua::StopWords.3
 

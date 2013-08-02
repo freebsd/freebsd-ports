@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FCGI
-# Date created:				October 27th 1999
-# Whom:	      				Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	FCGI
 PORTVERSION=	0.74
@@ -22,7 +18,8 @@ PURE_PERL_DESC=	Build pure Perl version (experimental)
 #LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 #CONFIGURE_ARGS+=	--use-installed=${LOCALBASE}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		FCGI.3
 

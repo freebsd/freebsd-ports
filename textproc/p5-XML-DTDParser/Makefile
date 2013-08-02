@@ -1,7 +1,4 @@
-# New ports collection makefile for:	textproc/p5-XML-DTDParser
-# Date created:				Oct 13th 2003
-# Whom:					clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
 
 PORTNAME=	XML-DTDParser
@@ -13,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing XML DTD strings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::DTDParser.3
 

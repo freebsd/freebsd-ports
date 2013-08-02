@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::Filter::XInclude
-# Date created:		28 Jan 2002
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Filter-XInclude
 PORTVERSION=	1.0
@@ -22,7 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Filter::XInclude.3
 

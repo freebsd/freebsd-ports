@@ -13,7 +13,8 @@ COMMENT=	Extensible database with SQL and DBI
 RUN_DEPENDS=	p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		gendba.pl.1 genexp.pl.1
 MAN3=		Genezzo.3 Genezzo::Block::RDBArray.3 \

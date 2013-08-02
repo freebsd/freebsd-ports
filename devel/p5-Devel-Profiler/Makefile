@@ -13,7 +13,8 @@ COMMENT=	Perl profiler compatible with dprofpp
 BUILD_DEPENDS=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::Profiler.3 Devel::Profiler::Apache.3 \
 		Devel::Profiler::Test.3

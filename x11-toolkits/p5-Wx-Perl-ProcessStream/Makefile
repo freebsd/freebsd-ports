@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-Wx>=0.50:${PORTSDIR}/x11-toolkits/p5-Wx
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Wx::Perl::ProcessStream.3
 

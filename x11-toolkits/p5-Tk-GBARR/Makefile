@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tk-GBARR
-# Date created:				May 28 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	Tk-GBARR
 PORTVERSION=	2.08
@@ -18,7 +14,8 @@ COMMENT=	Some collection of Tk Widgets
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tk::Cloth.3 \
 		Tk::FireButton.3 \

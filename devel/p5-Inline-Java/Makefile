@@ -20,7 +20,8 @@ JAVA_OS=        native
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	J2SDK=${JAVA_HOME} </dev/null
 
 MAN3=		Inline::Java.3 \

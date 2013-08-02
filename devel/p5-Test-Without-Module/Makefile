@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Without-Module
-# Date created:		2011-12-11
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Without-Module
 PORTVERSION=	0.17
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test fallback behaviour in absence of modules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Without::Module.3
 

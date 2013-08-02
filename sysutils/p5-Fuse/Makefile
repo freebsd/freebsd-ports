@@ -11,10 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write filesystems in Perl using FUSE
 
-PERL_CONFIGURE=	yes
+USES=		perl5 fuse pkgconfig
+USE_PERL5=	configure
 PORTSCOUT=	skipv:0.09_4
-
-USES=		fuse pkgconfig
 
 MAN3=		Fuse.3
 

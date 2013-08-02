@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-HTTP-Request-AsCGI
-# Date created:			Nov 16, 2005
-# Whom:				Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Request-AsCGI
 PORTVERSION=	1.2
@@ -20,7 +17,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Request::AsCGI.3
 

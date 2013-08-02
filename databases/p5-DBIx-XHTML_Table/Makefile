@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBIx::XHTML_Table
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-XHTML_Table
 PORTVERSION=	1.36
@@ -17,7 +13,8 @@ COMMENT=	Create XHTML tables from SQL queries
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::XHTML_Table.3
 

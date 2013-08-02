@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Next Generation of Text::PDF::API2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PDF::API3::Compat::API2::Basic::TTF::GDEF.3 \
 	PDF::API3::Compat::API2::Resource::XObject::Form::BarCode::codabar.3 \

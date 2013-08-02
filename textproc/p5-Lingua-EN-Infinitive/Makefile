@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lingua::EN::Infinitive
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-EN-Infinitive
 PORTVERSION=	1.11
@@ -15,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the infinitive form of a conjugated word
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Lingua::EN::Infinitive.3
 

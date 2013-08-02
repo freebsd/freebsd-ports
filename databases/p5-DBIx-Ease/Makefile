@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Ease
-# Date created:	   21 july 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Ease
 PORTVERSION=	0.07
@@ -19,7 +15,8 @@ COMMENT=	Less-code DBI interactions for all drivers
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Ease.3
 

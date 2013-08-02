@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Bio-Das-Lite
-# Date created:				26 Feb, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-Das-Lite
 PORTVERSION=	2.11
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>0.8:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Bio::Das::Lite.3
 

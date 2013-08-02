@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Mechanize-Pluggable
-# Date created:				04 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Mechanize-Pluggable
 PORTVERSION=	1.12
@@ -26,7 +22,8 @@ BUILD_DEPENDS=	p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Streamer 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.2:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Mechanize::Pluggable.3 \
 		WWW::Mechanize::Pluggable::Design.3 \

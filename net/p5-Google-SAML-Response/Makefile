@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Google-SAML-Response
-# Date created:		2009-08-05
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Google-SAML-Response
 PORTVERSION=	0.12
@@ -26,7 +22,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Google::SAML::Response.3
 
