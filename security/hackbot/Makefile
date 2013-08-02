@@ -6,7 +6,7 @@ PORTNAME=	hackbot
 PORTVERSION=	2.21
 CATEGORIES=	security
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
-		http://ws.obit.nl/hackbot/
+		http://hackbot.stream-portal.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@FreeBSD.org
