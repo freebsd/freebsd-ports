@@ -575,7 +575,6 @@
     SUBDIR += qmailmrtg7
     SUBDIR += qmhandle
     SUBDIR += qmqtool
-    SUBDIR += qmrtg
     SUBDIR += qpopper
     SUBDIR += qscan
     SUBDIR += qsf

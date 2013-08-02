@@ -4831,3 +4831,6 @@ net/ns2|net/ns|2013-07-29|Duplicate ports merged
 x11-toolkits/libbonobouimm||2013-07-31|Not supported upstream anymore
 devel/libbonobomm||2013-07-31|Not supported upstream anymore
 devel/gio-fam-backend|devel/glib20|2013-07-31|Obsoleted by new functionality in glib20
+mail/qmrtg||2013-08-02|Has expired: lacks an upstream source
+www/mediawiki118||2013-08-02|Has expired: Unmaintained upstream
+sysutils/googlog||2013-08-02|Has expired: no upstream project
