@@ -13,7 +13,8 @@ COMMENT=	Perl extension for using the cfitsio library
 LIB_DEPENDS=	cfitsio:${PORTSDIR}/astro/cfitsio
 
 CONFIGURE_ENV=	CFITSIO=${LOCALBASE}
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Astro::FITS::CFITSIO.3
 

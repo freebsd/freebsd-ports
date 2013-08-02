@@ -1,9 +1,5 @@
-# Ports collection makefile for:	X11-GUITest
-# Date created:			Oct 28, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	X11-GUITest
 PORTVERSION=	0.25
@@ -16,7 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides GUI testing/interaction facilities
 
 USE_XORG=	x11 xt xext xtst
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		X11::GUITest.3
 

@@ -14,8 +14,8 @@ COMMENT=	Quick start up utility for applications on an X display
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake
-USE_PERL5_BUILD=yes
+USES=		imake perl5
+USE_PERL5=	build
 USE_XORG=	xaw
 MAKE_JOBS_SAFE=	yes
 
