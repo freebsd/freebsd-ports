@@ -10,7 +10,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for communicating with the Lego RCX brick via the IR tower
 
-PERL_CONFIGURE=	yes
 USES=		perl5
 USE_PERL5=	configure
 

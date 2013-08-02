@@ -70,8 +70,8 @@ USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 USE_DISPLAY=	yes
-PERL_CONFIGURE=	yes
-USES=		gettext
+USES=		perl5 gettext
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	WX_VERSION="${WX_VERSION}"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Iterator-AlzaboWrapperCursor
-# Date created:		2 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Iterator-AlzaboWrapperCursor
 DISTVERSION=	0.01
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Class-AlzaboWrapper>=0:${PORTSDIR}/devel/p5-Class-AlzaboWrapper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		${PORTNAME:S/-/::/g}.3
 

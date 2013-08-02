@@ -20,8 +20,8 @@ RUN_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_GNOME=	libgtkhtml
-USES=		pkgconfig
-PERL_CONFIGURE=	yes
+USES=		pkgconfig perl5
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Data-Taxonomy-Tags
-# Date created:				26 June 2005
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Taxonomy-Tags
 PORTVERSION=	0.05
@@ -16,6 +12,7 @@ COMMENT=	Represents a set of tags for any item
 
 MAN3=		Data::Taxonomy::Tags.3 Data::Taxonomy::Tags::Tag.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

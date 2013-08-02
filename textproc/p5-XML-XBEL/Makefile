@@ -1,9 +1,5 @@
-# New ports collection makefile for: p5-XML-XBEL
-# Date created: August 03, 2004
-# Whom: Aaron Straup Cope <ascope@cpan.org>
-#
+# Created by: Aaron Straup Cope <ascope@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XBEL
 PORTVERSION=	1.4
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	XML::XBEL.3 \
 	XML::XBEL::Alias.3 \
