@@ -431,7 +431,6 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mawstats
-    SUBDIR += mediawiki118
     SUBDIR += mediawiki119
     SUBDIR += mediawiki120
     SUBDIR += mergelog

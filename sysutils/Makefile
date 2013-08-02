@@ -342,7 +342,6 @@
     SUBDIR += gnome_subr
     SUBDIR += gnomebaker
     SUBDIR += goaccess
-    SUBDIR += googlog
     SUBDIR += gosa
     SUBDIR += gpkgdep
     SUBDIR += gpte

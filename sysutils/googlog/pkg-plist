@@ -1,7 +1,0 @@
-%%WWWDIR%%/GoogLog_cgi.pl
-%%WWWDIR%%/googlog.ini
-%%WWWDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-@dirrmtry %%WWWDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
