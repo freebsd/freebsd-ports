@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-LEGO-RCX
-# Date created:				July 05 2000
-# Whom:	      				Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	LEGO-RCX
 PORTVERSION=	1.01
@@ -15,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for communicating with the Lego RCX brick via the IR tower
 
 PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		LEGO::RCX.3
 

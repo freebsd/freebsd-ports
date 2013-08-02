@@ -1,9 +1,5 @@
-# New ports collection makefile for:	umodunpack
-# Date created:				19 October 2006
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	umodunpack
 PORTVERSION=	0.4
@@ -16,7 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack umod files for Unreal and/or Unreal Tournament
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/${DISTNAME}

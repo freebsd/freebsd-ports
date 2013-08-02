@@ -11,6 +11,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module for handling arrays using IntSpan techniques
 
 PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Array::IntSpan.3 Array::IntSpan::Fields.3
 
