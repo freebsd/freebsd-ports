@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/paramiko/__init__.py
 %%PYTHON_SITELIBDIR%%/paramiko/__init__.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/__init__.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/_winapi.py
+%%PYTHON_SITELIBDIR%%/paramiko/_winapi.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/_winapi.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/agent.py
 %%PYTHON_SITELIBDIR%%/paramiko/agent.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/agent.pyo
