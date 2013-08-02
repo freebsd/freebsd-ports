@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	trytond
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.8
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
-MAINTAINER=	matthias@petermann.it
+MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Server)
 
 LICENSE=	GPLv3
@@ -16,7 +16,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}Genshi>0.5.1:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}relatorio>=0.2.0:${PORTSDIR}/print/py-relatorio \
-		${PYTHON_PKGNAMEPREFIX}polib>=0.7.0:${PORTSDIR}/devel/py-polib
+		${PYTHON_PKGNAMEPREFIX}polib>=0.7.0:${PORTSDIR}/devel/py-polib \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	trytond-2.[68].*
