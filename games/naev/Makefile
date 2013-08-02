@@ -9,17 +9,18 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	2D action/rpg space game
+COMMENT=	2D action/RPG space game
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/ndata-${PORTVERSION}:${PORTSDIR}/games/naev-data
 
+USES=		gmake
 USE_AUTOTOOLS=	automake:env aclocal:env autoconf:env
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GL=		gl
-USE_GMAKE=	yes
+USE_GL=		glu
 USE_GNOME=	libxml2
 USE_SDL=	sdl image
 
@@ -53,10 +54,12 @@ CONFIGURE_ARGS+=	--with-sdlmixer=no
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
