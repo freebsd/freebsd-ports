@@ -16,6 +16,7 @@ OPTIONS_DEFINE=	TEST SAMPLES
 SAMPLES_DESC=	Build sample programs
 
 CONFIGURE_ARGS= --config=FreeBSD
+USES=		gmake
 
 .include <bsd.port.options.mk>
 
@@ -28,8 +29,10 @@ CONFIGURE_ARGS+= --no-samples
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/ =/ ?=/g" ${WRKSRC}/build/config/FreeBSD
 
 .include <bsd.port.mk>
