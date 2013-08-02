@@ -10,38 +10,45 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stucchi@gufi.org
 COMMENT=	Software modem that connects to IAX channel
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
-BROKEN=		Does not build
+USES=		perl5
+USE_PERL5=	patch
+HAS_CONFIGURE=	yes
+USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
 
-MAN1=		iaxmodem.1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-SUB_FILES=	pkg-message
-USE_RC_SUBR=	iaxmodem
-GNU_CONFIGURE=	yes
+PLIST_FILES=	sbin/${PORTNAME}
+PORTDOCS=	CHANGES FAQ README
+PORTEXAMPLES=	config.ttyIAX iaxmodem-cfg.ttyIAX
+MAN1=		${PORTNAME}.1
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local/etc|${PREFIX}/etc|g" ${WRKSRC}/iaxmodem.1
-	@${REINPLACE_CMD} -e "s|/etc/iaxmodem|${PREFIX}/etc/iaxmodem|g" ${WRKSRC}/iaxmodem.c
+	@${PERL} -0pi.bak -e "s|for ac_header in tgmath\.h.*?done||s" \
+		${WRKSRC}/lib/spandsp/configure
+	@${REINPLACE_CMD} -e "s|/etc/iaxmodem|${PREFIX}&|" \
+		${WRKSRC}/iaxmodem.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${PREFIX}/sbin/ && \
-	${MKDIR} ${PREFIX}/etc/iaxmodem && \
-	${MKDIR} /var/log/iaxmodem && \
-	${MKDIR} ${EXAMPLESDIR} && \
-	${INSTALL_DATA} ${WRKSRC}/config.ttyIAX ${EXAMPLESDIR}/ && \
-	${INSTALL_DATA} ${WRKSRC}/iaxmodem-cfg.ttyIAX ${EXAMPLESDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/iaxmodem.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} && \
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/TODO ${WRKSRC}/FAQ ${WRKSRC}/CHANGES ${DOCSDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}
 .endif
-
-post-install:
-.if !defined(BATCH)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-.endif
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

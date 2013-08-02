@@ -1,6 +1,5 @@
-IAXmodem is a software modem written in C that uses
-an IAX channel (commonly provided by an Asterisk PBX
-system) instead of a traditional phone line and uses
-a DSP library instead of DSP hardware chipsets.
+IAXmodem is a software modem written in C that uses an IAX channel (commonly
+provided by an Asterisk PBX system) instead of a traditional phone line and
+uses a DSP library instead of DSP hardware chipsets.
 
-WWW: http://sourceforge.net/projects/iaxmodem
+WWW: http://iaxmodem.sourceforge.net/

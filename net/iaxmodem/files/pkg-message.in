@@ -1,15 +1,13 @@
-To use iaxmodem with Hylafax:
+To use IAXmodem with Hylafax:
 
 - Install and configure Hylafax
 
-- Take a look to %%EXAMPLESDIR%%/config.ttyIAX to configure the "virtual" modem
+- Take a look at %%EXAMPLESDIR%%/config.ttyIAX on how to
+  configure the "virtual" modem
 
-- For accepting incoming FAX/data calls, modify /etc/ttys as below
-	and send SIGHUP to init process:
+- For accepting incoming FAX/data calls, modify /etc/ttys as shown
+  below and send SIGHUP to init process:
 
->ttyIAX  "%%PREFIX%%/sbin/faxgetty"  dialup  on secure
+	ttyIAX	"%%PREFIX%%/sbin/faxgetty"	dialup	on  secure
 
-Additional Documentation:
-%%DOCSDIR%%
-%%EXAMPLESDIR%%
-http://www.voip-info.org/wiki/view/Asterisk+IAXmodem
+Consult documentation for additional information.
