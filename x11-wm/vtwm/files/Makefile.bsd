@@ -5,7 +5,7 @@ MANDIR?=		$(PREFIX)/man/man
 
 NO_MANCOMPRESS?=	yes
 MAN1=			vtwm.1
-			
+
 SOUND?=			yes
 
 LN=			ln -f
@@ -36,7 +36,7 @@ FILES=	system.vtwmrc
 FILESDIR= $(ETCDIR)
 FILESMODE= 644
 
-deftwmrc.c:	vtwm.man system.vtwmrc
+deftwmrc.c:	system.vtwmrc
 	echo '/* ' >$@
 	echo ' * This file is generated automatically from the default' >>$@
 	echo ' * VTWM bindings file system.vtwmrc.'$(SYS_VTWMRC_LOOK)' by the VTWM Makefile.' >>$@
@@ -56,8 +56,8 @@ lastmake.c:
 	echo '    "Build:  '`date`'",' >>$@
 	echo '    "" };' >>$@
 
-vtwm.man:
-	$(LN) doc/$@ vtwm.1
+$(MAN1):
+	$(LN) doc/vtwm.man $@
 
 system.vtwmrc:
 	$(LN) $@.$(SYS_VTWMRC_LOOK) $@
