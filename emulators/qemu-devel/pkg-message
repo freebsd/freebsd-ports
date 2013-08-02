@@ -150,7 +150,7 @@ processing error - resetting ehci HC
   otherwise getting used.  (Not that you should run malicious guests anyway,
   but this eleminates at least a known attack vector.)
 
-- qemu now has improved physical cdrom support, but still there still is at
+- qemu now has improved physical cdrom support, but still there is at
   least one known problem: you need to have the guest eject the disc if you
   want to change it/take it out, or otherwise the guest may continue using
   state (like size) of the old disc.  (You can also do like `change ide1-cd0

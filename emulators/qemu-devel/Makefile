@@ -19,7 +19,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
 USE_PERL5_BUILD=	yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	-2.7
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
@@ -213,6 +213,8 @@ CONFIGURE_ENV+=	LD=${LOCALBASE}/bin/ld
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
+
+CONFIGURE_ARGS+= --python=${PYTHON_CMD}
 
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
