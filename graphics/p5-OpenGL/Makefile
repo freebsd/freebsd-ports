@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-OpenGL
 # Created by: ijliao
 # $FreeBSD$
 
@@ -20,8 +18,7 @@ MANUAL_PACKAGE_BUILD=	fails to start X server on pointyhat
 
 CONFIGURE_ARGS=	interface=GLUT
 USES=		perl5
-USE_PERL5=	configure
-USE_DISPLAY=	yes
+USE_PERL5=	configure display:install
 USE_GL=		glut
 
 MAN3=		Array.3 \
