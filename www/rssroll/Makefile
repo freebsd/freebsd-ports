@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rssroll
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://chaosophia.net/downloads/rssroll/ \
 		http://ns1.chaosophia.net/downloads/rssroll/
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	RSS collector in C
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xml2:${PORTSDIR}/textproc/libxml2 \
