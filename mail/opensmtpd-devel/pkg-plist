@@ -1,5 +1,3 @@
-bin/mailq
-bin/newaliases
 etc/mail/smtpd.conf.sample
 libexec/mail.local
 libexec/opensmtpd/makemap
@@ -18,7 +16,6 @@ libexec/opensmtpd/filter-dnsbl
 libexec/opensmtpd/filter-monkey
 libexec/opensmtpd/filter-stub
 libexec/opensmtpd/filter-trace
-sbin/makemap
 sbin/smtpctl
 sbin/smtpd
 @dirrm libexec/opensmtpd
