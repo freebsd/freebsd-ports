@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 PORTSCOUT=	limit:^3
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	spread
 USE_LDCONFIG=	yes
 
@@ -45,10 +45,8 @@ MAN3=		libsp.3 SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 \
 
 .include <bsd.port.pre.mk>
 
-USES=		perl5
-USE_PERL5=	configure
-USES=		perl5
-USE_PERL5=	configure
+# bsd.port.mk doesn't allow us to use GNU_CONFIGURE and PERL_CONFIGURE together.
+PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 
 _MANPAGES+=	${PREFIX}/lib/perl5/${PERL_VER}/man/man3/Spread.3
@@ -59,8 +57,7 @@ post-configure:
 
 post-build:
 	@cd ${WRKSRC}/perl/Spread && \
-USES=		perl5
-USE_PERL5=	configure
+		${SETENV} ${CONFIGURE_ENV} ${PERL5} ./Makefile.PL ${PERL_CONFIGURE_ARGS}
 	@cd ${WRKSRC}/perl/Spread && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 	@cd ${WRKSRC}/perl/Spread && ${MAKE}
