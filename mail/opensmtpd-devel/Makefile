@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201307221453
+PORTVERSION=	201307311702
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -25,14 +25,15 @@ OPTIONS_DEFINE=	PAM SQLITE MYSQL PGSQL LDAP
 OPTIONS_DEFAULT=	PAM
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/
+CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/ \
+		--with-mailwrapper
 
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-install pkg-deinstall
 
 CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-[0-9]*
 
-MAN8=		makemap.8 newaliases.8 smtpctl.8 smtpd.8
+MAN8=		makemap.8 newaliases.8 sendmail.8 smtpctl.8 smtpd.8
 MAN5=		smtpd.conf.5 aliases.5 forward.5
 
 USERS=		_smtpd _smtpq
