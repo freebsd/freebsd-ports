@@ -6,7 +6,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	28.0.1500.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -130,10 +130,13 @@ GYP_DEFINES+=	disable_sse2=1
 
 .if ${PORT_OPTIONS:MCLANG}
 .if ${OSVERSION} < 902000
-BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
-.endif
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+CC=		${LOCALBASE}/bin/clang
+CXX=		${LOCALBASE}/bin/clang++
+.else
 CC=		clang
 CXX=		clang++
+.endif
 GYP_DEFINES+=	clang=1
 .else
 USE_GCC?=	4.6+
