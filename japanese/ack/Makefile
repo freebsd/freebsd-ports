@@ -15,6 +15,7 @@ COMMENT=	Kanji code converter
 CONFLICTS_INSTALL=	p5-ack-[0-9]* ack-[0-9]*
 
 ALL_TARGET=	ack
+CFLAGS+=	-Wno-error=return-type
 
 MANLANG=	ja
 MAN1=		ack.1
