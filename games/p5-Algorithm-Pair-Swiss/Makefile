@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-Pair-Swiss
-# Date created:				12 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-Pair-Swiss
 PORTVERSION=	0.14
@@ -18,6 +14,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 MAN3=	Algorithm::Pair::Swiss.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

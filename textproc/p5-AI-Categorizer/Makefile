@@ -1,9 +1,5 @@
-# New ports collection makefile for:	AI-Categorizer
-# Date created:				19 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AI-Categorizer
 PORTVERSION=	0.09
@@ -48,6 +44,7 @@ MAN3=	AI::Categorizer.3 \
 	AI::Categorizer::Learner::Weka.3 \
 	AI::Categorizer::Storable.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

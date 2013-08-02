@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Server-Simple-Static>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	CGI::Application::Dispatch::Server.3
 

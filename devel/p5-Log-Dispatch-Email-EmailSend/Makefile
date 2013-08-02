@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Log-Dispatch-Email-EmailSend
-# Date created:		2 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Dispatch-Email-EmailSend
 DISTVERSION=	0.03
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Email-Send>=2.0:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		${PORTNAME:S/-/::/g}.3
 

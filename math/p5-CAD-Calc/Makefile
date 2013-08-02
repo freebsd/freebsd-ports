@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CAD-Calc
-# Date created:				21 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CAD-Calc
 PORTVERSION=	0.27
@@ -22,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	CAD::Calc.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CGI-Application-Plugin-AnyTemplate
-# Date created:				14 September 2005
-# Whom:					George Hartzell <hartzell@alerce.com>
-#
+# Created by: George Hartzell <hartzell@alerce.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-AnyTemplate
 PORTVERSION=	0.18
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-CGI-Application-Plugin-Forward>=0:${PORTSDIR}/www/p5-CGI-Appli
 		p5-Clone>=0.23:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	CGI::Application::Plugin::AnyTemplate.3 \
 	CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplate.3 \

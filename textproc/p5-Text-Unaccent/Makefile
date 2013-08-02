@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Unaccent
-# Date created:				25 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Unaccent
 PORTVERSION=	1.08
@@ -17,8 +13,8 @@ COMMENT=	Remove accents from a string
 
 MAN3=	Text::Unaccent.3
 
-USES=		iconv
-PERL_CONFIGURE=	yes
+USES=		iconv perl5
+USE_PERL5=	configure
 CFLAGS+=	-DICONV_CONST=const
 
 .include <bsd.port.mk>

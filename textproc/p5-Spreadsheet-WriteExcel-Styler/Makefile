@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Styles for formatting Spreadsheet::WriteExcel
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Spreadsheet::WriteExcel::Styler.3
 
