@@ -1,0 +1,26 @@
+--- Makefile.orig	2013-01-01 14:00:00.000000000 +0800
++++ Makefile	2013-08-02 18:27:07.000000000 +0800
+@@ -5,15 +5,17 @@
+ CFLAGS+= -Wall -Werror
+ BUILD=   v1.02
+ 
+-all: prep compile
++all: topic
+ 
+-prep: ./bin2c.c ./syntax.txt ./markup.txt ./license.txt
++bin2c: bin2c.c
+ 	$(CC) $(CFLAGS) ./bin2c.c -o ./bin2c
+-	./bin2c -z ./syntax.txt ./syntax.c
+-	./bin2c -z ./markup.txt ./markup.c
+-	./bin2c -z ./license.txt ./license.c
+ 
+-compile: ./topic.c ./syntax.c ./markup.c ./license.c ./topic.1
++.SUFFIXES: .txt
++
++.txt.c: bin2c
++	./bin2c -z $(.IMPSRC) $(.TARGET)
++
++topic: ./topic.c ./syntax.c ./markup.c ./license.c ./topic.1
+ 	$(CC) $(CFLAGS) -DBUILD="\"$(BUILD)\"" ./topic.c -o ./topic
+ 
+ clean:
