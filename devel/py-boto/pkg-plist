@@ -657,6 +657,9 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/dbsnapshot.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/dbsnapshot.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/dbsnapshot.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/dbsubnetgroup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/dbsubnetgroup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/dbsubnetgroup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/event.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/event.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/event.pyo
