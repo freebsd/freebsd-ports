@@ -1,7 +1,7 @@
 USBHotkey allows you to catch USB keyboard events (key press and release
-events) and transform them into X11 keyboard events using a ruby script.
-This provides a mechanism for creating keymaps that can be more
-complicated than the standard table-based keymap approach of X11.
+events) and transform them into X11 keyboard events using a Ruby script.
 
+This provides mechanism for creating keymaps that can be more complicated
+than the standard table-based keymap approach of X11.
 
 WWW: http://usbhotkey.sourceforge.net/
