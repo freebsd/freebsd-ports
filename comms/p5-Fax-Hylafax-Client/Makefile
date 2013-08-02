@@ -13,7 +13,8 @@ COMMENT=	Simple Perl client for the HylaFAX fax server
 BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Fax::Hylafax::Client.3
 

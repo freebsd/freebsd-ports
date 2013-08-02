@@ -1,9 +1,5 @@
-# New ports collection makefile for:	X11-Protocol
-# Date created:				Mon Jan  1 21:49:44 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	X11-Protocol
 PORTVERSION=	0.56
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that provides an interface roughly equivalent to Xlib
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		X11::Auth.3 \
 		X11::Keysyms.3 \
