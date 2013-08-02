@@ -1,4 +1,4 @@
 bin/bible
-share/brs/bible.data
-share/brs/bible.data.conc
-@dirrm share/brs
+%%DATADIR%%/bible.data
+%%DATADIR%%/bible.data.conc
+@dirrm %%DATADIR%%
