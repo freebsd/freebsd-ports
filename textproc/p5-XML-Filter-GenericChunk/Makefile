@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-XML-LibXML>=1.4:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Filter::CharacterChunk.3 \
 		XML::Filter::GenericChunk.3

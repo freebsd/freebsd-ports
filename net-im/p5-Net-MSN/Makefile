@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-IPC-Cache>=0:${PORTSDIR}/devel/p5-IPC-Cache \
 		p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Apache::Session::Store::SharedMem.3 \
 		Apache::Session::SharedMem.3

@@ -18,7 +18,8 @@ COMMENT=	Curses-based widgets and functions
 BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Curses::Widgets::Label.3 \
 	Curses::Widgets.3 \

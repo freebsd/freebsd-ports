@@ -16,7 +16,8 @@ COMMENT=	Perl module implementing a back-propagation feed-forward neural network
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AI::NeuralNet::BackProp.3
 

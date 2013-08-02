@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 MAN3=	SpringGraph.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

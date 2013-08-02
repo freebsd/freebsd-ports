@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Method-Alias>=0:${PORTSDIR}/devel/p5-Method-Alias \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.53:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::TAP::Model.3 Test::TAP::Model::Consolidated.3 \
 		Test::TAP::Model::File.3 \

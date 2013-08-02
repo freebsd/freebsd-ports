@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Chart::PNGgraph.3
 

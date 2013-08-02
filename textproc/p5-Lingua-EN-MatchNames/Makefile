@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Lingua-EN-NameParse>=0:${PORTSDIR}/textproc/p5-Lingua-EN-NameP
 		p5-Text-Metaphone>=0:${PORTSDIR}/textproc/p5-Text-Metaphone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Lingua::EN::MatchNames.3
 

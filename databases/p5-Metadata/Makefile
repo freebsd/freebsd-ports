@@ -17,7 +17,8 @@ COMMENT=	Perl implementation of Dublin Core compatible metadata
 BUILD_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Metadata::Base.3 \
 	Metadata::HTTP.3 \

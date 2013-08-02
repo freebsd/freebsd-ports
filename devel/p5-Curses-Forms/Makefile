@@ -19,7 +19,8 @@ COMMENT=	Provide high level APIs for rapid UI design on the console
 BUILD_DEPENDS=	p5-Curses-Widgets>=0:${PORTSDIR}/devel/p5-Curses-Widgets
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Curses::Forms.3 \
 	Curses::Forms::Dialog.3 \

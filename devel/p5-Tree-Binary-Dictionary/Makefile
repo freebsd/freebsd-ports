@@ -19,6 +19,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=		Tree::Binary::Dictionary.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

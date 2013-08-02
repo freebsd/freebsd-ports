@@ -16,6 +16,7 @@ COMMENT=	Simple filename and pathname matching
 
 MAN3=	File::FnMatch.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

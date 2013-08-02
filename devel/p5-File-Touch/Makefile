@@ -11,7 +11,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Module to 'touch' files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::Touch.3
 

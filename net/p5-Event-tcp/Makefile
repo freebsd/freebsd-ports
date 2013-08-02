@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Event>=0:${PORTSDIR}/devel/p5-Event \
 		p5-Ioctl>=0:${PORTSDIR}/devel/p5-Ioctl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Event::tcpsession.3
 

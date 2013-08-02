@@ -16,7 +16,8 @@ COMMENT=	ARIN whois client
 
 TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Whois::ARIN.3 \
 		Net::Whois::ARIN::AS.3 \

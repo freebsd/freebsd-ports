@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Lingua-JA-Numbers>=0:${PORTSDIR}/japanese/p5-Lingua-JA-Numbers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Date::Japanese::Era.3 \
 		Date::Japanese::Era::Table.3 \

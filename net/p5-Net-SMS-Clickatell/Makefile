@@ -16,7 +16,8 @@ COMMENT=	Access to Clickatell SMS messaging service
 
 TEST_DEPENDS=	p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SMS::Clickatell.3
 

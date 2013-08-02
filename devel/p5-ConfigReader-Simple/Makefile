@@ -17,7 +17,8 @@ COMMENT=	Simple configuration file parser
 TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ConfigReader::Simple.3
 

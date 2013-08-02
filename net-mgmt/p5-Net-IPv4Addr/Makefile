@@ -13,7 +13,8 @@ COMMENT=	Perl extension for manipulating IPv4 addresses
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		ipv4calc.1
 MAN3=		Net::IPv4Addr.3

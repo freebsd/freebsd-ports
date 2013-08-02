@@ -16,7 +16,8 @@ DISTNAME=	traceFunc-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl5 module to trace function calls as they happen
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::TraceFuncs.3
 

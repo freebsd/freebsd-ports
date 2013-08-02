@@ -26,7 +26,8 @@ RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
 RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .endif
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 pre-everything::
 		@${CAT} ${PKGMESSAGE}

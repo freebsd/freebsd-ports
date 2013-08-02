@@ -16,6 +16,7 @@ COMMENT=	Perl wrapper for Alan Murta's gpc library
 
 MAN3=	Math::Geometry::Planar::GPC.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 		p5-PDFLib>=0.14:${PORTSDIR}/print/p5-PDFLib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Handler::AxPoint.3
 

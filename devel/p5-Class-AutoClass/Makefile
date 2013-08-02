@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/AutoClass
 
 MAN3=		Class::AutoClass::Root.3 Class::AutoClass.3 Class::AutoClass::Args.3

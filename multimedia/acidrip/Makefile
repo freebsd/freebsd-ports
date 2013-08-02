@@ -19,7 +19,8 @@ BUILD_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=		acidrip.1
 
 .if defined(WITH_DVD_DEVICE)

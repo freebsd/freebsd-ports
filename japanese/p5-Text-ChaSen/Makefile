@@ -23,7 +23,8 @@ DISTINFO_FILE=	${.CURDIR}/../chasen-base/distinfo
 CHASEN_VERSION=	2.4.4
 
 WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 MAN3=		Text::ChaSen.3
 DOCSDIR=	${PREFIX}/share/doc/chasen

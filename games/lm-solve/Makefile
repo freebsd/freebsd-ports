@@ -16,7 +16,8 @@ DISTNAME=	Games-LMSolve-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Computerized Solver for Logic Mazes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	lm-solve.1
 MAN3=	Games::LMSolve.3 Games::LMSolve::Base.3 Games::LMSolve::Input.3 \

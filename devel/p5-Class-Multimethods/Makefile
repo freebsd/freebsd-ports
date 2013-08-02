@@ -16,6 +16,7 @@ COMMENT=	Support multimethods and function overloading in Perl
 
 MAN3=	Class::Multimethods.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

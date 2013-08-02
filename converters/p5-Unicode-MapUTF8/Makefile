@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Unicode-Map>=0:${PORTSDIR}/converters/p5-Unicode-Map \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Unicode::MapUTF8.3
 

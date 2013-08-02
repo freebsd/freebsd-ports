@@ -13,7 +13,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performs simple NetBIOS Name Service Requests
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	Net::NBName.3 Net::NBName::NameQuery.3 Net::NBName::NameQuery::RR.3 \
 	Net::NBName::NodeStatus.3 Net::NBName::NodeStatus::RR.3
 

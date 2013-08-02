@@ -18,7 +18,8 @@ COMMENT=	Draw arrows using GD
 
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		GD::Arrow.3
 

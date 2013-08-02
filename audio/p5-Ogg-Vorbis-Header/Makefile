@@ -21,7 +21,8 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Ogg::Vorbis::Header.3
 

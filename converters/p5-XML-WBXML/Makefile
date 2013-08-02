@@ -18,7 +18,8 @@ LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
 
 MAN3=	XML::WBXML.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-I.,-I. -I${LOCALBASE}/include,' ${WRKSRC}/Makefile.PL

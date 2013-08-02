@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MIME::Lite::TT.3
 

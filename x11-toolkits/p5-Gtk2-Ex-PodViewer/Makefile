@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	podviewer.1
 MAN3=	${PORTNAME:S/-/::/g}.3 ${PORTNAME:S/-/::/g}::Parser.3

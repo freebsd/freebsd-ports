@@ -17,7 +17,8 @@ COMMENT=	XML::XSLT - A perl module for processing XSLT
 BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		xslt-parser.1
 MAN3=		XML::XSLT.3

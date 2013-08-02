@@ -17,7 +17,8 @@ LICENSE=	ART10
 BUILD_DEPENDS=  p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
 RUN_DEPENDS=    p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 USE_GCC=	4.6+
 

@@ -31,6 +31,7 @@ MAN3=	Authen::PAAS.3 \
 	Authen::PAAS::SimpleCallback.3 \
 	Authen::PAAS::Subject.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

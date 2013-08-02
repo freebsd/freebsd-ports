@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Hook-LexWrap>=0:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		p5-Sub-Prototype>=0.02:${PORTSDIR}/devel/p5-Sub-Prototype
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Sub::WrapPackages.3
 

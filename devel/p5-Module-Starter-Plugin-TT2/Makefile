@@ -13,7 +13,8 @@ COMMENT=	TT2 templates for Module::Starter::Template
 BUILD_DEPENDS=	p5-Module-Starter>=1.47.0:${PORTSDIR}/devel/p5-Module-Starter \
 		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Module::Starter::Plugin::TT2.3
 

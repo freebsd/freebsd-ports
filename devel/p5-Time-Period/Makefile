@@ -12,7 +12,8 @@ DISTNAME=	Period-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module that contains code to deal with time periods
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Time::Period.3
 

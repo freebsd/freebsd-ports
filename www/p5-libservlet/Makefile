@@ -18,7 +18,8 @@ COMMENT=	Servlet API for Perl
 BUILD_DEPENDS=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Servlet.3 \
 	Servlet::Config.3 \

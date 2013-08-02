@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-Net-DNS>=0.12:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Tie-Cache>=0.01:${PORTSDIR}/devel/p5-Tie-Cache
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::DNS.3
 

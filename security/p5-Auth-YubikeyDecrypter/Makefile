@@ -18,7 +18,8 @@ COMMENT=	Decrypting the output from the yubikey token
 RUN_DEPENDS=	p5-Crypt-Rijndael>=1:${PORTSDIR}/security/p5-Crypt-Rijndael
 
 LICENSE=	GPLv2
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Auth::Yubikey_Decrypter.3
 

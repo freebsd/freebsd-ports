@@ -22,6 +22,7 @@ MAN3=	Class::MixinFactory.3 \
 	Class::MixinFactory::NEXT.3 \
 	Class::MixinFactory::ReadMe.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -17,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		Overwrites bin/map from converters/p5-Unicode-Map
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Unicode::Lite.3
 

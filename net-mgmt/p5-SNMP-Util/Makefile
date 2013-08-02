@@ -19,7 +19,8 @@ RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-net-snmp-patch-Makefile.PL
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SNMP::Util.3
 

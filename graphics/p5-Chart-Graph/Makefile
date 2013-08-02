@@ -20,7 +20,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		xmgrace:${PORTSDIR}/math/grace \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Chart::Graph.3 \
 	Chart::Graph::Gnuplot.3 \

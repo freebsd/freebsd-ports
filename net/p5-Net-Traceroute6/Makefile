@@ -18,7 +18,8 @@ COMMENT=	Perl module to parse traceroute6(8) output
 BUILD_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Traceroute6.3
 

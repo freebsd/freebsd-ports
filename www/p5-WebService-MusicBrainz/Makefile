@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WebService::MusicBrainz.3 \
 		WebService::MusicBrainz::Artist.3 \

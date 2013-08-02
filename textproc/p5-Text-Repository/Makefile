@@ -14,7 +14,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple way to manage text without mixing it with Perl
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Text::Repository.3
 

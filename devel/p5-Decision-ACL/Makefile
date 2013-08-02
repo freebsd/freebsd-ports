@@ -16,7 +16,8 @@ COMMENT=	Manage and Build Access Control Lists
 
 MAN3=		Decision::ACL.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 

@@ -17,7 +17,8 @@ COMMENT=	Perl implementation of the A* pathfinding algorithm
 BUILD_DEPENDS=	p5-Heap>=0:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AI::Pathfinding::AStar.3
 

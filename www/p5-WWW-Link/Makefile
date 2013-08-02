@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	WWW::Link.3 \
 	WWW::Link::Change.3 \

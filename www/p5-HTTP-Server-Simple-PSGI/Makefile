@@ -16,7 +16,8 @@ COMMENT=	PSGI handler for HTTP::Server::Simple
 
 RUN_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Server::Simple::PSGI.3
 

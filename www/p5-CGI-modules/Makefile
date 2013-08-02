@@ -17,7 +17,8 @@ COMMENT=	Modules for perl5, for use in writing CGI scripts
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Base.3 CGI::BasePlus.3 CGI::Carp.3 CGI::Form.3 \
 		CGI::MiniSvr.3 CGI::Request.3

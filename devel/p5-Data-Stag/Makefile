@@ -13,7 +13,8 @@ COMMENT=	Structured Tags datastructures
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		stag-grep.pl.1 stag-filter.pl.1 stag-parse.pl.1 \
 		stag-drawtree.pl.1 stag-autoschema.pl.1 stag-merge.pl.1 \

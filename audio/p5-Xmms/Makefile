@@ -19,7 +19,8 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
 
 MAN3=		Bundle::Xmms.3 \

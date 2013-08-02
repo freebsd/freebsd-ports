@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_GNOME=	gtk12
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	--without-guessing --lazy-load
 MAKE_JOBS_UNSAFE=	yes
 

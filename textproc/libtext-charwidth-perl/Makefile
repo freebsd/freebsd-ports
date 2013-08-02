@@ -17,7 +17,8 @@ COMMENT=	Documentation gettext tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::CharWidth.3
 

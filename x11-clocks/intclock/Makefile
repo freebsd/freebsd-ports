@@ -13,7 +13,8 @@ COMMENT=	Multi-timezone clock
 BUILD_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-patch:
 	@${REINPLACE_CMD} -e \

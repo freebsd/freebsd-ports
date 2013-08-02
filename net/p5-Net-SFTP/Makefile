@@ -17,7 +17,8 @@ COMMENT=	Perl5 module implementing Secure File Transfer Protocol client
 BUILD_DEPENDS=	p5-Net-SSH-Perl>=0:${PORTSDIR}/net/p5-Net-SSH-Perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SFTP.3 \
 		Net::SFTP::Attributes.3 \

@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Module-Build>=0.3607:${PORTSDIR}/devel/p5-Module-Build
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::BOM.3
 

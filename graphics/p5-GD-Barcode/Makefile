@@ -18,7 +18,8 @@ COMMENT=	GD::Barcode - Create barcode image with GD
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		GD::Barcode.3 \
 		GD::Barcode::COOP2of5.3 \

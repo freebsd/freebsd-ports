@@ -15,7 +15,8 @@ DISTNAME=	Net_TCLink.pm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module to for connecting to the TrustCommerce payment gateway
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::TCLink.3
 

@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-Onli
 		p5-Business-OCV>=0:${PORTSDIR}/finance/p5-Business-OCV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::OnlinePayment::OCV.3
 

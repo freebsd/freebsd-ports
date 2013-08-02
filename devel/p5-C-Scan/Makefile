@@ -16,7 +16,8 @@ COMMENT=	Perl5 module to scan C language files for easily recognized constructs
 
 BUILD_DEPENDS=	p5-Data-Flow>=0:${PORTSDIR}/devel/p5-Data-Flow
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		C::Scan.3
 

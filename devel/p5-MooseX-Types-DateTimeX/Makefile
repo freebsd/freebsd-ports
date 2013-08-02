@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-DateTimeX-Easy>=0.085:${PORTSDIR}/devel/p5-DateTimeX-Easy \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::Types::DateTimeX.3
 

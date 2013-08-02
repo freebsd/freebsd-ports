@@ -18,7 +18,8 @@ COMMENT=	A Network Security Policy Compiler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		netspoc.1 print-group.1
 MAN3=		Netspoc.3
