@@ -17,8 +17,8 @@ USE_DISPLAY=	requires an X server for configure stage
 MANUAL_PACKAGE_BUILD=	fails to start X server on pointyhat
 
 CONFIGURE_ARGS=	interface=GLUT
-USES=		perl5
-USE_PERL5=	configure display:install
+USES=		perl5 display:install
+USE_PERL5=	configure
 USE_GL=		glut
 
 MAN3=		Array.3 \
