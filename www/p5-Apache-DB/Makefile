@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Apache-DB
-# Date created:	   11 August 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-DB
 PORTVERSION=	0.14
@@ -17,9 +13,8 @@ COMMENT=	Debugging and profiling tools for mod_perl
 
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_APACHE_RUN=	22+
 
 MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \

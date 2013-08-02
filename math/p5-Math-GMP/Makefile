@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include LIBS="-L${LOCALBASE}/lib -lgmp"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::GMP.3
 

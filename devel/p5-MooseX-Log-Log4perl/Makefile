@@ -16,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Moose>=0.65:${PORTSDIR}/devel/p5-Moose
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Log::Log4perl.3 \
 		MooseX::Log::Log4perl::Easy.3

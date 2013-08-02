@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Ifconfig-Wrapper
-# Date created:		2012-03-07
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Ifconfig-Wrapper
 PORTVERSION=	0.11
@@ -16,6 +12,7 @@ COMMENT=	Perl module provides a unified way to configure network interfaces
 
 MAN3=	Net::Ifconfig::Wrapper.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

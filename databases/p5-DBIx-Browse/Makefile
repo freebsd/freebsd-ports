@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Browse
-# Date created:				January 29th 2003
-# Whom:	      				Philip M. Gollucci <philip@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <philip@p6m7g8.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Browse
 PORTVERSION=	2.09
@@ -17,9 +13,8 @@ COMMENT=	DBIx::Browse - Perl extension to browse tables
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Browse::CGI.3 \
 		DBIx::Browse.3

@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 DEPRECATED=	Deprecated by upstream, use devel/p5-Daemon-Control instead
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::Daemonize.3 \
 	MooseX::Daemonize::Core.3 \

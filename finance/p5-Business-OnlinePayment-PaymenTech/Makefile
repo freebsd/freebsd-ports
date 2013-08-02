@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-Onli
 		p5-Net-HTTPS-Any>=0.10:${PORTSDIR}/net/p5-Net-HTTPS-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::OnlinePayment::PaymenTech.3
 

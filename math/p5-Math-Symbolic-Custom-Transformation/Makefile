@@ -16,6 +16,7 @@ RUN_DEPENDS=	p5-Math-Symbolic>=0.507:${PORTSDIR}/math/p5-Math-Symbolic \
 MAN3=	Math::Symbolic::Custom::Transformation.3 \
 	Math::Symbolic::Custom::Transformation::Group.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

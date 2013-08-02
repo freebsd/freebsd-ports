@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Policy
-# Date created: 			August 27, 2007
-# Whom: 				Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Policy
 PORTVERSION=	1.005
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \
 		p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Policy.3 \
 		File::Policy::Default.3 \

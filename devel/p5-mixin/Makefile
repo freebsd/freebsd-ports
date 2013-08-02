@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-mixin
-# Date created:	   22 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mixin
 PORTVERSION=	0.07
@@ -17,7 +13,8 @@ COMMENT=	Mix-in inheritance, an alternative to multiple inheritance
 
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		mixin.3 mixin::with.3
 

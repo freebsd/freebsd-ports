@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Astro-SunTime
-# Date created:				Mon Jan  1 10:06:12 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-SunTime
 PORTVERSION=	0.01
@@ -18,8 +14,7 @@ COMMENT=	Perl interface to calculate sunrise/sunset times
 BUILD_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

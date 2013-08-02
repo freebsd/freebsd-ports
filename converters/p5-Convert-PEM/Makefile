@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-PEM
-# Date created:				Tue Sep 11 10:33:05 PDT 2001
-# Whom:	      				Michael Haro <mharo@FreeBSD.org>
-#
+# Created by: Michael Haro <mharo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-PEM
 PORTVERSION=	0.08
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-Crypt-DES_EDE3>=0:${PORTSDIR}/security/p5-Crypt-DES_EDE3
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::PEM.3 Convert::PEM::CBC.3
 

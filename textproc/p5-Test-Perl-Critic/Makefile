@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Perl-Critic
-# Date created:				2007/06/07
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Perl-Critic
 PORTVERSION=	1.02
@@ -17,7 +13,8 @@ COMMENT=	Use Perl::Critic in test programs
 BUILD_DEPENDS=	p5-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Perl-Critic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Perl::Critic.3
 

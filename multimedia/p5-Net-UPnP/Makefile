@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-UPnP
-# Date created:		2011-03-24
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-UPnP
 PORTVERSION=	1.4.2
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for UPnP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/README

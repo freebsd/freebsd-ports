@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-BitTorrent
-# Date created:		2008-04-12
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-BitTorrent
 PORTVERSION=	0.052
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-Math-BigInt>=1.78:${PORTSDIR}/math/p5-Math-BigInt
 CONFIGURE_ARGS=	</dev/null
 PORTSCOUT=	skipv:0.074000_012	
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		net-bittorrent.pl.1
 MAN3=		Net::BitTorrent.3 \

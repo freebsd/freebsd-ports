@@ -1,9 +1,5 @@
-# New ports collection makefile for:	LaTeX-Table
-# Date created:				4th June, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	LaTeX-Table
 PORTVERSION=	1.0.6
@@ -40,7 +36,8 @@ RUN_DEPENDS=	p5-Test-NoWarnings>=0.084:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-MooseX-FollowPBP>=0.03:${PORTSDIR}/devel/p5-MooseX-FollowPBP
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=	csv2pdf.1 ltpretty.1
 MAN3=	LaTeX::Table::Types::Ctable.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FLV-Info
-# Date created:		2006-07-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FLV-Info
 PORTVERSION=	0.24
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-AMF-Perl>=0.15:${PORTSDIR}/www/p5-AMF-Perl \
 		p5-SWF-File>=0.033:${PORTSDIR}/graphics/p5-SWF-File
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		flv2mp3.1 flvinfo.1 swf2flv.1 flv2swf.1 flv2flv.1
 MAN3=		FLV::File.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-CascadeCopy
-# Date created:		2010-10-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-CascadeCopy
 PORTVERSION=	0.2.6
@@ -24,7 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::CascadeCopy.3
 

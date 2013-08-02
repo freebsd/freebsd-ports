@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Hash-Merge-Simple
-# Date created:				29 Mar 2009
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-Merge-Simple
 PORTVERSION=	0.051
@@ -21,6 +17,7 @@ BUILD_DEPENDS+=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 
 MAN3=	Hash::Merge::Simple.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

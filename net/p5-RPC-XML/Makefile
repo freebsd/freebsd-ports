@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-RPC
-# Date created:				6 Sep 2001
-# Whom:					Dominic Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dominic Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	RPC-XML
 PORTVERSION=	0.77
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-XML-Parser>=2.31:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-libwww>=5.834:${PORTSDIR}/www/p5-libwww
 
 USE_GMAKE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		make_method.1
 MAN3=		Apache::RPC::Server.3 \

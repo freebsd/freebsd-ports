@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-Currency
-# Date created:				Wed Jan  3 10:58:59 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Currency
 PORTVERSION=	0.47
@@ -17,7 +13,8 @@ COMMENT=	Perl module for exact currency math with formatting and rounding
 BUILD_DEPENDS=	p5-Math-FixedPrecision>=0:${PORTSDIR}/math/p5-Math-FixedPrecision
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Math::Currency.3
 

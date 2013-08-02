@@ -12,8 +12,8 @@ COMMENT=	Object Orientated interface to FITS HDUs
 
 LICENSE=	GPLv3
 
-MAKE_JOBS_SAFE=	yes
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Astro::FITS::Header.3 \
 	Astro::FITS::Header::AST.3 \

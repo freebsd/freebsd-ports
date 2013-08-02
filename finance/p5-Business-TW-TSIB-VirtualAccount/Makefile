@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Business-TW-TSIB-VirtualAccount
-# Date created:				2007/10/04
-# Whom:	      				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Business-TW-TSIB-VirtualAccount
 PORTVERSION=	0.04b
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::TW::TSIB::VirtualAccount.3
 

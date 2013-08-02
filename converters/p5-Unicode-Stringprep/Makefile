@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Unicode-Stringprep
-# Date created:				10 Dec 2010
-# Whom:					Timur Bakeyev <bat@cpan.org>
-#
+# Created by: Timur Bakeyev <bat@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Unicode-Stringprep
 PORTVERSION=	1.104
@@ -21,7 +17,8 @@ TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Unicode::Stringprep.3 \
 		Unicode::Stringprep::BiDi.3 \

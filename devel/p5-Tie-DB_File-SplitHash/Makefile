@@ -13,7 +13,8 @@ COMMENT=	Wrapper around the DB_File Berkeley database system
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Tie::DB_File::SplitHash.3
 

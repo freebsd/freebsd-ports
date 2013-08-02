@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-STrace
-# Date created:	   28 August 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-STrace
 PORTVERSION=	0.31
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-Devel-RingBuffer>=0:${PORTSDIR}/devel/p5-Devel-RingBuffer \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::STrace.3 Devel::STrace::Monitor.3
 

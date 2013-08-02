@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-WhiteHole
-# Date created:		17 Dec 2001
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-WhiteHole
 PORTVERSION=	0.04
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class to treat unhandled method calls as errors
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::WhiteHole.3
 

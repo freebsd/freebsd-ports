@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-XPath
-# Date created:		Mon Mar 29 19:33:38 CST 2004
-# Whom:			Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-XPath
 PORTVERSION=	1.4
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class to add xpath matching to object trees
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::XPath.3
 

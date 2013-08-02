@@ -13,7 +13,8 @@ COMMENT=	Replace functions with ones that succeed or die with lexical scope
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Fatal.3 \
 	autodie.3 \

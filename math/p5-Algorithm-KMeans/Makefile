@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Graphics-GnuplotIF>=1.4:${PORTSDIR}/graphics/p5-Graphics-Gnuplot
 		p5-Math-GSL>=0.26:${PORTSDIR}/math/p5-Math-GSL \
 		p5-Math-Random>=0.71:${PORTSDIR}/math/p5-Math-Random
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::KMeans.3
 

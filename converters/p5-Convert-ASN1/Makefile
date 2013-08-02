@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-ASN1
-# Date created:				October 27, 2000
-# Whom:	      				Marc Fournier <scrappy@FreeBSD.org>
-#
+# Created by: Marc Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-ASN1
 PORTVERSION=	0.26
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::ASN1.3
 

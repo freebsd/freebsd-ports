@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Try-Tiny>=0.11:${PORTSDIR}/lang/p5-Try-Tiny \
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Set::Array.3
 

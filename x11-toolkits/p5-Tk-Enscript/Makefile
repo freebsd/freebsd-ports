@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tk-Enscript
-# Date created:				May 28 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	Tk-Enscript
 PORTVERSION=	1.10
@@ -18,7 +14,8 @@ COMMENT=	Tk::Enscript - a text-to-postscript converter using Tk::Canvas
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tk::Enscript.3
 

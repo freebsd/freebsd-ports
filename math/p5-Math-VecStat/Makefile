@@ -1,10 +1,6 @@
 # vim:ts=8
-# New ports collection makefile for:	p5-Math-VecStat
-# Date created:				25 Februar 2005
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-VecStat
 PORTVERSION=	0.08
@@ -18,7 +14,8 @@ COMMENT=	Basic statistics on vectors
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::VecStat.3
 

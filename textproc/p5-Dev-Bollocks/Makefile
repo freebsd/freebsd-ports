@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Dev-Bollocks
-# Date created:		2012-04-08
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dev-Bollocks
 PORTVERSION=	0.06
@@ -18,7 +14,8 @@ COMMENT=	Perl module to generate bollocks straight from middle management
 BUILD_DEPENDS=	p5-Math-String>=0:${PORTSDIR}/math/p5-Math-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Dev::Bollocks.3
 

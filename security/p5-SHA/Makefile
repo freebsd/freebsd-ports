@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SHA
-# Date created:				Sep 30, 2002
-# Whom:	      				Jim Geovedi <jim@corebsd.or.id>
-#
+# Created by: Jim Geovedi <jim@corebsd.or.id>
 # $FreeBSD$
-#
 
 PORTNAME=	SHA
 PORTVERSION=	2.01
@@ -18,7 +14,8 @@ COMMENT=	Perl5 interface to the SHA1 algorithm
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SHA.3
 

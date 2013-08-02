@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_TEX=	latex
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	latex2ps.1 latex2pdf.1 latex2dvi.1
 MAN3=	LaTeX::Driver.3 \

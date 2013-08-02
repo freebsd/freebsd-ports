@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-self-init
-# Date created:		2009-07-13
-# Whom:			Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	self-init
 PORTVERSION=	0.01
@@ -20,6 +16,7 @@ COMMENT=	Invoke package init methods at compile time
 
 MAN3=	self::init.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

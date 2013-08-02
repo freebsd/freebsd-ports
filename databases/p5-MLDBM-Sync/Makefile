@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-MLDBM-Sync
-# Date created:                         May 29th, 2002
-# Whom:                                 erwin@FreeBSD.org
-#
+# Created by: erwin@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	MLDBM-Sync
 PORTVERSION=	0.30
@@ -17,7 +13,8 @@ COMMENT=	MLDBM::Sync - safe concurrent access to MLDBM databases
 BUILD_DEPENDS=	p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MLDBM::Sync.3
 

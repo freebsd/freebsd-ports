@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FCGI-Async
-# Date created:		2007-06-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FCGI-Async
 PORTVERSION=	0.22
@@ -26,7 +22,8 @@ TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-HexString>=0:${PORTSDIR}/devel/p5-Test-HexString \
 		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Plack::Handler::FCGI::Async.3 \
 		FCGI::Async::PSGI.3 \

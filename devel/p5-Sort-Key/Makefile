@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Sort-Key
-# Date created:				14 October 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sort-Key
 PORTVERSION=	1.32
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sorts objects by one or several keys really fast
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sort::Key.3 \
 		Sort::Key::Maker.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-WikiConverter-UseMod
-# Date created:				2006/06/27
-# Whom:	      				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-WikiConverter-UseMod
 PORTVERSION=	0.50
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.54:${PORTSDIR}/www/p5-HTML-WikiConverter
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::WikiConverter::UseMod.3
 

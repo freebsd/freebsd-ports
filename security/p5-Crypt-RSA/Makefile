@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-RSA
-# Date created:				Tue Sep 11 10:31:23 PDT 2001
-# Whom:	      				Michael Haro <mharo@FreeBSD.org>
-#
+# Created by: Michael Haro <mharo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-RSA
 PORTVERSION=	1.99
@@ -28,7 +24,8 @@ RUN_DEPENDS=	p5-Class-Loader>=2.00:${PORTSDIR}/devel/p5-Class-Loader \
 		p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
 		p5-Tie-EncryptedHash>=0:${PORTSDIR}/security/p5-Tie-EncryptedHash
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Crypt::RSA.3 \
 	Crypt::RSA::DataFormat.3 \

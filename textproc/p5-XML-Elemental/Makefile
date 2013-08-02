@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-XML-Elemental
-# Date created:				2004-10-11
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	XML-Elemental
@@ -18,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-Task-Weaken>=1.02:${PORTSDIR}/devel/p5-Task-Weaken
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Elemental.3 \
 	XML::Elemental::Characters.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Expect
-# Date created:		14 Jan 2000
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Expect
 PORTVERSION=	1.21
@@ -17,7 +13,8 @@ COMMENT=	Perl module inspired by the Tcl version of Expect
 BUILD_DEPENDS=	p5-IO-Tty>=1.03:${PORTSDIR}/devel/p5-IO-Tty
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Expect.3
 

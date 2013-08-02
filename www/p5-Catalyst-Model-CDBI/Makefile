@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Model-CDBI
-# Date created:				04 May 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Model-CDBI
 PORTVERSION=	0.12
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Class-DBI-Loader>=0:${PORTSDIR}/databases/p5-Class-DBI-Loader 
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-MRO-Compat>=0.11:${PORTSDIR}/devel/p5-MRO-Compat
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Helper::Model::CDBI.3 \
 	Catalyst::Model::CDBI.3

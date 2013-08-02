@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Test-ClassAPI>=0:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-Class-Autouse>=0:${PORTSDIR}/devel/p5-Class-Autouse \
 		p5-prefork>=0:${PORTSDIR}/devel/p5-prefork
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Flat.3
 

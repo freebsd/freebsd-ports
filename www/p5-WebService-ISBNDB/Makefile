@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Business-ISBN>=1.80:${PORTSDIR}/misc/p5-Business-ISBN \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	WebService::ISBNDB.3 \
 	WebService::ISBNDB::API.3 \

@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::Candy.3 \
 	DBIx::Class::Candy::Exports.3

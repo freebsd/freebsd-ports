@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-HTML-Element-Library>=4.2:${PORTSDIR}/www/p5-HTML-Element-Libr
 		p5-Moose>=0.72:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Element::Replacer.3
 

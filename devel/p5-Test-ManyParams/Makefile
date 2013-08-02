@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-ManyParams
-# Date created:		2012-02-14
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-ManyParams
 PORTVERSION=	0.10
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Set-CrossProduct>0:${PORTSDIR}/devel/p5-Set-CrossProduct \
 		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::ManyParams.3
 

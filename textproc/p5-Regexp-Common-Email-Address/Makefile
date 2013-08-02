@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Regexp-Common-Email-Address
-# Date created:	   25 Apr 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-Common-Email-Address
 PORTVERSION=	1.01
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Regexp::Common::Email::Address.3
 

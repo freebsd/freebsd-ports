@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-Singleton
-# Date created:	   04 Jun 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Singleton
 PORTVERSION=	0.29
@@ -23,7 +19,8 @@ TEST_DEPENDS=	p5-MooseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooseX-StrictC
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Warn>=0.01:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Singleton.3 \
 		MooseX::Singleton::Role::Meta::Class.3 \

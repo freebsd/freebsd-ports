@@ -148,7 +148,8 @@ MAN3=	Syntax::Highlight::Engine::Kate.3 \
 	Syntax::Highlight::Engine::Kate::Yacas.3 \
 	Syntax::Highlight::Engine::Kate::Yacc_Bison.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 .if !defined(NOPORTDOCS)

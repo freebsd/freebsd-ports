@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Form
-# Date created:				2011-04-18
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Form
 PORTVERSION=	6.03
@@ -21,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Form.3
 

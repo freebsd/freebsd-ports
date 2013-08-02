@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gnome2-GConf
-# Date created:			02 Apr 2002
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	Gnome2-GConf
 PORTVERSION=	1.044
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_GNOME=	gconf2
 MAKE_JOBS_UNSAFE=	yes
 

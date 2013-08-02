@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Plugin-Browser
-# Date created:		2008-12-21
-# Whom:			Andrej Zverev <az@FreeBSD.org>
-#
+# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Browser
 PORTVERSION=	0.08
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 	p5-Catalyst-TraitFor-Request-BrowserDetect>=0:${PORTSDIR}/www/p5-Catalyst-TraitFor-Request-BrowserDetect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Browser.3
 

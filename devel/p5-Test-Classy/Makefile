@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Classy
-# Date created:		2012-03-02
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Classy
 PORTVERSION=	0.09
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inhe
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Classy.3 Test::Classy::Base.3 Test::Classy::Util.3
 

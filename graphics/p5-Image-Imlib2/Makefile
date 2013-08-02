@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Image-Imlib2
-# Date created:				September 11th, 2003
-# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Imlib2
 PORTVERSION=	2.03
@@ -17,7 +13,8 @@ COMMENT=	Perl interface to the Imlib2 image library
 
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 USE_EFL=	imlib2
 
 MAN3=		Image::Imlib2.3

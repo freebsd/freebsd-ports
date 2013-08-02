@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	Libphk
-# Date created:		2 September 2008
-# Whom:			mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	libphk
 PORTVERSION=	0.3.20080902

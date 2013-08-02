@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-B-OPCheck
-# Date created:		2009-03-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	B-OPCheck
 PORTVERSION=	0.29
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-B-Utils>=0:${PORTSDIR}/devel/p5-B-Utils \
 BUILD_DEPENDS:=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		B::OPCheck.3
 

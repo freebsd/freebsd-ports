@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Catalyst-Controller-FormBuilder
-# Date created:				Mar 30 2007
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Controller-FormBuilder
 PORTVERSION=	0.06
@@ -24,7 +21,8 @@ RUN_DEPENDS=	p5-CGI-FormBuilder>=3.02:${PORTSDIR}/www/p5-CGI-FormBuilder \
 		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Controller::FormBuilder.3
 

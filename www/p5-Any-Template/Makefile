@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Any-Template
-# Date created:		2012-02-12
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Any-Template
 PORTVERSION=	1.015
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace
 RUN_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace
 TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Any::Template.3 Any::Template::Backend.3 \
 	Any::Template::Backend::HTML::Template.3 \

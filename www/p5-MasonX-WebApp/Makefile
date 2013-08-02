@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MasonX-WebApp
-# Date created:			2005.01.08
-# Whom:				Travis Campbell <hcoyote@ghostar.org>
-#
+# Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MasonX-WebApp
 PORTVERSION=	0.12
@@ -27,7 +23,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
 
 USE_APACHE_RUN=	22+
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		MasonX::WebApp.3
 

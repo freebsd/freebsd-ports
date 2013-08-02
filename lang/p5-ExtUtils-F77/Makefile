@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ExtUtils-F77
-# Date created:				December 7 1999
-# Whom:	      				jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.17
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Helps link C programs with Fortran subroutines
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_FORTRAN=	yes
 
 MAN3=		ExtUtils::F77.3

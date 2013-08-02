@@ -28,7 +28,8 @@ BUILD_DEPENDS=	p5-CHI>=0:${PORTSDIR}/devel/p5-CHI \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		perlanet.1
 MAN3=		Perlanet.3 \

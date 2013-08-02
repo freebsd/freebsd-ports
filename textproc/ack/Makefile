@@ -13,7 +13,8 @@ COMMENT=	Grep-like text finder for large trees of text
 BUILD_DEPENDS=	p5-File-Next>=0.40:${PORTSDIR}/sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 CONFLICTS_INSTALL=	ja-ack-[0-9]*
 

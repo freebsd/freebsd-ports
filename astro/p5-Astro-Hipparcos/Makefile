@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-ExtUtils-XSpp>=0.06:${PORTSDIR}/devel/p5-ExtUtils-XSpp \
 		p5-ExtUtils-ParseXS>=2.22:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 
 MAKE_ARGS+=	"CC=g++"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Astro::Hipparcos::Record.3 \
 		Astro::Hipparcos.3

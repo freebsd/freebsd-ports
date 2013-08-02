@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MathML-Entities
-# Date created:				25 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MathML-Entities
 PORTVERSION=	0.17
@@ -18,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=	MathML::Entities.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

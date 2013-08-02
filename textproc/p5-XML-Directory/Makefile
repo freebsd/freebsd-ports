@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::Directory
-# Date created:		4 Sep 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Directory
 PORTVERSION=	1.00
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-RDF-Notation3>=0:${PORTSDIR}/textproc/p5-RDF-Notation3 \
 		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Directory.3 XML::Directory::Apache.3 \
 		XML::Directory::SAX.3 XML::Directory::String.3

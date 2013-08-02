@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CGI::XMLApplication
-# Date created:		13 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-XMLApplication
 PORTVERSION=	1.1.3
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::XMLApplication.3
 

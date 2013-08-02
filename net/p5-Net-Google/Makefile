@@ -13,7 +13,8 @@ COMMENT=	Simple OOP-ish interface to the Google SOAP API
 BUILD_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::Google.3 Net::Google::Cache.3 Net::Google::Response.3 \
 		Net::Google::Search.3 Net::Google::Service.3 \

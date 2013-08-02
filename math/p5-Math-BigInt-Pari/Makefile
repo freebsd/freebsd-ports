@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-FloodControl
-# Date created:		2008-11-18
-# Whom:			Andrey <gugu@zoo.rambler.ru>
-#
+# Created by: Andrey <gugu@zoo.rambler.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-BigInt-Pari
 PORTVERSION=	1.17
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt \
 RUN_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt \
 		p5-Math-Pari>=2.010709:${PORTSDIR}/math/p5-Math-Pari
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::BigInt::Pari.3
 

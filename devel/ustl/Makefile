@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	uSTL
-# Date created:			Dec 26, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ustl
 PORTVERSION=	1.0.0

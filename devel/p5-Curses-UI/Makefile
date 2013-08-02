@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Curses::UI::Color.3 Curses::UI::Label.3 \
 		Curses::UI::Dialog::Basic.3 Curses::UI::Dialog::Dirbrowser.3 \

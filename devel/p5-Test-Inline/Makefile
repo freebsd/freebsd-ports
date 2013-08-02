@@ -27,7 +27,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-Test-Script>=1.02:${PORTSDIR}/devel/p5-Test-Script
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	inline2test.1
 MAN3=	Test::Inline.3 \

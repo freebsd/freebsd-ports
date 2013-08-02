@@ -18,7 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
 		LIBS="-L${LOCALBASE}/lib"
 

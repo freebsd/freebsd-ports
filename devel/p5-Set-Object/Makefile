@@ -12,7 +12,8 @@ COMMENT=	Perl module to manage sets of objects
 
 LICENSE=	ART10
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Set::Changes.3 Set::Object.3 Set::Object::Weak.3
 

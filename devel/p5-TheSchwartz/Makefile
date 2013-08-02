@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-TheSchwartz
-# Date created:		2008-01-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	TheSchwartz
 PORTVERSION=	1.10
@@ -19,7 +15,8 @@ COMMENT=	Reliable job queue
 BUILD_DEPENDS=	p5-Data-ObjectDriver>=0.04:${PORTSDIR}/devel/p5-Data-ObjectDriver
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	schwartzmon.1
 MAN3=	TheSchwartz.3 TheSchwartz::Job.3 TheSchwartz::Worker.3

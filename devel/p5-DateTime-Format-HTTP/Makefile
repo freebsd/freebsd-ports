@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-HTTP
-# Date created:	   7 july 2003
-# Whom:		   Mathieu Arnold <mat@FreeBSD.org>
-#
+# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-HTTP
 PORTVERSION=	0.40
@@ -18,7 +14,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DateTime::Format::HTTP.3
 

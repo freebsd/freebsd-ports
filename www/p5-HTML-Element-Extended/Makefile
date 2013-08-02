@@ -13,7 +13,8 @@ COMMENT=	Extended interface to HTML::Tree's HTML::Element class
 BUILD_DEPENDS=	p5-HTML-Tree>=3.01:${PORTSDIR}/www/p5-HTML-Tree
 RUN_DEPENDS=	p5-HTML-Tree>=3.01:${PORTSDIR}/www/p5-HTML-Tree
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::ElementRaw.3 HTML::ElementGlob.3 \
 		HTML::ElementSuper.3 HTML::ElementTable.3

@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Path::Class.3 \
 		Path::Class::Dir.3 \

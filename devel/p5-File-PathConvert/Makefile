@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-PathConvert
-# Date created:				27 February 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-PathConvert
 PORTVERSION=	0.9
@@ -16,7 +12,8 @@ COMMENT=	File::PathConvert - Various path conversion routines
 
 PORTSCOUT=	skipv:0.85
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::PathConvert.3
 

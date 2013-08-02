@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-AddressBook
-# Date created:				November 22, 2004
-# Whom:	      				Brian Somers <brian@FreeBSD.org>
-#
+# Created by: Brian Somers <brian@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AddressBook
 PORTVERSION=	0.16

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Size
-# Date created:				19 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Size
 PORTVERSION=	1.13
@@ -19,10 +15,9 @@ BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-SimpleLinkExtor>0:${PORTSDIR}/www/p5-HTML-SimpleLinkExtor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_SAFE=  yes
-
 MAN3=	HTTP::Size.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

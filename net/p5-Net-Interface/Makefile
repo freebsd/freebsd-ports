@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Interface
-# Date created:		2006-09-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Interface
 PORTVERSION=	1.012
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to access network interfaces
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Interface.3 Net::Interface::Developer.3 \
   			Net::Interface::NetSymbols.3

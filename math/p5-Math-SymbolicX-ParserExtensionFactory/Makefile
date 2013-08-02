@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-SymbolicX-ParserExtensionFactory
-# Date created:				15 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-SymbolicX-ParserExtensionFactory
 PORTVERSION=	3.02
@@ -19,6 +15,7 @@ RUN_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic
 
 MAN3=	Math::SymbolicX::ParserExtensionFactory.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

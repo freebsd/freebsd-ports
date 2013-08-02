@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Locale
-# Date created:	   30 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Locale
 PORTVERSION=	0.45
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0.91:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	\
 	DateTime::Locale.3  \

@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	p5-Test-Database
-# Date created:				2 April, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Database
 PORTVERSION=	1.11
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-version>=0.76:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Database.3 Test::Database::Driver.3 \
 		Test::Database::Driver::CSV.3 \

@@ -18,7 +18,8 @@ TEST_DEPENDS=	p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
 		p5-Math-GMPq>=0:${PORTSDIR}/math/p5-Math-GMPq \
 		p5-Math-GMPz>=0:${PORTSDIR}/math/p5-Math-GMPz
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_ENV=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Math::MPFR.3

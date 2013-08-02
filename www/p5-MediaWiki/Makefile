@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MediaWiki
-# Date created:		2006-08-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MediaWiki
 PORTVERSION=	1.13
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Config-IniHash>=0:${PORTSDIR}/devel/p5-Config-IniHash \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MediaWiki.3
 

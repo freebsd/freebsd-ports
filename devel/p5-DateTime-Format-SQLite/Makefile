@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-SQLite
-# Date created:		23 june 2009
-# Whom:			Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-SQLite
 PORTVERSION=	0.11
@@ -17,7 +13,8 @@ COMMENT=	Parse and format SQLite dates and times
 BUILD_DEPENDS=	p5-DateTime-Format-Builder>=0:${PORTSDIR}/devel/p5-DateTime-Format-Builder
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Format::SQLite.3
 

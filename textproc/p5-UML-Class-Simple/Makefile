@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-Inspector>=1.16:${PORTSDIR}/devel/p5-Class-Inspector \
 		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	umlclass.pl.1
 MAN3=	UML::Class::Simple.3

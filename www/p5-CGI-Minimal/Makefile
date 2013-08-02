@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-Minimal
-# Date created:				26th December 2000
-# Whom:	      				Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Minimal
 PORTVERSION=	1.29
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extremely lightweight CGI processing package
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Minimal.3
 

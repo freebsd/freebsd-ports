@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lang/p5-JavaScript-Squish
-# Date created:				11 October 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	JavaScript-Squish
 PORTVERSION=	0.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reduce/Compact JavaScript code to as few characters as possible
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	js_compactor.1
 MAN3=	JavaScript::Squish.3

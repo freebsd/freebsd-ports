@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Chart-Math-Axis
-# Date created:	   18 May 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Chart-Math-Axis
 PORTVERSION=	1.06
@@ -17,7 +13,8 @@ COMMENT=	Implements an algorithm to find good values for chart axis
 BUILD_DEPENDS=	p5-Params-Util>=0.15:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Chart::Math::Axis.3
 

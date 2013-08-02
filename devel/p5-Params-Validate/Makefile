@@ -18,7 +18,8 @@ TEST_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Taint>=0.02:${PORTSDIR}/devel/p5-Test-Taint
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Attribute::Params::Validate.3 \
 		Params::Validate.3

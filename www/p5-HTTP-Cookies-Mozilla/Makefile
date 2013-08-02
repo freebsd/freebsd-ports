@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Cookies-Mozilla
-# Date created:		2006-07-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Cookies-Mozilla
 PORTVERSION=	2.03
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies
 TEST_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Cookies::Mozilla.3
 

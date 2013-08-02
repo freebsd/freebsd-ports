@@ -35,6 +35,7 @@ MAN3=		Tree::Simple::Visitor::BreadthFirstTraversal.3 \
 		Tree::Simple::Visitor::ToNestedHash.3 \
 		Tree::Simple::Visitor::VariableDepthClone.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

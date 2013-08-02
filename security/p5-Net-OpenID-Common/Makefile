@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-Crypt-DH-GMP>=0:${PORTSDIR}/net/p5-Crypt-DH-GMP \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::OpenID::Common.3 \
 		Net::OpenID::Extension.3 \

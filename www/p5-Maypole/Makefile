@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Maypole
-# Date created:				Apr 2 2004
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
 
 PORTNAME=	Maypole
@@ -42,13 +39,12 @@ TEST_DEPENDS=	p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
 
 PORTSCOUT=	skipv:2.121
 
-MAKE_JOBS_SAFE=	yes
-
 OPTIONS_DEFINE=	MODPERL2 DOCS EXAMPLES
 OPTIONS_DEFAULT=	MODPERL2
 MODPERL2_DESC=	mod_perl2 support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL2}

@@ -23,7 +23,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 TEST_DEPENDS=	p5-CPAN-Meta>=0:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	IM_CFLAGS="${CFLAGS}" \
 		IM_INCPATH=${LOCALBASE}/include \
 		IM_LIBPATH=${LOCALBASE}/lib

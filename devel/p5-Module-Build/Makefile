@@ -17,7 +17,8 @@ OPTIONS_DEFINE=	DOCS
 
 PORTSCOUT=	skipv:0.31012
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		inc::latest.3 \
 		Module::Build.3 \

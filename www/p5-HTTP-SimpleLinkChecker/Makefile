@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-SimpleLinkChecker
-# Date created:				19 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-SimpleLinkChecker
 PORTVERSION=	1.16
@@ -20,6 +16,7 @@ RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww
 MAN1=	http_status.1
 MAN3=	HTTP::SimpleLinkChecker.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

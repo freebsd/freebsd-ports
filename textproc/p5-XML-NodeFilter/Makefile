@@ -13,7 +13,8 @@ COMMENT=	XML::NodeFilter is an object that know how to "filter out" nodes
 BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::NodeFilter.3
 

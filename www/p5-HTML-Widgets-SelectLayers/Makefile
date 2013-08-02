@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-HTML-Widgets-SelectLayers
-# Date created:				22 September 2002
-# Whom:					Peter Avalos <pavalos@theshell.com>
-#
+# Created by: Peter Avalos <pavalos@theshell.com>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Widgets-SelectLayers
 PORTVERSION=	0.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implements an HTML widget with multiple layers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Widgets::SelectLayers.3
 

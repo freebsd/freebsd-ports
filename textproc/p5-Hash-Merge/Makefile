@@ -1,7 +1,4 @@
-# New ports collection makefile for:   p5-Hash-Merge
-# Date created:        22 June 2004
-# Whom:                snowchyld
-#
+# Created by: snowchyld
 # $FreeBSD$
 
 PORTNAME=	Hash-Merge
@@ -18,6 +15,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=		Hash::Merge.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

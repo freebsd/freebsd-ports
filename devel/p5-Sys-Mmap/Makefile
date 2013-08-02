@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sys-Mmap
-# Date created:	   25 July 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-Mmap
 PORTVERSION=	0.16
@@ -17,7 +13,8 @@ COMMENT=	Map in a file as a Perl variable using mmap(2)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sys::Mmap.3
 

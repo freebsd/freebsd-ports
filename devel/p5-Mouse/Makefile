@@ -19,7 +19,8 @@ TEST_DEPENDS=	p5-Test-Exception-LessClever>=0.005:${PORTSDIR}/devel/p5-Test-Exce
 		p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires
 
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mouse.3 \
 		Mouse::Exporter.3 \

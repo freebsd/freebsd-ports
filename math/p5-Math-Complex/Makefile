@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Complex
-# Date created:		2008-01-08
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Complex
 PORTVERSION=	1.59
@@ -17,7 +13,8 @@ COMMENT=	Complex numbers and associated mathematical functions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Complex.3 \
 		Math::Trig.3

@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-2.10
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module that dumps symbol names or the symbol table
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::Symdump.3
 

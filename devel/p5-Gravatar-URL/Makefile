@@ -1,9 +1,5 @@
-# New ports collection makefile for:  Gravatar-URL
-# Date created: 23 December 2009
-# Whom: andrey@kostenko.name
-#
+# Created by: andrey@kostenko.name
 # $FreeBSD$
-#
 
 PORTNAME=	Gravatar-URL
 PORTVERSION=	1.06
@@ -21,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Gravatar::URL.3 Libravatar::URL.3 Unicornify::URL.3
 

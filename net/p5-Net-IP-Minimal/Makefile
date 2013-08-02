@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-IP-Minimal
-# Date created:		2012-02-28
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IP-Minimal
 PORTVERSION=	0.06
@@ -17,7 +13,8 @@ COMMENT=	Minimal functions from Net::IP
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::IP::Minimal.3
 

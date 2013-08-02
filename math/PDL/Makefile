@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PDL
-# Date created:		08 February 1999
-# Whom:			Anton Berezin <tobez@plab.ku.dk>
-#
+# Created by: Anton Berezin <tobez@plab.ku.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.11
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_GMAKE=	yes
 MAKE_ENV=	PERL5LIB=${WRKSRC}/blib/lib
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/Inline

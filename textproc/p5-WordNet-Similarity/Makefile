@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WordNet-Similarity
-# Date created:				07 July 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WordNet-Similarity
 PORTVERSION=	2.05
@@ -21,7 +17,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	WNHOME=${WNHOME}
 
 MAN1=		rawtextFreq.pl.1 \

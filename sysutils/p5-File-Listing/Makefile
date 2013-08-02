@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Listing
-# Date created:				2011-04-14
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Listing
 PORTVERSION=	6.04
@@ -22,7 +18,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Listing.3
 

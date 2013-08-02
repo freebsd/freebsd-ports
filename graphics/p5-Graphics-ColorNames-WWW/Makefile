@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Graphics-ColorNames-WWW
-# Date created:		2008-07-31
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Graphics-ColorNames-WWW
 PORTVERSION=	1.13
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-Graphics-ColorNames>=0.32:${PORTSDIR}/graphics/p5-Graphics-Color
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Graphics::ColorNames::CSS.3 \
 		Graphics::ColorNames::IE.3 \

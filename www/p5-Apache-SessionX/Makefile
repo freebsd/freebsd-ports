@@ -16,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAN3=	Apache::SessionX.3 \
 	Apache::SessionX::Generate::MD5.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 IS_INTERACTIVE=	yes
 
 .include <bsd.port.mk>

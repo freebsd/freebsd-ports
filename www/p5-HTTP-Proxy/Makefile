@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-HTTP-Daemon>=1.25:${PORTSDIR}/www/p5-HTTP-Daemon \
 		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		\
 		HTTP::Proxy.3 \

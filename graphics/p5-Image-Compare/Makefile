@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Image-Compare
-# Date created:		2006-07-23
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Compare
 PORTVERSION=	0.9
@@ -23,7 +19,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Image::Compare.3 \
 		Image::Compare::AVG_THRESHOLD.3 \

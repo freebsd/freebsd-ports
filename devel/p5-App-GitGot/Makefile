@@ -36,7 +36,8 @@ TEST_DEPENDS=	p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Kwalitee>=0:${PORTSDIR}/devel/p5-Test-Kwalitee \
 		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		got.1 \
 		got-complete.1

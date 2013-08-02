@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IPC-Mmap
-# Date created:		2006-07-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-Mmap
 PORTVERSION=	0.21
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides a minimal mmap() interface for both POSIX and Win32
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 #MAN3=		IPC::Mmap.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Authen-Simple-SSH
-# Date created:				22 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Simple-SSH
 PORTVERSION=	0.1
@@ -18,10 +14,9 @@ BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
 		p5-Net-SSH-Perl>=0:${PORTSDIR}/net/p5-Net-SSH-Perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_SAFE=  yes
-
 MAN3=	Authen::Simple::SSH.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

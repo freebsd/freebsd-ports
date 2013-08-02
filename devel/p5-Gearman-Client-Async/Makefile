@@ -18,7 +18,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Gearman-Server>=0:${PORTSDIR}/devel/p5-Gearman-Server
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Gearman::Client::Async.3
 

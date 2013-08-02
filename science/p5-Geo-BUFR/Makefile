@@ -27,6 +27,7 @@ MAN3=		Geo::BUFR.3 \
 		Geo::bufralter.3 \
 		Geo::bufrencode.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

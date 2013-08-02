@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Image-Pngslimmer
-# Date Created:				2007/02/12
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Pngslimmer
 PORTVERSION=	0.30
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Slims (dynamically created) PNGs
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Image::Pngslimmer.3
 

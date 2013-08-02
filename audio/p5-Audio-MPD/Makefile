@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-MPD
-# Date created:				28 Oct 2008
-# Whom:	      				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-MPD
 PORTVERSION=	1.120610
@@ -29,7 +25,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Corpus-Audio-MPD>=1.113282:${PORTSDIR}/audio/p5-Test-Corpus-Audio-MPD
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		mpd-dynamic.1 \
 		mpd-rate.1

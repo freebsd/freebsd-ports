@@ -1,10 +1,6 @@
 # ex:ts=8
-# Ports collection makefile for:	p5-Lingua-ZH-TaBE
-# Date Created:			Jan 22, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-ZH-TaBE
 PORTVERSION=	0.07
@@ -18,7 +14,8 @@ COMMENT=	Chinese processing via libtabe
 
 LIB_DEPENDS=	tabe.3:${PORTSDIR}/chinese/libtabe
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 USE_BDB=	yes
 OBSOLETE_BDB_VAR=	WITH_DB

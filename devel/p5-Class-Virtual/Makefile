@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Virtual
-# Date created:		28 Jul 2004
-# Whom:			Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Virtual
 PORTVERSION=	0.06
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheri
 		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Virtual.3 Class::Virtually::Abstract.3
 

@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Exporter-Tidy>=0:${PORTSDIR}/devel/p5-Exporter-Tidy \
 RUN_DEPENDS=	p5-Exporter-Tidy>=0:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		p5-Object-Tiny-Lvalue>=0:${PORTSDIR}/devel/p5-Object-Tiny-Lvalue
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Proc::Fork.3
 

@@ -32,7 +32,8 @@ BUILD_DEPENDS=	p5-AnyEvent-Twitter-Stream>=0:${PORTSDIR}/net/p5-AnyEvent-Twitter
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		App::Twirc.3 \
 		App::Twirc::Manual.3 \

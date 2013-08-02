@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-PasswdMD5
-# Date created:				18 June, 2002
-# Whom:					Erwin Lansing <erwin@FreeBSD.org>
-#
+# Created by: Erwin Lansing <erwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-PasswdMD5
 PORTVERSION=	1.3
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides interoperable MD5-based crypt() function
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::PasswdMD5.3
 

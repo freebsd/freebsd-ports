@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Crypt-Twofish2
-# Date created:				2002/09/20
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-Twofish2
 PORTVERSION=	1.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the Twofish encryption algorithm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::Twofish2.3
 

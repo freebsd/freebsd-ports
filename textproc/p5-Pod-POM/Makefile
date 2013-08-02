@@ -13,7 +13,8 @@ COMMENT=	POD Object Model
 BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		podlint.1 pom2.1 pomdump.1
 MAN3=		Pod::POM.3 \

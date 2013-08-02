@@ -1,9 +1,6 @@
 # Ports collection makefile for:	Geometry-Primitive
-# Date created:			2008/08/30
-# Whom:	      			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Geometry-Primitive
 PORTVERSION=	0.22
@@ -22,7 +19,8 @@ RUN_DEPENDS=	p5-Check-ISA>=0.04:${PORTSDIR}/devel/p5-Check-ISA \
 		p5-MooseX-Storage>=0.17:${PORTSDIR}/devel/p5-MooseX-Storage
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Geometry::Primitive.3 \
 		Geometry::Primitive::Arc.3 \

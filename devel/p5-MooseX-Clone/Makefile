@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Clone.3 \
 		MooseX::Clone::Meta::Attribute::Trait::NoClone.3 \

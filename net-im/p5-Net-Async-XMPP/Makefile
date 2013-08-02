@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Async-XMPP
-# Date created:		2011-03-07
-# Whom:			<ports@c0decafe.net>
-#
+# Created by: <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Async-XMPP
 PORTVERSION=	0.002
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-IO-Async>=0.37:${PORTSDIR}/devel/p5-IO-Async \
 		p5-IO-Async-SSL>=0.04:${PORTSDIR}/security/p5-IO-Async-SSL \
 		p5-Protocol-XMPP>=0.002:${PORTSDIR}/net-im/p5-Protocol-XMPP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Async::XMPP.3 \
 		Net::Async::XMPP::Client.3 \

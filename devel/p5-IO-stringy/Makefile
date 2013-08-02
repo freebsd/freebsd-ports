@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IO-stringy
-# Date created:				April 27 1998
-# Whom:	      				Eivind Eklund <eivind@FreeBSD.org>
-#
+# Created by: Eivind Eklund <eivind@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-stringy
 PORTVERSION=	2.110
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for using IO handles with non-file objects
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::AtomicFile.3 IO::InnerFile.3 IO::Lines.3 IO::Scalar.3 \
 		IO::ScalarArray.3 IO::Stringy.3 IO::Wrap.3 IO::WrapTie.3

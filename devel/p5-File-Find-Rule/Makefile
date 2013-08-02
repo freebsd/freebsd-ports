@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-Number-Compare>=0:${PORTSDIR}/math/p5-Number-Compare \
 		p5-Text-Glob>=0.07:${PORTSDIR}/textproc/p5-Text-Glob
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		findrule.1
 MAN3=		File::Find::Rule.3 File::Find::Rule::Extending.3 \

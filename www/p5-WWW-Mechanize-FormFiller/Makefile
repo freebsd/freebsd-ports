@@ -1,6 +1,4 @@
-# New Ports Collection Makefile for:	p5-WWW-Mechanize-FormFiller
-# Date created:				2004-07-07
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-FormFiller
@@ -18,7 +16,8 @@ BUILD_DEPENDS=	p5-Data-Random>=0.05:${PORTSDIR}/devel/p5-Data-Random \
 		p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	WWW::Mechanize::FormFiller.3 \
 	WWW::Mechanize::FormFiller::Value.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::XSH
-# Date created:		15 July 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XSH
 PORTVERSION=	1.8.2
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-XUpdate-LibXML>=0:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		xsh.1
 MAN3=		XSH.3

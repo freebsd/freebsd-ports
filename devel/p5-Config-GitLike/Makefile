@@ -25,6 +25,7 @@ MAN3+=		Config::GitLike::Git.3 \
 		Config::GitLike::Cascaded.3 \
 		Config::GitLike.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-MRO-Define>=0.01:${PORTSDIR}/devel/p5-MRO-Define \
 		p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::StateMachine.3
 

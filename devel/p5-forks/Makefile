@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-forks
-# Date created:		2006-10-12
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	forks
 PORTVERSION=	0.34
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Acme-Damn>=0:${PORTSDIR}/devel/p5-Acme-Damn \
 		p5-Sys-SigAction>=0.11:${PORTSDIR}/devel/p5-Sys-SigAction
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		forks.3 forks::signals.3 \
 		forks::shared.3 \

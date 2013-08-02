@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-Duration
-# Date created:	   8 Jan 2004
-# Whom:		   Mathieu Arnold <mat@FreeBSD.org>
-#
+# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-Duration
 PORTVERSION=	1.03a
@@ -20,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Format::Duration.3
 

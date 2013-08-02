@@ -13,7 +13,8 @@ COMMENT=	Simple, fast implementation of an in-memory LRU cache
 
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Cache::LRU.3
 

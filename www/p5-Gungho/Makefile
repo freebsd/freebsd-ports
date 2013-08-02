@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gungho
-# Date created:		2006-07-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Gungho
 PORTVERSION=	0.09.008
@@ -49,7 +45,8 @@ RUN_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
 		p5-UNIVERSAL-isa>=0.06:${PORTSDIR}/devel/p5-UNIVERSAL-isa
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		gungho.1
 MAN3=		Gungho.3 \

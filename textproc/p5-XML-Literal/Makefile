@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Literal
-# Date created:		2006-08-01
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Literal
 PORTVERSION=	0.02
@@ -17,7 +13,8 @@ COMMENT=	Syntax support for XML literals
 RUN_DEPENDS=	p5-Sub-Override>=0:${PORTSDIR}/devel/p5-Sub-Override
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Literal.3
 

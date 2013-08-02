@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	Inline::Files
-# Date created:			Jun 5, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Inline-Files
 PORTVERSION=	0.68
@@ -15,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multiple virtual files at the end of your code
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Inline::Files.3 \
 		Inline::Files::Virtual.3

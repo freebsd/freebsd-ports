@@ -13,7 +13,8 @@ COMMENT=	Perl6 style Junction operators in Perl5
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Perl6::Junction.3
 

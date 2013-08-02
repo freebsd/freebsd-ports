@@ -28,7 +28,8 @@ TEST_DEPENDS=	p5-MooseX-ConfigFromFile>=0:${PORTSDIR}/devel/p5-MooseX-ConfigFrom
 		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Path-Tiny>=0:${PORTSDIR}/devel/p5-Path-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::Getopt.3 \
 	MooseX::Getopt::Basic.3 \

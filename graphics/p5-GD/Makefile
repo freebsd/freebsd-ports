@@ -13,9 +13,8 @@ COMMENT=	Perl5 interface to Gd Graphics Library version2
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF,PNG" \
 		-lib_gd_path ${LOCALBASE} -lib_ft_path} \
 		-lib_png_path ${LOCALBASE} -lib_zlib_path

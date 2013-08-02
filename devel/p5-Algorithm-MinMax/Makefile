@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Algorithm::MinMax
-# Date created:				Thu Oct 28 17:18:43 CST 2004
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-MinMax
 PORTVERSION=	0.01
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules to find the minimum and maximum of an array
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::MinMax.3
 

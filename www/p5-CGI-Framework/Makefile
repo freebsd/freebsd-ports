@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Framework.3
 

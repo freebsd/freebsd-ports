@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	Task::Math::Symbolic
-# Date created:			Aug 4, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Task-Math-Symbolic
 PORTVERSION=	1.01
@@ -31,7 +28,8 @@ RUN_DEPENDS=	p5-Math-Symbolic>=0.163:${PORTSDIR}/math/p5-Math-Symbolic \
 		p5-Math-SymbolicX-Statistics-Distributions>=0:${PORTSDIR}/math/p5-Math-SymbolicX-Statistics-Distributions
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Task::Math::Symbolic.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Field
-# Date created:		1 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Field
 DISTVERSION=	0.15
@@ -17,7 +13,8 @@ COMMENT=	Class Field Accessor Generator
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Field.3
 

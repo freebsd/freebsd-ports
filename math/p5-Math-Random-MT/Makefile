@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math::Random::MT
-# Date created:		5 Jul 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Random-MT
 PORTVERSION=	1.16
@@ -18,7 +14,8 @@ LICENSE=	BSD
 
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Random::MT.3
 

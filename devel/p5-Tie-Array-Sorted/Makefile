@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl array which is kept sorted
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::Array::Sorted.3 \
 		Tie::Array::Sorted::Lazy.3

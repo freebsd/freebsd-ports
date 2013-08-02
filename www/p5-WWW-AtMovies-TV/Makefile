@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-AtMovies-TV
-# Date created:				2008/08/31
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-AtMovies-TV
 PORTVERSION=	0.04
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-HTML-TableExtract>=2.1:${PORTSDIR}/www/p5-HTML-TableExtract \
 		p5-WWW-Mechanize>=1.34:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::AtMovies::TV.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Log-Dispatch-Scribe
-# Date created:		2009-10-08
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Dispatch-Scribe
 PORTVERSION=	0.05
@@ -21,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-Timer>=0:${PORTSDIR}/devel/p5-Test-Timer
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		scribe_cat.pl.1
 MAN3=		Log::Dispatch::Scribe.3

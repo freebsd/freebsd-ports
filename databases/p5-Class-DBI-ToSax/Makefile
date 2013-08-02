@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-ToSax
-# Date created:	   22 july 2003
-# Whom:		   Mathieu Arnold <mat@FreeBSD.org>
-#
+# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-ToSax
 PORTVERSION=	0.10
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
 		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI::ToSax.3
 

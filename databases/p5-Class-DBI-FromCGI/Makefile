@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-FromCGI
-# Date created:	   21 july 2003
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-FromCGI
 PORTVERSION=	1.00
@@ -19,7 +15,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-CGI-Untaint>=0:${PORTSDIR}/www/p5-CGI-Untaint
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI::FromCGI.3
 

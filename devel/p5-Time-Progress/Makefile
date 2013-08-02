@@ -12,6 +12,7 @@ COMMENT=	Elapsed and estimated finish time reporting
 
 MAN3=	Time::Progress.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

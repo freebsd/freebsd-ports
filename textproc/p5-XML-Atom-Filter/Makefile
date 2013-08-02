@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-XML-Atom-Filter
-# Date created:				13 October 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Atom-Filter
 PORTVERSION=	0.07
@@ -17,7 +13,8 @@ COMMENT=	Easy creation of command line Atom processing tools
 RUN_DEPENDS=	p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Atom::Filter.3
 

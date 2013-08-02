@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eps2png
-# Date created:				12 February 2001
-# Whom:					nik
-#
+# Created by: nik
 # $FreeBSD$
-#
 
 PORTNAME=	eps2png
 PORTVERSION=	2.7
@@ -16,7 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converts EPS images to PNG
 
 USE_GHOSTSCRIPT=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_ARGS=	INSTLLSCRIPT="${PREFIX}/bin"
 
 MAN1=		eps2png.1

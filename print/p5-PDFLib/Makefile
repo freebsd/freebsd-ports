@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-PDFLib
-# Date created:			May 13, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	PDFLib
 PORTVERSION=	0.14
@@ -18,7 +15,8 @@ COMMENT=	More OO interface to pdflib_pl.pm
 BUILD_DEPENDS=	pdflib-perl>=0:${PORTSDIR}/print/pdflib-perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 NO_BUILD=	yes
 
 MAN3=	PDFLib.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/p5-IO-Interface
-# Date created:				26 April 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Interface
 PORTVERSION=	1.06
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for access to network card configuration information
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::Interface.3 IO::Interface::Simple.3
 

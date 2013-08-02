@@ -13,7 +13,8 @@ COMMENT=	Class that provides an easy interface to use config files
 
 RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Config::Setting.3 \
 	Config::Setting::Chunk.3 \

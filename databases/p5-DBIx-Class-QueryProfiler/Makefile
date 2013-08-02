@@ -1,9 +1,5 @@
-# New ports collection makefile for:  DBIx-Class-QueryProfiler
-# Date created: 25 December 2009
-# Whom: andrey@kostenko.name
-#
+# Created by: andrey@kostenko.name
 # $FreeBSD$
-
 PORTNAME=	DBIx-Class-QueryProfiler
 PORTVERSION=	0.05
 CATEGORIES=	databases perl5
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class
 
 TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Class::QueryProfiler.3
 

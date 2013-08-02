@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Spork
-# Date created:		2004-07-18
-# Whom:			Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-#
+# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Spork
 PORTVERSION=	0.21
@@ -18,7 +14,8 @@ COMMENT=	Creating standalone HTML slideshows from Kwiki markup
 RUN_DEPENDS=	p5-Kwiki>=0.38:${PORTSDIR}/www/p5-Kwiki \
 		p5-Spoon>=0.22:${PORTSDIR}/devel/p5-Spoon
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		spork.1
 MAN3=		Spork.3 Spork::Config.3 \

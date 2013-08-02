@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Text::German
-# Date created:				30 Dec 2003
-# Whom:					Thorsten Greiner <thorsten.greiner@web.de>
-#
+# Created by: Thorsten Greiner <thorsten.greiner@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=		Text-German
 PORTVERSION=		0.06
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		German Grundform reduction
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Text::German.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Parse-Perl
-# Date created:		2010-11-21
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Parse-Perl
 PORTVERSION=	0.007
@@ -21,7 +17,8 @@ TEST_DEPENDS=	p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare \
 		p5-Lexical-Import>=0:${PORTSDIR}/devel/p5-Lexical-Import \
 		p5-Sub-Identify>=0:${PORTSDIR}/devel/p5-Sub-Identify
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Parse::Perl.3 \
 		Parse::Perl::CopHintsHash.3 \

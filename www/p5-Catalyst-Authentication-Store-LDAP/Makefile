@@ -17,7 +17,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Net-LDAP-Server-Test>=0:${PORTSDIR}/net/p5-Net-LDAP-Server-Test
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Authentication::Store::LDAP.3 \
 		Catalyst::Authentication::Store::LDAP::Backend.3 \

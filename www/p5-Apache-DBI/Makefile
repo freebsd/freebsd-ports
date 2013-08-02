@@ -19,9 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-Apache-DBI-mp[12]*
 
-MAKE_JOBS_SAFE=	yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_APACHE?=	22+
 
 MAN3=		Apache::DBI.3 Apache::AuthDBI.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SQL-Abstract-Limit
-# Date created:		14 Aug 2005
-# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SQL-Abstract-Limit
 PORTVERSION=	0.141
@@ -22,7 +18,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		SQL::Abstract::Limit.3
 

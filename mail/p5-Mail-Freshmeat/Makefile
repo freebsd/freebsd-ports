@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Mail-Freshmeat
-# Date created:				Wed Jan  3 14:42:56 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Freshmeat
 PORTVERSION=	1.20
@@ -18,7 +14,8 @@ COMMENT=	Perl module to parse daily newsletters from freshmeat.net
 BUILD_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Freshmeat.3
 

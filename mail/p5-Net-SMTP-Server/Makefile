@@ -16,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MASTER_SITE_BACKUP+=	http://www.macgyver.org/software/perl/
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SMTP::Server.3 \
 		Net::SMTP::Server::Client.3 \

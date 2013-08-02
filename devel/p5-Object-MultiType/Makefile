@@ -1,7 +1,5 @@
 # Ports collection Makefile for:		p5-Object-MultiType
-# Date created:					Oct 10 2003
-# Whom:						clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
 
 PORTNAME=	Object-MultiType
@@ -15,6 +13,7 @@ COMMENT=	Perl Objects as Hash, Array, and Scalar at the same time
 
 MAN3=		Object::MultiType.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

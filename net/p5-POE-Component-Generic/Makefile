@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
 		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 		p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Generic.3 \
 		POE::Component::Generic::Child.3 \

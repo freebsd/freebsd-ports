@@ -1,7 +1,4 @@
-# New ports collection makefile for:  Test-Pod-Coverage-Permissive
-# Date created: 08 February 2010
-# Whom: andrey@kostenko.name
-#
+# Created by: andrey@kostenko.name
 # $FreeBSD$
 
 PORTNAME=	Test-Pod-Coverage-Permissive
@@ -19,7 +16,8 @@ RUN_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	Test::Pod::Coverage::Permissive.3
 
 .include <bsd.port.mk>

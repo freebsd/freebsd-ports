@@ -15,7 +15,8 @@ BUILD_DEPENDS=	\
 	p5-MooseX-Role-Parameterized>=0.04:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::RelatedClassRoles.3
 

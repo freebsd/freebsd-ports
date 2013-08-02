@@ -1,9 +1,5 @@
-# New ports collection makefile for: p5-RDF-Simple
-# Date created: July 12 2004
-# Whom: Aaron Straup Cope <ascope@cpan.org>
-#
+# Created by: Aaron Straup Cope <ascope@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RDF-Simple
 PORTVERSION=	0.41.5
@@ -25,7 +21,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-IO-CaptureOutput>0:${PORTSDIR}/devel/p5-IO-CaptureOutput \
 		p5-Test-File>=0:${PORTSDIR}/devel/p5-Test-File
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	RDF::Simple.3 \
 	RDF::Simple::NS.3 \

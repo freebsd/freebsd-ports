@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}0${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing simple file locking
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		LockFile::Simple.3
 

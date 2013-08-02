@@ -14,9 +14,8 @@ COMMENT=	OO Perl interface to the SIMBAD astronomical database
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-MAKE_JOBS_SAFE=  yes
-
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Astro::SIMBAD.3 \
 	Astro::SIMBAD::Query.3 \

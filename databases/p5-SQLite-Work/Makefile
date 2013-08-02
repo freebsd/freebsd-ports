@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SQLite-Work
-# Date created:				2005-10-27
-# Whom:					Chris Larsen <darth@vader.dk>
-#
+# Created by: Chris Larsen <darth@vader.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	SQLite-Work
 PORTVERSION=	0.10.02
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Getopt-ArgvFile>=1.10:${PORTSDIR}/devel/p5-Getopt-ArgvFile
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		SQLite::Work::Mail.3 \
 		SQLite::Work.3 \

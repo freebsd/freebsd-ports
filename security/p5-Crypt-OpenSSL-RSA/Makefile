@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Crypt-OpenSSL-RSA
-# Date created:				2001/08/27
-# Whom:					nork@cityfujisawa.ne.jp
-#
+# Created by: nork@cityfujisawa.ne.jp
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenSSL-RSA
 PORTVERSION=	0.28
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-
 RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_OPENSSL=	yes
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Brackup
-# Date created:		2007-06-07
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Brackup
 PORTVERSION=	1.10
@@ -27,7 +23,8 @@ BUILD_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-String-Escape>0:${PORTSDIR}/textproc/p5-String-Escape
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		brackup.1 \
 		brackup-mount.1 \

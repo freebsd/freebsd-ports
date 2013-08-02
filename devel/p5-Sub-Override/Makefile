@@ -12,7 +12,8 @@ COMMENT=	Perl extension for easily overriding subroutines
 
 TEST_DEPENDS=	p5-Test-Fatal>=0.0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sub::Override.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Catalyst-View-ClearSilver
-# Date created:	   08 July 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-ClearSilver
 PORTVERSION=	0.02
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-ClearSilver>=0:${PORTSDIR}/www/p5-ClearSilver \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Catalyst-View-Template-Declare>=0:${PORTSDIR}/www/p5-Catalyst-View-Template-Declare
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Helper::View::ClearSilver.3 \
 		Catalyst::View::ClearSilver.3

@@ -26,7 +26,8 @@ BUILD_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Bio::MAGETAB.3 \
 		Bio::MAGETAB::ArrayDesign.3 \

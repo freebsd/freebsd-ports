@@ -20,7 +20,8 @@ XFT_DESC=	Client-side fonts via libXft
 
 CONFIGURE_ARGS=	X11INC=${LOCALBASE}/include X11LIB=${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_XORG=	x11
 
 MAN1=		ptked.1 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-DBI
-# Date created:		15 Dec 2001
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI
 PORTVERSION=	3.0.17
@@ -25,7 +21,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI.3 Class::DBI::Attribute.3 \
 		Class::DBI::Cascade::Delete.3 Class::DBI::Cascade::Fail.3 \

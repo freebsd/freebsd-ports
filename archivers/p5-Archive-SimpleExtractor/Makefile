@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Archive-SimpleExtractor
-# Date created:		2009-11-02
-# Whom:			Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	Archive-SimpleExtractor
 PORTVERSION=	0.11
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Archive-Rar>=2.02:${PORTSDIR}/archivers/p5-Archive-Rar \
 		p5-Module-Load-Conditional>=0.3:${PORTSDIR}/devel/p5-Module-Load-Conditional
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Archive::SimpleExtractor::Zip.3 \
 		Archive::SimpleExtractor::Tar.3 \
 		Archive::SimpleExtractor.3 \

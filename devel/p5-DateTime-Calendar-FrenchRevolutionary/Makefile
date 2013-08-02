@@ -17,7 +17,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime>=0.14:${PORTSDIR}/devel/p5-DateTime \
 		p5-Roman>=1.22:${PORTSDIR}/math/p5-Roman
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		DateTime::Calendar::FrenchRevolutionary.3 \
 		DateTime::Calendar::FrenchRevolutionary::Locale::en.3

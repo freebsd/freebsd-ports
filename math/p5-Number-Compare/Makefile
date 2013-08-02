@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Number-Compare
-# Date created:	   19 May 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Number-Compare
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	Numeric comparisons
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Number::Compare.3
 

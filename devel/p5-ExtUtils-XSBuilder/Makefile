@@ -14,7 +14,8 @@ COMMENT=	Autogenerating XS-glue Code
 RUN_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::C::grammar.3 \
 		ExtUtils::XSBuilder::PODTemplate.3 \

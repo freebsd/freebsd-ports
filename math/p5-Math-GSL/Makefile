@@ -20,7 +20,8 @@ TEST_DEPENDS=	p5-Test-Class>=0.12:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
 CFLAGS+=	-I${LOCALBASE}/include
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		smolder_smoke_signal.1
 MAN3=		Math::GSL.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-Replication
-# Date created:	   22 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-Replication
 PORTVERSION=	0.01
@@ -17,7 +13,8 @@ COMMENT=	Class::DBI for replicated database
 BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI::Replication.3
 

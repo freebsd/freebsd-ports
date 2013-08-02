@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Moose::Meta::Attribute::Custom::Trait::Chained.3 \
 		MooseX::ChainedAccessors.3 \

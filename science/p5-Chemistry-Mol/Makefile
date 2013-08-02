@@ -13,7 +13,8 @@ COMMENT=	Perl toolkit to describe molecules
 BUILD_DEPENDS=	p5-Math-VectorReal>=1.02:${PORTSDIR}/math/p5-Math-VectorReal
 RUN_DEPENDS=	p5-Math-VectorReal>=1.02:${PORTSDIR}/math/p5-Math-VectorReal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Chemistry::Atom.3 Chemistry::Bond.3 \
 	Chemistry::Obj.3 Chemistry::File.3 \

@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Data-OptList>=0.100:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Sub-Install>=0.920:${PORTSDIR}/devel/p5-Sub-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sub::Exporter.3 \
 		Sub::Exporter::Cookbook.3 \

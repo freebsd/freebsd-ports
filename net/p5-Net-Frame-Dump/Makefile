@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
     		p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Frame::Dump.3 \
 		Net::Frame::Dump::Offline.3 \

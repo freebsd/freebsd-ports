@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Time-Piece-MySQL
-# Date created:		19 August 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Time-Piece-MySQL
 PORTVERSION=	0.06
@@ -17,7 +13,8 @@ COMMENT=	Time::Piece::MySQL - Adds MySQL-specific methods to Time::Piece
 BUILD_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Time::Piece::MySQL.3
 

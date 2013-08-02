@@ -1,10 +1,6 @@
 # ex:ts=8
-# Ports collection makefile for:	AI::Prolog
-# Date created:			Jul 29, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	AI-Prolog
 PORTVERSION=	0.741
@@ -25,7 +21,8 @@ RUN_DEPENDS=	p5-aliased>=0.11:${PORTSDIR}/devel/p5-aliased \
 		p5-Term-ReadKey>=2.21:${PORTSDIR}/devel/p5-Term-ReadKey
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=</dev/null
 
 MAN1=	aiprolog.1

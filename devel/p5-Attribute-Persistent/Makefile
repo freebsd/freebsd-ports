@@ -13,7 +13,8 @@ COMMENT=		Attribute::Persistent - Really lazy persistence
 BUILD_DEPENDS=		p5-Attribute-Handlers-Prospective>=0:${PORTSDIR}/devel/p5-Attribute-Handlers-Prospective \
 			p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Attribute::Persistent.3
 

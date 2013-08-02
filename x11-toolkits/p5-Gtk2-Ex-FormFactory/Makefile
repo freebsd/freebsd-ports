@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Ex-FormFactory
-# Date created:		2006/12/22
-# Whom:			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Ex-FormFactory
 PORTVERSION=	0.67
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-Simple-List>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::Ex::FormFactory.3 \
 		Gtk2::Ex::FormFactory::Button.3 \

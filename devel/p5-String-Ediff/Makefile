@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-String-Ediff
-# Date created:				12 May 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	String-Ediff
 PORTVERSION=	0.09
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to produce common sub-string indices for two strings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		String::Ediff.3
 

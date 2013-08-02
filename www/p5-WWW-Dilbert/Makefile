@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Dilbert
-# Date created:				Aug 14 2004
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Dilbert
 PORTVERSION=	1.19
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		WWW::Dilbert.3
 

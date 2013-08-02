@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-IOC
-# Date created:	   23 February 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-IOC
 PORTVERSION=	0.03
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 RUN_DEPENDS=	p5-IOC>=0:${PORTSDIR}/devel/p5-IOC \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::IOC.3 MooseX::IOC::Meta::Attribute.3
 

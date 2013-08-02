@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::DateTime.3
 

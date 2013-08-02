@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Authen-Krb5
-# Date created:				22 January 2001
-# Whom:					ajk@iu.edu
-#
+# Created by: ajk@iu.edu
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Krb5
 PORTVERSION=	1.9
@@ -17,7 +13,8 @@ COMMENT=	Perl extension for Kerberos 5
 
 LIB_DEPENDS=	krb5.3:${PORTSDIR}/security/krb5
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Authen::Krb5.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-Musepack
-# Date created:		21 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-Musepack
 PORTVERSION=	1.0.1
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-MP3-Info>=1.20:${PORTSDIR}/audio/p5-MP3-Info \
 		p5-Audio-Scan>=0.85:${PORTSDIR}/audio/p5-Audio-Scan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Audio::APE.3 Audio::Musepack.3
 

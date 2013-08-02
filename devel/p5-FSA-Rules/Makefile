@@ -1,9 +1,5 @@
-# New ports collection makefile for:	FSA-Rules
-# Date created:				11 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FSA-Rules
 PORTVERSION=	0.31
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-GraphViz>=2:${PORTSDIR}/graphics/p5-GraphViz \
 		p5-Text-Tabs+Wrap>=0:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		FSA::Rules.3
 

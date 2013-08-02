@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-DBI-Oracle
-# Date created:	   21 july 2003
-# Whom:		   Mathieu Arnold <mat@FreeBSD.org>
-#
+# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-Oracle
 PORTVERSION=	0.51
@@ -17,7 +13,8 @@ COMMENT=	Extensions to Class::DBI for Oracle
 BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI::Oracle.3
 

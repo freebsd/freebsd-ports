@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Stream
-# Date created:				28 Augest 2000
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-#
+# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Stream
 DISTVERSION=	1.23_06
@@ -18,7 +14,8 @@ COMMENT=	XML::Stream provides you with access to XML Stream
 BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Stream.3 \
 		XML::Stream::IO::Select::Win32.3 \

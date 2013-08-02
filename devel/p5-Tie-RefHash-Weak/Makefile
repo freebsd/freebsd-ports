@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Variable-Magic>=0:${PORTSDIR}/devel/p5-Variable-Magic
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::RefHash::Weak.3
 

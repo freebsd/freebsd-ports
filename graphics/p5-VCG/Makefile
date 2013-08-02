@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-VCG
-# Date created:			Mar 30, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	VCG
 PORTVERSION=	0.5
@@ -21,7 +18,8 @@ BUILD_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		xvcg:${PORTSDIR}/graphics/vcg
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	VCG.3
 

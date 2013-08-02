@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Comic
-# Date created:				2006/06/28
-# Whom:					chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Comic
 PORTVERSION=	1.06
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-WWW-Dilbert>=1.19:${PORTSDIR}/www/p5-WWW-Dilbert \
 		p5-WWW-VenusEnvy>=1.10:${PORTSDIR}/www/p5-WWW-VenusEnvy
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		WWW::Comic.3 WWW::Comic::Plugin::uComics.3 \
 		WWW::Comic::Plugin::MrWiggles.3 WWW::Comic::Plugin::UserFriendly.3 \

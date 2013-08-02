@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Flow
-# Date created:				2008/08/30
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Flow
 DISTVERSION=	0.01
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Moose>=0.45:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		${PORTNAME:S/-/::/g}.3 Text::Flow::Wrap.3
 

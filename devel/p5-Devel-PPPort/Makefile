@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Devel-PPPort
-# Date created:				8 Aug 2004
-# Whom:	      				mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-PPPort
 DISTVERSION=	3.20
@@ -18,7 +14,8 @@ COMMENT=	Perl/Pollution/Portability
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::PPPort.3
 

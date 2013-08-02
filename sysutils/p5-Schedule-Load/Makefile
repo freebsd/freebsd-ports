@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Schedule-Load
-# Date created:		13 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Schedule-Load
 PORTVERSION=	3.064
@@ -24,7 +20,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		rschedule.1 slchoosed.1 slpolice.1 slreportd.1 slrsh.1 \
 		slchoosed_watchd.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Config-IniHash
-# Date created:		2006-08-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-IniHash
 PORTVERSION=	3.01.01
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Hash-Case>=0:${PORTSDIR}/devel/p5-Hash-Case \
 		p5-Hash-WithDefaults>=0.04:${PORTSDIR}/devel/p5-Hash-WithDefaults
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		Config::IniHash.3

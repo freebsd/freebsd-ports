@@ -1,9 +1,5 @@
-# New ports collection makefile for:    CGI::Builder::TT2
-# Date created:                         20 Oct 2004
-# Whom:                                 Daniel Wijnands <daniel@itxl.nl>
-#
+# Created by: Daniel Wijnands <daniel@itxl.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Builder-TT2
 PORTVERSION=	0.03
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-CGI-Builder>=0:${PORTSDIR}/www/p5-CGI-Builder \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Builder::TT2.3
 

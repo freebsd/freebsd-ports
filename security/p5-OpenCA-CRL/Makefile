@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenCA-CRL
-# Date created:	   02 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	OpenCA-CRL
 PORTVERSION=	0.9.17
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CRL Management module
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-patch:
 	@${MV} ${WRKSRC}/prova.pl  ${WRKSRC}/prova.pl.sample

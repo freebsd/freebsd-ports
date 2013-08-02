@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Net-SAP
-# Date created:                                Jul 25 2004
-# Whom:                                Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SAP
 PORTVERSION=	0.10
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-IO-Interface>=0:${PORTSDIR}/net/p5-IO-Interface \
 		p5-Net-SDP>=0:${PORTSDIR}/net/p5-Net-SDP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		psapd.1
 MAN3=		Net::SAP.3 Net::SAP::Packet.3

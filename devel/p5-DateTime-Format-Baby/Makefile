@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-Baby
-# Date created:	   2 july 2003
-# Whom:		   Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-Baby
 PORTVERSION=	1.0100
@@ -20,7 +16,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/00//}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Format::Baby.3
 

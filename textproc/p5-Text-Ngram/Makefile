@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Text::Ngram
-# Date created:				Nov 4 2004
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Ngram
 PORTVERSION=	0.14
@@ -17,7 +13,8 @@ COMMENT=	Perl module for n-gram analysis
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Ngram.3
 

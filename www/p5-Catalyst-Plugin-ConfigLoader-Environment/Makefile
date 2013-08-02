@@ -1,9 +1,6 @@
 # Ports collection makefile for: p5-Catalyst-Plugin-ConfigLoader-Environment
-# Date created:			 Apr 6, 2007
-# Whom:				 lbr@freebsd.org
-#
+# Created by: lbr@freebsd.org
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader-Environment
 PORTVERSION=	0.07
@@ -19,7 +16,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::ConfigLoader::Environment.3
 

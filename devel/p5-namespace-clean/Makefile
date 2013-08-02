@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.12:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		namespace::clean.3
 

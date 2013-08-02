@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Stream
-# Date created:		2008-07-21
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Stream
 PORTVERSION=	2.30
@@ -17,6 +13,7 @@ COMMENT=	Regular expression delimited records from streams
 RUN_DEPENDS=	p5-YAPE-Regex>=4.00:${PORTSDIR}/textproc/p5-YAPE-Regex
 
 MAN3=		File::Stream.3
-PERL_MODBUILD=	Yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

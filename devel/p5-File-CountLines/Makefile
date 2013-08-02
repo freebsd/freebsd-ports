@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Efficiently count the number of line breaks in a file
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::CountLines.3
 

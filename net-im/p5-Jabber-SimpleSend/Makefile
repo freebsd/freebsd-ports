@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Jabber-SimpleSend
-# Date created:		2006-08-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Jabber-SimpleSend
 PORTVERSION=	0.03
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Jabber::SimpleSend.3
 

@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-Devel-Cycle>=1.07:${PORTSDIR}/devel/p5-Devel-Cycle \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::Dispatch.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	base
-# Date created:	   31 August 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	base
 PORTVERSION=	2.18
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of modules to operate with inheritance and class fields at runtime
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		base.3 fields.3
 

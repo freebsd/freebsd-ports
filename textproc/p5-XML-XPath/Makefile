@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::XPath
-# Date created:		11 Nov 2000
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XPath
 PORTVERSION=	1.13
@@ -17,7 +13,8 @@ COMMENT=	Modules for parsing and evaluating XPath statements
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::XPath.3 XML::XPath::Boolean.3 XML::XPath::Builder.3 \
 		XML::XPath::Literal.3 XML::XPath::Node.3 \

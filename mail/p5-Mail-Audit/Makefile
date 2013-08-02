@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-File-HomeDir>=0.61:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::Audit.3 \
 		Mail::Audit::KillDups.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-NIS
-# Date created:		2006-09-01
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-NIS
 PORTVERSION=	0.43
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Sun's Network Information Service
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::NIS.3 Net::NISTable.3
 

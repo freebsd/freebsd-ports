@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-DBIx-Class>=0.07000:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBIx::Class::QueryLog.3 \
 		DBIx::Class::QueryLog::Analyzer.3 \

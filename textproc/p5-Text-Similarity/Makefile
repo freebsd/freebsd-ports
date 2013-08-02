@@ -12,7 +12,8 @@ COMMENT=	Measure the similarity of text documents
 
 LICENSE=	GPLv2 # (or later)
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		text_similarity.pl.1
 MAN3=		Text::OverlapFinder.3 \

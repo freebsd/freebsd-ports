@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Sub-Install
-# Date created:				30 Apr 2006
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sub-Install
 PORTVERSION=	0.926
@@ -17,7 +13,8 @@ COMMENT=	Install subroutines into packages easily
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Sub::Install.3
 

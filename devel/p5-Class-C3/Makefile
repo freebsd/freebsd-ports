@@ -13,7 +13,8 @@ COMMENT=	Pragma to use the C3 method resolution order algorithm
 OPTIONS_DEFINE=	XS
 XS_DESC=	XS speed optimizations
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::C3.3 \
 		Class::C3::next.3

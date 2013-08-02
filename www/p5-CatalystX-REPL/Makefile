@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CatalystX-REPL
-# Date created:		2011-05-08
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CatalystX-REPL
 PORTVERSION=	0.04
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Carp-REPL>=0:${PORTSDIR}/devel/p5-Carp-REPL \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 TEST_DEPENDS=	p5-Test-Expect>=0:${PORTSDIR}/devel/p5-Test-Expect
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CatalystX::REPL.3
 

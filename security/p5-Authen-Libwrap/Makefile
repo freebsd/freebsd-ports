@@ -12,7 +12,8 @@ COMMENT=	Authen::Libwrap - access to TCP Wrappers library
 
 TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Authen::Libwrap.3
 

@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Class-Std-Fast>=0:${PORTSDIR}/devel/p5-Class-Std-Fast \
 		p5-XML-Parser>=2.36:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		wsdl2perl.pl.1
 MAN3=		SOAP::WSDL.3 \

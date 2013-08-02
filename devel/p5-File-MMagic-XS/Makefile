@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-MMagic-XS
-# Date created:				18 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-MMagic-XS
 PORTVERSION=	0.09006
@@ -15,7 +11,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Guess File Type With XS (a la mod_mime_magic)
 
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::MMagic::XS.3
 

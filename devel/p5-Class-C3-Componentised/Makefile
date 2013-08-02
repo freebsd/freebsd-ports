@@ -22,7 +22,8 @@ TEST_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::C3::Componentised.3
 

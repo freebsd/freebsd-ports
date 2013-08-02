@@ -20,7 +20,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	p5-XML-NamespaceSupport>=1.07:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
 		p5-XML-SAX>=0.11:${PORTSDIR}/textproc/p5-XML-SAX
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	XMLPREFIX=${LOCALBASE}
 
 PKGDEINSTALL=	${PKGINSTALL}

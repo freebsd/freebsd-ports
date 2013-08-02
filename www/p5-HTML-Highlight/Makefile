@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to highlight words or patterns in HTML documents
 
-PERL_CONFIGURE=	Yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	HTML::Highlight.3
 
 .include <bsd.port.mk>

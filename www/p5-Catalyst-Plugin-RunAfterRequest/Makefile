@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Plugin-RunAfterRequest
-# Date created:		2009-08-30
-# Whom:			Andrey Kostenko <andrey@kostenko.name>
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-RunAfterRequest
 PORTVERSION=	0.04
@@ -24,7 +20,8 @@ BUILD_DEPENDS+=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::RunAfterRequest.3 \
 			Catalyst::Model::Role::RunAfterRequest.3

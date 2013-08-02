@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-OpenSSL-CA
-# Date created:		2011/08/25
-# Whom:			Mosconi <mosconi.rmg@gmail.com>
-#
+# Created by: Mosconi <mosconi.rmg@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OpenSSL-CA
 PORTVERSION=	0.23
@@ -27,7 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Group>=0:${PORTSDIR}/devel/p5-Test-Group
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::OpenSSL::CA.3 \
 		Crypt::OpenSSL::CA::AlphabetSoup.3 \

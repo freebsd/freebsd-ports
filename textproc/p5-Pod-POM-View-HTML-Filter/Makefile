@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Pod-POM-View-HTML-Filter
-# Date created:				01 September 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-POM-View-HTML-Filter
 PORTVERSION=	0.09
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-Syntax-Highlight-HTML>=0:${PORTSDIR}/www/p5-Syntax-Highlight-HTML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Pod::POM::View::HTML::Filter.3
 

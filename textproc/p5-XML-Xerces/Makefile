@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Xerces
-# Date created:		29 March 2006
-# Whom:	      		Ken Menzel <kenm@icarz.com>
-#
+# Created by: Ken Menzel <kenm@icarz.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Xerces
 PORTVERSION=	2.7.0
@@ -22,7 +18,8 @@ LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	XERCES_LIB="${LOCALBASE}/lib" \
 		XERCES_INCLUDE="${LOCALBASE}/include" \
 		XERCES_DEVEL="yes" \

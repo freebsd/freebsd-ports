@@ -14,7 +14,8 @@ COMMENT=	Selection of general-utility IO function
 
 PORTSCOUT=	skipv:1.48
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::Util.3
 

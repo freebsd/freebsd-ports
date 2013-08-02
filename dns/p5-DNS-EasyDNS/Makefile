@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DNS-EasyDNS
-# Date created:				28 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DNS-EasyDNS
 PORTVERSION=	0.04
@@ -20,7 +16,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	DNS::EasyDNS.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 .if !defined(NOPORTDOCS)

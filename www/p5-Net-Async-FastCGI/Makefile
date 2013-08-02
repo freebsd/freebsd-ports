@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-Test-HexString>=0:${PORTSDIR}/devel/p5-Test-HexString \
 		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::Async::FastCGI.3 \
 	Net::Async::FastCGI::PSGI.3 \

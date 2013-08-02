@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Params-Check>=0.34:${PORTSDIR}/devel/p5-Params-Check
 RUN_DEPENDS=	p5-Params-Check>=0.34:${PORTSDIR}/devel/p5-Params-Check
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Object::Accessor.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tie-DBI
-# Date created:				Thu Mar  8 06:56:59 2001
-# Whom:					clive
-#
+# Created by: clive
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-DBI
 PORTVERSION=	1.06
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::RDBM.3 Tie::DBI.3
 

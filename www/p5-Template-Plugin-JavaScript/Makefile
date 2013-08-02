@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Plugin-JavaScript
-# Date created:		2006-07-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-JavaScript
 PORTVERSION=	0.02
@@ -17,7 +13,8 @@ COMMENT=	Encodes text to be safe in JavaScript
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Template::Plugin::JavaScript.3
 

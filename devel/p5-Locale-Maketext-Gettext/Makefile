@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Locale-Maketext-Gettext
-# Date created:				April 26 2003
-# Whom:					Mathieu Arnold <m@absolight.net>
-#
+# Created by: Mathieu Arnold <m@absolight.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Locale-Maketext-Gettext
 PORTVERSION=	1.28
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Joins gettext and Maketext frameworks
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		maketext.1
 MAN3=		Locale::Maketext::Gettext.3 \

@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	p5-Catalyst-Plugin-Textile
-# Date created:			May 4, 2005
-# Whom:				Travis Campbell <hcoyote@ghostar.org>
-#
+# Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Textile
 PORTVERSION=	0.01
@@ -22,7 +19,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Text-Textile>=0:${PORTSDIR}/textproc/p5-Text-Textile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Textile.3
 

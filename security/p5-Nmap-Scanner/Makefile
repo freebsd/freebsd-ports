@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Nmap-Scanner
-# Date created:	   04 July 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Nmap-Scanner
 PORTVERSION=	1.0
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Nmap::Scanner.3 Nmap::Scanner::Address.3 \
 		Nmap::Scanner::Backend::Processor.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	UNIVERSAL-moniker
-# Date created:	   01 September 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	UNIVERSAL-moniker
 PORTVERSION=	0.08
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moniker for classes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		UNIVERSAL::moniker.3
 

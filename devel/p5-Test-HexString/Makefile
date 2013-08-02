@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-HexString
-# Date created:				16 February 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-HexString
 PORTVERSION=	0.03
@@ -18,7 +14,8 @@ COMMENT=	Test binary strings with hex dump diagnostics
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::HexString.3
 

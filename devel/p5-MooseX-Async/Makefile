@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-MooseX-Async
-# Date created:				27 Jul 2008
-# Whom:					Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Async
 PORTVERSION=	0.07
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.13:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::Async.3 \
 	MooseX::Async::Meta::Class.3 \

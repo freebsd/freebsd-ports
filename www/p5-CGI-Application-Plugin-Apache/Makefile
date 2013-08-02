@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-Application-Plugin-Apache
-# Date created:		2010-11-18
-# Whom:			Kurt Lidl <kurt.lidl@cello.com>
-#
+# Created by: Kurt Lidl <kurt.lidl@cello.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-Apache
 PORTVERSION=	1.02
@@ -22,7 +18,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		CGI::Application::Plugin::Apache.3 \
 		CGI::Application::Plugin::Apache::Request.3 \

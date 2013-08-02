@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dns_mre
-# Date created:		2008-08-02
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dns_mre
 PORTVERSION=	1.0

@@ -26,7 +26,8 @@ TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::App::Cmd.3 \
 		MooseX::App::Cmd::Command.3

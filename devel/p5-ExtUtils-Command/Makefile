@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ExtUtils-Command
-# Date created:	   02 November 2006
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-Command
 PORTVERSION=	1.17
@@ -17,7 +13,8 @@ COMMENT=	Utilities to replace common UNIX commands
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::Command.3
 

@@ -15,7 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface for using perl5 to access PostgreSQL databases
 
 USE_PGSQL=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Pg.3
 

@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-XML-MyXML>=0:${PORTSDIR}/textproc/p5-XML-MyXML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SOAP::Amazon::S3.3
 

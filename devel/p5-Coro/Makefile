@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-AnyEvent>=7:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Coro.3 \
 		Coro::AIO.3 \

@@ -14,7 +14,8 @@ COMMENT=	DBI driver for InterBase RDBMS server
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_FIREBIRD=	yes
 
 post-patch:

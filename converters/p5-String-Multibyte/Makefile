@@ -1,9 +1,5 @@
-# New ports collection makefile for:	String::Multibyte
-# Date created:				25 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	String-Multibyte
 PORTVERSION=	1.10
@@ -18,7 +14,8 @@ COMMENT=	Perl module to manipulate multibyte character strings
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		String::Multibyte.3 \
 		String::Multibyte::Big5.3 \

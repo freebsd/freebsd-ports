@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Singleton
-# Date created:				Sun Jan 14 00:56:46 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Singleton
 PORTVERSION=	1.4
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that describes a singular object class
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Singleton.3
 

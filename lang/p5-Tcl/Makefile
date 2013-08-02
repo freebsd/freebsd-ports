@@ -12,7 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tcl extension module for Perl5
 
 CONFIGURE_ARGS=	--nousestubs --tclsh ${TCLSH}
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_TCL=	84+
 
 MAN3=		Tcl.3

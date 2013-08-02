@@ -27,7 +27,8 @@ CLIPBOARD_DESC=	Support X11 clipboard
 GITHUB_DESC=	Support github.com
 PASTEBIN_DESC=	Support pastebin.com
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 CONFLICTS=	p5-WebService-NoPaste-[0-9]*
 

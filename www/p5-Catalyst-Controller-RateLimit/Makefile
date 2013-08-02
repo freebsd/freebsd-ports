@@ -1,7 +1,4 @@
-# New ports collection makefile for:  Catalyst-Controller-RateLimit
-# Date created: 12 February 2010
-# Whom: andrey@kostenko.name
-#
+# Created by: andrey@kostenko.name
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Controller-RateLimit
@@ -24,7 +21,8 @@ TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Me
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	Catalyst::Controller::RateLimit.3
 
 .include <bsd.port.mk>

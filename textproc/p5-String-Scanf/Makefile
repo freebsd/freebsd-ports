@@ -1,9 +1,5 @@
-# New ports collection makefile for:	String::Scanf
-# Date created:				04 Nov 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		String-Scanf
 PORTVERSION=		2.1
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Emulates the sscanf() of the C stdio library
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			String::Scanf.3
 

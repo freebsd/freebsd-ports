@@ -13,7 +13,8 @@ COMMENT=	Simple(r) object representation of an XML::LibXML DOM object
 BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-SimpleObject>=0:${PORTSDIR}/textproc/p5-XML-SimpleObject
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::SimpleObject::LibXML.3
 

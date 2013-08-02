@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBD-PgPP
-# Date created:				August 8th 2004
-# Whom:					Lubomir Marinov <lubomir_m@abv.bg>
-#
+# Created by: Lubomir Marinov <lubomir_m@abv.bg>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-PgPP
 PORTVERSION=	0.08
@@ -17,7 +13,8 @@ COMMENT=	Pure Perl PostgreSQL driver for the DBI
 BUILD_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBD::PgPP.3
 

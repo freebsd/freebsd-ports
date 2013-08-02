@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tree:Nary
-# Date created:				18 May 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		Tree-Nary
 PORTVERSION=		1.30
@@ -16,7 +12,8 @@ DISTNAME=		${PORTNAME}-1.3
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl implementation of N-ary search trees
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Tree::Nary.3
 

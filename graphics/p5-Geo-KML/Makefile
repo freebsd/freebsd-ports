@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Geo::KML.3 Geo::KML::Util.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -23,7 +23,8 @@ TEST_REPORTER_DESC=	Send reports to cpan-testers
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
 MAKE_JOBS_UNSAFE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CPANPLUS.3 \
 		CPANPLUS::Backend.3 \

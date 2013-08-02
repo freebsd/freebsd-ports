@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Tagset
-# Date Created:				13 Oct 2000
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Tagset
 PORTVERSION=	3.20
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Some useful data table in parsing HTML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Tagset.3
 

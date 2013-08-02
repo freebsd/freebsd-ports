@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dns/p5-BIND-Config-Parser
-# Date created:				05 May 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BIND-Config-Parser
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ COMMENT=	Parse BIND Config files
 BUILD_DEPENDS=	p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	BIND::Config::Parser.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-Types-Structured
-# Date created:	   11 May 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Types-Structured
 PORTVERSION=	0.28
@@ -27,7 +23,8 @@ TEST_DEPENDS=	p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Meta::TypeCoercion::Structured.3 \
 		MooseX::Meta::TypeCoercion::Structured::Optional.3 \

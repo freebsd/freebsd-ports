@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ioctl
-# Date created:				Wed Jan  3 08:31:51 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Ioctl
 PORTVERSION=	0.81
@@ -15,6 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides a way to get the value of C ioctl constants
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

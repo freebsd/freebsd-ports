@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Locale::Maketext.3 \
 		Locale::Maketext::Cookbook.3 \

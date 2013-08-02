@@ -12,8 +12,8 @@ DISTNAME=	libintl-perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Internationalization library for Perl
 
-PERL_CONFIGURE=	yes
-USES=		gettext
+USES=		perl5 gettext
+USE_PERL5=	configure
 
 MAN3=		Locale::Messages.3 \
 		Locale::Recode.3 \

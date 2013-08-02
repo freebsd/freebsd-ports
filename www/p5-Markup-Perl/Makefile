@@ -12,7 +12,8 @@ DISTNAME=	Markup-Perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Support perl code inside CGI scripts using simple tags
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Markup::Perl.3
 

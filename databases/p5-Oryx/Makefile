@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Oryx
-# Date created:				18 February 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Oryx
 PORTVERSION=	0.24
@@ -29,7 +25,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-XML-DOM-Lite>0:${PORTSDIR}/textproc/p5-XML-DOM-Lite \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Oryx.3 Oryx::Association.3 Oryx::Association::Array.3 Oryx::Attribute.3 \
 	Oryx::Class.3 Oryx::DBI.3 Oryx::DBI::Util.3 Oryx::DBM.3 Oryx::Manual::Guts.3 \

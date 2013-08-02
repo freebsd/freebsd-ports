@@ -34,7 +34,8 @@ BUILD_DEPENDS+=	p5-Module-Install>=1.02:${PORTSDIR}/devel/p5-Module-Install
 TEST_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Devel.3 \
 		Catalyst::Helper.3 \

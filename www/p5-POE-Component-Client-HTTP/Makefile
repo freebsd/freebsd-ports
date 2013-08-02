@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-POE>=1.312:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-POE-Server-TCP>=1.14:${PORTSDIR}/devel/p5-Test-POE-Server-TCP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Client::HTTP.3 \
 		POE::Component::Client::HTTP::Request.3 \

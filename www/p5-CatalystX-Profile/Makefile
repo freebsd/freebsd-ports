@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CatalystX-Profile
-# Date created:		2011-05-08
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CatalystX-Profile
 PORTVERSION=	0.01
@@ -26,7 +22,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80020:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CatalystX::Profile.3 CatalystX::Profile::Controller::ControlProfiling.3
 

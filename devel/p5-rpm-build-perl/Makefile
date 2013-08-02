@@ -12,7 +12,8 @@ COMMENT=	This module is required to build Perl RPM packages
 
 TEST_DEPENDS=	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		perl.prov.1 \
 		perl.req.1

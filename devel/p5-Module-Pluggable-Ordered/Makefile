@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Pluggable-Ordered
-# Date created:		2004-08-29
-# Whom:			Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Pluggable-Ordered
 PORTVERSION=	1.5
@@ -18,7 +14,8 @@ COMMENT=	Call module plugins in a specified order
 BUILD_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Pluggable::Ordered.3
 

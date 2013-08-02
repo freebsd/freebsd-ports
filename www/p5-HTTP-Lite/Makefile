@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Lite
-# Date created:				Nov 20 2003
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Lite
 PORTVERSION=	2.41
@@ -17,7 +13,8 @@ COMMENT=	Perl5 modules for Lightweight HTTP implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Lite.3
 

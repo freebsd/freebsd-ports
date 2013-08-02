@@ -35,7 +35,8 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		p5-Test-XML>=0:${PORTSDIR}/devel/p5-Test-XML
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Base.3 \

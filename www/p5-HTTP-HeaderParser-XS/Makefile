@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTTP-HeaderParser-XS
-# Date created:	   18 Apr 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-HeaderParser-XS
 PORTVERSION=	0.20
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS extension for processing HTTP headers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAKE_ARGS+=	CC=${CXX} LD=${CXX}
 

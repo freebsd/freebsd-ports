@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
 
 OPTIONS_DEFINE=	IPV6
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		net-server.1
 MAN3=		Net::Server.3 \

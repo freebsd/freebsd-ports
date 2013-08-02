@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-mysql-genocide
-# Date created:				2008/06/16
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	mysql-genocide
 PORTVERSION=	0.03
@@ -18,7 +14,8 @@ COMMENT=	Parallel operation on MySQL processlist
 BUILD_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=		mysql-genocide.1
 
 PLIST_FILES=	bin/mysql-genocide \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Plugin-MP3
-# Date created:		13 June 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-MP3
 PORTVERSION=	1.02
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Template::Plugin::MP3.3
 

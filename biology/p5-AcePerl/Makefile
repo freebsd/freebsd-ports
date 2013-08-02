@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-AcePerl
-# Date created:		26 July 2000
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	AcePerl
 PORTVERSION=	1.92
@@ -21,7 +17,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=  yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		ace.pl.1
 MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \

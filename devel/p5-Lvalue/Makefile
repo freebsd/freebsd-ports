@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Carp>=0:${PORTSDIR}/devel/p5-Carp \
     		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Lvalue.3
 

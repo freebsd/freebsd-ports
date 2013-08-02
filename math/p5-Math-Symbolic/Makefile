@@ -37,6 +37,7 @@ MAN3=	Math::Symbolic.3 \
 	Math::Symbolic::Variable.3 \
 	Math::Symbolic::VectorCalculus.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:  Devel-Backtrace
-# Whom:		Andrey Kostenko <andrey@kostenko.name>
-# Date created: 02 December 2009
-#
+# Created by: Andrey Kostenko <andrey@kostenko.name>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Backtrace
 PORTVERSION=	0.12
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 RUN_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Devel::Backtrace.3 \
 		Devel::Backtrace::Point.3 \
 		Devel::DollarAt.3

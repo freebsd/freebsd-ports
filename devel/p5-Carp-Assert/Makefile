@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Carp-Assert
-# Date created:		15 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Carp-Assert
 PORTVERSION=	0.20
@@ -16,7 +12,8 @@ COMMENT=	Executable comments like the ANSI C library assert.h
 
 BUILD_DEPENDS=	pod2test:${PORTSDIR}/devel/p5-Pod-Tests
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Carp::Assert.3
 

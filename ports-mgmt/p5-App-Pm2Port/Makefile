@@ -1,7 +1,4 @@
-# New ports collection makefile for:  App-Pm2Port
-# Date created: 20 December 2009
-# Whom: andrey@kostenko.name
-#
+# Created by: andrey@kostenko.name
 # $FreeBSD$
 
 PORTNAME=	App-Pm2Port
@@ -21,7 +18,8 @@ BUILD_DEPENDS=	p5-CPANPLUS>=0:${PORTSDIR}/devel/p5-CPANPLUS \
 		subversion>=0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=		pm2port.1
 MAN3=		App::Pm2Port.3
 

@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Params-Validate>=0.97:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Getopt::Long::Descriptive.3 \
 		Getopt::Long::Descriptive::Opts.3 \

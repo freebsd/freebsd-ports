@@ -1,10 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:	WebService::Bloglines
-# Date created:			Nov 3, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-Bloglines
 PORTVERSION=	0.12
@@ -21,7 +18,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	WebService::Bloglines.3
 

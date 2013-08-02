@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-MethodAttributes
-# Date created:	   13 May 2009
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-MethodAttributes
 PORTVERSION=	0.28
@@ -26,7 +22,8 @@ TEST_DEPENDS=	p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-P
 		p5-Test-CheckDeps>=0.002:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::MethodAttributes.3 \
 		MooseX::MethodAttributes::Inheritable.3 \

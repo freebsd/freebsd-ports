@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Time-Duration-Parse
-# Date created:		2006-07-18
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Time-Duration-Parse
 PORTVERSION=	0.06
@@ -16,7 +12,8 @@ COMMENT=	Parse string that represents time duration
 
 RUN_DEPENDS=	p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Time::Duration::Parse.3
 

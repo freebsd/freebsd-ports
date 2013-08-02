@@ -20,6 +20,7 @@ MAN3=	Petal.3 \
 	Petal::Hash::Test.3 \
 	Petal::I18N.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

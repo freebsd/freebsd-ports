@@ -13,7 +13,8 @@ COMMENT=	Act on upper scopes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Scope::Upper.3
 

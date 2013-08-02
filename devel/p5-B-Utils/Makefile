@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-B-Utils
-# Date created:				31 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	B-Utils
 PORTVERSION=	0.21
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.301:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		B::Utils.3 B::Utils::OP.3
 

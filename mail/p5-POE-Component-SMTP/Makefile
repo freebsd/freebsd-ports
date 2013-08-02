@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-SMTP
-# Date created:	   02 June 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-SMTP
 PORTVERSION=	1.6
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Server::SMTP.3 POE::Filter::SMTP.3
 

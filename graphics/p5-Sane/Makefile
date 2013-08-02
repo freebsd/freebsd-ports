@@ -1,9 +1,6 @@
 # Ports collection makefile for:	Sane
-# Date created:				2009/01/12
-# Whom:	      				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Sane
 PORTVERSION=	0.05
@@ -18,7 +15,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${LOCALBASE}/bin/sane-config:${PORTSDIR}/graphics/sane-backends
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sane.3
 

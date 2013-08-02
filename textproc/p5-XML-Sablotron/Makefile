@@ -12,8 +12,8 @@ COMMENT=	Perl interface to the Sablotron XSLT processor
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
 
-USES=		iconv
-PERL_CONFIGURE=	yes
+USES=		iconv perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \
 		INC='-I${LOCALBASE}/include' \
 		EXPATLIBPATH='${LOCALBASE}/lib' \

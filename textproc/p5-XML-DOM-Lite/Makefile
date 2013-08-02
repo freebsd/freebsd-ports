@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-DOM-Lite
-# Date created:		2006-08-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-DOM-Lite
 PORTVERSION=	0.15
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lite Pure Perl XML DOM Parser Kit
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::DOM::Lite.3 XML::DOM::Lite::Document.3 \
 		XML::DOM::Lite::NodeList.3 XML::DOM::Lite::Parser.3 \

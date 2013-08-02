@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache-MP3
-# Date created:		23-Jan-2001
-# Whom:			Dominic Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dominic Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-MP3
 PORTVERSION=	4.00
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Audio-Wav>=0:${PORTSDIR}/audio/p5-Audio-Wav \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_APACHE=	22+
 
 MAN3=		Apache::MP3.3 \

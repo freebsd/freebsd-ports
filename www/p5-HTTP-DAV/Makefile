@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTTP-DAV
-# Date created:	   02 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-DAV
 PORTVERSION=	0.47
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.48:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		dave.1
 MAN3=		HTTP::DAV.3 HTTP::DAV::Lock.3 HTTP::DAV::Resource.3 \

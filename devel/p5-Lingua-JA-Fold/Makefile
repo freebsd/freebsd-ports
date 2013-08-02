@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Lingua-JA-Fold
-# Date created:				07 November 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-JA-Fold
 PORTVERSION=	0.08
@@ -16,7 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lingua::JA::Fold - fold a Japanese text
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Lingua::JA::Fold.3
 

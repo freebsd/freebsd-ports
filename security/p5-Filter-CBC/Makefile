@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Filter-CBC
-# Date created:		11 Dec 2001
-# Whom:			Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Filter-CBC
 PORTVERSION=	0.10
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Filter::CBC.3
 

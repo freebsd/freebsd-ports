@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-SmallProf
-# Date created:	   11 August 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-SmallProf
 PORTVERSION=	2.02
@@ -17,7 +13,8 @@ COMMENT=	Per-line Perl profiler
 BUILD_DEPENDS=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::SmallProf.3
 

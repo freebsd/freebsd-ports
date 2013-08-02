@@ -11,7 +11,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	List::Cycle - Objects for cycling through a list of values
 TAGS=		list cycle
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	List::Cycle.3
 

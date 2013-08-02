@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Curses
-# Date created:				October 17th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Curses
 PORTVERSION=	1.28
@@ -19,7 +15,8 @@ COMMENT=	Perl5 module for terminal screen handling and optimization
 OPTIONS_DEFINE=	NCURSESW
 NCURSESW_DESC=	Wide-character-capable support by ncursesw library
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	PANELS MENUS FORMS
 CONFIGURE_ENV=	CURSES_CFLAGS="-I${WRKSRC}/usr/include/ncurses"
 

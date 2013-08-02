@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-EncryptedHash
-# Date created:				Tue Sep 11 10:31:23 PDT 2001
-# Whom:	      				Michael Haro <mharo@FreeBSD.org>
-#
+# Created by: Michael Haro <mharo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-EncryptedHash
 PORTVERSION=	1.24
@@ -19,7 +15,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
 		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::EncryptedHash.3
 

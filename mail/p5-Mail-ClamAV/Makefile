@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-ClamAV
-# Date created:		2003-11-24
-# Whom:			Jan-Peter Koopmann <Jan-Peter.Koopmann@seceidos.de>
-#
+# Created by: Jan-Peter Koopmann <Jan-Peter.Koopmann@seceidos.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-ClamAV
 PORTVERSION=	0.29
@@ -23,7 +19,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::ClamAV.3
 

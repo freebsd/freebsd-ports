@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Lazy.3 Test::Lazy::Template.3 Test::Lazy::Tester.3
 

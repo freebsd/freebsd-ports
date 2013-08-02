@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-CBCeasy
-# Date created:				16 octobre 2003
-# Whom:	      				mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-CBCeasy
 PORTVERSION=	0.24
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
 		p5-MD5>=0:${PORTSDIR}/security/p5-MD5
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::CBCeasy.3
 

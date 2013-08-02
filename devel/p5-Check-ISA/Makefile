@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Check-ISA
-# Date created:				2008/09/06
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Check-ISA
 PORTVERSION=	0.04
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Check::ISA.3
 

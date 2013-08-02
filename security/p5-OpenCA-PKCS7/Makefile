@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenCA-PKCS7
-# Date created:	   02 June 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	OpenCA-PKCS7
 PORTVERSION=	0.9.13
@@ -20,6 +16,7 @@ BUILD_DEPENDS=	p5-OpenCA-OpenSSL>=0:${PORTSDIR}/security/p5-OpenCA-OpenSSL \
 		p5-X500-DN>=0:${PORTSDIR}/net/p5-X500-DN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::MobileAgent.3 \
 		HTTP::MobileAgent::AirHPhone.3 \

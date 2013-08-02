@@ -1,9 +1,6 @@
 # Ports collection makefile for:	p5-Graphics-Color
-# Date created:				2008/08/30
-# Whom:	      				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Graphics-Color
 PORTVERSION=	0.29
@@ -25,7 +22,8 @@ BUILD_DEPENDS=	p5-Color-Library>=0.02:${PORTSDIR}/graphics/p5-Color-Library \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Graphics::Color.3 \
 		Graphics::Color::CMYK.3 \

@@ -25,7 +25,8 @@ MAILSEND_DESC=		Mail::Send support
 MAILSENDER_DESC=	Mail::Sender support
 MAILSENDMAIL_DESC=	Mail::Sendmail support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Log::Dispatch.3 \
 		Log::Dispatch::ApacheLog.3 \

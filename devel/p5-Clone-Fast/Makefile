@@ -14,7 +14,8 @@ LICENSE=	ART20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Clone::Fast.3
 

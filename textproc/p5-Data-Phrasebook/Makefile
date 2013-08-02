@@ -12,7 +12,8 @@ COMMENT=	Accessing phrasebooks from various data sources
 
 LICENSE=	ART20
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Phrasebook.3 \
 	Data::Phrasebook::Debug.3 \

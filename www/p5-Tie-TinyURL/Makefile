@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-TinyURL
-# Date created:				2008/01/26
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-TinyURL
 PORTVERSION=	0.02
@@ -20,6 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Tie::TinyURL.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Mail::GnuPG.3
 

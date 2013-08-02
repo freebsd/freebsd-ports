@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::RSS::Feed
-# Date created:				Aug 1, 2006
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-RSS-Feed
 PORTVERSION=	2.32
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::RSS::Feed.3 \
 		XML::RSS::Headline.3 \

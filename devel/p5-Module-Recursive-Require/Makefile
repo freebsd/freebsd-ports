@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Recursive-Require
-# Date created:		2008-06-11
-# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
-#
+# Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Recursive-Require
 PORTVERSION=	0.04
@@ -17,7 +13,8 @@ COMMENT=	Require module recursively
 BUILD_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-PERL_CONFIGURE=	Yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	Module::Recursive::Require.3
 
 .include <bsd.port.mk>

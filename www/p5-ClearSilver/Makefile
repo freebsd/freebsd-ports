@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ClearSilver
-# Date created:				June 25, 2006
-# Whom:					Rink Springer <rink@FreeBSD.org>
-#
+# Created by: Rink Springer <rink@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ClearSilver
 PORTVERSION=	0.10.5
@@ -18,7 +14,8 @@ COMMENT=	Perl bindings for fast and powerful template system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include/ClearSilver"
 
 MAN3=		ClearSilver.3

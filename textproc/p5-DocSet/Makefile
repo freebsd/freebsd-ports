@@ -14,8 +14,6 @@ COMMENT=	Documentation projects builder in HTML, PS, and PDF formats
 BUILD_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 
-MAKE_JOBS_SAFE=  yes
-
 MAN1=	docset_build.1
 
 MAN3=	DocSet.3 \
@@ -39,6 +37,7 @@ MAN3=	DocSet.3 \
 	DocSet::DocSet::PSPDF.3 \
 	DocSet::Util.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

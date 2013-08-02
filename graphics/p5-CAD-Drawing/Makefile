@@ -32,6 +32,7 @@ MAN3=	CAD::Drawing.3 \
 	CAD::Drawing::Manipulate::Graphics.3 \
 	CAD::Drawing::Manipulate::Transform.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

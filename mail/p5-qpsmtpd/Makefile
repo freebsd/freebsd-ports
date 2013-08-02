@@ -32,10 +32,9 @@ USE_APACHE_RUN=	22+
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 .endif
 
-MAKE_JOBS_SAFE=	yes
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	qpsmtpd-async.1
 MAN3=		Qpsmtpd::Command.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Spread
-# Date created:	   21 August 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Spread
 PORTVERSION=	0.02
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		spread>=0:${PORTSDIR}/net/spread
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		POE::Component::Spread.3
 

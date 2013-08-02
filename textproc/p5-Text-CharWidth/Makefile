@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-CharWidth
-# Date created:				2008/08/31
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Text-CharWidth
 DISTVERSION=	0.04
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get number of occupied columns of a string on terminal
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::CharWidth.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-App-CLI-Extension
-# Date created:				5th Jan, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-CLI-Extension
 PORTVERSION=	1.42.1
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-App-CLI>=0.313:${PORTSDIR}/devel/p5-App-CLI \
 		p5-UNIVERSAL-require>=0.13:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		App::CLI::Extension.3 \
 		App::CLI::Extension::Component::Config.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-RTF-Writer
-# Date created:				Oct 15th 2003
-# Whom:					clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	RTF-Writer
 PORTVERSION=	1.11
@@ -17,7 +13,8 @@ COMMENT=	Perl module for generating documents in Rich Text Format
 BUILD_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	RTF::Writer.3 \
 	RTF::Writer::TableRowDecl.3 \

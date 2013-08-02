@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Bio-Das
-# Date created:				17 January 2005
-# Whom:					Razi Khaja <razi@genet.sickkids.on.ca>
-#
+# Created by: Razi Khaja <razi@genet.sickkids.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Bio-Das
 PORTVERSION=	1.17
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=3:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=5:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Bio::Das.3 Bio::Das::AGPServer::Config.3 Bio::Das::AGPServer::Daemon.3 \
 	Bio::Das::AGPServer::Parser.3 Bio::Das::AGPServer::SQLStorage.3 \

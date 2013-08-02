@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Net-SCP
-# Date created:                                12 May 2002
-# Whom:                                        Erich Zigler <erich@tacni.net>
-#
+# Created by: Erich Zigler <erich@tacni.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SCP
 PORTVERSION=	0.08
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Net-SSH>=0:${PORTSDIR}/net/p5-Net-SSH \
 		p5-IO>=0:${PORTSDIR}/devel/p5-IO
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SCP.3
 

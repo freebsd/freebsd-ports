@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Digest-BubbleBabble
-# Date created:				2002/03/14
-# Whom:					jesper
-#
+# Created by: jesper
 # $FreeBSD$
-#
 
 PORTNAME=	Digest-BubbleBabble
 PORTVERSION=	0.02
@@ -17,7 +13,8 @@ COMMENT=	Perl5 interface to a fingerprint in "bubble babble" format
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Digest::BubbleBabble.3
 

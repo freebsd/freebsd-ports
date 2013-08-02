@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-DBIx-Class-UUIDColumns
-# Date created:				03 August 2007
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-UUIDColumns
 PORTVERSION=	0.02006
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::UUIDColumns.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker.3 \

@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
 		p5-Plack>=0.9913:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		JSON::RPC::Dispatcher.3 \
 		JSON::RPC::Dispatcher::App.3 \

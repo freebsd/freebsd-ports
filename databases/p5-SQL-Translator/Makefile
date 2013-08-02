@@ -37,7 +37,8 @@ TEST_DEPENDS=	p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
 OPTIONS_DEFINE=	DIAGRAM
 DIAGRAM_DESC=	Diagram generation support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		sqlt-diagram.1 \
 		sqlt-diff-old.1 \

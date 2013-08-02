@@ -1,9 +1,5 @@
-# New ports collection makefile for:	IO::NestedCapture
-# Date created:				21 Dec 2005
-# Whom:					tobez@FreeBSD.org
-#
+# Created by: tobez@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	IO-NestedCapture
 PORTVERSION=	1.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for performing nested STD\* handle captures
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		IO::NestedCapture.3
 

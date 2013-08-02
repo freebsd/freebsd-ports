@@ -13,7 +13,8 @@ COMMENT=	Modules to work with POD (Plain Old Documentation)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		Pod::Find.3 Pod::InputObjects.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Finance::QuoteHist
-# Date created:				25 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Finance-QuoteHist
 PORTVERSION=	1.19
@@ -27,7 +23,8 @@ RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Finance::QuoteHist.3 \
 		Finance::QuoteHist::BusinessWeek.3 \

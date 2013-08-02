@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	File iterator, optionally stateful and verbose
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Iterator::File::Status.3 \
 		Iterator::File::Source::FlatFile.3 \
 		Iterator::File::Utility.3 \

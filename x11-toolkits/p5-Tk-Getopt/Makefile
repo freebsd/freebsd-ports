@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tk-Getopt
-# Date created:				May 28 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	Tk-Getopt
 PORTVERSION=	0.50
@@ -18,7 +14,8 @@ COMMENT=	User configuration window for Tk with interface to Getopt::Long
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tk::Getopt.3
 

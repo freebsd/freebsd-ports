@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Jifty-Plugin-Authentication-Ldap
-# Date created:		14 June, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Jifty-Plugin-Authentication-Ldap
 PORTVERSION=	1.01
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Jifty>=0:${PORTSDIR}/www/p5-Jifty \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Jifty::Plugin::Authentication::Ldap.3 \
 		Jifty::Plugin::Authentication::Ldap::Action::LDAPLogin.3 \

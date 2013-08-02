@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-IBM390
-# Date created:				13 Aug 2005
-# Whom:					Jason Burgess <dev@fenux.net>
-#
+# Created by: Jason Burgess <dev@fenux.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-IBM390
 PORTVERSION=	0.27
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Functions for manipulating mainframe data
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Convert::IBM390.3 \
 	Convert::IBM390::CP00037.3 \

@@ -20,7 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Test-SharedFork>=0:${PORTSDIR}/devel/p5-Test-SharedFork
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Flock.3 \
 		File::Flock::Forking.3 \

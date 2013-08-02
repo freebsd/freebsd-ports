@@ -12,7 +12,8 @@ DISTNAME=		Snowball-Norwegian-${PORTVERSION}
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Stemmer for Norwegian
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Lingua::Stem::Snowball::No.3
 

@@ -24,7 +24,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Test-Expect>=0:${PORTSDIR}/devel/p5-Test-Expect
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		ebug.1 ebug_client.1 ebug_server.1
 MAN3=		Devel::ebug.3 Devel::ebug::Console.3

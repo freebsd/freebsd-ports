@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Geo::Coordinates::Converter::Datum.3 \
 		Geo::Coordinates::Converter.3 \

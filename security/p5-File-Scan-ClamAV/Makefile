@@ -1,9 +1,5 @@
-# New ports collection makefile for:	File-Scan-ClamAV
-# Date created:		2006-11-24
-# Whom:			Jan-Peter Koopmann <Jan-Peter.Koopmann@seceidos.de>
-#
+# Created by: Jan-Peter Koopmann <Jan-Peter.Koopmann@seceidos.de>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Scan-ClamAV
 PORTVERSION=	1.9.1
@@ -19,7 +15,8 @@ COMMENT=	Perl extension for the clamav virus scanner
 BUILD_DEPENDS=	clamscan:${PORTSDIR}/security/clamav
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Scan::ClamAV.3
 

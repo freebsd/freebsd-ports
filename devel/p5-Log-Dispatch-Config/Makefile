@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Log-Dispatch>=2:${PORTSDIR}/devel/p5-Log-Dispatch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Log::Dispatch::Config.3 \
 		Log::Dispatch::Configurator.3 \

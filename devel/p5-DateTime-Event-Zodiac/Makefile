@@ -1,6 +1,4 @@
-# New ports collection makefile for:    p5-DateTime-Event-Zodiac
-# Date created:    2010-12-24
-# Whom:            Mikhail T. <michael@fun-box.ru>
+# Created by: Mikhail T. <michael@fun-box.ru>
 # $FreeBSD$
 
 PORTNAME=	DateTime-Event-Zodiac
@@ -19,7 +17,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Event::Zodiac.3
 

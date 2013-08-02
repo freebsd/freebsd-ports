@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Sort-ArbBiLex
-# Date created:				02 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sort-ArbBiLex
 PORTVERSION=	4.01
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to make sort functions for arbitrary sort orders
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sort::ArbBiLex.3
 

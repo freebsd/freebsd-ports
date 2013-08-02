@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Module-Find
-# Date created:	   26 Sep 2005
-# Whom:		   Lars Balker Rasmussen <lbr@FreeBSD.org>
-#
+# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Find
 PORTVERSION=	0.11
@@ -17,7 +13,8 @@ COMMENT=	Lets you find and use modules in categories
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Find.3
 

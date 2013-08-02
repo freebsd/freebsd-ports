@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WebService-Linode
-# Date created:		2010-09-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-Linode
 PORTVERSION=	0.11
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WebService::Linode.3 \
 		WebService::Linode::Base.3 \

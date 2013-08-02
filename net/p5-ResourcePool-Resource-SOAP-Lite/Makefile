@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-ResourcePool>=1.0100:${PORTSDIR}/devel/p5-ResourcePool \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite-060
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ResourcePool::Command::SOAP::Lite::Call.3 \
 		ResourcePool::Factory::SOAP::Lite.3

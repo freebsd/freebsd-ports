@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MasonX-Profiler
-# Date created:			20 Sep 2004
-# Whom:				mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	MasonX-Profiler
 PORTVERSION=	0.06
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MasonX::Profiler.3
 
