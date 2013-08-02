@@ -32,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's|%%PREFIX%%|${PREFIX}|g ; s|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/kfiles.c
-	@${REINPLACE_CMD} 's|CFLAGS=  -O2|CFLAGS+=|' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} 's|CFLAGS=  -O2|CFLAGS+=| ; s|CC=|CC?=|' ${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/aa ${PREFIX}/bin
