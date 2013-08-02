@@ -1,10 +1,10 @@
 This program computes ephemerides of Sun, Moon, planets, comets, and stars
-using rigorous reduction methods from the _Astronomical Almanac_ and related
-sources. Includes PLAN404 series for positions of the planets, and a long-term
-extension of modern Lunar theory for the Moon's position. Reads ASCII file
-catalogues of stars and orbital elements. Displays all adjustments as it finds
-local azimuth and elevation, rise and set times, etc.
+using rigorous reduction methods from the Astronomical Almanac and related
+sources.
 
-Latest update 2008-09-21.
+It includes PLAN404 series for positions of the planets, and a long-term
+extension of modern Lunar theory for the Moon's position; reads ASCII file
+catalogues of stars and orbital elements; displays all adjustments as it
+finds local azimuth and elevation, rise and set times, etc.
 
 WWW: http://moshier.net/aadoc.html
