@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		POE::Component::Schedule.3
 
