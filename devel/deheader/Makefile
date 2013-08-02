@@ -1,12 +1,7 @@
-# New ports collection makefile for:	deheader
-# Date Created:		12 March 2011
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	deheader
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.catb.org/esr/deheader/
 
