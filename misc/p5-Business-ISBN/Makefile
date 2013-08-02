@@ -21,7 +21,8 @@ OPTIONS_DEFINE=	BARCODE XISBN
 BARCODE_DESC=	Barcode support
 XISBN_DESC=	xISBN support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::ISBN.3 \
 		Business::ISBN10.3 \

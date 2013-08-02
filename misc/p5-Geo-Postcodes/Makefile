@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Geo-Postcodes
-# Date created:		2006-07-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Postcodes
 PORTVERSION=	0.320
@@ -15,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base class for the Geo::Postcodes::XX modules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Geo::Postcodes.3 \
 		Geo::Postcodes::Ajax.3 \
