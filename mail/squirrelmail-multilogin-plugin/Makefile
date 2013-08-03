@@ -38,9 +38,10 @@ SUB_LIST+=		"SQUIRRELDIR=squirrelmail"
 
 SUB_FILES=		pkg-message
 
+USES=			perl5
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=		build
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
 

@@ -30,14 +30,14 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		perl5
 USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glu
 USE_SDL=	sdl
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_GMAKE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/2ManDVD
 

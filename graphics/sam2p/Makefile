@@ -17,14 +17,14 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		tif22pnm:${PORTSDIR}/graphics/tif22pnm
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_pts_bash="${SH}"
 MAKE_ARGS=	CXXX="${CXX}" LDALL="${CXX}" CXXFLAGSB="${CXXFLAGS}"
 ALL_TARGET=	${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
 PORTEXAMPLES=	*

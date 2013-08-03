@@ -18,10 +18,11 @@ LICENSE=	CDDL
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
+USES=		perl5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 HLSTATS?=	www/${PORTNAME}
 PLIST_SUB+=	HLSTATS=${HLSTATS}
 

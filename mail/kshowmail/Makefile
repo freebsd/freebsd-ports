@@ -18,8 +18,7 @@ LICENSE=	GPLv2
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs pimlibs
 USE_QT4=	corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
-USE_PERL5_BUILD=yes
-USES=		cmake gettext
-MAKE_JOBS_SAFE=	yes
+USE_PERL5=	build
+USES=		cmake gettext perl5
 
 .include <bsd.port.mk>

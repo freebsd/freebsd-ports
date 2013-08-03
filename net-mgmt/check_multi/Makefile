@@ -14,8 +14,8 @@ COMMENT=	A multi purpose wrapper plugin for Nagios
 
 LICENSE=	GPLv2
 
-USES=		shebangfix
-USE_PERL5_RUN=	yes
+USES=		shebangfix perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

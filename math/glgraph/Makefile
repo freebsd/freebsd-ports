@@ -19,8 +19,9 @@ COMMENT=	An OpenGL based function grapher
 RUN_DEPENDS=	p5-OpenGL>=0:${PORTSDIR}/graphics/p5-OpenGL \
 		import:${PORTSDIR}/graphics/ImageMagick
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

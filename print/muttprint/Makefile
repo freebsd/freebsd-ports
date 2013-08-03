@@ -10,7 +10,7 @@ MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Utility to print mail for most any mail client
 
-USE_PERL5=	yes
+USES=		perl5
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter

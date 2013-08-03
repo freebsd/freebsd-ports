@@ -13,9 +13,10 @@ COMMENT=	A MySQL load analysis fetcher for MRTG
 
 RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
 
+USES=		perl5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_MYSQL=	yes
 
 MAN1=		${PORTNAME}.1

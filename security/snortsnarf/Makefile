@@ -17,8 +17,9 @@ COMMENT=	Generate HTML report summaries from snort incident alerts
 
 RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 post-patch:
 	@${SED} -e 's|\./include|${PREFIX}/libdata/${PORTNAME}|' \

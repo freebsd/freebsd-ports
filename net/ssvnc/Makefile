@@ -20,10 +20,10 @@ RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
 OPTIONS_DEFINE=	ULTRAFTP DOCS
 ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
 
-USES=		imake:env gmake
+USES=		imake:env gmake perl5
 USE_XORG=	xi xmu xt xaw ice xpm xext sm
 USE_TK_WRAPPER=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 MAN1=		ssvnc.1 ssvncviewer.1 ssvnc-gui.1
 NO_INSTALL_MANPAGES=	yes

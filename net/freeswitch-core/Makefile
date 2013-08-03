@@ -43,8 +43,8 @@ WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 
-USE_PERL5_BUILD=yes
-USES=		bison:both pkgconfig
+USE_PERL5=	build
+USES=		bison:both pkgconfig perl5
 USE_GCC=	any
 USE_GMAKE=	yes
 SUB_FILES=	pkg-install pkg-message

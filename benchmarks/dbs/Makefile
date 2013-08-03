@@ -16,7 +16,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 BUILD_WRKSRC=	${WRKSRC}/obj/${OPSYS}
 INSTALL_WRKSRC=	${WRKSRC}/obj/${OPSYS}
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 MAKEFILE=	makefile
 
 PLIST_FILES=	bin/dbs_view bin/dbsc bin/dbsd

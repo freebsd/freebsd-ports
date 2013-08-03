@@ -15,9 +15,9 @@ COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		shebangfix
+USES=		shebangfix perl5
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_GMAKE=	yes
 MAKEFILE=	${WRKSRC}/make/gcc.mak
 MAKE_JOBS_UNSAFE=yes

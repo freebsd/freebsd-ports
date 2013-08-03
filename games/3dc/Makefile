@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 USE_XORG=	x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/3Dc/src
 

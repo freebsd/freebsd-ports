@@ -11,7 +11,8 @@ MASTER_SITES=	http://www.read.cs.ucla.edu/click/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Click Modular Router
 
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

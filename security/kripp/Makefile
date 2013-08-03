@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	sniffers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network password sniffer
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 NO_BUILD=	yes
 MAN1=		kripp.1

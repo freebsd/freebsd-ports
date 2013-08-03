@@ -22,7 +22,8 @@ RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2 \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 SUB_FILES=	pkg-message
 

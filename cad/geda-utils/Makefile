@@ -24,10 +24,11 @@ LIB_DEPENDS=	geda.33:${PORTSDIR}/cad/libgeda
 DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_PYTHON_RUN=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include

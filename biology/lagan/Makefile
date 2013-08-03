@@ -12,7 +12,8 @@ COMMENT=	Efficient tools for large-scale multiple alignments of genomic DNA
 
 LICENSE=	GPLv2
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	pkg-message

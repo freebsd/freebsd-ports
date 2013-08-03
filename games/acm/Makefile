@@ -16,9 +16,10 @@ COMMENT=	A flight simulator for X11
 
 LICENSE=	GPLv2
 
+USES=		perl5
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 
 MAN6=		acm.6
 

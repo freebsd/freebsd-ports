@@ -15,9 +15,9 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GTK2 DOCS
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	zentime
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 DESKTOP_ENTRIES="AutoZen" \
 		"BrainWave Generator/Synchronizator" \

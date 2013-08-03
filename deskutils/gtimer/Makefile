@@ -16,8 +16,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_XORG=	xscrnsaver
 USE_GNOME=	gtk20
-USE_PERL5_BUILD=yes
-USES=		gettext
+USES=		gettext perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

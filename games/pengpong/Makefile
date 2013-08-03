@@ -10,9 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}-linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform pong game written in SDL
 
+USES=		perl5
 USE_SDL=	image sdl
 NO_WRKSUBDIR=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 
 DATAFILES=	24P_Copperplate_Blue.png ball.tga logo.jpg \
 		paddle.tga red.png

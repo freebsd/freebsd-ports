@@ -15,7 +15,8 @@ COMMENT=	Small footprint, fast Wiki engine written in C++
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
 		--localstatedir=${DATADIR}
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 SUB_FILES=	pkg-message
 

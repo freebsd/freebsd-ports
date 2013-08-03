@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-Net-PcapUtils>=0:${PORTSDIR}/net/p5-Net-PcapUtils \
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 MAN8=		netleak.8 netleakd.8
 
 PLIST_FILES=	etc/netleak.conf etc/netleakd.conf sbin/netleak sbin/netleakd

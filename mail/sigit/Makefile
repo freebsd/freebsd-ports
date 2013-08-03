@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/boxes:${PORTSDIR}/misc/boxes
 
 LICENSE=	GPLv2
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${DATADIR} \

@@ -27,16 +27,16 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	MUSIC XVID
 MUSIC_DESC=	Install extra music files
 
+USES=		perl5
 USE_BZIP2=	yes
 USE_SDL=	image mixer sound sdl
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
 USE_LUA=	5.1
 LUA_COMPS=	lua
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		asc.6 asc_demount.6 asc_mapedit.6 asc_mount.6 \
 		asc_weaponguide.6

@@ -14,12 +14,12 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
+USES=		perl5
 USE_XZ=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	bios
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		syslinux.1
 

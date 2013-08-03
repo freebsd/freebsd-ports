@@ -15,7 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 
 LATEST_LINK=	nrpe2
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 USE_RC_SUBR=	nrpe2
 
 CONFLICTS=	nrpe-1.*

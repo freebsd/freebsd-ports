@@ -18,11 +18,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 WRKSRC=		${WRKDIR}/rm${PORTVERSION:R:S/.//g}
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	doc/*.pl
 USE_GL=		glu
 USE_XORG=	xmu
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 ALL_TARGET=	freebsd docs
 MAKE_ARGS=	AR="${AR}" \
 		CC="${CC}" \

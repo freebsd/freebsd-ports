@@ -13,7 +13,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for clone HDD on FreeBSD
 
-USE_PERL5_RUN=	YES
+USES=		perl5
+USE_PERL5=	run
 PLIST_FILES=	sbin/clonehdd
 NO_BUILD=	YES
 MAN8=		clonehdd.8

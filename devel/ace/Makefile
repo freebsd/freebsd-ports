@@ -21,14 +21,13 @@ CONFLICTS=	ace+tao-5*
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
 USE_BZIP2=	yes
-USES=		pkgconfig
-USE_PERL5_BUILD=yes
+USES=		pkgconfig perl5
+USE_PERL5=	build
 USE_GMAKE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 		CROSS-COMPILE=1
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

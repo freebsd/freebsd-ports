@@ -14,8 +14,8 @@ LICENSE=	GPLv2 # (or later)
 
 NO_BUILD=	yes
 
-USES=		shebangfix
-USE_PERL5_RUN=	yes
+USES=		shebangfix perl5
+USE_PERL5=	run
 
 SHEBANG_FILES=	align width
 

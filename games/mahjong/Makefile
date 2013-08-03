@@ -19,12 +19,12 @@ COMMENT=	A networked Mah Jong program, together with a computer player
 
 LICENSE=	GPLv2 # (or later)
 
+USES=		perl5
 USE_GNOME=	gtk20
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_GMAKE=	yes
 MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" PERL="${PERL}" \
 		INCLUDES="-I."
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xmj.1
 MLINKS=		xmj.1 mj-player.1 \

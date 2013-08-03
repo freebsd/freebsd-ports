@@ -18,9 +18,10 @@ COMMENT=	X11 file manager. Dockable in WindowMaker
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_XORG=	xpm
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 MAN1=	files.1
 MAN3=	regexp.3
 

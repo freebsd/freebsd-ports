@@ -16,10 +16,9 @@ OPTIONS_DEFAULT=	EMACS
 EMACS_DESC=	Install Emacs supplimentary files
 
 USE_XORG=	x11 sm ice xmu xt
-USES=		gmake motif
-USE_PERL5_BUILD=	yes
+USES=		gmake motif perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 INFO=		dinotrace
 PLIST_FILES=	bin/dinotrace

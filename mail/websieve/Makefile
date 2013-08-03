@@ -16,7 +16,8 @@ COMMENT=	Web based Cyrus IMAP user admin client
 
 DISTVERSION=	063a
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 NO_BUILD=	yes
 
