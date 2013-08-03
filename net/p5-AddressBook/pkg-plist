@@ -8,5 +8,7 @@
 %%SITE_PERL%%/AddressBook/DB/PDB.pm
 %%SITE_PERL%%/AddressBook/DB/Text.pm
 %%SITE_PERL%%/AddressBook/Entry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AddressBook/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AddressBook
 @dirrm %%SITE_PERL%%/AddressBook/DB
 @dirrm %%SITE_PERL%%/AddressBook
