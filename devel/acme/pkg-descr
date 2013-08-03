@@ -1,0 +1,5 @@
+ACME is a free crossassembler, released under the GNU General Public License.
+The current version can produce code for the 6502, 65c02 and 65816 processors.
+It also supports some of the undocumented ("illegal") opcodes of the 6502.
+
+WWW: http://www.esw-heim.tu-clausthal.de/~marco/smorbrod/acme/
