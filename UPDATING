@@ -20,13 +20,13 @@ you update your ports collection, before attempting any port upgrades.
   their next update.
 
   # portmaster -r gio-fam-backend
-  # pkg_delete gio-fam-backend (for pkgng: pkg delete gio-fam-backend)
+  # pkg_delete gio-fam-backend-\* (for pkgng: pkg delete gio-fam-backend)
   # portmaster -a
 
   or
 
   # portupgrade -rf gio-fam-backend
-  # pkg_delete gio-fam-backend (for pkgng: pkg delete gio-fam-backend)
+  # pkg_delete gio-fam-backend-\* (for pkgng: pkg delete gio-fam-backend)
   # portupgrade -a
 
 20130726:
