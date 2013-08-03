@@ -11,7 +11,7 @@
 -LIB_PYPY =  LIB_ROOT.join('lib_pypy')
 -LIB_PYTHON = LIB_ROOT.join('lib-python', '%d.%d' % CPYTHON_VERSION[:2])
 -
-+LIB_PYTHON =  LIB_ROOT.join('lib', 'pypy%d.%d' % PYPY_VERSION[:2])
++LIB_PYTHON =  LIB_ROOT.join('lib', 'pypy-%d.%d' % PYPY_VERSION[:2])
 +LIB_PYPY = LIB_PYTHON.join('lib_pypy')
  
  def import_from_lib_pypy(modname):

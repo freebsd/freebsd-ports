@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.1-beta2
+DISTVERSION=	2.1
 CATEGORIES=	lang python java
 MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -47,8 +47,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
-PYPY_LIBDIR=	lib/pypy${PYPY_VER}
-PYPY_INCLUDEDIR=	include/pypy${PYPY_VER}
+PYPY_LIBDIR=	lib/pypy-${PYPY_VER}
+PYPY_INCLUDEDIR=	include/pypy-${PYPY_VER}
 PYPYDIRS=	${PYPY_INCLUDEDIR} ${PYPY_LIBDIR}
 
 PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
@@ -58,7 +58,7 @@ MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
 
 LOCALBASE_REFIX=	\
-		lib/pypy2.1/lib_pypy/_sqlite3.py
+		${PYPY_LIBDIR}/lib_pypy/_sqlite3.py
 
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
@@ -299,8 +299,8 @@ do-install:
 .endfor
 .for name in ${PYPY_NAMES:O}
 	${STRIP_CMD} ${WRKDIR}/${name}
-	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PREFIX}/bin/${name}${PYPY_VER}
-	${ECHO} bin/${name}${PYPY_VER} >> ${TMPPLIST}
+	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PREFIX}/bin/${name}-${PYPY_VER}
+	${ECHO} bin/${name}-${PYPY_VER} >> ${TMPPLIST}
 .endfor
 
 post-install:
