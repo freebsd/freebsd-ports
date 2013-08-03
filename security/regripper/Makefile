@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry
 NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 PLIST_FILES=	bin/rip.pl
 
 post-patch:
