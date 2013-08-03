@@ -521,15 +521,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-access-bottlenecks.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-config.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-data-integrity.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-examples.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-intro.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-object-naming.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-objects.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-root.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-vinum.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-fonts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-install.html

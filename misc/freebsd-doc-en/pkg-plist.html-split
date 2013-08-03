@@ -605,6 +605,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook-markup-inline-elements.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook-markup-links.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook-markup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/editor-config-emacs.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/editor-config-nano.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/editor-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-docbook-article.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-formatted.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples.html
@@ -617,7 +620,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/preface-conventions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/preface-notes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/preface.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/psgml-mode.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/see-also-docbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/see-also-html.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/see-also-linuxdoc.html
@@ -638,6 +640,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/working-copy-choosing-mirror.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/working-copy-making-diff.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/working-copy-revert.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/working-copy-subversion-references.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/working-copy-updating.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/working-copy.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/writing-style-guide.html

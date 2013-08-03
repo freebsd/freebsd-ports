@@ -282,7 +282,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch05s03.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch05s04.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch06s02.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/ch06s03.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch06s04.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch06s05.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch06s06.html
@@ -314,7 +313,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch08s24.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch08s25.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch08s26.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/ch09s02.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch09s03.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch09s04.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch09s05.html
@@ -385,6 +383,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch13s10.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/ch13s11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/commercial.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/emul.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/hackers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/hardware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/index.html
@@ -396,6 +395,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/network.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/serial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/troubleshoot.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/x-and-moused.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/x.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch01s02.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch02s02.html

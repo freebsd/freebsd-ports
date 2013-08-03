@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install
