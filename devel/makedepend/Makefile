@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	makedepend
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 
