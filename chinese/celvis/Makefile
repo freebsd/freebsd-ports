@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  celvis
-# Date created:			  Thur Aug 15, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	celvis
 PORTVERSION=	1.3
@@ -13,8 +8,9 @@ MASTER_SITES=	http://ftp.ist.utl.pt/pub/ctan/language/chinese/chtex/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A vi/ex clone that speaks Chinese
+COMMENT=	Vi/ex clone that speaks Chinese
 
+CFLAGS+=	-Wno-error=return-type
 MAN1=		celvis.1
 MLINKS=		celvis.1 cvi.1
 
