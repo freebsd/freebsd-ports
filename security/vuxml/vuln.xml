@@ -51,6 +51,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="69098c5c-fc4b-11e2-8ad0-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>28.0.1500.95</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>Eleven vulnerabilities, including:</p>
+	  <p>[257748] Medium CVE-2013-2881: Origin bypass in frame handling.
+	    Credit to Karthik Bhargavan.</p>
+	  <p>[260106] High CVE-2013-2882: Type confusion in V8. Credit to
+	    Cloudfuzzer.</p>
+	  <p>[260165] High CVE-2013-2883: Use-after-free in MutationObserver.
+	    Credit to Cloudfuzzer.</p>
+	  <p>[248950] High CVE-2013-2884: Use-after-free in DOM. Credit to Ivan
+	    Fratric of Google Security Team.</p>
+	  <p>[249640] [257353] High CVE-2013-2885: Use-after-free in input
+	    handling. Credit to Ivan Fratric of Google Security Team.</p>
+	  <p>[261701] High CVE-2013-2886: Various fixes from internal audits,
+	    fuzzing and other initiatives.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2881</cvename>
+      <cvename>CVE-2013-2882</cvename>
+      <cvename>CVE-2013-2883</cvename>
+      <cvename>CVE-2013-2884</cvename>
+      <cvename>CVE-2013-2885</cvename>
+      <cvename>CVE-2013-2886</cvename>
+      <url>http://www.googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-07-30</discovery>
+      <entry>2013-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4a0212f-f797-11e2-9bb9-6805ca0b3d42">
     <topic>phpMyAdmin -- multiple vulnerabilities</topic>
     <affects>
