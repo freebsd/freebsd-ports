@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yasql
-# Date created:				22 February 2005
-# Whom:	      				Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=		yasql
 PORTVERSION=		1.83
@@ -37,7 +33,7 @@ BUILD_DEPENDS+=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-USE_PERL5=	yes
+USES+=		perl5
 ALL_TARGET=	default
 
 SUB_FILES=	pkg-message

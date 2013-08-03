@@ -14,8 +14,7 @@ COMMENT=	Display meaningful differences between XML files
 
 RUN_DEPENDS=	xmlprpr:${PORTSDIR}/textproc/xmlprpr
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
 
 SHEBANG_FILES=	xmldiff.pl

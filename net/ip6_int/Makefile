@@ -14,8 +14,7 @@ COMMENT=	Convert an IPv4/IPv6 address to an in-addr.arpa/ip6.int PTR value
 
 PLIST_FILES=	bin/ip6_int
 NO_BUILD=	yes
-USE_PERL5=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	ip6_int
 
 do-extract:

@@ -17,8 +17,8 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 MASTER_SITE_FREEBSD=	yes
 LATEST_LINK=	nagios-devel
 
-USES=		iconv
-USE_PERL5_BUILD=yes
+USES=		iconv perl5
+USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	nagios
 

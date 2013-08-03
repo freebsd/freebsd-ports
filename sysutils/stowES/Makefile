@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

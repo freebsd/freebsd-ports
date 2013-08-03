@@ -1,4 +1,4 @@
-# Created by: Makoto Matsushita <matusita@FreeBSD.ORG>
+# Created by: Makoto Matsushita <matusita@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=		keitairc
@@ -20,8 +20,7 @@ RUN_DEPENDS=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
 
 CONFLICTS=	keitairc-1.*
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
 
 SHEBANG_FILES=	keitairc

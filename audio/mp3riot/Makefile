@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mp3riot
-# Date created:			29 July 2003
-# Whom:				Francisco Gomez <francisco@gomezmarin.com>
-#
+# Created by: Francisco Gomez <francisco@gomezmarin.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3riot
 PORTVERSION=	1.3
@@ -15,9 +11,9 @@ COMMENT=	Mp3riot creates mp3 playlists, HTML files, etc
 
 RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 
+USES=		perl5
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
 PORTDOCS=	example.unix groupfile CHANGELOG MANUAL mp3table.sql README repl.dat TODO utf.dat

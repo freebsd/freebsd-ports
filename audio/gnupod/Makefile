@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnupod
-# Date created: 			30 November 2002
-# Whom: 				David Le Brun <david@dyn-ns.net>
-#
+# Created by: David Le Brun <david@dyn-ns.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8
@@ -30,7 +26,7 @@ MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
 		tunes2pod.pl.1
 MANCOMPRESSED=	yes
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 

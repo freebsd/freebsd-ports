@@ -1,9 +1,5 @@
-# New ports collection makefile for:	orca
-# Date created:				18 February 2003
-# Whom:					jsellens
-#
+# Created by: jsellens
 # $FreeBSD$
-#
 
 PORTNAME=	orca
 PORTVERSION=	0.27
@@ -20,9 +16,9 @@ BUILD_DEPENDS=	\
 		p5-Math-Interpolate>=0:${PORTSDIR}/math/p5-Math-Interpolate \
 		rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
+USES=		perl5
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-html-dir=${PREFIX}/www/data/orca
-USE_PERL5=	yes
 
 MAN1=		orca.1
 

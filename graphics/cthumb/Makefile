@@ -1,9 +1,5 @@
-# New ports collection makefile for:    cthumb
-# Date created:         30 July 2001
-# Whom:                 dom@happygiraffe.net
-#
+# Created by: dom@happygiraffe.net
 # $FreeBSD$
-#
 
 PORTNAME=	cthumb
 PORTVERSION=	4.2
@@ -20,9 +16,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-themedir=${DATADIR}
-USE_PERL5=	yes
 
 MAN1=		cthumb.1
 

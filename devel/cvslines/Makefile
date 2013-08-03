@@ -10,9 +10,8 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wrapper to ease merging of changes between CVS branches
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-USE_PERL5=		yes
 NO_BUILD=		yes
-USES=			shebangfix
+USES=			shebangfix perl5
 SHEBANG_FILES=		cvslines
 .for ii in s s_check s-check s-commit s-config s-status
 PLIST_FILES+=	bin/cvsline${ii}

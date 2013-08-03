@@ -17,13 +17,12 @@ RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 CONFLICTS_INSTALL=signing-party-[0-9]*
 
 PLIST_FILES=	bin/springgraph
-USE_PERL5=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	springgraph.pl
 
 do-install:

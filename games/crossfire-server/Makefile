@@ -20,9 +20,9 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+USES=		perl5
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_SQLITE=	3
-USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

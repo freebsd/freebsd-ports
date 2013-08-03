@@ -14,10 +14,9 @@ COMMENT=	An interprocess communication library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
-USES=		pkgconfig
+USES=		pkgconfig perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 
 USE_LDCONFIG=	yes
 

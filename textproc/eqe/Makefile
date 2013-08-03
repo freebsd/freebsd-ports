@@ -1,7 +1,4 @@
-# New ports collection makefile for:	eqe
-# Date created:				2007/02/13
-# Whom:					chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
 
 PORTNAME=	eqe
@@ -18,8 +15,8 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		Magick++-config:${PORTSDIR}/graphics/ImageMagick
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 USE_TEX=	tex
 
 MAKE_ARGS=	PREFIX=${PREFIX}

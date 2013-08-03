@@ -14,7 +14,7 @@ RUN_DEPENDS=	p5-Net-Netmask>0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-mysql>0:${PORTSDIR}/databases/p5-DBD-mysql
 
-USE_PERL5=	yes
+USES=		perl5
 USE_MYSQL=	server
 USE_PHP=	mysql
 WANT_PHP_MOD=	yes

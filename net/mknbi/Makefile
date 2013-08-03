@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mknbi
-# Date created:				17 Mar 2005
-# Whom:					X
-#
+# Created by: X
 # $FreeBSD$
-#
 
 PORTNAME=	mknbi
 PORTVERSION=	1.4.4
@@ -24,8 +20,8 @@ MLINKS+=	mknbi.1 ${i}
 
 PORTDOCS=	COPYING README LOG spec.txt
 
+USES=		perl5
 USE_GMAKE=	yes
-USE_PERL5=	yes
 ONLY_FOR_ARCHS=	i386
 
 post-patch:

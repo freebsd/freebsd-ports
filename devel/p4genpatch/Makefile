@@ -15,8 +15,7 @@ RUN_DEPENDS=		p4:${PORTSDIR}/devel/p4
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-USES=			shebangfix
-USE_PERL5=		yes
+USES=			shebangfix perl5
 
 SCRIPTS=		bin/p4genpatch bin/p4d2p
 PLIST_FILES=		${SCRIPTS}

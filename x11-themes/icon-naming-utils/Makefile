@@ -14,9 +14,8 @@ COMMENT=	Utilities of the Tango project
 BUILD_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
-USE_PERL5=	yes
+USES=		pathfix pkgconfig perl5
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USES=		pathfix pkgconfig
 
 .include <bsd.port.mk>

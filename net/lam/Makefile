@@ -1,9 +1,5 @@
-# New ports collection makefile for:		lam
-# Date created:					Aug 21 2001
-# Whom:						bremner@unb.ca
-#
+# Created by: bremner@unb.ca
 # $FreeBSD$
-#
 
 PORTNAME=	lam
 PORTVERSION=	7.1.5b2
@@ -14,8 +10,8 @@ MASTER_SITES=	http://www.lam-mpi.org/download/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local Area Multicomputer MPI implementation
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rsh=ssh --without-fc
 USE_LDCONFIG=	yes

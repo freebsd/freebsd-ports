@@ -1,9 +1,5 @@
-# New ports collection makefile for:   scandoc
-# Date created:        13 April 2001
-# Whom:                Christopher Elkins <chrise@scardini.com>
-#
+# Created by: Christopher Elkins <chrise@scardini.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scandoc
 PORTVERSION=	0.14
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C/C++ documentation generator
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 do-install:

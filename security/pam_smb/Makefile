@@ -1,7 +1,4 @@
-# New ports collection makefile for:    pam_smb
-# Date created:                         20 Jun 2001
-# Whom:                                 nsayer
-#
+# Created by: nsayer
 # $FreeBSD$
 
 PORTNAME=	pam_smb
@@ -15,10 +12,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS domain logon PAM module
 
+USES=		perl5
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
 STARTUP_SCRIPT=	pam_smbd.sh.sample
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

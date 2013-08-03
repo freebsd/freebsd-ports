@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pork
-# Date created:			04 Feb 2003
-# Whom:				Bob Bomar <bob@bomar.us>
-#
+# Created by: Bob Bomar <bob@bomar.us>
 # $FreeBSD$
-#
 
 PORTNAME=		pork
 PORTVERSION=		0.99.8.1
@@ -13,7 +9,7 @@ MASTER_SITES=		SF/ojnk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Console-based AIM client
 
-USE_PERL5=		yes
+USES=			perl5
 USE_OPENSSL=		yes
 
 GNU_CONFIGURE=		yes

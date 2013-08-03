@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freep
 
 MANUAL_PACKAGE_BUILD=Needs data from CDROM
 RESTRICTED=	The original dictionary is not free
+USES=		perl5
 USE_GMAKE=	yes
-USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/eijiro-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom
 SRCFILE?=	eijiro52.txt

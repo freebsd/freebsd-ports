@@ -17,11 +17,10 @@ LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext perl5
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 USE_XORG=	x11 xaw ice xscrnsaver
 WANT_GNOME=	yes
 # there is a header conflict here, that breaks build

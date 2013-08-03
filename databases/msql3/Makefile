@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msql3
-# Date created:		24 May 2004
-# Whom:			Andrey Slusar <anray@FreeBSD.org>
-#
+# Created by: Andrey Slusar <anray@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	msql
 PORTVERSION=	3.8
@@ -14,8 +10,8 @@ COMMENT=	Version 3 of the Mini SQL relational database system
 
 CONFLICTS=	msql-2*
 
+USES=		perl5
 USE_LDCONFIG=	YES
-USE_PERL5=	YES
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}

@@ -17,8 +17,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
+USES=		perl5
 USE_ZIP=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\

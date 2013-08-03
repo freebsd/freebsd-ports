@@ -1,4 +1,4 @@
-# Created by: Makoto Matsushita <matusita@FreeBSD.ORG>
+# Created by: Makoto Matsushita <matusita@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	keitairc
@@ -30,8 +30,7 @@ EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 
 SHEBANG_FILES=	keitairc
 

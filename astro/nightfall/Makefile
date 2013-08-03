@@ -14,9 +14,8 @@ OPTIONS_DEFINE=	GNOME PGPLOT OPENGL
 OPTIONS_DEFAULT=	PGPLOT OPENGL
 PGPLOT_DESC=	Enable PGPLOT support
 
-USES=        pathfix gettext
+USES=        pathfix gettext perl5
 USE_GNOME=	gnomehier gtk20
-USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

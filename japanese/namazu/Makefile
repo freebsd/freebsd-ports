@@ -1,9 +1,5 @@
-# New ports collection makefile for:	namazu
-# Date created:		17 March 1998
-# Whom:			Seiichirou Hiraoka
-#
+# Created by: Seiichirou Hiraoka
 # $FreeBSD$
-#
 
 PORTNAME=	namazu
 PORTVERSION=	1.3.0.11
@@ -20,7 +16,7 @@ BUILD_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
 RUN_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
 		nkf:${PORTSDIR}/japanese/nkf
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -13,10 +13,9 @@ COMMENT=	Automatically add links found in web pages to MLDonkey queue
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES$=${BINARY_NAME}
 
 BINARY_NAME=	perlreactor

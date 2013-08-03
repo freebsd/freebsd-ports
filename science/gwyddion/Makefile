@@ -42,7 +42,7 @@ MAN1=		gwyddion.1 gwyddion-thumbnailer.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 MAN3+=		Gwyddion::dump.3pm
 PLIST_SUB+=	PERL=""
 .else

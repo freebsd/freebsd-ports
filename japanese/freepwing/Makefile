@@ -1,9 +1,5 @@
-# New ports collection makefile for: FreePWING
-# Date created:		00/01/24
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freepwing
 PORTVERSION=	1.4.4
@@ -16,7 +12,7 @@ COMMENT=	Free JIS X 4081 (subset of EPWING V1) Formatter
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}

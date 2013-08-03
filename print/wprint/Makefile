@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	wprint
-# Date created:			Oct 15, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	wprint
 PORTVERSION=	2.05
@@ -20,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
-USES=		iconv
-USE_PERL5=	yes
+USES=		iconv perl5
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

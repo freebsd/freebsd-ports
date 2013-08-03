@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RealTimeBattle
-# Date created:				30 June 2000
-# Whom:				Dishanker Rajakulendren <draj@oceanfree.net>
-#
+# Created by: Dishanker Rajakulendren <draj@oceanfree.net>
 # $FreeBSD$
-#
 
 PORTNAME=	RealTimeBattle
 PORTVERSION=	1.0.8
@@ -17,9 +13,9 @@ COMMENT=	Robot programming game for UNIX
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
+USES=		perl5
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

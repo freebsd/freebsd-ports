@@ -1,9 +1,5 @@
-# New ports collection makefile for:	P4DB
-# Date created:		2 September 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	p4db
 PORTVERSION=	2.01
@@ -18,7 +14,7 @@ COMMENT=	Web/Perforce Browser
 
 RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PATCH_WRKSRC=	${WRKSRC}/${PORTNAME}

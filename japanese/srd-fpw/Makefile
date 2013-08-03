@@ -16,7 +16,7 @@ BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 
 IS_INTERACTIVE= YES
 RESTRICTED=	The original dictionary is not free
-USE_PERL5=	yes
+USES=		perl5
 WRKSRC=		${WRKDIR}/srd-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom
 

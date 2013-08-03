@@ -13,10 +13,9 @@ COMMENT=	GTK-based MP3 player
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		gdbm.4:${PORTSDIR}/databases/gdbm
 
-USES=		pathfix gettext gmake
+USES=		pathfix gettext gmake perl5
 USE_GNOME=	gtk20 lthack
 WANT_GNOME=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--disable-arts

@@ -10,9 +10,8 @@ MASTER_SITES=	http://david.schweikert.ch/software/snort-rep/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Snort reporting tool that can produce text or HTML from logs
 
-USE_PERL5=	yes
 MAN1=		snort-rep.1
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	snort-rep snort-rep-mail
 
 do-build:

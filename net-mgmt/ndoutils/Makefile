@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ndoutils
-# Date created:				14 February 2008
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ndoutils
 PORTVERSION=	1.4b8
@@ -30,7 +25,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils
 
 CFG_FILES=	misccommands ndo2db ndomod
 
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	ndo2db
 SUB_FILES=	pkg-message
 

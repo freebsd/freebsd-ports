@@ -12,8 +12,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible script for adding new users
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

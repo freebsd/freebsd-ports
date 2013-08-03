@@ -1,9 +1,5 @@
-# New ports collection makefile for: info2man
-# Date created:         19 January 2005
-# Whom:                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	info2man
 PORTVERSION=	20040717
@@ -15,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into man pages
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

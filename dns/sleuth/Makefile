@@ -11,8 +11,7 @@ COMMENT=	A tool for checking DNS zones
 
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
-USE_PERL5=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	sleuth
 
 PLIST_FILES=	bin/sleuth etc/sleuth.conf.sample

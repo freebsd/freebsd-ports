@@ -22,8 +22,8 @@ SUID_ROOT_DESC=	Install aimsniff with set-uid bit
 
 PORTDOCS=	README table.struct rc.aimsniff
 
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 PLIST_FILES=	bin/aimsniff
 

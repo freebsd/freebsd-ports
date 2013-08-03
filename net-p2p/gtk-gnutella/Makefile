@@ -54,8 +54,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 libxml2
-USE_PERL5=	yes
-USES=		bison
+USES=		bison perl5
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-O -Dyacc='bison -y' -Dprefix=${PREFIX} \

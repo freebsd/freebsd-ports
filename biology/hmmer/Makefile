@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 CONFIGURE_ARGS+=--enable-threads --enable-lfs
 
 DOCFILES=	COPYRIGHT INSTALL LICENSE Userguide.pdf

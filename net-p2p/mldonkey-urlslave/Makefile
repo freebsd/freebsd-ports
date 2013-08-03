@@ -14,9 +14,8 @@ COMMENT=	GTK+ enabled Perl script for adding ed2k:// links to MLDonkey
 
 BUILD_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
-USE_PERL5=	yes
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	${BINARY_NAME}
 
 BINARY_NAME=	mlurlslave

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 

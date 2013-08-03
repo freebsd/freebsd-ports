@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved tool for transfer RNA detection
 
-USE_PERL5=	yes
+USES=		perl5
 MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
 		LIBDIR="${DATADIR}" \
 		CC="${CC}" \

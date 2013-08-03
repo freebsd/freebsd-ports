@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Cricket
-# Date created:		20 November 1999
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
@@ -19,7 +15,7 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
-USE_PERL5=	yes
+USES=		perl5
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}

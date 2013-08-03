@@ -1,9 +1,5 @@
-# New ports collection makefile for:	namazu2
-# Date created:		25 February 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	namazu
 PORTVERSION=	${NAMAZU_PORTVERSION}
@@ -17,8 +13,7 @@ COMMENT=	Full-text search system intended for easy use
 BUILD_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 RUN_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 
-USE_PERL5=	yes
-USES=		gettext iconv
+USES=		gettext iconv perl5
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \

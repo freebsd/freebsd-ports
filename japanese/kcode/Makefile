@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kcode
-# Date created:		26 October 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kcode
 PORTVERSION=	1.0
@@ -15,7 +11,7 @@ EXTRACT_ONLY=	${DISTFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A handy utility to show codepoint information of given characters
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
