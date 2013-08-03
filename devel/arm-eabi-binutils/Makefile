@@ -7,21 +7,20 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	arm-eabi-
 
-MAINTAINER=	kientzle@gmail.com
+MAINTAINER=	kientzle@freebsd.org
 COMMENT=	GNU binutils for vanilla ARM cross-development
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-werror=no CFLAGS="-I${PREFIX}/include"
+USES=		gmake
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+CFLAGS=		-I${PREFIX}/include
+
+USE_BZIP2=	yes
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-werror=no
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}c++filt.1 \
@@ -33,8 +32,6 @@ MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1 \
 		${PKGNAMEPREFIX}elfedit.1 ${PKGNAMEPREFIX}windmc.1 \
 		${PKGNAMEPREFIX}gprof.1
-
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 .for F in addr2line c++filt elfedit gprof objcopy objdump readelf size strings
