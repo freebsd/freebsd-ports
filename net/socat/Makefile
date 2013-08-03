@@ -37,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CCISCLANG!=	${CC} --version | ${HEAD} -1 | ${GREP} 'clang'
 .endif
 
-.if ${CC} == clang || defined(CCISCLANG)
+.if ${CC} == clang || !empty(CCISCLANG)
 CFLAGS+=	-Wno-unused-comparison
 .endif
 
