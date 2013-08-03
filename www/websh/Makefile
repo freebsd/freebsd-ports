@@ -21,7 +21,6 @@ MAKE_JOBS_UNSAFE=	yes
 TCL_DVER=	${TCL_VER:S/.//}
 
 USE_TCL=	84+
-INVALID_TCL_VER=86
 USE_AUTOTOOLS=	autoconf
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 CONFIGURE_ARGS+=--with-tclinclude=${TCL_INCLUDEDIR} \
@@ -49,6 +48,8 @@ post-patch:
 			`${DIRNAME} $$p`/`${BASENAME} $$p .html`.whtml;	\
 	done
 	${REINPLACE_CMD} -e 's,\.html,.whtml,g' ${WRKSRC:H:H}/doc/mod_websh/htdocs/*.ws3
+	${REINPLACE_CMD} -e 's|__declspec(dllexport)|DLLEXPORT|' \
+		${WRKSRC}/../generic/*.[ch]
 
 post-configure:
 	# Remove the "STUBS" and the PACKAGE_* defines, which may conflict

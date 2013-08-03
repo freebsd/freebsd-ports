@@ -1,0 +1,15 @@
+--- ../../src/generic/mod_websh.h	2005-12-12 12:13:55.000000000 -0500
++++ ../../src/generic/mod_websh.h	2013-08-03 16:46:07.000000000 -0400
+@@ -30,4 +30,12 @@
+ #include "util_script.h"
+ 
++/*
++ * This is required for Apache-2.4 -- see:
++ *	http://httpd.apache.org/docs/2.4/developer/new_api_2_4.html
++ */
++#ifdef APLOG_USE_MODULE
++APLOG_USE_MODULE(websh);
++#endif
++
+ /* define APACHE2 if appropriate */
+ #ifdef AP_SERVER_BASEREVISION
