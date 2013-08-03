@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	p65
-# Date created:			Dec 17, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	p65
 PORTVERSION=	1.1
@@ -18,7 +13,7 @@ COMMENT=	An assembler for the 6502 microprocessor
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	${WRKSRC}
-USE_PERL5=	yes
+USES=		perl5
 USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

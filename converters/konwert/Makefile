@@ -1,9 +1,5 @@
-# New ports collection makefile for:	konwert
-# Date created:				Apr 19 2003
-# Whom:					Alex Semenyaka <alex@rinet.ru>
-#
+# Created by: Alex Semenyaka <alex@rinet.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	konwert
 PORTVERSION=	1.8
@@ -28,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PATCH_WRKSRC=	${WRKDIR}
 
 REINPLACE_ARGS=	-i ""
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 
 MAN1=		konwert.1 trs.1 filterm.1

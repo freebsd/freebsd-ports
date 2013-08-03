@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TkTopNetFlows
-# Date created:				2004 Apr 14
-# Whom:					vfom@narod.ru
-#
+# Created by: vfom@narod.ru
 # $FreeBSD$
-#
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
 NO_BUILD=	yes
 
 USE_TK=		yes
-USE_PERL5=	yes
+USES=		perl5
 
 PORTDOCS=	*
 

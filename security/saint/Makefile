@@ -17,7 +17,7 @@ BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 
-USE_PERL5=	yes
+USES=		perl5
 MANCOMPRESSED=	no
 MAN1=		saint.1
 GNU_CONFIGURE=	yes

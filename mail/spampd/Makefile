@@ -1,9 +1,5 @@
-# ports collection makefile for: spampd
-# Date created: 7 April 2004
-# Whom: chris
-#
+# Created by: chris
 # $FreeBSD$
-#
 
 PORTNAME=	spampd
 PORTVERSION=	2.30
@@ -19,7 +15,7 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 
 NO_BUILD=	yes
 PLIST_FILES=	sbin/spampd
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	spampd
 
 do-install:

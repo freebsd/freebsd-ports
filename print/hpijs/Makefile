@@ -16,7 +16,6 @@ CONFLICTS=	hplip-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-dependency-tracking
 USE_GHOSTSCRIPT_RUN=	yes
-WANT_PERL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,7 +30,7 @@ FOOMATIC_DESC=	Install foomatic-rip and PPD files
 
 .if ${PORT_OPTIONS:MCUPS} || ${PORT_OPTIONS:MFOOMATIC}
 CONFLICTS+=		foomatic-filters-*
-USE_PERL5=		true
+USES=			perl5
 CONFIGURE_ARGS+=	--enable-foomatic-install
 PLIST_SUB+=		FOOMATIC=""
 .else

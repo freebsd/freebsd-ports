@@ -22,7 +22,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 
 CONFLICTS=	p5-FuzzyOcr-devel-[0-9]*
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fastresolve
-# Date created:		11 June 2002
-# Whom:			verm@drunkmonk.net
-#
+# Created by: verm@drunkmonk.net
 # $FreeBSD$
-#
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.10
@@ -20,8 +16,8 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	PERL=${PERL}

@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to read directives from a configuration file
 
-USE_PERL5=	YES
-
+USES=		perl5
 NO_BUILD=	YES
 
 do-install:

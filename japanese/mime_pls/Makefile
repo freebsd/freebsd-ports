@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mime_pls
-# Date created:				2005/12/19
-# Whom:					n-shigemura@ensure.jp
-#
+# Created by: n-shigemura@ensure.jp
 # $FreeBSD$
-#
 
 PORTNAME=	mime_pls
 PORTVERSION=	2.02
@@ -17,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Library for MIME encode/decode
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

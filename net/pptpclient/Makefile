@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pptpclient
-# Date created:				19 June 1999
-# Whom:					John Polstra <jdp@freebsd.org>
-#
+# Created by: John Polstra <jdp@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pptpclient
 PORTVERSION=	1.7.2
@@ -15,7 +11,7 @@ DISTNAME=	pptp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN8=		pptp.8
 

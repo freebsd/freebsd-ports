@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 CONFIGURE_ENV+=	PATH=${PATH}:${LOCALBASE}/sbin
 
 MAN1=		cdbkup.1 cdappend.1 cdcat.1 cdrstr.1 cdsplit.1

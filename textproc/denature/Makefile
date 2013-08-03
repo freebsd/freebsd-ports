@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-CSS-Tiny>=0:${PORTSDIR}/textproc/p5-CSS-Tiny \
 		fop:${PORTSDIR}/textproc/fop
 
-USE_PERL5=	yes
+USES=		perl5
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 POD2MAN?=	pod2man

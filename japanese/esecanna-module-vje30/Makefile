@@ -1,9 +1,5 @@
-# New ports collection Makefile for: esecanna module for VJE-Delta 3.0
-# Date created:		24 February 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	esecanna-module-vje30
 PORTVERSION=	1.0.1
@@ -19,7 +15,7 @@ COMMENT=	Esecanna module for VJE-Delta 3.0
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 # VJE-Delta 3.0 is installed under /usr/local fixedly

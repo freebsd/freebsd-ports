@@ -1,9 +1,5 @@
-# New ports collection makefile for:	perldap
-# Date created:	17 May 1999
-# Whom:		paul@freebsd.org
-#
+# Created by: paul@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	ldapsdk
 PORTVERSION=	6.0.7
@@ -19,7 +15,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c-sdk
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize \

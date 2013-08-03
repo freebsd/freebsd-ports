@@ -1,9 +1,5 @@
-# New ports collection makefile for:    adcomplain
-# Date created: 13 Sep 1997
-# Whom:         ache@FreeBSD.org
-#
+# Created by: ache@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	adcomplain
 PORTVERSION=	3.52
@@ -15,7 +11,7 @@ EXTRACT_SUFX=	.uu
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complain about inappropriate commercial use (f.e. SPAM) of usenet/e-mail
 
-USE_PERL5=	yes
+USES=		perl5
 
 EXTRACT_CMD=	/usr/bin/uudecode
 EXTRACT_BEFORE_ARGS=	<

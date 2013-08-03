@@ -14,9 +14,8 @@ COMMENT=	Optical character recognition (OCR) utility
 
 RUN_DEPENDS=	pnmenlarge:${PORTSDIR}/graphics/netpbm
 
-USES=		shebangfix
+USES=		shebangfix perl5
 USE_XORG=	x11
-USE_PERL5=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 MAKE_JOBS_SAFE=	yes
 

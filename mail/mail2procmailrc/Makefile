@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	mail2procmailrc
-# Date created:			Dec 29, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mail2procmailrc
 PORTVERSION=	0.9
@@ -19,7 +14,7 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		p5-Curses-Widgets>=0:${PORTSDIR}/devel/p5-Curses-Widgets \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 do-install:

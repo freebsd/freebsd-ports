@@ -1,9 +1,5 @@
-# New ports collection makefile for:	namazu2
-# Date created:		25 February 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	namazu
 PORTVERSION=	${NAMAZU_PORTVERSION}
@@ -32,7 +28,7 @@ RUN_DEPENDS+=	ja-p5-MeCab>=0:${PORTSDIR}/japanese/p5-MeCab
 .include "${.CURDIR}/../../databases/namazu2/Makefile.common"
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	@${DO_NADA}

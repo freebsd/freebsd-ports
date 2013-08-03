@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textmail
-# Date created:		8 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	textmail
 PORTVERSION=	20070803
@@ -20,7 +16,7 @@ RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword \
 		lynx:${PORTSDIR}/www/lynx \
 		${LOCALBASE}/libexec/xpdf/pdftotext:${PORTSDIR}/graphics/xpdf
 
-USE_PERL5=	yes
+USES=		perl5
 PLIST_FILES=	bin/${PORTNAME}
 NO_WRKSUBDIR=	yes
 MAN1=	${PORTNAME}.1

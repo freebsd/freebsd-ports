@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cons-test
-# Date created:		15 September 2000
-# Whom:			rv@FreeBSD.org
-#
+# Created by: rv@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cons-test
 PORTVERSION=	2.2.0
@@ -26,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
 WRKSRC=		${WRKDIR}/cons-${PORTVERSION}/test
 NO_BUILD=	yes
 
-USE_PERL5=	yes
+USES=		perl5
 PLIST_SUB=	CONS_VER="${PORTVERSION}" CONS_TEST="${CONS_TEST}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-test//}-${PORTVERSION}/test

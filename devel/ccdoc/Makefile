@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ccdoc
-# Date created:        9 October 2000
-# Whom:                lonewolf@flame.org
-#
+# Created by: lonewolf@flame.org
 # $FreeBSD$
-#
 
 PORTNAME=	ccdoc
 PORTVERSION=	0.8r41
@@ -15,7 +11,7 @@ DIST_SUBDIR=	ccdoc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
 
-USE_PERL5=	yes
+USES=		perl5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}v${PORTVERSION:S/.//g}/src
 MAKEFILE=	mkopt_gcc.mk

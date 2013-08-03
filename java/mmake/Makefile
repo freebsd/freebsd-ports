@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	mmake
-# Date created:			Sep 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mmake
 PORTVERSION=	2.3
@@ -18,7 +13,7 @@ COMMENT=	Create a Makefile for Your Java files, ready to compile
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes

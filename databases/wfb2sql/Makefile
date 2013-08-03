@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wfb2sql
-# Date created:		August 21st, 2003
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wfb2sql
 PORTVERSION=	0.6
@@ -17,8 +13,8 @@ COMMENT=	CIA World Fact Book to SQL Conversion Utility
 BUILD_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		perl5
 NO_BUILD=	YES
-USE_PERL5=	YES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wfb2sql ${PREFIX}/bin/wfb2sql

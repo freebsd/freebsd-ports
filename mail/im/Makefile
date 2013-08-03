@@ -1,9 +1,5 @@
-# New ports collection makefile for: IM
-# Date created:		13 November 1997
-# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	im
 PORTVERSION=	151
@@ -13,7 +9,7 @@ MASTER_SITES=	http://tats.haun.org/im/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user interfaces of Email and NetNews
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hostname=_domain_of_your_mail_address_
 MAKE_ARGS=	prefix=${PREFIX} imlibdir=${ETCDIR}

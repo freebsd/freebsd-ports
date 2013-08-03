@@ -1,9 +1,5 @@
-# Ports collection makefile for:  ctrace
-# Date created:			  24 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	ctrace
 PORTVERSION=	0.9
@@ -18,7 +14,7 @@ RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		ctrace.1
 PLIST_FILES=	sbin/ctrace

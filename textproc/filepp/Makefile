@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	filepp
-# Date created:			Feb 21, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	filepp
 PORTVERSION=	1.8.0
@@ -14,7 +9,7 @@ MASTER_SITES=	http://www-users.york.ac.uk/~dm26/filepp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic file preprocessor
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 

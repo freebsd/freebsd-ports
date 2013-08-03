@@ -14,7 +14,7 @@ COMMENT=	Checkpoint FW1 to Firewall Builder ruleset converter
 RUN_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 
 PLIST_FILES=	bin/cp2fwbuilder
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

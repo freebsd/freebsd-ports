@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msql2
-# Date created:		December 17th 1996
-# Whom:			jfitz
-#
+# Created by: jfitz
 # $FreeBSD$
-#
 
 PORTNAME=	msql
 PORTVERSION=	2.0.12
@@ -15,8 +11,8 @@ COMMENT=	The Mini SQL server, version 2
 
 CONFLICTS=	msql-3*
 
+USES=		perl5
 USE_LDCONFIG=	YES
-USE_PERL5=	YES
 PKGMESSAGE=	${FILESDIR}/post-install-notes
 
 USERS=		${PORTNAME}

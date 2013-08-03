@@ -1,8 +1,4 @@
-#
-# Ports collection makefile for:	scorched3d
-# Date created:				Jan 5, 2003
-# Whom:					mdodd
-#
+# Created by: mdodd
 # $FreeBSD$
 
 PORTNAME=	scorched3d
@@ -34,8 +30,7 @@ USE_OPENAL=	al alut
 USE_SDL=	mixer net sdl
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
-USE_PERL5=	yes
-USES=		iconv
+USES=		iconv perl5
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal

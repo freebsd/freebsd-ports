@@ -9,7 +9,7 @@ MASTER_SITES=		http://eron.info/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated automatic mail-processing tool
 
-USE_PERL5=	yes
+USES=		perl5
 USE_BZIP2=	yes
 
 NO_PACKAGE=	Correct FQDN needs to be hardcoded

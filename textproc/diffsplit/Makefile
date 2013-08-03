@@ -15,8 +15,7 @@ COMMENT=	Splits a unified diff into pieces which patch one file each
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 PLIST_FILES=	bin/diffsplit
-USE_PERL5=	YES
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	diffsplit
 
 do-extract:

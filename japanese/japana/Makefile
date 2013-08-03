@@ -1,9 +1,5 @@
-# New ports collection makefile for:	japana
-# Date created:		04 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	japana
 PORTVERSION=	2.0.6
@@ -17,7 +13,7 @@ RUN_DEPENDS=	*p5-Text-Kakasi>=2:${PORTSDIR}/japanese/p5-Text-Kakasi \
 		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	yes
+USES=		perl5
 MAN1=	${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.default
 

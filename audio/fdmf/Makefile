@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fdmf
-# Date created:		2 November 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9s
@@ -22,7 +18,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		p5-GDBM>=0:${PORTSDIR}/databases/p5-GDBM
 
-USE_PERL5=	yes
+USES=		perl5
 CFLAGS=		-I${LOCALBASE}/include -L. -L${LOCALBASE}/lib
 MAKE_ENV=	VPATH=common
 PORTDOCS=	README
