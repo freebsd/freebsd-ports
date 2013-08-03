@@ -14,10 +14,9 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
-USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl utils/*/*.pl
 SUB_FILES=	${PORTNAME}-httpd.conf pkg-message
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    htmlpp
-# Date created:         9 Nov 1997
-# Whom:                 Donald Burr <dburr@FreeBSD.org>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlpp
 PORTVERSION=	4.2a
@@ -15,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl script to allow easy creation of HTML from template files
 
-USE_PERL5=	YES
+USES=		perl5
 
 NO_WRKSUBDIR=	yes
 

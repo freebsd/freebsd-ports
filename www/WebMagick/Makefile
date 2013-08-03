@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 USE_AUTOTOOLS=  autoconf aclocal automake
 AUTOMAKE_ARGS+=	--add-missing
 INFO=		webmagick

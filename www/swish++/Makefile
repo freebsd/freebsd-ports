@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	swish++
-# Date created:			Jan 13, 2002
-# Whom:              		ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	swish++
 PORTVERSION=	6.1.5
@@ -17,7 +12,7 @@ COMMENT=	Simple Web Indexing System for Humans: C++ version
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PERL=${PERL} PERL_VER=${PERL_VERSION}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   decss
-# Date Created:			20 Feb 2000
-# Whom:				Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	decss
 PORTVERSION=	1.0
@@ -17,7 +13,7 @@ COMMENT=	Strip cascading style sheets from webpages
 WRKSRC=		${WRKDIR}/source
 
 NO_BUILD=	YES
-USE_PERL5=	YES
+USES=		perl5
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/DeCSS ${PREFIX}/bin/decss

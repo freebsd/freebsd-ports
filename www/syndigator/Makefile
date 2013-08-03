@@ -20,8 +20,8 @@ RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Html2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2
 
+USES=		perl5
 USE_GNOME=	gnomehier
-USE_PERL5=	yes
 NO_BUILD=	yes
 
 GNOMEDIR=	${PREFIX}/share

@@ -17,7 +17,7 @@ COMMENT=	Webserver logfile analysis package
 MAKE_JOBS_SAFE=	yes
 
 USE_APACHE_RUN=	22+
-USE_PERL5=	yes
+USES=		perl5
 MAKE_ENV+=	PERL5=${PERL5}
 
 MAN1=	wwwstat.1 splitlog.1
