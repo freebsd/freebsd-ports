@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	goose
-# Date created:			Dec 30, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	goose
 PORTVERSION=	0.5
@@ -23,7 +18,7 @@ RUN_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		urlview:${PORTSDIR}/textproc/urlview
 
-USE_PERL5=	yes
+USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 POD2MAN?=	pod2man
 

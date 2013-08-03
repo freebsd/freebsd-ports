@@ -1,9 +1,5 @@
-# New ports collection makefile for:	harvest
-# Date created:		Fri Mar  1 19:43:52 MET 1996
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	harvest
 PORTVERSION=	1.9.14
@@ -13,14 +9,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20devel/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collect information from all over the Internet
 
-USE_BZIP2=		yes
-USE_PERL5=		yes
+USES=		perl5
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure src/gatherer/curl/configure
 USE_LDCONFIG=	yes
-NO_MTREE=		yes
+NO_MTREE=	yes
 CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PORTNAME} --without-wish
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 STRIP=		# none
 

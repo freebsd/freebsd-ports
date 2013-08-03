@@ -18,7 +18,7 @@ DISTNAME=	rmagic-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web site statistics post-processor for Analog
 
-USE_PERL5=	yes
+USES=		perl5
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d \
