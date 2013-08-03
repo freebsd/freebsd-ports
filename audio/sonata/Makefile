@@ -7,7 +7,7 @@
 
 PORTNAME=	sonata
 PORTVERSION=	1.6.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio python
 MASTER_SITES=	http://codingteam.net/project/sonata/upload/releases/
 
