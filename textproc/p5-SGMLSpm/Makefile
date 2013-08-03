@@ -13,8 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}ii
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for postprocessing the output from sgmls and nsgmls
 
-USE_PERL5_RUN=	yes
-USES=		shebangfix
+USE_PERL5=	run
+USES=		shebangfix perl5
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

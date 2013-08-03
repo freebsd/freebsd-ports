@@ -10,8 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 

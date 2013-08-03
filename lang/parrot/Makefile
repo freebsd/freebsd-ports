@@ -35,8 +35,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
-USES=		bison
+USES=		bison perl5
 
 MAN1=		ops2c.1 \
 		parrot.1 \

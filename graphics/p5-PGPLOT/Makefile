@@ -18,7 +18,7 @@ LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 INSTALL_TARGET=	pure_install
 SCRIPTS_ENV=	PERL=${PERL}
 USE_FORTRAN=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN3=		PGPLOT.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
