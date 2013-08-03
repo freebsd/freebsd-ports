@@ -35,7 +35,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
 CONFIGURE_TARGET=	${ARCH}-${OPSYS:L}
 CONFIGURE_ARGS=	--with-world --without-jpl
-MAKE_ARGS=	DISABLE_PKGS="jpl"
+MAKE_ARGS=	DISABLE_PKGS=jpl \
+		ac_cv_lib_ossp_uuid_uuid_create=no ac_cv_lib_uuid_uuid_create=no
 
 PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:L}
 
