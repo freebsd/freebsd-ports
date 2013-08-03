@@ -1,0 +1,14 @@
+$FreeBSD$
+
+--- src/comp/Makefile.orig	2013-08-03 12:44:56.000000000 -0700
++++ src/comp/Makefile	2013-08-03 12:45:14.000000000 -0700
+@@ -52,6 +52,9 @@
+ ../kfun/comp::
+ 	cd ../kfun; $(MAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' comp
+ 
++../host/comp::
++	cd ../host; $(MAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' comp
++
+ ../host/sub::
+ 	cd ../host; $(MAKE) 'CC=$(CC)' 'HOST=$(HOST)' 'CCFLAGS=$(CCFLAGS)' sub
+ 

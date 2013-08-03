@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.4.19
+PORTVERSION=	1.4.20
 CATEGORIES=	net lang games
 MASTER_SITES=	https://github.com/dworkin/dgd/archive/
 DISTNAME=	${PORTVERSION}
