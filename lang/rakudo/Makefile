@@ -35,7 +35,8 @@ CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" 
 CONFIGURE_ARGS=	--with-parrot=${PREFIX}/bin/parrot \
 		--with-nqp=${PREFIX}/bin/nqp
 
-USES=		bison
+USES=		bison perl5
+USE_PERL5=	build
 
 .include <bsd.port.pre.mk>
 
@@ -43,7 +44,6 @@ USES=		bison
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 
 MAN1=		perl6.1 rakudo.1
