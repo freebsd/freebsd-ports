@@ -1,5 +1,5 @@
---- lib/pypy2.1/sysconfig.py.orig	2012-07-15 09:57:14.000000000 +0200
-+++ lib/pypy2.1/sysconfig.py	2012-07-15 10:03:25.000000000 +0200
+--- lib/pypy-2.1/sysconfig.py.orig	2012-07-15 09:57:14.000000000 +0200
++++ lib/pypy-2.1/sysconfig.py	2012-07-15 10:03:25.000000000 +0200
 @@ -27,12 +27,12 @@
          'data'   : '{base}',
          },
@@ -10,12 +10,12 @@
 -        'platlib': '{base}/lib-python/{py_version_short}',
 -        'include': '{base}/include',
 -        'platinclude': '{base}/include',
-+        'stdlib': '{base}/lib/pypy{pypy_version_short}',
-+        'platstdlib': '{platbase}/lib/pypy{pypy_version_short}',
-+        'purelib': '{base}/lib/pypy{pypy_version_short}',
-+        'platlib': '{platbase}/lib/pypy{pypy_version_short}',
-+        'include': '{base}/include{pypy_version_short}',
-+        'platinclude': '{platbase}/include/pypy{pypy_version_short}',
++        'stdlib': '{base}/lib/pypy-{pypy_version_short}',
++        'platstdlib': '{platbase}/lib/pypy-{pypy_version_short}',
++        'purelib': '{base}/lib/pypy-{pypy_version_short}',
++        'platlib': '{platbase}/lib/pypy-{pypy_version_short}',
++        'include': '{base}/include-{pypy_version_short}',
++        'platinclude': '{platbase}/include/pypy-{pypy_version_short}',
          'scripts': '{base}/bin',
          'data'   : '{base}',
          },

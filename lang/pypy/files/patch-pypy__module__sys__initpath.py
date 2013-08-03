@@ -9,7 +9,7 @@
 -                         CPYTHON_VERSION[1])
 -    lib_python = os.path.join(prefix, 'lib-python')
 +    from pypy.module.sys.version import PYPY_VERSION
-+    dirname = 'pypy%d.%d' % PYPY_VERSION[:2]
++    dirname = 'pypy-%d.%d' % PYPY_VERSION[:2]
 +    lib_python = os.path.join(prefix, 'lib')
      python_std_lib = os.path.join(lib_python, dirname)
      _checkdir(python_std_lib)

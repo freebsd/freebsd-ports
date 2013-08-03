@@ -11,7 +11,7 @@
  import pypy
  LIB_ROOT = os.path.dirname(os.path.dirname(pypy.__file__))
 +LIB_ROOT = os.path.join(LIB_ROOT, 'lib')
-+LIB_ROOT = os.path.join(LIB_ROOT, 'pypy%d.%d' % PYPY_VERSION[:2])
++LIB_ROOT = os.path.join(LIB_ROOT, 'pypy-%d.%d' % PYPY_VERSION[:2])
  
  class PyPySandboxedProc(VirtualizedSandboxedProc, SimpleIOSandboxedProc):
      argv0 = '/bin/pypy-c'
@@ -24,7 +24,7 @@
 -                'lib_pypy': RealDir(os.path.join(libroot, 'lib_pypy'),
 -                                      exclude=exclude),
 +                'lib': Dir({
-+                    'pypy%d.%d' % PYPY_VERSION[:2] : RealDir(libroot, 
++                    'pypy-%d.%d' % PYPY_VERSION[:2] : RealDir(libroot, 
 +                                                             exclude=exclude)
 +                    })
                  }),
