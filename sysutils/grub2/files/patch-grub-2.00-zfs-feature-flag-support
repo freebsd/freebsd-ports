@@ -1,0 +1,893 @@
+From
+
+	http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/sys-boot/grub/files/grub-2.00-zfs-feature-flag-support-r1.patch
+
+ZFS Feature Flag Support
+
+This is a monolithic version of the following commits:
+
+https://github.com/maxximino/grub2/commit/31a32560fd7948ae5ff5c63105d7c068de7890c8
+https://github.com/maxximino/grub2/commit/595d76e8ca0690a963f5533689de8db54ef07e75
+https://github.com/maxximino/grub2/commit/58344034e40218b20500fa2936eb4d7d019e1e88
+https://github.com/maxximino/grub2/commit/f98cb078abab2c14bb0766b5a0ceb055683dab81
+https://github.com/maxximino/grub2/commit/f12806f43a969a654dee7bb89b2e8fd5c42f0e2e
+
+A change was made to account for d8a0feb6 from upstream. This change prevents a
+compile time failure that is caused by a change in the callback interface used
+by mzap_interate(). Modifications to nvlist_find_value() were reverted to
+resolve Gentoo bug #462740. This eliminated the need for the new nvpair_type()
+and nvpair_value() functions. They have been removed to silence a compiler
+warning and reduce the size of the patch. Further adjustments were made to
+silence the following warnings:
+
+/var/tmp/portage/sys-boot/grub-2.00-r2/work/grub-2.00/grub-core/fs/zfs/zfs_lz4.c:77:5:
+warning: "__STDC_VERSION__" is not defined [-Wundef]
+/var/tmp/portage/sys-boot/grub-2.00-r2/work/grub-2.00/grub-core/fs/zfs/zfs.c:4079:3:
+warning: passing argument 4 of 'mzap_iterate' from incompatible pointer type
+[enabled by default]
+
+The initial feature flag support patches were written by Delphix while the LZ4
+support was written by Saso Kiselkov. The work porting this to GRUB2 was done
+by Massimo Maggi, while the adaption to Gentoo's GRUB2 package was done by
+Richard Yao.
+
+diff --git a/Makefile.util.def b/Makefile.util.def
+index b80187c..1bf3038 100644
+--- Makefile.util.def
++++ Makefile.util.def
+@@ -95,6 +95,7 @@ library = {
+   common = grub-core/fs/zfs/zfs.c;
+   common = grub-core/fs/zfs/zfsinfo.c;
+   common = grub-core/fs/zfs/zfs_lzjb.c;
++  common = grub-core/fs/zfs/zfs_lz4.c;
+   common = grub-core/fs/zfs/zfs_sha256.c;
+   common = grub-core/fs/zfs/zfs_fletcher.c;
+   common = grub-core/lib/envblk.c;
+diff --git a/grub-core/Makefile.core.def b/grub-core/Makefile.core.def
+index 39e77a4..1550b90 100644
+--- grub-core/Makefile.core.def
++++ grub-core/Makefile.core.def
+@@ -1186,6 +1186,7 @@ module = {
+   name = zfs;
+   common = fs/zfs/zfs.c;
+   common = fs/zfs/zfs_lzjb.c;
++  common = fs/zfs/zfs_lz4.c;
+   common = fs/zfs/zfs_sha256.c;
+   common = fs/zfs/zfs_fletcher.c;
+ };
+diff --git a/grub-core/fs/zfs/zfs.c b/grub-core/fs/zfs/zfs.c
+index ba0554a..811e3df 100644
+--- grub-core/fs/zfs/zfs.c
++++ grub-core/fs/zfs/zfs.c
+@@ -2,6 +2,7 @@
+  *  GRUB  --  GRand Unified Bootloader
+  *  Copyright (C) 1999,2000,2001,2002,2003,2004,2009,2010,2011  Free Software Foundation, Inc.
+  *  Copyright 2010  Sun Microsystems, Inc.
++ *  Copyright (c) 2012 by Delphix. All rights reserved.
+  *
+  *  GRUB is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License as published by
+@@ -153,11 +154,13 @@ ZAP_LEAF_ENTRY(zap_leaf_phys_t *l, int bs, int idx)
+ 
+ 
+ /*
+- * Decompression Entry - lzjb
++ * Decompression Entry - lzjb & lz4
+  */
+ 
+ extern grub_err_t lzjb_decompress (void *, void *, grub_size_t, grub_size_t);
+ 
++extern grub_err_t lz4_decompress (void *, void *, grub_size_t, grub_size_t);
++
+ typedef grub_err_t zfs_decomp_func_t (void *s_start, void *d_start,
+ 				      grub_size_t s_len, grub_size_t d_len);
+ typedef struct decomp_entry
+@@ -263,6 +266,19 @@ grub_crypto_cipher_handle_t (*grub_zfs_load_key) (const struct grub_zfs_key *key
+ 						  grub_size_t keysize,
+ 						  grub_uint64_t salt,
+ 						  grub_uint64_t algo) = NULL;
++/*
++ * List of pool features that the grub implementation of ZFS supports for
++ * read. Note that features that are only required for write do not need
++ * to be listed here since grub opens pools in read-only mode.
++ */
++static const char *spa_feature_names[] = {
++	"org.illumos:lz4_compress",NULL
++};
++
++static int NESTED_FUNC_ATTR
++check_feature(const char *name, grub_uint64_t val);
++static int
++check_mos_features(dnode_phys_t *mosmdn_phys,grub_zfs_endian_t endian,struct grub_zfs_data* data );
+ 
+ static grub_err_t 
+ zlib_decompress (void *s, void *d,
+@@ -322,6 +338,7 @@ static decomp_entry_t decomp_table[ZIO_COMPRESS_FUNCTIONS] = {
+   {"gzip-8", zlib_decompress},  /* ZIO_COMPRESS_GZIP8 */
+   {"gzip-9", zlib_decompress},  /* ZIO_COMPRESS_GZIP9 */
+   {"zle", zle_decompress},      /* ZIO_COMPRESS_ZLE   */
++  {"lz4", lz4_decompress},      /* ZIO_COMPRESS_LZ4   */
+ };
+ 
+ static grub_err_t zio_read_data (blkptr_t * bp, grub_zfs_endian_t endian,
+@@ -482,15 +499,11 @@ uberblock_verify (uberblock_phys_t * ub, grub_uint64_t offset,
+ 
+   if (grub_zfs_to_cpu64 (uber->ub_magic, GRUB_ZFS_LITTLE_ENDIAN)
+       == UBERBLOCK_MAGIC
+-      && grub_zfs_to_cpu64 (uber->ub_version, GRUB_ZFS_LITTLE_ENDIAN) > 0 
+-      && grub_zfs_to_cpu64 (uber->ub_version, GRUB_ZFS_LITTLE_ENDIAN)
+-      <= SPA_VERSION)
+-    endian = GRUB_ZFS_LITTLE_ENDIAN;
++      && SPA_VERSION_IS_SUPPORTED(grub_zfs_to_cpu64 (uber->ub_version, GRUB_ZFS_LITTLE_ENDIAN)))
++     endian = GRUB_ZFS_LITTLE_ENDIAN;
+ 
+   if (grub_zfs_to_cpu64 (uber->ub_magic, GRUB_ZFS_BIG_ENDIAN) == UBERBLOCK_MAGIC
+-      && grub_zfs_to_cpu64 (uber->ub_version, GRUB_ZFS_BIG_ENDIAN) > 0 
+-      && grub_zfs_to_cpu64 (uber->ub_version, GRUB_ZFS_BIG_ENDIAN)
+-      <= SPA_VERSION)
++      && SPA_VERSION_IS_SUPPORTED(grub_zfs_to_cpu64 (uber->ub_version, GRUB_ZFS_BIG_ENDIAN)))
+     endian = GRUB_ZFS_BIG_ENDIAN;
+ 
+   if (endian == GRUB_ZFS_UNKNOWN_ENDIAN)
+@@ -764,6 +777,99 @@ fill_vdev_info (struct grub_zfs_data *data,
+ }
+ 
+ /*
++ * For a given XDR packed nvlist, verify the first 4 bytes and move on.
++ *
++ * An XDR packed nvlist is encoded as (comments from nvs_xdr_create) :
++ *
++ *      encoding method/host endian     (4 bytes)
++ *      nvl_version                     (4 bytes)
++ *      nvl_nvflag                      (4 bytes)
++ *	encoded nvpairs:
++ *		encoded size of the nvpair      (4 bytes)
++ *		decoded size of the nvpair      (4 bytes)
++ *		name string size                (4 bytes)
++ *		name string data                (sizeof(NV_ALIGN4(string))
++ *		data type                       (4 bytes)
++ *		# of elements in the nvpair     (4 bytes)
++ *		data
++ *      2 zero's for the last nvpair
++ *		(end of the entire list)	(8 bytes)
++ *
++ */
++
++/*
++ * The nvlist_next_nvpair() function returns a handle to the next nvpair in the
++ * list following nvpair. If nvpair is NULL, the first pair is returned. If
++ * nvpair is the last pair in the nvlist, NULL is returned.
++ */
++static const char *
++nvlist_next_nvpair(const char *nvl, const char *nvpair)
++{
++	const char *nvp;
++	int encode_size;
++	int name_len;
++	if (nvl == NULL)
++		return (NULL);
++
++	if (nvpair == NULL) {
++		/* skip over header, nvl_version and nvl_nvflag */
++		nvpair = nvl + 4 * 3;
++	} else {
++		/* skip to the next nvpair */
++		encode_size = grub_be_to_cpu32 (grub_get_unaligned32(nvpair));
++		nvpair += encode_size;
++	}
++	/* 8 bytes of 0 marks the end of the list */
++	if (*(grub_uint64_t*)nvpair == 0)
++		return (NULL);
++	/*consistency checks*/
++	if (nvpair + 4 * 3 >= nvl + VDEV_PHYS_SIZE)
++	{
++	  grub_dprintf ("zfs", "nvlist overflow\n");
++	  grub_error (GRUB_ERR_BAD_FS, "incorrect nvlist");
++	  return (NULL);
++	}
++	encode_size = grub_be_to_cpu32 (grub_get_unaligned32(nvpair));
++
++	nvp = nvpair + 4*2;
++	name_len = grub_be_to_cpu32 (grub_get_unaligned32 (nvp));
++	nvp += 4;
++
++	nvp = nvp + ((name_len + 3) & ~3); // align 
++	if (nvp + 4 >= nvl + VDEV_PHYS_SIZE                        
++	    || encode_size < 0
++	    || nvp + 4 + encode_size > nvl + VDEV_PHYS_SIZE)       
++	{
++	  grub_dprintf ("zfs", "nvlist overflow\n");
++	  grub_error (GRUB_ERR_BAD_FS, "incorrect nvlist");
++	  return (NULL);
++	}
++	 /* end consistency checks */
++
++	return (nvpair);
++}
++/*
++ * This function returns 0 on success and 1 on failure. On success, a string
++ * containing the name of nvpair is saved in buf.
++ */
++static int
++nvpair_name(const char *nvp, char **buf, int* buflen)
++{
++	int len;
++
++	/* skip over encode/decode size */
++	nvp += 4 * 2;
++
++	len = grub_be_to_cpu32 (grub_get_unaligned32 (nvp));
++	nvp=nvp+4;
++	
++	*buf=(char*)nvp;
++	*buflen=len;
++
++	return (0);
++}
++
++/*
+  * Check the disk label information and retrieve needed vdev name-value pairs.
+  *
+  */
+@@ -773,7 +879,7 @@ check_pool_label (struct grub_zfs_data *data,
+ 		  int *inserted)
+ {
+   grub_uint64_t pool_state, txg = 0;
+-  char *nvlist;
++  char *nvlist,*features;
+ #if 0
+   char *nv;
+ #endif
+@@ -837,13 +943,13 @@ check_pool_label (struct grub_zfs_data *data,
+     }
+   grub_dprintf ("zfs", "check 8 passed\n");
+ 
+-  if (version > SPA_VERSION)
++  if (!SPA_VERSION_IS_SUPPORTED(version))
+     {
+       grub_free (nvlist);
+       return grub_error (GRUB_ERR_NOT_IMPLEMENTED_YET,
+ 			 "too new version %llu > %llu",
+ 			 (unsigned long long) version,
+-			 (unsigned long long) SPA_VERSION);
++			 (unsigned long long) SPA_VERSION_BEFORE_FEATURES);
+     }
+   grub_dprintf ("zfs", "check 9 passed\n");
+ 
+@@ -893,7 +999,30 @@ check_pool_label (struct grub_zfs_data *data,
+     grub_free (nv);
+   }
+   grub_dprintf ("zfs", "check 10 passed\n");
+-
++  if ((features=grub_zfs_nvlist_lookup_nvlist(nvlist, ZPOOL_CONFIG_FEATURES_FOR_READ)))
++  {
++    const char *nvp=NULL;
++    char *name = grub_zalloc(51);
++    char *nameptr;
++    int namelen;
++    while ((nvp = nvlist_next_nvpair(features, nvp)) != NULL)
++    {
++      nvpair_name(nvp, &nameptr,&namelen);
++      if(namelen > 50){namelen=50;}
++      grub_strncpy(name,nameptr,namelen);
++      name[namelen]=0;
++      grub_dprintf("zfs","namelen=%u str=%s\n",namelen,name);
++      if (check_feature(name,1) != 0)
++      {
++	grub_dprintf("zfs","feature missing in check_pool_label:%s\n",name);
++	err= grub_error (GRUB_ERR_NOT_IMPLEMENTED_YET," check_pool_label missing feature '%s' for read",name);
++	grub_free(name);
++	return err;
++      }
++    }
++    grub_free(name);
++  }
++  grub_dprintf ("zfs", "check 12 passed (feature flags)\n");
+   grub_free (nvlist);
+ 
+   return GRUB_ERR_NONE;
+@@ -3034,27 +3163,6 @@ dnode_get_fullpath (const char *fullpath, struct subvolume *subvol,
+   return err;
+ }
+ 
+-/*
+- * For a given XDR packed nvlist, verify the first 4 bytes and move on.
+- *
+- * An XDR packed nvlist is encoded as (comments from nvs_xdr_create) :
+- *
+- *      encoding method/host endian     (4 bytes)
+- *      nvl_version                     (4 bytes)
+- *      nvl_nvflag                      (4 bytes)
+- *	encoded nvpairs:
+- *		encoded size of the nvpair      (4 bytes)
+- *		decoded size of the nvpair      (4 bytes)
+- *		name string size                (4 bytes)
+- *		name string data                (sizeof(NV_ALIGN4(string))
+- *		data type                       (4 bytes)
+- *		# of elements in the nvpair     (4 bytes)
+- *		data
+- *      2 zero's for the last nvpair
+- *		(end of the entire list)	(8 bytes)
+- *
+- */
+-
+ static int
+ nvlist_find_value (const char *nvlist_in, const char *name,
+ 		   int valtype, char **val,
+@@ -3386,6 +3494,10 @@ zfs_mount (grub_device_t dev)
+       return NULL;
+     }
+ 
++    if (ub->ub_version >= SPA_VERSION_FEATURES &&
++	check_mos_features(&((objset_phys_t *) osp)->os_meta_dnode,ub_endian, data) != 0)
++	  return NULL;
++	
+   /* Got the MOS. Save it at the memory addr MOS. */
+   grub_memmove (&(data->mos.dn), &((objset_phys_t *) osp)->os_meta_dnode,
+ 		DNODE_SIZE);
+@@ -3910,6 +4022,64 @@ grub_zfs_dir (grub_device_t device, const char *path,
+   return grub_errno;
+ }
+ 
++static int NESTED_FUNC_ATTR
++check_feature(const char *name, grub_uint64_t val)
++{
++  int i;
++  if(val ==0) return 0;
++  if(*name==0) return 0;
++  for (i = 0; spa_feature_names[i] != NULL; i++) 
++  {
++    if (grub_strcmp(name, spa_feature_names[i]) == 0) 
++        return 0;
++  }
++  grub_printf("missing feature for read '%s'\n",name);
++  return 1;
++}
++
++/*
++ * Checks whether the MOS features that are active are supported by this
++ * (GRUB's) implementation of ZFS.
++ *
++ * Return:
++ *	0: Success.
++ *	errnum: Failure.
++ */
++	    	   
++static int
++check_mos_features(dnode_phys_t *mosmdn_phys,grub_zfs_endian_t endian,struct grub_zfs_data* data )
++{
++  grub_uint64_t objnum;
++  grub_uint8_t errnum = 0;
++  dnode_end_t dn,mosmdn;
++  mzap_phys_t* mzp;
++  grub_zfs_endian_t endianzap;
++  int size;
++  grub_memmove(&(mosmdn.dn),mosmdn_phys,sizeof(dnode_phys_t));
++  mosmdn.endian=endian;
++  if ((errnum = dnode_get(&mosmdn, DMU_POOL_DIRECTORY_OBJECT,
++	  DMU_OT_OBJECT_DIRECTORY, &dn,data)) != 0)
++      return (errnum);
++
++  /*
++   * Find the object number for 'features_for_read' and retrieve its
++   * corresponding dnode. Note that we don't check features_for_write
++   * because GRUB is not opening the pool for write.
++   */
++  if ((errnum = zap_lookup(&dn, DMU_POOL_FEATURES_FOR_READ, &objnum, data,0)) != 0)
++      return (errnum);
++  
++  if ((errnum = dnode_get(&mosmdn, objnum, DMU_OTN_ZAP_METADATA, &dn, data)) != 0)
++      return (errnum);
++
++  if ((errnum = dmu_read(&dn, 0, (void**)&mzp, &endianzap,data)) != 0)
++      return (errnum);
++
++  size = grub_zfs_to_cpu16 (dn.dn.dn_datablkszsec, dn.endian) << SPA_MINBLOCKSHIFT;
++  return (mzap_iterate(mzp,endianzap, size, check_feature));
++}
++
++
+ #ifdef GRUB_UTIL
+ static grub_err_t
+ grub_zfs_embed (grub_device_t device __attribute__ ((unused)),
+diff --git a/grub-core/fs/zfs/zfs_lz4.c b/grub-core/fs/zfs/zfs_lz4.c
+new file mode 100644
+index 0000000..ff85a77
+--- /dev/null
++++ grub-core/fs/zfs/zfs_lz4.c
+@@ -0,0 +1,317 @@
++/*
++ * LZ4 - Fast LZ compression algorithm
++ * Header File
++ * Copyright (C) 2011-2013, Yann Collet.
++ * BSD 2-Clause License (http://www.opensource.org/licenses/bsd-license.php)
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are
++ * met:
++ *
++ *     * Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ *     * Redistributions in binary form must reproduce the above
++ * copyright notice, this list of conditions and the following disclaimer
++ * in the documentation and/or other materials provided with the
++ * distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
++ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
++ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
++ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
++ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
++ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ *
++ * You can contact the author at :
++ * - LZ4 homepage : http://fastcompression.blogspot.com/p/lz4.html
++ * - LZ4 source repository : http://code.google.com/p/lz4/
++ */
++
++#include <grub/err.h>
++#include <grub/mm.h>
++#include <grub/misc.h>
++#include <grub/types.h>
++
++static int LZ4_uncompress_unknownOutputSize(const char *source, char *dest,
++					    int isize, int maxOutputSize);
++
++/*
++ * CPU Feature Detection
++ */
++
++/* 32 or 64 bits ? */
++#if (defined(__x86_64__) || defined(__x86_64) || defined(__amd64__) || \
++	defined(__amd64) || defined(__ppc64__) || defined(_WIN64) || \
++	defined(__LP64__) || defined(_LP64))
++#define	LZ4_ARCH64	1
++#else
++#define	LZ4_ARCH64	0
++#endif
++
++/*
++ * Little Endian or Big Endian?
++ * Note: overwrite the below #define if you know your architecture endianess.
++ */
++#if BYTE_ORDER == BIG_ENDIAN
++#define	LZ4_BIG_ENDIAN	1
++#else
++	/*
++	 * Little Endian assumed. PDP Endian and other very rare endian format
++	 * are unsupported.
++	 */
++#endif
++
++/*
++ * Compiler Options
++ */
++
++#if defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L	/* C99 */
++/* "restrict" is a known keyword */
++#else
++/* Disable restrict */
++#ifndef restrict
++#define	restrict /* Only if somebody already didn't take care of that.*/
++#endif
++#endif
++
++#define	GCC_VERSION (__GNUC__ * 100 + __GNUC_MINOR__)
++
++#define	lz4_bswap16(x) ((unsigned short int) ((((x) >> 8) & 0xffu) \
++	| (((x) & 0xffu) << 8)))
++
++#if (GCC_VERSION >= 302) || (__INTEL_COMPILER >= 800) || defined(__clang__)
++#define	expect(expr, value)    (__builtin_expect((expr), (value)))
++#else
++#define	expect(expr, value)    (expr)
++#endif
++
++#define	likely(expr)	expect((expr) != 0, 1)
++#define	unlikely(expr)	expect((expr) != 0, 0)
++
++/* Basic types */
++#define	BYTE	grub_uint8_t
++#define	U16	grub_uint16_t
++#define	U32	grub_uint32_t
++#define	S32	grub_int32_t
++#define	U64	grub_uint64_t
++typedef grub_size_t size_t;
++
++typedef struct _U16_S {
++	U16 v;
++} U16_S;
++typedef struct _U32_S {
++	U32 v;
++} U32_S;
++typedef struct _U64_S {
++	U64 v;
++} U64_S;
++
++#define	A64(x)	(((U64_S *)(x))->v)
++#define	A32(x)	(((U32_S *)(x))->v)
++#define	A16(x)	(((U16_S *)(x))->v)
++
++/*
++ * Constants
++ */
++#define	MINMATCH 4
++
++#define	COPYLENGTH 8
++#define	LASTLITERALS 5
++
++#define	ML_BITS 4
++#define	ML_MASK ((1U<<ML_BITS)-1)
++#define	RUN_BITS (8-ML_BITS)
++#define	RUN_MASK ((1U<<RUN_BITS)-1)
++
++/*
++ * Architecture-specific macros
++ */
++#if LZ4_ARCH64
++#define	STEPSIZE 8
++#define	UARCH U64
++#define	AARCH A64
++#define	LZ4_COPYSTEP(s, d)	A64(d) = A64(s); d += 8; s += 8;
++#define	LZ4_COPYPACKET(s, d)	LZ4_COPYSTEP(s, d)
++#define	LZ4_SECURECOPY(s, d, e)	if (d < e) LZ4_WILDCOPY(s, d, e)
++#define	HTYPE U32
++#define	INITBASE(base)		const BYTE* const base = ip
++#else
++#define	STEPSIZE 4
++#define	UARCH U32
++#define	AARCH A32
++#define	LZ4_COPYSTEP(s, d)	A32(d) = A32(s); d += 4; s += 4;
++#define	LZ4_COPYPACKET(s, d)	LZ4_COPYSTEP(s, d); LZ4_COPYSTEP(s, d);
++#define	LZ4_SECURECOPY		LZ4_WILDCOPY
++#define	HTYPE const BYTE*
++#define	INITBASE(base)		const int base = 0
++#endif
++
++#if (defined(LZ4_BIG_ENDIAN) && !defined(BIG_ENDIAN_NATIVE_BUT_INCOMPATIBLE))
++#define	LZ4_READ_LITTLEENDIAN_16(d, s, p) \
++	{ U16 v = A16(p); v = lz4_bswap16(v); d = (s) - v; }
++#define	LZ4_WRITE_LITTLEENDIAN_16(p, i) \
++	{ U16 v = (U16)(i); v = lz4_bswap16(v); A16(p) = v; p += 2; }
++#else
++#define	LZ4_READ_LITTLEENDIAN_16(d, s, p) { d = (s) - A16(p); }
++#define	LZ4_WRITE_LITTLEENDIAN_16(p, v)  { A16(p) = v; p += 2; }
++#endif
++
++/* Macros */
++#define	LZ4_WILDCOPY(s, d, e) do { LZ4_COPYPACKET(s, d) } while (d < e);
++
++/* Decompression functions */
++grub_err_t
++lz4_decompress(void *s_start, void *d_start, size_t s_len, size_t d_len);
++
++grub_err_t
++lz4_decompress(void *s_start, void *d_start, size_t s_len, size_t d_len)
++{
++	const BYTE *src = s_start;
++	U32 bufsiz = (src[0] << 24) | (src[1] << 16) | (src[2] << 8) |
++	    src[3];
++
++	/* invalid compressed buffer size encoded at start */
++	if (bufsiz + 4 > s_len)
++		return grub_error(GRUB_ERR_BAD_FS,"lz4 decompression failed.");
++
++	/*
++	 * Returns 0 on success (decompression function returned non-negative)
++	 * and appropriate error on failure (decompression function returned negative).
++	 */
++	return (LZ4_uncompress_unknownOutputSize((char*)s_start + 4, d_start, bufsiz,
++	    d_len) < 0)?grub_error(GRUB_ERR_BAD_FS,"lz4 decompression failed."):0;
++}
++
++static int
++LZ4_uncompress_unknownOutputSize(const char *source,
++    char *dest, int isize, int maxOutputSize)
++{
++	/* Local Variables */
++	const BYTE *restrict ip = (const BYTE *) source;
++	const BYTE *const iend = ip + isize;
++	const BYTE *restrict ref;
++
++	BYTE *restrict op = (BYTE *) dest;
++	BYTE *const oend = op + maxOutputSize;
++	BYTE *cpy;
++
++	size_t dec[] = { 0, 3, 2, 3, 0, 0, 0, 0 };
++
++	/* Main Loop */
++	while (ip < iend) {
++		BYTE token;
++		int length;
++
++		/* get runlength */
++		token = *ip++;
++		if ((length = (token >> ML_BITS)) == RUN_MASK) {
++			int s = 255;
++			while ((ip < iend) && (s == 255)) {
++				s = *ip++;
++				length += s;
++			}
++		}
++		/* copy literals */
++		cpy = op + length;
++		if ((cpy > oend - COPYLENGTH) ||
++		    (ip + length > iend - COPYLENGTH)) {
++			if (cpy > oend)
++				/*
++				 * Error: request to write beyond destination
++				 * buffer.
++				 */
++				goto _output_error;
++			if (ip + length > iend)
++				/*
++				 * Error : request to read beyond source
++				 * buffer.
++				 */
++				goto _output_error;
++			grub_memcpy(op, ip, length);
++			op += length;
++			ip += length;
++			if (ip < iend)
++				/* Error : LZ4 format violation */
++				goto _output_error;
++			/* Necessarily EOF, due to parsing restrictions. */
++			break;
++		}
++		LZ4_WILDCOPY(ip, op, cpy);
++		ip -= (op - cpy);
++		op = cpy;
++
++		/* get offset */
++		LZ4_READ_LITTLEENDIAN_16(ref, cpy, ip);
++		ip += 2;
++		if (ref < (BYTE * const) dest)
++			/*
++			 * Error: offset creates reference outside of
++			 * destination buffer.
++			 */
++			goto _output_error;
++
++		/* get matchlength */
++		if ((length = (token & ML_MASK)) == ML_MASK) {
++			while (ip < iend) {
++				int s = *ip++;
++				length += s;
++				if (s == 255)
++					continue;
++				break;
++			}
++		}
++		/* copy repeated sequence */
++		if unlikely(op - ref < STEPSIZE) {
++#if LZ4_ARCH64
++			size_t dec2table[] = { 0, 0, 0, -1, 0, 1, 2, 3 };
++			size_t dec2 = dec2table[op - ref];
++#else
++			const int dec2 = 0;
++#endif
++			*op++ = *ref++;
++			*op++ = *ref++;
++			*op++ = *ref++;
++			*op++ = *ref++;
++			ref -= dec[op - ref];
++			A32(op) = A32(ref);
++			op += STEPSIZE - 4;
++			ref -= dec2;
++		} else {
++			LZ4_COPYSTEP(ref, op);
++		}
++		cpy = op + length - (STEPSIZE - 4);
++		if (cpy > oend - COPYLENGTH) {
++			if (cpy > oend)
++				/*
++				 * Error: request to write outside of
++				 * destination buffer.
++				 */
++				goto _output_error;
++			LZ4_SECURECOPY(ref, op, (oend - COPYLENGTH));
++			while (op < cpy)
++				*op++ = *ref++;
++			op = cpy;
++			if (op == oend)
++				/*
++				 * Check EOF (should never happen, since last
++				 * 5 bytes are supposed to be literals).
++				 */
++				break;
++			continue;
++		}
++		LZ4_SECURECOPY(ref, op, cpy);
++		op = cpy;	/* correction */
++	}
++
++	/* end of decoding */
++	return (int)(((char *)op) - dest);
++
++	/* write overflow error detected */
++	_output_error:
++	return (int)(-(((char *)ip) - source));
++}
+diff --git a/grub-core/fs/zfs/zfsinfo.c b/grub-core/fs/zfs/zfsinfo.c
+index fdb587a..c96bf21 100644
+--- grub-core/fs/zfs/zfsinfo.c
++++ grub-core/fs/zfs/zfsinfo.c
+@@ -132,21 +132,31 @@ print_vdev_info (char *nvlist, int tab)
+       grub_free (path);
+       return GRUB_ERR_NONE;
+     }
++  char is_mirror=(grub_strcmp(type,VDEV_TYPE_MIRROR) == 0);
++  char is_raidz=(grub_strcmp(type,VDEV_TYPE_RAIDZ) == 0);
+ 
+-  if (grub_strcmp (type, VDEV_TYPE_MIRROR) == 0)
++  if (is_mirror || is_raidz)
+     {
+       int nelm, i;
+ 
+       nelm = grub_zfs_nvlist_lookup_nvlist_array_get_nelm
+ 	(nvlist, ZPOOL_CONFIG_CHILDREN);
+ 
++      if(is_mirror){
++	 grub_puts_ (N_("This VDEV is a mirror"));
++      }
++      else if(is_raidz){
++	 grub_uint64_t parity;
++	 grub_zfs_nvlist_lookup_uint64(nvlist,"nparity",&parity);
++	 grub_printf_ (N_("This VDEV is a RAIDZ%llu\n"),(unsigned long long)parity);
++      }
+       print_tabs (tab);
+       if (nelm <= 0)
+ 	{
+-	  grub_puts_ (N_("Incorrect mirror"));
++	  grub_puts_ (N_("Incorrect VDEV"));
+ 	  return GRUB_ERR_NONE;
+ 	}
+-      grub_printf_ (N_("Mirror with %d children\n"), nelm);
++      grub_printf_ (N_("VDEV with %d children\n"), nelm);
+       print_state (nvlist, tab);
+       for (i = 0; i < nelm; i++)
+ 	{
+@@ -162,14 +172,14 @@ print_vdev_info (char *nvlist, int tab)
+ 		 total element number. And the number itself is fine,
+ 		 only the element isn't.
+ 	      */
+-	      grub_printf_ (N_("Mirror element number %d isn't correct\n"), i);
++	      grub_printf_ (N_("VDEV element number %d isn't correct\n"), i);
+ 	      continue;
+ 	    }
+ 
+ 	  /* TRANSLATORS: it's the element carying the number %d, not
+ 	     total element number. This is used in enumeration
+ 	     "Element number 1", "Element number 2", ... */
+-	  grub_printf_ (N_("Mirror element number %d:\n"), i);
++	  grub_printf_ (N_("VDEV element number %d:\n"), i);
+ 	  print_vdev_info (child, tab + 1);
+ 
+ 	  grub_free (child);
+diff --git a/include/grub/zfs/dmu.h b/include/grub/zfs/dmu.h
+index 8fc6dc5..4ad616c 100644
+--- include/grub/zfs/dmu.h
++++ include/grub/zfs/dmu.h
+@@ -22,6 +22,39 @@
+ 
+ #ifndef	_SYS_DMU_H
+ #define	_SYS_DMU_H
++#define	B_FALSE	0
++#define	B_TRUE	1
++
++#define	DMU_OT_NEWTYPE 0x80
++#define	DMU_OT_METADATA 0x40
++#define	DMU_OT_BYTESWAP_MASK 0x3f
++
++#define	DMU_OT(byteswap, metadata) \
++	(DMU_OT_NEWTYPE | \
++	((metadata) ? DMU_OT_METADATA : 0) | \
++	((byteswap) & DMU_OT_BYTESWAP_MASK))
++
++#define	DMU_OT_IS_VALID(ot) (((ot) & DMU_OT_NEWTYPE) ? \
++	((ot) & DMU_OT_BYTESWAP_MASK) < DMU_BSWAP_NUMFUNCS : \
++	(ot) < DMU_OT_NUMTYPES)
++
++#define	DMU_OT_IS_METADATA(ot) (((ot) & DMU_OT_NEWTYPE) ? \
++	((ot) & DMU_OT_METADATA) : \
++	dmu_ot[(ot)].ot_metadata)
++
++typedef enum dmu_object_byteswap {
++	DMU_BSWAP_UINT8,
++	DMU_BSWAP_UINT16,
++	DMU_BSWAP_UINT32,
++	DMU_BSWAP_UINT64,
++	DMU_BSWAP_ZAP,
++	DMU_BSWAP_DNODE,
++	DMU_BSWAP_OBJSET,
++	DMU_BSWAP_ZNODE,
++	DMU_BSWAP_OLDACL,
++	DMU_BSWAP_ACL,
++	DMU_BSWAP_NUMFUNCS
++} dmu_object_byteswap_t;
+ 
+ /*
+  * This file describes the interface that the DMU provides for its
+@@ -89,7 +122,17 @@ typedef enum dmu_object_type {
+ 	DMU_OT_SA_ATTR_REGISTRATION,	/* ZAP */
+ 	DMU_OT_SA_ATTR_LAYOUTS,		/* ZAP */
+ 	DMU_OT_DSL_KEYCHAIN = 54,
+-	DMU_OT_NUMTYPES
++	DMU_OT_NUMTYPES,
++	DMU_OTN_UINT8_DATA = DMU_OT(DMU_BSWAP_UINT8, B_FALSE),
++	DMU_OTN_UINT8_METADATA = DMU_OT(DMU_BSWAP_UINT8, B_TRUE),
++	DMU_OTN_UINT16_DATA = DMU_OT(DMU_BSWAP_UINT16, B_FALSE),
++	DMU_OTN_UINT16_METADATA = DMU_OT(DMU_BSWAP_UINT16, B_TRUE),
++	DMU_OTN_UINT32_DATA = DMU_OT(DMU_BSWAP_UINT32, B_FALSE),
++	DMU_OTN_UINT32_METADATA = DMU_OT(DMU_BSWAP_UINT32, B_TRUE),
++	DMU_OTN_UINT64_DATA = DMU_OT(DMU_BSWAP_UINT64, B_FALSE),
++	DMU_OTN_UINT64_METADATA = DMU_OT(DMU_BSWAP_UINT64, B_TRUE),
++	DMU_OTN_ZAP_DATA = DMU_OT(DMU_BSWAP_ZAP, B_FALSE),
++	DMU_OTN_ZAP_METADATA = DMU_OT(DMU_BSWAP_ZAP, B_TRUE),
+ } dmu_object_type_t;
+ 
+ typedef enum dmu_objset_type {
+@@ -116,5 +159,6 @@ typedef enum dmu_objset_type {
+ #define	DMU_POOL_HISTORY		"history"
+ #define	DMU_POOL_PROPS			"pool_props"
+ #define	DMU_POOL_L2CACHE		"l2cache"
++#define	DMU_POOL_FEATURES_FOR_READ	"features_for_read"
+ 
+ #endif	/* _SYS_DMU_H */
+diff --git a/include/grub/zfs/zfs.h b/include/grub/zfs/zfs.h
+index e326c8b..761ade7 100644
+--- include/grub/zfs/zfs.h
++++ include/grub/zfs/zfs.h
+@@ -36,8 +36,13 @@ typedef enum grub_zfs_endian
+ /*
+  * On-disk version number.
+  */
+-#define	SPA_VERSION			33ULL
+-
++#define	SPA_VERSION_INITIAL		1ULL
++#define	SPA_VERSION_BEFORE_FEATURES	33ULL
++#define	SPA_VERSION			5000ULL
++#define	SPA_VERSION_FEATURES		5000ULL
++#define	SPA_VERSION_IS_SUPPORTED(v) \
++	(((v) >= SPA_VERSION_INITIAL && (v) <= SPA_VERSION_BEFORE_FEATURES) || \
++	((v) >= SPA_VERSION_FEATURES && (v) <= SPA_VERSION))
+ /*
+  * The following are configuration names used in the nvlist describing a pool's
+  * configuration.
+@@ -76,6 +81,7 @@ typedef enum grub_zfs_endian
+ #define	ZPOOL_CONFIG_DDT_HISTOGRAM	"ddt_histogram"
+ #define	ZPOOL_CONFIG_DDT_OBJ_STATS	"ddt_object_stats"
+ #define	ZPOOL_CONFIG_DDT_STATS		"ddt_stats"
++#define	ZPOOL_CONFIG_FEATURES_FOR_READ	"features_for_read"
+ /*
+  * The persistent vdev state is stored as separate values rather than a single
+  * 'vdev_state' entry.  This is because a device can be in multiple states, such
+diff --git a/include/grub/zfs/zio.h b/include/grub/zfs/zio.h
+index b1c46da..8fad2cc 100644
+--- include/grub/zfs/zio.h
++++ include/grub/zfs/zio.h
+@@ -88,6 +88,7 @@ enum zio_compress {
+ 	ZIO_COMPRESS_GZIP8,
+ 	ZIO_COMPRESS_GZIP9,
+ 	ZIO_COMPRESS_ZLE,
++	ZIO_COMPRESS_LZ4,
+ 	ZIO_COMPRESS_FUNCTIONS
+ };
+ 
+diff --git a/po/POTFILES.in b/po/POTFILES.in
+index 987b37a..c55d9e3 100644
+--- po/POTFILES.in
++++ po/POTFILES.in
+@@ -173,6 +173,7 @@
+ ./grub-core/fs/zfs/zfs_fletcher.c
+ ./grub-core/fs/zfs/zfsinfo.c
+ ./grub-core/fs/zfs/zfs_lzjb.c
++./grub-core/fs/zfs/zfs_lz4.c
+ ./grub-core/fs/zfs/zfs_sha256.c
+ ./grub-core/gdb/cstub.c
+ ./grub-core/gdb/gdb.c
