@@ -20,8 +20,9 @@ EXPIRATION_DATE=	2013-09-21
 
 PWL_DOC_PREFIX=	share/doc/pwl
 
+USES=		perl5
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure Watchdog/configure
 USE_GCC=	4.2+
@@ -38,7 +39,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-gmp-prefix="${LOCALBASE}" \
 		--enable-interfaces="${INTERFACES}"
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	ppl-config.1 ppl_lcdd.1 ppl_pips.1
 MAN3=	libppl.3 libppl_c.3

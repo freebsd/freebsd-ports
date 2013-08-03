@@ -17,10 +17,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multibody Dynamic Simulation Library
 
+USES=		perl5
 USE_BZIP2=	yes
 USE_GL=		glut
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CXXFLAGS+=	${PTHREAD_CFLAGS}
 MAKE_ENV=	OPENGLINCDIR="${LOCALBASE}/include" \
 		OPENGLLIBDIR="${LOCALBASE}/lib"

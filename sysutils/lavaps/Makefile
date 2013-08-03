@@ -12,9 +12,10 @@ COMMENT=	Lava lamp of currently running processes
 
 LICENSE=	GPLv2
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_XORG=	x11 xext sm ice
 
 MAN1=		lavaps.1

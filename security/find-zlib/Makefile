@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 
 NO_BUILD=	none
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/find-zlib
 

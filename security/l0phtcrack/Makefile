@@ -12,11 +12,12 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cracks SAMBA or Windows NT passwords
 
+USES=		perl5
 DOCDIR=		share/doc/${PORTNAME}
 RESTRICTED=	uses GNU getopt with BSDish-licensed code from OpenSSL
 NO_WRKSUBDIR=	yes
 PLIST=		${WRKDIR}/pkg-plist
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 

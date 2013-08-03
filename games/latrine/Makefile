@@ -17,11 +17,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_CSTD=	gnu89
 USE_SQLITE=	3
-USE_PERL5_BUILD=yes
-USES=		gettext ncurses
+USE_PERL5=	build
+USES=		gettext ncurses perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED
 LDFLAGS+=	-L${LOCALBASE}/lib

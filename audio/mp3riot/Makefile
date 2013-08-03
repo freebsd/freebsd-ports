@@ -13,7 +13,6 @@ RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 
 USES=		perl5
 NO_BUILD=	yes
-USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 
 PORTDOCS=	example.unix groupfile CHANGELOG MANUAL mp3table.sql README repl.dat TODO utf.dat

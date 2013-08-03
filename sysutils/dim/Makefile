@@ -16,9 +16,9 @@ LICENSE=	GPLv2 # (or later)
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	dim.pl
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 PLIST_FILES=	bin/dim
 

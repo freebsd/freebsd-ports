@@ -15,9 +15,10 @@ COMMENT=	Regular Expression Graphing Program
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Arrow>=0:${PORTSDIR}/graphics/p5-GD-Arrow
 
+USES=		perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 PLIST_FILES=	bin/re_graph
 

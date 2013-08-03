@@ -14,9 +14,10 @@ COMMENT=	Chemistry data like element and isotope properties, atomic radii, etc
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
+USES=		perl5
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 post-patch:

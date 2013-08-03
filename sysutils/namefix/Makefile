@@ -30,7 +30,8 @@ EXTRACT_AFTER_ARGS=	-bd -y >/dev/null 2>&1
 WRKSRC=		${WRKDIR}/${PORTNAME}.pl
 NO_BUILD=	yes
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 do-configure:
 .for bin in ${PORTNAME} ${PORTNAME}-cli

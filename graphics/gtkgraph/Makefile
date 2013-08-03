@@ -11,10 +11,10 @@ MASTER_SITE_SUBDIR= jedgar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphing calculator using GTK+
 
-USES=		gettext
+USES=		gettext perl5
 USE_GMAKE=	yes
 USE_GNOME=	imlib
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -17,7 +17,6 @@ BUILD_WRKSRC=	${WRKSRC}/src
 USES=		pkgconfig
 USE_GNOME=	glib20
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

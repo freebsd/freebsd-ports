@@ -15,9 +15,10 @@ DISTNAME=	LeakTracer
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trace and analyze memory leaks in C++ programs
 
+USES=		perl5
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 PLIST_FILES=	bin/LeakCheck bin/leak-analyze lib/LeakTracer.so
 PORTDOCS=	README README.html
 

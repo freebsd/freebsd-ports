@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 COMMENT=	Perl API for QDBM
 
 SLAVEPORT=	perl
-USE_PERL5=	yes
+USES=		perl5
 
 MASTERDIR=	${.CURDIR}/../../databases/qdbm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/perl

@@ -14,8 +14,9 @@ MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program for displaying a menu in a window
 
+USES=		perl5
 USE_XORG=	x11
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 MAN1=		ratmen.1
 PLIST_FILES=	bin/ratmen
 

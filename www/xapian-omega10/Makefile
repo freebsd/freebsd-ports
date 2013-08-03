@@ -14,9 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core10
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

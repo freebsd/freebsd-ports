@@ -22,7 +22,8 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	> ${DISTNAME}
 NO_BUILD=	yes
 PLIST_FILES=	bin/cv
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cv.pl ${PREFIX}/bin/cv

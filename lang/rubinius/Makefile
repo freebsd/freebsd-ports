@@ -30,10 +30,11 @@ CONFIGURE_ARGS=	--without-execinfo \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius"
 
 LLVMDIST=	llvm-2.8.tgz
+USES=		perl5
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_RAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

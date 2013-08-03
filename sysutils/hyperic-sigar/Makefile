@@ -13,10 +13,11 @@ COMMENT=	SIGAR - System Information Gatherer and Reporter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bindings/java/
 
+USES=		perl5
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 SHLIB_MAJOR=	0

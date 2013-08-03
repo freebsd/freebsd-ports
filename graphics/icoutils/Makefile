@@ -15,13 +15,13 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	RESSCRIPTS
 RESSCRIPTS_DESC=	PERL resource scripts
+RESSCRIPTS_USES=	perl5
 
 USE_BZIP2=	yes
 USES=		shebangfix
 SHEBANG_FILES=	extresso/*.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,7 +34,7 @@ PLIST_FILES=	bin/icotool \
 
 .if ${PORT_OPTIONS:MRESSCRIPTS}
 RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 MAN1+=		extresso.1 genresscript.1
 PLIST_FILES+=	bin/extresso \
 		bin/genresscript

@@ -14,8 +14,8 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	GIST
 GIST_DESC=	Interactive Search Tool (requires Qt)
 
-USE_PERL5_BUILD=yes
-USES=		bison
+USE_PERL5=	build
+USES=		bison perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \

@@ -14,12 +14,12 @@ LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	powerman
 

@@ -14,8 +14,9 @@ MASTER_SITES=	http://www.xplot.org/xplot/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 plotting package
 
+USES=		perl5
 USE_XORG=	x11
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 
 MAN1=		tcpdump2xplot.1 xplot.1

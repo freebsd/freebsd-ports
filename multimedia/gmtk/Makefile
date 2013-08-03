@@ -16,9 +16,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_XORG=	x11
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig perl5
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 

@@ -15,9 +15,10 @@ COMMENT=	Input method modules for OpenVanilla
 BUILD_DEPENDS=	${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
 RUN_DEPENDS=	${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textproc/scim-openvanilla
 
+USES=		perl5
 USE_AUTOTOOLS=	libtool:env
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 OPTIONS_DEFINE=		OVIMArray OVIMBig5 OVIMGeneric OVIMPOJ_Holo OVIMPhonetic OVIMRoman \
 			OVIMSpaceChewing OVIMTibetan OVIMUnicode

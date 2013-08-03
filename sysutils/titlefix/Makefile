@@ -15,7 +15,8 @@ COMMENT=	Renames files in a proper English title format
 
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 MAN1=		titlefix.1 titlefixid3.1 titleid3.1
 PLIST_FILES=	bin/titlefix bin/titlefixid3 bin/titleid3

@@ -17,12 +17,12 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 CONFLICTS=	postgis-2.*
 
-USES=		bison iconv gmake
+USES=		bison iconv gmake perl5
 USE_GNOME=	libxml2
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 OPTIONS_DEFINE=	LOADERGUI
 LOADERGUI_DESC=	Enable shp2pgsql-gui

@@ -20,16 +20,15 @@ RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 OPTIONS_DEFINE=	DOCS
 
-USES=        pathfix gettext
+USES=		pathfix gettext perl5
 USE_GNOME=	desktopfileutils gtk20
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_PYTHON=	run
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

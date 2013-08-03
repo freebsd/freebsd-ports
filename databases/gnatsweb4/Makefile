@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_APACHE_RUN=	22+
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 CGI_DIR?=	${WWWDIR}/cgi-bin

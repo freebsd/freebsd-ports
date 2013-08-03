@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lambda calculus interpreter
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/lambda \

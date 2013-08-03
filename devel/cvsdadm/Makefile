@@ -14,9 +14,9 @@ COMMENT=	Tool for CVSd pserver user administration
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		shebangfix
+USES=		shebangfix perl5
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 POD2TEXT?=	pod2text
 PORTDOCS=	cvsdadm.README
 

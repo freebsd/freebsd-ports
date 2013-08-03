@@ -21,11 +21,10 @@ OPTIONS_DEFAULT=	GIF PNG TIFF
 PCD_DESC=	Enable PhotoCD support
 SANE_DESC=	Enable SANE support
 
-USE_PERL5_BUILD=yes
-USES=		iconv gmake motif
+USE_PERL5=	build
+USES=		iconv gmake motif perl5
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes
-MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-liconv
 

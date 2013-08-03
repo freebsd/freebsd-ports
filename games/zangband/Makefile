@@ -11,9 +11,10 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
+USES=		perl5
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake14 autoconf
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib --mandir=${PREFIX}/man \
 		--with-setgid=${SHAREGRP}
 

@@ -14,8 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MASM/TASM files to NASM compatible sources
 
+USES=		yes
 USE_ZIP=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

@@ -12,8 +12,9 @@ DISTNAME=	freeWAIS-sf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Wide Area Information Server
 
+USES=		perl5
 HAS_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 CONFIGURE_ARGS=	-sde -Dprefix="${PREFIX}" \
