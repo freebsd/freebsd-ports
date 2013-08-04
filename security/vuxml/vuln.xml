@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="17326fd5-fcfb-11e2-9bb9-6805ca0b3d42">
+    <topic>phpMyAdmin -- clickJacking protection can be bypassed</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>4.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2013-10.php">
+	  <p> phpMyAdmin has a number of mechanisms to avoid a
+	  clickjacking attack, however these mechanisms either work
+	  only in modern browser versions, or can be bypassed.</p>
+	  <p>"We have no solution for 3.5.x, due to the proposed
+	  solution requiring JavaScript. We don't want to introduce a
+	  dependency to JavaScript in the 3.5.x family."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2013-10.php</url>
+    </references>
+    <dates>
+      <discovery>2013-08-04</discovery>
+      <entry>2013-08-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="69098c5c-fc4b-11e2-8ad0-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
