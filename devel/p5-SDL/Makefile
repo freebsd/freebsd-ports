@@ -1,6 +1,4 @@
-# New Ports Collection Makefile for:	p5-sdl
-# Date created:				2002-10-06
-# Whom:					Klaus Goger <klaus.goger@reflex.at>
+# Created by: Klaus Goger <klaus.goger@reflex.at>
 # $FreeBSD$
 
 PORTNAME=	SDL
@@ -19,8 +17,9 @@ BUILD_DEPENDS=	p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+USES=		perl5
+USE_PERL5=	modbuild
 USE_SDL=	sdl
-PERL_MODBUILD=	yes
 
 OPTIONS_DEFINE=	GFX IMAGE MIXER NET TTF
 
