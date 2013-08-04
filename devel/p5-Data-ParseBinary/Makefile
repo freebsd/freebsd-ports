@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Data-ParseBinary
-# Date created:		2008-12-29
-# Whom:			Andrej Zverev <az@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Data-ParseBinary
 PORTVERSION=	0.31
@@ -19,7 +14,8 @@ BUILD_DEPENDS=	p5-Math-BigInt>=1.993:${PORTSDIR}/math/p5-Math-BigInt
 
 TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::ParseBinary::Graphics::WMF.3 \
 	Data::ParseBinary::Graphics::EMF.3 \

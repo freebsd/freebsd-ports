@@ -13,7 +13,8 @@ BUILD_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \
 		p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Hash::Flatten.3
 
