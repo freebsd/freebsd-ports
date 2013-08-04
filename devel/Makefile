@@ -3459,6 +3459,7 @@
     SUBDIR += py-babel
     SUBDIR += py-billiard
     SUBDIR += py-binplist
+    SUBDIR += py-biplist
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
