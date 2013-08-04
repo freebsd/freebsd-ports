@@ -2,8 +2,8 @@ bin/gmsh
 bin/onelab.py
 %%STATIC_LIB%%lib/libGmsh.a
 %%SHARED_LIB%%lib/libGmsh.so
-%%SHARED_LIB%%lib/libGmsh.so.2.7
-%%SHARED_LIB%%lib/libGmsh.so.2.7.1
+%%SHARED_LIB%%lib/libGmsh.so.2.8
+%%SHARED_LIB%%lib/libGmsh.so.2.8.2
 include/gmsh/CGNSOptions.h
 include/gmsh/Cell.h
 include/gmsh/CellComplex.h
@@ -11,6 +11,7 @@ include/gmsh/Chain.h
 include/gmsh/ChainComplex.h
 include/gmsh/ColorTable.h
 include/gmsh/Context.h
+include/gmsh/ElementType.h
 include/gmsh/GEdge.h
 include/gmsh/GEdgeCompound.h
 include/gmsh/GEdgeLoop.h
@@ -28,6 +29,7 @@ include/gmsh/Gmsh.h
 include/gmsh/GmshConfig.h
 include/gmsh/GmshDefines.h
 include/gmsh/GmshMessage.h
+include/gmsh/GmshSocket.h
 include/gmsh/GmshVersion.h
 include/gmsh/Homology.h
 include/gmsh/Integration3D.h
@@ -73,6 +75,7 @@ include/gmsh/SVector3.h
 include/gmsh/StringUtils.h
 include/gmsh/VertexArray.h
 include/gmsh/Voronoi3D.h
+include/gmsh/bezierBasis.h
 include/gmsh/boundaryLayersData.h
 include/gmsh/cartesian.h
 include/gmsh/crossConfTerm.h
@@ -110,6 +113,8 @@ include/gmsh/meshPartition.h
 include/gmsh/meshPartitionOptions.h
 include/gmsh/mpz.h
 include/gmsh/nodalBasis.h
+include/gmsh/onelab.h
+include/gmsh/onelabUtils.h
 include/gmsh/orthogonalTerm.h
 include/gmsh/partitionEdge.h
 include/gmsh/periodical.h
@@ -167,6 +172,7 @@ include/gmsh/yamakawa.h
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t13.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t13_data.msh
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t14.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t15.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t2.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t3.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t4.geo
