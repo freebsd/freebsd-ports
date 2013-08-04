@@ -24,6 +24,7 @@ sh_OLD_CMD=	${SETENV} bash
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
+USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
 SUB_LIST+=	GOOBJ=${GOOBJ} \
@@ -50,6 +51,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC}/src && \
+		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:L} \
 		${SH} make.bash
