@@ -18,7 +18,7 @@ COMMENT=	D Front End for GCC
 ONLY_FOR_ARCHS=	i386 amd64
 
 DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-07-28
+EXPIRATION_DATE=	2013-08-28
 
 BROKEN=		fails to build
 
