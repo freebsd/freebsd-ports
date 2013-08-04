@@ -39,6 +39,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-hw-xfree86-common-xf86Config.c
 .endif
 
+USES=		perl5
+USE_PERL5=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
@@ -52,7 +54,6 @@ USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 
 MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
-USE_PERL5_BUILD=yes
 CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 		--without-xmlto --disable-docs --disable-devel-docs \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
