@@ -13,6 +13,9 @@ COMMENT=	Unicode aware Catalyst
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+DEPRECATED=	This module now part of core Catalyst distribution
+EXPIRATION_DATE=	2013-09-04
+
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90015:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode \
