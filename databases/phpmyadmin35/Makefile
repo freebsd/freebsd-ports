@@ -12,6 +12,9 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Has unresolved security problems: http://www.phpmyadmin.net/home_page/security/PMASA-2013-10.php
+EXPIRATION_DATE=	2013-09-04
+
 USE_XZ=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
