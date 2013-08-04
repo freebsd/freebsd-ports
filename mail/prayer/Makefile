@@ -12,8 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	c-client4:${PORTSDIR}/mail/cclient
 
-USE_PERL5_BUILD=yes
-USES=		iconv shebangfix gmake
+USES=		iconv shebangfix gmake perl5
+USE_PERL5=	build
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	utils/ucsnews.pl \

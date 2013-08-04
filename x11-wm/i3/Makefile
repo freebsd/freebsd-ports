@@ -27,10 +27,10 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
-USE_PERL5_RUN=	yes
 USE_XORG=	x11 xcb xcursor
-USES=		pkgconfig iconv gmake
+USES=		pkgconfig iconv gmake perl5
 USE_BZIP2=	yes
+USE_PERL5=	run
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/i3 \
