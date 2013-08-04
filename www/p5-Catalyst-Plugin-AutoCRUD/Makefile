@@ -3,6 +3,7 @@
 
 PORTNAME=	Catalyst-Plugin-AutoCRUD
 PORTVERSION=	2.131.210
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,6 @@ COMMENT=	Instant AJAX web front-end for DBIx::Class
 BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0:${PORTSDIR}/www/p5-Catalyst-Action-RenderView \
 		p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-Plugin-ConfigLoader>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
-		p5-Catalyst-Plugin-Unicode-Encoding>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Unicode-Encoding \
 		p5-Catalyst-Runtime>=5.70000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-View-JSON>=0:${PORTSDIR}/www/p5-Catalyst-View-JSON \
 		p5-Catalyst-View-TT>=0:${PORTSDIR}/www/p5-Catalyst-View-TT \
