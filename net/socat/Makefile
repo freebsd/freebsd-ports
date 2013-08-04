@@ -33,11 +33,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-.if(${OSVERSION} >= 1000024)
-CCISCLANG!=	${CC} --version | ${HEAD} -1 | ${GREP} 'clang'
-.endif
+CCISCLANG!=	${CC} --version
 
-.if ${CC} == clang || !empty(CCISCLANG)
+.if !empty(CCISCLANG:M*clang*)
 CFLAGS+=	-Wno-unused-comparison
 .endif
 
