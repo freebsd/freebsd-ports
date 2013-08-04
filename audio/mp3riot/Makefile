@@ -12,6 +12,7 @@ COMMENT=	Mp3riot creates mp3 playlists, HTML files, etc
 RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 
 USES=		perl5
+USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
