@@ -14,10 +14,11 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_BZIP2=		yes
+USE_BZIP2=	yes
 USES=	gmake
 
-BUILD_WRKSRC =	${WRKSRC}/src
+BUILD_WRKSRC=	${WRKSRC}/src
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -38,13 +39,8 @@ PLIST_DIRSTRY=	%%DATADIR%%/6502 \
 
 .include <bsd.port.options.mk>
 
-post-patch-script:
-.for i in CC CFLAGS
-	@${REINPLACE_CMD} 's|${i}.*= |${i} ?= |g' ${WRKSRC}/src/Makefile
-.endfor
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/acme ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/acme ${PREFIX}/bin
 
 .for dir in 6502 65816 Own
 	@${MKDIR} ${DATADIR}/${dir}
@@ -54,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ACME_Lib/Own/* ${DATADIR}/Own
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
