@@ -21,10 +21,9 @@ RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
 USE_FORTRAN=	yes
 USE_GCC=	4.6+
-USES=		gettext iconv
+USES=		gettext iconv pathfix
 USE_AUTOTOOLS+=	libltdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
