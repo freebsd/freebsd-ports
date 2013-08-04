@@ -16,8 +16,8 @@ XORG_CAT=	data
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack libxslt:build
-USES=		pathfix
-USE_PERL5_BUILD=yes
+USES=		pathfix perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
