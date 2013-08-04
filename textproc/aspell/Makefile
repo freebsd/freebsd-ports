@@ -24,8 +24,8 @@ CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-static
 
 USE_GMAKE=		yes
-USES=			iconv
-USE_PERL5_BUILD=	yes
+USES=			iconv perl5
+USE_PERL5=		build
 USE_LDCONFIG=		yes
 
 MAKE_ARGS=		NOPORTDOCS=${NOPORTDOCS}

@@ -18,11 +18,12 @@ COMMENT=	Hebrew hunspell dictionaries
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
+USES=		perl5
 ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 PLIST_FILES=	%%DATADIR%%/he.aff \
 		%%DATADIR%%/he.dic

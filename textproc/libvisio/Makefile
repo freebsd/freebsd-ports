@@ -20,9 +20,9 @@ CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig perl5
 
 .include <bsd.port.pre.mk>
 
