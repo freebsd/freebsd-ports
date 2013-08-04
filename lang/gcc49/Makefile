@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.9.0.20130630
+PORTVERSION=	4.9.0.20130728
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -38,10 +38,13 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
+OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
+OPTIONS_DEFAULT=	BOOTSTRAP
 OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
+BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .include <bsd.port.pre.mk>
 
@@ -62,6 +65,11 @@ TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
+.if empty(PORT_OPTIONS:MBOOTSTRAP)
+CONFIGURE_ARGS+=--disable-bootstrap
+.else
+ALL_TARGET=	bootstrap-lean
+.endif
 CONFIGURE_ARGS+=--disable-nls \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -74,7 +82,6 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
