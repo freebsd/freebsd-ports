@@ -13,7 +13,8 @@ COMMENT=	Append data to files using a temporary copy
 
 TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Append::TempFile.3
 
