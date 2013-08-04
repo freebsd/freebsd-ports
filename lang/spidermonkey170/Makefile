@@ -12,15 +12,15 @@ MAINTAINER=		kwm@FreeBSD.org
 COMMENT=		Standalone JavaScript based from Mozilla 17-esr
 
 BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=		nspr4:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USES=			pathfix
+USES=			pathfix perl5
+USE_PERL5=		build
 USE_LDCONFIG=		yes
-USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.5-2.7
 MAKE_JOBS_SAFE=		yes
 
