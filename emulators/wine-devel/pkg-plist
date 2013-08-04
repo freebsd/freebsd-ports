@@ -275,6 +275,7 @@ include/wine/windows/endpointvolume.h
 include/wine/windows/endpointvolume.idl
 include/wine/windows/errorrep.h
 include/wine/windows/errors.h
+include/wine/windows/errrec.idl
 include/wine/windows/evcode.h
 include/wine/windows/evntprov.h
 include/wine/windows/evntrace.h
@@ -529,6 +530,8 @@ include/wine/windows/rmxftmpl.h
 include/wine/windows/rmxftmpl.x
 include/wine/windows/row.idl
 include/wine/windows/rowchg.idl
+include/wine/windows/rowpos.idl
+include/wine/windows/rowpsc.idl
 include/wine/windows/rpc.h
 include/wine/windows/rpcasync.h
 include/wine/windows/rpcdce.h
@@ -578,6 +581,7 @@ include/wine/windows/softpub.h
 include/wine/windows/sql.h
 include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
+include/wine/windows/srcrst.idl
 include/wine/windows/srrestoreptapi.h
 include/wine/windows/sspi.h
 include/wine/windows/stdole2.idl
@@ -737,6 +741,8 @@ include/wine/windows/ddk/usb.h
 include/wine/windows/ddk/usb100.h
 include/wine/windows/ddk/usb200.h
 include/wine/windows/ddk/usbdlib.h
+include/wine/windows/ddk/usbioctl.h
+include/wine/windows/ddk/usbiodef.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winddiui.h
 include/wine/windows/ddk/winsplp.h
