@@ -754,6 +754,7 @@
 %%WWWDIR%%/plugins/core.conf/plugin_doc.html
 %%WWWDIR%%/plugins/core.conf/standard_conf_actions.xml
 %%WWWDIR%%/plugins/core.index/manifest.xml
+%%WWWDIR%%/plugins/core.licence/class.ShareCenter.php
 %%WWWDIR%%/plugins/core.log/class.AJXP_Logger.php
 %%WWWDIR%%/plugins/core.log/class.AbstractLogDriver.php
 %%WWWDIR%%/plugins/core.log/manifest.xml
@@ -1036,6 +1037,15 @@
 %%WWWDIR%%/plugins/editor.eml/img/64/mail_mime.png
 %%WWWDIR%%/plugins/editor.eml/manifest.xml
 %%WWWDIR%%/plugins/editor.eml/plugin_doc.html
+%%WWWDIR%%/plugins/editor.etherpad/class.EtherpadClient.php
+%%WWWDIR%%/plugins/editor.etherpad/class.EtherpadLauncher.js
+%%WWWDIR%%/plugins/editor.etherpad/etherpad-client/etherpad-lite-client.php
+%%WWWDIR%%/plugins/editor.etherpad/i18n/conf/en.php
+%%WWWDIR%%/plugins/editor.etherpad/i18n/conf/fr.php
+%%WWWDIR%%/plugins/editor.etherpad/i18n/en.php
+%%WWWDIR%%/plugins/editor.etherpad/i18n/fr.php
+%%WWWDIR%%/plugins/editor.etherpad/manifest.xml
+%%WWWDIR%%/plugins/editor.etherpad/plugin_doc.html
 %%WWWDIR%%/plugins/editor.exif/class.ExifEditor.js
 %%WWWDIR%%/plugins/editor.exif/editor-exif.png
 %%WWWDIR%%/plugins/editor.exif/i18n/conf/en.php
@@ -3291,6 +3301,10 @@
 @dirrm %%WWWDIR%%/plugins/editor.exif/i18n/conf
 @dirrm %%WWWDIR%%/plugins/editor.exif/i18n
 @dirrm %%WWWDIR%%/plugins/editor.exif
+@dirrm %%WWWDIR%%/plugins/editor.etherpad/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.etherpad/i18n
+@dirrm %%WWWDIR%%/plugins/editor.etherpad/etherpad-client
+@dirrm %%WWWDIR%%/plugins/editor.etherpad
 @dirrm %%WWWDIR%%/plugins/editor.eml/img/64
 @dirrm %%WWWDIR%%/plugins/editor.eml/img/16
 @dirrm %%WWWDIR%%/plugins/editor.eml/img
@@ -3401,6 +3415,7 @@
 @dirrm %%WWWDIR%%/plugins/core.mailer/i18n
 @dirrm %%WWWDIR%%/plugins/core.mailer
 @dirrm %%WWWDIR%%/plugins/core.log
+@dirrm %%WWWDIR%%/plugins/core.licence
 @dirrm %%WWWDIR%%/plugins/core.index
 @dirrm %%WWWDIR%%/plugins/core.conf/i18n/conf
 @dirrm %%WWWDIR%%/plugins/core.conf/i18n
