@@ -67,12 +67,12 @@ USE_AUTOTOOLS=	autoconf aclocal
 USE_GL=		gl glu
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_PYTHON=	yes
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
 USE_XZ=		yes
-USES=		bison pkgconfig
+USES=		bison pkgconfig perl5
 WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}
