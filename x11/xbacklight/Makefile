@@ -9,8 +9,10 @@ COMMENT=	Program to adjust backlight brightness
 
 LICENSE=	MIT
 
+LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util
+
 XORG_CAT=	app
-USE_XORG=	x11 xrender xrandr
+USE_XORG=	x11 xrender xrandr xcb
 
 MAN1=		xbacklight.1
 PLIST_FILES=	bin/xbacklight
