@@ -11,10 +11,11 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	STL Error Message Decryptor for C++
 
+USES=		perl5
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

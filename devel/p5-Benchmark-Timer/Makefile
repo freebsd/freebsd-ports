@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Benchmark::Timer.3 Benchmark::delta.3
 

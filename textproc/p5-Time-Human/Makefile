@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Convert localtime() format to "speaking clock" time
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Time::Human.3
 

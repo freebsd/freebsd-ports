@@ -12,7 +12,8 @@ COMMENT=	Check for stale pid files and remove them
 
 RUN_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
