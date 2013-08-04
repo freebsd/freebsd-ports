@@ -27,9 +27,9 @@ USE_GSTREAMER=	yes
 #USE_GCC=	4.6+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_BZIP2=	yes
-USES+=		bison
+USES+=		bison perl5
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 

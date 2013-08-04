@@ -12,9 +12,9 @@ COMMENT=	Library for high quality hyphenation and justification
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USES=	pathfix perl5
+USE_PERL5=	build
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes
 
 CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 

@@ -20,7 +20,8 @@ COMMENT=	Ukrainian thesaurus
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 PLIST_FILES=	%%DATADIR%%/th_uk_UA.dat \
 		%%DATADIR%%/th_uk_UA.idx

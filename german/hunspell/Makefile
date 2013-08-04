@@ -13,11 +13,11 @@ COMMENT=	German hunspell dictionaries
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell \
 		hunspell:${PORTSDIR}/textproc/hunspell
 
-USES=		shebangfix
+USES=		shebangfix perl5
 USE_BZIP2=	yes
 ALL_TARGET=	hunspell-all
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 SHEBANG_FILES=	bin/*.pl
 
 PLIST_FILES=	%%DATADIR%%/de_AT.aff \
