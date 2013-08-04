@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-viewer
-PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTVERSION=	0.5.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt \
 		gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 FETCH_ARGS=	-Fpr
 
@@ -25,15 +25,7 @@ USES=		gmake
 
 MAN1=		remote-viewer.1 virt-viewer.1
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-CONFIGURE_ARGS+=	--enable-nls
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>
