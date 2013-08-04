@@ -1,9 +1,4 @@
-# New ports collection makefile for:	MooseX::Types::LoadableClass
-# Date created:				2011-08-13
-# Whom:					Andrej Zverev <az@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Types-LoadableClass
 PORTVERSION=	0.008
@@ -27,7 +22,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::Types::LoadableClass.3
 
