@@ -45,38 +45,37 @@
 name=squid
 rcvar=squid_enable
 
-load_rc_config ${name}
-
-: ${squid_chdir:=/var/squid}
-: ${squid_conf:=%%PREFIX%%/etc/squid/squid.conf}
-: ${squid_enable:=NO}
-: ${squid_pidfile:=/var/run/squid/squid.pid}
-: ${squid_user:=squid}
-
-squid_command="%%PREFIX%%/sbin/squid"
-
 # Make sure that we invoke squid with "-f ${squid_conf}"; define this
 # variable early so reload_cmd and stop_precmd pick it up:
 
-required_args="-f ${squid_conf}"
 extra_commands=reload
-reload_cmd="${squid_command} ${required_args} ${squid_flags} -k reconfigure"
+reload_cmd=squid_reload
 start_precmd=squid_prestart
-start_cmd="${squid_command} ${required_args} ${squid_flags}"
 start_postcmd=squid_getpid
-stop_precmd="${squid_command} ${required_args} ${squid_flags} -k check 2>/dev/null"
-stop_cmd=squid_stop
-
-pidfile=${squid_pidfile}
-procname="?squid-*"
-required_dirs=${squid_chdir}
-state_dir=/var/run/squid
+stop_precmd=squid_prestop
+stop_postcmd=squid_poststop
 
 # squid(8) will not start if ${squid_conf} is not present so try
 # to catch that beforehand via ${required_files} rather than make
 # squid(8) crash.
 
-required_files=${squid_conf}
+squid_load_rc_config()
+{
+	: ${squid_chdir:=/var/squid}
+	: ${squid_conf:=%%PREFIX%%/etc/squid/squid.conf}
+	: ${squid_enable:=NO}
+	: ${squid_program:=%%PREFIX%%/sbin/squid}
+	: ${squid_pidfile:=/var/run/squid/squid.pid}
+	: ${squid_user:=squid}
+
+	required_args="-f ${squid_conf}"
+	required_dirs=$chdir
+	required_files=$squid_conf
+	command_args="${required_args} ${squid_flags}"
+	procname="?squid-*"
+	pidfile=$squid_pidfile
+	state_dir=/var/run/squid
+}
 
 squid_prestart()
 {
@@ -93,10 +92,16 @@ squid_prestart()
 
 	squid_fib=${squid_fib:-"NONE"}
 	if [ "${squid_fib}" != "NONE" ]; then
-		start_cmd="setfib -F ${squid_fib} ${squid_command} ${required_args} ${squid_flags}"
+		command="setfib -F $squid_fib $command"
 	else
 		return 0
 	fi
+}
+
+squid_reload()
+{
+
+	$command $required_args $squid_flags -k reconfigure
 }
 
 squid_getpid()
@@ -114,13 +119,17 @@ squid_getpid()
 	fi
 }
 
-squid_stop()
+squid_prestop()
 {
-	squid_getpid
-	echo "Stopping ${name}."
-	${squid_command} ${required_args} ${squid_flags} -k shutdown
-	run_rc_command poll
+	command_args="$command_args -k shutdown"
+	$command $required_args $squid_flags -k check 2>/dev/null
+}
+
+squid_poststop()
+{
 	rm -rf ${state_dir}
 }
 
+load_rc_config $name
+squid_load_rc_config
 run_rc_command $1
