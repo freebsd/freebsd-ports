@@ -63,8 +63,8 @@ NO_DVD_DESC=	disable DVD specific features
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USES=		iconv
-USE_PERL5_BUILD=yes
+USES=		iconv perl5
+USE_PERL5=	build
 USE_GL=yes
 USE_CSTD=	gnu99
 MAKE_JOBS_SAFE=	yes
