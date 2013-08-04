@@ -1,0 +1,9 @@
+Defusing XML bombs and other exploits
+
+The results of an attack on a vulnerable XML library can be fairly dramatic.
+With just a few hundred Bytes of XML data an attacker can occupy several
+Gigabytes of memory within seconds. An attacker can also keep CPUs busy for
+a long time with a small to medium size request.  This library prevents
+such issues.
+
+WWW: https://bitbucket.org/tiran/defusedxml

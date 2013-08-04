@@ -3496,6 +3496,7 @@
     SUBDIR += py-dbus
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
+    SUBDIR += py-defusedxml
     SUBDIR += py-deliciousapi
     SUBDIR += py-demjson
     SUBDIR += py-dexml
