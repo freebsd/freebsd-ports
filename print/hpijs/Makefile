@@ -24,8 +24,6 @@ OPTIONS_DEFINE=	CUPS DOCS FOOMATIC
 OPTIONS_DEFAULT=	CUPS FOOMATIC
 FOOMATIC_DESC=	Install foomatic-rip and PPD files
 
-.include <bsd.port.pre.mk>
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS} || ${PORT_OPTIONS:MFOOMATIC}
@@ -46,6 +44,8 @@ PLIST_SUB+=		CUPS=""
 CONFIGURE_ARGS+=	--disable-cups-install
 PLIST_SUB+=		CUPS="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/cups|${LOCALBASE}/share/cups|g ; \
