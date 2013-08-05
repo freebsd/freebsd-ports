@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	4.7.13
+PORTVERSION=	4.7.14
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -28,11 +28,11 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
 
 OPTIONS_DEFINE=	CURL GD IMAGICK MBSTRING ZLIB
+GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
-GD_DESC=	GDlib/freetype support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}
 USE_PHP+=	curl
@@ -59,7 +59,8 @@ USE_PHP+=	zlib
 .endif
 
 pre-install:
-	${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/localconf.php ${WRKDIR}/${TYPO3DUMMY}/typo3conf/localconf.php.dist
+	${MV} ${WRKDIR}/${TYPO3DUMMY}/typo3conf/localconf.php \
+		${WRKDIR}/${TYPO3DUMMY}/typo3conf/localconf.php.dist
 
 do-install:
 	${CP} -R ${WRKDIR}/${TYPO3DUMMY}/ ${PREFIX}/${TYPO3SITE}
@@ -70,4 +71,4 @@ do-install:
 		${LN} -s ../${TYPO3SRC} typo3_src
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

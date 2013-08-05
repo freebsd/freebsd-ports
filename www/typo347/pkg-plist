@@ -819,67 +819,26 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/images/default/window/top-bottom.png
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/images/default/window/top-bottom.psd
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/flvplayer.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.license.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.readme.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/qtobject/qtobject.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/swfobject/expressInstall.swf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/swfobject/swfobject.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/LICENSE-exception.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/LICENSE.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/LICENSE_COMMERCIAL.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/LICENSE_MULTIDOMAIN.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/LICENSE_UNLIMITED.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/README.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/build.properties
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/build.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/example/flowplayer-3.2.6.min.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/example/index.html.tmpl
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/example/style.css
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/expressinstall.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer-3.2.7.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.audio-3.2.2.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.audio/LICENSE.txt
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.audio/README.txt
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.audio/build.properties
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.audio/build.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions-3.2.3.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/LICENSE.txt
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/README.txt
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/build.properties
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/build.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/casa.dfxp.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/casa.dfxp.xml.1
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/engineering.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/flowplayer.captions.js
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/flvtool2-cuepoints.sh
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/left.png
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/right.png
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame00.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame01.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame02.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame03.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame04.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame05.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame06.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame07.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame08.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame09.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame10.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame11.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame12.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame13.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame14.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame15.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame16.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame17.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame18.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame19.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs/frame20.jpg
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/index.html.tmpl
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/tools.scrollable-1.1.2.js
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.content-3.2.0.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.content/LICENSE.txt
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.content/README.txt
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.content/build.properties
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.content/build.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.controls-3.2.5.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer-3.2.12.min.js
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer-3.2.16.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.controls-3.2.15.swf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/corelib/license.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/corelib/readme.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/flexunit/flexunit.swc
@@ -918,6 +877,49 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/licensekey/licensekey.swc
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/thunderbolt/ThunderBoltAS3_Flash.swc
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/manifest.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.audio-3.2.10.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.audio/LICENSE.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.audio/README.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.audio/build.properties
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.audio/build.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions-3.2.9.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/LICENSE.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/README.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/build.properties
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/build.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/flowplayer.captions.js
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/flvtool2-cuepoints.sh
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/left.png
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/right.png
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame00.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame01.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame02.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame03.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame04.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame05.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame06.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame07.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame08.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame09.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame10.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame11.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame12.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame13.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame14.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame15.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame16.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame17.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame18.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame19.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs/frame20.jpg
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/index.html.tmpl
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/tools.scrollable-1.1.2.js
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.content-3.2.8.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.content/LICENSE.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.content/README.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.content/build.properties
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.content/build.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/release.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/idna/LICENCE
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/idna/ReadMe.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/idna/idna_convert.class.php
@@ -9142,6 +9144,13 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/modernizr
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/jsmin
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/idna
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.content
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images/thumbs
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example/images
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions/example
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.captions
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins/flowplayer.audio
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/plugins
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/thunderbolt
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/licensekey
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/goasp/src_go/org/goasap/utils/customadvance
@@ -9162,12 +9171,6 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/flexunit
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib/corelib
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/lib
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.content
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images/thumbs
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example/images
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions/example
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.captions
-@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/flowplayer.audio
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer/example
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flowplayer
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/swfobject

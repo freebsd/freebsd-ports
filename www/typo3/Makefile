@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
-COMMENT=	Open Source content management system
+COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
@@ -29,14 +29,12 @@ DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
 
 OPTIONS_DEFINE=	APC CURL GD IMAGICK MBSTRING MYSQL ZLIB
 APC_DESC=	Alternative PHP Cache
-CURL_DESC=	cURL supprt
 GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
 MYSQL_DESC=	Install MySQL Server
-ZLIB_DESC=	zlib support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPC}
 USE_PHP+=	apc
@@ -86,4 +84,4 @@ do-install:
 		${LN} -s ../${TYPO3SRC} typo3_src
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

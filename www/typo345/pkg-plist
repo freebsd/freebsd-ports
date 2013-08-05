@@ -774,8 +774,9 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/images/default/window/top-bottom.psd
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/resources.jsb
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/flvplayer.swf
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.license.txt
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.readme.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.swf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/player.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/qtobject/qtobject.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/swfobject/expressInstall.swf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/flashmedia/swfobject/swfobject.js
