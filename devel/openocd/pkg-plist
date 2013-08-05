@@ -1,4 +1,7 @@
 bin/openocd
+info/openocd.info
+info/openocd.info-1
+info/openocd.info-2
 lib/libopenocd.a
 lib/libopenocd.la
 lib/openocd/OpenULINK/ulink_firmware.hex
@@ -44,7 +47,10 @@ share/openocd/scripts/board/ek-lm3s3748.cfg
 share/openocd/scripts/board/ek-lm3s6965.cfg
 share/openocd/scripts/board/ek-lm3s811-revb.cfg
 share/openocd/scripts/board/ek-lm3s811.cfg
+share/openocd/scripts/board/ek-lm3s8962.cfg
 share/openocd/scripts/board/ek-lm3s9b9x.cfg
+share/openocd/scripts/board/ek-lm3s9d92.cfg
+share/openocd/scripts/board/ek-lm4f120xl.cfg
 share/openocd/scripts/board/ek-lm4f232.cfg
 share/openocd/scripts/board/embedded-artists_lpc2478-32.cfg
 share/openocd/scripts/board/ethernut3.cfg
@@ -76,11 +82,14 @@ share/openocd/scripts/board/kwikstik.cfg
 share/openocd/scripts/board/linksys_nslu2.cfg
 share/openocd/scripts/board/lisa-l.cfg
 share/openocd/scripts/board/logicpd_imx27.cfg
+share/openocd/scripts/board/lpc1850_spifi_generic.cfg
+share/openocd/scripts/board/lpc4350_spifi_generic.cfg
 share/openocd/scripts/board/lubbock.cfg
 share/openocd/scripts/board/mcb1700.cfg
 share/openocd/scripts/board/microchip_explorer16.cfg
 share/openocd/scripts/board/mini2440.cfg
 share/openocd/scripts/board/mini6410.cfg
+share/openocd/scripts/board/netgear-dg834v3.cfg
 share/openocd/scripts/board/olimex_LPC2378STK.cfg
 share/openocd/scripts/board/olimex_lpc_h2148.cfg
 share/openocd/scripts/board/olimex_sam7_ex256.cfg
@@ -233,6 +242,7 @@ share/openocd/scripts/interface/ftdi/olimex-arm-usb-ocd.cfg
 share/openocd/scripts/interface/ftdi/olimex-arm-usb-tiny-h.cfg
 share/openocd/scripts/interface/ftdi/olimex-jtag-tiny.cfg
 share/openocd/scripts/interface/ftdi/oocdlink.cfg
+share/openocd/scripts/interface/ftdi/opendous_ftdi.cfg
 share/openocd/scripts/interface/ftdi/openocd-usb-hs.cfg
 share/openocd/scripts/interface/ftdi/openocd-usb.cfg
 share/openocd/scripts/interface/ftdi/openrd.cfg
@@ -273,6 +283,7 @@ share/openocd/scripts/interface/olimex-arm-usb-tiny-h.cfg
 share/openocd/scripts/interface/olimex-jtag-tiny.cfg
 share/openocd/scripts/interface/oocdlink.cfg
 share/openocd/scripts/interface/opendous.cfg
+share/openocd/scripts/interface/opendous_ftdi.cfg
 share/openocd/scripts/interface/openocd-usb-hs.cfg
 share/openocd/scripts/interface/openocd-usb.cfg
 share/openocd/scripts/interface/openrd.cfg
@@ -290,6 +301,8 @@ share/openocd/scripts/interface/signalyzer.cfg
 share/openocd/scripts/interface/stlink-v1.cfg
 share/openocd/scripts/interface/stlink-v2.cfg
 share/openocd/scripts/interface/stm32-stick.cfg
+share/openocd/scripts/interface/sysfsgpio-raspberrypi.cfg
+share/openocd/scripts/interface/ti-icdi.cfg
 share/openocd/scripts/interface/turtelizer2.cfg
 share/openocd/scripts/interface/ulink.cfg
 share/openocd/scripts/interface/usb-jtag.cfg
@@ -322,6 +335,7 @@ share/openocd/scripts/target/at91sam3u4e.cfg
 share/openocd/scripts/target/at91sam3uxx.cfg
 share/openocd/scripts/target/at91sam4XXX.cfg
 share/openocd/scripts/target/at91sam4sXX.cfg
+share/openocd/scripts/target/at91sam4sd32x.cfg
 share/openocd/scripts/target/at91sam7se512.cfg
 share/openocd/scripts/target/at91sam7sx.cfg
 share/openocd/scripts/target/at91sam7x256.cfg
@@ -347,6 +361,7 @@ share/openocd/scripts/target/dragonite.cfg
 share/openocd/scripts/target/dsp56321.cfg
 share/openocd/scripts/target/dsp568013.cfg
 share/openocd/scripts/target/dsp568037.cfg
+share/openocd/scripts/target/efm32_stlink.cfg
 share/openocd/scripts/target/epc9301.cfg
 share/openocd/scripts/target/faux.cfg
 share/openocd/scripts/target/feroceon.cfg
@@ -364,6 +379,7 @@ share/openocd/scripts/target/imx31.cfg
 share/openocd/scripts/target/imx35.cfg
 share/openocd/scripts/target/imx51.cfg
 share/openocd/scripts/target/imx53.cfg
+share/openocd/scripts/target/imx6.cfg
 share/openocd/scripts/target/is5114.cfg
 share/openocd/scripts/target/ixp42x.cfg
 share/openocd/scripts/target/k40.cfg
@@ -381,7 +397,9 @@ share/openocd/scripts/target/lpc1766.cfg
 share/openocd/scripts/target/lpc1767.cfg
 share/openocd/scripts/target/lpc1768.cfg
 share/openocd/scripts/target/lpc1769.cfg
+share/openocd/scripts/target/lpc1788.cfg
 share/openocd/scripts/target/lpc17xx.cfg
+share/openocd/scripts/target/lpc1850.cfg
 share/openocd/scripts/target/lpc2103.cfg
 share/openocd/scripts/target/lpc2124.cfg
 share/openocd/scripts/target/lpc2129.cfg
@@ -417,6 +435,7 @@ share/openocd/scripts/target/sharp_lh79532.cfg
 share/openocd/scripts/target/smp8634.cfg
 share/openocd/scripts/target/spear3xx.cfg
 share/openocd/scripts/target/stellaris.cfg
+share/openocd/scripts/target/stellaris_icdi.cfg
 share/openocd/scripts/target/stm32_stlink.cfg
 share/openocd/scripts/target/stm32f0x_stlink.cfg
 share/openocd/scripts/target/stm32f1x.cfg
@@ -428,7 +447,9 @@ share/openocd/scripts/target/stm32f3x_stlink.cfg
 share/openocd/scripts/target/stm32f4x.cfg
 share/openocd/scripts/target/stm32f4x_stlink.cfg
 share/openocd/scripts/target/stm32l.cfg
+share/openocd/scripts/target/stm32lx_dual_bank.cfg
 share/openocd/scripts/target/stm32lx_stlink.cfg
+share/openocd/scripts/target/stm32w108_stlink.cfg
 share/openocd/scripts/target/stm32xl.cfg
 share/openocd/scripts/target/str710.cfg
 share/openocd/scripts/target/str730.cfg
@@ -437,6 +458,7 @@ share/openocd/scripts/target/str912.cfg
 share/openocd/scripts/target/swj-dp.tcl
 share/openocd/scripts/target/test_reset_syntax_error.cfg
 share/openocd/scripts/target/test_syntax_error.cfg
+share/openocd/scripts/target/ti-ar7.cfg
 share/openocd/scripts/target/ti_calypso.cfg
 share/openocd/scripts/target/ti_dm355.cfg
 share/openocd/scripts/target/ti_dm365.cfg
