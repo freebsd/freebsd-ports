@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	9.1.5
+PORTVERSION=	9.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
