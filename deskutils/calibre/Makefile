@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	0.9.37
+PORTVERSION=	0.9.42
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
-		wmflite:${PORTSDIR}/graphics/libwmf \
-		chm:${PORTSDIR}/misc/chmlib \
-		icudata:${PORTSDIR}/devel/icu \
-		podofo:${PORTSDIR}/graphics/podofo
+LIB_DEPENDS=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
+		libwmflite.so:${PORTSDIR}/graphics/libwmf \
+		libchm.so:${PORTSDIR}/misc/chmlib \
+		libicudata.so:${PORTSDIR}/devel/icu \
+		libpodofo.so:${PORTSDIR}/graphics/podofo
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
