@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors java
 MASTER_SITES=	ftp://ftp.riken.jp/net/apache/incubator/ooo/3.4.1/source/ \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@maho/openoffice@}:extsrc
@@ -119,7 +119,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		textcat.0:${PORTSDIR}/textproc/libtextcat \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		apr-1.4:${PORTSDIR}/devel/apr1 \
-		CoinMP.7:${PORTSDIR}/math/coinmp \
+		CoinMP.8:${PORTSDIR}/math/coinmp \
 		serf-1.0:${PORTSDIR}/www/serf
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
