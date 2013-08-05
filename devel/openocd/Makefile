@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openocd
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,7 +14,8 @@ CONFIGURE_ARGS+=	--disable-werror
 
 OPTIONS_DEFINE=	DOC JIMTCL VERBOSE JTAG_IO USB_IO PARPORT DUMMY FT2232 FTDI \
 	USBBLASTER EP93XX AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK \
-	ARMJTAGEW BUSPIRATE STLINK OSBDM OPENDOUS RMTBITBANG MINIDRIVER
+	ARMJTAGEW BUSPIRATE TIICDI STLINK OSBDM OPENDOUS SYSFSGPIO RMTBITBANG \
+	MINIDRIVER
 OPTIONS_DEFAULT=DOC JIMTCL PARPORT DUMMY FT2232 FTDI USBBLASTER EP93XX \
 	AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK ARMJTAGEW \
 	BUSPIRATE STLINK OSBDM OPENDOUS RMTBITBANG
@@ -40,13 +41,14 @@ ULINK_DESC=	Support Keil ULINK-JTAG Programmer
 ARMJTAGEW_DESC=	Support Olimex ARM-JTAG-EW Programmer
 BUSPIRATE=	Support BusPirate Programmer
 STLINK_DESC=	Support STLink Programmer
+TI_ICDI_DESC=	Support TI ICDI JTAG Programmer
 OSBDM_DESC=	Support OSBDM Programmer (JTAG only)
-OPENDOUS=	Support EStick/OpenDous Programmer
+OPENDOUS= 	Support EStick/OpenDous Programmer
+SYSFSGPIO=	Support Programming via sysfs GPIOs
 RMTBITBANG_DESC=Support Remote-Bitbang Driver
 MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 
 MAN1=		${PORTNAME}.1
-INFO=		${PORTNAME}
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
@@ -136,12 +138,6 @@ CONFIGURE_ARGS+=	--disable-usb_blaster_libftdi
 CONFIGURE_ARGS+=	--enable-amtjtagaccel
 .else
 CONFIGURE_ARGS+=	--disable-amtjtagaccel
-.endif
-
-.if ${PORT_OPTIONS:MECOSBOARD}
-CONFIGURE_ARGS+=	--enable-ecosboard
-.else
-CONFIGURE_ARGS+=	--disable-ecosboard
 .endif
 
 .if ${PORT_OPTIONS:MZY1000}
@@ -240,6 +236,12 @@ CONFIGURE_ARGS+=	--enable-stlink
 CONFIGURE_ARGS+=	--disable-stlink
 .endif
 
+.if ${PORT_OPTIONS:MTIICDI}
+CONFIGURE_ARGS+=	--enable-ti-icdi
+.else
+CONFIGURE_ARGS+=	--disable-ti-icdi
+.endif
+
 .if ${PORT_OPTIONS:MOSBDM}
 CONFIGURE_ARGS+=	--enable-osbdm
 .else
@@ -250,6 +252,12 @@ CONFIGURE_ARGS+=	--disable-osbdm
 CONFIGURE_ARGS+=	--enable-opendous
 .else
 CONFIGURE_ARGS+=	--disable-opendous
+.endif
+
+.if ${PORT_OPTIONS:MSYSFSGPIO}
+CONFIGURE_ARGS+=	--enable-sysfsgpio
+.else
+CONFIGURE_ARGS+=	--disable-sysfsgpio
 .endif
 
 .if ${PORT_OPTIONS:MRMTBITBANG}
