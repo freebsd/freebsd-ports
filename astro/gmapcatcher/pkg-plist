@@ -1,6 +1,6 @@
 bin/mapcatcher
 bin/mapdownloader
-%%PYTHON_SITELIBDIR%%/GMapCatcher-0.8.0.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/GMapCatcher-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/gmapcatcher/__init__.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/__init__.pyo
@@ -94,6 +94,9 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/informationFreeway.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/informationFreeway.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/informationFreeway.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/maps4free.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/maps4free.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/maps4free.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/nokia.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/nokia.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/nokia.pyo
@@ -280,5 +283,4 @@ share/pixmaps/mapcatcher.png
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/gpxpy
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/gps
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher
-@dirrm %%PYTHON_SITELIBDIR%%
 @dirrmtry share/applications
