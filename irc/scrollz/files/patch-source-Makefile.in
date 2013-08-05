@@ -1,5 +1,23 @@
 --- source/Makefile.in.orig	2011-04-29 17:21:18.000000000 +0900
 +++ source/Makefile.in	2013-03-09 19:07:14.372106954 +0900
+@@ -47,7 +47,7 @@
+ INCLUDES = -I../include
+ 
+ default:
+-	(cd ..;make)
++	$(MAKE) -C ..
+ 
+ all: scrollz
+ 
+@@ -63,7 +63,7 @@
+ 	$(RM) scrollz $(OBJECTS)
+ 
+ install: scrollz
+-	cd ..; $(MAKE) install
++	$(MAKE) -C .. install
+ 
+ # .o files needing special compilation flags
+ 
 @@ -86,7 +86,7 @@
  	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DTRANSLATION_PATH=\"$(TRANS_DIR)/\" -c translat.c
  

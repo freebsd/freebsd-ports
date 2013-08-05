@@ -14,25 +14,22 @@ COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USES=		gmake iconv ncurses
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-ipv6 --enable-regexp --enable-iconv
+CONFIGURE_ARGS=	--enable-ipv6 --enable-regexp --enable-iconv
+MAKE_ENV=	IRCLIB="${PREFIX}/share/scrollz"
 
-MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
-MAKE_JOBS_UNSAFE=	yes
+MAN1=		scrollz.1
+PORTDATA=	*
 
 PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
-PORTDATA=	*
 
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 
-MAN1=	scrollz.1
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libgnutls.a:${PORTSDIR}/security/gnutls
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=${LOCALBASE}
 .endif
 
