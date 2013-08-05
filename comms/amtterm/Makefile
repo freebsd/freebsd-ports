@@ -2,7 +2,7 @@
 
 PORTNAME=	amtterm
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	https://www.kraxel.org/releases/${PORTNAME}/
 
@@ -12,12 +12,12 @@ COMMENT=	Serial-over-lan client for Intel AMT
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	p5-SOAP-Lite>=0.5:${PORTSDIR}/net/p5-SOAP-Lite
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV+=	mandir=${MANPREFIX}/man
+MAKE_ARGS+=	HAVE_GTK=no
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/amttool \
