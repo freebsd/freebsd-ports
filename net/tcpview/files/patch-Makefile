@@ -1,6 +1,14 @@
 --- Makefile.orig	Thu Apr 22 23:40:24 1993
 +++ Makefile	Mon Feb 17 13:32:10 2003
-@@ -28,10 +28,10 @@
+@@ -21,17 +21,16 @@
+ # @(#) $Header: /usr/staff/martinh/tcpview/RCS/Makefile,v 1.3 1992/11/17 21:59:47 martinh Exp martinh $ (UW)
+ 
+ # Possible Options:
+-#  -DCSLIP	include support for kernel slip interface
++#  -UCSLIP	include support for kernel slip interface
+ #  -DPPP	include support for point to point protocol
+ #  -DIBMRTPC	enable the MERIT additions to the Stanford Enetfilter
+ #  -DNOVFPRINTF	simulate vfprintf() on systems that don't have it
  #
  # CSLIP and PPP work only under BPF.					
  #
@@ -8,14 +16,13 @@
 -CCOPT = -O2
 -INCLUDES = -I..
 -LIB =
-+DEFINES = -DCSLIP -DPPP
-+CCOPT = -O0
++DEFINES = -UCSLIP -DPPP
 +INCLUDES = -I.. -I$(LOCALBASE)/include
 +LIB =-ll
  
  # These are for the Sun4 version
  #CCOPT = -O2 -Bstatic
-@@ -41,20 +41,20 @@
+@@ -41,20 +40,20 @@
  XLIB= -lXm -lXt -lX11
  
  # The installed binary is owned by this group.
@@ -44,7 +51,7 @@
  
  # Standard CFLAGS
  STANDARD_CFLAGS = $(CCOPT) $(DEFINES) $(INCLUDES)
-@@ -70,7 +70,7 @@
+@@ -70,7 +69,7 @@
  #tahoe-bsd#CFLAGS = $(STANDARD_CFLAGS)
  #vax-bsd#CFLAGS = $(STANDARD_CFLAGS)
  #vax-ultrix#
@@ -53,7 +60,7 @@
  #mips-irix#CFLAGS = $(STANDARD_CFLAGS) -D_BSD_COMPAT
  
  SUBDIRS = hp300-bsd mips-ultrix sun?-sunos? sun4-bsd tahoe-bsd vax-bsd \
-@@ -92,7 +92,8 @@
+@@ -92,7 +91,8 @@
  # Also, gcc does not remove the .o before forking 'as', which can be a
  # problem if you don't own the file but can write to the directory.
  .c.o:
@@ -63,7 +70,7 @@
  
  # List all C source files here
  
-@@ -189,7 +190,7 @@
+@@ -189,7 +189,7 @@
  	$(CC) $(CFLAGS) -o $@ $(TCPDUMP_OBJ) $(LIB)
  
  tcpview: $(TCPVIEW_OBJ)
@@ -72,8 +79,37 @@
  
  tcpslice: $(TCPSLICE_OBJ)
  	$(CC) $(CFLAGS) -o $@ $(TCPSLICE_OBJ)
-@@ -261,20 +262,21 @@
- 	cd $$dir ; ${MAKE} ${MFLAGS} depend2
+@@ -209,12 +209,12 @@
+ 	-@dir=$(MD)-$(OS)-tcpdump; \
+ 	if [ ! -d $$dir ]; then ${MAKE} ${MFLAGS} config1; fi; \
+ 	set -x; \
+-	cd $$dir; ${MAKE} ${MFLAGS} tcpdump; ${MAKE} ${MFLAGS} tcpslice 
++	${MAKE} -C $$dir ${MFLAGS} tcpdump tcpslice 
+ 	-@dir=$(MD)-$(OS)-tcpview; \
+ 	if [ ! -d $$dir ]; then ${MAKE} ${MFLAGS} config2; fi; \
+ 	set -x; \
+-	cd $$dir; ${MAKE} ${MFLAGS} DEFINES="${DEFINES} -DTCPVIEW" tcpview; \
+-	${MAKE} ${MFLAGS} FILTERS
++	${MAKE} -C $$dir ${MFLAGS} DEFINES="${DEFINES} -DTCPVIEW" tcpview; \
++	${MAKE} -C $$dir ${MFLAGS} FILTERS
+ 
+ # N.B.- symbolic links are used in the subdirectory rather than VPATH
+ # because at least one Sun cc compiler puts the .o in the wrong place
+@@ -239,7 +239,7 @@
+ 	ln -s ../net $$dir/net; \
+ 	sed -e "/^all:/d" -e "s/^#$$dir#//" Makefile >$$dir/Makefile; \
+ 	chmod ug+w $$dir/Makefile; \
+-	cd $$dir ; ${MAKE} ${MFLAGS} depend1
++	${MAKE} -C $$dir ${MFLAGS} depend1
+ 
+ config2:
+ 	-@md=$(MD); os=$(OS); dir=$$md-$$os-tcpview; list=; \
+@@ -258,23 +258,24 @@
+ 	ln -s ../TCPVIEW_VERSION $$dir/TCPVIEW_VERSION; \
+ 	sed -e "/^all:/d" -e "s/^#$$dir#//" Makefile >$$dir/Makefile; \
+ 	chmod ug+w $$dir/Makefile; \
+-	cd $$dir ; ${MAKE} ${MFLAGS} depend2
++	${MAKE} -C $$dir ${MFLAGS} depend2
  
  tcplex.c: tcplex.l
 -	rm -f $@
@@ -97,7 +133,7 @@
  	sed 's/.*/char tcpview_version[] = "&";/' TCPVIEW_VERSION >> version.c
  	set `sed 's/\([0-9]*\)\.\([0-9]*\).*/\1 \2/' VERSION` ; \
  		{ echo '#define VERSION_MAJOR' $$1 ; \
-@@ -287,22 +289,22 @@
+@@ -287,22 +288,20 @@
  install: force
  	-mkdir -p $(TCPVIEW_DIR)
  	-mkdir -p $(FILTER_DIR) 
@@ -110,30 +146,30 @@
 +#	    install -m 755 -g $(GROUP) -c tcpdump $(DESTDIR)$(BINDEST); \
 +#	    install -m 755 -c tcpslice $(DESTDIR)$(TCPSLICE_BINDEST)
  	@dir=$(MD)-$(OS)-tcpview; set -x; \
- 	cd $$dir ; \
+-	cd $$dir ; \
 -	    install -m 755 -g $(GROUP) tcpview $(DESTDIR)$(BINDEST); \
 -	    install -m 755 -g $(GROUP) BGP $(FILTER_DIR); \
 -	    install -m 755 -g $(GROUP) telnet $(FILTER_DIR); \
 -	    install -m 755 -g $(GROUP) generic $(FILTER_DIR); \
-+	    ${BSD_INSTALL_PROGRAM} -c tcpview $(DESTDIR)$(BINDEST); \
-+	    ${BSD_INSTALL_PROGRAM} -c BGP $(FILTER_DIR); \
-+	    ${BSD_INSTALL_PROGRAM} -c telnet $(FILTER_DIR); \
-+	    ${BSD_INSTALL_PROGRAM} -c generic $(FILTER_DIR); \
- 	cd ../DOC ; \
+-	cd ../DOC ; \
 -	install -m 666 -c hosts $(TCPVIEW_DIR); \
 -	install -m 666 -c manuf $(TCPVIEW_DIR); \
 -	install -c tcpdump.1 $(DESTDIR)$(TCPDUMP_MANDEST); \
 -	install -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
 -	install -c tcpslice.1 $(DESTDIR)$(TCPSLICE_MANDEST)
-+	${BSD_INSTALL_DATA} -c hosts $(TCPVIEW_DIR); \
-+	${BSD_INSTALL_DATA} -c manuf $(TCPVIEW_DIR); \
-+	${BSD_INSTALL_MAN} -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
++	${BSD_INSTALL_PROGRAM} -c $$dir/tcpview $(DESTDIR)$(BINDEST); \
++	${BSD_INSTALL_PROGRAM} -c $$dir/BGP $(FILTER_DIR); \
++	${BSD_INSTALL_PROGRAM} -c $$dir/telnet $(FILTER_DIR); \
++	${BSD_INSTALL_PROGRAM} -c $$dir/generic $(FILTER_DIR); \
++	${BSD_INSTALL_DATA} -c $$dir/../DOC/hosts $(TCPVIEW_DIR); \
++	${BSD_INSTALL_DATA} -c $$dir/../DOC/manuf $(TCPVIEW_DIR); \
++	${BSD_INSTALL_MAN} -c $$dir/../DOC/tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
 +#	install -m 444 -c tcpdump.1 $(DESTDIR)$(TCPDUMP_MANDEST); \
 +#	install -m 444 -c tcpslice.1 $(DESTDIR)$(TCPSLICE_MANDEST)
  
  lint:	force
  	lint -hbxn $(CSRC) | \
-@@ -367,8 +369,3 @@
+@@ -367,8 +366,3 @@
  	-../mkdep $(DEFINES) $(INCLUDES) $(TCPVIEW_CSRC) \
  		tcpgram.c tcplex.c
  	rm -f $(GEN)
