@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Carp-Clan-Share
-# Date created:				19 October 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Carp-Clan-Share
 PORTVERSION=	0.013
@@ -18,7 +14,8 @@ COMMENT=	Share your Carp::Clan settings with your whole Clan
 BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Carp::Clan::Share.3
 

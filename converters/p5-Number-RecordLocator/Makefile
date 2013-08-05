@@ -1,9 +1,5 @@
-# New ports collection makefile for:	converters/p5-Number-RecordLocator
-# Date created:				24 January 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Number-RecordLocator
 PORTVERSION=	0.005
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Encodes integers into a short locator string
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Number::RecordLocator.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-URI-Sequin
-# Date created:				25 April 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-Sequin
 PORTVERSION=	1.2
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Extract information from the URLs of Search-Engines
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		URI::Sequin.3
 

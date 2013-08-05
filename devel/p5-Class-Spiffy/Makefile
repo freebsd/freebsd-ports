@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Class-Spiffy
-# Date created:				20 January 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Spiffy
 PORTVERSION=	0.15
@@ -17,7 +13,8 @@ COMMENT=	Class::Spiffy - Spiffy Perl Interface Framework For You
 BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Spiffy.3
 

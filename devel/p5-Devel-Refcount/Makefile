@@ -12,7 +12,8 @@ COMMENT=	Obtain the REFCNT value of a referent
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Devel::Refcount.3
 

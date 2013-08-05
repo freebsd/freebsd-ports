@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dns/p5-Net-DNS-ZoneCheck
-# Date created:				14 October 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-ZoneCheck
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::DNS::ZoneCheck.3
 

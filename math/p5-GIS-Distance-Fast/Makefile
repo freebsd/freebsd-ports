@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-GIS-Distance-Fast
-# Date created:				01 February 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GIS-Distance-Fast
 PORTVERSION=	0.07
@@ -18,7 +14,8 @@ COMMENT=	C implementation of GIS::Distance formulas
 BUILD_DEPENDS=	p5-GIS-Distance>=0.07:${PORTSDIR}/math/p5-GIS-Distance
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	GIS::Distance::Fast.3 \
 	GIS::Distance::Formula::Cosine::Fast.3 \

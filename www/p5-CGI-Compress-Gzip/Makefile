@@ -15,7 +15,8 @@ COMMENT=	CGI::Compress::Gzip - CGI with automatically compressed output
 BUILD_DEPENDS=	p5-IO-Zlib>=1.01:${PORTSDIR}/archivers/p5-IO-Zlib
 RUN_DEPENDS=	p5-IO-Zlib>=1.01:${PORTSDIR}/archivers/p5-IO-Zlib
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	CGI::Compress::Gzip.3 \
 	CGI::Compress::Gzip::FileHandle.3

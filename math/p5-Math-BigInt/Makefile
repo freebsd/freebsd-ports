@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Math-BigInt
-# Date created:				12 October 2001
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	Math-BigInt
 PORTVERSION=	1.997
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Math::BigInt - Arbitrary size integer math package
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::BigFloat.3 \
 		Math::BigInt.3 \

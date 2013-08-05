@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/p5-Schedule-Cron
-# Date created:				03 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Schedule-Cron
 PORTVERSION=	1.01
@@ -17,7 +13,8 @@ COMMENT=	Schedule::Cron - cron-like scheduler for Perl subroutines
 RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Schedule::Cron.3
 

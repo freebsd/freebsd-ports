@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Diff-HTML
-# Date created:				28 September 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Diff-HTML
 PORTVERSION=	0.07
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Text::Diff::HTML.3
 

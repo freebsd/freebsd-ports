@@ -1,11 +1,5 @@
-# New ports collection makefile for:	biblical-curse
-# Date created:		08 Nov 2005
-# Whom:			Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	biblical-curse
 PORTVERSION=	0.02
@@ -16,9 +10,10 @@ DISTFILES=	# none
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fake biblical curse generator
 
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
-USE_PERL5_RUN=	yes
 
 SRC=		${.CURDIR}/src
 

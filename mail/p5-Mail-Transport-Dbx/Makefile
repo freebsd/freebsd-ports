@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Mail-Transport-Dbx
-# Date created:				25 January 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Transport-Dbx
 PORTVERSION=	0.07
@@ -17,7 +13,8 @@ COMMENT=	Mail::Transport::Dbx - Parse Outlook Express mailboxes
 #BUILD_DEPENDS=	p5-ExtUtils-Constant>0:${PORTSDIR}/devel/p5-ExtUtils-Constant
 #RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Mail::Transport::Dbx.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/p5-Authen-Htpasswd
-# Date created:				11 November 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Htpasswd
 PORTVERSION=	0.171
@@ -22,7 +18,8 @@ COMMON_DEPENDS=	p5-IO-LockedFile>=0:${PORTSDIR}/devel/p5-IO-LockedFile \
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Authen::Htpasswd.3 \
 	Authen::Htpasswd::User.3 \

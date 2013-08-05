@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Diff
-# Date created:				14 July 2002
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Diff
 PORTVERSION=	1.41
@@ -18,7 +14,8 @@ COMMON_DEPENDS=	p5-Algorithm-Diff>=1.19:${PORTSDIR}/devel/p5-Algorithm-Diff
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Diff.3 Text::Diff::Config.3 Text::Diff::Table.3
 

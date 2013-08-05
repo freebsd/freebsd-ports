@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
-# Date created:				14 October 2004
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Plucene-Plugin-Analyzer-SnowballAnalyzer
 PORTVERSION=	1.1
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Lingua-StopWords>=0:${PORTSDIR}/textproc/p5-Lingua-StopWords \
 		p5-Plucene>=0:${PORTSDIR}/textproc/p5-Plucene
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Plucene::Plugin::Analyzer::SnowballAnalyzer.3 \
 	Plucene::Plugin::Analyzer::SnowballFilter.3

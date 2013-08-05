@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Term-Prompt
-# Date created:				25 April 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Prompt
 PORTVERSION=	1.04
@@ -17,7 +13,8 @@ COMMENT=	Perl extension for prompting a user for information
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::Prompt.3
 

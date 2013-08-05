@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Markapl
-# Date created:				15 February 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Markapl
 PORTVERSION=	0.14
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Markapl.3 \
 	Markapl::Helpers.3 \

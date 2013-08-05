@@ -13,7 +13,8 @@ COMMENT=	Render graphs as ASCII, HTML, SVG, or Graphviz
 BUILD_DEPENDS=	p5-Heap>0:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	graph-easy.1
 

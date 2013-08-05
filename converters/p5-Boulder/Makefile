@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Boulder
-# Date created:			Di  13 Mär 2001 19:37:25 CET
-# Whom:				Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Boulder
 PORTVERSION=	1.30
@@ -17,7 +13,8 @@ COMMENT=	An API for hierarchical tag/value structures
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Boulder.3 \
 		Boulder::Blast.3 \

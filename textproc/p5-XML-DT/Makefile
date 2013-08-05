@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-DTDParser>=2.00:${PORTSDIR}/textproc/p5-XML-DTDParser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		mkdtskel.1 mkdtdskel.1 mkxmltype.1
 MAN3=		XML::DT.3

@@ -11,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Transparently speed up perl functions by caching return values
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Memoize.3 \
 		Memoize::AnyDBM_File.3 \

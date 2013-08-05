@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Crypt-ECB
-# Date created:				Wed Jan  3 16:09:46 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-ECB
 PORTVERSION=	1.45
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module implementing the ECB encryption algorithm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::ECB.3
 

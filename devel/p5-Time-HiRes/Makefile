@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Time-HiRes
-# Date created:			13 June 1999
-# Whom:				Stephen J. Roznowski <sjr@home.net>
-#
+# Created by: Stephen J. Roznowski <sjr@home.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Time-HiRes
 PORTVERSION=	1.9725
@@ -17,7 +13,8 @@ COMMENT=	A perl5 module implementing High resolution time, sleep, and alarm
 
 TEST_DEPENDS=	p5-Test-Simple>=0.82:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Time::HiRes.3
 

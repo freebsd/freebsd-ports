@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net-mgmt/p5-Net-IP-Match-XS
-# Date created:				24 February 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IP-Match-XS
 PORTVERSION=	0.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Efficiently match IP addresses against IP ranges
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::IP::Match::XS.3
 

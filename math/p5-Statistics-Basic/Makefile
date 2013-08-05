@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Statistics-Basic
-# Date created:				28 July 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Statistics-Basic
 PORTVERSION=	1.6607
@@ -18,7 +14,8 @@ COMMENT=	A collection of very basic statistics modules
 BUILD_DEPENDS=	p5-Number-Format>=1.61:${PORTSDIR}/textproc/p5-Number-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Statistics::Basic.3 \
 	Statistics::Basic::ComputedVector.3 \

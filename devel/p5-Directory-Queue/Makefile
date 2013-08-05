@@ -13,7 +13,8 @@ COMMENT=	Object oriented interface to a directory based queue in Perl
 BUILD_DEPENDS=	p5-No-Worries>=0:${PORTSDIR}/devel/p5-No-Worries
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Directory::Queue.3 \
 	Directory::Queue::Normal.3 \

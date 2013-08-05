@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Directory-Scratch
-# Date created:				03 April 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Directory-Scratch
 PORTVERSION=	0.14
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-String-Random>0:${PORTSDIR}/devel/p5-String-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Directory::Scratch.3
 

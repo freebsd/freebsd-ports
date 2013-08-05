@@ -15,8 +15,8 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
-USE_PERL5_BUILD=yes
-USES=		shebangfix
+USES=		shebangfix perl5
+USE_PERL5=	build
 SHEBANG_FILES=	ttraffic.tcl
 SHEBANG_LANG=	wish
 wish_OLD_CMD=	/usr/bin/wish

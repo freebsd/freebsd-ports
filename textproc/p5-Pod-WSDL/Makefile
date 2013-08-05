@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Pod-WSDL
-# Date created:				30 September 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-WSDL
 PORTVERSION=	0.061
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-XML-XPath>=1.13:${PORTSDIR}/textproc/p5-XML-XPath
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Pod::WSDL.3 \
 	Pod::WSDL::AUTOLOAD.3 \

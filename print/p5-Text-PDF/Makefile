@@ -13,7 +13,8 @@ COMMENT=	A PDF manipulation module
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::PDF::Pages.3 Text::PDF::Page.3 Text::PDF::Name.3 \
 		Text::PDF::TTFont0.3 Text::PDF::String.3 Text::PDF::File.3 \
