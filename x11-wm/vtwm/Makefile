@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF http://www.vtwm.org/downloads/
 
 MAINTAINER=	ak@FreeBSD.org
-COMMENT=	Virtual tab window manager
+COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 LICENSE=	MIT
 
