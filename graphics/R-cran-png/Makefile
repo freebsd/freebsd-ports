@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	png
-DISTVERSION=	0.1-5
+DISTVERSION=	0.1-6
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +11,8 @@ COMMENT=	Read and write PNG images
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
