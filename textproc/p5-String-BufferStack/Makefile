@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-String-BufferStack
-# Date created:				10 February 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	String-BufferStack
 PORTVERSION=	1.16
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Nested buffers for templating systems
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	String::BufferStack.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Graphics
-# Date created:				30 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Graphics
 PORTVERSION=	1.0001
@@ -18,7 +14,8 @@ COMMENT=	A text graphics rendering toolkit
 BUILD_DEPENDS=	p5-Text-Wrapper>=0:${PORTSDIR}/textproc/p5-Text-Wrapper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Graphics.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-IPC-PubSub
-# Date created:				26 January 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-PubSub
 PORTVERSION=	0.29
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-DBM-Deep>=1:${PORTSDIR}/databases/p5-DBM-Deep \
 		p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IPC::PubSub.3
 

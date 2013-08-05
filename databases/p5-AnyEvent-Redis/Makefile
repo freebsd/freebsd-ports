@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-AnyEvent-Redis
-# Date created:				25 January 2011
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-Redis
 PORTVERSION=	0.24
@@ -22,7 +18,8 @@ TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-TCP>=1.03:${PORTSDIR}/devel/p5-Test-TCP \
 		redis>=0:${PORTSDIR}/databases/redis
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::Redis.3 \
 	AnyEvent::Redis::Protocol.3

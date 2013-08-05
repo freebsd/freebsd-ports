@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Data-Remember
-# Date created:				14 May 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Remember
 PORTVERSION=	0.07
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-DBM-Deep>0:${PORTSDIR}/databases/p5-DBM-Deep \
 		p5-POE>0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Remember.3 \
 	Data::Remember::DBM.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	converters/p5-Number-Nary
-# Date created:				05 January 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Number-Nary
 PORTVERSION=	1.100311
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-UDCode>=0:${PORTSDIR}/devel/p5-UDCode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Number::Nary.3
 

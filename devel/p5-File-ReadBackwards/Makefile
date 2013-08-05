@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-ReadBackwards
-# Date created:				11 October 2001
-# Whom:					tobez
-#
+# Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	File-ReadBackwards
 PORTVERSION=	1.05
@@ -16,7 +12,8 @@ COMMENT=	File::ReadBackwards -- read a file backwards by lines
 
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::ReadBackwards.3
 

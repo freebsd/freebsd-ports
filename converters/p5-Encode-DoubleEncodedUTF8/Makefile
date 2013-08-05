@@ -1,9 +1,5 @@
-# New ports collection makefile for:	converters/p5-Encode-DoubleEncodedUTF8
-# Date created:				01 October 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-DoubleEncodedUTF8
 PORTVERSION=	0.05
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fix double encoded UTF-8 bytes to the correct ones
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Encode::DoubleEncodedUTF8.3
 

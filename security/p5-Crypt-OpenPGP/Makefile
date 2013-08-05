@@ -27,7 +27,8 @@ RUN_DEPENDS= \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
 		Crypt::OpenPGP::CFB.3 Crypt::OpenPGP::SKSessionKey.3 \

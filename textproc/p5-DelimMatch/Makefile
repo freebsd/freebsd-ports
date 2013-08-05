@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-DelimMatch
-# Date created:				28 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DelimMatch
 PORTVERSION=	1.05
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl extension to find regexp delimited strings with proper nesting
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::DelimMatch.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-AsciiDB-TagFile
-# Date created:				25 April 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AsciiDB-TagFile
 PORTVERSION=	1.06
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl tie class for a simple ASCII database
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AsciiDB::TagFile.3
 

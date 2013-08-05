@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-Find
-# Date created:				28 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Find
 PORTVERSION=	0.10
@@ -17,7 +13,8 @@ COMMENT=	Find RFC 822 email addresses in plain text
 BUILD_DEPENDS=	p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Find.3 Email::Find::addrspec.3
 

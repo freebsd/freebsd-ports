@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Class-Closure
-# Date created:				22 April 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Closure
 PORTVERSION=	0.30
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker \
 		p5-Devel-Caller>=0:${PORTSDIR}/devel/p5-Devel-Caller
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Closure.3
 

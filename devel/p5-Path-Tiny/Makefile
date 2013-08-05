@@ -20,7 +20,8 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Devel-Hide>=0:${PORTSDIR}/devel/p5-Devel-Hide \
 		p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Path::Tiny.3
 

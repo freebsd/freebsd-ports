@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Statistics-ChiSquare
-# Date created:				01 January 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Statistics-ChiSquare
 PORTVERSION=	0.5
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	How random is your data?
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Statistics::ChiSquare.3
 

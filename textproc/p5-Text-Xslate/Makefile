@@ -1,4 +1,4 @@
-# Whom: Anton Berezin <tobez@FreeBSD.org>
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Text-Xslate
@@ -25,7 +25,8 @@ TEST_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	xslate.1
 MAN3=	Text::Xslate.3 \

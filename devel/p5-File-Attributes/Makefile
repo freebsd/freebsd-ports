@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-Attributes
-# Date created:				03 April 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Attributes
 PORTVERSION=	0.04
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::Attributes.3 \
 	File::Attributes::Base.3 \

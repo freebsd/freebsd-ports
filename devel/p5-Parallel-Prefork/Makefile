@@ -20,7 +20,8 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-SharedFork>=0:${PORTSDIR}/devel/p5-Test-SharedFork \
 		p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Parallel::Prefork.3 Parallel::Prefork::SpareWorkers.3
 

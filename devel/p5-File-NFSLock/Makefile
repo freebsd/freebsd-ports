@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-NFSLock
-# Date created:				11 September 2002
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-NFSLock
 PORTVERSION=	1.21
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	File::NFSLock - perl module to do NFS (or not) locking
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::NFSLock.3
 

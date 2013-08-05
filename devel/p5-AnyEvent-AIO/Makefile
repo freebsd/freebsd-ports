@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-AnyEvent-AIO
-# Date created:				Wed Sep  2 14:59:22 CEST 2009
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-AIO
 PORTVERSION=	1.1
@@ -18,7 +14,8 @@ COMMENT=	Asynchronous file and directory I/O with AnyEvent
 BUILD_DEPENDS=	p5-AnyEvent>=3.4:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-IO-AIO>=3.0:${PORTSDIR}/devel/p5-IO-AIO
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::AIO.3
 

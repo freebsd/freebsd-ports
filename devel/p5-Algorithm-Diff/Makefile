@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Algorithm::Diff
-# Date created:				04 Nov 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-Diff
 PORTVERSION=	1.1902
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl interface to compute differences between two objects
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::Diff.3 Algorithm::DiffOld.3
 

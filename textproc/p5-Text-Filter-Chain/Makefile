@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Filter-Chain
-# Date created:				29 December 2000
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
+# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Filter-Chain
 PORTVERSION=	0.02
@@ -16,7 +12,8 @@ COMMENT=	Chains multiple Text::Filter objects and runs them in sequence
 
 BUILD_DEPENDS=	p5-Text-Filter>=0:${PORTSDIR}/textproc/p5-Text-Filter
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Filter::Chain.3
 

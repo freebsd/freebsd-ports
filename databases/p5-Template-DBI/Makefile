@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Template-DBI
-# Date created:				04 December 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-DBI
 PORTVERSION=	2.65
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::DBI.3 \
 	Template::Plugin::DBI.3

@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fast, lightweight YAML and JSON loader and dumper
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=	< /dev/null
 
 MAN3=		JSON::Syck.3 YAML::Syck.3

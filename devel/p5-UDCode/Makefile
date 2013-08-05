@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-UDCode
-# Date created:				31 January 2010
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	UDCode
 PORTVERSION=	1.03
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Does a set of code words form a uniquely decodable code?
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	UDCode.3
 

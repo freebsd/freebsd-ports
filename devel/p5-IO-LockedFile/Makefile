@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-IO-LockedFile
-# Date created:				11 November 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-LockedFile
 PORTVERSION=	0.23
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	IO::LockedFile - supply object methods for locking files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IO::LockedFile.3 \
 	IO::LockedFile::Flock.3

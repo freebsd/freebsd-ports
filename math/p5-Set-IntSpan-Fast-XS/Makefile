@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Set-IntSpan-Fast-XS
-# Date created:				02 July 2008
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Set-IntSpan-Fast-XS
 PORTVERSION=	0.05
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Data-Swap>=0.07:${PORTSDIR}/devel/p5-Data-Swap \
 		p5-Set-IntSpan-Fast>=1.13:${PORTSDIR}/math/p5-Set-IntSpan-Fast
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Set::IntSpan::Fast::XS.3
 

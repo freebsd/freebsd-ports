@@ -13,7 +13,8 @@ COMMENT=	Library of advanced math functions that includes a Perl OO module
 RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Bit::Vector.3 Bit::Vector::Overload.3 Bit::Vector::String.3
 

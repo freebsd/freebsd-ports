@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net-mgmt/p5-NSNMP
-# Date created:				14 December 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	NSNMP
 PORTVERSION=	0.5
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	NSNMP - fast, flexible, low-level, pure-Perl SNMP library
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	NSNMP.3 \
 	NSNMP::Simple.3

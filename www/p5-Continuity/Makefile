@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Continuity
-# Date created:				07 July 2008
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Continuity
 PORTVERSION=	1.5
@@ -23,7 +19,8 @@ COMMON_DEPENDS=	p5-Event>0:${PORTSDIR}/devel/p5-Event \
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Continuity.3 \
 	Continuity::Adapt::FCGI.3 \

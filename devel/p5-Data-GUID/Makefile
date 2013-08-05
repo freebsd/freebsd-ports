@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Data-GUID
-# Date created:				05 April 2007
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-GUID
 PORTVERSION=	0.046
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Sub-Install>=0.03:${PORTSDIR}/devel/p5-Sub-Install \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::GUID.3
 

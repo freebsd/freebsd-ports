@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CGI-Prototype
-# Date created:				20 April 2006
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Prototype
 PORTVERSION=	0.9054
@@ -19,7 +15,8 @@ COMMON_DEPENDS=	p5-Class-Prototyped>0:${PORTSDIR}/devel/p5-Class-Prototyped \
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CGI::Prototype.3 \
 	CGI::Prototype::Hidden.3
