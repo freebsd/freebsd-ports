@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	4.0.${SVNREVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -120,7 +120,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		textcat.0:${PORTSDIR}/textproc/libtextcat \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		apr-1.4:${PORTSDIR}/devel/apr1 \
-		CoinMP.7:${PORTSDIR}/math/coinmp \
+		CoinMP.8:${PORTSDIR}/math/coinmp \
 		serf-1.0:${PORTSDIR}/www/serf \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		textcat.0:${PORTSDIR}/textproc/libtextcat
