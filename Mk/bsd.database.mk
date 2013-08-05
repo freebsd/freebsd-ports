@@ -283,7 +283,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 .if defined(USE_BDB)
 
-_DB_PORTS=	40 41 42 43 44 46 47 48 5 40+ 41+ 42+ 43+ 44+ 46+ 47+ 48+
+_DB_PORTS=	40 41 42 43 44 46 47 48 5 6 40+ 41+ 42+ 43+ 44+ 46+ 47+ 48+ 5+ 6+
 # Dependence lines for different db versions
 db40_DEPENDS=	libdb4.so:${PORTSDIR}/databases/db4
 db41_DEPENDS=	libdb41.so:${PORTSDIR}/databases/db41
@@ -420,8 +420,10 @@ _BDB_IGNORE=	yes
 IGNORE=		cannot install: does not work with Berkeley DB version ${_BDB_VER} (${INVALID_BDB_VER} not supported)
 . else
 # Now add the dependency on Berkeley DB ${_BDB_VER) version
+# This is for ports that want to link Berkeley DB statically, such
+# as devel/subversion, if the corresponding option is active:
 .if defined(BDB_BUILD_DEPENDS)
-BUILD_DEPENDS+=	${db${_BDB_VER}_FIND}:${db${_BDB_VER}_DEPENDS:C/^db.*://}
+BUILD_DEPENDS+=	${db${_BDB_VER}_FIND}:${db${_BDB_VER}_DEPENDS:C/^libdb.*://}
 .else
 LIB_DEPENDS+=	${db${_BDB_VER}_DEPENDS}
 .endif
@@ -470,7 +472,9 @@ BDB_LIB_DIR?=		${LOCALBASE}/lib
 BDB_VER=	${_BDB_VER}
 .endif
 
-# Obsolete variables
+# Obsolete variables - ports can define these to want users about
+# variables that may be in /etc/make.conf but that are no longer
+# effective:
 .if defined(OBSOLETE_BDB_VAR)
 . for var in ${OBSOLETE_BDB_VAR}
 .  if defined(${var})
