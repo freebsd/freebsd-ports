@@ -189,7 +189,7 @@ post-patch:
 		${WRKSRC}/ui/base/strings/app_locale_settings_th.xtb
 
 do-configure:
-	cd ${WRKSRC} && \
+	cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" \
 		GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} \
 			./build/gyp_chromium chrome/chrome.gyp --depth .
 
