@@ -18,6 +18,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/garching/description.nb.utf8
 %%DATADIR%%/landscapes/garching/description.pt_BR.utf8
 %%DATADIR%%/landscapes/garching/description.ru.utf8
+%%DATADIR%%/landscapes/garching/description.uk.utf8
 %%DATADIR%%/landscapes/garching/garching-gl1.png
 %%DATADIR%%/landscapes/garching/garching-gl2.png
 %%DATADIR%%/landscapes/garching/garching-gl3.png
@@ -33,6 +34,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/guereins/description.nb.utf8
 %%DATADIR%%/landscapes/guereins/description.pt_BR.utf8
 %%DATADIR%%/landscapes/guereins/description.ru.utf8
+%%DATADIR%%/landscapes/guereins/description.uk.utf8
 %%DATADIR%%/landscapes/guereins/guereins1.png
 %%DATADIR%%/landscapes/guereins/guereins2.png
 %%DATADIR%%/landscapes/guereins/guereins3.png
@@ -52,6 +54,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/hurricane/description.nb.utf8
 %%DATADIR%%/landscapes/hurricane/description.pt_BR.utf8
 %%DATADIR%%/landscapes/hurricane/description.ru.utf8
+%%DATADIR%%/landscapes/hurricane/description.uk.utf8
 %%DATADIR%%/landscapes/hurricane/hurricane1.png
 %%DATADIR%%/landscapes/hurricane/hurricane2.png
 %%DATADIR%%/landscapes/hurricane/hurricane3.png
@@ -71,6 +74,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/mars/description.nb.utf8
 %%DATADIR%%/landscapes/mars/description.pt_BR.utf8
 %%DATADIR%%/landscapes/mars/description.ru.utf8
+%%DATADIR%%/landscapes/mars/description.uk.utf8
 %%DATADIR%%/landscapes/mars/landscape.ini
 %%DATADIR%%/landscapes/mars/mars.png
 %%DATADIR%%/landscapes/moon/apollo17.png
@@ -83,6 +87,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/moon/description.nb.utf8
 %%DATADIR%%/landscapes/moon/description.pt_BR.utf8
 %%DATADIR%%/landscapes/moon/description.ru.utf8
+%%DATADIR%%/landscapes/moon/description.uk.utf8
 %%DATADIR%%/landscapes/moon/landscape.ini
 %%DATADIR%%/landscapes/ocean/description.ar.utf8
 %%DATADIR%%/landscapes/ocean/description.be.utf8
@@ -93,6 +98,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/ocean/description.nb.utf8
 %%DATADIR%%/landscapes/ocean/description.pt_BR.utf8
 %%DATADIR%%/landscapes/ocean/description.ru.utf8
+%%DATADIR%%/landscapes/ocean/description.uk.utf8
 %%DATADIR%%/landscapes/ocean/landscape.ini
 %%DATADIR%%/landscapes/ocean/ocean1.png
 %%DATADIR%%/landscapes/ocean/ocean2.png
@@ -112,6 +118,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/saturn/description.nb.utf8
 %%DATADIR%%/landscapes/saturn/description.pt_BR.utf8
 %%DATADIR%%/landscapes/saturn/description.ru.utf8
+%%DATADIR%%/landscapes/saturn/description.uk.utf8
 %%DATADIR%%/landscapes/saturn/landscape.ini
 %%DATADIR%%/landscapes/saturn/saturn-256.png
 %%DATADIR%%/landscapes/trees/description.ar.utf8
@@ -123,6 +130,7 @@ bin/stellarium
 %%DATADIR%%/landscapes/trees/description.nb.utf8
 %%DATADIR%%/landscapes/trees/description.pt_BR.utf8
 %%DATADIR%%/landscapes/trees/description.ru.utf8
+%%DATADIR%%/landscapes/trees/description.uk.utf8
 %%DATADIR%%/landscapes/trees/landscape.ini
 %%DATADIR%%/landscapes/trees/trees_512.png
 %%DATADIR%%/nebulae/default/etaCarinae_gzotti.png
@@ -296,6 +304,11 @@ bin/stellarium
 %%DATADIR%%/scripts/common_objects.inc
 %%DATADIR%%/scripts/constellations_tour.ssc
 %%DATADIR%%/scripts/earth_1.ssc
+%%DATADIR%%/scripts/earth_2.ssc
+%%DATADIR%%/scripts/earth_3.ssc
+%%DATADIR%%/scripts/earth_4.ssc
+%%DATADIR%%/scripts/earth_5.ssc
+%%DATADIR%%/scripts/earth_6.ssc
 %%DATADIR%%/scripts/landscapes.ssc
 %%DATADIR%%/scripts/lunar_partial.ssc
 %%DATADIR%%/scripts/lunar_total.ssc
@@ -371,6 +384,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/arabic/description.be.utf8
 %%DATADIR%%/skycultures/arabic/description.en.utf8
 %%DATADIR%%/skycultures/arabic/description.fr.utf8
+%%DATADIR%%/skycultures/arabic/description.hu.utf8
 %%DATADIR%%/skycultures/arabic/description.pt_BR.utf8
 %%DATADIR%%/skycultures/arabic/description.ru.utf8
 %%DATADIR%%/skycultures/arabic/description.uk.utf8
@@ -427,6 +441,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/egyptian/constellationship.fab
 %%DATADIR%%/skycultures/egyptian/description.ar.utf8
 %%DATADIR%%/skycultures/egyptian/description.be.utf8
+%%DATADIR%%/skycultures/egyptian/description.bs.utf8
 %%DATADIR%%/skycultures/egyptian/description.en.utf8
 %%DATADIR%%/skycultures/egyptian/description.fr.utf8
 %%DATADIR%%/skycultures/egyptian/description.it.utf8
@@ -436,6 +451,33 @@ bin/stellarium
 %%DATADIR%%/skycultures/egyptian/description.uk.utf8
 %%DATADIR%%/skycultures/egyptian/info.ini
 %%DATADIR%%/skycultures/egyptian/star_names.fab
+%%DATADIR%%/skycultures/indian/aquarius.png
+%%DATADIR%%/skycultures/indian/aries.png
+%%DATADIR%%/skycultures/indian/cancer.png
+%%DATADIR%%/skycultures/indian/canis-major.png
+%%DATADIR%%/skycultures/indian/capricornus.png
+%%DATADIR%%/skycultures/indian/constellation_names.eng.fab
+%%DATADIR%%/skycultures/indian/constellations_boundaries.dat
+%%DATADIR%%/skycultures/indian/constellationsart.fab
+%%DATADIR%%/skycultures/indian/constellationship.fab
+%%DATADIR%%/skycultures/indian/description.ar.utf8
+%%DATADIR%%/skycultures/indian/description.bs.utf8
+%%DATADIR%%/skycultures/indian/description.en.utf8
+%%DATADIR%%/skycultures/indian/description.fr.utf8
+%%DATADIR%%/skycultures/indian/description.pt_BR.utf8
+%%DATADIR%%/skycultures/indian/description.ru.utf8
+%%DATADIR%%/skycultures/indian/description.uk.utf8
+%%DATADIR%%/skycultures/indian/gemini.png
+%%DATADIR%%/skycultures/indian/info.ini
+%%DATADIR%%/skycultures/indian/leo.png
+%%DATADIR%%/skycultures/indian/libra.png
+%%DATADIR%%/skycultures/indian/orion.png
+%%DATADIR%%/skycultures/indian/pisces.png
+%%DATADIR%%/skycultures/indian/sagittarius.png
+%%DATADIR%%/skycultures/indian/scorpius.png
+%%DATADIR%%/skycultures/indian/star_names.fab
+%%DATADIR%%/skycultures/indian/taurus.png
+%%DATADIR%%/skycultures/indian/virgo.png
 %%DATADIR%%/skycultures/inuit/blubber-container.png
 %%DATADIR%%/skycultures/inuit/breastbone.png
 %%DATADIR%%/skycultures/inuit/caribou.png
@@ -482,6 +524,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/lakota/constellationship.fab
 %%DATADIR%%/skycultures/lakota/description.ar.utf8
 %%DATADIR%%/skycultures/lakota/description.be.utf8
+%%DATADIR%%/skycultures/lakota/description.bs.utf8
 %%DATADIR%%/skycultures/lakota/description.en.utf8
 %%DATADIR%%/skycultures/lakota/description.fr.utf8
 %%DATADIR%%/skycultures/lakota/description.it.utf8
@@ -509,6 +552,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/navajo/constellationship.fab
 %%DATADIR%%/skycultures/navajo/description.ar.utf8
 %%DATADIR%%/skycultures/navajo/description.be.utf8
+%%DATADIR%%/skycultures/navajo/description.bs.utf8
 %%DATADIR%%/skycultures/navajo/description.en.utf8
 %%DATADIR%%/skycultures/navajo/description.fr.utf8
 %%DATADIR%%/skycultures/navajo/description.it.utf8
@@ -522,6 +566,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/norse/constellationship.fab
 %%DATADIR%%/skycultures/norse/description.ar.utf8
 %%DATADIR%%/skycultures/norse/description.be.utf8
+%%DATADIR%%/skycultures/norse/description.bs.utf8
 %%DATADIR%%/skycultures/norse/description.en.utf8
 %%DATADIR%%/skycultures/norse/description.fr.utf8
 %%DATADIR%%/skycultures/norse/description.it.utf8
@@ -567,6 +612,7 @@ bin/stellarium
 %%DATADIR%%/skycultures/tongan/description.fr.utf8
 %%DATADIR%%/skycultures/tongan/description.pt_BR.utf8
 %%DATADIR%%/skycultures/tongan/description.ru.utf8
+%%DATADIR%%/skycultures/tongan/description.uk.utf8
 %%DATADIR%%/skycultures/tongan/info.ini
 %%DATADIR%%/skycultures/tongan/star_names.fab
 %%DATADIR%%/skycultures/tupi/constellation_names.eng.fab
@@ -685,11 +731,12 @@ bin/stellarium
 %%DATADIR%%/skycultures/western/volans.png
 %%DATADIR%%/skycultures/western/vulpecula.png
 %%DATADIR%%/stars/default/defaultStarsConfig.json
+%%DATADIR%%/stars/default/gcvs_hip_part.dat
 %%DATADIR%%/stars/default/name.fab
-%%DATADIR%%/stars/default/stars_0_0v0_2.cat
-%%DATADIR%%/stars/default/stars_1_0v0_2.cat
-%%DATADIR%%/stars/default/stars_2_0v0_2.cat
-%%DATADIR%%/stars/default/stars_3_1v0_1.cat
+%%DATADIR%%/stars/default/stars_0_0v0_3.cat
+%%DATADIR%%/stars/default/stars_1_0v0_3.cat
+%%DATADIR%%/stars/default/stars_2_0v0_3.cat
+%%DATADIR%%/stars/default/stars_3_1v0_2.cat
 %%MORE_STARS%%%%DATADIR%%/stars/default/stars_4_1v0_0.cat
 %%MORE_STARS%%%%DATADIR%%/stars/default/stars_5_2v0_0.cat
 %%MORE_STARS%%%%DATADIR%%/stars/default/stars_6_2v0_0.cat
@@ -772,6 +819,7 @@ bin/stellarium
 @dirrm %%DATADIR%%/skycultures/lakota
 @dirrm %%DATADIR%%/skycultures/korean
 @dirrm %%DATADIR%%/skycultures/inuit
+@dirrm %%DATADIR%%/skycultures/indian
 @dirrm %%DATADIR%%/skycultures/egyptian
 @dirrm %%DATADIR%%/skycultures/chinese
 @dirrm %%DATADIR%%/skycultures/aztec
