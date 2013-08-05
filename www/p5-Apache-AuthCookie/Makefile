@@ -16,14 +16,14 @@ BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_APACHE=	22+
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
 CURUSER?=	`whoami`
 CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228
-USES=		perl5
-USE_PERL5=	configure
 CONFIGURE_ENV+=	APACHE="${HTTPD}" \
 		TESTUSER="${CURUSER}" \
 		TESTGRP="${CURGRP}" \
