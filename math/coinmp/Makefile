@@ -1,19 +1,14 @@
-# New ports collection makefile for:   CoinMP
-# Date created:        22 June 2011
-# Whom:                Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	CoinMP
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	giffunip@tutopia.com
-COMMENT=	Optimization library with support for most of COIN-OR CLP, CBC, and CGL
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Optimization library with support for COIN-OR CLP, CBC, and CGL
 
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License, Version 1.0
@@ -25,9 +20,13 @@ CONFLICTS=	clp-[0-9]*
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DEBUG DOCS
 
-.ifdef WITH_GLPK
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGLPK}
 BROKEN =	the GLPK option requires math/glpk headers that are not currently installed by that port
 CONFIGURE_ARGS+=	--with-gmpl-incdir=${LOCALBASE}/include	\
 		--with-gmpl-lib="-L${LOCALBASE}/lib -lglpk"
@@ -37,7 +36,7 @@ CONFIGURE_ARGS+=	--disable-glpk-libcheck
 .endif
 
 CXXFLAGS+=	-ffast-math
-.ifndef WITH_DEBUG
+.if ${PORT_OPTIONS:MDEBUG}
 CXXFLAGS+=	-fomit-frame-pointer
 .endif
 
@@ -54,7 +53,7 @@ pre-build:
 .endfor
 
 post-install:
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	${MV} ${PREFIX}/share/coin/doc ${DOCSDIR}
 .endif
 	${RM} -rf ${PREFIX}/share/coin
@@ -63,4 +62,4 @@ check regression-test test: build
 	@(cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} test)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -215,7 +215,6 @@ include/coin/ClpConstraintAmpl.hpp
 include/coin/ClpAmplObjective.hpp
 include/coin/CoinMPConfig.h
 include/coin/CoinMP.h
-@dirrm include/coin
 lib/libCbc.la
 lib/libCbc.so
 lib/libCbc.so.10
@@ -230,7 +229,7 @@ lib/libClp.so
 lib/libClp.so.12
 lib/libCoinMP.la
 lib/libCoinMP.so
-lib/libCoinMP.so.7
+lib/libCoinMP.so.8
 lib/libCoinUtils.la
 lib/libCoinUtils.so
 lib/libCoinUtils.so.11
@@ -246,39 +245,7 @@ lib/libOsiClp.so.12
 lib/libOsiCommonTests.la
 lib/libOsiCommonTests.so
 lib/libOsiCommonTests.so.11
-%%PORTDOCS%%%%DOCSDIR%%/Cbc/README
-%%PORTDOCS%%%%DOCSDIR%%/Cbc/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Cbc/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Cbc/cbc_addlibs.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Cbc
-%%PORTDOCS%%%%DOCSDIR%%/Cgl/README
-%%PORTDOCS%%%%DOCSDIR%%/Cgl/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Cgl/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Cgl/cgl_addlibs.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Cgl
-%%PORTDOCS%%%%DOCSDIR%%/Clp/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Clp/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Clp/README
-%%PORTDOCS%%%%DOCSDIR%%/Clp/clp_addlibs.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Clp
-%%PORTDOCS%%%%DOCSDIR%%/CoinMP/README
-%%PORTDOCS%%%%DOCSDIR%%/CoinMP/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CoinMP/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/CoinMP/coinmp_addlibs.txt
-%%PORTDOCS%%%%DOCSDIR%%/CoinMP/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/CoinMP/example.c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/CoinMP
-%%PORTDOCS%%%%DOCSDIR%%/CoinUtils/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CoinUtils/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/CoinUtils/README
-%%PORTDOCS%%%%DOCSDIR%%/CoinUtils/coinutils_addlibs.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/CoinUtils
-%%PORTDOCS%%%%DOCSDIR%%/Osi/README
-%%PORTDOCS%%%%DOCSDIR%%/Osi/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Osi/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Osi/osi_addlibs.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Osi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/pkgconfig/coindatasample.pc
 libdata/pkgconfig/clp.pc
 libdata/pkgconfig/osi-clp.pc
 libdata/pkgconfig/cbc.pc
@@ -288,3 +255,5 @@ libdata/pkgconfig/coinutils.pc
 libdata/pkgconfig/coinmp.pc
 libdata/pkgconfig/osi-cbc.pc
 libdata/pkgconfig/osi-unittests.pc
+@dirrm include/coin
+@dirrmtry lib/pkgconfig
