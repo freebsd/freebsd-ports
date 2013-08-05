@@ -28,7 +28,14 @@
  
  # This command will be used to install the irc help files.  If you don't
  # want to install them, replace with the following:
-@@ -133,7 +133,7 @@
+@@ -126,14 +126,13 @@
+ VERSION = @VERSION@
+ 
+ SHELL = /bin/sh
+-MAKE = make $(MFLAGS)
+ MFLAGS ='CC=$(CC)'					\
+ 	'CFLAGS=$(CFLAGS)'				\
+ 	'DEFS=$(DEFS)'					\
  	'HELP_DIR=$(HELP_DIR)'				\
  	'INSTALL_IRC=$(INSTALL_IRC)'			\
  	'INSTALL_IRCIO=$(INSTALL_IRCIO)'		\
@@ -37,7 +44,7 @@
  	'IRCSHARE=$(IRCSHARE)'				\
  	'IRCPATH=$(IRC_PATH)'				\
  	'LDFLAGS=$(LDFLAGS)'				\
-@@ -143,9 +143,9 @@
+@@ -143,32 +142,23 @@
  	'LN=$(LN)'					\
  	'RM=$(RM)'
  
@@ -47,9 +54,12 @@
 -install: all installbin installdirs installman installhelp
 +install: all installbin installwservz installdirs installman installhelp
  
- scrollz: source/Makefile Makefile
- 	@cd source; $(MAKE) all
-@@ -154,9 +154,9 @@
+-scrollz: source/Makefile Makefile
+-	@cd source; $(MAKE) all
++scrollz ircio ircflush wservz: source/Makefile Makefile
++	$(MAKE) -C source $(MFLAGS) $@
+ 
+ scrollz.1: scrollz.1.in
  	sed -e "s,SHAREDIR,$(IRCSHARE)," < scrollz.1.in > scrollz.1
  
  installeverything:  install installman installflush installio \
@@ -61,18 +71,19 @@
  
  ircserv: ircio
  
-@@ -166,8 +166,8 @@
- ircflush: source/ircflush.c source/Makefile
- 	@cd source; $(MAKE) ircflush
- 
+-ircio: source/Makefile
+-	@cd source; $(MAKE) ircio
+-
+-ircflush: source/ircflush.c source/Makefile
+-	@cd source; $(MAKE) ircflush
+-
 -wserv: source/wserv.c source/term.c source/Makefile
 -	@cd source; $(MAKE) wserv
-+wservz: source/wserv.c source/term.c source/Makefile
-+	@cd source; $(MAKE) wservz
- 
+-
  installbin: installirc
  
-@@ -189,8 +189,8 @@
+ installirc: scrollz installdirs
+@@ -189,8 +179,8 @@
  installflush: ircflush installdirs
  	$(INSTALL) source/ircflush $(DESTDIR)/$(INSTALL_IRCFLUSH)
  

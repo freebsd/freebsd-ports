@@ -1,5 +1,4 @@
 bin/scrollz
 bin/scrollz-%%SCROLLZ_VER%%
 bin/wservz
-@exec /bin/mkdir -p %%PREFIX%%/%%DATADIR%%/script
-@dirrm %%DATADIR%%/script
+@exec mkdir -p %D/%%DATADIR%%/script
