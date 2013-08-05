@@ -328,6 +328,7 @@
     SUBDIR += czmq
     SUBDIR += d-feet
     SUBDIR += darts
+    SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += dbus
     SUBDIR += dbus-glib
