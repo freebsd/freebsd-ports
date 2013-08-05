@@ -23,6 +23,7 @@ SUB_FILES=	eric4.desktop
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
 		-e 's,PREFIX,${PREFIX},' \
+		-e 's,DATADIR,${DATADIR},' \
 		-e 's,LOCALBASE,${LOCALBASE},' \
 		-e 's,DOCSDIR,${DOCSDIR},' \
 		-e 's,EXAMPLESDIR,${EXAMPLESDIR},' \
@@ -31,7 +32,7 @@ do-configure:
 post-install:
 	${INSTALL} -d ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/eric4.desktop ${PREFIX}/share/applications/
-	${LN} ${PYTHON_SITELIBDIR}/eric4/icons/default/eric.png ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/i18n
+	${LN} -sf ${DATADIR}/icons/default/eric.png ${PREFIX}/share/pixmaps/
+	@${MKDIR} ${DATADIR}/i18n
 
 .include "${.CURDIR}/../../devel/eric4/Makefile.inc"
