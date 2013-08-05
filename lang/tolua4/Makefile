@@ -7,15 +7,13 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/ \
 		http://www.tecgraf.puc-rio.br/~celes/tolua/
-DISTNAME=	tolua-4.0a
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	toLua: accessing C/C++ code from Lua
+COMMENT=	Tool for easy access of C/C++ code from Lua
 
 USES=		gmake
-MAKE_JOBS_UNSAFE=	yes
 USE_LUA=	4.0
-WRKSRC=		${WRKDIR}/tolua
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LATEST_LINK=	${PORTNAME}${LUA_VER_STR}
 
@@ -26,6 +24,8 @@ post-patch:
 		 s|^(LUA(INC\|LIB)=.*)|\1/lua${LUA_VER_STR}|; \
 		 s|^(CFLAGS)(=.*)|\1+\2|;' \
 		${WRKSRC}/config
+	@${REINPLACE_CMD} -E 's|cd (.+); make|$$(MAKE) -C \1|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua ${LUA_BINDIR}
