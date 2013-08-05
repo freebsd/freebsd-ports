@@ -1,13 +1,8 @@
-# New ports collection makefile for:	CharisSILCompact
-# Date created:		October 14 2011
-# Whom:			bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CharisSILCompact
-PORTVERSION=	4.110
-PORTREVISION=	1
+PORTVERSION=	4.114
 CATEGORIES=	x11-fonts
 #unfortunately, the SIL server embeds timestamps in the distfile, so we use a static local copy
 .if defined(MAINTAINER_MODE)
@@ -37,7 +32,9 @@ USE_TGZ=	yes	#prevent bsd.xorg.mk from setting USE_BZIP
 PLIST_FILES+=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-${type}.ttf
 .endfor
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt feat_set_tuned.xml
 .endif
 
@@ -50,7 +47,7 @@ do-configure:
 do-install:
 	@${MKDIR} ${FONTROOTDIR}/${FONTDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${FONTROOTDIR}/${FONTDIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
