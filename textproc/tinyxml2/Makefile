@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinyxml2
-PORTVERSION=	20130520
+PORTVERSION=	20130731
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/bf GH
 
@@ -11,12 +11,13 @@ COMMENT=	Small C++ XML Parser
 
 LICENSE=	ZLIB
 
+USE_DOS2UNIX=	yes
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USES=		cmake
 
 GH_ACCOUNT=	leethomason
-GH_COMMIT=	392bcd2
+GH_COMMIT=	db30425
 GH_TAGNAME=	${GH_COMMIT}
 
 PLIST_FILES=	include/tinyxml2.h \
@@ -34,7 +35,7 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test ; \
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test ; \
 	./test
 
 .if ${PORT_OPTIONS:MEXAMPLES}
