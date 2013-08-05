@@ -1,6 +1,6 @@
---- Makefile.orig	2008-01-19 17:37:58.000000000 -0200
-+++ Makefile	2008-08-10 16:00:41.000000000 -0300
-@@ -9,7 +9,8 @@
+--- Makefile.orig	2012-02-13 22:41:22.000000000 +0200
++++ Makefile	2013-08-05 15:56:32.000000000 +0300
+@@ -9,10 +9,11 @@
  
  CC= gcc
  CFLAGS= -O2 -Wall $(MYCFLAGS)
@@ -9,7 +9,11 @@
 +AR= ar
  RANLIB= ranlib
  RM= rm -f
- LIBS= -lm $(MYLIBS)
+-LIBS= -lm $(MYLIBS)
++LIBS= -lm -pthread $(MYLIBS)
+ 
+ MYCFLAGS=
+ MYLDFLAGS=
 @@ -31,12 +32,13 @@
  
  LUA_T=	lua
