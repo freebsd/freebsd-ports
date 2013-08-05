@@ -1,7 +1,5 @@
-Tcpview is Motif-based TCP/IP protocol analyzer.
-
-It is a graphic version conterpart of the tcpdump.
-It enables the user to analysis the tcp/ip packet with confortable 
-graphic interface.
+Tcpview is Motif-based TCP/IP protocol analyzer.  It is a graphic version
+counterpart of tcpdump(1).  It allows users to analyze TCP/IP packets with
+comfortable graphic interface.
 
 WWW: ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/tcpview-1.0.tar.readme
