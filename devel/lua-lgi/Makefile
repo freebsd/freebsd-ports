@@ -5,7 +5,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	andreevmaxim@gmail.com
+MAINTAINER=	lua@FreeBSD.org
 COMMENT=	Lua bindings to libraries using GObject-Introspection
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
