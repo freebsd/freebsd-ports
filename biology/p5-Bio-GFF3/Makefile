@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 
 USES=		perl5
