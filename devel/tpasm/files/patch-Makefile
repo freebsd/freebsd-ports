@@ -1,0 +1,29 @@
+--- Makefile.orig	Thu Feb 13 19:58:06 2003
++++ Makefile	Thu Feb 13 19:58:18 2003
+@@ -17,8 +17,8 @@
+ 
+ # new gnu compilers have a really annoying default behavior of wrapping
+ # error message lines. The default should be NO-WRAPPING.
+-OPTIONS=-O2 -Wall -x c++ -fmessage-length=0 -fno-exceptions
+-CFLAGS=$(INCLUDES) $(OPTIONS)
++OPTIONS=-fmessage-length=0 -fno-exceptions
++CXXFLAGS+=$(INCLUDES) $(OPTIONS)
+ 
+ OBJECTS = \
+ 	globals.o \
+@@ -44,7 +44,7 @@
+ all : tpasm
+ 
+ tpasm : $(OBJECTS)
+-	$(CC) -O $(OBJECTS) -lstdc++ -o tpasm
++	$(CXX) $(OBJECTS) -o $@
+ 
+ clean :
+ 	rm -f *.o
+@@ -58,5 +58,5 @@
+ # suffix rules (this makes sure that the ".o" files
+ # end up in their respective directories on all systems)
+ .c.o:
+-	${CC} ${CFLAGS} ${CPPFLAGS} -o $@ -c $<
++	${CXX} ${CXXFLAGS} ${CPPFLAGS} -o $@ -c $<
+ 
