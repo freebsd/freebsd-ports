@@ -42,7 +42,8 @@ TEST_DEPENDS=	\
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	dancer2.1
 MAN3=	Dancer2.3 \
