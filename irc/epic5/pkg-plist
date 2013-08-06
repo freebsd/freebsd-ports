@@ -10,6 +10,7 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/2.8script
 %%DATADIR%%/script/activity
 %%DATADIR%%/script/addset
+%%DATADIR%%/script/alloc_dump_summary.sh
 %%DATADIR%%/script/altchan
 %%DATADIR%%/script/ambig
 %%DATADIR%%/script/autoget
