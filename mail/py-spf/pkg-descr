@@ -3,17 +3,6 @@ was the first SPF implementation to fully conform to RFC 4408. This
 release has also added IPv6 support. pyspf is the library behind 
 several of the open SPF project's SPF record testing tools.
 
-License: Python Software Foundation License
-
-Author:
-Terence Way terry@wayforward.net
-http://www.wayforward.net/spf/
-
-Maintainers:
-Stuart Gathman stuart@bmsi.com
-Scott Kitterman scott@kitterman.com
-http://pypi.python.org/pypi/pyspf
-
 Currently part of the pymilter project: http://pymilter.sourceforge.net
 
 WWW: http://pypi.python.org/pypi/pyspf
