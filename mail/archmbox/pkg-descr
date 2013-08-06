@@ -1,20 +1,23 @@
-Archmbox is a simple email archiver written in perl: 
-- parses one or more mailboxes
-- selects some or all messages 
-- performs specific actions on the selected messages.
-At this time archmbox supports mbox and mbx mailbox formats.
- 
-Three different modes are available: 
-- list mode, which is useful to list all selected messages  
-- kill mode, if messages should be deleted from the mailbox(es) 
-- archive mode, to archive the selected messages in a different mailbox 
+Archmbox is a simple email archiver written in Perl; it parses one or more
+mailboxes, selects some or all messages and then performs specific actions
+on the selected messages.  Archmbox supports mbox and mbx mailbox formats.
 
-Messages selection is based upon:
-- date criteria
-- absolute date 
-- days offset 
+Four different modes are available:
 
-It is also possible to refine the selection using regex on the header fields.
-The archive mailbox can be saved in gz or bz2 compressed format as well.
+  - List mode, which is useful to list all selected messages before
+    archmbox performs the real operations (archiving or deleting)
+  - Kill mode, if messages should be deleted from the mailbox(es) rather
+    than archived
+  - Archive mode, to archive the selected messages in a different mailbox
+  - Copy mode, to copy the selected messages from the source mailbox
+
+Messages selection is based upon a date criteria; an absolute date or days
+offset can be specified.  It is also possible to refine the selection using
+regular expressions on the header fields of the message.
+
+All archived messages are stored in a new mailbox with the same name of the
+original one plus .archived as extension (this is the default, but can be
+changed); the archive mailbox can be saved in gz or bz2 compressed format
+as well.
 
 WWW: http://adc-archmbox.sourceforge.net/
