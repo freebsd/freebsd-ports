@@ -2,4 +2,4 @@ VDPAU is the Video Decode and Presentation API for UNIX. It provides
 an interface to video decode acceleration and presentation hardware
 present in modern GPUs.
 
-WWW:	http://freedesktop.org/wiki/Software/VDPAU
+WWW: http://freedesktop.org/wiki/Software/VDPAU
