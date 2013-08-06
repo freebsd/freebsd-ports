@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openobex
-PORTVERSION=	1.7
-PORTREVISION=	3
+PORTVERSION=	1.7.1
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.hendrik-sattler.de/downloads/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
@@ -12,7 +11,6 @@ COMMENT=	Open source implementation of the OBEX protocol
 
 USE_LDCONFIG=	yes
 USES=		pathfix cmake
-MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	CMakeLists.txt
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:STRING="${PREFIX}/libdata/pkgconfig"
 
