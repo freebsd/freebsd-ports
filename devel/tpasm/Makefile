@@ -13,33 +13,26 @@ COMMENT=	Cross-assembler for variety of microprocessors and controllers
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=		gmake
 
-PORTDOCS=	*
+PORTDOCS=	CONVERSION_C166.TXT MANUAL.TXT README*.TXT
 PORTEXAMPLES=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-O2|| ; \
-		 s|CFLAGS=|CFLAGS+=| ; \
-		 s|$$(CC) -O|$$(CXX) $$(LDFLAGS)| ; \
-		 s|-lstdc++||' ${WRKSRC}/Makefile
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/libdata/${PORTNAME}
-	(cd ${WRKSRC}/include \
-		&& ${INSTALL_DATA} * ${PREFIX}/libdata/${PORTNAME})
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/libdata/${PORTNAME}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in CONVERSION_C166.TXT MANUAL.TXT README*.TXT
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/samples && ${INSTALL_DATA} * ${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
