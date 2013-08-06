@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 
-MAINTAINER=	andreevmaxim@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
