@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-PORTVERSION=	4.50
+PORTVERSION=	4.52.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -12,17 +12,17 @@ COMMENT=	A GNU Linear Programming Kit
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 OPTIONS_DEFINE=	IODBC MYSQL
 IODBC_DESC=	MathProg iodbc support
 MYSQL_DESC=	MathProg mysql support
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-D_LSEEK_DECLARED -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gmp
 CONFLICTS=	goblin-[0-9]*
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--disable-dl
 
 .if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=		libiodbc.so:${PORTSDIR}/databases/libiodbc
 .else
 CONFIGURE_ARGS+=	--disable-odbc
 .endif
@@ -67,6 +67,6 @@ post-install:
 .endif
 
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>

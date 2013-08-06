@@ -4,4 +4,4 @@ include/glplpx.h
 lib/libglpk.a
 lib/libglpk.la
 lib/libglpk.so
-lib/libglpk.so.35
+lib/libglpk.so.36
