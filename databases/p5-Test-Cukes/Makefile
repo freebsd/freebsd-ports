@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	p5-Test-Cukes
-# Date created:				26 Aug, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Cukes
 PORTVERSION=	0.10
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.10:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Try-Tiny>=0.07:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Cukes.3
 

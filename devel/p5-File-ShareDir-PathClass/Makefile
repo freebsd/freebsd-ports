@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-ShareDir-PathClass
-# Date created:				Aug 10, 2011
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-ShareDir-PathClass
 PORTVERSION=	1.112440
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		File::ShareDir::PathClass.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-MooseX-MultiMethods
-# Date created:				Dec 28, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-MultiMethods
 PORTVERSION=	0.10
@@ -24,7 +20,8 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::MultiMethods.3 \
 		MooseX::MultiMethods::Meta::Method.3

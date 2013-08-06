@@ -14,7 +14,8 @@ COMMENT=	C implementation of the ISAAC PRNG Algorithm
 BUILD_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Math::Random::ISAAC::XS.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Jifty-Plugin-OpenID
-# Date created:		14 June, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Jifty-Plugin-OpenID
 PORTVERSION=	1.02
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Jifty>=0:${PORTSDIR}/www/p5-Jifty \
 		p5-LWPx-ParanoidAgent>=0:${PORTSDIR}/www/p5-LWPx-ParanoidAgent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Jifty::Plugin::OpenID::View.3 \
 		Jifty::Plugin::OpenID.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Pod-HtmlEasy
-# Date created:	   			21 Jan, 201
-# Whom:		  			Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-HtmlEasy
 PORTVERSION=	1.0108
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-version>=0.72:${PORTSDIR}/devel/p5-version \
 		p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		pod2indexed_html.pl.1
 MAN3=		Pod::HtmlEasy.3

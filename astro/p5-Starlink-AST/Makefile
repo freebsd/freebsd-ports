@@ -14,7 +14,8 @@ COMMENT=	Interface to the Starlink AST library
 BUILD_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 RUN_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Starlink::AST.3 \
 		Starlink::AST::PGPLOT.3 \
