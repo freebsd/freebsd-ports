@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://delta.affinix.com/download/
 
-MAINTAINER=	andreevmaxim@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to create configure script for qmake-based project
 
 USE_BZIP2=	yes
