@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
@@ -28,7 +28,6 @@ CONFLICTS=	dovecot-1.[0-9]*
 
 USES=		iconv
 USE_RC_SUBR=	dovecot
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -94,7 +93,9 @@ CONFIGURE_ARGS+=--with-ioloop=kqueue
 #
 .if ${PORT_OPTIONS:MSSL}
 PROTOCOLS+=	imaps pop3s
+PLIST_SUB+=	SSL=""
 .else
+PLIST_SUB+=	SSL="@comment "
 CONFIGURE_ARGS+=--without-ssl
 .endif
 
@@ -203,8 +204,11 @@ MAN1=		deliver.1 \
 		doveadm-config.1 \
 		doveadm-director.1 \
 		doveadm-dump.1 \
+		doveadm-deduplicate.1 \
+		doveadm-exec.1 \
 		doveadm-expunge.1 \
 		doveadm-fetch.1 \
+		doveadm-flags.1 \
 		doveadm-force-resync.1 \
 		doveadm-help.1 \
 		doveadm-import.1 \

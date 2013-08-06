@@ -76,6 +76,8 @@ include/dovecot/doveadm-settings.h
 include/dovecot/doveadm-util.h
 include/dovecot/doveadm.h
 include/dovecot/dovecot-version.h
+include/dovecot/dsasl-client-private.h
+include/dovecot/dsasl-client.h
 include/dovecot/duplicate.h
 include/dovecot/eacces-error.h
 include/dovecot/env-util.h
@@ -111,7 +113,10 @@ include/dovecot/http-client-private.h
 include/dovecot/http-client.h
 include/dovecot/http-date.h
 include/dovecot/http-header-parser.h
+include/dovecot/http-message-parser.h
 include/dovecot/http-parser.h
+include/dovecot/http-request-parser.h
+include/dovecot/http-response.h
 include/dovecot/http-response-parser.h
 include/dovecot/http-transfer.h
 include/dovecot/http-url.h
@@ -371,8 +376,6 @@ include/dovecot/rfc822-parser.h
 include/dovecot/safe-memset.h
 include/dovecot/safe-mkdir.h
 include/dovecot/safe-mkstemp.h
-include/dovecot/sasl-client-private.h
-include/dovecot/sasl-client.h
 include/dovecot/sasl-server.h
 include/dovecot/sdbox-file.h
 include/dovecot/sdbox-storage.h
@@ -529,9 +532,9 @@ lib/dovecot/libdovecot.a
 lib/dovecot/libdovecot.la
 lib/dovecot/libdovecot.so
 lib/dovecot/libdovecot.so.0
-lib/dovecot/libssl_iostream_openssl.a
-lib/dovecot/libssl_iostream_openssl.la
-lib/dovecot/libssl_iostream_openssl.so
+%%SSL%%lib/dovecot/libssl_iostream_openssl.a
+%%SSL%%lib/dovecot/libssl_iostream_openssl.la
+%%SSL%%lib/dovecot/libssl_iostream_openssl.so
 libexec/dovecot/aggregator
 libexec/dovecot/anvil
 libexec/dovecot/auth
