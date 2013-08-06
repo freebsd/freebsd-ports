@@ -4,7 +4,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.34.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	glib20 ltverhack referencehack introspection:build
+USE_GNOME=	glib20 gnomehier ltverhack referencehack introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
