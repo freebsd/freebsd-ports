@@ -3,6 +3,7 @@
 
 PORTNAME=	icinga
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -15,7 +16,6 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 USES=		iconv
-USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	icinga
 
@@ -90,7 +90,7 @@ APACHE_DESC=		Depend on Apache and install webconfig
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
 PLIST_SUB+=	EMBEDDED_PERL=""
@@ -156,7 +156,6 @@ post-install:
 .endif
 	@${CHMOD} 775 ${ICINGADIR} ${ICINGALOGDIR}/archives \
 		${ICINGADIR}/checkresults ${ICINGADIR}/rw
-	@${CHMOD} g+s ${ICINGADIR}/rw
 	@${CHOWN} ${ICINGAUSER}:${ICINGAGROUP} ${ICINGADIR} \
 		${ICINGALOGDIR}/archives ${ICINGADIR}/checkresults
 	@${CHOWN} ${ICINGAUSER}:${WWWGRP} ${ICINGADIR}/rw

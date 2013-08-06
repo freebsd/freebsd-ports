@@ -1,3 +1,10 @@
+@exec mkdir -p %D/%%ICINGAWWWDIR%%/ssi
+@exec mkdir -p %%ICINGALOGDIR%%/archives
+@exec mkdir -p %%ICINGADIR%%/checkresults
+@exec mkdir -p %%ICINGADIR%%/rw
+@exec chmod 775 %%ICINGADIR%% %%ICINGALOGDIR%%/archives %%ICINGADIR%%/checkresults %%ICINGADIR%%/rw
+@exec chown %%ICINGAUSER%%:%%ICINGAGROUP%% %%ICINGADIR%% %%ICINGALOGDIR%%/archives %%ICINGADIR%%/checkresults
+@exec chown %%ICINGAUSER%%:%%WWWGRP%% %%ICINGADIR%%/rw
 bin/icinga
 bin/icingastats
 %%IDOUTILS%%bin/ido2db
@@ -877,3 +884,11 @@ libexec/icinga/eventhandlers/submit_check_result
 @dirrm etc/icinga/modules
 @dirrm etc/icinga/conf.d
 @dirrm etc/icinga
+@dirrmtry %%ICINGALOGDIR%%/archives
+@dirrmtry %%ICINGALOGDIR%%
+@dirrmtry %%ICINGADIR%%/checkresults
+@dirrmtry %%ICINGADIR%%/rw
+@dirrmtry %%ICINGADIR%%
+@unexec if [ -d %%ICINGADIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ICINGADIR%%`` to remove any files left behind."; fi
+@unexec if [ -d %%ICINGALOGDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ICINGADIR%%`` to remove any files left behind."; fi
+@unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
