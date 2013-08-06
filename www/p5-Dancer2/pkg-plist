@@ -1,0 +1,80 @@
+bin/dancer2
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2/.packlist
+%%SITE_PERL%%/Dancer2.pm
+%%SITE_PERL%%/Dancer2/Config.pod
+%%SITE_PERL%%/Dancer2/Cookbook.pod
+%%SITE_PERL%%/Dancer2/Core.pm
+%%SITE_PERL%%/Dancer2/Core/App.pm
+%%SITE_PERL%%/Dancer2/Core/Context.pm
+%%SITE_PERL%%/Dancer2/Core/Cookie.pm
+%%SITE_PERL%%/Dancer2/Core/DSL.pm
+%%SITE_PERL%%/Dancer2/Core/Dispatcher.pm
+%%SITE_PERL%%/Dancer2/Core/Error.pm
+%%SITE_PERL%%/Dancer2/Core/Factory.pm
+%%SITE_PERL%%/Dancer2/Core/HTTP.pm
+%%SITE_PERL%%/Dancer2/Core/Hook.pm
+%%SITE_PERL%%/Dancer2/Core/MIME.pm
+%%SITE_PERL%%/Dancer2/Core/Request.pm
+%%SITE_PERL%%/Dancer2/Core/Request/Upload.pm
+%%SITE_PERL%%/Dancer2/Core/Response.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Config.pm
+%%SITE_PERL%%/Dancer2/Core/Role/DSL.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Engine.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Handler.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Headers.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Hookable.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Logger.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Serializer.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Server.pm
+%%SITE_PERL%%/Dancer2/Core/Role/SessionFactory.pm
+%%SITE_PERL%%/Dancer2/Core/Role/SessionFactory/File.pm
+%%SITE_PERL%%/Dancer2/Core/Role/StandardResponses.pm
+%%SITE_PERL%%/Dancer2/Core/Role/Template.pm
+%%SITE_PERL%%/Dancer2/Core/Route.pm
+%%SITE_PERL%%/Dancer2/Core/Runner.pm
+%%SITE_PERL%%/Dancer2/Core/Server/PSGI.pm
+%%SITE_PERL%%/Dancer2/Core/Server/Standalone.pm
+%%SITE_PERL%%/Dancer2/Core/Session.pm
+%%SITE_PERL%%/Dancer2/Core/Time.pm
+%%SITE_PERL%%/Dancer2/Core/Types.pm
+%%SITE_PERL%%/Dancer2/FileUtils.pm
+%%SITE_PERL%%/Dancer2/Handler/AutoPage.pm
+%%SITE_PERL%%/Dancer2/Handler/File.pm
+%%SITE_PERL%%/Dancer2/Logger/Capture.pm
+%%SITE_PERL%%/Dancer2/Logger/Capture/Trap.pm
+%%SITE_PERL%%/Dancer2/Logger/Console.pm
+%%SITE_PERL%%/Dancer2/Logger/Diag.pm
+%%SITE_PERL%%/Dancer2/Logger/File.pm
+%%SITE_PERL%%/Dancer2/Logger/Note.pm
+%%SITE_PERL%%/Dancer2/Logger/Null.pm
+%%SITE_PERL%%/Dancer2/Manual.pod
+%%SITE_PERL%%/Dancer2/ModuleLoader.pm
+%%SITE_PERL%%/Dancer2/Plugin.pm
+%%SITE_PERL%%/Dancer2/Plugin/Ajax.pm
+%%SITE_PERL%%/Dancer2/Plugins.pod
+%%SITE_PERL%%/Dancer2/Serializer/Dumper.pm
+%%SITE_PERL%%/Dancer2/Serializer/JSON.pm
+%%SITE_PERL%%/Dancer2/Serializer/YAML.pm
+%%SITE_PERL%%/Dancer2/Session/Simple.pm
+%%SITE_PERL%%/Dancer2/Session/YAML.pm
+%%SITE_PERL%%/Dancer2/Template/Implementation/ForkedTiny.pm
+%%SITE_PERL%%/Dancer2/Template/Simple.pm
+%%SITE_PERL%%/Dancer2/Template/TemplateToolkit.pm
+%%SITE_PERL%%/Dancer2/Template/Tiny.pm
+%%SITE_PERL%%/Dancer2/Test.pm
+%%SITE_PERL%%/Dancer2/Tutorial.pod
+@dirrm %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory
+@dirrm %%SITE_PERL%%/Dancer2/Core/Role
+@dirrm %%SITE_PERL%%/Dancer2/Core/Request
+@dirrm %%SITE_PERL%%/Dancer2/Core/Server
+@dirrm %%SITE_PERL%%/Dancer2/Core
+@dirrm %%SITE_PERL%%/Dancer2/Handler
+@dirrm %%SITE_PERL%%/Dancer2/Logger/Capture
+@dirrm %%SITE_PERL%%/Dancer2/Logger
+@dirrm %%SITE_PERL%%/Dancer2/Plugin
+@dirrm %%SITE_PERL%%/Dancer2/Serializer
+@dirrm %%SITE_PERL%%/Dancer2/Session
+@dirrm %%SITE_PERL%%/Dancer2/Template/Implementation
+@dirrm %%SITE_PERL%%/Dancer2/Template
+@dirrm %%SITE_PERL%%/Dancer2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2
