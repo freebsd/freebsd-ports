@@ -24,13 +24,10 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/acme \
-		%%DATADIR%%/6502 \
 		%%DATADIR%%/6502/Help.txt \
 		%%DATADIR%%/6502/std.a \
-		%%DATADIR%%/65816 \
 		%%DATADIR%%/65816/Help.txt \
 		%%DATADIR%%/65816/std.a \
-		%%DATADIR%%/Own \
 		%%DATADIR%%/Own/Help.txt
 PLIST_DIRSTRY=	%%DATADIR%%/6502 \
 		%%DATADIR%%/65816 \
