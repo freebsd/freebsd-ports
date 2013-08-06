@@ -58,7 +58,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 #CONFLICTS=	p5-bioperl-1.[13579]*
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		bp_aacomp.pl.1 \
 		bp_biblio.pl.1 \

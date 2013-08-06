@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Find-Lib
-# Date created:				16 Nov, 2009
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Find-Lib
 PORTVERSION=	1.04
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Helper to smartly find libs to use in the filesystem tree
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Find::Lib.3
 

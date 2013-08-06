@@ -14,7 +14,8 @@ COMMENT=	Calculate geographic distances in geodetic WGS84 format
 
 RUN_DEPENDS=	p5-Math-Complex>1.0.3:${PORTSDIR}/math/p5-Math-Complex
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		GIS::Distance::Lite.3 \
 

@@ -25,6 +25,7 @@ MAN3=		Tree::Binary.3 Tree::Binary::Search.3 \
 		Tree::Binary::Visitor::PreOrderTraversal.3 \
 		Tree::Binary::VisitorFactory.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
