@@ -41,7 +41,7 @@ USE_PHP+=	pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite
+USE_PHP+=	sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
