@@ -17441,10 +17441,12 @@ executed in your Internet Explorer while displaying the email.</p>
     <references>
       <cvename>CVE-2011-4607</cvename>
       <mlist>http://lists.tartarus.org/pipermail/putty-announce/2011/000017.html</mlist>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/password-not-wiped.html</url>
     </references>
     <dates>
       <discovery>2011-12-10</discovery>
       <entry>2011-12-12</entry>
+      <modified>2013-08-07</modified>
     </dates>
   </vuln>
 
