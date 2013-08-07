@@ -1,0 +1,8 @@
+Plex Media Server is used to host the content and plugins that are then
+streamed to Plex Media Center and Plex mobile app clients, either on the
+same machine, the same local area network, or over the Internet. Content
+may be transcoded by the server before it's streamed in order to reduce
+bandwidth requirements, or for compatibility with the device being
+streamed to.
+
+WWW: http://plexapp.com
