@@ -1,0 +1,11 @@
+LuxRays is library dedicated to accelerate the ray intersection process by
+using GPUs.
+
+Uses a Data Parallel Model: it doesn't reduce the time spent to trace a single
+ray but it is able to trace many thousands of rays in parallel.
+
+Supports Hybrid CPU/GPU mode where only the ray intersection task is off load
+to the GPUs while everything else run on the CPU and can be written with usual
+tools and languages.
+
+WWW: http://www.luxrender.net/wiki/LuxRays

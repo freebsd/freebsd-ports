@@ -1,0 +1,8 @@
+--- samples/benchsimple/CMakeLists.txt.orig	2013-08-04 12:21:54.850147165 +0200
++++ samples/benchsimple/CMakeLists.txt	2013-08-04 12:22:17.696646898 +0200
+@@ -23,4 +23,4 @@
+ link_directories (${LuxRays_LIB_DIR})
+ 
+ add_executable(benchsimple benchsimple.cpp)
+-target_link_libraries(benchsimple luxrays)
++target_link_libraries(benchsimple luxrays pthread)

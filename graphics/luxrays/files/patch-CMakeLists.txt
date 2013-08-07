@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2013-08-04 12:25:45.415147716 +0200
++++ CMakeLists.txt	2013-08-04 12:26:52.319147148 +0200
+@@ -142,7 +142,7 @@
+ 		message(WARNING "SLG2 requires OpenCL support, not building")
+ 	endif(NOT LUXRAYS_DISABLE_OPENCL)
+ 
+-	add_subdirectory(samples/smallluxgpu3)
++	# add_subdirectory(samples/smallluxgpu3)
+ endif(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
+ 
+ 
