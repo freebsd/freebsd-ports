@@ -574,6 +574,7 @@
     SUBDIR += lprof-devel
     SUBDIR += lua-gd
     SUBDIR += luminance
+    SUBDIR += luxrays
     SUBDIR += luxrender
     SUBDIR += mahotas
     SUBDIR += makehuman
