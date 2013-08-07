@@ -14,17 +14,16 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		idn:${PORTSDIR}/dns/libidn \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		botan-1.10:${PORTSDIR}/security/botan110
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libbotan-1.10.so:${PORTSDIR}/security/botan110
 
 SUB_FILES=	pkg-message
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
-USES=		iconv pkgconfig gmake
+USES=		iconv pkgconfig gmake perl5
+USE_PERL5=	build
 USE_LUA=	5.1+
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -86,6 +85,7 @@ post-patch:
 		-e "s/\"idn/\"libidn/g" \
 		-e "s/\"pcre/\"libpcre/g" \
 		-e "s/\"botan/\"botan-1.10/g" \
+		-e "s/REBUILD_NLS=true/REBUILD_NLS=false/g" \
 		${WRKSRC}/configure
 
 post-install:
