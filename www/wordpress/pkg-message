@@ -1,0 +1,6 @@
+                  **** NOTE ****
+Before the first use of WordPress, copy wp-config-sample.php to wp-config.php
+in ${WWWDIR} and modify it to fit your MySQL.
+Maybe you need 'mysqladmin create wordpress' first.
+If you are upgrading from 1.x or 2.x to 3.x, please run
+http://your.site/wordpress/wp-admin/upgrade.php to upgrade to WordPress 3.x
