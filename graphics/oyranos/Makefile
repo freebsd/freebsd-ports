@@ -32,20 +32,20 @@ USE_GNOME=	libxml2
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_XORG=	xfixes xinerama xrandr xxf86vm
 CMAKE_ARGS+=	-DXDG_CONFIG_DIR=${PREFIX}/etc/xdg
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
 MAN1=		oyranos-config-fltk.1 oyranos-monitor-daemon.1 oyranos-monitor.1 \
 		oyranos-policy.1 oyranos-profile-graph.1 oyranos-profile-install.1 \
 		oyranos-profile.1 oyranos-profiles.1 oyranos-xforms-modules.1 qcmsevents.1
 MAN3=		oyranos-config.3 oyranos.3
 
-.if exists(/usr/bin/clang)
+.include <bsd.port.pre.mk>
+
+.if exists(/usr/bin/clang) && ${OSVERSION} > 901502
 CC=		/usr/bin/clang
-CPP=		/usr/bin/clang-cpp
 CXX=		/usr/bin/clang++
-CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .else
 USE_GCC=	4.6+
-CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
