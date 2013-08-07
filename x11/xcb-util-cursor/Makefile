@@ -17,9 +17,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:${PORTSDIR}/x11/xcb-util
 		${LOCALBASE}/libdata/pkgconfig/xcb-image.pc:${PORTSDIR}/x11/xcb-util-image
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xcb xorg-macros
+USES=		gmake
 
 GNU_CONFIGURE=	yes
 
