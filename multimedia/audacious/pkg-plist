@@ -64,11 +64,13 @@ share/applications/audacious.desktop
 share/icons/hicolor/48x48/apps/audacious.png
 share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/el/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/es/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/es_AR/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/es_MX/LC_MESSAGES/audacious.mo
@@ -78,7 +80,6 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious.mo
-%%NLS%%share/locale/he/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
@@ -87,15 +88,19 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/ky/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/si/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/audacious.mo
@@ -111,7 +116,6 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%@dirrmtry share/locale/es_AR
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
