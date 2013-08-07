@@ -1,5 +1,6 @@
 bin/scantailor
 bin/scantailor-cli
+share/pixmaps/scantailor.png
 %%DATADIR%%/translations/scantailor_bg.qm
 %%DATADIR%%/translations/scantailor_cs.qm
 %%DATADIR%%/translations/scantailor_de.qm
@@ -8,6 +9,7 @@ bin/scantailor-cli
 %%DATADIR%%/translations/scantailor_it.qm
 %%DATADIR%%/translations/scantailor_ja.qm
 %%DATADIR%%/translations/scantailor_pl.qm
+%%DATADIR%%/translations/scantailor_pt_BR.qm
 %%DATADIR%%/translations/scantailor_ru.qm
 %%DATADIR%%/translations/scantailor_sk.qm
 %%DATADIR%%/translations/scantailor_uk.qm
