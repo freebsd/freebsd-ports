@@ -86,6 +86,11 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2013-4207</cvename>
       <cvename>CVE-2013-4208</cvename>
       <cvename>CVE-2013-4852</cvename>
+      <mlist msgid="E1V6lUs-0007kP-40@atreus.tartarus.org">http://lists.tartarus.org/pipermail/putty-announce/2013/000018.html</mlist>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-modmul.html</url>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-bignum-division-by-zero.html</url>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped.html</url>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-signature-stringlen.html</url>
     </references>
     <dates>
       <discovery>2013-07-08</discovery>
