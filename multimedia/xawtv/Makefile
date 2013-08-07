@@ -90,7 +90,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
-		s|-lquicktime|-L${LOCALBASE}/lib &|g' \
+		s|-lquicktime|-L${LOCALBASE}/lib &|g; \
+		s|LIBV4L="yes"|LIBV4L="no"|g' \
 		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
