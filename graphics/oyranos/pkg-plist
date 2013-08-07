@@ -532,12 +532,15 @@ share/pixmaps/qcmsevents.svg
 %%DOCSDIR%%/html/unionoyValue__u__coll__graph.png
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
-@dirrmtry share/color/settings
 @dirrmtry share/applications
+@dirrmtry share/color/settings
+@dirrmtry share/color
 @dirrmtry lib/pkgconfig
 @dirrm lib/oyranos/cmake
 @dirrm lib/oyranos
 @dirrmtry lib/colour/modules
 @dirrmtry lib/colour
+@comment @dirrmtry etc/xdg/autostart
+@comment @dirrmtry etc/xdg
 @dirrm include/oyranos/alpha
 @dirrm include/oyranos
