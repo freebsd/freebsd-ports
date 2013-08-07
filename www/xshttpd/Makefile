@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xshttpd
-# Date created:				29 June 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	xshttpd
 DISTVERSION=	3.6g01
@@ -16,28 +12,31 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Webserver with CGI as own user and SSL support
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
-CONFLICTS_INSTALL+=	xshttpd-devel-[0-9]* publicfile-[0-9]*
+CONFLICTS_INSTALL=	xshttpd-devel-[0-9]* publicfile-[0-9]*
+
+USE_BZIP2=	yes
+USE_RC_SUBR=	xshttpd
+GNU_CONFIGURE=	yes
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xschpass.1 xsindex.1 xspasswd.1
 MAN5=		httpd.conf.5 xsauth.5 xsconf.5 xsscripts.5 xsredir.5
 MAN7=		httpd_cgi.7 httpd_ssi.7
-USE_BZIP2=	yes
-USE_RC_SUBR=	xshttpd
-
-GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	SSL PCRE LDAP CURL M4_CONFIG PERSISTENT_PERL
 OPTIONS_DEFAULT=SSL PCRE
 M4_CONFIG_DESC=	Enable m4 configuration preprocessor
-PERSISTENT_PERL_DESC=	Enable persistent perl interpreter
+PERSISTENT_PERL_DESC=	Enable persistent Perl interpreter
 
-PORTDOCS=	README COPYING ChangeLog
+PORTDOCS=	README ChangeLog
 
 .include <bsd.port.options.mk>
+
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
@@ -101,11 +100,9 @@ post-patch:
 		${WRKSRC}/config/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-. for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
