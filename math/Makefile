@@ -141,6 +141,7 @@
     SUBDIR += ggobi
     SUBDIR += giacxcas
     SUBDIR += givaro
+    SUBDIR += gkmap
     SUBDIR += glgraph
     SUBDIR += glm
     SUBDIR += glpk
