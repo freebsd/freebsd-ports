@@ -130,12 +130,13 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/es_MX/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/et/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/audacious-plugins.mo
-%%NLS%%share/locale/id_ID/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/it/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ky/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious-plugins.mo
@@ -144,8 +145,10 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/si/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
@@ -162,11 +165,11 @@ lib/audacious/Transport/unix-io.so
 lib/audacious/Input/tonegen.so
 lib/audacious/Input/vtx.so
 %%FLACPLUGIN%%lib/audacious/Input/flacng.so
+%%FFAUDIOPLUGIN%%lib/audacious/Input/ffaudio.so
 lib/audacious/Input/xsf.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 lib/audacious/Input/metronom.so
 %%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
-%%SIDPLUGIN%%lib/audacious/Input/sid.so
 lib/audacious/Input/console.so
 lib/audacious/Input/psf2.so
 %%MP3PLUGIN%%lib/audacious/Input/madplug.so
@@ -175,7 +178,7 @@ lib/audacious/Input/psf2.so
 lib/audacious/Effect/stereo.so
 lib/audacious/Effect/crystalizer.so
 %%RESAMPLEPLUGIN%%lib/audacious/Effect/resample.so
-%%RESAMPLEPLUGIN%%lib/audacious/Effect/speed-pitch.so
+%%SPEEDPITCHPLUGIN%%lib/audacious/Effect/speed-pitch.so
 lib/audacious/Effect/crossfade.so
 lib/audacious/Effect/compressor.so
 lib/audacious/Effect/ladspa.so
@@ -185,8 +188,8 @@ lib/audacious/Effect/voice_removal.so
 %%BS2BPLUGIN%%lib/audacious/Effect/bs2b.so
 lib/audacious/Visualization/blur_scope.so
 lib/audacious/Visualization/cairo-spectrum.so
-%%MTPPLUGIN%%lib/audacious/General/mtp_up.so
 %%DBUS%%lib/audacious/General/gnomeshortcuts.so
+%%GLSPECTRUM%%lib/audacious/Visualization/gl-spectrum.so
 lib/audacious/General/lyricwiki.so
 %%SCROBBLERPLUGIN%%lib/audacious/General/scrobbler.so
 lib/audacious/General/alarm.so
@@ -204,6 +207,7 @@ lib/audacious/General/song_change.so
 %%ALSAPLUGIN%%lib/audacious/Output/alsa.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
+%%PULSE%%lib/audacious/Output/pulse_audio.so
 %%SDL%%lib/audacious/Output/sdlout.so
 lib/audacious/Container/xspf.so
 lib/audacious/Container/audpl.so
@@ -233,9 +237,10 @@ lib/audacious/Container/pls.so
 %%NLS%%@dirrmtry share/locale/id_ID
 %%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ky
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/sr_RS/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr_RS
 %%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_AR
-@dirrm %%DOCSDIR%%
 @dirrmtry share/audacious

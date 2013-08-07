@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.3.4
-PORTREVISION=	3
+PORTVERSION=	3.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -18,7 +17,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--disable-pulse --disable-mpris2
+CONFIGURE_ARGS=	--disable-mpris2
 WANT_GNOME=	yes
 WANT_EFL=	yes
 WANT_SDL=	yes
@@ -26,11 +25,11 @@ WANT_SDL=	yes
 PORTDOCS=	AUTHORS
 
 OPTIONS_DEFINE=	DBUS OSS4 SDLOUT ALSA CUE MP3 STATUSICON AOSD AOSDXCOMP \
-				ADPLUG VORBIS FLAC WAVPACK AAC SNDFILE MODPLUG JACK SID \
-				CDAUDIO SCROBBLER MMS GIO MTP NLS RESAMPLE AMIDI \
-				NOTIFY BS2B FFAUDIO PULSE NEON
-OPTIONS_DEFAULT=	DBUS CUE MP3 STATUSICON AOSD AOSDXCOMP AAC CDAUDIO \
-					SCROBBLER NEON NLS OSS4
+		ADPLUG VORBIS FLAC WAVPACK AAC SNDFILE MODPLUG JACK \
+		CDAUDIO SCROBBLER MMS GIO NLS RESAMPLE AMIDI GLSPECTRUM \
+		NOTIFY BS2B FFAUDIO PULSE NEON SPEEDPITCH LIRC MP3FILEWRITER
+OPTIONS_DEFAULT=DBUS CUE MP3 STATUSICON AOSD AOSDXCOMP AAC CDAUDIO \
+		SCROBBLER NEON NLS OSS4 FFAUDIO
 
 ADPLUG_DESC=	ADPLUG decoder
 AMIDI_DESC=	Amidi decoder
@@ -39,15 +38,18 @@ AOSDXCOMP_DESC=	Audacious OSD X Composite
 BS2B_DESC=	BS2B effect
 CDAUDIO_DESC=	CD audio input
 FFAUDIO_DESC=	FFAudio decoder
+GLSPECTRUM_DESC=OpenGL Spectrum Analyzer
 GIO_DESC=	GIO support
 OSS4_DESC=	Open Sound System 4
 PULSE_DESC=	PulseAudio support
 RESAMPLE_DESC=	Resample effect
 SCROBBLER_DESC=	Scrobbler decoder
 SDLOUT_DESC=	SDL Output
-SID_DESC=	Commodore64
-STATUSICON_DESC=	X11 Status icon
+STATUSICON_DESC=X11 Status icon
 NEON_DESC=	Neon plugin
+SPEEDPITCH_DESC=Speed and Pitch plugin
+LIRC_DESC=	LIRC plugin
+MP3FILEWRITER=	Filewriter plugin for MP3
 
 .include <bsd.port.options.mk>
 
@@ -63,10 +65,19 @@ CONFIGURE_ARGS+=--disable-sdlout
 .if ${PORT_OPTIONS:MNOTIFY} || exists(${LOCALBASE}/lib/libnotify.so.1)
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
-PLIST_SUB+=		NOTIFY=""
+PLIST_SUB+=	NOTIFY=""
 .else
 PLIST_SUB+=	NOTIFY="@comment "
 CONFIGURE_ARGS+=--disable-notify
+.endif
+
+.if ${PORT_OPTIONS:MGLSPECTRUM}
+USE_GL=		gl
+CONFIGURE_ARGS+=--enable-glspectrum
+PLIST_SUB+=	GLSPECTRUM=""
+.else
+CONFIGURE_ARGS+=--disable-glspectrum
+PLIST_SUB+=	GLSPECTRUM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
@@ -89,10 +100,16 @@ PLIST_SUB+=	CUEPLUGIN="@comment "
 
 .if ${PORT_OPTIONS:MMP3}
 LIB_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
-CONFIGURE_ARGS+=--enable-mp3
+CONFIGURE_ARGS+=--enable-mp3 --enable-filewriter_mp3
 PLIST_SUB+=	MP3PLUGIN=""
+.if ${PORT_OPTIONS:MMP3FILEWRITER}
+LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+CONFIGURE_ARGS+=--enable-filewriter_mp3
 .else
-CONFIGURE_ARGS+=--disable-mp3
+CONFIGURE_ARGS+=--disable-filewriter_mp3
+.endif
+.else
+CONFIGURE_ARGS+=--disable-mp3 --disable-filewriter_mp3
 PLIST_SUB+=	MP3PLUGIN="@comment "
 .endif
 
@@ -151,7 +168,7 @@ PLIST_SUB+=	FLACPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFAUDIO}
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg1
+LIB_DEPENDS+=	avcodec-devel:${PORTSDIR}/multimedia/ffmpeg-devel
 CONFIGURE_ARGS+=--enable-ffaudio
 PLIST_SUB+=	FFAUDIOPLUGIN=""
 .else
@@ -208,10 +225,10 @@ PLIST_SUB+=	JACKPLUGIN="@comment "
 .if ${PORT_OPTIONS:MSCROBBLER}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	SCROBBLERPLUGIN=""
-CONFIGURE_ARGS+=--enable-scrobbler
+CONFIGURE_ARGS+=--enable-scrobbler2
 .else
 PLIST_SUB+=	SCROBBLERPLUGIN="@comment "
-CONFIGURE_ARGS+=--disable-scrobbler
+CONFIGURE_ARGS+=--disable-scrobbler2
 .endif
 
 .if ${PORT_OPTIONS:MOSS4}
@@ -259,22 +276,22 @@ CONFIGURE_ARGS+=--disable-mms
 PLIST_SUB+=	MMSPLUGIN="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMTP}
-LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
-CONFIGURE_ARGS+=--enable-mtp_up
-PLIST_SUB+=	MTPPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-mtp_up
-PLIST_SUB+=	MTPPLUGIN="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MRESAMPLE}
 LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-resample
-PLIST_SUB+=		RESAMPLEPLUGIN=""
+PLIST_SUB+=	RESAMPLEPLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-resample
-PLIST_SUB+=		RESAMPLEPLUGIN="@comment "
+PLIST_SUB+=	RESAMPLEPLUGIN="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSPEEDPITCH}
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=--enable-speedpitch
+PLIST_SUB+=	SPEEDPITCHPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-speedpitch
+PLIST_SUB+=	SPEEDPITCHPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
@@ -341,11 +358,28 @@ CONFIGURE_ARGS+=--disable-pulse
 PLIST_SUB+=	PULSE="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MLIRC)
+LIB_DEPENDS+=	lirc_client:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=--enable-lirc
+PLIST_SUB+=	LIRC=""
+.else
+CONFIGURE_ARGS+=--disable-lirc
+PLIST_SUB+=	LIRC="@comment "
+.endif
+
 pre-everything::
 .if ${PORT_OPTIONS:MAUDIOCD} && !exists(${LOCALBASE}/lib/libcdio_cdda.so)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Make sure you select the PARANOIA option when installing libcdio!"
 	@${ECHO_CMD} ""
+.endif
+
+post-patch:
+.if ${PORT_OPTIONS:MFFAUDIO}
+	@${REINPLACE_CMD} -e 's|libavcodec |libavcodec-devel | ; \
+		s|libavformat |libavformat-devel | ; \
+		s|libavutil |libavutil-devel |' \
+	${WRKSRC}/configure ${WRKSRC}/configure.ac
 .endif
 
 pre-configure:
