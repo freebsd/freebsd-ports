@@ -3575,6 +3575,7 @@
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jcc
+    SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-jsmin
     SUBDIR += py-json-py
