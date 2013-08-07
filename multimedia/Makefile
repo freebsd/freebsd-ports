@@ -268,6 +268,7 @@
     SUBDIR += photofilmstrip
     SUBDIR += pitivi
     SUBDIR += playd
+    SUBDIR += plexmediaserver
     SUBDIR += podcastdl
     SUBDIR += podcatcher
     SUBDIR += poe
