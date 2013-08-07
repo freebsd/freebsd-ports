@@ -358,7 +358,7 @@ CONFIGURE_ARGS+=--disable-pulse
 PLIST_SUB+=	PULSE="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 PLIST_SUB+=	LIRC=""
