@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bin_utils
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
