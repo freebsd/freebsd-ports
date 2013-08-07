@@ -4835,3 +4835,4 @@ mail/qmrtg||2013-08-02|Has expired: lacks an upstream source
 www/mediawiki118||2013-08-02|Has expired: Unmaintained upstream
 sysutils/googlog||2013-08-02|Has expired: no upstream project
 www/mod_macro24||2013-08-03|Has expired: part of Apache 2.4.6 and newer
+games/kaid||2013-08-07|Has expired: Does not fetch
