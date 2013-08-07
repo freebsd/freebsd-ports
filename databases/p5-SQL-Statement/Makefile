@@ -1,12 +1,8 @@
-# New ports collection makefile for:    p5-SQL-Statement
-# Date created:				August 8th, 1999
-# Whom:	      				wolman@cs.washington.edu
-#
+# Created by: wolman@cs.washington.edu
 # $FreeBSD$
-#
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.402
+PORTVERSION=	1.405
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
