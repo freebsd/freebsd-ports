@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
@@ -11,7 +11,6 @@ MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/license.txt
 
 CONFLICTS_INSTALL=	de-wordpress-3.* ja-wordpress-3.* ru-wordpress-3.*
 
