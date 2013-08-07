@@ -1,8 +1,7 @@
-# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
 
 PORTNAME=	Email-MIME-Encodings
-PORTVERSION=	1.313
+PORTVERSION=	1.314
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
