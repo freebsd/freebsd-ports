@@ -1,0 +1,11 @@
+The xcb-util module provides a number of libraries which sit on top of
+libxcb, the core X protocol library, and some of the extension libraries.
+These libraries provide convenience functions and interfaces which make the
+raw X protocol more usable.  Some of the libraries also provide client-side
+code which is not strictly part of the X protocol but which have traditionally
+been provided by Xlib.
+
+The util-cursor module implements the XCB cursor library, which is th XCB
+replacement for libXcursor.
+
+WWW:	http://xcb.freedesktop.org/

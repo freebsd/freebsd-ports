@@ -1,0 +1,7 @@
+include/xcb/xcb_cursor.h
+lib/libxcb-cursor.a
+lib/libxcb-cursor.la
+lib/libxcb-cursor.so
+lib/libxcb-cursor.so.0
+libdata/pkgconfig/xcb-cursor.pc
+@dirrmtry include/xcb
