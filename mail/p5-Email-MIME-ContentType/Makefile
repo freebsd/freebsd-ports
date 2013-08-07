@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.([0-9])$|\1|}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Parse a MIME Content-Type Header
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::MIME::ContentType.3
 

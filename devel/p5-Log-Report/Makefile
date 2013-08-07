@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Report a problem, pluggable handlers and language support
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Log::Report.3 \
 	Log::Report::Die.3 \

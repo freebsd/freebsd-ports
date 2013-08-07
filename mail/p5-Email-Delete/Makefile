@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-Email-Folder>=0.84:${PORTSDIR}/mail/p5-Email-Folder \
 		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Email::Delete.3 \
 	Email::Delete::Maildir.3 \

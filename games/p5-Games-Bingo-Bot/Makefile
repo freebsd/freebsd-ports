@@ -17,7 +17,8 @@ COMMENT=	A simple class holding IRC related methods for bingo
 BUILD_DEPENDS=	p5-Games-Bingo>=0:${PORTSDIR}/games/p5-Games-Bingo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Games::Bingo::Bot.3
 

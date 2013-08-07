@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	HTTP::Server::Simple::Static.3
 

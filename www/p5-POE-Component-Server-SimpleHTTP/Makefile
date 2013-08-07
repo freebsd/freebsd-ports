@@ -18,7 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-POE-Filter-HTTP-Parser>=1.06:${PORTSDIR}/www/p5-POE-Filter-HTTP-Parser \
 		p5-Test-POE-Client-TCP>0:${PORTSDIR}/devel/p5-Test-POE-Client-TCP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Server::SimpleHTTP.3 \
 		POE::Component::Server::SimpleHTTP::Connection.3 \

@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Date-Simple>=0:${PORTSDIR}/devel/p5-Date-Simple \
 		p5-Date-Easter>=0:${PORTSDIR}/devel/p5-Date-Easter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Date::Holidays::DK.3
 

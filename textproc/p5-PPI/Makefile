@@ -25,7 +25,8 @@ TEST_DEPENDS=	p5-Test-NoWarnings>=0.084:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Object>=0.07:${PORTSDIR}/devel/p5-Test-Object \
 		p5-Test-SubCalls>=1.07:${PORTSDIR}/devel/p5-Test-SubCalls
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PPI.3 \
 	PPI::Cache.3 \

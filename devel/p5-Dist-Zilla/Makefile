@@ -58,7 +58,8 @@ BUILD_DEPENDS=	p5-App-Cmd>=0.309:${PORTSDIR}/devel/p5-App-Cmd \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	dzil.1
 MAN3=	Dist::Zilla.3 \

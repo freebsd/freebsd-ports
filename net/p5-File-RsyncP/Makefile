@@ -16,7 +16,8 @@ COMMENT=	Perl Rsync client
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::RsyncP.3 \
 		File::RsyncP::Digest.3 \

@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-File-Copy-Recursive>0:${PORTSDIR}/devel/p5-File-Copy-Recursive
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Test::File::ShareDir.3 \
 	Test::File::ShareDir::TempDirObject.3

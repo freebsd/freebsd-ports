@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Automatically give your module the ability to have plugins
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5	configure
 
 MAN3=		Devel::InnerPackage.3 \
 		Module::Pluggable.3 \

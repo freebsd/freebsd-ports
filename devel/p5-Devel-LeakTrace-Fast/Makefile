@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Indicate where leaked variables are coming from
 
-PERL_CONFIGURE=	5.12.0-
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Devel::LeakTrace::Fast.3
 

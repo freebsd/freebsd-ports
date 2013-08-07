@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Capture STDOUT/STDERR from subprocesses and XS/C modules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IO::CaptureOutput.3
 

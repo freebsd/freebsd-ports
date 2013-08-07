@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::Plugin::FillInForm.3
 

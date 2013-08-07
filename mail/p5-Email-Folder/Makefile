@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Email-Simple>0:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Email-FolderType>=0.6:${PORTSDIR}/mail/p5-Email-FolderType
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Folder.3 \
 		Email::Folder::MH.3 \

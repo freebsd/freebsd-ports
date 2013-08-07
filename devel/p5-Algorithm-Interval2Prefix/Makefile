@@ -15,7 +15,8 @@ COMMENT=	Generate prefixes from intervals
 
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::Interval2Prefix.3
 

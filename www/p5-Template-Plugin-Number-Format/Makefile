@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Number-Format>0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Template-Toolkit>=2.07:${PORTSDIR}/www/p5-Template-Toolkit
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::Plugin::Number::Format.3
 
