@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Abstract Base Class to build modules to capture output
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IO::Capture.3 \
 	IO::Capture::Overview.3 \

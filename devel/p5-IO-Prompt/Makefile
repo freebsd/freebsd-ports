@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-version>0:${PORTSDIR}/devel/p5-version \
 		p5-Want>0:${PORTSDIR}/devel/p5-Want
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IO::Prompt.3
 

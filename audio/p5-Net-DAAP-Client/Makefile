@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-Digest-MD5-M4p>=0:${PORTSDIR}/security/p5-Digest-MD5-M4p \
 		p5-Net-DAAP-DMAP>=0:${PORTSDIR}/audio/p5-Net-DAAP-DMAP
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::DAAP::Client.3
 

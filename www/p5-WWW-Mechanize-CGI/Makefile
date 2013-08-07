@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTTP-Request-AsCGI>=0.2:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	WWW::Mechanize::CGI.3
 

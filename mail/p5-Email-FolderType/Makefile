@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-0.813
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Determine the type of a mail folder
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::FolderType.3 \
 		Email::FolderType::Ezmlm.3 \

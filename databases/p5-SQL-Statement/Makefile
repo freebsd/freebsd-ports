@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SQL::Dialects::ANSI.3 \
 		SQL::Dialects::AnyData.3 \

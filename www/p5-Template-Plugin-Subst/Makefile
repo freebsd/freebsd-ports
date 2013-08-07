@@ -17,7 +17,8 @@ COMMENT=	TT plugin for s/// functionality in templates
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Template::Plugin::Subst.3
 

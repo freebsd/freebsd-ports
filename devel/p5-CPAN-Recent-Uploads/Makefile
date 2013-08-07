@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-libwww>=5.835:${PORTSDIR}/www/p5-libwww \
 		p5-YAML-Syck>=1.15:${PORTSDIR}/textproc/p5-YAML-Syck
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CPAN::Recent::Uploads.3 \
 		CPAN::Recent::Uploads::Retriever.3

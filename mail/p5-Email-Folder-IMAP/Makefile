@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Email-FolderType-Net>=0:${PORTSDIR}/mail/p5-Email-FolderType-Net
 		p5-URI-imap>=0:${PORTSDIR}/mail/p5-URI-imap
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Email::Folder::IMAP.3
 

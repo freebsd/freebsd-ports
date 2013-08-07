@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Parse cpanfile
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	mymeta-cpanfile.1
 MAN3=	Module::CPANfile.3 \

@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-Email-LocalDelivery>=0:${PORTSDIR}/mail/p5-Email-LocalDelivery
 		p5-Email-FolderType>=0:${PORTSDIR}/mail/p5-Email-FolderType
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::LocalDelivery::Ezmlm.3
 

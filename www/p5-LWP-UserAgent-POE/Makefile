@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-POE>=0.9999:${PORTSDIR}/devel/p5-POE \
 		p5-Log-Log4perl>=1:${PORTSDIR}/devel/p5-Log-Log4perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		LWP::UserAgent::POE.3
 

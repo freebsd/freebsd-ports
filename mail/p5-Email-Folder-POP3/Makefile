@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-Net>=1.19:${PORTSDIR}/net/p5-Net
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Email::Folder::POP3.3
 

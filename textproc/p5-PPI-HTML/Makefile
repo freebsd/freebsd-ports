@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-PPI>=0.990:${PORTSDIR}/textproc/p5-PPI \
 		p5-Params-Util>=0.05:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PPI::HTML.3
 

@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Class::Accessor::Lvalue.3 \
 		Class::Accessor::Lvalue::Fast.3

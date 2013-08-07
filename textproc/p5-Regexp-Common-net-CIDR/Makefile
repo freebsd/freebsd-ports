@@ -17,7 +17,8 @@ COMMENT=	Provide patterns for CIDR blocks
 BUILD_DEPENDS=	p5-Regexp-Common>0:${PORTSDIR}/textproc/p5-Regexp-Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Regexp::Common::net::CIDR.3
 

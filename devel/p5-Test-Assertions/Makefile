@@ -18,7 +18,8 @@ COMMENT=	A simple set of building blocks for both unit and runtime testing
 RUN_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Assertions.3 \
 	Test::Assertions::Manual.3 \

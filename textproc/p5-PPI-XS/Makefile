@@ -13,7 +13,8 @@ COMMENT=	XS acceleration for the PPI perl parser
 RUN_DEPENDS=	p5-PPI>=1.000:${PORTSDIR}/textproc/p5-PPI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PPI::XS.3
 

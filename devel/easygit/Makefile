@@ -19,7 +19,8 @@ COMMENT=	Easy wrapper for git
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
 DIST_SUBDIR=	eg/${PORTVERSION}_${PORTREVISION}
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/eg bin/easygit

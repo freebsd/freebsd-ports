@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Log4j implementation for Perl
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		l4p-tmpl.1
 MAN3=		Log::Log4perl.3 \

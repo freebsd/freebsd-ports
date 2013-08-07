@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Create a nice formatted table using ASCII characters
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::ASCIITable.3 \
 	Text::ASCIITable::Wrap.3

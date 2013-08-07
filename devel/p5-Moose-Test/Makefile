@@ -14,7 +14,8 @@ BUILD_DEPENDS=	p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Moose::Test.3 \
 	Moose::Test::Case.3

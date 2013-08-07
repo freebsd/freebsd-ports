@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-Class-DBI-Plugin-Type>=0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-Type
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::DBI::AsForm.3
 

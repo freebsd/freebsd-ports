@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-Jemplate>=0.19:${PORTSDIR}/www/p5-Jemplate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Helper::View::Jemplate.3 \
 	Catalyst::View::Jemplate.3

@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-Email-MIME-ContentType>=1.0:${PORTSDIR}/mail/p5-Email-MIME-ContentType
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::MIME::Attachment::Stripper.3
 

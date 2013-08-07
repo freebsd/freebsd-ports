@@ -12,7 +12,8 @@ COMMENT=	Sends test results to cpan-testers@perl.org
 RUN_DEPENDS=	p5-Net>0:${PORTSDIR}/net/p5-Net
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Test::Reporter.3 \

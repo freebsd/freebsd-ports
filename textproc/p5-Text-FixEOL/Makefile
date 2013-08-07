@@ -17,6 +17,7 @@ COMMENT=	Canonicalizes text to a specified EOL/EOF convention
 
 MAN3=		Text::FixEOL.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

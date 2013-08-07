@@ -22,6 +22,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 MAN3=		File::Finder.3 \
 		File::Finder::Steps.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

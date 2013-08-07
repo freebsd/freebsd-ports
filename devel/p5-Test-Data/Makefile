@@ -18,7 +18,8 @@ COMMENT=	Test functions for particular variable types
 RUN_DEPENDS=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Data.3 \
 		Test::Data::Array.3 \

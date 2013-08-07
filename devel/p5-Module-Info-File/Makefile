@@ -18,7 +18,8 @@ COMMENT=	Retrieves module information from a file or script
 RUN_DEPENDS=	p5-Module-Info>0.20:${PORTSDIR}/devel/p5-Module-Info
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		version.pl.1
 MAN3=		Module::Info::File.3

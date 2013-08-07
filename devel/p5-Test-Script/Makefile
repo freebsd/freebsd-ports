@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-IPC-Run3>=0.034:${PORTSDIR}/devel/p5-IPC-Run3 \
 		p5-Probe-Perl>=0.01:${PORTSDIR}/sysutils/p5-Probe-Perl
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Script.3
 

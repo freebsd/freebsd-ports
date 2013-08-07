@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Moose>=0.35:${PORTSDIR}/devel/p5-Moose \
 		p5-Config-Any>=0.13:${PORTSDIR}/devel/p5-Config-Any
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::SimpleConfig.3
 

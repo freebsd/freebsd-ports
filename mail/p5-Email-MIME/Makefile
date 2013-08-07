@@ -16,7 +16,8 @@ BUILD_DEPENDS=	p5-Email-Simple>=2.102:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-MIME-Types>=1.13:${PORTSDIR}/mail/p5-MIME-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::MIME.3 \
 		Email::MIME::Creator.3 \

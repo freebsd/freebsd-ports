@@ -18,7 +18,8 @@ COMMENT=	Perl extension for comparing XML documents
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::SemanticDiff.3 \
 	XML::SemanticDiff::BasicHandler.3

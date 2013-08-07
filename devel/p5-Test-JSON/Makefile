@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-JSON-Any>=1.20:${PORTSDIR}/converters/p5-JSON-Any
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::JSON.3
 

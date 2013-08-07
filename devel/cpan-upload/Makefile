@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-AppConfig-Std>=1.05:${PORTSDIR}/devel/p5-AppConfig-Std \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	cpan-upload.1
 

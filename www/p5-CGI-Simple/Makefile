@@ -18,6 +18,8 @@ COMMENT=	A simple totally OO CGI interface that is CGI.pm compliant
 TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 
 PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Simple.3 \
 		CGI::Simple::Cookie.3 \

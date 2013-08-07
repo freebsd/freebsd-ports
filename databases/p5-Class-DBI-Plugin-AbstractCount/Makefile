@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Class-DBI-Plugin>=0.02:${PORTSDIR}/databases/p5-Class-DBI-Plug
 		p5-SQL-Abstract>=1.50:${PORTSDIR}/databases/p5-SQL-Abstract
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::DBI::Plugin::AbstractCount.3
 

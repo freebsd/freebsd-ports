@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Test::XML::Valid.3
 

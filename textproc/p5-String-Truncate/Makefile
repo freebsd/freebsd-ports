@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Sub-Exporter>=0.953:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Sub-Install>=0.03:${PORTSDIR}/devel/p5-Sub-Install
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		String::Truncate.3
 

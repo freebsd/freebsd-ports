@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Net-DAAP-Client>=0:${PORTSDIR}/audio/p5-Net-DAAP-Client
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Filesys::Virtual::DAAP.3
 

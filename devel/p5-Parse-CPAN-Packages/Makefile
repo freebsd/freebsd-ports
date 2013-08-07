@@ -24,7 +24,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-InDistDir>0:${PORTSDIR}/devel/p5-Test-InDistDir \
 		p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Parse::CPAN::Packages.3 \
 	Parse::CPAN::Packages::Distribution.3 \

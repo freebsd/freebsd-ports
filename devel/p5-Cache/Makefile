@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Digest-SHA1>=2.01:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-IO-String>=1.02:${PORTSDIR}/devel/p5-IO-String \
 		p5-TimeDate>=2.24:${PORTSDIR}/devel/p5-TimeDate
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Cache.3 \
 		Cache::Entry.3 \

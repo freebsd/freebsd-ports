@@ -17,7 +17,8 @@ COMMENT=	A POE Component providing TCP server services for test cases
 BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::POE::Server::TCP.3
 
