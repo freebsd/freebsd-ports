@@ -7,7 +7,7 @@ easy to use, intuitive interface, and enough features and flexibility to please
 even the most hard-core programmer. A very incomplete list of jEdit's features
 follows.
 
-o Syntax highlighting for 30+ file types (including C, C++, Java, Perl, etc) 
+o Syntax highlighting for 200+ file types (including C, C++, Java, Perl, etc) 
 o Semi-intelligent auto indent in C, C++ and Java modes 
 o Bracket highlighting and matching 
 o Powerful macro system 
