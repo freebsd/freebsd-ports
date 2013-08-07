@@ -1,12 +1,7 @@
-# New ports collection makefile for:	p5-Email-MIME
-# Date created:				2004-08-29
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Email-MIME
-PORTVERSION=	1.911
+PORTVERSION=	1.922
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,10 +20,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Email::MIME.3 \
 		Email::MIME::Creator.3 \
+		Email::MIME::Encode.3 \
 		Email::MIME::Header.3 \
 		Email::MIME::Modifier.3
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
