@@ -1,12 +1,7 @@
-# New ports collection makefile for:	www/p5-POE-Component-Server-SimpleHTTP
-# Date created:				12 October 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
-PORTVERSION=	2.16
+PORTVERSION=	2.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
