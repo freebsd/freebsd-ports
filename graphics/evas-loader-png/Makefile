@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	loader-png
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.fr/releases/ \
 		LOCAL/gblach/e17/
