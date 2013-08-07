@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4b448a96-ff73-11e2-b28d-080027ef73ec">
+    <topic>PuTTY -- Four security holes in versions before 0.63</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><lt>0.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Tatham reports:</p>
+	<blockquote cite="http://lists.tartarus.org/pipermail/putty-announce/2013/000018.html">
+	  <p>This [0.63] release fixes multiple security holes in previous versions of
+	    PuTTY, which can allow an SSH-2 server to make PuTTY overrun or
+	    underrun buffers and crash. [...]
+	  </p><p>
+	    These vulnerabilities can be triggered before host key verification,
+	    which means that you are not even safe if you trust the server you
+	    <em>think</em> you're connecting to, since it could be spoofed over the
+	    network and the host key check would not detect this before the attack
+	    could take place.
+	  </p><p>
+	    Additionally, when PuTTY authenticated with a user's private key, the
+	    private key or information equivalent to it was accidentally kept in
+	    PuTTY's memory for the rest of its run, where it could be retrieved by
+	    other processes reading PuTTY's memory, or written out to swap files
+	    or crash dumps. This release fixes that as well.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4206</cvename>
+      <cvename>CVE-2013-4207</cvename>
+      <cvename>CVE-2013-4208</cvename>
+      <cvename>CVE-2013-4852</cvename>
+    </references>
+    <dates>
+      <discovery>2013-07-08</discovery>
+      <entry>2013-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6839625-fdfa-11e2-9430-20cf30e32f6d">
     <topic>typo3 -- Multiple vulnerabilities in TYPO3 Core</topic>
     <affects>
