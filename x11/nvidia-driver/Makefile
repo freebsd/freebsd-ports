@@ -11,9 +11,9 @@
 # or `x11/nvidia-driver-304' slave ports.
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	310.44
+DISTVERSION?=	319.32
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR it set later because it depends on NVVERSION
@@ -70,12 +70,16 @@ EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
 .endif
 
-OPTIONS_DEFINE=	FREEBSD_AGP ACPI_PM LINUX DOCS
+OPTIONS_DEFINE=	ACPI_PM LINUX DOCS
 OPTIONS_DEFAULT=	LINUX
 
-FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
 ACPI_PM_DESC=		ACPI Power Management support
 LINUX_DESC=		Linux compatibility support
+
+.if ${NVVERSION} < 3101400
+OPTIONS_DEFINE+=	FREEBSD_AGP
+FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
+.endif
 
 .if ${NVVERSION} >= 1952200
 OPTIONS_DEFINE+=	WBINVD
@@ -103,7 +107,7 @@ IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 
 .if ${NVVERSION} < 1952200
 # ABI version is hardcoded inside the binary, so better be explicit here
-LIB_DEPENDS=	m.3:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libm.so.3:${PORTSDIR}/misc/compat5x
 .endif
 
 post-patch: .SILENT
@@ -145,10 +149,12 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
+.if ${NVVERSION} < 3192300
 	${REINPLACE_CMD} -E '/bus_type\[4\]/d ; \
 		s/sprintf\(bus_type, (".+")/return SYSCTL_OUT(req, \1, sizeof(\1)/ ; \
 		/return SYSCTL_OUT\(req, bus_type/d' \
 			${WRKSRC}/src/nvidia_sysctl.c
+.endif
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
