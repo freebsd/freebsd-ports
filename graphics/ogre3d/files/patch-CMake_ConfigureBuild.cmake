@@ -1,6 +1,6 @@
---- CMake/ConfigureBuild.cmake.orig	2011-08-21 00:23:58.000000000 +0200
-+++ CMake/ConfigureBuild.cmake	2011-08-21 00:25:02.000000000 +0200
-@@ -180,18 +180,18 @@ if (UNIX)
+--- CMake/ConfigureBuild.cmake.orig	2012-09-02 07:27:14.000000000 +0200
++++ CMake/ConfigureBuild.cmake	2013-06-15 16:28:56.000000000 +0200
+@@ -189,18 +189,18 @@ if (UNIX)
    else ()
      configure_file(${OGRE_TEMPLATES_DIR}/OGRE.pc.in ${OGRE_BINARY_DIR}/pkgconfig/OGRE.pc @ONLY)
    endif ()
@@ -22,7 +22,7 @@
    endif ()
  
    if (OGRE_BUILD_COMPONENT_TERRAIN)
-@@ -199,17 +199,17 @@ if (UNIX)
+@@ -208,20 +208,20 @@ if (UNIX)
        set(OGRE_PAGING_ADDITIONAL_PACKAGES ", OGRE-Paging = ${OGRE_VERSION}")
      endif ()
      configure_file(${OGRE_TEMPLATES_DIR}/OGRE-Terrain.pc.in ${OGRE_BINARY_DIR}/pkgconfig/OGRE-Terrain.pc @ONLY)
@@ -42,4 +42,8 @@
 +    install(FILES ${OGRE_BINARY_DIR}/pkgconfig/OGRE-Property.pc DESTINATION ${OGRE_LIBDATA_DIRECTORY}/pkgconfig)
    endif ()
  
- endif ()
+-  if (CMAKE_CXX_COMPILER MATCHES ".*clang")
++  if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     set(CMAKE_COMPILER_IS_CLANGXX 1)
+   endif ()
+ 
