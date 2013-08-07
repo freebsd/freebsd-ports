@@ -36,7 +36,7 @@ PLIST_SUB+=	JPEGICC="@comment "
 
 .if ${PORT_OPTIONS:MTIFFICC}
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
+CONFIGURE_ARGS+=--with-tiff=${LOCALBASE}
 MAN1+=		tifficc.1
 PLIST_SUB+=	TIFFICC=""
 .else
