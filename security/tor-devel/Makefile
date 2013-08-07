@@ -37,7 +37,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://torproject.jcsh.it/dist/ \
 		http://torproject.nwlinux.us/dist/ \
 		http://torproject.ph3x.at/dist/ \
-		http://torua.reactor-xg.kiev.ua/dist/ \
 		https://www.coevoet.nl/tor/dist/ \
 		http://www.oignon.net/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
@@ -139,7 +138,7 @@ TOR_LIBEVENT_LIBS:=	${LOCALBASE}/lib/event2/libevent_openssl.a ${TOR_LIBEVENT_LI
 .endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
-LIB_DEPENDS+=		event-2.0:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS+=		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 TOR_LIBEVENT_LIBS=	-levent-2.0
 .if ${PORT_OPTIONS:MBUFFEREVENTS}
 TOR_LIBEVENT_LIBS:=	-levent_openssl-2.0 ${TOR_LIBEVENT_LIBS}
@@ -151,7 +150,7 @@ CONFIGURE_ARGS+=	--with-tcmalloc
 .if ${PORT_OPTIONS:MSTATIC_TOR}
 BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .else
-LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .endif
 .endif
 
@@ -195,8 +194,8 @@ post-install:
 
 .if empty(PORT_OPTIONS:MTOR2WEB)
 check regression-test test: build
-	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
+	@cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .endif
 .include <bsd.port.mk>

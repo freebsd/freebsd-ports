@@ -10,13 +10,13 @@
 # All these options will overide any settings in your local torrc as
 # they are command line options.
 #
-# tor_enable (bool):	Set to "NO" by default
-#			Set it to "YES" to enable tor
-# tor_conf (str):	Points to your tor conf file
+# tor_enable (bool):	Set it to "YES" to enable tor. Default: NO
+# tor_conf (str):	Points to your torrc file.
 #			Default: %%PREFIX%%/etc/tor/torrc
-# tor_user (str):	Tor Daemon user. Default _tor
-# tor_datadir (str):	Tor DataDir.  Defaults /var/db/tor
-# tor_logfile (str):	Tor Log File.  Defaults /var/log/tor
+# tor_user (str):	Tor daemon user. Default: _tor
+# tor_datadir (str):	Tor datadir.  Default: /var/db/tor
+# tor_logfile (str):	Tor log file.  Default: /var/log/tor
+# tor_loglevel (str):	Tor log severity level.  Default: notice
 #
 
 . /etc/rc.subr
@@ -31,13 +31,14 @@ load_rc_config ${name}
 : ${tor_user="_tor"}
 : ${tor_pidfile="/var/run/tor/tor.pid"}
 : ${tor_logfile="/var/log/tor"}
+: ${tor_loglevel="notice"}
 : ${tor_datadir="/var/db/tor"}
 
 required_files=${tor_conf}
 required_dirs=${tor_datadir}
 pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
-command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --+Log notice\ file\ ${tor_logfile}"
+command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --+Log ${tor_loglevel}\ file\ ${tor_logfile}"
 extra_commands="log"
 log_cmd="${name}_log"
 

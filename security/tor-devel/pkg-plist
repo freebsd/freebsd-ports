@@ -1,3 +1,4 @@
+@stopdaemon tor
 bin/tor
 bin/tor-gencert
 bin/tor-resolve
@@ -7,3 +8,8 @@ etc/tor/torrc.sample
 %%DATADIR%%/geoip6
 @dirrm %%DATADIR%%
 @dirrmtry etc/tor
+@cwd /
+@dirrmtry var/run/tor
+@dirrmtry var/db/tor/data
+@dirrmtry var/db/tor
+@cwd
