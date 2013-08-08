@@ -10,22 +10,18 @@ COMMENT=	Generic iPad USB charging utility
 
 LICENSE=	BSD
 
+PLIST_FILES=	etc/devd/ipad_charge.conf
 USE_RC_SUBR=	ipad_charge
+SUB_FILES=	ipad_charge.conf pkg-message
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		requires FreeBSD 8.0-RELEASE or later
-.endif
-
 do-install:
+	@${MKDIR} ${PREFIX}/etc/devd
+	@${INSTALL_DATA} ${WRKDIR}/ipad_charge.conf ${PREFIX}/etc/devd
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/devd
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		< ${FILESDIR}/ipad_charge.conf.in > ${WRKDIR}/ipad_charge.conf
-	${INSTALL_DATA} "${WRKDIR}/ipad_charge.conf" ${PREFIX}/etc/devd
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
