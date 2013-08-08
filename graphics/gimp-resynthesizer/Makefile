@@ -24,6 +24,7 @@ USES=		gettext
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal automake
 USE_GMAKE=	yes
+AUTOMAKE_ARGS=	--add-missing
 
 OPTIONS_DEFINE=	THREADS
 THREADS_DESC=	Threading support (produces nondeterministic results)
