@@ -395,6 +395,7 @@ include/scribus/plugins/tools/hunspellcheck/hunspelldict.h
 include/scribus/plugins/tools/hunspellcheck/hunspellplugin.h
 include/scribus/plugins/tools/hunspellcheck/hunspellpluginimpl.h
 include/scribus/plugins/tools/hunspellcheck/hunspellpluginstructs.h
+include/scribus/plugins/tools/hunspellcheck/ui_hunspelldialogbase.h
 include/scribus/plugins/tools/lenseffects/lensdialog.h
 include/scribus/plugins/tools/lenseffects/lenseffects.h
 include/scribus/plugins/tools/lenseffects/ui_lensdialogbase.h
@@ -445,6 +446,7 @@ include/scribus/sccombobox.h
 include/scribus/scconfig.h
 include/scribus/scdocoutput.h
 include/scribus/scdocoutput_ps2.h
+include/scribus/scescapecatcher.h
 include/scribus/scfilewidget.h
 include/scribus/scfonts.h
 include/scribus/scgtplugin.h
@@ -673,6 +675,7 @@ lib/scribus/plugins/gettext/libtxtim.so
 lib/scribus/plugins/libbarcodegenerator.so
 lib/scribus/plugins/libcolorwheel.so
 lib/scribus/plugins/libfontpreview.so
+lib/scribus/plugins/libhunspellplugin.so
 lib/scribus/plugins/libimportai.so
 lib/scribus/plugins/libimportcvg.so
 lib/scribus/plugins/libimportpct.so
@@ -714,16 +717,42 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/TRANSLATION
+%%DOCSDIR%%/de/EditingShapes.html
+%%DOCSDIR%%/de/WwFill.html
+%%DOCSDIR%%/de/WwFrames.html
+%%DOCSDIR%%/de/WwImages.html
+%%DOCSDIR%%/de/WwLines.html
+%%DOCSDIR%%/de/WwRenderframes.html
+%%DOCSDIR%%/de/WwShapes.html
+%%DOCSDIR%%/de/WwStyles.html
+%%DOCSDIR%%/de/WwText.html
 %%DOCSDIR%%/de/about1.html
 %%DOCSDIR%%/de/about2.html
+%%DOCSDIR%%/de/add_colors.html
 %%DOCSDIR%%/de/bugreport.html
+%%DOCSDIR%%/de/cli.html
 %%DOCSDIR%%/de/cms.html
 %%DOCSDIR%%/de/cms2.html
 %%DOCSDIR%%/de/cms3.html
 %%DOCSDIR%%/de/codingstandards.html
+%%DOCSDIR%%/de/collect4output.html
 %%DOCSDIR%%/de/color1.html
+%%DOCSDIR%%/de/color10.html
+%%DOCSDIR%%/de/color2.html
+%%DOCSDIR%%/de/color3.html
+%%DOCSDIR%%/de/color4.html
+%%DOCSDIR%%/de/color5.html
+%%DOCSDIR%%/de/color6.html
+%%DOCSDIR%%/de/color7.html
+%%DOCSDIR%%/de/color7a.html
+%%DOCSDIR%%/de/color7b.html
+%%DOCSDIR%%/de/color7c.html
+%%DOCSDIR%%/de/color8.html
+%%DOCSDIR%%/de/color_editing.html
+%%DOCSDIR%%/de/colorwheel.html
 %%DOCSDIR%%/de/config.html
 %%DOCSDIR%%/de/contributions.html
+%%DOCSDIR%%/de/createlinks.html
 %%DOCSDIR%%/de/developers.html
 %%DOCSDIR%%/de/doccopyright.html
 %%DOCSDIR%%/de/docinfo.html
@@ -733,13 +762,69 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/faq1.html
 %%DOCSDIR%%/de/faq2.html
 %%DOCSDIR%%/de/faq3.html
+%%DOCSDIR%%/de/fileproblems.html
 %%DOCSDIR%%/de/fonts1.html
 %%DOCSDIR%%/de/fonts2.html
 %%DOCSDIR%%/de/gettexthowto.html
 %%DOCSDIR%%/de/gsview.html
+%%DOCSDIR%%/de/help.html
 %%DOCSDIR%%/de/hyphenator.html
+%%DOCSDIR%%/de/images/CH_1.png
+%%DOCSDIR%%/de/images/CH_2.png
+%%DOCSDIR%%/de/images/CH_3.png
+%%DOCSDIR%%/de/images/CH_4.png
+%%DOCSDIR%%/de/images/CH_5.png
+%%DOCSDIR%%/de/images/CH_6.png
+%%DOCSDIR%%/de/images/CH_7.png
+%%DOCSDIR%%/de/images/CH_8.png
 %%DOCSDIR%%/de/images/Cover_en1-page1.png
 %%DOCSDIR%%/de/images/DrawLatexFrame.png
+%%DOCSDIR%%/de/images/GG_CE1.png
+%%DOCSDIR%%/de/images/GG_CE10.png
+%%DOCSDIR%%/de/images/GG_CE11.png
+%%DOCSDIR%%/de/images/GG_CE12.png
+%%DOCSDIR%%/de/images/GG_CE13.png
+%%DOCSDIR%%/de/images/GG_CE14.png
+%%DOCSDIR%%/de/images/GG_CE15.png
+%%DOCSDIR%%/de/images/GG_CE16.png
+%%DOCSDIR%%/de/images/GG_CE17.png
+%%DOCSDIR%%/de/images/GG_CE18.png
+%%DOCSDIR%%/de/images/GG_CE19.png
+%%DOCSDIR%%/de/images/GG_CE2.png
+%%DOCSDIR%%/de/images/GG_CE20.png
+%%DOCSDIR%%/de/images/GG_CE21.png
+%%DOCSDIR%%/de/images/GG_CE22.png
+%%DOCSDIR%%/de/images/GG_CE23.png
+%%DOCSDIR%%/de/images/GG_CE24.png
+%%DOCSDIR%%/de/images/GG_CE25.png
+%%DOCSDIR%%/de/images/GG_CE26.png
+%%DOCSDIR%%/de/images/GG_CE27.png
+%%DOCSDIR%%/de/images/GG_CE28.png
+%%DOCSDIR%%/de/images/GG_CE29.png
+%%DOCSDIR%%/de/images/GG_CE3.png
+%%DOCSDIR%%/de/images/GG_CE30.png
+%%DOCSDIR%%/de/images/GG_CE31.png
+%%DOCSDIR%%/de/images/GG_CE32.png
+%%DOCSDIR%%/de/images/GG_CE33.png
+%%DOCSDIR%%/de/images/GG_CE4.png
+%%DOCSDIR%%/de/images/GG_CE5.png
+%%DOCSDIR%%/de/images/GG_CE6.png
+%%DOCSDIR%%/de/images/GG_CE7.png
+%%DOCSDIR%%/de/images/GG_CE8.png
+%%DOCSDIR%%/de/images/GG_CE9.png
+%%DOCSDIR%%/de/images/GG_CE_a.png
+%%DOCSDIR%%/de/images/GG_CE_b.png
+%%DOCSDIR%%/de/images/GG_CE_c.png
+%%DOCSDIR%%/de/images/GG_CE_colour_select.png
+%%DOCSDIR%%/de/images/GG_CE_ex1.png
+%%DOCSDIR%%/de/images/GG_CE_ex2.png
+%%DOCSDIR%%/de/images/GG_CE_ex3.png
+%%DOCSDIR%%/de/images/GG_CE_ex4.png
+%%DOCSDIR%%/de/images/GG_CE_ex5.png
+%%DOCSDIR%%/de/images/GG_CE_ex6.png
+%%DOCSDIR%%/de/images/GG_CE_ex7.png
+%%DOCSDIR%%/de/images/GG_CE_ex8.png
+%%DOCSDIR%%/de/images/GG_CE_ex9.png
 %%DOCSDIR%%/de/images/Image_Properties.png
 %%DOCSDIR%%/de/images/Mantis_my_view.png
 %%DOCSDIR%%/de/images/Mantis_new_report1.png
@@ -772,11 +857,20 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/Rembrandt7.png
 %%DOCSDIR%%/de/images/Rembrandt8.png
 %%DOCSDIR%%/de/images/Rembrandt9.png
+%%DOCSDIR%%/de/images/Scribus_Haiku.png
 %%DOCSDIR%%/de/images/Scripter.png
 %%DOCSDIR%%/de/images/SwB.png
 %%DOCSDIR%%/de/images/XYZ_Prop.png
 %%DOCSDIR%%/de/images/XYZ_Prop1.png
+%%DOCSDIR%%/de/images/add_colors1.png
+%%DOCSDIR%%/de/images/add_colors2.png
+%%DOCSDIR%%/de/images/add_colors3.png
+%%DOCSDIR%%/de/images/add_colors4.png
+%%DOCSDIR%%/de/images/add_colors5.png
+%%DOCSDIR%%/de/images/add_colors6.png
+%%DOCSDIR%%/de/images/add_colors7.png
 %%DOCSDIR%%/de/images/alert.png
+%%DOCSDIR%%/de/images/annotation.png
 %%DOCSDIR%%/de/images/batik1.png
 %%DOCSDIR%%/de/images/boundingbox.png
 %%DOCSDIR%%/de/images/boundingbox1.png
@@ -786,6 +880,11 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/cms.png
 %%DOCSDIR%%/de/images/cmsmodify1.png
 %%DOCSDIR%%/de/images/cmyk.png
+%%DOCSDIR%%/de/images/collect_out1.png
+%%DOCSDIR%%/de/images/collect_out2.png
+%%DOCSDIR%%/de/images/collect_out3.png
+%%DOCSDIR%%/de/images/collect_out5.png
+%%DOCSDIR%%/de/images/collect_out6.png
 %%DOCSDIR%%/de/images/colormanager2.png
 %%DOCSDIR%%/de/images/colorwheel.png
 %%DOCSDIR%%/de/images/colrs-caricature.png
@@ -802,9 +901,16 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/context_text135.png
 %%DOCSDIR%%/de/images/contourline_flow.png
 %%DOCSDIR%%/de/images/cw-analogous.png
+%%DOCSDIR%%/de/images/cw-analogous_20.png
+%%DOCSDIR%%/de/images/cw-analogous_30.png
 %%DOCSDIR%%/de/images/cw-compl.png
+%%DOCSDIR%%/de/images/cw-complementary.png
 %%DOCSDIR%%/de/images/cw-splitcompl.png
+%%DOCSDIR%%/de/images/cw-splitcompl_20.png
+%%DOCSDIR%%/de/images/cw-splitcompl_40.png
 %%DOCSDIR%%/de/images/cw-tetradic.png
+%%DOCSDIR%%/de/images/cw-tetradic_20.png
+%%DOCSDIR%%/de/images/cw-tetradic_40.png
 %%DOCSDIR%%/de/images/cw-triadic.png
 %%DOCSDIR%%/de/images/cw-warning.png
 %%DOCSDIR%%/de/images/docheader1.png
@@ -825,6 +931,8 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/eps-imp3.png
 %%DOCSDIR%%/de/images/eps-imp4.png
 %%DOCSDIR%%/de/images/eps-imp5.png
+%%DOCSDIR%%/de/images/externallink.png
+%%DOCSDIR%%/de/images/externalweblink.png
 %%DOCSDIR%%/de/images/file-error1.png
 %%DOCSDIR%%/de/images/file-error2.png
 %%DOCSDIR%%/de/images/file-error3.png
@@ -838,6 +946,9 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/fonts.png
 %%DOCSDIR%%/de/images/fonts2.png
 %%DOCSDIR%%/de/images/frame_shape_flow.png
+%%DOCSDIR%%/de/images/galaxy_gauge.png
+%%DOCSDIR%%/de/images/galaxy_harmonizer1.png
+%%DOCSDIR%%/de/images/galaxy_harmonizer2.png
 %%DOCSDIR%%/de/images/geometry.png
 %%DOCSDIR%%/de/images/geometry1.png
 %%DOCSDIR%%/de/images/gimpoptions1.png
@@ -852,12 +963,13 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/hyphen1.png
 %%DOCSDIR%%/de/images/hyphen2.png
 %%DOCSDIR%%/de/images/hyphen3.png
+%%DOCSDIR%%/de/images/image_compress.png
 %%DOCSDIR%%/de/images/import-pdfimage.png
 %%DOCSDIR%%/de/images/ink-cov.png
 %%DOCSDIR%%/de/images/insert-frame-1.png
 %%DOCSDIR%%/de/images/insert-frame-2.png
 %%DOCSDIR%%/de/images/krita.jpg
-%%DOCSDIR%%/de/images/krita1.jpg
+%%DOCSDIR%%/de/images/krita.png
 %%DOCSDIR%%/de/images/layers1.png
 %%DOCSDIR%%/de/images/layers2.png
 %%DOCSDIR%%/de/images/lilyp.png
@@ -869,6 +981,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/line_tab5.png
 %%DOCSDIR%%/de/images/line_tab6.png
 %%DOCSDIR%%/de/images/line_tab7.png
+%%DOCSDIR%%/de/images/link.png
 %%DOCSDIR%%/de/images/lprof.png
 %%DOCSDIR%%/de/images/missing-gs.png
 %%DOCSDIR%%/de/images/mpage1.png
@@ -890,6 +1003,18 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/numb-sections.png
 %%DOCSDIR%%/de/images/oogettext1.png
 %%DOCSDIR%%/de/images/pagenumbering.png
+%%DOCSDIR%%/de/images/pathops.png
+%%DOCSDIR%%/de/images/pathops1.png
+%%DOCSDIR%%/de/images/pathops2.png
+%%DOCSDIR%%/de/images/pathops3.png
+%%DOCSDIR%%/de/images/pathops4.png
+%%DOCSDIR%%/de/images/pathops5.png
+%%DOCSDIR%%/de/images/pathops6.png
+%%DOCSDIR%%/de/images/pathops7.png
+%%DOCSDIR%%/de/images/pathops8.png
+%%DOCSDIR%%/de/images/pathtools.png
+%%DOCSDIR%%/de/images/pathtools1.png
+%%DOCSDIR%%/de/images/pathtools2.png
 %%DOCSDIR%%/de/images/patterns1.png
 %%DOCSDIR%%/de/images/patterns2.png
 %%DOCSDIR%%/de/images/pdf-form-ht1.png
@@ -898,6 +1023,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/pdf-form-ht4.png
 %%DOCSDIR%%/de/images/pdf-form-ht5.png
 %%DOCSDIR%%/de/images/pdf-form-ht6.png
+%%DOCSDIR%%/de/images/pdftools.png
 %%DOCSDIR%%/de/images/pdfx1a-lo.png
 %%DOCSDIR%%/de/images/pdfx3-1.png
 %%DOCSDIR%%/de/images/pdfxcolor.png
@@ -1024,6 +1150,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/images/vector-advanced.png
 %%DOCSDIR%%/de/images/vector-clipart.png
 %%DOCSDIR%%/de/images/xnview.png
+%%DOCSDIR%%/de/importbitmap1.html
 %%DOCSDIR%%/de/importhints.html
 %%DOCSDIR%%/de/importhints1.html
 %%DOCSDIR%%/de/importhints2.html
@@ -1034,16 +1161,19 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/install.html
 %%DOCSDIR%%/de/install1.html
 %%DOCSDIR%%/de/install2.html
+%%DOCSDIR%%/de/install3.html
 %%DOCSDIR%%/de/install4.html
 %%DOCSDIR%%/de/install5.html
 %%DOCSDIR%%/de/intro.html
 %%DOCSDIR%%/de/irc.html
 %%DOCSDIR%%/de/keys.html
 %%DOCSDIR%%/de/layers.html
+%%DOCSDIR%%/de/lipsum.html
 %%DOCSDIR%%/de/mailing_lists.html
 %%DOCSDIR%%/de/menu.xml
 %%DOCSDIR%%/de/moncal.html
 %%DOCSDIR%%/de/mouse.html
+%%DOCSDIR%%/de/multiple_transform.html
 %%DOCSDIR%%/de/otherinfo.html
 %%DOCSDIR%%/de/pagenumber.html
 %%DOCSDIR%%/de/pagetemplate1.html
@@ -1052,18 +1182,23 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/pdfexport2.html
 %%DOCSDIR%%/de/pdfexport3.html
 %%DOCSDIR%%/de/pdfexport4.html
+%%DOCSDIR%%/de/pdfexport_image.html
 %%DOCSDIR%%/de/pdflavor.html
 %%DOCSDIR%%/de/pdfx3.html
 %%DOCSDIR%%/de/plugin_howto.html
 %%DOCSDIR%%/de/print1.html
 %%DOCSDIR%%/de/print2.html
 %%DOCSDIR%%/de/print3.html
+%%DOCSDIR%%/de/print4.html
 %%DOCSDIR%%/de/psd.html
+%%DOCSDIR%%/de/qsg.html
+%%DOCSDIR%%/de/readme-haiku.html
 %%DOCSDIR%%/de/readme-macosx.html
 %%DOCSDIR%%/de/readme-os2.html
 %%DOCSDIR%%/de/readme-win32.html
 %%DOCSDIR%%/de/readme.html
 %%DOCSDIR%%/de/releases.html
+%%DOCSDIR%%/de/renderframes.html
 %%DOCSDIR%%/de/resources.html
 %%DOCSDIR%%/de/scribus-svg.html
 %%DOCSDIR%%/de/scribuscopyright.html
@@ -1078,6 +1213,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/scripterapi-constants.html
 %%DOCSDIR%%/de/scripterapi-dialogs.html
 %%DOCSDIR%%/de/scripterapi-doc.html
+%%DOCSDIR%%/de/scripterapi-extensions.html
 %%DOCSDIR%%/de/scripterapi-font.html
 %%DOCSDIR%%/de/scripterapi-getobjprop.html
 %%DOCSDIR%%/de/scripterapi-layer.html
@@ -1098,6 +1234,10 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/toolbox13.html
 %%DOCSDIR%%/de/toolbox14.html
 %%DOCSDIR%%/de/toolbox15.html
+%%DOCSDIR%%/de/toolbox16.html
+%%DOCSDIR%%/de/toolbox17.html
+%%DOCSDIR%%/de/toolbox18.html
+%%DOCSDIR%%/de/toolbox19.html
 %%DOCSDIR%%/de/toolbox2.html
 %%DOCSDIR%%/de/toolbox3.html
 %%DOCSDIR%%/de/toolbox4.html
@@ -1109,6 +1249,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/de/topten.html
 %%DOCSDIR%%/de/translation_howto.html
 %%DOCSDIR%%/de/tutorials.html
+%%DOCSDIR%%/de/workspace1.html
 %%DOCSDIR%%/en/EditingShapes.html
 %%DOCSDIR%%/en/WwFill.html
 %%DOCSDIR%%/en/WwFrames.html
@@ -1135,7 +1276,11 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/color5.html
 %%DOCSDIR%%/en/color6.html
 %%DOCSDIR%%/en/color7.html
+%%DOCSDIR%%/en/color7a.html
+%%DOCSDIR%%/en/color7b.html
+%%DOCSDIR%%/en/color7c.html
 %%DOCSDIR%%/en/color8.html
+%%DOCSDIR%%/en/color10.html
 %%DOCSDIR%%/en/color_editing.html
 %%DOCSDIR%%/en/colorwheel.html
 %%DOCSDIR%%/en/config.html
@@ -1156,8 +1301,62 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/gsview.html
 %%DOCSDIR%%/en/help.html
 %%DOCSDIR%%/en/hyphenator.html
+%%DOCSDIR%%/en/images/CH_1.png
+%%DOCSDIR%%/en/images/CH_2.png
+%%DOCSDIR%%/en/images/CH_3.png
+%%DOCSDIR%%/en/images/CH_4.png
+%%DOCSDIR%%/en/images/CH_5.png
+%%DOCSDIR%%/en/images/CH_6.png
+%%DOCSDIR%%/en/images/CH_7.png
+%%DOCSDIR%%/en/images/CH_8.png
 %%DOCSDIR%%/en/images/Cover_en1-page1.png
 %%DOCSDIR%%/en/images/DrawLatexFrame.png
+%%DOCSDIR%%/en/images/GG_CE1.png
+%%DOCSDIR%%/en/images/GG_CE10.png
+%%DOCSDIR%%/en/images/GG_CE11.png
+%%DOCSDIR%%/en/images/GG_CE12.png
+%%DOCSDIR%%/en/images/GG_CE13.png
+%%DOCSDIR%%/en/images/GG_CE14.png
+%%DOCSDIR%%/en/images/GG_CE15.png
+%%DOCSDIR%%/en/images/GG_CE16.png
+%%DOCSDIR%%/en/images/GG_CE17.png
+%%DOCSDIR%%/en/images/GG_CE18.png
+%%DOCSDIR%%/en/images/GG_CE19.png
+%%DOCSDIR%%/en/images/GG_CE2.png
+%%DOCSDIR%%/en/images/GG_CE20.png
+%%DOCSDIR%%/en/images/GG_CE21.png
+%%DOCSDIR%%/en/images/GG_CE22.png
+%%DOCSDIR%%/en/images/GG_CE23.png
+%%DOCSDIR%%/en/images/GG_CE24.png
+%%DOCSDIR%%/en/images/GG_CE25.png
+%%DOCSDIR%%/en/images/GG_CE26.png
+%%DOCSDIR%%/en/images/GG_CE27.png
+%%DOCSDIR%%/en/images/GG_CE28.png
+%%DOCSDIR%%/en/images/GG_CE29.png
+%%DOCSDIR%%/en/images/GG_CE3.png
+%%DOCSDIR%%/en/images/GG_CE30.png
+%%DOCSDIR%%/en/images/GG_CE31.png
+%%DOCSDIR%%/en/images/GG_CE32.png
+%%DOCSDIR%%/en/images/GG_CE33.png
+%%DOCSDIR%%/en/images/GG_CE4.png
+%%DOCSDIR%%/en/images/GG_CE5.png
+%%DOCSDIR%%/en/images/GG_CE6.png
+%%DOCSDIR%%/en/images/GG_CE7.png
+%%DOCSDIR%%/en/images/GG_CE8.png
+%%DOCSDIR%%/en/images/GG_CE9.png
+%%DOCSDIR%%/en/images/GG_CE_a.png
+%%DOCSDIR%%/en/images/GG_CE_b.png
+%%DOCSDIR%%/en/images/GG_CE_c.png
+%%DOCSDIR%%/en/images/GG_CE_colour_select.png
+%%DOCSDIR%%/en/images/GG_CE_ex1.png
+%%DOCSDIR%%/en/images/GG_CE_ex2.png
+%%DOCSDIR%%/en/images/GG_CE_ex3.png
+%%DOCSDIR%%/en/images/GG_CE_ex4.png
+%%DOCSDIR%%/en/images/GG_CE_ex5.png
+%%DOCSDIR%%/en/images/GG_CE_ex6.png
+%%DOCSDIR%%/en/images/GG_CE_ex7.png
+%%DOCSDIR%%/en/images/GG_CE_ex8.png
+%%DOCSDIR%%/en/images/GG_CE_ex9.png
 %%DOCSDIR%%/en/images/Image_Properties.png
 %%DOCSDIR%%/en/images/Mantis_my_view.png
 %%DOCSDIR%%/en/images/Mantis_new_report1.png
@@ -1190,6 +1389,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/Rembrandt7.png
 %%DOCSDIR%%/en/images/Rembrandt8.png
 %%DOCSDIR%%/en/images/Rembrandt9.png
+%%DOCSDIR%%/en/images/Scribus_Haiku.png
 %%DOCSDIR%%/en/images/Scripter.png
 %%DOCSDIR%%/en/images/SwB.png
 %%DOCSDIR%%/en/images/XYZ_Prop.png
@@ -1276,6 +1476,9 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/fonts.png
 %%DOCSDIR%%/en/images/fonts2.png
 %%DOCSDIR%%/en/images/frame_shape_flow.png
+%%DOCSDIR%%/en/images/galaxy_gauge.png
+%%DOCSDIR%%/en/images/galaxy_harmonizer1.png
+%%DOCSDIR%%/en/images/galaxy_harmonizer2.png
 %%DOCSDIR%%/en/images/geometry.png
 %%DOCSDIR%%/en/images/geometry1.png
 %%DOCSDIR%%/en/images/gimpoptions1.png
@@ -1288,12 +1491,14 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/htmlimport.png
 %%DOCSDIR%%/en/images/htmlstyle.png
 %%DOCSDIR%%/en/images/hyphen1.png
+%%DOCSDIR%%/en/images/hyphen2.png
+%%DOCSDIR%%/en/images/hyphen3.png
 %%DOCSDIR%%/en/images/image_compress.png
 %%DOCSDIR%%/en/images/import-pdfimage.png
 %%DOCSDIR%%/en/images/ink-cov.png
 %%DOCSDIR%%/en/images/insert-frame-1.png
 %%DOCSDIR%%/en/images/insert-frame-2.png
-%%DOCSDIR%%/en/images/krita1.jpg
+%%DOCSDIR%%/en/images/krita.png
 %%DOCSDIR%%/en/images/layers1.png
 %%DOCSDIR%%/en/images/layers2.png
 %%DOCSDIR%%/en/images/lilyp.png
@@ -1515,6 +1720,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/print4.html
 %%DOCSDIR%%/en/psd.html
 %%DOCSDIR%%/en/qsg.html
+%%DOCSDIR%%/en/readme-haiku.html
 %%DOCSDIR%%/en/readme-macosx.html
 %%DOCSDIR%%/en/readme-os2.html
 %%DOCSDIR%%/en/readme-win32.html
@@ -1603,7 +1809,11 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/color5.html
 %%DOCSDIR%%/it/color6.html
 %%DOCSDIR%%/it/color7.html
+%%DOCSDIR%%/it/color7a.html
+%%DOCSDIR%%/it/color7b.html
+%%DOCSDIR%%/it/color7c.html
 %%DOCSDIR%%/it/color8.html
+%%DOCSDIR%%/it/color10.html
 %%DOCSDIR%%/it/color_editing.html
 %%DOCSDIR%%/it/colorwheel.html
 %%DOCSDIR%%/it/config.html
@@ -1624,8 +1834,62 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/gsview.html
 %%DOCSDIR%%/it/help.html
 %%DOCSDIR%%/it/hyphenator.html
+%%DOCSDIR%%/it/images/CH_1.png
+%%DOCSDIR%%/it/images/CH_2.png
+%%DOCSDIR%%/it/images/CH_3.png
+%%DOCSDIR%%/it/images/CH_4.png
+%%DOCSDIR%%/it/images/CH_5.png
+%%DOCSDIR%%/it/images/CH_6.png
+%%DOCSDIR%%/it/images/CH_7.png
+%%DOCSDIR%%/it/images/CH_8.png
 %%DOCSDIR%%/it/images/Cover_en1-page1.png
 %%DOCSDIR%%/it/images/DrawLatexFrame.png
+%%DOCSDIR%%/it/images/GG_CE1.png
+%%DOCSDIR%%/it/images/GG_CE10.png
+%%DOCSDIR%%/it/images/GG_CE11.png
+%%DOCSDIR%%/it/images/GG_CE12.png
+%%DOCSDIR%%/it/images/GG_CE13.png
+%%DOCSDIR%%/it/images/GG_CE14.png
+%%DOCSDIR%%/it/images/GG_CE15.png
+%%DOCSDIR%%/it/images/GG_CE16.png
+%%DOCSDIR%%/it/images/GG_CE17.png
+%%DOCSDIR%%/it/images/GG_CE18.png
+%%DOCSDIR%%/it/images/GG_CE19.png
+%%DOCSDIR%%/it/images/GG_CE2.png
+%%DOCSDIR%%/it/images/GG_CE20.png
+%%DOCSDIR%%/it/images/GG_CE21.png
+%%DOCSDIR%%/it/images/GG_CE22.png
+%%DOCSDIR%%/it/images/GG_CE23.png
+%%DOCSDIR%%/it/images/GG_CE24.png
+%%DOCSDIR%%/it/images/GG_CE25.png
+%%DOCSDIR%%/it/images/GG_CE26.png
+%%DOCSDIR%%/it/images/GG_CE27.png
+%%DOCSDIR%%/it/images/GG_CE28.png
+%%DOCSDIR%%/it/images/GG_CE29.png
+%%DOCSDIR%%/it/images/GG_CE3.png
+%%DOCSDIR%%/it/images/GG_CE30.png
+%%DOCSDIR%%/it/images/GG_CE31.png
+%%DOCSDIR%%/it/images/GG_CE32.png
+%%DOCSDIR%%/it/images/GG_CE33.png
+%%DOCSDIR%%/it/images/GG_CE4.png
+%%DOCSDIR%%/it/images/GG_CE5.png
+%%DOCSDIR%%/it/images/GG_CE6.png
+%%DOCSDIR%%/it/images/GG_CE7.png
+%%DOCSDIR%%/it/images/GG_CE8.png
+%%DOCSDIR%%/it/images/GG_CE9.png
+%%DOCSDIR%%/it/images/GG_CE_a.png
+%%DOCSDIR%%/it/images/GG_CE_b.png
+%%DOCSDIR%%/it/images/GG_CE_c.png
+%%DOCSDIR%%/it/images/GG_CE_colour_select.png
+%%DOCSDIR%%/it/images/GG_CE_ex1.png
+%%DOCSDIR%%/it/images/GG_CE_ex2.png
+%%DOCSDIR%%/it/images/GG_CE_ex3.png
+%%DOCSDIR%%/it/images/GG_CE_ex4.png
+%%DOCSDIR%%/it/images/GG_CE_ex5.png
+%%DOCSDIR%%/it/images/GG_CE_ex6.png
+%%DOCSDIR%%/it/images/GG_CE_ex7.png
+%%DOCSDIR%%/it/images/GG_CE_ex8.png
+%%DOCSDIR%%/it/images/GG_CE_ex9.png
 %%DOCSDIR%%/it/images/Image_Properties.png
 %%DOCSDIR%%/it/images/Mantis_my_view.png
 %%DOCSDIR%%/it/images/Mantis_new_report1.png
@@ -1658,6 +1922,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/images/Rembrandt7.png
 %%DOCSDIR%%/it/images/Rembrandt8.png
 %%DOCSDIR%%/it/images/Rembrandt9.png
+%%DOCSDIR%%/it/images/Scribus_Haiku.png
 %%DOCSDIR%%/it/images/Scripter.png
 %%DOCSDIR%%/it/images/SwB.png
 %%DOCSDIR%%/it/images/XYZ_Prop.png
@@ -1743,6 +2008,9 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/images/fonts.png
 %%DOCSDIR%%/it/images/fonts2.png
 %%DOCSDIR%%/it/images/frame_shape_flow.png
+%%DOCSDIR%%/it/images/galaxy_gauge.png
+%%DOCSDIR%%/it/images/galaxy_harmonizer1.png
+%%DOCSDIR%%/it/images/galaxy_harmonizer2.png
 %%DOCSDIR%%/it/images/geometry.png
 %%DOCSDIR%%/it/images/geometry1.png
 %%DOCSDIR%%/it/images/gimpoptions1.png
@@ -1757,12 +2025,15 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/images/htmlimport.png
 %%DOCSDIR%%/it/images/htmlstyle.png
 %%DOCSDIR%%/it/images/hyphen1.png
+%%DOCSDIR%%/it/images/hyphen2.png
+%%DOCSDIR%%/it/images/hyphen3.png
 %%DOCSDIR%%/it/images/image_compress.png
 %%DOCSDIR%%/it/images/import-pdfimage.png
 %%DOCSDIR%%/it/images/ink-cov.png
 %%DOCSDIR%%/it/images/inkscape.png
 %%DOCSDIR%%/it/images/insert-frame-1.png
 %%DOCSDIR%%/it/images/insert-frame-2.png
+%%DOCSDIR%%/it/images/krita.png
 %%DOCSDIR%%/it/images/krita1.jpg
 %%DOCSDIR%%/it/images/layers1.png
 %%DOCSDIR%%/it/images/layers2.png
@@ -1987,6 +2258,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/print4.html
 %%DOCSDIR%%/it/psd.html
 %%DOCSDIR%%/it/qsg.html
+%%DOCSDIR%%/it/readme-haiku.html
 %%DOCSDIR%%/it/readme-macosx.html
 %%DOCSDIR%%/it/readme-os2.html
 %%DOCSDIR%%/it/readme-win32.html
@@ -2085,7 +2357,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/dicts/hyph_es.dic
 %%DATADIR%%/dicts/hyph_fi.dic
 %%DATADIR%%/dicts/hyph_fr.dic
-%%DATADIR%%/dicts/hyph_ga.dic
+%%DATADIR%%/dicts/hyph_gl.dic
 %%DATADIR%%/dicts/hyph_hr.dic
 %%DATADIR%%/dicts/hyph_hu.dic
 %%DATADIR%%/dicts/hyph_ia.dic
@@ -2642,6 +2914,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/scripts/importcsv2table.py
 %%DATADIR%%/swatches/AFNOR_X_08-002.xml
 %%DATADIR%%/swatches/AS_2007S-1996.xml
+%%DATADIR%%/swatches/All_Color_Kit.xml
 %%DATADIR%%/swatches/Alligator Collection 3000_bs00_3.eps
 %%DATADIR%%/swatches/Alligator Collection 3000_bs01_3.eps
 %%DATADIR%%/swatches/Alligator Collection 3000_kd01_4.eps
@@ -2652,6 +2925,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Alligator Collection 4000_kd01_4.eps
 %%DATADIR%%/swatches/Alligator Collection 4000_np01_4.eps
 %%DATADIR%%/swatches/Alligator Collection 4000_zd01_4.eps
+%%DATADIR%%/swatches/Android_TM.xml
 %%DATADIR%%/swatches/BS_381C.xml
 %%DATADIR%%/swatches/BS_4800.xml
 %%DATADIR%%/swatches/BannerRite_bs00_3.eps
@@ -2664,13 +2938,18 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Baumann System Prase_kd01_4.eps
 %%DATADIR%%/swatches/Baumann System Prase_np01_4.eps
 %%DATADIR%%/swatches/Baumann System Prase_zd01_4.eps
+%%DATADIR%%/swatches/Bundesregierung_CMYK.xml
+%%DATADIR%%/swatches/Bundesregierung_CMYK_TZ.xml
+%%DATADIR%%/swatches/Bundesregierung_HKS.xml
 %%DATADIR%%/swatches/COPYING_RESENE.txt
+%%DATADIR%%/swatches/Classic_Kit.xml
 %%DATADIR%%/swatches/Colortrend Wood Stains_bs00_3.eps
 %%DATADIR%%/swatches/Colortrend Wood Stains_bs01_3.eps
 %%DATADIR%%/swatches/Colortrend Wood Stains_kd01_4.eps
 %%DATADIR%%/swatches/Colortrend Wood Stains_np01_4.eps
 %%DATADIR%%/swatches/Colortrend Wood Stains_zd01_4.eps
 %%DATADIR%%/swatches/CrayonTM.xml
+%%DATADIR%%/swatches/Creative_Commons_2013.xml
 %%DATADIR%%/swatches/DEUTSCHEpapier_bs00_3.eps
 %%DATADIR%%/swatches/DEUTSCHEpapier_bs01_3.eps
 %%DATADIR%%/swatches/DEUTSCHEpapier_kd01_4.eps
@@ -2681,6 +2960,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/DRAKA POLYA_kd01_4.eps
 %%DATADIR%%/swatches/DRAKA POLYA_np01_4.eps
 %%DATADIR%%/swatches/DRAKA POLYA_zd01_4.eps
+%%DATADIR%%/swatches/Federal_Identity_Program.xml
 %%DATADIR%%/swatches/GCMI_Colors.xml
 %%DATADIR%%/swatches/GS Palette 141 Kunstdruck_bs00_3.eps
 %%DATADIR%%/swatches/GS Palette 141 Kunstdruck_bs01_3.eps
@@ -2692,14 +2972,25 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/GS Palette 141 Naturpapier_kd01_4.eps
 %%DATADIR%%/swatches/GS Palette 141 Naturpapier_np01_4.eps
 %%DATADIR%%/swatches/GS Palette 141 Naturpapier_zd01_4.eps
+%%DATADIR%%/swatches/Galaxy_Blackbody_Spectrum.xml
+%%DATADIR%%/swatches/Galaxy_Color_Directory.xml
+%%DATADIR%%/swatches/Galaxy_Color_Emotions.xml
+%%DATADIR%%/swatches/Galaxy_Color_Harmonizer.xml
+%%DATADIR%%/swatches/Galaxy_Color_Pro.xml
+%%DATADIR%%/swatches/Galaxy_Color_Zil.xml
+%%DATADIR%%/swatches/Galaxy_Neutrals_and_Rich_Blacks.xml
+%%DATADIR%%/swatches/Galaxy_Pocket_Map.xml
+%%DATADIR%%/swatches/Galaxy_Visible_Spectrum.xml
 %%DATADIR%%/swatches/GiveLife_Color_System_CMYK.xml
 %%DATADIR%%/swatches/GiveLife_Color_System_RGB.xml
 %%DATADIR%%/swatches/Gnome.xml
+%%DATADIR%%/swatches/Government_UK.xml
 %%DATADIR%%/swatches/Heidelberger ip Oberputze_bs00_3.eps
 %%DATADIR%%/swatches/Heidelberger ip Oberputze_bs01_3.eps
 %%DATADIR%%/swatches/Heidelberger ip Oberputze_kd01_4.eps
 %%DATADIR%%/swatches/Heidelberger ip Oberputze_np01_4.eps
 %%DATADIR%%/swatches/Heidelberger ip Oberputze_zd01_4.eps
+%%DATADIR%%/swatches/Inkscape.xml
 %%DATADIR%%/swatches/J&S K_bs00_3.eps
 %%DATADIR%%/swatches/J&S K_bs01_3.eps
 %%DATADIR%%/swatches/J&S K_kd01_4.eps
@@ -2718,6 +3009,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Koessinger Keramik-Druck_kd01_4.eps
 %%DATADIR%%/swatches/Koessinger Keramik-Druck_np01_4.eps
 %%DATADIR%%/swatches/Koessinger Keramik-Druck_zd01_4.eps
+%%DATADIR%%/swatches/LaTeX_Beamer.xml
 %%DATADIR%%/swatches/LibreOffice.xml
 %%DATADIR%%/swatches/Munsell_Soil_Colors.xml
 %%DATADIR%%/swatches/NBS-ISCC_Colors.xml
@@ -2727,6 +3019,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/OSMO Einmallasur_np01_4.eps
 %%DATADIR%%/swatches/OSMO Einmallasur_zd01_4.eps
 %%DATADIR%%/swatches/OpenOffice_dot_org_CMYK.xml
+%%DATADIR%%/swatches/OpenOffice_dot_org_Galaxy.xml
 %%DATADIR%%/swatches/OpenSUSE.xml
 %%DATADIR%%/swatches/Oracal 451_bs00_3.eps
 %%DATADIR%%/swatches/Oracal 451_bs01_3.eps
@@ -2754,14 +3047,16 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Resene_Summit_Roof_2010.xml
 %%DATADIR%%/swatches/Resene_Summit_Roof_systems_2011.xml
 %%DATADIR%%/swatches/Resene_TCS_-_Colorwood_2011.xml
-%%DATADIR%%/swatches/Resene_TCS_-_The_Range_Whites_and_neutrals_2012.xml
-%%DATADIR%%/swatches/Resene_TCS_-_KidzColour_2012.xml
-%%DATADIR%%/swatches/Resene_TCS_-_Whites_and_Neutrals_2012.xml
 %%DATADIR%%/swatches/Resene_TCS_-_Decks_Paths_Driveways_Recreational_Areas_2011.xml
 %%DATADIR%%/swatches/Resene_TCS_-_Karen_Walker_2012.xml
+%%DATADIR%%/swatches/Resene_TCS_-_KidzColour_2012.xml
+%%DATADIR%%/swatches/Resene_TCS_-_The_Range_Whites_and_neutrals_2012.xml
+%%DATADIR%%/swatches/Resene_TCS_-_Whites_and_Neutrals_2012.xml
 %%DATADIR%%/swatches/Resene_The_Range_2011-12.xml
 %%DATADIR%%/swatches/Resene_The_Range_WandN_2010.xml
 %%DATADIR%%/swatches/Resene_Woodsman_2008.xml
+%%DATADIR%%/swatches/Rijksoverheid_Gestreken.xml
+%%DATADIR%%/swatches/Rijksoverheid_Ongestreken.xml
 %%DATADIR%%/swatches/SVG.xml
 %%DATADIR%%/swatches/Scribus_Basic.xml
 %%DATADIR%%/swatches/Scribus_Splash.xml
@@ -2775,6 +3070,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_kd01_4.eps
 %%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_np01_4.eps
 %%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_zd01_4.eps
+%%DATADIR%%/swatches/Shades_of_K.xml
 %%DATADIR%%/swatches/Standardised_Rock_Colours.xml
 %%DATADIR%%/swatches/TAG Farbe erleben_bs00_3.eps
 %%DATADIR%%/swatches/TAG Farbe erleben_bs01_3.eps
@@ -2785,6 +3081,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/US_FS_595.xml
 %%DATADIR%%/swatches/Ubuntu_CMYK.xml
 %%DATADIR%%/swatches/Ubuntu_RGB.xml
+%%DATADIR%%/swatches/Wikipedia_RAL_Classic.xml
 %%DATADIR%%/swatches/X11.xml
 %%DATADIR%%/swatches/X11Grey.xml
 %%DATADIR%%/swatches/Xfig.xml
@@ -3113,6 +3410,8 @@ share/pixmaps/scribus.png
 @dirrm include/scribus/plugins/tools/lenseffects/CMakeFiles/lenseffects.dir
 @dirrm include/scribus/plugins/tools/lenseffects/CMakeFiles
 @dirrm include/scribus/plugins/tools/lenseffects
+@dirrm include/scribus/plugins/tools/hunspellcheck/CMakeFiles/hunspellplugin.dir
+@dirrm include/scribus/plugins/tools/hunspellcheck/CMakeFiles
 @dirrm include/scribus/plugins/tools/hunspellcheck
 @dirrm include/scribus/plugins/tools/CMakeFiles
 @dirrm include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles/pathalongpath.dir
