@@ -16,7 +16,7 @@ DISTVERSION?=	319.32
 PORTREVISION?=	0
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
-# MASTER_SITE_SUBDIR it set later because it depends on NVVERSION
+# MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
 DISTNAME=	NVIDIA-FreeBSD-x86${ARCH_SUFX}-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -38,7 +38,8 @@ USE_LDCONFIG=	yes
 # fixed upstream (across all versions, including legacy ones), use this
 # hack below to universally set NVIDIA_ROOT.  Also provide X11BASE value
 # since it is going away from `Mk/bsd.port.mk' as deprecated.
-MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE}
+MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE} \
+		SYSDIR=${SRC_BASE}/sys
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
@@ -64,9 +65,9 @@ EXTRA_PATCHES=	${FILESDIR}/legacy-patch-nvidia.lib.mk
 
 # Fix recent arbitrary memory access vulnerability in legacy drivers
 .if ${NVVERSION} <= 1905300
-. if ${NVVERSION} != 1731435
+.  if ${NVVERSION} != 1731435
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
-. endif
+.  endif
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
 .endif
 
@@ -106,7 +107,7 @@ IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
 .if ${NVVERSION} < 1952200
-# ABI version is hardcoded inside the binary, so better be explicit here
+# ABI version is hardcoded inside the binary, so specify it explicitly
 LIB_DEPENDS=	libm.so.3:${PORTSDIR}/misc/compat5x
 .endif
 
@@ -154,6 +155,11 @@ post-patch: .SILENT
 		s/sprintf\(bus_type, (".+")/return SYSCTL_OUT(req, \1, sizeof(\1)/ ; \
 		/return SYSCTL_OUT\(req, bus_type/d' \
 			${WRKSRC}/src/nvidia_sysctl.c
+.endif
+# Catch up with KVA space allocation API changes in recent -CURRENT
+.if ${OSVERSION} > 1000040
+	${REINPLACE_CMD} -e 's/kmem_free(kernel_map,/kva_free(/ ; \
+		/kmem_alloc_contig/s/map/arena/' ${WRKSRC}/src/nvidia_subr.c
 .endif
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
