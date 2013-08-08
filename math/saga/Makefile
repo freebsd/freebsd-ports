@@ -3,6 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -47,7 +48,7 @@ VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
 .include <bsd.port.options.mk>
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if ${PORT_OPTIONS:MPYTHON}
