@@ -1,11 +1,11 @@
---- mk_clang.mak.orig	2013-01-21 11:50:32.000000000 +0100
-+++ mk_clang.mak	2013-01-21 11:52:56.000000000 +0100
+--- mk_clang.mak.orig	2013-07-29 10:57:30.000000000 +0200
++++ mk_clang.mak	2013-07-29 10:58:03.000000000 +0200
 @@ -10,7 +10,7 @@
  # CFLAGS = -O2 -g -Wall -Wextra -Wswitch-default -Wswitch-enum -Wcast-qual -Waggregate-return -Wwrite-strings -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar -Wc++-compat
  # CFLAGS = -O2 -g -x c++ -Wall -Wextra -Wswitch-default -Wswitch-enum -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
 -CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
-+CFLAGS += -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv -I%%LOCALBASE%%/include
++CFLAGS = -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv -I%%LOCALBASE%%/include
  # CFLAGS = -O2 -g -x c++ -Wall -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
  # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -g -Wall -Winline -Wconversion -Wshadow -Wpointer-arith

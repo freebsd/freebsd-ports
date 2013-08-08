@@ -91,6 +91,7 @@ lib/seed7/lib/scanfile.s7i
 lib/seed7/lib/scanstri.s7i
 lib/seed7/lib/seed7_05.s7i
 lib/seed7/lib/set.s7i
+lib/seed7/lib/sha1.s7i
 lib/seed7/lib/shell.s7i
 lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i
