@@ -52,13 +52,24 @@
  
  clean:
  	rm -f *.o codec/jpeg/*.o codec/p64/*.o codec/h263/*.o \
+@@ -347,8 +341,8 @@
+ 		vic vic.dyn vic.xil h261_play h261_dump jpeg_play cb_wish \
+ 		mkcube rgb-cube.ppm yuv-map.ppm cm0.c cm1.c ppmtolut \
+ 		config.cache config.log domake.* dotar.*
+-	cd codec/tmn && $(MAKE) clean
+-	cd codec/tmndec && $(MAKE) clean
++	$(MAKE) -C codec/tmn clean
++	$(MAKE) -C codec/tmndec clean
+ 	rm -f codec/tmn-x/*.o codec/tmn-x/*.a
+ 
+ realclean:
 @@ -410,7 +404,7 @@
  
  
  codec/tmn-x/libh263coder.a:
 -	(cd codec/tmn-x; $(MAKE) CC=$(CC) CCOPT="$(CCOPT)" )
-+	(cd codec/tmn-x; $(MAKE) CC=$(CC) CCOPT="$(CFLAGS)" )
++	$(MAKE) -C codec/tmn-x CC=$(CC) CCOPT="$(CFLAGS)"
  
  codec/tmndec/libh263.a:
 -	(cd codec/tmndec; $(MAKE) CC=$(CC) CCOPT="$(CCOPT)" -f Makefile.lib)
-+	(cd codec/tmndec; $(MAKE) CC=$(CC) CCOPT="$(CFLAGS)" -f Makefile.lib)
++	$(MAKE) -C codec/tmndec CC=$(CC) CCOPT="$(CFLAGS)" -f Makefile.lib
