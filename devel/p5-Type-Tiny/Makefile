@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	0.004
+PORTVERSION=	0.022
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
+		p5-Moo>=1.002001:${PORTSDIR}/devel/p5-Moo \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-Role-Tiny>=0:${PORTSDIR}/devel/p5-Role-Tiny \
@@ -25,13 +25,21 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Eval::TypeTiny.3 \
+MAN3=		Devel::TypeTiny::Perl56Compat.3 \
+		Eval::TypeTiny.3 \
 		Exporter::TypeTiny.3 \
+		Reply::Plugin::TypeTiny.3 \
 		Test::TypeTiny.3 \
 		Type::Coercion.3 \
 		Type::Coercion::Union.3 \
+		Type::Exception.3 \
+		Type::Exception::Assertion.3 \
+		Type::Exception::Compilation.3 \
+		Type::Exception::WrongNumberOfParameters.3 \
 		Type::Library.3 \
 		Type::Params.3 \
+		Type::Parser.3 \
+		Type::Registry.3 \
 		Type::Tiny.3 \
 		Type::Tiny::Class.3 \
 		Type::Tiny::Duck.3 \
@@ -49,7 +57,6 @@ MAN3=		Eval::TypeTiny.3 \
 		Type::Tiny::Union.3 \
 		Type::Utils.3 \
 		Types::Standard.3 \
-		Types::Standard::DeepCoercion.3 \
 		Types::TypeTiny.3
 
 .include <bsd.port.mk>

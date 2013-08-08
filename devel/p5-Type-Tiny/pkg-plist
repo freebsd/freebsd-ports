@@ -1,10 +1,18 @@
+%%SITE_PERL%%/Devel/TypeTiny/Perl56Compat.pm
 %%SITE_PERL%%/Eval/TypeTiny.pm
 %%SITE_PERL%%/Exporter/TypeTiny.pm
+%%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
 %%SITE_PERL%%/Test/TypeTiny.pm
 %%SITE_PERL%%/Type/Coercion.pm
 %%SITE_PERL%%/Type/Coercion/Union.pm
+%%SITE_PERL%%/Type/Exception.pm
+%%SITE_PERL%%/Type/Exception/Assertion.pm
+%%SITE_PERL%%/Type/Exception/Compilation.pm
+%%SITE_PERL%%/Type/Exception/WrongNumberOfParameters.pm
 %%SITE_PERL%%/Type/Library.pm
 %%SITE_PERL%%/Type/Params.pm
+%%SITE_PERL%%/Type/Parser.pm
+%%SITE_PERL%%/Type/Registry.pm
 %%SITE_PERL%%/Type/Tiny.pm
 %%SITE_PERL%%/Type/Tiny/Class.pm
 %%SITE_PERL%%/Type/Tiny/Duck.pm
@@ -22,17 +30,21 @@
 %%SITE_PERL%%/Type/Tiny/Union.pm
 %%SITE_PERL%%/Type/Utils.pm
 %%SITE_PERL%%/Types/Standard.pm
-%%SITE_PERL%%/Types/Standard/DeepCoercion.pm
 %%SITE_PERL%%/Types/TypeTiny.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type
 @dirrmtry %%SITE_PERL%%/Types/Standard
 @dirrmtry %%SITE_PERL%%/Types
-@dirrm %%SITE_PERL%%/Type/Tiny/Manual
-@dirrm %%SITE_PERL%%/Type/Tiny
+@dirrmtry %%SITE_PERL%%/Type/Tiny/Manual
+@dirrmtry %%SITE_PERL%%/Type/Tiny
+@dirrmtry %%SITE_PERL%%/Type/Exception
 @dirrmtry %%SITE_PERL%%/Type/Coercion
 @dirrmtry %%SITE_PERL%%/Type
 @dirrmtry %%SITE_PERL%%/Test
+@dirrm %%SITE_PERL%%/Reply/Plugin
+@dirrm %%SITE_PERL%%/Reply
 @dirrmtry %%SITE_PERL%%/Exporter
 @dirrmtry %%SITE_PERL%%/Eval
+@dirrm %%SITE_PERL%%/Devel/TypeTiny
+@dirrmtry %%SITE_PERL%%/Devel
