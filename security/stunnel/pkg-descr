@@ -8,4 +8,4 @@ stunnel can be used to add  SSL  functionality  to  commonly
 used  inetd  daemons  like  POP-2,  POP-3  and  IMAP servers
 without any changes in the programs' code.
 
-WWW: http://stunnel.org/
+WWW: https://www.stunnel.org/

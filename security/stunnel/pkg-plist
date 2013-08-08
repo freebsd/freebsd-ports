@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/stunnel
 bin/stunnel3
 %%ETCDIR%%/stunnel.conf-sample
@@ -7,14 +8,15 @@ lib/stunnel/libstunnel.so
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.html
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.fr.html
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.pl.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/ca.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/ca.pl
-%%PORTDOCS%%%%DOCSDIR%%/examples/importCA.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/importCA.sh
-%%PORTDOCS%%%%DOCSDIR%%/examples/script.sh
-%%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.init
-%%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.service
-%%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.spec
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/importCA.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/importCA.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.service
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.spec
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -28,7 +30,7 @@ lib/stunnel/libstunnel.so
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/stunnel
-@unexec rmdir %D/etc/stunnel 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/stunnel`` to remove any configuration files left." | fmt
+@dirrmtry etc/stunnel
+@unexec if [ -d %D/etc/stunnel ]; then echo "If you are permanently removing this port, you should run ``rm -rf %D/etc/stunnel`` to remove any configuration files left."; fi

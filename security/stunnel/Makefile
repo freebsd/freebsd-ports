@@ -4,13 +4,17 @@
 PORTNAME=	stunnel
 PORTVERSION=	4.56
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
+MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
-		ftp://stunnel.mirt.net/stunnel/%SUBDIR%/ \
+		http://mirrors.go-part.com/stunnel/%SUBDIR%/ \
+		http://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
 		ftp://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
 		http://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
 		ftp://ftp.surfnet.nl/pub/networking/stunnel/%SUBDIR%/ \
 		http://ftp.surfnet.nl/pub/networking/stunnel/%SUBDIR%/ \
+		ftp://stunnel.mirt.net/stunnel/%SUBDIR%/ \
+		http://www.namesdir.com/mirrors/stunnel/%SUBDIR%/ \
+		http://stunnel.cybermirror.org/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
 MASTER_SITE_SUBDIR=	. obsolete/4.x
@@ -48,9 +52,7 @@ STUNNEL_GROUP?=	stunnel
 USERS=		${STUNNEL_USER}
 GROUPS=		${STUNNEL_GROUP}
 
-.if ${PORT_OPTIONS:MDOCS}
 MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
-.endif
 
 .if ${PORT_OPTIONS:MSSL_PORT}
 USE_OPENSSL=		YES
@@ -93,16 +95,20 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|\@prefix\@/var/lib/stunnel/|/var/tmp/stunnel|; \
 		s|nobody|stunnel|;s|nogroup|stunnel|' \
 		${WRKSRC}/tools/stunnel.conf-sample.in
-	${REINPLACE_CMD} -E -e 's|\$$\(prefix\)/var/run/stunnel/stunnel.pid|$$(localstatedir)/stunnel.pid|' \
+	@${REINPLACE_CMD} -E -e 's|\$$\(prefix\)/var/run/stunnel/stunnel.pid|$$(localstatedir)/stunnel.pid|' \
 		${WRKSRC}/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
 	@${REINPLACE_CMD} -E -e 's|install-confDATA install-data-local|install-confDATA|g' \
 		${WRKSRC}/tools/Makefile.in
 .if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E -e '/install-data-am/s,install-docDATA,,' ${WRKSRC}/doc/Makefile.in
+.endif
+.if empty(PORT_OPTIONS:MEXAMPLES)
 	@${REINPLACE_CMD} -E -e 's/([^n])install-examplesDATA/\1/' \
 		${WRKSRC}/tools/Makefile.in
+.else
+	@${REINPLACE_CMD} -E -e 's|\$$\(docdir\)/examples|${EXAMPLESDIR}|g' ${WRKSRC}/tools/Makefile.in
 .endif
 
 post-install:
