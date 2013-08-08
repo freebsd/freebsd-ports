@@ -1,9 +1,0 @@
---- bridge/bridge.mozbuild.orig	2013-07-03 22:34:52.815960909 +0200
-+++ bridge/bridge.mozbuild	2013-07-03 22:34:28.504986226 +0200
-@@ -14,4 +14,6 @@
- if 'mork' in component_libs or CONFIG['MOZ_MORK']:
-     app_libxul_dirs += [bridge_reldir + 'db/mork']
- 
-+ifdef disabled
- app_libxul_dirs += [bridge_reldir + 'mailnews']
-+endif

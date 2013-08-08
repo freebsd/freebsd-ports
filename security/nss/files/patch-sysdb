@@ -122,6 +122,17 @@
  #include "seccomon.h"
  #include "secdert.h"
  #include "secoidt.h"
+--- lib/manifest.mn~
++++ lib/manifest.mn
+@@ -20,7 +20,7 @@ DIRS = \
+ 	$(UTIL_SRCDIR) \
+ 	$(FREEBL_SRCDIR) \
+ 	$(SQLITE_SRCDIR) \
+-	$(DBM_SRCDIR) \
++	$(NULL) \
+ 	$(SOFTOKEN_SRCDIR) \
+ 	base dev pki \
+ 	libpkix \
 --- cmd/platlibs.mk.orig	2009-08-31 12:57:13.000000000 +0200
 +++ cmd/platlibs.mk	2009-08-31 12:57:29.000000000 +0200
 @@ -85,7 +85,7 @@

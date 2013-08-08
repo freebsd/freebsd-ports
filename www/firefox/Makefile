@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	22.0
+DISTVERSION=	23.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.9.6:${PORTSDIR}/devel/nspr \
-		nss>=3.14.3:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.14.1:${PORTSDIR}/databases/sqlite3 \
+BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
+		nss>=3.15:${PORTSDIR}/security/nss \
+		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
@@ -45,7 +45,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=	PGO WEBRTC
+OPTIONS_DEFINE=	WEBRTC
 OPTIONS_DEFAULT=WEBRTC
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
@@ -57,33 +57,6 @@ OPTIONS_SINGLE_AUDIO:=${OPTIONS_SINGLE_AUDIO:S/OSS//}
 
 WRKSRC:=	${WRKDIR}/mozilla-release
 
-.if ${PORT_OPTIONS:MPGO}
-USE_GCC?=	yes
-USE_DISPLAY=		yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-
-.undef GNU_CONFIGURE
-MOZ_OPTIONS+=	${CONFIGURE_TARGET}
-MAKEFILE=	${WRKSRC}/client.mk
-ALL_TARGET=	profiledbuild
-MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
-		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
-.endif
-
-pre-extract:
-.if ${PORT_OPTIONS:MPGO}
-	@${ECHO} "*****************************************************************"
-	@${ECHO} "**************************** attention **************************"
-	@${ECHO} "*****************************************************************"
-	@${ECHO} "To build Firefox with PGO support you need a running X server and"
-	@${ECHO} "   build this port with an user who could access the X server!   "
-	@${ECHO} ""
-	@${ECHO} "During the build a Firefox instance will start and run some test."
-	@${ECHO} "      Do not interrupt or close Firefox during this tests!       "
-	@${ECHO} "*****************************************************************"
-	@sleep 10
-.endif
-
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
@@ -91,7 +64,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
-		-e '/^SQLITE_VERSION/s/=.*/=3.7.14.1/' \
 		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp

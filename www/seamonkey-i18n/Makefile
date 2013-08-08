@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -71,14 +71,7 @@ do-install:
 	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@for lang in ${SEAMONKEY_I18N_}; do \
-		for xpi in ${XPI_LINKFARMS} ; do \
-			if [ -d $${xpi} ] ; \
-			then \
-				${ECHO_CMD} $$xpi/langpack-$$lang@seamonkey.mozilla.org ${_A} ; \
-			fi ; \
-		done ; \
-	done
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \

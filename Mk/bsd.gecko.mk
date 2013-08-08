@@ -176,7 +176,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 22+ 17 22+
+#                         Available values: yes 17+ 23+ 17 23+
 #                         NOTE:
 #                         default value 17 is used in case of USE_FIREFOX=yes
 #
@@ -187,9 +187,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 19+ 19
+#                         Available values: yes 20+ 20
 #                         NOTE:
-#                         default value 19 is used in case of USE_SEAMONKEY=yes
+#                         default value 20 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -218,11 +218,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 22
-_FIREFOX_RANGE_VERSIONS=	17+ 22+
+_FIREFOX_VERSIONS=			17 23
+_FIREFOX_RANGE_VERSIONS=	17+ 23+
 
 # For specifying [17, ..]+
-_FIREFOX_22P=	22 ${_FIREFOX_17P}
+_FIREFOX_23P=	23 ${_FIREFOX_17P}
 _FIREFOX_17P=	17
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -269,7 +269,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-22_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+23_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -291,12 +291,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	19
-_SEAMONKEY_VERSIONS=		19
-_SEAMONKEY_RANGE_VERSIONS=	19+
+_SEAMONKEY_DEFAULT_VERSION=	20
+_SEAMONKEY_VERSIONS=		20
+_SEAMONKEY_RANGE_VERSIONS=	20+
 
-# For specifying [19, ..]+
-_SEAMONKEY_19P=	19
+# For specifying [20, ..]+
+_SEAMONKEY_20P=	20
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -338,7 +338,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-19_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+20_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -560,7 +560,7 @@ USE_GCC?=		yes
 . endif
 .endif
 
-.if ${MOZILLA_VER:R:R} >= 19 || exists(${.CURDIR}/files/patch-bug788955)
+.if ${MOZILLA_VER:R:R} >= 19 || ${MOZILLA:Mseamonkey*} || exists(${.CURDIR}/files/patch-bug788955)
 .if ${OSVERSION} > 1000011
 # use jemalloc 3.0.0 API in libc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
@@ -592,6 +592,13 @@ ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
 
 hunspell_LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
 hunspell_MOZ_OPTIONS=	--enable-system-hunspell
+
+.if ${MOZILLA_VER:R:R} >= 23 || ${MOZILLA:Mseamonkey*}
+_ALL_DEPENDS+=	icu
+.endif
+
+icu_LIB_DEPENDS=		icui18n:${PORTSDIR}/devel/icu
+icu_MOZ_OPTIONS=		--enable-intl-api --with-system-icu
 
 # XXX: depends on pkgng package flavor support
 #jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/libjpeg-turbo
@@ -668,12 +675,12 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 		--disable-updater		\
 		--disable-pedantic
 
-.if exists(/usr/lib/libcxxrt.so)
-LIBS+=		-Wl,--as-needed,-lcxxrt,--no-as-needed
+.if ${MOZILLA_VER:R:R} < 25 && !exists(${FILESDIR}/patch-bug803480)
+MOZ_OPTIONS+=	--disable-necko-wifi
 .endif
 
-.if !exists(${FILESDIR}/patch-bug803480) || ! ${PORT_OPTIONS:MDBUS}
-MOZ_OPTIONS+=	--disable-necko-wifi
+.if ${PORT_OPTIONS:MGTK3}
+MOZ_TOOLKIT=	cairo-gtk3
 .endif
 
 .if ${MOZ_TOOLKIT:Mcairo-qt}
@@ -684,6 +691,8 @@ USE_GNOME+=	pango
 USE_QT4+=	moc_build gui network opengl
 MOZ_OPTIONS+=	--with-qtdir= # pkg-config
 MOZ_EXPORT+=	HOST_MOC="${MOC}" HOST_RCC="${FALSE}"
+.elif ${MOZ_TOOLKIT:Mcairo-gtk3}
+USE_GNOME+=	gtk30
 .else # gtk2, cairo-gtk2
 USE_GNOME+=	gtk20
 .endif
@@ -745,6 +754,17 @@ LIB_DEPENDS+=	proxy:${PORTSDIR}/net/libproxy
 MOZ_OPTIONS+=	--enable-libproxy
 .else
 MOZ_OPTIONS+=	--disable-libproxy
+.endif
+
+.if ${PORT_OPTIONS:MPGO}
+USE_GCC?=	yes
+USE_DISPLAY=yes
+
+.undef GNU_CONFIGURE
+MAKEFILE=	${WRKSRC}/client.mk
+ALL_TARGET=	profiledbuild
+MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
+		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
 .endif
 
 .if ${PORT_OPTIONS:MWEBRTC}
@@ -810,7 +830,16 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 
 .if ${ARCH} == amd64
-CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=x86_64-unknown-${OPSYS:L}${OSREL}
+. if ${USE_MOZILLA:M-nss} && (${MOZILLA_VER:R:R} >= 20 || ${MOZILLA:Mseamonkey*} )
+USE_BINUTILS=	# intel-gcm.s
+CFLAGS+=	-B${LOCALBASE}/bin
+LDFLAGS+=	-B${LOCALBASE}/bin
+.  if ${OSVERSION} < 1000041 && exists(/usr/lib/libcxxrt.so) && \
+	${CXXFLAGS:M-stdlib=libc++}
+LIBS+=		-lcxxrt
+.  endif
+. endif
 .elif ${ARCH:Mpowerpc*}
 USE_GCC?=	yes
 CFLAGS+=	-D__STDC_CONSTANT_MACROS
@@ -835,6 +864,22 @@ MOZ_OBJDIR=		${WRKSRC}
 .endif
 
 .else # bsd.port.post.mk
+
+pre-extract: gecko-pre-extract
+
+gecko-pre-extract:
+.if ${PORT_OPTIONS:MPGO}
+	@${ECHO} "*****************************************************************"
+	@${ECHO} "**************************** attention **************************"
+	@${ECHO} "*****************************************************************"
+	@${ECHO} "To build ${MOZILLA} with PGO support you need a running X server and"
+	@${ECHO} "   build this port with an user who could access the X server!   "
+	@${ECHO} ""
+	@${ECHO} "During the build a ${MOZILLA} instance will start and run some test."
+	@${ECHO} "      Do not interrupt or close ${MOZILLA} during this tests!       "
+	@${ECHO} "*****************************************************************"
+	@sleep 10
+.endif
 
 post-patch: gecko-post-patch gecko-moz-pis-patch
 
@@ -882,12 +927,9 @@ gecko-post-patch:
 	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
 	for f in \
 			cairo-qt.h \
-			fenv.h \
 			kvm.h \
 			malloc_np.h \
 			ostream \
-			pthread_np.h \
-			pulse/pulseaudio.h \
 			spawn.h \
 			sys/thr.h \
 			sys/user.h \

@@ -17,17 +17,17 @@ diff --git configure.in configure.in
 index c167461..8346c11 100644
 --- configure.in
 +++ configure.in
-@@ -5258,17 +5258,17 @@ if test -n "$MOZ_WEBRTC"; then
-     *-android*|*-linuxandroid*)
-         if test -n "$MOZ_B2G"; then
-             MOZ_WEBRTC=1
-         else
-             dnl Make sure doesn't get matched by *-linux*
-             MOZ_WEBRTC=
-         fi
-         ;;
--    *-linux*|*-mingw*|*-darwin*)
-+    *-linux*|*-mingw*|*-darwin*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
+@@ -5246,17 +5246,17 @@ if test "$NS_PRINTING"; then
+     AC_DEFINE(NS_PRINT_PREVIEW)
+ fi
+ 
+ dnl Turn off webrtc for OS's we don't handle yet, but allow 
+ dnl --enable-webrtc to override.  Can disable for everything in
+ dnl the master list above.
+ if test -n "$MOZ_WEBRTC"; then
+     case "$target" in
+-    *-linux*|*-mingw*|*-darwin*|*-android*|*-linuxandroid*)
++    *-linux*|*-mingw*|*-darwin*|*-android*|*-linuxandroid*|*-dragonfly*|*-freebsd*|*-netbsd*|*-openbsd*)
          dnl Leave enabled
          ;;
      *)

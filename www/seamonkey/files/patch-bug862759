@@ -1,0 +1,10 @@
+--- mozilla/js/src/frontend/ParseMaps.cpp~
++++ mozilla/js/src/frontend/ParseMaps.cpp
+@@ -134,5 +134,5 @@ frontend::InitAtomMap(JSContext *cx, frontend::AtomIndexMap *indices, HeapPtrAto
+     }
+ }
+ 
+-template class AtomDecls<FullParseHandler>;
+-template class AtomDecls<SyntaxParseHandler>;
++template class frontend::AtomDecls<FullParseHandler>;
++template class frontend::AtomDecls<SyntaxParseHandler>;
