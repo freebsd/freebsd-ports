@@ -3,6 +3,7 @@
 
 PORTNAME=	SpotifyWebsocketAPI
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -41,6 +42,10 @@ EXAMPLES_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}curl>=0:${PORTSDIR}/ftp/py-curl \
 .if ${PORT_OPTIONS:MEXAMPLES}
 USE_GSTREAMER=	python
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
+		${WRKSRC}/clients/respotify/respotify.py
 
 post-install:
 .for f in ${CLIENTFILES}
