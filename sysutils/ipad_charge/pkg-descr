@@ -1,3 +1,3 @@
-ipad_charge is an iPad USB charging control utility.
-
-WWW: http://www.rainbow-software.org/linux/
+The iPad charge port provide some simple devd scripts which can enable
+or disable charging on your iPad/iPod/iPhone when it is connected to the
+USB port on your PC.

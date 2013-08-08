@@ -1,0 +1,11 @@
+*********************************************************************
+1) add ipad_charge_enable="YES" and optionally
+   ipad_charge_action="ON" (default) or "OFF" .
+
+to your /etc/rc.conf
+
+2) Please restart devd as the configuration changed
+
+	# service devd restart
+
+*********************************************************************

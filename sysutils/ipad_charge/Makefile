@@ -1,38 +1,31 @@
-# New ports collection makefile for:	ipad_charge
-# Date created:		13 January 2012
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ipad_charge
-PORTVERSION=	1.1
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.rainbow-software.org/linux_files/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTFILES=	# empty
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	An iPad/iPad2 USB charging utility
+COMMENT=	Generic iPad USB charging utility
 
-LDFLAGS+=	-lusb
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	BSD
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-PLIST_FILES=	bin/ipad_charge
+USE_RC_SUBR=	ipad_charge
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-BROKEN=		does not compile
+.if ${OSVERSION} < 800000
+IGNORE=		requires FreeBSD 8.0-RELEASE or later
 .endif
 
-do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
-		-o ${WRKSRC}/${PORTNAME}
-	
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+post-install:
+	@${MKDIR} ${PREFIX}/etc/devd
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
+		< ${FILESDIR}/ipad_charge.conf.in > ${WRKDIR}/ipad_charge.conf
+	${INSTALL_DATA} "${WRKDIR}/ipad_charge.conf" ${PREFIX}/etc/devd
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
