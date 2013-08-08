@@ -18,14 +18,15 @@ RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
-		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-USE_AUTOTOOLS=	aclocal autoconf libtool
-AUTOMAKE_ARGS=	--add-missing
-USES=	pathfix pkgconfig
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--without-openssl-version-check
+USE_AUTOTOOLS=	aclocal autoconf automake libtool
+USES=		pathfix pkgconfig
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
 ACLOCAL_ARGS=	-I .
+AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
@@ -40,7 +41,10 @@ GNUTLS_DESC=	Use GnuTLS instead of OpenSSL(EXPERIMENTAL)
 
 .if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--with-gnutls
+CONFIGURE_ARGS+=--with-gnutls \
+		--with-system-cafile=${LOCALBASE}/share/certs/ca-root-nss.crt
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
 .include <bsd.port.pre.mk>
