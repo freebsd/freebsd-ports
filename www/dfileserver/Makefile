@@ -1,17 +1,14 @@
-# New ports collection makefile for:	DFileServer
-# Date created:				8 September 2005
-# Whom:					Dash|RD
-#
+# Created by: Dash|RD
 # $FreeBSD$
-#
 
 PORTNAME=	DFileServer
 PORTVERSION=	1.1.3
 CATEGORIES=	www
-MASTER_SITES=	http://harpy.soarwitheagles.net/~dashy/
+MASTER_SITES=	http://harpy.soarwitheagles.net/~dashy/ \
+  		http://rodrigo.osorio.free.fr/freebsd/distfiles/
 
 MAINTAINER=	dashevil@gmail.com
-COMMENT=	A compact webserver designed to make sharing files easy
+COMMENT=	Compact webserver designed to make sharing files easy
 
 PLIST_FILES=	bin/dfileserver
 
