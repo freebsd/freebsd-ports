@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gambit
-PORTVERSION=	13.0.1
+PORTVERSION=	13.0.2
 CATEGORIES=	math
 MASTER_SITES=	SF/gambit/${PORTNAME}13/${PORTVERSION}/
 
@@ -12,7 +12,7 @@ COMMENT=	A library of tools for doing computation in game theory
 LICENSE=	GPLv2
 
 USE_GNOME=	gtk20
-USE_WX=		2.8+
+USE_WX=		2.8
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
