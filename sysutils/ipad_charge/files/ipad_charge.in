@@ -1,0 +1,44 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: ipad_charge
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf[.local] to enable ipad_charge:
+#
+# ipad_charge_enable="YES"
+# ipad_charge_action="ON" (default)
+# ipad_charge_action="OFF"
+#
+
+ipad_charge_enable=${ipad_charge_enable-"NO"}
+ipad_charge_action=${ipad_charge_action-"ON"}
+
+. /etc/rc.subr
+
+name=ipad_charge
+rcvar=ipad_charge_enable
+command="/usr/sbin/usbconfig"
+command_args_on="-d $2 do_request 0x40 0x40 0x6400 0x6400 0"
+command_args_off="-d $2 do_request 0x40 0x40 0x6400 0x0000 0"
+start_precmd="${name}_prestart"
+pidfile=""
+
+ipad_charge_prestart()
+{
+	case ${ipad_charge_action} in
+	[Oo][Nn])
+		command_args="${command_args_on}"
+		;;
+	*)
+		command_args="${command_args_off}"
+		;;
+	esac
+}
+
+load_rc_config $name
+
+if [ $# -gt 1 ]; then
+	# Only run the rc command if the appropriate arguments are specified:	
+	run_rc_command $1
+fi
