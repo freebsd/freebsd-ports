@@ -17,23 +17,6 @@ Date:   Fri Sep 14 15:54:55 2012 -0400
 
 diff --git configure.in configure.in
 index f0aeb5d..1c01010 100644
---- configure.in
-+++ configure.in
-@@ -4027,11 +4027,7 @@ if test "$MOZ_NATIVE_JPEG" = 1; then
-                      #include <jpeglib.h> ],
-                    [ #if JPEG_LIB_VERSION < $MOZJPEG
-                      #error "Insufficient JPEG library version ($MOZJPEG required)."
--                     #endif
--                     #ifndef JCS_EXTENSIONS
--                     #error "libjpeg-turbo JCS_EXTENSIONS required"
--                     #endif
--                     ],
-+                     #endif ],
-                    MOZ_NATIVE_JPEG=1,
-                    AC_MSG_ERROR([Insufficient JPEG library version for --with-system-jpeg]))
- fi
-diff --git configure.in configure.in
-index f0aeb5d..1c01010 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
 @@ -4027,11 +4027,7 @@ if test "$MOZ_NATIVE_JPEG" = 1; then

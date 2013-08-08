@@ -67,7 +67,7 @@ do-install:
 # Keep empty directories with pkg_* tools
 .if !target(post-extract-script)
 post-extract-script:
-	@if [ "${PKG_BIN:T}" != "pkg" ]; then \
+	@if [ "${PKG_BIN:T}" != "pkg-static" ]; then \
 	    for d in $$(${FIND} ${WRKSRC} -type d -empty); do \
 		${TOUCH} $$d/.keep_me; \
 		${ECHO_CMD} lib/${APP_NAME}/$${d#${WRKSRC}/}/.keep_me \

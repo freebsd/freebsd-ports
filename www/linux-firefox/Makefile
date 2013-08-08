@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-PORTVERSION=	22.0
+PORTVERSION=	23.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 
 USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
 
+PREFS_FILE=	${WRKSRC}/${APP_SUBDIR}defaults/preferences/browser-prefs.js
 APP_SUBDIR=	browser/ # plugins, extensions
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
@@ -27,15 +28,15 @@ APP_SUBDIR=	browser/ # plugins, extensions
 post-extract:	replace-gre
 replace-gre:	version-compat-check
 	@${ECHO_MSG} "===>   GRE versions are compatible, replacing with" \
-		"$$(${MAKE} -V PKGNAME -C ${PORTSDIR}/www/linux-seamonkey)"
-	cd $$(${MAKE} -V WRKSRC -C ${PORTSDIR}/www/linux-seamonkey); \
+		"$$(${MAKE} -V PKGNAME -C ${.CURDIR}/../linux-seamonkey)"
+	cd $$(${MAKE} -V WRKSRC -C ${.CURDIR}/../linux-seamonkey); \
 		${CP} lib* dependentlibs.list ${WRKSRC}
 
 version-compat-check:
 	@${ECHO_MSG} "===>  Checking GRE version is compatible with" \
-		"$$(${MAKE} -V PKGNAME -C ${PORTSDIR}/www/linux-seamonkey)"
+		"$$(${MAKE} -V PKGNAME -C ${.CURDIR}/../linux-seamonkey)"
 	@ff_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' ${WRKSRC}/platform.ini); \
-	sm_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' $$(${MAKE} -V WRKSRC -C ${PORTSDIR}/www/linux-seamonkey)/platform.ini); \
+	sm_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' $$(${MAKE} -V WRKSRC -C ${.CURDIR}/../linux-seamonkey)/platform.ini); \
 	if [ $$ff_gre_version != $$sm_gre_version ]; then \
 	    ${ECHO_MSG} "===>   GRE versions aren't compatible, aborting"; \
 	    exit 1; \

@@ -1,8 +1,55 @@
 diff --git configure.in configure.in
-index fa283d0..936b6e0 100644
+index a0575dc..be327fd 100644
 --- configure.in
 +++ configure.in
-@@ -8229,16 +8229,26 @@ MOZ_ARG_DISABLE_BOOL(necko-wifi,
+@@ -4306,7 +4306,6 @@ NS_PRINTING=1
+ MOZ_PDF_PRINTING=
+ MOZ_DISABLE_CRYPTOLEGACY=
+ NSS_DISABLE_DBM=
+-NECKO_WIFI=1
+ NECKO_COOKIES=1
+ NECKO_PROTOCOLS_DEFAULT="about data file ftp http res viewsource websocket wyciwyg device"
+ USE_ARM_KUSER=
+@@ -4336,11 +4335,6 @@ case "${target}" in
+         fi
+ 
+         NSS_DISABLE_DBM=1
+-        if test -z "$gonkdir"; then
+-          NECKO_WIFI=
+-        else
+-          NECKO_WIFI=1
+-        fi
+         MOZ_THEME_FASTSTRIPE=1
+         MOZ_TREE_FREETYPE=1
+         MOZ_MEMORY=1
+@@ -8485,28 +8479,39 @@ done
+ dnl
+ dnl option to disable necko's wifi scanner
+ dnl
++
++case "$OS_TARGET" in
++  OS2)
++    dnl OS/2 implementation of Necko-WiFi support will be added in bug 506566
++    ;;
++  Android)
++    if test -n "$gonkdir"; then
++      NECKO_WIFI=1
++    fi
++    ;;
++  Darwin|SunOS|WINNT)
++    NECKO_WIFI=1
++    ;;
++  Linux)
++    if test -z "$MOZ_ENABLE_DBUS"; then
++      AC_MSG_ERROR([Necko WiFi scanning needs DBus on your platform, remove --disable-dbus or use --disable-necko-wifi])
++    fi
++    NECKO_WIFI=1
++    NECKO_WIFI_DBUS=1
++    ;;
++esac
++
+ MOZ_ARG_DISABLE_BOOL(necko-wifi,
+ [  --disable-necko-wifi    Disable necko wifi scanner],
      NECKO_WIFI=,
      NECKO_WIFI=1)
  
@@ -16,26 +63,27 @@ index fa283d0..936b6e0 100644
 -        "$OS_ARCH" != "SunOS" -a \
 -        "$OS_ARCH" != "WINNT"; then
 -  AC_MSG_ERROR([Necko WiFi scanning not supported on your platform, use --disable-necko-wifi])
-+if test "$NECKO_WIFI"; then
-+  case "$OS_TARGET" in
-+    Android)
-+      ;;
-+    Darwin)
-+      ;;
-+    SunOS)
-+      ;;
-+    WINNT)
-+      ;;
-+    OS2)
-+      dnl OS/2 implementation of Necko-WiFi support will be added in bug 506566
-+      NECKO_WIFI=
-+      ;;
-+    *)
-+      if test -z "$MOZ_ENABLE_DBUS"; then
-+        AC_MSG_ERROR([Necko WiFi scanning needs DBus on your platform, remove --disable-dbus or use --disable-necko-wifi])
-+      fi
-+      ;;
-+  esac
- fi
- 
+-fi
+-
  if test "$NECKO_WIFI"; then
+   AC_DEFINE(NECKO_WIFI)
+   _NON_GLOBAL_ACDEFINES="$_NON_GLOBAL_ACDEFINES NECKO_WIFI"
+ fi
+ AC_SUBST(NECKO_WIFI)
++AC_SUBST(NECKO_WIFI_DBUS)
+ 
+ dnl
+ dnl option to disable cookies
+diff --git netwerk/wifi/Makefile.in netwerk/wifi/Makefile.in
+index 39d7364..e8d276b 100644
+--- netwerk/wifi/Makefile.in
++++ netwerk/wifi/Makefile.in
+@@ -41,7 +41,7 @@ CPPSRCS += nsWifiScannerSolaris.cpp
+ OS_INCLUDES += $(GLIB_CFLAGS)
+ endif
+ 
+-ifdef MOZ_ENABLE_DBUS
++ifdef NECKO_WIFI_DBUS
+ CPPSRCS += nsWifiScannerDBus.cpp
+ OS_INCLUDES += $(MOZ_DBUS_GLIB_CFLAGS)
+ endif

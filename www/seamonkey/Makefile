@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.19
-PORTREVISION=	1
+DISTVERSION=	2.20
 CATEGORIES?=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -12,14 +11,14 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.9.6:${PORTSDIR}/devel/nspr \
-		nss>=3.14.3:${PORTSDIR}/security/nss \
+BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
+		nss>=3.15:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
 EM_VERSION=	1.5.2
-L_VERSION=	2.4b1
+L_VERSION=	2.5b1
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
@@ -31,7 +30,6 @@ WANT_GNOME=	yes
 USE_QT4=	# empty
 QT_NONSTANDARD=	yes
 WANT_PERL=	yes
-GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 USE_GL=		gl
 USE_DOS2UNIX=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
@@ -55,6 +53,11 @@ COMPOSER_DESC?=	HTML Composer module
 LDAP_DESC?=	LDAP support for Mailnews
 MAILNEWS_DESC?=	Mail and News modules
 
+# non-client.mk objdir build broken after bug 846540
+.undef GNU_CONFIGURE
+ALL_TARGET=	build
+MAKEFILE=	${WRKSRC}/client.mk
+
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 # OSS is gone after bug 852401
@@ -74,7 +77,8 @@ MOZSRC:=	${WRKSRC}/mozilla
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
 .if ! ${PORT_OPTIONS:MMAILNEWS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in
+EXTRA_PATCHES+=	${FILESDIR}/extra-mailnews-patch-bridge-bridge.mk \
+		${FILESDIR}/extra-patch-configure.in
 MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .else
 # mail and news desired, but not LDAP
@@ -95,8 +99,8 @@ EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/components/enigmail.js \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile \
-		${FILESDIR}/extra-bug886095
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile
+EXTRA_PATCHES+=	${FILESDIR}/extra-bug886095
 .endif
 .endif
 

@@ -51,6 +51,95 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0998e79d-0055-11e3-905b-0025905a4771">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>18.0,1</gt><lt>23.0,1</lt></range>
+	<range><lt>17.0.8,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>17.0.8,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.20</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>17.0.8</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.20</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>17.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2013-63 Miscellaneous memory safety hazards (rv:23.0 /
+	    rv:17.0.8)</p>
+	  <p>MFSA 2013-64 Use after free mutating DOM during SetBody</p>
+	  <p>MFSA 2013-65 Buffer underflow when generating CRMF requests</p>
+	  <p>MFSA 2013-66 Buffer overflow in Mozilla Maintenance Service and
+	    Mozilla Updater</p>
+	  <p>MFSA 2013-67 Crash during WAV audio file decoding</p>
+	  <p>MFSA 2013-68 Document URI misrepresentation and masquerading</p>
+	  <p>MFSA 2013-69 CRMF requests allow for code execution and XSS
+	    attacks</p>
+	  <p>MFSA 2013-70 Bypass of XrayWrappers using XBL Scopes</p>
+	  <p>MFSA 2013-71 Further Privilege escalation through Mozilla Updater</p>
+	  <p>MFSA 2013-72 Wrong principal used for validating URI for some
+	    Javascript components</p>
+	  <p>MFSA 2013-73 Same-origin bypass with web workers and
+	    XMLHttpRequest</p>
+	  <p>MFSA 2013-74 Firefox full and stub installer DLL hijacking</p>
+	  <p>MFSA 2013-75 Local Java applets may read contents of local file
+	    system</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-1701</cvename>
+	<cvename>CVE-2013-1702</cvename>
+	<cvename>CVE-2013-1704</cvename>
+	<cvename>CVE-2013-1705</cvename>
+	<cvename>CVE-2013-1706</cvename>
+	<cvename>CVE-2013-1707</cvename>
+	<cvename>CVE-2013-1708</cvename>
+	<cvename>CVE-2013-1709</cvename>
+	<cvename>CVE-2013-1710</cvename>
+	<cvename>CVE-2013-1711</cvename>
+	<cvename>CVE-2013-1712</cvename>
+	<cvename>CVE-2013-1713</cvename>
+	<cvename>CVE-2013-1714</cvename>
+	<cvename>CVE-2013-1715</cvename>
+	<cvename>CVE-2013-1717</cvename>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-63.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-64.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-65.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-66.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-67.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-68.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-69.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-70.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-71.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-72.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2013-08-06</discovery>
+      <entry>2013-08-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b448a96-ff73-11e2-b28d-080027ef73ec">
     <topic>PuTTY -- Four security holes in versions before 0.63</topic>
     <affects>

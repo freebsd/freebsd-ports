@@ -16,16 +16,16 @@ diff --git configure.in configure.in
 index 55e4cd1..76567b3 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5294,6 +5294,9 @@ if test -n "$MOZ_WEBRTC"; then
+@@ -5309,6 +5309,9 @@ if test -n "$MOZ_WEBRTC"; then
      MOZ_VP8_ENCODER=1
      MOZ_VP8_ERROR_CONCEALMENT=1
  
 +    dnl with libv4l2 we can support more cameras
 +    PKG_CHECK_MODULES(MOZ_LIBV4L2, libv4l2)
 +
-     if test "$MOZ_WIDGET_TOOLKIT" != "gonk"; then
-        dnl OpenSLES is only available in Android 2.3 and later; we'll change this
-        dnl hard dependency to a dynamic load with graceful runtime failure before
+ dnl enable once Signaling lands
+     MOZ_WEBRTC_SIGNALING=1
+     AC_DEFINE(MOZ_WEBRTC_SIGNALING)
 @@ -8981,6 +8984,10 @@ elif test "${OS_TARGET}" = "Android"; then
     fi
  fi

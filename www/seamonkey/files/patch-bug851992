@@ -1,0 +1,373 @@
+diff --git a/config/Makefile.in b/config/Makefile.in
+--- mozilla/config/Makefile.in
++++ mozilla/config/Makefile.in
+@@ -97,16 +97,17 @@ export:: $(export-preqs)
+ 		-DMOZ_TREE_PIXMAN=$(MOZ_TREE_PIXMAN) \
+ 		-DMOZ_NATIVE_HUNSPELL=$(MOZ_NATIVE_HUNSPELL) \
+ 		-DMOZ_NATIVE_BZ2=$(MOZ_NATIVE_BZ2) \
+ 		-DMOZ_NATIVE_ZLIB=$(MOZ_NATIVE_ZLIB) \
+ 		-DMOZ_NATIVE_PNG=$(MOZ_NATIVE_PNG) \
+ 		-DMOZ_NATIVE_JPEG=$(MOZ_NATIVE_JPEG) \
+ 		-DMOZ_NATIVE_LIBEVENT=$(MOZ_NATIVE_LIBEVENT) \
+ 		-DMOZ_NATIVE_LIBVPX=$(MOZ_NATIVE_LIBVPX) \
++		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
+ 		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
+ 	$(INSTALL) system_wrappers $(DIST)
+ 
+ GARBAGE_DIRS += system_wrappers
+ endif
+ 
+ ifdef WRAP_STL_INCLUDES
+ ifdef GNU_CXX
+diff --git a/config/system-headers b/config/system-headers
+--- mozilla/config/system-headers
++++ mozilla/config/system-headers
+@@ -1125,8 +1125,19 @@ gst/video/video.h
+ sys/msg.h
+ sys/ipc.h
+ sys/thr.h
+ sys/user.h
+ kvm.h
+ spawn.h
+ err.h
+ xlocale.h
++#if MOZ_NATIVE_ICU==1
++unicode/locid.h
++unicode/numsys.h
++unicode/ucal.h
++unicode/ucol.h
++unicode/udat.h
++unicode/udatpg.h
++unicode/uenum.h
++unicode/unum.h
++unicode/ustring.h
++#endif
+diff --git a/configure.in b/configure.in
+--- mozilla/configure.in
++++ mozilla/configure.in
+@@ -4134,16 +4134,32 @@ if test -n "$MOZ_NATIVE_FFI"; then
+         PKG_CHECK_MODULES(MOZ_FFI, libffi > 3.0.9)
+     else
+         PKG_CHECK_MODULES(MOZ_FFI, libffi >= 3.0.9)
+     fi
+     MOZ_JS_STATIC_LIBS="$MOZ_JS_STATIC_LIBS $MOZ_FFI_LIBS"
+ fi
+ 
+ dnl ========================================================
++dnl system icu support
++dnl ========================================================
++MOZ_NATIVE_ICU=
++MOZ_ARG_WITH_BOOL(system-icu,
++[  --with-system-icu
++                          Use system icu (located with pkgconfig)],
++    MOZ_NATIVE_ICU=1)
++
++if test -n "$MOZ_NATIVE_ICU"; then
++    PKG_CHECK_MODULES(MOZ_ICU, icu-i18n >= 50.1)
++    MOZ_JS_STATIC_LIBS="$MOZ_JS_STATIC_LIBS $MOZ_ICU_LIBS"
++fi
++
++AC_SUBST(MOZ_NATIVE_ICU)
++
++dnl ========================================================
+ dnl Java SDK support
+ dnl ========================================================
+ 
+ JAVA_BIN_PATH=
+ MOZ_ARG_WITH_STRING(java-bin-path,
+ [  --with-java-bin-path=dir
+                           Location of Java binaries (java, javac, jar)],
+     JAVA_BIN_PATH=$withval)
+diff --git a/js/src/Makefile.in b/js/src/Makefile.in
+--- mozilla/js/src/Makefile.in
++++ mozilla/js/src/Makefile.in
+@@ -232,48 +232,54 @@ endif
+ 
+ #############################################
+ # BEGIN ECMAScript Internationalization API
+ #
+ 
+ # ICU headers need to be available whether we build with the complete
+ # Internationalization API or not - ICU stubs rely on them.
+ 
++ifdef MOZ_NATIVE_ICU
++LOCAL_INCLUDES += $(MOZ_ICU_CFLAGS)
++else
+ LOCAL_INCLUDES += \
+   -I$(topsrcdir)/../../intl/icu/source/common \
+   -I$(topsrcdir)/../../intl/icu/source/i18n \
+   $(NULL)
++endif
+ 
+ ifdef ENABLE_INTL_API
+ 
+ ifeq ($(OS_ARCH),WINNT)
+   # Parallel gmake is buggy on Windows
+   ICU_GMAKE_OPTIONS="-j1"
+   # Library names: On Windows, ICU uses modified library names for static
+   # and debug libraries.
+   ifdef MOZ_DEBUG
+     ICU_LIB_SUFFIX=d
+   endif
+   ICU_LIB_RENAME = $(foreach libname,$(ICU_LIB_NAMES),\
+                      cp -p intl/icu/lib/s$(libname)$(ICU_LIB_SUFFIX).lib intl/icu/lib/$(libname).lib;)
+ endif
+ 
++ifndef MOZ_NATIVE_ICU
+ # - Build ICU as part of the "export" target, so things get built
+ #   in the right order.
+ # - ICU requires GNU make according to its readme.html. pymake can't be used
+ #   because it doesn't support order only dependencies.
+ # - Force ICU to use the standard suffix for object files because expandlibs
+ #   will discard all files with a non-standard suffix (bug 857450).
+ # - Options for genrb: -k strict parsing; -R omit collation tailoring rules.
+ export::
+ 	$(GMAKE) $(ICU_GMAKE_OPTIONS) -C intl/icu STATIC_O=$(OBJ_SUFFIX) GENRBOPTS='-k -R'
+ 	$(ICU_LIB_RENAME)
+ 
+ distclean clean::
+ 	$(call SUBMAKE,$@,intl/icu)
++endif
+ 
+ endif
+ 
+ #
+ # END ECMAScript Internationalization API
+ #############################################
+ 
+ 
+@@ -398,17 +404,21 @@ CFLAGS += $(MOZ_ZLIB_CFLAGS)
+ EXTRA_LIBS += $(MOZ_ZLIB_LIBS)
+ # Enable zlib usage if zlib has been located. When building the browser on
+ # Windows, MOZ_ZLIB_LIBS is empty because zlib is part of libmozglue. We thus
+ # also enable zlib if mozglue is present.
+ ifneq (,$(MOZ_ZLIB_LIBS)$(MOZ_GLUE_LDFLAGS))
+ DEFINES += -DUSE_ZLIB
+ endif
+ 
+-SHARED_LIBRARY_LIBS += $(ICU_LIBS)
++ifdef MOZ_NATIVE_ICU
++EXTRA_DSO_LDOPTS += $(MOZ_ICU_LIBS)
++else
++SHARED_LIBRARY_LIBS += $(MOZ_ICU_LIBS)
++endif
+ 
+ # Prevent floating point errors caused by VC++ optimizations
+ ifdef _MSC_VER
+ # XXX We should add this to CXXFLAGS, too?
+ CFLAGS += -fp:precise
+ 
+ ifeq ($(CPU_ARCH),x86)
+ # Workaround compiler bug on PGO (Bug 721284)
+diff --git a/js/src/config/Makefile.in b/js/src/config/Makefile.in
+--- mozilla/js/src/config/Makefile.in
++++ mozilla/js/src/config/Makefile.in
+@@ -54,16 +54,17 @@ include $(topsrcdir)/config/rules.mk
+ 
+ HOST_CFLAGS += -DUNICODE -D_UNICODE
+ 
+ ifdef WRAP_SYSTEM_INCLUDES
+ export:: \
+   $(call mkdir_deps,system_wrappers_js) \
+   $(NULL)
+ 	$(PYTHON) $(srcdir)/Preprocessor.py $(DEFINES) $(ACDEFINES) \
++		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
+ 		$(srcdir)/system-headers | $(PERL) $(srcdir)/make-system-wrappers.pl system_wrappers_js
+ 	$(INSTALL) system_wrappers_js $(DIST)
+ 
+ GARBAGE_DIRS += system_wrappers_js
+ endif
+ 
+ GARBAGE += $(srcdir)/*.pyc *.pyc
+ 
+diff --git a/js/src/config/system-headers b/js/src/config/system-headers
+--- mozilla/js/src/config/system-headers
++++ mozilla/js/src/config/system-headers
+@@ -1125,8 +1125,19 @@ gst/video/video.h
+ sys/msg.h
+ sys/ipc.h
+ sys/thr.h
+ sys/user.h
+ kvm.h
+ spawn.h
+ err.h
+ xlocale.h
++#if MOZ_NATIVE_ICU==1
++unicode/locid.h
++unicode/numsys.h
++unicode/ucal.h
++unicode/ucol.h
++unicode/udat.h
++unicode/udatpg.h
++unicode/uenum.h
++unicode/unum.h
++unicode/ustring.h
++#endif
+diff --git a/js/src/configure.in b/js/src/configure.in
+--- mozilla/js/src/configure.in
++++ mozilla/js/src/configure.in
+@@ -4406,59 +4406,68 @@ if test "$ACCESSIBILITY" -a "$MOZ_ENABLE
+     AC_DEFINE_UNQUOTED(ATK_MINOR_VERSION, $ATK_MINOR_VERSION)
+     AC_DEFINE_UNQUOTED(ATK_REV_VERSION, $ATK_REV_VERSION)
+ fi
+ 
+ 
+ dnl ========================================================
+ dnl ECMAScript Internationalization API Support (uses ICU)
+ dnl ========================================================
++ICU_LIB_NAMES=
++MOZ_NATIVE_ICU=
++MOZ_ARG_WITH_BOOL(system-icu,
++[  --with-system-icu
++                          Use system icu (located with pkgconfig)],
++    MOZ_NATIVE_ICU=1)
++
++if test -n "$MOZ_NATIVE_ICU"; then
++    PKG_CHECK_MODULES(MOZ_ICU, icu-i18n >= 50.1)
++fi
+ 
+ if test -n "$JS_STANDALONE"; then
+     ENABLE_INTL_API=1
+ fi
+ MOZ_ARG_ENABLE_BOOL(intl-api,
+ [  --enable-intl-api       Enable ECMAScript Internationalization API (default=yes for standalone JS)],
+     ENABLE_INTL_API=1,
+     ENABLE_INTL_API= )
+ 
+ dnl Settings for the implementation of the ECMAScript Internationalization API
+ if test -n "$ENABLE_INTL_API"; then
+     AC_DEFINE(ENABLE_INTL_API)
+-    # We build ICU as a static library.
+-    AC_DEFINE(U_STATIC_IMPLEMENTATION)
+-
+-    case "$OS_TARGET" in
+-        WINNT)
+-            ICU_LIB_NAMES="icuin icuuc icudt"
+-            ;;
+-        Darwin|Linux)
+-            ICU_LIB_NAMES="icui18n icuuc icudata"
+-            ;;
+-        *)
+-            AC_MSG_ERROR([ECMAScript Internationalization API is not yet supported on this platform])
+-    esac
+-
+-    ICU_LIBS='$(call EXPAND_LIBNAME_PATH,$(ICU_LIB_NAMES),$(DEPTH)/intl/icu/lib)'
+-else
+-    ICU_LIB_NAMES=
+-    ICU_LIBS=
++
++    if test -z "$MOZ_NATIVE_ICU"; then
++        case "$OS_TARGET" in
++            WINNT)
++                ICU_LIB_NAMES="icuin icuuc icudt"
++                ;;
++            Darwin|Linux)
++                ICU_LIB_NAMES="icui18n icuuc icudata"
++                ;;
++            *)
++                AC_MSG_ERROR([ECMAScript Internationalization API is not yet supported on this platform])
++        esac
++        MOZ_ICU_LIBS='$(call EXPAND_LIBNAME_PATH,$(ICU_LIB_NAMES),$(DEPTH)/intl/icu/lib)'
++    fi
+ fi
+ 
+ AC_SUBST(ENABLE_INTL_API)
+ AC_SUBST(ICU_LIB_NAMES)
+-AC_SUBST(ICU_LIBS)
+-
+-dnl Source files that use ICU should have control over which parts of the ICU
+-dnl namespace they want to use.
+-AC_DEFINE(U_USING_ICU_NAMESPACE,0)
+-
++AC_SUBST(MOZ_ICU_LIBS)
++AC_SUBST(MOZ_NATIVE_ICU)
+ 
+ dnl Settings for ICU
+-if test -n "$ENABLE_INTL_API" ; then
++if test -n "$ENABLE_INTL_API" -a -z "$MOZ_NATIVE_ICU"; then
++    dnl We build ICU as a static library.
++    AC_DEFINE(U_STATIC_IMPLEMENTATION)
++
++    dnl Source files that use ICU should have control over which parts of the ICU
++    dnl namespace they want to use.
++    AC_DEFINE(U_USING_ICU_NAMESPACE,0)
++
+     # Set ICU compile options
+     ICU_CPPFLAGS=""
+     # don't use icu namespace automatically in client code
+     ICU_CPPFLAGS="$ICU_CPPFLAGS -DU_USING_ICU_NAMESPACE=0"
+     # don't include obsolete header files
+     ICU_CPPFLAGS="$ICU_CPPFLAGS -DU_NO_DEFAULT_INCLUDE_UTF_HEADERS=1"
+     # remove chunks of the library that we don't need (yet)
+     ICU_CPPFLAGS="$ICU_CPPFLAGS -DUCONFIG_NO_LEGACY_CONVERSION"
+diff --git a/js/src/gdb/Makefile.in b/js/src/gdb/Makefile.in
+--- mozilla/js/src/gdb/Makefile.in
++++ mozilla/js/src/gdb/Makefile.in
+@@ -14,16 +14,20 @@ include $(DEPTH)/config/autoconf.mk
+ # Building against js_static requires that we declare mfbt sybols "exported"
+ # on its behalf.
+ DEFINES += -DEXPORT_JS_API -DIMPL_MFBT
+ 
+ LIBS = $(DEPTH)/$(LIB_PREFIX)js_static.$(LIB_SUFFIX) $(NSPR_LIBS) $(MOZ_ZLIB_LIBS)
+ 
+ LOCAL_INCLUDES += -I$(topsrcdir) -I..
+ 
++ifdef MOZ_NATIVE_ICU
++EXTRA_LIBS += $(MOZ_ICU_LIBS)
++endif
++
+ EXTRA_LIBS += $(MOZ_FFI_LIBS)
+ 
+ # Place a GDB Python auto-load file next to the gdb-tests executable, both
+ # in the build directory and in the dist/bin directory.
+ PP_TARGETS += GDB_AUTOLOAD
+ GDB_AUTOLOAD := gdb-tests-gdb.py.in
+ GDB_AUTOLOAD_FLAGS := -Dtopsrcdir=$(abspath $(topsrcdir))
+ 
+diff --git a/js/src/jsapi-tests/Makefile.in b/js/src/jsapi-tests/Makefile.in
+--- mozilla/js/src/jsapi-tests/Makefile.in
++++ mozilla/js/src/jsapi-tests/Makefile.in
+@@ -15,16 +15,20 @@ DEFINES         += -DEXPORT_JS_API
+ # Building against js_static requires that we declare mfbt sybols "exported"
+ # on its behalf.
+ DEFINES         += -DIMPL_MFBT
+ 
+ LIBS      = $(DEPTH)/$(LIB_PREFIX)js_static.$(LIB_SUFFIX) $(NSPR_LIBS) $(MOZ_ZLIB_LIBS)
+ 
+ LOCAL_INCLUDES += -I$(topsrcdir) -I..
+ 
++ifdef MOZ_NATIVE_ICU
++EXTRA_LIBS += $(MOZ_ICU_LIBS)
++endif
++
+ EXTRA_LIBS += $(MOZ_FFI_LIBS)
+ 
+ ifdef QEMU_EXE
+ MOZ_POST_PROGRAM_COMMAND = $(topsrcdir)/build/qemu-wrap --qemu $(QEMU_EXE) --libdir $(CROSS_LIB)
+ endif
+ 
+ # Place a GDB Python auto-load file next to the jsapi-tests executable in
+ # the build directory.
+diff --git a/js/src/shell/Makefile.in b/js/src/shell/Makefile.in
+--- mozilla/js/src/shell/Makefile.in
++++ mozilla/js/src/shell/Makefile.in
+@@ -22,16 +22,19 @@ DEFINES         += -DEXPORT_JS_API
+ # Building against js_static requires that we declare mfbt sybols "exported"
+ # on its behalf.
+ DEFINES         += -DIMPL_MFBT
+ 
+ LIBS      = $(NSPR_LIBS) $(EDITLINE_LIBS) $(DEPTH)/$(LIB_PREFIX)js_static.$(LIB_SUFFIX) $(MOZ_ZLIB_LIBS)
+ ifdef MOZ_NATIVE_FFI
+ EXTRA_LIBS += $(MOZ_FFI_LIBS)
+ endif
++ifdef MOZ_NATIVE_ICU
++EXTRA_LIBS += $(MOZ_ICU_LIBS)
++endif
+ 
+ LOCAL_INCLUDES += -I$(topsrcdir) -I..
+ 
+ ifeq ($(OS_ARCH),Darwin)
+ ifeq ($(TARGET_CPU),x86_64)
+ DARWIN_EXE_LDFLAGS += -pagezero_size 10000 -image_base 100000000
+ endif
+ endif
