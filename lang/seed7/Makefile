@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20130704
+DISTVERSION=	05_20130805
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -25,7 +25,6 @@ MAKE_ENV+=	S7_LIB_DIR=${S7_LIB_DIR} \
 		SEED7_LIBRARY=${SEED7_LIBRARY} \
 		C_COMPILER=${CC} \
 		CPLUSPLUS_COMPILER=${CPP}
-ALL_TARGET=	depend s7 s7c
 
 SEED7_LIBRARY=	${PREFIX}/lib/${PORTNAME}/lib
 S7_LIB_DIR=	${PREFIX}/lib/${PORTNAME}/bin
@@ -45,6 +44,10 @@ MAKEFILE=	makefile
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/makefile ${WRKSRC}/mk_clang.mak
 	${REINPLACE_CMD} -e '/FLOATTYPE_DOUBLE/s|undef|define|' ${WRKSRC}/config.h
+
+do-build:
+	cd ${WRKSRC} && ${GMAKE} -f ${MAKEFILE} depend
+	cd ${WRKSRC} && ${GMAKE} -f ${MAKEFILE} s7 s7c
 
 do-install:
 #	install interpreter and compiler

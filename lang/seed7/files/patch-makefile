@@ -1,15 +1,16 @@
---- makefile.orig	2012-11-27 13:49:47.000000000 +0100
-+++ makefile	2012-11-27 13:50:36.000000000 +0100
+--- makefile.orig	2013-06-16 12:54:40.000000000 +0200
++++ makefile	2013-07-30 10:01:44.000000000 +0200
 @@ -12,7 +12,7 @@
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
  # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
  # CFLAGS = -O2 -g -x c++ -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
 -CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
-+CFLAGS += -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
++CFLAGS = -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
  # CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
- # CFLAGS = -O2 -g -std=c99 -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
+ # CFLAGS = -O2 -g -std=c99 -D_POSIX_SOURCE -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -g -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
-@@ -21,6 +21,6 @@
+@@ -20,7 +20,7 @@
+ # CFLAGS = -O2 -g -pg -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
  # CFLAGS = -O2 -funroll-loops -Wall -pg
 -LDFLAGS = -Wl,--gc-sections
@@ -17,7 +18,7 @@
  # LDFLAGS = -pg
  # LDFLAGS = -pg -lc_p
  SYSTEM_LIBS = -lm
-@@ -39,7 +40,7 @@
+@@ -40,7 +40,7 @@
  COMPILER_LIB = s7_comp.a
  ALL_S7_LIBS = ../bin/$(COMPILER_LIB) ../bin/$(COMP_DATA_LIB) ../bin/$(DRAW_LIB) ../bin/$(CONSOLE_LIB) ../bin/$(SEED7_LIB)
  # CC = g++
