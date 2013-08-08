@@ -1,23 +1,16 @@
-# New ports collection makefile for:	libopensync-plugin-vformat-devel
-# Date created:				16 June 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync-plugin-vformat
-PORTVERSION=	0.36
-PORTREVISION=	1
+PORTVERSION=	0.39
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Vformat plugin for the OpenSync framework
 
-LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
-
-BROKEN=		fails to build
+LIB_DEPENDS=	opensync:${PORTSDIR}/devel/libopensync
 
 USE_BZIP2=	yes
 USES=		cmake iconv
