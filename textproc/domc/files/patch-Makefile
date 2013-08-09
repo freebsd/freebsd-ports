@@ -22,7 +22,7 @@
  #CFLAGS     = -Wall -W -DMSGNO -I$(includedir) -L$(libdir) $(RPM_OPT_FLAGS) -ansi -pedantic -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Winline -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wwrite-strings -Wtraditional -Wconversion -Waggregate-return -Wno-parentheses
  OBJS       = src/expatls.o src/events.o src/node.o src/nodelist.o src/namednodemap.o src/dom.o src/timestamp.o src/wcwidth.o src/mbs.o
  MAN        = DOM_CharacterData.3m.gz DOM_Document.3m.gz DOM_Element.3m.gz DOM_Implementation.3m.gz DOM_NamedNodeMap.3m.gz DOM_Node.3m.gz DOM_NodeList.3m.gz DOM_Text.3m.gz
-@@ -19,7 +17,7 @@
+@@ -19,12 +17,11 @@
  all: $(ARNAME)($(OBJS)) $(SONAME) src/defines.h
  
  $(SONAME): $(OBJS)
@@ -31,7 +31,12 @@
  
  .c.a:
  	$(CC) $(CFLAGS) -c -o $*.o $<
-@@ -33,12 +31,10 @@
+ 	ar rv $@ $*.o
+-	rm $*.o
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -fpic -c -o $*.o $<
+@@ -33,12 +30,10 @@
  	install -d $(libdir)
  	install -d $(includedir)
  	install -d $(mandir)/man3
