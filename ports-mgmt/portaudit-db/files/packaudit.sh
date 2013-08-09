@@ -44,6 +44,8 @@ SED=/usr/bin/sed
 TAR=/usr/bin/tar
 XSLTPROC=%%LOCALBASE%%/bin/xsltproc
 
+[ -r "%%PREFIX%%/etc/packaudit.conf" ] && . "%%PREFIX%%/etc/packaudit.conf"
+
 PORTSDIR="${PORTSDIR:-%%PORTSDIR%%}"
 VUXMLDIR="${VUXMLDIR:-$PORTSDIR/security/vuxml}"
 PORTAUDITDBDIR="${PORTAUDITDBDIR:-$PORTSDIR/ports-mgmt/portaudit-db}"
@@ -88,8 +90,6 @@ if [ -z  "$VULPATH" ]; then
 	exit 1
 fi
 VULURL="https://svnweb.freebsd.org/ports/$VULPATH"
-
-[ -r "%%PREFIX%%/etc/packaudit.conf" ] && . "%%PREFIX%%/etc/packaudit.conf"
 
 if [ -d "$PUBLIC_HTML" -a -w "$PUBLIC_HTML" ]; then
   VULNMD5=`$CAT "$VUXMLDIR/vuln.xml" "$PORTAUDITDBDIR/database/portaudit.xml" "$PORTAUDITDBDIR/database/portaudit.txt" | $MD5`
