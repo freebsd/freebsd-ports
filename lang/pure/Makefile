@@ -85,7 +85,7 @@ post-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
