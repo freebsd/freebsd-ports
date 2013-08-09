@@ -1,5 +1,5 @@
 # $FreeBSD$
-#
+
 # Make sure that your configuration DOES NOT set ANY gcc-related
 # variables.  ksh93 will not compile if you set even the seemingly
 # most unrelated variable related to gcc configuration.  This means
@@ -9,10 +9,10 @@
 # serves to expose gcc bugs and does nothing to speed up any known
 # program.  If you are really unconvinced, go ahead but do not
 # complain to me about it.
-#
 
 PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
@@ -27,12 +27,13 @@ OPTIONS_DEFINE=	STATIC
 
 FETCH_ARGS=	-Rr
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
+LDFLAGS+=	-lm
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
 
 MAN1=		ksh93.1
 
-INITVERSION=	2012-08-01
+INITVERSION=	2013-05-24
 KSHVERSION=	2012-08-01
 
 .include <bsd.port.options.mk>
