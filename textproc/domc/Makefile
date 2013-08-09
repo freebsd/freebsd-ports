@@ -1,4 +1,4 @@
-# Created by: ijliao
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	domc
@@ -8,26 +8,25 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.ioplex.com/~miallen/domc/dl/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A light weight implementation of the DOM in ANSI C
+COMMENT=	Lightweight implementation of the DOM in ANSI C
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		mba.0:${PORTSDIR}/devel/libmba
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libmba.so:${PORTSDIR}/devel/libmba
+
+USES=		gmake
+MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}" INSTDIR=${PREFIX}
+USE_LDCONFIG=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+SHLIB_MAJOR=	0
+
+PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 MAN3=		DOM_CharacterData.3m DOM_Document.3m DOM_Element.3m \
 		DOM_Implementation.3m DOM_NamedNodeMap.3m DOM_Node.3m \
 		DOM_NodeList.3m DOM_Text.3m
 MANCOMPRESSED=	yes
-
-SHLIB_MAJOR=	0
-
-USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	SHLIB_MAJOR="${SHLIB_MAJOR}" INSTDIR=${PREFIX}
-USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
-
-PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 .include <bsd.port.pre.mk>
 
