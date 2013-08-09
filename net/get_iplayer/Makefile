@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer \
+		rtmpdump:${PORTSDIR}/multimedia/rtmpdump \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies
 
