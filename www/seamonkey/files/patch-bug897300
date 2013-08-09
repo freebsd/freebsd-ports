@@ -1,0 +1,30 @@
+# HG changeset patch
+# User Randell Jesup <rjesup@jesup.org>
+# Date 1375222105 14400
+# Node ID 64c5cc9bad2e84a9b1d6392b095ad06a75b94a4e
+# Parent  0368f4123c8aeb2209582fb8faf3bcb04acd0e13
+Bug897300: Correct mis-merge for pulse audio on Aurora from bug 886886 r=padenot a=bajaj
+
+diff --git a/media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h b/media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h
+--- mozilla/media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h
++++ mozilla/media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h
+@@ -305,17 +305,17 @@ private:
+ 
+     AudioMixerManagerLinuxPulse _mixerManager;
+ 
+     WebRtc_UWord16 _inputDeviceIndex;
+     WebRtc_UWord16 _outputDeviceIndex;
+     bool _inputDeviceIsSpecified;
+     bool _outputDeviceIsSpecified;
+ 
+-    WebRtc_Word32 sampling_rate_hz;
++    WebRtc_Word32 sample_rate_hz_;
+     WebRtc_UWord8 _recChannels;
+     WebRtc_UWord8 _playChannels;
+ 
+     AudioDeviceModule::BufferType _playBufType;
+ 
+ private:
+     bool _initialized;
+     bool _recording;
+
