@@ -10,13 +10,22 @@ PKGNAMEPREFIX=	hs-
 DISTNAME=	FranTk${PORTVERSION:S/./_/}
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A GUI library for Haskell on top of Tcl-Tk
-
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+COMMENT=	GUI library for Haskell on top of Tcl/Tk
 
 USES=		gmake
+USE_TK=		84
 
-.include <bsd.port.pre.mk>
+ALL_TARGET=	hugs
+INSTALL_TARGET=	install_hugs
+
+WRKSRC=		${WRKDIR}/FranTk${PORTVERSION}/src
+
+PLIST_SUB+=	HUGS=""
+PLIST_SUB+=	GHC="@comment "
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
@@ -24,21 +33,16 @@ CFLAGS+=	-fPIC
 BROKEN=		Does not compile
 .endif
 
-WRKSRC=		${WRKDIR}/FranTk1.1/src
-
-ALL_TARGET=	hugs
-INSTALL_TARGET=	install_hugs
-PLIST_SUB+=	HUGS=""
-PLIST_SUB+=	GHC="@comment "
-
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/frantk.conf
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKDIR}/FranTk1.1/doc/frantk.pdf ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/frantk.pdf ${DOCSDIR}
 .endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
