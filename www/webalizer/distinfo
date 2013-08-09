@@ -2,5 +2,5 @@ SHA256 (webalizer-2.23-05-src.tgz) = 420cbb515df87a39d17d6810bdf4968d82b4ba6d90c
 SIZE (webalizer-2.23-05-src.tgz) = 537287
 SHA256 (webalizer-flags.tgz) = df9961fec7da2c16ed3faefb763f912c2db5ddce6a24e4f46647d7e64b8ab29a
 SIZE (webalizer-flags.tgz) = 146658
-SHA256 (webalizer-geodb-20121201.tgz) = 095acda706b7858c0b6bd523b9f926b6cf3382d0c5c4749636f0852fa8e2d093
-SIZE (webalizer-geodb-20121201.tgz) = 649876
+SHA256 (webalizer-geodb-20130801.tgz) = 307e76ded526ffea571e0ae07d275520ffefe1fc45c73f96edce30cf0bace025
+SIZE (webalizer-geodb-20130801.tgz) = 680220

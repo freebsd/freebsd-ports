@@ -2,7 +2,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
@@ -45,7 +45,7 @@ LARGE_URL_DESC=Enable URLs longer 512 bytes
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if ${PORT_OPTIONS:MGEODB} || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20121201.tgz:geodb
+DISTFILES+=	webalizer-geodb-20130801.tgz:geodb
 .endif
 
 # slave ports override with languages specific gd
