@@ -1,39 +1,47 @@
-# New ports collection makefile for:	dropbox-api-command
-# Date created:		2011-07-14
-# Whom:			Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-#
+# Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	dropbox-api-command
-PORTVERSION=	1.05
+PORTVERSION=	1.13
 PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Dropbox API wrapper command
 
-RUN_DEPENDS=	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+LICENSE=	MIT
+
+BUILD_DEPENDS=	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-WebService-Dropbox>=1.09:${PORTSDIR}/net/p5-WebService-Dropbox \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+		p5-WebService-Dropbox>=1.17:${PORTSDIR}/net/p5-WebService-Dropbox \
+		p5-Path-Class>=0.26:${PORTSDIR}/devel/p5-Path-Class
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s-aska
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	cd3a707
+GH_COMMIT=	1c843ed
 
-NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	configure
 
+# There is documentation contained in an otherwise empty library
+# (App::dropboxapi). In post-patch copy it over to the main
+# dropbox-api script so the perl build process makes a dropbox-api.1,
+# and override do-install to only copy the useful parts, i.e., not the
+# empty library.
+
+MAN1=	dropbox-api.1
 PLIST_FILES=	bin/dropbox-api bin/upload-to-dropbox
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/upload-to-dropbox
+	${TAIL} +3 ${WRKSRC}/lib/App/dropboxapi.pm >> ${WRKSRC}/dropbox-api
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dropbox-api ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/upload-to-dropbox ${PREFIX}/bin/
+	${INSTALL_MAN}    ${WRKSRC}/blib/man1/dropbox-api.1 ${PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/blib/script/dropbox-api ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/upload-to-dropbox       ${PREFIX}/bin/
 
 .include <bsd.port.mk>
