@@ -3,7 +3,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Icculus.org version of the original Quake II
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 WANT_SDL=	yes
 ALL_TARGET=	build_release
 
