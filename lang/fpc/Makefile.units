@@ -173,7 +173,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 .if ${PKGNAMESUFFIX} == "-libgd"
 .	if defined(WITH_LIBGD)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 .	endif
 .endif
 

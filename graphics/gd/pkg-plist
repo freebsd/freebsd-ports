@@ -13,6 +13,8 @@ bin/pngtogd2
 bin/webpng
 include/entities.h
 include/gd.h
+include/gd_color_map.h
+include/gd_errors.h
 include/gd_io.h
 include/gdcache.h
 include/gdfontg.h
@@ -22,8 +24,9 @@ include/gdfonts.h
 include/gdfontt.h
 include/gdfx.h
 include/gdhelpers.h
+include/gdpp.h
 lib/libgd.a
+lib/libgd.la
 lib/libgd.so
-lib/libgd.so.4
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/libgd.so.5
+libdata/pkgconfig/gdlib.pc

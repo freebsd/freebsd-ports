@@ -3,14 +3,14 @@
 
 PORTNAME=	rmap
 PORTVERSION=	1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.reza.net/rmap/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 MAN1=		rmap.1
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	enscribe
 PORTVERSION=	0.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio graphics
 MASTER_SITES=	http://www.coppercloudmusic.com/enscribe/
 EXTRACT_SUFX=	.tgz
@@ -15,11 +15,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Create digital audio watermark images from photographic images
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		gd.4:${PORTSDIR}/graphics/gd \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
+		gd:${PORTSDIR}/graphics/gd \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype:${PORTSDIR}/print/freetype2
 
 LICENSE=	GPLv2
 

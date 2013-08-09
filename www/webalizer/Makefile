@@ -2,7 +2,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \

@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-php/${PORTNAME}-php/${PORTVERSION}
 PKGNAMEPREFIX=	php5-
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tbz2
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The ffmpeg shared extension for php
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
 CFLAGS+=	-I${LOCALBASE}/include

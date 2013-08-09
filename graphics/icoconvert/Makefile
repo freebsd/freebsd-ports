@@ -7,7 +7,7 @@
 
 PORTNAME=	icoconvert
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mox.net/downloads/ \
 		http://www.xunix.org/~flz/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.mox.net/downloads/ \
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A small utility to convert Windows icon files into .xpm and .png files
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/icoconvert
 

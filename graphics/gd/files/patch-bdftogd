@@ -1,5 +1,5 @@
---- bdftogd.orig	Fri Feb  2 18:41:00 2007
-+++ bdftogd	Tue Feb 13 19:55:02 2007
+--- src/bdftogd.orig	2013-06-25 11:58:23.000000000 +0200
++++ src/bdftogd	2013-08-01 07:06:11.000000000 +0200
 @@ -24,6 +24,9 @@
  my $filename = shift;
  $filename = 'gd' . $filename unless $filename =~ /^gd/i;

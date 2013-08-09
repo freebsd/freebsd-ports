@@ -3,6 +3,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	2.49
+PORTREVISION0	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +12,7 @@ DISTNAME=	GD-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to Gd Graphics Library version2
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 USES=		perl5
 USE_PERL5=	configure

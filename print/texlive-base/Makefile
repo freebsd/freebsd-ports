@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base

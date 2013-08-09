@@ -2,7 +2,7 @@
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
 
@@ -11,7 +11,7 @@ COMMENT=	Library to find similar pictures
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

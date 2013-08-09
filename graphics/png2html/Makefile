@@ -7,7 +7,7 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geoffholden.com/content/projects/png2html/
 
@@ -18,7 +18,7 @@ LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		gd.4:${PORTSDIR}/graphics/gd
+		gd:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/png2html
 

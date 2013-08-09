@@ -4,6 +4,7 @@
 PORTNAME=	nagios
 DISTVERSIONPREFIX=HEAD-
 DISTVERSION=	20101122
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.downtools.com.au/~jarrod/nagios/
 PKGNAMESUFFIX=	-devel
@@ -11,7 +12,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 MASTER_SITE_FREEBSD=	yes

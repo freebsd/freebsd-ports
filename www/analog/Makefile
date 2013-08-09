@@ -3,7 +3,7 @@
 
 PORTNAME=	analog
 PORTVERSION=	6.0
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
@@ -17,8 +17,8 @@ COMMENT=	Extremely fast program for analysing WWW logfiles
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 BUILD_WRKSRC=	${WRKSRC}/src

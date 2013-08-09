@@ -1,17 +1,17 @@
---- gdtest.c.orig	Sat Feb  3 02:41:00 2007
-+++ gdtest.c	Sat Feb 17 14:09:35 2007
-@@ -36,6 +36,8 @@
-   gdSink imgsnk;
-   int foreground;
-   int i;
-+  gdIOCtx *ctx;
+--- src/gdtest.c.orig	2013-06-25 11:58:23.000000000 +0200
++++ src/gdtest.c	2013-08-01 07:12:08.000000000 +0200
+@@ -35,6 +35,8 @@
+ 	gdSink imgsnk;
+ 	int foreground;
+ 	int i;
++	gdIOCtx *ctx;
 +
-   if (argc != 2)
-     {
-       fprintf (stderr, "Usage: gdtest filename.png\n");
-@@ -58,6 +60,35 @@
+ 	if (argc != 2) {
+ 		fprintf(stderr, "Usage: gdtest filename.png\n");
+ 		exit (1);
+@@ -55,6 +57,35 @@
  
-   CompareImages ("Initial Versions", ref, im);
+ 	CompareImages ("Initial Versions", ref, im);
  
 +        /* */
 +        /* Send to GIF File then Ptr */
@@ -43,16 +43,16 @@
 +	gdImageDestroy(im2);
 +	ctx->gd_free(ctx);
  
-   /* */
-   /* Send to PNG File then Ptr */
+ 	/* */
+ 	/* Send to PNG File then Ptr */
 @@ -268,6 +299,10 @@
+ 	printf ("[Merged Image has %d colours]\n", im2->colorsTotal);
+ 	CompareImages ("Merged (gdtest.png, gdtest_merge.png)", im2, im3);
  
-   printf ("[Merged Image has %d colours]\n", im2->colorsTotal);
-   CompareImages ("Merged (gdtest.png, gdtest_merge.png)", im2, im3);
++	out = fopen ("test/gdtest_merge_out.png", "wb");
++	gdImagePng(im2, out);
++	fclose(out);
 +
-+  out = fopen ("test/gdtest_merge_out.png", "wb");
-+  gdImagePng(im2, out);
-+  fclose(out);
+ 	gdImageDestroy (im2);
+ 	gdImageDestroy (im3);
  
-   gdImageDestroy (im2);
-   gdImageDestroy (im3);
