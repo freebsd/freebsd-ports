@@ -4,35 +4,34 @@
 PORTNAME=	pure
 PORTVERSION=	0.55
 CATEGORIES=	lang
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
+		${PORTNAME}-docs-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A modern-style functional programming language
+COMMENT=	Modern-style functional programming language
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		mpfr:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 BUILD_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
 RUN_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
 
-MAN1=		pure.1
-SUB_FILES=	pkg-message
-
-USES=		iconv
+USES=		iconv pkgconfig
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
-USE_PURE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+USE_PURE=	yes
 
 CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
 
 OPTIONS_DEFINE=	EMACS
-
 EMACS_DESC=	Compile pure-mode.el with Emacs
+
+MAN1=		pure.1
+SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
@@ -77,26 +76,25 @@ SUB_LIST+=	NOCLANG="@comment "
 .endif
 
 .include "${.CURDIR}/bsd.pure.mk"
-
 .include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}/etc/
-	(cd ${WRKSRC} && ${RM} -f etc/*.in && ${COPYTREE_SHARE} etc/ ${DATADIR}/)
+	@${MKDIR} ${DATADIR}/etc
+	(cd ${WRKSRC} && ${RM} -f etc/*.in && ${COPYTREE_SHARE} etc ${DATADIR})
 .endif
-
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${RM} -f Makefile && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && \
+		${RM} -f Makefile && ${COPYTREE_SHARE} . ${DOCSDIR})
 	${LN} -fs ${DOCSDIR} ${PREFIX}/lib/${PORTNAME}/docs
 .endif
-
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

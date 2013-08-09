@@ -46,7 +46,7 @@ CATEGORIES=		_PURE_${PORTNAME}_cat
 .if ${PORTNAME} != pure
 
 .if ${USE_PURE} == yes
-LIB_DEPENDS+=	pure.8:${PORTSDIR}/lang/pure
+LIB_DEPENDS+=	libpure.so.8:${PORTSDIR}/lang/pure
 .else
 . for dep in ${USE_PURE}
 _PURE_LIBDIR=	${LOCALBASE}/lib/pure
