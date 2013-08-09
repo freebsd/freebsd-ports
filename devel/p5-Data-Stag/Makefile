@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Stag
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Structured Tags datastructures
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 BUILD_DEPENDS:=	${RUN_DEPENDS}
@@ -34,6 +37,7 @@ MAN3=		Data::Stag::GraphHandler.3 Data::Stag::PodParser.3 \
 		Data::Stag::DTDWriter.3 Data::Stag::ITextParser.3 \
 		Data::Stag::PerlWriter.3 Data::Stag::XMLParser.3 \
 		Data::Stag::IndentParser.3 Data::Stag::IndentWriter.3 \
-		Data::Stag.3 Data::Stag::XSLTHandler.3
+		Data::Stag.3 Data::Stag::XSLTHandler.3 \
+		Data::Stag::JSONWriter.3
 
 .include <bsd.port.mk>
