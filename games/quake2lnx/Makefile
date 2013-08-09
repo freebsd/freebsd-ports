@@ -18,13 +18,10 @@ LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 WANT_SDL=	yes
-
 ALL_TARGET=	build_release
 
-PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
-
-TGTDIR=		${WRKSRC}/release
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
+PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 OPTIONS_DEFINE=		X11 GLX EYECANDY SOFTSDL SDLGL SDLCLIENT AA CLIENT \
 			SERVER GAME CTF RETEXTURE JOYSTICK REDBLUE IPV6 \
@@ -41,10 +38,10 @@ SDLGL_DESC=		Build SDL OpenGL renderer
 SDLCLIENT_DESC=		Build SDL client
 SVGA_DESC=		Build SVGA renderer
 AA_DESC=		Build ASCII graphics renderer
-CLIENT_DESC=		Build default client
+CLIENT_DESC=		Build original client
 SERVER_DESC=		Build dedicated server
 GAME_DESC=		Build main game (default mod)
-CTF_DESC=		Build Capture The Flag modification
+CTF_DESC=		Build Capture The Flag mod
 RETEXTURE_DESC=		Retextured graphics support
 JOYSTICK_DESC=		Joystick support
 REDBLUE_DESC=		Enable 3D glasses rendering
@@ -75,7 +72,8 @@ PLIST_SUB+=	GLX="@comment "
 
 .if ${PORT_OPTIONS:MEYECANDY}
 DISTFILES+=	maxpak.pak
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USE_GL=		glu
 MAKE_ARGS+=	BUILD_QMAX=YES
 PLIST_SUB+=	QMAX=""
 .else
@@ -110,7 +108,7 @@ PLIST_SUB+=	SDLCLIENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSVGA}
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	BUILD_SVGA=YES
 REF_TARGETS+=	soft
 PLIST_SUB+=	SVGA=""
@@ -119,7 +117,7 @@ PLIST_SUB+=	SVGA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAA}
-LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
 MAKE_ARGS+=	BUILD_AA=YES
 REF_TARGETS+=	softaa
 PLIST_SUB+=	AA=""
@@ -201,24 +199,26 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|dllname, RTLD_LAZY|& \| RTLD_GLOBAL|' \
 		${WRKSRC}/src/linux/qgl_linux.c
 	${REINPLACE_CMD} -e 's|/js|/joy|' ${WRKSRC}/src/linux/joystick.c
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_&|' \
+		${WRKSRC}/src/ref_candygl/gl_image.c
 
 do-install:
 .for tgt in ${EXE_TARGETS}
-	${INSTALL_PROGRAM} ${TGTDIR}/${tgt} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/release/${tgt} ${PREFIX}/bin
 .endfor
 	@${MKDIR} ${LIBDIR}/baseq2
 .for tgt in ${REF_TARGETS}
-	${INSTALL_PROGRAM} ${TGTDIR}/ref_${tgt}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/release/ref_${tgt}.so ${LIBDIR}
 .endfor
 .if ${PORT_OPTIONS:MCTF}
 	@${MKDIR} ${LIBDIR}/ctf
-	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game.so ${LIBDIR}/ctf
+	${INSTALL_PROGRAM} ${WRKSRC}/release/ctf/game.so ${LIBDIR}/ctf
 .endif
 .if ${PORT_OPTIONS:MEYECANDY}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${LIBDIR}/baseq2
 .endif
 .if ${PORT_OPTIONS:MGAME}
-	${INSTALL_PROGRAM} ${TGTDIR}/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/release/game.so ${LIBDIR}/baseq2
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}

@@ -9,8 +9,7 @@ MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/qudos/quake2
 		${MASTER_SITE_LOCAL:S/$/:data/}
 MASTER_SITE_SUBDIR=	alepulver/:data
 DISTNAME=	Quake2maX_${PORTVERSION}-src_unix
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		${Q2MAX_DATA}:data
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src ${Q2MAX_DATA}:data
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -45,8 +44,8 @@ SDLGL_DESC=	Build SDL OpenGL renderer
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 USE_GL=		glu
 .endif
 
@@ -111,7 +110,7 @@ post-extract:
 
 post-patch:
 # Resolve name collision with jpeg-8
-	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_&|' \
 		${WRKSRC}/ref_gl/gl_image.c
 
 do-install:
