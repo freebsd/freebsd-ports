@@ -716,6 +716,7 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrmtry share/locale/ang
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
+@dirrm share/gtk-3.0
 @exec /bin/mkdir -p %D/lib/gtk-3.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/loaders
