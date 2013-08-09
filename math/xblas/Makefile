@@ -13,7 +13,6 @@ COMMENT=	Extra Precise Basic Linear Algebra Subroutines (BLAS)
 LICENSE=	BSD
 
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	${MANGLING}
 HDIR=		include/xblas
@@ -66,6 +65,9 @@ post-patch:
 	@${CP} -af ${WRKSRC} ${WRKSRC}_STATIC
 .endif
 	@${PRINTF} "\nCFLAGS+=\t${PICFLAG}\n" >> ${WRKSRC}/make.inc
+# Fix parallel (-jX) builds
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		-E 's/cd (.+) && (\$$\(MAKE\))/\2 -C \1/'
 
 do-build: build-shared build-static
 
