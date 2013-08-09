@@ -1,12 +1,8 @@
-# New ports collection makefile for:	dcraw
-# Date created: 			14 February 2004
-# Whom:					Arjan van Leeuwen <avleeuwen@piwebs.com>
-#
+# Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dcraw
-PORTVERSION=	9.17
+PORTVERSION=	9.19
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -51,7 +47,7 @@ maketar: do-clean extract
 	(${DIFF} -u ${WRKSRC}/${PORTNAME}.c ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${PORTNAME}.c > ${MS_DIFF}) || ${TRUE}
 	if [ -s ${MS_DIFF} ]; then \
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
-		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
+		sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
 		${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile; \
 		cd ${.CURDIR}/ && ${MAKE} makesum; \
 		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${MS_DIFF} ***"; \
