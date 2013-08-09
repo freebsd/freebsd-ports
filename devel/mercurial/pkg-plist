@@ -291,6 +291,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help.py
 %%PYTHON_SITELIBDIR%%/mercurial/help.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/help.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/help/common.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/config.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/dates.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/diffs.txt
@@ -298,7 +299,10 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/extensions.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/filesets.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/glossary.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/hg.1.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/hgignore.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/hgignore.5.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/hgrc.5.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/hgweb.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/merge-tools.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/multirevs.txt
@@ -549,6 +553,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.changelog
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.default
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.phases
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.xml
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/bookmarks.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/branches.tmpl
@@ -598,6 +603,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/shortlog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/shortlogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/tags.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/raw/changelog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/changeset.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/error.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/fileannotate.tmpl
@@ -606,9 +612,11 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/graphedge.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/graphnode.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/index.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/raw/logentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/map
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/notfound.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/raw/search.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/bookmarkentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/bookmarks.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/branchentry.tmpl
