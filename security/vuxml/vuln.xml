@@ -87,10 +87,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2013-4124</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2013-4124</url>
     </references>
     <dates>
       <discovery>2013-08-05</discovery>
       <entry>2013-08-09</entry>
+      <modified>2013-08-09</modified>
     </dates>
   </vuln>
 
