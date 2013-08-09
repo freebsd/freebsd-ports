@@ -15,3 +15,129 @@
  
  # Directory in which to install the algae tools.
  tooldir = $(datadir)/algae/$(VERSION_NUMBER)/tools
+@@ -150,19 +150,19 @@
+ # Compile the source code.
+ 
+ source: @BLAS@ @LAPACK@
+-	cd superlu; $(MAKE) RC0=$(RC0)
+-	cd arpack; $(MAKE)
+-	cd src; $(MAKE) RC0=$(RC0)
++	$(MAKE) -C superlu RC0=$(RC0)
++	$(MAKE) -C arpack
++	$(MAKE) -C src RC0=$(RC0)
+ .PHONY: source
+ 
+ # Compile the BLAS and LAPACK libraries, if required.
+ 
+ xblas:
+-	cd blas; $(MAKE)
++	$(MAKE) -C blas
+ .PHONY: xblas
+ 
+ xlapack:
+-	cd lapack; $(MAKE)
++	$(MAKE) -C lapack
+ .PHONY: xlapack
+ 
+ check: source
+@@ -180,13 +180,13 @@
+ # Run test cases.
+ 
+ check:
+-	cd test; $(MAKE)
++	$(MAKE) -C test
+ .PHONY: check
+ 
+ # Run some simple timing tests.
+ 
+ times:
+-	cd timing; $(MAKE)
++	$(MAKE) -C timing
+ .PHONY: times
+ 
+ # <<<< This section is deleted in the "binary" distribution.
+@@ -194,11 +194,11 @@
+ # Make documentation.
+ 
+ info:
+-	cd doc; $(MAKE) info
++	$(MAKE) -C doc info
+ .PHONY: info
+ 
+ dvi:
+-	cd doc; $(MAKE) dvi
++	$(MAKE) -C doc dvi
+ .PHONY: dvi
+ 
+ # ========================== Distribution =========================
+@@ -211,9 +211,7 @@
+ 	  ln $$file $(distdir) > /dev/null 2>&1 || cp $$file $(distdir); \
+ 	done
+ 	for dir in $(SUBDIRS); do \
+-	  cd $${dir}; \
+-	  $(MAKE) distdir=../$(distdir)/$$dir dist; \
+-	  cd ..; \
++	  $(MAKE) -C $${dir} distdir=../$(distdir)/$$dir dist; \
+ 	done
+ 	mv $(distdir) algae-$(VERSION_NUMBER)
+ 	tar chf algae-$(VERSION_NUMBER).tar algae-$(VERSION_NUMBER)
+@@ -230,9 +228,7 @@
+ 	done
+ 	awk '/<<[<]</,/>>[>]>/ {next} {print}' Makefile > $(distdir)/Makefile
+ 	for dir in $(BINSUBDIRS); do \
+-	  cd $${dir}; \
+-	  $(MAKE) distdir=../$(distdir)/$$dir binaries; \
+-	  cd ..; \
++	  $(MAKE) -C $${dir} distdir=../$(distdir)/$$dir binaries; \
+ 	done
+ 	mv $(distdir) algae-$(VERSION_NUMBER)
+ 	tar chf algae-$(VERSION_NUMBER)-@host@.tar algae-$(VERSION_NUMBER)
+@@ -249,8 +245,8 @@
+ 	for file in $(WEBDISTFILES); do \
+ 	  ln $$file $(distdir) > /dev/null 2>&1 || cp $$file $(distdir); \
+ 	done
+-	cd doc; $(MAKE) distdir=../$(distdir) web
+-	cd $(distdir); tar chf ../algae-web-$(VERSION_NUMBER).tar .
++	$(MAKE) -C doc distdir=../$(distdir) web
++	tar -C $(distdir) -chf ../algae-web-$(VERSION_NUMBER).tar .
+ 	rm -rf $(distdir)
+ 	gzip algae-web-$(VERSION_NUMBER).tar
+ .PHONY: web
+@@ -278,7 +274,7 @@
+ 	@echo "it deletes files that may require special tools to rebuild."
+ 
+ clean mostlyclean distclean maintainer-clean::
+-	for dir in $(SUBDIRS); do cd $${dir}; $(MAKE) $@; cd ..; done
++	for dir in $(SUBDIRS); do $(MAKE) -C $${dir} $@; done
+ 
+ clean mostlyclean distclean maintainer-clean::
+ 	rm -f a.out core conft* algae-*.tar algae-*.tar.gz
+@@ -297,12 +293,9 @@
+ 	$(INSTALL_DATA) algae.A $(RC0)
+ 	$(INSTALL_DATA) COPYING $(htmldir)
+ 	$(INSTALL_DATA) LICENSE $(htmldir)
+-	cd src; \
+-	  $(MAKE) bindir=$(bindir) install
+-	cd tools; \
+-	  $(MAKE) tooldir=$(tooldir) install
+-	cd doc; \
+-	  $(MAKE) mandir=$(mandir) datadir=$(datadir) \
++	$(MAKE) -C src bindir=$(bindir) install
++	$(MAKE) -C tools tooldir=$(tooldir) install
++	$(MAKE) -C doc mandir=$(mandir) datadir=$(datadir) \
+ 	  manext=$(manext) infodir=$(infodir) htmldir=$(htmldir) install
+ .PHONY:	install
+ 
+@@ -318,9 +311,9 @@
+ 
+ uninstall:
+ 	rm -f $(RC0)
+-	cd src; $(MAKE) bindir=$(bindir) uninstall
+-	cd tools; $(MAKE) tooldir=$(tooldir) uninstall
+-	cd doc; $(MAKE) mandir=$(mandir) manext=$(manext) \
++	$(MAKE) -C src bindir=$(bindir) uninstall
++	$(MAKE) -C tools tooldir=$(tooldir) uninstall
++	$(MAKE) -C doc mandir=$(mandir) manext=$(manext) \
+ 	  infodir=$(infodir) htmldir=$(htmldir) uninstall
+ 	rm -f $(htmldir)/COPYING $(htmldir)/LICENSE
+ 	-rmdir $(rcdir) $(htmldir) $(tooldir) \
