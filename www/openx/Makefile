@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openx
-PORTVERSION=	2.8.10
+PORTVERSION=	2.8.11
 CATEGORIES=	www
 MASTER_SITES=	http://download.openx.org/
 
