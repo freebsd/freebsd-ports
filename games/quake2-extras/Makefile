@@ -6,7 +6,8 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/:retex \
 		http://www.icculus.org/quake2/files/:retex \
-		http://www-personal.umich.edu/~jimw/q2/files/:retex2
+		http://www-personal.umich.edu/~jimw/q2/files/:retex2 \
+		http://www-personal.umich.edu/~jimw/q2/aq2_install/:models
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	#
 DIST_SUBDIR=	${LATEST_LINK}
@@ -39,7 +40,7 @@ BUILD_DEPENDS+=	nwreckdum:${PORTSDIR}/archivers/nwreckdum
 PLIST_FILES+=	%%Q2DIR%%/baseq2/pak20.pak
 .endif
 
-.if ${PORT_OPTIONS:MRETEXTURE} && ${PORT_OPTIONS:MRETEXTURE_FULL}
+.if ${PORT_OPTIONS:MRETEXTURE} && ! ${PORT_OPTIONS:MRETEXTURE_FULL}
 .for i in ${RETEX_PAKS}
 DISTFILES+=	pak${i}.pak:retex
 PLIST_FILES+=	%%Q2DIR%%/baseq2/pak${i}.pak
@@ -56,7 +57,7 @@ PLIST_FILES+=	%%Q2DIR%%/baseq2/pak10.pak
 .endif
 
 .if ${PORT_OPTIONS:MSKINS}
-DISTFILES+=	${SKINS}:retex2
+DISTFILES+=	${SKINS}:models
 EXTRACT_ONLY+=	${SKINS}
 PLIST_FILES+=	%%Q2DIR%%/baseq2/pak20.pak
 .endif
