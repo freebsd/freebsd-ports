@@ -46,7 +46,7 @@
  	mkdir -p $(LIBDIR)
  	mkdir -p $(IMPORTS)
  	cp -p $(LIBS) $(LIBDIR)/
-@@ -150,13 +151,13 @@
+@@ -150,22 +151,29 @@
  
  # The directories containing the X11, Tcl and Tk (binary) libraries:
  
@@ -62,9 +62,20 @@
  
  
  hugs: TclHaskellSrc/TclPrim.so
-@@ -169,3 +170,8 @@
+ 
+-TclHaskellSrc/TclPrim.so: TclHaskellSrc/TclPrim.c TclHaskellSrc/tclhaskell.o TclHaskellSrc/tclhaskell.h
+-	$(CC) -c $(CC_OPTS) $(CC_INC) -o TclHaskellSrc/TclPrim.o -c TclHaskellSrc/TclPrim.c
++TclHaskellSrc/TclPrim_.o: TclHaskellSrc/TclPrim.c TclHaskellSrc/tclhaskell.h
++	$(CC) -c $(CC_OPTS) $(CC_INC) -o TclHaskellSrc/TclPrim_.o -c TclHaskellSrc/TclPrim.c
++
++TclHaskellSrc/TclPrim.so: TclHaskellSrc/TclPrim_.o TclHaskellSrc/tclhaskell.o
+ 	$(LD) $(SLD_OPTS) \
+ 		$(CCLIB) \
+-		-o TclHaskellSrc/TclPrim.so TclHaskellSrc/TclPrim.o TclHaskellSrc/tclhaskell.o \
++		-o TclHaskellSrc/TclPrim.so TclHaskellSrc/TclPrim_.o TclHaskellSrc/tclhaskell.o \
  			$(TCL_REQ)
- 	$(RM) TclHaskellSrc/TclPrim.o
+-	$(RM) TclHaskellSrc/TclPrim.o
++	$(RM) TclHaskellSrc/TclPrim_.o
  
 +install_hugs :
 +	mkdir -p ${PREFIX}/lib/frantk/hugs/TclHaskellSrc
