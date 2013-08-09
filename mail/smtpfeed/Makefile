@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smtpfeed
-# Date created:		17 January 1998
-# Whom:			itojun@itojun.org
-#
+# Created by: itojun@itojun.org
 # $FreeBSD$
-#
 
 PORTNAME=	smtpfeed
 PORTVERSION=	1.21
@@ -16,12 +12,10 @@ COMMENT=	SMTP Fast Exploding External Deliverer for Sendmail
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-NO_PACKAGE=	complex configuration for sendmail.cf needed
-
 OPTIONS_DEFINE=	DOCS
 
+CFLAGS+=	-Wno-error=return-type
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 
@@ -37,11 +31,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smtpfeed ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/smtpfeed.8 ${MAN8PREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
