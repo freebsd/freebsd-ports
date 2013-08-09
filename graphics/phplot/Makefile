@@ -3,6 +3,7 @@
 
 PORTNAME=	phplot
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF:source1 \
 		SF/${PORTNAME}/Manual/20130511:source2

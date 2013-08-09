@@ -7,17 +7,17 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
-		gd.4:${PORTSDIR}/graphics/gd \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	adns:${PORTSDIR}/dns/adns \
+		gd:${PORTSDIR}/graphics/gd \
+		pcre:${PORTSDIR}/devel/pcre \
+		expat:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libtool
 USES=		gettext

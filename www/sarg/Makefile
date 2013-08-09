@@ -3,7 +3,7 @@
 
 PORTNAME=	sarg
 PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
 
 MAN1=		sarg.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
@@ -93,4 +93,4 @@ post-patch:
 pre-configure:
 	@(cd ${WRKSRC} && ${AUTORECONF})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

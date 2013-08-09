@@ -1,0 +1,31 @@
+#!/bin/sh
+# $FreeBSD$
+
+target="${1}"
+shift
+tarball="${1}"
+shift
+fonts="Tiny Small MediumBold Large Giant"
+case "${target}" in
+extract)
+	tar -xvzpf "${tarball}" $@
+	;;
+configure)
+	for font in ${fonts}
+	do
+		f=`echo "${font}" | tr -d [[:lower:]] | tr [[:upper:]] [[:lower:]]`
+		mv -v "gdfont${f}.c" "gdfont${f}.c.dist"
+		mv -v "gdfont${f}.h" "gdfont${f}.h.dist"
+	done
+	;;
+build)
+	set -x
+	for font in ${fonts}
+	do
+		f=`echo "${font}" | tr -d [[:lower:]] | tr [[:upper:]] [[:lower:]]`
+		perl ./bdftogd "gdFont${font}" "font${f}" < "${1}"
+		shift
+	done
+	;;
+esac
+# eof

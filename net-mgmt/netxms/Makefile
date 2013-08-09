@@ -103,7 +103,7 @@ PLIST_SUB+=	AGENT="@comment "
 USE_RC_SUBR+=	nxhttpd
 CONFIGURE_ARGS+=	--with-nxhttpd
 PLIST_SUB+=	NXHTTPD=""
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 USE_PERL5=	yes
 .else
 PLIST_SUB+=	NXHTTPD="@comment "

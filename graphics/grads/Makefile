@@ -3,7 +3,7 @@
 
 PORTNAME=	grads
 PORTVERSION=	1.9b4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other
@@ -16,8 +16,8 @@ COMMENT=	The Grid Analysis and Display System
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=		yes

@@ -252,7 +252,7 @@ CONFIGURE_ENV+=		MED2HOME=${LOCALBASE}
 
 #Dependency from gd
 .if  ${SAL_MODULE} == "sierpinsky"
-LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=		gd:${PORTSDIR}/graphics/gd
 .endif
 
 .if ${SAL_MODULE} == "yacs"

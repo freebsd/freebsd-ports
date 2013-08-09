@@ -3,7 +3,7 @@
 
 PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	www
 MASTER_SITES=	http://www.areski.net/${SITE_SUBDIR}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	ASTERISK call detail records analyzer
 
-LIB_DEPENDS=	gd.[4-9]:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 NO_BUILD=	yes
 USE_PHP=	session gd pcre

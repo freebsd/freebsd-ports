@@ -3,6 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		6.2.1
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -172,6 +173,8 @@ PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 			sortshp msencrypt tile4ms
 
 post-patch:
+	# fix broken version check for libgd
+	${REINPLACE_CMD} -e 's#-lt 28#-lt 0#' ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MMING}
 	${REINPLACE_CMD} -e 's#with_ming/include#with_ming/include/ming#g' \
 		${WRKSRC}/configure

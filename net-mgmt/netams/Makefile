@@ -76,8 +76,8 @@ RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Crypt-GeneratePassword>=0:${PORTSDIR}/security/p5-Crypt-GeneratePassword
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd \
+		jpeg:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	CGI=""
 .else
 PLIST_SUB+=	CGI="@comment "

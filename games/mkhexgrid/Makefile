@@ -7,7 +7,7 @@
 
 PORTNAME=	mkhexgrid
 PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.nomic.net/~uckelman/mkhexgrid/releases/ \
 		http://aaron.daltons.ca/freebsd/
@@ -19,7 +19,7 @@ COMMENT=	A fully-configurable hex grid generator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 USE_GMAKE=	yes
 

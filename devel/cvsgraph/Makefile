@@ -3,14 +3,14 @@
 
 PORTNAME=	cvsgraph
 PORTVERSION=	1.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph the life story of a file under CVS or RCS
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	raster3d
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${PORTVERSION:R}-${PORTVERSION:E}
@@ -13,8 +13,8 @@ COMMENT=	Set of tools for generating raster images of proteins and molecules
 
 LICENSE=	ART20
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
+		tiff:${PORTSDIR}/graphics/tiff
 
 OPTIONS_DEFINE=	MAGICK DOCS EXAMPLES
 OPTIONS_DEFAULT=	MAGICK

@@ -1,74 +1,83 @@
 # Created by: jeff@cetlink.net
 # $FreeBSD$
 
-PORTNAME=	gd
-PORTVERSION=	2.0.35
-PORTREVISION?=	9
+PORTNAME=	libgd
+PORTVERSION=	2.1.0
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES+=	graphics
-MASTER_SITES=	http://www.libgd.org/releases/ \
-		${MASTER_SITE_RINGSERVER}
-MASTER_SITE_SUBDIR=	graphics/gd
-PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
+MASTER_SITES=	http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	bazaar-1.*
 
-USE_BZIP2=	yes
-SCRIPTDIR=	${FILESDIR}
-MAKE_ENV=	WRKSRC="${WRKSRC}"
-MAKEFILE=	${FILESDIR}/Makefile.bsd
-CPPFLAGS+=	-DHAVE_ERRNO_H -DHAVE_FT2BUILD_H -DHAVE_LIBFREETYPE -DHAVE_LIBJPEG -DHAVE_LIBPNG \
-		-DHAVE_LIBZ -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_STDLIB_H
-LDFLAGS+=	-L${WRKSRC}
-LDFLAGS2=	-L${PREFIX}/lib -L${LOCALBASE}/lib
-FEATURES=	GD_JPEG GD_FREETYPE GD_PNG GD_GIF GD_GIFANIM GD_OPENPOLYGON
+USE_XZ=		yes
+USES=		pkgconfig
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_ENV=	PKG_CONFIG_LIBDIR=${LOCALBASE}/libdata/pkgconfig
+GNU_CONFIGURE_ARGS=
 USE_LDCONFIG=	yes
 WANT_PERL=	yes
 
-OPTIONS_DEFINE=	FONTCONFIG ICONV XPM
+OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM
 OPTIONS_DEFAULT=FONTCONFIG
 NO_OPTIONS_SORT=yes
 
 .include <bsd.port.options.mk>
 
+PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig
+# force gdlib-config --ldflags
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 .if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
-LDFLAGS2+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-FEATURES+=	GD_FONTCONFIG
+.else
+GNU_CONFIGURE_ARGS+=	--with-fontconfig=no
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CPPFLAGS+=	-DHAVE_ICONV -DHAVE_ICONV_H -DHAVE_ICONV_T_DEF
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+GNU_CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+.else
+GNU_CONFIGURE_ARGS+=	--without-libiconv
+GNU_CONFIGURE_ARGS+=	--with-libiconv-prefix=no
+.endif
+
+.if ${PORT_OPTIONS:MVPX}
+LIB_DEPENDS+=	vpx:${PORTSDIR}/multimedia/libvpx
+.else
+CONFIGURE_ARGS+=	--without-vpx
 .endif
 
 # honor global WITHOUT_X11
 .if !defined(WITHOUT_X11)
 .if ${PORT_OPTIONS:MXPM}
 USE_XORG=	xpm x11
-CPPFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include -DHAVE_LIBXPM
-LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lX11
-LDFLAGS2+=	-L${LOCALBASE}/lib
-FEATURES+=	GD_XPM
+GNU_CONFIGURE_ARGS+=	--with-x
+.else
+GNU_CONFIGURE_ARGS+=	--with-xpm=no
 .endif
 .endif
 
-FONTBASE=	${LOCALBASE}/lib/X11/fonts
-
-# supprt for bitmap fonts
+# The GD_FONTS environment variable can be set to specify the gzipped
+# tar-ball containing the fonts in bdf format and the bdf file names.
+# The tarball is the first argument, the tiny, small, medium-bold,
+# large, and giant fonts follow.
+#
+# For example:
+# GD_FONTS="/usr/ports/distfiles/x-koi8u.tgz koi6x10.bdf koi8x13.bdf \
+#       koi9x15.bdf koi12x24.bdf koi10x20.bdf"
+#
 .if defined(GD_FONTS)
 USE_PERL5_BUILD=	yes
-SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
+WRKFONTS=	${WRKSRC}/src
 .endif
 
 pre-extract::
@@ -76,30 +85,47 @@ pre-extract::
 	@${ECHO_MSG} "GD_FONTS can be set to specify an alternative list of .bdf files"
 	@${ECHO_MSG} ""
 
-post-configure:
-	${SED} -e 's|@libdir@|${PREFIX}/lib|' \
-		-e 's|@includedir@|${PREFIX}/include|' \
-		-e 's|@VERSION@|${PORTVERSION}|' \
-		-e 's|@GDLIB_MAJOR@|${PORTVERSION:C/([0-9]*).*/\1/1}|' \
-		-e 's|@GDLIB_MINOR@|${PORTVERSION:C/[0-9]*[.]([0-9]).*/\1/1}|' \
-		-e 's|@GDLIB_REVISION@|${PORTVERSION:C/.*[.]([0-9]*)/\1/1}|' \
-		-e 's|@LDFLAGS@|${LDFLAGS2}|' \
-		-e 's|@LIBS@|-lgd|' \
-		-e 's|@LIBICONV@|${LIBICONV}|' \
-		-e 's|@FEATURES@|${FEATURES}|' \
-		${WRKSRC}/config/gdlib-config.in \
-		> ${WRKDIR}/gdlib-config
+post-extract:
+.if defined(GD_FONTS)
+	cd ${WRKFONTS} && ${SH} ${FILESDIR}/makefonts extract ${GD_FONTS}
+.endif
+
+pre-configure:
+.if defined(GD_FONTS)
+	cd ${WRKFONTS} && ${SH} ${FILESDIR}/makefonts configure ${GD_FONTS}
+.endif
+	# force PKGCONFIGDIR
 	${REINPLACE_CMD} \
-	-e 's|#define DEFAULT_FONTPATH .*|#define DEFAULT_FONTPATH "${FONTBASE}/TTF:${FONTBASE}/Type1:${FONTBASE}"|' \
-		${WRKSRC}/gd.h
+		-e 's|^pkgconfigdir =.*|pkgconfigdir = ${PKGCONFIGDIR}|' \
+		${WRKSRC}/config/Makefile.in
+	# bump shlib version
+	${REINPLACE_CMD} \
+		-e 's|GDLIB_CURRENT=.*|GDLIB_CURRENT=5|' \
+		${WRKSRC}/configure
+	# workaround for broken configure
+.if ! ${PORT_OPTIONS:MICONV}
+	${REINPLACE_CMD} \
+		-e 's|iconv|noiconv|' \
+		${WRKSRC}/configure
+.endif
+.if ! ${PORT_OPTIONS:MXPM}
+	${REINPLACE_CMD} \
+		-e 's|xpm|noxpm|' \
+		${WRKSRC}/configure
+.endif
+.if ! ${PORT_OPTIONS:MFONTCONFIG}
+	${REINPLACE_CMD} \
+		-e 's|fontconfig|nofontconfig|' \
+		${WRKSRC}/configure
+.endif
+
+.if defined(GD_FONTS)
+pre-build:
+	cd ${WRKFONTS} && ${SH} ${FILESDIR}/makefonts build ${GD_FONTS}
+.endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/gdfx.h ${WRKSRC}/gdhelpers.h \
+	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
 		${PREFIX}/include/
-	${INSTALL_SCRIPT} ${WRKDIR}/gdlib-config ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
