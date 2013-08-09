@@ -1,4 +1,4 @@
-# Created by: kris@FreeBSD.org
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	dsniff
@@ -21,10 +21,7 @@ USES=		pkgconfig
 WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	X11
-
 OPTIONS_DEFAULT=	X11
-
-.include <bsd.port.options.mk>
 
 MAN8=		arpspoof.8 ${PORTNAME}.8 macof.8 mailsnarf.8 tcpkill.8 \
 		tcpnice.8 urlsnarf.8 filesnarf.8 dnsspoof.8 msgsnarf.8 \
@@ -38,7 +35,7 @@ LIBNET_INC=	"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
 LIBNET_LIB=	"-L${LOCALBASE}/include/libnet${LIBNET_VERSION} \
 		${LOCALBASE}/lib/libnet${LIBNET_VERSION}/libnet.a"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # If net/libnids has been compiled with the GLIB2 option then this port needs
 # the corresponding library and additional linker flags.
@@ -74,4 +71,4 @@ pre-configure:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
