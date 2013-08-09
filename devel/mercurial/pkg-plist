@@ -721,7 +721,6 @@ bin/hg
 %%PORTDATA%%%%DATADIR%%/contrib/pylintrc
 %%PORTDATA%%%%DATADIR%%/contrib/python-hook-examples.py
 %%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
-%%PORTDATA%%%%DATADIR%%/contrib/shrink-revlog.py
 %%PORTDATA%%%%DATADIR%%/contrib/simplemerge
 %%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion
 %%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion_build.sh

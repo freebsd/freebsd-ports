@@ -3,6 +3,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -39,7 +40,6 @@ CONTRIB_FILES=	bash_completion \
 		pylintrc \
 		python-hook-examples.py \
 		sample.hgrc \
-		shrink-revlog.py \
 		simplemerge \
 		tcsh_completion \
 		tcsh_completion_build.sh \
