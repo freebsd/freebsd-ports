@@ -7,38 +7,46 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://zephyr.1ts.org/export/2642/distribution/
 
 MAINTAINER=	kaduk-fbsd@mit.edu
-COMMENT=	An enterprise-scale distributed messaging system
+COMMENT=	Enterprise-scale distributed messaging system
 
 LICENSE=	MIT
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
+USES=		iconv
+GNU_CONFIGURE=	yes
 USE_RC_SUBR=	zhm
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USES=		iconv
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=	zephyr.1 zaway.1 zctl.1 zleave.1 zlocate.1 znol.1 zwrite.1 zwgc.1
 MAN8=	zhm.8 zephyrd.8 zstat.8 zshutdown_notify.8
 
 OPTIONS_DEFINE=		HEIMDAL
+HEIMDAL_DESC=		Link against libss.so from security/heimdal
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEIMDAL}
 BROKEN=		bad depobj
-LIB_DEPENDS+=	ss.1:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libss.so.1:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
 KRB5_DIR?=	${HEIMDAL_HOME}
 .else
 KRB5_DIR?=	${LOCALBASE}
 .endif
 .else
-LIB_DEPENDS+=	ss.2:${PORTSDIR}/devel/e2fsprogs-libss
+LIB_DEPENDS+=	libss.so.2:${PORTSDIR}/devel/e2fsprogs-libss
 KRB5_DIR?=	${DESTDIR}/usr
 .endif
 
 # it is an upstream bug that --with-krb5 needs a path
 CONFIGURE_ARGS=	--with-krb5="${KRB5_DIR}"
+
+# try to fix parallel (-jX) builds: add missing inter-source dependencies
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^eval\.o/,$$s,port\.h,& string_stack.h new_string.h, ; \
+		s,_aux\.h,.h,' ${WRKSRC}/zwgc/Makefile.in
 
 .include <bsd.port.mk>
