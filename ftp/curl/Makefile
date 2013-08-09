@@ -251,6 +251,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs|; /^DIST_SUBDIRS = / s| docs||; /cd docs &&/d' ${WRKSRC}/Makefile.in
 
+pre-configure:
+.if ${PORT_OPTIONS:MLDAP}
+	@${ECHO_MSG} "Note:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  Enabling LDAP option is known to fail with unpatched Mk/bsd.ldap.mk."
+	@${ECHO_MSG} "  See PR/177401 for detailed information."
+	@${ECHO_MSG} "  URL: http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/177401"
+	@${ECHO_MSG} ""
+.endif
+
 post-install:
 .if !defined(BUILDING_HIPHOP)
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${PREFIX}/share/aclocal/
