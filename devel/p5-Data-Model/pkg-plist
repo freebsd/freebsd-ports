@@ -28,7 +28,6 @@
 %%SITE_PERL%%/Data/Model/Schema/SQL.pm
 %%SITE_PERL%%/Data/Model/Transaction.pm
 %%SITE_PERL%%/Data/Model/Tutorial/JA.pm
-%%SITE_PERL%%/Data/README.pod
 @dirrm %%SITE_PERL%%/Data/Model/Tutorial
 @dirrm %%SITE_PERL%%/Data/Model/Schema/Inflate
 @dirrm %%SITE_PERL%%/Data/Model/Schema
