@@ -1,6 +1,4 @@
 bin/proclet
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proclet/.packlist
 %%SITE_PERL%%/Proclet.pm
 %%SITE_PERL%%/Proclet/Declare.pm
 @dirrm %%SITE_PERL%%/Proclet
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proclet

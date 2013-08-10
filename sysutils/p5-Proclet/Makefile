@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Proclet
-PORTVERSION=	0.25
+PORTVERSION=	0.31
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZEBURO
@@ -22,9 +22,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Parallel-Scoreboard>0:${PORTSDIR}/devel/p5-Parallel-Scoreboard \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny
+	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny \
+	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN1=	proclet.1
 MAN3=	Proclet.3 \
