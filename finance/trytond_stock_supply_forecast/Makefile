@@ -1,11 +1,12 @@
+# Created by: Matthias Petermann <matthias@petermann-it.de>
 # $FreeBSD$
 
 PORTNAME=	trytond_stock_supply_forecast
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
-MAINTAINER=	matthias@petermann.it
+MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Stock Supply Forecast Module)
 
 LICENSE=	GPLv3
