@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Localize
-PORTVERSION=	0.00024
+PORTVERSION=	0.00025
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -11,10 +11,13 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for alternate data localization API
 
 RUN_DEPENDS=	\
-	p5-Moo>=1.000008:${PORTSDIR}/devel/p5-Moo
+	p5-Moo>=1.000008:${PORTSDIR}/devel/p5-Moo \
+	p5-MooX-Types-MooseLike>0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
+	p5-Log-Minimal>=0.14:${PORTSDIR}/devel/p5-Log-Minimal
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Localize.3 \
 	Data::Localize::Auto.3 \
