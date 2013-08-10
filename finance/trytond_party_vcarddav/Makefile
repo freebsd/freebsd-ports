@@ -1,11 +1,12 @@
+# Created by: Matthias Petermann <matthias@petermann-it.de>
 # $FreeBSD$
 
 PORTNAME=	trytond_party_vcarddav
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
-MAINTAINER=	matthias@petermann.it
+MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Party VCardDAV Module)
 
 LICENSE=	GPLv3
