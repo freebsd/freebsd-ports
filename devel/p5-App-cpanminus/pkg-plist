@@ -1,6 +1,8 @@
 bin/cpanm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/cpanminus/.packlist
 %%SITE_PERL%%/App/cpanminus.pm
+%%SITE_PERL%%/App/cpanminus/fatscript.pm
+@dirrm %%SITE_PERL%%/App/cpanminus
 @dirrmtry %%SITE_PERL%%/App
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/cpanminus
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
