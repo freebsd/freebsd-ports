@@ -1,0 +1,16 @@
+include/cmime.h
+include/cmime/cmime_address.h
+include/cmime/cmime_base64.h
+include/cmime/cmime_config.h
+include/cmime/cmime_header.h
+include/cmime/cmime_list.h
+include/cmime/cmime_message.h
+include/cmime/cmime_part.h
+include/cmime/cmime_qp.h
+include/cmime/cmime_string.h
+include/cmime/cmime_util.h
+lib/libcmime.so
+lib/libcmime.so.0.1
+lib/libcmime.so.0.1.7
+libdata/pkgconfig/libcmime.pc
+@dirrm include/cmime

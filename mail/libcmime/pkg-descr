@@ -1,0 +1,7 @@
+libcmime is a lightweight mime library, written in C. It attempts to
+be a general library for parsing and creating mime email messages and
+is designed to provide an easy to use and easy to integrate interface
+for developers. libcmime is a pretty fresh project so the library is
+still in beta state and there will be early and frequent releases.
+
+WWW: http://www.libcmime.org/
