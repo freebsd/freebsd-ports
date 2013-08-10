@@ -1,11 +1,11 @@
---- Imakefile.orig	Wed Oct 30 22:39:10 2002
-+++ Imakefile	Wed Oct 30 22:39:40 2002
+--- Imakefile.orig	1993-06-18 19:17:45.000000000 +0200
++++ Imakefile	2013-08-10 16:54:28.755342996 +0200
 @@ -54,7 +54,7 @@
  /*
   *  You may need to remove -lbsd.
   */
 -  EXTRA_LIBRARIES = -lXm $(DEPLIBS) -lbsd
-+  EXTRA_LIBRARIES = ${MOTIFLIB} -lXt -lXmu -lXext -lX11
++  EXTRA_LIBRARIES = -lXm -lXt -lXmu -lXext -lX11
  #endif
  
  /*
