@@ -1,0 +1,4 @@
+SHA256 (freebsd:8:x86:64/i386-wine-1.7.0,1.txz) = bb54eb916fab6fe10102f1ae2fe51775ad0b32ef576880f7f0df78ecd54117ad
+SIZE (freebsd:8:x86:64/i386-wine-1.7.0,1.txz) = 23415792
+SHA256 (freebsd:9:x86:64/i386-wine-1.7.0,1.txz) = f8da71deff742fc7b818f6c039abb97a8ddbd1788e1d1112da421336a454dbab
+SIZE (freebsd:9:x86:64/i386-wine-1.7.0,1.txz) = 23368800
