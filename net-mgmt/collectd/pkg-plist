@@ -61,6 +61,10 @@ lib/collectd/memory.so
 %%NGINX%%lib/collectd/nginx.so
 lib/collectd/network.la
 lib/collectd/network.so
+%%NOTIFYDESKTOP%%/notify_desktop.la
+%%NOTIFYDESKTOP%%/notify_desktop.so
+%%NOTIFYEMAIL%%/notify_email.la
+%%NOTIFYEMAIL%%/notify_email.so
 %%NUTUPS%%lib/collectd/nut.la
 %%NUTUPS%%lib/collectd/nut.so
 lib/collectd/ntpd.la

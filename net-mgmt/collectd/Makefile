@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -19,12 +19,12 @@ WANT_GNOME=	yes
 
 OPTIONS_DEFINE=		CGI BIND DEBUG GCRYPT LIBVIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_HTTP NOTIFYEMAIL
+OPTIONS_GROUP_OUTPUT=	RRDTOOL RRDCACHED WRITE_HTTP NOTIFYEMAIL NOTIFYDESKTOP
 OPTIONS_GROUP_INPUT=	APACHE APCUPS CURL CURL_JSON CURL_XML DBI DISK \
 			NUTUPS INTERFACE MBMON MEMCACHED MYSQL NGINX \
 			OPENVPN PDNS PGSQL PING PYTHON ROUTEROS SNMP \
 			TOKYOTYRANT XMMS
-OPTIONS_DEFAULT=	BIND INTERFACE PING SNMP RRDTOOL RRDCACHED
+OPTIONS_DEFAULT=	INTERFACE PING SNMP RRDTOOL RRDCACHED
 
 CGI_DESC=		Install collection.cgi (requires RRDTOOL)
 BIND_DESC=		Enable BIND 9.5+ statistics
@@ -41,7 +41,8 @@ INTERFACE_DESC=		Network interfaces (libstatgrab)
 MBMON_DESC=		MBMon
 MEMCACHED_DESC=		Memcached
 NGINX_DESC=		Nginx
-NOTIFYEMAIL_DESC=	Email notifications (libesmtp, libnotify)
+NOTIFYEMAIL_DESC=	Email notifications (libesmtp)
+NOTIFYDESKTOP_DESC=	Email notifications (libnotify)
 OPENVPN_DESC=		OpenVPN statistics
 PDNS_DESC=		PowerDNS
 PING_DESC=		Network latency (liboping)
@@ -102,7 +103,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-netapp \
 		--disable-netlink \
 		--disable-nfs \
-		--disable-notify_desktop \
 		--disable-olsrd \
 		--disable-onewire \
 		--disable-oracle \
@@ -299,9 +299,16 @@ CONFIGURE_ARGS+=--disable-nginx
 PLIST_SUB+=	NGINX="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MNOTIFYDESKTOP}
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=--enable-notify_desktop \
+PLIST_SUB+=	NOTIFYDESKTOP=""
+.else
+CONFIGURE_ARGS+=--disable-notify_desktop
+PLIST_SUB+=	NOTIFYDESKTOP="@comment "
+.endif
 .if ${PORT_OPTIONS:MNOTIFYEMAIL}
 LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify_email
 CONFIGURE_ARGS+=--with-libesmtp=${PREFIX}
 PLIST_SUB+=	NOTIFYEMAIL=""
