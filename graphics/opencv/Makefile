@@ -32,7 +32,7 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 .if !defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv
 LIB_DEPENDS+=	opencv_core.2:${PORTSDIR}/graphics/opencv-core
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
 
 PORTDOCS=	*
 
@@ -42,8 +42,6 @@ EIGEN2_DESC=	Eigen 2 support
 GTK_DESC=	GTK+ support
 OPENEXR_DESC=	OpenEXR support
 TBB_DESC=	TBB support
-
-LDFLAGS+=	-lopencv_core
 
 OPTIONS_DEFAULT=	EIGEN2 JASPER JPEG PNG TIFF V4L
 
