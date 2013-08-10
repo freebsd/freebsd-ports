@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Amon2
-PORTVERSION=	3.80
+PORTVERSION=	3.85
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,24 +19,10 @@ RUN_DEPENDS=	\
 	p5-URI>=1.54:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Tiffany>0:${PORTSDIR}/textproc/p5-Tiffany \
-	p5-Test-WWW-Mechanize-PSGI>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI \
-	p5-HTTP-MobileAgent>0:${PORTSDIR}/www/p5-HTTP-MobileAgent \
-	p5-Text-MicroTemplate-Extended>0:${PORTSDIR}/textproc/p5-Text-MicroTemplate-Extended \
-	p5-HTTP-Session>0:${PORTSDIR}/www/p5-HTTP-Session \
-	p5-Module-Find>0:${PORTSDIR}/devel/p5-Module-Find \
-	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
-	p5-String-CamelCase>0:${PORTSDIR}/textproc/p5-String-CamelCase \
-	p5-HTML-FillInForm>0:${PORTSDIR}/www/p5-HTML-FillInForm \
-	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
-	p5-Data-Section-Simple>0:${PORTSDIR}/devel/p5-Data-Section-Simple \
-	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
-	p5-HTML-FillInForm-Lite>0:${PORTSDIR}/www/p5-HTML-FillInForm-Lite \
-	p5-Twiggy>0:${PORTSDIR}/www/p5-Twiggy \
-	p5-Protocol-WebSocket>0:${PORTSDIR}/www/p5-Protocol-WebSocket
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_MODBUILD=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN1=	amon2-setup.pl.1
 MAN3=	Amon2.3 \
