@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Twiggy-TLS
-PORTVERSION=	0.0018
+PORTVERSION=	0.0019
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:UNDEF
@@ -20,7 +20,8 @@ TEST_DEPENDS=	\
 	p5-libwww>=6.00:${PORTSDIR}/www/p5-libwww \
 	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	Twiggy::TLS.3 \
 	Twiggy::TLS::Info.3
