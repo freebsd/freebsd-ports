@@ -217,6 +217,7 @@
     SUBDIR += kshowmail
     SUBDIR += lbdb
     SUBDIR += lens
+    SUBDIR += libcmime
     SUBDIR += libdkim
     SUBDIR += libdomainkeys
     SUBDIR += libesmtp
