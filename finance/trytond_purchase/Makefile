@@ -1,11 +1,12 @@
+# Created by: Matthias Petermann <matthias@petermann-it.de>
 # $FreeBSD$
 
 PORTNAME=	trytond_purchase
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
-MAINTAINER=	matthias@petermann.it
+MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Purchase Module)
 
 LICENSE=	GPLv3
