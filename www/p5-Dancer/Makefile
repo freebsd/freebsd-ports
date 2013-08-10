@@ -1,8 +1,7 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3115
+PORTVERSION=	1.3117
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:YANICK
@@ -45,7 +44,8 @@ OPTIONS_DEFAULT=	YAML
 RUN_DEPENDS+=	p5-YAML>=0.71:${PORTSDIR}/textproc/p5-YAML
 .endif
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN1=	dancer.1
 MAN3=	Dancer.3 \
