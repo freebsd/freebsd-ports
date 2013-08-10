@@ -33,7 +33,7 @@ post-build:
 pre-install:
 	@${RM} -f ${PLIST}
 .if ${PKGNAMESUFFIX} == "-bat"
-	@${ECHO_CMD} "etc/bat.conf.sample" >> ${PLIST}
+	@${ECHO_CMD} "etc/bacula/bat.conf.sample" >> ${PLIST}
 	@${ECHO_CMD} "sbin/bat" >> ${PLIST}
 .endif
 .if ${PKGNAMEPREFIX} == "nagios-check_"
