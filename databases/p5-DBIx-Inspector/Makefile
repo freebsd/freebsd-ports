@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Inspector
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -19,7 +19,8 @@ TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_MODBUILD=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN3=	DBIx::Inspector.3 \
 	DBIx::Inspector::Column.3 \
