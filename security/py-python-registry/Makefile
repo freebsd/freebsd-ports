@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-registry
-PORTVERSION=	0.2.5.1
+PORTVERSION=	0.2.6
 CATEGORIES=	security devel python
 MASTER_SITES=	GH \
 		LOCAL/antoine
@@ -16,7 +16,7 @@ LICENSE=	AL2
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	1958d37
+GH_COMMIT=	f4930a1
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
