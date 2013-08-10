@@ -1,0 +1,8 @@
+This module provides one function, equals (not exported by default).
+
+You should pass this function two strings of the same length. It will
+return true if they are string-wise identical and false otherwise,
+just like eq.  However, comparing any two differing strings will take
+a fixed amount of time, unlike eq.
+
+WWW: http://search.cpan.org/dist/String-Compare-ConstantTime/

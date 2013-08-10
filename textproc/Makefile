@@ -723,6 +723,7 @@
     SUBDIR += p5-Spreadsheet-XLSX
     SUBDIR += p5-String-BufferStack
     SUBDIR += p5-String-CamelCase
+    SUBDIR += p5-String-Compare-ConstantTime
     SUBDIR += p5-String-Divert
     SUBDIR += p5-String-Escape
     SUBDIR += p5-String-Flogger

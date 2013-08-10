@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime/ConstantTime.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime/ConstantTime.so
+%%SITE_PERL%%/%%PERL_ARCH%%/String/Compare/README.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/String/Compare/ConstantTime.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/String/Compare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/String
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
