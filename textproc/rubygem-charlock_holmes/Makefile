@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	charlock_holmes
-PORTVERSION=	0.6.8
-PORTRESIVION=	1
+PORTVERSION=	0.6.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
