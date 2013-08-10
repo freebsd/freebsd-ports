@@ -19,12 +19,11 @@ RUN_DEPENDS=	gupnp>=0.18:${PORTSDIR}/net/gupnp
 
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20
+USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure
