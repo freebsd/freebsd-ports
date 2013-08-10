@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Irc Server
-# Date created:		23 August 1994
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	irc
 PORTVERSION=	2.11.2p3
@@ -26,7 +22,7 @@ MAN8=		ircd.8 iauth.8 ircdwatch.8
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
-BUILD_WRKSRC=	${WRKSRC}/${MACHINE_ARCH}-unknown-freebsd${OSREL}
+BUILD_WRKSRC=	${WRKSRC}/${MACHINE_ARCH}-unknown-${OPSYS:L}${OSREL}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 OPTIONS_DEFINE=	IPV6
