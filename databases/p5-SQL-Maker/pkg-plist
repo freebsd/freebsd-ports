@@ -1,6 +1,7 @@
 %%SITE_PERL%%/SQL/Maker.pm
 %%SITE_PERL%%/SQL/Maker/Condition.pm
 %%SITE_PERL%%/SQL/Maker/Plugin/InsertMulti.pm
+%%SITE_PERL%%/SQL/Maker/Plugin/InsertOnDuplicate.pm
 %%SITE_PERL%%/SQL/Maker/SQLType.pm
 %%SITE_PERL%%/SQL/Maker/Select.pm
 %%SITE_PERL%%/SQL/Maker/Select/Oracle.pm
