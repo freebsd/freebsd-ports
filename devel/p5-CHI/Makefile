@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	CHI
-PORTVERSION=	0.560
+PORTVERSION=	0.580
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JSWARTZ
+MASTER_SITE_SUBDIR=	CPAN:HAARG
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.56
+DISTNAME=	${PORTNAME}-0.58
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
@@ -20,7 +20,9 @@ RUN_DEPENDS=	\
 	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
 	p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
-	p5-Moose>=0.66:${PORTSDIR}/devel/p5-Moose \
+	p5-Moo>=1.003:${PORTSDIR}/devel/p5-Moo \
+	p5-MooX-Types-MooseLike>=0.23:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
+	p5-MooX-Types-MooseLike-Numeric>0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike-Numeric \
 	p5-String-RewritePrefix>0:${PORTSDIR}/textproc/p5-String-RewritePrefix \
 	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Time-Duration>=1.06:${PORTSDIR}/devel/p5-Time-Duration \
@@ -32,7 +34,8 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	CHI.3 \
 	CHI::Benchmarks.3 \
