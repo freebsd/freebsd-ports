@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Server::Starter
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Server-Starter
-PORTVERSION=	0.12
+PORTVERSION=	0.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZUHO
@@ -22,7 +17,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-SharedFork>0:${PORTSDIR}/devel/p5-Test-SharedFork
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN1=	start_server.1
 MAN3=	Server::Starter.3
