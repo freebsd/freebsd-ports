@@ -12,10 +12,8 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/bbc.lua
 %%NSFW%%%%DATADIR%%/lua/website/beeg.lua
 %%DATADIR%%/lua/website/bikeradar.lua
-%%DATADIR%%/lua/website/break.lua
 %%DATADIR%%/lua/website/canalplus.lua
 %%DATADIR%%/lua/website/cbsnews.lua
-%%DATADIR%%/lua/website/charlierose.lua
 %%DATADIR%%/lua/website/clipfish.lua
 %%DATADIR%%/lua/website/dailymotion.lua
 %%NSFW%%%%DATADIR%%/lua/website/deviantclip.lua
