@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Exporter-Declare
-PORTVERSION=	0.112
+PORTVERSION=	0.113
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -17,7 +17,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Fennec-Lite>=0:${PORTSDIR}/devel/p5-Fennec-Lite \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_MODBUILD=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN3=	Exporter::Declare.3 \
 	Exporter::Declare::Export.3 \
