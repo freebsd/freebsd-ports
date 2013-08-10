@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Furl
-PORTVERSION=	2.16
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -25,7 +24,8 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Starlet>0:${PORTSDIR}/www/p5-Starlet \
 		p5-Net-IDN-Encode>0:${PORTSDIR}/textproc/p5-Net-IDN-Encode
 
-PERL_MODBUILD=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN3=	Furl.3 \
 	Furl::HTTP.3 \
