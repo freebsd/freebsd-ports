@@ -726,6 +726,7 @@
     SUBDIR += p5-POE-Component-Spread
     SUBDIR += p5-POEx-Role-TCPServer
     SUBDIR += p5-POSIX-Socket
+    SUBDIR += p5-POSIX-getpeername
     SUBDIR += p5-Parallel-Pvm
     SUBDIR += p5-Phone-Info
     SUBDIR += p5-PlRPC
