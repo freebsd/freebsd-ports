@@ -23,6 +23,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/PSGI.pm
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/Simple.pm
 %%SITE_PERL%%/Plack/Handler/Standalone.pm
+%%SITE_PERL%%/Plack/LWPish.pm
 %%SITE_PERL%%/Plack/Loader.pm
 %%SITE_PERL%%/Plack/Loader/Delayed.pm
 %%SITE_PERL%%/Plack/Loader/Restarter.pm
