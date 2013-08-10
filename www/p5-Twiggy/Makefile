@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Twiggy
-PORTVERSION=	0.1021
+PORTVERSION=	0.1023
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -20,7 +20,8 @@ TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN1=	twiggy.1
 MAN3=	Plack::Handler::Twiggy.3 \
