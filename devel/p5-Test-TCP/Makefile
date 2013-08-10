@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-TCP
-PORTVERSION=	1.27
+PORTVERSION=	2.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -15,7 +15,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 # XXX: test t/05_sigint.t fails.  Check it later.
 
-PERL_MODBUILD=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN3=	Net::EmptyPort.3 \
 	Test::TCP.3 \
