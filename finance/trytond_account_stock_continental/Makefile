@@ -1,11 +1,12 @@
+# Created by: Matthias Petermann <matthias@petermann-it.de>
 # $FreeBSD$
 
 PORTNAME=	trytond_account_stock_continental
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
-MAINTAINER=	matthias@petermann.it
+MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Account Stock Continental Module)
 
 LICENSE=	GPLv3
