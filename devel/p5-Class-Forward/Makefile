@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Class::Forward
-# Date created:		23 Aug 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Forward
-PORTVERSION=	0.08
+PORTVERSION=	0.100006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for class dispatcher that handles namespaces like paths
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Forward.3
 
