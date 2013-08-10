@@ -1,12 +1,7 @@
-# New ports collection makefile for:	iCal::Parser
-# Date created:		21 Apr 2005
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	iCal-Parser
-PORTVERSION=	1.16
+PORTVERSION=	1.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +15,8 @@ BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 	p5-Text-vFile-asData>=0.02:${PORTSDIR}/devel/p5-Text-vFile-asData
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=		iCal::Parser.3
 
