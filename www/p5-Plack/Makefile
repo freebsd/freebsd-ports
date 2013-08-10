@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack
-PORTVERSION=	1.0024
+PORTVERSION=	1.0028
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -17,11 +17,11 @@ RUN_DEPENDS=	\
 	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 	p5-Filesys-Notify-Simple>0:${PORTSDIR}/devel/p5-Filesys-Notify-Simple \
 	p5-HTTP-Body>=1.06:${PORTSDIR}/www/p5-HTTP-Body \
+	p5-HTTP-Tiny>=0.024:${PORTSDIR}/www/p5-HTTP-Tiny \
 	p5-Hash-MultiValue>=0.05:${PORTSDIR}/devel/p5-Hash-MultiValue \
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Stream-Buffered>=0.02:${PORTSDIR}/devel/p5-Stream-Buffered \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
-	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
 	p5-URI>=1.59:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 	p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDir-Install
@@ -43,7 +43,8 @@ TEST_DEPENDS=  \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN1=	plackup.1
 MAN3=	HTTP::Message::PSGI.3 \
@@ -69,6 +70,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Handler::HTTP::Server::PSGI.3 \
 	Plack::Handler::HTTP::Server::Simple.3 \
 	Plack::Handler::Standalone.3 \
+	Plack::LWPish.3 \
 	Plack::Loader.3 \
 	Plack::Loader::Delayed.3 \
 	Plack::Loader::Restarter.3 \
