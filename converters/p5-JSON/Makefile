@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	JSON
-PORTVERSION=	2.58
+PORTVERSION=	2.59
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to convert to JSON (JavaScript Object Notation)
 
 CONFLICTS=	p5-JSON-1.*
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		JSON.3 \
 		JSON::backportPP.3 \
