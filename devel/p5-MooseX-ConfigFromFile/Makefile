@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-ConfigFromFile
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ COMMENT=	Perl extension to abstract Moose role attribute setting from file
 RUN_DEPENDS=	\
 	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types \
-	p5-MooseX-Types-Path-Tiny>0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Tiny \
+	p5-MooseX-Types-Path-Tiny>=0.005:${PORTSDIR}/devel/p5-MooseX-Types-Path-Tiny \
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
@@ -23,7 +23,8 @@ TEST_DEPENDS=	\
 	p5-Test-Without-Module>0:${PORTSDIR}/devel/p5-Test-Without-Module \
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::ConfigFromFile.3
 
