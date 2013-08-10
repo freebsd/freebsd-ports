@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Migration
-PORTVERSION=	0.037
+PORTVERSION=	0.039
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,7 +35,8 @@ TEST_DEPENDS=	\
 	p5-Test-Trap>0:${PORTSDIR}/devel/p5-Test-Trap \
 	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN1=	dbic-migration.1
 MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
