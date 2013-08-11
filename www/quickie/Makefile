@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
 		--localstatedir=${DATADIR}
 USES=		perl5
-USE_PERL5=	build
+USE_PERL5=	build patch
 
 SUB_FILES=	pkg-message
 
