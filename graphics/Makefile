@@ -878,7 +878,6 @@
     SUBDIR += pymorph
     SUBDIR += pyro
     SUBDIR += pysvg
-    SUBDIR += q-graph
     SUBDIR += qcamview
     SUBDIR += qcomicbook
     SUBDIR += qcread

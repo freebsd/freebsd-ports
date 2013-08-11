@@ -643,7 +643,6 @@
     SUBDIR += py-xmms2
     SUBDIR += pysol-sound-server
     SUBDIR += pytone
-    SUBDIR += q-audio
     SUBDIR += qjackctl
     SUBDIR += qmpdclient
     SUBDIR += qsampler
