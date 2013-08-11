@@ -1,3 +1,4 @@
+# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	wine
@@ -8,8 +9,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
 
-MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	Microsoft Windows compatibility environment
+MAINTAINER?=	gerald@FreeBSD.org
+COMMENT?=	Microsoft Windows compatibility environment
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
@@ -23,10 +24,11 @@ LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		png15:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2
 
-CONFLICTS_INSTALL=	wine-1.5.*
+CONFLICTS_INSTALL=	i386-wine-* wine-1.5* wine-1.7*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
@@ -41,7 +43,6 @@ WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
-MAKE_JOBS_SAFE=	yes
 MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
 		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
 		winedump.1 winefile.1 winegcc.1 winemaker.1 winemine.1 \
@@ -58,11 +59,12 @@ USE_XORG=	xcursor xi xpm xrandr xrender
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER
-
+OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
 LIBXSLT_DESC=	Use libxslt (only used by msxml3.dll)
 WINEMAKER_DESC=	Fully support winemaker (requires Perl)
+GECKO_DESC=	Bundle Gecko MSI package for Wine
+MONO_DESC=	Bundle Mono MSI package for Wine
 
 PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
@@ -122,6 +124,14 @@ PLIST_SUB+=		OPENAL="@comment "
 RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 .endif
 
+.if ${PORT_OPTIONS:MGECKO}
+RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko
+.endif
+
+.if ${PORT_OPTIONS:MMONO}
+RUN_DEPENDS+=	${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
+.endif
+
 .if ${OSVERSION} < 800000
 IGNORE=		lacks required sound support on FreeBSD before 8.0
 .endif
@@ -140,8 +150,8 @@ post-install:
 	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/fr.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/pl.UTF-8/man1
-	${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
-	${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
+	@${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
+	@${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
