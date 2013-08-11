@@ -12,7 +12,7 @@ COMMENT=	Meta-port for e17 modules
 
 NO_BUILD=	yes
 WANT_EFL=	yes
-E17_ARCH=	freebsd${OSREL}-${ARCH}
+E17_ARCH=	${OPSYS:L}${OSREL}-${ARCH}
 
 MODULES=	alarm comp-scale cpu deskshow diskio eektool elfe empris engage eooorg \
 		everything-aspell everything-mpris everything-pidgin everything-places \
