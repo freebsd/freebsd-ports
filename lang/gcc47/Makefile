@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.7.4.20130803
+PORTVERSION=	4.7.4.20130810
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-DISTNAME=	gcc-${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.7
@@ -21,9 +20,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-# VERSIONSTRING relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.
-VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
+# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
+# of executables and directories once installed.  A PORTVERSION of
+# 4.Y.2.s20130808 results in values of 4.Y-20130808, 4.Y.2, and 4Y
+# for these three.
+DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -59,7 +60,7 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
-SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
+SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
