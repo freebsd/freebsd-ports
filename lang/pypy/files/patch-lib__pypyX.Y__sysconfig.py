@@ -14,7 +14,7 @@
 +        'platstdlib': '{platbase}/lib/pypy-{pypy_version_short}',
 +        'purelib': '{base}/lib/pypy-{pypy_version_short}',
 +        'platlib': '{platbase}/lib/pypy-{pypy_version_short}',
-+        'include': '{base}/include-{pypy_version_short}',
++        'include': '{base}/include/pypy-{pypy_version_short}',
 +        'platinclude': '{platbase}/include/pypy-{pypy_version_short}',
          'scripts': '{base}/bin',
          'data'   : '{base}',

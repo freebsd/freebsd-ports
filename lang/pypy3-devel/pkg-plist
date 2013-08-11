@@ -1409,9 +1409,9 @@
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/__init__.pypy-%%PYPY_VER%%.pyc
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gb56459ffx310af836.pypy-21.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gb61d9cdcx1fd01a91.pypy-21.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gd9aba7e0xad93c709.pypy-21.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gb56459ffx310af836.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gb61d9cdcx1fd01a91.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__gd9aba7e0xad93c709.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_codecs_cn.pypy-%%PYPY_VER%%.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_codecs_hk.pypy-%%PYPY_VER%%.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__pycache__/_codecs_iso2022.pypy-%%PYPY_VER%%.pyc
