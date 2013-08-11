@@ -18,10 +18,15 @@ LICENSE=        LGPL21 LGPL3
 LICENSE_COMB=   dual
 LICENSE_FILE=   ${WRKDIR}/LICENSE
 
+OPTIONS_DEFINE=	GECKO MONO
+GECKO_DESC=     Bundle Gecko MSI package for Wine
+MONO_DESC=      Bundle Mono MSI package for Wine
+
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*'
-CONFLICTS_INSTALL=	wine-[0-9]*
+CONFLICTS_INSTALL=	i386-wine-1.6* wine-[0-9]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-devel
+
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	wine only runs on x86 architecture
@@ -36,6 +41,14 @@ USE_XZ=		yes
 
 .if (${OSVERSION} >= 80300 && ${OSVERSION} < 90000) && (${OSVERSION} >= 90100 && ${OSVERSION} < 100000)
 IGNORE=		binaries compiled for FreeBSD 8.3+ and 9.1+
+.endif
+
+.if ${PORT_OPTIONS:MGECKO}
+RUN_DEPENDS+=   ${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+.endif
+
+.if ${PORT_OPTIONS:MMONO}
+RUN_DEPENDS+=   ${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
 .endif
 
 .if ${PREFIX} != /usr/local
