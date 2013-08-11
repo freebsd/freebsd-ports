@@ -1,8 +1,8 @@
-# Created by:					Adam Weinberger <adamw@FreeBSD.org>
+# Created by:	Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vimpager
-PORTVERSION=	1.7.9
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/rkitover/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
