@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	mecab
-PORTVERSION=	0.995
+PORTVERSION=	0.996
 CATEGORIES=	japanese textproc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 LICENSE=	BSD GPLv2 LGPL21
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD=	${WRKSRC}/BSD
-LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
-LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL
 
-USE_AUTOTOOLS=	libtool
-USES=		iconv
-USE_PERL5_BUILD=	yes
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool
+USES=		iconv gettext:build perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+ACLOCAL_ARGS=	--system-acdir=${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 
 MAN1=		mecab.1
 
@@ -34,8 +34,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
-			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e 's/conf_DATA = mecabrc/conf_DATA = mecabrc.dist/' ${WRKSRC}/Makefile.in
+			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}.in
+	${REINPLACE_CMD} -e 's/conf_DATA = mecabrc/conf_DATA = mecabrc.dist/' ${WRKSRC}/Makefile.am
 
 post-configure:
 	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.dist
