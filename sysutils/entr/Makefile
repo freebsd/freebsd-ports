@@ -11,7 +11,7 @@ COMMENT=	Runs arbitrary commands when files change
 WRKSRC=	${WRKDIR}/eradman-entr-963b395019be
 
 MAKEFILE=	Makefile.bsd
-MAKE_ARGS=	MANPREFIX=${PREFIX}/man
+MAKE_ARGS=	MANPREFIX=${MANPREFIX}/man
 PLIST_FILES=	bin/entr
 MAN1=	entr.1
 MANCOMPRESSED=	no
