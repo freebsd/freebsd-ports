@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/STF/Dispatcher/PSGI/.packlist
 %%SITE_PERL%%/STF/Dispatcher/Impl/File.pm
 %%SITE_PERL%%/STF/Dispatcher/Impl/Hash.pm
 %%SITE_PERL%%/STF/Dispatcher/PSGI.pm
@@ -8,6 +7,3 @@
 @dirrm %%SITE_PERL%%/STF/Dispatcher/Impl
 @dirrm %%SITE_PERL%%/STF/Dispatcher
 @dirrm %%SITE_PERL%%/STF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/STF/Dispatcher/PSGI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/STF/Dispatcher
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/STF

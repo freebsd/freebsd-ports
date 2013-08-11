@@ -1,12 +1,7 @@
-# New ports collection makefile for:	STF::Dispatcher::PSGI
-# Date created:		31 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	STF-Dispatcher-PSGI
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -25,7 +20,8 @@ TEST_DEPENDS=	\
 	p5-Net-STF-Client>0:${PORTSDIR}/www/p5-Net-STF-Client \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	modbuild
 
 MAN3=	STF::Dispatcher::Impl::File.3 \
 	STF::Dispatcher::Impl::Hash.3 \
