@@ -308,6 +308,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/utils/files.py
 %%PYTHON_SITELIBDIR%%/libcloud/utils/files.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/utils/files.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/utils/iso8601.py
+%%PYTHON_SITELIBDIR%%/libcloud/utils/iso8601.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/utils/iso8601.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/utils/misc.py
 %%PYTHON_SITELIBDIR%%/libcloud/utils/misc.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/utils/misc.pyo
