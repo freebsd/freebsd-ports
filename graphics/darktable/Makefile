@@ -13,16 +13,14 @@ COMMENT=	Virtual lighttable and darkroom for photographers
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2 \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		lensfun:${PORTSDIR}/graphics/lensfun \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		liblensfun.so:${PORTSDIR}/graphics/lensfun \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE extensions
-
-MAKE_JOBS_SAFE=	yes
 
 USES=		cmake:outsource
 USE_XZ=		yes
@@ -31,7 +29,7 @@ USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	GPHOTO GEO FLICKR FACEBOOK KWALLET GNOMEKEYRING RAWSPEED \
 		OPENJPEG SLIDESHOW NLS GCC46
@@ -47,7 +45,7 @@ OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC46
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPHOTO}
-LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS+=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 PLIST_FILES+=	lib/darktable/plugins/lighttable/libcamera.so \
 		lib/darktable/plugins/lighttable/libcapture.so \
 		lib/darktable/plugins/lighttable/liblive_view.so \
@@ -57,7 +55,7 @@ CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGEO}
-LIB_DEPENDS+=	soup-2.4:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 PLIST_FILES+=	lib/darktable/plugins/lighttable/liblocation.so \
 		lib/darktable/plugins/lighttable/libmap_settings.so \
 		lib/darktable/views/libmap.so
@@ -66,27 +64,27 @@ CMAKE_ARGS+=	-DUSE_GEO:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFLICKR}
-LIB_DEPENDS+=	flickcurl:${PORTSDIR}/www/flickcurl
+LIB_DEPENDS+=	libflickcurl.so:${PORTSDIR}/www/flickcurl
 PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
 .else
 CMAKE_ARGS+=	-DUSE_FLICKR:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFACEBOOK}
-LIB_DEPENDS+=	json-glib-1.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS+=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libfacebook.so
 .else
 CMAKE_ARGS+=	-DUSE_GLIBJSON:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MKWALLET}
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 .else
 CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGNOMEKEYRING}
-LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 .else
 CMAKE_ARGS+=	-DUSE_GNOME_KEYRING:BOOL=OFF
 .endif
@@ -96,7 +94,7 @@ CMAKE_ARGS+=	-DDONT_USE_RAWSPEED:BOOL=ON
 .endif
 
 .if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	openjpeg:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
 PLIST_FILES+=	lib/darktable/plugins/imageio/format/libj2k.so
 .else
 CMAKE_ARGS+=	-DUSE_OPENJPEG:BOOL=OFF
