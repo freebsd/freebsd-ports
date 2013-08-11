@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Session-Cookie
-PORTVERSION=	0.19
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,9 +12,9 @@ COMMENT=	Perl extension for encrypted cookie-based session backend for Dancer
 RUN_DEPENDS=	\
 	p5-Crypt-CBC>0:${PORTSDIR}/security/p5-Crypt-CBC \
 	p5-Crypt-Rijndael>0:${PORTSDIR}/security/p5-Crypt-Rijndael \
-	p5-Dancer>=1.13:${PORTSDIR}/www/p5-Dancer \
+	p5-Dancer>=1.3113:${PORTSDIR}/www/p5-Dancer \
 	p5-HTTP-Date>0:${PORTSDIR}/www/p5-HTTP-Date \
-	p5-Session-Storage-Secure>0:${PORTSDIR}/www/p5-Session-Storage-Secure \
+	p5-Session-Storage-Secure>=0.007:${PORTSDIR}/www/p5-Session-Storage-Secure \
 	p5-String-CRC32>0:${PORTSDIR}/devel/p5-String-CRC32 \
 	p5-Time-Duration-Parse>0:${PORTSDIR}/devel/p5-Time-Duration-Parse
 TEST_DEPENDS=	\
@@ -23,7 +23,8 @@ TEST_DEPENDS=	\
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	Dancer::Session::Cookie.3
 
