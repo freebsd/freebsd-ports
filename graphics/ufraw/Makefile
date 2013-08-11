@@ -104,7 +104,7 @@ post-patch:
 .endfor
 
 pre-build:
-	@${INSTALL_SCRIPT} ${LOCALBASE}/share/glib-2.0/gettext/mkinstalldirs \
+	@${INSTALL_SCRIPT} ${LOCALBASE}/share/icu/50.1.2/mkinstalldirs \
 		${WRKSRC}
 
 post-install:
