@@ -336,6 +336,7 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/triangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tripleoctagon.gif
 %%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
+%%PORTDOCS%%%%DOCSDIR%%/pdf/Agraph.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/acyclic.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/bcomps.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/ccomps.1.pdf

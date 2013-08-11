@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTVERSION=	2.32.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -31,8 +30,7 @@ MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 MAN1=		acyclic.1 bcomps.1 ccomps.1 cluster.1 diffimg.1 dijkstra.1 \
 		dot.1 gc.1 graphml2gv.1 gml2gv.1 gv2gxl.1 gvmap.1 gvmap.sh.1 \
 		gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 nop.1 osage.1 \
-		patchwork.1 prune.1 sccmap.1 smyrna.1 tred.1 unflatten.1 \
-		vimdot.1
+		patchwork.1 prune.1 sccmap.1 tred.1 unflatten.1 vimdot.1
 MAN3=		cdt.3 expr.3 cgraph.3 graph.3 gvc.3 pack.3 pathplan.3 xdot.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
@@ -64,7 +62,7 @@ PDOCS_HTML=	doc/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK NVTHREADS
+OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK NVTHREADS
 OPTIONS_DEFAULT?=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
 NO_OPTIONS_SORT=yes
 DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
@@ -178,6 +176,13 @@ CONFIGURE_ARGS+=	--without-rsvg
 PLIST_SUB+=		WITH_RSVG="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MPOPPLER}
+LIB_DEPENDS+?		poppler:${PORTSDIR}/graphics/poppler
+CONFIGURE_ARGS+=        --with-poppler=yes
+.else
+CONFIGURE_ARGS+=        --without-poppler
+.endif
+
 .if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=		WITH_GTK=""
@@ -267,6 +272,7 @@ CONFIGURE_ARGS+=	--without-ipsepcola
 
 .if ${PORT_OPTIONS:MSMYRNA}
 CONFIGURE_ARGS+=	--with-smyrna=yes
+MAN1+=			smyrna.1
 PLIST_SUB+=		WITH_SMYRNA=""
 .else
 PLIST_SUB+=		WITH_SMYRNA="@comment "
