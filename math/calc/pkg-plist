@@ -79,10 +79,13 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/alg_config.cal
 %%DATADIR%%/beer.cal
 %%DATADIR%%/bernoulli.cal
+%%DATADIR%%/bernpoly.cal
 %%DATADIR%%/bigprime.cal
 %%DATADIR%%/bindings
+%%DATADIR%%/brentsolve.cal
 %%DATADIR%%/chi.cal
 %%DATADIR%%/chrem.cal
+%%DATADIR%%/constants.cal
 %%DATADIR%%/custhelp/argv
 %%DATADIR%%/custhelp/devnull
 %%DATADIR%%/custhelp/help
@@ -96,9 +99,11 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/custom/pzasusb8.cal
 %%DATADIR%%/custom/register.cal
 %%DATADIR%%/deg.cal
-%%DATADIR%%/dotest.cal
 %%DATADIR%%/dms.cal
+%%DATADIR%%/dotest.cal
 %%DATADIR%%/ellip.cal
+%%DATADIR%%/factorial.cal
+%%DATADIR%%/factorial2.cal
 %%DATADIR%%/gvec.cal
 %%DATADIR%%/hello.cal
 %%DATADIR%%/help/COPYING
@@ -435,7 +440,9 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/help/xor
 %%DATADIR%%/hms.cal
 %%DATADIR%%/intfile.cal
+%%DATADIR%%/lambertw.cal
 %%DATADIR%%/linear.cal
+%%DATADIR%%/lnseries.cal
 %%DATADIR%%/lucas.cal
 %%DATADIR%%/lucas_chk.cal
 %%DATADIR%%/lucas_tbl.cal
@@ -464,6 +471,8 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/set8700.cal
 %%DATADIR%%/set8700.line
 %%DATADIR%%/solve.cal
+%%DATADIR%%/specialfunctions.cal
+%%DATADIR%%/statistics.cal
 %%DATADIR%%/sumsq.cal
 %%DATADIR%%/sumtimes.cal
 %%DATADIR%%/surd.cal
@@ -483,9 +492,12 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/test8400.cal
 %%DATADIR%%/test8500.cal
 %%DATADIR%%/test8600.cal
+%%DATADIR%%/test8900.cal
+%%DATADIR%%/toomcook.cal
 %%DATADIR%%/unitfrac.cal
 %%DATADIR%%/varargs.cal
 %%DATADIR%%/xx_print.cal
+%%DATADIR%%/zeta2.cal
 @dirrmtry man/man1
 @dirrmtry man
 @dirrm %%DATADIR%%/help
