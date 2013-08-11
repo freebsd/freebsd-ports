@@ -270,6 +270,7 @@
     SUBDIR += py-prolog
     SUBDIR += pypy
     SUBDIR += pypy-devel
+    SUBDIR += pypy3-devel
     SUBDIR += python
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
