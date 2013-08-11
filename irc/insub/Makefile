@@ -1,9 +1,5 @@
-# New ports collection makefile for:	insub
-# Date created:			27 Dec 2003
-# Whom:				Alfred Perlstein <alfred@freebsd.org>
-#
+# Created by: Alfred Perlstein <alfred@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	insub
 PORTVERSION=	15.1
@@ -16,10 +12,12 @@ COMMENT=	Some scripts for expressing how you feel on IRC and the web
 RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
 		figlet:${PORTSDIR}/misc/figlet
 
+USES=	perl5
+
 NO_BUILD=	YES
 
 USE_BZIP2=	YES
-USE_PERL5=	yes
+USE_PERL5=	run
 
 SCRIPT=	${PORTNAME}.pl
 
