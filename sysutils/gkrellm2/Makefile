@@ -14,8 +14,8 @@ COMMENT=	A GTK based system monitor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES+=		gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_RC_SUBR=	gkrellmd
 WANT_GNOME=	yes
 
