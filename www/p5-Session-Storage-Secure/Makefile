@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Session-Storage-Secure
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -19,6 +19,7 @@ RUN_DEPENDS=	\
 	p5-MooX-Types-MooseLike>=0.16:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
 	p5-Sereal-Decoder>0:${PORTSDIR}/converters/p5-Sereal-Decoder \
 	p5-Sereal-Encoder>0:${PORTSDIR}/converters/p5-Sereal-Encoder \
+	p5-String-Compare-ConstantTime>0:${PORTSDIR}/textproc/p5-String-Compare-ConstantTime \
 	p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
@@ -26,7 +27,8 @@ TEST_DEPENDS=	\
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Number-Tolerant>0:${PORTSDIR}/devel/p5-Number-Tolerant
 
-PERL_CONFIGURE=	yes
+USES=	perl5
+USE_PERL5=	configure
 
 MAN3=	Session::Storage::Secure.3
 
