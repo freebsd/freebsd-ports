@@ -240,6 +240,7 @@
 %%WWWDIR%%/images/vbox/os_win2k3_64.png
 %%WWWDIR%%/images/vbox/os_win2k8.png
 %%WWWDIR%%/images/vbox/os_win2k8_64.png
+%%WWWDIR%%/images/vbox/os_win2k12_64.png
 %%WWWDIR%%/images/vbox/os_win31.png
 %%WWWDIR%%/images/vbox/os_win7.png
 %%WWWDIR%%/images/vbox/os_win7_64.png
@@ -473,13 +474,11 @@
 %%WWWDIR%%/panes/settingsGlobalNetwork.html
 %%WWWDIR%%/panes/settingsGlobalUsers.html
 %%WWWDIR%%/panes/settingsNetwork.html
-%%WWWDIR%%/panes/settingsParallelPorts.html
+%%WWWDIR%%/panes/settingsPorts.html
 %%WWWDIR%%/panes/settingsPortForwarding.html
-%%WWWDIR%%/panes/settingsSerialPorts.html
 %%WWWDIR%%/panes/settingsSharedFolders.html
 %%WWWDIR%%/panes/settingsStorage.html
 %%WWWDIR%%/panes/settingsSystem.html
-%%WWWDIR%%/panes/settingsUSB.html
 %%WWWDIR%%/panes/tabVMConsole.html
 %%WWWDIR%%/panes/tabVMDetails.html
 %%WWWDIR%%/panes/tabVMSnapshots.html
