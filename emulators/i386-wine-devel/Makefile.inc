@@ -22,11 +22,12 @@ OPTIONS_DEFINE=	GECKO MONO
 GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
-EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
-				--exclude +MTREE_DIRS --exclude share/licenses/'*'
-CONFLICTS_INSTALL=	i386-wine-1.6* wine-[0-9]*
+CONFLICTS_INSTALL=	i386-wine-1.4* i386-wine-1.6* wine-[0-9]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-devel
 
+EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
+				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
+				--exclude libdata/ldconfig32/${LATEST_LINK}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	wine only runs on x86 architecture
@@ -39,8 +40,9 @@ USE_XZ=		yes
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 80300 && ${OSVERSION} < 90000) && (${OSVERSION} >= 90100 && ${OSVERSION} < 100000)
-IGNORE=		binaries compiled for FreeBSD 8.3+ and 9.1+
+.if !(${OSVERSION} >= 803000 && ${OSVERSION} < 900000) && !(${OSVERSION} >= 901000 && ${OSVERSION} < 1000000)
+IGNORE=		binaries compiled for FreeBSD 8.3+ and 9.1+ only
+DISTFILES=
 .endif
 
 .if ${PORT_OPTIONS:MGECKO}
