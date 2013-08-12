@@ -4,7 +4,7 @@
 PORTNAME=	pypy
 DISTVERSION=	2.2-alpha${DATE}
 CATEGORIES=	lang python java
-MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
+MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/${PORTNAME}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${COMMIT}
 DIST_SUBDIR=	pypy
@@ -266,7 +266,8 @@ post-build:
 		-name '*.bak' -delete -or \
 		-name '*.c' -delete -or \
 		-name '*.o' -delete
-	${FIND} ${WRKDIR}/${_path:C/.*://}/ -depth -type d -name tmp | \
+	${FIND} ${WRKDIR}/${_path:C/.*://}/ -name __pycache__ | \
+		${XARGS} -n1 -I {} ${FIND} {} -depth 1 -type d | \
 		${XARGS} ${RM} -r
 .endfor
 
