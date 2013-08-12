@@ -1,14 +1,16 @@
---- lib/SNMP_Session.pm.orig	2011-01-31 14:10:12.000000000 +0600
-+++ lib/SNMP_Session.pm	2011-01-31 14:11:20.000000000 +0600
-@@ -146,7 +146,7 @@
+--- lib/SNMP_Session.pm.orig	2008-11-21 08:25:17.000000000 +0300
++++ lib/SNMP_Session.pm	2013-08-12 15:13:26.000000000 +0400
+@@ -146,8 +146,8 @@
  
      if (eval {local $SIG{__DIE__};require Socket6;} &&
         eval {local $SIG{__DIE__};require IO::Socket::INET6; IO::Socket::INET6->VERSION("1.26");}) {
 -	import Socket6;
+-	$ipv6_addr_len = length(pack_sockaddr_in6(161, inet_pton(AF_INET6(), "::1")));
 +       	Socket6->import(qw(inet_pton inet_ntop getaddrinfo));
- 	$ipv6_addr_len = length(pack_sockaddr_in6(161, inet_pton(AF_INET6(), "::1")));
++	$ipv6_addr_len = length(Socket6::pack_sockaddr_in6(161, inet_pton(AF_INET6(), "::1")));
  	$SNMP_Session::ipv6available = 1;
      }
+     eval 'local $SIG{__DIE__};local $SIG{__WARN__};$dont_wait_flags = MSG_DONTWAIT();';
 @@ -549,7 +549,7 @@
      # complaining about AF_INET6 when Socket6 is not available
  
