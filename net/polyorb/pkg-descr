@@ -1,0 +1,15 @@
+PolyORB is a middleware implementation providing development tools and an
+innovative runtime library architecture for collaboration of application
+components using open standards for distributed systems.
+
+Key Features:
+  * Support of standard application personalities: CORBA, Ada DSA (Annex E)
+  * Support of standard protocol personalities: GIOP, SOAP
+  * Interoperability between hardward platforms and operating environments,
+    between distribution models
+  * Support for multiple tasking profiles (full Ada tasking, Ravenscar
+    tasking, no tasking)
+  * Support for security and realtime extensions
+  * Tailorability to application and platform specific requirements
+
+WWW: http://www.adacore.com/polyorb
