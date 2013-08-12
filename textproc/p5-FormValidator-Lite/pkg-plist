@@ -5,8 +5,10 @@
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Email.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/File.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Japanese.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint/Number.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Time.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/URL.pm
+%%SITE_PERL%%/FormValidator/Lite/Hash.pm
 %%SITE_PERL%%/FormValidator/Lite/Messages/en.pm
 %%SITE_PERL%%/FormValidator/Lite/Messages/ja.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload.pm
