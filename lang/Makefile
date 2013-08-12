@@ -11,6 +11,7 @@
     SUBDIR += afnix
     SUBDIR += algol68g
     SUBDIR += alisp
+    SUBDIR += angelscript
     SUBDIR += arena
     SUBDIR += asis
     SUBDIR += asn1c
