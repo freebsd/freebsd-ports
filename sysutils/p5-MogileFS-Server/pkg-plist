@@ -26,6 +26,7 @@ bin/mogstored
 %%SITE_PERL%%/MogileFS/ProcManager.pm
 %%SITE_PERL%%/MogileFS/Rebalance.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy.pm
+%%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleDevices.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleHosts.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/Union.pm
 %%SITE_PERL%%/MogileFS/ReplicationRequest.pm

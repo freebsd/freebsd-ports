@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.67
+PORTVERSION=	2.68
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -43,6 +43,7 @@ MAN3=		MogileFS::Checksum.3 \
 		MogileFS::IOStatWatcher.3 \
 		MogileFS::Overview.3 \
 		MogileFS::ReplicationPolicy.3 \
+		MogileFS::ReplicationPolicy::MultipleDevices.3 \
 		MogileFS::ReplicationPolicy::MultipleHosts.3 \
 		MogileFS::ReplicationPolicy::Union.3 \
 		MogileFS::Server.3 \
