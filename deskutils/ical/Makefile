@@ -1,25 +1,21 @@
-# ex:ts=8
-# New ports collection makefile for:    ical
-# Date created:         Mon Aug 28 13:35:31 CDT 1995
-# Whom:                 erich@rrnet.com
-#
+# Created by: Eric L. Hernes <erich@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ical
 PORTVERSION=	2.2
-PORTREVISION=	3
-CATEGORIES?=	deskutils tk
+PORTREVISION=	4
+CATEGORIES=	deskutils tk
 MASTER_SITES=	ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
 
 PATCH_SITES=	http://www.isi.edu/~johnh/SOFTWARE/ICAL/
 PATCHFILES=	ical-2.3.1-upvar.patch
 
-MAINTAINER?=	obrien@FreeBSD.org
-COMMENT?=	A calendar application
+MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Calendar application
 
-USE_TK?=	85
+LICENSE=	GPLv2
 
+USE_TK=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
 		--with-tclhdir=${TCL_INCLUDEDIR} \
@@ -28,6 +24,10 @@ CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
 		--with-tkhdir=${TK_INCLUDEDIR}
 
 MAN1=		ical.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,tcl->result,Tcl_GetStringResult(tcl),' \
+		${WRKSRC}/ical.C
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${DISTNAME}
