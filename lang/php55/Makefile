@@ -82,6 +82,7 @@ CONFIGURE_ARGS+=--disable-cli
 .if ${PORT_OPTIONS:MCGI}
 PHP_SAPI+=	cgi
 PLIST_SUB+=	CGI=""
+MAN1+=		php-cgi.1
 .else
 PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
