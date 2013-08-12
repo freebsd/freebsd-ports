@@ -263,7 +263,8 @@ post-build:
 		-name '*.bak' -delete -or \
 		-name '*.c' -delete -or \
 		-name '*.o' -delete
-	${FIND} ${WRKDIR}/${_path:C/.*://}/ -depth -type d -name tmp | \
+	${FIND} ${WRKDIR}/${_path:C/.*://}/ -name __pycache__ | \
+		${XARGS} -n1 -I {} ${FIND} {} -depth 1 -type d | \
 		${XARGS} ${RM} -r
 .endfor
 

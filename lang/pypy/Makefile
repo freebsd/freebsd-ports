@@ -35,7 +35,6 @@ OPTIONS_SINGLE_PYINST=	PYTHON PYPY PYPY_MINMEM
 OPTIONS_DEFAULT+=	PYPY_MINMEM
 .endif
 
-MANUAL_PACKAGE_BUILD=	runaway process on pointyhat
 CONFLICTS_INSTALL=	pypy-devel-[0-9]*
 
 ALL_TARGET=	${PYPY_NAMES}
@@ -290,7 +289,9 @@ post-build:
 		-name '*.bak' -delete -or \
 		-name '*.c' -delete -or \
 		-name '*.o' -delete
-	${FIND} ${WRKSRC}/lib -depth -type d -name tmp | ${XARGS} ${RM} -r
+	${FIND} ${WRKDIR}/${_path:C/.*://}/ -name __pycache__ | \
+		${XARGS} -n1 -I {} ${FIND} {} -depth 1 -type d | \
+		${XARGS} ${RM} -r
 	${MV} ${WRKSRC}/include ${WRKSRC}/include~
 	${MKDIR} ${WRKSRC}/include
 	${MV} ${WRKSRC}/include~ ${WRKSRC}/${PYPY_INCLUDEDIR}
