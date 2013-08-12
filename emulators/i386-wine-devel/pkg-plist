@@ -2040,7 +2040,6 @@ lib32/wine/xmllite.dll.so
 lib32/wine/xolehlp.dll.so
 lib32/wine/xpsprint.dll.so
 lib32/wine/xpssvcs.dll.so
-libdata/ldconfig32/i386-wine-devel
 man/man1/msiexec.1.gz
 man/man1/notepad.1.gz
 man/man1/regedit.1.gz
