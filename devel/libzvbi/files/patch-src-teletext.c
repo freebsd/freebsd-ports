@@ -1,5 +1,5 @@
---- src/teletext.c.orig	2011-12-14 22:01:23.000000000 +0100
-+++ src/teletext.c	2011-12-14 22:01:30.000000000 +0100
+--- src/teletext.c.orig	2013-07-02 06:03:54.000000000 +0200
++++ src/teletext.c	2013-08-07 20:24:40.000000000 +0200
 @@ -1258,180 +1258,177 @@
  	int pdc_hr;
  
@@ -356,10 +356,10 @@
  				if (row > active_row)
 -					flush_row();
 +					flush_row;
+ 				else
+ 					flush(active_column + 1);
  
- 				active_row = row;
- 				active_column = column;
-@@ -1750,7 +1747,7 @@
+@@ -1752,7 +1749,7 @@
  				break;
  
  			case 0x15 ... 0x17:	/* object definition */
@@ -368,7 +368,7 @@
  				printv("enh obj definition 0x%02x 0x%02x\n", p->mode, p->data);
  				printv("enh terminated\n");
  				goto swedish;
-@@ -1766,7 +1763,7 @@
+@@ -1768,7 +1765,7 @@
  			case 0x1F:		/* termination marker */
  			default:
  	                terminate:
