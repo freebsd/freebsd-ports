@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jochen@daten-chaos.de
 COMMENT=	wxWidgets bindings for the D programming language
 
+DEPRECATED=	Depends on deprecated lang/gdc
+EXPIRATION_DATE=2013-09-01
+
 BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc
 
 USE_GMAKE=	yes
