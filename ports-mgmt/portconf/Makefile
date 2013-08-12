@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portconf
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
