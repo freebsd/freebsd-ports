@@ -238,7 +238,6 @@ share/mime/text/x-docear.xml
 @dirrm share/java/docear/plugins/org.freeplane.plugin.svg/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.svg
 @dirrm share/java/docear/plugins/org.freeplane.plugin.script/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane
 @dirrm share/java/docear/plugins/org.freeplane.plugin.script/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.script
 @dirrm share/java/docear/plugins/org.freeplane.plugin.openmaps/META-INF
@@ -260,9 +259,6 @@ share/mime/text/x-docear.xml
 @dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod
 @dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities
-@dirrm share/java/docear/plugins/org.docear.plugin.optionpane/META-INF
-@dirrm share/java/docear/plugins/org.docear.plugin.optionpane/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.optionpane
 @dirrm share/java/docear/plugins/org.docear.plugin.core/META-INF
 @dirrm share/java/docear/plugins/org.docear.plugin.core/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.core
