@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -26,16 +25,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/attribute_dict.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/attribute_dict.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/attribute_dict.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/pythonic_testcase.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/pythonic_testcase.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/pythonic_testcase.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/simple_super.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/simple_super.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/simple_super.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/testcase.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/testcase.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib/testcase.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/de/LC_MESSAGES/pycerberus.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/de/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/de/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/de/__init__.pyo
@@ -57,20 +55,31 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/basic_numbers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/basic_numbers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/basic_numbers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/checkbox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/checkbox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/checkbox.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/domain.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/domain.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/domain.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/email.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/email.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/email.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/foreach.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/foreach.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/foreach.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/matching_fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/matching_fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/matching_fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/oneof.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/oneof.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/oneof.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/string.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/string.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators/string.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/validators
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales/de
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/locales
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycerberus
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
