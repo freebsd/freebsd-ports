@@ -601,6 +601,7 @@ share/xsessions/enlightenment.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/enlightenment.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/enlightenment.mo
@@ -674,6 +675,8 @@ share/xsessions/enlightenment.desktop
 %%NLS%%@dirrmtry share/locale/sk
 %%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr
 %%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv
 %%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
