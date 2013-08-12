@@ -876,6 +876,7 @@
     SUBDIR += pload
     SUBDIR += plugdaemon
     SUBDIR += pmf
+    SUBDIR += polyorb
     SUBDIR += poptop
     SUBDIR += portfwd
     SUBDIR += pppd23

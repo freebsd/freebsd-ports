@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2013-08-11 21:54:41.000000000 +0000
++++ Makefile.in
+@@ -826,10 +826,10 @@ host=@host@
+ target=@target@
+ 
+ ifeq (${target}, ${host})
+-  target_prefix=${prefix}
+-  host_exe_dir=${prefix}/bin
++  target_prefix=${DESTDIR}${prefix}
++  host_exe_dir=${DESTDIR}${prefix}/bin
+   host_cmdprefix=
+-  target_exe_dir=${prefix}/bin
++  target_exe_dir=${DESTDIR}${prefix}/bin
+ 
+ else
+   target_prefix=${prefix}/${target}
+@@ -886,10 +886,10 @@ install:
+ 	# pre-built and packaged with sources.
+ 	if [ -r docs/polyorb_ug.html ]; \
+ 	then \
+-	  (cd docs && ${MAKE} install prefix="${prefix}"); \
++	  (cd docs && ${MAKE} install prefix="${target_prefix}"); \
+ 	elif [ -r $(top_srcdir)/docs/polyorb_ug.html ]; \
+ 	then \
+-	  (cd docs && ${MAKE} install prefix="${prefix}" doc_build_dir="$(top_srcdir)/docs/"); \
++	  (cd docs && ${MAKE} install prefix="${target_prefix}" doc_build_dir="$(top_srcdir)/docs/"); \
+ 	fi
+ 
+ # polyorb-dsa_p-partitions.ali is a special case above.
