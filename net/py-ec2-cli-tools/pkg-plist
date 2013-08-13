@@ -1,8 +1,4 @@
 %%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%
-%%PYTHON_LIBDIR%%/site-packages/easy-install.pth
-%%PYTHON_LIBDIR%%/site-packages/site.py
-%%PYTHON_LIBDIR%%/site-packages/site.pyc
-%%PYTHON_LIBDIR%%/site-packages/site.pyo
 bin/ec2getsnaps
 bin/ec2host
 bin/ec2hostcache
