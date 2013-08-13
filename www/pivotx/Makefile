@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pivotx
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.3.7
 CATEGORIES=	www
 MASTER_SITES=	SF/pivot-weblog/PivotX \
 		http://pivotx.net/files/ \
@@ -17,12 +16,12 @@ COMMENT=	Software to help you maintain dynamic sites such as weblogs
 LICENSE=	GPLv2
 
 PORTDOCS=	LICENSE.txt README.txt
-PORTEXAMPLES=	example.htaccess
+PORTEXAMPLES=	example.htaccess example.web.config
 
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 
-OPTIONS_DEFINE=	MYSQL PHPDOM NLS DOCS
+OPTIONS_DEFINE=	MYSQL PHPDOM DOCS EXAMPLES
 MYSQL_DESC=	Use MySQL instead of flat files
 PHPDOM_DESC=	Use PHP:DOM instead of SimpleXML
 
@@ -102,7 +101,7 @@ do-install:
 	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${DOCSDIR}'
 .endfor
 .endif
-.if ${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} '${EXAMPLESDIR}'
 .for FILES in ${PORTEXAMPLES}
 	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${EXAMPLESDIR}'
