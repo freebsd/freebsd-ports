@@ -82,12 +82,7 @@ PKGNAMESUFFIX=	-rscsi
 PLIST_SUB+=	RSCSI="@comment "
 .endif
 
-# Hack to allow building with TARGET and TARGET_ARCH set in the environment
-# as done by the release building scripts.
-SETENV=		/usr/bin/env -i
-MAKE_ENV=	PATH=${PATH}
-
-MAKE_ENV+=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
+MAKE_ENV=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
 		INS_RBASE=${LOCALBASE}
 CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
