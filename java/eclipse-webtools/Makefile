@@ -15,20 +15,11 @@ COMMENT=	Webtools for eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
+		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef \
+		${LOCALBASE}/share/eclipse/dropins/datatools:${PORTSDIR}/java/eclipse-datatools
 
 WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
-
-OPTIONS_DEFINE=	DTP
-DTP_DEFINE=	Support for EJB and JPT development
-OPTIONS_DEFAULT=	DTP
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDTP}
-RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/datatools:${PORTSDIR}/java/eclipse-datatools
-.endif
 
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
