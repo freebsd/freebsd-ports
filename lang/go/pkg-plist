@@ -2686,6 +2686,7 @@ go/src/pkg/syscall/netlink_linux.go
 go/src/pkg/syscall/passfd_test.go
 go/src/pkg/syscall/race.go
 go/src/pkg/syscall/race0.go
+go/src/pkg/syscall/rlimit_linux_test.go
 go/src/pkg/syscall/route_bsd.go
 go/src/pkg/syscall/route_darwin.go
 go/src/pkg/syscall/route_freebsd.go
@@ -3698,6 +3699,13 @@ go/test/fixedbugs/issue5614.dir/rethinkgo.go
 go/test/fixedbugs/issue5614.dir/y.go
 go/test/fixedbugs/issue5614.dir/x.go
 go/test/fixedbugs/issue5614.go
+go/test/fixedbugs/issue5753.go
+go/test/fixedbugs/issue5755.dir/a.go
+go/test/fixedbugs/issue5755.dir/main.go
+go/test/fixedbugs/issue5755.go
+go/test/fixedbugs/issue5809.go
+go/test/fixedbugs/issue5820.go
+go/test/fixedbugs/issue5841.go
 go/test/fixedbugs/issue887.go
 go/test/float_lit.go
 go/test/floatcmp.go
@@ -3923,6 +3931,7 @@ go/test/zerodivide.go
 @dirrm go/test/interface
 @dirrm go/test/import4.dir
 @dirrm go/test/import2.dir
+@dirrm go/test/fixedbugs/issue5755.dir
 @dirrm go/test/fixedbugs/issue5614.dir
 @dirrm go/test/fixedbugs/issue5470.dir
 @dirrm go/test/fixedbugs/issue5291.dir
