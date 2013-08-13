@@ -73,6 +73,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2013-03</url>
+      <cvename>CVE-2013-4623</cvename>
     </references>
     <dates>
       <discovery>2013-06-21</discovery>
