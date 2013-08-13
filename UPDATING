@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
 
   The devel/gio-fam-backend port was removed in the glib 2.36 update.
   Since the gio-fam-backend port was used in USE_GNOME=glib20, all
-  dependencies need to be rebuilt. The removal of gio-fam-backend isn't 
+  dependencies need to be rebuilt. The removal of gio-fam-backend isn't
   critical, glib20 using programs should work just fine if the port is still
   installed. It is not clear however, if glib20 will use the new kqueue
   backend or the old fam backend.
@@ -1686,9 +1686,8 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: gecko@FreeBSD.org
 
   When using Firefox or SeaMonkey compiled with ALSA option ON it may
-  crash on assert in cubeb_refill_stream as described in ports/170473.
-  To fix either set media.use_cubeb -> false in about:config or rebuild
-  audio/alsa-plugins with ARIFF_OSS option disabled (default).
+  crash on assert in alsa_refill_stream as described in ports/170473.
+  To workaround disable ARIFF_OSS in audio/alsa-plugins or use PULSEAUDIO.
 
 20121010:
   AFFECTS: users of CURRENT (OSVERSION >= 1000017)
