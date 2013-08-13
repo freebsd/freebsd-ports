@@ -1,0 +1,56 @@
+%%SITE_PERL%%/DBIx/Class/Helper/IgnoreWantarray.pm
+%%SITE_PERL%%/DBIx/Class/Helper/JoinTable.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Random.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/AutoRemoveColumns.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/CorrelateRelationship.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/IgnoreWantarray.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Me.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/NoColumns.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Random.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/RemoveColumns.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/ResultClassDWIM.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/SearchOr.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/SetOperations.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/AddColumns.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Columns.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Distinct.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/GroupBy.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/HRI.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/HasRows.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Limit.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/OrderBy.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/OrderByMagic.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Prefetch.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Rows.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Union.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/VirtualView.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/JoinTable.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/NumifyGet.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/OnColumnChange.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/ProxyResultSetMethod.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/ProxyResultSetUpdate.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/RelationshipDWIM.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/SelfResultSet.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/StorageValues.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/SubClass.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Row/ToJSON.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Schema/GenerateSource.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Schema/LintContents.pm
+%%SITE_PERL%%/DBIx/Class/Helper/Schema/QuoteNames.pm
+%%SITE_PERL%%/DBIx/Class/Helper/SubClass.pm
+%%SITE_PERL%%/DBIx/Class/Helper/VirtualView.pm
+%%SITE_PERL%%/DBIx/Class/Helpers/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Helpers/.packlist
+%%SITE_PERL%%/DBIx/Class/Helpers.pm
+@dirrm %%SITE_PERL%%/DBIx/Class/Helpers
+@dirrm %%SITE_PERL%%/DBIx/Class/Helper/Schema
+@dirrm %%SITE_PERL%%/DBIx/Class/Helper/Row
+@dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut
+@dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet
+@dirrm %%SITE_PERL%%/DBIx/Class/Helper
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Helpers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
