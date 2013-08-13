@@ -68,6 +68,8 @@ PERL_ARCH?=		mach
 
 # there must always be a default to prevent dependency failures such
 # as "ports/lang: not found"
+.if    ${PERL_LEVEL} >= 501800
+PERL_PORT?=	perl5.18
 .if    ${PERL_LEVEL} >= 501600
 PERL_PORT?=	perl5.16
 .elif  ${PERL_LEVEL} >= 501400

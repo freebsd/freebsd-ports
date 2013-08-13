@@ -1,0 +1,2457 @@
+bin/a2p
+bin/c2ph
+bin/config_data
+bin/corelist
+bin/cpan
+bin/cpan2dist
+bin/cpanp
+bin/cpanp-run-perl
+bin/enc2xs
+bin/find2perl
+bin/h2ph
+bin/h2xs
+bin/instmodsh
+bin/json_pp
+bin/libnetcfg
+bin/perl
+bin/perl%%PERL_VERSION%%
+@exec ln -fs %D/%F %B/perl5
+@unexec rm -f %B/perl5 2>&1 >/dev/null || true
+bin/perlbug
+bin/perldoc
+bin/perlivp
+bin/perlthanks
+bin/piconv
+bin/pl2pm
+bin/pod2html
+bin/pod2latex
+bin/pod2man
+bin/pod2text
+bin/pod2usage
+bin/podchecker
+bin/podselect
+bin/prove
+bin/psed
+bin/pstruct
+bin/ptar
+bin/ptardiff
+bin/ptargrep
+bin/s2p
+bin/shasum
+bin/splain
+bin/xsubpp
+bin/zipdetails
+%%MANCONF%%etc/man.d/perl%%PERL_VER%%.conf
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/.packlist
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Concise.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Showlex.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Terse.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Xref.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/EXTERN.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/INTERN.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/XSUB.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/av.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/bitcount.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/charclass_invlists.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/config.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cop.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/dosish.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/embed.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/embedvar.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/fakesdio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/fakethr.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/feature.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/form.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/git_version.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/gv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/handy.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv_func.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/inline.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/intrpvar.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/iperlsys.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/keywords.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/l1_char_class_tab.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/malloc_ctl.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/metaconfig.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_data.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_raw.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_vtable.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mydtrace.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/nostdio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/op.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/op_reg_common.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/opcode.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/opnames.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/overload.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pad.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/parser.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/patchlevel.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perl.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlapi.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perliol.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlsdio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlsfio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlvars.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perly.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp_proto.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/proto.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/reentr.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcharclass.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcomp.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regexp.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regnodes.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/scope.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/thread.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/time64.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/time64_config.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uconfig.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/unicode_constants.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/unixish.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/utf8.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/utfebcdic.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/util.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uudmap.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/warnings.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw/Bzip2.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw/Zlib.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config.pod
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config_git.pl
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config_heavy.pl
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Cwd.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DB_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data/Dumper.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/PPPort.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/Peek.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest/MD5.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest/SHA.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DynaLoader.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Alias.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Byte.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CJKConstants.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN/HZ.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Config.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/EBCDIC.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Encoder.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Encoding.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/GSM0338.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Guess.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP/H2Z.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP/JIS7.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR/2022_KR.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header/ISO_2022_JP.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Name.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Symbol.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/TW.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode/UTF7.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Errno.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Fcntl.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/DosGlob.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Glob.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Cygwin.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Epoc.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Functions.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Mac.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/OS2.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Unix.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/VMS.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Win32.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Call.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util/FieldHash.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N/Langinfo.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Dir.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Handle.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Pipe.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Poll.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Seekable.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Select.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/INET.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Msg.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Semaphore.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SharedMem.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SysV.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util/XS.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/Base64.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt/FastCalc.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/NDBM_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/O.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Opcode.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/POSIX.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/POSIX.pod
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/encoding.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/mmap.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/scalar.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/via.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/SDBM_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Socket.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Storable.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Hostname.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Syslog.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text/Soundex.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie/Hash/NamedCapture.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/HiRes.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/Piece.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/Seconds.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate/Locale.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Normalize.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/arybase.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/attributes.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/B.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/B.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/Bzip2.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/Bzip2.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/autosplit.ix
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/autosplit.ix
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd/Cwd.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd/Cwd.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/DB_File.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/DB_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/autosplit.ix
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort/PPPort.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort/PPPort.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek/Peek.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek/Peek.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA/SHA.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA/SHA.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN/CN.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN/CN.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP/JP.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP/JP.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR/KR.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR/KR.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW/TW.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW/TW.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob/DosGlob.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob/DosGlob.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/FieldHash.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/FieldHash.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/Util.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/Util.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo/Langinfo.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo/Langinfo.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File/NDBM_File.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File/NDBM_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode/Opcode.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode/Opcode.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX/POSIX.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX/POSIX.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding/encoding.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding/encoding.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap/mmap.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap/mmap.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar/scalar.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar/scalar.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via/via.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via/via.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File/SDBM_File.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File/SDBM_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket/Socket.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket/Socket.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname/Hostname.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname/Hostname.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex/Soundex.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex/Soundex.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture/NamedCapture.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture/NamedCapture.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase/arybase.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase/arybase.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes/attributes.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes/attributes.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro/mro.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro/mro.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re/re.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re/re.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm/extralibs.ld
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared/shared.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared/shared.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/threads.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/threads.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/encoding.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/lib.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/mro.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/ops.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/re.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads/shared.pm
+lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
+lib/perl5/%%PERL_VER%%/App/Cpan.pm
+lib/perl5/%%PERL_VER%%/App/Prove.pm
+lib/perl5/%%PERL_VER%%/App/Prove/State.pm
+lib/perl5/%%PERL_VER%%/App/Prove/State/Result.pm
+lib/perl5/%%PERL_VER%%/App/Prove/State/Result/Test.pm
+lib/perl5/%%PERL_VER%%/Archive/Extract.pm
+lib/perl5/%%PERL_VER%%/Archive/Tar.pm
+lib/perl5/%%PERL_VER%%/Archive/Tar/Constant.pm
+lib/perl5/%%PERL_VER%%/Archive/Tar/File.pm
+lib/perl5/%%PERL_VER%%/Attribute/Handlers.pm
+lib/perl5/%%PERL_VER%%/AutoLoader.pm
+lib/perl5/%%PERL_VER%%/AutoSplit.pm
+lib/perl5/%%PERL_VER%%/B/Debug.pm
+lib/perl5/%%PERL_VER%%/B/Deparse.pm
+lib/perl5/%%PERL_VER%%/B/Lint.pm
+lib/perl5/%%PERL_VER%%/B/Lint/Debug.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN/Override.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/Config.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/MM_Unix.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/MakeMaker.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/Packlist.pm
+lib/perl5/%%PERL_VER%%/Benchmark.pm
+lib/perl5/%%PERL_VER%%/CGI.pm
+lib/perl5/%%PERL_VER%%/CGI/Apache.pm
+lib/perl5/%%PERL_VER%%/CGI/Carp.pm
+lib/perl5/%%PERL_VER%%/CGI/Cookie.pm
+lib/perl5/%%PERL_VER%%/CGI/Fast.pm
+lib/perl5/%%PERL_VER%%/CGI/Pretty.pm
+lib/perl5/%%PERL_VER%%/CGI/Push.pm
+lib/perl5/%%PERL_VER%%/CGI/Switch.pm
+lib/perl5/%%PERL_VER%%/CGI/Util.pm
+lib/perl5/%%PERL_VER%%/CORE.pod
+lib/perl5/%%PERL_VER%%/CPAN.pm
+lib/perl5/%%PERL_VER%%/CPAN/API/HOWTO.pod
+lib/perl5/%%PERL_VER%%/CPAN/Author.pm
+lib/perl5/%%PERL_VER%%/CPAN/Bundle.pm
+lib/perl5/%%PERL_VER%%/CPAN/CacheMgr.pm
+lib/perl5/%%PERL_VER%%/CPAN/Complete.pm
+lib/perl5/%%PERL_VER%%/CPAN/Debug.pm
+lib/perl5/%%PERL_VER%%/CPAN/DeferredCode.pm
+lib/perl5/%%PERL_VER%%/CPAN/Distribution.pm
+lib/perl5/%%PERL_VER%%/CPAN/Distroprefs.pm
+lib/perl5/%%PERL_VER%%/CPAN/Distrostatus.pm
+lib/perl5/%%PERL_VER%%/CPAN/Exception/RecursiveDependency.pm
+lib/perl5/%%PERL_VER%%/CPAN/Exception/blocked_urllist.pm
+lib/perl5/%%PERL_VER%%/CPAN/Exception/yaml_not_installed.pm
+lib/perl5/%%PERL_VER%%/CPAN/Exception/yaml_process_error.pm
+lib/perl5/%%PERL_VER%%/CPAN/FTP.pm
+lib/perl5/%%PERL_VER%%/CPAN/FTP/netrc.pm
+lib/perl5/%%PERL_VER%%/CPAN/FirstTime.pm
+lib/perl5/%%PERL_VER%%/CPAN/HTTP/Client.pm
+lib/perl5/%%PERL_VER%%/CPAN/HTTP/Credentials.pm
+lib/perl5/%%PERL_VER%%/CPAN/HandleConfig.pm
+lib/perl5/%%PERL_VER%%/CPAN/Index.pm
+lib/perl5/%%PERL_VER%%/CPAN/InfoObj.pm
+lib/perl5/%%PERL_VER%%/CPAN/Kwalify.pm
+lib/perl5/%%PERL_VER%%/CPAN/Kwalify/distroprefs.dd
+lib/perl5/%%PERL_VER%%/CPAN/Kwalify/distroprefs.yml
+lib/perl5/%%PERL_VER%%/CPAN/LWP/UserAgent.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/Converter.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/Feature.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/History.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/Prereqs.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/Requirements.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/Spec.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/Validator.pm
+lib/perl5/%%PERL_VER%%/CPAN/Meta/YAML.pm
+lib/perl5/%%PERL_VER%%/CPAN/Mirrors.pm
+lib/perl5/%%PERL_VER%%/CPAN/Module.pm
+lib/perl5/%%PERL_VER%%/CPAN/Nox.pm
+lib/perl5/%%PERL_VER%%/CPAN/Prompt.pm
+lib/perl5/%%PERL_VER%%/CPAN/Queue.pm
+lib/perl5/%%PERL_VER%%/CPAN/Shell.pm
+lib/perl5/%%PERL_VER%%/CPAN/Tarzip.pm
+lib/perl5/%%PERL_VER%%/CPAN/URL.pm
+lib/perl5/%%PERL_VER%%/CPAN/Version.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Backend.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Backend/RV.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Config.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Config/HomeEnv.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Configure.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Configure/Setup.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Autobundle.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Base.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Build.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Build/Constants.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/MM.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Sample.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Error.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/FAQ.pod
+lib/perl5/%%PERL_VER%%/CPANPLUS/Hacking.pod
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Constants.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Constants/Report.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Extract.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Fetch.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Report.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Search.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source/Memory.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source/SQLite.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source/SQLite/Tie.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Utils.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Utils/Autoflush.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Module.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Author.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Author/Fake.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Checksums.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Fake.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Signature.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Selfupdate.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Classic.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins/CustomSource.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins/HOWTO.pod
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins/Remote.pm
+lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins/Source.pm
+lib/perl5/%%PERL_VER%%/Carp.pm
+lib/perl5/%%PERL_VER%%/Carp/Heavy.pm
+lib/perl5/%%PERL_VER%%/Class/Struct.pm
+lib/perl5/%%PERL_VER%%/Compress/Zlib.pm
+lib/perl5/%%PERL_VER%%/Config/Extensions.pm
+lib/perl5/%%PERL_VER%%/Config/Perl/V.pm
+lib/perl5/%%PERL_VER%%/DB.pm
+lib/perl5/%%PERL_VER%%/DBM_Filter.pm
+lib/perl5/%%PERL_VER%%/DBM_Filter/compress.pm
+lib/perl5/%%PERL_VER%%/DBM_Filter/encode.pm
+lib/perl5/%%PERL_VER%%/DBM_Filter/int32.pm
+lib/perl5/%%PERL_VER%%/DBM_Filter/null.pm
+lib/perl5/%%PERL_VER%%/DBM_Filter/utf8.pm
+lib/perl5/%%PERL_VER%%/Devel/InnerPackage.pm
+lib/perl5/%%PERL_VER%%/Devel/SelfStubber.pm
+lib/perl5/%%PERL_VER%%/Digest.pm
+lib/perl5/%%PERL_VER%%/Digest/base.pm
+lib/perl5/%%PERL_VER%%/Digest/file.pm
+lib/perl5/%%PERL_VER%%/DirHandle.pm
+lib/perl5/%%PERL_VER%%/Dumpvalue.pm
+lib/perl5/%%PERL_VER%%/Encode/Changes.e2x
+lib/perl5/%%PERL_VER%%/Encode/ConfigLocal_PM.e2x
+lib/perl5/%%PERL_VER%%/Encode/Makefile_PL.e2x
+lib/perl5/%%PERL_VER%%/Encode/PerlIO.pod
+lib/perl5/%%PERL_VER%%/Encode/README.e2x
+lib/perl5/%%PERL_VER%%/Encode/Supported.pod
+lib/perl5/%%PERL_VER%%/Encode/_PM.e2x
+lib/perl5/%%PERL_VER%%/Encode/_T.e2x
+lib/perl5/%%PERL_VER%%/Encode/encode.h
+lib/perl5/%%PERL_VER%%/English.pm
+lib/perl5/%%PERL_VER%%/Env.pm
+lib/perl5/%%PERL_VER%%/Exporter.pm
+lib/perl5/%%PERL_VER%%/Exporter/Heavy.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Base.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Unix.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/VMS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows/BCC.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows/GCC.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows/MSVC.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/aix.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/cygwin.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/darwin.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/dec_osf.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/os2.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Command.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Command/MM.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Constant.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Constant/Base.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Constant/ProxySubs.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Constant/Utils.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Constant/XS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Embed.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Install.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Installed.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Liblist.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Liblist/Kid.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MANIFEST.SKIP
+lib/perl5/%%PERL_VER%%/ExtUtils/MM.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_AIX.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_Any.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_BeOS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_Cygwin.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_DOS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_Darwin.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_MacOS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_NW5.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_OS2.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_QNX.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_UWIN.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_Unix.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_VMS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_VOS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_Win32.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MM_Win95.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MY.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker/Config.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker/FAQ.pod
+lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker/Tutorial.pod
+lib/perl5/%%PERL_VER%%/ExtUtils/Manifest.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Miniperl.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Mkbootstrap.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Mksymlists.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Packlist.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS.pod
+lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS/Constants.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS/CountLines.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS/Utilities.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps/Cmd.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps/InputMap.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps/OutputMap.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps/Type.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/testlib.pm
+lib/perl5/%%PERL_VER%%/ExtUtils/typemap
+lib/perl5/%%PERL_VER%%/ExtUtils/xsubpp
+lib/perl5/%%PERL_VER%%/Fatal.pm
+lib/perl5/%%PERL_VER%%/File/Basename.pm
+lib/perl5/%%PERL_VER%%/File/CheckTree.pm
+lib/perl5/%%PERL_VER%%/File/Compare.pm
+lib/perl5/%%PERL_VER%%/File/Copy.pm
+lib/perl5/%%PERL_VER%%/File/Fetch.pm
+lib/perl5/%%PERL_VER%%/File/Find.pm
+lib/perl5/%%PERL_VER%%/File/GlobMapper.pm
+lib/perl5/%%PERL_VER%%/File/Path.pm
+lib/perl5/%%PERL_VER%%/File/Temp.pm
+lib/perl5/%%PERL_VER%%/File/stat.pm
+lib/perl5/%%PERL_VER%%/FileCache.pm
+lib/perl5/%%PERL_VER%%/FileHandle.pm
+lib/perl5/%%PERL_VER%%/Filter/Simple.pm
+lib/perl5/%%PERL_VER%%/FindBin.pm
+lib/perl5/%%PERL_VER%%/Getopt/Long.pm
+lib/perl5/%%PERL_VER%%/Getopt/Std.pm
+lib/perl5/%%PERL_VER%%/HTTP/Tiny.pm
+lib/perl5/%%PERL_VER%%/I18N/Collate.pm
+lib/perl5/%%PERL_VER%%/I18N/LangTags.pm
+lib/perl5/%%PERL_VER%%/I18N/LangTags/Detect.pm
+lib/perl5/%%PERL_VER%%/I18N/LangTags/List.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Adapter/Bzip2.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Adapter/Deflate.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Adapter/Identity.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Base.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Base/Common.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Bzip2.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Deflate.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/FAQ.pod
+lib/perl5/%%PERL_VER%%/IO/Compress/Gzip.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Gzip/Constants.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/RawDeflate.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Zip.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Zip/Constants.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Zlib/Constants.pm
+lib/perl5/%%PERL_VER%%/IO/Compress/Zlib/Extra.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Adapter/Bunzip2.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Adapter/Identity.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Adapter/Inflate.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/AnyInflate.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/AnyUncompress.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Base.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Bunzip2.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Gunzip.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Inflate.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/RawInflate.pm
+lib/perl5/%%PERL_VER%%/IO/Uncompress/Unzip.pm
+lib/perl5/%%PERL_VER%%/IO/Zlib.pm
+lib/perl5/%%PERL_VER%%/IPC/Cmd.pm
+lib/perl5/%%PERL_VER%%/IPC/Open2.pm
+lib/perl5/%%PERL_VER%%/IPC/Open3.pm
+lib/perl5/%%PERL_VER%%/JSON/PP.pm
+lib/perl5/%%PERL_VER%%/JSON/PP/Boolean.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/API.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Changes.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Constants.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Constants.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Country.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Country.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Country_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Country_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Currency.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Currency.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Currency_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Currency_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangExt.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangExt.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangExt_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangExt_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangFam.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangFam.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangFam_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangFam_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangVar.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangVar.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangVar_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/LangVar_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Language.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Language.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Language_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Language_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Script.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Script.pod
+lib/perl5/%%PERL_VER%%/Locale/Codes/Script_Codes.pm
+lib/perl5/%%PERL_VER%%/Locale/Codes/Script_Retired.pm
+lib/perl5/%%PERL_VER%%/Locale/Country.pm
+lib/perl5/%%PERL_VER%%/Locale/Country.pod
+lib/perl5/%%PERL_VER%%/Locale/Currency.pm
+lib/perl5/%%PERL_VER%%/Locale/Currency.pod
+lib/perl5/%%PERL_VER%%/Locale/Language.pm
+lib/perl5/%%PERL_VER%%/Locale/Language.pod
+lib/perl5/%%PERL_VER%%/Locale/Maketext.pm
+lib/perl5/%%PERL_VER%%/Locale/Maketext.pod
+lib/perl5/%%PERL_VER%%/Locale/Maketext/Cookbook.pod
+lib/perl5/%%PERL_VER%%/Locale/Maketext/Guts.pm
+lib/perl5/%%PERL_VER%%/Locale/Maketext/GutsLoader.pm
+lib/perl5/%%PERL_VER%%/Locale/Maketext/Simple.pm
+lib/perl5/%%PERL_VER%%/Locale/Maketext/TPJ13.pod
+lib/perl5/%%PERL_VER%%/Locale/Script.pm
+lib/perl5/%%PERL_VER%%/Locale/Script.pod
+lib/perl5/%%PERL_VER%%/Log/Message.pm
+lib/perl5/%%PERL_VER%%/Log/Message/Config.pm
+lib/perl5/%%PERL_VER%%/Log/Message/Handlers.pm
+lib/perl5/%%PERL_VER%%/Log/Message/Item.pm
+lib/perl5/%%PERL_VER%%/Log/Message/Simple.pm
+lib/perl5/%%PERL_VER%%/Math/BigFloat.pm
+lib/perl5/%%PERL_VER%%/Math/BigFloat/Trace.pm
+lib/perl5/%%PERL_VER%%/Math/BigInt.pm
+lib/perl5/%%PERL_VER%%/Math/BigInt/Calc.pm
+lib/perl5/%%PERL_VER%%/Math/BigInt/CalcEmu.pm
+lib/perl5/%%PERL_VER%%/Math/BigInt/Trace.pm
+lib/perl5/%%PERL_VER%%/Math/BigRat.pm
+lib/perl5/%%PERL_VER%%/Math/Complex.pm
+lib/perl5/%%PERL_VER%%/Math/Trig.pm
+lib/perl5/%%PERL_VER%%/Memoize.pm
+lib/perl5/%%PERL_VER%%/Memoize/AnyDBM_File.pm
+lib/perl5/%%PERL_VER%%/Memoize/Expire.pm
+lib/perl5/%%PERL_VER%%/Memoize/ExpireFile.pm
+lib/perl5/%%PERL_VER%%/Memoize/ExpireTest.pm
+lib/perl5/%%PERL_VER%%/Memoize/NDBM_File.pm
+lib/perl5/%%PERL_VER%%/Memoize/SDBM_File.pm
+lib/perl5/%%PERL_VER%%/Memoize/Storable.pm
+lib/perl5/%%PERL_VER%%/Module/Build.pm
+lib/perl5/%%PERL_VER%%/Module/Build/API.pod
+lib/perl5/%%PERL_VER%%/Module/Build/Authoring.pod
+lib/perl5/%%PERL_VER%%/Module/Build/Base.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Bundling.pod
+lib/perl5/%%PERL_VER%%/Module/Build/Compat.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Config.pm
+lib/perl5/%%PERL_VER%%/Module/Build/ConfigData.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Cookbook.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Dumper.pm
+lib/perl5/%%PERL_VER%%/Module/Build/ModuleInfo.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Notes.pm
+lib/perl5/%%PERL_VER%%/Module/Build/PPMMaker.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/Amiga.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/Default.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/EBCDIC.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/MPEiX.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/MacOS.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/RiscOS.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/Unix.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/VMS.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/VOS.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/Windows.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/aix.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/cygwin.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/darwin.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Platform/os2.pm
+lib/perl5/%%PERL_VER%%/Module/Build/PodParser.pm
+lib/perl5/%%PERL_VER%%/Module/Build/Version.pm
+lib/perl5/%%PERL_VER%%/Module/Build/YAML.pm
+lib/perl5/%%PERL_VER%%/Module/CoreList.pm
+lib/perl5/%%PERL_VER%%/Module/CoreList.pod
+lib/perl5/%%PERL_VER%%/Module/CoreList/TieHashDelta.pm
+lib/perl5/%%PERL_VER%%/Module/CoreList/Utils.pm
+lib/perl5/%%PERL_VER%%/Module/Load.pm
+lib/perl5/%%PERL_VER%%/Module/Load/Conditional.pm
+lib/perl5/%%PERL_VER%%/Module/Loaded.pm
+lib/perl5/%%PERL_VER%%/Module/Metadata.pm
+lib/perl5/%%PERL_VER%%/Module/Pluggable.pm
+lib/perl5/%%PERL_VER%%/Module/Pluggable/Object.pm
+lib/perl5/%%PERL_VER%%/NEXT.pm
+lib/perl5/%%PERL_VER%%/Net/Cmd.pm
+lib/perl5/%%PERL_VER%%/Net/Config.pm
+lib/perl5/%%PERL_VER%%/Net/Domain.pm
+lib/perl5/%%PERL_VER%%/Net/FTP.pm
+lib/perl5/%%PERL_VER%%/Net/FTP/A.pm
+lib/perl5/%%PERL_VER%%/Net/FTP/E.pm
+lib/perl5/%%PERL_VER%%/Net/FTP/I.pm
+lib/perl5/%%PERL_VER%%/Net/FTP/L.pm
+lib/perl5/%%PERL_VER%%/Net/FTP/dataconn.pm
+lib/perl5/%%PERL_VER%%/Net/NNTP.pm
+lib/perl5/%%PERL_VER%%/Net/Netrc.pm
+lib/perl5/%%PERL_VER%%/Net/POP3.pm
+lib/perl5/%%PERL_VER%%/Net/Ping.pm
+lib/perl5/%%PERL_VER%%/Net/SMTP.pm
+lib/perl5/%%PERL_VER%%/Net/Time.pm
+lib/perl5/%%PERL_VER%%/Net/hostent.pm
+lib/perl5/%%PERL_VER%%/Net/libnetFAQ.pod
+lib/perl5/%%PERL_VER%%/Net/netent.pm
+lib/perl5/%%PERL_VER%%/Net/protoent.pm
+lib/perl5/%%PERL_VER%%/Net/servent.pm
+lib/perl5/%%PERL_VER%%/Object/Accessor.pm
+lib/perl5/%%PERL_VER%%/Package/Constants.pm
+lib/perl5/%%PERL_VER%%/Params/Check.pm
+lib/perl5/%%PERL_VER%%/Parse/CPAN/Meta.pm
+lib/perl5/%%PERL_VER%%/Perl/OSType.pm
+lib/perl5/%%PERL_VER%%/PerlIO.pm
+lib/perl5/%%PERL_VER%%/PerlIO/via/QuotedPrint.pm
+lib/perl5/%%PERL_VER%%/Pod/Checker.pm
+lib/perl5/%%PERL_VER%%/Pod/Escapes.pm
+lib/perl5/%%PERL_VER%%/Pod/Find.pm
+lib/perl5/%%PERL_VER%%/Pod/Functions.pm
+lib/perl5/%%PERL_VER%%/Pod/Html.pm
+lib/perl5/%%PERL_VER%%/Pod/InputObjects.pm
+lib/perl5/%%PERL_VER%%/Pod/LaTeX.pm
+lib/perl5/%%PERL_VER%%/Pod/Man.pm
+lib/perl5/%%PERL_VER%%/Pod/ParseLink.pm
+lib/perl5/%%PERL_VER%%/Pod/ParseUtils.pm
+lib/perl5/%%PERL_VER%%/Pod/Parser.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/BaseTo.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/GetOptsOO.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToANSI.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToChecker.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToMan.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToNroff.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToPod.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToRtf.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToTerm.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToText.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToTk.pm
+lib/perl5/%%PERL_VER%%/Pod/Perldoc/ToXml.pm
+lib/perl5/%%PERL_VER%%/Pod/PlainText.pm
+lib/perl5/%%PERL_VER%%/Pod/Select.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple.pod
+lib/perl5/%%PERL_VER%%/Pod/Simple/BlackBox.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Checker.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Debug.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/DumpAsText.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/DumpAsXML.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/HTML.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/HTMLBatch.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/HTMLLegacy.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/LinkSection.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Methody.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Progress.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/PullParser.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/PullParserEndToken.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/PullParserStartToken.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/PullParserTextToken.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/PullParserToken.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/RTF.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Search.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/SimpleTree.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Subclassing.pod
+lib/perl5/%%PERL_VER%%/Pod/Simple/Text.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/TextContent.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/TiedOutFH.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/Transcode.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/TranscodeDumb.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/TranscodeSmart.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/XHTML.pm
+lib/perl5/%%PERL_VER%%/Pod/Simple/XMLOutStream.pm
+lib/perl5/%%PERL_VER%%/Pod/Text.pm
+lib/perl5/%%PERL_VER%%/Pod/Text/Color.pm
+lib/perl5/%%PERL_VER%%/Pod/Text/Overstrike.pm
+lib/perl5/%%PERL_VER%%/Pod/Text/Termcap.pm
+lib/perl5/%%PERL_VER%%/Pod/Usage.pm
+lib/perl5/%%PERL_VER%%/Safe.pm
+lib/perl5/%%PERL_VER%%/Search/Dict.pm
+lib/perl5/%%PERL_VER%%/SelectSaver.pm
+lib/perl5/%%PERL_VER%%/SelfLoader.pm
+lib/perl5/%%PERL_VER%%/Symbol.pm
+lib/perl5/%%PERL_VER%%/TAP/Base.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/Base.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/Color.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/Console.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/Console/ParallelSession.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/Console/Session.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/File.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/File/Session.pm
+lib/perl5/%%PERL_VER%%/TAP/Formatter/Session.pm
+lib/perl5/%%PERL_VER%%/TAP/Harness.pm
+lib/perl5/%%PERL_VER%%/TAP/Harness/Beyond.pod
+lib/perl5/%%PERL_VER%%/TAP/Object.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Aggregator.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Grammar.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator/Array.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator/Process.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator/Stream.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/IteratorFactory.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Multiplexer.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Bailout.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Comment.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Plan.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Pragma.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Test.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Unknown.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/Version.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Result/YAML.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/ResultFactory.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Scheduler.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Scheduler/Job.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Scheduler/Spinner.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Source.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler/Executable.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler/File.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler/Handle.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler/Perl.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler/RawTAP.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/Utils.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/YAMLish/Reader.pm
+lib/perl5/%%PERL_VER%%/TAP/Parser/YAMLish/Writer.pm
+lib/perl5/%%PERL_VER%%/Term/ANSIColor.pm
+lib/perl5/%%PERL_VER%%/Term/Cap.pm
+lib/perl5/%%PERL_VER%%/Term/Complete.pm
+lib/perl5/%%PERL_VER%%/Term/ReadLine.pm
+lib/perl5/%%PERL_VER%%/Term/UI.pm
+lib/perl5/%%PERL_VER%%/Term/UI/History.pm
+lib/perl5/%%PERL_VER%%/Test.pm
+lib/perl5/%%PERL_VER%%/Test/Builder.pm
+lib/perl5/%%PERL_VER%%/Test/Builder/Module.pm
+lib/perl5/%%PERL_VER%%/Test/Builder/Tester.pm
+lib/perl5/%%PERL_VER%%/Test/Builder/Tester/Color.pm
+lib/perl5/%%PERL_VER%%/Test/Harness.pm
+lib/perl5/%%PERL_VER%%/Test/More.pm
+lib/perl5/%%PERL_VER%%/Test/Simple.pm
+lib/perl5/%%PERL_VER%%/Test/Tutorial.pod
+lib/perl5/%%PERL_VER%%/Text/Abbrev.pm
+lib/perl5/%%PERL_VER%%/Text/Balanced.pm
+lib/perl5/%%PERL_VER%%/Text/ParseWords.pm
+lib/perl5/%%PERL_VER%%/Text/Tabs.pm
+lib/perl5/%%PERL_VER%%/Text/Wrap.pm
+lib/perl5/%%PERL_VER%%/Thread.pm
+lib/perl5/%%PERL_VER%%/Thread/Queue.pm
+lib/perl5/%%PERL_VER%%/Thread/Semaphore.pm
+lib/perl5/%%PERL_VER%%/Tie/Array.pm
+lib/perl5/%%PERL_VER%%/Tie/File.pm
+lib/perl5/%%PERL_VER%%/Tie/Handle.pm
+lib/perl5/%%PERL_VER%%/Tie/Hash.pm
+lib/perl5/%%PERL_VER%%/Tie/Memoize.pm
+lib/perl5/%%PERL_VER%%/Tie/RefHash.pm
+lib/perl5/%%PERL_VER%%/Tie/Scalar.pm
+lib/perl5/%%PERL_VER%%/Tie/StdHandle.pm
+lib/perl5/%%PERL_VER%%/Tie/SubstrHash.pm
+lib/perl5/%%PERL_VER%%/Time/Local.pm
+lib/perl5/%%PERL_VER%%/Time/gmtime.pm
+lib/perl5/%%PERL_VER%%/Time/localtime.pm
+lib/perl5/%%PERL_VER%%/Time/tm.pm
+lib/perl5/%%PERL_VER%%/UNIVERSAL.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/Big5.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/GB2312.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/JISX0208.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/Korean.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/Pinyin.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/Stroke.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK/Zhuyin.pm
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/af.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ar.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/as.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/az.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/be.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/bg.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/bn.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ca.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/cs.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/cy.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/da.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/de_phone.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ee.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/eo.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/es.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/es_trad.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/et.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/fa.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/fi.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/fi_phone.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/fil.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/fo.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/fr.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/gu.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ha.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/haw.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/hi.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/hr.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/hu.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/hy.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ig.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/is.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ja.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/kk.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/kl.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/kn.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ko.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/kok.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ln.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/lt.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/lv.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/mk.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ml.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/mr.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/mt.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/nb.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/nn.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/nso.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/om.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/or.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/pa.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/pl.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ro.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ru.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sa.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/se.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/si.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/si_dict.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sk.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sl.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sq.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sr.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sv.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/sv_refo.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ta.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/te.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/th.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/tn.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/to.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/tr.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/uk.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/ur.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/vi.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/wae.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/wo.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/yo.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/zh.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/zh_big5.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/zh_gb.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/zh_pin.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/zh_strk.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale/zh_zhu.pl
+lib/perl5/%%PERL_VER%%/Unicode/Collate/allkeys.txt
+lib/perl5/%%PERL_VER%%/Unicode/Collate/keys.txt
+lib/perl5/%%PERL_VER%%/Unicode/UCD.pm
+lib/perl5/%%PERL_VER%%/User/grent.pm
+lib/perl5/%%PERL_VER%%/User/pwent.pm
+lib/perl5/%%PERL_VER%%/XSLoader.pm
+lib/perl5/%%PERL_VER%%/_charnames.pm
+lib/perl5/%%PERL_VER%%/autodie.pm
+lib/perl5/%%PERL_VER%%/autodie/exception.pm
+lib/perl5/%%PERL_VER%%/autodie/exception/system.pm
+lib/perl5/%%PERL_VER%%/autodie/hints.pm
+lib/perl5/%%PERL_VER%%/autouse.pm
+lib/perl5/%%PERL_VER%%/base.pm
+lib/perl5/%%PERL_VER%%/bigint.pm
+lib/perl5/%%PERL_VER%%/bignum.pm
+lib/perl5/%%PERL_VER%%/bigrat.pm
+lib/perl5/%%PERL_VER%%/blib.pm
+lib/perl5/%%PERL_VER%%/bytes.pm
+lib/perl5/%%PERL_VER%%/bytes_heavy.pl
+lib/perl5/%%PERL_VER%%/charnames.pm
+lib/perl5/%%PERL_VER%%/constant.pm
+lib/perl5/%%PERL_VER%%/deprecate.pm
+lib/perl5/%%PERL_VER%%/diagnostics.pm
+lib/perl5/%%PERL_VER%%/dumpvar.pl
+lib/perl5/%%PERL_VER%%/encoding/warnings.pm
+lib/perl5/%%PERL_VER%%/feature.pm
+lib/perl5/%%PERL_VER%%/fields.pm
+lib/perl5/%%PERL_VER%%/filetest.pm
+lib/perl5/%%PERL_VER%%/if.pm
+lib/perl5/%%PERL_VER%%/inc/latest.pm
+lib/perl5/%%PERL_VER%%/inc/latest/private.pm
+lib/perl5/%%PERL_VER%%/integer.pm
+lib/perl5/%%PERL_VER%%/less.pm
+lib/perl5/%%PERL_VER%%/locale.pm
+lib/perl5/%%PERL_VER%%/open.pm
+lib/perl5/%%PERL_VER%%/overload.pm
+lib/perl5/%%PERL_VER%%/overload/numbers.pm
+lib/perl5/%%PERL_VER%%/overloading.pm
+lib/perl5/%%PERL_VER%%/parent.pm
+lib/perl5/%%PERL_VER%%/perl5db.pl
+lib/perl5/%%PERL_VER%%/perlfaq.pm
+lib/perl5/%%PERL_VER%%/pod/a2p.pod
+lib/perl5/%%PERL_VER%%/pod/perl.pod
+lib/perl5/%%PERL_VER%%/pod/perl5004delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5005delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5100delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5101delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5120delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5121delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5122delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5123delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5124delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5125delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5140delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5141delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5142delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5143delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5144delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5160delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5161delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5162delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5163delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5180delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5181delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl561delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl56delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl581delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl582delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl583delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl584delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl585delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl586delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl587delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl588delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl589delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl58delta.pod
+lib/perl5/%%PERL_VER%%/pod/perlaix.pod
+lib/perl5/%%PERL_VER%%/pod/perlamiga.pod
+lib/perl5/%%PERL_VER%%/pod/perlapi.pod
+lib/perl5/%%PERL_VER%%/pod/perlapio.pod
+lib/perl5/%%PERL_VER%%/pod/perlartistic.pod
+lib/perl5/%%PERL_VER%%/pod/perlbook.pod
+lib/perl5/%%PERL_VER%%/pod/perlboot.pod
+lib/perl5/%%PERL_VER%%/pod/perlbot.pod
+lib/perl5/%%PERL_VER%%/pod/perlbs2000.pod
+lib/perl5/%%PERL_VER%%/pod/perlcall.pod
+lib/perl5/%%PERL_VER%%/pod/perlce.pod
+lib/perl5/%%PERL_VER%%/pod/perlcheat.pod
+lib/perl5/%%PERL_VER%%/pod/perlclib.pod
+lib/perl5/%%PERL_VER%%/pod/perlcn.pod
+lib/perl5/%%PERL_VER%%/pod/perlcommunity.pod
+lib/perl5/%%PERL_VER%%/pod/perlcygwin.pod
+lib/perl5/%%PERL_VER%%/pod/perldata.pod
+lib/perl5/%%PERL_VER%%/pod/perldbmfilter.pod
+lib/perl5/%%PERL_VER%%/pod/perldebguts.pod
+lib/perl5/%%PERL_VER%%/pod/perldebtut.pod
+lib/perl5/%%PERL_VER%%/pod/perldebug.pod
+lib/perl5/%%PERL_VER%%/pod/perldelta.pod
+lib/perl5/%%PERL_VER%%/pod/perldgux.pod
+lib/perl5/%%PERL_VER%%/pod/perldiag.pod
+lib/perl5/%%PERL_VER%%/pod/perldoc.pod
+lib/perl5/%%PERL_VER%%/pod/perldos.pod
+lib/perl5/%%PERL_VER%%/pod/perldsc.pod
+lib/perl5/%%PERL_VER%%/pod/perldtrace.pod
+lib/perl5/%%PERL_VER%%/pod/perlebcdic.pod
+lib/perl5/%%PERL_VER%%/pod/perlembed.pod
+lib/perl5/%%PERL_VER%%/pod/perlexperiment.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq1.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq2.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq3.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq4.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq5.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq6.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq7.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq8.pod
+lib/perl5/%%PERL_VER%%/pod/perlfaq9.pod
+lib/perl5/%%PERL_VER%%/pod/perlfilter.pod
+lib/perl5/%%PERL_VER%%/pod/perlfork.pod
+lib/perl5/%%PERL_VER%%/pod/perlform.pod
+lib/perl5/%%PERL_VER%%/pod/perlfreebsd.pod
+lib/perl5/%%PERL_VER%%/pod/perlfunc.pod
+lib/perl5/%%PERL_VER%%/pod/perlgit.pod
+lib/perl5/%%PERL_VER%%/pod/perlglossary.pod
+lib/perl5/%%PERL_VER%%/pod/perlgpl.pod
+lib/perl5/%%PERL_VER%%/pod/perlguts.pod
+lib/perl5/%%PERL_VER%%/pod/perlhack.pod
+lib/perl5/%%PERL_VER%%/pod/perlhacktips.pod
+lib/perl5/%%PERL_VER%%/pod/perlhacktut.pod
+lib/perl5/%%PERL_VER%%/pod/perlhaiku.pod
+lib/perl5/%%PERL_VER%%/pod/perlhist.pod
+lib/perl5/%%PERL_VER%%/pod/perlhpux.pod
+lib/perl5/%%PERL_VER%%/pod/perlhurd.pod
+lib/perl5/%%PERL_VER%%/pod/perlintern.pod
+lib/perl5/%%PERL_VER%%/pod/perlinterp.pod
+lib/perl5/%%PERL_VER%%/pod/perlintro.pod
+lib/perl5/%%PERL_VER%%/pod/perliol.pod
+lib/perl5/%%PERL_VER%%/pod/perlipc.pod
+lib/perl5/%%PERL_VER%%/pod/perlirix.pod
+lib/perl5/%%PERL_VER%%/pod/perljp.pod
+lib/perl5/%%PERL_VER%%/pod/perlko.pod
+lib/perl5/%%PERL_VER%%/pod/perllexwarn.pod
+lib/perl5/%%PERL_VER%%/pod/perllinux.pod
+lib/perl5/%%PERL_VER%%/pod/perllocale.pod
+lib/perl5/%%PERL_VER%%/pod/perllol.pod
+lib/perl5/%%PERL_VER%%/pod/perlmacos.pod
+lib/perl5/%%PERL_VER%%/pod/perlmacosx.pod
+lib/perl5/%%PERL_VER%%/pod/perlmod.pod
+lib/perl5/%%PERL_VER%%/pod/perlmodinstall.pod
+lib/perl5/%%PERL_VER%%/pod/perlmodlib.pod
+lib/perl5/%%PERL_VER%%/pod/perlmodstyle.pod
+lib/perl5/%%PERL_VER%%/pod/perlmroapi.pod
+lib/perl5/%%PERL_VER%%/pod/perlnetware.pod
+lib/perl5/%%PERL_VER%%/pod/perlnewmod.pod
+lib/perl5/%%PERL_VER%%/pod/perlnumber.pod
+lib/perl5/%%PERL_VER%%/pod/perlobj.pod
+lib/perl5/%%PERL_VER%%/pod/perlootut.pod
+lib/perl5/%%PERL_VER%%/pod/perlop.pod
+lib/perl5/%%PERL_VER%%/pod/perlopenbsd.pod
+lib/perl5/%%PERL_VER%%/pod/perlopentut.pod
+lib/perl5/%%PERL_VER%%/pod/perlos2.pod
+lib/perl5/%%PERL_VER%%/pod/perlos390.pod
+lib/perl5/%%PERL_VER%%/pod/perlos400.pod
+lib/perl5/%%PERL_VER%%/pod/perlpacktut.pod
+lib/perl5/%%PERL_VER%%/pod/perlperf.pod
+lib/perl5/%%PERL_VER%%/pod/perlplan9.pod
+lib/perl5/%%PERL_VER%%/pod/perlpod.pod
+lib/perl5/%%PERL_VER%%/pod/perlpodspec.pod
+lib/perl5/%%PERL_VER%%/pod/perlpodstyle.pod
+lib/perl5/%%PERL_VER%%/pod/perlpolicy.pod
+lib/perl5/%%PERL_VER%%/pod/perlport.pod
+lib/perl5/%%PERL_VER%%/pod/perlpragma.pod
+lib/perl5/%%PERL_VER%%/pod/perlqnx.pod
+lib/perl5/%%PERL_VER%%/pod/perlre.pod
+lib/perl5/%%PERL_VER%%/pod/perlreapi.pod
+lib/perl5/%%PERL_VER%%/pod/perlrebackslash.pod
+lib/perl5/%%PERL_VER%%/pod/perlrecharclass.pod
+lib/perl5/%%PERL_VER%%/pod/perlref.pod
+lib/perl5/%%PERL_VER%%/pod/perlreftut.pod
+lib/perl5/%%PERL_VER%%/pod/perlreguts.pod
+lib/perl5/%%PERL_VER%%/pod/perlrequick.pod
+lib/perl5/%%PERL_VER%%/pod/perlreref.pod
+lib/perl5/%%PERL_VER%%/pod/perlretut.pod
+lib/perl5/%%PERL_VER%%/pod/perlriscos.pod
+lib/perl5/%%PERL_VER%%/pod/perlrun.pod
+lib/perl5/%%PERL_VER%%/pod/perlsec.pod
+lib/perl5/%%PERL_VER%%/pod/perlsolaris.pod
+lib/perl5/%%PERL_VER%%/pod/perlsource.pod
+lib/perl5/%%PERL_VER%%/pod/perlstyle.pod
+lib/perl5/%%PERL_VER%%/pod/perlsub.pod
+lib/perl5/%%PERL_VER%%/pod/perlsymbian.pod
+lib/perl5/%%PERL_VER%%/pod/perlsyn.pod
+lib/perl5/%%PERL_VER%%/pod/perlthrtut.pod
+lib/perl5/%%PERL_VER%%/pod/perltie.pod
+lib/perl5/%%PERL_VER%%/pod/perltoc.pod
+lib/perl5/%%PERL_VER%%/pod/perltodo.pod
+lib/perl5/%%PERL_VER%%/pod/perltooc.pod
+lib/perl5/%%PERL_VER%%/pod/perltoot.pod
+lib/perl5/%%PERL_VER%%/pod/perltrap.pod
+lib/perl5/%%PERL_VER%%/pod/perltru64.pod
+lib/perl5/%%PERL_VER%%/pod/perltw.pod
+lib/perl5/%%PERL_VER%%/pod/perlunicode.pod
+lib/perl5/%%PERL_VER%%/pod/perlunifaq.pod
+lib/perl5/%%PERL_VER%%/pod/perluniintro.pod
+lib/perl5/%%PERL_VER%%/pod/perluniprops.pod
+lib/perl5/%%PERL_VER%%/pod/perlunitut.pod
+lib/perl5/%%PERL_VER%%/pod/perlutil.pod
+lib/perl5/%%PERL_VER%%/pod/perlvar.pod
+lib/perl5/%%PERL_VER%%/pod/perlvms.pod
+lib/perl5/%%PERL_VER%%/pod/perlvos.pod
+lib/perl5/%%PERL_VER%%/pod/perlwin32.pod
+lib/perl5/%%PERL_VER%%/pod/perlxs.pod
+lib/perl5/%%PERL_VER%%/pod/perlxstut.pod
+lib/perl5/%%PERL_VER%%/pod/perlxstypemap.pod
+lib/perl5/%%PERL_VER%%/sigtrap.pm
+lib/perl5/%%PERL_VER%%/sort.pm
+lib/perl5/%%PERL_VER%%/strict.pm
+lib/perl5/%%PERL_VER%%/subs.pm
+lib/perl5/%%PERL_VER%%/unicore/Blocks.txt
+lib/perl5/%%PERL_VER%%/unicore/CombiningClass.pl
+lib/perl5/%%PERL_VER%%/unicore/Decomposition.pl
+lib/perl5/%%PERL_VER%%/unicore/Heavy.pl
+lib/perl5/%%PERL_VER%%/unicore/Name.pl
+lib/perl5/%%PERL_VER%%/unicore/Name.pm
+lib/perl5/%%PERL_VER%%/unicore/NamedSequences.txt
+lib/perl5/%%PERL_VER%%/unicore/SpecialCasing.txt
+lib/perl5/%%PERL_VER%%/unicore/To/Age.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Bc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Bmg.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Cf.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Digit.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Ea.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Fold.pl
+lib/perl5/%%PERL_VER%%/unicore/To/GCB.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Gc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Hst.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Isc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Jg.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Jt.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Lb.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Lc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Lower.pl
+lib/perl5/%%PERL_VER%%/unicore/To/NFCQC.pl
+lib/perl5/%%PERL_VER%%/unicore/To/NFDQC.pl
+lib/perl5/%%PERL_VER%%/unicore/To/NFKCCF.pl
+lib/perl5/%%PERL_VER%%/unicore/To/NFKCQC.pl
+lib/perl5/%%PERL_VER%%/unicore/To/NFKDQC.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Na1.pl
+lib/perl5/%%PERL_VER%%/unicore/To/NameAlia.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Nt.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Nv.pl
+lib/perl5/%%PERL_VER%%/unicore/To/PerlDeci.pl
+lib/perl5/%%PERL_VER%%/unicore/To/SB.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Sc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Scx.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Tc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Title.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Uc.pl
+lib/perl5/%%PERL_VER%%/unicore/To/Upper.pl
+lib/perl5/%%PERL_VER%%/unicore/To/WB.pl
+lib/perl5/%%PERL_VER%%/unicore/UCD.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/AHex/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/NA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V11.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V20.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V21.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V30.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V31.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V32.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V40.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V41.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V50.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V51.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V52.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V60.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V61.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Age/V62.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Alpha/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/AL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/AN.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/B.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/BN.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/CS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/EN.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/ES.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/ET.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/L.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/LRE.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/LRO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/NSM.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/ON.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/PDF.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/R.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/RLE.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/RLO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/S.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Bc/WS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/BidiC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/BidiM/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ASCII.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/AegeanNu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Alchemic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Alphabet.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ancient2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/AncientG.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/AncientS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Arabic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ArabicEx.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ArabicMa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ArabicP2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ArabicPF.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ArabicSu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Armenian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Arrows.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Avestan.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Balinese.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Bamum.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/BamumSup.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Batak.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Bengali.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/BlockEle.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Bopomof2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Bopomofo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/BoxDrawi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Brahmi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Braille.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Buginese.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Buhid.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Byzantin.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJK.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKComp2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKComp3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKComp4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKCompa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKExtA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKExtB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKExtC.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKExtD.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKRadic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKStrok.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CJKSymbo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Carian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Chakma.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cham.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cherokee.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CompatJa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/ControlP.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Coptic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Counting.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cuneifo2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cuneifor.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Currency.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/CypriotS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cyrilli2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cyrilli3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cyrilli4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Cyrillic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Deseret.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Devanag2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Devanaga.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Diacrit2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Diacrit3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Diacriti.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Dingbats.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Domino.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Egyptian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Emoticon.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Enclose2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Enclose3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Enclose4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Enclosed.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ethiopi2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ethiopi3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ethiopi4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ethiopic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Geometri.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Georgia2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Georgian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Glagolit.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Gothic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Greek.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/GreekExt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Gujarati.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Gurmukhi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/HalfAndF.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/HalfMark.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Hangul.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Hanunoo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Hebrew.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/HighPUSu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/HighSurr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Hiragana.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/IDC.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/IPAExt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Imperial.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/IndicNum.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Inscrip2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Inscript.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Jamo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/JamoExtA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/JamoExtB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Javanese.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Kaithi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/KanaSup.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Kanbun.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Kangxi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Kannada.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Katakan2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Katakana.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/KayahLi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Kharosht.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Khmer.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/KhmerSym.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Lao.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Latin1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LatinEx2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LatinEx3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LatinEx4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LatinEx5.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LatinExt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Lepcha.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Letterli.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Limbu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LinearBI.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LinearBS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Lisu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/LowSurro.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Lycian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Lydian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Mahjong.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Malayala.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Mandaic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MathAlph.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MathOper.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MeeteiM2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MeeteiMa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Meroiti2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Meroitic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Miao.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MiscArro.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MiscMat2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MiscMath.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MiscPict.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MiscSymb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MiscTech.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Modifie2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Modifier.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Mongolia.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Music.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Myanmar.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/MyanmarE.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/NB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/NKo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/NewTaiLu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/NumberFo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/OCR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ogham.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/OlChiki.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/OldItali.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/OldPersi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/OldSouth.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/OldTurki.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Oriya.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Osmanya.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/PUA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/PhagsPa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Phaistos.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Phoenici.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Phoneti2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Phonetic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/PlayingC.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Punctuat.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Rejang.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Rumi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Runic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Samarita.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Saurasht.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Sharada.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Shavian.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Sinhala.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SmallFor.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SoraSomp.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Specials.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Sundane2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Sundanes.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SupArro2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SupArrow.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SupMathO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SupPUAA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SupPUAB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SupPunct.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SuperAnd.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/SylotiNa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Syriac.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Tagalog.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Tagbanwa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Tags.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/TaiLe.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/TaiTham.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/TaiViet.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/TaiXuanJ.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Takri.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Tamil.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Telugu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Thaana.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Thai.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Tibetan.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Tifinagh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Transpor.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/UCAS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/UCASExt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Ugaritic.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/VS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/VSSup.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Vai.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/VedicExt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Vertical.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/YiRadica.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/YiSyllab.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Blk/Yijing.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CE/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CI/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CWCF/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CWCM/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CWKCF/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CWL/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CWT/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CWU/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Cased/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/A.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/AL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/AR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/ATA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/ATAR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/ATB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/B.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/BL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/BR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC10.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC103.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC107.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC11.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC118.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC12.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC122.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC129.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC13.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC130.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC132.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC14.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC15.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC16.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC17.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC18.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC19.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC20.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC21.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC22.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC23.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC24.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC25.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC26.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC27.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC28.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC29.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC30.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC31.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC32.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC33.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC34.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC35.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC36.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC84.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/CCC91.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/DA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/DB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/IS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/KV.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/L.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/NK.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/NR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/OV.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/R.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ccc/VR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/CompEx/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/DI/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dash/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dep/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dia/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Com.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Enc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Fin.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Font.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Fra.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Init.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Iso.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Med.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Nar.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Nb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/NonCanon.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Sml.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Sqr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Sub.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Sup.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Vert.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Dt/Wide.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ea/A.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ea/H.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ea/N.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ea/Na.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ea/W.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ext/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GCB/CN.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GCB/CR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GCB/EX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GCB/LF.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GCB/SM.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GCB/XX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/C.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Cc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Cf.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Cn.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Co.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Cs.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/L.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/LC.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Ll.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Lm.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Lo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Lu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/M.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Mc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Me.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Mn.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/N.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Nd.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Nl.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/No.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/P.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Pd.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Pe.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Pf.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Pi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Po.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Ps.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/S.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Sc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Sk.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Sm.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/So.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Z.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Zl.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Zp.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Gc/Zs.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/GrBase/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Hex/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Hst/NA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Hyphen/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/IDC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/IDS/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/IDSB/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/IDST/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Ideo/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/2_0.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/2_1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/3_0.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/3_1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/3_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/4_0.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/4_1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/5_0.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/5_1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/5_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/6_0.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/6_1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/In/6_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Ain.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Alaph.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Alef.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Beh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Beth.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Burushas.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Dal.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/DalathRi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/E.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/FarsiYeh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Fe.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Feh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/FinalSem.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Gaf.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Gamal.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Hah.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/HamzaOnH.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/He.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Heh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/HehGoal.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Heth.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Kaf.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Kaph.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Khaph.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/KnottedH.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Lam.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Lamadh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Meem.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Mim.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/NoJoinin.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Noon.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Nun.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Nya.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Pe.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Qaf.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Qaph.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Reh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Reversed.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Rohingya.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Sad.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Sadhe.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Seen.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Semkath.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Shin.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/SwashKaf.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/SyriacWa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Tah.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Taw.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/TehMarbu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Teth.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Waw.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Yeh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/YehBarre.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/YehWithT.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Yudh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/YudhHe.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Zain.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jg/Zhain.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/JoinC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jt/C.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jt/D.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jt/R.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jt/T.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Jt/U.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/LOE/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/AI.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/AL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/B2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/BA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/BB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/BK.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/CB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/CJ.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/CL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/CM.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/CP.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/EX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/GL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/HL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/HY.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/ID.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/IN.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/IS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/NL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/NS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/OP.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/PO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/PR.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/QU.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/SA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/SG.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/SP.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/SY.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/WJ.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/XX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lb/ZW.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Lower/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Math/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NChar/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFCQC/M.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFCQC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFDQC/N.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFDQC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFKCQC/N.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFKCQC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFKDQC/N.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/NFKDQC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nt/Di.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nt/None.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nt/Nu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/0.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/10.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/100.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/10000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/100000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/10000000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/10000002.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/11.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/11_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/12.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/13.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/13_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/14.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/15.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/15_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/16.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/17.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/17_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/18.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/19.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_10.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_16.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_5.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_6.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_7.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_8.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/1_9.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/20.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/200.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/2000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/20000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/21.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/216000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/22.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/23.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/24.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/25.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/26.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/27.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/28.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/29.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/2_3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/2_5.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/30.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/300.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/30000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/31.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/32.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/33.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/34.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/35.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/36.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/37.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/38.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/39.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3_16.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3_4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3_5.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/3_8.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/4.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/40.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/400.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/4000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/40000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/41.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/42.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/43.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/432000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/44.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/45.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/46.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/47.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/48.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/49.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/4_5.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/5.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/50.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/500.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/5000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/50000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/5_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/5_6.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/5_8.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/6.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/60.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/600.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/6000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/60000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/7.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/70.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/700.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/7000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/70000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/7_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/7_8.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/8.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/80.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/800.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/8000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/80000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/9.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/90.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/900.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/9000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/90000.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/9_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/_1.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Nv/_1_2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/PatSyn/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/PatWS/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Alnum.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Any.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Assigned.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Blank.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Graph.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PerlSpac.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PerlWord.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixAln.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixAlp.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixBla.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixCnt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixDig.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixGra.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixLow.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixPri.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixPun.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/PosixUpp.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Print.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/SpacePer.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Title.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/VertSpac.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/Word.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/XPosixPu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_PerlAny.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_PerlCh2.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_PerlCha.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_PerlIDC.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_PerlIDS.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_PerlQuo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XExtend.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XGCBL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XGCBLV.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XGCBLVT.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XGCBT.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XGCBV.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XLVLVTV.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XRI.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XRegula.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Perl/_XSpecia.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/QMark/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Radical/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/AT.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/CL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/EX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/FO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/LE.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/LO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/NU.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/SC.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/SE.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/ST.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/Sp.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/UP.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SB/XX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/SD/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/STerm/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Arab.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Armi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Armn.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Avst.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Bali.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Bamu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Batk.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Beng.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Bopo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Brah.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Bugi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Buhd.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cakm.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cans.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cari.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cham.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cher.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Copt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cprt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Cyrl.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Deva.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Egyp.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Ethi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Geor.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Glag.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Goth.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Grek.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Gujr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Guru.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Han.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Hang.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Hano.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Hebr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Hira.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Ital.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Java.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Kana.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Khar.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Khmr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Knda.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Kthi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Lana.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Lao.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Latn.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Lepc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Limb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Linb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Lyci.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Lydi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Mand.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Merc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Miao.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Mlym.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Mong.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Mtei.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Mymr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Nko.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Ogam.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Orkh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Orya.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Osma.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Phag.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Phli.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Phnx.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Prti.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Rjng.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Runr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Samr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Saur.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Shrd.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Sinh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Sora.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Sund.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Sylo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Syrc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Tagb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Takr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Tale.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Talu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Taml.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Tavt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Telu.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Tfng.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Tglg.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Thaa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Thai.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Tibt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Ugar.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Vai.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Xpeo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Xsux.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Yi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Zinh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Zyyy.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Sc/Zzzz.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Arab.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Armn.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Beng.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Bopo.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Buhd.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Cprt.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Cyrl.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Deva.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Geor.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Grek.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Gujr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Guru.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Han.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Hang.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Hano.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Hira.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Kana.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Kthi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Latn.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Linb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Mand.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Mong.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Orya.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Phag.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Syrc.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Tagb.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Takr.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Tglg.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Thaa.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Yi.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Zinh.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Scx/Zyyy.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Term/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/UIdeo/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/Upper/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/VS/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/EX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/FO.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/KA.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/LE.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/MB.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/ML.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/MN.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/NL.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/NU.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/WB/XX.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/XIDC/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/lib/XIDS/Y.pl
+lib/perl5/%%PERL_VER%%/unicore/version
+lib/perl5/%%PERL_VER%%/utf8.pm
+lib/perl5/%%PERL_VER%%/utf8_heavy.pl
+lib/perl5/%%PERL_VER%%/vars.pm
+lib/perl5/%%PERL_VER%%/version.pm
+lib/perl5/%%PERL_VER%%/version.pod
+lib/perl5/%%PERL_VER%%/version/Internals.pod
+lib/perl5/%%PERL_VER%%/vmsish.pm
+lib/perl5/%%PERL_VER%%/warnings.pm
+lib/perl5/%%PERL_VER%%/warnings/register.pm
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN
+@unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
+%%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
+@dirrm lib/perl5/%%PERL_VER%%/warnings
+@dirrm lib/perl5/%%PERL_VER%%/version
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/XIDS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/XIDC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/WB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/VS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Upper
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/UIdeo
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Term
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Scx
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Sc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/STerm
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/SD
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/SB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Radical
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/QMark
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Perl
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/PatWS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/PatSyn
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Nv
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Nt
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFKDQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFKCQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFDQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFCQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NChar
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Math
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Lower
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Lb
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/LOE
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Jt
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/JoinC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Jg
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/In
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ideo
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDST
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDSB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hyphen
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hst
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hex
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/GrBase
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Gc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/GCB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ext
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ea
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dt
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dia
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dep
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dash
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/DI
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CompEx
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ccc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Cased
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWU
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWT
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWL
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWKCF
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWCM
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWCF
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CI
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CE
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Blk
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/BidiM
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/BidiC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Bc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Alpha
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Age
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/AHex
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib
+@dirrm lib/perl5/%%PERL_VER%%/unicore/To
+@dirrm lib/perl5/%%PERL_VER%%/unicore
+@dirrm lib/perl5/%%PERL_VER%%/Version
+@dirrm lib/perl5/%%PERL_VER%%/User
+@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale
+@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK
+@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate
+@dirrm lib/perl5/%%PERL_VER%%/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/Time
+@dirrm lib/perl5/%%PERL_VER%%/Tie
+@dirrm lib/perl5/%%PERL_VER%%/Thread
+@dirrm lib/perl5/%%PERL_VER%%/Text
+@dirrm lib/perl5/%%PERL_VER%%/Test/Builder/Tester
+@dirrm lib/perl5/%%PERL_VER%%/Test/Builder
+@dirrm lib/perl5/%%PERL_VER%%/Test
+@dirrm lib/perl5/%%PERL_VER%%/Term/UI
+@dirrm lib/perl5/%%PERL_VER%%/Term
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/YAMLish
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Scheduler
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Result
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Harness
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter/File
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter/Console
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter
+@dirrm lib/perl5/%%PERL_VER%%/TAP
+@dirrm lib/perl5/%%PERL_VER%%/Search
+@dirrm lib/perl5/%%PERL_VER%%/Pod/Text
+@dirrm lib/perl5/%%PERL_VER%%/Pod/Simple
+@dirrm lib/perl5/%%PERL_VER%%/Pod/Perldoc
+@dirrm lib/perl5/%%PERL_VER%%/Pod
+@dirrm lib/perl5/%%PERL_VER%%/PerlIO/via
+@dirrm lib/perl5/%%PERL_VER%%/PerlIO
+@dirrm lib/perl5/%%PERL_VER%%/Perl
+@dirrm lib/perl5/%%PERL_VER%%/Parse/CPAN
+@dirrm lib/perl5/%%PERL_VER%%/Parse
+@dirrm lib/perl5/%%PERL_VER%%/Params
+@dirrm lib/perl5/%%PERL_VER%%/Package
+@dirrm lib/perl5/%%PERL_VER%%/Object
+@dirrm lib/perl5/%%PERL_VER%%/Net/FTP
+@dirrm lib/perl5/%%PERL_VER%%/Net
+@dirrm lib/perl5/%%PERL_VER%%/Module/Pluggable
+@dirrm lib/perl5/%%PERL_VER%%/Module/Load
+@dirrm lib/perl5/%%PERL_VER%%/Module/Build/Platform
+@dirrm lib/perl5/%%PERL_VER%%/Module/Build
+@dirrm lib/perl5/%%PERL_VER%%/Module/CoreList
+@dirrm lib/perl5/%%PERL_VER%%/Module
+@dirrm lib/perl5/%%PERL_VER%%/Memoize
+@dirrm lib/perl5/%%PERL_VER%%/Math/BigInt
+@dirrm lib/perl5/%%PERL_VER%%/Math/BigFloat
+@dirrm lib/perl5/%%PERL_VER%%/Math
+@dirrm lib/perl5/%%PERL_VER%%/Log/Message
+@dirrm lib/perl5/%%PERL_VER%%/Log
+@dirrm lib/perl5/%%PERL_VER%%/Locale/Maketext
+@dirrm lib/perl5/%%PERL_VER%%/Locale/Codes
+@dirrm lib/perl5/%%PERL_VER%%/Locale
+@dirrm lib/perl5/%%PERL_VER%%/JSON/PP
+@dirrm lib/perl5/%%PERL_VER%%/JSON
+@dirrm lib/perl5/%%PERL_VER%%/IPC
+@dirrm lib/perl5/%%PERL_VER%%/IO/Uncompress/Adapter
+@dirrm lib/perl5/%%PERL_VER%%/IO/Uncompress
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Zlib
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Zip
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Gzip
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Base
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Adapter
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress
+@dirrm lib/perl5/%%PERL_VER%%/IO
+@dirrm lib/perl5/%%PERL_VER%%/I18N/LangTags
+@dirrm lib/perl5/%%PERL_VER%%/I18N
+@dirrm lib/perl5/%%PERL_VER%%/HTTP
+@dirrm lib/perl5/%%PERL_VER%%/Getopt
+@dirrm lib/perl5/%%PERL_VER%%/Filter
+@dirrm lib/perl5/%%PERL_VER%%/File
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Liblist
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Constant
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Command
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils
+@dirrm lib/perl5/%%PERL_VER%%/Exporter
+@dirrm lib/perl5/%%PERL_VER%%/Encode
+@dirrm lib/perl5/%%PERL_VER%%/Digest
+@dirrm lib/perl5/%%PERL_VER%%/Devel
+@dirrm lib/perl5/%%PERL_VER%%/DBM_Filter
+@dirrm lib/perl5/%%PERL_VER%%/Config/Perl
+@dirrm lib/perl5/%%PERL_VER%%/Config
+@dirrm lib/perl5/%%PERL_VER%%/Compress
+@dirrm lib/perl5/%%PERL_VER%%/Class
+@dirrm lib/perl5/%%PERL_VER%%/Carp
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Author
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Module
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Utils
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source/SQLite
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Constants
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Build
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Dist
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Config
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Configure
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Backend
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/Meta
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/Kwalify
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/LWP
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/HTTP
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/FTP
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/Exception
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/API
+@dirrm lib/perl5/%%PERL_VER%%/CPAN
+@dirrm lib/perl5/%%PERL_VER%%/CGI
+@dirrm lib/perl5/%%PERL_VER%%/B/Lint
+@dirrm lib/perl5/%%PERL_VER%%/B
+@dirrm lib/perl5/%%PERL_VER%%/Attribute
+@dirrm lib/perl5/%%PERL_VER%%/Archive/Tar
+@dirrm lib/perl5/%%PERL_VER%%/Archive
+@dirrm lib/perl5/%%PERL_VER%%/App/Prove/State/Result
+@dirrm lib/perl5/%%PERL_VER%%/App/Prove/State
+@dirrm lib/perl5/%%PERL_VER%%/App/Prove
+@dirrm lib/perl5/%%PERL_VER%%/App
+@dirrm lib/perl5/%%PERL_VER%%/pod
+@dirrm lib/perl5/%%PERL_VER%%/perl/man/man3
+@dirrm lib/perl5/%%PERL_VER%%/perl/man
+@dirrm lib/perl5/%%PERL_VER%%/perl
+@dirrm lib/perl5/%%PERL_VER%%/overload
+@dirrm lib/perl5/%%PERL_VER%%/man/man3
+@dirrm lib/perl5/%%PERL_VER%%/man
+@dirrm lib/perl5/%%PERL_VER%%/inc/latest
+@dirrm lib/perl5/%%PERL_VER%%/inc
+@dirrm lib/perl5/%%PERL_VER%%/encoding
+@dirrm lib/perl5/%%PERL_VER%%/autodie/exception
+@dirrm lib/perl5/%%PERL_VER%%/autodie
+@dirrm lib/perl5/%%PERL_VER%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/auto
+@dirrmtry %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl
+@dirrmtry lib/perl5
