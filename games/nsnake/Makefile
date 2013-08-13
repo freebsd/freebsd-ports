@@ -4,10 +4,10 @@
 PORTNAME=	nsnake
 PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://softs.malikania.fr/releases/
+MASTER_SITES=	http://releases.malikania.fr/nsnake/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demelier.david@gmail.com
 COMMENT=	Snake game written in C and ncurses
 
 LICENSE=	MIT
