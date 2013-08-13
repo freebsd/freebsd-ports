@@ -1,15 +1,12 @@
-# New ports collection makefile for:	wmi
-# Date created:		2011-11-25
-# Whom:			KIKUCHI Koichiro <koichiro@rworks.jp>
-#
+# Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
 # $FreeBSD$
-#
 
 PORTNAME=		wmi
 PORTVERSION=		1.3.16
 CATEGORIES=		net-mgmt
-MASTER_SITES=		http://dev.zenoss.org/svn/trunk/inst/externallibs/ \
-			ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/
+MASTER_SITES=		http://dev.zenoss.org/trac/export/26435/trunk/inst/externallibs/ \
+			http://www.openvas.org/download/wmi/ \
+			http://mirrors.rit.edu/zi/
 PKGNAMESUFFIX=		-client
 
 MAINTAINER=		koichiro@rworks.jp
@@ -24,16 +21,8 @@ USE_GMAKE=		yes
 USES=			iconv
 USE_LDCONFIG=		yes
 
-#BUILD_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
-#RUN_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
-
 MAKEFILE=		GNUmakefile
 MAKE_ENV=		ZENHOME="${PREFIX}" PY_LIBDIR="${PYTHONPREFIX_SITELIBDIR}"
 ALL_TARGET=		build
 
-.include <bsd.port.pre.mk>
-
-do-configure:
-# do noting
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
