@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.6.14
+DISTVERSION=	2.8.0-rc2
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	osa@FreeBSD.org
