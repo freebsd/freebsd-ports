@@ -163,7 +163,7 @@ CONFIGURE_ARGS+=	--without-pangocairo
 PLIST_SUB+=		WITH_PANGOCAIRO="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLIBRVG2}
+.if ${PORT_OPTIONS:MLIBRSVG2}
 CONFIGURE_ARGS+=	--with-rsvg=yes
 PLIST_SUB+=		WITH_RSVG=""
 USE_GNOME+=		librsvg2
@@ -177,10 +177,12 @@ PLIST_SUB+=		WITH_RSVG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPOPPLER}
-LIB_DEPENDS+?		poppler:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=		poppler-glib:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=        --with-poppler=yes
+PLIST_SUB+=		WITH_POPPLER=""
 .else
 CONFIGURE_ARGS+=        --without-poppler
+PLIST_SUB+=		WITH_POPPLER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}

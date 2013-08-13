@@ -133,6 +133,10 @@ lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so.6
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.la
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.a
+%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.a
+%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.la
+%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.so
+%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.so.6
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.a
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.la
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so
