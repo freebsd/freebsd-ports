@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqrencode
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://fukuchi.org/works/qrencode/
