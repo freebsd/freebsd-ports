@@ -1,8 +1,7 @@
-The h5py package provides both a high- and low-level interface to the 
-HDF5 library from Python.  The low-level interface is
-intended to be a complete wrapping of the HDF5 1.6 API, while the high-
-level component supports Python-style object-oriented access to HDF5 files, 
-datasets and groups.
+The h5py package provides both a high- and low-level interface to the HDF5
+library from Python. The low-level interface is intended to be a complete
+wrapping of the HDF5 1.6 and 1.8 APIs, while the high-level component supports
+Python-style object-oriented access to HDF5 files, datasets and groups.
 
 The goal of this package is not to provide yet another scientific data
 model. It is an attempt to create as straightforward a binding as possible
