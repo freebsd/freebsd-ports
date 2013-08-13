@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A state-of-the-art semantic personal publishing platform
+COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/license.txt
 
 CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ru-wordpress-3.*
 
