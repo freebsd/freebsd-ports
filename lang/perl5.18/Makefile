@@ -1,4 +1,4 @@
-# Created by: markm
+# Created by: mat
 # $FreeBSD$
 
 PORTNAME=	perl
@@ -20,13 +20,18 @@ COMMENT=	Practical Extraction and Report Language
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-CONFLICTS=	perl-5.14.* perl-threaded-5.14.* \
-		perl-5.16.* perl-threaded-5.16.* \
-		perl-5.18.* perl-threaded-5.18.*
+CONFLICTS=	perl-5.12.* perl-threaded-5.12.* \
+		perl-5.14.* perl-threaded-5.14.* \
+		perl-5.16.* perl-threaded-5.16.*
 
-OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
+OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE USE_PERL
+# it seems perl malloc has problems with threaded perl on FreeBSD
+OPTIONS_RADIO=	EXCLUSIVE
+OPTIONS_RADIO_EXCLUSIVE=	THREADS PERL_MALLOC
 OPTIONS_DEFAULT=	PERL_64BITINT PTHREAD USE_PERL
+
+EXCLUSIVE_DESC=	Exclusive OPTIONS
 GDBM_DESC=	GDBM_File extension
 PERL_MALLOC_DESC=	Use Perl malloc
 PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
@@ -36,12 +41,24 @@ MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 USE_PERL_DESC=		Rewrite links in /usr/bin
 
-DEPRECATED=	Consider switching to a more recent version of Perl
-EXPIRATION_DATE=	2014-02-14
+#OPTIONS_EXCLUDE_AMD64=	THREADS
+OPTIONS_SUB=		yes
+DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
+DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
+GDBM_CONFIGURE_ON=	-Di_gdbm
+GDBM_CONFIGURE_OFF=	-Ui_gdbm
+GDBM_LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+PERL_64BITINT_CONFIGURE_ON=	-Duse64bitint
+MULTIPLICITY_CONFIGURE_ON=	-Dusemultiplicity=y
+SITECUSTOMIZE_CONFIGURE_ON=	-Dusesitecustomize
+THREADS_CONFIGURE_ON=	-Dusethreads=y
+THREADS_CONFIGURE_OFF=	-Dusethreads=n
+PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
+PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
 PORTSCOUT=	limitw:1,even
 
-PERL_VERSION=	5.12.5
+PERL_VERSION=	5.18.1
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
@@ -49,7 +66,6 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
@@ -88,20 +104,8 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
 .if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	-Doptimize="-g" -DDEBUGGING
 STRIP=
 STRIP_CMD=	${TRUE}
-.else
-CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
-.endif
-
-.if ${PORT_OPTIONS:MGDBM}
-CONFIGURE_ARGS+=	-Di_gdbm
-LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
-PLIST_SUB+=		GDBM=""
-.else
-CONFIGURE_ARGS+=	-Ui_gdbm
-PLIST_SUB+=		GDBM="@comment "
 .endif
 
 .if ${OSVERSION} >= 900022
@@ -111,35 +115,8 @@ PLIST_SUB+=	MANCONF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
-#XXX .if ${ARCH} == "amd64"
-#XXX IGNORE=	Threaded perl does not pass tests on ${ARCH}
-#XXX .endif
-CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
 WITH_PTHREAD=		yes
-# it seems perl malloc has problems with threaded perl on FreeBSD
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-PORT_OPTIONS:=	${PORT_OPTIONS:NPERL_MALLOC}
-.else
-CONFIGURE_ARGS+=	-Dusethreads=n
-.endif
-
-.if ${PORT_OPTIONS:MPERL_MALLOC}
-CONFIGURE_ARGS+=	-Dusemymalloc=y
-.else
-CONFIGURE_ARGS+=	-Dusemymalloc=n
-.endif
-
-.if ${PORT_OPTIONS:MPERL_64BITINT}
-CONFIGURE_ARGS+=	-Duse64bitint
-.endif
-
-.if ${PORT_OPTIONS:MMULTIPLICITY}
-CONFIGURE_ARGS+=	-Dusemultiplicity=y
-.endif
-
-.if ${PORT_OPTIONS:MSITECUSTOMIZE}
-CONFIGURE_ARGS+=	-Dusesitecustomize
 .endif
 
 .if ${PORT_OPTIONS:MUSE_PERL}
@@ -181,7 +158,7 @@ post-patch:
 		> ${WRKDIR}/perl-man.conf
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|${PERL_VER}|g;' \
+	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|%{PERL_VER}|g;' \
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -214,7 +191,7 @@ post-install:
 .endfor
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-AZ: 
+AZ:
 test: build
 	@(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
 
