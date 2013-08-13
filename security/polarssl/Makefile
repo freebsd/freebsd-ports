@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
@@ -12,7 +12,10 @@ COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
 
-FETCH_ARGS=	-pRr
+# bypass the HTML "now downloading..." splash site, code below
+# .include <bsd.port.pre.mk>
+URL_SUFFIX=	?do=yes
+FETCH_ARGS=	-pRro ${DISTFILES}
 ALL_TARGET=	no_test
 
 USE_GMAKE=	yes
@@ -47,6 +50,9 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+FETCH_CMD:=	${SHELL} ${FILESDIR}/fetchwrapper.sh \
+			${URL_SUFFIX} ${FETCH_BINARY} ${FETCH_ARGS}
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
