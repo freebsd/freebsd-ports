@@ -14,7 +14,6 @@ DIST_SUBDIR=	${PORTNAME}
 PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/ \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 PATCH_SITE_SUBDIR=	rafan/ncurses/:local
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output (development version)
@@ -93,6 +92,10 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 		internal.h
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000040                                                    
+PATCH_DIST_STRIP=	-p1                                                     
+.endif
 
 .include "${.CURDIR}/Makefile.man"
 
