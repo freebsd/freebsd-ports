@@ -1,17 +1,13 @@
-# New ports collection makefile for:	eclipse-datatools
-# Date created:		Sun  1 Apr 2007 22:18:17 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	datatools
-DISTVERSION=	1.9.2
+PORTVERSION=	1.11
 CATEGORIES=	java devel databases
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/datatools/downloads/,}
-MASTER_SITE_SUBDIR=	${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	dtp-sdk_${DISTVERSION}
+DISTNAME=	dtp-sdk_${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	lioux@FreeBSD.org
