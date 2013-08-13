@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Helpful CLI utilities for querying and connecting to EC2 instances
 
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}boto=>1.0:${PORTSDIR}/devel/py-boto
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
