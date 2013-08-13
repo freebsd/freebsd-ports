@@ -384,6 +384,8 @@ include/mongo/util/unordered_fast_key_table_internal.h
 include/mongo/util/version.h
 include/mongo/util/winutil.h
 lib/libmongoclient.a
+lib/libmongoclient.so
+lib/libmongoclient.so.0
 @dirrm include/mongo/base
 @dirrm include/mongo/bson/util
 @dirrm include/mongo/bson
