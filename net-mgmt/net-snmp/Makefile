@@ -16,8 +16,8 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
-		DMALLOC MYSQL AX_SOCKONLY UNPRIVILEGED
-OPTIONS_DEFAULT=IPV6 PERL PERL_EMBEDDED DUMMY
+		DMALLOC MYSQL AX_SOCKONLY UNPRIVILEGED SMUX
+OPTIONS_DEFAULT=IPV6 PERL PERL_EMBEDDED DUMMY SMUX
 
 MFD_REWRITES_DESC=	Build with 64-bit Interface Counters
 PERL_EMBEDDED_DESC=	Build embedded perl
@@ -26,6 +26,7 @@ TKMIB_DESC=		Install graphical MIB browser
 DMALLOC_DESC=		Enable dmalloc debug memory allocator
 AX_SOCKONLY_DESC=	Disable UDP/TCP transports for agentx
 UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
+SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
 
 .include <bsd.port.options.mk>
 
@@ -148,7 +149,7 @@ NET_SNMP_SYS_CONTACT?=	nobody@nowhere.invalid
 NET_SNMP_SYS_LOCATION?=	somewhere
 NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
-NET_SNMP_WITH_MIB_MODULE_LIST+=	host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
+NET_SNMP_WITH_MIB_MODULE_LIST+=	host disman/event-mib mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
 
 .if ${OSVERSION} >= 700028
 NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
@@ -161,6 +162,12 @@ CONFIGURE_ARGS+=	--with-libs="-lssp_nonshared"
 .if ${PORT_OPTIONS:MMFD_REWRITES}
 CONFIGURE_ARGS+=--enable-mfd-rewrites
 NET_SNMP_WITH_MIB_MODULE_LIST+=	if-mib
+.endif
+
+.if ${PORT_OPTIONS:MSMUX}
+NET_SNMP_WITH_MIB_MODULE_LIST+=		smux
+.else
+NET_SNMP_WITHOUT_MIB_MODULE_LIST+=	smux
 .endif
 
 .if defined(NET_SNMP_WITH_MIB_MODULE_LIST) && \
