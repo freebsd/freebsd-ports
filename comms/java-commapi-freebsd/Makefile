@@ -13,6 +13,8 @@ COMMENT=	Java Communication API for FreeBSD
 BUILD_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
 RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
