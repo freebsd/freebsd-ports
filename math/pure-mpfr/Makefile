@@ -9,6 +9,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	Multiprecision floats for Pure
 
 USE_PURE=	yes
+USES=		pkgconfig
 
 PLIST_FILES=	lib/pure/mpfr.pure \
 		lib/pure/mpfr.so
