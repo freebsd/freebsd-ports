@@ -30,6 +30,8 @@ PORTDOCS=	README \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+MAKE_JOBS_UNSAFE=yes
+
 post-configure:
 	@${REINPLACE_CMD} "/ggdb/d" ${WRKSRC}/config.mk
 
