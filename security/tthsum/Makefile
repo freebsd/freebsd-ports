@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tthsum
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 		CRITICAL
@@ -20,6 +19,8 @@ MANCOMPRESSED=	yes
 
 MAN1=		tthsum.1
 PLIST_FILES=	bin/tthsum
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test runtest
