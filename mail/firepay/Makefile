@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/firepay
-# Date created:				Sun 31 May 16:35:00 WST 2004
-# Whom:					Dean Hollister <dean@odyssey.apana.org.au>
-#
+# Created by: Dean Hollister <dean@odyssey.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	firepay
 PORTVERSION=	0.9.5
@@ -17,6 +13,8 @@ COMMENT=	Implementation of the HashCash/MIME specification
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=		checkpayment.1 firepay.1 multiwrap.1 processmail.1 \
 		sendmailpay.1 strippayment.1 takepayment.1
