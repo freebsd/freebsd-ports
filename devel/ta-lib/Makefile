@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ta-lib
-# Date created:		Sun Jun 24 16:07:37 UTC 2007
-# Whom:			Balwinder S "bsd" Dheeman <bsd@rubyforge.org>
-#
+# Created by: Balwinder S "bsd" Dheeman <bsd@rubyforge.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ta-lib
 PORTVERSION=	0.4.0
@@ -12,13 +8,15 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	bdheeman@gmail.com
-COMMENT=	A UNIX, POSIX Library for Technical Analysis
+COMMENT=	UNIX, POSIX Library for Technical Analysis
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
