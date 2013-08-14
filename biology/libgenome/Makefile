@@ -13,6 +13,8 @@ COMMENT=	Toolkit for developing bioinformatic related software in C++
 
 LICENSE=	GPLv2
 
+MAKE_JOBS_UNSAFE=yes
+
 USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
