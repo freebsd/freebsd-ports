@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.716
+PORTVERSION=	3.0.717
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://unix4lyfe.org/darkstat/
 
