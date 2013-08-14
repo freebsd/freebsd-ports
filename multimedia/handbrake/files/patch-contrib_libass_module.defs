@@ -1,10 +1,14 @@
 --- ./contrib/libass/module.defs.orig	2010-09-28 18:10:49.000000000 -0400
 +++ ./contrib/libass/module.defs	2011-05-24 05:50:46.096807667 -0400
-@@ -10,6 +10,6 @@
+@@ -7,9 +7,9 @@
+ # Disable as many external dependencies as I can get away with
+ # and tell configure where to find our version of freetype
  LIBASS.CONFIGURE.extra = \
-     --disable-png --disable-enca \
+-    --disable-png --disable-enca \
++    --disable-png --disable-enca --disable-harfbuzz \
      FREETYPE_LIBS="-L$(call fn.ABSOLUTE,$(CONTRIB.build/))lib -lfreetype" \
 -    FREETYPE_CFLAGS="-I$(call fn.ABSOLUTE,$(CONTRIB.build/))include/freetype2" \
 +    FREETYPE_CFLAGS="-I$(call fn.ABSOLUTE,$(CONTRIB.build/))include/freetype2 -I/usr/local/include" \
      FONTCONFIG_LIBS="-L$(call fn.ABSOLUTE,$(CONTRIB.build/))lib -lfontconfig" \
      FONTCONFIG_CFLAGS="-I$(call fn.ABSOLUTE,$(CONTRIB.build/))include"
+ 

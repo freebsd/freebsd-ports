@@ -37,12 +37,12 @@ COMMENT=	Versatile DVD ripper and video transcoder
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-LIB_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
 RUN_DEPENDS=	${LOCALBASE}/lib/libdvdcss.so:${PORTSDIR}/multimedia/libdvdcss
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool aclocal
 LIBTOOLFILES=	configure
-USE_GMAKE=	yes
 USE_PYTHON_BUILD=	yes
 WANT_GNOME=	yes
 
@@ -76,9 +76,9 @@ MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		notify:${PORTSDIR}/devel/libnotify
-USE_GNOME=	intltool
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libnotify.so:${PORTSDIR}/devel/libnotify
+USE_GNOME=	gtk20
 PLIST_FILES+=	bin/HandBrake
 .else
 CONFIGURE_ARGS+=	--disable-gtk
@@ -116,6 +116,8 @@ post-extract: .SILENT
 	${MV} ${WRKDIR}/mp4v2-trunk-r355 ${BUILD_WRKSRC}/contrib/mp4v2
 # Remove one patch file that does not apply cleanly
 	${RM} ${WRKSRC}/contrib/fontconfig/A00-config.patch
+# Avoid conflict with `print/harfbuzz' (also installs "hb.h")
+	${MV} ${WRKSRC}/libhb/hb.h ${WRKSRC}/libhb/hb-of-handbrake.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard|sys/soundcard|' \
@@ -128,6 +130,8 @@ post-patch:
 		${WRKSRC}/libhb/module.defs ${WRKSRC}/test/module.defs
 	@${REINPLACE_CMD} -e 's|libdvdcss\.so\.2|libdvdcss.so|' \
 		${BUILD_WRKSRC}/contrib/libdvdread/libdvdread/src/dvd_input.c
+	@${FIND} ${WRKSRC} -type f -name '*.[ch]' -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e '/#include/s|hb\.h|hb-of-handbrake.h|'
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/HandBrakeCLI ${PREFIX}/bin
