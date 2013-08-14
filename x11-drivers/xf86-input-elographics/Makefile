@@ -12,7 +12,7 @@ XORG_CAT=	driver
 MAN4=		elographics.4x
 
 .if defined(WITH_NEW_XORG)
-ELO_VERSION=	1.3.0
+ELO_VERSION=	1.4.1
 ELO_REVISION=	0
 .else
 ELO_VERSION=	1.2.4
