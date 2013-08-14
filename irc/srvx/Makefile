@@ -1,9 +1,5 @@
-# New ports collection makefile for:	srvx
-# Date created:				2003-11-28
-# Whom:					Walter Venable <weaseal@hotmail.com>
-#
+# Created by: Walter Venable <weaseal@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	srvx
 PORTVERSION=	1.3.1
@@ -12,6 +8,8 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of services for ircu P10 protocol networks
+
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	PROTOCOL_BAHAMUT DEBUG
 OPTIONS_DEFAULT=	PROTOCOL_BAHAMUT
