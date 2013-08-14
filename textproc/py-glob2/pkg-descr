@@ -1,0 +1,14 @@
+python-glob2
+
+This is an extended version of Python's builtin glob module
+(http://docs.python.org/library/glob.html) which adds:
+
+The ability to capture the text matched by glob patterns, and return those
+matches alongside the filenames.  A recursive '**' globbing syntax, akin for
+example to the globstar option of the bash shell.  The ability to replace the
+filesystem functions used, in order to glob on virtual filesystems.  Compatible
+with Python 2 and Python 3 (tested with 3.3).
+
+It's currently based on the glob code from Python 3.3.1.
+
+WWW: http://port.home.page/

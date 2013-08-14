@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/conf_d/__init__.py
+%%PYTHON_SITELIBDIR%%/conf_d/__init__.pyc
+%%PYTHON_SITELIBDIR%%/conf_d/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/conf_d
