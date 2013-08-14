@@ -51,7 +51,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-FETCH_CMD:=	${SHELL} ${FILESDIR}/fetchwrapper.sh \
+FETCH_CMD=	${SH} ${FILESDIR}/fetchwrapper.sh \
 			${URL_SUFFIX} ${FETCH_BINARY} ${FETCH_ARGS}
 
 .if ${ARCH} == "powerpc"
