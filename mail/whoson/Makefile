@@ -1,9 +1,5 @@
-# New ports collection makefile for:	whoson
-# Date created:				14 May 2006
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	whoson
 PORTVERSION=	2.05
@@ -17,6 +13,8 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-config=${PREFIX}/etc/whoson.conf
 USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=yes
 
 USE_RC_SUBR=	whoson
 
