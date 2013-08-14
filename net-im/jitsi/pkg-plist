@@ -17,6 +17,7 @@ lib/jitsi/sc-bundles/advancedconfig.jar
 lib/jitsi/sc-bundles/aimaccregwizz.jar
 lib/jitsi/sc-bundles/argdelegation-service.jar
 lib/jitsi/sc-bundles/argdelegation.jar
+lib/jitsi/sc-bundles/bccontrib.jar
 lib/jitsi/sc-bundles/bouncycastle.jar
 lib/jitsi/sc-bundles/branding.jar
 lib/jitsi/sc-bundles/browserlauncher.jar
@@ -41,6 +42,7 @@ lib/jitsi/sc-bundles/facebookaccregwizz.jar
 lib/jitsi/sc-bundles/fileaccess.jar
 lib/jitsi/sc-bundles/filehistory.jar
 lib/jitsi/sc-bundles/generalconfig.jar
+lib/jitsi/sc-bundles/globaldisplaydetails.jar
 lib/jitsi/sc-bundles/globalproxyconfig.jar
 lib/jitsi/sc-bundles/globalshortcut.jar
 lib/jitsi/sc-bundles/googlecontacts.jar
@@ -54,6 +56,7 @@ lib/jitsi/sc-bundles/iptelaccregwizz.jar
 lib/jitsi/sc-bundles/jabberaccregwizz.jar
 lib/jitsi/sc-bundles/jfontchooserlib.jar
 lib/jitsi/sc-bundles/jmdnslib.jar
+lib/jitsi/sc-bundles/jmork.jar
 lib/jitsi/sc-bundles/jnalib.jar
 lib/jitsi/sc-bundles/json.jar
 lib/jitsi/sc-bundles/keybindingChooser.jar
@@ -120,6 +123,7 @@ lib/jitsi/sc-bundles/spellChecker.jar
 lib/jitsi/sc-bundles/swing-ui.jar
 lib/jitsi/sc-bundles/swingnotification.jar
 lib/jitsi/sc-bundles/sysactivitynotifications.jar
+lib/jitsi/sc-bundles/thunderbook.jar
 lib/jitsi/sc-bundles/ui-service.jar
 lib/jitsi/sc-bundles/update.jar
 lib/jitsi/sc-bundles/updateservice.jar
