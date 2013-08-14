@@ -71,10 +71,12 @@ include/SDL2/SDL_version.h
 include/SDL2/SDL_video.h
 include/SDL2/begin_code.h
 include/SDL2/close_code.h
+share/aclocal/sdl2.m4
 lib/libSDL2.a
 lib/libSDL2.so
-lib/libSDL2.so.0
-lib/libSDL2.so.2.0.0
+lib/libSDL2-2.0.so
+lib/libSDL2-2.0.so.0
+lib/libSDL2-2.0.so.0.0.0
 lib/libSDL2main.a
 libdata/pkgconfig/sdl2.pc
 @dirrm include/SDL2

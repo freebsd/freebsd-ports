@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_image
-PORTVERSION=	2.0.p2
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libsdl.org/tmp/SDL_image/release/
-DISTNAME=	SDL2_image-2.0.0
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
+DISTNAME=	SDL2_image-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A simple library to load images of various formats as SDL surfaces
