@@ -513,9 +513,9 @@ mail/postfix1||2009-03-09|Has expired: Not supported anymore by vendor. Please c
 mail/postfix21||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
 mail/postfix22||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
 www/rubygem-actionwebservice||2009-03-09|Has expired: from rails 2.0 www/rubygem-rails use www/rubygem-activeresource instead
-x11-toolkits/inti-gconf||2009-03-09|Has expired: not maintained upstream for more than five years and no port depend on this
-x11-toolkits/inti-gl||2009-03-09|Has expired: not maintained upstream for more than five years and no port depend on this
-x11-toolkits/inti-sourceview||2009-03-09|Has expired: not maintained upstream for more than five years and no port depend on this
+x11-toolkits/inti-gconf||2009-03-09|Has expired: unmaintained upstream for more than five years; no ports depend on it
+x11-toolkits/inti-gl||2009-03-09|Has expired: unmaintained upstream for more than five years; no ports depend on it
+x11-toolkits/inti-sourceview||2009-03-09|Has expired: unmaintained upstream for more than five years; no ports depend on it
 misc/git|misc/gnuit|2009-03-14|Renamed
 lang/gcc33|lang/gcc43|2009-03-14|Abandoned upstream, superseded by later versions
 sysutils/libisoburn|sysutils/xorriso|2009-03-16|Project was renamed
@@ -530,7 +530,7 @@ java/javel||2009-03-23|Has expired: unmaintained, does not work with current ver
 java/guavac||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 graphics/xrml||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 graphics/renderpark||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
-games/jumpnbump||2009-03-23|Has expired: tcl8.0 support is going to be dropped
+games/jumpnbump||2009-03-23|Has expired: Tcl 8.0 support is going to be dropped
 irc/blackened||2009-03-23|Has expired: Broken and abandonware
 devel/libg++||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 devel/freescope||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
@@ -540,11 +540,11 @@ lang/wamcc||2009-03-23|Has expired: unmaintained, does not work with current ver
 multimedia/mpegedit||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 mail/dkimap4||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 net-mgmt/oproute||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
-x11/tkgoodstuff||2009-03-23|Has expired: tcl8.0 support is going to be dropped
-x11-toolkits/inti||2009-03-23|Has expired: not maintained upstream for more than five years and no port depend on this
-mbone/nte||2009-03-23|Has expired: tcl8.0 support is going to be dropped
-mbone/relate||2009-03-23|Has expired: tcl8.0 support is going to be dropped
-mbone/wbd||2009-03-23|Has expired: tcl8.0 support is going to be dropped
+x11/tkgoodstuff||2009-03-23|Has expired: Tcl 8.0 support is going to be dropped
+x11-toolkits/inti||2009-03-23|Has expired: unmaintained upstream for more than five years; no ports depend on it
+mbone/nte||2009-03-23|Has expired: Tcl 8.0 support is going to be dropped
+mbone/relate||2009-03-23|Has expired: Tcl 8.0 support is going to be dropped
+mbone/wbd||2009-03-23|Has expired: Tcl 8.0 support is going to be dropped
 comms/plp||2009-03-24|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 devel/ruby-zoom|devel/rubygem-zoom|2009-03-26|Renamed
 net/sipxcalllib||2009-03-28|Has expired: old version, needs updating
@@ -609,9 +609,9 @@ russian/xneur|deskutils/xneur|2009-04-27|Better category: supports many language
 audio/rubygem-mp3info|audio/rubygem-ruby-mp3info|2009-04-28|Updated to match GEM name, use rubygem-ruby-mp3info instead
 sysutils/linux-megacli2|sysutils/linux-megacli|2009-04-30|Folded into unversioned port directory
 net/vnstati|net/vnstat|2009-04-30|Use net/vnstat
-audio/snowstar||2009-05-01|Has expired: tcl8.0 support is going to be dropped
+audio/snowstar||2009-05-01|Has expired: Tcl 8.0 support is going to be dropped
 devel/cppadvio||2009-05-01|Has expired: abandoned upstream, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
-irc/olirc||2009-05-01|Has expired: project is discontinued and tcl82 support is going to be dropped
+irc/olirc||2009-05-01|Has expired: project is discontinued and Tcl 8.2 support is going to be dropped
 multimedia/toxine||2009-05-01|Has expired: has been inactive for almost 5 years
 net-mgmt/nagios12||2009-05-01|Has expired: Obsolete version, consider migration to net-mgmt/nagios
 sysutils/bbsmount||2009-05-01|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
@@ -624,8 +624,8 @@ www/phpsurveyor|www/limesurvey|2009-05-05|Project was renamed
 devel/oskit||2009-05-07|Has expired: does not work with current versions of GCC, needs gcc295 which has been failing to build for months, no active maintainer
 www/p5-WWW-Nicovideo-Download|www/p5-WWW-NicoVideo-Download|2009-05-07|Directory renamed
 german/swissgerman-ding|german/ding|2009-05-12|Integrated into german/ding
-misc/sonytv||2009-05-28|Has expired: tcl8.3 support is going to be dropped
-mail/postilion||2009-05-28|Has expired: tcl8.3 support is going to be dropped
+misc/sonytv||2009-05-28|Has expired: Tcl 8.3 support is going to be dropped
+mail/postilion||2009-05-28|Has expired: Tcl 8.3 support is going to be dropped
 x11-toolkits/p5-TclTk||2009-05-28|Has expired: replaced by x11-toolkits/p5-Tcl-Tk
 japanese/ipa-ttfonts|japanese/font-ipa|2009-05-30|Renamed
 japanese/sazanami-ttf|japanese/font-sazanami|2009-05-30|Renamed
@@ -663,7 +663,7 @@ audio/festvox-ogirab||2009-06-13|Has expired: unfulfilled dependencies for 8+ mo
 audio/festvox-pc||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
 audio/festvox-tll||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
 audio/py-sdl_mixer||2009-06-13|Has expired: has been broken for more than 6 months
-graphics/libimg-tk83||2009-06-13|Has expired: tcl8.3 support is going to be dropped
+graphics/libimg-tk83||2009-06-13|Has expired: Tcl 8.3 support is going to be dropped
 multimedia/manencode||2009-06-13|Has expired
 www/mnogosearch31||2009-06-13|Has expired: Use www/mnogosearch instead, this version is ancient
 www/php4-mnogosearch||2009-06-13|Removed
@@ -763,8 +763,8 @@ misc/koffice-i18n-uz|editors/koffice-i18n-uz|2009-06-29|Moved to editors categor
 misc/koffice-i18n-ven|editors/koffice-i18n-ven|2009-06-29|Moved to editors category
 misc/koffice-i18n-xh|editors/koffice-i18n-xh|2009-06-29|Moved to editors category
 misc/koffice-i18n-zu|editors/koffice-i18n-zu|2009-06-29|Moved to editors category
-x11-toolkits/tk80||2009-07-07|Has expired: tcl8.0 support dropped
-lang/tcl80||2009-07-07|Has expired: tcl8.0 support dropped
+x11-toolkits/tk80||2009-07-07|Has expired: Tcl 8.0 support is dropped
+lang/tcl80||2009-07-07|Has expired: Tcl 8.0 support is dropped
 audio/gai-album||2009-07-07|Has expired: abandoned project, does not build
 audio/gai-visual-audio||2009-07-07|Has expired: abandoned project, does not build
 devel/linxt||2009-07-07|Has expired: Use devel/roboctl instead
@@ -783,7 +783,7 @@ lang/gcc-ooo|lang/gcc43|2009-07-18|Not used by OpenOffice any more, superseded b
 security/altivore||2009-07-19|Removed
 editors/openoffice.org-2-devel||2009-07-21|Removed
 games/amy||2009-07-28|Has expired: mastersite disappeared, does not build on recent version
-security/hashish||2009-07-28|Has expired: "does not compile"
+security/hashish||2009-07-28|Has expired: does not compile
 security/smtpmap||2009-07-28|Has expired: depends on GCC 2.95 which has not been available for 9+ months
 devel/boost|devel/boost-libs|2009-07-28|Boost ports were split and sliced
 devel/boost-python|devel/boost-python-libs|2009-07-28|Boost ports were split and sliced
@@ -2869,7 +2869,7 @@ databases/maatkit||2011-11-01|Has expired: upstream support dropped; please cons
 databases/mysqlman||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/mysql-editor||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/gnats||2011-11-01|Has expired: security issues
-graphics/poppler-qt||2011-11-01|Poppler upstream removed support for Qt3
+graphics/poppler-qt||2011-11-01|Poppler upstream removed support for Qt 3.x
 audio/linux-shoutcast||2011-11-01|Unfetchable; website rearranged
 chinese/scim-chewing||2011-11-01|Does not configure
 converters/py-cjkcodecs||2011-11-01|Integrated into every Python version in the tree
@@ -3172,7 +3172,7 @@ www/rubygem-htauth||2012-01-08|Has expired: broke for ~12 months
 www/instiki||2012-01-08|Has expired: has been marked ignore since 2010/09/16
 mail/msmtpqueue||2012-01-08|Has expired: These scripts now come with mail/msmtp
 security/cryptplug||2012-01-08|Has expired: development has ceased
-security/gpgme03||2012-01-08|Has expired: superceded by security/gpgme
+security/gpgme03||2012-01-08|Has expired: superseded by security/gpgme
 databases/pear-Doctrine||2012-01-08|Has expired: Please upgrade to 1.2.x: http://svn.doctrine-project.org/tags/1.2.4/UPGRADE_TO_1_2
 x11-themes/gtk-qn-x11-theme||2012-01-08|Has expired: No more public distfiles
 x11-themes/gtk-zenith-theme||2012-01-08|Has expired: No more public distfiles
@@ -4065,8 +4065,8 @@ german/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
 dns/p5-Net-DNS-ZoneFile||2013-02-25|Now bundled with dns/p5-Net-DNS
 textproc/stardict2-rptts|textproc/stardict-rptts|2013-02-25|Renamed
 audio/laudio|audio/linux-laudio|2013-02-27|Renamed (Linux binary port)
-multimedia/qt4-phonon||2013-02-27|Has expired: Qt4 uses multimedia/phonon
-multimedia/qt4-phonon-gst||2013-02-27|Has expired: Qt4 uses multimedia/phonon-gstreamer
+multimedia/qt4-phonon||2013-02-27|Has expired: Qt 4.x uses multimedia/phonon
+multimedia/qt4-phonon-gst||2013-02-27|Has expired: Qt 4.x uses multimedia/phonon-gstreamer
 math/eigen||2013-02-27|Has expired: development for 1.x series has ceased, use math/eigen3 instead
 multimedia/ffmpeg-011||2013-03-01|Has expired: replaced with 1.0.x, use multimedia/ffmpeg1 instead
 ftp/ftp-tls||2013-03-02|Has expired: No longer maintained upstream
@@ -4102,8 +4102,8 @@ ports-mgmt/portcheck||2013-03-03|Has expired: No more upstream, no more public d
 security/sslproxy||2013-03-03|Has expired: Abandoned upstream
 x11-themes/e17-theme-darkness||2013-03-03|Has expired: No more public distfiles
 x11-themes/e17-theme-cthulhain||2013-03-03|Has expired: Dead upstream since 2008
-x11-servers/driglide||2013-03-03|Has expired: 3dfx is dead, fails to compile on recent versions of freebsd
-mail/gmime||2013-03-03|Has expired: Superceded with version 2.4
+x11-servers/driglide||2013-03-03|Has expired: 3dfx is dead, fails to compile on recent versions of FreeBSD
+mail/gmime||2013-03-03|Has expired: superseded with version 2.4
 archivers/bsdar||2013-03-03|Has expired: part of the base system
 misc/instant-server||2013-03-04|Removed: Non-essential meta port
 sysutils/sge60||2013-03-06|Has expired: Ancient and unsupported release
@@ -4166,7 +4166,7 @@ french/gibi||2013-03-18|Removed: IGNORE for more than 6 months
 finance/pfpro||2013-03-18|Removed: upstream no longer exists
 finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
 finance/p5-Business-OnlinePayment-PayflowPro||2013-03-18|Removed: upstream no longer exists
-www/nspluginwrapper-devel||2013-03-19|Removed: superceded by www/nspluginwrapper
+www/nspluginwrapper-devel||2013-03-19|Removed: superseded by www/nspluginwrapper
 french/eficas_doc||2013-03-19|Removed: eficas is now able to open the documentation through a web browser so the pdf files are no longer included
 editors/openoffice.org-vcltesttool||2013-03-21|Removed: no longer used for openoffice qa
 editors/openoffice-3-devel|editors/openoffice-devel|2013-03-21|Renamed to match current version number
@@ -4403,7 +4403,7 @@ www/siteatschool||2013-06-30|Has expired: Unmaintained upstream
 textproc/romdict||2013-06-30|Has expired: Upstream the project seems dead for years
 www/dillo-i18n||2013-06-30|Has expired: dillo1 is no longer actively maintained. Please consider using www/dillo2 which has full UTF-8 support
 www/dillo||2013-06-30|Has expired: dillo1 is no longer actively maintained. Please consider using www/dillo2 instead
-comms/qfaxreader||2013-06-30|Has expired: No activity upstream since 2006; uses QT3
+comms/qfaxreader||2013-06-30|Has expired: No activity upstream since 2006; uses Qt 3.x
 net/openldap23-sasl-client||2013-07-01|Has expired: Unmaintained by upstream
 net/openldap23-server||2013-07-01|Has expired: Unmaintained by upstream
 net/openldap23-client||2013-07-01|Has expired: Unmaintained by upstream
@@ -4418,8 +4418,8 @@ graphics/linux-dri74|graphics/linux-f10-dri|2013-07-03|Supersded by graphics/lin
 games/gnomememoryblocks||2013-07-04|Has expired: Unsupported upstream
 devel/py-reddit||2013-07-07|Has been removed from PyPI, Use www/py-praw
 games/speakinghangman||2013-07-07|Has expired: No more public distfiles
-security/pinentry-qt||2013-07-09|Removed: Qt3 ports have expired
-games/nethack34-qt|games/nethack34-gnome|2013-07-09|Uses unsupported QT version
+security/pinentry-qt||2013-07-09|Removed: Qt 3.x ports have expired
+games/nethack34-qt|games/nethack34-gnome|2013-07-09|Uses unsupported Qt version
 audio/gdam||2013-07-10|Has expired: Broken for a while
 devel/gnome-vfs1||2013-07-10|Has expired: No more depend on, No more supported upstream
 textproc/ua-ispell|ukrainian/ispell|2013-07-10|Removed because it has been moved to ukrainian/ispell 12 years ago
@@ -4430,7 +4430,7 @@ security/py-crack|security/py-cracklib|2013-07-11|Has expired: Superseded by sec
 x11-toolkits/linux-f10-qt33||2013-07-12|Removed
 net/urtwn-firmware-kmod||2013-07-12|Removed, part of base as of r253139
 benchmarks/polygraph31||2013-07-13|Has expired: Broken since March 2010
-net/avahi-qt3||2013-07-13|Depends on the expired Qt3 port
+net/avahi-qt3||2013-07-13|Depends on the expired Qt 3.x port
 www/xpi-gwt-dev-plugin||2013-07-15|Has expired: Requires an ancient version of Firefox to build
 security/pyobfsproxy|security/obfsproxy|2013-07-15|Rename
 devel/kdevelop-custom-buildsystem||2013-07-17|Has expired: part of devel/kdevelop-kde4 now
@@ -4448,384 +4448,384 @@ sysutils/rsyslog6-devel-dbi|sysutils/rsyslog7|2013-07-25|Has expired: Use sysuti
 sysutils/rsyslog6-devel-gssapi|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
 sysutils/rsyslog6-devel|sysutils/rsyslog7|2013-07-25|Has expired: Use sysutils/rsyslog7
 graphics/allegrogl||2013-07-26|Now part of devel/allegro
-accessibility/kdeaccessibility||2013-07-26|Has expired: Depends on QT3
-arabic/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-archivers/kbackup||2013-07-26|Has expired: Depends on QT3
-archivers/kio_p7zip||2013-07-26|Has expired: Depends on QT3
-astro/celestia-kde||2013-07-26|Has expired: Depends on QT3
-astro/orsa||2013-07-26|Has expired: Depends on QT3
-audio/amarok||2013-07-26|Has expired: Depends on QT3
-audio/amarok-fs||2013-07-26|Has expired: Depends on QT3
-audio/arts||2013-07-26|Has expired: Depends on QT3
-audio/cheesetracker||2013-07-26|Has expired: Depends on QT3
-audio/cynthiune||2013-07-26|Has expired: Depends on QT3
-audio/ermixer||2013-07-26|Has expired: Depends on QT3
-audio/k3bmonkeyaudioplugin||2013-07-26|Has expired: Depends on QT3
-audio/kid3||2013-07-26|Has expired: Depends on QT3
-audio/kirocker||2013-07-26|Has expired: Depends on QT3
-audio/kmp||2013-07-26|Has expired: Depends on QT3
-audio/lplayer||2013-07-26|Has expired: Depends on QT3
-audio/madman||2013-07-26|Has expired: Depends on QT3
-audio/mpeglib_artsplug||2013-07-26|Has expired: Depends on QT3
-audio/prokyon3||2013-07-26|Has expired: Depends on QT3
-audio/xmms-kde||2013-07-26|Has expired: Depends on QT3
-audio/yammi||2013-07-26|Has expired: Depends on QT3
-biology/xdrawchem||2013-07-26|Has expired: Depends on QT3
-cad/opencascade-tutorial||2013-07-26|Has expired: Depends on QT3
-cad/qcad||2013-07-26|Has expired: Depends on QT3
-cad/qucs||2013-07-26|Has expired: Depends on QT3
-cad/vipec||2013-07-26|Has expired: Depends on QT3
-chinese/kde3-i18n-zh_CN||2013-07-26|Has expired: Depends on QT3
-chinese/kde3-i18n-zh_TW||2013-07-26|Has expired: Depends on QT3
-comms/kallers||2013-07-26|Has expired: Depends on QT3
-comms/klog||2013-07-26|Has expired: Depends on QT3
-comms/kmobiletools||2013-07-26|Has expired: Depends on QT3
-comms/kpsk||2013-07-26|Has expired: Depends on QT3
-comms/ktrack||2013-07-26|Has expired: Depends on QT3
-comms/linpsk||2013-07-26|Has expired: Depends on QT3
-comms/qsstv||2013-07-26|Has expired: Depends on QT3
-comms/qtel||2013-07-26|Has expired: Depends on QT3
-converters/ktextdecode||2013-07-26|Has expired: Depends on QT3
-databases/kmysqladmin||2013-07-26|Has expired: Depends on QT3
-databases/knoda||2013-07-26|Has expired: Depends on QT3
-databases/ksqlanalyzer||2013-07-26|Has expired: Depends on QT3
-databases/ksqlshell||2013-07-26|Has expired: Depends on QT3
-databases/mysql-navigator||2013-07-26|Has expired: Depends on QT3
-databases/qt-mysql-plugin||2013-07-26|Has expired: Depends on QT3
-databases/qt-odbc-plugin||2013-07-26|Has expired: Depends on QT3
-databases/qt-pgsql-plugin||2013-07-26|Has expired: Depends on QT3
-databases/qt-sqlite-plugin||2013-07-26|Has expired: Depends on QT3
-deskutils/bookreader||2013-07-26|Has expired: Depends on QT3
-deskutils/dragstack||2013-07-26|Has expired: Depends on QT3
-deskutils/karamba||2013-07-26|Has expired: Depends on QT3
-deskutils/katapult||2013-07-26|Has expired: Depends on QT3
-deskutils/kbirthday||2013-07-26|Has expired: Depends on QT3
-deskutils/kblticker||2013-07-26|Has expired: Depends on QT3
-deskutils/kchm||2013-07-26|Has expired: Depends on QT3
-deskutils/kchmviewer||2013-07-26|Has expired: Depends on QT3
-deskutils/kdepim3||2013-07-26|Has expired: Depends on QT3
-deskutils/kdissert||2013-07-26|Has expired: Depends on QT3
-deskutils/kickpim||2013-07-26|Has expired: Depends on QT3
-deskutils/klipoquery||2013-07-26|Has expired: Depends on QT3
-deskutils/kluje||2013-07-26|Has expired: Depends on QT3
-deskutils/kmatrix3d||2013-07-26|Has expired: Depends on QT3
-deskutils/knowit||2013-07-26|Has expired: Depends on QT3
-deskutils/kompose||2013-07-26|Has expired: Depends on QT3
-deskutils/kooldock||2013-07-26|Has expired: Depends on QT3
-deskutils/krefty||2013-07-26|Has expired: Depends on QT3
-deskutils/krss||2013-07-26|Has expired: Depends on QT3
-deskutils/ksmoothdock||2013-07-26|Has expired: Depends on QT3
-deskutils/metabar||2013-07-26|Has expired: Depends on QT3
-deskutils/snotes||2013-07-26|Has expired: Depends on QT3
-devel/bouml||2013-07-26|Has expired: Depends on QT3
-devel/crossvc||2013-07-26|Has expired: Depends on QT3
-devel/dbus-qt3||2013-07-26|Has expired: Depends on QT3
-devel/esvn||2013-07-26|Has expired: Depends on QT3
-devel/kdesdk3||2013-07-26|Has expired: Depends on QT3
-devel/kdevelop||2013-07-26|Has expired: Depends on QT3
-devel/kodos||2013-07-26|Has expired: Depends on QT3
-devel/kprof||2013-07-26|Has expired: Depends on QT3
-devel/kscope||2013-07-26|Has expired: Depends on QT3
-devel/pikdev||2013-07-26|Has expired: Depends on QT3
-devel/qsa||2013-07-26|Has expired: Depends on QT3
-devel/qssl||2013-07-26|Has expired: Depends on QT3
-devel/subcommander||2013-07-26|Has expired: Depends on QT3
-editors/f4l||2013-07-26|Has expired: Depends on QT3
-editors/kate-plugins||2013-07-26|Has expired: Depends on QT3
-editors/kile||2013-07-26|Has expired: Depends on QT3
-editors/klat||2013-07-26|Has expired: Depends on QT3
-editors/kxmleditor||2013-07-26|Has expired: Depends on QT3
-editors/pdfedit||2013-07-26|Has expired: Depends on QT3
-editors/rospell||2013-07-26|Has expired: Depends on QT3
-finance/eqonomize-kde3||2013-07-26|Has expired: Depends on QT3
-finance/kexchange||2013-07-26|Has expired: Depends on QT3
-finance/khacc||2013-07-26|Has expired: Depends on QT3
-finance/kmymoney2||2013-07-26|Has expired: Depends on QT3
-finance/qtstalker||2013-07-26|Has expired: Depends on QT3
-french/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-ftp/kasablanca||2013-07-26|Has expired: Depends on QT3
-ftp/kbear||2013-07-26|Has expired: Depends on QT3
-ftp/kftpgrabber||2013-07-26|Has expired: Depends on QT3
-ftp/kpum||2013-07-26|Has expired: Depends on QT3
-games/atlantikdesigner||2013-07-26|Has expired: Depends on QT3
-games/blackjack||2013-07-26|Has expired: Depends on QT3
-games/easysok||2013-07-26|Has expired: Depends on QT3
-games/ggz-kde-client||2013-07-26|Has expired: Depends on QT3
-games/kamikaze||2013-07-26|Has expired: Depends on QT3
-games/kbilliards||2013-07-26|Has expired: Depends on QT3
-games/kdegames3||2013-07-26|Has expired: Depends on QT3
-games/kfreerings||2013-07-26|Has expired: Depends on QT3
-games/kmastermind||2013-07-26|Has expired: Depends on QT3
-games/knights||2013-07-26|Has expired: Depends on QT3
-games/kpicframer||2013-07-26|Has expired: Depends on QT3
-games/kpictorial||2013-07-26|Has expired: Depends on QT3
-games/kpuzzle||2013-07-26|Has expired: Depends on QT3
-games/ktritoc||2013-07-26|Has expired: Depends on QT3
-games/kwappen||2013-07-26|Has expired: Depends on QT3
-games/pinedit||2013-07-26|Has expired: Depends on QT3
-games/q15||2013-07-26|Has expired: Depends on QT3
-games/qnetchess||2013-07-26|Has expired: Depends on QT3
-games/spacehulk||2013-07-26|Has expired: Depends on QT3
-games/stroq||2013-07-26|Has expired: Depends on QT3
-games/taxipilot||2013-07-26|Has expired: Depends on QT3
-german/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-german/kheisereg||2013-07-26|Has expired: Depends on QT3
-german/ksteak||2013-07-26|Has expired: Depends on QT3
-graphics/albumshaper||2013-07-26|Has expired: Depends on QT3
-graphics/amanith||2013-07-26|Has expired: Depends on QT3
-graphics/digikam||2013-07-26|Has expired: Depends on QT3
-graphics/digikam-doc||2013-07-26|Has expired: Depends on QT3
-graphics/divxcalc||2013-07-26|Has expired: Depends on QT3
-graphics/ecg2png||2013-07-26|Has expired: Depends on QT3
-graphics/flip||2013-07-26|Has expired: Depends on QT3
-graphics/fractorama||2013-07-26|Has expired: Depends on QT3
-graphics/gwenview||2013-07-26|Has expired: Depends on QT3
-graphics/imgseek||2013-07-26|Has expired: Depends on QT3
-graphics/kalbum||2013-07-26|Has expired: Depends on QT3
-graphics/kamera||2013-07-26|Has expired: Depends on QT3
-graphics/kbarcode||2013-07-26|Has expired: Depends on QT3
-graphics/kdegraphics3||2013-07-26|Has expired: Depends on QT3
-graphics/kipi-plugins||2013-07-26|Has expired: Depends on QT3
-graphics/kisomandel||2013-07-26|Has expired: Depends on QT3
-graphics/kooka||2013-07-26|Has expired: Depends on QT3
-graphics/kradview||2013-07-26|Has expired: Depends on QT3
-graphics/kuickshow||2013-07-26|Has expired: Depends on QT3
-graphics/landscape||2013-07-26|Has expired: Depends on QT3
-graphics/libkdcraw||2013-07-26|Has expired: Depends on QT3
-graphics/libkexif||2013-07-26|Has expired: Depends on QT3
-graphics/libkexiv2||2013-07-26|Has expired: Depends on QT3
-graphics/libkipi||2013-07-26|Has expired: Depends on QT3
-graphics/libqglviewer||2013-07-26|Has expired: Depends on QT3
-graphics/libx3dtk||2013-07-26|Has expired: Depends on QT3
-graphics/potracegui||2013-07-26|Has expired: Depends on QT3
-graphics/py-amanith||2013-07-26|Has expired: Depends on QT3
-graphics/showimg||2013-07-26|Has expired: Depends on QT3
-graphics/xenomorph||2013-07-26|Has expired: Depends on QT3
-hebrew/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-hungarian/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-irc/eggcreator||2013-07-26|Has expired: Depends on QT3
-irc/kmyirc||2013-07-26|Has expired: Depends on QT3
-irc/konversation||2013-07-26|Has expired: Depends on QT3
-irc/kwirc||2013-07-26|Has expired: Depends on QT3
-japanese/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-korean/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-lang/gambas||2013-07-26|Has expired: Depends on QT3
-lang/klogoturtle||2013-07-26|Has expired: Depends on QT3
-mail/kcheckgmail||2013-07-26|Has expired: Depends on QT3
-math/digitizer||2013-07-26|Has expired: Depends on QT3
-math/fung-calc||2013-07-26|Has expired: Depends on QT3
-math/k3dsurf||2013-07-26|Has expired: Depends on QT3
-math/koctave||2013-07-26|Has expired: Depends on QT3
-math/kseg||2013-07-26|Has expired: Depends on QT3
-math/pgcalc||2013-07-26|Has expired: Depends on QT3
-math/qwtplot3d||2013-07-26|Has expired: Depends on QT3
-math/rkward||2013-07-26|Has expired: Depends on QT3
-math/xgfe||2013-07-26|Has expired: Depends on QT3
-misc/gwenview-i18n||2013-07-26|Has expired: Depends on QT3
-misc/k3b-i18n||2013-07-26|Has expired: Depends on QT3
-misc/kaddressbook-plugins||2013-07-26|Has expired: Depends on QT3
-misc/katalog||2013-07-26|Has expired: Depends on QT3
-misc/kbfx||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-af||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-az||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-be||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-bg||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-bn||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-br||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-bs||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ca||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-cs||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-csb||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-cy||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-da||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-el||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-en_GB||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-eo||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-es||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-et||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-eu||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-fa||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-fi||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-fy||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ga||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-gl||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-hi||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-hr||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-is||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-it||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-kk||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-km||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-lt||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-lv||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-mk||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-mn||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ms||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-nb||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-nds||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-nl||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-nn||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-pa||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ro||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-rw||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-se||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-sk||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-sl||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-sr||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-sr_Latn||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ss||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-sv||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ta||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-te||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-tg||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-th||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-tr||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-uz||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-ven||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-wa||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-xh||2013-07-26|Has expired: Depends on QT3
-misc/kde3-i18n-zu||2013-07-26|Has expired: Depends on QT3
-misc/kdeaddons3||2013-07-26|Has expired: Depends on QT3
-misc/kdeedu3||2013-07-26|Has expired: Depends on QT3
-misc/kdehier||2013-07-26|Has expired: Depends on QT3
-misc/kdeutils3||2013-07-26|Has expired: Depends on QT3
-misc/kfile-plugins||2013-07-26|Has expired: Depends on QT3
-misc/kicker-applets||2013-07-26|Has expired: Depends on QT3
-misc/knewsticker-scripts||2013-07-26|Has expired: Depends on QT3
-misc/konq-plugins||2013-07-26|Has expired: Depends on QT3
-misc/krecipes||2013-07-26|Has expired: Depends on QT3
-misc/ksig||2013-07-26|Has expired: Depends on QT3
-misc/kwatch||2013-07-26|Has expired: Depends on QT3
-misc/renamedlgplugins||2013-07-26|Has expired: Depends on QT3
-multimedia/bmp-extra-plugins||2013-07-26|Has expired: Depends on QT3
-multimedia/dvdauthorwizard||2013-07-26|Has expired: Depends on QT3
-multimedia/grpplaylist||2013-07-26|Has expired: Depends on QT3
-multimedia/k9copy||2013-07-26|Has expired: Depends on QT3
-multimedia/kdemultimedia3||2013-07-26|Has expired: Depends on QT3
-multimedia/kmenc15||2013-07-26|Has expired: Depends on QT3
-multimedia/kmplayer||2013-07-26|Has expired: Depends on QT3
-multimedia/konverter||2013-07-26|Has expired: Depends on QT3
-multimedia/kplayer||2013-07-26|Has expired: Depends on QT3
-multimedia/ksubeditor||2013-07-26|Has expired: Depends on QT3
-multimedia/mandvd||2013-07-26|Has expired: Depends on QT3
-multimedia/noatun-plugins||2013-07-26|Has expired: Depends on QT3
-multimedia/qdvdauthor||2013-07-26|Has expired: Depends on QT3
-multimedia/subtitlecomposer||2013-07-26|Has expired: Depends on QT3
-multimedia/transkode||2013-07-26|Has expired: Depends on QT3
-multimedia/xine_artsplugin||2013-07-26|Has expired: Depends on QT3
-net/cphone||2013-07-26|Has expired: Depends on QT3
-net/kdenetwork3||2013-07-26|Has expired: Depends on QT3
-net/kiax||2013-07-26|Has expired: Depends on QT3
-net/knemo||2013-07-26|Has expired: Depends on QT3
-net/kphone||2013-07-26|Has expired: Depends on QT3
-net/krdesktop||2013-07-26|Has expired: Depends on QT3
-net/lanbrowsing||2013-07-26|Has expired: Depends on QT3
-net/pppload||2013-07-26|Has expired: Depends on QT3
-net/smb4k||2013-07-26|Has expired: Depends on QT3
-net/twinkle||2013-07-26|Has expired: Depends on QT3
-net-im/eva||2013-07-26|Has expired: Depends on QT3
-net-im/kmerlin||2013-07-26|Has expired: Depends on QT3
-net-im/kmess||2013-07-26|Has expired: Depends on QT3
-net-im/konverse||2013-07-26|Has expired: Depends on QT3
-net-im/kopete||2013-07-26|Has expired: Depends on QT3
-net-im/kpopup||2013-07-26|Has expired: Depends on QT3
-net-im/sim-im||2013-07-26|Has expired: Depends on QT3
-net-im/sim-im-devel||2013-07-26|Has expired: Depends on QT3
-net-im/trix||2013-07-26|Has expired: Depends on QT3
-net-mgmt/tork||2013-07-26|Has expired: Depends on QT3
-net-p2p/kmldonkey||2013-07-26|Has expired: Depends on QT3
-net-p2p/ktorrent2||2013-07-26|Has expired: Depends on QT3
-net-p2p/qtella||2013-07-26|Has expired: Depends on QT3
-net-p2p/qtorrent||2013-07-26|Has expired: Depends on QT3
-news/klibido||2013-07-26|Has expired: Depends on QT3
-polish/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-ports-mgmt/kports||2013-07-26|Has expired: Depends on QT3
-ports-mgmt/qtpkg||2013-07-26|Has expired: Depends on QT3
-portuguese/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-portuguese/kde3-i18n-pt_BR||2013-07-26|Has expired: Depends on QT3
-print/cjk-lyx||2013-07-26|Has expired: Depends on QT3
-print/kcdlabel||2013-07-26|Has expired: Depends on QT3
-print/mapagi||2013-07-26|Has expired: Depends on QT3
-russian/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-russian/ksocrat||2013-07-26|Has expired: Depends on QT3
-science/gsystem||2013-07-26|Has expired: Depends on QT3
-science/kmovisto||2013-07-26|Has expired: Depends on QT3
-science/kst||2013-07-26|Has expired: Depends on QT3
-security/kgpg||2013-07-26|Has expired: Depends on QT3
-security/klamav||2013-07-26|Has expired: Depends on QT3
-security/kopete-otr||2013-07-26|Has expired: Depends on QT3
-security/kovpn||2013-07-26|Has expired: Depends on QT3
-security/kssh||2013-07-26|Has expired: Depends on QT3
-security/qca-tls||2013-07-26|Has expired: Depends on QT3
-security/qtfw||2013-07-26|Has expired: Depends on QT3
-sysutils/filelight||2013-07-26|Has expired: Depends on QT3
-sysutils/k3b||2013-07-26|Has expired: Depends on QT3
-sysutils/kcpuload||2013-07-26|Has expired: Depends on QT3
-sysutils/kdeadmin3||2013-07-26|Has expired: Depends on QT3
-sysutils/keep||2013-07-26|Has expired: Depends on QT3
-sysutils/kgtk||2013-07-26|Has expired: Depends on QT3
-sysutils/kkbswitch||2013-07-26|Has expired: Depends on QT3
-sysutils/kkeyled||2013-07-26|Has expired: Depends on QT3
-sysutils/klaptopdaemon||2013-07-26|Has expired: Depends on QT3
-sysutils/kleansweep||2013-07-26|Has expired: Depends on QT3
-sysutils/klineakconfig||2013-07-26|Has expired: Depends on QT3
-sysutils/kmilo||2013-07-26|Has expired: Depends on QT3
-sysutils/knutclient||2013-07-26|Has expired: Depends on QT3
-sysutils/komparator||2013-07-26|Has expired: Depends on QT3
-sysutils/krename||2013-07-26|Has expired: Depends on QT3
-sysutils/kshutdown||2013-07-26|Has expired: Depends on QT3
-sysutils/ksynaptics||2013-07-26|Has expired: Depends on QT3
-sysutils/lineak-kdeplugins||2013-07-26|Has expired: Depends on QT3
-sysutils/luma||2013-07-26|Has expired: Depends on QT3
-sysutils/pwg||2013-07-26|Has expired: Depends on QT3
-sysutils/spassgen||2013-07-26|Has expired: Depends on QT3
-textproc/kbedic||2013-07-26|Has expired: Depends on QT3
-textproc/skim||2013-07-26|Has expired: Depends on QT3
-textproc/uim-kde||2013-07-26|Has expired: Depends on QT3
-textproc/uim-qt||2013-07-26|Has expired: Depends on QT3
-textproc/xxdiff||2013-07-26|Has expired: Depends on QT3
-textproc/xxdiff-scripts||2013-07-26|Has expired: Depends on QT3
-ukrainian/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-vietnamese/kde3-i18n||2013-07-26|Has expired: Depends on QT3
-www/kdewebdev||2013-07-26|Has expired: Depends on QT3
-www/khtml2png||2013-07-26|Has expired: Depends on QT3
-x11/kde-lite||2013-07-26|Has expired: Depends on QT3
-x11/kde3||2013-07-26|Has expired: Depends on QT3
-x11/kdebase3||2013-07-26|Has expired: Depends on QT3
-x11/kdelibs3||2013-07-26|Has expired: Depends on QT3
-x11/kdelibs3-nocups||2013-07-26|Has expired: Depends on QT3
-x11/oooqs2||2013-07-26|Has expired: Depends on QT3
-x11/rsibreak||2013-07-26|Has expired: Depends on QT3
-x11/xscreensaver-kde||2013-07-26|Has expired: Depends on QT3
-x11/yakuake||2013-07-26|Has expired: Depends on QT3
-x11-clocks/kdetoys3||2013-07-26|Has expired: Depends on QT3
-x11-fm/dolphin||2013-07-26|Has expired: Depends on QT3
-x11-fm/krusader||2013-07-26|Has expired: Depends on QT3
-x11-themes/baghira||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-style-comix||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-style-lipstik||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-style-polyester||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-style-tiblit||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-windeco-activeheart||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-windeco-crystal||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-windeco-knifty||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-windeco-neos||2013-07-26|Has expired: Depends on QT3
-x11-themes/kde-windeco-smoothblend||2013-07-26|Has expired: Depends on QT3
-x11-themes/kdeartwork3||2013-07-26|Has expired: Depends on QT3
-x11-themes/kdmtheme||2013-07-26|Has expired: Depends on QT3
-x11-themes/moodin||2013-07-26|Has expired: Depends on QT3
-x11-themes/phase||2013-07-26|Has expired: Depends on QT3
-x11-themes/polymer||2013-07-26|Has expired: Depends on QT3
-x11-themes/qinx||2013-07-26|Has expired: Depends on QT3
-x11-themes/qnxstyle||2013-07-26|Has expired: Depends on QT3
-x11-themes/qt-bluecurve-theme||2013-07-26|Has expired: Depends on QT3
-x11-themes/qtcurve-kde3||2013-07-26|Has expired: Depends on QT3
-x11-toolkits/py-qt||2013-07-26|Has expired: Depends on QT3
-x11-toolkits/qscintilla||2013-07-26|Has expired: Depends on QT3
+accessibility/kdeaccessibility||2013-07-26|Has expired: Depends on Qt 3.x
+arabic/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+archivers/kbackup||2013-07-26|Has expired: Depends on Qt 3.x
+archivers/kio_p7zip||2013-07-26|Has expired: Depends on Qt 3.x
+astro/celestia-kde||2013-07-26|Has expired: Depends on Qt 3.x
+astro/orsa||2013-07-26|Has expired: Depends on Qt 3.x
+audio/amarok||2013-07-26|Has expired: Depends on Qt 3.x
+audio/amarok-fs||2013-07-26|Has expired: Depends on Qt 3.x
+audio/arts||2013-07-26|Has expired: Depends on Qt 3.x
+audio/cheesetracker||2013-07-26|Has expired: Depends on Qt 3.x
+audio/cynthiune||2013-07-26|Has expired: Depends on Qt 3.x
+audio/ermixer||2013-07-26|Has expired: Depends on Qt 3.x
+audio/k3bmonkeyaudioplugin||2013-07-26|Has expired: Depends on Qt 3.x
+audio/kid3||2013-07-26|Has expired: Depends on Qt 3.x
+audio/kirocker||2013-07-26|Has expired: Depends on Qt 3.x
+audio/kmp||2013-07-26|Has expired: Depends on Qt 3.x
+audio/lplayer||2013-07-26|Has expired: Depends on Qt 3.x
+audio/madman||2013-07-26|Has expired: Depends on Qt 3.x
+audio/mpeglib_artsplug||2013-07-26|Has expired: Depends on Qt 3.x
+audio/prokyon3||2013-07-26|Has expired: Depends on Qt 3.x
+audio/xmms-kde||2013-07-26|Has expired: Depends on Qt 3.x
+audio/yammi||2013-07-26|Has expired: Depends on Qt 3.x
+biology/xdrawchem||2013-07-26|Has expired: Depends on Qt 3.x
+cad/opencascade-tutorial||2013-07-26|Has expired: Depends on Qt 3.x
+cad/qcad||2013-07-26|Has expired: Depends on Qt 3.x
+cad/qucs||2013-07-26|Has expired: Depends on Qt 3.x
+cad/vipec||2013-07-26|Has expired: Depends on Qt 3.x
+chinese/kde3-i18n-zh_CN||2013-07-26|Has expired: Depends on Qt 3.x
+chinese/kde3-i18n-zh_TW||2013-07-26|Has expired: Depends on Qt 3.x
+comms/kallers||2013-07-26|Has expired: Depends on Qt 3.x
+comms/klog||2013-07-26|Has expired: Depends on Qt 3.x
+comms/kmobiletools||2013-07-26|Has expired: Depends on Qt 3.x
+comms/kpsk||2013-07-26|Has expired: Depends on Qt 3.x
+comms/ktrack||2013-07-26|Has expired: Depends on Qt 3.x
+comms/linpsk||2013-07-26|Has expired: Depends on Qt 3.x
+comms/qsstv||2013-07-26|Has expired: Depends on Qt 3.x
+comms/qtel||2013-07-26|Has expired: Depends on Qt 3.x
+converters/ktextdecode||2013-07-26|Has expired: Depends on Qt 3.x
+databases/kmysqladmin||2013-07-26|Has expired: Depends on Qt 3.x
+databases/knoda||2013-07-26|Has expired: Depends on Qt 3.x
+databases/ksqlanalyzer||2013-07-26|Has expired: Depends on Qt 3.x
+databases/ksqlshell||2013-07-26|Has expired: Depends on Qt 3.x
+databases/mysql-navigator||2013-07-26|Has expired: Depends on Qt 3.x
+databases/qt-mysql-plugin||2013-07-26|Has expired: Depends on Qt 3.x
+databases/qt-odbc-plugin||2013-07-26|Has expired: Depends on Qt 3.x
+databases/qt-pgsql-plugin||2013-07-26|Has expired: Depends on Qt 3.x
+databases/qt-sqlite-plugin||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/bookreader||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/dragstack||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/karamba||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/katapult||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kbirthday||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kblticker||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kchm||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kchmviewer||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kdepim3||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kdissert||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kickpim||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/klipoquery||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kluje||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kmatrix3d||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/knowit||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kompose||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/kooldock||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/krefty||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/krss||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/ksmoothdock||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/metabar||2013-07-26|Has expired: Depends on Qt 3.x
+deskutils/snotes||2013-07-26|Has expired: Depends on Qt 3.x
+devel/bouml||2013-07-26|Has expired: Depends on Qt 3.x
+devel/crossvc||2013-07-26|Has expired: Depends on Qt 3.x
+devel/dbus-qt3||2013-07-26|Has expired: Depends on Qt 3.x
+devel/esvn||2013-07-26|Has expired: Depends on Qt 3.x
+devel/kdesdk3||2013-07-26|Has expired: Depends on Qt 3.x
+devel/kdevelop||2013-07-26|Has expired: Depends on Qt 3.x
+devel/kodos||2013-07-26|Has expired: Depends on Qt 3.x
+devel/kprof||2013-07-26|Has expired: Depends on Qt 3.x
+devel/kscope||2013-07-26|Has expired: Depends on Qt 3.x
+devel/pikdev||2013-07-26|Has expired: Depends on Qt 3.x
+devel/qsa||2013-07-26|Has expired: Depends on Qt 3.x
+devel/qssl||2013-07-26|Has expired: Depends on Qt 3.x
+devel/subcommander||2013-07-26|Has expired: Depends on Qt 3.x
+editors/f4l||2013-07-26|Has expired: Depends on Qt 3.x
+editors/kate-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+editors/kile||2013-07-26|Has expired: Depends on Qt 3.x
+editors/klat||2013-07-26|Has expired: Depends on Qt 3.x
+editors/kxmleditor||2013-07-26|Has expired: Depends on Qt 3.x
+editors/pdfedit||2013-07-26|Has expired: Depends on Qt 3.x
+editors/rospell||2013-07-26|Has expired: Depends on Qt 3.x
+finance/eqonomize-kde3||2013-07-26|Has expired: Depends on Qt 3.x
+finance/kexchange||2013-07-26|Has expired: Depends on Qt 3.x
+finance/khacc||2013-07-26|Has expired: Depends on Qt 3.x
+finance/kmymoney2||2013-07-26|Has expired: Depends on Qt 3.x
+finance/qtstalker||2013-07-26|Has expired: Depends on Qt 3.x
+french/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+ftp/kasablanca||2013-07-26|Has expired: Depends on Qt 3.x
+ftp/kbear||2013-07-26|Has expired: Depends on Qt 3.x
+ftp/kftpgrabber||2013-07-26|Has expired: Depends on Qt 3.x
+ftp/kpum||2013-07-26|Has expired: Depends on Qt 3.x
+games/atlantikdesigner||2013-07-26|Has expired: Depends on Qt 3.x
+games/blackjack||2013-07-26|Has expired: Depends on Qt 3.x
+games/easysok||2013-07-26|Has expired: Depends on Qt 3.x
+games/ggz-kde-client||2013-07-26|Has expired: Depends on Qt 3.x
+games/kamikaze||2013-07-26|Has expired: Depends on Qt 3.x
+games/kbilliards||2013-07-26|Has expired: Depends on Qt 3.x
+games/kdegames3||2013-07-26|Has expired: Depends on Qt 3.x
+games/kfreerings||2013-07-26|Has expired: Depends on Qt 3.x
+games/kmastermind||2013-07-26|Has expired: Depends on Qt 3.x
+games/knights||2013-07-26|Has expired: Depends on Qt 3.x
+games/kpicframer||2013-07-26|Has expired: Depends on Qt 3.x
+games/kpictorial||2013-07-26|Has expired: Depends on Qt 3.x
+games/kpuzzle||2013-07-26|Has expired: Depends on Qt 3.x
+games/ktritoc||2013-07-26|Has expired: Depends on Qt 3.x
+games/kwappen||2013-07-26|Has expired: Depends on Qt 3.x
+games/pinedit||2013-07-26|Has expired: Depends on Qt 3.x
+games/q15||2013-07-26|Has expired: Depends on Qt 3.x
+games/qnetchess||2013-07-26|Has expired: Depends on Qt 3.x
+games/spacehulk||2013-07-26|Has expired: Depends on Qt 3.x
+games/stroq||2013-07-26|Has expired: Depends on Qt 3.x
+games/taxipilot||2013-07-26|Has expired: Depends on Qt 3.x
+german/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+german/kheisereg||2013-07-26|Has expired: Depends on Qt 3.x
+german/ksteak||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/albumshaper||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/amanith||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/digikam||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/digikam-doc||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/divxcalc||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/ecg2png||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/flip||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/fractorama||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/gwenview||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/imgseek||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kalbum||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kamera||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kbarcode||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kdegraphics3||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kipi-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kisomandel||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kooka||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kradview||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/kuickshow||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/landscape||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/libkdcraw||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/libkexif||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/libkexiv2||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/libkipi||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/libqglviewer||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/libx3dtk||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/potracegui||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/py-amanith||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/showimg||2013-07-26|Has expired: Depends on Qt 3.x
+graphics/xenomorph||2013-07-26|Has expired: Depends on Qt 3.x
+hebrew/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+hungarian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+irc/eggcreator||2013-07-26|Has expired: Depends on Qt 3.x
+irc/kmyirc||2013-07-26|Has expired: Depends on Qt 3.x
+irc/konversation||2013-07-26|Has expired: Depends on Qt 3.x
+irc/kwirc||2013-07-26|Has expired: Depends on Qt 3.x
+japanese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+korean/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+lang/gambas||2013-07-26|Has expired: Depends on Qt 3.x
+lang/klogoturtle||2013-07-26|Has expired: Depends on Qt 3.x
+mail/kcheckgmail||2013-07-26|Has expired: Depends on Qt 3.x
+math/digitizer||2013-07-26|Has expired: Depends on Qt 3.x
+math/fung-calc||2013-07-26|Has expired: Depends on Qt 3.x
+math/k3dsurf||2013-07-26|Has expired: Depends on Qt 3.x
+math/koctave||2013-07-26|Has expired: Depends on Qt 3.x
+math/kseg||2013-07-26|Has expired: Depends on Qt 3.x
+math/pgcalc||2013-07-26|Has expired: Depends on Qt 3.x
+math/qwtplot3d||2013-07-26|Has expired: Depends on Qt 3.x
+math/rkward||2013-07-26|Has expired: Depends on Qt 3.x
+math/xgfe||2013-07-26|Has expired: Depends on Qt 3.x
+misc/gwenview-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+misc/k3b-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kaddressbook-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+misc/katalog||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kbfx||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-af||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-az||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-be||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-bg||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-bn||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-br||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-bs||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ca||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-cs||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-csb||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-cy||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-da||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-el||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-en_GB||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-eo||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-es||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-et||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-eu||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-fa||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-fi||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-fy||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ga||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-gl||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-hi||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-hr||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-is||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-it||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-kk||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-km||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-lt||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-lv||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-mk||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-mn||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ms||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-nb||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-nds||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-nl||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-nn||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-pa||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ro||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-rw||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-se||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-sk||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-sl||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-sr||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-sr_Latn||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ss||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-sv||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ta||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-te||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-tg||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-th||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-tr||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-uz||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-ven||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-wa||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-xh||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kde3-i18n-zu||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kdeaddons3||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kdeedu3||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kdehier||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kdeutils3||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kfile-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kicker-applets||2013-07-26|Has expired: Depends on Qt 3.x
+misc/knewsticker-scripts||2013-07-26|Has expired: Depends on Qt 3.x
+misc/konq-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+misc/krecipes||2013-07-26|Has expired: Depends on Qt 3.x
+misc/ksig||2013-07-26|Has expired: Depends on Qt 3.x
+misc/kwatch||2013-07-26|Has expired: Depends on Qt 3.x
+misc/renamedlgplugins||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/bmp-extra-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/dvdauthorwizard||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/grpplaylist||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/k9copy||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/kdemultimedia3||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/kmenc15||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/kmplayer||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/konverter||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/kplayer||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/ksubeditor||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/mandvd||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/noatun-plugins||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/qdvdauthor||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/subtitlecomposer||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/transkode||2013-07-26|Has expired: Depends on Qt 3.x
+multimedia/xine_artsplugin||2013-07-26|Has expired: Depends on Qt 3.x
+net/cphone||2013-07-26|Has expired: Depends on Qt 3.x
+net/kdenetwork3||2013-07-26|Has expired: Depends on Qt 3.x
+net/kiax||2013-07-26|Has expired: Depends on Qt 3.x
+net/knemo||2013-07-26|Has expired: Depends on Qt 3.x
+net/kphone||2013-07-26|Has expired: Depends on Qt 3.x
+net/krdesktop||2013-07-26|Has expired: Depends on Qt 3.x
+net/lanbrowsing||2013-07-26|Has expired: Depends on Qt 3.x
+net/pppload||2013-07-26|Has expired: Depends on Qt 3.x
+net/smb4k||2013-07-26|Has expired: Depends on Qt 3.x
+net/twinkle||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/eva||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/kmerlin||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/kmess||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/konverse||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/kopete||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/kpopup||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/sim-im||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/sim-im-devel||2013-07-26|Has expired: Depends on Qt 3.x
+net-im/trix||2013-07-26|Has expired: Depends on Qt 3.x
+net-mgmt/tork||2013-07-26|Has expired: Depends on Qt 3.x
+net-p2p/kmldonkey||2013-07-26|Has expired: Depends on Qt 3.x
+net-p2p/ktorrent2||2013-07-26|Has expired: Depends on Qt 3.x
+net-p2p/qtella||2013-07-26|Has expired: Depends on Qt 3.x
+net-p2p/qtorrent||2013-07-26|Has expired: Depends on Qt 3.x
+news/klibido||2013-07-26|Has expired: Depends on Qt 3.x
+polish/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+ports-mgmt/kports||2013-07-26|Has expired: Depends on Qt 3.x
+ports-mgmt/qtpkg||2013-07-26|Has expired: Depends on Qt 3.x
+portuguese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+portuguese/kde3-i18n-pt_BR||2013-07-26|Has expired: Depends on Qt 3.x
+print/cjk-lyx||2013-07-26|Has expired: Depends on Qt 3.x
+print/kcdlabel||2013-07-26|Has expired: Depends on Qt 3.x
+print/mapagi||2013-07-26|Has expired: Depends on Qt 3.x
+russian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+russian/ksocrat||2013-07-26|Has expired: Depends on Qt 3.x
+science/gsystem||2013-07-26|Has expired: Depends on Qt 3.x
+science/kmovisto||2013-07-26|Has expired: Depends on Qt 3.x
+science/kst||2013-07-26|Has expired: Depends on Qt 3.x
+security/kgpg||2013-07-26|Has expired: Depends on Qt 3.x
+security/klamav||2013-07-26|Has expired: Depends on Qt 3.x
+security/kopete-otr||2013-07-26|Has expired: Depends on Qt 3.x
+security/kovpn||2013-07-26|Has expired: Depends on Qt 3.x
+security/kssh||2013-07-26|Has expired: Depends on Qt 3.x
+security/qca-tls||2013-07-26|Has expired: Depends on Qt 3.x
+security/qtfw||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/filelight||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/k3b||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kcpuload||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kdeadmin3||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/keep||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kgtk||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kkbswitch||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kkeyled||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/klaptopdaemon||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kleansweep||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/klineakconfig||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kmilo||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/knutclient||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/komparator||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/krename||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/kshutdown||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/ksynaptics||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/lineak-kdeplugins||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/luma||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/pwg||2013-07-26|Has expired: Depends on Qt 3.x
+sysutils/spassgen||2013-07-26|Has expired: Depends on Qt 3.x
+textproc/kbedic||2013-07-26|Has expired: Depends on Qt 3.x
+textproc/skim||2013-07-26|Has expired: Depends on Qt 3.x
+textproc/uim-kde||2013-07-26|Has expired: Depends on Qt 3.x
+textproc/uim-qt||2013-07-26|Has expired: Depends on Qt 3.x
+textproc/xxdiff||2013-07-26|Has expired: Depends on Qt 3.x
+textproc/xxdiff-scripts||2013-07-26|Has expired: Depends on Qt 3.x
+ukrainian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+vietnamese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
+www/kdewebdev||2013-07-26|Has expired: Depends on Qt 3.x
+www/khtml2png||2013-07-26|Has expired: Depends on Qt 3.x
+x11/kde-lite||2013-07-26|Has expired: Depends on Qt 3.x
+x11/kde3||2013-07-26|Has expired: Depends on Qt 3.x
+x11/kdebase3||2013-07-26|Has expired: Depends on Qt 3.x
+x11/kdelibs3||2013-07-26|Has expired: Depends on Qt 3.x
+x11/kdelibs3-nocups||2013-07-26|Has expired: Depends on Qt 3.x
+x11/oooqs2||2013-07-26|Has expired: Depends on Qt 3.x
+x11/rsibreak||2013-07-26|Has expired: Depends on Qt 3.x
+x11/xscreensaver-kde||2013-07-26|Has expired: Depends on Qt 3.x
+x11/yakuake||2013-07-26|Has expired: Depends on Qt 3.x
+x11-clocks/kdetoys3||2013-07-26|Has expired: Depends on Qt 3.x
+x11-fm/dolphin||2013-07-26|Has expired: Depends on Qt 3.x
+x11-fm/krusader||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/baghira||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-style-comix||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-style-lipstik||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-style-polyester||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-style-tiblit||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-windeco-activeheart||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-windeco-crystal||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-windeco-knifty||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-windeco-neos||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kde-windeco-smoothblend||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kdeartwork3||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/kdmtheme||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/moodin||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/phase||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/polymer||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/qinx||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/qnxstyle||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/qt-bluecurve-theme||2013-07-26|Has expired: Depends on Qt 3.x
+x11-themes/qtcurve-kde3||2013-07-26|Has expired: Depends on Qt 3.x
+x11-toolkits/py-qt||2013-07-26|Has expired: Depends on Qt 3.x
+x11-toolkits/qscintilla||2013-07-26|Has expired: Depends on Qt 3.x
 x11-toolkits/qt33||2013-07-26|Has expired: No upstream activity since 2008; unmaintained
-x11-toolkits/qwt4||2013-07-26|Has expired: Depends on QT3
-x11-wm/bbconf||2013-07-26|Has expired: Depends on QT3
-x11-wm/kompmgr||2013-07-26|Has expired: Depends on QT3
+x11-toolkits/qwt4||2013-07-26|Has expired: Depends on Qt 3.x
+x11-wm/bbconf||2013-07-26|Has expired: Depends on Qt 3.x
+x11-wm/kompmgr||2013-07-26|Has expired: Depends on Qt 3.x
 audio/artswrapper||2013-07-27|Depend on the expired audio/arts
 net/ns2|net/ns|2013-07-29|Duplicate ports merged
 x11-toolkits/libbonobouimm||2013-07-31|Not supported upstream anymore
