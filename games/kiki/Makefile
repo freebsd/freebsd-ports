@@ -19,7 +19,6 @@ USE_GL=		gl glu glut
 USE_SDL=	sdl mixer image
 USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h src/main/KikiPythonWidget.h
 MAKE_ENV=	PYTHON_VER=${PYTHON_VERSION:C/^python//}
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/kiki
 

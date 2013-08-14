@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 PATCH_STRIP=	-p1
 ONLY_FOR_ARCHS=	amd64 i386
-MAKE_JOBS_SAFE=	yes
 # Doesn't run with qemu 0.11.1
 CONFLICTS_INSTALL=	qemu-[0-9]*
 

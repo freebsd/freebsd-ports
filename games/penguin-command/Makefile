@@ -15,7 +15,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		penguin-command.6 penguin-command.ja.6
 

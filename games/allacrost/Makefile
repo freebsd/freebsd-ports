@@ -27,7 +27,6 @@ USE_SDL=	sdl ttf net
 USE_GL=		yes
 USE_GCC=	4.2+
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} -I${LOCALBASE}/include/libpng15

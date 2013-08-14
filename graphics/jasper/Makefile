@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool
 USE_ZIP=	yes
 USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-shared --enable-static

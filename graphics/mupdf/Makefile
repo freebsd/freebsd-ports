@@ -26,7 +26,6 @@ USES=		pkgconfig
 USE_XORG=	x11 xext
 MAN1=		mupdf.1 mutool.1 mudraw.1
 
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 OPTIONS_DEFINE=	SCROLL JS

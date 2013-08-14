@@ -12,7 +12,6 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
 LICENSE=	AL2
-MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
 		apr-1:${PORTSDIR}/devel/apr1

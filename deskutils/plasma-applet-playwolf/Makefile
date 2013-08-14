@@ -20,7 +20,6 @@ USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	lib/kde4/plasma_applet_playwolf.so \
 		share/kde4/services/plasma-applet-playwolf.desktop

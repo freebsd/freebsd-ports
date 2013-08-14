@@ -21,7 +21,6 @@ BUILD_DEPENDS=	orc>=0.4.16:${PORTSDIR}/devel/orc
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgconfigdir=.*|pkgconfigdir="\\$${prefix}/libdata/pkgconfig"|' \

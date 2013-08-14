@@ -19,7 +19,6 @@ USE_GNOME=	intlhack gnomehier gtk20
 USES=		desktop-file-utils gettext
 USE_GMAKE=	yes
 MAKE_ENV=	DEFAULT_VIEWER="xdg-open" USE_SYSTEM_INIPARSER=1
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -Diniparser_setstr=iniparser_set
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

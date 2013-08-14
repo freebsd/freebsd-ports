@@ -26,7 +26,6 @@ USES=		iconv
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib gui network script xml
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README changelog readme.txt
 

@@ -23,7 +23,6 @@ MYSQLCACHE_DESC=	MySQL caching support
 
 .include <bsd.port.options.mk>
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -20,7 +20,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig gettext
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	autoconf
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

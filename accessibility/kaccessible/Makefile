@@ -19,6 +19,5 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USES=		cmake:outsource
 USE_QT4=	corelib dbus gui xml \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

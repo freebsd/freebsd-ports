@@ -74,7 +74,6 @@ BUILDTYPE=	Debug
 .endif
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
-MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-Wno-error
 
 SUB_FILES+=	mod_spdy.conf

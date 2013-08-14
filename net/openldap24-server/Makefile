@@ -44,7 +44,6 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LATEST_LINK?=		${PKGNAMEPREFIX}openldap24${PKGNAMESUFFIX}
 USE_OPENSSL=		yes
-MAKE_JOBS_SAFE=		yes
 USE_AUTOTOOLS=		libtool
 .if !defined(CLIENT_ONLY)
 USERS=			ldap

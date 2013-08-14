@@ -15,7 +15,6 @@ RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 USE_BZIP2=	yes
 USE_QT4=	gui network xml uic_build moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/dboxfe \
 		bin/dboxfetray \

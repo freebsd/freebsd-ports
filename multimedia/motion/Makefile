@@ -24,7 +24,6 @@ PWCBSD_DESC=	PWCBSD based Webcams
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

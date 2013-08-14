@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	MNG_OPTIMIZE
 MNG_OPTIMIZE_DESC=	Use vendor's new optimization flags
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_JOBS_SAFE=	yes
 #USE_BZIP2=	yes	# Please, uncomment on next upgrade
 
 USE_LDCONFIG=	yes

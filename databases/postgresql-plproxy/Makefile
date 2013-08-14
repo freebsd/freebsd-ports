@@ -14,7 +14,6 @@ LICENSE=	BSD
 
 USES=		bison gmake
 USE_PGSQL=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000207
 

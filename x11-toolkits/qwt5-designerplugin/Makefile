@@ -17,7 +17,6 @@ USE_GMAKE=	yes
 QMAKE_ARGS+=	-recursive CONFIG+=QwtDesigner \
 		PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 PORTSCOUT=	limit:^5\.
 
 STRIP_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt_designer_plugin.so

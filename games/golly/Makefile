@@ -14,7 +14,6 @@ USES=		cmake:outsource
 USE_PERL5=	yes
 USE_PYTHON=	2.7+
 USE_WX=		2.8+
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"Golly" "${COMMENT}" "${PREFIX}/share/pixmaps/golly.xpm" \
 			"${PREFIX}/bin/golly" "Education;" "true"

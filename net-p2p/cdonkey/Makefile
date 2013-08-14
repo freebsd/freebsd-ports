@@ -18,7 +18,6 @@ USE_BDB=	41
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-berkeley-db="${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}"
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/cDonkey
 

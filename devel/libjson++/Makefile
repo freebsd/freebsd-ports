@@ -11,6 +11,5 @@ COMMENT=	Small C++ library to handle JSON serialized data
 
 USES=		cmake
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

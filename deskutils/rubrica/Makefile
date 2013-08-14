@@ -22,7 +22,6 @@ USES=        pathfix gettext
 USE_GNOME=	gconf2 gnomeprefix libglade2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-MAKE_JOBS_SAFE=	yes
 
 GCONF_SCHEMAS=	rubrica2.schemas
 

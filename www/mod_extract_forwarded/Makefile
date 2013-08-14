@@ -18,7 +18,6 @@ YOSHFUJI_DESC=	yoshfuji patch (support IPv6 addr in config, etc)
 USE_APACHE=	22
 WRKSRC=		${WRKDIR}/extract_forwarded
 PORTDOCS=	INSTALL README
-MAKE_JOBS_SAFE=	yes
 PATCH_STRIP=	-p1
 
 AP_FAST_BUILD=	yes

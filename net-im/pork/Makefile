@@ -13,7 +13,6 @@ USES=			perl5
 USE_OPENSSL=		yes
 
 GNU_CONFIGURE=		yes
-MAKE_JOBS_SAFE=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^inline //' ${WRKSRC}/src/*.h

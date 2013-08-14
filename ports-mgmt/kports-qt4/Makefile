@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 
 USE_QT4=	corelib gui network qmake_build moc_build uic_build rcc_build
 QMAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

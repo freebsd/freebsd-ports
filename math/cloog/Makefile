@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-gmp-prefix=${PREFIX}
 CONFIGURE_ENV=	pkgconfig_libdir=${PREFIX}/libdata/pkgconfig/
 
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	${LN} -s ${PREFIX}/lib/libcloog-isl.so.4 \

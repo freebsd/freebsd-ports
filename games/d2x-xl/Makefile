@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--disable-debug --enable-release=yes \
 USE_SDL=	sdl mixer image
 USES=		gmake motif
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-MAKE_JOBS_SAFE=	yes
 AUTOMAKE_ARGS=	--add-missing --copy
 
 USE_DOS2UNIX=	missing depcomp

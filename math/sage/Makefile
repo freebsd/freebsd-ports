@@ -35,7 +35,6 @@ USE_TK=		yes
 USE_GMAKE=	yes
 USE_TEX=	latex:build
 USES=		iconv
-MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
 CFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}

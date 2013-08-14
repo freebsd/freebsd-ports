@@ -47,7 +47,6 @@ IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		mpv.1
 MANCOMPRESSED=	no

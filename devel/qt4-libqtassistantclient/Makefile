@@ -15,7 +15,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser integration library
 
 USE_QT4=	qmake_build moc_build rcc_build corelib gui network
-MAKE_JOBS_SAFE=	yes
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

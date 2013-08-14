@@ -26,7 +26,6 @@ SDL_dESC=	Enable support for SDL_image
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

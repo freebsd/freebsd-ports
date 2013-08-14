@@ -26,7 +26,6 @@ USE_QT4=	dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 # To be kept in sync with sysutils/zeitgeist.

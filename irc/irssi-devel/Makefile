@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GMAKE=	yes
 WANT_PERL=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		irssi.1
 

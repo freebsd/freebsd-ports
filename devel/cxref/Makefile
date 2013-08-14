@@ -17,7 +17,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-cxref-cpp
 ALL_TARGET=	programs
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		cxref.1 cxref-query.1
 

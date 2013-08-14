@@ -18,7 +18,6 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 DISTINFO_FILE=	${PORTSDIR}/devel/py-pykde4/distinfo
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 

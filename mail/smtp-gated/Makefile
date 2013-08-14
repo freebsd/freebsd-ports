@@ -19,7 +19,6 @@ CHUNKING_DESC=	Enable support for SMTP CHUNKING extension
 ECONNRESET_DESC=	Be quiet about Connection reset by peer message
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

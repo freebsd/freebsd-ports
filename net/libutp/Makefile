@@ -18,7 +18,6 @@ LICENSE=	MIT
 
 USE_DOS2UNIX=	yes
 MAKEFILE=	${FILESDIR}/BSDmakefile
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 # GitHub will issue a 302 redirect, no way around that, so we
 # have to allow fetch(1) to follow the redirect, which is normally

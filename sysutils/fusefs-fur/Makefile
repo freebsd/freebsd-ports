@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	VCHMOD
 OPTIONS_DEFAULT=	VCHMOD
 VCHMOD_DESC=	Fake hook for chmod that just returns 0
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig iconv

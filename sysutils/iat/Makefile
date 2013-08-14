@@ -11,7 +11,6 @@ COMMENT=	Converter of many types of CD-ROM image file formats into ISO-9660
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/iat
 MAN1=		iat.1

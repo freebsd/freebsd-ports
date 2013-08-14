@@ -12,7 +12,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A modified version of mod_log_config for apache2
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22
 

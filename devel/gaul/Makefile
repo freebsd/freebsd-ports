@@ -18,7 +18,6 @@ COMMENT=	Genetic Algorithm Utility Library
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
-MAKE_JOBS_SAFE=  yes
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes

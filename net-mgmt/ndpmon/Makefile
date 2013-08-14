@@ -34,7 +34,6 @@ USE_GNOME=	libxml2
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	ndpmonitor
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OSTYPE=FreeBSD
 CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${ETCDIR} \

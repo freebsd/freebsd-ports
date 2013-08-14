@@ -14,7 +14,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A small, fast library to generate prime numbers in order
 
 ALL_TARGET=
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	primes.1 primegaps.1
 MAN3=	primegen.3

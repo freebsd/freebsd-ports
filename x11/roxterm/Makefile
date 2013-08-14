@@ -25,7 +25,6 @@ USE_GNOME=	libglade2 librsvg2 vte
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool:env
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	roxterm.1 \
 	roxterm-config.1

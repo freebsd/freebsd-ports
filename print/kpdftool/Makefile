@@ -16,7 +16,6 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 USE_ZIP=	yes
 USE_QT4=	qt3support moc_build porting_build qmake_build uic3_build
 USE_GHOSTSCRIPT_RUN=	yes
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"KPDFTool" "${COMMENT}" "kpdftool" \
 			"kpdftool" "Qt;Utility;" false

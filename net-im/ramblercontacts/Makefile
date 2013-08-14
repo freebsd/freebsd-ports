@@ -22,7 +22,6 @@ USE_XORG=	xscrnsaver
 USE_QT4=	qmake_build moc_build rcc_build uic_build designer_build \
 		webkit
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 # Remove bogus Byte Order Mark (BOM) from some source files

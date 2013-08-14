@@ -18,7 +18,6 @@ USE_GNOME=	glib20 intltool
 USES=		gettext ncurses readline
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

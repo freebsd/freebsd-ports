@@ -25,7 +25,6 @@ USE_AUTOTOOLS=		autoconf autoheader automake aclocal
 USE_PYTHON=			yes
 USE_PERL5_BUILD=	yes
 AUTOMAKE_ARGS+=		--add-missing -Wno-portability
-MAKE_JOBS_SAFE=		yes
 
 OPTIONS_DEFINE=		PYTHONLIBS
 PYTHONLIBS_DESC=	Install the Python API

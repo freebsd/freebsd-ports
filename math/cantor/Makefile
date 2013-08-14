@@ -22,7 +22,6 @@ USE_QT4=	corelib qtestlib_build xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	MAXIMA OCTAVE R
 MAXIMA_DESC=	Maxima backend

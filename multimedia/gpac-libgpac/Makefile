@@ -19,7 +19,6 @@ COMMENT=	Gpac MPEG-4 Systems library and headers
 WRKSRC=		${WRKDIR}/gpac
 ALL_TARGET=	lib
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

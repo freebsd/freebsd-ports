@@ -29,7 +29,6 @@ USE_BINUTILS=	yes
 USE_APACHE=	22
 USE_PYTHON=	2.6+
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 # debugging
 #MAKE_ENV+=     V=1

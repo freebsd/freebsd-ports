@@ -15,7 +15,6 @@ COMMENT=	Video Disk Recorder - OSD teletext plugin
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"

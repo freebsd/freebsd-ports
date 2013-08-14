@@ -16,7 +16,6 @@ USE_SDL=	sdl mixer net
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="M.A.X.R." \
 		"Mechanized Assault and Exploration Reloaded" \

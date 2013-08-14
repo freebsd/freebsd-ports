@@ -12,7 +12,6 @@ DISTFILES=	xmlns.h mod_xmlns.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for XML namespaces
 
-MAKE_JOBS_SAFE=  yes
 
 USE_GNOME=	libxml2
 USE_APACHE=	22+

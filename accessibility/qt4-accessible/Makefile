@@ -12,7 +12,6 @@ COMMENT=	Qt accessibility widgets
 USE_QT4=	qmake_build moc_build qt3support corelib gui network sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

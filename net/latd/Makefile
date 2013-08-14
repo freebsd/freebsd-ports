@@ -12,7 +12,6 @@ COMMENT=	The Linux-DECnet project LAT protocol suite
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		llogin.1
 MAN5=		latd.conf.5

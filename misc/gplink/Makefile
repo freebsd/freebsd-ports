@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} ${USB_CFLAGS}" \
 		LDFLAGS="${USB_LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/gplink
 

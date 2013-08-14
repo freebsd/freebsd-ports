@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache 2 CVS aware
 
-MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_cvs2
 

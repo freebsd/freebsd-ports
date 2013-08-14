@@ -15,7 +15,6 @@ COMMENT=	OCR engine for Japanese language
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsip.a:${PORTSDIR}/graphics/O2-tools
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-O2tools=${LOCALBASE} --datadir=${DATADIR}
 

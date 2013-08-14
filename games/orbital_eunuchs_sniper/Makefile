@@ -18,7 +18,6 @@ COMMENT=	An overhead shooting game
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-games-dir=${PREFIX}/share
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README TODO readme.txt
 

@@ -17,7 +17,6 @@ USES=		cmake
 USE_QT4=	gui xml designer svg opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}

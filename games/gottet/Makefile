@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_QT4=	moc_build qmake_build rcc_build iconengines imageformats
-MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog

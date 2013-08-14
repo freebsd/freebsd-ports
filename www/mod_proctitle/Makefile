@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Set httpd process titles to reflect currently processed request
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes

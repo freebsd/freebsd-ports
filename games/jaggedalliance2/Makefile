@@ -19,7 +19,6 @@ ONLY_FOR_ARCHS_REASON=	Needs a little endian environment
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-MAKE_JOBS_SAFE=	yes
 NO_CDROM=	License only permits non-commerical use
 NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 

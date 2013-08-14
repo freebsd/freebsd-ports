@@ -24,7 +24,6 @@ MAKEFILE=	Makefile.unx
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
 		DFLAGS="${CFLAGS} -DX -I${LOCALBASE}/include" \
 		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt -lm"
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

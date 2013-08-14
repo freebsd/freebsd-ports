@@ -21,7 +21,6 @@ GH_COMMIT=	28cade5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal automake
 USE_GMAKE=	yes
 AUTOMAKE_ARGS=	--add-missing

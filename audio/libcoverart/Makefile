@@ -16,7 +16,6 @@ LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson \
 USES=		cmake
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 # {PROJECT_VERSION} is not a variable nor a typo, just part of the directory name
 WRKSRC=		${WRKDIR}/${PORTNAME}-{PROJECT_VERSION}

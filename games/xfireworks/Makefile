@@ -18,7 +18,6 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 USE_XORG=	x11
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xfireworks.1
 

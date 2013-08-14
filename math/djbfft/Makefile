@@ -17,7 +17,6 @@ COMMENT=	An extremely fast library for floating-point convolution
 DISABLE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check
-MAKE_JOBS_SAFE=	yes
 
 HEADER_FILES=	complex4.h complex8.h fftc4.h fftc8.h fftfreq.h \
 		fftr4.h fftr8.h real4.h real8.h

@@ -17,7 +17,6 @@ MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
 NO_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 MAN8=		dlint.8
 
 do-configure:

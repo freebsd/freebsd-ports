@@ -33,7 +33,6 @@ USE_GL=		gl
 USE_OPENAL=	al
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
-MAKE_JOBS_SAFE=	yes
 
 USE_WX=		2.8
 WX_COMPS=	wx:lib

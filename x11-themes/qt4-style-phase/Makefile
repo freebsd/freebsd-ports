@@ -17,7 +17,6 @@ LICENSE=	MIT
 
 USE_BZIP2=	yes
 USE_QT4=	corelib gui qmake_build moc_build
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

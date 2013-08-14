@@ -52,7 +52,6 @@ USE_PERL5=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab --disable-gtk3
 

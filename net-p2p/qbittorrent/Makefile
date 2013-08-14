@@ -20,7 +20,6 @@ USES=		pkgconfig
 HAS_CONFIGURE=	yes
 USE_QT4=	corelib network qmake_build moc_build rcc_build
 QT_NONSTANDARD=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1?=		qbittorrent.1
 

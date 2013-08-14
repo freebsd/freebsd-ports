@@ -14,7 +14,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 

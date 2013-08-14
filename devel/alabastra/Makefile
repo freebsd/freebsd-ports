@@ -21,7 +21,6 @@ USE_QT4=	gui xml \
 		iconengines_run
 USE_GMAKE=	yes
 ALL_TARGET=	Alabastra
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/alabastra
 

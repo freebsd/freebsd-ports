@@ -12,7 +12,6 @@ COMMENT=	Getting the Gold and Avoiding Death
 
 USE_XORG=	x11
 MAKE_ENV=	X11BASE="${LOCALBASE}"
-MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

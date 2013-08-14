@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USE_XORG=	x11 xext xv
 MAKE_ENV=	X11BASE="${LOCALBASE}"
 ALL_TARGET=	standard
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README README.FAQ
 PLIST_FILES=	bin/cingb bin/cingb_conf

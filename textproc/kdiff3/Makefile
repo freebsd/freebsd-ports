@@ -17,7 +17,6 @@ COMMENT=	A KDE4 graphical frontend for diff
 USE_KDE4=	kdelibs libkonq kdeprefix kdehier automoc4
 USES=		cmake gettext
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 #Fix build with kdelibs>=4.5.0

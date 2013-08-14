@@ -28,7 +28,6 @@ USE_QT4=	corelib dbus declarative designer_build gui network qtestlib \
 		script xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CMAKE_ARGS=	-DKDEPIM_MOBILE_UI:BOOL=OFF
 

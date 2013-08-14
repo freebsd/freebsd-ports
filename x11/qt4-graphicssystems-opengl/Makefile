@@ -12,7 +12,6 @@ COMMENT=	OpenGL rendering engine (experimental)
 USE_QT4=	qmake_build opengl
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_GL=		glu

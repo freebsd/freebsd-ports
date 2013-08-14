@@ -23,7 +23,6 @@ DISTVERSION2=	8d
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
-MAKE_JOBS_SAFE=	yes
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
 

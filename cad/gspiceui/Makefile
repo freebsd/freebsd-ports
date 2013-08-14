@@ -31,7 +31,6 @@ USE_WX=		2.6+
 WX_UNICODE=	yes
 USE_GCC=	4.6+
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"GSpiceUI" "Circuit Simulator GUI" \
 			"${PREFIX}/share/pixmaps/gspiceui-48x48.xpm" \

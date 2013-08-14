@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	DOCS
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lout prg2lout
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		lout.1 prg2lout.1
 

@@ -11,7 +11,6 @@ COMMENT=	Enhanced replacement for GNU stow written in C++
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug

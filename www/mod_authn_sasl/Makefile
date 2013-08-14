@@ -19,7 +19,6 @@ LICENSE=	AL2
 
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SASLAUTHD
 SASLAUTHD_DESC=	cyrus-sasl2-saslauthd support

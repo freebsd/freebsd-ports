@@ -13,7 +13,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module for reading and writing ZIP files
 
-MAKE_JOBS_SAFE=	yes
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	zlib

@@ -15,7 +15,6 @@ USE_QT4=	designer gui network script svg xml \
 		linguist_build
 USES=		cmake
 CMAKE_ARGS+=	-DWITH_UseRPMTools:Bool=Off
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/COMMAND "lrelease"/s,lrelease,$${QT_LRELEASE_EXECUTABLE},' \

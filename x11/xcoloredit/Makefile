@@ -14,7 +14,6 @@ COMMENT=	Find colour values by graphical colour mixing
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAKE_JOBS_SAFE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		xcoloredit.1

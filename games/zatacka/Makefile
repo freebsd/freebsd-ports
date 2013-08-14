@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include"
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Zatacka" \
 		"Nibbles-like multiplayer game" \

@@ -20,7 +20,6 @@ USES=		cmake pkgconfig
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	${PA_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PA_LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}

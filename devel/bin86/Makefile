@@ -11,7 +11,6 @@ COMMENT=	16-bit assembler and loader
 
 OPTIONS_DEFINE=	DOCS
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		as86.1 ld86.1
 PORTDOCS=	ChangeLog README README-0.4

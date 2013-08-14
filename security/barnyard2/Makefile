@@ -37,7 +37,6 @@ ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 
 USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

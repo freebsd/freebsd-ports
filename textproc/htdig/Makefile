@@ -12,7 +12,6 @@ DISTNAME=	htdig-3.2.0b6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW indexing and searching system
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \

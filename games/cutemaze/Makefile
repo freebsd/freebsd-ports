@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	ChangeLog README
 

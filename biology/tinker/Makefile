@@ -23,7 +23,6 @@ MAKE_ENV=	HAVE_G2C=yes
 MAKEFILE=	${WRKSRC}/make/Makefile
 ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

@@ -18,7 +18,6 @@ COMMENT=	IP Stack Integrity Checker
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	isic.1
 

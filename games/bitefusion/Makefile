@@ -16,7 +16,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/bitefusion
 

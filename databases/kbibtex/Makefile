@@ -18,7 +18,6 @@ USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix automoc4 sharedmime
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		webkit
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kbibtex.1
 

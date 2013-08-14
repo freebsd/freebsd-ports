@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 USE_LUA=	5.1
 USE_PERL5_BUILD=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 SAVEDIR=	\~/.stonesoup
 WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/

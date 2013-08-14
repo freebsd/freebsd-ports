@@ -16,7 +16,6 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/README.txt
 
 USE_SDL=	mixer image sdl
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/moon-lander
 

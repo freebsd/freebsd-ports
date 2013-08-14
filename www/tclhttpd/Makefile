@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl="${TCL_LIBDIR}"	\
 		--with-tclinclude="${TCL_INCLUDEDIR}"
 
-MAKE_JOBS_SAFE=	yes
 USE_TCL=	84+
 MAN1=		tclhttpd.1
 

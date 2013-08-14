@@ -19,7 +19,6 @@ LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	# empty
 AUTOMAKE_ARGS=	--copy --add-missing --foreign
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 

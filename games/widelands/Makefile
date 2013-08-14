@@ -26,7 +26,6 @@ CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 USE_LUA=	5.1+
 USE_SDL=	sdl mixer image net ttf gfx
 USE_PYTHON_BUILD=2.5+
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/widelands
 

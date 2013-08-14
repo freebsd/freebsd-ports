@@ -11,7 +11,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	mk@neon1.net
 COMMENT=	An Apache module to provide public key ticket based authentication
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 HAS_CONFIGURE=	yes

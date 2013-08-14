@@ -30,7 +30,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 PORTDOCS=	LICENSE readme.txt tango/
 
 .include <bsd.port.pre.mk>

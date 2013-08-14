@@ -18,7 +18,6 @@ CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		hamfax.1
 .include <bsd.port.mk>

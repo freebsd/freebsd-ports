@@ -18,7 +18,6 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 CONFLICTS=	leptonlib-[0-9]*
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

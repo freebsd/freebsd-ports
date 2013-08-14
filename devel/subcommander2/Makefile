@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-apr-util=${LOCALBASE}/bin/apu-1-config \
 		--with-openssl=${OPENSSLBASE}
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${QT_INCDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib

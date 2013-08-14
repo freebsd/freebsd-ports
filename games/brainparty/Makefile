@@ -15,7 +15,6 @@ COMMENT=	Family-friendly set of 36 puzzle games
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer ttf gfx image
 USE_GL=		gl glu
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

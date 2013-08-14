@@ -16,7 +16,6 @@ USES=		cmake
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_KDE4=	kdeprefix kdelibs workspace automoc4
 
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

@@ -20,7 +20,6 @@ BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 IGNORE_WITH_PGSQL=	82 83
 
-MAKE_JOBS_SAFE=	yes
 USES=		gettext
 USE_PGSQL=	yes
 USE_GMAKE=	yes

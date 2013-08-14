@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--enable-profile --enable-uyield
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
-MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

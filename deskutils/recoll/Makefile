@@ -15,7 +15,6 @@ BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 
 USES=		iconv gmake
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -21,7 +21,6 @@ PHP_DESC=	Install PHP for reporting generating
 USE_AUTOTOOLS=	autoconf aclocal
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
 		--sysconfdir="${ETCDIR}" \

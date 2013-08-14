@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 PROJECTHOST=	modmemcache

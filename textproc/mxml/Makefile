@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USES=	pathfix
 CONFIGURE_ARGS=	--with-docdir=no
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=	mxmldoc.1

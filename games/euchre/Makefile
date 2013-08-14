@@ -14,7 +14,6 @@ LICENSE=	GPLv2 # (or later)
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/euchre
 

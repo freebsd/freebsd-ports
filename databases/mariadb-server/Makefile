@@ -45,7 +45,6 @@ STATIC_DESC=	Statically link executables (not on 9.x)
 SSL_DESC=	Activate SSL support
 OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
 
-MAKE_JOBS_SAFE=	yes
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}

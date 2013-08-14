@@ -35,7 +35,6 @@ USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 LEVELS=		Xye%20level%20-%20Open%20Ended Xye%20level%20-%20Sorting \
 		Xye%20level%20-%20The%20insider Xye%20level%20-%20The%20slow%20speedrun \

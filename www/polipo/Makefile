@@ -16,7 +16,6 @@ COMMENT=	A small and fast caching web proxy
 
 MAN1=		polipo.1
 
-MAKE_JOBS_SAFE=	yes
 USE_RC_SUBR=	polipo
 
 .include <bsd.port.pre.mk>

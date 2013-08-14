@@ -13,7 +13,6 @@ COMMENT=	A text viewer for Japanese vertical writings
 
 USES=		bison
 USE_GNOME=	imlib
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

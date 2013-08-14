@@ -31,7 +31,6 @@ USE_XORG=	xcursor xft xi
 USE_TEX=	latex:build dvipsk:build
 USE_LDCONFIG=	yes
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/giac
 PORTDOCS=	*

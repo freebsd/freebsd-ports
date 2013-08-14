@@ -23,7 +23,6 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
 
 USES=		cmake:outsource pkgconfig
-MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes

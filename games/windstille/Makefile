@@ -24,7 +24,6 @@ USE_OPENAL=	al
 USE_GL=		glew
 USE_SDL=	sdl image
 USES=		bison
-MAKE_JOBS_SAFE=	yes
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib ${WRKSRC}/data/music/*

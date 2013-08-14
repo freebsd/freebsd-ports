@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool autoconf
 AUTOTOOLSFILES=	aclocal.m4
 USES=		gmake iconv
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread

@@ -25,7 +25,6 @@ USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	YES
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl -liconv
-MAKE_JOBS_SAFE=	YES
 
 MAN1=		tpm_sealdata.1 tpm_version.1				\
 		tpmtoken_import.1 tpmtoken_init.1 tpmtoken_objects.1	\

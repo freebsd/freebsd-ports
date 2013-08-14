@@ -34,7 +34,6 @@ USE_QT4=	corelib dbus declarative designer_build gui phonon \
 USE_XORG=	x11 xcursor
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 MAN1=		kdesu.1 plasmapkg.1

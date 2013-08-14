@@ -26,7 +26,6 @@ USES=		bison iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
-MAKE_JOBS_SAFE=	yes
 
 GCC_TARG=	${PKGNAMEPREFIX:S/-$//}
 

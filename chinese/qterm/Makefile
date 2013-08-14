@@ -16,7 +16,6 @@ USE_QT4=	codecs-cn_run codecs-tw_run gui help-tools_build \
 		linguist_build moc_build network qt3support_build \
 		qmake_build rcc_build uic_build xml
 USE_XORG=	x11 ice
-MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
 CONFLICTS_INSTALL=	torque-[0-9]*

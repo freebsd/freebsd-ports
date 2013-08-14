@@ -20,7 +20,6 @@ COMMENT=	Video Disk Recorder - telnet control plugin
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION:S/a45/a/}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"

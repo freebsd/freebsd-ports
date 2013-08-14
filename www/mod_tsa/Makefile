@@ -14,7 +14,6 @@ COMMENT=	Time stamping authority (RFC 3161) module for apache
 OPTIONS_DEFINE=	MYSQL PGSQL FIREBIRD DEBUG DEBUG_MEMORY
 DEBUG_MEMORY_DESC=	Memory debug
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-incdir=${OPENSSLINC} \

@@ -14,7 +14,6 @@ COMMENT=	WYSIWYG scientific text editor
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
-MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	yes
 USE_TEX=	tex

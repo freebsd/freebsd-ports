@@ -10,7 +10,6 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Disk Information Utility
 
 MAKE_ENV+=	prefix="${PREFIX}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		di.1
 

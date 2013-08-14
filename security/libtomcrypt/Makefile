@@ -18,7 +18,6 @@ MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	library
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${PREFIX}/include
 

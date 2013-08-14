@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_cppunit_TestRunner_h=no
 CONFIGURE_ARGS=	--with-xerces-c=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE}
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME:S/-/_/}
 

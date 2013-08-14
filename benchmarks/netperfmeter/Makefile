@@ -18,7 +18,6 @@ MAN1=		netperfmeter.1
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -34,7 +34,6 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 JAVA_VERSION=	1.6
 
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV+=	ProcessDep=none
 NO_INSTALL_MANPAGES=	yes
 

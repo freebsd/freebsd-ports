@@ -18,7 +18,6 @@ CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
 
 MAN1=		cgi-wrapper.1 hiawatha.1 ssi-cgi.1 wigwam.1
 
-MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
 USES=		cmake
 USE_LDCONFIG=	yes

@@ -29,7 +29,6 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 MAKE_ENV=	CXX_FLAGS="${CXXFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/pypersrc.py bin/pypersrc2.py bin/pypersrc
 

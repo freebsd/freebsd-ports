@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|g' \

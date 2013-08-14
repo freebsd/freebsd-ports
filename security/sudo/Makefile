@@ -15,7 +15,6 @@ LICENSE_NAME=	Sudo license
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgcc
 LDFLAGS+=	-lssp_nonshared

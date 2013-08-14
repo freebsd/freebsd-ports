@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/mux2.6/src
 USES=		gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 

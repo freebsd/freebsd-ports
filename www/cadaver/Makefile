@@ -16,7 +16,6 @@ LIB_DEPENDS=	neon:${PORTSDIR}/www/neon29
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-netrc
 ALL_TARGET=	cadaver
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		cadaver.1
 PLIST_FILES=	bin/cadaver

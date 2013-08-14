@@ -22,7 +22,6 @@ USES=		pkgconfig pathfix iconv
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 

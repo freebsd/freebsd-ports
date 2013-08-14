@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	NLS
 USE_AUTOTOOLS=	libtool
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

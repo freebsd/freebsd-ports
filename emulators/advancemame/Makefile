@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-asm --disable-svgalib --disable-fb \
 		--disable-alsa --enable-oss --disable-slang \
 		--disable-ncurses --disable-kevent
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/advance
 

@@ -31,7 +31,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
 ALL_TARGET=	${PORTNAME}.so
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include

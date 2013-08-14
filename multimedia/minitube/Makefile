@@ -13,7 +13,6 @@ USE_QT4=	gui network xml dbus phonon phonon-gst \
 USE_GSTREAMER=	ffmpeg
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 QMAKE_ARGS=	-recursive PREFIX=${PREFIX} QMAKE_LRELEASE=${LRELEASE} ${QMAKE_PRO}

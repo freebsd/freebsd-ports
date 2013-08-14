@@ -22,7 +22,6 @@ GITHASH=	9d3d6ea
 WRKSRC=		${WRKDIR}/pipelka-${PORTNAME}-${GITHASH}
 PATCH_STRIP=	-p1
 USE_AUTOTOOLS=	libtoolize aclocal libtool automake autoconf
-MAKE_JOBS_SAFE=	yes
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE_PREFIX=	${PREFIX}/share/xbmc

@@ -15,7 +15,6 @@ COMMENT=	Puzzle game - remove all tiles from the table
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image ttf
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Brikx" \
 		"Puzzle game" \

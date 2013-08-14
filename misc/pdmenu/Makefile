@@ -25,7 +25,6 @@ CONFIGURE_ENV=	SLANG_H_LOC="${LOCALBASE}/include/slang.h" \
 		SLANG_LIB_LOC="${LOCALBASE}/lib" \
 		LIBS="-lcurses -lintl"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		pdmenu.1
 MAN5=		pdmenurc.5

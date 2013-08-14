@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--enable-gtk2 \
 		--enable-jack \
 		--disable-portmidi \
 		--sysconfdir=${PREFIX}/etc
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 \
 		-I${LOCALBASE}/include

@@ -20,7 +20,6 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 USE_XORG=	x11
 MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib"
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/musca
 MAN1=	musca.1

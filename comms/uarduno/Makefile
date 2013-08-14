@@ -27,7 +27,6 @@ WRKSRC=		${WRKDIR}/uarduno
 
 PLIST_FILES=	uarduno.ko \
 		"@unexec kldxref ${KMODDIR}"
-MAKE_JOBS_SAFE=	yes
 
 # no license required
 LICENSE=		BSD

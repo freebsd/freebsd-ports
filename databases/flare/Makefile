@@ -23,7 +23,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	flared flarei
 SUB_FILES=	pkg-message
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	@${INSTALL} -d ${_BINOWNGRP} -m 0750 /var/db/flare

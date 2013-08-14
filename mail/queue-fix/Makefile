@@ -13,7 +13,6 @@ COMMENT=	Repairs or generates a qmail queue structure
 
 USES=		qmail:run
 
-MAKE_JOBS_SAFE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 

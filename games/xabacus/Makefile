@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		xabacus.6
 

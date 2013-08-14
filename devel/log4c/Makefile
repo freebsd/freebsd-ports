@@ -17,7 +17,6 @@ OPTIONS_DEFAULT=EXPAT
 USES=	pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	log4c-config.1
 

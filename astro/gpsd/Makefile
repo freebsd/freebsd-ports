@@ -18,7 +18,6 @@ USE_RC_SUBR=	gpsd
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFO=	gps-${PORTVERSION}.egg-info
-MAKE_JOBS_SAFE=	yes
 
 SCONS_BUILDENV=	CC=${CC}
 SCONS_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \

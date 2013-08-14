@@ -33,7 +33,6 @@ WRKSRC=		${WRKDIR}/${PORTVERSION}
 CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
-MAKE_JOBS_SAFE=	yes
 
 PORTDATA=	config demos packages
 PORTDOCS=	*

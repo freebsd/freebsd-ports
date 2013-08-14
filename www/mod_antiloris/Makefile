@@ -10,7 +10,6 @@ MASTER_SITES=	ftp://ftp.monshouwer.eu/pub/linux/mod_antiloris/
 MAINTAINER=	alex@vts.su.ac.rs
 COMMENT=	Protect Apache 2.x against the Slowloris HTTP DoS attack
 
-MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 USE_APACHE=	22

@@ -15,7 +15,6 @@ MAKEFILE=	makefile
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 

@@ -17,7 +17,6 @@ USE_QT4=	corelib dbus gui \
 FETCH_ARGS=	-Fpr
 USE_BZIP2=	yes
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	GENDOCS

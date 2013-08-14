@@ -19,7 +19,6 @@ USE_GNOME=	gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=	pkgconfig
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	ANIMATION
 ANIMATION_DESC=	Animation support

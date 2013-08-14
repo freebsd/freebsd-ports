@@ -21,7 +21,6 @@ CONFLICTS=	autopano-sift-[0-9]*
 
 USE_GNOME=	libxml2
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/autopano bin/autopano-c-complete.sh \
 		bin/autopano-sift-c bin/generatekeys

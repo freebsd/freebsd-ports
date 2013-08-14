@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CXXFLAGS+=	-fpermissive
 CPPFLAGS+=	-I${LOCALBASE}/include

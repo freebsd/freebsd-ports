@@ -15,7 +15,6 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	Distributed source code management tool
 
 PROJECTHOST=	git-core
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		git.1 \
 		git-add.1 \

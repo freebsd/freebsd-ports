@@ -11,7 +11,6 @@ COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	AL2
 
-MAKE_JOBS_SAFE=	yes
 
 #LATEST_LINK=	mod_wsgi
 CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-2.* mod_wsgi-2.*

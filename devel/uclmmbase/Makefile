@@ -17,7 +17,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-ipv6
 .endif
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 post-configure:

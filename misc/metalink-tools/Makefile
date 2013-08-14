@@ -25,7 +25,6 @@ USES=		pkgconfig
 CONFIGURE_ENV+=	AWK="${AWK}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 # Documents to install
 DOC_FILES=	\

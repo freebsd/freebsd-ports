@@ -11,7 +11,6 @@ COMMENT=	Cross-platform multimedia development API
 
 USES=		pathfix cmake:outsource iconv
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DVIDEO_OPENGLES:BOOL=OFF -DPTHREADS_SEM:BOOL=OFF \
 		-DALTIVEC:BOOL=OFF

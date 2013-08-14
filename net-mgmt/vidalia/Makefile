@@ -16,6 +16,5 @@ COMMENT=	Graphical Tor controller based on Qt 4.x
 USES=		cmake
 INSTALLS_ICONS=	yes
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build network xml linguist_build
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

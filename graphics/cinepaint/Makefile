@@ -35,7 +35,6 @@ LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I aclocal
 AUTOMAKE_ARGS=	--copy --force-missing --foreign --add-missing
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

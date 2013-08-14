@@ -24,7 +24,6 @@ USE_QT4=	gui network svg \
 		linguist_build moc_build qmake_build rcc_build uic_build
 QMAKEFLAGS=	QMAKE_LRELEASE="${QT_PREFIX}/bin/lrelease-qt4"
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		x2goclient.1
 

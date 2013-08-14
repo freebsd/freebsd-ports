@@ -21,7 +21,6 @@ LICENSE=	GPLv2
 USE_SDL=	sdl net
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/Maelstrom
 DOCSDIR=	${PREFIX}/share/doc/Maelstrom

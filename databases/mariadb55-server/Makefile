@@ -20,7 +20,6 @@ COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mariadb55-client
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 NO_OPTIONS_SORT=yes
 
 OPTIONS_DEFINE+=	SSL OPENSSL PORTSSL FASTMTX

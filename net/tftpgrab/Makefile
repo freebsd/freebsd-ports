@@ -10,7 +10,6 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	TFTP stream extractor
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/tftpgrab
 

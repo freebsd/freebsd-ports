@@ -13,7 +13,6 @@ LICENSE_COMB=	multi
 
 USE_XORG=	x11 xproto
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gahr

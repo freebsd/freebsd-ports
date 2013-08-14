@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=--disable-threaded-resolver --disable-werror \
 		--without-axtls
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=yes
 USE_XZ=		yes
 USES=		pathfix

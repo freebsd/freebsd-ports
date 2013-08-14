@@ -19,6 +19,5 @@ WRKSRC=		${WRKDIR}/cloudcity
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

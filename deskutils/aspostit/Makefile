@@ -17,7 +17,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 USE_XORG=	xpm xaw xext x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		aspostit.1
 PLIST_FILES=	bin/aspostit

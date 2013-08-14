@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	NLS
 USE_XZ=		yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1

@@ -24,7 +24,6 @@ CMAKE_ARGS=	-DPODOFO_BUILD_SHARED:BOOL=TRUE \
 USE_GCC=	any
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		podofobox.1 podofocountpages.1 podofocrop.1 \
 		podofoencrypt.1 podofoimg2pdf.1 podofoimgextract.1 \

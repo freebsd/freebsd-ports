@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/live
 PLIST=		${WRKDIR}/pkg-plist
 
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_SCRIPT=	genMakefiles
 CONFIGURE_ARGS=		fixed-${OPSYS:L}

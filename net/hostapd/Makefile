@@ -14,7 +14,6 @@ LICENSE_COMB=	dual
 
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		hostapd_cli.1
 MAN8=		hostapd.8

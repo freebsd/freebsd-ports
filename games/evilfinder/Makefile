@@ -21,7 +21,6 @@ COMMENT=	Numerologically determine the evilness of things
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/ef \
 	%%WRAPPER%%bin/evilfinder \

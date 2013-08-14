@@ -20,7 +20,6 @@ USE_KDE4=	kdeprefix kdehier automoc4 kdelibs libkonq
 USES=		cmake:outsource
 USE_QT4=	qtestlib qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		ark.1
 

@@ -15,7 +15,6 @@ LICENSE=	BSD
 LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	yes
 MAN8=		jack_umidi.8
 

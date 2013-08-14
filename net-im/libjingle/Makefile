@@ -37,7 +37,6 @@ CONFIGURE_ENV=	EXPAT_CFLAGS="-I${LOCALBASE}/include" \
 		SPEEX_LIBS="$$(pkg-config --libs speex)"
 CONFIGURE_ARGS=	--with-ilbc=${LOCALBASE} \
 		--with-speex=${LOCALBASE}
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include -g
 LDFLAGS+=	-L${OPENSSLLIB} -L${LOCALBASE}/lib -pthread

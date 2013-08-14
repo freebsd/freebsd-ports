@@ -28,7 +28,6 @@ MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
 		USE_XFT='-DUSE_XFT' \
 		OPT="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/seaview %%DATADIR%%/seaview.html
 PLIST_DIRS=	%%DATADIR%%

@@ -13,7 +13,6 @@ COMMENT=	Tools to analyze qmail-send's activity
 
 USES=		qmail:run
 
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup

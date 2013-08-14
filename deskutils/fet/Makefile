@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 USE_QT4=	gui network xml \
 		moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		fet.1
 

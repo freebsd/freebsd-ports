@@ -19,7 +19,6 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib dbus gui \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 DISTINFO_FILE=	${PORTSDIR}/x11/kde4-baseapps/distinfo
 

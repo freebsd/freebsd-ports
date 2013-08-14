@@ -22,7 +22,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	${CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS+=	top_builddir="${WRKSRC}"
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 MAN1=		geeqie.1

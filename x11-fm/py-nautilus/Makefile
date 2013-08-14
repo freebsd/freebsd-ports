@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnome2 nautilus2
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VER}"
 
 DOCSDIR=	${PREFIX}/share/doc/nautilus-python

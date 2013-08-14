@@ -20,7 +20,6 @@ INSTALL_WRKSRC=	${WRKSRC}/bin
 
 USE_BZIP2=	yes
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

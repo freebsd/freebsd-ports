@@ -20,7 +20,6 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c
 
-MAKE_JOBS_SAFE=	yes
 
 AP_INC+=	${LOCALBASE}/include/home \
 		   	-I ${LOCALBASE}/include/php \

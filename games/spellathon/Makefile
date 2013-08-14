@@ -25,7 +25,6 @@ USE_GNOME=	glib20
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Spellathon" "${COMMENT}" "" "${PORTNAME}" "Education;Languages;" "true"
 

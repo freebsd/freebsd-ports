@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 ALL_TARGET=	build
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		opensched.1
 PLIST_FILES=	bin/opensched

@@ -12,7 +12,6 @@ COMMENT=	Send and receive files via ZMODEM protocol (unrestrictive)
 USE_CSTD=	gnu89
 
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		zmrx.1 zmtx.1

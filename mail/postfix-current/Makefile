@@ -27,7 +27,6 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* \
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"

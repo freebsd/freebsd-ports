@@ -29,7 +29,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
-MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README.iso README.iso.jp README.lesw.euc \
 		README.regex README.regex.jp README.ext.jp
 PLIST_FILES=	bin/jless bin/jlesskey bin/jlessecho

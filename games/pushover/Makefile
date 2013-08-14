@@ -19,7 +19,6 @@ USE_LUA=	5.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 

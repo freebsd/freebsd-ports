@@ -18,7 +18,6 @@ USES=		iconv
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--docdir=${WRKDIR}/tmproot
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread

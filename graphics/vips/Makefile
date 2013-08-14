@@ -37,7 +37,6 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango libxml2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 post-configure:

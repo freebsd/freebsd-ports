@@ -17,7 +17,6 @@ LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs
 
 USES=		ncurses
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

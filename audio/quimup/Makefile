@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 USE_QT4=	corelib gui network \
 		moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png

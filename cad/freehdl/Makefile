@@ -30,7 +30,6 @@ MAN5=		v2cc.libs.5
 INFO=		fire
 
 MANCOMPRESSED=	no
-MAKE_JOBS_SAFE=	yes
 
 PLIST_TMP=	${WRKDIR}/plist_tmp/
 

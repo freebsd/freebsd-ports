@@ -24,6 +24,5 @@ USE_KDE4=	kdehier kdelibs kdeprefix libksane pimlibs \
 		automoc4 qimageblitz libkcddb sharedmime
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USES=		cmake gettext
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

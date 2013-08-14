@@ -23,7 +23,6 @@ USE_QT4=	corelib dbus declarative gui network phonon script webkit xml \
 USE_RUBY=	yes
 USE_XZ=		yes
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 SUB_FILES=	ruby-kdebindings-env.sh pkg-message

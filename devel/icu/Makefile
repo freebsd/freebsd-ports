@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--with-data-packaging=library \
 			--enable-shared \
 			--enable-static
 
-MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=		yes
 INSTALL_TARGET=		install install-manx

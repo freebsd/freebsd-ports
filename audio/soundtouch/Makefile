@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I config/m4
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

@@ -11,7 +11,6 @@ COMMENT=	Tetris-like puzzle game based on a hexagonal grid
 
 USE_QT4=	gui qmake_build moc_build rcc_build
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.xpm

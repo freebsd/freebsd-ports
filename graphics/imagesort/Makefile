@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	x11 xt
 USE_GNOME=	imlib
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README imagesortrc.sample
 PLIST_FILES=	bin/imagesort

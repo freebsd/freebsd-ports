@@ -18,7 +18,6 @@ USE_GNOME=	glib20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		admsXml.1
 

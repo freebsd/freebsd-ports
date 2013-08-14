@@ -14,7 +14,6 @@ LIB_DEPENDS=	streams:${PORTSDIR}/deskutils/libstreams \
 
 USE_QT4=	corelib gui dbus moc_build uic_build qmake_build rcc_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <${.CURDIR}/../strigi/Makefile.common>
 .include <bsd.port.mk>

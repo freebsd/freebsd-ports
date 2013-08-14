@@ -11,7 +11,6 @@ COMMENT?=	UPnP IGD client lightweight library
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

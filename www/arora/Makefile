@@ -16,7 +16,6 @@ USE_QT4=	network webkit qmake_build moc_build uic_build rcc_build \
 		imageformats gui script sql
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		arora.1 arora-cacheinfo.1 arora-placesimport.1 htmlToXBel.1
 

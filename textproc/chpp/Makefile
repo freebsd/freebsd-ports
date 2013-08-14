@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader aclocal automake autoconf
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		fakebo.1
 PORTDOCS=	README custom.replies

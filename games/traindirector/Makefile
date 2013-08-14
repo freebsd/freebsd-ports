@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
 
-MAKE_JOBS_SAFE=	yes
 USES=		gmake
 USE_GNOME=	gtk20
 USE_ZIP=	yes

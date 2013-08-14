@@ -16,7 +16,6 @@ USE_QT4=	corelib declarative gui network \
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 USE_XORG=	xrender
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4

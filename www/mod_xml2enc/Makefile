@@ -11,7 +11,6 @@ DIST_SUBDIR=	mod_proxy_html
 MAINTAINER=	dnaeon@gmail.com
 COMMENT=	Apache module for converting encoding before and/or after a filter run
 
-MAKE_JOBS_SAFE=	yes
 
 # included in apache24
 # http://httpd.apache.org/docs/2.4/mod/mod_xml2enc.html

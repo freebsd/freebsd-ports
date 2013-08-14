@@ -16,7 +16,6 @@ LICENSE=	GPLv3 # (or later)
 USE_ZIP=	yes
 USE_DOS2UNIX=	*.cpp *.h
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

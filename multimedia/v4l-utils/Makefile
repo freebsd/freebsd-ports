@@ -23,7 +23,6 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DPREFIX=\\\"${PREFIX}\\\"" 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils
 MAN1=		ir-keytable.1

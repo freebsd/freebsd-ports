@@ -21,7 +21,6 @@ LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs \
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 

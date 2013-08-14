@@ -18,7 +18,6 @@ COMMENT?=	XML parser library for GNOME
 
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USES=		pathfix iconv
 USE_GNOME?=	pkgconfig

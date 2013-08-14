@@ -67,7 +67,6 @@ USES=		iconv perl5
 USE_PERL5=	build
 USE_GL=yes
 USE_CSTD=	gnu99
-MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 
 FAKEDIR=	${WRKDIR}/fake${PREFIX}

@@ -14,7 +14,6 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build gui xml
 USES=		cmake
 CMAKE_SOURCE_PATH=	src
 
-MAKE_JOBS_SAFE=	yes
 
 LRELEASE_CMD=	${LOCALBASE}/bin/lrelease-qt4
 LRELEASE_ARGS=	-compress -silent

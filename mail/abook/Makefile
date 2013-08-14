@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	NLS DOCS
 
 USES=		ncurses readline
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -26,7 +26,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \

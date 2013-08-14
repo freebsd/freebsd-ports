@@ -36,7 +36,6 @@ CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-extra-prefix=${LOCALBASE}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		lyx.1 lyxclient.1 tex2lyx.1
 

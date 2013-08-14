@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	EXAMPLES
 USES=		ncurses
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 # Nickle now has bindings which are likely to pull in libraries that need
 # libpthread.  Link to it now explicitly, or it wouldn't work at runtime.

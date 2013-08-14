@@ -13,7 +13,6 @@ LICENSE=	BSD
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	proxsmtpd
 SUB_FILES=	pkg-message

@@ -21,7 +21,6 @@ USE_DOS2UNIX=	VAX/vax_sysdev.c
 USE_GMAKE=	yes
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

@@ -16,7 +16,6 @@ USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4 sharedmime
 USES=		cmake:outsource
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \

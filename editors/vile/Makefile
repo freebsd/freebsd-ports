@@ -23,7 +23,6 @@ USES=		pkgconfig shebangfix
 SHEBANG_FILES=	perl/vileget
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		vile.1
 

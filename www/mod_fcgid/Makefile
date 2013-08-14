@@ -12,7 +12,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	An alternative FastCGI module for Apache2
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 

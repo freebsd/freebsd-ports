@@ -18,7 +18,6 @@ LIB_DEPENDS=	xine:${PORTSDIR}/multimedia/libxine \
 USES=		cmake gettext
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 

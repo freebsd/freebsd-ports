@@ -27,7 +27,6 @@ QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-growl
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/esperanza
 

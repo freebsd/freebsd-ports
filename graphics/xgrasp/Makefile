@@ -16,7 +16,6 @@ NO_WRKSUBDIR=	yes
 
 USES=		imake
 USE_XORG=	x11 xext
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		glib.1 xgrasp.1
 PLIST_FILES=	bin/glib bin/xgrasp

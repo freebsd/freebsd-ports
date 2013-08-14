@@ -28,7 +28,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FFMPEG_CFLAGS="-I${LOCALBASE}/include/ffmpeg1" \
 		FFMPEG_LIBS="-lavcodec1 -lavformat1 -lavutil1 -L${LOCALBASE}/lib/ffmpeg1"
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	-@update-desktop-database

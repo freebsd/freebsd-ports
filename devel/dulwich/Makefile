@@ -13,7 +13,6 @@ COMMENT=	Pure-Python implementation of the Git file formats and protocols
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS HACKING NEWS README introduction.txt \
 		object-store.txt protocol.txt remote.txt repo.txt tag.txt

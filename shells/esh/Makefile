@@ -15,7 +15,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		readline
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 INFO=		esh
 

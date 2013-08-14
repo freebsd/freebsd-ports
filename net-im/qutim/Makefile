@@ -30,7 +30,6 @@ USE_QT4=	designer_build	\
 		xml
 USE_XORG=	xscrnsaver
 
-MAKE_JOBS_SAFE=	yes
 
 USES=		cmake
 CMAKE_ARGS+=	-DUNIX:BOOL=1 -DBSD:BOOL=1

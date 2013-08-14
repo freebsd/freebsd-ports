@@ -20,7 +20,6 @@ BUILD_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-L${PREFIX}/lib
 PORTDOCS=	README AUTHORS

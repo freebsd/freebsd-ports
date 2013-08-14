@@ -16,7 +16,6 @@ COMMENT=	Futuristic overhead shooter
 USE_SDL=	mixer image sdl
 USE_GL=		gl glu
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

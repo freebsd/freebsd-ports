@@ -10,7 +10,6 @@ MASTER_SITES=	http://freebsd.minira.nl/
 MAINTAINER=	viktor.leis@googlemail.com
 COMMENT=	Apache2 module for use with Common Lisp
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes

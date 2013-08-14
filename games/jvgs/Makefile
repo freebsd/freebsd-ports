@@ -17,7 +17,6 @@ USES=		cmake
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	${PORTNAME}
 

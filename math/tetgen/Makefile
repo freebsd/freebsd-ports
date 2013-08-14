@@ -23,7 +23,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 MAKEFILE=	makefile
 ALL_TARGET=	tetgen tetlib
-MAKE_JOBS_SAFE=	yes
 
 PORTEXAMPLES=	example.poly
 PLIST_FILES=	bin/tetgen include/tetgen.h lib/libtet.a

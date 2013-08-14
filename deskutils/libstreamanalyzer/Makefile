@@ -17,7 +17,6 @@ LIB_DEPENDS=	avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFI
 USES=		pkgconfig iconv
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 # supported versions: ffmpeg, ffmpeg1, ffmpeg-devel
 # corresponding FFMPEG_SUFFIX: '', '1', '-devel'

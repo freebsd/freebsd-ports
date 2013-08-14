@@ -18,7 +18,6 @@ USES=		cmake:outsource
 USE_QT4=	corelib gui opengl \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 
 .include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

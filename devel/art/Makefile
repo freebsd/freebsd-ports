@@ -19,7 +19,6 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	xml++-2.6:${PORTSDIR}/textproc/libxml++26
 
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/artlibgen/src/artlibgen ${PREFIX}/bin

@@ -15,7 +15,6 @@ RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-pthread"
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 MAN1=		ocat.1

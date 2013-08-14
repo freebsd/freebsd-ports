@@ -21,7 +21,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_RC_SUBR=	tinyproxy
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--program-transform-name="" \
 		--disable-silent-rules \

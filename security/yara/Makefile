@@ -12,7 +12,6 @@ COMMENT=	A malware identification and classification tool
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 PROJECTHOST=	yara-project
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

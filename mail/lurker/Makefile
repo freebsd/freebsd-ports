@@ -27,7 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mimelib-local \
 		--with-default-www-dir=${PREFIX}/www/lurker \
 		--with-cgi-bin-dir=${PREFIX}/www/lurker
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		lurker-index.1 lurker-list.1 lurker-params.1 \
 		lurker-regenerate.1 lurker-search.1 lurker-prune.1

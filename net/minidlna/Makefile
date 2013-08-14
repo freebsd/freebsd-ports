@@ -21,7 +21,6 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\
 		avformat:${PORTSDIR}/multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS+=--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
 

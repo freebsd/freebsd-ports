@@ -24,7 +24,6 @@ PORTDOCS=	peps.pdf
 PLIST_FILES=	bin/peps \
 		etc/peps.mime
 
-MAKE_JOBS_SAFE=	yes
 
 .if defined(WITHOUT_X11)
 ALL_TARGET=	peps

@@ -20,7 +20,6 @@ LICENSE=	GPLv2
 USE_RC_SUBR=	webcamd
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	yes
 MAN4=		a800.4 ce6230.4 dtv5100.4 gl861.4 mr800.4 pwcusb.4 sq905c.4 \
 		usbvision.4 af9005.4 cinergy.4 dw2102.4 gp8psk.4 \

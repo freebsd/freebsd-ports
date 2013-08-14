@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	CHANGELOG README making-of.txt notes.txt
 

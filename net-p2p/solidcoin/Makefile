@@ -31,7 +31,6 @@ WANT_BDB_VER=	47
 USE_GCC=	any
 USE_GMAKE=	yes
 ALL_TARGET=	${BINARY}
-MAKE_JOBS_SAFE=	yes
 
 CXXFLAGS+=	-Wno-invalid-offsetof
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include

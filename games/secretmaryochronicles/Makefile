@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf
 USE_GL=		gl glu
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=3

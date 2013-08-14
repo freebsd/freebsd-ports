@@ -21,7 +21,6 @@ LICENSE_NAME=	${LICENSE:S/_/ /}
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_TEXT=	The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please read from the web.
 
-MAKE_JOBS_SAFE=	yes
 
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}

@@ -53,7 +53,6 @@ CONFIGURE_ENV=	LUA_CFLAGS="$$(pkg-config --cflags lua-${LUA_VER})" \
 CONFIGURE_ARGS=	--docdir=${WRKDIR}/fakeroot
 USE_LDCONFIG=	${PREFIX}/lib/mysql-workbench
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

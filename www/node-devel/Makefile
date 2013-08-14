@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 CONFLICTS=	node-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''

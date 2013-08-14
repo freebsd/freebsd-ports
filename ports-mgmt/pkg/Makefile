@@ -15,7 +15,6 @@ LICENSE=	BSD
 
 USE_XZ=		yes
 
-MAKE_JOBS_SAFE=	yes
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all
 NO_CCACHE=	yes

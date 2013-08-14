@@ -51,7 +51,6 @@ MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 MAN1=		${PORTNAME}.1
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 # IMPORTANT INFORMATION FOR DEVELOPERS:

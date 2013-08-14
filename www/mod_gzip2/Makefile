@@ -15,7 +15,6 @@ DISTNAME=	mod_gzip-${PORTVERSION}
 MAINTAINER=	sec@42.org
 COMMENT=	An Internet Content Acceleration module for Apache2+
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

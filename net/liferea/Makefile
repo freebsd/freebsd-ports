@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-libnotify --disable-libindicate
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		liferea.1
 MANLANG=	"" pl

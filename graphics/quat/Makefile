@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gui \
 		--datadir=${PREFIX}/share/doc
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/quat-txt

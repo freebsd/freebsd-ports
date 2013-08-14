@@ -15,7 +15,6 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 USE_QT4=	gui sql network xml designer sql-sqlite3_run \
 		qmake_build moc_build uic_build rcc_build
-MAKE_JOBS_SAFE=	yes
 
 QMAKE_ARGS=	-recursive ${QMAKE_PRO}
 QMAKE_PRO=	QDevelop.pro

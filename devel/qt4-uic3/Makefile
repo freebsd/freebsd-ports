@@ -12,7 +12,6 @@ COMMENT=	Qt backwards-compatible user interface compiler
 USE_QT4=	qmake_build qt3support corelib gui network sql xml porting
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

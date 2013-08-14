@@ -14,7 +14,6 @@ PATCHFILES=	patch-2.01.txt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE_RUN=	22+
 USES=		perl5

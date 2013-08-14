@@ -12,7 +12,6 @@ COMMENT=	Set of IPv6 security assessment tools
 LICENSE=	GPLv3
 
 MAKE_ENV=	DATADIR=${DATADIR}
-MAKE_JOBS_SAFE=	yes
 SUB_FILES=	BSDMakefile Makefile
 MAKEFILE=	BSDMakefile
 PORTDOCS=	README.TXT

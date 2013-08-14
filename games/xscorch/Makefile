@@ -20,7 +20,6 @@ USES=		perl5
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		xscorch.6
 

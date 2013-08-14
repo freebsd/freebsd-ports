@@ -32,7 +32,6 @@ CONFIGURE_ENV=	ac_cv_path_ac_qmake=${QMAKE} \
 		ac_cv_path_ac_rcc=${RCC} \
 		ac_cv_path_ac_lupdate=${LUPDATE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
-MAKE_JOBS_SAFE=	yes
 
 LUPDATE=	${LOCALBASE}/bin/lupdate-qt4
 LRELEASE=	${LOCALBASE}/bin/lrelease-qt4

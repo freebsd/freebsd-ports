@@ -27,6 +27,5 @@ USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender xt
 USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build
 USE_GNOME=	glib20
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

@@ -21,7 +21,6 @@ CONFLICTS=	oniguruma-2.*
 USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

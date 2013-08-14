@@ -14,7 +14,6 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		doc_run sql-sqlite3_run
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

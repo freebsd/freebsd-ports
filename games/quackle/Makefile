@@ -21,7 +21,6 @@ BUILD_WRKSRC=	${WRKSRC}/quacker
 USES=		gmake
 USE_GCC=	any
 USE_QT4=	gui moc_build qmake_build
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
 

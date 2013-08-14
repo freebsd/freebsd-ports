@@ -16,7 +16,6 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 USES=		pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
 
 .include <bsd.port.options.mk>

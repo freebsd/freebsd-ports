@@ -21,6 +21,5 @@ USE_BZIP2=	yes
 USES=		bison cmake:outsource
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

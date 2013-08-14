@@ -18,7 +18,6 @@ USES=		pkgconfig iconv
 USE_GNOME=	libxml2 libxslt
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/swfmill
 

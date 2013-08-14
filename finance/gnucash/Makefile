@@ -32,7 +32,6 @@ WEBKIT_DESC=	Use webkit instead of gtkhtml for the HTML engine
 USE_BZIP2=	yes
 USES=		gettext
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_PERL5=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix libglade2 libgnomeui

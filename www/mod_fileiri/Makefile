@@ -16,7 +16,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A http IRIs module for Apache 2
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 

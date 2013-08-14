@@ -13,7 +13,6 @@ DB=		psql
 USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_PGSQL=	yes
 DRIVER=		src/sql/drivers/${DB}

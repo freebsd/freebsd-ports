@@ -23,7 +23,6 @@ USE_AUTOTOOLS=	autoconf automake libtool aclocal autoheader libtoolize
 USE_GMAKE=	yes
 USE_PGSQL=	yes
 USE_GNOME=	libxml2
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	ChangeLog README AUTHORS TODO
 

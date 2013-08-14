@@ -15,7 +15,6 @@ USE_BZIP2=	yes
 USES=		cmake:outsource
 USE_QT4=	corelib network script sql \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	KDE NLS
 OPTIONS_MULTI=	MODULE

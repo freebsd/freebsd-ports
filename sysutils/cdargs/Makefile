@@ -13,7 +13,6 @@ COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		cdargs.1
 PLIST_FILES=	bin/cdargs

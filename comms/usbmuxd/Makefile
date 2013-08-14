@@ -12,7 +12,6 @@ LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist
 
 USE_BZIP2=	yes
 USES=		cmake pkgconfig
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS README README.devel

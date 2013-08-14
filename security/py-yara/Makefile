@@ -14,7 +14,6 @@ COMMENT=	Python bindings for yara
 LIB_DEPENDS=	yara.0:${PORTSDIR}/security/yara
 
 PROJECTHOST=	yara-project
-MAKE_JOBS_SAFE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	yara_python-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info

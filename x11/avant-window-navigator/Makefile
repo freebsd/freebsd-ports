@@ -26,7 +26,6 @@ INSTALLS_ICONS=	yes
 USE_XORG=	x11 xproto xcomposite xrender
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-MAKE_JOBS_SAFE=	yes
 
 AWN_DESKTOP?=	agnostic
 

@@ -34,7 +34,6 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(NOPORTDOCS)
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 

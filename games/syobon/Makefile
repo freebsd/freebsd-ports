@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_DOS2UNIX=	*.txt
 ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl gfx image mixer ttf
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

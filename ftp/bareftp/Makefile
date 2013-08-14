@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		bareftp.1
 

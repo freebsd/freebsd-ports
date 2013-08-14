@@ -32,7 +32,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USES=		pkgconfig
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 USE_PERL5_BUILD=	yes
 

@@ -22,7 +22,6 @@ PLIST_FILES=	bin/zip bin/zipcloak bin/zipnote bin/zipsplit
 MAN1=		zip.1 zipcloak.1 zipnote.1 zipsplit.1
 PORTDOCS=	*
 
-MAKE_JOBS_SAFE=	yes
 
 do-install:
 .for p in ${PLIST_FILES:T}

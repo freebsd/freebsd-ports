@@ -14,7 +14,6 @@ COMMENT=	A clone of the NetWalk game
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl glu
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

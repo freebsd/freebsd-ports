@@ -16,7 +16,6 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-expat="${LOCALBASE}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		rnv.1
 PLIST_FILES=	bin/arx bin/rnv bin/rvp bin/xsdck

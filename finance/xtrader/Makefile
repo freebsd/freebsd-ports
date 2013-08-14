@@ -23,7 +23,6 @@ USE_XORG=	x11 xpm
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt

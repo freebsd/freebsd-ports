@@ -30,7 +30,6 @@ USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_SQLITE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib

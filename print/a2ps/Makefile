@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--with-medium=libpaper --sharedstatedir=${PREFIX}/share \
 	--sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share \
 	--localstatedir=${PREFIX}/share
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-MAKE_JOBS_SAFE=	yes
 
 PAPERSIZE?=
 .if ${PAPERSIZE:L} == a4

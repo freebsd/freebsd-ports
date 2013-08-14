@@ -22,7 +22,6 @@ USE_TEX=	latex dvipsk
 HAS_CONFIGURE=	yes
 QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \
 		DESKTOPDIR=${DESKTOPDIR}
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	GV XDVI
 GV_DESC=	View ps files with gv

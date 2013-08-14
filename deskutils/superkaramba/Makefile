@@ -18,6 +18,5 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4 qimageblitz
 USES=		cmake:outsource
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

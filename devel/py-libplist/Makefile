@@ -17,7 +17,6 @@ MASTERDIR=	${.CURDIR:H:H}/devel/libplist
 # Required to reference installed libplist.
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files

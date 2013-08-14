@@ -33,7 +33,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lablgldir=${LOCALBASE} \
 		--with-sdl-prefix=${LOCALBASE} \
 		--with-installdir=${PREFIX}
-MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 

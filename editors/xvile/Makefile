@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--disable-imake \
 		--with-xpm \
 		--with-pixmapdir=${PREFIX}/share/pixmaps
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/vile
 

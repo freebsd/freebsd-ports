@@ -16,7 +16,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 pkgconfig
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 # Use GNU89 inline semantics

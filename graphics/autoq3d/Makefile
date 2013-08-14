@@ -19,7 +19,6 @@ USE_GL=		glu
 USE_ZIP=	yes
 USE_QT4=	corelib gui opengl \
 		moc_build qmake_build
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	3DQformat.txt ChangeLog.txt
 

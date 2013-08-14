@@ -22,7 +22,6 @@ CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
 		WAF_HOME="${WRKSRC}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

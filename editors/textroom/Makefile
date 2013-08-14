@@ -20,7 +20,6 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui xml \
 		svg opengl qt3support
 QMAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \

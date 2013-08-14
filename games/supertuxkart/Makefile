@@ -28,7 +28,6 @@ USES=		cmake gettext
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_DOS2UNIX=	lib/irrlicht/source/Irrlicht/Makefile
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/SuperTuxKart-${PORTVERSION}
 

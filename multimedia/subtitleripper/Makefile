@@ -23,7 +23,6 @@ RUN_DEPENDS=	gocr:${PORTSDIR}/graphics/gocr \
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 DOC_FILES=	\
 		ChangeLog \

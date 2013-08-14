@@ -14,7 +14,6 @@ COMMENT=	Save your computers from the evil clutches of Bill
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR}
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		xbill.6
 

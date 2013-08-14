@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_GNOME=	gnomehack gtk20 intlhack
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		lxappearance.1
 

@@ -25,7 +25,6 @@ USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

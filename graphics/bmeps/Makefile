@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\
 		--without-perl\
 		--with-lzw
 ALL_TARGET=	stc ${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

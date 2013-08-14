@@ -19,7 +19,6 @@ USE_QT4=	phonon sql \
 		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 

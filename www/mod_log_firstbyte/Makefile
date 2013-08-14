@@ -17,7 +17,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 

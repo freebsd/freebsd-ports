@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 USES=		cmake
 USE_SDL=	sdl mixer image ttf
-MAKE_JOBS_SAFE=	yes
 CMAKE_BUILD_TYPE=	#empty
 INSTALLS_ICONS=	yes
 

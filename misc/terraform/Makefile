@@ -24,7 +24,6 @@ USE_GNOME=	gnomehier libgnomeprintui libgnomeui
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

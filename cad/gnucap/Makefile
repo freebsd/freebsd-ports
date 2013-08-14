@@ -19,7 +19,6 @@ READLINE_DESC=	Enable readline support
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		gnucap.1 gnucap-ibis.1
 PORTDOCS=	*

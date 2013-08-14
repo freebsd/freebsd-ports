@@ -17,7 +17,6 @@ COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 

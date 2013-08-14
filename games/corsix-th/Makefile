@@ -19,7 +19,6 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 USES=		cmake
 USE_LUA=	yes
 USE_SDL=	mixer
-MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt
 

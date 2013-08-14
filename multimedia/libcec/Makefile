@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

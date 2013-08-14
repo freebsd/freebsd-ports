@@ -23,7 +23,6 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE}
-MAKE_JOBS_SAFE=	yes
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes

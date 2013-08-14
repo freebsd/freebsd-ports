@@ -13,7 +13,6 @@ COMMENT=	A strategy board game for 2 to 4 players
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Biloba" \
 		"A strategy board game for 2 to 4 players" \

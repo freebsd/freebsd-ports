@@ -20,7 +20,6 @@ USE_ZIP=	yes
 USE_GL=		glut
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 CXXFLAGS+=	$$(pkg-config --cflags libpng15) \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

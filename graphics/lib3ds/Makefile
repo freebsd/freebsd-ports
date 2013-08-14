@@ -20,7 +20,6 @@ USE_ZIP=	yes
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		3dsdump.1 lib3ds-config.1
 

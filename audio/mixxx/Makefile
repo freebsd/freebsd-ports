@@ -35,7 +35,6 @@ USE_GL=		glu
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
 SCONS_ARGS=	qtdir="${QT_PREFIX}" optimize=0
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

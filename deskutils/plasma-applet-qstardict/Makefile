@@ -16,7 +16,6 @@ USES=		cmake
 USE_QT4=	qmake_build uic_build moc_build rcc_build
 USE_KDE4=	automoc4 kdeprefix kdelibs
 CMAKE_SOURCE_PATH=	${WRKSRC}/kdeplasma
-MAKE_JOBS_SAFE=	yes
 
 QSTARDICT_PLUGIN_PATH=	${LOCALBASE}/lib/qstardict/plugins
 

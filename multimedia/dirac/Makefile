@@ -17,7 +17,6 @@ COMMENT?=	Open source video codec from the BBC
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
 

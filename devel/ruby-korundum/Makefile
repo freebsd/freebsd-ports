@@ -21,7 +21,6 @@ USE_QT4=	corelib network opengl sql svg xml \
 USE_RUBY=	yes
 USE_XZ=		yes
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

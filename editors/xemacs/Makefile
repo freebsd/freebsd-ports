@@ -17,7 +17,6 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-MAKE_JOBS_SAFE=	yes
 
 XEMACS_REL=	21.4
 XEMACS_VER=	21.4.22

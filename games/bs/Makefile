@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	# empty
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		bs.6
 PLIST_FILES=	bin/bs

@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/sdl/SDL/}-${PORTVERSION}
 
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 ALL_TARGET=
 
 PLIST_FILES=	bin/sdljewels \

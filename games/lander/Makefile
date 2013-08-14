@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USES=		gettext
 USE_SDL=	sdl image mixer
 USE_GL=		gl glu
-MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.2+
 
 CPPFLAGS+=	-I${LOCALBASE}/include

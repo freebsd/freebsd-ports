@@ -17,7 +17,6 @@ USE_KDE4=	kdeprefix kdehier
 USES=		cmake
 CMAKE_ARGS+=	-DBIN_INSTALL_DIR:STRING="${PREFIX}/bin" \
 		-DSYSCONF_INSTALL_DIR:STRING="${PREFIX}/etc"
-MAKE_JOBS_SAFE=	yes
 
 EXTRACT_AFTER_ARGS=	'${DISTNAME}/ksysguard/${PORTNAME}' \
 			'${DISTNAME}/ksysguard/example/${PORTNAME}rc' \

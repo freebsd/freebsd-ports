@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2.2 module to wrap served pages with a header and/or footer
 
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	mod_layout-3.* mod_layout-4.*
 

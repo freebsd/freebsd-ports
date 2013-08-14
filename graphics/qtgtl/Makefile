@@ -19,7 +19,6 @@ LIB_DEPENDS=	GTLCore.0:${PORTSDIR}/graphics/opengtl
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USES=		cmake pkgconfig
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 pre-configure:

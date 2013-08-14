@@ -19,7 +19,6 @@ USES=        pathfix
 USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		lostirc.1
 

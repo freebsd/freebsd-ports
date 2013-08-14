@@ -20,7 +20,6 @@ USE_XORG=	x11 xext xinerama
 USE_GHOSTSCRIPT_RUN=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDLIBS="${LDFLAGS}"
 ALL_TARGET=	pspresent
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		pspresent.1
 PLIST_FILES=	bin/pspresent

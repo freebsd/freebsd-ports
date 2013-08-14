@@ -27,7 +27,6 @@ GH_ACCOUNT=	zloidemon
 GH_COMMIT=	7d0f35c
 GH_TAGNAME=	${GH_COMMIT}
 
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	json-c-[0-9]*
 

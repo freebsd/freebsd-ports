@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--disable-liblilv \
 		--enable-sys-readline \
 		--disable-arts
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

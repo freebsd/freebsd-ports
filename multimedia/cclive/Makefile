@@ -20,7 +20,6 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-boost=${LOCALBASE}
-MAKE_JOBS_SAFE=	yes
 USES=		pkgconfig
 USE_XZ=		yes
 

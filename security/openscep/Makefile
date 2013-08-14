@@ -14,7 +14,6 @@ MASTER_SITES=	http://openscep.othello.ch/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
 
-MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes

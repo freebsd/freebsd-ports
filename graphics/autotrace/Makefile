@@ -23,7 +23,6 @@ PSTOEDIT_DESC=	Convert postscript to other formats
 USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE= yes
 CPPFLAGS+=	$$(libpng-config --I_opts) ${PTHREAD_CFLAGS}
 LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
 

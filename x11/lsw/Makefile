@@ -21,7 +21,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAN1=	lsw.1
-MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xt xproto xext
 
 post-patch:

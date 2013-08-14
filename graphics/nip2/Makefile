@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-MAKE_JOBS_SAFE=	yes
 # This port has no man-pages. It installs a number of HTML files,
 # which are available through the GUI's Help. For this reason, they
 # are always installed, regardless of the NOPORTDOCS setting.

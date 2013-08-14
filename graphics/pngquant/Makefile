@@ -25,7 +25,6 @@ USE_CSTD=	c99
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	$$(libpng-config --I_opts)
 LDFLAGS+=	$$(libpng-config --ldflags) -lz -lm

@@ -20,7 +20,6 @@ COMMENT=	Video Disk Recorder - Reelchannelscan plugin
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/b1.7.15//}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"

@@ -35,7 +35,6 @@ AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--disable-alsamidi \
 		--disable-scheduler
 INSTALLS_OMF=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		terminatorX.1
 

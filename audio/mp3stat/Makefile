@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CXX+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-Wl,--rpath,${LOCALBASE}/lib

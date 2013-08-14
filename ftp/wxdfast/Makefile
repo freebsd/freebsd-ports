@@ -24,7 +24,6 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/locale
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
 LIBTOOLIZE_ARGS=--copy --force
 CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		wxdfast.1
 

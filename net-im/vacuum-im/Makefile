@@ -20,7 +20,6 @@ USE_XORG=	xscrnsaver
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network linguist_build webkit
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS CHANGELOG COPYING README TRANSLATORS
 

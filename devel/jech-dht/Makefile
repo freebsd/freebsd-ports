@@ -16,7 +16,6 @@ COMMENT=	Mainline variant of Kademlia Distributed Hash Table (DHT)
 LICENSE=	MIT
 
 MAKEFILE=	${FILESDIR}/BSDmakefile
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 pre-su-install:

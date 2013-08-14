@@ -18,7 +18,6 @@ LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		giftopnm:${PORTSDIR}/graphics/netpbm
 
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 

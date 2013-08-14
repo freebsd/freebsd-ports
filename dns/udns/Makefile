@@ -10,7 +10,6 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	DNS resolver library with sync and async queries
 
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	IPV6 DOCS

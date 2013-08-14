@@ -18,7 +18,6 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 CFLAGS+=	-fPIC
 PORTDOCS=	*
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	include/tommath.h include/tommath_class.h \
 		include/tommath_superclass.h lib/libtommath.a

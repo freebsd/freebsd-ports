@@ -15,7 +15,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USES=		cmake
 USE_SDL=	sdl ttf image mixer image gfx
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

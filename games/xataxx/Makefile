@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		imake
 USE_XORG=	x11 xext
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		xataxx.6
 

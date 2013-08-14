@@ -11,7 +11,6 @@ DISTNAME=	SDL_gfx-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
-MAKE_JOBS_SAFE=	yes
 USES=		pathfix
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl

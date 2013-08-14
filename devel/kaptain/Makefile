@@ -15,7 +15,6 @@ LICENSE=	GPLv2 # (or later)
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_QT4=	qt3support moc_build qmake_build
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kaptain.1
 INFO=		kaptain

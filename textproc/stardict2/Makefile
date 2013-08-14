@@ -18,7 +18,6 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	stardict2
 
 OPTIONS_DEFINE=	GNOME

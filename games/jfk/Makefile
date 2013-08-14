@@ -19,7 +19,6 @@ COMMENT=	A multiplayer 2D shoot'em up game
 
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

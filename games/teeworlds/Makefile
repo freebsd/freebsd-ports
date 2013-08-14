@@ -22,7 +22,6 @@ USE_PYTHON_BUILD=	yes
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/teeworlds-b177-r50edfd37-source
 
 PORTDOCS=	readme.txt license.txt

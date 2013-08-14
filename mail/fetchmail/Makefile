@@ -28,7 +28,6 @@ SUB_FILES=	pkg-message
 
 USE_XZ=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \

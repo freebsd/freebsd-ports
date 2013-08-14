@@ -15,7 +15,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_GMAKE=	yes
 USE_QT4=	qmake_build corelib gui moc_build rcc_build svg uic_build xml
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/TheButterflyEffect-M${PORTVERSION}rc3
 
 PLIST_FILES=	bin/tbe

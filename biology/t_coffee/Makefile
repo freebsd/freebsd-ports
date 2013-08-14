@@ -23,7 +23,6 @@ BUILD_WRKSRC=	${WRKSRC}/t_coffee_source
 USE_FORTRAN=	yes
 MAKE_ENV=	FCC="${FC} ${FFLAGS}"
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/TMalign bin/t_coffee

@@ -19,7 +19,6 @@ COMMENT=	Monsters, explosions, destruction game for X Window System
 USE_BZIP2=	yes
 USE_GL=		glu
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include \
 		-DLINUXVERSION -DLINUXAUDIO

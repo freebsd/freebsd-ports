@@ -18,7 +18,6 @@ LICENSE=	AL2
 
 MANUAL_PACKAGE_BUILD=	needs apr and apache with DBD options enabled
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 UNIQUENAME=	${PORTNAME}

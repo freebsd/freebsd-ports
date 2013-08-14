@@ -23,7 +23,6 @@ USE_QT4=	gui network qmake_build moc_build rcc_build \
 
 # Override -A option:
 FETCH_ARGS=	-Fpr
-MAKE_JOBS_SAFE=	yes
 
 STRIP_FILES=	bin/qtfm
 

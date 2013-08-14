@@ -35,6 +35,5 @@ MAN1=		calcappclient.1 \
 		server.1 \
 		terminal.1
 
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

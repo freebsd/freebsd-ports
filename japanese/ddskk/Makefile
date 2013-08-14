@@ -15,7 +15,6 @@ COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-MAKE_JOBS_SAFE=	yes
 USE_EMACS=	yes
 INFO=		skk
 

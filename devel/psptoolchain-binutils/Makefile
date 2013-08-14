@@ -19,7 +19,6 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 USE_BZIP2=		yes
 USE_GCC=		any
 USE_GMAKE=		yes
-MAKE_JOBS_SAFE=		yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-freebsd${OSREL}

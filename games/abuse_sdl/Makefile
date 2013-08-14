@@ -18,7 +18,6 @@ USE_GL=		gl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		abuse.6 abuse-tool.6
 

@@ -18,7 +18,6 @@ COMMENT=	Apache module for rewriting HTML links in proxied content
 
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_xml2enc.so:${PORTSDIR}/www/mod_xml2enc
 
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 USE_APACHE=	22+

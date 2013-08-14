@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_DOS2UNIX=	*.cpp *.h *.ini Makefile
 ALL_TARGET=	battle
 USE_SDL=	sdl image mixer
-MAKE_JOBS_SAFE=	yes
 
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}

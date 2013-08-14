@@ -28,7 +28,6 @@ USE_QT4=	corelib declarative gui opengl xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		okular.1
 

@@ -23,7 +23,6 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 USE_BZIP2=	yes
 USE_PERL5_BUILD=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 MAN5=	aoxsuper.conf.5 archiveopteryx.conf.5
 MAN8=	aox.8 aoximport.8 archiveopteryx.8 deliver.8 installer.8 logd.8 \

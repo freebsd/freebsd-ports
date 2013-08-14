@@ -18,7 +18,6 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake motif
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xastir.1 \
 		callpass.1 \

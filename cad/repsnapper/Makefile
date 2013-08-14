@@ -34,7 +34,6 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm
 
-MAKE_JOBS_SAFE=	yes
 USES=		pkgconfig iconv
 USE_GNOME=	gdkpixbuf2 gtk20 libxml2
 USE_GL=		glu glut

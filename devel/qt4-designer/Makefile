@@ -14,7 +14,6 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build assistant_run \
 		webkit phonon
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 #Try to fix linking when previous version is installed

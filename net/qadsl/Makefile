@@ -24,7 +24,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-global-cfg=${PREFIX}/etc/qadsl.conf \
 		--with-pidfile=/var/run/qadsl.pid
-MAKE_JOBS_SAFE=	yes
 
 MAN8=		qadsl.8
 MAN5=		qadsl.conf.5

@@ -21,7 +21,6 @@ USES=		pathfix pkgconfig iconv
 USE_BZIP2=	yes
 USE_GNOME=	ltverhack
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure lib/configure libextra/configure

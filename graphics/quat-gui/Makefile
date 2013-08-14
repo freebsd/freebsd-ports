@@ -25,7 +25,6 @@ USE_GL=		gl glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FLUID="${LOCALBASE}/bin/fluid"
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

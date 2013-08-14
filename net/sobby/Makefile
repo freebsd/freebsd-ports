@@ -24,7 +24,6 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-zeroconf
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}

@@ -25,7 +25,6 @@ USES=		cmake:outsource
 USE_QT4=	corelib gui opengl \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	Use Gnome screensavers

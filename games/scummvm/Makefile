@@ -15,7 +15,6 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
 
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sdl-prefix=${LOCALBASE} \

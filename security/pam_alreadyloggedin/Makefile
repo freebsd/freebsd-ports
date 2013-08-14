@@ -21,7 +21,6 @@ BROKEN=		Does not build with utmpx.
 .endif
 
 MAN8=		pam_alreadyloggedin.8
-MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	lib/pam_alreadyloggedin.so lib/pam_alreadyloggedin.so.2
 
 do-configure:

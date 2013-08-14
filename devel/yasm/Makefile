@@ -13,7 +13,6 @@ COMMENT=	A complete rewrite of the NASM assembler
 
 LICENSE=	BSD
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-python --disable-python-bindings

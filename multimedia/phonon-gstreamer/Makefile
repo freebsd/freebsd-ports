@@ -29,7 +29,6 @@ USE_QT4=	gui phonon xml \
 USE_XORG=	x11
 USE_XZ=		yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 

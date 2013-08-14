@@ -14,7 +14,6 @@ USES=		bison
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		rtconfig.1 peval.1 rpslcheck.1 irrtoolset-errors.1
 

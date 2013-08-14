@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
-MAKE_JOBS_SAFE=	yes
 
 MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat file size limits
 

@@ -18,6 +18,5 @@ USE_QT4=	xml corelib declarative gui opengl script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

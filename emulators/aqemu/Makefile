@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 USE_QT4=	gui qtestlib xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S,.0$,,}
 
 MAN1=		aqemu.1

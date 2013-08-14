@@ -22,7 +22,6 @@ USES=	pathfix
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoheader
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	imapproxyd
 

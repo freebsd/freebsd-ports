@@ -20,7 +20,6 @@ USE_QT4=	corelib dbus declarative designer_build gui network phonon \
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CMAKE_ARGS=	-DMOBILE:BOOL=FALSE
 

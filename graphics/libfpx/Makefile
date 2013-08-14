@@ -21,7 +21,6 @@ USE_XZ=	yes
 PLIST_FILES=	lib/libfpx.so.2 lib/libfpx.so lib/libfpx.a include/fpxlib.h
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_JOBS_SAFE=	yes
 post-patch:
 	${SED} -i '' -e '/^#include "fpxlib-config.h"/d'	\
 		${WRKSRC}/basics/filename.cpp	\

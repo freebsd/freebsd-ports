@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		hydra.1 pw-inspector.1
 

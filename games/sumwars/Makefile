@@ -33,7 +33,6 @@ USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_LUA=	5.1
 USE_OPENAL=	al alut
-MAKE_JOBS_SAFE=	yes
 
 FETCH_ARGS?=	-pRr
 

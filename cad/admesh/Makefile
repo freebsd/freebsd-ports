@@ -16,7 +16,6 @@ LICENSE=	GPLv2 # (or later)
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	admesh.doc
 PLIST_FILES=	bin/admesh

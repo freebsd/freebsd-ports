@@ -26,7 +26,6 @@ HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		PYTHON_CMD=${PYTHON_CMD}
 USE_DOS2UNIX=	*.pro
-MAKE_JOBS_SAFE=	yes
 MAN1=		qtiplot.1
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \

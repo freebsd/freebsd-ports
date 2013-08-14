@@ -21,6 +21,5 @@ USES=		cmake:outsource
 USE_QT4=	corelib declarative gui opengl \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

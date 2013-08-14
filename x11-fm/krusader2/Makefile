@@ -14,7 +14,6 @@ USES=		cmake:outsource gettext
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 
-MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	${PORTNAME}2
 
 .include <bsd.port.mk>

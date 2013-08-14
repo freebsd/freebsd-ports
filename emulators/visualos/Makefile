@@ -16,7 +16,6 @@ USES=        pathfix
 USE_GNOME=	gnomeprefix libglade
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

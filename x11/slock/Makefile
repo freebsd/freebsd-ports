@@ -17,7 +17,6 @@ PLIST_FILES=	bin/slock
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xt xproto xext
 
 post-patch:

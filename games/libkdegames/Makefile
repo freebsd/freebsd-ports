@@ -17,7 +17,6 @@ USES=		cmake:outsource
 USE_QT4=	network phonon xml moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DWITH_OpenAL:BOOL=False
 CMAKE_ARGS+=	-DWITH_SndFile:BOOL=False

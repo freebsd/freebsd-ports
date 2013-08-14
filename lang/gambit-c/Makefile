@@ -29,7 +29,6 @@ CONFIGURE_ARGS+=--enable-interpreter-name=gsi-gambit  --enable-compiler-name=gsc
 
 INFO=		gambit-c
 
-MAKE_JOBS_SAFE=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/gambit-c
 

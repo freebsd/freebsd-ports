@@ -17,7 +17,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Apache H264 streaming module
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 

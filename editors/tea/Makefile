@@ -17,7 +17,6 @@ OPTIONS_DEFAULT=	ASPELL
 
 USE_BZIP2=	yes
 USE_QT4=	gui moc_build qmake_build rcc_build
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
 

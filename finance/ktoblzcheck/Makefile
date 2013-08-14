@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 USES=	pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		ktoblzcheck.1
 

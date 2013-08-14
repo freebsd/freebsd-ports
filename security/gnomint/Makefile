@@ -23,7 +23,6 @@ USE_GNOME=	gconf2 gdkpixbuf2 glib20 gtk20
 USE_PERL5=	yes
 CFLAGS:=	${CFLAGS:C/-Werror//}
 
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	NLS
 

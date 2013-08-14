@@ -26,7 +26,6 @@ USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	LAME
 LAME_DESC=	Install LAME MP3 audio encoder

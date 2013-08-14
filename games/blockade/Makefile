@@ -19,7 +19,6 @@ COMMENT=	An X version of the `blockade' Macintosh game
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		blockade.6
 PLIST_FILES=	bin/blockade

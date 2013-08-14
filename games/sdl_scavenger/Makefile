@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/sdlscav-145
 USE_ZIP=	yes
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 ALL_TARGET=
 
 PLIST_FILES=	bin/sdlscavenger \

@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline
 ALL_TARGET=	build
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		sqsh.1
 PLIST_FILES=	bin/sqsh etc/sqshrc.default

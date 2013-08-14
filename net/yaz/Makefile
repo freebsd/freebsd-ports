@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig iconv
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 		--with-iconv=${LOCALBASE} --with-xml2=${LOCALBASE} \

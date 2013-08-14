@@ -20,7 +20,6 @@ LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 NO_OPTIONS_SORT=yes
 USES=		pkgconfig:build
 USE_OPENSSL=	yes

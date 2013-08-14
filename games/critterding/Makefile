@@ -21,7 +21,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-system-ftgl
 USE_GCC=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README AUTHORS Changelog
 

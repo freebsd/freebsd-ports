@@ -11,7 +11,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5
 
-MAKE_JOBS_SAFE=  yes
 
 LATEST_LINK=   mod_auth_kerb2
 

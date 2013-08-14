@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAKE_JOBS_SAFE=	yes
 
 BROKEN=	checksum mismatch
 

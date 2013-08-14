@@ -39,7 +39,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-prec --without-lua50
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 

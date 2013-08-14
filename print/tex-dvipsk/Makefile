@@ -56,7 +56,6 @@ CONFIGURE_ARGS= --with-paper \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 NO_MANCOMPRESS=	yes
 MAN1=	afm2tfm.1 dvips.1

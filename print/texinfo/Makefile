@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_XZ=		yes
 INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
-MAKE_JOBS_SAFE=	yes
 USES+=		charsetfix gmake perl5
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}

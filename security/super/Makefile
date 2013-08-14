@@ -15,7 +15,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		super.1 setuid.1
 MAN5=		super.5
