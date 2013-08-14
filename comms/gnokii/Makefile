@@ -3,7 +3,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USES=		gettext gmake
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
-MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
