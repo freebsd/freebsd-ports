@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lapack95
-# Date created:                         5 Feb 2003
-# Whom:                                 NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lapack95
 PORTVERSION=	1.0
@@ -20,6 +16,8 @@ COMMENT=	LAPACK95, Fortran90/95 wrapper for LAPACK
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/LAPACK95
+
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
 
