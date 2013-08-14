@@ -13,9 +13,11 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 ALL_TARGET=	default
+
+MAKE_JOBS_UNSAFE=yes
 
 GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
 GAP_DISTTIME=	2013_03_18-17_40
