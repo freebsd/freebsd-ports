@@ -13,8 +13,7 @@ COMMENT=	Portable software library for volume rendering
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
-
-MAKE_JOBS_UNSAFE=yes
+MAKE_ARGS=	MFLAGS=""	# required for bmake(1) and -jX builds
 
 PLIST_FILES=	lib/libvolpack.a \
 		include/volpack.h
