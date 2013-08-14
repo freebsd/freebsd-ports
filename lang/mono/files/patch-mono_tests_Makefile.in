@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- mono/tests/Makefile.in.orig
++++ mono/tests/Makefile.in
+@@ -1511,7 +1511,7 @@
+ @NACL_CODEGEN_TRUE@test-messages:
+ @NACL_CODEGEN_FALSE@test-messages: w32message.exe
+ @NACL_CODEGEN_FALSE@	> test_messages.zero
+-@NACL_CODEGEN_FALSE@	$(with_mono_path) $(JITTEST_PROG_RUN) w32message.exe >& w32message.allout && cmp test_messages.zero w32message.allout
++@NACL_CODEGEN_FALSE@	$(with_mono_path) $(JITTEST_PROG_RUN) w32message.exe > w32message.allout 2>&1 && cmp test_messages.zero w32message.allout
+ 
+ @MOONLIGHT_TRUE@test_2_1 : test-coreclr-security
+ @MOONLIGHT_FALSE@test_2_1 :
