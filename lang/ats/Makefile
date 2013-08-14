@@ -13,7 +13,7 @@ MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	Language with a type system rooted in the Applied Type System
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE=		gmake
+USES=		gmake
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
