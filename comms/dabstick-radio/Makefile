@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dabstick-radio
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/
 EXTRACT_SUFX=	.tgz
@@ -27,7 +26,6 @@ FFMPEG_SUFFIX=	1
 
 QMAKE_DABSTICK=	${QMAKE} -unix PREFIX=${PREFIX} -o
 MAKE_ENV+=	FFMPEG_SUFFIX=${FFMPEG_SUFFIX}
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES+=	bin/dabreceiver bin/fmreceiver bin/spectrum-viewer
@@ -35,7 +33,7 @@ PLIST_FILES+=	bin/dabreceiver bin/fmreceiver bin/spectrum-viewer
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses MMX and SSE2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if (${OSVERSION} >= 901000) && exists(${DESTDIR}/usr/bin/clang)
 CC=		clang
@@ -43,10 +41,6 @@ CXX=		clang++
 CPP=		clang-cpp
 .else
 USE_GCC=	4.6+
-.endif
-
-.if ${OSVERSION} < 800069
-IGNORE=	requires FreeBSD 8.0 or later
 .endif
 
 do-configure:
@@ -71,8 +65,9 @@ do-install:
 		${WRKSRC}/spectrum-viewer/spectrum-viewer \
 		${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/dab-manual.pdf ${WRKSRC}/README-${PORTVERSION} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/dabreceiver-V2 ${DOCSDIR}/fmreceiver-dab
+	${INSTALL_DATA} ${WRKSRC}/dabreceiver-V2/README ${DOCSDIR}/dabreceiver-V2
+	${INSTALL_DATA} ${WRKSRC}/fmreceiver-dab/README ${DOCSDIR}/fmreceiver-dab
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
