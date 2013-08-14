@@ -3255,6 +3255,7 @@
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pecl-xhprof
+    SUBDIR += pecl-yac
     SUBDIR += pecl-zookeeper
     SUBDIR += pep8
     SUBDIR += performance
