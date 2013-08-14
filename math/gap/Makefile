@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gap
-PORTVERSION=	4.6.3.${GAP_DISTDATE}
+PORTVERSION=	4.6.5.${GAP_DISTDATE}
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap46/tar.bz2/ \
 		ftp://ftp.stack.nl/pub/users/johans/gap/ \
@@ -20,7 +20,7 @@ ALL_TARGET=	default
 MAKE_JOBS_UNSAFE=yes
 
 GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
-GAP_DISTTIME=	2013_03_18-17_40
+GAP_DISTTIME=	2013_07_20-20_02
 GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}
