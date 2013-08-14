@@ -18,7 +18,6 @@ USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb
 USE_QT4=	gui dbus network svg xml \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=		NLS EYED3 FAAC FLAC LAME VORBIS
 OPTIONS_DEFAULT=	FLAC VORBIS

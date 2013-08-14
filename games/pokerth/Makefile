@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
 USES=		iconv gmake
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 USE_QT4=	gui corelib network sql sql-sqlite3 qmake_build \
 		moc_build rcc_build uic_build
 USE_SDL=	mixer

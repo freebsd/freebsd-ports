@@ -24,7 +24,6 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 BUILD_WRKSRC=	${WRKSRC}/src
 
 ALL_TARGET=	${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

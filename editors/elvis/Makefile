@@ -17,7 +17,6 @@ EXTRACT_AFTER_ARGS=	--exclude guiwin32
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
 ALL_TARGET=	all doc/elvtags.man
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		elvfmt.1 elvis.1 elvtags.1 ref.1
 

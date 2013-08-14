@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
 USES=		cmake gettext
 CMAKE_ARGS=	-DCLAW_CMAKE_MODULES_INSTALL_PATH="${DATADIR}/cmake"
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.6+
 
 post-patch:

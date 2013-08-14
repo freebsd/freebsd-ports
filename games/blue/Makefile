@@ -14,7 +14,6 @@ LICENSE=	BSD
 
 USE_GMAKE=	yes
 ALL_TARGET=	bluemoon
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/blue \
 		bin/bluemoon

@@ -13,7 +13,6 @@ COMMENT=	GTK frontend for XNeur keyboard layout switcher
 BUILD_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
 RUN_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
 
-MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

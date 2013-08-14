@@ -23,7 +23,6 @@ COMMENT=	Cubic Circle's POP3 daemon (fully RFC1939 compliant)
 
 #BUILD_DEPENDS=  ${PREFIX}/include/db2/db.h:${PORTSDIR}/databases/db2
 
-MAKE_JOBS_SAFE=	yes
 
 MAN8=		cucipop.8 #makevpopdb.8
 PLIST_FILES=	libexec/cucipop

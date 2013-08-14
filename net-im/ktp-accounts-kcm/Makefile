@@ -18,7 +18,6 @@ USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	HAZE IRC JABBER SALUT

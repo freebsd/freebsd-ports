@@ -26,7 +26,6 @@ USE_QT4=	corelib dbus gui moc_build network qmake_build rcc_build svg \
 
 USES=		cmake
 CMAKE_ARGS+=	-DCMAKE_BUILD_KDE4:bool=true
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR_WITHOUT_PREFIX:Q} \

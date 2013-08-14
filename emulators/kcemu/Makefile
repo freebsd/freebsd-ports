@@ -30,7 +30,6 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xmu
 USE_GNOME=	gtk20
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kctape.1 kc2raw.1 kc2img.1 kc2tap.1 tdtodump.1 \
 		kcemu-remote.1 kcemu.1x kc2wav.1

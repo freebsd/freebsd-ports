@@ -28,7 +28,6 @@ CYRUS_DESC=	Use Cyrus SASL backend (not supported)
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
 USES=		iconv

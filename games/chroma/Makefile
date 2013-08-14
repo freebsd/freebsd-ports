@@ -13,7 +13,6 @@ COMMENT=	Abstract puzzle game
 
 USE_BZIP2=	yes
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include

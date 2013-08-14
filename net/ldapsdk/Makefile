@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--disable-optimize \
 		--with-dist-prefix=${WRKDIR}/fakeroot \
 		--with-nspr-inc=${LOCALBASE}/include/nspr \
 		--with-nspr-lib=${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/fakeroot

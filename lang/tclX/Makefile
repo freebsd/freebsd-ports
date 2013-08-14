@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-help=Help \
 		--with-tcl="${TCL_LIBDIR}"
 PLIST_SUB=	TCLX_VER=${PORTVERSION}
-MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	binaries libraries
 INSTALL_TARGET=	install-binaries install-libraries
 

@@ -22,7 +22,6 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 INFO=		sdts++
 

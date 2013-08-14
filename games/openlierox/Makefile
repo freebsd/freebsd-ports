@@ -19,7 +19,6 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 USE_BZIP2=	yes
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
-MAKE_JOBS_SAFE=	yes
 USE_OPENAL=	yes
 USE_GCC=	4.6+
 

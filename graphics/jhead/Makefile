@@ -13,7 +13,6 @@ RUN_DEPENDS=	jpegtran:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	DOCS
 
-MAKE_JOBS_SAFE=	yes
 MAKEFILE=	makefile
 
 MAN1=		jhead.1

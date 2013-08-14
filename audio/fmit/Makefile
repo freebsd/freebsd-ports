@@ -29,7 +29,6 @@ USE_QT4=	corelib gui opengl \
 USE_GL=		glut
 USES=		cmake
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

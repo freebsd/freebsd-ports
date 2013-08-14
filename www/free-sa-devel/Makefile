@@ -18,7 +18,6 @@ COMMENT=	Statistic analyzer for daemons log files similar to SARG
 
 LICENSE=	GPLv3
 
-MAKE_JOBS_SAFE=	yes
 CONFLICTS=	free-sa-[0-9]*
 LATEST_LINK=	free-sa-devel
 

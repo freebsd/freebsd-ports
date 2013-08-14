@@ -12,7 +12,6 @@ COMMENT=	NNTP package for offline news caching and reading
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-MAKE_JOBS_SAFE=	yes
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

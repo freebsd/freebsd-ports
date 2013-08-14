@@ -21,7 +21,6 @@ INNO_DESC=		Build with expermential Inno Setup support
 VISE_DESC=		Build with expermential VISE support
 MSI_DESC=		Build with expermential MSI support
 
-MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

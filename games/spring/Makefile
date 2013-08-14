@@ -29,7 +29,6 @@ USE_OPENAL=	al
 USE_GL=		glew
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 USES=		cmake
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \

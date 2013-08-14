@@ -30,7 +30,6 @@ WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_AUTOTOOLS=	libltdl
-MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
 # jemalloc leads to infinite recursion on FreeBSD

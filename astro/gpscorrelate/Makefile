@@ -24,7 +24,6 @@ GH_COMMIT=	a36646b
 
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		gpscorrelate.1
 MLINKS=		gpscorrelate.1 gpscorrelate-gui.1

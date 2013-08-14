@@ -31,7 +31,6 @@ PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	afsd afsserver
-MAKE_JOBS_SAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

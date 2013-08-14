@@ -23,7 +23,6 @@ USE_SDL=	sdl image mixer
 CONFIGURE_ARGS+=	--disable-alsa --disable-alsa9
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 MAN6=	crossfire-client-gtk2.6
 

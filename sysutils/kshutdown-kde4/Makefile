@@ -14,7 +14,6 @@ USES=		cmake
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix workspace
 
-MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	${PORTNAME}-kde4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}

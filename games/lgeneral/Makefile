@@ -23,7 +23,6 @@ SOUND_DESC=	Enable sound support
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_CSTD=	gnu89
 
 CPPFLAGS+=	-I${LOCALBASE}/include

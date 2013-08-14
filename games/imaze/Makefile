@@ -30,7 +30,6 @@ USE_XORG=	x11 xaw xt
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${TOOLKIT} X11Dir="${LOCALBASE}" CFlags="${CFLAGS}"
 MAKE_ENV=	SOUNDDIR="${DATADIR}/sounds"
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		genlab.6 imaze.6 imazesrv.6 imazestat.6 ninja.6 xlabed.6
 

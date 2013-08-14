@@ -29,7 +29,6 @@ CONFIGURE_ARGS+=--enable-addons \
 		--disable-gtk3 \
 		--jobs=${MAKE_JOBS_NUMBER}
 
-MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes

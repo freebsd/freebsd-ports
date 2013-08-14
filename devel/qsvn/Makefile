@@ -15,7 +15,6 @@ LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 USE_QT4=	gui sql moc_build uic_build rcc_build qmake_build
 USE_LDCONFIG=	yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

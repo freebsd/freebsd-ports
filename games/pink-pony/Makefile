@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
 USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_GL=		gl glu
-MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pink-pony.sh
 USE_DOS2UNIX=	lib/GL/GLee.h
 

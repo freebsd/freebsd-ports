@@ -18,7 +18,6 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing

@@ -14,7 +14,6 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SSE
 

@@ -17,7 +17,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 USE_QT4=	qmake_build moc_build rcc_build corelib gui svg xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	true
 
 HAS_CONFIGURE=	yes
 

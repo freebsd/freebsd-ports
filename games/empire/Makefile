@@ -17,7 +17,6 @@ COMMENT=	Simulation of a full-scale war between two emperors
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		empire.6
 

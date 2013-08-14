@@ -26,7 +26,6 @@ USE_XORG=	xrender
 USE_DOS2UNIX=	YES
 USES=		cmake gettext pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	YES
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
 CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
 

@@ -19,7 +19,6 @@ GITHASH=	e4cab47
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/pipelka-${PORTNAME}-${GITHASH}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"

@@ -17,7 +17,6 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-libserveez-install
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		serveez.1 serveez-config.1
 INFO=		serveez

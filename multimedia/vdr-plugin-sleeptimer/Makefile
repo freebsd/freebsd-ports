@@ -18,7 +18,6 @@ COMMENT=	Video Disk Recorder - sleep timer plugin
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"

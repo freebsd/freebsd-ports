@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include

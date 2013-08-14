@@ -12,7 +12,6 @@ COMMENT=	Fast cross-platform Qt IMAP e-mail client
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 

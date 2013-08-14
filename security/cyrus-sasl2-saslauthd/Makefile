@@ -22,7 +22,6 @@ PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKSRC}/saslauthd
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
-MAKE_JOBS_SAFE=	yes
 
 # This doesn't work due to absence of .al support in our libtool
 #USE_AUTOTOOLS=	libtool

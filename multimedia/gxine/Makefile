@@ -28,7 +28,6 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CONFIGURE_ARGS=	--enable-mozjs --disable-ffjs --disable-seajs \
 		--without-hal --with-libintl-prefix=${LOCALBASE}
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

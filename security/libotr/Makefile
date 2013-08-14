@@ -17,7 +17,6 @@ BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	libotr-3.*
 

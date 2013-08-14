@@ -13,7 +13,6 @@ EXTRACT_SUFX=
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for simple text rewriting
 
-MAKE_JOBS_SAFE=  yes
 
 WRKSRC=	${WRKDIR}
 

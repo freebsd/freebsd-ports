@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 USES=		pkgconfig
 USE_GNOME=	gtk20
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

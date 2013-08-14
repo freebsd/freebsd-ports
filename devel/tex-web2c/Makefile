@@ -49,7 +49,6 @@ CONFIGURE_ARGS= --disable-luatex \
 		--with-system-zlib \
 		--with-system-zziplib
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_JOBS_SAFE=	yes
 
 INFO=	web2c
 NO_MANCOMPRESS=	yes

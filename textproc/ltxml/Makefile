@@ -21,7 +21,6 @@ USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=/usr --datadir=${PREFIX}/lib/ltxml12
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

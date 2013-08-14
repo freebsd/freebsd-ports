@@ -20,7 +20,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 CONFIGURE_ENV=	ac_cv_header_CUnit_CUnit_h=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

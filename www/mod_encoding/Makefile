@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for non-ASCII filename interoperability
 
-MAKE_JOBS_SAFE=	yes
 
 # This port will work with the following version of Apache and anything newer.
 # Mostly because of the dependency of mod_dav.

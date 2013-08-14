@@ -12,7 +12,6 @@ COMMENT=	General purpose tile map editor
 
 USE_QT4=	corelib gui opengl \
 		linguist_build qmake_build moc_build uic_build rcc_build
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		tiled.1 tmxrasterizer.1 tmxviewer.1

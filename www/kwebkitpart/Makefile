@@ -13,7 +13,6 @@ USE_QT4=	designer gui webkit \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

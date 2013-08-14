@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=--without-ewf --without-gmp
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-MAKE_JOBS_SAFE=	yes
 
 .if ${CC} == "clang" || ${CXX} == "clang++"
 BROKEN=		does not build when compiled with clang

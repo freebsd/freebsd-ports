@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_DEFINE_i386=	MMX
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	$$(libpng15-config --I_opts)
 LDFLAGS+=	$$(libpng15-config --L_opts)

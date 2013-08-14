@@ -30,7 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
 NO_PACKAGE=	must generate a fresh private key at install time

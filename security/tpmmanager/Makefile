@@ -17,7 +17,6 @@ QT_NONSTANDARD=	YES
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 
 HAS_CONFIGURE=	YES
-MAKE_JOBS_SAFE=	YES
 
 PLIST_FILES=	bin/${PORTNAME}
 

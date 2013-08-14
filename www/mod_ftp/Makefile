@@ -10,7 +10,6 @@ MASTER_SITE_SUBDIR=httpd/mod_ftp
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Serve web-server's content via FTP
 
-MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}

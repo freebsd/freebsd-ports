@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

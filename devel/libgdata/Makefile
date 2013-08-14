@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=		gettext
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack intltool ltverhack glib20
 CPPFLAGS+=	-I${LOCALBASE}/include 

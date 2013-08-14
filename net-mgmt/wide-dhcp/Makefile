@@ -15,7 +15,6 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/Copyright
 
 MAKE_ENV=	OSTYPE="${OPSYS}"
-MAKE_JOBS_SAFE=	yes
 
 MAN5=		dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
 MAN8=		dhcpc.8 dhcps.8 relay.8 dhcpm.8

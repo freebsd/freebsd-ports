@@ -20,6 +20,5 @@ USE_QT4=	corelib declarative \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

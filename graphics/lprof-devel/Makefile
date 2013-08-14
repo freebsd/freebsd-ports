@@ -22,7 +22,6 @@ USE_XORG=	x11 xext sm ice xxf86vm
 USE_QT4=	corelib gui qt3support assistantclient \
 		linguist_build qmake_build moc_build uic_build rcc_build
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS=	-DQTTRANS_LRELEASE_EXECUTABLE="${LOCALBASE}/bin/lrelease-qt4"
 

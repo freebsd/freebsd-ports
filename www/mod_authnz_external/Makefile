@@ -15,7 +15,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Allows users authentication based on external mechanisms on apache 2.2
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes

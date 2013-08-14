@@ -19,7 +19,6 @@ USE_SDL=	image
 USE_OPENAL=	al
 USE_GL=		glew
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2.png,' \

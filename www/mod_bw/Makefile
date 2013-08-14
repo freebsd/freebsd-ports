@@ -12,7 +12,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 
-MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/mod_bw
 USE_APACHE=	22

@@ -15,7 +15,6 @@ LICENSE=	LGPL3 # (or later)
 NO_WRKSUBDIR=	yes
 
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/lpc21isp
 

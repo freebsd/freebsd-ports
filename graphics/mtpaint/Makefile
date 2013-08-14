@@ -34,7 +34,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--localedir=${PREFIX}/share/locale \
 		gtk2 cflags asneeded ft jpeg tiff man GIF
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		${PORTNAME}.1
 

@@ -27,7 +27,6 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-check=no
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		crossfire-config.6 crossfire-server.6 crossloop.6 \
 		crossloop.web.6

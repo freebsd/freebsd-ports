@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USES=		cmake gettext
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 .for lang in da en es it pt sv

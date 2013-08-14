@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	DOCS
 
 USES=		cmake:outsource ncurses
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} \

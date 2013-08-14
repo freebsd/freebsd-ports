@@ -19,7 +19,6 @@ USE_SDL=	sdl mixer
 
 USE_QT4=	qmake_build uic_build moc_build rcc_build \
 		corelib svg xml opengl network
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/jag|${DATADIR}|' \

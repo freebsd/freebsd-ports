@@ -30,7 +30,6 @@ AMAVISUSER?=	vscan
 AMAVISDIR?=	/var/amavis
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--localstatedir=${AMAVISDIR} --with-working-dir=tmp
 USE_RC_SUBR=	${PORTNAME}
 

@@ -12,7 +12,6 @@ COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 
 LICENSE=	BSD
 
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/fossil
 

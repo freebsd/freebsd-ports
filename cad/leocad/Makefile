@@ -25,7 +25,6 @@ LEOCAD_PIECES=	pieces-7114.zip
 USES=		gmake pkgconfig shared-mime-info
 USE_GL=		glut
 USE_GNOME=	gtk20
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		leocad.1
 

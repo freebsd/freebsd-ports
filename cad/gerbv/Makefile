@@ -18,7 +18,6 @@ USE_GNOME=	desktopfileutils gtk20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

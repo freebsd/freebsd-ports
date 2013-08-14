@@ -26,7 +26,6 @@ USES=		pkgconfig gettext
 USE_PYTHON=	2.5-2.7
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN8=	pokerconfigupgrade.8
 

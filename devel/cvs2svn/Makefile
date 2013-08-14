@@ -20,7 +20,6 @@ COMMENT=	CVS to Subversion Repository Converter
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes

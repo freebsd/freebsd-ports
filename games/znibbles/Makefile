@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=	GTK1
 USES=		motif
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		nibbles.6 znibbles.6 znibblesX.6
 PLIST_FILES=	bin/nibbles bin/znibbles bin/znibblesX

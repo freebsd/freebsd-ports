@@ -17,7 +17,6 @@ COMMENT=	Match and remove all of the blocks before time runs out
 LICENSE=	GPLv2
 
 USE_SDL=	sdl image mixer
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README TODO
 

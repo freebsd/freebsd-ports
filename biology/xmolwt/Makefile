@@ -15,7 +15,6 @@ OPTIONS_DEFINE=	DOCS GTK2
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.gtk
 ALL_TARGET=	gmolwt
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/gmolwt bin/molwt

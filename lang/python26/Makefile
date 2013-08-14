@@ -23,7 +23,6 @@ CONFIGURE_SCRIPT=	../configure # must be relative
 CONFIGURE_ENV=	SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 

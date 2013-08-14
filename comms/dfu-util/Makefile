@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	USE_LIBS="-lusb" \
 		ac_cv_lib_usbpath_usb_path2devnum=no
 CONFIGURE_ARGS=	--disable-silent-rules
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		dfu-util.1
 PLIST_FILES=	bin/dfu-suffix bin/dfu-util

@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 
 USE_LUA=	5.1+
 USE_SCONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
 LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}

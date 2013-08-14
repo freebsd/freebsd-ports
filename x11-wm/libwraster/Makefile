@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--enable-modelock \
 		--enable-xinerama --enable-usermenu \
 		--with-x
-MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-DPREFIX=\\\"${PREFIX}\\\" -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

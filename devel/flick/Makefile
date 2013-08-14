@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

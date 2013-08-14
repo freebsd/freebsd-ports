@@ -40,7 +40,6 @@ CONFIGURE_ARGS=	--enable-ttygid \
 MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
 
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

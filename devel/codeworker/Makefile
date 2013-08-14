@@ -19,7 +19,6 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LFLAGS="-lm"
 ALL_TARGET=	build
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-Dstricmp=strcasecmp
 

@@ -22,7 +22,6 @@ USE_XORG=	x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		dxpc.1
 PLIST_FILES=	bin/dxpc

@@ -23,7 +23,6 @@ USE_EMACS=	yes
 RUN_DEPENDS=	rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
 .endif
 
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

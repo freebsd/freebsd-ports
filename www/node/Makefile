@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''

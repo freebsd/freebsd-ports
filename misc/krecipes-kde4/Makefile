@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=	SQLITE
 USES=		cmake gettext
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz sharedmime
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

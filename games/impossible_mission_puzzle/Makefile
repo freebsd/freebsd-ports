@@ -19,7 +19,6 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/puzzle-${PORTVERSION}
 
 USE_SDL=	sdl
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png

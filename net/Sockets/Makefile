@@ -17,7 +17,6 @@ COMMENT=	A C++ wrapper for BSD-style sockets
 #CFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_JOBS_SAFE=yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

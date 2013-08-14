@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cachesize=20 \
 		--enable-midi=seq,extp,raw \
 		--enable-cdrom=bsd,mp3
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

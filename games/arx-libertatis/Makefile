@@ -24,7 +24,6 @@ USE_SDL=	sdl
 USE_GL=		gl glu
 USES=		cmake
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" -DDATA_DIR=arx
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

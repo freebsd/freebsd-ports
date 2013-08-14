@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
 ALL_TARGET=	default
 USE_DOS2UNIX=	dat/d/helpfile.txt src/*.c
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PORTDATA=	*

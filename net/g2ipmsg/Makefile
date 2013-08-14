@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--enable-systray \
 		--with-ssl=${OPENSSLBASE}
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -13,7 +13,6 @@ COMMENT=	Library for camera RAW files decoding
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-MAKE_JOBS_SAFE=	yes
 USES=		pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

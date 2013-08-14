@@ -15,7 +15,6 @@ COMMENT=	Statistic analyzer for daemons log files similar to SARG
 
 PORTDOCS=	COPYING INSTALL README README.DEV ChangeLog FAQ THANKS
 DOCSDIR=	share/doc/free-sa-${DISTVERSION}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	free-sa.1
 MAN5=	free-sa.conf.5

@@ -14,7 +14,6 @@ COMMENT=	Move colored balls through the maze connecting it with each other
 USE_SDL=	image sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/interlogic
 

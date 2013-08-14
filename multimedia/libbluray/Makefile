@@ -24,7 +24,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 		--disable-debug \
 		--disable-optimizations
-MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		CFLAGS=${CFLAGS:Q}
 

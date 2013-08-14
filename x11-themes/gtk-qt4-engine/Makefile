@@ -16,7 +16,6 @@ USE_QT4=	corelib gui moc_build rcc_build uic_build qmake_build
 USES=		cmake gettext
 USE_KDE4=	kdelibs kdeprefix automoc4
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	BONOBO
 BONOBO_DESC=	Better support for Bonobo (GNOME) framework

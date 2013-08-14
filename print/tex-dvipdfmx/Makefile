@@ -61,7 +61,6 @@ CONFIGURE_ARGS= --with-paper \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 NO_MANCOMPRESS=	yes
 MAN1=	dvipdfm.1 dvipdft.1 ebb.1 extractbb.1

@@ -29,7 +29,6 @@ ACLOCAL_ARGS=	-I m4/generated -I m4
 LIBTOOLIZE_ARGS=--install --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
 

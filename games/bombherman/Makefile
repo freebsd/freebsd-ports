@@ -30,7 +30,6 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

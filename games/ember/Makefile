@@ -39,7 +39,6 @@ USE_OPENAL=	al alut
 USES=	pathfix
 USE_BZIP2=	YES
 CPPFLAGS+=	-DBR_NO_MACROS
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

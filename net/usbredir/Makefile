@@ -14,7 +14,6 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	protocol for redirection of USB traffic
 
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 PATCH_STRIP=	-p1

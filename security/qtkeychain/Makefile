@@ -19,6 +19,5 @@ USES=	cmake
 USE_QT4=	corelib dbus moc_build qmake_build rcc_build
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

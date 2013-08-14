@@ -18,7 +18,6 @@ OPTIONS_DEFAULT=THREADS
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	xxl.html xxl.pdf
 

@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		flow-extract.1
 PLIST_FILES=	bin/flow-extract

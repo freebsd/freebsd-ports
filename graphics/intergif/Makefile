@@ -15,7 +15,6 @@ WRKSRC=		${WRKDIR}/igsrc
 
 MAKEFILE=	makefile.ix
 ALL_TARGET=	intergif
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/intergif
 

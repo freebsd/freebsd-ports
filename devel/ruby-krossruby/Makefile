@@ -22,7 +22,6 @@ USES=		cmake:outsource
 CMAKE_ARGS+=	-DBUILD_python:BOOL=FALSE \
 		-DBUILD_falcon:BOOL=FALSE \
 		-DBUILD_java:BOOL=FALSE
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	lib/kde4/krossruby.so
 

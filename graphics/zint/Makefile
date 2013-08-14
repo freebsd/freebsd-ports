@@ -21,7 +21,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USES=		cmake
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build designer
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Zint" "Barcode generator" "" "zint-qt" "" false
 

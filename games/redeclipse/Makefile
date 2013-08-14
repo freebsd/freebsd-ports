@@ -25,7 +25,6 @@ BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ALL_TARGET=	libenet
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	redeclipse redeclipse_server
 

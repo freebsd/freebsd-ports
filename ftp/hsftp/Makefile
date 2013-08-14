@@ -20,7 +20,6 @@ READLINE_DESC=	Enable readline support
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		hsftp.1
 PLIST_FILES=	bin/hsftp

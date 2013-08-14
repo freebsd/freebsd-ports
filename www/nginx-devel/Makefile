@@ -192,7 +192,6 @@ XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
 
 WANT_GNOME=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

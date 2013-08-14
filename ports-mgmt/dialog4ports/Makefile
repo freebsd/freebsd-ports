@@ -25,7 +25,6 @@ MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 PLIST_FILES=	bin/dialog4ports
 
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

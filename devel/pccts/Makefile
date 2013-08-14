@@ -23,7 +23,6 @@ USE_ZIP=	yes
 MAKE_ENV=	COPT="${CFLAGS}"
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		antlr.1 dlg.1
 

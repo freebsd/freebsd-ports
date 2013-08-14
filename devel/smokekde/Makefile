@@ -18,7 +18,6 @@ USE_QT4=	corelib dbus designer_build gui network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 USES=		cmake:outsource
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ATTICA

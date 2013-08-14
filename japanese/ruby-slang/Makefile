@@ -12,7 +12,6 @@ CATEGORIES=	japanese
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	S-Lang-jp extension module for Ruby
 
-MAKE_JOBS_SAFE=  yes
 
 WITH_JAPANESE=	yes
 

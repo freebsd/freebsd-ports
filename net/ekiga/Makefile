@@ -29,7 +29,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
 		--with-opal-dir=${LOCALBASE}
-MAKE_JOBS_SAFE=	yes
 
 GCONF_SCHEMAS=	ekiga.schemas
 MAN1=		ekiga.1

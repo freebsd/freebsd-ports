@@ -22,7 +22,6 @@ USE_QT4=	corelib gui phonon \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 PHONON_BRANCH=	stable
 

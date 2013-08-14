@@ -30,7 +30,6 @@ CMAKE_ARGS=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex \
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
 USE_LDCONFIG=	yes
 USES=		bison cmake:outsource
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

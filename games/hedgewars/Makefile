@@ -22,7 +22,6 @@ USE_LUA=	5.1+
 USE_QT4=	corelib gui moc_build network \
 		qmake_build rcc_build svg xml \
 		uic_build linguist_build
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-[0-9]$//}
 

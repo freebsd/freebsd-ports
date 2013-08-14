@@ -18,7 +18,6 @@ USES=		ncurses
 #USE_READLINE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 NO_CCACHE=	yes
 
 MANCOMPRESSED=	yes

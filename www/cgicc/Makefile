@@ -19,7 +19,6 @@ USES=		pathfix
 
 PORTDOCS=	*
 CXXFLAGS+=	-Wno-unknown-pragmas
-MAKE_JOBS_SAFE=	yes
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen

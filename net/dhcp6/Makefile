@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
-MAKE_JOBS_SAFE=	yes
 USE_RC_SUBR=	dhcp6c dhcp6relay dhcp6s
 PORTDOCS=	README
 

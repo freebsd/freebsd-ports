@@ -19,7 +19,6 @@ USES=		gettext
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

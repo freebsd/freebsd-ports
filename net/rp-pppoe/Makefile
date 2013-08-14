@@ -18,7 +18,6 @@ PATCH_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
 
-MAKE_JOBS_SAFE=	yes
 
 MAN5=	pppoe.conf.5
 MAN8=	pppoe-connect.8 pppoe-setup.8 pppoe-start.8 pppoe-status.8 \

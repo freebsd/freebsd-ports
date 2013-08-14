@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcl --disable-tk
 ALL_TARGET=	xdeview
 INSTALL_TARGET=	install-tcl
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${TCL_INCLUDEDIR} -DHAVE_TCL \
 		-I${TK_INCLUDEDIR} -DHAVE_TK \

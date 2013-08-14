@@ -22,7 +22,6 @@ USE_XORG=	x11 xrandr
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	Makefile
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/SFML-${PORTVERSION}
 

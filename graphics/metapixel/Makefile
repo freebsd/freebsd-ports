@@ -21,7 +21,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
 LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 
 MAN1=		metapixel.1

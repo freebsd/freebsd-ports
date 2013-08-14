@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 USES=		bison gettext iconv
 
-MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	LEX="${LOCALBASE}/bin/flex"
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" \

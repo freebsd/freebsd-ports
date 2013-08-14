@@ -13,7 +13,6 @@ COMMENT=	CD player for X
 
 USES=		imake
 USE_XORG=	xbitmaps xaw
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xcdplayer.1
 

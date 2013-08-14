@@ -30,7 +30,6 @@ USE_GNOME=	gtk20 gnomehack
 DIST_SUBDIR=	gnome2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		ekiga.1
 

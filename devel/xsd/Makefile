@@ -26,7 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKEFILE=	makefile
 MAKE_ARGS=	install_prefix=${PREFIX} \
 		verbose=1
-MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 

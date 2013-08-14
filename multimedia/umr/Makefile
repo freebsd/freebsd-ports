@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.oldunreal.com/mods/other/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Media Ripper
 
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

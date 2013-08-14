@@ -16,7 +16,6 @@ LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm
 
-MAKE_JOBS_SAFE=	yes
 
 USE_XORG=	x11 xrandr
 USE_BZIP2=	yes

@@ -12,7 +12,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	alex@hugo.bmg.gv.at
 COMMENT=	Apache module for one-time password authentication
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 USE_APACHE=	22

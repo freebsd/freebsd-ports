@@ -19,7 +19,6 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/CutyCapt
 
 USE_QT4=	qmake_build moc_build imageformats webkit
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/CutyCapt
 

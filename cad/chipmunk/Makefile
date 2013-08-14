@@ -27,7 +27,6 @@ NO_WRKSUBDIR=	yes
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 

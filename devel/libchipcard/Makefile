@@ -30,7 +30,6 @@ CONFIGURE_ARGS+=--enable-release="yes" \
 		--with-pcsc-libs=${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
 USE_LDCONFIG=	yes

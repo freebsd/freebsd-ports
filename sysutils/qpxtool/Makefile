@@ -19,7 +19,6 @@ QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		f1tattoo.1 cdvdcontrol.1 qscan.1 readdvd.1 qpxtool.1 qscand.1
 MAN8=		pxfw.8

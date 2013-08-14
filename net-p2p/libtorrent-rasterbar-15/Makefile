@@ -12,7 +12,6 @@ COMMENT?=	C++ library implementing a BitTorrent client
 
 BROKEN=		Does not build with recent boost
 
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS+=	libtorrent-rasterbar-0.1[46789].*
 

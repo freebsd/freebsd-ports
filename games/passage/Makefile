@@ -12,7 +12,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An experimental video game by Jason Rohrer
 
 USE_SDL=	sdl
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gamma256/gameSource
 

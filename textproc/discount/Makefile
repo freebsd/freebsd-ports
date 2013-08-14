@@ -18,7 +18,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man
-MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	install install.man
 
 MAN1=		markdown.1

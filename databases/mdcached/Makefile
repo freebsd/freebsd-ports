@@ -17,7 +17,6 @@ COMMENT=	A high performance cache server similar to memcached
 LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 MAN1=		${PORTNAME}.1
 

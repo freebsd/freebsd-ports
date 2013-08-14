@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 USES=		pkgconfig
 USE_GNOME=	gtk20 esound
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
-MAKE_JOBS_SAFE=	yes
 
 AUTOMAKE_ARGS=	--add-missing --copy
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal

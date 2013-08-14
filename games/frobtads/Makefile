@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lcompat"
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

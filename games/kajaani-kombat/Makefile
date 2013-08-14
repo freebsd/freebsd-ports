@@ -18,7 +18,6 @@ USE_SDL=	sdl image mixer net ttf
 USE_GMAKE=	yes
 ALL_TARGET=	client server
 USES=		iconv
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 

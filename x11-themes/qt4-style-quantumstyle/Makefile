@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_QT4=	corelib gui svg qmake_build rcc_build uic_build moc_build
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/QuantumStyle
 

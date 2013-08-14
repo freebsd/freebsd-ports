@@ -11,7 +11,6 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Control cameras based on Sierra Imaging chipset and compatibles
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/epinfo \
 		bin/photopc \

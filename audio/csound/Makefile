@@ -46,7 +46,6 @@ SCONS_ARGS=	prefix="${PREFIX}" CC="${CC}" CXX="${CXX}" \
 		install=1 noDebug=1 useDouble=1 \
 		useGettext=1 usePortMIDI=0
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

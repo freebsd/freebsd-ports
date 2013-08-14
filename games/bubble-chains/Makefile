@@ -25,7 +25,6 @@ USE_XORG=	xrandr
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib svg xml opengl network
 
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
 

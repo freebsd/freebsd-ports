@@ -18,7 +18,6 @@ USE_QT4=	corelib declarative opengl phonon script sql xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_XORG=	xkbfile
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		ktouch.1
 

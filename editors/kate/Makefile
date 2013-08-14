@@ -22,7 +22,6 @@ USE_PERL5_BUILD=	yes
 USE_QT4=	dbus gui script sql webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kate.1
 

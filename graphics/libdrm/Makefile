@@ -17,7 +17,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 .if defined(WITH_NEW_XORG)
 

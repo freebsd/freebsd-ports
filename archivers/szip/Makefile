@@ -13,7 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast compression utility
 
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
 

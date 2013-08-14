@@ -23,7 +23,6 @@ PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 SUB_FILES=	pkg-message
 
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-Wall -Wno-unused-value
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 

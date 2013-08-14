@@ -41,7 +41,6 @@ ICONV_USES=		iconv
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	any
 USE_RC_SUBR=	clamav-clamd clamav-freshclam

@@ -23,7 +23,6 @@ USE_KDE4=	kdeprefix kdehier automoc4 kdelibs ontologies soprano
 USES=		cmake:outsource
 USE_QT4=	corelib dbus gui qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 SUB_FILES=	nepomuk-env.sh

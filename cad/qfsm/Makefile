@@ -26,7 +26,6 @@ USE_QT4=	corelib gui qt3support svg xml \
 USE_GNOME=	desktopfileutils
 USES=		cmake
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_ipv6=yes
 CONFIGURE_ARGS=	--with-socks=no --with-socks5=no --with-krb4=no \
 		--with-krb5=no --with-openssl=${OPENSSLBASE}
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -14,7 +14,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 USES=		iconv
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README.txt INSTALL.txt mysql.sql
 

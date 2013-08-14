@@ -18,7 +18,6 @@ PORTDOCS=	README
 USE_RC_SUBR=	tbd
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ENV=	AUTOMAKE=/usr/bin/true
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

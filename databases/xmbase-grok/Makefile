@@ -21,7 +21,6 @@ MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \
 		GBIN="${PREFIX}/bin" GLIB="${DATADIR}" \
 		CF="-I${LOCALBASE}/include" LF="${MOTIFLIB} -lXt -lX11 -lm"
 MAN1=		grok.1
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/lib/X11/xmbase-grok
 

@@ -18,7 +18,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 USE_BZIP2=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		corelib gui network xml xmlpatterns
-MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 QMAKE_ARGS=	${QMAKE_PRO}
 QMAKE_PRO=	${PORTNAME}.pro

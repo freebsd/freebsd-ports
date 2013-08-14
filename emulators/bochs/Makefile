@@ -78,7 +78,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no
 CONFIGURE_ARGS=	--disable-docbook --disable-instrumentation
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-fno-exceptions -fomit-frame-pointer ${CPPFLAGS}
 CXXFLAGS+=	-fno-rtti

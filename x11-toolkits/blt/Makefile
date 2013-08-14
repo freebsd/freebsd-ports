@@ -28,7 +28,6 @@ WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wall -Wno-uninitialized
 CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
-MAKE_JOBS_SAFE=	yes
 
 USE_TK=		84+
 INVALID_TK_VER=	86

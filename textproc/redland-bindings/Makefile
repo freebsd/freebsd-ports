@@ -12,7 +12,6 @@ COMMENT?=	Language bindings for the Redland package
 LIB_DEPENDS=	rdf:${PORTSDIR}/textproc/redland
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	PERL PHP PYTHON RUBY
 OPTIONS_DEFAULT=PYTHON

@@ -32,7 +32,6 @@ USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		ghostess.1
 PLIST_FILES=	bin/ghostess bin/ghostess_universal_gui

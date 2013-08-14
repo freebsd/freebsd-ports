@@ -16,7 +16,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
 		--docdir="/${DOCSDIR_REL}" \
 		--init="${PATCHDIR}/InitialCache.cmake"
-MAKE_JOBS_SAFE=	yes
 
 .if defined(STRIP) && ${STRIP} != ""
 INSTALL_TARGET=	install/strip

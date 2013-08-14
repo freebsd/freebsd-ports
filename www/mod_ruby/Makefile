@@ -12,7 +12,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22
 USE_RUBY=	yes

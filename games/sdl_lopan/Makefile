@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/sdllopan-${PORTVERSION}
 
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=
 

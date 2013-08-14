@@ -14,7 +14,6 @@ LIB_DEPENDS=	QtSolutions_SingleApplication-head.1:${PORTSDIR}/devel/qt4-qtsoluti
 
 USE_QT4=	corelib gui network webkit xml qmake_build moc_build rcc_build uic_build linguist
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/EasyPBI-source
 
 QMAKE_PRO=	EasyPBI.pro

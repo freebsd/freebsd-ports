@@ -18,7 +18,6 @@ USES=	gmake
 USE_AUTOTOOLS=	autoconf libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 SUB_FILES=	pkg-message

@@ -28,7 +28,6 @@ USE_GL=		yes
 USE_SDL=	image sdl ttf
 USE_OPENAL=	al alut
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	DOCS
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 USES=		shebangfix
 SHEBANG_FILES=	ftpmirror rotate

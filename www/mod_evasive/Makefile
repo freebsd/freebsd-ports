@@ -12,7 +12,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	kiwi@oav.net
 COMMENT=	An Apache module to try to protect the HTTP Server from DoS/DDoS attacks
 
-MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

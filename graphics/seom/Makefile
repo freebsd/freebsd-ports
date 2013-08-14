@@ -34,7 +34,6 @@ ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 .endif
 
-MAKE_JOBS_SAFE=	defined
 MAKE_ENV+=	DATADIR="${DATADIR}" PREFIX="${PREFIX}"
 
 #

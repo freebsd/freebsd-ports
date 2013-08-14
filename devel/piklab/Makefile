@@ -19,7 +19,6 @@ USE_DOS2UNIX=	Piklab.cmake
 USE_QT4=	corelib gui qt3support qtestlib xml \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext readline
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		piklab-hex.1 piklab-prog.1
 

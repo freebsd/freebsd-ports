@@ -18,7 +18,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/xmms/VU_Meter_skins
 

@@ -17,7 +17,6 @@ RUN_DEPENDS=	bgdi:${PORTSDIR}/devel/bennugd-core \
 		${LOCALBASE}/lib/bennugd/mod_grproc.so:${PORTSDIR}/devel/bennugd-modules
 
 USE_ZIP=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/RailroadRampage_Linux
 SUB_FILES=	${PORTNAME}

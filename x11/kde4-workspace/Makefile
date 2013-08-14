@@ -55,7 +55,6 @@ USE_XORG=	kbproto x11 xau xcomposite xcursor xdamage xdmcp xfixes \
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 # Xmms and Googlegadgets could be enabled.
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \

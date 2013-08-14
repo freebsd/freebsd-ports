@@ -15,7 +15,6 @@ LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 DRIVER=		src/sql/drivers/${DB}
 PLUGIN=		src/plugins/sqldrivers/${DB}

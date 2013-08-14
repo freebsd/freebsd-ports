@@ -21,7 +21,6 @@ USE_QT4=	corelib gui network qt3support qtestlib webkit \
 		qmake_build moc_build rcc_build uic_build
 USES=		cmake:outsource gettext
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS_BUILD=	ktorrent-2*
 

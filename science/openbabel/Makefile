@@ -17,7 +17,6 @@ USE_GNOME=	libxml2
 USES=		cmake:outsource
 CMAKE_ARGS=	-DBUILD_GUI=off
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		babel.1 \
 		obabel.1 \

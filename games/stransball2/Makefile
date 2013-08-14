@@ -18,7 +18,6 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer sound
 USE_DOS2UNIX=	yes
-MAKE_JOBS_SAFE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/sources
 

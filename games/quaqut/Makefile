@@ -13,7 +13,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20C%20sources/${PORTNAME}-${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Queries information from Unreal Tournament 2004 game servers
 
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}

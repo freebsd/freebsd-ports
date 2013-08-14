@@ -30,7 +30,6 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	# none
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	aliastorle.1 applymap.1 avg4.1 crop.1 cubitorle.1 dvirle.1	\
 	fant.1 getx11.1 giftorle.1 graytorle.1 into.1 mcut.1 mergechan.1\

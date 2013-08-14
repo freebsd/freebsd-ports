@@ -14,7 +14,6 @@ COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 LICENSE=	GPLv2 # (or later)
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xdelta3.1
 PLIST_FILES=	bin/xdelta3

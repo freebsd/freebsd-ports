@@ -19,7 +19,6 @@ READLINE_DESC=	Enable readline support
 USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		ncftp2.1
 PLIST_FILES=	bin/${LATEST_LINK}

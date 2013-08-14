@@ -18,7 +18,6 @@ PLIST_FILES=	bin/p0f bin/p0f-client bin/p0f-sendsyn \
 PORTDOCS=	ChangeLog README TODO existential-notes.txt \
 		extra-sigs.txt
 
-MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 .include <bsd.port.options.mk>

@@ -13,7 +13,6 @@ MASTER_SITES=	SF/synce/Dynamite/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
-MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

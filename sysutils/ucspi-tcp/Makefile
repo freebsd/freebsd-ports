@@ -21,7 +21,6 @@ RSS_DIFF_DESC=	Patch rblsmtpd for qmail users
 RBL2SMTPD_DESC=	Don't drop connection, pass envvar to smtpd
 LIMITS_DESC=	Implement per-connection and other limits
 
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	prog install instcheck
 

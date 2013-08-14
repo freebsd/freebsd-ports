@@ -11,7 +11,6 @@ PKGNAMESUFFIX=	_another
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
-MAKE_JOBS_SAFE=	yes
 
 USE_MYSQL=	yes
 USE_APACHE=	22

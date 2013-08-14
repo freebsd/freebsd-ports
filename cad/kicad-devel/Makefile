@@ -43,7 +43,6 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 
-MAKE_JOBS_SAFE= yes
 
 .include <bsd.port.pre.mk>
 

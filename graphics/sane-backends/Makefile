@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	--with-docdir=${WRKDIR}/tmproot \
 		--disable-locking \
 		--enable-pthread
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	saned
 SUB_FILES+=	pkg-message

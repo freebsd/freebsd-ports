@@ -26,7 +26,6 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
-MAKE_JOBS_SAFE=		yes
 
 OPTIONS_DEFINE=	BUNDLED_LIBS
 BUNDLED_LIBS_DESC=	Use Qt-bundled jpeg, mng, png and tiff

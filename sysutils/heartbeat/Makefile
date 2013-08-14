@@ -52,7 +52,6 @@ SUB_LIST=	BATCH=${BATCH}
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		cl_status.1 ha_logger.1 hb_addnode.1 hb_delnode.1 hb_standby.1 hb_takeover.1
 MAN8=		apphbd.8 cibadmin.8 crm_resource.8 ha_logd.8 heartbeat.8 \

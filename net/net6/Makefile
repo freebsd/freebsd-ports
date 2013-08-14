@@ -17,7 +17,6 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 
 USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

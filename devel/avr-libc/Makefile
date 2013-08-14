@@ -40,7 +40,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		gettext:build
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	avr-libc-devel-[0-9]*
 

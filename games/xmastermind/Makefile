@@ -16,7 +16,6 @@ LIB_DEPENDS=	forms:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XORG=	x11 xpm
 MAKE_ENV=	GRAPHLIBS="${LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lforms -lXpm -lX11

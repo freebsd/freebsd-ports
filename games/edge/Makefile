@@ -32,7 +32,6 @@ USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.linux
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/edge %%DMDIR%%/edge.wad

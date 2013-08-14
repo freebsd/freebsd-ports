@@ -11,7 +11,6 @@ COMMENT=	Strigi desktop search: utilities
 LIB_DEPENDS=	streams:${PORTSDIR}/deskutils/libstreams \
 		streamanalyzer:${PORTSDIR}/deskutils/libstreamanalyzer
 
-MAKE_JOBS_SAFE=	yes
 
 .include <${.CURDIR}/../strigi/Makefile.common>
 .include <bsd.port.mk>

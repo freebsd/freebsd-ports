@@ -15,7 +15,6 @@ LICENSE_COMB=	multi
 USES=		bison gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_stdcpp_main=no
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\(SUBDIRS =.*\)doc/\1/' ${WRKSRC}/Makefile.in

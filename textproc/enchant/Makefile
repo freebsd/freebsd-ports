@@ -19,7 +19,6 @@ USES=		pathfix pkgconfig
 USE_GNOME=	glib20 ltverhack
 CONFIGURE_ARGS=	--disable-uspell \
 		--disable-voikko
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

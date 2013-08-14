@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake perl5
 USE_PERL5=	build
 USE_XORG=	xaw
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		bricons.1
 

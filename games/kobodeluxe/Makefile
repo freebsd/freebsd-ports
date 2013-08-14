@@ -16,7 +16,6 @@ USE_BZIP2=	yes
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
-MAKE_JOBS_SAFE=	yes
 
 .if defined(.PARSEDIR)
 USE_GMAKE=	yes

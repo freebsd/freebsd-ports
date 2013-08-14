@@ -8,7 +8,6 @@ CATEGORIES=	security
 MASTER_SITES=	http://assets.keltia.net/calife/
 DISTNAME=	calife-3.0.1
 
-MAKE_JOBS_SAFE=yes
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
 

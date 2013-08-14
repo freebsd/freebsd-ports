@@ -13,7 +13,6 @@ COMMENT=	GVFS module for access Windows Mobile devices
 EXTRACT_DEPENDS=${NONEXISTENT}:${GVFS_PORTDIR}:patch
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

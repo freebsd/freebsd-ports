@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 USES=		cmake gettext iconv
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Scan Tailor" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Scanning;" false

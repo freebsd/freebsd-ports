@@ -20,7 +20,6 @@ USES=		cmake:outsource
 USE_QT4=	declarative opengl script sql \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 DISTINFO_FILE=	${.CURDIR}/../kactivities/distinfo
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 

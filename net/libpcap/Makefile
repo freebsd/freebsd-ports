@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.tcpdump.org/release/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USES=		bison

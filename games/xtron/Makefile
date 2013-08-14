@@ -12,7 +12,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Avoid running into walls, your own tail, and that of your opponent
 
 USE_XORG=	x11 xpm
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="xtron" \
 		"Avoid running into walls, your own tail, and that of your opponent" \

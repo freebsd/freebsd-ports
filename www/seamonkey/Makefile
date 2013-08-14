@@ -33,7 +33,6 @@ WANT_PERL=	yes
 ALL_TARGET=	default
 USE_GL=		gl
 USE_DOS2UNIX=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
-MAKE_JOBS_SAFE=	yes
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 
 MOZ_EXTENSIONS=	default

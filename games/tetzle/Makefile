@@ -15,7 +15,6 @@ USE_BZIP2=	yes
 USE_QT4=	corelib gui moc_build opengl qmake_build rcc_build xml
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

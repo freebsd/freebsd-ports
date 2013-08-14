@@ -23,7 +23,6 @@ NOT_FOR_ARCHS_REASON=	does not compile on sparc64: assertion failed
 
 PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
 
-MAKE_JOBS_SAFE=	yes
 
 USES=		bison
 USE_GMAKE=	yes

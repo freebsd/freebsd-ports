@@ -9,7 +9,6 @@ USE_QT4=	uic_build moc_build qmake_build rcc_build xml
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USES=		cmake gettext
 
-MAKE_JOBS_SAFE=	yes
 
 # Support for spelling dictionaries
 

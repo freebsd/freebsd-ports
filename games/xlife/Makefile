@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
 USE_XORG=	x11
-MAKE_JOBS_SAFE=	yes
 
 MLINKS=		xlife.6 lifeconv.6
 MAN6=		xlife.6

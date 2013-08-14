@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

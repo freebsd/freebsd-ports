@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 
 USE_QT4=	gui qmake_build moc_build rcc_build network
 
-MAKE_JOBS_SAFE=	yes
 
 QMAKE_MIDIPP=	${QMAKE} -unix PREFIX=${PREFIX} -o
 

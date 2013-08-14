@@ -26,7 +26,6 @@ INSTALL_TARGET=	install install-shlibs
 INSTALL_WRKSRC=	${WRKSRC}/lib/uuid
 FILESDIR=	${.CURDIR}/files
 USE_RC_SUBR=	uuidd
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		uuidgen.1
 

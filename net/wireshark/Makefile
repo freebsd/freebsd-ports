@@ -24,7 +24,6 @@ USE_PYTHON_BUILD=yes
 USES=		iconv gettext pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="${WIRESHARK_LIBS}"

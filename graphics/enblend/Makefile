@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
-MAKE_JOBS_SAFE= yes
 USE_AUTOTOOLS=	automake:env autoconf:env
 USE_GMAKE=	yes
 # We need a newer version of makinfo for this.

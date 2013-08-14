@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USES=		iconv
 USE_XORG=	x11 xau xdmcp
 ALL_TARGET=
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

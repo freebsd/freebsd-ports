@@ -22,7 +22,6 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f -print0 | \

@@ -13,7 +13,6 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui opengl
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 USE_XORG=	xtst
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

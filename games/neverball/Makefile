@@ -20,7 +20,6 @@ USE_GL=		gl
 USE_SDL=	sdl ttf
 USE_GMAKE=	yes
 MAKE_ENV+=	ENABLE_WII=0
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	CHANGES COPYING README
 MAN6=		neverball.6 neverputt.6

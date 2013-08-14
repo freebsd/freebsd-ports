@@ -34,7 +34,6 @@ USE_QT4=	dbus designer gui network opengl \
 USE_XORG=	x11
 USE_BZIP2=	yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	AMAZON IPOD MP3TUNES MTP

@@ -28,7 +28,6 @@ USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

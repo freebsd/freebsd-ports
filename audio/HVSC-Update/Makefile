@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	HVSC_Update.txt SID_file_format.txt
 PLIST_FILES=	bin/${PORTNAME}

@@ -20,7 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool automake autoconf
 USE_GNOME=	libxml2
 USE_PYTHON=	2.6+

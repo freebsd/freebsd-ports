@@ -10,7 +10,6 @@ DISTNAME=	zeromq-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source message queue optimised for performance
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes

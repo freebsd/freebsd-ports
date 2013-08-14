@@ -21,7 +21,6 @@ USES=		cmake:outsource
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		dragon.1
 

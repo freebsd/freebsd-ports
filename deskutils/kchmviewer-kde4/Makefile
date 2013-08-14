@@ -21,7 +21,6 @@ LATEST_LINK=	${PORTNAME}-kde4
 USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	webkit qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps

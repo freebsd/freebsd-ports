@@ -22,7 +22,6 @@ USE_QT4=	dbus gui network qtestlib_build xml \
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=True \
 		-DENABLE_TESTS:BOOL=False
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

@@ -17,7 +17,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 USE_XORG=	x11 xrandr
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	${PORTNAME}.sh
 PLIST_FILES=	libexec/${PORTNAME} bin/${PORTNAME}

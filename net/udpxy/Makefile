@@ -17,7 +17,6 @@ COMMENT=	UDP-to-HTTP multicast traffic relay daemon
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-0
 USE_RC_SUBR=	udpxy
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 RELEASE_MASCOT=	Chipmunk
 
 OPTIONS_SINGLE=	CONF

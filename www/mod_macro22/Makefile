@@ -14,7 +14,6 @@ LICENSE_NAME=	mod_macro license (apache with postcard request)
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22
 LATEST_LINK=	mod_macro22

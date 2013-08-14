@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	XGLK
 XGLK_DESC=	Use the xglk graphics library
 
 USE_ZIP=	yes
-MAKE_JOBS_SAFE=yes
 
 PLIST_FILES=	bin/scare
 

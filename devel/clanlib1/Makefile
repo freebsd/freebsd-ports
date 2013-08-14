@@ -28,7 +28,6 @@ USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib

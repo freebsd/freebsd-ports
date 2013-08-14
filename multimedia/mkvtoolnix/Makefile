@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--disable-qt \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
-MAKE_JOBS_SAFE=	yes
 
 MANLANG=	"" ja zh_CN nl uk
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1

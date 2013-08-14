@@ -41,7 +41,6 @@ ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GCC=	any

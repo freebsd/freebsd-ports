@@ -21,7 +21,6 @@ PATCH_WRKSRC=	${WRKSRC}/src
 
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/phyml
 

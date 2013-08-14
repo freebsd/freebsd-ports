@@ -26,7 +26,6 @@ MAKE_ARGS=	HA_BINDIR="${PREFIX}/bin" HA_LIBDIR="${DATADIR}" \
 		DEFINES="-DBSD -Dunix" OPTIM="${CFLAGS}" \
 		CC="${CC}"
 ALL_TARGET=	${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	$$(gdlib-config --includes)
 LDFLAGS+=	$$(gdlib-config --ldflags) $$(gdlib-config --libs)

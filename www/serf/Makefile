@@ -13,7 +13,6 @@ COMMENT=	Serf HTTP client library
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
 
-MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USES=		pathfix
 GNU_CONFIGURE=	yes

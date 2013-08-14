@@ -15,7 +15,6 @@ USE_QT4=	qmake_build moc_build rcc_build corelib dbus gui xml \
 		clucene
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

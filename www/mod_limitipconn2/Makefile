@@ -12,7 +12,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Allows you to limit the number of simultaneous connexions
 
-MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_limitipconn2
 

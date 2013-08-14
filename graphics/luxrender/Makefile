@@ -28,7 +28,6 @@ HG_NODEID=	9206b3ba7011
 USE_BZIP2=	yes
 USES=		bison cmake
 WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
-MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="LuxRender" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/luxrender.svg" "${PORTNAME}" \

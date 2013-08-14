@@ -12,7 +12,6 @@ COMMENT=	Helps to install application configuration files
 USE_BZIP2=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	automake aclocal autoconf
 

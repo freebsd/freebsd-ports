@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	aclocal autoconf automake libtool
 USES=		pathfix pkgconfig
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-MAKE_JOBS_SAFE=	yes
 ACLOCAL_ARGS=	-I .
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes

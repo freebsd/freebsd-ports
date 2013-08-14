@@ -24,7 +24,6 @@ USE_GNOME=	ltverhack libxml2
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${WRKDIR}/tmproot
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		flickcurl.1 flickcurl-config.1 flickrdf.1
 

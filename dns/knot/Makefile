@@ -17,7 +17,6 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	urcu:${PORTSDIR}/sysutils/liburcu
 
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 
 USE_LDCONFIG=	yes

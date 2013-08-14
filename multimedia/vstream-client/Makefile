@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/vstream-client \
 		include/vstream-client.h \

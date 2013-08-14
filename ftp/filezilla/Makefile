@@ -21,7 +21,6 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		idn:${PORTSDIR}/dns/libidn \
 		tinyxml:${PORTSDIR}/textproc/tinyxml
 
-MAKE_JOBS_SAFE=	yes
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes

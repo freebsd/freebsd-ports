@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/tcllib/doctools/pkgIndex.tcl:${PORTSDIR}/devel/t
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	binaries libraries doc-old
 
 USE_TCL=	yes

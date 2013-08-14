@@ -13,7 +13,6 @@ USES=		cmake:outsource
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	script webkit \
 		moc_build qmake_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	OPERA NEPOMUK
 OPTIONS_DEFAULT=	NEPOMUK

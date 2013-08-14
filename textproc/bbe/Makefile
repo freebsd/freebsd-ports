@@ -13,7 +13,6 @@ MASTER_SITES=	SF/${PORTNAME}-/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sed-like editor for binary files
 
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

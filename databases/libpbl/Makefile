@@ -16,7 +16,6 @@ COMMENT=	Peter Graf's Program Base Library
 
 MAKEFILE=	makefile
 PLIST_FILES=	lib/libpbl.a include/pbl.h
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

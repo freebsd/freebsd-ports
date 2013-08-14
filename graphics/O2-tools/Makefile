@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.imglab.org/p/O2/archives/
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Huge image processing tools and libraries
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		bmptopnm-O2.1 breduce.1 lpsmooth.1 makecr.1 makepr.1 prlst2ps.1

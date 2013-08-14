@@ -23,7 +23,6 @@ USE_DOS2UNIX=	*.cpp *.h *.ini Makefile* *.txt *.desktop
 ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl image mixer ttf
 USE_GL=		glu
-MAKE_JOBS_SAFE=	yes
 
 pre-extract:
 		${MKDIR} ${WRKDIR}/${DISTNAME}

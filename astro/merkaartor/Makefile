@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 
 USE_QT4=	qmake_build uic_build moc_build rcc_build \
 		gui network svg webkit xml imageformats script scripttools
-MAKE_JOBS_SAFE=	yes
 
 .if exists(${LOCALBASE}/bin/gnome-session)
 INSTALLS_ICONS=	yes

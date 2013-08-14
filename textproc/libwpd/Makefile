@@ -16,7 +16,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libgsf
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=--disable-werror --without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}

@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fossil:${PORTSDIR}/devel/fossil
 
 USE_QT4=	corelib gui \
 		qmake_build moc_build rcc_build uic_build
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

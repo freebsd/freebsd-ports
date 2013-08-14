@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USES=		gettext
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README
 MAN6=		volleyball.6

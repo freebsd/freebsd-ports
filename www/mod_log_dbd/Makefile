@@ -11,7 +11,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Uses APR DBD to store Apache access logs in a database
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22
 USE_BZIP2=	yes

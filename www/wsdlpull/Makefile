@@ -19,7 +19,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

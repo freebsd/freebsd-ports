@@ -14,7 +14,6 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Dns2tcp is a tool for relaying TCP connections over DNS
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/dns2tcpc bin/dns2tcpd
 MAN1=		dns2tcpc.1 dns2tcpd.1

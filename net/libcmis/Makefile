@@ -21,7 +21,6 @@ USES=		pathfix pkgconfig
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
 

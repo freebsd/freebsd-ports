@@ -19,7 +19,6 @@ MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 USES=		pathfix pkgconfig iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

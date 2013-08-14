@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_SDL=	sdl net mixer ttf image
 USE_GMAKE=	yes
 
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	"CXX=${CXX}"
 
 DATAVERSION=	2005-12-21

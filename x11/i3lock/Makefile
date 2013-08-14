@@ -30,7 +30,6 @@ PLIST_FILES=	bin/i3lock \
 MAN1=	i3lock.1
 
 LDFLAGS+=	-liconv
-MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xcb xt xproto xext
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -20,7 +20,6 @@ BROKEN=		fails to install umberlog.3
 GNU_CONFIGURE=  yes
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 

@@ -11,7 +11,6 @@ COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
-MAKE_JOBS_SAFE=	yes
 
 PROJECTHOST=	tint2
 USE_BZIP2=	yes

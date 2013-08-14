@@ -18,7 +18,6 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 USE_QT4=	corelib gui linguist_build moc_build qmake_build rcc_build \
 		uic_build xml
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	\
 		${DESKTOPDIR:S,^${PREFIX}/,,}/${PORTNAME}.desktop \

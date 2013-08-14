@@ -25,7 +25,6 @@ USE_GCC=	any
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

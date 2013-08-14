@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=	--disable-alsa --enable-oss \
 			--enable-jack-default-midi \
 			--disable-version-check
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		bristol.1 bristoljackstats.1
 MLINKS=		bristol.1 brighton.1 bristol.1 startBristol.1

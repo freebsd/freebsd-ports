@@ -13,7 +13,6 @@ COMMENT=	Internet connection performance logging daemon
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		${PORTNAME}.1
 

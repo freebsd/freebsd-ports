@@ -22,7 +22,6 @@ LATEST_LINK=	${PORTNAME}4
 USES=		cmake
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \

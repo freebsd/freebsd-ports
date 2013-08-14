@@ -27,7 +27,6 @@ MAN8=			dnssec-zkt.8 \
 			zkt-signer.8
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-configpath=${DIR_NAMED_CONF}
-MAKE_JOBS_SAFE=		yes
 
 .include <bsd.port.pre.mk>
 

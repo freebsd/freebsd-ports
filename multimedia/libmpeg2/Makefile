@@ -14,7 +14,6 @@ USES=		pathfix
 USE_GNOME=	ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--enable-shared
 

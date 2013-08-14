@@ -13,7 +13,6 @@ MASTER_SITES=	http://joakimandersson.se/files/
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
 
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 

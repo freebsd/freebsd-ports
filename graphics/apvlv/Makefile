@@ -20,7 +20,6 @@ LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 
 USE_GNOME=	gtk20
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DMANDIR=${MANPREFIX}/man \
 		-DDOCDIR=${DOCSDIR} \

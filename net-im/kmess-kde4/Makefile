@@ -18,7 +18,6 @@ LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 LATEST_LINK=	${PORTNAME}-kde4
-MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 libxslt

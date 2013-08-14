@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=0.8.7:${PORTSDIR}/devel/dulwich \
 		mercurial>=2.5.2:${PORTSDIR}/devel/mercurial \
 		${PKGNAMEPREFIX}ordereddict>=1.1:${PORTSDIR}/devel/py-ordereddict
 
-MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes

@@ -85,7 +85,6 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/kpathsea \
 		-I${LOCALBASE}/include/ptexenc
-MAKE_JOBS_SAFE=	yes
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"
 
 NO_MANCOMPRESS=	yes

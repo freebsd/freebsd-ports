@@ -10,7 +10,6 @@ DISTNAME=	Webware-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for WebWare WebKit AppServer
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_XORG=	xtst
 USES=		gmake pathfix
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 

@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 USE_ZIP=	yes
 
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/frikqcc bin/frikqcdec
 

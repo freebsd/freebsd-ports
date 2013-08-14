@@ -14,7 +14,6 @@ COMMENT=	Shoot'em up game where accurate shooting matters
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image
-MAKE_JOBS_SAFE=	yes
 DESKTOP_ENTRIES="dangen" \
 		"Shoot'em up game where accurate shooting matters" \
 		"" \

@@ -40,7 +40,6 @@ USES=		gettext iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
-MAKE_JOBS_SAFE=	yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=--enable-optimizations

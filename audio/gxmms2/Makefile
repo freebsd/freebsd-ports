@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	gtk20
 USES=		gmake
 ALL_TARGET=	${PORTNAME}
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/gxmms2 \
 		%%DATADIR%%/gxmms2_mini.xpm

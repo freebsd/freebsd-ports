@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	INSIGHT
 INSIGHT_DESC=	Tcl/Tk GUI (experimental!)
 
 CONFLICTS?=	gdb-[7-9]*
-MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes

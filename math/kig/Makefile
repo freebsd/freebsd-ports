@@ -16,7 +16,6 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USES=		cmake:outsource
 USE_QT4=	gui xml moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		kig.1
 

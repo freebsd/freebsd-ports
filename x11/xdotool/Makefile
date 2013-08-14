@@ -17,7 +17,6 @@ USE_XORG=	x11 xtst xinerama
 
 MAN1=		xdotool.1
 PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.2 include/xdo.h
-MAKE_JOBS_SAFE=	yes
 
 # Older GCC on RELENG_6 doesn't like -Wno-missing-field-initializers
 post-patch:

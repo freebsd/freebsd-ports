@@ -24,7 +24,6 @@ USES=		cmake pkgconfig
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.2+
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \

@@ -23,7 +23,6 @@ USE_GNOME=	libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		liteamp.1
 

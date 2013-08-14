@@ -17,7 +17,6 @@ USES=		desktop-file-utils
 USE_QT4=	moc_build qmake_build rcc_build gui network iconengines \
 		imageformats
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	CREDITS ChangeLog
 

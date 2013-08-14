@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings
 PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${SHORT_VER}
 SHORT_VER=0.10
 
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g'\

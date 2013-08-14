@@ -11,7 +11,6 @@ DISTNAME=	mod_rpaf-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

@@ -24,7 +24,6 @@ LICENSE_FILE_EULA=	${WRKSRC}/license.txt
 MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 
 USE_GL=		gl
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/engine_source

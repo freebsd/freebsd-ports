@@ -48,7 +48,6 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
-.endif
 
 CONFIGURE_ARGS+=	--disable-arts \
 			--disable-directfb \

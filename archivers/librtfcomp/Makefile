@@ -13,7 +13,6 @@ MASTER_SITES=	SF/synce/SynCE/0.10.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	LZRTF compression library
 
-MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

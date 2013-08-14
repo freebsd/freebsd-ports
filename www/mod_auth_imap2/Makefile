@@ -18,7 +18,6 @@ COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 USE_APACHE=	22+

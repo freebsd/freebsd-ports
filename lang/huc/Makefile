@@ -21,7 +21,6 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

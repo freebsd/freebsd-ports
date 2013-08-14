@@ -24,7 +24,6 @@ USE_XORG=	x11 xau xdmcp
 USE_AUTOTOOLS=	autoconf autoheader
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib

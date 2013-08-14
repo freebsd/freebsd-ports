@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--no-ssl2 \
 		--prefix=${PREFIX:S/^${DESTDIR}//} \
 		--without-npm
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

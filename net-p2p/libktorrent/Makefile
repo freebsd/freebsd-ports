@@ -19,7 +19,6 @@ USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_QT4=	qtestlib_build qmake_build moc_build rcc_build uic_build
 USES=		cmake:outsource gettext
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 SHLIB_VER=	5.0.1
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \

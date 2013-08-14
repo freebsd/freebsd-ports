@@ -20,7 +20,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Z80 assembly code assembler and disassembler
 
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		z80-asm.1 z80-mon.1
 MAN3=		z80-cpu.3 z80-memory.3

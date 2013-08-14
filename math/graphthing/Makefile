@@ -21,7 +21,6 @@ WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/graphthing bin/gt
 

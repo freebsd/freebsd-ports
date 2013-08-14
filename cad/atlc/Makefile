@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		atlc.1 coax.1 create_bmp_for_circ_in_circ.1 \
 		create_bmp_for_circ_in_rect.1 \

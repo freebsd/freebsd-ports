@@ -12,7 +12,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
-MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_APACHE=	22

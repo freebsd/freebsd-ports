@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--localedir=${DATADIR} \
 		--with-qt=${QT_PREFIX} \
 		--with-fluidsynth=${LOCALBASE}
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

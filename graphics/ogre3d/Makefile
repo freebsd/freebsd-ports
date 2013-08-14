@@ -21,7 +21,6 @@ USE_BZIP2=	YES
 USES=		cmake
 USE_SDL=	sdl
 USE_XORG=	xaw
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

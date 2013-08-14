@@ -19,7 +19,6 @@ RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 USE_GNOME=	gtk20
 USES=		gettext
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 BROKEN=		does not build
 

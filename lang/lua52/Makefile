@@ -26,7 +26,6 @@ LUA_MODSHAREDIR=	${LUA_PREFIX}/share/lua/${LUA_VER}
 
 ALL_TARGET=	freebsd
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}" \
 		MYCFLAGS="${CFLAGS}" MYLDFLAGS="${LDFLAGS}"
 # liblua.so requires libm, so make sure it has an explicit dependency

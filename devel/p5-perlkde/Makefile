@@ -20,7 +20,6 @@ USE_QT4=	network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USES=		cmake:outsource
 
-MAKE_JOBS_SAFE=	yes
 
 # Respect PREFIX
 CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}

@@ -27,7 +27,6 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gtk12
 USES=		gettext
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		gnp.1
 

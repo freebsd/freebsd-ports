@@ -19,7 +19,6 @@ COMMENT=	Filtering HTTP proxy server
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN5=	${PORTNAME}.conf.5
 MAN7=	${PORTNAME}.quick.7

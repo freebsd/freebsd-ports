@@ -12,7 +12,6 @@ COMMENT=	Make your windows transparent
 
 XORG_CAT=	app
 USE_XORG=	x11 xproto
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		transset.1
 PLIST_FILES=	bin/transset

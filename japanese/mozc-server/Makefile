@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 USE_PYTHON_BUILD=yes
 USE_OPENSSL=	yes
 
-MAKE_JOBS_SAFE=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
 

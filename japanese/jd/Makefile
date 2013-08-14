@@ -20,7 +20,6 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24
 
-MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_GNOME=	gtk20 libgnomeui

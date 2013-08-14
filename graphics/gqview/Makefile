@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		gqview.1
 

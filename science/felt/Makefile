@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--x-defaults="${LOCALBASE}/lib/X11/app-defaults" \
 		--x-includes="${LOCALBASE}/include" \
 		--x-libraries="${LOCALBASE}/lib"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3

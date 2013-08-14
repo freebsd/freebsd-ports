@@ -19,7 +19,6 @@ USE_SDL=	sdl mixer
 USE_GL=		gl
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX=${CXX}
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 

@@ -15,7 +15,6 @@ EXTRACT_SUFX=	-tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Font Metrics
 
-MAKE_JOBS_SAFE=	yes
 
 pre-patch:
 	@${RM} -rf ${WRKSRC}/RCS

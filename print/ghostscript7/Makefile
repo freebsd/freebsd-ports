@@ -45,7 +45,6 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}"
-MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-fPIC -DUPD_SIGNAL=0 -I. -I${WRKSRC}/gimp-print		\
 		-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include	\
 		-I${LOCALBASE}/include/libpng15

@@ -24,7 +24,6 @@ USE_DOS2UNIX=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile
 MAKE_ARGS=	DEPTH="${WRKSRC}"
 ALL_TARGET=	${OPSYS:L}
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}

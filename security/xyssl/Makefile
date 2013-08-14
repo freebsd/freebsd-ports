@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/BSD.txt
 PORTDOCS=	ChangeLog
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

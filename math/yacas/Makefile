@@ -20,7 +20,6 @@ USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 #USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

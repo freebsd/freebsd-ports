@@ -18,7 +18,6 @@ USE_XZ=		yes
 USES=		cmake:outsource
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	xml qmake_build moc_build uic_build rcc_build
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 post-install:

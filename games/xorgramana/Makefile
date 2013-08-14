@@ -16,7 +16,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image
 USE_GL=		glu
-MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
 MKE_JOBS_SAFE=	yes

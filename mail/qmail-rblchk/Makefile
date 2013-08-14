@@ -12,7 +12,6 @@ COMMENT=	Qmail RBL filter
 
 USES=		qmail:run
 
-MAKE_JOBS_SAFE=	yes
 
 LDFLAGS?=	-s
 CFLAGS?=	-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \

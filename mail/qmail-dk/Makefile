@@ -19,7 +19,6 @@ PATCHFILES=	qmail-1.03-dk-0.54.patch
 
 USES=		qmail
 
-MAKE_JOBS_SAFE=	yes
 PREFIX?=	${QMAIL_PREFIX}
 
 WRKSRC=		${WRKDIR}/qmail-1.03

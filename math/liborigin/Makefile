@@ -15,7 +15,6 @@ CONFLICTS_INSTALL=	labplot-2.*
 
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*

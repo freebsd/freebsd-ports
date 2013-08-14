@@ -15,7 +15,6 @@ LIB_DEPENDS=	gfx:${PORTSDIR}/graphics/libgfx
 GNU_CONFIGURE=	yes
 USE_GL=		yes
 EXTRACT_AFTER_ARGS=--exclude '${DISTNAME}/libgfx*'
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/GL
 LDFLAGS+=	-L${LOCALBASE}/lib

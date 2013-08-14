@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gconf2 gtk20 gtksourceview2 gnomehack
 USES=		gettext
-MAKE_JOBS_SAFE=	yes
 
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	gitg.schemas

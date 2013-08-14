@@ -82,7 +82,6 @@ PLIST_SUB+=	GL2PS=""
 PLIST_SUB+=	GL2PS="@comment "
 .endif
 
-MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
 CMAKE2INST=	ParaViewConfig.cmake \

@@ -21,7 +21,6 @@ USE_TEX=	latex dvipsk:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-runtime=${CXX}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		elaps.1 epix.1 flix.1 laps.1
 INFO=		epix

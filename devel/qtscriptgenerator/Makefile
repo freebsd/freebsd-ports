@@ -22,7 +22,6 @@ USE_QT4=	corelib declarative designer doc help help-tools gui \
 		sql svg webkit xml xmlpatterns xmlpatterns-tool \
 		qmake_build moc_build rcc_build uic_build
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

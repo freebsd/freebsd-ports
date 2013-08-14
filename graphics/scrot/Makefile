@@ -14,7 +14,6 @@ COMMENT=	A screen capture utility that utilizes Imlib2
 LIB_DEPENDS=	giblib:${PORTSDIR}/graphics/giblib
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		scrot.1
 

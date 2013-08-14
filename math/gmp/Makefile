@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--infodir=${PREFIX}/info \
 		--mandir=${PREFIX}/man \
 		--enable-cxx
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 INFO=		gmp

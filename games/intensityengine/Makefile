@@ -17,7 +17,6 @@ USE_BZIP2=	yes
 USE_SDL=	sdl mixer image
 USE_GL=		gl glu
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 SUB_FILES=	intensity_client
 USE_GCC=	4.2+
 

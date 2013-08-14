@@ -19,7 +19,6 @@ EXPIRATION_DATE=	2013-09-01
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-MAKE_JOBS_SAFE=	yes
 
 # BACKPORTS patch for lang/php52 and all php52-extensions
 PATCHFILES=	php52-backports-security-20130320.patch

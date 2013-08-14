@@ -21,7 +21,6 @@ USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	include/radius.h \
 		lib/libradius-engine.a \

@@ -21,7 +21,6 @@ OPTIONS_DEFAULT=	XZ LZO
 XZ_DESC=	Build with XZ support
 LZO_DESC=	Build with LZO support
 
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
 
 USE_CSTD=	gnu89

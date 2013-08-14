@@ -31,7 +31,6 @@ PLIST_FILES=	bin/ccons
 
 WRKSRC=	${WRKDIR}/ccons
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=	ccons.1
 

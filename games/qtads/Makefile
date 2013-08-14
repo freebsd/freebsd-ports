@@ -15,7 +15,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT4=	gui moc_build network qmake_build rcc_build uic_build
 USE_SDL=	sdl mixer sound
-MAKE_JOBS_SAFE=	yes
 
 QMAKEFLAGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
 

@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf gfx net
-MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	fixed_class.h
 
 MANCOMPRESSED=	no

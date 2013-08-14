@@ -17,7 +17,6 @@ NO_WRKSUBDIR=	yes
 USE_XORG=	x11 xaw
 MAKEFILE=	makefile
 ALL_TARGET=	pns
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/xpns \

@@ -47,7 +47,6 @@ USES=		cmake pkgconfig gettext iconv
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xfixes xrender xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
-MAKE_JOBS_SAFE=	yes
 
 USE_QT4=	corelib dbus declarative gui network phonon qtestlib script \
 		scripttools svg webkit xml xmlpatterns linguist_build \

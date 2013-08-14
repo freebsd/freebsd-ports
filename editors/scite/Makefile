@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		scite.1
 PORTDOCS=	*

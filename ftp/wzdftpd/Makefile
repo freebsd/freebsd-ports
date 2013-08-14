@@ -25,7 +25,6 @@ ACLOCAL_ARGS=	-I m4 -I ac-helpers
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --without-pam --disable-bonjour
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	wzdftpd
 

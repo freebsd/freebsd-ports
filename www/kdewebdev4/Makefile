@@ -23,6 +23,5 @@ USES=		cmake:outsource
 USE_QT4=	dbus porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

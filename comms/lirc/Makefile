@@ -23,7 +23,6 @@ USE_PYTHON=	yes
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc \
 			--sysconfdir=${PREFIX}/etc

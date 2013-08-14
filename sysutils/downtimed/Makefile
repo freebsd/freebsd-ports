@@ -18,7 +18,6 @@ MAN1=		downtimes.1
 MAN8=		downtimed.8
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 		@${MKDIR} /var/db/downtimed

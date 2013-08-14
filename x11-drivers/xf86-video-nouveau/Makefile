@@ -15,7 +15,6 @@ XORG_CAT=	driver
 USE_XORG=	xf86driproto glproto
 MAN4=		nouveau.4x
 
-MAKE_JOBS_SAFE=	yes
 
 # also doesn't work with mesa (libGL) version higher then 7.4.x
 IGNORE=		Not supported, missing kernel support. use the nvidia driver.

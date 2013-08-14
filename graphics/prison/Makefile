@@ -20,7 +20,6 @@ LIB_DEPENDS=	dmtx.0:${PORTSDIR}/graphics/libdmtx \
 
 USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

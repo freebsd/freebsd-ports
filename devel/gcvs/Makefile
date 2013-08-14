@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 CXXFLAGS:=	${CXXFLAGS:N-std=*:N:}
 CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcllib=${TCL_LIBDIR}
-MAKE_JOBS_SAFE=	yes
 EXTRACT_AFTER_ARGS=--exclude cvsunix --exclude 'getline.[ch]' --exclude 'getopt*.[ch]'
 
 post-patch:

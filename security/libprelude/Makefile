@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 USE_GMAKE=	yes
 USES=	pathfix pkgconfig gettext iconv charsetfix
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

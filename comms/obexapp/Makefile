@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		iconv
 PLIST_FILES=	bin/obexapp
-MAKE_JOBS_SAFE=	yes
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		obexapp.1

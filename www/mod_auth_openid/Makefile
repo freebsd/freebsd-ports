@@ -13,7 +13,6 @@ COMMENT=	An authentication module for the Apache 2 webserver with OpenID
 LIB_DEPENDS=	opkele:${PORTSDIR}/devel/libopkele \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 

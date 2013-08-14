@@ -16,7 +16,6 @@ CONFIGURE_ARGS+=--with-lasergnu \
 		--without-lisp-files \
 		--without-tutorial \
 		--with-bitmap-terminals
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	CAIRO DOCS EXAMPLES GD GRIDBOX PDF PLOT TEX THINSPLINES WX X11
 GRIDBOX_DESC=		Use the gridbox optimization for hidden3d

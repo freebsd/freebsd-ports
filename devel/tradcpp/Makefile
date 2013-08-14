@@ -11,7 +11,6 @@ COMMENT=	Traditional (K&R-style) C preprocessor
 LICENSE=	BSD
 
 MANCOMPRESSED=	yes
-MAKE_JOBS_SAFE=	yes
 MAKE_ARGS=	BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man/man
 
 PLIST_FILES=	bin/tradcpp

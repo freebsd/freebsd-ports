@@ -25,7 +25,6 @@ USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb sharedmime
 USE_QT4=	gui dbus network phonon qt3support sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	CDRDAO DVDPLUSRW EMOVIX VCDIMAGER FFMPEG FLAC MAD \
 		MUSEPACK SNDFILE VORBIS_DEC LAME SOX VORBIS_ENC \

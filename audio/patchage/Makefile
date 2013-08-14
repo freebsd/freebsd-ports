@@ -25,7 +25,6 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		patchage.1
 

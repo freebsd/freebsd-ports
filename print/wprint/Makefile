@@ -17,7 +17,6 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USES=		iconv perl5
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		wprint.1
 

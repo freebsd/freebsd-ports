@@ -16,7 +16,6 @@ LICENSE=	GPLv2 # (or later)
 USES=		imake
 USE_XORG=	xbitmaps xaw
 USE_GHOSTSCRIPT_RUN=	yes
-MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-Wno-error=return-type
 
 MAN1=		ghostview.1

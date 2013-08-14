@@ -18,7 +18,6 @@ USE_QT4=	dbus xml moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USES=		cmake pkgconfig
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-kcmodules-1

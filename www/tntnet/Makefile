@@ -33,7 +33,6 @@ LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=openssl
 .endif
 
-MAKE_JOBS_SAFE=	yes
 MAN1=		ecppc.1 ecppl.1 ecppll.1 tntnet-config.1
 MAN7=		ecpp.7 tntnet.conf.7 tntnet.properties.7
 MAN8=		tntnet.8

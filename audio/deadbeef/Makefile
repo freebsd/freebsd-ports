@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--disable-alsa --disable-nullout \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL="${LOCALBASE}/bin/bash"
 SHEBANG_FILES=	yasmwrapper.sh
 

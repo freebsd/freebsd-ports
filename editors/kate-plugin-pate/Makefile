@@ -18,7 +18,6 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4 kate \
 USE_QT4=	gui webkit \
 		moc_build qmake_build rcc_build uic_build
 USE_PYTHON=	yes
-MAKE_JOBS_SAFE=	yes
 
 DISTINFO_FILE=	${PORTSDIR}/editors/kate/distinfo
 

@@ -15,7 +15,6 @@ MAKE_ENV=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" TCL_LIBDIR="${TCL_LIBDIR}"
 MAKE_ENV+=	TCLSH=${TCLSH} FILESDIR="${FILESDIR}" MAN="${MAN1} ${MANN}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-MAKE_JOBS_SAFE=	yes
 MAKEFILE=	${FILESDIR}/BSDmakefile
 
 MAN1=		mplay.1 mrec.1 tclmidi.1 minfo.1 midtotcl.1

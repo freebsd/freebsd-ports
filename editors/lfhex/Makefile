@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 USE_QT4=	corelib gui moc_build qmake_build rcc_build
 USES=		bison
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

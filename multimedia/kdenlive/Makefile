@@ -23,7 +23,6 @@ USE_XORG=	x11
 USES=		cmake
 USE_BZIP2=	yes
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
-MAKE_JOBS_SAFE=	yes
 
 # Keep in sync with multimedia/mlt, possibly.
 FFMPEG_SUFX=	1

@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_GL=		gl
 USE_SDL=	sdl
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README ChangeLog
 

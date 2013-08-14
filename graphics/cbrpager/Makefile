@@ -22,7 +22,6 @@ BUILD_DEPENDS=	jpegtopnm:${PORTSDIR}/graphics/netpbm
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	libgnomeui
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -18,7 +18,6 @@ BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		pgppipe.1 sendpgppass.1
 MAN8=		pgpsendmail.8 pgpdaemon.8

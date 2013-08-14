@@ -43,7 +43,6 @@ MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		CATAPULT_OPENMSX_BINARY="${LOCALBASE}/bin/openmsx" \
 		CATAPULT_OPENMSX_SHARE="${LOCALBASE}/share/openmsx" \
 		SYMLINK_FOR_BINARY="false"
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 

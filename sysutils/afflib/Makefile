@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CPPFLAGS+=	-DFUSE_USE_VERSION=26
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		affcat.1
 

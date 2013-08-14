@@ -12,7 +12,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Qt-version of the NetWalk game
 
 USE_QT4=	corelib gui qmake_build moc_build rcc_build
-MAKE_JOBS_SAFE=	yes
 
 MAN6=		qnetwalk.6
 

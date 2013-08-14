@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}" \
 		--enable-shared
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
 MAN3=		gr_chunk.3

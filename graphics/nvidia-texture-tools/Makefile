@@ -18,7 +18,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USES=		cmake
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
-MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15
 CXXFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15

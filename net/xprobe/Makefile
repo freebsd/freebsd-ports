@@ -15,7 +15,6 @@ COMMENT=	ICMP active OS fingerprint scanner
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL=${INSTALL}
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		xprobe2.1
 

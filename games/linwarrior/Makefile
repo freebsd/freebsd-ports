@@ -16,7 +16,6 @@ USE_GMAKE=	yes
 USE_OPENAL=	al alut
 USE_GL=		gl glu
 USE_SDL=	sdl
-MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

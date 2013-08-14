@@ -31,7 +31,6 @@ MAJOR=		${PORTVERSION:R}
 MINOR=		${PORTVERSION:E}
 PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
 ITK_LIB=	libitk.so.${MAJOR}
-MAKE_JOBS_SAFE=	yes
 
 MANN=		Archetype.n Toplevel.n Widget.n itk.n itkvars.n usual.n
 

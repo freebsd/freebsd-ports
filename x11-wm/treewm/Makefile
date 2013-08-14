@@ -17,7 +17,6 @@ USES=		imake:env
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL PROBLEMS README README.tiling TODO
 PORTEXAMPLES=	default.cfg sample.cfg

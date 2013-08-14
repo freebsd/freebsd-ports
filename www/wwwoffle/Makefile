@@ -17,7 +17,6 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 USES=		perl5
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 USE_RC_SUBR=	${PORTNAME}d
 

@@ -18,7 +18,6 @@ LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \
 RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd-synce:${PORTSDIR}/palm/synce-gvfs \
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
-MAKE_JOBS_SAFE=	yes
 
 BROKEN=		fails to build
 GNU_CONFIGURE=	yes

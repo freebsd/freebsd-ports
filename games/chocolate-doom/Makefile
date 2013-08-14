@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 USE_GMAKE=	yes
 USE_SDL=	mixer net sdl
 USE_PYTHON=	2.5+
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 
 MAN5=		chocolate-doom.cfg.5 default.cfg.5

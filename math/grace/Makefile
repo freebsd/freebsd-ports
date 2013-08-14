@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
 		--with-helpviewer="xdg-open %s" \
 		--without-bundled-xbae
 ALL_TARGET=	# empty
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		convcal.1 grace.1 grconvert.1
 MLINKS=		grace.1 gracebat.1 \

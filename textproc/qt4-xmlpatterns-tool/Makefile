@@ -12,7 +12,6 @@ COMMENT=	Qt4 command line utility for running XQueries
 USE_QT4=	qmake_build xmlpatterns
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 

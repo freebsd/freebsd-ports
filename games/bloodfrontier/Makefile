@@ -19,7 +19,6 @@ BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	libenet ${BINARIES}
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	bfclient bfserver
 

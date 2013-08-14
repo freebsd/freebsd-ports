@@ -26,7 +26,6 @@ PLUGIN_DIR?=	${PREFIX}/lib/ladspa/
 MAKEFILE=	makefile
 ALL_TARGET=	targets
 BUILD_WRKSRC=	${WRKSRC}/src
-MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},; s,-Werror ,,; \

@@ -28,7 +28,6 @@ USE_XORG=	x11 xv
 USE_GL=		yes
 USE_LDCONFIG=	${PREFIX}/lib/yukon
 
-MAKE_JOBS_SAFE=	defined
 
 # NOTE: These should be bumped if the underlying GL or Xorg ports change.
 LIBGL_MAJOR=	1

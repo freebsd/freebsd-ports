@@ -27,7 +27,6 @@ CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-pthread -L${LOCALBASE}/lib
 CONFIGURE_ARGS= --docdir=${DOCSDIR}
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS= pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
 	examples tutorial gcode.png gcode_control_img.png		\

@@ -22,7 +22,6 @@ USE_QT4=	moc_build qmake_build
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
-MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png

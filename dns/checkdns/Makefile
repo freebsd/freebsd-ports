@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	A domain name server analysis and reporting tool
 
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 

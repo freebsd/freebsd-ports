@@ -32,7 +32,6 @@ USES=		iconv shebangfix perl5
 USES+=		gmake
 .endif
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \
 		--with-etcdir="${PREFIX}/etc" \

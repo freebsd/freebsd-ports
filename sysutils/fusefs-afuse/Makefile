@@ -13,7 +13,6 @@ COMMENT=	File system automounting implemented in user-space using FUSE
 LICENSE=	GPLv2
 
 USES=		fuse pkgconfig
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README

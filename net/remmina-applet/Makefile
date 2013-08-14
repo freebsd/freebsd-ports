@@ -16,7 +16,6 @@ RUN_DEPENDS=	remmina:${PORTSDIR}/net/remmina
 
 OPTIONS_DEFINE=	AVAHI
 
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 gnomepanel

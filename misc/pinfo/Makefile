@@ -21,7 +21,6 @@ LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros
 AUTOMAKE_ARGS=	--add-missing --force-missing
 CONFIGURE_ARGS=	--with-localedir=${PREFIX}/share/locale
-MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

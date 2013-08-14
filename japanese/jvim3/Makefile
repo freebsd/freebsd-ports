@@ -22,7 +22,6 @@ MAKE_ARGS=	FEPOPT='${FEPOPT}' \
 		FEPLIBS="${FEPLIBS}" \
 		FEPOBJS="${FEPOBJS}" \
 		LIBS="${LIBS}"
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		jvim3.1
 

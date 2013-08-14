@@ -28,7 +28,6 @@ MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}elfedit.1 ${PKGNAMEPREFIX}windmc.1 \
 		${PKGNAMEPREFIX}gprof.1
 
-MAKE_JOBS_SAFE=	yes
 
 post-install:
 .for F in addr2line c++filt elfedit gprof objcopy objdump readelf size strings

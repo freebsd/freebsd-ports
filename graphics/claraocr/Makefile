@@ -17,7 +17,6 @@ RUN_DEPENDS=	pnmenlarge:${PORTSDIR}/graphics/netpbm
 USES=		shebangfix perl5
 USE_XORG=	x11
 MAKE_ENV=	MKDIR="${MKDIR}"
-MAKE_JOBS_SAFE=	yes
 
 SHEBANG_FILES=	clara.pl mkdoc.pl selthresh
 

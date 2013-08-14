@@ -15,7 +15,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to keep your virtual host configuration in a LDAP directory
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
 USE_OPENLDAP=	yes

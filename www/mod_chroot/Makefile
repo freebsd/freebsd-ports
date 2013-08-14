@@ -14,7 +14,6 @@ MASTER_SITES=	http://core.segfault.pl/~hobbit/mod_chroot/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The mod_chroot makes running Apache in a chroot easy
 
-MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

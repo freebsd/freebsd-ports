@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/game
 

@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.webta.org/apachetop/
 MAINTAINER=	admin@mjbrune.org
 COMMENT=	Apache RealTime log stats
 
-MAKE_JOBS_SAFE=  yes
 
 GNU_CONFIGURE=	yes
 

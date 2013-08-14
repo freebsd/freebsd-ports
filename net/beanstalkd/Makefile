@@ -13,7 +13,6 @@ LICENSE=	MIT
 USE_RC_SUBR=	beanstalkd
 USE_GMAKE=	yes
 
-MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/beanstalkd

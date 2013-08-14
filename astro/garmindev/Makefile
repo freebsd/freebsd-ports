@@ -12,6 +12,5 @@ COMMENT=	Drivers for using Garmin GPS units with QlandkarteGT
 LICENSE=	GPLv2
 
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

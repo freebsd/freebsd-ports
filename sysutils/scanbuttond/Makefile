@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 
 SUB_FILES+=	pkg-message
 

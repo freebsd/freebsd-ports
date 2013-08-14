@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.${QT_VER}
 
 USE_QT4=	corelib gui network moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	_DB=${_DB} DB_DIR=${DB_DIR} _DB_F=${_DB_F}
 

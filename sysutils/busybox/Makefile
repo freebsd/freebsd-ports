@@ -19,7 +19,6 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-unstable-*
 
-MAKE_JOBS_SAFE=	yes
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes

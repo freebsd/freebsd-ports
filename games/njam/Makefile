@@ -15,7 +15,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -D__linux__
 USE_SDL=	mixer image net sdl
-MAKE_JOBS_SAFE=	yes
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>

@@ -11,7 +11,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	andrea@cervesato.it
 COMMENT=	Qos for Apache
 
-MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
 AP_GENPLIST=	yes

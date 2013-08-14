@@ -27,7 +27,6 @@ USE_GCC=	4.2+
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	VERBOSE=1
-MAKE_JOBS_SAFE=	yes
 
 LLVM_SVN=	http://llvm.org/svn/llvm-project
 

@@ -23,7 +23,6 @@ LO_DESC=	Open Sound Control support via LibLO
 
 USE_BZIP2=	yes
 USES=		cmake
-MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

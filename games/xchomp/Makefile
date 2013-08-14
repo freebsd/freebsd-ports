@@ -14,7 +14,6 @@ WRKSRC=		${WRKDIR}/xchomp
 
 USES=		imake
 USE_XORG=	x11 xext
-MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/xchomp
 

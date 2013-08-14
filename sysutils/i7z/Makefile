@@ -11,7 +11,6 @@ COMMENT=	Thermal and C-state reporting utility for Intel-Core-i CPUs
 LICENSE=	GPLv2
 
 USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		i7z.1
 PLIST_FILES=	bin/i7z

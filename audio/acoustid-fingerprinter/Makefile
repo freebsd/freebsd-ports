@@ -19,7 +19,6 @@ USES=		cmake
 USE_QT4=	gui network \
 		qmake_build moc_build rcc_build uic_build
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING=${FFMPEG_SUFFIX}
 FFMPEG_SUFFIX?=	1

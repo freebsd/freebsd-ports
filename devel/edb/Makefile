@@ -21,7 +21,6 @@ QMAKE_ARGS=	-recursive PREFIX=${PREFIX} \
 		DEFAULT_PLUGIN_PATH="${PREFIX}/libexec/${PORTNAME}"
 
 WRKSRC=		${WRKDIR}/debugger
-MAKE_JOBS_SAFE=	yes
 
 MAN1=		edb.1
 PORTDOCS=	*

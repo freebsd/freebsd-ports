@@ -12,7 +12,6 @@ COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	yes
 USE_RC_SUBR=	uwsgi
