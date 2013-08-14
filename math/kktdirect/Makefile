@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	kktdirect
-# Date created:				1 Jan 2012
-# Whom: 				bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	kktdirect
 PORTVERSION=	0.5
@@ -13,10 +8,12 @@ MASTER_SITES=	http://www.cs.ubc.ca/~rbridson/download/ LOCAL/bf
 DISTNAME=	KKTDirect${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A direct solver package for saddle-point (KKT) matrices
+COMMENT=	Direct solver package for saddle-point (KKT) matrices
 
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-DUSE_FORTRAN_BLAS -DUSE_FORTRAN_LAPACK
 LDFLAGS+=	-L${LOCALBASE}/lib ${LAPACK} ${BLAS} -lm
