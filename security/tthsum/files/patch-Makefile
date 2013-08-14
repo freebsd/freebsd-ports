@@ -1,5 +1,5 @@
---- ./Makefile.orig	2011-10-10 08:34:43.000000000 +0200
-+++ ./Makefile	2011-10-15 10:22:58.000000000 +0200
+--- ./Makefile.orig	2013-08-13 20:58:36.000000000 +0200
++++ ./Makefile	2013-08-14 14:40:58.335943659 +0200
 @@ -11,16 +11,6 @@
    MAN = $(DESTDIR)/usr/local/man
  endif
@@ -17,7 +17,7 @@
  CC ?= gcc
  GZIP = gzip -9 -c
  RM = rm -rf
-@@ -45,9 +35,9 @@
+@@ -47,12 +37,12 @@
  override CPPFLAGS += $(shell cat $(BINS)/autoconf.cppflags)
  
  
@@ -25,7 +25,13 @@
 +all: tthsum manual
  
 -install: tthsum manual test runtest
+-	install -d $(BIN) $(MAN)/man1
+-	install $(BINS)/tthsum $(BIN)
+-	install -m644 $(SHARES)/tthsum.1.gz $(MAN)/man1
 +install: tthsum manual
- 	install -d $(BIN) $(MAN)/man1
- 	install $(BINS)/tthsum $(BIN)
- 	install -m644 $(SHARES)/tthsum.1.gz $(MAN)/man1
++	install -d $(BIN) $(MANPREFIX)/man/man1
++	install $(BINS)/tthsum $(PREFIX)/bin
++	install -m644 $(SHARES)/tthsum.1.gz $(MANPREFIX)/man/man1
+ 
+ uninstall:
+ 	$(RM) $(BIN)/tthsum
