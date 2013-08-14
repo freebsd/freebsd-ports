@@ -13,8 +13,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr
 
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.mk>
