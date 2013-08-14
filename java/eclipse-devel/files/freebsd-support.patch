@@ -2827,6 +2827,40 @@ $FreeBSD$
  # GLX lib
  #
  make_glx: $(GLX_LIB)
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os.h.orig	2012-06-28 01:39:42.000000000 +1200
++++ build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os.h	2013-08-08 09:17:59.133694911 +1200
+@@ -38,6 +38,11 @@
+ 
+ #define OS_LOAD_FUNCTION LOAD_FUNCTION
+ 
++/*
++	g_thread_init() is non-existent in glib-2.36+
++ */
++#define NO__1g_1thread_1init
++
+ #ifndef GDK_WINDOWING_X11
+ 
+ /* X Structures */
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os.c.orig	2013-08-08 09:18:14.525694799 +1200
++++ build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os.c	2013-08-08 09:19:42.847695428 +1200
+@@ -4434,11 +4434,17 @@
+ JNIEXPORT jboolean JNICALL OS_NATIVE(_1g_1thread_1supported)
+ 	(JNIEnv *env, jclass that)
+ {
++	return 1;
++	/*
++		g_thread_supported is non-existent in glib-2.36+,
++		but is still referenced.
++
+ 	jboolean rc = 0;
+ 	OS_NATIVE_ENTER(env, that, _1g_1thread_1supported_FUNC);
+ 	rc = (jboolean)g_thread_supported();
+ 	OS_NATIVE_EXIT(env, that, _1g_1thread_1supported_FUNC);
+ 	return rc;
++	 */
+ }
+ #endif
+ 
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	2009-12-23 15:12:33.298742157 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	2009-12-23 15:14:12.577551971 -0500
 @@ -23,18 +23,19 @@
