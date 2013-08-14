@@ -73,3 +73,26 @@
      struct PointerBarrier *nearest = NULL;
      double min_distance = INT_MAX;      /* can't get higher than that in X anyway */
  
+--- hw/xfree86/parser/InputClass.c.orig	2013-07-04 11:45:42.139818164 +0200
++++ hw/xfree86/parser/InputClass.c	2013-07-04 11:46:29.034806839 +0200
+@@ -362,7 +362,8 @@
+     XF86ConfInputClassPtr prev;
+ 
+     while (ptr) {
+-        xf86MatchGroup *group, *next;
++        xf86MatchGroup *group = NULL;
++        xf86MatchGroup *next;
+         char **list;
+ 
+         TestFree(ptr->identifier);
+--- hw/xfree86/loader/loadmod.c.orig	2013-07-04 11:48:11.160800614 +0200
++++ hw/xfree86/loader/loadmod.c	2013-07-04 11:48:32.000800157 +0200
+@@ -472,7 +472,7 @@
+     char **elem;
+     const char **subdirs;
+     const char **s;
+-    PatternPtr patterns;
++    PatternPtr patterns = NULL;
+     PatternPtr p;
+     DIR *d;
+     struct dirent *dp;
