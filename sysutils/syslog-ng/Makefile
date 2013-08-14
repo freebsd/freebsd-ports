@@ -4,7 +4,6 @@
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.3
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/
@@ -12,6 +11,7 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-editi
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
+LATEST_LINK=	${PORTNAME}
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*

@@ -10,6 +10,7 @@ DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
+LATEST_LINK=	${PORTNAME}
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
