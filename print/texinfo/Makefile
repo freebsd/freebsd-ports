@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	5.1.20130623
+PORTVERSION=	5.1.20130809
 CATEGORIES=	print
 MASTER_SITES=	GNU \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -17,13 +17,11 @@ BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man
 
 FETCH_ARGS=	-Ap
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
 USE_XZ=		yes
 INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
 MAKE_JOBS_SAFE=	yes
-USES+=		charsetfix
+USES+=		charsetfix gmake perl5
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}
 CPPFLAGS+=	-I${LOCALBASE}/lib
