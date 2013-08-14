@@ -88,7 +88,7 @@ include/syslog-ng/uuid.h
 include/syslog-ng/vptransform.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.4.2.so
+lib/libsyslog-ng-3.4.3.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libcryptofuncs.la
 lib/syslog-ng/libcryptofuncs.so
@@ -133,7 +133,6 @@ share/xsd/patterndb-3.xsd
 share/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/syslog-ng
