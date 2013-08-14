@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spdict
-# Date created:				2 Aug 2007
-# Whom:					vanilla@
-#
+# Created by: vanilla@
 # $FreeBSD$
-#
 
 PORTNAME=	spdict
 PORTVERSION=	0.3
@@ -17,7 +13,9 @@ COMMENT=	A library of dictionary algorithms
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
+
+MAKE_JOBS_UNSAFE=yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/spdict
