@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_net
-PORTVERSION=	2.0.p2
+PORTVERSION=	2.0.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.libsdl.org/tmp/SDL_net/release/
-DISTNAME=	SDL2_net-2.0.0
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
+DISTNAME=	SDL2_net-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
