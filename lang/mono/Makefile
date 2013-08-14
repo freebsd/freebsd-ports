@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	3.0.12
+PORTVERSION=	3.2.1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
 # Moonlight is installed as part of www/moonlight
-CONFIGURE_ARGS=	--with-moonlight=no
+CONFIGURE_ARGS=	--with-moonlight=no --disable-dtrace
 
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 
