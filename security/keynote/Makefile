@@ -30,8 +30,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/keynote.h ${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/libkeynote.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/keynote.h ${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/libkeynote.a ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.3 ${MANPREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/man/keynote.4 ${MANPREFIX}/man/man5/keynote.5
