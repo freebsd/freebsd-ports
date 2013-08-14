@@ -1,9 +1,7 @@
-# Created by: Johans van Selst <johans@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gnulib
-PORTVERSION=	20120404
-PORTREVISION=	1
+PORTVERSION=	20130805
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
@@ -13,8 +11,7 @@ COMMENT=	GNU portability library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 
 PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
@@ -24,7 +21,9 @@ PORTDATA=	*
 IGNORE=		gnulib requires port data, unset NOPORTDATA to install
 .endif
 
-.ifndef		NOPORTDOCS
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_DIRS+=	%%DOCSDIR%%
 PLIST_FILES+=	%%DOCSDIR%%/${PORTNAME}.html
 .endif
@@ -46,7 +45,7 @@ do-install:
 	${TAR} -cf - -C ${WRKSRC} build-aux config doc lib m4 modules \
 		tests top | ${TAR} -xof - -C ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.info ${PREFIX}/${INFO_PATH}
-.ifndef		NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.html ${DOCSDIR}
 .endif
