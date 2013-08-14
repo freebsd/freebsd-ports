@@ -1,3 +1,3 @@
 gio-sharp binds the GIO API, which isn't available in Gtk#.
 
-WWW:	http://github.com/mono/gio-sharp
+WWW: http://github.com/mono/gio-sharp
