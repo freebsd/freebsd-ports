@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9a0a892e-05d8-11e3-ba09-000c29784fd1">
+    <topic>lcms2 -- Null Pointer Dereference Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>lcms2</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mageia security team reports:</p>
+	<blockquote cite="http://advisories.mageia.org/MGASA-2013-0240.html">
+	  <p>It was discovered that Little CMS did not properly verify certain
+	    memory allocations. If a user or automated system using Little CMS
+	    were tricked into opening a specially crafted file, an attacker
+	    could cause Little CMS to crash (CVE-2013-4160).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://advisories.mageia.org/MGASA-2013-0240.html</url>
+      <url>https://bugs.mageia.org/show_bug.cgi?id=10816</url>
+      <cvename>CVE-2013-4160</cvename>
+    </references>
+    <dates>
+      <discovery>2013-07-22</discovery>
+      <entry>2013-08-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72bf9e21-03df-11e3-bd8d-080027ef73ec">
     <topic>polarssl -- denial of service through unterminated loop in certificate parser</topic>
     <affects>
