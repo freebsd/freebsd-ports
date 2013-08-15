@@ -17,6 +17,22 @@ share/dink/dink/Sound/intro.wav
 share/dink/dink/Sound/lively.mid
 share/dink/dink/Sound/love.mid
 share/dink/dink/Sound/secret.wav
+share/dink/dink/Sound/5.ogg
+share/dink/dink/Sound/arrow.wav
+share/dink/dink/Sound/high2.wav
+share/dink/dink/Sound/12.mid
+share/dink/dink/Sound/7.mid
+share/dink/dink/Sound/bow1.wav
+share/dink/dink/Sound/13.mid
+share/dink/dink/Sound/swing.wav
+share/dink/dink/Sound/punch.wav
+share/dink/dink/Sound/18.mid
+share/dink/dink/Sound/wscream.wav
+share/dink/dink/Sound/bird1.wav
+share/dink/dink/Sound/grunt2.wav
+share/dink/dink/Sound/grunt1.wav
+share/dink/dink/Sound/sword2.wav
+share/dink/dink/Sound/bhit.wav
 share/dink/dink/Story/1GOLD.c
 share/dink/dink/Story/APOTION.c
 share/dink/dink/Story/BAR-DP.c
@@ -721,6 +737,25 @@ share/dink/dink/graphics/struct/Landmark/dir.ff
 share/dink/dink/graphics/struct/Stone/mdink/dir.ff
 share/dink/dink/graphics/struct/Teleport/dir.ff
 share/dink/dink/graphics/struct/outinn/dir.ff
+share/dink/dink/l10n/da/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/de/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/fi/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/fr/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/mk/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/es/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/nl/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/eo/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/es.po
+share/dink/dink/l10n/da.po
+share/dink/dink/l10n/mk.po
+share/dink/dink/l10n/fi.po
+share/dink/dink/l10n/README
+share/dink/dink/l10n/de.po
+share/dink/dink/l10n/fr.po
+share/dink/dink/l10n/dink.pot
+share/dink/dink/l10n/hr.po
+share/dink/dink/l10n/nl.po
+share/dink/dink/l10n/eo.po
 share/dink/dink/preview.bmp
 @dirrm share/dink/dink/graphics/struct/outinn
 @dirrm share/dink/dink/graphics/struct/Teleport
@@ -917,5 +952,22 @@ share/dink/dink/preview.bmp
 @dirrm share/dink/dink/Tiles
 @dirrm share/dink/dink/Story
 @dirrm share/dink/dink/Sound
+@dirrm share/dink/dink/l10n/da/LC_MESSAGES
+@dirrm share/dink/dink/l10n/de/LC_MESSAGES
+@dirrm share/dink/dink/l10n/fi/LC_MESSAGES
+@dirrm share/dink/dink/l10n/fr/LC_MESSAGES
+@dirrm share/dink/dink/l10n/mk/LC_MESSAGES
+@dirrm share/dink/dink/l10n/es/LC_MESSAGES
+@dirrm share/dink/dink/l10n/nl/LC_MESSAGES
+@dirrm share/dink/dink/l10n/eo/LC_MESSAGES
+@dirrm share/dink/dink/l10n/da
+@dirrm share/dink/dink/l10n/de
+@dirrm share/dink/dink/l10n/fi
+@dirrm share/dink/dink/l10n/fr
+@dirrm share/dink/dink/l10n/mk
+@dirrm share/dink/dink/l10n/es
+@dirrm share/dink/dink/l10n/nl
+@dirrm share/dink/dink/l10n/eo
+@dirrm share/dink/dink/l10n
 @dirrm share/dink/dink
 @dirrm share/dink
