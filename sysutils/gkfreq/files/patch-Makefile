@@ -1,30 +1,42 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
---- Makefile.orig	Thu Aug 11 05:58:26 2005
-+++ Makefile	Wed Nov  9 02:42:46 2005
-@@ -1,13 +1,20 @@
--all: gkfreq.so
-+PREFIX?=	/usr/X11R6
+--- Makefile.orig	2013-02-28 06:52:26.000000000 +0900
++++ Makefile	2013-08-16 01:03:07.493888354 +0900
+@@ -1,30 +1,25 @@
+-all: gkrellm-gkfreq.so
++PREFIX?=	/usr/local
 +PLUGIN_DIR?=	${PREFIX}/libexec/gkrellm2/plugins
 +
-+GKRELLM_INCLUDE=-I${PREFIX}/include
-+
-+GTK_CONFIG=	pkg-config gtk+-2.0
-+GTK_CFLAGS=	`${GTK_CONFIG} --cflags`
++CFLAGS+=	-fPIC -Wall `pkg-config gtk+-2.0 gkrellm --cflags`
  
--gkfreq.o: gkfreq.c
--	gcc -fPIC -O2 -Wall `pkg-config gtk+-2.0 --cflags` -c gkfreq.c
-+CFLAGS+=	-Wall -fPIC ${GTK_CFLAGS} ${GKRELLM_INCLUDE}
-+
-+all: gkfreq.so
+-gkrellm-gkfreq.o: gkrellm-gkfreq.c
+-	gcc -fPIC -O2 -Wall `pkg-config gtk+-2.0 --cflags` -c gkrellm-gkfreq.c
++all: gkrellm-gkfreq.so
  
- gkfreq.so: gkfreq.o
--	gcc -shared -Wall -o gkfreq.so gkfreq.o
-+	${CC} -shared -Wall -o gkfreq.so gkfreq.o
+ gkrellm-gkfreq.so: gkrellm-gkfreq.o
+-	gcc -shared -Wall -o gkrellm-gkfreq.so gkrellm-gkfreq.o
++	${CC} -shared -Wall -o gkrellm-gkfreq.so gkrellm-gkfreq.o
+ 	@echo " "
+ 	@echo "    Compilation done!"
+ 	@echo " "
+ 	@echo "    If you want to try the plugin before installing you can run"
+ 	@echo "        gkrellm -p gkrellm-gkfreq.so"
+ 	@echo " "
+-	@echo "    Install in either /usr/lib/gkrellm2/plugins/ by running"
+-	@echo "        sudo make install"
+-	@echo "    or in /usr/local/lib/gkrellm2/plugins/ by running"
+-	@echo "        sudo make install-local"
+-	@echo "    or in ~/.gkrellm2/plugins by running"
+-	@echo "        make install-home"
+-	@echo " "
+ 
  
  clean:
- 	rm -rf *.o *.so
+ 	rm -rf *.o *.so *~
  
  install:
--	cp gkfreq.so ~/.gkrellm2/plugins/
-+	${INSTALL} -s gkfreq.so ${PLUGIN_DIR}
+-	cp gkrellm-gkfreq.so /usr/lib/gkrellm2/plugins/
++	${INSTALL} -s gkrellm-gkfreq.so ${PLUGIN_DIR}
+ 
+ install-local:
+ 	cp gkrellm-gkfreq.so /usr/local/lib/gkrellm2/plugins/
