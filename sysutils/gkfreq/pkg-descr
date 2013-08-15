@@ -1,4 +1,4 @@
-GKfreq is a plugin for gkrellm2 which displays the current CPU speed
-using the "dynamic" cpufrequency scheme.
+GKrellM-gkfreq is a plugin to GKrellM that displays the current CPU
+frequencies.
 
-WWW: http://www.peakunix.net/gkfreq/
+WWW: http://sourceforge.net/projects/gkrellm-gkfreq/
