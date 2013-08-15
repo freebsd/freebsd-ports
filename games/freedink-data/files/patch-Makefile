@@ -1,25 +1,9 @@
---- Makefile.orig	2008-09-20 11:55:43.000000000 -0700
-+++ Makefile	2008-09-28 14:05:25.000000000 -0700
-@@ -13,17 +13,17 @@
- 
- #	Clean-up:
- #	Git files:
--	find $(DESTDIR)$(DATADIR) -name ".gitignore" -print0 | xargs -0r rm
-+	find $(DESTDIR)$(DATADIR)/dink/dink -name ".gitignore" -print0 | xargs -0r rm
- #	Backup files:
--	find $(DESTDIR)$(DATADIR) -name "*~" -print0 | xargs -0r rm
-+	find $(DESTDIR)$(DATADIR)/dink/dink -name "*~" -print0 | xargs -0r rm
- #	Savegames:
--	find $(DESTDIR)$(DATADIR) -name "save*.dat" -print0 | xargs -0r rm
-+	find $(DESTDIR)$(DATADIR)/dink/dink -name "save*.dat" -print0 | xargs -0r rm
- #	Cheat^wDebugging tool
- 	rm -f $(DESTDIR)$(DATADIR)/dink/dink/Story/key-67.c
- 
- #	Tidy permissions
--	find $(DESTDIR)$(DATADIR) -type d -print0 | xargs -0r chmod 755
--	find $(DESTDIR)$(DATADIR) -type f -print0 | xargs -0r chmod 644
-+	find $(DESTDIR)$(DATADIR)/dink/dink -type d -print0 | xargs -0r chmod 755
-+	find $(DESTDIR)$(DATADIR)/dink/dink -type f -print0 | xargs -0r chmod 644
- 
- # Do this from a fresh Git checkout to avoid packaging temporary files
- release:
+--- Makefile.orig	2013-08-14 12:38:50.000000000 -0700
++++ Makefile	2013-08-14 12:40:16.000000000 -0700
+@@ -1,5 +1,5 @@
+ DESTDIR=
+-PREFIX=/usr/local
++PREFIX=%%PREFIX%%
+ DATADIR=$(PREFIX)/share
+ version=1.08.`date +%Y%m%d`
+ releasedir=freedink-data-$(version)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	syncterm
-# Date created:		3 October 2006
-# Whom:			shurd
-#
+# Created by: Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freedink-data
 PORTVERSION=	1.08.${PORTVER}
@@ -14,9 +10,13 @@ MASTER_SITE_SUBDIR=	freedink
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	Game data for games/freedink (Dink Smallwood)
 
+USES=		gettext gmake
 NO_BUILD=	yes
 
-USE_GMAKE=	yes
-PORTVER=	20080920
+PORTVER=	20121209
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
