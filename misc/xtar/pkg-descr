@@ -1,4 +1,3 @@
-XTar  is  a Motif program for viewing and manipulating tar
-archives (which may be compressed).  The contents  of  the
-archive  are  displayed  in  the  main  window and various
-options are available from pulldown and popup menus.
+XTar is a Motif program for viewing and manipulating tar archives (which
+may be compressed).  The contents of the archive are displayed in the main
+window and various options are available from pulldown and popup menus.
