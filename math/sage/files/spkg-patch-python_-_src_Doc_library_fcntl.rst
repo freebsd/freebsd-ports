@@ -1,5 +1,5 @@
 --- python-2.7.3.p0/src/Doc/library/fcntl.rst.orig	2011-06-11 15:46:23.000000000 +0000
-+++ python-2.7.4.p0/src/Doc/library/fcntl.rst	2012-04-22 00:31:48.000000000 +0000
++++ python-2.7.5.p1/src/Doc/library/fcntl.rst	2012-04-22 00:31:48.000000000 +0000
 @@ -50,8 +50,6 @@
     operations are typically defined in the library module :mod:`termios` and the
     argument handling is even more complicated.

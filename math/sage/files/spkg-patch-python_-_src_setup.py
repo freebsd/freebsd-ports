@@ -1,5 +1,5 @@
---- python-2.7.4.p0/src/setup.py-orig	2013-03-17 03:13:46.000000000 +0000
-+++ python-2.7.4.p0/src/setup.py	2013-03-17 03:15:11.000000000 +0000
+--- python-2.7.5.p1/src/setup.py-orig	2013-03-17 03:13:46.000000000 +0000
++++ python-2.7.5.p1/src/setup.py	2013-03-17 03:15:11.000000000 +0000
 @@ -642,7 +642,7 @@
          # use the same library for the readline and curses modules.
          if 'curses' in readline_termcap_library:
@@ -18,15 +18,6 @@
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
          else:
-@@ -783,6 +783,8 @@
-             # OpenSSL doesn't do these until 0.9.8 so we'll bring our own hash
-             exts.append( Extension('_sha256', ['sha256module.c']) )
-             exts.append( Extension('_sha512', ['sha512module.c']) )
-+        else:
-+            open('.without_own_sha', 'w')
- 
-         # Modules that provide persistent dictionary-like semantics.  You will
-         # probably want to arrange for at least one of them to be available on
 @@ -1120,7 +1122,7 @@
                  sysroot = macosx_sdk_root()
                  f = os.path.join(sysroot, f[1:])
