@@ -1,4 +1,5 @@
 bin/dfarc
+bin/freedink-dfarc
 share/icons/hicolor/32x32/mimetypes/application-x-dmod.png
 share/applications/freedink-dfarc.desktop
 share/mime/packages/freedink-mime.xml
@@ -6,10 +7,17 @@ share/pixmaps/dfarc.png
 share/locale/fr/LC_MESSAGES/dfarc.mo
 share/locale/pl/LC_MESSAGES/dfarc.mo
 share/locale/fi/LC_MESSAGES/dfarc.mo
+share/locale/da/LC_MESSAGES/dfarc.mo
+share/locale/de/LC_MESSAGES/dfarc.mo
+share/locale/es/LC_MESSAGES/dfarc.mo
+share/locale/hr/LC_MESSAGES/dfarc.mo
+share/locale/it/LC_MESSAGES/dfarc.mo
+share/locale/mk/LC_MESSAGES/dfarc.mo
+share/locale/nl/LC_MESSAGES/dfarc.mo
+share/locale/vi/LC_MESSAGES/dfarc.mo
 @dirrmtry share/applications
 @dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/pixmaps
+@dirrmtry share/mime@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/32x32/mimetypes
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
