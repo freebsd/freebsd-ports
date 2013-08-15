@@ -1,0 +1,2 @@
+bin/cssmin
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

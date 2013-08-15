@@ -1483,6 +1483,7 @@
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
+    SUBDIR += py-cssmin
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-django
