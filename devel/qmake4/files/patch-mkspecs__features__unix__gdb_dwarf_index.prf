@@ -1,0 +1,36 @@
+From fdecdc39399994d2c0309005922590e2f106bbef Mon Sep 17 00:00:00 2001
+From: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date: Sun, 11 Aug 2013 15:08:48 +0300
+Subject: [PATCH] gdb_dwarf_index: Use a sed call that's more POSIX-compliant.
+
+sed versions other than the GNU one often default to being POSIX-compliant,
+in which case "+" (with and without escaping) is always an ordinary
+character.
+
+Achieve the same functionality in a way that works with both GNU and BSD
+seds by using "xx*" insted of "x\+".
+
+Cherry-picked from qtbase/faea8d1056e4b034404febd0ef44a00e7784018d.
+
+Change-Id: I462e070992ff214a7261d45c208f2e5f3e962e8f
+Reviewed-by: Oswald Buddenhagen <oswald.buddenhagen@digia.com>
+---
+ mkspecs/features/unix/gdb_dwarf_index.prf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mkspecs/features/unix/gdb_dwarf_index.prf b/mkspecs/features/unix/gdb_dwarf_index.prf
+index e3f79cd..84b4e18 100644
+--- mkspecs/features/unix/gdb_dwarf_index.prf
++++ mkspecs/features/unix/gdb_dwarf_index.prf
+@@ -9,7 +9,7 @@
+     }
+ 
+     QMAKE_GDB_INDEX += \
+-      test \$\$(gdb --version | sed -e \'s,[^0-9]\\+\\([0-9]\\)\\.\\([0-9]\\).*,\\1\\2,;q\') -gt 72 && \
++      test \$\$(gdb --version | sed -e \'s,[^0-9][^0-9]*\\([0-9]\\)\\.\\([0-9]\\).*,\\1\\2,;q\') -gt 72 && \
+       gdb --nx --batch --quiet -ex \'set confirm off\' -ex \"save gdb-index $$QMAKE_GDB_DIR\" -ex quit \'$(TARGET)\'  && \
+       test -f $(TARGET).gdb-index && \
+       $$QMAKE_OBJCOPY --add-section \'.gdb_index=$(TARGET).gdb-index\' --set-section-flags \'.gdb_index=readonly\' \'$(TARGET)\' \'$(TARGET)\' && \
+-- 
+1.8.3.4
+
