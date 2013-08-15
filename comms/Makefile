@@ -126,6 +126,7 @@
     SUBDIR += qico
     SUBDIR += qpage
     SUBDIR += qrq
+    SUBDIR += qsstv
     SUBDIR += remserial
     SUBDIR += rtl-sdr
     SUBDIR += rubygem-callsign

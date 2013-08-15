@@ -1,0 +1,10 @@
+--- src/configform.ui.orig	2013-08-11 18:17:50.000000000 -0700
++++ src/configform.ui	2013-08-11 18:18:00.000000000 -0700
+@@ -2963,7 +2963,6 @@
+   </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11"/>
+- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <resources/>
+  <connections>
+   <connection>

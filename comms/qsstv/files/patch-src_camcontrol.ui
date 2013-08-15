@@ -1,0 +1,10 @@
+--- src/camcontrol.ui.orig	2008-06-20 09:47:28.000000000 -0700
++++ src/camcontrol.ui	2013-08-11 18:22:01.000000000 -0700
+@@ -475,7 +475,6 @@
+   </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <customwidgets>
+   <customwidget>
+    <class>Q3Frame</class>
