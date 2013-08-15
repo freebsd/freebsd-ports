@@ -1,22 +1,23 @@
-XMascot displays a moving mascot on your X11 screen.  XMascot has
-the following options,
+XMascot displays a moving mascot on your X11 screen.  XMascot has the
+following options:
 
- -Moving	pretty mascot moving
- -Strectch	stretch as you like
- -Talking	mascot talks with extract command and data
- -Alarm		mascot may make some actions at time you define
- -BIFF		mascot may let you know arriving a mail.
+  - Moving		pretty mascot moving
+  - Stretch		stretch it as you like
+  - Talking		mascot talks with extract command and data
+  - Alarm		mascot may make some actions at defined time
+  - BIFF		mascot may let you know arriving a mail
 
 XMascot supports these image formats:
 
-MAG	*.mag	16 colors and 256 colors
-TIFF	*.tif	16 colors and 256 colors, in raw or lzw
-PPM	*.ppm	256 level color	, in raw
-PGM	*.pgm	256 level gray scale, in raw
-PBM	*.pbm	2 level monocrome, in raw
-PNM	*.pnm	PPM, PGM, or PBM
+  - MAG (*.mag)		16 colors and 256 colors
+  - TIFF (*.tif)	16 colors and 256 colors, in raw or lzw
+  - PPM (*.ppm)		256 level color, in raw
+  - PGM (*.pgm)		256 level gray scale, in raw
+  - PBM (*.pbm)		2 level monochrome, in raw
+  - PNM (*.pnm)		PPM, PGM, or PBM
 
-XMascot distinguishes images from their suffix and can load other image formats
-when {suffix}topnm, *topgm, or *topbm commands are found in your system.
+XMascot distinguishes images from their suffix and can load other image
+formats when corresponding *topnm, *topgm, or *topbm commands are found
+in your system.
 
 WWW: http://cclub-flying.dsl.gr.jp/products/xmascot/
