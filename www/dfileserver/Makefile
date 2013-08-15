@@ -4,10 +4,10 @@
 PORTNAME=	DFileServer
 PORTVERSION=	1.1.3
 CATEGORIES=	www
-MASTER_SITES=	http://harpy.soarwitheagles.net/~dashy/ \
-  		http://rodrigo.osorio.free.fr/freebsd/distfiles/
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
+		http://harpy.soarwitheagles.net/~dashy/
 
-MAINTAINER=	dashevil@gmail.com
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Compact webserver designed to make sharing files easy
 
 PLIST_FILES=	bin/dfileserver
