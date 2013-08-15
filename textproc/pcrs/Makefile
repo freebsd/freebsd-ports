@@ -1,30 +1,25 @@
-# New ports collection makefile for:	pcrs
-# Date created:				31 July 2005
-# Whom:					Ken Wong <wongk@apt.homeunix.net>
-#
+# Created by: Ken Wong <wongk@apt.homeunix.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pcrs
 PORTVERSION=	0.0.3
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://distfiles.master.finkmirrors.net/\
-		http://download.mirror.ac.uk/mirror/master.us.finkmirrors.net/distfiles/\
-		http://mirror.phy.olemiss.edu/mirror/fink/distfiles/
+MASTER_SITES=	http://distfiles.master.finkmirrors.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	wongk@apt.homeunix.net
-COMMENT=	Perl compatible regular expression based substitutions
+COMMENT=	Perl-compatible regular expression based substitutions
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+
+USES=		gmake
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-
-USE_LDCONFIG=	yes
 
 MAN3=		pcrs.3
 PLIST_FILES=	bin/pcrsed \

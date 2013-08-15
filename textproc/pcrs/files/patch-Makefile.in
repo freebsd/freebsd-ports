@@ -23,7 +23,8 @@
 -	$(CC) $(CLFLAGS) $(LDFLAGS) $(LIBFLAGS) -Wl,-soname,libpcrs.so.$(VERSION_MAJOR) -o libpcrs.so.$(VERSION) pcrs.@OBJEXT@ $(LIBS)
 +	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBFLAGS) -Wl,-soname,libpcrs.so.$(VERSION_MAJOR) -o libpcrs.so.$(VERSION_MAJOR) pcrs.@OBJEXT@ $(LIBS)
  
- static:
+-static:
++static:	pcrs.@OBJEXT@
  	$(AR) libpcrs.a pcrs.@OBJEXT@
  
  install: all
