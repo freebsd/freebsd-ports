@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsupertone
-# Date created:				26 Jun 2012
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libsupertone
 PORTVERSION=	0.0.2
@@ -12,17 +8,24 @@ MASTER_SITES=	http://www.soft-switch.org/downloads/unicall/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	A library for supervisory tone generation and detection
+COMMENT=	Library for supervisory tone generation and detection
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile\
-		spandsp.2:${PORTSDIR}/comms/spandsp-devel\
-		tiff.4:${PORTSDIR}/graphics/tiff\
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
+		libspandsp.so:${PORTSDIR}/comms/spandsp-devel \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
-		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
-LICENSE=	LGPL21
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+# Add missing dependency in attempt to fix parallel (-jX) builds
+post-patch:
+	@${REINPLACE_CMD} -e '/DEPENDENCIES =/s,$$, $$(lib_LTLIBRARIES),' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
