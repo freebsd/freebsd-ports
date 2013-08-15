@@ -19,7 +19,7 @@
      if k.startswith('_'): del config[k]
  
 +  import os
-+  if not os.environ.has_key('NOPORTDOCS'):
++  if os.environ.has_key('INSTALL_DOCS'):
 +    config.setdefault('data_files', [('%%DOCSDIR%%', ['README','LICENSE', 'TODO', 'ChangeLog'])])
 +
    from distutils.core import setup

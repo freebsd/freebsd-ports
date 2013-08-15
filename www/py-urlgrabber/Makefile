@@ -1,20 +1,17 @@
-# New ports collection makefile for:	py-urlgrabber
-# Date created:		2007-09-22
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	urlgrabber
 PORTVERSION=	3.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
-MASTER_SITES=	http://urlgrabber.baseurl.org/download/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://urlgrabber.baseurl.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A high-level cross-protocol url-grabber
+COMMENT=	High-level cross-protocol url-grabber
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}curl>=7.19.0_1:${PORTSDIR}/ftp/py-curl
 RUN_DEPENDS=	${PKGNAMEPREFIX}curl>=7.19.0_1:${PORTSDIR}/ftp/py-curl
@@ -25,8 +22,13 @@ USE_PYDISTUTILS=	yes
 REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
-.if defined(NOPORTDOCS)
-MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
+OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ENV=	INSTALL_DOCS=yes
 .endif
 
 post-patch:
