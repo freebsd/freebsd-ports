@@ -10,7 +10,7 @@ bin/pmd
 %%DATADIR%%/jcommander-1.27.jar
 %%DATADIR%%/jdom-1.0.jar
 %%DATADIR%%/junit-4.4.jar
-%%DATADIR%%/pmd-5.0.4.jar
+%%DATADIR%%/pmd-%%PORTVERSION%%.jar
 %%DATADIR%%/rhino-1.7R3.jar
 %%DATADIR%%/saxon-9.1.0.8-dom.jar
 %%DATADIR%%/saxon-9.1.0.8.jar
