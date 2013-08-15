@@ -38,3 +38,12 @@
  cross_compiling=$ac_cv_prog_cc_cross
  
  echo "$ac_t""$ac_cv_prog_cc_works" 1>&6
+@@ -1256,7 +1256,7 @@
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:1259: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+-ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
++ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$" | grep -v warning:`
+ if test -z "$ac_err"; then
+   rm -rf conftest*
+   eval "ac_cv_header_$ac_safe=yes"
