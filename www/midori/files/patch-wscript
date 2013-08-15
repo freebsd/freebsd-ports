@@ -1,29 +1,62 @@
-Fix PACKAGE_VERSION in gtk_about_dialog widget.
-https://bugs.launchpad.net/midori/+bug/1200903
+- Fix PACKAGE_VERSION in gtk_about_dialog_widget (bug #1200903).
+- Check if execinfo.h header is found (bug #1212761).
+- Add test to avoid installing .orig files (for config/search).
 
---- ./wscript.orig	2013-07-15 22:38:28.000000000 +0000
-+++ ./wscript	2013-07-21 16:02:48.000000000 +0000
-@@ -29,7 +29,7 @@
+--- ./wscript.orig	2013-08-14 18:32:02.000000000 +0000
++++ ./wscript	2013-08-15 19:05:48.000000000 +0000
+@@ -29,7 +29,6 @@
  
  APPNAME = 'midori'
- VERSION = VERSION_FULL = '0.5.4'
+ VERSION = VERSION_FULL = '0.5.5'
 -VERSION_SUFFIX = ' (%s)' % VERSION
-+#VERSION_SUFFIX = ' (%s)' % VERSION
  
  try:
      if os.path.isdir ('.git'):
-@@ -44,8 +44,12 @@
+@@ -44,8 +43,10 @@
          folder = os.getcwd ()
          if VERSION in folder:
              VERSION_FULL = os.path.basename (folder)
 -    if VERSION in VERSION_FULL:
 -        VERSION_SUFFIX = VERSION_FULL.replace (VERSION, '')
-+    if VERSION_FULL.endswith ('_all_'):
-+            VERSION_FULL = VERSION_FULL.replace('_all_', '')
 +    if APPNAME in VERSION_FULL:
-+            VERSION_FULL = VERSION_FULL.replace(APPNAME, '')[1:]
++        VERSION_FULL = VERSION_FULL.replace (APPNAME, '')[1:]
 +
 +    VERSION_SUFFIX = ' (%s)' % VERSION_FULL
  except:
      pass
  
+@@ -234,6 +235,8 @@
+         conf.check (header_name='X11/extensions/scrnsaver.h',
+                     includes='/usr/X11R6/include', mandatory=False)
+         conf.check (lib='Xss', libpath='/usr/X11R6/lib', mandatory=False)
++        # Check if execinfo.h header is found
++        conf.check (header_name='execinfo.h', mandatory=True)
+ 
+     have_gtk3 = option_enabled ('gtk3') or option_enabled ('webkit2') or option_enabled ('granite')
+     if have_gtk3:
+@@ -530,15 +533,16 @@
+ 
+     for config_file in os.listdir ('config'):
+         dest = '${SYSCONFDIR}/xdg/' + APPNAME
+-        if (os.path.isdir ('config/' + config_file)):
+-            dest += '/' + config_file
+-            for child in os.listdir ('config/' + config_file):
+-                if (os.path.isdir ('config/' + config_file + '/' + child)):
+-                    dest += '/' + child
+-                    child += '/*'
+-                bld.install_files (dest, 'config/' + config_file + '/' + child)
+-            continue
+-        bld.install_files (dest, 'config/' + config_file)
++        if not config_file.endswith('.orig'):
++            if (os.path.isdir ('config/' + config_file)):
++                dest += '/' + config_file
++                for child in os.listdir ('config/' + config_file):
++                    if (os.path.isdir ('config/' + config_file + '/' + child)):
++                        dest += '/' + child
++                        child += '/*'
++                    bld.install_files (dest, 'config/' + config_file + '/' + child)
++                continue
++            bld.install_files (dest, 'config/' + config_file)
+ 
+     if Options.commands['check'] or bld.env['tests']:
+         bld.add_subdirs ('tests')
