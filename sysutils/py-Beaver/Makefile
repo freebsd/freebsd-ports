@@ -3,7 +3,7 @@
 
 PORTNAME=	Beaver
 PORTVERSION=	29
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conf_d>0:${PORTSDIR}/textproc/py-conf_d \
 	${PYTHON_PKGNAMEPREFIX}daemon>0:${PORTSDIR}/devel/py-daemon \
 	${PYTHON_PKGNAMEPREFIX}redis>0:${PORTSDIR}/databases/py-redis \
 	${PYTHON_PKGNAMEPREFIX}pyzmq>0:${PORTSDIR}/devel/py-pyzmq
+
+USERS=	beaver
+GROUPS=	beaver
 
 # TODO
 # - create mosquitto port
