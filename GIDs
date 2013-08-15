@@ -183,6 +183,7 @@ monkeysphere:*:641:
 aox:*:666:
 bnetd:*:700:
 logstash:*:701:
+beaver:*:702:
 bopm:*:717:
 openxpki:*:777:
 puppet:*:814:

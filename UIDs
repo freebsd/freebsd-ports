@@ -189,6 +189,7 @@ monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/b
 aox:*:666:666::0:0:Archiveopteryx user:/nonexistent:/usr/sbin/nologin
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 logstash:*:701:701::0:0:logstash user:/nonexistent:/usr/sbin/nologin
+beaver:*:702:702::0:0:Beaver user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
