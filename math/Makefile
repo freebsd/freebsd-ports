@@ -610,6 +610,7 @@
     SUBDIR += sdpa-gmp
     SUBDIR += sdpara
     SUBDIR += sedumi
+    SUBDIR += sfft
     SUBDIR += simd-viterbi
     SUBDIR += slatec
     SUBDIR += slgrace

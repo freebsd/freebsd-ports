@@ -1,0 +1,8 @@
+sfft is a library to compute discrete Fourier transforms of signals with
+a sparse frequency domain, using an algorithm that is more efficient than
+other known FFT algorithms. It was developed by Haitham Hassanieh, Piotr
+Indyk, Dina Katabi, and Eric Price at the Computer Science and Artifical
+Intelligence Lab at MIT. Performance optimizations were developed by J.
+Schumacher at the Computer Science Department of ETH Zurich in 2013.
+
+WWW: http://spiral.net/software/sfft.html
