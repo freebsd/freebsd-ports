@@ -1,9 +1,44 @@
 --- Makefile.in.orig	2009-08-20 20:46:11.000000000 -0300
 +++ Makefile.in	2009-08-20 20:46:51.000000000 -0300
-@@ -67,15 +67,6 @@
- 	@cd src/ && $(MAKE) install
- 	@cd py/ && $(MAKE) install
- 	@cd man/ && $(MAKE) install
+@@ -38,22 +38,22 @@
+ jailkit: all
+ 
+ all:
+-	@cd src/ && $(MAKE) all
+-	@cd py/ && $(MAKE) all
+-	@cd man/ && $(MAKE) all
++	$(MAKE) -C src all
++	$(MAKE) -C py all
++	$(MAKE) -C man all
+ 
+ clean:
+ 	rm -f core *~ ini/*~
+-	@cd src/ && $(MAKE) clean
+-	@cd py/ && $(MAKE) clean
+-	@cd man/ && $(MAKE) clean
++	$(MAKE) -C src clean
++	$(MAKE) -C py clean
++	$(MAKE) -C man clean
+ 
+ distclean: clean
+ 	rm -rf autom4te.cache/
+ 	rm -f Makefile config.log config.status config.cache
+-	@cd src/ && $(MAKE) distclean
+-	@cd py/ && $(MAKE) distclean
+-	@cd man/ && $(MAKE) distclean
++	$(MAKE) -C src distclean
++	$(MAKE) -C py distclean
++	$(MAKE) -C man distclean
+ 
+ install:
+ 	${INSTALL} -d -m 755 ${DESTDIR}${iniprefix}
+@@ -64,24 +64,13 @@
+ 			${INSTALL} -m 0644 ini/$${file} ${DESTDIR}${iniprefix} ;\
+ 		fi ;\
+ 	done
+-	@cd src/ && $(MAKE) install
+-	@cd py/ && $(MAKE) install
+-	@cd man/ && $(MAKE) install
 -	# test if the jk_chrootsh is already in /etc/shells
 -	# this previously had @echo but that fails on FreeBSD
 -	if test -w /etc/shells; then \
@@ -13,12 +48,18 @@
 -		fi \
 -	fi
 -
++	$(MAKE) -C src install
++	$(MAKE) -C py install
++	$(MAKE) -C man install
  
  uninstall:
  	rm -f ${iniprefix}/*.ini
-@@ -83,5 +74,3 @@
- 	@cd man/ && $(MAKE) uninstall
- 	@cd src/ && $(MAKE) uninstall
+-	@cd py/ && $(MAKE) uninstall
+-	@cd man/ && $(MAKE) uninstall
+-	@cd src/ && $(MAKE) uninstall
++	$(MAKE) -C py uninstall
++	$(MAKE) -C man uninstall
++	$(MAKE) -C src uninstall
  	-rmdir --ignore-fail-on-non-empty ${DESTDIR}${iniprefix}
 -	@echo "You must manually remove jk_chrootsh from /etc/shells"
 -# remove jk_chrootsh from /etc/shells
