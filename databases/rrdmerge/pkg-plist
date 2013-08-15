@@ -1,0 +1,3 @@
+bin/rrdmerge
+bin/rrdmergetree
+share/doc/rrdmerge/README.rst

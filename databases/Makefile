@@ -795,6 +795,7 @@
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += rrdman
+    SUBDIR += rrdmerge
     SUBDIR += rrdtool
     SUBDIR += rrdtool10
     SUBDIR += rrdtool12
