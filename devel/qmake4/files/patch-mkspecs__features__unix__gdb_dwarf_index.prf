@@ -20,8 +20,8 @@ Reviewed-by: Oswald Buddenhagen <oswald.buddenhagen@digia.com>
 
 diff --git a/mkspecs/features/unix/gdb_dwarf_index.prf b/mkspecs/features/unix/gdb_dwarf_index.prf
 index e3f79cd..84b4e18 100644
---- mkspecs/features/unix/gdb_dwarf_index.prf
-+++ mkspecs/features/unix/gdb_dwarf_index.prf
+--- ../mkspecs/features/unix/gdb_dwarf_index.prf
++++ ../mkspecs/features/unix/gdb_dwarf_index.prf
 @@ -9,7 +9,7 @@
      }
  
