@@ -3036,6 +3036,7 @@
     SUBDIR += papi
     SUBDIR += papp
     SUBDIR += pas2dox
+    SUBDIR += pasm
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcl

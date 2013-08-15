@@ -1,0 +1,8 @@
+TI PRU Assembler. For use with Texas Instruments Programmable
+Realtime Units.
+
+These materials are intended for do-it-yourself (DIY) users
+who want to use the PRU at their own risk without TI support.
+"Community" support is offered at BeagleBoard.org/discuss.
+
+WWW: https://github.com/beagleboard/am335x_pru_package
