@@ -1,0 +1,5 @@
+A simple utility to merge existing RRD data from backups into new RRD files
+that have started gathering data already. Useful for getting historical data
+back while performing disaster recovery.
+
+WWW: https://bitbucket.org/ctheune/rrdmerge/
