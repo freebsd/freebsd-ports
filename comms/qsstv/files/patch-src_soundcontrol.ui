@@ -1,0 +1,10 @@
+--- src/soundcontrol.ui.orig	2013-08-11 18:20:01.000000000 -0700
++++ src/soundcontrol.ui	2013-08-11 18:20:09.000000000 -0700
+@@ -209,7 +209,6 @@
+   </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <resources/>
+  <connections>
+   <connection>

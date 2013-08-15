@@ -1,0 +1,10 @@
+--- src/freqform.ui.orig	2013-08-11 18:18:41.000000000 -0700
++++ src/freqform.ui	2013-08-11 18:18:46.000000000 -0700
+@@ -281,7 +281,6 @@
+   </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <resources/>
+  <connections>
+   <connection>
