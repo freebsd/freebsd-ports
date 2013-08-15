@@ -1,5 +1,5 @@
 --- src/bdftogd.orig	2013-06-25 11:58:23.000000000 +0200
-+++ src/bdftogd	2013-08-01 07:06:11.000000000 +0200
++++ src/bdftogd	2013-08-15 21:03:29.000000000 +0200
 @@ -24,6 +24,9 @@
  my $filename = shift;
  $filename = 'gd' . $filename unless $filename =~ /^gd/i;
@@ -10,12 +10,23 @@
  if (-f "$filename.c") { die "File $filename.c already exists, won't overwrite\n"; }
  if (-f "$filename.h") { die "File $filename.h already exists, won't overwrite\n"; }
  
-@@ -177,28 +180,40 @@
+@@ -139,6 +142,10 @@
+ 
+ $info
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include "$filename.h"
+ 
+ char ${gdname}Data[] = {
+@@ -177,28 +184,40 @@
  	${gdname}Data
  };
  
 -gdFontPtr ${gdname} = &${gdname}Rep;
-+BGD_EXPORT_DATA_IMPL gdFontPtr ${gdname} = &${gdname}Rep;
++BGD_EXPORT_DATA_PROT gdFontPtr ${gdname} = &${gdname}Rep;
  
 -/* This file has not been truncated. */
 +BGD_DECLARE(gdFontPtr)
@@ -44,8 +55,8 @@
  #include "gd.h"
  
 -extern gdFontPtr $gdname;
-+   BGD_EXPORT_DATA_PROT  gdFontPtr $gdname;
-+   BGD_DECLARE(gdFontPtr) $gdfunc(void);
++extern BGD_EXPORT_DATA_PROT  gdFontPtr $gdname;
++BGD_DECLARE(gdFontPtr) $gdfunc(void);
  
 +#ifdef __cplusplus
 +}

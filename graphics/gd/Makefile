@@ -3,7 +3,7 @@
 
 PORTNAME=	libgd
 PORTVERSION=	2.1.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
