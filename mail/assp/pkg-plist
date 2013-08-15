@@ -40,6 +40,7 @@ sbin/assplog
 %%DATADIR%%/files/suspiciousvirus.txt
 %%DATADIR%%/files/tlds-alpha-by-domain.txt
 %%DATADIR%%/files/uriblwhite.txt
+%%DATADIR%%/files/uriblserviceprovider.txt
 %%DATADIR%%/files/validptr.txt
 %%DATADIR%%/files/whiteptr.txt
 %%DATADIR%%/files/whiteorg.txt
@@ -51,22 +52,18 @@ sbin/assplog
 %%DATADIR%%/images/editor.css
 %%DATADIR%%/images/favicon.ico
 %%DATADIR%%/images/info.png
+%%DATADIR%%/images/loading.gif
 %%DATADIR%%/images/logo.gif
-%%DATADIR%%/images/logo.jpg
+%%DATADIR%%/images/logo1.jpg
 %%DATADIR%%/images/minusIcon.png
 %%DATADIR%%/images/noIcon.png
 %%DATADIR%%/images/opensource-logo.gif
 %%DATADIR%%/images/plusIcon.png
-%%DATADIR%%/images/project-support.jpg
 %%DATADIR%%/images/shutdown.css
 %%DATADIR%%/images/sourceforge-logo.gif
-%%DATADIR%%/images/stylesheet.css
 %%DATADIR%%/images/valid-xhtml10.gif
 %%DATADIR%%/images/village.gif
 %%DATADIR%%/images/xml-pill.gif
-%%DATADIR%%/images/CVS/Entries
-%%DATADIR%%/images/CVS/Repository
-%%DATADIR%%/images/CVS/Root
 %%DATADIR%%/rebuildspamdb.pl
 %%DATADIR%%/reports/analyzereport.txt
 %%DATADIR%%/reports/blackremovereport.txt
@@ -75,12 +72,11 @@ sbin/assplog
 %%DATADIR%%/reports/blockreport_sub.txt
 %%DATADIR%%/reports/blockreport_text.txt
 %%DATADIR%%/reports/blockreportfile.txt
+%%DATADIR%%/reports/denied.txt
 %%DATADIR%%/reports/helpreport.txt
 %%DATADIR%%/reports/notspamreport.txt
 %%DATADIR%%/reports/npremovereport.txt
 %%DATADIR%%/reports/npreport.txt
-%%DATADIR%%/reports/persblackremovereport.txt
-%%DATADIR%%/reports/persblackreport.txt
 %%DATADIR%%/reports/redremovereport.txt
 %%DATADIR%%/reports/redreport.txt
 %%DATADIR%%/reports/slremovereport.txt
@@ -94,7 +90,6 @@ sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/reports
-@dirrm %%DATADIR%%/images/CVS
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/files
 @dirrm %%DATADIR%%
