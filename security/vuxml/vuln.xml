@@ -72,9 +72,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2013-4160</cvename>
       <url>http://advisories.mageia.org/MGASA-2013-0240.html</url>
       <url>https://bugs.mageia.org/show_bug.cgi?id=10816</url>
-      <cvename>CVE-2013-4160</cvename>
     </references>
     <dates>
       <discovery>2013-07-22</discovery>
