@@ -1,5 +1,5 @@
 --- sage-5.8.rc0/doc/common/builder.py-orig	2013-03-17 20:50:38.000000000 +0000
-+++ sage-5.10/doc/common/builder.py	2013-03-17 20:56:42.000000000 +0000
++++ sage-5.11/doc/common/builder.py	2013-03-17 20:56:42.000000000 +0000
 @@ -272,13 +272,16 @@
  
          # build the other documents in parallel

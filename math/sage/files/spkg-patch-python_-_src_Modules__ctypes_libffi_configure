@@ -1,5 +1,5 @@
 --- python-2.7.3.p0/src/Modules/_ctypes/libffi/configure.orig	2011-06-11 15:46:26.000000000 +0000
-+++ python-2.7.4.p0/src/Modules/_ctypes/libffi/configure	2012-04-22 00:23:14.000000000 +0000
++++ python-2.7.5.p1/src/Modules/_ctypes/libffi/configure	2012-04-22 00:23:14.000000000 +0000
 @@ -6289,7 +6289,7 @@
    rm -rf conftest*
    ;;
