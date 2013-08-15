@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmissing
-DISTVERSION=	20121222
+DISTVERSION=	20130815
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/bf
 
@@ -10,7 +10,7 @@ COMMENT=	Standard math functions missing from the FreeBSD libm
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	mpc:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libmpc.so:${PORTSDIR}/math/mpc
 
 USE_LDCONFIG=	yes
 USE_XZ=		yes
@@ -25,7 +25,7 @@ PLIST_FILES=	include/missing_complex.h \
 		lib/libmissing.a lib/libmissing.so \
 		lib/libmissing.so.${SHLIB_MAJOR}
 
-SHLIB_MAJOR=	1
+SHLIB_MAJOR=	2
 SRCS=		libmissing.c
 
 CFLAGS+=	-fno-builtin -fno-math-errno -I. -I${LOCALBASE}/include
