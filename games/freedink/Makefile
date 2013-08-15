@@ -1,13 +1,8 @@
-# New ports collection makefile for:	syncterm
-# Date created:		3 October 2006
-# Whom:			shurd
-#
+# Created by: Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freedink
 PORTVERSION=	1.08.${PORTVER}
-PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -21,7 +16,7 @@ RUN_DEPENDS=	freedink:${PORTSDIR}/games/freedink-engine \
 		dfarc:${PORTSDIR}/games/freedink-dfarc
 
 NO_BUILD=	yes
-PORTVER=	20080920
+PORTVER=	20121209
 
 do-install:	# empty
 
