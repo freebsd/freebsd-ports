@@ -3,6 +3,7 @@
 
 PORTNAME=	watchlist
 PORTVERSION=	1.0.${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://distfiles.cse.tw/ \
 		http://trac-hacks.org/changeset/${SVN_REV}/watchlistplugin?old_path=/&format=zip&filename=/
@@ -26,6 +27,9 @@ USE_PYDISTUTILS=	easy_install
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 PYDISTUTILS_PKGNAME=	TracWatchlistPlugin
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/.${SVN_REV}//g}
-#PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
+post-extract:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
+	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 
 .include <bsd.port.mk>
