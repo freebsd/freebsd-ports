@@ -1,14 +1,13 @@
---- data/search.orig	2010-05-26 12:31:56.000000000 +0200
-+++ data/search	2010-05-26 12:34:03.000000000 +0200
-@@ -6,6 +6,13 @@
- icon=
+--- ./config/search.orig	2013-08-14 18:32:02.000000000 +0000
++++ ./config/search	2013-08-15 10:17:00.000000000 +0000
+@@ -16,6 +16,12 @@
+ uri=http://www.google.com/search?q=%s
  token=g
  
 +[FreshPorts]
 +name=FreshPorts
 +text=The changes made to the FreeBSD ports tree
 +uri=http://www.freshports.org/search.php?query=%s
-+icon=
 +token=fp
 +
  [Wikipedia]
