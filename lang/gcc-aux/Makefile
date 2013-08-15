@@ -13,6 +13,7 @@ DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
+.include "${.CURDIR}/Makefile.common"
 
 LANGS=			c
 APPLY_DIFFS=		core
@@ -23,15 +24,15 @@ FULL_GNATGCC=		NOT_SET
 OS_LABEL4VERS=		[${OPSYS}]
 GARCH=			${ARCH:S/amd64/x86_64/}
 
-OPTIONS_DEFINE= 	ADA CXX FORT OBJC STATIC TESTSUITE NLS
+OPTIONS_DEFINE=	ADA CXX FORT OBJC STATIC TESTSUITE NLS
 OPTIONS_DEFAULT=	ADA CXX FORT OBJC
 NO_OPTIONS_SORT=	yes
 
 ADA_DESC=		Build Ada language
 CXX_DESC=		Build C++ language
 FORT_DESC=		Build Fortran language
-OBJC_DESC=      	Build Objective-C language
-STATIC_DESC=    	Build with no shared libraries other than libc
+OBJC_DESC=		Build Objective-C language
+STATIC_DESC=	Build with no shared libraries other than libc
 TESTSUITE_DESC=		Activate test support
 
 USES+=		perl5
