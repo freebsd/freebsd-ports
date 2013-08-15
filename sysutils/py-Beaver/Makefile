@@ -3,7 +3,7 @@
 
 PORTNAME=	Beaver
 PORTVERSION=	29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,8 @@ USE_PYDISTUTILS=	yes
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conf_d>=0:${PORTSDIR}/textproc/py-conf_d \
 	${PYTHON_PKGNAMEPREFIX}glob2>=0:${PORTSDIR}/textproc/py-glob2 \
 	${PYTHON_PKGNAMEPREFIX}msgpack>=0:${PORTSDIR}/devel/py-msgpack \
-	${PYTHON_PKGNAMEPREFIX}daemon>=0:${PORTSDIR}/devel/py-daemon
+	${PYTHON_PKGNAMEPREFIX}daemon>=0:${PORTSDIR}/devel/py-daemon \
+	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 USERS=	beaver
 GROUPS=	beaver
