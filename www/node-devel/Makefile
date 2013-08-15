@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.11.4
+PORTVERSION=	0.11.5
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -14,10 +14,10 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 MAN1=		node.1
 
+USES=		gmake
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.7
-USE_GMAKE=	yes
 
 CONFLICTS=	node-0.[0-9]*
 
@@ -39,7 +39,6 @@ GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-		${WRKSRC}/deps/v8/build/common.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
 
 post-install:
