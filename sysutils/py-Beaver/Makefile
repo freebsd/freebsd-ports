@@ -13,6 +13,8 @@ COMMENT=	logshipper written in Python for logstash
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+USE_RC_SUBR=	beaver
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conf_d>=0:${PORTSDIR}/textproc/py-conf_d \
 	${PYTHON_PKGNAMEPREFIX}glob2>=0:${PORTSDIR}/textproc/py-glob2 \
