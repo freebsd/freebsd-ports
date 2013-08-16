@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-io
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
