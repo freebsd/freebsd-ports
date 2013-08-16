@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -536,6 +536,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
+IGNORE=	HTTP_UPSTREAM_STICKY: update require
 USE_HTTP_SSL=	yes
 NGINX_UPSTREAM_STICKY_VERSION=	1.1
 MASTER_SITES+=	http://nginx-sticky-module.googlecode.com/files/:upstreamsticky
@@ -556,6 +557,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
+IGNORE=	DRIZZLE: update require
 LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/libdrizzle
 NGINX_DRIZZLE_VERSION=	0.1.5
 GIT_DRIZZLE_VERSION=	0-g943c915
@@ -668,6 +670,7 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGRES}
+IGNORE=	POSTGRES: update require
 USE_PGSQL=	yes
 NGINX_POSTGRES_VERSION=	0.9
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres
@@ -704,6 +707,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
+IGNORE=	RTMP: update require
 NGINX_RTMP_VERSION=	1.0.1
 GIT_RTMP_VERSION=	0-g421d9ff
 FETCH_ARGS=	-pRr
@@ -755,13 +759,14 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
-IGNORE=	update require
+IGNORE=	SYSLOG: update require
 NGINX_SYSLOG_SUPPORT_FACILITY?=	LOG_DAEMON
 CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACILITY}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
 .endif
 
 .if ${PORT_OPTIONS:MTCP_PROXY}
+IGNORE=	TCP_PROXY: update require
 NGINX_TCP_PROXY_VERSION=	0.26
 GIT_TCP_PROXY_VERSION=	0-gb83e5a6
 FETCH_ARGS=	-pRr
