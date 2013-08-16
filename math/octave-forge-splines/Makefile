@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-splines
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
