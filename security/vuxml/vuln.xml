@@ -83,7 +83,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="72bf9e21-03df-11e3-bd8d-080027ef73ec">
-    <topic>polarssl -- denial of service through unterminated loop in certificate parser</topic>
+    <topic>polarssl -- denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>polarssl</name>
@@ -94,21 +94,33 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Paul Bakker reports:</p>
 	<blockquote cite="https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2013-03">
-	  <p>A bug in the logic of the parsing of PEM encoded certificates in x509parse_crt() can result in an infinite loop, thus hogging processing power.
-	  </p><p>
-	    While parsing a Certificate message during the SSL/TLS handshake, PolarSSL extracts the presented certificates and sends them on to be parsed. As the RFC specifies that the certificates in the Certificate message are always X.509 certificates in DER format, bugs in the decoding of PEM certificates should normally not be triggerable via the SSL/TLS handshake.
-	    </p><p>
-	  Versions of PolarSSL prior to 1.1.7 in the 1.1 branch and prior to 1.2.8 in the 1.2 branch call the generic x509parse_crt() function for parsing during the handshake. x509parse_crt() is a generic functions that wraps parsing of both PEM-encoded and DER-formatted certificates. As a result it is possible to craft a Certificate message that includes a PEM encoded certificate in the Certificate message that triggers the infinite loop.</p>
+	  <p>A bug in the logic of the parsing of PEM encoded certificates in
+	    x509parse_crt() can result in an infinite loop, thus hogging processing
+	    power.</p>
+	  <p>While parsing a Certificate message during the SSL/TLS handshake,
+	    PolarSSL extracts the presented certificates and sends them on to
+	    be parsed. As the RFC specifies that the certificates in the
+	    Certificate message are always X.509 certificates in DER format,
+	    bugs in the decoding of PEM certificates should normally not be
+	    triggerable via the SSL/TLS handshake.</p>
+	  <p>Versions of PolarSSL prior to 1.1.7 in the 1.1 branch and prior
+	    to 1.2.8 in the 1.2 branch call the generic x509parse_crt()
+	    function for parsing during the handshake. x509parse_crt() is a
+	    generic functions that wraps parsing of both PEM-encoded and
+	    DER-formatted certificates. As a result it is possible to craft
+	    a Certificate message that includes a PEM encoded certificate in
+	    the Certificate message that triggers the infinite loop.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2013-03</url>
       <cvename>CVE-2013-4623</cvename>
+      <url>https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2013-03</url>
     </references>
     <dates>
       <discovery>2013-06-21</discovery>
       <entry>2013-08-13</entry>
+      <modified>2013-08-15</modified>
     </dates>
   </vuln>
 
