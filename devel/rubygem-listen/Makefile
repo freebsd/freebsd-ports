@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
