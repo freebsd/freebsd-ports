@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Tk
-PORTVERSION=	804.030
-PORTREVISION=	1
+PORTVERSION=	804.031
 CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,7 +41,6 @@ MAN3=		Tie::Watch.3 \
 		Tk::Clipboard.3 \
 		Tk::CmdLine.3 \
 		Tk::ColorEditor.3 \
-		Tk::Common.3 \
 		Tk::Compound.3 \
 		Tk::ConfigSpecs.3 \
 		Tk::DItem.3 \
@@ -93,7 +91,6 @@ MAN3=		Tie::Watch.3 \
 		Tk::Scrolled.3 \
 		Tk::Spinbox.3 \
 		Tk::Submethods.3 \
-		Tk::SunConst.3 \
 		Tk::TList.3 \
 		Tk::Table.3 \
 		Tk::Tcl-perl.3 \

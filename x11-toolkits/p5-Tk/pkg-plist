@@ -32,7 +32,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorEdit.xpm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorEditor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorEditor.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Common.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Compound.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Compound.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Config.pm
@@ -51,9 +50,11 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Dirlist.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/Common.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/Common.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/LocalDrop.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/Rect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/SunConst.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/SunConst.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/SunDrop.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/SunSite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/XDNDDrop.pm
@@ -154,7 +155,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Stats.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Submethods.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Submethods.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/SunConst.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/TList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/TList.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Table.pm
