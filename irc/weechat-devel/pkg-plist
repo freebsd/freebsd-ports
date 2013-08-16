@@ -1,3 +1,4 @@
+bin/weechat
 bin/weechat-curses
 include/weechat/weechat-plugin.h
 lib/weechat/plugins/alias.so
@@ -63,6 +64,7 @@ libdata/pkgconfig/weechat.pc
 %%NLS%%share/locale/pl/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/weechat.mo
 @dirrmtry lib/weechat/plugins
 @dirrmtry lib/weechat
 %%DOCUMENTATION%%@dirrmtry share/doc/weechat
