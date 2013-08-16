@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	girara
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	http://pwmt.org/projects/girara/download/
 
@@ -14,6 +14,14 @@ USES=		gmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
+
+.if exists(/usr/bin/clang) && ${OSVERSION} > 900014
+CC=		/usr/bin/clang
+CPP=		/usr/bin/clang-cpp
+CXX=		/usr/bin/clang++
+.else
+USE_GCC=	4.6+
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
