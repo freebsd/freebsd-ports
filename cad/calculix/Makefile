@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -55,6 +54,9 @@ USE_GL=	glut
 BROWSER?=	firefox
 PSVIEWER?=	gv
 
+CCX_VER=	ccx_${PORTVERSION}
+CGX_VER=	cgx_2.6
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
@@ -98,44 +100,43 @@ pre-build:
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
 	s+%%LAPACK_LIBS%%+${LAPACK_LIBS}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
-		${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
+		${WRKSRC}/${CCX_VER}/src/Makefile
 	@${REINPLACE_CMD} -e 's/c++/${CXX}/g;' \
 		${WRKSRC}/libSNL/src/makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
 	s+"firefox"+"${BROWSER}"+ ; \
 	s+"gv"+"${PSVIEWER}"+ ;' \
-		${WRKSRC}/cgx_${PORTVERSION}/src/cgx.h
+		${WRKSRC}/${CGX_VER}/src/cgx.h
 
 do-build:
-	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
+	@(cd ${WRKSRC}/${CCX_VER}/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
 	@(cd ${WRKSRC}/libSNL/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
-	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
+	@(cd ${WRKSRC}/${CGX_VER}/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ccx_${PORTVERSION}/src/ccx_${PORTVERSION} \
+	@${INSTALL_PROGRAM} ${WRKSRC}/${CCX_VER}/src/${CCX_VER} \
 	  ${PREFIX}/bin/ccx
-	@${INSTALL_PROGRAM} ${WRKSRC}/cgx_${PORTVERSION}/src/cgx \
+	@${INSTALL_PROGRAM} ${WRKSRC}/${CGX_VER}/src/cgx \
 	  ${PREFIX}/bin/cgx
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/ccx
-	@${INSTALL_DATA} ${WRKSRC}/ccx_${PORTVERSION}/doc/ccx/* \
+	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/ccx/* \
 	  ${DOCSDIR}/ccx
 	@${MKDIR} ${DOCSDIR}/cgx
-	@${INSTALL_DATA} ${WRKSRC}/cgx_${PORTVERSION}/doc/cgx/* \
+	@${INSTALL_DATA} ${WRKSRC}/${CGX_VER}/doc/cgx/* \
 	  ${DOCSDIR}/cgx
-	@${INSTALL_DATA} ${WRKSRC}/ccx_${PORTVERSION}/doc/*.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/*.ps ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cgx_${PORTVERSION}.pdf \
 	  ${DOCSDIR}
-	#bunzip2 ${DOCSDIR}/cgx_${PORTVERSION}.ps.bz2
 	@${GZIP_CMD} ${DOCSDIR}/*.ps
 .endif
 .ifdef WITH_EXAMPLES
 	@${MKDIR} ${EXAMPLESDIR}
-	@${TAR} cf - -C ${WRKSRC}/cgx_${PORTVERSION}/examples . | ${TAR} xf - -C ${EXAMPLESDIR}
+	@${TAR} cf - -C ${WRKSRC}/${CGX_VER}/examples . | ${TAR} xf - -C ${EXAMPLESDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/test
-	@${TAR} cf - -C ${WRKSRC}/ccx_${PORTVERSION}/test . | ${TAR} xf - -C ${EXAMPLESDIR}/test
+	@${TAR} cf - -C ${WRKSRC}/${CCX_VER}/test . | ${TAR} xf - -C ${EXAMPLESDIR}/test
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
