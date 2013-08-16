@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-fits
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
+OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=	${WRKDIR}/${OCTSRC}/src
 
