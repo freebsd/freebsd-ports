@@ -1,5 +1,5 @@
---- ccx_2.5/src/CalculiX.h.orig	2012-10-06 08:13:06.000000000 -0500
-+++ ccx_2.5/src/CalculiX.h	2013-03-04 15:33:04.000000000 -0500
+--- ccx_2.6.1/src/CalculiX.h.orig	2012-10-06 08:13:06.000000000 -0500
++++ ccx_2.6.1/src/CalculiX.h	2013-03-04 15:33:04.000000000 -0500
 @@ -15,6 +15,8 @@
  /*     along with this program; if not, write to the Free Software       */
  /*     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.         */
