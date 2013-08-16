@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130816:
+  AFFECTS: users of graphics/opendx and math/octave-forge-octcdf
+  AUTHOR: stephen@FreeBSD.org
+
+  These two ports have changed the science/netcdf dependency to
+  science/netcdf4.  It is recommended that the science/netcdf package
+  be deinstalled before rebuilding these ports, otherwise you are likely
+  to face port conflicts when building future ports.
+
 20130806:
   AFFECTS: users of devel/eric4
   AUTHOR: bsam@FreeBSD.org

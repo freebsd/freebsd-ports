@@ -3,7 +3,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -12,10 +12,10 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick	\
-		tiff.4:${PORTSDIR}/graphics/tiff		\
-		cdf.0:${PORTSDIR}/science/cdf
+		tiff:${PORTSDIR}/graphics/tiff		\
+		cdf:${PORTSDIR}/science/cdf
 
-USE_XORG=	xinerama xext xpm xmu sm ice 
+USE_XORG=	xinerama xext xpm xmu sm ice
 USES=		bison motif gmake
 USE_GCC=	any
 USE_GL=		yes
@@ -33,13 +33,13 @@ IGNORE=	HDF and NETCDF are conflicting
 .endif
 
 .if defined(WITH_HDF)
-LIB_DEPENDS+=	mfhdf.3:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	mfhdf:${PORTSDIR}/science/hdf
 .else
 CONFIGURE_ARGS+=	--without-hdf
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf:${PORTSDIR}/science/netcdf4
 .else
 CONFIGURE_ARGS+=	--without-netcdf
 .endif
