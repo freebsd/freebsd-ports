@@ -367,6 +367,7 @@
     SUBDIR += xfce4-taskmanager
     SUBDIR += xfce4-terminal
     SUBDIR += xfce4-verve-plugin
+    SUBDIR += xfce4-whiskermenu-plugin
     SUBDIR += xfce4-wmdock-plugin
     SUBDIR += xfce4-xfapplet-plugin
     SUBDIR += xfd
