@@ -35,7 +35,10 @@ MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/
 DISTFILES=	MesaLib-${MESADISTVERSION}${EXTRACT_SUFX}
 MAINTAINER?=	x11@FreeBSD.org
 
+# HACK: added lang/python as build dependency - we need to check, which 
+# python versions are cleanly supported by Mesa
 BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend \
+		python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USES=	bison
