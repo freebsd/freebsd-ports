@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pyodbc
-# Date created:        April 15 2009
-# Whom:                rkruus
-#
+# Created by: April 15 2009
 # $FreeBSD$
-#
 
 # Like they say in the postgres-odbc Makefile (and I quote):
 #
@@ -18,12 +14,11 @@
 #
 
 PORTNAME=	pyodbc
-PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTVERSION=	3.0.6
 CATEGORIES=	databases python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		pyodbc-${PORTVERSION}
+#DISTNAME=		pyodbc-${PORTVERSION}
 
 MAINTAINER=	rob.kruus@gmail.com
 COMMENT=	ODBC connections for python
@@ -31,7 +26,8 @@ COMMENT=	ODBC connections for python
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
 
 # again, shamelessly copied from datebase/postgres-odbc
 .if !defined(WITH_IODBC)
@@ -40,28 +36,17 @@ WITH_UNIXODBC=	yes
 
 .if defined(WITH_UNIXODBC)
 # I.e. even if WITH_IODBC is defined
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 .else
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 .endif
 
 do-build:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py build)
 
 do-install:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install)
-
-DOCSDIR=		${PREFIX}/share/doc/py-odbc
-
-DOCS=			docs.html index.html license.html styles.css tutorial.html
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/web/${f} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	@(cd ${WRKSRC}; ${SETENV} PYTHONPATH=${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} setup.py install --prefix=${PREFIX})
 
 .include <bsd.port.mk>
