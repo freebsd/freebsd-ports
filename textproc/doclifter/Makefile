@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Translates documents written in troff macros to DocBook
 
+RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
+
 USE_PYTHON=	-2.7
 NO_BUILD=	yes
 
