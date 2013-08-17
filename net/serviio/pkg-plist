@@ -1,6 +1,7 @@
 sbin/serviiod
 bin/serviio-console
 %%JAVAJARDIR%%/serviio/commons-codec.jar
+%%JAVAJARDIR%%/serviio/commons-imaging.jar
 %%JAVAJARDIR%%/serviio/commons-io.jar
 %%JAVAJARDIR%%/serviio/commons-jxpath.jar
 %%JAVAJARDIR%%/serviio/commons-lang.jar
@@ -16,20 +17,23 @@ bin/serviio-console
 %%JAVAJARDIR%%/serviio/jdom.jar
 %%JAVAJARDIR%%/serviio/jnat-pmplib.jar
 %%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
+%%JAVAJARDIR%%/serviio/lucene-analyzers-common.jar
+%%JAVAJARDIR%%/serviio/lucene-core.jar
 %%JAVAJARDIR%%/serviio/log4j.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.gson.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.net.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.xstream.jar
 %%JAVAJARDIR%%/serviio/org.restlet.jar
 %%JAVAJARDIR%%/serviio/padlock.jar
 %%JAVAJARDIR%%/serviio/rome-modules.jar
 %%JAVAJARDIR%%/serviio/rome.jar
-%%JAVAJARDIR%%/serviio/sanselan.jar
 %%JAVAJARDIR%%/serviio/sbbi-upnp.jar
 %%JAVAJARDIR%%/serviio/serviio-client.jar
 %%JAVAJARDIR%%/serviio/serviio-media-browser.jar
 %%JAVAJARDIR%%/serviio/serviio.jar
 %%JAVAJARDIR%%/serviio/slf4j-api.jar
 %%JAVAJARDIR%%/serviio/slf4j-log4j12.jar
+%%JAVAJARDIR%%/serviio/streamflyer-core.jar
 %%JAVAJARDIR%%/serviio/winp.jar
 %%JAVAJARDIR%%/serviio/xstream.jar
 @dirrm %%JAVAJARDIR%%/serviio/plugins
