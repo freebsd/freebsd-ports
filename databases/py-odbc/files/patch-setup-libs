@@ -1,22 +1,18 @@
---- setup.py.orig	2009-04-15 14:10:36.000000000 -0600
-+++ setup.py	2009-06-24 09:15:04.203757061 -0600
-@@ -54,8 +54,16 @@
-     else:
-         # Other posix-like: Linux, Solaris, etc.
- 
-+        try:
-+            include = '-I'+os.environ['PREFIX']+'/include'
-+            lib = '-L'+os.environ['PREFIX']+'/lib'
-+        except:
-+            include = '-I/usr/local/include'
-+            lib = '-L/usr/local/lib'
-+
-         # Python functions take a lot of 'char *' that really should be const.  gcc complains about this *a lot*
--        extra_compile_args = ['-Wno-write-strings']
-+        extra_compile_args = ['-Wno-write-strings', include, lib]
-+        extra_link_args = [ lib ]
- 
+--- setup.py.orig	2012-06-24 17:49:34.000000000 -0600
++++ setup.py	2012-12-06 11:47:02.121782861 -0600
+@@ -156,6 +156,15 @@
          # What is the proper way to detect iODBC, MyODBC, unixODBC, etc.?
-         libraries.append('odbc')
-
-
+         settings['libraries'].append('odbc')
+ 
++        if sys.platform.startswith('freebsd'):
++            settings['library_dirs'] = ['/usr/local/lib/']
++            settings['include_dirs'] = ['/usr/local/include/']
++            freebsd_prefix = '/usr/local'
++            if 'PREFIX' in os.environ:
++                freebsd_prefix = os.environ['PREFIX']
++            if 'PYTHONPREFIX_SITELIBDIR' in os.environ:
++                sys.path.append('/'.join(freebsd_prefix, os.environ['PYTHONPREFIX_SITELIBDIR']))
++
+     return settings
+ 
+ 
