@@ -10,68 +10,61 @@ share/icons/hicolor/48x48/apps/tanglet.png
 share/icons/hicolor/64x64/apps/tanglet.png
 share/icons/hicolor/scalable/apps/tanglet.svg
 share/pixmaps/tanglet.png
-share/pixmaps/tanglet_32.xpm
-share/tanglet/data/cs/dice
-share/tanglet/data/cs/dictionary
-share/tanglet/data/cs/name
-share/tanglet/data/cs/words
-share/tanglet/data/de/README
-share/tanglet/data/de/dice
-share/tanglet/data/de/dictionary
-share/tanglet/data/de/name
-share/tanglet/data/de/words
-share/tanglet/data/en/README
-share/tanglet/data/en/dice
-share/tanglet/data/en/dictionary
-share/tanglet/data/en/name
-share/tanglet/data/en/scowl-word-lists-used
-share/tanglet/data/en/words
-share/tanglet/data/fr/dice
-share/tanglet/data/fr/dictionary
-share/tanglet/data/fr/name
-share/tanglet/data/fr/words
-share/tanglet/data/he/README
-share/tanglet/data/he/dice
-share/tanglet/data/he/dictionary
-share/tanglet/data/he/name
-share/tanglet/data/he/words
-share/tanglet/data/nl/dice
-share/tanglet/data/nl/dictionary
-share/tanglet/data/nl/name
-share/tanglet/data/nl/words
-share/tanglet/translations/tanglet_cs.qm
-share/tanglet/translations/tanglet_de.qm
-share/tanglet/translations/tanglet_en.qm
-share/tanglet/translations/tanglet_fr.qm
-share/tanglet/translations/tanglet_he.qm
-share/tanglet/translations/tanglet_nl.qm
-@dirrm share/tanglet/translations
-@dirrm share/tanglet/data/nl
-@dirrm share/tanglet/data/he
-@dirrm share/tanglet/data/fr
-@dirrm share/tanglet/data/en
-@dirrm share/tanglet/data/de
-@dirrm share/tanglet/data/cs
-@dirrm share/tanglet/data
-@dirrm share/tanglet
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+share/pixmaps/tanglet.xpm
+%%DATADIR%%/data/cs/dice
+%%DATADIR%%/data/cs/dictionary
+%%DATADIR%%/data/cs/name
+%%DATADIR%%/data/cs/words
+%%DATADIR%%/data/de/README
+%%DATADIR%%/data/de/dice
+%%DATADIR%%/data/de/dictionary
+%%DATADIR%%/data/de/name
+%%DATADIR%%/data/de/words
+%%DATADIR%%/data/en/README
+%%DATADIR%%/data/en/dice
+%%DATADIR%%/data/en/dictionary
+%%DATADIR%%/data/en/name
+%%DATADIR%%/data/en/scowl-word-lists-used
+%%DATADIR%%/data/en/words
+%%DATADIR%%/data/fr/dice
+%%DATADIR%%/data/fr/dictionary
+%%DATADIR%%/data/fr/name
+%%DATADIR%%/data/fr/words
+%%DATADIR%%/data/he/README
+%%DATADIR%%/data/he/dice
+%%DATADIR%%/data/he/dictionary
+%%DATADIR%%/data/he/name
+%%DATADIR%%/data/he/words
+%%DATADIR%%/data/hu/README
+%%DATADIR%%/data/hu/dice
+%%DATADIR%%/data/hu/dictionary
+%%DATADIR%%/data/hu/name
+%%DATADIR%%/data/hu/words
+%%DATADIR%%/data/nl/dice
+%%DATADIR%%/data/nl/dictionary
+%%DATADIR%%/data/nl/name
+%%DATADIR%%/data/nl/words
+%%DATADIR%%/translations/tanglet_cs.qm
+%%DATADIR%%/translations/tanglet_de.qm
+%%DATADIR%%/translations/tanglet_en.qm
+%%DATADIR%%/translations/tanglet_es.qm
+%%DATADIR%%/translations/tanglet_es_CL.qm
+%%DATADIR%%/translations/tanglet_fr.qm
+%%DATADIR%%/translations/tanglet_he.qm
+%%DATADIR%%/translations/tanglet_hu.qm
+%%DATADIR%%/translations/tanglet_it.qm
+%%DATADIR%%/translations/tanglet_nl.qm
+%%DATADIR%%/translations/tanglet_ro.qm
+%%DATADIR%%/translations/tanglet_tr.qm
+%%DATADIR%%/translations/tanglet_uk.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/data/nl
+@dirrm %%DATADIR%%/data/hu
+@dirrm %%DATADIR%%/data/he
+@dirrm %%DATADIR%%/data/fr
+@dirrm %%DATADIR%%/data/en
+@dirrm %%DATADIR%%/data/de
+@dirrm %%DATADIR%%/data/cs
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
