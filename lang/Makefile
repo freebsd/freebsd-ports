@@ -274,6 +274,8 @@
     SUBDIR += pypy-devel
     SUBDIR += pypy3-devel
     SUBDIR += python
+    SUBDIR += python2
+    SUBDIR += python3
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
     SUBDIR += python-doc-pdf-letter
