@@ -13,6 +13,8 @@ COMMENT=	Text document format for writing short documents and man pages
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
+RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
+
 USE_PYTHON=	-2.7
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
