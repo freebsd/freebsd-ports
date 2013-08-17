@@ -3,4 +3,4 @@ by replacing /bin/rm with a wrapper, which checks the given arguments
 against a configurable blacklist of files and directories that should
 never be removed.
 
-WWW:	http://code.google.com/p/safe-rm/
+WWW: https://launchpad.net/safe-rm
