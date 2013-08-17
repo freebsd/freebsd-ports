@@ -694,7 +694,7 @@ CXX=	clang++
 CPP=	clang-cpp
 .else
 .if ${ARCH} == "i386"
-USE_GCC?=	4.6+ # sse/3dnow detection on i386 needs newer gcc
+USE_GCC?=	yes # sse/3dnow detection on i386 needs newer GCC 
 .endif
 .endif
 

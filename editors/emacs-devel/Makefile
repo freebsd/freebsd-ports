@@ -232,7 +232,7 @@ CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MLTO}
-USE_GCC=	4.6+
+USE_GCC=	yes
 CONFIGURE_ARGS+=	--enable-link-time-optimization
 .endif
 

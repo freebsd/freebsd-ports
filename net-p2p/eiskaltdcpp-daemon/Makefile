@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USES=		cmake gettext
 USE_OPENSSL=	yes
 

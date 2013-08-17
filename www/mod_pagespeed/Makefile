@@ -60,7 +60,7 @@ GYP_DEFINES+=	\
 .include <bsd.port.pre.mk>
 
 # testing
-#USE_GCC=	4.6+
+#USE_GCC=	yes
 #.if ${OSVERSION} > 1000000
 #CC=		clang
 #CXX=		clang++

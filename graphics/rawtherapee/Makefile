@@ -27,7 +27,7 @@ USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
 # base GCC and clang in 9.1-RELEASE are insufficient:
-USE_GCC=	4.6+
+USE_GCC=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

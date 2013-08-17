@@ -15,7 +15,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=	pathfix pkgconfig gettext
 USE_LDCONFIG=	yes

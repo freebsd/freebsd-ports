@@ -26,8 +26,8 @@ MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 # https://bugs.kde.org/show_bug.cgi?id=305529#c10
 CMAKE_ARGS+=	-DCMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS=-rdynamic
 
-# 'USES= moderncompiler' would help, for now force dependency on gcc
-USE_GCC=	4.6+
+# 'USES= moderncompiler' would help, for now force dependency on GCC
+USE_GCC=	yes
 
 .include <bsd.port.pre.mk>
 

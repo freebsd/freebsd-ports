@@ -71,7 +71,7 @@ CPP=		clang-cpp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 .else
 .if ${PORT_OPTIONS:MOTCHAIN}
-USE_GCC?=	4.6+
+USE_GCC?=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 .else
 CONFIGURE_ARGS+=--disable-ssse3 --disable-sse4 --disable-sse42 \

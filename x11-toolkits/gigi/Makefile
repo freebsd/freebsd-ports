@@ -16,7 +16,7 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		boost_python:${PORTSDIR}/devel/boost-python-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_GCC=	4.4+
+USE_GCC=	yes
 USES=		cmake
 CMAKE_ARGS=	-DBUILD_TUTORIALS:BOOL=OFF
 USE_BZIP2=	yes

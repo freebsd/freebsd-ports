@@ -20,7 +20,7 @@ LICENSE=	MIT
 USE_GMAKE=	yes
 CFLAGS+=	-g -Wall
 LDFLAGS+=	-lusb
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 PLIST_FILES=	bin/ems-flasher
 

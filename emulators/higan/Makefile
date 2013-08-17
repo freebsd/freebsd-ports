@@ -14,7 +14,7 @@ COMMENT=	Nintendo multi-system emulator
 USES=		pkgconfig
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

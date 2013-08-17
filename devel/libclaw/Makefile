@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
 USES=		cmake gettext
 CMAKE_ARGS=	-DCLAW_CMAKE_MODULES_INSTALL_PATH="${DATADIR}/cmake"
 USE_LDCONFIG=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/subdirs/ s|doc||' ${WRKSRC}/CMakeLists.txt

@@ -20,7 +20,7 @@ RUN_DEPENDS=    p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
 USES=		perl5
 USE_PERL5=	configure
 
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 MAN3=		Math::Int128.3 \
 		Math::Int128::die_on_overflow.3

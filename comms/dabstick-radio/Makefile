@@ -40,7 +40,7 @@ CC=		clang
 CXX=		clang++
 CPP=		clang-cpp
 .else
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 do-configure:

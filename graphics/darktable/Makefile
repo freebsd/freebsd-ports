@@ -32,15 +32,15 @@ MAN1=		${PORTNAME}.1
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	GPHOTO GEO FLICKR FACEBOOK KWALLET GNOMEKEYRING RAWSPEED \
-		OPENJPEG SLIDESHOW NLS GCC46
+		OPENJPEG SLIDESHOW NLS GCC
 
 GEO_DESC=	Geotagging support
 FACEBOOK_DESC=	Support images export to Facebook
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
-GCC46_DESC=	Build with GCC 4.6+ (better OpenMP support)
+GCC_DESC=	Build with a current version of GCC (better OpenMP support)
 
-OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC46
+OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC
 
 .include <bsd.port.options.mk>
 
@@ -114,8 +114,8 @@ USES+=		gettext
 CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 .endif
 
-.if ${PORT_OPTIONS:MGCC46}
-USE_GCC=	4.6+
+.if ${PORT_OPTIONS:MGCC}
+USE_GCC=	yes
 # libdarktable.so has parts written in C++ (built-in rawspeed and libraw)
 # and is linked to GCC 4.6's libstdc++.  However CMake removes RPATH from
 # this library, and libstdc++ from base (GCC 4.2.1) is pulled at runtime,

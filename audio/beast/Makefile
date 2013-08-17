@@ -22,7 +22,7 @@ OPTIONS_DEFINE_i386=	SSE
 
 USE_BZIP2=	yes
 USES=		pathfix gettext
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomecanvas
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

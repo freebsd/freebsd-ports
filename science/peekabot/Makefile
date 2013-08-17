@@ -21,7 +21,7 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
 
 USE_BZIP2=	yes
 USES=	pathfix gmake
-USE_GCC=	4.6+
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

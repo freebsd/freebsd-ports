@@ -34,7 +34,7 @@ DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
 # XXX Has only been tested with clang and gcc
 .if ${CC} != "clang" && ${CXX} != "clang++"
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 USES=		cmake pkgconfig iconv

@@ -20,7 +20,7 @@ RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking --disable-lua-extension

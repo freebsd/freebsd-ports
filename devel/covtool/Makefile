@@ -11,7 +11,7 @@ COMMENT=	C++ test coverage analyzer
 
 WRKSRC=	        ${WRKDIR}
 USE_ZIP=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 

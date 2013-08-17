@@ -22,7 +22,7 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 
 USES=		pkgconfig gettext iconv
 USE_XZ=		yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_RAKE=	yes
 USE_RUBY=	yes

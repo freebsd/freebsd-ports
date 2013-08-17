@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GMAKE=	yes
 USES=		cmake
 

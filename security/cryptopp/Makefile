@@ -11,10 +11,10 @@ DISTNAME=		cryptopp${PORTVERSION:S/.//g}
 MAINTAINER=		delphij@FreeBSD.org
 COMMENT=		Free C++ class library of Cryptographic Primitives
 
-OPTIONS_DEFINE=		DEBUG DOCS GCC46 STATIC THREADS
+OPTIONS_DEFINE=		DEBUG DOCS GCC STATIC THREADS
 OPTIONS_DEFAULT=	STATIC THREADS
 STATIC_DESC=		Build static version only (no shared libs)
-GCC46_DESC=		Build with GCC 4.6+
+GCC_DESC=		Build with current GCC
 
 .include <bsd.port.options.mk>
 
@@ -32,8 +32,8 @@ PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 CXXFLAGS+=		-DNDEBUG
 .endif
 
-.if ${PORT_OPTIONS:MGCC46}
-USE_GCC=		4.6+
+.if ${PORT_OPTIONS:MGCC}
+USE_GCC=		yes
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC}

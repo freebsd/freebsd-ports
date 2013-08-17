@@ -21,7 +21,7 @@ CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USES=		cmake gettext
 USE_OPENSSL=	yes
 

@@ -24,7 +24,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-#USE_GCC=	4.6+
+#USE_GCC=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5=	build
