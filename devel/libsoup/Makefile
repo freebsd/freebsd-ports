@@ -12,7 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 
-BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
+BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking \
+		python2:${PORTSDIR}/lang/python2
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
