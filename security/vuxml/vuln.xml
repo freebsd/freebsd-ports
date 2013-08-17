@@ -66,15 +66,15 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Noteworthy changes in version 1.5.3:</p>
 	  <p>Mitigate the Yarom/Falkner flush+reload side-channel attack on RSA secret keys...</p>
 	  <p>Note that Libgcrypt is used by GnuPG 2.x and thus this release fixes the above
-	  problem. The fix for GnuPG less than 2.0 can be found in the just released GnuPG
-	  1.4.14.</p>
+	    problem. The fix for GnuPG less than 2.0 can be found in the just released GnuPG
+	    1.4.14.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+    <url>http://eprint.iacr.org/2013/448</url>
     <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html</url>
     <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html</url>
-    <url>http://eprint.iacr.org/2013/448</url>
     </references>
     <dates>
       <discovery>2013-07-18</discovery>
