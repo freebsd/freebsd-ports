@@ -2,6 +2,7 @@
 %%GO_SRCDIR%%/github.com/kr/pretty/diff.go
 %%GO_SRCDIR%%/github.com/kr/pretty/formatter.go
 %%GO_SRCDIR%%/github.com/kr/pretty/pretty.go
+%%GO_SRCDIR%%/github.com/kr/pretty/zero.go
 @dirrmtry %%GO_LIBDIR%%/github.com/kr
 @dirrmtry %%GO_LIBDIR%%/github.com
 @dirrm %%GO_SRCDIR%%/github.com/kr/pretty

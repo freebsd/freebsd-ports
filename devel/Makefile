@@ -589,6 +589,7 @@
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
+    SUBDIR += go-pretty
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += goffice
@@ -3340,7 +3341,6 @@
     SUBDIR += premake4
     SUBDIR += preps-gui
     SUBDIR += prepstools
-    SUBDIR += prettygo
     SUBDIR += privman
     SUBDIR += projectcenter
     SUBDIR += projectmanager

@@ -1,0 +1,7 @@
+%%GO_LIBDIR%%/github.com/kr/text.a
+%%GO_SRCDIR%%/github.com/kr/text/indent.go
+@dirrmtry %%GO_LIBDIR%%/github.com/kr
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrm %%GO_SRCDIR%%/github.com/kr/text
+@dirrmtry %%GO_SRCDIR%%/github.com/kr
+@dirrmtry %%GO_SRCDIR%%/github.com

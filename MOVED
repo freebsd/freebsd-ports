@@ -4839,3 +4839,4 @@ games/kaid||2013-08-07|Has expired: Does not fetch
 lang/q||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
 audio/q-audio||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
 graphics/q-graph||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
+devel/prettygo|devel/go-pretty|2013-08-17|Project was renamed
