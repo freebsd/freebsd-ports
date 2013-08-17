@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	graph
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.2
 CATEGORIES=	graphics python
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A library for working with graphs in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-core \
