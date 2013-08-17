@@ -3,7 +3,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	2.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -48,7 +48,6 @@ BINLINKS_SUB_TMPL=	-e 's,smtpd,smtpd%%VERSION%%,' \
 			-e 's,2to3,2to3-%%VERSION%%,' \
 			-e 's,(idle|pydoc|python-shared|python),\1%%VERSION%%,'
 BINLINKS_SUB_PYTHON_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_VER}/g}
-BINLINKS_SUB_PYTHON_MAJOR_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_MAJOR_VER}/g}
 
 OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES NLS
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
@@ -79,13 +78,6 @@ SEM_MSG=	"@comment "
 
 SUB_FILES=	pkg-message
 SUB_LIST=	SEM=${SEM_MSG}
-
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-MLINKS=		${PYTHON_VERSION}.1 python.1
-PLIST_SUB+=	IF_DEFAULT=""
-.else
-PLIST_SUB+=	IF_DEFAULT="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
@@ -273,19 +265,6 @@ post-install:
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
-
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-	for f in ${BIN_FILES}; do \
-		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB_PYTHON_VER}`; \
-		TARGET_MAJOR=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB_PYTHON_MAJOR_VER}`; \
-		cd ${PREFIX}/bin && ${LN} -sf $$TARGET $$TARGET_MAJOR; \
-		cd ${PREFIX}/bin && ${LN} -sf $$TARGET_MAJOR $$f; \
-	done
-.endif
-
-.for file in python python-config
-	cd ${LOCALBASE}/bin && ${LN} -sf ${file:S/python/${PYTHON_VERSION}/} ${file:S/python/python${PYTHON_MAJOR_VER}/}
-.endfor
 
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}

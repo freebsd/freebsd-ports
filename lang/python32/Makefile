@@ -2,7 +2,7 @@
 
 PORTNAME=	python32
 PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -64,19 +64,6 @@ CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-MLINKS=		${PYTHON_VERSION}.1 python.1
-PLIST_SUB+=	IF_DEFAULT=""
-.else
-PLIST_SUB+=	IF_DEFAULT="@comment "
-.endif
-
-.if ${PYTHON_VERSION} == ${PYTHON3_DEFAULT_VERSION}
-PLIST_SUB+=	IF_DEFAULT_MAJOR=""
-.else
-PLIST_SUB+=	IF_DEFAULT_MAJOR="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
@@ -211,19 +198,6 @@ post-install:
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
-
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-	for f in ${BIN_FILES}; do \
-		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
-		cd ${PREFIX}/bin && ${LN} -sf $$TARGET $$f; \
-	done
-.endif
-
-.if ${PYTHON_VERSION} == ${PYTHON3_DEFAULT_VERSION}
-.for file in python python-config
-	cd ${LOCALBASE}/bin && ${LN} -sf ${file:S/python/${PYTHON_VERSION}/} ${file:S/python/python${PYTHON_MAJOR_VER}/}
-.endfor
-.endif
 
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}
