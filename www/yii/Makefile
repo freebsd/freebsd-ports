@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE \
 		SF
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance component-based PHP framework
 
 LICENSE=	BSD

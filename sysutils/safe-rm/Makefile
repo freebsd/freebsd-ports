@@ -1,16 +1,12 @@
-# New ports collection makefile for:	safe-rm
-# Date created:		2008-09-13
-# Whom:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-#
+# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	safe-rm
 PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the rm command to prevent accidental deletions
 
 USE_PERL5_RUN=	yes
