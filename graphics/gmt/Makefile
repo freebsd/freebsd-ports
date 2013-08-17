@@ -18,6 +18,7 @@ COMMENT=	The Generic Mapping Tools data processing and display software package
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}${DISTVERSION}
 USES=		gmake
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--datadir=${DATADIR}
