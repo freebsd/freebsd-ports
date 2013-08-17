@@ -9,6 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	gavin@16degrees.com.au
 COMMENT=	A build tool alternative to make
 
+RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
 
 .if !defined (NO_INSTALL_MANPAGES)
 MAN1=		scons.1 sconsign.1 scons-time.1
