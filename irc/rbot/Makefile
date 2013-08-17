@@ -8,7 +8,7 @@ CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
