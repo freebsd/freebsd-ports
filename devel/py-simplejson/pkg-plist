@@ -53,6 +53,9 @@
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_float.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_float.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_float.pyo
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_for_json.py
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_for_json.pyc
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_for_json.pyo
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_indent.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_indent.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_indent.pyo
@@ -83,6 +86,9 @@
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_speedups.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_speedups.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_speedups.pyo
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_tool.py
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_tool.pyc
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_tool.pyo
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_tuple.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_tuple.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_tuple.pyo
