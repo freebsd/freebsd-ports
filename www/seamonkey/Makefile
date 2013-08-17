@@ -3,6 +3,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -83,6 +84,9 @@ MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .if ! ${PORT_OPTIONS:MLDAP}
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
+. if ${ARCH} == i386
+USE_GCC?=	yes
+. endif
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}
