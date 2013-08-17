@@ -1,17 +1,12 @@
-# ex:ts=8
-# Ports collection makefile for:	libparsifal
-# Date created:			Jan 6, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libparsifal
 PORTVERSION=	1.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
 USE_AUTOTOOLS=	libtool

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	highlight
-# Date created:				05 August 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	highlight
 PORTVERSION=	2.16
@@ -11,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
 USE_GMAKE=	yes

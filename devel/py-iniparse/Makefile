@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-iniparse
-# Date created:		2009-03-16
-# Whom:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-#
+# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	iniparse
 PORTVERSION=	0.4
@@ -12,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A better INI parser for Python
 
 USE_PYTHON=	yes

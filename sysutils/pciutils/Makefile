@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pciutils
-# Date created:				June 12, 2003
-# Whom:					Samy Al Bahra <samy@kerneled.org>
-#
+# Created by: Samy Al Bahra <samy@kerneled.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pciutils
 PORTVERSION=	3.1.9
@@ -13,7 +9,7 @@ MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://metalab.unc.edu/pub/Linux/hardware/
 MASTER_SITE_SUBDIR=	software/utils/pciutils
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PCI configuration utilities
 
 USE_GMAKE=	yes

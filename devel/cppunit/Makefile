@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cppunit
-# Date created:				14 Feb 2002
-# Whom:					Graeme Cross <gcross@netspace.net.au>
-#
+# Created by: Graeme Cross <gcross@netspace.net.au>
 # $FreeBSD$
 
 PORTNAME=	cppunit
@@ -9,7 +6,7 @@ PORTVERSION=	1.12.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
 USE_AUTOTOOLS=	libtool

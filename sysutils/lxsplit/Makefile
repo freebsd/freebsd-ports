@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to split or join files
 
 LICENSE=	GPLv2

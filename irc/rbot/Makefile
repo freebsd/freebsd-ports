@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rbot
-# Date created:		14 Apr 2002
-# Whom:			David Bushong <david+ports@bushong.net>
-#
+# Created by: David Bushong <david+ports@bushong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rbot
 PORTVERSION=	0.9.15
@@ -12,7 +8,7 @@ CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
