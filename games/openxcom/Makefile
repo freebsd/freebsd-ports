@@ -23,7 +23,7 @@ GH_COMMIT=	5c8b540
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image gfx
 USE_GL=		gl
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.simple

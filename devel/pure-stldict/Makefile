@@ -10,8 +10,7 @@ COMMENT=	Pure interface to C++ STL map/unordered_map
 
 USE_PURE=	yes
 
-USE_GCC=	4.6+
-CXX=		g++${GCC_DEFAULT_V}
+USE_GCC=	yes
 CXXFLAGS+=	-std=c++0x -DHAVE_STD_IS_PERMUTATION
 
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"

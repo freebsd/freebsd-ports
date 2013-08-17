@@ -13,7 +13,7 @@ COMMENT=	Computer vision and image processing library for Python
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	freeimage:${PORTSDIR}/graphics/freeimage
 
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes

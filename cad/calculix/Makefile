@@ -74,7 +74,7 @@ LAPACK_LIBS=		-llapack
 .endif
 
 USE_FORTRAN=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 .if ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC

@@ -42,7 +42,7 @@ CFLAGS+=	-O3
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
-USE_GCC=	4.6+
+USE_GCC=	yes
 CONFIGURE_ARGS+=--enable-openmp
 .else
 CONFIGURE_ARGS+=--disable-openmp

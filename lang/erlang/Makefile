@@ -34,11 +34,11 @@ PLIST_SUB=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	GCC46 DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DTRACE
+OPTIONS_DEFINE=	GCC DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DTRACE
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
-GCC46_DESC=	Use gcc 4.6
+GCC_DESC=	Use current GCC
 HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
 SCTP_DESC=	Enable SCTP support
@@ -72,12 +72,12 @@ DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE} && ! ${PORT_OPTIONS:MGCC46}
-IGNORE=		DTRACE support on amd64 requires GCC46 option
+.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE} && ! ${PORT_OPTIONS:MGCC}
+IGNORE=		DTRACE support on amd64 requires GCC option
 .endif
 
-.if ${PORT_OPTIONS:MGCC46}
-USE_GCC?=	4.6+
+.if ${PORT_OPTIONS:MGCC}
+USE_GCC?=	yes
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}

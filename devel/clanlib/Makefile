@@ -24,7 +24,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		pcre:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_XORG=	x11
 USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes

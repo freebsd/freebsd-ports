@@ -22,6 +22,6 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_GNOME=	libwnck gconf2
-USE_GCC=	4.4+
+USE_GCC=	yes
 
 .include <bsd.port.mk>

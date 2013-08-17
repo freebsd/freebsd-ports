@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 TR_REV=		45-g2f7b3f9
 USES=		cmake gettext:build
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes

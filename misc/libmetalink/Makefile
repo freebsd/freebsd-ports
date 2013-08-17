@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 FETCH_ARGS=
 USE_BZIP2=	yes
-USE_GCC=	4.4+
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--with-libexpat-prefix="${LOCALBASE}" \

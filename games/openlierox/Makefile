@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
 USE_OPENAL=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include

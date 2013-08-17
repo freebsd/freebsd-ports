@@ -45,7 +45,7 @@ MAN3=		oyranos-config.3 oyranos.3
 CC=		/usr/bin/clang
 CXX=		/usr/bin/clang++
 .else
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 .include <bsd.port.post.mk>

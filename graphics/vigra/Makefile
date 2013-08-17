@@ -44,7 +44,7 @@ CMAKE_ARGS+=	-DWITH_OPENEXR=0
 .if ${PORT_OPTIONS:MNUMPY}
 CONFLICTS_BUILD=	python3*
 CMAKE_ARGS+=	-DWITH_VIGRANUMPY=1
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_FORTRAN=	yes
 USE_PYTHON=	2.6-2.7
 BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
@@ -92,8 +92,8 @@ pre-everything::
 .if ${PORT_OPTIONS:MNUMPY}
 	@${ECHO} ""
 	@${ECHO} "* BEWARE!"
-	@${ECHO} "* Using py-NumPY implies Fortran and GCC4.6+ as hard dependencies"
-	@${ECHO} "* and require to all ports, depended on vigra, set USE_GCC=4.6+"
+	@${ECHO} "* Using py-NumPY implies Fortran and GCC 4.6+ as hard dependencies"
+	@${ECHO} "* and require all ports, depending on vigra, to set USE_GCC=yes"
 	@${ECHO} ""
 .endif
 

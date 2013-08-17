@@ -33,7 +33,7 @@ LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		gsl.16:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_WX=		2.8
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

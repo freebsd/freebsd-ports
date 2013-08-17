@@ -17,7 +17,7 @@ LIB_DEPENDS=	clan23Core:${PORTSDIR}/devel/clanlib \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
 USES=		pkgconfig
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GL=		glu
 USE_GMAKE=	yes
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LDFLAGS}"

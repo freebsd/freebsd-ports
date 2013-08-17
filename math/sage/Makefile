@@ -29,7 +29,7 @@ OPTIONS_DEFINE_amd64=	387
 
 PLIST_FILES=	bin/sage
 USE_FORTRAN=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_TK=		yes
 USE_GMAKE=	yes
 USE_TEX=	latex:build

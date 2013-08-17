@@ -15,7 +15,7 @@ CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
 LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 USE_GMAKE=	yes
-USE_GCC=	4.4+
+USE_GCC=	yes
 
 WRKSRC=		${WRKDIR}/astyle/build/gcc
 

@@ -141,7 +141,7 @@ JAVA?=			${LOCALBASE}/bootstrap-openjdk/bin/java
 JAVAC?=			${LOCALBASE}/bootstrap-openjdk/bin/javac
 .else
 USE_BINUTILS=		yes
-USE_GCC=		4.6+
+USE_GCC=		yes
 GCC_SUFX=		${_USE_GCC:S/.//}
 JAR?=			${LOCALBASE}/bin/gjar${GCC_SUFX}
 JAVA?=			${LOCALBASE}/bin/gij${GCC_SUFX}

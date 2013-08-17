@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		CGAL.5:${PORTSDIR}/math/cgal
 
 USE_BZIP2=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

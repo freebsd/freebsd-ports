@@ -62,7 +62,7 @@ CC=	clang
 CXX=	clang++
 GYP_DEFINES+=	clang=1
 .else
-USE_GCC?=	4.6+
+USE_GCC?=	yes
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 .endif
 

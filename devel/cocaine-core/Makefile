@@ -20,7 +20,7 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		zmq:${PORTSDIR}/devel/zmq
 
 USES=		cmake
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon

@@ -91,7 +91,7 @@ CC=		/usr/bin/clang
 CPP=		/usr/bin/clang-cpp
 CXX=		/usr/bin/clang++
 .else
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

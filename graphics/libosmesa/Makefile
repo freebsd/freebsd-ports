@@ -45,7 +45,7 @@ CC=	/usr/bin/clang
 CXX=	/usr/bin/clang++
 CPP=	/usr/bin/clang-cpp
 .else
-USE_GCC=4.6+
+USE_GCC=yes
 .endif
 .endif
 

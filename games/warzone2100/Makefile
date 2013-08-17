@@ -41,7 +41,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 REINPLACE_ARGS=	-i ''
 PORTDOCS=	*
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 .include <bsd.port.options.mk>
 

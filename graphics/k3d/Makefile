@@ -37,7 +37,7 @@ USE_BZIP2=	yes
 USE_GL=		glu
 USE_GNOME=	gtksourceview2
 USE_DOS2UNIX=	*.hpp
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_PYTHON=	yes
 USES=		cmake:outsource gettext
 CMAKE_ARGS=	-DK3D_INTL_INCLUDE_DIRS:STRING="-I${LOCALBASE}/include" \

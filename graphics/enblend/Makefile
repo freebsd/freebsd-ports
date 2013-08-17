@@ -29,8 +29,7 @@ CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 
 # GCC 4.2 has some problems, see
 # http://groups.google.com/group/hugin-ptx/browse_thread/thread/725b1581c9889e37/50abe3387d61541a#50abe3387d61541a
-# Gerald Pfeifer <gerald@pfeifer.com> asked to use 4.4+ instead of 4.3+
-USE_GCC=	4.4+
+USE_GCC=	yes
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	"LIBS=-lboost_system"
