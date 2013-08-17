@@ -628,7 +628,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERS
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	2.7.4
+NGINX_MODSECURITY_VERSION=	2.7.5
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
 		apr-1:${PORTSDIR}/devel/apr1
 USE_APACHE=	22+
