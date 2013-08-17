@@ -6,25 +6,14 @@
 Bug897300: Correct mis-merge for pulse audio on Aurora from bug 886886 r=padenot a=bajaj
 
 diff --git a/media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h b/media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h
---- media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h
-+++ media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h
-@@ -305,17 +305,17 @@ private:
- 
-     AudioMixerManagerLinuxPulse _mixerManager;
- 
-     WebRtc_UWord16 _inputDeviceIndex;
-     WebRtc_UWord16 _outputDeviceIndex;
+--- media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h.orig	2013-08-14 15:49:41.000000000 +0200
++++ media/webrtc/trunk/webrtc/modules/audio_device/linux/audio_device_pulse_linux.h	2013-08-17 12:47:34.551632139 +0200
+@@ -313,7 +313,7 @@
      bool _inputDeviceIsSpecified;
      bool _outputDeviceIsSpecified;
  
--    WebRtc_Word32 sampling_rate_hz;
-+    WebRtc_Word32 sample_rate_hz_;
+-    WebRtc_UWord32 _samplingFreq;
++    WebRtc_UWord32 sample_rate_hz_;
      WebRtc_UWord8 _recChannels;
      WebRtc_UWord8 _playChannels;
  
-     AudioDeviceModule::BufferType _playBufType;
- 
- private:
-     bool _initialized;
-     bool _recording;
-
