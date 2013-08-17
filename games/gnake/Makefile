@@ -1,9 +1,5 @@
-# Ports collection makefile for:  gnake
-# Date created:                   2011/02/20
-# Whom:                           chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	gnake
 PORTVERSION=	0.94b
@@ -12,7 +8,7 @@ MASTER_SITES=	LOCAL/chinsan \
 		http://lightless.org/files/
 DISTNAME=	Gnake.${PORTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Nibbles clone for GNU/Linux and *BSD
 
 LICENSE=	GPLv2
