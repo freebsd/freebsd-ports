@@ -1,0 +1,6 @@
+LZ4 is a very fast lossless compression algorithm, providing compression speed
+at 300 MB/s per core, scalable with multi-cores CPU.  It also features an
+extremely fast decoder, with speed in GB/s per core, typically reaching RAM
+speed limits on multi-core systems.
+
+WWW: https://code.google.com/p/lz4/

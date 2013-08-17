@@ -1,0 +1,10 @@
+--- Makefile.orig	2013-08-17 10:13:57.000000000 +0800
++++ Makefile	2013-08-17 10:14:10.000000000 +0800
+@@ -1,5 +1,5 @@
+-CC=gcc
+-CFLAGS=-I. -std=c99 -Wall -W -Wundef -Wno-implicit-function-declaration
++CC:=$(CC)
++CFLAGS:=-I. -std=c99 -Wall -W -Wundef -Wno-implicit-function-declaration
+ 
+ OS := $(shell uname)
+ ifeq ($(OS),Linux)
