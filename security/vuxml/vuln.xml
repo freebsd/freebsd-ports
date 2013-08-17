@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="689c2bf7-0701-11e3-9a25-002590860428">
+    <topic>GnuPG and Libgcrypt -- side-channel attack vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.14</lt></range>
+      </package>
+      <package>
+	<name>libgcrypt</name>
+	<range><lt>1.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner Koch of the GNU project reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html">
+	  <p>Noteworthy changes in version 1.5.3:</p>
+	  <p>Mitigate the Yarom/Falkner flush+reload side-channel attack on RSA secret keys...</p>
+	  <p>Note that Libgcrypt is used by GnuPG 2.x and thus this release fixes the above
+	  problem. The fix for GnuPG less than 2.0 can be found in the just released GnuPG
+	  1.4.14.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000329.html</url>
+    <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html</url>
+    <url>http://eprint.iacr.org/2013/448</url>
+    </references>
+    <dates>
+      <discovery>2013-07-18</discovery>
+      <entry>2013-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b2f6092-0694-11e3-9e8e-000c29f6ae42">
     <topic>puppet -- multiple vulnerabilities</topic>
     <affects>
