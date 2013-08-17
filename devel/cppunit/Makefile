@@ -6,7 +6,7 @@ PORTVERSION=	1.12.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
 USE_AUTOTOOLS=	libtool
