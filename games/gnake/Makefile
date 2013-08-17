@@ -8,8 +8,8 @@ MASTER_SITES=	LOCAL/chinsan \
 		http://lightless.org/files/
 DISTNAME=	Gnake.${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Nibbles clone for GNU/Linux and *BSD
+MAINTAINER=	jgh@FreeBSD.org
+COMMENT=	Nibbles clone for GNU/Linux and *BSD
 
 LICENSE=	GPLv2
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
