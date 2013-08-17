@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.suphp.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
+DEPRECATED=	Upstream dead, EOL: https://lists.marsching.com/pipermail/suphp/2013-May/002554.html
+EXPIRATION_DATE=2013-12-17
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal:env automake autoconf:env libtool:env
 AUTOMAKE_ARGS+=	--add-missing
