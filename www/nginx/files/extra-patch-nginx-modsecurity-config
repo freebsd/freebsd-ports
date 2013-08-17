@@ -1,5 +1,5 @@
---- ../modsecurity-apache_2.7.4/nginx/modsecurity/config.orig	2013-06-04 10:14:07.000000000 +0400
-+++ ../modsecurity-apache_2.7.4/nginx/modsecurity/config	2013-06-04 10:17:30.000000000 +0400
+--- ../modsecurity-apache_2.7.5/nginx/modsecurity/config.orig	2013-06-04 10:14:07.000000000 +0400
++++ ../modsecurity-apache_2.7.5/nginx/modsecurity/config	2013-06-04 10:17:30.000000000 +0400
 @@ -3,5 +3,5 @@
  HTTP_AUX_FILTER_MODULES="ngx_http_modsecurity $HTTP_AUX_FILTER_MODULES"
  NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_modsecurity.c $ngx_addon_dir/apr_bucket_nginx.c $ngx_addon_dir/ngx_pool_context.c"
