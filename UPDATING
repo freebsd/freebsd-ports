@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130817:
+  AFFECTS: users of lang/python*
+  AUTHOR: mva@FreeBSD.org
+
+  The lang/python* ports do not install links to 2to3, idle, pydoc, python
+  and other binaries anymore. Those were moved into the lang/python2 and
+  lang/python3 ports respectively. This change brings us closer to the goal
+  of making Python ports usable with different Python versions at the same
+  time.
+
+  If you have lang/python2* or lang/python3* installed, please also install
+  the associated lang/python2 or lang/python3 port.
+
+  1. update lang/python2* and/or lang/python3*
+  2. install lang/python2 and/or lang/python3
+  3. reinstall lang/python (if installed)
+
 20130816:
   AFFECTS: users of graphics/opendx and math/octave-forge-octcdf
   AUTHOR: stephen@FreeBSD.org
