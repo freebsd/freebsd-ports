@@ -3,7 +3,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/4.2.x/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20120119162704/repository/plugins/:2 \
@@ -272,6 +272,11 @@ post-patch:
 .if ${PORT_OPTIONS:MTESTS}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} applyTestPatches)
 .endif
+
+pre-build:
+	@${CP} ${BUILD_WRKSRC}/build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.ui.workbench/Eclipse\ UI/org/eclipse/ui/internal/keys/model/BindingModel.java ${PATCHDIR}
+	@${PATCH} -d ${PATCHDIR} -E -p0 -i ${PATCHDIR}/BindingModel.java.patch
+	@${CP} ${PATCHDIR}/BindingModel.java ${BUILD_WRKSRC}/build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.ui.workbench/Eclipse\ UI/org/eclipse/ui/internal/keys/model/BindingModel.java
 
 do-install:
 	@${RM} -rf ${PORTDESTDIR}
