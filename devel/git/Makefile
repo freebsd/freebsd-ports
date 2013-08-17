@@ -227,7 +227,7 @@ ALL_TARGET=	all strip
 .if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} PYTHON=""
-CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
+CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 .else
 CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=	PYTHON="@comment "
