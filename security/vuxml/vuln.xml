@@ -55,10 +55,6 @@ Note:  Please add new entries to the beginning of this file.
     <topic>GnuPG and Libgcrypt -- side-channel attack vulnerability</topic>
     <affects>
       <package>
-	<name>gnupg</name>
-	<range><lt>1.4.14</lt></range>
-      </package>
-      <package>
 	<name>libgcrypt</name>
 	<range><lt>1.5.3</lt></range>
       </package>
