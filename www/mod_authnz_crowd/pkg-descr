@@ -1,0 +1,4 @@
+Apache 2.2 connector for Atlassian Crowd to provide authentication and
+authorization support using Basic Auth.
+
+WWW: https://confluence.atlassian.com/display/CROWD/Integrating+Crowd+with+Apache

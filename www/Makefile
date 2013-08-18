@@ -468,6 +468,7 @@
     SUBDIR += mod_auth_xradius
     SUBDIR += mod_authn_otp
     SUBDIR += mod_authn_sasl
+    SUBDIR += mod_authnz_crowd
     SUBDIR += mod_authnz_external
     SUBDIR += mod_authz_unixgroup
     SUBDIR += mod_backtrace
