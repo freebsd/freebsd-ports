@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 USE_PYTHON_BUILD=yes
 USE_OPENSSL=	yes
 
-
 BUILD_MOZC_LIST?=	mozc_server
 
 .if   ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
