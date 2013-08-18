@@ -24,6 +24,6 @@ MAN3=	Catalyst::Helper::Prototype.3 \
 	Catalyst::Plugin::Prototype.3
 
 post-extract:
-	${RM} ${WRKSRC}/lib/Catalyst/Plugin/._Prototype.pm
+	@${FIND} ${WRKSRC} -name '._Prototype.pm' -delete
 
 .include <bsd.port.mk>
