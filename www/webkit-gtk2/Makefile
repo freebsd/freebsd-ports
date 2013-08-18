@@ -22,6 +22,7 @@ LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 
 USE_XZ=		yes
+USE_PYTHON_BUILD=	yes
 USE_GSTREAMER=	yes
 USE_XORG=	xt
 USES=		bison pkgconfig gettext
