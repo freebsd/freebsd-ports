@@ -53,6 +53,8 @@ post-patch:
 		${WRKSRC}/scripts/datamodel.py
 	${REINPLACE_CMD} -e 's|zeitgeist.datamodel|datamodel|' \
 		${WRKSRC}/scripts/onto2cpp.py
+	${REINPLACE_CMD} -e 's|env python|env ${PYTHON_CMD}|g' \
+		${WRKSRC}/scripts/onto2cpp.py
 	${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		${WRKSRC}/scripts/rdfxml2py
 
