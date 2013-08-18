@@ -6,7 +6,7 @@ PORTVERSION=	2.5.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python driver for MongoDB
 
 USE_PYTHON=		yes
