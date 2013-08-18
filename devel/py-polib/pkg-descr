@@ -1,13 +1,13 @@
-PoLib is a python library to parse and manage gettext catalogs. 
+PoLib is a python library to parse and manage gettext catalogs.
 
 polib allows you to manipulate, create, modify gettext files
 (pot, po and mo files). You can load existing files, iterate
 through it's entries, add, modify entries, comments or metadata, etc...
-or create new po files from scratch. 
+or create new po files from scratch.
 
 polib provides a simple and pythonic API, exporting only three
 convenience functions 'pofile', 'mofile' and 'detect_encoding',
 and the 4 core classes: POFile, MOFile, POEntry and MOEntry for
 creating new files/entries.
 
-WWW: http://polib.googlecode.com/
+WWW: https://bitbucket.org/izi/polib/
