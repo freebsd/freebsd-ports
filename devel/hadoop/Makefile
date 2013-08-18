@@ -1,7 +1,4 @@
-# New ports collection makefile for:	hadoop
-# Date created:				2012-02-22
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hadoop
@@ -11,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	hadoop
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	AL2
