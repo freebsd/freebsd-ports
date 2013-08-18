@@ -13,6 +13,7 @@ COMMENT=	The "meta-port" for version 2 of the Python interpreter
 USE_PYTHON_RUN=	yes
 PYTHON_VERSION=	${PYTHON_DEFAULT_VERSION}
 NO_BUILD=	yes
+PYTHON_NO_DEPENDS=	yes
 
 PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		bin/idle${PYTHON_MAJOR_VER} \
@@ -24,6 +25,8 @@ PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		bin/smtpd${PYTHON_MAJOR_VER}.py
 
 .include <bsd.port.pre.mk>
+
+RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 
 do-install:
 .for file in idle pydoc python python-shared
