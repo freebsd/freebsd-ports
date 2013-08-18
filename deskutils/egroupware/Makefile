@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.004.20130727
+PORTVERSION=	1.8.004.20130816
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-egw-pear-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	danilogondolfo@gmail.com
-COMMENT=	A web based GroupWare system
+COMMENT=	Web-based GroupWare system
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
 		${PEARDIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP \
@@ -39,6 +39,7 @@ POSTGRES_DESC=	PostgreSQL database support
 ZIP_DESC=	Install PHP zip extension
 
 .include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 USE_PHP+=	pdo_mysql
