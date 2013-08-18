@@ -1,0 +1,63 @@
+--- ./configure.ac.orig	2011-03-29 07:51:33.000000000 +0200
++++ ./configure.ac	2013-06-22 22:54:04.000000000 +0200
+@@ -1,5 +1,6 @@
+ AC_INIT([mod_authnz_crowd], [2.0.2], [support@atlassian.com])
+ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
++AM_PROG_AR
+ AC_PROG_CC
+ AC_PROG_LIBTOOL
+ AC_CONFIG_HEADERS([config.h])
+@@ -12,7 +13,7 @@
+ 
+ AC_CHECK_LIB([apr-1], [apr_pool_pre_cleanup_register], [], [AC_MSG_ERROR([apr_pool_pre_cleanup_register was not found in libapr-1])])
+ 
+-AC_CHECK_FILE([/usr/local/apache2/include/httpd.h], [APACHE_INCLUDE_DIR="/usr/local/apache2/include"], [
++AC_CHECK_FILE([/usr/local/include/apache22/httpd.h], [APACHE_INCLUDE_DIR="/usr/local/include/apache22"], [
+     AC_CHECK_FILE([/usr/include/httpd/httpd.h], [APACHE_INCLUDE_DIR="/usr/include/httpd"], [
+         AC_CHECK_FILE([/usr/include/apache2/httpd.h], [APACHE_INCLUDE_DIR="/usr/include/apache2"], [
+             AC_MSG_ERROR([Could not locate Apache include directory])
+@@ -21,7 +22,7 @@
+ ])
+ AC_SUBST([APACHE_INCLUDE_DIR])
+ 
+-AC_PATH_PROG([HTTPD], [httpd], , [/usr/local/apache2/bin:/usr/sbin])
++AC_PATH_PROG([HTTPD], [httpd], , [/usr/local/bin:/usr/local/sbin])
+ APACHE_BIN_DIR=`AS_DIRNAME($HTTPD)`
+ AC_SUBST([APACHE_BIN_DIR])
+ 
+@@ -32,7 +33,7 @@
+ ])
+ AC_SUBST([SVN_DIR])
+ 
+-AC_CHECK_FILE([/usr/libexec/apache2/mod_dav.so], [APACHE_MODULES_DIR="/usr/libexec/apache2"], [
++AC_CHECK_FILE([/usr/local/libexec/apache22/mod_dav.so], [APACHE_MODULES_DIR="/usr/local/libexec/apache22"], [
+     AC_CHECK_FILE([/usr/lib64/httpd/modules/mod_dav.so], [APACHE_MODULES_DIR="/usr/lib64/httpd/modules"], [
+         AC_CHECK_FILE([/usr/lib/httpd/modules/mod_dav.so], [APACHE_MODULES_DIR="/usr/lib/httpd/modules"], [
+             AC_CHECK_FILE([/usr/lib/apache2/modules/mod_dav.so], [APACHE_MODULES_DIR="/usr/lib/apache2/modules"], [
+@@ -43,7 +44,7 @@
+ ])
+ AC_SUBST([APACHE_MODULES_DIR])
+ 
+-AC_CHECK_FILE([/usr/local/apache2/conf/httpd.conf], [HTTPD_CONF="/usr/local/apache2/conf/httpd.conf"], [
++AC_CHECK_FILE([/usr/local/etc/apache22/httpd.conf], [HTTPD_CONF="/usr/local/etc/apache22/httpd.conf"], [
+     AC_CHECK_FILE([/etc/httpd/conf/httpd.conf], [HTTPD_CONF="/etc/httpd/conf/httpd.conf"], [
+         AC_CHECK_FILE([/etc/apache2/httpd.conf], [HTTPD_CONF="/etc/apache2/httpd.conf"], [
+             AC_MSG_ERROR([Could not locate Apache configuration file])
+@@ -52,7 +53,7 @@
+ ])
+ AC_SUBST([HTTPD_CONF])
+ 
+-AC_CHECK_FILE([/usr/local/apache2/bin/apxs], [APXS="/usr/local/apache2/bin/apxs"], [
++AC_CHECK_FILE([/usr/local/sbin/apxs], [APXS="/usr/local/sbin/apxs"], [
+     AC_CHECK_FILE([/usr/sbin/apxs], [APXS="/usr/sbin/apxs"], [
+         AC_CHECK_FILE([/usr/bin/apxs2], [APXS="/usr/bin/apxs2"], [
+             AC_MSG_ERROR([Could not locate Apache apxs binary])
+@@ -61,7 +62,7 @@
+ ])
+ AC_SUBST([APXS])
+ 
+-AC_CHECK_FILE([/usr/local/apache2/bin/apachectl], [APACHECTL="/usr/local/apache2/bin/apachectl"], [
++AC_CHECK_FILE([/usr/local/sbin/apachectl], [APACHECTL="/usr/local/sbin/apachectl"], [
+     AC_CHECK_FILE([/usr/sbin/apache2ctl], [APACHECTL="/usr/sbin/apache2ctl"], [
+         AC_CHECK_FILE([/usr/sbin/apachectl], [APACHECTL="/usr/sbin/apachectl"], [
+             AC_MSG_ERROR([Could not locate Apache apachectl binary])

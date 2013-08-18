@@ -1,0 +1,14 @@
+=================================================================
+
+authnz_crowd apache config was installed as
+  %%PREFIX%%/%%APACHEETCDIR%%/Includes/zzz_authnz_crowd.conf
+
+To enable mod_authnz_crowd, you must ensure that the Subversion DAV
+modules are enabled and loaded first, like this:
+
+  LoadModule dav_svn_module %%APACHEMODDIR%%/mod_dav_svn.so
+  LoadModule authz_svn_module %%APACHEMODDIR%%/mod_authz_svn.so
+
+  Include %%APACHEETCDIR%%/Includes/zzz_authnz_crowd.conf
+
+=================================================================
