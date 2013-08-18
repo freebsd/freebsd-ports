@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpflow
-DISTVERSION=	1.4.0b1
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.digitalcorpora.org/downloads/${PORTNAME}/
 
@@ -12,7 +12,7 @@ COMMENT=	Program that captures data transmitted as part of TCP connections
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/icl/interval.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -26,6 +26,11 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
+# Needed for __sync_add_and_fetch_8
+CFLAGS+=	-march=i586
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
