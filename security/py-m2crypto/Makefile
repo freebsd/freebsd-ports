@@ -1,12 +1,9 @@
-# New ports collection makefile for:	py-m2crypto
-# Date created:				27 March 2001
-# Whom:					Peter Haight <peterh@sapros.com>
-#
+# Created by: Peter Haight <peterh@sapros.com>
 # $FreeBSD$
-#
 
 PORTNAME=	m2crypto
 PORTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,19 +13,16 @@ DIST_SUBDIR=	python
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
 USE_OPENSSL=	yes
-USE_PYTHON=	2.5-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
 PYDISTUTILS_PKGNAME=	M2Crypto
-PYEASYINSTALL_ARCHDEP=	yes
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|/usr/local/include/python$$(PYVER)|${PYTHON_INCLUDEDIR}|g' \
-		-e 's|/usr/local/lib/python$$(PYVER)|${PYTHON_INCLUDEDIR}|g' \
-			${WRKSRC}/SWIG/Makefile
+	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|; /test_suite/d' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|$$(PYVER)|${PYTHON_VER}|' ${WRKSRC}/SWIG/Makefile
 
 .include <bsd.port.mk>
