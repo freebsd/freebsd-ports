@@ -71,14 +71,12 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.la
 lib/libatalk.so
-lib/libatalk.so.5
+lib/libatalk.so.6
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad
 sbin/netatalk
 share/aclocal/netatalk.m4
-%%DOCSDIR%%/netatalk.html
-@dirrm %%DOCSDIR%%
 @dirrm include/atalk
 @dirrm libexec/netatalk-uams
 @unexec rm -f /var/netatalk/CNID/README
