@@ -1,0 +1,782 @@
+lib/xbmc/addons/pvr.argustv/XBMC_ArgusTV.pvr
+lib/xbmc/addons/pvr.demo/XBMC_Demo.pvr
+lib/xbmc/addons/pvr.dvbviewer/XBMC_dvbviewer.pvr
+lib/xbmc/addons/pvr.hts/XBMC_Tvheadend.pvr
+lib/xbmc/addons/pvr.mediaportal.tvserver/XBMC_Mediaportal.pvr
+lib/xbmc/addons/pvr.nextpvr/XBMC_NextPVR.pvr
+lib/xbmc/addons/pvr.njoy/XBMC_Njoy.pvr
+lib/xbmc/addons/pvr.vdr.vnsi/XBMC_VDR_vnsi.pvr
+lib/xbmc/addons/pvr.vuplus/XBMC_vuplus.pvr
+share/xbmc/addons/pvr.argustv/addon.xml
+share/xbmc/addons/pvr.argustv/addon.xml.in
+share/xbmc/addons/pvr.argustv/changelog.txt
+share/xbmc/addons/pvr.argustv/icon.png
+share/xbmc/addons/pvr.argustv/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Basque/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Bosnian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/English/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Esperanto/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/French/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/German/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Haitian (Haitian Creole)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Icelandic/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Indonesian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Persian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Serbian (Cyrillic)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Serbian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Thai/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Turkish/strings.po
+share/xbmc/addons/pvr.argustv/resources/language/Ukrainian/strings.po
+share/xbmc/addons/pvr.argustv/resources/settings.xml
+share/xbmc/addons/pvr.demo/PVRDemoAddonSettings.xml
+share/xbmc/addons/pvr.demo/addon.xml
+share/xbmc/addons/pvr.demo/addon.xml.in
+share/xbmc/addons/pvr.dvbviewer/addon.xml
+share/xbmc/addons/pvr.dvbviewer/addon.xml.in
+share/xbmc/addons/pvr.dvbviewer/changelog.txt
+share/xbmc/addons/pvr.dvbviewer/icon.png
+share/xbmc/addons/pvr.dvbviewer/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Basque/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Bosnian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/English/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Esperanto/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/French/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/German/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Haitian (Haitian Creole)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Hindi (Devanagiri)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Icelandic/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Indonesian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Persian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Serbian (Cyrillic)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Serbian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Thai/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Turkish/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/language/Ukrainian/strings.po
+share/xbmc/addons/pvr.dvbviewer/resources/settings.xml
+share/xbmc/addons/pvr.hts/addon.xml
+share/xbmc/addons/pvr.hts/addon.xml.in
+share/xbmc/addons/pvr.hts/changelog.txt
+share/xbmc/addons/pvr.hts/icon.png
+share/xbmc/addons/pvr.hts/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Basque/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Bosnian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.hts/resources/language/English/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Esperanto/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.hts/resources/language/French/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.hts/resources/language/German/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Haitian (Haitian Creole)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Hindi (Devanagiri)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Icelandic/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Indonesian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Malayalam/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Maltese/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Persian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Serbian (Cyrillic)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Serbian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Thai/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Turkish/strings.po
+share/xbmc/addons/pvr.hts/resources/language/Ukrainian/strings.po
+share/xbmc/addons/pvr.hts/resources/settings.xml
+share/xbmc/addons/pvr.hts/resources/skins/Confluence/720p/DialogTranscode.xml
+share/xbmc/addons/pvr.mediaportal.tvserver/LICENSE.txt
+share/xbmc/addons/pvr.mediaportal.tvserver/TVServerXBMC/readme.txt
+share/xbmc/addons/pvr.mediaportal.tvserver/addon.xml
+share/xbmc/addons/pvr.mediaportal.tvserver/addon.xml.in
+share/xbmc/addons/pvr.mediaportal.tvserver/changelog.txt
+share/xbmc/addons/pvr.mediaportal.tvserver/icon.png
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/genre_translation.xml
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Basque/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Bosnian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/English/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/French/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/German/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Hindi (Devanagiri)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Icelandic/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Persian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Serbian (Cyrillic)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Serbian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Thai/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Turkish/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Ukrainian/strings.po
+share/xbmc/addons/pvr.mediaportal.tvserver/resources/settings.xml
+share/xbmc/addons/pvr.nextpvr/addon.xml
+share/xbmc/addons/pvr.nextpvr/addon.xml.in
+share/xbmc/addons/pvr.nextpvr/changelog.txt
+share/xbmc/addons/pvr.nextpvr/icon.png
+share/xbmc/addons/pvr.nextpvr/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/English/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/French/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/German/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.nextpvr/resources/settings.xml
+share/xbmc/addons/pvr.njoy/addon.xml
+share/xbmc/addons/pvr.njoy/addon.xml.in
+share/xbmc/addons/pvr.njoy/icon.png
+share/xbmc/addons/pvr.njoy/resources/language/English/strings.po
+share/xbmc/addons/pvr.njoy/resources/settings.xml
+share/xbmc/addons/pvr.vdr.vnsi/addon.xml
+share/xbmc/addons/pvr.vdr.vnsi/addon.xml.in
+share/xbmc/addons/pvr.vdr.vnsi/icon.png
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Albanian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Basque/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Bosnian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/English/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Esperanto/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/French/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/German/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Hindi (Devanagiri)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Icelandic/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Indonesian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Serbian (Cyrillic)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Serbian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Thai/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Turkish/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/language/Ukrainian/strings.po
+share/xbmc/addons/pvr.vdr.vnsi/resources/settings.xml
+share/xbmc/addons/pvr.vdr.vnsi/resources/skins/Confluence/720p/ChannelScan.xml
+share/xbmc/addons/pvr.vuplus/addon.xml
+share/xbmc/addons/pvr.vuplus/addon.xml.in
+share/xbmc/addons/pvr.vuplus/changelog.txt
+share/xbmc/addons/pvr.vuplus/icon.png
+share/xbmc/addons/pvr.vuplus/resources/language/Afrikaans/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Amharic/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Arabic/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Basque/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Belarusian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Bosnian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Bulgarian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Catalan/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Chinese (Simple)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Chinese (Traditional)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Croatian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Czech/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Dutch/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/English/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Esperanto/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Estonian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Finnish/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/French/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Galician/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/German/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Greek/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Haitian (Haitian Creole)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Hebrew/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Hindi (Devanagiri)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Hungarian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Icelandic/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Indonesian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Italian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Japanese/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Korean/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Lithuanian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Macedonian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Malayalam/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Norwegian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Persian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Polish/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Portuguese (Brazil)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Portuguese/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Romanian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Russian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Serbian (Cyrillic)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Serbian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Slovak/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Slovenian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Spanish (Argentina)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Spanish (Mexico)/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Spanish/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Swedish/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Thai/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Turkish/strings.po
+share/xbmc/addons/pvr.vuplus/resources/language/Ukrainian/strings.po
+share/xbmc/addons/pvr.vuplus/resources/settings.xml
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Ukrainian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Turkish
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Thai
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Serbian (Cyrillic)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Serbian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Persian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Malayalam
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Indonesian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Icelandic
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Hindi (Devanagiri)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Haitian (Haitian Creole)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/German
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/French
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Esperanto
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/English
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Bosnian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Basque
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.vuplus/resources/language
+@dirrm share/xbmc/addons/pvr.vuplus/resources
+@dirrm share/xbmc/addons/pvr.vuplus
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/Confluence/720p
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/Confluence
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Ukrainian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Turkish
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Thai
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Serbian (Cyrillic)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Serbian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Indonesian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Icelandic
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Hindi (Devanagiri)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/German
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/French
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Esperanto
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/English
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Bosnian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Basque
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Albanian
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources
+@dirrm share/xbmc/addons/pvr.vdr.vnsi
+@dirrm share/xbmc/addons/pvr.njoy/resources/language/English
+@dirrm share/xbmc/addons/pvr.njoy/resources/language
+@dirrm share/xbmc/addons/pvr.njoy/resources
+@dirrm share/xbmc/addons/pvr.njoy
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/German
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/French
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/English
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/language
+@dirrm share/xbmc/addons/pvr.nextpvr/resources
+@dirrm share/xbmc/addons/pvr.nextpvr
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Ukrainian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Turkish
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Thai
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Serbian (Cyrillic)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Serbian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Persian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Icelandic
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Hindi (Devanagiri)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/German
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/French
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/English
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Bosnian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Basque
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources/language
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/resources
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver/TVServerXBMC
+@dirrm share/xbmc/addons/pvr.mediaportal.tvserver
+@dirrm share/xbmc/addons/pvr.hts/resources/skins/Confluence/720p
+@dirrm share/xbmc/addons/pvr.hts/resources/skins/Confluence
+@dirrm share/xbmc/addons/pvr.hts/resources/skins
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Ukrainian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Turkish
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Thai
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Serbian (Cyrillic)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Serbian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Persian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Maltese
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Malayalam
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Indonesian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Icelandic
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Hindi (Devanagiri)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Haitian (Haitian Creole)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.hts/resources/language/German
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.hts/resources/language/French
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Esperanto
+@dirrm share/xbmc/addons/pvr.hts/resources/language/English
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Bosnian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Basque
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.hts/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.hts/resources/language
+@dirrm share/xbmc/addons/pvr.hts/resources
+@dirrm share/xbmc/addons/pvr.hts
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Ukrainian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Turkish
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Thai
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Serbian (Cyrillic)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Serbian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Persian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Indonesian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Icelandic
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Hindi (Devanagiri)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Haitian (Haitian Creole)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/German
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/French
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Esperanto
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/English
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Bosnian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Basque
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources/language
+@dirrm share/xbmc/addons/pvr.dvbviewer/resources
+@dirrm share/xbmc/addons/pvr.dvbviewer
+@dirrm share/xbmc/addons/pvr.demo
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Ukrainian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Turkish
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Thai
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Swedish
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Spanish (Mexico)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Spanish (Argentina)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Spanish
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Slovenian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Slovak
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Serbian (Cyrillic)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Serbian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Russian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Romanian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Portuguese (Brazil)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Portuguese
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Polish
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Persian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Norwegian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Macedonian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Lithuanian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Korean
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Japanese
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Italian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Indonesian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Icelandic
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Hungarian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Hebrew
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Haitian (Haitian Creole)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Greek
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/German
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Galician
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/French
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Finnish
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Estonian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Esperanto
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/English
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Dutch
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Czech
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Croatian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Chinese (Traditional)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Chinese (Simple)
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Catalan
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Bulgarian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Bosnian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Belarusian
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Basque
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Arabic
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Amharic
+@dirrm share/xbmc/addons/pvr.argustv/resources/language/Afrikaans
+@dirrm share/xbmc/addons/pvr.argustv/resources/language
+@dirrm share/xbmc/addons/pvr.argustv/resources
+@dirrm share/xbmc/addons/pvr.argustv
+@dirrm lib/xbmc/addons/pvr.vuplus
+@dirrm lib/xbmc/addons/pvr.vdr.vnsi
+@dirrm lib/xbmc/addons/pvr.njoy
+@dirrm lib/xbmc/addons/pvr.nextpvr
+@dirrm lib/xbmc/addons/pvr.mediaportal.tvserver
+@dirrm lib/xbmc/addons/pvr.hts
+@dirrm lib/xbmc/addons/pvr.dvbviewer
+@dirrm lib/xbmc/addons/pvr.demo
+@dirrm lib/xbmc/addons/pvr.argustv

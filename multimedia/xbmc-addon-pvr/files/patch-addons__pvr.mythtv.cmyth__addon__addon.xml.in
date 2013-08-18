@@ -1,0 +1,10 @@
+--- addons/pvr.mythtv.cmyth/addon/addon.xml.in.orig	2013-07-09 11:52:01.000000000 +0200
++++ addons/pvr.mythtv.cmyth/addon/addon.xml.in	2013-08-16 10:55:54.161857098 +0200
+@@ -12,6 +12,7 @@
+     point="xbmc.pvrclient"
+     library_linux="XBMC_MythTV_cmyth.pvr"
+     library_osx="XBMC_MythTV_cmyth.pvr"
++    library_freebsd="XBMC_MythTV_cmyth.pvr"
+     library_wingl="XBMC_MythTV_cmyth_win32.dll"
+     library_windx="XBMC_MythTV_cmyth_win32.dll"
+     library_android="libXBMC_MythTV_cmyth.so"/>

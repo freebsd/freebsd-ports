@@ -1,0 +1,18 @@
+--- configure.ac.orig	2013-07-09 11:52:01.000000000 +0200
++++ configure.ac	2013-08-08 00:57:20.370192797 +0200
+@@ -104,8 +104,14 @@
+     ARCH_DEFINES="-DTARGET_POSIX -DTARGET_DARWIN -D_LINUX"
+     DYN_LIB_EXT="dylib"
+     ;;
+-  *-freebsd*)
++  amd64-*-freebsd*)
+     OS="freebsd"
++    ARCHITECTURE="x86_64"
++    ARCH_DEFINES="-DTARGET_POSIX -DTARGET_FREEBSD -D_LINUX"
++    ;;
++  i386-*-freebsd*)
++    OS="freebsd"
++    ARCHITECTURE="i486"
+     ARCH_DEFINES="-DTARGET_POSIX -DTARGET_FREEBSD -D_LINUX"
+     ;;
+ esac

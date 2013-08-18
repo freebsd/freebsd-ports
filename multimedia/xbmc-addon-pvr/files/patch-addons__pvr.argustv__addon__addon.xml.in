@@ -1,0 +1,10 @@
+--- addons/pvr.argustv/addon/addon.xml.in.orig	2013-07-09 11:52:01.000000000 +0200
++++ addons/pvr.argustv/addon/addon.xml.in	2013-08-15 14:15:44.639972622 +0200
+@@ -12,6 +12,7 @@
+     point="xbmc.pvrclient"
+     library_linux="XBMC_ArgusTV.pvr"
+     library_osx="XBMC_ArgusTV.pvr"
++    library_freebsd="XBMC_ArgusTV.pvr"
+     library_wingl="XBMC_ArgusTV_win32.dll"
+     library_windx="XBMC_ArgusTV_win32.dll"
+     library_android="libXBMC_ArgusTV.so"/>
