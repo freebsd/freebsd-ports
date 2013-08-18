@@ -1,6 +1,29 @@
---- /Makefile.orig	2010-06-29 21:16:10.000000000 +0200
-+++ Makefile	2010-06-29 21:17:45.000000000 +0200
-@@ -90,9 +90,9 @@
+--- Makefile.orig	2013-04-10 19:52:39.000000000 +0200
++++ Makefile	2013-07-04 08:17:52.000000000 +0200
+@@ -1,11 +1,11 @@
+ # platforms:
+-#  linux-x86-32
++#  freebsd
+ #  linux-x86-64
+ #  win32-cygwin
+ #  solaris9-sparc-64
+ #  macosx
+ #  solaris8
+-PLATFORM =	linux-x86-32
++PLATFORM =	freebsd
+ 
+ # 'Makefile.version' defines the $(VERSION) of the library, and also
+ # setup the OBJS variable - stuff to be compiled.
+@@ -39,7 +39,7 @@
+ INCLUDE =	-I/usr/include/libxml2
+ 
+ # Add for libxml2 if not in above location
+-#CFLAGS +=	`xml2-config --cflags`
++CFLAGS +=	`xml2-config --cflags`
+ 
+ # CXX, CFLAGS, LIBS, LDFLAGS, LDFLAGSSO
+ include		Makefile.Defines.$(PLATFORM)
+@@ -96,9 +96,9 @@
  
  install:	all 
  		@mkdir -p $(DESTDIR)/$(PREFIX)/lib
@@ -12,7 +35,7 @@
  		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/SSLSocket.*
  		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/HttpsGetSocket.*
  		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/HttpsSocket.*
-@@ -106,12 +106,12 @@
+@@ -112,12 +112,12 @@
  		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/Min*Handler.h
  		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/Uid.h
  		@mkdir -p $(DESTDIR)/$(PREFIX)/bin
@@ -27,4 +50,4 @@
 +		@${BSD_INSTALL_DATA} pkgconfig/*pc $(DESTDIR)/$(PREFIX)/libdata/pkgconfig
  		rm -f $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so
  		rm -f $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so.$(MAJOR)
- 		ln -s $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so.$(MAJOR).$(MINOR) $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so
+ 		ln -s lib$(NAME).so.$(MAJOR).$(MINOR) $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so
