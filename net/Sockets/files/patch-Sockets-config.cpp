@@ -1,11 +1,12 @@
 --- Sockets-config.cpp.orig	2012-12-29 14:24:51.000000000 +0100
 +++ Sockets-config.cpp	2012-12-29 14:25:16.000000000 +0100
-@@ -29,7 +29,7 @@
+@@ -29,8 +29,8 @@
  
  // ------------------------------------------------------------------
  static	bool any_set = false;
 -static	std::map<std::string, std::string> mmap;
 +static	std::map<std::string, std::string> sockets_mmap;
+ static	bool quiet = false;
  
  // ------------------------------------------------------------------
  void show_info()

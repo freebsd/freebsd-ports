@@ -71,6 +71,6 @@ libdata/pkgconfig/libsockets2.pc
 lib/libSockets.a
 lib/libSockets.so
 lib/libSockets.so.2
-lib/libSockets.so.2.3.9.7
+lib/libSockets.so.2.3.9.9
 @dirrm include/Sockets
 @dirrmtry lib/pkgconfig
