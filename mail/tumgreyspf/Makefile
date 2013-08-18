@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tumgreyspf
-# Date created:				31 Aug 2005
-# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
-#
+# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/ \
@@ -17,59 +13,65 @@ COMMENT=	External policy checker for the postfix mail server
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 
-USE_PYTHON=	yes
+OPTIONS_DEFINE=	DOCS
+
 NO_BUILD=	yes
+USE_PYTHON=	-2.7
+
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGMESSAGE=	${WRKSRC}/pkg-message
+PORTDOCS=	*
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
+		TUMGREYSPF_USER=${TUMGREYSPF_USER} \
+		TUMGREYSPF_GROUP=${TUMGREYSPF_GROUP}
 
 TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
 TUMGREYSPF_USER?=	nobody
 TUMGREYSPF_GROUP?=	nobody
 
-PKGMESSAGE=	${WRKSRC}/pkg-message
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
-
-SUB_FILES=	pkg-message pkg-deinstall pkg-install
-SUB_LIST=	TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
-		TUMGREYSPF_USER=${TUMGREYSPF_USER} \
-		TUMGREYSPF_GROUP=${TUMGREYSPF_GROUP} \
-		PYTHON_CMD=${PYTHON_CMD}
-
-PORTDOCS=	*
+.include <bsd.port.options.mk>
 
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "TUMGREYSPF_DIR=/var/db/${PORTNAME}	Local are used to greylist"
+	@${ECHO_MSG} "TUMGREYSPF_DIR=/var/db/${PORTNAME}	Local are used to greylist (Default: /var/db/${PORTNAME})"
 	@${ECHO_MSG} "TUMGREYSPF_USER=nobody			User to run ${PORTNAME} (Default: nobody)"
 	@${ECHO_MSG} "TUMGREYSPF_GROUP=nobody			Group to run ${PORTNAME} (Default: nobody)"
 	@${ECHO_MSG}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%TUMGREYSPF_DIR%%|${TUMGREYSPF_DIR}|g" \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/tumgreyspfsupp.py \
-		${WRKSRC}/tumgreyspf.conf
+	@${REINPLACE_CMD} -e '/\/usr\/local\/lib\/tumgreyspf/d' \
+		${WRKSRC}/tumgreyspf ${WRKSRC}/tumgreyspf-clean ${WRKSRC}/tumgreyspf-stat
+	@${REINPLACE_CMD} -e '/configPath/ s|/var/local/lib/tumgreyspf|${TUMGREYSPF_DIR}|' \
+		-e '/greylistDir/ s|/var/local/lib/tumgreyspf|${TUMGREYSPF_DIR}|' \
+		-e '/spfqueryPath/ s|/usr/local/lib/tumgreyspf|${PREFIX}/bin|' \
+		-e '/blackholeDir/ s|/var/lib/tumgreyspf|${TUMGREYSPF_DIR}|' \
+		-e '/blackholeDir/ s|/var/local/lib/tumgreyspf|${TUMGREYSPF_DIR}|' \
+		-e '/defaultConfigFilename/ s|/var/local/lib/tumgreyspf/config|${PREFIX}/etc|' \
+			${WRKSRC}/tumgreyspf.conf ${WRKSRC}/tumgreyspfsupp.py
 	@${GREP} -r "env python" ${WRKSRC} | ${CUT} -d: -f1 | \
 		${XARGS} ${REINPLACE_CMD} -e "s|env python|env ${PYTHON_CMD}|"
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspfsupp.py ${PYTHONPREFIX_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf-clean ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf-configtest ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/gentest ${PREFIX}/bin/tumgreyspf-gentest
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf-stat ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc/tumgreyspf.conf.default
+	cd ${WRKSRC}/ && \
+		${INSTALL_SCRIPT} tumgreyspf tumgreyspf-clean tumgreyspf-configtest tumgreyspf-stat ${PREFIX}/bin/ && \
+		${INSTALL_SCRIPT} gentest ${PREFIX}/bin/tumgreyspf-gentest && \
+		${INSTALL_SCRIPT} tumgreyspfsupp.py ${PYTHONPREFIX_SITELIBDIR}/ && \
+		${INSTALL_DATA} tumgreyspf.conf ${PREFIX}/etc/tumgreyspf.conf.default
 .if !exists(${PREFIX}/etc/tumgreyspf.conf)
-	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc/
 .endif
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${DATADIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 .if !defined(PACKAGE_BUILDING)
