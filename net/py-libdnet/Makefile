@@ -6,7 +6,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python module for libdnet
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet
 
 NOT_FOR_ARCHS=	ia64
@@ -20,7 +19,7 @@ PLIST=		${.CURDIR}/pkg-plist
 LIBDNET_SLAVE=	yes
 
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--with-python
+CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	dnet
 
