@@ -1,33 +1,33 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -45,7 +45,11 @@ PACKAGE = vdr-$(ARCHIVE)
+@@ -127,7 +127,11 @@ $(I18Npot): $(wildcard *.cc)
+ 	@touch $@
  
- ### Includes and Defines (add further entries here):
- 
+ $(I18Nmsgs): $(LOCDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.mo
 +ifdef FREEBSD
-+INCLUDES += -I$(VDRDIR)
++	install -m644 $< $@
 +else
- INCLUDES += -I$(VDRDIR)/include
+ 	install -D -m644 $< $@
 +endif
  
- DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ .PHONY: i18n
+ i18n: $(I18Nmo) $(I18Npot)
+@@ -140,7 +144,11 @@ $(SOFILE): $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
  
-@@ -109,7 +113,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
- 
- libvdr-$(PLUGIN).so: $(OBJS)
- 	$(CXX) $(CXXFLAGS) -shared $(LIBS) $(OBJS) -o $@
+ install-lib: $(SOFILE)
 +ifdef FREEBSD
-+	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++	install $^ $(LIBDIR)/$^.$(APIVERSION)
 +else
- 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
+ 	install -D $^ $(LIBDIR)/$^.$(APIVERSION)
 +endif
  
- dist: clean
- 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
-@@ -121,3 +129,6 @@ dist: clean
+ install: install-lib install-i18n
  
- clean:
- 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
+@@ -157,3 +165,6 @@ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.so.* *.tgz core* *~
+ 
+ compile: $(SOFILE)
 +
 +install:
 +	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
