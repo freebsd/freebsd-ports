@@ -1,11 +1,10 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	backlogs
 PORTVERSION=	1.0.2
 CATEGORIES=	www
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Agile plugin for Redmine
 
 USE_GITHUB=	yes
