@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b2f6092-0694-11e3-9e8e-000c29f6ae42">
+    <topic>puppet -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>puppet</name>
+	<range><ge>2.7</ge><lt>2.7.23</lt></range>
+	<range><ge>3.0</ge><lt>3.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Puppet Labs reports:</p>
+	<blockquote cite="http://puppetlabs.com/security/cve/cve-2013-4761/">
+	  <p>By using the `resource_type` service, an attacker could
+	    cause puppet to load arbitrary Ruby files from the puppet
+	    master node's file system. While this behavior is not
+	    enabled by default, `auth.conf` settings could be modified
+	    to allow it. The exploit requires local file system access
+	    to the Puppet Master.</p>
+	  <p>Puppet Module Tool (PMT) did not correctly control
+	    permissions of modules it installed, instead transferring
+	    permissions that existed when the module was built.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4761</cvename>
+      <cvename>CVE-2013-4956</cvename>
+      <url>http://puppetlabs.com/security/cve/cve-2013-4761/</url>
+      <url>http://puppetlabs.com/security/cve/cve-2013-4956/</url>
+    </references>
+    <dates>
+      <discovery>2013-07-05</discovery>
+      <entry>2013-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72bf9e21-03df-11e3-bd8d-080027ef73ec">
     <topic>polarssl -- denial of service through unterminated loop in certificate parser</topic>
     <affects>
