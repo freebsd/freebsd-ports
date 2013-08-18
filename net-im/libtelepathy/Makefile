@@ -19,6 +19,7 @@ LIB_DEPENDS=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
+USE_PYTHON_BUILD=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
