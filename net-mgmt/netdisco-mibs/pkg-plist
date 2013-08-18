@@ -204,7 +204,6 @@
 %%DATADIR%%/allied/atswtch2.mib
 %%DATADIR%%/allied/ati-mib.mib
 %%DATADIR%%/allied/.index
-%%DATADIR%%/alcatel
 %%DATADIR%%/alcatel/alcatelind1igmp.mib
 %%DATADIR%%/alcatel/alcatelind1eoam.mib
 %%DATADIR%%/alcatel/alcatelind1vrrp.mib
