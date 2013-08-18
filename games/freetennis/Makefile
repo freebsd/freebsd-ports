@@ -3,7 +3,7 @@
 
 PORTNAME=	freetennis
 PORTVERSION=	0.4.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -11,12 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tennis simulation
 
 BUILD_DEPENDS=	ocamlopt:${PORTSDIR}/lang/ocaml \
+		ocaml-images>3.0:${PORTSDIR}/graphics/ocaml-images \
 		${OCAML_DEPENDS}
 RUN_DEPENDS=	${OCAML_DEPENDS}
 
 OCAML_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/gtk.ml:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
 		${LOCALBASE}/lib/ocaml/lablGL/gl.ml:${PORTSDIR}/graphics/ocaml-lablgl \
-		${LOCALBASE}/lib/ocaml/site-lib/camlimages/camlimages.a:${PORTSDIR}/graphics/ocaml-images \
 		${LOCALBASE}/lib/ocaml/site-lib/sdl/sdl.mli:${PORTSDIR}/devel/ocaml-sdl
 
 USE_BZIP2=	yes
