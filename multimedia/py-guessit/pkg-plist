@@ -49,7 +49,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/textutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/textutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/textutils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/guessittest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/test/test_autodetect.py
