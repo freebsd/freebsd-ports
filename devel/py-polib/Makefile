@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polib
-PORTVERSION=	0.7.0
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://cdn.bitbucket.org/izi/polib/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
