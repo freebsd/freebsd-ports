@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mysql-udf-preg
-# Date created:							October 27, 2011
-# Whom:									Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mysql-udf-preg
 PORTVERSION=	1.0.1
@@ -12,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.mysqludf.org/lib_mysqludf_preg/
 DISTNAME=	lib_mysqludf_preg-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of MySQL UDFs providing access to PCRE
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
