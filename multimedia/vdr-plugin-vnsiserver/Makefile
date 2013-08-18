@@ -1,25 +1,25 @@
-# New ports collection makefile for:	vdr-plugin-vnsiserver
-# Date created:		Tue Oct  5 21:13:30 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-vnsiserver
-PORTVERSION=	0.0.2s20100808.0952
-PORTREVISION=	13
+PORTVERSION=	12.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ppa.launchpad.net/yavdr/testing-vdr/ubuntu/pool/main/v/vdr-plugin-vnsiserver/ \
-		LOCAL/nox/
-DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION:S/s20/+svn20/}${DISTVERSIONSUFFIX}.orig
+MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
+DISTNAME=	xbmc-pvr-addons-${PORTVERSION}-Frodo
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	Video Disk Recorder - VNSI server plugin
+COMMENT=	Video Disk Recorder - VNSI server plugin (Frodo)
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:S/s20/+svn20/}${DISTVERSIONSUFFIX}
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/xbmc-pvr-addons-${PORTVERSION}-Frodo/addons/pvr.vdr.vnsi/${PORTNAME}
+
+MAKE_ARGS+=	LIBDIR=${WRKDIR}/lib \
+		LOCDIR=${WRKDIR}/locale \
+		VDRSRC=${LOCALBASE}/include/vdr \
+		INCLUDES=-I${LOCALBASE}/include
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
