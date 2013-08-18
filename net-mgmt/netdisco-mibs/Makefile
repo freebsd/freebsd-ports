@@ -3,6 +3,7 @@
 
 PORTNAME=	netdisco-mibs
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/netdisco/netdisco-mibs/${PORTVERSION}
 
