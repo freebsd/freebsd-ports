@@ -1,0 +1,10 @@
+--- addons/pvr.mediaportal.tvserver/addon/addon.xml.in.orig	2013-07-09 11:52:01.000000000 +0200
++++ addons/pvr.mediaportal.tvserver/addon/addon.xml.in	2013-08-16 10:57:12.604868780 +0200
+@@ -12,6 +12,7 @@
+     point="xbmc.pvrclient"
+     library_linux="XBMC_Mediaportal.pvr"
+     library_osx="XBMC_Mediaportal.pvr"
++    library_freebsd="XBMC_Mediaportal.pvr"
+     library_wingl="XBMC_Mediaportal_win32.dll"
+     library_windx="XBMC_Mediaportal_win32.dll"
+     library_android="libXBMC_Mediaportal.so"/>

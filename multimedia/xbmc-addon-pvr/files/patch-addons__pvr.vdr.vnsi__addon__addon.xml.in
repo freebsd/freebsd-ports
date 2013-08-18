@@ -1,0 +1,10 @@
+--- addons/pvr.vdr.vnsi/addon/addon.xml.in.orig	2013-01-19 02:40:32.000000000 +0100
++++ addons/pvr.vdr.vnsi/addon/addon.xml.in	2013-08-16 11:10:05.958875015 +0200
+@@ -12,6 +12,7 @@
+     point="xbmc.pvrclient"
+     library_linux="XBMC_VDR_vnsi.pvr"
+     library_osx="XBMC_VDR_vnsi.pvr"
++    library_freebsd="XBMC_VDR_vnsi.pvr"
+     library_wingl="XBMC_VDR_vnsi_WIN32.dll"
+     library_windx="XBMC_VDR_vnsi_WIN32.dll"
+     library_android="libXBMC_VDR_vnsi.so"/>

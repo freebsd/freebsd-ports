@@ -1,0 +1,10 @@
+--- addons/pvr.njoy/addon/addon.xml.in.orig	2013-07-09 11:52:01.000000000 +0200
++++ addons/pvr.njoy/addon/addon.xml.in	2013-08-16 10:53:06.062872241 +0200
+@@ -12,6 +12,7 @@
+     point="xbmc.pvrclient"
+     library_osx="XBMC_Njoy.pvr"
+     library_linux="XBMC_Njoy.pvr"
++    library_freebsd="XBMC_Njoy.pvr"
+     library_wingl="XBMC_njoy_win32.dll"
+     library_windx="XBMC_njoy_win32.dll"
+     library_android="libXBMC_Njoy.so"/>

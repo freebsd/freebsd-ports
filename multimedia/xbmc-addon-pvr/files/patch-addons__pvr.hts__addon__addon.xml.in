@@ -1,0 +1,10 @@
+--- addons/pvr.hts/addon/addon.xml.in.orig	2013-07-09 11:52:01.000000000 +0200
++++ addons/pvr.hts/addon/addon.xml.in	2013-08-15 14:12:51.036971054 +0200
+@@ -13,6 +13,7 @@
+     point="xbmc.pvrclient"
+     library_linux="XBMC_Tvheadend.pvr"
+     library_osx="XBMC_Tvheadend.pvr"
++    library_freebsd="XBMC_Tvheadend.pvr"
+     library_wingl="XBMC_Tvheadend_win32.dll"
+     library_windx="XBMC_Tvheadend_win32.dll"
+     library_android="libXBMC_Tvheadend.so"/>

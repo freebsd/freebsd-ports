@@ -1,0 +1,10 @@
+--- addons/pvr.nextpvr/addon/addon.xml.in.orig	2013-07-09 11:52:01.000000000 +0200
++++ addons/pvr.nextpvr/addon/addon.xml.in	2013-08-16 10:50:11.446872373 +0200
+@@ -12,6 +12,7 @@
+     point="xbmc.pvrclient"
+     library_linux="XBMC_NextPVR.pvr"
+     library_osx="XBMC_NextPVR.pvr"
++    library_freebsd="XBMC_NextPVR.pvr"
+     library_wingl="XBMC_NextPVR_win32.dll"
+     library_windx="XBMC_NextPVR_win32.dll"
+     library_android="libXBMC_NextPVR.so"/>
