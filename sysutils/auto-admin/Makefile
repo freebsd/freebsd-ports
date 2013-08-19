@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -17,9 +17,11 @@ MAN1=		auto-admin.1 \
 		auto-append-line.1 \
 		auto-ask.1 \
 		auto-clean-ports.1 \
+		auto-config-snd-driver.1 \
 		auto-db-dir.1 \
 		auto-disable-service.1 \
 		auto-enable-compat32.1 \
+		auto-enable-hal-mount.1 \
 		auto-enable-passwdqc.1 \
 		auto-enable-procfs.1 \
 		auto-enable-service.1 \
@@ -34,7 +36,7 @@ MAN1=		auto-admin.1 \
 		auto-print-make-variable.1 \
 		auto-replace-file.1 \
 		auto-service-enabled.1 \
-		auto-update-port-framework.1 \
+		auto-insert-line.1 \
 		auto-update-xorg.conf.1 \
 		auto-xdm-toggle.1
 
