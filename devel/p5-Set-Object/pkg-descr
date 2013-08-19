@@ -2,6 +2,3 @@ This module implements a Set of objects, that is, a collection of
 objects without duplications. It is similar to a Smalltalk IdentitySet.
 
 WWW: http://search.cpan.org/dist/Set-Object/
-
--Anton
-<tobez@FreeBSD.org>
