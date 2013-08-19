@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	entangle
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
@@ -11,14 +11,14 @@ COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2 \
-		lcms:${PORTSDIR}/graphics/lcms \
-		gexiv2:${PORTSDIR}/graphics/gexiv2 \
-		raw_r:${PORTSDIR}/graphics/libraw \
-		peas:${PORTSDIR}/devel/libpeas
+LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
+		libraw_r.so:${PORTSDIR}/graphics/libraw \
+		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk30
 
 # XXX: it would be nice if one day this option would be passed automatically
@@ -35,7 +35,7 @@ MAN1=		${PORTNAME}.1
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext	
+NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:

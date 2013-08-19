@@ -6,6 +6,7 @@ lib/girepository-1.0/Entangle-0.1.typelib
 %%NLS%%share/locale/bg/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/entangle.mo
+%%NLS%%share/locale/bo/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/br/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/entangle.mo
@@ -29,6 +30,7 @@ lib/girepository-1.0/Entangle-0.1.typelib
 %%NLS%%share/locale/ja/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/entangle.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/ks/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/entangle.mo
@@ -44,10 +46,12 @@ lib/girepository-1.0/Entangle-0.1.typelib
 %%NLS%%share/locale/ru/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/si/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/entangle.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/entangle.mo
+%%NLS%%share/locale/te/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/entangle.mo
@@ -107,6 +111,7 @@ share/gtk-doc/html/Entangle/EntangleCameraList.html
 share/gtk-doc/html/Entangle/EntangleCameraManager.html
 share/gtk-doc/html/Entangle/EntangleCameraPicker.html
 share/gtk-doc/html/Entangle/EntangleCameraSupport.html
+share/gtk-doc/html/Entangle/EntangleColourProfile.html
 share/gtk-doc/html/Entangle/EntangleColourProfileTransform.html
 share/gtk-doc/html/Entangle/EntangleControl.html
 share/gtk-doc/html/Entangle/EntangleControlButton.html
@@ -145,6 +150,8 @@ share/gtk-doc/html/Entangle/style.css
 share/gtk-doc/html/Entangle/up.png
 %%NLS%%@dirrmtry share/locale/ks/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ks
+%%NLS%%@dirrmtry share/locale/bo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bo
 @dirrm share/gtk-doc/html/Entangle
 @dirrm share/entangle/plugins
 @dirrm share/entangle/icons/hicolor/64x64/actions
