@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Agent
-PORTVERSION=	0.307
+PORTVERSION=	1.000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Set of perl modules that allows you to enhance logging capabilities
+COMMENT=	Set of Perl modules that allows you to enhance logging capabilities
+
+LICENSE=	ART20
 
 USES=		perl5
 USE_PERL5=	configure
@@ -35,6 +37,7 @@ MAN3=		Log::Agent.3 \
 		Log::Agent::Tag::Caller.3 \
 		Log::Agent::Tag::Priority.3 \
 		Log::Agent::Tag::String.3 \
-		Log::Agent::Tag_List.3
+		Log::Agent::Tag_List.3 \
+		Log::changes.3
 
 .include <bsd.port.mk>
