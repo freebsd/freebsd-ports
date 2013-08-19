@@ -1,7 +1,6 @@
 %%APACHEMODDIR%%/mod_rivet.so
-lib/rivet/README
 lib/rivet/init.tcl
-lib/rivet/librivet.so
+lib/rivet/librivetlib.so
 lib/rivet/librivetparser.so
 lib/rivet/packages/README
 lib/rivet/packages/calendar/calendar.tcl
@@ -16,12 +15,14 @@ lib/rivet/packages/dio/diodisplay.tcl
 lib/rivet/packages/dtcl/dtcl.tcl
 lib/rivet/packages/entities/entities.tcl
 lib/rivet/packages/form/form.tcl
+lib/rivet/packages/form/form2.tcl
 lib/rivet/packages/rivet_ncgi/rivet_ncgi.tcl
 lib/rivet/packages/session/README.txt
 lib/rivet/packages/session/session-class.tcl
 lib/rivet/packages/session/session-create-mysql.sql
 lib/rivet/packages/session/session-create-oracle.sql
-lib/rivet/packages/session/session-create.sql
+lib/rivet/packages/session/session-create-postgresql.sql
+lib/rivet/packages/session/session-create-sqlite.sql
 lib/rivet/packages/session/session-demo.rvt
 lib/rivet/packages/session/session-drop.sql
 lib/rivet/packages/session/session-httpd.conf
@@ -40,19 +41,19 @@ lib/rivet/rivet-tcl/html.tcl
 lib/rivet/rivet-tcl/http_accept.tcl
 lib/rivet/rivet-tcl/import_keyvalue_pairs.tcl
 lib/rivet/rivet-tcl/import_switch_args.tcl
-lib/rivet/rivet-tcl/incr0.tcl
-lib/rivet/rivet-tcl/lassign.tcl
 lib/rivet/rivet-tcl/lempty.tcl
 lib/rivet/rivet-tcl/lmatch.tcl
 lib/rivet/rivet-tcl/load_cookies.tcl
 lib/rivet/rivet-tcl/load_response.tcl
 lib/rivet/rivet-tcl/parray.tcl
 lib/rivet/rivet-tcl/parray_table.tcl
+lib/rivet/rivet-tcl/putsnnl.tcl
 lib/rivet/rivet-tcl/random.tcl
 lib/rivet/rivet-tcl/read_file.tcl
 lib/rivet/rivet-tcl/rivet_command_document.tcl
 lib/rivet/rivet-tcl/tclIndex
 lib/rivet/rivet-tcl/wrap.tcl
+lib/rivet/rivet-tcl/xml.tcl
 @dirrm lib/rivet/packages/tclrivet
 @dirrm lib/rivet/packages/simpledb
 @dirrm lib/rivet/packages/session

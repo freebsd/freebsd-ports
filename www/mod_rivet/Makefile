@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -14,14 +13,16 @@ COMMENT=	Embeds a Tcl interpreter in the Apache server
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	itcl:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
 
 USE_APACHE=	22+
-USE_TCL=	84+
+USE_TCL=	85+
 USE_LDCONFIG=	${PREFIX}/lib/rivet
 
-GMAKE=		yes
+USES=		gmake
 GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install install-packages
 
 .include <bsd.port.pre.mk>
 
