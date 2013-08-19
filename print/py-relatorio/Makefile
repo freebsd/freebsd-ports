@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	relatorio
-PORTVERSION=	0.5.7
+PORTVERSION=	0.6.0
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A templating library able to output odt and pdf files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Templating library able to output odt and pdf files
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml
