@@ -124,6 +124,7 @@ LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/jb ${WRKSRC}/jbsrc/jb.c
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e "s,-Wno-pointer-sign,," ${WRKSRC}/jb
 .endif
