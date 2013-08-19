@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Log/Agent/Tag/Priority.pm
 %%SITE_PERL%%/Log/Agent/Tag/String.pm
 %%SITE_PERL%%/Log/Agent/Tag_List.pm
+%%SITE_PERL%%/Log/changes.pod
 %%SITE_PERL%%/auto/Log/Agent/DATUM_is_here.al
 %%SITE_PERL%%/auto/Log/Agent/Priorities/autosplit.ix
 %%SITE_PERL%%/auto/Log/Agent/Priorities/level_from_prio.al
