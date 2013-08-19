@@ -16,7 +16,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
+SHEBANG_LANG=	perl python
+SHEBANG_FILES=	*
 USE_PYTHON=	-2.7
+USES=		shebangfix
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -53,8 +58,6 @@ post-patch:
 		-e '/blackholeDir/ s|/var/local/lib/tumgreyspf|${TUMGREYSPF_DIR}|' \
 		-e '/defaultConfigFilename/ s|/var/local/lib/tumgreyspf/config|${PREFIX}/etc|' \
 			${WRKSRC}/tumgreyspf.conf ${WRKSRC}/tumgreyspfsupp.py
-	@${GREP} -r "env python" ${WRKSRC} | ${CUT} -d: -f1 | \
-		${XARGS} ${REINPLACE_CMD} -e "s|env python|env ${PYTHON_CMD}|"
 
 do-install:
 	cd ${WRKSRC}/ && \
