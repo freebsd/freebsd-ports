@@ -1,8 +1,0 @@
-bin/lspci
-bin/setpci
-sbin/update-pciids
-@unexec if cmp -s %D/share/pciutils/pci.ids.sample %D/share/pciutils/pci.ids; then rm -f %D/share/pciutils/pci.ids; fi
-%%DATADIR%%/pci.ids.sample
-@exec [ -f %B/pci.ids ] || cp -p %B/%f %B/pci.ids
-@unexec rm -f %D/share/pciutils/pci.ids.old 2> /dev/null || true
-@dirrmtry %%DATADIR%%
