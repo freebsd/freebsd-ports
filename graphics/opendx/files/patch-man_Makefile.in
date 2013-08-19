@@ -1,0 +1,11 @@
+--- man/Makefile.in-orig	2013-08-19 00:29:56.000000000 +0000
++++ man/Makefile.in	2013-08-19 00:30:29.000000000 +0000
+@@ -202,7 +202,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ yakker = @yakker@
+-SUBDIRS = manl catl
++SUBDIRS = manl
+ all: all-recursive
+ 
+ .SUFFIXES:

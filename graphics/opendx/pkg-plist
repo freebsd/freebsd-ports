@@ -2276,8 +2276,6 @@ dx/lib_%%ARCH%%/libDXlite.la
 dx/lib_%%ARCH%%/libDXlite.so
 dx/lib_%%ARCH%%/libDXlite.so.4
 dx/lib_%%ARCH%%/arch.mak
-dx/man/catl/dx.l
-dx/man/manl/dx.l
 dx/ui/Basic2D.cfg
 dx/ui/Basic2D.net
 dx/ui/Basic3D.cfg
@@ -2324,9 +2322,6 @@ dx/ui/testssheet.net
 dx/ui/ui.mdf
 dx/ui/viewer.net
 @dirrm dx/ui
-@dirrm dx/man/manl
-@dirrm dx/man/catl
-@dirrm dx/man
 @dirrm dx/lib_%%ARCH%%
 @dirrm dx/lib
 %%JAVA%%@dirrm dx/java/user

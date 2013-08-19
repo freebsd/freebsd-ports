@@ -1,0 +1,11 @@
+--- man/manl/Makefile.in-orig	2013-08-19 00:32:40.000000000 +0000
++++ man/manl/Makefile.in	2013-08-19 00:33:00.000000000 +0000
+@@ -186,7 +186,7 @@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+-mandir = $(prefix)/dx/man
++mandir = $(prefix)/man
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ prefix = @prefix@

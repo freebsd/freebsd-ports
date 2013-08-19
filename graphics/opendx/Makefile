@@ -3,8 +3,8 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	12
-CATEGORIES=	graphics math
+PORTREVISION=	13
+CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
 
@@ -20,6 +20,7 @@ USES=		bison motif gmake
 USE_GCC=	any
 USE_GL=		yes
 USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	ARCH="${OPSYS:L}"
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
@@ -27,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+MANL=		dx.l
 
 .if defined(WITH_HDF) && !defined(WITHOUT_NETCDF)
 IGNORE=	HDF and NETCDF are conflicting
