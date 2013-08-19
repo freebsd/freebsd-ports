@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/._test.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/IDEA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/IDEA.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/.packlist
