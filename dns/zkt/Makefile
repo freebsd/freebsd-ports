@@ -1,12 +1,8 @@
-# New ports collection makefile for:   zkt
-# Date created:        2008-08-06
-# Whom:                Frank Behrens
-#
+# Created by: Frank Behrens
 # $FreeBSD$
-#
 
 PORTNAME=		zkt
-DISTVERSION=		1.1.0
+DISTVERSION=		1.1.2
 CATEGORIES=		dns
 MASTER_SITES=		http://www.hznet.de/dns/zkt/
 
@@ -28,8 +24,6 @@ MAN8=			dnssec-zkt.8 \
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-configpath=${DIR_NAMED_CONF}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/named/|${DIR_NAMED_CONF}/|g' ${WRKSRC}/man/*.8
 
@@ -45,4 +39,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/zkt-ls.8 ${PREFIX}/man/man8/
 	${INSTALL_MAN} ${WRKSRC}/man/zkt-signer.8 ${PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
