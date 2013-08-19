@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	automounter
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/bsdadminscripts/${PORTNAME}
 EXTRACT_SUFX=	.tar.xz
