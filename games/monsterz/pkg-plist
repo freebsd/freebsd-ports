@@ -1,30 +1,30 @@
 bin/monsterz
-games/monsterz
-share/games/monsterz/graphics/background.png
-share/games/monsterz/graphics/bigtiles.png
-share/games/monsterz/graphics/board.png
-share/games/monsterz/graphics/icon.png
-share/games/monsterz/graphics/logo.png
-share/games/monsterz/graphics/tiles.png
-share/games/monsterz/monsterz.py
-share/games/monsterz/monsterz.pyc
-share/games/monsterz/monsterz.pyo
-share/games/monsterz/sound/applause.wav
-share/games/monsterz/sound/boing.wav
-share/games/monsterz/sound/click.wav
-share/games/monsterz/sound/ding.wav
-share/games/monsterz/sound/duh.wav
-share/games/monsterz/sound/grunt.wav
-share/games/monsterz/sound/laugh.wav
-share/games/monsterz/sound/music.s3m
-share/games/monsterz/sound/pop.wav
-share/games/monsterz/sound/warning.wav
-share/games/monsterz/sound/whip.wav
-@dirrm share/games/monsterz/sound
-@dirrm share/games/monsterz/graphics
-@dirrm share/games/monsterz
-@dirrmtry share/games
-@dirrmtry games
+%%DATADIR%%/graphics/background.png
+%%DATADIR%%/graphics/bigtiles.png
+%%DATADIR%%/graphics/board.png
+%%DATADIR%%/graphics/graphics.svg
+%%DATADIR%%/graphics/icon.png
+%%DATADIR%%/graphics/logo.png
+%%DATADIR%%/graphics/pattern.png
+%%DATADIR%%/graphics/tiles.png
+%%DATADIR%%/monsterz.py
+%%DATADIR%%/monsterz.pyc
+%%DATADIR%%/monsterz.pyo
+%%DATADIR%%/sound/applause.wav
+%%DATADIR%%/sound/boing.wav
+%%DATADIR%%/sound/click.wav
+%%DATADIR%%/sound/ding.wav
+%%DATADIR%%/sound/duh.wav
+%%DATADIR%%/sound/grunt.wav
+%%DATADIR%%/sound/laugh.wav
+%%DATADIR%%/sound/music.s3m
+%%DATADIR%%/sound/pop.wav
+%%DATADIR%%/sound/warning.wav
+%%DATADIR%%/sound/whip.wav
+share/pixmaps/monsterz.png
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%
 @exec if [ ! -e %%SCOREDIR%% ] ; then mkdir -p -m 775 %%SCOREDIR%% ; fi
-@exec [ -e %%SCOREDIR%%/monsterz ] || touch %%SCOREDIR%%/monsterz && chmod g+w %%SCOREDIR%%/monsterz && chown root:games %%SCOREDIR%%/monsterz
+@exec [ -e %%SCOREDIR%%/monsterz ] || touch %%SCOREDIR%%/monsterz && chmod 664 %%SCOREDIR%%/monsterz && chgrp games %%SCOREDIR%%/monsterz
 @unexec if [ ! -s %%SCOREDIR%%/monsterz ] ; then rm -f %%SCOREDIR%%/monsterz && rm -r %%SCOREDIR%% || true ; fi

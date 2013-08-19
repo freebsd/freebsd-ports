@@ -1,12 +1,18 @@
 --- Makefile.orig	2007-12-17 23:05:00.000000000 +0100
-+++ Makefile	2013-05-25 16:56:29.000000000 +0200
-@@ -1,5 +1,5 @@
++++ Makefile	2013-08-19 08:57:30.000000000 +0200
+@@ -1,8 +1,8 @@
  
 -prefix = /usr/local
-+prefix?= /usr/local
- gamesdir = ${prefix}/games
- datadir = ${prefix}/share
- pkgdatadir = $(datadir)/games/monsterz
+-gamesdir = ${prefix}/games
+-datadir = ${prefix}/share
+-pkgdatadir = $(datadir)/games/monsterz
++prefix? = /usr/local
++gamesdir = ${prefix}/bin
++datadir = ${prefix}/share/monsterz
++pkgdatadir = $(datadir)
+ scoredir = /var/games
+ scorefile = $(scoredir)/monsterz
+ 
 @@ -22,7 +22,7 @@
  all: monsterz
  
