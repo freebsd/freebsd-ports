@@ -1,0 +1,21 @@
+===============================================================================
+
+GVolWheel has been installed.
+
+
+You could adjust which mixer you wish to use with
+
+GVolWheel / Preferences / Default mixer
+
+
+Default is used ALSA with
+
+    gnome-alsamixer
+
+
+You could use aumix with similar settings
+
+    aumix -d /dev/mixer2 -I
+
+
+===============================================================================
