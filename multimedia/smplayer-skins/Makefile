@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer-skins
-PORTVERSION=	20121029
+PORTVERSION=	20130605
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer/SMPlayer-skins/${PORTVERSION}
 
