@@ -1172,6 +1172,7 @@
 %%WWWDIR%%/claroline/work/conf/def/CLWRK.def.conf.inc.php
 %%WWWDIR%%/claroline/work/lib/zip.lib.php
 %%WWWDIR%%/claroline/work/lib/assignment.class.php
+%%WWWDIR%%/claroline/work/lib/score.lib.php
 %%WWWDIR%%/claroline/work/lib/submission.class.php
 %%WWWDIR%%/claroline/work/work.php
 %%WWWDIR%%/claroline/work/index.php
@@ -1186,6 +1187,7 @@
 %%WWWDIR%%/claroline/work/connector/linker.cnr.php
 %%WWWDIR%%/claroline/work/connector/mergeuser.cnr.php
 %%WWWDIR%%/claroline/work/connector/tracking.cnr.php
+%%WWWDIR%%/claroline/work/templates/work_score.tpl.php
 %%WWWDIR%%/claroline/lang/galician/install.lang.php
 %%WWWDIR%%/claroline/lang/galician/missing.lang.php
 %%WWWDIR%%/claroline/lang/galician/locale_settings.php
@@ -1466,12 +1468,12 @@
 %%WWWDIR%%/web/css/install.css
 %%WWWDIR%%/web/js/tooltitle.js
 %%WWWDIR%%/web/js/claroline.js
-%%WWWDIR%%/web/js/jquery.livequery.js
 %%WWWDIR%%/web/js/datetime.js
 %%WWWDIR%%/web/js/claroline.ui.js
 %%WWWDIR%%/web/js/ui.datepicker.js
 %%WWWDIR%%/web/js/claroline.linker.js
 %%WWWDIR%%/web/js/admin_users.js
+%%WWWDIR%%/web/js/jquery-migrate.js
 %%WWWDIR%%/web/js/jquery.qtip.js
 %%WWWDIR%%/web/js/admin.js
 %%WWWDIR%%/web/js/jquery.json.js
@@ -1638,6 +1640,7 @@
 @dirrm %%WWWDIR%%/module/CLCHAT/conf
 @dirrm %%WWWDIR%%/module/CLCHAT
 @dirrm %%WWWDIR%%/module
+@dirrm %%WWWDIR%%/claroline/work/templates
 @dirrm %%WWWDIR%%/claroline/work/setup
 @dirrm %%WWWDIR%%/claroline/work/lib
 @dirrm %%WWWDIR%%/claroline/work/js
@@ -1870,7 +1873,10 @@
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spoiler/js
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spoiler/img
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spoiler
+@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spellchecker/classes/utils
+@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spellchecker/classes
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spellchecker/img
+@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spellchecker/includes
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spellchecker/css
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/spellchecker
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/searchreplace/langs
