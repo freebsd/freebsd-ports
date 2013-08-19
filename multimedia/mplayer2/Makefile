@@ -2,7 +2,6 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
 BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
-		python3:${PORTSDIR}/lang/python33 \
+		python3:${PORTSDIR}/lang/python3 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
 
@@ -44,12 +43,11 @@ CONFIGURE_ARGS=	--cc=${CC} \
 MAKE_ARGS+=	BINDIR=${PREFIX}/bin \
 		CONFDIR=${PREFIX}/etc/mplayer
 
-MPLAYER2_SNAPSHOT_DATE=	2013-01-26
+MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
 
-OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB JOYSTICK \
-		LIBBLURAY V4L DV THEORA \
+OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB LIBBLURAY V4L DV THEORA \
 		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
 		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
 		JACK PULSE PORTAUDIO ASS LIRC
@@ -68,7 +66,6 @@ WIN32_DESC=	Enable win32 codec set on the IA32 arch
 REALPLAYER_DESC=Enable realplayer plugin
 LIRC_DESC=	Enable lirc support
 LIBCDIO_DESC=	Enable libcdio support
-JOYSTICK_DESC=	Enable joystick support
 V4L_DESC=	Enable Video4Linux TV support
 
 MAN1=		mplayer.1
@@ -273,13 +270,6 @@ CONFIGURE_ARGS+=	--disable-sdl
 DEFAULT_KERN_HZ=${WITH_KERN_HZ}
 .else
 DEFAULT_KERN_HZ=1024
-.endif
-
-.if ${PORT_OPTIONS:MJOYSTICK}
-BUILD_DEPENDS+=		${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
-CONFIGURE_ARGS+=	--enable-joystick
-.else
-CONFIGURE_ARGS+=	--disable-joystick
 .endif
 
 pre-everything::
