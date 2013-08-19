@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rrdmerge
-PORTVERSION=	0.0
-PORTREVISION=	${GITREVISION}
+PORTVERSION=	0.0.1
+#PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.sippysoft.com/thirdparty/
 DISTNAME=	${PORTNAME}-${GITREVISION}
