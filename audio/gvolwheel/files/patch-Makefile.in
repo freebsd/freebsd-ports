@@ -1,11 +1,18 @@
---- Makefile.in.orig	2010-04-03 19:20:45.000000000 +0800
-+++ Makefile.in	2010-06-08 13:08:12.000000000 +0800
-@@ -268,7 +268,7 @@
+--- Makefile.in.orig	2012-04-08 00:37:17.000000000 +0200
++++ Makefile.in	2013-08-03 17:39:52.000000000 +0200
+@@ -315,14 +315,8 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = src po 
 -gvolwheeldocdir = ${prefix}/doc/gvolwheel
 +gvolwheeldocdir = ${prefix}/share/doc/gvolwheel
  gvolwheeldoc_DATA = \
- 	README\
- 	COPYING\
+-	README\
+-	COPYING\
+-	AUTHORS\
+-	ChangeLog\
+-	INSTALL\
+-	NEWS 
+ 
+ EXTRA_DIST = $(gvolwheeldoc_DATA) \
+ 	$(intltool_DATA)\
