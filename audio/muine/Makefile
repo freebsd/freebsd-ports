@@ -11,7 +11,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Mono based Gnome audio player
 
-BROKEN=		Fails to run
+IGNORE=		Fails to run
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
