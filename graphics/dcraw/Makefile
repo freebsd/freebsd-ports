@@ -42,8 +42,8 @@ maketar: do-clean extract
 	${FETCH_CMD} -o ${MS_WRKSRC}/${file} ${MS_MASTER_SITE}${file}
 .endfor
 	${GREP} '^#define DCRAW_VERSION' ${MS_WRKSRC}/dcraw.c | cut -d'"' -f2 > ${MS_VERSIONFILE}
-	${MKDIR} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
-	cd ${MS_WRKSRC}/ && ${MV} ${MS_DISTFILES} ${PORTNAME}-${MS_VERSION}/
+	${MKDIR} -m 755 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
+	cd ${MS_WRKSRC}/ && ${CHMOD} 644 ${MS_DISTFILES} && ${MV} ${MS_DISTFILES} ${PORTNAME}-${MS_VERSION}/
 	(${DIFF} -u ${WRKSRC}/${PORTNAME}.c ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${PORTNAME}.c > ${MS_DIFF}) || ${TRUE}
 	if [ -s ${MS_DIFF} ]; then \
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
