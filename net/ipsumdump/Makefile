@@ -1,4 +1,4 @@
-# Created by: krion@FreeBSD.org
+# Created by: Kirill Ponomarew <krion@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ipsumdump
@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
 
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
+USE_PERL5=	build
 
 MAN1=		${PORTNAME}.1 ipaggcreate.1 ipaggmanip.1
 
@@ -20,23 +20,24 @@ PORTDOCS=	README
 PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip
 
 OPTIONS_DEFINE=	IPV6 DOCS
+OPTIONS_SUB=	yes
 
-.include  <bsd.port.options.mk>
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+.include <bsd.port.options.mk>
+
+# Try to unbreak parallel (-jX) builds
+post-patch:
+	@${ECHO_CMD} 'src: @LIBCLICK_TARGET@' >> ${WRKSRC}/Makefile.in
 
 .if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-ipv6
-PLIST_SUB+=	IPV6=""
-.else
-CONFIGURE_ARGS+=--disable-ipv6
-PLIST_SUB+=	IPV6="@comment "
+CATEGORIES+=	ipv6
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-Ipsumdump program summarizes TCP/IP dump files into a
-self-describing ASCII format easily readable by humans and
-programs. Ipsumdump can read packets from network interfaces,
-from tcpdump files, and from existing ipsumdump files. It will
-transparently uncompress tcpdump or ipsumdump files when
-necessary. It can randomly sample traffic, filter traffic based
-on its contents, anonymize IP addresses, and sort packets from
-multiple dumps by timestamp. Also, it can optionally create a
-tcpdump file containing actual packet data.
+The ipsumdump program summarizes TCP/IP dump files into a self-describing
+ASCII format easily readable by humans and programs.
+
+Ipsumdump can read packets from network interfaces, from tcpdump files, and
+from existing ipsumdump files.  It will transparently uncompress tcpdump or
+ipsumdump files when necessary.  It can randomly sample traffic, filter
+traffic based on its contents, anonymize IP addresses, and sort packets from
+multiple dumps by timestamp.  Also, it can optionally create a tcpdump file
+containing actual packet data.
 
 WWW: http://www.cs.ucla.edu/~kohler/ipsumdump/
