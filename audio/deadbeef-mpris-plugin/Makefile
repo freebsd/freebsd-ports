@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DeaDBeeF MPRIS plugin
-# Date created:				18 Nov 2011
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	deadbeef-mpris-plugin
 PORTVERSION=	2.1.3
@@ -12,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The MPRIS plugin for DeaDBeeF music player
+COMMENT=	MPRIS plugin for DeaDBeeF music player
 
 LICENSE=	GPLv3
 
@@ -25,6 +21,7 @@ USE_GNOME=	glib20
 WRKSRC=		${WRKDIR}/deadbeef-${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/Makefile.in \
+		${WRKSRC}/test/Makefile.in
 
 .include <bsd.port.mk>
