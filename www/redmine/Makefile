@@ -26,14 +26,15 @@ USE_RAKE=	yes
 NO_BUILD=	yes
 SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
 
-OPTIONS_DEFINE=	MYSQL POSTGRESQL RMAGIC WWWSERVER LDAP
-OPTIONS_DEFAULT=MYSQL            RMAGIC WWWSERVER THIN
+OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC WWWSERVER LDAP
+OPTIONS_DEFAULT=MYSQL2 RMAGIC WWWSERVER THIN
 OPTIONS_SINGLE=	WWWSERVER
 OPTIONS_SINGLE_WWWSERVER=	THIN PASSENGER
 POSTGRESQL_DESC=Enable PostgreSQL support
 RMAGIC_DESC=	Enable Gantt charts support
 THIN_DESC=	Use Thin WEB server
 PASSENGER_DESC=	Use Apache/Nginx WEB server
+MYSQL2_DESC=	MySQL database support (via mysql2 rubygem)
 NO_OPTIONS_SORT=yes
 
 .include <bsd.port.pre.mk>
@@ -42,12 +43,18 @@ NO_OPTIONS_SORT=yes
 RUN_DEPENDS+=	rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql
 .endif
 
+.if ${PORT_OPTIONS:MMYSQL2}
+RUN_DEPENDS+=	rubygem-mysql2>=0:${PORTSDIR}/databases/rubygem-mysql2
+.endif
+
 .if ${PORT_OPTIONS:MPOSTGRESQL}
 RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 .endif
 
 .if ${PORT_OPTIONS:MRMAGIC}
 RUN_DEPENDS+=	rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Gemfile
 .endif
 
 .if ${PORT_OPTIONS:MWWWSERVER}
