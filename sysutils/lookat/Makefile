@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	lookat
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.wagemakers.be/uploads/d9/2a/d92a52ea9fdfb96d1196005e0fa60fca/
+MASTER_SITES=	http://www.wagemakers.be/downloads/lookat/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Program to view Un*x text files and manual pages
 
+FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USES=		gmake
 
