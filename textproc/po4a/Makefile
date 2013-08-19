@@ -4,9 +4,8 @@
 PORTNAME=	po4a
 PORTVERSION=	0.44
 CATEGORIES=	textproc perl5
-MASTER_SITES=	LOCAL/garga/po4a \
-		http://pkgs.fedoraproject.org/repo/pkgs/po4a/po4a-0.44.tar.gz/ff7b6859d729a52a57a880d6cf6a7fcf/ \
-		http://alioth.debian.org/frs/download.php/file/3786/
+MASTER_SITES=	LOCAL/garga/po4a/orig \
+		http://leaf.dragonflybsd.org/~marino/dports-src/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Brings gettext translation tools to all kinds of docs
@@ -21,8 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		gettext
 USE_PERL5=	yes
 PERL_MODBUILD=	yes
-
-BROKEN=		Installing files in wrong place
+WRKSRC=		${WRKDIR}/${PORTNAME}-v0.40.1
 
 MANPREFIX=	${PREFIX}
 MAN3PREFIX=	${MANPREFIX}
