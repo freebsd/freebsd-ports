@@ -2,5 +2,5 @@ Perl module query OAI-PMH repositories. The Open Archives Initiative - Protocol
 for Metadata Harvesting allows repositories to share information about their
 contents.
 
+WWW: http://search.cpan.org/dist/OAI-Harvester/
 WWW: http://www.openarchives.org/
-     http://search.cpan.org/dist/OAI-Harvester/
