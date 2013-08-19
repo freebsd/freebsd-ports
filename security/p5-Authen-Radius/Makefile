@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Authen-Radius
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	RadiusPerl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to provide simple Radius client facilities
