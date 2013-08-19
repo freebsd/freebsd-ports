@@ -84,6 +84,7 @@
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
+    SUBDIR += shx
     SUBDIR += solidcoin
     SUBDIR += squall
     SUBDIR += teknap
