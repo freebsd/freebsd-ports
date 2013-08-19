@@ -25,7 +25,26 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/templates/pdf.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/templates/pdf.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/templates/pdf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test_api.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test_api.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test_api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test_odt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test_odt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test_odt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/egg.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/one.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/test.odt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/two.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/templates/include.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/templates/other.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/templates/test.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/templates/time.tmpl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/relatorio
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
