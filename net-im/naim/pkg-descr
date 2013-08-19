@@ -1,16 +1,16 @@
-naim is a console client for AOL Instant Messenger (AIM), AOL I Seek You 
+naim is a console client for AOL Instant Messenger (AIM), AOL I Seek You
 (ICQ), Internet Relay Chat (IRC), and The lily CMC.
 
-It includes unique features like zero-configuration peer to peer encryption, 
-automatic message queueing, and incoming message modification (to correct 
+It includes unique features like zero-configuration peer to peer encryption,
+automatic message queueing, and incoming message modification (to correct
 common spelling mistakes and expand common abbreviations; see /help filter).
 
-It also includes powerful dynamic module support, allowing developers to 
+It also includes powerful dynamic module support, allowing developers to
 modify all major aspects of naim's behavior.
 
-When combined with GNU Screen, naim is great to use as a chat client as 
-well as an answering machine. Individual users can detach, log out, pack 
-up and go home, then log back in from anywhere on the Internet to resume 
+When combined with GNU Screen, naim is great to use as a chat client as
+well as an answering machine. Individual users can detach, log out, pack
+up and go home, then log back in from anywhere on the Internet to resume
 their naim session.
 
-WWW: http://naim.n.ml.org
+WWW: http://naim.n.ml.org/
