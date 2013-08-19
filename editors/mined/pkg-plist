@@ -28,15 +28,10 @@ share/applications/mined.desktop
 %%DATADIR%%/setup_install/bin/configure-xterm
 %%DATADIR%%/setup_install/bin/installfonts
 %%DATADIR%%/setup_install/bin/makeprint
-%%DATADIR%%/setup_install/cyg/mkicon
-%%DATADIR%%/setup_install/cyg/postinstall
-%%DATADIR%%/setup_install/cyg/preremove
-%%DATADIR%%/setup_install/cyg/setupreg.sh
 %%DATADIR%%/setup_install/mined.desktop
 %%DATADIR%%/setup_install/mined.ico
 %%DATADIR%%/setup_install/mined.png
 %%DATADIR%%/setup_install/mined.xpm
-%%DATADIR%%/setup_install/win/.@mined
 %%DATADIR%%/setup_install/win/MinEd Web Manual.url
 %%DATADIR%%/setup_install/win/MinEd-AD.lnk
 %%DATADIR%%/setup_install/win/MinEd-PF.lnk
@@ -47,7 +42,6 @@ share/applications/mined.desktop
 %%DATADIR%%/setup_install/win/uninstall.sh
 share/pixmaps/mined.xpm
 @dirrm %%DATADIR%%/setup_install/win
-@dirrm %%DATADIR%%/setup_install/cyg
 @dirrm %%DATADIR%%/setup_install/bin
 @dirrm %%DATADIR%%/setup_install
 @dirrm %%DATADIR%%/help

@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mined
-# Date created:		24 December 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	mined
-PORTVERSION=	2012.22
+PORTVERSION=	2012.23
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/download/
 
@@ -32,8 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		mined.1 minmacs.1 mpico.1 mstar.1 umined.1 uterm.1 xmined.1
 
 PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
-		src/mined1.c man/mined.1		\
-		usrshare/setup_install/mined.desktop src/makefile.gcc
+		src/minedaux.c man/mined.1 src/mkinclud.mak		\
+		src/makefile.gcc
 
 pre-configure:
 .for FILE in ${PRFX2FIX}
