@@ -124,7 +124,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>lcms2</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.5</lt></range>
       </package>
     </affects>
     <description>
@@ -147,6 +147,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-07-22</discovery>
       <entry>2013-08-15</entry>
+      <modified>2013-08-19</modified>
     </dates>
   </vuln>
 
