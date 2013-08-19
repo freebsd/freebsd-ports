@@ -3,32 +3,36 @@
 
 PORTNAME=	pciutils
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
-		${MASTER_SITE_KERNEL_ORG} \
-		ftp://metalab.unc.edu/pub/Linux/hardware/
-MASTER_SITE_SUBDIR=	software/utils/pciutils
+		KERNEL/software/utils/pciutils \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration utilities
 
-USE_GMAKE=	yes
+LICENSE=	GPLv2
 
-MAN8=		lspci.8 setpci.8 update-pciids.8
+LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
+
+ALL_TARGET=	${BINS} ${MAN8}
+CPPFLAGS+=	-fPIC
+LDFLAGS+=	-L${LOCALBASE}/lib -lpci
+MAKE_ENV=	LANG=C
+USES=		gmake
+
+BINS=		lspci setpci
+MAN8=		lspci.8 setpci.8
+PLIST_FILES=	${BINS:S/^/bin\//}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d; s| lib/$$(PCILIB)||' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/lspci.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/setpci.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/update-pciids.8 ${PREFIX}/man/man8
-	${INSTALL_PROGRAM} ${WRKSRC}/lspci ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/setpci ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/update-pciids ${PREFIX}/sbin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}/pci.ids.sample
-
-post-install:
-	@if [ ! -f ${DATADIR}/pci.ids ]; then \
-		${CP} -p ${DATADIR}/pci.ids.sample ${DATADIR}/pci.ids ; \
-	fi
+	cd ${WRKSRC}/ && \
+		${INSTALL_PROGRAM} ${BINS} ${PREFIX}/bin/ && \
+		${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8/
 
 .include <bsd.port.mk>
