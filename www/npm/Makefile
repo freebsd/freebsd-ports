@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.2.28
+PORTVERSION=	1.3.7
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -18,22 +18,30 @@ NO_BUILD=	yes
 NO_MANCOMPRESS=	yes
 USE_XZ=		yes
 
-MAN1=		README.1 adduser.1 bin.1 bugs.1 build.1 bundle.1 cache.1 \
-		changelog.1 coding-style.1 completion.1 config.1 dedupe.1 \
-		deprecate.1 developers.1 disputes.1 docs.1 edit.1 explore.1 \
-		faq.1 folders.1 global.1 help-search.1 help.1 index.1 init.1 \
-		install.1 json.1 link.1 ls.1 npm.1 outdated.1 owner.1 pack.1 \
-		prefix.1 prune.1 publish.1 rebuild.1 registry.1 removing-npm.1 \
-		restart.1 rm.1 root.1 run-script.1 scripts.1 search.1 semver.1 \
-		shrinkwrap.1 star.1 stars.1 start.1 stop.1 submodule.1 tag.1 \
-		test.1 uninstall.1 unpublish.1 update.1 version.1 view.1 \
-		whoami.1
-MAN3=		bin.3 bugs.3 commands.3 config.3 deprecate.3 docs.3 edit.3 \
-		explore.3 help-search.3 init.3 install.3 link.3 load.3 ls.3 \
-		npm.3 outdated.3 owner.3 pack.3 prefix.3 prune.3 publish.3 \
-		rebuild.3 restart.3 root.3 run-script.3 search.3 shrinkwrap.3 \
-		start.3 stop.3 submodule.3 tag.3 test.3 uninstall.3 \
-		unpublish.3 update.3 version.3 view.3 whoami.3
+MAN1=		npm.1 npm-README.1 npm-adduser.1 npm-bin.1 npm-bugs.1 \
+		npm-build.1 npm-bundle.1 npm-cache.1 npm-completion.1 \
+		npm-config.1 npm-dedupe.1 npm-deprecate.1 npm-docs.1 \
+		npm-edit.1 npm-explore.1 npm-help-search.1 npm-help.1 \
+		npm-init.1 npm-install.1 npm-link.1 npm-ls.1 npm-outdated.1 \
+		npm-owner.1 npm-pack.1 npm-prefix.1 npm-prune.1 npm-publish.1 \
+		npm-rebuild.1 npm-restart.1 npm-rm.1 npm-root.1 \
+		npm-run-script.1 npm-search.1 npm-shrinkwrap.1 npm-star.1 \
+		npm-stars.1 npm-start.1 npm-stop.1 npm-submodule.1 npm-tag.1 \
+		npm-test.1 npm-uninstall.1 npm-unpublish.1 npm-update.1 \
+		npm-version.1 npm-view.1 npm-whoami.1
+MAN3=		npm.3 npm-bin.3 npm-bugs.3 npm-commands.3 npm-config.3 \
+		npm-deprecate.3 npm-docs.3 npm-edit.3 npm-explore.3 \
+		npm-help-search.3 npm-init.3 npm-install.3 npm-link.3 \
+		npm-load.3 npm-ls.3 npm-outdated.3 npm-owner.3 npm-pack.3 \
+		npm-prefix.3 npm-prune.3 npm-publish.3 npm-rebuild.3 \
+		npm-restart.3 npm-root.3 npm-run-script.3 npm-search.3 \
+		npm-shrinkwrap.3 npm-start.3 npm-stop.3 npm-submodule.3 \
+		npm-tag.3 npm-test.3 npm-uninstall.3 npm-unpublish.3 \
+		npm-update.3 npm-version.3 npm-view.3 npm-whoami.3
+MAN5=		npm-folders.5 npm-global.5 npm-json.5 npmrc.5 package.json.5
+MAN7=		npm-coding-style.7 npm-config.7 npm-developers.7 \
+		npm-disputes.7 npm-faq.7 npm-index.7 npm-registry.7 \
+		npm-scripts.7 removing-npm.7 semver.7
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
 .include <bsd.port.options.mk>
@@ -45,7 +53,12 @@ RUN_DEPENDS+=	node>=0.8.0:${PORTSDIR}/www/node
 .endif
 
 post-patch:
-	@${SED} -i '' -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
+	@${SED} -i '' -e 's|node cli.js|& --cache ${WRKDIR}/.cache|; /^install: / s| docclean||' ${WRKSRC}/Makefile
+	@${SED} -i '' -e 's|linkBins, linkMans|linkBins|' ${WRKSRC}/lib/build.js
+	@${ECHO_CMD} "MANPATH ${PREFIX}/lib/node_modules/npm/man" > ${WRKDIR}/npm.conf
+
+post-install:
+	@${INSTALL_DATA} ${WRKDIR}/npm.conf ${PREFIX}/etc/man.d/npm.conf
 
 # maintainer section:
 # require: bash, git, gmake, node
@@ -76,9 +89,10 @@ maketar: do-clean extract
 	@cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${GMAKE}
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type d -exec ${CHMOD} 755 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -exec ${CHMOD} 644 '{}' \;
+	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -name '*.sh' -exec ${CHMOD} 755 '{}' \;
 	@cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${MS_DISTNAME}.tar.xz ${MS_DISTNAME}/
 	@${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile
-	@${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
+	@sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
 	@cd ${.CURDIR}/ && ${MAKE} makesum
 
 .include <bsd.port.mk>

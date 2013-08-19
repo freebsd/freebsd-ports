@@ -1,4 +1,5 @@
 bin/npm
+etc/man.d/npm.conf
 lib/node_modules/npm/.npmignore
 lib/node_modules/npm/AUTHORS
 lib/node_modules/npm/LICENSE
@@ -12,201 +13,204 @@ lib/node_modules/npm/bin/npm.cmd
 lib/node_modules/npm/bin/read-package-json.js
 lib/node_modules/npm/cli.js
 lib/node_modules/npm/configure
-lib/node_modules/npm/doc/api/bin.md
-lib/node_modules/npm/doc/api/bugs.md
-lib/node_modules/npm/doc/api/commands.md
-lib/node_modules/npm/doc/api/config.md
-lib/node_modules/npm/doc/api/deprecate.md
-lib/node_modules/npm/doc/api/docs.md
-lib/node_modules/npm/doc/api/edit.md
-lib/node_modules/npm/doc/api/explore.md
-lib/node_modules/npm/doc/api/help-search.md
-lib/node_modules/npm/doc/api/init.md
-lib/node_modules/npm/doc/api/install.md
-lib/node_modules/npm/doc/api/link.md
-lib/node_modules/npm/doc/api/load.md
-lib/node_modules/npm/doc/api/ls.md
+lib/node_modules/npm/doc/api/npm-bin.md
+lib/node_modules/npm/doc/api/npm-bugs.md
+lib/node_modules/npm/doc/api/npm-commands.md
+lib/node_modules/npm/doc/api/npm-config.md
+lib/node_modules/npm/doc/api/npm-deprecate.md
+lib/node_modules/npm/doc/api/npm-docs.md
+lib/node_modules/npm/doc/api/npm-edit.md
+lib/node_modules/npm/doc/api/npm-explore.md
+lib/node_modules/npm/doc/api/npm-help-search.md
+lib/node_modules/npm/doc/api/npm-init.md
+lib/node_modules/npm/doc/api/npm-install.md
+lib/node_modules/npm/doc/api/npm-link.md
+lib/node_modules/npm/doc/api/npm-load.md
+lib/node_modules/npm/doc/api/npm-ls.md
+lib/node_modules/npm/doc/api/npm-outdated.md
+lib/node_modules/npm/doc/api/npm-owner.md
+lib/node_modules/npm/doc/api/npm-pack.md
+lib/node_modules/npm/doc/api/npm-prefix.md
+lib/node_modules/npm/doc/api/npm-prune.md
+lib/node_modules/npm/doc/api/npm-publish.md
+lib/node_modules/npm/doc/api/npm-rebuild.md
+lib/node_modules/npm/doc/api/npm-restart.md
+lib/node_modules/npm/doc/api/npm-root.md
+lib/node_modules/npm/doc/api/npm-run-script.md
+lib/node_modules/npm/doc/api/npm-search.md
+lib/node_modules/npm/doc/api/npm-shrinkwrap.md
+lib/node_modules/npm/doc/api/npm-start.md
+lib/node_modules/npm/doc/api/npm-stop.md
+lib/node_modules/npm/doc/api/npm-submodule.md
+lib/node_modules/npm/doc/api/npm-tag.md
+lib/node_modules/npm/doc/api/npm-test.md
+lib/node_modules/npm/doc/api/npm-uninstall.md
+lib/node_modules/npm/doc/api/npm-unpublish.md
+lib/node_modules/npm/doc/api/npm-update.md
+lib/node_modules/npm/doc/api/npm-version.md
+lib/node_modules/npm/doc/api/npm-view.md
+lib/node_modules/npm/doc/api/npm-whoami.md
 lib/node_modules/npm/doc/api/npm.md
-lib/node_modules/npm/doc/api/outdated.md
-lib/node_modules/npm/doc/api/owner.md
-lib/node_modules/npm/doc/api/pack.md
-lib/node_modules/npm/doc/api/prefix.md
-lib/node_modules/npm/doc/api/prune.md
-lib/node_modules/npm/doc/api/publish.md
-lib/node_modules/npm/doc/api/rebuild.md
-lib/node_modules/npm/doc/api/restart.md
-lib/node_modules/npm/doc/api/root.md
-lib/node_modules/npm/doc/api/run-script.md
-lib/node_modules/npm/doc/api/search.md
-lib/node_modules/npm/doc/api/shrinkwrap.md
-lib/node_modules/npm/doc/api/start.md
-lib/node_modules/npm/doc/api/stop.md
-lib/node_modules/npm/doc/api/submodule.md
-lib/node_modules/npm/doc/api/tag.md
-lib/node_modules/npm/doc/api/test.md
-lib/node_modules/npm/doc/api/uninstall.md
-lib/node_modules/npm/doc/api/unpublish.md
-lib/node_modules/npm/doc/api/update.md
-lib/node_modules/npm/doc/api/version.md
-lib/node_modules/npm/doc/api/view.md
-lib/node_modules/npm/doc/api/whoami.md
-lib/node_modules/npm/doc/cli/adduser.md
-lib/node_modules/npm/doc/cli/bin.md
-lib/node_modules/npm/doc/cli/bugs.md
-lib/node_modules/npm/doc/cli/build.md
-lib/node_modules/npm/doc/cli/bundle.md
-lib/node_modules/npm/doc/cli/cache.md
-lib/node_modules/npm/doc/cli/changelog.md
-lib/node_modules/npm/doc/cli/coding-style.md
-lib/node_modules/npm/doc/cli/completion.md
-lib/node_modules/npm/doc/cli/config.md
-lib/node_modules/npm/doc/cli/dedupe.md
-lib/node_modules/npm/doc/cli/deprecate.md
-lib/node_modules/npm/doc/cli/developers.md
-lib/node_modules/npm/doc/cli/disputes.md
-lib/node_modules/npm/doc/cli/docs.md
-lib/node_modules/npm/doc/cli/edit.md
-lib/node_modules/npm/doc/cli/explore.md
-lib/node_modules/npm/doc/cli/faq.md
-lib/node_modules/npm/doc/cli/folders.md
-lib/node_modules/npm/doc/cli/global.md
-lib/node_modules/npm/doc/cli/help-search.md
-lib/node_modules/npm/doc/cli/help.md
-lib/node_modules/npm/doc/cli/index.md
-lib/node_modules/npm/doc/cli/init.md
-lib/node_modules/npm/doc/cli/install.md
-lib/node_modules/npm/doc/cli/json.md
-lib/node_modules/npm/doc/cli/link.md
-lib/node_modules/npm/doc/cli/ls.md
+lib/node_modules/npm/doc/cli/npm-adduser.md
+lib/node_modules/npm/doc/cli/npm-bin.md
+lib/node_modules/npm/doc/cli/npm-bugs.md
+lib/node_modules/npm/doc/cli/npm-build.md
+lib/node_modules/npm/doc/cli/npm-bundle.md
+lib/node_modules/npm/doc/cli/npm-cache.md
+lib/node_modules/npm/doc/cli/npm-completion.md
+lib/node_modules/npm/doc/cli/npm-config.md
+lib/node_modules/npm/doc/cli/npm-dedupe.md
+lib/node_modules/npm/doc/cli/npm-deprecate.md
+lib/node_modules/npm/doc/cli/npm-docs.md
+lib/node_modules/npm/doc/cli/npm-edit.md
+lib/node_modules/npm/doc/cli/npm-explore.md
+lib/node_modules/npm/doc/cli/npm-help-search.md
+lib/node_modules/npm/doc/cli/npm-help.md
+lib/node_modules/npm/doc/cli/npm-init.md
+lib/node_modules/npm/doc/cli/npm-install.md
+lib/node_modules/npm/doc/cli/npm-link.md
+lib/node_modules/npm/doc/cli/npm-ls.md
+lib/node_modules/npm/doc/cli/npm-outdated.md
+lib/node_modules/npm/doc/cli/npm-owner.md
+lib/node_modules/npm/doc/cli/npm-pack.md
+lib/node_modules/npm/doc/cli/npm-prefix.md
+lib/node_modules/npm/doc/cli/npm-prune.md
+lib/node_modules/npm/doc/cli/npm-publish.md
+lib/node_modules/npm/doc/cli/npm-rebuild.md
+lib/node_modules/npm/doc/cli/npm-restart.md
+lib/node_modules/npm/doc/cli/npm-rm.md
+lib/node_modules/npm/doc/cli/npm-root.md
+lib/node_modules/npm/doc/cli/npm-run-script.md
+lib/node_modules/npm/doc/cli/npm-search.md
+lib/node_modules/npm/doc/cli/npm-shrinkwrap.md
+lib/node_modules/npm/doc/cli/npm-star.md
+lib/node_modules/npm/doc/cli/npm-stars.md
+lib/node_modules/npm/doc/cli/npm-start.md
+lib/node_modules/npm/doc/cli/npm-stop.md
+lib/node_modules/npm/doc/cli/npm-submodule.md
+lib/node_modules/npm/doc/cli/npm-tag.md
+lib/node_modules/npm/doc/cli/npm-test.md
+lib/node_modules/npm/doc/cli/npm-uninstall.md
+lib/node_modules/npm/doc/cli/npm-unpublish.md
+lib/node_modules/npm/doc/cli/npm-update.md
+lib/node_modules/npm/doc/cli/npm-version.md
+lib/node_modules/npm/doc/cli/npm-view.md
+lib/node_modules/npm/doc/cli/npm-whoami.md
 lib/node_modules/npm/doc/cli/npm.md
-lib/node_modules/npm/doc/cli/outdated.md
-lib/node_modules/npm/doc/cli/owner.md
-lib/node_modules/npm/doc/cli/pack.md
-lib/node_modules/npm/doc/cli/prefix.md
-lib/node_modules/npm/doc/cli/prune.md
-lib/node_modules/npm/doc/cli/publish.md
-lib/node_modules/npm/doc/cli/rebuild.md
-lib/node_modules/npm/doc/cli/registry.md
-lib/node_modules/npm/doc/cli/removing-npm.md
-lib/node_modules/npm/doc/cli/restart.md
-lib/node_modules/npm/doc/cli/rm.md
-lib/node_modules/npm/doc/cli/root.md
-lib/node_modules/npm/doc/cli/run-script.md
-lib/node_modules/npm/doc/cli/scripts.md
-lib/node_modules/npm/doc/cli/search.md
-lib/node_modules/npm/doc/cli/semver.md
-lib/node_modules/npm/doc/cli/shrinkwrap.md
-lib/node_modules/npm/doc/cli/star.md
-lib/node_modules/npm/doc/cli/stars.md
-lib/node_modules/npm/doc/cli/start.md
-lib/node_modules/npm/doc/cli/stop.md
-lib/node_modules/npm/doc/cli/submodule.md
-lib/node_modules/npm/doc/cli/tag.md
-lib/node_modules/npm/doc/cli/test.md
-lib/node_modules/npm/doc/cli/uninstall.md
-lib/node_modules/npm/doc/cli/unpublish.md
-lib/node_modules/npm/doc/cli/update.md
-lib/node_modules/npm/doc/cli/version.md
-lib/node_modules/npm/doc/cli/view.md
-lib/node_modules/npm/doc/cli/whoami.md
-lib/node_modules/npm/html/api/bin.html
-lib/node_modules/npm/html/api/bugs.html
-lib/node_modules/npm/html/api/commands.html
-lib/node_modules/npm/html/api/config.html
-lib/node_modules/npm/html/api/deprecate.html
-lib/node_modules/npm/html/api/docs.html
-lib/node_modules/npm/html/api/edit.html
-lib/node_modules/npm/html/api/explore.html
-lib/node_modules/npm/html/api/help-search.html
-lib/node_modules/npm/html/api/init.html
-lib/node_modules/npm/html/api/install.html
-lib/node_modules/npm/html/api/link.html
-lib/node_modules/npm/html/api/load.html
-lib/node_modules/npm/html/api/ls.html
-lib/node_modules/npm/html/api/npm.html
-lib/node_modules/npm/html/api/outdated.html
-lib/node_modules/npm/html/api/owner.html
-lib/node_modules/npm/html/api/pack.html
-lib/node_modules/npm/html/api/prefix.html
-lib/node_modules/npm/html/api/prune.html
-lib/node_modules/npm/html/api/publish.html
-lib/node_modules/npm/html/api/rebuild.html
-lib/node_modules/npm/html/api/restart.html
-lib/node_modules/npm/html/api/root.html
-lib/node_modules/npm/html/api/run-script.html
-lib/node_modules/npm/html/api/search.html
-lib/node_modules/npm/html/api/shrinkwrap.html
-lib/node_modules/npm/html/api/start.html
-lib/node_modules/npm/html/api/stop.html
-lib/node_modules/npm/html/api/submodule.html
-lib/node_modules/npm/html/api/tag.html
-lib/node_modules/npm/html/api/test.html
-lib/node_modules/npm/html/api/uninstall.html
-lib/node_modules/npm/html/api/unpublish.html
-lib/node_modules/npm/html/api/update.html
-lib/node_modules/npm/html/api/version.html
-lib/node_modules/npm/html/api/view.html
-lib/node_modules/npm/html/api/whoami.html
+lib/node_modules/npm/doc/files/npm-folders.md
+lib/node_modules/npm/doc/files/npmrc.md
+lib/node_modules/npm/doc/files/package.json.md
+lib/node_modules/npm/doc/misc/npm-coding-style.md
+lib/node_modules/npm/doc/misc/npm-config.md
+lib/node_modules/npm/doc/misc/npm-developers.md
+lib/node_modules/npm/doc/misc/npm-disputes.md
+lib/node_modules/npm/doc/misc/npm-faq.md
+lib/node_modules/npm/doc/misc/npm-index.md
+lib/node_modules/npm/doc/misc/npm-registry.md
+lib/node_modules/npm/doc/misc/npm-scripts.md
+lib/node_modules/npm/doc/misc/removing-npm.md
+lib/node_modules/npm/doc/misc/semver.md
 lib/node_modules/npm/html/doc/README.html
-lib/node_modules/npm/html/doc/adduser.html
-lib/node_modules/npm/html/doc/bin.html
-lib/node_modules/npm/html/doc/bugs.html
-lib/node_modules/npm/html/doc/build.html
-lib/node_modules/npm/html/doc/bundle.html
-lib/node_modules/npm/html/doc/cache.html
-lib/node_modules/npm/html/doc/changelog.html
-lib/node_modules/npm/html/doc/coding-style.html
-lib/node_modules/npm/html/doc/completion.html
-lib/node_modules/npm/html/doc/config.html
-lib/node_modules/npm/html/doc/dedupe.html
-lib/node_modules/npm/html/doc/deprecate.html
-lib/node_modules/npm/html/doc/developers.html
-lib/node_modules/npm/html/doc/disputes.html
-lib/node_modules/npm/html/doc/docs.html
-lib/node_modules/npm/html/doc/edit.html
-lib/node_modules/npm/html/doc/explore.html
-lib/node_modules/npm/html/doc/faq.html
-lib/node_modules/npm/html/doc/folders.html
-lib/node_modules/npm/html/doc/global.html
-lib/node_modules/npm/html/doc/help-search.html
-lib/node_modules/npm/html/doc/help.html
+lib/node_modules/npm/html/doc/api/npm-bin.html
+lib/node_modules/npm/html/doc/api/npm-bugs.html
+lib/node_modules/npm/html/doc/api/npm-commands.html
+lib/node_modules/npm/html/doc/api/npm-config.html
+lib/node_modules/npm/html/doc/api/npm-deprecate.html
+lib/node_modules/npm/html/doc/api/npm-docs.html
+lib/node_modules/npm/html/doc/api/npm-edit.html
+lib/node_modules/npm/html/doc/api/npm-explore.html
+lib/node_modules/npm/html/doc/api/npm-help-search.html
+lib/node_modules/npm/html/doc/api/npm-init.html
+lib/node_modules/npm/html/doc/api/npm-install.html
+lib/node_modules/npm/html/doc/api/npm-link.html
+lib/node_modules/npm/html/doc/api/npm-load.html
+lib/node_modules/npm/html/doc/api/npm-ls.html
+lib/node_modules/npm/html/doc/api/npm-outdated.html
+lib/node_modules/npm/html/doc/api/npm-owner.html
+lib/node_modules/npm/html/doc/api/npm-pack.html
+lib/node_modules/npm/html/doc/api/npm-prefix.html
+lib/node_modules/npm/html/doc/api/npm-prune.html
+lib/node_modules/npm/html/doc/api/npm-publish.html
+lib/node_modules/npm/html/doc/api/npm-rebuild.html
+lib/node_modules/npm/html/doc/api/npm-restart.html
+lib/node_modules/npm/html/doc/api/npm-root.html
+lib/node_modules/npm/html/doc/api/npm-run-script.html
+lib/node_modules/npm/html/doc/api/npm-search.html
+lib/node_modules/npm/html/doc/api/npm-shrinkwrap.html
+lib/node_modules/npm/html/doc/api/npm-start.html
+lib/node_modules/npm/html/doc/api/npm-stop.html
+lib/node_modules/npm/html/doc/api/npm-submodule.html
+lib/node_modules/npm/html/doc/api/npm-tag.html
+lib/node_modules/npm/html/doc/api/npm-test.html
+lib/node_modules/npm/html/doc/api/npm-uninstall.html
+lib/node_modules/npm/html/doc/api/npm-unpublish.html
+lib/node_modules/npm/html/doc/api/npm-update.html
+lib/node_modules/npm/html/doc/api/npm-version.html
+lib/node_modules/npm/html/doc/api/npm-view.html
+lib/node_modules/npm/html/doc/api/npm-whoami.html
+lib/node_modules/npm/html/doc/api/npm.html
+lib/node_modules/npm/html/doc/cli/npm-adduser.html
+lib/node_modules/npm/html/doc/cli/npm-bin.html
+lib/node_modules/npm/html/doc/cli/npm-bugs.html
+lib/node_modules/npm/html/doc/cli/npm-build.html
+lib/node_modules/npm/html/doc/cli/npm-bundle.html
+lib/node_modules/npm/html/doc/cli/npm-cache.html
+lib/node_modules/npm/html/doc/cli/npm-completion.html
+lib/node_modules/npm/html/doc/cli/npm-config.html
+lib/node_modules/npm/html/doc/cli/npm-dedupe.html
+lib/node_modules/npm/html/doc/cli/npm-deprecate.html
+lib/node_modules/npm/html/doc/cli/npm-docs.html
+lib/node_modules/npm/html/doc/cli/npm-edit.html
+lib/node_modules/npm/html/doc/cli/npm-explore.html
+lib/node_modules/npm/html/doc/cli/npm-help-search.html
+lib/node_modules/npm/html/doc/cli/npm-help.html
+lib/node_modules/npm/html/doc/cli/npm-init.html
+lib/node_modules/npm/html/doc/cli/npm-install.html
+lib/node_modules/npm/html/doc/cli/npm-link.html
+lib/node_modules/npm/html/doc/cli/npm-ls.html
+lib/node_modules/npm/html/doc/cli/npm-outdated.html
+lib/node_modules/npm/html/doc/cli/npm-owner.html
+lib/node_modules/npm/html/doc/cli/npm-pack.html
+lib/node_modules/npm/html/doc/cli/npm-prefix.html
+lib/node_modules/npm/html/doc/cli/npm-prune.html
+lib/node_modules/npm/html/doc/cli/npm-publish.html
+lib/node_modules/npm/html/doc/cli/npm-rebuild.html
+lib/node_modules/npm/html/doc/cli/npm-restart.html
+lib/node_modules/npm/html/doc/cli/npm-rm.html
+lib/node_modules/npm/html/doc/cli/npm-root.html
+lib/node_modules/npm/html/doc/cli/npm-run-script.html
+lib/node_modules/npm/html/doc/cli/npm-search.html
+lib/node_modules/npm/html/doc/cli/npm-shrinkwrap.html
+lib/node_modules/npm/html/doc/cli/npm-star.html
+lib/node_modules/npm/html/doc/cli/npm-stars.html
+lib/node_modules/npm/html/doc/cli/npm-start.html
+lib/node_modules/npm/html/doc/cli/npm-stop.html
+lib/node_modules/npm/html/doc/cli/npm-submodule.html
+lib/node_modules/npm/html/doc/cli/npm-tag.html
+lib/node_modules/npm/html/doc/cli/npm-test.html
+lib/node_modules/npm/html/doc/cli/npm-uninstall.html
+lib/node_modules/npm/html/doc/cli/npm-unpublish.html
+lib/node_modules/npm/html/doc/cli/npm-update.html
+lib/node_modules/npm/html/doc/cli/npm-version.html
+lib/node_modules/npm/html/doc/cli/npm-view.html
+lib/node_modules/npm/html/doc/cli/npm-whoami.html
+lib/node_modules/npm/html/doc/cli/npm.html
+lib/node_modules/npm/html/doc/files/npm-folders.html
+lib/node_modules/npm/html/doc/files/npm-global.html
+lib/node_modules/npm/html/doc/files/npm-json.html
+lib/node_modules/npm/html/doc/files/npmrc.html
+lib/node_modules/npm/html/doc/files/package.json.html
 lib/node_modules/npm/html/doc/index.html
-lib/node_modules/npm/html/doc/init.html
-lib/node_modules/npm/html/doc/install.html
-lib/node_modules/npm/html/doc/json.html
-lib/node_modules/npm/html/doc/link.html
-lib/node_modules/npm/html/doc/ls.html
-lib/node_modules/npm/html/doc/npm.html
-lib/node_modules/npm/html/doc/outdated.html
-lib/node_modules/npm/html/doc/owner.html
-lib/node_modules/npm/html/doc/pack.html
-lib/node_modules/npm/html/doc/prefix.html
-lib/node_modules/npm/html/doc/prune.html
-lib/node_modules/npm/html/doc/publish.html
-lib/node_modules/npm/html/doc/rebuild.html
-lib/node_modules/npm/html/doc/registry.html
-lib/node_modules/npm/html/doc/removing-npm.html
-lib/node_modules/npm/html/doc/restart.html
-lib/node_modules/npm/html/doc/rm.html
-lib/node_modules/npm/html/doc/root.html
-lib/node_modules/npm/html/doc/run-script.html
-lib/node_modules/npm/html/doc/scripts.html
-lib/node_modules/npm/html/doc/search.html
-lib/node_modules/npm/html/doc/semver.html
-lib/node_modules/npm/html/doc/shrinkwrap.html
-lib/node_modules/npm/html/doc/star.html
-lib/node_modules/npm/html/doc/stars.html
-lib/node_modules/npm/html/doc/start.html
-lib/node_modules/npm/html/doc/stop.html
-lib/node_modules/npm/html/doc/submodule.html
-lib/node_modules/npm/html/doc/tag.html
-lib/node_modules/npm/html/doc/test.html
-lib/node_modules/npm/html/doc/uninstall.html
-lib/node_modules/npm/html/doc/unpublish.html
-lib/node_modules/npm/html/doc/update.html
-lib/node_modules/npm/html/doc/version.html
-lib/node_modules/npm/html/doc/view.html
-lib/node_modules/npm/html/doc/whoami.html
+lib/node_modules/npm/html/doc/misc/npm-coding-style.html
+lib/node_modules/npm/html/doc/misc/npm-config.html
+lib/node_modules/npm/html/doc/misc/npm-developers.html
+lib/node_modules/npm/html/doc/misc/npm-disputes.html
+lib/node_modules/npm/html/doc/misc/npm-faq.html
+lib/node_modules/npm/html/doc/misc/npm-registry.html
+lib/node_modules/npm/html/doc/misc/npm-scripts.html
+lib/node_modules/npm/html/doc/misc/removing-npm.html
+lib/node_modules/npm/html/doc/misc/semver.html
+lib/node_modules/npm/html/docfoot-script.html
 lib/node_modules/npm/html/docfoot.html
 lib/node_modules/npm/html/dochead.html
 lib/node_modules/npm/html/favicon.ico
@@ -269,11 +273,13 @@ lib/node_modules/npm/lib/utils/error-handler.js
 lib/node_modules/npm/lib/utils/fetch.js
 lib/node_modules/npm/lib/utils/find-prefix.js
 lib/node_modules/npm/lib/utils/gently-rm.js
+lib/node_modules/npm/lib/utils/is-git-url.js
 lib/node_modules/npm/lib/utils/lifecycle.js
 lib/node_modules/npm/lib/utils/link.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/version.js
 lib/node_modules/npm/lib/view.js
+lib/node_modules/npm/lib/visnup.js
 lib/node_modules/npm/lib/whoami.js
 lib/node_modules/npm/lib/xmas.js
 lib/node_modules/npm/node_modules/.bin/beep
@@ -282,6 +288,7 @@ lib/node_modules/npm/node_modules/.bin/imgcat
 lib/node_modules/npm/node_modules/.bin/node-gyp
 lib/node_modules/npm/node_modules/.bin/nopt
 lib/node_modules/npm/node_modules/.bin/opener
+lib/node_modules/npm/node_modules/.bin/rimraf
 lib/node_modules/npm/node_modules/.bin/semver
 lib/node_modules/npm/node_modules/.bin/starwars
 lib/node_modules/npm/node_modules/.bin/which
@@ -338,7 +345,6 @@ lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
 lib/node_modules/npm/node_modules/chownr/package.json
 lib/node_modules/npm/node_modules/cmd-shim/.npmignore
-lib/node_modules/npm/node_modules/cmd-shim/.travis.yml
 lib/node_modules/npm/node_modules/cmd-shim/LICENSE
 lib/node_modules/npm/node_modules/cmd-shim/README.md
 lib/node_modules/npm/node_modules/cmd-shim/index.js
@@ -426,10 +432,10 @@ lib/node_modules/npm/node_modules/graceful-fs/LICENSE
 lib/node_modules/npm/node_modules/graceful-fs/README.md
 lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js
 lib/node_modules/npm/node_modules/graceful-fs/package.json
+lib/node_modules/npm/node_modules/graceful-fs/polyfills.js
 lib/node_modules/npm/node_modules/graceful-fs/test/open.js
 lib/node_modules/npm/node_modules/inherits/LICENSE
 lib/node_modules/npm/node_modules/inherits/README.md
-lib/node_modules/npm/node_modules/inherits/inherits-old.js
 lib/node_modules/npm/node_modules/inherits/inherits.js
 lib/node_modules/npm/node_modules/inherits/package.json
 lib/node_modules/npm/node_modules/ini/LICENSE
@@ -527,8 +533,8 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/LICENSE
 lib/node_modules/npm/node_modules/node-gyp/gyp/MANIFEST
 lib/node_modules/npm/node_modules/node-gyp/gyp/OWNERS
 lib/node_modules/npm/node_modules/node-gyp/gyp/PRESUBMIT.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/buildbot/buildbot_run.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/codereview.settings
+lib/node_modules/npm/node_modules/node-gyp/gyp/data/win/large-pdb-shim.cc
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp.bat
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_dummy.c
@@ -539,6 +545,7 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/MSVSSettings.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/MSVSSettings_test.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/MSVSToolFile.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/MSVSUserFile.py
+lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/MSVSUtil.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/MSVSVersion.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/SCons.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__init__.py
@@ -572,967 +579,6 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/pylintrc
 lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples.bat
 lib/node_modules/npm/node_modules/node-gyp/gyp/setup.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-bare/gyptest-bare.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-bare/src/bare.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-bare/src/bare.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src/copy.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src/filter.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src/foo.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src/input.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-none/gyptest-none.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-none/src/fake_cross.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-none/src/foo.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-none/src/none_with_source_files.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/gyptest-action.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/src/make-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/src/none.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/src/subdir/make-subdir-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/src/subdir/subdir.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/gyptest-errors.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/action_missing_name.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/confirm-dep-files.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir1/counter.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir1/executable.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir1/make-prog1.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir1/make-prog2.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir1/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir2/make-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir2/none.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir3/generate_main.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir3/null_input.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/gyptest-additional.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/src/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/src/dir1/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/src/dir1/emit.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/src/dir1/lib1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/gyptest-assembly.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/src/as.bat
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/src/assembly.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/src/lib1.S
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/src/lib1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/src/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/build-option/gyptest-build.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/build-option/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/build-option/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/builddir.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/func1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/func2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/func3.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/func4.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/func5.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/prog1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/prog2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/prog3.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/prog3.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/subdir4/prog4.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/subdir4/prog4.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/subdir4/subdir5/prog5.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/subdir4/subdir5/prog5.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/cflags/cflags.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/cflags/cflags.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/cflags/gyptest-cflags.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable/gyptest-headers.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable/src/headers.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable/src/lib1.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable/src/lib1.hpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable/src/program.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/compiler-global-settings.gyp.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/compiler-host.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/compiler.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/cxxtest.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/gyptest-compiler-env.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/gyptest-compiler-global-settings.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/my_cc.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/my_cxx.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/my_ld.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override/test.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/basics/configurations.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/basics/configurations.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/basics/gyptest-configurations.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/inheritance/configurations.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/inheritance/configurations.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/inheritance/gyptest-inheritance.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/all_dependent_settings.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/configurations.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/dependencies.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/direct_dependent_settings.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/gyptest-configurations.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/libraries.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/link_settings.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/sources.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/standalone_static_library.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/target_name.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid/type.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/target_platform/configurations.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/target_platform/front.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/target_platform/gyptest-target_platform.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/target_platform/left.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/target_platform/right.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/x64/configurations.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/x64/configurations.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/x64/gyptest-x86.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/gyptest-slash.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/gyptest-updir.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/copies-slash.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/copies-updir.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/copies.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/directory/file3
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/directory/file4
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/directory/subdir/file5
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/file1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/file2
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/parentdir/subdir/file6
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/custom-generator/gyptest-custom-generator.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/custom-generator/mygenerator.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/custom-generator/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/cxxflags/cxxflags.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/cxxflags/cxxflags.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/cxxflags/gyptest-cxxflags.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines-escaping/defines-escaping.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines-escaping/defines-escaping.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines-escaping/gyptest-defines-escaping.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/defines-env.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/defines.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/defines.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/gyptest-define-override.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/gyptest-defines-env-regyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/gyptest-defines-env.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines/gyptest-defines.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/a.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/b/b.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/b/b.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/b/b3.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/c/c.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/c/c.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/c/d.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/double_dependency.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/double_dependent.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/extra_targets.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/gyptest-double-dependency.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/gyptest-extra-targets.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/gyptest-lib-only.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/gyptest-none-traversal.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/lib_only.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/none_traversal.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependency-copy/gyptest-copy.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependency-copy/src/copies.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependency-copy/src/file1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependency-copy/src/file2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/duplicate_basenames.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/duplicate_node.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/duplicate_rule.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/duplicate_targets.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/gyptest-errors.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/missing_dep.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors/missing_targets.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/escaping/colon/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/escaping/gyptest-colon.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/exclusion/exclusion.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/exclusion/gyptest-exclusion.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/exclusion/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/gyptest-cross.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/bogus1.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/bogus2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/cross.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/cross_compile.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/fake_cross.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/program.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/test1.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/test2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/test3.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/test4.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src/tochar.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/actions-out/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/executable.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/make-prog1.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/make-prog2.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2/actions-out/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2/make-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2/none.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/copies-out/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/copies.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/file1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/file2
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/copies-out/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/file3
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/file4
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/subdir.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-actions.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-copies.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-mac-bundle.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-relocate.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-rules.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-subdir2-deep.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/gyptest-top-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle/app.order
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle/header.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle/resource.sb
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/copy-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/rules.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/define3.in0
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/define4.in0
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/executable.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/function1.in1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/function2.in1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/file1.in0
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/file2.in0
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/file3.in1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/file4.in1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/none.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/rules-out/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/inc.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/inc1/include1.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/prog1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/deeper/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/deeper/deeper.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/deeper/deeper.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/deeper/deeper.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/inc2/include2.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/prog2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3/build/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3/inc3/include3.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3/prog3.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3/prog3.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/symroot.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/gyp-defines/defines.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/gyp-defines/echo.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/gyp-defines/gyptest-multiple-values.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/gyp-defines/gyptest-regyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/gyptest-exported-hard-dependency.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/gyptest-no-exported-hard-dependency.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/a.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/a.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/b.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/b.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/c.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/c.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/d.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/emit.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src/hard_dependency.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/gyptest-disable-regyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/gyptest-regyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/gyptest-target.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/hello2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello/hello2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/gyptest-home-includes-regyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/gyptest-home-includes.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/home/.gyp/include.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/home2/.gyp/include.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/src/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/src/printfoo.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/inc.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/inc1/include1.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/includes.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/includes.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/shadow1/shadow.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/shadow2/shadow.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/subdir/inc.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/subdir/inc2/include2.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/subdir/subdir_includes.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/subdir/subdir_includes.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir/gyptest-intermediate-dir.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir/src/script.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir/src/shared_infile.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir/src/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir/src/test2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/lib/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/lib/TestCmd.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/lib/TestCommon.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/lib/TestGyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/gyptest-shared-obj-install-path.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/gyptest-shared.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/gyptest-static.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/lib1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/lib1_moveable.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/lib2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/lib2_moveable.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/library.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src/shared_dependency.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/link-objects/base.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/link-objects/extra.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/link-objects/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/link-objects/link-objects.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/action-envvars/action/action.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/action-envvars/action/action.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/English.lproj/InfoPlist.strings
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/English.lproj/MainMenu.xib
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/TestApp-Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/TestAppAppDelegate.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/TestAppAppDelegate.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/main.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/archs/my_file.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/archs/my_main_file.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/archs/test-archs-x86_64.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/archs/test-no-archs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/ccfile.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/ccfile_withcflags.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/cfile.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/cppfile.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/cppfile_withcflags.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/cxxfile.cxx
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/cxxfile_withcflags.cxx
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/mfile.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/mmfile.mm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/mmfile_withcflags.mm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/copy-dylib/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/copy-dylib/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/debuginfo/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/debuginfo/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle/English.lproj/InfoPlist.strings
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle/bundle.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle/executable.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-dirs/calculate.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-dirs/framework-dirs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-headers/myframework.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-headers/myframework.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-headers/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/English.lproj/InfoPlist.strings
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/ObjCVector.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/ObjCVector.mm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/ObjCVectorInternal.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/TestFramework_Prefix.pch
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/framework.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings/src/dir1/dir1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings/src/dir2/dir2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings/src/dir2/file.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-action-envvars.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-app.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-archs.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-cflags.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-copies.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-copy-dylib.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-debuginfo.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-depend-on-bundle.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-framework-dirs.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-framework-headers.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-framework.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-global-settings.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-infoplist-process.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-installname.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-ldflags-passed-to-libtool.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-ldflags.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-libraries.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-loadable-module.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-missing-cfbundlesignature.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-non-strs-flattened-to-env.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-objc-gc.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-postbuild-copy-bundle.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-postbuild-defaults.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-postbuild-fail.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-postbuild-multiple-configurations.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-postbuild-static-library.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-postbuild.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-prefixheader.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-rebuild.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-rpath.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-sdkroot.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-sourceless-module.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-strip.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-type-envvars.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-xcode-env-order.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/gyptest-xcode-gcc.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/infoplist-process/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/infoplist-process/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/infoplist-process/test1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/infoplist-process/test2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/infoplist-process/test3.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/installname/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/installname/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/installname/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/installname/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags-libtool/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags-libtool/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags/subdirectory/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags/subdirectory/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags/subdirectory/symbol_list.def
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags/subdirectory/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/libraries/subdir/README.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/libraries/subdir/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/libraries/subdir/mylib.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/libraries/subdir/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/loadable-module/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/loadable-module/module.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/loadable-module/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/missing-cfbundlesignature/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/missing-cfbundlesignature/Other-Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/missing-cfbundlesignature/Third-Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/missing-cfbundlesignature/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/missing-cfbundlesignature/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/non-strs-flattened-to-env/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/non-strs-flattened-to-env/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/non-strs-flattened-to-env/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc/c-file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc/cc-file.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc/main.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc/needs-gc-mm.mm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc/needs-gc.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/Framework-Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/TestApp-Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/postbuild-copy-framework.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/resource_file.sb
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-defaults/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-defaults/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-defaults/postbuild-defaults.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-defaults/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-fail/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-fail/postbuild-fail.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-fail/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-fail/touch-dynamic.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-fail/touch-static.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-multiple-configurations/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-multiple-configurations/postbuild-touch-file.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-multiple-configurations/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-static-library/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-static-library/postbuild-touch-file.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-static-library/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/copy.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/file_g.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/file_h.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/script/shared_library_postbuild.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/script/static_library_postbuild.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/subdirectory/copied_file.txt
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/subdirectory/nested_target.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader/file.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader/file.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader/file.mm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader/header.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rebuild/TestApp-Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rebuild/delay-touch.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rebuild/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rebuild/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rebuild/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rpath/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rpath/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rpath/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sdkroot/file.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sdkroot/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sdkroot/test_shorthand.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sourceless-module/empty.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sourceless-module/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/strip.saves
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/subdirectory/nested_file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/subdirectory/nested_strip.saves
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/subdirectory/subdirectory.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/subdirectory/test_reading_save_file_from_postbuild.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_bundle_executable.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_bundle_loadable_module.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_bundle_shared_library.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_nonbundle_executable.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_nonbundle_loadable_module.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_nonbundle_none.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_nonbundle_shared_library.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars/test_nonbundle_static_library.sh
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order/Info.plist
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order/file.ext1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order/file.ext2
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order/file.ext3
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/valid_c.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/valid_cc.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/valid_m.m
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/valid_mm.mm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/warn_about_invalid_offsetof_macro.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc/warn_about_missing_newline.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/dependencies.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/gyptest-dependencies.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/gyptest-noload.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/main.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/main.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload/lib/shared.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload/lib/shared.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload/lib/shared.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/file0
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/file1
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/file2
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/file3
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/file4
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/gyptest-many-actions-unsorted.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/gyptest-many-actions.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/many-actions-unsorted.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions/many-actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/module/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/module/src/lib1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/module/src/lib2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/module/src/module.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/module/src/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/config_attrs/gyptest-config_attrs.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/config_attrs/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/config_attrs/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/express/base/base.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/express/express.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/express/gyptest-express.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/list_excluded/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/list_excluded/hello.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/list_excluded/hello_exclude.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/list_excluded/hello_mac.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/missing_sources/gyptest-missing.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/missing_sources/hello_missing.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/props/AppName.props
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/props/AppName.vsprops
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/props/gyptest-props.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/props/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/props/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/common.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/gyptest-shared_output.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/there/there.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/there/there.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/uldi2010/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/uldi2010/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/uldi2010/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/uldi2010/hello2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/src/common.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/src/multiple.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/src/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/src/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/gyptest-action-dependencies.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/a.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/a.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/action_dependencies.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/b.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/b.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/c.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/c.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src/emit.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/chained-dependency/chained-dependency.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/chained-dependency/chained.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/chained-dependency/gyptest-chained-dependency.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/normalize-paths-win/gyptest-normalize-paths.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/normalize-paths-win/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/normalize-paths-win/normalize-paths.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/s-needs-no-depfiles/empty.s
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/s-needs-no-depfiles/gyptest-s-needs-no-depfiles.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/s-needs-no-depfiles/s-needs-no-depfiles.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/solibs_avoid_relinking/gyptest-solibs-avoid-relinking.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/solibs_avoid_relinking/main.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/solibs_avoid_relinking/solib.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/solibs_avoid_relinking/solibs_avoid_relinking.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/no-output/gyptest-no-output.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/no-output/src/nooutput.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/product/gyptest-product.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/product/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/product/product.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/a/a.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/a/a.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/a/c/c.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/a/c/c.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/b/b.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/b/b.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rename/filecase/file.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rename/filecase/test-casesensitive.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rename/filecase/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rename/gyptest-filecase.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/restat/gyptest-restat.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/restat/src/create_intermediate.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/restat/src/restat.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/restat/src/touch.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/gyptest-dirname.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/copy-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/a/b/c.gencc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/a/b/c.printvars
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/foo/bar/baz.gencc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/foo/bar/baz.printvars
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/input-rule-dirname.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/main.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/printvars.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/src/main.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/src/make-sources.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/src/prog1.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/src/prog2.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/src/same_target.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/gyptest-rules-variables.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/input_ext.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/input_name/test.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/input_path/subdir/test.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/subdir/input_dirname.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/subdir/test.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/test.input_root.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/variables.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/gyptest-input-root.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/gyptest-special-variables.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/actions.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/an_asm.S
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/as.bat
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/copy-file.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/external/external.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/external/file1.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/external/file2.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/input-root.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/noaction/file1.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/noaction/no_action_with_rules_fails.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/rule.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/somefile.ext
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/special-variables.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir1/executable.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir1/function1.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir1/function2.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir1/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2/file1.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2/file2.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2/never_used.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2/no_action.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2/no_inputs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2/none.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir3/executable2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir3/function3.in
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir3/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir4/asm-function.asm
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir4/build-asm.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir4/program.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/gyptest-library.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/library/one/sub.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/library/test.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/library/two/sub.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/subdir1/executable.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/subdir1/main1.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/subdir2/executable.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/subdir2/main2.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src/subdir1/subdir1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src/subdir2/subdir2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src/subdirs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src/touch.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/gyptest-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/gyptest-fail.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/double.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/func.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/subdir1/func.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/subdir2/func.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src/subdir1/subdir1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src/subdir2/subdir2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src/subdirs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src/touch.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name/gyptest-same-target-name.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name/src/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name/src/executable1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name/src/executable2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sanitize-rule-names/blah.S
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sanitize-rule-names/gyptest-sanitize-rule-names.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sanitize-rule-names/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sanitize-rule-names/sanitize-rule-names.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sanitize-rule-names/script.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools/gyptest-tools.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools/site_scons/site_tools/this_tool.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools/tools.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools/tools.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/gyptest-relocate.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/build/all.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/prog1/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/prog1/prog1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/prog2/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/prog2/prog2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/small/gyptest-small.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone-static-library/gyptest-standalone-static-library.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone-static-library/invalid.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone-static-library/mylib.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone-static-library/mylib.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone-static-library/prog.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone/gyptest-standalone.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone/standalone.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-SYMROOT-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-SYMROOT-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-subdir-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-subdir-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-subdir2-deep.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-top-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/gyptest-top-default.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/prog1.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/subdir/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/subdir/prog2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/subdir/subdir2/prog3.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/subdir/subdir2/prog3.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/symroot.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toolsets/gyptest-toolsets.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toolsets/main.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toolsets/toolsets.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toolsets/toolsets.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/gyptest-toplevel-dir.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src/sub1/main.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src/sub1/prog1.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src/sub2/prog2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src/sub2/prog2.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands-repeated.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands-repeated.gyp.stdout
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands-repeated.gypd.golden
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands.gyp.ignore-env.stdout
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands.gyp.stdout
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands.gypd.golden
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/commands.gypi
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/gyptest-commands-ignore-env.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/gyptest-commands-repeated.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/gyptest-commands.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/test.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands/update_golden
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist/filelist.gyp.stdout
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist/filelist.gypd.golden
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist/gyptest-filelist.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist/src/filelist.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist/update_golden
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/latelate/gyptest-latelate.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/latelate/src/latelate.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/latelate/src/program.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/variable-in-path/C1/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/variable-in-path/gyptest-variable-in-path.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/variable-in-path/variable-in-path.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variants/gyptest-variants.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variants/src/variants.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/variants/src/variants.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/asm-files/asm-files.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/asm-files/b.s
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/asm-files/c.S
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/asm-files/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/batch-file-action/batch-file-action.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/batch-file-action/infile
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/batch-file-action/somecmd.bat
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/a.S
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/bat with spaces.bat
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/command-quote.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/go.bat
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/subdir/and/another/in-subdir.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/additional-include-dirs.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/additional-include-dirs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/additional-options.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/additional-options.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/analysis.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/buffer-security-check.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/buffer-security.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/character-set-mbcs.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/character-set-unicode.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/character-set.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/debug-format.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/exception-handling-on.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/exception-handling.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/function-level-linking.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/function-level-linking.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/optimizations.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/pdbname.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/pdbname.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/rtti-on.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/rtti.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-checks.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-checks.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-library-md.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-library-mdd.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-library-mt.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-library-mtd.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/runtime-library.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/subdir/header.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/uninit.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-as-error.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-as-error.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-level.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-level1.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-level2.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-level3.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/warning-level4.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-asm-files.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-additional-include-dirs.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-additional-options.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-analysis.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-buffer-security-check.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-character-set.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-debug-format.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-exception-handling.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-function-level-linking.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-optimizations.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-pdbname.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-rtti.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-runtime-checks.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-runtime-library.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-warning-as-error.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-cl-warning-level.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-command-quote.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-additional-deps.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-additional-options.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-aslr.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-debug-info.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-default-libs.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-deffile.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-delay-load-dlls.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-entrypointsymbol.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-fixed-base.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-generate-manifest.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-incremental.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-library-adjust.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-library-directories.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-nodefaultlib.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-nxcompat.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-opt-icf.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-opt-ref.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-outputfile.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-pdb.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-profile.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-restat-importlib.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-subsystem.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-link-uldi.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-long-command-line.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-macro-projectname.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-macro-vcinstalldir.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-macros-containing-gyp.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-macros-in-inputs-and-outputs.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-midl-rules.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-quoting-commands.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/gyptest-rc-build.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/idl-rules/basic-idl.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/idl-rules/history_indexer.idl
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/idl-rules/history_indexer_user.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/importlib/has-exports.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/importlib/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/importlib/importlib.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/additional-deps.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/additional-deps.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/additional-options.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/aslr.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/debug-info.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/default-libs.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/default-libs.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/deffile-multiple.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/deffile.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/deffile.def
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/deffile.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/delay-load-dlls.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/delay-load.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/entrypointsymbol.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/entrypointsymbol.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/extra.manifest
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/extra2.manifest
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/fixed-base.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/generate-manifest.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/incremental.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/library-adjust.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/library-adjust.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/library-directories-define.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/library-directories-reference.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/library-directories.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/nodefaultlib.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/nodefaultlib.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/nxcompat.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/opt-icf.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/opt-icf.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/opt-ref.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/opt-ref.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/outputfile.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/profile.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/program-database.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/subdir/library.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/subsystem-windows.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/subsystem.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/long-command-line/function.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/long-command-line/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/long-command-line/long-command-line.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/precompiled/gyptest-all.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/precompiled/hello.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/precompiled/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/precompiled/hello2.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/precompiled/precomp.c
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/Resource.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/hello.cpp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/hello.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/hello.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/hello.ico
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/hello.rc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/small.ico
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/subdir/hello2.rc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/subdir/include.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/targetver.h
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/uldi/a.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/uldi/b.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/uldi/main.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/uldi/uldi.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/as.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/containing-gyp.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/do_stuff.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/hello.cc
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/input-output-macros.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/input.S
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/projectname.gyp
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/stuff.blah
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/test_exists.py
-lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros/vcinstalldir.gyp
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/README
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/Xcode/README
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/Xcode/Specifications/gyp.pbfilespec
@@ -1547,7 +593,6 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/tools/graphviz.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/pretty_gyp.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/pretty_sln.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/pretty_vcproj.py
-lib/node_modules/npm/node_modules/node-gyp/legacy/common.gypi
 lib/node_modules/npm/node_modules/node-gyp/lib/build.js
 lib/node_modules/npm/node_modules/node-gyp/lib/clean.js
 lib/node_modules/npm/node_modules/node-gyp/lib/configure.js
@@ -1598,6 +643,7 @@ lib/node_modules/npm/node_modules/npm-registry-client/test/basic.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/retries.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/npm-user-validate/.npmignore
+lib/node_modules/npm/node_modules/npm-user-validate/.travis.yml
 lib/node_modules/npm/node_modules/npm-user-validate/LICENSE
 lib/node_modules/npm/node_modules/npm-user-validate/README.md
 lib/node_modules/npm/node_modules/npm-user-validate/npm-user-validate.js
@@ -1671,7 +717,6 @@ lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-packa
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/README.md
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/extract_description.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/fixer.js
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/is_valid.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/normalize.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/typos.json
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/.npmignore
@@ -1696,6 +741,7 @@ lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-packa
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/fixtures/underscore.json
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/github-urls.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/normalize.js
+lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/strict.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/typo.js
 lib/node_modules/npm/node_modules/read-package-json/package.json
 lib/node_modules/npm/node_modules/read-package-json/read-json.js
@@ -1716,9 +762,11 @@ lib/node_modules/npm/node_modules/read/node_modules/mute-stream/mute.js
 lib/node_modules/npm/node_modules/read/node_modules/mute-stream/package.json
 lib/node_modules/npm/node_modules/read/node_modules/mute-stream/test/basic.js
 lib/node_modules/npm/node_modules/read/package.json
+lib/node_modules/npm/node_modules/read/rs.js
 lib/node_modules/npm/node_modules/read/test/basic.js
 lib/node_modules/npm/node_modules/read/test/defaults.js
 lib/node_modules/npm/node_modules/read/test/many.js
+lib/node_modules/npm/node_modules/request/.npmignore
 lib/node_modules/npm/node_modules/request/LICENSE
 lib/node_modules/npm/node_modules/request/README.md
 lib/node_modules/npm/node_modules/request/index.js
@@ -1738,14 +786,9 @@ lib/node_modules/npm/node_modules/request/node_modules/forever-agent/LICENSE
 lib/node_modules/npm/node_modules/request/node_modules/forever-agent/README.md
 lib/node_modules/npm/node_modules/request/node_modules/forever-agent/index.js
 lib/node_modules/npm/node_modules/request/node_modules/forever-agent/package.json
-lib/node_modules/npm/node_modules/request/node_modules/form-data/.npmignore
-lib/node_modules/npm/node_modules/request/node_modules/form-data/.travis.yml
 lib/node_modules/npm/node_modules/request/node_modules/form-data/License
-lib/node_modules/npm/node_modules/request/node_modules/form-data/Makefile
 lib/node_modules/npm/node_modules/request/node_modules/form-data/Readme.md
 lib/node_modules/npm/node_modules/request/node_modules/form-data/lib/form_data.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/node-form-data.sublime-project
-lib/node_modules/npm/node_modules/request/node_modules/form-data/node-form-data.sublime-workspace
 lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/LICENSE
 lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/README.md
 lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/async/component.json
@@ -1786,19 +829,6 @@ lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/co
 lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-unpaused-streams.js
 lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/run.js
 lib/node_modules/npm/node_modules/request/node_modules/form-data/package.json
-lib/node_modules/npm/node_modules/request/node_modules/form-data/sftp-config.json
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/common.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/fixture/bacon.txt
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/fixture/unicycle.jpg
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-custom-filename.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-custom-headers.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-form-get-length.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-get-boundary.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-http-response.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-pipe.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-submit-custom.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration/test-submit.js
-lib/node_modules/npm/node_modules/request/node_modules/form-data/test/run.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/.npmignore
 lib/node_modules/npm/node_modules/request/node_modules/hawk/.travis.yml
 lib/node_modules/npm/node_modules/request/node_modules/hawk/LICENSE
@@ -1822,21 +852,6 @@ lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/RE
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/images/boom.png
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/index.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/lib/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/.npmignore
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/.travis.yml
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/LICENSE
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/Makefile
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/README.md
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/images/hoek.png
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/lib/escape.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/lib/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/package.json
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test/escaper.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test/modules/test1.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test/modules/test2.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test/modules/test3.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/package.json
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/test/index.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/.npmignore
@@ -1872,21 +887,6 @@ lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/ex
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/examples/time.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/index.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/lib/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/.npmignore
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/.travis.yml
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/LICENSE
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/Makefile
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/README.md
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/images/hoek.png
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/lib/escape.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/lib/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/package.json
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test/escaper.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test/index.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test/modules/test1.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test/modules/test2.js
-lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test/modules/test3.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/package.json
 lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/test/index.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/package.json
@@ -1894,6 +894,7 @@ lib/node_modules/npm/node_modules/request/node_modules/hawk/test/browser.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/test/client.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/test/crypto.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/test/index.js
+lib/node_modules/npm/node_modules/request/node_modules/hawk/test/message.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/test/readme.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/test/server.js
 lib/node_modules/npm/node_modules/request/node_modules/hawk/test/uri.js
@@ -2022,6 +1023,7 @@ lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.key
 lib/node_modules/npm/node_modules/request/tests/ssl/npm-ca.crt
 lib/node_modules/npm/node_modules/request/tests/ssl/test.crt
 lib/node_modules/npm/node_modules/request/tests/ssl/test.key
+lib/node_modules/npm/node_modules/request/tests/test-agentOptions.js
 lib/node_modules/npm/node_modules/request/tests/test-basic-auth.js
 lib/node_modules/npm/node_modules/request/tests/test-body.js
 lib/node_modules/npm/node_modules/request/tests/test-defaults.js
@@ -2070,21 +1072,70 @@ lib/node_modules/npm/node_modules/retry/test/runner.js
 lib/node_modules/npm/node_modules/rimraf/AUTHORS
 lib/node_modules/npm/node_modules/rimraf/LICENSE
 lib/node_modules/npm/node_modules/rimraf/README.md
+lib/node_modules/npm/node_modules/rimraf/bin.js
 lib/node_modules/npm/node_modules/rimraf/package.json
 lib/node_modules/npm/node_modules/rimraf/rimraf.js
 lib/node_modules/npm/node_modules/rimraf/test/run.sh
 lib/node_modules/npm/node_modules/rimraf/test/setup.sh
 lib/node_modules/npm/node_modules/rimraf/test/test-async.js
 lib/node_modules/npm/node_modules/rimraf/test/test-sync.js
+lib/node_modules/npm/node_modules/semver/.npmignore
 lib/node_modules/npm/node_modules/semver/LICENSE
+lib/node_modules/npm/node_modules/semver/Makefile
 lib/node_modules/npm/node_modules/semver/README.md
 lib/node_modules/npm/node_modules/semver/bin/semver
+lib/node_modules/npm/node_modules/semver/foot.js
+lib/node_modules/npm/node_modules/semver/head.js
 lib/node_modules/npm/node_modules/semver/package.json
+lib/node_modules/npm/node_modules/semver/semver.browser.js
+lib/node_modules/npm/node_modules/semver/semver.browser.js.gz
 lib/node_modules/npm/node_modules/semver/semver.js
-lib/node_modules/npm/node_modules/semver/test.js
+lib/node_modules/npm/node_modules/semver/semver.min.js
+lib/node_modules/npm/node_modules/semver/semver.min.js.gz
+lib/node_modules/npm/node_modules/semver/test/amd.js
+lib/node_modules/npm/node_modules/semver/test/index.js
+lib/node_modules/npm/node_modules/semver/test/no-module.js
 lib/node_modules/npm/node_modules/sha/.npmignore
+lib/node_modules/npm/node_modules/sha/LICENSE
 lib/node_modules/npm/node_modules/sha/README.md
 lib/node_modules/npm/node_modules/sha/index.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/LICENSE
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/README.md
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/duplex.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples/CAPSLOCKTYPER.JS
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples/typer-fsr.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples/typer.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/fs.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_duplex.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_passthrough.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_readable.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_transform.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_writable.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/package.json
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/passthrough.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/readable.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/common.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/fixtures/x1024.txt
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-basic.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-compatibility.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-finish-pipe.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-large-read-stall.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-objects.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-pipe-error-handling.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-push.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-read-sync-stack.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-readable-empty-buffer-no-eof.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-readable-from-list.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-readable-legacy-drain.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-readable-non-empty-end.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-set-encoding.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-transform.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-unpipe-drain.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-unpipe-leak.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple/test-stream2-writable.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/transform.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/writable.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/zlib.js
 lib/node_modules/npm/node_modules/sha/package.json
 lib/node_modules/npm/node_modules/slide/LICENSE
 lib/node_modules/npm/node_modules/slide/README.md
@@ -2220,9 +1271,12 @@ lib/node_modules/npm/test/run.js
 lib/node_modules/npm/test/tap/false_name.js
 lib/node_modules/npm/test/tap/false_name/index.js
 lib/node_modules/npm/test/tap/false_name/package.json
+lib/node_modules/npm/test/tap/fixtures/underscore-1-3-3.json
+lib/node_modules/npm/test/tap/fixtures/underscore.json
 lib/node_modules/npm/test/tap/ignore-shrinkwrap.js
 lib/node_modules/npm/test/tap/ignore-shrinkwrap/npm-shrinkwrap.json
 lib/node_modules/npm/test/tap/ignore-shrinkwrap/package.json
+lib/node_modules/npm/test/tap/noargs-install-config-save.js
 lib/node_modules/npm/test/tap/package-with-peer-dep/package.json
 lib/node_modules/npm/test/tap/peer-deps-invalid.js
 lib/node_modules/npm/test/tap/peer-deps-invalid/package.json
@@ -2230,108 +1284,11 @@ lib/node_modules/npm/test/tap/peer-deps-without-package-json.js
 lib/node_modules/npm/test/tap/peer-deps-without-package-json/.gitkeep
 lib/node_modules/npm/test/tap/publish-config.js
 lib/node_modules/npm/test/update-test.sh
-man/man1/npm.1
-man/man1/npm-README.1
-man/man1/npm-adduser.1
-man/man1/npm-bin.1
-man/man1/npm-bugs.1
-man/man1/npm-build.1
-man/man1/npm-bundle.1
-man/man1/npm-cache.1
-man/man1/npm-changelog.1
-man/man1/npm-coding-style.1
-man/man1/npm-completion.1
-man/man1/npm-config.1
-man/man1/npm-dedupe.1
-man/man1/npm-deprecate.1
-man/man1/npm-developers.1
-man/man1/npm-disputes.1
-man/man1/npm-docs.1
-man/man1/npm-edit.1
-man/man1/npm-explore.1
-man/man1/npm-faq.1
-man/man1/npm-folders.1
-man/man1/npm-global.1
-man/man1/npm-help-search.1
-man/man1/npm-help.1
-man/man1/npm-index.1
-man/man1/npm-init.1
-man/man1/npm-install.1
-man/man1/npm-json.1
-man/man1/npm-link.1
-man/man1/npm-ls.1
-man/man1/npm-outdated.1
-man/man1/npm-owner.1
-man/man1/npm-pack.1
-man/man1/npm-prefix.1
-man/man1/npm-prune.1
-man/man1/npm-publish.1
-man/man1/npm-rebuild.1
-man/man1/npm-registry.1
-man/man1/npm-removing-npm.1
-man/man1/npm-restart.1
-man/man1/npm-rm.1
-man/man1/npm-root.1
-man/man1/npm-run-script.1
-man/man1/npm-scripts.1
-man/man1/npm-search.1
-man/man1/npm-semver.1
-man/man1/npm-shrinkwrap.1
-man/man1/npm-star.1
-man/man1/npm-stars.1
-man/man1/npm-start.1
-man/man1/npm-stop.1
-man/man1/npm-submodule.1
-man/man1/npm-tag.1
-man/man1/npm-test.1
-man/man1/npm-uninstall.1
-man/man1/npm-unpublish.1
-man/man1/npm-update.1
-man/man1/npm-version.1
-man/man1/npm-view.1
-man/man1/npm-whoami.1
-man/man3/npm.3
-man/man3/npm-bin.3
-man/man3/npm-bugs.3
-man/man3/npm-commands.3
-man/man3/npm-config.3
-man/man3/npm-deprecate.3
-man/man3/npm-docs.3
-man/man3/npm-edit.3
-man/man3/npm-explore.3
-man/man3/npm-help-search.3
-man/man3/npm-init.3
-man/man3/npm-install.3
-man/man3/npm-link.3
-man/man3/npm-load.3
-man/man3/npm-ls.3
-man/man3/npm-outdated.3
-man/man3/npm-owner.3
-man/man3/npm-pack.3
-man/man3/npm-prefix.3
-man/man3/npm-prune.3
-man/man3/npm-publish.3
-man/man3/npm-rebuild.3
-man/man3/npm-restart.3
-man/man3/npm-root.3
-man/man3/npm-run-script.3
-man/man3/npm-search.3
-man/man3/npm-shrinkwrap.3
-man/man3/npm-start.3
-man/man3/npm-stop.3
-man/man3/npm-submodule.3
-man/man3/npm-tag.3
-man/man3/npm-test.3
-man/man3/npm-uninstall.3
-man/man3/npm-unpublish.3
-man/man3/npm-update.3
-man/man3/npm-version.3
-man/man3/npm-view.3
-man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/test/tap/peer-deps-without-package-json
 @dirrm lib/node_modules/npm/test/tap/peer-deps-invalid
 @dirrm lib/node_modules/npm/test/tap/package-with-peer-dep
 @dirrm lib/node_modules/npm/test/tap/ignore-shrinkwrap
+@dirrm lib/node_modules/npm/test/tap/fixtures
 @dirrm lib/node_modules/npm/test/tap/false_name
 @dirrm lib/node_modules/npm/test/tap
 @dirrm lib/node_modules/npm/test/packages/npm-test-url-dep
@@ -2383,7 +1340,15 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/node_modules/tar
 @dirrm lib/node_modules/npm/node_modules/slide/lib
 @dirrm lib/node_modules/npm/node_modules/slide
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/simple
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test/fixtures
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/test
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules
 @dirrm lib/node_modules/npm/node_modules/sha
+@dirrm lib/node_modules/npm/node_modules/semver/test
 @dirrm lib/node_modules/npm/node_modules/semver/bin
 @dirrm lib/node_modules/npm/node_modules/semver
 @dirrm lib/node_modules/npm/node_modules/rimraf/test
@@ -2427,12 +1392,6 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/http-signature
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/test
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/test
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test/modules
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/test
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/lib
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/images
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/lib
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp/examples
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/sntp
@@ -2445,12 +1404,6 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/lib
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/test
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test/modules
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/test
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/lib
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/images
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/node_modules
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/lib
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom/images
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/boom
@@ -2459,9 +1412,6 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/images
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk/example
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/hawk
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/test/integration
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/test/fixture
-@dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/test
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/fixture
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/form-data/node_modules/combined-stream/test
@@ -2532,313 +1482,17 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/node_modules/nopt/bin
 @dirrm lib/node_modules/npm/node_modules/nopt
 @dirrm lib/node_modules/npm/node_modules/node-gyp/lib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/testdata
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/tools/Xcode/Specifications
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/tools/Xcode
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/tools
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/vs-macros
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/uldi
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/rc-build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/precompiled
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/long-command-line
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/linker-flags
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/importlib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/idl-rules
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/compiler-flags
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/subdir/and/another
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/subdir/and
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/command-quote
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/batch-file-action
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win/asm-files
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/win
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variants/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variants
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/variable-in-path/C1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/variable-in-path
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/latelate/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/latelate
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/filelist
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables/commands
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/variables
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src/sub2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src/sub1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/toplevel-dir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/toolsets
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/subdir/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/subdirectory
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone-static-library
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/standalone
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/small
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/prog2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/prog1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/sibling
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools/site_scons/site_tools
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools/site_scons
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/scons_tools
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/sanitize-rule-names
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name-different-directory
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-target-name
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-source-file-name
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-rule-output-file-name
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/library/two
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/library/one
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name/library
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/same-gyp-name
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir4
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir3
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/noaction
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src/external
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/input_path/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/input_path
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src/input_name
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-variables
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-rebuild
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/foo/bar
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/foo
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/a/b
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir/a
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules-dirname
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rules
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/restat/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/restat
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rename/filecase
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/rename
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/b
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/a/c
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo/a
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative/foo
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/relative
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/product
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/no-output/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/no-output
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/solibs_avoid_relinking
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/s-needs-no-depfiles
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/normalize-paths-win
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/chained-dependency
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja/action_dependencies
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/ninja
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/multiple-targets
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/uldi2010
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output/there
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/shared_output
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/props
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/missing_sources
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/list_excluded
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/express/base
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/express
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs/config_attrs
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/msvs
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/module/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/module
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/many-actions
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload/lib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/make/noload
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/make
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-gcc
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/xcode-env-order
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/type_envvars
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip/subdirectory
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/strip
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sourceless-module
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/sdkroot
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rpath
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/rebuild
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/prefixheader
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/subdirectory
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds/script
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuilds
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-static-library
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-multiple-configurations
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-fail
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-defaults
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/postbuild-copy-bundle
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/objc-gc
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/non-strs-flattened-to-env
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/missing-cfbundlesignature
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/loadable-module
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/libraries/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/libraries
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags/subdirectory
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags-libtool
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/ldflags
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/installname
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/infoplist-process
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings/src/dir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings/src/dir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/global-settings
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework/English.lproj
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework/TestFramework
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-headers
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework-dirs
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/framework
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle/English.lproj
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/depend-on-bundle
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/debuginfo
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/copy-dylib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/cflags
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/archs
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp/English.lproj
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle/TestApp
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/app-bundle
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/action-envvars/action
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac/action-envvars
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/mac
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/link-objects
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/library/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/library
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/lib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/intermediate_dir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/subdir/inc2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/shadow2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/shadow1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src/inc1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/include_dirs
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/home2/.gyp
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/home2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/home/.gyp
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp/home
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/home_dot_gyp
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/hello
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/hard_dependency
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/gyp-defines
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3/inc3
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir3
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/inc2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/deeper/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/deeper
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/inc1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/rules-out
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/rules
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/mac-bundle
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/copies-out
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/copies-out
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/copies
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2/actions-out
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1/actions-out
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions/build
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output/actions
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/generator-output
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/external-cross-compile
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/exclusion
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/escaping/colon
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/escaping
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/errors
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependency-copy/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependency-copy
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/c
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies/b
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/dependencies
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines-escaping
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/defines
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/cxxflags
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/custom-generator
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/parentdir/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/parentdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/directory/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src/directory
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/copies
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/x64
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/target_platform
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/invalid
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/inheritance
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations/basics
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/configurations
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/compiler-override
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/compilable
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/cflags
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/subdir4/subdir5
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3/subdir4
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2/subdir3
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/builddir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/build-option
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/assembly
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/src/dir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/additional-targets
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir3
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir2
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src/subdir1
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/src/subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-subdir
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-none/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-none
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-multiple
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-bare/src
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions-bare
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test/actions
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/test
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/samples
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/generator
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/pylib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/buildbot
+@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/data/win
+@dirrm lib/node_modules/npm/node_modules/node-gyp/gyp/data
 @dirrm lib/node_modules/npm/node_modules/node-gyp/gyp
 @dirrm lib/node_modules/npm/node_modules/node-gyp/bin
 @dirrm lib/node_modules/npm/node_modules/node-gyp
@@ -2905,6 +1559,8 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/node_modules/abbrev
 @dirrm lib/node_modules/npm/node_modules/.bin
 @dirrm lib/node_modules/npm/node_modules
+@dirrm lib/node_modules/npm/man/man7
+@dirrm lib/node_modules/npm/man/man5
 @dirrm lib/node_modules/npm/man/man3
 @dirrm lib/node_modules/npm/man/man1
 @dirrm lib/node_modules/npm/man
@@ -2913,9 +1569,14 @@ man/man3/npm-whoami.3
 @dirrm lib/node_modules/npm/lib
 @dirrm lib/node_modules/npm/html/static/webfonts
 @dirrm lib/node_modules/npm/html/static
+@dirrm lib/node_modules/npm/html/doc/misc
+@dirrm lib/node_modules/npm/html/doc/files
+@dirrm lib/node_modules/npm/html/doc/cli
+@dirrm lib/node_modules/npm/html/doc/api
 @dirrm lib/node_modules/npm/html/doc
-@dirrm lib/node_modules/npm/html/api
 @dirrm lib/node_modules/npm/html
+@dirrm lib/node_modules/npm/doc/misc
+@dirrm lib/node_modules/npm/doc/files
 @dirrm lib/node_modules/npm/doc/cli
 @dirrm lib/node_modules/npm/doc/api
 @dirrm lib/node_modules/npm/doc
