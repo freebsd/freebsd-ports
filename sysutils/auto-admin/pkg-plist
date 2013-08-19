@@ -2,13 +2,16 @@ sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-clean-ports
+sbin/auto-config-snd-driver
 sbin/auto-db-dir
 sbin/auto-disable-service
 sbin/auto-enable-compat32
+sbin/auto-enable-hal-mount
 sbin/auto-enable-passwdqc
 sbin/auto-enable-procfs
 sbin/auto-enable-service
 sbin/auto-fastest-mirror
+sbin/auto-insert-line
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
 sbin/auto-kdm3-toggle
@@ -19,7 +22,6 @@ sbin/auto-print-make-variable
 sbin/auto-replace-file
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
-sbin/auto-update-port-framework
 sbin/auto-update-xorg.conf
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
