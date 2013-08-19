@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mwlib.ext
-# Date created:		22 Dec 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mwlib.ext
-PORTVERSION=	0.12.4
+PORTVERSION=	0.13.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

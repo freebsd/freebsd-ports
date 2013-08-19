@@ -2,4 +2,4 @@ mwlib.ext provides external dependencies needed by the mwlib
 library. It contains a copy of reportlab, which is a BSD
 licensed pdf generation library.
 
-WWW:	http://code.pediapress.com/
+WWW: http://code.pediapress.com/
