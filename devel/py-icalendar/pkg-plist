@@ -1,9 +1,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/__init__.pyo
@@ -13,12 +13,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/caselessdict.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/caselessdict.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/caselessdict.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/interfaces.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/interfaces.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/interfaces.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/parser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/parser_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/parser_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/parser_tools.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/prop.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/prop.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/prop.pyo
@@ -27,31 +27,24 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/case_meetup.ics
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/encoding.ics
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/example.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/example.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/groupscheduled.ics
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/groupscheduled.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/issues.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/groupscheduled.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/multiple.ics
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/multiple.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/multiple.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/recurrence.ics
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/recurrence.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/recurrence.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/small.ics
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/small.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_cases.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_cases.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_cases.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_doctests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_doctests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_doctests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/small.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_encoding.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_encoding.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_encoding.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_fixed_issues.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_fixed_issues.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_fixed_issues.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_icalendar.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_icalendar.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_icalendar.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_prop.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_prop.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_prop.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_property_params.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_property_params.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_property_params.pyo
@@ -61,15 +54,27 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_timezoned.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_timezoned.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_timezoned.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_cal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_cal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_cal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_caselessdict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_caselessdict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_caselessdict.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_parser_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_parser_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_parser_tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_prop.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_prop.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_prop.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/test_unit_tools.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/time.ics
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests/timezoned.ics
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tools.pyo
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTDOCS%%%%DOCSDIR%%/changelog.rst
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/icalendar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
