@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-Tiny
-PORTVERSION=	0.023
+PORTVERSION=	0.027
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	File path utility
+
+LICENSE=	AL2
 
 BUILD_DEPENDS=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools \
 		p5-autodie>=2.14:${PORTSDIR}/devel/p5-autodie
