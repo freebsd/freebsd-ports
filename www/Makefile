@@ -548,7 +548,6 @@
     SUBDIR += monast
     SUBDIR += mongrel2
     SUBDIR += moodle
-    SUBDIR += moodle22
     SUBDIR += moodle23
     SUBDIR += moodle24
     SUBDIR += moodle25
