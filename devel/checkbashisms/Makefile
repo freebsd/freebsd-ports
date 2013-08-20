@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 SF_PROJECT=	checkbaskisms
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
