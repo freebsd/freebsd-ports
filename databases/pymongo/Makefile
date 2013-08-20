@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pymongo
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python driver for MongoDB
+
+LICENSE=	AL2
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
