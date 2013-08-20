@@ -2,6 +2,7 @@
 
 PORTNAME=	get_iplayer
 PORTVERSION=	2.83
+PORTREVISION=	1
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -12,8 +13,7 @@ COMMENT=	Search, index, or stream archive video from BBC iPlayer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer \
-		rtmpdump:${PORTSDIR}/multimedia/rtmpdump \
+RUN_DEPENDS=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies
 
