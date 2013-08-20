@@ -65,8 +65,7 @@ PORTDOCS=	eb-01.html eb-02.html eb-03.html eb-04.html eb-05.html eb-06.html \
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USES=		gettext
-USE_PERL5=	yes
+USES=		gettext perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
@@ -78,7 +77,6 @@ APPENDIXDIR=	${DATADIR}/appendix
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls \
 		--with-gettext-includes=${LOCALBASE}/include \
 		--with-gettext-libraries=${LOCALBASE}/lib \
