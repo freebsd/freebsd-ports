@@ -7,8 +7,9 @@
 %%SITE_PERL%%/Object/props.pm
 %%SITE_PERL%%/Package/groups.pm
 %%SITE_PERL%%/Package/props.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OOTools/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OOTools
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/props/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/props
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class
 @dirrmtry %%SITE_PERL%%/Object
 @dirrmtry %%SITE_PERL%%/Package
