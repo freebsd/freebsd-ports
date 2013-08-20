@@ -1,4 +1,4 @@
-# Created by: graphite@taurus.bekkoame.or.jp
+# Created by: Noritaka Ishizumi <graphite@taurus.bekkoame.or.jp>
 # $FreeBSD$
 
 PORTNAME=	suck
@@ -7,22 +7,26 @@ PORTREVISION=	2
 CATEGORIES=	news
 #MASTER_SITES=	http://www.sucknews.org/
 MASTER_SITES=	http://home.comcast.net/~bobyetman/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
+		LOCAL/dinoex
 PKGNAMESUFFIX?=	${CNEWS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
 
 CONFLICTS?=	suckblow-1.*
-USE_GMAKE=	yes
+
+USES=		gmake
 GNU_CONFIGURE=	yes
+MAKE_ENV=	CHKHISTORY=chkhistory_db.o
+
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl
 EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
-MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
+OPTIONS_DEFINE=	SSL EXAMPLES
+
+.include <bsd.port.options.mk>
 
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
 CNEWS_PORT?=	news/cnews
@@ -43,7 +47,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 CONFLICTS+=	suck-cnews-4.*
 .endif
 
-.if !defined(SUCK_WITHOUT_SSL) && !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
@@ -51,29 +55,27 @@ MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.sed
-	${SED} -e "s=/usr/local/=${LOCALBASE}/=" \
-		${WRKSRC}/Makefile.in.sed > ${WRKSRC}/Makefile.in
-	@${MV} ${WRKSRC}/suck_config.h ${WRKSRC}/suck_config.h.sed
+	@${REINPLACE_CMD} -e "s=/usr/local/=${LOCALBASE}/=" \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
+		${WRKSRC}/suck_config.h
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
-	${SED} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
-		-e "s=/usr/local/news/lib=${NEWSCTL}=" \
-		${WRKSRC}/suck_config.h.sed > ${WRKSRC}/suck_config.h
+	@${REINPLACE_CMD} -e -e "s=/usr/local/news/lib=${NEWSCTL}=" \
+		${WRKSRC}/suck_config.h
 .else
-	${SED} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
-		-e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
-		${WRKSRC}/suck_config.h.sed > ${WRKSRC}/suck_config.h
+	@${REINPLACE_CMD} -e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
+		${WRKSRC}/suck_config.h
 .endif
+# Add missing dependency to allow parallel (-jX) builds
+	@${GREP} -l '#include "phrases.h"' ${WRKSRC}/*.c | ${SED} -e \
+		's=.*/== ; s=\.c=.o= ; $$s=$$=: phrases.h=' | ${XARGS} \
+		>> ${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTEXAMPLES)
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-.for i in ${EX_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/${i} ${EXAMPLESDIR}/
-.endfor
-.for i in ${EX_DATA}
-	${INSTALL_DATA} ${WRKSRC}/sample/${i} ${EXAMPLESDIR}/
-.endfor
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${EX_SCRIPTS:S=^=${WRKSRC}/sample/=} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${EX_DATA:S=^=${WRKSRC}/sample/=} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
