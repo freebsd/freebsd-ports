@@ -672,6 +672,10 @@ llvm33/lib/libLLVMPowerPCAsmPrinter.a
 llvm33/lib/libLLVMPowerPCCodeGen.a
 llvm33/lib/libLLVMPowerPCDesc.a
 llvm33/lib/libLLVMPowerPCInfo.a
+llvm33/lib/libLLVMR600AsmPrinter.a
+llvm33/lib/libLLVMR600CodeGen.a
+llvm33/lib/libLLVMR600Desc.a
+llvm33/lib/libLLVMR600Info.a
 llvm33/lib/libLLVMRuntimeDyld.a
 llvm33/lib/libLLVMScalarOpts.a
 llvm33/lib/libLLVMSelectionDAG.a
