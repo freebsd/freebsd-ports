@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Class-C3-Componentised
-PORTVERSION=	1.0009
+PORTVERSION=	1.0010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION}00
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load mix-ins or components to your C3-based class
@@ -25,7 +25,7 @@ TEST_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::C3::Componentised.3
+MAN3=		Class::C3::Componentised.3 Class::C3::Componentised::ApplyHooks.3
 
 post-extract:
 	@${REINPLACE_CMD} -i '' -e '/Test::/d' ${WRKSRC}/Makefile.PL

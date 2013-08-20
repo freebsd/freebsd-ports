@@ -1,7 +1,9 @@
 %%SITE_PERL%%/Class/C3/Componentised.pm
+%%SITE_PERL%%/Class/C3/Componentised/ApplyHooks.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/Componentised/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/Componentised
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/C3/Componentised
 @dirrmtry %%SITE_PERL%%/Class/C3
 @dirrmtry %%SITE_PERL%%/Class
