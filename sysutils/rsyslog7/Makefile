@@ -1,22 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.2.7
+PORTVERSION=	7.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
 
+BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
+
 LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
 		json.0:${PORTSDIR}/devel/json-c \
-		sysinfo:${PORTSDIR}/devel/libsysinfo \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_LDCONFIG=	yes
 
-PORTSCOUT=	limit:^7\.2
+PORTSCOUT=	limit:^7\.4
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -44,8 +45,7 @@ CONFIGURE_ARGS+=--disable-libdbi
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
@@ -148,7 +148,7 @@ MAN5=	rsyslog.conf.5
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imdiag --enable-impstats --enable-omstdout
+CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imdiag --enable-impstats --enable-omstdout --enable-cached-man-pages
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
