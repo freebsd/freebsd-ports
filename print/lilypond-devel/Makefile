@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.17.23
+PORTVERSION=	2.17.24
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
