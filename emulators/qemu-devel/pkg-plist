@@ -30,6 +30,7 @@ bin/qemu-system-i386
 %%BSD_USER%%bin/qemu-i386
 %%BSD_USER%%bin/qemu-mips
 %%BSD_USER64%%bin/qemu-mips64
+%%BSD_USER64%%bin/qemu-mips64el
 %%BSD_USER%%bin/qemu-mipsel
 %%BSD_USER%%bin/qemu-sparc
 %%BSD_USER64%%bin/qemu-sparc64
@@ -84,6 +85,7 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/bamboo.dtb
 %%DATADIR%%/kvmvapic.bin
 %%DATADIR%%/qemu-icon.bmp
+%%DATADIR%%/qemu_logo_no_text.svg
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/bepo
 %%DATADIR%%/keymaps/common
@@ -123,6 +125,7 @@ etc/qemu/target-x86_64.conf.sample
 %%GTK2%%share/locale/de_DE/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo
+%%GTK2%%share/locale/hu/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/tr/LC_MESSAGES/qemu.mo
 @dirrm %%DATADIR%%/keymaps
 %%GTK2%%@dirrmtry share/locale/de_DE/LC_MESSAGES

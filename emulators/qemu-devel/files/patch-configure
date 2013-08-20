@@ -9,14 +9,6 @@
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -974,6 +974,7 @@ i386-bsd-user \
- x86_64-bsd-user \
- sparc-bsd-user \
- sparc64-bsd-user \
-+arm-bsd-user \
- "
- fi
- 
 @@ -1756,7 +1756,7 @@ if test "$gtk" != "no"; then
  	gtk_libs=`$pkg_config --libs $gtkpackage 2>/dev/null`
  	vte_cflags=`$pkg_config --cflags $vtepackage 2>/dev/null`
