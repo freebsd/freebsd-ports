@@ -274,9 +274,9 @@ post-patch:
 .endif
 
 pre-build:
-	@${CP} ${BUILD_WRKSRC}/build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.ui.workbench/Eclipse\ UI/org/eclipse/ui/internal/keys/model/BindingModel.java ${PATCHDIR}
-	@${PATCH} -d ${PATCHDIR} -E -p0 -i ${PATCHDIR}/BindingModel.java.patch
-	@${CP} ${PATCHDIR}/BindingModel.java ${BUILD_WRKSRC}/build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.ui.workbench/Eclipse\ UI/org/eclipse/ui/internal/keys/model/BindingModel.java
+	@${CP} ${BUILD_WRKSRC}/build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.ui.workbench/Eclipse\ UI/org/eclipse/ui/internal/keys/model/BindingModel.java ${BUILD_WRKSRC}
+	@${PATCH} -d ${BUILD_WRKSRC} -E -p0 -i ${PATCHDIR}/BindingModel.java.patch
+	@${CP} ${BUILD_WRKSRC}/BindingModel.java ${BUILD_WRKSRC}/build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.ui.workbench/Eclipse\ UI/org/eclipse/ui/internal/keys/model/BindingModel.java
 
 do-install:
 	@${RM} -rf ${PORTDESTDIR}
