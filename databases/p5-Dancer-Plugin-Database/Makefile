@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-Database
-PORTVERSION=	2.04
+PORTVERSION=	2.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,6 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Dancer::Plugin::Database.3 \
-		Dancer::Plugin::Database::Handle.3
+P5MAN3=		Dancer::Plugin::Database.3
 
 .include <bsd.port.mk>
