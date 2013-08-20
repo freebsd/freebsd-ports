@@ -36,6 +36,9 @@ CONFIGURE_ARGS+=	--disable-asm
 BROKEN=	will not compile. See pr ports/166388
 .endif
 
+.elif ${ARCH} == "armv6"
+USE_GCC=4.2+
+
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)
 CONFIGURE_ARGS+=	--disable-aesni-support
