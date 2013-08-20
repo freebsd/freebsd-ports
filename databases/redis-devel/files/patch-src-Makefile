@@ -1,5 +1,5 @@
---- src/Makefile.orig	2013-08-13 15:32:55.000000000 +0400
-+++ src/Makefile	2013-08-13 15:35:00.000000000 +0400
+--- src/Makefile.orig	2013-07-30 22:20:02.000000000 +0400
++++ src/Makefile	2013-08-13 22:36:30.000000000 +0400
 @@ -22,7 +22,7 @@
  WARN=-Wall
  OPT=$(OPTIMIZATION)
@@ -9,7 +9,14 @@
  INSTALL_BIN=$(PREFIX)/bin
  INSTALL=install
  
-@@ -58,8 +58,9 @@
+@@ -52,14 +52,15 @@
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
+ FINAL_LIBS=-lm
+-DEBUG=-g -ggdb
++#DEBUG=-g -ggdb
+ 
+ ifeq ($(uname_S),SunOS)
  	INSTALL=cp -pf
  	FINAL_CFLAGS+= -D__EXTENSIONS__ -D_XPG6
  	FINAL_LIBS+= -ldl -lnsl -lsocket -lpthread
