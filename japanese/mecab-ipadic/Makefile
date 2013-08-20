@@ -21,7 +21,8 @@ LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	ja-mecab>=0.94:${PORTSDIR}/japanese/mecab
 
-USE_PERL5_BUILD=	yes
+USES=			perl5
+USE_PERL5=		build
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-dicdir=${PREFIX}/lib/mecab/dic/ipadic
 
