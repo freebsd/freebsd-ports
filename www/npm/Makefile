@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -28,7 +28,7 @@ MAN1=		npm.1 npm-README.1 npm-adduser.1 npm-bin.1 npm-bugs.1 \
 		npm-run-script.1 npm-search.1 npm-shrinkwrap.1 npm-star.1 \
 		npm-stars.1 npm-start.1 npm-stop.1 npm-submodule.1 npm-tag.1 \
 		npm-test.1 npm-uninstall.1 npm-unpublish.1 npm-update.1 \
-		npm-version.1 npm-view.1 npm-whoami.1
+		npm-version.1 npm-view.1 npm-whoami.1 repo.1
 MAN3=		npm.3 npm-bin.3 npm-bugs.3 npm-commands.3 npm-config.3 \
 		npm-deprecate.3 npm-docs.3 npm-edit.3 npm-explore.3 \
 		npm-help-search.3 npm-init.3 npm-install.3 npm-link.3 \
@@ -37,7 +37,7 @@ MAN3=		npm.3 npm-bin.3 npm-bugs.3 npm-commands.3 npm-config.3 \
 		npm-restart.3 npm-root.3 npm-run-script.3 npm-search.3 \
 		npm-shrinkwrap.3 npm-start.3 npm-stop.3 npm-submodule.3 \
 		npm-tag.3 npm-test.3 npm-uninstall.3 npm-unpublish.3 \
-		npm-update.3 npm-version.3 npm-view.3 npm-whoami.3
+		npm-update.3 npm-version.3 npm-view.3 npm-whoami.3 repo.3
 MAN5=		npm-folders.5 npm-global.5 npm-json.5 npmrc.5 package.json.5
 MAN7=		npm-coding-style.7 npm-config.7 npm-developers.7 \
 		npm-disputes.7 npm-faq.7 npm-index.7 npm-registry.7 \
