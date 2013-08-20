@@ -51,6 +51,7 @@ lib/node_modules/npm/doc/api/npm-version.md
 lib/node_modules/npm/doc/api/npm-view.md
 lib/node_modules/npm/doc/api/npm-whoami.md
 lib/node_modules/npm/doc/api/npm.md
+lib/node_modules/npm/doc/api/repo.md
 lib/node_modules/npm/doc/cli/npm-adduser.md
 lib/node_modules/npm/doc/cli/npm-bin.md
 lib/node_modules/npm/doc/cli/npm-bugs.md
@@ -97,6 +98,7 @@ lib/node_modules/npm/doc/cli/npm-version.md
 lib/node_modules/npm/doc/cli/npm-view.md
 lib/node_modules/npm/doc/cli/npm-whoami.md
 lib/node_modules/npm/doc/cli/npm.md
+lib/node_modules/npm/doc/cli/repo.md
 lib/node_modules/npm/doc/files/npm-folders.md
 lib/node_modules/npm/doc/files/npmrc.md
 lib/node_modules/npm/doc/files/package.json.md
@@ -149,6 +151,7 @@ lib/node_modules/npm/html/doc/api/npm-version.html
 lib/node_modules/npm/html/doc/api/npm-view.html
 lib/node_modules/npm/html/doc/api/npm-whoami.html
 lib/node_modules/npm/html/doc/api/npm.html
+lib/node_modules/npm/html/doc/api/repo.html
 lib/node_modules/npm/html/doc/cli/npm-adduser.html
 lib/node_modules/npm/html/doc/cli/npm-bin.html
 lib/node_modules/npm/html/doc/cli/npm-bugs.html
@@ -195,6 +198,7 @@ lib/node_modules/npm/html/doc/cli/npm-version.html
 lib/node_modules/npm/html/doc/cli/npm-view.html
 lib/node_modules/npm/html/doc/cli/npm-whoami.html
 lib/node_modules/npm/html/doc/cli/npm.html
+lib/node_modules/npm/html/doc/cli/repo.html
 lib/node_modules/npm/html/doc/files/npm-folders.html
 lib/node_modules/npm/html/doc/files/npm-global.html
 lib/node_modules/npm/html/doc/files/npm-json.html
@@ -247,6 +251,7 @@ lib/node_modules/npm/lib/prefix.js
 lib/node_modules/npm/lib/prune.js
 lib/node_modules/npm/lib/publish.js
 lib/node_modules/npm/lib/rebuild.js
+lib/node_modules/npm/lib/repo.js
 lib/node_modules/npm/lib/restart.js
 lib/node_modules/npm/lib/root.js
 lib/node_modules/npm/lib/run-script.js
@@ -407,6 +412,13 @@ lib/node_modules/npm/node_modules/fstream/lib/reader.js
 lib/node_modules/npm/node_modules/fstream/lib/socket-reader.js
 lib/node_modules/npm/node_modules/fstream/lib/writer.js
 lib/node_modules/npm/node_modules/fstream/package.json
+lib/node_modules/npm/node_modules/github-url-from-git/.npmignore
+lib/node_modules/npm/node_modules/github-url-from-git/History.md
+lib/node_modules/npm/node_modules/github-url-from-git/Makefile
+lib/node_modules/npm/node_modules/github-url-from-git/Readme.md
+lib/node_modules/npm/node_modules/github-url-from-git/index.js
+lib/node_modules/npm/node_modules/github-url-from-git/package.json
+lib/node_modules/npm/node_modules/github-url-from-git/test.js
 lib/node_modules/npm/node_modules/glob/.npmignore
 lib/node_modules/npm/node_modules/glob/.travis.yml
 lib/node_modules/npm/node_modules/glob/LICENSE
@@ -1526,6 +1538,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/glob/test
 @dirrm lib/node_modules/npm/node_modules/glob/examples
 @dirrm lib/node_modules/npm/node_modules/glob
+@dirrm lib/node_modules/npm/node_modules/github-url-from-git
 @dirrm lib/node_modules/npm/node_modules/fstream/lib
 @dirrm lib/node_modules/npm/node_modules/fstream/examples
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test
