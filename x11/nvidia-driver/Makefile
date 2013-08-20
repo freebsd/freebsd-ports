@@ -149,17 +149,17 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/(VM_OBJECT_)(UN)?(LOCK)/\1W\2\3/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
+# Adjust kmem(9) calls after FreeBSD src SVN r254025
+.if ${OSVERSION} > 1000040
+	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
+		${WRKSRC}/src/nvidia_subr.c
+.endif
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
 .if ${NVVERSION} < 3192300
 	${REINPLACE_CMD} -E '/bus_type\[4\]/d ; \
 		s/sprintf\(bus_type, (".+")/return SYSCTL_OUT(req, \1, sizeof(\1)/ ; \
 		/return SYSCTL_OUT\(req, bus_type/d' \
 			${WRKSRC}/src/nvidia_sysctl.c
-.endif
-# Catch up with KVA space allocation API changes in recent -CURRENT
-.if ${OSVERSION} > 1000040
-	${REINPLACE_CMD} -e 's/kmem_free(kernel_map,/kva_free(/ ; \
-		/kmem_alloc_contig/s/map/arena/' ${WRKSRC}/src/nvidia_subr.c
 .endif
 # Process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
