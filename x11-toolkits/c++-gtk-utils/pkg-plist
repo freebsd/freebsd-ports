@@ -21,6 +21,7 @@ include/c++-gtk-utils-2-2.2/c++-gtk-utils/io_watch.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/mem_fun.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/mutex.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/notifier.h
+include/c++-gtk-utils-2-2.2/c++-gtk-utils/parallel.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/param.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/pipes.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/prog_present.h
@@ -38,7 +39,7 @@ include/c++-gtk-utils-2-2.2/c++-gtk-utils/window.h
 lib/libcxx-gtk-utils-2-2.2.a
 lib/libcxx-gtk-utils-2-2.2.la
 lib/libcxx-gtk-utils-2-2.2.so
-lib/libcxx-gtk-utils-2-2.2.so.0
+lib/libcxx-gtk-utils-2-2.2.so.1
 libdata/pkgconfig/c++-gtk-utils-2-2.2.pc
 @dirrm include/c++-gtk-utils-2-2.2/c++-gtk-utils
 @dirrm include/c++-gtk-utils-2-2.2
