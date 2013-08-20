@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailing list manager (MLM) with a user-friendly web front-end
 
 LICENSE=	GPLv2
