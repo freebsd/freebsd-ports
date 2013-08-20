@@ -51,6 +51,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4d087b35-0990-11e3-a9f4-bcaec565249c">
+    <topic>gstreamer-ffmpeg -- Multiple vulnerabilities in bundled libav</topic>
+    <affects>
+      <package>
+	<name>gstreamer-ffmpeg</name>
+	<range><lt>0.10.13_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://libav.org/releases/libav-0.7.7.changelog">
+	  <p>Bundled version of libav in gstreamer-ffmpeg contains a number of
+	     vulnerabilities.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3892</cvename>
+      <cvename>CVE-2011-3893</cvename>
+      <cvename>CVE-2011-3895</cvename>
+      <cvename>CVE-2011-3929</cvename>
+      <cvename>CVE-2011-3936</cvename>
+      <cvename>CVE-2011-3937</cvename>
+      <cvename>CVE-2011-3940</cvename>
+      <cvename>CVE-2011-3945</cvename>
+      <cvename>CVE-2011-3947</cvename>
+      <cvename>CVE-2011-3951</cvename>
+      <cvename>CVE-2011-3952</cvename>
+      <cvename>CVE-2011-4031</cvename>
+      <cvename>CVE-2011-4351</cvename>
+      <cvename>CVE-2011-4352</cvename>
+      <cvename>CVE-2011-4353</cvename>
+      <cvename>CVE-2011-4364</cvename>
+      <cvename>CVE-2011-4579</cvename>
+      <cvename>CVE-2012-0848</cvename>
+      <cvename>CVE-2012-0850</cvename>
+      <cvename>CVE-2012-0851</cvename>
+      <cvename>CVE-2012-0852</cvename>
+      <cvename>CVE-2012-0853</cvename>
+      <cvename>CVE-2012-0858</cvename>
+      <cvename>CVE-2012-0947</cvename>
+      <cvename>CVE-2012-2772</cvename>
+      <cvename>CVE-2012-2775</cvename>
+      <cvename>CVE-2012-2777</cvename>
+      <cvename>CVE-2012-2779</cvename>
+      <cvename>CVE-2012-2783</cvename>
+      <cvename>CVE-2012-2784</cvename>
+      <cvename>CVE-2012-2786</cvename>
+      <cvename>CVE-2012-2787</cvename>
+      <cvename>CVE-2012-2788</cvename>
+      <cvename>CVE-2012-2790</cvename>
+      <cvename>CVE-2012-2791</cvename>
+      <cvename>CVE-2012-2793</cvename>
+      <cvename>CVE-2012-2794</cvename>
+      <cvename>CVE-2012-2798</cvename>
+      <cvename>CVE-2012-2800</cvename>
+      <cvename>CVE-2012-2801</cvename>
+      <cvename>CVE-2012-2803</cvename>
+      <cvename>CVE-2012-5144</cvename>
+      <url>http://libav.org/releases/libav-0.7.7.changelog</url>
+    </references>
+    <dates>
+      <discovery>2013-08-20</discovery>
+      <entry>2013-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="689c2bf7-0701-11e3-9a25-002590860428">
     <topic>GnuPG and Libgcrypt -- side-channel attack vulnerability</topic>
     <affects>

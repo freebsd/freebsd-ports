@@ -1,17 +1,16 @@
-# New ports collection makefile for:	gstreamer ffmpeg
-# Date created:		Thu Feb 26 20:10:39 CET 2004
-# Whom:			Koop Mast <kwm@rainbow-runner.nl>
-#
+# Created by: Koop Mast <kwm@rainbow-runner.nl>
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-ffmpeg/Makefile,v 1.14 2006/07/20 13:40:27 ahze Exp $
-#
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.13
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/:ffmpeg \
+		http://libav.org/releases/:libav
 PKGNAMESUFFIX=	-ffmpeg
-DISTNAME=	gst-ffmpeg-${PORTVERSION}
+DISTFILES=	gst-ffmpeg-${PORTVERSION}.tar.bz2:ffmpeg \
+		libav-${LIBAV_VERSION}.tar.xz:libav
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
@@ -19,10 +18,11 @@ COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-LIB_DEPENDS=	orc-0.4.0:${PORTSDIR}/devel/orc
+LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+LIBAV_VERSION=	0.7.7
+WRKSRC=		${WRKDIR}/gst-ffmpeg-${PORTVERSION}
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
@@ -66,5 +66,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 
 .endif
+
+post-patch:
+	@${MV} ${WRKSRC}/gst-libs/ext/libav ${WRKSRC}/gst-libs/ext/libav.old
+	@${MV} ${WRKDIR}/libav-${LIBAV_VERSION} ${WRKSRC}/gst-libs/ext/libav
+	@${CP} ${WRKSRC}/gst-libs/ext/libav.old/config.* \
+		${WRKSRC}/gst-libs/ext/libav/
 
 .include <bsd.port.post.mk>

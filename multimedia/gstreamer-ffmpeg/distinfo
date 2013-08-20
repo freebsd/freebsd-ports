@@ -1,2 +1,4 @@
 SHA256 (gst-ffmpeg-0.10.13.tar.bz2) = 76fca05b08e00134e3cb92fa347507f42cbd48ddb08ed3343a912def187fbb62
 SIZE (gst-ffmpeg-0.10.13.tar.bz2) = 4784059
+SHA256 (libav-0.7.7.tar.xz) = 2d7b70c2bdaf8fea2e7d51838ce04e6c616cf90486134c247642fbdeafb21599
+SIZE (libav-0.7.7.tar.xz) = 3584936
