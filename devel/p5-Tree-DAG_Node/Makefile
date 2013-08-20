@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Tree-DAG_Node
-PORTVERSION=	1.06
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Tree
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Super class for representing nodes in a tree
