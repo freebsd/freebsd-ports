@@ -14,6 +14,8 @@ lib/rsyslog/imudp.la
 lib/rsyslog/imudp.so
 lib/rsyslog/imuxsock.la
 lib/rsyslog/imuxsock.so
+lib/rsyslog/lmcry_gcry.la
+lib/rsyslog/lmcry_gcry.so
 lib/rsyslog/lmnet.la
 lib/rsyslog/lmnet.so
 lib/rsyslog/lmnetstrms.la
