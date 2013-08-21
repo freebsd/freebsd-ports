@@ -619,8 +619,6 @@ bin/nping
 @dirrmtry man/pt_BR
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
-@dirrmtry man/ja/man1
-@dirrmtry man/ja
 @dirrmtry man/it/man1
 @dirrmtry man/it
 @dirrmtry man/hu/man1
