@@ -8,17 +8,12 @@ MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A RISC computer designed by Donald E. Knuth
+COMMENT=	RISC computer designed by Donald E. Knuth
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
-MAKE_JOBS_UNSAFE=yes
-
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmix ${PREFIX}/bin
@@ -31,8 +26,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.mmix ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.mms ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.w ${DATADIR}
-.for f in ${FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
+	${INSTALL_DATA} ${FILES:S,^,${WRKSRC}/,} ${DATADIR}
 
 .include <bsd.port.mk>
