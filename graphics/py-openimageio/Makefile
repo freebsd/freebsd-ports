@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
-PORTREVISION=	1
 CATEGORIES=	graphics multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,13 +14,9 @@ LIB_DEPENDS=	OpenImageIO:${PORTSDIR}/graphics/openimageio \
 
 MASTERDIR=	${.CURDIR}/../openimageio
 
-BROKEN=		Does not patch
-
 USE_PYTHON=	2.6+
 
 OIIO_PYBIND=	yes
-
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
 
 do-install:
 	${INSTALL_LIB} ${BUILD_WRKSRC}/python/OpenImageIO.so ${PYTHON_SITELIBDIR}/
