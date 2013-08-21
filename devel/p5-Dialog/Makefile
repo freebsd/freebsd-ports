@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Dialog
-# Date created:				28 Augest 2000
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
 #
 
@@ -11,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Perl interface to dialog(3)
 
 USES=		perl5
@@ -19,10 +16,14 @@ USE_PERL5=	configure
 
 MAN3=		Dialog.3
 
+EXPIRATION_DATE=2014-01-01
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
-BROKEN=		Does not build
+BROKEN=		Does not build after FreeBSD 9.0. Use devel/p5-UI-Dialog instead.
+.else
+DEPRECATED=	Does not build after FreeBSD 9.0. Use devel/p5-UI-Dialog instead.
 .endif
 
 .include <bsd.port.post.mk>
