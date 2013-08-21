@@ -3,7 +3,7 @@
 
 PORTNAME=	gmt
 PORTVERSION=	4.5.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/${PORTNAME}/	\
 		ftp://ftp.soest.hawaii.edu/${PORTNAME}/		\

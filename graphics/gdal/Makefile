@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://download.osgeo.org/gdal/ \
-		ftp://ftp.remotesensing.org/pub/gdal/ \
+MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
+		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A translator library for geospatial data formats
+COMMENT=	Translator library for raster geospatial data formats
 
 LICENSE=	MIT
 
@@ -192,6 +191,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
+	${TOUCH} ${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${DATADIR}/
 
 .include <bsd.port.mk>
