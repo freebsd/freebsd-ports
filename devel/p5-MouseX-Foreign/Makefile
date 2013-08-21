@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-Any-Moose>=0.15:${PORTSDIR}/devel/p5-Any-Moose \
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		MouseX::Foreign.3 \
 		MouseX::Foreign::Meta::Role::Class.3 \

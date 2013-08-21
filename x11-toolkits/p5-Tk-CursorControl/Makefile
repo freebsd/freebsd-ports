@@ -18,7 +18,8 @@ COMMENT=	Manipulate the mouse cursor programmatically
 BUILD_DEPENDS=	p5-Tk>=800.015:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS=	p5-Tk>=800.015:${PORTSDIR}/x11-toolkits/p5-Tk
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 ALL_TARGETS=	pure_install
 
 MAN3=		Tk::CursorControl.3

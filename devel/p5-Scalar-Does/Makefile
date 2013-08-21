@@ -28,7 +28,8 @@ TEST_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
 
 CONFLICTS_INSTALL=	p5-IO-Detect-[0-9]*
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		IO::Detect.3 \
 		Scalar::Does.3 \

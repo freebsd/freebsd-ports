@@ -20,7 +20,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Net-OpenSSH>=0.39:${PORTSDIR}/net/p5-Net-OpenSSH
 RUN_DEPENDS=	p5-Net-OpenSSH>=0.39:${PORTSDIR}/net/p5-Net-OpenSSH
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Net::OpenSSH::Parallel.3 \
 		Net::OpenSSH::Parallel::Constants.3

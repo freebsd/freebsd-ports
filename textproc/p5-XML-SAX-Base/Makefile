@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	p5-XML-SAX-0.[0-8]* p5-XML-SAX-0.9[0-8]*
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		XML::SAX::Base.3 \
 		XML::SAX::BuildSAXBase.3 \

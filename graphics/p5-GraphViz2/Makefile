@@ -49,7 +49,8 @@ TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod
 
 OPTIONS_DEFINE=	EXAMPLES
 
-PERL_CONFIGURE=	5.14.2+
+USE_PERL5=	5.14.2+ configure
+USES=		perl5
 
 MAN3=		GraphViz2.3 \
 		GraphViz2::Config.3 \

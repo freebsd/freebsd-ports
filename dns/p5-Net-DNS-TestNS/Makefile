@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS \
 RUN_DEPENDS=	p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-XML-LibXML>=1.53:${PORTSDIR}/textproc/p5-XML-LibXML
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Net::DNS::TestNS.3 Net::DNS::TestNS::DTD.3
 

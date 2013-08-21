@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-Test-Mock-LWP-Dispatch>=0:${PORTSDIR}/devel/p5-Test-Mock-LWP-Di
 		p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Net::OAuth2.3 \
 		Net::OAuth2::AccessToken.3 \

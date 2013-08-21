@@ -12,7 +12,7 @@ COMMENT=	Extremely portable perl-based make utility
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${RM} -f ${WRKSRC}/bin/tmake.orig ${WRKSRC}/lib/unix/generic.t.orig

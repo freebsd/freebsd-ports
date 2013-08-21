@@ -17,7 +17,8 @@ COMMENT=	A Perl module that encapsulates access to the Ispell program
 BUILD_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 REINPLACE_ARGS=	-i ''
 
 MAN3=		Lingua::Ispell.3

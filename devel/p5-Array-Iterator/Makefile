@@ -16,7 +16,8 @@ COMMENT=	A set of array iterators
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_MODBUILD=	yes
+USE_PERL5=	modbuild
+USES=		perl5
 
 MAN3=		Array::Iterator.3 \
 		Array::Iterator::BiDirectional.3 \

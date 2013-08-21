@@ -16,7 +16,8 @@ COMMENT=	Base class for loading, manipulating, and saving images
 
 LICENSE=	LGPL3
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Image::Base.3
 

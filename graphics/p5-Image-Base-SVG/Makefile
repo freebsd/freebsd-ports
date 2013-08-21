@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Image-Base>=0:${PORTSDIR}/graphics/p5-Image-Base \
 		p5-SVG>=2.38:${PORTSDIR}/textproc/p5-SVG \
 		p5-SVG-Parser>=0:${PORTSDIR}/textproc/p5-SVG-Parser
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Image::Base::SVG.3
 

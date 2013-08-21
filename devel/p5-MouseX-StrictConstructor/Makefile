@@ -18,7 +18,8 @@ COMMENT=	Make your object constructors blow up on unknown attributes
 BUILD_DEPENDS=	p5-Mouse>=0.62:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS=	p5-Mouse>=0.62:${PORTSDIR}/devel/p5-Mouse
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		MouseX::StrictConstructor.3
 

@@ -27,7 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		omindex.1 scriptindex.1
 MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO

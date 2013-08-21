@@ -22,7 +22,8 @@ OPTIONS_DEFAULT=ANYEVENT EVENT
 EVENT_DESC=	Use Event as underlying event handler
 ANYEVENT_DESC=	Use AnyEvent as underlying event handler
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		IO::Event.3 \
 		IO::Event::Callback.3

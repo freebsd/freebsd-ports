@@ -13,7 +13,8 @@ COMMENT=	Partial ordering for regular expressions
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	5.12.0+
+USE_PERL5=	5.12.0+ configure
+USES=		perl5
 
 MAN3=		Regexp::Compare.3
 

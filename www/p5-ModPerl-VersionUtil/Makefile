@@ -16,7 +16,8 @@ COMMENT=	Makes it easier to investigate your mod_perl version
 
 RUN_DEPENDS=	p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		ModPerl::VersionUtil.3
 

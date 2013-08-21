@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-URI>=1.30:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=2.0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		oai-listrecords.1 oai-listsets.1
 MAN3=		Net::OAI::Base.3 Net::OAI::Error.3 Net::OAI::GetRecord.3 \

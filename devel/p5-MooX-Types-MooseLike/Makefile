@@ -19,7 +19,8 @@ TEST_DEPENDS=	p5-Moo>=0.091010:${PORTSDIR}/devel/p5-Moo \
 		p5-Set-Object>=1:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		MooX::Types::MooseLike.3 \
 		MooX::Types::MooseLike::Base.3

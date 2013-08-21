@@ -14,7 +14,8 @@ COMMENT=	A JSON::XS compatible pure-Perl module
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		p5json_pp.1
 MAN3=		JSON::PP.3 \

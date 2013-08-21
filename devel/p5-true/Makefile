@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-B-Hooks-OP-Annotation>=0.43:${PORTSDIR}/devel/p5-B-Hooks-OP-Anno
 		p5-B-Hooks-OP-Check>=0.18:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
 		p5-Devel-StackTrace>=1.27:${PORTSDIR}/devel/p5-Devel-StackTrace
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		true.3 \
 		true::VERSION.3

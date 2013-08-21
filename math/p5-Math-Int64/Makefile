@@ -13,7 +13,8 @@ COMMENT=	Manipulate 64 bits integers in Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Math::Int64.3 \
 		Math::Int64::die_on_overflow.3 \

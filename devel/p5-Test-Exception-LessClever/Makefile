@@ -17,7 +17,8 @@ COMMENT=	Test::Exception simplified
 BUILD_DEPENDS=	p5-Mock-Quick>=1.100:${PORTSDIR}/devel/p5-Mock-Quick
 RUN_DEPENDS=	p5-Mock-Quick>=1.100:${PORTSDIR}/devel/p5-Mock-Quick
 
-PERL_MODBUILD=	yes
+USE_PERL5=	modbuild
+USES=		perl5
 
 MAN3=		Test::Exception::LessClever.3
 

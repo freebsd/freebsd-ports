@@ -36,7 +36,8 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-XML>=0:${PORTSDIR}/devel/p5-Test-XML
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		XML::Filter::Moose.3 \
 		XML::Generator::Moose.3 \

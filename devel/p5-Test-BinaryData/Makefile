@@ -16,7 +16,8 @@ COMMENT=	Compare two things, give hex dumps if they differ
 
 TEST_DEPENDS=	p5-Test-Tester>=0.10.7:${PORTSDIR}/devel/p5-Test-Tester
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Test::BinaryData.3
 

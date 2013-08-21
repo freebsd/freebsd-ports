@@ -17,7 +17,8 @@ COMMENT=	Simple interface for calling SQL functions from PostgreSQL PL/Perl
 
 BUILD_DEPENDS=	p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		PostgreSQL::PLPerl::Call.3
 

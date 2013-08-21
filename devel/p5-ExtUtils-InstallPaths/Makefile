@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-ExtUtils-Config>=0.002:${PORTSDIR}/devel/p5-ExtUtils-Config
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		ExtUtils::InstallPaths.3
 

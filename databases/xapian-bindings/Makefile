@@ -37,7 +37,7 @@ PLIST_SUB+=	LUA="@comment "
 .if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=--with-perl
 CONFIGURE_ENV+=	PERL_LIB="${SITE_PERL}"
-USE_PERL5=	yes
+USES=		perl5
 PLIST_SUB+=	PERL=""
 .else
 PLIST_SUB+=	PERL="@comment "

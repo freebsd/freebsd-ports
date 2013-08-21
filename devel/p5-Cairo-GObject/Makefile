@@ -25,7 +25,8 @@ RUN_DEPENDS=	cairo>=1.10.0:${PORTSDIR}/graphics/cairo \
 		p5-Cairo>=1.080:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Glib2>=1.224:${PORTSDIR}/devel/p5-Glib2
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Cairo::GObject.3
 

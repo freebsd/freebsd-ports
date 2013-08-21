@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-Cairo-GObject>=0:${PORTSDIR}/devel/p5-Cairo-GObject
 
 OPTIONS_DEFINE=	TEST
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 USE_GNOME=	introspection
 
 MAN3=		Glib::Object::Introspection.3

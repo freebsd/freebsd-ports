@@ -17,7 +17,8 @@ COMMENT=	Annotate and delegate hooked OPs
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.304:${PORTSDIR}/devel/p5-ExtUtils-Depends
 RUN_DEPENDS=	p5-ExtUtils-Depends>=0.304:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		B::Hooks::OP::Annotation.3
 

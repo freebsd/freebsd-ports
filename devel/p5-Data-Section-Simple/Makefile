@@ -13,7 +13,8 @@ COMMENT=	Read data from __DATA__
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Data::Section::Simple.3
 

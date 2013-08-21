@@ -17,7 +17,8 @@ COMMENT=	A very simple micro language to generate HTML
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		HTML::Declare.3
 PLIST_FILES=	%%SITE_PERL%%/HTML/Declare.pm \

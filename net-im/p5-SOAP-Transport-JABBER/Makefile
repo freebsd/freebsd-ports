@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber \
 RUN_DEPENDS=	p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber \
 		p5-SOAP-Lite>=0.711:${PORTSDIR}/net/p5-SOAP-Lite
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		SOAP::Transport::JABBER.3
 

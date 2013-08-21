@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg \
 RUN_DEPENDS=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-DBI>=1.490:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		DBIx::Safe.3
 
