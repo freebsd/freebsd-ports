@@ -1,0 +1,11 @@
+--- support/ecmagenerator/src/srcml/RSpline.srcml.orig	2013-08-06 17:32:09.000000000 +0200
++++ support/ecmagenerator/src/srcml/RSpline.srcml	2013-08-08 13:55:08.000000000 +0200
+@@ -46,7 +46,7 @@
+   <name>R_NO_OPENNURBS</name></cpp:ifndef>
+   <cpp:include>#
+   <cpp:directive>include</cpp:directive>
+-  <cpp:file>"opennurbs/opennurbs.h"</cpp:file></cpp:include>
++  <cpp:file>"openNURBS/opennurbs.h"</cpp:file></cpp:include>
+   <cpp:endif>#
+   <cpp:directive>endif</cpp:directive></cpp:endif>
+   <cpp:ifndef>#
