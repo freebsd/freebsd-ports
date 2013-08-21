@@ -11,4 +11,4 @@ primitive data types (such as 64 bit and unsigned integer types) are
 implemented, except variable-length strings (NC_STRING). User defined
 data types (compound, vlen, enum etc.) are not supported.
 
-WWW:  http://code.google.com/p/netcdf4-python/
+WWW: http://code.google.com/p/netcdf4-python/
