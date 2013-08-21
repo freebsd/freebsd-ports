@@ -38,6 +38,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		CLIENT MANAGER X11 LINUX USER SKINS OPTIMIZE
 OPTIONS_DEFAULT=	CLIENT MANAGER X11 USER
+OPTIONS_GROUP=		SCRIPT
+OPTIONS_GROUP_SCRIPT=	NO_GUI_RPC NO_NET_INFO
 CLIENT_DESC=		Build BOINC client
 MANAGER_DESC=		Build BOINC manager GUI
 X11_DESC=		Build graphics API
@@ -45,8 +47,11 @@ LINUX_DESC=		Accept Linux science applications
 USER_DESC=		Create/check BOINC client user
 SKINS_DESC=		Install more skins for BOINC manager
 OPTIMIZE_DESC=		Enable compiler optimization flags
+SCRIPT_DESC=		Command line options in script
+NO_GUI_RPC_DESC=	Do not allow GUI RPC, do not make socket (breaks boinc_curses)
+NO_NET_INFO_DESC=	Do not send host address and name to servers
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(BOINC_USER) || defined(BOINC_GROUP) || defined(BOINC_HOME)
 pre-extract:
@@ -101,6 +106,8 @@ PLIST_SUB+=	BOINC_MANAGER="@comment "
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 PLIST_SUB+=	BOINC_CLIENT=""
+SUB_LIST+=	OPTION_NO_GUI_RPC=${PORT_OPTIONS:MNO_GUI_RPC:S/^NO_GUI_RPC$/--no_gui_rpc/} \
+		OPTION_NO_NET_INFO=${PORT_OPTIONS:MNO_NET_INFO:S/^NO_NET_INFO$/--suppress_net_info/}
 .else
 CONFIGURE_ARGS+=--disable-client
 PLIST_SUB+=	BOINC_CLIENT="@comment "
@@ -178,4 +185,4 @@ post-install:
 	${CP} -R ${WRKSRC}/api/txf ${PREFIX}/share/boinc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -24,7 +24,7 @@ command="%%PREFIX%%/bin/boinc_client"
 pidfile="/var/run/${name}.pid"
 
 boinc_client_user=%%BOINC_CLIENT_USER%%
-command_args="--daemon --dir \"%%BOINC_CLIENT_HOME%%\""
+command_args="--daemon %%OPTION_NO_GUI_RPC%% %%OPTION_NO_NET_INFO%% --dir \"%%BOINC_CLIENT_HOME%%\""
 
 start_cmd=boinc_client_start
 stop_postcmd=boinc_client_poststop
