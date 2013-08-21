@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.6.14
+DISTVERSION=	2.6.15
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://download.redis.io/releases/
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
@@ -13,15 +13,26 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
-OPTIONS_DEFINE=	LUAJIT TESTS
+OPTIONS_DEFINE=	TESTS
+OPTIONS_RADIO=	EXTLUA
+OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
+
+LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MLUA}
+USE_LUA?=	5.1
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.lua
+CFLAGS+=	-fPIC
+LDFLAGS+=	-Wl,-E
+.endif
+
 .if ${PORT_OPTIONS:MLUAJIT}
 LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
 .endif
@@ -63,7 +74,7 @@ PLIST_SUB+=	REDIS_USER=${USERS} \
 	REDIS_DBDIR=${REDIS_DBDIR} \
 	REDIS_RUNDIR=${REDIS_RUNDIR}
 
-.if ${PORT_OPTIONS:MLUAJIT}
+.if ${PORT_OPTIONS:MLUAJIT} || ${PORT_OPTIONS:MLUA}
 post-patch:
 	@cd ${WRKSRC}/deps/lua/src && ${CP} lua_* strbuf.* ${WRKSRC}/src/
 .endif
