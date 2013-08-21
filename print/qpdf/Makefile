@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qpdf
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -10,12 +10,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	d.y.kazarov@mail.ru
 COMMENT=	Command-line tools for transforming and inspecting PDF files
 
+LICENSE=	ART20
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 MAN1=		fix-qdf.1 qpdf.1 zlib-flate.1
 
