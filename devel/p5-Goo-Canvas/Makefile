@@ -1,13 +1,9 @@
-# New ports collection makefile for:	p5-Goo-Canvas
-# Date created:		2010-03-10
-# Whom:			Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
-#
+# Created by: Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Goo-Canvas
 PORTVERSION=	0.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,18 +11,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Perl interface to the GooCanvas
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
+		p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
-LIB_DEPENDS=	goocanvas.3:${PORTSDIR}/graphics/goocanvas \
-		gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	goocanvas:${PORTSDIR}/graphics/goocanvas
 RUN_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
-MAKE_JOBS_UNSAFE=	yes
+USE_GNOME=	gdkpixbuf
+USE_PERL5=	configure build run
+USES=		perl5
 
-BROKEN=		fails to build
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		perltetris.pl.1 perlmine.pl.1
 MAN3=		Goo::Canvas::Item.3 \
@@ -57,7 +58,5 @@ MAN3=		Goo::Canvas::Item.3 \
 		Goo::Canvas::Path.3 \
 		Goo::Canvas::Points.3 \
 		Goo::Canvas::ItemSimple.3
-
-PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

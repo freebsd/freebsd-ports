@@ -38,9 +38,9 @@ bin/perltetris.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas/Canvas.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas/Canvas.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Cairo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo
