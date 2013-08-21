@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
@@ -10,11 +10,11 @@ MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Boost privacy and security of DNS
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		sodium:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libsodium.so:${PORTSDIR}/security/libsodium
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 SUB_FILES=	pkg-message
 
@@ -26,16 +26,18 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		README-PLUGINS.markdown README-WINDOWS.markdown \
 		README.markdown TECHNOTES THANKS
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 pre-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/dnscrypt-proxy.8 ${MAN8PREFIX}/man/man8/
-	@${INSTALL_MAN} ${WRKSRC}/man/hostip.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/dnscrypt-proxy.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/hostip.8 ${MAN8PREFIX}/man/man8/
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 	@${CAT} ${WRKDIR}/pkg-message
 
