@@ -66,6 +66,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/PRNG/Sober128.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/PRNG/Yarrow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/PRNG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/CryptX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CryptX/CryptX.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CryptX/CryptX.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CryptX
