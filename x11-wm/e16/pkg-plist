@@ -401,6 +401,7 @@ share/xsessions/e16-gnome3-session.desktop
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/e16.mo
