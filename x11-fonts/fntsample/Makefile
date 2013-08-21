@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fntsample
-# Date created:		22 January 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	fntsample
 PORTVERSION=	3.2
@@ -22,25 +18,25 @@ LICENSE=	GPLv3
 USE_PERL5=	run
 USES=		perl5
 
+MAN1=		${PORTNAME}.1
+
 .if defined(PDFOUTLINE)
-RUN_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
+RUN_DEPENDS+=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
 		p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
 
 NO_BUILD=	yes
 
-MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 .else
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
+BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS+=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 
+CONFIGURE_ARGS+=--disable-silent-rules \
+		--with-unicode-blocks=${WRKSRC}/Blocks.txt
+GNU_CONFIGURE=	yes
 USE_GNOME=	pango
 USES+=		gettext
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--with-unicode-blocks=${WRKSRC}/Blocks.txt
 
-MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME} share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
 .endif
 
