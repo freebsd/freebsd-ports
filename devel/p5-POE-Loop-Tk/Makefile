@@ -17,8 +17,7 @@ COMMENT=	A bridge that allows POE to be driven by Tk
 
 BUILD_DEPENDS=	p5-POE>=1.289:${PORTSDIR}/devel/p5-POE \
 		p5-Tk>=804.028:${PORTSDIR}/x11-toolkits/p5-Tk
-RUN_DEPENDS=	p5-POE>=1.289:${PORTSDIR}/devel/p5-POE \
-		p5-Tk>=804.028:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

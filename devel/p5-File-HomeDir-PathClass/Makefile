@@ -18,9 +18,7 @@ COMMENT=	File::HomeDir returning Path::Class objects
 BUILD_DEPENDS=	p5-File-HomeDir>=0.93:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
-RUN_DEPENDS=	p5-File-HomeDir>=0.93:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild
 USES=		perl5

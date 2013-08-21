@@ -18,10 +18,7 @@ COMMENT=	Cursor class with built-in caching support
 BUILD_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBIx-Class>=0.08124:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
-RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-DBIx-Class>=0.08124:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 

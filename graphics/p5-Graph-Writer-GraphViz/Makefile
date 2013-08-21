@@ -19,10 +19,7 @@ BUILD_DEPENDS=	p5-Graph>=0.54:${PORTSDIR}/math/p5-Graph \
 		p5-Graph-ReadWrite>=0:${PORTSDIR}/graphics/p5-Graph-ReadWrite \
 		p5-GraphViz>=2.02:${PORTSDIR}/graphics/p5-GraphViz \
 		p5-IO-All>=0.30:${PORTSDIR}/devel/p5-IO-All
-RUN_DEPENDS=	p5-Graph>=0.54:${PORTSDIR}/math/p5-Graph \
-		p5-Graph-ReadWrite>=0:${PORTSDIR}/graphics/p5-Graph-ReadWrite \
-		p5-GraphViz>=2.02:${PORTSDIR}/graphics/p5-GraphViz \
-		p5-IO-All>=0.30:${PORTSDIR}/devel/p5-IO-All
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

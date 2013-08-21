@@ -16,7 +16,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A toolbar widget for Perl/Tk
 
 BUILD_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/p5-Tk-CursorControl
-RUN_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/p5-Tk-CursorControl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_ZIP=	yes
 USE_PERL5=	configure

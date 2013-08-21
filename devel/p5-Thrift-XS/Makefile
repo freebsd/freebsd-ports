@@ -19,11 +19,7 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		p5-Test-BinaryData>=0:${PORTSDIR}/devel/p5-Test-BinaryData \
 		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \

@@ -20,12 +20,7 @@ BUILD_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 		p5-Hash-FieldHash>=0:${PORTSDIR}/devel/p5-Hash-FieldHash \
 		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
-RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
-		p5-File-HomeDir>=0.91:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-Hash-FieldHash>=0:${PORTSDIR}/devel/p5-Hash-FieldHash \
-		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
-		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-IO-Pty-Easy>=0:${PORTSDIR}/devel/p5-IO-Pty-Easy \

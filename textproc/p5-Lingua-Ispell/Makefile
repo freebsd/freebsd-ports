@@ -15,11 +15,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A Perl module that encapsulates access to the Ispell program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+REINPLACE_ARGS=	-i ''
 USE_PERL5=	configure
 USES=		perl5
-REINPLACE_ARGS=	-i ''
 
 MAN3=		Lingua::Ispell.3
 
