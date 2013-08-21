@@ -59,6 +59,8 @@ lib/gstreamer-%%VERSION%%/libgstjpegformat.la
 lib/gstreamer-%%VERSION%%/libgstjpegformat.so
 lib/gstreamer-%%VERSION%%/libgstliveadder.la
 lib/gstreamer-%%VERSION%%/libgstliveadder.so
+lib/gstreamer-%%VERSION%%/libgstmidi.la
+lib/gstreamer-%%VERSION%%/libgstmidi.so
 lib/gstreamer-%%VERSION%%/libgstmpegpsdemux.la
 lib/gstreamer-%%VERSION%%/libgstmpegpsdemux.so
 lib/gstreamer-%%VERSION%%/libgstmpegpsmux.la

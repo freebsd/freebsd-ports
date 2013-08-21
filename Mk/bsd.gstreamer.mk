@@ -58,13 +58,13 @@ _GST1_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST1_VERSION}
 GST1_VERSION=		1.0
 GST1_MINOR_VERSION=	.0
 GST1_SHLIB_VERSION=	0
-GST1_MINIMAL_VERSION=	.5
+GST1_MINIMAL_VERSION=	.8
 
 #
 # missing base: alsa ivorbisdec
 # missing good: pulseaudio(need newer pulse version)
-# missing ugly: - (done)
-# missing bad: - (done)
+# missing ugly: -
+# missing bad: openal
 
 # These are the current supported gstreamer-plugins modules:
 # Supported plugins by both 0.10 and 1.0.
@@ -72,7 +72,7 @@ _GSTREAMER_PLUGINS= \
 		a52dec aalib amrnb amrwbdec cairo cdio \
 		cdparanoia dts dv faac faad flac flite \
 		gdkpixbuf gme gsm jack jpeg lame libcaca \
-		libmms libvisual mad mpeg2dec mpeg2enc ogg \
+		libmms libvisual mad mpeg2dec mpeg2enc neon ogg \
 		opencv opus pango resindvd schroedinger \
 		shout2 sidplay soundtouch soup speex taglib \
 		theora twolame v4l2 vorbis wavpack x264
@@ -82,7 +82,7 @@ _GSTREAMER_PLUGINS= \
 _GSTREAMER_PLUGINS+= \
 		annodex bz2 cdaudio dvd esound ffmpeg fluendo-mp3 \
 		fluendo-mpegdemux gconf gio gl gnomevfs gnonlin hal \
-		ladspa libpng mm mp3 musepack nas neon pulse python qt4 \
+		ladspa libpng mm mp3 musepack nas pulse python qt4 \
 		sdl sndfile spc vdpau vp8 xvid
 .endif
 

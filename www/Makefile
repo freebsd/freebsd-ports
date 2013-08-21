@@ -264,6 +264,7 @@
     SUBDIR += groupoffice
     SUBDIR += grr
     SUBDIR += gstreamer-plugins-neon
+    SUBDIR += gstreamer1-plugins-neon
     SUBDIR += gtkhtml3
     SUBDIR += guile-www
     SUBDIR += gurlchecker
