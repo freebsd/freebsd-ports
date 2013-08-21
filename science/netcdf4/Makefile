@@ -28,8 +28,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
 MAKE_ENV=	INFODIR="${PREFIX}/${INFO_PATH}" MAKEINFOFLAGS="--no-split"
-USES=	pathfix
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 		netcdf-install netcdf-tutorial
@@ -76,7 +76,7 @@ post-install:
 	cd ${WRKSRC}/man4 && ${INSTALL_DATA} *.html *.pdf *.txt ${DOCSDIR}/
 .endif
 
-regression-test: build
+regression-test test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
