@@ -1,0 +1,101 @@
+--- maps/makefile.husky.orig	2006-02-18 02:58:00.000000000 +0800
++++ maps/makefile.husky	2013-08-21 17:45:36.000000000 +0800
+@@ -28,7 +28,7 @@
+ 
+ .PHONY: maps
+ 
+-default: makemaps$(EXE) maps
++default: maps
+ 
+ CDEFS=$(ADDCDEFS)
+ 
+@@ -38,65 +38,32 @@
+ makemaps$(EXE): makemaps$(OBJ)
+ 	$(CC) $(LFLAGS) -o makemaps$(EXE) makemaps$(OBJ)
+ 
+-maps: 	makemaps$(EXE) readmaps.437 readmaps.850 readmaps.866 readmaps.koi readmaps.ukr \
++maps:	readmaps.437 readmaps.850 readmaps.866 readmaps.koi readmaps.ukr \
+ 	readmaps.is1 readmaps.is5 readmaps.865
+ 
+-readmaps.437:
+-	-echo "DO NOT WORRY ABOUT WARNINGS ABOUT no matching charset!"
+-	./makemaps$(EXE) CP437 $(allmaps)
+-	-$(RM) writmaps.437
+-	-$(RM) readmaps.437
+-	$(MV) writmaps.dat writmaps.437
+-	$(MV) readmaps.dat readmaps.437
+-
+-readmaps.850:
+-	./makemaps$(EXE) CP850 $(allmaps)
+-	-$(RM) writmaps.850
+-	-$(RM) readmaps.850
+-	$(MV) writmaps.dat writmaps.850
+-	$(MV) readmaps.dat readmaps.850
+-
+-readmaps.865:
+-	./makemaps$(EXE) CP865 $(allmaps)
+-	-$(RM) writmaps.865
+-	-$(RM) readmaps.865
+-	$(MV) writmaps.dat writmaps.865
+-	$(MV) readmaps.dat readmaps.865
+-
+-readmaps.866:
+-	./makemaps$(EXE) CP866 $(allmaps)
+-	-$(RM) writmaps.866
+-	-$(RM) readmaps.866
+-	$(MV) writmaps.dat writmaps.866
+-	$(MV) readmaps.dat readmaps.866
+-
+-readmaps.koi:
+-	./makemaps$(EXE) KOI8-R $(allmaps)
+-	-$(RM) writmaps.koi
+-	-$(RM) readmaps.koi
+-	$(MV) writmaps.dat writmaps.koi
+-	$(MV) readmaps.dat readmaps.koi
+-
+-readmaps.ukr:
+-	./makemaps$(EXE) CP1125 $(allmaps)
+-	-$(RM) writmaps.ukr
+-	-$(RM) readmaps.ukr
+-	$(MV) writmaps.dat writmaps.ukr
+-	$(MV) readmaps.dat readmaps.ukr
+-
+-readmaps.is1:
+-	./makemaps$(EXE) LATIN-1 $(allmaps)
+-	-$(RM) writmaps.is1
+-	-$(RM) readmaps.is1
+-	$(MV) writmaps.dat writmaps.is1
+-	$(MV) readmaps.dat readmaps.is1
+-
+-readmaps.is5:
+-	./makemaps$(EXE) ISO-5 $(allmaps)
+-	-$(RM) writmaps.is5
+-	-$(RM) readmaps.is5
+-	$(MV) writmaps.dat writmaps.is5
+-	$(MV) readmaps.dat readmaps.is5
++readmaps.437:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) CP437 $(allmaps)
++
++readmaps.850:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) CP850 $(allmaps)
++
++readmaps.865:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) CP865 $(allmaps)
++
++readmaps.866:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) CP866 $(allmaps)
++
++readmaps.koi:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) KOI8-R $(allmaps)
++
++readmaps.ukr:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) CP1125 $(allmaps)
++
++readmaps.is1:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) LATIN-1 $(allmaps)
++
++readmaps.is5:	makemaps$(EXE)
++	MAKEMAPS_SAVEFILE_SUFFIX=$(suffix $@) ./makemaps$(EXE) ISO-5 $(allmaps)
+ 
+ clean:
+ 	-$(RM) makemaps$(OBJ)
