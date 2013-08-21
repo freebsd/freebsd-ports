@@ -10,6 +10,7 @@ bin/gdalenhance
 bin/gdalinfo
 bin/gdallocationinfo
 bin/gdalmanage
+bin/gdalserver
 bin/gdalsrsinfo
 bin/gdaltindex
 bin/gdaltransform
@@ -34,12 +35,15 @@ include/cpl_minizip_unzip.h
 include/cpl_minizip_zip.h
 include/cpl_multiproc.h
 include/cpl_odbc.h
+include/cpl_progress.h
 include/cpl_port.h
 include/cpl_quad_tree.h
+include/cpl_spawn.h
 include/cpl_string.h
 include/cpl_time.h
 include/cpl_vsi.h
 include/cpl_vsi_virtual.h
+include/cpl_vsil_curl_priv.h
 include/cpl_win32ce_api.h
 include/cpl_wince.h
 include/cplkeywordparser.h
@@ -52,8 +56,10 @@ include/gdal_pam.h
 include/gdal_priv.h
 include/gdal_proxy.h
 include/gdal_rat.h
+include/gdal_simplesurf.h
 include/gdal_version.h
 include/gdal_vrt.h
+include/gdalexif.h
 include/gdalgrid.h
 include/gdaljp2metadata.h
 include/gdalwarper.h
@@ -64,6 +70,7 @@ include/ogr_api.h
 include/ogr_core.h
 include/ogr_feature.h
 include/ogr_featurestyle.h
+include/ogr_geocoding.h
 include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_spatialref.h
@@ -72,10 +79,11 @@ include/ogrsf_frmts.h
 include/rawdataset.h
 include/thinplatespline.h
 include/vrtdataset.h
+lib/gdalplugins/.keepme
 lib/libgdal.a
 lib/libgdal.la
 lib/libgdal.so
-lib/libgdal.so.17
+lib/libgdal.so.18
 %%DATADIR%%/GDALLogoBW.svg
 %%DATADIR%%/GDALLogoColor.svg
 %%DATADIR%%/GDALLogoGS.svg
@@ -101,6 +109,9 @@ lib/libgdal.so.17
 %%DATADIR%%/header.dxf
 %%DATADIR%%/nitf_spec.xml
 %%DATADIR%%/nitf_spec.xsd
+%%DATADIR%%/osmconf.ini
+%%DATADIR%%/ozi_datum.csv
+%%DATADIR%%/ozi_ellips.csv
 %%DATADIR%%/pci_datum.txt
 %%DATADIR%%/pci_ellips.txt
 %%DATADIR%%/pcs.csv
@@ -123,3 +134,4 @@ lib/libgdal.so.17
 %%DATADIR%%/vertcs.csv
 %%DATADIR%%/vertcs.override.csv
 @dirrm %%DATADIR%%
+@dirrm lib/gdalplugins

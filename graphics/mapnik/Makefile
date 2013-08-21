@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
