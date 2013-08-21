@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+%%DATADIR%%/help/roster
+%%DATADIR%%/help/xmppconnect
+%%DATADIR%%/help/xmppserver
+%%PORTDOCS%%%%DOCSDIR%%/irssi-xmpp/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/irssi-xmpp/GENERAL
+%%PORTDOCS%%%%DOCSDIR%%/irssi-xmpp/MUC
+%%PORTDOCS%%%%DOCSDIR%%/irssi-xmpp/STARTUP
+%%PORTDOCS%%%%DOCSDIR%%/irssi-xmpp/XEP
+lib/irssi/modules/libfe_xmpp.so
+lib/irssi/modules/libtext_xmpp.so
+lib/irssi/modules/libxmpp_core.so
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/irssi-xmpp
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/help
+@dirrmtry %%DATADIR%%
