@@ -18,7 +18,7 @@ COMMENT=	Spherical data types, functions, and operators for PostgreSQL
 DATADIR=	${PREFIX}/share/postgresql
 DOCSDIR?=	${PREFIX}/share/doc/postgresql
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 

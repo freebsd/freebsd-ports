@@ -19,8 +19,8 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--enable-profile --enable-uyield
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 MAN1=		ktremotemgr.1 \
 		ktremotetest.1 \

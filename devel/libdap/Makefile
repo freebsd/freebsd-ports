@@ -19,9 +19,8 @@ CONFIGURE_ARGS=	--with-zlib=/usr
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
-USES=	pathfix
 USE_LDCONFIG=	yes
+USES=		gmake pathfix
 
 MAN1=		dap-config.1 \
 		getdap.1

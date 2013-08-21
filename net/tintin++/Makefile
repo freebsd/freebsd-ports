@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/tt/src
 
 DOCS=		CREDITS FAQ README SCRIPTS TODO \

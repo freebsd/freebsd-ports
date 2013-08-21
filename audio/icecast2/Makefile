@@ -26,12 +26,12 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	icecast2
 SUB_FILES+=	pkg-message
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
+USES=		gmake
 
 DOCSDIR=	${PREFIX}/share/doc/icecast
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}

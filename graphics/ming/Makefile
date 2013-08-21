@@ -22,9 +22,8 @@ CPPFLAGS+=	-I. -I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L. -L.. -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		bison pathfix
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		bison gmake pathfix
 
 DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html

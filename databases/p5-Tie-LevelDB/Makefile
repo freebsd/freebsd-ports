@@ -18,8 +18,8 @@ COMMENT=	A Perl Interface to the Google LevelDB NoSQL database
 LIB_DEPENDS=	leveldb:${PORTSDIR}/databases/leveldb
 
 MAKE_ARGS=	CC=${CXX}
-USE_GMAKE=	yes
 PERL_CONFIGURE=	yes
+USES=		gmake
 
 MAN3=		Tie::LevelDB.3
 

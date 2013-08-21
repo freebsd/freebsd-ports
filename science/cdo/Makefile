@@ -18,9 +18,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-cdi-lib --program-transform-name="" --with-zlib=/usr
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		gmake pathfix
 
 HDF5_VER?=	18
 NETCDF_VER?=	4

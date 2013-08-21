@@ -21,8 +21,8 @@ LIBTOOLFILES=	# empty
 MAKE_ARGS=	USER_DEFS=-fPIC
 MAKEFILE=	GNUmakefile
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_RUBY=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/ruby
 
 post-patch:
