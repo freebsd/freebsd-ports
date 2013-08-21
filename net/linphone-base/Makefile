@@ -9,17 +9,16 @@ CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/3.2.x/sources
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A web phone that supports SIP protocol
+COMMENT=	Web phone that supports SIP protocol
 
-LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
-		speex.1:${PORTSDIR}/audio/speex \
-		eXosip2.9:${PORTSDIR}/net/libexosip2
+LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm \
+		libspeex.so:${PORTSDIR}/audio/speex \
+		libeXosip2.so:${PORTSDIR}/net/libexosip2
 
 CONFLICTS=	ortp-[0-9]*
 
 USE_GNOME=	glib20 intlhack
-USES=		pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure oRTP/configure mediastreamer2/configure
 CONFIGURE_ARGS=	--disable-ipv6 --disable-manual --disable-ewarning \
@@ -30,6 +29,8 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
