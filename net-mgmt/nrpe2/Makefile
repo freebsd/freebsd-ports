@@ -1,10 +1,8 @@
 # Created by: Paul Dlug<paul@nerdlabs.com>
-#
 # $FreeBSD$
 
 PORTNAME=	nrpe
-DISTVERSION=	2.13
-PORTREVISION=	2
+DISTVERSION=	2.14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 

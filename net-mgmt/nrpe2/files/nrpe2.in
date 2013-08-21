@@ -26,7 +26,7 @@ required_files="${nrpe2_configfile}"
 
 command="%%PREFIX%%/sbin/nrpe2"
 command_args="-c ${nrpe2_configfile} -d"
-extra_commands="reload"
+extra_commands=reload
 sig_reload=HUP
 
 start_precmd=nrpe2_prestart
