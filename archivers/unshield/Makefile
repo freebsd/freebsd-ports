@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unshield
-# Date created:				08 April 2004
-# Whom:					Stefan Esser <se@FreeBSD.org>
-#
+# Created by: Stefan Esser <se@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unshield
 PORTVERSION=	0.6
@@ -14,10 +10,12 @@ MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extract data from InstallShield CAB files
 
-USE_AUTOTOOLS=	libtool
+LICENSE=	MIT
+
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 MAN1=		${PORTNAME}.1
 
