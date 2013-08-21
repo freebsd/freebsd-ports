@@ -1,0 +1,168 @@
+bin/accedit
+bin/evilmeta
+bin/tomenet
+bin/tomenet.server
+%%ETCDIR%%/tomenetrc
+%%DATADIR%%/lib/config/badnames.txt
+%%DATADIR%%/lib/config/nonswearing.txt
+%%DATADIR%%/lib/config/swearing.txt
+%%DATADIR%%/lib/config/tomenet.cfg
+%%DATADIR%%/lib/data/tomenet.log
+%%DATADIR%%/lib/game/a_info.txt
+%%DATADIR%%/lib/game/ba_info.txt
+%%DATADIR%%/lib/game/d_info.txt
+%%DATADIR%%/lib/game/e_info.txt
+%%DATADIR%%/lib/game/f_info.txt
+%%DATADIR%%/lib/game/k_info.txt
+%%DATADIR%%/lib/game/ow_info.txt
+%%DATADIR%%/lib/game/r_info.txt
+%%DATADIR%%/lib/game/re_info.txt
+%%DATADIR%%/lib/game/renumber.pl
+%%DATADIR%%/lib/game/s_info.txt
+%%DATADIR%%/lib/game/st_info.txt
+%%DATADIR%%/lib/game/t_arena_pvp.txt
+%%DATADIR%%/lib/game/t_arena_tt.txt
+%%DATADIR%%/lib/game/t_arena1.txt
+%%DATADIR%%/lib/game/t_bree.txt
+%%DATADIR%%/lib/game/t_bree_arcade.txt
+%%DATADIR%%/lib/game/t_gondol.txt
+%%DATADIR%%/lib/game/t_info.txt
+%%DATADIR%%/lib/game/t_khazad.txt
+%%DATADIR%%/lib/game/t_lorien.txt
+%%DATADIR%%/lib/game/t_menegroth.txt
+%%DATADIR%%/lib/game/t_minas.txt
+%%DATADIR%%/lib/game/t_nargothrond.txt
+%%DATADIR%%/lib/game/t_pref.txt
+%%DATADIR%%/lib/game/t_valinor.txt
+%%DATADIR%%/lib/game/tr_info.txt
+%%DATADIR%%/lib/game/v_info.txt
+%%DATADIR%%/lib/save/delete.me
+%%DATADIR%%/lib/scpt/audio.lua
+%%DATADIR%%/lib/scpt/c-init.lua
+%%DATADIR%%/lib/scpt/cblue.lua
+%%DATADIR%%/lib/scpt/classes.lua
+%%DATADIR%%/lib/scpt/custom.lua
+%%DATADIR%%/lib/scpt/d_astral.lua
+%%DATADIR%%/lib/scpt/dg.lua
+%%DATADIR%%/lib/scpt/dr_arcane.lua
+%%DATADIR%%/lib/scpt/dr_physical.lua
+%%DATADIR%%/lib/scpt/evil.lua
+%%DATADIR%%/lib/scpt/init.lua
+%%DATADIR%%/lib/scpt/it.lua
+%%DATADIR%%/lib/scpt/jir.lua
+%%DATADIR%%/lib/scpt/m_mintrusion.lua
+%%DATADIR%%/lib/scpt/m_ppower.lua
+%%DATADIR%%/lib/scpt/m_tcontact.lua
+%%DATADIR%%/lib/scpt/meta.lua
+%%DATADIR%%/lib/scpt/mikaelh.lua
+%%DATADIR%%/lib/scpt/moltor.lua
+%%DATADIR%%/lib/scpt/p_curing.lua
+%%DATADIR%%/lib/scpt/p_defense.lua
+%%DATADIR%%/lib/scpt/p_offense.lua
+%%DATADIR%%/lib/scpt/p_support.lua
+%%DATADIR%%/lib/scpt/player.lua
+%%DATADIR%%/lib/scpt/player-info.lua
+%%DATADIR%%/lib/scpt/powers.lua
+%%DATADIR%%/lib/scpt/races.lua
+%%DATADIR%%/lib/scpt/s_air.lua
+%%DATADIR%%/lib/scpt/s_aux.lua
+%%DATADIR%%/lib/scpt/s_convey.lua
+%%DATADIR%%/lib/scpt/s_divin.lua
+%%DATADIR%%/lib/scpt/s_earth.lua
+%%DATADIR%%/lib/scpt/s_fire.lua
+%%DATADIR%%/lib/scpt/s_mana.lua
+%%DATADIR%%/lib/scpt/s_meta.lua
+%%DATADIR%%/lib/scpt/s_mind.lua
+%%DATADIR%%/lib/scpt/s_nature.lua
+%%DATADIR%%/lib/scpt/s_tempo.lua
+%%DATADIR%%/lib/scpt/s_udun.lua
+%%DATADIR%%/lib/scpt/s_water.lua
+%%DATADIR%%/lib/scpt/spells.lua
+%%DATADIR%%/lib/scpt/test.lua
+%%DATADIR%%/lib/scpt/traits.lua
+%%DATADIR%%/lib/scpt/update.lua
+%%DATADIR%%/lib/scpt/xml.lua
+%%DATADIR%%/lib/text/attack.txt
+%%DATADIR%%/lib/text/birth.txt
+%%DATADIR%%/lib/text/book-50.txt
+%%DATADIR%%/lib/text/book-51.txt
+%%DATADIR%%/lib/text/book-52.txt
+%%DATADIR%%/lib/text/book-60.txt
+%%DATADIR%%/lib/text/book-61.txt
+%%DATADIR%%/lib/text/book-62.txt
+%%DATADIR%%/lib/text/book-63.txt
+%%DATADIR%%/lib/text/book-64.txt
+%%DATADIR%%/lib/text/book-65.txt
+%%DATADIR%%/lib/text/book-66.txt
+%%DATADIR%%/lib/text/book-67.txt
+%%DATADIR%%/lib/text/chainswd.txt
+%%DATADIR%%/lib/text/command.txt
+%%DATADIR%%/lib/text/dead.txt
+%%DATADIR%%/lib/text/dead2.txt
+%%DATADIR%%/lib/text/death.txt
+%%DATADIR%%/lib/text/dungeon.txt
+%%DATADIR%%/lib/text/error.txt
+%%DATADIR%%/lib/text/gambling.txt
+%%DATADIR%%/lib/text/general.txt
+%%DATADIR%%/lib/text/help.hlp
+%%DATADIR%%/lib/text/hints.txt
+%%DATADIR%%/lib/text/news.txt
+%%DATADIR%%/lib/text/option.txt
+%%DATADIR%%/lib/text/randarts.txt
+%%DATADIR%%/lib/text/rumors.txt
+%%DATADIR%%/lib/text/slash.hlp
+%%DATADIR%%/lib/text/slash_ad.hlp
+%%DATADIR%%/lib/text/timefun.txt
+%%DATADIR%%/lib/text/timenorm.txt
+%%DATADIR%%/lib/text/tomenet.hlp
+%%DATADIR%%/lib/text/version.txt
+%%DATADIR%%/lib/user/arcade-win.prf
+%%DATADIR%%/lib/user/arcade-x11.prf
+%%DATADIR%%/lib/user/font-ami.prf
+%%DATADIR%%/lib/user/font-ibm.prf
+%%DATADIR%%/lib/user/font-win.prf
+%%DATADIR%%/lib/user/font-win(solid).prf
+%%DATADIR%%/lib/user/graf-ami.prf
+%%DATADIR%%/lib/user/graf-win.prf
+%%DATADIR%%/lib/user/linux_caster.prf
+%%DATADIR%%/lib/user/linux_fighter.prf
+%%DATADIR%%/lib/user/options.prf
+%%DATADIR%%/lib/user/pref.prf
+%%DATADIR%%/lib/user/pref-acn.prf
+%%DATADIR%%/lib/user/pref-emx.prf
+%%DATADIR%%/lib/user/pref-ibm.prf
+%%DATADIR%%/lib/user/pref-lsl.prf
+%%DATADIR%%/lib/user/pref-mac.prf
+%%DATADIR%%/lib/user/pref-win.prf
+%%DATADIR%%/lib/user/pref-x11.prf
+%%DATADIR%%/lib/user/pref-xaw.prf
+%%DATADIR%%/lib/user/smash-win.prf
+%%DATADIR%%/lib/user/smash-x11.prf
+%%DATADIR%%/lib/user/tron-win.prf
+%%DATADIR%%/lib/user/tron-x11.prf
+%%DATADIR%%/lib/user/window.prf
+%%DATADIR%%/lib/user/windows_caster.prf
+%%DATADIR%%/lib/user/windows_fighter.prf
+%%DATADIR%%/lib/xtra/music/music.cfg.default
+%%DATADIR%%/lib/xtra/sound/credits.txt
+%%DATADIR%%/lib/xtra/sound/sound.cfg.default
+%%DATADIR%%/lib/xtra/sound/misc/paging/ding.ogg
+%%DATADIR%%/lib/xtra/sound/misc/paging/greeting.ogg
+%%DATADIR%%/lib/xtra/sound/misc/paging/warning.ogg
+%%PORTDOCS%%%%DOCSDIR%%/TomeNET-Guide.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%
+@dirrm %%DATADIR%%/lib/config
+@dirrm %%DATADIR%%/lib/data
+@dirrm %%DATADIR%%/lib/game
+@dirrm %%DATADIR%%/lib/save
+@dirrm %%DATADIR%%/lib/scpt
+@dirrm %%DATADIR%%/lib/text
+@dirrm %%DATADIR%%/lib/user
+@dirrm %%DATADIR%%/lib/xtra/music
+@dirrm %%DATADIR%%/lib/xtra/sound/misc/paging
+@dirrm %%DATADIR%%/lib/xtra/sound/misc
+@dirrm %%DATADIR%%/lib/xtra/sound
+@dirrm %%DATADIR%%/lib/xtra
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
