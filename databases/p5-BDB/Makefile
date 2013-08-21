@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-BDB
-# Date created:		2011-06-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BDB
 PORTVERSION=	1.90

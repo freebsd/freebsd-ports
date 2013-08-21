@@ -1,9 +1,5 @@
-# New ports collection makefile for: icecast
-# Date created:         28 Jan 1999
-# Whom:                 Chip Marshall <chip@eboai.org>
-#
+# Created by: Chip Marshall <chip@eboai.org>
 # $FreeBSD$
-#
 
 PORTNAME=	icecast2
 PORTVERSION=	2.3.2

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  libmaa
-# Date created:			  2008/01/26
-# Whom:				  chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	libmaa
 PORTVERSION=	1.3.2

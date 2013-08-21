@@ -1,9 +1,5 @@
-# New ports collection makefile for:	udunits
-# Date created:		31 December 2004
-# Whom:			Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	udunits
 PORTVERSION=	2.1.24

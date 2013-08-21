@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Astro-WaveBand
-# Date created:		2012-07-01
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Astro-WaveBand
 PORTVERSION=	0.08

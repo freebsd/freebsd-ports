@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Any-Moose-Convert
-# Date created:		2011-08-15
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Any-Moose-Convert
 PORTVERSION=	0.004

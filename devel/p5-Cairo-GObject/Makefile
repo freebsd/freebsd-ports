@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Cairo-GObject
-# Date created:		2011-10-17
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Cairo-GObject
 PORTVERSION=	1.001

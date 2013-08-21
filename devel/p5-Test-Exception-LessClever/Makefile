@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Exception-LessClever
-# Date created:		2011-10-04
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Exception-LessClever
 PORTVERSION=	0.006

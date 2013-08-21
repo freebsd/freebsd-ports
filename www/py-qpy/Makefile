@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-qpy
-# Date created:		13 Nov 2006
-# Whom:	      		Dryice Liu <dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	qpy
 PORTVERSION=	1.8

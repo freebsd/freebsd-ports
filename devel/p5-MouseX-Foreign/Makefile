@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MouseX-Foreign
-# Date created:		2011-08-15
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MouseX-Foreign
 PORTVERSION=	0.007

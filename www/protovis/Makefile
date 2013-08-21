@@ -1,9 +1,5 @@
-# New ports collection makefile for:	protovis
-# Date created:		2011-04-27
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	protovis
 PORTVERSION=	3.2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Eval-LineNumbers
-# Date created:		2012-03-08
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Eval-LineNumbers
 PORTVERSION=	0.31

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-NLS_DATE_FORMAT
-# Date created:		2011-10-19
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-NLS_DATE_FORMAT
 PORTVERSION=	0.05

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	release
-# Date created:	   14 Mart 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Release
 PORTVERSION=	2.06

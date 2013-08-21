@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-qp
-# Date created:		14 Nov 2006
-# Whom:	      		Dryice Liu <dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	qp
 PORTVERSION=	2.2

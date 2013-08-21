@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Safe
-# Date created:		2011-12-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Safe
 PORTVERSION=	1.2.5

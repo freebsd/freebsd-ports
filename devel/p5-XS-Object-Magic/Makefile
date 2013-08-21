@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XS-Object-Magic
-# Date created:		2011-11-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XS-Object-Magic
 PORTVERSION=	0.04

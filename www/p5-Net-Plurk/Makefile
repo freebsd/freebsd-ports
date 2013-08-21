@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Plurk
-# Date created:		2010-07-06
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Plurk
 PORTVERSION=	0.11

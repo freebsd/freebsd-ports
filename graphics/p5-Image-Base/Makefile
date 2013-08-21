@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Image-Base
-# Date created:		2011-09-23
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Base
 PORTVERSION=	1.17

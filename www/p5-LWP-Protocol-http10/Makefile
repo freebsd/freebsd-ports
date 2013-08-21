@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-LWP-Protocol-http10
-# Date created:		2011-07-11
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LWP-Protocol-http10
 PORTVERSION=	6.03

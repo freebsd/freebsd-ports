@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-robots
-# Date created:				2010-04-11
-# Whom:					niels <niels@FreeBSD.org>
-#
+# Created by: niels <niels@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	robots

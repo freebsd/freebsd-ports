@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-File
-# Date created:				17 June 2003
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-File
 PORTVERSION=	0.98

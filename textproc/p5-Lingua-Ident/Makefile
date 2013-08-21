@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lingua::Ident
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-Ident
 PORTVERSION=	1.7

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Google-Code-Upload
-# Date created:		2010-07-06
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Google-Code-Upload
 PORTVERSION=	0.07

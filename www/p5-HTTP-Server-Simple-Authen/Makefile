@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTTP-Server-Simple-Authen
-# Date created:		2011-09-13
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Server-Simple-Authen
 PORTVERSION=	0.04

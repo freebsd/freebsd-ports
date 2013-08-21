@@ -1,9 +1,5 @@
-# New ports collection makefile for:	id3v2
-# Date created:		10 Oct 2001
-# Whom:			David MacKenzie <djm@pix.net>
-#
+# Created by: David MacKenzie <djm@pix.net>
 # $FreeBSD$
-#
 
 PORTNAME=	id3v2
 PORTVERSION=	0.1.12

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Authen-Simple-LDAP
-# Date created:				21 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Simple-LDAP
 PORTVERSION=	0.3

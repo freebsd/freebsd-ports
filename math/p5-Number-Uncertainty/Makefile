@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Number-Uncertainty
-# Date created:		2012-07-01
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Number-Uncertainty
 PORTVERSION=	0.1

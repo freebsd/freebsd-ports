@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netcdf-ftn
-# Date created:		Sun Mar 08 2009
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	netcdf
 

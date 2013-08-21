@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netcdf3-ftn
-# Date created:		2010-05-18
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	netcdf
 

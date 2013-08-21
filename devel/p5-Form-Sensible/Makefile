@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Form-Sensible
-# Date created:		2012-02-13
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Form-Sensible
 PORTVERSION=	0.20.023

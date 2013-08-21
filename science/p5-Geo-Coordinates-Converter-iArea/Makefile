@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Geo-Coordinates-Converter-iArea
-# Date created:		2011-06-12
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Coordinates-Converter-iArea
 PORTVERSION=	0.14

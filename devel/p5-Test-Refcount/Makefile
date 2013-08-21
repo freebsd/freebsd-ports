@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Refcount
-# Date created:		2011-11-28
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Refcount
 PORTVERSION=	0.07

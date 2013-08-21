@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Declare
-# Date created:		2010-10-06
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Declare
 PORTVERSION=	2.4

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Format-Oracle
-# Date created:		2011-10-19
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-Oracle
 PORTVERSION=	0.06

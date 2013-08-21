@@ -1,9 +1,5 @@
-# New ports collection makefile for:	docdiff
-# Date created:		13 December 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	docdiff
 PORTVERSION=	0.4.0
