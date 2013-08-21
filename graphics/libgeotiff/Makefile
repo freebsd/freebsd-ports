@@ -1,9 +1,5 @@
-# New ports collection makefile for:		libgeotiff
-# Date created:					9 December 2005
-# Whom:						Sam Lawrance
-#
+# Created by: Sam Lawrance
 # $FreeBSD$
-#
 
 PORTNAME=	libgeotiff
 PORTVERSION=	1.4.0

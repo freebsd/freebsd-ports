@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tk-Sugar
-# Date created:		2011-10-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tk-Sugar
 PORTVERSION=	1.093.190

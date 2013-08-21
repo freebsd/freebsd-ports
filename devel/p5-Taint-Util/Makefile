@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Taint-Util
-# Date created:		2011-07-21
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Taint-Util
 PORTVERSION=	0.08

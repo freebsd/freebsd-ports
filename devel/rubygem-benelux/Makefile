@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-benelux
-# Date created:		2011-11-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	benelux
 PORTVERSION=	0.6.1

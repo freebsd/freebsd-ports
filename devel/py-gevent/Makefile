@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-gevent
-# Date created:				5 Feb 2010
-# Whom:					Peter Schuller <peter.schuller@infidyne.com>
-#
+# Created by: Peter Schuller <peter.schuller@infidyne.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gevent
 PORTVERSION=	0.13.8

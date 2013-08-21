@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Prefix-XS
-# Date created:		2011-12-24
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Prefix-XS
 PORTVERSION=	0.15

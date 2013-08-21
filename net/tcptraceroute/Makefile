@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tcptraceroute
-# Date created:        21 March 2002
-# Whom:                jeff@cetlink.net
-#
+# Created by: jeff@cetlink.net
 # $FreeBSD$
-#
 
 PORTNAME=	tcptraceroute
 PORTVERSION=	1.4

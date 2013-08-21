@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fancybox
-# Date created:		2011-05-30
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fancybox
 PORTVERSION=	1.3.4

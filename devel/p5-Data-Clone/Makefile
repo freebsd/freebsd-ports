@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Clone
-# Date created:		2011-10-04
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Clone
 PORTVERSION=	0.003

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-CheckDeps
-# Date created:		2010-07-02
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-CheckDeps
 PORTVERSION=	0.08

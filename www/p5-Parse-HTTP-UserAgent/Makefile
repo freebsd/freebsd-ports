@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Parse-HTTP-UserAgent
-# Date created:		2011-11-13
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Parse-HTTP-UserAgent
 PORTVERSION=	0.35

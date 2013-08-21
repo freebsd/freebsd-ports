@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-uri-redis
-# Date created:		2011-11-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uri-redis
 PORTVERSION=	0.4.2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SOAP-Transport-JABBER
-# Date created:		2011-08-20
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SOAP-Transport-JABBER
 PORTVERSION=	0.713

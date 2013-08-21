@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Graph-Writer-GraphViz
-# Date created:				31 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Graph-Writer-GraphViz
 PORTVERSION=	0.11

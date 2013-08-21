@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DNS-TestNS
-# Date created:		2010-06-26
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-TestNS
 PORTVERSION=	1.10

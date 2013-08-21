@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PerlIO-Layers
-# Date created:		2011-08-27
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PerlIO-Layers
 PORTVERSION=	0.010

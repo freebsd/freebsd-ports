@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MouseX-App-Cmd
-# Date created:		2011-12-12
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MouseX-App-Cmd
 PORTVERSION=	0.11

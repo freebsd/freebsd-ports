@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Safe-Isa
-# Date created:		2012-07-30
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Safe-Isa
 PORTVERSION=	1.000.002

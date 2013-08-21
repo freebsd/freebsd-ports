@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Parallel-UA
-# Date created:                         Sep 8 1998
-# Whom:                                 ache@freebsd.org
-#
+# Created by: ache@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	ParallelUA
 PORTVERSION=	2.57

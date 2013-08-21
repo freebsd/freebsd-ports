@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-eBay
-# Date created:				Sat May 27 13:25:11 UTC 2006
-# Whom:	      				Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-eBay
 PORTVERSION=	0.61

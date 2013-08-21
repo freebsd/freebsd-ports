@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Thrift-XS
-# Date created:		2011-12-15
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Thrift-XS
 PORTVERSION=	1.04

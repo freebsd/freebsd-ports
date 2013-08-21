@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-LibXML-Cache
-# Date created:		2011-09-11
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-LibXML-Cache
 PORTVERSION=	0.12

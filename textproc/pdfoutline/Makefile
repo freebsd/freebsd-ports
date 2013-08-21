@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdfoutline
-# Date created:		4 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pdfoutline
 PORTREVISION=	0

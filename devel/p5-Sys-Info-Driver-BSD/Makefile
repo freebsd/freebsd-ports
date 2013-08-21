@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sys-Info-Driver-BSD
-# Date created:		2011-10-09
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-Info-Driver-BSD
 PORTVERSION=	0.78.01

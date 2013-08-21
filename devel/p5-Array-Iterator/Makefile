@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Array Iterator
-# Date created:				1 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Array-Iterator
 PORTVERSION=	0.08

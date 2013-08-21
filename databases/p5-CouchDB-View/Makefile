@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CouchDB-View
-# Date created:		2011-09-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CouchDB-View
 PORTVERSION=	0.003

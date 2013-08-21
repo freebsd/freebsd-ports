@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sphinx-Manager
-# Date created:		2011-10-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sphinx-Manager
 PORTVERSION=	0.06

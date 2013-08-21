@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MooseX-MarkAsMethods
-# Date created:		2011-11-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-MarkAsMethods
 PORTVERSION=	0.15

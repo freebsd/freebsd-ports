@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Loop-Tk
-# Date created:		2011-10-10
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Loop-Tk
 PORTVERSION=	1.304

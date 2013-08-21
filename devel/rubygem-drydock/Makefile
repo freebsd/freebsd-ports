@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-drydock
-# Date created:		2011-11-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drydock
 PORTVERSION=	0.6.9

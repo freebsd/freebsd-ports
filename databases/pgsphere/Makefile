@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgsphere
-# Date created:		2010-02-09
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pgsphere
 PORTVERSION=	1.1.1

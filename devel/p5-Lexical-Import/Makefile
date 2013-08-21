@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Lexical-Import
-# Date created:		2012-02-07
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lexical-Import
 PORTVERSION=	0.002

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-LWPx-TimedHTTP
-# Date created:		2011-11-11
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LWPx-TimedHTTP
 PORTVERSION=	1.8

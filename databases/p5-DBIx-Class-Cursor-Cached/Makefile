@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Class-Cursor-Cached
-# Date created:		2011-06-12
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-Cursor-Cached
 PORTVERSION=	1.001.001

@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-open4
-# Date created:				2007-12-17
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	open4

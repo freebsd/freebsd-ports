@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libshout
-# Date created:				06 Jun 2000
-# Whom:					Zach Zurflu <zach@pabst.bendnet.com>
-#
+# Created by: Zach Zurflu <zach@pabst.bendnet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libshout
 PORTVERSION=	1.0.7

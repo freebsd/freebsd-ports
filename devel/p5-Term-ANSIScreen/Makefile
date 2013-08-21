@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ANSIScreen
-# Date created:				06 July 2003
-# Whom:	      				Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-ANSIScreen
 PORTVERSION=	1.50

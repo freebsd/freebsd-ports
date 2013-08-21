@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Error-Helper
-# Date created:		2012-06-02
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Error-Helper
 PORTVERSION=	1.0.0

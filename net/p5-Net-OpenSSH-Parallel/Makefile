@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-OpenSSH-Parallel
-# Date created:		2012-05-05
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-OpenSSH-Parallel
 PORTVERSION=	0.12

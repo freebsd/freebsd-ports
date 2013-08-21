@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-Pair-Best2
-# Date created:		2011-11-24
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-Pair-Best2
 PORTVERSION=	2.035

@@ -1,7 +1,4 @@
-# New ports collection makefile for:    p5-Lingua-Ispell
-# Date created:                         15 March 2001
-# Whom:                                 -
-#
+# Created by: -
 # $FreeBSD$
 
 PORTNAME=	Lingua-Ispell
