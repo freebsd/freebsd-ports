@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tmake
-# Date created:		8 March 2000
-# Whom:			jesse@cs.uni-magdeburg.de
-#
+# Created by: jesse@cs.uni-magdeburg.de
 # $FreeBSD$
-#
 
 PORTNAME=	tmake
 PORTVERSION=	1.13
@@ -27,14 +23,14 @@ post-patch:
 			${WRKSRC}/lib/freebsd-g++/tmake.conf
 
 do-install:
-	@${MKDIR} ${DATADIR}/
-	@cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${DATADIR}/
-	@cd ${WRKSRC}/bin/ && ${INSTALL_SCRIPT} progen tmake ${PREFIX}/bin/
+	${MKDIR} ${DATADIR}/
+	cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${DATADIR}/
+	cd ${WRKSRC}/bin/ && ${INSTALL_SCRIPT} progen tmake ${PREFIX}/bin/
 
 post-install:
-	@${ECHO}
-	@${ECHO} "Make sure to set your TMAKEPATH environment variable"
-	@${ECHO} "to ${DATADIR}/freebsd-g++."
-	@${ECHO}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Make sure to set your TMAKEPATH environment variable"
+	@${ECHO_MSG} "to ${DATADIR}/freebsd-g++."
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
