@@ -1,8 +1,8 @@
-# Created by:	ijliao
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	mirmon
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.staff.science.uu.nl/~penni101/mirmon/
 
@@ -10,7 +10,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX}
@@ -18,7 +19,9 @@ SUB_LIST=	PREFIX=${PREFIX}
 PLIST_FILES=	bin/mirmon bin/probe
 MAN1=		mirmon.1
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -38,7 +41,7 @@ do-install:
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	${INSTALL_MAN} ${WRKSRC}/mirmon.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/mirmon.html ${DOCSDIR}
 .endif
