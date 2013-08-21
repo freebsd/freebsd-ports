@@ -215,7 +215,6 @@ bin/ansible-pull
 %%DATADIR%%/cloud/quantum_subnet
 %%DATADIR%%/cloud/rax
 %%DATADIR%%/cloud/s3
-%%DATADIR%%/cloud/s3~e45b0f5fb17358dfa2741bce2615ef489c4f2dc0
 %%DATADIR%%/cloud/virt
 %%DATADIR%%/commands/command
 %%DATADIR%%/commands/raw
