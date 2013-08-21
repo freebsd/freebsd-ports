@@ -32,3 +32,12 @@
  endif
  
  TARGET=	msged$(EXE)
+@@ -127,7 +127,7 @@
+ 	$(CC) $(LFLAGS) -o testcons$(EXE) testcons$(OBJ) $(LIBS) $(OSLIBS)
+ endif
+ 
+-msghelp.dat: msghelp.src
++msghelp.dat: msghelp.src $(TARGET)
+ 	.$(DIRSEP)$(TARGET) -hc msghelp.src msghelp.dat
+ 
+ clean:
