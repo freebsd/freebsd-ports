@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	POE
-PORTVERSION=	1.354
+PORTVERSION=	1.356
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -43,7 +42,7 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 		POE::Resource::Aliases.3 POE::Resource::Events.3 \
 		POE::Resource::Extrefs.3 POE::Resource::FileHandles.3 \
 		POE::Resource::SIDs.3 POE::Resource::Sessions.3 \
-		POE::Resource::Signals.3 \
+		POE::Resource::Signals.3 POE::Resource::Clock.3 \
 		POE::Resources.3 POE::Session.3 POE::Wheel.3 \
 		POE::Wheel::Curses.3 POE::Wheel::FollowTail.3 \
 		POE::Wheel::ListenAccept.3 POE::Wheel::ReadLine.3 \
