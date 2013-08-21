@@ -1,20 +1,15 @@
-# New ports collection makefile for:	databases/jrrd
-# Date created:		25 June 2008
-# Whom:			Ryan T. Dean <rtdean@cytherianage.net>
-#
+# Created by: Ryan T. Dean <rtdean@cytherianage.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jrrd
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	databases java
 MASTER_SITES=	SF/opennms/JRRD/stable-1.0
 
 MAINTAINER=	venture37@geeklan.co.uk
-COMMENT=	A Java native interface (JNI) to RRDtool
+COMMENT=	Java native interface (JNI) to RRDtool
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
