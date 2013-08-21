@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A JavaScript graphical toolkit for data visualization
+COMMENT=	JavaScript graphical toolkit for data visualization
 
 NO_BUILD=	yes
 USE_ZIP=	yes

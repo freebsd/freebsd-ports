@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:PERIGRIN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A suit of XML tools with Antlers
+COMMENT=	Suit of XML tools with Antlers
 
 BUILD_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
 		p5-Devel-PackagePath>=0.01:${PORTSDIR}/devel/p5-Devel-PackagePath \

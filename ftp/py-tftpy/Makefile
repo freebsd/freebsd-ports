@@ -13,7 +13,7 @@ MASTER_SITES=	SF \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A Pure Python TFTP Implementation
+COMMENT=	Pure Python TFTP Implementation
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An almost-pure-ruby PNG library
+COMMENT=	Almost-pure-ruby PNG library
 
 RUN_DEPENDS=	rubygem-hoe>=2.3.0:${PORTSDIR}/devel/rubygem-hoe
 

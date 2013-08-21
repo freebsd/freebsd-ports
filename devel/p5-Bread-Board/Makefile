@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:STEVAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A solderless way to wire up your application components
+COMMENT=	Solderless way to wire up your application components
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

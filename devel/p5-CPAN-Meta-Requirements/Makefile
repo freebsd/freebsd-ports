@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A set of version requirements for a CPAN distribution
+COMMENT=	Set of version requirements for a CPAN distribution
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

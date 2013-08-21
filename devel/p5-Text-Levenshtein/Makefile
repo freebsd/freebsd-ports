@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An implementation of the Levenshtein edit distance
+COMMENT=	Implementation of the Levenshtein edit distance
 
 USE_PERL5=	configure
 USES=		perl5

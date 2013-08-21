@@ -15,7 +15,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \
 DISTNAME=	icecast-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A streaming mp3/ogg-vorbis audio server
+COMMENT=	Streaming mp3/ogg-vorbis audio server
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		shout.5:${PORTSDIR}/audio/libshout2 \

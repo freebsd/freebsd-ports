@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A local mail delivery agent
+COMMENT=	Local mail delivery agent
 
 INSTALL_TARGET=	install-suid install.man
 MAKE_JOBS_UNSAFE=	yes

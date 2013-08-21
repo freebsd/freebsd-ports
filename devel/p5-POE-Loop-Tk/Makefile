@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A bridge that allows POE to be driven by Tk
+COMMENT=	Bridge that allows POE to be driven by Tk
 
 BUILD_DEPENDS=	p5-POE>=1.289:${PORTSDIR}/devel/p5-POE \
 		p5-Tk>=804.028:${PORTSDIR}/x11-toolkits/p5-Tk

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:CLSUNG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A perl interface to Plurk API
+COMMENT=	Perl interface to Plurk API
 
 BUILD_DEPENDS=	p5-AnyEvent-HTTP>=0:${PORTSDIR}/www/p5-AnyEvent-HTTP \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \

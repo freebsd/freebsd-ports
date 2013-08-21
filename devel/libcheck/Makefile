@@ -8,7 +8,7 @@ MASTER_SITES=	SF/check/check/${PORTVERSION}
 DISTNAME=	check-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A unit test framework for C
+COMMENT=	Unit test framework for C
 
 LICENSE=	LGPL21
 

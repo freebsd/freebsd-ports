@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An object-orientated uncertainty object
+COMMENT=	Object-orientated uncertainty object
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

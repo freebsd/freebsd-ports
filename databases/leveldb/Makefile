@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A fast and lightweight key/value database library by Google
+COMMENT=	Fast and lightweight key/value database library by Google
 
 OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
 OPTIONS_DEFAULT=SNAPPY

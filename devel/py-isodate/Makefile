@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An ISO 8601 date/time/duration parser and formater
+COMMENT=	ISO 8601 date/time/duration parser and formater
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

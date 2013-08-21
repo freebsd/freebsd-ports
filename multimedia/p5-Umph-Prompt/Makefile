@@ -12,7 +12,7 @@ MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An interactive prompt module for umph and similar programs
+COMMENT=	Interactive prompt module for umph and similar programs
 
 USE_PERL5=	configure
 USES=		perl5

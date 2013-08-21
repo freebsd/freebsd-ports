@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A framework for adding additional metadata to Moose classes
+COMMENT=	Framework for adding additional metadata to Moose classes
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

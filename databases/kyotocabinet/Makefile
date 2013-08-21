@@ -8,7 +8,7 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A straightforward implementation of DBM
+COMMENT=	Straightforward implementation of DBM
 
 LICENSE=	GPLv3
 

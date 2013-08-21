@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A python web framework to use qpy and durus together
+COMMENT=	Python web framework to use qpy and durus together
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}durus>=0:${PORTSDIR}/devel/py-durus \
 		${PYTHON_PKGNAMEPREFIX}qpy>=1.7:${PORTSDIR}/www/py-qpy

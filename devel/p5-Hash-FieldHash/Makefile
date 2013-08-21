@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A lightweight field hash implementation
+COMMENT=	Lightweight field hash implementation
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

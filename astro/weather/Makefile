@@ -8,7 +8,7 @@ MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An utility to provide current weather conditions and forecasts
+COMMENT=	Utility to provide current weather conditions and forecasts
 
 LICENSE=	ISCL
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A set of tools to ease organising a collection of audio files
+COMMENT=	Set of tools to ease organising a collection of audio files
 
 BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
 		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag

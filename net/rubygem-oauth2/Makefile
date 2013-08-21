@@ -7,7 +7,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A Ruby wrapper for the OAuth 2.0 protocol
+COMMENT=	Ruby wrapper for the OAuth 2.0 protocol
 
 LICENSE=	MIT
 

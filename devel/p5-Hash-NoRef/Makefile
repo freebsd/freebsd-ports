@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A HASH that store values without increase the reference count
+COMMENT=	HASH that store values without increase the reference count
 
 USE_PERL5=	configure
 USES=		perl5

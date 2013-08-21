@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A toolbar widget for Perl/Tk
+COMMENT=	Toolbar widget for Perl/Tk
 
 BUILD_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/p5-Tk-CursorControl
 RUN_DEPENDS:=	${BUILD_DEPENDS}

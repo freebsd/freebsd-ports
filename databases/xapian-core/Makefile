@@ -9,7 +9,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A probabilistic text search database engine
+COMMENT=	Probabilistic text search database engine
 
 LICENSE=	GPLv2
 
