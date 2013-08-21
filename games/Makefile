@@ -933,6 +933,7 @@
     SUBDIR += tksol
     SUBDIR += tmw
     SUBDIR += tomatoes
+    SUBDIR += tomenet
     SUBDIR += tong
     SUBDIR += toppler
     SUBDIR += torcs
