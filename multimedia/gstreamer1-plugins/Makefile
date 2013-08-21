@@ -17,27 +17,26 @@ PKGNAMESUFFIX?=	1-plugins${GST_PLUGIN_SUFFIX}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
-BUILD_DEPENDS+=	gobject-introspection>=1.31.1:${PORTSDIR}/devel/gobject-introspection \
-		gstreamer1>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1 \
+BUILD_DEPENDS+=	gstreamer1>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1 \
 		iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		orc>=0.4.16:${PORTSDIR}/devel/orc
-LIB_DEPENDS+=	gstreamer-1.0:${PORTSDIR}/multimedia/gstreamer1 \
-		freetype:${PORTSDIR}/print/freetype2 \
-		orc-0.4:${PORTSDIR}/devel/orc
+LIB_DEPENDS+=	libgstreamer-1.0.so:${PORTSDIR}/multimedia/gstreamer1 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		liborc-0.4.so:${PORTSDIR}/devel/orc
 RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-BASE_PORTVERSION=	1.0.7
+BASE_PORTVERSION=	1.0.9
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	1.0.7
+BAD_PORTVERSION=	1.0.9
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	1.0.7
+GOOD_PORTVERSION=	1.0.9
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	1.0.7
+UGLY_PORTVERSION=	1.0.9
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
@@ -45,11 +44,10 @@ DIST?=		base
 SHLIB_VERSION=	0
 VERSION=	${GST1_VERSION}
 
-USES=		gettext pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 WANT_GSTREAMER=	yes
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME+=	ltverhack:0 ltasneededhack libxml2
+USE_GNOME+=	introspection:build libxml2 ltverhack:0 ltasneededhack
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 USE_LDCONFIG=	yes
@@ -58,7 +56,7 @@ CFLAGS:=	${CFLAGS} -O2 -Wno-format
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}
 
-# workaround a crash in clang 3.3 crash llvm bug # 15840
+# workaround a clang crash with clang 3.3, llvm bug # 15840
 USE_GCC=	any
 
 DEFAULT_AUDIOSINK?=	osssink
