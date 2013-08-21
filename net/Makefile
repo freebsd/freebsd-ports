@@ -924,6 +924,7 @@
     SUBDIR += py-ndg_httpsclient
     SUBDIR += py-netaddr
     SUBDIR += py-netifaces
+    SUBDIR += py-netlib
     SUBDIR += py-netstring
     SUBDIR += py-novaclient
     SUBDIR += py-oauth
