@@ -28,6 +28,7 @@
 %%SITE_PERL%%/POE/Queue/Array.pm
 %%SITE_PERL%%/POE/Resource.pm
 %%SITE_PERL%%/POE/Resource/Aliases.pm
+%%SITE_PERL%%/POE/Resource/Clock.pm
 %%SITE_PERL%%/POE/Resource/Events.pm
 %%SITE_PERL%%/POE/Resource/Extrefs.pm
 %%SITE_PERL%%/POE/Resource/FileHandles.pm
