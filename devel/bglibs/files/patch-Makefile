@@ -9,3 +9,12 @@
  
  base64/asc2bin.lo: libcompile base64/asc2bin.c base64/base64.h str/str.h
  	./libcompile base64/asc2bin.c
+@@ -877,7 +877,7 @@
+ 
+  perl-head.pl: 
+	( set -e; PATH="/bin:/usr/bin:/usr/local/bin:$$PATH"; export PATH; \
+-	  perl=`which perl`; \
++	  perl=`which perl` || perl="/usr/local/bin/perl"; \
+	  echo "#! $$perl"; \
+	  echo "# WARNING: This file was auto-generated. Do not edit!"; \
+	  echo ) >perl-head.pl
