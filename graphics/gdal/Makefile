@@ -26,8 +26,8 @@ LDFLAGS+=	-L${LOCALBASE} ${PTHREAD_LIBS}
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
 

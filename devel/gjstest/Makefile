@@ -26,7 +26,7 @@ ALL_TARGET=	default
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 CXXFLAGS+=	-L${LOCALBASE}/lib
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PROJECTHOST=	google-js-test
 SNAPSHOT=	20130304

@@ -23,9 +23,9 @@ LIBTOOLFILES=	# empty
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 
 post-patch:

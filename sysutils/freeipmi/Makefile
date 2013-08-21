@@ -30,8 +30,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 INFO=		freeipmi-faq
 MAN3=		libfreeipmi.3 libipmiconsole.3 libipmidetect.3 libipmimonitoring.3

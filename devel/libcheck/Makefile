@@ -16,9 +16,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CONFIGURE_ENV=	ac_cv_path_AWK_PATH=${AWK}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		gmake pathfix
 
 INFO=		check
 MAN1=		checkmk.1

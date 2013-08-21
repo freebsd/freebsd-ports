@@ -24,7 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 DOCS=		README doc/libmaa.600dpi.ps

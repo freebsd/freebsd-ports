@@ -21,7 +21,7 @@ CONFIGURE_ENV=	M4FLAGS=""
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_FORTRAN=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		ncmpidiff.1 ncmpidump.1 ncmpigen.1
 MAN3=		pnetcdf.3

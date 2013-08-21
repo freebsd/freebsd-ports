@@ -17,8 +17,8 @@ OPTIONS_DEFINE=	DOCS
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
 USE_GCC=	4.2+
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 MAN1=		kccachetest.1 \
 		kcdirmgr.1 \

@@ -21,7 +21,7 @@ CONFLICTS?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
 MAKE_ARGS=	STRIP=${STRIP_CMD}
 MAKEFILE=	makefile.unix
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unrar
