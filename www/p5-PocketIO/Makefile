@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
 		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP \
 		p5-Twiggy>=0:${PORTSDIR}/www/p5-Twiggy
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		PocketIO.3 \
 		PocketIO::Broadcast.3 \

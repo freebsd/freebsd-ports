@@ -17,7 +17,8 @@ COMMENT=	Force set environment variables for testing
 BUILD_DEPENDS=	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
 RUN_DEPENDS=	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Plack::Middleware::ForceEnv.3
 

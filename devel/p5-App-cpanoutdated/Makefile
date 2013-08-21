@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-CPAN-DistnameInfo>=0.10:${PORTSDIR}/devel/p5-CPAN-DistnameInfo
 		p5-local-lib>=0:${PORTSDIR}/devel/p5-local-lib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		cpan-outdated.1
 MAN3=		App::cpanoutdated.3

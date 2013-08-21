@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
 RUN_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-PPI>=1.206:${PORTSDIR}/textproc/p5-PPI
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Marpa::Advanced::Algorithm.3 \
 		Marpa::Advanced::Bibliography.3 \

@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Moos>=0.13:${PORTSDIR}/devel/p5-Moos \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		HTML::Parser::Simple.3 \
 		HTML::Parser::Simple::Attributes.3 \

@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-strictures>=0:${PORTSDIR}/devel/p5-strictures
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Role::Tiny.3 \
 		Role::Tiny::With.3

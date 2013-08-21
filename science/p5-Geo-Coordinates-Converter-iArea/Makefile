@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-CDB_File>=0.96:${PORTSDIR}/databases/p5-CDB_File \
 		p5-File-ShareDir>=1.02:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Geo-Coordinates-Converter>=0.09:${PORTSDIR}/science/p5-Geo-Coordinates-Converter
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Geo::Coordinates::Converter::iArea.3 \
 		Geo::Coordinates::Converter::Format::IArea.3

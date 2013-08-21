@@ -20,7 +20,8 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 RUN_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Protocol::SocketIO.3 \
 		Protocol::SocketIO::Handshake.3 \

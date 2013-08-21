@@ -16,7 +16,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		WWW::Curl.3
 

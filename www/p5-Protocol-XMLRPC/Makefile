@@ -18,7 +18,8 @@ COMMENT=	XML-RPC implementation
 BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Protocol::XMLRPC.3 \
 		Protocol::XMLRPC::Client.3 \

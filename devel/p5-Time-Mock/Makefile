@@ -14,7 +14,8 @@ COMMENT=	Shift and scale time
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USE_PERL5=	modbuild
+USES=		perl5
 
 MAN3=		Time::Mock.3
 

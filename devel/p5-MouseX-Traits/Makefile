@@ -18,7 +18,8 @@ COMMENT=	Automatically apply roles at object creation time
 RUN_DEPENDS=	p5-Mouse>=0.81:${PORTSDIR}/devel/p5-Mouse
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		MouseX::Traits.3
 

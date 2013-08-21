@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-Lexical-Var>=0.006:${PORTSDIR}/devel/p5-Lexical-Var \
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	5.12.0+
+USE_PERL5=	5.12.0+ configure
+USES=		perl5
 
 MAN3=		Lexical::Import.3
 

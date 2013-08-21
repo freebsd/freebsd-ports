@@ -17,7 +17,8 @@ COMMENT=	Inspect and manipulate a Path based on a Package name
 RUN_DEPENDS=	p5-Moose>=0.64:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types-Path-Class>=0.04:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Devel::PackagePath.3
 

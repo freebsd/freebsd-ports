@@ -31,7 +31,8 @@ TEST_DEPENDS=	p5-Form-Sensible>=0:${PORTSDIR}/devel/p5-Form-Sensible \
 OPTIONS_DEFINE=	GRAPHVIZ
 GRAPHVIZ_DESC=	Visualize a Bread::Board system via Graphviz
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		visualize-breadboard.1
 MAN3=		Bread::Board.3 \

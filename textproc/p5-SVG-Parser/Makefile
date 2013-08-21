@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-SVG>=2:${PORTSDIR}/textproc/p5-SVG \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
 
-PERL_MODBUILD=	yes
+USE_PERL5=	modbuild
+USES=		perl5
 
 MAN3=		SVG::Parser.3 \
 		SVG::Parser::Expat.3 \

@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-PerlIO-Util>=0:${PORTSDIR}/devel/p5-PerlIO-Util
 TEST_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-Mouse>=0.40:${PORTSDIR}/devel/p5-Mouse
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Any::Moose::Convert.3
 

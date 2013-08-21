@@ -23,7 +23,8 @@ PORTSCOUT=	limitw:1,even
 
 CC=		${CXX}
 CONFIGURE_ARGS=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Search::Xapian.3 \
 		Search::Xapian::AssertionError.3 \

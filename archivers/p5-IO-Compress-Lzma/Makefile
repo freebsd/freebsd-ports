@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p7zip>=0:${PORTSDIR}/archivers/p7zip
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		IO::Compress::Lzma.3 IO::Compress::Xz.3 \
 		IO::Uncompress::UnLzma.3 IO::Uncompress::UnXz.3

@@ -33,9 +33,9 @@ CONFIGURE_ARGS+=--disable-threaded-resolver --disable-werror \
 		--without-axtls
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_XZ=		yes
-USES=		pathfix
+USES=		pathfix perl5
 
 .if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes

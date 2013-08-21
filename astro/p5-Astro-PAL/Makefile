@@ -16,7 +16,8 @@ COMMENT=	Perl interface to Starlink PAL positional astronomy library
 
 LICENSE=	GPLv3
 
-PERL_MODBUILD=	yes
+USE_PERL5=	modbuild
+USES=		perl5
 
 MAN1=		stime.1
 MAN3=		Astro::PAL.3

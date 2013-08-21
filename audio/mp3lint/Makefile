@@ -17,7 +17,8 @@ COMMENT=	A configurable tool to check collections of audio files
 BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
 RUN_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		mp3lintsum.1 mp3lintskip.1 mp3lint.1
 MAN3=		mp3lint-tools.3

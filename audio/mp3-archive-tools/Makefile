@@ -20,7 +20,8 @@ BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
 RUN_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
 		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		cddbtofilename.1 filenametoid3.1 freedbtofilename.1 \
 		id3tofilename.1 movemusic.1 mp3-archive-tools.1 mp3id.1 \

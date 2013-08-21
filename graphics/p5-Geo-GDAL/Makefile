@@ -17,7 +17,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
 
-USE_PERL5=	yes
+USES=		perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
 
 post-patch:

@@ -19,7 +19,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 PATCH_WRKSRC=	${WRKSRC}/perl_ext
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
-USE_PERL5=	yes
+USES=		perl5
 
 MASTERDIR=	${.CURDIR}/../../graphics/ming
 SLAVEPORT=	p5

@@ -14,7 +14,8 @@ COMMENT=	Unicode Collation Algorithm
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Unicode::Collate.3 \
 		Unicode::Collate::CJK::Big5.3 \

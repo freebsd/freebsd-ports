@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Astro-WaveBand>=0:${PORTSDIR}/astro/p5-Astro-WaveBand \
 		p5-Number-Uncertainty>=0:${PORTSDIR}/math/p5-Number-Uncertainty
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Astro::Flux.3 \
 		Astro::FluxColor.3 \

@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Time-Mock>=0:${PORTSDIR}/devel/p5-Time-Mock
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		HTTP::CookieJar.3 \
 		HTTP::CookieJar::LWP.3

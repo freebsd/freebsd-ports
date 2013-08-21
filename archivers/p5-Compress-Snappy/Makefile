@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	snappy:${PORTSDIR}/archivers/snappy
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Compress::Snappy.3
 

@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Module-Build-Tiny>=0.021:${PORTSDIR}/devel/p5-Module-Build-Tiny
 
-PERL_MODBUILD=	yes
+USE_PERL5=	modbuild
+USES=		perl5
 
 MAN3=		experimental.3
 

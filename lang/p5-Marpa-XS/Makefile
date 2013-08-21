@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 TEST_DEPENDS=	p5-Test-Weaken>=3.004000:${PORTSDIR}/devel/p5-Test-Weaken
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Marpa::XS.3 \
 		Marpa::XS::Advanced::Bibliography.3 \

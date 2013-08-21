@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Moose>=1.21:${PORTSDIR}/devel/p5-Moose \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		MooseX::Meta::Method::Transactional.3 \
 		MooseX::TransactionalMethods.3

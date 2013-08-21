@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-POE>=1.289:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS=	p5-POE>=1.289:${PORTSDIR}/devel/p5-POE \
 		p5-Tk>=804.028:${PORTSDIR}/x11-toolkits/p5-Tk
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		POE::Loop::Tk.3 \
 		POE::Loop::TkActiveState.3 \

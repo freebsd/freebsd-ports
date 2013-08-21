@@ -26,7 +26,8 @@ TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Sys-Info>=0.20:${PORTSDIR}/devel/p5-Test-Sys-Info
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Sys::Info::Driver::BSD.3 \
 		Sys::Info::Driver::BSD::Device.3 \

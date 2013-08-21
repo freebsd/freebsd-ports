@@ -15,7 +15,8 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-Test-YAML-Valid>=0.03:${PORTSDIR}/devel/p5-Test-YAML-Valid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Test::CPAN::Meta::YAML.3 \
 		Test::CPAN::Meta::YAML::Version.3

@@ -17,7 +17,8 @@ COMMENT=	An object-orientated uncertainty object
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Number::Uncertainty.3
 

@@ -18,7 +18,8 @@ COMMENT=	Perl wrapper for chinese/cconv
 LIB_DEPENDS=	cconv:${PORTSDIR}/chinese/cconv
 
 CFLAGS+=	-I${LOCALBASE}/include
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		${PORTNAME}.3
 

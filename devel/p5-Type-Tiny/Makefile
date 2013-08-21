@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 		p5-Sub-Exporter-Lexical>=0:${PORTSDIR}/devel/p5-Sub-Exporter-Lexical \
 		p5-Validation-Class>=0:${PORTSDIR}/devel/p5-Validation-Class
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN3=		Devel::TypeTiny::Perl56Compat.3 \
 		Eval::TypeTiny.3 \

@@ -22,7 +22,8 @@ BUILD_DEPENDS=	couchdb>=0.9.0:${PORTSDIR}/databases/couchdb \
 		p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard
 BUILD_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		couchdb-push.1
 MAN3=		AnyEvent::CouchDB.3 \
