@@ -257,6 +257,7 @@
     SUBDIR += colorgcc
     SUBDIR += colormake
     SUBDIR += combat
+    SUBDIR += commit-patch
     SUBDIR += common_lib
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
