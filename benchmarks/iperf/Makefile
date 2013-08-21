@@ -7,12 +7,12 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A tool to measure maximum TCP and UDP bandwidth
+COMMENT=	Tool to measure maximum TCP and UDP bandwidth
 
 LICENSE=	BSD
 
 OPTIONS_DEFINE=	DOCS IPV6 THREADS
-OPTIONS_DEFAULT=IPV6 THREADS
+OPTIONS_DEFAULT=THREADS
 
 GNU_CONFIGURE=	yes
 
