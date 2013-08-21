@@ -3,6 +3,7 @@
 
 PORTNAME=	Glib-Object-Introspection
 PORTVERSION=	0.015
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,28 +14,26 @@ COMMENT=	Dynamically create Perl language bindings
 LICENSE=	LGPL21
 
 # t/vfunc-ref-counting.t requires gobject-introspection 1.35.5+
-BUILD_DEPENDS=	gobject-introspection>=0.10.0:${PORTSDIR}/devel/gobject-introspection \
-		p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		p5-Glib2>=1.270:${PORTSDIR}/devel/p5-Glib2
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
-RUN_DEPENDS=	gobject-introspection>=0.10.0:${PORTSDIR}/devel/gobject-introspection \
-		p5-Glib2>=1.270:${PORTSDIR}/devel/p5-Glib2
+RUN_DEPENDS=	p5-Glib2>=1.270:${PORTSDIR}/devel/p5-Glib2
 TEST_DEPENDS=	p5-Cairo-GObject>=0:${PORTSDIR}/devel/p5-Cairo-GObject
 
 OPTIONS_DEFINE=	TEST
 
 PERL_CONFIGURE=	yes
+USE_GNOME=	introspection
 
 MAN3=		Glib::Object::Introspection.3
 
 .include <bsd.port.options.mk>
 
-# Glib::Object::Introspection requires cairo, gio-fam-backend and glib20 to build
+# Glib::Object::Introspection requires cairo and glib20 to build
 # test libraries during build phase, therefore we add them to BUILD_DEPENDS.
 .if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/cairo.pc:${PORTSDIR}/graphics/cairo \
-		${LOCALBASE}/libdata/pkgconfig/gio-2.0.pc:${PORTSDIR}/devel/gio-fam-backend \
 		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20
 .endif
 
