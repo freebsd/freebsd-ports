@@ -6,8 +6,12 @@ bin/mogstored
 %%SITE_PERL%%/MogileFS/Class.pm
 %%SITE_PERL%%/MogileFS/Config.pm
 %%SITE_PERL%%/MogileFS/Connection/Client.pm
+%%SITE_PERL%%/MogileFS/Connection/HTTP.pm
 %%SITE_PERL%%/MogileFS/Connection/Mogstored.pm
+%%SITE_PERL%%/MogileFS/Connection/Parent.pm
+%%SITE_PERL%%/MogileFS/Connection/Poolable.pm
 %%SITE_PERL%%/MogileFS/Connection/Worker.pm
+%%SITE_PERL%%/MogileFS/ConnectionPool.pm
 %%SITE_PERL%%/MogileFS/DevFID.pm
 %%SITE_PERL%%/MogileFS/Device.pm
 %%SITE_PERL%%/MogileFS/DeviceState.pm
