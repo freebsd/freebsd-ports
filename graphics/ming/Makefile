@@ -23,7 +23,7 @@ LDFLAGS+=	-L. -L.. -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		bison gmake pathfix
+USES+=		bison gmake pathfix
 
 DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
