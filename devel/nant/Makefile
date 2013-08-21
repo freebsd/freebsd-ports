@@ -1,9 +1,5 @@
-# New ports collection makefile for:	NAnt
-# Date created:		2005-5-21
-# Whom:		Christopher Nehren <apeiron+ports@coitusmentis.info>
-#
+# Created by: Christopher Nehren <apeiron+ports@coitusmentis.info>
 # $FreeBSD$
-#
 
 PORTNAME=	nant
 PORTVERSION=	0.91
@@ -12,10 +8,12 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A .NET build tool inspired by Ant
+COMMENT=	.NET build tool inspired by Ant
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 BROKEN=		fails to build
 
@@ -27,15 +25,17 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|MCS=mcs|MCS=dmcs|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '903,910 d' ${WRKSRC}/NAnt.build
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
 .endif
