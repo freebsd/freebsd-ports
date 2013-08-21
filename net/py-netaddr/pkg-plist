@@ -33,9 +33,9 @@ bin/netaddr
 %%PYTHON_SITELIBDIR%%/netaddr/ip/intset.py
 %%PYTHON_SITELIBDIR%%/netaddr/ip/intset.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/ip/intset.pyo
-%%PYTHON_SITELIBDIR%%/netaddr/ip/ipv4-address-space
-%%PYTHON_SITELIBDIR%%/netaddr/ip/ipv6-address-space
-%%PYTHON_SITELIBDIR%%/netaddr/ip/multicast-addresses
+%%PYTHON_SITELIBDIR%%/netaddr/ip/ipv4-address-space.xml
+%%PYTHON_SITELIBDIR%%/netaddr/ip/ipv6-address-space.xml
+%%PYTHON_SITELIBDIR%%/netaddr/ip/multicast-addresses.xml
 %%PYTHON_SITELIBDIR%%/netaddr/ip/nmap.py
 %%PYTHON_SITELIBDIR%%/netaddr/ip/nmap.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/ip/nmap.pyo

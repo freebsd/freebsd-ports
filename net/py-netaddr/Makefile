@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.10
 CATEGORIES=	net python
-MASTER_SITES=	https://github.com/drkjam/${PORTNAME}/downloads/ \
-		CHEESESHOP
+MASTER_SITES=	https://github.com/drkjam/${PORTNAME}/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +21,9 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	AUTHORS CHANGELOG README
 TESTFILES=	__init__.py
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
