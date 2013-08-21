@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	6.25
-PORTREVISION=	1
+DISTVERSION=	6.40
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -12,21 +11,42 @@ MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
 
 # http://nmap.org/book/man-legal.html
+# Install the nmap modified license because of
+# http://insecure.org/news/download-com-fiasco.html
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_LUA=	5.1
+USE_LUA=	5.1 5.2
 LUA_COMPS=	lua
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-localdirs \
+
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DOCS IPV6 SSL
+OPTIONS_DEFAULT=IPV6 SSL
+
+SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
+SSL_CONFIGURE_OFF=	--without-openssl
+SSL_CFLAGS=		-I${OPENSSLINC}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
+.else
+PKGNAMESUFFIX=	-nossl
+.endif
+
+CONFIGURE_ARGS+=--without-localdirs \
 		--without-zenmap \
 		--without-ndiff \
 		--with-libpcre=${LOCALBASE} \
 		--with-liblua=${LOCALBASE} \
 		--without-nmap-update
+
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
 # fix for gcc from ports
@@ -36,35 +56,16 @@ CONFIGURE_ARGS+=LDFLAGS="-L$$(${GCCLIBDIR_CMDS})"
 NDCC=	true
 .endif
 
-MANLANG=	"" de es fr hr hu it jp pl pt_BR pt_PT ro ru sk zh
+PORTDOCS=	CHANGELOG HACKING
+MANLANG=	"" de es fr hr hu it ja pl pt_BR pt_PT ro ru sk zh
 MAN1=		nmap.1
 MAN1_EN=	ncat.1 nping.1
 
-.ifndef WITHOUT_SSL
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-CFLAGS+=		-I${OPENSSLINC}
-PLIST_SUB+=		WITHSSL=""
-.else
-PKGNAMESUFFIX=		-nossl
-CONFIGURE_ARGS+=	--without-openssl
-PLIST_SUB+=		WITHSSL="@comment "
-.endif
-
-# XXX: Workaround if OS is build with WITHOUT_INET6
-#  PR: ports/159376
-#
-# Note: If this option is specified in src.conf it has to
-#  be defined as param -DWITHOUT_INET6 during build time
-#  since the port system has no access to src.conf
-.if defined(WITHOUT_INET6)
-LIB_DEPENDS+=		pcap:${PORTSDIR}/net/libpcap
+# PR: ports/159376  Workaround if OS is build with WITHOUT_INET6
+.if ! ${PORT_OPTIONS:MIPV6}
+LIB_DEPENDS+=		libpcap.so:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-libpcap=${LOCALBASE}
 .endif
-
-PORTDOCS=	CHANGELOG HACKING
-EXAMPLES=	docs/sample-script.nse
-PORTEXAMPLES=	${EXAMPLES:T}
 
 # XXX limit results if we do a grep in the sources!
 post-extract:
@@ -72,33 +73,20 @@ post-extract:
 
 # reflect new mailing addreses
 pre-patch:
-	@for f in $$(${GREP} -Rl "nmap-dev@insecure.org" ${WRKSRC}); do\
-		${SED} -i '' -e 's|nmap-dev@insecure.org|dev@nmap.org|g' $${f} ;\
-	done
-	@for f in $$(${GREP} -Rl "http://cgi.insecure.org/mailman" ${WRKSRC}); do\
-		${SED} -i '' -e 's|http://cgi.insecure.org/mailman/listinfo/nmap-dev|http://nmap.org/mailman/listinfo/dev|g' $${f} ;\
-	done
-
-post-patch:
-# fix from r30346
-	@${REINPLACE_CMD} -e 's|~0L;|0xffffffffL;|' ${WRKSRC}/nbase/nbase_misc.c
+	${SED} -i '' -e 's|nmap-dev@insecure.org|dev@nmap.org|g' \
+	    ${WRKSRC}/nsock/src/nsock_core.c \
+	    ${WRKSRC}/zenmap/share/zenmap/locale/hr/LC_MESSAGES/zenmap.mo
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile
 
 post-install:
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.	for i in ${PORTDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.	endfor
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-.ifndef NOPORTEXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
-.	for i in ${EXAMPLES}
-		@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}
-.	endfor
-.endif
+
+# gcc from ports is in use
 .if defined(NDCC)
 	@${ECHO_MSG} do not forget to adjust libnmap.conf
 .endif

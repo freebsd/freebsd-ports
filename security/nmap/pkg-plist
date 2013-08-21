@@ -1,7 +1,7 @@
 bin/ncat
 bin/nmap
 bin/nping
-%%WITHSSL%%share/ncat/ca-bundle.crt
+%%SSL%%share/ncat/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
 %%DATADIR%%/nmap-payloads
@@ -34,16 +34,19 @@ bin/nping
 %%DATADIR%%/nselib/data/http-folders.txt
 %%DATADIR%%/nselib/data/http-sql-errors.lst
 %%DATADIR%%/nselib/data/http-web-files-extensions.lst
+%%DATADIR%%/nselib/data/ike-fingerprints.lua
 %%DATADIR%%/nselib/data/jdwp-class/JDWPExecCmd.class
 %%DATADIR%%/nselib/data/jdwp-class/JDWPExecCmd.java
 %%DATADIR%%/nselib/data/jdwp-class/JDWPSystemInfo.class
 %%DATADIR%%/nselib/data/jdwp-class/JDWPSystemInfo.java
 %%DATADIR%%/nselib/data/jdwp-class/README.txt
+%%DATADIR%%/nselib/data/mgroupnames.db
 %%DATADIR%%/nselib/data/mysql-cis.audit
 %%DATADIR%%/nselib/data/oracle-default-accounts.lst
 %%DATADIR%%/nselib/data/oracle-sids
 %%DATADIR%%/nselib/data/packetdecoders.lua
 %%DATADIR%%/nselib/data/passwords.lst
+%%DATADIR%%/nselib/data/pixel.gif
 %%DATADIR%%/nselib/data/psexec/README
 %%DATADIR%%/nselib/data/psexec/backdoor.lua
 %%DATADIR%%/nselib/data/psexec/default.lua
@@ -78,6 +81,7 @@ bin/nping
 %%DATADIR%%/nselib/http.lua
 %%DATADIR%%/nselib/httpspider.lua
 %%DATADIR%%/nselib/iax2.lua
+%%DATADIR%%/nselib/ike.lua
 %%DATADIR%%/nselib/imap.lua
 %%DATADIR%%/nselib/informix.lua
 %%DATADIR%%/nselib/ipOps.lua
@@ -276,7 +280,9 @@ bin/nping
 %%DATADIR%%/scripts/hbase-region-info.nse
 %%DATADIR%%/scripts/hddtemp-info.nse
 %%DATADIR%%/scripts/hostmap-bfk.nse
+%%DATADIR%%/scripts/hostmap-ip2hosts.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
+%%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse
 %%DATADIR%%/scripts/http-affiliate-id.nse
 %%DATADIR%%/scripts/http-apache-negotiation.nse
 %%DATADIR%%/scripts/http-auth-finder.nse
@@ -288,6 +294,8 @@ bin/nping
 %%DATADIR%%/scripts/http-brute.nse
 %%DATADIR%%/scripts/http-cakephp-version.nse
 %%DATADIR%%/scripts/http-chrono.nse
+%%DATADIR%%/scripts/http-coldfusion-subzero.nse
+%%DATADIR%%/scripts/http-comments-displayer.nse
 %%DATADIR%%/scripts/http-config-backup.nse
 %%DATADIR%%/scripts/http-cors.nse
 %%DATADIR%%/scripts/http-date.nse
@@ -299,6 +307,7 @@ bin/nping
 %%DATADIR%%/scripts/http-enum.nse
 %%DATADIR%%/scripts/http-exif-spider.nse
 %%DATADIR%%/scripts/http-favicon.nse
+%%DATADIR%%/scripts/http-fileupload-exploiter.nse
 %%DATADIR%%/scripts/http-form-brute.nse
 %%DATADIR%%/scripts/http-form-fuzzer.nse
 %%DATADIR%%/scripts/http-frontpage-login.nse
@@ -322,6 +331,7 @@ bin/nping
 %%DATADIR%%/scripts/http-open-redirect.nse
 %%DATADIR%%/scripts/http-passwd.nse
 %%DATADIR%%/scripts/http-php-version.nse
+%%DATADIR%%/scripts/http-phpmyadmin-dir-traversal.nse
 %%DATADIR%%/scripts/http-phpself-xss.nse
 %%DATADIR%%/scripts/http-proxy-brute.nse
 %%DATADIR%%/scripts/http-put.nse
@@ -334,6 +344,7 @@ bin/nping
 %%DATADIR%%/scripts/http-slowloris-check.nse
 %%DATADIR%%/scripts/http-slowloris.nse
 %%DATADIR%%/scripts/http-sql-injection.nse
+%%DATADIR%%/scripts/http-stored-xss.nse
 %%DATADIR%%/scripts/http-title.nse
 %%DATADIR%%/scripts/http-tplink-dir-traversal.nse
 %%DATADIR%%/scripts/http-trace.nse
@@ -350,6 +361,7 @@ bin/nping
 %%DATADIR%%/scripts/http-vuln-cve2011-3192.nse
 %%DATADIR%%/scripts/http-vuln-cve2011-3368.nse
 %%DATADIR%%/scripts/http-vuln-cve2012-1823.nse
+%%DATADIR%%/scripts/http-vuln-cve2013-0156.nse
 %%DATADIR%%/scripts/http-waf-detect.nse
 %%DATADIR%%/scripts/http-waf-fingerprint.nse
 %%DATADIR%%/scripts/http-wordpress-brute.nse
@@ -358,6 +370,7 @@ bin/nping
 %%DATADIR%%/scripts/iax2-brute.nse
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/icap-info.nse
+%%DATADIR%%/scripts/ike-version.nse
 %%DATADIR%%/scripts/imap-brute.nse
 %%DATADIR%%/scripts/imap-capabilities.nse
 %%DATADIR%%/scripts/informix-brute.nse
@@ -418,11 +431,13 @@ bin/nping
 %%DATADIR%%/scripts/ms-sql-xp-cmdshell.nse
 %%DATADIR%%/scripts/msrpc-enum.nse
 %%DATADIR%%/scripts/mtrace.nse
+%%DATADIR%%/scripts/murmur-version.nse
 %%DATADIR%%/scripts/mysql-audit.nse
 %%DATADIR%%/scripts/mysql-brute.nse
 %%DATADIR%%/scripts/mysql-databases.nse
 %%DATADIR%%/scripts/mysql-dump-hashes.nse
 %%DATADIR%%/scripts/mysql-empty-password.nse
+%%DATADIR%%/scripts/mysql-enum.nse
 %%DATADIR%%/scripts/mysql-info.nse
 %%DATADIR%%/scripts/mysql-query.nse
 %%DATADIR%%/scripts/mysql-users.nse
@@ -560,6 +575,7 @@ bin/nping
 %%DATADIR%%/scripts/targets-ipv6-multicast-slaac.nse
 %%DATADIR%%/scripts/targets-sniffer.nse
 %%DATADIR%%/scripts/targets-traceroute.nse
+%%DATADIR%%/scripts/teamspeak2-version.nse
 %%DATADIR%%/scripts/telnet-brute.nse
 %%DATADIR%%/scripts/telnet-encryption.nse
 %%DATADIR%%/scripts/tftp-enum.nse
@@ -568,6 +584,7 @@ bin/nping
 %%DATADIR%%/scripts/unusual-port.nse
 %%DATADIR%%/scripts/upnp-info.nse
 %%DATADIR%%/scripts/url-snarf.nse
+%%DATADIR%%/scripts/ventrilo-info.nse
 %%DATADIR%%/scripts/versant-info.nse
 %%DATADIR%%/scripts/vmauthd-brute.nse
 %%DATADIR%%/scripts/vnc-brute.nse
@@ -587,7 +604,7 @@ bin/nping
 @dirrm %%DATADIR%%/nselib/data
 @dirrm %%DATADIR%%/nselib
 @dirrm %%DATADIR%%
-%%WITHSSL%%@dirrm share/ncat
+%%SSL%%@dirrm share/ncat
 @dirrmtry man/zh/man1
 @dirrmtry man/zh
 @dirrmtry man/sk/man1
@@ -602,8 +619,8 @@ bin/nping
 @dirrmtry man/pt_BR
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
-@dirrmtry man/jp/man1
-@dirrmtry man/jp
+@dirrmtry man/ja/man1
+@dirrmtry man/ja
 @dirrmtry man/it/man1
 @dirrmtry man/it
 @dirrmtry man/hu/man1
