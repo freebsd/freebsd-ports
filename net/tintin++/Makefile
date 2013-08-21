@@ -8,7 +8,7 @@ MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A client program to help playing MUDs
+COMMENT=	Client program to help playing MUDs
 
 LICENSE=	GPLv2
 

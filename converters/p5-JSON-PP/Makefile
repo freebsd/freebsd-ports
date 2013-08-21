@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MAKAMAKA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A JSON::XS compatible pure-Perl module
+COMMENT=	JSON::XS compatible pure-Perl module
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -7,7 +7,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A library for HTTP authentication protocol in RFC 2617
+COMMENT=	Library for HTTP authentication protocol in RFC 2617
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A programing interface to decode/encode audio data
+COMMENT=	Programing interface to decode/encode audio data
 
 LICENSE=	BSD
 

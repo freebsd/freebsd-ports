@@ -8,7 +8,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/petdance/tidyp/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A library and program to validate and fix HTML
+COMMENT=	Library and program to validate and fix HTML
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

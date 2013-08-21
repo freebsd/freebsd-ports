@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}-Lazarus \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
+COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs
 
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 

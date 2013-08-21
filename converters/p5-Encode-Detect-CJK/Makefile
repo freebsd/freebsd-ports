@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A charset detector for East Asia charsets and website contents
+COMMENT=	Charset detector for East Asia charsets and website contents
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

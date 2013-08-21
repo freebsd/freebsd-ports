@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/ \
 DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A Unix utility for tracking down wasted disk space
+COMMENT=	Unix utility for tracking down wasted disk space
 
 GNU_CONFIGURE=	yes
 

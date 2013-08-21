@@ -7,7 +7,7 @@ CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A documentation generation tool for Ruby
+COMMENT=	Documentation generation tool for Ruby
 
 LICENSE=	MIT
 

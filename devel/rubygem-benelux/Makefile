@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A mad way to time Ruby codes
+COMMENT=	Mad way to time Ruby codes
 
 RUN_DEPENDS=	rubygem-attic>=0.5.3:${PORTSDIR}/devel/rubygem-attic \
 		rubygem-storable>=0.8.6:${PORTSDIR}/devel/rubygem-storable

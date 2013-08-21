@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A Perl Interface to the Google LevelDB NoSQL database
+COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 
 LIB_DEPENDS=	leveldb:${PORTSDIR}/databases/leveldb
 

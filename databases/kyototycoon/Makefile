@@ -8,7 +8,7 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A handy cache/storage server
+COMMENT=	Handy cache/storage server
 
 LICENSE=	GPLv3
 

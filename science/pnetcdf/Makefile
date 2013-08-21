@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/ \
 DISTNAME=	parallel-netcdf-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A library providing high-performance I/O
+COMMENT=	Library providing high-performance I/O
 
 OPTIONS_DEFINE=	DOCS OPENMPI
 OPENMPI_DESC=	Use openmpi instead of mpich2

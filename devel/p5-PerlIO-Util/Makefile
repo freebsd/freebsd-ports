@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A selection of general PerlIO utilities
+COMMENT=	Selection of general PerlIO utilities
 
 USE_PERL5=	configure
 USES=		perl5

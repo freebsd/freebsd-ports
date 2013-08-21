@@ -12,7 +12,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	jquery.${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A JavaScript library for image/html/multimedia content display
+COMMENT=	JavaScript library for image/html/multimedia content display
 
 NO_BUILD=	yes
 USE_ZIP=	yes
