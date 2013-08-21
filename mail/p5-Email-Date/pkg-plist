@@ -1,4 +1,3 @@
 %%SITE_PERL%%/Email/Date.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date
-
