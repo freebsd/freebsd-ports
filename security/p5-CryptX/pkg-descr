@@ -1,0 +1,13 @@
+CryptX - Crypto toolkit (self-contained no external libraries needed)
+
+Currently available modules:
+  *   Ciphers - see Crypt::Cipher and related modules
+  *   Block cipher modes
+  *   Authenticated encryption modes
+  *   Hash Functions - see Crypt::Digest and related modules
+  *   Message Authentication Codes
+  *   Public key cryptography
+  *   Cryptographically secure random number generators
+  *   Key derivation functions - PBKDF1, PBKFD2 and HKDF
+
+WWW: http://search.cpan.org/dist/CryptX/
