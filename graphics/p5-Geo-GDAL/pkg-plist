@@ -1,12 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL.dox
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL/Const.dox
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL/Const.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/OGR.dox
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/OGR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/OSR.dox
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/OSR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Geo/check_dox.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const/Const.bs
