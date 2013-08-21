@@ -23,8 +23,8 @@ SAMBA4_SUBPORT=		yes
 MASTERDIR=		${.CURDIR}/../../net/${SAMBA4_PORT}
 PKGDIR=			${.CURDIR}
 
-USES=		perl5
-USE_PERL5=	configure
+USES=			perl5
+USE_PERL5=		configure
 PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKSRC=			${WRKDIR}/${DISTNAME}/pidl
 
