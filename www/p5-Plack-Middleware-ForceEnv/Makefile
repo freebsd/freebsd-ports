@@ -15,7 +15,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Force set environment variables for testing
 
 BUILD_DEPENDS=	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
-RUN_DEPENDS=	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

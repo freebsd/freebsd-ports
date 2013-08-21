@@ -15,7 +15,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy interface to IO::Pty
 
 BUILD_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
-RUN_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

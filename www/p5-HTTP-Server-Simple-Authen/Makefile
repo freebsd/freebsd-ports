@@ -16,8 +16,7 @@ COMMENT=	Authentication plugin for HTTP::Server::Simple
 
 BUILD_DEPENDS=	p5-Authen-Simple>=0.4:${PORTSDIR}/security/p5-Authen-Simple \
 		p5-HTTP-Server-Simple>=0.16:${PORTSDIR}/www/p5-HTTP-Server-Simple
-RUN_DEPENDS=	p5-Authen-Simple>=0.4:${PORTSDIR}/security/p5-Authen-Simple \
-		p5-HTTP-Server-Simple>=0.16:${PORTSDIR}/www/p5-HTTP-Server-Simple
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

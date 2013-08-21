@@ -18,10 +18,7 @@ COMMENT=	BSD driver for Sys::Info
 BUILD_DEPENDS=	p5-BSD-Sysctl>=0.08:${PORTSDIR}/sysutils/p5-BSD-Sysctl \
 		p5-Sys-Info-Base>=${PORTVERSION}:${PORTSDIR}/devel/p5-Sys-Info-Base \
 		p5-Unix-Processors>=0:${PORTSDIR}/sysutils/p5-Unix-Processors
-RUN_DEPENDS=	p5-BSD-Sysctl>=0.08:${PORTSDIR}/sysutils/p5-BSD-Sysctl \
-		p5-Sys-Info-Base>=${PORTVERSION}:${PORTSDIR}/devel/p5-Sys-Info-Base \
-		p5-Unix-Processors>=0:${PORTSDIR}/sysutils/p5-Unix-Processors
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Sys-Info>=0.20:${PORTSDIR}/devel/p5-Test-Sys-Info

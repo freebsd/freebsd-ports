@@ -16,9 +16,7 @@ COMMENT=	Fetch information from the host system
 
 BUILD_DEPENDS=	p5-Sys-Info-Base>=${PORTVERSION}:${PORTSDIR}/devel/p5-Sys-Info-Base \
 		p5-Sys-Info-Driver-BSD>=${PORTVERSION}:${PORTSDIR}/devel/p5-Sys-Info-Driver-BSD
-RUN_DEPENDS=	p5-Sys-Info-Base>=${PORTVERSION}:${PORTSDIR}/devel/p5-Sys-Info-Base \
-		p5-Sys-Info-Driver-BSD>=${PORTVERSION}:${PORTSDIR}/devel/p5-Sys-Info-Driver-BSD
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Sys-Info-Driver-BSD>=0.20:${PORTSDIR}/devel/p5-Test-Sys-Info \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage

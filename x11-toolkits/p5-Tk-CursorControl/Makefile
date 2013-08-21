@@ -16,11 +16,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manipulate the mouse cursor programmatically
 
 BUILD_DEPENDS=	p5-Tk>=800.015:${PORTSDIR}/x11-toolkits/p5-Tk
-RUN_DEPENDS=	p5-Tk>=800.015:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+ALL_TARGETS=	pure_install
 USE_PERL5=	configure
 USES=		perl5
-ALL_TARGETS=	pure_install
 
 MAN3=		Tk::CursorControl.3
 

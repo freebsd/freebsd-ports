@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Very simple dependencies checker for Perl code
 
-RUN_DEPENDS=	p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
+BUILD_DEPENDS=	p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

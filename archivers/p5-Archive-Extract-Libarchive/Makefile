@@ -12,8 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic archive extracting mechanism (using libarchive)
 
 BUILD_DEPENDS=	p5-Object-Tiny>=0:${PORTSDIR}/devel/p5-Object-Tiny
-RUN_DEPENDS=	p5-Object-Tiny>=0:${PORTSDIR}/devel/p5-Object-Tiny
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Pod>=1.04:${PORTSDIR}/devel/p5-Test-Pod
