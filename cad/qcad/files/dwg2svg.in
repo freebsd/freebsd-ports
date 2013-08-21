@@ -1,0 +1,4 @@
+#! /bin/sh
+# Note: You need the Pro/Tools to run this script!
+
+%%PREFIX%%/bin/qcad-bin -no-dock-icon -no-gui -allow-multiple-instances -autostart %%DATADIR%%/scripts/Pro/Tools/Dwg2Svg/Dwg2Svg.js "$0" "$@"

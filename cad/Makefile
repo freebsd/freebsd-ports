@@ -73,6 +73,7 @@
     SUBDIR += pdnmesh
     SUBDIR += pythoncad
     SUBDIR += qcad-partslib
+    SUBDIR += qcad
     SUBDIR += qelectrotech
     SUBDIR += qfsm
     SUBDIR += qmls
