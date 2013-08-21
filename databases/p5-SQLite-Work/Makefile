@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	SQLite-Work
-PORTVERSION=	0.10.02
+PORTVERSION=	0.13
 CATEGORIES=	databases www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RUBYKAT
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Report on and update an SQLite database
@@ -28,8 +27,5 @@ MAN3=		SQLite::Work::Mail.3 \
 MAN1=		sqlw_mail.1 \
 		sqlw_import.1 \
 		sqlreport.1
-
-post-patch:
-		${CHMOD} u+w ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
