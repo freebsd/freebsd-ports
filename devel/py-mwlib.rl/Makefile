@@ -1,13 +1,8 @@
-# New ports collection makefile for:	mwlib.rl
-# Date created:		06 May, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mwlib.rl
-PORTVERSION=	0.12.8
-PORTREVISION=	1
+PORTVERSION=	0.14.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:${PORTSDIR}/print/texvc \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.0:${PORTSDIR}/textproc/py-pygments
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USE_ZIP=	yes
 USES=		gettext
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
