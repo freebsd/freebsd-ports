@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hevea
-PORTVERSION=	2.06
+PORTVERSION=	2.09
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-${PORTVERSION}-manual.pdf \
-		${PORTNAME}-${PORTVERSION}-manual.ps.gz \
-		${PORTNAME}-${PORTVERSION}-manual.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -20,6 +17,12 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.pdf \
+		${PORTNAME}-${PORTVERSION}-manual.ps.gz \
+		${PORTNAME}-${PORTVERSION}-manual.tar.gz
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PREFIX=/s|/usr/local|${PREFIX}|' \
