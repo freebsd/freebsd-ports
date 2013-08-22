@@ -1,0 +1,11 @@
+The Zip-Ada library is written entirely in Ada, allowing compression
+operations without any OS-dependent external calls on streams and files.
+
+In addition to the library and command-line demos, it has these tools:
+ * zipada   - create compressed Zip archive
+ * comp_zip - utility to compare contents of two Zip archives
+ * find_zip - utility to search for text stream of Zip archive
+ * rezip    - tool for recompressing Zip archives towards optimal compression
+ * debzip2  - tool to decompress BZip2 compressed files (.bz2)
+
+WWW: http://unzip-ada.sourceforge.net
