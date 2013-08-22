@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	fusionpbx
-DISTVERSION=	3.2
+DISTVERSION=	3.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	PHP5 Graphical User Interface for FreeSwitch
+
+LICENSE=	MPL
 
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_odbc
