@@ -218,6 +218,7 @@
     SUBDIR += xpk
     SUBDIR += xz
     SUBDIR += zip
+    SUBDIR += zip-ada
     SUBDIR += zipmix
     SUBDIR += zipper
     SUBDIR += zoo

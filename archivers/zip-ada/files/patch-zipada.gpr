@@ -1,0 +1,11 @@
+--- zipada.gpr.orig	2012-11-05 01:58:28.000000000 +0000
++++ zipada.gpr
+@@ -15,7 +15,7 @@ project ZipAda is
+      "demo_unzip.adb", "bunzip", "lz", "test_unz_streams.adb",
+      "test_chunk.adb", "ziptest.adb", "zip_with_many_files.adb",
+      "test_extract.adb", "test_extract_tb.ads",
+-     "za_gnat.ads", "unzipada.adb", "uza_gnat.ads"
++     "za_gnat.ads"
+    );
+ 
+    case Build_Mode is
