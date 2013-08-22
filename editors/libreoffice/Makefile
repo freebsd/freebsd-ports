@@ -335,7 +335,7 @@ CONFIGURE_ARGS+=	--disable-neon
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GCC)
-USE_GCC=	4.6+
+USE_GCC=	yes
 CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .else
 .if exists(/usr/bin/clang) && ${OSVERSION} > 901502
