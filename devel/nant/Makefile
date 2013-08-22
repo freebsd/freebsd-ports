@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|MCS=mcs|MCS=dmcs|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
-.if empty(PORT_OPTIONS:MDOCS}
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '903,910 d' ${WRKSRC}/NAnt.build
 .endif
 
