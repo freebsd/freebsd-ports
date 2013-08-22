@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Loop-Tk
-PORTVERSION=	1.304
+PORTVERSION=	1.305
 PORTREVISION=	1
 CATEGORIES=	devel tk perl5
 MASTER_SITES=	CPAN
@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bridge that allows POE to be driven by Tk
 
-BUILD_DEPENDS=	p5-POE>=1.289:${PORTSDIR}/devel/p5-POE \
-		p5-Tk>=804.028:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	p5-POE>=1.356:${PORTSDIR}/devel/p5-POE \
+		p5-Tk>=804.031:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
