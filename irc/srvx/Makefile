@@ -7,45 +7,29 @@ CATEGORIES=	irc net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of services for ircu P10 protocol networks
+COMMENT=	Services for ircu P10 protocol networks
 
-MAKE_JOBS_UNSAFE=yes
-
-OPTIONS_DEFINE=	PROTOCOL_BAHAMUT DEBUG
-OPTIONS_DEFAULT=	PROTOCOL_BAHAMUT
-PROTOCOL_BAHAMUT_DESC=	Enables Bahamut protocol (P10 is default)
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-getopt
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	chanserv.help 		\
-		global.help 		\
-		mod-helpserv.help	\
-		mod-memoserv.help 	\
-		mod-sockcheck.help	\
-		modcmd.help 		\
-		nickserv.help	 	\
-		opserv.help 		\
-		saxdb.help	 	\
-		sendmail.help
-PLIST_FILES=	bin/srvx 			\
-		etc/srvx.conf.example		\
-		etc/sockcheck.conf.example
+PLIST_FILES=	bin/srvx etc/srvx.conf.example etc/sockcheck.conf.example
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	BAHAMUT DEBUG
+OPTIONS_DEFAULT=	BAHAMUT
+BAHAMUT_DESC=	Enable Bahamut protocol (P10 is default)
+
+DEBUG_CONFIGURE_ON=	--enable-debug
+BAHAMUT_CONFIGURE_ON=	--with-protocol=bahamut
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MPROTOCOL_BAHAMUT}
-CONFIGURE_ARGS+=	--with-protocol=bahamut
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|= "srvx.conf"|= "${PREFIX}/etc/srx.conf"|g' \
+	@${REINPLACE_CMD} -e 's|srvx\.conf|${PREFIX}/etc/srx.conf|' \
 		${WRKSRC}/src/main.c
 
 do-install:
@@ -55,6 +39,8 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/*.help ${DOCSDIR}
 .endif
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
