@@ -1,4 +1,4 @@
 Glances is a CLI curses based monitoring tool for GNU/Linux and BSD OS.
-Glances uses the PsUtil library to get information from your system.
+Uses the PsUtil library to get information from your system.
 
-WWW:	http://nicolargo.github.com/glances
+WWW: http://nicolargo.github.com/glances/
