@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	i3
-DISTVERSION=	4.5.1
-PORTREVISION=	1
+DISTVERSION=	4.6
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://i3wm.org/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dhn
+MASTER_SITES=	http://i3wm.org/downloads/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	An improved dynamic tiling window manager
+COMMENT=	Improved dynamic tiling window manager
 
 LICENSE=	BSD
 
