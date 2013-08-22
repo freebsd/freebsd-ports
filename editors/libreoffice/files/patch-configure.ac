@@ -1,6 +1,6 @@
---- configure.ac.orig	2013-06-11 05:33:38.000000000 -0400
-+++ configure.ac	2013-06-24 17:44:14.000000000 -0400
-@@ -3617,7 +3617,7 @@
+--- configure.ac.orig	2013-08-13 16:11:48.000000000 -0400
++++ configure.ac	2013-08-16 18:17:08.000000000 -0400
+@@ -3637,7 +3637,7 @@
          PLATFORMID=freebsd_x86
          OUTPATH=unxfbsdi
          ;;
@@ -9,7 +9,7 @@
          CPU=X
          CPUNAME=X86_64
          RTL_ARCH=X86_64
-@@ -6261,21 +6261,13 @@
+@@ -6281,21 +6281,13 @@
              JAVA_ARCH="i386"
              JAVA_TOOLKIT="client"
              ;;
@@ -34,7 +34,16 @@
          ;;
  
      k*bsd*-gnu*)
-@@ -7909,9 +7901,13 @@
+@@ -6978,7 +6970,7 @@
+ if test "$with_system_libcmis" = "yes"; then
+     AC_MSG_RESULT([external])
+     SYSTEM_LIBCMIS=YES
+-    PKG_CHECK_MODULES( CMIS, libcmis-0.3 >= 0.3.1 )
++    PKG_CHECK_MODULES( CMIS, libcmis-0.4 >= 0.4.1 )
+ else
+     AC_MSG_RESULT([internal])
+     SYSTEM_LIBCMIS=NO
+@@ -7929,9 +7921,13 @@
      AC_MSG_CHECKING([which hash container mdds shall use])
      if test "x$HAVE_CXX0X" = "xTRUE"; then
          MDDS_CPPFLAGS="-std=gnu++0x"
@@ -49,7 +58,7 @@
          AC_MSG_RESULT([boost::unordered_map])
      fi
  
-@@ -8278,7 +8274,7 @@
+@@ -8298,7 +8294,7 @@
  dnl ===================================================================
  
  AC_MSG_CHECKING([whether to enable graphite support])
@@ -58,7 +67,7 @@
      AC_MSG_RESULT([yes])
      ENABLE_GRAPHITE="TRUE"
      AC_MSG_CHECKING([which graphite to use])
-@@ -8530,8 +8526,8 @@
+@@ -8550,8 +8546,8 @@
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -69,7 +78,7 @@
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -8584,7 +8580,7 @@
+@@ -8605,7 +8601,7 @@
  if test "$with_system_orcus" = "yes"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBORCUS=YES
@@ -78,7 +87,7 @@
  else
      AC_MSG_RESULT([internal])
      BUILD_TYPE="$BUILD_TYPE ORCUS"
-@@ -10396,10 +10392,10 @@
+@@ -10419,10 +10415,10 @@
  
      dnl Check for Meta Object Compiler
  

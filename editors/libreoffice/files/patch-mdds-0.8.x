@@ -1,17 +1,6 @@
-From 4a8e36d20609f1f7918976d4db13d720524a3c9c Mon Sep 17 00:00:00 2001
-From: Kohei Yoshida <kohei.yoshida@gmail.com>
-Date: Mon, 06 May 2013 14:27:55 +0000
-Subject: Adjust for API change in mdds 0.8.0.
-
-The return value of search_tree() in flat_segment_tree has changed.
-
-Change-Id: I51d8676bd0621bd43b3f8a8f6be4bf4056d45904
----
-diff --git a/sc/source/core/data/dpfilteredcache.cxx b/sc/source/core/data/dpfilteredcache.cxx
-index 47adbbe..51bf571 100644
---- sc/source/core/data/dpfilteredcache.cxx
-+++ b/sc/source/core/data/dpfilteredcache.cxx
-@@ -172,7 +172,7 @@ void ScDPFilteredCache::fillTable(
+--- sc/source/core/data/dpfilteredcache.cxx.orig	2013-08-13 16:11:48.000000000 -0400
++++ sc/source/core/data/dpfilteredcache.cxx	2013-08-16 18:29:17.000000000 -0400
+@@ -185,7 +185,7 @@
          {
              if (nRow > nEndSegment)
              {
@@ -20,11 +9,9 @@ index 47adbbe..51bf571 100644
                  {
                      OSL_FAIL("Tree search failed!");
                      continue;
-diff --git a/sc/source/core/data/segmenttree.cxx b/sc/source/core/data/segmenttree.cxx
-index e74b0fd..b02f164 100644
---- sc/source/core/data/segmenttree.cxx
-+++ b/sc/source/core/data/segmenttree.cxx
-@@ -159,7 +159,7 @@ bool ScFlatSegmentsImpl<_ValueType, _ExtValueType>::getRangeData(SCCOLROW nPos,
+--- sc/source/core/data/segmenttree.cxx.orig	2013-08-13 16:11:48.000000000 -0400
++++ sc/source/core/data/segmenttree.cxx	2013-08-16 18:29:17.000000000 -0400
+@@ -159,7 +159,7 @@
      if (!maSegments.is_tree_valid())
          maSegments.build_tree();
  
@@ -33,11 +20,9 @@ index e74b0fd..b02f164 100644
          return false;
  
      rData.mnPos1 = nPos1;
-diff --git a/sc/source/filter/excel/colrowst.cxx b/sc/source/filter/excel/colrowst.cxx
-index 53aa04b..bc43a1e 100644
---- sc/source/filter/excel/colrowst.cxx
-+++ b/sc/source/filter/excel/colrowst.cxx
-@@ -208,7 +208,7 @@ void XclImpColRowSettings::Convert( SCTAB nScTab )
+--- sc/source/filter/excel/colrowst.cxx.orig	2013-08-13 16:11:48.000000000 -0400
++++ sc/source/filter/excel/colrowst.cxx	2013-08-16 18:29:17.000000000 -0400
+@@ -208,7 +208,7 @@
          if (GetColFlag(nCol, EXC_COLROW_USED))
          {
              sal_uInt16 nTmp;
@@ -46,7 +31,7 @@ index 53aa04b..bc43a1e 100644
                  nWidth = nTmp;
          }
  
-@@ -258,7 +258,7 @@ void XclImpColRowSettings::Convert( SCTAB nScTab )
+@@ -258,7 +258,7 @@
                      for (SCROW i = nPrevRow; i <= nRow - 1; ++i)
                      {
                          SCROW nLast;
@@ -55,11 +40,9 @@ index 53aa04b..bc43a1e 100644
                          {
                              // search failed for some reason
                              return;
-diff --git a/sc/source/filter/xml/XMLStylesExportHelper.cxx b/sc/source/filter/xml/XMLStylesExportHelper.cxx
-index 4f7a937..cefa640 100644
---- sc/source/filter/xml/XMLStylesExportHelper.cxx
-+++ b/sc/source/filter/xml/XMLStylesExportHelper.cxx
-@@ -1280,7 +1280,7 @@ sal_Int32 ScRowStyles::GetStyleNameIndex(const sal_Int32 nTable, const sal_Int32
+--- sc/source/filter/xml/XMLStylesExportHelper.cxx.orig	2013-08-13 16:11:48.000000000 -0400
++++ sc/source/filter/xml/XMLStylesExportHelper.cxx	2013-08-16 18:29:17.000000000 -0400
+@@ -1290,7 +1290,7 @@
          r.build_tree();
      sal_Int32 nStyle;
      sal_Int32 nStart, nEnd;
@@ -68,5 +51,3 @@ index 4f7a937..cefa640 100644
      {
          // Cache this value for better performance.
          maCache.mnTable = nTable;
---
-cgit v0.9.0.2-2-gbebe
