@@ -7,4 +7,4 @@ If any of the parameters to a new method from either of the classes begins with
 SSL_ (such as SSL_server in place of Server), the class attempts to load the
 IO::Socket::SSL package and use it to create socket objects.
 
-WWW:	http://search.cpan.org/dist/SOAP-Transport-TCP/
+WWW: http://search.cpan.org/dist/SOAP-Transport-TCP/
