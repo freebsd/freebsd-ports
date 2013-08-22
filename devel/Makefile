@@ -439,6 +439,7 @@
     SUBDIR += flexjson
     SUBDIR += flick
     SUBDIR += flickrnet
+    SUBDIR += florist-gpl
     SUBDIR += flowdesigner
     SUBDIR += flyspray
     SUBDIR += fmake
