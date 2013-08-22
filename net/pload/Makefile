@@ -12,8 +12,7 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	fbsd@opal.com
 COMMENT=	X11 program to display network traffic graphs
 
-BROKEN=		does not build: Could not find osdefs.mk
-USES=		imake
+USES=		imake:env
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 HAS_CONFIGURE=	yes
 
