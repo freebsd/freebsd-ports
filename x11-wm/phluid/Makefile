@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager that emphasizes efficiency, speed, and beauty
 
-USEs=		gmake
+USES=		gmake
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
