@@ -22,8 +22,6 @@ REINPLACE_ARGS=	-i ""
 
 MAN1=		openvex.1 openvex-new-project.1
 
-ALL_TARGET=	all clean
-
 post-patch:
 # Use make's -C option to descent into directories and fix parallel builds
 	@${REINPLACE_CMD} -e 's/^all:/& depend/ ; s/ make depend &&//' \
@@ -31,5 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -E 's/cd (.+)(;| &&) make/$$(MAKE) -C \1/' \
 		${WRKSRC}/Advanced/Makefile ${WRKSRC}/Beginner/Makefile \
 		${WRKSRC}/HiBob/Makefile ${WRKSRC}/Makefile
+
+post-build:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clean)
 
 .include <bsd.port.mk>
