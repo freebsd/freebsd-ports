@@ -2029,6 +2029,7 @@
     SUBDIR += ump
     SUBDIR += usermanager
     SUBDIR += uwsgi
+    SUBDIR += uwsgitop
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish

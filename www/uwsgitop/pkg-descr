@@ -1,0 +1,10 @@
+uWSGI top-like interface.
+Run your uWSGI server with the stats server enabled, for example:
+
+uwsgi --module myapp --socket :3030 --stats /tmp/stats.socket
+
+Then connect uwsgitop to the stats socket
+
+uwsgitop /tmp/stats.socket
+
+WWW: https://pypi.python.org/pypi/uwsgitop
