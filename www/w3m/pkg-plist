@@ -20,6 +20,7 @@ libexec/w3m/xface2xpm
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.func
 %%PORTDOCS%%%%JAPANESE%%%%INLINE_IMAGE%%share/doc/ja/w3m/README.img
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.keymap
+%%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.m17n
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.mailcap
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.menu
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/README.migemo
@@ -35,7 +36,7 @@ libexec/w3m/xface2xpm
 %%PORTDOCS%%%%DOCSDIR%%/README.dict
 %%PORTDOCS%%%%DOCSDIR%%/README.func
 %%PORTDOCS%%%%INLINE_IMAGE%%%%DOCSDIR%%/README.img
-%%PORTDOCS%%%%M17N%%%%DOCSDIR%%/README.m17n
+%%PORTDOCS%%%%DOCSDIR%%/README.m17n
 %%PORTDOCS%%%%DOCSDIR%%/STORY.html
 %%PORTDOCS%%%%DOCSDIR%%/keymap.default
 %%PORTDOCS%%%%DOCSDIR%%/keymap.lynx

@@ -4840,4 +4840,6 @@ lang/q||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure ins
 audio/q-audio||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
 graphics/q-graph||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
 devel/prettygo|devel/go-pretty|2013-08-17|Project was renamed
+www/w3m-m17n|www/w3m|2013-08-22|Unified to www/w3m
+www/w3m-m17n-img|www/w3m-img|2013-08-22|Unified to www/w3m-img
 www/moodle22||2013-08-20|Has expired: Unmaintained upstream
