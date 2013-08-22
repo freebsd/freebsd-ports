@@ -1,0 +1,21 @@
+--- configure.orig	2009-02-17 19:18:05.000000000 +0000
++++ configure
+@@ -2278,10 +2278,18 @@ case ${UNAME_SYSTEM} in
+     echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
+     cp ./configs/pconfig.LynxOS ./pconfig.h.in;
+     ;;
++ DragonFly)
++    echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
++    cp ./configs/pconfig.DragonFly ./pconfig.h.in;
++    ;;
+  FreeBSD)
+     echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
+     cp ./configs/pconfig.FreeBSD ./pconfig.h.in;
+     ;;
++ NetBSD)
++    echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
++    cp ./configs/pconfig.NetBSD ./pconfig.h.in;
++    ;;
+  Darwin)
+     echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
+     cp ./configs/pconfig.Darwin ./pconfig.h.in;

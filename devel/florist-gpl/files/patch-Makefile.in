@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2012-05-10 13:32:06.000000000 +0000
++++ Makefile.in
+@@ -187,8 +187,12 @@ distclean:
+ 
+ # install floristlib
+ install:
+-	mkdir -p $(PREFIX)/lib/gnat
+-	cp -pr floristlib $(PREFIX)/floristlib
+-	cp -p florist.gpr $(PREFIX)/lib/gnat
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/gnat \
++		 $(DESTDIR)$(PREFIX)/lib/florist \
++		 $(DESTDIR)$(PREFIX)/include/florist
++	$(BSD_INSTALL_DATA) floristlib/*.ad[bs] $(DESTDIR)$(PREFIX)/include/florist
++	$(BSD_INSTALL_DATA) floristlib/*.ali $(DESTDIR)$(PREFIX)/lib/florist
++	$(BSD_INSTALL_LIB)  floristlib/*.a $(DESTDIR)$(PREFIX)/lib/florist
++	$(BSD_INSTALL_DATA) florist.gpr $(DESTDIR)$(PREFIX)/lib/gnat
+ 
+ .PHONY: install clean distclean regen

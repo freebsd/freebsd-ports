@@ -1,0 +1,12 @@
+Florist was produced by students and faculty of the Florida State University
+Department of Computer Science, under contract to the US Department of
+Defense, Defense Information Systems Agency, as a product of the POSIX Ada
+Real-Time (PART) Project. When the contract was completed, in 1999, FSU turned
+maintenance of Florist over to Ada Core Technologies, Inc.). The latest and
+most complete free version is available from Adacore.
+
+FLORIST is an implementation of the IEEE Standards 1003.5: 1992,
+IEEE STD 1003.5b: 1996, and parts of IEEE STD 1003.5c: 1998, also known as
+the POSIX Ada Bindings.
+
+WWW: http://libre.adacore.com
