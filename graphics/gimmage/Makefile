@@ -10,11 +10,11 @@ MASTER_SITES=	BERLIOS CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		gettext
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lintl
+CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 
 .include <bsd.port.mk>
