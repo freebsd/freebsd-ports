@@ -99,6 +99,7 @@ include/ming/util/png2dbl.c
 include/ming/util/read.h
 include/ming/util/swfoutput.h
 include/ming/util/swftypes.h
+include/ming/util/vasprintf.h
 lib/libming.a
 lib/libming.la
 lib/libming.so
