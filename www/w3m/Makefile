@@ -3,7 +3,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	www ipv6
 MASTER_SITES=	SF/w3m/w3m/w3m-${PORTVERSION}
 
@@ -11,11 +11,11 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A pager/text-based WWW browser
 
 USE_OPENSSL=	yes
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	gc:${PORTSDIR}/devel/boehm-gc
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-m17n-0.5.* w3m-img-0.5.* w3m-m17n-img-0.5.*
+CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gc=${LOCALBASE}
 
@@ -23,36 +23,23 @@ MAN1=		w3m.1 w3mman.1
 MANLANG=	"" ja
 
 DOCS=		FAQ.html HISTORY MANUAL.html README \
-		README.dict README.func STORY.html keymap.default \
+		README.dict README.func README.m17n STORY.html keymap.default \
 		keymap.lynx menu.default menu.submenu
 
-.if !defined(MASTERDIR)
-OPTIONS_DEFINE=	M17N JAPANESE INLINE_IMAGE KEY_LYNX DOCS
-M17N_DESC=		Multilingualization support
+OPTIONS_DEFINE=	JAPANESE INLINE_IMAGE KEY_LYNX DOCS
 JAPANESE_DESC=		Japanese messages and migemo support
 INLINE_IMAGE_DESC=	Inline image support
 KEY_LYNX_DESC=		Keymap like lynx browser
-.endif
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MM17N}
-CONFIGURE_ARGS+=	--enable-m17n
-PLIST_SUB+=	M17N=""
-.else
-.if ! ${PORT_OPTIONS:MJAPANESE}
-CONFIGURE_ARGS+=	--disable-m17n
-PLIST_SUB+=	M17N="@comment "
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MJAPANESE}
 USES+=		gettext
-CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes gt_cv_func_gnugettext1_libintl=yes
+CONFIGURE_ARGS+=	--enable-japanese=E --with-migemo=yes gt_cv_func_gnugettext1_libintl=yes
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo
 
-PLIST_SUB+=	JAPANESE="" M17N=""
+PLIST_SUB+=	JAPANESE=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	JAPANESE="@comment "
@@ -103,9 +90,6 @@ post-install:
 	for i in ${DOCS} ; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/w3m/ ; \
 	done
-.if ${PORT_OPTIONS:MM17N} || ${PORT_OPTIONS:MJAPANESE}
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.m17n ${PREFIX}/share/doc/w3m
-.endif
 .endif
 	@${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${PREFIX}/man/ja/man1
 .if ${PORT_OPTIONS:MINLINE_IMAGE}
