@@ -20,8 +20,8 @@ COMMENT=	Practical Extraction and Report Language
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-CONFLICTS=	perl-5.16.* perl-threaded-5.16.* \
-		perl-5.12.* perl-threaded-5.12.* \
+CONFLICTS=	perl-5.12.* perl-threaded-5.12.* \
+		perl-5.16.* perl-threaded-5.16.* \
 		perl-5.18.* perl-threaded-5.18.*
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
