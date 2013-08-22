@@ -1,0 +1,9 @@
+DBIx::Class onle allows joins for prefetches.
+But sometimes you can't use JOIN for prefetch.
+E.g. for prefetching many related objects to resultset with paging.
+
+Also you can use this module to create cross-database prefetches.
+
+This module provides other logic for prefetching data to resultsets.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-CustomPrefetch/

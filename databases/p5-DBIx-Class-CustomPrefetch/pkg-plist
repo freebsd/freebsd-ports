@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DBIx/Class/CustomPrefetch.pm
+%%SITE_PERL%%/DBIx/Class/ResultSet/CustomPrefetch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/CustomPrefetch/.packlist
+@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/CustomPrefetch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
