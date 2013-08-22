@@ -1,17 +1,13 @@
-# New ports collection makefile for:	p5-UUID-Tiny
-# Date created:		2009-09-15
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	UUID-Tiny
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Perl UUID Support With Functional Interface
 
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
