@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GCC=	any # doesn't link otherwise
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|g' \
